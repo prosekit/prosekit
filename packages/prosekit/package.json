@@ -74,11 +74,11 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/pm": "^0.0.0",
     "@prosekit/basic": "^0.0.0",
     "@prosekit/core": "^0.0.0",
     "@prosekit/extensions": "^0.0.0",
     "@prosekit/lit": "^0.0.0",
+    "@prosekit/pm": "^0.0.0",
     "@prosekit/react": "^0.0.0",
     "@prosekit/vue": "^0.0.0"
   },

@@ -1,0 +1,31 @@
+name: Setup
+description: Setup the environment
+
+inputs:
+  node-version:
+    description: The version of node.js
+    required: false
+    default: '16'
+
+runs:
+  using: composite
+  steps:
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        run_install: false
+
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node-version }}
+        cache: pnpm
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Install
+      run: pnpm install
+      shell: bash
+
+    - name: Setup ni
+      run: pnpm install --prefer-offline -g @antfu/ni
+      shell: bash

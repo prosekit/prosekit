@@ -1,0 +1,43 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
+  "entryPoints": [
+    "./src/basic.gen.ts",
+    "./src/core.gen.ts",
+    "./src/extensions.gen.ts",
+    "./src/extensions/blockquote.gen.ts",
+    "./src/extensions/bold.gen.ts",
+    "./src/extensions/code.gen.ts",
+    "./src/extensions/heading.gen.ts",
+    "./src/extensions/italic.gen.ts",
+    "./src/extensions/list.gen.ts",
+    "./src/extensions/placeholder.gen.ts",
+    "./src/extensions/suggestion.gen.ts",
+    "./src/index.ts",
+    "./src/lit.gen.ts",
+    "./src/lit/elements/menu-item.gen.ts",
+    "./src/lit/elements/menu.gen.ts",
+    "./src/lit/elements/popover-suggestion.gen.ts",
+    "./src/lit/elements/popover.gen.ts",
+    "./src/pm.gen.ts",
+    "./src/pm/commands.gen.ts",
+    "./src/pm/inputrules.gen.ts",
+    "./src/pm/keymap.gen.ts",
+    "./src/pm/model.gen.ts",
+    "./src/pm/state.gen.ts",
+    "./src/pm/transform.gen.ts",
+    "./src/pm/view.gen.ts",
+    "./src/react.gen.ts",
+    "./src/react/components/menu-item.gen.ts",
+    "./src/react/components/menu.gen.ts",
+    "./src/react/components/popover-suggestion.gen.ts",
+    "./src/react/components/popover.gen.ts",
+    "./src/vue.gen.ts",
+    "./src/vue/components/menu-item.gen.ts",
+    "./src/vue/components/menu.gen.ts",
+    "./src/vue/components/popover-suggestion.gen.ts",
+    "./src/vue/components/popover.gen.ts"
+  ]
+}

@@ -29,9 +29,7 @@
     "./blockquote": "./src/blockquote/index.ts",
     "./bold": "./src/bold/index.ts",
     "./code": "./src/code/index.ts",
-    "./code-block": "./src/code-block/index.ts",
     "./heading": "./src/heading/index.ts",
-    "./horizontal-rule": "./src/horizontal-rule/index.ts",
     "./italic": "./src/italic/index.ts",
     "./list": "./src/list/index.ts",
     "./list/style.css": "./src/list/style.css",
@@ -79,20 +77,10 @@
         "import": "./dist/prosekit-extensions-code.js",
         "default": "./dist/prosekit-extensions-code.js"
       },
-      "./code-block": {
-        "types": "./dist/prosekit-extensions-code-block.d.ts",
-        "import": "./dist/prosekit-extensions-code-block.js",
-        "default": "./dist/prosekit-extensions-code-block.js"
-      },
       "./heading": {
         "types": "./dist/prosekit-extensions-heading.d.ts",
         "import": "./dist/prosekit-extensions-heading.js",
         "default": "./dist/prosekit-extensions-heading.js"
-      },
-      "./horizontal-rule": {
-        "types": "./dist/prosekit-extensions-horizontal-rule.d.ts",
-        "import": "./dist/prosekit-extensions-horizontal-rule.js",
-        "default": "./dist/prosekit-extensions-horizontal-rule.js"
       },
       "./italic": {
         "types": "./dist/prosekit-extensions-italic.d.ts",

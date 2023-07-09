@@ -1,0 +1,308 @@
+{
+  "name": "prosekit",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/prosekit"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./basic": "./src/basic.gen.ts",
+    "./basic/style.css": "./src/basic/style.css",
+    "./core": "./src/core.gen.ts",
+    "./core/style.css": "./src/core/style.css",
+    "./extensions": "./src/extensions.gen.ts",
+    "./extensions/blockquote": "./src/extensions/blockquote.gen.ts",
+    "./extensions/bold": "./src/extensions/bold.gen.ts",
+    "./extensions/code": "./src/extensions/code.gen.ts",
+    "./extensions/heading": "./src/extensions/heading.gen.ts",
+    "./extensions/italic": "./src/extensions/italic.gen.ts",
+    "./extensions/list": "./src/extensions/list.gen.ts",
+    "./extensions/list/style.css": "./src/extensions/list/style.css",
+    "./extensions/placeholder": "./src/extensions/placeholder.gen.ts",
+    "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
+    "./extensions/suggestion": "./src/extensions/suggestion.gen.ts",
+    "./lit": "./src/lit.gen.ts",
+    "./lit/elements/menu": "./src/lit/elements/menu.gen.ts",
+    "./lit/elements/menu-item": "./src/lit/elements/menu-item.gen.ts",
+    "./lit/elements/popover": "./src/lit/elements/popover.gen.ts",
+    "./lit/elements/popover-suggestion": "./src/lit/elements/popover-suggestion.gen.ts",
+    "./pm": "./src/pm.gen.ts",
+    "./pm/commands": "./src/pm/commands.gen.ts",
+    "./pm/inputrules": "./src/pm/inputrules.gen.ts",
+    "./pm/keymap": "./src/pm/keymap.gen.ts",
+    "./pm/model": "./src/pm/model.gen.ts",
+    "./pm/state": "./src/pm/state.gen.ts",
+    "./pm/transform": "./src/pm/transform.gen.ts",
+    "./pm/view": "./src/pm/view.gen.ts",
+    "./pm/view/style/prosemirror.css": "./src/pm/view/style/prosemirror.css",
+    "./react": "./src/react.gen.ts",
+    "./react/components/menu": "./src/react/components/menu.gen.ts",
+    "./react/components/menu-item": "./src/react/components/menu-item.gen.ts",
+    "./react/components/popover": "./src/react/components/popover.gen.ts",
+    "./react/components/popover-suggestion": "./src/react/components/popover-suggestion.gen.ts",
+    "./vue": "./src/vue.gen.ts",
+    "./vue/components/menu": "./src/vue/components/menu.gen.ts",
+    "./vue/components/menu-item": "./src/vue/components/menu-item.gen.ts",
+    "./vue/components/popover": "./src/vue/components/popover.gen.ts",
+    "./vue/components/popover-suggestion": "./src/vue/components/popover-suggestion.gen.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsup": "tsup",
+    "build:tsc": "tsc -b tsconfig.json"
+  },
+  "dependencies": {
+    "@prosekit/pm": "^0.0.0",
+    "@prosekit/basic": "^0.0.0",
+    "@prosekit/core": "^0.0.0",
+    "@prosekit/extensions": "^0.0.0",
+    "@prosekit/lit": "^0.0.0",
+    "@prosekit/react": "^0.0.0",
+    "@prosekit/vue": "^0.0.0"
+  },
+  "peerDependencies": {
+    "react": ">= 17.0.0",
+    "react-dom": ">= 17.0.0",
+    "vue": ">= 3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@prosekit/dev": "workspace:*",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6",
+    "vue": "^3.3.4"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit.d.ts",
+        "import": "./dist/prosekit.js",
+        "default": "./dist/prosekit.js"
+      },
+      "./basic": {
+        "types": "./dist/prosekit-basic.d.ts",
+        "import": "./dist/prosekit-basic.js",
+        "default": "./dist/prosekit-basic.js"
+      },
+      "./basic/style.css": {
+        "default": "./dist/basic/style.css"
+      },
+      "./core": {
+        "types": "./dist/prosekit-core.d.ts",
+        "import": "./dist/prosekit-core.js",
+        "default": "./dist/prosekit-core.js"
+      },
+      "./core/style.css": {
+        "default": "./dist/core/style.css"
+      },
+      "./extensions": {
+        "types": "./dist/prosekit-extensions.d.ts",
+        "import": "./dist/prosekit-extensions.js",
+        "default": "./dist/prosekit-extensions.js"
+      },
+      "./extensions/blockquote": {
+        "types": "./dist/prosekit-extensions-blockquote.d.ts",
+        "import": "./dist/prosekit-extensions-blockquote.js",
+        "default": "./dist/prosekit-extensions-blockquote.js"
+      },
+      "./extensions/bold": {
+        "types": "./dist/prosekit-extensions-bold.d.ts",
+        "import": "./dist/prosekit-extensions-bold.js",
+        "default": "./dist/prosekit-extensions-bold.js"
+      },
+      "./extensions/code": {
+        "types": "./dist/prosekit-extensions-code.d.ts",
+        "import": "./dist/prosekit-extensions-code.js",
+        "default": "./dist/prosekit-extensions-code.js"
+      },
+      "./extensions/heading": {
+        "types": "./dist/prosekit-extensions-heading.d.ts",
+        "import": "./dist/prosekit-extensions-heading.js",
+        "default": "./dist/prosekit-extensions-heading.js"
+      },
+      "./extensions/italic": {
+        "types": "./dist/prosekit-extensions-italic.d.ts",
+        "import": "./dist/prosekit-extensions-italic.js",
+        "default": "./dist/prosekit-extensions-italic.js"
+      },
+      "./extensions/list": {
+        "types": "./dist/prosekit-extensions-list.d.ts",
+        "import": "./dist/prosekit-extensions-list.js",
+        "default": "./dist/prosekit-extensions-list.js"
+      },
+      "./extensions/list/style.css": {
+        "default": "./dist/extensions/list/style.css"
+      },
+      "./extensions/placeholder": {
+        "types": "./dist/prosekit-extensions-placeholder.d.ts",
+        "import": "./dist/prosekit-extensions-placeholder.js",
+        "default": "./dist/prosekit-extensions-placeholder.js"
+      },
+      "./extensions/placeholder/style.css": {
+        "default": "./dist/extensions/placeholder/style.css"
+      },
+      "./extensions/suggestion": {
+        "types": "./dist/prosekit-extensions-suggestion.d.ts",
+        "import": "./dist/prosekit-extensions-suggestion.js",
+        "default": "./dist/prosekit-extensions-suggestion.js"
+      },
+      "./lit": {
+        "types": "./dist/prosekit-lit.d.ts",
+        "import": "./dist/prosekit-lit.js",
+        "default": "./dist/prosekit-lit.js"
+      },
+      "./lit/elements/menu": {
+        "types": "./dist/prosekit-lit-elements-menu.d.ts",
+        "import": "./dist/prosekit-lit-elements-menu.js",
+        "default": "./dist/prosekit-lit-elements-menu.js"
+      },
+      "./lit/elements/menu-item": {
+        "types": "./dist/prosekit-lit-elements-menu-item.d.ts",
+        "import": "./dist/prosekit-lit-elements-menu-item.js",
+        "default": "./dist/prosekit-lit-elements-menu-item.js"
+      },
+      "./lit/elements/popover": {
+        "types": "./dist/prosekit-lit-elements-popover.d.ts",
+        "import": "./dist/prosekit-lit-elements-popover.js",
+        "default": "./dist/prosekit-lit-elements-popover.js"
+      },
+      "./lit/elements/popover-suggestion": {
+        "types": "./dist/prosekit-lit-elements-popover-suggestion.d.ts",
+        "import": "./dist/prosekit-lit-elements-popover-suggestion.js",
+        "default": "./dist/prosekit-lit-elements-popover-suggestion.js"
+      },
+      "./pm": {
+        "types": "./dist/prosekit-pm.d.ts",
+        "import": "./dist/prosekit-pm.js",
+        "default": "./dist/prosekit-pm.js"
+      },
+      "./pm/commands": {
+        "types": "./dist/prosekit-pm-commands.d.ts",
+        "import": "./dist/prosekit-pm-commands.js",
+        "default": "./dist/prosekit-pm-commands.js"
+      },
+      "./pm/inputrules": {
+        "types": "./dist/prosekit-pm-inputrules.d.ts",
+        "import": "./dist/prosekit-pm-inputrules.js",
+        "default": "./dist/prosekit-pm-inputrules.js"
+      },
+      "./pm/keymap": {
+        "types": "./dist/prosekit-pm-keymap.d.ts",
+        "import": "./dist/prosekit-pm-keymap.js",
+        "default": "./dist/prosekit-pm-keymap.js"
+      },
+      "./pm/model": {
+        "types": "./dist/prosekit-pm-model.d.ts",
+        "import": "./dist/prosekit-pm-model.js",
+        "default": "./dist/prosekit-pm-model.js"
+      },
+      "./pm/state": {
+        "types": "./dist/prosekit-pm-state.d.ts",
+        "import": "./dist/prosekit-pm-state.js",
+        "default": "./dist/prosekit-pm-state.js"
+      },
+      "./pm/transform": {
+        "types": "./dist/prosekit-pm-transform.d.ts",
+        "import": "./dist/prosekit-pm-transform.js",
+        "default": "./dist/prosekit-pm-transform.js"
+      },
+      "./pm/view": {
+        "types": "./dist/prosekit-pm-view.d.ts",
+        "import": "./dist/prosekit-pm-view.js",
+        "default": "./dist/prosekit-pm-view.js"
+      },
+      "./pm/view/style/prosemirror.css": {
+        "default": "./dist/pm/view/style/prosemirror.css"
+      },
+      "./react": {
+        "types": "./dist/prosekit-react.d.ts",
+        "import": "./dist/prosekit-react.js",
+        "default": "./dist/prosekit-react.js"
+      },
+      "./react/components/menu": {
+        "types": "./dist/prosekit-react-components-menu.d.ts",
+        "import": "./dist/prosekit-react-components-menu.js",
+        "default": "./dist/prosekit-react-components-menu.js"
+      },
+      "./react/components/menu-item": {
+        "types": "./dist/prosekit-react-components-menu-item.d.ts",
+        "import": "./dist/prosekit-react-components-menu-item.js",
+        "default": "./dist/prosekit-react-components-menu-item.js"
+      },
+      "./react/components/popover": {
+        "types": "./dist/prosekit-react-components-popover.d.ts",
+        "import": "./dist/prosekit-react-components-popover.js",
+        "default": "./dist/prosekit-react-components-popover.js"
+      },
+      "./react/components/popover-suggestion": {
+        "types": "./dist/prosekit-react-components-popover-suggestion.d.ts",
+        "import": "./dist/prosekit-react-components-popover-suggestion.js",
+        "default": "./dist/prosekit-react-components-popover-suggestion.js"
+      },
+      "./vue": {
+        "types": "./dist/prosekit-vue.d.ts",
+        "import": "./dist/prosekit-vue.js",
+        "default": "./dist/prosekit-vue.js"
+      },
+      "./vue/components/menu": {
+        "types": "./dist/prosekit-vue-components-menu.d.ts",
+        "import": "./dist/prosekit-vue-components-menu.js",
+        "default": "./dist/prosekit-vue-components-menu.js"
+      },
+      "./vue/components/menu-item": {
+        "types": "./dist/prosekit-vue-components-menu-item.d.ts",
+        "import": "./dist/prosekit-vue-components-menu-item.js",
+        "default": "./dist/prosekit-vue-components-menu-item.js"
+      },
+      "./vue/components/popover": {
+        "types": "./dist/prosekit-vue-components-popover.d.ts",
+        "import": "./dist/prosekit-vue-components-popover.js",
+        "default": "./dist/prosekit-vue-components-popover.js"
+      },
+      "./vue/components/popover-suggestion": {
+        "types": "./dist/prosekit-vue-components-popover-suggestion.d.ts",
+        "import": "./dist/prosekit-vue-components-popover-suggestion.js",
+        "default": "./dist/prosekit-vue-components-popover-suggestion.js"
+      }
+    },
+    "main": "./dist/prosekit.js",
+    "module": "./dist/prosekit.js",
+    "types": "./dist/prosekit.d.ts"
+  }
+}

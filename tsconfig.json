@@ -24,7 +24,28 @@
   "files": [],
   "references": [
     {
+      "path": "packages/basic"
+    },
+    {
       "path": "packages/core"
     },
+    {
+      "path": "packages/extensions"
+    },
+    {
+      "path": "packages/lit"
+    },
+    {
+      "path": "packages/pm"
+    },
+    {
+      "path": "packages/prosekit"
+    },
+    {
+      "path": "packages/react"
+    },
+    {
+      "path": "packages/vue"
+    }
   ]
 }

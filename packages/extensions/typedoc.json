@@ -1,0 +1,17 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "extends": ["../../config/typedoc-base.json"],
+  "entryPoints": [
+    "./src/blockquote/index.ts",
+    "./src/bold/index.ts",
+    "./src/code-block/index.ts",
+    "./src/code/index.ts",
+    "./src/heading/index.ts",
+    "./src/horizontal-rule/index.ts",
+    "./src/index.ts",
+    "./src/italic/index.ts",
+    "./src/list/index.ts",
+    "./src/placeholder/index.ts",
+    "./src/suggestion/index.ts"
+  ]
+}

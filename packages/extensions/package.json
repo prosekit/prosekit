@@ -1,0 +1,128 @@
+{
+  "name": "@prosekit/extensions",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/extensions"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./blockquote": "./src/blockquote/index.ts",
+    "./bold": "./src/bold/index.ts",
+    "./code": "./src/code/index.ts",
+    "./code-block": "./src/code-block/index.ts",
+    "./heading": "./src/heading/index.ts",
+    "./horizontal-rule": "./src/horizontal-rule/index.ts",
+    "./italic": "./src/italic/index.ts",
+    "./list": "./src/list/index.ts",
+    "./list/style.css": "./src/list/style.css",
+    "./placeholder": "./src/placeholder/index.ts",
+    "./placeholder/style.css": "./src/placeholder/style.css",
+    "./suggestion": "./src/suggestion/index.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsup": "tsup",
+    "build:tsc": "tsc -b tsconfig.json"
+  },
+  "dependencies": {
+    "@prosekit/core": "^0.0.0",
+    "@prosekit/pm": "^0.0.0",
+    "prosemirror-flat-list": "^0.3.14"
+  },
+  "devDependencies": {
+    "@prosekit/dev": "workspace:*",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-extensions.d.ts",
+        "import": "./dist/prosekit-extensions.js",
+        "default": "./dist/prosekit-extensions.js"
+      },
+      "./blockquote": {
+        "types": "./dist/prosekit-extensions-blockquote.d.ts",
+        "import": "./dist/prosekit-extensions-blockquote.js",
+        "default": "./dist/prosekit-extensions-blockquote.js"
+      },
+      "./bold": {
+        "types": "./dist/prosekit-extensions-bold.d.ts",
+        "import": "./dist/prosekit-extensions-bold.js",
+        "default": "./dist/prosekit-extensions-bold.js"
+      },
+      "./code": {
+        "types": "./dist/prosekit-extensions-code.d.ts",
+        "import": "./dist/prosekit-extensions-code.js",
+        "default": "./dist/prosekit-extensions-code.js"
+      },
+      "./code-block": {
+        "types": "./dist/prosekit-extensions-code-block.d.ts",
+        "import": "./dist/prosekit-extensions-code-block.js",
+        "default": "./dist/prosekit-extensions-code-block.js"
+      },
+      "./heading": {
+        "types": "./dist/prosekit-extensions-heading.d.ts",
+        "import": "./dist/prosekit-extensions-heading.js",
+        "default": "./dist/prosekit-extensions-heading.js"
+      },
+      "./horizontal-rule": {
+        "types": "./dist/prosekit-extensions-horizontal-rule.d.ts",
+        "import": "./dist/prosekit-extensions-horizontal-rule.js",
+        "default": "./dist/prosekit-extensions-horizontal-rule.js"
+      },
+      "./italic": {
+        "types": "./dist/prosekit-extensions-italic.d.ts",
+        "import": "./dist/prosekit-extensions-italic.js",
+        "default": "./dist/prosekit-extensions-italic.js"
+      },
+      "./list": {
+        "types": "./dist/prosekit-extensions-list.d.ts",
+        "import": "./dist/prosekit-extensions-list.js",
+        "default": "./dist/prosekit-extensions-list.js"
+      },
+      "./list/style.css": {
+        "default": "./dist/list/style.css"
+      },
+      "./placeholder": {
+        "types": "./dist/prosekit-extensions-placeholder.d.ts",
+        "import": "./dist/prosekit-extensions-placeholder.js",
+        "default": "./dist/prosekit-extensions-placeholder.js"
+      },
+      "./placeholder/style.css": {
+        "default": "./dist/placeholder/style.css"
+      },
+      "./suggestion": {
+        "types": "./dist/prosekit-extensions-suggestion.d.ts",
+        "import": "./dist/prosekit-extensions-suggestion.js",
+        "default": "./dist/prosekit-extensions-suggestion.js"
+      }
+    },
+    "main": "./dist/prosekit-extensions.js",
+    "module": "./dist/prosekit-extensions.js",
+    "types": "./dist/prosekit-extensions.d.ts"
+  }
+}

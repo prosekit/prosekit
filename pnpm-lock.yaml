@@ -128,6 +128,31 @@ importers:
         specifier: ^5.1.6
         version: 5.1.6
 
+  packages/extensions:
+    dependencies:
+      '@prosekit/core':
+        specifier: ^0.0.0
+        version: link:../core
+      '@prosekit/pm':
+        specifier: ^0.0.0
+        version: link:../pm
+      prosemirror-flat-list:
+        specifier: ^0.3.14
+        version: 0.3.14
+    devDependencies:
+      '@prosekit/dev':
+        specifier: workspace:*
+        version: link:../dev
+      tsup:
+        specifier: ^7.1.0
+        version: 7.1.0(typescript@5.1.6)
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
+      vitest:
+        specifier: ^0.33.0
+        version: 0.33.0(jsdom@22.1.0)
+
   packages/pm:
     dependencies:
       prosemirror-commands:
@@ -4242,6 +4267,17 @@ packages:
       prosemirror-model: 1.19.2
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.7.3
+    dev: false
+
+  /prosemirror-flat-list@0.3.14:
+    resolution: {integrity: sha512-kAhC7dQUkcpRyPRzif0myx50yCm8zzgAnmhd9HIMYXdMZeOv6v8wH6qILNz5kplmbV/umZj5dtYsluEjLtOMeQ==}
+    dependencies:
+      prosemirror-commands: 1.5.2
+      prosemirror-inputrules: 1.2.1
+      prosemirror-model: 1.19.2
+      prosemirror-state: 1.4.3
+      prosemirror-transform: 1.7.3
+      prosemirror-view: 1.31.5
     dev: false
 
   /prosemirror-inputrules@1.2.1:

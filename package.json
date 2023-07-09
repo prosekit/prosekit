@@ -19,8 +19,8 @@
     "change": "changeset",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile && pnpm run build",
     "ci:version:next": "changeset version --snapshot next && pnpm install --no-frozen-lockfile && pnpm run build",
-    "ci:publish": "pnpm publish --access public -r --no-git-checks --tag latest",
-    "ci:publish:next": "pnpm publish --access public -r --no-git-checks --tag next"
+    "ci:publish": "pnpm run build:package --concurrency=1 && pnpm publish --access public -r --no-git-checks --tag latest",
+    "ci:publish:next": "pnpm run build:package --concurrency=1 && pnpm publish --access public -r --no-git-checks --tag next"
   },
   "dependencies": {
     "@antfu/ni": "^0.21.4",

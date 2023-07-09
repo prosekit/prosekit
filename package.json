@@ -15,7 +15,7 @@
     "test:coverage": "vitest run --coverage.enabled --coverage.provider=istanbul",
     "typecheck": "tsc --build tsconfig.json",
     "lint": "eslint .",
-    "fix": "manypkg fix && eslint . --fix && prettier --write .",
+    "fix": "manypkg fix && turbo run gen --force && eslint . --fix && prettier --write .",
     "change": "changeset",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile && pnpm run build",
     "ci:version:next": "changeset version --snapshot next && pnpm install --no-frozen-lockfile && pnpm run build",

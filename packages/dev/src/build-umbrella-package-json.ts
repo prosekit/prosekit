@@ -25,7 +25,7 @@ export async function buildUmbrellaPackageJson() {
     const entries = Object.keys((pkg.packageJson as any).exports ?? {})
 
     if (!pkgDependencies[fullPackageName]) {
-      pkgDependencies[fullPackageName] = '^0.0.0'
+      pkgDependencies[fullPackageName] = '^' + pkg.packageJson.version
     }
 
     Object.assign(pkgPeerDependencies, pkg.packageJson.peerDependencies)

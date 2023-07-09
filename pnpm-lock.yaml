@@ -51,7 +51,7 @@ importers:
   examples/vue-lib:
     dependencies:
       prosekit:
-        specifier: 0.0.0
+        specifier: ^0.0.1
         version: link:../../packages/prosekit
     devDependencies:
       '@unocss/transformer-directives':
@@ -82,14 +82,14 @@ importers:
   packages/basic:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../extensions
     devDependencies:
       '@prosekit/dev':
-        specifier: 0.0.0
+        specifier: ^0.0.0
         version: link:../dev
       tsup:
         specifier: ^7.1.0
@@ -104,7 +104,7 @@ importers:
   packages/core:
     dependencies:
       '@prosekit/pm':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../pm
       orderedmap:
         specifier: ^2.1.1
@@ -114,7 +114,7 @@ importers:
         version: 3.12.0
     devDependencies:
       '@prosekit/dev':
-        specifier: 0.0.0
+        specifier: ^0.0.0
         version: link:../dev
       tsup:
         specifier: ^7.1.0
@@ -187,17 +187,17 @@ importers:
   packages/extensions:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../pm
       prosemirror-flat-list:
         specifier: ^0.3.14
         version: 0.3.14
     devDependencies:
       '@prosekit/dev':
-        specifier: 0.0.0
+        specifier: ^0.0.0
         version: link:../dev
       tsup:
         specifier: ^7.1.0
@@ -218,13 +218,13 @@ importers:
         specifier: ^1.6.2
         version: 1.6.2
       '@prosekit/core':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../extensions
       '@prosekit/pm':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../pm
       lit:
         specifier: ^2.7.6
@@ -237,7 +237,7 @@ importers:
         version: 2.7.5
     devDependencies:
       '@prosekit/dev':
-        specifier: 0.0.0
+        specifier: ^0.0.0
         version: link:../dev
       minify-literals:
         specifier: ^1.0.6
@@ -280,7 +280,7 @@ importers:
         version: 1.31.5
     devDependencies:
       '@prosekit/dev':
-        specifier: 0.0.0
+        specifier: ^0.0.0
         version: link:../dev
       tsup:
         specifier: ^7.1.0
@@ -295,29 +295,29 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../basic
       '@prosekit/core':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../extensions
       '@prosekit/lit':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../lit
       '@prosekit/pm':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../pm
       '@prosekit/react':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../react
       '@prosekit/vue':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../vue
     devDependencies:
       '@prosekit/dev':
-        specifier: 0.0.0
+        specifier: ^0.0.0
         version: link:../dev
       '@types/react':
         specifier: ^18.2.14
@@ -347,14 +347,14 @@ importers:
         specifier: latest
         version: 1.2.0
       '@prosekit/core':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
-        specifier: 0.0.0
+        specifier: ^0.0.0
         version: link:../dev
       '@types/react':
         specifier: ^18.2.14
@@ -381,14 +381,14 @@ importers:
   packages/vue:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
-        specifier: 0.0.0
+        specifier: ^0.0.0
         version: link:../dev
       tsup:
         specifier: ^7.1.0
@@ -406,7 +406,7 @@ importers:
   website:
     devDependencies:
       '@prosekit/dev':
-        specifier: 0.0.0
+        specifier: ^0.0.0
         version: link:../packages/dev
       '@types/react':
         specifier: ^18.2.14
@@ -421,10 +421,10 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       prosekit:
-        specifier: ^0.0.0
+        specifier: ^0.0.1
         version: link:../packages/prosekit
       prosekit-example-vue-lib:
-        specifier: 0.0.0
+        specifier: ^0.0.0
         version: link:../examples/vue-lib
       react:
         specifier: ^18.2.0

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["gen", "^build", "build:tsc", "build:tsup"],
+      "outputs": ["dist/**"],
+      "outputMode": "new-only"
+    },
+    "build:tsc": {
+      "dependsOn": ["^build"],
+      "outputs": ["temp/**"],
+      "outputMode": "new-only"
+    },
+    "build:tsup": {
+      "dependsOn": ["^build", "build:tsc"],
+      "outputs": ["dist/**"],
+      "outputMode": "new-only"
+    },
+    "gen": {
+      "inputs": ["src/**", "../*/tsconfig.json"],
+      "outputs": ["../*/tsconfig.json"],
+      "outputMode": "new-only"
+    }
+  }
+}

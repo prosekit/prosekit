@@ -1,0 +1,42 @@
+{
+  "name": "prosekit-monorepo",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@8.6.6",
+  "scripts": {
+    "build": "turbo build",
+    "build:force": "turbo build --force",
+    "build:package": "turbo build --filter='./packages/*'",
+    "build:example": "turbo build --filter='./examples/*'",
+    "build:website": "turbo build --filter='./website'",
+    "gen": "turbo run gen --force && pnpm install --prefer-offline",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage.enabled --coverage.provider=istanbul",
+    "typecheck": "tsc --build tsconfig.json",
+    "lint": "eslint .",
+    "fix": "eslint . --fix && prettier --write .",
+    "change": "changeset",
+    "ci:version": "changeset version && pnpm install --no-frozen-lockfile && pnpm run build",
+    "ci:version:next": "changeset version --snapshot next && pnpm install --no-frozen-lockfile && pnpm run build",
+    "ci:publish": "pnpm publish --access public -r --no-git-checks --tag latest",
+    "ci:publish:next": "pnpm publish --access public -r --no-git-checks --tag next"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^0.21.4",
+    "@changesets/cli": "^2.26.2",
+    "@ocavue/eslint-config": "^1.2.1",
+    "@vitest/coverage-c8": "^0.33.0",
+    "@vitest/coverage-istanbul": "^0.33.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.44.0",
+    "jsdom": "^22.1.0",
+    "prettier": "^3.0.0",
+    "turbo": "^1.10.7",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  },
+  "pnpm": {
+    "overrides": {}
+  }
+}

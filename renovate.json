@@ -1,0 +1,14 @@
+{
+  "dependencyDashboard": true,
+  "ignoreDeps": [
+    "@prosekit/basic",
+    "@prosekit/core",
+    "@prosekit/extensions",
+    "@prosekit/lit",
+    "@prosekit/pm",
+    "@prosekit/react",
+    "@prosekit/vue",
+    "prosekit"
+  ],
+  "extends": ["github>ocavue/config-renovate"]
+}

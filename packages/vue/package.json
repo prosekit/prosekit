@@ -1,0 +1,92 @@
+{
+  "name": "@prosekit/vue",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/vue"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/menu": "./src/components/menu.gen.ts",
+    "./components/menu-item": "./src/components/menu-item.gen.ts",
+    "./components/popover": "./src/components/popover.gen.ts",
+    "./components/popover-suggestion": "./src/components/popover-suggestion.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsup": "tsup",
+    "build:tsc": "tsc -b tsconfig.json"
+  },
+  "dependencies": {
+    "@prosekit/core": "^0.0.0",
+    "@prosekit/lit": "^0.0.0"
+  },
+  "peerDependencies": {
+    "vue": ">= 3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@prosekit/dev": "workspace:*",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0",
+    "vue": "^3.3.4"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-vue.d.ts",
+        "import": "./dist/prosekit-vue.js",
+        "default": "./dist/prosekit-vue.js"
+      },
+      "./components/menu": {
+        "types": "./dist/prosekit-vue-components-menu.d.ts",
+        "import": "./dist/prosekit-vue-components-menu.js",
+        "default": "./dist/prosekit-vue-components-menu.js"
+      },
+      "./components/menu-item": {
+        "types": "./dist/prosekit-vue-components-menu-item.d.ts",
+        "import": "./dist/prosekit-vue-components-menu-item.js",
+        "default": "./dist/prosekit-vue-components-menu-item.js"
+      },
+      "./components/popover": {
+        "types": "./dist/prosekit-vue-components-popover.d.ts",
+        "import": "./dist/prosekit-vue-components-popover.js",
+        "default": "./dist/prosekit-vue-components-popover.js"
+      },
+      "./components/popover-suggestion": {
+        "types": "./dist/prosekit-vue-components-popover-suggestion.d.ts",
+        "import": "./dist/prosekit-vue-components-popover-suggestion.js",
+        "default": "./dist/prosekit-vue-components-popover-suggestion.js"
+      }
+    },
+    "main": "./dist/prosekit-vue.js",
+    "module": "./dist/prosekit-vue.js",
+    "types": "./dist/prosekit-vue.d.ts"
+  }
+}

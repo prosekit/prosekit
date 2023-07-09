@@ -17,8 +17,8 @@
     "lint": "eslint .",
     "fix": "manypkg fix && turbo run gen --force && eslint . --fix && prettier --write .",
     "change": "changeset",
-    "ci:version": "changeset version && pnpm install --no-frozen-lockfile && pnpm run build",
-    "ci:version:next": "changeset version --snapshot next && pnpm install --no-frozen-lockfile && pnpm run build",
+    "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
+    "ci:version:next": "changeset version --snapshot next && pnpm install --no-frozen-lockfile",
     "ci:publish": "pnpm run build:package --concurrency=1 && pnpm publish --access public -r --no-git-checks --tag latest",
     "ci:publish:next": "pnpm run build:package --concurrency=1 && pnpm publish --access public -r --no-git-checks --tag next"
   },

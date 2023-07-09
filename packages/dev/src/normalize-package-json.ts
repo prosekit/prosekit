@@ -100,6 +100,7 @@ export async function normalizePackageJson(pkg: Package) {
   )
 
   normalizePackageJsonDocumentFields(pkg)
+  normalizeTypesVersions(pkg.packageJson)
 
   return entryPoints
 }
@@ -128,4 +129,20 @@ function normalizePackageJsonDocumentFields(pkg: Package) {
       url: 'https://github.com/ocavue/prosekit/issues',
     },
   })
+}
+
+function normalizeTypesVersions(packageJson: any) {
+  packageJson.publishConfig['typesVersions'] = undefined
+  const typesVersions: Record<string, string[]> = {}
+
+  for (const key of Object.keys(packageJson.publishConfig.exports)) {
+    const types = packageJson.publishConfig.exports[key]?.['types']
+    if (types) {
+      typesVersions[key.replace(/^\.\//, '')] = [types]
+    }
+  }
+
+  if (Object.keys(typesVersions).length > 0) {
+    packageJson.publishConfig['typesVersions'] = { '*': typesVersions }
+  }
 }

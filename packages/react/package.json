@@ -95,6 +95,25 @@
     },
     "main": "./dist/prosekit-react.js",
     "module": "./dist/prosekit-react.js",
-    "types": "./dist/prosekit-react.d.ts"
+    "types": "./dist/prosekit-react.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-react.d.ts"
+        ],
+        "components/menu": [
+          "./dist/prosekit-react-components-menu.d.ts"
+        ],
+        "components/menu-item": [
+          "./dist/prosekit-react-components-menu-item.d.ts"
+        ],
+        "components/popover": [
+          "./dist/prosekit-react-components-popover.d.ts"
+        ],
+        "components/popover-suggestion": [
+          "./dist/prosekit-react-components-popover-suggestion.d.ts"
+        ]
+      }
+    }
   }
 }

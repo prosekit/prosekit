@@ -87,6 +87,25 @@
     },
     "main": "./dist/prosekit-vue.js",
     "module": "./dist/prosekit-vue.js",
-    "types": "./dist/prosekit-vue.d.ts"
+    "types": "./dist/prosekit-vue.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-vue.d.ts"
+        ],
+        "components/menu": [
+          "./dist/prosekit-vue-components-menu.d.ts"
+        ],
+        "components/menu-item": [
+          "./dist/prosekit-vue-components-menu-item.d.ts"
+        ],
+        "components/popover": [
+          "./dist/prosekit-vue-components-popover.d.ts"
+        ],
+        "components/popover-suggestion": [
+          "./dist/prosekit-vue-components-popover-suggestion.d.ts"
+        ]
+      }
+    }
   }
 }

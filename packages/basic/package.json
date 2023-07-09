@@ -58,6 +58,13 @@
     },
     "main": "./dist/prosekit-basic.js",
     "module": "./dist/prosekit-basic.js",
-    "types": "./dist/prosekit-basic.d.ts"
+    "types": "./dist/prosekit-basic.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-basic.d.ts"
+        ]
+      }
+    }
   }
 }

@@ -86,6 +86,25 @@
     },
     "main": "./dist/prosekit-lit.js",
     "module": "./dist/prosekit-lit.js",
-    "types": "./dist/prosekit-lit.d.ts"
+    "types": "./dist/prosekit-lit.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-lit.d.ts"
+        ],
+        "elements/menu": [
+          "./dist/prosekit-lit-elements-menu.d.ts"
+        ],
+        "elements/menu-item": [
+          "./dist/prosekit-lit-elements-menu-item.d.ts"
+        ],
+        "elements/popover": [
+          "./dist/prosekit-lit-elements-popover.d.ts"
+        ],
+        "elements/popover-suggestion": [
+          "./dist/prosekit-lit-elements-popover-suggestion.d.ts"
+        ]
+      }
+    }
   }
 }

@@ -8,19 +8,13 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-  release:
-    name: Release
+  prepare:
+    name: Prepare
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
       - uses: ./.github/actions/setup
-
-      - name: Publish to NPM
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ".npmrc"
-          pnpm ci:publish
-          rm ".npmrc"
 
       - name: Create Release Pull Request
         id: changesets
@@ -32,3 +26,17 @@ jobs:
           createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup
+
+      - name: Publish to NPM
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ".npmrc"
+          pnpm ci:publish
+          rm ".npmrc"

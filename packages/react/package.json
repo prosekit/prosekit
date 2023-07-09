@@ -1,0 +1,100 @@
+{
+  "name": "@prosekit/react",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/react"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/menu": "./src/components/menu.tsx",
+    "./components/menu-item": "./src/components/menu-item.gen.ts",
+    "./components/popover": "./src/components/popover.gen.ts",
+    "./components/popover-suggestion": "./src/components/popover-suggestion.tsx"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsup": "tsup",
+    "build:tsc": "tsc -b tsconfig.json"
+  },
+  "dependencies": {
+    "@lit-labs/react": "latest",
+    "@prosekit/core": "^0.0.0",
+    "@prosekit/lit": "^0.0.0"
+  },
+  "peerDependencies": {
+    "react": ">= 17.0.0",
+    "react-dom": ">= 17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@prosekit/dev": "workspace:*",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-react.d.ts",
+        "import": "./dist/prosekit-react.js",
+        "default": "./dist/prosekit-react.js"
+      },
+      "./components/menu": {
+        "types": "./dist/prosekit-react-components-menu.d.ts",
+        "import": "./dist/prosekit-react-components-menu.js",
+        "default": "./dist/prosekit-react-components-menu.js"
+      },
+      "./components/menu-item": {
+        "types": "./dist/prosekit-react-components-menu-item.d.ts",
+        "import": "./dist/prosekit-react-components-menu-item.js",
+        "default": "./dist/prosekit-react-components-menu-item.js"
+      },
+      "./components/popover": {
+        "types": "./dist/prosekit-react-components-popover.d.ts",
+        "import": "./dist/prosekit-react-components-popover.js",
+        "default": "./dist/prosekit-react-components-popover.js"
+      },
+      "./components/popover-suggestion": {
+        "types": "./dist/prosekit-react-components-popover-suggestion.d.ts",
+        "import": "./dist/prosekit-react-components-popover-suggestion.js",
+        "default": "./dist/prosekit-react-components-popover-suggestion.js"
+      }
+    },
+    "main": "./dist/prosekit-react.js",
+    "module": "./dist/prosekit-react.js",
+    "types": "./dist/prosekit-react.d.ts"
+  }
+}

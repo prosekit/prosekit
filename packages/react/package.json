@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@lit-labs/react": "latest",
-    "@prosekit/core": "^0.0.2",
+    "@prosekit/core": "^0.0.1",
     "@prosekit/lit": "^0.0.2"
   },
   "peerDependencies": {

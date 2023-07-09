@@ -41,7 +41,7 @@
   "dependencies": {
     "@floating-ui/dom": "^1.4.4",
     "@lit/reactive-element": "^1.6.2",
-    "@prosekit/core": "^0.0.2",
+    "@prosekit/core": "^0.0.1",
     "@prosekit/extensions": "^0.0.2",
     "@prosekit/pm": "^0.0.2",
     "lit": "^2.7.6",

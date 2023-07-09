@@ -2,6 +2,7 @@
 
 // This file is generated from gen-sandpack-injection.ts
 
+import file2260578316 from '../../packages/prosekit/CHANGELOG.md?raw'
 import file1936165674 from '../../packages/prosekit/README.md?raw'
 import file2755179653 from '../../packages/prosekit/package.json?raw'
 import file1340360659 from '../../packages/prosekit/src/basic.gen.ts?raw'
@@ -47,6 +48,7 @@ import file3695638628 from '../../packages/prosekit/src/vue/components/popover.g
 import file795314954 from '../../packages/prosekit/tsconfig.json?raw'
 import file3931796238 from '../../packages/prosekit/tsup.config.ts?raw'
 import file1380945791 from '../../packages/prosekit/typedoc.json?raw'
+import file3649569594 from '../../packages/pm/CHANGELOG.md?raw'
 import file1865947236 from '../../packages/pm/README.md?raw'
 import file256681299 from '../../packages/pm/package.json?raw'
 import file309101749 from '../../packages/pm/src/commands.ts?raw'
@@ -62,6 +64,7 @@ import file585143240 from '../../packages/pm/tsconfig.json?raw'
 import file1037000544 from '../../packages/pm/tsup.config.ts?raw'
 import file933031017 from '../../packages/pm/typedoc.json?raw'
 import file4208419265 from '../../packages/pm/vitest.config.ts?raw'
+import file3295293403 from '../../packages/basic/CHANGELOG.md?raw'
 import file1679329015 from '../../packages/basic/README.md?raw'
 import file4149411738 from '../../packages/basic/package.json?raw'
 import file1927705207 from '../../packages/basic/src/index.spec.ts?raw'
@@ -71,6 +74,7 @@ import file656834023 from '../../packages/basic/tsconfig.json?raw'
 import file867561425 from '../../packages/basic/tsup.config.ts?raw'
 import file2178072204 from '../../packages/basic/typedoc.json?raw'
 import file2384760120 from '../../packages/basic/vitest.config.ts?raw'
+import file299428786 from '../../packages/core/CHANGELOG.md?raw'
 import file2581862076 from '../../packages/core/README.md?raw'
 import file803867592 from '../../packages/core/api-extractor.json?raw'
 import file4184295035 from '../../packages/core/package.json?raw'
@@ -116,6 +120,7 @@ import file223222880 from '../../packages/core/tsconfig.json?raw'
 import file3576971944 from '../../packages/core/tsup.config.ts?raw'
 import file3783625921 from '../../packages/core/typedoc.json?raw'
 import file3291896345 from '../../packages/core/vitest.config.ts?raw'
+import file282066121 from '../../packages/extensions/CHANGELOG.md?raw'
 import file3857005265 from '../../packages/extensions/README.md?raw'
 import file778845048 from '../../packages/extensions/package.json?raw'
 import file2549262378 from '../../packages/extensions/src/blockquote/index.ts?raw'
@@ -137,6 +142,7 @@ import file942780085 from '../../packages/extensions/tsconfig.json?raw'
 import file3959397059 from '../../packages/extensions/tsup.config.ts?raw'
 import file2679945358 from '../../packages/extensions/typedoc.json?raw'
 import file2101347454 from '../../packages/extensions/vitest.config.ts?raw'
+import file4259077706 from '../../packages/lit/CHANGELOG.md?raw'
 import file4088645364 from '../../packages/lit/README.md?raw'
 import file3787359075 from '../../packages/lit/package.json?raw'
 import file46679994 from '../../packages/lit/src/elements/menu-item.ts?raw'
@@ -160,6 +166,7 @@ import file2959111960 from '../../packages/lit/tsconfig.json?raw'
 import file3573867696 from '../../packages/lit/tsup.config.ts?raw'
 import file1704378553 from '../../packages/lit/typedoc.json?raw'
 import file2561536977 from '../../packages/lit/vitest.config.ts?raw'
+import file646091696 from '../../packages/react/CHANGELOG.md?raw'
 import file1970641638 from '../../packages/react/README.md?raw'
 import file2427994745 from '../../packages/react/package.json?raw'
 import file1715997635 from '../../packages/react/src/components/menu-item.gen.ts?raw'
@@ -178,6 +185,7 @@ import file3308375198 from '../../packages/react/tsconfig.json?raw'
 import file2941915666 from '../../packages/react/tsup.config.ts?raw'
 import file1380115827 from '../../packages/react/typedoc.json?raw'
 import file504940063 from '../../packages/react/vitest.config.ts?raw'
+import file3698002465 from '../../packages/vue/CHANGELOG.md?raw'
 import file10206697 from '../../packages/vue/README.md?raw'
 import file3752254400 from '../../packages/vue/package.json?raw'
 import file1189809460 from '../../packages/vue/src/components/menu-item.gen.ts?raw'
@@ -197,6 +205,7 @@ import file303661478 from '../../packages/vue/typedoc.json?raw'
 import file2087526742 from '../../packages/vue/vitest.config.ts?raw'
 
 export const files = {
+  "/node_modules/prosekit/CHANGELOG.md": { hidden: true, code: file2260578316 },
   "/node_modules/prosekit/README.md": { hidden: true, code: file1936165674 },
   "/node_modules/prosekit/package.json": { hidden: true, code: file2755179653 },
   "/node_modules/prosekit/src/basic.gen.ts": { hidden: true, code: file1340360659 },
@@ -242,6 +251,7 @@ export const files = {
   "/node_modules/prosekit/tsconfig.json": { hidden: true, code: file795314954 },
   "/node_modules/prosekit/tsup.config.ts": { hidden: true, code: file3931796238 },
   "/node_modules/prosekit/typedoc.json": { hidden: true, code: file1380945791 },
+  "/node_modules/@prosekit/pm/CHANGELOG.md": { hidden: true, code: file3649569594 },
   "/node_modules/@prosekit/pm/README.md": { hidden: true, code: file1865947236 },
   "/node_modules/@prosekit/pm/package.json": { hidden: true, code: file256681299 },
   "/node_modules/@prosekit/pm/src/commands.ts": { hidden: true, code: file309101749 },
@@ -257,6 +267,7 @@ export const files = {
   "/node_modules/@prosekit/pm/tsup.config.ts": { hidden: true, code: file1037000544 },
   "/node_modules/@prosekit/pm/typedoc.json": { hidden: true, code: file933031017 },
   "/node_modules/@prosekit/pm/vitest.config.ts": { hidden: true, code: file4208419265 },
+  "/node_modules/@prosekit/basic/CHANGELOG.md": { hidden: true, code: file3295293403 },
   "/node_modules/@prosekit/basic/README.md": { hidden: true, code: file1679329015 },
   "/node_modules/@prosekit/basic/package.json": { hidden: true, code: file4149411738 },
   "/node_modules/@prosekit/basic/src/index.spec.ts": { hidden: true, code: file1927705207 },
@@ -266,6 +277,7 @@ export const files = {
   "/node_modules/@prosekit/basic/tsup.config.ts": { hidden: true, code: file867561425 },
   "/node_modules/@prosekit/basic/typedoc.json": { hidden: true, code: file2178072204 },
   "/node_modules/@prosekit/basic/vitest.config.ts": { hidden: true, code: file2384760120 },
+  "/node_modules/@prosekit/core/CHANGELOG.md": { hidden: true, code: file299428786 },
   "/node_modules/@prosekit/core/README.md": { hidden: true, code: file2581862076 },
   "/node_modules/@prosekit/core/api-extractor.json": { hidden: true, code: file803867592 },
   "/node_modules/@prosekit/core/package.json": { hidden: true, code: file4184295035 },
@@ -311,6 +323,7 @@ export const files = {
   "/node_modules/@prosekit/core/tsup.config.ts": { hidden: true, code: file3576971944 },
   "/node_modules/@prosekit/core/typedoc.json": { hidden: true, code: file3783625921 },
   "/node_modules/@prosekit/core/vitest.config.ts": { hidden: true, code: file3291896345 },
+  "/node_modules/@prosekit/extensions/CHANGELOG.md": { hidden: true, code: file282066121 },
   "/node_modules/@prosekit/extensions/README.md": { hidden: true, code: file3857005265 },
   "/node_modules/@prosekit/extensions/package.json": { hidden: true, code: file778845048 },
   "/node_modules/@prosekit/extensions/src/blockquote/index.ts": { hidden: true, code: file2549262378 },
@@ -332,6 +345,7 @@ export const files = {
   "/node_modules/@prosekit/extensions/tsup.config.ts": { hidden: true, code: file3959397059 },
   "/node_modules/@prosekit/extensions/typedoc.json": { hidden: true, code: file2679945358 },
   "/node_modules/@prosekit/extensions/vitest.config.ts": { hidden: true, code: file2101347454 },
+  "/node_modules/@prosekit/lit/CHANGELOG.md": { hidden: true, code: file4259077706 },
   "/node_modules/@prosekit/lit/README.md": { hidden: true, code: file4088645364 },
   "/node_modules/@prosekit/lit/package.json": { hidden: true, code: file3787359075 },
   "/node_modules/@prosekit/lit/src/elements/menu-item.ts": { hidden: true, code: file46679994 },
@@ -355,6 +369,7 @@ export const files = {
   "/node_modules/@prosekit/lit/tsup.config.ts": { hidden: true, code: file3573867696 },
   "/node_modules/@prosekit/lit/typedoc.json": { hidden: true, code: file1704378553 },
   "/node_modules/@prosekit/lit/vitest.config.ts": { hidden: true, code: file2561536977 },
+  "/node_modules/@prosekit/react/CHANGELOG.md": { hidden: true, code: file646091696 },
   "/node_modules/@prosekit/react/README.md": { hidden: true, code: file1970641638 },
   "/node_modules/@prosekit/react/package.json": { hidden: true, code: file2427994745 },
   "/node_modules/@prosekit/react/src/components/menu-item.gen.ts": { hidden: true, code: file1715997635 },
@@ -373,6 +388,7 @@ export const files = {
   "/node_modules/@prosekit/react/tsup.config.ts": { hidden: true, code: file2941915666 },
   "/node_modules/@prosekit/react/typedoc.json": { hidden: true, code: file1380115827 },
   "/node_modules/@prosekit/react/vitest.config.ts": { hidden: true, code: file504940063 },
+  "/node_modules/@prosekit/vue/CHANGELOG.md": { hidden: true, code: file3698002465 },
   "/node_modules/@prosekit/vue/README.md": { hidden: true, code: file10206697 },
   "/node_modules/@prosekit/vue/package.json": { hidden: true, code: file3752254400 },
   "/node_modules/@prosekit/vue/src/components/menu-item.gen.ts": { hidden: true, code: file1189809460 },

@@ -18,7 +18,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "prosekit": "^0.0.2"
+    "prosekit": "^0.0.3"
   },
   "peerDependencies": {
     "vue": "^3.3.4"

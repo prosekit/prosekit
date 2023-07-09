@@ -1,5 +1,14 @@
 # @prosekit/extensions
 
+## 0.0.3
+
+### Patch Changes
+
+- b547d53: Add `typesVersions`.
+- Updated dependencies [b547d53]
+  - @prosekit/core@0.0.3
+  - @prosekit/pm@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

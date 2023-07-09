@@ -295,8 +295,8 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: ^0.0.2
-        version: link:../basic
+        specifier: ^0.0.1
+        version: 0.0.1
       '@prosekit/core':
         specifier: ^0.0.2
         version: link:../core
@@ -645,7 +645,7 @@ packages:
     dependencies:
       '@ampproject/remapping': 2.2.1
       '@babel/code-frame': 7.22.5
-      '@babel/generator': 7.22.5
+      '@babel/generator': 7.22.7
       '@babel/helper-compilation-targets': 7.22.6(@babel/core@7.22.6)
       '@babel/helper-module-transforms': 7.22.5
       '@babel/helpers': 7.22.6
@@ -660,16 +660,6 @@ packages:
       json5: 2.2.3
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /@babel/generator@7.22.5:
-    resolution: {integrity: sha512-+lcUbnTRhd0jOewtFSedLyiPsD5tswKkbgcezOqqWFUVNEwoUTlpPOBmvhG7OXWLR4jMdv0czPGH5XbflnD1EA==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/types': 7.22.5
-      '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.18
-      jsesc: 2.5.2
     dev: false
 
   /@babel/generator@7.22.7:
@@ -730,7 +720,7 @@ packages:
       '@babel/helper-environment-visitor': 7.22.5
       '@babel/helper-module-imports': 7.22.5
       '@babel/helper-simple-access': 7.22.5
-      '@babel/helper-split-export-declaration': 7.22.5
+      '@babel/helper-split-export-declaration': 7.22.6
       '@babel/helper-validator-identifier': 7.22.5
       '@babel/template': 7.22.5
       '@babel/traverse': 7.22.8
@@ -741,13 +731,6 @@ packages:
 
   /@babel/helper-simple-access@7.22.5:
     resolution: {integrity: sha512-n0H99E/K+Bika3++WNL17POvo4rKWZ7lZEp1Q+fStVbUi8nxPQEBOlTmCOxW/0JsS56SKKQ+ojAe2pHKJHN35w==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/types': 7.22.5
-    dev: false
-
-  /@babel/helper-split-export-declaration@7.22.5:
-    resolution: {integrity: sha512-thqK5QFghPKWLhAV321lxF95yCg2K3Ob5yw+M3VHWfdia0IkPXUtoLH8x/6Fh486QUvzhb8YOWHChTVen2/PoQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.22.5
@@ -1939,6 +1922,41 @@ packages:
   /@polka/url@1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
+
+  /@prosekit/basic@0.0.1:
+    resolution: {integrity: sha512-909+QkraBFGygNcjOQiNIe1wegSnOcw2O2yxWCZ1K95OE/nJgckAtIxCFrZg/b2i+7VvWDfAlJrVXjFY3aS2+Q==}
+    dependencies:
+      '@prosekit/core': 0.0.1
+      '@prosekit/extensions': 0.0.1
+    dev: false
+
+  /@prosekit/core@0.0.1:
+    resolution: {integrity: sha512-ZLpgsiIm0rVNH2SuJHTLDXlxBjKs6q5mkg3vY9X5wi1iR50gr/4XQ0s8QrZZqiUZP6mJf8oZ5bn0FS8sMxJ23g==}
+    dependencies:
+      '@prosekit/pm': 0.0.1
+      orderedmap: 2.1.1
+      type-fest: 3.12.0
+    dev: false
+
+  /@prosekit/extensions@0.0.1:
+    resolution: {integrity: sha512-u5/afYkgJIKd4elr+TQorXQ+cjz46GhpiRG4xWqj7NNrD4OlV2NRXaOj/jeW1YDPn8tS1jyX2RO3/PU3hZQCAA==}
+    dependencies:
+      '@prosekit/core': 0.0.1
+      '@prosekit/pm': 0.0.1
+      prosemirror-flat-list: 0.3.15
+    dev: false
+
+  /@prosekit/pm@0.0.1:
+    resolution: {integrity: sha512-5TdESXA/NfYIBr2J/QouD2B/NN+ufrAgip7RuP6fCbkCJR72nmg8bxXINH0L5DHTnV/WEmuZueH/2/J5IBgZ8Q==}
+    dependencies:
+      prosemirror-commands: 1.5.2
+      prosemirror-inputrules: 1.2.1
+      prosemirror-keymap: 1.2.2
+      prosemirror-model: 1.19.2
+      prosemirror-state: 1.4.3
+      prosemirror-transform: 1.7.3
+      prosemirror-view: 1.31.5
+    dev: false
 
   /@rollup/pluginutils@5.0.2(rollup@3.26.2):
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}

@@ -10,12 +10,26 @@ jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
-    # check if the comments come from pull request, exclude those from issue
-    if: ${{ contains(github.event.comment.html_url, '/pull/') && contains(github.event.comment.body, '/publish') }}
+    if: ${{ github.event.issue.pull_request && contains(github.event.comment.body, '/publish') }}
     steps:
       - uses: actions/checkout@v3
 
       - uses: ./.github/actions/setup
+
+      - name: Print PR infomation
+        run: |
+          echo "PR number:" $PR_NUMBER
+          echo "comment body:" $COMMENT_BODY
+        env:
+          PR_NUMBER: ${{ github.event.issue.number }}
+          COMMENT_BODY: ${{ github.event.comment.body }}
+
+      - name: Checkout to PR
+        run: |
+          gh pr checkout $PR_NUMBER
+          pnpm install
+        env:
+          PR_NUMBER: ${{ github.event.issue.number }}
 
       - name: Add changeset
         run: cp config/snapshot-changeset.md .changeset/

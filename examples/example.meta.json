@@ -2,7 +2,7 @@
   "vue-lib": {
     "framework": "vue-lib",
     "dependencies": {
-      "prosekit": "^0.0.2"
+      "prosekit": "^0.0.3"
     },
     "devDependencies": {
       "@unocss/transformer-directives": "^0.53.4",

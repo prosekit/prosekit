@@ -51,7 +51,7 @@ importers:
   examples/vue-lib:
     dependencies:
       prosekit:
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../../packages/prosekit
     devDependencies:
       '@unocss/transformer-directives':
@@ -82,10 +82,10 @@ importers:
   packages/basic:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../extensions
     devDependencies:
       '@prosekit/dev':
@@ -104,7 +104,7 @@ importers:
   packages/core:
     dependencies:
       '@prosekit/pm':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../pm
       orderedmap:
         specifier: ^2.1.1
@@ -187,10 +187,10 @@ importers:
   packages/extensions:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../pm
       prosemirror-flat-list:
         specifier: ^0.3.15
@@ -218,13 +218,13 @@ importers:
         specifier: ^1.6.2
         version: 1.6.2
       '@prosekit/core':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../extensions
       '@prosekit/pm':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../pm
       lit:
         specifier: ^2.7.6
@@ -295,25 +295,25 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../basic
       '@prosekit/core':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../extensions
       '@prosekit/lit':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../lit
       '@prosekit/pm':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../pm
       '@prosekit/react':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../react
       '@prosekit/vue':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../vue
     devDependencies:
       '@prosekit/dev':
@@ -345,12 +345,12 @@ importers:
     dependencies:
       '@lit-labs/react':
         specifier: latest
-        version: 1.2.0
+        version: 1.2.1
       '@prosekit/core':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -381,10 +381,10 @@ importers:
   packages/vue:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -421,7 +421,7 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       prosekit:
-        specifier: ^0.0.1
+        specifier: ^0.0.2
         version: link:../packages/prosekit
       prosekit-example-vue-lib:
         specifier: '*'
@@ -1745,8 +1745,8 @@ packages:
       '@lezer/common': 1.0.3
     dev: true
 
-  /@lit-labs/react@1.2.0:
-    resolution: {integrity: sha512-AIfHLsy4Uk0MSxZTVLrtmdkGnAgCOoAvBCAvTdOXsqp60Vb4zZTUpc0C3CJQ6e8FjM6JL0avOFFBo3XcfARq2Q==}
+  /@lit-labs/react@1.2.1:
+    resolution: {integrity: sha512-DiZdJYFU0tBbdQkfwwRSwYyI/mcWkg3sWesKRsHUd4G+NekTmmeq9fzsurvcKTNVa0comNljwtg4Hvi1ds3V+A==}
     dev: false
 
   /@lit-labs/ssr-dom-shim@1.1.1:

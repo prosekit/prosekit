@@ -1,0 +1,91 @@
+{
+  "name": "@prosekit/lit",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/lit"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": true,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./elements/menu": "./src/elements/menu.ts",
+    "./elements/menu-item": "./src/elements/menu-item.ts",
+    "./elements/popover": "./src/elements/popover/index.ts",
+    "./elements/popover-suggestion": "./src/elements/popover-suggestion/index.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsup": "tsup",
+    "build:tsc": "tsc -b tsconfig.json"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.4.4",
+    "@lit/reactive-element": "^1.6.2",
+    "@prosekit/core": "^0.0.0",
+    "@prosekit/extensions": "^0.0.0",
+    "@prosekit/pm": "^0.0.0",
+    "lit": "^2.7.6",
+    "lit-element": "^3.3.2",
+    "lit-html": "^2.7.5"
+  },
+  "devDependencies": {
+    "@prosekit/dev": "workspace:*",
+    "minify-literals": "^1.0.6",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0",
+    "vue": "^3.3.4"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-lit.d.ts",
+        "import": "./dist/prosekit-lit.js",
+        "default": "./dist/prosekit-lit.js"
+      },
+      "./elements/menu": {
+        "types": "./dist/prosekit-lit-elements-menu.d.ts",
+        "import": "./dist/prosekit-lit-elements-menu.js",
+        "default": "./dist/prosekit-lit-elements-menu.js"
+      },
+      "./elements/menu-item": {
+        "types": "./dist/prosekit-lit-elements-menu-item.d.ts",
+        "import": "./dist/prosekit-lit-elements-menu-item.js",
+        "default": "./dist/prosekit-lit-elements-menu-item.js"
+      },
+      "./elements/popover": {
+        "types": "./dist/prosekit-lit-elements-popover.d.ts",
+        "import": "./dist/prosekit-lit-elements-popover.js",
+        "default": "./dist/prosekit-lit-elements-popover.js"
+      },
+      "./elements/popover-suggestion": {
+        "types": "./dist/prosekit-lit-elements-popover-suggestion.d.ts",
+        "import": "./dist/prosekit-lit-elements-popover-suggestion.js",
+        "default": "./dist/prosekit-lit-elements-popover-suggestion.js"
+      }
+    },
+    "main": "./dist/prosekit-lit.js",
+    "module": "./dist/prosekit-lit.js",
+    "types": "./dist/prosekit-lit.d.ts"
+  }
+}

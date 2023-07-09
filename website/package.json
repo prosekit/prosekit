@@ -1,0 +1,35 @@
+{
+  "name": "prosekit-website",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev",
+    "preview": "vitepress preview",
+    "build": "pnpm build:typedoc && pnpm build:cp && pnpm build:vitepress",
+    "build:vitepress": "vitepress build",
+    "build:cp": "cp ../packages/prosekit/README.md references/prosekit.md && cp ../packages/pm/README.md references/@prosekit/pm.md",
+    "build:typedoc": "typedoc"
+  },
+  "devDependencies": {
+    "@prosekit/dev": "workspace:*",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "clsx": "^1.2.1",
+    "prettier": "^3.0.0",
+    "prosekit": "^0.0.0",
+    "prosekit-example-vue-lib": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sandpack-vue3": "^3.1.5",
+    "type-fest": "^3.12.0",
+    "typedoc": "^0.24.8",
+    "typedoc-plugin-external-package-links": "^0.1.0",
+    "typedoc-plugin-markdown": "^4.0.0-next.17",
+    "typedoc-plugin-mdn-links": "^3.0.3",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.2",
+    "vitepress": "1.0.0-beta.5",
+    "vue": "^3.3.4"
+  }
+}

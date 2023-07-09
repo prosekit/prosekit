@@ -111,6 +111,37 @@
     },
     "main": "./dist/prosekit-extensions.js",
     "module": "./dist/prosekit-extensions.js",
-    "types": "./dist/prosekit-extensions.d.ts"
+    "types": "./dist/prosekit-extensions.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-extensions.d.ts"
+        ],
+        "blockquote": [
+          "./dist/prosekit-extensions-blockquote.d.ts"
+        ],
+        "bold": [
+          "./dist/prosekit-extensions-bold.d.ts"
+        ],
+        "code": [
+          "./dist/prosekit-extensions-code.d.ts"
+        ],
+        "heading": [
+          "./dist/prosekit-extensions-heading.d.ts"
+        ],
+        "italic": [
+          "./dist/prosekit-extensions-italic.d.ts"
+        ],
+        "list": [
+          "./dist/prosekit-extensions-list.d.ts"
+        ],
+        "placeholder": [
+          "./dist/prosekit-extensions-placeholder.d.ts"
+        ],
+        "suggestion": [
+          "./dist/prosekit-extensions-suggestion.d.ts"
+        ]
+      }
+    }
   }
 }

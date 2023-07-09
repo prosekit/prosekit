@@ -303,6 +303,115 @@
     },
     "main": "./dist/prosekit.js",
     "module": "./dist/prosekit.js",
-    "types": "./dist/prosekit.d.ts"
+    "types": "./dist/prosekit.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit.d.ts"
+        ],
+        "basic": [
+          "./dist/prosekit-basic.d.ts"
+        ],
+        "core": [
+          "./dist/prosekit-core.d.ts"
+        ],
+        "extensions": [
+          "./dist/prosekit-extensions.d.ts"
+        ],
+        "extensions/blockquote": [
+          "./dist/prosekit-extensions-blockquote.d.ts"
+        ],
+        "extensions/bold": [
+          "./dist/prosekit-extensions-bold.d.ts"
+        ],
+        "extensions/code": [
+          "./dist/prosekit-extensions-code.d.ts"
+        ],
+        "extensions/heading": [
+          "./dist/prosekit-extensions-heading.d.ts"
+        ],
+        "extensions/italic": [
+          "./dist/prosekit-extensions-italic.d.ts"
+        ],
+        "extensions/list": [
+          "./dist/prosekit-extensions-list.d.ts"
+        ],
+        "extensions/placeholder": [
+          "./dist/prosekit-extensions-placeholder.d.ts"
+        ],
+        "extensions/suggestion": [
+          "./dist/prosekit-extensions-suggestion.d.ts"
+        ],
+        "lit": [
+          "./dist/prosekit-lit.d.ts"
+        ],
+        "lit/elements/menu": [
+          "./dist/prosekit-lit-elements-menu.d.ts"
+        ],
+        "lit/elements/menu-item": [
+          "./dist/prosekit-lit-elements-menu-item.d.ts"
+        ],
+        "lit/elements/popover": [
+          "./dist/prosekit-lit-elements-popover.d.ts"
+        ],
+        "lit/elements/popover-suggestion": [
+          "./dist/prosekit-lit-elements-popover-suggestion.d.ts"
+        ],
+        "pm": [
+          "./dist/prosekit-pm.d.ts"
+        ],
+        "pm/commands": [
+          "./dist/prosekit-pm-commands.d.ts"
+        ],
+        "pm/inputrules": [
+          "./dist/prosekit-pm-inputrules.d.ts"
+        ],
+        "pm/keymap": [
+          "./dist/prosekit-pm-keymap.d.ts"
+        ],
+        "pm/model": [
+          "./dist/prosekit-pm-model.d.ts"
+        ],
+        "pm/state": [
+          "./dist/prosekit-pm-state.d.ts"
+        ],
+        "pm/transform": [
+          "./dist/prosekit-pm-transform.d.ts"
+        ],
+        "pm/view": [
+          "./dist/prosekit-pm-view.d.ts"
+        ],
+        "react": [
+          "./dist/prosekit-react.d.ts"
+        ],
+        "react/components/menu": [
+          "./dist/prosekit-react-components-menu.d.ts"
+        ],
+        "react/components/menu-item": [
+          "./dist/prosekit-react-components-menu-item.d.ts"
+        ],
+        "react/components/popover": [
+          "./dist/prosekit-react-components-popover.d.ts"
+        ],
+        "react/components/popover-suggestion": [
+          "./dist/prosekit-react-components-popover-suggestion.d.ts"
+        ],
+        "vue": [
+          "./dist/prosekit-vue.d.ts"
+        ],
+        "vue/components/menu": [
+          "./dist/prosekit-vue-components-menu.d.ts"
+        ],
+        "vue/components/menu-item": [
+          "./dist/prosekit-vue-components-menu-item.d.ts"
+        ],
+        "vue/components/popover": [
+          "./dist/prosekit-vue-components-popover.d.ts"
+        ],
+        "vue/components/popover-suggestion": [
+          "./dist/prosekit-vue-components-popover-suggestion.d.ts"
+        ]
+      }
+    }
   }
 }

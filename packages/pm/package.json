@@ -105,6 +105,34 @@
     },
     "main": "./dist/prosekit-pm.js",
     "module": "./dist/prosekit-pm.js",
-    "types": "./dist/prosekit-pm.d.ts"
+    "types": "./dist/prosekit-pm.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-pm.d.ts"
+        ],
+        "commands": [
+          "./dist/prosekit-pm-commands.d.ts"
+        ],
+        "inputrules": [
+          "./dist/prosekit-pm-inputrules.d.ts"
+        ],
+        "keymap": [
+          "./dist/prosekit-pm-keymap.d.ts"
+        ],
+        "model": [
+          "./dist/prosekit-pm-model.d.ts"
+        ],
+        "state": [
+          "./dist/prosekit-pm-state.d.ts"
+        ],
+        "transform": [
+          "./dist/prosekit-pm-transform.d.ts"
+        ],
+        "view": [
+          "./dist/prosekit-pm-view.d.ts"
+        ]
+      }
+    }
   }
 }

@@ -1,4 +1,5 @@
 {
   "dependencyDashboard": true,
+  "ignoreDeps": ["@prosekit/dev", "prosekit-example-vue-lib"],
   "extends": ["github>ocavue/config-renovate"]
 }

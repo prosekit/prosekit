@@ -1,0 +1,20 @@
+.my-slash-menu {
+  position: relative;
+  border: 1px solid red;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.my-slash-menu-item {
+  position: relative;
+  padding: 8px;
+  min-width: 64px;
+  background-color: #ffffff;
+  user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.my-slash-menu-item[data-focused] {
+  background-color: #d4d4d4;
+}

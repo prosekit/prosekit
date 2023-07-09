@@ -4,8 +4,6 @@ import { PackageJson } from 'type-fest'
 import { useData } from 'vitepress'
 import { defineComponent, h } from 'vue'
 
-import * as injection from './sandpack-injection.gen'
-
 import './sandpack-block.css'
 
 export interface SandpackBlockProps {
@@ -30,11 +28,9 @@ export const SandpackBlock = defineComponent<SandpackBlockProps>(
           h(Sandpack, {
             theme: isDark.value ? 'dark' : 'light',
             customSetup: {
-              dependencies: injection.dependencies,
               environment: 'node',
             },
             files: {
-              ...injection.files,
               ...patchFiles(props.files),
             },
             options: {
@@ -63,9 +59,7 @@ function patchPackageJson(packageJsonString: string): string {
   const packageJson = JSON.parse(packageJsonString) as PackageJson
 
   patchDependencyVersion(packageJson)
-  patchWorkspaceVersions(packageJson)
   removeDevDependencies(packageJson)
-  removeProseKit(packageJson)
 
   return JSON.stringify(packageJson, null, 2) + '\n'
 }
@@ -86,30 +80,8 @@ function patchDependencyVersion(packageJson: PackageJson) {
   }
 }
 
-function patchWorkspaceVersions(packageJson: PackageJson) {
-  for (const deps of [
-    packageJson.dependencies,
-    packageJson.devDependencies,
-    packageJson.peerDependencies,
-  ]) {
-    if (!deps) continue
-
-    for (const [packageName, version] of Object.entries(deps)) {
-      if (version === 'workspace:*') {
-        deps[packageName] = 'next'
-      }
-    }
-  }
-}
-
 function removeDevDependencies(packageJson: PackageJson) {
   if (packageJson.devDependencies) {
     delete packageJson.devDependencies
-  }
-}
-
-function removeProseKit(packageJson: PackageJson) {
-  if (packageJson.dependencies?.['prosekit']) {
-    delete packageJson.dependencies['prosekit']
   }
 }

@@ -10,6 +10,7 @@
     "@prosekit/react",
     "@prosekit/vue",
     "prosekit",
+    "prosekit-example-react",
     "prosekit-example-vue-lib",
     "prosekit-website"
   ],

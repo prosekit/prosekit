@@ -1,4 +1,81 @@
 {
+  "react": {
+    "framework": "react",
+    "dependencies": {
+      "@types/react": "^18.2.14",
+      "@types/react-dom": "^18.2.6",
+      "@vitejs/plugin-react": "^4.0.2",
+      "esbuild-wasm": "^0.18.11",
+      "prosekit": "0.0.3",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "typescript": "^5.1.6",
+      "vite": "^4.4.2"
+    },
+    "devDependencies": {
+      "@sindresorhus/slugify": "^2.2.1"
+    },
+    "sharedFiles": {
+      "app.tsx": {
+        "hidden": false
+      },
+      "index.html": {
+        "hidden": false
+      },
+      "main.tsx": {
+        "hidden": false
+      },
+      "package.json": {
+        "hidden": false
+      },
+      "style.css": {
+        "hidden": false
+      },
+      "tsconfig.json": {
+        "hidden": false
+      },
+      "vite.config.ts": {
+        "hidden": false
+      }
+    },
+    "stories": {
+      "minimal": {
+        "files": {
+          "app.tsx": {
+            "hidden": false
+          },
+          "extension.ts": {
+            "hidden": false
+          }
+        }
+      },
+      "slash-menu": {
+        "files": {
+          "app.tsx": {
+            "hidden": false
+          },
+          "extension.ts": {
+            "hidden": false
+          },
+          "slash-menu.css": {
+            "hidden": false
+          },
+          "slash-menu.tsx": {
+            "hidden": false
+          },
+          "toggle-italic-button.tsx": {
+            "hidden": false
+          },
+          "use-note-editor.ts": {
+            "hidden": false
+          },
+          "use-slash-menu.ts": {
+            "hidden": false
+          }
+        }
+      }
+    }
+  },
   "vue-lib": {
     "framework": "vue-lib",
     "dependencies": {

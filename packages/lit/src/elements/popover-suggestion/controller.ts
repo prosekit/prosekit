@@ -1,42 +1,62 @@
-import { Editor, ProseKitError, addBaseCommands } from '@prosekit/core'
+import { Editor, addBaseCommands } from '@prosekit/core'
 import { PredictionRule, addSuggestion } from '@prosekit/extensions/suggestion'
 import { ReactiveController, ReactiveControllerHost } from 'lit'
 
 import { PopoverSuggestionContext } from './context'
 
 export class PopoverSuggestionController implements ReactiveController {
-  private connected = false
   public reference: Element | null = null
-  private removeExtension: VoidFunction | null = null
+  private editor: Editor | null = null
+  private rules: PredictionRule[] = []
+  private onContext: ((context: PopoverSuggestionContext) => void) | null = null
+  private cleanup: VoidFunction | null = null
 
-  constructor(
-    private host: ReactiveControllerHost,
-    private editor: Editor,
-    private rules: PredictionRule[],
-    private onContext?: (context: PopoverSuggestionContext) => void,
-  ) {
-    if (!editor) {
-      throw new ProseKitError("Missing 'editor' property")
-    }
-    if (!rules) {
-      throw new ProseKitError("Missing 'rules' property")
-    }
-
+  constructor(private host: ReactiveControllerHost) {
     this.host.addController(this)
   }
 
-  hostUpdated(): void {
-    if (this.connected) return
-    this.connected = true
+  setEditor(editor: Editor) {
+    if (this.editor !== editor) {
+      this.editor = editor
+      this.host.requestUpdate()
+      this.addExtension()
+    }
+  }
+
+  setRules(rules: PredictionRule[]) {
+    if (
+      this.rules.length !== rules.length ||
+      this.rules.some((r, i) => r !== rules[i])
+    ) {
+      this.rules = rules
+      this.host.requestUpdate()
+      this.addExtension()
+    }
+  }
+
+  setOnContext(onContext: (context: PopoverSuggestionContext) => void) {
+    if (this.onContext !== onContext) {
+      this.onContext = onContext
+      this.host.requestUpdate()
+      this.addExtension()
+    }
+  }
+
+  hostDisconnected() {
+    this.cleanup?.()
+    this.cleanup = null
+  }
+
+  private addExtension() {
+    this.cleanup?.()
+    this.cleanup = null
+
+    if (!this.editor || !this.rules || this.rules.length === 0) {
+      return
+    }
 
     type BaseCommandsExtension = ReturnType<typeof addBaseCommands>
     const editor = this.editor as Editor<BaseCommandsExtension>
-    if (!editor) {
-      throw new ProseKitError("Missing 'editor' property")
-    }
-    if (!this.rules) {
-      throw new ProseKitError("Missing 'rules' property")
-    }
 
     const extension = addSuggestion({
       rules: this.rules,
@@ -71,13 +91,6 @@ export class PopoverSuggestionController implements ReactiveController {
       },
     })
 
-    this.removeExtension?.()
-    this.removeExtension = editor.use(extension)
-  }
-
-  hostDisconnected() {
-    this.connected = false
-    this.removeExtension?.()
-    this.removeExtension = null
+    this.cleanup = editor.use(extension)
   }
 }

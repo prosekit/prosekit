@@ -6,6 +6,6 @@
   "linked": [],
   "access": "public",
   "baseBranch": "master",
-  "updateInternalDependencies": "patch",
-  "ignore": []
+  "updateInternalDependencies": "minor",
+  "ignore": ["prosekit-example-vue-lib", "prosekit-website"]
 }

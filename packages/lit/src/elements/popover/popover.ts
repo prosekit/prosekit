@@ -43,7 +43,7 @@ export class Popover extends LitElement {
    * The element that the popover is anchored to. This can be either a DOM element or an object that implements the
    * virtual element interface from Floating UI.
    */
-  @property()
+  @property({ attribute: false })
   reference?: Element | VirtualElement
 
   /**
@@ -51,7 +51,7 @@ export class Popover extends LitElement {
    * configure the positioning of the popover element relative to its reference element. For more information on the
    * available options, please refer to the Floating UI documentation.
    */
-  @property()
+  @property({ attribute: false })
   options?: PopoverOptions
 
   /**

@@ -2,6 +2,12 @@
 
 # Examples
 
+## react
+
+- [minimal](./examples/react-minimal)
+
+- [slash-menu](./examples/react-slash-menu)
+
 ## vue-lib
 
 - [src](./examples/vue-lib-src)

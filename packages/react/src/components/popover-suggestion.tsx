@@ -1,27 +1,47 @@
 /**
- * @module @prosekit/react/components/popover-slash
+ * @module @prosekit/react/components/popover-suggestion
  */
 
 import { Editor } from '@prosekit/core'
+import '@prosekit/lit/elements/popover-suggestion'
 import type {
-  PredictionRule,
   PopoverSuggestionContext,
+  PopoverSuggestion as PopoverSuggestionElement,
+  PredictionRule,
 } from '@prosekit/lit/elements/popover-suggestion'
-import React, { FC, useState } from 'react'
+import React, {
+  ComponentType,
+  createElement,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react'
 
-import { PopoverSuggestion as PopoverSuggestionImpl } from './popover-suggestion.gen'
+export type { PopoverSuggestionContext, PredictionRule }
 
-export type { PredictionRule, PopoverSuggestionContext }
-
-export const PopoverSuggestion: FC<{
+export const PopoverSuggestion: ComponentType<{
   editor: Editor
   rules: PredictionRule[]
   render: (context: PopoverSuggestionContext) => React.ReactNode
 }> = ({ editor, rules, render }) => {
   const [context, setContext] = useState<PopoverSuggestionContext | null>(null)
-  return (
-    <PopoverSuggestionImpl editor={editor} rules={rules} onContext={setContext}>
-      {context ? render(context) : null}
-    </PopoverSuggestionImpl>
+
+  const ref = useRef<PopoverSuggestionElement | null>(null)
+
+  useLayoutEffect(() => {
+    const element = ref.current
+    if (!element) {
+      return
+    }
+
+    element.editor = editor
+    element.rules = rules
+    element.onContext = setContext
+  }, [editor, rules])
+
+  return createElement(
+    'prosekit-popover-suggestion',
+    { ref },
+    context ? render(context) : null,
   )
 }

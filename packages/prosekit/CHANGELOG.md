@@ -1,5 +1,19 @@
 # prosekit
 
+## 0.0.3
+
+### Patch Changes
+
+- b547d53: Add `typesVersions`.
+- Updated dependencies [b547d53]
+  - @prosekit/extensions@0.0.3
+  - @prosekit/basic@0.0.3
+  - @prosekit/react@0.0.3
+  - @prosekit/core@0.0.3
+  - @prosekit/lit@0.0.3
+  - @prosekit/vue@0.0.3
+  - @prosekit/pm@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes

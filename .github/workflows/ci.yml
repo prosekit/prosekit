@@ -22,3 +22,70 @@ jobs:
 
       - name: Lint
         run: nr lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup
+
+      - name: Typecheck
+        run: nr typecheck
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup
+
+      - name: Test
+        run: nr test:coverage
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup
+
+      - name: Build TypeScript declarations
+        run: nr typecheck
+
+      - name: Gen
+        run: nr gen
+
+      - name: Build packages
+        run: nr build:package --concurrency=1
+
+      - name: Build examples
+        run: nr build:example
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup
+
+      - name: Build
+        run: nr build:website
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: './website/dist'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy from GitHub Actions'
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+          enable-commit-status: false
+          overwrites-pull-request-comment: true
+          alias: ${{ github.head_ref }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WEBSITE_SITE_ID }}
+        timeout-minutes: 5

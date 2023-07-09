@@ -89,7 +89,7 @@ importers:
         version: link:../extensions
     devDependencies:
       '@prosekit/dev':
-        specifier: ^0.0.0
+        specifier: '*'
         version: link:../dev
       tsup:
         specifier: ^7.1.0
@@ -114,7 +114,7 @@ importers:
         version: 3.12.0
     devDependencies:
       '@prosekit/dev':
-        specifier: ^0.0.0
+        specifier: '*'
         version: link:../dev
       tsup:
         specifier: ^7.1.0
@@ -193,11 +193,11 @@ importers:
         specifier: ^0.0.1
         version: link:../pm
       prosemirror-flat-list:
-        specifier: ^0.3.14
-        version: 0.3.14
+        specifier: ^0.3.15
+        version: 0.3.15
     devDependencies:
       '@prosekit/dev':
-        specifier: ^0.0.0
+        specifier: '*'
         version: link:../dev
       tsup:
         specifier: ^7.1.0
@@ -237,7 +237,7 @@ importers:
         version: 2.7.5
     devDependencies:
       '@prosekit/dev':
-        specifier: ^0.0.0
+        specifier: '*'
         version: link:../dev
       minify-literals:
         specifier: ^1.0.6
@@ -280,7 +280,7 @@ importers:
         version: 1.31.5
     devDependencies:
       '@prosekit/dev':
-        specifier: ^0.0.0
+        specifier: '*'
         version: link:../dev
       tsup:
         specifier: ^7.1.0
@@ -317,7 +317,7 @@ importers:
         version: link:../vue
     devDependencies:
       '@prosekit/dev':
-        specifier: ^0.0.0
+        specifier: '*'
         version: link:../dev
       '@types/react':
         specifier: ^18.2.14
@@ -354,7 +354,7 @@ importers:
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
-        specifier: ^0.0.0
+        specifier: '*'
         version: link:../dev
       '@types/react':
         specifier: ^18.2.14
@@ -388,7 +388,7 @@ importers:
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
-        specifier: ^0.0.0
+        specifier: '*'
         version: link:../dev
       tsup:
         specifier: ^7.1.0
@@ -406,7 +406,7 @@ importers:
   website:
     devDependencies:
       '@prosekit/dev':
-        specifier: ^0.0.0
+        specifier: '*'
         version: link:../packages/dev
       '@types/react':
         specifier: ^18.2.14
@@ -424,7 +424,7 @@ importers:
         specifier: ^0.0.1
         version: link:../packages/prosekit
       prosekit-example-vue-lib:
-        specifier: ^0.0.0
+        specifier: '*'
         version: link:../examples/vue-lib
       react:
         specifier: ^18.2.0
@@ -5975,8 +5975,8 @@ packages:
       prosemirror-transform: 1.7.3
     dev: false
 
-  /prosemirror-flat-list@0.3.14:
-    resolution: {integrity: sha512-kAhC7dQUkcpRyPRzif0myx50yCm8zzgAnmhd9HIMYXdMZeOv6v8wH6qILNz5kplmbV/umZj5dtYsluEjLtOMeQ==}
+  /prosemirror-flat-list@0.3.15:
+    resolution: {integrity: sha512-5Gcfvqx84eNXfgLTI+GG6fIZmJSXZ78On3eXjCDn9IgzdHkpiHUYzXx+RFJLmhjqMHa2mekb8hEOfqtSqALB2Q==}
     dependencies:
       prosemirror-commands: 1.5.2
       prosemirror-inputrules: 1.2.1

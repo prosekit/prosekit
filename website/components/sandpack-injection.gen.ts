@@ -402,7 +402,7 @@ export const dependencies = {
   "prosemirror-view": "^1.31.5",
   "orderedmap": "^2.1.1",
   "type-fest": "^3.12.0",
-  "prosemirror-flat-list": "^0.3.14",
+  "prosemirror-flat-list": "^0.3.15",
   "@floating-ui/dom": "^1.4.4",
   "@lit/reactive-element": "^1.6.2",
   "lit": "^2.7.6",

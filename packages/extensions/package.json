@@ -47,10 +47,10 @@
   "dependencies": {
     "@prosekit/core": "^0.0.1",
     "@prosekit/pm": "^0.0.1",
-    "prosemirror-flat-list": "^0.3.14"
+    "prosemirror-flat-list": "^0.3.15"
   },
   "devDependencies": {
-    "@prosekit/dev": "^0.0.0",
+    "@prosekit/dev": "*",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0"

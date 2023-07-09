@@ -15,16 +15,17 @@
     "test:coverage": "vitest run --coverage.enabled --coverage.provider=istanbul",
     "typecheck": "tsc --build tsconfig.json",
     "lint": "eslint .",
-    "fix": "eslint . --fix && prettier --write .",
+    "fix": "manypkg fix && eslint . --fix && prettier --write .",
     "change": "changeset",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile && pnpm run build",
     "ci:version:next": "changeset version --snapshot next && pnpm install --no-frozen-lockfile && pnpm run build",
     "ci:publish": "pnpm publish --access public -r --no-git-checks --tag latest",
     "ci:publish:next": "pnpm publish --access public -r --no-git-checks --tag next"
   },
-  "devDependencies": {
+  "dependencies": {
     "@antfu/ni": "^0.21.4",
     "@changesets/cli": "^2.26.2",
+    "@manypkg/cli": "^0.21.0",
     "@ocavue/eslint-config": "^1.2.1",
     "@vitest/coverage-c8": "^0.33.0",
     "@vitest/coverage-istanbul": "^0.33.0",

@@ -40,7 +40,7 @@
     "@prosekit/extensions": "^0.0.0"
   },
   "devDependencies": {
-    "@prosekit/dev": "workspace:*",
+    "@prosekit/dev": "^0.0.0",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0"

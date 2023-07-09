@@ -1,0 +1,110 @@
+{
+  "name": "@prosekit/pm",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/pm"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./commands": "./src/commands.ts",
+    "./inputrules": "./src/inputrules.ts",
+    "./keymap": "./src/keymap.ts",
+    "./model": "./src/model.ts",
+    "./state": "./src/state.ts",
+    "./transform": "./src/transform.ts",
+    "./view": "./src/view.ts",
+    "./view/style/prosemirror.css": "./src/view/style/prosemirror.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsup": "tsup",
+    "build:tsc": "tsc -b tsconfig.json"
+  },
+  "dependencies": {
+    "prosemirror-commands": "^1.5.2",
+    "prosemirror-inputrules": "^1.2.1",
+    "prosemirror-keymap": "^1.2.2",
+    "prosemirror-model": "^1.19.2",
+    "prosemirror-state": "^1.4.3",
+    "prosemirror-transform": "^1.7.3",
+    "prosemirror-view": "^1.31.5"
+  },
+  "devDependencies": {
+    "@prosekit/dev": "workspace:*",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-pm.d.ts",
+        "import": "./dist/prosekit-pm.js",
+        "default": "./dist/prosekit-pm.js"
+      },
+      "./commands": {
+        "types": "./dist/prosekit-pm-commands.d.ts",
+        "import": "./dist/prosekit-pm-commands.js",
+        "default": "./dist/prosekit-pm-commands.js"
+      },
+      "./inputrules": {
+        "types": "./dist/prosekit-pm-inputrules.d.ts",
+        "import": "./dist/prosekit-pm-inputrules.js",
+        "default": "./dist/prosekit-pm-inputrules.js"
+      },
+      "./keymap": {
+        "types": "./dist/prosekit-pm-keymap.d.ts",
+        "import": "./dist/prosekit-pm-keymap.js",
+        "default": "./dist/prosekit-pm-keymap.js"
+      },
+      "./model": {
+        "types": "./dist/prosekit-pm-model.d.ts",
+        "import": "./dist/prosekit-pm-model.js",
+        "default": "./dist/prosekit-pm-model.js"
+      },
+      "./state": {
+        "types": "./dist/prosekit-pm-state.d.ts",
+        "import": "./dist/prosekit-pm-state.js",
+        "default": "./dist/prosekit-pm-state.js"
+      },
+      "./transform": {
+        "types": "./dist/prosekit-pm-transform.d.ts",
+        "import": "./dist/prosekit-pm-transform.js",
+        "default": "./dist/prosekit-pm-transform.js"
+      },
+      "./view": {
+        "types": "./dist/prosekit-pm-view.d.ts",
+        "import": "./dist/prosekit-pm-view.js",
+        "default": "./dist/prosekit-pm-view.js"
+      },
+      "./view/style/prosemirror.css": {
+        "default": "./dist/view/style/prosemirror.css"
+      }
+    },
+    "main": "./dist/prosekit-pm.js",
+    "module": "./dist/prosekit-pm.js",
+    "types": "./dist/prosekit-pm.d.ts"
+  }
+}

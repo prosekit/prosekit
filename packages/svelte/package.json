@@ -1,0 +1,84 @@
+{
+  "name": "@prosekit/svelte",
+  "type": "module",
+  "version": "0.0.1",
+  "private": false,
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/svelte"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/button": "./src/components/button.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:svelte": "svelte-check && svelte-package -i src -o dist"
+  },
+  "dependencies": {
+    "@prosekit/core": "^0.0.3",
+    "@prosekit/lit": "^0.0.4"
+  },
+  "peerDependencies": {
+    "svelte": ">= 3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "svelte": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@prosekit/dev": "*",
+    "@sveltejs/package": "^2.2.0",
+    "svelte": "^4.0.5",
+    "svelte-check": "^3.4.5",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-svelte.d.ts",
+        "import": "./dist/prosekit-svelte.js",
+        "default": "./dist/prosekit-svelte.js"
+      },
+      "./components/button": {
+        "types": "./dist/prosekit-svelte-components-button.d.ts",
+        "import": "./dist/prosekit-svelte-components-button.js",
+        "default": "./dist/prosekit-svelte-components-button.js"
+      }
+    },
+    "main": "./dist/prosekit-svelte.js",
+    "module": "./dist/prosekit-svelte.js",
+    "types": "./dist/prosekit-svelte.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-svelte.d.ts"
+        ],
+        "components/button": [
+          "./dist/prosekit-svelte-components-button.d.ts"
+        ]
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { Editor, Extension } from '@prosekit/core'
+import { Editor, type Extension } from '@prosekit/core'
 
 import { injectEditor } from '../injection/editor-injection'
 

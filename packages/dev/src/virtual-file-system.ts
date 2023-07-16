@@ -3,7 +3,7 @@
 import fs from 'node:fs/promises'
 import path, { normalize } from 'node:path'
 
-import { Package, getPackages } from '@manypkg/get-packages'
+import { type Package, getPackages } from '@manypkg/get-packages'
 import { sortBy } from 'lodash-es'
 
 import { findRootDir } from './find-root-dir.js'

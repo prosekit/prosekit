@@ -1,4 +1,4 @@
-import { Extension } from '../types/extension'
+import type { Extension } from '../types/extension'
 
 /** @public */
 export interface FacetOptions<Input, Output> {

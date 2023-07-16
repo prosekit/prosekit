@@ -1,10 +1,10 @@
 import { Schema } from '@prosekit/pm/model'
-import { EditorStateConfig, Plugin } from '@prosekit/pm/state'
+import { type EditorStateConfig, Plugin } from '@prosekit/pm/state'
 
 import { Facet } from '../editor/facet'
 import { stateSlot } from '../editor/slot'
-import { StateConfigCallback } from '../types/editor'
-import { Extension } from '../types/extension'
+import { type StateConfigCallback } from '../types/editor'
+import { type Extension } from '../types/extension'
 
 /** @public */
 export interface PluginOptions {

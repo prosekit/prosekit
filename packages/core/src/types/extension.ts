@@ -1,14 +1,13 @@
-import { SimplifyUnion } from '..'
-
-import { ToCommandCreators, ToCommandDispatcher } from './command'
-import { ExceptEmptyValue } from './except-empty-value'
-import {
+import type { ToCommandCreators, ToCommandDispatcher } from './command'
+import type { ExceptEmptyValue } from './except-empty-value'
+import type {
   ExtensionTyping,
   ExtractCommandArgsFromTyping,
   ExtractMarksFromTyping,
   ExtractNodesFromTyping,
 } from './extension-typing'
 import { Priority } from './priority'
+import type { SimplifyUnion } from './simplify-union'
 
 /**
  * @public

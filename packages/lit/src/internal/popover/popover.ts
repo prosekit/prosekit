@@ -1,18 +1,23 @@
 import {
-  AutoUpdateOptions,
-  ComputePositionReturn,
-  VirtualElement,
+  type AutoUpdateOptions,
+  type ComputePositionReturn,
+  type VirtualElement,
   autoUpdate,
   computePosition,
 } from '@floating-ui/dom'
-import { CSSResultGroup, LitElement, PropertyValueMap, html } from 'lit'
+import {
+  type CSSResultGroup,
+  LitElement,
+  type PropertyValueMap,
+  html,
+} from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 import { styleMap } from 'lit/directives/style-map.js'
 
 import { blockComponentStyles } from '../../styles/block-component.styles'
 import { roundByDPR } from '../../utils/round-by-dpr'
 
-import { PopoverOptions } from './options'
+import { type PopoverOptions } from './options'
 
 export interface PopoverProps {
   active: boolean

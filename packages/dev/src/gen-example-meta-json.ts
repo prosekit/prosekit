@@ -1,9 +1,13 @@
 import path from 'node:path'
 
-import { Package } from '@manypkg/get-packages'
+import { type Package } from '@manypkg/get-packages'
 import { uniq } from 'lodash-es'
 
-import { ExampleMeta, readExampleMeta, writeExampleMeta } from './example-meta'
+import {
+  type ExampleMeta,
+  readExampleMeta,
+  writeExampleMeta,
+} from './example-meta'
 import { skipGen } from './skip-gen'
 import { vfs } from './virtual-file-system'
 

@@ -1,10 +1,10 @@
-import { Attrs, NodeType, ProseMirrorNode } from '@prosekit/pm/model'
+import { type Attrs, NodeType, ProseMirrorNode } from '@prosekit/pm/model'
 import { AllSelection, Selection } from '@prosekit/pm/state'
 import { findWrapping, insertPoint } from '@prosekit/pm/transform'
 
 import { commandSlot } from '../editor/slot'
-import { CommandCreator } from '../types/command'
-import { Extension } from '../types/extension'
+import { type CommandCreator } from '../types/command'
+import { type Extension } from '../types/extension'
 
 export function addCommands<
   T extends Record<string, CommandCreator> = Record<string, CommandCreator>,

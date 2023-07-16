@@ -1,4 +1,4 @@
-import { Keymap, addKeymap } from '@prosekit/core'
+import { type Keymap, addKeymap } from '@prosekit/core'
 import { computed } from 'vue'
 
 import { useExtension } from './use-extension'

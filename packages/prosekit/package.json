@@ -61,6 +61,8 @@
     "./react/components/command-item": "./src/react/components/command-item.gen.ts",
     "./react/components/command-list": "./src/react/components/command-list.gen.ts",
     "./react/components/command-popover": "./src/react/components/command-popover.gen.ts",
+    "./svelte": "./src/svelte.gen.ts",
+    "./svelte/components/button": "./src/svelte/components/button.gen.ts",
     "./vue": "./src/vue.gen.ts",
     "./vue/components/command-empty": "./src/vue/components/command-empty.gen.ts",
     "./vue/components/command-item": "./src/vue/components/command-item.gen.ts",
@@ -81,11 +83,13 @@
     "@prosekit/lit": "0.0.4",
     "@prosekit/pm": "0.0.3",
     "@prosekit/react": "0.0.4",
+    "@prosekit/svelte": "0.0.1",
     "@prosekit/vue": "0.0.4"
   },
   "peerDependencies": {
     "react": ">= 17.0.0",
     "react-dom": ">= 17.0.0",
+    "svelte": ">= 3.0.0",
     "vue": ">= 3.0.0"
   },
   "peerDependenciesMeta": {
@@ -93,6 +97,9 @@
       "optional": true
     },
     "react-dom": {
+      "optional": true
+    },
+    "svelte": {
       "optional": true
     },
     "vue": {
@@ -105,6 +112,7 @@
     "@types/react-dom": "^18.2.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "svelte": "^4.0.5",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6",
     "vue": "^3.3.4"
@@ -279,6 +287,16 @@
         "import": "./dist/prosekit-react-components-command-popover.js",
         "default": "./dist/prosekit-react-components-command-popover.js"
       },
+      "./svelte": {
+        "types": "./dist/prosekit-svelte.d.ts",
+        "import": "./dist/prosekit-svelte.js",
+        "default": "./dist/prosekit-svelte.js"
+      },
+      "./svelte/components/button": {
+        "types": "./dist/prosekit-svelte-components-button.d.ts",
+        "import": "./dist/prosekit-svelte-components-button.js",
+        "default": "./dist/prosekit-svelte-components-button.js"
+      },
       "./vue": {
         "types": "./dist/prosekit-vue.d.ts",
         "import": "./dist/prosekit-vue.js",
@@ -399,6 +417,12 @@
         ],
         "react/components/command-popover": [
           "./dist/prosekit-react-components-command-popover.d.ts"
+        ],
+        "svelte": [
+          "./dist/prosekit-svelte.d.ts"
+        ],
+        "svelte/components/button": [
+          "./dist/prosekit-svelte-components-button.d.ts"
         ],
         "vue": [
           "./dist/prosekit-vue.d.ts"

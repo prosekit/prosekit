@@ -1,4 +1,4 @@
-import { SimplifyExtension, Extension } from '../types/extension'
+import type { SimplifyExtension, Extension } from '../types/extension'
 
 export function defineExtension<E extends Extension | Extension[]>(
   extension: E,

@@ -1,7 +1,7 @@
 import { createComponent } from '@lit-labs/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { CommandList as CommandListElement, type CommandListProps as CommandListElementProps } from '@prosekit/lit/components/command-list'
-import React, { ComponentType } from 'react'
+import React, { type ComponentType } from 'react'
 
 export type CommandListProps = SimplifyUnion<{
   className?: string,

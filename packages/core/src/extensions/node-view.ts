@@ -1,9 +1,9 @@
 import { Plugin } from '@prosekit/pm/state'
-import { NodeViewConstructor } from '@prosekit/pm/view'
+import { type NodeViewConstructor } from '@prosekit/pm/view'
 
-import { Extension, Facet } from '..'
+import { type Extension, Facet } from '..'
 
-import { PluginFacetInput, pluginFacet } from './plugin'
+import { type PluginFacetInput, pluginFacet } from './plugin'
 
 export interface NodeViewOptions {
   name: string

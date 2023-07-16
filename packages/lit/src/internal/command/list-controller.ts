@@ -1,5 +1,5 @@
-import { Editor, Keymap, addKeymap } from '@prosekit/core'
-import { ReactiveController, ReactiveControllerHost } from 'lit'
+import { Editor, type Keymap, addKeymap } from '@prosekit/core'
+import { type ReactiveController, type ReactiveControllerHost } from 'lit'
 
 export class CommandListController implements ReactiveController {
   private editor: Editor | null = null

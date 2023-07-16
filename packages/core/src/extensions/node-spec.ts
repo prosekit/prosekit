@@ -1,8 +1,8 @@
-import { NodeSpec, SchemaSpec } from '@prosekit/pm/model'
+import type { NodeSpec, SchemaSpec } from '@prosekit/pm/model'
 
 import { Facet } from '../editor/facet'
 import { schemaSlot } from '../editor/slot'
-import { Extension } from '../types/extension'
+import type { Extension } from '../types/extension'
 
 /**
  * @public

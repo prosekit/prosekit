@@ -1,4 +1,4 @@
-import { Package } from '@manypkg/get-packages'
+import { type Package } from '@manypkg/get-packages'
 
 import { kebabToPascal } from './kebab-to-pascal'
 import { vfs } from './virtual-file-system'
@@ -41,7 +41,7 @@ function formatReactCode(kebab: string) {
 import { createComponent } from '@lit-labs/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { ${pascal} as ${pascal}Element, type ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/components/${kebab}'
-import React, { ComponentType } from 'react'
+import React, { type ComponentType } from 'react'
 
 export type ${pascal}Props = SimplifyUnion<{
   className?: string,

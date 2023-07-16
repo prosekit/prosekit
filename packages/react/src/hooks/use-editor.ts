@@ -1,4 +1,4 @@
-import { Editor, Extension, ProseKitError } from '@prosekit/core'
+import { Editor, type Extension, ProseKitError } from '@prosekit/core'
 import { useContext } from 'react'
 
 import { editorContext } from '../contexts/editor-context'

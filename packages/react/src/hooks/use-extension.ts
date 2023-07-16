@@ -1,4 +1,4 @@
-import { Extension } from '@prosekit/core'
+import { type Extension } from '@prosekit/core'
 import { useEffect } from 'react'
 
 import { useEditor } from './use-editor'

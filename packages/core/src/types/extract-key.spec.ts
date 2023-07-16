@@ -1,7 +1,7 @@
 import { test } from 'vitest'
 
 import { assertTypeEqual } from './assert-type-equal'
-import { ExtractKey } from './extract-key'
+import { type ExtractKey } from './extract-key'
 
 test('ExtractKey', () => {
   type T1 =

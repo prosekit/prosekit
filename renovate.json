@@ -8,9 +8,11 @@
     "@prosekit/lit",
     "@prosekit/pm",
     "@prosekit/react",
+    "@prosekit/svelte",
     "@prosekit/vue",
     "prosekit",
     "prosekit-example-react",
+    "prosekit-example-svelte",
     "prosekit-example-vue",
     "prosekit-example-vue-lib",
     "prosekit-website"

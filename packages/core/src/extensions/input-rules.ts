@@ -3,9 +3,9 @@ import { Schema } from '@prosekit/pm/model'
 import { Plugin } from '@prosekit/pm/state'
 
 import { Facet } from '../editor/facet'
-import { Extension } from '../types/extension'
+import { type Extension } from '../types/extension'
 
-import { PluginFacetInput, pluginFacet } from './plugin'
+import { type PluginFacetInput, pluginFacet } from './plugin'
 
 /** @public */
 export function addInputRule(

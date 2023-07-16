@@ -110,6 +110,23 @@ export const docsItems = [
     "link": "/references/prosekit_react"
   },
   {
+    "text": "svelte",
+    "items": [
+      {
+        "text": "components",
+        "items": [
+          {
+            "text": "button",
+            "link": "/references/prosekit_svelte_components_button"
+          }
+        ],
+        "collapsed": true
+      }
+    ],
+    "collapsed": false,
+    "link": "/references/prosekit_svelte"
+  },
+  {
     "text": "vue",
     "items": [
       {

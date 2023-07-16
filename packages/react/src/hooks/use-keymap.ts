@@ -1,4 +1,4 @@
-import { Keymap, addKeymap } from '@prosekit/core'
+import { type Keymap, addKeymap } from '@prosekit/core'
 import { useMemo } from 'react'
 
 import { useExtension } from './use-extension'

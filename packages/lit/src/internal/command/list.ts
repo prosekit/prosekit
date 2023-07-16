@@ -1,13 +1,13 @@
 import { consume, provide } from '@lit-labs/context'
 import { Editor } from '@prosekit/core'
-import { CSSResultGroup, html, LitElement, PropertyValues } from 'lit'
+import { type CSSResultGroup, html, LitElement, type PropertyValues } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 
 import { blockComponentStyles } from '../../styles/block-component.styles'
 import { commandScore } from '../command-score'
 
 import { CommandItem } from './item'
-import { CommandListContext, commandListContext } from './list-context'
+import { type CommandListContext, commandListContext } from './list-context'
 import { CommandListController } from './list-controller'
 import {
   commandPopoverContext,

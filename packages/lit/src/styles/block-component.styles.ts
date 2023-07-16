@@ -8,4 +8,8 @@ export const blockComponentStyles = css`
   :host {
     display: block;
   }
+
+  :host([hidden]) {
+    display: none;
+  }
 `

@@ -2,10 +2,10 @@
   "$schema": "https://typedoc.org/schema.json",
   "extends": ["../../config/typedoc-base.json"],
   "entryPoints": [
-    "./src/elements/menu-item.ts",
-    "./src/elements/menu.ts",
-    "./src/elements/popover-suggestion/index.ts",
-    "./src/elements/popover/index.ts",
+    "./src/components/command-empty.ts",
+    "./src/components/command-item.ts",
+    "./src/components/command-list.ts",
+    "./src/components/command-popover.ts",
     "./src/index.ts"
   ]
 }

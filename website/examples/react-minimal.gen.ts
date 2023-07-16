@@ -5,7 +5,7 @@
 import { defineComponent, h } from 'vue'
 import { SandpackBlock } from '../components/sandpack-block'
 
-import file1054183435 from '../../examples/react/src/minimal/app.tsx?raw'
+import file4161612779 from '../../examples/react/src/minimal/App.tsx?raw'
 import file2188561667 from '../../examples/react/src/minimal/extension.ts?raw'
 import file1888011935 from '../../examples/react/index.html?raw'
 import file2074678456 from '../../examples/react/main.tsx?raw'
@@ -15,7 +15,7 @@ import file1218816309 from '../../examples/react/tsconfig.json?raw'
 import file1318383673 from '../../examples/react/vite.config.ts?raw'
 
 const files = {
-  '/app.tsx': { hidden: false, code: file1054183435 },
+  '/App.tsx': { hidden: false, code: file4161612779 },
   '/extension.ts': { hidden: false, code: file2188561667 },
   '/index.html': { hidden: false, code: file1888011935 },
   '/main.tsx': { hidden: false, code: file2074678456 },

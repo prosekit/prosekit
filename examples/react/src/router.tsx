@@ -6,7 +6,7 @@ import { stories } from './stories'
 const routes = stories.map(([name, factory]) => ({
   name,
   path: slugify(name),
-  Component: lazy(async () => ({ default: (await factory()).App })),
+  Component: lazy(factory),
 }))
 
 function usePath() {

@@ -26,10 +26,10 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./components/menu": "./src/components/menu.gen.ts",
-    "./components/menu-item": "./src/components/menu-item.gen.ts",
-    "./components/popover": "./src/components/popover.gen.ts",
-    "./components/popover-suggestion": "./src/components/popover-suggestion.ts"
+    "./components/command-empty": "./src/components/command-empty.ts",
+    "./components/command-item": "./src/components/command-item.ts",
+    "./components/command-list": "./src/components/command-list.ts",
+    "./components/command-popover": "./src/components/command-popover.ts"
   },
   "files": [
     "dist"
@@ -64,25 +64,25 @@
         "import": "./dist/prosekit-vue.js",
         "default": "./dist/prosekit-vue.js"
       },
-      "./components/menu": {
-        "types": "./dist/prosekit-vue-components-menu.d.ts",
-        "import": "./dist/prosekit-vue-components-menu.js",
-        "default": "./dist/prosekit-vue-components-menu.js"
+      "./components/command-empty": {
+        "types": "./dist/prosekit-vue-components-command-empty.d.ts",
+        "import": "./dist/prosekit-vue-components-command-empty.js",
+        "default": "./dist/prosekit-vue-components-command-empty.js"
       },
-      "./components/menu-item": {
-        "types": "./dist/prosekit-vue-components-menu-item.d.ts",
-        "import": "./dist/prosekit-vue-components-menu-item.js",
-        "default": "./dist/prosekit-vue-components-menu-item.js"
+      "./components/command-item": {
+        "types": "./dist/prosekit-vue-components-command-item.d.ts",
+        "import": "./dist/prosekit-vue-components-command-item.js",
+        "default": "./dist/prosekit-vue-components-command-item.js"
       },
-      "./components/popover": {
-        "types": "./dist/prosekit-vue-components-popover.d.ts",
-        "import": "./dist/prosekit-vue-components-popover.js",
-        "default": "./dist/prosekit-vue-components-popover.js"
+      "./components/command-list": {
+        "types": "./dist/prosekit-vue-components-command-list.d.ts",
+        "import": "./dist/prosekit-vue-components-command-list.js",
+        "default": "./dist/prosekit-vue-components-command-list.js"
       },
-      "./components/popover-suggestion": {
-        "types": "./dist/prosekit-vue-components-popover-suggestion.d.ts",
-        "import": "./dist/prosekit-vue-components-popover-suggestion.js",
-        "default": "./dist/prosekit-vue-components-popover-suggestion.js"
+      "./components/command-popover": {
+        "types": "./dist/prosekit-vue-components-command-popover.d.ts",
+        "import": "./dist/prosekit-vue-components-command-popover.js",
+        "default": "./dist/prosekit-vue-components-command-popover.js"
       }
     },
     "main": "./dist/prosekit-vue.js",
@@ -93,17 +93,17 @@
         ".": [
           "./dist/prosekit-vue.d.ts"
         ],
-        "components/menu": [
-          "./dist/prosekit-vue-components-menu.d.ts"
+        "components/command-empty": [
+          "./dist/prosekit-vue-components-command-empty.d.ts"
         ],
-        "components/menu-item": [
-          "./dist/prosekit-vue-components-menu-item.d.ts"
+        "components/command-item": [
+          "./dist/prosekit-vue-components-command-item.d.ts"
         ],
-        "components/popover": [
-          "./dist/prosekit-vue-components-popover.d.ts"
+        "components/command-list": [
+          "./dist/prosekit-vue-components-command-list.d.ts"
         ],
-        "components/popover-suggestion": [
-          "./dist/prosekit-vue-components-popover-suggestion.d.ts"
+        "components/command-popover": [
+          "./dist/prosekit-vue-components-command-popover.d.ts"
         ]
       }
     }

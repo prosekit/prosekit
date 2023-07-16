@@ -1,30 +1,53 @@
 <script setup lang="ts">
-import {
-  PopoverSuggestion,
-  PredictionRule,
-} from 'prosekit/vue/components/popover-suggestion'
-import { useSlashMenu } from './use-slash-menu'
-import { Menu } from 'prosekit/vue/components/menu'
-import { MenuItem } from 'prosekit/vue/components/menu-item'
+import { CommandEmpty } from 'prosekit/vue/components/command-empty'
+import { CommandItem } from 'prosekit/vue/components/command-item'
+import { CommandList } from 'prosekit/vue/components/command-list'
+import { CommandPopover } from 'prosekit/vue/components/command-popover'
+import { useNoteEditor } from './use-note-editor'
 
-const { editor, getItems } = useSlashMenu()
+const editor = useNoteEditor()
 
-const rules: PredictionRule[] = [
-  {
-    match: /\/.*$/iu,
-    matchAfter: /^\S*/,
-  },
-]
+const handleHeadingInsert = (level: number) => {
+  const node = editor.schema.nodes.heading.create({ level })
+  editor.commands.insertNode({ node })
+}
+
+const handleHeadingConvert = (level: number) => {
+  const nodeType = editor.schema.nodes.heading
+  const attrs = { level }
+  editor.commands.setBlockType({ nodeType, attrs })
+}
 </script>
 
 <template>
-  <PopoverSuggestion :editor="editor" :rules="rules" v-slot="contextA">
-    <Menu v-if="contextA?.active" .editor="editor" className="my-slash-menu">
-      <template v-for="item in getItems(contextA)" :key="item.id">
-        <MenuItem .onSelect="item.callback" className="my-slash-menu-item">
-          {{ item.text }}
-        </MenuItem>
-      </template>
-    </Menu>
-  </PopoverSuggestion>
+  <CommandPopover :editor="editor" :regex="/\/.*$/iu" :regexAfter="/^\S*/">
+    <CommandList :editor="editor" class="my-slash-menu">
+      <CommandEmpty class="my-slash-menu-item">No Command match</CommandEmpty>
+
+      <CommandItem
+        class="my-slash-menu-item"
+        :onSelect="() => handleHeadingInsert(1)"
+      >
+        handleHeadingInsert(1)} > Insert Heading 1
+      </CommandItem>
+      <CommandItem
+        class="my-slash-menu-item"
+        :onSelect="() => handleHeadingInsert(2)"
+      >
+        handleHeadingInsert(2)} > Insert Heading 2
+      </CommandItem>
+      <CommandItem
+        class="my-slash-menu-item"
+        :onSelect="() => handleHeadingConvert(1)"
+      >
+        handleHeadingConvert(1)} > Turn into Heading 1
+      </CommandItem>
+      <CommandItem
+        class="my-slash-menu-item"
+        :onSelect="() => handleHeadingConvert(2)"
+      >
+        handleHeadingConvert(2)} > Turn into Heading 2
+      </CommandItem>
+    </CommandList>
+  </CommandPopover>
 </template>

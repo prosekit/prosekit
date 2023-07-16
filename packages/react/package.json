@@ -26,10 +26,10 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./components/menu": "./src/components/menu.tsx",
-    "./components/menu-item": "./src/components/menu-item.gen.ts",
-    "./components/popover": "./src/components/popover.gen.ts",
-    "./components/popover-suggestion": "./src/components/popover-suggestion.tsx"
+    "./components/command-empty": "./src/components/command-empty.tsx",
+    "./components/command-item": "./src/components/command-item.tsx",
+    "./components/command-list": "./src/components/command-list.tsx",
+    "./components/command-popover": "./src/components/command-popover.tsx"
   },
   "files": [
     "dist"
@@ -72,25 +72,25 @@
         "import": "./dist/prosekit-react.js",
         "default": "./dist/prosekit-react.js"
       },
-      "./components/menu": {
-        "types": "./dist/prosekit-react-components-menu.d.ts",
-        "import": "./dist/prosekit-react-components-menu.js",
-        "default": "./dist/prosekit-react-components-menu.js"
+      "./components/command-empty": {
+        "types": "./dist/prosekit-react-components-command-empty.d.ts",
+        "import": "./dist/prosekit-react-components-command-empty.js",
+        "default": "./dist/prosekit-react-components-command-empty.js"
       },
-      "./components/menu-item": {
-        "types": "./dist/prosekit-react-components-menu-item.d.ts",
-        "import": "./dist/prosekit-react-components-menu-item.js",
-        "default": "./dist/prosekit-react-components-menu-item.js"
+      "./components/command-item": {
+        "types": "./dist/prosekit-react-components-command-item.d.ts",
+        "import": "./dist/prosekit-react-components-command-item.js",
+        "default": "./dist/prosekit-react-components-command-item.js"
       },
-      "./components/popover": {
-        "types": "./dist/prosekit-react-components-popover.d.ts",
-        "import": "./dist/prosekit-react-components-popover.js",
-        "default": "./dist/prosekit-react-components-popover.js"
+      "./components/command-list": {
+        "types": "./dist/prosekit-react-components-command-list.d.ts",
+        "import": "./dist/prosekit-react-components-command-list.js",
+        "default": "./dist/prosekit-react-components-command-list.js"
       },
-      "./components/popover-suggestion": {
-        "types": "./dist/prosekit-react-components-popover-suggestion.d.ts",
-        "import": "./dist/prosekit-react-components-popover-suggestion.js",
-        "default": "./dist/prosekit-react-components-popover-suggestion.js"
+      "./components/command-popover": {
+        "types": "./dist/prosekit-react-components-command-popover.d.ts",
+        "import": "./dist/prosekit-react-components-command-popover.js",
+        "default": "./dist/prosekit-react-components-command-popover.js"
       }
     },
     "main": "./dist/prosekit-react.js",
@@ -101,17 +101,17 @@
         ".": [
           "./dist/prosekit-react.d.ts"
         ],
-        "components/menu": [
-          "./dist/prosekit-react-components-menu.d.ts"
+        "components/command-empty": [
+          "./dist/prosekit-react-components-command-empty.d.ts"
         ],
-        "components/menu-item": [
-          "./dist/prosekit-react-components-menu-item.d.ts"
+        "components/command-item": [
+          "./dist/prosekit-react-components-command-item.d.ts"
         ],
-        "components/popover": [
-          "./dist/prosekit-react-components-popover.d.ts"
+        "components/command-list": [
+          "./dist/prosekit-react-components-command-list.d.ts"
         ],
-        "components/popover-suggestion": [
-          "./dist/prosekit-react-components-popover-suggestion.d.ts"
+        "components/command-popover": [
+          "./dist/prosekit-react-components-command-popover.d.ts"
         ]
       }
     }

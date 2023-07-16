@@ -1,4 +1,4 @@
 export const stories = [
-  ['Slash Menu', () => import('./slash-menu/app')],
-  ['Minimal', () => import('./minimal/app')],
+  ['Slash Menu', () => import('./slash-menu/App')],
+  ['Minimal', () => import('./minimal/App')],
 ] as const

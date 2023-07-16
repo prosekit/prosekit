@@ -21,7 +21,7 @@ async function writeReactComponents(pkg: Package, componentNames: string[]) {
   for (const kebab of componentNames) {
     exports[`./components/${kebab}`] = ''
     const code = formatReactCode(kebab)
-    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
+    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.tsx`, code)
   }
 }
 
@@ -38,20 +38,26 @@ function formatReactCode(kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-/**
- * @module @prosekit/react/components/${kebab}
- */
-
 import { createComponent } from '@lit-labs/react'
-import { ${pascal} as ${pascal}Element } from '@prosekit/lit/elements/${kebab}'
-import React from 'react'
+import type { SimplifyUnion } from '@prosekit/core'
+import { ${pascal} as ${pascal}Element, type ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/components/${kebab}'
+import React, { ComponentType } from 'react'
 
-export const ${pascal} = createComponent({
+export type ${pascal}Props = SimplifyUnion<{
+  className?: string,
+  children?: React.ReactNode,
+} & ${pascal}ElementProps>
+
+const ${pascal}Component = createComponent({
   tagName: 'prosekit-${kebab}',
   elementClass: ${pascal}Element,
   react: React,
-  displayName: '${pascal}',
+  displayName: '${pascal}Component',
 })
+
+export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
+  return <${pascal}Component {...props} />  
+}
 `.trim() + '\n'
   )
 }
@@ -60,15 +66,16 @@ function formatVueCode(kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-/**
- * @module @prosekit/vue/components/${kebab}
- */
+import '@prosekit/lit/components/${kebab}'
 
-import '@prosekit/lit/elements/${kebab}'
-import type { ${pascal} as ${pascal}Element } from '@prosekit/lit/elements/${kebab}'
+import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/components/${kebab}'
 import { defineComponent, h } from 'vue'
 
-export const ${pascal} = defineComponent<Partial<${pascal}Element>>(
+export type ${pascal}Props = {
+  class?: string,
+} & ${pascal}ElementProps
+
+export const ${pascal} = defineComponent<${pascal}Props>(
   (props, { slots }) => {
     return () => h('prosekit-${kebab}', props, slots.default?.())
   }
@@ -83,6 +90,6 @@ export const ${pascal} = defineComponent<Partial<${pascal}Element>>(
  */
 function readLitComponents(pkg: Package): string[] {
   return Object.keys((pkg.packageJson as any).exports)
-    .filter((key) => key.startsWith('./elements/'))
-    .map((key) => key.slice('./elements/'.length))
+    .filter((key) => key.startsWith('./components/'))
+    .map((key) => key.slice('./components/'.length))
 }

@@ -16,7 +16,7 @@
       "@sindresorhus/slugify": "^2.2.1"
     },
     "sharedFiles": {
-      "app.tsx": {
+      "App.tsx": {
         "hidden": false
       },
       "index.html": {
@@ -41,7 +41,7 @@
     "stories": {
       "minimal": {
         "files": {
-          "app.tsx": {
+          "App.tsx": {
             "hidden": false
           },
           "extension.ts": {
@@ -51,7 +51,13 @@
       },
       "slash-menu": {
         "files": {
-          "app.tsx": {
+          "App.tsx": {
+            "hidden": false
+          },
+          "SlashMenu.tsx": {
+            "hidden": false
+          },
+          "ToggleItalicButton.tsx": {
             "hidden": false
           },
           "extension.ts": {
@@ -60,16 +66,7 @@
           "slash-menu.css": {
             "hidden": false
           },
-          "slash-menu.tsx": {
-            "hidden": false
-          },
-          "toggle-italic-button.tsx": {
-            "hidden": false
-          },
           "use-note-editor.ts": {
-            "hidden": false
-          },
-          "use-slash-menu.ts": {
             "hidden": false
           }
         }

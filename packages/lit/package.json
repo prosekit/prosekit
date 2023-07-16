@@ -26,10 +26,10 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./elements/menu": "./src/elements/menu.ts",
-    "./elements/menu-item": "./src/elements/menu-item.ts",
-    "./elements/popover": "./src/elements/popover/index.ts",
-    "./elements/popover-suggestion": "./src/elements/popover-suggestion/index.ts"
+    "./components/command-empty": "./src/components/command-empty.ts",
+    "./components/command-item": "./src/components/command-item.ts",
+    "./components/command-list": "./src/components/command-list.ts",
+    "./components/command-popover": "./src/components/command-popover.ts"
   },
   "files": [
     "dist"
@@ -40,10 +40,12 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.4.4",
+    "@lit-labs/context": "^0.3.3",
     "@lit/reactive-element": "^1.6.2",
     "@prosekit/core": "^0.0.3",
     "@prosekit/extensions": "^0.0.3",
     "@prosekit/pm": "^0.0.3",
+    "@superhuman/command-score": "^0.5.0",
     "lit": "^2.7.6",
     "lit-element": "^3.3.2",
     "lit-html": "^2.7.5"
@@ -63,25 +65,25 @@
         "import": "./dist/prosekit-lit.js",
         "default": "./dist/prosekit-lit.js"
       },
-      "./elements/menu": {
-        "types": "./dist/prosekit-lit-elements-menu.d.ts",
-        "import": "./dist/prosekit-lit-elements-menu.js",
-        "default": "./dist/prosekit-lit-elements-menu.js"
+      "./components/command-empty": {
+        "types": "./dist/prosekit-lit-components-command-empty.d.ts",
+        "import": "./dist/prosekit-lit-components-command-empty.js",
+        "default": "./dist/prosekit-lit-components-command-empty.js"
       },
-      "./elements/menu-item": {
-        "types": "./dist/prosekit-lit-elements-menu-item.d.ts",
-        "import": "./dist/prosekit-lit-elements-menu-item.js",
-        "default": "./dist/prosekit-lit-elements-menu-item.js"
+      "./components/command-item": {
+        "types": "./dist/prosekit-lit-components-command-item.d.ts",
+        "import": "./dist/prosekit-lit-components-command-item.js",
+        "default": "./dist/prosekit-lit-components-command-item.js"
       },
-      "./elements/popover": {
-        "types": "./dist/prosekit-lit-elements-popover.d.ts",
-        "import": "./dist/prosekit-lit-elements-popover.js",
-        "default": "./dist/prosekit-lit-elements-popover.js"
+      "./components/command-list": {
+        "types": "./dist/prosekit-lit-components-command-list.d.ts",
+        "import": "./dist/prosekit-lit-components-command-list.js",
+        "default": "./dist/prosekit-lit-components-command-list.js"
       },
-      "./elements/popover-suggestion": {
-        "types": "./dist/prosekit-lit-elements-popover-suggestion.d.ts",
-        "import": "./dist/prosekit-lit-elements-popover-suggestion.js",
-        "default": "./dist/prosekit-lit-elements-popover-suggestion.js"
+      "./components/command-popover": {
+        "types": "./dist/prosekit-lit-components-command-popover.d.ts",
+        "import": "./dist/prosekit-lit-components-command-popover.js",
+        "default": "./dist/prosekit-lit-components-command-popover.js"
       }
     },
     "main": "./dist/prosekit-lit.js",
@@ -92,17 +94,17 @@
         ".": [
           "./dist/prosekit-lit.d.ts"
         ],
-        "elements/menu": [
-          "./dist/prosekit-lit-elements-menu.d.ts"
+        "components/command-empty": [
+          "./dist/prosekit-lit-components-command-empty.d.ts"
         ],
-        "elements/menu-item": [
-          "./dist/prosekit-lit-elements-menu-item.d.ts"
+        "components/command-item": [
+          "./dist/prosekit-lit-components-command-item.d.ts"
         ],
-        "elements/popover": [
-          "./dist/prosekit-lit-elements-popover.d.ts"
+        "components/command-list": [
+          "./dist/prosekit-lit-components-command-list.d.ts"
         ],
-        "elements/popover-suggestion": [
-          "./dist/prosekit-lit-elements-popover-suggestion.d.ts"
+        "components/command-popover": [
+          "./dist/prosekit-lit-components-command-popover.d.ts"
         ]
       }
     }

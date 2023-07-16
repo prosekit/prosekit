@@ -248,6 +248,9 @@ importers:
       '@floating-ui/dom':
         specifier: ^1.4.4
         version: 1.4.4
+      '@lit-labs/context':
+        specifier: ^0.3.3
+        version: 0.3.3
       '@lit/reactive-element':
         specifier: ^1.6.2
         version: 1.6.2
@@ -260,6 +263,9 @@ importers:
       '@prosekit/pm':
         specifier: ^0.0.3
         version: link:../pm
+      '@superhuman/command-score':
+        specifier: ^0.5.0
+        version: 0.5.0
       lit:
         specifier: ^2.7.6
         version: 2.7.6
@@ -329,25 +335,25 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../basic
       '@prosekit/core':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../extensions
       '@prosekit/lit':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../lit
       '@prosekit/pm':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../pm
       '@prosekit/react':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../react
       '@prosekit/vue':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../vue
     devDependencies:
       '@prosekit/dev':
@@ -1804,6 +1810,13 @@ packages:
       '@lezer/common': 1.0.3
     dev: true
 
+  /@lit-labs/context@0.3.3:
+    resolution: {integrity: sha512-5pWPLiXJnx8fZREF4w7RXBwJOxqRBJ57tujo7k23s0ZDfnSltomvYGW4kTOurXfyzDR0OLBBkv9xsWGDhauqew==}
+    dependencies:
+      '@lit/reactive-element': 1.6.2
+      lit: 2.7.6
+    dev: false
+
   /@lit-labs/react@1.2.1:
     resolution: {integrity: sha512-DiZdJYFU0tBbdQkfwwRSwYyI/mcWkg3sWesKRsHUd4G+NekTmmeq9fzsurvcKTNVa0comNljwtg4Hvi1ds3V+A==}
     dev: false
@@ -2083,6 +2096,10 @@ packages:
   /@stitches/core@1.2.8:
     resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
     dev: true
+
+  /@superhuman/command-score@0.5.0:
+    resolution: {integrity: sha512-Et940NvqU74IZauOWQdLW0dNGNL67OYSL/ULcM+I62WUmpvsAEKPR3DF0YCut6bNcN5TK67rOC1mPjiNK2O80w==}
+    dev: false
 
   /@szmarczak/http-timer@1.1.2:
     resolution: {integrity: sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==}

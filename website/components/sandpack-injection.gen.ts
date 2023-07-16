@@ -152,17 +152,18 @@ import file3651351789 from '../../packages/lit/src/components/command-popover.ts
 import file318673301 from '../../packages/lit/src/components/popover.ts?raw'
 import file332347287 from '../../packages/lit/src/index.ts?raw'
 import file445061483 from '../../packages/lit/src/internal/command-score.ts?raw'
-import file3270230686 from '../../packages/lit/src/internal/command/command-context.ts?raw'
-import file1291329832 from '../../packages/lit/src/internal/command/command-empty.ts?raw'
-import file3329851730 from '../../packages/lit/src/internal/command/command-item.ts?raw'
-import file2682462821 from '../../packages/lit/src/internal/command/command-list-context.ts?raw'
-import file1527633070 from '../../packages/lit/src/internal/command/command-list-controller.ts?raw'
-import file2321635139 from '../../packages/lit/src/internal/command/command-list.ts?raw'
-import file1170788019 from '../../packages/lit/src/internal/command/command-popover-controller.ts?raw'
-import file2062998717 from '../../packages/lit/src/internal/command/command-popover-default-options.ts?raw'
-import file2357240876 from '../../packages/lit/src/internal/command/command-popover.ts?raw'
-import file2199005240 from '../../packages/lit/src/internal/command/command-types.ts?raw'
-import file3960726636 from '../../packages/lit/src/internal/command/command-utils.ts?raw'
+import file3594809460 from '../../packages/lit/src/internal/command/empty.ts?raw'
+import file2682903238 from '../../packages/lit/src/internal/command/item.ts?raw'
+import file3417085569 from '../../packages/lit/src/internal/command/list-context.ts?raw'
+import file3358469570 from '../../packages/lit/src/internal/command/list-controller.ts?raw'
+import file2976171567 from '../../packages/lit/src/internal/command/list.ts?raw'
+import file164569138 from '../../packages/lit/src/internal/command/popover-context.ts?raw'
+import file3675163231 from '../../packages/lit/src/internal/command/popover-controller.ts?raw'
+import file1520449697 from '../../packages/lit/src/internal/command/popover-default-options.ts?raw'
+import file3029916960 from '../../packages/lit/src/internal/command/popover.ts?raw'
+import file2880762662 from '../../packages/lit/src/internal/command/query-builder.spec.ts?raw'
+import file326185421 from '../../packages/lit/src/internal/command/query-builder.ts?raw'
+import file2235135352 from '../../packages/lit/src/internal/command/utils.ts?raw'
 import file1404909841 from '../../packages/lit/src/internal/popover/options.ts?raw'
 import file27263984 from '../../packages/lit/src/internal/popover/popover.ts?raw'
 import file2936194141 from '../../packages/lit/src/styles/block-component.styles.ts?raw'
@@ -366,17 +367,18 @@ export const files = {
   "/node_modules/@prosekit/lit/src/components/popover.ts": { hidden: true, code: file318673301 },
   "/node_modules/@prosekit/lit/src/index.ts": { hidden: true, code: file332347287 },
   "/node_modules/@prosekit/lit/src/internal/command-score.ts": { hidden: true, code: file445061483 },
-  "/node_modules/@prosekit/lit/src/internal/command/command-context.ts": { hidden: true, code: file3270230686 },
-  "/node_modules/@prosekit/lit/src/internal/command/command-empty.ts": { hidden: true, code: file1291329832 },
-  "/node_modules/@prosekit/lit/src/internal/command/command-item.ts": { hidden: true, code: file3329851730 },
-  "/node_modules/@prosekit/lit/src/internal/command/command-list-context.ts": { hidden: true, code: file2682462821 },
-  "/node_modules/@prosekit/lit/src/internal/command/command-list-controller.ts": { hidden: true, code: file1527633070 },
-  "/node_modules/@prosekit/lit/src/internal/command/command-list.ts": { hidden: true, code: file2321635139 },
-  "/node_modules/@prosekit/lit/src/internal/command/command-popover-controller.ts": { hidden: true, code: file1170788019 },
-  "/node_modules/@prosekit/lit/src/internal/command/command-popover-default-options.ts": { hidden: true, code: file2062998717 },
-  "/node_modules/@prosekit/lit/src/internal/command/command-popover.ts": { hidden: true, code: file2357240876 },
-  "/node_modules/@prosekit/lit/src/internal/command/command-types.ts": { hidden: true, code: file2199005240 },
-  "/node_modules/@prosekit/lit/src/internal/command/command-utils.ts": { hidden: true, code: file3960726636 },
+  "/node_modules/@prosekit/lit/src/internal/command/empty.ts": { hidden: true, code: file3594809460 },
+  "/node_modules/@prosekit/lit/src/internal/command/item.ts": { hidden: true, code: file2682903238 },
+  "/node_modules/@prosekit/lit/src/internal/command/list-context.ts": { hidden: true, code: file3417085569 },
+  "/node_modules/@prosekit/lit/src/internal/command/list-controller.ts": { hidden: true, code: file3358469570 },
+  "/node_modules/@prosekit/lit/src/internal/command/list.ts": { hidden: true, code: file2976171567 },
+  "/node_modules/@prosekit/lit/src/internal/command/popover-context.ts": { hidden: true, code: file164569138 },
+  "/node_modules/@prosekit/lit/src/internal/command/popover-controller.ts": { hidden: true, code: file3675163231 },
+  "/node_modules/@prosekit/lit/src/internal/command/popover-default-options.ts": { hidden: true, code: file1520449697 },
+  "/node_modules/@prosekit/lit/src/internal/command/popover.ts": { hidden: true, code: file3029916960 },
+  "/node_modules/@prosekit/lit/src/internal/command/query-builder.spec.ts": { hidden: true, code: file2880762662 },
+  "/node_modules/@prosekit/lit/src/internal/command/query-builder.ts": { hidden: true, code: file326185421 },
+  "/node_modules/@prosekit/lit/src/internal/command/utils.ts": { hidden: true, code: file2235135352 },
   "/node_modules/@prosekit/lit/src/internal/popover/options.ts": { hidden: true, code: file1404909841 },
   "/node_modules/@prosekit/lit/src/internal/popover/popover.ts": { hidden: true, code: file27263984 },
   "/node_modules/@prosekit/lit/src/styles/block-component.styles.ts": { hidden: true, code: file2936194141 },

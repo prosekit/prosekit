@@ -1,3 +1,4 @@
+import { genChangesetConfigJson } from './gen-changeset-config-json.js'
 import { genComponents } from './gen-components.js'
 import { genDocsItems } from './gen-docs-items.js'
 import { genExampleIndex } from './gen-example-index.js'
@@ -21,6 +22,7 @@ async function main() {
   await genTypedocJson()
   await genDocsItems()
   await genRenovateJson()
+  await genChangesetConfigJson()
 
   // Example for website
   await genExampleMetaJson()

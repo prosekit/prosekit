@@ -7,5 +7,9 @@
   "access": "public",
   "baseBranch": "master",
   "updateInternalDependencies": "minor",
-  "ignore": ["prosekit-example-vue-lib", "prosekit-website"]
+  "ignore": [
+    "prosekit-example-react",
+    "prosekit-example-vue-lib",
+    "prosekit-website"
+  ]
 }

@@ -7,7 +7,7 @@ import { Package, getPackages } from '@manypkg/get-packages'
 import { sortBy } from 'lodash-es'
 
 import { findRootDir } from './find-root-dir.js'
-import { isPublicPackage } from './is-public-package.js'
+import { isPrivatePackage, isPublicPackage } from './is-public-package.js'
 import { isSubDirectory } from './is-sub-directory.js'
 import { listGitFiles } from './list-git-files.js'
 import { normalizePackageJson } from './normalize-package-json.js'
@@ -122,6 +122,11 @@ class VirtualFileSystem {
   async getPublicPackages() {
     const packages = await this.getPackages()
     return packages.filter(isPublicPackage)
+  }
+
+  async getPrivatePackages() {
+    const packages = await this.getPackages()
+    return packages.filter(isPrivatePackage)
   }
 
   async getExamplePackages() {

@@ -1,8 +1,6 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": [
-    "../../config/typedoc-base.json"
-  ],
+  "extends": ["../../config/typedoc-base.json"],
   "entryPoints": [
     "./src/components/command-empty.ts",
     "./src/components/command-item.ts",

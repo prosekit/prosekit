@@ -9,5 +9,3 @@ export type CommandPopoverContext = {
 export const commandPopoverContext = createContext<CommandPopoverContext>(
   'prosekit-command-popover-context',
 )
-
-

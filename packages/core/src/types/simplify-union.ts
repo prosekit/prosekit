@@ -5,4 +5,4 @@ import { Simplify, UnionToIntersection } from 'type-fest'
  */
 export type SimplifyUnion<T> = Simplify<UnionToIntersection<T>>
 
-export  type {UnionToIntersection}
+export type { UnionToIntersection }

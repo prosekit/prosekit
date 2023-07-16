@@ -9,7 +9,7 @@ import './slash-menu.css'
 
 import { useNoteEditor } from './use-note-editor'
 
-export function SlashMenu() {
+export default function SlashMenu() {
   const editor = useNoteEditor()
 
   const handleHeadingInsert = (level: number) => {

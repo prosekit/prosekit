@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 
 import { addNoteExtension } from './extension'
 
-export function App() {
+export default function App() {
   const editor = useMemo(() => {
     return createEditor({ extension: addNoteExtension() })
   }, [])

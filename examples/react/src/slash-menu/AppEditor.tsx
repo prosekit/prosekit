@@ -3,11 +3,11 @@ import { HeadingAttrs } from 'prosekit/extensions/heading'
 import { ProseKit, useExtension } from 'prosekit/react'
 import { useMemo, useReducer } from 'react'
 
+import SlashMenu from './SlashMenu'
+import ToggleItalicButton from './ToggleItalicButton'
 import { addNoteExtension } from './extension'
-import { SlashMenu } from './slash-menu'
-import { ToggleItalicButton } from './toggle-italic-button'
 
-export function App() {
+export default function App() {
   const editor = useMemo(() => {
     return createEditor({ extension: addNoteExtension() })
   }, [])

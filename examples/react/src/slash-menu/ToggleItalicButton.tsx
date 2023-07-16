@@ -2,7 +2,7 @@ import { MouseEvent } from 'react'
 
 import { useNoteEditor } from './use-note-editor'
 
-export function ToggleItalicButton() {
+export default function ToggleItalicButton() {
   const editor = useNoteEditor()
 
   const onToggleItalic = (event: MouseEvent) => {

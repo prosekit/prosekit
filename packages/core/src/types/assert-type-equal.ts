@@ -1,4 +1,4 @@
-import { type IsEqual } from 'type-fest'
+import type { IsEqual } from 'type-fest'
 
 /**
  * Utility function assert that two types are equal in tests.

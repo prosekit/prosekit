@@ -18,7 +18,7 @@ export class CommandEmpty extends LitElement implements CommandEmptyProps {
   @state()
   listContext?: CommandListContext
 
-  protected willUpdate(_changedProperties: PropertyValues<CommandEmpty>): void {
+  protected willUpdate(_changedProperties: PropertyValues<this>): void {
     const scores = this.listContext?.scores
     let hasMatch = false
     if (scores) {

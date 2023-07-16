@@ -1,9 +1,9 @@
 import { MouseEvent } from 'react'
 
-import { useNoteEditor } from './use-note-editor'
+import { useExampleEditor } from './use-example-editor'
 
 export default function ToggleItalicButton() {
-  const editor = useNoteEditor()
+  const editor = useExampleEditor()
 
   const onToggleItalic = (event: MouseEvent) => {
     event.preventDefault()

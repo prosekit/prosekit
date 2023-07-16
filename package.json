@@ -33,6 +33,7 @@
     "eslint": "^8.44.0",
     "jsdom": "^22.1.0",
     "prettier": "^3.0.0",
+    "prettier-plugin-tailwindcss": "^0.4.1",
     "turbo": "^1.10.7",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0"

@@ -1,0 +1,38 @@
+.example-editor {
+  @apply box-border h-[250px] w-full overflow-auto rounded px-4 py-4 outline outline-2;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
+}
+
+.example-slash-menu {
+  @apply relative rounded border border-solid border-gray-500 bg-white;
+  user-select: none;
+  white-space: nowrap;
+  overflow: auto;
+}
+
+.example-slash-menu-item {
+  position: relative;
+  padding: 8px;
+  min-width: 64px;
+  user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.example-slash-menu-item[data-selected] {
+  @apply bg-gray-300;
+}

@@ -5,11 +5,11 @@ import { addBasicExtension } from 'prosekit/basic'
 import { defineExtension } from 'prosekit/core'
 import { addPlaceholder } from 'prosekit/extensions/placeholder'
 
-export function addNoteExtension() {
+export function addExampleExtension() {
   return defineExtension([
     addBasicExtension(),
     addPlaceholder({ placeholder: 'Press / for commands...' }),
   ])
 }
 
-export type NoteExtension = ReturnType<typeof addNoteExtension>
+export type ExampleExtension = ReturnType<typeof addExampleExtension>

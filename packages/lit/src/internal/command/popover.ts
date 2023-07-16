@@ -98,7 +98,7 @@ export class CommandPopover
   }
 
   /** @hidden */
-  willUpdate(changedProperties: PropertyValues<CommandPopover>): void {
+  willUpdate(changedProperties: PropertyValues<this>): void {
     if (changedProperties.has('editor') && this.editor) {
       this.controller.setEditor(this.editor)
     }

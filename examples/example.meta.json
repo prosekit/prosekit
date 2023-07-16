@@ -6,9 +6,11 @@
       "@types/react-dom": "^18.2.6",
       "@vitejs/plugin-react": "^4.0.2",
       "esbuild-wasm": "^0.18.11",
+      "postcss": "^8.4.26",
       "prosekit": "^0.0.4",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
+      "tailwindcss": "^3.3.3",
       "typescript": "^5.1.6",
       "vite": "^4.4.2"
     },
@@ -17,25 +19,25 @@
     },
     "sharedFiles": {
       "App.tsx": {
-        "hidden": false
+        "hidden": true
       },
       "index.html": {
-        "hidden": false
+        "hidden": true
       },
       "main.tsx": {
-        "hidden": false
+        "hidden": true
       },
       "package.json": {
-        "hidden": false
+        "hidden": true
       },
-      "style.css": {
-        "hidden": false
+      "postcss.config.js": {
+        "hidden": true
       },
       "tsconfig.json": {
-        "hidden": false
+        "hidden": true
       },
       "vite.config.ts": {
-        "hidden": false
+        "hidden": true
       }
     },
     "stories": {
@@ -63,10 +65,78 @@
           "extension.ts": {
             "hidden": false
           },
-          "slash-menu.css": {
+          "use-example-editor.ts": {
+            "hidden": false
+          }
+        }
+      }
+    }
+  },
+  "vue": {
+    "framework": "vue",
+    "dependencies": {
+      "@vitejs/plugin-vue": "^4.2.3",
+      "esbuild-wasm": "^0.18.11",
+      "postcss": "^8.4.26",
+      "prosekit": "^0.0.4",
+      "tailwindcss": "^3.3.3",
+      "typescript": "^5.1.6",
+      "vite": "^4.4.2",
+      "vue": "^3.3.4",
+      "vue-tsc": "^1.8.4"
+    },
+    "devDependencies": {
+      "@sindresorhus/slugify": "^2.2.1"
+    },
+    "sharedFiles": {
+      "App.vue": {
+        "hidden": true
+      },
+      "index.html": {
+        "hidden": true
+      },
+      "main.ts": {
+        "hidden": true
+      },
+      "package.json": {
+        "hidden": true
+      },
+      "postcss.config.js": {
+        "hidden": true
+      },
+      "tsconfig.json": {
+        "hidden": true
+      },
+      "vite.config.ts": {
+        "hidden": true
+      }
+    },
+    "stories": {
+      "minimal": {
+        "files": {
+          "App.vue": {
             "hidden": false
           },
-          "use-note-editor.ts": {
+          "extension.ts": {
+            "hidden": false
+          }
+        }
+      },
+      "slash-menu": {
+        "files": {
+          "App.vue": {
+            "hidden": false
+          },
+          "SlashMenu.vue": {
+            "hidden": false
+          },
+          "ToggleItalicButton.vue": {
+            "hidden": false
+          },
+          "extension.ts": {
+            "hidden": false
+          },
+          "use-example-editor.ts": {
             "hidden": false
           }
         }
@@ -79,10 +149,10 @@
       "prosekit": "^0.0.4"
     },
     "devDependencies": {
-      "@unocss/transformer-directives": "^0.53.4",
       "@vitejs/plugin-vue": "^4.2.3",
+      "postcss": "^8.4.26",
+      "tailwindcss": "^3.3.3",
       "typescript": "^5.1.6",
-      "unocss": "^0.53.4",
       "vite": "^4.4.2",
       "vite-plugin-dts": "^3.1.1",
       "vue": "^3.3.4",
@@ -90,22 +160,22 @@
     },
     "sharedFiles": {
       "index.html": {
-        "hidden": false
+        "hidden": true
       },
       "main.ts": {
-        "hidden": false
+        "hidden": true
       },
       "package.json": {
-        "hidden": false
+        "hidden": true
+      },
+      "postcss.config.js": {
+        "hidden": true
       },
       "tsconfig.json": {
-        "hidden": false
-      },
-      "uno.config.ts": {
-        "hidden": false
+        "hidden": true
       },
       "vite.config.ts": {
-        "hidden": false
+        "hidden": true
       }
     },
     "stories": {

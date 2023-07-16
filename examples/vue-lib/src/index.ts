@@ -1,5 +1,5 @@
-import './style.css'
-import 'virtual:uno.css'
+import 'prosekit/basic/internal/example.css'
+
 import App from './App.vue'
 
 export { App }

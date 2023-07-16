@@ -6,6 +6,7 @@ import file2260578316 from '../../packages/prosekit/CHANGELOG.md?raw'
 import file1936165674 from '../../packages/prosekit/README.md?raw'
 import file2755179653 from '../../packages/prosekit/package.json?raw'
 import file1340360659 from '../../packages/prosekit/src/basic.gen.ts?raw'
+import file436745080 from '../../packages/prosekit/src/basic/internal/example.css?raw'
 import file3920005095 from '../../packages/prosekit/src/basic/style.css?raw'
 import file2522094336 from '../../packages/prosekit/src/core.gen.ts?raw'
 import file2303900994 from '../../packages/prosekit/src/core/style.css?raw'
@@ -67,8 +68,10 @@ import file4208419265 from '../../packages/pm/vitest.config.ts?raw'
 import file3295293403 from '../../packages/basic/CHANGELOG.md?raw'
 import file1679329015 from '../../packages/basic/README.md?raw'
 import file4149411738 from '../../packages/basic/package.json?raw'
+import file3712645474 from '../../packages/basic/postcss.config.js?raw'
 import file1927705207 from '../../packages/basic/src/index.spec.ts?raw'
 import file2439986818 from '../../packages/basic/src/index.ts?raw'
+import file1395853740 from '../../packages/basic/src/internal/example.css?raw'
 import file1146215259 from '../../packages/basic/src/style.css?raw'
 import file656834023 from '../../packages/basic/tsconfig.json?raw'
 import file867561425 from '../../packages/basic/tsup.config.ts?raw'
@@ -221,6 +224,7 @@ export const files = {
   "/node_modules/prosekit/README.md": { hidden: true, code: file1936165674 },
   "/node_modules/prosekit/package.json": { hidden: true, code: file2755179653 },
   "/node_modules/prosekit/src/basic.gen.ts": { hidden: true, code: file1340360659 },
+  "/node_modules/prosekit/src/basic/internal/example.css": { hidden: true, code: file436745080 },
   "/node_modules/prosekit/src/basic/style.css": { hidden: true, code: file3920005095 },
   "/node_modules/prosekit/src/core.gen.ts": { hidden: true, code: file2522094336 },
   "/node_modules/prosekit/src/core/style.css": { hidden: true, code: file2303900994 },
@@ -282,8 +286,10 @@ export const files = {
   "/node_modules/@prosekit/basic/CHANGELOG.md": { hidden: true, code: file3295293403 },
   "/node_modules/@prosekit/basic/README.md": { hidden: true, code: file1679329015 },
   "/node_modules/@prosekit/basic/package.json": { hidden: true, code: file4149411738 },
+  "/node_modules/@prosekit/basic/postcss.config.js": { hidden: true, code: file3712645474 },
   "/node_modules/@prosekit/basic/src/index.spec.ts": { hidden: true, code: file1927705207 },
   "/node_modules/@prosekit/basic/src/index.ts": { hidden: true, code: file2439986818 },
+  "/node_modules/@prosekit/basic/src/internal/example.css": { hidden: true, code: file1395853740 },
   "/node_modules/@prosekit/basic/src/style.css": { hidden: true, code: file1146215259 },
   "/node_modules/@prosekit/basic/tsconfig.json": { hidden: true, code: file656834023 },
   "/node_modules/@prosekit/basic/tsup.config.ts": { hidden: true, code: file867561425 },

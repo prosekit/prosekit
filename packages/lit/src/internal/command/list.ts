@@ -126,7 +126,7 @@ export class CommandList
   @query('slot') defaultSlot?: HTMLSlotElement
 
   /** @hidden */
-  willUpdate(changedProperties: PropertyValues<CommandList>): void {
+  willUpdate(changedProperties: PropertyValues<this>): void {
     if (changedProperties.has('editor') && this.editor) {
       this.controller.setEditor(this.editor)
     }

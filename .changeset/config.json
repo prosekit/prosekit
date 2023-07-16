@@ -9,6 +9,7 @@
   "updateInternalDependencies": "minor",
   "ignore": [
     "prosekit-example-react",
+    "prosekit-example-vue",
     "prosekit-example-vue-lib",
     "prosekit-website"
   ]

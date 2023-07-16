@@ -46,7 +46,7 @@ export class CommandItem
     return text.trim().toLowerCase()
   }
 
-  protected willUpdate(changedProperties: PropertyValues<CommandItem>): void {
+  protected willUpdate(changedProperties: PropertyValues<this>): void {
     const content = this.content
     this.selected = content === this.listContext?.selectedValue
     const score = this.listContext?.scores.get(content) || 0

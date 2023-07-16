@@ -29,11 +29,11 @@ import 'prosekit/basic/style.css'
 
 import { addBasicExtension } from 'prosekit/basic'
 
-export function addNoteExtension() {
+export function addExampleExtension() {
   return addBasicExtension()
 }
 
-export type NoteExtension = ReturnType<typeof addNoteExtension>
+export type ExampleExtension = ReturnType<typeof addExampleExtension>
 ```
 
 :::
@@ -45,10 +45,10 @@ Then, you need to integrate the extensions into your UI framework.
 ```tsx [React]
 import { ProseKit } from 'prosekit/react'
 import { useMemo, useState } from 'react'
-import { addNoteExtension } from './extension'
+import { addExampleExtension } from './extension'
 
 export function App() {
-  const extension = useMemo(addNoteExtension, [])
+  const extension = useMemo(addExampleExtension, [])
   const [place, setPlace] = useState<HTMLElement | null>(null)
 
   return (
@@ -63,9 +63,9 @@ export function App() {
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { ProseKit } from 'prosekit/vue'
-import { addNoteExtension } from './extension'
+import { addExampleExtension } from './extension'
 
-const extension = computed(addNoteExtension)
+const extension = computed(addExampleExtension)
 const place = ref<HTMLElement | null>(null)
 </script>
 

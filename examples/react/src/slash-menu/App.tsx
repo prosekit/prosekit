@@ -5,11 +5,11 @@ import { useMemo, useReducer } from 'react'
 
 import SlashMenu from './SlashMenu'
 import ToggleItalicButton from './ToggleItalicButton'
-import { addNoteExtension } from './extension'
+import { addExampleExtension } from './extension'
 
 export default function App() {
   const editor = useMemo(() => {
-    return createEditor({ extension: addNoteExtension() })
+    return createEditor({ extension: addExampleExtension() })
   }, [])
 
   const [headingColor, toggleHeadingColor] = useHeadingColor()
@@ -19,7 +19,7 @@ export default function App() {
       <button onClick={toggleHeadingColor}>Toggle heading color</button>
 
       <ProseKit editor={editor}>
-        <div ref={editor.mount} className="my-awesome-editor"></div>
+        <div ref={editor.mount} className="example-editor"></div>
         <ToggleItalicButton />
         <EditorHooksRunner headingColor={headingColor} />
         <SlashMenu />

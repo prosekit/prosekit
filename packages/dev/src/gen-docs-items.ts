@@ -103,7 +103,7 @@ function normalizeItems(items?: SidebarItem[]) {
 }
 
 function normalizeItem(item: SidebarItem) {
-  if (item.items?.length === 0) {
+  if (!(item.items && item.items.length > 0)) {
     delete item.items
     delete item.collapsed
   }

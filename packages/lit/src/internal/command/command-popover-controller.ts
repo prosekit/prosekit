@@ -82,7 +82,7 @@ export class CommandPopoverController implements ReactiveController {
 
         setTimeout(() => {
           this.host.requestUpdate()
-        }, 1)
+        }, 0)
       },
       onDeactivate: () => {
         this.reference = null

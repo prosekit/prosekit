@@ -46,15 +46,14 @@ export class CommandItem
     return text.trim().toLowerCase()
   }
 
-  protected willUpdate(_changedProperties: PropertyValues<CommandItem>): void {
+  protected willUpdate(changedProperties: PropertyValues<CommandItem>): void {
     const content = this.content
     this.selected = content === this.listContext?.selectedValue
     const score = this.listContext?.scores.get(content) || 0
+
     this.inert = score <= 0
     this.hidden = score <= 0
-  }
 
-  protected updated(changedProperties: PropertyValues<CommandItem>): void {
     if (changedProperties.has('listContext') && this.listContext) {
       this.listContext.registerValue(this.content)
     }

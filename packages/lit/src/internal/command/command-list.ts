@@ -119,16 +119,18 @@ export class CommandList
     if (changedProperties.has('editor') && this.editor) {
       this.controller.setEditor(this.editor)
     }
-  }
 
-  updated() {
     const query = this.popoverContext?.query ?? ''
 
-    for (const item of this.items) {
-      const content = item.content
-      const score = commandScore(content, query)
-      this.context.scores.set(content, score)
-    }
+    const scores = new Map(
+      this.items.map((item) => {
+        const content = item.content
+        const score = commandScore(content, query)
+        return [content, score]
+      }),
+    )
+
+    this.context = { ...this.context, scores }
   }
 
   private updateSelectedByChange(change: 1 | -1): void {

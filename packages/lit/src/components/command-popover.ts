@@ -1,1 +1,1 @@
-export * from '../internal/command/command-popover'
+export * from '../internal/command/popover'

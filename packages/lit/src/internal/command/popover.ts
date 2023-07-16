@@ -9,15 +9,15 @@ import { customElement, property, query, state } from 'lit/decorators.js'
 import { blockComponentStyles } from '../../styles/block-component.styles'
 import { PopoverOptions } from '../popover/options'
 
+import { CommandList } from './list'
 import {
   commandPopoverContext,
   type CommandPopoverContext,
-} from './command-context'
-import { CommandList } from './command-list'
-import { CommandPopoverController } from './command-popover-controller'
-import { defaultPopoverOptions } from './command-popover-default-options'
-import { QueryBuilder } from './command-types'
-import { isCommandList } from './command-utils'
+} from './popover-context'
+import { CommandPopoverController } from './popover-controller'
+import { defaultPopoverOptions } from './popover-default-options'
+import { QueryBuilder, defaultQueryBuilder } from './query-builder'
+import { isCommandList } from './utils'
 
 export { type PopoverOptions, type QueryBuilder }
 
@@ -25,7 +25,7 @@ export interface CommandPopoverProps {
   editor: Editor
   regex: RegExp
   regexAfter?: RegExp
-  queryBuilder: QueryBuilder
+  queryBuilder?: QueryBuilder
   popoverOptions?: PopoverOptions
 }
 
@@ -52,7 +52,7 @@ export class CommandPopover
   regexAfter?: RegExp
 
   @property({ attribute: false })
-  queryBuilder?: QueryBuilder
+  queryBuilder: QueryBuilder = defaultQueryBuilder
 
   @property({ attribute: false })
   popoverOptions: PopoverOptions = defaultPopoverOptions

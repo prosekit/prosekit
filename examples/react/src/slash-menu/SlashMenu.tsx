@@ -1,10 +1,7 @@
 import { CommandEmpty } from 'prosekit/react/components/command-empty'
 import { CommandItem } from 'prosekit/react/components/command-item'
 import { CommandList } from 'prosekit/react/components/command-list'
-import {
-  CommandPopover,
-  QueryBuilder,
-} from 'prosekit/react/components/command-popover'
+import { CommandPopover } from 'prosekit/react/components/command-popover'
 import './slash-menu.css'
 
 import { useNoteEditor } from './use-note-editor'
@@ -23,18 +20,8 @@ export default function SlashMenu() {
     editor.commands.setBlockType({ nodeType, attrs })
   }
 
-  const queryBuilder: QueryBuilder = (match, matchAfter) => {
-    const query: string = match[0] + (matchAfter ? matchAfter[0] : '')
-    return query.startsWith('/') ? query.slice(1) : query
-  }
-
   return (
-    <CommandPopover
-      editor={editor}
-      regex={/\/.*$/iu}
-      regexAfter={/^\S*/}
-      queryBuilder={queryBuilder}
-    >
+    <CommandPopover editor={editor} regex={/\/.*$/iu} regexAfter={/^\S*/}>
       <CommandList editor={editor} className="my-slash-menu">
         <CommandEmpty className="my-slash-menu-item">
           No Command match

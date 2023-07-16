@@ -4,7 +4,7 @@ import { customElement, state } from 'lit/decorators.js'
 
 import { blockComponentStyles } from '../../styles/block-component.styles'
 
-import { CommandListContext, commandListContext } from './command-list-context'
+import { CommandListContext, commandListContext } from './list-context'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CommandEmptyProps {}

@@ -2,7 +2,7 @@ import { Editor, addBaseCommands } from '@prosekit/core'
 import { PredictionRule, addSuggestion } from '@prosekit/extensions/suggestion'
 import { ReactiveController, ReactiveControllerHost } from 'lit'
 
-import { QueryBuilder } from './command-types'
+import { QueryBuilder } from './query-builder'
 
 export class CommandPopoverController implements ReactiveController {
   public reference: Element | null = null

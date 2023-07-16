@@ -2,10 +2,7 @@
 import { CommandEmpty } from 'prosekit/vue/components/command-empty'
 import { CommandItem } from 'prosekit/vue/components/command-item'
 import { CommandList } from 'prosekit/vue/components/command-list'
-import {
-  CommandPopover,
-  QueryBuilder,
-} from 'prosekit/vue/components/command-popover'
+import { CommandPopover } from 'prosekit/vue/components/command-popover'
 import { useNoteEditor } from './use-note-editor'
 
 const editor = useNoteEditor()
@@ -20,20 +17,10 @@ const handleHeadingConvert = (level: number) => {
   const attrs = { level }
   editor.commands.setBlockType({ nodeType, attrs })
 }
-
-const queryBuilder: QueryBuilder = (match, matchAfter) => {
-  const query: string = match[0] + (matchAfter ? matchAfter[0] : '')
-  return query.startsWith('/') ? query.slice(1) : query
-}
 </script>
 
 <template>
-  <CommandPopover
-    :editor="editor"
-    :regex="/\/.*$/iu"
-    :regexAfter="/^\S*/"
-    :queryBuilder="queryBuilder"
-  >
+  <CommandPopover :editor="editor" :regex="/\/.*$/iu" :regexAfter="/^\S*/">
     <CommandList :editor="editor" class="my-slash-menu">
       <CommandEmpty class="my-slash-menu-item">No Command match</CommandEmpty>
 

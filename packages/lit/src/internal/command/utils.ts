@@ -1,5 +1,5 @@
-import { type CommandItem } from './command-item'
-import { CommandList } from './command-list'
+import { type CommandItem } from './item'
+import { CommandList } from './list'
 
 export function isCommandItem(
   element?: Element | null,

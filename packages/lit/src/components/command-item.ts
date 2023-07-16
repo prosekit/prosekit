@@ -1,1 +1,1 @@
-export * from '../internal/command/command-item'
+export * from '../internal/command/item'

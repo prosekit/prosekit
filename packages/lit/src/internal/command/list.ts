@@ -6,14 +6,14 @@ import { customElement, property, query, state } from 'lit/decorators.js'
 import { blockComponentStyles } from '../../styles/block-component.styles'
 import { commandScore } from '../command-score'
 
+import { CommandItem } from './item'
+import { CommandListContext, commandListContext } from './list-context'
+import { CommandListController } from './list-controller'
 import {
   commandPopoverContext,
   type CommandPopoverContext,
-} from './command-context'
-import { CommandItem } from './command-item'
-import { CommandListContext, commandListContext } from './command-list-context'
-import { CommandListController } from './command-list-controller'
-import { isCommandItem } from './command-utils'
+} from './popover-context'
+import { isCommandItem } from './utils'
 
 export interface CommandListProps {
   editor: Editor

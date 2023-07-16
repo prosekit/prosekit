@@ -4,7 +4,7 @@ import { customElement, property, query, state } from 'lit/decorators.js'
 
 import { blockComponentStyles } from '../../styles/block-component.styles'
 
-import { CommandListContext, commandListContext } from './command-list-context'
+import { CommandListContext, commandListContext } from './list-context'
 
 export interface CommandItemProps {
   value?: string

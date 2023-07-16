@@ -63,7 +63,7 @@ importers:
         specifier: ^0.18.11
         version: 0.18.11
       prosekit:
-        specifier: 0.0.4
+        specifier: ^0.0.4
         version: link:../../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -190,8 +190,8 @@ importers:
         specifier: ^7.1.0
         version: 7.1.0(typescript@5.1.6)
       write-pkg:
-        specifier: ^5.1.0
-        version: 5.1.0
+        specifier: ^6.0.0
+        version: 6.0.0
     devDependencies:
       '@sindresorhus/string-hash':
         specifier: ^2.0.0
@@ -455,8 +455,8 @@ importers:
         specifier: ^18.2.6
         version: 18.2.6
       clsx:
-        specifier: ^1.2.1
-        version: 1.2.1
+        specifier: ^2.0.0
+        version: 2.0.0
       prettier:
         specifier: ^3.0.0
         version: 3.0.0
@@ -3357,8 +3357,8 @@ packages:
     engines: {node: '>=0.8'}
     dev: false
 
-  /clsx@1.2.1:
-    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+  /clsx@2.0.0:
+    resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
     engines: {node: '>=6'}
     dev: true
 
@@ -3567,6 +3567,11 @@ packages:
 
   /deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
+    dev: false
+
+  /deepmerge-ts@5.1.0:
+    resolution: {integrity: sha512-eS8dRJOckyo9maw9Tu5O5RUi/4inFLrnoLkBe3cPfDMx3WZioXtmOew4TXQaxq7Rhl4xjDtR7c6x8nNTxOvbFw==}
+    engines: {node: '>=16.0.0'}
     dev: false
 
   /default-browser-id@3.0.0:
@@ -7075,14 +7080,14 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /type-fest@2.19.0:
-    resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
-    engines: {node: '>=12.20'}
-    dev: false
-
   /type-fest@3.12.0:
     resolution: {integrity: sha512-qj9wWsnFvVEMUDbESiilKeXeHL7FwwiFcogfhfyjmvT968RXSvnl23f1JOClTHYItsi7o501C/7qVllscUP3oA==}
     engines: {node: '>=14.16'}
+
+  /type-fest@3.13.0:
+    resolution: {integrity: sha512-Gur3yQGM9qiLNs0KPP7LPgeRbio2QTt4xXouobMCarR0/wyW3F+F/+OWwshg3NG0Adon7uQfSZBpB46NfhoF1A==}
+    engines: {node: '>=14.16'}
+    dev: false
 
   /typed-array-length@1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
@@ -7704,12 +7709,14 @@ packages:
       write-file-atomic: 3.0.3
     dev: false
 
-  /write-pkg@5.1.0:
-    resolution: {integrity: sha512-2LnW2htVtTQuLV/5JGaz09jTAE/Gv/lhy36xwxx1x22y+AnG9/YnIoDmA1Q8pooDnLO4vYLBCqO9g/qOdMZMPA==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+  /write-pkg@6.0.0:
+    resolution: {integrity: sha512-lGAH18qfqlukADIiFz1khQQO+AfPcNKf+oJIktIADWISarSSG9MPoWmveT+GhTGh9nQLpw0iPZyucgbqDngHeQ==}
+    engines: {node: '>=16'}
     dependencies:
+      deepmerge-ts: 5.1.0
+      read-pkg: 8.0.0
       sort-keys: 5.0.0
-      type-fest: 2.19.0
+      type-fest: 3.13.0
       write-json-file: 5.0.0
     dev: false
 

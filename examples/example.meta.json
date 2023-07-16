@@ -6,7 +6,7 @@
       "@types/react-dom": "^18.2.6",
       "@vitejs/plugin-react": "^4.0.2",
       "esbuild-wasm": "^0.18.11",
-      "prosekit": "0.0.3",
+      "prosekit": "^0.0.4",
       "react": "^18.2.0",
       "react-dom": "^18.2.0",
       "typescript": "^5.1.6",
@@ -76,7 +76,7 @@
   "vue-lib": {
     "framework": "vue-lib",
     "dependencies": {
-      "prosekit": "^0.0.3"
+      "prosekit": "^0.0.4"
     },
     "devDependencies": {
       "@unocss/transformer-directives": "^0.53.4",

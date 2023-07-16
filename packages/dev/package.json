@@ -25,7 +25,7 @@
     "read-pkg": "^8.0.0",
     "read-pkg-up": "^10.0.0",
     "tsup": "^7.1.0",
-    "write-pkg": "^5.1.0"
+    "write-pkg": "^6.0.0"
   },
   "devDependencies": {
     "@sindresorhus/string-hash": "^2.0.0",

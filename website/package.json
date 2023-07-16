@@ -6,16 +6,15 @@
   "scripts": {
     "dev": "vitepress dev",
     "preview": "vitepress preview",
-    "build": "pnpm build:typedoc && pnpm build:cp && pnpm build:vitepress",
+    "build": "pnpm build:typedoc && pnpm build:vitepress",
     "build:vitepress": "vitepress build",
-    "build:cp": "cp ../packages/prosekit/README.md references/prosekit.md && cp ../packages/pm/README.md references/@prosekit/pm.md",
     "build:typedoc": "typedoc"
   },
   "devDependencies": {
     "@prosekit/dev": "*",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "prettier": "^3.0.0",
     "prosekit": "^0.0.4",
     "prosekit-example-vue-lib": "*",

@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@sindresorhus/string-hash": "^2.0.0",
-    "@types/lodash-es": "^4.17.7",
+    "@types/lodash-es": "^4.17.8",
     "@types/node": "^18.16.19",
     "execa": "^7.1.1",
     "globby": "^13.2.2",

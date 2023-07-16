@@ -81,16 +81,36 @@ async function ensureEntry({
   if (reExportFilePath.endsWith('.css')) {
     await vfs.updateText(
       path.join(cwd, reExportFilePath),
-      `@import '${importName}';\n`,
+      formatCssReExportFile(importName),
     )
   } else {
     await vfs.updateText(
       path.join(cwd, reExportFilePath),
-      `export * from '${importName}'\n`,
+      formatTsReExportFile(importName),
     )
   }
 }
 
 function ensureFileExtension(filePath: string, defaultExtension = '.ts') {
   return filePath + (path.extname(filePath) ? '' : defaultExtension)
+}
+
+function formatTsReExportFile(importName: string) {
+  const importNameWithoutPrefix = importName.startsWith('@')
+    ? importName.slice(1)
+    : importName
+
+  return (
+    `
+/**
+ * @module ${importNameWithoutPrefix}
+ */
+
+export * from '${importName}'
+  `.trim() + '\n'
+  )
+}
+
+function formatCssReExportFile(importName: string) {
+  return `@import '${importName}';\n`
 }

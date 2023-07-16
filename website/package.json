@@ -6,9 +6,8 @@
   "scripts": {
     "dev": "vitepress dev",
     "preview": "vitepress preview",
-    "build": "pnpm build:typedoc && pnpm build:cp && pnpm build:vitepress",
+    "build": "pnpm build:typedoc && pnpm build:vitepress",
     "build:vitepress": "vitepress build",
-    "build:cp": "cp ../packages/prosekit/README.md references/prosekit.md && cp ../packages/pm/README.md references/@prosekit/pm.md",
     "build:typedoc": "typedoc"
   },
   "devDependencies": {

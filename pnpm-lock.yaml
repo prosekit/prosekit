@@ -63,7 +63,7 @@ importers:
         specifier: ^0.18.11
         version: 0.18.11
       prosekit:
-        specifier: 0.0.4
+        specifier: ^0.0.4
         version: link:../../packages/prosekit
       react:
         specifier: ^18.2.0

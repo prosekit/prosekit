@@ -15,10 +15,10 @@ export async function genDocsItems() {
 
   const items: SidebarItem[] = []
 
-  const packages = await vfs.getPublicPackages()
+  const packages = await vfs.getScopedPublicPackages()
   for (const pkg of packages) {
     const exports = (pkg.packageJson as any).exports ?? {}
-    for (const entryPoint of Object.keys(exports)) {
+    for (const entryPoint of Object.keys(exports).sort()) {
       if (entryPoint !== '.' && hideInTypedoc(pkg.packageJson.name)) {
         continue
       }
@@ -26,29 +26,43 @@ export async function genDocsItems() {
         continue
       }
 
-      const importPath = path.normalize(
-        path.join(pkg.packageJson.name, entryPoint),
-      )
+      const importPath = path
+        .normalize(path.join(pkg.packageJson.name, entryPoint))
+        .replace(/^@prosekit\//, '')
 
-      let text: string
+      const markdownLink = `/references/prosekit_${importPath.replaceAll(
+        /[/-]/g,
+        '_',
+      )}`
 
-      if (importPath.startsWith('@prosekit/')) {
-        text = importPath.slice('@prosekit/'.length)
-      } else if (importPath === 'prosekit') {
-        text = importPath
-      } else {
-        throw new Error(`Unexpected importPath ${importPath}`)
+      const parts = importPath.split('/')
+      let currentItems = items
+      let currentItem: SidebarItem | null = null
+
+      let depth = 0
+      for (const part of parts) {
+        depth += 1
+
+        currentItem = currentItems.find((item) => item.text === part) ?? {
+          text: part,
+          items: [],
+          collapsed: depth >= 2,
+        }
+
+        if (!currentItems.includes(currentItem)) {
+          currentItems.push(currentItem)
+        }
+
+        currentItems = currentItem.items ?? []
       }
 
-      // Remove subpath entries
-      if (text.includes('/')) continue
-
-      items.push({
-        text,
-        link: `/references/${importPath}`,
-      })
+      if (currentItem) {
+        currentItem.link = markdownLink
+      }
     }
   }
+
+  normalizeItems(items)
 
   const content =
     `// prettier-ignore\n` +
@@ -82,4 +96,16 @@ export type SidebarItem = {
    * If `false`, group is collapsible but expanded by default
    */
   collapsed?: boolean
+}
+
+function normalizeItems(items?: SidebarItem[]) {
+  items?.map(normalizeItem)
+}
+
+function normalizeItem(item: SidebarItem) {
+  if (item.items?.length === 0) {
+    delete item.items
+    delete item.collapsed
+  }
+  normalizeItems(item.items)
 }

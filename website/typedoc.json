@@ -2,13 +2,6 @@
   "$schema": "https://typedoc.org/schema.json",
   "extends": ["../config/typedoc-base.json"],
   "entryPointStrategy": "packages",
-  "entryPoints": [
-    "../packages/basic",
-    "../packages/core",
-    "../packages/extensions",
-    "../packages/lit",
-    "../packages/react",
-    "../packages/vue"
-  ],
+  "entryPoints": ["../packages/prosekit"],
   "out": "references"
 }

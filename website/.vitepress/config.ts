@@ -12,7 +12,6 @@ export default defineConfig({
 
   rewrites: {
     'references/index.md': 'references.md',
-    'references/@prosekit/:pkg/index.md': 'references/@prosekit/:pkg.md',
   },
 
   themeConfig: {

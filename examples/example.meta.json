@@ -16,7 +16,7 @@
       "@sindresorhus/slugify": "^2.2.1"
     },
     "sharedFiles": {
-      "app.tsx": {
+      "AppEditor.tsx": {
         "hidden": false
       },
       "index.html": {
@@ -38,40 +38,7 @@
         "hidden": false
       }
     },
-    "stories": {
-      "minimal": {
-        "files": {
-          "app.tsx": {
-            "hidden": false
-          },
-          "extension.ts": {
-            "hidden": false
-          }
-        }
-      },
-      "slash-menu": {
-        "files": {
-          "app.tsx": {
-            "hidden": false
-          },
-          "extension.ts": {
-            "hidden": false
-          },
-          "slash-menu.css": {
-            "hidden": false
-          },
-          "slash-menu.tsx": {
-            "hidden": false
-          },
-          "toggle-italic-button.tsx": {
-            "hidden": false
-          },
-          "use-note-editor.ts": {
-            "hidden": false
-          }
-        }
-      }
-    }
+    "stories": {}
   },
   "vue-lib": {
     "framework": "vue-lib",

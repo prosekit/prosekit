@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { clsx } from 'clsx'
 import { Sandpack } from 'sandpack-vue3'
 import { PackageJson } from 'type-fest'
 import { useData } from 'vitepress'

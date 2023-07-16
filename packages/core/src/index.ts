@@ -25,9 +25,6 @@ export {
 } from './types/extension'
 export { type ExtensionTyping } from './types/extension-typing'
 export { Priority } from './types/priority'
-export {
-  type SimplifyUnion,
-  type UnionToIntersection,
-} from './types/simplify-union'
+export { type SimplifyUnion } from './types/simplify-union'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'

@@ -68,9 +68,6 @@
           },
           "use-note-editor.ts": {
             "hidden": false
-          },
-          "use-slash-menu.ts": {
-            "hidden": false
           }
         }
       }

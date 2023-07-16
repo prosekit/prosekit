@@ -21,10 +21,6 @@
     "./src/lit/components/command-item.gen.ts",
     "./src/lit/components/command-list.gen.ts",
     "./src/lit/components/command-popover.gen.ts",
-    "./src/lit/elements/menu-item.gen.ts",
-    "./src/lit/elements/menu.gen.ts",
-    "./src/lit/elements/popover-suggestion.gen.ts",
-    "./src/lit/elements/popover.gen.ts",
     "./src/pm.gen.ts",
     "./src/pm/commands.gen.ts",
     "./src/pm/inputrules.gen.ts",
@@ -38,14 +34,10 @@
     "./src/react/components/command-item.gen.ts",
     "./src/react/components/command-list.gen.ts",
     "./src/react/components/command-popover.gen.ts",
-    "./src/react/components/menu-item.gen.ts",
-    "./src/react/components/menu.gen.ts",
-    "./src/react/components/popover-suggestion.gen.ts",
-    "./src/react/components/popover.gen.ts",
     "./src/vue.gen.ts",
-    "./src/vue/components/menu-item.gen.ts",
-    "./src/vue/components/menu.gen.ts",
-    "./src/vue/components/popover-suggestion.gen.ts",
-    "./src/vue/components/popover.gen.ts"
+    "./src/vue/components/command-empty.gen.ts",
+    "./src/vue/components/command-item.gen.ts",
+    "./src/vue/components/command-list.gen.ts",
+    "./src/vue/components/command-popover.gen.ts"
   ]
 }

@@ -1,11 +1,13 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
   "entryPoints": [
-    "./src/components/menu-item.gen.ts",
-    "./src/components/menu.gen.ts",
-    "./src/components/popover-suggestion.ts",
-    "./src/components/popover.gen.ts",
+    "./src/components/command-empty.ts",
+    "./src/components/command-item.ts",
+    "./src/components/command-list.ts",
+    "./src/components/command-popover.ts",
     "./src/index.ts"
   ]
 }

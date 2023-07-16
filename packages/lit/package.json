@@ -29,11 +29,7 @@
     "./components/command-empty": "./src/components/command-empty.ts",
     "./components/command-item": "./src/components/command-item.ts",
     "./components/command-list": "./src/components/command-list.ts",
-    "./components/command-popover": "./src/components/command-popover.ts",
-    "./elements/menu": "./src/elements/menu.ts",
-    "./elements/menu-item": "./src/elements/menu-item.ts",
-    "./elements/popover": "./src/elements/popover/index.ts",
-    "./elements/popover-suggestion": "./src/elements/popover-suggestion/index.ts"
+    "./components/command-popover": "./src/components/command-popover.ts"
   },
   "files": [
     "dist"
@@ -88,26 +84,6 @@
         "types": "./dist/prosekit-lit-components-command-popover.d.ts",
         "import": "./dist/prosekit-lit-components-command-popover.js",
         "default": "./dist/prosekit-lit-components-command-popover.js"
-      },
-      "./elements/menu": {
-        "types": "./dist/prosekit-lit-elements-menu.d.ts",
-        "import": "./dist/prosekit-lit-elements-menu.js",
-        "default": "./dist/prosekit-lit-elements-menu.js"
-      },
-      "./elements/menu-item": {
-        "types": "./dist/prosekit-lit-elements-menu-item.d.ts",
-        "import": "./dist/prosekit-lit-elements-menu-item.js",
-        "default": "./dist/prosekit-lit-elements-menu-item.js"
-      },
-      "./elements/popover": {
-        "types": "./dist/prosekit-lit-elements-popover.d.ts",
-        "import": "./dist/prosekit-lit-elements-popover.js",
-        "default": "./dist/prosekit-lit-elements-popover.js"
-      },
-      "./elements/popover-suggestion": {
-        "types": "./dist/prosekit-lit-elements-popover-suggestion.d.ts",
-        "import": "./dist/prosekit-lit-elements-popover-suggestion.js",
-        "default": "./dist/prosekit-lit-elements-popover-suggestion.js"
       }
     },
     "main": "./dist/prosekit-lit.js",
@@ -129,18 +105,6 @@
         ],
         "components/command-popover": [
           "./dist/prosekit-lit-components-command-popover.d.ts"
-        ],
-        "elements/menu": [
-          "./dist/prosekit-lit-elements-menu.d.ts"
-        ],
-        "elements/menu-item": [
-          "./dist/prosekit-lit-elements-menu-item.d.ts"
-        ],
-        "elements/popover": [
-          "./dist/prosekit-lit-elements-popover.d.ts"
-        ],
-        "elements/popover-suggestion": [
-          "./dist/prosekit-lit-elements-popover-suggestion.d.ts"
         ]
       }
     }

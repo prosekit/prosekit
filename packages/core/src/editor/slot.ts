@@ -1,9 +1,9 @@
-import { MarkSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
-import { EditorStateConfig } from '@prosekit/pm/state'
+import type { MarkSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
+import type { EditorStateConfig } from '@prosekit/pm/state'
 import OrderedMap from 'orderedmap'
 
-import { CommandCreator } from '../types/command'
-import { StateConfigCallback, ViewProps } from '../types/editor'
+import type { CommandCreator } from '../types/command'
+import type { StateConfigCallback, ViewProps } from '../types/editor'
 
 import { Facet } from './facet'
 

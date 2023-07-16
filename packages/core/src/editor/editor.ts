@@ -1,10 +1,10 @@
 import { Schema } from '@prosekit/pm/model'
-import { EditorState, EditorStateConfig, Plugin } from '@prosekit/pm/state'
-import { DirectEditorProps, EditorView } from '@prosekit/pm/view'
+import { EditorState, type EditorStateConfig, Plugin } from '@prosekit/pm/state'
+import { type DirectEditorProps, EditorView } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
-import { CommandCreator, CommandDispatcher } from '../types/command'
-import {
+import { type CommandCreator, type CommandDispatcher } from '../types/command'
+import type {
   Extension,
   ExtractCommandDispatchers,
   ExtractMarks,

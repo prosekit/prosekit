@@ -1,7 +1,7 @@
 import { createComponent } from '@lit-labs/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { CommandEmpty as CommandEmptyElement, type CommandEmptyProps as CommandEmptyElementProps } from '@prosekit/lit/components/command-empty'
-import React, { ComponentType } from 'react'
+import React, { type ComponentType } from 'react'
 
 export type CommandEmptyProps = SimplifyUnion<{
   className?: string,

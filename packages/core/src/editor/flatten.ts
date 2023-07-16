@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { SchemaSpec } from '@prosekit/pm/model'
+import type { SchemaSpec } from '@prosekit/pm/model'
 
-import { StateConfigCallback, ViewProps } from '../types/editor'
-import { Extension } from '../types/extension'
+import type { StateConfigCallback, ViewProps } from '../types/editor'
+import type { Extension } from '../types/extension'
 import { Priority } from '../types/priority'
 
 import { Facet, FacetExtension, sortFacets } from './facet'
 import {
-  CommandSlotInput,
+  type CommandSlotInput,
   commandSlot,
   schemaSlot,
   stateSlot,

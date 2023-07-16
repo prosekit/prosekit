@@ -1,5 +1,5 @@
 import {
-  DetectOverflowOptions,
+  type DetectOverflowOptions,
   flip,
   inline,
   offset,
@@ -7,7 +7,7 @@ import {
   size,
 } from '@floating-ui/dom'
 
-import { PopoverOptions } from '../popover/options'
+import { type PopoverOptions } from '../popover/options'
 
 const defaultDetectOverflowOptions = {
   // Make sure the popover is always at least 8px away from the boundary

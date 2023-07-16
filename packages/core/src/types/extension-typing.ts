@@ -1,5 +1,5 @@
-import { CommandArgs } from './command'
-import { ExtractKey } from './extract-key'
+import type { CommandArgs } from './command'
+import type { ExtractKey } from './extract-key'
 
 /**
  * @internal

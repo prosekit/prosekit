@@ -8,6 +8,12 @@
 
 - [slash-menu](./examples/react-slash-menu)
 
+## svelte
+
+- [minimal](./examples/svelte-minimal)
+
+- [minimal2](./examples/svelte-minimal2)
+
 ## vue
 
 - [minimal](./examples/vue-minimal)

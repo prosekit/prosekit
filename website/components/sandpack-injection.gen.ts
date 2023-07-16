@@ -41,6 +41,8 @@ import file2782923475 from '../../packages/prosekit/src/react/components/command
 import file2034325215 from '../../packages/prosekit/src/react/components/command-item.gen.ts?raw'
 import file2514101062 from '../../packages/prosekit/src/react/components/command-list.gen.ts?raw'
 import file1889586615 from '../../packages/prosekit/src/react/components/command-popover.gen.ts?raw'
+import file4123555580 from '../../packages/prosekit/src/svelte.gen.ts?raw'
+import file160754582 from '../../packages/prosekit/src/svelte/components/button.gen.ts?raw'
 import file3653993053 from '../../packages/prosekit/src/vue.gen.ts?raw'
 import file3651174060 from '../../packages/prosekit/src/vue/components/command-empty.gen.ts?raw'
 import file2866905458 from '../../packages/prosekit/src/vue/components/command-item.gen.ts?raw'
@@ -197,6 +199,13 @@ import file3308375198 from '../../packages/react/tsconfig.json?raw'
 import file2941915666 from '../../packages/react/tsup.config.ts?raw'
 import file1380115827 from '../../packages/react/typedoc.json?raw'
 import file504940063 from '../../packages/react/vitest.config.ts?raw'
+import file3089221984 from '../../packages/svelte/README.md?raw'
+import file3745447607 from '../../packages/svelte/package.json?raw'
+import file2766806618 from '../../packages/svelte/src/components/button.svelte?raw'
+import file1353725560 from '../../packages/svelte/src/components/button.ts?raw'
+import file2412266483 from '../../packages/svelte/src/index.ts?raw'
+import file43605148 from '../../packages/svelte/tsconfig.json?raw'
+import file2379235485 from '../../packages/svelte/typedoc.json?raw'
 import file3698002465 from '../../packages/vue/CHANGELOG.md?raw'
 import file10206697 from '../../packages/vue/README.md?raw'
 import file3752254400 from '../../packages/vue/package.json?raw'
@@ -259,6 +268,8 @@ export const files = {
   "/node_modules/prosekit/src/react/components/command-item.gen.ts": { hidden: true, code: file2034325215 },
   "/node_modules/prosekit/src/react/components/command-list.gen.ts": { hidden: true, code: file2514101062 },
   "/node_modules/prosekit/src/react/components/command-popover.gen.ts": { hidden: true, code: file1889586615 },
+  "/node_modules/prosekit/src/svelte.gen.ts": { hidden: true, code: file4123555580 },
+  "/node_modules/prosekit/src/svelte/components/button.gen.ts": { hidden: true, code: file160754582 },
   "/node_modules/prosekit/src/vue.gen.ts": { hidden: true, code: file3653993053 },
   "/node_modules/prosekit/src/vue/components/command-empty.gen.ts": { hidden: true, code: file3651174060 },
   "/node_modules/prosekit/src/vue/components/command-item.gen.ts": { hidden: true, code: file2866905458 },
@@ -415,6 +426,13 @@ export const files = {
   "/node_modules/@prosekit/react/tsup.config.ts": { hidden: true, code: file2941915666 },
   "/node_modules/@prosekit/react/typedoc.json": { hidden: true, code: file1380115827 },
   "/node_modules/@prosekit/react/vitest.config.ts": { hidden: true, code: file504940063 },
+  "/node_modules/@prosekit/svelte/README.md": { hidden: true, code: file3089221984 },
+  "/node_modules/@prosekit/svelte/package.json": { hidden: true, code: file3745447607 },
+  "/node_modules/@prosekit/svelte/src/components/button.svelte": { hidden: true, code: file2766806618 },
+  "/node_modules/@prosekit/svelte/src/components/button.ts": { hidden: true, code: file1353725560 },
+  "/node_modules/@prosekit/svelte/src/index.ts": { hidden: true, code: file2412266483 },
+  "/node_modules/@prosekit/svelte/tsconfig.json": { hidden: true, code: file43605148 },
+  "/node_modules/@prosekit/svelte/typedoc.json": { hidden: true, code: file2379235485 },
   "/node_modules/@prosekit/vue/CHANGELOG.md": { hidden: true, code: file3698002465 },
   "/node_modules/@prosekit/vue/README.md": { hidden: true, code: file10206697 },
   "/node_modules/@prosekit/vue/package.json": { hidden: true, code: file3752254400 },

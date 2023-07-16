@@ -1,4 +1,4 @@
-import { Command } from '@prosekit/pm/state'
+import type { Command } from '@prosekit/pm/state'
 
 export type CommandDispatcher<Args extends any[] = any[]> = (
   ...arg: Args

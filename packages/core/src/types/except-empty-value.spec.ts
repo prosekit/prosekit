@@ -1,7 +1,7 @@
 import { test } from 'vitest'
 
 import { assertTypeEqual } from './assert-type-equal'
-import { ExceptEmptyValue } from './except-empty-value'
+import { type ExceptEmptyValue } from './except-empty-value'
 
 test('ExceptEmptyValue', () => {
   type T1 = {

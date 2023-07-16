@@ -1,6 +1,6 @@
 import { Schema } from '@prosekit/pm/model'
-import { EditorStateConfig } from '@prosekit/pm/state'
-import { DirectEditorProps } from '@prosekit/pm/view'
+import type { EditorStateConfig } from '@prosekit/pm/state'
+import type { DirectEditorProps } from '@prosekit/pm/view'
 
 export interface StateConfigContext {
   schema: Schema

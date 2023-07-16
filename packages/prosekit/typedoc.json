@@ -32,6 +32,8 @@
     "./src/react/components/command-item.gen.ts",
     "./src/react/components/command-list.gen.ts",
     "./src/react/components/command-popover.gen.ts",
+    "./src/svelte.gen.ts",
+    "./src/svelte/components/button.gen.ts",
     "./src/vue.gen.ts",
     "./src/vue/components/command-empty.gen.ts",
     "./src/vue/components/command-item.gen.ts",

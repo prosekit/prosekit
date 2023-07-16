@@ -1,4 +1,4 @@
-import { Package } from '@manypkg/get-packages'
+import type { Package } from '@manypkg/get-packages'
 
 export function isPublicPackage(pkg: Package): boolean {
   return !isPrivatePackage(pkg)

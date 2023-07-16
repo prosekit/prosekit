@@ -1,7 +1,7 @@
 import path, { basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { ExampleMeta, readExampleMeta } from './example-meta.js'
+import { type ExampleMeta, readExampleMeta } from './example-meta.js'
 import { findRootDir } from './find-root-dir.js'
 import { writeText } from './write-text.js'
 

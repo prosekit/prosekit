@@ -1,10 +1,10 @@
 import { consume } from '@lit-labs/context'
-import { CSSResultGroup, LitElement, PropertyValues, html } from 'lit'
+import { type CSSResultGroup, LitElement, type PropertyValues, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 
 import { blockComponentStyles } from '../../styles/block-component.styles'
 
-import { CommandListContext, commandListContext } from './list-context'
+import { type CommandListContext, commandListContext } from './list-context'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CommandEmptyProps {}

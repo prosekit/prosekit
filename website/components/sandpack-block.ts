@@ -1,6 +1,6 @@
 import { clsx } from 'clsx'
 import { Sandpack } from 'sandpack-vue3'
-import { PackageJson } from 'type-fest'
+import type { PackageJson } from 'type-fest'
 import { useData } from 'vitepress'
 import { defineComponent, h } from 'vue'
 

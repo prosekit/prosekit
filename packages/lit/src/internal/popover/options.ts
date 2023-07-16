@@ -1,4 +1,4 @@
-import { ComputePositionConfig } from '@floating-ui/dom'
+import { type ComputePositionConfig } from '@floating-ui/dom'
 
 /**
  * The `PopoverOptions` interface defines the options that can be passed to the

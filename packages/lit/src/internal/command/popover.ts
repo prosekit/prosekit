@@ -2,12 +2,12 @@ import '../popover/popover'
 
 import { provide } from '@lit-labs/context'
 import { Editor } from '@prosekit/core'
-import { PredictionRule } from '@prosekit/extensions/suggestion'
-import { CSSResultGroup, LitElement, PropertyValues, html } from 'lit'
+import { type PredictionRule } from '@prosekit/extensions/suggestion'
+import { type CSSResultGroup, LitElement, type PropertyValues, html } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 
 import { blockComponentStyles } from '../../styles/block-component.styles'
-import { PopoverOptions } from '../popover/options'
+import { type PopoverOptions } from '../popover/options'
 
 import { CommandList } from './list'
 import {
@@ -16,7 +16,7 @@ import {
 } from './popover-context'
 import { CommandPopoverController } from './popover-controller'
 import { defaultPopoverOptions } from './popover-default-options'
-import { QueryBuilder, defaultQueryBuilder } from './query-builder'
+import { type QueryBuilder, defaultQueryBuilder } from './query-builder'
 import { isCommandList } from './utils'
 
 export { type PopoverOptions, type QueryBuilder }

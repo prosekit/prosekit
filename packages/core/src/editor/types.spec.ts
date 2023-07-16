@@ -1,10 +1,10 @@
-import { Command } from '@prosekit/pm/state'
+import { type Command } from '@prosekit/pm/state'
 import { describe, it } from 'vitest'
 
 import { addCommands, addMarkSpec, addNodeSpec } from '..'
 import { assertTypeEqual } from '../types/assert-type-equal'
-import { CommandCreator } from '../types/command'
-import { Extension } from '../types/extension'
+import { type CommandCreator } from '../types/command'
+import { type Extension } from '../types/extension'
 
 import { defineExtension } from './type-utils'
 

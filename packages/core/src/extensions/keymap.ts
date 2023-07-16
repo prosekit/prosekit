@@ -1,9 +1,9 @@
 import { baseKeymap, chainCommands } from '@prosekit/pm/commands'
 import { keymap as createKeymapPlugin } from '@prosekit/pm/keymap'
-import { Command } from '@prosekit/pm/state'
+import { type Command } from '@prosekit/pm/state'
 
 import { Facet } from '../editor/facet'
-import { Extension } from '../types/extension'
+import { type Extension } from '../types/extension'
 
 import { pluginFacet } from './plugin'
 

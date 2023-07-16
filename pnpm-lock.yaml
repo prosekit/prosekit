@@ -69,7 +69,7 @@ importers:
         specifier: ^8.4.26
         version: 8.4.26
       prosekit:
-        specifier: ^0.0.4
+        specifier: ^0.0.5
         version: link:../../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -103,7 +103,7 @@ importers:
         specifier: ^8.4.26
         version: 8.4.26
       prosekit:
-        specifier: ^0.0.4
+        specifier: ^0.0.5
         version: link:../../packages/prosekit
       tailwindcss:
         specifier: ^3.3.3
@@ -128,7 +128,7 @@ importers:
   examples/vue-lib:
     dependencies:
       prosekit:
-        specifier: ^0.0.4
+        specifier: ^0.0.5
         version: link:../../packages/prosekit
     devDependencies:
       '@vitejs/plugin-vue':
@@ -384,7 +384,7 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: 0.0.3
+        specifier: 0.0.4
         version: link:../basic
       '@prosekit/core':
         specifier: 0.0.3
@@ -513,7 +513,7 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       prosekit:
-        specifier: ^0.0.4
+        specifier: ^0.0.5
         version: link:../packages/prosekit
       prosekit-example-vue-lib:
         specifier: '*'

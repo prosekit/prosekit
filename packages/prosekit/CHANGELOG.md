@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.5
+
+### Patch Changes
+
+- 902ea4b: Add internal CSS
+- Updated dependencies [902ea4b]
+  - @prosekit/basic@0.0.4
+
 ## 0.0.4
 
 ### Patch Changes

@@ -1,3 +1,5 @@
+import '../popover/popover'
+
 import { provide } from '@lit-labs/context'
 import { Editor } from '@prosekit/core'
 import { PredictionRule } from '@prosekit/extensions/suggestion'

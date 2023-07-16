@@ -335,25 +335,25 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../basic
       '@prosekit/core':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../extensions
       '@prosekit/lit':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../lit
       '@prosekit/pm':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../pm
       '@prosekit/react':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../react
       '@prosekit/vue':
-        specifier: ^0.0.3
+        specifier: 0.0.3
         version: link:../vue
     devDependencies:
       '@prosekit/dev':

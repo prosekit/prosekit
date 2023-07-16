@@ -12,9 +12,9 @@ export interface CommandItemProps {
 }
 
 /**
- * Command menu item. Becomes active on pointer enter or through keyboard navigation.
- * Preferably pass a `value`, otherwise the value will be inferred from `children` or
- * the rendered item's `textContent`.
+ * Command menu item. Becomes active on pointer enter or through keyboard
+ * navigation. Preferably pass a `value`, otherwise the value will be inferred
+ * from the rendered item's `textContent`.
  */
 @customElement('prosekit-command-item')
 export class CommandItem

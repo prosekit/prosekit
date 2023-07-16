@@ -37,8 +37,9 @@ export class CommandPopover
   /** @hidden */
   static styles: CSSResultGroup = blockComponentStyles
 
-  private controller = new CommandPopoverController(this, (query) =>
-    this.updateContextQuery(query),
+  private controller = new CommandPopoverController(
+    this,
+    this.updateContext.bind(this),
   )
 
   @property({ attribute: false })
@@ -59,6 +60,7 @@ export class CommandPopover
   @provide({ context: commandPopoverContext })
   @state()
   context: CommandPopoverContext = {
+    active: false,
     query: '',
     handleDismiss: () => this.controller.handleDismiss?.(),
     handleSubmit: () => this.controller.handleSubmit?.(),
@@ -76,11 +78,12 @@ export class CommandPopover
     )
   }
 
-  private updateContextQuery(query: string) {
-    if (this.context.query === query) {
+  private updateContext(query: string, active: boolean) {
+    if (this.context.query === query && this.context.active === active) {
       return
     }
-    this.context = { ...this.context, query }
+
+    this.context = { ...this.context, query, active }
     requestAnimationFrame(() => {
       this.list?.selectFirstItem()
     })

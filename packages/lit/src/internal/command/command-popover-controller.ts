@@ -15,7 +15,7 @@ export class CommandPopoverController implements ReactiveController {
 
   constructor(
     private host: ReactiveControllerHost,
-    private onQueryChange: (query: string) => void,
+    private onChange: (query: string, active: boolean) => void,
   ) {
     this.host.addController(this)
   }
@@ -75,7 +75,7 @@ export class CommandPopoverController implements ReactiveController {
         }
 
         const query = this.queryBuilder?.(match, matchAfter)
-        this.onQueryChange(query ?? '')
+        this.onChange(query ?? '', !!this.reference)
 
         this.handleDismiss = dismiss
         this.handleSubmit = deleteMatch
@@ -88,6 +88,7 @@ export class CommandPopoverController implements ReactiveController {
         this.reference = null
         this.host.requestUpdate()
 
+        this.onChange('', false)
         this.handleDismiss = null
         this.handleSubmit = null
       },

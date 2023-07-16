@@ -29,23 +29,34 @@ export class CommandList
 
   private controller = new CommandListController(this, {
     ArrowUp: () => {
+      if (!this.active) return false
+
       this.updateSelectedByChange(-1)
       return true
     },
     ArrowDown: () => {
+      if (!this.active) return false
+
       this.updateSelectedByChange(+1)
       return true
     },
     Escape: () => {
+      if (!this.active) return false
+
       this.popoverContext?.handleDismiss?.()
       return true
     },
     Enter: () => {
-      this.popoverContext?.handleSubmit?.()
-      this.selectedItem?.onSelect?.()
+      if (!this.active) return false
+
+      this.handleSelect(this.selectedItem)
       return true
     },
   })
+
+  private get active(): boolean {
+    return this.popoverContext?.active ?? false
+  }
 
   @property({ attribute: false })
   editor?: Editor
@@ -160,6 +171,24 @@ export class CommandList
     }
   }
 
+  private handleClick(event: MouseEvent) {
+    event.preventDefault()
+    const target = event.target as HTMLElement | null
+    const item = target?.closest('prosekit-command-item')
+    if (item && isCommandItem(item)) {
+      this.handleSelect(item)
+    }
+  }
+
+  private handleMouseDown(event: MouseEvent) {
+    event.preventDefault()
+  }
+
+  private handleSelect(item?: CommandItem | null) {
+    this.popoverContext?.handleSubmit?.()
+    item?.onSelect?.()
+  }
+
   /** @hidden */
   render() {
     return html`
@@ -167,6 +196,8 @@ export class CommandList
         role="listbox"
         aria-label="Suggestions"
         @mouseover=${this.handleMouseOver.bind(this)}
+        @click=${this.handleClick.bind(this)}
+        @mousedown=${this.handleMouseDown.bind(this)}
       >
         <slot></slot>
       </div>

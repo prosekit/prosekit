@@ -1,6 +1,8 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
   "entryPoints": [
     "./src/basic.gen.ts",
     "./src/core.gen.ts",
@@ -15,6 +17,10 @@
     "./src/extensions/suggestion.gen.ts",
     "./src/index.ts",
     "./src/lit.gen.ts",
+    "./src/lit/components/command-empty.gen.ts",
+    "./src/lit/components/command-item.gen.ts",
+    "./src/lit/components/command-list.gen.ts",
+    "./src/lit/components/command-popover.gen.ts",
     "./src/lit/elements/menu-item.gen.ts",
     "./src/lit/elements/menu.gen.ts",
     "./src/lit/elements/popover-suggestion.gen.ts",
@@ -28,6 +34,10 @@
     "./src/pm/transform.gen.ts",
     "./src/pm/view.gen.ts",
     "./src/react.gen.ts",
+    "./src/react/components/command-empty.gen.ts",
+    "./src/react/components/command-item.gen.ts",
+    "./src/react/components/command-list.gen.ts",
+    "./src/react/components/command-popover.gen.ts",
     "./src/react/components/menu-item.gen.ts",
     "./src/react/components/menu.gen.ts",
     "./src/react/components/popover-suggestion.gen.ts",

@@ -1,0 +1,86 @@
+/**
+ * @module @prosekit/lit/components/command-item
+ */
+
+import { consume } from '@lit-labs/context'
+import {
+  CSSResultGroup,
+  LitElement,
+  PropertyValues,
+  html
+} from 'lit'
+import { customElement, property, query, state } from 'lit/decorators.js'
+
+import { blockComponentStyles } from '../styles/block-component.styles'
+
+import {
+  commandPopoverContext,
+  type CommandPopoverContext,
+} from './command-context'
+import { CommandListContext, commandListContext } from './command-list-context'
+
+/**
+ * Command menu item. Becomes active on pointer enter or through keyboard navigation.
+ * Preferably pass a `value`, otherwise the value will be inferred from `children` or
+ * the rendered item's `textContent`.
+ */
+@customElement('prosekit-command-item')
+export class CommandItem extends LitElement {
+  /** @hidden */
+  static styles: CSSResultGroup = blockComponentStyles
+
+  @property({ type: String, reflect: true, attribute: 'data-value' })
+  value = ''
+
+  @property({ type: String, reflect: true, attribute: 'data-key' })
+  key = ''
+
+  @property({ type: Boolean, reflect: true, attribute: 'data-selected' })
+  selected = false
+
+  /** @hidden */
+  @property({ attribute: false })
+  onSelect?: VoidFunction
+
+  /** @hidden */
+  @query('slot') defaultSlot?: HTMLSlotElement
+
+  @consume({ context: commandPopoverContext, subscribe: true })
+  @state({})
+  context?: CommandPopoverContext
+
+  @consume({ context: commandListContext, subscribe: true })
+  @state({})
+  listContext?: CommandListContext
+
+  public get content(): string {
+    const text = this.value || this.textContent || ''
+    return text.trim().toLowerCase()
+  }
+
+  protected willUpdate(_changedProperties: PropertyValues<CommandItem>): void {
+    const content = this.content
+    this.selected = content === this.listContext?.selectedValue
+    const score = this.listContext?.scores.get(content) || 0
+    this.inert = score <= 0
+    this.hidden = score <= 0
+  }
+
+  protected updated(changedProperties: PropertyValues<CommandItem>): void {
+    if (changedProperties.has('listContext') && this.listContext) {
+      this.listContext.registerValue(this.content)
+    }
+  }
+
+  /** @hidden */
+  render() {
+    if (this.hidden) {
+      return null
+    }
+    return html`
+      <div role="option" aria-selected=${this.selected}>
+        <slot></slot>
+      </div>
+    `
+  }
+}

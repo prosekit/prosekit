@@ -1,5 +1,13 @@
 # @prosekit/react
 
+## 0.0.4
+
+### Patch Changes
+
+- 8c17ef0: Refactor components
+- Updated dependencies [8c17ef0]
+  - @prosekit/lit@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

@@ -7,10 +7,5 @@ export function skipGen(): boolean {
     return true
   }
 
-  if (process.env.CI) {
-    console.warn('Skip generation on CI')
-    return true
-  }
-
   return false
 }

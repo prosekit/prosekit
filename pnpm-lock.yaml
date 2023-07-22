@@ -307,8 +307,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       type-fest:
-        specifier: ^3.13.1
-        version: 3.13.1
+        specifier: ^4.0.0
+        version: 4.0.0
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -741,8 +741,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       type-fest:
-        specifier: ^3.13.1
-        version: 3.13.1
+        specifier: ^4.0.0
+        version: 4.0.0
       typedoc:
         specifier: ^0.24.8
         version: 0.24.8(typescript@5.1.6)
@@ -7642,6 +7642,11 @@ packages:
   /type-fest@3.13.1:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
+    dev: false
+
+  /type-fest@4.0.0:
+    resolution: {integrity: sha512-d/oYtUnPM9zar2fqqGLYPzgcY0qUlYK0evgNVti93xpzfjGkMgZHu9Lvgrkn0rqGXTgsFRxFamzjGoD9Uo+dgw==}
+    engines: {node: '>=16'}
 
   /typed-array-length@1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}

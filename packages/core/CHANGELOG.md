@@ -1,5 +1,11 @@
 # @prosekit/core
 
+## 0.0.4
+
+### Patch Changes
+
+- 7efa62c: Support more frameworks.
+
 ## 0.0.3
 
 ### Patch Changes

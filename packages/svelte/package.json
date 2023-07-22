@@ -26,13 +26,32 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./components/button": "./src/components/button.ts"
+    "./components/autocomplete-empty": {
+      "svelte": "./src/components/autocomplete-empty.ts",
+      "default": "./src/components/autocomplete-empty.ts"
+    },
+    "./components/autocomplete-item": {
+      "svelte": "./src/components/autocomplete-item.ts",
+      "default": "./src/components/autocomplete-item.ts"
+    },
+    "./components/autocomplete-list": {
+      "svelte": "./src/components/autocomplete-list.ts",
+      "default": "./src/components/autocomplete-list.ts"
+    },
+    "./components/autocomplete-popover": {
+      "svelte": "./src/components/autocomplete-popover.ts",
+      "default": "./src/components/autocomplete-popover.ts"
+    },
+    "./components/prosekit": {
+      "svelte": "./src/components/prosekit.ts",
+      "default": "./src/components/prosekit.ts"
+    }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build:svelte": "svelte-check && svelte-package -i src -o dist"
+    "build": "svelte-package -i src -o dist"
   },
   "dependencies": {
     "@prosekit/core": "^0.0.3",
@@ -49,7 +68,7 @@
   "devDependencies": {
     "@prosekit/dev": "*",
     "@sveltejs/package": "^2.2.0",
-    "svelte": "^4.0.5",
+    "svelte": "^4.1.1",
     "svelte-check": "^3.4.6",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0"
@@ -61,10 +80,35 @@
         "import": "./dist/prosekit-svelte.js",
         "default": "./dist/prosekit-svelte.js"
       },
-      "./components/button": {
-        "types": "./dist/prosekit-svelte-components-button.d.ts",
-        "import": "./dist/prosekit-svelte-components-button.js",
-        "default": "./dist/prosekit-svelte-components-button.js"
+      "./components/autocomplete-empty": {
+        "types": "./dist/prosekit-svelte-components-autocomplete-empty.d.ts",
+        "svelte": "./dist/prosekit-svelte-components-autocomplete-empty.js",
+        "import": "./dist/prosekit-svelte-components-autocomplete-empty.js",
+        "default": "./dist/prosekit-svelte-components-autocomplete-empty.js"
+      },
+      "./components/autocomplete-item": {
+        "types": "./dist/prosekit-svelte-components-autocomplete-item.d.ts",
+        "svelte": "./dist/prosekit-svelte-components-autocomplete-item.js",
+        "import": "./dist/prosekit-svelte-components-autocomplete-item.js",
+        "default": "./dist/prosekit-svelte-components-autocomplete-item.js"
+      },
+      "./components/autocomplete-list": {
+        "types": "./dist/prosekit-svelte-components-autocomplete-list.d.ts",
+        "svelte": "./dist/prosekit-svelte-components-autocomplete-list.js",
+        "import": "./dist/prosekit-svelte-components-autocomplete-list.js",
+        "default": "./dist/prosekit-svelte-components-autocomplete-list.js"
+      },
+      "./components/autocomplete-popover": {
+        "types": "./dist/prosekit-svelte-components-autocomplete-popover.d.ts",
+        "svelte": "./dist/prosekit-svelte-components-autocomplete-popover.js",
+        "import": "./dist/prosekit-svelte-components-autocomplete-popover.js",
+        "default": "./dist/prosekit-svelte-components-autocomplete-popover.js"
+      },
+      "./components/prosekit": {
+        "types": "./dist/prosekit-svelte-components-prosekit.d.ts",
+        "svelte": "./dist/prosekit-svelte-components-prosekit.js",
+        "import": "./dist/prosekit-svelte-components-prosekit.js",
+        "default": "./dist/prosekit-svelte-components-prosekit.js"
       }
     },
     "main": "./dist/prosekit-svelte.js",
@@ -75,8 +119,20 @@
         ".": [
           "./dist/prosekit-svelte.d.ts"
         ],
-        "components/button": [
-          "./dist/prosekit-svelte-components-button.d.ts"
+        "components/autocomplete-empty": [
+          "./dist/prosekit-svelte-components-autocomplete-empty.d.ts"
+        ],
+        "components/autocomplete-item": [
+          "./dist/prosekit-svelte-components-autocomplete-item.d.ts"
+        ],
+        "components/autocomplete-list": [
+          "./dist/prosekit-svelte-components-autocomplete-list.d.ts"
+        ],
+        "components/autocomplete-popover": [
+          "./dist/prosekit-svelte-components-autocomplete-popover.d.ts"
+        ],
+        "components/prosekit": [
+          "./dist/prosekit-svelte-components-prosekit.d.ts"
         ]
       }
     }

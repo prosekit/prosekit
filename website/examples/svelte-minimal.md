@@ -5,7 +5,7 @@ layout: page
 <!-- This file is generated from gen-example-markdown.ts -->
 
 <script setup>
-import { StoryBlock } from './svelte-minimal.gen'
+import { ExamplePlaygroundLazy } from '../components/example-playground-lazy'
 </script>
 
-<StoryBlock :expand="true" />
+<ExamplePlaygroundLazy collection="svelte" story="minimal" :expand="true" />

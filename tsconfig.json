@@ -16,8 +16,7 @@
     "emitDeclarationOnly": true,
     "composite": true,
     "verbatimModuleSyntax": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsxdev"
+    "forceConsistentCasingInFileNames": true
   },
   "include": [],
   "files": [],
@@ -38,10 +37,16 @@
       "path": "packages/pm"
     },
     {
+      "path": "packages/preact"
+    },
+    {
       "path": "packages/prosekit"
     },
     {
       "path": "packages/react"
+    },
+    {
+      "path": "packages/solid"
     },
     {
       "path": "packages/svelte"

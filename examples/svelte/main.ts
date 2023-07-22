@@ -1,4 +1,5 @@
-import './app.css'
+import 'prosekit/basic/internal/example.css'
+
 import App from './App.svelte'
 
 const app = new App({

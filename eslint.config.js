@@ -6,7 +6,10 @@ export default [
       project: 'tsconfig.eslint.json',
     },
   }),
-  ...react(),
+  ...react().map((config) => ({
+    ...config,
+    files: ['packages/react/**/*.@(mts|cts|ts|mtsx|ctsx|tsx)'],
+  })),
   {
     plugins: {
       '@typescript-eslint/': tsPlugin,
@@ -32,5 +35,8 @@ export default [
     rules: {
       'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
     },
+  },
+  {
+    ignores: ['examples/vanilla/src/vanilla/app.js'],
   },
 ]

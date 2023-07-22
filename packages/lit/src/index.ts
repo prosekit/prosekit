@@ -1,5 +1,1 @@
-/**
- * @module @prosekit/lit
- */
-
 export {}

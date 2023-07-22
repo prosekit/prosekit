@@ -2,17 +2,35 @@
 
 # Examples
 
+## preact
+
+- [minimal](./examples/preact-minimal)
+
+- [slash-menu](./examples/preact-slash-menu)
+
 ## react
 
 - [minimal](./examples/react-minimal)
 
 - [slash-menu](./examples/react-slash-menu)
 
+- [user-menu](./examples/react-user-menu)
+
+## solid
+
+- [minimal](./examples/solid-minimal)
+
+- [slash-menu](./examples/solid-slash-menu)
+
 ## svelte
 
 - [minimal](./examples/svelte-minimal)
 
-- [minimal2](./examples/svelte-minimal2)
+- [slash-menu](./examples/svelte-slash-menu)
+
+## vanilla
+
+- [vanilla](./examples/vanilla-vanilla)
 
 ## vue
 

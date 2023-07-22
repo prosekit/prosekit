@@ -8,8 +8,11 @@
   "baseBranch": "master",
   "updateInternalDependencies": "minor",
   "ignore": [
+    "prosekit-example-preact",
     "prosekit-example-react",
+    "prosekit-example-solid",
     "prosekit-example-svelte",
+    "prosekit-example-vanilla",
     "prosekit-example-vue",
     "prosekit-example-vue-lib",
     "prosekit-website"

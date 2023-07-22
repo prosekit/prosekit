@@ -1,8 +1,20 @@
 <script lang="ts">
-  import {Button} from 'prosekit/svelte/components/button'
+  import { createEditor } from 'prosekit/core'
+  import { addExampleExtension } from './extension'
+  import { onMount } from 'svelte'
+  import { ProseKit } from 'prosekit/svelte/components/prosekit'
+
+  const editor = createEditor({ extension: addExampleExtension() })
+
+  let place: HTMLDivElement
+
+  onMount(() => {
+    editor.mount(place)
+  })
 </script>
 
 <main>
-  <h1>Minimal 1</h1>
-  <Button />
+  <ProseKit {editor}>
+    <div bind:this={place} class="example-editor"></div>
+  </ProseKit>
 </main>

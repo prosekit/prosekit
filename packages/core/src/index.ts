@@ -12,7 +12,12 @@ export { addMarkSpec, type MarkSpecOptions } from './extensions/mark-spec'
 export { addNodeSpec, type NodeSpecOptions } from './extensions/node-spec'
 export { addNodeView, type NodeViewOptions } from './extensions/node-view'
 export { addParagraph } from './extensions/paragraph'
-export { addPlugin, type PluginOptions } from './extensions/plugin'
+export {
+  addPlugin,
+  type PluginOptions,
+  type PluginFacetInput,
+  pluginFacet,
+} from './extensions/plugin'
 export { addText } from './extensions/text'
 export { type CommandArgs as CommandArgs } from './types/command'
 export * from './types/editor'

@@ -2,7 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": ["gen", "^build", "build:tsc", "build:tsup", "build:svelte"],
+      "dependsOn": ["gen", "^build", "build:tsc", "build:tsup"],
       "outputs": ["dist/**"],
       "outputMode": "new-only"
     },
@@ -13,11 +13,6 @@
     },
     "build:tsup": {
       "dependsOn": ["^build", "build:tsc"],
-      "outputs": ["dist/**"],
-      "outputMode": "new-only"
-    },
-    "build:svelte": {
-      "dependsOn": ["^build"],
       "outputs": ["dist/**"],
       "outputMode": "new-only"
     },

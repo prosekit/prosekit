@@ -14,4 +14,4 @@ temp
 .temp
 website/.vitepress/cache
 website/references
-
+tsup.config.bundled_*.*

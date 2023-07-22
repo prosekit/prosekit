@@ -1,5 +1,14 @@
 # @prosekit/vue
 
+## 0.0.5
+
+### Patch Changes
+
+- 7efa62c: Support more frameworks.
+- Updated dependencies [7efa62c]
+  - @prosekit/core@0.0.4
+  - @prosekit/lit@0.0.5
+
 ## 0.0.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @prosekit/extensions
 
+## 0.0.4
+
+### Patch Changes
+
+- 7efa62c: Support more frameworks.
+- Updated dependencies [7efa62c]
+  - @prosekit/core@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

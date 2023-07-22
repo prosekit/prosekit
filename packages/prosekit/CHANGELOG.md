@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.0.6
+
+### Patch Changes
+
+- 7efa62c: Support more frameworks.
+- Updated dependencies [7efa62c]
+  - @prosekit/extensions@0.0.4
+  - @prosekit/preact@0.0.2
+  - @prosekit/svelte@0.0.2
+  - @prosekit/basic@0.0.5
+  - @prosekit/react@0.0.5
+  - @prosekit/solid@0.0.2
+  - @prosekit/core@0.0.4
+  - @prosekit/lit@0.0.5
+  - @prosekit/vue@0.0.5
+
 ## 0.0.5
 
 ### Patch Changes

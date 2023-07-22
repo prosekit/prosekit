@@ -26,10 +26,10 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./components/command-empty": "./src/components/command-empty.ts",
-    "./components/command-item": "./src/components/command-item.ts",
-    "./components/command-list": "./src/components/command-list.ts",
-    "./components/command-popover": "./src/components/command-popover.ts"
+    "./components/autocomplete-empty": "./src/components/autocomplete-empty.ts",
+    "./components/autocomplete-item": "./src/components/autocomplete-item.ts",
+    "./components/autocomplete-list": "./src/components/autocomplete-list.ts",
+    "./components/autocomplete-popover": "./src/components/autocomplete-popover.ts"
   },
   "files": [
     "dist"
@@ -64,25 +64,25 @@
         "import": "./dist/prosekit-vue.js",
         "default": "./dist/prosekit-vue.js"
       },
-      "./components/command-empty": {
-        "types": "./dist/prosekit-vue-components-command-empty.d.ts",
-        "import": "./dist/prosekit-vue-components-command-empty.js",
-        "default": "./dist/prosekit-vue-components-command-empty.js"
+      "./components/autocomplete-empty": {
+        "types": "./dist/prosekit-vue-components-autocomplete-empty.d.ts",
+        "import": "./dist/prosekit-vue-components-autocomplete-empty.js",
+        "default": "./dist/prosekit-vue-components-autocomplete-empty.js"
       },
-      "./components/command-item": {
-        "types": "./dist/prosekit-vue-components-command-item.d.ts",
-        "import": "./dist/prosekit-vue-components-command-item.js",
-        "default": "./dist/prosekit-vue-components-command-item.js"
+      "./components/autocomplete-item": {
+        "types": "./dist/prosekit-vue-components-autocomplete-item.d.ts",
+        "import": "./dist/prosekit-vue-components-autocomplete-item.js",
+        "default": "./dist/prosekit-vue-components-autocomplete-item.js"
       },
-      "./components/command-list": {
-        "types": "./dist/prosekit-vue-components-command-list.d.ts",
-        "import": "./dist/prosekit-vue-components-command-list.js",
-        "default": "./dist/prosekit-vue-components-command-list.js"
+      "./components/autocomplete-list": {
+        "types": "./dist/prosekit-vue-components-autocomplete-list.d.ts",
+        "import": "./dist/prosekit-vue-components-autocomplete-list.js",
+        "default": "./dist/prosekit-vue-components-autocomplete-list.js"
       },
-      "./components/command-popover": {
-        "types": "./dist/prosekit-vue-components-command-popover.d.ts",
-        "import": "./dist/prosekit-vue-components-command-popover.js",
-        "default": "./dist/prosekit-vue-components-command-popover.js"
+      "./components/autocomplete-popover": {
+        "types": "./dist/prosekit-vue-components-autocomplete-popover.d.ts",
+        "import": "./dist/prosekit-vue-components-autocomplete-popover.js",
+        "default": "./dist/prosekit-vue-components-autocomplete-popover.js"
       }
     },
     "main": "./dist/prosekit-vue.js",
@@ -93,17 +93,17 @@
         ".": [
           "./dist/prosekit-vue.d.ts"
         ],
-        "components/command-empty": [
-          "./dist/prosekit-vue-components-command-empty.d.ts"
+        "components/autocomplete-empty": [
+          "./dist/prosekit-vue-components-autocomplete-empty.d.ts"
         ],
-        "components/command-item": [
-          "./dist/prosekit-vue-components-command-item.d.ts"
+        "components/autocomplete-item": [
+          "./dist/prosekit-vue-components-autocomplete-item.d.ts"
         ],
-        "components/command-list": [
-          "./dist/prosekit-vue-components-command-list.d.ts"
+        "components/autocomplete-list": [
+          "./dist/prosekit-vue-components-autocomplete-list.d.ts"
         ],
-        "components/command-popover": [
-          "./dist/prosekit-vue-components-command-popover.d.ts"
+        "components/autocomplete-popover": [
+          "./dist/prosekit-vue-components-autocomplete-popover.d.ts"
         ]
       }
     }

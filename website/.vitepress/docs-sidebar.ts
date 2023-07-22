@@ -16,6 +16,10 @@ export const docsItems = [
     "text": "extensions",
     "items": [
       {
+        "text": "autocomplete",
+        "link": "/references/prosekit_extensions_autocomplete"
+      },
+      {
         "text": "blockquote",
         "link": "/references/prosekit_extensions_blockquote"
       },
@@ -58,20 +62,20 @@ export const docsItems = [
         "text": "components",
         "items": [
           {
-            "text": "command-empty",
-            "link": "/references/prosekit_lit_components_command_empty"
+            "text": "autocomplete-empty",
+            "link": "/references/prosekit_lit_components_autocomplete_empty"
           },
           {
-            "text": "command-item",
-            "link": "/references/prosekit_lit_components_command_item"
+            "text": "autocomplete-item",
+            "link": "/references/prosekit_lit_components_autocomplete_item"
           },
           {
-            "text": "command-list",
-            "link": "/references/prosekit_lit_components_command_list"
+            "text": "autocomplete-list",
+            "link": "/references/prosekit_lit_components_autocomplete_list"
           },
           {
-            "text": "command-popover",
-            "link": "/references/prosekit_lit_components_command_popover"
+            "text": "autocomplete-popover",
+            "link": "/references/prosekit_lit_components_autocomplete_popover"
           }
         ],
         "collapsed": true
@@ -81,26 +85,55 @@ export const docsItems = [
     "link": "/references/prosekit_lit"
   },
   {
+    "text": "preact",
+    "items": [
+      {
+        "text": "components",
+        "items": [
+          {
+            "text": "autocomplete-empty",
+            "link": "/references/prosekit_preact_components_autocomplete_empty"
+          },
+          {
+            "text": "autocomplete-item",
+            "link": "/references/prosekit_preact_components_autocomplete_item"
+          },
+          {
+            "text": "autocomplete-list",
+            "link": "/references/prosekit_preact_components_autocomplete_list"
+          },
+          {
+            "text": "autocomplete-popover",
+            "link": "/references/prosekit_preact_components_autocomplete_popover"
+          }
+        ],
+        "collapsed": true
+      }
+    ],
+    "collapsed": false,
+    "link": "/references/prosekit_preact"
+  },
+  {
     "text": "react",
     "items": [
       {
         "text": "components",
         "items": [
           {
-            "text": "command-empty",
-            "link": "/references/prosekit_react_components_command_empty"
+            "text": "autocomplete-empty",
+            "link": "/references/prosekit_react_components_autocomplete_empty"
           },
           {
-            "text": "command-item",
-            "link": "/references/prosekit_react_components_command_item"
+            "text": "autocomplete-item",
+            "link": "/references/prosekit_react_components_autocomplete_item"
           },
           {
-            "text": "command-list",
-            "link": "/references/prosekit_react_components_command_list"
+            "text": "autocomplete-list",
+            "link": "/references/prosekit_react_components_autocomplete_list"
           },
           {
-            "text": "command-popover",
-            "link": "/references/prosekit_react_components_command_popover"
+            "text": "autocomplete-popover",
+            "link": "/references/prosekit_react_components_autocomplete_popover"
           }
         ],
         "collapsed": true
@@ -110,14 +143,59 @@ export const docsItems = [
     "link": "/references/prosekit_react"
   },
   {
+    "text": "solid",
+    "items": [
+      {
+        "text": "components",
+        "items": [
+          {
+            "text": "autocomplete-empty",
+            "link": "/references/prosekit_solid_components_autocomplete_empty"
+          },
+          {
+            "text": "autocomplete-item",
+            "link": "/references/prosekit_solid_components_autocomplete_item"
+          },
+          {
+            "text": "autocomplete-list",
+            "link": "/references/prosekit_solid_components_autocomplete_list"
+          },
+          {
+            "text": "autocomplete-popover",
+            "link": "/references/prosekit_solid_components_autocomplete_popover"
+          }
+        ],
+        "collapsed": true
+      }
+    ],
+    "collapsed": false,
+    "link": "/references/prosekit_solid"
+  },
+  {
     "text": "svelte",
     "items": [
       {
         "text": "components",
         "items": [
           {
-            "text": "button",
-            "link": "/references/prosekit_svelte_components_button"
+            "text": "autocomplete-empty",
+            "link": "/references/prosekit_svelte_components_autocomplete_empty"
+          },
+          {
+            "text": "autocomplete-item",
+            "link": "/references/prosekit_svelte_components_autocomplete_item"
+          },
+          {
+            "text": "autocomplete-list",
+            "link": "/references/prosekit_svelte_components_autocomplete_list"
+          },
+          {
+            "text": "autocomplete-popover",
+            "link": "/references/prosekit_svelte_components_autocomplete_popover"
+          },
+          {
+            "text": "prosekit",
+            "link": "/references/prosekit_svelte_components_prosekit"
           }
         ],
         "collapsed": true
@@ -133,20 +211,20 @@ export const docsItems = [
         "text": "components",
         "items": [
           {
-            "text": "command-empty",
-            "link": "/references/prosekit_vue_components_command_empty"
+            "text": "autocomplete-empty",
+            "link": "/references/prosekit_vue_components_autocomplete_empty"
           },
           {
-            "text": "command-item",
-            "link": "/references/prosekit_vue_components_command_item"
+            "text": "autocomplete-item",
+            "link": "/references/prosekit_vue_components_autocomplete_item"
           },
           {
-            "text": "command-list",
-            "link": "/references/prosekit_vue_components_command_list"
+            "text": "autocomplete-list",
+            "link": "/references/prosekit_vue_components_autocomplete_list"
           },
           {
-            "text": "command-popover",
-            "link": "/references/prosekit_vue_components_command_popover"
+            "text": "autocomplete-popover",
+            "link": "/references/prosekit_vue_components_autocomplete_popover"
           }
         ],
         "collapsed": true

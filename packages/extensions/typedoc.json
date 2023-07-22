@@ -2,6 +2,7 @@
   "$schema": "https://typedoc.org/schema.json",
   "extends": ["../../config/typedoc-base.json"],
   "entryPoints": [
+    "./src/autocomplete/index.ts",
     "./src/blockquote/index.ts",
     "./src/bold/index.ts",
     "./src/code/index.ts",

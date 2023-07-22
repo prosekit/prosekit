@@ -26,6 +26,7 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
+    "./autocomplete": "./src/autocomplete/index.ts",
     "./blockquote": "./src/blockquote/index.ts",
     "./bold": "./src/bold/index.ts",
     "./code": "./src/code/index.ts",
@@ -61,6 +62,11 @@
         "types": "./dist/prosekit-extensions.d.ts",
         "import": "./dist/prosekit-extensions.js",
         "default": "./dist/prosekit-extensions.js"
+      },
+      "./autocomplete": {
+        "types": "./dist/prosekit-extensions-autocomplete.d.ts",
+        "import": "./dist/prosekit-extensions-autocomplete.js",
+        "default": "./dist/prosekit-extensions-autocomplete.js"
       },
       "./blockquote": {
         "types": "./dist/prosekit-extensions-blockquote.d.ts",
@@ -116,6 +122,9 @@
       "*": {
         ".": [
           "./dist/prosekit-extensions.d.ts"
+        ],
+        "autocomplete": [
+          "./dist/prosekit-extensions-autocomplete.d.ts"
         ],
         "blockquote": [
           "./dist/prosekit-extensions-blockquote.d.ts"

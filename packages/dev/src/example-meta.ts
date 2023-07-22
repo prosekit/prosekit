@@ -4,9 +4,7 @@ import { vfs } from './virtual-file-system.js'
 
 export interface ExampleMeta {
   [packageDir: string]: {
-    framework: string
-    dependencies: Record<string, string>
-    devDependencies: Record<string, string>
+    frameworks: string[]
     sharedFiles: {
       [filePath: string]: {
         hidden: boolean

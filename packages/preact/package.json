@@ -1,0 +1,111 @@
+{
+  "name": "@prosekit/preact",
+  "type": "module",
+  "version": "0.0.1",
+  "private": false,
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/preact"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/autocomplete-empty": "./src/components/autocomplete-empty.ts",
+    "./components/autocomplete-item": "./src/components/autocomplete-item.ts",
+    "./components/autocomplete-list": "./src/components/autocomplete-list.ts",
+    "./components/autocomplete-popover": "./src/components/autocomplete-popover.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsup": "tsup",
+    "build:tsc": "tsc -b tsconfig.json"
+  },
+  "dependencies": {
+    "@prosekit/core": "^0.0.3",
+    "@prosekit/lit": "^0.0.4"
+  },
+  "peerDependencies": {
+    "preact": ">= 9.0.0"
+  },
+  "peerDependenciesMeta": {
+    "preact": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@prosekit/dev": "*",
+    "preact": "^10.16.0",
+    "tsup": "^7.1.0",
+    "typescript": "^5.1.6",
+    "vitest": "^0.33.0"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-preact.d.ts",
+        "import": "./dist/prosekit-preact.js",
+        "default": "./dist/prosekit-preact.js"
+      },
+      "./components/autocomplete-empty": {
+        "types": "./dist/prosekit-preact-components-autocomplete-empty.d.ts",
+        "import": "./dist/prosekit-preact-components-autocomplete-empty.js",
+        "default": "./dist/prosekit-preact-components-autocomplete-empty.js"
+      },
+      "./components/autocomplete-item": {
+        "types": "./dist/prosekit-preact-components-autocomplete-item.d.ts",
+        "import": "./dist/prosekit-preact-components-autocomplete-item.js",
+        "default": "./dist/prosekit-preact-components-autocomplete-item.js"
+      },
+      "./components/autocomplete-list": {
+        "types": "./dist/prosekit-preact-components-autocomplete-list.d.ts",
+        "import": "./dist/prosekit-preact-components-autocomplete-list.js",
+        "default": "./dist/prosekit-preact-components-autocomplete-list.js"
+      },
+      "./components/autocomplete-popover": {
+        "types": "./dist/prosekit-preact-components-autocomplete-popover.d.ts",
+        "import": "./dist/prosekit-preact-components-autocomplete-popover.js",
+        "default": "./dist/prosekit-preact-components-autocomplete-popover.js"
+      }
+    },
+    "main": "./dist/prosekit-preact.js",
+    "module": "./dist/prosekit-preact.js",
+    "types": "./dist/prosekit-preact.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-preact.d.ts"
+        ],
+        "components/autocomplete-empty": [
+          "./dist/prosekit-preact-components-autocomplete-empty.d.ts"
+        ],
+        "components/autocomplete-item": [
+          "./dist/prosekit-preact-components-autocomplete-item.d.ts"
+        ],
+        "components/autocomplete-list": [
+          "./dist/prosekit-preact-components-autocomplete-list.d.ts"
+        ],
+        "components/autocomplete-popover": [
+          "./dist/prosekit-preact-components-autocomplete-popover.d.ts"
+        ]
+      }
+    }
+  }
+}

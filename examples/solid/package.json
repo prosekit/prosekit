@@ -1,0 +1,24 @@
+{
+  "name": "prosekit-example-solid",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b tsconfig.json && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "esbuild-wasm": "^0.18.13",
+    "postcss": "^8.4.26",
+    "prosekit": "^0.0.5",
+    "solid-js": "^1.7.8",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.4",
+    "vite-plugin-solid": "^2.7.0"
+  },
+  "devDependencies": {
+    "@sindresorhus/slugify": "^2.2.1"
+  }
+}

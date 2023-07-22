@@ -27,7 +27,7 @@
 
   const currentRoute = derived(
     path,
-    ($path) => routes.find((route) => route.path === $path) || routes[0]
+    ($path) => routes.find((route) => route.path === $path) || routes[0],
   )
 
   const Component = derived(
@@ -35,7 +35,7 @@
     ($currentRoute, set: (component: ComponentType) => void) => {
       $currentRoute.module().then((module) => set(module.default))
     },
-    null
+    null,
   )
 </script>
 

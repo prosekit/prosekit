@@ -2,10 +2,10 @@
   "$schema": "https://typedoc.org/schema.json",
   "extends": ["../../config/typedoc-base.json"],
   "entryPoints": [
-    "./src/components/command-empty.ts",
-    "./src/components/command-item.ts",
-    "./src/components/command-list.ts",
-    "./src/components/command-popover.ts",
+    "./src/components/autocomplete-empty.ts",
+    "./src/components/autocomplete-item.ts",
+    "./src/components/autocomplete-list.ts",
+    "./src/components/autocomplete-popover.ts",
     "./src/index.ts"
   ]
 }

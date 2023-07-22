@@ -60,10 +60,14 @@ export default defineConfig({
         },
 
         {
-          text: 'UI Components',
+          text: 'Components',
           items: [
             {
-              text: 'PopoverSuggestion',
+              text: 'AutocompletePopover',
+              link: '/guide/404',
+            },
+            {
+              text: 'InlinePopover',
               link: '/guide/404',
             },
           ],

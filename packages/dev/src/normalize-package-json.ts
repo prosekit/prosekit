@@ -84,9 +84,18 @@ export async function normalizePackageJson(pkg: Package) {
       sourcePath = foundFilePath
       distName = slugify(`${slugPackageName}-${subPath}`)
 
-      exports[path] = sourcePath
+      // Svelte requires the export key "svelte" to be present in the
+      // conditional export object.
+      // See https://kit.svelte.dev/docs/packaging#anatomy-of-a-package-json-exports
+      const isSvelte = pkg.packageJson.name.includes('svelte')
+
+      exports[path] = isSvelte
+        ? { svelte: sourcePath, default: sourcePath }
+        : sourcePath
+
       publishExports[path] = {
         types: `./dist/${distName}.d.ts`,
+        svelte: isSvelte ? `./dist/${distName}.js` : undefined,
         import: `./dist/${distName}.js`,
         default: `./dist/${distName}.js`,
       }

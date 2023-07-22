@@ -1,0 +1,10 @@
+.sandpack-editor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.sandpack-editor-expand .sp-layout .sp-editor {
+  max-height: calc(100vh - 120px);
+  height: auto;
+}

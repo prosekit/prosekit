@@ -1,22 +1,63 @@
 {
+  "preact": {
+    "frameworks": ["preact"],
+    "sharedFiles": {
+      "App.tsx": {
+        "hidden": false
+      },
+      "index.html": {
+        "hidden": false
+      },
+      "main.tsx": {
+        "hidden": false
+      },
+      "package.json": {
+        "hidden": false
+      },
+      "postcss.config.js": {
+        "hidden": false
+      },
+      "tsconfig.json": {
+        "hidden": false
+      },
+      "vite.config.ts": {
+        "hidden": false
+      }
+    },
+    "stories": {
+      "minimal": {
+        "files": {
+          "App.tsx": {
+            "hidden": false
+          },
+          "extension.ts": {
+            "hidden": false
+          }
+        }
+      },
+      "slash-menu": {
+        "files": {
+          "App.tsx": {
+            "hidden": false
+          },
+          "SlashMenu.tsx": {
+            "hidden": false
+          },
+          "ToggleItalicButton.tsx": {
+            "hidden": false
+          },
+          "extension.ts": {
+            "hidden": false
+          },
+          "use-example-editor.ts": {
+            "hidden": false
+          }
+        }
+      }
+    }
+  },
   "react": {
-    "framework": "react",
-    "dependencies": {
-      "@types/react": "^18.2.14",
-      "@types/react-dom": "^18.2.6",
-      "@vitejs/plugin-react": "^4.0.2",
-      "esbuild-wasm": "^0.18.11",
-      "postcss": "^8.4.26",
-      "prosekit": "^0.0.5",
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0",
-      "tailwindcss": "^3.3.3",
-      "typescript": "^5.1.6",
-      "vite": "^4.4.2"
-    },
-    "devDependencies": {
-      "@sindresorhus/slugify": "^2.2.1"
-    },
+    "frameworks": ["react"],
     "sharedFiles": {
       "App.tsx": {
         "hidden": true
@@ -69,28 +110,86 @@
             "hidden": false
           }
         }
+      },
+      "user-menu": {
+        "files": {
+          "App.tsx": {
+            "hidden": false
+          },
+          "UserMenu.tsx": {
+            "hidden": false
+          },
+          "extension.ts": {
+            "hidden": false
+          },
+          "users.ts": {
+            "hidden": false
+          }
+        }
+      }
+    }
+  },
+  "solid": {
+    "frameworks": ["solid"],
+    "sharedFiles": {
+      "app.tsx": {
+        "hidden": false
+      },
+      "index.html": {
+        "hidden": false
+      },
+      "main.tsx": {
+        "hidden": false
+      },
+      "package.json": {
+        "hidden": false
+      },
+      "postcss.config.js": {
+        "hidden": false
+      },
+      "tsconfig.json": {
+        "hidden": false
+      },
+      "vite.config.ts": {
+        "hidden": false
+      }
+    },
+    "stories": {
+      "minimal": {
+        "files": {
+          "App.tsx": {
+            "hidden": false
+          },
+          "extension.ts": {
+            "hidden": false
+          }
+        }
+      },
+      "slash-menu": {
+        "files": {
+          "App.tsx": {
+            "hidden": false
+          },
+          "SlashMenu.tsx": {
+            "hidden": false
+          },
+          "ToggleItalicButton.tsx": {
+            "hidden": false
+          },
+          "extension.ts": {
+            "hidden": false
+          },
+          "use-example-editor.ts": {
+            "hidden": false
+          }
+        }
       }
     }
   },
   "svelte": {
-    "framework": "svelte",
-    "dependencies": {
-      "@sveltejs/vite-plugin-svelte": "^2.4.2",
-      "@tsconfig/svelte": "^5.0.0",
-      "prosekit": "^0.0.5",
-      "svelte": "^4.0.5",
-      "svelte-check": "^3.4.5",
-      "typescript": "^5.1.6",
-      "vite": "^4.4.2"
-    },
-    "devDependencies": {
-      "@sindresorhus/slugify": "^2.2.1"
-    },
+    "frameworks": ["svelte"],
     "sharedFiles": {
       "App.svelte": {
-        "hidden": false
-      },
-      "app.css": {
         "hidden": false
       },
       "index.html": {
@@ -100,6 +199,9 @@
         "hidden": false
       },
       "package.json": {
+        "hidden": false
+      },
+      "postcss.config.js": {
         "hidden": false
       },
       "svelte.config.js": {
@@ -123,12 +225,56 @@
         "files": {
           "App.svelte": {
             "hidden": false
+          },
+          "extension.ts": {
+            "hidden": false
           }
         }
       },
-      "minimal2": {
+      "slash-menu": {
         "files": {
           "App.svelte": {
+            "hidden": false
+          },
+          "SlashMenu.svelte": {
+            "hidden": false
+          },
+          "ToggleItalicButton.svelte": {
+            "hidden": false
+          },
+          "extension.ts": {
+            "hidden": false
+          },
+          "get-example-editor.ts": {
+            "hidden": false
+          }
+        }
+      }
+    }
+  },
+  "vanilla": {
+    "frameworks": ["vanilla"],
+    "sharedFiles": {
+      "app.js": {
+        "hidden": false
+      },
+      "index.html": {
+        "hidden": false
+      },
+      "package.json": {
+        "hidden": false
+      },
+      "postcss.config.js": {
+        "hidden": false
+      },
+      "style.css": {
+        "hidden": false
+      }
+    },
+    "stories": {
+      "vanilla": {
+        "files": {
+          "app.js": {
             "hidden": false
           }
         }
@@ -136,21 +282,7 @@
     }
   },
   "vue": {
-    "framework": "vue",
-    "dependencies": {
-      "@vitejs/plugin-vue": "^4.2.3",
-      "esbuild-wasm": "^0.18.11",
-      "postcss": "^8.4.26",
-      "prosekit": "^0.0.5",
-      "tailwindcss": "^3.3.3",
-      "typescript": "^5.1.6",
-      "vite": "^4.4.2",
-      "vue": "^3.3.4",
-      "vue-tsc": "^1.8.4"
-    },
-    "devDependencies": {
-      "@sindresorhus/slugify": "^2.2.1"
-    },
+    "frameworks": ["vue"],
     "sharedFiles": {
       "App.vue": {
         "hidden": true
@@ -207,20 +339,7 @@
     }
   },
   "vue-lib": {
-    "framework": "vue-lib",
-    "dependencies": {
-      "prosekit": "^0.0.5"
-    },
-    "devDependencies": {
-      "@vitejs/plugin-vue": "^4.2.3",
-      "postcss": "^8.4.26",
-      "tailwindcss": "^3.3.3",
-      "typescript": "^5.1.6",
-      "vite": "^4.4.2",
-      "vite-plugin-dts": "^3.1.1",
-      "vue": "^3.3.4",
-      "vue-tsc": "^1.8.4"
-    },
+    "frameworks": ["vue-lib"],
     "sharedFiles": {
       "index.html": {
         "hidden": true

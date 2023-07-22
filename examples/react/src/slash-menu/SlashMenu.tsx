@@ -1,7 +1,7 @@
-import { CommandEmpty } from 'prosekit/react/components/command-empty'
-import { CommandItem } from 'prosekit/react/components/command-item'
-import { CommandList } from 'prosekit/react/components/command-list'
-import { CommandPopover } from 'prosekit/react/components/command-popover'
+import { AutocompleteEmpty } from 'prosekit/react/components/autocomplete-empty'
+import { AutocompleteItem } from 'prosekit/react/components/autocomplete-item'
+import { AutocompleteList } from 'prosekit/react/components/autocomplete-list'
+import { AutocompletePopover } from 'prosekit/react/components/autocomplete-popover'
 
 import { useExampleEditor } from './use-example-editor'
 
@@ -20,37 +20,37 @@ export default function SlashMenu() {
   }
 
   return (
-    <CommandPopover editor={editor} regex={/\/.*$/iu} regexAfter={/^\S*/}>
-      <CommandList editor={editor} className="example-slash-menu">
-        <CommandEmpty className="example-slash-menu-item">
+    <AutocompletePopover editor={editor} regex={/\/.*$/iu}>
+      <AutocompleteList editor={editor} className="example-slash-menu">
+        <AutocompleteEmpty className="example-slash-menu-item">
           No Command match
-        </CommandEmpty>
+        </AutocompleteEmpty>
 
-        <CommandItem
+        <AutocompleteItem
           className="example-slash-menu-item"
           onSelect={() => handleHeadingInsert(1)}
         >
           Insert Heading 1
-        </CommandItem>
-        <CommandItem
+        </AutocompleteItem>
+        <AutocompleteItem
           className="example-slash-menu-item"
           onSelect={() => handleHeadingInsert(2)}
         >
           Insert Heading 2
-        </CommandItem>
-        <CommandItem
+        </AutocompleteItem>
+        <AutocompleteItem
           className="example-slash-menu-item"
           onSelect={() => handleHeadingConvert(1)}
         >
           Turn into Heading 1
-        </CommandItem>
-        <CommandItem
+        </AutocompleteItem>
+        <AutocompleteItem
           className="example-slash-menu-item"
           onSelect={() => handleHeadingConvert(2)}
         >
           Turn into Heading 2
-        </CommandItem>
-      </CommandList>
-    </CommandPopover>
+        </AutocompleteItem>
+      </AutocompleteList>
+    </AutocompletePopover>
   )
 }

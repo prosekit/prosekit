@@ -15,7 +15,7 @@
     "test:coverage": "vitest run --coverage.enabled --coverage.provider=istanbul",
     "typecheck": "tsc --build tsconfig.json",
     "lint": "eslint .",
-    "fix": "manypkg fix && turbo run gen --force && eslint . --fix && prettier --write .",
+    "fix": "manypkg fix && turbo run gen --force && eslint . --fix && prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write .",
     "change": "changeset",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
     "ci:version:next": "changeset version --snapshot next && pnpm install --no-frozen-lockfile",
@@ -33,14 +33,13 @@
     "eslint": "^8.45.0",
     "jsdom": "^22.1.0",
     "prettier": "^3.0.0",
+    "prettier-plugin-svelte": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "turbo": "^1.10.7",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0"
   },
   "pnpm": {
-    "overrides": {
-      "vite-plugin-dts": "3.1.1"
-    }
+    "overrides": {}
   }
 }

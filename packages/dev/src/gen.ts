@@ -1,12 +1,12 @@
 import { genChangesetConfigJson } from './gen-changeset-config-json.js'
 import { genComponents } from './gen-components.js'
 import { genDocsItems } from './gen-docs-items.js'
+import { genExampleGlobImport } from './gen-example-glob-import.js'
 import { genExampleIndex } from './gen-example-index.js'
 import { genExampleMarkdown } from './gen-example-markdown.js'
 import { genExampleMetaJson } from './gen-example-meta-json.js'
 import { genPackageJson } from './gen-package-json.js'
 import { genRenovateJson } from './gen-renovate-json.js'
-import { genSnadpackInjection } from './gen-sandpack-injection.js'
 import { genTsconfigJson } from './gen-tsconfig-json.js'
 import { genTypedocJson } from './gen-typedoc-json.js'
 import { skipGen } from './skip-gen.js'
@@ -28,7 +28,7 @@ async function main() {
   await genExampleMetaJson()
   await genExampleMarkdown()
   await genExampleIndex()
-  await genSnadpackInjection()
+  await genExampleGlobImport()
 
   await vfs.commit()
 }

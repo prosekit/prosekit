@@ -21,10 +21,9 @@ export async function genExampleMetaJson() {
     const packageDir = path.basename(pkg.dir)
 
     const sharedFiles = await findSharedFiles(pkg)
+
     newMeta[packageDir] = {
-      framework: oldMeta?.[packageDir]?.framework ?? packageDir,
-      dependencies: pkg.packageJson.dependencies ?? {},
-      devDependencies: pkg.packageJson.devDependencies ?? {},
+      frameworks: oldMeta?.[packageDir]?.frameworks ?? [packageDir],
       sharedFiles: Object.fromEntries(
         sharedFiles.map((file) => [
           file,

@@ -2,7 +2,6 @@ import path, { basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 import { readExampleMeta } from './example-meta.js'
-import { sortObject } from './sort-object.js'
 import { vfs } from './virtual-file-system.js'
 
 export async function genExampleGlobImport() {
@@ -18,47 +17,41 @@ async function formatCode(): Promise<string> {
     Record<string, { hidden: boolean; code: string }>
   > = {}
 
-  for (const [collectionName, collection] of Object.entries(sortObject(meta))) {
+  for (const collection of meta.collections) {
     const sharedStoryFiles: Record<string, { hidden: boolean; code: string }> =
       {}
 
-    for (const [sharedFilePath, sharedFile] of Object.entries(
-      sortObject(collection.sharedFiles),
-    )) {
+    for (const sharedFile of collection.files) {
       const importFilePath = path.join(
         '../../examples',
-        collectionName,
-        sharedFilePath,
+        collection.name,
+        sharedFile.path,
       )
       importFilePaths.push(importFilePath)
-      sharedStoryFiles['/' + sharedFilePath] = {
+      sharedStoryFiles['/' + sharedFile.path] = {
         hidden: sharedFile.hidden,
         code: EDGE_REMOVER + `modules['${importFilePath}']` + EDGE_REMOVER,
       }
     }
 
-    for (const [storyName, story] of Object.entries(
-      sortObject(collection.stories),
-    )) {
+    for (const story of collection.stories) {
       const storyFiles = { ...sharedStoryFiles }
 
-      for (const [storyFilePath, storyFile] of Object.entries(
-        sortObject(story.files),
-      )) {
+      for (const storyFile of story.files) {
         const importFilePath = path.join(
           '../../examples',
-          collectionName,
+          collection.name,
           'src',
-          storyName,
-          storyFilePath,
+          story.name,
+          storyFile.path,
         )
         importFilePaths.push(importFilePath)
-        storyFiles['/' + storyFilePath] = {
+        storyFiles['/' + storyFile.path] = {
           hidden: storyFile.hidden,
           code: EDGE_REMOVER + `modules['${importFilePath}']` + EDGE_REMOVER,
         }
       }
-      stories[collectionName + '/' + storyName] = storyFiles
+      stories[collection.name + '/' + story.name] = storyFiles
     }
   }
 

@@ -2,12 +2,6 @@
 
 # Examples
 
-## preact
-
-- [minimal](./examples/preact-minimal)
-
-- [slash-menu](./examples/preact-slash-menu)
-
 ## react
 
 - [minimal](./examples/react-minimal)
@@ -16,11 +10,11 @@
 
 - [user-menu](./examples/react-user-menu)
 
-## solid
+## vue
 
-- [minimal](./examples/solid-minimal)
+- [minimal](./examples/vue-minimal)
 
-- [slash-menu](./examples/solid-slash-menu)
+- [slash-menu](./examples/vue-slash-menu)
 
 ## svelte
 
@@ -28,16 +22,18 @@
 
 - [slash-menu](./examples/svelte-slash-menu)
 
+## preact
+
+- [minimal](./examples/preact-minimal)
+
+- [slash-menu](./examples/preact-slash-menu)
+
+## solid
+
+- [minimal](./examples/solid-minimal)
+
+- [slash-menu](./examples/solid-slash-menu)
+
 ## vanilla
 
 - [vanilla](./examples/vanilla-vanilla)
-
-## vue
-
-- [minimal](./examples/vue-minimal)
-
-- [slash-menu](./examples/vue-slash-menu)
-
-## vue-lib
-
-- [src](./examples/vue-lib-src)

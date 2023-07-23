@@ -6,6 +6,10 @@
   "description": "Internal development tools for ProseKit",
   "sideEffects": false,
   "exports": {
+    "./example-meta": {
+      "types": "./src/example-meta.ts",
+      "default": "./dist/example-meta.js"
+    },
     "./config-tsup": {
       "types": "./src/config-tsup.d.ts",
       "default": "./dist/config-tsup.js"
@@ -29,10 +33,12 @@
   },
   "devDependencies": {
     "@sindresorhus/string-hash": "^2.0.0",
+    "@types/js-yaml": "^4.0.5",
     "@types/lodash-es": "^4.17.8",
     "@types/node": "^18.17.0",
     "execa": "^7.1.1",
     "globby": "^13.2.2",
+    "js-yaml": "^4.1.0",
     "json5": "^2.2.3",
     "tsx": "^3.12.7",
     "typescript": "^5.1.6"

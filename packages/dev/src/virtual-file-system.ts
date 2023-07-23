@@ -4,6 +4,7 @@ import fs from 'node:fs/promises'
 import path, { normalize } from 'node:path'
 
 import { type Package, getPackages } from '@manypkg/get-packages'
+import Yaml from 'js-yaml'
 import { sortBy } from 'lodash-es'
 
 import { findRootDir } from './find-root-dir.js'
@@ -39,6 +40,11 @@ class VirtualFile {
     return JSON.parse(text)
   }
 
+  async readYaml() {
+    const text = await this.read()
+    return Yaml.load(text)
+  }
+
   delete() {
     this.deleted = true
     this.updated = true
@@ -53,6 +59,10 @@ class VirtualFile {
 
   updateJSON(json: any) {
     this.update(JSON.stringify(json, null, 2) + '\n')
+  }
+
+  updateYaml(yaml: any) {
+    this.update(Yaml.dump(yaml))
   }
 
   async commit() {

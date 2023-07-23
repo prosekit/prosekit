@@ -99,27 +99,27 @@ const stories = {
       "code": modules['../../examples/react/src/minimal/App.tsx']
     },
     "/index.html": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/index.html']
     },
     "/main.tsx": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/main.tsx']
     },
     "/package.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/package.json']
     },
     "/postcss.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/postcss.config.js']
     },
     "/tsconfig.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/tsconfig.json']
     },
     "/vite.config.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/vite.config.ts']
     },
     "/extension.ts": {
@@ -133,27 +133,27 @@ const stories = {
       "code": modules['../../examples/react/src/slash-menu/App.tsx']
     },
     "/index.html": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/index.html']
     },
     "/main.tsx": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/main.tsx']
     },
     "/package.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/package.json']
     },
     "/postcss.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/postcss.config.js']
     },
     "/tsconfig.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/tsconfig.json']
     },
     "/vite.config.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/vite.config.ts']
     },
     "/SlashMenu.tsx": {
@@ -179,27 +179,27 @@ const stories = {
       "code": modules['../../examples/react/src/user-menu/App.tsx']
     },
     "/index.html": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/index.html']
     },
     "/main.tsx": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/main.tsx']
     },
     "/package.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/package.json']
     },
     "/postcss.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/postcss.config.js']
     },
     "/tsconfig.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/tsconfig.json']
     },
     "/vite.config.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/react/vite.config.ts']
     },
     "/UserMenu.tsx": {
@@ -221,27 +221,27 @@ const stories = {
       "code": modules['../../examples/vue/src/minimal/App.vue']
     },
     "/index.html": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/index.html']
     },
     "/main.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/main.ts']
     },
     "/package.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/package.json']
     },
     "/postcss.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/postcss.config.js']
     },
     "/tsconfig.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/tsconfig.json']
     },
     "/vite.config.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/vite.config.ts']
     },
     "/extension.ts": {
@@ -255,27 +255,27 @@ const stories = {
       "code": modules['../../examples/vue/src/slash-menu/App.vue']
     },
     "/index.html": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/index.html']
     },
     "/main.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/main.ts']
     },
     "/package.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/package.json']
     },
     "/postcss.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/postcss.config.js']
     },
     "/tsconfig.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/tsconfig.json']
     },
     "/vite.config.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/vue/vite.config.ts']
     },
     "/SlashMenu.vue": {
@@ -301,39 +301,39 @@ const stories = {
       "code": modules['../../examples/svelte/src/minimal/App.svelte']
     },
     "/index.html": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/index.html']
     },
     "/main.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/main.ts']
     },
     "/package.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/package.json']
     },
     "/postcss.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/postcss.config.js']
     },
     "/svelte.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/svelte.config.js']
     },
     "/tsconfig.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/tsconfig.json']
     },
     "/tsconfig.node.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/tsconfig.node.json']
     },
     "/vite-env.d.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/vite-env.d.ts']
     },
     "/vite.config.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/vite.config.ts']
     },
     "/extension.ts": {
@@ -347,39 +347,39 @@ const stories = {
       "code": modules['../../examples/svelte/src/slash-menu/App.svelte']
     },
     "/index.html": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/index.html']
     },
     "/main.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/main.ts']
     },
     "/package.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/package.json']
     },
     "/postcss.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/postcss.config.js']
     },
     "/svelte.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/svelte.config.js']
     },
     "/tsconfig.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/tsconfig.json']
     },
     "/tsconfig.node.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/tsconfig.node.json']
     },
     "/vite-env.d.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/vite-env.d.ts']
     },
     "/vite.config.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/svelte/vite.config.ts']
     },
     "/SlashMenu.svelte": {
@@ -405,27 +405,27 @@ const stories = {
       "code": modules['../../examples/preact/src/minimal/App.tsx']
     },
     "/index.html": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/index.html']
     },
     "/main.tsx": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/main.tsx']
     },
     "/package.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/package.json']
     },
     "/postcss.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/postcss.config.js']
     },
     "/tsconfig.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/tsconfig.json']
     },
     "/vite.config.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/vite.config.ts']
     },
     "/extension.ts": {
@@ -439,27 +439,27 @@ const stories = {
       "code": modules['../../examples/preact/src/slash-menu/App.tsx']
     },
     "/index.html": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/index.html']
     },
     "/main.tsx": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/main.tsx']
     },
     "/package.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/package.json']
     },
     "/postcss.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/postcss.config.js']
     },
     "/tsconfig.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/tsconfig.json']
     },
     "/vite.config.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/preact/vite.config.ts']
     },
     "/SlashMenu.tsx": {
@@ -481,31 +481,31 @@ const stories = {
   },
   "solid/minimal": {
     "/app.tsx": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/app.tsx']
     },
     "/index.html": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/index.html']
     },
     "/main.tsx": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/main.tsx']
     },
     "/package.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/package.json']
     },
     "/postcss.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/postcss.config.js']
     },
     "/tsconfig.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/tsconfig.json']
     },
     "/vite.config.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/vite.config.ts']
     },
     "/App.tsx": {
@@ -519,31 +519,31 @@ const stories = {
   },
   "solid/slash-menu": {
     "/app.tsx": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/app.tsx']
     },
     "/index.html": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/index.html']
     },
     "/main.tsx": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/main.tsx']
     },
     "/package.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/package.json']
     },
     "/postcss.config.js": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/postcss.config.js']
     },
     "/tsconfig.json": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/tsconfig.json']
     },
     "/vite.config.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../examples/solid/vite.config.ts']
     },
     "/App.tsx": {

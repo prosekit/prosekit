@@ -6,7 +6,7 @@ import ToggleItalicButton from './ToggleItalicButton'
 import { addExampleExtension } from './extension'
 
 export default function App() {
-  const editor = createEditor({ extension: addExampleExtension() });
+  const editor = createEditor({ extension: addExampleExtension() })
 
   return (
     <ProseKit editor={editor}>

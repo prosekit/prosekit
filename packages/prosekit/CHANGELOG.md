@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.0.8
+
+### Patch Changes
+
+- [cc6e33f] **prosekit/core**
+
+  Add `editor.isNodeActive` and `editor.isMarkActive`.
+
+- [cc6e33f] **prosekit/extensions**
+
+  Add keymap for heading node.
+
 ## 0.0.7
 
 ### Patch Changes

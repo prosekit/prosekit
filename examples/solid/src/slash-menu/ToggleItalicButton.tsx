@@ -5,7 +5,7 @@ export default function ToggleItalicButton() {
 
   const onToggleItalic = (event: MouseEvent) => {
     event.preventDefault()
-    editor().commands.toggleItalic()
+    editor.commands.toggleItalic()
   }
 
   return <button onMouseDown={onToggleItalic}>Toggle italic</button>

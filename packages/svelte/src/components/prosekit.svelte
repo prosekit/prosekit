@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { Editor } from '@prosekit/core'
-  import { setEditorContext } from '../contexts/editor-context'
+import type { Editor } from '@prosekit/core'
+import { setEditorContext } from '../contexts/editor-context'
 
-  export let editor: Editor
+export let editor: Editor
 
-  setEditorContext(editor)
+setEditorContext(editor)
 </script>
 
 <slot />

@@ -10,5 +10,6 @@
         "parser": "svelte"
       }
     }
-  ]
+  ],
+  "svelteIndentScriptAndStyle": false
 }

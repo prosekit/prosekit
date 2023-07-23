@@ -2,7 +2,6 @@
 import { watchPostEffect, ref } from 'vue'
 import { ProseKit } from 'prosekit/vue'
 import { addExampleExtension } from './extension'
-import ToggleItalicButton from './ToggleItalicButton.vue'
 import SlashMenu from './SlashMenu.vue'
 import { createEditor } from 'prosekit/core'
 
@@ -14,7 +13,6 @@ watchPostEffect(() => editor.mount(editorRef.value))
 <template>
   <ProseKit :editor="editor">
     <div ref="editorRef" class="example-editor"></div>
-    <ToggleItalicButton />
     <SlashMenu />
   </ProseKit>
 </template>

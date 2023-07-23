@@ -1,5 +1,5 @@
 import 'prosekit/basic/internal/example.css'
 
-import App from './Editor.vue'
+import Editor from './Editor.vue'
 
-export { App }
+export { Editor }

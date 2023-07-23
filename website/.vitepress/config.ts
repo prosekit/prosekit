@@ -35,27 +35,27 @@ export default defineConfig({
         {
           text: 'Core Concepts',
           items: [
-            { text: 'Extension', link: '/guide/404' },
-            { text: 'Node', link: '/guide/404' },
-            { text: 'Mark', link: '/guide/404' },
-            { text: 'Commands', link: '/guide/404' },
-            { text: 'Keymap', link: '/guide/404' },
+            { text: 'Extension (WIP)', link: '/guide/404' },
+            { text: 'Node (WIP)', link: '/guide/404' },
+            { text: 'Mark (WIP)', link: '/guide/404' },
+            { text: 'Commands (WIP)', link: '/guide/404' },
+            { text: 'Keymap (WIP)', link: '/guide/404' },
           ],
         },
 
         {
           text: 'Nodes',
           items: [
-            { text: 'Use Built-in Nodes', link: '/guide/404' },
-            { text: 'Add a Custom Node', link: '/guide/404' },
+            { text: 'Use Built-in Nodes (WIP)', link: '/guide/404' },
+            { text: 'Add a Custom Node (WIP)', link: '/guide/404' },
           ],
         },
 
         {
           text: 'Marks',
           items: [
-            { text: 'Use Built-in Marks', link: '/guide/404' },
-            { text: 'Add a Custom Mark', link: '/guide/404' },
+            { text: 'Use Built-in Marks (WIP)', link: '/guide/404' },
+            { text: 'Add a Custom Mark (WIP)', link: '/guide/404' },
           ],
         },
 
@@ -63,11 +63,11 @@ export default defineConfig({
           text: 'Components',
           items: [
             {
-              text: 'AutocompletePopover',
+              text: 'Autocomplete (WIP)',
               link: '/guide/404',
             },
             {
-              text: 'InlinePopover',
+              text: 'InlinePopover (WIP)',
               link: '/guide/404',
             },
           ],

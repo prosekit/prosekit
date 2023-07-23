@@ -6,6 +6,7 @@
   "main": "./dist/prosekit-example-vue-lib.js",
   "exports": {
     ".": {
+      "types": "./dist/prosekit-example-vue-lib.d.ts",
       "default": "./dist/prosekit-example-vue-lib.js"
     },
     "./style.css": {

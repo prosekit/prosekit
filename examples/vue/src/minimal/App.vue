@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { ref, watchPostEffect } from 'vue'
-import { ProseKit } from 'prosekit/vue'
-import { addExampleExtension } from './extension'
-import { createEditor } from 'prosekit/core'
+import 'prosekit/basic/style.css'
 
-const editor = createEditor({ extension: addExampleExtension() })
+import { addBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+import { ProseKit } from 'prosekit/vue'
+import { ref, watchPostEffect } from 'vue'
+
+const extension = addBasicExtension()
+const editor = createEditor({ extension })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect(() => editor.mount(editorRef.value))
 </script>

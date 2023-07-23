@@ -1,5 +1,5 @@
 <script lang="ts">
-  import '@prosekit/lit/components/autocomplete-empty'
+import '@prosekit/lit/components/autocomplete-empty'
 </script>
 
 <prosekit-autocomplete-empty {...$$props}>

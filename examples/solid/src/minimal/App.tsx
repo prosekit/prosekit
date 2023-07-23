@@ -1,10 +1,12 @@
+import 'prosekit/basic/style.css'
+
+import { addBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 
-import { addExampleExtension } from './extension'
-
 export default function App() {
-  const editor = createEditor({ extension: addExampleExtension() })
+  const extension = addBasicExtension()
+  const editor = createEditor({ extension })
 
   return (
     <ProseKit editor={editor}>

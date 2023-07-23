@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { createEditor } from 'prosekit/core'
-  import { addExampleExtension } from './extension'
-  import { onMount } from 'svelte'
-  import { ProseKit } from 'prosekit/svelte/components/prosekit'
+import 'prosekit/basic/style.css'
 
-  const editor = createEditor({ extension: addExampleExtension() })
+import { onMount } from 'svelte'
+import { createEditor } from 'prosekit/core'
+import { ProseKit } from 'prosekit/svelte/components/prosekit'
+import { addBasicExtension } from 'prosekit/basic'
 
-  let place: HTMLDivElement
+const extension = addBasicExtension()
+const editor = createEditor({ extension })
 
-  onMount(() => {
-    editor.mount(place)
-  })
+let place: HTMLDivElement
+onMount(() => editor.mount(place))
 </script>
 
 <main>

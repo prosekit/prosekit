@@ -18,7 +18,9 @@ pnpm add prosekit
 
 :::
 
-## Configuration
+## Usage
+
+<!--
 
 First, you need to configure specific extensions.
 
@@ -40,41 +42,19 @@ export type ExampleExtension = ReturnType<typeof addExampleExtension>
 
 Then, you need to integrate the extensions into your UI framework.
 
+-->
+
 ::: code-group
 
-```tsx [React]
-import { ProseKit } from 'prosekit/react'
-import { useMemo, useState } from 'react'
-import { addExampleExtension } from './extension'
+<<< @/../examples/react/src/minimal/App.tsx [React]
 
-export function App() {
-  const extension = useMemo(addExampleExtension, [])
-  const [place, setPlace] = useState<HTMLElement | null>(null)
+<<< @/../examples/vue/src/minimal/App.vue [Vue]
 
-  return (
-    <ProseKit extension={extension} place={place}>
-      <div ref={setPlace}></div>
-    </ProseKit>
-  )
-}
-```
+<<< @/../examples/svelte/src/minimal/App.svelte [Svelte]
 
-```vue [Vue]
-<script setup lang="ts">
-import { computed, ref } from 'vue'
-import { ProseKit } from 'prosekit/vue'
-import { addExampleExtension } from './extension'
+<<< @/../examples/preact/src/minimal/App.tsx [Preact]
 
-const extension = computed(addExampleExtension)
-const place = ref<HTMLElement | null>(null)
-</script>
-
-<template>
-  <ProseKit :extension="extension" :place="place">
-    <div ref="place"></div>
-  </ProseKit>
-</template>
-```
+<<< @/../examples/solid/src/minimal/App.tsx [Solid]
 
 :::
 

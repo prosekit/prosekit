@@ -23,8 +23,6 @@ collections:
         files:
           - path: App.tsx
             hidden: false
-          - path: extension.ts
-            hidden: false
       - name: slash-menu
         files:
           - path: App.tsx
@@ -71,8 +69,6 @@ collections:
         files:
           - path: App.vue
             hidden: false
-          - path: extension.ts
-            hidden: false
       - name: slash-menu
         files:
           - path: App.vue
@@ -115,8 +111,6 @@ collections:
         files:
           - path: App.svelte
             hidden: false
-          - path: extension.ts
-            hidden: false
       - name: slash-menu
         files:
           - path: App.svelte
@@ -153,8 +147,6 @@ collections:
         files:
           - path: App.tsx
             hidden: false
-          - path: extension.ts
-            hidden: false
       - name: slash-menu
         files:
           - path: App.tsx
@@ -190,8 +182,6 @@ collections:
       - name: minimal
         files:
           - path: App.tsx
-            hidden: false
-          - path: extension.ts
             hidden: false
       - name: slash-menu
         files:

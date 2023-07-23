@@ -9,7 +9,6 @@ const modules = import.meta.glob([
   "../../examples/react/tsconfig.json",
   "../../examples/react/vite.config.ts",
   "../../examples/react/src/minimal/App.tsx",
-  "../../examples/react/src/minimal/extension.ts",
   "../../examples/react/src/slash-menu/App.tsx",
   "../../examples/react/src/slash-menu/SlashMenu.tsx",
   "../../examples/react/src/slash-menu/ToggleItalicButton.tsx",
@@ -27,7 +26,6 @@ const modules = import.meta.glob([
   "../../examples/vue/tsconfig.json",
   "../../examples/vue/vite.config.ts",
   "../../examples/vue/src/minimal/App.vue",
-  "../../examples/vue/src/minimal/extension.ts",
   "../../examples/vue/src/slash-menu/App.vue",
   "../../examples/vue/src/slash-menu/SlashMenu.vue",
   "../../examples/vue/src/slash-menu/ToggleItalicButton.vue",
@@ -44,7 +42,6 @@ const modules = import.meta.glob([
   "../../examples/svelte/vite-env.d.ts",
   "../../examples/svelte/vite.config.ts",
   "../../examples/svelte/src/minimal/App.svelte",
-  "../../examples/svelte/src/minimal/extension.ts",
   "../../examples/svelte/src/slash-menu/App.svelte",
   "../../examples/svelte/src/slash-menu/SlashMenu.svelte",
   "../../examples/svelte/src/slash-menu/ToggleItalicButton.svelte",
@@ -58,7 +55,6 @@ const modules = import.meta.glob([
   "../../examples/preact/tsconfig.json",
   "../../examples/preact/vite.config.ts",
   "../../examples/preact/src/minimal/App.tsx",
-  "../../examples/preact/src/minimal/extension.ts",
   "../../examples/preact/src/slash-menu/App.tsx",
   "../../examples/preact/src/slash-menu/SlashMenu.tsx",
   "../../examples/preact/src/slash-menu/ToggleItalicButton.tsx",
@@ -72,7 +68,6 @@ const modules = import.meta.glob([
   "../../examples/solid/tsconfig.json",
   "../../examples/solid/vite.config.ts",
   "../../examples/solid/src/minimal/App.tsx",
-  "../../examples/solid/src/minimal/extension.ts",
   "../../examples/solid/src/slash-menu/App.tsx",
   "../../examples/solid/src/slash-menu/SlashMenu.tsx",
   "../../examples/solid/src/slash-menu/ToggleItalicButton.tsx",
@@ -121,10 +116,6 @@ const stories = {
     "/vite.config.ts": {
       "hidden": true,
       "code": modules['../../examples/react/vite.config.ts']
-    },
-    "/extension.ts": {
-      "hidden": false,
-      "code": modules['../../examples/react/src/minimal/extension.ts']
     }
   },
   "react-slash-menu": {
@@ -243,10 +234,6 @@ const stories = {
     "/vite.config.ts": {
       "hidden": true,
       "code": modules['../../examples/vue/vite.config.ts']
-    },
-    "/extension.ts": {
-      "hidden": false,
-      "code": modules['../../examples/vue/src/minimal/extension.ts']
     }
   },
   "vue-slash-menu": {
@@ -335,10 +322,6 @@ const stories = {
     "/vite.config.ts": {
       "hidden": true,
       "code": modules['../../examples/svelte/vite.config.ts']
-    },
-    "/extension.ts": {
-      "hidden": false,
-      "code": modules['../../examples/svelte/src/minimal/extension.ts']
     }
   },
   "svelte-slash-menu": {
@@ -427,10 +410,6 @@ const stories = {
     "/vite.config.ts": {
       "hidden": true,
       "code": modules['../../examples/preact/vite.config.ts']
-    },
-    "/extension.ts": {
-      "hidden": false,
-      "code": modules['../../examples/preact/src/minimal/extension.ts']
     }
   },
   "preact-slash-menu": {
@@ -507,10 +486,6 @@ const stories = {
     "/vite.config.ts": {
       "hidden": true,
       "code": modules['../../examples/solid/vite.config.ts']
-    },
-    "/extension.ts": {
-      "hidden": false,
-      "code": modules['../../examples/solid/src/minimal/extension.ts']
     }
   },
   "solid-slash-menu": {

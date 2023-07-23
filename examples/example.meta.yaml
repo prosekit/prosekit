@@ -5,19 +5,19 @@ collections:
       - react
     files:
       - path: App.tsx
-        hidden: false
+        hidden: true
       - path: index.html
-        hidden: false
+        hidden: true
       - path: main.tsx
-        hidden: false
+        hidden: true
       - path: package.json
-        hidden: false
+        hidden: true
       - path: postcss.config.js
-        hidden: false
+        hidden: true
       - path: tsconfig.json
-        hidden: false
+        hidden: true
       - path: vite.config.ts
-        hidden: false
+        hidden: true
     stories:
       - name: minimal
         files:
@@ -53,19 +53,19 @@ collections:
       - vue
     files:
       - path: App.vue
-        hidden: false
+        hidden: true
       - path: index.html
-        hidden: false
+        hidden: true
       - path: main.ts
-        hidden: false
+        hidden: true
       - path: package.json
-        hidden: false
+        hidden: true
       - path: postcss.config.js
-        hidden: false
+        hidden: true
       - path: tsconfig.json
-        hidden: false
+        hidden: true
       - path: vite.config.ts
-        hidden: false
+        hidden: true
     stories:
       - name: minimal
         files:
@@ -91,25 +91,25 @@ collections:
       - svelte
     files:
       - path: App.svelte
-        hidden: false
+        hidden: true
       - path: index.html
-        hidden: false
+        hidden: true
       - path: main.ts
-        hidden: false
+        hidden: true
       - path: package.json
-        hidden: false
+        hidden: true
       - path: postcss.config.js
-        hidden: false
+        hidden: true
       - path: svelte.config.js
-        hidden: false
+        hidden: true
       - path: tsconfig.json
-        hidden: false
+        hidden: true
       - path: tsconfig.node.json
-        hidden: false
+        hidden: true
       - path: vite-env.d.ts
-        hidden: false
+        hidden: true
       - path: vite.config.ts
-        hidden: false
+        hidden: true
     stories:
       - name: minimal
         files:
@@ -135,19 +135,19 @@ collections:
       - preact
     files:
       - path: App.tsx
-        hidden: false
+        hidden: true
       - path: index.html
-        hidden: false
+        hidden: true
       - path: main.tsx
-        hidden: false
+        hidden: true
       - path: package.json
-        hidden: false
+        hidden: true
       - path: postcss.config.js
-        hidden: false
+        hidden: true
       - path: tsconfig.json
-        hidden: false
+        hidden: true
       - path: vite.config.ts
-        hidden: false
+        hidden: true
     stories:
       - name: minimal
         files:
@@ -173,19 +173,19 @@ collections:
       - solid
     files:
       - path: app.tsx
-        hidden: false
+        hidden: true
       - path: index.html
-        hidden: false
+        hidden: true
       - path: main.tsx
-        hidden: false
+        hidden: true
       - path: package.json
-        hidden: false
+        hidden: true
       - path: postcss.config.js
-        hidden: false
+        hidden: true
       - path: tsconfig.json
-        hidden: false
+        hidden: true
       - path: vite.config.ts
-        hidden: false
+        hidden: true
     stories:
       - name: minimal
         files:

@@ -15,7 +15,7 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "clsx": "^2.0.0",
-    "postcss": "^8.4.26",
+    "postcss": "^8.4.27",
     "prettier": "^3.0.0",
     "prosekit": "^0.0.6",
     "prosekit-example-vue-lib": "*",
@@ -29,8 +29,8 @@
     "typedoc-plugin-markdown": "^4.0.0-next.17",
     "typedoc-plugin-mdn-links": "^3.0.3",
     "typescript": "^5.1.6",
-    "vite": "^4.4.4",
-    "vitepress": "1.0.0-beta.5",
+    "vite": "^4.4.6",
+    "vitepress": "1.0.0-beta.6",
     "vue": "^3.3.4"
   }
 }

@@ -131,7 +131,7 @@ function formatSvelteCode(kebab: string) {
   return (
     `
 <script lang="ts">
-  import '@prosekit/lit/components/${kebab}'
+import '@prosekit/lit/components/${kebab}'
 </script>
 
 <prosekit-${kebab} {...$$props}>

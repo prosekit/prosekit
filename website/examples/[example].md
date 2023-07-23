@@ -7,8 +7,7 @@ import { useData } from 'vitepress'
 import { ExamplePlaygroundLazy } from '../components/example-playground-lazy'
 
 const { params } = useData()
-const preact = params.value.collection
-const story = params.value.story
+const example = params.value.example
 </script>
 
-<ExamplePlaygroundLazy collection="preact" story="minimal" :expand="true" />
+<ExamplePlaygroundLazy :example="example" :expand="true" />

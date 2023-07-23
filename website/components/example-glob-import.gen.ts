@@ -64,7 +64,7 @@ const modules = import.meta.glob([
   "../../examples/preact/src/slash-menu/ToggleItalicButton.tsx",
   "../../examples/preact/src/slash-menu/extension.ts",
   "../../examples/preact/src/slash-menu/use-example-editor.ts",
-  "../../examples/solid/app.tsx",
+  "../../examples/solid/App.tsx",
   "../../examples/solid/index.html",
   "../../examples/solid/main.tsx",
   "../../examples/solid/package.json",
@@ -93,7 +93,7 @@ const modules = import.meta.glob([
 ], { as: 'raw', eager: true })
 
 const stories = {
-  "react/minimal": {
+  "react-minimal": {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../examples/react/src/minimal/App.tsx']
@@ -127,7 +127,7 @@ const stories = {
       "code": modules['../../examples/react/src/minimal/extension.ts']
     }
   },
-  "react/slash-menu": {
+  "react-slash-menu": {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../examples/react/src/slash-menu/App.tsx']
@@ -173,7 +173,7 @@ const stories = {
       "code": modules['../../examples/react/src/slash-menu/use-example-editor.ts']
     }
   },
-  "react/user-menu": {
+  "react-user-menu": {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../examples/react/src/user-menu/App.tsx']
@@ -215,7 +215,7 @@ const stories = {
       "code": modules['../../examples/react/src/user-menu/users.ts']
     }
   },
-  "vue/minimal": {
+  "vue-minimal": {
     "/App.vue": {
       "hidden": false,
       "code": modules['../../examples/vue/src/minimal/App.vue']
@@ -249,7 +249,7 @@ const stories = {
       "code": modules['../../examples/vue/src/minimal/extension.ts']
     }
   },
-  "vue/slash-menu": {
+  "vue-slash-menu": {
     "/App.vue": {
       "hidden": false,
       "code": modules['../../examples/vue/src/slash-menu/App.vue']
@@ -295,7 +295,7 @@ const stories = {
       "code": modules['../../examples/vue/src/slash-menu/use-example-editor.ts']
     }
   },
-  "svelte/minimal": {
+  "svelte-minimal": {
     "/App.svelte": {
       "hidden": false,
       "code": modules['../../examples/svelte/src/minimal/App.svelte']
@@ -341,7 +341,7 @@ const stories = {
       "code": modules['../../examples/svelte/src/minimal/extension.ts']
     }
   },
-  "svelte/slash-menu": {
+  "svelte-slash-menu": {
     "/App.svelte": {
       "hidden": false,
       "code": modules['../../examples/svelte/src/slash-menu/App.svelte']
@@ -399,7 +399,7 @@ const stories = {
       "code": modules['../../examples/svelte/src/slash-menu/get-example-editor.ts']
     }
   },
-  "preact/minimal": {
+  "preact-minimal": {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../examples/preact/src/minimal/App.tsx']
@@ -433,7 +433,7 @@ const stories = {
       "code": modules['../../examples/preact/src/minimal/extension.ts']
     }
   },
-  "preact/slash-menu": {
+  "preact-slash-menu": {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../examples/preact/src/slash-menu/App.tsx']
@@ -479,10 +479,10 @@ const stories = {
       "code": modules['../../examples/preact/src/slash-menu/use-example-editor.ts']
     }
   },
-  "solid/minimal": {
-    "/app.tsx": {
-      "hidden": true,
-      "code": modules['../../examples/solid/app.tsx']
+  "solid-minimal": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../examples/solid/src/minimal/App.tsx']
     },
     "/index.html": {
       "hidden": true,
@@ -507,20 +507,16 @@ const stories = {
     "/vite.config.ts": {
       "hidden": true,
       "code": modules['../../examples/solid/vite.config.ts']
-    },
-    "/App.tsx": {
-      "hidden": false,
-      "code": modules['../../examples/solid/src/minimal/App.tsx']
     },
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../examples/solid/src/minimal/extension.ts']
     }
   },
-  "solid/slash-menu": {
-    "/app.tsx": {
-      "hidden": true,
-      "code": modules['../../examples/solid/app.tsx']
+  "solid-slash-menu": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../examples/solid/src/slash-menu/App.tsx']
     },
     "/index.html": {
       "hidden": true,
@@ -545,10 +541,6 @@ const stories = {
     "/vite.config.ts": {
       "hidden": true,
       "code": modules['../../examples/solid/vite.config.ts']
-    },
-    "/App.tsx": {
-      "hidden": false,
-      "code": modules['../../examples/solid/src/slash-menu/App.tsx']
     },
     "/SlashMenu.tsx": {
       "hidden": false,
@@ -567,7 +559,7 @@ const stories = {
       "code": modules['../../examples/solid/src/slash-menu/use-example-editor.ts']
     }
   },
-  "vanilla/vanilla": {
+  "vanilla-vanilla": {
     "/app.js": {
       "hidden": false,
       "code": modules['../../examples/vanilla/src/vanilla/app.js']

@@ -1,6 +1,5 @@
 import type { Editor } from '@prosekit/core'
-import type { Component, ParentProps } from 'solid-js'
-import h from 'solid-js/h'
+import { createComponent, type Component, type ParentProps } from 'solid-js'
 
 import { editorContext } from '../contexts/editor-context'
 
@@ -9,9 +8,14 @@ export type ProseKitProps = ParentProps<{
 }>
 
 export const ProseKit: Component<ProseKitProps> = (props) => {
-  const { editor, children } = props
-
-  return h(EditorContextProvider, { value: { editor } }, children)
+  return createComponent(editorContext.Provider, {
+    get value() {
+      return {
+        editor: props.editor,
+      }
+    },
+    get children() {
+      return props.children
+    },
+  })
 }
-
-const EditorContextProvider = editorContext.Provider

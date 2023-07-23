@@ -8,8 +8,7 @@ async function paths() {
     for (const story of collection.stories) {
       paths.push({
         params: {
-          collection: collection.name,
-          story: story.name,
+          example: collection.name + '-' + story.name,
         },
       })
     }

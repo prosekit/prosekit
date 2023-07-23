@@ -172,8 +172,8 @@ collections:
     frameworks:
       - solid
     files:
-      - path: app.tsx
-        hidden: true
+      - path: App.tsx
+        hidden: false
       - path: index.html
         hidden: true
       - path: main.tsx

@@ -1,6 +1,6 @@
 import { Router } from './src/router'
 
-export function App() {
+export default function App() {
   return (
     <>
       <h1>ProseKit + Solid</h1>

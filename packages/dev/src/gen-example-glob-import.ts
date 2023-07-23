@@ -51,7 +51,7 @@ async function formatCode(): Promise<string> {
           code: EDGE_REMOVER + `modules['${importFilePath}']` + EDGE_REMOVER,
         }
       }
-      stories[collection.name + '/' + story.name] = storyFiles
+      stories[collection.name + '-' + story.name] = storyFiles
     }
   }
 

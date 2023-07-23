@@ -1,3 +1,6 @@
+@import './text-content.css';
+@import './component.css';
+
 .example-editor {
   @apply my-2 box-border h-[250px] w-full overflow-auto rounded-md p-4 outline outline-2;
 
@@ -16,32 +19,4 @@
     'Segoe UI Emoji',
     'Segoe UI Symbol',
     'Noto Color Emoji';
-}
-
-.example-editor p {
-  line-height: 1.5;
-  margin-top: 0.75em;
-  margin-bottom: 0.75em;
-}
-
-.example-editor p:first-of-type {
-  margin-top: 0;
-}
-
-.example-editor p:last-of-type {
-  margin-bottom: 0;
-}
-
-.example-slash-menu {
-  @apply relative max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap rounded;
-  @apply bg-white dark:bg-zinc-800;
-  @apply border border-solid border-gray-500;
-}
-
-.example-slash-menu-item {
-  @apply relative min-w-[64px] cursor-pointer select-none whitespace-nowrap p-2;
-}
-
-.example-slash-menu-item[data-selected] {
-  @apply bg-gray-200 dark:bg-gray-700;
 }

@@ -4,48 +4,56 @@ import { type Package } from '@manypkg/get-packages'
 import { uniq } from 'lodash-es'
 
 import {
-  type ExampleMeta,
+  findExampleCollection,
+  findExampleCollectionFile,
+  findExampleStoryFile,
   readExampleMeta,
   writeExampleMeta,
+  type ExampleCollection,
+  type ExampleMeta,
 } from './example-meta'
 import { skipGen } from './skip-gen'
 import { vfs } from './virtual-file-system'
 
-export async function genExampleMetaJson() {
+export async function genExampleMetaYaml() {
   if (skipGen()) return
 
   const oldMeta: ExampleMeta = await readExampleMeta()
-  const newMeta: ExampleMeta = {}
+  const newMeta: ExampleMeta = { collections: [] }
 
   for (const pkg of await vfs.getExamplePackages()) {
-    const packageDir = path.basename(pkg.dir)
-
     const sharedFiles = await findSharedFiles(pkg)
 
-    newMeta[packageDir] = {
-      frameworks: oldMeta?.[packageDir]?.frameworks ?? [packageDir],
-      sharedFiles: Object.fromEntries(
-        sharedFiles.map((file) => [
-          file,
-          {
-            hidden: oldMeta?.[packageDir]?.sharedFiles?.[file]?.hidden ?? false,
-          },
-        ]),
-      ),
-      stories: {},
+    const collectionName = path.basename(pkg.dir)
+    const oldCollection = findExampleCollection(oldMeta, collectionName)
+    const newCollection: ExampleCollection = {
+      name: collectionName,
+      order: oldCollection?.order ?? 9999,
+      frameworks: oldCollection?.frameworks ?? [collectionName],
+      files: sharedFiles.map((filePath) => ({
+        path: filePath,
+        hidden:
+          findExampleCollectionFile(oldMeta, collectionName, filePath)
+            ?.hidden ?? false,
+      })),
+      stories: [],
     }
 
-    for (const story of await findStories(pkg)) {
-      newMeta[packageDir].stories[story] = { files: {} }
+    for (const storyName of await findStories(pkg)) {
+      const storyFiles = await findStoryFiles(pkg, storyName)
 
-      for (const file of await findStoryFiles(pkg, story)) {
-        newMeta[packageDir].stories[story].files[file] = {
+      newCollection.stories.push({
+        name: storyName,
+        files: storyFiles.map((filePath) => ({
+          path: filePath,
           hidden:
-            oldMeta?.[packageDir]?.stories?.[story]?.files?.[file]?.hidden ??
-            false,
-        }
-      }
+            findExampleStoryFile(oldMeta, collectionName, storyName, filePath)
+              ?.hidden ?? false,
+        })),
+      })
     }
+
+    newMeta.collections.push(newCollection)
   }
 
   await writeExampleMeta(newMeta)

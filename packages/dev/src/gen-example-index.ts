@@ -15,10 +15,14 @@ export async function genExampleIndex() {
 
 function formatIndexMarkdown(meta: ExampleMeta) {
   const lines: string[] = []
-  for (const [packageDir, pkg] of Object.entries(meta)) {
-    lines.push(`## ${packageDir}`)
-    for (const storyName of Object.keys(pkg.stories)) {
-      lines.push(`- [${storyName}](./examples/${packageDir}-${storyName})`)
+  for (const collection of meta.collections) {
+    if (collection.stories.length === 0) continue
+
+    lines.push(`## ${collection.name}`)
+    for (const story of collection.stories) {
+      lines.push(
+        `- [${story.name}](./examples/${collection.name}-${story.name})`,
+      )
     }
   }
 

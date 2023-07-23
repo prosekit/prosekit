@@ -1,4 +1,4 @@
-import { Editor, type Extension, ProseKitError } from '@prosekit/core'
+import { Editor, ProseKitError, type Extension } from '@prosekit/core'
 import { useContext } from 'solid-js'
 
 import { editorContext } from '../contexts/editor-context'

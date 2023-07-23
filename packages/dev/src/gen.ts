@@ -3,8 +3,7 @@ import { genComponents } from './gen-components.js'
 import { genDocsItems } from './gen-docs-items.js'
 import { genExampleGlobImport } from './gen-example-glob-import.js'
 import { genExampleIndex } from './gen-example-index.js'
-import { genExampleMarkdown } from './gen-example-markdown.js'
-import { genExampleMetaJson } from './gen-example-meta-json.js'
+import { genExampleMetaYaml } from './gen-example-meta-yaml.js'
 import { genPackageJson } from './gen-package-json.js'
 import { genRenovateJson } from './gen-renovate-json.js'
 import { genTsconfigJson } from './gen-tsconfig-json.js'
@@ -25,8 +24,7 @@ async function main() {
   await genChangesetConfigJson()
 
   // Example for website
-  await genExampleMetaJson()
-  await genExampleMarkdown()
+  await genExampleMetaYaml()
   await genExampleIndex()
   await genExampleGlobImport()
 

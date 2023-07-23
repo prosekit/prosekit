@@ -1,8 +1,10 @@
 import {
   addInputRule,
+  addKeymap,
   addNodeSpec,
   defineExtension,
   getNodeType,
+  toggleNode,
 } from '@prosekit/core'
 import { textblockTypeInputRule } from '@prosekit/pm/inputrules'
 
@@ -33,6 +35,17 @@ export function addHeadingSpec() {
   })
 }
 
+export function addHeadingKeymap() {
+  return addKeymap({
+    'mod-1': toggleNode({ type: 'heading', attrs: { level: 1 } }),
+    'mod-2': toggleNode({ type: 'heading', attrs: { level: 2 } }),
+    'mod-3': toggleNode({ type: 'heading', attrs: { level: 3 } }),
+    'mod-4': toggleNode({ type: 'heading', attrs: { level: 4 } }),
+    'mod-5': toggleNode({ type: 'heading', attrs: { level: 5 } }),
+    'mod-6': toggleNode({ type: 'heading', attrs: { level: 6 } }),
+  })
+}
+
 export function addHeadingInputRule() {
   return addInputRule(({ schema }) => {
     const nodeSpec = getNodeType(schema, 'heading')
@@ -50,5 +63,9 @@ export function addHeadingInputRule() {
 
 /** @public */
 export function addHeading() {
-  return defineExtension([addHeadingSpec(), addHeadingInputRule()])
+  return defineExtension([
+    addHeadingSpec(),
+    addHeadingInputRule(),
+    addHeadingKeymap(),
+  ])
 }

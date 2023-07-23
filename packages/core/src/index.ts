@@ -1,4 +1,5 @@
-export { toggleMark } from './commands/toggle-mark'
+export { toggleMark, type ToggleMarkOptions } from './commands/toggle-mark'
+export { toggleNode, type ToggleNodeOptions } from './commands/toggle-node'
 export { Editor, createEditor, type EditorOptions } from './editor/editor'
 export { Facet, FacetExtension, type FacetOptions } from './editor/facet'
 export { defineExtension } from './editor/type-utils'

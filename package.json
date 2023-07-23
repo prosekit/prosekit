@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@8.6.7",
+  "packageManager": "pnpm@8.6.9",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
@@ -23,7 +23,7 @@
     "ci:publish:next": "pnpm run build:package --concurrency=1 && pnpm publish --access public -r --no-git-checks --tag next"
   },
   "dependencies": {
-    "@antfu/ni": "^0.21.4",
+    "@antfu/ni": "^0.21.5",
     "@changesets/cli": "^2.26.2",
     "@manypkg/cli": "^0.21.0",
     "@ocavue/eslint-config": "^1.2.1",
@@ -35,7 +35,7 @@
     "prettier": "^3.0.0",
     "prettier-plugin-svelte": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.4.1",
-    "turbo": "^1.10.7",
+    "turbo": "^1.10.9",
     "typescript": "^5.1.6",
     "vitest": "^0.33.0"
   },

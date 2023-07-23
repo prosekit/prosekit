@@ -35,38 +35,38 @@ export async function writeExampleMeta(meta: ExampleMeta) {
   file.updateYaml(meta)
 }
 
-export function getExampleCollection(
+export function findExampleCollection(
   meta: ExampleMeta,
   collectionName: string,
 ) {
   return meta.collections.find((c) => c.name === collectionName)
 }
 
-export function getExampleCollectionFile(
+export function findExampleCollectionFile(
   meta: ExampleMeta,
   collectionName: string,
   filePath: string,
 ) {
-  const collection = getExampleCollection(meta, collectionName)
+  const collection = findExampleCollection(meta, collectionName)
   return collection?.files.find((f) => f.path === filePath)
 }
 
-export function getExampleStory(
+export function findExampleStory(
   meta: ExampleMeta,
   collectionName: string,
   storyName: string,
 ) {
-  const collection = getExampleCollection(meta, collectionName)
+  const collection = findExampleCollection(meta, collectionName)
   return collection?.stories.find((s) => s.name === storyName)
 }
 
-export function getExampleStoryFile(
+export function findExampleStoryFile(
   meta: ExampleMeta,
   collectionName: string,
   storyName: string,
   filePath: string,
 ) {
-  const story = getExampleStory(meta, collectionName, storyName)
+  const story = findExampleStory(meta, collectionName, storyName)
   return story?.files.find((f) => f.path === filePath)
 }
 

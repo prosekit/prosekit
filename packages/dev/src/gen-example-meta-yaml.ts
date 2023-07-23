@@ -4,9 +4,9 @@ import { type Package } from '@manypkg/get-packages'
 import { uniq } from 'lodash-es'
 
 import {
-  getExampleCollection,
-  getExampleCollectionFile,
-  getExampleStoryFile,
+  findExampleCollection,
+  findExampleCollectionFile,
+  findExampleStoryFile,
   readExampleMeta,
   writeExampleMeta,
   type ExampleCollection,
@@ -25,7 +25,7 @@ export async function genExampleMetaYaml() {
     const sharedFiles = await findSharedFiles(pkg)
 
     const collectionName = path.basename(pkg.dir)
-    const oldCollection = getExampleCollection(oldMeta, collectionName)
+    const oldCollection = findExampleCollection(oldMeta, collectionName)
     const newCollection: ExampleCollection = {
       name: collectionName,
       order: oldCollection?.order ?? 9999,
@@ -33,8 +33,8 @@ export async function genExampleMetaYaml() {
       files: sharedFiles.map((filePath) => ({
         path: filePath,
         hidden:
-          getExampleCollectionFile(oldMeta, collectionName, filePath)?.hidden ??
-          false,
+          findExampleCollectionFile(oldMeta, collectionName, filePath)
+            ?.hidden ?? false,
       })),
       stories: [],
     }
@@ -47,7 +47,7 @@ export async function genExampleMetaYaml() {
         files: storyFiles.map((filePath) => ({
           path: filePath,
           hidden:
-            getExampleStoryFile(oldMeta, collectionName, storyName, filePath)
+            findExampleStoryFile(oldMeta, collectionName, storyName, filePath)
               ?.hidden ?? false,
         })),
       })

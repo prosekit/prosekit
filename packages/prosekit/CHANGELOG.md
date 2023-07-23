@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.7
+
+### Patch Changes
+
+- [185d7f8] **prosekit/solid**
+
+  Fix solid context
+
 ## 0.0.6
 
 ### Patch Changes

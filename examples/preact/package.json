@@ -9,13 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "esbuild-wasm": "^0.18.16",
+    "esbuild-wasm": "^0.18.17",
     "postcss": "^8.4.27",
     "preact": "^10.16.0",
     "prosekit": "^0.0.9",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6",
-    "vite": "^4.4.6"
+    "vite": "^4.4.7"
   },
   "devDependencies": {
     "@sindresorhus/slugify": "^2.2.1"

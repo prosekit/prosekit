@@ -39,7 +39,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.4.5",
+    "@floating-ui/dom": "^1.5.1",
     "@lit-labs/context": "^0.3.3",
     "@lit/reactive-element": "^1.6.2",
     "@prosekit/core": "^0.0.6",

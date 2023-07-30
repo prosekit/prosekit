@@ -18,7 +18,7 @@
     "svelte-check": "^3.4.6",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6",
-    "vite": "^4.4.6"
+    "vite": "^4.4.7"
   },
   "devDependencies": {
     "@sindresorhus/slugify": "^2.2.1"

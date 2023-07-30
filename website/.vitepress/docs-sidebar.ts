@@ -44,6 +44,10 @@ export const docsItems = [
         "link": "/references/prosekit_extensions_list"
       },
       {
+        "text": "mention",
+        "link": "/references/prosekit_extensions_mention"
+      },
+      {
         "text": "placeholder",
         "link": "/references/prosekit_extensions_placeholder"
       },

@@ -1,9 +1,14 @@
+import { ProseKitError } from '..'
 import type { Extension } from '../types/extension'
+
+import type { Slot } from './slot'
 
 /** @public */
 export interface FacetOptions<Input, Output> {
-  combine: (inputs: Input[]) => Output
+  combine?: (inputs: Input[]) => Output
+  slot?: () => Slot<Input, Output>
   next: Facet<Output, any>
+  single?: boolean
 }
 
 let nextIndex = 0
@@ -13,27 +18,51 @@ export class Facet<Input, Output> {
   /** @internal */
   readonly index = nextIndex++
   /** @internal */
-  readonly combine: (inputs: Input[]) => Output
+  readonly slot: () => Slot<Input, Output>
   /** @internal */
   readonly next: Facet<Output, any> | null
+  /** @internal */
+  readonly single: boolean
 
   private constructor(
-    combine: (inputs: Input[]) => Output,
+    slot: () => Slot<Input, Output>,
     next: Facet<Output, any> | null,
+    single: boolean,
   ) {
-    this.combine = combine
+    this.slot = slot
     this.next = next
+    this.single = single
   }
 
-  static define<Input, Output>({ combine, next }: FacetOptions<Input, Output>) {
-    return new Facet<Input, Output>(combine, next)
+  static define<Input, Output>({
+    slot,
+    combine,
+    next,
+    single,
+  }: FacetOptions<Input, Output>) {
+    // TODO: Remove combine
+    const slotFn = slot
+      ? slot
+      : combine
+      ? () => ({
+          create: combine,
+          update: combine,
+        })
+      : null
+
+    if (!slotFn) {
+      throw new ProseKitError(
+        "Facet must have either 'slot' or 'combine' option",
+      )
+    }
+
+    return new Facet<Input, Output>(slotFn, next, single ?? false)
   }
 
   /** @internal */
-  static defineSlot<Input>({
-    combine,
-  }: Omit<FacetOptions<Input, Input>, 'next'>) {
-    return new Facet<Input, Input>(combine, null)
+  static defineSlot<Input>(options: Omit<FacetOptions<Input, Input>, 'next'>) {
+    // @ts-expect-error: next is empty here
+    return Facet.define(options)
   }
 
   extension(inputs: Input[]): FacetExtension<Input, Output> {

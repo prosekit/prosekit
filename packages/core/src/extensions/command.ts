@@ -1,8 +1,8 @@
-import { type Attrs, NodeType, ProseMirrorNode } from '@prosekit/pm/model'
-import { AllSelection, Selection } from '@prosekit/pm/state'
+import { NodeType, ProseMirrorNode, type Attrs } from '@prosekit/pm/model'
+import { AllSelection } from '@prosekit/pm/state'
 import { findWrapping, insertPoint } from '@prosekit/pm/transform'
 
-import { commandSlot } from '../editor/slot'
+import { commandSlot } from '../editor/slots'
 import { type CommandCreator } from '../types/command'
 import { type Extension } from '../types/extension'
 
@@ -49,8 +49,6 @@ export function addBaseCommands() {
 
         if (dispatch) {
           const tr = state.tr.insert(insertPos, node)
-          const $pos = tr.doc.resolve(insertPos)
-          tr.setSelection(Selection.near($pos))
           dispatch(tr)
         }
         return true

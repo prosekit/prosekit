@@ -1,8 +1,8 @@
 import { Schema } from '@prosekit/pm/model'
-import { type EditorStateConfig, Plugin } from '@prosekit/pm/state'
+import { type EditorStateConfig, type Plugin } from '@prosekit/pm/state'
 
 import { Facet } from '../editor/facet'
-import { stateSlot } from '../editor/slot'
+import { stateSlot } from '../editor/slots'
 import { type StateConfigCallback } from '../types/editor'
 import { type Extension } from '../types/extension'
 

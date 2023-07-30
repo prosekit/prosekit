@@ -1,6 +1,7 @@
 import { baseKeymap, chainCommands } from '@prosekit/pm/commands'
-import { keymap as createKeymapPlugin } from '@prosekit/pm/keymap'
-import { type Command } from '@prosekit/pm/state'
+import { keydownHandler } from '@prosekit/pm/keymap'
+import { Plugin, PluginKey, type Command } from '@prosekit/pm/state'
+import type { EditorView } from '@prosekit/pm/view'
 
 import { Facet } from '../editor/facet'
 import { type Extension } from '../types/extension'
@@ -23,12 +24,36 @@ export function addBaseKeymap() {
 }
 
 const keymapFacet = Facet.define({
-  combine: (keymaps: Keymap[]) => {
-    const keymap = mergeKeymaps(keymaps)
-    const plugin = createKeymapPlugin(keymap)
-    return () => [plugin]
+  slot: () => {
+    type Handler = (view: EditorView, event: KeyboardEvent) => boolean
+
+    let handler: Handler | null = null
+
+    const handlerWrapper: Handler = (view, event) => {
+      if (handler) return handler(view, event)
+      return false
+    }
+
+    const plugin = new Plugin({
+      key: keymapPluginKey,
+      props: { handleKeyDown: handlerWrapper },
+    })
+
+    const pluginFunc = () => [plugin]
+
+    return {
+      create: (keymaps: Keymap[]) => {
+        handler = keydownHandler(mergeKeymaps(keymaps))
+        return pluginFunc
+      },
+      update: (keymaps: Keymap[]) => {
+        handler = keydownHandler(mergeKeymaps(keymaps))
+        return null
+      },
+    }
   },
   next: pluginFacet,
+  single: true,
 })
 
 function mergeKeymaps(keymaps: Keymap[]): Keymap {
@@ -36,8 +61,8 @@ function mergeKeymaps(keymaps: Keymap[]): Keymap {
 
   for (const keymap of keymaps) {
     for (const [key, command] of Object.entries(keymap)) {
-      if (!bindings[key]) bindings[key] = []
-      bindings[key].push(command)
+      const commands = bindings[key] || (bindings[key] = [])
+      commands.push(command)
     }
   }
 
@@ -48,3 +73,5 @@ function mergeKeymaps(keymaps: Keymap[]): Keymap {
     ]),
   )
 }
+
+const keymapPluginKey = new PluginKey('prosekit-keymap')

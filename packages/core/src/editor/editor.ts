@@ -10,11 +10,10 @@ import type {
   ExtractMarks,
   ExtractNodes,
 } from '../types/extension'
-import { voidFunction } from '../types/void-function'
 import { isMarkActive } from '../utils/is-mark-active'
 import { isNodeActive } from '../utils/is-node-active'
 
-import { flatten } from './flatten'
+import { updateExtension, type Inputs, type Slots } from './flatten'
 
 /** @public */
 export interface EditorOptions<E extends Extension> {
@@ -25,30 +24,9 @@ export interface EditorOptions<E extends Extension> {
 export function createEditor<E extends Extension>({
   extension,
 }: EditorOptions<E>): Editor<E> {
-  const { schemaInput, stateInput, viewInput, commandInput } =
-    flatten(extension)
-
-  if (!schemaInput) {
-    throw new Error('Schema must be defined')
-  }
-  const schema = new Schema(schemaInput)
-
-  const stateConfig: EditorStateConfig = stateInput
-    ? stateInput({ schema })
-    : { schema }
-  const state = EditorState.create(stateConfig)
-
-  const directEditorProps: DirectEditorProps = { state, ...viewInput }
-
-  const instance = new EditorInstance(directEditorProps)
-
-  if (commandInput) {
-    for (const [name, commandCreator] of Object.entries(commandInput)) {
-      instance.addCommand(name, commandCreator)
-    }
-  }
-
-  return Editor.create(instance) as Editor<E>
+  const instance = new EditorInstance(extension)
+  const editor = Editor.create(instance)
+  return editor as Editor<E>
 }
 
 /** @internal */
@@ -57,10 +35,67 @@ class EditorInstance {
   schema: Schema
   commandDispatchers: Record<string, CommandDispatcher> = {}
 
-  constructor(private directEditorProps: DirectEditorProps) {
+  private inputs: Inputs = []
+  private slots: Slots = []
+  private directEditorProps: DirectEditorProps
+
+  constructor(extension: Extension) {
     this.mount = this.mount.bind(this)
     this.unmount = this.unmount.bind(this)
-    this.schema = directEditorProps.state.schema
+
+    const { schemaInput, stateInput, viewInput, commandInput } =
+      updateExtension(this.inputs, this.slots, extension, 'add')
+
+    if (!schemaInput) {
+      throw new Error('Schema must be defined')
+    }
+    const schema = new Schema(schemaInput)
+
+    const stateConfig: EditorStateConfig = stateInput
+      ? stateInput({ schema })
+      : { schema }
+    const state = EditorState.create(stateConfig)
+
+    if (commandInput) {
+      for (const [name, commandCreator] of Object.entries(commandInput)) {
+        this.addCommand(name, commandCreator)
+      }
+    }
+
+    this.directEditorProps = { state, ...viewInput }
+    this.schema = this.directEditorProps.state.schema
+  }
+
+  public updateExtension(extension: Extension, mode: 'add' | 'remove'): void {
+    const { schemaInput, stateInput, viewInput, commandInput } =
+      updateExtension(this.inputs, this.slots, extension, mode)
+
+    if (schemaInput) {
+      throw new ProseKitError('Schema cannot be changed')
+    }
+
+    if (viewInput) {
+      throw new ProseKitError('View cannot be changed')
+    }
+
+    const plugins = stateInput?.({ schema: this.schema })?.plugins
+    if (plugins && plugins.length > 0) {
+      if (!this.view) {
+        throw new ProseKitError(
+          'Unexpected inner state: EditorInstance.view is not defined',
+        )
+      }
+
+      const state = this.view.state.reconfigure({ plugins })
+      this.view.updateState(state)
+    }
+
+    if (commandInput) {
+      const names = Object.keys(commandInput)
+      for (const name of names) {
+        this.addCommand(name, commandInput[name])
+      }
+    }
   }
 
   public mount(place: HTMLElement) {
@@ -137,7 +172,7 @@ export class Editor<E extends Extension = any> {
   /** @internal */
   static create(instance: any) {
     if (!(instance instanceof EditorInstance)) {
-      throw new TypeError("Editor's instance is not EditorInstance")
+      throw new TypeError('Invalid EditorInstance')
     }
     return new Editor(instance)
   }
@@ -187,39 +222,8 @@ export class Editor<E extends Extension = any> {
       }
     }
 
-    const { schemaInput, stateInput, viewInput, commandInput } =
-      flatten(extension)
-
-    if (schemaInput) {
-      throw new ProseKitError('Schema cannot be changed')
-    }
-
-    if (viewInput) {
-      throw new ProseKitError('View cannot be changed')
-    }
-
-    if (stateInput) {
-      const stateConfig = stateInput({ schema: this.schema })
-      const plugins = stateConfig.plugins
-      if (plugins && plugins.length > 0) {
-        this.instance.addPlugins(plugins)
-        return () => this.instance.removePlugins(plugins)
-      }
-    }
-
-    if (commandInput) {
-      const names = Object.keys(commandInput)
-      for (const name of names) {
-        this.instance.addCommand(name, commandInput[name])
-      }
-      return () => {
-        for (const name of names) {
-          this.instance.removeCommand(name)
-        }
-      }
-    }
-
-    return voidFunction
+    this.instance.updateExtension(extension, 'add')
+    return () => this.instance.updateExtension(extension, 'remove')
   }
 
   isNodeActive(nodeType: string | NodeType, attrs?: Attrs): boolean {

@@ -6,36 +6,32 @@ import { AutocompleteList } from 'prosekit/react/components/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/react/components/autocomplete-popover'
 
 import type { ExampleExtension } from './extension'
-import { users } from './users'
+import { tags } from './tags'
 
-export default function UserMenu() {
+export default function TagMenu() {
   const editor = useEditor<ExampleExtension>()
 
-  const handleUserInsert = (id: number, username: string) => {
-    const attrs: MentionAttrs = {
-      id: id.toString(),
-      value: username,
-      kind: 'user',
-    }
+  const handleTagInsert = (id: number, value: string) => {
+    const attrs: MentionAttrs = { id: id.toString(), value, kind: 'tag' }
     const node = editor.schema.nodes.mention.create(attrs)
     editor.commands.insertNode({ node })
     editor.commands.insertText({ text: ' ' })
   }
 
   return (
-    <AutocompletePopover editor={editor} regex={/@\w*$/}>
+    <AutocompletePopover editor={editor} regex={/#[\da-z]*$/i}>
       <AutocompleteList editor={editor} className="example-slash-menu">
         <AutocompleteEmpty className="example-slash-menu-item">
-          No User match
+          No Tag match
         </AutocompleteEmpty>
 
-        {users.map((user) => (
+        {tags.map((tag) => (
           <AutocompleteItem
-            key={user.id}
+            key={tag.id}
             className="example-slash-menu-item"
-            onSelect={() => handleUserInsert(user.id, user.name)}
+            onSelect={() => handleTagInsert(tag.id, tag.value)}
           >
-            {user.name}
+            #{tag.value}
           </AutocompleteItem>
         ))}
       </AutocompleteList>

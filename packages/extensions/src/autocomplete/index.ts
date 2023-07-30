@@ -15,8 +15,21 @@ export function addAutocomplete(rule: AutocompleteRule): Extension {
 }
 
 const autocompleteFacet = Facet.define<AutocompleteRule, PluginFacetInput>({
-  combine: (rules: AutocompleteRule[]): PluginFacetInput => {
-    return () => [createAutocompletePlugin({ rules })]
+  slot: () => {
+    let localRules: AutocompleteRule[] = []
+    const getRules = () => localRules
+
+    return {
+      create: (rules) => {
+        localRules = rules
+        const plugin = createAutocompletePlugin({ getRules })
+        return () => [plugin]
+      },
+      update: (rules) => {
+        localRules = rules
+        return null
+      },
+    }
   },
   next: pluginFacet,
 })

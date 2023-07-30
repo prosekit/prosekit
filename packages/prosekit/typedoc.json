@@ -12,6 +12,7 @@
     "./src/extensions/heading.gen.ts",
     "./src/extensions/italic.gen.ts",
     "./src/extensions/list.gen.ts",
+    "./src/extensions/mention.gen.ts",
     "./src/extensions/placeholder.gen.ts",
     "./src/extensions/suggestion.gen.ts",
     "./src/index.ts",

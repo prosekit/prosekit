@@ -40,6 +40,7 @@
     "./extensions/italic": "./src/extensions/italic.gen.ts",
     "./extensions/list": "./src/extensions/list.gen.ts",
     "./extensions/list/style.css": "./src/extensions/list/style.css",
+    "./extensions/mention": "./src/extensions/mention.gen.ts",
     "./extensions/placeholder": "./src/extensions/placeholder.gen.ts",
     "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
     "./extensions/suggestion": "./src/extensions/suggestion.gen.ts",
@@ -212,6 +213,11 @@
       },
       "./extensions/list/style.css": {
         "default": "./dist/extensions/list/style.css"
+      },
+      "./extensions/mention": {
+        "types": "./dist/prosekit-extensions-mention.d.ts",
+        "import": "./dist/prosekit-extensions-mention.js",
+        "default": "./dist/prosekit-extensions-mention.js"
       },
       "./extensions/placeholder": {
         "types": "./dist/prosekit-extensions-placeholder.d.ts",
@@ -462,6 +468,9 @@
         ],
         "extensions/list": [
           "./dist/prosekit-extensions-list.d.ts"
+        ],
+        "extensions/mention": [
+          "./dist/prosekit-extensions-mention.d.ts"
         ],
         "extensions/placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"

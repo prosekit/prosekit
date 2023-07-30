@@ -1,1 +1,5 @@
-export { AutocompleteList, type AutocompleteListProps } from './component'
+export {
+  AutocompleteList,
+  type AutocompleteListProps,
+  propNames,
+} from './component'

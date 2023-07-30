@@ -1,6 +1,6 @@
 import '@prosekit/lit/components/autocomplete-popover'
 
-import type { AutocompletePopoverProps as AutocompletePopoverElementProps } from '@prosekit/lit/components/autocomplete-popover'
+import { type AutocompletePopoverProps as AutocompletePopoverElementProps, propNames } from '@prosekit/lit/components/autocomplete-popover'
 import { defineComponent, h } from 'vue'
 
 export type AutocompletePopoverProps = {
@@ -9,6 +9,14 @@ export type AutocompletePopoverProps = {
 
 export const AutocompletePopover = defineComponent<AutocompletePopoverProps>(
   (props, { slots }) => {
-    return () => h('prosekit-autocomplete-popover', props, slots.default?.())
-  }
+    return () => {
+      const webComponentProps = Object.fromEntries(
+        Object.entries(props)
+          .filter((entry) => entry[1] !== undefined)
+          .map(([key, value]) => [(key === 'class' ? '' : '.') + key, value]),
+      )
+      return h('prosekit-autocomplete-popover', webComponentProps, slots.default?.())
+    }
+  }, 
+  { props: ['class', ...propNames] }
 )

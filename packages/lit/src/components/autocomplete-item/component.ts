@@ -8,6 +8,8 @@ import {
   commandListContext,
 } from '../autocomplete-list/context'
 
+export const propNames = ['value', 'onSelect'] as const
+
 export interface AutocompleteItemProps {
   value?: string
   onSelect: VoidFunction

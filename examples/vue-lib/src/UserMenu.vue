@@ -10,8 +10,6 @@ import { users } from './users'
 const editor = useExampleEditor()
 
 const handleUserInsert = (id: number, username: string) => {
-  console.log('handleUserInsert')
-
   const attrs: MentionAttrs = {
     id: id.toString(),
     value: username,

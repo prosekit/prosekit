@@ -1,7 +1,7 @@
 import type { MarkSpec, SchemaSpec } from '@prosekit/pm/model'
 
 import { Facet } from '../editor/facet'
-import { schemaSlot } from '../editor/slot'
+import { schemaSlot } from '../editor/slots'
 import { type Extension } from '../types/extension'
 
 /**

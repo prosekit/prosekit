@@ -20,3 +20,19 @@
     'Segoe UI Symbol',
     'Noto Color Emoji';
 }
+
+.example-editor span[data-mention='user'] {
+  @apply rounded-sm text-blue-500;
+}
+
+.example-editor span[data-mention='user']::before {
+  content: '@';
+}
+
+.example-editor span[data-mention='tag'] {
+  @apply rounded-sm bg-slate-300;
+}
+
+.example-editor span[data-mention='tag']::before {
+  content: '#';
+}

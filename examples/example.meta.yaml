@@ -39,9 +39,13 @@ collections:
         files:
           - path: App.tsx
             hidden: false
+          - path: TagMenu.tsx
+            hidden: false
           - path: UserMenu.tsx
             hidden: false
           - path: extension.ts
+            hidden: false
+          - path: tags.ts
             hidden: false
           - path: users.ts
             hidden: false

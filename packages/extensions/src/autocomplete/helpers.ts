@@ -46,5 +46,5 @@ export function setTrMeta(
 }
 
 export const pluginKey = new PluginKey<PredictionPluginState>(
-  'prosemirror-prediction',
+  'prosekit-autocomplete',
 )

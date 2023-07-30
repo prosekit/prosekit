@@ -15,8 +15,10 @@ const modules = import.meta.glob([
   "../../examples/react/src/slash-menu/extension.ts",
   "../../examples/react/src/slash-menu/use-example-editor.ts",
   "../../examples/react/src/user-menu/App.tsx",
+  "../../examples/react/src/user-menu/TagMenu.tsx",
   "../../examples/react/src/user-menu/UserMenu.tsx",
   "../../examples/react/src/user-menu/extension.ts",
+  "../../examples/react/src/user-menu/tags.ts",
   "../../examples/react/src/user-menu/users.ts",
   "../../examples/vue/App.vue",
   "../../examples/vue/index.html",
@@ -193,6 +195,10 @@ const stories = {
       "hidden": true,
       "code": modules['../../examples/react/vite.config.ts']
     },
+    "/TagMenu.tsx": {
+      "hidden": false,
+      "code": modules['../../examples/react/src/user-menu/TagMenu.tsx']
+    },
     "/UserMenu.tsx": {
       "hidden": false,
       "code": modules['../../examples/react/src/user-menu/UserMenu.tsx']
@@ -200,6 +206,10 @@ const stories = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../examples/react/src/user-menu/extension.ts']
+    },
+    "/tags.ts": {
+      "hidden": false,
+      "code": modules['../../examples/react/src/user-menu/tags.ts']
     },
     "/users.ts": {
       "hidden": false,

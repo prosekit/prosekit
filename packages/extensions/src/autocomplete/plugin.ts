@@ -12,9 +12,9 @@ import {
 import type { AutocompleteRule } from './rule'
 
 export function createAutocompletePlugin({
-  rules,
+  getRules,
 }: {
-  rules: AutocompleteRule[]
+  getRules: () => AutocompleteRule[]
 }): Plugin {
   return new Plugin<PredictionPluginState>({
     key: pluginKey,
@@ -43,7 +43,7 @@ export function createAutocompletePlugin({
           return meta
         }
 
-        const nextValue = calcPluginState(newState, rules)
+        const nextValue = calcPluginState(newState, getRules())
         if (
           nextValue.active &&
           prevValue.ignore != null &&

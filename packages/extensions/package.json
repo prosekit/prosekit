@@ -34,6 +34,7 @@
     "./italic": "./src/italic/index.ts",
     "./list": "./src/list/index.ts",
     "./list/style.css": "./src/list/style.css",
+    "./mention": "./src/mention/index.ts",
     "./placeholder": "./src/placeholder/index.ts",
     "./placeholder/style.css": "./src/placeholder/style.css",
     "./suggestion": "./src/suggestion/index.ts"
@@ -101,6 +102,11 @@
       "./list/style.css": {
         "default": "./dist/list/style.css"
       },
+      "./mention": {
+        "types": "./dist/prosekit-extensions-mention.d.ts",
+        "import": "./dist/prosekit-extensions-mention.js",
+        "default": "./dist/prosekit-extensions-mention.js"
+      },
       "./placeholder": {
         "types": "./dist/prosekit-extensions-placeholder.d.ts",
         "import": "./dist/prosekit-extensions-placeholder.js",
@@ -143,6 +149,9 @@
         ],
         "list": [
           "./dist/prosekit-extensions-list.d.ts"
+        ],
+        "mention": [
+          "./dist/prosekit-extensions-mention.d.ts"
         ],
         "placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"

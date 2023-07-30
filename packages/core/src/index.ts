@@ -28,6 +28,7 @@ export {
   type ExtractCommandDispatchers,
   type ExtractMarks,
   type ExtractNodes,
+  type SimplifyExtension,
 } from './types/extension'
 export { type ExtensionTyping } from './types/extension-typing'
 export { Priority } from './types/priority'

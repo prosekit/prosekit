@@ -1,4 +1,4 @@
-import { ProseKitError } from '..'
+import { ProseKitError } from '../error'
 import type { Extension } from '../types/extension'
 
 import type { Slot } from './slot'

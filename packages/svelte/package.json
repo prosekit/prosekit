@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/svelte",
   "type": "module",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -54,8 +54,8 @@
     "build": "svelte-package -i src -o dist"
   },
   "dependencies": {
-    "@prosekit/core": "^0.0.5",
-    "@prosekit/lit": "^0.0.6"
+    "@prosekit/core": "^0.0.6",
+    "@prosekit/lit": "^0.0.7"
   },
   "peerDependencies": {
     "svelte": ">= 3.0.0"

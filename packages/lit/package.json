@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/lit",
   "type": "module",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -42,8 +42,8 @@
     "@floating-ui/dom": "^1.4.5",
     "@lit-labs/context": "^0.3.3",
     "@lit/reactive-element": "^1.6.2",
-    "@prosekit/core": "^0.0.5",
-    "@prosekit/extensions": "^0.0.5",
+    "@prosekit/core": "^0.0.6",
+    "@prosekit/extensions": "^0.0.6",
     "@prosekit/pm": "^0.0.3",
     "@superhuman/command-score": "^0.5.0",
     "lit": "^2.7.6",

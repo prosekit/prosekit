@@ -21,6 +21,14 @@ import { type PopoverOptions } from './options'
 
 export type { PopoverOptions, AutoUpdateOptions }
 
+export const propNames = [
+  'active',
+  'reference',
+  'options',
+  'autoUpdate',
+  'autoUpdateOptions',
+]
+
 export interface PopoverProps {
   active: boolean
   reference?: Element | VirtualElement

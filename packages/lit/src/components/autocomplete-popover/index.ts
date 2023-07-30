@@ -19,6 +19,8 @@ import { defaultPopoverOptions } from './default-popover-options'
 
 export { type PopoverOptions }
 
+export const propNames = ['editor', 'regex', 'popoverOptions'] as const
+
 export interface AutocompletePopoverProps {
   editor: Editor
   regex: RegExp

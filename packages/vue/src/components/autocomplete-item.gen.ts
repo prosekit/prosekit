@@ -1,6 +1,6 @@
 import '@prosekit/lit/components/autocomplete-item'
 
-import type { AutocompleteItemProps as AutocompleteItemElementProps } from '@prosekit/lit/components/autocomplete-item'
+import { type AutocompleteItemProps as AutocompleteItemElementProps, propNames } from '@prosekit/lit/components/autocomplete-item'
 import { defineComponent, h } from 'vue'
 
 export type AutocompleteItemProps = {
@@ -9,6 +9,14 @@ export type AutocompleteItemProps = {
 
 export const AutocompleteItem = defineComponent<AutocompleteItemProps>(
   (props, { slots }) => {
-    return () => h('prosekit-autocomplete-item', props, slots.default?.())
-  }
+    return () => {
+      const webComponentProps = Object.fromEntries(
+        Object.entries(props)
+          .filter((entry) => entry[1] !== undefined)
+          .map(([key, value]) => [(key === 'class' ? '' : '.') + key, value]),
+      )
+      return h('prosekit-autocomplete-item', webComponentProps, slots.default?.())
+    }
+  }, 
+  { props: ['class', ...propNames] }
 )

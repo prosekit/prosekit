@@ -15,6 +15,8 @@ import {
 import { type AutocompleteListContext, commandListContext } from './context'
 import { AutocompleteListController } from './controller'
 
+export const propNames = ['editor'] as const
+
 export interface AutocompleteListProps {
   editor: Editor
 }

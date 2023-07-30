@@ -22,7 +22,7 @@
 }
 
 .example-editor span[data-mention='user'] {
-  @apply rounded-sm text-blue-500;
+  @apply rounded-lg p-0.5 text-blue-500;
 }
 
 .example-editor span[data-mention='user']::before {
@@ -30,9 +30,10 @@
 }
 
 .example-editor span[data-mention='tag'] {
-  @apply rounded-sm bg-slate-300;
+  @apply rounded-lg bg-gray-200 px-1 py-0.5 dark:bg-gray-600;
 }
 
 .example-editor span[data-mention='tag']::before {
   content: '#';
+  @apply pr-0.5 opacity-40 dark:opacity-50;
 }

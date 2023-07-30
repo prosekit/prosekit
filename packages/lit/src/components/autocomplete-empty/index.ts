@@ -8,6 +8,8 @@ import {
   commandListContext,
 } from '../autocomplete-list/context'
 
+export const propNames = [] as const
+
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface AutocompleteEmptyProps {}
 

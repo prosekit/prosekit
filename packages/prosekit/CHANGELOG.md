@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.0.9
+
+### Patch Changes
+
+- [fe5edd6] **prosekit/extensions**
+
+  Add mention extension
+
+- [fe5edd6] **prosekit/core**
+
+  Refactor facet mapping
+
 ## 0.0.8
 
 ### Patch Changes

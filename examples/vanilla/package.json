@@ -11,7 +11,7 @@
   "dependencies": {
     "esbuild-wasm": "^0.18.16",
     "postcss": "^8.4.27",
-    "prosekit": "^0.0.8",
+    "prosekit": "^0.0.9",
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.6"
   }

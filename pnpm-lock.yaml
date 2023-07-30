@@ -66,7 +66,7 @@ importers:
         specifier: ^10.16.0
         version: 10.16.0
       prosekit:
-        specifier: ^0.0.9
+        specifier: ^0.0.10
         version: link:../../packages/prosekit
       tailwindcss:
         specifier: ^3.3.3
@@ -100,7 +100,7 @@ importers:
         specifier: ^8.4.27
         version: 8.4.27
       prosekit:
-        specifier: ^0.0.9
+        specifier: ^0.0.10
         version: link:../../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -131,7 +131,7 @@ importers:
         specifier: ^8.4.27
         version: 8.4.27
       prosekit:
-        specifier: ^0.0.9
+        specifier: ^0.0.10
         version: link:../../packages/prosekit
       solid-js:
         specifier: ^1.7.8
@@ -165,7 +165,7 @@ importers:
         specifier: ^8.4.27
         version: 8.4.27
       prosekit:
-        specifier: ^0.0.9
+        specifier: ^0.0.10
         version: link:../../packages/prosekit
       svelte:
         specifier: ^4.1.1
@@ -196,7 +196,7 @@ importers:
         specifier: ^8.4.27
         version: 8.4.27
       prosekit:
-        specifier: ^0.0.9
+        specifier: ^0.0.10
         version: link:../../packages/prosekit
       tailwindcss:
         specifier: ^3.3.3
@@ -217,7 +217,7 @@ importers:
         specifier: ^8.4.27
         version: 8.4.27
       prosekit:
-        specifier: ^0.0.9
+        specifier: ^0.0.10
         version: link:../../packages/prosekit
       tailwindcss:
         specifier: ^3.3.3
@@ -242,7 +242,7 @@ importers:
   examples/vue-lib:
     dependencies:
       prosekit:
-        specifier: ^0.0.9
+        specifier: ^0.0.10
         version: link:../../packages/prosekit
     devDependencies:
       '@vitejs/plugin-vue':
@@ -507,7 +507,7 @@ importers:
         specifier: ^0.0.6
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.7
+        specifier: ^0.0.8
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -538,25 +538,25 @@ importers:
         specifier: 0.0.6
         version: link:../extensions
       '@prosekit/lit':
-        specifier: 0.0.7
+        specifier: 0.0.8
         version: link:../lit
       '@prosekit/pm':
         specifier: 0.0.3
         version: link:../pm
       '@prosekit/preact':
-        specifier: 0.0.4
+        specifier: 0.0.5
         version: link:../preact
       '@prosekit/react':
-        specifier: 0.0.7
+        specifier: 0.0.8
         version: link:../react
       '@prosekit/solid':
-        specifier: 0.0.5
+        specifier: 0.0.6
         version: link:../solid
       '@prosekit/svelte':
-        specifier: 0.0.4
+        specifier: 0.0.5
         version: link:../svelte
       '@prosekit/vue':
-        specifier: 0.0.7
+        specifier: 0.0.8
         version: link:../vue
     devDependencies:
       '@prosekit/dev':
@@ -602,7 +602,7 @@ importers:
         specifier: ^0.0.6
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.7
+        specifier: ^0.0.8
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -636,7 +636,7 @@ importers:
         specifier: ^0.0.6
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.7
+        specifier: ^0.0.8
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -661,7 +661,7 @@ importers:
         specifier: ^0.0.6
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.7
+        specifier: ^0.0.8
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -689,7 +689,7 @@ importers:
         specifier: ^0.0.6
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.7
+        specifier: ^0.0.8
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -729,7 +729,7 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       prosekit:
-        specifier: ^0.0.9
+        specifier: ^0.0.10
         version: link:../packages/prosekit
       prosekit-example-vue-lib:
         specifier: '*'

@@ -6,6 +6,7 @@ import { genExampleIndex } from './gen-example-index.js'
 import { genExampleMetaYaml } from './gen-example-meta-yaml.js'
 import { genPackageJson } from './gen-package-json.js'
 import { genRenovateJson } from './gen-renovate-json.js'
+import { genSizeLimitJson } from './gen-size-limit-json.js'
 import { genTsconfigJson } from './gen-tsconfig-json.js'
 import { genTypedocJson } from './gen-typedoc-json.js'
 import { skipGen } from './skip-gen.js'
@@ -22,6 +23,7 @@ async function main() {
   await genDocsItems()
   await genRenovateJson()
   await genChangesetConfigJson()
+  await genSizeLimitJson()
 
   // Example for website
   await genExampleMetaYaml()

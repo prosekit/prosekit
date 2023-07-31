@@ -202,7 +202,7 @@ class VirtualFileSystem {
     return this.updateText(path.join(pkg.relativeDir, filePath), content)
   }
 
-  async updateJSON(filePath: string, json: string) {
+  async updateJSON(filePath: string, json: any) {
     const file = await this.getFile(filePath)
     file.updateJSON(json)
   }

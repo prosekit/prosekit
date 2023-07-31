@@ -1,0 +1,218 @@
+[
+  {
+    "name": "prosekit",
+    "path": "packages/prosekit/dist/prosekit.js"
+  },
+  {
+    "name": "prosekit/basic",
+    "path": "packages/prosekit/dist/prosekit-basic.js"
+  },
+  {
+    "name": "prosekit/basic/internal/example.css",
+    "path": "packages/prosekit/dist/basic/internal/example.css"
+  },
+  {
+    "name": "prosekit/basic/style.css",
+    "path": "packages/prosekit/dist/basic/style.css"
+  },
+  {
+    "name": "prosekit/core",
+    "path": "packages/prosekit/dist/prosekit-core.js"
+  },
+  {
+    "name": "prosekit/core/style.css",
+    "path": "packages/prosekit/dist/core/style.css"
+  },
+  {
+    "name": "prosekit/extensions",
+    "path": "packages/prosekit/dist/prosekit-extensions.js"
+  },
+  {
+    "name": "prosekit/extensions/autocomplete",
+    "path": "packages/prosekit/dist/prosekit-extensions-autocomplete.js"
+  },
+  {
+    "name": "prosekit/extensions/blockquote",
+    "path": "packages/prosekit/dist/prosekit-extensions-blockquote.js"
+  },
+  {
+    "name": "prosekit/extensions/bold",
+    "path": "packages/prosekit/dist/prosekit-extensions-bold.js"
+  },
+  {
+    "name": "prosekit/extensions/code",
+    "path": "packages/prosekit/dist/prosekit-extensions-code.js"
+  },
+  {
+    "name": "prosekit/extensions/heading",
+    "path": "packages/prosekit/dist/prosekit-extensions-heading.js"
+  },
+  {
+    "name": "prosekit/extensions/italic",
+    "path": "packages/prosekit/dist/prosekit-extensions-italic.js"
+  },
+  {
+    "name": "prosekit/extensions/list",
+    "path": "packages/prosekit/dist/prosekit-extensions-list.js"
+  },
+  {
+    "name": "prosekit/extensions/list/style.css",
+    "path": "packages/prosekit/dist/extensions/list/style.css"
+  },
+  {
+    "name": "prosekit/extensions/mention",
+    "path": "packages/prosekit/dist/prosekit-extensions-mention.js"
+  },
+  {
+    "name": "prosekit/extensions/placeholder",
+    "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js"
+  },
+  {
+    "name": "prosekit/extensions/placeholder/style.css",
+    "path": "packages/prosekit/dist/extensions/placeholder/style.css"
+  },
+  {
+    "name": "prosekit/extensions/suggestion",
+    "path": "packages/prosekit/dist/prosekit-extensions-suggestion.js"
+  },
+  {
+    "name": "prosekit/lit",
+    "path": "packages/prosekit/dist/prosekit-lit.js"
+  },
+  {
+    "name": "prosekit/lit/components/autocomplete-empty",
+    "path": "packages/prosekit/dist/prosekit-lit-components-autocomplete-empty.js"
+  },
+  {
+    "name": "prosekit/lit/components/autocomplete-item",
+    "path": "packages/prosekit/dist/prosekit-lit-components-autocomplete-item.js"
+  },
+  {
+    "name": "prosekit/lit/components/autocomplete-list",
+    "path": "packages/prosekit/dist/prosekit-lit-components-autocomplete-list.js"
+  },
+  {
+    "name": "prosekit/lit/components/autocomplete-popover",
+    "path": "packages/prosekit/dist/prosekit-lit-components-autocomplete-popover.js"
+  },
+  {
+    "name": "prosekit/pm",
+    "path": "packages/prosekit/dist/prosekit-pm.js"
+  },
+  {
+    "name": "prosekit/pm/commands",
+    "path": "packages/prosekit/dist/prosekit-pm-commands.js"
+  },
+  {
+    "name": "prosekit/pm/inputrules",
+    "path": "packages/prosekit/dist/prosekit-pm-inputrules.js"
+  },
+  {
+    "name": "prosekit/pm/keymap",
+    "path": "packages/prosekit/dist/prosekit-pm-keymap.js"
+  },
+  {
+    "name": "prosekit/pm/model",
+    "path": "packages/prosekit/dist/prosekit-pm-model.js"
+  },
+  {
+    "name": "prosekit/pm/state",
+    "path": "packages/prosekit/dist/prosekit-pm-state.js"
+  },
+  {
+    "name": "prosekit/pm/transform",
+    "path": "packages/prosekit/dist/prosekit-pm-transform.js"
+  },
+  {
+    "name": "prosekit/pm/view",
+    "path": "packages/prosekit/dist/prosekit-pm-view.js"
+  },
+  {
+    "name": "prosekit/pm/view/style/prosemirror.css",
+    "path": "packages/prosekit/dist/pm/view/style/prosemirror.css"
+  },
+  {
+    "name": "prosekit/preact",
+    "path": "packages/prosekit/dist/prosekit-preact.js"
+  },
+  {
+    "name": "prosekit/preact/components/autocomplete-empty",
+    "path": "packages/prosekit/dist/prosekit-preact-components-autocomplete-empty.js"
+  },
+  {
+    "name": "prosekit/preact/components/autocomplete-item",
+    "path": "packages/prosekit/dist/prosekit-preact-components-autocomplete-item.js"
+  },
+  {
+    "name": "prosekit/preact/components/autocomplete-list",
+    "path": "packages/prosekit/dist/prosekit-preact-components-autocomplete-list.js"
+  },
+  {
+    "name": "prosekit/preact/components/autocomplete-popover",
+    "path": "packages/prosekit/dist/prosekit-preact-components-autocomplete-popover.js"
+  },
+  {
+    "name": "prosekit/react",
+    "path": "packages/prosekit/dist/prosekit-react.js"
+  },
+  {
+    "name": "prosekit/react/components/autocomplete-empty",
+    "path": "packages/prosekit/dist/prosekit-react-components-autocomplete-empty.js"
+  },
+  {
+    "name": "prosekit/react/components/autocomplete-item",
+    "path": "packages/prosekit/dist/prosekit-react-components-autocomplete-item.js"
+  },
+  {
+    "name": "prosekit/react/components/autocomplete-list",
+    "path": "packages/prosekit/dist/prosekit-react-components-autocomplete-list.js"
+  },
+  {
+    "name": "prosekit/react/components/autocomplete-popover",
+    "path": "packages/prosekit/dist/prosekit-react-components-autocomplete-popover.js"
+  },
+  {
+    "name": "prosekit/solid",
+    "path": "packages/prosekit/dist/prosekit-solid.js"
+  },
+  {
+    "name": "prosekit/solid/components/autocomplete-empty",
+    "path": "packages/prosekit/dist/prosekit-solid-components-autocomplete-empty.js"
+  },
+  {
+    "name": "prosekit/solid/components/autocomplete-item",
+    "path": "packages/prosekit/dist/prosekit-solid-components-autocomplete-item.js"
+  },
+  {
+    "name": "prosekit/solid/components/autocomplete-list",
+    "path": "packages/prosekit/dist/prosekit-solid-components-autocomplete-list.js"
+  },
+  {
+    "name": "prosekit/solid/components/autocomplete-popover",
+    "path": "packages/prosekit/dist/prosekit-solid-components-autocomplete-popover.js"
+  },
+  {
+    "name": "prosekit/svelte",
+    "path": "packages/prosekit/dist/prosekit-svelte.js"
+  },
+  {
+    "name": "prosekit/vue",
+    "path": "packages/prosekit/dist/prosekit-vue.js"
+  },
+  {
+    "name": "prosekit/vue/components/autocomplete-empty",
+    "path": "packages/prosekit/dist/prosekit-vue-components-autocomplete-empty.js"
+  },
+  {
+    "name": "prosekit/vue/components/autocomplete-item",
+    "path": "packages/prosekit/dist/prosekit-vue-components-autocomplete-item.js"
+  },
+  {
+    "name": "prosekit/vue/components/autocomplete-list",
+    "path": "packages/prosekit/dist/prosekit-vue-components-autocomplete-list.js"
+  },
+  {
+    "name": "prosekit/vue/components/autocomplete-popover",
+    "path": "packages/prosekit/dist/prosekit-vue-components-autocomplete-popover.js"
+  }
+]

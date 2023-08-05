@@ -134,14 +134,14 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "@types/react": "^18.2.17",
+    "@types/react": "^18.2.18",
     "@types/react-dom": "^18.2.7",
     "preact": "^10.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "solid-js": "^1.7.9",
-    "svelte": "^4.1.1",
-    "tsup": "^7.1.0",
+    "svelte": "^4.1.2",
+    "tsup": "^7.2.0",
     "typescript": "^5.1.6",
     "vue": "^3.3.4"
   },

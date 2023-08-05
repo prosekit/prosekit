@@ -4,7 +4,7 @@ import '@prosekit/lit/components/autocomplete-popover'
 
 import type { AutocompletePopoverProps as AutocompletePopoverElementProps } from '@prosekit/lit/components/autocomplete-popover'
 import type { Component, JSXElement } from 'solid-js'
-import h from 'solid-js/h'
+import html from 'solid-js/html'
 
 export type AutocompletePopoverProps = {
   class?: string
@@ -12,5 +12,5 @@ export type AutocompletePopoverProps = {
 } & AutocompletePopoverElementProps
 
 export const AutocompletePopover: Component<AutocompletePopoverProps> = (props) => {
-  return h('prosekit-autocomplete-popover', props)
+  return html`<prosekit-autocomplete-popover ...${props} />`
 }

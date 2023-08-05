@@ -177,7 +177,7 @@ import '@prosekit/lit/components/${kebab}'
 
 import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/components/${kebab}'
 import type { Component, JSXElement } from 'solid-js'
-import h from 'solid-js/h'
+import html from 'solid-js/html'
 
 export type ${pascal}Props = {
   class?: string
@@ -185,7 +185,7 @@ export type ${pascal}Props = {
 } & ${pascal}ElementProps
 
 export const ${pascal}: Component<${pascal}Props> = (props) => {
-  return h('prosekit-${kebab}', props)
+  return html\`<prosekit-${kebab} ...\${props} />\`
 }
 `.trim() + '\n'
   )

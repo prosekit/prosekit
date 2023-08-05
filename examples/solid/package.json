@@ -12,7 +12,7 @@
     "esbuild-wasm": "^0.18.17",
     "postcss": "^8.4.27",
     "prosekit": "^0.0.10",
-    "solid-js": "^1.7.8",
+    "solid-js": "^1.7.9",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6",
     "vite": "^4.4.7",

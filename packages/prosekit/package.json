@@ -139,7 +139,7 @@
     "preact": "^10.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "solid-js": "^1.7.8",
+    "solid-js": "^1.7.9",
     "svelte": "^4.1.1",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6",

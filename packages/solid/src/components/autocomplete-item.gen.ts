@@ -4,7 +4,7 @@ import '@prosekit/lit/components/autocomplete-item'
 
 import type { AutocompleteItemProps as AutocompleteItemElementProps } from '@prosekit/lit/components/autocomplete-item'
 import type { Component, JSXElement } from 'solid-js'
-import h from 'solid-js/h'
+import html from 'solid-js/html'
 
 export type AutocompleteItemProps = {
   class?: string
@@ -12,5 +12,5 @@ export type AutocompleteItemProps = {
 } & AutocompleteItemElementProps
 
 export const AutocompleteItem: Component<AutocompleteItemProps> = (props) => {
-  return h('prosekit-autocomplete-item', props)
+  return html`<prosekit-autocomplete-item ...${props} />`
 }

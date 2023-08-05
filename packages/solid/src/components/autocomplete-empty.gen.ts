@@ -4,7 +4,7 @@ import '@prosekit/lit/components/autocomplete-empty'
 
 import type { AutocompleteEmptyProps as AutocompleteEmptyElementProps } from '@prosekit/lit/components/autocomplete-empty'
 import type { Component, JSXElement } from 'solid-js'
-import h from 'solid-js/h'
+import html from 'solid-js/html'
 
 export type AutocompleteEmptyProps = {
   class?: string
@@ -12,5 +12,5 @@ export type AutocompleteEmptyProps = {
 } & AutocompleteEmptyElementProps
 
 export const AutocompleteEmpty: Component<AutocompleteEmptyProps> = (props) => {
-  return h('prosekit-autocomplete-empty', props)
+  return html`<prosekit-autocomplete-empty ...${props} />`
 }

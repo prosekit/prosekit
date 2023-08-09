@@ -1,5 +1,7 @@
+// This file is generated from gen-docs-items.ts
+
 // prettier-ignore
-export const docsItems = [
+export const referenceItems = [
   {
     "text": "pm",
     "link": "/references/prosekit_pm"

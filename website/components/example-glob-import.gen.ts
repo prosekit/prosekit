@@ -33,6 +33,26 @@ const modules = import.meta.glob([
   "../../examples/vue/src/slash-menu/ToggleItalicButton.vue",
   "../../examples/vue/src/slash-menu/extension.ts",
   "../../examples/vue/src/slash-menu/use-example-editor.ts",
+  "../../examples/preact/App.tsx",
+  "../../examples/preact/index.html",
+  "../../examples/preact/main.tsx",
+  "../../examples/preact/package.json",
+  "../../examples/preact/postcss.config.js",
+  "../../examples/preact/tsconfig.json",
+  "../../examples/preact/vite.config.ts",
+  "../../examples/preact/src/minimal/App.tsx",
+  "../../examples/preact/src/slash-menu/App.tsx",
+  "../../examples/preact/src/slash-menu/SlashMenu.tsx",
+  "../../examples/preact/src/slash-menu/ToggleItalicButton.tsx",
+  "../../examples/preact/src/slash-menu/extension.ts",
+  "../../examples/preact/src/slash-menu/use-example-editor.ts",
+  "../../examples/lit/app.ts",
+  "../../examples/lit/index.html",
+  "../../examples/lit/package.json",
+  "../../examples/lit/postcss.config.js",
+  "../../examples/lit/style.css",
+  "../../examples/lit/tsconfig.json",
+  "../../examples/lit/src/lit/app.ts",
   "../../examples/svelte/App.svelte",
   "../../examples/svelte/index.html",
   "../../examples/svelte/main.ts",
@@ -49,19 +69,6 @@ const modules = import.meta.glob([
   "../../examples/svelte/src/slash-menu/ToggleItalicButton.svelte",
   "../../examples/svelte/src/slash-menu/extension.ts",
   "../../examples/svelte/src/slash-menu/get-example-editor.ts",
-  "../../examples/preact/App.tsx",
-  "../../examples/preact/index.html",
-  "../../examples/preact/main.tsx",
-  "../../examples/preact/package.json",
-  "../../examples/preact/postcss.config.js",
-  "../../examples/preact/tsconfig.json",
-  "../../examples/preact/vite.config.ts",
-  "../../examples/preact/src/minimal/App.tsx",
-  "../../examples/preact/src/slash-menu/App.tsx",
-  "../../examples/preact/src/slash-menu/SlashMenu.tsx",
-  "../../examples/preact/src/slash-menu/ToggleItalicButton.tsx",
-  "../../examples/preact/src/slash-menu/extension.ts",
-  "../../examples/preact/src/slash-menu/use-example-editor.ts",
   "../../examples/solid/App.tsx",
   "../../examples/solid/index.html",
   "../../examples/solid/main.tsx",
@@ -75,18 +82,18 @@ const modules = import.meta.glob([
   "../../examples/solid/src/slash-menu/ToggleItalicButton.tsx",
   "../../examples/solid/src/slash-menu/extension.ts",
   "../../examples/solid/src/slash-menu/use-example-editor.ts",
-  "../../examples/vue-lib/index.html",
-  "../../examples/vue-lib/main.ts",
-  "../../examples/vue-lib/package.json",
-  "../../examples/vue-lib/postcss.config.js",
-  "../../examples/vue-lib/tsconfig.json",
-  "../../examples/vue-lib/vite.config.ts",
   "../../examples/vanilla/app.js",
   "../../examples/vanilla/index.html",
   "../../examples/vanilla/package.json",
   "../../examples/vanilla/postcss.config.js",
   "../../examples/vanilla/style.css",
-  "../../examples/vanilla/src/vanilla/app.js"
+  "../../examples/vanilla/src/vanilla/app.js",
+  "../../examples/vue-lib/index.html",
+  "../../examples/vue-lib/main.ts",
+  "../../examples/vue-lib/package.json",
+  "../../examples/vue-lib/postcss.config.js",
+  "../../examples/vue-lib/tsconfig.json",
+  "../../examples/vue-lib/vite.config.ts"
 ], { as: 'raw', eager: true })
 
 const stories = {
@@ -292,6 +299,108 @@ const stories = {
       "code": modules['../../examples/vue/src/slash-menu/use-example-editor.ts']
     }
   },
+  "preact-minimal": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../examples/preact/src/minimal/App.tsx']
+    },
+    "/index.html": {
+      "hidden": true,
+      "code": modules['../../examples/preact/index.html']
+    },
+    "/main.tsx": {
+      "hidden": true,
+      "code": modules['../../examples/preact/main.tsx']
+    },
+    "/package.json": {
+      "hidden": true,
+      "code": modules['../../examples/preact/package.json']
+    },
+    "/postcss.config.js": {
+      "hidden": true,
+      "code": modules['../../examples/preact/postcss.config.js']
+    },
+    "/tsconfig.json": {
+      "hidden": true,
+      "code": modules['../../examples/preact/tsconfig.json']
+    },
+    "/vite.config.ts": {
+      "hidden": true,
+      "code": modules['../../examples/preact/vite.config.ts']
+    }
+  },
+  "preact-slash-menu": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../examples/preact/src/slash-menu/App.tsx']
+    },
+    "/index.html": {
+      "hidden": true,
+      "code": modules['../../examples/preact/index.html']
+    },
+    "/main.tsx": {
+      "hidden": true,
+      "code": modules['../../examples/preact/main.tsx']
+    },
+    "/package.json": {
+      "hidden": true,
+      "code": modules['../../examples/preact/package.json']
+    },
+    "/postcss.config.js": {
+      "hidden": true,
+      "code": modules['../../examples/preact/postcss.config.js']
+    },
+    "/tsconfig.json": {
+      "hidden": true,
+      "code": modules['../../examples/preact/tsconfig.json']
+    },
+    "/vite.config.ts": {
+      "hidden": true,
+      "code": modules['../../examples/preact/vite.config.ts']
+    },
+    "/SlashMenu.tsx": {
+      "hidden": false,
+      "code": modules['../../examples/preact/src/slash-menu/SlashMenu.tsx']
+    },
+    "/ToggleItalicButton.tsx": {
+      "hidden": false,
+      "code": modules['../../examples/preact/src/slash-menu/ToggleItalicButton.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../examples/preact/src/slash-menu/extension.ts']
+    },
+    "/use-example-editor.ts": {
+      "hidden": false,
+      "code": modules['../../examples/preact/src/slash-menu/use-example-editor.ts']
+    }
+  },
+  "lit-lit": {
+    "/app.ts": {
+      "hidden": false,
+      "code": modules['../../examples/lit/src/lit/app.ts']
+    },
+    "/index.html": {
+      "hidden": false,
+      "code": modules['../../examples/lit/index.html']
+    },
+    "/package.json": {
+      "hidden": false,
+      "code": modules['../../examples/lit/package.json']
+    },
+    "/postcss.config.js": {
+      "hidden": false,
+      "code": modules['../../examples/lit/postcss.config.js']
+    },
+    "/style.css": {
+      "hidden": false,
+      "code": modules['../../examples/lit/style.css']
+    },
+    "/tsconfig.json": {
+      "hidden": true,
+      "code": modules['../../examples/lit/tsconfig.json']
+    }
+  },
   "svelte-minimal": {
     "/App.svelte": {
       "hidden": false,
@@ -390,82 +499,6 @@ const stories = {
     "/get-example-editor.ts": {
       "hidden": false,
       "code": modules['../../examples/svelte/src/slash-menu/get-example-editor.ts']
-    }
-  },
-  "preact-minimal": {
-    "/App.tsx": {
-      "hidden": false,
-      "code": modules['../../examples/preact/src/minimal/App.tsx']
-    },
-    "/index.html": {
-      "hidden": true,
-      "code": modules['../../examples/preact/index.html']
-    },
-    "/main.tsx": {
-      "hidden": true,
-      "code": modules['../../examples/preact/main.tsx']
-    },
-    "/package.json": {
-      "hidden": true,
-      "code": modules['../../examples/preact/package.json']
-    },
-    "/postcss.config.js": {
-      "hidden": true,
-      "code": modules['../../examples/preact/postcss.config.js']
-    },
-    "/tsconfig.json": {
-      "hidden": true,
-      "code": modules['../../examples/preact/tsconfig.json']
-    },
-    "/vite.config.ts": {
-      "hidden": true,
-      "code": modules['../../examples/preact/vite.config.ts']
-    }
-  },
-  "preact-slash-menu": {
-    "/App.tsx": {
-      "hidden": false,
-      "code": modules['../../examples/preact/src/slash-menu/App.tsx']
-    },
-    "/index.html": {
-      "hidden": true,
-      "code": modules['../../examples/preact/index.html']
-    },
-    "/main.tsx": {
-      "hidden": true,
-      "code": modules['../../examples/preact/main.tsx']
-    },
-    "/package.json": {
-      "hidden": true,
-      "code": modules['../../examples/preact/package.json']
-    },
-    "/postcss.config.js": {
-      "hidden": true,
-      "code": modules['../../examples/preact/postcss.config.js']
-    },
-    "/tsconfig.json": {
-      "hidden": true,
-      "code": modules['../../examples/preact/tsconfig.json']
-    },
-    "/vite.config.ts": {
-      "hidden": true,
-      "code": modules['../../examples/preact/vite.config.ts']
-    },
-    "/SlashMenu.tsx": {
-      "hidden": false,
-      "code": modules['../../examples/preact/src/slash-menu/SlashMenu.tsx']
-    },
-    "/ToggleItalicButton.tsx": {
-      "hidden": false,
-      "code": modules['../../examples/preact/src/slash-menu/ToggleItalicButton.tsx']
-    },
-    "/extension.ts": {
-      "hidden": false,
-      "code": modules['../../examples/preact/src/slash-menu/extension.ts']
-    },
-    "/use-example-editor.ts": {
-      "hidden": false,
-      "code": modules['../../examples/preact/src/slash-menu/use-example-editor.ts']
     }
   },
   "solid-minimal": {

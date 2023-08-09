@@ -48,7 +48,7 @@ export function findExampleCollectionFile(
   filePath: string,
 ) {
   const collection = findExampleCollection(meta, collectionName)
-  return collection?.files.find((f) => f.path === filePath)
+  return collection?.files?.find((f) => f.path === filePath)
 }
 
 export function findExampleStory(
@@ -57,7 +57,7 @@ export function findExampleStory(
   storyName: string,
 ) {
   const collection = findExampleCollection(meta, collectionName)
-  return collection?.stories.find((s) => s.name === storyName)
+  return collection?.stories?.find((s) => s.name === storyName)
 }
 
 export function findExampleStoryFile(
@@ -67,7 +67,7 @@ export function findExampleStoryFile(
   filePath: string,
 ) {
   const story = findExampleStory(meta, collectionName, storyName)
-  return story?.files.find((f) => f.path === filePath)
+  return story?.files?.find((f) => f.path === filePath)
 }
 
 const metaJsonPath = path.join('examples', 'example.meta.yaml')

@@ -1,5 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
 import './custom.css'
-import './tailwind.css'
+import 'virtual:uno.css'
 
 export default DefaultTheme

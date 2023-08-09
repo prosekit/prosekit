@@ -7,7 +7,9 @@ import { type Extension } from '../types/extension'
 
 import { type PluginFacetInput, pluginFacet } from './plugin'
 
-/** @public */
+/**
+ * @public
+ */
 export function addInputRule(
   rules: (context: { schema: Schema }) => InputRule[],
 ): Extension {

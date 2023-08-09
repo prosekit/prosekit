@@ -8,6 +8,7 @@
   "baseBranch": "master",
   "updateInternalDependencies": "minor",
   "ignore": [
+    "prosekit-example-lit",
     "prosekit-example-preact",
     "prosekit-example-react",
     "prosekit-example-solid",

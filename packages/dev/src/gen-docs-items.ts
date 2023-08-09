@@ -1,5 +1,6 @@
 import { writeFile } from 'node:fs/promises'
-import path from 'node:path'
+import path, { basename } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 import { hideInTypedoc } from './hide-in-typedoc.js'
 import { vfs } from './virtual-file-system.js'
@@ -10,7 +11,7 @@ export async function genDocsItems() {
     rootDir,
     'website',
     '.vitepress',
-    'docs-sidebar.ts',
+    'sidebar-reference-items.ts',
   )
 
   const items: SidebarItem[] = []
@@ -65,8 +66,9 @@ export async function genDocsItems() {
   normalizeItems(items)
 
   const content =
+    `// This file is generated from ${currentFilename}\n\n` +
     `// prettier-ignore\n` +
-    `export const docsItems = ` +
+    `export const referenceItems = ` +
     JSON.stringify(items, null, 2) +
     `\n`
   await writeFile(sidebarFilePath, content)
@@ -109,3 +111,5 @@ function normalizeItem(item: SidebarItem) {
   }
   normalizeItems(item.items)
 }
+
+const currentFilename = basename(fileURLToPath(import.meta.url))

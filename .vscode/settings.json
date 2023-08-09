@@ -6,5 +6,6 @@
     "source.fixAll": false,
     "source.fixAll.eslint": true,
     "source.organizeImports": false
-  }
+  },
+  "unocss.root": "website"
 }

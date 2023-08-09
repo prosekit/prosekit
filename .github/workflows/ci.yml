@@ -57,7 +57,7 @@ jobs:
         run: nr gen
 
       - name: Build packages
-        run: nr build:package --concurrency=1
+        run: nr build:package
 
       - name: Build examples
         run: nr build:example

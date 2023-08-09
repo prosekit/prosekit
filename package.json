@@ -7,7 +7,7 @@
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
-    "build:package": "turbo build --filter='./packages/*'",
+    "build:package": "turbo build --filter='./packages/*' --concurrency=1",
     "build:example": "turbo build --filter='./examples/*'",
     "build:website": "turbo build --filter='./website'",
     "gen": "turbo run gen --force && pnpm install --prefer-offline --no-frozen-lockfile",
@@ -19,8 +19,8 @@
     "change": "changeset",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
     "ci:version:next": "changeset version --snapshot next && pnpm install --no-frozen-lockfile",
-    "ci:publish": "pnpm run build:package --concurrency=1 && pnpm publish --access public -r --no-git-checks --tag latest",
-    "ci:publish:next": "pnpm run build:package --concurrency=1 && pnpm publish --access public -r --no-git-checks --tag next"
+    "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest",
+    "ci:publish:next": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag next"
   },
   "dependencies": {
     "@antfu/ni": "^0.21.5",
@@ -29,7 +29,6 @@
     "@ocavue/eslint-config": "^1.2.1",
     "@size-limit/esbuild-why": "^8.2.6",
     "@size-limit/preset-small-lib": "^8.2.6",
-    "@vitest/coverage-c8": "^0.33.0",
     "@vitest/coverage-istanbul": "^0.34.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.46.0",

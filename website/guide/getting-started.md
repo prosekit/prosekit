@@ -50,11 +50,13 @@ Then, you need to integrate the extensions into your UI framework.
 
 <<< @/../examples/vue/src/minimal/App.vue [Vue]
 
-<<< @/../examples/svelte/src/minimal/App.svelte [Svelte]
-
 <<< @/../examples/preact/src/minimal/App.tsx [Preact]
 
+<<< @/../examples/svelte/src/minimal/App.svelte [Svelte]
+
 <<< @/../examples/solid/src/minimal/App.tsx [Solid]
+
+<<< @/../examples/vanilla/src/vanilla/app.js [Vanilla]
 
 :::
 

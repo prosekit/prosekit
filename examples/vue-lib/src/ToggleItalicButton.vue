@@ -8,4 +8,3 @@ const onToggleItalic = () => editor.commands.toggleItalic()
 <template>
   <button @mousedown.prevent="onToggleItalic">Toggle italic</button>
 </template>
-./use-example-editor

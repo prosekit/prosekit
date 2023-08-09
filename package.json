@@ -29,7 +29,6 @@
     "@ocavue/eslint-config": "^1.2.1",
     "@size-limit/esbuild-why": "^8.2.6",
     "@size-limit/preset-small-lib": "^8.2.6",
-    "@vitest/coverage-c8": "^0.33.0",
     "@vitest/coverage-istanbul": "^0.34.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.46.0",

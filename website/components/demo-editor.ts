@@ -3,6 +3,8 @@ import { defineClientComponent } from 'vitepress'
 import { useData } from 'vitepress'
 import { defineComponent, h } from 'vue'
 
+import 'prosekit-example-vue-lib/style.css'
+
 const Editor = defineClientComponent(async () => {
   const mod = await import('prosekit-example-vue-lib')
   return mod.Editor

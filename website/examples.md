@@ -16,17 +16,21 @@
 
 - [slash-menu](./examples/vue-slash-menu)
 
-## svelte
-
-- [minimal](./examples/svelte-minimal)
-
-- [slash-menu](./examples/svelte-slash-menu)
-
 ## preact
 
 - [minimal](./examples/preact-minimal)
 
 - [slash-menu](./examples/preact-slash-menu)
+
+## lit
+
+- [lit](./examples/lit-lit)
+
+## svelte
+
+- [minimal](./examples/svelte-minimal)
+
+- [slash-menu](./examples/svelte-slash-menu)
 
 ## solid
 

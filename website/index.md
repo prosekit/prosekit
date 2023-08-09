@@ -4,9 +4,9 @@
 layout: home
 
 hero:
-  name: ProseKit (WIP)
-  text: Craft Your Powerful Editor
-  tagline: Modular and Customizable Rich-Text Solutions
+  name: ProseKit
+  text: The Ultimate Toolkit for Text Editing
+  tagline: A Flexible and Modular Rich-Text Solutions for Modern Web.
   actions:
     - theme: brand
       text: Get Started
@@ -28,6 +28,9 @@ features:
 
 <script setup>
 import { DemoEditor } from './components/demo-editor'
+// import { Home } from './components/home'
 </script>
 
 <DemoEditor />
+
+<!-- <Home/> -->

@@ -13,6 +13,7 @@
     "@prosekit/svelte",
     "@prosekit/vue",
     "prosekit",
+    "prosekit-example-lit",
     "prosekit-example-preact",
     "prosekit-example-react",
     "prosekit-example-solid",

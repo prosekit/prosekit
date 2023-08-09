@@ -1,4 +1,4 @@
-import 'prosekit/basic/internal/example.css'
+import './style.css'
 
 import Editor from './Editor.vue'
 

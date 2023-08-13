@@ -4,8 +4,6 @@ import { addNodeSpec } from './node-spec'
 export function addText() {
   return addNodeSpec({
     name: 'text',
-    spec: {
-      group: 'inline',
-    },
+    group: 'inline',
   })
 }

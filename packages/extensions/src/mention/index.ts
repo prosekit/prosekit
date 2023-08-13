@@ -12,36 +12,34 @@ export interface MentionAttrs {
 export function addMentionSpec() {
   return addNodeSpec({
     name: 'mention',
-    spec: {
-      atom: true,
-      group: 'inline',
-      attrs: {
-        id: {},
-        value: {},
-        kind: { default: '' },
+    atom: true,
+    group: 'inline',
+    attrs: {
+      id: {},
+      value: {},
+      kind: { default: '' },
+    },
+    inline: true,
+    leafText: (node) => (node.attrs as MentionAttrs).value.toString(),
+    parseDOM: [
+      {
+        tag: `span[data-mention]`,
+        getAttrs: (dom): MentionAttrs => ({
+          id: (dom as HTMLElement).getAttribute('data-id') || '',
+          kind: (dom as HTMLElement).getAttribute('data-mention') || '',
+          value: (dom as HTMLElement).textContent || '',
+        }),
       },
-      inline: true,
-      leafText: (node) => (node.attrs as MentionAttrs).value.toString(),
-      parseDOM: [
+    ],
+    toDOM(node) {
+      return [
+        'span',
         {
-          tag: `span[data-mention]`,
-          getAttrs: (dom): MentionAttrs => ({
-            id: (dom as HTMLElement).getAttribute('data-id') || '',
-            kind: (dom as HTMLElement).getAttribute('data-mention') || '',
-            value: (dom as HTMLElement).textContent || '',
-          }),
+          'data-id': (node.attrs as MentionAttrs).id.toString(),
+          'data-mention': (node.attrs as MentionAttrs).kind.toString(),
         },
-      ],
-      toDOM(node) {
-        return [
-          'span',
-          {
-            'data-id': (node.attrs as MentionAttrs).id.toString(),
-            'data-mention': (node.attrs as MentionAttrs).kind.toString(),
-          },
-          (node.attrs as MentionAttrs).value.toString(),
-        ]
-      },
+        (node.attrs as MentionAttrs).value.toString(),
+      ]
     },
   })
 }

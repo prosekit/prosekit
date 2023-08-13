@@ -4,8 +4,6 @@ import { addNodeSpec } from './node-spec'
 export function addDoc() {
   return addNodeSpec({
     name: 'doc',
-    spec: {
-      content: 'block+',
-    },
+    content: 'block+',
   })
 }

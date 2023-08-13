@@ -75,6 +75,6 @@ const command3: CommandCreator<[number, boolean]> = (_num, _bool) => {
 
 const extension1 = addCommands({ command1 })
 const extension2 = addCommands({ command2, command3 })
-const extension3 = addNodeSpec({ name: 'node3', spec: {} })
-const extension4 = addNodeSpec({ name: 'node4', spec: {} })
-const extension5 = addMarkSpec({ name: 'mark5', spec: {} })
+const extension3 = addNodeSpec({ name: 'node3' })
+const extension4 = addNodeSpec({ name: 'node4' })
+const extension5 = addMarkSpec({ name: 'mark5' })

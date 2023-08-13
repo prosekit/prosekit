@@ -7,9 +7,9 @@ import { type Extension } from '../types/extension'
 /**
  * @public
  */
-export interface MarkSpecOptions<M extends string = string> {
-  name: M
-  spec: MarkSpec
+export interface MarkSpecOptions<MarkName extends string = string>
+  extends MarkSpec {
+  name: MarkName
 }
 
 /**
@@ -25,7 +25,7 @@ const markSpecFacet = Facet.define<MarkSpecOptions, SchemaSpec>({
   combine: (options: MarkSpecOptions[]): SchemaSpec => {
     const marks: Record<string, MarkSpec> = {}
 
-    for (const { name, spec } of options) {
+    for (const { name, ...spec } of options) {
       if (marks[name]) {
         throw new Error(`Mark type ${name} has already been defined`)
       }

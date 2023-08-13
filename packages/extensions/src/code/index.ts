@@ -6,11 +6,9 @@ import { addMarkSpec, defineExtension } from '@prosekit/core'
 export function addCodeSpec() {
   return addMarkSpec({
     name: 'code',
-    spec: {
-      parseDOM: [{ tag: 'code' }],
-      toDOM() {
-        return ['code', 0]
-      },
+    parseDOM: [{ tag: 'code' }],
+    toDOM() {
+      return ['code', 0]
     },
   })
 }

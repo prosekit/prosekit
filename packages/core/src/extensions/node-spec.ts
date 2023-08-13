@@ -7,39 +7,39 @@ import type { Extension } from '../types/extension'
 /**
  * @public
  */
-export interface NodeSpecOptions<N extends string = string> {
-  name: N
-  spec: NodeSpec
+export interface NodeSpecOptions<NodeName extends string = string>
+  extends NodeSpec {
+  name: NodeName
   topNode?: boolean
 }
 
 /**
  * @public
  */
-export function addNodeSpec<Node extends string>(
-  options: NodeSpecOptions<Node>,
-): Extension<{ NODES: Node }> {
+export function addNodeSpec<NodeName extends string>(
+  options: NodeSpecOptions<NodeName>,
+): Extension<{ NODES: NodeName }> {
   return nodeSpecFacet.extension([options]) satisfies Extension
 }
 
 const nodeSpecFacet = Facet.define<NodeSpecOptions, SchemaSpec>({
   combine: (options: NodeSpecOptions[]): SchemaSpec => {
     const nodes: Record<string, NodeSpec> = {}
-    let topNode: string | undefined = undefined
+    let topNodeName: string | undefined = undefined
 
-    for (const { name, spec, topNode: isTopNode } of options) {
+    for (const { name, topNode, ...spec } of options) {
       if (nodes[name]) {
         throw new Error(`Node type ${name} has already been defined`)
       }
 
-      nodes[name] = spec
-
-      if (isTopNode && !topNode) {
-        topNode = name
+      if (topNodeName && !topNode) {
+        topNodeName = name
       }
+
+      nodes[name] = spec
     }
 
-    return { nodes, topNode }
+    return { nodes, topNode: topNodeName }
   },
   next: schemaSlot,
 })

@@ -13,7 +13,7 @@ import {
 } from 'prosemirror-flat-list'
 
 export function addListSpec() {
-  return addNodeSpec({ name: 'list', spec: createListSpec() })
+  return addNodeSpec({ ...createListSpec(), name: 'list' })
 }
 
 export function addListPlugins() {

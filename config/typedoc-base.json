@@ -56,7 +56,7 @@
   "hideInPageTOC": true,
   "hidePageHeader": true,
   "titleTemplate": "{name}",
-  "hideHierarchy": true,
+  "hideHierarchy": false,
   "entryFileName": "index.md",
   "identifiersAsCodeBlocks": true,
   "excludeGroups": true,

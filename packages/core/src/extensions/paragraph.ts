@@ -4,13 +4,11 @@ import { addNodeSpec } from './node-spec'
 export function addParagraph() {
   return addNodeSpec({
     name: 'paragraph',
-    spec: {
-      content: 'inline*',
-      group: 'block',
-      parseDOM: [{ tag: 'p' }],
-      toDOM() {
-        return ['p', 0]
-      },
+    content: 'inline*',
+    group: 'block',
+    parseDOM: [{ tag: 'p' }],
+    toDOM() {
+      return ['p', 0]
     },
   })
 }

@@ -9,19 +9,17 @@ import {
 export function addItalicSpec() {
   return addMarkSpec({
     name: 'italic',
-    spec: {
-      parseDOM: [
-        { tag: 'i' },
-        { tag: 'em' },
-        { style: 'font-style=italic' },
-        {
-          style: 'font-style=normal',
-          clearMark: (m) => m.type.name === 'italic',
-        },
-      ],
-      toDOM() {
-        return ['em', 0]
+    parseDOM: [
+      { tag: 'i' },
+      { tag: 'em' },
+      { style: 'font-style=italic' },
+      {
+        style: 'font-style=normal',
+        clearMark: (m) => m.type.name === 'italic',
       },
+    ],
+    toDOM() {
+      return ['em', 0]
     },
   })
 }

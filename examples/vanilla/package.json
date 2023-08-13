@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "esbuild-wasm": "^0.18.17",
+    "esbuild-wasm": "^0.19.1",
     "postcss": "^8.4.27",
     "prosekit": "^0.0.10",
     "tailwindcss": "^3.3.3",

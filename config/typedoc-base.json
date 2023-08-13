@@ -55,7 +55,7 @@
   "hideBreadcrumbs": true,
   "hideInPageTOC": true,
   "hidePageHeader": true,
-  "hideKindPrefix": true,
+  "titleTemplate": "{name}",
   "hideHierarchy": true,
   "entryFileName": "index.md",
   "identifiersAsCodeBlocks": true,

@@ -42,6 +42,10 @@ export const referenceItems = [
         "link": "/references/prosekit_extensions_italic"
       },
       {
+        "text": "link",
+        "link": "/references/prosekit_extensions_link"
+      },
+      {
         "text": "list",
         "link": "/references/prosekit_extensions_list"
       },

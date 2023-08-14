@@ -9,6 +9,7 @@
     "./src/heading/index.ts",
     "./src/index.ts",
     "./src/italic/index.ts",
+    "./src/link/index.ts",
     "./src/list/index.ts",
     "./src/mention/index.ts",
     "./src/placeholder/index.ts",

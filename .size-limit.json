@@ -52,6 +52,10 @@
     "path": "packages/prosekit/dist/prosekit-extensions-italic.js"
   },
   {
+    "name": "prosekit/extensions/link",
+    "path": "packages/prosekit/dist/prosekit-extensions-link.js"
+  },
+  {
     "name": "prosekit/extensions/list",
     "path": "packages/prosekit/dist/prosekit-extensions-list.js"
   },

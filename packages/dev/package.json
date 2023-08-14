@@ -32,6 +32,7 @@
     "write-pkg": "^6.0.0"
   },
   "devDependencies": {
+    "@changesets/read": "^0.5.9",
     "@sindresorhus/string-hash": "^2.0.0",
     "@types/js-yaml": "^4.0.5",
     "@types/lodash-es": "^4.17.8",

@@ -1,4 +1,5 @@
 import { genChangesetConfigJson } from './gen-changeset-config-json.js'
+import { genChangeset } from './gen-changeset.js'
 import { genComponents } from './gen-components.js'
 import { genDocsItems } from './gen-docs-items.js'
 import { genExampleGlobImport } from './gen-example-glob-import.js'
@@ -24,6 +25,7 @@ async function main() {
   await genRenovateJson()
   await genChangesetConfigJson()
   await genSizeLimitJson()
+  await genChangeset()
 
   // Example for website
   await genExampleMetaYaml()

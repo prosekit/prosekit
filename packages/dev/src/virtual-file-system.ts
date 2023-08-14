@@ -193,6 +193,11 @@ class VirtualFileSystem {
     return file
   }
 
+  async read(filePath: string) {
+    const file = await this.ensureFile(filePath)
+    return await file.read()
+  }
+
   async updateText(filePath: string, content: string) {
     const file = await this.ensureFile(filePath)
     file.update(content)

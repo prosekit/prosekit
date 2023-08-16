@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.0.11
+
+### Patch Changes
+
+- [9c69685] **prosekit/extensions** **prosekit/core**
+
+  Extend node spec and mark spec
+
+- [dd46683] **prosekit/extensions**
+
+  Add mark link
+
 ## 0.0.10
 
 ## 0.0.9

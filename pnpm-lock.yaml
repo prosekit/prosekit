@@ -626,8 +626,8 @@ importers:
   packages/react:
     dependencies:
       '@lit-labs/react':
-        specifier: ^1.2.1
-        version: 1.2.1
+        specifier: ^2.0.1
+        version: 2.0.1(@types/react@18.2.20)
       '@prosekit/core':
         specifier: ^0.0.7
         version: link:../core
@@ -2225,8 +2225,12 @@ packages:
       lit: 2.8.0
     dev: false
 
-  /@lit-labs/react@1.2.1:
-    resolution: {integrity: sha512-DiZdJYFU0tBbdQkfwwRSwYyI/mcWkg3sWesKRsHUd4G+NekTmmeq9fzsurvcKTNVa0comNljwtg4Hvi1ds3V+A==}
+  /@lit-labs/react@2.0.1(@types/react@18.2.20):
+    resolution: {integrity: sha512-Nj+XB3HamqaWefN91lpFPJaqjJ78XzGkPWCedB4jyH22GBFEenpE9A/h8B/2dnIGXtNtd9D/RFpUdQ/dBtWFqA==}
+    peerDependencies:
+      '@types/react': 17 || 18
+    dependencies:
+      '@types/react': 18.2.20
     dev: false
 
   /@lit-labs/ssr-dom-shim@1.1.1:

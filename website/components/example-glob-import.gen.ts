@@ -41,7 +41,7 @@ const modules = import.meta.glob([
   "../../playground/examples/vanilla/app.js"
 ], { as: 'raw', eager: true }) as Record<string, string>
 
-const stories = {
+const examples = {
   "react-minimal": {
     "/App.tsx": {
       "hidden": false,
@@ -222,4 +222,4 @@ const stories = {
   }
 }
 
-export { stories }
+export { examples }

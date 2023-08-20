@@ -139,11 +139,6 @@ class VirtualFileSystem {
     return packages.filter(isPrivatePackage)
   }
 
-  async getExamplePackages() {
-    const packages = await this.getPackages()
-    return packages.filter((pkg) => pkg.packageJson.name.includes('example'))
-  }
-
   async getScopedPublicPackages() {
     const packages = await this.getPublicPackages()
     return packages.filter((pkg) => pkg.packageJson.name.startsWith('@'))

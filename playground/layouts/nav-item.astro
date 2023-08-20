@@ -1,0 +1,11 @@
+---
+const { path } = Astro.props
+const name = path
+  .replace('/', '')
+  .split('-')
+  .map((word) => word[0].toUpperCase() + word.slice(1))
+  .join(' ')
+const active = path === new URL(Astro.request.url).pathname
+---
+
+<a class={active ? 'bg-yellow-200' : ''} href={path}>{name}</a>

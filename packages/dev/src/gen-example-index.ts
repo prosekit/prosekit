@@ -15,15 +15,8 @@ export async function genExampleIndex() {
 
 function formatIndexMarkdown(meta: ExampleMeta) {
   const lines: string[] = []
-  for (const collection of meta.collections) {
-    if (collection.stories.length === 0) continue
-
-    lines.push(`## ${collection.name}`)
-    for (const story of collection.stories) {
-      lines.push(
-        `- [${story.name}](./examples/${collection.name}-${story.name})`,
-      )
-    }
+  for (const example of meta.examples) {
+    lines.push(`- [${example.name}](./examples/${example.name})`)
   }
 
   return (

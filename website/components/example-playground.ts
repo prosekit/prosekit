@@ -17,7 +17,7 @@ export const ExamplePlayground = defineComponent<ExamplePlaygroundProps>(
       throw new Error(`Failed to find story files by key ${example}`)
     }
 
-    return () => h(Playground, { files, expand })
+    return () => h(Playground, { files, expand, name: example })
   },
   {
     props: ['example', 'expand'],

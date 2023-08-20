@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "emitDeclarationOnly": false,
+    "composite": true,
+    "noEmit": true,
+    "jsx": "preserve"
+  },
+  "include": ["./pages"]
+}

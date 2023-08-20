@@ -23,6 +23,11 @@ export async function genDocsItems() {
       if (entryPoint !== '.' && hideInTypedoc(pkg.packageJson.name)) {
         continue
       }
+
+      if (entryPoint.includes('/internal/')) {
+        continue
+      }
+
       if (entryPoint.endsWith('.css')) {
         continue
       }

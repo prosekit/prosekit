@@ -1,6 +1,6 @@
 import { defineComponent, h } from 'vue'
 
-import { stories } from './example-glob-import.gen'
+import { examples } from './example-glob-import.gen'
 import { Playground } from './playground'
 
 export interface ExamplePlaygroundProps {
@@ -11,7 +11,7 @@ export interface ExamplePlaygroundProps {
 export const ExamplePlayground = defineComponent<ExamplePlaygroundProps>(
   (props) => {
     const { example, expand } = props
-    const files = stories[example as keyof typeof stories]
+    const files = examples[example as keyof typeof examples]
 
     if (!files) {
       throw new Error(`Failed to find story files by key ${example}`)

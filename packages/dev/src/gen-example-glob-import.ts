@@ -35,7 +35,7 @@ async function formatCode(): Promise<string> {
   }
 
   const importFilePathsString = JSON.stringify(importFilePaths, null, 2)
-  const storiesString = JSON.stringify(examples, null, 2)
+  const examplesString = JSON.stringify(examples, null, 2)
 
   const code =
     `
@@ -43,9 +43,9 @@ async function formatCode(): Promise<string> {
 
 const modules = import.meta.glob(${importFilePathsString}, { as: 'raw', eager: true }) as Record<string, string>
 
-const stories = ${storiesString}
+const examples = ${examplesString}
 
-export { stories }
+export { examples }
 `.trim() + '\n'
 
   return removeEdges(code)

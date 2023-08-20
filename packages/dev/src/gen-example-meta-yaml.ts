@@ -1,17 +1,14 @@
-import path from 'node:path'
-
-import { type Package } from '@manypkg/get-packages'
-import { uniq } from 'lodash-es'
+import { groupBy } from 'lodash-es'
 
 import {
-  findExampleCollection,
-  findExampleCollectionFile,
-  findExampleStoryFile,
+  findExample,
+  findExampleFile,
   readExampleMeta,
   writeExampleMeta,
-  type ExampleCollection,
+  type Example,
   type ExampleMeta,
 } from './example-meta'
+import { notEmpty } from './not-empty'
 import { skipGen } from './skip-gen'
 import { vfs } from './virtual-file-system'
 
@@ -19,65 +16,44 @@ export async function genExampleMetaYaml() {
   if (skipGen()) return
 
   const oldMeta: ExampleMeta = await readExampleMeta()
-  const newMeta: ExampleMeta = { collections: [] }
+  const newMeta: ExampleMeta = { examples: [] }
 
-  for (const pkg of await vfs.getExamplePackages()) {
-    const sharedFiles = await findSharedFiles(pkg)
+  const pkg = await vfs.getPackageByName('prosekit-playground')
 
-    const collectionName = path.basename(pkg.dir)
-    const oldCollection = findExampleCollection(oldMeta, collectionName)
-    const newCollection: ExampleCollection = {
-      name: collectionName,
-      order: oldCollection?.order ?? 9999,
-      frameworks: oldCollection?.frameworks ?? [collectionName],
-      files: sharedFiles.map((filePath) => ({
-        path: filePath,
-        hidden:
-          findExampleCollectionFile(oldMeta, collectionName, filePath)
-            ?.hidden ?? false,
+  const files = await vfs.getFilePathsByPackage(pkg)
+
+  const exampleFiles = files
+    .map((file) => {
+      const parts = file.split('/')
+      if (parts.length !== 4) {
+        return null
+      }
+
+      const exampleName = parts[2]
+      const path = parts[3]
+
+      if (path.endsWith('.astro')) {
+        return null
+      }
+
+      return { exampleName, path }
+    })
+    .filter(notEmpty)
+
+  const examples = groupBy(exampleFiles, (item) => item.exampleName)
+
+  for (const [exampleName, exampleFiles] of Object.entries(examples)) {
+    const oldExample = findExample(oldMeta, exampleName)
+    const newExample: Example = {
+      name: exampleName,
+      order: oldExample?.order ?? 999_999,
+      files: exampleFiles.map(({ path }) => ({
+        path: path,
+        hidden: findExampleFile(oldMeta, exampleName, path)?.hidden ?? false,
       })),
-      stories: [],
     }
-
-    for (const storyName of await findStories(pkg)) {
-      const storyFiles = await findStoryFiles(pkg, storyName)
-
-      newCollection.stories.push({
-        name: storyName,
-        files: storyFiles.map((filePath) => ({
-          path: filePath,
-          hidden:
-            findExampleStoryFile(oldMeta, collectionName, storyName, filePath)
-              ?.hidden ?? false,
-        })),
-      })
-    }
-
-    newMeta.collections.push(newCollection)
+    newMeta.examples.push(newExample)
   }
 
   await writeExampleMeta(newMeta)
-}
-
-async function findStories(pkg: Package): Promise<string[]> {
-  const files = await vfs.getFilePathsByPackage(pkg)
-  const appFiles = files.filter((file) => path.basename(file).match(/^app\./i))
-  const appDirs = appFiles
-    .map((appFile) => path.dirname(appFile))
-    .filter((appDir) => appDir !== pkg.relativeDir)
-  const appNames = appDirs.map((appDir) => path.basename(appDir)).sort()
-  return uniq(appNames)
-}
-
-async function findSharedFiles(pkg: Package): Promise<string[]> {
-  const files = await vfs.getFilePathsByPackage(pkg)
-  return files
-    .filter((file) => path.dirname(file) === pkg.relativeDir)
-    .map((file) => path.relative(pkg.relativeDir, file))
-}
-
-async function findStoryFiles(pkg: Package, story: string): Promise<string[]> {
-  const storySourceDir = path.join(pkg.relativeDir, 'src', story)
-  const storeFiles = await vfs.getFilePathsByDir(storySourceDir)
-  return storeFiles.map((file) => path.relative(storySourceDir, file))
 }

@@ -12,61 +12,40 @@ export async function genExampleGlobImport() {
 async function formatCode(): Promise<string> {
   const meta = await readExampleMeta()
   const importFilePaths: string[] = []
-  const stories: Record<
-    string,
-    Record<string, { hidden: boolean; code: string }>
-  > = {}
+  const examples: {
+    [exampleName: string]: {
+      [fileName: string]: { hidden: boolean; code: string }
+    }
+  } = {}
 
-  for (const collection of meta.collections) {
-    const sharedStoryFiles: Record<string, { hidden: boolean; code: string }> =
-      {}
-
-    for (const sharedFile of collection.files) {
+  for (const example of meta.examples) {
+    examples[example.name] = {}
+    for (const file of example.files) {
       const importFilePath = path.join(
-        '../../examples',
-        collection.name,
-        sharedFile.path,
+        '../../playground/examples',
+        example.name,
+        file.path,
       )
       importFilePaths.push(importFilePath)
-      sharedStoryFiles['/' + sharedFile.path] = {
-        hidden: sharedFile.hidden,
+      examples[example.name]['/' + file.path] = {
+        hidden: file.hidden,
         code: EDGE_REMOVER + `modules['${importFilePath}']` + EDGE_REMOVER,
       }
-    }
-
-    for (const story of collection.stories) {
-      const storyFiles = { ...sharedStoryFiles }
-
-      for (const storyFile of story.files) {
-        const importFilePath = path.join(
-          '../../examples',
-          collection.name,
-          'src',
-          story.name,
-          storyFile.path,
-        )
-        importFilePaths.push(importFilePath)
-        storyFiles['/' + storyFile.path] = {
-          hidden: storyFile.hidden,
-          code: EDGE_REMOVER + `modules['${importFilePath}']` + EDGE_REMOVER,
-        }
-      }
-      stories[collection.name + '-' + story.name] = storyFiles
     }
   }
 
   const importFilePathsString = JSON.stringify(importFilePaths, null, 2)
-  const storiesString = JSON.stringify(stories, null, 2)
+  const examplesString = JSON.stringify(examples, null, 2)
 
   const code =
     `
 // This file is generated from ${currentFilename}
 
-const modules = import.meta.glob(${importFilePathsString}, { as: 'raw', eager: true })
+const modules = import.meta.glob(${importFilePathsString}, { as: 'raw', eager: true }) as Record<string, string>
 
-const stories = ${storiesString}
+const examples = ${examplesString}
 
-export { stories }
+export { examples }
 `.trim() + '\n'
 
   return removeEdges(code)

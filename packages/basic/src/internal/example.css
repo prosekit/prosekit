@@ -1,9 +1,4 @@
-@import './text-content.css';
-@import './component.css';
-
 .example-editor {
-  @apply my-2 box-border h-[250px] w-full overflow-auto rounded-md p-4 outline outline-2;
-
   font-family:
     ui-sans-serif,
     system-ui,
@@ -21,8 +16,106 @@
     'Noto Color Emoji';
 }
 
+.example-editor p:first-of-type {
+  margin-top: 0;
+}
+
+.example-editor p:last-of-type {
+  margin-bottom: 0;
+}
+
+.example-editor h1,
+.example-editor h2,
+.example-editor h3,
+.example-editor h4,
+.example-editor h5,
+.example-editor h6 {
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.example-editor a {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.example-editor p,
+.example-editor ul,
+.example-editor ol,
+.example-editor pre {
+  margin: 1em 0;
+  line-height: 1.5;
+}
+
+.example-editor blockquote {
+  margin: 1em 0;
+  padding-left: 1em;
+  font-style: italic;
+}
+
+.example-editor h1 {
+  margin: 1rem 0;
+  font-size: 2.25em;
+}
+
+.example-editor h2 {
+  margin: 1.75em 0 0.5em;
+  font-size: 1.75em;
+}
+
+.example-editor h3 {
+  margin: 1.5em 0 0.5em;
+  font-size: 1.375em;
+}
+
+.example-editor h4 {
+  margin: 1em 0;
+  font-size: 1.125em;
+}
+
+.example-editor img,
+.example-editor video {
+  max-width: 100%;
+}
+
+.example-editor code {
+  font-size: 0.875em;
+  font-weight: 600;
+}
+
+.example-editor pre {
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  border-radius: 0.375rem;
+}
+
+.example-editor pre,
+.example-editor code {
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+  background: transparent;
+}
+
+.example-editor pre code {
+  font-weight: inherit;
+}
+
+.example-editor hr {
+  margin: 2em 0;
+}
+
 .example-editor span[data-mention='user'] {
-  @apply rounded-lg p-0.5 text-blue-500;
+  border-radius: 0.5rem;
+  padding: 0.125rem;
+  color: rgb(59 130 246);
 }
 
 .example-editor span[data-mention='user']::before {
@@ -30,10 +123,28 @@
 }
 
 .example-editor span[data-mention='tag'] {
-  @apply rounded-lg bg-gray-200 px-1 py-0.5 dark:bg-gray-600;
+  border-radius: 0.5rem;
+  background-color: rgb(229 231 235);
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .example-editor span[data-mention='tag'] {
+    background-color: rgb(75 85 99);
+  }
 }
 
 .example-editor span[data-mention='tag']::before {
   content: '#';
-  @apply pr-0.5 opacity-40 dark:opacity-50;
+  padding-right: 0.125rem;
+  opacity: 0.4;
+}
+
+@media (prefers-color-scheme: dark) {
+  .example-editor span[data-mention='tag']::before {
+    opacity: 0.5;
+  }
 }

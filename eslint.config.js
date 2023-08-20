@@ -37,6 +37,6 @@ export default [
     },
   },
   {
-    ignores: ['examples/vanilla/src/vanilla/app.js'],
+    ignores: ['config/unocss-shortcut.mjs'],
   },
 ]

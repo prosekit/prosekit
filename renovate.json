@@ -21,6 +21,7 @@
     "prosekit-example-vanilla",
     "prosekit-example-vue",
     "prosekit-example-vue-lib",
+    "prosekit-playground",
     "prosekit-website"
   ],
   "extends": ["github>ocavue/config-renovate"]

@@ -1,0 +1,116 @@
+examples:
+  - name: react-minimal
+    order: 11
+    files:
+      - path: App.tsx
+        hidden: false
+  - name: react-slash-menu
+    order: 12
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: SlashMenu.tsx
+        hidden: false
+      - path: ToggleItalicButton.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-example-editor.ts
+        hidden: false
+  - name: react-user-menu
+    order: 13
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: TagMenu.tsx
+        hidden: false
+      - path: UserMenu.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: tags.ts
+        hidden: false
+      - path: users.ts
+        hidden: false
+  - name: vue-minimal
+    order: 21
+    files:
+      - path: App.vue
+        hidden: false
+  - name: vue-slash-menu
+    order: 22
+    files:
+      - path: App.vue
+        hidden: false
+      - path: SlashMenu.vue
+        hidden: false
+      - path: ToggleItalicButton.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-example-editor.ts
+        hidden: false
+  - name: preact-minimal
+    order: 31
+    files:
+      - path: App.tsx
+        hidden: false
+  - name: preact-slash-menu
+    order: 32
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: SlashMenu.tsx
+        hidden: false
+      - path: ToggleItalicButton.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-example-editor.ts
+        hidden: false
+  - name: svelte-minimal
+    order: 41
+    files:
+      - path: App.svelte
+        hidden: false
+  - name: svelte-slash-menu
+    order: 42
+    files:
+      - path: App.svelte
+        hidden: false
+      - path: SlashMenu.svelte
+        hidden: false
+      - path: ToggleItalicButton.svelte
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: get-example-editor.ts
+        hidden: false
+  - name: solid-minimal
+    order: 51
+    files:
+      - path: App.tsx
+        hidden: false
+  - name: solid-slash-menu
+    order: 52
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: SlashMenu.tsx
+        hidden: false
+      - path: ToggleItalicButton.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-example-editor.ts
+        hidden: false
+  - name: lit
+    order: 61
+    files:
+      - path: app.ts
+        hidden: false
+  - name: vanilla
+    order: 99
+    files:
+      - path: app.js
+        hidden: false

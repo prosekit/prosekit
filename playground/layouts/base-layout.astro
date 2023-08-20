@@ -1,0 +1,19 @@
+---
+import NavItem from './nav-item.astro'
+import Nav from './nav.astro'
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ProseKit Playground</title>
+  </head>
+
+  <body class="p-1">
+    <Nav />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

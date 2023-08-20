@@ -46,17 +46,17 @@ Then, you need to integrate the extensions into your UI framework.
 
 ::: code-group
 
-<<< @/../examples/react/src/minimal/App.tsx [React]
+<<< @/../playground/examples/react-minimal/App.tsx [React]
 
-<<< @/../examples/vue/src/minimal/App.vue [Vue]
+<<< @/../playground/examples/vue-minimal/App.vue [Vue]
 
-<<< @/../examples/preact/src/minimal/App.tsx [Preact]
+<<< @/../playground/examples/preact-minimal/App.tsx [Preact]
 
-<<< @/../examples/svelte/src/minimal/App.svelte [Svelte]
+<<< @/../playground/examples/svelte-minimal/App.svelte [Svelte]
 
-<<< @/../examples/solid/src/minimal/App.tsx [Solid]
+<<< @/../playground/examples/solid-minimal/App.tsx [Solid]
 
-<<< @/../examples/vanilla/src/vanilla/app.js [Vanilla]
+<<< @/../playground/examples/vanilla/app.js [Vanilla]
 
 :::
 

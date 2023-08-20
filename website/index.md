@@ -27,7 +27,7 @@ features:
 ---
 
 <script setup>
-import { DemoEditor } from './components/demo-editor'
+import { DemoEditor } from './components/demo-editor-dynamic'
 // import { Home } from './components/home'
 </script>
 

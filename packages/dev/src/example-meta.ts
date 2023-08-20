@@ -3,7 +3,7 @@ import path from 'node:path'
 import { vfs } from './virtual-file-system.js'
 
 export interface ExampleMeta {
-  collections: ExampleCollection[]
+  examples: Example[]
 }
 
 interface ExampleFile {
@@ -11,17 +11,10 @@ interface ExampleFile {
   hidden: boolean
 }
 
-interface ExampleStory {
-  name: string
-  files: ExampleFile[]
-}
-
-export interface ExampleCollection {
+export interface Example {
   name: string
   order: number
-  frameworks: string[]
   files: ExampleFile[]
-  stories: ExampleStory[]
 }
 
 export async function readExampleMeta(): Promise<ExampleMeta> {
@@ -30,44 +23,22 @@ export async function readExampleMeta(): Promise<ExampleMeta> {
 }
 
 export async function writeExampleMeta(meta: ExampleMeta) {
-  meta.collections.sort((a, b) => a.order - b.order)
+  meta.examples.sort((a, b) => a.order - b.order)
   const file = await vfs.getFile(metaJsonPath)
   file.updateYaml(meta)
 }
 
-export function findExampleCollection(
-  meta: ExampleMeta,
-  collectionName: string,
-) {
-  return meta.collections.find((c) => c.name === collectionName)
+export function findExample(meta: ExampleMeta, name: string) {
+  return meta.examples.find((c) => c.name === name)
 }
 
-export function findExampleCollectionFile(
+export function findExampleFile(
   meta: ExampleMeta,
-  collectionName: string,
+  name: string,
   filePath: string,
 ) {
-  const collection = findExampleCollection(meta, collectionName)
+  const collection = findExample(meta, name)
   return collection?.files?.find((f) => f.path === filePath)
 }
 
-export function findExampleStory(
-  meta: ExampleMeta,
-  collectionName: string,
-  storyName: string,
-) {
-  const collection = findExampleCollection(meta, collectionName)
-  return collection?.stories?.find((s) => s.name === storyName)
-}
-
-export function findExampleStoryFile(
-  meta: ExampleMeta,
-  collectionName: string,
-  storyName: string,
-  filePath: string,
-) {
-  const story = findExampleStory(meta, collectionName, storyName)
-  return story?.files?.find((f) => f.path === filePath)
-}
-
-const metaJsonPath = path.join('examples', 'example.meta.yaml')
+const metaJsonPath = path.join('playground', 'example.meta.yaml')

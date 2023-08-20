@@ -2,42 +2,28 @@
 
 # Examples
 
-## react
+- [react-minimal](./examples/react-minimal)
 
-- [minimal](./examples/react-minimal)
+- [react-slash-menu](./examples/react-slash-menu)
 
-- [slash-menu](./examples/react-slash-menu)
+- [react-user-menu](./examples/react-user-menu)
 
-- [user-menu](./examples/react-user-menu)
+- [vue-minimal](./examples/vue-minimal)
 
-## vue
+- [vue-slash-menu](./examples/vue-slash-menu)
 
-- [minimal](./examples/vue-minimal)
+- [preact-minimal](./examples/preact-minimal)
 
-- [slash-menu](./examples/vue-slash-menu)
+- [preact-slash-menu](./examples/preact-slash-menu)
 
-## preact
+- [svelte-minimal](./examples/svelte-minimal)
 
-- [minimal](./examples/preact-minimal)
+- [svelte-slash-menu](./examples/svelte-slash-menu)
 
-- [slash-menu](./examples/preact-slash-menu)
+- [solid-minimal](./examples/solid-minimal)
 
-## lit
+- [solid-slash-menu](./examples/solid-slash-menu)
 
-- [lit](./examples/lit-lit)
+- [lit](./examples/lit)
 
-## svelte
-
-- [minimal](./examples/svelte-minimal)
-
-- [slash-menu](./examples/svelte-slash-menu)
-
-## solid
-
-- [minimal](./examples/solid-minimal)
-
-- [slash-menu](./examples/solid-slash-menu)
-
-## vanilla
-
-- [vanilla](./examples/vanilla-vanilla)
+- [vanilla](./examples/vanilla)

@@ -4,14 +4,12 @@ async function paths() {
   const meta = await readExampleMeta()
   const paths = []
 
-  for (const collection of meta.collections) {
-    for (const story of collection.stories) {
-      paths.push({
-        params: {
-          example: collection.name + '-' + story.name,
-        },
-      })
-    }
+  for (const example of meta.examples) {
+    paths.push({
+      params: {
+        example: example.name,
+      },
+    })
   }
 
   return paths

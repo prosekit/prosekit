@@ -13,6 +13,7 @@ describe('addBasicExtension', () => {
 
     expect(nodes).toMatchInlineSnapshot(`
       [
+        "codeBlock",
         "doc",
         "heading",
         "list",

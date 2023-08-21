@@ -8,6 +8,8 @@
 
 - [react-user-menu](./examples/react-user-menu)
 
+- [react-code-block](./examples/react-code-block)
+
 - [vue-minimal](./examples/vue-minimal)
 
 - [vue-slash-menu](./examples/vue-slash-menu)

@@ -44,6 +44,10 @@
     "path": "packages/prosekit/dist/prosekit-extensions-code.js"
   },
   {
+    "name": "prosekit/extensions/code-block",
+    "path": "packages/prosekit/dist/prosekit-extensions-code-block.js"
+  },
+  {
     "name": "prosekit/extensions/heading",
     "path": "packages/prosekit/dist/prosekit-extensions-heading.js"
   },

@@ -8,6 +8,7 @@
     "./src/extensions/autocomplete.gen.ts",
     "./src/extensions/blockquote.gen.ts",
     "./src/extensions/bold.gen.ts",
+    "./src/extensions/code-block.gen.ts",
     "./src/extensions/code.gen.ts",
     "./src/extensions/heading.gen.ts",
     "./src/extensions/italic.gen.ts",

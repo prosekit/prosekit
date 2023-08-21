@@ -5,6 +5,7 @@
     "./src/autocomplete/index.ts",
     "./src/blockquote/index.ts",
     "./src/bold/index.ts",
+    "./src/code-block/index.ts",
     "./src/code/index.ts",
     "./src/heading/index.ts",
     "./src/index.ts",

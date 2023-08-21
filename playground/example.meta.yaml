@@ -32,6 +32,11 @@ examples:
         hidden: false
       - path: users.ts
         hidden: false
+  - name: react-code-block
+    order: 14
+    files:
+      - path: App.tsx
+        hidden: false
   - name: vue-minimal
     order: 21
     files:

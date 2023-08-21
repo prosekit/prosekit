@@ -2,7 +2,7 @@ import { addPlugin } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import { DecorationSet } from '@prosekit/pm/view'
-import hljs from 'highlight.js'
+import hljs from 'highlight.js/lib/common'
 import { getHighlightDecorations } from 'prosemirror-highlightjs'
 
 import type { CodeBlockAttrs } from './code-block-types'

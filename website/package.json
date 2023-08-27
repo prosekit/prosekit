@@ -18,7 +18,7 @@
     "clsx": "^2.0.0",
     "postcss": "^8.4.27",
     "prettier": "^3.0.2",
-    "prosekit": "^0.0.11",
+    "prosekit": "^0.0.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sandpack-vue3": "^3.1.6",

@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/solid",
   "type": "module",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.0.7",
-    "@prosekit/lit": "^0.0.9"
+    "@prosekit/lit": "^0.0.10"
   },
   "peerDependencies": {
     "solid-js": ">= 1.7.0"

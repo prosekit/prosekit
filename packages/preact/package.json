@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/preact",
   "type": "module",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.0.7",
-    "@prosekit/lit": "^0.0.9"
+    "@prosekit/lit": "^0.0.10"
   },
   "peerDependencies": {
     "preact": ">= 9.0.0"

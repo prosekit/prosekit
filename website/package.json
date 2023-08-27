@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vitepress dev",
     "preview": "vitepress preview",
-    "build": "pnpm build:typedoc && pnpm build:vitepress",
+    "build": "pnpm build:typedoc && touch references/index.md && rm references/index.md && pnpm build:vitepress",
     "build:vitepress": "vitepress build",
     "build:typedoc": "typedoc"
   },

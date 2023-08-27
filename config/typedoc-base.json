@@ -51,7 +51,7 @@
   "cleanOutputDir": true,
 
   // https://github.com/tgreyuk/typedoc-plugin-markdown/tree/next/packages/typedoc-plugin-markdown#readme
-  "indexPageTitle": "API Reference",
+  "skipIndexPage": "true",
   "hideBreadcrumbs": true,
   "hideInPageTOC": true,
   "hidePageHeader": true,
@@ -63,6 +63,5 @@
   "typeDeclarationFormat": "table",
   "enumMembersFormat": "table",
   "propertiesFormat": "table",
-  "outputFileStrategy": "modules",
-  "baseUrl": "/references/"
+  "outputFileStrategy": "modules"
 }

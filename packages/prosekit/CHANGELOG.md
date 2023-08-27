@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.12
+
+### Patch Changes
+
+- [4233f94] **prosekit/extensions** **prosekit/lit**
+
+  Add code block node
+
 ## 0.0.11
 
 ### Patch Changes

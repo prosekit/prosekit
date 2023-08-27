@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/react",
   "type": "module",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -46,7 +46,7 @@
   "dependencies": {
     "@lit-labs/react": "^2.0.1",
     "@prosekit/core": "^0.0.7",
-    "@prosekit/lit": "^0.0.9"
+    "@prosekit/lit": "^0.0.10"
   },
   "peerDependencies": {
     "react": ">= 17.0.0",

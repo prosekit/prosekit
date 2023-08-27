@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/vue",
   "type": "module",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.0.7",
-    "@prosekit/lit": "^0.0.9"
+    "@prosekit/lit": "^0.0.10"
   },
   "peerDependencies": {
     "vue": ">= 3.0.0"

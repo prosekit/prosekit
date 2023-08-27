@@ -6,6 +6,8 @@ import {
   type UserConfig,
 } from 'unocss'
 
+import { shortcuts } from '../config/unocss-shortcut.mjs'
+
 const config: UserConfig = defineConfig({
   presets: [presetWind(), presetIcons()],
   transformers: [transformerDirectives()],
@@ -14,6 +16,7 @@ const config: UserConfig = defineConfig({
       include: ['**/*.ts'],
     },
   },
+  shortcuts
 })
 
 export default config

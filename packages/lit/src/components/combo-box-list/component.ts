@@ -1,19 +1,18 @@
 import { consume } from '@lit-labs/context'
 import { customElement, state } from 'lit/decorators.js'
 
-import { BlockElement } from '../block-element'
+import { LightBlockElement } from '../block-element'
 import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
 
+export const propNames = []
+
+export type ComboBoxListProps = Record<string, never>
+
 @customElement('prosekit-combo-box-list')
-export class ComboBoxList extends BlockElement {
+export class ComboBoxList extends LightBlockElement {
   @consume({ context: comboBoxContext, subscribe: true })
   @state()
   comboBoxContext: ComboBoxContext | null = null
-
-  protected updated(): void {
-    const hidden = !this.comboBoxContext?.inputFocus
-    this.setHidden(hidden)
-  }
 
   connectedCallback(): void {
     super.connectedCallback()

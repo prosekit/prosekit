@@ -32,11 +32,6 @@ examples:
         hidden: false
       - path: users.ts
         hidden: false
-  - name: react-code-block
-    order: 14
-    files:
-      - path: App.tsx
-        hidden: false
   - name: vue-minimal
     order: 21
     files:
@@ -113,6 +108,10 @@ examples:
     order: 61
     files:
       - path: app.ts
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: language-selector.ts
         hidden: false
   - name: vanilla
     order: 99

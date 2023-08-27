@@ -1,14 +1,16 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": [
-    "../../config/typedoc-base.json"
-  ],
+  "extends": ["../../config/typedoc-base.json"],
   "entryPoints": [
     "./src/components/autocomplete-empty/index.ts",
     "./src/components/autocomplete-item/index.ts",
     "./src/components/autocomplete-list/index.ts",
     "./src/components/autocomplete-popover/index.ts",
-    "./src/components/code-block-menu-popover/index.ts",
+    "./src/components/code-block-popover/index.ts",
+    "./src/components/combo-box-input/index.ts",
+    "./src/components/combo-box-item/index.ts",
+    "./src/components/combo-box-list/index.ts",
+    "./src/components/combo-box/index.ts",
     "./src/index.ts"
   ]
 }

@@ -57,8 +57,8 @@ export class AutocompletePopover
     query: '',
     handleDismiss: () => this.controller.handleDismiss?.(),
     handleSubmit: () => {
-      console.log("handleSubmit!")
-      return  this.controller.handleSubmit?.()},
+      return this.controller.handleSubmit?.()
+    },
   }
 
   /** @hidden */

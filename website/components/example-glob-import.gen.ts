@@ -13,7 +13,6 @@ const modules = import.meta.glob([
   "../../playground/examples/react-user-menu/extension.ts",
   "../../playground/examples/react-user-menu/tags.ts",
   "../../playground/examples/react-user-menu/users.ts",
-  "../../playground/examples/react-code-block/App.tsx",
   "../../playground/examples/vue-minimal/App.vue",
   "../../playground/examples/vue-slash-menu/App.vue",
   "../../playground/examples/vue-slash-menu/SlashMenu.vue",
@@ -39,6 +38,8 @@ const modules = import.meta.glob([
   "../../playground/examples/solid-slash-menu/extension.ts",
   "../../playground/examples/solid-slash-menu/use-example-editor.ts",
   "../../playground/examples/lit/app.ts",
+  "../../playground/examples/lit/extension.ts",
+  "../../playground/examples/lit/language-selector.ts",
   "../../playground/examples/vanilla/app.js"
 ], { as: 'raw', eager: true }) as Record<string, string>
 
@@ -95,12 +96,6 @@ const examples = {
     "/users.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-user-menu/users.ts']
-    }
-  },
-  "react-code-block": {
-    "/App.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/react-code-block/App.tsx']
     }
   },
   "vue-minimal": {
@@ -219,6 +214,14 @@ const examples = {
     "/app.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/lit/app.ts']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/lit/extension.ts']
+    },
+    "/language-selector.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/lit/language-selector.ts']
     }
   },
   "vanilla": {

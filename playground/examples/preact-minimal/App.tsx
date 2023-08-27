@@ -15,7 +15,10 @@ export default function App() {
 
   return (
     <ProseKit editor={editor}>
-      <div ref={editor.mount} className="example-editor EDITOR_BOX"></div>
+      <div
+        ref={(element) => editor.mount(element)}
+        className="example-editor EDITOR_BOX"
+      ></div>
     </ProseKit>
   )
 }

@@ -1,4 +1,5 @@
 import {
+  addCommands,
   addInputRule,
   addNodeSpec,
   defineExtension,
@@ -54,11 +55,28 @@ export function addCodeBlockInputRule() {
   })
 }
 
+export function addCodeBlockCommands() {
+  return addCommands({
+    setCodeBlockLanguage: (language: string) => (state, dispatch) => {
+      const pos = state.selection.$from.before()
+      const codeBlock = state.doc.nodeAt(pos)
+      if (!codeBlock || codeBlock.type.name !== 'codeBlock') {
+        return false
+      }
+      const { tr } = state
+      tr.setNodeMarkup(pos, undefined, { language })
+      dispatch?.(tr)
+      return true
+    },
+  })
+}
+
 /** @public */
 export function addCodeBlock(options?: { hljs?: HLJSApi }) {
   return defineExtension([
     addCodeBlockSpec(),
     addCodeBlockInputRule(),
     addCodeBlockHighlight({ hljs: options?.hljs }),
+    addCodeBlockCommands(),
   ])
 }

@@ -1,30 +1,16 @@
 import { consume } from '@lit-labs/context'
-import type { Editor } from '@prosekit/core'
-import { LitElement, type CSSResultGroup, css } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { html } from 'lit-html'
 
-import { blockComponentStyles } from '../../styles/block-component.styles'
-import { BlockElement } from '../block-element'
+import { LightBlockElement } from '../block-element'
 import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
 
+export const propNames = []
+
+export type ComboBoxInputProps = Record<string, never>
+
 @customElement('prosekit-combo-box-input')
-export class ComboBoxInput extends BlockElement {
-  // style = 'display: contents!important; margin: 0 !important;';
-
-  // /** @hidden */
-  // static styles: CSSResultGroup = css`
-  //   ${blockComponentStyles}
-
-  //   :host {
-  //     display: contents!important;
-  //     margin: 0 !important;
-  //   }
-  // `
-
-  @property({ attribute: false })
-  editor?: Editor
-
+export class ComboBoxInput extends LightBlockElement {
   @property({ attribute: true })
   placeholder = ''
 
@@ -32,13 +18,7 @@ export class ComboBoxInput extends BlockElement {
   @state()
   comboBoxContext: ComboBoxContext | null = null
 
-  private handleFocus() {
-    this.comboBoxContext?.setInputFocus(true)
-  }
-
-  private handleBlur() {
-    this.comboBoxContext?.setInputFocus(false)
-  }
+  private visible = false
 
   private handleKeydown(event: KeyboardEvent) {
     if (event.code === 'ArrowUp') {
@@ -57,13 +37,25 @@ export class ComboBoxInput extends BlockElement {
     this.comboBoxContext?.setInputValue(value)
   }
 
+  protected firstUpdated(): void {
+    const resizeObserver = new ResizeObserver((entries) => {
+      const visible = entries.some(
+        (entry) => entry.contentRect.width > 0 && entry.contentRect.width > 0,
+      )
+      if (this.visible !== visible && visible) {
+        setTimeout(() => this.querySelector('input')?.focus(), 0)
+      }
+      this.visible = visible
+    })
+
+    resizeObserver.observe(this)
+  }
+
   /** @hidden */
   render() {
     return html`
       <input 
         placeholder=${this.placeholder} 
-        @focus=${() => this.handleFocus()} 
-        @blur=${() => this.handleBlur()} 
         @keydown=${(event: KeyboardEvent) => this.handleKeydown(event)}
         @input=${(event: InputEvent) => this.handleInput(event)}
         value=${this.comboBoxContext?.inputValue ?? ''}

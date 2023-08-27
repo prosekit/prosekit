@@ -35,6 +35,10 @@ function createList() {
   return list
 }
 
+/**
+ * @param {string} text
+ * @param {function} callback
+ */
 function createItem(text, callback) {
   const item = new AutocompleteItem()
   item.append(text)
@@ -43,6 +47,9 @@ function createItem(text, callback) {
   return item
 }
 
+/**
+ * @param {number} level
+ */
 function handleHeadingConvert(level) {
   const nodeType = editor.schema.nodes.heading
   const attrs = { level }

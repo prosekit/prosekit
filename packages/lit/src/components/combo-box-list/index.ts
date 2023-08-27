@@ -1,1 +1,1 @@
-export { ComboBoxList } from './component'
+export { ComboBoxList, type ComboBoxListProps, propNames } from './component'

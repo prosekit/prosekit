@@ -9,8 +9,9 @@ import { customElement, property } from 'lit/decorators.js'
 
 import { blockComponentStyles } from '../../styles/block-component.styles'
 import { roundByDPR } from '../../utils/round-by-dpr'
-import { BlockElement } from '../block-element'
+import { LightBlockElement } from '../block-element'
 
+import { defaultPopoverOptions } from './default-popover-options'
 import { type PopoverOptions } from './options'
 
 export type { AutoUpdateOptions, PopoverOptions }
@@ -37,7 +38,10 @@ export interface PopoverProps {
  * A custom element that displays a popover anchored to a reference element.
  */
 @customElement('prosekit-popover')
-export class Popover extends BlockElement implements Partial<PopoverProps> {
+export class Popover
+  extends LightBlockElement
+  implements Partial<PopoverProps>
+{
   /** @hidden */
   constructor() {
     super()
@@ -133,7 +137,7 @@ export class Popover extends BlockElement implements Partial<PopoverProps> {
     this.setHidden(false)
     this.style.position = this.options?.strategy ?? 'absolute'
 
-    const options = this.options
+    const options: PopoverOptions = this.options ?? defaultPopoverOptions
     const computed = await computePosition(reference, this, options)
 
     const { x, y, strategy } = computed ?? { x: 0, y: 0, strategy: 'absolute' }

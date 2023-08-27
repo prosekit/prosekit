@@ -4,11 +4,15 @@ import { type CSSResultGroup } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 
 import { blockComponentStyles } from '../../styles/block-component.styles'
-import { BlockElement } from '../block-element'
+import { LightBlockElement } from '../block-element'
 import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
 
+export const propNames = []
+
+export type ComboBoxItemProps = Record<string, never>
+
 @customElement('prosekit-combo-box-item')
-export class ComboBoxItem extends BlockElement {
+export class ComboBoxItem extends LightBlockElement {
   /** @hidden */
   static styles: CSSResultGroup = blockComponentStyles
 
@@ -24,6 +28,10 @@ export class ComboBoxItem extends BlockElement {
   @consume({ context: comboBoxContext, subscribe: true })
   @state({})
   comboBoxContext?: ComboBoxContext
+
+  /** @hidden */
+  @property({ attribute: false })
+  onSelect?: VoidFunction
 
   protected updated(): void {
     const content = (this.textContent ?? '').trim()

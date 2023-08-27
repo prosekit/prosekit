@@ -1,61 +1,93 @@
-import { addBasicExtension } from 'prosekit/basic'
-import { createEditor } from 'prosekit/core'
-import { defineExtension } from 'prosekit/core'
-import { addPlaceholder } from 'prosekit/extensions/placeholder'
-import { AutocompleteItem } from 'prosekit/lit/components/autocomplete-item'
-import { AutocompleteList } from 'prosekit/lit/components/autocomplete-list'
-import { AutocompletePopover } from 'prosekit/lit/components/autocomplete-popover'
+// @unocss-include
 
-export function addExampleExtension() {
-  return defineExtension([
-    addBasicExtension(),
-    addPlaceholder({ placeholder: 'Press / for commands...' }),
-  ])
+import 'highlight.js/styles/github-dark-dimmed.css'
+import 'prosekit/basic/internal/example.css'
+import 'prosekit/basic/style.css'
+
+import hljs from 'highlight.js/lib/common'
+import { LitElement, html } from 'lit'
+import { customElement, state } from 'lit/decorators.js'
+import { createRef, ref, type Ref } from 'lit/directives/ref.js'
+import { createEditor, type Editor } from 'prosekit/core'
+import { Slice, Fragment } from 'prosekit/pm/model'
+
+import { addRootExtension, type RootExtension } from './extension'
+import './language-selector'
+
+@customElement('my-editor')
+export class MyEditor extends LitElement {
+  createRenderRoot() {
+    return this
+  }
+
+  @state()
+  editor?: Editor<RootExtension>
+
+  private editorRef: Ref<HTMLDivElement> = createRef()
+
+  protected firstUpdated(): void {
+    if (!this.editor) {
+      const extension = addRootExtension()
+      this.editor = createEditor({ extension })
+    }
+
+    this.editor.mount(this.editorRef.value)
+
+    insertContent(this.editor)
+  }
+
+  render() {
+    return html`
+      <div class="example-editor EDITOR_BOX">
+        <div ${ref(this.editorRef)}></div>
+        <my-language-selector
+          .hljs=${hljs}
+          .editor=${this.editor}
+        ></my-language-selector>
+      </div>
+    `
+  }
 }
 
-const editor = createEditor({ extension: addExampleExtension() })
+function insertContent(editor: Editor) {
+  const tr = editor.view.state.tr
 
-function createPopover() {
-  const popover = new AutocompletePopover()
-  popover.editor = editor
-  popover.regex = /\/(\w*)$/
-  popover.append(createList())
-  return popover
+  const json = {
+    type: 'doc',
+    content: [
+      {
+        type: 'heading',
+        attrs: {
+          level: 1,
+        },
+        content: [
+          {
+            type: 'text',
+            text: 'Code Block',
+          },
+        ],
+      },
+      {
+        type: 'codeBlock',
+        attrs: {
+          language: 'python',
+        },
+        content: [
+          {
+            type: 'text',
+            text: 'if __name__ == "__main__":\n    print("hello world!")\n\n'.repeat(
+              20,
+            ),
+          },
+        ],
+      },
+    ],
+  }
+
+  const doc = editor.schema.nodeFromJSON(json)
+  const slice = new Slice(Fragment.from(doc), 0, 0)
+
+  tr.replace(0, tr.doc.content.size, slice)
+
+  editor.view.dispatch(tr)
 }
-
-function createList() {
-  const list = new AutocompleteList()
-  list.editor = editor
-  list.append(
-    createItem('Insert Heading 1', () => handleHeadingConvert(1)),
-    createItem('Insert Heading 2', () => handleHeadingConvert(2)),
-    createItem('Insert Heading 3', () => handleHeadingConvert(3)),
-  )
-  list.className = 'SLASH_MENU'
-  return list
-}
-
-function createItem(text: string, callback: VoidFunction) {
-  const item = new AutocompleteItem()
-  item.append(text)
-  item.onSelect = callback
-  item.className = 'SLASH_MENU_ITEM'
-  return item
-}
-
-function handleHeadingConvert(level: number) {
-  const nodeType = editor.schema.nodes.heading
-  const attrs = { level }
-  editor.commands.setBlockType({ nodeType, attrs })
-}
-
-const container = document.querySelector('.example-editor')
-if (!(container instanceof HTMLElement)) {
-  throw new TypeError('Could not find container element')
-}
-
-const classNames = 'EDITOR_BOX'.split(' ')
-container.classList.add(...classNames)
-
-editor.mount(container)
-document.body.append(createPopover())

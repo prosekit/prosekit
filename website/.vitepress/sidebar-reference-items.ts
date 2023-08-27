@@ -34,6 +34,10 @@ export const referenceItems = [
         "link": "/references/prosekit_extensions_code"
       },
       {
+        "text": "code-block",
+        "link": "/references/prosekit_extensions_code_block"
+      },
+      {
         "text": "heading",
         "link": "/references/prosekit_extensions_heading"
       },
@@ -86,6 +90,26 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_lit_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-popover",
+            "link": "/references/prosekit_lit_components_code_block_popover"
+          },
+          {
+            "text": "combo-box",
+            "link": "/references/prosekit_lit_components_combo_box"
+          },
+          {
+            "text": "combo-box-input",
+            "link": "/references/prosekit_lit_components_combo_box_input"
+          },
+          {
+            "text": "combo-box-item",
+            "link": "/references/prosekit_lit_components_combo_box_item"
+          },
+          {
+            "text": "combo-box-list",
+            "link": "/references/prosekit_lit_components_combo_box_list"
           }
         ],
         "collapsed": true
@@ -115,6 +139,26 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_preact_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-popover",
+            "link": "/references/prosekit_preact_components_code_block_popover"
+          },
+          {
+            "text": "combo-box",
+            "link": "/references/prosekit_preact_components_combo_box"
+          },
+          {
+            "text": "combo-box-input",
+            "link": "/references/prosekit_preact_components_combo_box_input"
+          },
+          {
+            "text": "combo-box-item",
+            "link": "/references/prosekit_preact_components_combo_box_item"
+          },
+          {
+            "text": "combo-box-list",
+            "link": "/references/prosekit_preact_components_combo_box_list"
           }
         ],
         "collapsed": true
@@ -144,6 +188,26 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_react_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-popover",
+            "link": "/references/prosekit_react_components_code_block_popover"
+          },
+          {
+            "text": "combo-box",
+            "link": "/references/prosekit_react_components_combo_box"
+          },
+          {
+            "text": "combo-box-input",
+            "link": "/references/prosekit_react_components_combo_box_input"
+          },
+          {
+            "text": "combo-box-item",
+            "link": "/references/prosekit_react_components_combo_box_item"
+          },
+          {
+            "text": "combo-box-list",
+            "link": "/references/prosekit_react_components_combo_box_list"
           }
         ],
         "collapsed": true
@@ -173,6 +237,26 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_solid_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-popover",
+            "link": "/references/prosekit_solid_components_code_block_popover"
+          },
+          {
+            "text": "combo-box",
+            "link": "/references/prosekit_solid_components_combo_box"
+          },
+          {
+            "text": "combo-box-input",
+            "link": "/references/prosekit_solid_components_combo_box_input"
+          },
+          {
+            "text": "combo-box-item",
+            "link": "/references/prosekit_solid_components_combo_box_item"
+          },
+          {
+            "text": "combo-box-list",
+            "link": "/references/prosekit_solid_components_combo_box_list"
           }
         ],
         "collapsed": true
@@ -202,6 +286,26 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_svelte_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-popover",
+            "link": "/references/prosekit_svelte_components_code_block_popover"
+          },
+          {
+            "text": "combo-box",
+            "link": "/references/prosekit_svelte_components_combo_box"
+          },
+          {
+            "text": "combo-box-input",
+            "link": "/references/prosekit_svelte_components_combo_box_input"
+          },
+          {
+            "text": "combo-box-item",
+            "link": "/references/prosekit_svelte_components_combo_box_item"
+          },
+          {
+            "text": "combo-box-list",
+            "link": "/references/prosekit_svelte_components_combo_box_list"
           },
           {
             "text": "prosekit",
@@ -235,6 +339,26 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_vue_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-popover",
+            "link": "/references/prosekit_vue_components_code_block_popover"
+          },
+          {
+            "text": "combo-box",
+            "link": "/references/prosekit_vue_components_combo_box"
+          },
+          {
+            "text": "combo-box-input",
+            "link": "/references/prosekit_vue_components_combo_box_input"
+          },
+          {
+            "text": "combo-box-item",
+            "link": "/references/prosekit_vue_components_combo_box_item"
+          },
+          {
+            "text": "combo-box-list",
+            "link": "/references/prosekit_vue_components_combo_box_list"
           }
         ],
         "collapsed": true

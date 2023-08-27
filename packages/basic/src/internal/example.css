@@ -84,7 +84,7 @@
 }
 
 .example-editor pre {
-  padding: 1.25rem 1.5rem;
+  padding: 2rem 2rem;
   overflow-x: auto;
   border-radius: 0.375rem;
 }
@@ -101,7 +101,6 @@
   -webkit-hyphens: none;
   -moz-hyphens: none;
   hyphens: none;
-  background: transparent;
 }
 
 .example-editor pre code {

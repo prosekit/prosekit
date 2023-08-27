@@ -30,6 +30,7 @@
     "./blockquote": "./src/blockquote/index.ts",
     "./bold": "./src/bold/index.ts",
     "./code": "./src/code/index.ts",
+    "./code-block": "./src/code-block/index.ts",
     "./heading": "./src/heading/index.ts",
     "./italic": "./src/italic/index.ts",
     "./link": "./src/link/index.ts",
@@ -50,7 +51,9 @@
   "dependencies": {
     "@prosekit/core": "^0.0.7",
     "@prosekit/pm": "^0.0.3",
-    "prosemirror-flat-list": "^0.4.1"
+    "highlight.js": "^11.8.0",
+    "prosemirror-flat-list": "^0.4.1",
+    "prosemirror-highlightjs": "^0.9.1"
   },
   "devDependencies": {
     "@prosekit/dev": "*",
@@ -84,6 +87,11 @@
         "types": "./dist/prosekit-extensions-code.d.ts",
         "import": "./dist/prosekit-extensions-code.js",
         "default": "./dist/prosekit-extensions-code.js"
+      },
+      "./code-block": {
+        "types": "./dist/prosekit-extensions-code-block.d.ts",
+        "import": "./dist/prosekit-extensions-code-block.js",
+        "default": "./dist/prosekit-extensions-code-block.js"
       },
       "./heading": {
         "types": "./dist/prosekit-extensions-heading.d.ts",
@@ -146,6 +154,9 @@
         ],
         "code": [
           "./dist/prosekit-extensions-code.d.ts"
+        ],
+        "code-block": [
+          "./dist/prosekit-extensions-code-block.d.ts"
         ],
         "heading": [
           "./dist/prosekit-extensions-heading.d.ts"

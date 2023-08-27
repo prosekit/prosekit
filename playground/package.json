@@ -11,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/lit": "^2.1.1",
     "@astrojs/preact": "^2.2.2",
     "@astrojs/react": "^2.2.2",
     "@astrojs/solid-js": "^2.2.0",
@@ -19,6 +20,8 @@
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "astro": "^2.10.9",
+    "highlight.js": "^11.8.0",
+    "lit": "^2.8.0",
     "preact": "^10.16.0",
     "prosekit": "^0.0.11",
     "react": "^18.2.0",

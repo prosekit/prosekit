@@ -1,25 +1,20 @@
 import {
-  type AutoUpdateOptions,
-  type ComputePositionReturn,
-  type VirtualElement,
   autoUpdate,
   computePosition,
+  type AutoUpdateOptions,
+  type VirtualElement,
 } from '@floating-ui/dom'
-import {
-  type CSSResultGroup,
-  LitElement,
-  type PropertyValueMap,
-  html,
-} from 'lit'
-import { customElement, property, query, state } from 'lit/decorators.js'
-import { styleMap } from 'lit/directives/style-map.js'
+import { type CSSResultGroup } from 'lit'
+import { customElement, property } from 'lit/decorators.js'
 
 import { blockComponentStyles } from '../../styles/block-component.styles'
 import { roundByDPR } from '../../utils/round-by-dpr'
+import { LightBlockElement } from '../block-element'
 
+import { defaultPopoverOptions } from './default-popover-options'
 import { type PopoverOptions } from './options'
 
-export type { PopoverOptions, AutoUpdateOptions }
+export type { AutoUpdateOptions, PopoverOptions }
 
 export const propNames = [
   'active',
@@ -41,7 +36,10 @@ export interface PopoverProps {
  * A custom element that displays a popover anchored to a reference element.
  */
 @customElement('prosekit-popover')
-export class Popover extends LitElement implements Partial<PopoverProps> {
+export class Popover
+  extends LightBlockElement
+  implements Partial<PopoverProps>
+{
   /** @hidden */
   constructor() {
     super()
@@ -57,10 +55,6 @@ export class Popover extends LitElement implements Partial<PopoverProps> {
    */
   @property({ type: Boolean, reflect: true })
   active = false
-
-  /** The floating element that displays the popover. */
-  @query('.floating')
-  floating!: HTMLElement
 
   /**
    * The element that the popover is anchored to. This can be either a DOM element or an object that implements the
@@ -99,10 +93,6 @@ export class Popover extends LitElement implements Partial<PopoverProps> {
   autoUpdateOptions?: AutoUpdateOptions
 
   /** @hidden */
-  @state()
-  private computed?: ComputePositionReturn
-
-  /** @hidden */
   private cleanupAutoUpdate?: VoidFunction
 
   /** @hidden */
@@ -111,12 +101,9 @@ export class Popover extends LitElement implements Partial<PopoverProps> {
   }
 
   /** @hidden */
-  protected updated(
-    changed: PropertyValueMap<any> | Map<PropertyKey, unknown>,
-  ): void {
-    if (!changed.has('computed')) {
-      this.start()
-    }
+  protected updated(): void {
+    this.start()
+    this.setHidden(!this.active)
   }
 
   /** @hidden */
@@ -124,13 +111,13 @@ export class Popover extends LitElement implements Partial<PopoverProps> {
     this.cleanup()
 
     const reference = this.reference
-    const floating = this.floating
     if (!reference) return
+    if (!this.active) return
 
     if (this.autoUpdate) {
       this.cleanupAutoUpdate = autoUpdate(
         reference,
-        floating,
+        this,
         () => void this.compute(),
         this.autoUpdateOptions,
       )
@@ -142,39 +129,26 @@ export class Popover extends LitElement implements Partial<PopoverProps> {
   /** @hidden */
   private async compute() {
     const reference = this.reference
-    const floating = this.floating
     if (!reference) return
+    if (!this.active) return
 
-    const options = this.options
-    this.computed = await computePosition(reference, floating, options)
+    this.setHidden(false)
+    this.style.position = this.options?.strategy ?? 'absolute'
+
+    const options: PopoverOptions = this.options ?? defaultPopoverOptions
+    const computed = await computePosition(reference, this, options)
+
+    const { x, y, strategy } = computed ?? { x: 0, y: 0, strategy: 'absolute' }
+
+    this.style.top = '0'
+    this.style.left = '0'
+    this.style.position = strategy
+    this.style.transform = `translate(${roundByDPR(x)}px,${roundByDPR(y)}px)`
   }
 
   /** @hidden */
   private cleanup() {
     this.cleanupAutoUpdate?.()
     this.cleanupAutoUpdate = undefined
-  }
-
-  /** @hidden */
-  render() {
-    const { x, y, strategy } = this.computed ?? {
-      x: 0,
-      y: 0,
-      strategy: 'absolute',
-    }
-
-    const style = {
-      top: '0',
-      left: '0',
-      position: strategy,
-      transform: `translate(${roundByDPR(x)}px,${roundByDPR(y)}px)`,
-      display: this.active ? undefined : 'none',
-    } satisfies Partial<CSSStyleDeclaration>
-
-    return html`
-      <div class="floating" style=${styleMap(style)}>
-        <slot></slot>
-      </div>
-    `
   }
 }

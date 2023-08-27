@@ -19,7 +19,11 @@ export default [
     },
   },
   {
-    files: ['packages/dev/**/*.ts', 'examples/**/*.ts', 'examples/**/*.tsx'],
+    files: [
+      'packages/dev/**/*.ts',
+      'playground/**/*.ts',
+      'playground/**/*.tsx',
+    ],
     plugins: {
       '@typescript-eslint/': tsPlugin,
     },

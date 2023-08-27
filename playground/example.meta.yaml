@@ -109,6 +109,10 @@ examples:
     files:
       - path: app.ts
         hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: language-selector.ts
+        hidden: false
   - name: vanilla
     order: 99
     files:

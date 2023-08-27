@@ -1,3 +1,4 @@
+import lit from '@astrojs/lit'
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
@@ -10,5 +11,13 @@ import unocss from 'unocss/astro'
 export default defineConfig({
   srcDir: './',
   // Enable many frameworks to support all different kinds of components.
-  integrations: [preact(), react(), svelte(), vue(), solid(), unocss()],
+  integrations: [
+    preact(),
+    react(),
+    svelte(),
+    vue(),
+    solid(),
+    lit(),
+    unocss({}),
+  ],
 })

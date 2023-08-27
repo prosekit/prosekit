@@ -10,7 +10,7 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {
+  "devDependencies": {
     "@astrojs/lit": "^2.1.1",
     "@astrojs/preact": "^2.2.2",
     "@astrojs/react": "^2.2.2",

@@ -2,22 +2,26 @@ import { addPlugin } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import { DecorationSet } from '@prosekit/pm/view'
-import hljs from 'highlight.js/lib/common'
+import type { HLJSApi } from 'highlight.js'
 import { getHighlightDecorations } from 'prosemirror-highlightjs'
 
 import type { CodeBlockAttrs } from './code-block-types'
 
-export function addCodeBlockHighlight() {
+export function addCodeBlockHighlight(options: { hljs?: HLJSApi }) {
+  const hljs = options.hljs
+
   const plugin = new ProseMirrorPlugin<DecorationSet>({
     key,
     state: {
       init(_config, state) {
-        const decorations = getHighlightDecorations(
-          state.doc,
-          hljs,
-          blockTypes,
-          languageExtractor,
-        )
+        const decorations = hljs
+          ? getHighlightDecorations(
+              state.doc,
+              hljs,
+              blockTypes,
+              languageExtractor,
+            )
+          : []
         return DecorationSet.create(state.doc, decorations)
       },
       apply(tr, set) {
@@ -25,12 +29,9 @@ export function addCodeBlockHighlight() {
           return set.map(tr.mapping, tr.doc)
         }
 
-        const decorations = getHighlightDecorations(
-          tr.doc,
-          hljs,
-          blockTypes,
-          languageExtractor,
-        )
+        const decorations = hljs
+          ? getHighlightDecorations(tr.doc, hljs, blockTypes, languageExtractor)
+          : []
         return DecorationSet.create(tr.doc, decorations)
       },
     },

@@ -1,0 +1,1 @@
+export { ComboBoxItem } from './component'

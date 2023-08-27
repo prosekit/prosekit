@@ -1,11 +1,14 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
   "entryPoints": [
     "./src/components/autocomplete-empty.ts",
     "./src/components/autocomplete-item.ts",
     "./src/components/autocomplete-list.ts",
     "./src/components/autocomplete-popover.ts",
+    "./src/components/code-block-menu-popover.ts",
     "./src/index.ts"
   ]
 }

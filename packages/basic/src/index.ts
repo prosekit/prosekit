@@ -8,7 +8,6 @@ import {
   Priority,
   withPriority,
 } from '@prosekit/core'
-import { addCodeBlock } from '@prosekit/extensions/code-block'
 import { addHeading } from '@prosekit/extensions/heading'
 import { addItalic } from '@prosekit/extensions/italic'
 import { addList } from '@prosekit/extensions/list'
@@ -20,7 +19,6 @@ export function addBasicExtension() {
     addText(),
     addHeading(),
     addList(),
-    addCodeBlock(),
     addBaseKeymap(),
     addBaseCommands(),
     addItalic(),

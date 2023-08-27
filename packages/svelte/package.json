@@ -42,6 +42,10 @@
       "svelte": "./src/components/autocomplete-popover.ts",
       "default": "./src/components/autocomplete-popover.ts"
     },
+    "./components/code-block-menu-popover": {
+      "svelte": "./src/components/code-block-menu-popover.gen.ts",
+      "default": "./src/components/code-block-menu-popover.gen.ts"
+    },
     "./components/prosekit": {
       "svelte": "./src/components/prosekit.ts",
       "default": "./src/components/prosekit.ts"
@@ -104,6 +108,12 @@
         "import": "./dist/prosekit-svelte-components-autocomplete-popover.js",
         "default": "./dist/prosekit-svelte-components-autocomplete-popover.js"
       },
+      "./components/code-block-menu-popover": {
+        "types": "./dist/prosekit-svelte-components-code-block-menu-popover.d.ts",
+        "svelte": "./dist/prosekit-svelte-components-code-block-menu-popover.js",
+        "import": "./dist/prosekit-svelte-components-code-block-menu-popover.js",
+        "default": "./dist/prosekit-svelte-components-code-block-menu-popover.js"
+      },
       "./components/prosekit": {
         "types": "./dist/prosekit-svelte-components-prosekit.d.ts",
         "svelte": "./dist/prosekit-svelte-components-prosekit.js",
@@ -130,6 +140,9 @@
         ],
         "components/autocomplete-popover": [
           "./dist/prosekit-svelte-components-autocomplete-popover.d.ts"
+        ],
+        "components/code-block-menu-popover": [
+          "./dist/prosekit-svelte-components-code-block-menu-popover.d.ts"
         ],
         "components/prosekit": [
           "./dist/prosekit-svelte-components-prosekit.d.ts"

@@ -5,9 +5,12 @@ import {
   getNodeType,
 } from '@prosekit/core'
 import { textblockTypeInputRule } from '@prosekit/pm/inputrules'
+import type { HLJSApi } from 'highlight.js'
 
 import { addCodeBlockHighlight } from './code-block-highlight'
 import type { CodeBlockAttrs } from './code-block-types'
+
+export { addCodeBlockHovering } from './code-block-hovering'
 
 export type { CodeBlockAttrs }
 
@@ -52,10 +55,10 @@ export function addCodeBlockInputRule() {
 }
 
 /** @public */
-export function addCodeBlock() {
+export function addCodeBlock(options?: { hljs?: HLJSApi }) {
   return defineExtension([
     addCodeBlockSpec(),
     addCodeBlockInputRule(),
-    addCodeBlockHighlight(),
+    addCodeBlockHighlight({ hljs: options?.hljs }),
   ])
 }

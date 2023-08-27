@@ -1,6 +1,6 @@
 export const shortcuts = {
   EDITOR_BOX:
-    'my-2 box-border h-[250px] w-full overflow-auto rounded-md p-4 outline outline-2',
+    'my-2 box-border h-[250px] w-full overflow-auto rounded-md p-4 outline outline-2 relative',
 
   SLASH_MENU:
     'relative max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap rounded bg-white dark:bg-zinc-800 border border-solid border-gray-500',

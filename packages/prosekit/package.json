@@ -51,6 +51,7 @@
     "./lit/components/autocomplete-item": "./src/lit/components/autocomplete-item.gen.ts",
     "./lit/components/autocomplete-list": "./src/lit/components/autocomplete-list.gen.ts",
     "./lit/components/autocomplete-popover": "./src/lit/components/autocomplete-popover.gen.ts",
+    "./lit/components/code-block-menu-popover": "./src/lit/components/code-block-menu-popover.gen.ts",
     "./pm": "./src/pm.gen.ts",
     "./pm/commands": "./src/pm/commands.gen.ts",
     "./pm/inputrules": "./src/pm/inputrules.gen.ts",
@@ -65,27 +66,32 @@
     "./preact/components/autocomplete-item": "./src/preact/components/autocomplete-item.gen.ts",
     "./preact/components/autocomplete-list": "./src/preact/components/autocomplete-list.gen.ts",
     "./preact/components/autocomplete-popover": "./src/preact/components/autocomplete-popover.gen.ts",
+    "./preact/components/code-block-menu-popover": "./src/preact/components/code-block-menu-popover.gen.ts",
     "./react": "./src/react.gen.ts",
     "./react/components/autocomplete-empty": "./src/react/components/autocomplete-empty.gen.ts",
     "./react/components/autocomplete-item": "./src/react/components/autocomplete-item.gen.ts",
     "./react/components/autocomplete-list": "./src/react/components/autocomplete-list.gen.ts",
     "./react/components/autocomplete-popover": "./src/react/components/autocomplete-popover.gen.ts",
+    "./react/components/code-block-menu-popover": "./src/react/components/code-block-menu-popover.gen.ts",
     "./solid": "./src/solid.gen.ts",
     "./solid/components/autocomplete-empty": "./src/solid/components/autocomplete-empty.gen.ts",
     "./solid/components/autocomplete-item": "./src/solid/components/autocomplete-item.gen.ts",
     "./solid/components/autocomplete-list": "./src/solid/components/autocomplete-list.gen.ts",
     "./solid/components/autocomplete-popover": "./src/solid/components/autocomplete-popover.gen.ts",
+    "./solid/components/code-block-menu-popover": "./src/solid/components/code-block-menu-popover.gen.ts",
     "./svelte": "./src/svelte.gen.ts",
     "./svelte/components/autocomplete-empty": "./src/svelte/components/autocomplete-empty.gen.ts",
     "./svelte/components/autocomplete-item": "./src/svelte/components/autocomplete-item.gen.ts",
     "./svelte/components/autocomplete-list": "./src/svelte/components/autocomplete-list.gen.ts",
     "./svelte/components/autocomplete-popover": "./src/svelte/components/autocomplete-popover.gen.ts",
+    "./svelte/components/code-block-menu-popover": "./src/svelte/components/code-block-menu-popover.gen.ts",
     "./svelte/components/prosekit": "./src/svelte/components/prosekit.gen.ts",
     "./vue": "./src/vue.gen.ts",
     "./vue/components/autocomplete-empty": "./src/vue/components/autocomplete-empty.gen.ts",
     "./vue/components/autocomplete-item": "./src/vue/components/autocomplete-item.gen.ts",
     "./vue/components/autocomplete-list": "./src/vue/components/autocomplete-list.gen.ts",
-    "./vue/components/autocomplete-popover": "./src/vue/components/autocomplete-popover.gen.ts"
+    "./vue/components/autocomplete-popover": "./src/vue/components/autocomplete-popover.gen.ts",
+    "./vue/components/code-block-menu-popover": "./src/vue/components/code-block-menu-popover.gen.ts"
   },
   "files": [
     "dist"
@@ -95,11 +101,11 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
+    "@prosekit/pm": "0.0.3",
     "@prosekit/basic": "0.0.8",
     "@prosekit/core": "0.0.7",
     "@prosekit/extensions": "0.0.7",
     "@prosekit/lit": "0.0.9",
-    "@prosekit/pm": "0.0.3",
     "@prosekit/preact": "0.0.6",
     "@prosekit/react": "0.0.9",
     "@prosekit/solid": "0.0.7",
@@ -269,6 +275,11 @@
         "import": "./dist/prosekit-lit-components-autocomplete-popover.js",
         "default": "./dist/prosekit-lit-components-autocomplete-popover.js"
       },
+      "./lit/components/code-block-menu-popover": {
+        "types": "./dist/prosekit-lit-components-code-block-menu-popover.d.ts",
+        "import": "./dist/prosekit-lit-components-code-block-menu-popover.js",
+        "default": "./dist/prosekit-lit-components-code-block-menu-popover.js"
+      },
       "./pm": {
         "types": "./dist/prosekit-pm.d.ts",
         "import": "./dist/prosekit-pm.js",
@@ -337,6 +348,11 @@
         "import": "./dist/prosekit-preact-components-autocomplete-popover.js",
         "default": "./dist/prosekit-preact-components-autocomplete-popover.js"
       },
+      "./preact/components/code-block-menu-popover": {
+        "types": "./dist/prosekit-preact-components-code-block-menu-popover.d.ts",
+        "import": "./dist/prosekit-preact-components-code-block-menu-popover.js",
+        "default": "./dist/prosekit-preact-components-code-block-menu-popover.js"
+      },
       "./react": {
         "types": "./dist/prosekit-react.d.ts",
         "import": "./dist/prosekit-react.js",
@@ -361,6 +377,11 @@
         "types": "./dist/prosekit-react-components-autocomplete-popover.d.ts",
         "import": "./dist/prosekit-react-components-autocomplete-popover.js",
         "default": "./dist/prosekit-react-components-autocomplete-popover.js"
+      },
+      "./react/components/code-block-menu-popover": {
+        "types": "./dist/prosekit-react-components-code-block-menu-popover.d.ts",
+        "import": "./dist/prosekit-react-components-code-block-menu-popover.js",
+        "default": "./dist/prosekit-react-components-code-block-menu-popover.js"
       },
       "./solid": {
         "types": "./dist/prosekit-solid.d.ts",
@@ -387,6 +408,11 @@
         "import": "./dist/prosekit-solid-components-autocomplete-popover.js",
         "default": "./dist/prosekit-solid-components-autocomplete-popover.js"
       },
+      "./solid/components/code-block-menu-popover": {
+        "types": "./dist/prosekit-solid-components-code-block-menu-popover.d.ts",
+        "import": "./dist/prosekit-solid-components-code-block-menu-popover.js",
+        "default": "./dist/prosekit-solid-components-code-block-menu-popover.js"
+      },
       "./svelte": {
         "types": "./dist/prosekit-svelte.d.ts",
         "import": "./dist/prosekit-svelte.js",
@@ -411,6 +437,11 @@
         "types": "./dist/prosekit-svelte-components-autocomplete-popover.d.ts",
         "import": "./dist/prosekit-svelte-components-autocomplete-popover.js",
         "default": "./dist/prosekit-svelte-components-autocomplete-popover.js"
+      },
+      "./svelte/components/code-block-menu-popover": {
+        "types": "./dist/prosekit-svelte-components-code-block-menu-popover.d.ts",
+        "import": "./dist/prosekit-svelte-components-code-block-menu-popover.js",
+        "default": "./dist/prosekit-svelte-components-code-block-menu-popover.js"
       },
       "./svelte/components/prosekit": {
         "types": "./dist/prosekit-svelte-components-prosekit.d.ts",
@@ -441,6 +472,11 @@
         "types": "./dist/prosekit-vue-components-autocomplete-popover.d.ts",
         "import": "./dist/prosekit-vue-components-autocomplete-popover.js",
         "default": "./dist/prosekit-vue-components-autocomplete-popover.js"
+      },
+      "./vue/components/code-block-menu-popover": {
+        "types": "./dist/prosekit-vue-components-code-block-menu-popover.d.ts",
+        "import": "./dist/prosekit-vue-components-code-block-menu-popover.js",
+        "default": "./dist/prosekit-vue-components-code-block-menu-popover.js"
       }
     },
     "main": "./dist/prosekit.js",
@@ -511,6 +547,9 @@
         "lit/components/autocomplete-popover": [
           "./dist/prosekit-lit-components-autocomplete-popover.d.ts"
         ],
+        "lit/components/code-block-menu-popover": [
+          "./dist/prosekit-lit-components-code-block-menu-popover.d.ts"
+        ],
         "pm": [
           "./dist/prosekit-pm.d.ts"
         ],
@@ -550,6 +589,9 @@
         "preact/components/autocomplete-popover": [
           "./dist/prosekit-preact-components-autocomplete-popover.d.ts"
         ],
+        "preact/components/code-block-menu-popover": [
+          "./dist/prosekit-preact-components-code-block-menu-popover.d.ts"
+        ],
         "react": [
           "./dist/prosekit-react.d.ts"
         ],
@@ -564,6 +606,9 @@
         ],
         "react/components/autocomplete-popover": [
           "./dist/prosekit-react-components-autocomplete-popover.d.ts"
+        ],
+        "react/components/code-block-menu-popover": [
+          "./dist/prosekit-react-components-code-block-menu-popover.d.ts"
         ],
         "solid": [
           "./dist/prosekit-solid.d.ts"
@@ -580,6 +625,9 @@
         "solid/components/autocomplete-popover": [
           "./dist/prosekit-solid-components-autocomplete-popover.d.ts"
         ],
+        "solid/components/code-block-menu-popover": [
+          "./dist/prosekit-solid-components-code-block-menu-popover.d.ts"
+        ],
         "svelte": [
           "./dist/prosekit-svelte.d.ts"
         ],
@@ -594,6 +642,9 @@
         ],
         "svelte/components/autocomplete-popover": [
           "./dist/prosekit-svelte-components-autocomplete-popover.d.ts"
+        ],
+        "svelte/components/code-block-menu-popover": [
+          "./dist/prosekit-svelte-components-code-block-menu-popover.d.ts"
         ],
         "svelte/components/prosekit": [
           "./dist/prosekit-svelte-components-prosekit.d.ts"
@@ -612,6 +663,9 @@
         ],
         "vue/components/autocomplete-popover": [
           "./dist/prosekit-vue-components-autocomplete-popover.d.ts"
+        ],
+        "vue/components/code-block-menu-popover": [
+          "./dist/prosekit-vue-components-code-block-menu-popover.d.ts"
         ]
       }
     }

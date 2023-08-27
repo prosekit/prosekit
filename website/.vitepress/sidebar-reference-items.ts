@@ -90,6 +90,10 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_lit_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-menu-popover",
+            "link": "/references/prosekit_lit_components_code_block_menu_popover"
           }
         ],
         "collapsed": true
@@ -119,6 +123,10 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_preact_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-menu-popover",
+            "link": "/references/prosekit_preact_components_code_block_menu_popover"
           }
         ],
         "collapsed": true
@@ -148,6 +156,10 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_react_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-menu-popover",
+            "link": "/references/prosekit_react_components_code_block_menu_popover"
           }
         ],
         "collapsed": true
@@ -177,6 +189,10 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_solid_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-menu-popover",
+            "link": "/references/prosekit_solid_components_code_block_menu_popover"
           }
         ],
         "collapsed": true
@@ -206,6 +222,10 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_svelte_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-menu-popover",
+            "link": "/references/prosekit_svelte_components_code_block_menu_popover"
           },
           {
             "text": "prosekit",
@@ -239,6 +259,10 @@ export const referenceItems = [
           {
             "text": "autocomplete-popover",
             "link": "/references/prosekit_vue_components_autocomplete_popover"
+          },
+          {
+            "text": "code-block-menu-popover",
+            "link": "/references/prosekit_vue_components_code_block_menu_popover"
           }
         ],
         "collapsed": true

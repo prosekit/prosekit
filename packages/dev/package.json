@@ -26,8 +26,8 @@
     "load-json-file": "^7.0.1",
     "lodash-es": "^4.17.21",
     "path-exists": "^5.0.0",
-    "read-pkg": "^8.0.0",
-    "read-pkg-up": "^10.0.0",
+    "read-pkg": "^8.1.0",
+    "read-pkg-up": "^10.1.0",
     "tsup": "^7.2.0",
     "write-pkg": "^6.0.0"
   },
@@ -36,12 +36,12 @@
     "@sindresorhus/string-hash": "^2.0.0",
     "@types/js-yaml": "^4.0.5",
     "@types/lodash-es": "^4.17.8",
-    "@types/node": "^18.17.5",
+    "@types/node": "^18.17.11",
     "execa": "^7.2.0",
     "globby": "^13.2.2",
     "js-yaml": "^4.1.0",
     "json5": "^2.2.3",
     "tsx": "^3.12.7",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   }
 }

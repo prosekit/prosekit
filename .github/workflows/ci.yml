@@ -74,7 +74,7 @@ jobs:
         run: nr build:website
 
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v2.0
+        uses: nwtgck/actions-netlify@v2.1
         with:
           publish-dir: './website/dist'
           production-branch: master

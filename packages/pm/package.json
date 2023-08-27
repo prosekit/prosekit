@@ -48,14 +48,14 @@
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-model": "^1.19.3",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-transform": "^1.7.4",
+    "prosemirror-transform": "^1.7.5",
     "prosemirror-view": "^1.31.7"
   },
   "devDependencies": {
     "@prosekit/dev": "*",
     "tsup": "^7.2.0",
-    "typescript": "^5.1.6",
-    "vitest": "^0.34.1"
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.3"
   },
   "publishConfig": {
     "exports": {

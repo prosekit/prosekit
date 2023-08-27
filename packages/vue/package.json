@@ -58,8 +58,8 @@
   "devDependencies": {
     "@prosekit/dev": "*",
     "tsup": "^7.2.0",
-    "typescript": "^5.1.6",
-    "vitest": "^0.34.1",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.3",
     "vue": "^3.3.4"
   },
   "publishConfig": {

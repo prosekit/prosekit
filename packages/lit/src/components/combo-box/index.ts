@@ -11,7 +11,7 @@ import { Popover } from '../popover'
 
 import { comboBoxContext, type ComboBoxContext } from './context'
 
-export const propNames = ['onDismiss']
+export const propNames = ['onDismiss'] as const
 
 export type ComboBoxProps = {
   onDismiss?: VoidFunction

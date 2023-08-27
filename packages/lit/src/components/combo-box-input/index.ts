@@ -5,9 +5,11 @@ import { html } from 'lit-html'
 import { LightBlockElement } from '../block-element'
 import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
 
-export const propNames = []
+export const propNames = ['placeholder'] as const 
 
-export type ComboBoxInputProps = Record<string, never>
+export type ComboBoxInputProps = {
+  placeholder?: string
+}
 
 @customElement('prosekit-combo-box-input')
 export class ComboBoxInput extends LightBlockElement {

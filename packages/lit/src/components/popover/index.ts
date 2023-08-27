@@ -18,7 +18,6 @@ export type { AutoUpdateOptions, PopoverOptions }
 
 export const propNames = [
   'active',
-  'floatingSelector',
   'reference',
   'options',
   'autoUpdate',
@@ -27,7 +26,6 @@ export const propNames = [
 
 export interface PopoverProps {
   active: boolean
-  floatingSelector?: string
   reference?: Element | VirtualElement
   options?: PopoverOptions
   autoUpdate?: boolean

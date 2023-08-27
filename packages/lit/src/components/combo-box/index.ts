@@ -1,6 +1,5 @@
 import { provide } from '@lit-labs/context'
-import type { Editor } from '@prosekit/core'
-import { customElement, property, query, state } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 
 import { ListManager } from '../../manager/list-manager'
 import { ComboBoxItem } from '../combo-box-item'
@@ -8,21 +7,18 @@ import {
   isComboBoxItem,
   queryClosestComboBoxItem,
 } from '../combo-box-item/helpers'
-import type { ComboBoxList } from '../combo-box-list'
-import { isComboBoxList } from '../combo-box-list/helpers'
 import { Popover } from '../popover'
 
 import { comboBoxContext, type ComboBoxContext } from './context'
 
-export const propNames = []
+export const propNames = ['onDismiss']
 
-export type ComboBoxProps = Record<string, never>
+export type ComboBoxProps = {
+  onDismiss?: VoidFunction
+}
 
 @customElement('prosekit-combo-box')
 export class ComboBox extends Popover {
-  @property({ attribute: false })
-  editor?: Editor
-
   @property({ attribute: false })
   onDismiss?: VoidFunction
 
@@ -76,19 +72,8 @@ export class ComboBox extends Popover {
     listManager: this.listManager,
   }
 
-  /** @hidden */
-  @query('slot') defaultSlot?: HTMLSlotElement
-
-  get list(): ComboBoxList | null {
-    return (
-      this.defaultSlot
-        ?.assignedElements({ flatten: true })
-        ?.find(isComboBoxList) ?? null
-    )
-  }
-
   get items(): ComboBoxItem[] {
-    const items = this.querySelectorAll(':scope prosekit-combo-box-item')
+    const items = this.querySelectorAll('∏prosekit-combo-box-item')
     return Array.from(items).filter(isComboBoxItem)
   }
 }

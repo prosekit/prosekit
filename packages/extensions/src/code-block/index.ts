@@ -11,8 +11,6 @@ import type { HLJSApi } from 'highlight.js'
 import { addCodeBlockHighlight } from './code-block-highlight'
 import type { CodeBlockAttrs } from './code-block-types'
 
-export { addCodeBlockHovering } from './code-block-hovering'
-
 export type { CodeBlockAttrs }
 
 export function addCodeBlockSpec() {

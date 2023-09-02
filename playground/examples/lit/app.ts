@@ -6,10 +6,9 @@ import 'prosekit/basic/style.css'
 
 import hljs from 'highlight.js/lib/common'
 import { LitElement, html } from 'lit'
-import { customElement, state } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 import { createRef, ref, type Ref } from 'lit/directives/ref.js'
-import { createEditor, type Editor } from 'prosekit/core'
-import { Slice, Fragment } from 'prosekit/pm/model'
+import { createEditor, type Editor, type NodeJson } from 'prosekit/core'
 
 import { addRootExtension, type RootExtension } from './extension'
 import './language-selector'
@@ -23,17 +22,21 @@ export class MyEditor extends LitElement {
   @state()
   editor?: Editor<RootExtension>
 
+  @property({ type: Object, attribute: false })
+  defaultDoc?: NodeJson
+
   private editorRef: Ref<HTMLDivElement> = createRef()
 
   protected firstUpdated(): void {
     if (!this.editor) {
       const extension = addRootExtension()
-      this.editor = createEditor({ extension })
+      this.editor = createEditor({
+        extension,
+        defaultDoc: this.defaultDoc || defaultDoc,
+      })
     }
 
     this.editor.mount(this.editorRef.value)
-
-    insertContent(this.editor)
   }
 
   render() {
@@ -49,45 +52,34 @@ export class MyEditor extends LitElement {
   }
 }
 
-function insertContent(editor: Editor) {
-  const tr = editor.view.state.tr
-
-  const json = {
-    type: 'doc',
-    content: [
-      {
-        type: 'heading',
-        attrs: {
-          level: 1,
-        },
-        content: [
-          {
-            type: 'text',
-            text: 'Code Block',
-          },
-        ],
+const defaultDoc: NodeJson = {
+  type: 'doc',
+  content: [
+    {
+      type: 'heading',
+      attrs: {
+        level: 1,
       },
-      {
-        type: 'codeBlock',
-        attrs: {
-          language: 'python',
+      content: [
+        {
+          type: 'text',
+          text: 'Code Block',
         },
-        content: [
-          {
-            type: 'text',
-            text: 'if __name__ == "__main__":\n    print("hello world!")\n\n'.repeat(
-              20,
-            ),
-          },
-        ],
+      ],
+    },
+    {
+      type: 'codeBlock',
+      attrs: {
+        language: 'python',
       },
-    ],
-  }
-
-  const doc = editor.schema.nodeFromJSON(json)
-  const slice = new Slice(Fragment.from(doc), 0, 0)
-
-  tr.replace(0, tr.doc.content.size, slice)
-
-  editor.view.dispatch(tr)
+      content: [
+        {
+          type: 'text',
+          text: 'if __name__ == "__main__":\n    print("hello world!")\n\n'.repeat(
+            20,
+          ),
+        },
+      ],
+    },
+  ],
 }

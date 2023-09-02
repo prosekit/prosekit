@@ -1,26 +1,35 @@
 import { Schema } from '@prosekit/pm/model'
-import { type EditorStateConfig, type Plugin } from '@prosekit/pm/state'
+import { Plugin, type EditorStateConfig } from '@prosekit/pm/state'
 
 import { Facet } from '../editor/facet'
 import { stateSlot } from '../editor/slots'
 import { type StateConfigCallback } from '../types/editor'
 import { type Extension } from '../types/extension'
 
-/** @public */
-export interface PluginOptions {
-  plugins: Plugin[] | ((context: { schema: Schema }) => Plugin[])
-}
-
-// TODO: remove object
-/** @public */
-export function addPlugin({ plugins }: PluginOptions): Extension {
-  if (typeof plugins === 'function') {
-    return pluginFacet.extension([plugins])
-  } else if (Array.isArray(plugins)) {
-    return pluginFacet.extension([() => plugins])
-  } else {
-    throw new TypeError('plugins must be a function or an array')
+/**
+ * Adds a ProseMirror plugin to the editor.
+ *
+ * @param plugin - The ProseMirror plugin to add, or an array of plugins, or a
+ * function that returns an array of plugins.
+ *
+ * @public
+ */
+export function addPlugin(
+  plugin: Plugin | Plugin[] | ((context: { schema: Schema }) => Plugin[]),
+): Extension {
+  if (plugin instanceof Plugin) {
+    return pluginFacet.extension([() => [plugin]])
   }
+
+  if (Array.isArray(plugin) && plugin.every((p) => p instanceof Plugin)) {
+    return pluginFacet.extension([() => plugin])
+  }
+
+  if (typeof plugin === 'function') {
+    return pluginFacet.extension([plugin])
+  }
+
+  throw new TypeError('Invalid plugin')
 }
 
 /** @internal */

@@ -17,7 +17,7 @@ export function addListSpec() {
 }
 
 export function addListPlugins() {
-  return addPlugin({ plugins: ({ schema }) => createListPlugins({ schema }) })
+  return addPlugin(({ schema }) => createListPlugins({ schema }))
 }
 
 export function addListKeymap() {

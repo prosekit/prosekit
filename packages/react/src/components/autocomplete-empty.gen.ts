@@ -16,5 +16,9 @@ const AutocompleteEmptyComponent = createComponent({
 })
 
 export const AutocompleteEmpty: ComponentType<AutocompleteEmptyProps> = (props) => {
-  return React.createElement(AutocompleteEmptyComponent, props)
+  return React.createElement(
+    AutocompleteEmptyComponent,
+    // The type in @lit-labs/react is not compatible to React.ReactNode
+    props as Omit<typeof props, 'children'>,
+  )
 }

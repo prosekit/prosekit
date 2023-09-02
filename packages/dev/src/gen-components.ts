@@ -99,7 +99,11 @@ const ${pascal}Component = createComponent({
 })
 
 export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
-  return React.createElement(${pascal}Component, props)
+  return React.createElement(
+    ${pascal}Component,
+    // The type in @lit-labs/react is not compatible to React.ReactNode
+    props as Omit<typeof props, 'children'>,
+  )
 }
 `.trim() + '\n'
   )

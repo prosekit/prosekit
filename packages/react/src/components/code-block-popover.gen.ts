@@ -16,5 +16,9 @@ const CodeBlockPopoverComponent = createComponent({
 })
 
 export const CodeBlockPopover: ComponentType<CodeBlockPopoverProps> = (props) => {
-  return React.createElement(CodeBlockPopoverComponent, props)
+  return React.createElement(
+    CodeBlockPopoverComponent,
+    // The type in @lit-labs/react is not compatible to React.ReactNode
+    props as Omit<typeof props, 'children'>,
+  )
 }

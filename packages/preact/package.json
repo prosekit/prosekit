@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/preact",
   "type": "module",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -44,8 +44,8 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/core": "^0.0.7",
-    "@prosekit/lit": "^0.0.10"
+    "@prosekit/core": "^0.0.8",
+    "@prosekit/lit": "^0.0.11"
   },
   "peerDependencies": {
     "preact": ">= 9.0.0"

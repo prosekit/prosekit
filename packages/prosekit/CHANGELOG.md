@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.14
+
+### Patch Changes
+
+- [802d738] **prosekit/core**
+
+  Add default state extension.
+
 ## 0.0.13
 
 ### Patch Changes

@@ -358,7 +358,7 @@ importers:
         specifier: 0.0.8
         version: link:../solid
       '@prosekit/svelte':
-        specifier: 0.0.7
+        specifier: 0.0.8
         version: link:../svelte
       '@prosekit/vue':
         specifier: 0.0.10
@@ -561,7 +561,7 @@ importers:
         specifier: ^10.17.1
         version: 10.17.1
       prosekit:
-        specifier: ^0.0.12
+        specifier: ^0.0.13
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -609,7 +609,7 @@ importers:
         specifier: ^3.0.2
         version: 3.0.2
       prosekit:
-        specifier: ^0.0.12
+        specifier: ^0.0.13
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0

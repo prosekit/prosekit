@@ -401,8 +401,8 @@ importers:
   packages/react:
     dependencies:
       '@lit-labs/react':
-        specifier: ^2.0.1
-        version: 2.0.1(@types/react@18.2.21)
+        specifier: ^2.0.2
+        version: 2.0.2(@types/react@18.2.21)
       '@prosekit/core':
         specifier: ^0.0.7
         version: link:../core
@@ -624,8 +624,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       typedoc-plugin-markdown:
-        specifier: ^4.0.0-next.19
-        version: 4.0.0-next.19(typedoc@0.25.0)
+        specifier: ^4.0.0-next.20
+        version: 4.0.0-next.20(typedoc@0.25.0)
       typedoc-plugin-mdn-links:
         specifier: ^3.1.0
         version: 3.1.0(typedoc@0.25.0)
@@ -2220,8 +2220,8 @@ packages:
       lit: 2.8.0
     dev: false
 
-  /@lit-labs/react@2.0.1(@types/react@18.2.21):
-    resolution: {integrity: sha512-Nj+XB3HamqaWefN91lpFPJaqjJ78XzGkPWCedB4jyH22GBFEenpE9A/h8B/2dnIGXtNtd9D/RFpUdQ/dBtWFqA==}
+  /@lit-labs/react@2.0.2(@types/react@18.2.21):
+    resolution: {integrity: sha512-bRr0uVaLzVMv/r6bNui91rwsY3UuOYDef5wCvfABQ3ipVtArz8TbH2k4Cn8UgLG/9IXO7IhAYt5xwMHaljxCAg==}
     peerDependencies:
       '@types/react': 17 || 18
     dependencies:
@@ -9268,8 +9268,8 @@ packages:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
     dev: true
 
-  /typedoc-plugin-markdown@4.0.0-next.19(typedoc@0.25.0):
-    resolution: {integrity: sha512-6HQoxldHFHTqXD5dD9nM2wN7YvJwRt9LiRgegokFGKa35KP/5y4/is8hCnXfZ4Fhfx2HhJB9LG5L4DrSZ//jtg==}
+  /typedoc-plugin-markdown@4.0.0-next.20(typedoc@0.25.0):
+    resolution: {integrity: sha512-mQoLUSk6KLPMv1zpcTk43h8+8aD+T65qPh99/umSsczd1yTOyZiA0h0kAlsrZrAM8SWoJEn/fZWgV3JMR3Bb4Q==}
     peerDependencies:
       typedoc: '>=0.24.0'
     dependencies:

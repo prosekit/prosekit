@@ -5,7 +5,7 @@ import { html } from 'lit-html'
 import { LightBlockElement } from '../block-element'
 import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
 
-export const propNames = ['placeholder'] as const 
+export const propNames = ['placeholder'] as const
 
 export type ComboBoxInputProps = {
   placeholder?: string

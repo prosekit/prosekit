@@ -16,7 +16,7 @@ const config: UserConfig = defineConfig({
       include: ['**/*.ts'],
     },
   },
-  shortcuts
+  shortcuts,
 })
 
 export default config

@@ -22,14 +22,21 @@ export const UserMenu = defineComponent({
       editor.commands.insertText({ text: ' ' })
     }
 
-    return () => h(AutocompletePopover, { editor: editor, regex: /@\w*$/ }, () => [
-      h(AutocompleteList, { editor: editor, class: 'SLASH_MENU' }, () => [
-        h(AutocompleteEmpty, { class: 'SLASH_MENU_ITEM' }, 'No User match'),
-        users.map(user => h(AutocompleteItem, {
-          class: 'SLASH_MENU_ITEM',
-          onSelect: () => handleUserInsert(user.id, user.name)
-        }, user.name))
+    return () =>
+      h(AutocompletePopover, { editor: editor, regex: /@\w*$/ }, () => [
+        h(AutocompleteList, { editor: editor, class: 'SLASH_MENU' }, () => [
+          h(AutocompleteEmpty, { class: 'SLASH_MENU_ITEM' }, 'No User match'),
+          users.map((user) =>
+            h(
+              AutocompleteItem,
+              {
+                class: 'SLASH_MENU_ITEM',
+                onSelect: () => handleUserInsert(user.id, user.name),
+              },
+              user.name,
+            ),
+          ),
+        ]),
       ])
-    ])
-  }
+  },
 })

@@ -16,5 +16,9 @@ const AutocompleteListComponent = createComponent({
 })
 
 export const AutocompleteList: ComponentType<AutocompleteListProps> = (props) => {
-  return React.createElement(AutocompleteListComponent, props)
+  return React.createElement(
+    AutocompleteListComponent,
+    // The type in @lit-labs/react is not compatible to React.ReactNode
+    props as Omit<typeof props, 'children'>,
+  )
 }

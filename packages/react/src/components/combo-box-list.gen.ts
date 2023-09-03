@@ -16,5 +16,9 @@ const ComboBoxListComponent = createComponent({
 })
 
 export const ComboBoxList: ComponentType<ComboBoxListProps> = (props) => {
-  return React.createElement(ComboBoxListComponent, props)
+  return React.createElement(
+    ComboBoxListComponent,
+    // The type in @lit-labs/react is not compatible to React.ReactNode
+    props as Omit<typeof props, 'children'>,
+  )
 }

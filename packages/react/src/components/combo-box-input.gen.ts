@@ -16,5 +16,9 @@ const ComboBoxInputComponent = createComponent({
 })
 
 export const ComboBoxInput: ComponentType<ComboBoxInputProps> = (props) => {
-  return React.createElement(ComboBoxInputComponent, props)
+  return React.createElement(
+    ComboBoxInputComponent,
+    // The type in @lit-labs/react is not compatible to React.ReactNode
+    props as Omit<typeof props, 'children'>,
+  )
 }

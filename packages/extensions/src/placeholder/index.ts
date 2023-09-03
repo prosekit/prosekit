@@ -24,9 +24,7 @@ export interface PlaceholderOptions {
  * empty.
  */
 export function addPlaceholder(options: PlaceholderOptions) {
-  return addPlugin({
-    plugins: [createPlaceholderPlugin(options)],
-  })
+  return addPlugin(createPlaceholderPlugin(options))
 }
 
 function createPlaceholderPlugin(options: PlaceholderOptions): Plugin {

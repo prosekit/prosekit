@@ -10,5 +10,5 @@ export { type PredictionRule, type SuggestionOptions }
 
 export function addSuggestion(options: SuggestionOptions) {
   const plugin = createPredictionPlugin(options)
-  return addPlugin({ plugins: [plugin] })
+  return addPlugin(plugin)
 }

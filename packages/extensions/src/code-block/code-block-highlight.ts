@@ -42,11 +42,7 @@ export function addCodeBlockHighlight(options: { hljs?: HLJSApi }) {
     },
   })
 
-  return addPlugin({
-    plugins: () => {
-      return [plugin]
-    },
-  })
+  return addPlugin(plugin)
 }
 
 const key = new PluginKey<DecorationSet>('prosekit-code-block-highlight')

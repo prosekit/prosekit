@@ -39,7 +39,7 @@ export function addCodeBlockSelect(options: {
     },
   })
 
-  return addPlugin({ plugins: [plugin] })
+  return addPlugin(plugin)
 }
 
 type State = {

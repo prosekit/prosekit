@@ -2,6 +2,7 @@ import { MarkType, NodeType, Schema, type Attrs } from '@prosekit/pm/model'
 import { EditorState, Plugin, type EditorStateConfig } from '@prosekit/pm/state'
 import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
+import { addDefaultState, defineExtension } from '..'
 import { ProseKitError } from '../error'
 import { type CommandCreator, type CommandDispatcher } from '../types/command'
 import type {
@@ -10,6 +11,7 @@ import type {
   ExtractMarks,
   ExtractNodes,
 } from '../types/extension'
+import type { NodeJson, SelectionJson } from '../types/model'
 import { isMarkActive } from '../utils/is-mark-active'
 import { isNodeActive } from '../utils/is-node-active'
 
@@ -17,16 +19,40 @@ import { updateExtension, type Inputs, type Slots } from './flatten'
 
 /** @public */
 export interface EditorOptions<E extends Extension> {
+  /**
+   * The extension to use when creating the editor.
+   */
   extension: E
+
+  /**
+   * A JSON object representing the starting document to use when creating the
+   * editor.
+   */
+  defaultDoc?: NodeJson
+
+  /**
+   * A JSON object representing the starting selection to use when creating the
+   * editor. It's only used when `defaultDoc` is also provided.
+   */
+  defaultSelection?: SelectionJson
 }
 
 /** @public */
 export function createEditor<E extends Extension>({
   extension,
+  defaultDoc,
+  defaultSelection,
 }: EditorOptions<E>): Editor<E> {
-  const instance = new EditorInstance(extension)
-  const editor = Editor.create(instance)
-  return editor as Editor<E>
+  if (defaultDoc) {
+    extension = defineExtension([
+      extension,
+      addDefaultState({
+        doc: defaultDoc,
+        selection: defaultSelection,
+      }),
+    ]) as E
+  }
+  return Editor.create(new EditorInstance(extension)) as Editor<E>
 }
 
 /** @internal */

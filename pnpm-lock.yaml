@@ -7,6 +7,11 @@ settings:
 overrides:
   tsup: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
 
+patchedDependencies:
+  prosemirror-highlightjs@0.9.1:
+    hash: uj5ddgn5nj4ptnyl3ffi4zkeei
+    path: patches/prosemirror-highlightjs@0.9.1.patch
+
 importers:
 
   .:
@@ -205,7 +210,7 @@ importers:
         version: 0.4.1
       prosemirror-highlightjs:
         specifier: ^0.9.1
-        version: 0.9.1(highlight.js@11.8.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)
+        version: 0.9.1(patch_hash=uj5ddgn5nj4ptnyl3ffi4zkeei)(highlight.js@11.8.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7)
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -7882,7 +7887,7 @@ packages:
       prosemirror-view: 1.31.7
     dev: false
 
-  /prosemirror-highlightjs@0.9.1(highlight.js@11.8.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7):
+  /prosemirror-highlightjs@0.9.1(patch_hash=uj5ddgn5nj4ptnyl3ffi4zkeei)(highlight.js@11.8.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.31.7):
     resolution: {integrity: sha512-aqcXUCM4Dbc+0DoORrmF4MWrdIJuaJKUpZvzi1xy0HEx06J5vTlnwR25xCUIbxD3ilOtkabB36QqY3WQ03OuzQ==}
     peerDependencies:
       highlight.js: ^11.6.0
@@ -7895,6 +7900,7 @@ packages:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.31.7
     dev: false
+    patched: true
 
   /prosemirror-inputrules@1.2.1:
     resolution: {integrity: sha512-3LrWJX1+ULRh5SZvbIQlwZafOXqp1XuV21MGBu/i5xsztd+9VD15x6OtN6mdqSFI7/8Y77gYUbQ6vwwJ4mr6QQ==}

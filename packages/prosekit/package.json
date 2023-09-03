@@ -1,7 +1,7 @@
 {
   "name": "prosekit",
   "type": "module",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -133,7 +133,7 @@
     "@prosekit/preact": "0.0.7",
     "@prosekit/react": "0.0.10",
     "@prosekit/solid": "0.0.8",
-    "@prosekit/svelte": "0.0.7",
+    "@prosekit/svelte": "0.0.8",
     "@prosekit/vue": "0.0.10"
   },
   "peerDependencies": {

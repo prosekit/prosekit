@@ -14,7 +14,7 @@ export const Editor = defineComponent({
 
     return {
       editor,
-      editorRef
+      editorRef,
     }
   },
   render() {
@@ -22,7 +22,7 @@ export const Editor = defineComponent({
       h('div', { ref: 'editorRef', class: 'example-editor EDITOR_BOX' }),
       h(UserMenu),
       h(TagMenu),
-      h(SlashMenu)
+      h(SlashMenu),
     ])
-  }
+  },
 })

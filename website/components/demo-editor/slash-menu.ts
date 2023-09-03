@@ -20,14 +20,47 @@ export const SlashMenu = defineComponent({
       editor.commands.setBlockType({ nodeType, attrs })
     }
 
-    return () => h(AutocompletePopover, { editor: editor, regex: /\/.*$/iu }, () => [
-      h(AutocompleteList, { editor: editor, class: 'SLASH_MENU' }, () => [
-        h(AutocompleteEmpty, { class: 'SLASH_MENU_ITEM' }, 'No Command match'),
-        h(AutocompleteItem, { class: 'SLASH_MENU_ITEM', onSelect: () => handleHeadingInsert(1) }, 'Insert Heading 1'),
-        h(AutocompleteItem, { class: 'SLASH_MENU_ITEM', onSelect: () => handleHeadingInsert(2) }, 'Insert Heading 2'),
-        h(AutocompleteItem, { class: 'SLASH_MENU_ITEM', onSelect: () => handleHeadingConvert(1) }, 'Turn into Heading 1'),
-        h(AutocompleteItem, { class: 'SLASH_MENU_ITEM', onSelect: () => handleHeadingConvert(2) }, 'Turn into Heading 2')
+    return () =>
+      h(AutocompletePopover, { editor: editor, regex: /\/.*$/iu }, () => [
+        h(AutocompleteList, { editor: editor, class: 'SLASH_MENU' }, () => [
+          h(
+            AutocompleteEmpty,
+            { class: 'SLASH_MENU_ITEM' },
+            'No Command match',
+          ),
+          h(
+            AutocompleteItem,
+            {
+              class: 'SLASH_MENU_ITEM',
+              onSelect: () => handleHeadingInsert(1),
+            },
+            'Insert Heading 1',
+          ),
+          h(
+            AutocompleteItem,
+            {
+              class: 'SLASH_MENU_ITEM',
+              onSelect: () => handleHeadingInsert(2),
+            },
+            'Insert Heading 2',
+          ),
+          h(
+            AutocompleteItem,
+            {
+              class: 'SLASH_MENU_ITEM',
+              onSelect: () => handleHeadingConvert(1),
+            },
+            'Turn into Heading 1',
+          ),
+          h(
+            AutocompleteItem,
+            {
+              class: 'SLASH_MENU_ITEM',
+              onSelect: () => handleHeadingConvert(2),
+            },
+            'Turn into Heading 2',
+          ),
+        ]),
       ])
-    ])
-  }
+  },
 })

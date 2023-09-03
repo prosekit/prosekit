@@ -1,0 +1,18 @@
+diff --git a/dist/plugin.d.ts b/dist/plugin.d.ts
+index 7127b18b1a85208dac3d45082b2c7f18b0b846d5..d3b7c5b906bf540961cbe6744f6d8bd5e0c8715f 100644
+--- a/dist/plugin.d.ts
++++ b/dist/plugin.d.ts
+@@ -3,11 +3,13 @@ import { Node as ProseMirrorNode } from "prosemirror-model";
+ import { Plugin, Transaction } from "prosemirror-state";
+ import type { Mapping } from "prosemirror-transform";
+ import { Decoration, DecorationSet } from "prosemirror-view";
++/*
+ declare module "prosemirror-view" {
+     interface Decoration {
+         map: (mapping: Mapping, offset: number, oldOffset: number) => Decoration;
+     }
+ }
++*/
+ /** Describes the current state of the highlightPlugin  */
+ export interface HighlightPluginState {
+     cache: DecorationCache;

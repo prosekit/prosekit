@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.13
+
+### Patch Changes
+
+- [0d70097] **prosekit/svelte**
+
+  Fix bundled files
+
 ## 0.0.12
 
 ### Patch Changes

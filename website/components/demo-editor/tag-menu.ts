@@ -1,4 +1,4 @@
-import { defineComponent, h } from 'vue';
+import { defineComponent, h } from 'vue'
 import { AutocompleteEmpty } from 'prosekit/vue/components/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/vue/components/autocomplete-item'
 import { AutocompleteList } from 'prosekit/vue/components/autocomplete-list'
@@ -18,11 +18,21 @@ export const TagMenu = defineComponent({
       editor.commands.insertText({ text: ' ' })
     }
 
-    return () => h(AutocompletePopover, { editor: editor, regex: /#[\da-z]*$/i }, [
-      h(AutocompleteList, { editor: editor, class: "SLASH_MENU" }, [
-        h(AutocompleteEmpty, { class: "SLASH_MENU_ITEM" }, "No Tag match"),
-        ...tags.map(tag => h(AutocompleteItem, { class: "SLASH_MENU_ITEM", onSelect: () => handleTagInsert(tag.id, tag.value) }, tag.value))
+    return () =>
+      h(AutocompletePopover, { editor: editor, regex: /#[\da-z]*$/i }, [
+        h(AutocompleteList, { editor: editor, class: 'SLASH_MENU' }, [
+          h(AutocompleteEmpty, { class: 'SLASH_MENU_ITEM' }, 'No Tag match'),
+          ...tags.map((tag) =>
+            h(
+              AutocompleteItem,
+              {
+                class: 'SLASH_MENU_ITEM',
+                onSelect: () => handleTagInsert(tag.id, tag.value),
+              },
+              tag.value,
+            ),
+          ),
+        ]),
       ])
-    ]);
-  }
-});
+  },
+})

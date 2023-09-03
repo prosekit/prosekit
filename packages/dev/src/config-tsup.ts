@@ -29,15 +29,9 @@ async function getConfig(options?: Options): Promise<Options> {
     noExternal: [/\.css$/i],
 
     // Disable DTS during local development for faster build speed
-    dts: process.env.CI
+    experimentalDts: process.env.CI
       ? {
           entry: removeCssEntryPoints(entryPoints),
-          compilerOptions: {
-            tsBuildInfoFile: undefined,
-            // Disable "composite" because rollup-plugin-dts doesn't support it
-            // https://github.com/egoist/tsup/issues/571
-            composite: false,
-          },
         }
       : undefined,
   }

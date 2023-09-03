@@ -45,7 +45,7 @@
   },
   "pnpm": {
     "overrides": {
-      "tsup": "https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c"
+      "tsup": "https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d"
     },
     "patchedDependencies": {
       "prosemirror-highlightjs@0.9.1": "patches/prosemirror-highlightjs@0.9.1.patch"

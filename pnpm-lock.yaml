@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  tsup: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
+  tsup: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
 
 patchedDependencies:
   prosemirror-highlightjs@0.9.1:
@@ -93,8 +93,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
+        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -118,8 +118,8 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
+        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -154,8 +154,8 @@ importers:
         specifier: ^10.1.0
         version: 10.1.0
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
+        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
       write-pkg:
         specifier: ^6.0.0
         version: 6.0.0
@@ -216,8 +216,8 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
+        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -265,8 +265,8 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
+        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -305,8 +305,8 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
+        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -330,8 +330,8 @@ importers:
         specifier: ^10.17.1
         version: 10.17.1
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
+        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -397,8 +397,8 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
+        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -434,8 +434,8 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
+        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -459,8 +459,8 @@ importers:
         specifier: ^1.7.11
         version: 1.7.11
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
+        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -518,8 +518,8 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
+        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -10174,9 +10174,9 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
 
-  '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)':
-    resolution: {tarball: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c}
-    id: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c'
+  '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@18.17.12)(postcss@8.4.28)(typescript@5.2.2)':
+    resolution: {tarball: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d}
+    id: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d'
     name: tsup
     version: 0.0.0-semantic-release
     engines: {node: '>=16.14'}

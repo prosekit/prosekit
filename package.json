@@ -45,7 +45,7 @@
   },
   "pnpm": {
     "overrides": {
-      "tsup": "https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-b"
+      "tsup": "https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-c"
     }
   }
 }

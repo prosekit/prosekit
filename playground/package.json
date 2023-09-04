@@ -23,7 +23,7 @@
     "highlight.js": "^11.8.0",
     "lit": "^2.8.0",
     "preact": "^10.17.1",
-    "prosekit": "^0.0.14",
+    "prosekit": "^0.0.15",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "solid-js": "^1.7.11",

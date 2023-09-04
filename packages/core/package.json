@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/core",
   "type": "module",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -36,7 +36,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/pm": "^0.0.3",
+    "@prosekit/pm": "^0.0.4",
     "orderedmap": "^2.1.1",
     "type-fest": "^4.3.1"
   },

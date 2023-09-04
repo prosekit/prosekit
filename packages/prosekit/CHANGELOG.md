@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.15
+
+### Patch Changes
+
+- [4232528] **prosekit/pm**
+
+  Add new exports.
+
 ## 0.0.14
 
 ### Patch Changes

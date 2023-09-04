@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/extensions",
   "type": "module",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -49,7 +49,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/core": "^0.0.7",
+    "@prosekit/core": "^0.0.8",
     "@prosekit/pm": "^0.0.3",
     "highlight.js": "^11.8.0",
     "prosemirror-flat-list": "^0.4.1",

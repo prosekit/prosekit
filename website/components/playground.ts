@@ -18,9 +18,12 @@ export const Playground = defineComponent<PlaygroundProps>(
   (props) => {
     const { isDark } = useData()
 
-    const fileNames = Object.keys(props.files).map((fileName) =>
+    const files = clone(props.files)
+    const fileNames = Object.keys(files).map((fileName) =>
       fileName.replace(/^\//, ''),
     )
+    const dependencies = extractDependencies(files)
+    patchFiles(files)
 
     return () =>
       h(
@@ -37,6 +40,7 @@ export const Playground = defineComponent<PlaygroundProps>(
             template: getTemplateName(props.name),
             customSetup: {
               dependencies: {
+                ...dependencies,
                 postcss: '8.4.28',
                 tailwindcss: '3.3.3',
                 prosekit: 'latest',
@@ -57,7 +61,7 @@ export const Playground = defineComponent<PlaygroundProps>(
                 hidden: true,
                 code: '@tailwind base; @tailwind components; @tailwind utilities;',
               },
-              ...patchFiles(props.files),
+              ...files,
             },
             options: {
               showLineNumbers: true,
@@ -73,25 +77,40 @@ export const Playground = defineComponent<PlaygroundProps>(
   },
 )
 
-function patchFiles(files: Record<string, { hidden: boolean; code: string }>) {
-  const patched = clone(files)
+function extractDependencies(
+  files: Record<string, { hidden: boolean; code: string }>,
+): Record<string, string> {
+  if (files['/package.json']) {
+    const file = files['/package.json']
+    delete files['/package.json']
 
-  if (patched['/package.json']) {
-    patched['/package.json']['code'] = patchPackageJson(
-      patched['/package.json']['code'],
-    )
+    const packageJson = JSON.parse(file.code) as PackageJson
+
+    if (
+      JSON.stringify(Object.keys(packageJson)) !==
+      JSON.stringify(['dependencies'])
+    ) {
+      throw new Error(`Unexpected package.json: ${file.code}`)
+    }
+
+    const dependencies = packageJson.dependencies as Record<string, string>
+
+    for (const value of Object.values(dependencies)) {
+      if (typeof value !== 'string') {
+        throw new TypeError(`Unexpected dependencies: ${file.code}`)
+      }
+    }
+
+    return dependencies
   }
 
-  for (const file of Object.values(patched)) {
-    file.code = patchCssClassNames(file.code)
-  }
-
-  return patched
+  return {}
 }
 
-function patchPackageJson(packageJsonString: string): string {
-  const packageJson = JSON.parse(packageJsonString) as PackageJson
-  return JSON.stringify(packageJson, null, 2) + '\n'
+function patchFiles(files: Record<string, { hidden: boolean; code: string }>) {
+  for (const file of Object.values(files)) {
+    file.code = patchCssClassNames(file.code)
+  }
 }
 
 function patchCssClassNames(code: string): string {

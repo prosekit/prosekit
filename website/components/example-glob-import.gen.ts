@@ -40,6 +40,8 @@ const modules = import.meta.glob([
   "../../playground/examples/lit/app.ts",
   "../../playground/examples/lit/extension.ts",
   "../../playground/examples/lit/language-selector.ts",
+  "../../playground/examples/lit/main.ts",
+  "../../playground/examples/lit/package.json",
   "../../playground/examples/vanilla/app.js"
 ], { as: 'raw', eager: true }) as Record<string, string>
 
@@ -222,6 +224,14 @@ const examples = {
     "/language-selector.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/lit/language-selector.ts']
+    },
+    "/main.ts": {
+      "hidden": true,
+      "code": modules['../../playground/examples/lit/main.ts']
+    },
+    "/package.json": {
+      "hidden": true,
+      "code": modules['../../playground/examples/lit/package.json']
     }
   },
   "vanilla": {

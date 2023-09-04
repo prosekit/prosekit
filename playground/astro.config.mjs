@@ -12,12 +12,12 @@ export default defineConfig({
   srcDir: './',
   // Enable many frameworks to support all different kinds of components.
   integrations: [
-    preact(),
-    react(),
+    preact({ include: ['**/preact-*/*'] }),
+    react({ include: ['**/react-*/*'] }),
     svelte(),
     vue(),
-    solid(),
-    lit(),
+    solid({ include: ['**/solid-*/*'] }),
+    lit({ include: ['**/lit/*', '**/lit-*/*'] }),
     unocss({}),
   ],
 })

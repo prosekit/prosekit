@@ -13,14 +13,14 @@
   "devDependencies": {
     "@astrojs/lit": "^3.0.0",
     "@astrojs/preact": "^3.0.0",
-    "@astrojs/react": "^3.0.0",
+    "@astrojs/react": "^3.0.1",
     "@astrojs/solid-js": "^3.0.0",
-    "@astrojs/svelte": "^4.0.0",
+    "@astrojs/svelte": "^4.0.1",
     "@astrojs/vue": "^3.0.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "astro": "^3.0.7",
-    "highlight.js": "^11.7.0",
+    "astro": "^3.0.10",
+    "highlight.js": "^11.8.0",
     "lit": "^2.8.0",
     "preact": "^10.17.1",
     "prosekit": "^0.0.16",
@@ -29,7 +29,7 @@
     "solid-js": "^1.7.11",
     "svelte": "^4.2.0",
     "typescript": "^5.2.2",
-    "unocss": "^0.55.6",
+    "unocss": "^0.55.7",
     "vue": "^3.3.4"
   }
 }

@@ -27,7 +27,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./basic": "./src/basic.gen.ts",
-    "./basic/internal/example.css": "./src/basic/internal/example.css",
+    "./basic/internal/preflight.css": "./src/basic/internal/preflight.css",
     "./basic/style.css": "./src/basic/style.css",
     "./core": "./src/core.gen.ts",
     "./core/style.css": "./src/core/style.css",
@@ -189,8 +189,8 @@
         "import": "./dist/prosekit-basic.js",
         "default": "./dist/prosekit-basic.js"
       },
-      "./basic/internal/example.css": {
-        "default": "./dist/basic/internal/example.css"
+      "./basic/internal/preflight.css": {
+        "default": "./dist/basic/internal/preflight.css"
       },
       "./basic/style.css": {
         "default": "./dist/basic/style.css"

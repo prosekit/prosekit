@@ -55,8 +55,8 @@
         "import": "./dist/prosekit-basic.js",
         "default": "./dist/prosekit-basic.js"
       },
-      "./internal/example.css": {
-        "default": "./dist/internal/example.css"
+      "./internal/preflight.css": {
+        "default": "./dist/internal/preflight.css"
       },
       "./style.css": {
         "default": "./dist/style.css"

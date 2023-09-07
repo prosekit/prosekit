@@ -342,7 +342,7 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: 0.0.11
+        specifier: 0.0.12
         version: link:../basic
       '@prosekit/core':
         specifier: 0.0.9
@@ -569,7 +569,7 @@ importers:
         specifier: ^10.17.1
         version: 10.17.1
       prosekit:
-        specifier: ^0.0.15
+        specifier: ^0.0.16
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -617,7 +617,7 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       prosekit:
-        specifier: ^0.0.15
+        specifier: ^0.0.16
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0

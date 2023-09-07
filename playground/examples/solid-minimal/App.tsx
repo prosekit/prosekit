@@ -1,6 +1,8 @@
 /** @jsxImportSource solid-js */
 
+import 'prosekit/basic/internal/example.css'
 import 'prosekit/basic/style.css'
+import 'prosekit/extensions/placeholder/style.css'
 
 import { addBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
@@ -12,7 +14,7 @@ export default function App() {
 
   return (
     <ProseKit editor={editor}>
-      <div ref={editor.mount} class="example-editor EDITOR_BOX"></div>
+      <div ref={editor.mount} class="EDITOR_CONTENT"></div>
     </ProseKit>
   )
 }

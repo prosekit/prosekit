@@ -1,3 +1,7 @@
+import 'prosekit/basic/internal/example.css'
+import 'prosekit/basic/style.css'
+import 'prosekit/extensions/placeholder/style.css'
+
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
@@ -13,12 +17,10 @@ export default function App() {
   }, [])
 
   return (
-    <>
-      <ProseKit editor={editor}>
-        <div ref={editor.mount} className="example-editor EDITOR_BOX"></div>
-        <UserMenu />
-        <TagMenu />
-      </ProseKit>
-    </>
+    <ProseKit editor={editor}>
+      <div ref={editor.mount} className="EDITOR_CONTENT"></div>
+      <UserMenu />
+      <TagMenu />
+    </ProseKit>
   )
 }

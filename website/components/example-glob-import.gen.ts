@@ -20,10 +20,12 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-slash-menu/extension.ts",
   "../../playground/examples/vue-slash-menu/use-example-editor.ts",
   "../../playground/examples/preact-minimal/App.tsx",
+  "../../playground/examples/preact-minimal/package.json",
   "../../playground/examples/preact-slash-menu/App.tsx",
   "../../playground/examples/preact-slash-menu/SlashMenu.tsx",
   "../../playground/examples/preact-slash-menu/ToggleItalicButton.tsx",
   "../../playground/examples/preact-slash-menu/extension.ts",
+  "../../playground/examples/preact-slash-menu/package.json",
   "../../playground/examples/preact-slash-menu/use-example-editor.ts",
   "../../playground/examples/svelte-minimal/App.svelte",
   "../../playground/examples/svelte-slash-menu/App.svelte",
@@ -132,6 +134,10 @@ const examples = {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/preact-minimal/App.tsx']
+    },
+    "/package.json": {
+      "hidden": true,
+      "code": modules['../../playground/examples/preact-minimal/package.json']
     }
   },
   "preact-slash-menu": {
@@ -148,8 +154,12 @@ const examples = {
       "code": modules['../../playground/examples/preact-slash-menu/ToggleItalicButton.tsx']
     },
     "/extension.ts": {
-      "hidden": false,
+      "hidden": true,
       "code": modules['../../playground/examples/preact-slash-menu/extension.ts']
+    },
+    "/package.json": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-slash-menu/package.json']
     },
     "/use-example-editor.ts": {
       "hidden": false,

@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import 'prosekit/basic/internal/example.css'
+import 'prosekit/basic/style.css'
+import 'prosekit/extensions/placeholder/style.css'
+
 import { watchPostEffect, ref } from 'vue'
 import { ProseKit } from 'prosekit/vue'
 import { addExampleExtension } from './extension'
@@ -13,7 +17,7 @@ watchPostEffect(() => editor.mount(editorRef.value))
 
 <template>
   <ProseKit :editor="editor">
-    <div ref="editorRef" class="example-editor EDITOR_BOX"></div>
+    <div ref="editorRef" class="EDITOR_CONTENT"></div>
     <ToggleItalicButton />
     <SlashMenu />
   </ProseKit>

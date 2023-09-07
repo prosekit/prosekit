@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import 'prosekit/basic/internal/example.css'
 import 'prosekit/basic/style.css'
 
 import { addBasicExtension } from 'prosekit/basic'
@@ -14,6 +15,6 @@ watchPostEffect(() => editor.mount(editorRef.value))
 
 <template>
   <ProseKit :editor="editor">
-    <div ref="editorRef" class="example-editor EDITOR_BOX"></div>
+    <div ref="editorRef" class="EDITOR_CONTENT"></div>
   </ProseKit>
 </template>

@@ -1,9 +1,12 @@
 /** @jsxImportSource preact */
 
-import { useMemo, useReducer } from 'preact/hooks'
-import { addNodeView, createEditor } from 'prosekit/core'
-import type { HeadingAttrs } from 'prosekit/extensions/heading'
-import { ProseKit, useExtension } from 'prosekit/preact'
+import 'prosekit/basic/internal/example.css'
+import 'prosekit/basic/style.css'
+import 'prosekit/extensions/placeholder/style.css'
+
+import { useMemo } from 'preact/hooks'
+import { createEditor } from 'prosekit/core'
+import { ProseKit } from 'prosekit/preact'
 
 import SlashMenu from './SlashMenu'
 import ToggleItalicButton from './ToggleItalicButton'
@@ -14,45 +17,11 @@ export default function App() {
     return createEditor({ extension: addExampleExtension() })
   }, [])
 
-  const [headingColor, toggleHeadingColor] = useHeadingColor()
-
   return (
-    <>
-      <button onClick={toggleHeadingColor}>Toggle heading color</button>
-
-      <ProseKit editor={editor}>
-        <div ref={editor.mount} className="example-editor EDITOR_BOX"></div>
-        <ToggleItalicButton />
-        <EditorHooksRunner headingColor={headingColor} />
-        <SlashMenu />
-      </ProseKit>
-    </>
+    <ProseKit editor={editor}>
+      <div ref={editor.mount} className="EDITOR_CONTENT"></div>
+      <ToggleItalicButton />
+      <SlashMenu />
+    </ProseKit>
   )
-}
-
-function EditorHooksRunner({ headingColor }: { headingColor: string }) {
-  const extension = useMemo(() => {
-    return addNodeView({
-      name: 'heading',
-      constructor: (node) => {
-        const attrs = node.attrs as HeadingAttrs
-        const dom = document.createElement(`h${attrs.level}`)
-        dom.style.background = headingColor
-        return { dom, contentDOM: dom }
-      },
-    })
-  }, [headingColor])
-
-  useExtension({ extension })
-  return null
-}
-
-function useHeadingColor() {
-  type Color = 'lightblue' | 'yellow'
-  return useReducer((color: Color): Color => {
-    if (color === 'lightblue') return 'yellow'
-    else {
-      return 'lightblue'
-    }
-  }, 'lightblue' satisfies Color)
 }

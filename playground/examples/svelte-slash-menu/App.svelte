@@ -1,4 +1,8 @@
 <script lang="ts">
+import 'prosekit/basic/internal/example.css'
+import 'prosekit/basic/style.css'
+import 'prosekit/extensions/placeholder/style.css'
+
 import { createEditor } from 'prosekit/core'
 import { addExampleExtension } from './extension'
 import { onMount } from 'svelte'
@@ -13,7 +17,7 @@ onMount(() => editor.mount(place))
 </script>
 
 <ProseKit {editor}>
-  <div bind:this={place} class="example-editor EDITOR_BOX"></div>
+  <div bind:this={place} class="EDITOR_CONTENT"></div>
   <ToggleItalicButton />
   <SlashMenu />
 </ProseKit>

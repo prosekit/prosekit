@@ -55,6 +55,8 @@ examples:
     files:
       - path: App.tsx
         hidden: false
+      - path: package.json
+        hidden: true
   - name: preact-slash-menu
     order: 32
     files:
@@ -65,6 +67,8 @@ examples:
       - path: ToggleItalicButton.tsx
         hidden: false
       - path: extension.ts
+        hidden: true
+      - path: package.json
         hidden: false
       - path: use-example-editor.ts
         hidden: false

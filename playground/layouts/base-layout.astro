@@ -8,11 +8,19 @@ import Nav from './nav.astro'
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ProseKit Playground</title>
+    <style>
+      :root {
+        font-family: ui-sans-serif, sans-serif, 'Apple Color Emoji',
+          'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', system-ui;
+      }
+    </style>
   </head>
 
-  <body class="p-1">
-    <Nav />
-    <main>
+  <body class="p-1 m-0 flex flex-col md:flex-row">
+    <header class="w-full md:max-w-50" transition:animate="none">
+      <Nav />
+    </header>
+    <main class="flex-1">
       <slot />
     </main>
   </body>

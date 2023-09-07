@@ -41,13 +41,11 @@ export class MyEditor extends LitElement {
 
   render() {
     return html`
-      <div class="example-editor EDITOR_BOX">
-        <div ${ref(this.editorRef)}></div>
-        <my-language-selector
-          .hljs=${hljs}
-          .editor=${this.editor}
-        ></my-language-selector>
-      </div>
+      <div class="EDITOR_CONTENT" ${ref(this.editorRef)}></div>
+      <my-language-selector
+        .hljs=${hljs}
+        .editor=${this.editor}
+      ></my-language-selector>
     `
   }
 }

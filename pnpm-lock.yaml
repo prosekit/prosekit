@@ -203,7 +203,7 @@ importers:
         specifier: ^0.0.4
         version: link:../pm
       highlight.js:
-        specifier: ^11.8.0
+        specifier: ^11.7.0
         version: 11.8.0
       prosemirror-flat-list:
         specifier: ^0.4.1
@@ -560,7 +560,7 @@ importers:
         specifier: ^3.0.7
         version: 3.0.7
       highlight.js:
-        specifier: ^11.8.0
+        specifier: ^11.7.0
         version: 11.8.0
       lit:
         specifier: ^2.8.0

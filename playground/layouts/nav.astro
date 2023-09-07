@@ -1,8 +1,26 @@
 ---
 import NavItem from './nav-item.astro'
+import { ViewTransitions } from 'astro:transitions'
 ---
 
-<nav class="mb-3">
+<script src="./nav.ts"></script>
+
+<style>
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+</style>
+
+<nav
+  data-playground-nav
+  class="no-scrollbar relative flex flex-row md:flex-col items-stretch list-none rounded-lg bg-blue-gray-100 p-0 overflow-x-auto m-1 box-border"
+>
   <NavItem path="/react-minimal" />
   <NavItem path="/react-slash-menu" />
   <NavItem path="/react-user-menu" />

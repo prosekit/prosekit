@@ -1,11 +1,12 @@
-import { defineComponent, h } from 'vue'
+import type { MentionAttrs } from 'prosekit/extensions/mention'
 import { AutocompleteEmpty } from 'prosekit/vue/components/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/vue/components/autocomplete-item'
 import { AutocompleteList } from 'prosekit/vue/components/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/vue/components/autocomplete-popover'
-import { useExampleEditor } from './use-example-editor'
-import type { MentionAttrs } from 'prosekit/extensions/mention'
+import { defineComponent, h } from 'vue'
+
 import { tags } from './tags'
+import { useExampleEditor } from './use-example-editor'
 
 export const TagMenu = defineComponent({
   setup() {

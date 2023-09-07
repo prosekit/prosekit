@@ -34,6 +34,7 @@ export default [
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/unbound-method': 'off',
+      'import/no-extraneous-dependencies': 'off'
     },
   },
   {

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "preact": "^10.17.0"
+  }
+}

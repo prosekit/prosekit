@@ -16,6 +16,7 @@ export default [
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
+      'import/no-extraneous-dependencies': process.env.CI ? 'error' : 'off',
     },
   },
   {
@@ -33,6 +34,7 @@ export default [
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/unbound-method': 'off',
+      'import/no-extraneous-dependencies': 'off',
     },
   },
   {
@@ -41,6 +43,6 @@ export default [
     },
   },
   {
-    ignores: ['config/unocss-shortcut.mjs'],
+    ignores: ['config/unocss-shortcut.mjs', '**/.tsup'],
   },
 ]

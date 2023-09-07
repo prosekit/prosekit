@@ -1,7 +1,7 @@
 // @unocss-include
 
 import 'highlight.js/styles/github-dark-dimmed.css'
-import 'prosekit/basic/internal/example.css'
+import 'prosekit/basic/internal/preflight.css'
 import 'prosekit/basic/style.css'
 
 import hljs from 'highlight.js/lib/common'
@@ -41,13 +41,11 @@ export class MyEditor extends LitElement {
 
   render() {
     return html`
-      <div class="example-editor EDITOR_BOX">
-        <div ${ref(this.editorRef)}></div>
-        <my-language-selector
-          .hljs=${hljs}
-          .editor=${this.editor}
-        ></my-language-selector>
-      </div>
+      <div class="EDITOR_CONTENT" ${ref(this.editorRef)}></div>
+      <my-language-selector
+        .hljs=${hljs}
+        .editor=${this.editor}
+      ></my-language-selector>
     `
   }
 }

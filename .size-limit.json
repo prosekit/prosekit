@@ -8,8 +8,8 @@
     "path": "packages/prosekit/dist/prosekit-basic.js"
   },
   {
-    "name": "prosekit/basic/internal/example.css",
-    "path": "packages/prosekit/dist/basic/internal/example.css"
+    "name": "prosekit/basic/internal/preflight.css",
+    "path": "packages/prosekit/dist/basic/internal/preflight.css"
   },
   {
     "name": "prosekit/basic/style.css",

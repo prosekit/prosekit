@@ -19,11 +19,12 @@ export const Playground = defineComponent<PlaygroundProps>(
     const { isDark } = useData()
 
     const files = clone(props.files)
-    const fileNames = Object.keys(files).map((fileName) =>
-      fileName.replace(/^\//, ''),
-    )
+    const fileNames = Object.keys(files).map((name) => name.replace(/^\//, ''))
+
     const dependencies = extractDependencies(files)
-    patchFiles(files)
+    patchFiles(files, props.name.toLowerCase().includes('preact'))
+
+    const template = getTemplateName(props.name)
 
     return () =>
       h(
@@ -37,7 +38,7 @@ export const Playground = defineComponent<PlaygroundProps>(
         [
           h(Sandpack, {
             theme: isDark.value ? 'dark' : 'light',
-            template: getTemplateName(props.name),
+            template: template,
             customSetup: {
               dependencies: {
                 ...dependencies,
@@ -49,17 +50,17 @@ export const Playground = defineComponent<PlaygroundProps>(
             files: {
               'tailwind.config.mjs': {
                 hidden: true,
-                code: `export default { content: ${JSON.stringify(
+                code: `export default {\n  content: ${JSON.stringify(
                   fileNames,
-                )} }`,
+                )}\n}`,
               },
               'postcss.config.mjs': {
                 hidden: true,
-                code: 'export default { plugins: { tailwindcss: {} } }',
+                code: 'export default {\n  plugins: { tailwindcss: {} }\n}',
               },
               'styles.css': {
                 hidden: true,
-                code: '@tailwind base; @tailwind components; @tailwind utilities;',
+                code: '@tailwind base;\n@tailwind components;\n@tailwind utilities;',
               },
               ...files,
             },
@@ -107,9 +108,25 @@ function extractDependencies(
   return {}
 }
 
-function patchFiles(files: Record<string, { hidden: boolean; code: string }>) {
+function patchFiles(
+  files: Record<string, { hidden: boolean; code: string }>,
+  isPreact?: boolean,
+) {
   for (const file of Object.values(files)) {
     file.code = patchCssClassNames(file.code)
+  }
+
+  if (isPreact) {
+    Object.assign(files, {
+      '/index.js': {
+        hidden: true,
+        code: preactIndexJs,
+      },
+      '/tsconfig.json': {
+        hidden: true,
+        code: preactTsconfigJson,
+      },
+    })
   }
 }
 
@@ -128,34 +145,53 @@ function clone<T>(value: T): T {
 function getTemplateName(exampleName: string): SandpackPredefinedTemplate {
   const framework = exampleName.split('-')[0]
 
-  if (framework === 'react') {
-    return 'vite-react-ts'
-  }
-
-  if (framework === 'vue-') {
-    return 'vite-vue-ts'
-  }
-
-  if (framework === 'svelte-') {
-    return 'vite-svelte-ts'
-  }
-
-  if (framework === 'solid-') {
-    return 'vite-solid'
-  }
-
-  if (framework === 'preact-') {
-    // TODO: add a preact example
-    return 'vite-react-ts'
-  }
-
-  if (framework === 'lit') {
-    return 'vite-lit'
-  }
-
-  if (framework === 'vanilla') {
-    return 'vite'
+  switch (framework) {
+    case 'react':
+      return 'vite-react-ts'
+    case 'vue':
+      return 'vite-vue-ts'
+    case 'svelte':
+      return 'vite-svelte-ts'
+    case 'solid':
+      return 'vite-solid'
+    case 'preact':
+      // Note that Sandpack doesn't have a vite template for Preact
+      return 'vite'
+    case 'lit':
+      return 'vite-lit'
+    case 'vanilla':
+      return 'vite'
   }
 
   throw new Error(`Failed to find Sandpack template for ${exampleName}`)
 }
+
+const preactIndexJs = `
+import { render, createElement } from "preact"
+import App from "./App.tsx"
+import "./styles.css"
+
+let element = document.getElementById('app')
+if (!element) {
+  element = document.body.appendChild(document.createElement('div'))
+  element.id = 'app'
+}
+
+render(createElement(App), element)
+`.trim()
+
+const preactTsconfigJson = `
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "noEmit": true,
+    "strict": true,
+    "moduleResolution": "Node",
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "skipLibCheck": true
+  }
+}
+`.trim()

@@ -51,7 +51,7 @@
   "dependencies": {
     "@prosekit/core": "^0.0.9",
     "@prosekit/pm": "^0.0.4",
-    "highlight.js": "^11.8.0",
+    "highlight.js": "^11.7.0",
     "prosemirror-flat-list": "^0.4.1",
     "prosemirror-highlightjs": "^0.9.1"
   },

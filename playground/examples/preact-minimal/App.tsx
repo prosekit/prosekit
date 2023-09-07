@@ -1,6 +1,7 @@
 /** @jsxImportSource preact */
 
 import 'prosekit/basic/style.css'
+import 'prosekit/basic/internal/preflight.css'
 
 import { useMemo } from 'preact/hooks'
 import { addBasicExtension } from 'prosekit/basic'
@@ -15,10 +16,7 @@ export default function App() {
 
   return (
     <ProseKit editor={editor}>
-      <div
-        ref={(element) => editor.mount(element)}
-        className="example-editor EDITOR_BOX"
-      ></div>
+      <div className="EDITOR_CONTENT" ref={editor.mount}></div>
     </ProseKit>
   )
 }

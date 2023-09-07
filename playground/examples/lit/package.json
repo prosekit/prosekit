@@ -1,5 +1,5 @@
 {
-    "dependencies": {
-        "highlight.js": "^11.8.0"
-    }
+  "dependencies": {
+    "highlight.js": "^11.7.0"
+  }
 }

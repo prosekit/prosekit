@@ -1,5 +1,7 @@
 <script lang="ts">
+import 'prosekit/basic/internal/preflight.css'
 import 'prosekit/basic/style.css'
+import 'prosekit/extensions/placeholder/style.css'
 
 import { onMount } from 'svelte'
 import { createEditor } from 'prosekit/core'
@@ -13,8 +15,6 @@ let place: HTMLDivElement
 onMount(() => editor.mount(place))
 </script>
 
-<main>
-  <ProseKit {editor}>
-    <div bind:this={place} class="example-editor EDITOR_BOX"></div>
-  </ProseKit>
-</main>
+<ProseKit {editor}>
+  <div bind:this={place} class="EDITOR_CONTENT"></div>
+</ProseKit>

@@ -1,6 +1,9 @@
+import 'prosekit/basic/internal/preflight.css'
+import 'prosekit/basic/style.css'
+import 'prosekit/extensions/placeholder/style.css'
+
 import { addBasicExtension } from 'prosekit/basic'
-import { createEditor } from 'prosekit/core'
-import { defineExtension } from 'prosekit/core'
+import { createEditor, defineExtension } from 'prosekit/core'
 import { addPlaceholder } from 'prosekit/extensions/placeholder'
 import { AutocompleteItem } from 'prosekit/lit/components/autocomplete-item'
 import { AutocompleteList } from 'prosekit/lit/components/autocomplete-list'
@@ -56,13 +59,18 @@ function handleHeadingConvert(level) {
   editor.commands.setBlockType({ nodeType, attrs })
 }
 
-const container = document.querySelector('.example-editor')
-if (!(container instanceof HTMLElement)) {
-  throw new TypeError('Could not find container element')
+function main() {
+  let container = document.querySelector('.example-container')
+  if (!container) {
+    container = document.body.appendChild(document.createElement('div'))
+    container.classList.add('example-container')
+  }
+
+  const content = container.appendChild(document.createElement('div'))
+  content.className = 'EDITOR_CONTENT'
+  editor.mount(content)
+
+  container.appendChild(createPopover())
 }
 
-const classNames = 'EDITOR_BOX'.split(' ')
-container.classList.add(...classNames)
-
-editor.mount(container)
-document.body.append(createPopover())
+main()

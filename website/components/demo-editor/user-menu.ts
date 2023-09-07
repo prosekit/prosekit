@@ -4,6 +4,7 @@ import { AutocompleteItem } from 'prosekit/vue/components/autocomplete-item'
 import { AutocompleteList } from 'prosekit/vue/components/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/vue/components/autocomplete-popover'
 import { defineComponent, h } from 'vue'
+
 import { useExampleEditor } from './use-example-editor'
 import { users } from './users'
 

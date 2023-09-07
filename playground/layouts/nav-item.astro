@@ -1,11 +1,39 @@
 ---
-const { path } = Astro.props
+const path = Astro.props.path
+const url = Astro.request.url
+
 const name = path
   .replace('/', '')
   .split('-')
   .map((word) => word[0].toUpperCase() + word.slice(1))
   .join(' ')
-const active = path === new URL(Astro.request.url).pathname
+const active = path === new URL(url).pathname
+
+const framework = path.replace('/', '').split('-')[0]
+const icon = {
+  react: 'i-logos-react',
+  vue: 'i-logos-vue',
+  preact: 'i-logos-preact',
+  svelte: 'i-logos-svelte-icon',
+  solid: 'i-logos-solidjs-icon',
+  lit: 'i-logos-lit-icon',
+  vanilla: 'i-logos-javascript',
+}[framework]
 ---
 
-<a class={active ? 'bg-yellow-200' : ''} href={path}>{name}</a>
+<script src="./nav-item.ts"></script>
+
+<div
+  class="text-nowrap p-1 box-border"
+  aria-selected={active}
+  data-playground-nav-link
+>
+  <a
+    class="text-slate-700 z-30 flex w-full cursor-pointer items-center rounded border-0 bg-inherit pl-2 pr-3 py-2 aria-selected:shadow-md aria-selected:bg-white transition outline-solid outline-2 outline-transparent hover:outline-blue-500 no-underline box-border"
+    aria-selected={active}
+    href={path}
+  >
+    <span class={icon}></span>
+    <span class="ml-2">{name}</span>
+  </a>
+</div>

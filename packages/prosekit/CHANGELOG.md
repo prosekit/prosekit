@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.16
+
+### Patch Changes
+
+- [dc8a3be] **prosekit/basic**
+
+  Rename example.css to preflight.css.
+
 ## 0.0.15
 
 ### Patch Changes

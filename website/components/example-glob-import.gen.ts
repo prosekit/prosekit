@@ -1,3 +1,4 @@
+/* eslint-disable */    
 // This file is generated from gen-example-glob-import.ts
 
 const modules = import.meta.glob([

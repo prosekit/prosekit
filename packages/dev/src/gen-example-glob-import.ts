@@ -39,6 +39,7 @@ async function formatCode(): Promise<string> {
 
   const code =
     `
+/* eslint-disable */    
 // This file is generated from ${currentFilename}
 
 const modules = import.meta.glob(${importFilePathsString}, { as: 'raw', eager: true }) as Record<string, string>

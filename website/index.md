@@ -17,7 +17,7 @@ hero:
 
 features:
   - title: Framework Agnostic
-    details: Enjoy seamless support for React, Vue, Svelte, Solid and vanilla JS.
+    details: Enjoy seamless support for React, Vue, Svelte, Solid, Lit and vanilla JS.
   - title: Composable
     details: Create your custom editor with desired extensions, effortlessly overriding any behavior.
   - title: Plug-and-Play
@@ -28,9 +28,6 @@ features:
 
 <script setup>
 import { DemoEditor } from './components/demo-editor-dynamic'
-// import { Home } from './components/home'
 </script>
 
 <DemoEditor />
-
-<!-- <Home/> -->

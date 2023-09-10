@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/solid",
   "type": "module",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -44,8 +44,8 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/core": "^0.0.9",
-    "@prosekit/lit": "^0.0.12"
+    "@prosekit/core": "^0.0.10",
+    "@prosekit/lit": "^0.0.13"
   },
   "peerDependencies": {
     "solid-js": ">= 1.7.0"

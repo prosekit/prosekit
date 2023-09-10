@@ -12,8 +12,12 @@ export const TagMenu = defineComponent({
   setup() {
     const editor = useExampleEditor()
 
-    const handleTagInsert = (id: number, value: string) => {
-      const attrs: MentionAttrs = { id: id.toString(), value, kind: 'tag' }
+    const handleTagInsert = (id: number, label: string) => {
+      const attrs: MentionAttrs = {
+        id: id.toString(),
+        value: '#' + label,
+        kind: 'tag',
+      }
       const node = editor.schema.nodes.mention.create(attrs)
       editor.commands.insertNode({ node })
       editor.commands.insertText({ text: ' ' })
@@ -28,9 +32,9 @@ export const TagMenu = defineComponent({
               AutocompleteItem,
               {
                 class: 'SLASH_MENU_ITEM',
-                onSelect: () => handleTagInsert(tag.id, tag.value),
+                onSelect: () => handleTagInsert(tag.id, tag.label),
               },
-              tag.value,
+              tag.label,
             ),
           ),
         ]),

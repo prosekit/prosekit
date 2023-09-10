@@ -1,4 +1,3 @@
-import 'prosekit/basic/internal/preflight.css'
 import 'prosekit/basic/style.css'
 
 import { addBasicExtension } from 'prosekit/basic'

@@ -1,3 +1,10 @@
+*,
+::before,
+::after {
+  border-width: 0;
+  border-style: solid;
+}
+
 *:has(> div.ProseMirror) {
   display: flex;
   flex-direction: column;
@@ -91,11 +98,7 @@
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
   hyphens: none;
 }
 
@@ -109,37 +112,17 @@
 
 .ProseMirror span[data-mention='user'] {
   border-radius: 0.5rem;
-  padding: 0.125rem;
   color: rgb(59 130 246);
-}
-
-.ProseMirror span[data-mention='user']::before {
-  content: '@';
 }
 
 .ProseMirror span[data-mention='tag'] {
   border-radius: 0.5rem;
+  padding: 0.125rem 0.25rem;
   background-color: rgb(229 231 235);
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
 }
 
 @media (prefers-color-scheme: dark) {
   .ProseMirror span[data-mention='tag'] {
     background-color: rgb(75 85 99);
-  }
-}
-
-.ProseMirror span[data-mention='tag']::before {
-  content: '#';
-  padding-right: 0.125rem;
-  opacity: 0.4;
-}
-
-@media (prefers-color-scheme: dark) {
-  .ProseMirror span[data-mention='tag']::before {
-    opacity: 0.5;
   }
 }

@@ -1,14 +1,42 @@
-import { Editor, type Extension, ProseKitError } from '@prosekit/core'
-import { useContext } from 'react'
+import {
+  Editor,
+  type Extension,
+  ProseKitError,
+  addEventHandler,
+} from '@prosekit/core'
+import { useContext, useEffect, useReducer } from 'react'
 
 import { editorContext } from '../contexts/editor-context'
 
-export function useEditor<E extends Extension = any>(): Editor<E> {
+export interface UseEditorOptions {
+  update?: boolean
+}
+
+export function useEditor<E extends Extension = any>(
+  options?: UseEditorOptions,
+): Editor<E> {
+  const update = options?.update ?? false
+
   const value = useContext(editorContext)
   if (!value) {
     throw new ProseKitError(
       'useEditor must be used within the ProseKit component',
     )
   }
-  return value.editor as Editor<E>
+
+  const editor = value.editor as Editor<E>
+  const forceUpdate = useForceUpdate()
+
+  useEffect(() => {
+    if (update) {
+      return editor.use(addEventHandler({ update: forceUpdate }))
+    }
+  }, [editor, update, forceUpdate])
+
+  return editor
+}
+
+function useForceUpdate() {
+  const [, dispatch] = useReducer((x: number) => x + 1, 0)
+  return dispatch
 }

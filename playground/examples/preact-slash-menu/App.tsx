@@ -1,6 +1,5 @@
 /** @jsxImportSource preact */
 
-import 'prosekit/basic/internal/preflight.css'
 import 'prosekit/basic/style.css'
 import 'prosekit/extensions/placeholder/style.css'
 

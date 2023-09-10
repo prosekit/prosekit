@@ -15,7 +15,7 @@ export const UserMenu = defineComponent({
     const handleUserInsert = (id: number, username: string) => {
       const attrs: MentionAttrs = {
         id: id.toString(),
-        value: username,
+        value: '@' + username,
         kind: 'user',
       }
       const node = editor.schema.nodes.mention.create(attrs)

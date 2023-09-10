@@ -15,6 +15,12 @@ import type { NodeJson, SelectionJson } from '../types/model'
 import { isMarkActive } from '../utils/is-mark-active'
 import { isNodeActive } from '../utils/is-node-active'
 
+import {
+  createMarkBuilder,
+  createNodeBuilder,
+  type MarkBuilder,
+  type NodeBuilder,
+} from './builder'
 import { updateExtension, type Inputs, type Slots } from './flatten'
 
 /** @public */
@@ -64,6 +70,8 @@ class EditorInstance {
   private inputs: Inputs = []
   private slots: Slots = []
   private directEditorProps: DirectEditorProps
+  readonly nodeBuilders: Record<string, NodeBuilder>
+  readonly markBuilders: Record<string, MarkBuilder>
 
   constructor(extension: Extension) {
     this.mount = this.mount.bind(this)
@@ -90,6 +98,21 @@ class EditorInstance {
 
     this.directEditorProps = { state, ...viewInput }
     this.schema = this.directEditorProps.state.schema
+
+    const getState = () => this.view?.state
+
+    this.nodeBuilders = Object.fromEntries(
+      Object.values(this.schema.nodes).map((type) => [
+        type.name,
+        createNodeBuilder(getState, type),
+      ]),
+    )
+    this.markBuilders = Object.fromEntries(
+      Object.values(this.schema.marks).map((type) => [
+        type.name,
+        createMarkBuilder(getState, type),
+      ]),
+    )
   }
 
   public updateExtension(extension: Extension, mode: 'add' | 'remove'): void {
@@ -252,11 +275,24 @@ export class Editor<E extends Extension = any> {
     return () => this.instance.updateExtension(extension, 'remove')
   }
 
+  /**
+   * @deprecated
+   */
   isNodeActive(nodeType: string | NodeType, attrs?: Attrs): boolean {
     return isNodeActive(this.view.state, nodeType, attrs)
   }
 
+  /**
+   * @deprecated
+   */
   isMarkActive(markType: string | MarkType, attrs?: Attrs): boolean {
     return isMarkActive(this.view.state, markType, attrs)
+  }
+
+  get nodes(): Record<ExtractNodes<E>, NodeBuilder> {
+    return this.instance.nodeBuilders
+  }
+  get marks(): Record<ExtractMarks<E>, MarkBuilder> {
+    return this.instance.markBuilders
   }
 }

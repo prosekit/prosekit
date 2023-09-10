@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 
+import { exampleItems } from './sidebar-example-items'
 import { referenceItems } from './sidebar-reference-items'
 
 // https://vitepress.dev/reference/site-config
@@ -9,10 +10,6 @@ export default defineConfig({
 
   cleanUrls: true,
   outDir: 'dist',
-
-  rewrites: {
-    'references/index.md': 'references.md',
-  },
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -92,6 +89,13 @@ export default defineConfig({
         {
           text: 'API References',
           items: referenceItems,
+        },
+      ],
+
+      '/examples': [
+        {
+          text: 'Examples',
+          items: exampleItems,
         },
       ],
     },

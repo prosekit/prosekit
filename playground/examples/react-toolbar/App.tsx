@@ -5,20 +5,19 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import SlashMenu from './SlashMenu'
-import ToggleItalicButton from './ToggleItalicButton'
+import Toolbar from './Toolbar'
 import { addExampleExtension } from './extension'
 
 export default function App() {
   const editor = useMemo(() => {
-    return createEditor({ extension: addExampleExtension() })
+    const extension = addExampleExtension()
+    return createEditor({ extension })
   }, [])
 
   return (
     <ProseKit editor={editor}>
       <div ref={editor.mount} className="EDITOR_CONTENT"></div>
-      <ToggleItalicButton />
-      <SlashMenu />
+      <Toolbar />
     </ProseKit>
   )
 }

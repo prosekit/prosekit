@@ -124,5 +124,16 @@ examples:
   - name: vanilla
     order: 99
     files:
-      - path: app.js
+      - path: index.js
+        hidden: false
+  - name: react-toolbar
+    order: 999999
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: Toolbar.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-example-editor.ts
         hidden: false

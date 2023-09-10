@@ -2,10 +2,16 @@ import { writeFile } from 'node:fs/promises'
 import path, { basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import { readExampleMeta } from './example-meta.js'
 import { hideInTypedoc } from './hide-in-typedoc.js'
 import { vfs } from './virtual-file-system.js'
 
 export async function genDocsItems() {
+  await genReferenceItems()
+  await genExampleItems()
+}
+
+async function genReferenceItems() {
   const rootDir = await vfs.getRootDir()
   const sidebarFilePath = path.join(
     rootDir,
@@ -74,6 +80,36 @@ export async function genDocsItems() {
     `// This file is generated from ${currentFilename}\n\n` +
     `// prettier-ignore\n` +
     `export const referenceItems = ` +
+    JSON.stringify(items, null, 2) +
+    `\n`
+  await writeFile(sidebarFilePath, content)
+}
+
+async function genExampleItems() {
+  const rootDir = await vfs.getRootDir()
+  const sidebarFilePath = path.join(
+    rootDir,
+    'website',
+    '.vitepress',
+    'sidebar-example-items.ts',
+  )
+
+  const items: SidebarItem[] = []
+
+  const meta = await readExampleMeta()
+  for (const example of meta.examples) {
+    items.push({
+      text: example.name,
+      link: '/examples/' + example.name,
+    })
+  }
+
+  normalizeItems(items)
+
+  const content =
+    `// This file is generated from ${currentFilename}\n\n` +
+    `// prettier-ignore\n` +
+    `export const exampleItems = ` +
     JSON.stringify(items, null, 2) +
     `\n`
   await writeFile(sidebarFilePath, content)

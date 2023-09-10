@@ -1,7 +1,6 @@
 /** @jsxImportSource preact */
 
 import 'prosekit/basic/style.css'
-import 'prosekit/basic/internal/preflight.css'
 
 import { useMemo } from 'preact/hooks'
 import { addBasicExtension } from 'prosekit/basic'

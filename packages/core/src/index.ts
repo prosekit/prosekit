@@ -12,6 +12,7 @@ export {
   type DefaultStateOptions,
 } from './extensions/default-state'
 export { addDoc } from './extensions/doc'
+export { addEventHandler } from './extensions/event-handler'
 export { addInputRule } from './extensions/input-rules'
 export { addBaseKeymap, addKeymap, type Keymap } from './extensions/keymap'
 export { addMarkSpec, type MarkSpecOptions } from './extensions/mark-spec'

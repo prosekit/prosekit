@@ -31,7 +31,7 @@
     "typescript": "^5.2.2",
     "unocss": "^0.55.7",
     "vite": "^4.4.9",
-    "vitepress": "1.0.0-rc.10",
+    "vitepress": "1.0.0-rc.11",
     "vue": "^3.3.4"
   }
 }

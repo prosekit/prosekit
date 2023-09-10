@@ -2,3 +2,4 @@ pnpm-lock.yaml
 CHANGELOG.md
 *.gen.ts
 *.gen.tsx
+*.gen.css

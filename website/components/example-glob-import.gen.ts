@@ -24,6 +24,11 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-slash-menu/ToggleItalicButton.vue",
   "../../playground/examples/vue-slash-menu/extension.ts",
   "../../playground/examples/vue-slash-menu/use-example-editor.ts",
+  "../../playground/examples/vue-toolbar/App.vue",
+  "../../playground/examples/vue-toolbar/ToggleButton.vue",
+  "../../playground/examples/vue-toolbar/Toolbar.vue",
+  "../../playground/examples/vue-toolbar/extension.ts",
+  "../../playground/examples/vue-toolbar/use-example-editor.ts",
   "../../playground/examples/preact-minimal/App.tsx",
   "../../playground/examples/preact-minimal/package.json",
   "../../playground/examples/preact-slash-menu/App.tsx",
@@ -151,6 +156,28 @@ const examples = {
     "/use-example-editor.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-slash-menu/use-example-editor.ts']
+    }
+  },
+  "vue-toolbar": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-toolbar/App.vue']
+    },
+    "/ToggleButton.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-toolbar/ToggleButton.vue']
+    },
+    "/Toolbar.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-toolbar/Toolbar.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-toolbar/extension.ts']
+    },
+    "/use-example-editor.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-toolbar/use-example-editor.ts']
     }
   },
   "preact-minimal": {

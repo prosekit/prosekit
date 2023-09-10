@@ -1,5 +1,5 @@
 import { type Extension } from '@prosekit/core'
-import { effect } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 
 import { useEditor } from './use-editor'
 
@@ -9,5 +9,8 @@ interface UseExtensionProps<T extends Extension = Extension> {
 
 export function useExtension({ extension }: UseExtensionProps) {
   const editor = useEditor()
-  effect(() => editor.use(extension))
+  onMounted(() => {
+    const dispose = editor.use(extension)
+    onUnmounted(dispose)
+  })
 }

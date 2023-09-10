@@ -7,11 +7,12 @@
     "dev": "vitepress dev",
     "preview": "vitepress preview",
     "build": "pnpm build:typedoc && touch references/index.md && rm references/index.md && pnpm build:css && pnpm build:vitepress",
-    "build:css": "unocss -o components/icons-css/icons-css.css --preflights false components/icons-css/icons-css.txt",
+    "build:css": "unocss -o components/icons-css/icons-css.gen.css --preflights false components/icons-css/icons-css.txt",
     "build:vitepress": "vitepress build",
     "build:typedoc": "typedoc"
   },
   "devDependencies": {
+    "@iconify-json/ci": "^1.1.10",
     "@iconify-json/logos": "^1.1.35",
     "@prosekit/dev": "*",
     "@types/react": "^18.2.21",

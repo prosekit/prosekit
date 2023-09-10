@@ -5,6 +5,7 @@ import { defineComponent, h, ref, watchPostEffect } from 'vue'
 import { addExampleExtension } from './extension'
 import { SlashMenu } from './slash-menu'
 import { TagMenu } from './tag-menu'
+import { Toolbar } from './toolbar'
 import { UserMenu } from './user-menu'
 
 export const Editor = defineComponent({
@@ -23,6 +24,7 @@ export const Editor = defineComponent({
       'div',
       { class: 'flex flex-col w-full' },
       h(ProseKit, { editor: this.editor }, [
+        h(Toolbar),
         h('div', { ref: 'editorRef', class: 'EDITOR_CONTENT' }),
         h(UserMenu),
         h(TagMenu),

@@ -8,6 +8,8 @@
 
 - [react-user-menu](./examples/react-user-menu)
 
+- [react-toolbar](./examples/react-toolbar)
+
 - [vue-minimal](./examples/vue-minimal)
 
 - [vue-slash-menu](./examples/vue-slash-menu)
@@ -27,5 +29,3 @@
 - [lit](./examples/lit)
 
 - [vanilla](./examples/vanilla)
-
-- [react-toolbar](./examples/react-toolbar)

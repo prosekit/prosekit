@@ -1,6 +1,5 @@
 ---
-import NavItem from './nav-item.astro'
-import { ViewTransitions } from 'astro:transitions'
+import NavList from './nav-list.astro'
 ---
 
 <script src="./nav.ts"></script>
@@ -21,23 +20,5 @@ import { ViewTransitions } from 'astro:transitions'
   data-playground-nav
   class="no-scrollbar relative flex flex-row md:flex-col items-stretch list-none rounded-lg bg-blue-gray-100 p-0 overflow-x-auto m-1 box-border"
 >
-  <NavItem path="/react-minimal" />
-  <NavItem path="/react-slash-menu" />
-  <NavItem path="/react-user-menu" />
-  <NavItem path="/react-toolbar" />
-
-  <NavItem path="/vue-minimal" />
-  <NavItem path="/vue-slash-menu" />
-
-  <NavItem path="/preact-minimal" />
-  <NavItem path="/preact-slash-menu" />
-
-  <NavItem path="/svelte-minimal" />
-  <NavItem path="/svelte-slash-menu" />
-
-  <NavItem path="/solid-minimal" />
-  <NavItem path="/solid-slash-menu" />
-
-  <NavItem path="/lit" />
-  <NavItem path="/vanilla" />
+  <NavList/>
 </nav>

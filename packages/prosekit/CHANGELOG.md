@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.18
+
+### Patch Changes
+
+- [debf8d0] **prosekit/vue**
+
+  Add useEditorRef
+
 ## 0.0.17
 
 ### Patch Changes

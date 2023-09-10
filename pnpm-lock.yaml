@@ -369,7 +369,7 @@ importers:
         specifier: 0.0.11
         version: link:../svelte
       '@prosekit/vue':
-        specifier: 0.0.13
+        specifier: 0.0.14
         version: link:../vue
     devDependencies:
       '@prosekit/dev':
@@ -578,7 +578,7 @@ importers:
         specifier: ^10.17.1
         version: 10.17.1
       prosekit:
-        specifier: ^0.0.17
+        specifier: ^0.0.18
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -632,7 +632,7 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       prosekit:
-        specifier: ^0.0.17
+        specifier: ^0.0.18
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0

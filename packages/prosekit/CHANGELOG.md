@@ -1,5 +1,29 @@
 # prosekit
 
+## 0.0.17
+
+### Patch Changes
+
+- [1c26d8b] **prosekit/core**
+
+  Add `editor.nodes` and `editor.marks`.
+
+- [1c26d8b] **prosekit/basic**
+
+  Add bold.
+
+- [1c26d8b] **prosekit/pm**
+
+  Re-export Fragment as ProseMirrorFragment
+
+- [1c26d8b] **prosekit/react**
+
+  Add options for useEditor
+
+- [1c26d8b] **prosekit/extensions**
+
+  Add toggleHeading command.
+
 ## 0.0.16
 
 ### Patch Changes

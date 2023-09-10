@@ -2,8 +2,8 @@ import { MarkType, NodeType, Schema, type Attrs } from '@prosekit/pm/model'
 import { EditorState, Plugin, type EditorStateConfig } from '@prosekit/pm/state'
 import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
-import { addDefaultState, defineExtension } from '..'
 import { ProseKitError } from '../error'
+import { addDefaultState } from '../extensions/default-state'
 import { type CommandCreator, type CommandDispatcher } from '../types/command'
 import type {
   Extension,
@@ -15,7 +15,14 @@ import type { NodeJson, SelectionJson } from '../types/model'
 import { isMarkActive } from '../utils/is-mark-active'
 import { isNodeActive } from '../utils/is-node-active'
 
+import {
+  createMarkBuilder,
+  createNodeBuilder,
+  type MarkBuilder,
+  type NodeBuilder,
+} from './builder'
 import { updateExtension, type Inputs, type Slots } from './flatten'
+import { defineExtension } from './type-utils'
 
 /** @public */
 export interface EditorOptions<E extends Extension> {
@@ -64,6 +71,8 @@ class EditorInstance {
   private inputs: Inputs = []
   private slots: Slots = []
   private directEditorProps: DirectEditorProps
+  readonly nodeBuilders: Record<string, NodeBuilder>
+  readonly markBuilders: Record<string, MarkBuilder>
 
   constructor(extension: Extension) {
     this.mount = this.mount.bind(this)
@@ -73,7 +82,7 @@ class EditorInstance {
       updateExtension(this.inputs, this.slots, extension, 'add')
 
     if (!schemaInput) {
-      throw new Error('Schema must be defined')
+      throw new ProseKitError('Schema must be defined')
     }
     const schema = new Schema(schemaInput)
 
@@ -90,6 +99,21 @@ class EditorInstance {
 
     this.directEditorProps = { state, ...viewInput }
     this.schema = this.directEditorProps.state.schema
+
+    const getState = () => this.view?.state
+
+    this.nodeBuilders = Object.fromEntries(
+      Object.values(this.schema.nodes).map((type) => [
+        type.name,
+        createNodeBuilder(getState, type),
+      ]),
+    )
+    this.markBuilders = Object.fromEntries(
+      Object.values(this.schema.marks).map((type) => [
+        type.name,
+        createMarkBuilder(getState, type),
+      ]),
+    )
   }
 
   public updateExtension(extension: Extension, mode: 'add' | 'remove'): void {
@@ -126,10 +150,10 @@ class EditorInstance {
 
   public mount(place: HTMLElement) {
     if (this.view) {
-      throw new Error('Editor is already mounted')
+      throw new ProseKitError('Editor is already mounted')
     }
     if (!place) {
-      throw new Error("Can't mount editor without a place")
+      throw new ProseKitError("Can't mount editor without a place")
     }
 
     this.view = new EditorView({ mount: place }, this.directEditorProps)
@@ -137,7 +161,7 @@ class EditorInstance {
 
   public unmount() {
     if (!this.view) {
-      throw new Error('Editor is not mounted yet')
+      throw new ProseKitError('Editor is not mounted yet')
     }
 
     this.view.destroy()
@@ -145,7 +169,7 @@ class EditorInstance {
   }
 
   public get assertView(): EditorView {
-    if (!this.view) throw new Error('Editor is not mounted')
+    if (!this.view) throw new ProseKitError('Editor is not mounted')
     return this.view
   }
 
@@ -252,11 +276,24 @@ export class Editor<E extends Extension = any> {
     return () => this.instance.updateExtension(extension, 'remove')
   }
 
+  /**
+   * @deprecated
+   */
   isNodeActive(nodeType: string | NodeType, attrs?: Attrs): boolean {
     return isNodeActive(this.view.state, nodeType, attrs)
   }
 
+  /**
+   * @deprecated
+   */
   isMarkActive(markType: string | MarkType, attrs?: Attrs): boolean {
     return isMarkActive(this.view.state, markType, attrs)
+  }
+
+  get nodes(): Record<ExtractNodes<E>, NodeBuilder> {
+    return this.instance.nodeBuilders
+  }
+  get marks(): Record<ExtractMarks<E>, MarkBuilder> {
+    return this.instance.markBuilders
   }
 }

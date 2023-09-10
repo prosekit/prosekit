@@ -550,6 +550,15 @@ importers:
       '@astrojs/vue':
         specifier: ^3.0.0
         version: 3.0.0(@babel/core@7.22.11)(astro@3.0.10)(vite@4.4.9)(vue@3.3.4)
+      '@iconify-json/ci':
+        specifier: ^1.1.10
+        version: 1.1.10
+      '@iconify-json/material-symbols':
+        specifier: ^1.1.58
+        version: 1.1.58
+      '@iconify-json/radix-icons':
+        specifier: ^1.1.11
+        version: 1.1.11
       '@types/react':
         specifier: ^18.2.21
         version: 18.2.21
@@ -2139,8 +2148,26 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: false
 
+  /@iconify-json/ci@1.1.10:
+    resolution: {integrity: sha512-eqUypGZG6xZxCXKZE3MMbg7ifTeuEWySSIwnYT9DkCqQT1pyf2Xj6UF2lSUWK8YJlSnTUW4zetVa20pRADO0Ew==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
   /@iconify-json/logos@1.1.35:
     resolution: {integrity: sha512-yJPNSKNgfMGeE6dP9/drkS2PVaBBqcUW5lsSfTG6qps/Yc3W3KfP2oLcZcUwMZujkJ881Q8/AqKOxEahc2kWxw==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/material-symbols@1.1.58:
+    resolution: {integrity: sha512-SqFVzgu+ni25sSNquQZQOKgT6+VL4OkloGNOFr8NniPUBH5JsBuQAY/H1CJaXePHr8Wn3iQxezFzoKgIxj3WCQ==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/radix-icons@1.1.11:
+    resolution: {integrity: sha512-0FkllP6ghJakWHC0oQb+Jwg4W52mCDkV3JvVrXoyCPjG4kxX4wNhl8Ilk1dfT1EM+YvEXxrR2Mv63ySzVeYr9w==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

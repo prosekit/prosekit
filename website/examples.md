@@ -27,3 +27,5 @@
 - [lit](./examples/lit)
 
 - [vanilla](./examples/vanilla)
+
+- [react-toolbar](./examples/react-toolbar)

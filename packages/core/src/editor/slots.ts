@@ -2,6 +2,7 @@ import type { MarkSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
 import type { EditorStateConfig } from '@prosekit/pm/state'
 import OrderedMap from 'orderedmap'
 
+import { ProseKitError } from '../error'
 import type { CommandCreator } from '../types/command'
 import type { StateConfigCallback, ViewProps } from '../types/editor'
 import { uniqPush } from '../utils/uniq-array'
@@ -43,7 +44,9 @@ export const stateSlot = Facet.defineSlot<StateConfigCallback>({
       }
 
       if (!config.doc && !config.schema) {
-        throw new Error("Can't create state without a schema nor a document")
+        throw new ProseKitError(
+          "Can't create state without a schema nor a document",
+        )
       }
 
       if (config.doc) {

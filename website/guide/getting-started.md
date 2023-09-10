@@ -56,7 +56,7 @@ Then, you need to integrate the extensions into your UI framework.
 
 <<< @/../playground/examples/solid-minimal/App.tsx [Solid]
 
-<<< @/../playground/examples/vanilla/app.js [Vanilla]
+<<< @/../playground/examples/vanilla/index.js [Vanilla]
 
 :::
 

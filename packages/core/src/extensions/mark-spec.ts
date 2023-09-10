@@ -2,6 +2,7 @@ import type { MarkSpec, SchemaSpec } from '@prosekit/pm/model'
 
 import { Facet } from '../editor/facet'
 import { schemaSlot } from '../editor/slots'
+import { ProseKitError } from '../error'
 import { type Extension } from '../types/extension'
 
 /**
@@ -27,7 +28,7 @@ const markSpecFacet = Facet.define<MarkSpecOptions, SchemaSpec>({
 
     for (const { name, ...spec } of options) {
       if (marks[name]) {
-        throw new Error(`Mark type ${name} has already been defined`)
+        throw new ProseKitError(`Mark type ${name} has already been defined`)
       }
 
       marks[name] = spec

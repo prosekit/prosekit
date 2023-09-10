@@ -1,4 +1,5 @@
 import {
+  addCommands,
   addInputRule,
   addKeymap,
   addNodeSpec,
@@ -59,11 +60,20 @@ export function addHeadingInputRule() {
   })
 }
 
+export function addHeadingCommands() {
+  return addCommands({
+    toggleHeading: (attrs?: HeadingAttrs) => {
+      return toggleNode({ type: 'heading', attrs })
+    },
+  })
+}
+
 /** @public */
 export function addHeading() {
   return defineExtension([
     addHeadingSpec(),
     addHeadingInputRule(),
     addHeadingKeymap(),
+    addHeadingCommands(),
   ])
 }

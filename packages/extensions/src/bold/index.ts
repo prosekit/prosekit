@@ -37,7 +37,7 @@ export function addBoldSpec() {
       },
     ],
     toDOM() {
-      return ['em', 0]
+      return ['strong', 0]
     },
   })
 }

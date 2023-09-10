@@ -2,6 +2,7 @@ import type { NodeSpec, SchemaSpec } from '@prosekit/pm/model'
 
 import { Facet } from '../editor/facet'
 import { schemaSlot } from '../editor/slots'
+import { ProseKitError } from '../error'
 import type { Extension } from '../types/extension'
 
 /**
@@ -29,7 +30,7 @@ const nodeSpecFacet = Facet.define<NodeSpecOptions, SchemaSpec>({
 
     for (const { name, topNode, ...spec } of options) {
       if (nodes[name]) {
-        throw new Error(`Node type ${name} has already been defined`)
+        throw new ProseKitError(`Node type ${name} has already been defined`)
       }
 
       if (topNodeName && !topNode) {

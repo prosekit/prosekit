@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../../layouts/base-layout.astro'
+import App from '../../examples/react-toolbar/App.tsx'
 ---
 
 <BaseLayout>
-  <script src="../../examples/vanilla/index.js"></script>
+  <App client:only="react" />
 </BaseLayout>

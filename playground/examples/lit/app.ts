@@ -1,7 +1,6 @@
 // @unocss-include
 
 import 'highlight.js/styles/github-dark-dimmed.css'
-import 'prosekit/basic/internal/preflight.css'
 import 'prosekit/basic/style.css'
 
 import hljs from 'highlight.js/lib/common'

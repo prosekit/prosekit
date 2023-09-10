@@ -7,6 +7,7 @@ import { defineComponent, h } from 'vue'
 import { shortcuts } from '../../config/unocss-shortcut.mjs'
 
 import './sandpack-editor.css'
+import { preflightCssCode } from './preflight-css'
 
 export interface PlaygroundProps {
   name: string
@@ -60,7 +61,13 @@ export const Playground = defineComponent<PlaygroundProps>(
               },
               'styles.css': {
                 hidden: true,
-                code: '@tailwind base;\n@tailwind components;\n@tailwind utilities;',
+                code: [
+                  '@tailwind base;',
+                  '@tailwind components;',
+                  '@tailwind utilities;',
+                  '',
+                  preflightCssCode,
+                ].join('\n'),
               },
               ...files,
             },

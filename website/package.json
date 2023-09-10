@@ -7,7 +7,7 @@
     "dev": "vitepress dev",
     "preview": "vitepress preview",
     "build": "pnpm build:typedoc && touch references/index.md && rm references/index.md && pnpm build:css && pnpm build:vitepress",
-    "build:css": "unocss -o components/icons-css/icons-css.css --preflights false components/icons-css/icons-css.txt && prettier --write components/icons-css/icons-css.css",
+    "build:css": "unocss -o components/icons-css/icons-css.css --preflights false components/icons-css/icons-css.txt",
     "build:vitepress": "vitepress build",
     "build:typedoc": "typedoc"
   },

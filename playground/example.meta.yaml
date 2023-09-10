@@ -32,6 +32,17 @@ examples:
         hidden: false
       - path: users.ts
         hidden: false
+  - name: react-toolbar
+    order: 14
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: Toolbar.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-example-editor.ts
+        hidden: false
   - name: vue-minimal
     order: 21
     files:
@@ -125,15 +136,4 @@ examples:
     order: 99
     files:
       - path: index.js
-        hidden: false
-  - name: react-toolbar
-    order: 999999
-    files:
-      - path: App.tsx
-        hidden: false
-      - path: Toolbar.tsx
-        hidden: false
-      - path: extension.ts
-        hidden: false
-      - path: use-example-editor.ts
         hidden: false

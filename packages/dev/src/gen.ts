@@ -6,6 +6,7 @@ import { genExampleGlobImport } from './gen-example-glob-import.js'
 import { genExampleIndex } from './gen-example-index.js'
 import { genExampleMetaYaml } from './gen-example-meta-yaml.js'
 import { genPackageJson } from './gen-package-json.js'
+import { genPlaygroundPages } from './gen-playground-pages.js'
 import { genRenovateJson } from './gen-renovate-json.js'
 import { genSizeLimitJson } from './gen-size-limit-json.js'
 import { genTsconfigJson } from './gen-tsconfig-json.js'
@@ -31,6 +32,7 @@ async function main() {
   await genExampleMetaYaml()
   await genExampleIndex()
   await genExampleGlobImport()
+  await genPlaygroundPages()
 
   await vfs.commit()
 }

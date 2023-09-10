@@ -15,6 +15,10 @@ export const exampleItems = [
     "link": "/examples/react-user-menu"
   },
   {
+    "text": "react-toolbar",
+    "link": "/examples/react-toolbar"
+  },
+  {
     "text": "vue-minimal",
     "link": "/examples/vue-minimal"
   },
@@ -53,9 +57,5 @@ export const exampleItems = [
   {
     "text": "vanilla",
     "link": "/examples/vanilla"
-  },
-  {
-    "text": "react-toolbar",
-    "link": "/examples/react-toolbar"
   }
 ]

@@ -14,6 +14,10 @@ const modules = import.meta.glob([
   "../../playground/examples/react-user-menu/extension.ts",
   "../../playground/examples/react-user-menu/tags.ts",
   "../../playground/examples/react-user-menu/users.ts",
+  "../../playground/examples/react-toolbar/App.tsx",
+  "../../playground/examples/react-toolbar/Toolbar.tsx",
+  "../../playground/examples/react-toolbar/extension.ts",
+  "../../playground/examples/react-toolbar/use-example-editor.ts",
   "../../playground/examples/vue-minimal/App.vue",
   "../../playground/examples/vue-slash-menu/App.vue",
   "../../playground/examples/vue-slash-menu/SlashMenu.vue",
@@ -45,11 +49,7 @@ const modules = import.meta.glob([
   "../../playground/examples/lit/language-selector.ts",
   "../../playground/examples/lit/main.ts",
   "../../playground/examples/lit/package.json",
-  "../../playground/examples/vanilla/index.js",
-  "../../playground/examples/react-toolbar/App.tsx",
-  "../../playground/examples/react-toolbar/Toolbar.tsx",
-  "../../playground/examples/react-toolbar/extension.ts",
-  "../../playground/examples/react-toolbar/use-example-editor.ts"
+  "../../playground/examples/vanilla/index.js"
 ], { as: 'raw', eager: true }) as Record<string, string>
 
 const examples = {
@@ -105,6 +105,24 @@ const examples = {
     "/users.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-user-menu/users.ts']
+    }
+  },
+  "react-toolbar": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-toolbar/App.tsx']
+    },
+    "/Toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-toolbar/Toolbar.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-toolbar/extension.ts']
+    },
+    "/use-example-editor.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-toolbar/use-example-editor.ts']
     }
   },
   "vue-minimal": {
@@ -253,24 +271,6 @@ const examples = {
     "/index.js": {
       "hidden": false,
       "code": modules['../../playground/examples/vanilla/index.js']
-    }
-  },
-  "react-toolbar": {
-    "/App.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/react-toolbar/App.tsx']
-    },
-    "/Toolbar.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/react-toolbar/Toolbar.tsx']
-    },
-    "/extension.ts": {
-      "hidden": false,
-      "code": modules['../../playground/examples/react-toolbar/extension.ts']
-    },
-    "/use-example-editor.ts": {
-      "hidden": false,
-      "code": modules['../../playground/examples/react-toolbar/use-example-editor.ts']
     }
   }
 }

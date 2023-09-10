@@ -1,6 +1,9 @@
 /* eslint-disable */
 
-const modules = import.meta.glob('./icons-css.css', { eager: true, as: 'raw' })
+const modules = import.meta.glob('./icons-css.gen.css', {
+  eager: true,
+  as: 'raw',
+})
 
 const file = modules['./icons-css.css']
 

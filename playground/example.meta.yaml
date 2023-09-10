@@ -61,6 +61,19 @@ examples:
         hidden: false
       - path: use-example-editor.ts
         hidden: false
+  - name: vue-toolbar
+    order: 24
+    files:
+      - path: App.vue
+        hidden: false
+      - path: ToggleButton.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-example-editor.ts
+        hidden: false
   - name: preact-minimal
     order: 31
     files:

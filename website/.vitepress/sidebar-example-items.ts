@@ -27,6 +27,10 @@ export const exampleItems = [
     "link": "/examples/vue-slash-menu"
   },
   {
+    "text": "vue-toolbar",
+    "link": "/examples/vue-toolbar"
+  },
+  {
     "text": "preact-minimal",
     "link": "/examples/preact-minimal"
   },

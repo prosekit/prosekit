@@ -9,11 +9,14 @@ export async function genPlaygroundPages() {
   for (const example of meta.examples) {
     const content = getPageContent(example.name)
     if (content) {
-      vfs.updateText(`playground/pages/${example.name}/index.astro`, content)
+      await vfs.updateText(
+        `playground/pages/${example.name}/index.astro`,
+        content,
+      )
     }
   }
 
-  vfs.updateText(
+  await vfs.updateText(
     'playground/layouts/nav-list.astro',
     getNavList(meta.examples.map((example) => example.name)),
   )

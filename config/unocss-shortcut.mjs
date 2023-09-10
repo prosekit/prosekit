@@ -28,12 +28,12 @@ export const shortcuts = {
   TOGGLE_BUTTON:
     'inline-flex items-center justify-center rounded-md font-medium ring-offset-white transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:text-blue-600 hover:data-[state=on]:text-blue-600 dark:ring-offset-gray-950 dark:hover:bg-gray-800 dark:focus-visible:ring-gray-300 dark:data-[state=on]:text-blue-500 hover:dark:data-[state=on]:text-blue-500 bg-transparent h-10 px-3',
 
-  ICON_ITALIC: 'i-ci:italic',
-  ICON_BOLD: 'i-ci:bold',
-  ICON_H1: 'i-ci:heading-h1',
-  ICON_H2: 'i-ci:heading-h2',
-  ICON_H3: 'i-ci:heading-h3',
-  ICON_H4: 'i-ci:heading-h4',
-  ICON_H5: 'i-ci:heading-h5',
-  ICON_H6: 'i-ci:heading-h6',
+  ICON_ITALIC: 'i-ci-italic',
+  ICON_BOLD: 'i-ci-bold',
+  ICON_H1: 'i-ci-heading-h1',
+  ICON_H2: 'i-ci-heading-h2',
+  ICON_H3: 'i-ci-heading-h3',
+  ICON_H4: 'i-ci-heading-h4',
+  ICON_H5: 'i-ci-heading-h5',
+  ICON_H6: 'i-ci-heading-h6',
 }

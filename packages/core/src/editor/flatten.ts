@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import type { SchemaSpec } from '@prosekit/pm/model'
 
+import { ProseKitError } from '../error'
 import type { StateConfigCallback, ViewProps } from '../types/editor'
 import type { Extension } from '../types/extension'
 import { Priority } from '../types/priority'
@@ -104,7 +105,7 @@ function extractFacets(root: Extension) {
         priorities.push(p)
       }
     } else {
-      throw new Error('Invalid extension')
+      throw new ProseKitError('Invalid extension')
     }
   }
 
@@ -229,7 +230,7 @@ export function updateExtension(
             commandInput = output
             break
           default:
-            throw new Error('Invalid facet')
+            throw new ProseKitError('Invalid facet')
         }
       }
     }

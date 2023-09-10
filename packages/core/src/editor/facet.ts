@@ -139,7 +139,7 @@ export function sortFacets(unsorted: readonly Facet<any, any>[]) {
   }
 
   if (facetCount !== sortedFacets.length) {
-    throw new Error(`Facet has circular dependency`)
+    throw new ProseKitError(`Facet has circular dependency`)
   }
 
   return sortedFacets

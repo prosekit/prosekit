@@ -8,6 +8,7 @@ import {
 } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 
+import { ProseKitError } from '../error'
 import { isMarkActive } from '../utils/is-mark-active'
 import { isNodeActive } from '../utils/is-node-active'
 import { isProseMirrorNode } from '../utils/type-assertion'
@@ -69,7 +70,7 @@ function buildNode(
   const [attrs, children] = normalizeArgs(args)
   const node = type.createAndFill(attrs, flattenChildren(type.schema, children))
   if (!node) {
-    throw new Error(`Couldn't create node ${type.name}`)
+    throw new ProseKitError(`Couldn't create node ${type.name}`)
   }
   return node
 }
@@ -91,7 +92,7 @@ function flattenChildren(
     } else if (isProseMirrorNode(child)) {
       nodes.push(mark ? child.mark(mark.addToSet(child.marks)) : child)
     } else {
-      throw new Error(`Invalid node child: ${typeof child}`)
+      throw new ProseKitError(`Invalid node child: ${typeof child}`)
     }
   }
 

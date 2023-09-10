@@ -2,8 +2,8 @@ import { MarkType, NodeType, Schema, type Attrs } from '@prosekit/pm/model'
 import { EditorState, Plugin, type EditorStateConfig } from '@prosekit/pm/state'
 import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
-import { addDefaultState, defineExtension } from '..'
 import { ProseKitError } from '../error'
+import { addDefaultState } from '../extensions/default-state'
 import { type CommandCreator, type CommandDispatcher } from '../types/command'
 import type {
   Extension,
@@ -22,6 +22,7 @@ import {
   type NodeBuilder,
 } from './builder'
 import { updateExtension, type Inputs, type Slots } from './flatten'
+import { defineExtension } from './type-utils'
 
 /** @public */
 export interface EditorOptions<E extends Extension> {
@@ -81,7 +82,7 @@ class EditorInstance {
       updateExtension(this.inputs, this.slots, extension, 'add')
 
     if (!schemaInput) {
-      throw new Error('Schema must be defined')
+      throw new ProseKitError('Schema must be defined')
     }
     const schema = new Schema(schemaInput)
 
@@ -149,10 +150,10 @@ class EditorInstance {
 
   public mount(place: HTMLElement) {
     if (this.view) {
-      throw new Error('Editor is already mounted')
+      throw new ProseKitError('Editor is already mounted')
     }
     if (!place) {
-      throw new Error("Can't mount editor without a place")
+      throw new ProseKitError("Can't mount editor without a place")
     }
 
     this.view = new EditorView({ mount: place }, this.directEditorProps)
@@ -160,7 +161,7 @@ class EditorInstance {
 
   public unmount() {
     if (!this.view) {
-      throw new Error('Editor is not mounted yet')
+      throw new ProseKitError('Editor is not mounted yet')
     }
 
     this.view.destroy()
@@ -168,7 +169,7 @@ class EditorInstance {
   }
 
   public get assertView(): EditorView {
-    if (!this.view) throw new Error('Editor is not mounted')
+    if (!this.view) throw new ProseKitError('Editor is not mounted')
     return this.view
   }
 

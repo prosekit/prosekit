@@ -1,5 +1,7 @@
 import { ProseMirrorFragment, ProseMirrorNode } from '@prosekit/pm/model'
 
+import { ProseKitError } from '../error'
+
 export type NodeContent = ProseMirrorNode | ProseMirrorFragment | NodeContent[]
 
 export function collectNodes(content: NodeContent): ProseMirrorNode[] {
@@ -16,5 +18,5 @@ export function collectNodes(content: NodeContent): ProseMirrorNode[] {
     }
     return nodes
   }
-  throw new Error(`Invalid node content: ${typeof content}`)
+  throw new ProseKitError(`Invalid node content: ${typeof content}`)
 }

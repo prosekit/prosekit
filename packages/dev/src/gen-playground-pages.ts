@@ -1,12 +1,13 @@
-import { basename } from 'path'
-import { fileURLToPath } from 'url'
+import { basename } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
 import { readExampleMeta } from './example-meta'
 import { vfs } from './virtual-file-system'
 
 export async function genPlaygroundPages() {
   const meta = await readExampleMeta()
   for (const example of meta.examples) {
-    let content = getPageContent(example.name)
+    const content = getPageContent(example.name)
     if (content) {
       vfs.updateText(`playground/pages/${example.name}/index.astro`, content)
     }
@@ -19,8 +20,8 @@ export async function genPlaygroundPages() {
 }
 
 function getPageContent(name: string): string | null {
-  let framework = name.split('-')[0]
-  let ext = {
+  const framework = name.split('-')[0]
+  const ext = {
     react: 'tsx',
     preact: 'tsx',
     solid: 'tsx',
@@ -48,7 +49,7 @@ import App from '../../examples/${name}/App.${ext}'
 }
 
 function getNavList(names: string[]): string {
-  let lines = [
+  const lines = [
     `---`,
     `// This file is generated from ${currentFilename}`,
     `import NavItem from './nav-item.astro'`,
@@ -57,7 +58,7 @@ function getNavList(names: string[]): string {
 
   let prevFramework = ''
 
-  for (let name of names) {
+  for (const name of names) {
     const framework = name.split('-')[0]
     if (framework !== prevFramework) {
       prevFramework = framework

@@ -44,7 +44,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@lit-labs/react": "^2.0.2",
+    "@lit-labs/react": "^2.0.3",
     "@prosekit/core": "^0.0.10",
     "@prosekit/lit": "^0.0.13"
   },

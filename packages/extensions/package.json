@@ -52,7 +52,7 @@
     "@prosekit/core": "^0.0.10",
     "@prosekit/pm": "^0.0.5",
     "highlight.js": "^11.8.0",
-    "prosemirror-flat-list": "^0.4.1",
+    "prosemirror-flat-list": "^0.4.2",
     "prosemirror-highlightjs": "^0.9.1"
   },
   "devDependencies": {

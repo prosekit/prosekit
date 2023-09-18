@@ -44,7 +44,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.5.2",
+    "@floating-ui/dom": "^1.5.3",
     "@lit-labs/context": "^0.4.1",
     "@lit/reactive-element": "^1.6.3",
     "@prosekit/core": "^0.0.10",

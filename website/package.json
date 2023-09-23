@@ -15,11 +15,11 @@
     "@iconify-json/ci": "^1.1.10",
     "@iconify-json/logos": "^1.1.37",
     "@prosekit/dev": "*",
-    "@types/react": "^18.2.21",
+    "@types/react": "^18.2.22",
     "@types/react-dom": "^18.2.7",
-    "@unocss/cli": "^0.55.7",
+    "@unocss/cli": "^0.56.1",
     "clsx": "^2.0.0",
-    "postcss": "^8.4.29",
+    "postcss": "^8.4.30",
     "prettier": "^3.0.3",
     "prosekit": "^0.0.18",
     "react": "^18.2.0",
@@ -32,9 +32,9 @@
     "typedoc-plugin-markdown": "^4.0.0-next.20",
     "typedoc-plugin-mdn-links": "^3.1.0",
     "typescript": "^5.2.2",
-    "unocss": "^0.55.7",
+    "unocss": "^0.56.1",
     "vite": "^4.4.9",
-    "vitepress": "1.0.0-rc.14",
+    "vitepress": "1.0.0-rc.17",
     "vue": "^3.3.4"
   }
 }

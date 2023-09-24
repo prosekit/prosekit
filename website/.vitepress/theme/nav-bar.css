@@ -1,0 +1,19 @@
+@media (min-width: 960px) {
+  body:not(.scrolled) .Layout .VPNavBar.has-sidebar .curtain::before {
+    opacity: 0;
+  }
+
+  body.scrolled .Layout .VPNavBar.has-sidebar .curtain::before {
+    opacity: 1;
+  }
+
+  body .Layout .VPNavBar.has-sidebar .curtain::before {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: var(--vp-c-divider);
+    width: 100%;
+    max-width: calc(var(--vp-layout-max-width) - var(--vp-sidebar-width));
+    background: transparent;
+    transition: opacity 0.2s;
+  }
+}

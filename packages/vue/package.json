@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/vue",
   "type": "module",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -44,8 +44,8 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/core": "^0.0.10",
-    "@prosekit/lit": "^0.0.13"
+    "@prosekit/core": "^0.0.11",
+    "@prosekit/lit": "^0.0.14"
   },
   "peerDependencies": {
     "vue": ">= 3.0.0"

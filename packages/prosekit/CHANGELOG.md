@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.19
+
+### Patch Changes
+
+- [55a3c42] **prosekit/basic** **prosekit/core** **prosekit/pm**
+
+  Add history plugin and undo, redo commands.
+
 ## 0.0.18
 
 ### Patch Changes

@@ -132,6 +132,10 @@
     "path": "packages/prosekit/dist/prosekit-pm-commands.js"
   },
   {
+    "name": "prosekit/pm/history",
+    "path": "packages/prosekit/dist/prosekit-pm-history.js"
+  },
+  {
     "name": "prosekit/pm/inputrules",
     "path": "packages/prosekit/dist/prosekit-pm-inputrules.js"
   },

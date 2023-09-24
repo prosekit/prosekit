@@ -27,6 +27,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./commands": "./src/commands.ts",
+    "./history": "./src/history.ts",
     "./inputrules": "./src/inputrules.ts",
     "./keymap": "./src/keymap.ts",
     "./model": "./src/model.ts",
@@ -44,6 +45,7 @@
   },
   "dependencies": {
     "prosemirror-commands": "^1.5.2",
+    "prosemirror-history": "^1.3.2",
     "prosemirror-inputrules": "^1.2.1",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-model": "^1.19.3",
@@ -68,6 +70,11 @@
         "types": "./dist/prosekit-pm-commands.d.ts",
         "import": "./dist/prosekit-pm-commands.js",
         "default": "./dist/prosekit-pm-commands.js"
+      },
+      "./history": {
+        "types": "./dist/prosekit-pm-history.d.ts",
+        "import": "./dist/prosekit-pm-history.js",
+        "default": "./dist/prosekit-pm-history.js"
       },
       "./inputrules": {
         "types": "./dist/prosekit-pm-inputrules.d.ts",
@@ -113,6 +120,9 @@
         ],
         "commands": [
           "./dist/prosekit-pm-commands.d.ts"
+        ],
+        "history": [
+          "./dist/prosekit-pm-history.d.ts"
         ],
         "inputrules": [
           "./dist/prosekit-pm-inputrules.d.ts"

@@ -30,6 +30,7 @@
     "./src/lit/components/combo-box.gen.ts",
     "./src/pm.gen.ts",
     "./src/pm/commands.gen.ts",
+    "./src/pm/history.gen.ts",
     "./src/pm/inputrules.gen.ts",
     "./src/pm/keymap.gen.ts",
     "./src/pm/model.gen.ts",

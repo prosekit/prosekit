@@ -36,4 +36,6 @@ export const shortcuts = {
   ICON_H4: 'i-ci-heading-h4',
   ICON_H5: 'i-ci-heading-h5',
   ICON_H6: 'i-ci-heading-h6',
+  ICON_UNDO: 'i-ci-arrow-undo-up-left',
+  ICON_REDO: 'i-ci-arrow-undo-up-right',
 }

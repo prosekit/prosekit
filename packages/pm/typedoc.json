@@ -3,6 +3,7 @@
   "extends": ["../../config/typedoc-base.json"],
   "entryPoints": [
     "./src/commands.ts",
+    "./src/history.ts",
     "./src/index.ts",
     "./src/inputrules.ts",
     "./src/keymap.ts",

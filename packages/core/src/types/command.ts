@@ -1,8 +1,9 @@
 import type { Command } from '@prosekit/pm/state'
 
-export type CommandDispatcher<Args extends any[] = any[]> = (
-  ...arg: Args
-) => boolean
+export interface CommandApplier<Args extends any[] = any[]> {
+  (...args: Args): boolean
+  canApply(...args: Args): boolean
+}
 
 export type CommandCreator<Args extends any[] = any[]> = (
   ...arg: Args
@@ -25,6 +26,6 @@ export type ToCommandCreators<T extends CommandArgs> = {
   [K in keyof T]: CommandCreator<T[K]>
 }
 
-export type ToCommandDispatcher<T extends CommandArgs> = {
-  [K in keyof T]: CommandDispatcher<T[K]>
+export type ToCommandApplier<T extends CommandArgs> = {
+  [K in keyof T]: CommandApplier<T[K]>
 }

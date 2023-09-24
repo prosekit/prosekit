@@ -13,6 +13,7 @@ export {
 } from './extensions/default-state'
 export { addDoc } from './extensions/doc'
 export { addEventHandler } from './extensions/event-handler'
+export { addHistory } from './extensions/history'
 export { addInputRule } from './extensions/input-rules'
 export { addBaseKeymap, addKeymap, type Keymap } from './extensions/keymap'
 export { addMarkSpec, type MarkSpecOptions } from './extensions/mark-spec'
@@ -29,8 +30,8 @@ export { type CommandArgs as CommandArgs } from './types/command'
 export * from './types/editor'
 export {
   type Extension,
+  type ExtractCommandAppliers,
   type ExtractCommandCreators,
-  type ExtractCommandDispatchers,
   type ExtractMarks,
   type ExtractNodes,
   type SimplifyExtension,

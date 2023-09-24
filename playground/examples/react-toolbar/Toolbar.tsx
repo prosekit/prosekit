@@ -8,6 +8,20 @@ export default function Toolbar() {
   return (
     <div>
       <ToggleButton
+        active={editor.commands.undo.canApply()}
+        onChange={editor.commands.undo}
+      >
+        <div className="ICON_UNDO" />
+      </ToggleButton>
+
+      <ToggleButton
+        active={editor.commands.redo.canApply()}
+        onChange={editor.commands.redo}
+      >
+        <div className="ICON_REDO" />
+      </ToggleButton>
+
+      <ToggleButton
         active={editor.marks.italic.isActive()}
         onChange={editor.commands.toggleItalic}
       >

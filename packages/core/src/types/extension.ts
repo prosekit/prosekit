@@ -1,4 +1,4 @@
-import type { ToCommandCreators, ToCommandDispatcher } from './command'
+import type { ToCommandApplier, ToCommandCreators } from './command'
 import type { ExceptEmptyValue } from './except-empty-value'
 import type {
   ExtensionTyping,
@@ -55,8 +55,9 @@ export type ExtractCommandCreators<E extends Extension> = ToCommandCreators<
 /**
  * @public
  */
-export type ExtractCommandDispatchers<E extends Extension> =
-  ToCommandDispatcher<ExtractCommandArgs<E>>
+export type ExtractCommandAppliers<E extends Extension> = ToCommandApplier<
+  ExtractCommandArgs<E>
+>
 
 /**
  * @internal

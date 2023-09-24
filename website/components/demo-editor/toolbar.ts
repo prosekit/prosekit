@@ -11,6 +11,22 @@ export const Toolbar = defineComponent(() => {
       h(
         ToggleButton,
         {
+          active: editor.value.commands.undo.canApply(),
+          onChange: () => editor.value.commands.undo(),
+        },
+        h('div', { class: 'ICON_UNDO' }),
+      ),
+      h(
+        ToggleButton,
+        {
+          active: editor.value.commands.redo.canApply(),
+          onChange: () => editor.value.commands.redo(),
+        },
+        h('div', { class: 'ICON_REDO' }),
+      ),
+      h(
+        ToggleButton,
+        {
           active: editor.value.marks.italic.isActive(),
           onChange: () => editor.value.commands.toggleItalic(),
         },

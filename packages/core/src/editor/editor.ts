@@ -4,10 +4,10 @@ import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
 import { addDefaultState } from '../extensions/default-state'
-import { type CommandCreator, type CommandDispatcher } from '../types/command'
+import { type CommandApplier, type CommandCreator } from '../types/command'
 import type {
   Extension,
-  ExtractCommandDispatchers,
+  ExtractCommandAppliers,
   ExtractMarks,
   ExtractNodes,
 } from '../types/extension'
@@ -66,7 +66,7 @@ export function createEditor<E extends Extension>({
 class EditorInstance {
   view: EditorView | null = null
   schema: Schema
-  commandDispatchers: Record<string, CommandDispatcher> = {}
+  commandAppliers: Record<string, CommandApplier> = {}
 
   private inputs: Inputs = []
   private slots: Slots = []
@@ -191,18 +191,35 @@ class EditorInstance {
     view.setProps({ state: newState })
   }
 
-  public addCommand(name: string, commandCreator: CommandCreator): void {
-    const dispatcher: CommandDispatcher = <T extends any[]>(...args: T) => {
-      const view = this.assertView
+  public addCommand<Args extends any[] = any[]>(
+    name: string,
+    commandCreator: CommandCreator<Args>,
+  ): void {
+    const applier: CommandApplier<Args> = (...args: Args) => {
+      const view = this.view
+      if (!view) {
+        return false
+      }
+
       const command = commandCreator(...args)
-      // TODO: how to not pass dispatch
       return command(view.state, view.dispatch.bind(view), view)
     }
-    this.commandDispatchers[name] = dispatcher
+
+    applier.canApply = (...args: Args) => {
+      const view = this.view
+      if (!view) {
+        return false
+      }
+
+      const command = commandCreator(...args)
+      return command(view.state, undefined, view)
+    }
+
+    this.commandAppliers[name] = applier as CommandApplier
   }
 
   public removeCommand(name: string) {
-    delete this.commandDispatchers[name]
+    delete this.commandAppliers[name]
   }
 }
 
@@ -239,8 +256,8 @@ export class Editor<E extends Extension = any> {
     return this.instance.schema
   }
 
-  get commands(): ExtractCommandDispatchers<E> {
-    return this.instance.commandDispatchers as ExtractCommandDispatchers<E>
+  get commands(): ExtractCommandAppliers<E> {
+    return this.instance.commandAppliers as ExtractCommandAppliers<E>
   }
 
   mount(place: HTMLElement | null | undefined | void): void {

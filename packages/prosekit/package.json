@@ -58,6 +58,7 @@
     "./lit/components/combo-box-list": "./src/lit/components/combo-box-list.gen.ts",
     "./pm": "./src/pm.gen.ts",
     "./pm/commands": "./src/pm/commands.gen.ts",
+    "./pm/history": "./src/pm/history.gen.ts",
     "./pm/inputrules": "./src/pm/inputrules.gen.ts",
     "./pm/keymap": "./src/pm/keymap.gen.ts",
     "./pm/model": "./src/pm/model.gen.ts",
@@ -333,6 +334,11 @@
         "types": "./dist/prosekit-pm-commands.d.ts",
         "import": "./dist/prosekit-pm-commands.js",
         "default": "./dist/prosekit-pm-commands.js"
+      },
+      "./pm/history": {
+        "types": "./dist/prosekit-pm-history.d.ts",
+        "import": "./dist/prosekit-pm-history.js",
+        "default": "./dist/prosekit-pm-history.js"
       },
       "./pm/inputrules": {
         "types": "./dist/prosekit-pm-inputrules.d.ts",
@@ -711,6 +717,9 @@
         ],
         "pm/commands": [
           "./dist/prosekit-pm-commands.d.ts"
+        ],
+        "pm/history": [
+          "./dist/prosekit-pm-history.d.ts"
         ],
         "pm/inputrules": [
           "./dist/prosekit-pm-inputrules.d.ts"

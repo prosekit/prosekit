@@ -1,11 +1,12 @@
 import {
-  addBaseKeymap,
+  Priority,
   addBaseCommands,
+  addBaseKeymap,
   addDoc,
+  addHistory,
   addParagraph,
   addText,
   defineExtension,
-  Priority,
   withPriority,
 } from '@prosekit/core'
 import { addBold } from '@prosekit/extensions/bold'
@@ -19,6 +20,7 @@ export function addBasicExtension() {
     addDoc(),
     addText(),
     addHeading(),
+    addHistory(),
     addList(),
     addBaseKeymap(),
     addBaseCommands(),

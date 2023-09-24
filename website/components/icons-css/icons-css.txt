@@ -1,5 +1,7 @@
 This file is generated from gen-icons-css.ts
 
+i-ci-arrow-undo-up-left
+i-ci-arrow-undo-up-right
 i-ci-bold
 i-ci-heading-h1
 i-ci-heading-h2

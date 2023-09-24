@@ -8,6 +8,20 @@ const editor = useExampleEditorRef()
 <template>
   <div>
     <ToggleButton
+      :active="editor.commands.undo.canApply()"
+      @change="() => editor.commands.undo()"
+    >
+      <div className="ICON_UNDO" />
+    </ToggleButton>
+
+    <ToggleButton
+      :active="editor.commands.redo.canApply()"
+      @change="() => editor.commands.redo()"
+    >
+      <div className="ICON_REDO" />
+    </ToggleButton>
+
+    <ToggleButton
       :active="editor.marks.italic.isActive()"
       @change="() => editor.commands.toggleItalic()"
     >

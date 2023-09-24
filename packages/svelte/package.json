@@ -88,13 +88,13 @@
   "devDependencies": {
     "@prosekit/dev": "*",
     "@sveltejs/package": "^2.2.2",
-    "@types/node": "^18.17.17",
+    "@types/node": "^18.17.19",
     "read-pkg": "^8.1.0",
-    "svelte": "^4.2.0",
-    "svelte-check": "^3.5.1",
+    "svelte": "^4.2.1",
+    "svelte-check": "^3.5.2",
     "tsx": "^3.12.10",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.4"
+    "vitest": "^0.34.5"
   },
   "publishConfig": {
     "exports": {

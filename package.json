@@ -31,9 +31,9 @@
     "@ocavue/eslint-config": "^1.2.3",
     "@size-limit/esbuild-why": "^8.2.6",
     "@size-limit/preset-small-lib": "^8.2.6",
-    "@vitest/coverage-istanbul": "^0.34.4",
+    "@vitest/coverage-istanbul": "^0.34.5",
     "cross-env": "^7.0.3",
-    "eslint": "^8.49.0",
+    "eslint": "^8.50.0",
     "jsdom": "^22.1.0",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.0",
@@ -42,8 +42,8 @@
     "size-limit": "^8.2.6",
     "turbo": "^1.10.14",
     "typescript": "^5.2.2",
-    "unocss": "^0.55.7",
-    "vitest": "^0.34.4"
+    "unocss": "^0.56.1",
+    "vitest": "^0.34.5"
   },
   "pnpm": {
     "overrides": {

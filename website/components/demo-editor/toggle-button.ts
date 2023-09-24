@@ -1,16 +1,18 @@
-import { h, defineComponent } from 'vue'
+import { defineComponent, h } from 'vue'
 
 export const ToggleButton = defineComponent({
   props: {
     active: Boolean,
+    available: Boolean,
     onChange: Function,
   },
   setup(props, { slots }) {
     return () =>
       h(
-        'div',
+        'button',
         {
           class: 'TOGGLE_BUTTON',
+          disabled: !props.available,
           'data-state': props.active ? 'on' : 'off',
           onClick: props.onChange,
           onMousedown: (event: MouseEvent) => event.preventDefault(),

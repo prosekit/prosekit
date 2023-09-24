@@ -36,7 +36,7 @@ You can use the following extensions to add more features to the editor. All oth
 - `addPlugin` registers a [plugin] into the editor.
 - `addNodeView` registers a [node view] into the editor.
 - `addInputRule` configures an [input rule] into the editor.
-- `addHistory` allows the editor to undo/redo. 
+- `addHistory` allows the editor to undo/redo.
 
 ## Vital Node Types
 

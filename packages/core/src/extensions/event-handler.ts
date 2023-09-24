@@ -23,6 +23,9 @@ const eventFacet = Facet.define<EventFacetInput, EventFacetOutput>({
     const plugin = new ProseMirrorPlugin({
       key: pluginKey,
       view: () => {
+        // Do a first update to ensure the editor is in sync with the view
+        updateHandlers.forEach((fn) => fn())
+
         return {
           update: (_view, _prevState) => {
             updateHandlers.forEach((fn) => fn())

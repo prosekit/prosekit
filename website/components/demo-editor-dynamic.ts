@@ -16,7 +16,7 @@ export const DemoEditor = defineComponent(() => {
       'div',
       {
         class: clsx(
-          'w-full flex flex-col items-center p-4',
+          'flex w-full flex-col items-center p-4',
           isDark.value ? 'dark' : null,
         ),
       },

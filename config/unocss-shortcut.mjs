@@ -1,34 +1,47 @@
 // @unocss-include
 
+function clsx(s) {
+  return s
+}
+
 export const shortcuts = {
-  EDITOR_CONTENT:
-    'h-[250px] box-border w-full overflow-auto rounded-md p-4 outline outline-2 relative',
+  EDITOR_CONTENT: clsx(
+    'relative box-border h-[250px] w-full overflow-auto rounded-md p-4 outline outline-2',
+  ),
 
-  SLASH_MENU:
-    'relative max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap rounded bg-white dark:bg-zinc-800 border border-solid border-gray-500',
+  SLASH_MENU: clsx(
+    'relative max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap rounded border border-solid border-gray-500 bg-white dark:bg-zinc-800',
+  ),
 
-  SLASH_MENU_ITEM:
+  SLASH_MENU_ITEM: clsx(
     'relative min-w-[64px] cursor-default select-none whitespace-nowrap p-2 data-[selected]:bg-gray-200 data-[selected]:dark:bg-gray-700',
+  ),
 
-  LANGUAGE_BUTTON:
-    'rounded-md text-xs px-2 py-0.5 bg-transparent hover:bg-gray-500/30 border-none text-gray-400 outline-none cursor-pointer box-border m-2',
+  LANGUAGE_BUTTON: clsx(
+    'm-2 box-border cursor-pointer rounded-md border-none bg-transparent px-2 py-0.5 text-xs text-gray-400 outline-none hover:bg-gray-500/30',
+  ),
 
-  LANGUAGE_COMBO_BOX:
-    'flex flex-col overflow-hidden rounded-md  bg-white dark:bg-zinc-800 rounded-md   shadow-lg border border-solid border-gray-200 divide-y divide-y-1 divide-gray-200 box-border w-50',
+  LANGUAGE_COMBO_BOX: clsx(
+    'divide-y-1 w-50 box-border flex flex-col divide-y divide-gray-200 overflow-hidden rounded-md rounded-md border border-solid border-gray-200 bg-white shadow-lg dark:bg-zinc-800',
+  ),
 
-  LANGUAGE_COMBO_BOX_INPUT:
-    'flex h-8 w-full rounded-md bg-transparent text-sm [&_input]:outline-none [&_input]:border-none disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2',
+  LANGUAGE_COMBO_BOX_INPUT: clsx(
+    'flex h-8 w-full rounded-md bg-transparent px-4 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-50 [&_input]:border-none [&_input]:outline-none',
+  ),
 
-  LANGUAGE_COMBO_BOX_LIST:
-    'max-h-[300px] overflow-y-auto overflow-x-hidden border-solid border-0 px-1 py-2 flex flex-col',
+  LANGUAGE_COMBO_BOX_LIST: clsx(
+    'flex max-h-[300px] flex-col overflow-y-auto overflow-x-hidden border-0 border-solid px-1 py-2',
+  ),
 
-  LANGUAGE_COMBO_BOX_ITEM:
+  LANGUAGE_COMBO_BOX_ITEM: clsx(
     'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-gray-100 aria-selected:text-gray-900',
+  ),
 
-  TOOLBAR: 'grid my-2 auto-cols-max grid-flow-col gap-1',
+  TOOLBAR: clsx('my-2 grid auto-cols-max grid-flow-col gap-1'),
 
-  TOGGLE_BUTTON:
-    'inline-flex items-center justify-center rounded-md font-medium transition-colors hover:bg-gray-100 outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:text-blue-600 hover:data-[state=on]:text-blue-600 dark:hover:bg-gray-800 dark:focus-visible:ring-gray-300 dark:data-[state=on]:text-blue-500 hover:dark:data-[state=on]:text-blue-500 bg-transparent h-11 w-11 text-lg',
+  TOGGLE_BUTTON: clsx(
+    'inline-flex h-11 w-11 items-center justify-center rounded-md bg-transparent text-lg font-medium outline-none transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:text-blue-600 hover:data-[state=on]:text-blue-600 dark:hover:bg-gray-800 dark:focus-visible:ring-gray-300 dark:data-[state=on]:text-blue-500 hover:dark:data-[state=on]:text-blue-500',
+  ),
 
   ICON_ITALIC: 'i-ci-italic',
   ICON_BOLD: 'i-ci-bold',

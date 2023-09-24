@@ -15,6 +15,7 @@ const modules = import.meta.glob([
   "../../playground/examples/react-user-menu/tags.ts",
   "../../playground/examples/react-user-menu/users.ts",
   "../../playground/examples/react-toolbar/App.tsx",
+  "../../playground/examples/react-toolbar/ToggleButton.tsx",
   "../../playground/examples/react-toolbar/Toolbar.tsx",
   "../../playground/examples/react-toolbar/extension.ts",
   "../../playground/examples/react-toolbar/use-example-editor.ts",
@@ -116,6 +117,10 @@ const examples = {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-toolbar/App.tsx']
+    },
+    "/ToggleButton.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-toolbar/ToggleButton.tsx']
     },
     "/Toolbar.tsx": {
       "hidden": false,

@@ -1,4 +1,12 @@
-import DefaultTheme from 'vitepress/theme'
 import 'virtual:uno.css'
 
-export default DefaultTheme
+import './nav-bar.css'
+
+import DefaultTheme from 'vitepress/theme'
+
+import { CustomLayout } from './custom-layout'
+
+export default {
+  ...DefaultTheme,
+  Layout: CustomLayout,
+}

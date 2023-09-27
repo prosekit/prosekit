@@ -51,13 +51,12 @@
   "cleanOutputDir": true,
 
   // https://github.com/tgreyuk/typedoc-plugin-markdown/tree/next/packages/typedoc-plugin-markdown#readme
-  "skipIndexPage": true,
   "hideBreadcrumbs": true,
   "hideInPageTOC": true,
   "hidePageHeader": true,
   "titleTemplate": "{name}",
   "entryFileName": "index.md",
-  "identifiersAsCodeBlocks": true,
+  "useCodeBlocks": true,
   "excludeGroups": true,
   "typeDeclarationFormat": "table",
   "enumMembersFormat": "table",

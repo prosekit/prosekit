@@ -4,70 +4,70 @@
 export const referenceItems = [
   {
     "text": "pm",
-    "link": "/references/prosekit_pm"
+    "link": "/references/pm"
   },
   {
     "text": "basic",
-    "link": "/references/prosekit_basic"
+    "link": "/references/basic"
   },
   {
     "text": "core",
-    "link": "/references/prosekit_core"
+    "link": "/references/core"
   },
   {
     "text": "extensions",
     "items": [
       {
         "text": "autocomplete",
-        "link": "/references/prosekit_extensions_autocomplete"
+        "link": "/references/extensions/autocomplete"
       },
       {
         "text": "blockquote",
-        "link": "/references/prosekit_extensions_blockquote"
+        "link": "/references/extensions/blockquote"
       },
       {
         "text": "bold",
-        "link": "/references/prosekit_extensions_bold"
+        "link": "/references/extensions/bold"
       },
       {
         "text": "code",
-        "link": "/references/prosekit_extensions_code"
+        "link": "/references/extensions/code"
       },
       {
         "text": "code-block",
-        "link": "/references/prosekit_extensions_code_block"
+        "link": "/references/extensions/code-block"
       },
       {
         "text": "heading",
-        "link": "/references/prosekit_extensions_heading"
+        "link": "/references/extensions/heading"
       },
       {
         "text": "italic",
-        "link": "/references/prosekit_extensions_italic"
+        "link": "/references/extensions/italic"
       },
       {
         "text": "link",
-        "link": "/references/prosekit_extensions_link"
+        "link": "/references/extensions/link"
       },
       {
         "text": "list",
-        "link": "/references/prosekit_extensions_list"
+        "link": "/references/extensions/list"
       },
       {
         "text": "mention",
-        "link": "/references/prosekit_extensions_mention"
+        "link": "/references/extensions/mention"
       },
       {
         "text": "placeholder",
-        "link": "/references/prosekit_extensions_placeholder"
+        "link": "/references/extensions/placeholder"
       },
       {
         "text": "suggestion",
-        "link": "/references/prosekit_extensions_suggestion"
+        "link": "/references/extensions/suggestion"
       }
     ],
     "collapsed": false,
-    "link": "/references/prosekit_extensions"
+    "link": "/references/extensions"
   },
   {
     "text": "lit",
@@ -77,46 +77,46 @@ export const referenceItems = [
         "items": [
           {
             "text": "autocomplete-empty",
-            "link": "/references/prosekit_lit_components_autocomplete_empty"
+            "link": "/references/lit/components/autocomplete-empty"
           },
           {
             "text": "autocomplete-item",
-            "link": "/references/prosekit_lit_components_autocomplete_item"
+            "link": "/references/lit/components/autocomplete-item"
           },
           {
             "text": "autocomplete-list",
-            "link": "/references/prosekit_lit_components_autocomplete_list"
+            "link": "/references/lit/components/autocomplete-list"
           },
           {
             "text": "autocomplete-popover",
-            "link": "/references/prosekit_lit_components_autocomplete_popover"
+            "link": "/references/lit/components/autocomplete-popover"
           },
           {
             "text": "code-block-popover",
-            "link": "/references/prosekit_lit_components_code_block_popover"
+            "link": "/references/lit/components/code-block-popover"
           },
           {
             "text": "combo-box",
-            "link": "/references/prosekit_lit_components_combo_box"
+            "link": "/references/lit/components/combo-box"
           },
           {
             "text": "combo-box-input",
-            "link": "/references/prosekit_lit_components_combo_box_input"
+            "link": "/references/lit/components/combo-box-input"
           },
           {
             "text": "combo-box-item",
-            "link": "/references/prosekit_lit_components_combo_box_item"
+            "link": "/references/lit/components/combo-box-item"
           },
           {
             "text": "combo-box-list",
-            "link": "/references/prosekit_lit_components_combo_box_list"
+            "link": "/references/lit/components/combo-box-list"
           }
         ],
         "collapsed": true
       }
     ],
     "collapsed": false,
-    "link": "/references/prosekit_lit"
+    "link": "/references/lit"
   },
   {
     "text": "preact",
@@ -126,46 +126,46 @@ export const referenceItems = [
         "items": [
           {
             "text": "autocomplete-empty",
-            "link": "/references/prosekit_preact_components_autocomplete_empty"
+            "link": "/references/preact/components/autocomplete-empty"
           },
           {
             "text": "autocomplete-item",
-            "link": "/references/prosekit_preact_components_autocomplete_item"
+            "link": "/references/preact/components/autocomplete-item"
           },
           {
             "text": "autocomplete-list",
-            "link": "/references/prosekit_preact_components_autocomplete_list"
+            "link": "/references/preact/components/autocomplete-list"
           },
           {
             "text": "autocomplete-popover",
-            "link": "/references/prosekit_preact_components_autocomplete_popover"
+            "link": "/references/preact/components/autocomplete-popover"
           },
           {
             "text": "code-block-popover",
-            "link": "/references/prosekit_preact_components_code_block_popover"
+            "link": "/references/preact/components/code-block-popover"
           },
           {
             "text": "combo-box",
-            "link": "/references/prosekit_preact_components_combo_box"
+            "link": "/references/preact/components/combo-box"
           },
           {
             "text": "combo-box-input",
-            "link": "/references/prosekit_preact_components_combo_box_input"
+            "link": "/references/preact/components/combo-box-input"
           },
           {
             "text": "combo-box-item",
-            "link": "/references/prosekit_preact_components_combo_box_item"
+            "link": "/references/preact/components/combo-box-item"
           },
           {
             "text": "combo-box-list",
-            "link": "/references/prosekit_preact_components_combo_box_list"
+            "link": "/references/preact/components/combo-box-list"
           }
         ],
         "collapsed": true
       }
     ],
     "collapsed": false,
-    "link": "/references/prosekit_preact"
+    "link": "/references/preact"
   },
   {
     "text": "react",
@@ -175,46 +175,46 @@ export const referenceItems = [
         "items": [
           {
             "text": "autocomplete-empty",
-            "link": "/references/prosekit_react_components_autocomplete_empty"
+            "link": "/references/react/components/autocomplete-empty"
           },
           {
             "text": "autocomplete-item",
-            "link": "/references/prosekit_react_components_autocomplete_item"
+            "link": "/references/react/components/autocomplete-item"
           },
           {
             "text": "autocomplete-list",
-            "link": "/references/prosekit_react_components_autocomplete_list"
+            "link": "/references/react/components/autocomplete-list"
           },
           {
             "text": "autocomplete-popover",
-            "link": "/references/prosekit_react_components_autocomplete_popover"
+            "link": "/references/react/components/autocomplete-popover"
           },
           {
             "text": "code-block-popover",
-            "link": "/references/prosekit_react_components_code_block_popover"
+            "link": "/references/react/components/code-block-popover"
           },
           {
             "text": "combo-box",
-            "link": "/references/prosekit_react_components_combo_box"
+            "link": "/references/react/components/combo-box"
           },
           {
             "text": "combo-box-input",
-            "link": "/references/prosekit_react_components_combo_box_input"
+            "link": "/references/react/components/combo-box-input"
           },
           {
             "text": "combo-box-item",
-            "link": "/references/prosekit_react_components_combo_box_item"
+            "link": "/references/react/components/combo-box-item"
           },
           {
             "text": "combo-box-list",
-            "link": "/references/prosekit_react_components_combo_box_list"
+            "link": "/references/react/components/combo-box-list"
           }
         ],
         "collapsed": true
       }
     ],
     "collapsed": false,
-    "link": "/references/prosekit_react"
+    "link": "/references/react"
   },
   {
     "text": "solid",
@@ -224,46 +224,46 @@ export const referenceItems = [
         "items": [
           {
             "text": "autocomplete-empty",
-            "link": "/references/prosekit_solid_components_autocomplete_empty"
+            "link": "/references/solid/components/autocomplete-empty"
           },
           {
             "text": "autocomplete-item",
-            "link": "/references/prosekit_solid_components_autocomplete_item"
+            "link": "/references/solid/components/autocomplete-item"
           },
           {
             "text": "autocomplete-list",
-            "link": "/references/prosekit_solid_components_autocomplete_list"
+            "link": "/references/solid/components/autocomplete-list"
           },
           {
             "text": "autocomplete-popover",
-            "link": "/references/prosekit_solid_components_autocomplete_popover"
+            "link": "/references/solid/components/autocomplete-popover"
           },
           {
             "text": "code-block-popover",
-            "link": "/references/prosekit_solid_components_code_block_popover"
+            "link": "/references/solid/components/code-block-popover"
           },
           {
             "text": "combo-box",
-            "link": "/references/prosekit_solid_components_combo_box"
+            "link": "/references/solid/components/combo-box"
           },
           {
             "text": "combo-box-input",
-            "link": "/references/prosekit_solid_components_combo_box_input"
+            "link": "/references/solid/components/combo-box-input"
           },
           {
             "text": "combo-box-item",
-            "link": "/references/prosekit_solid_components_combo_box_item"
+            "link": "/references/solid/components/combo-box-item"
           },
           {
             "text": "combo-box-list",
-            "link": "/references/prosekit_solid_components_combo_box_list"
+            "link": "/references/solid/components/combo-box-list"
           }
         ],
         "collapsed": true
       }
     ],
     "collapsed": false,
-    "link": "/references/prosekit_solid"
+    "link": "/references/solid"
   },
   {
     "text": "svelte",
@@ -273,50 +273,50 @@ export const referenceItems = [
         "items": [
           {
             "text": "autocomplete-empty",
-            "link": "/references/prosekit_svelte_components_autocomplete_empty"
+            "link": "/references/svelte/components/autocomplete-empty"
           },
           {
             "text": "autocomplete-item",
-            "link": "/references/prosekit_svelte_components_autocomplete_item"
+            "link": "/references/svelte/components/autocomplete-item"
           },
           {
             "text": "autocomplete-list",
-            "link": "/references/prosekit_svelte_components_autocomplete_list"
+            "link": "/references/svelte/components/autocomplete-list"
           },
           {
             "text": "autocomplete-popover",
-            "link": "/references/prosekit_svelte_components_autocomplete_popover"
+            "link": "/references/svelte/components/autocomplete-popover"
           },
           {
             "text": "code-block-popover",
-            "link": "/references/prosekit_svelte_components_code_block_popover"
+            "link": "/references/svelte/components/code-block-popover"
           },
           {
             "text": "combo-box",
-            "link": "/references/prosekit_svelte_components_combo_box"
+            "link": "/references/svelte/components/combo-box"
           },
           {
             "text": "combo-box-input",
-            "link": "/references/prosekit_svelte_components_combo_box_input"
+            "link": "/references/svelte/components/combo-box-input"
           },
           {
             "text": "combo-box-item",
-            "link": "/references/prosekit_svelte_components_combo_box_item"
+            "link": "/references/svelte/components/combo-box-item"
           },
           {
             "text": "combo-box-list",
-            "link": "/references/prosekit_svelte_components_combo_box_list"
+            "link": "/references/svelte/components/combo-box-list"
           },
           {
             "text": "prosekit",
-            "link": "/references/prosekit_svelte_components_prosekit"
+            "link": "/references/svelte/components/prosekit"
           }
         ],
         "collapsed": true
       }
     ],
     "collapsed": false,
-    "link": "/references/prosekit_svelte"
+    "link": "/references/svelte"
   },
   {
     "text": "vue",
@@ -326,45 +326,45 @@ export const referenceItems = [
         "items": [
           {
             "text": "autocomplete-empty",
-            "link": "/references/prosekit_vue_components_autocomplete_empty"
+            "link": "/references/vue/components/autocomplete-empty"
           },
           {
             "text": "autocomplete-item",
-            "link": "/references/prosekit_vue_components_autocomplete_item"
+            "link": "/references/vue/components/autocomplete-item"
           },
           {
             "text": "autocomplete-list",
-            "link": "/references/prosekit_vue_components_autocomplete_list"
+            "link": "/references/vue/components/autocomplete-list"
           },
           {
             "text": "autocomplete-popover",
-            "link": "/references/prosekit_vue_components_autocomplete_popover"
+            "link": "/references/vue/components/autocomplete-popover"
           },
           {
             "text": "code-block-popover",
-            "link": "/references/prosekit_vue_components_code_block_popover"
+            "link": "/references/vue/components/code-block-popover"
           },
           {
             "text": "combo-box",
-            "link": "/references/prosekit_vue_components_combo_box"
+            "link": "/references/vue/components/combo-box"
           },
           {
             "text": "combo-box-input",
-            "link": "/references/prosekit_vue_components_combo_box_input"
+            "link": "/references/vue/components/combo-box-input"
           },
           {
             "text": "combo-box-item",
-            "link": "/references/prosekit_vue_components_combo_box_item"
+            "link": "/references/vue/components/combo-box-item"
           },
           {
             "text": "combo-box-list",
-            "link": "/references/prosekit_vue_components_combo_box_list"
+            "link": "/references/vue/components/combo-box-list"
           }
         ],
         "collapsed": true
       }
     ],
     "collapsed": false,
-    "link": "/references/prosekit_vue"
+    "link": "/references/vue"
   }
 ]

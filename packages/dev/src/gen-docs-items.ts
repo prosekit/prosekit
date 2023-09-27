@@ -42,10 +42,7 @@ async function genReferenceItems() {
         .normalize(path.join(pkg.packageJson.name, entryPoint))
         .replace(/^@prosekit\//, '')
 
-      const markdownLink = `/references/prosekit_${importPath.replaceAll(
-        /[/-]/g,
-        '_',
-      )}`
+      const markdownLink = `/references/${importPath}`
 
       const parts = importPath.split('/')
       let currentItems = items

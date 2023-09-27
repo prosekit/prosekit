@@ -3,5 +3,5 @@
   "extends": ["../config/typedoc-base.json"],
   "entryPointStrategy": "packages",
   "entryPoints": ["../packages/prosekit"],
-  "out": "references"
+  "out": "temp/typedoc"
 }

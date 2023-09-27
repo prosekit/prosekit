@@ -9,7 +9,7 @@
     "build": "pnpm build:typedoc && touch references/index.md && rm references/index.md && pnpm build:css && pnpm build:vitepress",
     "build:css": "unocss -o components/icons-css/icons-css.gen.css --preflights false components/icons-css/icons-css.txt",
     "build:vitepress": "vitepress build",
-    "build:typedoc": "typedoc"
+    "build:typedoc": "bash build-typedoc.sh"
   },
   "devDependencies": {
     "@iconify-json/ci": "^1.1.10",
@@ -29,7 +29,7 @@
     "type-fest": "^4.3.1",
     "typedoc": "^0.25.1",
     "typedoc-plugin-external-package-links": "^0.1.0",
-    "typedoc-plugin-markdown": "^4.0.0-next.20",
+    "typedoc-plugin-markdown": "^4.0.0-next.22",
     "typedoc-plugin-mdn-links": "^3.1.0",
     "typescript": "^5.2.2",
     "unocss": "^0.56.1",

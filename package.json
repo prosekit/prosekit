@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@8.7.6",
+  "packageManager": "pnpm@8.8.0",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
@@ -31,19 +31,19 @@
     "@ocavue/eslint-config": "^1.2.3",
     "@size-limit/esbuild-why": "^9.0.0",
     "@size-limit/preset-small-lib": "^9.0.0",
-    "@vitest/coverage-istanbul": "^0.34.5",
+    "@vitest/coverage-istanbul": "^0.34.6",
     "cross-env": "^7.0.3",
     "eslint": "^8.50.0",
     "jsdom": "^22.1.0",
     "prettier": "^3.0.3",
     "prettier-plugin-astro": "^0.12.0",
     "prettier-plugin-svelte": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.4",
+    "prettier-plugin-tailwindcss": "^0.5.5",
     "size-limit": "^9.0.0",
     "turbo": "^1.10.14",
     "typescript": "^5.2.2",
-    "unocss": "^0.56.1",
-    "vitest": "^0.34.5"
+    "unocss": "^0.56.5",
+    "vitest": "^0.34.6"
   },
   "pnpm": {
     "overrides": {

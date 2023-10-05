@@ -44,7 +44,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@lit-labs/react": "^2.0.3",
+    "@lit-labs/react": "^2.1.0",
     "@prosekit/core": "^0.0.11",
     "@prosekit/lit": "^0.0.14"
   },
@@ -62,13 +62,13 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "@types/react": "^18.2.22",
-    "@types/react-dom": "^18.2.7",
+    "@types/react": "^18.2.25",
+    "@types/react-dom": "^18.2.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.5"
+    "vitest": "^0.34.6"
   },
   "publishConfig": {
     "exports": {

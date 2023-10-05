@@ -38,13 +38,13 @@
   "dependencies": {
     "@prosekit/pm": "^0.0.6",
     "orderedmap": "^2.1.1",
-    "type-fest": "^4.3.1"
+    "type-fest": "^4.3.3"
   },
   "devDependencies": {
     "@prosekit/dev": "*",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.5"
+    "vitest": "^0.34.6"
   },
   "publishConfig": {
     "exports": {

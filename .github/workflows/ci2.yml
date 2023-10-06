@@ -1,0 +1,91 @@
+name: CI2
+
+on:
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
+
+env:
+  FORCE_COLOR: 1
+
+jobs:
+  lint:
+    runs-on: macos-latest-xlarge
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup
+
+      - name: Lint
+        run: nr lint
+
+  typecheck:
+    runs-on: macos-latest-xlarge
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup
+
+      - name: Typecheck
+        run: nr typecheck
+
+  test:
+    runs-on: macos-latest-xlarge
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup
+
+      - name: Test
+        run: nr test:coverage
+
+  build:
+    runs-on: macos-latest-xlarge
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup
+
+      - name: Build TypeScript declarations
+        run: nr typecheck
+
+      - name: Gen
+        run: nr gen
+
+      - name: Build packages
+        run: nr build:package
+
+      - name: Build examples
+        run: nr build:example
+
+  deploy:
+    runs-on: macos-latest-xlarge
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup
+
+      - name: Build
+        run: nr build:website
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v2.1
+        with:
+          publish-dir: './website/dist'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: 'Deploy from GitHub Actions'
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+          enable-commit-status: false
+          overwrites-pull-request-comment: true
+          alias: ${{ github.head_ref }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WEBSITE_SITE_ID }}
+        timeout-minutes: 5

@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "vitepress dev",
     "preview": "vitepress preview",
-    "build": "pnpm build:typedoc && touch references/index.md && rm references/index.md && pnpm build:css && pnpm build:vitepress",
-    "build:css": "unocss -o components/icons-css/icons-css.gen.css --preflights false components/icons-css/icons-css.txt",
+    "build": "pnpm build:typedoc && touch references/index.md && rm references/index.md && pnpm build:vitepress",
     "build:vitepress": "vitepress build",
     "build:typedoc": "bash build-typedoc.sh"
   },
@@ -19,6 +18,7 @@
     "@types/react-dom": "^18.2.11",
     "@unocss/cli": "^0.56.5",
     "clsx": "^2.0.0",
+    "dedent": "^1.5.1",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prosekit": "^0.0.19",

@@ -1,4 +1,5 @@
 import { clsx } from 'clsx'
+import dedent from 'dedent'
 import { Sandpack, type SandpackPredefinedTemplate } from 'sandpack-vue3'
 import type { PackageJson } from 'type-fest'
 import { useData } from 'vitepress'
@@ -6,9 +7,8 @@ import { defineComponent, h } from 'vue'
 
 import { shortcuts } from '../../config/unocss-shortcut.mjs'
 
-import './sandpack-editor.css'
-import { iconsCssCode } from './icons-css/icons-css'
 import { preflightCssCode } from './preflight-css'
+import './sandpack-editor.css'
 
 export interface PlaygroundProps {
   name: string
@@ -24,7 +24,7 @@ export const Playground = defineComponent<PlaygroundProps>(
     const fileNames = Object.keys(files).map((name) => name.replace(/^\//, ''))
 
     const dependencies = extractDependencies(files)
-    patchFiles(files, props.name.toLowerCase().includes('preact'))
+    patchFiles(files)
 
     const template = getTemplateName(props.name)
 
@@ -46,19 +46,34 @@ export const Playground = defineComponent<PlaygroundProps>(
                 ...dependencies,
                 postcss: '8.4.28',
                 tailwindcss: '3.3.3',
+                '@egoist/tailwindcss-icons': '1.3.3',
+                '@iconify-json/ci': '1.1.10',
                 prosekit: 'latest',
               },
             },
             files: {
               'tailwind.config.mjs': {
                 hidden: true,
-                code: `export default {\n  content: ${JSON.stringify(
-                  fileNames,
-                )}\n}`,
+                code: dedent`
+                  import { iconsPlugin, getIconCollections } from "@egoist/tailwindcss-icons"
+                  
+                  export default {
+                    content: ${JSON.stringify(fileNames)},
+                    plugins: [
+                      iconsPlugin({
+                        collections: getIconCollections(["ci"]),
+                      }),
+                    ],
+                  }
+                  `,
               },
               'postcss.config.mjs': {
                 hidden: true,
-                code: 'export default {\n  plugins: { tailwindcss: {} }\n}',
+                code: dedent`
+                  export default {
+                    plugins: { tailwindcss: {} }
+                  }
+                `,
               },
               'styles.css': {
                 hidden: true,
@@ -69,7 +84,6 @@ export const Playground = defineComponent<PlaygroundProps>(
                   '',
                   preflightCssCode,
                   '',
-                  iconsCssCode,
                 ].join('\n'),
               },
               ...files,
@@ -118,25 +132,9 @@ function extractDependencies(
   return {}
 }
 
-function patchFiles(
-  files: Record<string, { hidden: boolean; code: string }>,
-  isPreact?: boolean,
-) {
+function patchFiles(files: Record<string, { hidden: boolean; code: string }>) {
   for (const file of Object.values(files)) {
     file.code = patchCssClassNames(file.code)
-  }
-
-  if (isPreact) {
-    Object.assign(files, {
-      '/index.js': {
-        hidden: true,
-        code: preactIndexJs,
-      },
-      '/tsconfig.json': {
-        hidden: true,
-        code: preactTsconfigJson,
-      },
-    })
   }
 }
 
@@ -165,8 +163,7 @@ function getTemplateName(exampleName: string): SandpackPredefinedTemplate {
     case 'solid':
       return 'vite-solid'
     case 'preact':
-      // Note that Sandpack doesn't have a vite template for Preact
-      return 'vite'
+      return 'vite-preact-ts'
     case 'lit':
       return 'vite-lit'
     case 'vanilla':
@@ -175,33 +172,3 @@ function getTemplateName(exampleName: string): SandpackPredefinedTemplate {
 
   throw new Error(`Failed to find Sandpack template for ${exampleName}`)
 }
-
-const preactIndexJs = `
-import { render, createElement } from "preact"
-import App from "./App.tsx"
-import "./styles.css"
-
-let element = document.getElementById('app')
-if (!element) {
-  element = document.body.appendChild(document.createElement('div'))
-  element.id = 'app'
-}
-
-render(createElement(App), element)
-`.trim()
-
-const preactTsconfigJson = `
-{
-  "compilerOptions": {
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "noEmit": true,
-    "strict": true,
-    "moduleResolution": "Node",
-    "isolatedModules": true,
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react-jsx",
-    "skipLibCheck": true
-  }
-}
-`.trim()

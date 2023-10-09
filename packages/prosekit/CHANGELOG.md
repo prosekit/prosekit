@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.20
+
+### Patch Changes
+
+- [f465dd9] **prosekit/extensions**
+
+  Add image node.
+
 ## 0.0.19
 
 ### Patch Changes

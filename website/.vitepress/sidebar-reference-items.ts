@@ -42,6 +42,10 @@ export const referenceItems = [
         "link": "/references/extensions/heading"
       },
       {
+        "text": "image",
+        "link": "/references/extensions/image"
+      },
+      {
         "text": "italic",
         "link": "/references/extensions/italic"
       },

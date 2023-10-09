@@ -8,6 +8,7 @@
     "./src/code-block/index.ts",
     "./src/code/index.ts",
     "./src/heading/index.ts",
+    "./src/image/index.ts",
     "./src/index.ts",
     "./src/italic/index.ts",
     "./src/link/index.ts",

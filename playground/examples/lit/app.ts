@@ -60,6 +60,24 @@ const defaultDoc: NodeJson = {
       content: [
         {
           type: 'text',
+          text: 'Image',
+        },
+      ],
+    },
+    {
+      type: 'image',
+      attrs: {
+        src: 'https://placehold.co/120x80',
+      },
+    },
+    {
+      type: 'heading',
+      attrs: {
+        level: 1,
+      },
+      content: [
+        {
+          type: 'text',
           text: 'Code Block',
         },
       ],

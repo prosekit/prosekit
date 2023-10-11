@@ -84,7 +84,8 @@ function formatReactCode(kebab: string) {
 import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { ${pascal} as ${pascal}Element, type ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/components/${kebab}'
-import React, { type ComponentType } from 'react'
+import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
+import React from 'react'
 
 export type ${pascal}Props = SimplifyUnion<{
   className?: string,
@@ -98,9 +99,11 @@ const ${pascal}Inner = createComponent({
   displayName: '${pascal}Inner',
 })
 
-export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
-  return React.createElement(${pascal}Inner, props)
-}
+export const ${pascal}: ForwardRefExoticComponent<
+  PropsWithoutRef<${pascal}Props> & RefAttributes<${pascal}Element>
+> = React.forwardRef((props, ref) => {
+  return React.createElement(${pascal}Inner, { ...props, ref })
+})
 
 ${pascal}.displayName = '${pascal}'
 `.trim() + '\n'

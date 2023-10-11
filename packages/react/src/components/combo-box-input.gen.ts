@@ -1,7 +1,8 @@
 import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { ComboBoxInput as ComboBoxInputElement, type ComboBoxInputProps as ComboBoxInputElementProps } from '@prosekit/lit/components/combo-box-input'
-import React, { type ComponentType } from 'react'
+import React from 'react'
+import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
 
 export type ComboBoxInputProps = SimplifyUnion<{
   className?: string,
@@ -15,8 +16,10 @@ const ComboBoxInputInner = createComponent({
   displayName: 'ComboBoxInputInner',
 })
 
-export const ComboBoxInput: ComponentType<ComboBoxInputProps> = (props) => {
-  return React.createElement(ComboBoxInputInner, props)
-}
+export const ComboBoxInput: ForwardRefExoticComponent<
+  PropsWithoutRef<ComboBoxInputProps> & RefAttributes<ComboBoxInputElement>
+> = React.forwardRef((props, ref) => {
+  return React.createElement(ComboBoxInputInner, { ...props, ref })
+})
 
 ComboBoxInput.displayName = 'ComboBoxInput'

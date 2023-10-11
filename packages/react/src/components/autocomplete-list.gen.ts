@@ -1,7 +1,8 @@
 import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { AutocompleteList as AutocompleteListElement, type AutocompleteListProps as AutocompleteListElementProps } from '@prosekit/lit/components/autocomplete-list'
-import React, { type ComponentType } from 'react'
+import React from 'react'
+import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
 
 export type AutocompleteListProps = SimplifyUnion<{
   className?: string,
@@ -15,8 +16,10 @@ const AutocompleteListInner = createComponent({
   displayName: 'AutocompleteListInner',
 })
 
-export const AutocompleteList: ComponentType<AutocompleteListProps> = (props) => {
-  return React.createElement(AutocompleteListInner, props)
-}
+export const AutocompleteList: ForwardRefExoticComponent<
+  PropsWithoutRef<AutocompleteListProps> & RefAttributes<AutocompleteListElement>
+> = React.forwardRef((props, ref) => {
+  return React.createElement(AutocompleteListInner, { ...props, ref })
+})
 
 AutocompleteList.displayName = 'AutocompleteList'

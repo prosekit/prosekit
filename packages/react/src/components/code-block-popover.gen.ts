@@ -1,7 +1,8 @@
 import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { CodeBlockPopover as CodeBlockPopoverElement, type CodeBlockPopoverProps as CodeBlockPopoverElementProps } from '@prosekit/lit/components/code-block-popover'
-import React, { type ComponentType } from 'react'
+import React from 'react'
+import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
 
 export type CodeBlockPopoverProps = SimplifyUnion<{
   className?: string,
@@ -15,8 +16,10 @@ const CodeBlockPopoverInner = createComponent({
   displayName: 'CodeBlockPopoverInner',
 })
 
-export const CodeBlockPopover: ComponentType<CodeBlockPopoverProps> = (props) => {
-  return React.createElement(CodeBlockPopoverInner, props)
-}
+export const CodeBlockPopover: ForwardRefExoticComponent<
+  PropsWithoutRef<CodeBlockPopoverProps> & RefAttributes<CodeBlockPopoverElement>
+> = React.forwardRef((props, ref) => {
+  return React.createElement(CodeBlockPopoverInner, { ...props, ref })
+})
 
 CodeBlockPopover.displayName = 'CodeBlockPopover'

@@ -1,4 +1,4 @@
-import { provide } from '@lit-labs/context'
+import { provide } from '@lit/context'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import { ListManager } from '../../manager/list-manager'

@@ -1,4 +1,4 @@
-import { consume } from '@lit-labs/context'
+import { consume } from '@lit/context'
 import { type CSSResultGroup, LitElement, type PropertyValues, html } from 'lit'
 import { customElement, state } from 'lit/decorators.js'
 

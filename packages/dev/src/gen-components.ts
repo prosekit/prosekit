@@ -81,7 +81,7 @@ function formatReactCode(kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import { createComponent } from '@lit-labs/react'
+import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { ${pascal} as ${pascal}Element, type ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/components/${kebab}'
 import React, { type ComponentType } from 'react'
@@ -101,7 +101,7 @@ const ${pascal}Component = createComponent({
 export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
   return React.createElement(
     ${pascal}Component,
-    // The type in @lit-labs/react is not compatible to React.ReactNode
+    // The type in @lit/react is not compatible to React.ReactNode
     props as Omit<typeof props, 'children'>,
   )
 }

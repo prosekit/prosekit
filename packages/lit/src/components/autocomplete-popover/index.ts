@@ -1,6 +1,6 @@
 import '../popover'
 
-import { provide } from '@lit-labs/context'
+import { provide } from '@lit/context'
 import { Editor } from '@prosekit/core'
 import { html, LitElement, type CSSResultGroup } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'

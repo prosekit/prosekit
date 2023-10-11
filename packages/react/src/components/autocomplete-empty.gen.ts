@@ -1,8 +1,8 @@
 import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { AutocompleteEmpty as AutocompleteEmptyElement, type AutocompleteEmptyProps as AutocompleteEmptyElementProps } from '@prosekit/lit/components/autocomplete-empty'
-import React from 'react'
 import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
+import React from 'react'
 
 export type AutocompleteEmptyProps = SimplifyUnion<{
   className?: string,

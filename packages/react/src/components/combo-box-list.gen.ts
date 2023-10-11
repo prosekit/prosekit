@@ -8,17 +8,15 @@ export type ComboBoxListProps = SimplifyUnion<{
   children?: React.ReactNode,
 } & ComboBoxListElementProps>
 
-const ComboBoxListComponent = createComponent({
+const ComboBoxListInner = createComponent({
   tagName: 'prosekit-combo-box-list',
   elementClass: ComboBoxListElement,
   react: React,
-  displayName: 'ComboBoxListComponent',
+  displayName: 'ComboBoxListInner',
 })
 
 export const ComboBoxList: ComponentType<ComboBoxListProps> = (props) => {
-  return React.createElement(
-    ComboBoxListComponent,
-    // The type in @lit/react is not compatible to React.ReactNode
-    props as Omit<typeof props, 'children'>,
-  )
+  return React.createElement(ComboBoxListInner, props)
 }
+
+ComboBoxList.displayName = 'ComboBoxList'

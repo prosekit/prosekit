@@ -8,17 +8,15 @@ export type AutocompleteEmptyProps = SimplifyUnion<{
   children?: React.ReactNode,
 } & AutocompleteEmptyElementProps>
 
-const AutocompleteEmptyComponent = createComponent({
+const AutocompleteEmptyInner = createComponent({
   tagName: 'prosekit-autocomplete-empty',
   elementClass: AutocompleteEmptyElement,
   react: React,
-  displayName: 'AutocompleteEmptyComponent',
+  displayName: 'AutocompleteEmptyInner',
 })
 
 export const AutocompleteEmpty: ComponentType<AutocompleteEmptyProps> = (props) => {
-  return React.createElement(
-    AutocompleteEmptyComponent,
-    // The type in @lit/react is not compatible to React.ReactNode
-    props as Omit<typeof props, 'children'>,
-  )
+  return React.createElement(AutocompleteEmptyInner, props)
 }
+
+AutocompleteEmpty.displayName = 'AutocompleteEmpty'

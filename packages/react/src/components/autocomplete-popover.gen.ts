@@ -8,17 +8,15 @@ export type AutocompletePopoverProps = SimplifyUnion<{
   children?: React.ReactNode,
 } & AutocompletePopoverElementProps>
 
-const AutocompletePopoverComponent = createComponent({
+const AutocompletePopoverInner = createComponent({
   tagName: 'prosekit-autocomplete-popover',
   elementClass: AutocompletePopoverElement,
   react: React,
-  displayName: 'AutocompletePopoverComponent',
+  displayName: 'AutocompletePopoverInner',
 })
 
 export const AutocompletePopover: ComponentType<AutocompletePopoverProps> = (props) => {
-  return React.createElement(
-    AutocompletePopoverComponent,
-    // The type in @lit/react is not compatible to React.ReactNode
-    props as Omit<typeof props, 'children'>,
-  )
+  return React.createElement(AutocompletePopoverInner, props)
 }
+
+AutocompletePopover.displayName = 'AutocompletePopover'

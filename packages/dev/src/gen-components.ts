@@ -91,20 +91,18 @@ export type ${pascal}Props = SimplifyUnion<{
   children?: React.ReactNode,
 } & ${pascal}ElementProps>
 
-const ${pascal}Component = createComponent({
+const ${pascal}Inner = createComponent({
   tagName: 'prosekit-${kebab}',
   elementClass: ${pascal}Element,
   react: React,
-  displayName: '${pascal}Component',
+  displayName: '${pascal}Inner',
 })
 
 export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
-  return React.createElement(
-    ${pascal}Component,
-    // The type in @lit/react is not compatible to React.ReactNode
-    props as Omit<typeof props, 'children'>,
-  )
+  return React.createElement(${pascal}Inner, props)
 }
+
+${pascal}.displayName = '${pascal}'
 `.trim() + '\n'
   )
 }

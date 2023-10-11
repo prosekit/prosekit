@@ -8,17 +8,15 @@ export type AutocompleteListProps = SimplifyUnion<{
   children?: React.ReactNode,
 } & AutocompleteListElementProps>
 
-const AutocompleteListComponent = createComponent({
+const AutocompleteListInner = createComponent({
   tagName: 'prosekit-autocomplete-list',
   elementClass: AutocompleteListElement,
   react: React,
-  displayName: 'AutocompleteListComponent',
+  displayName: 'AutocompleteListInner',
 })
 
 export const AutocompleteList: ComponentType<AutocompleteListProps> = (props) => {
-  return React.createElement(
-    AutocompleteListComponent,
-    // The type in @lit/react is not compatible to React.ReactNode
-    props as Omit<typeof props, 'children'>,
-  )
+  return React.createElement(AutocompleteListInner, props)
 }
+
+AutocompleteList.displayName = 'AutocompleteList'

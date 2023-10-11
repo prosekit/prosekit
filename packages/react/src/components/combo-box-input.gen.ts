@@ -8,17 +8,15 @@ export type ComboBoxInputProps = SimplifyUnion<{
   children?: React.ReactNode,
 } & ComboBoxInputElementProps>
 
-const ComboBoxInputComponent = createComponent({
+const ComboBoxInputInner = createComponent({
   tagName: 'prosekit-combo-box-input',
   elementClass: ComboBoxInputElement,
   react: React,
-  displayName: 'ComboBoxInputComponent',
+  displayName: 'ComboBoxInputInner',
 })
 
 export const ComboBoxInput: ComponentType<ComboBoxInputProps> = (props) => {
-  return React.createElement(
-    ComboBoxInputComponent,
-    // The type in @lit/react is not compatible to React.ReactNode
-    props as Omit<typeof props, 'children'>,
-  )
+  return React.createElement(ComboBoxInputInner, props)
 }
+
+ComboBoxInput.displayName = 'ComboBoxInput'

@@ -8,17 +8,15 @@ export type CodeBlockPopoverProps = SimplifyUnion<{
   children?: React.ReactNode,
 } & CodeBlockPopoverElementProps>
 
-const CodeBlockPopoverComponent = createComponent({
+const CodeBlockPopoverInner = createComponent({
   tagName: 'prosekit-code-block-popover',
   elementClass: CodeBlockPopoverElement,
   react: React,
-  displayName: 'CodeBlockPopoverComponent',
+  displayName: 'CodeBlockPopoverInner',
 })
 
 export const CodeBlockPopover: ComponentType<CodeBlockPopoverProps> = (props) => {
-  return React.createElement(
-    CodeBlockPopoverComponent,
-    // The type in @lit/react is not compatible to React.ReactNode
-    props as Omit<typeof props, 'children'>,
-  )
+  return React.createElement(CodeBlockPopoverInner, props)
 }
+
+CodeBlockPopover.displayName = 'CodeBlockPopover'

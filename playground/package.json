@@ -24,7 +24,7 @@
     "@types/react-dom": "^18.2.13",
     "astro": "^3.2.4",
     "highlight.js": "^11.9.0",
-    "lit": "^2.8.0",
+    "lit": "^3.0.0",
     "preact": "^10.18.1",
     "prosekit": "^0.0.20",
     "react": "^18.2.0",

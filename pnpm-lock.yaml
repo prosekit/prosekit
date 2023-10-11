@@ -233,9 +233,6 @@ importers:
       '@lit/context':
         specifier: ^1.0.0
         version: 1.0.0
-      '@lit/reactive-element':
-        specifier: ^1.6.3
-        version: 1.6.3
       '@prosekit/core':
         specifier: ^0.0.11
         version: link:../core
@@ -249,14 +246,8 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0
       lit:
-        specifier: ^2.8.0
-        version: 2.8.0
-      lit-element:
-        specifier: ^3.3.3
-        version: 3.3.3
-      lit-html:
-        specifier: ^2.8.0
-        version: 2.8.0
+        specifier: ^3.0.0
+        version: 3.0.0
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -537,7 +528,7 @@ importers:
     devDependencies:
       '@astrojs/lit':
         specifier: ^3.0.1
-        version: 3.0.1(@webcomponents/template-shadowroot@0.2.1)(lit@2.8.0)
+        version: 3.0.1(@webcomponents/template-shadowroot@0.2.1)(lit@3.0.0)
       '@astrojs/preact':
         specifier: ^3.0.1
         version: 3.0.1(@babel/core@7.22.11)(preact@10.18.1)(vite@4.4.11)
@@ -575,8 +566,8 @@ importers:
         specifier: ^11.9.0
         version: 11.9.0
       lit:
-        specifier: ^2.8.0
-        version: 2.8.0
+        specifier: ^3.0.0
+        version: 3.0.0
       preact:
         specifier: ^10.18.1
         version: 10.18.1
@@ -862,17 +853,17 @@ packages:
     resolution: {integrity: sha512-06DD2ZnItMwUnH81LBLco3tWjcZ1lGU9rLCCBaeUCGYe9cI0wKyY2W3kDyoW1I6GmcWgt1fu+D1CTvz+FIKf8A==}
     dev: true
 
-  /@astrojs/lit@3.0.1(@webcomponents/template-shadowroot@0.2.1)(lit@2.8.0):
+  /@astrojs/lit@3.0.1(@webcomponents/template-shadowroot@0.2.1)(lit@3.0.0):
     resolution: {integrity: sha512-+FBtzMb+Aj7lur2LIptZkJRAs6PVQnhgXBDpsH1GJPC6L/mT+5oHoAvvCBs8ybGyo4J0f6/w+9s3H7zZKlCD9Q==}
     peerDependencies:
       '@webcomponents/template-shadowroot': ^0.2.1
       lit: ^2.7.0
     dependencies:
-      '@lit-labs/ssr': 3.1.5
-      '@lit-labs/ssr-client': 1.1.3
-      '@lit-labs/ssr-dom-shim': 1.1.1
+      '@lit-labs/ssr': 3.1.8
+      '@lit-labs/ssr-client': 1.1.4
+      '@lit-labs/ssr-dom-shim': 1.1.2
       '@webcomponents/template-shadowroot': 0.2.1
-      lit: 2.8.0
+      lit: 3.0.0
       parse5: 7.1.2
     dev: true
 
@@ -2240,30 +2231,30 @@ packages:
       '@lezer/common': 1.1.0
     dev: true
 
-  /@lit-labs/ssr-client@1.1.3:
-    resolution: {integrity: sha512-JIvpvfCEJGTIKH1L/kZYN68jiXuTBbHI6JG3H4HQI0Ko/8Z0qtlSP9G35IVDzNdMt+xVE4WYKsY9Vk6N2S55kQ==}
+  /@lit-labs/ssr-client@1.1.4:
+    resolution: {integrity: sha512-LJUi1/Run6iLTfE3QlX0aGzuTBWOmvBQet2ushSgc8iE1X5bWFLii2QhpMb9rw3or3OrUmXjEEI/AzWaehbMAg==}
     dependencies:
-      '@lit/reactive-element': 1.6.3
-      lit: 2.8.0
-      lit-html: 2.8.0
+      '@lit/reactive-element': 2.0.0
+      lit: 3.0.0
+      lit-html: 3.0.0
     dev: true
 
-  /@lit-labs/ssr-dom-shim@1.1.1:
-    resolution: {integrity: sha512-kXOeFbfCm4fFf2A3WwVEeQj55tMZa8c8/f9AKHMobQMkzNUfUj+antR3fRPaZJawsa1aZiP/Da3ndpZrwEe4rQ==}
+  /@lit-labs/ssr-dom-shim@1.1.2:
+    resolution: {integrity: sha512-jnOD+/+dSrfTWYfSXBXlo5l5f0q1UuJo3tkbMDCYA2lKUYq79jaxqtGEvnRoh049nt1vdo1+45RinipU6FGY2g==}
 
-  /@lit-labs/ssr@3.1.5:
-    resolution: {integrity: sha512-OvjM3CZGPRjZTIAgWvLCXS3sFj574rXfAzhtzQjgHYNxTuRy+LMfKpgeu8xF7PywdcOniVaLZuGKF4WS7YI7hA==}
+  /@lit-labs/ssr@3.1.8:
+    resolution: {integrity: sha512-3++/wRaue1GuFTZKDNhvnBIIUBJcKjnv+YeVWjQNETH/qcoTApmS88rzZvJENri84Vq+JonfF7dDTtHtenDU2A==}
     engines: {node: '>=13.9.0'}
     dependencies:
-      '@lit-labs/ssr-client': 1.1.3
-      '@lit-labs/ssr-dom-shim': 1.1.1
-      '@lit/reactive-element': 1.6.3
-      '@parse5/tools': 0.1.0
+      '@lit-labs/ssr-client': 1.1.4
+      '@lit-labs/ssr-dom-shim': 1.1.2
+      '@lit/reactive-element': 2.0.0
+      '@parse5/tools': 0.3.0
       '@types/node': 16.18.40
       enhanced-resolve: 5.15.0
-      lit: 2.8.0
-      lit-element: 3.3.3
-      lit-html: 2.8.0
+      lit: 3.0.0
+      lit-element: 4.0.0
+      lit-html: 3.0.0
       node-fetch: 3.3.2
       parse5: 7.1.2
     dev: true
@@ -2271,8 +2262,8 @@ packages:
   /@lit/context@1.0.0:
     resolution: {integrity: sha512-bdqj6z6Mj+TpYfo2seHy1mlBzYrW+CyHnDQLD0DI7iQLELs2Fk6icZwvbvbskR0E94QG4aO/35j6PTJ9wWTv0Q==}
     dependencies:
-      '@lit/reactive-element': 1.6.3
-      lit: 2.8.0
+      '@lit/reactive-element': 2.0.0
+      lit: 3.0.0
     dev: false
 
   /@lit/react@1.0.0(@types/react@18.2.28):
@@ -2283,10 +2274,10 @@ packages:
       '@types/react': 18.2.28
     dev: false
 
-  /@lit/reactive-element@1.6.3:
-    resolution: {integrity: sha512-QuTgnG52Poic7uM1AN5yJ09QMe0O28e10XzSvWDz02TJiiKee4stsiownEIadWm8nYzyDAyT+gKzUoZmiWQtsQ==}
+  /@lit/reactive-element@2.0.0:
+    resolution: {integrity: sha512-wn+2+uDcs62ROBmVAwssO4x5xue/uKD3MGGZOXL2sMxReTRIT0JXKyMXeu7gh0aJ4IJNEIG/3aOnUaQvM7BMzQ==}
     dependencies:
-      '@lit-labs/ssr-dom-shim': 1.1.1
+      '@lit-labs/ssr-dom-shim': 1.1.2
 
   /@manypkg/cli@0.21.0:
     resolution: {integrity: sha512-q/JF25il2EXtyPpc5U/Pp7TMgJot/WmFkyh7M9FiutQkliHp58UqUxIPeUObLu9EtoAp/uP21t+TMDsq1DMbeg==}
@@ -2442,8 +2433,8 @@ packages:
     resolution: {integrity: sha512-Rzd5JrXZX8zErHzgcGyngh4fmEbSHqTETdGj9rXtejlqMIgXFlyKBA7Jn1Xp0Ls0M0Y22+xHcWiEzbmdWl0BOA==}
     dev: true
 
-  /@parse5/tools@0.1.0:
-    resolution: {integrity: sha512-VB9+4BsFoS+4HdB/Ph9jD4FHQt7GyiWESVNfBSh8Eu54LujWyy+NySGLjg8GZFWSZcESG72F67LjgmKZDZCvPg==}
+  /@parse5/tools@0.3.0:
+    resolution: {integrity: sha512-zxRyTHkqb7WQMV8kTNBKWb1BeOFUKXBXTBWuxg9H9hfvQB3IwP6Iw2U75Ia5eyRxPNltmY7E8YAlz6zWwUnjKg==}
     dependencies:
       parse5: 7.1.2
     dev: true
@@ -6529,24 +6520,24 @@ packages:
     resolution: {integrity: sha512-cNOjgCnLB+FnvWWtyRTzmB3POJ+cXxTA81LoW7u8JdmhfXzriropYwpjShnz1QLLWsQwY7nIxoDmcPTwphDK9w==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  /lit-element@3.3.3:
-    resolution: {integrity: sha512-XbeRxmTHubXENkV4h8RIPyr8lXc+Ff28rkcQzw3G6up2xg5E8Zu1IgOWIwBLEQsu3cOVFqdYwiVi0hv0SlpqUA==}
+  /lit-element@4.0.0:
+    resolution: {integrity: sha512-N6+f7XgusURHl69DUZU6sTBGlIN+9Ixfs3ykkNDfgfTkDYGGOWwHAYBhDqVswnFGyWgQYR2KiSpu4J76Kccs/A==}
     dependencies:
-      '@lit-labs/ssr-dom-shim': 1.1.1
-      '@lit/reactive-element': 1.6.3
-      lit-html: 2.8.0
+      '@lit-labs/ssr-dom-shim': 1.1.2
+      '@lit/reactive-element': 2.0.0
+      lit-html: 3.0.0
 
-  /lit-html@2.8.0:
-    resolution: {integrity: sha512-o9t+MQM3P4y7M7yNzqAyjp7z+mQGa4NS4CxiyLqFPyFWyc4O+nodLrkrxSaCTrla6M5YOLaT3RpbbqjszB5g3Q==}
+  /lit-html@3.0.0:
+    resolution: {integrity: sha512-DNJIE8dNY0dQF2Gs0sdMNUppMQT2/CvV4OVnSdg7BXAsGqkVwsE5bqQ04POfkYH5dBIuGnJYdFz5fYYyNnOxiA==}
     dependencies:
       '@types/trusted-types': 2.0.3
 
-  /lit@2.8.0:
-    resolution: {integrity: sha512-4Sc3OFX9QHOJaHbmTMk28SYgVxLN3ePDjg7hofEft2zWlehFL3LiAuapWc4U/kYwMYJSh2hTCPZ6/LIC7ii0MA==}
+  /lit@3.0.0:
+    resolution: {integrity: sha512-nQ0teRzU1Kdj++VdmttS2WvIen8M79wChJ6guRKIIym2M3Ansg3Adj9O6yuQh2IpjxiUXlNuS81WKlQ4iL3BmA==}
     dependencies:
-      '@lit/reactive-element': 1.6.3
-      lit-element: 3.3.3
-      lit-html: 2.8.0
+      '@lit/reactive-element': 2.0.0
+      lit-element: 4.0.0
+      lit-html: 3.0.0
 
   /load-json-file@7.0.1:
     resolution: {integrity: sha512-Gnxj3ev3mB5TkVBGad0JM6dmLiQL+o0t23JPBZ9sd+yvSLk05mFoqKBw5N8gbbkU4TNXyqCgIrl/VM17OgUIgQ==}

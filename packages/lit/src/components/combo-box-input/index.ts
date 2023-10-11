@@ -1,6 +1,6 @@
 import { consume } from '@lit/context'
+import { html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
-import { html } from 'lit-html'
 
 import { LightBlockElement } from '../block-element'
 import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'

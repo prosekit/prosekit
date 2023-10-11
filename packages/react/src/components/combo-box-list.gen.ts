@@ -1,4 +1,4 @@
-import { createComponent } from '@lit-labs/react'
+import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { ComboBoxList as ComboBoxListElement, type ComboBoxListProps as ComboBoxListElementProps } from '@prosekit/lit/components/combo-box-list'
 import React, { type ComponentType } from 'react'
@@ -18,7 +18,7 @@ const ComboBoxListComponent = createComponent({
 export const ComboBoxList: ComponentType<ComboBoxListProps> = (props) => {
   return React.createElement(
     ComboBoxListComponent,
-    // The type in @lit-labs/react is not compatible to React.ReactNode
+    // The type in @lit/react is not compatible to React.ReactNode
     props as Omit<typeof props, 'children'>,
   )
 }

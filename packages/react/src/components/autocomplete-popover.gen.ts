@@ -1,4 +1,4 @@
-import { createComponent } from '@lit-labs/react'
+import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { AutocompletePopover as AutocompletePopoverElement, type AutocompletePopoverProps as AutocompletePopoverElementProps } from '@prosekit/lit/components/autocomplete-popover'
 import React, { type ComponentType } from 'react'
@@ -18,7 +18,7 @@ const AutocompletePopoverComponent = createComponent({
 export const AutocompletePopover: ComponentType<AutocompletePopoverProps> = (props) => {
   return React.createElement(
     AutocompletePopoverComponent,
-    // The type in @lit-labs/react is not compatible to React.ReactNode
+    // The type in @lit/react is not compatible to React.ReactNode
     props as Omit<typeof props, 'children'>,
   )
 }

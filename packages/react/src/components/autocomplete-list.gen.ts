@@ -1,4 +1,4 @@
-import { createComponent } from '@lit-labs/react'
+import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { AutocompleteList as AutocompleteListElement, type AutocompleteListProps as AutocompleteListElementProps } from '@prosekit/lit/components/autocomplete-list'
 import React, { type ComponentType } from 'react'
@@ -18,7 +18,7 @@ const AutocompleteListComponent = createComponent({
 export const AutocompleteList: ComponentType<AutocompleteListProps> = (props) => {
   return React.createElement(
     AutocompleteListComponent,
-    // The type in @lit-labs/react is not compatible to React.ReactNode
+    // The type in @lit/react is not compatible to React.ReactNode
     props as Omit<typeof props, 'children'>,
   )
 }

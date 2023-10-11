@@ -16,4 +16,3 @@ export type ComboBoxContext = {
 export const comboBoxContext = createContext<ComboBoxContext>(
   'prosekit-combo-box-context',
 )
-

@@ -1,24 +1,25 @@
-import { createComponent } from '@lit-labs/react'
+import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { ComboBoxList as ComboBoxListElement, type ComboBoxListProps as ComboBoxListElementProps } from '@prosekit/lit/components/combo-box-list'
-import React, { type ComponentType } from 'react'
+import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
+import React from 'react'
 
 export type ComboBoxListProps = SimplifyUnion<{
   className?: string,
   children?: React.ReactNode,
 } & ComboBoxListElementProps>
 
-const ComboBoxListComponent = createComponent({
+const ComboBoxListInner = createComponent({
   tagName: 'prosekit-combo-box-list',
   elementClass: ComboBoxListElement,
   react: React,
-  displayName: 'ComboBoxListComponent',
+  displayName: 'ComboBoxListInner',
 })
 
-export const ComboBoxList: ComponentType<ComboBoxListProps> = (props) => {
-  return React.createElement(
-    ComboBoxListComponent,
-    // The type in @lit-labs/react is not compatible to React.ReactNode
-    props as Omit<typeof props, 'children'>,
-  )
-}
+export const ComboBoxList: ForwardRefExoticComponent<
+  PropsWithoutRef<ComboBoxListProps> & RefAttributes<ComboBoxListElement>
+> = React.forwardRef((props, ref) => {
+  return React.createElement(ComboBoxListInner, { ...props, ref })
+})
+
+ComboBoxList.displayName = 'ComboBoxList'

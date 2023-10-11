@@ -1,4 +1,4 @@
-import { consume, provide } from '@lit-labs/context'
+import { consume, provide } from '@lit/context'
 import { Editor } from '@prosekit/core'
 import { LitElement, html, type CSSResultGroup, type PropertyValues } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'

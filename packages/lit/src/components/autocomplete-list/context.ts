@@ -1,4 +1,4 @@
-import { createContext } from '@lit-labs/context'
+import { createContext } from '@lit/context'
 
 export type AutocompleteListContext = {
   scores: Map<string, number>

@@ -81,30 +81,31 @@ function formatReactCode(kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import { createComponent } from '@lit-labs/react'
+import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { ${pascal} as ${pascal}Element, type ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/components/${kebab}'
-import React, { type ComponentType } from 'react'
+import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
+import React from 'react'
 
 export type ${pascal}Props = SimplifyUnion<{
   className?: string,
   children?: React.ReactNode,
 } & ${pascal}ElementProps>
 
-const ${pascal}Component = createComponent({
+const ${pascal}Inner = createComponent({
   tagName: 'prosekit-${kebab}',
   elementClass: ${pascal}Element,
   react: React,
-  displayName: '${pascal}Component',
+  displayName: '${pascal}Inner',
 })
 
-export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
-  return React.createElement(
-    ${pascal}Component,
-    // The type in @lit-labs/react is not compatible to React.ReactNode
-    props as Omit<typeof props, 'children'>,
-  )
-}
+export const ${pascal}: ForwardRefExoticComponent<
+  PropsWithoutRef<${pascal}Props> & RefAttributes<${pascal}Element>
+> = React.forwardRef((props, ref) => {
+  return React.createElement(${pascal}Inner, { ...props, ref })
+})
+
+${pascal}.displayName = '${pascal}'
 `.trim() + '\n'
   )
 }

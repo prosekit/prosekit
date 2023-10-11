@@ -1,4 +1,4 @@
-import { createContext } from '@lit-labs/context'
+import { createContext } from '@lit/context'
 
 import type { ListManager } from '../../manager/list-manager'
 import type { ComboBoxItem } from '../combo-box-item'
@@ -16,3 +16,4 @@ export type ComboBoxContext = {
 export const comboBoxContext = createContext<ComboBoxContext>(
   'prosekit-combo-box-context',
 )
+

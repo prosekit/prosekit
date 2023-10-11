@@ -1,24 +1,25 @@
-import { createComponent } from '@lit-labs/react'
+import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
 import { AutocompleteItem as AutocompleteItemElement, type AutocompleteItemProps as AutocompleteItemElementProps } from '@prosekit/lit/components/autocomplete-item'
-import React, { type ComponentType } from 'react'
+import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
+import React from 'react'
 
 export type AutocompleteItemProps = SimplifyUnion<{
   className?: string,
   children?: React.ReactNode,
 } & AutocompleteItemElementProps>
 
-const AutocompleteItemComponent = createComponent({
+const AutocompleteItemInner = createComponent({
   tagName: 'prosekit-autocomplete-item',
   elementClass: AutocompleteItemElement,
   react: React,
-  displayName: 'AutocompleteItemComponent',
+  displayName: 'AutocompleteItemInner',
 })
 
-export const AutocompleteItem: ComponentType<AutocompleteItemProps> = (props) => {
-  return React.createElement(
-    AutocompleteItemComponent,
-    // The type in @lit-labs/react is not compatible to React.ReactNode
-    props as Omit<typeof props, 'children'>,
-  )
-}
+export const AutocompleteItem: ForwardRefExoticComponent<
+  PropsWithoutRef<AutocompleteItemProps> & RefAttributes<AutocompleteItemElement>
+> = React.forwardRef((props, ref) => {
+  return React.createElement(AutocompleteItemInner, { ...props, ref })
+})
+
+AutocompleteItem.displayName = 'AutocompleteItem'

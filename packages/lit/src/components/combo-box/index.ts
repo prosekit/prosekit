@@ -13,7 +13,7 @@ import { comboBoxContext, type ComboBoxContext } from './context'
 
 export const propNames = ['onDismiss'] as const
 
-export type ComboBoxProps = {
+export interface ComboBoxProps {
   onDismiss?: VoidFunction
 }
 

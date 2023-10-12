@@ -1,6 +1,6 @@
 import { createContext } from '@lit/context'
 
-export type AutocompletePopoverContext = {
+export interface AutocompletePopoverContext {
   active: boolean
   query: string
   handleDismiss: VoidFunction

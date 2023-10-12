@@ -12,7 +12,7 @@ test('SimplifyUnion', () => {
         b: string
       }
 
-  type T2 = {
+  interface T2 {
     a: string
     b: string
   }

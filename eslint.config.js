@@ -1,11 +1,7 @@
 import { basic, react, tsPlugin } from '@ocavue/eslint-config'
 
 export default [
-  ...basic({
-    typescript: {
-      project: 'tsconfig.eslint.json',
-    },
-  }),
+  ...basic(),
   ...react().map((config) => ({
     ...config,
     files: ['packages/react/**/*.@(mts|cts|ts|mtsx|ctsx|tsx)'],
@@ -43,6 +39,6 @@ export default [
     },
   },
   {
-    ignores: ['config/unocss-shortcut.mjs', '**/.tsup'],
+    ignores: ['config/unocss-shortcut.mjs', '**/.tsup', '**/config-tsup.d.ts'],
   },
 ]

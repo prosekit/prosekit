@@ -10,7 +10,7 @@ export interface PredictionRule {
   matchAfter?: RegExp
 }
 
-type PredictionPluginState = {
+interface PredictionPluginState {
   active: boolean
   ignore?: number | null
   matching?: {
@@ -209,7 +209,7 @@ function calcPluginState(
     const match = textBefore.match(rule.match)
     const matchAfter = rule.matchAfter ? textAfter.match(rule.matchAfter) : null
 
-    if (match && match.index != null) {
+    if (match?.index != null) {
       const from = $anchor.pos - textBefore.length + match.index
       const to = $anchor.pos + (matchAfter ? matchAfter[0].length : 0)
 

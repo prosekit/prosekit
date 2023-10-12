@@ -4,7 +4,7 @@ import { assertTypeEqual } from './assert-type-equal'
 import { type ExceptEmptyValue } from './except-empty-value'
 
 test('ExceptEmptyValue', () => {
-  type T1 = {
+  interface T1 {
     a: 'A'
     b: undefined
     c: null

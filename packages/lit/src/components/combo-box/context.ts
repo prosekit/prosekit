@@ -3,7 +3,7 @@ import { createContext } from '@lit/context'
 import type { ListManager } from '../../manager/list-manager'
 import type { ComboBoxItem } from '../combo-box-item'
 
-export type ComboBoxContext = {
+export interface ComboBoxContext {
   inputValue: string
   setInputValue: (val: string) => void
 

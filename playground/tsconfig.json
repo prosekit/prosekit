@@ -6,5 +6,5 @@
     "noEmit": true,
     "jsx": "preserve"
   },
-  "include": ["./pages", "./examples"]
+  "include": ["./pages", "./examples", "./layouts", "./*.ts", "./*.mjs"]
 }

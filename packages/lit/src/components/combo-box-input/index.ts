@@ -7,7 +7,7 @@ import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
 
 export const propNames = ['placeholder'] as const
 
-export type ComboBoxInputProps = {
+export interface ComboBoxInputProps {
   placeholder?: string
 }
 

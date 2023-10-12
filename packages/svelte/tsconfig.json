@@ -3,16 +3,7 @@
   "compilerOptions": {
     "composite": true,
     "declarationDir": "temp/declaration",
-    "tsBuildInfoFile": "temp/tsconfig.tsbuildinfo",
-    "skipLibCheck": true
+    "tsBuildInfoFile": "temp/tsconfig.tsbuildinfo"
   },
-  "include": ["./**/*"],
-  "references": [
-    {
-      "path": "../lit/tsconfig.json"
-    },
-    {
-      "path": "../core/tsconfig.json"
-    }
-  ]
+  "include": ["./**/*"]
 }

@@ -112,7 +112,7 @@ async function genExampleItems() {
   await writeFile(sidebarFilePath, content)
 }
 
-export type SidebarItem = {
+export interface SidebarItem {
   /**
    * The text label of the item.
    */

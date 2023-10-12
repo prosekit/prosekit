@@ -19,7 +19,7 @@ function isInsideCode($pos: ResolvedPos): boolean {
 
 export const OBJECT_REPLACEMENT = '\uFFFC'
 
-export type PredictionPluginState = {
+export interface PredictionPluginState {
   active: boolean
   ignore: number | null
   matching: {

@@ -5,13 +5,5 @@
     "declarationDir": "temp/declaration",
     "tsBuildInfoFile": "temp/tsconfig.tsbuildinfo"
   },
-  "include": ["./**/*"],
-  "references": [
-    {
-      "path": "../lit/tsconfig.json"
-    },
-    {
-      "path": "../core/tsconfig.json"
-    }
-  ]
+  "include": ["./**/*"]
 }

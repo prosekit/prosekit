@@ -50,7 +50,7 @@
     "@prosekit/extensions": "^0.0.13",
     "@prosekit/pm": "^0.0.6",
     "@superhuman/command-score": "^0.5.0",
-    "lit": "^2.8.0"
+    "lit": "^3.0.0"
   },
   "devDependencies": {
     "@prosekit/dev": "*",

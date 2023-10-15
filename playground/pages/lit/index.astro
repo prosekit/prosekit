@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../../layouts/base-layout.astro'
-import { MyEditor } from '../../examples/lit/app.ts'
 ---
 
+<script src="../../examples/lit/app.ts"></script>
+
 <BaseLayout>
-  <MyEditor client:only="lit" />
+  <my-editor></my-editor>
 </BaseLayout>

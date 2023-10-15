@@ -1,4 +1,3 @@
-import lit from '@astrojs/lit'
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
@@ -17,7 +16,6 @@ export default defineConfig({
     svelte(),
     vue(),
     solid({ include: ['**/solid-*/*'] }),
-    lit({ include: ['**/lit/*', '**/lit-*/*'] }),
     unocss({}),
   ],
 })

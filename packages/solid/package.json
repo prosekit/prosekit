@@ -26,15 +26,15 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./components/autocomplete-empty": "./src/components/autocomplete-empty.ts",
-    "./components/autocomplete-item": "./src/components/autocomplete-item.ts",
-    "./components/autocomplete-list": "./src/components/autocomplete-list.ts",
-    "./components/autocomplete-popover": "./src/components/autocomplete-popover.ts",
-    "./components/code-block-popover": "./src/components/code-block-popover.gen.ts",
-    "./components/combo-box": "./src/components/combo-box.gen.ts",
-    "./components/combo-box-input": "./src/components/combo-box-input.gen.ts",
-    "./components/combo-box-item": "./src/components/combo-box-item.gen.ts",
-    "./components/combo-box-list": "./src/components/combo-box-list.gen.ts"
+    "./autocomplete-empty": "./src/components/autocomplete-empty.ts",
+    "./autocomplete-item": "./src/components/autocomplete-item.ts",
+    "./autocomplete-list": "./src/components/autocomplete-list.ts",
+    "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
+    "./code-block-popover": "./src/components/code-block-popover.gen.ts",
+    "./combo-box": "./src/components/combo-box.gen.ts",
+    "./combo-box-input": "./src/components/combo-box-input.gen.ts",
+    "./combo-box-item": "./src/components/combo-box-item.gen.ts",
+    "./combo-box-list": "./src/components/combo-box-list.gen.ts"
   },
   "files": [
     "dist"
@@ -69,50 +69,50 @@
         "import": "./dist/prosekit-solid.js",
         "default": "./dist/prosekit-solid.js"
       },
-      "./components/autocomplete-empty": {
-        "types": "./dist/prosekit-solid-components-autocomplete-empty.d.ts",
-        "import": "./dist/prosekit-solid-components-autocomplete-empty.js",
-        "default": "./dist/prosekit-solid-components-autocomplete-empty.js"
+      "./autocomplete-empty": {
+        "types": "./dist/prosekit-solid-autocomplete-empty.d.ts",
+        "import": "./dist/prosekit-solid-autocomplete-empty.js",
+        "default": "./dist/prosekit-solid-autocomplete-empty.js"
       },
-      "./components/autocomplete-item": {
-        "types": "./dist/prosekit-solid-components-autocomplete-item.d.ts",
-        "import": "./dist/prosekit-solid-components-autocomplete-item.js",
-        "default": "./dist/prosekit-solid-components-autocomplete-item.js"
+      "./autocomplete-item": {
+        "types": "./dist/prosekit-solid-autocomplete-item.d.ts",
+        "import": "./dist/prosekit-solid-autocomplete-item.js",
+        "default": "./dist/prosekit-solid-autocomplete-item.js"
       },
-      "./components/autocomplete-list": {
-        "types": "./dist/prosekit-solid-components-autocomplete-list.d.ts",
-        "import": "./dist/prosekit-solid-components-autocomplete-list.js",
-        "default": "./dist/prosekit-solid-components-autocomplete-list.js"
+      "./autocomplete-list": {
+        "types": "./dist/prosekit-solid-autocomplete-list.d.ts",
+        "import": "./dist/prosekit-solid-autocomplete-list.js",
+        "default": "./dist/prosekit-solid-autocomplete-list.js"
       },
-      "./components/autocomplete-popover": {
-        "types": "./dist/prosekit-solid-components-autocomplete-popover.d.ts",
-        "import": "./dist/prosekit-solid-components-autocomplete-popover.js",
-        "default": "./dist/prosekit-solid-components-autocomplete-popover.js"
+      "./autocomplete-popover": {
+        "types": "./dist/prosekit-solid-autocomplete-popover.d.ts",
+        "import": "./dist/prosekit-solid-autocomplete-popover.js",
+        "default": "./dist/prosekit-solid-autocomplete-popover.js"
       },
-      "./components/code-block-popover": {
-        "types": "./dist/prosekit-solid-components-code-block-popover.d.ts",
-        "import": "./dist/prosekit-solid-components-code-block-popover.js",
-        "default": "./dist/prosekit-solid-components-code-block-popover.js"
+      "./code-block-popover": {
+        "types": "./dist/prosekit-solid-code-block-popover.d.ts",
+        "import": "./dist/prosekit-solid-code-block-popover.js",
+        "default": "./dist/prosekit-solid-code-block-popover.js"
       },
-      "./components/combo-box": {
-        "types": "./dist/prosekit-solid-components-combo-box.d.ts",
-        "import": "./dist/prosekit-solid-components-combo-box.js",
-        "default": "./dist/prosekit-solid-components-combo-box.js"
+      "./combo-box": {
+        "types": "./dist/prosekit-solid-combo-box.d.ts",
+        "import": "./dist/prosekit-solid-combo-box.js",
+        "default": "./dist/prosekit-solid-combo-box.js"
       },
-      "./components/combo-box-input": {
-        "types": "./dist/prosekit-solid-components-combo-box-input.d.ts",
-        "import": "./dist/prosekit-solid-components-combo-box-input.js",
-        "default": "./dist/prosekit-solid-components-combo-box-input.js"
+      "./combo-box-input": {
+        "types": "./dist/prosekit-solid-combo-box-input.d.ts",
+        "import": "./dist/prosekit-solid-combo-box-input.js",
+        "default": "./dist/prosekit-solid-combo-box-input.js"
       },
-      "./components/combo-box-item": {
-        "types": "./dist/prosekit-solid-components-combo-box-item.d.ts",
-        "import": "./dist/prosekit-solid-components-combo-box-item.js",
-        "default": "./dist/prosekit-solid-components-combo-box-item.js"
+      "./combo-box-item": {
+        "types": "./dist/prosekit-solid-combo-box-item.d.ts",
+        "import": "./dist/prosekit-solid-combo-box-item.js",
+        "default": "./dist/prosekit-solid-combo-box-item.js"
       },
-      "./components/combo-box-list": {
-        "types": "./dist/prosekit-solid-components-combo-box-list.d.ts",
-        "import": "./dist/prosekit-solid-components-combo-box-list.js",
-        "default": "./dist/prosekit-solid-components-combo-box-list.js"
+      "./combo-box-list": {
+        "types": "./dist/prosekit-solid-combo-box-list.d.ts",
+        "import": "./dist/prosekit-solid-combo-box-list.js",
+        "default": "./dist/prosekit-solid-combo-box-list.js"
       }
     },
     "main": "./dist/prosekit-solid.js",
@@ -123,32 +123,32 @@
         ".": [
           "./dist/prosekit-solid.d.ts"
         ],
-        "components/autocomplete-empty": [
-          "./dist/prosekit-solid-components-autocomplete-empty.d.ts"
+        "autocomplete-empty": [
+          "./dist/prosekit-solid-autocomplete-empty.d.ts"
         ],
-        "components/autocomplete-item": [
-          "./dist/prosekit-solid-components-autocomplete-item.d.ts"
+        "autocomplete-item": [
+          "./dist/prosekit-solid-autocomplete-item.d.ts"
         ],
-        "components/autocomplete-list": [
-          "./dist/prosekit-solid-components-autocomplete-list.d.ts"
+        "autocomplete-list": [
+          "./dist/prosekit-solid-autocomplete-list.d.ts"
         ],
-        "components/autocomplete-popover": [
-          "./dist/prosekit-solid-components-autocomplete-popover.d.ts"
+        "autocomplete-popover": [
+          "./dist/prosekit-solid-autocomplete-popover.d.ts"
         ],
-        "components/code-block-popover": [
-          "./dist/prosekit-solid-components-code-block-popover.d.ts"
+        "code-block-popover": [
+          "./dist/prosekit-solid-code-block-popover.d.ts"
         ],
-        "components/combo-box": [
-          "./dist/prosekit-solid-components-combo-box.d.ts"
+        "combo-box": [
+          "./dist/prosekit-solid-combo-box.d.ts"
         ],
-        "components/combo-box-input": [
-          "./dist/prosekit-solid-components-combo-box-input.d.ts"
+        "combo-box-input": [
+          "./dist/prosekit-solid-combo-box-input.d.ts"
         ],
-        "components/combo-box-item": [
-          "./dist/prosekit-solid-components-combo-box-item.d.ts"
+        "combo-box-item": [
+          "./dist/prosekit-solid-combo-box-item.d.ts"
         ],
-        "components/combo-box-list": [
-          "./dist/prosekit-solid-components-combo-box-list.d.ts"
+        "combo-box-list": [
+          "./dist/prosekit-solid-combo-box-list.d.ts"
         ]
       }
     }

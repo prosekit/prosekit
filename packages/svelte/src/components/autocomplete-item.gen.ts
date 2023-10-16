@@ -1,4 +1,4 @@
-import type { AutocompleteItemProps as AutocompleteItemElementProps } from '@prosekit/lit/components/autocomplete-item'
+import type { AutocompleteItemProps as AutocompleteItemElementProps } from '@prosekit/lit/autocomplete-item'
 import type { SvelteComponent } from 'svelte'
 
 import AutocompleteItemComponent from './autocomplete-item.gen.svelte'

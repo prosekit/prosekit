@@ -1,8 +1,8 @@
 import type { MentionAttrs } from 'prosekit/extensions/mention'
-import { AutocompleteEmpty } from 'prosekit/vue/components/autocomplete-empty'
-import { AutocompleteItem } from 'prosekit/vue/components/autocomplete-item'
-import { AutocompleteList } from 'prosekit/vue/components/autocomplete-list'
-import { AutocompletePopover } from 'prosekit/vue/components/autocomplete-popover'
+import { AutocompleteEmpty } from 'prosekit/vue/autocomplete-empty'
+import { AutocompleteItem } from 'prosekit/vue/autocomplete-item'
+import { AutocompleteList } from 'prosekit/vue/autocomplete-list'
+import { AutocompletePopover } from 'prosekit/vue/autocomplete-popover'
 import { defineComponent, h } from 'vue'
 
 import { useExampleEditor } from './use-example-editor'

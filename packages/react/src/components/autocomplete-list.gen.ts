@@ -1,6 +1,6 @@
 import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
-import { AutocompleteList as AutocompleteListElement, type AutocompleteListProps as AutocompleteListElementProps } from '@prosekit/lit/components/autocomplete-list'
+import { AutocompleteList as AutocompleteListElement, type AutocompleteListProps as AutocompleteListElementProps } from '@prosekit/lit/autocomplete-list'
 import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
 import React from 'react'
 

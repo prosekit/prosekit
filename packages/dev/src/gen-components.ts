@@ -28,7 +28,7 @@ export async function genComponents() {
 async function writeReactComponents(pkg: Package, componentNames: string[]) {
   const exports = (pkg.packageJson as any).exports
   for (const kebab of componentNames) {
-    exports[`./components/${kebab}`] = ''
+    exports[`./${kebab}`] = ''
     const code = formatReactCode(kebab)
     await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
   }
@@ -37,7 +37,7 @@ async function writeReactComponents(pkg: Package, componentNames: string[]) {
 async function writeVueComponents(pkg: Package, componentNames: string[]) {
   const exports = (pkg.packageJson as any).exports
   for (const kebab of componentNames) {
-    exports[`./components/${kebab}`] = ''
+    exports[`./${kebab}`] = ''
     const code = formatVueCode(kebab)
     await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
   }
@@ -46,7 +46,7 @@ async function writeVueComponents(pkg: Package, componentNames: string[]) {
 async function writeSvelteComponents(pkg: Package, componentNames: string[]) {
   const exports = (pkg.packageJson as any).exports
   for (const kebab of componentNames) {
-    exports[`./components/${kebab}`] = ''
+    exports[`./${kebab}`] = ''
     const code = formatSvelteCode(kebab)
     await vfs.updateTextInPackage(
       pkg,
@@ -62,7 +62,7 @@ async function writeSvelteComponents(pkg: Package, componentNames: string[]) {
 async function writeSolidComponents(pkg: Package, componentNames: string[]) {
   const exports = (pkg.packageJson as any).exports
   for (const kebab of componentNames) {
-    exports[`./components/${kebab}`] = ''
+    exports[`./${kebab}`] = ''
     const code = formatSolidCode(kebab)
     await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
   }
@@ -71,7 +71,7 @@ async function writeSolidComponents(pkg: Package, componentNames: string[]) {
 async function writePreactComponents(pkg: Package, componentNames: string[]) {
   const exports = (pkg.packageJson as any).exports
   for (const kebab of componentNames) {
-    exports[`./components/${kebab}`] = ''
+    exports[`./${kebab}`] = ''
     const code = formatPreactCode(kebab)
     await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
   }
@@ -83,7 +83,7 @@ function formatReactCode(kebab: string) {
     `
 import { createComponent } from '@lit/react'
 import type { SimplifyUnion } from '@prosekit/core'
-import { ${pascal} as ${pascal}Element, type ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/components/${kebab}'
+import { ${pascal} as ${pascal}Element, type ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
 import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
 import React from 'react'
 
@@ -114,9 +114,9 @@ function formatVueCode(kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import '@prosekit/lit/components/${kebab}'
+import '@prosekit/lit/${kebab}'
 
-import { type ${pascal}Props as ${pascal}ElementProps, propNames } from '@prosekit/lit/components/${kebab}'
+import { type ${pascal}Props as ${pascal}ElementProps, propNames } from '@prosekit/lit/${kebab}'
 import { defineComponent, h } from 'vue'
 
 export type ${pascal}Props = {
@@ -144,7 +144,7 @@ function formatSvelteCode(kebab: string) {
   return (
     `
 <script lang="ts">
-import '@prosekit/lit/components/${kebab}'
+import '@prosekit/lit/${kebab}'
 </script>
 
 <prosekit-${kebab} {...$$props}>
@@ -158,7 +158,7 @@ function formatSvelteTsCode(kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/components/${kebab}'
+import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
 import type { SvelteComponent } from 'svelte'
 
 import ${pascal}Component from './${kebab}.gen.svelte'
@@ -178,9 +178,9 @@ function formatSolidCode(kebab: string) {
     `
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import '@prosekit/lit/components/${kebab}'
+import '@prosekit/lit/${kebab}'
 
-import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/components/${kebab}'
+import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
 import type { Component, JSXElement } from 'solid-js'
 import html from 'solid-js/html'
 
@@ -200,8 +200,8 @@ function formatPreactCode(kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import '@prosekit/lit/components/${kebab}'
-import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/components/${kebab}'
+import '@prosekit/lit/${kebab}'
+import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
 import type { ComponentChildren, ComponentType } from 'preact'
 import { h } from 'preact'
 
@@ -222,7 +222,15 @@ export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
  * e.g. ["menu-item", "menu"]
  */
 function readLitComponents(pkg: Package): string[] {
-  return Object.keys((pkg.packageJson as any).exports)
-    .filter((key) => key.startsWith('./components/'))
-    .map((key) => key.slice('./components/'.length))
+  const paths: string[] = Object.values((pkg.packageJson as any).exports)
+  const names: string[] = []
+
+  for (const path of paths) {
+    const match = /components\/([^/]*)\//.exec(path)
+    if (match) {
+      names.push(match[1])
+    }
+  }
+
+  return names
 }

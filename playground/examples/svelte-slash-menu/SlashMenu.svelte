@@ -1,8 +1,8 @@
 <script lang="ts">
-import { AutocompleteItem } from 'prosekit/svelte/components/autocomplete-item'
-import { AutocompletePopover } from 'prosekit/svelte/components/autocomplete-popover'
-import { AutocompleteEmpty } from 'prosekit/svelte/components/autocomplete-empty'
-import { AutocompleteList } from 'prosekit/svelte/components/autocomplete-list'
+import { AutocompleteItem } from 'prosekit/svelte/autocomplete-item'
+import { AutocompletePopover } from 'prosekit/svelte/autocomplete-popover'
+import { AutocompleteEmpty } from 'prosekit/svelte/autocomplete-empty'
+import { AutocompleteList } from 'prosekit/svelte/autocomplete-list'
 import { getExampleEditor } from './get-example-editor'
 
 const editor = getExampleEditor()

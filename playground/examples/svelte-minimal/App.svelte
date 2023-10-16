@@ -4,7 +4,7 @@ import 'prosekit/extensions/placeholder/style.css'
 
 import { onMount } from 'svelte'
 import { createEditor } from 'prosekit/core'
-import { ProseKit } from 'prosekit/svelte/components/prosekit'
+import { ProseKit } from 'prosekit/svelte'
 import { defineBasicExtension } from 'prosekit/basic'
 
 const extension = defineBasicExtension()

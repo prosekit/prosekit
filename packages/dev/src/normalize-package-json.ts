@@ -73,6 +73,12 @@ export async function normalizePackageJson(pkg: Package) {
         `./src/${subPath}.gen.tsx`,
         `./src/${subPath}/index.ts`,
         `./src/${subPath}/index.tsx`,
+        `./src/components/${subPath}.ts`,
+        `./src/components/${subPath}.tsx`,
+        `./src/components/${subPath}.gen.ts`,
+        `./src/components/${subPath}.gen.tsx`,
+        `./src/components/${subPath}/index.ts`,
+        `./src/components/${subPath}/index.tsx`,
       ])
 
       if (!foundFilePath) {

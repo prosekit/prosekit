@@ -4,9 +4,9 @@ import 'prosekit/extensions/placeholder/style.css'
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, union } from 'prosekit/core'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
-import { AutocompleteItem } from 'prosekit/lit/components/autocomplete-item'
-import { AutocompleteList } from 'prosekit/lit/components/autocomplete-list'
-import { AutocompletePopover } from 'prosekit/lit/components/autocomplete-popover'
+import { AutocompleteItem } from 'prosekit/lit/autocomplete-item'
+import { AutocompleteList } from 'prosekit/lit/autocomplete-list'
+import { AutocompletePopover } from 'prosekit/lit/autocomplete-popover'
 
 export function defineExampleExtension() {
   return union([

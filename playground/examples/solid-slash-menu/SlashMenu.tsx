@@ -1,9 +1,9 @@
 /** @jsxImportSource solid-js */
 
-import { AutocompleteEmpty } from 'prosekit/solid/components/autocomplete-empty'
-import { AutocompleteItem } from 'prosekit/solid/components/autocomplete-item'
-import { AutocompleteList } from 'prosekit/solid/components/autocomplete-list'
-import { AutocompletePopover } from 'prosekit/solid/components/autocomplete-popover'
+import { AutocompleteEmpty } from 'prosekit/solid/autocomplete-empty'
+import { AutocompleteItem } from 'prosekit/solid/autocomplete-item'
+import { AutocompleteList } from 'prosekit/solid/autocomplete-list'
+import { AutocompletePopover } from 'prosekit/solid/autocomplete-popover'
 
 import { useExampleEditor } from './use-example-editor'
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-import '@prosekit/lit/components/code-block-popover'
+import '@prosekit/lit/code-block-popover'
 </script>
 
 <prosekit-code-block-popover {...$$props}>

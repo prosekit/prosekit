@@ -1,5 +1,5 @@
 <script lang="ts">
-import '@prosekit/lit/components/combo-box-list'
+import '@prosekit/lit/combo-box-list'
 </script>
 
 <prosekit-combo-box-list {...$$props}>

@@ -1,4 +1,4 @@
-import type { ComboBoxProps as ComboBoxElementProps } from '@prosekit/lit/components/combo-box'
+import type { ComboBoxProps as ComboBoxElementProps } from '@prosekit/lit/combo-box'
 import type { SvelteComponent } from 'svelte'
 
 import ComboBoxComponent from './combo-box.gen.svelte'

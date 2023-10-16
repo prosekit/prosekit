@@ -1,6 +1,6 @@
-import '@prosekit/lit/components/autocomplete-popover'
+import '@prosekit/lit/autocomplete-popover'
 
-import { type AutocompletePopoverProps as AutocompletePopoverElementProps, propNames } from '@prosekit/lit/components/autocomplete-popover'
+import { type AutocompletePopoverProps as AutocompletePopoverElementProps, propNames } from '@prosekit/lit/autocomplete-popover'
 import { defineComponent, h } from 'vue'
 
 export type AutocompletePopoverProps = {

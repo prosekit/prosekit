@@ -1,9 +1,9 @@
 /** @jsxImportSource preact */
 
-import { AutocompleteEmpty } from 'prosekit/preact/components/autocomplete-empty'
-import { AutocompleteItem } from 'prosekit/preact/components/autocomplete-item'
-import { AutocompleteList } from 'prosekit/preact/components/autocomplete-list'
-import { AutocompletePopover } from 'prosekit/preact/components/autocomplete-popover'
+import { AutocompleteEmpty } from 'prosekit/preact/autocomplete-empty'
+import { AutocompleteItem } from 'prosekit/preact/autocomplete-item'
+import { AutocompleteList } from 'prosekit/preact/autocomplete-list'
+import { AutocompletePopover } from 'prosekit/preact/autocomplete-popover'
 
 import { useExampleEditor } from './use-example-editor'
 

@@ -1,5 +1,5 @@
-import '@prosekit/lit/components/combo-box-list'
-import type { ComboBoxListProps as ComboBoxListElementProps } from '@prosekit/lit/components/combo-box-list'
+import '@prosekit/lit/combo-box-list'
+import type { ComboBoxListProps as ComboBoxListElementProps } from '@prosekit/lit/combo-box-list'
 import type { ComponentChildren, ComponentType } from 'preact'
 import { h } from 'preact'
 

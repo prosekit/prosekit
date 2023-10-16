@@ -1,6 +1,6 @@
-import '@prosekit/lit/components/autocomplete-empty'
+import '@prosekit/lit/autocomplete-empty'
 
-import { type AutocompleteEmptyProps as AutocompleteEmptyElementProps, propNames } from '@prosekit/lit/components/autocomplete-empty'
+import { type AutocompleteEmptyProps as AutocompleteEmptyElementProps, propNames } from '@prosekit/lit/autocomplete-empty'
 import { defineComponent, h } from 'vue'
 
 export type AutocompleteEmptyProps = {

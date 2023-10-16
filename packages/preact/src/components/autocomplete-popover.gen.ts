@@ -1,5 +1,5 @@
-import '@prosekit/lit/components/autocomplete-popover'
-import type { AutocompletePopoverProps as AutocompletePopoverElementProps } from '@prosekit/lit/components/autocomplete-popover'
+import '@prosekit/lit/autocomplete-popover'
+import type { AutocompletePopoverProps as AutocompletePopoverElementProps } from '@prosekit/lit/autocomplete-popover'
 import type { ComponentChildren, ComponentType } from 'preact'
 import { h } from 'preact'
 

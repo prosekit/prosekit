@@ -1,6 +1,6 @@
-import '@prosekit/lit/components/combo-box-input'
+import '@prosekit/lit/combo-box-input'
 
-import { type ComboBoxInputProps as ComboBoxInputElementProps, propNames } from '@prosekit/lit/components/combo-box-input'
+import { type ComboBoxInputProps as ComboBoxInputElementProps, propNames } from '@prosekit/lit/combo-box-input'
 import { defineComponent, h } from 'vue'
 
 export type ComboBoxInputProps = {

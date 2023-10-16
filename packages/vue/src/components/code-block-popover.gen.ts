@@ -1,6 +1,6 @@
-import '@prosekit/lit/components/code-block-popover'
+import '@prosekit/lit/code-block-popover'
 
-import { type CodeBlockPopoverProps as CodeBlockPopoverElementProps, propNames } from '@prosekit/lit/components/code-block-popover'
+import { type CodeBlockPopoverProps as CodeBlockPopoverElementProps, propNames } from '@prosekit/lit/code-block-popover'
 import { defineComponent, h } from 'vue'
 
 export type CodeBlockPopoverProps = {

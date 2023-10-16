@@ -5,7 +5,7 @@ import 'prosekit/extensions/placeholder/style.css'
 import { createEditor } from 'prosekit/core'
 import { defineExampleExtension } from './extension'
 import { onMount } from 'svelte'
-import { ProseKit } from 'prosekit/svelte/components/prosekit'
+import { ProseKit } from 'prosekit/svelte'
 import ToggleItalicButton from './ToggleItalicButton.svelte'
 import SlashMenu from './SlashMenu.svelte'
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-import '@prosekit/lit/components/autocomplete-popover'
+import '@prosekit/lit/autocomplete-popover'
 </script>
 
 <prosekit-autocomplete-popover {...$$props}>

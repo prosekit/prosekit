@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import '@prosekit/lit/components/autocomplete-empty'
+import '@prosekit/lit/autocomplete-empty'
 
-import type { AutocompleteEmptyProps as AutocompleteEmptyElementProps } from '@prosekit/lit/components/autocomplete-empty'
+import type { AutocompleteEmptyProps as AutocompleteEmptyElementProps } from '@prosekit/lit/autocomplete-empty'
 import type { Component, JSXElement } from 'solid-js'
 import html from 'solid-js/html'
 

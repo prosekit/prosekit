@@ -1,5 +1,5 @@
-import '@prosekit/lit/components/code-block-popover'
-import type { CodeBlockPopoverProps as CodeBlockPopoverElementProps } from '@prosekit/lit/components/code-block-popover'
+import '@prosekit/lit/code-block-popover'
+import type { CodeBlockPopoverProps as CodeBlockPopoverElementProps } from '@prosekit/lit/code-block-popover'
 import type { ComponentChildren, ComponentType } from 'preact'
 import { h } from 'preact'
 

@@ -26,45 +26,41 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./components/autocomplete-empty": {
+    "./autocomplete-empty": {
       "svelte": "./src/components/autocomplete-empty.ts",
       "default": "./src/components/autocomplete-empty.ts"
     },
-    "./components/autocomplete-item": {
+    "./autocomplete-item": {
       "svelte": "./src/components/autocomplete-item.ts",
       "default": "./src/components/autocomplete-item.ts"
     },
-    "./components/autocomplete-list": {
+    "./autocomplete-list": {
       "svelte": "./src/components/autocomplete-list.ts",
       "default": "./src/components/autocomplete-list.ts"
     },
-    "./components/autocomplete-popover": {
+    "./autocomplete-popover": {
       "svelte": "./src/components/autocomplete-popover.ts",
       "default": "./src/components/autocomplete-popover.ts"
     },
-    "./components/code-block-popover": {
+    "./code-block-popover": {
       "svelte": "./src/components/code-block-popover.gen.ts",
       "default": "./src/components/code-block-popover.gen.ts"
     },
-    "./components/combo-box": {
+    "./combo-box": {
       "svelte": "./src/components/combo-box.gen.ts",
       "default": "./src/components/combo-box.gen.ts"
     },
-    "./components/combo-box-input": {
+    "./combo-box-input": {
       "svelte": "./src/components/combo-box-input.gen.ts",
       "default": "./src/components/combo-box-input.gen.ts"
     },
-    "./components/combo-box-item": {
+    "./combo-box-item": {
       "svelte": "./src/components/combo-box-item.gen.ts",
       "default": "./src/components/combo-box-item.gen.ts"
     },
-    "./components/combo-box-list": {
+    "./combo-box-list": {
       "svelte": "./src/components/combo-box-list.gen.ts",
       "default": "./src/components/combo-box-list.gen.ts"
-    },
-    "./components/prosekit": {
-      "svelte": "./src/components/prosekit.ts",
-      "default": "./src/components/prosekit.ts"
     }
   },
   "files": [
@@ -103,65 +99,59 @@
         "import": "./dist/prosekit-svelte.js",
         "default": "./dist/prosekit-svelte.js"
       },
-      "./components/autocomplete-empty": {
-        "types": "./dist/prosekit-svelte-components-autocomplete-empty.d.ts",
-        "svelte": "./dist/prosekit-svelte-components-autocomplete-empty.js",
-        "import": "./dist/prosekit-svelte-components-autocomplete-empty.js",
-        "default": "./dist/prosekit-svelte-components-autocomplete-empty.js"
+      "./autocomplete-empty": {
+        "types": "./dist/prosekit-svelte-autocomplete-empty.d.ts",
+        "svelte": "./dist/prosekit-svelte-autocomplete-empty.js",
+        "import": "./dist/prosekit-svelte-autocomplete-empty.js",
+        "default": "./dist/prosekit-svelte-autocomplete-empty.js"
       },
-      "./components/autocomplete-item": {
-        "types": "./dist/prosekit-svelte-components-autocomplete-item.d.ts",
-        "svelte": "./dist/prosekit-svelte-components-autocomplete-item.js",
-        "import": "./dist/prosekit-svelte-components-autocomplete-item.js",
-        "default": "./dist/prosekit-svelte-components-autocomplete-item.js"
+      "./autocomplete-item": {
+        "types": "./dist/prosekit-svelte-autocomplete-item.d.ts",
+        "svelte": "./dist/prosekit-svelte-autocomplete-item.js",
+        "import": "./dist/prosekit-svelte-autocomplete-item.js",
+        "default": "./dist/prosekit-svelte-autocomplete-item.js"
       },
-      "./components/autocomplete-list": {
-        "types": "./dist/prosekit-svelte-components-autocomplete-list.d.ts",
-        "svelte": "./dist/prosekit-svelte-components-autocomplete-list.js",
-        "import": "./dist/prosekit-svelte-components-autocomplete-list.js",
-        "default": "./dist/prosekit-svelte-components-autocomplete-list.js"
+      "./autocomplete-list": {
+        "types": "./dist/prosekit-svelte-autocomplete-list.d.ts",
+        "svelte": "./dist/prosekit-svelte-autocomplete-list.js",
+        "import": "./dist/prosekit-svelte-autocomplete-list.js",
+        "default": "./dist/prosekit-svelte-autocomplete-list.js"
       },
-      "./components/autocomplete-popover": {
-        "types": "./dist/prosekit-svelte-components-autocomplete-popover.d.ts",
-        "svelte": "./dist/prosekit-svelte-components-autocomplete-popover.js",
-        "import": "./dist/prosekit-svelte-components-autocomplete-popover.js",
-        "default": "./dist/prosekit-svelte-components-autocomplete-popover.js"
+      "./autocomplete-popover": {
+        "types": "./dist/prosekit-svelte-autocomplete-popover.d.ts",
+        "svelte": "./dist/prosekit-svelte-autocomplete-popover.js",
+        "import": "./dist/prosekit-svelte-autocomplete-popover.js",
+        "default": "./dist/prosekit-svelte-autocomplete-popover.js"
       },
-      "./components/code-block-popover": {
-        "types": "./dist/prosekit-svelte-components-code-block-popover.d.ts",
-        "svelte": "./dist/prosekit-svelte-components-code-block-popover.js",
-        "import": "./dist/prosekit-svelte-components-code-block-popover.js",
-        "default": "./dist/prosekit-svelte-components-code-block-popover.js"
+      "./code-block-popover": {
+        "types": "./dist/prosekit-svelte-code-block-popover.d.ts",
+        "svelte": "./dist/prosekit-svelte-code-block-popover.js",
+        "import": "./dist/prosekit-svelte-code-block-popover.js",
+        "default": "./dist/prosekit-svelte-code-block-popover.js"
       },
-      "./components/combo-box": {
-        "types": "./dist/prosekit-svelte-components-combo-box.d.ts",
-        "svelte": "./dist/prosekit-svelte-components-combo-box.js",
-        "import": "./dist/prosekit-svelte-components-combo-box.js",
-        "default": "./dist/prosekit-svelte-components-combo-box.js"
+      "./combo-box": {
+        "types": "./dist/prosekit-svelte-combo-box.d.ts",
+        "svelte": "./dist/prosekit-svelte-combo-box.js",
+        "import": "./dist/prosekit-svelte-combo-box.js",
+        "default": "./dist/prosekit-svelte-combo-box.js"
       },
-      "./components/combo-box-input": {
-        "types": "./dist/prosekit-svelte-components-combo-box-input.d.ts",
-        "svelte": "./dist/prosekit-svelte-components-combo-box-input.js",
-        "import": "./dist/prosekit-svelte-components-combo-box-input.js",
-        "default": "./dist/prosekit-svelte-components-combo-box-input.js"
+      "./combo-box-input": {
+        "types": "./dist/prosekit-svelte-combo-box-input.d.ts",
+        "svelte": "./dist/prosekit-svelte-combo-box-input.js",
+        "import": "./dist/prosekit-svelte-combo-box-input.js",
+        "default": "./dist/prosekit-svelte-combo-box-input.js"
       },
-      "./components/combo-box-item": {
-        "types": "./dist/prosekit-svelte-components-combo-box-item.d.ts",
-        "svelte": "./dist/prosekit-svelte-components-combo-box-item.js",
-        "import": "./dist/prosekit-svelte-components-combo-box-item.js",
-        "default": "./dist/prosekit-svelte-components-combo-box-item.js"
+      "./combo-box-item": {
+        "types": "./dist/prosekit-svelte-combo-box-item.d.ts",
+        "svelte": "./dist/prosekit-svelte-combo-box-item.js",
+        "import": "./dist/prosekit-svelte-combo-box-item.js",
+        "default": "./dist/prosekit-svelte-combo-box-item.js"
       },
-      "./components/combo-box-list": {
-        "types": "./dist/prosekit-svelte-components-combo-box-list.d.ts",
-        "svelte": "./dist/prosekit-svelte-components-combo-box-list.js",
-        "import": "./dist/prosekit-svelte-components-combo-box-list.js",
-        "default": "./dist/prosekit-svelte-components-combo-box-list.js"
-      },
-      "./components/prosekit": {
-        "types": "./dist/prosekit-svelte-components-prosekit.d.ts",
-        "svelte": "./dist/prosekit-svelte-components-prosekit.js",
-        "import": "./dist/prosekit-svelte-components-prosekit.js",
-        "default": "./dist/prosekit-svelte-components-prosekit.js"
+      "./combo-box-list": {
+        "types": "./dist/prosekit-svelte-combo-box-list.d.ts",
+        "svelte": "./dist/prosekit-svelte-combo-box-list.js",
+        "import": "./dist/prosekit-svelte-combo-box-list.js",
+        "default": "./dist/prosekit-svelte-combo-box-list.js"
       }
     },
     "main": "./dist/prosekit-svelte.js",
@@ -172,35 +162,32 @@
         ".": [
           "./dist/prosekit-svelte.d.ts"
         ],
-        "components/autocomplete-empty": [
-          "./dist/prosekit-svelte-components-autocomplete-empty.d.ts"
+        "autocomplete-empty": [
+          "./dist/prosekit-svelte-autocomplete-empty.d.ts"
         ],
-        "components/autocomplete-item": [
-          "./dist/prosekit-svelte-components-autocomplete-item.d.ts"
+        "autocomplete-item": [
+          "./dist/prosekit-svelte-autocomplete-item.d.ts"
         ],
-        "components/autocomplete-list": [
-          "./dist/prosekit-svelte-components-autocomplete-list.d.ts"
+        "autocomplete-list": [
+          "./dist/prosekit-svelte-autocomplete-list.d.ts"
         ],
-        "components/autocomplete-popover": [
-          "./dist/prosekit-svelte-components-autocomplete-popover.d.ts"
+        "autocomplete-popover": [
+          "./dist/prosekit-svelte-autocomplete-popover.d.ts"
         ],
-        "components/code-block-popover": [
-          "./dist/prosekit-svelte-components-code-block-popover.d.ts"
+        "code-block-popover": [
+          "./dist/prosekit-svelte-code-block-popover.d.ts"
         ],
-        "components/combo-box": [
-          "./dist/prosekit-svelte-components-combo-box.d.ts"
+        "combo-box": [
+          "./dist/prosekit-svelte-combo-box.d.ts"
         ],
-        "components/combo-box-input": [
-          "./dist/prosekit-svelte-components-combo-box-input.d.ts"
+        "combo-box-input": [
+          "./dist/prosekit-svelte-combo-box-input.d.ts"
         ],
-        "components/combo-box-item": [
-          "./dist/prosekit-svelte-components-combo-box-item.d.ts"
+        "combo-box-item": [
+          "./dist/prosekit-svelte-combo-box-item.d.ts"
         ],
-        "components/combo-box-list": [
-          "./dist/prosekit-svelte-components-combo-box-list.d.ts"
-        ],
-        "components/prosekit": [
-          "./dist/prosekit-svelte-components-prosekit.d.ts"
+        "combo-box-list": [
+          "./dist/prosekit-svelte-combo-box-list.d.ts"
         ]
       }
     }

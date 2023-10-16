@@ -1,7 +1,7 @@
-import { AutocompleteEmpty } from 'prosekit/react/components/autocomplete-empty'
-import { AutocompleteItem } from 'prosekit/react/components/autocomplete-item'
-import { AutocompleteList } from 'prosekit/react/components/autocomplete-list'
-import { AutocompletePopover } from 'prosekit/react/components/autocomplete-popover'
+import { AutocompleteEmpty } from 'prosekit/react/autocomplete-empty'
+import { AutocompleteItem } from 'prosekit/react/autocomplete-item'
+import { AutocompleteList } from 'prosekit/react/autocomplete-list'
+import { AutocompletePopover } from 'prosekit/react/autocomplete-popover'
 import React from 'react'
 
 import { useExampleEditor } from './use-example-editor'

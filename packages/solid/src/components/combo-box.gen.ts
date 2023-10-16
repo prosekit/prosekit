@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 
-import '@prosekit/lit/components/combo-box'
+import '@prosekit/lit/combo-box'
 
-import type { ComboBoxProps as ComboBoxElementProps } from '@prosekit/lit/components/combo-box'
+import type { ComboBoxProps as ComboBoxElementProps } from '@prosekit/lit/combo-box'
 import type { Component, JSXElement } from 'solid-js'
 import html from 'solid-js/html'
 

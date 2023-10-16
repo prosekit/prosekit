@@ -77,298 +77,258 @@ export const referenceItems = [
     "text": "lit",
     "items": [
       {
-        "text": "components",
-        "items": [
-          {
-            "text": "autocomplete-empty",
-            "link": "/references/lit/components/autocomplete-empty"
-          },
-          {
-            "text": "autocomplete-item",
-            "link": "/references/lit/components/autocomplete-item"
-          },
-          {
-            "text": "autocomplete-list",
-            "link": "/references/lit/components/autocomplete-list"
-          },
-          {
-            "text": "autocomplete-popover",
-            "link": "/references/lit/components/autocomplete-popover"
-          },
-          {
-            "text": "code-block-popover",
-            "link": "/references/lit/components/code-block-popover"
-          },
-          {
-            "text": "combo-box",
-            "link": "/references/lit/components/combo-box"
-          },
-          {
-            "text": "combo-box-input",
-            "link": "/references/lit/components/combo-box-input"
-          },
-          {
-            "text": "combo-box-item",
-            "link": "/references/lit/components/combo-box-item"
-          },
-          {
-            "text": "combo-box-list",
-            "link": "/references/lit/components/combo-box-list"
-          }
-        ],
-        "collapsed": true
+        "text": "autocomplete-empty",
+        "link": "/references/lit/autocomplete-empty"
+      },
+      {
+        "text": "autocomplete-item",
+        "link": "/references/lit/autocomplete-item"
+      },
+      {
+        "text": "autocomplete-list",
+        "link": "/references/lit/autocomplete-list"
+      },
+      {
+        "text": "autocomplete-popover",
+        "link": "/references/lit/autocomplete-popover"
+      },
+      {
+        "text": "code-block-popover",
+        "link": "/references/lit/code-block-popover"
+      },
+      {
+        "text": "combo-box",
+        "link": "/references/lit/combo-box"
+      },
+      {
+        "text": "combo-box-input",
+        "link": "/references/lit/combo-box-input"
+      },
+      {
+        "text": "combo-box-item",
+        "link": "/references/lit/combo-box-item"
+      },
+      {
+        "text": "combo-box-list",
+        "link": "/references/lit/combo-box-list"
       }
     ],
-    "collapsed": false,
+    "collapsed": true,
     "link": "/references/lit"
   },
   {
     "text": "preact",
     "items": [
       {
-        "text": "components",
-        "items": [
-          {
-            "text": "autocomplete-empty",
-            "link": "/references/preact/components/autocomplete-empty"
-          },
-          {
-            "text": "autocomplete-item",
-            "link": "/references/preact/components/autocomplete-item"
-          },
-          {
-            "text": "autocomplete-list",
-            "link": "/references/preact/components/autocomplete-list"
-          },
-          {
-            "text": "autocomplete-popover",
-            "link": "/references/preact/components/autocomplete-popover"
-          },
-          {
-            "text": "code-block-popover",
-            "link": "/references/preact/components/code-block-popover"
-          },
-          {
-            "text": "combo-box",
-            "link": "/references/preact/components/combo-box"
-          },
-          {
-            "text": "combo-box-input",
-            "link": "/references/preact/components/combo-box-input"
-          },
-          {
-            "text": "combo-box-item",
-            "link": "/references/preact/components/combo-box-item"
-          },
-          {
-            "text": "combo-box-list",
-            "link": "/references/preact/components/combo-box-list"
-          }
-        ],
-        "collapsed": true
+        "text": "autocomplete-empty",
+        "link": "/references/preact/autocomplete-empty"
+      },
+      {
+        "text": "autocomplete-item",
+        "link": "/references/preact/autocomplete-item"
+      },
+      {
+        "text": "autocomplete-list",
+        "link": "/references/preact/autocomplete-list"
+      },
+      {
+        "text": "autocomplete-popover",
+        "link": "/references/preact/autocomplete-popover"
+      },
+      {
+        "text": "code-block-popover",
+        "link": "/references/preact/code-block-popover"
+      },
+      {
+        "text": "combo-box",
+        "link": "/references/preact/combo-box"
+      },
+      {
+        "text": "combo-box-input",
+        "link": "/references/preact/combo-box-input"
+      },
+      {
+        "text": "combo-box-item",
+        "link": "/references/preact/combo-box-item"
+      },
+      {
+        "text": "combo-box-list",
+        "link": "/references/preact/combo-box-list"
       }
     ],
-    "collapsed": false,
+    "collapsed": true,
     "link": "/references/preact"
   },
   {
     "text": "react",
     "items": [
       {
-        "text": "components",
-        "items": [
-          {
-            "text": "autocomplete-empty",
-            "link": "/references/react/components/autocomplete-empty"
-          },
-          {
-            "text": "autocomplete-item",
-            "link": "/references/react/components/autocomplete-item"
-          },
-          {
-            "text": "autocomplete-list",
-            "link": "/references/react/components/autocomplete-list"
-          },
-          {
-            "text": "autocomplete-popover",
-            "link": "/references/react/components/autocomplete-popover"
-          },
-          {
-            "text": "code-block-popover",
-            "link": "/references/react/components/code-block-popover"
-          },
-          {
-            "text": "combo-box",
-            "link": "/references/react/components/combo-box"
-          },
-          {
-            "text": "combo-box-input",
-            "link": "/references/react/components/combo-box-input"
-          },
-          {
-            "text": "combo-box-item",
-            "link": "/references/react/components/combo-box-item"
-          },
-          {
-            "text": "combo-box-list",
-            "link": "/references/react/components/combo-box-list"
-          }
-        ],
-        "collapsed": true
+        "text": "autocomplete-empty",
+        "link": "/references/react/autocomplete-empty"
+      },
+      {
+        "text": "autocomplete-item",
+        "link": "/references/react/autocomplete-item"
+      },
+      {
+        "text": "autocomplete-list",
+        "link": "/references/react/autocomplete-list"
+      },
+      {
+        "text": "autocomplete-popover",
+        "link": "/references/react/autocomplete-popover"
+      },
+      {
+        "text": "code-block-popover",
+        "link": "/references/react/code-block-popover"
+      },
+      {
+        "text": "combo-box",
+        "link": "/references/react/combo-box"
+      },
+      {
+        "text": "combo-box-input",
+        "link": "/references/react/combo-box-input"
+      },
+      {
+        "text": "combo-box-item",
+        "link": "/references/react/combo-box-item"
+      },
+      {
+        "text": "combo-box-list",
+        "link": "/references/react/combo-box-list"
       }
     ],
-    "collapsed": false,
+    "collapsed": true,
     "link": "/references/react"
   },
   {
     "text": "solid",
     "items": [
       {
-        "text": "components",
-        "items": [
-          {
-            "text": "autocomplete-empty",
-            "link": "/references/solid/components/autocomplete-empty"
-          },
-          {
-            "text": "autocomplete-item",
-            "link": "/references/solid/components/autocomplete-item"
-          },
-          {
-            "text": "autocomplete-list",
-            "link": "/references/solid/components/autocomplete-list"
-          },
-          {
-            "text": "autocomplete-popover",
-            "link": "/references/solid/components/autocomplete-popover"
-          },
-          {
-            "text": "code-block-popover",
-            "link": "/references/solid/components/code-block-popover"
-          },
-          {
-            "text": "combo-box",
-            "link": "/references/solid/components/combo-box"
-          },
-          {
-            "text": "combo-box-input",
-            "link": "/references/solid/components/combo-box-input"
-          },
-          {
-            "text": "combo-box-item",
-            "link": "/references/solid/components/combo-box-item"
-          },
-          {
-            "text": "combo-box-list",
-            "link": "/references/solid/components/combo-box-list"
-          }
-        ],
-        "collapsed": true
+        "text": "autocomplete-empty",
+        "link": "/references/solid/autocomplete-empty"
+      },
+      {
+        "text": "autocomplete-item",
+        "link": "/references/solid/autocomplete-item"
+      },
+      {
+        "text": "autocomplete-list",
+        "link": "/references/solid/autocomplete-list"
+      },
+      {
+        "text": "autocomplete-popover",
+        "link": "/references/solid/autocomplete-popover"
+      },
+      {
+        "text": "code-block-popover",
+        "link": "/references/solid/code-block-popover"
+      },
+      {
+        "text": "combo-box",
+        "link": "/references/solid/combo-box"
+      },
+      {
+        "text": "combo-box-input",
+        "link": "/references/solid/combo-box-input"
+      },
+      {
+        "text": "combo-box-item",
+        "link": "/references/solid/combo-box-item"
+      },
+      {
+        "text": "combo-box-list",
+        "link": "/references/solid/combo-box-list"
       }
     ],
-    "collapsed": false,
+    "collapsed": true,
     "link": "/references/solid"
   },
   {
     "text": "svelte",
     "items": [
       {
-        "text": "components",
-        "items": [
-          {
-            "text": "autocomplete-empty",
-            "link": "/references/svelte/components/autocomplete-empty"
-          },
-          {
-            "text": "autocomplete-item",
-            "link": "/references/svelte/components/autocomplete-item"
-          },
-          {
-            "text": "autocomplete-list",
-            "link": "/references/svelte/components/autocomplete-list"
-          },
-          {
-            "text": "autocomplete-popover",
-            "link": "/references/svelte/components/autocomplete-popover"
-          },
-          {
-            "text": "code-block-popover",
-            "link": "/references/svelte/components/code-block-popover"
-          },
-          {
-            "text": "combo-box",
-            "link": "/references/svelte/components/combo-box"
-          },
-          {
-            "text": "combo-box-input",
-            "link": "/references/svelte/components/combo-box-input"
-          },
-          {
-            "text": "combo-box-item",
-            "link": "/references/svelte/components/combo-box-item"
-          },
-          {
-            "text": "combo-box-list",
-            "link": "/references/svelte/components/combo-box-list"
-          },
-          {
-            "text": "prosekit",
-            "link": "/references/svelte/components/prosekit"
-          }
-        ],
-        "collapsed": true
+        "text": "autocomplete-empty",
+        "link": "/references/svelte/autocomplete-empty"
+      },
+      {
+        "text": "autocomplete-item",
+        "link": "/references/svelte/autocomplete-item"
+      },
+      {
+        "text": "autocomplete-list",
+        "link": "/references/svelte/autocomplete-list"
+      },
+      {
+        "text": "autocomplete-popover",
+        "link": "/references/svelte/autocomplete-popover"
+      },
+      {
+        "text": "code-block-popover",
+        "link": "/references/svelte/code-block-popover"
+      },
+      {
+        "text": "combo-box",
+        "link": "/references/svelte/combo-box"
+      },
+      {
+        "text": "combo-box-input",
+        "link": "/references/svelte/combo-box-input"
+      },
+      {
+        "text": "combo-box-item",
+        "link": "/references/svelte/combo-box-item"
+      },
+      {
+        "text": "combo-box-list",
+        "link": "/references/svelte/combo-box-list"
       }
     ],
-    "collapsed": false,
+    "collapsed": true,
     "link": "/references/svelte"
   },
   {
     "text": "vue",
     "items": [
       {
-        "text": "components",
-        "items": [
-          {
-            "text": "autocomplete-empty",
-            "link": "/references/vue/components/autocomplete-empty"
-          },
-          {
-            "text": "autocomplete-item",
-            "link": "/references/vue/components/autocomplete-item"
-          },
-          {
-            "text": "autocomplete-list",
-            "link": "/references/vue/components/autocomplete-list"
-          },
-          {
-            "text": "autocomplete-popover",
-            "link": "/references/vue/components/autocomplete-popover"
-          },
-          {
-            "text": "code-block-popover",
-            "link": "/references/vue/components/code-block-popover"
-          },
-          {
-            "text": "combo-box",
-            "link": "/references/vue/components/combo-box"
-          },
-          {
-            "text": "combo-box-input",
-            "link": "/references/vue/components/combo-box-input"
-          },
-          {
-            "text": "combo-box-item",
-            "link": "/references/vue/components/combo-box-item"
-          },
-          {
-            "text": "combo-box-list",
-            "link": "/references/vue/components/combo-box-list"
-          }
-        ],
-        "collapsed": true
+        "text": "autocomplete-empty",
+        "link": "/references/vue/autocomplete-empty"
+      },
+      {
+        "text": "autocomplete-item",
+        "link": "/references/vue/autocomplete-item"
+      },
+      {
+        "text": "autocomplete-list",
+        "link": "/references/vue/autocomplete-list"
+      },
+      {
+        "text": "autocomplete-popover",
+        "link": "/references/vue/autocomplete-popover"
+      },
+      {
+        "text": "code-block-popover",
+        "link": "/references/vue/code-block-popover"
+      },
+      {
+        "text": "combo-box",
+        "link": "/references/vue/combo-box"
+      },
+      {
+        "text": "combo-box-input",
+        "link": "/references/vue/combo-box-input"
+      },
+      {
+        "text": "combo-box-item",
+        "link": "/references/vue/combo-box-item"
+      },
+      {
+        "text": "combo-box-list",
+        "link": "/references/vue/combo-box-list"
       }
     ],
-    "collapsed": false,
+    "collapsed": true,
     "link": "/references/vue"
   }
 ]

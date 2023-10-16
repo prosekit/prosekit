@@ -1,6 +1,6 @@
-import '@prosekit/lit/components/autocomplete-item'
+import '@prosekit/lit/autocomplete-item'
 
-import { type AutocompleteItemProps as AutocompleteItemElementProps, propNames } from '@prosekit/lit/components/autocomplete-item'
+import { type AutocompleteItemProps as AutocompleteItemElementProps, propNames } from '@prosekit/lit/autocomplete-item'
 import { defineComponent, h } from 'vue'
 
 export type AutocompleteItemProps = {

@@ -1,4 +1,4 @@
-import type { CodeBlockPopoverProps as CodeBlockPopoverElementProps } from '@prosekit/lit/components/code-block-popover'
+import type { CodeBlockPopoverProps as CodeBlockPopoverElementProps } from '@prosekit/lit/code-block-popover'
 import type { SvelteComponent } from 'svelte'
 
 import CodeBlockPopoverComponent from './code-block-popover.gen.svelte'

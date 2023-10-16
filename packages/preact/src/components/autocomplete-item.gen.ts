@@ -1,5 +1,5 @@
-import '@prosekit/lit/components/autocomplete-item'
-import type { AutocompleteItemProps as AutocompleteItemElementProps } from '@prosekit/lit/components/autocomplete-item'
+import '@prosekit/lit/autocomplete-item'
+import type { AutocompleteItemProps as AutocompleteItemElementProps } from '@prosekit/lit/autocomplete-item'
 import type { ComponentChildren, ComponentType } from 'preact'
 import { h } from 'preact'
 

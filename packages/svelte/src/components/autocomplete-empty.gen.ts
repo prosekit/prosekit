@@ -1,4 +1,4 @@
-import type { AutocompleteEmptyProps as AutocompleteEmptyElementProps } from '@prosekit/lit/components/autocomplete-empty'
+import type { AutocompleteEmptyProps as AutocompleteEmptyElementProps } from '@prosekit/lit/autocomplete-empty'
 import type { SvelteComponent } from 'svelte'
 
 import AutocompleteEmptyComponent from './autocomplete-empty.gen.svelte'

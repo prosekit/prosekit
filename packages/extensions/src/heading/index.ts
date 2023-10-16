@@ -1,9 +1,9 @@
 import {
-  addCommands,
-  addInputRule,
-  addKeymap,
-  addNodeSpec,
-  defineExtension,
+  defineCommands,
+  defineInputRule,
+  defineKeymap,
+  defineNodeSpec,
+  union,
   getNodeType,
   toggleNode,
 } from '@prosekit/core'
@@ -13,8 +13,8 @@ export interface HeadingAttrs {
   level: number
 }
 
-export function addHeadingSpec() {
-  return addNodeSpec({
+export function defineHeadingSpec() {
+  return defineNodeSpec({
     name: 'heading',
     attrs: { level: { default: 1 } },
     content: 'inline*',
@@ -34,8 +34,8 @@ export function addHeadingSpec() {
   })
 }
 
-export function addHeadingKeymap() {
-  return addKeymap({
+export function defineHeadingKeymap() {
+  return defineKeymap({
     'mod-1': toggleNode({ type: 'heading', attrs: { level: 1 } }),
     'mod-2': toggleNode({ type: 'heading', attrs: { level: 2 } }),
     'mod-3': toggleNode({ type: 'heading', attrs: { level: 3 } }),
@@ -45,8 +45,8 @@ export function addHeadingKeymap() {
   })
 }
 
-export function addHeadingInputRule() {
-  return addInputRule(({ schema }) => {
+export function defineHeadingInputRule() {
+  return defineInputRule(({ schema }) => {
     const nodeSpec = getNodeType(schema, 'heading')
     const inputRule = textblockTypeInputRule(
       /^(#{1,6})\s/,
@@ -60,8 +60,8 @@ export function addHeadingInputRule() {
   })
 }
 
-export function addHeadingCommands() {
-  return addCommands({
+export function defineHeadingCommands() {
+  return defineCommands({
     toggleHeading: (attrs?: HeadingAttrs) => {
       return toggleNode({ type: 'heading', attrs })
     },
@@ -69,11 +69,11 @@ export function addHeadingCommands() {
 }
 
 /** @public */
-export function addHeading() {
-  return defineExtension([
-    addHeadingSpec(),
-    addHeadingInputRule(),
-    addHeadingKeymap(),
-    addHeadingCommands(),
+export function defineHeading() {
+  return union([
+    defineHeadingSpec(),
+    defineHeadingInputRule(),
+    defineHeadingKeymap(),
+    defineHeadingCommands(),
   ])
 }

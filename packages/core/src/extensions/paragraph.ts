@@ -1,8 +1,8 @@
-import { addNodeSpec } from './node-spec'
+import { defineNodeSpec } from './node-spec'
 
 /** @public */
-export function addParagraph() {
-  return addNodeSpec({
+export function defineParagraph() {
+  return defineNodeSpec({
     name: 'paragraph',
     content: 'inline*',
     group: 'block',

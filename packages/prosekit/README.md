@@ -5,9 +5,9 @@ This package provides a convenient way to install all the `@prosekit` scoped pac
 For example, the following two imports are equivalent:
 
 ```js
-import { addItalic } from 'prosekit/extensions/italic'
+import { defineItalic } from 'prosekit/extensions/italic'
 ```
 
 ```js
-import { addItalic } from '@prosekit/extension-italic'
+import { defineItalic } from '@prosekit/extension-italic'
 ```

@@ -1,15 +1,15 @@
 import { describe, it, expect } from 'vitest'
 
-import { addDoc } from '../extensions/doc'
-import { addParagraph } from '../extensions/paragraph'
-import { addText } from '../extensions/text'
+import { defineDoc } from '../extensions/doc'
+import { defineParagraph } from '../extensions/paragraph'
+import { defineText } from '../extensions/text'
 
 import { createEditor } from './editor'
 
 describe('createEditor', () => {
   it('can mount the editor', () => {
     const div = document.body.appendChild(document.createElement('div'))
-    const extension = [addDoc(), addText(), addParagraph()]
+    const extension = [defineDoc(), defineText(), defineParagraph()]
     const editor = createEditor({ extension: { extension } })
     editor.mount(div)
     expect(div.outerHTML).toMatchInlineSnapshot(

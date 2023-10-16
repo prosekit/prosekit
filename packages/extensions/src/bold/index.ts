@@ -1,13 +1,13 @@
 import {
-  addCommands,
-  addKeymap,
-  addMarkSpec,
-  defineExtension,
+  defineCommands,
+  defineKeymap,
+  defineMarkSpec,
+  union,
   toggleMark,
 } from '@prosekit/core'
 
-export function addBoldSpec() {
-  return addMarkSpec({
+export function defineBoldSpec() {
+  return defineMarkSpec({
     name: 'bold',
     parseDOM: [
       { tag: 'strong' },
@@ -42,19 +42,19 @@ export function addBoldSpec() {
   })
 }
 
-export function addBoldCommands() {
-  return addCommands({
+export function defineBoldCommands() {
+  return defineCommands({
     toggleBold: () => toggleMark({ type: 'bold' }),
   })
 }
 
-export function addBoldKeymap() {
-  return addKeymap({
+export function defineBoldKeymap() {
+  return defineKeymap({
     'Mod-b': toggleMark({ type: 'bold' }),
   })
 }
 
 /** @public */
-export function addBold() {
-  return defineExtension([addBoldSpec(), addBoldCommands(), addBoldKeymap()])
+export function defineBold() {
+  return union([defineBoldSpec(), defineBoldCommands(), defineBoldKeymap()])
 }

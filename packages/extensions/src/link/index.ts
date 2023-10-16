@@ -1,8 +1,8 @@
 import {
-  addCommands,
+  defineCommands,
   addMark,
-  addMarkSpec,
-  defineExtension,
+  defineMarkSpec,
+  union,
   toggleMark,
 } from '@prosekit/core'
 
@@ -11,8 +11,8 @@ export interface LinkAttrs {
   href: string
 }
 
-export function addLinkSpec() {
-  return addMarkSpec({
+export function defineLinkSpec() {
+  return defineMarkSpec({
     name: 'link',
     parseDOM: [
       {
@@ -34,14 +34,14 @@ export function addLinkSpec() {
   })
 }
 
-export function addLinkCommands() {
-  return addCommands({
+export function defineLinkCommands() {
+  return defineCommands({
     addLink: (attrs: LinkAttrs) => addMark({ type: 'link', attrs }),
     toggleLink: (attrs: LinkAttrs) => toggleMark({ type: 'link', attrs }),
   })
 }
 
 /** @public */
-export function addItalic() {
-  return defineExtension([addLinkSpec(), addLinkCommands()])
+export function defineItalic() {
+  return union([defineLinkSpec(), defineLinkCommands()])
 }

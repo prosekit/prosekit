@@ -1,22 +1,22 @@
 import {
-  addBaseCommands,
-  addDoc,
-  addParagraph,
-  addText,
+  defineBaseCommands,
+  defineDoc,
+  defineParagraph,
+  defineText,
   createEditor,
-  defineExtension,
+  union,
 } from '@prosekit/core'
 import { describe, expect, it } from 'vitest'
 
-import { addItalic } from './index'
+import { defineItalic } from './index'
 
 describe('command', () => {
-  const extension = defineExtension([
-    addDoc(),
-    addParagraph(),
-    addText(),
-    addItalic(),
-    addBaseCommands(),
+  const extension = union([
+    defineDoc(),
+    defineParagraph(),
+    defineText(),
+    defineItalic(),
+    defineBaseCommands(),
   ])
   const editor = createEditor({ extension })
   const div = document.body.appendChild(document.createElement('div'))

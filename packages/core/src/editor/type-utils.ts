@@ -1,6 +1,6 @@
 import type { SimplifyExtension, Extension } from '../types/extension'
 
-export function defineExtension<E extends Extension | Extension[]>(
+export function union<E extends Extension | Extension[]>(
   extension: E,
 ): SimplifyExtension<E> {
   if (extension && Array.isArray(extension)) {

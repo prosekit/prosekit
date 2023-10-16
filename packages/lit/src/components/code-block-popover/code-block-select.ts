@@ -1,4 +1,4 @@
-import { addPlugin } from '@prosekit/core'
+import { definePlugin } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
@@ -7,7 +7,7 @@ import type { EditorView } from '@prosekit/pm/view'
  * Returns a ProseKit extension that call `onSelect` when the text selection is
  * insert into a code block, and `onDismiss` when it is not.
  */
-export function addCodeBlockSelect(options: {
+export function defineCodeBlockSelect(options: {
   onSelect: (info: {
     pos: number
     node: ProseMirrorNode
@@ -39,7 +39,7 @@ export function addCodeBlockSelect(options: {
     },
   })
 
-  return addPlugin(plugin)
+  return definePlugin(plugin)
 }
 
 type State = {

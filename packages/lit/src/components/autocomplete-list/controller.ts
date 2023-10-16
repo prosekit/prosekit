@@ -1,7 +1,7 @@
 import {
   Editor,
   type Keymap,
-  addKeymap,
+  defineKeymap,
   withPriority,
   Priority,
 } from '@prosekit/core'
@@ -21,7 +21,7 @@ export class AutocompleteListController implements ReactiveController {
   setEditor(editor: Editor) {
     if (this.editor !== editor) {
       this.editor = editor
-      this.addExtension()
+      this.defineExtension()
     }
   }
 
@@ -30,7 +30,7 @@ export class AutocompleteListController implements ReactiveController {
     this.cleanup = null
   }
 
-  private addExtension() {
+  private defineExtension() {
     this.cleanup?.()
     this.cleanup = null
 
@@ -38,7 +38,7 @@ export class AutocompleteListController implements ReactiveController {
       return
     }
 
-    const extension = withPriority(addKeymap(this.keymap), Priority.highest)
+    const extension = withPriority(defineKeymap(this.keymap), Priority.highest)
     this.cleanup = this.editor.use(extension)
   }
 }

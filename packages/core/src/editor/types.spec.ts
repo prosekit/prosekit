@@ -1,17 +1,17 @@
 import { type Command } from '@prosekit/pm/state'
 import { describe, it } from 'vitest'
 
-import { addCommands, addMarkSpec, addNodeSpec } from '..'
+import { defineCommands, defineMarkSpec, defineNodeSpec } from '..'
 import { assertTypeEqual } from '../types/assert-type-equal'
 import { type CommandCreator } from '../types/command'
 import { type Extension } from '../types/extension'
 
-import { defineExtension } from './type-utils'
+import { union } from './type-utils'
 
-describe('defineExtension', () => {
+describe('union', () => {
   it('can merge one extension types', () => {
     const input = [extension3]
-    const output = defineExtension(input)
+    const output = union(input)
     type Outout = typeof output
     type Expected = Extension<{
       NODES: 'node3'
@@ -22,7 +22,7 @@ describe('defineExtension', () => {
 
   it('can merge an extension array', () => {
     const input = [extension1, extension2, extension3, extension4, extension5]
-    const output = defineExtension(input)
+    const output = union(input)
     type Outout = typeof output
     type Expected = Extension<{
       NODES: 'node3' | 'node4'
@@ -38,12 +38,12 @@ describe('defineExtension', () => {
   })
 
   it('can merge a nested array', () => {
-    const e12 = defineExtension([extension1, extension2])
-    const e34 = defineExtension([extension3, extension4])
-    const e12345 = defineExtension([e12, e34, extension5])
+    const e12 = union([extension1, extension2])
+    const e34 = union([extension3, extension4])
+    const e12345 = union([e12, e34, extension5])
 
-    const input = defineExtension([e12345])
-    const output = defineExtension(input)
+    const input = union([e12345])
+    const output = union(input)
     type Outout = typeof output
     type Expected = Extension<{
       NODES: 'node3' | 'node4'
@@ -73,8 +73,8 @@ const command3: CommandCreator<[number, boolean]> = (_num, _bool) => {
   return () => true
 }
 
-const extension1 = addCommands({ command1 })
-const extension2 = addCommands({ command2, command3 })
-const extension3 = addNodeSpec({ name: 'node3' })
-const extension4 = addNodeSpec({ name: 'node4' })
-const extension5 = addMarkSpec({ name: 'mark5' })
+const extension1 = defineCommands({ command1 })
+const extension2 = defineCommands({ command2, command3 })
+const extension3 = defineNodeSpec({ name: 'node3' })
+const extension4 = defineNodeSpec({ name: 'node4' })
+const extension5 = defineMarkSpec({ name: 'mark5' })

@@ -1,7 +1,7 @@
 import { Editor } from '@prosekit/core'
 import { type ReactiveController, type ReactiveControllerHost } from 'lit'
 
-import { addCodeBlockSelect } from './code-block-select'
+import { defineCodeBlockSelect } from './code-block-select'
 
 export class CodeBlockPopoverController implements ReactiveController {
   public reference: Element | null = null
@@ -15,16 +15,16 @@ export class CodeBlockPopoverController implements ReactiveController {
   setEditor(editor: Editor) {
     if (this.editor !== editor) {
       this.editor = editor
-      this.addExtension()
+      this.defineExtension()
       this.host.requestUpdate()
     }
   }
 
-  private addExtension() {
+  private defineExtension() {
     const editor = this.editor
     if (!editor) return
 
-    const extension = addCodeBlockSelect({
+    const extension = defineCodeBlockSelect({
       onSelect: ({ dom }) => {
         if (this.reference !== dom) {
           this.reference = dom

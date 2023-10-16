@@ -1,4 +1,4 @@
-import { addEventHandler, Editor, type Extension } from '@prosekit/core'
+import { defineEventHandler, Editor, type Extension } from '@prosekit/core'
 import {
   onMounted,
   onUnmounted,
@@ -17,7 +17,7 @@ export function useEditorRef<E extends Extension = any>(): ShallowRef<
 
   onMounted(() => {
     const forceUpdate = () => triggerRef(editorRef)
-    const dispose = editor.use(addEventHandler({ update: forceUpdate }))
+    const dispose = editor.use(defineEventHandler({ update: forceUpdate }))
     onUnmounted(dispose)
   })
 

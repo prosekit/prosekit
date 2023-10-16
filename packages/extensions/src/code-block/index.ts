@@ -1,20 +1,20 @@
 import {
-  addCommands,
-  addInputRule,
-  addNodeSpec,
-  defineExtension,
+  defineCommands,
+  defineInputRule,
+  defineNodeSpec,
+  union,
   getNodeType,
 } from '@prosekit/core'
 import { textblockTypeInputRule } from '@prosekit/pm/inputrules'
 import type { HLJSApi } from 'highlight.js'
 
-import { addCodeBlockHighlight } from './code-block-highlight'
+import { defineCodeBlockHighlight } from './code-block-highlight'
 import type { CodeBlockAttrs } from './code-block-types'
 
 export type { CodeBlockAttrs }
 
-export function addCodeBlockSpec() {
-  return addNodeSpec({
+export function defineCodeBlockSpec() {
+  return defineNodeSpec({
     name: 'codeBlock',
     content: 'text*',
     group: 'block',
@@ -42,8 +42,8 @@ export function addCodeBlockSpec() {
   })
 }
 
-export function addCodeBlockInputRule() {
-  return addInputRule(({ schema }) => {
+export function defineCodeBlockInputRule() {
+  return defineInputRule(({ schema }) => {
     const nodeType = getNodeType(schema, 'codeBlock')
     const getAttrs = (match: RegExpMatchArray): CodeBlockAttrs => {
       return { language: match[1] || '' }
@@ -53,8 +53,8 @@ export function addCodeBlockInputRule() {
   })
 }
 
-export function addCodeBlockCommands() {
-  return addCommands({
+export function defineCodeBlockCommands() {
+  return defineCommands({
     setCodeBlockLanguage: (language: string) => (state, dispatch) => {
       const pos = state.selection.$from.before()
       const codeBlock = state.doc.nodeAt(pos)
@@ -70,11 +70,11 @@ export function addCodeBlockCommands() {
 }
 
 /** @public */
-export function addCodeBlock(options?: { hljs?: HLJSApi }) {
-  return defineExtension([
-    addCodeBlockSpec(),
-    addCodeBlockInputRule(),
-    addCodeBlockHighlight({ hljs: options?.hljs }),
-    addCodeBlockCommands(),
+export function defineCodeBlock(options?: { hljs?: HLJSApi }) {
+  return union([
+    defineCodeBlockSpec(),
+    defineCodeBlockInputRule(),
+    defineCodeBlockHighlight({ hljs: options?.hljs }),
+    defineCodeBlockCommands(),
   ])
 }

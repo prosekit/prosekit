@@ -1,13 +1,13 @@
 import 'prosekit/basic/style.css'
 
-import { addBasicExtension } from 'prosekit/basic'
+import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
 export default function App() {
   const editor = useMemo(() => {
-    const extension = addBasicExtension()
+    const extension = defineBasicExtension()
     return createEditor({ extension })
   }, [])
 

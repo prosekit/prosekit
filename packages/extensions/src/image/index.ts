@@ -1,11 +1,11 @@
-import { addNodeSpec, defineExtension } from '@prosekit/core'
+import { defineNodeSpec, union } from '@prosekit/core'
 
 export interface ImageAttrs {
   src?: string | null
 }
 
-export function addImageSpec() {
-  return addNodeSpec({
+export function defineImageSpec() {
+  return defineNodeSpec({
     name: 'image',
     attrs: {
       src: { default: null },
@@ -33,6 +33,6 @@ export function addImageSpec() {
 }
 
 /** @public */
-export function addImage() {
-  return defineExtension([addImageSpec()])
+export function defineImage() {
+  return union([defineImageSpec()])
 }

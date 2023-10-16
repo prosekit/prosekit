@@ -8,7 +8,7 @@ import { pluginFacet, type PluginFacetInput } from './plugin'
 /**
  * @internal
  */
-export function addEventHandler(options: { update?: VoidFunction }) {
+export function defineEventHandler(options: { update?: VoidFunction }) {
   const updateHandler = options?.update ?? voidFunction
   return eventFacet.extension([updateHandler])
 }

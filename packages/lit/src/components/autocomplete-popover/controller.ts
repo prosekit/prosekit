@@ -1,7 +1,7 @@
 import { Editor } from '@prosekit/core'
 import {
   AutocompleteRule,
-  addAutocomplete,
+  defineAutocomplete,
   type MatchHandler,
 } from '@prosekit/extensions/autocomplete'
 import { type ReactiveController, type ReactiveControllerHost } from 'lit'
@@ -28,7 +28,7 @@ export class AutocompletePopoverController implements ReactiveController {
   setEditor(editor: Editor) {
     if (this.editor !== editor) {
       this.editor = editor
-      this.addExtension()
+      this.defineExtension()
       this.host.requestUpdate()
     }
   }
@@ -36,12 +36,12 @@ export class AutocompletePopoverController implements ReactiveController {
   setRegex(regex: RegExp) {
     if (this.regex !== regex) {
       this.regex = regex
-      this.addExtension()
+      this.defineExtension()
       this.host.requestUpdate()
     }
   }
 
-  private addExtension() {
+  private defineExtension() {
     const regex = this.regex
     const editor = this.editor
 
@@ -86,7 +86,7 @@ export class AutocompletePopoverController implements ReactiveController {
       onEnter: handleEnter,
       onLeave: handleLeave,
     })
-    const extension = addAutocomplete(rule)
+    const extension = defineAutocomplete(rule)
     this.cleanup = editor.use(extension)
   }
 

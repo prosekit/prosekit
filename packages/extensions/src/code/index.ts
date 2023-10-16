@@ -1,10 +1,10 @@
-import { addMarkSpec, defineExtension } from '@prosekit/core'
+import { defineMarkSpec, union } from '@prosekit/core'
 
 /**
  * @public
  */
-export function addCodeSpec() {
-  return addMarkSpec({
+export function defineCodeSpec() {
+  return defineMarkSpec({
     name: 'code',
     parseDOM: [{ tag: 'code' }],
     toDOM() {
@@ -16,6 +16,6 @@ export function addCodeSpec() {
 /**
  * @public
  */
-export function addCode() {
-  return defineExtension([addCodeSpec()])
+export function defineCode() {
+  return union([defineCodeSpec()])
 }

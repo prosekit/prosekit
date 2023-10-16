@@ -1,4 +1,4 @@
-import { addPlugin } from '@prosekit/core'
+import { definePlugin } from '@prosekit/core'
 
 import {
   createPredictionPlugin,
@@ -8,7 +8,7 @@ import {
 
 export { type PredictionRule, type SuggestionOptions }
 
-export function addSuggestion(options: SuggestionOptions) {
+export function defineSuggestion(options: SuggestionOptions) {
   const plugin = createPredictionPlugin(options)
-  return addPlugin(plugin)
+  return definePlugin(plugin)
 }

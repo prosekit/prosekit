@@ -1,4 +1,4 @@
-import { addNodeSpec, defineExtension } from '@prosekit/core'
+import { defineNodeSpec, union } from '@prosekit/core'
 
 export interface MentionAttrs {
   id: string
@@ -9,8 +9,8 @@ export interface MentionAttrs {
 /**
  * @public
  */
-export function addMentionSpec() {
-  return addNodeSpec({
+export function defineMentionSpec() {
+  return defineNodeSpec({
     name: 'mention',
     atom: true,
     group: 'inline',
@@ -47,6 +47,6 @@ export function addMentionSpec() {
 /**
  * @public
  */
-export function addMention() {
-  return defineExtension([addMentionSpec()])
+export function defineMention() {
+  return union([defineMentionSpec()])
 }

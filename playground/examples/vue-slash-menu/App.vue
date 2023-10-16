@@ -4,12 +4,12 @@ import 'prosekit/extensions/placeholder/style.css'
 
 import { watchPostEffect, ref } from 'vue'
 import { ProseKit } from 'prosekit/vue'
-import { addExampleExtension } from './extension'
+import { defineExampleExtension } from './extension'
 import ToggleItalicButton from './ToggleItalicButton.vue'
 import SlashMenu from './SlashMenu.vue'
 import { createEditor } from 'prosekit/core'
 
-const editor = createEditor({ extension: addExampleExtension() })
+const editor = createEditor({ extension: defineExampleExtension() })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect(() => editor.mount(editorRef.value))
 </script>

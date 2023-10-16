@@ -1,8 +1,8 @@
-import { addNodeSpec } from './node-spec'
+import { defineNodeSpec } from './node-spec'
 
 /** @public */
-export function addDoc() {
-  return addNodeSpec({
+export function defineDoc() {
+  return defineNodeSpec({
     name: 'doc',
     content: 'block+',
   })

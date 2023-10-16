@@ -17,7 +17,7 @@ export interface NodeSpecOptions<NodeName extends string = string>
 /**
  * @public
  */
-export function addNodeSpec<NodeName extends string>(
+export function defineNodeSpec<NodeName extends string>(
   options: NodeSpecOptions<NodeName>,
 ): Extension<{ NODES: NodeName }> {
   return nodeSpecFacet.extension([options]) satisfies Extension

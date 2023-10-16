@@ -1,9 +1,9 @@
-import { type Keymap, addKeymap } from '@prosekit/core'
+import { type Keymap, defineKeymap } from '@prosekit/core'
 import { useMemo } from 'react'
 
 import { useExtension } from './use-extension'
 
 export function useKeymap({ keymap }: { keymap: Keymap }) {
-  const extension = useMemo(() => addKeymap(keymap), [keymap])
+  const extension = useMemo(() => defineKeymap(keymap), [keymap])
   useExtension({ extension })
 }

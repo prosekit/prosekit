@@ -1,16 +1,16 @@
 import { history, redo, undo } from '@prosekit/pm/history'
 
-import { defineExtension } from '../editor/type-utils'
+import { union } from '../editor/type-utils'
 import { isMac } from '../utils/env'
 
-import { addCommands } from './command'
-import { addKeymap, type Keymap } from './keymap'
-import { addPlugin } from './plugin'
+import { defineCommands } from './command'
+import { defineKeymap, type Keymap } from './keymap'
+import { definePlugin } from './plugin'
 
 /**
  * Add undo/redo history to the editor.
  */
-export function addHistory() {
+export function defineHistory() {
   const keymap: Keymap = {
     'Mod-z': undo,
     'Shift-Mod-z': redo,
@@ -20,10 +20,10 @@ export function addHistory() {
     keymap['Mod-y'] = redo
   }
 
-  return defineExtension([
-    addPlugin(history()),
-    addKeymap(keymap),
-    addCommands({
+  return union([
+    definePlugin(history()),
+    defineKeymap(keymap),
+    defineCommands({
       undo: () => undo,
       redo: () => redo,
     }),

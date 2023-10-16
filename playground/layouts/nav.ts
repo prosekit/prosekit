@@ -19,7 +19,7 @@ function restoreScrollLeft() {
   nav.scrollLeft = Number.parseInt(scrollLeft)
 }
 
-function addClickListener() {
+function defineClickListener() {
   const nav = queryNav()
   if (!nav) return
 
@@ -28,4 +28,4 @@ function addClickListener() {
 }
 
 restoreScrollLeft()
-addClickListener()
+defineClickListener()

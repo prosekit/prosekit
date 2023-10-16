@@ -2,7 +2,7 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 import { defineComponent, h, ref, watchPostEffect } from 'vue'
 
-import { addExampleExtension } from './extension'
+import { defineExampleExtension } from './extension'
 import { SlashMenu } from './slash-menu'
 import { TagMenu } from './tag-menu'
 import { Toolbar } from './toolbar'
@@ -10,7 +10,7 @@ import { UserMenu } from './user-menu'
 
 export const Editor = defineComponent({
   setup() {
-    const editor = createEditor({ extension: addExampleExtension() })
+    const editor = createEditor({ extension: defineExampleExtension() })
     const editorRef = ref<HTMLDivElement | null>(null)
     watchPostEffect(() => editor.mount(editorRef.value))
 

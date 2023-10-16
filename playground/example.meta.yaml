@@ -143,8 +143,6 @@ examples:
         hidden: false
       - path: language-selector.ts
         hidden: false
-      - path: main.ts
-        hidden: true
       - path: package.json
         hidden: true
   - name: vanilla

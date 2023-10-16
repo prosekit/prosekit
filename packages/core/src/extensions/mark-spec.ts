@@ -16,7 +16,7 @@ export interface MarkSpecOptions<MarkName extends string = string>
 /**
  * @public
  */
-export function addMarkSpec<Mark extends string>(
+export function defineMarkSpec<Mark extends string>(
   options: MarkSpecOptions<Mark>,
 ): Extension<{ MARKS: Mark }> {
   return markSpecFacet.extension([options]) satisfies Extension

@@ -1,13 +1,13 @@
 import {
-  addCommands,
-  addKeymap,
-  addMarkSpec,
-  defineExtension,
+  defineCommands,
+  defineKeymap,
+  defineMarkSpec,
+  union,
   toggleMark,
 } from '@prosekit/core'
 
-export function addItalicSpec() {
-  return addMarkSpec({
+export function defineItalicSpec() {
+  return defineMarkSpec({
     name: 'italic',
     parseDOM: [
       { tag: 'i' },
@@ -24,23 +24,23 @@ export function addItalicSpec() {
   })
 }
 
-export function addItalicCommands() {
-  return addCommands({
+export function defineItalicCommands() {
+  return defineCommands({
     toggleItalic: () => toggleMark({ type: 'italic' }),
   })
 }
 
-export function addItalicKeymap() {
-  return addKeymap({
+export function defineItalicKeymap() {
+  return defineKeymap({
     'Mod-i': toggleMark({ type: 'italic' }),
   })
 }
 
 /** @public */
-export function addItalic() {
-  return defineExtension([
-    addItalicSpec(),
-    addItalicCommands(),
-    addItalicKeymap(),
+export function defineItalic() {
+  return union([
+    defineItalicSpec(),
+    defineItalicCommands(),
+    defineItalicKeymap(),
   ])
 }

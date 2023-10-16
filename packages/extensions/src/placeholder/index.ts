@@ -1,4 +1,4 @@
-import { addPlugin } from '@prosekit/core'
+import { definePlugin } from '@prosekit/core'
 import { ProseMirrorNode } from '@prosekit/pm/model'
 import { EditorState, Plugin, PluginKey } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
@@ -23,8 +23,8 @@ export interface PlaceholderOptions {
  * Add a placeholder text to the editor when the current block or document is
  * empty.
  */
-export function addPlaceholder(options: PlaceholderOptions) {
-  return addPlugin(createPlaceholderPlugin(options))
+export function definePlaceholder(options: PlaceholderOptions) {
+  return definePlugin(createPlaceholderPlugin(options))
 }
 
 function createPlaceholderPlugin(options: PlaceholderOptions): Plugin {

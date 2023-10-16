@@ -8,15 +8,15 @@ underline, etc.
 
 ## Nodes
 
-You can use [`addNodeSpec`] to defined a node type. It accepts the node name and a
+You can use [`defineNodeSpec`] to defined a node type. It accepts the node name and a
 [`NodeSpec`] object.
 
 ## Marks
 
-You can use [`addMarkspec`] to defined a mark type. It accepts the mark name and a
+You can use [`defineMarkspec`] to defined a mark type. It accepts the mark name and a
 [`MarkSpec`] object.
 
-[`addNodeSpec`]: https://prosekit.dev/references/prosekit_core#addnodespec
-[`addMarkSpec`]: https://prosekit.dev/references/prosekit_core#addmarkspec
+[`defineNodeSpec`]: https://prosekit.dev/references/prosekit_core#addnodespec
+[`defineMarkSpec`]: https://prosekit.dev/references/prosekit_core#addmarkspec
 [`NodeSpec`]: https://prosemirror.net/docs/ref/#model.NodeSpec
 [`MarkSpec`]: https://prosemirror.net/docs/ref/#model.MarkSpec

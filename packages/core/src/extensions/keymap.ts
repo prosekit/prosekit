@@ -14,13 +14,13 @@ export interface Keymap {
 }
 
 /** @public */
-export function addKeymap(keymap: Keymap): Extension {
+export function defineKeymap(keymap: Keymap): Extension {
   return keymapFacet.extension([keymap])
 }
 
 /** @public */
-export function addBaseKeymap() {
-  return addKeymap(baseKeymap)
+export function defineBaseKeymap() {
+  return defineKeymap(baseKeymap)
 }
 
 const keymapFacet = Facet.define({

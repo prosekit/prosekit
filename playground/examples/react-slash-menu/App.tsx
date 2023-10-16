@@ -7,11 +7,11 @@ import { useMemo } from 'react'
 
 import SlashMenu from './SlashMenu'
 import ToggleItalicButton from './ToggleItalicButton'
-import { addExampleExtension } from './extension'
+import { defineExampleExtension } from './extension'
 
 export default function App() {
   const editor = useMemo(() => {
-    return createEditor({ extension: addExampleExtension() })
+    return createEditor({ extension: defineExampleExtension() })
   }, [])
 
   return (

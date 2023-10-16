@@ -10,7 +10,7 @@ export interface NodeViewOptions {
   constructor: NodeViewConstructor
 }
 
-export function addNodeView(options: NodeViewOptions): Extension {
+export function defineNodeView(options: NodeViewOptions): Extension {
   return nodeViewFacet.extension([options])
 }
 

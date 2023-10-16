@@ -14,7 +14,7 @@ import { type Extension } from '../types/extension'
  *
  * @public
  */
-export function addPlugin(
+export function definePlugin(
   plugin: Plugin | Plugin[] | ((context: { schema: Schema }) => Plugin[]),
 ): Extension {
   if (plugin instanceof Plugin) {

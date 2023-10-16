@@ -8,10 +8,10 @@ import { ProseKit } from 'prosekit/solid'
 
 import SlashMenu from './SlashMenu'
 import ToggleItalicButton from './ToggleItalicButton'
-import { addExampleExtension } from './extension'
+import { defineExampleExtension } from './extension'
 
 export default function App() {
-  const editor = createEditor({ extension: addExampleExtension() })
+  const editor = createEditor({ extension: defineExampleExtension() })
 
   return (
     <ProseKit editor={editor}>

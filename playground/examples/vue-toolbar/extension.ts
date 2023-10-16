@@ -1,8 +1,8 @@
-import { addBasicExtension } from 'prosekit/basic'
-import { defineExtension } from 'prosekit/core'
+import { defineBasicExtension } from 'prosekit/basic'
+import { union } from 'prosekit/core'
 
-export function addExampleExtension() {
-  return defineExtension([addBasicExtension()])
+export function defineExampleExtension() {
+  return union([defineBasicExtension()])
 }
 
-export type ExampleExtension = ReturnType<typeof addExampleExtension>
+export type ExampleExtension = ReturnType<typeof defineExampleExtension>

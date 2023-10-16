@@ -10,7 +10,7 @@ import { type PluginFacetInput, pluginFacet } from './plugin'
 /**
  * @public
  */
-export function addInputRule(
+export function defineInputRule(
   rules: (context: { schema: Schema }) => InputRule[],
 ): Extension {
   return inputRuleFacet.extension([rules])

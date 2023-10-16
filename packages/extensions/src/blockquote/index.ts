@@ -1,7 +1,7 @@
-import { addNodeSpec, defineExtension } from '@prosekit/core'
+import { defineNodeSpec, union } from '@prosekit/core'
 
-export function addBlockquoteSpec() {
-  return addNodeSpec({
+export function defineBlockquoteSpec() {
+  return defineNodeSpec({
     name: 'blockquote',
     content: 'block+',
     group: 'block',
@@ -14,6 +14,6 @@ export function addBlockquoteSpec() {
 }
 
 /** @public */
-export function addBlockquote() {
-  return defineExtension([addBlockquoteSpec()])
+export function defineBlockquote() {
+  return union([defineBlockquoteSpec()])
 }

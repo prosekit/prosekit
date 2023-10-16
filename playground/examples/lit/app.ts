@@ -9,7 +9,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import { createEditor, type Editor, type NodeJson } from 'prosekit/core'
 
-import { addRootExtension, type RootExtension } from './extension'
+import { defineRootExtension, type RootExtension } from './extension'
 import './language-selector'
 
 @customElement('my-editor')
@@ -28,7 +28,7 @@ export class MyEditor extends LitElement {
 
   protected firstUpdated(): void {
     if (!this.editor) {
-      const extension = addRootExtension()
+      const extension = defineRootExtension()
       this.editor = createEditor({
         extension,
         defaultDoc: this.defaultDoc || defaultDoc,

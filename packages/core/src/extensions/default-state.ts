@@ -15,7 +15,7 @@ export interface DefaultStateOptions {
   selection?: SelectionJson
 }
 
-export function addDefaultState(options: DefaultStateOptions): Extension {
+export function defineDefaultState(options: DefaultStateOptions): Extension {
   return stateSlot.extension([
     ({ schema }) => {
       const config: EditorStateConfig = {}

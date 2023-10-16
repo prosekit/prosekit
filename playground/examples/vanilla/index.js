@@ -1,21 +1,21 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/extensions/placeholder/style.css'
 
-import { addBasicExtension } from 'prosekit/basic'
-import { createEditor, defineExtension } from 'prosekit/core'
-import { addPlaceholder } from 'prosekit/extensions/placeholder'
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor, union } from 'prosekit/core'
+import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { AutocompleteItem } from 'prosekit/lit/components/autocomplete-item'
 import { AutocompleteList } from 'prosekit/lit/components/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/lit/components/autocomplete-popover'
 
-export function addExampleExtension() {
-  return defineExtension([
-    addBasicExtension(),
-    addPlaceholder({ placeholder: 'Press / for commands...' }),
+export function defineExampleExtension() {
+  return union([
+    defineBasicExtension(),
+    definePlaceholder({ placeholder: 'Press / for commands...' }),
   ])
 }
 
-const editor = createEditor({ extension: addExampleExtension() })
+const editor = createEditor({ extension: defineExampleExtension() })
 
 function createPopover() {
   const popover = new AutocompletePopover()

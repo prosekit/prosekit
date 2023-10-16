@@ -3,7 +3,7 @@ import { EditorState, Plugin, type EditorStateConfig } from '@prosekit/pm/state'
 import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
-import { addDefaultState } from '../extensions/default-state'
+import { defineDefaultState } from '../extensions/default-state'
 import { type CommandApplier, type CommandCreator } from '../types/command'
 import type {
   Extension,
@@ -22,7 +22,7 @@ import {
   type NodeBuilder,
 } from './builder'
 import { updateExtension, type Inputs, type Slots } from './flatten'
-import { defineExtension } from './type-utils'
+import { union } from './type-utils'
 
 /** @public */
 export interface EditorOptions<E extends Extension> {
@@ -51,9 +51,9 @@ export function createEditor<E extends Extension>({
   defaultSelection,
 }: EditorOptions<E>): Editor<E> {
   if (defaultDoc) {
-    extension = defineExtension([
+    extension = union([
       extension,
-      addDefaultState({
+      defineDefaultState({
         doc: defaultDoc,
         selection: defaultSelection,
       }),
@@ -93,7 +93,7 @@ class EditorInstance {
 
     if (commandInput) {
       for (const [name, commandCreator] of Object.entries(commandInput)) {
-        this.addCommand(name, commandCreator)
+        this.defineCommand(name, commandCreator)
       }
     }
 
@@ -143,7 +143,7 @@ class EditorInstance {
     if (commandInput) {
       const names = Object.keys(commandInput)
       for (const name of names) {
-        this.addCommand(name, commandInput[name])
+        this.defineCommand(name, commandInput[name])
       }
     }
   }
@@ -173,7 +173,7 @@ class EditorInstance {
     return this.view
   }
 
-  public addPlugins(plugins: readonly Plugin[]): void {
+  public definePlugins(plugins: readonly Plugin[]): void {
     const view = this.assertView
     const state = view.state
     const newPlugins = [...plugins, ...state.plugins]
@@ -191,7 +191,7 @@ class EditorInstance {
     view.setProps({ state: newState })
   }
 
-  public addCommand<Args extends any[] = any[]>(
+  public defineCommand<Args extends any[] = any[]>(
     name: string,
     commandCreator: CommandCreator<Args>,
   ): void {

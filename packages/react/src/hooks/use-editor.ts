@@ -2,7 +2,7 @@ import {
   Editor,
   type Extension,
   ProseKitError,
-  addEventHandler,
+  defineEventHandler,
 } from '@prosekit/core'
 import { useContext, useEffect, useReducer } from 'react'
 
@@ -29,7 +29,7 @@ export function useEditor<E extends Extension = any>(
 
   useEffect(() => {
     if (update) {
-      return editor.use(addEventHandler({ update: forceUpdate }))
+      return editor.use(defineEventHandler({ update: forceUpdate }))
     }
   }, [editor, update, forceUpdate])
 

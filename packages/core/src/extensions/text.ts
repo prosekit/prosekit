@@ -1,8 +1,8 @@
-import { addNodeSpec } from './node-spec'
+import { defineNodeSpec } from './node-spec'
 
 /** @public */
-export function addText() {
-  return addNodeSpec({
+export function defineText() {
+  return defineNodeSpec({
     name: 'text',
     group: 'inline',
   })

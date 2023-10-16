@@ -29,13 +29,13 @@ First, you need to configure specific extensions.
 ```ts [extension.ts]
 import 'prosekit/basic/style.css'
 
-import { addBasicExtension } from 'prosekit/basic'
+import { defineBasicExtension } from 'prosekit/basic'
 
-export function addExampleExtension() {
-  return addBasicExtension()
+export function defineExampleExtension() {
+  return defineBasicExtension()
 }
 
-export type ExampleExtension = ReturnType<typeof addExampleExtension>
+export type ExampleExtension = ReturnType<typeof defineExampleExtension>
 ```
 
 :::

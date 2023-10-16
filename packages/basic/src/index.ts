@@ -1,33 +1,33 @@
 import {
   Priority,
-  addBaseCommands,
-  addBaseKeymap,
-  addDoc,
-  addHistory,
-  addParagraph,
-  addText,
-  defineExtension,
+  defineBaseCommands,
+  defineBaseKeymap,
+  defineDoc,
+  defineHistory,
+  defineParagraph,
+  defineText,
+  union,
   withPriority,
 } from '@prosekit/core'
-import { addBold } from '@prosekit/extensions/bold'
-import { addHeading } from '@prosekit/extensions/heading'
-import { addItalic } from '@prosekit/extensions/italic'
-import { addList } from '@prosekit/extensions/list'
+import { defineBold } from '@prosekit/extensions/bold'
+import { defineHeading } from '@prosekit/extensions/heading'
+import { defineItalic } from '@prosekit/extensions/italic'
+import { defineList } from '@prosekit/extensions/list'
 
 /** @public */
-export function addBasicExtension() {
-  return defineExtension([
-    addDoc(),
-    addText(),
-    addHeading(),
-    addHistory(),
-    addList(),
-    addBaseKeymap(),
-    addBaseCommands(),
-    addItalic(),
-    addBold(),
-    withPriority(addParagraph(), Priority.high),
+export function defineBasicExtension() {
+  return union([
+    defineDoc(),
+    defineText(),
+    defineHeading(),
+    defineHistory(),
+    defineList(),
+    defineBaseKeymap(),
+    defineBaseCommands(),
+    defineItalic(),
+    defineBold(),
+    withPriority(defineParagraph(), Priority.high),
   ])
 }
 
-export type BasicExtension = ReturnType<typeof addBasicExtension>
+export type BasicExtension = ReturnType<typeof defineBasicExtension>

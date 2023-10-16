@@ -1,9 +1,9 @@
-import { type Keymap, addKeymap } from '@prosekit/core'
+import { type Keymap, defineKeymap } from '@prosekit/core'
 import { computed } from 'vue'
 
 import { useExtension } from './use-extension'
 
 export function useKeymap({ keymap }: { keymap: Keymap }) {
-  const extension = computed(() => addKeymap(keymap))
+  const extension = computed(() => defineKeymap(keymap))
   useExtension({ extension: extension.value })
 }

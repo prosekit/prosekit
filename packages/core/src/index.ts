@@ -3,29 +3,33 @@ export { toggleMark, type ToggleMarkOptions } from './commands/toggle-mark'
 export { toggleNode, type ToggleNodeOptions } from './commands/toggle-node'
 export { Editor, createEditor, type EditorOptions } from './editor/editor'
 export { Facet, FacetExtension, type FacetOptions } from './editor/facet'
-export { defineExtension } from './editor/type-utils'
+export { union } from './editor/type-utils'
 export { withPriority } from './editor/with-priority'
 export { ProseKitError } from './error'
-export { addBaseCommands, addCommands } from './extensions/command'
+export { defineBaseCommands, defineCommands } from './extensions/command'
 export {
-  addDefaultState,
+  defineDefaultState,
   type DefaultStateOptions,
 } from './extensions/default-state'
-export { addDoc } from './extensions/doc'
-export { addEventHandler } from './extensions/event-handler'
-export { addHistory } from './extensions/history'
-export { addInputRule } from './extensions/input-rules'
-export { addBaseKeymap, addKeymap, type Keymap } from './extensions/keymap'
-export { addMarkSpec, type MarkSpecOptions } from './extensions/mark-spec'
-export { addNodeSpec, type NodeSpecOptions } from './extensions/node-spec'
-export { addNodeView, type NodeViewOptions } from './extensions/node-view'
-export { addParagraph } from './extensions/paragraph'
+export { defineDoc } from './extensions/doc'
+export { defineEventHandler } from './extensions/event-handler'
+export { defineHistory } from './extensions/history'
+export { defineInputRule } from './extensions/input-rules'
 export {
-  addPlugin,
+  defineBaseKeymap,
+  defineKeymap,
+  type Keymap,
+} from './extensions/keymap'
+export { defineMarkSpec, type MarkSpecOptions } from './extensions/mark-spec'
+export { defineNodeSpec, type NodeSpecOptions } from './extensions/node-spec'
+export { defineNodeView, type NodeViewOptions } from './extensions/node-view'
+export { defineParagraph } from './extensions/paragraph'
+export {
+  definePlugin,
   pluginFacet,
   type PluginFacetInput,
 } from './extensions/plugin'
-export { addText } from './extensions/text'
+export { defineText } from './extensions/text'
 export { type CommandArgs as CommandArgs } from './types/command'
 export * from './types/editor'
 export {

@@ -1,14 +1,14 @@
-import { addBasicExtension } from 'prosekit/basic'
-import { defineExtension } from 'prosekit/core'
-import { addMention } from 'prosekit/extensions/mention'
-import { addPlaceholder } from 'prosekit/extensions/placeholder'
+import { defineBasicExtension } from 'prosekit/basic'
+import { union } from 'prosekit/core'
+import { defineMention } from 'prosekit/extensions/mention'
+import { definePlaceholder } from 'prosekit/extensions/placeholder'
 
-export function addExampleExtension() {
-  return defineExtension([
-    addBasicExtension(),
-    addPlaceholder({ placeholder: 'Press / for commands...' }),
-    addMention(),
+export function defineExampleExtension() {
+  return union([
+    defineBasicExtension(),
+    definePlaceholder({ placeholder: 'Press / for commands...' }),
+    defineMention(),
   ])
 }
 
-export type ExampleExtension = ReturnType<typeof addExampleExtension>
+export type ExampleExtension = ReturnType<typeof defineExampleExtension>

@@ -10,7 +10,7 @@ import { AutocompleteRule, type MatchHandler } from './rule'
 
 export { AutocompleteRule, type MatchHandler }
 
-export function addAutocomplete(rule: AutocompleteRule): Extension {
+export function defineAutocomplete(rule: AutocompleteRule): Extension {
   return autocompleteFacet.extension([rule])
 }
 

@@ -5,9 +5,9 @@ import 'prosekit/extensions/placeholder/style.css'
 import { onMount } from 'svelte'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte/components/prosekit'
-import { addBasicExtension } from 'prosekit/basic'
+import { defineBasicExtension } from 'prosekit/basic'
 
-const extension = addBasicExtension()
+const extension = defineBasicExtension()
 const editor = createEditor({ extension })
 
 let place: HTMLDivElement

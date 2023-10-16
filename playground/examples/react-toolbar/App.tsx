@@ -5,11 +5,11 @@ import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
 import Toolbar from './Toolbar'
-import { addExampleExtension } from './extension'
+import { defineExampleExtension } from './extension'
 
 export default function App() {
   const editor = useMemo(() => {
-    const extension = addExampleExtension()
+    const extension = defineExampleExtension()
     return createEditor({ extension })
   }, [])
 

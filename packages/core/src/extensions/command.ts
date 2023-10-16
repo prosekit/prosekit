@@ -6,7 +6,7 @@ import { commandSlot } from '../editor/slots'
 import { type CommandCreator } from '../types/command'
 import { type Extension } from '../types/extension'
 
-export function addCommands<
+export function defineCommands<
   T extends Record<string, CommandCreator> = Record<string, CommandCreator>,
 >(
   commands: T,
@@ -19,8 +19,8 @@ export function addCommands<
  *
  * @public
  */
-export function addBaseCommands() {
-  return addCommands({
+export function defineBaseCommands() {
+  return defineCommands({
     insertText: ({
       text,
       from,

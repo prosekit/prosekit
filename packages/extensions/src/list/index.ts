@@ -1,9 +1,9 @@
 import {
-  addInputRule,
-  addKeymap,
-  addNodeSpec,
-  addPlugin,
-  defineExtension,
+  defineInputRule,
+  defineKeymap,
+  defineNodeSpec,
+  definePlugin,
+  union,
 } from '@prosekit/core'
 import {
   createListPlugins,
@@ -12,28 +12,28 @@ import {
   listKeymap,
 } from 'prosemirror-flat-list'
 
-export function addListSpec() {
-  return addNodeSpec({ ...createListSpec(), name: 'list' })
+export function defineListSpec() {
+  return defineNodeSpec({ ...createListSpec(), name: 'list' })
 }
 
-export function addListPlugins() {
-  return addPlugin(({ schema }) => createListPlugins({ schema }))
+export function defineListPlugins() {
+  return definePlugin(({ schema }) => createListPlugins({ schema }))
 }
 
-export function addListKeymap() {
-  return addKeymap(listKeymap)
+export function defineListKeymap() {
+  return defineKeymap(listKeymap)
 }
 
-export function addListInputRules() {
-  return addInputRule(() => listInputRules)
+export function defineListInputRules() {
+  return defineInputRule(() => listInputRules)
 }
 
 /** @public */
-export function addList() {
-  return defineExtension([
-    addListSpec(),
-    addListPlugins(),
-    addListKeymap(),
-    addListInputRules(),
+export function defineList() {
+  return union([
+    defineListSpec(),
+    defineListPlugins(),
+    defineListKeymap(),
+    defineListInputRules(),
   ])
 }

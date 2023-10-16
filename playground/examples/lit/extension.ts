@@ -1,15 +1,15 @@
 import hljs from 'highlight.js/lib/common'
-import { addBasicExtension } from 'prosekit/basic'
-import { defineExtension } from 'prosekit/core'
-import { addCodeBlock } from 'prosekit/extensions/code-block'
-import { addImage } from 'prosekit/extensions/image'
+import { defineBasicExtension } from 'prosekit/basic'
+import { union } from 'prosekit/core'
+import { defineCodeBlock } from 'prosekit/extensions/code-block'
+import { defineImage } from 'prosekit/extensions/image'
 
-export function addRootExtension() {
-  return defineExtension([
-    addBasicExtension(),
-    addCodeBlock({ hljs }),
-    addImage(),
+export function defineRootExtension() {
+  return union([
+    defineBasicExtension(),
+    defineCodeBlock({ hljs }),
+    defineImage(),
   ])
 }
 
-export type RootExtension = ReturnType<typeof addRootExtension>
+export type RootExtension = ReturnType<typeof defineRootExtension>

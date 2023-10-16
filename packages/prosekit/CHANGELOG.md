@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.0.21
+
+### Patch Changes
+
+- [b0ab9ad] **prosekit/preact** **prosekit/svelte** **prosekit/react** **prosekit/solid** **prosekit/lit** **prosekit/vue**
+
+  Simplify component module paths.
+
+- [e05d1e6] **prosekit/extensions** **prosekit/core**
+
+  Rename extension functions.
+
 ## 0.0.20
 
 ### Patch Changes

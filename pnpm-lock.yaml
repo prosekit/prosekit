@@ -77,10 +77,10 @@ importers:
   packages/basic:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.11
+        specifier: ^0.0.12
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.13
+        specifier: ^0.0.14
         version: link:../extensions
     devDependencies:
       '@prosekit/dev':
@@ -197,7 +197,7 @@ importers:
   packages/extensions:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.11
+        specifier: ^0.0.12
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.0.6
@@ -234,10 +234,10 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       '@prosekit/core':
-        specifier: ^0.0.11
+        specifier: ^0.0.12
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.13
+        specifier: ^0.0.14
         version: link:../extensions
       '@prosekit/pm':
         specifier: ^0.0.6
@@ -311,10 +311,10 @@ importers:
   packages/preact:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.11
+        specifier: ^0.0.12
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.15
+        specifier: ^0.0.16
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -336,34 +336,34 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: 0.0.15
+        specifier: 0.0.16
         version: link:../basic
       '@prosekit/core':
-        specifier: 0.0.11
+        specifier: 0.0.12
         version: link:../core
       '@prosekit/extensions':
-        specifier: 0.0.13
+        specifier: 0.0.14
         version: link:../extensions
       '@prosekit/lit':
-        specifier: 0.0.15
+        specifier: 0.0.16
         version: link:../lit
       '@prosekit/pm':
         specifier: 0.0.6
         version: link:../pm
       '@prosekit/preact':
-        specifier: 0.0.12
+        specifier: 0.0.13
         version: link:../preact
       '@prosekit/react':
-        specifier: 0.0.15
+        specifier: 0.0.16
         version: link:../react
       '@prosekit/solid':
-        specifier: 0.0.13
+        specifier: 0.0.14
         version: link:../solid
       '@prosekit/svelte':
-        specifier: 0.0.13
+        specifier: 0.0.14
         version: link:../svelte
       '@prosekit/vue':
-        specifier: 0.0.16
+        specifier: 0.0.17
         version: link:../vue
     devDependencies:
       '@prosekit/dev':
@@ -406,10 +406,10 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0(@types/react@18.2.28)
       '@prosekit/core':
-        specifier: ^0.0.11
+        specifier: ^0.0.12
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.15
+        specifier: ^0.0.16
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -440,10 +440,10 @@ importers:
   packages/solid:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.11
+        specifier: ^0.0.12
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.15
+        specifier: ^0.0.16
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -465,10 +465,10 @@ importers:
   packages/svelte:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.11
+        specifier: ^0.0.12
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.15
+        specifier: ^0.0.16
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -502,10 +502,10 @@ importers:
   packages/vue:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.11
+        specifier: ^0.0.12
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.15
+        specifier: ^0.0.16
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -569,7 +569,7 @@ importers:
         specifier: ^10.18.1
         version: 10.18.1
       prosekit:
-        specifier: ^0.0.20
+        specifier: ^0.0.21
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -626,7 +626,7 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       prosekit:
-        specifier: ^0.0.20
+        specifier: ^0.0.21
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0

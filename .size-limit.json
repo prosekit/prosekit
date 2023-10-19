@@ -288,46 +288,6 @@
     "path": "packages/prosekit/dist/prosekit-solid-combo-box-list.js"
   },
   {
-    "name": "prosekit/svelte",
-    "path": "packages/prosekit/dist/prosekit-svelte.js"
-  },
-  {
-    "name": "prosekit/svelte/autocomplete-empty",
-    "path": "packages/prosekit/dist/prosekit-svelte-autocomplete-empty.js"
-  },
-  {
-    "name": "prosekit/svelte/autocomplete-item",
-    "path": "packages/prosekit/dist/prosekit-svelte-autocomplete-item.js"
-  },
-  {
-    "name": "prosekit/svelte/autocomplete-list",
-    "path": "packages/prosekit/dist/prosekit-svelte-autocomplete-list.js"
-  },
-  {
-    "name": "prosekit/svelte/autocomplete-popover",
-    "path": "packages/prosekit/dist/prosekit-svelte-autocomplete-popover.js"
-  },
-  {
-    "name": "prosekit/svelte/code-block-popover",
-    "path": "packages/prosekit/dist/prosekit-svelte-code-block-popover.js"
-  },
-  {
-    "name": "prosekit/svelte/combo-box",
-    "path": "packages/prosekit/dist/prosekit-svelte-combo-box.js"
-  },
-  {
-    "name": "prosekit/svelte/combo-box-input",
-    "path": "packages/prosekit/dist/prosekit-svelte-combo-box-input.js"
-  },
-  {
-    "name": "prosekit/svelte/combo-box-item",
-    "path": "packages/prosekit/dist/prosekit-svelte-combo-box-item.js"
-  },
-  {
-    "name": "prosekit/svelte/combo-box-list",
-    "path": "packages/prosekit/dist/prosekit-svelte-combo-box-list.js"
-  },
-  {
     "name": "prosekit/vue",
     "path": "packages/prosekit/dist/prosekit-vue.js"
   },

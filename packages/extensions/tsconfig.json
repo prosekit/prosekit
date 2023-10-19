@@ -5,5 +5,5 @@
     "declarationDir": "temp/declaration",
     "tsBuildInfoFile": "temp/tsconfig.tsbuildinfo"
   },
-  "include": ["./**/*.ts"]
+  "include": ["./src", "./*.js", "./*.ts"]
 }

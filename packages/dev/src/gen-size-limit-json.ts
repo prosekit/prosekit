@@ -16,7 +16,7 @@ function* iterateExports(pkg: Package) {
 
   for (const [entryName, entry] of Object.entries(exports)) {
     // size-limit cannot handle .svelte files
-    if (entryName.includes('svelte') && entryName.includes('component')) {
+    if (entryName.includes('svelte')) {
       continue
     }
 

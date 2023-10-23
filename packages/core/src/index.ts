@@ -7,7 +7,6 @@ export { union } from './editor/type-utils'
 export { withPriority } from './editor/with-priority'
 export { ProseKitError } from './error'
 export { defineBaseCommands, defineCommands } from './extensions/command'
-export { definePayload } from './extensions/payload'
 export {
   defineDefaultState,
   type DefaultStateOptions,
@@ -24,6 +23,10 @@ export {
 export { defineMarkSpec, type MarkSpecOptions } from './extensions/mark-spec'
 export { defineNodeSpec, type NodeSpecOptions } from './extensions/node-spec'
 export { defineNodeView, type NodeViewOptions } from './extensions/node-view'
+export {
+  defineNodeViewEffect,
+  type NodeViewEffectOptions,
+} from './extensions/node-view-effect'
 export { defineParagraph } from './extensions/paragraph'
 export {
   definePlugin,

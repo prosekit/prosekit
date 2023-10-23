@@ -37,6 +37,8 @@ examples:
     files:
       - path: App.tsx
         hidden: false
+      - path: CodeBlockView.tsx
+        hidden: false
       - path: ToggleButton.tsx
         hidden: false
       - path: Toolbar.tsx

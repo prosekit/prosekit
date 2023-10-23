@@ -1,9 +1,13 @@
 import { type Editor } from '@prosekit/core'
-import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/react'
-import React, { createElement, type ComponentType } from 'react'
+import {
+  ProsemirrorAdapterProvider,
+  useNodeViewFactory,
+} from '@prosemirror-adapter/react'
+import React, { createElement, useMemo, type ComponentType } from 'react'
 
 import { editorContext } from '../contexts/editor-context'
-import { useReactPayload } from '../hooks/use-react-payload'
+import { defineReactNodeViewRenderer } from '../extensions/react-node-view'
+import { useExtension } from '../hooks/use-extension'
 
 export interface ProseKitProps {
   editor: Editor
@@ -18,13 +22,19 @@ export const ProseKit: ComponentType<ProseKitProps> = (props) => {
     null,
     createElement(EditorContextProvider, { value: { editor } }, [
       children,
-      createElement(ReactPayloadRegister),
+      createElement(RendererRegister),
     ]),
   )
 }
 
-function ReactPayloadRegister() {
-  useReactPayload(null)
+function RendererRegister() {
+  const nodeViewFactory = useNodeViewFactory()
+  const extension = useMemo(
+    () => defineReactNodeViewRenderer({ nodeViewFactory }),
+    [nodeViewFactory],
+  )
+  useExtension({ extension })
+
   return null
 }
 

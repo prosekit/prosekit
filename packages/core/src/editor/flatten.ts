@@ -2,7 +2,12 @@
 
 import { ProseKitError } from '../error'
 import { commandFacet, type CommandPayload } from '../facets/command'
-import { Facet, FacetExtension, getFacetCount } from '../facets/facet'
+import {
+  Facet,
+  FacetExtension,
+  getFacetCount,
+  type FacetConverter,
+} from '../facets/facet'
 import { schemaFacet, type SchemaPayload } from '../facets/schema'
 import { stateFacet, type StatePayload } from '../facets/state'
 import { viewFacet, type ViewPayload } from '../facets/view'
@@ -10,15 +15,13 @@ import type { Extension } from '../types/extension'
 import { Priority } from '../types/priority'
 import { uniqPush, uniqRemove } from '../utils/uniq-array'
 
-import type { Converter } from './converter'
-
 type Tuple5<T> = [T, T, T, T, T]
 
 type Payload = unknown
 type PayloadTuple = Tuple5<Payload[]>
 export type Payloads = PayloadTuple[]
 
-type ConverterTuple = Tuple5<Converter | undefined>
+type ConverterTuple = Tuple5<FacetConverter | undefined>
 export type Converters = ConverterTuple[]
 
 type Facets = Facet<any, any>[]

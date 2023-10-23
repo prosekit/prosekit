@@ -1,11 +1,16 @@
-import type { Converter } from '../editor/converter'
 import { ProseKitError } from '../error'
 import type { Extension } from '../types/extension'
 
 /** @public */
+export interface FacetConverter<Input = any, Output = any> {
+  create: (inputs: Input[]) => Output
+  update: (inputs: Input[]) => Output | null
+}
+
+/** @public */
 export interface FacetOptions<Input, Output> {
   convert?: (payloads: Input[]) => Output
-  converter?: () => Converter<Input, Output>
+  converter?: () => FacetConverter<Input, Output>
   next: Facet<Output, any>
 }
 
@@ -20,12 +25,12 @@ export class Facet<Input, Output> {
   /** @internal */
   readonly index = facetCount++
   /** @internal */
-  readonly converter: () => Converter<Input, Output>
+  readonly converter: () => FacetConverter<Input, Output>
   /** @internal */
   readonly next: Facet<Output, any> | null
 
   private constructor(
-    converter: () => Converter<Input, Output>,
+    converter: () => FacetConverter<Input, Output>,
     next: Facet<Output, any> | null,
   ) {
     this.converter = converter

@@ -2,7 +2,7 @@ export { addMark, type AddMarkOptions } from './commands/add-mark'
 export { toggleMark, type ToggleMarkOptions } from './commands/toggle-mark'
 export { toggleNode, type ToggleNodeOptions } from './commands/toggle-node'
 export { Editor, createEditor, type EditorOptions } from './editor/editor'
-export { Facet, FacetExtension, type FacetOptions } from './editor/facet'
+export { Facet, FacetExtension, type FacetOptions } from './facets/facet'
 export { union } from './editor/type-utils'
 export { withPriority } from './editor/with-priority'
 export { ProseKitError } from './error'
@@ -31,11 +31,10 @@ export { defineParagraph } from './extensions/paragraph'
 export {
   definePlugin,
   pluginFacet,
-  type PluginFacetInput,
+  type PluginPayload,
 } from './extensions/plugin'
 export { defineText } from './extensions/text'
 export { type CommandArgs as CommandArgs } from './types/command'
-export * from './types/editor'
 export {
   type Extension,
   type ExtractCommandAppliers,

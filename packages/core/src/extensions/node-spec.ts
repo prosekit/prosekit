@@ -1,8 +1,8 @@
 import type { NodeSpec, SchemaSpec } from '@prosekit/pm/model'
 
-import { Facet } from '../editor/facet'
-import { schemaSlot } from '../editor/slots'
 import { ProseKitError } from '../error'
+import { Facet } from '../facets/facet'
+import { schemaFacet } from '../facets/schema'
 import type { Extension } from '../types/extension'
 
 /**
@@ -24,7 +24,7 @@ export function defineNodeSpec<NodeName extends string>(
 }
 
 const nodeSpecFacet = Facet.define<NodeSpecOptions, SchemaSpec>({
-  combine: (options: NodeSpecOptions[]): SchemaSpec => {
+  convert: (options: NodeSpecOptions[]): SchemaSpec => {
     const nodes: Record<string, NodeSpec> = {}
     let topNodeName: string | undefined = undefined
 
@@ -42,5 +42,5 @@ const nodeSpecFacet = Facet.define<NodeSpecOptions, SchemaSpec>({
 
     return { nodes, topNode: topNodeName }
   },
-  next: schemaSlot,
+  next: schemaFacet,
 })

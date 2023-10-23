@@ -3,7 +3,7 @@ import { keydownHandler } from '@prosekit/pm/keymap'
 import { Plugin, PluginKey, type Command } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { Facet } from '../editor/facet'
+import { Facet } from '../facets/facet'
 import { type Extension } from '../types/extension'
 
 import { pluginFacet } from './plugin'
@@ -24,7 +24,7 @@ export function defineBaseKeymap() {
 }
 
 const keymapFacet = Facet.define({
-  slot: () => {
+  converter: () => {
     type Handler = (view: EditorView, event: KeyboardEvent) => boolean
 
     let handler: Handler | null = null
@@ -53,7 +53,6 @@ const keymapFacet = Facet.define({
     }
   },
   next: pluginFacet,
-  single: true,
 })
 
 function mergeKeymaps(keymaps: Keymap[]): Keymap {

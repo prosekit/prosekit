@@ -1,6 +1,6 @@
 import { Selection, type EditorStateConfig } from '@prosekit/pm/state'
 
-import { stateSlot } from '../editor/slots'
+import { stateFacet } from '../facets/state'
 import type { Extension } from '../types/extension'
 import type { NodeJson, SelectionJson } from '../types/model'
 
@@ -16,7 +16,7 @@ export interface DefaultStateOptions {
 }
 
 export function defineDefaultState(options: DefaultStateOptions): Extension {
-  return stateSlot.extension([
+  return stateFacet.extension([
     ({ schema }) => {
       const config: EditorStateConfig = {}
 

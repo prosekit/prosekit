@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.0.22
+
+### Patch Changes
+
+- [4974637] **prosekit/react**
+
+  Add `defineReactNodeView`
+
+- [ff82d90] **prosekit/core**
+
+  Improve facet performance
+
 ## 0.0.21
 
 ### Patch Changes

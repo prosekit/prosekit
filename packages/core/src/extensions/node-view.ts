@@ -1,9 +1,10 @@
-import { Plugin } from '@prosekit/pm/state'
+import { ProseMirrorPlugin } from '@prosekit/pm/state'
 import { type NodeViewConstructor } from '@prosekit/pm/view'
 
-import { type Extension, Facet } from '..'
+import { Facet } from '../editor/facet'
+import type { Extension } from '../types/extension'
 
-import { type PluginFacetInput, pluginFacet } from './plugin'
+import { pluginFacet, type PluginFacetInput } from './plugin'
 
 export interface NodeViewOptions {
   name: string
@@ -27,7 +28,7 @@ const nodeViewFacet = Facet.define<NodeViewFacetInput, NodeViewFacetOutput>({
       }
     }
 
-    return () => [new Plugin({ props: { nodeViews } })]
+    return () => [new ProseMirrorPlugin({ props: { nodeViews } })]
   },
   next: pluginFacet,
 })

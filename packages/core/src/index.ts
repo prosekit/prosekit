@@ -7,6 +7,7 @@ export { union } from './editor/type-utils'
 export { withPriority } from './editor/with-priority'
 export { ProseKitError } from './error'
 export { defineBaseCommands, defineCommands } from './extensions/command'
+export { definePayload } from './extensions/payload'
 export {
   defineDefaultState,
   type DefaultStateOptions,

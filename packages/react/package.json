@@ -46,7 +46,8 @@
   "dependencies": {
     "@lit/react": "^1.0.0",
     "@prosekit/core": "^0.0.12",
-    "@prosekit/lit": "^0.0.16"
+    "@prosekit/lit": "^0.0.16",
+    "@prosemirror-adapter/react": "^0.2.6"
   },
   "peerDependencies": {
     "react": ">= 17.0.0",

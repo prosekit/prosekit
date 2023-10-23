@@ -1,38 +1,29 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import type { SchemaSpec } from '@prosekit/pm/model'
 
 import { ProseKitError } from '../error'
-import type { StateConfigCallback, ViewProps } from '../types/editor'
+import { commandFacet, type CommandPayload } from '../facets/command'
+import { Facet, FacetExtension, getFacetCount } from '../facets/facet'
+import { schemaFacet, type SchemaPayload } from '../facets/schema'
+import { stateFacet, type StatePayload } from '../facets/state'
+import { viewFacet, type ViewPayload } from '../facets/view'
 import type { Extension } from '../types/extension'
 import { Priority } from '../types/priority'
 import { uniqPush, uniqRemove } from '../utils/uniq-array'
 
-import { Facet, FacetExtension, sortFacets } from './facet'
-import type { AnySlot } from './slot'
-import {
-  commandSlot,
-  schemaSlot,
-  stateSlot,
-  viewSlot,
-  type CommandSlotInput,
-} from './slots'
+import type { Converter } from './converter'
 
-type Input = unknown
-type InputTuple = [Input[], Input[], Input[], Input[], Input[]]
-export type Inputs = InputTuple[]
+type Tuple5<T> = [T, T, T, T, T]
 
-type SlotTuple = [
-  AnySlot | undefined,
-  AnySlot | undefined,
-  AnySlot | undefined,
-  AnySlot | undefined,
-  AnySlot | undefined,
-]
-export type Slots = SlotTuple[]
+type Payload = unknown
+type PayloadTuple = Tuple5<Payload[]>
+export type Payloads = PayloadTuple[]
+
+type ConverterTuple = Tuple5<Converter | undefined>
+export type Converters = ConverterTuple[]
 
 type Facets = Facet<any, any>[]
 
-function flattenInputTuple(inputTuple: InputTuple): Input[] {
+function flattenInputTuple(inputTuple: PayloadTuple): Payload[] {
   return [
     ...inputTuple[0],
     ...inputTuple[1],
@@ -42,7 +33,10 @@ function flattenInputTuple(inputTuple: InputTuple): Input[] {
   ]
 }
 
-function mergeInputTuple(tupleA: InputTuple, tupleB: InputTuple): InputTuple {
+function mergeInputTuple(
+  tupleA: PayloadTuple,
+  tupleB: PayloadTuple,
+): PayloadTuple {
   if (!tupleA) return tupleB
   if (!tupleB) return tupleA
 
@@ -58,7 +52,10 @@ function mergeInputTuple(tupleA: InputTuple, tupleB: InputTuple): InputTuple {
   ]
 }
 
-function removeInputTuple(tupleA: InputTuple, tupleB: InputTuple): InputTuple {
+function removeInputTuple(
+  tupleA: PayloadTuple,
+  tupleB: PayloadTuple,
+): PayloadTuple {
   if (!tupleA) return [[], [], [], [], []]
   if (!tupleB) return tupleA
 
@@ -79,7 +76,7 @@ function extractFacets(root: Extension) {
   const priorities: Priority[] = [Priority.default]
 
   const facets: Facets = []
-  const inputs: Inputs = []
+  const payloads: Payloads = []
 
   while (extensions.length > 0) {
     const ext = extensions.pop()!
@@ -89,10 +86,10 @@ function extractFacets(root: Extension) {
       const facet = ext.facet
       if (!facets[facet.index]) {
         facets[facet.index] = facet
-        inputs[facet.index] = [[], [], [], [], []]
+        payloads[facet.index] = [[], [], [], [], []]
       }
-      const facetInputs: Input[] = ext.inputs
-      inputs[facet.index][pri].push(...facetInputs)
+      const facetPayloads: Payload[] = ext.payloads
+      payloads[facet.index][pri].push(...facetPayloads)
     } else if (ext.extension) {
       const p = ext.priority ?? pri
       if (Array.isArray(ext.extension)) {
@@ -109,12 +106,12 @@ function extractFacets(root: Extension) {
     }
   }
 
-  return [facets, inputs] as const
+  return [facets, payloads] as const
 }
 
 export function updateExtension(
-  prevInputs: Inputs,
-  prevSlots: Slots,
+  prevInputs: Payloads,
+  prevConverters: Converters,
   extension: Extension,
   mode: 'add' | 'remove',
 ) {
@@ -122,49 +119,53 @@ export function updateExtension(
 
   const [facets, inputs] = extractFacets(extension)
 
-  let schemaInput: SchemaSpec | null = null
-  let stateInput: StateConfigCallback | null = null
-  let viewInput: ViewProps | null = null
-  let commandInput: CommandSlotInput | null = null
+  let schemaInput: SchemaPayload | null = null
+  let stateInput: StatePayload | null = null
+  let viewInput: ViewPayload | null = null
+  let commandInput: CommandPayload | null = null
 
-  for (const facet of sortFacets(facets)) {
+  for (let index = getFacetCount(); index >= 0; index--) {
+    const facet = facets[index]
+    if (!facet) {
+      continue
+    }
+
+    const nextFacet = facet.next
+    if (nextFacet) {
+      facets[nextFacet.index] ||= nextFacet
+    }
+
     if (!inputs[facet.index]) {
       continue
     }
 
-    const inputTuple = modifyInputTuple(
-      prevInputs[facet.index],
-      inputs[facet.index],
-    )
-    prevInputs[facet.index] = inputTuple
+    const inputTuple = modifyInputTuple(prevInputs[index], inputs[index])
+    prevInputs[index] = inputTuple
 
-    if (facet.next && !facet.single) {
+    if (facet.next) {
       let hasOutput = false
 
-      const outputTuple: InputTuple = [[], [], [], [], []]
+      const outputTuple: PayloadTuple = [[], [], [], [], []]
 
       for (let pri = 0; pri < 5; pri++) {
         const inputArray = inputTuple[pri]
         if (inputArray.length === 0) {
           continue
         }
+        const converterTuple = (prevConverters[index] ||= [
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+          undefined,
+        ])
+        const prevConverter = converterTuple[pri]
+        const converter = prevConverter || facet.converter()
+        prevConverters[index][pri] = converter
 
-        const slotTuple =
-          prevSlots[facet.index] ||
-          (prevSlots[facet.index] = [
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-          ])
-        const prevSlot = slotTuple[pri]
-        const slot = prevSlot || facet.slot()
-        prevSlots[facet.index][pri] = slot
-
-        const output = prevSlot
-          ? slot.update(inputArray)
-          : slot.create(inputArray)
+        const output = prevConverter
+          ? converter.update(inputArray)
+          : converter.create(inputArray)
 
         if (!output) {
           continue
@@ -185,53 +186,41 @@ export function updateExtension(
 
       continue
     } else {
-      const inputArray: Input[] = flattenInputTuple(inputTuple)
-      const slotTuple =
-        prevSlots[facet.index] ||
-        (prevSlots[facet.index] = [
-          undefined,
-          undefined,
-          undefined,
-          undefined,
-          undefined,
-        ])
-      const prevSlot = slotTuple[Priority.default]
-      const slot = prevSlot || facet.slot()
-      prevSlots[facet.index][Priority.default] = slot
+      const inputArray: Payload[] = flattenInputTuple(inputTuple)
+      const converterTuple = (prevConverters[index] ||= [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ])
+      const prevConverter = converterTuple[Priority.default]
+      const converter = prevConverter || facet.converter()
+      prevConverters[index][Priority.default] = converter
 
-      const output = prevSlot
-        ? slot.update(inputArray)
-        : slot.create(inputArray)
+      const output = prevConverter
+        ? converter.update(inputArray)
+        : converter.create(inputArray)
 
       if (!output) {
         continue
       }
 
-      const outputTuple: InputTuple = [[], [], [output], [], []]
-
-      if (facet.next) {
-        inputs[facet.next.index] = modifyInputTuple(
-          inputs[facet.next.index],
-          outputTuple,
-        )
-        continue
-      } else {
-        switch (facet) {
-          case schemaSlot:
-            schemaInput = output
-            break
-          case stateSlot:
-            stateInput = output
-            break
-          case viewSlot:
-            viewInput = output
-            break
-          case commandSlot:
-            commandInput = output
-            break
-          default:
-            throw new ProseKitError('Invalid facet')
-        }
+      switch (facet) {
+        case schemaFacet:
+          schemaInput = output
+          break
+        case stateFacet:
+          stateInput = output
+          break
+        case viewFacet:
+          viewInput = output
+          break
+        case commandFacet:
+          commandInput = output
+          break
+        default:
+          throw new ProseKitError('Invalid root facet')
       }
     }
   }

@@ -20,10 +20,12 @@ export const ProseKit: ComponentType<ProseKitProps> = (props) => {
   return createElement(
     ProsemirrorAdapterProvider,
     null,
-    createElement(EditorContextProvider, { value: { editor } }, [
+    createElement(
+      EditorContextProvider,
+      { value: { editor } },
       children,
       createElement(RendererRegister),
-    ]),
+    ),
   )
 }
 

@@ -1,8 +1,8 @@
 import type { MarkSpec, SchemaSpec } from '@prosekit/pm/model'
 
-import { Facet } from '../editor/facet'
-import { schemaSlot } from '../editor/slots'
 import { ProseKitError } from '../error'
+import { Facet } from '../facets/facet'
+import { schemaFacet } from '../facets/schema'
 import { type Extension } from '../types/extension'
 
 /**
@@ -23,7 +23,7 @@ export function defineMarkSpec<Mark extends string>(
 }
 
 const markSpecFacet = Facet.define<MarkSpecOptions, SchemaSpec>({
-  combine: (options: MarkSpecOptions[]): SchemaSpec => {
+  convert: (options: MarkSpecOptions[]): SchemaSpec => {
     const marks: Record<string, MarkSpec> = {}
 
     for (const { name, ...spec } of options) {
@@ -36,5 +36,5 @@ const markSpecFacet = Facet.define<MarkSpecOptions, SchemaSpec>({
 
     return { marks, nodes: {} }
   },
-  next: schemaSlot,
+  next: schemaFacet,
 })

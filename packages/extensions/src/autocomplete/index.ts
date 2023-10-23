@@ -2,7 +2,7 @@ import {
   Facet,
   pluginFacet,
   type Extension,
-  type PluginFacetInput,
+  type PluginPayload,
 } from '@prosekit/core'
 
 import { createAutocompletePlugin } from './plugin'
@@ -14,8 +14,8 @@ export function defineAutocomplete(rule: AutocompleteRule): Extension {
   return autocompleteFacet.extension([rule])
 }
 
-const autocompleteFacet = Facet.define<AutocompleteRule, PluginFacetInput>({
-  slot: () => {
+const autocompleteFacet = Facet.define<AutocompleteRule, PluginPayload>({
+  converter: () => {
     let localRules: AutocompleteRule[] = []
     const getRules = () => localRules
 

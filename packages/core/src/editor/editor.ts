@@ -21,7 +21,7 @@ import {
   type MarkBuilder,
   type NodeBuilder,
 } from './builder'
-import { updateExtension, type Inputs, type Slots } from './flatten'
+import { updateExtension, type Payloads, type Converters } from './flatten'
 import { union } from './type-utils'
 
 /** @public */
@@ -68,8 +68,8 @@ class EditorInstance {
   schema: Schema
   commandAppliers: Record<string, CommandApplier> = {}
 
-  private inputs: Inputs = []
-  private slots: Slots = []
+  private payloads: Payloads = []
+  private converters: Converters = []
   private directEditorProps: DirectEditorProps
   readonly nodeBuilders: Record<string, NodeBuilder>
   readonly markBuilders: Record<string, MarkBuilder>
@@ -79,7 +79,7 @@ class EditorInstance {
     this.unmount = this.unmount.bind(this)
 
     const { schemaInput, stateInput, viewInput, commandInput } =
-      updateExtension(this.inputs, this.slots, extension, 'add')
+      updateExtension(this.payloads, this.converters, extension, 'add')
 
     if (!schemaInput) {
       throw new ProseKitError('Schema must be defined')
@@ -118,7 +118,7 @@ class EditorInstance {
 
   public updateExtension(extension: Extension, mode: 'add' | 'remove'): void {
     const { schemaInput, stateInput, viewInput, commandInput } =
-      updateExtension(this.inputs, this.slots, extension, mode)
+      updateExtension(this.payloads, this.converters, extension, mode)
 
     if (schemaInput) {
       throw new ProseKitError('Schema cannot be changed')

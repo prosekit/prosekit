@@ -1,6 +1,4 @@
-export interface Slot<Input, Output> {
+export interface Converter<Input = any, Output = any> {
   create: (inputs: Input[]) => Output
   update: (inputs: Input[]) => Output | null
 }
-
-export type AnySlot = Slot<any, any>

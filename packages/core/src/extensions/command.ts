@@ -2,7 +2,7 @@ import { NodeType, ProseMirrorNode, type Attrs } from '@prosekit/pm/model'
 import { AllSelection } from '@prosekit/pm/state'
 import { findWrapping, insertPoint } from '@prosekit/pm/transform'
 
-import { commandSlot } from '../editor/slots'
+import { commandFacet } from '../facets/command'
 import { type CommandCreator } from '../types/command'
 import { type Extension } from '../types/extension'
 
@@ -11,7 +11,7 @@ export function defineCommands<
 >(
   commands: T,
 ): Extension<{ COMMAND_ARGS: { [K in keyof T]: Parameters<T[K]> } }> {
-  return commandSlot.extension([commands]) satisfies Extension
+  return commandFacet.extension([commands]) satisfies Extension
 }
 
 /**

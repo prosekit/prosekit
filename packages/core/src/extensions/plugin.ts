@@ -1,9 +1,8 @@
 import { Schema } from '@prosekit/pm/model'
 import { Plugin, type EditorStateConfig } from '@prosekit/pm/state'
 
-import { Facet } from '../editor/facet'
-import { stateSlot } from '../editor/slots'
-import { type StateConfigCallback } from '../types/editor'
+import { Facet } from '../facets/facet'
+import { stateFacet, type StatePayload } from '../facets/state'
 import { type Extension } from '../types/extension'
 
 /**
@@ -33,20 +32,17 @@ export function definePlugin(
 }
 
 /** @internal */
-export type PluginFacetInput = (context: { schema: Schema }) => Plugin[]
+export type PluginPayload = (context: { schema: Schema }) => Plugin[]
 
 /** @internal */
-type PluginFacetOutput = StateConfigCallback
-
-/** @internal */
-export const pluginFacet = Facet.define<PluginFacetInput, PluginFacetOutput>({
-  combine: (
+export const pluginFacet = Facet.define<PluginPayload, StatePayload>({
+  convert: (
     callbacks: Array<(context: { schema: Schema }) => Plugin[]>,
-  ): StateConfigCallback => {
+  ): StatePayload => {
     return ({ schema }): EditorStateConfig => {
       const plugins = callbacks.flatMap((func) => func({ schema }))
       return { plugins }
     }
   },
-  next: stateSlot,
+  next: stateFacet,
 })

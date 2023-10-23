@@ -1,9 +1,9 @@
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 
-import { Facet } from '../editor/facet'
+import { Facet } from '../facets/facet'
 import { voidFunction } from '../types/void-function'
 
-import { pluginFacet, type PluginFacetInput } from './plugin'
+import { pluginFacet, type PluginPayload } from './plugin'
 
 /**
  * @internal
@@ -13,11 +13,10 @@ export function defineEventHandler(options: { update?: VoidFunction }) {
   return eventFacet.extension([updateHandler])
 }
 
-type EventFacetInput = VoidFunction
-type EventFacetOutput = PluginFacetInput
+type EventPayload = VoidFunction
 
-const eventFacet = Facet.define<EventFacetInput, EventFacetOutput>({
-  slot: () => {
+const eventFacet = Facet.define<EventPayload, PluginPayload>({
+  converter: () => {
     let updateHandlers: VoidFunction[] = []
 
     const plugin = new ProseMirrorPlugin({
@@ -48,7 +47,6 @@ const eventFacet = Facet.define<EventFacetInput, EventFacetOutput>({
     }
   },
   next: pluginFacet,
-  single: true,
 })
 
 const pluginKey = new PluginKey('prosekit-event-handler')

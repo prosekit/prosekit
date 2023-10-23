@@ -15,6 +15,8 @@ import {
   stateSlot,
   viewSlot,
   type CommandSlotInput,
+  payloadSlot,
+  type PayloadSlotInput,
 } from './slots'
 
 type Input = unknown
@@ -126,6 +128,7 @@ export function updateExtension(
   let stateInput: StateConfigCallback | null = null
   let viewInput: ViewProps | null = null
   let commandInput: CommandSlotInput | null = null
+  let payloadInput: PayloadSlotInput | null = null
 
   for (const facet of sortFacets(facets)) {
     if (!inputs[facet.index]) {
@@ -229,6 +232,9 @@ export function updateExtension(
           case commandSlot:
             commandInput = output
             break
+          case payloadSlot:
+            payloadInput = output
+            break
           default:
             throw new ProseKitError('Invalid facet')
         }
@@ -236,5 +242,5 @@ export function updateExtension(
     }
   }
 
-  return { schemaInput, stateInput, viewInput, commandInput }
+  return { schemaInput, stateInput, viewInput, commandInput, payloadInput }
 }

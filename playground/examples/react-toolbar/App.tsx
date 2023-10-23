@@ -1,3 +1,4 @@
+import 'highlight.js/styles/github-dark-dimmed.css'
 import 'prosekit/basic/style.css'
 
 import { createEditor } from 'prosekit/core'

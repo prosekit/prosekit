@@ -18,7 +18,7 @@ export const shortcuts = {
   ),
 
   LANGUAGE_BUTTON: clsx(
-    'm-2 box-border cursor-pointer rounded-md border-none bg-transparent px-2 py-0.5 text-xs text-gray-400 outline-none hover:bg-gray-500/30',
+    'absolute mx-[0.5em] my-[1.5em] box-border cursor-pointer rounded-md border-none bg-transparent px-2 py-0.5 text-xs text-gray-400 outline-none hover:bg-gray-500/30',
   ),
 
   LANGUAGE_COMBO_BOX: clsx(

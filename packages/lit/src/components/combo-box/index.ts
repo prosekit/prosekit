@@ -7,13 +7,13 @@ import {
   isComboBoxItem,
   queryClosestComboBoxItem,
 } from '../combo-box-item/helpers'
-import { Popover } from '../popover'
+import { Popover, type PopoverProps } from '../popover'
 
 import { comboBoxContext, type ComboBoxContext } from './context'
 
 export const propNames = ['onDismiss'] as const
 
-export interface ComboBoxProps {
+export interface ComboBoxProps extends PopoverProps {
   onDismiss?: VoidFunction
 }
 

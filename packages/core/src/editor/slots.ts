@@ -71,3 +71,19 @@ export const commandSlot = Facet.defineSlot<CommandSlotInput>({
     return Object.assign({}, ...inputs) as CommandSlotInput
   },
 })
+
+export type PayloadSlotInput = Record<string, unknown[]>
+
+export const payloadSlot = Facet.defineSlot<PayloadSlotInput>({
+  combine: (inputs: PayloadSlotInput[]) => {
+    const output: PayloadSlotInput = {}
+
+    for (const input of inputs) {
+      for (const [key, values] of Object.entries(input)) {
+        output[key] = uniqPush(output[key] ?? [], values)
+      }
+    }
+
+    return output
+  },
+})

@@ -6,7 +6,7 @@ import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
 
 export const propNames = []
 
-export type ComboBoxListProps = Record<string, never>
+export type ComboBoxListProps = { lang?: string }
 
 @customElement('prosekit-combo-box-list')
 export class ComboBoxList extends LightBlockElement {

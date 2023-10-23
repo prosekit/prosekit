@@ -73,12 +73,13 @@ class EditorInstance {
   private directEditorProps: DirectEditorProps
   readonly nodeBuilders: Record<string, NodeBuilder>
   readonly markBuilders: Record<string, MarkBuilder>
+  readonly payload: Record<string, unknown[]> = {}
 
   constructor(extension: Extension) {
     this.mount = this.mount.bind(this)
     this.unmount = this.unmount.bind(this)
 
-    const { schemaInput, stateInput, viewInput, commandInput } =
+    const { schemaInput, stateInput, viewInput, commandInput, payloadInput } =
       updateExtension(this.inputs, this.slots, extension, 'add')
 
     if (!schemaInput) {
@@ -114,10 +115,11 @@ class EditorInstance {
         createMarkBuilder(getState, type),
       ]),
     )
+    this.payload = payloadInput ?? {}
   }
 
   public updateExtension(extension: Extension, mode: 'add' | 'remove'): void {
-    const { schemaInput, stateInput, viewInput, commandInput } =
+    const { schemaInput, stateInput, viewInput, commandInput, payloadInput } =
       updateExtension(this.inputs, this.slots, extension, mode)
 
     if (schemaInput) {
@@ -146,6 +148,12 @@ class EditorInstance {
         this.defineCommand(name, commandInput[name])
       }
     }
+
+    if (payloadInput) {
+      for (const [type, payloads] of Object.entries(payloadInput)) {
+        this.payload[type] = (this.payload[type] ?? []).concat(payloads)
+      }
+    }
   }
 
   public mount(place: HTMLElement) {
@@ -169,7 +177,9 @@ class EditorInstance {
   }
 
   public get assertView(): EditorView {
-    if (!this.view) throw new ProseKitError('Editor is not mounted')
+    if (!this.view) {
+      throw new ProseKitError('Editor is not mounted')
+    }
     return this.view
   }
 
@@ -312,5 +322,9 @@ export class Editor<E extends Extension = any> {
   }
   get marks(): Record<ExtractMarks<E>, MarkBuilder> {
     return this.instance.markBuilders
+  }
+
+  get payload(): Record<string, unknown[]> {
+    return this.instance.payload
   }
 }

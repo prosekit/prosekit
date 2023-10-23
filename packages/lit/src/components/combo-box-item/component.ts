@@ -9,7 +9,9 @@ import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
 
 export const propNames = []
 
-export type ComboBoxItemProps = Record<string, never>
+export type ComboBoxItemProps = {
+  onSelect?: VoidFunction
+}
 
 @customElement('prosekit-combo-box-item')
 export class ComboBoxItem extends LightBlockElement {

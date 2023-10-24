@@ -190,7 +190,14 @@ export function updateExtension(
       continue
     } else {
       const inputArray: Payload[] = flattenInputTuple(inputTuple)
-      const prevConverter = prevConverters[index]?.[Priority.default]
+      prevConverters[index] ||= [
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+        undefined,
+      ]
+      const prevConverter = prevConverters[index][Priority.default]
       const converter = prevConverter || facet.converter()
       prevConverters[index][Priority.default] = converter
 

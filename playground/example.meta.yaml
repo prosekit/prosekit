@@ -39,6 +39,8 @@ examples:
         hidden: false
       - path: CodeBlockView.tsx
         hidden: false
+      - path: ImageUploadPopover.tsx
+        hidden: false
       - path: ToggleButton.tsx
         hidden: false
       - path: Toolbar.tsx

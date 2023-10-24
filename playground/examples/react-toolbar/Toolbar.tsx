@@ -1,6 +1,6 @@
-import { Popover } from 'prosekit/react/popover'
-import { useState, type FC, type ReactNode } from 'react'
+import { useState } from 'react'
 
+import { ImageUploadPopover } from './ImageUploadPopover'
 import { ToggleButton } from './ToggleButton'
 import { useExampleEditor } from './use-example-editor'
 
@@ -65,7 +65,7 @@ export default function Toolbar() {
         <div className="ICON_H3" />
       </ToggleButton>
 
-      <ImagePopover
+      <ImageUploadPopover
         open={imagePopoverOpen}
         onClose={() => setImagePopoverOpen(false)}
       >
@@ -78,102 +78,7 @@ export default function Toolbar() {
         >
           <div className="ICON_IMAGE" />
         </ToggleButton>
-      </ImagePopover>
+      </ImageUploadPopover>
     </div>
-  )
-}
-
-const ImagePopover: FC<{
-  open: boolean
-  onClose: VoidFunction
-  children: ReactNode
-}> = ({ open, onClose, children }) => {
-  const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null)
-
-  const [webUrl, setWebUrl] = useState('')
-  const [objectUrl, setObjectUrl] = useState('')
-  const url = webUrl || objectUrl
-
-  const editor = useExampleEditor()
-
-  const handleFileChange: React.ChangeEventHandler<HTMLInputElement> = (
-    event,
-  ) => {
-    const file = event.target.files?.[0]
-
-    if (file) {
-      setObjectUrl(URL.createObjectURL(file))
-      setWebUrl('')
-    } else {
-      setObjectUrl('')
-    }
-  }
-
-  const handleWebUrlChange: React.ChangeEventHandler<HTMLInputElement> = (
-    event,
-  ) => {
-    const url = event.target.value
-
-    if (url) {
-      setWebUrl(url)
-      setObjectUrl('')
-    } else {
-      setWebUrl('')
-    }
-  }
-
-  const handleClose = () => {
-    setWebUrl('')
-    setObjectUrl('')
-    onClose()
-  }
-
-  const handleSubmit = () => {
-    editor.commands.insertImage({ src: url })
-    setTimeout(handleClose, 100)
-  }
-
-  return (
-    <>
-      <div ref={setAnchorElement}>{children}</div>
-
-      <Popover reference={anchorElement ?? undefined} active={open}>
-        <div className="IMAGE_UPLOAD_CARD">
-          <div>Select a local image file or enter a web image URL.</div>
-
-          {objectUrl ? null : (
-            <div>
-              <label>Web Image URL</label>
-              <input
-                className="IMAGE_UPLOAD_INPUT"
-                placeholder="https://placehold.co/128"
-                type="url"
-                onChange={handleWebUrlChange}
-              />
-            </div>
-          )}
-
-          {webUrl ? null : (
-            <div>
-              <label>Local Image</label>
-              <input
-                className="IMAGE_UPLOAD_INPUT"
-                accept="image/*"
-                type="file"
-                onChange={handleFileChange}
-              />
-            </div>
-          )}
-
-          <button
-            className="IMAGE_UPLOAD_BUTTON"
-            disabled={!url}
-            onClick={handleSubmit}
-          >
-            Upload Image
-          </button>
-        </div>
-      </Popover>
-    </>
   )
 }

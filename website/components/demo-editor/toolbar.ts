@@ -1,10 +1,13 @@
-import { defineComponent, h } from 'vue'
+import { defineComponent, h, ref } from 'vue'
 
+import { ImageUploadPopover } from './image-upload-popver'
 import { ToggleButton } from './toggle-button'
 import { useExampleEditorRef } from './use-example-editor'
 
 export const Toolbar = defineComponent(() => {
   const editor = useExampleEditorRef()
+
+  const imagePopoverOpen = ref(false)
 
   return () =>
     h('div', { class: 'TOOLBAR' }, [
@@ -68,6 +71,26 @@ export const Toolbar = defineComponent(() => {
           onChange: () => editor.value.commands.toggleHeading({ level: 3 }),
         },
         h('div', { class: 'ICON_H3' }),
+      ),
+      h(
+        ImageUploadPopover,
+        {
+          open: imagePopoverOpen.value,
+          onClose: () => {
+            imagePopoverOpen.value = false
+          },
+        },
+        h(
+          ToggleButton,
+          {
+            active: false,
+            available: true,
+            onChange: () => {
+              imagePopoverOpen.value = !imagePopoverOpen.value
+            },
+          },
+          h('div', { class: 'ICON_IMAGE' }),
+        ),
       ),
     ])
 })

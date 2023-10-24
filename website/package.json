@@ -17,6 +17,7 @@
     "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
     "@unocss/cli": "^0.57.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.2",
     "clsx": "^2.0.0",
     "dedent": "^1.5.1",
     "postcss": "^8.4.31",

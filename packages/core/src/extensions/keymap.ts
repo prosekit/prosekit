@@ -53,6 +53,7 @@ const keymapFacet = Facet.define({
     }
   },
   next: pluginFacet,
+  singleton: true,
 })
 
 function mergeKeymaps(keymaps: Keymap[]): Keymap {

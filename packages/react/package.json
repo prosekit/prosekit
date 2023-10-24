@@ -34,7 +34,8 @@
     "./combo-box": "./src/components/combo-box.gen.ts",
     "./combo-box-input": "./src/components/combo-box-input.gen.ts",
     "./combo-box-item": "./src/components/combo-box-item.gen.ts",
-    "./combo-box-list": "./src/components/combo-box-list.gen.ts"
+    "./combo-box-list": "./src/components/combo-box-list.gen.ts",
+    "./popover": "./src/components/popover.gen.ts"
   },
   "files": [
     "dist"
@@ -122,6 +123,11 @@
         "types": "./dist/prosekit-react-combo-box-list.d.ts",
         "import": "./dist/prosekit-react-combo-box-list.js",
         "default": "./dist/prosekit-react-combo-box-list.js"
+      },
+      "./popover": {
+        "types": "./dist/prosekit-react-popover.d.ts",
+        "import": "./dist/prosekit-react-popover.js",
+        "default": "./dist/prosekit-react-popover.js"
       }
     },
     "main": "./dist/prosekit-react.js",
@@ -158,6 +164,9 @@
         ],
         "combo-box-list": [
           "./dist/prosekit-react-combo-box-list.d.ts"
+        ],
+        "popover": [
+          "./dist/prosekit-react-popover.d.ts"
         ]
       }
     }

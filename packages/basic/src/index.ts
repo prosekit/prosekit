@@ -13,6 +13,7 @@ import { defineBold } from '@prosekit/extensions/bold'
 import { defineHeading } from '@prosekit/extensions/heading'
 import { defineItalic } from '@prosekit/extensions/italic'
 import { defineList } from '@prosekit/extensions/list'
+import { defineImage } from '@prosekit/extensions/image'
 
 /** @public */
 export function defineBasicExtension() {
@@ -26,6 +27,7 @@ export function defineBasicExtension() {
     defineBaseCommands(),
     defineItalic(),
     defineBold(),
+    defineImage(),
     withPriority(defineParagraph(), Priority.high),
   ])
 }

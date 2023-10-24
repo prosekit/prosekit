@@ -4,7 +4,7 @@ import { type Command } from '@prosekit/pm/state'
 import { type CommandCreator } from '../types/command'
 import { getMarkType } from '../utils/get-mark-type'
 
-export interface AddMarkOptions {
+export function addMark(options: {
   type: string | MarkType
   attrs?: Attrs | null
 
@@ -17,9 +17,7 @@ export interface AddMarkOptions {
    * The end position of the mark. By default it will be the end position of current selection.
    */
   to?: number
-}
-
-export function addMark(options: AddMarkOptions): Command {
+}): Command {
   return (state, dispatch) => {
     const mark = getMarkType(state.schema, options.type).create(options.attrs)
     const from = options.from ?? state.selection.from

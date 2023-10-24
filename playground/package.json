@@ -32,6 +32,7 @@
     "svelte": "^4.2.2",
     "typescript": "^5.2.2",
     "unocss": "^0.57.0",
+    "vite-plugin-unocss-watcher": "^0.1.0",
     "vue": "^3.3.6"
   }
 }

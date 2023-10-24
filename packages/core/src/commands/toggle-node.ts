@@ -5,22 +5,23 @@ import { type Command } from '@prosekit/pm/state'
 import { getNodeType } from '../utils/get-node-type'
 import { isNodeActive } from '../utils/is-node-active'
 
-export interface ToggleNodeOptions {
+export function toggleNode({
+  type,
+  attrs,
+}: {
   type: string | NodeType
   attrs?: Attrs | null
-}
-
-export function toggleNode(options: ToggleNodeOptions): Command {
+}): Command {
   return (state, dispatch, view) => {
-    if (isNodeActive(state, options.type, options.attrs)) {
+    if (isNodeActive(state, type, attrs)) {
       const defaultType = state.schema.topNodeType.contentMatch.defaultType
       if (!defaultType) {
         return false
       }
       return setBlockType(defaultType)(state, dispatch, view)
     } else {
-      const nodeType = getNodeType(state.schema, options.type)
-      return setBlockType(nodeType, options.attrs)(state, dispatch, view)
+      const nodeType = getNodeType(state.schema, type)
+      return setBlockType(nodeType, attrs)(state, dispatch, view)
     }
   }
 }

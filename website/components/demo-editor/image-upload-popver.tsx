@@ -65,7 +65,7 @@ export const ImageUploadPopover = defineComponent({
                   class="IMAGE_UPLOAD_INPUT"
                   placeholder="https://placehold.co/128"
                   type="url"
-                  onChange={handleWebUrlChange}
+                  onInput={handleWebUrlChange}
                 />
               </div>
             )}
@@ -76,7 +76,7 @@ export const ImageUploadPopover = defineComponent({
                   class="IMAGE_UPLOAD_INPUT"
                   accept="image/*"
                   type="file"
-                  onChange={handleFileChange}
+                  onInput={handleFileChange}
                 />
               </div>
             )}

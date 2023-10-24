@@ -22,7 +22,7 @@ export const propNames = [
   'options',
   'autoUpdate',
   'autoUpdateOptions',
-]
+] as const
 
 export interface PopoverProps {
   active: boolean

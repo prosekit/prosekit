@@ -5,17 +5,19 @@ import { type Command } from '@prosekit/pm/state'
 import { type CommandCreator } from '../types/command'
 import { getMarkType } from '../utils/get-mark-type'
 
-export interface ToggleMarkOptions {
+export function toggleMark({
+  type,
+  attrs,
+}: {
   type: string | MarkType
   attrs?: Attrs | null
-}
-
-export function toggleMark(options: ToggleMarkOptions): Command {
+}): Command {
   return (state, dispatch, view) => {
-    return baseToggleMark(
-      getMarkType(state.schema, options.type),
-      options.attrs,
-    )(state, dispatch, view)
+    return baseToggleMark(getMarkType(state.schema, type), attrs)(
+      state,
+      dispatch,
+      view,
+    )
   }
 }
 

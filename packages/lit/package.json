@@ -34,7 +34,8 @@
     "./combo-box": "./src/components/combo-box/index.ts",
     "./combo-box-input": "./src/components/combo-box-input/index.ts",
     "./combo-box-item": "./src/components/combo-box-item/index.ts",
-    "./combo-box-list": "./src/components/combo-box-list/index.ts"
+    "./combo-box-list": "./src/components/combo-box-list/index.ts",
+    "./popover": "./src/components/popover/index.ts"
   },
   "files": [
     "dist"
@@ -111,6 +112,11 @@
         "types": "./dist/prosekit-lit-combo-box-list.d.ts",
         "import": "./dist/prosekit-lit-combo-box-list.js",
         "default": "./dist/prosekit-lit-combo-box-list.js"
+      },
+      "./popover": {
+        "types": "./dist/prosekit-lit-popover.d.ts",
+        "import": "./dist/prosekit-lit-popover.js",
+        "default": "./dist/prosekit-lit-popover.js"
       }
     },
     "main": "./dist/prosekit-lit.js",
@@ -147,6 +153,9 @@
         ],
         "combo-box-list": [
           "./dist/prosekit-lit-combo-box-list.d.ts"
+        ],
+        "popover": [
+          "./dist/prosekit-lit-popover.d.ts"
         ]
       }
     }

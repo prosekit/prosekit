@@ -592,6 +592,9 @@ importers:
       unocss:
         specifier: ^0.57.0
         version: 0.57.0(postcss@8.4.31)(vite@4.5.0)
+      vite-plugin-unocss-watcher:
+        specifier: ^0.1.0
+        version: 0.1.0
       vue:
         specifier: ^3.3.6
         version: 3.3.6(typescript@5.2.2)
@@ -10123,6 +10126,10 @@ packages:
       vitefu: 0.2.4(vite@4.5.0)
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vite-plugin-unocss-watcher@0.1.0:
+    resolution: {integrity: sha512-U9Hln2lRSuLBbZuQ5mpmY2oHbPtXcgltBCKKrYO+VVK1IR8Guc/fgcEIduCFQpTvPo9pDgyVJBj6gnoKNZBe3Q==}
     dev: true
 
   /vite@4.5.0(@types/node@18.18.6):

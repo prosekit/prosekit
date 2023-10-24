@@ -1,4 +1,9 @@
-import { defineNodeSpec, union } from '@prosekit/core'
+import {
+  defineCommands,
+  defineNodeSpec,
+  insertNode,
+  union,
+} from '@prosekit/core'
 
 export interface ImageAttrs {
   src?: string | null
@@ -32,7 +37,15 @@ export function defineImageSpec() {
   })
 }
 
+export function defineImageCommands() {
+  return defineCommands({
+    insertImage: (attrs?: ImageAttrs) => {
+      return insertNode({ type: 'image', attrs })
+    },
+  })
+}
+
 /** @public */
 export function defineImage() {
-  return union([defineImageSpec()])
+  return union([defineImageSpec(), defineImageCommands()])
 }

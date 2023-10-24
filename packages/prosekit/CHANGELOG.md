@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.23
+
+### Patch Changes
+
+- [e883ad1] **prosekit/core**
+
+  Export `insertNode` command
+
 ## 0.0.22
 
 ### Patch Changes

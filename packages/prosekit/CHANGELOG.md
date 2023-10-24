@@ -1,5 +1,25 @@
 # prosekit
 
+## 0.0.24
+
+### Patch Changes
+
+- [c9446c1] **prosekit/extensions**
+
+  Add commands insertHeading and setHeading
+
+- [f77a6fb] **prosekit/core**
+
+  Add `Facet.singleton`
+
+- [8375548] **prosekit/core**
+
+  Fix `setBlockType` command
+
+- [c9446c1] **prosekit/core**
+
+  Export `setBlockType`
+
 ## 0.0.23
 
 ### Patch Changes

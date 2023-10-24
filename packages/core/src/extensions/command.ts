@@ -1,7 +1,6 @@
-import { setBlockType } from '@prosekit/pm/commands'
-
 import { insertText } from '../commands/insert-text'
 import { selectAll } from '../commands/select-all'
+import { setBlockType } from '../commands/set-block-type'
 import { wrap } from '../commands/wrap'
 import { commandFacet } from '../facets/command'
 import { type CommandCreator } from '../types/command'

@@ -47,6 +47,7 @@ const eventFacet = Facet.define<EventPayload, PluginPayload>({
     }
   },
   next: pluginFacet,
+  singleton: true,
 })
 
 const pluginKey = new PluginKey('prosekit-event-handler')

@@ -1,7 +1,9 @@
 import { type Command } from '@prosekit/pm/state'
 import { describe, it } from 'vitest'
 
-import { defineCommands, defineMarkSpec, defineNodeSpec } from '..'
+import { defineCommands } from '../extensions/command'
+import { defineMarkSpec } from '../extensions/mark-spec'
+import { defineNodeSpec } from '../extensions/node-spec'
 import { assertTypeEqual } from '../types/assert-type-equal'
 import { type CommandCreator } from '../types/command'
 import { type Extension } from '../types/extension'

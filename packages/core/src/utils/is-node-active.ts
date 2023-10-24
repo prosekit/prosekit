@@ -1,8 +1,7 @@
 import type { Attrs, NodeType } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 
-import { getNodeType } from '..'
-
+import { getNodeType } from './get-node-type'
 import { objectEqual } from './object-euqal'
 
 export function isNodeActive(

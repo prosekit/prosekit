@@ -11,14 +11,11 @@ export const SlashMenu = defineComponent({
     const editor = useExampleEditor()
 
     const handleHeadingInsert = (level: number) => {
-      const node = editor.schema.nodes.heading.create({ level })
-      editor.commands.insertNode({ node })
+      editor.commands.insertHeading({ level })
     }
 
     const handleHeadingConvert = (level: number) => {
-      const nodeType = editor.schema.nodes.heading
-      const attrs = { level }
-      editor.commands.setBlockType({ nodeType, attrs })
+      editor.commands.setHeading({ level })
     }
 
     return () =>

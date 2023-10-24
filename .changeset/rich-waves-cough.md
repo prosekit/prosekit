@@ -3,4 +3,4 @@
 '@prosekit/core': patch
 ---
 
-Add `Facet.singleton`
+Export `setBlockType`

@@ -619,6 +619,9 @@ importers:
       '@unocss/cli':
         specifier: ^0.57.0
         version: 0.57.0
+      '@vitejs/plugin-vue-jsx':
+        specifier: ^3.0.2
+        version: 3.0.2(vite@4.5.0)(vue@3.3.6)
       clsx:
         specifier: ^2.0.0
         version: 2.0.0

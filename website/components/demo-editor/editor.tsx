@@ -1,6 +1,6 @@
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import { defineComponent, h, ref, watchPostEffect } from 'vue'
+import { defineComponent, ref, watchPostEffect } from 'vue'
 
 import { defineExampleExtension } from './extension'
 import { SlashMenu } from './slash-menu'
@@ -9,27 +9,22 @@ import { Toolbar } from './toolbar'
 import { UserMenu } from './user-menu'
 
 export const Editor = defineComponent({
+  name: 'Editor',
   setup() {
     const editor = createEditor({ extension: defineExampleExtension() })
     const editorRef = ref<HTMLDivElement | null>(null)
     watchPostEffect(() => editor.mount(editorRef.value))
 
-    return {
-      editor,
-      editorRef,
-    }
-  },
-  render() {
-    return h(
-      'div',
-      { class: 'flex flex-col w-full' },
-      h(ProseKit, { editor: this.editor }, [
-        h(Toolbar),
-        h('div', { ref: 'editorRef', class: 'EDITOR_CONTENT' }),
-        h(UserMenu),
-        h(TagMenu),
-        h(SlashMenu),
-      ]),
+    return () => (
+      <div class="flex w-full flex-col">
+        <ProseKit editor={editor}>
+          <Toolbar />
+          <div ref={editorRef} class="EDITOR_CONTENT" />
+          <UserMenu />
+          <TagMenu />
+          <SlashMenu />
+        </ProseKit>
+      </div>
     )
   },
 })

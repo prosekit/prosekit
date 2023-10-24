@@ -3,12 +3,13 @@ import { AutocompleteEmpty } from 'prosekit/vue/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/vue/autocomplete-item'
 import { AutocompleteList } from 'prosekit/vue/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/vue/autocomplete-popover'
-import { defineComponent, h } from 'vue'
+import { defineComponent } from 'vue'
 
 import { useExampleEditor } from './use-example-editor'
 import { users } from './users'
 
 export const UserMenu = defineComponent({
+  name: 'UserMenu',
   setup() {
     const editor = useExampleEditor()
 
@@ -23,21 +24,22 @@ export const UserMenu = defineComponent({
       editor.commands.insertText({ text: ' ' })
     }
 
-    return () =>
-      h(AutocompletePopover, { editor: editor, regex: /@\w*$/ }, () => [
-        h(AutocompleteList, { editor: editor, class: 'SLASH_MENU' }, () => [
-          h(AutocompleteEmpty, { class: 'SLASH_MENU_ITEM' }, 'No User match'),
-          users.map((user) =>
-            h(
-              AutocompleteItem,
-              {
-                class: 'SLASH_MENU_ITEM',
-                onSelect: () => handleUserInsert(user.id, user.name),
-              },
-              user.name,
-            ),
-          ),
-        ]),
-      ])
+    return () => (
+      <AutocompletePopover editor={editor} regex={/@\w*$/}>
+        <AutocompleteList editor={editor} class="SLASH_MENU">
+          <AutocompleteEmpty class="SLASH_MENU_ITEM">
+            No User match
+          </AutocompleteEmpty>
+          {users.map((user) => (
+            <AutocompleteItem
+              class="SLASH_MENU_ITEM"
+              onSelect={() => handleUserInsert(user.id, user.name)}
+            >
+              {user.name}
+            </AutocompleteItem>
+          ))}
+        </AutocompleteList>
+      </AutocompletePopover>
+    )
   },
 })

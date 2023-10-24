@@ -145,7 +145,7 @@ export function updateExtension(
     const inputTuple = modifyInputTuple(prevInputs[index], inputs[index])
     prevInputs[index] = inputTuple
 
-    if (facet.next) {
+    if (facet.next && !facet.singleton) {
       let hasOutput = false
 
       const outputTuple: PayloadTuple = [[], [], [], [], []]
@@ -190,14 +190,7 @@ export function updateExtension(
       continue
     } else {
       const inputArray: Payload[] = flattenInputTuple(inputTuple)
-      const converterTuple = (prevConverters[index] ||= [
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-        undefined,
-      ])
-      const prevConverter = converterTuple[Priority.default]
+      const prevConverter = prevConverters[index]?.[Priority.default]
       const converter = prevConverter || facet.converter()
       prevConverters[index][Priority.default] = converter
 
@@ -209,21 +202,33 @@ export function updateExtension(
         continue
       }
 
-      switch (facet) {
-        case schemaFacet:
-          schemaInput = output
-          break
-        case stateFacet:
-          stateInput = output
-          break
-        case viewFacet:
-          viewInput = output
-          break
-        case commandFacet:
-          commandInput = output
-          break
-        default:
-          throw new ProseKitError('Invalid root facet')
+      // A singleton facet
+      if (facet.next) {
+        const outputTuple: PayloadTuple = [[], [], [output], [], []]
+        inputs[facet.next.index] = modifyInputTuple(
+          inputs[facet.next.index],
+          outputTuple,
+        )
+      }
+
+      // A root facet
+      else {
+        switch (facet) {
+          case schemaFacet:
+            schemaInput = output
+            break
+          case stateFacet:
+            stateInput = output
+            break
+          case viewFacet:
+            viewInput = output
+            break
+          case commandFacet:
+            commandInput = output
+            break
+          default:
+            throw new ProseKitError('Invalid root facet')
+        }
       }
     }
   }

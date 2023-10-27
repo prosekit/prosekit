@@ -44,6 +44,15 @@ editor.commands.insertHeading({ level: 1 })
 
 ## Keyboard Shortcuts
 
+| Shortcut                           | Description                         |
+| ---------------------------------- | ----------------------------------- |
+| `Ctrl-1` (or `Command-1` on macOS) | Set the current block to an H1 node |
+| `Ctrl-2` (or `Command-2` on macOS) | Set the current block to an H2 node |
+| `Ctrl-3` (or `Command-3` on macOS) | Set the current block to an H3 node |
+| `Ctrl-4` (or `Command-4` on macOS) | Set the current block to an H4 node |
+| `Ctrl-5` (or `Command-5` on macOS) | Set the current block to an H5 node |
+| `Ctrl-6` (or `Command-6` on macOS) | Set the current block to an H6 node |
+
 ## Example
 
 <script setup>

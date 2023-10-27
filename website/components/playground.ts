@@ -8,7 +8,6 @@ import { defineComponent, h } from 'vue'
 import { shortcuts } from '../../config/unocss-shortcut.mjs'
 
 import { preflightCssCode } from './preflight-css'
-import './sandpack-editor.css'
 
 export interface PlaygroundProps {
   name: string

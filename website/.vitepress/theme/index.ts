@@ -2,6 +2,7 @@ import 'virtual:uno.css'
 
 import './nav-bar.css'
 import './plugin-tabs.css'
+import './sandpack.css'
 
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'

@@ -1,23 +1,11 @@
+<script lang="ts">
 import 'prosekit/core/style.css'
 import 'prosekit/extensions/list/style.css'
 
 import { createEditor, type NodeJson } from 'prosekit/core'
-import { ProseKit } from 'prosekit/react'
-import { useMemo } from 'react'
-
-import { defineExtension } from './extension'
-
-export default function App() {
-  const editor = useMemo(() => {
-    return createEditor({ extension: defineExtension(), defaultDoc })
-  }, [])
-
-  return (
-    <ProseKit editor={editor}>
-      <div ref={editor.mount} className="EDITOR_CONTENT"></div>
-    </ProseKit>
-  )
-}
+import { ProseKit } from 'prosekit/svelte'
+import { onMount } from 'svelte'
+import { defineExampleExtension } from './extension'
 
 const defaultDoc: NodeJson = {
   type: 'doc',
@@ -64,3 +52,13 @@ const defaultDoc: NodeJson = {
     },
   ],
 }
+
+const editor = createEditor({ extension: defineExampleExtension(), defaultDoc })
+
+let place: HTMLDivElement
+onMount(() => editor.mount(place))
+</script>
+
+<ProseKit {editor}>
+  <div bind:this={place} class="EDITOR_CONTENT"></div>
+</ProseKit>

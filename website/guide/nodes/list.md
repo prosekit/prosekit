@@ -31,6 +31,8 @@ import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
 :::tabs key:framework
 == React
 <ExamplePlaygroundLazy example="react-list" />
+== Svelte
+<ExamplePlaygroundLazy example="svelte-list" />
 :::
 
 ## API Reference

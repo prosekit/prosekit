@@ -153,6 +153,13 @@ examples:
         hidden: false
       - path: get-example-editor.ts
         hidden: false
+  - name: svelte-list
+    order: 45
+    files:
+      - path: App.svelte
+        hidden: false
+      - path: extension.ts
+        hidden: false
   - name: solid-minimal
     order: 51
     files:

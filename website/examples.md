@@ -30,6 +30,8 @@
 
 - [svelte-slash-menu](./examples/svelte-slash-menu)
 
+- [svelte-list](./examples/svelte-list)
+
 - [solid-minimal](./examples/solid-minimal)
 
 - [solid-heading](./examples/solid-heading)

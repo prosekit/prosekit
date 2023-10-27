@@ -59,6 +59,10 @@ export const exampleItems = [
     "link": "/examples/svelte-slash-menu"
   },
   {
+    "text": "svelte-list",
+    "link": "/examples/svelte-list"
+  },
+  {
     "text": "solid-minimal",
     "link": "/examples/solid-minimal"
   },

@@ -58,6 +58,8 @@ const modules = import.meta.glob([
   "../../playground/examples/svelte-slash-menu/ToggleItalicButton.svelte",
   "../../playground/examples/svelte-slash-menu/extension.ts",
   "../../playground/examples/svelte-slash-menu/get-example-editor.ts",
+  "../../playground/examples/svelte-list/App.svelte",
+  "../../playground/examples/svelte-list/extension.ts",
   "../../playground/examples/solid-minimal/App.tsx",
   "../../playground/examples/solid-heading/App.tsx",
   "../../playground/examples/solid-heading/Toolbar.tsx",
@@ -326,6 +328,16 @@ const examples = {
     "/get-example-editor.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/svelte-slash-menu/get-example-editor.ts']
+    }
+  },
+  "svelte-list": {
+    "/App.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-list/App.svelte']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-list/extension.ts']
     }
   },
   "solid-minimal": {

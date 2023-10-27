@@ -5,5 +5,6 @@ export function defineDoc() {
   return defineNodeSpec({
     name: 'doc',
     content: 'block+',
+    topNode: true,
   })
 }

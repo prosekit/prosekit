@@ -1,5 +1,4 @@
 import {
-  Priority,
   defineBaseCommands,
   defineBaseKeymap,
   defineDoc,
@@ -7,7 +6,6 @@ import {
   defineParagraph,
   defineText,
   union,
-  withPriority,
 } from '@prosekit/core'
 import { defineBold } from '@prosekit/extensions/bold'
 import { defineHeading } from '@prosekit/extensions/heading'
@@ -28,7 +26,7 @@ export function defineBasicExtension() {
     defineItalic(),
     defineBold(),
     defineImage(),
-    withPriority(defineParagraph(), Priority.high),
+    defineParagraph(),
   ])
 }
 

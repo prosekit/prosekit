@@ -36,7 +36,7 @@
     "@sindresorhus/string-hash": "^2.0.0",
     "@types/js-yaml": "^4.0.8",
     "@types/lodash-es": "^4.17.10",
-    "@types/node": "^18.18.7",
+    "@types/node": "^20.8.5",
     "execa": "^8.0.1",
     "globby": "^13.2.2",
     "js-yaml": "^4.1.0",

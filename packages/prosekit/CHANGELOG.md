@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.0.25
+
+### Patch Changes
+
+- [87076b7] **prosekit/core**
+
+  Make paragraph have the highest priority
+
+- [68d31c2] **prosekit/solid**
+
+  `useEditor` now returns a function.
+
 ## 0.0.24
 
 ### Patch Changes

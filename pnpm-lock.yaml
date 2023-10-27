@@ -30,10 +30,10 @@ importers:
         version: 1.3.1(eslint@8.52.0)(typescript@5.2.2)
       '@size-limit/esbuild-why':
         specifier: ^9.0.0
-        version: 9.0.0(size-limit@9.0.0)
+        version: 9.0.0(size-limit@10.0.1)
       '@size-limit/preset-small-lib':
         specifier: ^9.0.0
-        version: 9.0.0(size-limit@9.0.0)
+        version: 9.0.0(size-limit@10.0.1)
       '@vitest/coverage-istanbul':
         specifier: ^0.34.6
         version: 0.34.6(vitest@0.34.6)
@@ -59,8 +59,8 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6(prettier-plugin-astro@0.12.1)(prettier-plugin-svelte@3.0.3)(prettier@3.0.3)
       size-limit:
-        specifier: ^9.0.0
-        version: 9.0.0
+        specifier: ^10.0.1
+        version: 10.0.1
       turbo:
         specifier: ^1.10.16
         version: 1.10.16
@@ -2579,7 +2579,7 @@ packages:
       escape-string-regexp: 5.0.0
     dev: false
 
-  /@size-limit/esbuild-why@9.0.0(size-limit@9.0.0):
+  /@size-limit/esbuild-why@9.0.0(size-limit@10.0.1):
     resolution: {integrity: sha512-p683YMq8Nk9pGDAt6zR09g5avm8tDIBZSd/xwiK9c23abiJK/kvD2Gowdj3PFdGLt73TFY5CW/kc2oaJwU+WSQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
@@ -2587,10 +2587,10 @@ packages:
     dependencies:
       esbuild-visualizer: 0.4.1
       open: 8.4.2
-      size-limit: 9.0.0
+      size-limit: 10.0.1
     dev: false
 
-  /@size-limit/esbuild@9.0.0(size-limit@9.0.0):
+  /@size-limit/esbuild@9.0.0(size-limit@10.0.1):
     resolution: {integrity: sha512-y3NY0inaFeLqV6SRXNVILhawQdQcODxF30qft6OalsrqtQtBjt++6ZeahYhUbrVexUEWRh6c7yPCe8RvHn8hlA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
@@ -2598,27 +2598,27 @@ packages:
     dependencies:
       esbuild: 0.19.2
       nanoid: 3.3.6
-      size-limit: 9.0.0
+      size-limit: 10.0.1
     dev: false
 
-  /@size-limit/file@9.0.0(size-limit@9.0.0):
+  /@size-limit/file@9.0.0(size-limit@10.0.1):
     resolution: {integrity: sha512-oM2UaH2FRq4q22k+R+P6xCpzET10T94LFdSjb9svVu/vOD7NaB9LGcG6se8TW1BExXiyXO4GEhLsBt3uMKM3qA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       size-limit: 9.0.0
     dependencies:
       semver: 7.5.4
-      size-limit: 9.0.0
+      size-limit: 10.0.1
     dev: false
 
-  /@size-limit/preset-small-lib@9.0.0(size-limit@9.0.0):
+  /@size-limit/preset-small-lib@9.0.0(size-limit@10.0.1):
     resolution: {integrity: sha512-nkbZxn12pTpABYVyX5nsjQuLFpn8wDmd2XKoq/MiqKOc3ocz5BBwXTruqTL5ZKDW1OxEAWZMQlxf2kg3kY3X1Q==}
     peerDependencies:
       size-limit: 9.0.0
     dependencies:
-      '@size-limit/esbuild': 9.0.0(size-limit@9.0.0)
-      '@size-limit/file': 9.0.0(size-limit@9.0.0)
-      size-limit: 9.0.0
+      '@size-limit/esbuild': 9.0.0(size-limit@10.0.1)
+      '@size-limit/file': 9.0.0(size-limit@10.0.1)
+      size-limit: 10.0.1
     dev: false
 
   /@stitches/core@1.2.8:
@@ -5599,7 +5599,6 @@ packages:
       ignore: 5.2.4
       merge2: 1.4.1
       slash: 4.0.0
-    dev: true
 
   /gopd@1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
@@ -8897,14 +8896,14 @@ packages:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
     dev: true
 
-  /size-limit@9.0.0:
-    resolution: {integrity: sha512-DrA7o2DeRN3s+vwCA9nn7Ck9Y4pn9t0GNUwQRpKqBtBmNkl6LA2s/NlNCdtKHrEkRTeYA1ZQ65mnYveo9rUqgA==}
+  /size-limit@10.0.1:
+    resolution: {integrity: sha512-lANGZsG+kk5P9zv84J/ratfT6LPTbWR8IitFXNfy41OyfnxoDBHqsl5+JVcG4YSU1UYcmShbp99O/SEPlDs1ZA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     dependencies:
       bytes-iec: 3.1.1
       chokidar: 3.5.3
-      globby: 11.1.0
+      globby: 13.2.2
       lilconfig: 2.1.0
       nanospinner: 1.1.0
       picocolors: 1.0.0
@@ -8917,7 +8916,6 @@ packages:
   /slash@4.0.0:
     resolution: {integrity: sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==}
     engines: {node: '>=12'}
-    dev: true
 
   /smartwrap@2.0.2:
     resolution: {integrity: sha512-vCsKNQxb7PnCNd2wY1WClWifAc2lwqsG8OaswpJkVJsvMGcnEntdTCDajZCkk93Ay1U3t/9puJmb525Rg5MZBA==}

@@ -36,7 +36,9 @@ export function defineItalicKeymap() {
   })
 }
 
-/** @public */
+/**
+ * @public
+ */
 export function defineItalic() {
   return union([
     defineItalicSpec(),

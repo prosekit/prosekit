@@ -23,6 +23,10 @@ export const exampleItems = [
     "link": "/examples/react-toolbar"
   },
   {
+    "text": "react-list",
+    "link": "/examples/react-list"
+  },
+  {
     "text": "vue-minimal",
     "link": "/examples/vue-minimal"
   },
@@ -53,6 +57,10 @@ export const exampleItems = [
   {
     "text": "svelte-slash-menu",
     "link": "/examples/svelte-slash-menu"
+  },
+  {
+    "text": "svelte-list",
+    "link": "/examples/svelte-list"
   },
   {
     "text": "solid-minimal",

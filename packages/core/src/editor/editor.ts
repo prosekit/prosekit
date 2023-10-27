@@ -24,7 +24,9 @@ import {
 import { updateExtension, type Payloads, type Converters } from './flatten'
 import { union } from './type-utils'
 
-/** @public */
+/**
+ * @public
+ */
 export interface EditorOptions<E extends Extension> {
   /**
    * The extension to use when creating the editor.
@@ -44,7 +46,9 @@ export interface EditorOptions<E extends Extension> {
   defaultSelection?: SelectionJson
 }
 
-/** @public */
+/**
+ * @public
+ */
 export function createEditor<E extends Extension>({
   extension,
   defaultDoc,
@@ -62,7 +66,9 @@ export function createEditor<E extends Extension>({
   return Editor.create(new EditorInstance(extension)) as Editor<E>
 }
 
-/** @internal */
+/**
+ * @internal
+ */
 class EditorInstance {
   view: EditorView | null = null
   schema: Schema
@@ -225,7 +231,9 @@ class EditorInstance {
   }
 }
 
-/** @public */
+/**
+ * @public
+ */
 export class Editor<E extends Extension = any> {
   private instance: EditorInstance
 
@@ -238,7 +246,9 @@ export class Editor<E extends Extension = any> {
 
   private afterMounted: Array<VoidFunction> = []
 
-  /** @internal */
+  /**
+   * @internal
+   */
   static create(instance: any) {
     if (!(instance instanceof EditorInstance)) {
       throw new TypeError('Invalid EditorInstance')

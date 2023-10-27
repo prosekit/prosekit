@@ -13,7 +13,9 @@ export function defineBlockquoteSpec() {
   })
 }
 
-/** @public */
+/**
+ * @public
+ */
 export function defineBlockquote() {
   return union([defineBlockquoteSpec()])
 }

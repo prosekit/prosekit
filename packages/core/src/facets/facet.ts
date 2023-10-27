@@ -1,13 +1,17 @@
 import { ProseKitError } from '../error'
 import type { Extension } from '../types/extension'
 
-/** @public */
+/**
+ * @public
+ */
 export interface FacetConverter<Input = any, Output = any> {
   create: (inputs: Input[]) => Output
   update: (inputs: Input[]) => Output | null
 }
 
-/** @public */
+/**
+ * @public
+ */
 export interface FacetOptions<Input, Output> {
   convert?: (payloads: Input[]) => Output
   converter?: () => FacetConverter<Input, Output>
@@ -23,15 +27,25 @@ export function getFacetCount() {
   return facetCount
 }
 
-/** @public */
+/**
+ * @public
+ */
 export class Facet<Input, Output> {
-  /** @internal */
+  /**
+   * @internal
+   */
   readonly index = facetCount++
-  /** @internal */
+  /**
+   * @internal
+   */
   readonly converter: () => FacetConverter<Input, Output>
-  /** @internal */
+  /**
+   * @internal
+   */
   readonly next: Facet<Output, any> | null
-  /** @internal */
+  /**
+   * @internal
+   */
   readonly singleton: boolean
 
   private constructor(
@@ -66,7 +80,9 @@ export class Facet<Input, Output> {
     return new Facet<Input, Output>(converterFunction, next, singleton ?? false)
   }
 
-  /** @internal */
+  /**
+   * @internal
+   */
   static defineRootFacet<Input>(
     options: Omit<FacetOptions<Input, Input>, 'next'>,
   ) {
@@ -79,7 +95,9 @@ export class Facet<Input, Output> {
   }
 }
 
-/** @public */
+/**
+ * @public
+ */
 export class FacetExtension<Input, Output> {
   declare extension: Extension
   constructor(

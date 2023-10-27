@@ -1,7 +1,9 @@
 import { type Extension } from '../types/extension'
 import { Priority } from '../types/priority'
 
-/** @public */
+/**
+ * @public
+ */
 export function withPriority<T extends Extension>(
   extension: T,
   priority: Priority,

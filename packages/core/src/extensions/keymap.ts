@@ -8,17 +8,23 @@ import { type Extension } from '../types/extension'
 
 import { pluginFacet } from './plugin'
 
-/** @public */
+/**
+ * @public
+ */
 export interface Keymap {
   [key: string]: Command
 }
 
-/** @public */
+/**
+ * @public
+ */
 export function defineKeymap(keymap: Keymap): Extension {
   return keymapFacet.extension([keymap])
 }
 
-/** @public */
+/**
+ * @public
+ */
 export function defineBaseKeymap() {
   return defineKeymap(baseKeymap)
 }

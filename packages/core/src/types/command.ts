@@ -9,7 +9,9 @@ export type CommandCreator<Args extends any[] = any[]> = (
   ...arg: Args
 ) => Command
 
-/** @internal */
+/**
+ * @internal
+ */
 export interface CommandArgs {
   [name: string]: any[]
 }

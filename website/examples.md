@@ -12,6 +12,8 @@
 
 - [react-toolbar](./examples/react-toolbar)
 
+- [react-list](./examples/react-list)
+
 - [vue-minimal](./examples/vue-minimal)
 
 - [vue-heading](./examples/vue-heading)
@@ -27,6 +29,8 @@
 - [svelte-minimal](./examples/svelte-minimal)
 
 - [svelte-slash-menu](./examples/svelte-slash-menu)
+
+- [svelte-list](./examples/svelte-list)
 
 - [solid-minimal](./examples/solid-minimal)
 

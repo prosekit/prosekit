@@ -31,10 +31,14 @@ export function definePlugin(
   throw new TypeError('Invalid plugin')
 }
 
-/** @internal */
+/**
+ * @internal
+ */
 export type PluginPayload = (context: { schema: Schema }) => Plugin[]
 
-/** @internal */
+/**
+ * @internal
+ */
 export const pluginFacet = Facet.define<PluginPayload, StatePayload>({
   convert: (
     callbacks: Array<(context: { schema: Schema }) => Plugin[]>,

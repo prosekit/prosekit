@@ -26,6 +26,9 @@ const modules = import.meta.glob([
   "../../playground/examples/react-toolbar/extension.ts",
   "../../playground/examples/react-toolbar/package.json",
   "../../playground/examples/react-toolbar/use-example-editor.ts",
+  "../../playground/examples/react-list/App.tsx",
+  "../../playground/examples/react-list/extension.ts",
+  "../../playground/examples/react-list/use-typed-editor.ts",
   "../../playground/examples/vue-minimal/App.vue",
   "../../playground/examples/vue-heading/App.vue",
   "../../playground/examples/vue-heading/Toolbar.vue",
@@ -55,6 +58,8 @@ const modules = import.meta.glob([
   "../../playground/examples/svelte-slash-menu/ToggleItalicButton.svelte",
   "../../playground/examples/svelte-slash-menu/extension.ts",
   "../../playground/examples/svelte-slash-menu/get-example-editor.ts",
+  "../../playground/examples/svelte-list/App.svelte",
+  "../../playground/examples/svelte-list/extension.ts",
   "../../playground/examples/solid-minimal/App.tsx",
   "../../playground/examples/solid-heading/App.tsx",
   "../../playground/examples/solid-heading/Toolbar.tsx",
@@ -177,6 +182,20 @@ const examples = {
     "/use-example-editor.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-toolbar/use-example-editor.ts']
+    }
+  },
+  "react-list": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-list/App.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-list/extension.ts']
+    },
+    "/use-typed-editor.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-list/use-typed-editor.ts']
     }
   },
   "vue-minimal": {
@@ -309,6 +328,16 @@ const examples = {
     "/get-example-editor.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/svelte-slash-menu/get-example-editor.ts']
+    }
+  },
+  "svelte-list": {
+    "/App.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-list/App.svelte']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-list/extension.ts']
     }
   },
   "solid-minimal": {

@@ -45,7 +45,9 @@ export function defineImageCommands() {
   })
 }
 
-/** @public */
+/**
+ * @public
+ */
 export function defineImage() {
   return union([defineImageSpec(), defineImageCommands()])
 }

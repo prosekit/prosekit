@@ -13,7 +13,9 @@ import { defineImage } from '@prosekit/extensions/image'
 import { defineItalic } from '@prosekit/extensions/italic'
 import { defineList } from '@prosekit/extensions/list'
 
-/** @public */
+/**
+ * @public
+ */
 export function defineBasicExtension() {
   return union([
     defineDoc(),

@@ -69,7 +69,9 @@ export function defineCodeBlockCommands() {
   })
 }
 
-/** @public */
+/**
+ * @public
+ */
 export function defineCodeBlock(options?: { hljs?: HLJSApi }) {
   return union([
     defineCodeBlockSpec(),

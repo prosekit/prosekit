@@ -11,16 +11,16 @@ export default function SlashMenu() {
   const editor = useExampleEditor()
 
   const handleHeadingInsert = (level: number) => {
-    editor.commands.insertHeading({ level })
+    editor().commands.insertHeading({ level })
   }
 
   const handleHeadingConvert = (level: number) => {
-    editor.commands.setHeading({ level })
+    editor().commands.setHeading({ level })
   }
 
   return (
-    <AutocompletePopover editor={editor} regex={/\/.*$/iu}>
-      <AutocompleteList editor={editor} class="SLASH_MENU">
+    <AutocompletePopover editor={editor()} regex={/\/.*$/iu}>
+      <AutocompleteList editor={editor()} class="SLASH_MENU">
         <AutocompleteEmpty class="SLASH_MENU_ITEM">
           No Command match
         </AutocompleteEmpty>

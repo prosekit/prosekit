@@ -64,14 +64,14 @@ export function defineHeadingInputRule() {
 
 export function defineHeadingCommands() {
   return defineCommands({
-    toggleHeading: (attrs?: HeadingAttrs) => {
-      return toggleNode({ type: 'heading', attrs })
-    },
     setHeading: (attrs?: HeadingAttrs) => {
       return setBlockType({ type: 'heading', attrs })
     },
     insertHeading: (attrs?: HeadingAttrs) => {
       return insertNode({ type: 'heading', attrs })
+    },
+    toggleHeading: (attrs?: HeadingAttrs) => {
+      return toggleNode({ type: 'heading', attrs })
     },
   })
 }

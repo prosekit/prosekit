@@ -1,6 +1,8 @@
 import { defineNodeSpec } from './node-spec'
 
-/** @public */
+/**
+ * @public
+ */
 export function defineDoc() {
   return defineNodeSpec({
     name: 'doc',

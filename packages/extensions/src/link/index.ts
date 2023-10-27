@@ -6,7 +6,9 @@ import {
   toggleMark,
 } from '@prosekit/core'
 
-/** @public */
+/**
+ * @public
+ */
 export interface LinkAttrs {
   href: string
 }
@@ -41,7 +43,9 @@ export function defineLinkCommands() {
   })
 }
 
-/** @public */
+/**
+ * @public
+ */
 export function defineItalic() {
   return union([defineLinkSpec(), defineLinkCommands()])
 }

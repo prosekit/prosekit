@@ -26,6 +26,9 @@ const modules = import.meta.glob([
   "../../playground/examples/react-toolbar/extension.ts",
   "../../playground/examples/react-toolbar/package.json",
   "../../playground/examples/react-toolbar/use-example-editor.ts",
+  "../../playground/examples/react-list/App.tsx",
+  "../../playground/examples/react-list/extension.ts",
+  "../../playground/examples/react-list/use-typed-editor.ts",
   "../../playground/examples/vue-minimal/App.vue",
   "../../playground/examples/vue-heading/App.vue",
   "../../playground/examples/vue-heading/Toolbar.vue",
@@ -177,6 +180,20 @@ const examples = {
     "/use-example-editor.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-toolbar/use-example-editor.ts']
+    }
+  },
+  "react-list": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-list/App.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-list/extension.ts']
+    },
+    "/use-typed-editor.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-list/use-typed-editor.ts']
     }
   },
   "vue-minimal": {

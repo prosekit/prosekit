@@ -2,7 +2,9 @@ import { NodeType, Schema } from '@prosekit/pm/model'
 
 import { ProseKitError } from '../error'
 
-/** @internal */
+/**
+ * @internal
+ */
 export function getNodeType(schema: Schema, type: string | NodeType): NodeType {
   if (typeof type === 'string') {
     const nodeType = schema.nodes[type]

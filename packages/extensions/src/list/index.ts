@@ -20,6 +20,11 @@ export function defineListPlugins() {
   return definePlugin(({ schema }) => createListPlugins({ schema }))
 }
 
+/**
+ * Returns a extension that adds key bindings for list.
+ *
+ * @public
+ */
 export function defineListKeymap() {
   return defineKeymap(listKeymap)
 }
@@ -28,7 +33,9 @@ export function defineListInputRules() {
   return defineInputRule(() => listInputRules)
 }
 
-/** @public */
+/**
+ * @public
+ */
 export function defineList() {
   return union([
     defineListSpec(),

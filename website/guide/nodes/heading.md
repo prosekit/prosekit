@@ -4,23 +4,11 @@ The `heading` node is used to represent blocks of code in the document.
 
 ## Usage
 
-To add a `heading` node to your document, you can use the `defineHeading` function.
-
 ```ts
-import { union } from 'prosekit/core'
 import { defineHeading } from 'prosekit/extensions/heading'
 
-function defineEditorExtension() {
-  return union([
-    defineHeading(),
-    // ... other extensions
-  ])
-}
+const extension = defineHeading()
 ```
-
-## Input Rules
-
-After typing `#` followed by a space, it will automatically convert to a `heading` node. One `#` corresponds to an H1 node, two `#` correspond to an H2 node, and so on.
 
 ## Commands
 
@@ -52,6 +40,10 @@ editor.commands.insertHeading({ level: 1 })
 | `Ctrl-4` (or `Command-4` on macOS) | Set the current block to an H4 node |
 | `Ctrl-5` (or `Command-5` on macOS) | Set the current block to an H5 node |
 | `Ctrl-6` (or `Command-6` on macOS) | Set the current block to an H6 node |
+
+## Input Rules
+
+Input `#` followed by a space, it will automatically convert to a `heading` node. One `#` corresponds to an H1 node, two `#` correspond to an H2 node, and so on.
 
 ## Example
 

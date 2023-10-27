@@ -54,7 +54,9 @@ export function defineBoldKeymap() {
   })
 }
 
-/** @public */
+/**
+ * @public
+ */
 export function defineBold() {
   return union([defineBoldSpec(), defineBoldCommands(), defineBoldKeymap()])
 }

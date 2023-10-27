@@ -12,6 +12,8 @@
 
 - [react-toolbar](./examples/react-toolbar)
 
+- [react-list](./examples/react-list)
+
 - [vue-minimal](./examples/vue-minimal)
 
 - [vue-heading](./examples/vue-heading)

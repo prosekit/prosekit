@@ -76,7 +76,9 @@ export function defineHeadingCommands() {
   })
 }
 
-/** @public */
+/**
+ * @public
+ */
 export function defineHeading() {
   return union([
     defineHeadingSpec(),

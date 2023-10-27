@@ -62,6 +62,15 @@ examples:
         hidden: false
       - path: use-example-editor.ts
         hidden: false
+  - name: react-list
+    order: 15
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-typed-editor.ts
+        hidden: false
   - name: vue-minimal
     order: 21
     files:

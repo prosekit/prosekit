@@ -1,0 +1,13 @@
+#app .plugin-tabs {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#app .plugin-tabs--content {
+  padding: 0px;
+}
+
+#app .plugin-tabs--tab-list {
+  background-color: var(--vp-c-bg-soft);
+}

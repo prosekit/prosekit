@@ -4,6 +4,8 @@
 
 - [react-minimal](./examples/react-minimal)
 
+- [react-heading](./examples/react-heading)
+
 - [react-slash-menu](./examples/react-slash-menu)
 
 - [react-user-menu](./examples/react-user-menu)
@@ -11,6 +13,8 @@
 - [react-toolbar](./examples/react-toolbar)
 
 - [vue-minimal](./examples/vue-minimal)
+
+- [vue-heading](./examples/vue-heading)
 
 - [vue-slash-menu](./examples/vue-slash-menu)
 
@@ -25,6 +29,8 @@
 - [svelte-slash-menu](./examples/svelte-slash-menu)
 
 - [solid-minimal](./examples/solid-minimal)
+
+- [solid-heading](./examples/solid-heading)
 
 - [solid-slash-menu](./examples/solid-slash-menu)
 

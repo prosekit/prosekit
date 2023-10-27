@@ -22,7 +22,6 @@ async function main() {
   await genPackageJson()
   await genTsconfigJson()
   await genTypedocJson()
-  await genDocsItems()
   await genRenovateJson()
   await genChangesetConfigJson()
   await genSizeLimitJson()
@@ -33,6 +32,7 @@ async function main() {
   await genExampleIndex()
   await genExampleGlobImport()
   await genPlaygroundPages()
+  await genDocsItems()
 
   await vfs.commit()
 }

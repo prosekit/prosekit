@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 import { exampleItems } from './sidebar-example-items'
 import { referenceItems } from './sidebar-reference-items'
@@ -46,6 +47,7 @@ export default defineConfig({
           items: [
             { text: 'heading', link: '/guide/nodes/heading' },
             { text: 'list', link: '/guide/nodes/list' },
+            { text: 'code-block', link: '/guide/nodes/code-block' },
           ],
         },
 
@@ -106,6 +108,12 @@ export default defineConfig({
 
     search: {
       provider: 'local',
+    },
+  },
+
+  markdown: {
+    config(md) {
+      md.use(tabsMarkdownPlugin)
     },
   },
 })

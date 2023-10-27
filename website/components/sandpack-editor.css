@@ -1,10 +1,29 @@
 .sandpack-editor {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 0;
 }
 
 .sandpack-editor-expand .sp-layout .sp-editor {
   max-height: calc(100vh - 120px);
   height: auto;
+}
+
+.sp-wrapper {
+  container-type: inline-size;
+  container-name: sp-wrapper;
+}
+
+@container sp-wrapper (width < 900px) {
+  .sp-layout {
+    flex-wrap: wrap-reverse;
+  }
+
+  .sp-layout > .sp-editor {
+    min-width: 100%;
+  }
+}
+
+.sandpack-editor .sp-wrapper {
+  --sp-layout-height: 400px;
 }

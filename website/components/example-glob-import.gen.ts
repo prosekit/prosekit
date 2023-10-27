@@ -3,6 +3,10 @@
 
 const modules = import.meta.glob([
   "../../playground/examples/react-minimal/App.tsx",
+  "../../playground/examples/react-heading/App.tsx",
+  "../../playground/examples/react-heading/Toolbar.tsx",
+  "../../playground/examples/react-heading/extension.ts",
+  "../../playground/examples/react-heading/use-typed-editor.ts",
   "../../playground/examples/react-slash-menu/App.tsx",
   "../../playground/examples/react-slash-menu/SlashMenu.tsx",
   "../../playground/examples/react-slash-menu/ToggleItalicButton.tsx",
@@ -20,8 +24,13 @@ const modules = import.meta.glob([
   "../../playground/examples/react-toolbar/ToggleButton.tsx",
   "../../playground/examples/react-toolbar/Toolbar.tsx",
   "../../playground/examples/react-toolbar/extension.ts",
+  "../../playground/examples/react-toolbar/package.json",
   "../../playground/examples/react-toolbar/use-example-editor.ts",
   "../../playground/examples/vue-minimal/App.vue",
+  "../../playground/examples/vue-heading/App.vue",
+  "../../playground/examples/vue-heading/Toolbar.vue",
+  "../../playground/examples/vue-heading/extension.ts",
+  "../../playground/examples/vue-heading/use-typed-editor.ts",
   "../../playground/examples/vue-slash-menu/App.vue",
   "../../playground/examples/vue-slash-menu/SlashMenu.vue",
   "../../playground/examples/vue-slash-menu/ToggleItalicButton.vue",
@@ -47,6 +56,10 @@ const modules = import.meta.glob([
   "../../playground/examples/svelte-slash-menu/extension.ts",
   "../../playground/examples/svelte-slash-menu/get-example-editor.ts",
   "../../playground/examples/solid-minimal/App.tsx",
+  "../../playground/examples/solid-heading/App.tsx",
+  "../../playground/examples/solid-heading/Toolbar.tsx",
+  "../../playground/examples/solid-heading/extension.ts",
+  "../../playground/examples/solid-heading/use-typed-editor.ts",
   "../../playground/examples/solid-slash-menu/App.tsx",
   "../../playground/examples/solid-slash-menu/SlashMenu.tsx",
   "../../playground/examples/solid-slash-menu/ToggleItalicButton.tsx",
@@ -64,6 +77,24 @@ const examples = {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-minimal/App.tsx']
+    }
+  },
+  "react-heading": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-heading/App.tsx']
+    },
+    "/Toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-heading/Toolbar.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-heading/extension.ts']
+    },
+    "/use-typed-editor.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-heading/use-typed-editor.ts']
     }
   },
   "react-slash-menu": {
@@ -139,6 +170,10 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/react-toolbar/extension.ts']
     },
+    "/package.json": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-toolbar/package.json']
+    },
     "/use-example-editor.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-toolbar/use-example-editor.ts']
@@ -148,6 +183,24 @@ const examples = {
     "/App.vue": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-minimal/App.vue']
+    }
+  },
+  "vue-heading": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-heading/App.vue']
+    },
+    "/Toolbar.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-heading/Toolbar.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-heading/extension.ts']
+    },
+    "/use-typed-editor.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-heading/use-typed-editor.ts']
     }
   },
   "vue-slash-menu": {
@@ -262,6 +315,24 @@ const examples = {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/solid-minimal/App.tsx']
+    }
+  },
+  "solid-heading": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-heading/App.tsx']
+    },
+    "/Toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-heading/Toolbar.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-heading/extension.ts']
+    },
+    "/use-typed-editor.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-heading/use-typed-editor.ts']
     }
   },
   "solid-slash-menu": {

@@ -679,6 +679,9 @@ importers:
       vitepress:
         specifier: 1.0.0-rc.24
         version: 1.0.0-rc.24(@algolia/client-search@4.19.1)(@types/react@18.2.33)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2)
+      vitepress-plugin-tabs:
+        specifier: ^0.4.1
+        version: 0.4.1(vitepress@1.0.0-rc.24)(vue@3.3.7)
       vue:
         specifier: ^3.3.7
         version: 3.3.7(typescript@5.2.2)
@@ -10312,6 +10315,16 @@ packages:
       vite: 4.5.0(@types/node@20.8.9)
     dev: true
 
+  /vitepress-plugin-tabs@0.4.1(vitepress@1.0.0-rc.24)(vue@3.3.7):
+    resolution: {integrity: sha512-hJFQmANgneLwy3/gcel5L4gj/bopPLj1pdoMwUhTAjd2pDNBPlWzOpuCXaVYnV0i0GrXbSuK9XZXt6M7ZHNbsg==}
+    peerDependencies:
+      vitepress: ^1.0.0-rc.14
+      vue: ^3.3.4
+    dependencies:
+      vitepress: 1.0.0-rc.24(@algolia/client-search@4.19.1)(@types/react@18.2.33)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2)
+      vue: 3.3.7(typescript@5.2.2)
+    dev: true
+
   /vitepress@1.0.0-rc.24(@algolia/client-search@4.19.1)(@types/react@18.2.33)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2):
     resolution: {integrity: sha512-RpnL8cnOGwiRlBbrYQUm9sYkJbtyOt/wYXk2diTcokY4yvks/5lq9LuSt+MURWB6ZqwpSNHvTmxgaSfLoG0/OA==}
     hasBin: true
@@ -10791,7 +10804,7 @@ packages:
     dev: true
 
   '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)':
-    resolution: {tarball: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d}
+    resolution: {registry: https://registry.npmjs.org/, tarball: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d}
     id: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d'
     name: tsup
     version: 0.0.0-semantic-release

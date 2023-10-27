@@ -4,6 +4,17 @@ examples:
     files:
       - path: App.tsx
         hidden: false
+  - name: react-heading
+    order: 12
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: Toolbar.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-typed-editor.ts
+        hidden: false
   - name: react-slash-menu
     order: 12
     files:
@@ -47,12 +58,25 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: package.json
+        hidden: false
       - path: use-example-editor.ts
         hidden: false
   - name: vue-minimal
     order: 21
     files:
       - path: App.vue
+        hidden: false
+  - name: vue-heading
+    order: 22
+    files:
+      - path: App.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-typed-editor.ts
         hidden: false
   - name: vue-slash-menu
     order: 22
@@ -124,6 +148,17 @@ examples:
     order: 51
     files:
       - path: App.tsx
+        hidden: false
+  - name: solid-heading
+    order: 52
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: Toolbar.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-typed-editor.ts
         hidden: false
   - name: solid-slash-menu
     order: 52

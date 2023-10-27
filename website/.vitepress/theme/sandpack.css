@@ -10,13 +10,12 @@
 }
 
 .sp-wrapper {
-  container-type: inline-size;
-  container-name: sp-wrapper;
+  container-type: inline-size !important;
 }
 
-@container sp-wrapper (width < 900px) {
+@container (width < 900px) {
   .sp-layout {
-    flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse !important;
   }
 
   .sp-layout > .sp-editor {

@@ -85,7 +85,7 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
   autoUpdateOptions?: AutoUpdateOptions
 
   /** @hidden */
-  private disposeAuthUpdate?: VoidFunction
+  private disposeAutoUpdate?: VoidFunction
 
   /** @hidden */
   private disposeEventListeners?: VoidFunction
@@ -110,8 +110,8 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
   disconnectedCallback(): void {
     super.disconnectedCallback()
 
-    this.disposeAuthUpdate?.()
-    this.disposeAuthUpdate = undefined
+    this.disposeAutoUpdate?.()
+    this.disposeAutoUpdate = undefined
 
     this.disposeEventListeners?.()
     this.disposeEventListeners = undefined
@@ -125,15 +125,15 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
 
   /** @hidden */
   private start() {
-    this.disposeAuthUpdate?.()
-    this.disposeAuthUpdate = undefined
+    this.disposeAutoUpdate?.()
+    this.disposeAutoUpdate = undefined
 
     const reference = this.reference
     if (!reference) return
     if (!this.active) return
 
     if (this.autoUpdate) {
-      this.disposeAuthUpdate = autoUpdate(
+      this.disposeAutoUpdate = autoUpdate(
         reference,
         this,
         () => void this.compute(),

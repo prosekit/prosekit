@@ -4,12 +4,10 @@ import {
   type AutoUpdateOptions,
   type VirtualElement,
 } from '@floating-ui/dom'
-import { type CSSResultGroup } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
-import { blockComponentStyles } from '../../styles/block-component.styles'
 import { roundByDPR } from '../../utils/round-by-dpr'
-import { LightBlockElement } from '../block-element'
+import { LightElement } from '../block-element'
 
 import { defaultPopoverOptions } from './default-popover-options'
 import { type PopoverOptions } from './options'
@@ -36,17 +34,11 @@ export interface PopoverProps {
  * A custom element that displays a popover anchored to a reference element.
  */
 @customElement('prosekit-popover')
-export class Popover
-  extends LightBlockElement
-  implements Partial<PopoverProps>
-{
+export class Popover extends LightElement implements Partial<PopoverProps> {
   /** @hidden */
   constructor() {
     super()
   }
-
-  /** @hidden */
-  static styles: CSSResultGroup = blockComponentStyles
 
   /**
    * Controls the visibility of the popover element. When set to `true`, the popover is displayed and positioned

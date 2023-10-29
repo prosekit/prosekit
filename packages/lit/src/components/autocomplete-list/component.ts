@@ -1,10 +1,9 @@
 import { consume, provide } from '@lit/context'
 import { Editor } from '@prosekit/core'
-import { LitElement, html, type CSSResultGroup, type PropertyValues } from 'lit'
-import { customElement, property, query, state } from 'lit/decorators.js'
+import { type PropertyValues } from 'lit'
+import { customElement, property, state } from 'lit/decorators.js'
 
 import { ListManager } from '../../manager/list-manager'
-import { blockComponentStyles } from '../../styles/block-component.styles'
 import { commandScore } from '../../utils/command-score'
 import { AutocompleteItem } from '../autocomplete-item/component'
 import {
@@ -15,6 +14,7 @@ import {
   commandPopoverContext,
   type AutocompletePopoverContext,
 } from '../autocomplete-popover/context'
+import { LightElement } from '../block-element'
 
 import { commandListContext, type AutocompleteListContext } from './context'
 import { AutocompleteListController } from './controller'
@@ -27,12 +27,9 @@ export interface AutocompleteListProps {
 
 @customElement('prosekit-autocomplete-list')
 export class AutocompleteList
-  extends LitElement
+  extends LightElement
   implements Partial<AutocompleteListProps>
 {
-  /** @hidden */
-  static styles: CSSResultGroup = blockComponentStyles
-
   /** @hidden */
   private listManager = new ListManager<AutocompleteItem>({
     getItems: () => this.items,
@@ -72,10 +69,11 @@ export class AutocompleteList
   context: AutocompleteListContext = {
     scores: new Map(),
     selectedValue: '',
-    registerValue: (value) => this.registerValue(value),
   }
 
-  protected firstUpdated(): void {
+  connectedCallback(): void {
+    super.connectedCallback()
+
     this.listManager.selectFirstItem()
 
     this.addEventListener('mousemove', (event) =>
@@ -93,11 +91,9 @@ export class AutocompleteList
   }
 
   private get items(): AutocompleteItem[] {
-    return (
-      this.defaultSlot
-        ?.assignedElements({ flatten: true })
-        ?.filter(isAutocompleteItem) ?? []
-    )
+    return Array.from(
+      this.querySelectorAll('prosekit-autocomplete-item'),
+    ).filter(isAutocompleteItem)
   }
 
   public selectFirstItem() {
@@ -105,23 +101,11 @@ export class AutocompleteList
   }
 
   private updateValue(selectedValue: string) {
-    if (this.context.selectedValue === selectedValue) return
+    if (this.context.selectedValue === selectedValue) {
+      return
+    }
     this.context = { ...this.context, selectedValue }
   }
-
-  private registerValue(value: string) {
-    if (!this.context.scores.has(value)) {
-      this.context.scores.set(value, 0)
-      this.requestUpdate()
-    }
-
-    return () => {
-      this.context.scores.delete(value)
-    }
-  }
-
-  /** @hidden */
-  @query('slot') defaultSlot?: HTMLSlotElement
 
   /** @hidden */
   willUpdate(changedProperties: PropertyValues<this>): void {
@@ -140,12 +124,5 @@ export class AutocompleteList
     )
 
     this.context = { ...this.context, scores }
-  }
-
-  /** @hidden */
-  render() {
-    return html`
-      <slot></slot>
-    `
   }
 }

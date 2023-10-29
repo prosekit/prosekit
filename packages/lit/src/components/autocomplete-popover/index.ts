@@ -1,13 +1,10 @@
-import '../popover'
-
 import { provide } from '@lit/context'
 import { Editor } from '@prosekit/core'
-import { html, LitElement, type CSSResultGroup } from 'lit'
-import { customElement, property, query, state } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 
-import { blockComponentStyles } from '../../styles/block-component.styles'
 import { AutocompleteList } from '../autocomplete-list/component'
 import { isAutocompleteList } from '../autocomplete-list/helpers'
+import { Popover } from '../popover'
 import { type PopoverOptions } from '../popover/options'
 
 import {
@@ -29,12 +26,9 @@ export interface AutocompletePopoverProps {
 
 @customElement('prosekit-autocomplete-popover')
 export class AutocompletePopover
-  extends LitElement
+  extends Popover
   implements Partial<AutocompletePopoverProps>
 {
-  /** @hidden */
-  static styles: CSSResultGroup = blockComponentStyles
-
   /** @hidden */
   private controller = new AutocompletePopoverController(
     this,
@@ -66,11 +60,8 @@ export class AutocompletePopover
   onSelect?: VoidFunction
 
   private get list(): AutocompleteList | null {
-    return (
-      this.defaultSlot
-        ?.assignedElements({ flatten: true })
-        ?.find(isAutocompleteList) ?? null
-    )
+    const element = this.querySelector('prosekit-autocomplete-list')
+    return isAutocompleteList(element) ? element : null
   }
 
   private updateContext(query: string, active: boolean) {
@@ -85,14 +76,6 @@ export class AutocompletePopover
   }
 
   /** @hidden */
-  @query('slot') defaultSlot?: HTMLSlotElement
-
-  /** @hidden */
-  protected get active(): boolean {
-    return !!this.controller?.reference
-  }
-
-  /** @hidden */
   willUpdate(): void {
     if (this.editor) {
       this.controller.setEditor(this.editor)
@@ -100,18 +83,8 @@ export class AutocompletePopover
     if (this.regex) {
       this.controller.setRegex(this.regex)
     }
-  }
-
-  /** @hidden */
-  render() {
-    return html`
-      <prosekit-popover
-        .active=${this.active}
-        .reference=${this.controller.reference ?? undefined}
-        .options=${this.popoverOptions}
-      >
-        <slot></slot>
-      </prosekit-popover>
-    `
+    this.active = !!this.controller?.reference
+    this.reference = this.controller.reference ?? undefined
+    this.options = this.popoverOptions
   }
 }

@@ -26,36 +26,38 @@ export default function CodeBlockView(props: ReactNodeViewComponentProps) {
 
   return (
     <>
-      <button
-        className="LANGUAGE_BUTTON"
-        onClick={toggleComboBox}
-        ref={buttonRef}
-      >
-        {props.node.attrs.language || 'Plain Text'}
-      </button>
+      <div className="LANGUAGE_WRAPPER">
+        <button
+          className="LANGUAGE_BUTTON"
+          onClick={toggleComboBox}
+          ref={buttonRef}
+        >
+          {props.node.attrs.language || 'Plain Text'}
+        </button>
 
-      <ComboBox
-        className="LANGUAGE_COMBO_BOX"
-        active={showComboBox}
-        reference={buttonRef.current ?? undefined}
-        onDismiss={closeComboBox}
-      >
-        <ComboBoxInput
-          placeholder="Search for a langauge..."
-          className="LANGUAGE_COMBO_BOX_INPUT"
-        ></ComboBoxInput>
-        <ComboBoxList className="LANGUAGE_COMBO_BOX_LIST">
-          {languages.map((language) => (
-            <ComboBoxItem
-              key={language}
-              className="LANGUAGE_COMBO_BOX_ITEM"
-              onSelect={() => setLanguage(language)}
-            >
-              {language}
-            </ComboBoxItem>
-          ))}
-        </ComboBoxList>
-      </ComboBox>
+        <ComboBox
+          className="LANGUAGE_COMBO_BOX"
+          active={showComboBox}
+          reference={buttonRef.current ?? undefined}
+          onDismiss={closeComboBox}
+        >
+          <ComboBoxInput
+            placeholder="Search for a langauge..."
+            className="LANGUAGE_COMBO_BOX_INPUT"
+          ></ComboBoxInput>
+          <ComboBoxList className="LANGUAGE_COMBO_BOX_LIST">
+            {languages.map((language) => (
+              <ComboBoxItem
+                key={language}
+                className="LANGUAGE_COMBO_BOX_ITEM"
+                onSelect={() => setLanguage(language)}
+              >
+                {language}
+              </ComboBoxItem>
+            ))}
+          </ComboBoxList>
+        </ComboBox>
+      </div>
 
       <pre
         ref={props.contentRef}

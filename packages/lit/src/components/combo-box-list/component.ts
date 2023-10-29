@@ -1,7 +1,7 @@
 import { consume } from '@lit/context'
 import { customElement, state } from 'lit/decorators.js'
 
-import { LightBlockElement } from '../block-element'
+import { LightElement } from '../block-element'
 import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
 
 export const propNames = []
@@ -9,7 +9,7 @@ export const propNames = []
 export type ComboBoxListProps = { lang?: string }
 
 @customElement('prosekit-combo-box-list')
-export class ComboBoxList extends LightBlockElement {
+export class ComboBoxList extends LightElement {
   @consume({ context: comboBoxContext, subscribe: true })
   @state()
   comboBoxContext: ComboBoxContext | null = null

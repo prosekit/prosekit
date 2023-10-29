@@ -1,12 +1,12 @@
 import { consume } from '@lit/context'
-import { type CSSResultGroup, LitElement, type PropertyValues, html } from 'lit'
+import { type PropertyValues } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 
-import { blockComponentStyles } from '../../styles/block-component.styles'
 import {
-  type AutocompleteListContext,
   commandListContext,
+  type AutocompleteListContext,
 } from '../autocomplete-list/context'
+import { LightElement } from '../block-element'
 
 export const propNames = ['value', 'onSelect'] as const
 
@@ -22,12 +22,9 @@ export interface AutocompleteItemProps {
  */
 @customElement('prosekit-autocomplete-item')
 export class AutocompleteItem
-  extends LitElement
+  extends LightElement
   implements Partial<AutocompleteItemProps>
 {
-  /** @hidden */
-  static styles: CSSResultGroup = blockComponentStyles
-
   @property({ type: String, reflect: true, attribute: 'data-value' })
   value = ''
 
@@ -50,17 +47,17 @@ export class AutocompleteItem
     return text.trim().toLowerCase()
   }
 
-  protected willUpdate(changedProperties: PropertyValues<this>): void {
+  connectedCallback() {
+    super.connectedCallback()
+    this.role = 'option'
+  }
+
+  protected willUpdate(): void {
     const content = this.content
     this.selected = content === this.listContext?.selectedValue
     const score = this.listContext?.scores.get(content) || 0
 
-    this.inert = score <= 0
-    this.hidden = score <= 0
-
-    if (changedProperties.has('listContext') && this.listContext) {
-      this.listContext.registerValue(this.content)
-    }
+    this.setHidden(score <= 0)
   }
 
   protected updated(changedProperties: PropertyValues<this>): void {
@@ -71,17 +68,5 @@ export class AutocompleteItem
     ) {
       this.scrollIntoView({ block: 'nearest' })
     }
-  }
-
-  /** @hidden */
-  render() {
-    if (this.hidden) {
-      return null
-    }
-    return html`
-      <div role="option" aria-selected=${this.selected}>
-        <slot></slot>
-      </div>
-    `
   }
 }

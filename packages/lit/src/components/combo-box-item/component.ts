@@ -1,10 +1,8 @@
 import { consume } from '@lit/context'
 import type { Editor } from '@prosekit/core'
-import { type CSSResultGroup } from 'lit'
 import { customElement, property, query, state } from 'lit/decorators.js'
 
-import { blockComponentStyles } from '../../styles/block-component.styles'
-import { LightBlockElement } from '../block-element'
+import { LightElement } from '../block-element'
 import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
 
 export const propNames = []
@@ -14,10 +12,7 @@ export type ComboBoxItemProps = {
 }
 
 @customElement('prosekit-combo-box-item')
-export class ComboBoxItem extends LightBlockElement {
-  /** @hidden */
-  static styles: CSSResultGroup = blockComponentStyles
-
+export class ComboBoxItem extends LightElement {
   @property({ attribute: false })
   editor?: Editor
 

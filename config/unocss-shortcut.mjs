@@ -10,15 +10,17 @@ export const shortcuts = {
   ),
 
   SLASH_MENU: clsx(
-    'relative max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap rounded border border-solid border-gray-500 bg-white dark:bg-zinc-800',
+    'relative block max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap rounded border border-solid border-gray-500 bg-white dark:bg-zinc-800',
   ),
 
   SLASH_MENU_ITEM: clsx(
-    'relative min-w-[64px] cursor-default select-none whitespace-nowrap p-2 data-[selected]:bg-gray-200 data-[selected]:dark:bg-gray-700',
+    'relative block min-w-[64px] cursor-default select-none whitespace-nowrap p-2 data-[selected]:bg-gray-200 data-[selected]:dark:bg-gray-700',
   ),
 
+  LANGUAGE_WRAPPER: clsx('relative top-5 flex h-0 w-full overflow-visible'),
+
   LANGUAGE_BUTTON: clsx(
-    'absolute mx-[0.5em] my-[1.5em] box-border cursor-pointer rounded-md border-none bg-transparent px-2 py-0.5 text-xs text-gray-400 outline-none hover:bg-gray-500/30',
+    'absolute mx-[0.5em] box-border cursor-pointer rounded-md border-none bg-transparent px-2 py-0.5 text-xs text-gray-400 outline-none hover:bg-gray-500/30',
   ),
 
   LANGUAGE_COMBO_BOX: clsx(

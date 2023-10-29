@@ -2,7 +2,7 @@ import { consume } from '@lit/context'
 import { html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
-import { LightBlockElement } from '../block-element'
+import { LightElement } from '../block-element'
 import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
 
 export const propNames = ['placeholder'] as const
@@ -12,7 +12,7 @@ export interface ComboBoxInputProps {
 }
 
 @customElement('prosekit-combo-box-input')
-export class ComboBoxInput extends LightBlockElement {
+export class ComboBoxInput extends LightElement {
   @property({ attribute: true })
   placeholder = ''
 

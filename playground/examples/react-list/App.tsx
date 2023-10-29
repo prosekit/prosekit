@@ -5,6 +5,7 @@ import { createEditor, type NodeJson } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import Toolbar from './Toolbar'
 import { defineExtension } from './extension'
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
 
   return (
     <ProseKit editor={editor}>
+      <Toolbar />
       <div ref={editor.mount} className="EDITOR_CONTENT"></div>
     </ProseKit>
   )

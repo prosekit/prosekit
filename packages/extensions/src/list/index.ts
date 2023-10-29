@@ -1,4 +1,5 @@
 import {
+  defineCommands,
   defineInputRule,
   defineKeymap,
   defineNodeSpec,
@@ -6,8 +7,16 @@ import {
   union,
 } from '@prosekit/core'
 import {
+  createDedentListCommand,
+  createIndentListCommand,
   createListPlugins,
   createListSpec,
+  createMoveListCommand,
+  createSplitListCommand,
+  createToggleCollapsedCommand,
+  createToggleListCommand,
+  createUnwrapListCommand,
+  createWrapInListCommand,
   listInputRules,
   listKeymap,
 } from 'prosemirror-flat-list'
@@ -33,6 +42,19 @@ export function defineListInputRules() {
   return defineInputRule(() => listInputRules)
 }
 
+export function defineListCommands() {
+  return defineCommands({
+    dedentList: createDedentListCommand,
+    indentList: createIndentListCommand,
+    moveList: createMoveListCommand,
+    splitList: createSplitListCommand,
+    toggleCollapsed: createToggleCollapsedCommand,
+    toggleList: createToggleListCommand,
+    unwrapList: createUnwrapListCommand,
+    wrapInList: createWrapInListCommand,
+  })
+}
+
 /**
  * @public
  */
@@ -42,5 +64,6 @@ export function defineList() {
     defineListPlugins(),
     defineListKeymap(),
     defineListInputRules(),
+    defineListCommands(),
   ])
 }

@@ -85,11 +85,36 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
   autoUpdateOptions?: AutoUpdateOptions
 
   /** @hidden */
-  private cleanupAutoUpdate?: VoidFunction
+  private disposeAuthUpdate?: VoidFunction
+
+  /** @hidden */
+  private disposeEventListeners?: VoidFunction
+
+  /** @hidden */
+  connectedCallback(): void {
+    super.connectedCallback()
+
+    const handleMouseDown = this.handleDocumentMouseDown.bind(this)
+    const handleKeyDown = this.handleDocumentKeyDown.bind(this)
+
+    document.addEventListener('mousedown', handleMouseDown)
+    document.addEventListener('keydown', handleKeyDown)
+
+    this.disposeEventListeners = () => {
+      document.removeEventListener('mousedown', handleMouseDown)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }
 
   /** @hidden */
   disconnectedCallback(): void {
-    this.cleanup()
+    super.disconnectedCallback()
+
+    this.disposeAuthUpdate?.()
+    this.disposeAuthUpdate = undefined
+
+    this.disposeEventListeners?.()
+    this.disposeEventListeners = undefined
   }
 
   /** @hidden */
@@ -100,14 +125,15 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
 
   /** @hidden */
   private start() {
-    this.cleanup()
+    this.disposeAuthUpdate?.()
+    this.disposeAuthUpdate = undefined
 
     const reference = this.reference
     if (!reference) return
     if (!this.active) return
 
     if (this.autoUpdate) {
-      this.cleanupAutoUpdate = autoUpdate(
+      this.disposeAuthUpdate = autoUpdate(
         reference,
         this,
         () => void this.compute(),
@@ -139,8 +165,24 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
   }
 
   /** @hidden */
-  private cleanup() {
-    this.cleanupAutoUpdate?.()
-    this.cleanupAutoUpdate = undefined
+  hide() {
+    this.active = false
+  }
+
+  private handleDocumentMouseDown = (event: MouseEvent) => {
+    // Close when clicking outside
+    const path = event.composedPath()
+    if (!path.includes(this)) {
+      this.hide()
+    }
+  }
+
+  private handleDocumentKeyDown = (event: KeyboardEvent) => {
+    // Close when escape is pressed
+    if (event.key === 'Escape' && this.active) {
+      event.stopPropagation()
+      this.hide()
+      return
+    }
   }
 }

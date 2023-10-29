@@ -87,4 +87,14 @@ export class AutocompletePopover
     this.reference = this.controller.reference ?? undefined
     this.options = this.popoverOptions
   }
+
+  /** @hidden */
+  hide() {
+    super.hide()
+
+    if (this.controller?.reference) {
+      this.controller.reference = null
+      this.reference = undefined
+    }
+  }
 }

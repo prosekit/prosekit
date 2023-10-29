@@ -1,6 +1,6 @@
 import { consume } from '@lit/context'
 import type { Editor } from '@prosekit/core'
-import { customElement, property, query, state } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 
 import { LightElement } from '../block-element'
 import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
@@ -15,9 +15,6 @@ export type ComboBoxItemProps = {
 export class ComboBoxItem extends LightElement {
   @property({ attribute: false })
   editor?: Editor
-
-  /** @hidden */
-  @query('slot') defaultSlot?: HTMLSlotElement
 
   @property({ type: Boolean, reflect: true, attribute: 'data-selected' })
   selected = false

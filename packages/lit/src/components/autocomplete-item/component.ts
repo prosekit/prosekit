@@ -1,6 +1,6 @@
 import { consume } from '@lit/context'
 import { type PropertyValues } from 'lit'
-import { customElement, property, query, state } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 
 import {
   commandListContext,
@@ -34,9 +34,6 @@ export class AutocompleteItem
   /** @hidden */
   @property({ attribute: false })
   onSelect?: VoidFunction
-
-  /** @hidden */
-  @query('slot') defaultSlot?: HTMLSlotElement
 
   @consume({ context: commandListContext, subscribe: true })
   @state({})

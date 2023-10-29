@@ -1,7 +1,7 @@
 import { consume, provide } from '@lit/context'
 import { Editor } from '@prosekit/core'
-import { html, type PropertyValues } from 'lit'
-import { customElement, property, query, state } from 'lit/decorators.js'
+import { type PropertyValues } from 'lit'
+import { customElement, property, state } from 'lit/decorators.js'
 
 import { ListManager } from '../../manager/list-manager'
 import { commandScore } from '../../utils/command-score'
@@ -108,9 +108,6 @@ export class AutocompleteList
   }
 
   /** @hidden */
-  @query('slot') defaultSlot?: HTMLSlotElement
-
-  /** @hidden */
   willUpdate(changedProperties: PropertyValues<this>): void {
     if (changedProperties.has('editor') && this.editor) {
       this.controller.setEditor(this.editor)
@@ -127,12 +124,5 @@ export class AutocompleteList
     )
 
     this.context = { ...this.context, scores }
-  }
-
-  /** @hidden */
-  render() {
-    return html`
-      <slot></slot>
-    `
   }
 }

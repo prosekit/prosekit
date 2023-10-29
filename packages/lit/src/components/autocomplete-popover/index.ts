@@ -1,8 +1,6 @@
-import '../popover'
-
 import { provide } from '@lit/context'
 import { Editor } from '@prosekit/core'
-import { customElement, property, query, state } from 'lit/decorators.js'
+import { customElement, property, state } from 'lit/decorators.js'
 
 import { AutocompleteList } from '../autocomplete-list/component'
 import { isAutocompleteList } from '../autocomplete-list/helpers'
@@ -62,11 +60,8 @@ export class AutocompletePopover
   onSelect?: VoidFunction
 
   private get list(): AutocompleteList | null {
-    return (
-      this.defaultSlot
-        ?.assignedElements({ flatten: true })
-        ?.find(isAutocompleteList) ?? null
-    )
+    const element = this.querySelector('prosekit-autocomplete-list')
+    return isAutocompleteList(element) ? element : null
   }
 
   private updateContext(query: string, active: boolean) {
@@ -79,9 +74,6 @@ export class AutocompletePopover
       this.list?.selectFirstItem()
     })
   }
-
-  /** @hidden */
-  @query('slot') defaultSlot?: HTMLSlotElement
 
   /** @hidden */
   willUpdate(): void {

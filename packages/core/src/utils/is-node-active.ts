@@ -1,8 +1,8 @@
 import type { Attrs, NodeType } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 
+import { attrsMatch } from './attrs-match'
 import { getNodeType } from './get-node-type'
-import { objectEqual } from './object-euqal'
 
 export function isNodeActive(
   state: EditorState,
@@ -14,7 +14,7 @@ export function isNodeActive(
 
   for (let depth = $pos.depth; depth >= 0; depth--) {
     const node = $pos.node(depth)
-    if (node.type === nodeType && (!attrs || objectEqual(attrs, node.attrs))) {
+    if (node.type === nodeType && (!attrs || attrsMatch(node, attrs))) {
       return true
     }
   }

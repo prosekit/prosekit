@@ -659,8 +659,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       typedoc-plugin-markdown:
-        specifier: ^4.0.0-next.24
-        version: 4.0.0-next.24(typedoc@0.25.2)
+        specifier: ^4.0.0-next.25
+        version: 4.0.0-next.25(typedoc@0.25.2)
       typedoc-plugin-mdn-links:
         specifier: ^3.1.0
         version: 3.1.0(typedoc@0.25.2)
@@ -9888,8 +9888,8 @@ packages:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
     dev: true
 
-  /typedoc-plugin-markdown@4.0.0-next.24(typedoc@0.25.2):
-    resolution: {integrity: sha512-JmBZMaCF4ul/s/0iW5VBxiKtdTwvqKWvBgnD1px2EMC3l61ocvb48fnH3F4HaBe0kW7bwHseXjG+LPFo28WyVQ==}
+  /typedoc-plugin-markdown@4.0.0-next.25(typedoc@0.25.2):
+    resolution: {integrity: sha512-OAucyztjyTcJhpyH8lK3r6W/9lGYxRnEphmphAi8CLL4pBqzA9A00OaOWt4ybkcFBnB8zNIZ4SGCz1sk9NBA3g==}
     peerDependencies:
       typedoc: '>=0.25.0'
     dependencies:

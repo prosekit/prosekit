@@ -12,6 +12,72 @@ import { defineList } from 'prosekit/extensions/list'
 const extension = defineList()
 ```
 
+## Commands
+
+### `dedentList`
+
+Decreases the indentation of selected list nodes.
+
+```ts
+editor.commands.dedentList()
+```
+
+### `dedentList`
+
+Increases the indentation of selected list.
+
+```ts
+editor.commands.indentList()
+```
+
+### `moveList`
+
+Moves up or down selected list nodes.
+
+```ts
+editor.commands.moveList('down')
+```
+
+### `splitList`
+
+Split the current list node.
+
+```ts
+editor.commands.splitList()
+```
+
+### `toggleCollapsed`
+
+Toggle the `collapsed` attribute of the list node.
+
+```ts
+editor.commands.toggleCollapsed()
+```
+
+### `toggleList`
+
+Wraps the selection in a list with the given type and attributes, or change the list kind if the selection is already in another kind of list, or unwrap the selected list if otherwise.
+
+```ts
+editor.commands.toggleList({ kind: 'task', checked: true })
+```
+
+### `unwrapList`
+
+Unwraps the list around the selection.
+
+```ts
+editor.commands.unwrapList()
+```
+
+### `wrapInList`
+
+Wraps the selection in a list with the given type and attributes.
+
+```ts
+editor.commands.wrapInList({ kind: 'bullet' })
+```
+
 ## Input Rules
 
 Input `1.` followed by a space to convert to an ordered list item.

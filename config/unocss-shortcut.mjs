@@ -1,5 +1,6 @@
 // @unocss-include
 
+// A helper function to make Prettier format the class names
 function clsx(s) {
   return s
 }
@@ -57,19 +58,19 @@ export const shortcuts = {
     'dark:text-dark inline-flex h-10 w-full items-center justify-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-100',
   ),
 
-  ICON_ITALIC: 'i-ci-italic w-4 h-4',
-  ICON_BOLD: 'i-ci-bold w-4 h-4',
-  ICON_H1: 'i-ci-heading-h1 w-4 h-4',
-  ICON_H2: 'i-ci-heading-h2 w-4 h-4',
-  ICON_H3: 'i-ci-heading-h3 w-4 h-4',
-  ICON_H4: 'i-ci-heading-h4 w-4 h-4',
-  ICON_H5: 'i-ci-heading-h5 w-4 h-4',
-  ICON_H6: 'i-ci-heading-h6 w-4 h-4',
-  ICON_UNDO: 'i-ci-arrow-undo-up-left w-4 h-4',
-  ICON_REDO: 'i-ci-arrow-undo-up-right w-4 h-4',
-  ICON_IMAGE: 'i-ci-image-02 w-4 h-4',
-  ICON_LIST_BULLET: 'i-ci-list-ul w-4 h-4',
-  ICON_LIST_ORDERED: 'i-ci-list-ol w-4 h-4',
-  ICON_LIST_TASK: 'i-ci-list-checklist w-4 h-4',
-  ICON_LIST_TOGGLE: 'i-ci-sort-descending w-4 h-4 rotate-180',
+  ICON_ITALIC: clsx('i-ci-italic h-4 w-4'),
+  ICON_BOLD: clsx('i-ci-bold h-4 w-4'),
+  ICON_H1: clsx('i-ci-heading-h1 h-4 w-4'),
+  ICON_H2: clsx('i-ci-heading-h2 h-4 w-4'),
+  ICON_H3: clsx('i-ci-heading-h3 h-4 w-4'),
+  ICON_H4: clsx('i-ci-heading-h4 h-4 w-4'),
+  ICON_H5: clsx('i-ci-heading-h5 h-4 w-4'),
+  ICON_H6: clsx('i-ci-heading-h6 h-4 w-4'),
+  ICON_UNDO: clsx('i-ci-arrow-undo-up-left h-4 w-4'),
+  ICON_REDO: clsx('i-ci-arrow-undo-up-right h-4 w-4'),
+  ICON_IMAGE: clsx('i-ci-image-02 h-4 w-4'),
+  ICON_LIST_BULLET: clsx('i-ci-list-ul h-4 w-4'),
+  ICON_LIST_ORDERED: clsx('i-ci-list-ol h-4 w-4'),
+  ICON_LIST_TASK: clsx('i-ci-list-checklist h-4 w-4'),
+  ICON_LIST_TOGGLE: clsx('i-ci-sort-descending h-4 w-4 rotate-180'),
 }

@@ -8,6 +8,12 @@ export default function Toolbar() {
   const editor = useExampleEditor({ update: true })
 
   const [imagePopoverOpen, setImagePopoverOpen] = useState(false)
+  const closeImagePopover = () => {
+    setImagePopoverOpen(false)
+  }
+  const toggleImagePopover = () => {
+    setImagePopoverOpen((value) => !value)
+  }
 
   return (
     <div className="TOOLBAR">
@@ -65,16 +71,11 @@ export default function Toolbar() {
         <div className="ICON_H3" />
       </ToggleButton>
 
-      <ImageUploadPopover
-        open={imagePopoverOpen}
-        onClose={() => setImagePopoverOpen(false)}
-      >
+      <ImageUploadPopover open={imagePopoverOpen} onClose={closeImagePopover}>
         <ToggleButton
           active={false}
           available={editor.commands.insertImage.canApply()}
-          onChange={() => {
-            setImagePopoverOpen((open) => !open)
-          }}
+          onChange={toggleImagePopover}
         >
           <div className="ICON_IMAGE" />
         </ToggleButton>

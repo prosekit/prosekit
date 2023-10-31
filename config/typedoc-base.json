@@ -51,7 +51,6 @@
   "cleanOutputDir": true,
 
   // https://github.com/tgreyuk/typedoc-plugin-markdown/tree/next/packages/typedoc-plugin-markdown#readme
-  "namedAnchors": { "headings": true },
   "hideBreadcrumbs": true,
   "hideInPageTOC": true,
   "hidePageHeader": true,

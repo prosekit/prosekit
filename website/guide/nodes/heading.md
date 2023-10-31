@@ -2,6 +2,24 @@
 
 The `heading` node is used to represent blocks of code in the document.
 
+<script setup>
+import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
+import App from '../../components/vue-heading/App.vue'
+</script>
+
+:::tabs key:framework
+
+== Preview
+
+<div class="p-2"><App/></div>
+== React
+<ExamplePlaygroundLazy example="react-heading" />
+== Vue
+<ExamplePlaygroundLazy example="vue-heading" />
+== Solid
+<ExamplePlaygroundLazy example="solid-heading" />
+:::
+
 ## Usage
 
 ```ts
@@ -44,21 +62,6 @@ editor.commands.insertHeading({ level: 1 })
 ## Input Rules
 
 Input `#` followed by a space, it will automatically convert to a `heading` node. One `#` corresponds to an H1 node, two `#` correspond to an H2 node, and so on.
-
-## Example
-
-<script setup>
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-</script>
-
-:::tabs key:framework
-== React
-<ExamplePlaygroundLazy example="react-heading" />
-== Vue
-<ExamplePlaygroundLazy example="vue-heading" />
-== Solid
-<ExamplePlaygroundLazy example="solid-heading" />
-:::
 
 ## API Reference
 

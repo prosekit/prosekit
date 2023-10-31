@@ -13,7 +13,7 @@ const config: UserConfig = defineConfig({
   transformers: [transformerDirectives()],
   content: {
     pipeline: {
-      include: ['**/*.ts', '**/*.tsx', '**/*.vue'],
+      include: ['**/*.ts', '**/*.tsx', '**/*.vue', '**/*.md'],
     },
   },
   shortcuts,

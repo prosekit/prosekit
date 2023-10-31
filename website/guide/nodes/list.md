@@ -2,6 +2,23 @@
 
 The `list` node is used to represent a list item. It is built on top of [prosemirror-flat-list](https://github.com/ocavue/prosemirror-flat-list).
 
+<script setup>
+import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
+import App from '../../components/vue-list/App.vue'
+</script>
+
+:::tabs key:framework
+== Preview
+
+<div class="p-2"><App/></div>
+== React
+<ExamplePlaygroundLazy example="react-list" />
+== Vue
+<ExamplePlaygroundLazy example="vue-list" />
+== Svelte
+<ExamplePlaygroundLazy example="svelte-list" />
+:::
+
 ## Usage
 
 ```ts
@@ -87,19 +104,6 @@ Input `-` or `*` followed by a space to convert to an unordered list item.
 Input `[x]` or `[]` followed by a space to convert to an task list item.
 
 Input `>>` followed by a space to convert to an toggle list item.
-
-## Example
-
-<script setup>
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-</script>
-
-:::tabs key:framework
-== React
-<ExamplePlaygroundLazy example="react-list" />
-== Svelte
-<ExamplePlaygroundLazy example="svelte-list" />
-:::
 
 ## API Reference
 

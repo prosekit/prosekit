@@ -39,7 +39,7 @@ export const shortcuts = {
     'relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-gray-100 aria-selected:text-gray-900',
   ),
 
-  TOOLBAR: clsx('z-2 my-2 grid auto-cols-max grid-flow-col gap-1'),
+  TOOLBAR: clsx('z-2 my-2 flex flex-wrap gap-1'),
 
   TOGGLE_BUTTON: clsx(
     'inline-flex h-11 w-11 items-center justify-center rounded-md bg-transparent font-medium outline-none transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:text-blue-600 hover:data-[state=on]:text-blue-600 dark:hover:bg-gray-800 dark:focus-visible:ring-gray-300 dark:data-[state=on]:text-blue-500 hover:dark:data-[state=on]:text-blue-500',

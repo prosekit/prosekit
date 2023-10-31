@@ -43,6 +43,11 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-toolbar/Toolbar.vue",
   "../../playground/examples/vue-toolbar/extension.ts",
   "../../playground/examples/vue-toolbar/use-example-editor.ts",
+  "../../playground/examples/vue-list/App.vue",
+  "../../playground/examples/vue-list/ToggleButton.vue",
+  "../../playground/examples/vue-list/Toolbar.vue",
+  "../../playground/examples/vue-list/extension.ts",
+  "../../playground/examples/vue-list/use-example-editor.ts",
   "../../playground/examples/vue-full/App.vue",
   "../../playground/examples/vue-full/ImageUploadPopover.vue",
   "../../playground/examples/vue-full/SlashMenu.vue",
@@ -267,6 +272,28 @@ const examples = {
     "/use-example-editor.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-toolbar/use-example-editor.ts']
+    }
+  },
+  "vue-list": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-list/App.vue']
+    },
+    "/ToggleButton.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-list/ToggleButton.vue']
+    },
+    "/Toolbar.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-list/Toolbar.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-list/extension.ts']
+    },
+    "/use-example-editor.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-list/use-example-editor.ts']
     }
   },
   "vue-full": {

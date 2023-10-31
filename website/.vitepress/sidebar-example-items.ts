@@ -43,6 +43,10 @@ export const exampleItems = [
     "link": "/examples/vue-toolbar"
   },
   {
+    "text": "vue-list",
+    "link": "/examples/vue-list"
+  },
+  {
     "text": "vue-full",
     "link": "/examples/vue-full"
   },

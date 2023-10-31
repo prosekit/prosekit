@@ -22,6 +22,8 @@
 
 - [vue-toolbar](./examples/vue-toolbar)
 
+- [vue-full](./examples/vue-full)
+
 - [preact-minimal](./examples/preact-minimal)
 
 - [preact-slash-menu](./examples/preact-slash-menu)

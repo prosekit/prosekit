@@ -8,7 +8,6 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
 import SlashMenu from './SlashMenu'
-import ToggleItalicButton from './ToggleItalicButton'
 import { defineExampleExtension } from './extension'
 
 export default function App() {
@@ -19,7 +18,6 @@ export default function App() {
   return (
     <ProseKit editor={editor}>
       <div ref={editor.mount} className="EDITOR_CONTENT"></div>
-      <ToggleItalicButton />
       <SlashMenu />
     </ProseKit>
   )

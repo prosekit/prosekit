@@ -9,7 +9,6 @@ const modules = import.meta.glob([
   "../../playground/examples/react-heading/use-typed-editor.ts",
   "../../playground/examples/react-slash-menu/App.tsx",
   "../../playground/examples/react-slash-menu/SlashMenu.tsx",
-  "../../playground/examples/react-slash-menu/ToggleItalicButton.tsx",
   "../../playground/examples/react-slash-menu/extension.ts",
   "../../playground/examples/react-slash-menu/use-example-editor.ts",
   "../../playground/examples/react-user-menu/App.tsx",
@@ -37,7 +36,6 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-heading/use-typed-editor.ts",
   "../../playground/examples/vue-slash-menu/App.vue",
   "../../playground/examples/vue-slash-menu/SlashMenu.vue",
-  "../../playground/examples/vue-slash-menu/ToggleItalicButton.vue",
   "../../playground/examples/vue-slash-menu/extension.ts",
   "../../playground/examples/vue-slash-menu/use-example-editor.ts",
   "../../playground/examples/vue-toolbar/App.vue",
@@ -45,18 +43,27 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-toolbar/Toolbar.vue",
   "../../playground/examples/vue-toolbar/extension.ts",
   "../../playground/examples/vue-toolbar/use-example-editor.ts",
+  "../../playground/examples/vue-full/App.vue",
+  "../../playground/examples/vue-full/ImageUploadPopover.vue",
+  "../../playground/examples/vue-full/SlashMenu.vue",
+  "../../playground/examples/vue-full/TagMenu.vue",
+  "../../playground/examples/vue-full/ToggleButton.vue",
+  "../../playground/examples/vue-full/Toolbar.vue",
+  "../../playground/examples/vue-full/UserMenu.vue",
+  "../../playground/examples/vue-full/extension.ts",
+  "../../playground/examples/vue-full/tags.ts",
+  "../../playground/examples/vue-full/use-example-editor.ts",
+  "../../playground/examples/vue-full/users.ts",
   "../../playground/examples/preact-minimal/App.tsx",
   "../../playground/examples/preact-minimal/package.json",
   "../../playground/examples/preact-slash-menu/App.tsx",
   "../../playground/examples/preact-slash-menu/SlashMenu.tsx",
-  "../../playground/examples/preact-slash-menu/ToggleItalicButton.tsx",
   "../../playground/examples/preact-slash-menu/extension.ts",
   "../../playground/examples/preact-slash-menu/package.json",
   "../../playground/examples/preact-slash-menu/use-example-editor.ts",
   "../../playground/examples/svelte-minimal/App.svelte",
   "../../playground/examples/svelte-slash-menu/App.svelte",
   "../../playground/examples/svelte-slash-menu/SlashMenu.svelte",
-  "../../playground/examples/svelte-slash-menu/ToggleItalicButton.svelte",
   "../../playground/examples/svelte-slash-menu/extension.ts",
   "../../playground/examples/svelte-slash-menu/get-example-editor.ts",
   "../../playground/examples/svelte-list/App.svelte",
@@ -68,7 +75,6 @@ const modules = import.meta.glob([
   "../../playground/examples/solid-heading/use-typed-editor.ts",
   "../../playground/examples/solid-slash-menu/App.tsx",
   "../../playground/examples/solid-slash-menu/SlashMenu.tsx",
-  "../../playground/examples/solid-slash-menu/ToggleItalicButton.tsx",
   "../../playground/examples/solid-slash-menu/extension.ts",
   "../../playground/examples/solid-slash-menu/use-example-editor.ts",
   "../../playground/examples/lit/app.ts",
@@ -111,10 +117,6 @@ const examples = {
     "/SlashMenu.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-slash-menu/SlashMenu.tsx']
-    },
-    "/ToggleItalicButton.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/react-slash-menu/ToggleItalicButton.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -236,10 +238,6 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/vue-slash-menu/SlashMenu.vue']
     },
-    "/ToggleItalicButton.vue": {
-      "hidden": false,
-      "code": modules['../../playground/examples/vue-slash-menu/ToggleItalicButton.vue']
-    },
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-slash-menu/extension.ts']
@@ -271,6 +269,52 @@ const examples = {
       "code": modules['../../playground/examples/vue-toolbar/use-example-editor.ts']
     }
   },
+  "vue-full": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/App.vue']
+    },
+    "/ImageUploadPopover.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/ImageUploadPopover.vue']
+    },
+    "/SlashMenu.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/SlashMenu.vue']
+    },
+    "/TagMenu.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/TagMenu.vue']
+    },
+    "/ToggleButton.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/ToggleButton.vue']
+    },
+    "/Toolbar.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/Toolbar.vue']
+    },
+    "/UserMenu.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/UserMenu.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/extension.ts']
+    },
+    "/tags.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/tags.ts']
+    },
+    "/use-example-editor.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/use-example-editor.ts']
+    },
+    "/users.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/users.ts']
+    }
+  },
   "preact-minimal": {
     "/App.tsx": {
       "hidden": false,
@@ -289,10 +333,6 @@ const examples = {
     "/SlashMenu.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/preact-slash-menu/SlashMenu.tsx']
-    },
-    "/ToggleItalicButton.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/preact-slash-menu/ToggleItalicButton.tsx']
     },
     "/extension.ts": {
       "hidden": true,
@@ -321,10 +361,6 @@ const examples = {
     "/SlashMenu.svelte": {
       "hidden": false,
       "code": modules['../../playground/examples/svelte-slash-menu/SlashMenu.svelte']
-    },
-    "/ToggleItalicButton.svelte": {
-      "hidden": false,
-      "code": modules['../../playground/examples/svelte-slash-menu/ToggleItalicButton.svelte']
     },
     "/extension.ts": {
       "hidden": false,
@@ -377,10 +413,6 @@ const examples = {
     "/SlashMenu.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/solid-slash-menu/SlashMenu.tsx']
-    },
-    "/ToggleItalicButton.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/solid-slash-menu/ToggleItalicButton.tsx']
     },
     "/extension.ts": {
       "hidden": false,

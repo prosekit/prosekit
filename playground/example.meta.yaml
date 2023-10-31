@@ -22,8 +22,6 @@ examples:
         hidden: false
       - path: SlashMenu.tsx
         hidden: false
-      - path: ToggleItalicButton.tsx
-        hidden: false
       - path: extension.ts
         hidden: false
       - path: use-example-editor.ts
@@ -96,8 +94,6 @@ examples:
         hidden: false
       - path: SlashMenu.vue
         hidden: false
-      - path: ToggleItalicButton.vue
-        hidden: false
       - path: extension.ts
         hidden: false
       - path: use-example-editor.ts
@@ -115,6 +111,31 @@ examples:
         hidden: false
       - path: use-example-editor.ts
         hidden: false
+  - name: vue-full
+    order: 29
+    files:
+      - path: App.vue
+        hidden: false
+      - path: ImageUploadPopover.vue
+        hidden: false
+      - path: SlashMenu.vue
+        hidden: false
+      - path: TagMenu.vue
+        hidden: false
+      - path: ToggleButton.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: UserMenu.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: tags.ts
+        hidden: false
+      - path: use-example-editor.ts
+        hidden: false
+      - path: users.ts
+        hidden: false
   - name: preact-minimal
     order: 31
     files:
@@ -128,8 +149,6 @@ examples:
       - path: App.tsx
         hidden: false
       - path: SlashMenu.tsx
-        hidden: false
-      - path: ToggleItalicButton.tsx
         hidden: false
       - path: extension.ts
         hidden: true
@@ -148,8 +167,6 @@ examples:
       - path: App.svelte
         hidden: false
       - path: SlashMenu.svelte
-        hidden: false
-      - path: ToggleItalicButton.svelte
         hidden: false
       - path: extension.ts
         hidden: false
@@ -184,8 +201,6 @@ examples:
       - path: App.tsx
         hidden: false
       - path: SlashMenu.tsx
-        hidden: false
-      - path: ToggleItalicButton.tsx
         hidden: false
       - path: extension.ts
         hidden: false

@@ -7,5 +7,10 @@
     "declarationDir": "temp/declaration",
     "tsBuildInfoFile": "temp/tsconfig.tsbuildinfo"
   },
-  "include": ["./**/*.ts", "./**/*.tsx", ".vitepress/**/*.ts"]
+  "include": [
+    "./**/*.ts",
+    "./**/*.tsx",
+    "./components/**/*.vue",
+    ".vitepress/**/*.ts"
+  ]
 }

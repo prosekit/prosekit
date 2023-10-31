@@ -6,7 +6,6 @@ import { createEditor } from 'prosekit/core'
 import { defineExampleExtension } from './extension'
 import { onMount } from 'svelte'
 import { ProseKit } from 'prosekit/svelte'
-import ToggleItalicButton from './ToggleItalicButton.svelte'
 import SlashMenu from './SlashMenu.svelte'
 
 const editor = createEditor({ extension: defineExampleExtension() })
@@ -17,6 +16,5 @@ onMount(() => editor.mount(place))
 
 <ProseKit {editor}>
   <div bind:this={place} class="EDITOR_CONTENT"></div>
-  <ToggleItalicButton />
   <SlashMenu />
 </ProseKit>

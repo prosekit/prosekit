@@ -1,5 +1,7 @@
 # prosekit/lit/autocomplete-popover
 
+<a id="autocompletepopover" name="autocompletepopover"></a>
+
 ## AutocompletePopover
 
 A custom element that displays a popover anchored to a reference element.
@@ -28,6 +30,8 @@ A custom element that displays a popover anchored to a reference element.
 
 ### Accessors
 
+<a id="list" name="list"></a>
+
 #### list
 
 ```ts
@@ -39,6 +43,8 @@ get private list(): null | AutocompleteList
 `null` \| [`AutocompleteList`](autocomplete-list.md#autocompletelist)
 
 ### Methods
+
+<a id="createrenderroot" name="createrenderroot"></a>
 
 #### createRenderRoot()
 
@@ -53,6 +59,8 @@ createRenderRoot(): AutocompletePopover
 ##### Inherited from
 
 [`Popover`](popover.md#popover).[`createRenderRoot`](popover.md#createrenderroot)
+
+<a id="sethidden" name="sethidden"></a>
 
 #### setHidden()
 
@@ -72,6 +80,8 @@ setHidden(hidden): void
 
 [`Popover`](popover.md#popover).[`setHidden`](popover.md#sethidden)
 
+<a id="updatecontext" name="updatecontext"></a>
+
 #### updateContext()
 
 ```ts
@@ -90,6 +100,8 @@ private updateContext(query, active): void
 
 ***
 
+<a id="autocompletepopoverprops" name="autocompletepopoverprops"></a>
+
 ## AutocompletePopoverProps
 
 ### Properties
@@ -101,6 +113,8 @@ private updateContext(query, active): void
 | `regex` | [`RegExp`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp ) | - |
 
 ***
+
+<a id="popoveroptions" name="popoveroptions"></a>
 
 ## PopoverOptions
 
@@ -117,6 +131,8 @@ Floating UI documentation.
 https://floating-ui.com/docs/computeposition#options
 
 ***
+
+<a id="propnames" name="propnames"></a>
 
 ## propNames
 

@@ -1,5 +1,7 @@
 # prosekit/extensions/blockquote
 
+<a id="defineblockquote" name="defineblockquote"></a>
+
 ## defineBlockquote()
 
 ```ts
@@ -11,6 +13,8 @@ defineBlockquote(): Extension<object>
 [`Extension`](../core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="defineblockquotespec" name="defineblockquotespec"></a>
 
 ## defineBlockquoteSpec()
 

@@ -1,5 +1,7 @@
 # prosekit/svelte/combo-box-item
 
+<a id="comboboxitemprops" name="comboboxitemprops"></a>
+
 ## ComboBoxItemProps
 
 ```ts
@@ -13,6 +15,8 @@ type ComboBoxItemProps: object & ComboBoxItemProps;
 | `class` | `string` | - |
 
 ***
+
+<a id="comboboxitem" name="comboboxitem"></a>
 
 ## ComboBoxItem
 

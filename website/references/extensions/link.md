@@ -1,5 +1,7 @@
 # prosekit/extensions/link
 
+<a id="linkattrs" name="linkattrs"></a>
+
 ## LinkAttrs
 
 ### Properties
@@ -9,6 +11,8 @@
 | `href` | `string` | - |
 
 ***
+
+<a id="defineitalic" name="defineitalic"></a>
 
 ## defineItalic()
 
@@ -22,6 +26,8 @@ defineItalic(): Extension<object>
 
 ***
 
+<a id="definelinkcommands" name="definelinkcommands"></a>
+
 ## defineLinkCommands()
 
 ```ts
@@ -33,6 +39,8 @@ defineLinkCommands(): Extension<object>
 [`Extension`](../core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="definelinkspec" name="definelinkspec"></a>
 
 ## defineLinkSpec()
 

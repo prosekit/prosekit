@@ -1,5 +1,7 @@
 # prosekit/extensions/placeholder
 
+<a id="placeholderoptions" name="placeholderoptions"></a>
+
 ## PlaceholderOptions
 
 ### Properties
@@ -10,6 +12,8 @@
 | `strategy`? | `"doc"` \| `"block"` | By default, the placeholder text will be shown whenever the current text<br />cursor is in an empty node. If you only want to show the placeholder when<br />the whole doc is empty, you can set this option to 'doc'.<br /><br />**Default**<br /><br />` 'block' ` |
 
 ***
+
+<a id="defineplaceholder" name="defineplaceholder"></a>
 
 ## definePlaceholder()
 

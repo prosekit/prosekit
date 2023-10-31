@@ -1,8 +1,12 @@
 # prosekit/lit/popover
 
+<a id="popoveroptions" name="popoveroptions"></a>
+
 ## PopoverOptions
 
 Re-exports [PopoverOptions](autocomplete-popover.md#popoveroptions)
+
+<a id="popover" name="popover"></a>
 
 ## Popover
 
@@ -28,6 +32,8 @@ A custom element that displays a popover anchored to a reference element.
 
 ### Methods
 
+<a id="createrenderroot" name="createrenderroot"></a>
+
 #### createRenderRoot()
 
 ```ts
@@ -41,6 +47,8 @@ createRenderRoot(): Popover
 ##### Inherited from
 
 LightElement.createRenderRoot
+
+<a id="handledocumentkeydown" name="handledocumentkeydown"></a>
 
 #### handleDocumentKeyDown()
 
@@ -56,6 +64,8 @@ private handleDocumentKeyDown(event): void
 
 `void`
 
+<a id="handledocumentmousedown" name="handledocumentmousedown"></a>
+
 #### handleDocumentMouseDown()
 
 ```ts
@@ -69,6 +79,8 @@ private handleDocumentMouseDown(event): void
 ##### Returns
 
 `void`
+
+<a id="sethidden" name="sethidden"></a>
 
 #### setHidden()
 
@@ -90,6 +102,8 @@ LightElement.setHidden
 
 ***
 
+<a id="popoverprops" name="popoverprops"></a>
+
 ## PopoverProps
 
 ### Extended By
@@ -107,6 +121,8 @@ LightElement.setHidden
 | `reference`? | [`Element`]( https://developer.mozilla.org/en-US/docs/Web/API/Element ) \| [`VirtualElement`]( https://floating-ui.com/docs/virtual-elements ) | - |
 
 ***
+
+<a id="propnames" name="propnames"></a>
 
 ## propNames
 

@@ -1,5 +1,7 @@
 # prosekit/react/combo-box-input
 
+<a id="comboboxinputprops" name="comboboxinputprops"></a>
+
 ## ComboBoxInputProps
 
 ```ts
@@ -7,6 +9,8 @@ type ComboBoxInputProps: SimplifyUnion<object & ComboBoxInputProps>;
 ```
 
 ***
+
+<a id="comboboxinput" name="comboboxinput"></a>
 
 ## ComboBoxInput()
 

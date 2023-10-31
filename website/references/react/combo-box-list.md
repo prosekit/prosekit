@@ -1,5 +1,7 @@
 # prosekit/react/combo-box-list
 
+<a id="comboboxlistprops" name="comboboxlistprops"></a>
+
 ## ComboBoxListProps
 
 ```ts
@@ -7,6 +9,8 @@ type ComboBoxListProps: SimplifyUnion<object & ComboBoxListProps>;
 ```
 
 ***
+
+<a id="comboboxlist" name="comboboxlist"></a>
 
 ## ComboBoxList()
 

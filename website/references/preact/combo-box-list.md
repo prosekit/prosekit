@@ -1,5 +1,7 @@
 # prosekit/preact/combo-box-list
 
+<a id="comboboxlistprops" name="comboboxlistprops"></a>
+
 ## ComboBoxListProps
 
 ```ts
@@ -14,6 +16,8 @@ type ComboBoxListProps: object & ComboBoxListProps;
 | `class` | `string` | - |
 
 ***
+
+<a id="comboboxlist" name="comboboxlist"></a>
 
 ## ComboBoxList
 

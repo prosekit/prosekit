@@ -1,5 +1,7 @@
 # prosekit/extensions/image
 
+<a id="imageattrs" name="imageattrs"></a>
+
 ## ImageAttrs
 
 ### Properties
@@ -9,6 +11,8 @@
 | `src`? | `null` \| `string` | - |
 
 ***
+
+<a id="defineimage" name="defineimage"></a>
 
 ## defineImage()
 
@@ -22,6 +26,8 @@ defineImage(): Extension<object>
 
 ***
 
+<a id="defineimagecommands" name="defineimagecommands"></a>
+
 ## defineImageCommands()
 
 ```ts
@@ -33,6 +39,8 @@ defineImageCommands(): Extension<object>
 [`Extension`](../core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="defineimagespec" name="defineimagespec"></a>
 
 ## defineImageSpec()
 

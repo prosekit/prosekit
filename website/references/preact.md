@@ -1,5 +1,7 @@
 # prosekit/preact
 
+<a id="prosekitprops" name="prosekitprops"></a>
+
 ## ProseKitProps
 
 ### Properties
@@ -11,6 +13,8 @@
 
 ***
 
+<a id="prosekit" name="prosekit"></a>
+
 ## ProseKit
 
 ```ts
@@ -18,6 +22,8 @@ const ProseKit: ComponentType<ProseKitProps>;
 ```
 
 ***
+
+<a id="useeditor" name="useeditor"></a>
 
 ## useEditor()
 
@@ -35,6 +41,8 @@ useEditor<E>(): Editor<E>
 
 ***
 
+<a id="useextension" name="useextension"></a>
+
 ## useExtension()
 
 ```ts
@@ -50,6 +58,8 @@ useExtension(__namedParameters): void
 `void`
 
 ***
+
+<a id="usekeymap" name="usekeymap"></a>
 
 ## useKeymap()
 

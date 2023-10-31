@@ -1,5 +1,7 @@
 # prosekit/lit/combo-box-list
 
+<a id="comboboxlist" name="comboboxlist"></a>
+
 ## ComboBoxList
 
 ### Extends
@@ -7,6 +9,8 @@
 - `LightElement`
 
 ### Constructors
+
+<a id="constructors" name="constructors"></a>
 
 #### new ComboBoxList(undefined)
 
@@ -30,6 +34,8 @@ LightElement.constructor
 
 ### Methods
 
+<a id="connectedcallback" name="connectedcallback"></a>
+
 #### connectedCallback()
 
 ```ts
@@ -44,6 +50,8 @@ connectedCallback(): void
 
 LightElement.connectedCallback
 
+<a id="createrenderroot" name="createrenderroot"></a>
+
 #### createRenderRoot()
 
 ```ts
@@ -57,6 +65,8 @@ createRenderRoot(): ComboBoxList
 ##### Inherited from
 
 LightElement.createRenderRoot
+
+<a id="sethidden" name="sethidden"></a>
 
 #### setHidden()
 
@@ -78,6 +88,8 @@ LightElement.setHidden
 
 ***
 
+<a id="comboboxlistprops" name="comboboxlistprops"></a>
+
 ## ComboBoxListProps
 
 ```ts
@@ -91,6 +103,8 @@ type ComboBoxListProps: object;
 | `lang` | `string` | - |
 
 ***
+
+<a id="propnames" name="propnames"></a>
 
 ## propNames
 

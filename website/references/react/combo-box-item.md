@@ -1,5 +1,7 @@
 # prosekit/react/combo-box-item
 
+<a id="comboboxitemprops" name="comboboxitemprops"></a>
+
 ## ComboBoxItemProps
 
 ```ts
@@ -7,6 +9,8 @@ type ComboBoxItemProps: SimplifyUnion<object & ComboBoxItemProps>;
 ```
 
 ***
+
+<a id="comboboxitem" name="comboboxitem"></a>
 
 ## ComboBoxItem()
 

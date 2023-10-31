@@ -1,5 +1,7 @@
 # prosekit/lit/autocomplete-item
 
+<a id="autocompleteitem" name="autocompleteitem"></a>
+
 ## AutocompleteItem
 
 Command menu item. Becomes active on pointer enter or through keyboard
@@ -15,6 +17,8 @@ from the rendered item's `textContent`.
 - `Partial`\<[`AutocompleteItemProps`](autocomplete-item.md#autocompleteitemprops)\>
 
 ### Constructors
+
+<a id="constructors" name="constructors"></a>
 
 #### new AutocompleteItem(undefined)
 
@@ -40,6 +44,8 @@ LightElement.constructor
 
 ### Accessors
 
+<a id="content" name="content"></a>
+
 #### content
 
 ```ts
@@ -51,6 +57,8 @@ get content(): string
 `string`
 
 ### Methods
+
+<a id="connectedcallback" name="connectedcallback"></a>
 
 #### connectedCallback()
 
@@ -66,6 +74,8 @@ connectedCallback(): void
 
 LightElement.connectedCallback
 
+<a id="createrenderroot" name="createrenderroot"></a>
+
 #### createRenderRoot()
 
 ```ts
@@ -79,6 +89,8 @@ createRenderRoot(): AutocompleteItem
 ##### Inherited from
 
 LightElement.createRenderRoot
+
+<a id="sethidden" name="sethidden"></a>
 
 #### setHidden()
 
@@ -98,6 +110,8 @@ setHidden(hidden): void
 
 LightElement.setHidden
 
+<a id="updated" name="updated"></a>
+
 #### updated()
 
 ```ts
@@ -116,6 +130,8 @@ protected updated(changedProperties): void
 
 LightElement.updated
 
+<a id="willupdate" name="willupdate"></a>
+
 #### willUpdate()
 
 ```ts
@@ -132,6 +148,8 @@ LightElement.willUpdate
 
 ***
 
+<a id="autocompleteitemprops" name="autocompleteitemprops"></a>
+
 ## AutocompleteItemProps
 
 ### Properties
@@ -142,6 +160,8 @@ LightElement.willUpdate
 | `value`? | `string` | - |
 
 ***
+
+<a id="propnames" name="propnames"></a>
 
 ## propNames
 

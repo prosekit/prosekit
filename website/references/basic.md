@@ -1,5 +1,7 @@
 # prosekit/basic
 
+<a id="basicextension" name="basicextension"></a>
+
 ## BasicExtension
 
 ```ts
@@ -7,6 +9,8 @@ type BasicExtension: ReturnType<*typeof* defineBasicExtension>;
 ```
 
 ***
+
+<a id="definebasicextension" name="definebasicextension"></a>
 
 ## defineBasicExtension()
 

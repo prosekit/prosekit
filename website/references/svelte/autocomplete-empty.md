@@ -1,5 +1,7 @@
 # prosekit/svelte/autocomplete-empty
 
+<a id="autocompleteemptyprops" name="autocompleteemptyprops"></a>
+
 ## AutocompleteEmptyProps
 
 ```ts
@@ -13,6 +15,8 @@ type AutocompleteEmptyProps: object & AutocompleteEmptyProps;
 | `class` | `string` | - |
 
 ***
+
+<a id="autocompleteempty" name="autocompleteempty"></a>
 
 ## AutocompleteEmpty
 

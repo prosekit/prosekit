@@ -1,5 +1,7 @@
 # prosekit/solid/combo-box
 
+<a id="comboboxprops" name="comboboxprops"></a>
+
 ## ComboBoxProps
 
 ```ts
@@ -14,6 +16,8 @@ type ComboBoxProps: object & ComboBoxProps;
 | `class` | `string` | - |
 
 ***
+
+<a id="combobox" name="combobox"></a>
 
 ## ComboBox()
 

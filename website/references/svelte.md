@@ -1,5 +1,7 @@
 # prosekit/svelte
 
+<a id="prosekit" name="prosekit"></a>
+
 ## ProseKit
 
 ```ts
@@ -7,6 +9,8 @@ const ProseKit: *typeof* SvelteComponent;
 ```
 
 ***
+
+<a id="geteditor" name="geteditor"></a>
 
 ## getEditor()
 

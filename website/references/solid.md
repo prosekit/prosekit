@@ -1,5 +1,7 @@
 # prosekit/solid
 
+<a id="prosekitprops" name="prosekitprops"></a>
+
 ## ProseKitProps
 
 ```ts
@@ -7,6 +9,8 @@ type ProseKitProps: ParentProps<object>;
 ```
 
 ***
+
+<a id="prosekit" name="prosekit"></a>
 
 ## ProseKit()
 
@@ -26,6 +30,8 @@ specify one as in `Component<{name: String, children: JSX.Element}>`.
 `Element`
 
 ***
+
+<a id="useeditor" name="useeditor"></a>
 
 ## useEditor()
 
@@ -56,6 +62,8 @@ useEditor<E>(options?): () => Editor<E>
 
 ***
 
+<a id="useextension" name="useextension"></a>
+
 ## useExtension()
 
 ```ts
@@ -71,6 +79,8 @@ useExtension(__namedParameters): void
 `void`
 
 ***
+
+<a id="usekeymap" name="usekeymap"></a>
 
 ## useKeymap()
 

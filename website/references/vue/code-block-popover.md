@@ -1,5 +1,7 @@
 # prosekit/vue/code-block-popover
 
+<a id="codeblockpopoverprops" name="codeblockpopoverprops"></a>
+
 ## CodeBlockPopoverProps
 
 ```ts
@@ -13,6 +15,8 @@ type CodeBlockPopoverProps: object & CodeBlockPopoverProps;
 | `class` | `string` | - |
 
 ***
+
+<a id="codeblockpopover" name="codeblockpopover"></a>
 
 ## CodeBlockPopover()
 

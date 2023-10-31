@@ -1,5 +1,7 @@
 # prosekit/extensions/code
 
+<a id="definecode" name="definecode"></a>
+
 ## defineCode()
 
 ```ts
@@ -11,6 +13,8 @@ defineCode(): Extension<object>
 [`Extension`](../core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="definecodespec" name="definecodespec"></a>
 
 ## defineCodeSpec()
 

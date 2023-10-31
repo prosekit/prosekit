@@ -1,5 +1,7 @@
 # prosekit/vue/combo-box-input
 
+<a id="comboboxinputprops" name="comboboxinputprops"></a>
+
 ## ComboBoxInputProps
 
 ```ts
@@ -13,6 +15,8 @@ type ComboBoxInputProps: object & ComboBoxInputProps;
 | `class` | `string` | - |
 
 ***
+
+<a id="comboboxinput" name="comboboxinput"></a>
 
 ## ComboBoxInput()
 

@@ -1,5 +1,7 @@
 # prosekit/react/autocomplete-empty
 
+<a id="autocompleteemptyprops" name="autocompleteemptyprops"></a>
+
 ## AutocompleteEmptyProps
 
 ```ts
@@ -7,6 +9,8 @@ type AutocompleteEmptyProps: SimplifyUnion<object & AutocompleteEmptyProps>;
 ```
 
 ***
+
+<a id="autocompleteempty" name="autocompleteempty"></a>
 
 ## AutocompleteEmpty()
 

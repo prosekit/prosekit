@@ -1,5 +1,7 @@
 # prosekit/extensions/italic
 
+<a id="defineitalic" name="defineitalic"></a>
+
 ## defineItalic()
 
 ```ts
@@ -11,6 +13,8 @@ defineItalic(): Extension<object>
 [`Extension`](../core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="defineitaliccommands" name="defineitaliccommands"></a>
 
 ## defineItalicCommands()
 
@@ -24,6 +28,8 @@ defineItalicCommands(): Extension<object>
 
 ***
 
+<a id="defineitalickeymap" name="defineitalickeymap"></a>
+
 ## defineItalicKeymap()
 
 ```ts
@@ -35,6 +41,8 @@ defineItalicKeymap(): Extension<ExtensionTyping<string, string, CommandArgs>>
 [`Extension`](../core.md#extensiont)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>
 
 ***
+
+<a id="defineitalicspec" name="defineitalicspec"></a>
 
 ## defineItalicSpec()
 

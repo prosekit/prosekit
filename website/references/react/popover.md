@@ -1,5 +1,7 @@
 # prosekit/react/popover
 
+<a id="popoverprops" name="popoverprops"></a>
+
 ## PopoverProps
 
 ```ts
@@ -7,6 +9,8 @@ type PopoverProps: SimplifyUnion<object & PopoverProps>;
 ```
 
 ***
+
+<a id="popover" name="popover"></a>
 
 ## Popover()
 

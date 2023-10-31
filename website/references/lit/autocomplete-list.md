@@ -1,5 +1,7 @@
 # prosekit/lit/autocomplete-list
 
+<a id="autocompletelist" name="autocompletelist"></a>
+
 ## AutocompleteList
 
 ### Extends
@@ -11,6 +13,8 @@
 - `Partial`\<[`AutocompleteListProps`](autocomplete-list.md#autocompletelistprops)\>
 
 ### Constructors
+
+<a id="constructors" name="constructors"></a>
 
 #### new AutocompleteList(undefined)
 
@@ -36,6 +40,8 @@ LightElement.constructor
 
 ### Accessors
 
+<a id="active" name="active"></a>
+
 #### active
 
 ```ts
@@ -45,6 +51,8 @@ get private active(): boolean
 ##### Returns
 
 `boolean`
+
+<a id="items" name="items"></a>
 
 #### items
 
@@ -57,6 +65,8 @@ get private items(): AutocompleteItem[]
 [`AutocompleteItem`](autocomplete-item.md#autocompleteitem)[]
 
 ### Methods
+
+<a id="connectedcallback" name="connectedcallback"></a>
 
 #### connectedCallback()
 
@@ -72,6 +82,8 @@ connectedCallback(): void
 
 LightElement.connectedCallback
 
+<a id="createrenderroot" name="createrenderroot"></a>
+
 #### createRenderRoot()
 
 ```ts
@@ -86,6 +98,8 @@ createRenderRoot(): AutocompleteList
 
 LightElement.createRenderRoot
 
+<a id="selectfirstitem" name="selectfirstitem"></a>
+
 #### selectFirstItem()
 
 ```ts
@@ -95,6 +109,8 @@ selectFirstItem(): void
 ##### Returns
 
 `void`
+
+<a id="sethidden" name="sethidden"></a>
 
 #### setHidden()
 
@@ -114,6 +130,8 @@ setHidden(hidden): void
 
 LightElement.setHidden
 
+<a id="updatevalue" name="updatevalue"></a>
+
 #### updateValue()
 
 ```ts
@@ -130,6 +148,8 @@ private updateValue(selectedValue): void
 
 ***
 
+<a id="autocompletelistprops" name="autocompletelistprops"></a>
+
 ## AutocompleteListProps
 
 ### Properties
@@ -139,6 +159,8 @@ private updateValue(selectedValue): void
 | `editor` | [`Editor`](../core.md#editore)\<`any`\> | - |
 
 ***
+
+<a id="propnames" name="propnames"></a>
 
 ## propNames
 

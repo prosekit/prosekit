@@ -1,5 +1,7 @@
 # prosekit/lit/combo-box-item
 
+<a id="comboboxitem" name="comboboxitem"></a>
+
 ## ComboBoxItem
 
 ### Extends
@@ -7,6 +9,8 @@
 - `LightElement`
 
 ### Constructors
+
+<a id="constructors" name="constructors"></a>
 
 #### new ComboBoxItem(undefined)
 
@@ -32,6 +36,8 @@ LightElement.constructor
 
 ### Methods
 
+<a id="createrenderroot" name="createrenderroot"></a>
+
 #### createRenderRoot()
 
 ```ts
@@ -45,6 +51,8 @@ createRenderRoot(): ComboBoxItem
 ##### Inherited from
 
 LightElement.createRenderRoot
+
+<a id="sethidden" name="sethidden"></a>
 
 #### setHidden()
 
@@ -64,6 +72,8 @@ setHidden(hidden): void
 
 LightElement.setHidden
 
+<a id="updated" name="updated"></a>
+
 #### updated()
 
 ```ts
@@ -80,6 +90,8 @@ LightElement.updated
 
 ***
 
+<a id="comboboxitemprops" name="comboboxitemprops"></a>
+
 ## ComboBoxItemProps
 
 ```ts
@@ -93,6 +105,8 @@ type ComboBoxItemProps: object;
 | `onSelect` | `VoidFunction` | - |
 
 ***
+
+<a id="propnames" name="propnames"></a>
 
 ## propNames
 

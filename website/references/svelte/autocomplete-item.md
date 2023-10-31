@@ -1,5 +1,7 @@
 # prosekit/svelte/autocomplete-item
 
+<a id="autocompleteitemprops" name="autocompleteitemprops"></a>
+
 ## AutocompleteItemProps
 
 ```ts
@@ -13,6 +15,8 @@ type AutocompleteItemProps: object & AutocompleteItemProps;
 | `class` | `string` | - |
 
 ***
+
+<a id="autocompleteitem" name="autocompleteitem"></a>
 
 ## AutocompleteItem
 

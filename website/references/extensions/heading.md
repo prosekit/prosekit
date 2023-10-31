@@ -1,5 +1,7 @@
 # prosekit/extensions/heading
 
+<a id="headingattrs" name="headingattrs"></a>
+
 ## HeadingAttrs
 
 ### Properties
@@ -9,6 +11,8 @@
 | `level` | `number` | - |
 
 ***
+
+<a id="defineheading" name="defineheading"></a>
 
 ## defineHeading()
 
@@ -22,6 +26,8 @@ defineHeading(): Extension<object>
 
 ***
 
+<a id="defineheadingcommands" name="defineheadingcommands"></a>
+
 ## defineHeadingCommands()
 
 ```ts
@@ -33,6 +39,8 @@ defineHeadingCommands(): Extension<object>
 [`Extension`](../core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="defineheadinginputrule" name="defineheadinginputrule"></a>
 
 ## defineHeadingInputRule()
 
@@ -46,6 +54,8 @@ defineHeadingInputRule(): Extension<ExtensionTyping<string, string, CommandArgs>
 
 ***
 
+<a id="defineheadingkeymap" name="defineheadingkeymap"></a>
+
 ## defineHeadingKeymap()
 
 ```ts
@@ -57,6 +67,8 @@ defineHeadingKeymap(): Extension<ExtensionTyping<string, string, CommandArgs>>
 [`Extension`](../core.md#extensiont)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>
 
 ***
+
+<a id="defineheadingspec" name="defineheadingspec"></a>
 
 ## defineHeadingSpec()
 

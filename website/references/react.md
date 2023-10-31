@@ -1,5 +1,7 @@
 # prosekit/react
 
+<a id="prosekitprops" name="prosekitprops"></a>
+
 ## ProseKitProps
 
 ### Properties
@@ -10,6 +12,8 @@
 | `editor` | [`Editor`](core.md#editore)\<`any`\> | - |
 
 ***
+
+<a id="reactnodeviewoptions" name="reactnodeviewoptions"></a>
 
 ## ReactNodeViewOptions
 
@@ -24,6 +28,8 @@
 
 ***
 
+<a id="useeditoroptions" name="useeditoroptions"></a>
+
 ## UseEditorOptions
 
 ### Properties
@@ -34,6 +40,8 @@
 
 ***
 
+<a id="reactnodeviewcomponentprops" name="reactnodeviewcomponentprops"></a>
+
 ## ReactNodeViewComponentProps
 
 ```ts
@@ -42,6 +50,8 @@ type ReactNodeViewComponentProps: NodeViewContext;
 
 ***
 
+<a id="prosekit" name="prosekit"></a>
+
 ## ProseKit
 
 ```ts
@@ -49,6 +59,8 @@ const ProseKit: ComponentType<ProseKitProps>;
 ```
 
 ***
+
+<a id="definereactnodeview" name="definereactnodeview"></a>
 
 ## defineReactNodeView()
 
@@ -65,6 +77,8 @@ defineReactNodeView(options): Extension
 [`Extension`](core.md#extensiont)
 
 ***
+
+<a id="useeditor" name="useeditor"></a>
 
 ## useEditor()
 
@@ -86,6 +100,8 @@ useEditor<E>(options?): Editor<E>
 
 ***
 
+<a id="useextension" name="useextension"></a>
+
 ## useExtension()
 
 ```ts
@@ -101,6 +117,8 @@ useExtension(__namedParameters): void
 `void`
 
 ***
+
+<a id="usekeymap" name="usekeymap"></a>
 
 ## useKeymap()
 

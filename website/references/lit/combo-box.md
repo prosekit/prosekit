@@ -1,5 +1,7 @@
 # prosekit/lit/combo-box
 
+<a id="combobox" name="combobox"></a>
+
 ## ComboBox
 
 A custom element that displays a popover anchored to a reference element.
@@ -23,6 +25,8 @@ A custom element that displays a popover anchored to a reference element.
 
 ### Accessors
 
+<a id="items" name="items"></a>
+
 #### items
 
 ```ts
@@ -34,6 +38,8 @@ get items(): ComboBoxItem[]
 [`ComboBoxItem`](combo-box-item.md#comboboxitem)[]
 
 ### Methods
+
+<a id="createrenderroot" name="createrenderroot"></a>
 
 #### createRenderRoot()
 
@@ -48,6 +54,8 @@ createRenderRoot(): ComboBox
 ##### Inherited from
 
 [`Popover`](popover.md#popover).[`createRenderRoot`](popover.md#createrenderroot)
+
+<a id="sethidden" name="sethidden"></a>
 
 #### setHidden()
 
@@ -69,6 +77,8 @@ setHidden(hidden): void
 
 ***
 
+<a id="comboboxprops" name="comboboxprops"></a>
+
 ## ComboBoxProps
 
 ### Extends
@@ -87,6 +97,8 @@ setHidden(hidden): void
 | `reference`? | [`Element`]( https://developer.mozilla.org/en-US/docs/Web/API/Element ) \| [`VirtualElement`]( https://floating-ui.com/docs/virtual-elements ) | - | [`PopoverProps`](popover.md#popoverprops).`reference` |
 
 ***
+
+<a id="propnames" name="propnames"></a>
 
 ## propNames
 

@@ -1,5 +1,7 @@
 # prosekit/lit/code-block-popover
 
+<a id="codeblockpopover" name="codeblockpopover"></a>
+
 ## CodeBlockPopover
 
 A custom element that displays a popover anchored to a reference element.
@@ -25,6 +27,8 @@ A custom element that displays a popover anchored to a reference element.
 
 ### Methods
 
+<a id="createrenderroot" name="createrenderroot"></a>
+
 #### createRenderRoot()
 
 ```ts
@@ -38,6 +42,8 @@ createRenderRoot(): CodeBlockPopover
 ##### Inherited from
 
 [`Popover`](popover.md#popover).[`createRenderRoot`](popover.md#createrenderroot)
+
+<a id="sethidden" name="sethidden"></a>
 
 #### setHidden()
 
@@ -57,6 +63,8 @@ setHidden(hidden): void
 
 [`Popover`](popover.md#popover).[`setHidden`](popover.md#sethidden)
 
+<a id="updated" name="updated"></a>
+
 #### updated()
 
 ```ts
@@ -73,6 +81,8 @@ Popover.updated
 
 ***
 
+<a id="codeblockpopoverprops" name="codeblockpopoverprops"></a>
+
 ## CodeBlockPopoverProps
 
 ### Properties
@@ -82,6 +92,8 @@ Popover.updated
 | `editor` | [`Editor`](../core.md#editore)\<`any`\> | - |
 
 ***
+
+<a id="propnames" name="propnames"></a>
 
 ## propNames
 

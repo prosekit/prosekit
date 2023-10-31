@@ -1,5 +1,7 @@
 # prosekit/extensions/bold
 
+<a id="definebold" name="definebold"></a>
+
 ## defineBold()
 
 ```ts
@@ -11,6 +13,8 @@ defineBold(): Extension<object>
 [`Extension`](../core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="defineboldcommands" name="defineboldcommands"></a>
 
 ## defineBoldCommands()
 
@@ -24,6 +28,8 @@ defineBoldCommands(): Extension<object>
 
 ***
 
+<a id="defineboldkeymap" name="defineboldkeymap"></a>
+
 ## defineBoldKeymap()
 
 ```ts
@@ -35,6 +41,8 @@ defineBoldKeymap(): Extension<ExtensionTyping<string, string, CommandArgs>>
 [`Extension`](../core.md#extensiont)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>
 
 ***
+
+<a id="defineboldspec" name="defineboldspec"></a>
 
 ## defineBoldSpec()
 

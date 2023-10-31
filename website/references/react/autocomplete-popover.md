@@ -1,8 +1,12 @@
 # prosekit/react/autocomplete-popover
 
+<a id="popoveroptions" name="popoveroptions"></a>
+
 ## PopoverOptions
 
 Re-exports [PopoverOptions](../lit/autocomplete-popover.md#popoveroptions)
+
+<a id="autocompletepopoverprops" name="autocompletepopoverprops"></a>
 
 ## AutocompletePopoverProps
 
@@ -11,6 +15,8 @@ type AutocompletePopoverProps: SimplifyUnion<object & AutocompletePopoverProps>;
 ```
 
 ***
+
+<a id="autocompletepopover" name="autocompletepopover"></a>
 
 ## AutocompletePopover()
 

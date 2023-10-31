@@ -1,5 +1,7 @@
 # prosekit/vue
 
+<a id="prosekitprops" name="prosekitprops"></a>
+
 ## ProseKitProps
 
 ### Properties
@@ -9,6 +11,8 @@
 | `editor` | [`Editor`](core.md#editore)\<`any`\> | - |
 
 ***
+
+<a id="prosekit" name="prosekit"></a>
 
 ## ProseKit()
 
@@ -26,6 +30,8 @@ ProseKit(props): any
 
 ***
 
+<a id="useeditor" name="useeditor"></a>
+
 ## useEditor()
 
 ```ts
@@ -42,6 +48,8 @@ useEditor<E>(): Editor<E>
 
 ***
 
+<a id="useeditorref" name="useeditorref"></a>
+
 ## useEditorRef()
 
 ```ts
@@ -57,6 +65,8 @@ useEditorRef<E>(): ShallowRef<Editor<E>>
 `ShallowRef`\<[`Editor`](core.md#editore)\<`E`\>\>
 
 ***
+
+<a id="usekeymap" name="usekeymap"></a>
 
 ## useKeymap()
 

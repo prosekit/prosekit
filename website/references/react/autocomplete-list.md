@@ -1,5 +1,7 @@
 # prosekit/react/autocomplete-list
 
+<a id="autocompletelistprops" name="autocompletelistprops"></a>
+
 ## AutocompleteListProps
 
 ```ts
@@ -7,6 +9,8 @@ type AutocompleteListProps: SimplifyUnion<object & AutocompleteListProps>;
 ```
 
 ***
+
+<a id="autocompletelist" name="autocompletelist"></a>
 
 ## AutocompleteList()
 

@@ -1,8 +1,12 @@
 # prosekit/vue/autocomplete-popover
 
+<a id="popoveroptions" name="popoveroptions"></a>
+
 ## PopoverOptions
 
 Re-exports [PopoverOptions](../lit/autocomplete-popover.md#popoveroptions)
+
+<a id="autocompletepopoverprops" name="autocompletepopoverprops"></a>
 
 ## AutocompletePopoverProps
 
@@ -17,6 +21,8 @@ type AutocompletePopoverProps: object & AutocompletePopoverProps;
 | `class` | `string` | - |
 
 ***
+
+<a id="autocompletepopover" name="autocompletepopover"></a>
 
 ## AutocompletePopover()
 

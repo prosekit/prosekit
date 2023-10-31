@@ -1,5 +1,7 @@
 # prosekit/solid/popover
 
+<a id="popoverprops" name="popoverprops"></a>
+
 ## PopoverProps
 
 ```ts
@@ -14,6 +16,8 @@ type PopoverProps: object & PopoverProps;
 | `class` | `string` | - |
 
 ***
+
+<a id="popover" name="popover"></a>
 
 ## Popover()
 

@@ -1,5 +1,7 @@
 # prosekit/solid/autocomplete-list
 
+<a id="autocompletelistprops" name="autocompletelistprops"></a>
+
 ## AutocompleteListProps
 
 ```ts
@@ -14,6 +16,8 @@ type AutocompleteListProps: object & AutocompleteListProps;
 | `class` | `string` | - |
 
 ***
+
+<a id="autocompletelist" name="autocompletelist"></a>
 
 ## AutocompleteList()
 

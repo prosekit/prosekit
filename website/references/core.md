@@ -1,5 +1,7 @@
 # prosekit/core
 
+<a id="priority" name="priority"></a>
+
 ## Priority
 
 ### Enumeration Members
@@ -14,6 +16,8 @@
 
 ***
 
+<a id="editore" name="editore"></a>
+
 ## Editor`<E>`
 
 ### Type parameters
@@ -21,6 +25,8 @@
 ▪ **E** extends [`Extension`](core.md#extensiont) = `any`
 
 ### Constructors
+
+<a id="constructors" name="constructors"></a>
 
 #### new Editor(instance)
 
@@ -45,6 +51,8 @@ private new Editor<E>(instance): Editor<E>
 
 ### Accessors
 
+<a id="commands" name="commands"></a>
+
 #### commands
 
 ```ts
@@ -54,6 +62,8 @@ get commands(): ToCommandApplier<ExtractCommandArgs<E>>
 ##### Returns
 
 `ToCommandApplier`\<`ExtractCommandArgs`\<`E`\>\>
+
+<a id="marks" name="marks"></a>
 
 #### marks
 
@@ -65,6 +75,8 @@ get marks(): Record<ExtractMarks<E>, MarkBuilder>
 
 `Record`\<[`ExtractMarks`](core.md#extractmarkse)\<`E`\>, `MarkBuilder`\>
 
+<a id="mounted" name="mounted"></a>
+
 #### mounted
 
 ```ts
@@ -74,6 +86,8 @@ get mounted(): boolean
 ##### Returns
 
 `boolean`
+
+<a id="nodes" name="nodes"></a>
 
 #### nodes
 
@@ -85,6 +99,8 @@ get nodes(): Record<ExtractNodes<E>, NodeBuilder>
 
 `Record`\<[`ExtractNodes`](core.md#extractnodese)\<`E`\>, `NodeBuilder`\>
 
+<a id="schema" name="schema"></a>
+
 #### schema
 
 ```ts
@@ -94,6 +110,8 @@ get schema(): Schema<ExtractNodes<E>, ExtractMarks<E>>
 ##### Returns
 
 [`Schema`]( https://prosemirror.net/docs/ref/#model.Schema )\<[`ExtractNodes`](core.md#extractnodese)\<`E`\>, [`ExtractMarks`](core.md#extractmarkse)\<`E`\>\>
+
+<a id="view" name="view"></a>
 
 #### view
 
@@ -106,6 +124,8 @@ get view(): EditorView
 [`EditorView`]( https://prosemirror.net/docs/ref/#view.EditorView )
 
 ### Methods
+
+<a id="ismarkactive" name="ismarkactive"></a>
 
 #### isMarkActive()
 
@@ -125,6 +145,8 @@ isMarkActive(markType, attrs?): boolean
 
 ##### Deprecated
 
+<a id="isnodeactive" name="isnodeactive"></a>
+
 #### isNodeActive()
 
 ```ts
@@ -143,6 +165,8 @@ isNodeActive(nodeType, attrs?): boolean
 
 ##### Deprecated
 
+<a id="mount" name="mount"></a>
+
 #### mount()
 
 ```ts
@@ -157,6 +181,8 @@ mount(place): void
 
 `void`
 
+<a id="unmount" name="unmount"></a>
+
 #### unmount()
 
 ```ts
@@ -166,6 +192,8 @@ unmount(): void
 ##### Returns
 
 `void`
+
+<a id="use" name="use"></a>
 
 #### use()
 
@@ -183,6 +211,8 @@ use(extension): VoidFunction
 
 ***
 
+<a id="facetinput-output" name="facetinput-output"></a>
+
 ## Facet`<Input, Output>`
 
 ### Type parameters
@@ -192,6 +222,8 @@ use(extension): VoidFunction
 ▪ **Output**
 
 ### Constructors
+
+<a id="constructors-1" name="constructors-1"></a>
 
 #### new Facet(converter, next, singleton)
 
@@ -216,6 +248,8 @@ singleton): Facet<Input, Output>
 
 ### Methods
 
+<a id="extension" name="extension"></a>
+
 #### extension()
 
 ```ts
@@ -229,6 +263,8 @@ extension(payloads): FacetExtension<Input, Output>
 ##### Returns
 
 [`FacetExtension`](core.md#facetextensioninput-output)\<`Input`, `Output`\>
+
+<a id="define" name="define"></a>
 
 #### define()
 
@@ -252,6 +288,8 @@ static define<Input, Output>(__namedParameters): Facet<Input, Output>
 
 ***
 
+<a id="facetextensioninput-output" name="facetextensioninput-output"></a>
+
 ## FacetExtension`<Input, Output>`
 
 ### Type parameters
@@ -261,6 +299,8 @@ static define<Input, Output>(__namedParameters): Facet<Input, Output>
 ▪ **Output**
 
 ### Constructors
+
+<a id="constructors-2" name="constructors-2"></a>
 
 #### new FacetExtension(facet, payloads)
 
@@ -288,6 +328,8 @@ new FacetExtension<Input, Output>(facet, payloads): FacetExtension<Input, Output
 
 ***
 
+<a id="prosekiterror" name="prosekiterror"></a>
+
 ## ProseKitError
 
 Base class for all ProseKit errors.
@@ -297,6 +339,8 @@ Base class for all ProseKit errors.
 - [`Error`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error )
 
 ### Constructors
+
+<a id="constructors-3" name="constructors-3"></a>
 
 #### new ProseKitError(message)
 
@@ -338,6 +382,8 @@ Error.constructor
 
 ***
 
+<a id="defaultstateoptions" name="defaultstateoptions"></a>
+
 ## DefaultStateOptions
 
 ### Properties
@@ -348,6 +394,8 @@ Error.constructor
 | `selection`? | [`SelectionJson`](core.md#selectionjson) | A JSON representation of a ProseMirror selection. |
 
 ***
+
+<a id="editoroptionse" name="editoroptionse"></a>
 
 ## EditorOptions`<E>`
 
@@ -365,6 +413,8 @@ Error.constructor
 
 ***
 
+<a id="extensiont" name="extensiont"></a>
+
 ## Extension`<T>`
 
 ### Type parameters
@@ -380,6 +430,8 @@ Error.constructor
 | `priority`? | [`Priority`](core.md#priority) | - |
 
 ***
+
+<a id="facetoptionsinput-output" name="facetoptionsinput-output"></a>
 
 ## FacetOptions`<Input, Output>`
 
@@ -400,6 +452,8 @@ Error.constructor
 
 ***
 
+<a id="keymap" name="keymap"></a>
+
 ## Keymap
 
 ### Indexable
@@ -407,6 +461,8 @@ Error.constructor
  \[`key`: `string`\]: [`Command`]( https://prosemirror.net/docs/ref/#state.Command )
 
 ***
+
+<a id="markspecoptionsmarkname" name="markspecoptionsmarkname"></a>
 
 ## MarkSpecOptions`<MarkName>`
 
@@ -426,6 +482,8 @@ Error.constructor
 
 ***
 
+<a id="nodejson" name="nodejson"></a>
+
 ## NodeJson
 
 A JSON representation of the prosemirror node.
@@ -441,6 +499,8 @@ A JSON representation of the prosemirror node.
 | `type` | `string` | - |
 
 ***
+
+<a id="nodespecoptionsnodename" name="nodespecoptionsnodename"></a>
 
 ## NodeSpecOptions`<NodeName>`
 
@@ -461,6 +521,8 @@ A JSON representation of the prosemirror node.
 
 ***
 
+<a id="nodeviewoptions" name="nodeviewoptions"></a>
+
 ## NodeViewOptions
 
 ### Properties
@@ -471,6 +533,8 @@ A JSON representation of the prosemirror node.
 | `name` | `string` | - |
 
 ***
+
+<a id="selectionjson" name="selectionjson"></a>
 
 ## SelectionJson
 
@@ -486,6 +550,8 @@ A JSON representation of the prosemirror selection.
 
 ***
 
+<a id="statejson" name="statejson"></a>
+
 ## StateJson
 
 A JSON representation of the prosemirror state.
@@ -498,6 +564,8 @@ A JSON representation of the prosemirror state.
 | `selection` | [`SelectionJson`](core.md#selectionjson) | The current selection. |
 
 ***
+
+<a id="extractcommandapplierse" name="extractcommandapplierse"></a>
 
 ## ExtractCommandAppliers`<E>`
 
@@ -513,6 +581,8 @@ type ExtractCommandAppliers<E>: ToCommandApplier<ExtractCommandArgs<E>>;
 
 ***
 
+<a id="extractcommandcreatorse" name="extractcommandcreatorse"></a>
+
 ## ExtractCommandCreators`<E>`
 
 ```ts
@@ -526,6 +596,8 @@ type ExtractCommandCreators<E>: ToCommandCreators<ExtractCommandArgs<E>>;
 | `E` extends [`Extension`](core.md#extensiont) |
 
 ***
+
+<a id="extractmarkse" name="extractmarkse"></a>
 
 ## ExtractMarks`<E>`
 
@@ -541,6 +613,8 @@ type ExtractMarks<E>: ExtractMarksFromTyping<ExtractTyping<E>>;
 
 ***
 
+<a id="extractnodese" name="extractnodese"></a>
+
 ## ExtractNodes`<E>`
 
 ```ts
@@ -555,6 +629,8 @@ type ExtractNodes<E>: ExtractNodesFromTyping<ExtractTyping<E>>;
 
 ***
 
+<a id="nodevieweffectoptions" name="nodevieweffectoptions"></a>
+
 ## NodeViewEffectOptions
 
 ```ts
@@ -562,6 +638,8 @@ type NodeViewEffectOptions: object | object;
 ```
 
 ***
+
+<a id="simplifyuniont" name="simplifyuniont"></a>
 
 ## SimplifyUnion`<T>`
 
@@ -578,6 +656,8 @@ type SimplifyUnion<T>: Simplify<UnionToIntersection<T>>;
 | `T` |
 
 ***
+
+<a id="addmark" name="addmark"></a>
 
 ## addMark()
 
@@ -607,6 +687,8 @@ The end position of the mark. By default it will be the end position of current 
 
 ***
 
+<a id="createeditor" name="createeditor"></a>
+
 ## createEditor()
 
 ```ts
@@ -627,6 +709,8 @@ createEditor<E>(__namedParameters): Editor<E>
 
 ***
 
+<a id="definebasecommands" name="definebasecommands"></a>
+
 ## defineBaseCommands()
 
 ```ts
@@ -641,6 +725,8 @@ Add some base commands
 
 ***
 
+<a id="definebasekeymap" name="definebasekeymap"></a>
+
 ## defineBaseKeymap()
 
 ```ts
@@ -652,6 +738,8 @@ defineBaseKeymap(): Extension<ExtensionTyping<string, string, CommandArgs>>
 [`Extension`](core.md#extensiont)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>
 
 ***
+
+<a id="definecommands" name="definecommands"></a>
 
 ## defineCommands()
 
@@ -673,6 +761,8 @@ defineCommands<T>(commands): Extension<object>
 
 ***
 
+<a id="definedefaultstate" name="definedefaultstate"></a>
+
 ## defineDefaultState()
 
 ```ts
@@ -689,6 +779,8 @@ defineDefaultState(options): Extension
 
 ***
 
+<a id="definedoc" name="definedoc"></a>
+
 ## defineDoc()
 
 ```ts
@@ -700,6 +792,8 @@ defineDoc(): Extension<object>
 [`Extension`](core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="definehistory" name="definehistory"></a>
 
 ## defineHistory()
 
@@ -714,6 +808,8 @@ Add undo/redo history to the editor.
 [`Extension`](core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="defineinputrule" name="defineinputrule"></a>
 
 ## defineInputRule()
 
@@ -731,6 +827,8 @@ defineInputRule(rules): Extension
 
 ***
 
+<a id="definekeymap" name="definekeymap"></a>
+
 ## defineKeymap()
 
 ```ts
@@ -746,6 +844,8 @@ defineKeymap(keymap): Extension
 [`Extension`](core.md#extensiont)
 
 ***
+
+<a id="definemarkspec" name="definemarkspec"></a>
 
 ## defineMarkSpec()
 
@@ -767,6 +867,8 @@ defineMarkSpec<Mark>(options): Extension<object>
 
 ***
 
+<a id="definenodespec" name="definenodespec"></a>
+
 ## defineNodeSpec()
 
 ```ts
@@ -787,6 +889,8 @@ defineNodeSpec<NodeName>(options): Extension<object>
 
 ***
 
+<a id="definenodeview" name="definenodeview"></a>
+
 ## defineNodeView()
 
 ```ts
@@ -802,6 +906,8 @@ defineNodeView(options): Extension
 [`Extension`](core.md#extensiont)
 
 ***
+
+<a id="definenodevieweffect" name="definenodevieweffect"></a>
 
 ## defineNodeViewEffect()
 
@@ -819,6 +925,8 @@ defineNodeViewEffect(options): Extension
 
 ***
 
+<a id="defineparagraph" name="defineparagraph"></a>
+
 ## defineParagraph()
 
 ```ts
@@ -832,6 +940,8 @@ Defines a paragraph node spec as the highest priority, because it should be the 
 [`Extension`](core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="defineplugin" name="defineplugin"></a>
 
 ## definePlugin()
 
@@ -854,6 +964,8 @@ function that returns an array of plugins.
 
 ***
 
+<a id="definetext" name="definetext"></a>
+
 ## defineText()
 
 ```ts
@@ -865,6 +977,8 @@ defineText(): Extension<object>
 [`Extension`](core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="insertnode" name="insertnode"></a>
 
 ## insertNode()
 
@@ -908,6 +1022,8 @@ insertNode(options): Command
 
 ***
 
+<a id="setblocktype" name="setblocktype"></a>
+
 ## setBlockType()
 
 ```ts
@@ -935,6 +1051,8 @@ type with the given attributes.
 
 ***
 
+<a id="togglemark" name="togglemark"></a>
+
 ## toggleMark()
 
 ```ts
@@ -954,6 +1072,8 @@ toggleMark(__namedParameters): Command
 [`Command`]( https://prosemirror.net/docs/ref/#state.Command )
 
 ***
+
+<a id="togglenode" name="togglenode"></a>
 
 ## toggleNode()
 
@@ -975,6 +1095,8 @@ toggleNode(__namedParameters): Command
 
 ***
 
+<a id="union" name="union"></a>
+
 ## union()
 
 ```ts
@@ -994,6 +1116,8 @@ union<E>(extension): SimplifyExtension<E>
 `SimplifyExtension`\<`E`\>
 
 ***
+
+<a id="withpriority" name="withpriority"></a>
 
 ## withPriority()
 

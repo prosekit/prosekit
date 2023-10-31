@@ -1,5 +1,7 @@
 # prosekit/lit/autocomplete-empty
 
+<a id="autocompleteempty" name="autocompleteempty"></a>
+
 ## AutocompleteEmpty
 
 ### Extends
@@ -11,6 +13,8 @@
 - [`AutocompleteEmptyProps`](autocomplete-empty.md#autocompleteemptyprops)
 
 ### Constructors
+
+<a id="constructors" name="constructors"></a>
 
 #### new AutocompleteEmpty(undefined)
 
@@ -34,6 +38,8 @@ LightElement.constructor
 
 ### Methods
 
+<a id="connectedcallback" name="connectedcallback"></a>
+
 #### connectedCallback()
 
 ```ts
@@ -48,6 +54,8 @@ connectedCallback(): void
 
 LightElement.connectedCallback
 
+<a id="createrenderroot" name="createrenderroot"></a>
+
 #### createRenderRoot()
 
 ```ts
@@ -61,6 +69,8 @@ createRenderRoot(): AutocompleteEmpty
 ##### Inherited from
 
 LightElement.createRenderRoot
+
+<a id="sethidden" name="sethidden"></a>
 
 #### setHidden()
 
@@ -79,6 +89,8 @@ setHidden(hidden): void
 ##### Inherited from
 
 LightElement.setHidden
+
+<a id="willupdate" name="willupdate"></a>
 
 #### willUpdate()
 
@@ -100,9 +112,13 @@ LightElement.willUpdate
 
 ***
 
+<a id="autocompleteemptyprops" name="autocompleteemptyprops"></a>
+
 ## AutocompleteEmptyProps
 
 ***
+
+<a id="propnames" name="propnames"></a>
 
 ## propNames
 

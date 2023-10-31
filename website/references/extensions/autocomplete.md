@@ -1,8 +1,12 @@
 # prosekit/extensions/autocomplete
 
+<a id="autocompleterule" name="autocompleterule"></a>
+
 ## AutocompleteRule
 
 ### Constructors
+
+<a id="constructors" name="constructors"></a>
 
 #### new AutocompleteRule(options)
 
@@ -37,6 +41,8 @@ new AutocompleteRule(options): AutocompleteRule
 
 ***
 
+<a id="matchhandler" name="matchhandler"></a>
+
 ## MatchHandler
 
 ```ts
@@ -64,6 +70,8 @@ type MatchHandler: (options) => Transaction | null | void;
 [`Transaction`]( https://prosemirror.net/docs/ref/#state.Transaction ) \| `null` \| `void`
 
 ***
+
+<a id="defineautocomplete" name="defineautocomplete"></a>
 
 ## defineAutocomplete()
 

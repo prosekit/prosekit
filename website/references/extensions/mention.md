@@ -1,5 +1,7 @@
 # prosekit/extensions/mention
 
+<a id="mentionattrs" name="mentionattrs"></a>
+
 ## MentionAttrs
 
 ### Properties
@@ -12,6 +14,8 @@
 
 ***
 
+<a id="definemention" name="definemention"></a>
+
 ## defineMention()
 
 ```ts
@@ -23,6 +27,8 @@ defineMention(): Extension<object>
 [`Extension`](../core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="definementionspec" name="definementionspec"></a>
 
 ## defineMentionSpec()
 

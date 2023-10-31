@@ -1,5 +1,7 @@
 # prosekit/lit/combo-box-input
 
+<a id="comboboxinput" name="comboboxinput"></a>
+
 ## ComboBoxInput
 
 ### Extends
@@ -7,6 +9,8 @@
 - `LightElement`
 
 ### Constructors
+
+<a id="constructors" name="constructors"></a>
 
 #### new ComboBoxInput(undefined)
 
@@ -32,6 +36,8 @@ LightElement.constructor
 
 ### Methods
 
+<a id="createrenderroot" name="createrenderroot"></a>
+
 #### createRenderRoot()
 
 ```ts
@@ -45,6 +51,8 @@ createRenderRoot(): ComboBoxInput
 ##### Inherited from
 
 LightElement.createRenderRoot
+
+<a id="firstupdated" name="firstupdated"></a>
 
 #### firstUpdated()
 
@@ -60,6 +68,8 @@ protected firstUpdated(): void
 
 LightElement.firstUpdated
 
+<a id="handleinput" name="handleinput"></a>
+
 #### handleInput()
 
 ```ts
@@ -74,6 +84,8 @@ private handleInput(event): void
 
 `void`
 
+<a id="handlekeydown" name="handlekeydown"></a>
+
 #### handleKeydown()
 
 ```ts
@@ -87,6 +99,8 @@ private handleKeydown(event): void
 ##### Returns
 
 `void`
+
+<a id="sethidden" name="sethidden"></a>
 
 #### setHidden()
 
@@ -108,6 +122,8 @@ LightElement.setHidden
 
 ***
 
+<a id="comboboxinputprops" name="comboboxinputprops"></a>
+
 ## ComboBoxInputProps
 
 ### Properties
@@ -117,6 +133,8 @@ LightElement.setHidden
 | `placeholder`? | `string` | - |
 
 ***
+
+<a id="propnames" name="propnames"></a>
 
 ## propNames
 

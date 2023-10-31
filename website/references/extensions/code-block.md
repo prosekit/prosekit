@@ -1,5 +1,7 @@
 # prosekit/extensions/code-block
 
+<a id="codeblockattrs" name="codeblockattrs"></a>
+
 ## CodeBlockAttrs
 
 ### Properties
@@ -9,6 +11,8 @@
 | `language`? | `string` | - |
 
 ***
+
+<a id="definecodeblock" name="definecodeblock"></a>
 
 ## defineCodeBlock()
 
@@ -28,6 +32,8 @@ defineCodeBlock(options?): Extension<object>
 
 ***
 
+<a id="definecodeblockcommands" name="definecodeblockcommands"></a>
+
 ## defineCodeBlockCommands()
 
 ```ts
@@ -40,6 +46,8 @@ defineCodeBlockCommands(): Extension<object>
 
 ***
 
+<a id="definecodeblockinputrule" name="definecodeblockinputrule"></a>
+
 ## defineCodeBlockInputRule()
 
 ```ts
@@ -51,6 +59,8 @@ defineCodeBlockInputRule(): Extension<ExtensionTyping<string, string, CommandArg
 [`Extension`](../core.md#extensiont)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>
 
 ***
+
+<a id="definecodeblockspec" name="definecodeblockspec"></a>
 
 ## defineCodeBlockSpec()
 

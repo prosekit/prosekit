@@ -1,5 +1,7 @@
 # prosekit/react/code-block-popover
 
+<a id="codeblockpopoverprops" name="codeblockpopoverprops"></a>
+
 ## CodeBlockPopoverProps
 
 ```ts
@@ -7,6 +9,8 @@ type CodeBlockPopoverProps: SimplifyUnion<object & CodeBlockPopoverProps>;
 ```
 
 ***
+
+<a id="codeblockpopover" name="codeblockpopover"></a>
 
 ## CodeBlockPopover()
 

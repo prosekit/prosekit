@@ -1,5 +1,7 @@
 # prosekit/extensions/suggestion
 
+<a id="predictionrule" name="predictionrule"></a>
+
 ## PredictionRule
 
 ### Properties
@@ -10,6 +12,8 @@
 | `matchAfter`? | [`RegExp`]( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp ) | - |
 
 ***
+
+<a id="suggestionoptions" name="suggestionoptions"></a>
 
 ## SuggestionOptions
 
@@ -23,6 +27,8 @@
 | `rules` | [`PredictionRule`](suggestion.md#predictionrule)[] | - |
 
 ***
+
+<a id="definesuggestion" name="definesuggestion"></a>
 
 ## defineSuggestion()
 

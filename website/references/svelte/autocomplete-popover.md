@@ -1,5 +1,7 @@
 # prosekit/svelte/autocomplete-popover
 
+<a id="autocompletepopoverprops" name="autocompletepopoverprops"></a>
+
 ## AutocompletePopoverProps
 
 ```ts
@@ -13,6 +15,8 @@ type AutocompletePopoverProps: object & AutocompletePopoverProps;
 | `class` | `string` | - |
 
 ***
+
+<a id="autocompletepopover" name="autocompletepopover"></a>
 
 ## AutocompletePopover
 

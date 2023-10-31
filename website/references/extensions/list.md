@@ -1,5 +1,7 @@
 # prosekit/extensions/list
 
+<a id="definelist" name="definelist"></a>
+
 ## defineList()
 
 ```ts
@@ -11,6 +13,8 @@ defineList(): Extension<object>
 [`Extension`](../core.md#extensiont)\<`object`\>
 
 ***
+
+<a id="definelistcommands" name="definelistcommands"></a>
 
 ## defineListCommands()
 
@@ -24,6 +28,8 @@ defineListCommands(): Extension<object>
 
 ***
 
+<a id="definelistinputrules" name="definelistinputrules"></a>
+
 ## defineListInputRules()
 
 ```ts
@@ -35,6 +41,8 @@ defineListInputRules(): Extension<ExtensionTyping<string, string, CommandArgs>>
 [`Extension`](../core.md#extensiont)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>
 
 ***
+
+<a id="definelistkeymap" name="definelistkeymap"></a>
 
 ## defineListKeymap()
 
@@ -50,6 +58,8 @@ Returns a extension that adds key bindings for list.
 
 ***
 
+<a id="definelistplugins" name="definelistplugins"></a>
+
 ## defineListPlugins()
 
 ```ts
@@ -61,6 +71,8 @@ defineListPlugins(): Extension<ExtensionTyping<string, string, CommandArgs>>
 [`Extension`](../core.md#extensiont)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>
 
 ***
+
+<a id="definelistspec" name="definelistspec"></a>
 
 ## defineListSpec()
 

@@ -4,3 +4,4 @@ CHANGELOG.md
 *.gen.tsx
 *.gen.css
 .tsup
+.temp

@@ -110,6 +110,10 @@
   margin: 2em 0;
 }
 
+.ProseMirror .prosemirror-flat-list {
+  line-height: 1.5;
+}
+
 .ProseMirror span[data-mention='user'] {
   border-radius: 0.5rem;
   color: rgb(59 130 246);

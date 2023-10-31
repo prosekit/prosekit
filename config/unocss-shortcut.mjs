@@ -71,5 +71,5 @@ export const shortcuts = {
   ICON_LIST_BULLET: 'i-ci-list-ul w-5 h-5',
   ICON_LIST_ORDERED: 'i-ci-list-ol w-5 h-5',
   ICON_LIST_TASK: 'i-ci-list-checklist w-5 h-5',
-  ICON_LIST_TOGGLE: "i-ci-sort-descending w-5 h-5 rotate-180"
+  ICON_LIST_TOGGLE: 'i-ci-sort-descending w-5 h-5 rotate-180',
 }

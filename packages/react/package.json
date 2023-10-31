@@ -45,7 +45,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@lit/react": "^1.0.0",
+    "@lit/react": "^1.0.1",
     "@prosekit/core": "^0.0.16",
     "@prosekit/lit": "^0.0.20",
     "@prosemirror-adapter/react": "^0.2.6"

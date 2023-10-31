@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@8.9.2",
+  "packageManager": "pnpm@8.10.0",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
@@ -50,7 +50,8 @@
       "tsup": "https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d"
     },
     "patchedDependencies": {
-      "prosemirror-highlightjs@0.9.1": "patches/prosemirror-highlightjs@0.9.1.patch"
+      "prosemirror-highlightjs@0.9.1": "patches/prosemirror-highlightjs@0.9.1.patch",
+      "typedoc@0.25.3": "patches/typedoc@0.25.3.patch"
     }
   }
 }

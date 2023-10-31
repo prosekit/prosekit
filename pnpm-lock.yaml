@@ -11,6 +11,9 @@ patchedDependencies:
   prosemirror-highlightjs@0.9.1:
     hash: uj5ddgn5nj4ptnyl3ffi4zkeei
     path: patches/prosemirror-highlightjs@0.9.1.patch
+  typedoc@0.25.3:
+    hash: h4pfjdv4nywwnzgforb3sf7tca
+    path: patches/typedoc@0.25.3.patch
 
 importers:
 
@@ -173,7 +176,7 @@ importers:
         specifier: ^4.17.10
         version: 4.17.10
       '@types/node':
-        specifier: ^20.8.5
+        specifier: ^20.8.9
         version: 20.8.9
       execa:
         specifier: ^8.0.1
@@ -210,7 +213,7 @@ importers:
         version: 0.4.3
       prosemirror-highlightjs:
         specifier: ^0.9.1
-        version: 0.9.1(patch_hash=uj5ddgn5nj4ptnyl3ffi4zkeei)(highlight.js@11.9.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.1)
+        version: 0.9.1(patch_hash=uj5ddgn5nj4ptnyl3ffi4zkeei)(highlight.js@11.9.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.2)
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -231,8 +234,8 @@ importers:
         specifier: ^1.5.3
         version: 1.5.3
       '@lit/context':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.1
+        version: 1.0.1
       '@prosekit/core':
         specifier: ^0.0.16
         version: link:../core
@@ -246,8 +249,8 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0
       lit:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^3.0.1
+        version: 3.0.1
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -292,8 +295,8 @@ importers:
         specifier: ^1.8.0
         version: 1.8.0
       prosemirror-view:
-        specifier: ^1.32.1
-        version: 1.32.1
+        specifier: ^1.32.2
+        version: 1.32.2
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -385,8 +388,8 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       solid-js:
-        specifier: ^1.8.4
-        version: 1.8.4
+        specifier: ^1.8.5
+        version: 1.8.5
       svelte:
         specifier: ^4.2.2
         version: 4.2.2
@@ -403,8 +406,8 @@ importers:
   packages/react:
     dependencies:
       '@lit/react':
-        specifier: ^1.0.0
-        version: 1.0.0(@types/react@18.2.33)
+        specifier: ^1.0.1
+        version: 1.0.1(@types/react@18.2.33)
       '@prosekit/core':
         specifier: ^0.0.16
         version: link:../core
@@ -453,8 +456,8 @@ importers:
         specifier: '*'
         version: link:../dev
       solid-js:
-        specifier: ^1.8.4
-        version: 1.8.4
+        specifier: ^1.8.5
+        version: 1.8.5
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
         version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
@@ -481,7 +484,7 @@ importers:
         specifier: ^2.2.2
         version: 2.2.2(svelte@4.2.2)(typescript@5.2.2)
       '@types/node':
-        specifier: ^20.8.5
+        specifier: ^20.8.9
         version: 20.8.9
       read-pkg:
         specifier: ^8.1.0
@@ -537,7 +540,7 @@ importers:
         version: 3.0.4(@types/react-dom@18.2.14)(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0)
       '@astrojs/solid-js':
         specifier: ^3.0.2
-        version: 3.0.2(solid-js@1.8.4)(vite@4.5.0)
+        version: 3.0.2(solid-js@1.8.5)(vite@4.5.0)
       '@astrojs/svelte':
         specifier: ^4.0.3
         version: 4.0.3(astro@3.4.0)(svelte@4.2.2)(typescript@5.2.2)(vite@4.5.0)
@@ -548,8 +551,8 @@ importers:
         specifier: ^1.1.10
         version: 1.1.10
       '@iconify-json/material-symbols':
-        specifier: ^1.1.60
-        version: 1.1.60
+        specifier: ^1.1.61
+        version: 1.1.61
       '@iconify-json/radix-icons':
         specifier: ^1.1.11
         version: 1.1.11
@@ -566,8 +569,8 @@ importers:
         specifier: ^11.9.0
         version: 11.9.0
       lit:
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^3.0.1
+        version: 3.0.1
       preact:
         specifier: ^10.18.1
         version: 10.18.1
@@ -581,8 +584,8 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       solid-js:
-        specifier: ^1.8.4
-        version: 1.8.4
+        specifier: ^1.8.5
+        version: 1.8.5
       svelte:
         specifier: ^4.2.2
         version: 4.2.2
@@ -653,17 +656,17 @@ importers:
         specifier: ^4.6.0
         version: 4.6.0
       typedoc:
-        specifier: ^0.25.2
-        version: 0.25.2(typescript@5.2.2)
+        specifier: ^0.25.3
+        version: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
       typedoc-plugin-external-package-links:
         specifier: ^0.1.0
         version: 0.1.0
       typedoc-plugin-markdown:
         specifier: ^4.0.0-next.25
-        version: 4.0.0-next.25(typedoc@0.25.2)
+        version: 4.0.0-next.25(typedoc@0.25.3)
       typedoc-plugin-mdn-links:
         specifier: ^3.1.0
-        version: 3.1.0(typedoc@0.25.2)
+        version: 3.1.0(typedoc@0.25.3)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -935,14 +938,14 @@ packages:
       - vite
     dev: true
 
-  /@astrojs/solid-js@3.0.2(solid-js@1.8.4)(vite@4.5.0):
+  /@astrojs/solid-js@3.0.2(solid-js@1.8.5)(vite@4.5.0):
     resolution: {integrity: sha512-BGTtS/ygAlcopELdjgTURHnxS2AoDRKjpu3Dgp12TOcArBMCiI/rYdHtlB+ligMm9Bbvar8qdzXsT1zlrxK5jQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       solid-js: ^1.4.3
     dependencies:
-      solid-js: 1.8.4
-      vite-plugin-solid: 2.7.0(solid-js@1.8.4)(vite@4.5.0)
+      solid-js: 1.8.5
+      vite-plugin-solid: 2.7.0(solid-js@1.8.5)(vite@4.5.0)
     transitivePeerDependencies:
       - supports-color
       - vite
@@ -2118,8 +2121,8 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
-  /@iconify-json/material-symbols@1.1.60:
-    resolution: {integrity: sha512-SUkRdmUQnKjcGLnVvBm88khjmS7HyJdP5/8FH6JenxcySVlt06mBuk8z14LmHwNf24alN+17JRb8AsgbPR3lHA==}
+  /@iconify-json/material-symbols@1.1.61:
+    resolution: {integrity: sha512-NbLHV5VF5MZsfydXvr4M/jCODjBHzOg3ctLMQ39yOtY7+VZgVkBuJiMlp3zKWcWPHIt1J3t0CLwVLZ9szyL8BA==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -2232,15 +2235,14 @@ packages:
   /@lit-labs/ssr-dom-shim@1.1.2:
     resolution: {integrity: sha512-jnOD+/+dSrfTWYfSXBXlo5l5f0q1UuJo3tkbMDCYA2lKUYq79jaxqtGEvnRoh049nt1vdo1+45RinipU6FGY2g==}
 
-  /@lit/context@1.0.0:
-    resolution: {integrity: sha512-bdqj6z6Mj+TpYfo2seHy1mlBzYrW+CyHnDQLD0DI7iQLELs2Fk6icZwvbvbskR0E94QG4aO/35j6PTJ9wWTv0Q==}
+  /@lit/context@1.0.1:
+    resolution: {integrity: sha512-ujQEV42vRjhNzCu/YNc+dy8eq48cEYO2SvEl7iCmMzt8X7ixUYcDt8DPV1UBr58FJ7EUe9vTLPv/0soAi9bfRw==}
     dependencies:
       '@lit/reactive-element': 2.0.0
-      lit: 3.0.0
     dev: false
 
-  /@lit/react@1.0.0(@types/react@18.2.33):
-    resolution: {integrity: sha512-uTuU6vpxtZvCWxcu3GNosckP2JpFWZpMKjhwQ42Bzu/OU9kjStJspA04o7RadecQfx0YiFIImX3qek15BXhaWQ==}
+  /@lit/react@1.0.1(@types/react@18.2.33):
+    resolution: {integrity: sha512-io4yIAl9ZFY5coI2ix+nSly4rmEKLFyZM66mxOr9xvxDqwtjdVU/g6Tchb7bo+A23+5Uu/1RZpLCpvHLCGi0rw==}
     peerDependencies:
       '@types/react': 17 || 18
     dependencies:
@@ -6636,8 +6638,8 @@ packages:
     dependencies:
       '@types/trusted-types': 2.0.3
 
-  /lit@3.0.0:
-    resolution: {integrity: sha512-nQ0teRzU1Kdj++VdmttS2WvIen8M79wChJ6guRKIIym2M3Ansg3Adj9O6yuQh2IpjxiUXlNuS81WKlQ4iL3BmA==}
+  /lit@3.0.1:
+    resolution: {integrity: sha512-CYFv7/gwrs6bfPm299O9LD/HB4dgHvsEf/yqUOI//fi469i2OrT4xaptUcmhr05DNQEgsBFecFH8EJnN5So8oQ==}
     dependencies:
       '@lit/reactive-element': 2.0.0
       lit-element: 4.0.0
@@ -8241,10 +8243,10 @@ packages:
       prosemirror-model: 1.19.3
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.8.0
-      prosemirror-view: 1.32.1
+      prosemirror-view: 1.32.2
     dev: false
 
-  /prosemirror-highlightjs@0.9.1(patch_hash=uj5ddgn5nj4ptnyl3ffi4zkeei)(highlight.js@11.9.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.1):
+  /prosemirror-highlightjs@0.9.1(patch_hash=uj5ddgn5nj4ptnyl3ffi4zkeei)(highlight.js@11.9.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.2):
     resolution: {integrity: sha512-aqcXUCM4Dbc+0DoORrmF4MWrdIJuaJKUpZvzi1xy0HEx06J5vTlnwR25xCUIbxD3ilOtkabB36QqY3WQ03OuzQ==}
     peerDependencies:
       highlight.js: ^11.6.0
@@ -8255,7 +8257,7 @@ packages:
       highlight.js: 11.9.0
       prosemirror-model: 1.19.3
       prosemirror-state: 1.4.3
-      prosemirror-view: 1.32.1
+      prosemirror-view: 1.32.2
     dev: false
     patched: true
 
@@ -8264,7 +8266,7 @@ packages:
     dependencies:
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.8.0
-      prosemirror-view: 1.32.1
+      prosemirror-view: 1.32.2
       rope-sequence: 1.3.4
     dev: false
 
@@ -8293,7 +8295,7 @@ packages:
     dependencies:
       prosemirror-model: 1.19.3
       prosemirror-transform: 1.8.0
-      prosemirror-view: 1.32.1
+      prosemirror-view: 1.32.2
     dev: false
 
   /prosemirror-transform@1.8.0:
@@ -8302,8 +8304,8 @@ packages:
       prosemirror-model: 1.19.3
     dev: false
 
-  /prosemirror-view@1.32.1:
-    resolution: {integrity: sha512-9SnB4HBgRczzTyIMZLPE1iszegL04hNfUyS8uPtP1RPxNM2NTCiIs8KwNsJU4nbZO9rxJTwVTv7Jm3zU4CR78A==}
+  /prosemirror-view@1.32.2:
+    resolution: {integrity: sha512-l2RQUGaiDI8SG8ZjWIkjT8yjGmNwdzMFMzQmxv/Kh8Vx+ICnz5R+K0mrOS16rhfjX7n2t4emU0goh7TerQC3mw==}
     dependencies:
       prosemirror-model: 1.19.3
       prosemirror-state: 1.4.3
@@ -9020,14 +9022,14 @@ packages:
       yargs: 15.4.1
     dev: false
 
-  /solid-js@1.8.4:
-    resolution: {integrity: sha512-l8tZCa0nA1iyFR+yTZi4cKNktX3UfwT3FbdzDAtNwp40EtabVRf3t0EUN3C3Kokkh7c7nBx8ak/0GZV+KFVSxQ==}
+  /solid-js@1.8.5:
+    resolution: {integrity: sha512-xvtJvzJzWbsn35oKFhW9kNwaxG1Z/YLMsDp4tLVcYZTMPzvzQ8vEZuyDQ6nt7xDArVgZJ7TUFrJUwrui/oq53A==}
     dependencies:
       csstype: 3.1.2
       seroval: 0.12.0
     dev: true
 
-  /solid-refresh@0.5.3(solid-js@1.8.4):
+  /solid-refresh@0.5.3(solid-js@1.8.5):
     resolution: {integrity: sha512-Otg5it5sjOdZbQZJnvo99TEBAr6J7PQ5AubZLNU6szZzg3RQQ5MX04oteBIIGDs0y2Qv8aXKm9e44V8z+UnFdw==}
     peerDependencies:
       solid-js: ^1.3
@@ -9035,7 +9037,7 @@ packages:
       '@babel/generator': 7.22.10
       '@babel/helper-module-imports': 7.22.5
       '@babel/types': 7.22.11
-      solid-js: 1.8.4
+      solid-js: 1.8.5
     dev: true
 
   /sorcery@0.11.0:
@@ -9888,24 +9890,24 @@ packages:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
     dev: true
 
-  /typedoc-plugin-markdown@4.0.0-next.25(typedoc@0.25.2):
+  /typedoc-plugin-markdown@4.0.0-next.25(typedoc@0.25.3):
     resolution: {integrity: sha512-OAucyztjyTcJhpyH8lK3r6W/9lGYxRnEphmphAi8CLL4pBqzA9A00OaOWt4ybkcFBnB8zNIZ4SGCz1sk9NBA3g==}
     peerDependencies:
       typedoc: '>=0.25.0'
     dependencies:
-      typedoc: 0.25.2(typescript@5.2.2)
+      typedoc: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
     dev: true
 
-  /typedoc-plugin-mdn-links@3.1.0(typedoc@0.25.2):
+  /typedoc-plugin-mdn-links@3.1.0(typedoc@0.25.3):
     resolution: {integrity: sha512-4uwnkvywPFV3UVx7WXpIWTHJdXH1rlE2e4a1WsSwCFYKqJxgTmyapv3ZxJtbSl1dvnb6jmuMNSqKEPz77Gs2OA==}
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x'
     dependencies:
-      typedoc: 0.25.2(typescript@5.2.2)
+      typedoc: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
     dev: true
 
-  /typedoc@0.25.2(typescript@5.2.2):
-    resolution: {integrity: sha512-286F7BeATBiWe/qC4PCOCKlSTwfnsLbC/4cZ68oGBbvAqb9vV33quEOXx7q176OXotD+JdEerdQ1OZGJ818lnA==}
+  /typedoc@0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2):
+    resolution: {integrity: sha512-Ow8Bo7uY1Lwy7GTmphRIMEo6IOZ+yYUyrc8n5KXIZg1svpqhZSWgni2ZrDhe+wLosFS8yswowUzljTAV/3jmWw==}
     engines: {node: '>= 16'}
     hasBin: true
     peerDependencies:
@@ -9917,6 +9919,7 @@ packages:
       shiki: 0.14.5
       typescript: 5.2.2
     dev: true
+    patched: true
 
   /typescript@4.9.5:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
@@ -10246,7 +10249,7 @@ packages:
       - supports-color
       - terser
 
-  /vite-plugin-solid@2.7.0(solid-js@1.8.4)(vite@4.5.0):
+  /vite-plugin-solid@2.7.0(solid-js@1.8.5)(vite@4.5.0):
     resolution: {integrity: sha512-avp/Jl5zOp/Itfo67xtDB2O61U7idviaIp4mLsjhCa13PjKNasz+IID0jYTyqUp9SFx6/PmBr6v4KgDppqompg==}
     peerDependencies:
       solid-js: ^1.7.2
@@ -10257,8 +10260,8 @@ packages:
       '@types/babel__core': 7.20.1
       babel-preset-solid: 1.7.7(@babel/core@7.22.11)
       merge-anything: 5.1.7
-      solid-js: 1.8.4
-      solid-refresh: 0.5.3(solid-js@1.8.4)
+      solid-js: 1.8.5
+      solid-refresh: 0.5.3(solid-js@1.8.5)
       vite: 4.5.0(@types/node@20.8.9)
       vitefu: 0.2.4(vite@4.5.0)
     transitivePeerDependencies:

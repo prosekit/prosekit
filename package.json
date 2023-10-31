@@ -19,8 +19,8 @@
     "lint": "eslint .",
     "fix": "manypkg fix && turbo run gen --force && eslint . --fix && prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --plugin prettier-plugin-astro --write .",
     "change": "changeset",
-    "ci:version": "turbo run gen && changeset version && pnpm install --no-frozen-lockfile",
-    "ci:version:next": "turbo run gen && changeset version --snapshot next && pnpm install --no-frozen-lockfile",
+    "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
+    "ci:version:next": "changeset version --snapshot next && pnpm install --no-frozen-lockfile",
     "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest",
     "ci:publish:next": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag next"
   },

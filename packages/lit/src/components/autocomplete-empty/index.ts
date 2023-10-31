@@ -18,7 +18,6 @@ export class AutocompleteEmpty
   extends LightElement
   implements AutocompleteEmptyProps
 {
-
   @consume({ context: commandListContext, subscribe: true })
   @state()
   listContext?: AutocompleteListContext

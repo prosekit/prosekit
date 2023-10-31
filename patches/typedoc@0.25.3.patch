@@ -1,0 +1,13 @@
+diff --git a/dist/lib/utils/options/options.js b/dist/lib/utils/options/options.js
+index 55517590c6a498bb15a2359ad0b0a008b93280a9..6db5cf301c0a684314ae229ad5a948c2058ec00d 100644
+--- a/dist/lib/utils/options/options.js
++++ b/dist/lib/utils/options/options.js
+@@ -169,7 +169,7 @@ class Options {
+             oldValue = (0, declaration_2.getDefaultValue)(declaration);
+         const converted = (0, declaration_2.convert)(value, declaration, configPath ?? process.cwd(), oldValue);
+         if (declaration.type === declaration_1.ParameterType.Flags) {
+-            Object.assign(this._values[declaration.name], converted);
++            Object.assign(this._values[declaration.name] ?? {}, converted);
+         }
+         else {
+             this._values[declaration.name] = converted;

@@ -3,6 +3,7 @@ name: Fix
 on:
   push:
     branches:
+      - '*'
       - '!master'
 
 jobs:

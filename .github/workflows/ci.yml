@@ -24,27 +24,6 @@ jobs:
         run: nr lint
 
 
-  fix:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: ./.github/actions/setup
-
-      - name : Fix
-        run: nr fix  
-
-
-      - name: Commit files and push
-        continue-on-error: true
-        if: ${{ github.ref != 'refs/heads/master' }}
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add --all
-          git commit -m "chore(ci): fix code"
-          git push
-
 
   typecheck:
     runs-on: ubuntu-latest

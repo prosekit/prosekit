@@ -27,6 +27,7 @@ const modules = import.meta.glob([
   "../../playground/examples/react-toolbar/package.json",
   "../../playground/examples/react-toolbar/use-example-editor.ts",
   "../../playground/examples/react-list/App.tsx",
+  "../../playground/examples/react-list/Toolbar.tsx",
   "../../playground/examples/react-list/extension.ts",
   "../../playground/examples/react-list/use-typed-editor.ts",
   "../../playground/examples/vue-minimal/App.vue",
@@ -188,6 +189,10 @@ const examples = {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-list/App.tsx']
+    },
+    "/Toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-list/Toolbar.tsx']
     },
     "/extension.ts": {
       "hidden": false,

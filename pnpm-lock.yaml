@@ -11,6 +11,9 @@ patchedDependencies:
   prosemirror-highlightjs@0.9.1:
     hash: uj5ddgn5nj4ptnyl3ffi4zkeei
     path: patches/prosemirror-highlightjs@0.9.1.patch
+  typedoc@0.25.3:
+    hash: h4pfjdv4nywwnzgforb3sf7tca
+    path: patches/typedoc@0.25.3.patch
 
 importers:
 
@@ -654,7 +657,7 @@ importers:
         version: 4.6.0
       typedoc:
         specifier: ^0.25.3
-        version: 0.25.3(typescript@5.2.2)
+        version: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
       typedoc-plugin-external-package-links:
         specifier: ^0.1.0
         version: 0.1.0
@@ -9892,7 +9895,7 @@ packages:
     peerDependencies:
       typedoc: '>=0.25.0'
     dependencies:
-      typedoc: 0.25.3(typescript@5.2.2)
+      typedoc: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
     dev: true
 
   /typedoc-plugin-mdn-links@3.1.0(typedoc@0.25.3):
@@ -9900,10 +9903,10 @@ packages:
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x'
     dependencies:
-      typedoc: 0.25.3(typescript@5.2.2)
+      typedoc: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
     dev: true
 
-  /typedoc@0.25.3(typescript@5.2.2):
+  /typedoc@0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2):
     resolution: {integrity: sha512-Ow8Bo7uY1Lwy7GTmphRIMEo6IOZ+yYUyrc8n5KXIZg1svpqhZSWgni2ZrDhe+wLosFS8yswowUzljTAV/3jmWw==}
     engines: {node: '>= 16'}
     hasBin: true
@@ -9916,6 +9919,7 @@ packages:
       shiki: 0.14.5
       typescript: 5.2.2
     dev: true
+    patched: true
 
   /typescript@4.9.5:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
@@ -10803,7 +10807,7 @@ packages:
     dev: true
 
   '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)':
-    resolution: {tarball: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d}
+    resolution: {registry: https://registry.npmjs.org/, tarball: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d}
     id: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d'
     name: tsup
     version: 0.0.0-semantic-release

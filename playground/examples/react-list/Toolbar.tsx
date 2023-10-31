@@ -13,7 +13,7 @@ export default function Toolbar() {
         onMouseDown={(event) => event.preventDefault()}
         className="TOGGLE_BUTTON"
       >
-        Bullet
+        <div className="ICON_LIST_BULLET" />
       </button>
 
       <button
@@ -24,7 +24,7 @@ export default function Toolbar() {
         onMouseDown={(event) => event.preventDefault()}
         className="TOGGLE_BUTTON"
       >
-        Ordered
+        <div className="ICON_LIST_ORDERED" />
       </button>
 
       <button
@@ -33,7 +33,7 @@ export default function Toolbar() {
         onMouseDown={(event) => event.preventDefault()}
         className="TOGGLE_BUTTON"
       >
-        Task
+        <div className="ICON_LIST_TASK" />
       </button>
 
       <button
@@ -44,7 +44,7 @@ export default function Toolbar() {
         onMouseDown={(event) => event.preventDefault()}
         className="TOGGLE_BUTTON"
       >
-        Toggle
+        <div className="ICON_LIST_TOGGLE" />
       </button>
     </div>
   )

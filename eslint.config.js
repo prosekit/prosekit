@@ -41,6 +41,7 @@ export default [
   {
     ignores: [
       'config/unocss-shortcut.mjs',
+      '**/.temp',
       '**/.tsup',
       '**/config-tsup.d.ts',
       '**/vite.*.timestamp-*.mjs',

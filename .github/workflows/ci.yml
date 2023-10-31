@@ -23,8 +23,6 @@ jobs:
       - name: Lint
         run: nr lint
 
-
-
   typecheck:
     runs-on: ubuntu-latest
     steps:

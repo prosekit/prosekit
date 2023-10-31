@@ -3,13 +3,9 @@ name: Fix
 on:
   push:
     branches:
-      - "!master"
-
-
-
+      - '!master'
 
 jobs:
-  
   fix:
     runs-on: ubuntu-latest
     steps:

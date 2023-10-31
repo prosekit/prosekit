@@ -1,10 +1,12 @@
 import {
+  Priority,
   defineCommands,
   defineInputRule,
   defineKeymap,
   defineNodeSpec,
   definePlugin,
   union,
+  withPriority,
 } from '@prosekit/core'
 import {
   createDedentListCommand,
@@ -62,7 +64,8 @@ export function defineList() {
   return union([
     defineListSpec(),
     defineListPlugins(),
-    defineListKeymap(),
+    // Use a high priority to override the default key bindings.
+    withPriority(defineListKeymap(), Priority.high),
     defineListInputRules(),
     defineListCommands(),
   ])

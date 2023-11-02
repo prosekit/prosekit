@@ -20,6 +20,6 @@ export const DemoEditor = defineComponent(() => {
           isDark.value ? 'dark' : null,
         ),
       },
-      h('div', { class: 'max-w-full w-[500px] h-[400px]' }, h(Editor)),
+      h('div', { class: 'max-w-full w-[600px] h-[400px]' }, h(Editor)),
     )
 })

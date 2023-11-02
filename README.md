@@ -1,6 +1,8 @@
-# prosekit
+# ProseKit
 
 https://prosekit.dev/
+
+[![NPM version](https://img.shields.io/npm/v/prosekit?color=a1b858&label=)](https://www.npmjs.com/package/prosekit)
 
 An editor framework based on ProseMirror.
 

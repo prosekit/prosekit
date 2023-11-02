@@ -17,3 +17,26 @@
     transition: opacity 0.2s;
   }
 }
+
+:root {
+  --prosekit-nav-bg: hsla(0, 0%, 100%, 0.8);
+}
+
+.dark {
+  --prosekit-nav-bg: rgb(27, 27, 31, 0.8);
+}
+
+body .Layout .VPNav .VPNavBar {
+  --vp-nav-bg-color: transparent;
+  backdrop-filter: saturate(180%) blur(5px);
+  background: var(--prosekit-nav-bg) !important;
+  box-shadow: inset 0 -1px 0 0 var(--vp-c-divider);
+  border-bottom: none;
+}
+
+@media (min-width: 960px) {
+  body .VPSidebar {
+    top: var(--vp-nav-height) !important;
+    padding-top: 0 !important;
+  }
+}

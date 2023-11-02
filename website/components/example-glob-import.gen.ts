@@ -48,6 +48,15 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-list/Toolbar.vue",
   "../../playground/examples/vue-list/extension.ts",
   "../../playground/examples/vue-list/use-example-editor.ts",
+  "../../playground/examples/vue-bold/App.vue",
+  "../../playground/examples/vue-bold/Toolbar.vue",
+  "../../playground/examples/vue-bold/extension.ts",
+  "../../playground/examples/vue-bold/use-typed-editor.ts",
+  "../../playground/examples/vue-bold/vue-bold",
+  "../../playground/examples/vue-italic/App.vue",
+  "../../playground/examples/vue-italic/Toolbar.vue",
+  "../../playground/examples/vue-italic/extension.ts",
+  "../../playground/examples/vue-italic/use-typed-editor.ts",
   "../../playground/examples/vue-full/App.vue",
   "../../playground/examples/vue-full/ImageUploadPopover.vue",
   "../../playground/examples/vue-full/SlashMenu.vue",
@@ -294,6 +303,46 @@ const examples = {
     "/use-example-editor.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-list/use-example-editor.ts']
+    }
+  },
+  "vue-bold": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-bold/App.vue']
+    },
+    "/Toolbar.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-bold/Toolbar.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-bold/extension.ts']
+    },
+    "/use-typed-editor.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-bold/use-typed-editor.ts']
+    },
+    "/vue-bold": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-bold/vue-bold']
+    }
+  },
+  "vue-italic": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-italic/App.vue']
+    },
+    "/Toolbar.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-italic/Toolbar.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-italic/extension.ts']
+    },
+    "/use-typed-editor.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-italic/use-typed-editor.ts']
     }
   },
   "vue-full": {

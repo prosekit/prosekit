@@ -124,6 +124,30 @@ examples:
         hidden: false
       - path: use-example-editor.ts
         hidden: false
+  - name: vue-bold
+    order: 27
+    files:
+      - path: App.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-typed-editor.ts
+        hidden: false
+      - path: vue-bold
+        hidden: false
+  - name: vue-italic
+    order: 28
+    files:
+      - path: App.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-typed-editor.ts
+        hidden: false
   - name: vue-full
     order: 29
     files:

@@ -24,6 +24,10 @@
 
 - [vue-list](./examples/vue-list)
 
+- [vue-bold](./examples/vue-bold)
+
+- [vue-italic](./examples/vue-italic)
+
 - [vue-full](./examples/vue-full)
 
 - [preact-minimal](./examples/preact-minimal)

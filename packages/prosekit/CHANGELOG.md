@@ -1,5 +1,25 @@
 # prosekit
 
+## 0.0.26
+
+### Patch Changes
+
+- [f19442f] **prosekit/extensions**
+
+  Add list commands.
+
+- [ade4703] **prosekit/basic**
+
+  Fix line-height for list
+
+- [eb181db] **prosekit/pm**
+
+  Update prosemirror-view
+
+- [ade4703] **prosekit/extensions**
+
+  Increase list command priority
+
 ## 0.0.25
 
 ### Patch Changes

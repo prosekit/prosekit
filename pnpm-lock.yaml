@@ -80,10 +80,10 @@ importers:
   packages/basic:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.16
+        specifier: ^0.0.17
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.18
+        specifier: ^0.0.19
         version: link:../extensions
     devDependencies:
       '@prosekit/dev':
@@ -108,7 +108,7 @@ importers:
   packages/core:
     dependencies:
       '@prosekit/pm':
-        specifier: ^0.0.6
+        specifier: ^0.0.7
         version: link:../pm
       orderedmap:
         specifier: ^2.1.1
@@ -200,10 +200,10 @@ importers:
   packages/extensions:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.16
+        specifier: ^0.0.17
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.0.6
+        specifier: ^0.0.7
         version: link:../pm
       highlight.js:
         specifier: ^11.9.0
@@ -237,13 +237,13 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       '@prosekit/core':
-        specifier: ^0.0.16
+        specifier: ^0.0.17
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.0.18
+        specifier: ^0.0.19
         version: link:../extensions
       '@prosekit/pm':
-        specifier: ^0.0.6
+        specifier: ^0.0.7
         version: link:../pm
       '@superhuman/command-score':
         specifier: ^0.5.0
@@ -314,10 +314,10 @@ importers:
   packages/preact:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.16
+        specifier: ^0.0.17
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.20
+        specifier: ^0.0.21
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -339,34 +339,34 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: 0.0.20
+        specifier: 0.0.21
         version: link:../basic
       '@prosekit/core':
-        specifier: 0.0.16
+        specifier: 0.0.17
         version: link:../core
       '@prosekit/extensions':
-        specifier: 0.0.18
+        specifier: 0.0.19
         version: link:../extensions
       '@prosekit/lit':
-        specifier: 0.0.20
+        specifier: 0.0.21
         version: link:../lit
       '@prosekit/pm':
-        specifier: 0.0.6
+        specifier: 0.0.7
         version: link:../pm
       '@prosekit/preact':
-        specifier: 0.0.17
+        specifier: 0.0.18
         version: link:../preact
       '@prosekit/react':
-        specifier: 0.0.20
+        specifier: 0.0.21
         version: link:../react
       '@prosekit/solid':
-        specifier: 0.0.18
+        specifier: 0.0.19
         version: link:../solid
       '@prosekit/svelte':
-        specifier: 0.0.18
+        specifier: 0.0.19
         version: link:../svelte
       '@prosekit/vue':
-        specifier: 0.0.21
+        specifier: 0.0.22
         version: link:../vue
     devDependencies:
       '@prosekit/dev':
@@ -409,10 +409,10 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1(@types/react@18.2.34)
       '@prosekit/core':
-        specifier: ^0.0.16
+        specifier: ^0.0.17
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.20
+        specifier: ^0.0.21
         version: link:../lit
       '@prosemirror-adapter/react':
         specifier: ^0.2.6
@@ -446,10 +446,10 @@ importers:
   packages/solid:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.16
+        specifier: ^0.0.17
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.20
+        specifier: ^0.0.21
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -471,10 +471,10 @@ importers:
   packages/svelte:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.16
+        specifier: ^0.0.17
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.20
+        specifier: ^0.0.21
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -508,10 +508,10 @@ importers:
   packages/vue:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.0.16
+        specifier: ^0.0.17
         version: link:../core
       '@prosekit/lit':
-        specifier: ^0.0.20
+        specifier: ^0.0.21
         version: link:../lit
     devDependencies:
       '@prosekit/dev':
@@ -575,7 +575,7 @@ importers:
         specifier: ^10.18.1
         version: 10.18.1
       prosekit:
-        specifier: ^0.0.25
+        specifier: ^0.0.26
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -638,7 +638,7 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       prosekit:
-        specifier: ^0.0.25
+        specifier: ^0.0.26
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0

@@ -32,11 +32,11 @@ importers:
         specifier: ^1.3.1
         version: 1.3.1(eslint@8.52.0)(typescript@5.2.2)
       '@size-limit/esbuild-why':
-        specifier: ^10.0.1
-        version: 10.0.1(size-limit@10.0.1)
+        specifier: ^10.0.2
+        version: 10.0.2(size-limit@10.0.2)
       '@size-limit/preset-small-lib':
-        specifier: ^10.0.1
-        version: 10.0.1(size-limit@10.0.1)
+        specifier: ^10.0.2
+        version: 10.0.2(size-limit@10.0.2)
       '@vitest/coverage-istanbul':
         specifier: ^0.34.6
         version: 0.34.6(vitest@0.34.6)
@@ -62,8 +62,8 @@ importers:
         specifier: ^0.5.6
         version: 0.5.6(prettier-plugin-astro@0.12.1)(prettier-plugin-svelte@3.0.3)(prettier@3.0.3)
       size-limit:
-        specifier: ^10.0.1
-        version: 10.0.1
+        specifier: ^10.0.2
+        version: 10.0.2
       turbo:
         specifier: ^1.10.16
         version: 1.10.16
@@ -97,7 +97,7 @@ importers:
         version: 3.3.5
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -122,7 +122,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -158,7 +158,7 @@ importers:
         version: 10.1.0
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)'
       write-pkg:
         specifier: ^6.0.0
         version: 6.0.0
@@ -176,8 +176,8 @@ importers:
         specifier: ^4.17.10
         version: 4.17.10
       '@types/node':
-        specifier: ^20.8.9
-        version: 20.8.9
+        specifier: ^20.8.10
+        version: 20.8.10
       execa:
         specifier: ^8.0.1
         version: 8.0.1
@@ -213,14 +213,14 @@ importers:
         version: 0.4.3
       prosemirror-highlightjs:
         specifier: ^0.9.1
-        version: 0.9.1(patch_hash=uj5ddgn5nj4ptnyl3ffi4zkeei)(highlight.js@11.9.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.2)
+        version: 0.9.1(patch_hash=uj5ddgn5nj4ptnyl3ffi4zkeei)(highlight.js@11.9.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.3)
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
         version: link:../dev
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -260,7 +260,7 @@ importers:
         version: 1.0.7
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -295,15 +295,15 @@ importers:
         specifier: ^1.8.0
         version: 1.8.0
       prosemirror-view:
-        specifier: ^1.32.2
-        version: 1.32.2
+        specifier: ^1.32.3
+        version: 1.32.3
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
         version: link:../dev
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -328,7 +328,7 @@ importers:
         version: 10.18.1
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -373,8 +373,8 @@ importers:
         specifier: '*'
         version: link:../dev
       '@types/react':
-        specifier: ^18.2.33
-        version: 18.2.33
+        specifier: ^18.2.34
+        version: 18.2.34
       '@types/react-dom':
         specifier: ^18.2.14
         version: 18.2.14
@@ -395,7 +395,7 @@ importers:
         version: 4.2.2
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -407,7 +407,7 @@ importers:
     dependencies:
       '@lit/react':
         specifier: ^1.0.1
-        version: 1.0.1(@types/react@18.2.33)
+        version: 1.0.1(@types/react@18.2.34)
       '@prosekit/core':
         specifier: ^0.0.16
         version: link:../core
@@ -422,8 +422,8 @@ importers:
         specifier: '*'
         version: link:../dev
       '@types/react':
-        specifier: ^18.2.33
-        version: 18.2.33
+        specifier: ^18.2.34
+        version: 18.2.34
       '@types/react-dom':
         specifier: ^18.2.14
         version: 18.2.14
@@ -435,7 +435,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -460,7 +460,7 @@ importers:
         version: 1.8.5
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -484,8 +484,8 @@ importers:
         specifier: ^2.2.2
         version: 2.2.2(svelte@4.2.2)(typescript@5.2.2)
       '@types/node':
-        specifier: ^20.8.9
-        version: 20.8.9
+        specifier: ^20.8.10
+        version: 20.8.10
       read-pkg:
         specifier: ^8.1.0
         version: 8.1.0
@@ -519,7 +519,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)'
+        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)'
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -537,16 +537,16 @@ importers:
         version: 3.0.1(@babel/core@7.22.11)(preact@10.18.1)(vite@4.5.0)
       '@astrojs/react':
         specifier: ^3.0.4
-        version: 3.0.4(@types/react-dom@18.2.14)(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0)
+        version: 3.0.4(@types/react-dom@18.2.14)(@types/react@18.2.34)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0)
       '@astrojs/solid-js':
         specifier: ^3.0.2
         version: 3.0.2(solid-js@1.8.5)(vite@4.5.0)
       '@astrojs/svelte':
         specifier: ^4.0.3
-        version: 4.0.3(astro@3.4.0)(svelte@4.2.2)(typescript@5.2.2)(vite@4.5.0)
+        version: 4.0.3(astro@3.4.2)(svelte@4.2.2)(typescript@5.2.2)(vite@4.5.0)
       '@astrojs/vue':
-        specifier: ^3.0.2
-        version: 3.0.2(@babel/core@7.22.11)(astro@3.4.0)(vite@4.5.0)(vue@3.3.7)
+        specifier: ^3.0.3
+        version: 3.0.3(@babel/core@7.22.11)(astro@3.4.2)(vite@4.5.0)(vue@3.3.7)
       '@iconify-json/ci':
         specifier: ^1.1.10
         version: 1.1.10
@@ -557,14 +557,14 @@ importers:
         specifier: ^1.1.11
         version: 1.1.11
       '@types/react':
-        specifier: ^18.2.33
-        version: 18.2.33
+        specifier: ^18.2.34
+        version: 18.2.34
       '@types/react-dom':
         specifier: ^18.2.14
         version: 18.2.14
       astro:
-        specifier: ^3.4.0
-        version: 3.4.0(typescript@5.2.2)
+        specifier: ^3.4.2
+        version: 3.4.2(typescript@5.2.2)
       highlight.js:
         specifier: ^11.9.0
         version: 11.9.0
@@ -614,8 +614,8 @@ importers:
         specifier: '*'
         version: link:../packages/dev
       '@types/react':
-        specifier: ^18.2.33
-        version: 18.2.33
+        specifier: ^18.2.34
+        version: 18.2.34
       '@types/react-dom':
         specifier: ^18.2.14
         version: 18.2.14
@@ -675,13 +675,13 @@ importers:
         version: 0.57.1(postcss@8.4.31)(vite@4.5.0)
       vite:
         specifier: ^4.5.0
-        version: 4.5.0(@types/node@20.8.9)
+        version: 4.5.0(@types/node@20.8.10)
       vite-plugin-unocss-watcher:
         specifier: ^0.1.0
         version: 0.1.0
       vitepress:
         specifier: 1.0.0-rc.24
-        version: 1.0.0-rc.24(@algolia/client-search@4.19.1)(@types/react@18.2.33)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2)
+        version: 1.0.0-rc.24(@algolia/client-search@4.19.1)(@types/react@18.2.34)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2)
       vitepress-plugin-tabs:
         specifier: ^0.4.1
         version: 0.4.1(vitepress@1.0.0-rc.24)(vue@3.3.7)
@@ -868,13 +868,13 @@ packages:
     resolution: {integrity: sha512-06DD2ZnItMwUnH81LBLco3tWjcZ1lGU9rLCCBaeUCGYe9cI0wKyY2W3kDyoW1I6GmcWgt1fu+D1CTvz+FIKf8A==}
     dev: true
 
-  /@astrojs/markdown-remark@3.3.0(astro@3.4.0):
+  /@astrojs/markdown-remark@3.3.0(astro@3.4.2):
     resolution: {integrity: sha512-ezFzEiZygc/ASe2Eul9v1yrTbNGqSbR348UGNXQ4Dtkx8MYRwfiBfmPm6VnEdfIGkW+bi5qIUReKfc7mPVUkIg==}
     peerDependencies:
       astro: ^3.3.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.4.0(typescript@5.2.2)
+      astro: 3.4.2(typescript@5.2.2)
       github-slugger: 2.0.0
       import-meta-resolve: 3.0.0
       mdast-util-definitions: 6.0.0
@@ -918,7 +918,7 @@ packages:
       prismjs: 1.29.0
     dev: true
 
-  /@astrojs/react@3.0.4(@types/react-dom@18.2.14)(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0):
+  /@astrojs/react@3.0.4(@types/react-dom@18.2.14)(@types/react@18.2.34)(react-dom@18.2.0)(react@18.2.0)(vite@4.5.0):
     resolution: {integrity: sha512-v+qltrm5nfqqm8C5ymYDBxrGlvNouRr+iCLcUWvNX65abVz8GzUqquhPQjmCTDXphn1Qc558Uxzc4s79l02skw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -927,7 +927,7 @@ packages:
       react: ^17.0.2 || ^18.0.0
       react-dom: ^17.0.2 || ^18.0.0
     dependencies:
-      '@types/react': 18.2.33
+      '@types/react': 18.2.34
       '@types/react-dom': 18.2.14
       '@vitejs/plugin-react': 4.0.4(vite@4.5.0)
       react: 18.2.0
@@ -951,7 +951,7 @@ packages:
       - vite
     dev: true
 
-  /@astrojs/svelte@4.0.3(astro@3.4.0)(svelte@4.2.2)(typescript@5.2.2)(vite@4.5.0):
+  /@astrojs/svelte@4.0.3(astro@3.4.2)(svelte@4.2.2)(typescript@5.2.2)(vite@4.5.0):
     resolution: {integrity: sha512-3toH/mkNFqMdmnMXh4XcksZfuOAwWVXdRrISyoRgNn1HalG6WBACFT+RwxAwpH7eXW/zUfrpfyZdcxYnVucHTg==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -959,7 +959,7 @@ packages:
       svelte: ^3.55.0 || ^4.0.0
     dependencies:
       '@sveltejs/vite-plugin-svelte': 2.4.5(svelte@4.2.2)(vite@4.5.0)
-      astro: 3.4.0(typescript@5.2.2)
+      astro: 3.4.2(typescript@5.2.2)
       svelte: 4.2.2
       svelte2tsx: 0.6.21(svelte@4.2.2)(typescript@5.2.2)
     transitivePeerDependencies:
@@ -983,18 +983,18 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vue@3.0.2(@babel/core@7.22.11)(astro@3.4.0)(vite@4.5.0)(vue@3.3.7):
-    resolution: {integrity: sha512-rU1VX0PyPOJLX8kI8yL92zCuLAURdrZe9FsPMna/QqoHoIVZAZO5EDPbRVKAFczsZQq1PjfZRFZk7H9qizcNGg==}
+  /@astrojs/vue@3.0.3(@babel/core@7.22.11)(astro@3.4.2)(vite@4.5.0)(vue@3.3.7):
+    resolution: {integrity: sha512-I0PyztA7+nB2+kt3j4BOavpmbmEdZdkxfulgKfoFxeCtCrjJ85PqyasuW4fyw5wO4uq4u30l89pbVf7+pS4rBg==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
-      astro: ^3.3.3
+      astro: ^3.0.0
       vue: ^3.2.30
     dependencies:
       '@vitejs/plugin-vue': 4.3.4(vite@4.5.0)(vue@3.3.7)
       '@vitejs/plugin-vue-jsx': 3.0.2(vite@4.5.0)(vue@3.3.7)
       '@vue/babel-plugin-jsx': 1.1.5(@babel/core@7.22.11)
       '@vue/compiler-sfc': 3.3.7
-      astro: 3.4.0(typescript@5.2.2)
+      astro: 3.4.2(typescript@5.2.2)
       vue: 3.3.7(typescript@5.2.2)
     transitivePeerDependencies:
       - '@babel/core'
@@ -1641,10 +1641,10 @@ packages:
     resolution: {integrity: sha512-SPiDHaWKQZpwR2siD0KQUwlStvIAnEyK6tAE2h2Wuoq8ue9skzhlyVQ1ddzOxX6khULnAALDiR/isSF3bnuciA==}
     dev: true
 
-  /@docsearch/js@3.5.2(@algolia/client-search@4.19.1)(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0):
+  /@docsearch/js@3.5.2(@algolia/client-search@4.19.1)(@types/react@18.2.34)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0):
     resolution: {integrity: sha512-p1YFTCDflk8ieHgFJYfmyHBki1D61+U9idwrLh+GQQMrBSP3DLGKpy0XUJtPjAOPltcVbqsTjiPFfH7JImjUNg==}
     dependencies:
-      '@docsearch/react': 3.5.2(@algolia/client-search@4.19.1)(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)
+      '@docsearch/react': 3.5.2(@algolia/client-search@4.19.1)(@types/react@18.2.34)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)
       preact: 10.18.1
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -1654,7 +1654,7 @@ packages:
       - search-insights
     dev: true
 
-  /@docsearch/react@3.5.2(@algolia/client-search@4.19.1)(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0):
+  /@docsearch/react@3.5.2(@algolia/client-search@4.19.1)(@types/react@18.2.34)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0):
     resolution: {integrity: sha512-9Ahcrs5z2jq/DcAvYtvlqEBHImbm4YJI8M9y0x6Tqg598P40HTEkX7hsMcIuThI+hTFxRGZ9hll0Wygm2yEjng==}
     peerDependencies:
       '@types/react': '>= 16.8.0 < 19.0.0'
@@ -1674,7 +1674,7 @@ packages:
       '@algolia/autocomplete-core': 1.9.3(@algolia/client-search@4.19.1)(algoliasearch@4.19.1)(search-insights@2.6.0)
       '@algolia/autocomplete-preset-algolia': 1.9.3(@algolia/client-search@4.19.1)(algoliasearch@4.19.1)
       '@docsearch/css': 3.5.2
-      '@types/react': 18.2.33
+      '@types/react': 18.2.34
       algoliasearch: 4.19.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -2241,12 +2241,12 @@ packages:
       '@lit/reactive-element': 2.0.0
     dev: false
 
-  /@lit/react@1.0.1(@types/react@18.2.33):
+  /@lit/react@1.0.1(@types/react@18.2.34):
     resolution: {integrity: sha512-io4yIAl9ZFY5coI2ix+nSly4rmEKLFyZM66mxOr9xvxDqwtjdVU/g6Tchb7bo+A23+5Uu/1RZpLCpvHLCGi0rw==}
     peerDependencies:
       '@types/react': 17 || 18
     dependencies:
-      '@types/react': 18.2.33
+      '@types/react': 18.2.34
     dev: false
 
   /@lit/reactive-element@2.0.0:
@@ -2319,23 +2319,23 @@ packages:
       read-yaml-file: 1.1.0
     dev: false
 
-  /@microsoft/api-extractor-model@7.27.6(@types/node@20.8.9):
+  /@microsoft/api-extractor-model@7.27.6(@types/node@20.8.10):
     resolution: {integrity: sha512-eiCnlayyum1f7fS2nA9pfIod5VCNR1G+Tq84V/ijDrKrOFVa598BLw145nCsGDMoFenV6ajNi2PR5WCwpAxW6Q==}
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.59.7(@types/node@20.8.9)
+      '@rushstack/node-core-library': 3.59.7(@types/node@20.8.10)
     transitivePeerDependencies:
       - '@types/node'
 
-  /@microsoft/api-extractor@7.36.4(@types/node@20.8.9):
+  /@microsoft/api-extractor@7.36.4(@types/node@20.8.10):
     resolution: {integrity: sha512-21UECq8C/8CpHT23yiqTBQ10egKUacIpxkPyYR7hdswo/M5yTWdBvbq+77YC9uPKQJOUfOD1FImBQ1DzpsdeQQ==}
     hasBin: true
     dependencies:
-      '@microsoft/api-extractor-model': 7.27.6(@types/node@20.8.9)
+      '@microsoft/api-extractor-model': 7.27.6(@types/node@20.8.10)
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 3.59.7(@types/node@20.8.9)
+      '@rushstack/node-core-library': 3.59.7(@types/node@20.8.10)
       '@rushstack/rig-package': 0.4.1
       '@rushstack/ts-command-line': 4.15.2
       colors: 1.2.5
@@ -2426,7 +2426,7 @@ packages:
       debug: 4.3.4
       kolorist: 1.8.0
       resolve: 1.22.4
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -2473,7 +2473,7 @@ packages:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.18.1
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2518,7 +2518,7 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
 
-  /@rushstack/node-core-library@3.59.7(@types/node@20.8.9):
+  /@rushstack/node-core-library@3.59.7(@types/node@20.8.10):
     resolution: {integrity: sha512-ln1Drq0h+Hwa1JVA65x5mlSgUrBa1uHL+V89FqVWQgXd1vVIMhrtqtWGQrhTnFHxru5ppX+FY39VWELF/FjQCw==}
     peerDependencies:
       '@types/node': '*'
@@ -2526,7 +2526,7 @@ packages:
       '@types/node':
         optional: true
     dependencies:
-      '@types/node': 20.8.9
+      '@types/node': 20.8.10
       colors: 1.2.5
       fs-extra: 7.0.1
       import-lazy: 4.0.0
@@ -2584,46 +2584,46 @@ packages:
       escape-string-regexp: 5.0.0
     dev: false
 
-  /@size-limit/esbuild-why@10.0.1(size-limit@10.0.1):
-    resolution: {integrity: sha512-6sjCIyOQ12qrci7ClACT52d6c/201TkDE9p+EESqpqJNGJgvvvF15OJxzkw8MhFSNlrjJOvi1kDivLk1hdx4tg==}
+  /@size-limit/esbuild-why@10.0.2(size-limit@10.0.2):
+    resolution: {integrity: sha512-X1NNP2c6BEpsVGqyG2ptwpm95AfP46Dgr4tMRx63pONv3LlG/3YF2d8aG1vQoQvMk1y2c7Uh0C9U/kOqGFrs8g==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
-      size-limit: 10.0.1
+      size-limit: 10.0.2
     dependencies:
       esbuild-visualizer: 0.4.1
       open: 9.1.0
-      size-limit: 10.0.1
+      size-limit: 10.0.2
     dev: false
 
-  /@size-limit/esbuild@10.0.1(size-limit@10.0.1):
-    resolution: {integrity: sha512-lQeVqx1HW0PJq66d3fQmBHBGtvPKa6vyRpO2Rrh2ejOe9xP3NJ5xq6DWF7fZxDToDpPuLU5mQkvo7aWh4cLKiA==}
+  /@size-limit/esbuild@10.0.2(size-limit@10.0.2):
+    resolution: {integrity: sha512-RaVAAp4BDxMBkSAzv23Mk6rWw/tgmvcqhO7g9EF8Co2q2sEH2vTK1ucAwisJyO1frVSmmkS+MuYLIrmjW8CxEw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
-      size-limit: 10.0.1
+      size-limit: 10.0.2
     dependencies:
       esbuild: 0.19.5
       nanoid: 5.0.2
-      size-limit: 10.0.1
+      size-limit: 10.0.2
     dev: false
 
-  /@size-limit/file@10.0.1(size-limit@10.0.1):
-    resolution: {integrity: sha512-xQMh/Hy8QgyHaac+DSSKcwmcJlQglDTY67L5ouUf78SlDxiKQrr8QMiYdCj7Zl5KM+gmee/eIbl6v2qbpf/Vxw==}
+  /@size-limit/file@10.0.2(size-limit@10.0.2):
+    resolution: {integrity: sha512-27jzgQtER/2WP4+ciLe8aExkceSfqQFSDEbFVhXnbpFvQBqGZ7uEQG9bDX7a5VGxTdMtGwzZndMsCOlinmLzSg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
-      size-limit: 10.0.1
+      size-limit: 10.0.2
     dependencies:
       semver: 7.5.4
-      size-limit: 10.0.1
+      size-limit: 10.0.2
     dev: false
 
-  /@size-limit/preset-small-lib@10.0.1(size-limit@10.0.1):
-    resolution: {integrity: sha512-VZL9aUezCpHddHudl9pUqtdFH+K48G5VrweBJjfe/NW5gbqn9ubJEW93Vl41bo500mvQ5EaLnAenGxM3mVq+Fw==}
+  /@size-limit/preset-small-lib@10.0.2(size-limit@10.0.2):
+    resolution: {integrity: sha512-VK9uKlGILqTYaBszvJ8eoiLoFbmb03/LpZanqs8jzKwdvexOEH86OHtfi9rin8VWseAfQYHHLklJ3xwbSb4xCQ==}
     peerDependencies:
-      size-limit: 10.0.1
+      size-limit: 10.0.2
     dependencies:
-      '@size-limit/esbuild': 10.0.1(size-limit@10.0.1)
-      '@size-limit/file': 10.0.1(size-limit@10.0.1)
-      size-limit: 10.0.1
+      '@size-limit/esbuild': 10.0.2(size-limit@10.0.2)
+      '@size-limit/file': 10.0.2(size-limit@10.0.2)
+      size-limit: 10.0.2
     dev: false
 
   /@stitches/core@1.2.8:
@@ -2662,7 +2662,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 2.4.5(svelte@4.2.2)(vite@4.5.0)
       debug: 4.3.4
       svelte: 4.2.2
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2681,7 +2681,7 @@ packages:
       magic-string: 0.30.5
       svelte: 4.2.2
       svelte-hmr: 0.15.3(svelte@4.2.2)
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
       vitefu: 0.2.4(vite@4.5.0)
     transitivePeerDependencies:
       - supports-color
@@ -2794,7 +2794,7 @@ packages:
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
-      '@types/node': 20.8.9
+      '@types/node': 20.8.10
     dev: false
 
   /@types/linkify-it@3.0.3:
@@ -2850,8 +2850,8 @@ packages:
   /@types/node@12.20.55:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  /@types/node@20.8.9:
-    resolution: {integrity: sha512-UzykFsT3FhHb1h7yD4CA4YhBHq545JC0YnEz41xkipN88eKQtL6rSgocL5tbAP6Ola9Izm/Aw4Ora8He4x0BHg==}
+  /@types/node@20.8.10:
+    resolution: {integrity: sha512-TlgT8JntpcbmKUFzjhsyhGfP2fsiz1Mv56im6enJ905xG1DAYesxJaeSbGqQmAw8OWPdhyJGhGSQGKRNJ45u9w==}
     dependencies:
       undici-types: 5.26.5
 
@@ -2872,11 +2872,11 @@ packages:
   /@types/react-dom@18.2.14:
     resolution: {integrity: sha512-V835xgdSVmyQmI1KLV2BEIUgqEuinxp9O4G6g3FqO/SqLac049E53aysv0oEFD2kHfejeKU+ZqL2bcFWj9gLAQ==}
     dependencies:
-      '@types/react': 18.2.33
+      '@types/react': 18.2.34
     dev: true
 
-  /@types/react@18.2.33:
-    resolution: {integrity: sha512-v+I7S+hu3PIBoVkKGpSYYpiBT1ijqEzWpzQD62/jm4K74hPpSP7FF9BnKG6+fg2+62weJYkkBWDJlZt5JO/9hg==}
+  /@types/react@18.2.34:
+    resolution: {integrity: sha512-U6eW/alrRk37FU/MS2RYMjx0Va2JGIVXELTODaTIYgvWGCV4Y4TfTUzG8DdmpDNIT0Xpj/R7GfyHOJJrDttcvg==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
@@ -2885,7 +2885,7 @@ packages:
   /@types/responselike@1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 20.8.9
+      '@types/node': 20.8.10
     dev: false
 
   /@types/scheduler@0.16.3:
@@ -3057,7 +3057,7 @@ packages:
       '@unocss/core': 0.57.1
       '@unocss/reset': 0.57.1
       '@unocss/vite': 0.57.1(vite@4.5.0)
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
     transitivePeerDependencies:
       - rollup
 
@@ -3226,7 +3226,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.3.1
       magic-string: 0.30.5
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
     transitivePeerDependencies:
       - rollup
 
@@ -3240,7 +3240,7 @@ packages:
       '@babel/plugin-transform-react-jsx-self': 7.22.5(@babel/core@7.22.11)
       '@babel/plugin-transform-react-jsx-source': 7.22.5(@babel/core@7.22.11)
       react-refresh: 0.14.0
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3255,7 +3255,7 @@ packages:
       '@babel/core': 7.22.11
       '@babel/plugin-transform-typescript': 7.22.10(@babel/core@7.22.11)
       '@vue/babel-plugin-jsx': 1.1.5(@babel/core@7.22.11)
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
       vue: 3.3.7(typescript@5.2.2)
     transitivePeerDependencies:
       - supports-color
@@ -3268,7 +3268,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
       vue: 3.3.7(typescript@5.2.2)
     dev: true
 
@@ -3279,7 +3279,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
       vue: 3.3.7(typescript@5.2.2)
     dev: true
 
@@ -3752,14 +3752,14 @@ packages:
   /assertion-error@1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
 
-  /astro@3.4.0(typescript@5.2.2):
-    resolution: {integrity: sha512-nTOFxrPOnmACl8noTPkRJkaEOMx4wZy4QCLB2aDL3Lm+AiEaVcgH7YQ4GpCl72zSNXp/A7hGdUgcXbC4XYHOCQ==}
+  /astro@3.4.2(typescript@5.2.2):
+    resolution: {integrity: sha512-t+EjGXvmr8/x/3punIC7aGHwaseRYV4uWVaEcffUXFpGRv6z7UNffQwjyyuPjWbDj2pOPquKhQE1GnfK0V4ZNw==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
       '@astrojs/compiler': 2.1.0
       '@astrojs/internal-helpers': 0.2.1
-      '@astrojs/markdown-remark': 3.3.0(astro@3.4.0)
+      '@astrojs/markdown-remark': 3.3.0(astro@3.4.2)
       '@astrojs/telemetry': 3.0.4
       '@babel/core': 7.22.11
       '@babel/generator': 7.22.10
@@ -3791,6 +3791,7 @@ packages:
       js-yaml: 4.1.0
       kleur: 4.1.5
       magic-string: 0.30.5
+      mdast-util-to-hast: 12.3.0
       mime: 3.0.0
       ora: 7.0.1
       p-limit: 4.0.0
@@ -3809,11 +3810,11 @@ packages:
       tsconfck: 3.0.0(typescript@5.2.2)
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
       vitefu: 0.2.4(vite@4.5.0)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
-      zod: 3.21.1
+      zod: 3.22.4
     optionalDependencies:
       sharp: 0.32.5
     transitivePeerDependencies:
@@ -8243,10 +8244,10 @@ packages:
       prosemirror-model: 1.19.3
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.8.0
-      prosemirror-view: 1.32.2
+      prosemirror-view: 1.32.3
     dev: false
 
-  /prosemirror-highlightjs@0.9.1(patch_hash=uj5ddgn5nj4ptnyl3ffi4zkeei)(highlight.js@11.9.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.2):
+  /prosemirror-highlightjs@0.9.1(patch_hash=uj5ddgn5nj4ptnyl3ffi4zkeei)(highlight.js@11.9.0)(prosemirror-model@1.19.3)(prosemirror-state@1.4.3)(prosemirror-view@1.32.3):
     resolution: {integrity: sha512-aqcXUCM4Dbc+0DoORrmF4MWrdIJuaJKUpZvzi1xy0HEx06J5vTlnwR25xCUIbxD3ilOtkabB36QqY3WQ03OuzQ==}
     peerDependencies:
       highlight.js: ^11.6.0
@@ -8257,7 +8258,7 @@ packages:
       highlight.js: 11.9.0
       prosemirror-model: 1.19.3
       prosemirror-state: 1.4.3
-      prosemirror-view: 1.32.2
+      prosemirror-view: 1.32.3
     dev: false
     patched: true
 
@@ -8266,7 +8267,7 @@ packages:
     dependencies:
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.8.0
-      prosemirror-view: 1.32.2
+      prosemirror-view: 1.32.3
       rope-sequence: 1.3.4
     dev: false
 
@@ -8295,7 +8296,7 @@ packages:
     dependencies:
       prosemirror-model: 1.19.3
       prosemirror-transform: 1.8.0
-      prosemirror-view: 1.32.2
+      prosemirror-view: 1.32.3
     dev: false
 
   /prosemirror-transform@1.8.0:
@@ -8304,8 +8305,8 @@ packages:
       prosemirror-model: 1.19.3
     dev: false
 
-  /prosemirror-view@1.32.2:
-    resolution: {integrity: sha512-l2RQUGaiDI8SG8ZjWIkjT8yjGmNwdzMFMzQmxv/Kh8Vx+ICnz5R+K0mrOS16rhfjX7n2t4emU0goh7TerQC3mw==}
+  /prosemirror-view@1.32.3:
+    resolution: {integrity: sha512-tP7AUTxisM0m3PDxs6vDWgTjgcbFo4fnwg2M/5NHlgMqUJgBNOqSUZETBZKmLD7AxGN3GZ5yqEzQv9r9VCZKrg==}
     dependencies:
       prosemirror-model: 1.19.3
       prosemirror-state: 1.4.3
@@ -8988,8 +8989,8 @@ packages:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
     dev: true
 
-  /size-limit@10.0.1:
-    resolution: {integrity: sha512-lANGZsG+kk5P9zv84J/ratfT6LPTbWR8IitFXNfy41OyfnxoDBHqsl5+JVcG4YSU1UYcmShbp99O/SEPlDs1ZA==}
+  /size-limit@10.0.2:
+    resolution: {integrity: sha512-ULFHMr+OQjuyqdGSqkDGY3XfnGO0l3cIfJaNe6F6ZqO+QzWUYunZh9DYHovNctsN7R9fR9gzzzW4Ze8TiJ060g==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     dependencies:
@@ -10109,7 +10110,7 @@ packages:
       '@unocss/transformer-directives': 0.57.1
       '@unocss/transformer-variant-group': 0.57.1
       '@unocss/vite': 0.57.1(vite@4.5.0)
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -10228,7 +10229,7 @@ packages:
       vfile-message: 4.0.2
     dev: true
 
-  /vite-node@0.34.6(@types/node@20.8.9):
+  /vite-node@0.34.6(@types/node@20.8.10):
     resolution: {integrity: sha512-nlBMJ9x6n7/Amaz6F3zJ97EBwR2FkzhBRxF5e+jE6LA3yi6Wtc2lyTij1OnDMIr34v5g/tVQtsVAzhT0jc5ygA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -10238,7 +10239,7 @@ packages:
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -10262,7 +10263,7 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.8.5
       solid-refresh: 0.5.3(solid-js@1.8.5)
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
       vitefu: 0.2.4(vite@4.5.0)
     transitivePeerDependencies:
       - supports-color
@@ -10272,7 +10273,7 @@ packages:
     resolution: {integrity: sha512-U9Hln2lRSuLBbZuQ5mpmY2oHbPtXcgltBCKKrYO+VVK1IR8Guc/fgcEIduCFQpTvPo9pDgyVJBj6gnoKNZBe3Q==}
     dev: true
 
-  /vite@4.5.0(@types/node@20.8.9):
+  /vite@4.5.0(@types/node@20.8.10):
     resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -10300,7 +10301,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.8.9
+      '@types/node': 20.8.10
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.28.0
@@ -10315,7 +10316,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
     dev: true
 
   /vitepress-plugin-tabs@0.4.1(vitepress@1.0.0-rc.24)(vue@3.3.7):
@@ -10324,11 +10325,11 @@ packages:
       vitepress: ^1.0.0-rc.14
       vue: ^3.3.4
     dependencies:
-      vitepress: 1.0.0-rc.24(@algolia/client-search@4.19.1)(@types/react@18.2.33)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2)
+      vitepress: 1.0.0-rc.24(@algolia/client-search@4.19.1)(@types/react@18.2.34)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2)
       vue: 3.3.7(typescript@5.2.2)
     dev: true
 
-  /vitepress@1.0.0-rc.24(@algolia/client-search@4.19.1)(@types/react@18.2.33)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2):
+  /vitepress@1.0.0-rc.24(@algolia/client-search@4.19.1)(@types/react@18.2.34)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2):
     resolution: {integrity: sha512-RpnL8cnOGwiRlBbrYQUm9sYkJbtyOt/wYXk2diTcokY4yvks/5lq9LuSt+MURWB6ZqwpSNHvTmxgaSfLoG0/OA==}
     hasBin: true
     peerDependencies:
@@ -10341,7 +10342,7 @@ packages:
         optional: true
     dependencies:
       '@docsearch/css': 3.5.2
-      '@docsearch/js': 3.5.2(@algolia/client-search@4.19.1)(@types/react@18.2.33)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)
+      '@docsearch/js': 3.5.2(@algolia/client-search@4.19.1)(@types/react@18.2.34)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)
       '@types/markdown-it': 13.0.4
       '@vitejs/plugin-vue': 4.3.1(vite@4.5.0)(vue@3.3.7)
       '@vue/devtools-api': 6.5.1
@@ -10352,7 +10353,7 @@ packages:
       minisearch: 6.1.0
       postcss: 8.4.31
       shiki: 0.14.5
-      vite: 4.5.0(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
       vue: 3.3.7(typescript@5.2.2)
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -10415,7 +10416,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.5
       '@types/chai-subset': 1.3.3
-      '@types/node': 20.8.9
+      '@types/node': 20.8.10
       '@vitest/expect': 0.34.6
       '@vitest/runner': 0.34.6
       '@vitest/snapshot': 0.34.6
@@ -10435,8 +10436,8 @@ packages:
       strip-literal: 1.0.1
       tinybench: 2.5.0
       tinypool: 0.7.0
-      vite: 4.5.0(@types/node@20.8.9)
-      vite-node: 0.34.6(@types/node@20.8.9)
+      vite: 4.5.0(@types/node@20.8.10)
+      vite-node: 0.34.6(@types/node@20.8.10)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
@@ -10798,16 +10799,16 @@ packages:
     optionalDependencies:
       commander: 9.5.0
 
-  /zod@3.21.1:
-    resolution: {integrity: sha512-+dTu2m6gmCbO9Ahm4ZBDapx2O6ZY9QSPXst2WXjcznPMwf2YNpn3RevLx4KkZp1OPW/ouFcoBtBzFz/LeY69oA==}
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: true
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
 
-  '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.9)(postcss@8.4.31)(typescript@5.2.2)':
-    resolution: {registry: https://registry.npmjs.org/, tarball: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d}
+  '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d(@types/node@20.8.10)(postcss@8.4.31)(typescript@5.2.2)':
+    resolution: {tarball: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d}
     id: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-09-03-d'
     name: tsup
     version: 0.0.0-semantic-release
@@ -10825,7 +10826,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@microsoft/api-extractor': 7.36.4(@types/node@20.8.9)
+      '@microsoft/api-extractor': 7.36.4(@types/node@20.8.10)
       bundle-require: 4.0.1(esbuild@0.18.20)
       cac: 6.7.14
       chokidar: 3.5.3

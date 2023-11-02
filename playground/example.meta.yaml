@@ -135,8 +135,6 @@ examples:
         hidden: false
       - path: use-typed-editor.ts
         hidden: false
-      - path: vue-bold
-        hidden: false
   - name: vue-italic
     order: 28
     files:

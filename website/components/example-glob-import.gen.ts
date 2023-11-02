@@ -52,7 +52,6 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-bold/Toolbar.vue",
   "../../playground/examples/vue-bold/extension.ts",
   "../../playground/examples/vue-bold/use-typed-editor.ts",
-  "../../playground/examples/vue-bold/vue-bold",
   "../../playground/examples/vue-italic/App.vue",
   "../../playground/examples/vue-italic/Toolbar.vue",
   "../../playground/examples/vue-italic/extension.ts",
@@ -321,10 +320,6 @@ const examples = {
     "/use-typed-editor.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-bold/use-typed-editor.ts']
-    },
-    "/vue-bold": {
-      "hidden": false,
-      "code": modules['../../playground/examples/vue-bold/vue-bold']
     }
   },
   "vue-italic": {

@@ -36,13 +36,14 @@ export function getEditor<E extends Extension = any>(options?: {
   const update = options?.update ?? false
   const editor = getEditorContext().editor as Editor<E>
 
-  let editorStore = writable(editor)
+  const editorStore = writable(editor)
 
   if (update) {
     onMount(() => {
       const forceUpdate = () => {
-        console.log("forceUpdate is called")
-        editorStore.set(editor)}
+        console.log('forceUpdate is called')
+        editorStore.set(editor)
+      }
       const dispose = editor.use(defineEventHandler({ update: forceUpdate }))
       onDestroy(dispose)
     })

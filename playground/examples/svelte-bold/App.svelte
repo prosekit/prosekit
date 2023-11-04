@@ -16,6 +16,6 @@ onDestroy(() => editor.unmount())
 </script>
 
 <ProseKit {editor}>
-  <Toolbar/>
+  <Toolbar />
   <div bind:this={place} class="EDITOR_CONTENT"></div>
 </ProseKit>

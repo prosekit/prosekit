@@ -10,5 +10,3 @@ export function defineExtension() {
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>
-
-

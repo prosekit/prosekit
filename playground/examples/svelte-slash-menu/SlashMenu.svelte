@@ -6,7 +6,6 @@ import { AutocompleteList } from 'prosekit/svelte/autocomplete-list'
 import { getEditor } from 'prosekit/svelte'
 import type { EditorExtension } from './extension'
 
-
 const editor = getEditor<EditorExtension>()
 
 const handleHeadingInsert = (level: number) => {

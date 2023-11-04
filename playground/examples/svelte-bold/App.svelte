@@ -6,6 +6,7 @@ import { createEditor, type NodeJson } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { onMount, onDestroy } from 'svelte'
 import { defineExtension } from './extension'
+import Toolbar from './Toolbar.svelte'
 
 const editor = createEditor({ extension: defineExtension() })
 
@@ -15,5 +16,6 @@ onDestroy(() => editor.unmount())
 </script>
 
 <ProseKit {editor}>
+  <Toolbar/>
   <div bind:this={place} class="EDITOR_CONTENT"></div>
 </ProseKit>

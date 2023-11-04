@@ -66,6 +66,9 @@ const modules = import.meta.glob([
   "../../playground/examples/svelte-slash-menu/App.svelte",
   "../../playground/examples/svelte-slash-menu/SlashMenu.svelte",
   "../../playground/examples/svelte-slash-menu/extension.ts",
+  "../../playground/examples/svelte-bold/App.svelte",
+  "../../playground/examples/svelte-bold/Toolbar.svelte",
+  "../../playground/examples/svelte-bold/extension.ts",
   "../../playground/examples/svelte-list/App.svelte",
   "../../playground/examples/svelte-list/extension.ts",
   "../../playground/examples/solid-minimal/App.tsx",
@@ -373,6 +376,20 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/svelte-slash-menu/extension.ts']
+    }
+  },
+  "svelte-bold": {
+    "/App.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-bold/App.svelte']
+    },
+    "/Toolbar.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-bold/Toolbar.svelte']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-bold/extension.ts']
     }
   },
   "svelte-list": {

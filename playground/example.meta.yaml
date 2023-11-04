@@ -181,6 +181,15 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: svelte-bold
+    order: 44
+    files:
+      - path: App.svelte
+        hidden: false
+      - path: Toolbar.svelte
+        hidden: false
+      - path: extension.ts
+        hidden: false
   - name: svelte-list
     order: 45
     files:

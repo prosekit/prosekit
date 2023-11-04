@@ -8,14 +8,14 @@ import { AutocompleteItem } from 'prosekit/lit/autocomplete-item'
 import { AutocompleteList } from 'prosekit/lit/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/lit/autocomplete-popover'
 
-export function defineExampleExtension() {
+export function defineExtension() {
   return union([
     defineBasicExtension(),
     definePlaceholder({ placeholder: 'Press / for commands...' }),
   ])
 }
 
-const editor = createEditor({ extension: defineExampleExtension() })
+const editor = createEditor({ extension: defineExtension() })
 
 function createPopover() {
   const popover = new AutocompletePopover()

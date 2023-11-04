@@ -38,6 +38,10 @@
 
 - [svelte-slash-menu](./examples/svelte-slash-menu)
 
+- [svelte-bold](./examples/svelte-bold)
+
+- [svelte-italic](./examples/svelte-italic)
+
 - [svelte-list](./examples/svelte-list)
 
 - [solid-minimal](./examples/solid-minimal)

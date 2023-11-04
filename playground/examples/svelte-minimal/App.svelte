@@ -2,7 +2,7 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/extensions/placeholder/style.css'
 
-import { onMount } from 'svelte'
+import { onMount, onDestroy } from 'svelte'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { defineBasicExtension } from 'prosekit/basic'
@@ -12,6 +12,7 @@ const editor = createEditor({ extension })
 
 let place: HTMLDivElement
 onMount(() => editor.mount(place))
+onDestroy(() => editor.unmount())
 </script>
 
 <ProseKit {editor}>

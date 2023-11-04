@@ -31,11 +31,11 @@ import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
 
-export function defineExampleExtension() {
+export function defineExtension() {
   return defineBasicExtension()
 }
 
-export type ExampleExtension = ReturnType<typeof defineExampleExtension>
+export type EditorExtension = ReturnType<typeof defineExtension>
 ```
 
 :::

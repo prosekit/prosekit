@@ -3,7 +3,7 @@ import { union } from 'prosekit/core'
 import { defineMention } from 'prosekit/extensions/mention'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
 
-export function defineExampleExtension() {
+export function defineExtension() {
   return union([
     defineBasicExtension(),
     definePlaceholder({ placeholder: 'Type @ to metion someone...' }),
@@ -11,4 +11,4 @@ export function defineExampleExtension() {
   ])
 }
 
-export type ExampleExtension = ReturnType<typeof defineExampleExtension>
+export type EditorExtension = ReturnType<typeof defineExtension>

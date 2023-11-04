@@ -1,7 +1,9 @@
-import { useTypedEditor } from './use-typed-editor'
+import { useEditor } from 'prosekit/react'
+
+import type { EditorExtension } from './extension'
 
 export default function Toolbar() {
-  const editor = useTypedEditor({ update: true })
+  const editor = useEditor<EditorExtension>({ update: true })
 
   return (
     <div className="TOOLBAR">

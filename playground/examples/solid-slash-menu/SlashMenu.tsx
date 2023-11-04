@@ -1,14 +1,15 @@
 /** @jsxImportSource solid-js */
 
+import { useEditor } from 'prosekit/solid'
 import { AutocompleteEmpty } from 'prosekit/solid/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/solid/autocomplete-item'
 import { AutocompleteList } from 'prosekit/solid/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/solid/autocomplete-popover'
 
-import { useExampleEditor } from './use-example-editor'
+import type { EditorExtension } from './extension'
 
 export default function SlashMenu() {
-  const editor = useExampleEditor()
+  const editor = useEditor<EditorExtension>()
 
   const handleHeadingInsert = (level: number) => {
     editor().commands.insertHeading({ level })

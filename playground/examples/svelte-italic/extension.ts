@@ -5,7 +5,7 @@ import {
   defineText,
   union,
 } from 'prosekit/core'
-import { defineList } from 'prosekit/extensions/list'
+import { defineItalic } from 'prosekit/extensions/italic'
 
 export function defineExtension() {
   return union([
@@ -13,7 +13,7 @@ export function defineExtension() {
     defineDoc(),
     defineText(),
     defineParagraph(),
-    defineList(),
+    defineItalic(),
   ])
 }
 

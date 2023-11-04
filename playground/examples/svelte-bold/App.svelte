@@ -1,12 +1,12 @@
 <script lang="ts">
-import 'prosekit/basic/style.css'
-import 'prosekit/extensions/placeholder/style.css'
+import 'prosekit/core/style.css'
+import 'prosekit/extensions/list/style.css'
 
-import { createEditor } from 'prosekit/core'
-import { defineExtension } from './extension'
-import { onMount, onDestroy } from 'svelte'
+import { createEditor, type NodeJson } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
-import SlashMenu from './SlashMenu.svelte'
+import { onMount, onDestroy } from 'svelte'
+import { defineExtension } from './extension'
+import Toolbar from './Toolbar.svelte'
 
 const editor = createEditor({ extension: defineExtension() })
 
@@ -16,6 +16,6 @@ onDestroy(() => editor.unmount())
 </script>
 
 <ProseKit {editor}>
+  <Toolbar />
   <div bind:this={place} class="EDITOR_CONTENT"></div>
-  <SlashMenu />
 </ProseKit>

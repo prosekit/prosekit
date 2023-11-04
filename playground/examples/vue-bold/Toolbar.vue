@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { useTypedEditorRef } from './use-typed-editor'
+import { useEditor } from 'prosekit/vue'
+import type { EditorExtension } from './extension'
 
-const editor = useTypedEditorRef()
+const editor = useEditor<EditorExtension>()
 </script>
 
 <template>
@@ -12,7 +13,7 @@ const editor = useTypedEditorRef()
       @mousedown.prevent
       class="TOGGLE_BUTTON"
     >
-      B
+      Bold
     </button>
   </div>
 </template>

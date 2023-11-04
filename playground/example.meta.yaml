@@ -13,8 +13,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: use-typed-editor.ts
-        hidden: false
   - name: react-slash-menu
     order: 12
     files:
@@ -23,8 +21,6 @@ examples:
       - path: SlashMenu.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: use-example-editor.ts
         hidden: false
   - name: react-user-menu
     order: 13
@@ -58,8 +54,6 @@ examples:
         hidden: false
       - path: package.json
         hidden: false
-      - path: use-example-editor.ts
-        hidden: false
   - name: react-list
     order: 15
     files:
@@ -68,8 +62,6 @@ examples:
       - path: Toolbar.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: use-typed-editor.ts
         hidden: false
   - name: vue-minimal
     order: 21
@@ -85,8 +77,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: use-typed-editor.ts
-        hidden: false
   - name: vue-slash-menu
     order: 22
     files:
@@ -95,8 +85,6 @@ examples:
       - path: SlashMenu.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: use-example-editor.ts
         hidden: false
   - name: vue-toolbar
     order: 24
@@ -109,8 +97,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: use-example-editor.ts
-        hidden: false
   - name: vue-list
     order: 25
     files:
@@ -122,8 +108,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: use-example-editor.ts
-        hidden: false
   - name: vue-bold
     order: 27
     files:
@@ -133,8 +117,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: use-typed-editor.ts
-        hidden: false
   - name: vue-italic
     order: 28
     files:
@@ -143,8 +125,6 @@ examples:
       - path: Toolbar.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: use-typed-editor.ts
         hidden: false
   - name: vue-full
     order: 29
@@ -167,8 +147,6 @@ examples:
         hidden: false
       - path: tags.ts
         hidden: false
-      - path: use-example-editor.ts
-        hidden: false
       - path: users.ts
         hidden: false
   - name: preact-minimal
@@ -189,8 +167,6 @@ examples:
         hidden: true
       - path: package.json
         hidden: false
-      - path: use-example-editor.ts
-        hidden: false
   - name: svelte-minimal
     order: 41
     files:
@@ -205,7 +181,23 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: get-example-editor.ts
+  - name: svelte-bold
+    order: 44
+    files:
+      - path: App.svelte
+        hidden: false
+      - path: Toolbar.svelte
+        hidden: false
+      - path: extension.ts
+        hidden: false
+  - name: svelte-italic
+    order: 44
+    files:
+      - path: App.svelte
+        hidden: false
+      - path: Toolbar.svelte
+        hidden: false
+      - path: extension.ts
         hidden: false
   - name: svelte-list
     order: 45
@@ -228,8 +220,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: use-typed-editor.ts
-        hidden: false
   - name: solid-slash-menu
     order: 52
     files:
@@ -238,8 +228,6 @@ examples:
       - path: SlashMenu.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: use-example-editor.ts
         hidden: false
   - name: lit
     order: 61

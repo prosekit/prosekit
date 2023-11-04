@@ -3,9 +3,10 @@ import { AutocompleteEmpty } from 'prosekit/vue/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/vue/autocomplete-item'
 import { AutocompleteList } from 'prosekit/vue/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/vue/autocomplete-popover'
-import { useExampleEditor } from './use-example-editor'
+import { useEditor } from 'prosekit/vue'
+import type { EditorExtension } from './extension'
 
-const editor = useExampleEditor()
+const editor = useEditor<EditorExtension>().value
 
 const handleHeadingInsert = (level: number) => {
   editor.commands.insertHeading({ level })

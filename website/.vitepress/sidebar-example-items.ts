@@ -75,6 +75,14 @@ export const exampleItems = [
     "link": "/examples/svelte-slash-menu"
   },
   {
+    "text": "svelte-bold",
+    "link": "/examples/svelte-bold"
+  },
+  {
+    "text": "svelte-italic",
+    "link": "/examples/svelte-italic"
+  },
+  {
     "text": "svelte-list",
     "link": "/examples/svelte-list"
   },

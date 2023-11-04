@@ -1,7 +1,8 @@
+import { useEditor } from 'prosekit/react'
 import { Popover } from 'prosekit/react/popover'
 import { useState, type FC, type ReactNode } from 'react'
 
-import { useExampleEditor } from './use-example-editor'
+import type { EditorExtension } from './extension'
 
 export const ImageUploadPopover: FC<{
   open: boolean
@@ -14,7 +15,7 @@ export const ImageUploadPopover: FC<{
   const [objectUrl, setObjectUrl] = useState('')
   const url = webUrl || objectUrl
 
-  const editor = useExampleEditor()
+  const editor = useEditor<EditorExtension>()
 
   const handleFileChange: React.ChangeEventHandler<HTMLInputElement> = (
     event,

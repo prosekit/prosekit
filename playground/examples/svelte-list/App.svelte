@@ -4,8 +4,8 @@ import 'prosekit/extensions/list/style.css'
 
 import { createEditor, type NodeJson } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
-import { onMount } from 'svelte'
-import { defineExampleExtension } from './extension'
+import { onMount, onDestroy } from 'svelte'
+import { defineExtension } from './extension'
 
 const defaultDoc: NodeJson = {
   type: 'doc',
@@ -53,10 +53,11 @@ const defaultDoc: NodeJson = {
   ],
 }
 
-const editor = createEditor({ extension: defineExampleExtension(), defaultDoc })
+const editor = createEditor({ extension: defineExtension(), defaultDoc })
 
 let place: HTMLDivElement
 onMount(() => editor.mount(place))
+onDestroy(() => editor.unmount())
 </script>
 
 <ProseKit {editor}>

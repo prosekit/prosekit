@@ -3,21 +3,22 @@ import { AutocompleteItem } from 'prosekit/svelte/autocomplete-item'
 import { AutocompletePopover } from 'prosekit/svelte/autocomplete-popover'
 import { AutocompleteEmpty } from 'prosekit/svelte/autocomplete-empty'
 import { AutocompleteList } from 'prosekit/svelte/autocomplete-list'
-import { getExampleEditor } from './get-example-editor'
+import { getEditor } from 'prosekit/svelte'
+import type { EditorExtension } from './extension'
 
-const editor = getExampleEditor()
+const editor = getEditor<EditorExtension>()
 
 const handleHeadingInsert = (level: number) => {
-  editor.commands.insertHeading({ level })
+  $editor.commands.insertHeading({ level })
 }
 
 const handleHeadingConvert = (level: number) => {
-  editor.commands.setHeading({ level })
+  $editor.commands.setHeading({ level })
 }
 </script>
 
-<AutocompletePopover {editor} regex={/\/.*$/iu}>
-  <AutocompleteList {editor} class="SLASH_MENU">
+<AutocompletePopover editor={$editor} regex={/\/.*$/iu}>
+  <AutocompleteList editor={$editor} class="SLASH_MENU">
     <AutocompleteEmpty class="SLASH_MENU_ITEM">
       No Command match
     </AutocompleteEmpty>

@@ -13,4 +13,6 @@ import App from '../../components/vue-bold/App.vue'
 <div class="p-2"><App/></div>
 == Vue
 <ExamplePlaygroundLazy example="vue-bold" />
+== Svelte
+<ExamplePlaygroundLazy example="svelte-bold" />
 :::

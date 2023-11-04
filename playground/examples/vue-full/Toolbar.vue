@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import { useEditor } from 'prosekit/vue'
 import { ref } from 'vue'
-import ToggleButton from './ToggleButton.vue'
-import { useExampleEditorRef } from './use-example-editor'
+import type { EditorExtension } from './extension'
 import ImageUploadPopover from './ImageUploadPopover.vue'
+import ToggleButton from './ToggleButton.vue'
 
-const editor = useExampleEditorRef()
+const editor = useEditor<EditorExtension>()
 
 const imagePopoverOpen = ref(false)
 const closeImagePopover = () => {

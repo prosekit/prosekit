@@ -11,15 +11,13 @@ export function isMarkActive(
 ): boolean {
   const markType = getMarkType(state.schema, type)
   const mark = attrs ? markType.create(attrs) : markType
-  const { from, to, $from, $to } = state.selection
 
-  return (
-    state.doc.rangeHasMark(from, to, mark) ||
-    hasMark(
-      [...$from.marks(), ...$to.marks(), ...(state.storedMarks ?? [])],
-      mark,
-    )
-  )
+  const { from, $from, to, empty } = state.selection
+  if (empty) {
+    return hasMark(state.storedMarks || $from.marks(), mark)
+  } else {
+    return state.doc.rangeHasMark(from, to, mark)
+  }
 }
 
 function hasMark(marks: readonly Mark[], mark: Mark | MarkType): boolean {

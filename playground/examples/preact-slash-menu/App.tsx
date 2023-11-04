@@ -8,11 +8,11 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
 import SlashMenu from './SlashMenu'
-import { defineExampleExtension } from './extension'
+import { defineExtension } from './extension'
 
 export default function App() {
   const editor = useMemo(() => {
-    return createEditor({ extension: defineExampleExtension() })
+    return createEditor({ extension: defineExtension() })
   }, [])
 
   return (

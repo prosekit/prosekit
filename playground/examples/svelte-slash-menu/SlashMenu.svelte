@@ -3,9 +3,10 @@ import { AutocompleteItem } from 'prosekit/svelte/autocomplete-item'
 import { AutocompletePopover } from 'prosekit/svelte/autocomplete-popover'
 import { AutocompleteEmpty } from 'prosekit/svelte/autocomplete-empty'
 import { AutocompleteList } from 'prosekit/svelte/autocomplete-list'
-import { getExampleEditor } from './get-example-editor'
+import { getEditor } from 'prosekit/svelte'
+import type { ExampleExtension } from './extension'
 
-const editor = getExampleEditor()
+const editor = getEditor<ExampleExtension>()
 
 const handleHeadingInsert = (level: number) => {
   editor.commands.insertHeading({ level })

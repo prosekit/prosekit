@@ -1,8 +1,11 @@
 // @unocss-include
 
 // A helper function to make Prettier format the class names
-function clsx(s) {
-  return s
+function clsx(...parts) {
+  return parts
+    .map((p) => p || '')
+    .filter((p) => p)
+    .join(' ')
 }
 
 export const shortcuts = {
@@ -43,7 +46,10 @@ export const shortcuts = {
   TOOLBAR: clsx('z-2 my-2 flex flex-wrap gap-1'),
 
   TOGGLE_BUTTON: clsx(
-    'inline-flex h-11 w-11 items-center justify-center rounded-md bg-transparent font-medium outline-none transition-colors hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:text-blue-600 hover:data-[state=on]:text-blue-600 dark:hover:bg-gray-800 dark:focus-visible:ring-gray-300 dark:data-[state=on]:text-blue-500 hover:dark:data-[state=on]:text-blue-500',
+    'inline-flex items-center justify-center rounded-md bg-transparent bg-transparent p-2 font-medium outline-none transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 disabled:pointer-events-none',
+    'hover:opacity-90 disabled:opacity-50 hover:disabled:opacity-50',
+    'text-gray-500 data-[state=on]:text-black dark:text-gray-400 dark:data-[state=on]:text-white',
+    'bg-transparent data-[state=on]:bg-gray-200 hover:data-[state=off]:bg-gray-100 dark:data-[state=on]:bg-gray-700 dark:hover:data-[state=off]:bg-gray-800',
   ),
 
   IMAGE_UPLOAD_CARD: clsx(
@@ -58,19 +64,19 @@ export const shortcuts = {
     'dark:text-dark inline-flex h-10 w-full items-center justify-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-100',
   ),
 
-  ICON_ITALIC: clsx('i-ci-italic h-4 w-4'),
-  ICON_BOLD: clsx('i-ci-bold h-4 w-4'),
-  ICON_H1: clsx('i-ci-heading-h1 h-4 w-4'),
-  ICON_H2: clsx('i-ci-heading-h2 h-4 w-4'),
-  ICON_H3: clsx('i-ci-heading-h3 h-4 w-4'),
-  ICON_H4: clsx('i-ci-heading-h4 h-4 w-4'),
-  ICON_H5: clsx('i-ci-heading-h5 h-4 w-4'),
-  ICON_H6: clsx('i-ci-heading-h6 h-4 w-4'),
-  ICON_UNDO: clsx('i-ci-arrow-undo-up-left h-4 w-4'),
-  ICON_REDO: clsx('i-ci-arrow-undo-up-right h-4 w-4'),
-  ICON_IMAGE: clsx('i-ci-image-02 h-4 w-4'),
-  ICON_LIST_BULLET: clsx('i-ci-list-ul h-4 w-4'),
-  ICON_LIST_ORDERED: clsx('i-ci-list-ol h-4 w-4'),
-  ICON_LIST_TASK: clsx('i-ci-list-checklist h-4 w-4'),
-  ICON_LIST_TOGGLE: clsx('i-ci-sort-descending h-4 w-4 rotate-180'),
+  ICON_ITALIC: clsx('i-ci-italic h-5 w-5'),
+  ICON_BOLD: clsx('i-ci-bold h-5 w-5'),
+  ICON_H1: clsx('i-ci-heading-h1 h-5 w-5'),
+  ICON_H2: clsx('i-ci-heading-h2 h-5 w-5'),
+  ICON_H3: clsx('i-ci-heading-h3 h-5 w-5'),
+  ICON_H4: clsx('i-ci-heading-h4 h-5 w-5'),
+  ICON_H5: clsx('i-ci-heading-h5 h-5 w-5'),
+  ICON_H6: clsx('i-ci-heading-h6 h-5 w-5'),
+  ICON_UNDO: clsx('i-ci-arrow-undo-up-left h-5 w-5'),
+  ICON_REDO: clsx('i-ci-arrow-undo-up-right h-5 w-5'),
+  ICON_IMAGE: clsx('i-ci-image-02 h-5 w-5'),
+  ICON_LIST_BULLET: clsx('i-ci-list-ul h-5 w-5'),
+  ICON_LIST_ORDERED: clsx('i-ci-list-ol h-5 w-5'),
+  ICON_LIST_TASK: clsx('i-ci-list-checklist h-5 w-5'),
+  ICON_LIST_TOGGLE: clsx('i-ci-sort-descending h-5 w-5 rotate-180'),
 }

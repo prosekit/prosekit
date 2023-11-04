@@ -4,11 +4,11 @@ import 'prosekit/extensions/list/style.css'
 
 import { watchPostEffect, ref } from 'vue'
 import { ProseKit } from 'prosekit/vue'
-import { defineExampleExtension } from './extension'
+import { defineExtension } from './extension'
 import Toolbar from './Toolbar.vue'
 import { createEditor } from 'prosekit/core'
 
-const editor = createEditor({ extension: defineExampleExtension() })
+const editor = createEditor({ extension: defineExtension() })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect(() => editor.mount(editorRef.value))
 </script>

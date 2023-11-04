@@ -12,7 +12,7 @@ const editor = useTypedEditorRef()
       @mousedown.prevent
       class="TOGGLE_BUTTON"
     >
-      B
+      Bold
     </button>
   </div>
 </template>

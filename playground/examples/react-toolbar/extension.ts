@@ -6,7 +6,7 @@ import { defineReactNodeView } from 'prosekit/react'
 
 import CodeBlockView from './CodeBlockView'
 
-export function defineExampleExtension() {
+export function defineExtension() {
   return union([
     defineBasicExtension(),
     defineCodeBlock({ hljs }),
@@ -17,4 +17,4 @@ export function defineExampleExtension() {
   ])
 }
 
-export type ExampleExtension = ReturnType<typeof defineExampleExtension>
+export type EditorExtension = ReturnType<typeof defineExtension>

@@ -5,11 +5,11 @@ import { AutocompleteItem } from 'prosekit/react/autocomplete-item'
 import { AutocompleteList } from 'prosekit/react/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/react/autocomplete-popover'
 
-import type { ExampleExtension } from './extension'
+import type { EditorExtension } from './extension'
 import { tags } from './tags'
 
 export default function TagMenu() {
-  const editor = useEditor<ExampleExtension>()
+  const editor = useEditor<EditorExtension>()
 
   const handleTagInsert = (id: number, label: string) => {
     const attrs: MentionAttrs = {

@@ -7,11 +7,11 @@ import { useMemo } from 'react'
 
 import TagMenu from './TagMenu'
 import UserMenu from './UserMenu'
-import { defineExampleExtension } from './extension'
+import { defineExtension } from './extension'
 
 export default function App() {
   const editor = useMemo(() => {
-    const extension = defineExampleExtension()
+    const extension = defineExtension()
     return createEditor({ extension })
   }, [])
 

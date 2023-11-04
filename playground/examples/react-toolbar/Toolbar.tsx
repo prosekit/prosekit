@@ -1,11 +1,12 @@
+import { useEditor } from 'prosekit/react'
 import { useState } from 'react'
 
 import { ImageUploadPopover } from './ImageUploadPopover'
 import { ToggleButton } from './ToggleButton'
-import { useExampleEditor } from './use-example-editor'
+import type { EditorExtension } from './extension'
 
 export default function Toolbar() {
-  const editor = useExampleEditor({ update: true })
+  const editor = useEditor<EditorExtension>({ update: true })
 
   const [imagePopoverOpen, setImagePopoverOpen] = useState(false)
   const closeImagePopover = () => {

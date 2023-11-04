@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import { useEditor } from 'prosekit/vue'
 import ToggleButton from './ToggleButton.vue'
-import { useExampleEditorRef } from './use-example-editor'
+import type { EditorExtension } from './extension'
 
-const editor = useExampleEditorRef()
+const editor = useEditor<EditorExtension>()
 </script>
 
 <template>

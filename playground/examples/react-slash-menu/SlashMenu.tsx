@@ -1,13 +1,14 @@
+import { useEditor } from 'prosekit/react'
 import { AutocompleteEmpty } from 'prosekit/react/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/react/autocomplete-item'
 import { AutocompleteList } from 'prosekit/react/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/react/autocomplete-popover'
 import React from 'react'
 
-import { useExampleEditor } from './use-example-editor'
+import type { EditorExtension } from './extension'
 
 export default function SlashMenu() {
-  const editor = useExampleEditor()
+  const editor = useEditor<EditorExtension>()
 
   const handleHeadingInsert = (level: number) => {
     editor.commands.insertHeading({ level })

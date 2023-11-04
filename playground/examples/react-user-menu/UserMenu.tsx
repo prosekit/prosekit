@@ -6,11 +6,11 @@ import { AutocompleteList } from 'prosekit/react/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/react/autocomplete-popover'
 import React from 'react'
 
-import type { ExampleExtension } from './extension'
+import type { EditorExtension } from './extension'
 import { users } from './users'
 
 export default function UserMenu() {
-  const editor = useEditor<ExampleExtension>()
+  const editor = useEditor<EditorExtension>()
 
   const handleUserInsert = (id: number, username: string) => {
     const attrs: MentionAttrs = {

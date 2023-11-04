@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { Popover } from 'prosekit/vue/popover'
 import { computed, ref, type PropType } from 'vue'
-import { useExampleEditor } from './use-example-editor'
+import { useEditor } from 'prosekit/vue'
+import type { EditorExtension } from './extension'
 
 let props = defineProps({
   open: Boolean,
@@ -12,7 +13,7 @@ const anchorElement = ref(null)
 const webUrl = ref('')
 const objectUrl = ref('')
 const url = computed(() => webUrl.value || objectUrl.value)
-const editor = useExampleEditor()
+const editor = useEditor<EditorExtension>().value
 
 const handleFileChange = (event: Event) => {
   const file = (event.target as HTMLInputElement)?.files?.[0]

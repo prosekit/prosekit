@@ -3,12 +3,12 @@ import 'prosekit/basic/style.css'
 import 'prosekit/extensions/placeholder/style.css'
 
 import { createEditor } from 'prosekit/core'
-import { defineExampleExtension } from './extension'
+import { defineExtension } from './extension'
 import { onMount } from 'svelte'
 import { ProseKit } from 'prosekit/svelte'
 import SlashMenu from './SlashMenu.svelte'
 
-const editor = createEditor({ extension: defineExampleExtension() })
+const editor = createEditor({ extension: defineExtension() })
 
 let place: HTMLDivElement
 onMount(() => editor.mount(place))

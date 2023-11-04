@@ -6,9 +6,10 @@ import { AutocompleteList } from 'prosekit/vue/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/vue/autocomplete-popover'
 
 import { tags } from './tags'
-import { useExampleEditor } from './use-example-editor'
+import { useEditor } from 'prosekit/vue'
+import type { EditorExtension } from './extension'
 
-const editor = useExampleEditor()
+const editor = useEditor<EditorExtension>().value
 
 const handleTagInsert = (id: number, label: string) => {
   const attrs: MentionAttrs = {

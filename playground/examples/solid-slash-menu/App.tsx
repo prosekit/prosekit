@@ -7,10 +7,10 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 
 import SlashMenu from './SlashMenu'
-import { defineExampleExtension } from './extension'
+import { defineExtension } from './extension'
 
 export default function App() {
-  const editor = createEditor({ extension: defineExampleExtension() })
+  const editor = createEditor({ extension: defineExtension() })
 
   return (
     <ProseKit editor={editor}>

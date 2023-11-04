@@ -10,7 +10,7 @@ interface UseExtensionProps<T extends Extension = Extension> {
 export function useExtension({ extension }: UseExtensionProps) {
   const editor = useEditor()
   onMounted(() => {
-    const dispose = editor.use(extension)
+    const dispose = editor.value.use(extension)
     onUnmounted(dispose)
   })
 }

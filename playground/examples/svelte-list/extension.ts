@@ -7,7 +7,7 @@ import {
 } from 'prosekit/core'
 import { defineList } from 'prosekit/extensions/list'
 
-export function defineExampleExtension() {
+export function defineExtension() {
   return union([
     defineBaseKeymap(),
     defineDoc(),
@@ -17,4 +17,4 @@ export function defineExampleExtension() {
   ])
 }
 
-export type ExampleExtension = ReturnType<typeof defineExampleExtension>
+export type EditorExtension = ReturnType<typeof defineExtension>

@@ -29,7 +29,7 @@
     "read-pkg": "^9.0.0",
     "read-pkg-up": "^10.1.0",
     "tsup": "^7.2.0",
-    "write-pkg": "^6.0.0"
+    "write-pkg": "^6.0.1"
   },
   "devDependencies": {
     "@changesets/read": "^0.5.9",

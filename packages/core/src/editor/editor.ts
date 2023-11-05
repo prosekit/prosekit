@@ -40,6 +40,12 @@ export interface EditorOptions<E extends Extension> {
   defaultDoc?: NodeJson
 
   /**
+   * A HTML string representing the starting document to use when creating the
+   * editor.
+   */
+  defaultHTML?: string
+
+  /**
    * A JSON object representing the starting selection to use when creating the
    * editor. It's only used when `defaultDoc` is also provided.
    */
@@ -52,8 +58,19 @@ export interface EditorOptions<E extends Extension> {
 export function createEditor<E extends Extension>({
   extension,
   defaultDoc,
+  defaultHTML,
   defaultSelection,
 }: EditorOptions<E>): Editor<E> {
+  if (defaultHTML && defaultDoc) {
+    throw new ProseKitError(
+      'Only one of defaultHTML and defaultDoc can be provided',
+    )
+  }
+
+  if (defaultHTML) {
+    throw new ProseKitError('defaultHTML is not supported yet')
+  }
+
   if (defaultDoc) {
     extension = union([
       extension,

@@ -5,16 +5,16 @@ import { type CommandCreator } from '../types/command'
 import { getMarkType } from '../utils/get-mark-type'
 
 /**
- * Add the given mark to the inline content.
+ * Remove the given mark from the inline content.
  */
-export function addMark(options: {
+export function removeMark(options: {
   /**
-   * The type of the mark to add.
+   * The type of the mark to remove.
    */
   type: string | MarkType
 
   /**
-   * The attributes of the mark to add.
+   * If attrs is given, remove precisely the mark with the given attrs. Otherwise, remove all marks of the given type.
    */
   attrs?: Attrs | null
 
@@ -29,15 +29,16 @@ export function addMark(options: {
   to?: number
 }): Command {
   return (state, dispatch) => {
-    const mark = getMarkType(state.schema, options.type).create(options.attrs)
+    let markType = getMarkType(state.schema, options.type)
+    const mark = options.attrs ? markType.create(options.attrs) : markType
     const from = options.from ?? state.selection.from
     const to = options.to ?? state.selection.to
     if (from > to) {
       return false
     }
-    dispatch?.(state.tr.addMark(from, to, mark))
+    dispatch?.(state.tr.removeMark(from, to, mark))
     return true
   }
 }
 
-addMark satisfies CommandCreator
+removeMark satisfies CommandCreator

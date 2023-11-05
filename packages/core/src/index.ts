@@ -1,4 +1,5 @@
 export { addMark } from './commands/add-mark'
+export { removeMark } from './commands/remove-mark'
 export { insertNode } from './commands/insert-node'
 export { setBlockType } from './commands/set-block-type'
 export { toggleMark } from './commands/toggle-mark'

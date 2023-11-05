@@ -17,9 +17,6 @@ import App from '../../components/vue-bold/App.vue'
 <ExamplePlaygroundLazy example="svelte-bold" />
 :::
 
-
-
-
 ## Commands
 
 ### `toggleBold`
@@ -28,10 +25,8 @@ import App from '../../components/vue-bold/App.vue'
 editor.commands.toggleBold()
 ```
 
-
-
 ## Keyboard Shortcuts
 
-| Shortcut | Description                         |
-| -------- | ----------------------------------- |
+| Shortcut | Description                          |
+| -------- | ------------------------------------ |
 | `Mod-B`  | Toggle the current selection to bold |

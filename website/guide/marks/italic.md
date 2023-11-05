@@ -17,19 +17,14 @@ import App from '../../components/vue-italic/App.vue'
 <ExamplePlaygroundLazy example="svelte-italic" />
 :::
 
-
-
-
 ### `toggleItalic`
 
 ```ts
 editor.commands.toggleItalic()
 ```
 
-
-
 ## Keyboard Shortcuts
 
-| Shortcut | Description                         |
-| -------- | ----------------------------------- |
+| Shortcut | Description                            |
+| -------- | -------------------------------------- |
 | `Mod-I`  | Toggle the current selection to italic |

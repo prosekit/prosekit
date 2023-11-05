@@ -47,7 +47,7 @@ export interface EditorOptions<E extends Extension> {
 
   /**
    * A JSON object representing the starting selection to use when creating the
-   * editor. It's only used when `defaultDoc` is also provided.
+   * editor. It's only used when `defaultDoc` or `defaultHTML` is also provided.
    */
   defaultSelection?: SelectionJson
 }

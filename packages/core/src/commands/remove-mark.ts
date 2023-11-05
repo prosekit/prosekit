@@ -29,7 +29,7 @@ export function removeMark(options: {
   to?: number
 }): Command {
   return (state, dispatch) => {
-    let markType = getMarkType(state.schema, options.type)
+    const markType = getMarkType(state.schema, options.type)
     const mark = options.attrs ? markType.create(options.attrs) : markType
     const from = options.from ?? state.selection.from
     const to = options.to ?? state.selection.to

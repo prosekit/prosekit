@@ -8,7 +8,13 @@ import { defineExtension } from './extension'
 import Toolbar from './Toolbar.vue'
 import { createEditor } from 'prosekit/core'
 
-const editor = createEditor({ extension: defineExtension() })
+const defaultHTML = `
+  <p><b>This is bold</b></p>
+  <p><strong>This is bold too</strong></p>
+  <p><span>This is normal text</span></p>
+`
+
+const editor = createEditor({ extension: defineExtension(), defaultHTML })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect(() => editor.mount(editorRef.value))
 </script>

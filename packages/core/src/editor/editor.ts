@@ -65,7 +65,7 @@ export function createEditor<E extends Extension>({
   defaultHTML,
   defaultSelection,
 }: EditorOptions<E>): Editor<E> {
-  if (defaultDoc) {
+  if (defaultDoc || defaultHTML) {
     extension = union([
       extension,
       defineDefaultState({

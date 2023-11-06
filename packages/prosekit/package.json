@@ -46,7 +46,9 @@
     "./extensions/mention": "./src/extensions/mention.gen.ts",
     "./extensions/placeholder": "./src/extensions/placeholder.gen.ts",
     "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
+    "./extensions/strike": "./src/extensions/strike.gen.ts",
     "./extensions/suggestion": "./src/extensions/suggestion.gen.ts",
+    "./extensions/underline": "./src/extensions/underline.gen.ts",
     "./lit": "./src/lit.gen.ts",
     "./lit/autocomplete-empty": "./src/lit/autocomplete-empty.gen.ts",
     "./lit/autocomplete-item": "./src/lit/autocomplete-item.gen.ts",
@@ -281,10 +283,20 @@
       "./extensions/placeholder/style.css": {
         "default": "./dist/extensions/placeholder/style.css"
       },
+      "./extensions/strike": {
+        "types": "./dist/prosekit-extensions-strike.d.ts",
+        "import": "./dist/prosekit-extensions-strike.js",
+        "default": "./dist/prosekit-extensions-strike.js"
+      },
       "./extensions/suggestion": {
         "types": "./dist/prosekit-extensions-suggestion.d.ts",
         "import": "./dist/prosekit-extensions-suggestion.js",
         "default": "./dist/prosekit-extensions-suggestion.js"
+      },
+      "./extensions/underline": {
+        "types": "./dist/prosekit-extensions-underline.d.ts",
+        "import": "./dist/prosekit-extensions-underline.js",
+        "default": "./dist/prosekit-extensions-underline.js"
       },
       "./lit": {
         "types": "./dist/prosekit-lit.d.ts",
@@ -718,8 +730,14 @@
         "extensions/placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"
         ],
+        "extensions/strike": [
+          "./dist/prosekit-extensions-strike.d.ts"
+        ],
         "extensions/suggestion": [
           "./dist/prosekit-extensions-suggestion.d.ts"
+        ],
+        "extensions/underline": [
+          "./dist/prosekit-extensions-underline.d.ts"
         ],
         "lit": [
           "./dist/prosekit-lit.d.ts"

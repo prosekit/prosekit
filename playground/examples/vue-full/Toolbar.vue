@@ -5,7 +5,7 @@ import type { EditorExtension } from './extension'
 import ImageUploadPopover from './ImageUploadPopover.vue'
 import ToggleButton from './ToggleButton.vue'
 
-const editor = useEditor<EditorExtension>()
+const editor = useEditor<EditorExtension>({ update: true })
 
 const imagePopoverOpen = ref(false)
 const closeImagePopover = () => {

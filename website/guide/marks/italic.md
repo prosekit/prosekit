@@ -1,6 +1,6 @@
 # Italic
 
-The `italic` mark is used to represent text that is emphasized in the document.
+The `italic` mark is used to represent text that is using an italicized type. It will be rendered as `<em>` element in HTML.
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
@@ -16,3 +16,15 @@ import App from '../../components/vue-italic/App.vue'
 == Svelte
 <ExamplePlaygroundLazy example="svelte-italic" />
 :::
+
+### `toggleItalic`
+
+```ts
+editor.commands.toggleItalic()
+```
+
+## Keyboard Shortcuts
+
+| Shortcut | Description                            |
+| -------- | -------------------------------------- |
+| `Mod-I`  | Toggle the current selection to italic |

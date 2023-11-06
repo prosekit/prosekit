@@ -66,8 +66,16 @@ export const referenceItems = [
         "link": "/references/extensions/placeholder"
       },
       {
+        "text": "strike",
+        "link": "/references/extensions/strike"
+      },
+      {
         "text": "suggestion",
         "link": "/references/extensions/suggestion"
+      },
+      {
+        "text": "underline",
+        "link": "/references/extensions/underline"
       }
     ],
     "collapsed": false,

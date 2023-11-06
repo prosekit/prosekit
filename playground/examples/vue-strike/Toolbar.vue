@@ -8,12 +8,12 @@ const editor = useEditor<EditorExtension>({ update: true })
 <template>
   <div class="TOOLBAR">
     <button
-      :data-state="editor.marks.bold.isActive() ? 'on' : 'off'"
-      @click="() => editor.commands.toggleBold()"
+      :data-state="editor.marks.strike.isActive() ? 'on' : 'off'"
+      @click="() => editor.commands.toggleStrike()"
       @mousedown.prevent
       class="TOGGLE_BUTTON"
     >
-      Bold
+      Strike
     </button>
   </div>
 </template>

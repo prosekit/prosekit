@@ -4,3 +4,6 @@ ProseKit provides a set of built-in marks that can be used to build a rich text 
 
 - [bold](./bold)
 - [italic](./italic)
+- [link](./link)
+- [underline](./underline)
+- [strike](./strike)

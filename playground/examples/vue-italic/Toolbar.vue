@@ -2,7 +2,7 @@
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
 
-const editor = useEditor<EditorExtension>()
+const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>

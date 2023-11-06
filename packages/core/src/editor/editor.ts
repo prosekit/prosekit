@@ -44,8 +44,14 @@ export interface EditorOptions<E extends Extension> {
   defaultDoc?: NodeJson
 
   /**
+   * A HTML string representing the starting document to use when creating the
+   * editor.
+   */
+  defaultHTML?: string
+
+  /**
    * A JSON object representing the starting selection to use when creating the
-   * editor. It's only used when `defaultDoc` is also provided.
+   * editor. It's only used when `defaultDoc` or `defaultHTML` is also provided.
    */
   defaultSelection?: SelectionJson
 }
@@ -56,14 +62,16 @@ export interface EditorOptions<E extends Extension> {
 export function createEditor<E extends Extension>({
   extension,
   defaultDoc,
+  defaultHTML,
   defaultSelection,
 }: EditorOptions<E>): Editor<E> {
-  if (defaultDoc) {
+  if (defaultDoc || defaultHTML) {
     extension = union([
       extension,
       defineDefaultState({
-        doc: defaultDoc,
-        selection: defaultSelection,
+        defaultDoc,
+        defaultHTML,
+        defaultSelection,
       }),
     ]) as E
   }

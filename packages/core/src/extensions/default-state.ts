@@ -1,30 +1,55 @@
 import { Selection, type EditorStateConfig } from '@prosekit/pm/state'
 
+import { ProseKitError } from '../error'
 import { stateFacet } from '../facets/state'
 import type { Extension } from '../types/extension'
 import type { NodeJson, SelectionJson } from '../types/model'
+import { htmlToJSON } from '../utils/parse'
 
 export interface DefaultStateOptions {
   /**
-   * A JSON representation of a ProseMirror document.
+   * A JSON object representing the starting document to use when creating the
+   * editor.
    */
-  doc?: NodeJson
+  defaultDoc?: NodeJson
+
   /**
-   * A JSON representation of a ProseMirror selection.
+   * A HTML string representing the starting document to use when creating the
+   * editor.
    */
-  selection?: SelectionJson
+  defaultHTML?: string
+
+  /**
+   * A JSON object representing the starting selection to use when creating the
+   * editor. It's only used when `defaultDoc` or `defaultHTML` is also provided.
+   */
+  defaultSelection?: SelectionJson
 }
 
-export function defineDefaultState(options: DefaultStateOptions): Extension {
+export function defineDefaultState({
+  defaultDoc,
+  defaultHTML,
+  defaultSelection,
+}: DefaultStateOptions): Extension {
+  if (defaultHTML && defaultDoc) {
+    throw new ProseKitError(
+      'Only one of defaultHTML and defaultDoc can be provided',
+    )
+  }
+
   return stateFacet.extension([
     ({ schema }) => {
       const config: EditorStateConfig = {}
 
-      if (options.doc) {
-        config.doc = schema.nodeFromJSON(options.doc)
+      if (defaultHTML) {
+        defaultDoc = htmlToJSON(defaultHTML, schema)
+      }
 
-        if (options.selection) {
-          config.selection = Selection.fromJSON(config.doc, options.selection)
+      if (defaultDoc) {
+        config.doc = schema.nodeFromJSON(defaultDoc)
+
+        if (defaultSelection) {
+          config.selection = Selection.fromJSON(config.doc, defaultSelection)
         }
       }
 

@@ -1,4 +1,6 @@
+import { addMark } from '../commands/add-mark'
 import { insertText } from '../commands/insert-text'
+import { removeMark } from '../commands/remove-mark'
 import { selectAll } from '../commands/select-all'
 import { setBlockType } from '../commands/set-block-type'
 import { wrap } from '../commands/wrap'
@@ -34,5 +36,9 @@ export function defineBaseCommands() {
     setBlockType,
 
     selectAll,
+
+    addMark,
+
+    removeMark,
   })
 }

@@ -9,9 +9,9 @@ import Toolbar from './Toolbar.vue'
 import { createEditor } from 'prosekit/core'
 
 const defaultHTML = `
-  <p><b>This is bold</b></p>
-  <p><strong>This is bold too</strong></p>
-  <p><span>This is normal text</span></p>
+  <p><u>Underline</u></p>
+  <p><span style="text-decoration-line: underline;">Underline</span></p>
+  <p><span>Normal text</span></p>
 `
 
 const editor = createEditor({ extension: defineExtension(), defaultHTML })

@@ -53,3 +53,9 @@
 - [lit](./examples/lit)
 
 - [vanilla](./examples/vanilla)
+
+- [vue-link](./examples/vue-link)
+
+- [vue-strike](./examples/vue-strike)
+
+- [vue-underline](./examples/vue-underline)

@@ -105,5 +105,17 @@ export const exampleItems = [
   {
     "text": "vanilla",
     "link": "/examples/vanilla"
+  },
+  {
+    "text": "vue-link",
+    "link": "/examples/vue-link"
+  },
+  {
+    "text": "vue-strike",
+    "link": "/examples/vue-strike"
+  },
+  {
+    "text": "vue-underline",
+    "link": "/examples/vue-underline"
   }
 ]

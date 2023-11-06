@@ -1,6 +1,6 @@
 import { Schema } from '@prosekit/pm/model'
 
-import { ProseKitError } from '..'
+import { ProseKitError } from '../error'
 import type { Extension } from '../types/extension'
 import type { ExtensionTyping } from '../types/extension-typing'
 import type { Priority } from '../types/priority'

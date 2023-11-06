@@ -1,19 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import { ProseKitError } from '../error'
-import { commandFacet, type CommandPayload } from '../facets/command'
+import type { Extension } from '../types/extension'
+import { Priority } from '../types/priority'
+import { uniqPush, uniqRemove } from '../utils/uniq-array'
+
+import { commandFacet, type CommandPayload } from './command'
 import {
   Facet,
   FacetExtension,
   getFacetCount,
   type FacetConverter,
-} from '../facets/facet'
-import { schemaFacet, type SchemaPayload } from '../facets/schema'
-import { stateFacet, type StatePayload } from '../facets/state'
-import { viewFacet, type ViewPayload } from '../facets/view'
-import type { Extension } from '../types/extension'
-import { Priority } from '../types/priority'
-import { uniqPush, uniqRemove } from '../utils/uniq-array'
+} from './facet'
+import { schemaFacet, type SchemaPayload } from './schema'
+import { stateFacet, type StatePayload } from './state'
+import { viewFacet, type ViewPayload } from './view'
 
 type Tuple5<T> = [T, T, T, T, T]
 

@@ -59,8 +59,8 @@ export class Facet<Input, Output> {
   }
 
   static define<Input, Output>({
-    converter: converter,
-    convert: convert,
+    converter,
+    convert,
     next,
     singleton,
   }: FacetOptions<Input, Output>) {

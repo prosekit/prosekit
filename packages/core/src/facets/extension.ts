@@ -1,5 +1,6 @@
 import { Schema } from '@prosekit/pm/model'
 
+import { ProseKitError } from '..'
 import type { Extension } from '../types/extension'
 import type { ExtensionTyping } from '../types/extension-typing'
 import type { Priority } from '../types/priority'
@@ -35,41 +36,40 @@ export abstract class BaseExtensionImpl<
 
 export class UnionExtensionImpl<
   T extends ExtensionTyping = ExtensionTyping,
-> extends BaseExtensionImpl<T> {
+> extends BaseExtensionImpl<T> implements Extension<T> {
   private _schema: Schema | null | undefined = undefined
 
-  public hasSchema: boolean
+  private hasSchemaCount: number
 
   constructor(public extension: BaseExtensionImpl[] = []) {
     super()
 
-    this.hasSchema =
-      extension.length > 0 && extension.some((ext) => ext.hasSchema)
+    this.hasSchemaCount = 0
+
+    for (const e of extension) {
+      if (e instanceof BaseExtensionImpl) {
+        this.hasSchemaCount += e.hasSchema ? 1 : 0
+      } else {
+        throw new ProseKitError('Invalid extension')
+      }
+    }
+  }
+
+  get hasSchema(): boolean {
+    return this.hasSchemaCount > 0
   }
 
   get schema(): Schema | null {
-    if (!this.hasSchema) {
-      return null
-    }
-
     if (this._schema !== undefined) {
       return this._schema
     }
 
-    let hasSchemaCount = 0
-
-    for (const e of this.extension) {
-      if (e.hasSchema) {
-        hasSchemaCount++
-      }
-    }
-
-    if (hasSchemaCount === 0) {
+    if (this.hasSchemaCount === 0) {
       this._schema = null
       return this._schema
     }
 
-    if (hasSchemaCount === 1) {
+    if (this.hasSchemaCount === 1) {
       const schema = this.extension.find((e) => e.hasSchema)?.schema
       if (schema) {
         this._schema = schema

@@ -8,7 +8,7 @@ import { assertTypeEqual } from '../types/assert-type-equal'
 import { type CommandCreator } from '../types/command'
 import { type Extension } from '../types/extension'
 
-import { union } from './type-utils'
+import { union } from './union'
 
 describe('union', () => {
   it('can merge one extension types', () => {

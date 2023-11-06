@@ -22,7 +22,7 @@ import {
   type MarkBuilder,
   type NodeBuilder,
 } from './builder'
-import { union } from './type-utils'
+import { union } from './union'
 
 /**
  * @public

@@ -1,3 +1,5 @@
+import type { Schema } from '@prosekit/pm/model'
+
 import type { ToCommandApplier, ToCommandCreators } from './command'
 import type { ExceptEmptyValue } from './except-empty-value'
 import type {
@@ -16,6 +18,13 @@ export interface Extension<T extends ExtensionTyping = ExtensionTyping> {
   extension: Extension | Extension[]
   priority?: Priority
   _type?: T
+
+  /**
+   * @public
+   * 
+   * The schema that this extension represents.
+   */
+  schema: Schema | null 
 }
 
 /**

@@ -84,6 +84,10 @@
     "path": "packages/prosekit/dist/extensions/placeholder/style.css"
   },
   {
+    "name": "prosekit/extensions/strike",
+    "path": "packages/prosekit/dist/prosekit-extensions-strike.js"
+  },
+  {
     "name": "prosekit/extensions/suggestion",
     "path": "packages/prosekit/dist/prosekit-extensions-suggestion.js"
   },

@@ -46,6 +46,7 @@
     "./extensions/mention": "./src/extensions/mention.gen.ts",
     "./extensions/placeholder": "./src/extensions/placeholder.gen.ts",
     "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
+    "./extensions/strike": "./src/extensions/strike.gen.ts",
     "./extensions/suggestion": "./src/extensions/suggestion.gen.ts",
     "./lit": "./src/lit.gen.ts",
     "./lit/autocomplete-empty": "./src/lit/autocomplete-empty.gen.ts",
@@ -132,11 +133,11 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
+    "@prosekit/pm": "0.0.7",
     "@prosekit/basic": "0.0.21",
     "@prosekit/core": "0.0.17",
     "@prosekit/extensions": "0.0.19",
     "@prosekit/lit": "0.0.21",
-    "@prosekit/pm": "0.0.7",
     "@prosekit/preact": "0.0.18",
     "@prosekit/react": "0.0.21",
     "@prosekit/solid": "0.0.19",
@@ -280,6 +281,11 @@
       },
       "./extensions/placeholder/style.css": {
         "default": "./dist/extensions/placeholder/style.css"
+      },
+      "./extensions/strike": {
+        "types": "./dist/prosekit-extensions-strike.d.ts",
+        "import": "./dist/prosekit-extensions-strike.js",
+        "default": "./dist/prosekit-extensions-strike.js"
       },
       "./extensions/suggestion": {
         "types": "./dist/prosekit-extensions-suggestion.d.ts",
@@ -717,6 +723,9 @@
         ],
         "extensions/placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"
+        ],
+        "extensions/strike": [
+          "./dist/prosekit-extensions-strike.d.ts"
         ],
         "extensions/suggestion": [
           "./dist/prosekit-extensions-suggestion.d.ts"

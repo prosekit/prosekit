@@ -1,6 +1,8 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
   "entryPoints": [
     "./src/basic.gen.ts",
     "./src/core.gen.ts",
@@ -17,6 +19,7 @@
     "./src/extensions/list.gen.ts",
     "./src/extensions/mention.gen.ts",
     "./src/extensions/placeholder.gen.ts",
+    "./src/extensions/strike.gen.ts",
     "./src/extensions/suggestion.gen.ts",
     "./src/index.ts",
     "./src/lit.gen.ts",

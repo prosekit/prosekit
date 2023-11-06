@@ -105,5 +105,9 @@ export const exampleItems = [
   {
     "text": "vanilla",
     "link": "/examples/vanilla"
+  },
+  {
+    "text": "vue-strike",
+    "link": "/examples/vue-strike"
   }
 ]

@@ -40,6 +40,7 @@
     "./mention": "./src/mention/index.ts",
     "./placeholder": "./src/placeholder/index.ts",
     "./placeholder/style.css": "./src/placeholder/style.css",
+    "./strike": "./src/strike/index.ts",
     "./suggestion": "./src/suggestion/index.ts"
   },
   "files": [
@@ -135,6 +136,11 @@
       "./placeholder/style.css": {
         "default": "./dist/placeholder/style.css"
       },
+      "./strike": {
+        "types": "./dist/prosekit-extensions-strike.d.ts",
+        "import": "./dist/prosekit-extensions-strike.js",
+        "default": "./dist/prosekit-extensions-strike.js"
+      },
       "./suggestion": {
         "types": "./dist/prosekit-extensions-suggestion.d.ts",
         "import": "./dist/prosekit-extensions-suggestion.js",
@@ -184,6 +190,9 @@
         ],
         "placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"
+        ],
+        "strike": [
+          "./dist/prosekit-extensions-strike.d.ts"
         ],
         "suggestion": [
           "./dist/prosekit-extensions-suggestion.d.ts"

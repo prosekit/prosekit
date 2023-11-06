@@ -41,6 +41,7 @@
     "./placeholder": "./src/placeholder/index.ts",
     "./placeholder/style.css": "./src/placeholder/style.css",
     "./strike": "./src/strike/index.ts",
+    "./underline": "./src/underline/index.ts",
     "./suggestion": "./src/suggestion/index.ts"
   },
   "files": [

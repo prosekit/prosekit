@@ -1,7 +1,7 @@
 import { ProseKitError } from '../error'
 import type { Extension } from '../types/extension'
 
-import { BaseExtensionImpl } from './extension'
+import { BaseExtension } from './base-extension'
 
 /**
  * @public
@@ -104,7 +104,7 @@ export class Facet<Input, Output> {
 /**
  * @public
  */
-export class FacetExtensionImpl<Input, Output> extends BaseExtensionImpl {
+export class FacetExtensionImpl<Input, Output> extends BaseExtension {
   declare extension: Extension
 
   public hasSchema: boolean

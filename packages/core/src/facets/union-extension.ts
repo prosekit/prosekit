@@ -3,52 +3,25 @@ import { Schema } from '@prosekit/pm/model'
 import { ProseKitError } from '../error'
 import type { Extension } from '../types/extension'
 import type { ExtensionTyping } from '../types/extension-typing'
-import type { Priority } from '../types/priority'
 
+import { BaseExtension } from './base-extension'
 import { updateExtension } from './flatten'
 
-export abstract class BaseExtensionImpl<
-  T extends ExtensionTyping = ExtensionTyping,
-> implements Extension<T>
-{
-  extension: Extension | Extension[] = []
-  priority?: Priority
-  _type?: T
-
-  /**
-   * @internal
-   *
-   * Whether this extension has payload that can be converted to a schema.
-   *
-   * Notice that this does not mean that the extension has a schema. For
-   * example, a `FacetExtension` with a `schemaFacet` will return `true` for
-   * this property, but will return `null` for `schema`.
-   */
-  abstract hasSchema: boolean
-
-  /**
-   * @internal
-   *
-   * The schema that this extension represents.
-   */
-  abstract schema: Schema | null
-}
-
 export class UnionExtensionImpl<T extends ExtensionTyping = ExtensionTyping>
-  extends BaseExtensionImpl<T>
+  extends BaseExtension<T>
   implements Extension<T>
 {
   private _schema: Schema | null | undefined = undefined
 
   private hasSchemaCount: number
 
-  constructor(public extension: BaseExtensionImpl[] = []) {
+  constructor(public extension: BaseExtension[] = []) {
     super()
 
     this.hasSchemaCount = 0
 
     for (const e of extension) {
-      if (e instanceof BaseExtensionImpl) {
+      if (e instanceof BaseExtension) {
         this.hasSchemaCount += e.hasSchema ? 1 : 0
       } else {
         throw new ProseKitError('Invalid extension')

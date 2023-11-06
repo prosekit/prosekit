@@ -1,4 +1,5 @@
-import { BaseExtensionImpl, UnionExtensionImpl } from '../facets/extension'
+import { BaseExtension } from '../facets/base-extension'
+import { UnionExtensionImpl } from '../facets/union-extension'
 import type { SimplifyExtension, Extension } from '../types/extension'
 
 export function union<E extends Extension | Extension[]>(
@@ -6,6 +7,6 @@ export function union<E extends Extension | Extension[]>(
 ): SimplifyExtension<E> {
   const array = Array.isArray(extension) ? extension : [extension]
   return new UnionExtensionImpl(
-    array as BaseExtensionImpl[],
+    array as BaseExtension[],
   ) as Extension as SimplifyExtension<E>
 }

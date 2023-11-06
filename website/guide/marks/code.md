@@ -1,6 +1,6 @@
 # Code
 
-The `code` mark is used to represent text that is computer code. It will be rendered as `<code>` element in HTML.
+The `code` mark is used to represent a short fragment of computer code. It will be rendered as `<code>` element in HTML.
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'

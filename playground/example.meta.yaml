@@ -1,11 +1,5 @@
 examples:
-  - name: react-minimal
-    order: 11
-    files:
-      - path: App.tsx
-        hidden: false
   - name: react-heading
-    order: 12
     files:
       - path: App.tsx
         hidden: false
@@ -13,8 +7,19 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: react-list
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: Toolbar.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+  - name: react-minimal
+    files:
+      - path: App.tsx
+        hidden: false
   - name: react-slash-menu
-    order: 12
     files:
       - path: App.tsx
         hidden: false
@@ -22,23 +27,7 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-  - name: react-user-menu
-    order: 13
-    files:
-      - path: App.tsx
-        hidden: false
-      - path: TagMenu.tsx
-        hidden: false
-      - path: UserMenu.tsx
-        hidden: false
-      - path: extension.ts
-        hidden: false
-      - path: tags.ts
-        hidden: false
-      - path: users.ts
-        hidden: false
   - name: react-toolbar
-    order: 14
     files:
       - path: App.tsx
         hidden: false
@@ -54,71 +43,21 @@ examples:
         hidden: false
       - path: package.json
         hidden: false
-  - name: react-list
-    order: 15
+  - name: react-user-menu
     files:
       - path: App.tsx
         hidden: false
-      - path: Toolbar.tsx
+      - path: TagMenu.tsx
+        hidden: false
+      - path: UserMenu.tsx
         hidden: false
       - path: extension.ts
         hidden: false
-  - name: vue-minimal
-    order: 21
-    files:
-      - path: App.vue
+      - path: tags.ts
         hidden: false
-  - name: vue-heading
-    order: 22
-    files:
-      - path: App.vue
-        hidden: false
-      - path: Toolbar.vue
-        hidden: false
-      - path: extension.ts
-        hidden: false
-  - name: vue-slash-menu
-    order: 22
-    files:
-      - path: App.vue
-        hidden: false
-      - path: SlashMenu.vue
-        hidden: false
-      - path: extension.ts
-        hidden: false
-  - name: vue-toolbar
-    order: 24
-    files:
-      - path: App.vue
-        hidden: false
-      - path: ToggleButton.vue
-        hidden: false
-      - path: Toolbar.vue
-        hidden: false
-      - path: extension.ts
-        hidden: false
-  - name: vue-list
-    order: 25
-    files:
-      - path: App.vue
-        hidden: false
-      - path: ToggleButton.vue
-        hidden: false
-      - path: Toolbar.vue
-        hidden: false
-      - path: extension.ts
+      - path: users.ts
         hidden: false
   - name: vue-bold
-    order: 27
-    files:
-      - path: App.vue
-        hidden: false
-      - path: Toolbar.vue
-        hidden: false
-      - path: extension.ts
-        hidden: false
-  - name: vue-italic
-    order: 28
     files:
       - path: App.vue
         hidden: false
@@ -127,7 +66,6 @@ examples:
       - path: extension.ts
         hidden: false
   - name: vue-full
-    order: 29
     files:
       - path: App.vue
         hidden: false
@@ -149,15 +87,83 @@ examples:
         hidden: false
       - path: users.ts
         hidden: false
+  - name: vue-heading
+    files:
+      - path: App.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+  - name: vue-italic
+    files:
+      - path: App.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+  - name: vue-link
+    files:
+      - path: App.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+  - name: vue-list
+    files:
+      - path: App.vue
+        hidden: false
+      - path: ToggleButton.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+  - name: vue-minimal
+    files:
+      - path: App.vue
+        hidden: false
+  - name: vue-slash-menu
+    files:
+      - path: App.vue
+        hidden: false
+      - path: SlashMenu.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+  - name: vue-strike
+    files:
+      - path: App.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+  - name: vue-toolbar
+    files:
+      - path: App.vue
+        hidden: false
+      - path: ToggleButton.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+  - name: vue-underline
+    files:
+      - path: App.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
   - name: preact-minimal
-    order: 31
     files:
       - path: App.tsx
         hidden: false
       - path: package.json
         hidden: true
   - name: preact-slash-menu
-    order: 32
     files:
       - path: App.tsx
         hidden: false
@@ -167,22 +173,7 @@ examples:
         hidden: true
       - path: package.json
         hidden: false
-  - name: svelte-minimal
-    order: 41
-    files:
-      - path: App.svelte
-        hidden: false
-  - name: svelte-slash-menu
-    order: 42
-    files:
-      - path: App.svelte
-        hidden: false
-      - path: SlashMenu.svelte
-        hidden: false
-      - path: extension.ts
-        hidden: false
   - name: svelte-bold
-    order: 44
     files:
       - path: App.svelte
         hidden: false
@@ -191,7 +182,6 @@ examples:
       - path: extension.ts
         hidden: false
   - name: svelte-italic
-    order: 44
     files:
       - path: App.svelte
         hidden: false
@@ -200,19 +190,24 @@ examples:
       - path: extension.ts
         hidden: false
   - name: svelte-list
-    order: 45
     files:
       - path: App.svelte
         hidden: false
       - path: extension.ts
         hidden: false
-  - name: solid-minimal
-    order: 51
+  - name: svelte-minimal
     files:
-      - path: App.tsx
+      - path: App.svelte
+        hidden: false
+  - name: svelte-slash-menu
+    files:
+      - path: App.svelte
+        hidden: false
+      - path: SlashMenu.svelte
+        hidden: false
+      - path: extension.ts
         hidden: false
   - name: solid-heading
-    order: 52
     files:
       - path: App.tsx
         hidden: false
@@ -220,8 +215,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: solid-minimal
+    files:
+      - path: App.tsx
+        hidden: false
   - name: solid-slash-menu
-    order: 52
     files:
       - path: App.tsx
         hidden: false
@@ -230,7 +228,6 @@ examples:
       - path: extension.ts
         hidden: false
   - name: lit
-    order: 61
     files:
       - path: app.ts
         hidden: false
@@ -241,32 +238,6 @@ examples:
       - path: package.json
         hidden: true
   - name: vanilla
-    order: 99
     files:
       - path: index.js
-        hidden: false
-  - name: vue-link
-    order: 999999
-    files:
-      - path: App.vue
-        hidden: false
-      - path: extension.ts
-        hidden: false
-  - name: vue-strike
-    order: 999999
-    files:
-      - path: App.vue
-        hidden: false
-      - path: Toolbar.vue
-        hidden: false
-      - path: extension.ts
-        hidden: false
-  - name: vue-underline
-    order: 999999
-    files:
-      - path: App.vue
-        hidden: false
-      - path: Toolbar.vue
-        hidden: false
-      - path: extension.ts
         hidden: false

@@ -1,12 +1,12 @@
 import { groupBy } from 'lodash-es'
 
 import {
-  findExample,
   findExampleFile,
   readExampleMeta,
   writeExampleMeta,
   type Example,
   type ExampleMeta,
+  sortExamples,
 } from './example-meta'
 import { notEmpty } from './not-empty'
 import { skipGen } from './skip-gen'
@@ -43,10 +43,8 @@ export async function genExampleMetaYaml() {
   const examples = groupBy(exampleFiles, (item) => item.exampleName)
 
   for (const [exampleName, exampleFiles] of Object.entries(examples)) {
-    const oldExample = findExample(oldMeta, exampleName)
     const newExample: Example = {
       name: exampleName,
-      order: oldExample?.order ?? 999_999,
       files: exampleFiles.map(({ path }) => ({
         path: path,
         hidden: findExampleFile(oldMeta, exampleName, path)?.hidden ?? false,
@@ -54,6 +52,8 @@ export async function genExampleMetaYaml() {
     }
     newMeta.examples.push(newExample)
   }
+
+  newMeta.examples = sortExamples(newMeta.examples)
 
   await writeExampleMeta(newMeta)
 }

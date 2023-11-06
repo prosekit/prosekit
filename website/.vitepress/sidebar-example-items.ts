@@ -3,60 +3,72 @@
 // prettier-ignore
 export const exampleItems = [
   {
-    "text": "react-minimal",
-    "link": "/examples/react-minimal"
-  },
-  {
     "text": "react-heading",
     "link": "/examples/react-heading"
-  },
-  {
-    "text": "react-slash-menu",
-    "link": "/examples/react-slash-menu"
-  },
-  {
-    "text": "react-user-menu",
-    "link": "/examples/react-user-menu"
-  },
-  {
-    "text": "react-toolbar",
-    "link": "/examples/react-toolbar"
   },
   {
     "text": "react-list",
     "link": "/examples/react-list"
   },
   {
-    "text": "vue-minimal",
-    "link": "/examples/vue-minimal"
+    "text": "react-minimal",
+    "link": "/examples/react-minimal"
   },
   {
-    "text": "vue-heading",
-    "link": "/examples/vue-heading"
+    "text": "react-slash-menu",
+    "link": "/examples/react-slash-menu"
   },
   {
-    "text": "vue-slash-menu",
-    "link": "/examples/vue-slash-menu"
+    "text": "react-toolbar",
+    "link": "/examples/react-toolbar"
   },
   {
-    "text": "vue-toolbar",
-    "link": "/examples/vue-toolbar"
-  },
-  {
-    "text": "vue-list",
-    "link": "/examples/vue-list"
+    "text": "react-user-menu",
+    "link": "/examples/react-user-menu"
   },
   {
     "text": "vue-bold",
     "link": "/examples/vue-bold"
   },
   {
+    "text": "vue-full",
+    "link": "/examples/vue-full"
+  },
+  {
+    "text": "vue-heading",
+    "link": "/examples/vue-heading"
+  },
+  {
     "text": "vue-italic",
     "link": "/examples/vue-italic"
   },
   {
-    "text": "vue-full",
-    "link": "/examples/vue-full"
+    "text": "vue-link",
+    "link": "/examples/vue-link"
+  },
+  {
+    "text": "vue-list",
+    "link": "/examples/vue-list"
+  },
+  {
+    "text": "vue-minimal",
+    "link": "/examples/vue-minimal"
+  },
+  {
+    "text": "vue-slash-menu",
+    "link": "/examples/vue-slash-menu"
+  },
+  {
+    "text": "vue-strike",
+    "link": "/examples/vue-strike"
+  },
+  {
+    "text": "vue-toolbar",
+    "link": "/examples/vue-toolbar"
+  },
+  {
+    "text": "vue-underline",
+    "link": "/examples/vue-underline"
   },
   {
     "text": "preact-minimal",
@@ -65,14 +77,6 @@ export const exampleItems = [
   {
     "text": "preact-slash-menu",
     "link": "/examples/preact-slash-menu"
-  },
-  {
-    "text": "svelte-minimal",
-    "link": "/examples/svelte-minimal"
-  },
-  {
-    "text": "svelte-slash-menu",
-    "link": "/examples/svelte-slash-menu"
   },
   {
     "text": "svelte-bold",
@@ -87,12 +91,20 @@ export const exampleItems = [
     "link": "/examples/svelte-list"
   },
   {
-    "text": "solid-minimal",
-    "link": "/examples/solid-minimal"
+    "text": "svelte-minimal",
+    "link": "/examples/svelte-minimal"
+  },
+  {
+    "text": "svelte-slash-menu",
+    "link": "/examples/svelte-slash-menu"
   },
   {
     "text": "solid-heading",
     "link": "/examples/solid-heading"
+  },
+  {
+    "text": "solid-minimal",
+    "link": "/examples/solid-minimal"
   },
   {
     "text": "solid-slash-menu",
@@ -105,17 +117,5 @@ export const exampleItems = [
   {
     "text": "vanilla",
     "link": "/examples/vanilla"
-  },
-  {
-    "text": "vue-link",
-    "link": "/examples/vue-link"
-  },
-  {
-    "text": "vue-strike",
-    "link": "/examples/vue-strike"
-  },
-  {
-    "text": "vue-underline",
-    "link": "/examples/vue-underline"
   }
 ]

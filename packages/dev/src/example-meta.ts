@@ -1,5 +1,7 @@
 import path from 'node:path'
 
+import { sortBy, groupBy } from 'lodash-es'
+
 import { vfs } from './virtual-file-system.js'
 
 export interface ExampleMeta {
@@ -13,7 +15,6 @@ interface ExampleFile {
 
 export interface Example {
   name: string
-  order: number
   files: ExampleFile[]
 }
 
@@ -23,9 +24,31 @@ export async function readExampleMeta(): Promise<ExampleMeta> {
 }
 
 export async function writeExampleMeta(meta: ExampleMeta) {
-  meta.examples.sort((a, b) => a.order - b.order)
   const file = await vfs.getFile(metaJsonPath)
   file.updateYaml(meta)
+}
+
+export function sortExamples(examples: Example[]) {
+  const prefixOrder = [
+    'react',
+    'vue',
+    'preact',
+    'svelte',
+    'solid',
+    'lit',
+    'vanilla',
+  ]
+  const group = groupBy(examples, (example) => example.name.split('-')[0])
+
+  const sorted = prefixOrder.flatMap((prefix) =>
+    sortBy(group[prefix], (example) => example.name),
+  )
+
+  if (sorted.length !== examples.length) {
+    throw new Error('Missing example prefix')
+  }
+
+  return sorted
 }
 
 export function findExample(meta: ExampleMeta, name: string) {

@@ -2,41 +2,43 @@
 
 # Examples
 
-- [react-minimal](./examples/react-minimal)
-
 - [react-heading](./examples/react-heading)
-
-- [react-slash-menu](./examples/react-slash-menu)
-
-- [react-user-menu](./examples/react-user-menu)
-
-- [react-toolbar](./examples/react-toolbar)
 
 - [react-list](./examples/react-list)
 
-- [vue-minimal](./examples/vue-minimal)
+- [react-minimal](./examples/react-minimal)
 
-- [vue-heading](./examples/vue-heading)
+- [react-slash-menu](./examples/react-slash-menu)
 
-- [vue-slash-menu](./examples/vue-slash-menu)
+- [react-toolbar](./examples/react-toolbar)
 
-- [vue-toolbar](./examples/vue-toolbar)
-
-- [vue-list](./examples/vue-list)
+- [react-user-menu](./examples/react-user-menu)
 
 - [vue-bold](./examples/vue-bold)
 
+- [vue-full](./examples/vue-full)
+
+- [vue-heading](./examples/vue-heading)
+
 - [vue-italic](./examples/vue-italic)
 
-- [vue-full](./examples/vue-full)
+- [vue-link](./examples/vue-link)
+
+- [vue-list](./examples/vue-list)
+
+- [vue-minimal](./examples/vue-minimal)
+
+- [vue-slash-menu](./examples/vue-slash-menu)
+
+- [vue-strike](./examples/vue-strike)
+
+- [vue-toolbar](./examples/vue-toolbar)
+
+- [vue-underline](./examples/vue-underline)
 
 - [preact-minimal](./examples/preact-minimal)
 
 - [preact-slash-menu](./examples/preact-slash-menu)
-
-- [svelte-minimal](./examples/svelte-minimal)
-
-- [svelte-slash-menu](./examples/svelte-slash-menu)
 
 - [svelte-bold](./examples/svelte-bold)
 
@@ -44,18 +46,16 @@
 
 - [svelte-list](./examples/svelte-list)
 
-- [solid-minimal](./examples/solid-minimal)
+- [svelte-minimal](./examples/svelte-minimal)
+
+- [svelte-slash-menu](./examples/svelte-slash-menu)
 
 - [solid-heading](./examples/solid-heading)
+
+- [solid-minimal](./examples/solid-minimal)
 
 - [solid-slash-menu](./examples/solid-slash-menu)
 
 - [lit](./examples/lit)
 
 - [vanilla](./examples/vanilla)
-
-- [vue-link](./examples/vue-link)
-
-- [vue-strike](./examples/vue-strike)
-
-- [vue-underline](./examples/vue-underline)

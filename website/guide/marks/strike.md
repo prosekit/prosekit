@@ -27,4 +27,5 @@ editor.commands.toggleStrike()
 
 | Shortcut | Description                            |
 | -------- | -------------------------------------- |
-| `Mod-S`  | Toggle the current selection to strike |
+| `Mod-Shift-X`  | Toggle the current selection to strike |
+| `Mod-Shift-S`  | Toggle the current selection to strike |

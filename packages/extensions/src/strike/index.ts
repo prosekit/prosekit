@@ -30,7 +30,8 @@ export function defineStrikeCommands() {
 
 export function defineStrikeKeymap() {
   return defineKeymap({
-    'Mod-s': toggleMark({ type: 'strike' }),
+    'Mod-shift-s': toggleMark({ type: 'strike' }),
+    'Mod-shift-x': toggleMark({ type: 'strike' }),
   })
 }
 

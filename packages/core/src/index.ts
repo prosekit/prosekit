@@ -35,7 +35,7 @@ export {
   type PluginPayload,
 } from './extensions/plugin'
 export { defineText } from './extensions/text'
-export { Facet, FacetExtension, type FacetOptions } from './facets/facet'
+export { Facet,  type FacetOptions } from './facets/facet'
 export { type CommandArgs as CommandArgs } from './types/command'
 export {
   type Extension,

@@ -1,6 +1,8 @@
 import { ProseKitError } from '../error'
 import type { Extension } from '../types/extension'
 
+import { BaseExtensionImpl } from './extension'
+
 /**
  * @public
  */
@@ -47,6 +49,10 @@ export class Facet<Input, Output> {
    * @internal
    */
   readonly singleton: boolean
+  /**
+   * @internal
+   */
+  public isSchema = false
 
   private constructor(
     converter: () => FacetConverter<Input, Output>,
@@ -90,18 +96,25 @@ export class Facet<Input, Output> {
     return Facet.define(options)
   }
 
-  extension(payloads: Input[]): FacetExtension<Input, Output> {
-    return new FacetExtension(this, payloads)
+  extension(payloads: Input[]): Extension {
+    return new FacetExtensionImpl(this, payloads)
   }
 }
 
 /**
  * @public
  */
-export class FacetExtension<Input, Output> {
+export class FacetExtensionImpl<Input, Output> extends BaseExtensionImpl {
   declare extension: Extension
+
+  public hasSchema: boolean
+  public schema = null
+
   constructor(
     readonly facet: Facet<Input, Output>,
     readonly payloads: Input[],
-  ) {}
+  ) {
+    super()
+    this.hasSchema = !!(facet.isSchema || facet.next?.isSchema)
+  }
 }

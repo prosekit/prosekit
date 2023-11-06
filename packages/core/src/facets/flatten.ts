@@ -8,7 +8,7 @@ import { uniqPush, uniqRemove } from '../utils/uniq-array'
 import { commandFacet, type CommandPayload } from './command'
 import {
   Facet,
-  FacetExtension,
+  FacetExtensionImpl,
   getFacetCount,
   type FacetConverter,
 } from './facet'
@@ -86,7 +86,7 @@ function extractFacets(root: Extension) {
     const ext = extensions.pop()!
     const pri = priorities.pop()!
 
-    if (ext instanceof FacetExtension) {
+    if (ext instanceof FacetExtensionImpl) {
       const facet = ext.facet
       if (!facets[facet.index]) {
         facets[facet.index] = facet

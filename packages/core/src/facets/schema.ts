@@ -20,3 +20,5 @@ export const schemaFacet = Facet.defineRootFacet<SchemaPayload>({
     return { nodes, marks, topNode }
   },
 })
+
+schemaFacet.isSchema = true 

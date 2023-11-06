@@ -596,8 +596,8 @@ importers:
         specifier: ^0.57.2
         version: 0.57.2(postcss@8.4.31)(vite@4.5.0)
       vite-plugin-unocss-watcher:
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^0.1.2
+        version: 0.1.2
       vue:
         specifier: ^3.3.7
         version: 3.3.7(typescript@5.2.2)
@@ -677,8 +677,8 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0(@types/node@20.8.10)
       vite-plugin-unocss-watcher:
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^0.1.2
+        version: 0.1.2
       vitepress:
         specifier: 1.0.0-rc.24
         version: 1.0.0-rc.24(@algolia/client-search@4.19.1)(@types/react@18.2.34)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2)
@@ -10297,8 +10297,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-unocss-watcher@0.1.1:
-    resolution: {integrity: sha512-asnjhEN4Ol/KnGFDJRlnAJaJRgxPgylQ+5LywQ8tlH5RTQmIlVncKd36OtFc8xHS6Wy1qbDShTa+JxtKWbBC/Q==}
+  /vite-plugin-unocss-watcher@0.1.2:
+    resolution: {integrity: sha512-WY5Gw4uUoFS8VOjM1okQKG9MJuTwBzvlX4eisR5oOZWdeOYripbEfMDIi1FOgvJpNqEnCHmV7/C9KfltmMbi5w==}
     dev: true
 
   /vite@4.5.0(@types/node@20.8.10):

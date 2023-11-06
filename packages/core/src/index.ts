@@ -4,7 +4,7 @@ export { setBlockType } from './commands/set-block-type'
 export { toggleMark } from './commands/toggle-mark'
 export { toggleNode } from './commands/toggle-node'
 export { Editor, createEditor, type EditorOptions } from './editor/editor'
-export { union } from './editor/type-utils'
+export { union } from './editor/union'
 export { withPriority } from './editor/with-priority'
 export { ProseKitError } from './error'
 export { defineBaseCommands, defineCommands } from './extensions/command'
@@ -35,7 +35,7 @@ export {
   type PluginPayload,
 } from './extensions/plugin'
 export { defineText } from './extensions/text'
-export { Facet, FacetExtension, type FacetOptions } from './facets/facet'
+export { Facet, type FacetOptions } from './facets/facet'
 export { type CommandArgs as CommandArgs } from './types/command'
 export {
   type Extension,

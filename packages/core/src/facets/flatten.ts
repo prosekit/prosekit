@@ -1,19 +1,20 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import { ProseKitError } from '../error'
-import { commandFacet, type CommandPayload } from '../facets/command'
-import {
-  Facet,
-  FacetExtension,
-  getFacetCount,
-  type FacetConverter,
-} from '../facets/facet'
-import { schemaFacet, type SchemaPayload } from '../facets/schema'
-import { stateFacet, type StatePayload } from '../facets/state'
-import { viewFacet, type ViewPayload } from '../facets/view'
 import type { Extension } from '../types/extension'
 import { Priority } from '../types/priority'
 import { uniqPush, uniqRemove } from '../utils/uniq-array'
+
+import { commandFacet, type CommandPayload } from './command'
+import {
+  Facet,
+  FacetExtensionImpl,
+  getFacetCount,
+  type FacetConverter,
+} from './facet'
+import { schemaFacet, type SchemaPayload } from './schema'
+import { stateFacet, type StatePayload } from './state'
+import { viewFacet, type ViewPayload } from './view'
 
 type Tuple5<T> = [T, T, T, T, T]
 
@@ -85,7 +86,7 @@ function extractFacets(root: Extension) {
     const ext = extensions.pop()!
     const pri = priorities.pop()!
 
-    if (ext instanceof FacetExtension) {
+    if (ext instanceof FacetExtensionImpl) {
       const facet = ext.facet
       if (!facets[facet.index]) {
         facets[facet.index] = facet

@@ -20,7 +20,7 @@ export interface NodeSpecOptions<NodeName extends string = string>
 export function defineNodeSpec<NodeName extends string>(
   options: NodeSpecOptions<NodeName>,
 ): Extension<{ NODES: NodeName }> {
-  return nodeSpecFacet.extension([options]) satisfies Extension
+  return nodeSpecFacet.extension([options]) as Extension<{ NODES: NodeName }>
 }
 
 const nodeSpecFacet = Facet.define<NodeSpecOptions, SchemaSpec>({

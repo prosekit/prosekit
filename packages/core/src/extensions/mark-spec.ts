@@ -19,7 +19,7 @@ export interface MarkSpecOptions<MarkName extends string = string>
 export function defineMarkSpec<Mark extends string>(
   options: MarkSpecOptions<Mark>,
 ): Extension<{ MARKS: Mark }> {
-  return markSpecFacet.extension([options]) satisfies Extension
+  return markSpecFacet.extension([options]) as Extension<{ MARKS: Mark }>
 }
 
 const markSpecFacet = Facet.define<MarkSpecOptions, SchemaSpec>({

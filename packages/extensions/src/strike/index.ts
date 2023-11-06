@@ -13,8 +13,8 @@ export function defineStrikeSpec() {
       { tag: 's' },
       { tag: 'strike' },
       { tag: 'del' },
-      { style: 'text-decoration=line-through', },
-      { style: 'text-decoration-line=line-through', },
+      { style: 'text-decoration=line-through' },
+      { style: 'text-decoration-line=line-through' },
     ],
     toDOM() {
       return ['s', 0]

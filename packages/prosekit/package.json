@@ -133,11 +133,11 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/pm": "0.0.7",
     "@prosekit/basic": "0.0.21",
     "@prosekit/core": "0.0.17",
     "@prosekit/extensions": "0.0.19",
     "@prosekit/lit": "0.0.21",
+    "@prosekit/pm": "0.0.7",
     "@prosekit/preact": "0.0.18",
     "@prosekit/react": "0.0.21",
     "@prosekit/solid": "0.0.19",

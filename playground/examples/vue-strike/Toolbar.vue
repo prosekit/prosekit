@@ -13,7 +13,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       @mousedown.prevent
       class="TOGGLE_BUTTON"
     >
-    Strike
+      Strike
     </button>
   </div>
 </template>

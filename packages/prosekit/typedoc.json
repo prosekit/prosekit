@@ -19,6 +19,7 @@
     "./src/extensions/placeholder.gen.ts",
     "./src/extensions/strike.gen.ts",
     "./src/extensions/suggestion.gen.ts",
+    "./src/extensions/underline.gen.ts",
     "./src/index.ts",
     "./src/lit.gen.ts",
     "./src/lit/autocomplete-empty.gen.ts",

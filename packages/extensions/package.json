@@ -41,8 +41,8 @@
     "./placeholder": "./src/placeholder/index.ts",
     "./placeholder/style.css": "./src/placeholder/style.css",
     "./strike": "./src/strike/index.ts",
-    "./underline": "./src/underline/index.ts",
-    "./suggestion": "./src/suggestion/index.ts"
+    "./suggestion": "./src/suggestion/index.ts",
+    "./underline": "./src/underline/index.ts"
   },
   "files": [
     "dist"
@@ -146,6 +146,11 @@
         "types": "./dist/prosekit-extensions-suggestion.d.ts",
         "import": "./dist/prosekit-extensions-suggestion.js",
         "default": "./dist/prosekit-extensions-suggestion.js"
+      },
+      "./underline": {
+        "types": "./dist/prosekit-extensions-underline.d.ts",
+        "import": "./dist/prosekit-extensions-underline.js",
+        "default": "./dist/prosekit-extensions-underline.js"
       }
     },
     "main": "./dist/prosekit-extensions.js",
@@ -197,6 +202,9 @@
         ],
         "suggestion": [
           "./dist/prosekit-extensions-suggestion.d.ts"
+        ],
+        "underline": [
+          "./dist/prosekit-extensions-underline.d.ts"
         ]
       }
     }

@@ -16,6 +16,7 @@
     "./src/mention/index.ts",
     "./src/placeholder/index.ts",
     "./src/strike/index.ts",
-    "./src/suggestion/index.ts"
+    "./src/suggestion/index.ts",
+    "./src/underline/index.ts"
   ]
 }

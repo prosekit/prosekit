@@ -72,6 +72,10 @@ export const referenceItems = [
       {
         "text": "suggestion",
         "link": "/references/extensions/suggestion"
+      },
+      {
+        "text": "underline",
+        "link": "/references/extensions/underline"
       }
     ],
     "collapsed": false,

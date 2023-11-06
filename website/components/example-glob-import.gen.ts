@@ -88,7 +88,10 @@ const modules = import.meta.glob([
   "../../playground/examples/vanilla/index.js",
   "../../playground/examples/vue-strike/App.vue",
   "../../playground/examples/vue-strike/Toolbar.vue",
-  "../../playground/examples/vue-strike/extension.ts"
+  "../../playground/examples/vue-strike/extension.ts",
+  "../../playground/examples/vue-underline/App.vue",
+  "../../playground/examples/vue-underline/Toolbar.vue",
+  "../../playground/examples/vue-underline/extension.ts"
 ], { as: 'raw', eager: true }) as Record<string, string>
 
 const examples = {
@@ -492,6 +495,20 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-strike/extension.ts']
+    }
+  },
+  "vue-underline": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-underline/App.vue']
+    },
+    "/Toolbar.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-underline/Toolbar.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-underline/extension.ts']
     }
   }
 }

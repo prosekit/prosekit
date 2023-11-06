@@ -48,6 +48,7 @@
     "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
     "./extensions/strike": "./src/extensions/strike.gen.ts",
     "./extensions/suggestion": "./src/extensions/suggestion.gen.ts",
+    "./extensions/underline": "./src/extensions/underline.gen.ts",
     "./lit": "./src/lit.gen.ts",
     "./lit/autocomplete-empty": "./src/lit/autocomplete-empty.gen.ts",
     "./lit/autocomplete-item": "./src/lit/autocomplete-item.gen.ts",
@@ -291,6 +292,11 @@
         "types": "./dist/prosekit-extensions-suggestion.d.ts",
         "import": "./dist/prosekit-extensions-suggestion.js",
         "default": "./dist/prosekit-extensions-suggestion.js"
+      },
+      "./extensions/underline": {
+        "types": "./dist/prosekit-extensions-underline.d.ts",
+        "import": "./dist/prosekit-extensions-underline.js",
+        "default": "./dist/prosekit-extensions-underline.js"
       },
       "./lit": {
         "types": "./dist/prosekit-lit.d.ts",
@@ -729,6 +735,9 @@
         ],
         "extensions/suggestion": [
           "./dist/prosekit-extensions-suggestion.d.ts"
+        ],
+        "extensions/underline": [
+          "./dist/prosekit-extensions-underline.d.ts"
         ],
         "lit": [
           "./dist/prosekit-lit.d.ts"

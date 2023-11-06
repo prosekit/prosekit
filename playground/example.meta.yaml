@@ -245,6 +245,13 @@ examples:
     files:
       - path: index.js
         hidden: false
+  - name: vue-link
+    order: 999999
+    files:
+      - path: App.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
   - name: vue-strike
     order: 999999
     files:

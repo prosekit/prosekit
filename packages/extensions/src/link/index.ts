@@ -46,6 +46,6 @@ export function defineLinkCommands() {
 /**
  * @public
  */
-export function defineItalic() {
+export function defineLink() {
   return union([defineLinkSpec(), defineLinkCommands()])
 }

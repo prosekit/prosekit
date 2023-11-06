@@ -11,6 +11,6 @@ export function withPriority<T extends Extension>(
   priority: Priority,
 ): T {
   const result = union(extension)
-  result.priority = priority 
+  result.priority = priority
   return result as T
 }

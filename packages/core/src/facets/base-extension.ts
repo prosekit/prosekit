@@ -4,9 +4,8 @@ import type { Extension } from '../types/extension'
 import type { ExtensionTyping } from '../types/extension-typing'
 import type { Priority } from '../types/priority'
 
-export abstract class BaseExtension<
-  T extends ExtensionTyping = ExtensionTyping,
-> implements Extension<T>
+export abstract class BaseExtension<T extends ExtensionTyping = ExtensionTyping>
+  implements Extension<T>
 {
   extension: Extension | Extension[] = []
   priority?: Priority

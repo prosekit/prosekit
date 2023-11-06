@@ -35,7 +35,7 @@
     "typescript": "^5.2.2",
     "unocss": "^0.57.2",
     "vite": "^4.5.0",
-    "vite-plugin-unocss-watcher": "^0.1.1",
+    "vite-plugin-unocss-watcher": "^0.1.2",
     "vitepress": "1.0.0-rc.24",
     "vitepress-plugin-tabs": "^0.4.1",
     "vue": "^3.3.7"

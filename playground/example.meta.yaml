@@ -65,6 +65,14 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: vue-code
+    files:
+      - path: App.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
   - name: vue-full
     files:
       - path: App.vue

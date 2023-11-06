@@ -16,6 +16,8 @@
 
 - [vue-bold](./examples/vue-bold)
 
+- [vue-code](./examples/vue-code)
+
 - [vue-full](./examples/vue-full)
 
 - [vue-heading](./examples/vue-heading)

@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.0.27
+
+### Patch Changes
+
+- [6a5ad5c] **prosekit/core**
+
+  Add new command `removeMark`
+
+- [8d89532] **prosekit/core**
+
+  Add `extension.schema`
+
 ## 0.0.26
 
 ### Patch Changes

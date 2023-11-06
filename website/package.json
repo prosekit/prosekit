@@ -22,7 +22,7 @@
     "dedent": "^1.5.1",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
-    "prosekit": "^0.0.26",
+    "prosekit": "^0.0.27",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sandpack-vue3": "^3.1.9",

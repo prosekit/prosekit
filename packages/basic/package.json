@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/basic",
   "type": "module",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -37,8 +37,8 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/core": "^0.0.17",
-    "@prosekit/extensions": "^0.0.19"
+    "@prosekit/core": "^0.0.18",
+    "@prosekit/extensions": "^0.0.20"
   },
   "devDependencies": {
     "@prosekit/dev": "*",

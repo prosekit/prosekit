@@ -34,9 +34,10 @@ export abstract class BaseExtensionImpl<
   abstract schema: Schema | null
 }
 
-export class UnionExtensionImpl<
-  T extends ExtensionTyping = ExtensionTyping,
-> extends BaseExtensionImpl<T> implements Extension<T> {
+export class UnionExtensionImpl<T extends ExtensionTyping = ExtensionTyping>
+  extends BaseExtensionImpl<T>
+  implements Extension<T>
+{
   private _schema: Schema | null | undefined = undefined
 
   private hasSchemaCount: number

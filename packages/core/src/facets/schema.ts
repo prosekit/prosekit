@@ -21,4 +21,4 @@ export const schemaFacet = Facet.defineRootFacet<SchemaPayload>({
   },
 })
 
-schemaFacet.isSchema = true 
+schemaFacet.isSchema = true

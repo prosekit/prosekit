@@ -4,7 +4,11 @@ import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
 import { defineDefaultState } from '../extensions/default-state'
-import { updateExtension, type Payloads, type Converters } from '../facets/flatten'
+import {
+  updateExtension,
+  type Payloads,
+  type Converters,
+} from '../facets/flatten'
 import { type CommandApplier, type CommandCreator } from '../types/command'
 import type {
   Extension,

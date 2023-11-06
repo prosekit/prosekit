@@ -21,10 +21,10 @@ export interface Extension<T extends ExtensionTyping = ExtensionTyping> {
 
   /**
    * @public
-   * 
+   *
    * The schema that this extension represents.
    */
-  schema: Schema | null 
+  schema: Schema | null
 }
 
 /**

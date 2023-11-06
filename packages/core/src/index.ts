@@ -1,6 +1,6 @@
 export { addMark } from './commands/add-mark'
-export { removeMark } from './commands/remove-mark'
 export { insertNode } from './commands/insert-node'
+export { removeMark } from './commands/remove-mark'
 export { setBlockType } from './commands/set-block-type'
 export { toggleMark } from './commands/toggle-mark'
 export { toggleNode } from './commands/toggle-node'
@@ -52,3 +52,9 @@ export { Priority } from './types/priority'
 export { type SimplifyUnion } from './types/simplify-union'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
+export {
+  elementToJSON,
+  elementToNode,
+  htmlToJSON,
+  htmlToNode,
+} from './utils/parse'

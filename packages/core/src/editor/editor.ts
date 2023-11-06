@@ -65,22 +65,13 @@ export function createEditor<E extends Extension>({
   defaultHTML,
   defaultSelection,
 }: EditorOptions<E>): Editor<E> {
-  if (defaultHTML && defaultDoc) {
-    throw new ProseKitError(
-      'Only one of defaultHTML and defaultDoc can be provided',
-    )
-  }
-
-  if (defaultHTML) {
-    throw new ProseKitError('defaultHTML is not supported yet')
-  }
-
   if (defaultDoc) {
     extension = union([
       extension,
       defineDefaultState({
-        doc: defaultDoc,
-        selection: defaultSelection,
+        defaultDoc,
+        defaultHTML,
+        defaultSelection,
       }),
     ]) as E
   }

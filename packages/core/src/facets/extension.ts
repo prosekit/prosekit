@@ -3,7 +3,6 @@ import { Schema } from '@prosekit/pm/model'
 import type { Extension } from '../types/extension'
 import type { ExtensionTyping } from '../types/extension-typing'
 import type { Priority } from '../types/priority'
-import { notNull } from '../utils/not-null'
 
 import { updateExtension } from './flatten'
 
@@ -57,17 +56,29 @@ export class UnionExtensionImpl<
       return this._schema
     }
 
-    const schemas = this.extension.map((ext) => ext.schema).filter(notNull)
+    let hasSchemaCount = 0
 
-    if (schemas.length === 0) {
-      this._schema = null
-    } else if (schemas.length === 1) {
-      this._schema = schemas[0]
-    } else {
-      const { schemaInput } = updateExtension([], [], this, 'add')
-      this._schema = schemaInput ? new Schema(schemaInput) : null
+    for (const e of this.extension) {
+      if (e.hasSchema) {
+        hasSchemaCount++
+      }
     }
 
+    if (hasSchemaCount === 0) {
+      this._schema = null
+      return this._schema
+    }
+
+    if (hasSchemaCount === 1) {
+      const schema = this.extension.find((e) => e.hasSchema)?.schema
+      if (schema) {
+        this._schema = schema
+        return this._schema
+      }
+    }
+
+    const { schemaInput } = updateExtension([], [], this, 'add')
+    this._schema = schemaInput ? new Schema(schemaInput) : null
     return this._schema
   }
 }

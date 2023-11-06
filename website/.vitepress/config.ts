@@ -47,15 +47,19 @@ export default defineConfig({
           items: [
             { text: 'heading', link: '/guide/nodes/heading' },
             { text: 'list', link: '/guide/nodes/list' },
-            { text: 'code-block', link: '/guide/nodes/code-block' },
+            { text: 'codeBlock', link: '/guide/nodes/code-block' },
           ],
         },
 
         {
           text: 'Marks',
+          link: '/guide/marks/',
           items: [
             { text: 'bold', link: '/guide/marks/bold' },
             { text: 'italic', link: '/guide/marks/italic' },
+            { text: 'link', link: '/guide/marks/link' },
+            { text: 'underline', link: '/guide/marks/underline' },
+            { text: 'strike', link: '/guide/marks/strike' },
           ],
         },
 

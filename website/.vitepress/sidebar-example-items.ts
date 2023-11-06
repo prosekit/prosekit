@@ -31,6 +31,10 @@ export const exampleItems = [
     "link": "/examples/vue-bold"
   },
   {
+    "text": "vue-code",
+    "link": "/examples/vue-code"
+  },
+  {
     "text": "vue-full",
     "link": "/examples/vue-full"
   },

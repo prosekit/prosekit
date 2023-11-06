@@ -1,6 +1,7 @@
 {
   "search.exclude": {
-    "**/*.gen.ts": true
+    "**/*.gen.ts": true,
+    "website/components/vue-*": true
   },
   "editor.codeActionsOnSave": {
     "source.fixAll": false,

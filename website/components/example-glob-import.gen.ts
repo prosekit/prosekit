@@ -28,6 +28,9 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-bold/App.vue",
   "../../playground/examples/vue-bold/Toolbar.vue",
   "../../playground/examples/vue-bold/extension.ts",
+  "../../playground/examples/vue-code/App.vue",
+  "../../playground/examples/vue-code/Toolbar.vue",
+  "../../playground/examples/vue-code/extension.ts",
   "../../playground/examples/vue-full/App.vue",
   "../../playground/examples/vue-full/ImageUploadPopover.vue",
   "../../playground/examples/vue-full/SlashMenu.vue",
@@ -213,6 +216,20 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-bold/extension.ts']
+    }
+  },
+  "vue-code": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-code/App.vue']
+    },
+    "/Toolbar.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-code/Toolbar.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-code/extension.ts']
     }
   },
   "vue-full": {

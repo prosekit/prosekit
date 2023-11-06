@@ -16,6 +16,11 @@ jobs:
       - name: Fix
         run: nr fix
 
+      - name: Create symlinks
+        run: |
+          cd website/components
+          ln -sf ../../playground/examples/vue-* ./
+
       - name: Commit files and push
         continue-on-error: true
         if: ${{ github.ref != 'refs/heads/master' }}

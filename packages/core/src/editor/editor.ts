@@ -34,8 +34,8 @@ import { union } from './union'
 export interface EditorOptions<E extends Extension> {
   /**
    * The extension to use when creating the editor.
-   */
-  extension: E
+   */ 
+  extension: E 
 
   /**
    * A JSON object representing the starting document to use when creating the

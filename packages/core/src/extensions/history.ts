@@ -1,6 +1,6 @@
 import { history, redo, undo } from '@prosekit/pm/history'
 
-import { union } from '../editor/type-utils'
+import { union } from '../editor/union'
 import { isMac } from '../utils/env'
 
 import { defineCommands } from './command'

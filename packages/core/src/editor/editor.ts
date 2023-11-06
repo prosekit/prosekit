@@ -4,6 +4,11 @@ import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
 import { defineDefaultState } from '../extensions/default-state'
+import {
+  updateExtension,
+  type Payloads,
+  type Converters,
+} from '../facets/flatten'
 import { type CommandApplier, type CommandCreator } from '../types/command'
 import type {
   Extension,
@@ -21,8 +26,7 @@ import {
   type MarkBuilder,
   type NodeBuilder,
 } from './builder'
-import { updateExtension, type Payloads, type Converters } from './flatten'
-import { union } from './type-utils'
+import { union } from './union'
 
 /**
  * @public

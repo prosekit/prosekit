@@ -15,7 +15,9 @@ export function defineCommands<
 >(
   commands: T,
 ): Extension<{ COMMAND_ARGS: { [K in keyof T]: Parameters<T[K]> } }> {
-  return commandFacet.extension([commands]) satisfies Extension
+  return commandFacet.extension([commands]) as Extension<{
+    COMMAND_ARGS: { [K in keyof T]: Parameters<T[K]> }
+  }>
 }
 
 /**

@@ -2,10 +2,10 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/extensions/placeholder/style.css'
 
-import { watchPostEffect, ref } from 'vue'
-import { ProseKit } from 'prosekit/vue'
-import { defineExtension } from './extension'
 import { createEditor } from 'prosekit/core'
+import { ProseKit } from 'prosekit/vue'
+import { ref, watchPostEffect } from 'vue'
+import { defineExtension } from './extension'
 
 const defaultHTML = `
   <p><a href="https://www.example.com">www.example.com</a></p>

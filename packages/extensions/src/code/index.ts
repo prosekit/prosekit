@@ -1,4 +1,10 @@
-import { defineMarkSpec, union } from '@prosekit/core'
+import {
+  defineCommands,
+  defineKeymap,
+  defineMarkSpec,
+  toggleMark,
+  union,
+} from '@prosekit/core'
 
 /**
  * @public
@@ -13,9 +19,21 @@ export function defineCodeSpec() {
   })
 }
 
+export function defineCodeCommands() {
+  return defineCommands({
+    toggleCode: () => toggleMark({ type: 'code' }),
+  })
+}
+
+export function defineItalicKeymap() {
+  return defineKeymap({
+    'Mod-e': toggleMark({ type: 'code' }),
+  })
+}
+
 /**
  * @public
  */
 export function defineCode() {
-  return union([defineCodeSpec()])
+  return union([defineCodeSpec(), defineCodeCommands(), defineItalicKeymap()])
 }

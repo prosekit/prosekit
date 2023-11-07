@@ -31,6 +31,7 @@
     "./src/lit/combo-box-item.gen.ts",
     "./src/lit/combo-box-list.gen.ts",
     "./src/lit/combo-box.gen.ts",
+    "./src/lit/inline-popover.gen.ts",
     "./src/lit/popover.gen.ts",
     "./src/pm.gen.ts",
     "./src/pm/commands.gen.ts",
@@ -51,6 +52,7 @@
     "./src/preact/combo-box-item.gen.ts",
     "./src/preact/combo-box-list.gen.ts",
     "./src/preact/combo-box.gen.ts",
+    "./src/preact/inline-popover.gen.ts",
     "./src/preact/popover.gen.ts",
     "./src/react.gen.ts",
     "./src/react/autocomplete-empty.gen.ts",
@@ -62,6 +64,7 @@
     "./src/react/combo-box-item.gen.ts",
     "./src/react/combo-box-list.gen.ts",
     "./src/react/combo-box.gen.ts",
+    "./src/react/inline-popover.gen.ts",
     "./src/react/popover.gen.ts",
     "./src/solid.gen.ts",
     "./src/solid/autocomplete-empty.gen.ts",
@@ -73,6 +76,7 @@
     "./src/solid/combo-box-item.gen.ts",
     "./src/solid/combo-box-list.gen.ts",
     "./src/solid/combo-box.gen.ts",
+    "./src/solid/inline-popover.gen.ts",
     "./src/solid/popover.gen.ts",
     "./src/svelte.gen.ts",
     "./src/svelte/autocomplete-empty.gen.ts",
@@ -84,6 +88,7 @@
     "./src/svelte/combo-box-item.gen.ts",
     "./src/svelte/combo-box-list.gen.ts",
     "./src/svelte/combo-box.gen.ts",
+    "./src/svelte/inline-popover.gen.ts",
     "./src/svelte/popover.gen.ts",
     "./src/vue.gen.ts",
     "./src/vue/autocomplete-empty.gen.ts",
@@ -95,6 +100,7 @@
     "./src/vue/combo-box-item.gen.ts",
     "./src/vue/combo-box-list.gen.ts",
     "./src/vue/combo-box.gen.ts",
+    "./src/vue/inline-popover.gen.ts",
     "./src/vue/popover.gen.ts"
   ]
 }

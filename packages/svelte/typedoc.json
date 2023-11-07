@@ -11,6 +11,7 @@
     "./src/components/combo-box-item.gen.ts",
     "./src/components/combo-box-list.gen.ts",
     "./src/components/combo-box.gen.ts",
+    "./src/components/inline-popover.gen.ts",
     "./src/components/popover.gen.ts",
     "./src/index.ts"
   ]

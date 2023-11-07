@@ -17,8 +17,8 @@ export interface NodeJson {
  * @public
  */
 export interface SelectionJson {
-  from: number
-  to: number
+  anchor: number
+  head: number
   type: string
 }
 

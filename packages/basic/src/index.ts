@@ -8,10 +8,13 @@ import {
   union,
 } from '@prosekit/core'
 import { defineBold } from '@prosekit/extensions/bold'
+import { defineCode } from '@prosekit/extensions/code'
 import { defineHeading } from '@prosekit/extensions/heading'
 import { defineImage } from '@prosekit/extensions/image'
 import { defineItalic } from '@prosekit/extensions/italic'
 import { defineList } from '@prosekit/extensions/list'
+import { defineStrike } from '@prosekit/extensions/strike'
+import { defineUnderline } from '@prosekit/extensions/underline'
 
 /**
  * @public
@@ -27,6 +30,9 @@ export function defineBasicExtension() {
     defineBaseCommands(),
     defineItalic(),
     defineBold(),
+    defineUnderline(),
+    defineStrike(),
+    defineCode(),
     defineImage(),
     defineParagraph(),
   ])

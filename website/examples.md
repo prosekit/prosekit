@@ -4,6 +4,8 @@
 
 - [react-heading](./examples/react-heading)
 
+- [react-inline-menu](./examples/react-inline-menu)
+
 - [react-list](./examples/react-list)
 
 - [react-minimal](./examples/react-minimal)
@@ -21,6 +23,8 @@
 - [vue-full](./examples/vue-full)
 
 - [vue-heading](./examples/vue-heading)
+
+- [vue-inline-menu](./examples/vue-inline-menu)
 
 - [vue-italic](./examples/vue-italic)
 

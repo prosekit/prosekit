@@ -2,15 +2,20 @@ import { isTextSelection } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
 export function getVirtualSelectionElement(view: EditorView) {
-  if (
-    typeof window === 'undefined' ||
-    view.isDestroyed ||
-    view.state.selection.empty ||
-    !isTextSelection(view.state.selection)
-  ) {
+  if (typeof window === 'undefined' || view.isDestroyed) {
     return
   }
 
+  const selection = view.state.selection
+
+  if (selection.empty && !isTextSelection(selection)) {
+    return
+  }
+
+  return getDomRange()
+}
+
+function getDomRange() {
   const selection = window.getSelection()
   if (!selection || selection.isCollapsed) {
     return

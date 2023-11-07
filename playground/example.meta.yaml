@@ -89,6 +89,10 @@ examples:
         hidden: false
       - path: ImageUploadPopover.vue
         hidden: false
+      - path: InlineButtons.vue
+        hidden: false
+      - path: InlineMenu.vue
+        hidden: false
       - path: SlashMenu.vue
         hidden: false
       - path: TagMenu.vue

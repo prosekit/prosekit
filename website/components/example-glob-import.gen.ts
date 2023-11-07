@@ -37,6 +37,8 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-code/extension.ts",
   "../../playground/examples/vue-full/App.vue",
   "../../playground/examples/vue-full/ImageUploadPopover.vue",
+  "../../playground/examples/vue-full/InlineButtons.vue",
+  "../../playground/examples/vue-full/InlineMenu.vue",
   "../../playground/examples/vue-full/SlashMenu.vue",
   "../../playground/examples/vue-full/TagMenu.vue",
   "../../playground/examples/vue-full/ToggleButton.vue",
@@ -266,6 +268,14 @@ const examples = {
     "/ImageUploadPopover.vue": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-full/ImageUploadPopover.vue']
+    },
+    "/InlineButtons.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/InlineButtons.vue']
+    },
+    "/InlineMenu.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/InlineMenu.vue']
     },
     "/SlashMenu.vue": {
       "hidden": false,

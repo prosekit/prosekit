@@ -33,19 +33,19 @@ export default function Toolbar() {
       </ToggleButton>
 
       <ToggleButton
-        active={editor.marks.italic.isActive()}
-        available={editor.commands.toggleItalic.canApply()}
-        onChange={editor.commands.toggleItalic}
-      >
-        <div className="ICON_ITALIC" />
-      </ToggleButton>
-
-      <ToggleButton
         active={editor.marks.bold.isActive()}
         available={editor.commands.toggleBold.canApply()}
         onChange={editor.commands.toggleBold}
       >
         <div className="ICON_BOLD" />
+      </ToggleButton>
+
+      <ToggleButton
+        active={editor.marks.italic.isActive()}
+        available={editor.commands.toggleItalic.canApply()}
+        onChange={editor.commands.toggleItalic}
+      >
+        <div className="ICON_ITALIC" />
       </ToggleButton>
 
       <ToggleButton

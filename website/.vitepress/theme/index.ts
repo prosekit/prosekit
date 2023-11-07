@@ -1,5 +1,7 @@
 import 'virtual:uno.css'
 
+import 'prosekit/basic/internal/preflight.css'
+
 import './hero.css'
 import './nav-bar.css'
 import './plugin-tabs.css'

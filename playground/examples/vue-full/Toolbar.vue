@@ -33,6 +33,14 @@ const toggleImagePopover = () => {
     </ToggleButton>
 
     <ToggleButton
+      :active="editor.marks.bold.isActive()"
+      :available="editor.commands.toggleBold.canApply()"
+      @change="() => editor.commands.toggleBold()"
+    >
+      <div class="ICON_BOLD"></div>
+    </ToggleButton>
+
+    <ToggleButton
       :active="editor.marks.italic.isActive()"
       :available="editor.commands.toggleItalic.canApply()"
       @change="() => editor.commands.toggleItalic()"
@@ -41,11 +49,27 @@ const toggleImagePopover = () => {
     </ToggleButton>
 
     <ToggleButton
-      :active="editor.marks.bold.isActive()"
-      :available="editor.commands.toggleBold.canApply()"
-      @change="() => editor.commands.toggleBold()"
+      :active="editor.marks.underline.isActive()"
+      :available="editor.commands.toggleUnderline.canApply()"
+      @change="() => editor.commands.toggleUnderline()"
     >
-      <div class="ICON_BOLD"></div>
+      <div class="ICON_UNDERLINE"></div>
+    </ToggleButton>
+
+    <ToggleButton
+      :active="editor.marks.strike.isActive()"
+      :available="editor.commands.toggleStrike.canApply()"
+      @change="() => editor.commands.toggleStrike()"
+    >
+      <div class="ICON_STRIKE"></div>
+    </ToggleButton>
+
+    <ToggleButton
+      :active="editor.marks.code.isActive()"
+      :available="editor.commands.toggleCode.canApply()"
+      @change="() => editor.commands.toggleCode()"
+    >
+      <div class="ICON_CODE"></div>
     </ToggleButton>
 
     <ToggleButton

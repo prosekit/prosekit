@@ -7,6 +7,10 @@ export const exampleItems = [
     "link": "/examples/react-heading"
   },
   {
+    "text": "react-inline-menu",
+    "link": "/examples/react-inline-menu"
+  },
+  {
     "text": "react-list",
     "link": "/examples/react-list"
   },
@@ -41,6 +45,10 @@ export const exampleItems = [
   {
     "text": "vue-heading",
     "link": "/examples/vue-heading"
+  },
+  {
+    "text": "vue-inline-menu",
+    "link": "/examples/vue-inline-menu"
   },
   {
     "text": "vue-italic",

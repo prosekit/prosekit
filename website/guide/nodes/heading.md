@@ -65,6 +65,4 @@ Input `#` followed by a space, it will automatically convert to a `heading` node
 
 ## API Reference
 
-See the documentation below for a complete reference to the extensions mentioned here.
-
 - [prosekit/extensions/heading](/references/extensions/heading)

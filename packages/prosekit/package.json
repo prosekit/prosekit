@@ -59,6 +59,7 @@
     "./lit/combo-box-input": "./src/lit/combo-box-input.gen.ts",
     "./lit/combo-box-item": "./src/lit/combo-box-item.gen.ts",
     "./lit/combo-box-list": "./src/lit/combo-box-list.gen.ts",
+    "./lit/inline-popover": "./src/lit/inline-popover.gen.ts",
     "./lit/popover": "./src/lit/popover.gen.ts",
     "./pm": "./src/pm.gen.ts",
     "./pm/commands": "./src/pm/commands.gen.ts",
@@ -80,6 +81,7 @@
     "./preact/combo-box-input": "./src/preact/combo-box-input.gen.ts",
     "./preact/combo-box-item": "./src/preact/combo-box-item.gen.ts",
     "./preact/combo-box-list": "./src/preact/combo-box-list.gen.ts",
+    "./preact/inline-popover": "./src/preact/inline-popover.gen.ts",
     "./preact/popover": "./src/preact/popover.gen.ts",
     "./react": "./src/react.gen.ts",
     "./react/autocomplete-empty": "./src/react/autocomplete-empty.gen.ts",
@@ -91,6 +93,7 @@
     "./react/combo-box-input": "./src/react/combo-box-input.gen.ts",
     "./react/combo-box-item": "./src/react/combo-box-item.gen.ts",
     "./react/combo-box-list": "./src/react/combo-box-list.gen.ts",
+    "./react/inline-popover": "./src/react/inline-popover.gen.ts",
     "./react/popover": "./src/react/popover.gen.ts",
     "./solid": "./src/solid.gen.ts",
     "./solid/autocomplete-empty": "./src/solid/autocomplete-empty.gen.ts",
@@ -102,6 +105,7 @@
     "./solid/combo-box-input": "./src/solid/combo-box-input.gen.ts",
     "./solid/combo-box-item": "./src/solid/combo-box-item.gen.ts",
     "./solid/combo-box-list": "./src/solid/combo-box-list.gen.ts",
+    "./solid/inline-popover": "./src/solid/inline-popover.gen.ts",
     "./solid/popover": "./src/solid/popover.gen.ts",
     "./svelte": "./src/svelte.gen.ts",
     "./svelte/autocomplete-empty": "./src/svelte/autocomplete-empty.gen.ts",
@@ -113,6 +117,7 @@
     "./svelte/combo-box-input": "./src/svelte/combo-box-input.gen.ts",
     "./svelte/combo-box-item": "./src/svelte/combo-box-item.gen.ts",
     "./svelte/combo-box-list": "./src/svelte/combo-box-list.gen.ts",
+    "./svelte/inline-popover": "./src/svelte/inline-popover.gen.ts",
     "./svelte/popover": "./src/svelte/popover.gen.ts",
     "./vue": "./src/vue.gen.ts",
     "./vue/autocomplete-empty": "./src/vue/autocomplete-empty.gen.ts",
@@ -124,6 +129,7 @@
     "./vue/combo-box-input": "./src/vue/combo-box-input.gen.ts",
     "./vue/combo-box-item": "./src/vue/combo-box-item.gen.ts",
     "./vue/combo-box-list": "./src/vue/combo-box-list.gen.ts",
+    "./vue/inline-popover": "./src/vue/inline-popover.gen.ts",
     "./vue/popover": "./src/vue/popover.gen.ts"
   },
   "files": [
@@ -348,6 +354,11 @@
         "import": "./dist/prosekit-lit-combo-box-list.js",
         "default": "./dist/prosekit-lit-combo-box-list.js"
       },
+      "./lit/inline-popover": {
+        "types": "./dist/prosekit-lit-inline-popover.d.ts",
+        "import": "./dist/prosekit-lit-inline-popover.js",
+        "default": "./dist/prosekit-lit-inline-popover.js"
+      },
       "./lit/popover": {
         "types": "./dist/prosekit-lit-popover.d.ts",
         "import": "./dist/prosekit-lit-popover.js",
@@ -451,6 +462,11 @@
         "import": "./dist/prosekit-preact-combo-box-list.js",
         "default": "./dist/prosekit-preact-combo-box-list.js"
       },
+      "./preact/inline-popover": {
+        "types": "./dist/prosekit-preact-inline-popover.d.ts",
+        "import": "./dist/prosekit-preact-inline-popover.js",
+        "default": "./dist/prosekit-preact-inline-popover.js"
+      },
       "./preact/popover": {
         "types": "./dist/prosekit-preact-popover.d.ts",
         "import": "./dist/prosekit-preact-popover.js",
@@ -505,6 +521,11 @@
         "types": "./dist/prosekit-react-combo-box-list.d.ts",
         "import": "./dist/prosekit-react-combo-box-list.js",
         "default": "./dist/prosekit-react-combo-box-list.js"
+      },
+      "./react/inline-popover": {
+        "types": "./dist/prosekit-react-inline-popover.d.ts",
+        "import": "./dist/prosekit-react-inline-popover.js",
+        "default": "./dist/prosekit-react-inline-popover.js"
       },
       "./react/popover": {
         "types": "./dist/prosekit-react-popover.d.ts",
@@ -561,6 +582,11 @@
         "import": "./dist/prosekit-solid-combo-box-list.js",
         "default": "./dist/prosekit-solid-combo-box-list.js"
       },
+      "./solid/inline-popover": {
+        "types": "./dist/prosekit-solid-inline-popover.d.ts",
+        "import": "./dist/prosekit-solid-inline-popover.js",
+        "default": "./dist/prosekit-solid-inline-popover.js"
+      },
       "./solid/popover": {
         "types": "./dist/prosekit-solid-popover.d.ts",
         "import": "./dist/prosekit-solid-popover.js",
@@ -616,6 +642,11 @@
         "import": "./dist/prosekit-svelte-combo-box-list.js",
         "default": "./dist/prosekit-svelte-combo-box-list.js"
       },
+      "./svelte/inline-popover": {
+        "types": "./dist/prosekit-svelte-inline-popover.d.ts",
+        "import": "./dist/prosekit-svelte-inline-popover.js",
+        "default": "./dist/prosekit-svelte-inline-popover.js"
+      },
       "./svelte/popover": {
         "types": "./dist/prosekit-svelte-popover.d.ts",
         "import": "./dist/prosekit-svelte-popover.js",
@@ -670,6 +701,11 @@
         "types": "./dist/prosekit-vue-combo-box-list.d.ts",
         "import": "./dist/prosekit-vue-combo-box-list.js",
         "default": "./dist/prosekit-vue-combo-box-list.js"
+      },
+      "./vue/inline-popover": {
+        "types": "./dist/prosekit-vue-inline-popover.d.ts",
+        "import": "./dist/prosekit-vue-inline-popover.js",
+        "default": "./dist/prosekit-vue-inline-popover.js"
       },
       "./vue/popover": {
         "types": "./dist/prosekit-vue-popover.d.ts",
@@ -769,6 +805,9 @@
         "lit/combo-box-list": [
           "./dist/prosekit-lit-combo-box-list.d.ts"
         ],
+        "lit/inline-popover": [
+          "./dist/prosekit-lit-inline-popover.d.ts"
+        ],
         "lit/popover": [
           "./dist/prosekit-lit-popover.d.ts"
         ],
@@ -829,6 +868,9 @@
         "preact/combo-box-list": [
           "./dist/prosekit-preact-combo-box-list.d.ts"
         ],
+        "preact/inline-popover": [
+          "./dist/prosekit-preact-inline-popover.d.ts"
+        ],
         "preact/popover": [
           "./dist/prosekit-preact-popover.d.ts"
         ],
@@ -861,6 +903,9 @@
         ],
         "react/combo-box-list": [
           "./dist/prosekit-react-combo-box-list.d.ts"
+        ],
+        "react/inline-popover": [
+          "./dist/prosekit-react-inline-popover.d.ts"
         ],
         "react/popover": [
           "./dist/prosekit-react-popover.d.ts"
@@ -895,6 +940,9 @@
         "solid/combo-box-list": [
           "./dist/prosekit-solid-combo-box-list.d.ts"
         ],
+        "solid/inline-popover": [
+          "./dist/prosekit-solid-inline-popover.d.ts"
+        ],
         "solid/popover": [
           "./dist/prosekit-solid-popover.d.ts"
         ],
@@ -928,6 +976,9 @@
         "svelte/combo-box-list": [
           "./dist/prosekit-svelte-combo-box-list.d.ts"
         ],
+        "svelte/inline-popover": [
+          "./dist/prosekit-svelte-inline-popover.d.ts"
+        ],
         "svelte/popover": [
           "./dist/prosekit-svelte-popover.d.ts"
         ],
@@ -960,6 +1011,9 @@
         ],
         "vue/combo-box-list": [
           "./dist/prosekit-vue-combo-box-list.d.ts"
+        ],
+        "vue/inline-popover": [
+          "./dist/prosekit-vue-inline-popover.d.ts"
         ],
         "vue/popover": [
           "./dist/prosekit-vue-popover.d.ts"

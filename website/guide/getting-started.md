@@ -20,30 +20,6 @@ pnpm add prosekit
 
 ## Usage
 
-<!--
-
-First, you need to configure specific extensions.
-
-::: code-group
-
-```ts [extension.ts]
-import 'prosekit/basic/style.css'
-
-import { defineBasicExtension } from 'prosekit/basic'
-
-export function defineExtension() {
-  return defineBasicExtension()
-}
-
-export type EditorExtension = ReturnType<typeof defineExtension>
-```
-
-:::
-
-Then, you need to integrate the extensions into your UI framework.
-
--->
-
 ::: code-group
 
 <<< @/../playground/examples/react-minimal/App.tsx [React]

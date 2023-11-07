@@ -71,19 +71,15 @@ export default defineConfig({
         //   ],
         // },
 
-        // {
-        //   text: 'Components',
-        //   items: [
-        //     {
-        //       text: 'Autocomplete',
-        //       link: '/guide/404',
-        //     },
-        //     {
-        //       text: 'InlinePopover (WIP)',
-        //       link: '/guide/404',
-        //     },
-        //   ],
-        // },
+        {
+          text: 'Components',
+          items: [
+            {
+              text: 'Inline Popover',
+              link: '/guide/components/inline-popover',
+            },
+          ],
+        },
 
         {
           text: 'Full API References',

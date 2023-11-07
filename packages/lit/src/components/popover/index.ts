@@ -84,6 +84,24 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
   @property({ type: Object })
   autoUpdateOptions?: AutoUpdateOptions
 
+  /**
+   * Controls whether the popover should be dismissed based on user interaction.
+   *
+   * Available options:
+   *
+   * - "off": The popover is not dismissed.
+   * - "on": The popover is dismissed when the user clicks outside of the popover or presses the escape key.
+   * - "click": The popover is dismissed when the user clicks outside of the popover.
+   * - "escape": The popover is dismissed when the user presses the escape key.
+   *
+   * @default "on"
+   */
+  @property({
+    type: String,
+    reflect: true,
+  })
+  dismiss = 'on'
+
   /** @hidden */
   private disposeAutoUpdate?: VoidFunction
 
@@ -94,15 +112,23 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
   connectedCallback(): void {
     super.connectedCallback()
 
-    const handleMouseDown = this.handleDocumentMouseDown.bind(this)
-    const handleKeyDown = this.handleDocumentKeyDown.bind(this)
+    const clickEnabled = this.dismiss === 'on' || this.dismiss === 'click'
+    const escapeEnabled = this.dismiss === 'on' || this.dismiss === 'escape'
 
-    document.addEventListener('mousedown', handleMouseDown)
-    document.addEventListener('keydown', handleKeyDown)
+    const handleMouseDown = clickEnabled
+      ? this.handleDocumentMouseDown.bind(this)
+      : null
+    const handleKeyDown = escapeEnabled
+      ? this.handleDocumentKeyDown.bind(this)
+      : null
+
+    handleMouseDown && document.addEventListener('mousedown', handleMouseDown)
+    handleKeyDown && document.addEventListener('keydown', handleKeyDown)
 
     this.disposeEventListeners = () => {
-      document.removeEventListener('mousedown', handleMouseDown)
-      document.removeEventListener('keydown', handleKeyDown)
+      handleMouseDown &&
+        document.removeEventListener('mousedown', handleMouseDown)
+      handleKeyDown && document.removeEventListener('keydown', handleKeyDown)
     }
   }
 

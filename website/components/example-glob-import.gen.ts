@@ -5,6 +5,10 @@ const modules = import.meta.glob([
   "../../playground/examples/react-heading/App.tsx",
   "../../playground/examples/react-heading/Toolbar.tsx",
   "../../playground/examples/react-heading/extension.ts",
+  "../../playground/examples/react-inline-menu/App.tsx",
+  "../../playground/examples/react-inline-menu/InlineButtons.tsx",
+  "../../playground/examples/react-inline-menu/InlineMenu.tsx",
+  "../../playground/examples/react-inline-menu/extension.ts",
   "../../playground/examples/react-list/App.tsx",
   "../../playground/examples/react-list/Toolbar.tsx",
   "../../playground/examples/react-list/extension.ts",
@@ -44,6 +48,10 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-heading/App.vue",
   "../../playground/examples/vue-heading/Toolbar.vue",
   "../../playground/examples/vue-heading/extension.ts",
+  "../../playground/examples/vue-inline-menu/App.vue",
+  "../../playground/examples/vue-inline-menu/InlineButtons.vue",
+  "../../playground/examples/vue-inline-menu/InlineMenu.vue",
+  "../../playground/examples/vue-inline-menu/extension.ts",
   "../../playground/examples/vue-italic/App.vue",
   "../../playground/examples/vue-italic/Toolbar.vue",
   "../../playground/examples/vue-italic/extension.ts",
@@ -112,6 +120,24 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-heading/extension.ts']
+    }
+  },
+  "react-inline-menu": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-inline-menu/App.tsx']
+    },
+    "/InlineButtons.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-inline-menu/InlineButtons.tsx']
+    },
+    "/InlineMenu.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-inline-menu/InlineMenu.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-inline-menu/extension.ts']
     }
   },
   "react-list": {
@@ -286,6 +312,24 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-heading/extension.ts']
+    }
+  },
+  "vue-inline-menu": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-inline-menu/App.vue']
+    },
+    "/InlineButtons.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-inline-menu/InlineButtons.vue']
+    },
+    "/InlineMenu.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-inline-menu/InlineMenu.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-inline-menu/extension.ts']
     }
   },
   "vue-italic": {

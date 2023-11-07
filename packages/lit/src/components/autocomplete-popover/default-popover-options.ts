@@ -20,6 +20,9 @@ const defaultDetectOverflowOptions = {
 export const defaultPopoverOptions: PopoverOptions = {
   placement: 'bottom-end',
   middleware: [
+    // Use the text caret as the reference point
+    inline(),
+
     offset(({ rects }) => ({
       // Put the popover at the bottom right corner
       alignmentAxis: -rects.floating.width,
@@ -53,8 +56,5 @@ export const defaultPopoverOptions: PopoverOptions = {
     shift({
       ...defaultDetectOverflowOptions,
     }),
-
-    // Use the text caret as the reference point
-    inline(),
   ],
 }

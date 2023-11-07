@@ -9,8 +9,16 @@ function clsx(...parts) {
 }
 
 export const shortcuts = {
+  EDITOR_BOX: clsx('max-h-[250px] overflow-y-auto'),
+
+  EDITOR_WRAPPER: clsx('relative'),
+
   EDITOR_CONTENT: clsx(
-    'relative box-border h-[250px] w-full overflow-auto rounded-md p-4 outline outline-2',
+    'relative box-border min-h-[200px] w-full overflow-auto rounded-md p-4 outline outline-2',
+  ),
+
+  INLINE_MENU: clsx(
+    'relative z-50 block max-h-[400px] min-w-[120px] space-x-1 overflow-auto whitespace-nowrap rounded border border-solid border-gray-500 bg-white p-1 dark:bg-zinc-800',
   ),
 
   SLASH_MENU: clsx(

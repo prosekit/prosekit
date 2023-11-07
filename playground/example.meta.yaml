@@ -7,6 +7,16 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: react-inline-menu
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: InlineButtons.tsx
+        hidden: false
+      - path: InlineMenu.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
   - name: react-list
     files:
       - path: App.tsx
@@ -100,6 +110,16 @@ examples:
       - path: App.vue
         hidden: false
       - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+  - name: vue-inline-menu
+    files:
+      - path: App.vue
+        hidden: false
+      - path: InlineButtons.vue
+        hidden: false
+      - path: InlineMenu.vue
         hidden: false
       - path: extension.ts
         hidden: false

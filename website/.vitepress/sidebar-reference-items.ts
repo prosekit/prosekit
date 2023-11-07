@@ -121,6 +121,10 @@ export const referenceItems = [
         "link": "/references/lit/combo-box-list"
       },
       {
+        "text": "inline-popover",
+        "link": "/references/lit/inline-popover"
+      },
+      {
         "text": "popover",
         "link": "/references/lit/popover"
       }
@@ -166,6 +170,10 @@ export const referenceItems = [
       {
         "text": "combo-box-list",
         "link": "/references/preact/combo-box-list"
+      },
+      {
+        "text": "inline-popover",
+        "link": "/references/preact/inline-popover"
       },
       {
         "text": "popover",
@@ -215,6 +223,10 @@ export const referenceItems = [
         "link": "/references/react/combo-box-list"
       },
       {
+        "text": "inline-popover",
+        "link": "/references/react/inline-popover"
+      },
+      {
         "text": "popover",
         "link": "/references/react/popover"
       }
@@ -260,6 +272,10 @@ export const referenceItems = [
       {
         "text": "combo-box-list",
         "link": "/references/solid/combo-box-list"
+      },
+      {
+        "text": "inline-popover",
+        "link": "/references/solid/inline-popover"
       },
       {
         "text": "popover",
@@ -309,6 +325,10 @@ export const referenceItems = [
         "link": "/references/svelte/combo-box-list"
       },
       {
+        "text": "inline-popover",
+        "link": "/references/svelte/inline-popover"
+      },
+      {
         "text": "popover",
         "link": "/references/svelte/popover"
       }
@@ -354,6 +374,10 @@ export const referenceItems = [
       {
         "text": "combo-box-list",
         "link": "/references/vue/combo-box-list"
+      },
+      {
+        "text": "inline-popover",
+        "link": "/references/vue/inline-popover"
       },
       {
         "text": "popover",

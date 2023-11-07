@@ -58,3 +58,9 @@ export {
   htmlToJSON,
   htmlToNode,
 } from './utils/parse'
+export {
+  isMark,
+  isNodeSelection,
+  isProseMirrorNode,
+  isTextSelection,
+} from './utils/type-assertion'

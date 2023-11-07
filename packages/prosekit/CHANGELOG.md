@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.0.28
+
+### Patch Changes
+
+- [2c9d79e] **prosekit/basic**
+
+  Add underline, strike and code
+
+- [2c9d79e] **prosekit/core**
+
+  Export `isTextSelection`
+
+- [2c9d79e] **prosekit/lit**
+
+  Add inline popover
+
 ## 0.0.27
 
 ### Patch Changes

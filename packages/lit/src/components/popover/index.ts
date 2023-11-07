@@ -177,17 +177,21 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     if (!this.active) return
 
     this.setHidden(false)
-    this.style.position = this.options?.strategy ?? 'absolute'
+
+    this.style.setProperty('top', '0')
+    this.style.setProperty('left', '0')
+    this.style.setProperty('position', this.options?.strategy ?? 'absolute')
 
     const options: PopoverOptions = this.options ?? defaultPopoverOptions
     const computed = await computePosition(reference, this, options)
 
     const { x, y, strategy } = computed ?? { x: 0, y: 0, strategy: 'absolute' }
-
-    this.style.top = '0'
-    this.style.left = '0'
-    this.style.position = strategy
-    this.style.transform = `translate(${roundByDPR(x)}px,${roundByDPR(y)}px)`
+    this.style.setProperty('opacity', '1')
+    this.style.setProperty('position', strategy)
+    this.style.setProperty(
+      'transform',
+      `translate(${roundByDPR(x)}px,${roundByDPR(y)}px)`,
+    )
   }
 
   /** @hidden */

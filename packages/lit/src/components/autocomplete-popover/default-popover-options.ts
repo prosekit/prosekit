@@ -30,26 +30,26 @@ export const defaultPopoverOptions: PopoverOptions = {
       mainAxis: 4,
     })),
 
-    size({
-      apply: ({ availableHeight, elements }) => {
-        const style = {
-          // Minimum acceptable height is 100px.
-          // `flip` will then take over.
-          maxHeight: `${Math.max(100, availableHeight)}px`,
-
-          overflowY: 'auto',
-        } satisfies Partial<CSSStyleDeclaration>
-
-        Object.assign(elements.floating.style, style)
-      },
-      ...defaultDetectOverflowOptions,
-    }),
-
     // Flip the popover to the top if it's overflowing the viewport
     flip({
       fallbackStrategy: 'initialPlacement',
       fallbackAxisSideDirection: 'start',
       crossAxis: false,
+      ...defaultDetectOverflowOptions,
+    }),
+
+    size({
+      apply: ({ availableWidth, availableHeight, elements }) => {
+        elements.floating.style.setProperty(
+          '--prosekit-popover-available-width',
+          `${Math.floor(availableWidth)}px`,
+        )
+
+        elements.floating.style.setProperty(
+          '--prosekit-popover-available-height',
+          `${Math.floor(availableHeight)}px`,
+        )
+      },
       ...defaultDetectOverflowOptions,
     }),
 

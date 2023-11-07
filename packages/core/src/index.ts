@@ -59,6 +59,7 @@ export {
   htmlToNode,
 } from './utils/parse'
 export {
+  isAllSelection,
   isMark,
   isNodeSelection,
   isProseMirrorNode,

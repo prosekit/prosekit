@@ -23,19 +23,19 @@ const editor = useEditor<EditorExtension>({ update: true })
     </ToggleButton>
 
     <ToggleButton
-      :active="editor.marks.italic.isActive()"
-      :available="editor.commands.toggleItalic.canApply()"
-      @change="() => editor.commands.toggleItalic()"
-    >
-      <div class="ICON_ITALIC"></div>
-    </ToggleButton>
-
-    <ToggleButton
       :active="editor.marks.bold.isActive()"
       :available="editor.commands.toggleBold.canApply()"
       @change="() => editor.commands.toggleBold()"
     >
       <div class="ICON_BOLD"></div>
+    </ToggleButton>
+
+    <ToggleButton
+      :active="editor.marks.italic.isActive()"
+      :available="editor.commands.toggleItalic.canApply()"
+      @change="() => editor.commands.toggleItalic()"
+    >
+      <div class="ICON_ITALIC"></div>
     </ToggleButton>
 
     <ToggleButton

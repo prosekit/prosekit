@@ -17,11 +17,7 @@ import App from '../../components/vue-inline-menu/App.vue'
 <ExamplePlaygroundLazy example="vue-inline-menu" />
 :::
 
-## Props
-
-- `editor`: The editor instance. This is required for the inline popover to get the current selection.
-
-## Examples
+## Usage
 
 ::: code-group
 
@@ -29,3 +25,12 @@ import App from '../../components/vue-inline-menu/App.vue'
 <<< @/../playground/examples/vue-inline-menu/InlineMenu.vue [Vue]
 
 :::
+
+## API Reference
+
+- [prosekit/react/inline-popover](/references/react/inline-popover)
+- [prosekit/vue/inline-popover](/references/vue/inline-popover)
+- [prosekit/preact/inline-popover](/references/preact/inline-popover)
+- [prosekit/svelte/inline-popover](/references/svelte/inline-popover)
+- [prosekit/solid/inline-popover](/references/solid/inline-popover)
+- [prosekit/lit/inline-popover](/references/lit/inline-popover)

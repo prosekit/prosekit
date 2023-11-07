@@ -107,6 +107,4 @@ Input `>>` followed by a space to convert to an toggle list item.
 
 ## API Reference
 
-See the documentation below for a complete reference to the extensions mentioned here.
-
 - [prosekit/extensions/list](/references/extensions/list)

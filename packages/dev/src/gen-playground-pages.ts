@@ -6,49 +6,63 @@ import { vfs } from './virtual-file-system'
 
 export async function genPlaygroundPages() {
   const meta = await readExampleMeta()
-  for (const example of meta.examples) {
-    const content = getPageContent(example.name)
-    if (content) {
-      await vfs.updateText(
-        `playground/pages/${example.name}/index.astro`,
-        content,
-      )
-    }
-  }
+
+  const exampleNames: string[] = meta.examples.map((example) => example.name)
+
+  await vfs.updateText(
+    'playground/pages/[example].astro',
+    getPageContent(exampleNames),
+  )
 
   await vfs.updateText(
     'playground/layouts/nav-list.astro',
-    getNavList(meta.examples.map((example) => example.name)),
+    getNavList(exampleNames),
   )
 }
 
-function getPageContent(name: string): string | null {
-  const framework = name.split('-')[0]
-  const ext = {
-    react: 'tsx',
-    preact: 'tsx',
-    solid: 'tsx',
-    svelte: 'svelte',
-    vue: 'vue',
-  }[framework]
+function getPageContent(names: string[]): string {
+  const importLines: string[] = []
+  const pathLines: string[] = []
+  const htmlLines: string[] = []
 
-  if (!ext) {
-    return null
-  }
+  names.forEach((name, index) => {
+    const framework = name.split('-')[0]
 
-  return (
-    `
----
-// This file is generated from ${currentFilename}
-import BaseLayout from '../../layouts/base-layout.astro'
-import App from '../../examples/${name}/App.${ext}'
----
+    const ext = {
+      react: 'tsx',
+      preact: 'tsx',
+      solid: 'tsx',
+      svelte: 'svelte',
+      vue: 'vue',
+    }[framework]
 
-<BaseLayout>
-  <App client:only="${framework}" />
-</BaseLayout>
-`.trim() + '\n'
-  )
+    if (!ext) {
+      return null
+    }
+
+    importLines.push(`import E${index} from '../examples/${name}/App.${ext}'`)
+    pathLines.push(`  { params: { example: '${name}' } },`)
+    htmlLines.push(
+      `  {example === '${name}' && <E${index} client:only="${framework}" />}`,
+    )
+  })
+
+  const lines = [
+    `---`,
+    `// This file is generated from ${currentFilename}`,
+    `import BaseLayout from '../layouts/base-layout.astro'`,
+    ...importLines,
+    `export const getStaticPaths = () => [`,
+    ...pathLines,
+    `]`,
+    `const { example } = Astro.params`,
+    `---\n`,
+    `<BaseLayout>`,
+    ...htmlLines,
+    `</BaseLayout>`,
+  ]
+
+  return lines.join('\n') + '\n'
 }
 
 function getNavList(names: string[]): string {

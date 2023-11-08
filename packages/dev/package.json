@@ -34,9 +34,9 @@
   "devDependencies": {
     "@changesets/read": "^0.5.9",
     "@sindresorhus/string-hash": "^2.0.0",
-    "@types/js-yaml": "^4.0.8",
-    "@types/lodash-es": "^4.17.10",
-    "@types/node": "^20.8.10",
+    "@types/js-yaml": "^4.0.9",
+    "@types/lodash-es": "^4.17.11",
+    "@types/node": "^20.9.0",
     "execa": "^8.0.1",
     "globby": "^13.2.2",
     "js-yaml": "^4.1.0",

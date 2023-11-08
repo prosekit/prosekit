@@ -19,8 +19,8 @@
     "@iconify-json/ci": "^1.1.10",
     "@iconify-json/material-symbols": "^1.1.61",
     "@iconify-json/radix-icons": "^1.1.11",
-    "@types/react": "^18.2.34",
-    "@types/react-dom": "^18.2.14",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
     "astro": "^3.4.3",
     "highlight.js": "^11.9.0",
     "lit": "^3.0.2",
@@ -33,6 +33,6 @@
     "typescript": "^5.2.2",
     "unocss": "^0.57.2",
     "vite-plugin-unocss-watcher": "^0.1.2",
-    "vue": "^3.3.7"
+    "vue": "^3.3.8"
   }
 }

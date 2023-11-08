@@ -62,7 +62,7 @@
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.6",
-    "vue": "^3.3.7"
+    "vue": "^3.3.8"
   },
   "publishConfig": {
     "exports": {

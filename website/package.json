@@ -14,8 +14,8 @@
     "@iconify-json/ci": "^1.1.10",
     "@iconify-json/logos": "^1.1.37",
     "@prosekit/dev": "*",
-    "@types/react": "^18.2.34",
-    "@types/react-dom": "^18.2.14",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
     "@unocss/cli": "^0.57.2",
     "@vitejs/plugin-vue-jsx": "^3.0.2",
     "clsx": "^2.0.0",
@@ -30,14 +30,14 @@
     "type-fest": "^4.6.0",
     "typedoc": "^0.25.3",
     "typedoc-plugin-external-package-links": "^0.1.0",
-    "typedoc-plugin-markdown": "^4.0.0-next.25",
+    "typedoc-plugin-markdown": "^4.0.0-next.27",
     "typedoc-plugin-mdn-links": "^3.1.0",
     "typescript": "^5.2.2",
     "unocss": "^0.57.2",
     "vite": "^4.5.0",
     "vite-plugin-unocss-watcher": "^0.1.2",
-    "vitepress": "1.0.0-rc.24",
+    "vitepress": "1.0.0-rc.25",
     "vitepress-plugin-tabs": "^0.4.1",
-    "vue": "^3.3.7"
+    "vue": "^3.3.8"
   }
 }

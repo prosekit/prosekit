@@ -25,9 +25,6 @@ importers:
       '@changesets/cli':
         specifier: ^2.26.2
         version: 2.26.2
-      '@changesets/types':
-        specifier: ^5.2.1
-        version: 5.2.1
       '@manypkg/cli':
         specifier: ^0.21.0
         version: 0.21.0

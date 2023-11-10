@@ -47,6 +47,7 @@ const moduleLogos = {
   '@prosekit/preact': 'preact',
   '@prosekit/lit': 'lit',
   '@prosekit/svelte': 'svelte',
+  '@prosekit/solid': 'solid',
 }
 
 /** @type import('@changesets/types').GetDependencyReleaseLine */

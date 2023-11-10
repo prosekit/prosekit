@@ -2,17 +2,13 @@
 
 /** @type import('@changesets/types').GetReleaseLine */
 async function getReleaseLine(changeset) {
-  const packageNames = changeset.releases.map((release) =>
-    release.name.replace(/^@/, ''),
-  )
-  if (packageNames.includes('prosekit') && packageNames.length >= 2) {
-    const prosekitIndex = packageNames.indexOf('prosekit')
-    packageNames.splice(prosekitIndex, 1)
+  let packages = changeset.releases.map((release) => release.name)
+
+  if (packages.length >= 2) {
+    packages = packages.filter((packageName) => packageName !== 'prosekit')
   }
 
-  const packageLine = packageNames
-    .map((packageName) => `**${packageName}**`)
-    .join(' ')
+  const packageLine = packages.map(getModuleBadge).join(' ')
 
   let returnVal = `- ${
     changeset.commit ? `[${changeset.commit}] ` : ''
@@ -23,6 +19,34 @@ async function getReleaseLine(changeset) {
   }
 
   return returnVal + '\n'
+}
+
+/**
+ * @param {string} name
+ */
+function getModuleBadge(name) {
+  const logo = moduleLogos[name]
+
+  const url =
+    'https://img.shields.io/badge/' +
+    name.replaceAll('/', '%2F').replace('@', '') +
+    '-444444' +
+    (logo ? `?logo=${logo}` : '')
+
+  return `![${name}](${url})`
+}
+
+/**
+ * https://shields.io/docs/logos
+ *
+ * @type {Object.<string, string>}
+ */
+const moduleLogos = {
+  '@prosekit/vue': 'vuedotjs',
+  '@prosekit/react': 'react',
+  '@prosekit/preact': 'preact',
+  '@prosekit/lit': 'lit',
+  '@prosekit/svelte': 'svelte',
 }
 
 /** @type import('@changesets/types').GetDependencyReleaseLine */

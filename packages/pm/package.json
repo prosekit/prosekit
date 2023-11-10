@@ -51,7 +51,7 @@
     "prosemirror-model": "^1.19.3",
     "prosemirror-state": "^1.4.3",
     "prosemirror-transform": "^1.8.0",
-    "prosemirror-view": "^1.32.3"
+    "prosemirror-view": "^1.32.4"
   },
   "devDependencies": {
     "@prosekit/dev": "*",

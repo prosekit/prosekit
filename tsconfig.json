@@ -15,6 +15,7 @@
     "declarationMap": true,
     "emitDeclarationOnly": true,
     "composite": true,
+    "allowJs": true,
     "declarationDir": "node_modules/.cache/ts/declaration",
     "tsBuildInfoFile": "node_modules/.cache/ts/tsconfig.tsbuildinfo",
     "verbatimModuleSyntax": true,

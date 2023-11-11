@@ -4,7 +4,7 @@ import { ProseKitError } from '../error'
 import { stateFacet } from '../facets/state'
 import type { Extension } from '../types/extension'
 import type { NodeJson, SelectionJson } from '../types/model'
-import { htmlToJSON } from '../utils/parse'
+import { htmlToNodeJSON } from '../utils/parse'
 
 export interface DefaultStateOptions {
   /**
@@ -42,7 +42,7 @@ export function defineDefaultState({
       const config: EditorStateConfig = {}
 
       if (defaultHTML) {
-        defaultDoc = htmlToJSON(defaultHTML, schema)
+        defaultDoc = htmlToNodeJSON(defaultHTML, schema)
       }
 
       if (defaultDoc) {

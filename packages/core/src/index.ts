@@ -14,7 +14,7 @@ export {
   type DefaultStateOptions,
 } from './extensions/default-state'
 export { defineDoc } from './extensions/doc'
-export { defineEventHandler } from './extensions/event-handler'
+export { defineUpdateHandler } from './extensions/update-handler'
 export { defineHistory } from './extensions/history'
 export { defineInputRule } from './extensions/input-rules'
 export {
@@ -53,9 +53,11 @@ export { type SimplifyUnion } from './types/simplify-union'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
 export {
-  elementToJSON,
+  elementToNodeJSON,
   elementToNode,
-  htmlToJSON,
+  htmlToNodeJSON,
+  stateToJSON,
+  nodeToJSON,
   htmlToNode,
 } from './utils/parse'
 export {

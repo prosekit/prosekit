@@ -1,4 +1,4 @@
-import { defineEventHandler, Editor, type Extension } from '@prosekit/core'
+import { defineUpdateHandler, Editor, type Extension } from '@prosekit/core'
 import {
   onMounted,
   onUnmounted,
@@ -24,7 +24,7 @@ export function useEditor<E extends Extension = any>(options?: {
   if (update) {
     onMounted(() => {
       const forceUpdate = () => triggerRef(editorRef)
-      const dispose = editor.use(defineEventHandler({ update: forceUpdate }))
+      const dispose = editor.use(defineUpdateHandler({ update: forceUpdate }))
       onUnmounted(dispose)
     })
   }

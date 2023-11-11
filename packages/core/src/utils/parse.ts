@@ -66,7 +66,7 @@ export function htmlToElement(html: string): HTMLElement {
 }
 
 /**
- * Return a JSON-serializeable representation of this state.
+ * Return a JSON object representing this state.
  *
  * @public
  */
@@ -75,7 +75,7 @@ export function stateToJSON(state: EditorState): StateJson {
 }
 
 /**
- * Return a JSON-serializeable representation of this node.
+ * Return a JSON object representing this node.
  *
  * @public
  */

@@ -23,18 +23,19 @@ import E18 from '../examples/vue-slash-menu/App.vue'
 import E19 from '../examples/vue-strike/App.vue'
 import E20 from '../examples/vue-toolbar/App.vue'
 import E21 from '../examples/vue-underline/App.vue'
-import E22 from '../examples/preact-minimal/App.tsx'
-import E23 from '../examples/preact-slash-menu/App.tsx'
-import E24 from '../examples/svelte-bold/App.svelte'
-import E25 from '../examples/svelte-italic/App.svelte'
-import E26 from '../examples/svelte-keymap/App.svelte'
-import E27 from '../examples/svelte-list/App.svelte'
-import E28 from '../examples/svelte-minimal/App.svelte'
-import E29 from '../examples/svelte-slash-menu/App.svelte'
-import E30 from '../examples/solid-heading/App.tsx'
-import E31 from '../examples/solid-keymap/App.tsx'
-import E32 from '../examples/solid-minimal/App.tsx'
-import E33 from '../examples/solid-slash-menu/App.tsx'
+import E22 from '../examples/preact-keymap/App.tsx'
+import E23 from '../examples/preact-minimal/App.tsx'
+import E24 from '../examples/preact-slash-menu/App.tsx'
+import E25 from '../examples/svelte-bold/App.svelte'
+import E26 from '../examples/svelte-italic/App.svelte'
+import E27 from '../examples/svelte-keymap/App.svelte'
+import E28 from '../examples/svelte-list/App.svelte'
+import E29 from '../examples/svelte-minimal/App.svelte'
+import E30 from '../examples/svelte-slash-menu/App.svelte'
+import E31 from '../examples/solid-heading/App.tsx'
+import E32 from '../examples/solid-keymap/App.tsx'
+import E33 from '../examples/solid-minimal/App.tsx'
+import E34 from '../examples/solid-slash-menu/App.tsx'
 export const getStaticPaths = () => [
   { params: { example: 'react-heading' } },
   { params: { example: 'react-inline-menu' } },
@@ -58,6 +59,7 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-strike' } },
   { params: { example: 'vue-toolbar' } },
   { params: { example: 'vue-underline' } },
+  { params: { example: 'preact-keymap' } },
   { params: { example: 'preact-minimal' } },
   { params: { example: 'preact-slash-menu' } },
   { params: { example: 'svelte-bold' } },
@@ -97,16 +99,17 @@ const { example } = Astro.params
   {example === 'vue-strike' && <E19 client:only="vue" />}
   {example === 'vue-toolbar' && <E20 client:only="vue" />}
   {example === 'vue-underline' && <E21 client:only="vue" />}
-  {example === 'preact-minimal' && <E22 client:only="preact" />}
-  {example === 'preact-slash-menu' && <E23 client:only="preact" />}
-  {example === 'svelte-bold' && <E24 client:only="svelte" />}
-  {example === 'svelte-italic' && <E25 client:only="svelte" />}
-  {example === 'svelte-keymap' && <E26 client:only="svelte" />}
-  {example === 'svelte-list' && <E27 client:only="svelte" />}
-  {example === 'svelte-minimal' && <E28 client:only="svelte" />}
-  {example === 'svelte-slash-menu' && <E29 client:only="svelte" />}
-  {example === 'solid-heading' && <E30 client:only="solid" />}
-  {example === 'solid-keymap' && <E31 client:only="solid" />}
-  {example === 'solid-minimal' && <E32 client:only="solid" />}
-  {example === 'solid-slash-menu' && <E33 client:only="solid" />}
+  {example === 'preact-keymap' && <E22 client:only="preact" />}
+  {example === 'preact-minimal' && <E23 client:only="preact" />}
+  {example === 'preact-slash-menu' && <E24 client:only="preact" />}
+  {example === 'svelte-bold' && <E25 client:only="svelte" />}
+  {example === 'svelte-italic' && <E26 client:only="svelte" />}
+  {example === 'svelte-keymap' && <E27 client:only="svelte" />}
+  {example === 'svelte-list' && <E28 client:only="svelte" />}
+  {example === 'svelte-minimal' && <E29 client:only="svelte" />}
+  {example === 'svelte-slash-menu' && <E30 client:only="svelte" />}
+  {example === 'solid-heading' && <E31 client:only="solid" />}
+  {example === 'solid-keymap' && <E32 client:only="solid" />}
+  {example === 'solid-minimal' && <E33 client:only="solid" />}
+  {example === 'solid-slash-menu' && <E34 client:only="solid" />}
 </BaseLayout>

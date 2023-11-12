@@ -201,12 +201,16 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: preact-keymap
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: KeymapConfig.tsx
+        hidden: false
   - name: preact-minimal
     files:
       - path: App.tsx
         hidden: false
-      - path: package.json
-        hidden: true
   - name: preact-slash-menu
     files:
       - path: App.tsx
@@ -215,8 +219,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: true
-      - path: package.json
-        hidden: false
   - name: svelte-bold
     files:
       - path: App.svelte

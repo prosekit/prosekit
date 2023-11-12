@@ -91,6 +91,10 @@ export const exampleItems = [
     "link": "/examples/vue-underline"
   },
   {
+    "text": "preact-keymap",
+    "link": "/examples/preact-keymap"
+  },
+  {
     "text": "preact-minimal",
     "link": "/examples/preact-minimal"
   },

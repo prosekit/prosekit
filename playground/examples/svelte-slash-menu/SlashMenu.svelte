@@ -3,10 +3,10 @@ import { AutocompleteItem } from 'prosekit/svelte/autocomplete-item'
 import { AutocompletePopover } from 'prosekit/svelte/autocomplete-popover'
 import { AutocompleteEmpty } from 'prosekit/svelte/autocomplete-empty'
 import { AutocompleteList } from 'prosekit/svelte/autocomplete-list'
-import { getEditor } from 'prosekit/svelte'
+import { useEditor } from 'prosekit/svelte'
 import type { EditorExtension } from './extension'
 
-const editor = getEditor<EditorExtension>()
+const editor = useEditor<EditorExtension>()
 
 const handleHeadingInsert = (level: number) => {
   $editor.commands.insertHeading({ level })

@@ -18,7 +18,7 @@ export default function App() {
   return (
     <ProseKit editor={editor}>
       <div className="EDITOR_CONTENT" ref={editor.mount}></div>
-      <KeymapConfig/>
+      <KeymapConfig />
     </ProseKit>
   )
 }

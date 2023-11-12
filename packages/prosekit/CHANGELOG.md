@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.0.29
+
+### Patch Changes
+
+- [82fe8c0] ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  rename `defineEventHandler` to `defineUpdateHandler`
+
 ## 0.0.28
 
 ### Patch Changes

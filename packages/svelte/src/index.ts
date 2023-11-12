@@ -1,3 +1,3 @@
-export { getEditor } from './contexts/editor-context'
+export { useEditor } from './hooks/use-editor'
 
 export { ProseKit } from './components/prosekit'

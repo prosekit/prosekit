@@ -1,14 +1,16 @@
 import { jsonFromNode, type Keymap } from 'prosekit/core'
-import { useKeymap } from 'prosekit/react'
-import { useMemo, useState } from 'react'
+import { useKeymap } from 'prosekit/solid'
+import { createSignal, createEffect } from 'solid-js'
 
-export default function  KeymapConfig() {
-  const [submitHotkey, setSubmitHotkey] = useState<
+export default function KeymapConfig() {
+  const [getSubmitHotkey, setSubmitHotkey] = createSignal<
     'Shift-Enter' | 'Ctrl-Enter'
   >('Shift-Enter')
 
-  const keymap: Keymap = useMemo((): Keymap => {
-    return {
+  createEffect(() => {
+    const submitHotkey = getSubmitHotkey()
+
+    const keymap: Keymap = {
       [submitHotkey]: (state) => {
         const doc = JSON.stringify(jsonFromNode(state.doc), null, 2)
         window.alert(`${submitHotkey} pressed! You document is: ${doc}`)
@@ -17,9 +19,9 @@ export default function  KeymapConfig() {
         return true
       },
     }
-  }, [submitHotkey])
 
-  useKeymap(keymap)
+    useKeymap(keymap)
+  })
 
   return (
     <fieldset className="border">
@@ -30,7 +32,7 @@ export default function  KeymapConfig() {
           type="radio"
           id="hotkey1"
           value="hotkey1"
-          checked={submitHotkey === 'Shift-Enter'}
+          checked={getSubmitHotkey() === 'Shift-Enter'}
           onChange={() => setSubmitHotkey('Shift-Enter')}
         />
         <label htmlFor="hotkey1">
@@ -43,7 +45,7 @@ export default function  KeymapConfig() {
           type="radio"
           id="hotkey2"
           value="hotkey2"
-          checked={submitHotkey === 'Ctrl-Enter'}
+          checked={getSubmitHotkey() === 'Ctrl-Enter'}
           onChange={() => setSubmitHotkey('Ctrl-Enter')}
         />
         <label htmlFor="hotkey2">

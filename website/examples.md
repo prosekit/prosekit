@@ -62,6 +62,8 @@
 
 - [solid-heading](./examples/solid-heading)
 
+- [solid-keymap](./examples/solid-keymap)
+
 - [solid-minimal](./examples/solid-minimal)
 
 - [solid-slash-menu](./examples/solid-slash-menu)

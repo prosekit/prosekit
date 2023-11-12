@@ -31,8 +31,9 @@ import E26 from '../examples/svelte-list/App.svelte'
 import E27 from '../examples/svelte-minimal/App.svelte'
 import E28 from '../examples/svelte-slash-menu/App.svelte'
 import E29 from '../examples/solid-heading/App.tsx'
-import E30 from '../examples/solid-minimal/App.tsx'
-import E31 from '../examples/solid-slash-menu/App.tsx'
+import E30 from '../examples/solid-keymap/App.tsx'
+import E31 from '../examples/solid-minimal/App.tsx'
+import E32 from '../examples/solid-slash-menu/App.tsx'
 export const getStaticPaths = () => [
   { params: { example: 'react-heading' } },
   { params: { example: 'react-inline-menu' } },
@@ -64,6 +65,7 @@ export const getStaticPaths = () => [
   { params: { example: 'svelte-minimal' } },
   { params: { example: 'svelte-slash-menu' } },
   { params: { example: 'solid-heading' } },
+  { params: { example: 'solid-keymap' } },
   { params: { example: 'solid-minimal' } },
   { params: { example: 'solid-slash-menu' } },
 ]
@@ -101,6 +103,7 @@ const { example } = Astro.params
   {example === 'svelte-minimal' && <E27 client:only="svelte" />}
   {example === 'svelte-slash-menu' && <E28 client:only="svelte" />}
   {example === 'solid-heading' && <E29 client:only="solid" />}
-  {example === 'solid-minimal' && <E30 client:only="solid" />}
-  {example === 'solid-slash-menu' && <E31 client:only="solid" />}
+  {example === 'solid-keymap' && <E30 client:only="solid" />}
+  {example === 'solid-minimal' && <E31 client:only="solid" />}
+  {example === 'solid-slash-menu' && <E32 client:only="solid" />}
 </BaseLayout>

@@ -5,7 +5,7 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { KeymapConfig } from './KeymapConfig'
+import KeymapConfig from './KeymapConfig'
 
 export default function App() {
   const editor = useMemo(() => {

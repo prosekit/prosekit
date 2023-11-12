@@ -259,6 +259,12 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: solid-keymap
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: KeymapConfig.tsx
+        hidden: false
   - name: solid-minimal
     files:
       - path: App.tsx

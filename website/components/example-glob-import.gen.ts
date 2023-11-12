@@ -102,6 +102,8 @@ const modules = import.meta.glob([
   "../../playground/examples/solid-heading/App.tsx",
   "../../playground/examples/solid-heading/Toolbar.tsx",
   "../../playground/examples/solid-heading/extension.ts",
+  "../../playground/examples/solid-keymap/App.tsx",
+  "../../playground/examples/solid-keymap/KeymapConfig.tsx",
   "../../playground/examples/solid-minimal/App.tsx",
   "../../playground/examples/solid-slash-menu/App.tsx",
   "../../playground/examples/solid-slash-menu/SlashMenu.tsx",
@@ -572,6 +574,16 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/solid-heading/extension.ts']
+    }
+  },
+  "solid-keymap": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-keymap/App.tsx']
+    },
+    "/KeymapConfig.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-keymap/KeymapConfig.tsx']
     }
   },
   "solid-minimal": {

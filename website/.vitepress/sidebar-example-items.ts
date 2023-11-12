@@ -123,6 +123,10 @@ export const exampleItems = [
     "link": "/examples/solid-heading"
   },
   {
+    "text": "solid-keymap",
+    "link": "/examples/solid-keymap"
+  },
+  {
     "text": "solid-minimal",
     "link": "/examples/solid-minimal"
   },

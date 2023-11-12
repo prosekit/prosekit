@@ -1,6 +1,6 @@
 # Vue Integration
 
-ProseKit is designed to work seamlessly with Vue. 
+ProseKit is designed to work seamlessly with Vue.
 
 ::: code-group
 <<< @/../playground/examples/vue-minimal/App.vue
@@ -38,7 +38,7 @@ import { computed } from 'vue'
 
 const keymap: Keymap = computed((): Keymap => {
   return {
-    "Shift-Enter": () => {
+    'Shift-Enter': () => {
       window.alert(`Shift-Enter is pressed!`)
       return true
     },
@@ -49,4 +49,3 @@ useKeymap(keymap)
 ```
 
 For a comprehensive example of how to use `useKeymap`, refer to [this example](/examples/vue-keymap).
-

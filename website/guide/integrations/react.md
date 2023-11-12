@@ -1,6 +1,6 @@
 # React Integration
 
-ProseKit is designed to work seamlessly with React. 
+ProseKit is designed to work seamlessly with React.
 
 ::: code-group
 <<< @/../playground/examples/react-minimal/App.tsx
@@ -38,7 +38,7 @@ import { useMemo } from 'react'
 
 const keymap: Keymap = useMemo((): Keymap => {
   return {
-    "Shift-Enter": () => {
+    'Shift-Enter': () => {
       window.alert(`Shift-Enter is pressed!`)
       return true
     },

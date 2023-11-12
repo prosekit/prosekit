@@ -50,15 +50,10 @@ export function defineHeadingKeymap() {
 export function defineHeadingInputRule() {
   return defineInputRule(({ schema }) => {
     const nodeSpec = getNodeType(schema, 'heading')
-    const inputRule = textblockTypeInputRule(
-      /^(#{1,6})\s/,
-      nodeSpec,
-      (match) => {
-        const level: number = match[1]?.length ?? 1
-        return { level } satisfies HeadingAttrs
-      },
-    )
-    return [inputRule]
+    return textblockTypeInputRule(/^(#{1,6})\s/, nodeSpec, (match) => {
+      const level: number = match[1]?.length ?? 1
+      return { level } satisfies HeadingAttrs
+    })
   })
 }
 

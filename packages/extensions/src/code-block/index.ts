@@ -48,8 +48,7 @@ export function defineCodeBlockInputRule() {
     const getAttrs = (match: RegExpMatchArray): CodeBlockAttrs => {
       return { language: match[1] || '' }
     }
-    const inputRule = textblockTypeInputRule(/^```(\S*)\s$/, nodeType, getAttrs)
-    return [inputRule]
+    return textblockTypeInputRule(/^```(\S*)\s$/, nodeType, getAttrs)
   })
 }
 

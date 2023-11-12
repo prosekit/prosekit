@@ -1,7 +1,4 @@
-import {
-  ProseKitError,
-  type Editor,
-} from '@prosekit/core'
+import { ProseKitError, type Editor } from '@prosekit/core'
 import { getContext, hasContext, setContext } from 'svelte'
 
 export interface EditorContext {
@@ -26,5 +23,3 @@ export function getEditorContext(): EditorContext {
   }
   return getContext(key)
 }
-
-

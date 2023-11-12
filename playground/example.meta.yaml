@@ -17,6 +17,12 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: react-keymap
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: KeymapConfig.tsx
+        hidden: false
   - name: react-list
     files:
       - path: App.tsx
@@ -220,6 +226,12 @@ examples:
       - path: Toolbar.svelte
         hidden: false
       - path: extension.ts
+        hidden: false
+  - name: svelte-keymap
+    files:
+      - path: App.svelte
+        hidden: false
+      - path: KeymapConfig.svelte
         hidden: false
   - name: svelte-list
     files:

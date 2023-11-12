@@ -11,6 +11,10 @@ export const exampleItems = [
     "link": "/examples/react-inline-menu"
   },
   {
+    "text": "react-keymap",
+    "link": "/examples/react-keymap"
+  },
+  {
     "text": "react-list",
     "link": "/examples/react-list"
   },
@@ -97,6 +101,10 @@ export const exampleItems = [
   {
     "text": "svelte-italic",
     "link": "/examples/svelte-italic"
+  },
+  {
+    "text": "svelte-keymap",
+    "link": "/examples/svelte-keymap"
   },
   {
     "text": "svelte-list",

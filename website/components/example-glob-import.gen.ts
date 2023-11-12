@@ -9,6 +9,8 @@ const modules = import.meta.glob([
   "../../playground/examples/react-inline-menu/InlineButtons.tsx",
   "../../playground/examples/react-inline-menu/InlineMenu.tsx",
   "../../playground/examples/react-inline-menu/extension.ts",
+  "../../playground/examples/react-keymap/App.tsx",
+  "../../playground/examples/react-keymap/KeymapConfig.tsx",
   "../../playground/examples/react-list/App.tsx",
   "../../playground/examples/react-list/Toolbar.tsx",
   "../../playground/examples/react-list/extension.ts",
@@ -89,6 +91,8 @@ const modules = import.meta.glob([
   "../../playground/examples/svelte-italic/App.svelte",
   "../../playground/examples/svelte-italic/Toolbar.svelte",
   "../../playground/examples/svelte-italic/extension.ts",
+  "../../playground/examples/svelte-keymap/App.svelte",
+  "../../playground/examples/svelte-keymap/KeymapConfig.svelte",
   "../../playground/examples/svelte-list/App.svelte",
   "../../playground/examples/svelte-list/extension.ts",
   "../../playground/examples/svelte-minimal/App.svelte",
@@ -140,6 +144,16 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-inline-menu/extension.ts']
+    }
+  },
+  "react-keymap": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-keymap/App.tsx']
+    },
+    "/KeymapConfig.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-keymap/KeymapConfig.tsx']
     }
   },
   "react-list": {
@@ -504,6 +518,16 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/svelte-italic/extension.ts']
+    }
+  },
+  "svelte-keymap": {
+    "/App.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-keymap/App.svelte']
+    },
+    "/KeymapConfig.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-keymap/KeymapConfig.svelte']
     }
   },
   "svelte-list": {

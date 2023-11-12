@@ -6,6 +6,8 @@
 
 - [react-inline-menu](./examples/react-inline-menu)
 
+- [react-keymap](./examples/react-keymap)
+
 - [react-list](./examples/react-list)
 
 - [react-minimal](./examples/react-minimal)
@@ -49,6 +51,8 @@
 - [svelte-bold](./examples/svelte-bold)
 
 - [svelte-italic](./examples/svelte-italic)
+
+- [svelte-keymap](./examples/svelte-keymap)
 
 - [svelte-list](./examples/svelte-list)
 

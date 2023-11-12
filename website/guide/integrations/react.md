@@ -1,4 +1,4 @@
-# React Integrating
+# React Integration
 
 ProseKit is designed to work seamlessly with React. 
 

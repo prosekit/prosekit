@@ -1,4 +1,4 @@
-# Vue Integrating
+# Vue Integration
 
 ProseKit is designed to work seamlessly with Vue. 
 

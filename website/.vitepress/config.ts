@@ -71,15 +71,19 @@ export default defineConfig({
         //   ],
         // },
 
-        // {
-        //   text: 'Integrations',
-        //   items: [
-        //     {
-        //       text: 'React',
-        //       link: '/guide/integrations/react',
-        //     },
-        //   ],
-        // },
+        {
+          text: 'Integrations',
+          items: [
+            {
+              text: 'React',
+              link: '/guide/integrations/react',
+            },
+            {
+              text: 'Vue',
+              link: '/guide/integrations/vue',
+            },
+          ],
+        },
 
         {
           text: 'Components',

@@ -1,9 +1,9 @@
-# React Integration
+# Vue Integration
 
-ProseKit is designed to work seamlessly with React.
+ProseKit is designed to work seamlessly with Vue.
 
 ::: code-group
-<<< @/../playground/examples/react-minimal/App.tsx
+<<< @/../playground/examples/vue-minimal/App.vue
 :::
 
 ## `useEditor`
@@ -23,7 +23,7 @@ const editor = useEditor({ update: true })
 Adds an extension to the editor.
 
 ```ts
-const extension = useMemo(() => defineMyExtension(), [])
+const extension = computed(() => defineMyExtension())
 useExtension(extension)
 ```
 
@@ -33,19 +33,19 @@ Adds key bindings to the editor.
 
 ```ts
 import { type Keymap } from 'prosekit/core'
-import { useKeymap } from 'prosekit/react'
-import { useMemo } from 'react'
+import { useKeymap } from 'prosekit/vue'
+import { computed } from 'vue'
 
-const keymap: Keymap = useMemo((): Keymap => {
+const keymap: Keymap = computed((): Keymap => {
   return {
     'Shift-Enter': () => {
       window.alert(`Shift-Enter is pressed!`)
       return true
     },
   }
-}, [])
+})
 
 useKeymap(keymap)
 ```
 
-For a comprehensive example of how to use `useKeymap`, refer to [this example](/examples/react-keymap).
+For a comprehensive example of how to use `useKeymap`, refer to [this example](/examples/vue-keymap).

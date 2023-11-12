@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 
 import { useExtension } from './use-extension'
 
-export function useKeymap({ keymap }: { keymap: Keymap }) {
+export function useKeymap(keymap: Keymap) {
   const extension = useMemo(() => defineKeymap(keymap), [keymap])
-  useExtension({ extension })
+  useExtension(extension)
 }

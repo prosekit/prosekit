@@ -3,11 +3,9 @@ import { useEffect } from 'preact/hooks'
 
 import { useEditor } from './use-editor'
 
-interface UseExtensionProps<T extends Extension = Extension> {
-  extension: T
-}
-
-export function useExtension({ extension }: UseExtensionProps) {
+export function useExtension<T extends Extension = Extension>(extension: T) {
   const editor = useEditor()
-  useEffect(() => editor.use(extension), [editor, extension])
+  useEffect(() => {
+    return editor.use(extension)
+  }, [editor, extension])
 }

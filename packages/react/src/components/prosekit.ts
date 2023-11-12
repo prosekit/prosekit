@@ -35,7 +35,7 @@ function RendererRegister() {
     () => defineReactNodeViewRenderer({ nodeViewFactory }),
     [nodeViewFactory],
   )
-  useExtension({ extension })
+  useExtension(extension)
 
   return null
 }

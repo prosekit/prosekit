@@ -3,11 +3,8 @@ import { useEffect } from 'react'
 
 import { useEditor } from './use-editor'
 
-interface UseExtensionProps<T extends Extension = Extension> {
-  extension: T
-}
 
-export function useExtension({ extension }: UseExtensionProps) {
+export function useExtension<T extends Extension = Extension>(  extension : T) {
   const editor = useEditor()
 
   useEffect(() => {

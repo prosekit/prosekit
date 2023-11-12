@@ -3,7 +3,7 @@ import { Selection, type EditorStateConfig } from '@prosekit/pm/state'
 import { ProseKitError } from '../error'
 import { stateFacet } from '../facets/state'
 import type { Extension } from '../types/extension'
-import type { NodeJson, SelectionJson } from '../types/model'
+import type { NodeJSON, SelectionJSON } from '../types/model'
 import { jsonFromElement, jsonFromHTML } from '../utils/parse'
 
 export interface DefaultStateOptions {
@@ -11,7 +11,7 @@ export interface DefaultStateOptions {
    * A JSON object representing the starting document to use when creating the
    * editor.
    */
-  defaultDoc?: NodeJson
+  defaultDoc?: NodeJSON
 
   /**
    * A HTML element or a HTML string representing the starting document to use
@@ -23,7 +23,7 @@ export interface DefaultStateOptions {
    * A JSON object representing the starting selection to use when creating the
    * editor. It's only used when `defaultDoc` or `defaultHTML` is also provided.
    */
-  defaultSelection?: SelectionJson
+  defaultSelection?: SelectionJSON
 }
 
 export function defineDefaultState({

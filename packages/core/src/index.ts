@@ -47,7 +47,11 @@ export {
   type SimplifyExtension,
 } from './types/extension'
 export { type ExtensionTyping } from './types/extension-typing'
-export type { NodeJson, SelectionJson, StateJson } from './types/model'
+export type {
+  NodeJSON  ,
+  SelectionJSON  ,
+  StateJSON ,
+} from './types/model'
 export { Priority } from './types/priority'
 export { type SimplifyUnion } from './types/simplify-union'
 export { getMarkType } from './utils/get-mark-type'

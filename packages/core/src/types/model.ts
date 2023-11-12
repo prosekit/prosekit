@@ -3,11 +3,11 @@
  *
  * @public
  */
-export interface NodeJson {
+export interface NodeJSON {
   type: string
   marks?: Array<any>
   text?: string
-  content?: NodeJson[]
+  content?: NodeJSON[]
   attrs?: Record<string, any>
 }
 
@@ -16,7 +16,7 @@ export interface NodeJson {
  *
  * @public
  */
-export interface SelectionJson {
+export interface SelectionJSON {
   anchor: number
   head: number
   type: string
@@ -27,14 +27,14 @@ export interface SelectionJson {
  *
  * @public
  */
-export interface StateJson {
+export interface StateJSON {
   /**
    * The main `ProseMirror` doc.
    */
-  doc: NodeJson
+  doc: NodeJSON
 
   /**
    * The current selection.
    */
-  selection: SelectionJson
+  selection: SelectionJSON
 }

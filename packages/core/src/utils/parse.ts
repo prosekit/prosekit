@@ -3,7 +3,7 @@ import { DOMParser } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 
 import { ProseKitError } from '../error'
-import type { NodeJson, StateJson } from '../types/model'
+import type { NodeJSON, StateJSON } from '../types/model'
 
 import { getBrowserWindow } from './get-dom-api'
 
@@ -27,7 +27,7 @@ export function nodeFromElement(
 export function jsonFromElement(
   element: HTMLElement,
   schema: Schema,
-): NodeJson {
+): NodeJSON {
   return jsonFromNode(nodeFromElement(element, schema))
 }
 
@@ -45,7 +45,7 @@ export function nodeFromHTML(html: string, schema: Schema): ProseMirrorNode {
  *
  * @public
  */
-export function jsonFromHTML(html: string, schema: Schema): NodeJson {
+export function jsonFromHTML(html: string, schema: Schema): NodeJSON {
   return jsonFromElement(elementFromHTML(html), schema)
 }
 
@@ -70,8 +70,8 @@ export function elementFromHTML(html: string): HTMLElement {
  *
  * @public
  */
-export function jsonFromState(state: EditorState): StateJson {
-  return state.toJSON() as StateJson
+export function jsonFromState(state: EditorState): StateJSON {
+  return state.toJSON() as StateJSON
 }
 
 /**
@@ -79,6 +79,6 @@ export function jsonFromState(state: EditorState): StateJson {
  *
  * @public
  */
-export function jsonFromNode(node: ProseMirrorNode): NodeJson {
-  return node.toJSON() as NodeJson
+export function jsonFromNode(node: ProseMirrorNode): NodeJSON {
+  return node.toJSON() as NodeJSON
 }

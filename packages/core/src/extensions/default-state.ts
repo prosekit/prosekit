@@ -4,7 +4,7 @@ import { ProseKitError } from '../error'
 import { stateFacet } from '../facets/state'
 import type { Extension } from '../types/extension'
 import type { NodeJson, SelectionJson } from '../types/model'
-import { jsonFromHTML } from '../utils/parse'
+import { jsonFromElement, jsonFromHTML } from '../utils/parse'
 
 export interface DefaultStateOptions {
   /**
@@ -14,10 +14,10 @@ export interface DefaultStateOptions {
   defaultDoc?: NodeJson
 
   /**
-   * A HTML string representing the starting document to use when creating the
-   * editor.
+   * A HTML element or a HTML string representing the starting document to use
+   * when creating the editor.
    */
-  defaultHTML?: string
+  defaultHTML?: string | HTMLElement
 
   /**
    * A JSON object representing the starting selection to use when creating the
@@ -42,7 +42,11 @@ export function defineDefaultState({
       const config: EditorStateConfig = {}
 
       if (defaultHTML) {
-        defaultDoc = jsonFromHTML(defaultHTML, schema)
+        if (typeof defaultHTML === 'string') {
+          defaultDoc = jsonFromHTML(defaultHTML, schema)
+        } else {
+          defaultDoc = jsonFromElement(defaultHTML, schema)
+        }
       }
 
       if (defaultDoc) {

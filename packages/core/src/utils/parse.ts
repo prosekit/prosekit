@@ -12,7 +12,7 @@ import { getBrowserWindow } from './get-dom-api'
  *
  * @public
  */
-export function elementToNode(
+export function nodeFromElement(
   element: HTMLElement,
   schema: Schema,
 ): ProseMirrorNode {
@@ -24,11 +24,11 @@ export function elementToNode(
  *
  * @public
  */
-export function elementToNodeJSON(
+export function jsonFromElement(
   element: HTMLElement,
   schema: Schema,
 ): NodeJson {
-  return nodeToJSON(elementToNode(element, schema))
+  return jsonFromNode(nodeFromElement(element, schema))
 }
 
 /**
@@ -36,17 +36,17 @@ export function elementToNodeJSON(
  *
  * @public
  */
-export function htmlToNode(html: string, schema: Schema): ProseMirrorNode {
-  return elementToNode(htmlToElement(html), schema)
+export function nodeFromHTML(html: string, schema: Schema): ProseMirrorNode {
+  return nodeFromElement(elementFromHTML(html), schema)
 }
 
 /**
- * Parse a HTML element to a ProseMirror document JSON.
+ * Parse a HTML string to a ProseMirror document JSON.
  *
  * @public
  */
-export function htmlToNodeJSON(html: string, schema: Schema): NodeJson {
-  return elementToNodeJSON(htmlToElement(html), schema)
+export function jsonFromHTML(html: string, schema: Schema): NodeJson {
+  return jsonFromElement(elementFromHTML(html), schema)
 }
 
 /**
@@ -54,7 +54,7 @@ export function htmlToNodeJSON(html: string, schema: Schema): NodeJson {
  *
  * @internal
  */
-export function htmlToElement(html: string): HTMLElement {
+export function elementFromHTML(html: string): HTMLElement {
   const win = getBrowserWindow()
   if (!win) {
     throw new ProseKitError(
@@ -70,7 +70,7 @@ export function htmlToElement(html: string): HTMLElement {
  *
  * @public
  */
-export function stateToJSON(state: EditorState): StateJson {
+export function jsonFromState(state: EditorState): StateJson {
   return state.toJSON() as StateJson
 }
 
@@ -79,6 +79,6 @@ export function stateToJSON(state: EditorState): StateJson {
  *
  * @public
  */
-export function nodeToJSON(node: ProseMirrorNode): NodeJson {
+export function jsonFromNode(node: ProseMirrorNode): NodeJson {
   return node.toJSON() as NodeJson
 }

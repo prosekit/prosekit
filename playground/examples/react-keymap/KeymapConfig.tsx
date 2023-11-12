@@ -2,7 +2,7 @@ import { jsonFromNode, type Keymap } from 'prosekit/core'
 import { useKeymap } from 'prosekit/react'
 import { useMemo, useState } from 'react'
 
-export default function  KeymapConfig() {
+export default function KeymapConfig() {
   const [submitHotkey, setSubmitHotkey] = useState<
     'Shift-Enter' | 'Ctrl-Enter'
   >('Shift-Enter')

@@ -44,7 +44,12 @@ onDestroy(() => {
   </div>
 
   <div>
-    <input type="radio" id="hotkey2" value={'Ctrl-Enter'} bind:group={submitHotkey} />
+    <input
+      type="radio"
+      id="hotkey2"
+      value={'Ctrl-Enter'}
+      bind:group={submitHotkey}
+    />
     <label for="hotkey2">
       <kbd>Ctrl</kbd>
       +

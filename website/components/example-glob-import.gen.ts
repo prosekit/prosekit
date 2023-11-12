@@ -9,6 +9,8 @@ const modules = import.meta.glob([
   "../../playground/examples/react-inline-menu/InlineButtons.tsx",
   "../../playground/examples/react-inline-menu/InlineMenu.tsx",
   "../../playground/examples/react-inline-menu/extension.ts",
+  "../../playground/examples/react-keymap/App.tsx",
+  "../../playground/examples/react-keymap/KeymapConfig.tsx",
   "../../playground/examples/react-list/App.tsx",
   "../../playground/examples/react-list/Toolbar.tsx",
   "../../playground/examples/react-list/extension.ts",
@@ -57,6 +59,8 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-italic/App.vue",
   "../../playground/examples/vue-italic/Toolbar.vue",
   "../../playground/examples/vue-italic/extension.ts",
+  "../../playground/examples/vue-keymap/App.vue",
+  "../../playground/examples/vue-keymap/KeymapConfig.vue",
   "../../playground/examples/vue-link/App.vue",
   "../../playground/examples/vue-link/extension.ts",
   "../../playground/examples/vue-list/App.vue",
@@ -77,18 +81,20 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-underline/App.vue",
   "../../playground/examples/vue-underline/Toolbar.vue",
   "../../playground/examples/vue-underline/extension.ts",
+  "../../playground/examples/preact-keymap/App.tsx",
+  "../../playground/examples/preact-keymap/KeymapConfig.tsx",
   "../../playground/examples/preact-minimal/App.tsx",
-  "../../playground/examples/preact-minimal/package.json",
   "../../playground/examples/preact-slash-menu/App.tsx",
   "../../playground/examples/preact-slash-menu/SlashMenu.tsx",
   "../../playground/examples/preact-slash-menu/extension.ts",
-  "../../playground/examples/preact-slash-menu/package.json",
   "../../playground/examples/svelte-bold/App.svelte",
   "../../playground/examples/svelte-bold/Toolbar.svelte",
   "../../playground/examples/svelte-bold/extension.ts",
   "../../playground/examples/svelte-italic/App.svelte",
   "../../playground/examples/svelte-italic/Toolbar.svelte",
   "../../playground/examples/svelte-italic/extension.ts",
+  "../../playground/examples/svelte-keymap/App.svelte",
+  "../../playground/examples/svelte-keymap/KeymapConfig.svelte",
   "../../playground/examples/svelte-list/App.svelte",
   "../../playground/examples/svelte-list/extension.ts",
   "../../playground/examples/svelte-minimal/App.svelte",
@@ -98,13 +104,14 @@ const modules = import.meta.glob([
   "../../playground/examples/solid-heading/App.tsx",
   "../../playground/examples/solid-heading/Toolbar.tsx",
   "../../playground/examples/solid-heading/extension.ts",
+  "../../playground/examples/solid-keymap/App.tsx",
+  "../../playground/examples/solid-keymap/KeymapConfig.tsx",
   "../../playground/examples/solid-minimal/App.tsx",
   "../../playground/examples/solid-slash-menu/App.tsx",
   "../../playground/examples/solid-slash-menu/SlashMenu.tsx",
   "../../playground/examples/solid-slash-menu/extension.ts",
   "../../playground/examples/lit/app.ts",
   "../../playground/examples/lit/extension.ts",
-  "../../playground/examples/lit/language-selector.ts",
   "../../playground/examples/lit/package.json",
   "../../playground/examples/vanilla/index.js"
 ], { as: 'raw', eager: true }) as Record<string, string>
@@ -140,6 +147,16 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-inline-menu/extension.ts']
+    }
+  },
+  "react-keymap": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-keymap/App.tsx']
+    },
+    "/KeymapConfig.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-keymap/KeymapConfig.tsx']
     }
   },
   "react-list": {
@@ -356,6 +373,16 @@ const examples = {
       "code": modules['../../playground/examples/vue-italic/extension.ts']
     }
   },
+  "vue-keymap": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-keymap/App.vue']
+    },
+    "/KeymapConfig.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-keymap/KeymapConfig.vue']
+    }
+  },
   "vue-link": {
     "/App.vue": {
       "hidden": false,
@@ -450,14 +477,20 @@ const examples = {
       "code": modules['../../playground/examples/vue-underline/extension.ts']
     }
   },
+  "preact-keymap": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-keymap/App.tsx']
+    },
+    "/KeymapConfig.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-keymap/KeymapConfig.tsx']
+    }
+  },
   "preact-minimal": {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/preact-minimal/App.tsx']
-    },
-    "/package.json": {
-      "hidden": true,
-      "code": modules['../../playground/examples/preact-minimal/package.json']
     }
   },
   "preact-slash-menu": {
@@ -472,10 +505,6 @@ const examples = {
     "/extension.ts": {
       "hidden": true,
       "code": modules['../../playground/examples/preact-slash-menu/extension.ts']
-    },
-    "/package.json": {
-      "hidden": false,
-      "code": modules['../../playground/examples/preact-slash-menu/package.json']
     }
   },
   "svelte-bold": {
@@ -504,6 +533,16 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/svelte-italic/extension.ts']
+    }
+  },
+  "svelte-keymap": {
+    "/App.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-keymap/App.svelte']
+    },
+    "/KeymapConfig.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-keymap/KeymapConfig.svelte']
     }
   },
   "svelte-list": {
@@ -550,6 +589,16 @@ const examples = {
       "code": modules['../../playground/examples/solid-heading/extension.ts']
     }
   },
+  "solid-keymap": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-keymap/App.tsx']
+    },
+    "/KeymapConfig.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-keymap/KeymapConfig.tsx']
+    }
+  },
   "solid-minimal": {
     "/App.tsx": {
       "hidden": false,
@@ -578,10 +627,6 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/lit/extension.ts']
-    },
-    "/language-selector.ts": {
-      "hidden": false,
-      "code": modules['../../playground/examples/lit/language-selector.ts']
     },
     "/package.json": {
       "hidden": true,

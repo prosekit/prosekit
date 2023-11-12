@@ -1,11 +1,5 @@
-import {
-  ProseKitError,
-  type Editor,
-  type Extension,
-  defineEventHandler,
-} from '@prosekit/core'
-import { getContext, hasContext, onDestroy, onMount, setContext } from 'svelte'
-import { readonly, writable, type Readable } from 'svelte/store'
+import { ProseKitError, type Editor } from '@prosekit/core'
+import { getContext, hasContext, setContext } from 'svelte'
 
 export interface EditorContext {
   editor: Editor
@@ -28,25 +22,4 @@ export function getEditorContext(): EditorContext {
     )
   }
   return getContext(key)
-}
-
-export function getEditor<E extends Extension = any>(options?: {
-  update?: boolean
-}): Readable<Editor<E>> {
-  const update = options?.update ?? false
-  const editor = getEditorContext().editor as Editor<E>
-
-  const editorStore = writable(editor)
-
-  if (update) {
-    onMount(() => {
-      const forceUpdate = () => {
-        editorStore.set(editor)
-      }
-      const dispose = editor.use(defineEventHandler({ update: forceUpdate }))
-      onDestroy(dispose)
-    })
-  }
-
-  return readonly(editorStore)
 }

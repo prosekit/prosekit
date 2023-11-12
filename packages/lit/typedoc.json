@@ -6,7 +6,6 @@
     "./src/components/autocomplete-item/index.ts",
     "./src/components/autocomplete-list/index.ts",
     "./src/components/autocomplete-popover/index.ts",
-    "./src/components/code-block-popover/index.ts",
     "./src/components/combo-box-input/index.ts",
     "./src/components/combo-box-item/index.ts",
     "./src/components/combo-box-list/index.ts",

@@ -2,7 +2,7 @@ import {
   Editor,
   ProseKitError,
   type Extension,
-  defineEventHandler,
+  defineUpdateHandler,
 } from '@prosekit/core'
 import { useContext, createEffect, createSignal } from 'solid-js'
 
@@ -29,7 +29,7 @@ export function useEditor<E extends Extension = any>(
 
   createEffect(() => {
     if (update) {
-      return editor.use(defineEventHandler({ update: forceUpdate }))
+      return editor.use(defineUpdateHandler(forceUpdate))
     }
   }, [editor, update, forceUpdate])
 

@@ -9,12 +9,15 @@ import { type Extension } from '../types/extension'
  * Adds a ProseMirror plugin to the editor.
  *
  * @param plugin - The ProseMirror plugin to add, or an array of plugins, or a
- * function that returns an array of plugins.
+ * function that returns one or multiple plugins.
  *
  * @public
  */
 export function definePlugin(
-  plugin: Plugin | Plugin[] | ((context: { schema: Schema }) => Plugin[]),
+  plugin:
+    | Plugin
+    | Plugin[]
+    | ((context: { schema: Schema }) => Plugin | Plugin[]),
 ): Extension {
   if (plugin instanceof Plugin) {
     return pluginFacet.extension([() => [plugin]])
@@ -34,15 +37,13 @@ export function definePlugin(
 /**
  * @internal
  */
-export type PluginPayload = (context: { schema: Schema }) => Plugin[]
+export type PluginPayload = (context: { schema: Schema }) => Plugin | Plugin[]
 
 /**
  * @internal
  */
 export const pluginFacet = Facet.define<PluginPayload, StatePayload>({
-  convert: (
-    callbacks: Array<(context: { schema: Schema }) => Plugin[]>,
-  ): StatePayload => {
+  convert: (callbacks: PluginPayload[]): StatePayload => {
     return ({ schema }): EditorStateConfig => {
       const plugins = callbacks.flatMap((func) => func({ schema }))
       return { plugins }

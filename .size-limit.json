@@ -116,10 +116,6 @@
     "path": "packages/prosekit/dist/prosekit-lit-autocomplete-popover.js"
   },
   {
-    "name": "prosekit/lit/code-block-popover",
-    "path": "packages/prosekit/dist/prosekit-lit-code-block-popover.js"
-  },
-  {
     "name": "prosekit/lit/combo-box",
     "path": "packages/prosekit/dist/prosekit-lit-combo-box.js"
   },
@@ -204,10 +200,6 @@
     "path": "packages/prosekit/dist/prosekit-preact-autocomplete-popover.js"
   },
   {
-    "name": "prosekit/preact/code-block-popover",
-    "path": "packages/prosekit/dist/prosekit-preact-code-block-popover.js"
-  },
-  {
     "name": "prosekit/preact/combo-box",
     "path": "packages/prosekit/dist/prosekit-preact-combo-box.js"
   },
@@ -250,10 +242,6 @@
   {
     "name": "prosekit/react/autocomplete-popover",
     "path": "packages/prosekit/dist/prosekit-react-autocomplete-popover.js"
-  },
-  {
-    "name": "prosekit/react/code-block-popover",
-    "path": "packages/prosekit/dist/prosekit-react-code-block-popover.js"
   },
   {
     "name": "prosekit/react/combo-box",
@@ -300,10 +288,6 @@
     "path": "packages/prosekit/dist/prosekit-solid-autocomplete-popover.js"
   },
   {
-    "name": "prosekit/solid/code-block-popover",
-    "path": "packages/prosekit/dist/prosekit-solid-code-block-popover.js"
-  },
-  {
     "name": "prosekit/solid/combo-box",
     "path": "packages/prosekit/dist/prosekit-solid-combo-box.js"
   },
@@ -346,10 +330,6 @@
   {
     "name": "prosekit/vue/autocomplete-popover",
     "path": "packages/prosekit/dist/prosekit-vue-autocomplete-popover.js"
-  },
-  {
-    "name": "prosekit/vue/code-block-popover",
-    "path": "packages/prosekit/dist/prosekit-vue-code-block-popover.js"
   },
   {
     "name": "prosekit/vue/combo-box",

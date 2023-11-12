@@ -6,8 +6,8 @@ import { ProseKitError } from '../error'
 import { defineDefaultState } from '../extensions/default-state'
 import {
   updateExtension,
-  type Payloads,
   type Converters,
+  type Payloads,
 } from '../facets/flatten'
 import { type CommandApplier, type CommandCreator } from '../types/command'
 import type {
@@ -16,7 +16,7 @@ import type {
   ExtractMarks,
   ExtractNodes,
 } from '../types/extension'
-import type { NodeJson, SelectionJson } from '../types/model'
+import type { NodeJSON, SelectionJSON } from '../types/model'
 import { isMarkActive } from '../utils/is-mark-active'
 import { isNodeActive } from '../utils/is-node-active'
 
@@ -41,19 +41,19 @@ export interface EditorOptions<E extends Extension> {
    * A JSON object representing the starting document to use when creating the
    * editor.
    */
-  defaultDoc?: NodeJson
+  defaultDoc?: NodeJSON
 
   /**
-   * A HTML string representing the starting document to use when creating the
-   * editor.
+   * A HTML element or a HTML string representing the starting document to use
+   * when creating the editor.
    */
-  defaultHTML?: string
+  defaultHTML?: string | HTMLElement
 
   /**
    * A JSON object representing the starting selection to use when creating the
    * editor. It's only used when `defaultDoc` or `defaultHTML` is also provided.
    */
-  defaultSelection?: SelectionJson
+  defaultSelection?: SelectionJSON
 }
 
 /**

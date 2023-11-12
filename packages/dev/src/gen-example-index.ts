@@ -1,16 +1,14 @@
 import path, { basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { type ExampleMeta, readExampleMeta } from './example-meta.js'
-import { findRootDir } from './find-root-dir.js'
-import { writeText } from './write-text.js'
+import { readExampleMeta, type ExampleMeta } from './example-meta.js'
+import { vfs } from './virtual-file-system.js'
 
-// TODO: use vfs
 export async function genExampleIndex() {
   const meta = await readExampleMeta()
-  const indexPath = path.join(await findRootDir(), 'website', 'examples.md')
+  const indexFile = await vfs.getFile(path.join('website', 'examples.md'))
   const markdown = formatIndexMarkdown(meta)
-  await writeText(indexPath, markdown)
+  indexFile.update(markdown)
 }
 
 function formatIndexMarkdown(meta: ExampleMeta) {

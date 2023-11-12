@@ -6,6 +6,8 @@
 
 - [react-inline-menu](./examples/react-inline-menu)
 
+- [react-keymap](./examples/react-keymap)
+
 - [react-list](./examples/react-list)
 
 - [react-minimal](./examples/react-minimal)
@@ -28,6 +30,8 @@
 
 - [vue-italic](./examples/vue-italic)
 
+- [vue-keymap](./examples/vue-keymap)
+
 - [vue-link](./examples/vue-link)
 
 - [vue-list](./examples/vue-list)
@@ -42,6 +46,8 @@
 
 - [vue-underline](./examples/vue-underline)
 
+- [preact-keymap](./examples/preact-keymap)
+
 - [preact-minimal](./examples/preact-minimal)
 
 - [preact-slash-menu](./examples/preact-slash-menu)
@@ -50,6 +56,8 @@
 
 - [svelte-italic](./examples/svelte-italic)
 
+- [svelte-keymap](./examples/svelte-keymap)
+
 - [svelte-list](./examples/svelte-list)
 
 - [svelte-minimal](./examples/svelte-minimal)
@@ -57,6 +65,8 @@
 - [svelte-slash-menu](./examples/svelte-slash-menu)
 
 - [solid-heading](./examples/solid-heading)
+
+- [solid-keymap](./examples/solid-keymap)
 
 - [solid-minimal](./examples/solid-minimal)
 

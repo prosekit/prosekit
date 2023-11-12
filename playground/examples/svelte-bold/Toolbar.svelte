@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { getEditor } from 'prosekit/svelte'
+import { useEditor } from 'prosekit/svelte'
 import type { EditorExtension } from './extension'
 
-const editor = getEditor<EditorExtension>({ update: true })
+const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <div class="TOOLBAR">

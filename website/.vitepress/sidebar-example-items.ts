@@ -11,6 +11,10 @@ export const exampleItems = [
     "link": "/examples/react-inline-menu"
   },
   {
+    "text": "react-keymap",
+    "link": "/examples/react-keymap"
+  },
+  {
     "text": "react-list",
     "link": "/examples/react-list"
   },
@@ -55,6 +59,10 @@ export const exampleItems = [
     "link": "/examples/vue-italic"
   },
   {
+    "text": "vue-keymap",
+    "link": "/examples/vue-keymap"
+  },
+  {
     "text": "vue-link",
     "link": "/examples/vue-link"
   },
@@ -83,6 +91,10 @@ export const exampleItems = [
     "link": "/examples/vue-underline"
   },
   {
+    "text": "preact-keymap",
+    "link": "/examples/preact-keymap"
+  },
+  {
     "text": "preact-minimal",
     "link": "/examples/preact-minimal"
   },
@@ -99,6 +111,10 @@ export const exampleItems = [
     "link": "/examples/svelte-italic"
   },
   {
+    "text": "svelte-keymap",
+    "link": "/examples/svelte-keymap"
+  },
+  {
     "text": "svelte-list",
     "link": "/examples/svelte-list"
   },
@@ -113,6 +129,10 @@ export const exampleItems = [
   {
     "text": "solid-heading",
     "link": "/examples/solid-heading"
+  },
+  {
+    "text": "solid-keymap",
+    "link": "/examples/solid-keymap"
   },
   {
     "text": "solid-minimal",

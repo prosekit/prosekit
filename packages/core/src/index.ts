@@ -14,7 +14,6 @@ export {
   type DefaultStateOptions,
 } from './extensions/default-state'
 export { defineDoc } from './extensions/doc'
-export { defineEventHandler } from './extensions/event-handler'
 export { defineHistory } from './extensions/history'
 export { defineInputRule } from './extensions/input-rules'
 export {
@@ -36,8 +35,9 @@ export {
   type PluginPayload,
 } from './extensions/plugin'
 export { defineText } from './extensions/text'
+export { defineUpdateHandler } from './extensions/update-handler'
 export { Facet, type FacetOptions } from './facets/facet'
-export { type CommandArgs as CommandArgs } from './types/command'
+export { type CommandArgs } from './types/command'
 export {
   type Extension,
   type ExtractCommandAppliers,
@@ -47,16 +47,18 @@ export {
   type SimplifyExtension,
 } from './types/extension'
 export { type ExtensionTyping } from './types/extension-typing'
-export type { NodeJson, SelectionJson, StateJson } from './types/model'
+export type { NodeJSON, SelectionJSON, StateJSON } from './types/model'
 export { Priority } from './types/priority'
 export { type SimplifyUnion } from './types/simplify-union'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
 export {
-  elementToJSON,
-  elementToNode,
-  htmlToJSON,
-  htmlToNode,
+  jsonFromElement,
+  jsonFromHTML,
+  jsonFromNode,
+  jsonFromState,
+  nodeFromElement,
+  nodeFromHTML,
 } from './utils/parse'
 export {
   isAllSelection,

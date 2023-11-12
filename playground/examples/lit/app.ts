@@ -3,14 +3,12 @@
 import 'highlight.js/styles/github-dark-dimmed.css'
 import 'prosekit/basic/style.css'
 
-import hljs from 'highlight.js/lib/common'
 import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import { createEditor, type Editor, type NodeJson } from 'prosekit/core'
 
 import { defineRootExtension, type RootExtension } from './extension'
-import './language-selector'
 
 @customElement('my-editor')
 export class MyEditor extends LitElement {
@@ -41,10 +39,6 @@ export class MyEditor extends LitElement {
   render() {
     return html`
       <div class="EDITOR_CONTENT" ${ref(this.editorRef)}></div>
-      <my-language-selector
-        .hljs=${hljs}
-        .editor=${this.editor}
-      ></my-language-selector>
     `
   }
 }

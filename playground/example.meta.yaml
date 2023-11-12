@@ -17,6 +17,12 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: react-keymap
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: KeymapConfig.tsx
+        hidden: false
   - name: react-list
     files:
       - path: App.tsx
@@ -135,6 +141,12 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: vue-keymap
+    files:
+      - path: App.vue
+        hidden: false
+      - path: KeymapConfig.vue
+        hidden: false
   - name: vue-link
     files:
       - path: App.vue
@@ -189,12 +201,16 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: preact-keymap
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: KeymapConfig.tsx
+        hidden: false
   - name: preact-minimal
     files:
       - path: App.tsx
         hidden: false
-      - path: package.json
-        hidden: true
   - name: preact-slash-menu
     files:
       - path: App.tsx
@@ -203,8 +219,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: true
-      - path: package.json
-        hidden: false
   - name: svelte-bold
     files:
       - path: App.svelte
@@ -220,6 +234,12 @@ examples:
       - path: Toolbar.svelte
         hidden: false
       - path: extension.ts
+        hidden: false
+  - name: svelte-keymap
+    files:
+      - path: App.svelte
+        hidden: false
+      - path: KeymapConfig.svelte
         hidden: false
   - name: svelte-list
     files:
@@ -247,6 +267,12 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: solid-keymap
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: KeymapConfig.tsx
+        hidden: false
   - name: solid-minimal
     files:
       - path: App.tsx
@@ -264,8 +290,6 @@ examples:
       - path: app.ts
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: language-selector.ts
         hidden: false
       - path: package.json
         hidden: true

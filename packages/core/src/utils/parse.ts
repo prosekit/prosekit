@@ -1,15 +1,18 @@
 import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import { DOMParser } from '@prosekit/pm/model'
+import type { EditorState } from '@prosekit/pm/state'
 
 import { ProseKitError } from '../error'
-import type { NodeJson } from '../types/model'
+import type { NodeJSON, StateJSON } from '../types/model'
 
 import { getBrowserWindow } from './get-dom-api'
 
 /**
  * Parse a HTML element to a ProseMirror node.
+ *
+ * @public
  */
-export function elementToNode(
+export function nodeFromElement(
   element: HTMLElement,
   schema: Schema,
 ): ProseMirrorNode {
@@ -18,29 +21,40 @@ export function elementToNode(
 
 /**
  * Parse a HTML element to a ProseMirror document JSON.
+ *
+ * @public
  */
-export function elementToJSON(element: HTMLElement, schema: Schema): NodeJson {
-  return elementToNode(element, schema).toJSON() as NodeJson
+export function jsonFromElement(
+  element: HTMLElement,
+  schema: Schema,
+): NodeJSON {
+  return jsonFromNode(nodeFromElement(element, schema))
 }
 
 /**
  * Parse a HTML string to a ProseMirror node.
+ *
+ * @public
  */
-export function htmlToNode(html: string, schema: Schema): ProseMirrorNode {
-  return elementToNode(htmlToElement(html), schema)
+export function nodeFromHTML(html: string, schema: Schema): ProseMirrorNode {
+  return nodeFromElement(elementFromHTML(html), schema)
 }
 
 /**
- * Parse a HTML element to a ProseMirror document JSON.
+ * Parse a HTML string to a ProseMirror document JSON.
+ *
+ * @public
  */
-export function htmlToJSON(html: string, schema: Schema): NodeJson {
-  return elementToJSON(htmlToElement(html), schema)
+export function jsonFromHTML(html: string, schema: Schema): NodeJSON {
+  return jsonFromElement(elementFromHTML(html), schema)
 }
 
 /**
  * Parse a HTML string to a HTML element.
+ *
+ * @internal
  */
-function htmlToElement(html: string): HTMLElement {
+export function elementFromHTML(html: string): HTMLElement {
   const win = getBrowserWindow()
   if (!win) {
     throw new ProseKitError(
@@ -49,4 +63,22 @@ function htmlToElement(html: string): HTMLElement {
   }
   const parser = new win.DOMParser()
   return parser.parseFromString(`<body>${html}</body>`, 'text/html').body
+}
+
+/**
+ * Return a JSON object representing this state.
+ *
+ * @public
+ */
+export function jsonFromState(state: EditorState): StateJSON {
+  return state.toJSON() as StateJSON
+}
+
+/**
+ * Return a JSON object representing this node.
+ *
+ * @public
+ */
+export function jsonFromNode(node: ProseMirrorNode): NodeJSON {
+  return node.toJSON() as NodeJSON
 }

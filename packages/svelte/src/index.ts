@@ -1,3 +1,5 @@
-export { getEditor } from './contexts/editor-context'
+export { useEditor } from './hooks/use-editor'
+export { useExtension } from './hooks/use-extension'
+export { useKeymap } from './hooks/use-keymap'
 
 export { ProseKit } from './components/prosekit'

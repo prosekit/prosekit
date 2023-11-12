@@ -141,6 +141,12 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: vue-keymap
+    files:
+      - path: App.vue
+        hidden: false
+      - path: KeymapConfig.vue
+        hidden: false
   - name: vue-link
     files:
       - path: App.vue

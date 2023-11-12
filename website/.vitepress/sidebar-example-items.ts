@@ -59,6 +59,10 @@ export const exampleItems = [
     "link": "/examples/vue-italic"
   },
   {
+    "text": "vue-keymap",
+    "link": "/examples/vue-keymap"
+  },
+  {
     "text": "vue-link",
     "link": "/examples/vue-link"
   },

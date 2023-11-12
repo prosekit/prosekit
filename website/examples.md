@@ -30,6 +30,8 @@
 
 - [vue-italic](./examples/vue-italic)
 
+- [vue-keymap](./examples/vue-keymap)
+
 - [vue-link](./examples/vue-link)
 
 - [vue-list](./examples/vue-list)

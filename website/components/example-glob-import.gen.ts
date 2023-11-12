@@ -59,6 +59,8 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-italic/App.vue",
   "../../playground/examples/vue-italic/Toolbar.vue",
   "../../playground/examples/vue-italic/extension.ts",
+  "../../playground/examples/vue-keymap/App.vue",
+  "../../playground/examples/vue-keymap/KeymapConfig.vue",
   "../../playground/examples/vue-link/App.vue",
   "../../playground/examples/vue-link/extension.ts",
   "../../playground/examples/vue-list/App.vue",
@@ -370,6 +372,16 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-italic/extension.ts']
+    }
+  },
+  "vue-keymap": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-keymap/App.vue']
+    },
+    "/KeymapConfig.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-keymap/KeymapConfig.vue']
     }
   },
   "vue-link": {

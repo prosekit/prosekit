@@ -5,7 +5,7 @@ import { computed, ref } from 'vue'
 
 const submitHotkey = ref('Shift-Enter')
 
-let keymap = computed((): Keymap => {
+const keymap = computed((): Keymap => {
   return {
     [submitHotkey.value]: (state) => {
       const doc = JSON.stringify(jsonFromNode(state.doc), null, 2)

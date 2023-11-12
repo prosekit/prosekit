@@ -29,7 +29,7 @@ export function useEditor<E extends Extension = any>(
 
   useEffect(() => {
     if (update) {
-      return editor.use(defineUpdateHandler({ update: forceUpdate }))
+      return editor.use(defineUpdateHandler(forceUpdate))
     }
   }, [editor, update, forceUpdate])
 

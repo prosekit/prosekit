@@ -72,7 +72,7 @@ export class InlinePopoverController implements ReactiveController {
       return
     }
 
-    const extension = defineUpdateHandler({ update: () => this.update() })
+    const extension = defineUpdateHandler(() => this.update())
 
     this.cleanupExtension?.()
     this.cleanupExtension = editor.use(extension)

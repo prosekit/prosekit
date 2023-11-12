@@ -24,7 +24,7 @@ export function useEditor<E extends Extension = any>(options?: {
   if (update) {
     onMounted(() => {
       const forceUpdate = () => triggerRef(editorRef)
-      const dispose = editor.use(defineUpdateHandler({ update: forceUpdate }))
+      const dispose = editor.use(defineUpdateHandler(forceUpdate))
       onUnmounted(dispose)
     })
   }

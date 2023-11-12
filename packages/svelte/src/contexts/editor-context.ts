@@ -43,7 +43,7 @@ export function getEditor<E extends Extension = any>(options?: {
       const forceUpdate = () => {
         editorStore.set(editor)
       }
-      const dispose = editor.use(defineUpdateHandler({ update: forceUpdate }))
+      const dispose = editor.use(defineUpdateHandler(forceUpdate))
       onDestroy(dispose)
     })
   }

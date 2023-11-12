@@ -2,7 +2,6 @@ import { EditorState, PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { Facet } from '../facets/facet'
-import { voidFunction } from '../types/void-function'
 import { isNotNull } from '../utils/is-not-null'
 
 import { pluginFacet, type PluginPayload } from './plugin'
@@ -15,9 +14,8 @@ export type UpdateHandler = (options: {
 /**
  * @internal
  */
-export function defineUpdateHandler(options: { update?: VoidFunction }) {
-  const updateHandler = options?.update ?? voidFunction
-  return updateHandlerFacet.extension([updateHandler])
+export function defineUpdateHandler(handler: UpdateHandler) {
+  return updateHandlerFacet.extension([handler])
 }
 
 const updateHandlerFacet = Facet.define<UpdateHandler, PluginPayload>({

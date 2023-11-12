@@ -291,8 +291,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: language-selector.ts
-        hidden: false
       - path: package.json
         hidden: true
   - name: vanilla

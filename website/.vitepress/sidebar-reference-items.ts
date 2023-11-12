@@ -101,10 +101,6 @@ export const referenceItems = [
         "link": "/references/lit/autocomplete-popover"
       },
       {
-        "text": "code-block-popover",
-        "link": "/references/lit/code-block-popover"
-      },
-      {
         "text": "combo-box",
         "link": "/references/lit/combo-box"
       },
@@ -150,10 +146,6 @@ export const referenceItems = [
       {
         "text": "autocomplete-popover",
         "link": "/references/preact/autocomplete-popover"
-      },
-      {
-        "text": "code-block-popover",
-        "link": "/references/preact/code-block-popover"
       },
       {
         "text": "combo-box",
@@ -203,10 +195,6 @@ export const referenceItems = [
         "link": "/references/react/autocomplete-popover"
       },
       {
-        "text": "code-block-popover",
-        "link": "/references/react/code-block-popover"
-      },
-      {
         "text": "combo-box",
         "link": "/references/react/combo-box"
       },
@@ -252,10 +240,6 @@ export const referenceItems = [
       {
         "text": "autocomplete-popover",
         "link": "/references/solid/autocomplete-popover"
-      },
-      {
-        "text": "code-block-popover",
-        "link": "/references/solid/code-block-popover"
       },
       {
         "text": "combo-box",
@@ -305,10 +289,6 @@ export const referenceItems = [
         "link": "/references/svelte/autocomplete-popover"
       },
       {
-        "text": "code-block-popover",
-        "link": "/references/svelte/code-block-popover"
-      },
-      {
         "text": "combo-box",
         "link": "/references/svelte/combo-box"
       },
@@ -354,10 +334,6 @@ export const referenceItems = [
       {
         "text": "autocomplete-popover",
         "link": "/references/vue/autocomplete-popover"
-      },
-      {
-        "text": "code-block-popover",
-        "link": "/references/vue/code-block-popover"
       },
       {
         "text": "combo-box",

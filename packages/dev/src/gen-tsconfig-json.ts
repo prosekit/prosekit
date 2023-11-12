@@ -1,5 +1,3 @@
-import path from 'node:path'
-
 import { skipGen } from './skip-gen.js'
 import { vfs } from './virtual-file-system.js'
 

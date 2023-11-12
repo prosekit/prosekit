@@ -4,7 +4,6 @@ import { fileURLToPath } from 'node:url'
 import { readExampleMeta, type ExampleMeta } from './example-meta.js'
 import { vfs } from './virtual-file-system.js'
 
-// TODO: use vfs
 export async function genExampleIndex() {
   const meta = await readExampleMeta()
   const indexFile = await vfs.getFile(path.join('website', 'examples.md'))

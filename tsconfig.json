@@ -25,6 +25,12 @@
   "files": [],
   "references": [
     {
+      "path": "packages/prosekit"
+    },
+    {
+      "path": "packages/pm"
+    },
+    {
       "path": "packages/basic"
     },
     {
@@ -37,13 +43,7 @@
       "path": "packages/lit"
     },
     {
-      "path": "packages/pm"
-    },
-    {
       "path": "packages/preact"
-    },
-    {
-      "path": "packages/prosekit"
     },
     {
       "path": "packages/react"

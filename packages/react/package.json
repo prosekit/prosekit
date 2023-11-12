@@ -30,7 +30,6 @@
     "./autocomplete-item": "./src/components/autocomplete-item.ts",
     "./autocomplete-list": "./src/components/autocomplete-list.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
-    "./code-block-popover": "./src/components/code-block-popover.gen.ts",
     "./combo-box": "./src/components/combo-box.gen.ts",
     "./combo-box-input": "./src/components/combo-box-input.gen.ts",
     "./combo-box-item": "./src/components/combo-box-item.gen.ts",
@@ -100,11 +99,6 @@
         "import": "./dist/prosekit-react-autocomplete-popover.js",
         "default": "./dist/prosekit-react-autocomplete-popover.js"
       },
-      "./code-block-popover": {
-        "types": "./dist/prosekit-react-code-block-popover.d.ts",
-        "import": "./dist/prosekit-react-code-block-popover.js",
-        "default": "./dist/prosekit-react-code-block-popover.js"
-      },
       "./combo-box": {
         "types": "./dist/prosekit-react-combo-box.d.ts",
         "import": "./dist/prosekit-react-combo-box.js",
@@ -155,9 +149,6 @@
         ],
         "autocomplete-popover": [
           "./dist/prosekit-react-autocomplete-popover.d.ts"
-        ],
-        "code-block-popover": [
-          "./dist/prosekit-react-code-block-popover.d.ts"
         ],
         "combo-box": [
           "./dist/prosekit-react-combo-box.d.ts"

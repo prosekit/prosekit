@@ -12,11 +12,14 @@ import { genSizeLimitJson } from './gen-size-limit-json.js'
 import { genTsconfigJson } from './gen-tsconfig-json.js'
 import { genTypedocJson } from './gen-typedoc-json.js'
 import { skipGen } from './skip-gen.js'
+import { sleep } from './sleep.js'
 import { timer } from './timer.js'
 import { vfs } from './virtual-file-system.js'
 
-async function main() {
-  if (skipGen()) return
+async function genAll(): Promise<boolean> {
+  if (skipGen()) {
+    return false
+  }
 
   await genComponents()
   await genPackageJson()
@@ -34,7 +37,17 @@ async function main() {
   await genPlaygroundPages()
   await genDocsItems()
 
-  await vfs.commit()
+  return await vfs.commit()
+}
+
+async function main() {
+  for (let i = 1; i <= 10; i++) {
+    const updated = await genAll()
+    if (!updated) {
+      return
+    }
+    await sleep(1000)
+  }
 }
 
 await timer(main)()

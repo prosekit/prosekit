@@ -3,7 +3,7 @@
 import fs from 'node:fs/promises'
 import path, { normalize } from 'node:path'
 
-import { type Package, getPackages } from '@manypkg/get-packages'
+import { getPackages, type Package } from '@manypkg/get-packages'
 import Yaml from 'js-yaml'
 import { sortBy } from 'lodash-es'
 
@@ -12,6 +12,7 @@ import { isPrivatePackage, isPublicPackage } from './is-public-package.js'
 import { isSubDirectory } from './is-sub-directory.js'
 import { listGitFiles } from './list-git-files.js'
 import { normalizePackageJson } from './normalize-package-json.js'
+import { removePath } from './remove-path.js'
 import { writeJson } from './write-json.js'
 import { writeText } from './write-text.js'
 
@@ -65,20 +66,22 @@ class VirtualFile {
     this.update(Yaml.dump(yaml))
   }
 
-  async commit() {
+  async commit(): Promise<boolean> {
     const absPath = await this.getAbsPath()
 
     if (this.deleted) {
-      await fs.rm(absPath, { force: true })
+      return await removePath(absPath)
     } else if (this.updated) {
       if (this.content === null) {
         throw new Error(`Unable to write ${absPath}: no content provided`)
       }
       if (absPath.endsWith('.json')) {
-        await writeJson(absPath, JSON.parse(this.content))
+        return await writeJson(absPath, JSON.parse(this.content))
       } else {
-        await writeText(absPath, this.content)
+        return await writeText(absPath, this.content)
       }
+    } else {
+      return false
     }
   }
 
@@ -256,7 +259,8 @@ class VirtualFileSystem {
     }
   }
 
-  async commit() {
+  async commit(): Promise<boolean> {
+    let updated = false
     process.chdir(await this.getRootDir())
 
     for (const pkg of await this.getPackages()) {
@@ -265,9 +269,11 @@ class VirtualFileSystem {
 
     const files = await this.getFiles()
     for (const file of files.values()) {
-      await file.commit()
+      updated ||= await file.commit()
     }
     this.store = {}
+
+    return updated
   }
 }
 

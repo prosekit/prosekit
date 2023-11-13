@@ -42,6 +42,10 @@ async function genAll(): Promise<boolean> {
 
 async function main() {
   for (let i = 1; i <= 10; i++) {
+    if (i === 10) {
+      console.warn("[warning] gen.ts: genAll() didn't finish in 10 seconds")
+    }
+
     const updated = await genAll()
     if (!updated) {
       return

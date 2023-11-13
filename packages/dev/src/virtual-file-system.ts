@@ -269,7 +269,9 @@ class VirtualFileSystem {
 
     const files = await this.getFiles()
     for (const file of files.values()) {
-      updated ||= await file.commit()
+      if (await file.commit()) {
+        updated = true
+      }
     }
     this.store = {}
 

@@ -1,4 +1,9 @@
+import path from 'node:path'
+
 import { execa } from 'execa'
+import { pathExists } from 'path-exists'
+
+import { findRootDir } from './find-root-dir'
 
 export async function listGitFiles(dir: string) {
   const { stdout } = await execa(
@@ -17,9 +22,21 @@ export async function listGitFiles(dir: string) {
     ],
     { cwd: dir },
   )
-  return stdout
+  const filePaths = stdout
     .split('\n')
     .map((line) => line.trim())
     .filter((line) => line)
-    .sort()
+
+  const existingFilePaths: string[] = []
+  const rootDir = await findRootDir()
+
+  await Promise.all(
+    filePaths.map(async (filePath) => {
+      if (await pathExists(path.join(rootDir, filePath))) {
+        existingFilePaths.push(filePath)
+      }
+    }),
+  )
+
+  return existingFilePaths.sort()
 }

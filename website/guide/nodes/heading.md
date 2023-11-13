@@ -11,7 +11,7 @@ import App from '../../components/vue-heading/App.vue'
 
 == Preview
 
-<div class="p-2"><App/></div>
+<ClientOnly><div class="p-2"><App/></div></ClientOnly>
 == React
 <ExamplePlaygroundLazy example="react-heading" />
 == Vue

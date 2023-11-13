@@ -56,11 +56,8 @@ jobs:
       - name: Gen
         run: nr gen
 
-      - name: Build packages
-        run: nr build:package
-
-      - name: Build examples
-        run: nr build:example
+      - name: Build
+        run: nr build
 
   deploy:
     runs-on: ubuntu-latest

@@ -34,7 +34,6 @@
     "./combo-box-input": "./src/components/combo-box-input/index.ts",
     "./combo-box-item": "./src/components/combo-box-item/index.ts",
     "./combo-box-list": "./src/components/combo-box-list/index.ts",
-    "./combo-box2": "./src/components/combo-box2/index.ts",
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover": "./src/components/popover/index.ts"
   },

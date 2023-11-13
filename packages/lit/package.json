@@ -108,11 +108,6 @@
         "import": "./dist/prosekit-lit-combo-box-list.js",
         "default": "./dist/prosekit-lit-combo-box-list.js"
       },
-      "./combo-box2": {
-        "types": "./dist/prosekit-lit-combo-box2.d.ts",
-        "import": "./dist/prosekit-lit-combo-box2.js",
-        "default": "./dist/prosekit-lit-combo-box2.js"
-      },
       "./inline-popover": {
         "types": "./dist/prosekit-lit-inline-popover.d.ts",
         "import": "./dist/prosekit-lit-inline-popover.js",
@@ -155,9 +150,6 @@
         ],
         "combo-box-list": [
           "./dist/prosekit-lit-combo-box-list.d.ts"
-        ],
-        "combo-box2": [
-          "./dist/prosekit-lit-combo-box2.d.ts"
         ],
         "inline-popover": [
           "./dist/prosekit-lit-inline-popover.d.ts"

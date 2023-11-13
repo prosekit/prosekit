@@ -31,10 +31,10 @@
     "./autocomplete-list": "./src/components/autocomplete-list/index.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover/index.ts",
     "./combo-box": "./src/components/combo-box/index.ts",
-    "./combo-box2": "./src/components/combo-box2/index.ts",
     "./combo-box-input": "./src/components/combo-box-input/index.ts",
     "./combo-box-item": "./src/components/combo-box-item/index.ts",
     "./combo-box-list": "./src/components/combo-box-list/index.ts",
+    "./combo-box2": "./src/components/combo-box2/index.ts",
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover": "./src/components/popover/index.ts"
   },
@@ -109,6 +109,11 @@
         "import": "./dist/prosekit-lit-combo-box-list.js",
         "default": "./dist/prosekit-lit-combo-box-list.js"
       },
+      "./combo-box2": {
+        "types": "./dist/prosekit-lit-combo-box2.d.ts",
+        "import": "./dist/prosekit-lit-combo-box2.js",
+        "default": "./dist/prosekit-lit-combo-box2.js"
+      },
       "./inline-popover": {
         "types": "./dist/prosekit-lit-inline-popover.d.ts",
         "import": "./dist/prosekit-lit-inline-popover.js",
@@ -151,6 +156,9 @@
         ],
         "combo-box-list": [
           "./dist/prosekit-lit-combo-box-list.d.ts"
+        ],
+        "combo-box2": [
+          "./dist/prosekit-lit-combo-box2.d.ts"
         ],
         "inline-popover": [
           "./dist/prosekit-lit-inline-popover.d.ts"

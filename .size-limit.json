@@ -132,6 +132,10 @@
     "path": "packages/prosekit/dist/prosekit-lit-combo-box-list.js"
   },
   {
+    "name": "prosekit/lit/combo-box2",
+    "path": "packages/prosekit/dist/prosekit-lit-combo-box2.js"
+  },
+  {
     "name": "prosekit/lit/inline-popover",
     "path": "packages/prosekit/dist/prosekit-lit-inline-popover.js"
   },
@@ -216,6 +220,10 @@
     "path": "packages/prosekit/dist/prosekit-preact-combo-box-list.js"
   },
   {
+    "name": "prosekit/preact/combo-box2",
+    "path": "packages/prosekit/dist/prosekit-preact-combo-box2.js"
+  },
+  {
     "name": "prosekit/preact/inline-popover",
     "path": "packages/prosekit/dist/prosekit-preact-inline-popover.js"
   },
@@ -258,6 +266,10 @@
   {
     "name": "prosekit/react/combo-box-list",
     "path": "packages/prosekit/dist/prosekit-react-combo-box-list.js"
+  },
+  {
+    "name": "prosekit/react/combo-box2",
+    "path": "packages/prosekit/dist/prosekit-react-combo-box2.js"
   },
   {
     "name": "prosekit/react/inline-popover",
@@ -304,6 +316,10 @@
     "path": "packages/prosekit/dist/prosekit-solid-combo-box-list.js"
   },
   {
+    "name": "prosekit/solid/combo-box2",
+    "path": "packages/prosekit/dist/prosekit-solid-combo-box2.js"
+  },
+  {
     "name": "prosekit/solid/inline-popover",
     "path": "packages/prosekit/dist/prosekit-solid-inline-popover.js"
   },
@@ -346,6 +362,10 @@
   {
     "name": "prosekit/vue/combo-box-list",
     "path": "packages/prosekit/dist/prosekit-vue-combo-box-list.js"
+  },
+  {
+    "name": "prosekit/vue/combo-box2",
+    "path": "packages/prosekit/dist/prosekit-vue-combo-box2.js"
   },
   {
     "name": "prosekit/vue/inline-popover",

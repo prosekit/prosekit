@@ -10,7 +10,7 @@ import App from '../../components/vue-inline-menu/App.vue'
 :::tabs key:framework
 == Preview
 
-<div class="p-2"><App/></div>
+<ClientOnly><div class="p-2"><App/></div></ClientOnly>
 == React
 <ExamplePlaygroundLazy example="react-inline-menu" />
 == Vue

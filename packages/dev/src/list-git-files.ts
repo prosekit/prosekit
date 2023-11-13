@@ -3,7 +3,7 @@ import path from 'node:path'
 import { execa } from 'execa'
 import { pathExists } from 'path-exists'
 
-import { findRootDir } from './find-root-dir'
+import { findRootDir } from './find-root-dir.js'
 
 export async function listGitFiles(dir: string) {
   const { stdout } = await execa(

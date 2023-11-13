@@ -1,7 +1,10 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
-export async function writeText(filePath: string, text: string) {
+export async function writeText(
+  filePath: string,
+  text: string,
+): Promise<boolean> {
   if (!path.isAbsolute(filePath)) {
     throw new Error('filePath must be an absolute path')
   }
@@ -14,7 +17,7 @@ export async function writeText(filePath: string, text: string) {
   }
 
   if (text === original) {
-    return
+    return false
   }
 
   if (!original) {
@@ -23,4 +26,5 @@ export async function writeText(filePath: string, text: string) {
   }
 
   await writeFile(filePath, text)
+  return true
 }

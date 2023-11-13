@@ -1,5 +1,6 @@
 import { useEditor } from 'prosekit/react'
 
+import ToggleButton from './ToggleButton'
 import type { EditorExtension } from './extension'
 
 export default function Toolbar() {
@@ -7,32 +8,29 @@ export default function Toolbar() {
 
   return (
     <div className="TOOLBAR">
-      <button
-        data-state={editor.nodes.heading.isActive({ level: 1 }) ? 'on' : 'off'}
-        onClick={() => editor.commands.toggleHeading({ level: 1 })}
-        onMouseDown={(event) => event.preventDefault()}
-        className="TOGGLE_BUTTON"
+      <ToggleButton
+        active={editor.nodes.heading.isActive({ level: 1 })}
+        available={editor.commands.toggleHeading.canApply({ level: 1 })}
+        onChange={() => editor.commands.toggleHeading({ level: 1 })}
       >
         H1
-      </button>
+      </ToggleButton>
 
-      <button
-        data-state={editor.nodes.heading.isActive({ level: 2 }) ? 'on' : 'off'}
-        onClick={() => editor.commands.toggleHeading({ level: 2 })}
-        onMouseDown={(event) => event.preventDefault()}
-        className="TOGGLE_BUTTON"
+      <ToggleButton
+        active={editor.nodes.heading.isActive({ level: 2 })}
+        available={editor.commands.toggleHeading.canApply({ level: 2 })}
+        onChange={() => editor.commands.toggleHeading({ level: 2 })}
       >
         H2
-      </button>
+      </ToggleButton>
 
-      <button
-        data-state={editor.nodes.heading.isActive({ level: 3 }) ? 'on' : 'off'}
-        onClick={() => editor.commands.toggleHeading({ level: 3 })}
-        onMouseDown={(event) => event.preventDefault()}
-        className="TOGGLE_BUTTON"
+      <ToggleButton
+        active={editor.nodes.heading.isActive({ level: 3 })}
+        available={editor.commands.toggleHeading.canApply({ level: 3 })}
+        onChange={() => editor.commands.toggleHeading({ level: 3 })}
       >
         H3
-      </button>
+      </ToggleButton>
     </div>
   )
 }

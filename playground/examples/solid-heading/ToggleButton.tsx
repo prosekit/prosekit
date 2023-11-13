@@ -1,23 +1,24 @@
-import React from 'react'
+/** @jsxImportSource solid-js */
+
+import type { ParentProps } from 'solid-js'
 
 export default function ToggleButton({
   active,
   available,
   onChange,
   children,
-}: {
+}: ParentProps<{
   active?: boolean
   available: boolean
   onChange: () => void
-  children: React.ReactNode
-}) {
+}>) {
   return (
     <button
       data-state={active ? 'on' : 'off'}
       onMouseDown={(event) => event.preventDefault()}
       onClick={() => onChange()}
       disabled={!available}
-      className="TOGGLE_BUTTON"
+      class="TOGGLE_BUTTON"
     >
       {children}
     </button>

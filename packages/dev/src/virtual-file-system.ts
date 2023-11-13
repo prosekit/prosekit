@@ -88,6 +88,20 @@ class VirtualFile {
   async getAbsPath() {
     return path.join(await findRootDir(), this.path)
   }
+
+  async getLastUpdateTime() {
+    const absPath = await this.getAbsPath()
+    try {
+      const stats = await fs.stat(absPath)
+      return stats.mtime.getTime()
+    } catch (error) {
+      console.error(
+        `Error getting file last updated time for ${absPath}:`,
+        error,
+      )
+      return 0
+    }
+  }
 }
 
 class VirtualFileSystem {
@@ -280,3 +294,4 @@ class VirtualFileSystem {
 }
 
 export const vfs = new VirtualFileSystem()
+export { type VirtualFile }

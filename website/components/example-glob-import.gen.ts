@@ -3,15 +3,18 @@
 
 const modules = import.meta.glob([
   "../../playground/examples/react-heading/App.tsx",
+  "../../playground/examples/react-heading/ToggleButton.tsx",
   "../../playground/examples/react-heading/Toolbar.tsx",
   "../../playground/examples/react-heading/extension.ts",
   "../../playground/examples/react-inline-menu/App.tsx",
-  "../../playground/examples/react-inline-menu/InlineButtons.tsx",
+  "../../playground/examples/react-inline-menu/ButtonGroup.tsx",
   "../../playground/examples/react-inline-menu/InlineMenu.tsx",
+  "../../playground/examples/react-inline-menu/ToggleButton.tsx",
   "../../playground/examples/react-inline-menu/extension.ts",
   "../../playground/examples/react-keymap/App.tsx",
   "../../playground/examples/react-keymap/KeymapConfig.tsx",
   "../../playground/examples/react-list/App.tsx",
+  "../../playground/examples/react-list/ToggleButton.tsx",
   "../../playground/examples/react-list/Toolbar.tsx",
   "../../playground/examples/react-list/extension.ts",
   "../../playground/examples/react-minimal/App.tsx",
@@ -102,6 +105,7 @@ const modules = import.meta.glob([
   "../../playground/examples/svelte-slash-menu/SlashMenu.svelte",
   "../../playground/examples/svelte-slash-menu/extension.ts",
   "../../playground/examples/solid-heading/App.tsx",
+  "../../playground/examples/solid-heading/ToggleButton.tsx",
   "../../playground/examples/solid-heading/Toolbar.tsx",
   "../../playground/examples/solid-heading/extension.ts",
   "../../playground/examples/solid-keymap/App.tsx",
@@ -122,6 +126,10 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/react-heading/App.tsx']
     },
+    "/ToggleButton.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-heading/ToggleButton.tsx']
+    },
     "/Toolbar.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-heading/Toolbar.tsx']
@@ -136,13 +144,17 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/react-inline-menu/App.tsx']
     },
-    "/InlineButtons.tsx": {
+    "/ButtonGroup.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/react-inline-menu/InlineButtons.tsx']
+      "code": modules['../../playground/examples/react-inline-menu/ButtonGroup.tsx']
     },
     "/InlineMenu.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-inline-menu/InlineMenu.tsx']
+    },
+    "/ToggleButton.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-inline-menu/ToggleButton.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -163,6 +175,10 @@ const examples = {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-list/App.tsx']
+    },
+    "/ToggleButton.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-list/ToggleButton.tsx']
     },
     "/Toolbar.tsx": {
       "hidden": false,
@@ -579,6 +595,10 @@ const examples = {
     "/App.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/solid-heading/App.tsx']
+    },
+    "/ToggleButton.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-heading/ToggleButton.tsx']
     },
     "/Toolbar.tsx": {
       "hidden": false,

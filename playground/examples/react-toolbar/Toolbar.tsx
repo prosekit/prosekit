@@ -2,7 +2,7 @@ import { useEditor } from 'prosekit/react'
 import { useState } from 'react'
 
 import { ImageUploadPopover } from './ImageUploadPopover'
-import { ToggleButton } from './ToggleButton'
+import ToggleButton from './ToggleButton'
 import type { EditorExtension } from './extension'
 
 export default function Toolbar() {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
-  active?: Boolean
   available: Boolean
+  active?: Boolean
   onChange: VoidFunction
 }>()
 </script>

@@ -5,6 +5,7 @@ import { genDocsItems } from './gen-docs-items.js'
 import { genExampleGlobImport } from './gen-example-glob-import.js'
 import { genExampleIndex } from './gen-example-index.js'
 import { genExampleMetaYaml } from './gen-example-meta-yaml.js'
+import { genExampleSharedFiles } from './gen-example-shared-files.js'
 import { genPackageJson } from './gen-package-json.js'
 import { genPlaygroundPages } from './gen-playground-pages.js'
 import { genRenovateJson } from './gen-renovate-json.js'
@@ -34,6 +35,7 @@ async function genAll(): Promise<boolean> {
   await genExampleMetaYaml()
   await genExampleIndex()
   await genExampleGlobImport()
+  await genExampleSharedFiles()
   await genPlaygroundPages()
   await genDocsItems()
 

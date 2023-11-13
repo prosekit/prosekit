@@ -1,5 +1,6 @@
 import { useEditor } from 'prosekit/react'
 
+import ToggleButton from './ToggleButton'
 import type { EditorExtension } from './extension'
 
 export default function Toolbar() {
@@ -7,47 +8,37 @@ export default function Toolbar() {
 
   return (
     <div className="TOOLBAR">
-      <button
-        data-state={
-          editor.nodes.list.isActive({ kind: 'bullet' }) ? 'on' : 'off'
-        }
-        onClick={() => editor.commands.toggleList({ kind: 'bullet' })}
-        onMouseDown={(event) => event.preventDefault()}
-        className="TOGGLE_BUTTON"
+      <ToggleButton
+        active={editor.nodes.list.isActive({ kind: 'bullet' })}
+        available={editor.commands.toggleList.canApply({ kind: 'bullet' })}
+        onChange={() => editor.commands.toggleList({ kind: 'bullet' })}
       >
         <div className="ICON_LIST_BULLET" />
-      </button>
+      </ToggleButton>
 
-      <button
-        data-state={
-          editor.nodes.list.isActive({ kind: 'ordered' }) ? 'on' : 'off'
-        }
-        onClick={() => editor.commands.toggleList({ kind: 'ordered' })}
-        onMouseDown={(event) => event.preventDefault()}
-        className="TOGGLE_BUTTON"
+      <ToggleButton
+        active={editor.nodes.list.isActive({ kind: 'ordered' })}
+        available={editor.commands.toggleList.canApply({ kind: 'ordered' })}
+        onChange={() => editor.commands.toggleList({ kind: 'ordered' })}
       >
         <div className="ICON_LIST_ORDERED" />
-      </button>
+      </ToggleButton>
 
-      <button
-        data-state={editor.nodes.list.isActive({ kind: 'task' }) ? 'on' : 'off'}
-        onClick={() => editor.commands.toggleList({ kind: 'task' })}
-        onMouseDown={(event) => event.preventDefault()}
-        className="TOGGLE_BUTTON"
+      <ToggleButton
+        active={editor.nodes.list.isActive({ kind: 'task' })}
+        available={editor.commands.toggleList.canApply({ kind: 'task' })}
+        onChange={() => editor.commands.toggleList({ kind: 'task' })}
       >
         <div className="ICON_LIST_TASK" />
-      </button>
+      </ToggleButton>
 
-      <button
-        data-state={
-          editor.nodes.list.isActive({ kind: 'toggle' }) ? 'on' : 'off'
-        }
-        onClick={() => editor.commands.toggleList({ kind: 'toggle' })}
-        onMouseDown={(event) => event.preventDefault()}
-        className="TOGGLE_BUTTON"
+      <ToggleButton
+        active={editor.nodes.list.isActive({ kind: 'toggle' })}
+        available={editor.commands.toggleList.canApply({ kind: 'toggle' })}
+        onChange={() => editor.commands.toggleList({ kind: 'toggle' })}
       >
         <div className="ICON_LIST_TOGGLE" />
-      </button>
+      </ToggleButton>
     </div>
   )
 }

@@ -3,6 +3,8 @@ examples:
     files:
       - path: App.tsx
         hidden: false
+      - path: ToggleButton.tsx
+        hidden: false
       - path: Toolbar.tsx
         hidden: false
       - path: extension.ts
@@ -11,9 +13,11 @@ examples:
     files:
       - path: App.tsx
         hidden: false
-      - path: InlineButtons.tsx
+      - path: ButtonGroup.tsx
         hidden: false
       - path: InlineMenu.tsx
+        hidden: false
+      - path: ToggleButton.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -26,6 +30,8 @@ examples:
   - name: react-list
     files:
       - path: App.tsx
+        hidden: false
+      - path: ToggleButton.tsx
         hidden: false
       - path: Toolbar.tsx
         hidden: false
@@ -262,6 +268,8 @@ examples:
   - name: solid-heading
     files:
       - path: App.tsx
+        hidden: false
+      - path: ToggleButton.tsx
         hidden: false
       - path: Toolbar.tsx
         hidden: false

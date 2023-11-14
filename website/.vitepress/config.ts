@@ -1,8 +1,15 @@
+import { createRequire } from 'node:module'
+
 import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 import { exampleItems } from './sidebar-example-items'
 import { referenceItems } from './sidebar-reference-items'
+
+const require = createRequire(import.meta.url)
+const pkg = require('../../packages/prosekit/package.json') as {
+  version: string
+}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -18,6 +25,15 @@ export default defineConfig({
       { text: 'Guide', link: '/guide/what-is-prosekit' },
       { text: 'API References', link: '/references' },
       { text: 'Examples', link: '/examples' },
+      {
+        text: 'v' + pkg.version,
+        items: [
+          {
+            text: 'Changelog',
+            link: 'https://github.com/ocavue/prosekit/blob/master/packages/prosekit/CHANGELOG.md',
+          },
+        ],
+      },
     ],
 
     sidebar: {

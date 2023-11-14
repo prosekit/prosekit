@@ -1,9 +1,15 @@
 # ProseKit
 
-https://prosekit.dev/
+The ultimate toolkit for text editing. Based on [ProseMirror](https://prosemirror.net/).
 
-[![NPM version](https://img.shields.io/npm/v/prosekit?color=a1b858&label=)](https://www.npmjs.com/package/prosekit)
+## Documentation
 
-An editor framework based on ProseMirror.
+For full documentation, visit [prosekit.dev](https://prosekit.dev).
 
-This project is still in the early stages of development, and the API is not stable.
+## Changelog
+
+Detailed changes for each release are documented in the [CHANGELOG.md](https://github.com/ocavue/prosekit/blob/master/packages/prosekit/CHANGELOG.md).
+
+## License
+
+MIT

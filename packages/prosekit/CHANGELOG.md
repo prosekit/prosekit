@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.1.1
+
+### Patch Changes
+
+- [9cb333b] ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  Add `nodeFromJSON` and `stateFromJSON`.
+
 ## 0.1.0
 
 ### Minor Changes

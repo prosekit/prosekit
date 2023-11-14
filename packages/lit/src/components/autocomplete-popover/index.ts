@@ -1,5 +1,6 @@
 import { provide } from '@lit/context'
 import { Editor } from '@prosekit/core'
+import type { PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 
 import { AutocompleteList } from '../autocomplete-list/component'
@@ -76,7 +77,9 @@ export class AutocompletePopover
   }
 
   /** @hidden */
-  willUpdate(): void {
+  willUpdate(changedProperties: PropertyValues<this>): void {
+    super.willUpdate(changedProperties)
+
     if (this.editor) {
       this.controller.setEditor(this.editor)
     }

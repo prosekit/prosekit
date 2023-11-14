@@ -19,11 +19,11 @@ watchPostEffect(() => editor.mount(editorRef.value))
 
 <template>
   <ProseKit :editor="editor">
-    <div class="EDITOR_BOX">
-      <Toolbar />
-      <div class="EDITOR_WRAPPER">
-        <InlineMenu />
+    <div class="EDITOR_VIEWPORT">
+      <div class="EDITOR_DOCUMENT">
+        <Toolbar />
         <div ref="editorRef" class="EDITOR_CONTENT"></div>
+        <InlineMenu />
         <SlashMenu />
         <UserMenu />
         <TagMenu />

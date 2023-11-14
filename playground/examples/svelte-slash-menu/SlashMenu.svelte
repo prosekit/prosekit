@@ -17,32 +17,36 @@ const handleHeadingConvert = (level: number) => {
 }
 </script>
 
-<AutocompletePopover editor={$editor} regex={/\/.*$/iu}>
-  <AutocompleteList editor={$editor} class="SLASH_MENU">
-    <AutocompleteEmpty class="SLASH_MENU_ITEM">
+<AutocompletePopover
+  editor={$editor}
+  regex={/\/.*$/iu}
+  class="AUTOCOMPLETE_MENU"
+>
+  <AutocompleteList editor={$editor}>
+    <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
       No Command match
     </AutocompleteEmpty>
 
     <AutocompleteItem
-      class="SLASH_MENU_ITEM"
+      class="AUTOCOMPLETE_MENU_ITEM"
       onSelect={() => handleHeadingInsert(1)}
     >
       Insert Heading 1
     </AutocompleteItem>
     <AutocompleteItem
-      class="SLASH_MENU_ITEM"
+      class="AUTOCOMPLETE_MENU_ITEM"
       onSelect={() => handleHeadingInsert(2)}
     >
       Insert Heading 2
     </AutocompleteItem>
     <AutocompleteItem
-      class="SLASH_MENU_ITEM"
+      class="AUTOCOMPLETE_MENU_ITEM"
       onSelect={() => handleHeadingConvert(1)}
     >
       Turn into Heading 1
     </AutocompleteItem>
     <AutocompleteItem
-      class="SLASH_MENU_ITEM"
+      class="AUTOCOMPLETE_MENU_ITEM"
       onSelect={() => handleHeadingConvert(2)}
     >
       Turn into Heading 2

@@ -24,15 +24,19 @@ const handleUserInsert = (id: number, username: string) => {
 </script>
 
 <template>
-  <AutocompletePopover :editor="editor" :regex="/@\w*$/">
-    <AutocompleteList :editor="editor" class="SLASH_MENU">
-      <AutocompleteEmpty class="SLASH_MENU_ITEM">
+  <AutocompletePopover
+    :editor="editor"
+    :regex="/@\w*$/"
+    class="AUTOCOMPLETE_MENU"
+  >
+    <AutocompleteList :editor="editor">
+      <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
         No User match
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="user in users"
         :key="user.id"
-        class="SLASH_MENU_ITEM"
+        class="AUTOCOMPLETE_MENU_ITEM"
         @select="handleUserInsert(user.id, user.name)"
       >
         {{ user.name }}

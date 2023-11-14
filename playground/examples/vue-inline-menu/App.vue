@@ -20,12 +20,12 @@ watchPostEffect(() => editor.mount(editorRef.value))
 </script>
 
 <template>
-  <div class="EDITOR_BOX">
-    <div class="EDITOR_WRAPPER">
-      <ProseKit :editor="editor">
-        <InlineMenu />
+  <ProseKit :editor="editor">
+    <div class="EDITOR_VIEWPORT">
+      <div class="EDITOR_DOCUMENT">
         <div ref="editorRef" class="EDITOR_CONTENT"></div>
-      </ProseKit>
+        <InlineMenu />
+      </div>
     </div>
-  </div>
+  </ProseKit>
 </template>

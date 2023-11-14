@@ -1,4 +1,8 @@
 examples:
+  - name: react-minimal
+    files:
+      - path: App.tsx
+        hidden: false
   - name: react-heading
     files:
       - path: App.tsx
@@ -37,10 +41,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-  - name: react-minimal
-    files:
-      - path: App.tsx
-        hidden: false
   - name: react-slash-menu
     files:
       - path: App.tsx
@@ -78,6 +78,10 @@ examples:
       - path: tags.ts
         hidden: false
       - path: users.ts
+        hidden: false
+  - name: vue-minimal
+    files:
+      - path: App.vue
         hidden: false
   - name: vue-bold
     files:
@@ -169,10 +173,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-  - name: vue-minimal
-    files:
-      - path: App.vue
-        hidden: false
   - name: vue-slash-menu
     files:
       - path: App.vue
@@ -207,15 +207,15 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: preact-minimal
+    files:
+      - path: App.tsx
+        hidden: false
   - name: preact-keymap
     files:
       - path: App.tsx
         hidden: false
       - path: KeymapConfig.tsx
-        hidden: false
-  - name: preact-minimal
-    files:
-      - path: App.tsx
         hidden: false
   - name: preact-slash-menu
     files:
@@ -225,6 +225,10 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: true
+  - name: svelte-minimal
+    files:
+      - path: App.svelte
+        hidden: false
   - name: svelte-bold
     files:
       - path: App.svelte
@@ -253,10 +257,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-  - name: svelte-minimal
-    files:
-      - path: App.svelte
-        hidden: false
   - name: svelte-slash-menu
     files:
       - path: App.svelte
@@ -264,6 +264,10 @@ examples:
       - path: SlashMenu.svelte
         hidden: false
       - path: extension.ts
+        hidden: false
+  - name: solid-minimal
+    files:
+      - path: App.tsx
         hidden: false
   - name: solid-heading
     files:
@@ -280,10 +284,6 @@ examples:
       - path: App.tsx
         hidden: false
       - path: KeymapConfig.tsx
-        hidden: false
-  - name: solid-minimal
-    files:
-      - path: App.tsx
         hidden: false
   - name: solid-slash-menu
     files:

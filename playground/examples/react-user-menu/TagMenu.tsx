@@ -23,16 +23,20 @@ export default function TagMenu() {
   }
 
   return (
-    <AutocompletePopover editor={editor} regex={/#[\da-z]*$/i}>
-      <AutocompleteList editor={editor} className="SLASH_MENU">
-        <AutocompleteEmpty className="SLASH_MENU_ITEM">
+    <AutocompletePopover
+      editor={editor}
+      regex={/#[\da-z]*$/i}
+      className="AUTOCOMPLETE_MENU"
+    >
+      <AutocompleteList editor={editor}>
+        <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
           No Tag match
         </AutocompleteEmpty>
 
         {tags.map((tag) => (
           <AutocompleteItem
             key={tag.id}
-            className="SLASH_MENU_ITEM"
+            className="AUTOCOMPLETE_MENU_ITEM"
             onSelect={() => handleTagInsert(tag.id, tag.label)}
           >
             #{tag.label}

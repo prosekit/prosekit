@@ -18,13 +18,13 @@ export default function App() {
   }, [])
 
   return (
-    <div className="EDITOR_BOX">
-      <div className="EDITOR_WRAPPER">
-        <ProseKit editor={editor}>
+    <ProseKit editor={editor}>
+      <div className="EDITOR_VIEWPORT">
+        <div className="EDITOR_DOCUMENT">
+          <div ref={editor.mount} className="EDITOR_CONTENT"></div>
           <InlineMenu />
-          <div ref="editorRef" className="EDITOR_CONTENT"></div>
-        </ProseKit>
+        </div>
       </div>
-    </div>
+    </ProseKit>
   )
 }

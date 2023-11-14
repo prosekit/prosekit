@@ -2,6 +2,8 @@
 
 # Examples
 
+- [react-minimal](./examples/react-minimal)
+
 - [react-heading](./examples/react-heading)
 
 - [react-inline-menu](./examples/react-inline-menu)
@@ -10,13 +12,13 @@
 
 - [react-list](./examples/react-list)
 
-- [react-minimal](./examples/react-minimal)
-
 - [react-slash-menu](./examples/react-slash-menu)
 
 - [react-toolbar](./examples/react-toolbar)
 
 - [react-user-menu](./examples/react-user-menu)
+
+- [vue-minimal](./examples/vue-minimal)
 
 - [vue-bold](./examples/vue-bold)
 
@@ -36,8 +38,6 @@
 
 - [vue-list](./examples/vue-list)
 
-- [vue-minimal](./examples/vue-minimal)
-
 - [vue-slash-menu](./examples/vue-slash-menu)
 
 - [vue-strike](./examples/vue-strike)
@@ -46,11 +46,13 @@
 
 - [vue-underline](./examples/vue-underline)
 
-- [preact-keymap](./examples/preact-keymap)
-
 - [preact-minimal](./examples/preact-minimal)
 
+- [preact-keymap](./examples/preact-keymap)
+
 - [preact-slash-menu](./examples/preact-slash-menu)
+
+- [svelte-minimal](./examples/svelte-minimal)
 
 - [svelte-bold](./examples/svelte-bold)
 
@@ -60,15 +62,13 @@
 
 - [svelte-list](./examples/svelte-list)
 
-- [svelte-minimal](./examples/svelte-minimal)
-
 - [svelte-slash-menu](./examples/svelte-slash-menu)
+
+- [solid-minimal](./examples/solid-minimal)
 
 - [solid-heading](./examples/solid-heading)
 
 - [solid-keymap](./examples/solid-keymap)
-
-- [solid-minimal](./examples/solid-minimal)
 
 - [solid-slash-menu](./examples/solid-slash-menu)
 

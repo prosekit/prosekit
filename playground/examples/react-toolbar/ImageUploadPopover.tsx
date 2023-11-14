@@ -86,13 +86,11 @@ export const ImageUploadPopover: FC<{
             </div>
           )}
 
-          <button
-            className="IMAGE_UPLOAD_BUTTON"
-            disabled={!url}
-            onClick={handleSubmit}
-          >
-            Upload Image
-          </button>
+          {url ? (
+            <button className="IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
+              Upload Image
+            </button>
+          ) : null}
         </div>
       </Popover>
     </>

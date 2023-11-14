@@ -16,6 +16,10 @@ onDestroy(() => editor.unmount())
 </script>
 
 <ProseKit {editor}>
-  <div bind:this={place} class="EDITOR_CONTENT"></div>
-  <SlashMenu />
+  <div class="EDITOR_VIEWPORT">
+    <div class="EDITOR_DOCUMENT">
+      <div bind:this={place} class="EDITOR_CONTENT"></div>
+      <SlashMenu />
+    </div>
+  </div>
 </ProseKit>

@@ -4,6 +4,7 @@ import {
   type AutoUpdateOptions,
   type VirtualElement,
 } from '@floating-ui/dom'
+import type { PropertyValues } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
 
 import { roundByDPR } from '../../utils/round-by-dpr'
@@ -144,7 +145,9 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
   }
 
   /** @hidden */
-  protected updated(): void {
+  protected updated(changedProperties: PropertyValues<this>): void {
+    super.updated(changedProperties)
+
     this.start()
     this.setHidden(!this.active)
   }

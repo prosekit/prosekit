@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { useEditor } from 'prosekit/vue'
 import { Popover } from 'prosekit/vue/popover'
 import { computed, ref, type PropType } from 'vue'
-import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
 
 let props = defineProps({
@@ -75,11 +75,7 @@ const handleSubmit = () => {
             @input="handleFileChange"
           />
         </div>
-        <button
-          class="IMAGE_UPLOAD_BUTTON"
-          :disabled="!url"
-          @click="handleSubmit"
-        >
+        <button v-if="url" class="IMAGE_UPLOAD_BUTTON" @click="handleSubmit">
           Upload Image
         </button>
       </div>

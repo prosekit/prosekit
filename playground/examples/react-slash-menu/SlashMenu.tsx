@@ -19,32 +19,36 @@ export default function SlashMenu() {
   }
 
   return (
-    <AutocompletePopover editor={editor} regex={/\/.*$/iu}>
-      <AutocompleteList editor={editor} className="SLASH_MENU">
-        <AutocompleteEmpty className="SLASH_MENU_ITEM">
+    <AutocompletePopover
+      editor={editor}
+      regex={/\/.*$/iu}
+      className="AUTOCOMPLETE_MENU"
+    >
+      <AutocompleteList editor={editor}>
+        <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
           No Command match
         </AutocompleteEmpty>
 
         <AutocompleteItem
-          className="SLASH_MENU_ITEM"
+          className="AUTOCOMPLETE_MENU_ITEM"
           onSelect={() => handleHeadingInsert(1)}
         >
           Insert Heading 1
         </AutocompleteItem>
         <AutocompleteItem
-          className="SLASH_MENU_ITEM"
+          className="AUTOCOMPLETE_MENU_ITEM"
           onSelect={() => handleHeadingInsert(2)}
         >
           Insert Heading 2
         </AutocompleteItem>
         <AutocompleteItem
-          className="SLASH_MENU_ITEM"
+          className="AUTOCOMPLETE_MENU_ITEM"
           onSelect={() => handleHeadingConvert(1)}
         >
           Turn into Heading 1
         </AutocompleteItem>
         <AutocompleteItem
-          className="SLASH_MENU_ITEM"
+          className="AUTOCOMPLETE_MENU_ITEM"
           onSelect={() => handleHeadingConvert(2)}
         >
           Turn into Heading 2

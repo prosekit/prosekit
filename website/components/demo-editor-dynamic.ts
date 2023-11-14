@@ -1,3 +1,5 @@
+// @unocss-include
+
 import { clsx } from 'clsx'
 import { defineClientComponent } from 'vitepress'
 import { useData } from 'vitepress'
@@ -16,7 +18,7 @@ export const DemoEditor = defineComponent(() => {
       'div',
       {
         class: clsx(
-          'flex w-full flex-col items-center p-4',
+          'mx-auto mt-10 flex w-[760px] max-w-full flex-col items-center p-4',
           isDark.value ? 'dark' : null,
         ),
       },

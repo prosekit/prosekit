@@ -2,6 +2,7 @@
 // This file is generated from gen-example-glob-import.ts
 
 const modules = import.meta.glob([
+  "../../playground/examples/react-minimal/App.tsx",
   "../../playground/examples/react-heading/App.tsx",
   "../../playground/examples/react-heading/ToggleButton.tsx",
   "../../playground/examples/react-heading/Toolbar.tsx",
@@ -17,7 +18,6 @@ const modules = import.meta.glob([
   "../../playground/examples/react-list/ToggleButton.tsx",
   "../../playground/examples/react-list/Toolbar.tsx",
   "../../playground/examples/react-list/extension.ts",
-  "../../playground/examples/react-minimal/App.tsx",
   "../../playground/examples/react-slash-menu/App.tsx",
   "../../playground/examples/react-slash-menu/SlashMenu.tsx",
   "../../playground/examples/react-slash-menu/extension.ts",
@@ -34,6 +34,7 @@ const modules = import.meta.glob([
   "../../playground/examples/react-user-menu/extension.ts",
   "../../playground/examples/react-user-menu/tags.ts",
   "../../playground/examples/react-user-menu/users.ts",
+  "../../playground/examples/vue-minimal/App.vue",
   "../../playground/examples/vue-bold/App.vue",
   "../../playground/examples/vue-bold/Toolbar.vue",
   "../../playground/examples/vue-bold/extension.ts",
@@ -70,7 +71,6 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-list/ToggleButton.vue",
   "../../playground/examples/vue-list/Toolbar.vue",
   "../../playground/examples/vue-list/extension.ts",
-  "../../playground/examples/vue-minimal/App.vue",
   "../../playground/examples/vue-slash-menu/App.vue",
   "../../playground/examples/vue-slash-menu/SlashMenu.vue",
   "../../playground/examples/vue-slash-menu/extension.ts",
@@ -84,12 +84,13 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-underline/App.vue",
   "../../playground/examples/vue-underline/Toolbar.vue",
   "../../playground/examples/vue-underline/extension.ts",
+  "../../playground/examples/preact-minimal/App.tsx",
   "../../playground/examples/preact-keymap/App.tsx",
   "../../playground/examples/preact-keymap/KeymapConfig.tsx",
-  "../../playground/examples/preact-minimal/App.tsx",
   "../../playground/examples/preact-slash-menu/App.tsx",
   "../../playground/examples/preact-slash-menu/SlashMenu.tsx",
   "../../playground/examples/preact-slash-menu/extension.ts",
+  "../../playground/examples/svelte-minimal/App.svelte",
   "../../playground/examples/svelte-bold/App.svelte",
   "../../playground/examples/svelte-bold/Toolbar.svelte",
   "../../playground/examples/svelte-bold/extension.ts",
@@ -100,17 +101,16 @@ const modules = import.meta.glob([
   "../../playground/examples/svelte-keymap/KeymapConfig.svelte",
   "../../playground/examples/svelte-list/App.svelte",
   "../../playground/examples/svelte-list/extension.ts",
-  "../../playground/examples/svelte-minimal/App.svelte",
   "../../playground/examples/svelte-slash-menu/App.svelte",
   "../../playground/examples/svelte-slash-menu/SlashMenu.svelte",
   "../../playground/examples/svelte-slash-menu/extension.ts",
+  "../../playground/examples/solid-minimal/App.tsx",
   "../../playground/examples/solid-heading/App.tsx",
   "../../playground/examples/solid-heading/ToggleButton.tsx",
   "../../playground/examples/solid-heading/Toolbar.tsx",
   "../../playground/examples/solid-heading/extension.ts",
   "../../playground/examples/solid-keymap/App.tsx",
   "../../playground/examples/solid-keymap/KeymapConfig.tsx",
-  "../../playground/examples/solid-minimal/App.tsx",
   "../../playground/examples/solid-slash-menu/App.tsx",
   "../../playground/examples/solid-slash-menu/SlashMenu.tsx",
   "../../playground/examples/solid-slash-menu/extension.ts",
@@ -121,6 +121,12 @@ const modules = import.meta.glob([
 ], { as: 'raw', eager: true }) as Record<string, string>
 
 const examples = {
+  "react-minimal": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-minimal/App.tsx']
+    }
+  },
   "react-heading": {
     "/App.tsx": {
       "hidden": false,
@@ -187,12 +193,6 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-list/extension.ts']
-    }
-  },
-  "react-minimal": {
-    "/App.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/react-minimal/App.tsx']
     }
   },
   "react-slash-menu": {
@@ -263,6 +263,12 @@ const examples = {
     "/users.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-user-menu/users.ts']
+    }
+  },
+  "vue-minimal": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-minimal/App.vue']
     }
   },
   "vue-bold": {
@@ -427,12 +433,6 @@ const examples = {
       "code": modules['../../playground/examples/vue-list/extension.ts']
     }
   },
-  "vue-minimal": {
-    "/App.vue": {
-      "hidden": false,
-      "code": modules['../../playground/examples/vue-minimal/App.vue']
-    }
-  },
   "vue-slash-menu": {
     "/App.vue": {
       "hidden": false,
@@ -493,6 +493,12 @@ const examples = {
       "code": modules['../../playground/examples/vue-underline/extension.ts']
     }
   },
+  "preact-minimal": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-minimal/App.tsx']
+    }
+  },
   "preact-keymap": {
     "/App.tsx": {
       "hidden": false,
@@ -501,12 +507,6 @@ const examples = {
     "/KeymapConfig.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/preact-keymap/KeymapConfig.tsx']
-    }
-  },
-  "preact-minimal": {
-    "/App.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/preact-minimal/App.tsx']
     }
   },
   "preact-slash-menu": {
@@ -521,6 +521,12 @@ const examples = {
     "/extension.ts": {
       "hidden": true,
       "code": modules['../../playground/examples/preact-slash-menu/extension.ts']
+    }
+  },
+  "svelte-minimal": {
+    "/App.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-minimal/App.svelte']
     }
   },
   "svelte-bold": {
@@ -571,12 +577,6 @@ const examples = {
       "code": modules['../../playground/examples/svelte-list/extension.ts']
     }
   },
-  "svelte-minimal": {
-    "/App.svelte": {
-      "hidden": false,
-      "code": modules['../../playground/examples/svelte-minimal/App.svelte']
-    }
-  },
   "svelte-slash-menu": {
     "/App.svelte": {
       "hidden": false,
@@ -589,6 +589,12 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/svelte-slash-menu/extension.ts']
+    }
+  },
+  "solid-minimal": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-minimal/App.tsx']
     }
   },
   "solid-heading": {
@@ -617,12 +623,6 @@ const examples = {
     "/KeymapConfig.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/solid-keymap/KeymapConfig.tsx']
-    }
-  },
-  "solid-minimal": {
-    "/App.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/solid-minimal/App.tsx']
     }
   },
   "solid-slash-menu": {

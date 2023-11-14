@@ -24,15 +24,19 @@ const handleTagInsert = (id: number, label: string) => {
 </script>
 
 <template>
-  <AutocompletePopover :editor="editor" :regex="/#[\da-z]*$/i">
-    <AutocompleteList :editor="editor" class="SLASH_MENU">
-      <AutocompleteEmpty class="SLASH_MENU_ITEM">
+  <AutocompletePopover
+    :editor="editor"
+    :regex="/#[\da-z]*$/i"
+    class="AUTOCOMPLETE_MENU"
+  >
+    <AutocompleteList :editor="editor">
+      <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
         No Tag match
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="tag in tags"
         :key="tag.id"
-        class="SLASH_MENU_ITEM"
+        class="AUTOCOMPLETE_MENU_ITEM"
         @select="() => handleTagInsert(tag.id, tag.label)"
       >
         {{ tag.label }}

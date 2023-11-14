@@ -3,6 +3,10 @@
 // prettier-ignore
 export const exampleItems = [
   {
+    "text": "react-minimal",
+    "link": "/examples/react-minimal"
+  },
+  {
     "text": "react-heading",
     "link": "/examples/react-heading"
   },
@@ -19,10 +23,6 @@ export const exampleItems = [
     "link": "/examples/react-list"
   },
   {
-    "text": "react-minimal",
-    "link": "/examples/react-minimal"
-  },
-  {
     "text": "react-slash-menu",
     "link": "/examples/react-slash-menu"
   },
@@ -33,6 +33,10 @@ export const exampleItems = [
   {
     "text": "react-user-menu",
     "link": "/examples/react-user-menu"
+  },
+  {
+    "text": "vue-minimal",
+    "link": "/examples/vue-minimal"
   },
   {
     "text": "vue-bold",
@@ -71,10 +75,6 @@ export const exampleItems = [
     "link": "/examples/vue-list"
   },
   {
-    "text": "vue-minimal",
-    "link": "/examples/vue-minimal"
-  },
-  {
     "text": "vue-slash-menu",
     "link": "/examples/vue-slash-menu"
   },
@@ -91,16 +91,20 @@ export const exampleItems = [
     "link": "/examples/vue-underline"
   },
   {
-    "text": "preact-keymap",
-    "link": "/examples/preact-keymap"
-  },
-  {
     "text": "preact-minimal",
     "link": "/examples/preact-minimal"
   },
   {
+    "text": "preact-keymap",
+    "link": "/examples/preact-keymap"
+  },
+  {
     "text": "preact-slash-menu",
     "link": "/examples/preact-slash-menu"
+  },
+  {
+    "text": "svelte-minimal",
+    "link": "/examples/svelte-minimal"
   },
   {
     "text": "svelte-bold",
@@ -119,12 +123,12 @@ export const exampleItems = [
     "link": "/examples/svelte-list"
   },
   {
-    "text": "svelte-minimal",
-    "link": "/examples/svelte-minimal"
-  },
-  {
     "text": "svelte-slash-menu",
     "link": "/examples/svelte-slash-menu"
+  },
+  {
+    "text": "solid-minimal",
+    "link": "/examples/solid-minimal"
   },
   {
     "text": "solid-heading",
@@ -133,10 +137,6 @@ export const exampleItems = [
   {
     "text": "solid-keymap",
     "link": "/examples/solid-keymap"
-  },
-  {
-    "text": "solid-minimal",
-    "link": "/examples/solid-minimal"
   },
   {
     "text": "solid-slash-menu",

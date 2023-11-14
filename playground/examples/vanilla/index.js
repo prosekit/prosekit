@@ -33,7 +33,7 @@ function createList() {
     createItem('Insert Heading 2', () => handleHeadingConvert(2)),
     createItem('Insert Heading 3', () => handleHeadingConvert(3)),
   )
-  list.className = 'SLASH_MENU'
+  list.className = 'AUTOCOMPLETE_MENU'
   return list
 }
 
@@ -45,7 +45,7 @@ function createItem(text, callback) {
   const item = new AutocompleteItem()
   item.append(text)
   item.onSelect = callback
-  item.className = 'SLASH_MENU_ITEM'
+  item.className = 'AUTOCOMPLETE_MENU_ITEM'
   return item
 }
 
@@ -59,17 +59,27 @@ function handleHeadingConvert(level) {
 }
 
 function main() {
-  let container = document.querySelector('.example-container')
-  if (!container) {
-    container = document.body.appendChild(document.createElement('div'))
-    container.classList.add('example-container')
+  let root = document.querySelector('.editor-root')
+  if (!root) {
+    root = document
+      .querySelector('main')
+      .appendChild(document.createElement('div'))
+    root.classList.add('example-root')
   }
+  root.innerHTML = ''
 
-  const content = container.appendChild(document.createElement('div'))
+  const viewport = root.appendChild(document.createElement('div'))
+  viewport.className = 'EDITOR_VIEWPORT'
+
+  const doc = viewport.appendChild(document.createElement('div'))
+  doc.className = 'EDITOR_DOCUMENT'
+
+  const content = doc.appendChild(document.createElement('div'))
   content.className = 'EDITOR_CONTENT'
+
   editor.mount(content)
 
-  container.appendChild(createPopover())
+  doc.appendChild(createPopover())
 }
 
 main()

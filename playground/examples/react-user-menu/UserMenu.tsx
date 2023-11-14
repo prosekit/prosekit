@@ -24,16 +24,20 @@ export default function UserMenu() {
   }
 
   return (
-    <AutocompletePopover editor={editor} regex={/@\w*$/}>
-      <AutocompleteList editor={editor} className="SLASH_MENU">
-        <AutocompleteEmpty className="SLASH_MENU_ITEM">
+    <AutocompletePopover
+      editor={editor}
+      regex={/@\w*$/}
+      className="AUTOCOMPLETE_MENU"
+    >
+      <AutocompleteList editor={editor}>
+        <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
           No User match
         </AutocompleteEmpty>
 
         {users.map((user) => (
           <AutocompleteItem
             key={user.id}
-            className="SLASH_MENU_ITEM"
+            className="AUTOCOMPLETE_MENU_ITEM"
             onSelect={() => handleUserInsert(user.id, user.name)}
           >
             {user.name}

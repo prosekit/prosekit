@@ -41,7 +41,14 @@ export function sortExamples(examples: Example[]) {
   const group = groupBy(examples, (example) => example.name.split('-')[0])
 
   const sorted = prefixOrder.flatMap((prefix) =>
-    sortBy(group[prefix], (example) => example.name),
+    sortBy(group[prefix], (example) => {
+      if (example.name.endsWith('minimal')) {
+        // Put minimal examples first
+        return '0' + example.name
+      } else {
+        return '1' + example.name
+      }
+    }),
   )
 
   if (sorted.length !== examples.length) {

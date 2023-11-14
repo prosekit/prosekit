@@ -10,7 +10,6 @@
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
-  padding: 8px;
   font-family: ui-sans-serif, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji', system-ui;
 }

@@ -15,8 +15,12 @@ export default function App() {
 
   return (
     <ProseKit editor={editor}>
-      <div ref={editor.mount} className="EDITOR_CONTENT"></div>
-      <SlashMenu />
+      <div className="EDITOR_VIEWPORT">
+        <div className="EDITOR_DOCUMENT">
+          <div ref={editor.mount} className="EDITOR_CONTENT"></div>
+          <SlashMenu />
+        </div>
+      </div>
     </ProseKit>
   )
 }

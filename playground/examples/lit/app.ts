@@ -38,7 +38,11 @@ export class MyEditor extends LitElement {
 
   render() {
     return html`
-      <div class="EDITOR_CONTENT" ${ref(this.editorRef)}></div>
+      <div class="EDITOR_VIEWPORT">
+        <div class="EDITOR_DOCUMENT">
+          <div class="EDITOR_CONTENT" ${ref(this.editorRef)}></div>
+        </div>
+      </div>
     `
   }
 }

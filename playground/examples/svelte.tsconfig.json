@@ -4,8 +4,5 @@
     "composite": true,
     "outDir": ".temp"
   },
-  "include": [
-    "./svelte-*/*.ts",
-    "./svelte-*/*.svelte"
-  ]
+  "include": ["./svelte-*/*.ts", "./svelte-*/*.svelte"]
 }

@@ -5,7 +5,7 @@ import { sortBy, uniq } from 'lodash-es'
 import { readExampleMeta } from './example-meta.js'
 import { vfs, type VirtualFile } from './virtual-file-system.js'
 
-const sharedFiles = ['ToggleButton.vue', 'ToggleButton.tsx', 'tsconfig.json']
+const sharedFiles = ['ToggleButton.vue', 'ToggleButton.tsx']
 
 export async function genExampleSharedFiles() {
   const meta = await readExampleMeta()

@@ -144,7 +144,6 @@ function extractDependencies(
 function patchFiles(files: Record<string, { hidden: boolean; code: string }>) {
   for (const file of Object.values(files)) {
     file.code = patchCssClassNames(file.code)
-    file.code = patchJsxImportSource(file.code)
   }
 }
 
@@ -154,19 +153,6 @@ function patchCssClassNames(code: string): string {
   )
   const regex = new RegExp(`\\b(${shortcutNames.join('|')})\\b`, 'g')
   return code.replace(regex, (match) => shortcuts[match])
-}
-
-function patchJsxImportSource(code: string): string {
-  if (!code.includes('@jsxImportSource')) {
-    return code
-  }
-  return (
-    code
-      .split('\n')
-      .filter((line) => !line.includes('@jsxImportSource'))
-      .join('\n')
-      .trim() + '\n'
-  )
 }
 
 function clone<T>(value: T): T {

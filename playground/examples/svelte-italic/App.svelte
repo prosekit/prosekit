@@ -2,7 +2,7 @@
 import 'prosekit/core/style.css'
 import 'prosekit/extensions/list/style.css'
 
-import { createEditor, type NodeJson } from 'prosekit/core'
+import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { onMount, onDestroy } from 'svelte'
 import { defineExtension } from './extension'

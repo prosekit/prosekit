@@ -1,5 +1,3 @@
-/** @jsxImportSource solid-js */
-
 import { useEditor } from 'prosekit/solid'
 
 import ToggleButton from './ToggleButton'

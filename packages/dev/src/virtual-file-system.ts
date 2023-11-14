@@ -5,6 +5,7 @@ import path, { normalize } from 'node:path'
 
 import { getPackages, type Package } from '@manypkg/get-packages'
 import Yaml from 'js-yaml'
+import JSON5 from 'json5'
 import { sortBy } from 'lodash-es'
 
 import { findRootDir } from './find-root-dir.js'
@@ -38,7 +39,7 @@ class VirtualFile {
 
   async readJSON() {
     const text = await this.read()
-    return JSON.parse(text)
+    return JSON5.parse(text)
   }
 
   async readYaml() {
@@ -76,7 +77,7 @@ class VirtualFile {
         throw new Error(`Unable to write ${absPath}: no content provided`)
       }
       if (absPath.endsWith('.json')) {
-        return await writeJson(absPath, JSON.parse(this.content))
+        return await writeJson(absPath, JSON5.parse(this.content))
       } else {
         return await writeText(absPath, this.content)
       }

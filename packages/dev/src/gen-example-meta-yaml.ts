@@ -47,7 +47,10 @@ export async function genExampleMetaYaml() {
       name: exampleName,
       files: exampleFiles.map(({ path }) => ({
         path: path,
-        hidden: findExampleFile(oldMeta, exampleName, path)?.hidden ?? false,
+        hidden:
+          path === 'tsconfig.json'
+            ? true
+            : findExampleFile(oldMeta, exampleName, path)?.hidden ?? false,
       })),
     }
     newMeta.examples.push(newExample)

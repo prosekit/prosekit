@@ -6,7 +6,7 @@ import 'prosekit/basic/style.css'
 import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { createRef, ref, type Ref } from 'lit/directives/ref.js'
-import { createEditor, type Editor, type NodeJson } from 'prosekit/core'
+import { type NodeJSON, createEditor, type Editor } from 'prosekit/core'
 
 import { defineRootExtension, type RootExtension } from './extension'
 
@@ -20,7 +20,7 @@ export class MyEditor extends LitElement {
   editor?: Editor<RootExtension>
 
   @property({ type: Object, attribute: false })
-  defaultDoc?: NodeJson
+  defaultDoc?: NodeJSON
 
   private editorRef: Ref<HTMLDivElement> = createRef()
 
@@ -43,7 +43,7 @@ export class MyEditor extends LitElement {
   }
 }
 
-const defaultDoc: NodeJson = {
+const defaultDoc: NodeJSON = {
   type: 'doc',
   content: [
     {

@@ -4,7 +4,7 @@ import { useData } from 'vitepress'
 import { defineComponent, h } from 'vue'
 
 const Editor = defineClientComponent(async () => {
-  const mod = (await import('./vue-full/App.vue')) as { default: unknown }
+  const mod = await import('./vue-full/App.vue')
   return mod.default
 })
 

@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
 import { basic, react, tsPlugin } from '@ocavue/eslint-config'
 
-export default [
+const configs = [
   ...basic(),
   ...react().map((config) => ({
     ...config,
@@ -48,3 +50,20 @@ export default [
     ],
   },
 ]
+
+// Enable EXPERIMENTAL_useProjectService
+//
+// See https://github.com/typescript-eslint/typescript-eslint/pull/6754
+let projectServiceEnabled = false
+for (const config of configs) {
+  if (config?.languageOptions?.parserOptions?.project) {
+    projectServiceEnabled = true
+    config.languageOptions.parserOptions.EXPERIMENTAL_useProjectService = true
+  }
+}
+
+if (!projectServiceEnabled) {
+  throw new Error('Unable to find any project service enabled config')
+}
+
+export default configs

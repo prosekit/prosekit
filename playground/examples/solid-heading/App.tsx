@@ -1,5 +1,3 @@
-/** @jsxImportSource solid-js */
-
 import 'prosekit/core/style.css'
 
 import { createEditor } from 'prosekit/core'

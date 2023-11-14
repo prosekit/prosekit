@@ -4,10 +4,11 @@
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "composite": true,
-    "declarationDir": "temp/declaration",
-    "tsBuildInfoFile": "temp/tsconfig.tsbuildinfo"
+    "outDir": "temp"
   },
   "include": [
+    "./shims-vue.d.ts",
+    "./vite-env.d.ts",
     "./**/*.ts",
     "./**/*.tsx",
     "./components/**/*.vue",

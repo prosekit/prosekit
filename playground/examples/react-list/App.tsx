@@ -1,7 +1,7 @@
 import 'prosekit/core/style.css'
 import 'prosekit/extensions/list/style.css'
 
-import { createEditor, type NodeJson } from 'prosekit/core'
+import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
@@ -21,7 +21,7 @@ export default function App() {
   )
 }
 
-const defaultDoc: NodeJson = {
+const defaultDoc: NodeJSON = {
   type: 'doc',
   content: [
     {

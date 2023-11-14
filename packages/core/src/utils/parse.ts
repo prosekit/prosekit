@@ -1,6 +1,6 @@
 import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import { DOMParser } from '@prosekit/pm/model'
-import type { EditorState } from '@prosekit/pm/state'
+import { EditorState } from '@prosekit/pm/state'
 
 import { ProseKitError } from '../error'
 import type { NodeJSON, StateJSON } from '../types/model'
@@ -81,4 +81,22 @@ export function jsonFromState(state: EditorState): StateJSON {
  */
 export function jsonFromNode(node: ProseMirrorNode): NodeJSON {
   return node.toJSON() as NodeJSON
+}
+
+/**
+ * Parse a JSON object to a ProseMirror node.
+ *
+ * @public
+ */
+export function nodeFromJSON(json: NodeJSON, schema: Schema): ProseMirrorNode {
+  return schema.nodeFromJSON(json)
+}
+
+/**
+ * Parse a JSON object to a ProseMirror state.
+ *
+ * @public
+ */
+export function stateFromJSON(json: StateJSON, schema: Schema): EditorState {
+  return EditorState.fromJSON({ schema }, json)
 }

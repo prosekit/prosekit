@@ -6,7 +6,7 @@ import 'prosekit/basic/style.css'
 import { LitElement, html } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
 import { createRef, ref, type Ref } from 'lit/directives/ref.js'
-import { type NodeJSON, createEditor, type Editor } from 'prosekit/core'
+import { createEditor, type Editor, type NodeJSON } from 'prosekit/core'
 
 import { defineRootExtension, type RootExtension } from './extension'
 

@@ -97,6 +97,6 @@ export function nodeFromJSON(json: NodeJSON, schema: Schema): ProseMirrorNode {
  *
  * @public
  */
-export function stateFromJSON(json: NodeJSON, schema: Schema): EditorState {
+export function stateFromJSON(json: StateJSON, schema: Schema): EditorState {
   return EditorState.fromJSON({ schema }, json)
 }

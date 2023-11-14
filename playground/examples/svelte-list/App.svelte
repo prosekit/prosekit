@@ -4,7 +4,7 @@ import 'prosekit/extensions/list/style.css'
 
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
-import { onMount, onDestroy } from 'svelte'
+import { onDestroy, onMount } from 'svelte'
 import { defineExtension } from './extension'
 
 const defaultDoc: NodeJSON = {

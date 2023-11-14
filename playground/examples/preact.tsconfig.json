@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": ".temp",
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "include": ["./preact-*/*"]
+}

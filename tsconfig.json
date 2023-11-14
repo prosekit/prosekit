@@ -16,8 +16,7 @@
     "emitDeclarationOnly": true,
     "composite": true,
     "allowJs": true,
-    "declarationDir": "node_modules/.cache/ts/declaration",
-    "tsBuildInfoFile": "node_modules/.cache/ts/tsconfig.tsbuildinfo",
+    "outDir": "node_modules/.cache/ts/out",
     "verbatimModuleSyntax": true,
     "forceConsistentCasingInFileNames": true
   },
@@ -25,37 +24,67 @@
   "files": [],
   "references": [
     {
-      "path": "packages/prosekit"
+      "path": "packages/basic/tsconfig.json"
     },
     {
-      "path": "packages/pm"
+      "path": "packages/core/tsconfig.json"
     },
     {
-      "path": "packages/basic"
+      "path": "packages/dev/tsconfig.json"
     },
     {
-      "path": "packages/core"
+      "path": "packages/extensions/tsconfig.json"
     },
     {
-      "path": "packages/extensions"
+      "path": "packages/lit/tsconfig.json"
     },
     {
-      "path": "packages/lit"
+      "path": "packages/pm/tsconfig.json"
     },
     {
-      "path": "packages/preact"
+      "path": "packages/preact/tsconfig.json"
     },
     {
-      "path": "packages/react"
+      "path": "packages/prosekit/tsconfig.json"
     },
     {
-      "path": "packages/solid"
+      "path": "packages/react/tsconfig.json"
     },
     {
-      "path": "packages/svelte"
+      "path": "packages/solid/tsconfig.json"
     },
     {
-      "path": "packages/vue"
+      "path": "packages/svelte/tsconfig.json"
+    },
+    {
+      "path": "packages/vue/tsconfig.json"
+    },
+    {
+      "path": "playground/examples/lit.tsconfig.json"
+    },
+    {
+      "path": "playground/examples/preact.tsconfig.json"
+    },
+    {
+      "path": "playground/examples/react.tsconfig.json"
+    },
+    {
+      "path": "playground/examples/solid.tsconfig.json"
+    },
+    {
+      "path": "playground/examples/svelte.tsconfig.json"
+    },
+    {
+      "path": "playground/examples/vanilla.tsconfig.json"
+    },
+    {
+      "path": "playground/examples/vue.tsconfig.json"
+    },
+    {
+      "path": "playground/tsconfig.json"
+    },
+    {
+      "path": "website/tsconfig.json"
     }
   ]
 }

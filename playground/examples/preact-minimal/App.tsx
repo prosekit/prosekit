@@ -1,5 +1,3 @@
-/** @jsxImportSource preact */
-
 import 'prosekit/basic/style.css'
 
 import { useMemo } from 'preact/hooks'

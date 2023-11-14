@@ -1,5 +1,3 @@
-/** @jsxImportSource preact */
-
 import { useEditor } from 'prosekit/preact'
 import { AutocompleteEmpty } from 'prosekit/preact/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/preact/autocomplete-item'

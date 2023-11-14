@@ -2,7 +2,8 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "outDir": "temp"
+    "outDir": ".temp",
+    "jsx": "react-jsx"
   },
-  "include": ["./src", "./*.js", "./*.ts"]
+  "include": ["./react-*/*"]
 }

@@ -1,5 +1,3 @@
-/** @jsxImportSource solid-js */
-
 import type { ParentProps } from 'solid-js'
 
 export default function ToggleButton({

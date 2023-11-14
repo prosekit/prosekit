@@ -1,10 +1,37 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "emitDeclarationOnly": false,
     "composite": true,
-    "noEmit": true,
-    "jsx": "preserve"
+    "outDir": "temp"
   },
-  "include": ["./pages", "./examples", "./layouts", "./*.ts", "./*.mjs"]
+  "include": [
+    "./pages",
+    "./layouts",
+    "./env.d.ts",
+    "./uno.config.ts",
+    "./astro.config.mjs"
+  ],
+  "references": [
+    {
+      "path": "./examples/lit.tsconfig.json"
+    },
+    {
+      "path": "./examples/preact.tsconfig.json"
+    },
+    {
+      "path": "./examples/react.tsconfig.json"
+    },
+    {
+      "path": "./examples/solid.tsconfig.json"
+    },
+    {
+      "path": "./examples/svelte.tsconfig.json"
+    },
+    {
+      "path": "./examples/vanilla.tsconfig.json"
+    },
+    {
+      "path": "./examples/vue.tsconfig.json"
+    }
+  ]
 }

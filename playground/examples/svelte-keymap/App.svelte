@@ -2,10 +2,10 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/extensions/placeholder/style.css'
 
-import { onMount, onDestroy } from 'svelte'
+import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
-import { defineBasicExtension } from 'prosekit/basic'
+import { onDestroy, onMount } from 'svelte'
 import KeymapConfig from './KeymapConfig.svelte'
 
 const extension = defineBasicExtension()

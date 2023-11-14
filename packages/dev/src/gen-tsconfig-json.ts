@@ -4,9 +4,13 @@ import { vfs } from './virtual-file-system.js'
 export async function genTsconfigJson() {
   if (skipGen()) return
 
-  const packages = await vfs.getPublicPackages()
   const tsconfigFile = await vfs.getFile('tsconfig.json')
   const tsconfig = await tsconfigFile.readJSON()
-  tsconfig.references = packages.map((pkg) => ({ path: pkg.relativeDir }))
+
+  const tsconfigPaths = (await vfs.getFilePathsByDir('.'))
+    .filter((p) => p.endsWith('tsconfig.json') && p !== 'tsconfig.json')
+    .sort()
+
+  tsconfig.references = tsconfigPaths.map((path) => ({ path }))
   tsconfigFile.updateJSON(tsconfig)
 }

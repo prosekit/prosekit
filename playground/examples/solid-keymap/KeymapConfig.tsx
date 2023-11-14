@@ -24,7 +24,7 @@ export default function KeymapConfig() {
   })
 
   return (
-    <fieldset className="border">
+    <fieldset class="border">
       <legend>Submit Document</legend>
 
       <div>
@@ -35,7 +35,7 @@ export default function KeymapConfig() {
           checked={getSubmitHotkey() === 'Shift-Enter'}
           onChange={() => setSubmitHotkey('Shift-Enter')}
         />
-        <label htmlFor="hotkey1">
+        <label for="hotkey1">
           <kbd>Shift</kbd> + <kbd>Enter</kbd>
         </label>
       </div>
@@ -48,7 +48,7 @@ export default function KeymapConfig() {
           checked={getSubmitHotkey() === 'Ctrl-Enter'}
           onChange={() => setSubmitHotkey('Ctrl-Enter')}
         />
-        <label htmlFor="hotkey2">
+        <label for="hotkey2">
           <kbd>Ctrl</kbd> + <kbd>Enter</kbd>
         </label>
       </div>

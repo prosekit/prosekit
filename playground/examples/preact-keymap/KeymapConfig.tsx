@@ -1,5 +1,3 @@
-/** @jsxImportSource preact */
-
 import { useMemo, useState } from 'preact/hooks'
 import { jsonFromNode, type Keymap } from 'prosekit/core'
 import { useKeymap } from 'prosekit/preact'

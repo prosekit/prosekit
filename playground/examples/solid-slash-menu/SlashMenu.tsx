@@ -1,5 +1,3 @@
-/** @jsxImportSource solid-js */
-
 import { useEditor } from 'prosekit/solid'
 import { AutocompleteEmpty } from 'prosekit/solid/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/solid/autocomplete-item'

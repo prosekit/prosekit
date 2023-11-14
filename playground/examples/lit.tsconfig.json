@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "target": "ESNext",
     "composite": true,
-    "outDir": "temp"
+    "outDir": ".temp"
   },
-  "include": ["./src", "./*.js", "./*.ts"]
+  "include": ["./lit/*"]
 }

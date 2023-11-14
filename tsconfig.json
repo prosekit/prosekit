@@ -18,7 +18,8 @@
     "allowJs": true,
     "outDir": "node_modules/.cache/ts/out",
     "verbatimModuleSyntax": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": false
   },
   "include": ["./*.js", "./*.ts", ".changeset/*.cjs"],
   "files": [],

@@ -59,6 +59,8 @@ export {
   jsonFromState,
   nodeFromElement,
   nodeFromHTML,
+  nodeFromJSON,
+  stateFromJSON,
 } from './utils/parse'
 export {
   isAllSelection,

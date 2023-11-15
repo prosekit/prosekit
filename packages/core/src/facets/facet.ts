@@ -73,11 +73,11 @@ export class Facet<Input, Output> {
     const converterFunction = converter
       ? converter
       : convert
-      ? () => ({
-          create: convert,
-          update: convert,
-        })
-      : null
+        ? () => ({
+            create: convert,
+            update: convert,
+          })
+        : null
 
     if (!converterFunction) {
       throw new ProseKitError("Facet must have either 'convert' or 'converter'")

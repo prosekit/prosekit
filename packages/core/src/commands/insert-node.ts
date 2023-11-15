@@ -21,8 +21,8 @@ function insertNode(options: {
     const node = options.node
       ? options.node
       : options.type
-      ? getNodeType(state.schema, options.type).createChecked(options.attrs)
-      : null
+        ? getNodeType(state.schema, options.type).createChecked(options.attrs)
+        : null
 
     if (!node) {
       throw new ProseKitError('You must provide either a node or a type')

@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.1.2
+
+### Patch Changes
+
+- [8521070] ![@prosekit/solid](https://img.shields.io/badge/prosekit%2Fsolid-444444?logo=solid)
+
+  Fix an issue that caused the function properties not to work in the Solid components.
+
 ## 0.1.1
 
 ### Patch Changes

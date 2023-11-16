@@ -6,16 +6,16 @@ export default function ToggleButton({
   onChange,
   children,
 }: ParentProps<{
-  active?: boolean
-  available: boolean
+  active: () => boolean
+  available: () => boolean
   onChange: () => void
 }>) {
   return (
     <button
-      data-state={active ? 'on' : 'off'}
+      data-state={active() ? 'on' : 'off'}
       onMouseDown={(event) => event.preventDefault()}
       onClick={() => onChange()}
-      disabled={!available}
+      disabled={!available()}
       class="TOGGLE_BUTTON"
     >
       {children}

@@ -25,6 +25,6 @@ editor.commands.toggleCode()
 
 ## Keyboard Shortcuts
 
-| Shortcut | Description                          |
-| -------- | ------------------------------------ |
-| `Mod-E`  | Toggle the current selection to code |
+| Non-Apple | Apple       | Description                          |
+| --------- | ----------- | ------------------------------------ |
+| `Ctrl-E`  | `Command-E` | Toggle the current selection to code |

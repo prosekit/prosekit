@@ -50,14 +50,14 @@ editor.commands.insertHeading({ level: 1 })
 
 ## Keyboard Shortcuts
 
-| Shortcut | Description                         |
-| -------- | ----------------------------------- |
-| `Mod-1`  | Set the current block to an H1 node |
-| `Mod-2`  | Set the current block to an H2 node |
-| `Mod-3`  | Set the current block to an H3 node |
-| `Mod-4`  | Set the current block to an H4 node |
-| `Mod-5`  | Set the current block to an H5 node |
-| `Mod-6`  | Set the current block to an H6 node |
+| Non-Apple | Apple       | Description                         |
+| --------- | ----------- | ----------------------------------- |
+| `Ctrl-1`  | `Command-1` | Set the current block to an H1 node |
+| `Ctrl-2`  | `Command-2` | Set the current block to an H2 node |
+| `Ctrl-3`  | `Command-3` | Set the current block to an H3 node |
+| `Ctrl-4`  | `Command-4` | Set the current block to an H4 node |
+| `Ctrl-5`  | `Command-5` | Set the current block to an H5 node |
+| `Ctrl-6`  | `Command-6` | Set the current block to an H6 node |
 
 ## Input Rules
 

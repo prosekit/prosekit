@@ -27,6 +27,6 @@ editor.commands.toggleBold()
 
 ## Keyboard Shortcuts
 
-| Shortcut | Description                          |
-| -------- | ------------------------------------ |
-| `Mod-B`  | Toggle the current selection to bold |
+| Non-Apple | Apple       | Description                          |
+| --------- | ----------- | ------------------------------------ |
+| `Ctrl-B`  | `Command-B` | Toggle the current selection to bold |

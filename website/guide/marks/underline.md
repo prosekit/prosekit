@@ -25,6 +25,6 @@ editor.commands.toggleUnderline()
 
 ## Keyboard Shortcuts
 
-| Shortcut | Description                               |
-| -------- | ----------------------------------------- |
-| `Mod-U`  | Toggle the current selection to underline |
+| Non-Apple | Apple       | Description                               |
+| --------- | ----------- | ----------------------------------------- |
+| `Ctrl-U`  | `Command-U` | Toggle the current selection to underline |

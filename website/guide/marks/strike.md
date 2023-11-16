@@ -25,7 +25,6 @@ editor.commands.toggleStrike()
 
 ## Keyboard Shortcuts
 
-| Shortcut      | Description                            |
-| ------------- | -------------------------------------- |
-| `Mod-Shift-X` | Toggle the current selection to strike |
-| `Mod-Shift-S` | Toggle the current selection to strike |
+| Non-Apple                      | Apple                                | Description                            |
+| ------------------------------ | ------------------------------------ | -------------------------------------- |
+| `Ctrl-Shift-X`, `Ctrl-Shift-S` | `Command-Shift-X`, `Command-Shift-S` | Toggle the current selection to strike |

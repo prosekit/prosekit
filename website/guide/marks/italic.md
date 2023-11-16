@@ -25,6 +25,6 @@ editor.commands.toggleItalic()
 
 ## Keyboard Shortcuts
 
-| Shortcut | Description                            |
-| -------- | -------------------------------------- |
-| `Mod-I`  | Toggle the current selection to italic |
+| Non-Apple | Apple       | Description                            |
+| --------- | ----------- | -------------------------------------- |
+| `Ctrl-I`  | `Command-I` | Toggle the current selection to italic |

@@ -18,10 +18,22 @@
   box-sizing: border-box;
 }
 
+.ProseMirror h1:first-of-type,
+.ProseMirror h2:first-of-type,
+.ProseMirror h3:first-of-type,
+.ProseMirror h4:first-of-type,
+.ProseMirror h5:first-of-type,
+.ProseMirror h6:first-of-type,
 .ProseMirror p:first-of-type {
   margin-top: 0;
 }
 
+.ProseMirror h1:last-of-type,
+.ProseMirror h2:last-of-type,
+.ProseMirror h3:last-of-type,
+.ProseMirror h4:last-of-type,
+.ProseMirror h5:last-of-type,
+.ProseMirror h6:last-of-type,
 .ProseMirror p:last-of-type {
   margin-bottom: 0;
 }

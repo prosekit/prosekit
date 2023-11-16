@@ -9,24 +9,24 @@ export default function Toolbar() {
   return (
     <div class="TOOLBAR">
       <ToggleButton
-        active={editor().nodes.heading.isActive({ level: 1 })}
-        available={editor().commands.toggleHeading.canApply({ level: 1 })}
+        active={() => editor().nodes.heading.isActive({ level: 1 })}
+        available={() => editor().commands.toggleHeading.canApply({ level: 1 })}
         onChange={() => editor().commands.toggleHeading({ level: 1 })}
       >
         H1
       </ToggleButton>
 
       <ToggleButton
-        active={editor().nodes.heading.isActive({ level: 2 })}
-        available={editor().commands.toggleHeading.canApply({ level: 2 })}
+        active={() => editor().nodes.heading.isActive({ level: 2 })}
+        available={() => editor().commands.toggleHeading.canApply({ level: 2 })}
         onChange={() => editor().commands.toggleHeading({ level: 2 })}
       >
         H2
       </ToggleButton>
 
       <ToggleButton
-        active={editor().nodes.heading.isActive({ level: 3 })}
-        available={editor().commands.toggleHeading.canApply({ level: 3 })}
+        active={() => editor().nodes.heading.isActive({ level: 3 })}
+        available={() => editor().commands.toggleHeading.canApply({ level: 3 })}
         onChange={() => editor().commands.toggleHeading({ level: 3 })}
       >
         H3

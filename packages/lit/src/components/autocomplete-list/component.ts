@@ -76,18 +76,18 @@ export class AutocompleteList
 
     this.listManager.selectFirstItem()
 
-    this.addEventListener('mousemove', (event) =>
-      this.listManager.handleMouseMove(event),
-    )
-    this.addEventListener('mouseover', (event) =>
-      this.listManager.handleMouseOver(event),
-    )
-    this.addEventListener('mousedown', (event) =>
-      this.listManager.handleMouseDown(event),
-    )
-    this.addEventListener('click', (event) =>
-      this.listManager.handleClick(event),
-    )
+    this.addEventListener('mousemove', (event) => {
+      this.listManager.handleMouseMove(event)
+    })
+    this.addEventListener('mouseover', (event) => {
+      this.listManager.handleMouseOver(event)
+    })
+    this.addEventListener('mousedown', (event) => {
+      this.listManager.handleMouseDown(event)
+    })
+    this.addEventListener('click', (event) => {
+      this.listManager.handleClick(event)
+    })
   }
 
   private get items(): AutocompleteItem[] {

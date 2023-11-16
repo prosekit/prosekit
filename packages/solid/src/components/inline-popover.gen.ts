@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-namespace */
-
 import '@prosekit/lit/inline-popover'
 
 import type { InlinePopoverProps as InlinePopoverElementProps } from '@prosekit/lit/inline-popover'
 import type { Component, JSXElement } from 'solid-js'
 import html from 'solid-js/html'
+
+import { forceProps } from '../utils/force-props'
 
 export type InlinePopoverProps = {
   class?: string
@@ -12,5 +12,5 @@ export type InlinePopoverProps = {
 } & InlinePopoverElementProps
 
 export const InlinePopover: Component<InlinePopoverProps> = (props) => {
-  return html`<prosekit-inline-popover ...${props} />`
+  return html`<prosekit-inline-popover ...${forceProps(props)} />`
 }

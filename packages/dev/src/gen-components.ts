@@ -176,13 +176,13 @@ function formatSolidCode(kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-/* eslint-disable @typescript-eslint/no-namespace */
-
 import '@prosekit/lit/${kebab}'
 
 import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
 import type { Component, JSXElement } from 'solid-js'
 import html from 'solid-js/html'
+
+import { forceProps } from '../utils/force-props'
 
 export type ${pascal}Props = {
   class?: string
@@ -190,7 +190,7 @@ export type ${pascal}Props = {
 } & ${pascal}ElementProps
 
 export const ${pascal}: Component<${pascal}Props> = (props) => {
-  return html\`<prosekit-${kebab} ...\${props} />\`
+  return html\`<prosekit-${kebab} ...\${forceProps(props)} />\`
 }
 `.trim() + '\n'
   )

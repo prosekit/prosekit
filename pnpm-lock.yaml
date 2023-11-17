@@ -35,8 +35,8 @@ importers:
         specifier: ^1.3.1
         version: 1.3.1(eslint@8.53.0)(typescript@5.2.2)
       '@size-limit/esbuild-why':
-        specifier: ^10.0.3
-        version: 10.0.3(size-limit@10.0.3)
+        specifier: ^11.0.0
+        version: 11.0.0(size-limit@10.0.3)
       '@size-limit/preset-small-lib':
         specifier: ^10.0.3
         version: 10.0.3(size-limit@10.0.3)
@@ -2592,11 +2592,11 @@ packages:
       escape-string-regexp: 5.0.0
     dev: false
 
-  /@size-limit/esbuild-why@10.0.3(size-limit@10.0.3):
-    resolution: {integrity: sha512-0cUyDfJ0PQSb04uJGTgJ+g/sFPcLr3Dkb3ALteJXgTCcgWD64tgi8XlQf1cUrDY0PPKY8pniHCZZCWrpS1aZmw==}
+  /@size-limit/esbuild-why@11.0.0(size-limit@10.0.3):
+    resolution: {integrity: sha512-YTEmxCBE5PF6LH9lvNYXJM/h7XqVjpCVFVf2NrsJ75d3HdU8q77WriI7/T1++reBf8GfUhY5RIyASdR1ZJ8S4w==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
-      size-limit: 10.0.3
+      size-limit: 11.0.0
     dependencies:
       esbuild-visualizer: 0.4.1
       open: 9.1.0

@@ -38,8 +38,8 @@ importers:
         specifier: ^10.0.3
         version: 10.0.3(size-limit@10.0.3)
       '@size-limit/preset-small-lib':
-        specifier: ^10.0.3
-        version: 10.0.3(size-limit@10.0.3)
+        specifier: ^11.0.0
+        version: 11.0.0(size-limit@10.0.3)
       '@vitest/coverage-istanbul':
         specifier: ^0.34.6
         version: 0.34.6(vitest@0.34.6)
@@ -2603,33 +2603,33 @@ packages:
       size-limit: 10.0.3
     dev: false
 
-  /@size-limit/esbuild@10.0.3(size-limit@10.0.3):
-    resolution: {integrity: sha512-5z7qhfKqR3zJJMsbgIiFiqZmBqBYboG67g6vzIovBI/CyOvKTWUrvhx17BHYWNwi+cZgkR+oJjhgJc5hO7rYxQ==}
+  /@size-limit/esbuild@11.0.0(size-limit@10.0.3):
+    resolution: {integrity: sha512-OOmba2ZuMpaUhmBXgCfgrO7L6zkUDwvFFfW8T+dK08968LQ79Q+kNgEXQAd+dhj9TlTkHyyEDczWmx16e9cXoQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
-      size-limit: 10.0.3
+      size-limit: 11.0.0
     dependencies:
       esbuild: 0.19.5
       nanoid: 5.0.3
       size-limit: 10.0.3
     dev: false
 
-  /@size-limit/file@10.0.3(size-limit@10.0.3):
-    resolution: {integrity: sha512-q+AlmVwSU7Adw3TwSwxr8ITZfVt16Lb1Uq7JTD0Ng2+ZnLDu9wY1cVE15yG4l2hN5pOQfdHZ1p9kb6unYmYT3w==}
+  /@size-limit/file@11.0.0(size-limit@10.0.3):
+    resolution: {integrity: sha512-tTg6sSiFbiogiof3GV4iIRCPS4+46Hvq4QWXGXp00Be/tOnpglXF62xNpCfFwefx9YCXxCyeYSqqaRBjpRCsmQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
-      size-limit: 10.0.3
+      size-limit: 11.0.0
     dependencies:
       size-limit: 10.0.3
     dev: false
 
-  /@size-limit/preset-small-lib@10.0.3(size-limit@10.0.3):
-    resolution: {integrity: sha512-NUu/DnTh0YuodfZJ/98doYrvhcDcLe1yX9MblChzWx//onvcUbq2HpzbP4cxXLjoZG5v5ms+7lnHKyLfPftklQ==}
+  /@size-limit/preset-small-lib@11.0.0(size-limit@10.0.3):
+    resolution: {integrity: sha512-B4KDPbx5E8Vsn/aXilt2iAeofRBJdT8svQRSylTQPw5RkrumXUBKioM1dmWUXcnuHR2zUveJXlMxGmbdmxbJpQ==}
     peerDependencies:
-      size-limit: 10.0.3
+      size-limit: 11.0.0
     dependencies:
-      '@size-limit/esbuild': 10.0.3(size-limit@10.0.3)
-      '@size-limit/file': 10.0.3(size-limit@10.0.3)
+      '@size-limit/esbuild': 11.0.0(size-limit@10.0.3)
+      '@size-limit/file': 11.0.0(size-limit@10.0.3)
       size-limit: 10.0.3
     dev: false
 

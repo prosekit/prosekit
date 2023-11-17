@@ -26,9 +26,9 @@
     "load-json-file": "^7.0.1",
     "lodash-es": "^4.17.21",
     "path-exists": "^5.0.0",
-    "read-pkg": "^9.0.0",
+    "read-pkg": "^9.0.1",
     "read-pkg-up": "^10.1.0",
-    "tsup": "^7.2.0",
+    "tsup": "^7.3.0",
     "write-pkg": "^6.0.1"
   },
   "devDependencies": {
@@ -36,7 +36,7 @@
     "@sindresorhus/string-hash": "^2.0.0",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash-es": "^4.17.11",
-    "@types/node": "^20.9.0",
+    "@types/node": "^20.9.1",
     "execa": "^8.0.1",
     "globby": "^13.2.2",
     "js-yaml": "^4.1.0",

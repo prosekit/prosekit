@@ -8,7 +8,7 @@ import { pluginFacet, type PluginPayload } from './plugin'
 
 export type UpdateHandler = (options: {
   view: EditorView
-  prevState: EditorState
+  prevState?: EditorState
 }) => void
 
 /**
@@ -24,7 +24,10 @@ const updateHandlerFacet = Facet.define<UpdateHandler, PluginPayload>({
 
     const plugin = new ProseMirrorPlugin({
       key: pluginKey,
-      view: () => {
+      view: (view) => {
+        // Run all handlers after the view is mounted
+        updateHandlers.forEach((fn) => fn({ view }))
+
         return {
           update: (view, prevState) => {
             updateHandlers.forEach((fn) => fn({ view, prevState }))

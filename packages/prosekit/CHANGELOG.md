@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.1.3
+
+### Patch Changes
+
+- [404ffff] ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  Call all update handlers after mounting.
+
 ## 0.1.2
 
 ### Patch Changes

@@ -7,7 +7,7 @@ export function defineExtension() {
   return union([
     defineBasicExtension(),
     definePlaceholder({ placeholder: 'Press / for commands...' }),
-    defineMention()
+    defineMention(),
   ])
 }
 

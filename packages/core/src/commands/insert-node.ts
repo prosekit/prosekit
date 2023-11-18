@@ -5,18 +5,21 @@ import { insertPoint } from '@prosekit/pm/transform'
 import { ProseKitError } from '../error'
 import { getNodeType } from '../utils/get-node-type'
 
-function insertNode(options: { node: ProseMirrorNode; pos?: number }): Command
-function insertNode(options: {
-  attrs?: Attrs
-  type: string
-  pos?: number
-}): Command
-function insertNode(options: {
-  node?: ProseMirrorNode
-  attrs?: Attrs
-  type?: string
-  pos?: number
-}): Command {
+function insertNode(
+  options:
+    | {
+        node: ProseMirrorNode
+        pos?: number
+        type?: undefined
+        attrs?: undefined
+      }
+    | {
+        node?: undefined
+        pos?: number
+        type: string
+        attrs?: Attrs
+      },
+): Command {
   return (state, dispatch) => {
     const node = options.node
       ? options.node

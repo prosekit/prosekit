@@ -6,7 +6,7 @@ import type { EditorView } from '@prosekit/pm/view'
 type Action = (options: { tr: Transaction; view?: EditorView }) => boolean
 
 export function applyAction(operator: Action): Command {
-  return (state, dispatch, view) => {
+  return function applyActionCommand(state, dispatch, view) {
     const tr = state.tr
     if (operator({ tr, view })) {
       dispatch?.(tr)
@@ -16,7 +16,7 @@ export function applyAction(operator: Action): Command {
   }
 }
 
-export function insertNode({
+export function insertNodeAction({
   node,
   pos,
 }: {

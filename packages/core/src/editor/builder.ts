@@ -103,9 +103,8 @@ function normalizeArgs(
   args: [Attrs | NodeChild | null | undefined, ...NodeChild[]],
 ): [Attrs | null, NodeChild[]] {
   const [attrs, ...children] = args
-
-  if (isNodeChild(args)) {
-    children.unshift(args)
+  if (isNodeChild(attrs)) {
+    children.unshift(attrs)
     return [null, children]
   } else if (typeof attrs === 'object') {
     return [attrs, children]

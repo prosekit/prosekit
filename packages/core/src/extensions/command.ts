@@ -1,4 +1,5 @@
 import { addMark } from '../commands/add-mark'
+import { insertNode } from '../commands/insert-node'
 import { insertText } from '../commands/insert-text'
 import { removeMark } from '../commands/remove-mark'
 import { selectAll } from '../commands/select-all'
@@ -7,8 +8,6 @@ import { wrap } from '../commands/wrap'
 import { commandFacet } from '../facets/command'
 import { type CommandCreator } from '../types/command'
 import { type Extension } from '../types/extension'
-
-import { insertNode } from './actions'
 
 export function defineCommands<
   T extends Record<string, CommandCreator> = Record<string, CommandCreator>,

@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.1.4
+
+### Patch Changes
+
+- [6f70509] ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  Fix `insertNode` command.
+
+- [a58fc69] ![@prosekit/lit](https://img.shields.io/badge/prosekit%2Flit-444444?logo=lit)
+
+  Only display the inline popover when current selection is `TextSelection` or `NodeSelection`. Particularly, when the selection is `AllSelection`, the inline popover should not be displayed.
+
 ## 0.1.3
 
 ### Patch Changes

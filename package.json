@@ -42,7 +42,7 @@
     "size-limit": "^11.0.0",
     "turbo": "^1.10.16",
     "typescript": "^5.2.2",
-    "unocss": "^0.57.4",
+    "unocss": "^0.57.5",
     "vitest": "^0.34.6"
   },
   "pnpm": {

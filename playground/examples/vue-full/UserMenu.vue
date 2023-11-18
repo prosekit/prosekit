@@ -17,7 +17,7 @@ const handleUserInsert = (id: number, username: string) => {
     value: '@' + username,
     kind: 'user',
   }
-  const node = editor.schema.nodes.mention.create(attrs)
+  const node = editor.nodes.mention(attrs)
   editor.commands.insertNode({ node })
   editor.commands.insertText({ text: ' ' })
 }

@@ -1,4 +1,4 @@
-import { isTextSelection } from '@prosekit/core'
+import { isNodeSelection, isTextSelection } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
 export function getVirtualSelectionElement(view: EditorView) {
@@ -8,11 +8,12 @@ export function getVirtualSelectionElement(view: EditorView) {
 
   const selection = view.state.selection
 
-  if (selection.empty && !isTextSelection(selection)) {
-    return
+  if (
+    !selection.empty &&
+    (isTextSelection(selection) || isNodeSelection(selection))
+  ) {
+    return getDomRange()
   }
-
-  return getDomRange()
 }
 
 function getDomRange() {

@@ -46,9 +46,7 @@
     "vitest": "^0.34.6"
   },
   "pnpm": {
-    "overrides": {
-      "tsup": "https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c"
-    },
+    "overrides": {},
     "patchedDependencies": {
       "prosemirror-highlightjs@0.9.1": "patches/prosemirror-highlightjs@0.9.1.patch",
       "typedoc@0.25.3": "patches/typedoc@0.25.3.patch"

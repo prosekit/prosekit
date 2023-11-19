@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "tsup": "^7.3.0",
+    "tsup": "^8.0.0",
     "typescript": "^5.2.2",
     "vitest": "^0.34.6"
   },

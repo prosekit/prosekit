@@ -10,7 +10,6 @@ function clsx(...parts) {
 
 let FLOATING_MENU = clsx(
   'z-10 box-border rounded border border-solid border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-zinc-800',
-  'max-h-[var(--prosekit-popover-available-height)] max-w-[var(--prosekit-popover-available-width)]',
 )
 
 export const shortcuts = {

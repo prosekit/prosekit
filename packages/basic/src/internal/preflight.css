@@ -58,12 +58,12 @@ div.ProseMirror {
   & ul,
   & ol,
   & pre {
-    margin: 1em 0;
+    padding: 0.25rem;
     line-height: 1.5;
   }
 
   & blockquote {
-    margin: 1em 0;
+    padding: 0.25rem;
     padding-left: 1em;
     font-style: italic;
   }

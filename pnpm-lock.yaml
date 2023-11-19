@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  tsup: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-
 patchedDependencies:
   prosemirror-highlightjs@0.9.1:
     hash: uj5ddgn5nj4ptnyl3ffi4zkeei
@@ -99,8 +96,8 @@ importers:
         specifier: ^3.3.5
         version: 3.3.5
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)'
+        specifier: ^8.0.0
+        version: 8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -124,8 +121,8 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)'
+        specifier: ^8.0.0
+        version: 8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -163,8 +160,8 @@ importers:
         specifier: ^10.1.0
         version: 10.1.0
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)'
+        specifier: ^8.0.0
+        version: 8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       write-pkg:
         specifier: ^6.0.1
         version: 6.0.1
@@ -225,8 +222,8 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)'
+        specifier: ^8.0.0
+        version: 8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -265,8 +262,8 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)'
+        specifier: ^8.0.0
+        version: 8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -308,8 +305,8 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)'
+        specifier: ^8.0.0
+        version: 8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -333,8 +330,8 @@ importers:
         specifier: ^10.19.2
         version: 10.19.2
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)'
+        specifier: ^8.0.0
+        version: 8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -400,8 +397,8 @@ importers:
         specifier: ^4.2.4
         version: 4.2.4
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)'
+        specifier: ^8.0.0
+        version: 8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -440,8 +437,8 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)'
+        specifier: ^8.0.0
+        version: 8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -465,8 +462,8 @@ importers:
         specifier: ^1.8.5
         version: 1.8.5
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)'
+        specifier: ^8.0.0
+        version: 8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -524,8 +521,8 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)'
+        specifier: ^8.0.0
+        version: 8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -9844,6 +9841,46 @@ packages:
   /tslib@2.6.0:
     resolution: {integrity: sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA==}
 
+  /tsup@8.0.0(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2):
+    resolution: {integrity: sha512-9rOGn8LsFn2iAg2pCB1jnH7ygVuGjlzIomjw0jKXUxAii3iL5cXgm0jZMPKfFH1bSAjQovJ1DUVPSw+oDuIu8A==}
+    engines: {node: '>=18'}
+    hasBin: true
+    peerDependencies:
+      '@microsoft/api-extractor': ^7.36.0
+      '@swc/core': ^1
+      postcss: ^8.4.12
+      typescript: '>=4.5.0'
+    peerDependenciesMeta:
+      '@microsoft/api-extractor':
+        optional: true
+      '@swc/core':
+        optional: true
+      postcss:
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@microsoft/api-extractor': 7.38.3(@types/node@20.9.1)
+      bundle-require: 4.0.2(esbuild@0.19.5)
+      cac: 6.7.14
+      chokidar: 3.5.3
+      debug: 4.3.4
+      esbuild: 0.19.5
+      execa: 5.1.1
+      globby: 11.1.0
+      joycon: 3.1.1
+      postcss: 8.4.31
+      postcss-load-config: 4.0.1(postcss@8.4.31)
+      resolve-from: 5.0.0
+      rollup: 4.4.1
+      source-map: 0.8.0-beta.0
+      sucrase: 3.32.0
+      tree-kill: 1.2.2
+      typescript: 5.2.2
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
+
   /tsutils@3.21.0(typescript@5.2.2):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
     engines: {node: '>= 6'}
@@ -10995,46 +11032,3 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
-
-  '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)':
-    resolution: {tarball: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c}
-    id: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-17-c'
-    name: tsup
-    version: 0.0.0-semantic-release
-    engines: {node: '>=18'}
-    hasBin: true
-    peerDependencies:
-      '@microsoft/api-extractor': ^7.36.0
-      '@swc/core': ^1
-      postcss: ^8.4.12
-      typescript: '>=4.5.0'
-    peerDependenciesMeta:
-      '@microsoft/api-extractor':
-        optional: true
-      '@swc/core':
-        optional: true
-      postcss:
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
-      '@microsoft/api-extractor': 7.38.3(@types/node@20.9.1)
-      bundle-require: 4.0.2(esbuild@0.19.5)
-      cac: 6.7.14
-      chokidar: 3.5.3
-      debug: 4.3.4
-      esbuild: 0.19.5
-      execa: 5.1.1
-      globby: 11.1.0
-      joycon: 3.1.1
-      postcss: 8.4.31
-      postcss-load-config: 4.0.1(postcss@8.4.31)
-      resolve-from: 5.0.0
-      rollup: 4.4.1
-      source-map: 0.8.0-beta.0
-      sucrase: 3.32.0
-      tree-kill: 1.2.2
-      typescript: 5.2.2
-    transitivePeerDependencies:
-      - supports-color
-      - ts-node

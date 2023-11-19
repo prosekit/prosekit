@@ -151,8 +151,19 @@ function patchCssClassNames(code: string): string {
   const shortcutNames = Object.keys(shortcuts).sort(
     (a, b) => b.length - a.length,
   )
-  const regex = new RegExp(`\\b(${shortcutNames.join('|')})\\b`, 'g')
-  return code.replace(regex, (match) => shortcuts[match])
+
+  return (
+    code
+      // Replace " with ', because some class names contain "
+      .replace(
+        new RegExp(`\"(${shortcutNames.join('|')})\"`, 'g'),
+        (match) => `'` + shortcuts[match.slice(1, -1)] + `'`,
+      )
+      .replace(
+        new RegExp(`\\b(${shortcutNames.join('|')})\\b`, 'g'),
+        (match) => shortcuts[match],
+      )
+  )
 }
 
 function clone<T>(value: T): T {

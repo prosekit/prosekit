@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.1.5
+
+### Patch Changes
+
+- [e523df5] ![@prosekit/lit](https://img.shields.io/badge/prosekit%2Flit-444444?logo=lit)
+
+  Improve the position strategy of the autocomplete popover, and fix the flash of the popover when it is opened.
+
+- [e523df5] ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  The `insertNode` command will place the text selection into the inserted node.
+
+- [e523df5] ![@prosekit/extensions](https://img.shields.io/badge/prosekit%2Fextensions-444444)
+
+  Add `insertList` command.
+
 ## 0.1.4
 
 ### Patch Changes

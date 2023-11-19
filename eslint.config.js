@@ -46,7 +46,8 @@ const configs = [
       '**/.temp',
       '**/.tsup',
       '**/config-tsup.d.ts',
-      '**/vite.*.timestamp-*.mjs',
+      '**/vite.config.ts.timestamp*',
+      '**/tsup.config.bundled*',
     ],
   },
 ]

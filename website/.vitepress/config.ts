@@ -108,6 +108,10 @@ export default defineConfig({
               text: 'Inline Popover',
               link: '/guide/components/inline-popover',
             },
+            {
+              text: 'Autocomplete',
+              link: '/guide/components/autocomplete',
+            },
           ],
         },
 

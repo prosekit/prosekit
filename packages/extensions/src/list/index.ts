@@ -5,6 +5,7 @@ import {
   defineKeymap,
   defineNodeSpec,
   definePlugin,
+  insertNode,
   union,
   withPriority,
 } from '@prosekit/core'
@@ -21,6 +22,7 @@ import {
   createWrapInListCommand,
   listInputRules,
   listKeymap,
+  type ListAttributes,
 } from 'prosemirror-flat-list'
 
 export function defineListSpec() {
@@ -54,6 +56,9 @@ export function defineListCommands() {
     toggleList: createToggleListCommand,
     unwrapList: createUnwrapListCommand,
     wrapInList: createWrapInListCommand,
+    insertList: (attrs?: ListAttributes) => {
+      return insertNode({ type: 'list', attrs })
+    },
   })
 }
 

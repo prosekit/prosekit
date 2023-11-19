@@ -10,12 +10,12 @@ export const defaultPopoverOptions: PopoverOptions = {
     size({
       apply: ({ availableWidth, availableHeight, elements }) => {
         elements.floating.style.setProperty(
-          '--prosekit-popover-available-width',
+          'max-width',
           `${Math.floor(availableWidth)}px`,
         )
 
         elements.floating.style.setProperty(
-          '--prosekit-popover-available-height',
+          'max-height',
           `${Math.floor(availableHeight)}px`,
         )
       },

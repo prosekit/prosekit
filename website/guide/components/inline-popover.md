@@ -1,6 +1,6 @@
 # Inline Popover
 
-A popup that that floating around the current selected text. It can be used to built an inline menu.
+A popup floating around the current selected text. It can be used to built an inline menu.
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'

@@ -66,10 +66,6 @@ export class AutocompletePopoverController implements ReactiveController {
       this.onChange(query ?? '', !!this.reference)
       this.handleDismiss = options.ignoreMatch
       this.handleSubmit = options.deleteMatch
-
-      setTimeout(() => {
-        this.host.requestUpdate()
-      }, 0)
     }
 
     const handleLeave = () => {

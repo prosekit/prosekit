@@ -33,7 +33,7 @@
     "@size-limit/preset-small-lib": "^11.0.0",
     "@vitest/coverage-istanbul": "^0.34.6",
     "cross-env": "^7.0.3",
-    "eslint": "^8.53.0",
+    "eslint": "^8.54.0",
     "jsdom": "^22.1.0",
     "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.12.2",
@@ -42,7 +42,7 @@
     "size-limit": "^11.0.0",
     "turbo": "^1.10.16",
     "typescript": "^5.2.2",
-    "unocss": "^0.57.5",
+    "unocss": "^0.57.6",
     "vitest": "^0.34.6"
   },
   "pnpm": {

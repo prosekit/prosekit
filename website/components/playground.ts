@@ -79,7 +79,10 @@ export const Playground = defineComponent<PlaygroundProps>(
                 hidden: true,
                 code: dedent`
                   export default {
-                    plugins: { tailwindcss: {} }
+                    plugins: {
+                      'tailwindcss/nesting': {},
+                      'tailwindcss': {}
+                    }
                   }
                 `,
               },

@@ -30,6 +30,7 @@ jobs:
           pnpm install
         env:
           PR_NUMBER: ${{ github.event.issue.number }}
+          GH_TOKEN: ${{ github.token }}
 
       - name: Add changeset
         run: cp config/snapshot-changeset.md .changeset/

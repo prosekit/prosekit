@@ -27,13 +27,9 @@ async function getConfig(options?: Options): Promise<Options> {
     sourcemap: false,
     clean: false,
     noExternal: [/\.css$/i],
-
-    // Disable DTS during local development for faster build speed
-    experimentalDts: process.env.CI
-      ? {
-          entry: removeCssEntryPoints(entryPoints),
-        }
-      : undefined,
+    experimentalDts: {
+      entry: removeCssEntryPoints(entryPoints),
+    },
   }
 
   const merged: Options = { ...defaultOptions, ...options }

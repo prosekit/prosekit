@@ -5,6 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
+  typedoc-plugin-mdn-links: 3.1.0
   tsup: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
 
 patchedDependencies:
@@ -671,8 +672,8 @@ importers:
         specifier: ^4.0.0-next.29
         version: 4.0.0-next.29(typedoc@0.25.3)
       typedoc-plugin-mdn-links:
-        specifier: ^3.1.4
-        version: 3.1.4(typedoc@0.25.3)
+        specifier: 3.1.0
+        version: 3.1.0(typedoc@0.25.3)
       typescript:
         specifier: ^5.2.2
         version: 5.2.2
@@ -10042,8 +10043,8 @@ packages:
       typedoc: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
     dev: true
 
-  /typedoc-plugin-mdn-links@3.1.4(typedoc@0.25.3):
-    resolution: {integrity: sha512-uChw0fOIQQOyte+SBVPyeORAvxVmABycG28hIFJCagLHPW6ZxuvvDPcGvD4Wb2dJ8TW9y9pneYqQR+UW2/DhhA==}
+  /typedoc-plugin-mdn-links@3.1.0(typedoc@0.25.3):
+    resolution: {integrity: sha512-4uwnkvywPFV3UVx7WXpIWTHJdXH1rlE2e4a1WsSwCFYKqJxgTmyapv3ZxJtbSl1dvnb6jmuMNSqKEPz77Gs2OA==}
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x'
     dependencies:

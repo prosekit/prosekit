@@ -47,6 +47,7 @@
   },
   "pnpm": {
     "overrides": {
+      "typedoc-plugin-mdn-links": "3.1.0",
       "tsup": "https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a"
     },
     "patchedDependencies": {

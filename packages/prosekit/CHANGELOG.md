@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.1.6
+
+### Patch Changes
+
+- [390d324] ![prosekit](https://img.shields.io/badge/prosekit-444444)
+
+  Fix bundled `.d.ts` files.
+
 ## 0.1.5
 
 ### Patch Changes

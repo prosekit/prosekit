@@ -1,6 +1,8 @@
 import { basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import stringHash from '@sindresorhus/string-hash'
+
 import { readExampleMeta } from './example-meta'
 import { vfs } from './virtual-file-system'
 
@@ -25,7 +27,8 @@ function getPageContent(names: string[]): string {
   const pathLines: string[] = []
   const htmlLines: string[] = []
 
-  names.forEach((name, index) => {
+  names.forEach((name) => {
+    const id = stringHash(name)
     const framework = name.split('-')[0]
 
     const ext = {
@@ -40,10 +43,10 @@ function getPageContent(names: string[]): string {
       return null
     }
 
-    importLines.push(`import E${index} from '../examples/${name}/App.${ext}'`)
+    importLines.push(`import E${id} from '../examples/${name}/App.${ext}'`)
     pathLines.push(`  { params: { example: '${name}' } },`)
     htmlLines.push(
-      `  {example === '${name}' && <E${index} client:only="${framework}" />}`,
+      `  {example === '${name}' && <E${id} client:only="${framework}" />}`,
     )
   })
 

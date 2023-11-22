@@ -1,4 +1,4 @@
-import React from 'react'
+import type { ReactNode } from 'react'
 
 export default function ToggleButton({
   active,
@@ -9,7 +9,7 @@ export default function ToggleButton({
   active?: boolean
   available: boolean
   onChange: () => void
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <button

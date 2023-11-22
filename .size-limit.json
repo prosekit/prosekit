@@ -84,6 +84,10 @@
     "path": "packages/prosekit/dist/extensions/placeholder/style.css"
   },
   {
+    "name": "prosekit/extensions/readonly",
+    "path": "packages/prosekit/dist/prosekit-extensions-readonly.js"
+  },
+  {
     "name": "prosekit/extensions/strike",
     "path": "packages/prosekit/dist/prosekit-extensions-strike.js"
   },

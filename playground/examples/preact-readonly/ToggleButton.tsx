@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import type { ComponentChild } from 'preact'
 
 export default function ToggleButton({
   active,
@@ -9,7 +9,7 @@ export default function ToggleButton({
   active?: boolean
   available: boolean
   onChange: () => void
-  children: ReactNode
+  children: ComponentChild
 }) {
   return (
     <button
@@ -17,7 +17,7 @@ export default function ToggleButton({
       onMouseDown={(event) => event.preventDefault()}
       onClick={() => onChange()}
       disabled={!available}
-      className="TOGGLE_BUTTON"
+      class="TOGGLE_BUTTON"
     >
       {children}
     </button>

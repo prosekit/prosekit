@@ -1,47 +1,53 @@
 ---
 // This file is generated from gen-playground-pages.ts
 import BaseLayout from '../layouts/base-layout.astro'
-import E0 from '../examples/react-minimal/App.tsx'
-import E1 from '../examples/react-heading/App.tsx'
-import E2 from '../examples/react-inline-menu/App.tsx'
-import E3 from '../examples/react-keymap/App.tsx'
-import E4 from '../examples/react-list/App.tsx'
-import E5 from '../examples/react-slash-menu/App.tsx'
-import E6 from '../examples/react-toolbar/App.tsx'
-import E7 from '../examples/react-user-menu/App.tsx'
-import E8 from '../examples/vue-minimal/App.vue'
-import E9 from '../examples/vue-bold/App.vue'
-import E10 from '../examples/vue-code/App.vue'
-import E11 from '../examples/vue-full/App.vue'
-import E12 from '../examples/vue-heading/App.vue'
-import E13 from '../examples/vue-inline-menu/App.vue'
-import E14 from '../examples/vue-italic/App.vue'
-import E15 from '../examples/vue-keymap/App.vue'
-import E16 from '../examples/vue-link/App.vue'
-import E17 from '../examples/vue-list/App.vue'
-import E18 from '../examples/vue-slash-menu/App.vue'
-import E19 from '../examples/vue-strike/App.vue'
-import E20 from '../examples/vue-toolbar/App.vue'
-import E21 from '../examples/vue-underline/App.vue'
-import E22 from '../examples/preact-minimal/App.tsx'
-import E23 from '../examples/preact-keymap/App.tsx'
-import E24 from '../examples/preact-slash-menu/App.tsx'
-import E25 from '../examples/svelte-minimal/App.svelte'
-import E26 from '../examples/svelte-bold/App.svelte'
-import E27 from '../examples/svelte-italic/App.svelte'
-import E28 from '../examples/svelte-keymap/App.svelte'
-import E29 from '../examples/svelte-list/App.svelte'
-import E30 from '../examples/svelte-slash-menu/App.svelte'
-import E31 from '../examples/solid-minimal/App.tsx'
-import E32 from '../examples/solid-heading/App.tsx'
-import E33 from '../examples/solid-keymap/App.tsx'
-import E34 from '../examples/solid-slash-menu/App.tsx'
+import E4207331782 from '../examples/react-minimal/App.tsx'
+import E252666119 from '../examples/react-heading/App.tsx'
+import E4040190458 from '../examples/react-inline-menu/App.tsx'
+import E1745952196 from '../examples/react-keymap/App.tsx'
+import E1157502443 from '../examples/react-list/App.tsx'
+import E2808803641 from '../examples/react-readonly/App.tsx'
+import E3738959724 from '../examples/react-slash-menu/App.tsx'
+import E733855346 from '../examples/react-toolbar/App.tsx'
+import E105978888 from '../examples/react-user-menu/App.tsx'
+import E449861637 from '../examples/vue-minimal/App.vue'
+import E1911994445 from '../examples/vue-bold/App.vue'
+import E1589439143 from '../examples/vue-code/App.vue'
+import E2097600771 from '../examples/vue-full/App.vue'
+import E3923017492 from '../examples/vue-heading/App.vue'
+import E3704694657 from '../examples/vue-inline-menu/App.vue'
+import E3742569998 from '../examples/vue-italic/App.vue'
+import E1518313277 from '../examples/vue-keymap/App.vue'
+import E1881772066 from '../examples/vue-link/App.vue'
+import E1429320806 from '../examples/vue-list/App.vue'
+import E3694637844 from '../examples/vue-readonly/App.vue'
+import E2937612185 from '../examples/vue-slash-menu/App.vue'
+import E4080529360 from '../examples/vue-strike/App.vue'
+import E1709246657 from '../examples/vue-toolbar/App.vue'
+import E1679720926 from '../examples/vue-underline/App.vue'
+import E2524713032 from '../examples/preact-minimal/App.tsx'
+import E1515205514 from '../examples/preact-keymap/App.tsx'
+import E613530047 from '../examples/preact-readonly/App.tsx'
+import E1898726994 from '../examples/preact-slash-menu/App.tsx'
+import E1333128888 from '../examples/svelte-minimal/App.svelte'
+import E657501006 from '../examples/svelte-bold/App.svelte'
+import E889141525 from '../examples/svelte-italic/App.svelte'
+import E3351045146 from '../examples/svelte-keymap/App.svelte'
+import E2194307417 from '../examples/svelte-list/App.svelte'
+import E3540862095 from '../examples/svelte-readonly/App.svelte'
+import E1602218818 from '../examples/svelte-slash-menu/App.svelte'
+import E2085905006 from '../examples/solid-minimal/App.tsx'
+import E2498473951 from '../examples/solid-heading/App.tsx'
+import E36393548 from '../examples/solid-keymap/App.tsx'
+import E3479383441 from '../examples/solid-readonly/App.tsx'
+import E3405394164 from '../examples/solid-slash-menu/App.tsx'
 export const getStaticPaths = () => [
   { params: { example: 'react-minimal' } },
   { params: { example: 'react-heading' } },
   { params: { example: 'react-inline-menu' } },
   { params: { example: 'react-keymap' } },
   { params: { example: 'react-list' } },
+  { params: { example: 'react-readonly' } },
   { params: { example: 'react-slash-menu' } },
   { params: { example: 'react-toolbar' } },
   { params: { example: 'react-user-menu' } },
@@ -55,61 +61,70 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-keymap' } },
   { params: { example: 'vue-link' } },
   { params: { example: 'vue-list' } },
+  { params: { example: 'vue-readonly' } },
   { params: { example: 'vue-slash-menu' } },
   { params: { example: 'vue-strike' } },
   { params: { example: 'vue-toolbar' } },
   { params: { example: 'vue-underline' } },
   { params: { example: 'preact-minimal' } },
   { params: { example: 'preact-keymap' } },
+  { params: { example: 'preact-readonly' } },
   { params: { example: 'preact-slash-menu' } },
   { params: { example: 'svelte-minimal' } },
   { params: { example: 'svelte-bold' } },
   { params: { example: 'svelte-italic' } },
   { params: { example: 'svelte-keymap' } },
   { params: { example: 'svelte-list' } },
+  { params: { example: 'svelte-readonly' } },
   { params: { example: 'svelte-slash-menu' } },
   { params: { example: 'solid-minimal' } },
   { params: { example: 'solid-heading' } },
   { params: { example: 'solid-keymap' } },
+  { params: { example: 'solid-readonly' } },
   { params: { example: 'solid-slash-menu' } },
 ]
 const { example } = Astro.params
 ---
 
 <BaseLayout>
-  {example === 'react-minimal' && <E0 client:only="react" />}
-  {example === 'react-heading' && <E1 client:only="react" />}
-  {example === 'react-inline-menu' && <E2 client:only="react" />}
-  {example === 'react-keymap' && <E3 client:only="react" />}
-  {example === 'react-list' && <E4 client:only="react" />}
-  {example === 'react-slash-menu' && <E5 client:only="react" />}
-  {example === 'react-toolbar' && <E6 client:only="react" />}
-  {example === 'react-user-menu' && <E7 client:only="react" />}
-  {example === 'vue-minimal' && <E8 client:only="vue" />}
-  {example === 'vue-bold' && <E9 client:only="vue" />}
-  {example === 'vue-code' && <E10 client:only="vue" />}
-  {example === 'vue-full' && <E11 client:only="vue" />}
-  {example === 'vue-heading' && <E12 client:only="vue" />}
-  {example === 'vue-inline-menu' && <E13 client:only="vue" />}
-  {example === 'vue-italic' && <E14 client:only="vue" />}
-  {example === 'vue-keymap' && <E15 client:only="vue" />}
-  {example === 'vue-link' && <E16 client:only="vue" />}
-  {example === 'vue-list' && <E17 client:only="vue" />}
-  {example === 'vue-slash-menu' && <E18 client:only="vue" />}
-  {example === 'vue-strike' && <E19 client:only="vue" />}
-  {example === 'vue-toolbar' && <E20 client:only="vue" />}
-  {example === 'vue-underline' && <E21 client:only="vue" />}
-  {example === 'preact-minimal' && <E22 client:only="preact" />}
-  {example === 'preact-keymap' && <E23 client:only="preact" />}
-  {example === 'preact-slash-menu' && <E24 client:only="preact" />}
-  {example === 'svelte-minimal' && <E25 client:only="svelte" />}
-  {example === 'svelte-bold' && <E26 client:only="svelte" />}
-  {example === 'svelte-italic' && <E27 client:only="svelte" />}
-  {example === 'svelte-keymap' && <E28 client:only="svelte" />}
-  {example === 'svelte-list' && <E29 client:only="svelte" />}
-  {example === 'svelte-slash-menu' && <E30 client:only="svelte" />}
-  {example === 'solid-minimal' && <E31 client:only="solid" />}
-  {example === 'solid-heading' && <E32 client:only="solid" />}
-  {example === 'solid-keymap' && <E33 client:only="solid" />}
-  {example === 'solid-slash-menu' && <E34 client:only="solid" />}
+  {example === 'react-minimal' && <E4207331782 client:only="react" />}
+  {example === 'react-heading' && <E252666119 client:only="react" />}
+  {example === 'react-inline-menu' && <E4040190458 client:only="react" />}
+  {example === 'react-keymap' && <E1745952196 client:only="react" />}
+  {example === 'react-list' && <E1157502443 client:only="react" />}
+  {example === 'react-readonly' && <E2808803641 client:only="react" />}
+  {example === 'react-slash-menu' && <E3738959724 client:only="react" />}
+  {example === 'react-toolbar' && <E733855346 client:only="react" />}
+  {example === 'react-user-menu' && <E105978888 client:only="react" />}
+  {example === 'vue-minimal' && <E449861637 client:only="vue" />}
+  {example === 'vue-bold' && <E1911994445 client:only="vue" />}
+  {example === 'vue-code' && <E1589439143 client:only="vue" />}
+  {example === 'vue-full' && <E2097600771 client:only="vue" />}
+  {example === 'vue-heading' && <E3923017492 client:only="vue" />}
+  {example === 'vue-inline-menu' && <E3704694657 client:only="vue" />}
+  {example === 'vue-italic' && <E3742569998 client:only="vue" />}
+  {example === 'vue-keymap' && <E1518313277 client:only="vue" />}
+  {example === 'vue-link' && <E1881772066 client:only="vue" />}
+  {example === 'vue-list' && <E1429320806 client:only="vue" />}
+  {example === 'vue-readonly' && <E3694637844 client:only="vue" />}
+  {example === 'vue-slash-menu' && <E2937612185 client:only="vue" />}
+  {example === 'vue-strike' && <E4080529360 client:only="vue" />}
+  {example === 'vue-toolbar' && <E1709246657 client:only="vue" />}
+  {example === 'vue-underline' && <E1679720926 client:only="vue" />}
+  {example === 'preact-minimal' && <E2524713032 client:only="preact" />}
+  {example === 'preact-keymap' && <E1515205514 client:only="preact" />}
+  {example === 'preact-readonly' && <E613530047 client:only="preact" />}
+  {example === 'preact-slash-menu' && <E1898726994 client:only="preact" />}
+  {example === 'svelte-minimal' && <E1333128888 client:only="svelte" />}
+  {example === 'svelte-bold' && <E657501006 client:only="svelte" />}
+  {example === 'svelte-italic' && <E889141525 client:only="svelte" />}
+  {example === 'svelte-keymap' && <E3351045146 client:only="svelte" />}
+  {example === 'svelte-list' && <E2194307417 client:only="svelte" />}
+  {example === 'svelte-readonly' && <E3540862095 client:only="svelte" />}
+  {example === 'svelte-slash-menu' && <E1602218818 client:only="svelte" />}
+  {example === 'solid-minimal' && <E2085905006 client:only="solid" />}
+  {example === 'solid-heading' && <E2498473951 client:only="solid" />}
+  {example === 'solid-keymap' && <E36393548 client:only="solid" />}
+  {example === 'solid-readonly' && <E3479383441 client:only="solid" />}
+  {example === 'solid-slash-menu' && <E3405394164 client:only="solid" />}
 </BaseLayout>

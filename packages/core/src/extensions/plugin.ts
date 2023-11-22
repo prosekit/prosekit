@@ -1,5 +1,5 @@
 import { Schema } from '@prosekit/pm/model'
-import { Plugin, type EditorStateConfig } from '@prosekit/pm/state'
+import { Plugin } from '@prosekit/pm/state'
 
 import { Facet } from '../facets/facet'
 import { stateFacet, type StatePayload } from '../facets/state'
@@ -43,10 +43,23 @@ export type PluginPayload = (context: { schema: Schema }) => Plugin | Plugin[]
  * @internal
  */
 export const pluginFacet = Facet.define<PluginPayload, StatePayload>({
-  convert: (callbacks: PluginPayload[]): StatePayload => {
-    return ({ schema }): EditorStateConfig => {
-      const plugins = callbacks.flatMap((func) => func({ schema }))
+  converter: () => {
+    let inputs: PluginPayload[] = []
+
+    const output: StatePayload = ({ schema }) => {
+      const plugins = inputs.flatMap((func) => func({ schema }))
       return { plugins }
+    }
+
+    return {
+      create: (payloads: PluginPayload[]) => {
+        inputs = payloads
+        return output
+      },
+      update: (payloads: PluginPayload[]) => {
+        inputs = payloads
+        return output
+      },
     }
   },
   next: stateFacet,

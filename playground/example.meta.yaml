@@ -41,6 +41,18 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: react-readonly
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: ToggleButton.tsx
+        hidden: false
+      - path: Toolbar.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-readonly.ts
+        hidden: false
   - name: react-slash-menu
     files:
       - path: App.tsx
@@ -173,6 +185,18 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: vue-readonly
+    files:
+      - path: App.vue
+        hidden: false
+      - path: ToggleButton.vue
+        hidden: false
+      - path: Toolbar.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-readonly.ts
+        hidden: false
   - name: vue-slash-menu
     files:
       - path: App.vue
@@ -217,6 +241,18 @@ examples:
         hidden: false
       - path: KeymapConfig.tsx
         hidden: false
+  - name: preact-readonly
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: ToggleButton.tsx
+        hidden: false
+      - path: Toolbar.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-readonly.ts
+        hidden: false
   - name: preact-slash-menu
     files:
       - path: App.tsx
@@ -257,6 +293,18 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+  - name: svelte-readonly
+    files:
+      - path: App.svelte
+        hidden: false
+      - path: ToggleButton.svelte
+        hidden: false
+      - path: Toolbar.svelte
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-readonly.ts
+        hidden: false
   - name: svelte-slash-menu
     files:
       - path: App.svelte
@@ -284,6 +332,18 @@ examples:
       - path: App.tsx
         hidden: false
       - path: KeymapConfig.tsx
+        hidden: false
+  - name: solid-readonly
+    files:
+      - path: App.tsx
+        hidden: false
+      - path: ToggleButton.tsx
+        hidden: false
+      - path: Toolbar.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: use-readonly.ts
         hidden: false
   - name: solid-slash-menu
     files:

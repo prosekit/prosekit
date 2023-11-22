@@ -46,6 +46,7 @@
     "./extensions/mention": "./src/extensions/mention.gen.ts",
     "./extensions/placeholder": "./src/extensions/placeholder.gen.ts",
     "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
+    "./extensions/readonly": "./src/extensions/readonly.gen.ts",
     "./extensions/strike": "./src/extensions/strike.gen.ts",
     "./extensions/suggestion": "./src/extensions/suggestion.gen.ts",
     "./extensions/underline": "./src/extensions/underline.gen.ts",
@@ -282,6 +283,11 @@
       },
       "./extensions/placeholder/style.css": {
         "default": "./dist/extensions/placeholder/style.css"
+      },
+      "./extensions/readonly": {
+        "types": "./dist/prosekit-extensions-readonly.d.ts",
+        "import": "./dist/prosekit-extensions-readonly.js",
+        "default": "./dist/prosekit-extensions-readonly.js"
       },
       "./extensions/strike": {
         "types": "./dist/prosekit-extensions-strike.d.ts",
@@ -729,6 +735,9 @@
         ],
         "extensions/placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"
+        ],
+        "extensions/readonly": [
+          "./dist/prosekit-extensions-readonly.d.ts"
         ],
         "extensions/strike": [
           "./dist/prosekit-extensions-strike.d.ts"

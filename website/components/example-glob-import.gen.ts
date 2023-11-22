@@ -18,6 +18,11 @@ const modules = import.meta.glob([
   "../../playground/examples/react-list/ToggleButton.tsx",
   "../../playground/examples/react-list/Toolbar.tsx",
   "../../playground/examples/react-list/extension.ts",
+  "../../playground/examples/react-readonly/App.tsx",
+  "../../playground/examples/react-readonly/ToggleButton.tsx",
+  "../../playground/examples/react-readonly/Toolbar.tsx",
+  "../../playground/examples/react-readonly/extension.ts",
+  "../../playground/examples/react-readonly/use-readonly.ts",
   "../../playground/examples/react-slash-menu/App.tsx",
   "../../playground/examples/react-slash-menu/SlashMenu.tsx",
   "../../playground/examples/react-slash-menu/extension.ts",
@@ -71,6 +76,11 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-list/ToggleButton.vue",
   "../../playground/examples/vue-list/Toolbar.vue",
   "../../playground/examples/vue-list/extension.ts",
+  "../../playground/examples/vue-readonly/App.vue",
+  "../../playground/examples/vue-readonly/ToggleButton.vue",
+  "../../playground/examples/vue-readonly/Toolbar.vue",
+  "../../playground/examples/vue-readonly/extension.ts",
+  "../../playground/examples/vue-readonly/use-readonly.ts",
   "../../playground/examples/vue-slash-menu/App.vue",
   "../../playground/examples/vue-slash-menu/SlashMenu.vue",
   "../../playground/examples/vue-slash-menu/extension.ts",
@@ -87,6 +97,11 @@ const modules = import.meta.glob([
   "../../playground/examples/preact-minimal/App.tsx",
   "../../playground/examples/preact-keymap/App.tsx",
   "../../playground/examples/preact-keymap/KeymapConfig.tsx",
+  "../../playground/examples/preact-readonly/App.tsx",
+  "../../playground/examples/preact-readonly/ToggleButton.tsx",
+  "../../playground/examples/preact-readonly/Toolbar.tsx",
+  "../../playground/examples/preact-readonly/extension.ts",
+  "../../playground/examples/preact-readonly/use-readonly.ts",
   "../../playground/examples/preact-slash-menu/App.tsx",
   "../../playground/examples/preact-slash-menu/SlashMenu.tsx",
   "../../playground/examples/preact-slash-menu/extension.ts",
@@ -101,6 +116,11 @@ const modules = import.meta.glob([
   "../../playground/examples/svelte-keymap/KeymapConfig.svelte",
   "../../playground/examples/svelte-list/App.svelte",
   "../../playground/examples/svelte-list/extension.ts",
+  "../../playground/examples/svelte-readonly/App.svelte",
+  "../../playground/examples/svelte-readonly/ToggleButton.svelte",
+  "../../playground/examples/svelte-readonly/Toolbar.svelte",
+  "../../playground/examples/svelte-readonly/extension.ts",
+  "../../playground/examples/svelte-readonly/use-readonly.ts",
   "../../playground/examples/svelte-slash-menu/App.svelte",
   "../../playground/examples/svelte-slash-menu/SlashMenu.svelte",
   "../../playground/examples/svelte-slash-menu/extension.ts",
@@ -111,6 +131,11 @@ const modules = import.meta.glob([
   "../../playground/examples/solid-heading/extension.ts",
   "../../playground/examples/solid-keymap/App.tsx",
   "../../playground/examples/solid-keymap/KeymapConfig.tsx",
+  "../../playground/examples/solid-readonly/App.tsx",
+  "../../playground/examples/solid-readonly/ToggleButton.tsx",
+  "../../playground/examples/solid-readonly/Toolbar.tsx",
+  "../../playground/examples/solid-readonly/extension.ts",
+  "../../playground/examples/solid-readonly/use-readonly.ts",
   "../../playground/examples/solid-slash-menu/App.tsx",
   "../../playground/examples/solid-slash-menu/SlashMenu.tsx",
   "../../playground/examples/solid-slash-menu/extension.ts",
@@ -193,6 +218,28 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-list/extension.ts']
+    }
+  },
+  "react-readonly": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-readonly/App.tsx']
+    },
+    "/ToggleButton.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-readonly/ToggleButton.tsx']
+    },
+    "/Toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-readonly/Toolbar.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-readonly/extension.ts']
+    },
+    "/use-readonly.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-readonly/use-readonly.ts']
     }
   },
   "react-slash-menu": {
@@ -433,6 +480,28 @@ const examples = {
       "code": modules['../../playground/examples/vue-list/extension.ts']
     }
   },
+  "vue-readonly": {
+    "/App.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-readonly/App.vue']
+    },
+    "/ToggleButton.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-readonly/ToggleButton.vue']
+    },
+    "/Toolbar.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-readonly/Toolbar.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-readonly/extension.ts']
+    },
+    "/use-readonly.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-readonly/use-readonly.ts']
+    }
+  },
   "vue-slash-menu": {
     "/App.vue": {
       "hidden": false,
@@ -509,6 +578,28 @@ const examples = {
       "code": modules['../../playground/examples/preact-keymap/KeymapConfig.tsx']
     }
   },
+  "preact-readonly": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-readonly/App.tsx']
+    },
+    "/ToggleButton.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-readonly/ToggleButton.tsx']
+    },
+    "/Toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-readonly/Toolbar.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-readonly/extension.ts']
+    },
+    "/use-readonly.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-readonly/use-readonly.ts']
+    }
+  },
   "preact-slash-menu": {
     "/App.tsx": {
       "hidden": false,
@@ -577,6 +668,28 @@ const examples = {
       "code": modules['../../playground/examples/svelte-list/extension.ts']
     }
   },
+  "svelte-readonly": {
+    "/App.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-readonly/App.svelte']
+    },
+    "/ToggleButton.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-readonly/ToggleButton.svelte']
+    },
+    "/Toolbar.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-readonly/Toolbar.svelte']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-readonly/extension.ts']
+    },
+    "/use-readonly.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-readonly/use-readonly.ts']
+    }
+  },
   "svelte-slash-menu": {
     "/App.svelte": {
       "hidden": false,
@@ -623,6 +736,28 @@ const examples = {
     "/KeymapConfig.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/solid-keymap/KeymapConfig.tsx']
+    }
+  },
+  "solid-readonly": {
+    "/App.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-readonly/App.tsx']
+    },
+    "/ToggleButton.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-readonly/ToggleButton.tsx']
+    },
+    "/Toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-readonly/Toolbar.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-readonly/extension.ts']
+    },
+    "/use-readonly.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-readonly/use-readonly.ts']
     }
   },
   "solid-slash-menu": {

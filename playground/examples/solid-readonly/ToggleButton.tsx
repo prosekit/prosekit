@@ -1,23 +1,22 @@
-import type { ReactNode } from 'react'
+import type { ParentProps } from 'solid-js'
 
 export default function ToggleButton({
   active,
   available,
   onChange,
   children,
-}: {
-  active?: boolean
-  available: boolean
+}: ParentProps<{
+  active: () => boolean
+  available: () => boolean
   onChange: () => void
-  children: ReactNode
-}) {
+}>) {
   return (
     <button
-      data-state={active ? 'on' : 'off'}
+      data-state={active() ? 'on' : 'off'}
       onMouseDown={(event) => event.preventDefault()}
       onClick={() => onChange()}
-      disabled={!available}
-      className="TOGGLE_BUTTON"
+      disabled={!available()}
+      class="TOGGLE_BUTTON"
     >
       {children}
     </button>

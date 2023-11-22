@@ -23,6 +23,10 @@ export const exampleItems = [
     "link": "/examples/react-list"
   },
   {
+    "text": "react-readonly",
+    "link": "/examples/react-readonly"
+  },
+  {
     "text": "react-slash-menu",
     "link": "/examples/react-slash-menu"
   },
@@ -75,6 +79,10 @@ export const exampleItems = [
     "link": "/examples/vue-list"
   },
   {
+    "text": "vue-readonly",
+    "link": "/examples/vue-readonly"
+  },
+  {
     "text": "vue-slash-menu",
     "link": "/examples/vue-slash-menu"
   },
@@ -97,6 +105,10 @@ export const exampleItems = [
   {
     "text": "preact-keymap",
     "link": "/examples/preact-keymap"
+  },
+  {
+    "text": "preact-readonly",
+    "link": "/examples/preact-readonly"
   },
   {
     "text": "preact-slash-menu",
@@ -123,6 +135,10 @@ export const exampleItems = [
     "link": "/examples/svelte-list"
   },
   {
+    "text": "svelte-readonly",
+    "link": "/examples/svelte-readonly"
+  },
+  {
     "text": "svelte-slash-menu",
     "link": "/examples/svelte-slash-menu"
   },
@@ -137,6 +153,10 @@ export const exampleItems = [
   {
     "text": "solid-keymap",
     "link": "/examples/solid-keymap"
+  },
+  {
+    "text": "solid-readonly",
+    "link": "/examples/solid-readonly"
   },
   {
     "text": "solid-slash-menu",

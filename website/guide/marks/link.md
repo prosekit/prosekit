@@ -4,7 +4,7 @@ The `link` mark is used to represent links. It will be rendered as `<a>` element
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-link/App.vue'
+import App from '../../components/vue-link/app.vue'
 </script>
 
 :::tabs key:framework

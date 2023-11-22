@@ -6,12 +6,16 @@ import { readExampleMeta } from './example-meta.js'
 import { vfs, type VirtualFile } from './virtual-file-system.js'
 
 const sharedFiles = [
-  'ToggleButton.vue',
-  'ToggleButton.tsx',
-  'ImageUploadPopover.tsx',
-  'ImageUploadPopover.vue',
-  'SlashMenu.vue',
-  'SlashMenu.tsx',
+  'use-readonly.ts',
+  'toggle.vue',
+  'toggle.tsx',
+  'toggle.svelte',
+  'image-upload-popover.tsx',
+  'image-upload-popover.vue',
+  'image-upload-popover.svelte',
+  'slash-menu.tsx',
+  'slash-menu.vue',
+  'slash-menu.svelte',
 ]
 
 export async function genExampleSharedFiles() {
@@ -19,14 +23,25 @@ export async function genExampleSharedFiles() {
   const frameworks = uniq(
     meta.examples.map((example) => example.name.split('-')[0]),
   )
-  for (const framework of frameworks) {
-    for (const file of sharedFiles) {
-      await cloneSharedFile(framework, file)
+  for (const file of sharedFiles) {
+    let found = false
+
+    for (const framework of frameworks) {
+      found ||= await cloneSharedFile(framework, file)
+    }
+
+    if (!found) {
+      console.warn(
+        `[gen-example-shared-files] Cannot found shared file: ${file}`,
+      )
     }
   }
 }
 
-async function cloneSharedFile(framework: string, sharedFile: string) {
+async function cloneSharedFile(
+  framework: string,
+  sharedFile: string,
+): Promise<boolean> {
   const meta = await readExampleMeta()
   const files: Array<{
     file: VirtualFile
@@ -53,9 +68,13 @@ async function cloneSharedFile(framework: string, sharedFile: string) {
     }
   }
 
+  if (files.length === 0) {
+    return false
+  }
+
   const contentSet = new Set(files.map((file) => file.content))
   if (contentSet.size <= 1) {
-    return
+    return true
   }
 
   const sorted = sortBy(files, (f) => -f.time)
@@ -64,4 +83,6 @@ async function cloneSharedFile(framework: string, sharedFile: string) {
   for (const file of files) {
     file.file.update(expectedContent)
   }
+
+  return true
 }

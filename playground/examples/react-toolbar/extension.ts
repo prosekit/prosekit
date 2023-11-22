@@ -4,7 +4,7 @@ import { union } from 'prosekit/core'
 import { defineCodeBlock } from 'prosekit/extensions/code-block'
 import { defineReactNodeView } from 'prosekit/react'
 
-import CodeBlockView from './CodeBlockView'
+import CodeBlockView from './code-block-view'
 
 export function defineExtension() {
   return union([

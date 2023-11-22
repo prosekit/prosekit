@@ -4,7 +4,7 @@ The `code` mark is used to represent a short fragment of computer code. It will 
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-code/App.vue'
+import App from '../../components/vue-code/app.vue'
 </script>
 
 :::tabs key:framework

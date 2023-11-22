@@ -22,15 +22,15 @@ pnpm add prosekit
 
 ::: code-group
 
-<<< @/../playground/examples/react-minimal/App.tsx [React]
+<<< @/../playground/examples/react-minimal/app.tsx [React]
 
-<<< @/../playground/examples/vue-minimal/App.vue [Vue]
+<<< @/../playground/examples/vue-minimal/app.vue [Vue]
 
-<<< @/../playground/examples/preact-minimal/App.tsx [Preact]
+<<< @/../playground/examples/preact-minimal/app.tsx [Preact]
 
-<<< @/../playground/examples/svelte-minimal/App.svelte [Svelte]
+<<< @/../playground/examples/svelte-minimal/app.svelte [Svelte]
 
-<<< @/../playground/examples/solid-minimal/App.tsx [Solid]
+<<< @/../playground/examples/solid-minimal/app.tsx [Solid]
 
 <<< @/../playground/examples/vanilla/index.js [Vanilla]
 

@@ -4,7 +4,7 @@ A popup that shows a list of suggestions based on the text before the text curso
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-slash-menu/App.vue'
+import App from '../../components/vue-slash-menu/app.vue'
 </script>
 
 :::tabs key:framework
@@ -21,8 +21,8 @@ import App from '../../components/vue-slash-menu/App.vue'
 
 ::: code-group
 
-<<< @/../playground/examples/react-slash-menu/SlashMenu.tsx [React]
-<<< @/../playground/examples/vue-slash-menu/SlashMenu.vue [Vue]
+<<< @/../playground/examples/react-slash-menu/slash-menu.tsx [React]
+<<< @/../playground/examples/vue-slash-menu/slash-menu.vue [Vue]
 
 :::
 

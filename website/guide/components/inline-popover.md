@@ -21,8 +21,8 @@ import App from '../../components/vue-inline-menu/app.vue'
 
 ::: code-group
 
-<<< @/../playground/examples/react-inline-menu/InlineMenu.tsx [React]
-<<< @/../playground/examples/vue-inline-menu/InlineMenu.vue [Vue]
+<<< @/../playground/examples/react-inline-menu/inline-menu.tsx [React]
+<<< @/../playground/examples/vue-inline-menu/inline-menu.vue [Vue]
 
 :::
 

@@ -5,8 +5,8 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
+  typescript: ~5.2.2
   typedoc-plugin-mdn-links: 3.1.0
-  tsup: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
 
 patchedDependencies:
   prosemirror-highlightjs@0.9.1:
@@ -34,7 +34,7 @@ importers:
         version: 0.21.0
       '@ocavue/eslint-config':
         specifier: ^1.3.1
-        version: 1.3.1(eslint@8.54.0)(typescript@5.3.2)
+        version: 1.3.1(eslint@8.54.0)(typescript@5.2.2)
       '@size-limit/esbuild-why':
         specifier: ^11.0.0
         version: 11.0.0(size-limit@11.0.0)
@@ -61,7 +61,7 @@ importers:
         version: 0.12.2
       prettier-plugin-svelte:
         specifier: ^3.1.1
-        version: 3.1.1(prettier@3.1.0)(svelte@4.2.7)
+        version: 3.1.1(prettier@3.1.0)(svelte@4.2.5)
       prettier-plugin-tailwindcss:
         specifier: ^0.5.7
         version: 0.5.7(prettier-plugin-astro@0.12.2)(prettier-plugin-svelte@3.1.1)(prettier@3.1.0)
@@ -72,8 +72,8 @@ importers:
         specifier: ^1.10.16
         version: 1.10.16
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       unocss:
         specifier: ^0.57.7
         version: 0.57.7(postcss@8.4.31)(vite@4.5.0)
@@ -100,11 +100,11 @@ importers:
         specifier: ^3.3.5
         version: 3.3.5
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)'
+        specifier: ^8.0.1
+        version: 8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@22.1.0)
@@ -125,11 +125,11 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)'
+        specifier: ^8.0.1
+        version: 8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@22.1.0)
@@ -164,8 +164,8 @@ importers:
         specifier: ^10.1.0
         version: 10.1.0
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)'
+        specifier: ^8.0.1
+        version: 8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       write-pkg:
         specifier: ^6.0.1
         version: 6.0.1
@@ -201,8 +201,8 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
 
   packages/extensions:
     dependencies:
@@ -226,11 +226,11 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)'
+        specifier: ^8.0.1
+        version: 8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@22.1.0)
@@ -266,17 +266,17 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)'
+        specifier: ^8.0.1
+        version: 8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@22.1.0)
       vue:
         specifier: ^3.3.8
-        version: 3.3.8(typescript@5.3.2)
+        version: 3.3.8(typescript@5.2.2)
 
   packages/pm:
     dependencies:
@@ -309,11 +309,11 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)'
+        specifier: ^8.0.1
+        version: 8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@22.1.0)
@@ -334,11 +334,11 @@ importers:
         specifier: ^10.19.2
         version: 10.19.2
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)'
+        specifier: ^8.0.1
+        version: 8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@22.1.0)
@@ -401,14 +401,14 @@ importers:
         specifier: ^4.2.7
         version: 4.2.7
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)'
+        specifier: ^8.0.1
+        version: 8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       vue:
         specifier: ^3.3.8
-        version: 3.3.8(typescript@5.3.2)
+        version: 3.3.8(typescript@5.2.2)
 
   packages/react:
     dependencies:
@@ -441,11 +441,11 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)'
+        specifier: ^8.0.1
+        version: 8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@22.1.0)
@@ -466,11 +466,11 @@ importers:
         specifier: ^1.8.5
         version: 1.8.5
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)'
+        specifier: ^8.0.1
+        version: 8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@22.1.0)
@@ -489,7 +489,7 @@ importers:
         version: link:../dev
       '@sveltejs/package':
         specifier: ^2.2.2
-        version: 2.2.2(svelte@4.2.7)(typescript@5.3.2)
+        version: 2.2.2(svelte@4.2.7)(typescript@5.2.2)
       '@types/node':
         specifier: ^20.9.4
         version: 20.9.4
@@ -506,8 +506,8 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@22.1.0)
@@ -525,17 +525,17 @@ importers:
         specifier: '*'
         version: link:../dev
       tsup:
-        specifier: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a
-        version: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)'
+        specifier: ^8.0.1
+        version: 8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2)
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       vitest:
         specifier: ^0.34.6
         version: 0.34.6(jsdom@22.1.0)
       vue:
         specifier: ^3.3.8
-        version: 3.3.8(typescript@5.3.2)
+        version: 3.3.8(typescript@5.2.2)
 
   playground:
     devDependencies:
@@ -550,7 +550,7 @@ importers:
         version: 3.0.2(solid-js@1.8.5)(vite@4.5.0)
       '@astrojs/svelte':
         specifier: ^4.0.4
-        version: 4.0.4(astro@3.5.7)(svelte@4.2.7)(typescript@5.3.2)(vite@4.5.0)
+        version: 4.0.4(astro@3.5.7)(svelte@4.2.7)(typescript@5.2.2)(vite@4.5.0)
       '@astrojs/vue':
         specifier: ^3.0.4
         version: 3.0.4(@babel/core@7.23.3)(astro@3.5.7)(vite@4.5.0)(vue@3.3.8)
@@ -571,7 +571,7 @@ importers:
         version: 18.2.17
       astro:
         specifier: ^3.5.7
-        version: 3.5.7(typescript@5.3.2)
+        version: 3.5.7(typescript@5.2.2)
       highlight.js:
         specifier: ^11.9.0
         version: 11.9.0
@@ -597,8 +597,8 @@ importers:
         specifier: ^4.2.7
         version: 4.2.7
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       unocss:
         specifier: ^0.57.7
         version: 0.57.7(postcss@8.4.31)(vite@4.5.0)
@@ -607,7 +607,7 @@ importers:
         version: 0.1.2
       vue:
         specifier: ^3.3.8
-        version: 3.3.8(typescript@5.3.2)
+        version: 3.3.8(typescript@5.2.2)
 
   website:
     devDependencies:
@@ -664,7 +664,7 @@ importers:
         version: 4.8.2
       typedoc:
         specifier: ^0.25.3
-        version: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.3.2)
+        version: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
       typedoc-plugin-external-package-links:
         specifier: ^0.1.0
         version: 0.1.0
@@ -675,8 +675,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(typedoc@0.25.3)
       typescript:
-        specifier: ^5.3.2
-        version: 5.3.2
+        specifier: ~5.2.2
+        version: 5.2.2
       unocss:
         specifier: ^0.57.7
         version: 0.57.7(postcss@8.4.31)(vite@4.5.0)
@@ -688,13 +688,13 @@ importers:
         version: 0.1.2
       vitepress:
         specifier: 1.0.0-rc.29
-        version: 1.0.0-rc.29(@algolia/client-search@4.19.1)(@types/react@18.2.38)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.3.2)
+        version: 1.0.0-rc.29(@algolia/client-search@4.19.1)(@types/react@18.2.38)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2)
       vitepress-plugin-tabs:
         specifier: ^0.5.0
         version: 0.5.0(vitepress@1.0.0-rc.29)(vue@3.3.8)
       vue:
         specifier: ^3.3.8
-        version: 3.3.8(typescript@5.3.2)
+        version: 3.3.8(typescript@5.2.2)
 
 packages:
 
@@ -881,7 +881,7 @@ packages:
       astro: ^3.0.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.5.7(typescript@5.3.2)
+      astro: 3.5.7(typescript@5.2.2)
       github-slugger: 2.0.0
       import-meta-resolve: 3.0.0
       mdast-util-definitions: 6.0.0
@@ -958,7 +958,7 @@ packages:
       - vite
     dev: true
 
-  /@astrojs/svelte@4.0.4(astro@3.5.7)(svelte@4.2.7)(typescript@5.3.2)(vite@4.5.0):
+  /@astrojs/svelte@4.0.4(astro@3.5.7)(svelte@4.2.7)(typescript@5.2.2)(vite@4.5.0):
     resolution: {integrity: sha512-7OIq3YWSq270TrJZhVNzGXB5+eCp1vyNS0+WcGixxtUSz8ciwO+PqZ6GIhvmEjbBPR0x0QS8t0p0B2qlKJu/EA==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
@@ -966,9 +966,9 @@ packages:
       svelte: ^3.55.0 || ^4.0.0 || ^5.0.0-next.1
     dependencies:
       '@sveltejs/vite-plugin-svelte': 2.5.2(svelte@4.2.7)(vite@4.5.0)
-      astro: 3.5.7(typescript@5.3.2)
+      astro: 3.5.7(typescript@5.2.2)
       svelte: 4.2.7
-      svelte2tsx: 0.6.21(svelte@4.2.7)(typescript@5.3.2)
+      svelte2tsx: 0.6.21(svelte@4.2.7)(typescript@5.2.2)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -1001,8 +1001,8 @@ packages:
       '@vitejs/plugin-vue-jsx': 3.1.0(vite@4.5.0)(vue@3.3.8)
       '@vue/babel-plugin-jsx': 1.1.5(@babel/core@7.23.3)
       '@vue/compiler-sfc': 3.3.8
-      astro: 3.5.7(typescript@5.3.2)
-      vue: 3.3.8(typescript@5.3.2)
+      astro: 3.5.7(typescript@5.2.2)
+      vue: 3.3.8(typescript@5.2.2)
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
@@ -2338,7 +2338,7 @@ packages:
       resolve: 1.22.4
       semver: 7.5.4
       source-map: 0.6.1
-      typescript: 5.0.4
+      typescript: 5.2.2
     transitivePeerDependencies:
       - '@types/node'
 
@@ -2371,18 +2371,18 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.15.0
 
-  /@ocavue/eslint-config@1.3.1(eslint@8.54.0)(typescript@5.3.2):
+  /@ocavue/eslint-config@1.3.1(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-b6OzSj1Q3C8lqubN+iuHvI4Q8CRxcjLl4QmK2zC38u7bhu3NewbXHvd4GOTIT0CoOw25YICJP+xdbv0Rh9UHTA==}
     dependencies:
       '@types/eslint': 8.44.4
       '@types/eslint-plugin-markdown': 2.0.0
-      '@typescript-eslint/eslint-plugin': 6.7.5(@typescript-eslint/parser@6.7.5)(eslint@8.54.0)(typescript@5.3.2)
-      '@typescript-eslint/parser': 6.7.5(eslint@8.54.0)(typescript@5.3.2)
+      '@typescript-eslint/eslint-plugin': 6.7.5(@typescript-eslint/parser@6.7.5)(eslint@8.54.0)(typescript@5.2.2)
+      '@typescript-eslint/parser': 6.7.5(eslint@8.54.0)(typescript@5.2.2)
       eslint-config-prettier: 9.0.0(eslint@8.54.0)
       eslint-define-config: 1.24.1
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.7.5)(eslint-plugin-import@2.28.1)(eslint@8.54.0)
-      eslint-plugin-antfu: 0.43.1(eslint@8.54.0)(typescript@5.3.2)
-      eslint-plugin-deprecation: 2.0.0(eslint@8.54.0)(typescript@5.3.2)
+      eslint-plugin-antfu: 0.43.1(eslint@8.54.0)(typescript@5.2.2)
+      eslint-plugin-deprecation: 2.0.0(eslint@8.54.0)(typescript@5.2.2)
       eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.7.5)(eslint-import-resolver-typescript@3.6.1)(eslint@8.54.0)
       eslint-plugin-jsonc: 2.10.0(eslint@8.54.0)
       eslint-plugin-markdown: 3.0.1(eslint@8.54.0)
@@ -2716,7 +2716,7 @@ packages:
     resolution: {integrity: sha512-Et940NvqU74IZauOWQdLW0dNGNL67OYSL/ULcM+I62WUmpvsAEKPR3DF0YCut6bNcN5TK67rOC1mPjiNK2O80w==}
     dev: false
 
-  /@sveltejs/package@2.2.2(svelte@4.2.7)(typescript@5.3.2):
+  /@sveltejs/package@2.2.2(svelte@4.2.7)(typescript@5.2.2):
     resolution: {integrity: sha512-rP3sVv6cAntcdcG4r4KspLU6nZYYUrHJBAX3Arrw0KJFdgxtlsi2iDwN0Jwr/vIkgjcU0ZPWM8kkT5kpZDlWAw==}
     engines: {node: ^16.14 || >=18}
     hasBin: true
@@ -2728,7 +2728,7 @@ packages:
       sade: 1.8.1
       semver: 7.5.4
       svelte: 4.2.7
-      svelte2tsx: 0.6.21(svelte@4.2.7)(typescript@5.3.2)
+      svelte2tsx: 0.6.21(svelte@4.2.7)(typescript@5.2.2)
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -2994,7 +2994,7 @@ packages:
     resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
     dev: true
 
-  /@typescript-eslint/eslint-plugin@6.7.5(@typescript-eslint/parser@6.7.5)(eslint@8.54.0)(typescript@5.3.2):
+  /@typescript-eslint/eslint-plugin@6.7.5(@typescript-eslint/parser@6.7.5)(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-JhtAwTRhOUcP96D0Y6KYnwig/MRQbOoLGXTON2+LlyB/N35SP9j1boai2zzwXb7ypKELXMx3DVk9UTaEq1vHEw==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -3006,10 +3006,10 @@ packages:
         optional: true
     dependencies:
       '@eslint-community/regexpp': 4.6.2
-      '@typescript-eslint/parser': 6.7.5(eslint@8.54.0)(typescript@5.3.2)
+      '@typescript-eslint/parser': 6.7.5(eslint@8.54.0)(typescript@5.2.2)
       '@typescript-eslint/scope-manager': 6.7.5
-      '@typescript-eslint/type-utils': 6.7.5(eslint@8.54.0)(typescript@5.3.2)
-      '@typescript-eslint/utils': 6.7.5(eslint@8.54.0)(typescript@5.3.2)
+      '@typescript-eslint/type-utils': 6.7.5(eslint@8.54.0)(typescript@5.2.2)
+      '@typescript-eslint/utils': 6.7.5(eslint@8.54.0)(typescript@5.2.2)
       '@typescript-eslint/visitor-keys': 6.7.5
       debug: 4.3.4
       eslint: 8.54.0
@@ -3017,13 +3017,13 @@ packages:
       ignore: 5.2.4
       natural-compare: 1.4.0
       semver: 7.5.4
-      ts-api-utils: 1.0.1(typescript@5.3.2)
-      typescript: 5.3.2
+      ts-api-utils: 1.0.1(typescript@5.2.2)
+      typescript: 5.2.2
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@typescript-eslint/parser@6.7.5(eslint@8.54.0)(typescript@5.3.2):
+  /@typescript-eslint/parser@6.7.5(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-bIZVSGx2UME/lmhLcjdVc7ePBwn7CLqKarUBL4me1C5feOd663liTGjMBGVcGr+BhnSLeP4SgwdvNnnkbIdkCw==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -3035,11 +3035,11 @@ packages:
     dependencies:
       '@typescript-eslint/scope-manager': 6.7.5
       '@typescript-eslint/types': 6.7.5
-      '@typescript-eslint/typescript-estree': 6.7.5(typescript@5.3.2)
+      '@typescript-eslint/typescript-estree': 6.7.5(typescript@5.2.2)
       '@typescript-eslint/visitor-keys': 6.7.5
       debug: 4.3.4
       eslint: 8.54.0
-      typescript: 5.3.2
+      typescript: 5.2.2
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3052,7 +3052,7 @@ packages:
       '@typescript-eslint/visitor-keys': 6.7.5
     dev: false
 
-  /@typescript-eslint/type-utils@6.7.5(eslint@8.54.0)(typescript@5.3.2):
+  /@typescript-eslint/type-utils@6.7.5(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-Gs0qos5wqxnQrvpYv+pf3XfcRXW6jiAn9zE/K+DlmYf6FcpxeNYN0AIETaPR7rHO4K2UY+D0CIbDP9Ut0U4m1g==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -3062,12 +3062,12 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@typescript-eslint/typescript-estree': 6.7.5(typescript@5.3.2)
-      '@typescript-eslint/utils': 6.7.5(eslint@8.54.0)(typescript@5.3.2)
+      '@typescript-eslint/typescript-estree': 6.7.5(typescript@5.2.2)
+      '@typescript-eslint/utils': 6.7.5(eslint@8.54.0)(typescript@5.2.2)
       debug: 4.3.4
       eslint: 8.54.0
-      ts-api-utils: 1.0.1(typescript@5.3.2)
-      typescript: 5.3.2
+      ts-api-utils: 1.0.1(typescript@5.2.2)
+      typescript: 5.2.2
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3077,7 +3077,7 @@ packages:
     engines: {node: ^16.0.0 || >=18.0.0}
     dev: false
 
-  /@typescript-eslint/typescript-estree@6.7.5(typescript@5.3.2):
+  /@typescript-eslint/typescript-estree@6.7.5(typescript@5.2.2):
     resolution: {integrity: sha512-NhJiJ4KdtwBIxrKl0BqG1Ur+uw7FiOnOThcYx9DpOGJ/Abc9z2xNzLeirCG02Ig3vkvrc2qFLmYSSsaITbKjlg==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -3092,13 +3092,13 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       semver: 7.5.4
-      ts-api-utils: 1.0.1(typescript@5.3.2)
-      typescript: 5.3.2
+      ts-api-utils: 1.0.1(typescript@5.2.2)
+      typescript: 5.2.2
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@typescript-eslint/utils@6.7.5(eslint@8.54.0)(typescript@5.3.2):
+  /@typescript-eslint/utils@6.7.5(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-pfRRrH20thJbzPPlPc4j0UNGvH1PjPlhlCMq4Yx7EGjV7lvEeGX0U6MJYe8+SyFutWgSHsdbJ3BXzZccYggezA==}
     engines: {node: ^16.0.0 || >=18.0.0}
     peerDependencies:
@@ -3109,7 +3109,7 @@ packages:
       '@types/semver': 7.5.0
       '@typescript-eslint/scope-manager': 6.7.5
       '@typescript-eslint/types': 6.7.5
-      '@typescript-eslint/typescript-estree': 6.7.5(typescript@5.3.2)
+      '@typescript-eslint/typescript-estree': 6.7.5(typescript@5.2.2)
       eslint: 8.54.0
       semver: 7.5.4
     transitivePeerDependencies:
@@ -3344,7 +3344,7 @@ packages:
       '@babel/plugin-transform-typescript': 7.23.3(@babel/core@7.23.3)
       '@vue/babel-plugin-jsx': 1.1.5(@babel/core@7.23.3)
       vite: 4.5.0(@types/node@20.9.4)
-      vue: 3.3.8(typescript@5.3.2)
+      vue: 3.3.8(typescript@5.2.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3357,7 +3357,7 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 4.5.0(@types/node@20.9.4)
-      vue: 3.3.8(typescript@5.3.2)
+      vue: 3.3.8(typescript@5.2.2)
     dev: true
 
   /@vitejs/plugin-vue@4.5.0(vite@5.0.0)(vue@3.3.8):
@@ -3368,7 +3368,7 @@ packages:
       vue: ^3.2.25
     dependencies:
       vite: 5.0.0
-      vue: 3.3.8(typescript@5.3.2)
+      vue: 3.3.8(typescript@5.2.2)
     dev: true
 
   /@vitest/coverage-istanbul@0.34.6(vitest@0.34.6):
@@ -3524,7 +3524,7 @@ packages:
     dependencies:
       '@vue/compiler-ssr': 3.3.8
       '@vue/shared': 3.3.8
-      vue: 3.3.8(typescript@5.3.2)
+      vue: 3.3.8(typescript@5.2.2)
     dev: true
 
   /@vue/shared@3.3.8:
@@ -3722,7 +3722,7 @@ packages:
     dependencies:
       anser: 2.1.1
       escape-carriage: 1.3.1
-      vue: 3.3.8(typescript@5.3.2)
+      vue: 3.3.8(typescript@5.2.2)
     dev: true
 
   /any-promise@1.3.0:
@@ -3840,7 +3840,7 @@ packages:
   /assertion-error@1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
 
-  /astro@3.5.7(typescript@5.3.2):
+  /astro@3.5.7(typescript@5.2.2):
     resolution: {integrity: sha512-sQiblxFOzWuqo6qdpw15AxGyvQfWa6DMlEazp2+6Ra1pK7uiuK/zxf5LZKiOeZ01Wtv4dveXOwPPwf2eN+5Wew==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
@@ -3895,7 +3895,7 @@ packages:
       shikiji: 0.6.10
       string-width: 6.1.0
       strip-ansi: 7.1.0
-      tsconfck: 3.0.0(typescript@5.3.2)
+      tsconfck: 3.0.0(typescript@5.2.2)
       unist-util-visit: 4.1.2
       vfile: 5.3.7
       vite: 4.5.0(@types/node@20.9.4)
@@ -5119,7 +5119,7 @@ packages:
       eslint-import-resolver-webpack:
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 6.7.5(eslint@8.54.0)(typescript@5.3.2)
+      '@typescript-eslint/parser': 6.7.5(eslint@8.54.0)(typescript@5.2.2)
       debug: 3.2.7
       eslint: 8.54.0
       eslint-import-resolver-node: 0.3.7
@@ -5128,27 +5128,27 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-plugin-antfu@0.43.1(eslint@8.54.0)(typescript@5.3.2):
+  /eslint-plugin-antfu@0.43.1(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-Nak+Qpy5qEK10dCXtVaabPTUmLBPLhsVKAFXAtxYGYRlY/SuuZUBhW2YIsLsixNROiICGuov8sN+eNOCC7Wb5g==}
     dependencies:
-      '@typescript-eslint/utils': 6.7.5(eslint@8.54.0)(typescript@5.3.2)
+      '@typescript-eslint/utils': 6.7.5(eslint@8.54.0)(typescript@5.2.2)
     transitivePeerDependencies:
       - eslint
       - supports-color
       - typescript
     dev: false
 
-  /eslint-plugin-deprecation@2.0.0(eslint@8.54.0)(typescript@5.3.2):
+  /eslint-plugin-deprecation@2.0.0(eslint@8.54.0)(typescript@5.2.2):
     resolution: {integrity: sha512-OAm9Ohzbj11/ZFyICyR5N6LbOIvQMp7ZU2zI7Ej0jIc8kiGUERXPNMfw2QqqHD1ZHtjMub3yPZILovYEYucgoQ==}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0
-      typescript: ^4.2.4 || ^5.0.0
+      typescript: ~5.2.2
     dependencies:
-      '@typescript-eslint/utils': 6.7.5(eslint@8.54.0)(typescript@5.3.2)
+      '@typescript-eslint/utils': 6.7.5(eslint@8.54.0)(typescript@5.2.2)
       eslint: 8.54.0
       tslib: 2.6.0
-      tsutils: 3.21.0(typescript@5.3.2)
-      typescript: 5.3.2
+      tsutils: 3.21.0(typescript@5.2.2)
+      typescript: 5.2.2
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -5163,7 +5163,7 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 6.7.5(eslint@8.54.0)(typescript@5.3.2)
+      '@typescript-eslint/parser': 6.7.5(eslint@8.54.0)(typescript@5.2.2)
       array-includes: 3.1.6
       array.prototype.findlastindex: 1.2.2
       array.prototype.flat: 1.3.1
@@ -7974,7 +7974,7 @@ packages:
   /parse-literals@1.2.1:
     resolution: {integrity: sha512-Ml0w104Ph2wwzuRdxrg9booVWsngXbB4bZ5T2z6WyF8b5oaNkUmBiDtahi34yUIpXD8Y13JjAK6UyIyApJ73RQ==}
     dependencies:
-      typescript: 4.9.5
+      typescript: 5.2.2
     dev: true
 
   /parse5@6.0.1:
@@ -8213,14 +8213,14 @@ packages:
       sass-formatter: 0.7.7
     dev: false
 
-  /prettier-plugin-svelte@3.1.1(prettier@3.1.0)(svelte@4.2.7):
+  /prettier-plugin-svelte@3.1.1(prettier@3.1.0)(svelte@4.2.5):
     resolution: {integrity: sha512-jLzaHfToav527/I5h2BMQfN3G5gylrJm54zFFyoXvUtfscI47877ftacUb+Eyse/3bXrhY+MtkyiuvruiHc+kg==}
     peerDependencies:
       prettier: ^3.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
     dependencies:
       prettier: 3.1.0
-      svelte: 4.2.7
+      svelte: 4.2.5
     dev: false
 
   /prettier-plugin-tailwindcss@0.5.7(prettier-plugin-astro@0.12.2)(prettier-plugin-svelte@3.1.1)(prettier@3.1.0):
@@ -8277,7 +8277,7 @@ packages:
     dependencies:
       prettier: 3.1.0
       prettier-plugin-astro: 0.12.2
-      prettier-plugin-svelte: 3.1.1(prettier@3.1.0)(svelte@4.2.7)
+      prettier-plugin-svelte: 3.1.1(prettier@3.1.0)(svelte@4.2.5)
     dev: false
 
   /prettier@2.8.8:
@@ -8940,7 +8940,7 @@ packages:
       clean-set: 1.1.2
       dequal: 2.0.3
       lz-string: 1.5.0
-      vue: 3.3.8(typescript@5.3.2)
+      vue: 3.3.8(typescript@5.2.2)
     transitivePeerDependencies:
       - '@lezer/common'
     dev: true
@@ -9485,8 +9485,8 @@ packages:
       picocolors: 1.0.0
       sade: 1.8.1
       svelte: 4.2.7
-      svelte-preprocess: 5.1.0(@babel/core@7.23.3)(postcss@8.4.31)(svelte@4.2.7)(typescript@5.3.2)
-      typescript: 5.3.2
+      svelte-preprocess: 5.1.0(@babel/core@7.23.3)(postcss@8.4.31)(svelte@4.2.7)(typescript@5.2.2)
+      typescript: 5.2.2
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -9508,7 +9508,7 @@ packages:
       svelte: 4.2.7
     dev: true
 
-  /svelte-preprocess@5.1.0(@babel/core@7.23.3)(postcss@8.4.31)(svelte@4.2.7)(typescript@5.3.2):
+  /svelte-preprocess@5.1.0(@babel/core@7.23.3)(postcss@8.4.31)(svelte@4.2.7)(typescript@5.2.2):
     resolution: {integrity: sha512-EkErPiDzHAc0k2MF5m6vBNmRUh338h2myhinUw/xaqsLs7/ZvsgREiLGj03VrSzbY/TB5ZXgBOsKraFee5yceA==}
     engines: {node: '>= 14.10.0'}
     requiresBuild: true
@@ -9523,7 +9523,7 @@ packages:
       stylus: ^0.55.0
       sugarss: ^2.0.0 || ^3.0.0 || ^4.0.0
       svelte: ^3.23.0 || ^4.0.0-next.0 || ^4.0.0 || ^5.0.0-next.0
-      typescript: '>=3.9.5 || ^4.0.0 || ^5.0.0'
+      typescript: ~5.2.2
     peerDependenciesMeta:
       '@babel/core':
         optional: true
@@ -9554,20 +9554,39 @@ packages:
       sorcery: 0.11.0
       strip-indent: 3.0.0
       svelte: 4.2.7
-      typescript: 5.3.2
+      typescript: 5.2.2
     dev: true
 
-  /svelte2tsx@0.6.21(svelte@4.2.7)(typescript@5.3.2):
+  /svelte2tsx@0.6.21(svelte@4.2.7)(typescript@5.2.2):
     resolution: {integrity: sha512-v+vvbiy6WDmEQdIkJpvHYxJYG/obALfH0P6CTreYO350q/9+QmFTNCOJvx0O1o59Zpzx1Bqe+qlDxP/KtJSZEA==}
     peerDependencies:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0
-      typescript: ^4.9.4 || ^5.0.0
+      typescript: ~5.2.2
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
       svelte: 4.2.7
-      typescript: 5.3.2
+      typescript: 5.2.2
     dev: true
+
+  /svelte@4.2.5:
+    resolution: {integrity: sha512-P9YPKsGkNdw4OJbtpd1uzimQHPj7Ai2sPcOHmmD6VgkFhFDmcYevQi7vE4cQ1g8/Vs64aL2TwMoCNFAzv7TPaQ==}
+    engines: {node: '>=16'}
+    dependencies:
+      '@ampproject/remapping': 2.2.1
+      '@jridgewell/sourcemap-codec': 1.4.15
+      '@jridgewell/trace-mapping': 0.3.18
+      acorn: 8.10.0
+      aria-query: 5.3.0
+      axobject-query: 3.2.1
+      code-red: 1.0.3
+      css-tree: 2.3.1
+      estree-walker: 3.0.3
+      is-reference: 3.0.1
+      locate-character: 3.0.0
+      magic-string: 0.30.5
+      periscopic: 3.1.0
+    dev: false
 
   /svelte@4.2.7:
     resolution: {integrity: sha512-UExR1KS7raTdycsUrKLtStayu4hpdV3VZQgM0akX8XbXgLBlosdE/Sf3crOgyh9xIjqSYB3UEBuUlIQKRQX2hg==}
@@ -9586,6 +9605,7 @@ packages:
       locate-character: 3.0.0
       magic-string: 0.30.5
       periscopic: 3.1.0
+    dev: true
 
   /svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
@@ -9797,29 +9817,29 @@ packages:
     resolution: {integrity: sha512-AqTiAOLcj85xS7vQ8QkAV41hPDIJ71XJB4RCUrzo/1GM2CQwhkJGaf9Hgr7BOugMRpgGUrqRg/DrBDl4H40+8g==}
     dev: true
 
-  /ts-api-utils@1.0.1(typescript@5.3.2):
+  /ts-api-utils@1.0.1(typescript@5.2.2):
     resolution: {integrity: sha512-lC/RGlPmwdrIBFTX59wwNzqh7aR2otPNPR/5brHZm/XKFYKsfqxihXUe9pU3JI+3vGkl+vyCoNNnPhJn3aLK1A==}
     engines: {node: '>=16.13.0'}
     peerDependencies:
-      typescript: '>=4.2.0'
+      typescript: ~5.2.2
     dependencies:
-      typescript: 5.3.2
+      typescript: 5.2.2
     dev: false
 
   /ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  /tsconfck@3.0.0(typescript@5.3.2):
+  /tsconfck@3.0.0(typescript@5.2.2):
     resolution: {integrity: sha512-w3wnsIrJNi7avf4Zb0VjOoodoO0woEqGgZGQm+LHH9przdUI+XDKsWAXwxHA1DaRTjeuZNcregSzr7RaA8zG9A==}
     engines: {node: ^18 || >=20}
     hasBin: true
     peerDependencies:
-      typescript: ^5.0.0
+      typescript: ~5.2.2
     peerDependenciesMeta:
       typescript:
         optional: true
     dependencies:
-      typescript: 5.3.2
+      typescript: 5.2.2
     dev: true
 
   /tsconfig-paths@3.14.2:
@@ -9838,14 +9858,54 @@ packages:
   /tslib@2.6.0:
     resolution: {integrity: sha512-7At1WUettjcSRHXCyYtTselblcHl9PJFFVKiCAy/bY97+BPZXSQ2wbq0P9s8tK2G7dFQfNnlJnPAiArVBVBsfA==}
 
-  /tsutils@3.21.0(typescript@5.3.2):
+  /tsup@8.0.1(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.2.2):
+    resolution: {integrity: sha512-hvW7gUSG96j53ZTSlT4j/KL0q1Q2l6TqGBFc6/mu/L46IoNWqLLUzLRLP1R8Q7xrJTmkDxxDoojV5uCVs1sVOg==}
+    engines: {node: '>=18'}
+    hasBin: true
+    peerDependencies:
+      '@microsoft/api-extractor': ^7.36.0
+      '@swc/core': ^1
+      postcss: ^8.4.12
+      typescript: ~5.2.2
+    peerDependenciesMeta:
+      '@microsoft/api-extractor':
+        optional: true
+      '@swc/core':
+        optional: true
+      postcss:
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@microsoft/api-extractor': 7.38.3(@types/node@20.9.4)
+      bundle-require: 4.0.2(esbuild@0.19.5)
+      cac: 6.7.14
+      chokidar: 3.5.3
+      debug: 4.3.4
+      esbuild: 0.19.5
+      execa: 5.1.1
+      globby: 11.1.0
+      joycon: 3.1.1
+      postcss: 8.4.31
+      postcss-load-config: 4.0.1(postcss@8.4.31)
+      resolve-from: 5.0.0
+      rollup: 4.4.1
+      source-map: 0.8.0-beta.0
+      sucrase: 3.32.0
+      tree-kill: 1.2.2
+      typescript: 5.2.2
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
+
+  /tsutils@3.21.0(typescript@5.2.2):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
     engines: {node: '>= 6'}
     peerDependencies:
-      typescript: '>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta'
+      typescript: ~5.2.2
     dependencies:
       tslib: 1.14.1
-      typescript: 5.3.2
+      typescript: 5.2.2
     dev: false
 
   /tsx@4.2.0:
@@ -10040,7 +10100,7 @@ packages:
     peerDependencies:
       typedoc: 0.25.x
     dependencies:
-      typedoc: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.3.2)
+      typedoc: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
     dev: true
 
   /typedoc-plugin-mdn-links@3.1.0(typedoc@0.25.3):
@@ -10048,37 +10108,26 @@ packages:
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x'
     dependencies:
-      typedoc: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.3.2)
+      typedoc: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
     dev: true
 
-  /typedoc@0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.3.2):
+  /typedoc@0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2):
     resolution: {integrity: sha512-Ow8Bo7uY1Lwy7GTmphRIMEo6IOZ+yYUyrc8n5KXIZg1svpqhZSWgni2ZrDhe+wLosFS8yswowUzljTAV/3jmWw==}
     engines: {node: '>= 16'}
     hasBin: true
     peerDependencies:
-      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x
+      typescript: ~5.2.2
     dependencies:
       lunr: 2.3.9
       marked: 4.3.0
       minimatch: 9.0.3
       shiki: 0.14.5
-      typescript: 5.3.2
+      typescript: 5.2.2
     dev: true
     patched: true
 
-  /typescript@4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
-    hasBin: true
-    dev: true
-
-  /typescript@5.0.4:
-    resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
-    engines: {node: '>=12.20'}
-    hasBin: true
-
-  /typescript@5.3.2:
-    resolution: {integrity: sha512-6l+RyNy7oAHDfxC4FzSJcz9vnjTKxrLpDG5M2Vu4SHRVNg6xzqZp6LYSR9zjqQTu8DU/f5xwxUdADOkbrIX2gQ==}
+  /typescript@5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -10508,11 +10557,11 @@ packages:
       vitepress: ^1.0.0-rc.27
       vue: ^3.3.8
     dependencies:
-      vitepress: 1.0.0-rc.29(@algolia/client-search@4.19.1)(@types/react@18.2.38)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.3.2)
-      vue: 3.3.8(typescript@5.3.2)
+      vitepress: 1.0.0-rc.29(@algolia/client-search@4.19.1)(@types/react@18.2.38)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2)
+      vue: 3.3.8(typescript@5.2.2)
     dev: true
 
-  /vitepress@1.0.0-rc.29(@algolia/client-search@4.19.1)(@types/react@18.2.38)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.3.2):
+  /vitepress@1.0.0-rc.29(@algolia/client-search@4.19.1)(@types/react@18.2.38)(postcss@8.4.31)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.2.2):
     resolution: {integrity: sha512-6sKmyEvH16SgMqkHzRwwadt9Uju13AOIqouzOVEg3Rk6X9mds6jLsq2GxnAJvg0s6bl/0Qs/cw+f8SNki82ltw==}
     hasBin: true
     peerDependencies:
@@ -10538,7 +10587,7 @@ packages:
       postcss: 8.4.31
       shiki: 0.14.5
       vite: 5.0.0
-      vue: 3.3.8(typescript@5.3.2)
+      vue: 3.3.8(typescript@5.2.2)
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@types/node'
@@ -10652,13 +10701,13 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
-      vue: 3.3.8(typescript@5.3.2)
+      vue: 3.3.8(typescript@5.2.2)
     dev: true
 
-  /vue@3.3.8(typescript@5.3.2):
+  /vue@3.3.8(typescript@5.2.2):
     resolution: {integrity: sha512-5VSX/3DabBikOXMsxzlW8JyfeLKlG9mzqnWgLQLty88vdZL7ZJgrdgBOmrArwxiLtmS+lNNpPcBYqrhE6TQW5w==}
     peerDependencies:
-      typescript: '*'
+      typescript: ~5.2.2
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -10668,7 +10717,7 @@ packages:
       '@vue/runtime-dom': 3.3.8
       '@vue/server-renderer': 3.3.8(vue@3.3.8)
       '@vue/shared': 3.3.8
-      typescript: 5.3.2
+      typescript: 5.2.2
     dev: true
 
   /w3c-keyname@2.2.8:
@@ -10990,46 +11039,3 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
-
-  '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a(@microsoft/api-extractor@7.38.3)(postcss@8.4.31)(typescript@5.3.2)':
-    resolution: {tarball: https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a}
-    id: '@github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a'
-    name: tsup
-    version: 0.0.0-semantic-release
-    engines: {node: '>=18'}
-    hasBin: true
-    peerDependencies:
-      '@microsoft/api-extractor': ^7.36.0
-      '@swc/core': ^1
-      postcss: ^8.4.12
-      typescript: '>=4.5.0'
-    peerDependenciesMeta:
-      '@microsoft/api-extractor':
-        optional: true
-      '@swc/core':
-        optional: true
-      postcss:
-        optional: true
-      typescript:
-        optional: true
-    dependencies:
-      '@microsoft/api-extractor': 7.38.3(@types/node@20.9.4)
-      bundle-require: 4.0.2(esbuild@0.19.5)
-      cac: 6.7.14
-      chokidar: 3.5.3
-      debug: 4.3.4
-      esbuild: 0.19.5
-      execa: 5.1.1
-      globby: 11.1.0
-      joycon: 3.1.1
-      postcss: 8.4.31
-      postcss-load-config: 4.0.1(postcss@8.4.31)
-      resolve-from: 5.0.0
-      rollup: 4.4.1
-      source-map: 0.8.0-beta.0
-      sucrase: 3.32.0
-      tree-kill: 1.2.2
-      typescript: 5.3.2
-    transitivePeerDependencies:
-      - supports-color
-      - ts-node

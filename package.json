@@ -47,8 +47,8 @@
   },
   "pnpm": {
     "overrides": {
-      "typedoc-plugin-mdn-links": "3.1.0",
-      "tsup": "https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a"
+      "typescript": "~5.2.2",
+      "typedoc-plugin-mdn-links": "3.1.0"
     },
     "patchedDependencies": {
       "prosemirror-highlightjs@0.9.1": "patches/prosemirror-highlightjs@0.9.1.patch",

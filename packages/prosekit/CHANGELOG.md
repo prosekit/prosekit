@@ -1,5 +1,28 @@
 # prosekit
 
+## 0.1.7
+
+### Patch Changes
+
+- [0c60503] ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  Fix a bug where a plugin can be added multiple times to the same editor.
+
+- [0c60503] ![@prosekit/extensions](https://img.shields.io/badge/prosekit%2Fextensions-444444)
+
+  Add new readonly extension.
+
+  ```ts
+  import { defineReadonly } from 'prosekit/extensions/readonly'
+
+  const extension = defineReadonly()
+  ```
+
+- [0c60503] ![@prosekit/preact](https://img.shields.io/badge/prosekit%2Fpreact-444444?logo=preact) ![@prosekit/svelte](https://img.shields.io/badge/prosekit%2Fsvelte-444444?logo=svelte) ![@prosekit/react](https://img.shields.io/badge/prosekit%2Freact-444444?logo=react) ![@prosekit/solid](https://img.shields.io/badge/prosekit%2Fsolid-444444?logo=solid) ![@prosekit/vue](https://img.shields.io/badge/prosekit%2Fvue-444444?logo=vuedotjs)
+
+  `useExtension` now accepts a null value for the `extension` argument. This is
+  useful if you want to remove an extension from the editor.
+
 ## 0.1.6
 
 ### Patch Changes

@@ -61,7 +61,7 @@ importers:
         version: 0.12.2
       prettier-plugin-svelte:
         specifier: ^3.1.1
-        version: 3.1.1(prettier@3.1.0)(svelte@4.2.5)
+        version: 3.1.1(prettier@3.1.0)(svelte@4.2.7)
       prettier-plugin-tailwindcss:
         specifier: ^0.5.7
         version: 0.5.7(prettier-plugin-astro@0.12.2)(prettier-plugin-svelte@3.1.1)(prettier@3.1.0)
@@ -349,10 +349,10 @@ importers:
         specifier: 0.1.0
         version: link:../basic
       '@prosekit/core':
-        specifier: 0.1.4
+        specifier: 0.1.5
         version: link:../core
       '@prosekit/extensions':
-        specifier: 0.1.1
+        specifier: 0.1.2
         version: link:../extensions
       '@prosekit/lit':
         specifier: 0.1.2
@@ -361,19 +361,19 @@ importers:
         specifier: 0.1.0
         version: link:../pm
       '@prosekit/preact':
-        specifier: 0.1.0
+        specifier: 0.1.1
         version: link:../preact
       '@prosekit/react':
-        specifier: 0.1.0
+        specifier: 0.1.1
         version: link:../react
       '@prosekit/solid':
-        specifier: 0.1.1
+        specifier: 0.1.2
         version: link:../solid
       '@prosekit/svelte':
-        specifier: 0.1.0
+        specifier: 0.1.1
         version: link:../svelte
       '@prosekit/vue':
-        specifier: 0.1.0
+        specifier: 0.1.1
         version: link:../vue
     devDependencies:
       '@prosekit/dev':
@@ -8213,14 +8213,14 @@ packages:
       sass-formatter: 0.7.7
     dev: false
 
-  /prettier-plugin-svelte@3.1.1(prettier@3.1.0)(svelte@4.2.5):
+  /prettier-plugin-svelte@3.1.1(prettier@3.1.0)(svelte@4.2.7):
     resolution: {integrity: sha512-jLzaHfToav527/I5h2BMQfN3G5gylrJm54zFFyoXvUtfscI47877ftacUb+Eyse/3bXrhY+MtkyiuvruiHc+kg==}
     peerDependencies:
       prettier: ^3.0.0
       svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
     dependencies:
       prettier: 3.1.0
-      svelte: 4.2.5
+      svelte: 4.2.7
     dev: false
 
   /prettier-plugin-tailwindcss@0.5.7(prettier-plugin-astro@0.12.2)(prettier-plugin-svelte@3.1.1)(prettier@3.1.0):
@@ -8277,7 +8277,7 @@ packages:
     dependencies:
       prettier: 3.1.0
       prettier-plugin-astro: 0.12.2
-      prettier-plugin-svelte: 3.1.1(prettier@3.1.0)(svelte@4.2.5)
+      prettier-plugin-svelte: 3.1.1(prettier@3.1.0)(svelte@4.2.7)
     dev: false
 
   /prettier@2.8.8:
@@ -9569,25 +9569,6 @@ packages:
       typescript: 5.2.2
     dev: true
 
-  /svelte@4.2.5:
-    resolution: {integrity: sha512-P9YPKsGkNdw4OJbtpd1uzimQHPj7Ai2sPcOHmmD6VgkFhFDmcYevQi7vE4cQ1g8/Vs64aL2TwMoCNFAzv7TPaQ==}
-    engines: {node: '>=16'}
-    dependencies:
-      '@ampproject/remapping': 2.2.1
-      '@jridgewell/sourcemap-codec': 1.4.15
-      '@jridgewell/trace-mapping': 0.3.18
-      acorn: 8.10.0
-      aria-query: 5.3.0
-      axobject-query: 3.2.1
-      code-red: 1.0.3
-      css-tree: 2.3.1
-      estree-walker: 3.0.3
-      is-reference: 3.0.1
-      locate-character: 3.0.0
-      magic-string: 0.30.5
-      periscopic: 3.1.0
-    dev: false
-
   /svelte@4.2.7:
     resolution: {integrity: sha512-UExR1KS7raTdycsUrKLtStayu4hpdV3VZQgM0akX8XbXgLBlosdE/Sf3crOgyh9xIjqSYB3UEBuUlIQKRQX2hg==}
     engines: {node: '>=16'}
@@ -9605,7 +9586,6 @@ packages:
       locate-character: 3.0.0
       magic-string: 0.30.5
       periscopic: 3.1.0
-    dev: true
 
   /svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}

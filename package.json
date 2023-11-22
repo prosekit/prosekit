@@ -24,7 +24,7 @@
     "ci:publish:next": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag next"
   },
   "dependencies": {
-    "@antfu/ni": "^0.21.9",
+    "@antfu/ni": "^0.21.10",
     "@changesets/cli": "^2.26.2",
     "@changesets/types": "^5.2.1",
     "@manypkg/cli": "^0.21.0",
@@ -37,18 +37,18 @@
     "jsdom": "^22.1.0",
     "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.12.2",
-    "prettier-plugin-svelte": "^3.1.0",
+    "prettier-plugin-svelte": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.7",
     "size-limit": "^11.0.0",
     "turbo": "^1.10.16",
-    "typescript": "^5.2.2",
-    "unocss": "^0.57.6",
+    "typescript": "^5.3.2",
+    "unocss": "^0.57.7",
     "vitest": "^0.34.6"
   },
   "pnpm": {
     "overrides": {
-      "typedoc-plugin-mdn-links": "3.1.0",
-      "tsup": "https://github.com/ocavue/tsup/tarball/ocavue-release-2023-11-20-a"
+      "typescript": "~5.2.2",
+      "typedoc-plugin-mdn-links": "3.1.0"
     },
     "patchedDependencies": {
       "prosemirror-highlightjs@0.9.1": "patches/prosemirror-highlightjs@0.9.1.patch",

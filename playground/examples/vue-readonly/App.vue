@@ -5,7 +5,7 @@ import 'prosekit/extensions/placeholder/style.css'
 import { watchPostEffect, ref } from 'vue'
 import { ProseKit } from 'prosekit/vue'
 import { defineExtension } from './extension'
-import Toolbar from './Toolbar.vue'
+import Toolbar from './toolbar.vue'
 import { createEditor } from 'prosekit/core'
 
 const editor = createEditor({ extension: defineExtension() })

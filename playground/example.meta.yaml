@@ -1,357 +1,373 @@
 examples:
   - name: react-minimal
     files:
-      - path: App.tsx
+      - path: app.tsx
         hidden: false
   - name: react-heading
     files:
-      - path: App.tsx
-        hidden: false
-      - path: ToggleButton.tsx
-        hidden: false
-      - path: Toolbar.tsx
+      - path: app.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.tsx
+        hidden: false
+      - path: toolbar.tsx
         hidden: false
   - name: react-inline-menu
     files:
-      - path: App.tsx
+      - path: app.tsx
         hidden: false
-      - path: ButtonGroup.tsx
-        hidden: false
-      - path: InlineMenu.tsx
-        hidden: false
-      - path: ToggleButton.tsx
+      - path: button-group.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: inline-menu.tsx
+        hidden: false
+      - path: toggle.tsx
         hidden: false
   - name: react-keymap
     files:
-      - path: App.tsx
+      - path: app.tsx
         hidden: false
-      - path: KeymapConfig.tsx
+      - path: keymap-config.tsx
         hidden: false
   - name: react-list
     files:
-      - path: App.tsx
-        hidden: false
-      - path: ToggleButton.tsx
-        hidden: false
-      - path: Toolbar.tsx
+      - path: app.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.tsx
+        hidden: false
+      - path: toolbar.tsx
         hidden: false
   - name: react-readonly
     files:
-      - path: App.tsx
-        hidden: false
-      - path: ToggleButton.tsx
-        hidden: false
-      - path: Toolbar.tsx
+      - path: app.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.tsx
+        hidden: false
+      - path: toolbar.tsx
         hidden: false
       - path: use-readonly.ts
         hidden: false
   - name: react-slash-menu
     files:
-      - path: App.tsx
-        hidden: false
-      - path: SlashMenu.tsx
+      - path: app.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: slash-menu.tsx
         hidden: false
   - name: react-toolbar
     files:
-      - path: App.tsx
+      - path: app.tsx
         hidden: false
-      - path: CodeBlockView.tsx
-        hidden: false
-      - path: ImageUploadPopover.tsx
-        hidden: false
-      - path: ToggleButton.tsx
-        hidden: false
-      - path: Toolbar.tsx
+      - path: code-block-view.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: image-upload-popover.tsx
         hidden: false
       - path: package.json
         hidden: false
+      - path: toggle.tsx
+        hidden: false
+      - path: toolbar.tsx
+        hidden: false
   - name: react-user-menu
     files:
-      - path: App.tsx
-        hidden: false
-      - path: TagMenu.tsx
-        hidden: false
-      - path: UserMenu.tsx
+      - path: app.tsx
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: tag-menu.tsx
+        hidden: false
       - path: tags.ts
+        hidden: false
+      - path: user-menu.tsx
         hidden: false
       - path: users.ts
         hidden: false
   - name: vue-minimal
     files:
-      - path: App.vue
+      - path: app.vue
         hidden: false
   - name: vue-bold
     files:
-      - path: App.vue
-        hidden: false
-      - path: Toolbar.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.vue
+        hidden: false
+      - path: toolbar.vue
         hidden: false
   - name: vue-code
     files:
-      - path: App.vue
-        hidden: false
-      - path: Toolbar.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.vue
+        hidden: false
+      - path: toolbar.vue
         hidden: false
   - name: vue-full
     files:
-      - path: App.vue
-        hidden: false
-      - path: ImageUploadPopover.vue
-        hidden: false
-      - path: InlineButtons.vue
-        hidden: false
-      - path: InlineMenu.vue
-        hidden: false
-      - path: SlashMenu.vue
-        hidden: false
-      - path: TagMenu.vue
-        hidden: false
-      - path: ToggleButton.vue
-        hidden: false
-      - path: Toolbar.vue
-        hidden: false
-      - path: UserMenu.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: image-upload-popover.vue
+        hidden: false
+      - path: inline-buttons.vue
+        hidden: false
+      - path: inline-menu.vue
+        hidden: false
+      - path: slash-menu.vue
+        hidden: false
+      - path: tag-menu.vue
+        hidden: false
       - path: tags.ts
+        hidden: false
+      - path: toggle.vue
+        hidden: false
+      - path: toolbar.vue
+        hidden: false
+      - path: user-menu.vue
         hidden: false
       - path: users.ts
         hidden: false
   - name: vue-heading
     files:
-      - path: App.vue
-        hidden: false
-      - path: Toolbar.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.vue
+        hidden: false
+      - path: toolbar.vue
         hidden: false
   - name: vue-inline-menu
     files:
-      - path: App.vue
-        hidden: false
-      - path: InlineButtons.vue
-        hidden: false
-      - path: InlineMenu.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: inline-buttons.vue
+        hidden: false
+      - path: inline-menu.vue
         hidden: false
   - name: vue-italic
     files:
-      - path: App.vue
-        hidden: false
-      - path: Toolbar.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: toggle.vue
+        hidden: false
+      - path: toolbar.vue
+        hidden: false
   - name: vue-keymap
     files:
-      - path: App.vue
+      - path: app.vue
         hidden: false
-      - path: KeymapConfig.vue
+      - path: keymap-config.vue
         hidden: false
   - name: vue-link
     files:
-      - path: App.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
         hidden: false
   - name: vue-list
     files:
-      - path: App.vue
-        hidden: false
-      - path: ToggleButton.vue
-        hidden: false
-      - path: Toolbar.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.vue
+        hidden: false
+      - path: toolbar.vue
         hidden: false
   - name: vue-readonly
     files:
-      - path: App.vue
-        hidden: false
-      - path: ToggleButton.vue
-        hidden: false
-      - path: Toolbar.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.vue
+        hidden: false
+      - path: toolbar.vue
         hidden: false
       - path: use-readonly.ts
         hidden: false
   - name: vue-slash-menu
     files:
-      - path: App.vue
-        hidden: false
-      - path: SlashMenu.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: slash-menu.vue
         hidden: false
   - name: vue-strike
     files:
-      - path: App.vue
-        hidden: false
-      - path: Toolbar.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.vue
+        hidden: false
+      - path: toolbar.vue
         hidden: false
   - name: vue-toolbar
     files:
-      - path: App.vue
-        hidden: false
-      - path: ToggleButton.vue
-        hidden: false
-      - path: Toolbar.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.vue
+        hidden: false
+      - path: toolbar.vue
         hidden: false
   - name: vue-underline
     files:
-      - path: App.vue
-        hidden: false
-      - path: Toolbar.vue
+      - path: app.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.vue
+        hidden: false
+      - path: toolbar.vue
         hidden: false
   - name: preact-minimal
     files:
-      - path: App.tsx
+      - path: app.tsx
         hidden: false
   - name: preact-keymap
     files:
-      - path: App.tsx
+      - path: app.tsx
         hidden: false
-      - path: KeymapConfig.tsx
+      - path: keymap-config.tsx
         hidden: false
   - name: preact-readonly
     files:
-      - path: App.tsx
-        hidden: false
-      - path: ToggleButton.tsx
-        hidden: false
-      - path: Toolbar.tsx
+      - path: app.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.tsx
+        hidden: false
+      - path: toolbar.tsx
         hidden: false
       - path: use-readonly.ts
         hidden: false
   - name: preact-slash-menu
     files:
-      - path: App.tsx
-        hidden: false
-      - path: SlashMenu.tsx
+      - path: app.tsx
         hidden: false
       - path: extension.ts
         hidden: true
+      - path: slash-menu.tsx
+        hidden: false
   - name: svelte-minimal
     files:
-      - path: App.svelte
+      - path: app.svelte
         hidden: false
   - name: svelte-bold
     files:
-      - path: App.svelte
-        hidden: false
-      - path: Toolbar.svelte
+      - path: app.svelte
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.svelte
+        hidden: false
+      - path: toolbar.svelte
         hidden: false
   - name: svelte-italic
     files:
-      - path: App.svelte
-        hidden: false
-      - path: Toolbar.svelte
+      - path: app.svelte
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: toggle.svelte
+        hidden: false
+      - path: toolbar.svelte
+        hidden: false
   - name: svelte-keymap
     files:
-      - path: App.svelte
+      - path: app.svelte
         hidden: false
-      - path: KeymapConfig.svelte
+      - path: keymap-config.svelte
         hidden: false
   - name: svelte-list
     files:
-      - path: App.svelte
+      - path: app.svelte
         hidden: false
       - path: extension.ts
         hidden: false
   - name: svelte-readonly
     files:
-      - path: App.svelte
-        hidden: false
-      - path: ToggleButton.svelte
-        hidden: false
-      - path: Toolbar.svelte
+      - path: app.svelte
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.svelte
+        hidden: false
+      - path: toolbar.svelte
         hidden: false
       - path: use-readonly.ts
         hidden: false
   - name: svelte-slash-menu
     files:
-      - path: App.svelte
-        hidden: false
-      - path: SlashMenu.svelte
+      - path: app.svelte
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: slash-menu.svelte
         hidden: false
   - name: solid-minimal
     files:
-      - path: App.tsx
+      - path: app.tsx
         hidden: false
   - name: solid-heading
     files:
-      - path: App.tsx
-        hidden: false
-      - path: ToggleButton.tsx
-        hidden: false
-      - path: Toolbar.tsx
+      - path: app.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.tsx
+        hidden: false
+      - path: toolbar.tsx
         hidden: false
   - name: solid-keymap
     files:
-      - path: App.tsx
+      - path: app.tsx
         hidden: false
-      - path: KeymapConfig.tsx
+      - path: keymap-config.tsx
         hidden: false
   - name: solid-readonly
     files:
-      - path: App.tsx
-        hidden: false
-      - path: ToggleButton.tsx
-        hidden: false
-      - path: Toolbar.tsx
+      - path: app.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toggle.tsx
+        hidden: false
+      - path: toolbar.tsx
         hidden: false
       - path: use-readonly.ts
         hidden: false
   - name: solid-slash-menu
     files:
-      - path: App.tsx
-        hidden: false
-      - path: SlashMenu.tsx
+      - path: app.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: slash-menu.tsx
         hidden: false
   - name: lit
     files:

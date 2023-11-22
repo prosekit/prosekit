@@ -6,7 +6,7 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { onDestroy, onMount } from 'svelte'
 import { defineExtension } from './extension'
-import Toolbar from './Toolbar.svelte'
+import Toolbar from './toolbar.svelte'
 
 const editor = createEditor({ extension: defineExtension() })
 

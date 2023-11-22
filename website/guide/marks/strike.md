@@ -4,7 +4,7 @@ The `strike` mark is used to represent text with a strikethrough. It will be ren
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-strike/App.vue'
+import App from '../../components/vue-strike/app.vue'
 </script>
 
 :::tabs key:framework

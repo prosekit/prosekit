@@ -3,8 +3,8 @@ import 'prosekit/core/style.css'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 
-import Toolbar from './Toolbar'
 import { defineExtension } from './extension'
+import Toolbar from './toolbar'
 
 export default function App() {
   const editor = createEditor({ extension: defineExtension() })

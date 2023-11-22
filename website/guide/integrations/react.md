@@ -3,7 +3,7 @@
 ProseKit is designed to work seamlessly with React.
 
 ::: code-group
-<<< @/../playground/examples/react-minimal/App.tsx
+<<< @/../playground/examples/react-minimal/app.tsx
 :::
 
 ## `useEditor`

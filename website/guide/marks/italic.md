@@ -4,7 +4,7 @@ The `italic` mark is used to represent text that is using an italicized type. It
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-italic/App.vue'
+import App from '../../components/vue-italic/app.vue'
 </script>
 
 :::tabs key:framework

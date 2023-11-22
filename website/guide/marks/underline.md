@@ -4,7 +4,7 @@ The `underline` mark is used to represent text with a underline. It will be rend
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-underline/App.vue'
+import App from '../../components/vue-underline/app.vue'
 </script>
 
 :::tabs key:framework

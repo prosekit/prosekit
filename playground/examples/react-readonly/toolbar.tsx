@@ -6,11 +6,11 @@ export default function Toolbar() {
 
   return (
     <div className="TOOLBAR">
-      <Toggle available={true} active={readonly} onChange={toggleReadonly}>
+      <Toggle pressed={readonly} onClick={toggleReadonly}>
         Readonly
       </Toggle>
 
-      <Toggle available={true} active={!readonly} onChange={toggleReadonly}>
+      <Toggle pressed={!readonly} onClick={toggleReadonly}>
         Editable
       </Toggle>
     </div>

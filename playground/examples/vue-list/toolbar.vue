@@ -9,33 +9,33 @@ const editor = useEditor<EditorExtension>({ update: true })
 <template>
   <div class="TOOLBAR">
     <Toggle
-      :active="editor.nodes.list.isActive({ kind: 'bullet' })"
-      :available="editor.commands.toggleList.canApply({ kind: 'bullet' })"
-      @change="() => editor.commands.toggleList({ kind: 'bullet' })"
+      :pressed="editor.nodes.list.isActive({ kind: 'bullet' })"
+      :disabled="!editor.commands.toggleList.canApply({ kind: 'bullet' })"
+      :onClick="() => editor.commands.toggleList({ kind: 'bullet' })"
     >
       <div class="ICON_LIST_BULLET"></div>
     </Toggle>
 
     <Toggle
-      :active="editor.nodes.list.isActive({ kind: 'ordered' })"
-      :available="editor.commands.toggleList.canApply({ kind: 'ordered' })"
-      @change="() => editor.commands.toggleList({ kind: 'ordered' })"
+      :pressed="editor.nodes.list.isActive({ kind: 'ordered' })"
+      :disabled="!editor.commands.toggleList.canApply({ kind: 'ordered' })"
+      :onClick="() => editor.commands.toggleList({ kind: 'ordered' })"
     >
       <div class="ICON_LIST_ORDERED"></div>
     </Toggle>
 
     <Toggle
-      :active="editor.nodes.list.isActive({ kind: 'task' })"
-      :available="editor.commands.toggleList.canApply({ kind: 'task' })"
-      @change="() => editor.commands.toggleList({ kind: 'task' })"
+      :pressed="editor.nodes.list.isActive({ kind: 'task' })"
+      :disabled="!editor.commands.toggleList.canApply({ kind: 'task' })"
+      :onClick="() => editor.commands.toggleList({ kind: 'task' })"
     >
       <div class="ICON_LIST_TASK"></div>
     </Toggle>
 
     <Toggle
-      :active="editor.nodes.list.isActive({ kind: 'toggle' })"
-      :available="editor.commands.toggleList.canApply({ kind: 'toggle' })"
-      @change="() => editor.commands.toggleList({ kind: 'toggle' })"
+      :pressed="editor.nodes.list.isActive({ kind: 'toggle' })"
+      :disabled="!editor.commands.toggleList.canApply({ kind: 'toggle' })"
+      :onClick="() => editor.commands.toggleList({ kind: 'toggle' })"
     >
       <div class="ICON_LIST_TOGGLE"></div>
     </Toggle>

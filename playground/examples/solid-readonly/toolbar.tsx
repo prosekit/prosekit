@@ -7,17 +7,17 @@ export default function Toolbar() {
   return (
     <div class="TOOLBAR">
       <Toggle
-        active={getReadonly}
-        available={() => true}
-        onChange={toggleReadonly}
+        pressed={getReadonly}
+        disabled={() => !true}
+        onClick={toggleReadonly}
       >
         Readonly
       </Toggle>
 
       <Toggle
-        active={() => !getReadonly()}
-        available={() => true}
-        onChange={toggleReadonly}
+        pressed={() => !getReadonly()}
+        disabled={() => !true}
+        onClick={toggleReadonly}
       >
         Editable
       </Toggle>

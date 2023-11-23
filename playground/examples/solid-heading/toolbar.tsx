@@ -9,25 +9,25 @@ export default function Toolbar() {
   return (
     <div class="TOOLBAR">
       <Toggle
-        active={() => editor().nodes.heading.isActive({ level: 1 })}
-        available={() => editor().commands.toggleHeading.canApply({ level: 1 })}
-        onChange={() => editor().commands.toggleHeading({ level: 1 })}
+        pressed={() => editor().nodes.heading.isActive({ level: 1 })}
+        disabled={() => !editor().commands.toggleHeading.canApply({ level: 1 })}
+        onClick={() => editor().commands.toggleHeading({ level: 1 })}
       >
         H1
       </Toggle>
 
       <Toggle
-        active={() => editor().nodes.heading.isActive({ level: 2 })}
-        available={() => editor().commands.toggleHeading.canApply({ level: 2 })}
-        onChange={() => editor().commands.toggleHeading({ level: 2 })}
+        pressed={() => editor().nodes.heading.isActive({ level: 2 })}
+        disabled={() => !editor().commands.toggleHeading.canApply({ level: 2 })}
+        onClick={() => editor().commands.toggleHeading({ level: 2 })}
       >
         H2
       </Toggle>
 
       <Toggle
-        active={() => editor().nodes.heading.isActive({ level: 3 })}
-        available={() => editor().commands.toggleHeading.canApply({ level: 3 })}
-        onChange={() => editor().commands.toggleHeading({ level: 3 })}
+        pressed={() => editor().nodes.heading.isActive({ level: 3 })}
+        disabled={() => !editor().commands.toggleHeading.canApply({ level: 3 })}
+        onClick={() => editor().commands.toggleHeading({ level: 3 })}
       >
         H3
       </Toggle>

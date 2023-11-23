@@ -8,9 +8,8 @@ const editor = useEditor<EditorExtension>({ update: true })
 
 <div class="TOOLBAR">
   <Toggle
-    active={$editor.marks.bold.isActive()}
-    available={true}
-    onChange={() => $editor.commands.toggleBold()}
+    pressed={$editor.marks.bold.isActive()}
+    onClick={() => $editor.commands.toggleBold()}
   >
     Bold
   </Toggle>

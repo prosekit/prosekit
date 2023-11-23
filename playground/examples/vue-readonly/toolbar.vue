@@ -7,12 +7,7 @@ const { readonly, toggleReadonly } = useReadonly()
 
 <template>
   <div class="TOOLBAR">
-    <Toggle :available="true" :active="readonly" :onChange="toggleReadonly">
-      Readonly
-    </Toggle>
-
-    <Toggle :available="true" :active="!readonly" :onChange="toggleReadonly">
-      Editable
-    </Toggle>
+    <Toggle :pressed="readonly" :onClick="toggleReadonly">Readonly</Toggle>
+    <Toggle :pressed="!readonly" :onClick="toggleReadonly">Editable</Toggle>
   </div>
 </template>

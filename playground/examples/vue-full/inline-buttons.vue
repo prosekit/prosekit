@@ -8,41 +8,41 @@ const editor = useEditor<EditorExtension>({ update: true })
 
 <template>
   <Toggle
-    :active="editor.marks.bold.isActive()"
-    :available="editor.commands.toggleBold.canApply()"
-    @change="() => editor.commands.toggleBold()"
+    :pressed="editor.marks.bold.isActive()"
+    :disabled="!editor.commands.toggleBold.canApply()"
+    :onClick="() => editor.commands.toggleBold()"
   >
     <div class="ICON_BOLD"></div>
   </Toggle>
 
   <Toggle
-    :active="editor.marks.italic.isActive()"
-    :available="editor.commands.toggleItalic.canApply()"
-    @change="() => editor.commands.toggleItalic()"
+    :pressed="editor.marks.italic.isActive()"
+    :disabled="!editor.commands.toggleItalic.canApply()"
+    :onClick="() => editor.commands.toggleItalic()"
   >
     <div class="ICON_ITALIC"></div>
   </Toggle>
 
   <Toggle
-    :active="editor.marks.underline.isActive()"
-    :available="editor.commands.toggleUnderline.canApply()"
-    @change="() => editor.commands.toggleUnderline()"
+    :pressed="editor.marks.underline.isActive()"
+    :disabled="!editor.commands.toggleUnderline.canApply()"
+    :onClick="() => editor.commands.toggleUnderline()"
   >
     <div class="ICON_UNDERLINE"></div>
   </Toggle>
 
   <Toggle
-    :active="editor.marks.strike.isActive()"
-    :available="editor.commands.toggleStrike.canApply()"
-    @change="() => editor.commands.toggleStrike()"
+    :pressed="editor.marks.strike.isActive()"
+    :disabled="!editor.commands.toggleStrike.canApply()"
+    :onClick="() => editor.commands.toggleStrike()"
   >
     <div class="ICON_STRIKE"></div>
   </Toggle>
 
   <Toggle
-    :active="editor.marks.code.isActive()"
-    :available="editor.commands.toggleCode.canApply()"
-    @change="() => editor.commands.toggleCode()"
+    :pressed="editor.marks.code.isActive()"
+    :disabled="!editor.commands.toggleCode.canApply()"
+    :onClick="() => editor.commands.toggleCode()"
   >
     <div class="ICON_CODE"></div>
   </Toggle>

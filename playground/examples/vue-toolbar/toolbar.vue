@@ -9,55 +9,57 @@ const editor = useEditor<EditorExtension>({ update: true })
 <template>
   <div class="TOOLBAR">
     <Toggle
-      :available="editor.commands.undo.canApply()"
-      @change="() => editor.commands.undo()"
+      :pressed="false"
+      :disabled="!editor.commands.undo.canApply()"
+      :onClick="() => editor.commands.undo()"
     >
       <div className="ICON_UNDO" />
     </Toggle>
 
     <Toggle
-      :available="editor.commands.redo.canApply()"
-      @change="() => editor.commands.redo()"
+      :pressed="false"
+      :disabled="!editor.commands.redo.canApply()"
+      :onClick="() => editor.commands.redo()"
     >
       <div className="ICON_REDO" />
     </Toggle>
 
     <Toggle
-      :active="editor.marks.bold.isActive()"
-      :available="editor.commands.toggleBold.canApply()"
-      @change="() => editor.commands.toggleBold()"
+      :pressed="editor.marks.bold.isActive()"
+      :disabled="!editor.commands.toggleBold.canApply()"
+      :onClick="() => editor.commands.toggleBold()"
     >
       <div class="ICON_BOLD"></div>
     </Toggle>
 
     <Toggle
-      :active="editor.marks.italic.isActive()"
-      :available="editor.commands.toggleItalic.canApply()"
-      @change="() => editor.commands.toggleItalic()"
+      :pressed="editor.marks.italic.isActive()"
+      :disabled="!editor.commands.toggleItalic.canApply()"
+      :onClick="() => editor.commands.toggleItalic()"
     >
       <div class="ICON_ITALIC"></div>
     </Toggle>
 
     <Toggle
-      :active="editor.nodes.heading.isActive({ level: 1 })"
-      :available="editor.commands.toggleHeading.canApply({ level: 1 })"
-      @change="() => editor.commands.toggleHeading({ level: 1 })"
+      :pressed="editor.nodes.heading.isActive({ level: 1 })"
+      :disabled="!editor.commands.toggleHeading.canApply({ level: 1 })"
+      :onClick="() => editor.commands.toggleHeading({ level: 1 })"
     >
       <div class="ICON_H1"></div>
     </Toggle>
 
     <Toggle
-      :active="editor.nodes.heading.isActive({ level: 2 })"
-      :available="editor.commands.toggleHeading.canApply({ level: 2 })"
-      @change="() => editor.commands.toggleHeading({ level: 2 })"
+      :pressed="editor.nodes.heading.isActive({ level: 2 })"
+      :disabled="!editor.commands.toggleHeading.canApply({ level: 2 })"
+      :onClick="() => editor.commands.toggleHeading({ level: 2 })"
     >
       <div class="ICON_H2"></div>
     </Toggle>
 
     <Toggle
-      :active="editor.nodes.heading.isActive({ level: 3 })"
-      :available="editor.commands.toggleHeading.canApply({ level: 3 })"
-      @change="() => editor.commands.toggleHeading({ level: 3 })"
+      :pressed="editor.nodes.heading.isActive({ level: 3 })"
+      :disabled="!editor.commands.toggleHeading.canApply({ level: 3 })"
+      :onClick="() => editor.commands.toggleHeading({ level: 3 })"
     >
       <div class="ICON_H3"></div>
     </Toggle>

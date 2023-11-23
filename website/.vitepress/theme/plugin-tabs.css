@@ -1,12 +1,10 @@
 #app .plugin-tabs {
   overflow: hidden;
+  background-color: transparent;
+  border-radius: 0;
 }
 
 #app .plugin-tabs--content {
+  margin-top: 8px;
   padding: 0px;
-  background-color: var(--vp-c-bg);
-}
-
-#app .plugin-tabs--tab-list {
-  background-color: var(--vp-c-bg);
 }

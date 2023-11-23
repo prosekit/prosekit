@@ -10,7 +10,7 @@ import App from '../../components/vue-strike/editor.vue'
 :::tabs key:framework
 == Preview
 
-<ClientOnly><div class="p-2"><App/></div></ClientOnly>
+<ClientOnly><App/></ClientOnly>
 == Vue
 <ExamplePlaygroundLazy example="vue-strike" />
 :::

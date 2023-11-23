@@ -4,13 +4,13 @@ The `strike` mark is used to represent text with a strikethrough. It will be ren
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-strike/app.vue'
+import App from '../../components/vue-strike/editor.vue'
 </script>
 
 :::tabs key:framework
 == Preview
 
-<ClientOnly><div class="p-2"><App/></div></ClientOnly>
+<ClientOnly><App/></ClientOnly>
 == Vue
 <ExamplePlaygroundLazy example="vue-strike" />
 :::

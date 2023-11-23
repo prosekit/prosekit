@@ -4,13 +4,13 @@ The `link` mark is used to represent links. It will be rendered as `<a>` element
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-link/app.vue'
+import App from '../../components/vue-link/editor.vue'
 </script>
 
 :::tabs key:framework
 == Preview
 
-<ClientOnly><div class="p-2"><App/></div></ClientOnly>
+<ClientOnly><App/></ClientOnly>
 == Vue
 <ExamplePlaygroundLazy example="vue-link" />
 :::

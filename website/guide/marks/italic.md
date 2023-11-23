@@ -4,13 +4,13 @@ The `italic` mark is used to represent text that is using an italicized type. It
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-italic/app.vue'
+import App from '../../components/vue-italic/editor.vue'
 </script>
 
 :::tabs key:framework
 == Preview
 
-<ClientOnly><div class="p-2"><App/></div></ClientOnly>
+<ClientOnly><App/></ClientOnly>
 == Vue
 <ExamplePlaygroundLazy example="vue-italic" />
 == Svelte

@@ -4,13 +4,13 @@ A popup that shows a list of suggestions based on the text before the text curso
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-slash-menu/app.vue'
+import App from '../../components/vue-slash-menu/editor.vue'
 </script>
 
 :::tabs key:framework
 == Preview
 
-<ClientOnly><div class="p-2"><App/></div></ClientOnly>
+<ClientOnly><App/></ClientOnly>
 == React
 <ExamplePlaygroundLazy example="react-slash-menu" />
 == Vue

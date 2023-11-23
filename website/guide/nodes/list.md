@@ -4,13 +4,13 @@ The `list` node is used to represent a list item. It is built on top of [prosemi
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-list/app.vue'
+import App from '../../components/vue-list/editor.vue'
 </script>
 
 :::tabs key:framework
 == Preview
 
-<ClientOnly><div class="p-2"><App/></div></ClientOnly>
+<ClientOnly><App/></ClientOnly>
 == React
 <ExamplePlaygroundLazy example="react-list" />
 == Vue

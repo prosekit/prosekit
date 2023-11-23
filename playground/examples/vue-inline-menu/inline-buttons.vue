@@ -7,22 +7,22 @@ const editor = useEditor<EditorExtension>({ update: true })
 
 <template>
   <Toggle
-    :active="editor.marks.bold.isActive()"
-    :onChange="() => editor.commands.toggleBold()"
+    :pressed="editor.marks.bold.isActive()"
+    :onClick="() => editor.commands.toggleBold()"
   >
     Bold
   </Toggle>
 
   <Toggle
-    :active="editor.marks.italic.isActive()"
-    :onChange="() => editor.commands.toggleItalic()"
+    :pressed="editor.marks.italic.isActive()"
+    :onClick="() => editor.commands.toggleItalic()"
   >
     Italic
   </Toggle>
 
   <Toggle
-    :active="editor.marks.underline.isActive()"
-    :onChange="() => editor.commands.toggleUnderline()"
+    :pressed="editor.marks.underline.isActive()"
+    :onClick="() => editor.commands.toggleUnderline()"
   >
     Underline
   </Toggle>

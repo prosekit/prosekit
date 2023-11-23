@@ -1,22 +1,22 @@
 import type { ComponentChild } from 'preact'
 
 export default function Toggle({
-  active,
-  available,
-  onChange,
+  pressed,
+  disabled,
+  onClick,
   children,
 }: {
-  active?: boolean
-  available: boolean
-  onChange: () => void
+  pressed: boolean
+  disabled?: boolean
+  onClick: VoidFunction
   children: ComponentChild
 }) {
   return (
     <button
-      data-state={active ? 'on' : 'off'}
+      data-state={pressed ? 'on' : 'off'}
+      disabled={disabled}
+      onClick={() => onClick()}
       onMouseDown={(event) => event.preventDefault()}
-      onClick={() => onChange()}
-      disabled={!available}
       class="TOGGLE_BUTTON"
     >
       {children}

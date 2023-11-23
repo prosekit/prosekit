@@ -9,9 +9,8 @@ const editor = useEditor<EditorExtension>({ update: true })
 <template>
   <div class="TOOLBAR">
     <Toggle
-      :active="editor.marks.bold.isActive()"
-      :onChange="() => editor.commands.toggleBold()"
-      :available="true"
+      :pressed="editor.marks.bold.isActive()"
+      :onClick="() => editor.commands.toggleBold()"
     >
       Bold
     </Toggle>

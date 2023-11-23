@@ -8,9 +8,8 @@ const editor = useEditor<EditorExtension>({ update: true })
 
 <div class="TOOLBAR">
   <Toggle
-    active={$editor.marks.italic.isActive()}
-    available={true}
-    onChange={() => $editor.commands.toggleItalic()}
+    pressed={$editor.marks.italic.isActive()}
+    onClick={() => $editor.commands.toggleItalic()}
   >
     Italic
   </Toggle>

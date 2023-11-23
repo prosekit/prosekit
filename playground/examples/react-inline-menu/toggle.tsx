@@ -1,22 +1,22 @@
 import type { ReactNode } from 'react'
 
 export default function Toggle({
-  active,
-  available,
-  onChange,
+  pressed,
+  disabled,
+  onClick,
   children,
 }: {
-  active?: boolean
-  available: boolean
-  onChange: () => void
+  pressed: boolean
+  disabled?: boolean
+  onClick: VoidFunction
   children: ReactNode
 }) {
   return (
     <button
-      data-state={active ? 'on' : 'off'}
+      data-state={pressed ? 'on' : 'off'}
+      disabled={disabled}
+      onClick={() => onClick()}
       onMouseDown={(event) => event.preventDefault()}
-      onClick={() => onChange()}
-      disabled={!available}
       className="TOGGLE_BUTTON"
     >
       {children}

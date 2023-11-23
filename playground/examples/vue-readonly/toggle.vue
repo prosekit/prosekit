@@ -1,17 +1,17 @@
 <script setup lang="ts">
 defineProps<{
-  available: Boolean
-  active?: Boolean
-  onChange: VoidFunction
+  pressed: Boolean
+  disabled?: Boolean
+  onClick: VoidFunction
 }>()
 </script>
 
 <template>
   <button
-    :data-state="active ? 'on' : 'off'"
-    :disabled="!available"
+    :data-state="pressed ? 'on' : 'off'"
+    :disabled="disabled ? true : undefined"
+    @click="onClick"
     @mousedown.prevent
-    @click="onChange"
     class="TOGGLE_BUTTON"
   >
     <slot></slot>

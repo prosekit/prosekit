@@ -1,21 +1,21 @@
 import type { ParentProps } from 'solid-js'
 
 export default function Toggle({
-  active,
-  available,
-  onChange,
+  pressed,
+  disabled,
+  onClick,
   children,
 }: ParentProps<{
-  active: () => boolean
-  available: () => boolean
-  onChange: () => void
+  pressed: () => boolean
+  disabled?: () => boolean
+  onClick: () => void
 }>) {
   return (
     <button
-      data-state={active() ? 'on' : 'off'}
+      data-state={pressed() ? 'on' : 'off'}
+      disabled={disabled?.()}
+      onClick={() => onClick()}
       onMouseDown={(event) => event.preventDefault()}
-      onClick={() => onChange()}
-      disabled={!available()}
       class="TOGGLE_BUTTON"
     >
       {children}

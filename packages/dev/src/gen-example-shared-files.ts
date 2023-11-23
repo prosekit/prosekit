@@ -27,7 +27,9 @@ export async function genExampleSharedFiles() {
     let found = false
 
     for (const framework of frameworks) {
-      found ||= await cloneSharedFile(framework, file)
+      if (await cloneSharedFile(framework, file)) {
+        found = true
+      }
     }
 
     if (!found) {

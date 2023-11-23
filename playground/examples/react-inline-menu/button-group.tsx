@@ -9,23 +9,23 @@ export default function ButtonGroup() {
   return (
     <>
       <Toggle
-        active={editor.marks.bold.isActive()}
-        available={editor.commands.toggleBold.canApply()}
-        onChange={() => editor.commands.toggleBold()}
+        pressed={editor.marks.bold.isActive()}
+        disabled={!editor.commands.toggleBold.canApply()}
+        onClick={() => editor.commands.toggleBold()}
       >
         Bold
       </Toggle>
       <Toggle
-        active={editor.marks.italic.isActive()}
-        available={editor.commands.toggleItalic.canApply()}
-        onChange={() => editor.commands.toggleItalic()}
+        pressed={editor.marks.italic.isActive()}
+        disabled={!editor.commands.toggleItalic.canApply()}
+        onClick={() => editor.commands.toggleItalic()}
       >
         Italic
       </Toggle>
       <Toggle
-        active={editor.marks.underline.isActive()}
-        available={editor.commands.toggleUnderline.canApply()}
-        onChange={() => editor.commands.toggleUnderline()}
+        pressed={editor.marks.underline.isActive()}
+        disabled={!editor.commands.toggleUnderline.canApply()}
+        onClick={() => editor.commands.toggleUnderline()}
       >
         Underline
       </Toggle>

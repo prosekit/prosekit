@@ -2,53 +2,53 @@
 // This file is generated from gen-example-glob-import.ts
 
 const modules = import.meta.glob([
-  "../../playground/examples/react-minimal/app.tsx",
-  "../../playground/examples/react-heading/app.tsx",
+  "../../playground/examples/react-minimal/editor.tsx",
+  "../../playground/examples/react-heading/editor.tsx",
   "../../playground/examples/react-heading/extension.ts",
   "../../playground/examples/react-heading/toggle.tsx",
   "../../playground/examples/react-heading/toolbar.tsx",
-  "../../playground/examples/react-inline-menu/app.tsx",
   "../../playground/examples/react-inline-menu/button-group.tsx",
+  "../../playground/examples/react-inline-menu/editor.tsx",
   "../../playground/examples/react-inline-menu/extension.ts",
   "../../playground/examples/react-inline-menu/inline-menu.tsx",
   "../../playground/examples/react-inline-menu/toggle.tsx",
-  "../../playground/examples/react-keymap/app.tsx",
+  "../../playground/examples/react-keymap/editor.tsx",
   "../../playground/examples/react-keymap/keymap-config.tsx",
-  "../../playground/examples/react-list/app.tsx",
+  "../../playground/examples/react-list/editor.tsx",
   "../../playground/examples/react-list/extension.ts",
   "../../playground/examples/react-list/toggle.tsx",
   "../../playground/examples/react-list/toolbar.tsx",
-  "../../playground/examples/react-readonly/app.tsx",
+  "../../playground/examples/react-readonly/editor.tsx",
   "../../playground/examples/react-readonly/extension.ts",
   "../../playground/examples/react-readonly/toggle.tsx",
   "../../playground/examples/react-readonly/toolbar.tsx",
   "../../playground/examples/react-readonly/use-readonly.ts",
-  "../../playground/examples/react-slash-menu/app.tsx",
+  "../../playground/examples/react-slash-menu/editor.tsx",
   "../../playground/examples/react-slash-menu/extension.ts",
   "../../playground/examples/react-slash-menu/slash-menu.tsx",
-  "../../playground/examples/react-toolbar/app.tsx",
   "../../playground/examples/react-toolbar/code-block-view.tsx",
+  "../../playground/examples/react-toolbar/editor.tsx",
   "../../playground/examples/react-toolbar/extension.ts",
   "../../playground/examples/react-toolbar/image-upload-popover.tsx",
   "../../playground/examples/react-toolbar/package.json",
   "../../playground/examples/react-toolbar/toggle.tsx",
   "../../playground/examples/react-toolbar/toolbar.tsx",
-  "../../playground/examples/react-user-menu/app.tsx",
+  "../../playground/examples/react-user-menu/editor.tsx",
   "../../playground/examples/react-user-menu/extension.ts",
   "../../playground/examples/react-user-menu/tag-menu.tsx",
   "../../playground/examples/react-user-menu/tags.ts",
   "../../playground/examples/react-user-menu/user-menu.tsx",
   "../../playground/examples/react-user-menu/users.ts",
-  "../../playground/examples/vue-minimal/app.vue",
-  "../../playground/examples/vue-bold/app.vue",
+  "../../playground/examples/vue-minimal/editor.vue",
+  "../../playground/examples/vue-bold/editor.vue",
   "../../playground/examples/vue-bold/extension.ts",
   "../../playground/examples/vue-bold/toggle.vue",
   "../../playground/examples/vue-bold/toolbar.vue",
-  "../../playground/examples/vue-code/app.vue",
+  "../../playground/examples/vue-code/editor.vue",
   "../../playground/examples/vue-code/extension.ts",
   "../../playground/examples/vue-code/toggle.vue",
   "../../playground/examples/vue-code/toolbar.vue",
-  "../../playground/examples/vue-full/app.vue",
+  "../../playground/examples/vue-full/editor.vue",
   "../../playground/examples/vue-full/extension.ts",
   "../../playground/examples/vue-full/image-upload-popover.vue",
   "../../playground/examples/vue-full/inline-buttons.vue",
@@ -60,94 +60,94 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-full/toolbar.vue",
   "../../playground/examples/vue-full/user-menu.vue",
   "../../playground/examples/vue-full/users.ts",
-  "../../playground/examples/vue-heading/app.vue",
+  "../../playground/examples/vue-heading/editor.vue",
   "../../playground/examples/vue-heading/extension.ts",
   "../../playground/examples/vue-heading/toggle.vue",
   "../../playground/examples/vue-heading/toolbar.vue",
-  "../../playground/examples/vue-inline-menu/app.vue",
+  "../../playground/examples/vue-inline-menu/editor.vue",
   "../../playground/examples/vue-inline-menu/extension.ts",
   "../../playground/examples/vue-inline-menu/inline-buttons.vue",
   "../../playground/examples/vue-inline-menu/inline-menu.vue",
-  "../../playground/examples/vue-italic/app.vue",
+  "../../playground/examples/vue-italic/editor.vue",
   "../../playground/examples/vue-italic/extension.ts",
   "../../playground/examples/vue-italic/toggle.vue",
   "../../playground/examples/vue-italic/toolbar.vue",
-  "../../playground/examples/vue-keymap/app.vue",
+  "../../playground/examples/vue-keymap/editor.vue",
   "../../playground/examples/vue-keymap/keymap-config.vue",
-  "../../playground/examples/vue-link/app.vue",
+  "../../playground/examples/vue-link/editor.vue",
   "../../playground/examples/vue-link/extension.ts",
-  "../../playground/examples/vue-list/app.vue",
+  "../../playground/examples/vue-list/editor.vue",
   "../../playground/examples/vue-list/extension.ts",
   "../../playground/examples/vue-list/toggle.vue",
   "../../playground/examples/vue-list/toolbar.vue",
-  "../../playground/examples/vue-readonly/app.vue",
+  "../../playground/examples/vue-readonly/editor.vue",
   "../../playground/examples/vue-readonly/extension.ts",
   "../../playground/examples/vue-readonly/toggle.vue",
   "../../playground/examples/vue-readonly/toolbar.vue",
   "../../playground/examples/vue-readonly/use-readonly.ts",
-  "../../playground/examples/vue-slash-menu/app.vue",
+  "../../playground/examples/vue-slash-menu/editor.vue",
   "../../playground/examples/vue-slash-menu/extension.ts",
   "../../playground/examples/vue-slash-menu/slash-menu.vue",
-  "../../playground/examples/vue-strike/app.vue",
+  "../../playground/examples/vue-strike/editor.vue",
   "../../playground/examples/vue-strike/extension.ts",
   "../../playground/examples/vue-strike/toggle.vue",
   "../../playground/examples/vue-strike/toolbar.vue",
-  "../../playground/examples/vue-toolbar/app.vue",
+  "../../playground/examples/vue-toolbar/editor.vue",
   "../../playground/examples/vue-toolbar/extension.ts",
   "../../playground/examples/vue-toolbar/toggle.vue",
   "../../playground/examples/vue-toolbar/toolbar.vue",
-  "../../playground/examples/vue-underline/app.vue",
+  "../../playground/examples/vue-underline/editor.vue",
   "../../playground/examples/vue-underline/extension.ts",
   "../../playground/examples/vue-underline/toggle.vue",
   "../../playground/examples/vue-underline/toolbar.vue",
-  "../../playground/examples/preact-minimal/app.tsx",
-  "../../playground/examples/preact-keymap/app.tsx",
+  "../../playground/examples/preact-minimal/editor.tsx",
+  "../../playground/examples/preact-keymap/editor.tsx",
   "../../playground/examples/preact-keymap/keymap-config.tsx",
-  "../../playground/examples/preact-readonly/app.tsx",
+  "../../playground/examples/preact-readonly/editor.tsx",
   "../../playground/examples/preact-readonly/extension.ts",
   "../../playground/examples/preact-readonly/toggle.tsx",
   "../../playground/examples/preact-readonly/toolbar.tsx",
   "../../playground/examples/preact-readonly/use-readonly.ts",
-  "../../playground/examples/preact-slash-menu/app.tsx",
+  "../../playground/examples/preact-slash-menu/editor.tsx",
   "../../playground/examples/preact-slash-menu/extension.ts",
   "../../playground/examples/preact-slash-menu/slash-menu.tsx",
-  "../../playground/examples/svelte-minimal/app.svelte",
-  "../../playground/examples/svelte-bold/app.svelte",
+  "../../playground/examples/svelte-minimal/editor.svelte",
+  "../../playground/examples/svelte-bold/editor.svelte",
   "../../playground/examples/svelte-bold/extension.ts",
   "../../playground/examples/svelte-bold/toggle.svelte",
   "../../playground/examples/svelte-bold/toolbar.svelte",
-  "../../playground/examples/svelte-italic/app.svelte",
+  "../../playground/examples/svelte-italic/editor.svelte",
   "../../playground/examples/svelte-italic/extension.ts",
   "../../playground/examples/svelte-italic/toggle.svelte",
   "../../playground/examples/svelte-italic/toolbar.svelte",
-  "../../playground/examples/svelte-keymap/app.svelte",
+  "../../playground/examples/svelte-keymap/editor.svelte",
   "../../playground/examples/svelte-keymap/keymap-config.svelte",
-  "../../playground/examples/svelte-list/app.svelte",
+  "../../playground/examples/svelte-list/editor.svelte",
   "../../playground/examples/svelte-list/extension.ts",
-  "../../playground/examples/svelte-readonly/app.svelte",
+  "../../playground/examples/svelte-readonly/editor.svelte",
   "../../playground/examples/svelte-readonly/extension.ts",
   "../../playground/examples/svelte-readonly/toggle.svelte",
   "../../playground/examples/svelte-readonly/toolbar.svelte",
   "../../playground/examples/svelte-readonly/use-readonly.ts",
-  "../../playground/examples/svelte-slash-menu/app.svelte",
+  "../../playground/examples/svelte-slash-menu/editor.svelte",
   "../../playground/examples/svelte-slash-menu/extension.ts",
   "../../playground/examples/svelte-slash-menu/slash-menu.svelte",
-  "../../playground/examples/solid-minimal/app.tsx",
-  "../../playground/examples/solid-heading/app.tsx",
+  "../../playground/examples/solid-minimal/editor.tsx",
+  "../../playground/examples/solid-heading/editor.tsx",
   "../../playground/examples/solid-heading/extension.ts",
   "../../playground/examples/solid-heading/toggle.tsx",
   "../../playground/examples/solid-heading/toolbar.tsx",
-  "../../playground/examples/solid-keymap/app.tsx",
+  "../../playground/examples/solid-keymap/editor.tsx",
   "../../playground/examples/solid-keymap/keymap-config.tsx",
-  "../../playground/examples/solid-readonly/app.tsx",
+  "../../playground/examples/solid-readonly/editor.tsx",
   "../../playground/examples/solid-readonly/extension.ts",
   "../../playground/examples/solid-readonly/toggle.tsx",
   "../../playground/examples/solid-readonly/toolbar.tsx",
   "../../playground/examples/solid-readonly/use-readonly.ts",
-  "../../playground/examples/solid-slash-menu/app.tsx",
+  "../../playground/examples/solid-slash-menu/editor.tsx",
   "../../playground/examples/solid-slash-menu/extension.ts",
   "../../playground/examples/solid-slash-menu/slash-menu.tsx",
-  "../../playground/examples/lit/app.ts",
+  "../../playground/examples/lit/editor.ts",
   "../../playground/examples/lit/extension.ts",
   "../../playground/examples/lit/package.json",
   "../../playground/examples/vanilla/index.js"
@@ -155,15 +155,15 @@ const modules = import.meta.glob([
 
 const examples = {
   "react-minimal": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/react-minimal/app.tsx']
+      "code": modules['../../playground/examples/react-minimal/editor.tsx']
     }
   },
   "react-heading": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/react-heading/app.tsx']
+      "code": modules['../../playground/examples/react-heading/editor.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -179,13 +179,13 @@ const examples = {
     }
   },
   "react-inline-menu": {
-    "/app.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/react-inline-menu/app.tsx']
-    },
     "/button-group.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-inline-menu/button-group.tsx']
+    },
+    "/editor.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-inline-menu/editor.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -201,9 +201,9 @@ const examples = {
     }
   },
   "react-keymap": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/react-keymap/app.tsx']
+      "code": modules['../../playground/examples/react-keymap/editor.tsx']
     },
     "/keymap-config.tsx": {
       "hidden": false,
@@ -211,9 +211,9 @@ const examples = {
     }
   },
   "react-list": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/react-list/app.tsx']
+      "code": modules['../../playground/examples/react-list/editor.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -229,9 +229,9 @@ const examples = {
     }
   },
   "react-readonly": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/react-readonly/app.tsx']
+      "code": modules['../../playground/examples/react-readonly/editor.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -251,9 +251,9 @@ const examples = {
     }
   },
   "react-slash-menu": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/react-slash-menu/app.tsx']
+      "code": modules['../../playground/examples/react-slash-menu/editor.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -265,13 +265,13 @@ const examples = {
     }
   },
   "react-toolbar": {
-    "/app.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/react-toolbar/app.tsx']
-    },
     "/code-block-view.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-toolbar/code-block-view.tsx']
+    },
+    "/editor.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-toolbar/editor.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -295,9 +295,9 @@ const examples = {
     }
   },
   "react-user-menu": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/react-user-menu/app.tsx']
+      "code": modules['../../playground/examples/react-user-menu/editor.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -321,15 +321,15 @@ const examples = {
     }
   },
   "vue-minimal": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-minimal/app.vue']
+      "code": modules['../../playground/examples/vue-minimal/editor.vue']
     }
   },
   "vue-bold": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-bold/app.vue']
+      "code": modules['../../playground/examples/vue-bold/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -345,9 +345,9 @@ const examples = {
     }
   },
   "vue-code": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-code/app.vue']
+      "code": modules['../../playground/examples/vue-code/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -363,9 +363,9 @@ const examples = {
     }
   },
   "vue-full": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-full/app.vue']
+      "code": modules['../../playground/examples/vue-full/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -413,9 +413,9 @@ const examples = {
     }
   },
   "vue-heading": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-heading/app.vue']
+      "code": modules['../../playground/examples/vue-heading/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -431,9 +431,9 @@ const examples = {
     }
   },
   "vue-inline-menu": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-inline-menu/app.vue']
+      "code": modules['../../playground/examples/vue-inline-menu/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -449,9 +449,9 @@ const examples = {
     }
   },
   "vue-italic": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-italic/app.vue']
+      "code": modules['../../playground/examples/vue-italic/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -467,9 +467,9 @@ const examples = {
     }
   },
   "vue-keymap": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-keymap/app.vue']
+      "code": modules['../../playground/examples/vue-keymap/editor.vue']
     },
     "/keymap-config.vue": {
       "hidden": false,
@@ -477,9 +477,9 @@ const examples = {
     }
   },
   "vue-link": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-link/app.vue']
+      "code": modules['../../playground/examples/vue-link/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -487,9 +487,9 @@ const examples = {
     }
   },
   "vue-list": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-list/app.vue']
+      "code": modules['../../playground/examples/vue-list/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -505,9 +505,9 @@ const examples = {
     }
   },
   "vue-readonly": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-readonly/app.vue']
+      "code": modules['../../playground/examples/vue-readonly/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -527,9 +527,9 @@ const examples = {
     }
   },
   "vue-slash-menu": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-slash-menu/app.vue']
+      "code": modules['../../playground/examples/vue-slash-menu/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -541,9 +541,9 @@ const examples = {
     }
   },
   "vue-strike": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-strike/app.vue']
+      "code": modules['../../playground/examples/vue-strike/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -559,9 +559,9 @@ const examples = {
     }
   },
   "vue-toolbar": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-toolbar/app.vue']
+      "code": modules['../../playground/examples/vue-toolbar/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -577,9 +577,9 @@ const examples = {
     }
   },
   "vue-underline": {
-    "/app.vue": {
+    "/editor.vue": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-underline/app.vue']
+      "code": modules['../../playground/examples/vue-underline/editor.vue']
     },
     "/extension.ts": {
       "hidden": false,
@@ -595,15 +595,15 @@ const examples = {
     }
   },
   "preact-minimal": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/preact-minimal/app.tsx']
+      "code": modules['../../playground/examples/preact-minimal/editor.tsx']
     }
   },
   "preact-keymap": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/preact-keymap/app.tsx']
+      "code": modules['../../playground/examples/preact-keymap/editor.tsx']
     },
     "/keymap-config.tsx": {
       "hidden": false,
@@ -611,9 +611,9 @@ const examples = {
     }
   },
   "preact-readonly": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/preact-readonly/app.tsx']
+      "code": modules['../../playground/examples/preact-readonly/editor.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -633,9 +633,9 @@ const examples = {
     }
   },
   "preact-slash-menu": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/preact-slash-menu/app.tsx']
+      "code": modules['../../playground/examples/preact-slash-menu/editor.tsx']
     },
     "/extension.ts": {
       "hidden": true,
@@ -647,15 +647,15 @@ const examples = {
     }
   },
   "svelte-minimal": {
-    "/app.svelte": {
+    "/editor.svelte": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-minimal/app.svelte']
+      "code": modules['../../playground/examples/svelte-minimal/editor.svelte']
     }
   },
   "svelte-bold": {
-    "/app.svelte": {
+    "/editor.svelte": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-bold/app.svelte']
+      "code": modules['../../playground/examples/svelte-bold/editor.svelte']
     },
     "/extension.ts": {
       "hidden": false,
@@ -671,9 +671,9 @@ const examples = {
     }
   },
   "svelte-italic": {
-    "/app.svelte": {
+    "/editor.svelte": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-italic/app.svelte']
+      "code": modules['../../playground/examples/svelte-italic/editor.svelte']
     },
     "/extension.ts": {
       "hidden": false,
@@ -689,9 +689,9 @@ const examples = {
     }
   },
   "svelte-keymap": {
-    "/app.svelte": {
+    "/editor.svelte": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-keymap/app.svelte']
+      "code": modules['../../playground/examples/svelte-keymap/editor.svelte']
     },
     "/keymap-config.svelte": {
       "hidden": false,
@@ -699,9 +699,9 @@ const examples = {
     }
   },
   "svelte-list": {
-    "/app.svelte": {
+    "/editor.svelte": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-list/app.svelte']
+      "code": modules['../../playground/examples/svelte-list/editor.svelte']
     },
     "/extension.ts": {
       "hidden": false,
@@ -709,9 +709,9 @@ const examples = {
     }
   },
   "svelte-readonly": {
-    "/app.svelte": {
+    "/editor.svelte": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-readonly/app.svelte']
+      "code": modules['../../playground/examples/svelte-readonly/editor.svelte']
     },
     "/extension.ts": {
       "hidden": false,
@@ -731,9 +731,9 @@ const examples = {
     }
   },
   "svelte-slash-menu": {
-    "/app.svelte": {
+    "/editor.svelte": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-slash-menu/app.svelte']
+      "code": modules['../../playground/examples/svelte-slash-menu/editor.svelte']
     },
     "/extension.ts": {
       "hidden": false,
@@ -745,15 +745,15 @@ const examples = {
     }
   },
   "solid-minimal": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/solid-minimal/app.tsx']
+      "code": modules['../../playground/examples/solid-minimal/editor.tsx']
     }
   },
   "solid-heading": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/solid-heading/app.tsx']
+      "code": modules['../../playground/examples/solid-heading/editor.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -769,9 +769,9 @@ const examples = {
     }
   },
   "solid-keymap": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/solid-keymap/app.tsx']
+      "code": modules['../../playground/examples/solid-keymap/editor.tsx']
     },
     "/keymap-config.tsx": {
       "hidden": false,
@@ -779,9 +779,9 @@ const examples = {
     }
   },
   "solid-readonly": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/solid-readonly/app.tsx']
+      "code": modules['../../playground/examples/solid-readonly/editor.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -801,9 +801,9 @@ const examples = {
     }
   },
   "solid-slash-menu": {
-    "/app.tsx": {
+    "/editor.tsx": {
       "hidden": false,
-      "code": modules['../../playground/examples/solid-slash-menu/app.tsx']
+      "code": modules['../../playground/examples/solid-slash-menu/editor.tsx']
     },
     "/extension.ts": {
       "hidden": false,
@@ -815,9 +815,9 @@ const examples = {
     }
   },
   "lit": {
-    "/app.ts": {
+    "/editor.ts": {
       "hidden": false,
-      "code": modules['../../playground/examples/lit/app.ts']
+      "code": modules['../../playground/examples/lit/editor.ts']
     },
     "/extension.ts": {
       "hidden": false,

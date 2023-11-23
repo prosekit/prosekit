@@ -1,11 +1,11 @@
 examples:
   - name: react-minimal
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
   - name: react-heading
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -15,9 +15,9 @@ examples:
         hidden: false
   - name: react-inline-menu
     files:
-      - path: app.tsx
-        hidden: false
       - path: button-group.tsx
+        hidden: false
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -27,13 +27,13 @@ examples:
         hidden: false
   - name: react-keymap
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: keymap-config.tsx
         hidden: false
   - name: react-list
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -43,7 +43,7 @@ examples:
         hidden: false
   - name: react-readonly
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -55,7 +55,7 @@ examples:
         hidden: false
   - name: react-slash-menu
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -63,9 +63,9 @@ examples:
         hidden: false
   - name: react-toolbar
     files:
-      - path: app.tsx
-        hidden: false
       - path: code-block-view.tsx
+        hidden: false
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -79,7 +79,7 @@ examples:
         hidden: false
   - name: react-user-menu
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -93,11 +93,11 @@ examples:
         hidden: false
   - name: vue-minimal
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
   - name: vue-bold
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -107,7 +107,7 @@ examples:
         hidden: false
   - name: vue-code
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -117,7 +117,7 @@ examples:
         hidden: false
   - name: vue-full
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -143,7 +143,7 @@ examples:
         hidden: false
   - name: vue-heading
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -153,7 +153,7 @@ examples:
         hidden: false
   - name: vue-inline-menu
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -163,7 +163,7 @@ examples:
         hidden: false
   - name: vue-italic
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -173,19 +173,19 @@ examples:
         hidden: false
   - name: vue-keymap
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: keymap-config.vue
         hidden: false
   - name: vue-link
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
   - name: vue-list
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -195,7 +195,7 @@ examples:
         hidden: false
   - name: vue-readonly
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -207,7 +207,7 @@ examples:
         hidden: false
   - name: vue-slash-menu
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -215,7 +215,7 @@ examples:
         hidden: false
   - name: vue-strike
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -225,7 +225,7 @@ examples:
         hidden: false
   - name: vue-toolbar
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -235,7 +235,7 @@ examples:
         hidden: false
   - name: vue-underline
     files:
-      - path: app.vue
+      - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
@@ -245,17 +245,17 @@ examples:
         hidden: false
   - name: preact-minimal
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
   - name: preact-keymap
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: keymap-config.tsx
         hidden: false
   - name: preact-readonly
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -267,7 +267,7 @@ examples:
         hidden: false
   - name: preact-slash-menu
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: true
@@ -275,11 +275,11 @@ examples:
         hidden: false
   - name: svelte-minimal
     files:
-      - path: app.svelte
+      - path: editor.svelte
         hidden: false
   - name: svelte-bold
     files:
-      - path: app.svelte
+      - path: editor.svelte
         hidden: false
       - path: extension.ts
         hidden: false
@@ -289,7 +289,7 @@ examples:
         hidden: false
   - name: svelte-italic
     files:
-      - path: app.svelte
+      - path: editor.svelte
         hidden: false
       - path: extension.ts
         hidden: false
@@ -299,19 +299,19 @@ examples:
         hidden: false
   - name: svelte-keymap
     files:
-      - path: app.svelte
+      - path: editor.svelte
         hidden: false
       - path: keymap-config.svelte
         hidden: false
   - name: svelte-list
     files:
-      - path: app.svelte
+      - path: editor.svelte
         hidden: false
       - path: extension.ts
         hidden: false
   - name: svelte-readonly
     files:
-      - path: app.svelte
+      - path: editor.svelte
         hidden: false
       - path: extension.ts
         hidden: false
@@ -323,7 +323,7 @@ examples:
         hidden: false
   - name: svelte-slash-menu
     files:
-      - path: app.svelte
+      - path: editor.svelte
         hidden: false
       - path: extension.ts
         hidden: false
@@ -331,11 +331,11 @@ examples:
         hidden: false
   - name: solid-minimal
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
   - name: solid-heading
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -345,13 +345,13 @@ examples:
         hidden: false
   - name: solid-keymap
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: keymap-config.tsx
         hidden: false
   - name: solid-readonly
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -363,7 +363,7 @@ examples:
         hidden: false
   - name: solid-slash-menu
     files:
-      - path: app.tsx
+      - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
@@ -371,7 +371,7 @@ examples:
         hidden: false
   - name: lit
     files:
-      - path: app.ts
+      - path: editor.ts
         hidden: false
       - path: extension.ts
         hidden: false

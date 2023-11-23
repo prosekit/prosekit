@@ -3,7 +3,7 @@
 ProseKit is designed to work seamlessly with Vue.
 
 ::: code-group
-<<< @/../playground/examples/vue-minimal/app.vue
+<<< @/../playground/examples/vue-minimal/editor.vue
 :::
 
 ## `useEditor`

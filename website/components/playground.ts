@@ -25,7 +25,7 @@ export const Playground = defineComponent<PlaygroundProps>(
     const dependencies = extractDependencies(files)
     patchFiles(files)
 
-    const template = getTemplate(props.name)
+    const template = replaceBuiltinApp(getTemplate(props.name))
 
     return () =>
       h(
@@ -173,11 +173,13 @@ function clone<T>(value: T): T {
   return JSON.parse(JSON.stringify(value)) as T
 }
 
-function getTemplate(exampleName: string): {
+type SandboxTemplate = {
   files: Record<string, { hidden?: boolean; code: string }>
   environment: string
   main: string
-} {
+}
+
+function getTemplate(exampleName: string): SandboxTemplate {
   const framework = exampleName.split('-')[0]
 
   switch (framework) {
@@ -220,4 +222,48 @@ function replaceSrc<T>(val: T): T {
   }
 
   return val
+}
+
+function replaceBuiltinApp(template: SandboxTemplate): SandboxTemplate {
+  const files = template.files
+
+  if (files['/App.vue']) {
+    files['/App.vue'].hidden = true
+    files['/App.vue'].code = dedent`
+      <script setup lang="ts">
+      import Editor from './editor.vue'
+      </script>
+      
+      <template>
+        <Editor />
+      </template>
+    `
+
+    template.main = '/editor.vue'
+  }
+
+  if (files['/App.svelte']) {
+    files['/App.svelte'].hidden = true
+    files['/App.svelte'].code = dedent`
+      <script lang="ts">
+      import Editor from './editor.svelte'
+      </script>
+          
+      <Editor />
+    `
+
+    template.main = '/editor.svelte'
+  }
+
+  if (files['/App.tsx']) {
+    files['/App.tsx'].hidden = true
+    files['/App.tsx'].code = dedent`
+      import Editor from './editor'
+      export default Editor
+    `
+
+    template.main = '/editor.tsx'
+  }
+
+  return template
 }

@@ -4,7 +4,7 @@ A popup floating around the current selected text. It can be used to built an in
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-inline-menu/app.vue'
+import App from '../../components/vue-inline-menu/editor.vue'
 </script>
 
 :::tabs key:framework

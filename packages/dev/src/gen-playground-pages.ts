@@ -43,7 +43,7 @@ function getPageContent(names: string[]): string {
       return null
     }
 
-    importLines.push(`import E${id} from '../examples/${name}/app.${ext}'`)
+    importLines.push(`import E${id} from '../examples/${name}/editor.${ext}'`)
     pathLines.push(`  { params: { example: '${name}' } },`)
     htmlLines.push(
       `  {example === '${name}' && <E${id} client:only="${framework}" />}`,

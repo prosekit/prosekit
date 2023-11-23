@@ -4,7 +4,7 @@ The `bold` mark is used to represent text that is using a bold font weight. It w
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-bold/app.vue'
+import App from '../../components/vue-bold/editor.vue'
 </script>
 
 :::tabs key:framework

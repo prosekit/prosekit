@@ -112,3 +112,30 @@ export const shortcuts = {
   ICON_LIST_TASK: clsx('i-ci-list-checklist h-5 w-5'),
   ICON_LIST_TOGGLE: clsx('i-ci-sort-descending h-5 w-5 rotate-180'),
 }
+
+/**
+ * Replace CSS class names from shortcuts with the actual tailwindcss/unocss
+ * class names.
+ *
+ * @param {string} code - The code to be processed.
+ * @returns {string} - The processed code.
+ */
+export function replaceShortcuts(code) {
+  // Sort by length, so that longer shortcuts are replaced first
+  const shortcutNames = Object.keys(shortcuts).sort(
+    (a, b) => b.length - a.length,
+  )
+
+  return (
+    code
+      // Replace " with ', because some class names contain "
+      .replace(
+        new RegExp(`\"(${shortcutNames.join('|')})\"`, 'g'),
+        (match) => `'` + shortcuts[match.slice(1, -1)] + `'`,
+      )
+      .replace(
+        new RegExp(`\\b(${shortcutNames.join('|')})\\b`, 'g'),
+        (match) => shortcuts[match],
+      )
+  )
+}

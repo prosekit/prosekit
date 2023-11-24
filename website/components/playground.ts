@@ -5,7 +5,7 @@ import type { PackageJson } from 'type-fest'
 import { useData } from 'vitepress'
 import { defineComponent, h } from 'vue'
 
-import { shortcuts } from '../../config/unocss-shortcut.mjs'
+import { replaceShortcuts } from '../../config/unocss-shortcut.mjs'
 
 import { preflightCssCode } from './preflight-css'
 
@@ -146,27 +146,8 @@ function extractDependencies(
 
 function patchFiles(files: Record<string, { hidden: boolean; code: string }>) {
   for (const file of Object.values(files)) {
-    file.code = patchCssClassNames(file.code)
+    file.code = replaceShortcuts(file.code)
   }
-}
-
-function patchCssClassNames(code: string): string {
-  const shortcutNames = Object.keys(shortcuts).sort(
-    (a, b) => b.length - a.length,
-  )
-
-  return (
-    code
-      // Replace " with ', because some class names contain "
-      .replace(
-        new RegExp(`\"(${shortcutNames.join('|')})\"`, 'g'),
-        (match) => `'` + shortcuts[match.slice(1, -1)] + `'`,
-      )
-      .replace(
-        new RegExp(`\\b(${shortcutNames.join('|')})\\b`, 'g'),
-        (match) => shortcuts[match],
-      )
-  )
 }
 
 function clone<T>(value: T): T {

@@ -3,6 +3,7 @@ import { createRequire } from 'node:module'
 import { defineConfig } from 'vitepress'
 import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
+import { replaceShortcutsPlugin } from './replace-shortcuts-plugin'
 import { exampleItems } from './sidebar-example-items'
 import { referenceItems } from './sidebar-reference-items'
 
@@ -105,6 +106,10 @@ export default defineConfig({
           text: 'Components',
           items: [
             {
+              text: 'Toolbar',
+              link: '/guide/components/toolbar',
+            },
+            {
               text: 'Inline Popover',
               link: '/guide/components/inline-popover',
             },
@@ -148,6 +153,7 @@ export default defineConfig({
   markdown: {
     config(md) {
       md.use(tabsMarkdownPlugin)
+      md.use(replaceShortcutsPlugin)
     },
   },
 })

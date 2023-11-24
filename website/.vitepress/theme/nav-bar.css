@@ -34,6 +34,10 @@ body .Layout .VPNav .VPNavBar {
   border-bottom: none;
 }
 
+body .Layout .VPLocalNav {
+  border-top: none;
+}
+
 @media (min-width: 960px) {
   body .VPSidebar {
     top: var(--vp-nav-height) !important;

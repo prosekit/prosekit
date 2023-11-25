@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "solid-js": "^1.8.5",
+    "solid-js": "^1.8.6",
     "tsup": "^8.0.1",
     "typescript": "^5.3.2",
     "vitest": "^0.34.6"

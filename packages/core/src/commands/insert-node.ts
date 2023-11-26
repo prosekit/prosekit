@@ -4,7 +4,7 @@ import { insertPoint } from '@prosekit/pm/transform'
 
 import { ProseKitError } from '../error'
 import { getNodeType } from '../utils/get-node-type'
-import { setNearSelection } from '../utils/set-near-selection'
+import { setSelectionAround } from '../utils/set-selection-around'
 
 function insertNode(
   options:
@@ -41,7 +41,7 @@ function insertNode(
 
     if (dispatch) {
       const tr = state.tr.insert(insertPos, node)
-      setNearSelection(tr, insertPos + node.nodeSize)
+      setSelectionAround(tr, insertPos + node.nodeSize)
       dispatch(tr)
     }
     return true

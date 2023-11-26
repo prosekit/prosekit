@@ -6,7 +6,9 @@ import { definePlaceholder } from 'prosekit/extensions/placeholder'
 export function defineExtension() {
   return union([
     defineBasicExtension(),
-    definePlaceholder({ placeholder: 'Type @ to metion someone...' }),
+    definePlaceholder({
+      placeholder: 'Type @ to metion someone or # to tag something...',
+    }),
     defineMention(),
   ])
 }

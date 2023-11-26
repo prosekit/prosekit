@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.1.8
+
+### Patch Changes
+
+- [6c819f2] ![@prosekit/lit](https://img.shields.io/badge/prosekit%2Flit-444444?logo=lit)
+
+  Fix a bug where hovering mouse over an autocomplete item would cause the autocomplete list to scroll.
+
+- [01b6549] ![@prosekit/extensions](https://img.shields.io/badge/prosekit%2Fextensions-444444)
+
+  Add `insertMention` command.
+
+- [d4061d4] ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  Try to set the selection after the inserted node when calling the `insertNode` command.
+
 ## 0.1.7
 
 ### Patch Changes

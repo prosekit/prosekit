@@ -22,6 +22,8 @@ export default defineConfig({
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    outline: [2, 3],
+
     nav: [
       { text: 'Guide', link: '/guide/what-is-prosekit' },
       { text: 'API References', link: '/references' },

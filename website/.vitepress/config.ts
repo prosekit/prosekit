@@ -84,7 +84,10 @@ export default defineConfig({
 
         {
           text: 'Extensions',
-          items: [{ text: 'Readonly', link: '/guide/extensions/readonly' }],
+          items: [
+            { text: 'Placeholder', link: '/guide/extensions/placeholder' },
+            { text: 'Readonly', link: '/guide/extensions/readonly' },
+          ],
         },
 
         // {

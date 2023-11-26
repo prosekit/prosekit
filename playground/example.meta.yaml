@@ -193,6 +193,12 @@ examples:
         hidden: false
       - path: toolbar.vue
         hidden: false
+  - name: vue-placeholder
+    files:
+      - path: editor.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
   - name: vue-readonly
     files:
       - path: editor.vue

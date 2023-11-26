@@ -11,8 +11,8 @@ export interface PlaceholderOptions {
 
   /**
    * By default, the placeholder text will be shown whenever the current text
-   * cursor is in an empty node. If you only want to show the placeholder when
-   * the whole doc is empty, you can set this option to 'doc'.
+   * cursor is in an empty text node. If you only want to show the placeholder
+   * when the whole doc is empty, you can set this option to 'doc'.
    *
    * @default 'block'
    */

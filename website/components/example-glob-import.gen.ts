@@ -80,6 +80,8 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-list/extension.ts",
   "../../playground/examples/vue-list/toggle.vue",
   "../../playground/examples/vue-list/toolbar.vue",
+  "../../playground/examples/vue-placeholder/editor.vue",
+  "../../playground/examples/vue-placeholder/extension.ts",
   "../../playground/examples/vue-readonly/editor.vue",
   "../../playground/examples/vue-readonly/extension.ts",
   "../../playground/examples/vue-readonly/toggle.vue",
@@ -502,6 +504,16 @@ const examples = {
     "/toolbar.vue": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-list/toolbar.vue']
+    }
+  },
+  "vue-placeholder": {
+    "/editor.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-placeholder/editor.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-placeholder/extension.ts']
     }
   },
   "vue-readonly": {

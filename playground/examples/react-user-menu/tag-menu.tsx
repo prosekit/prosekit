@@ -1,4 +1,3 @@
-import type { MentionAttrs } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/react'
 import { AutocompleteEmpty } from 'prosekit/react/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/react/autocomplete-item'
@@ -12,13 +11,11 @@ export default function TagMenu() {
   const editor = useEditor<EditorExtension>()
 
   const handleTagInsert = (id: number, label: string) => {
-    const attrs: MentionAttrs = {
+    editor.commands.insertMention({
       id: id.toString(),
       value: '#' + label,
       kind: 'tag',
-    }
-    const node = editor.nodes.mention(attrs)
-    editor.commands.insertNode({ node })
+    })
     editor.commands.insertText({ text: ' ' })
   }
 

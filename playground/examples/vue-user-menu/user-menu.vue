@@ -1,24 +1,21 @@
 <script setup lang="ts">
-import type { MentionAttrs } from 'prosekit/extensions/mention'
 import { AutocompleteEmpty } from 'prosekit/vue/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/vue/autocomplete-item'
 import { AutocompleteList } from 'prosekit/vue/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/vue/autocomplete-popover'
 
-import { users } from './user-data'
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
+import { users } from './user-data'
 
 const editor = useEditor<EditorExtension>().value
 
 const handleUserInsert = (id: number, username: string) => {
-  const attrs: MentionAttrs = {
+  editor.commands.insertMention({
     id: id.toString(),
     value: '@' + username,
     kind: 'user',
-  }
-  const node = editor.nodes.mention(attrs)
-  editor.commands.insertNode({ node })
+  })
   editor.commands.insertText({ text: ' ' })
 }
 </script>

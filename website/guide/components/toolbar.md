@@ -36,7 +36,7 @@ In this example, we simply use the `defineBasicExtensions()`. You might want to 
 
 The `EditorExtension` type is exported to provide type safety and enhance the developer experience with TypeScript's type hints and autocompletion.
 
-### `Editor` Component
+### `Editor`
 
 Next, construct an `Editor` component. Refer to the [Getting Started](../getting-started) for instructions on building an `Editor` component.
 
@@ -49,7 +49,7 @@ Next, construct an `Editor` component. Refer to the [Getting Started](../getting
 
 The `Editor` component includes the `Toolbar` component, which houses the command buttons. We will define this component shortly.
 
-### `Toolbar` Component
+### `Toolbar`
 
 The `Toolbar` component contains all the command buttons that interact with the editor instance.
 
@@ -70,7 +70,7 @@ Each command button within the `Toolbar` component is represented by a `Toggle` 
 
 - `disabled`: Determines if a command can be executed in the current state. Use `editor.commands.COMMAND_NAME.canApply()` to check if a command is executable.
 
-### `Toggle` Component
+### `Toggle`
 
 The `Toggle` component represents a single command button in the toolbar, with properties to control its active state, disabled status, and an event handler for executing the command.
 

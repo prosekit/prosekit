@@ -1,6 +1,19 @@
 # Toolbar
 
-A customizable toolbar providing quick access to various commands. This guide outlines the general steps to create a toolbar that can be adapted to any UI framework.
+A customizable toolbar providing quick access to various commands.
+
+:::tabs
+
+== Preview
+
+<ClientOnly><App/></ClientOnly>
+== React
+<ExamplePlaygroundLazy example="react-toolbar" />
+== Vue
+<ExamplePlaygroundLazy example="vue-toolbar" />
+:::
+
+This guide outlines the general steps to create a toolbar that can be adapted to any UI framework.
 
 ## Preparation
 

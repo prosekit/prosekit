@@ -103,6 +103,10 @@ export const exampleItems = [
     "link": "/examples/vue-underline"
   },
   {
+    "text": "vue-user-menu",
+    "link": "/examples/vue-user-menu"
+  },
+  {
     "text": "preact-minimal",
     "link": "/examples/preact-minimal"
   },

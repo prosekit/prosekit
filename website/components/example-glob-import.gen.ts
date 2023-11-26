@@ -35,10 +35,10 @@ const modules = import.meta.glob([
   "../../playground/examples/react-toolbar/toolbar.tsx",
   "../../playground/examples/react-user-menu/editor.tsx",
   "../../playground/examples/react-user-menu/extension.ts",
+  "../../playground/examples/react-user-menu/tag-data.ts",
   "../../playground/examples/react-user-menu/tag-menu.tsx",
-  "../../playground/examples/react-user-menu/tags.ts",
+  "../../playground/examples/react-user-menu/user-data.ts",
   "../../playground/examples/react-user-menu/user-menu.tsx",
-  "../../playground/examples/react-user-menu/users.ts",
   "../../playground/examples/vue-minimal/editor.vue",
   "../../playground/examples/vue-bold/editor.vue",
   "../../playground/examples/vue-bold/extension.ts",
@@ -54,12 +54,12 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-full/inline-buttons.vue",
   "../../playground/examples/vue-full/inline-menu.vue",
   "../../playground/examples/vue-full/slash-menu.vue",
+  "../../playground/examples/vue-full/tag-data.ts",
   "../../playground/examples/vue-full/tag-menu.vue",
-  "../../playground/examples/vue-full/tags.ts",
   "../../playground/examples/vue-full/toggle.vue",
   "../../playground/examples/vue-full/toolbar.vue",
+  "../../playground/examples/vue-full/user-data.ts",
   "../../playground/examples/vue-full/user-menu.vue",
-  "../../playground/examples/vue-full/users.ts",
   "../../playground/examples/vue-heading/editor.vue",
   "../../playground/examples/vue-heading/extension.ts",
   "../../playground/examples/vue-heading/toggle.vue",
@@ -102,6 +102,12 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-underline/extension.ts",
   "../../playground/examples/vue-underline/toggle.vue",
   "../../playground/examples/vue-underline/toolbar.vue",
+  "../../playground/examples/vue-user-menu/editor.vue",
+  "../../playground/examples/vue-user-menu/extension.ts",
+  "../../playground/examples/vue-user-menu/tag-data.ts",
+  "../../playground/examples/vue-user-menu/tag-menu.vue",
+  "../../playground/examples/vue-user-menu/user-data.ts",
+  "../../playground/examples/vue-user-menu/user-menu.vue",
   "../../playground/examples/preact-minimal/editor.tsx",
   "../../playground/examples/preact-keymap/editor.tsx",
   "../../playground/examples/preact-keymap/keymap-config.tsx",
@@ -305,21 +311,21 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/react-user-menu/extension.ts']
     },
+    "/tag-data.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-user-menu/tag-data.ts']
+    },
     "/tag-menu.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-user-menu/tag-menu.tsx']
     },
-    "/tags.ts": {
+    "/user-data.ts": {
       "hidden": false,
-      "code": modules['../../playground/examples/react-user-menu/tags.ts']
+      "code": modules['../../playground/examples/react-user-menu/user-data.ts']
     },
     "/user-menu.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-user-menu/user-menu.tsx']
-    },
-    "/users.ts": {
-      "hidden": false,
-      "code": modules['../../playground/examples/react-user-menu/users.ts']
     }
   },
   "vue-minimal": {
@@ -389,13 +395,13 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/vue-full/slash-menu.vue']
     },
+    "/tag-data.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/tag-data.ts']
+    },
     "/tag-menu.vue": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-full/tag-menu.vue']
-    },
-    "/tags.ts": {
-      "hidden": false,
-      "code": modules['../../playground/examples/vue-full/tags.ts']
     },
     "/toggle.vue": {
       "hidden": false,
@@ -405,13 +411,13 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/vue-full/toolbar.vue']
     },
+    "/user-data.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-full/user-data.ts']
+    },
     "/user-menu.vue": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-full/user-menu.vue']
-    },
-    "/users.ts": {
-      "hidden": false,
-      "code": modules['../../playground/examples/vue-full/users.ts']
     }
   },
   "vue-heading": {
@@ -604,6 +610,32 @@ const examples = {
     "/toolbar.vue": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-underline/toolbar.vue']
+    }
+  },
+  "vue-user-menu": {
+    "/editor.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-user-menu/editor.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-user-menu/extension.ts']
+    },
+    "/tag-data.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-user-menu/tag-data.ts']
+    },
+    "/tag-menu.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-user-menu/tag-menu.vue']
+    },
+    "/user-data.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-user-menu/user-data.ts']
+    },
+    "/user-menu.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-user-menu/user-menu.vue']
     }
   },
   "preact-minimal": {

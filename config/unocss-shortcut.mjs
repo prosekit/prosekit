@@ -25,10 +25,7 @@ export const shortcuts = {
   EDITOR_CONTENT: clsx(
     'relative box-border min-h-[250px] w-full overflow-auto px-[max(16px,_calc(50%-330px))] py-[16px] outline-none outline-0',
     '[&_span[data-mention="user"]]:color-blue-500',
-    '[&_span[data-mention="tag"]]:bg-gray-400/30',
-    '[&_span[data-mention="tag"]]:rounded-full',
-    '[&_span[data-mention="tag"]]:px-[0.5em]',
-    '[&_span[data-mention="tag"]]:py-[0.3em]',
+    '[&_span[data-mention="tag"]]:color-violet-500',
   ),
 
   INLINE_MENU: clsx(

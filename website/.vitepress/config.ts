@@ -67,6 +67,7 @@ export default defineConfig({
             { text: 'Heading', link: '/guide/nodes/heading' },
             { text: 'List', link: '/guide/nodes/list' },
             { text: 'CodeBlock', link: '/guide/nodes/code-block' },
+            { text: 'Mention', link: '/guide/nodes/mention' },
           ],
         },
 

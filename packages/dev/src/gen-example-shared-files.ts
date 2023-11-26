@@ -7,15 +7,26 @@ import { vfs, type VirtualFile } from './virtual-file-system.js'
 
 const sharedFiles = [
   'use-readonly.ts',
+  'user-data.ts',
+  'tag-data.ts',
+
   'toggle.vue',
   'toggle.tsx',
   'toggle.svelte',
+
   'image-upload-popover.tsx',
   'image-upload-popover.vue',
   'image-upload-popover.svelte',
+
   'slash-menu.tsx',
   'slash-menu.vue',
   'slash-menu.svelte',
+
+  'user-menu.tsx',
+  'user-menu.vue',
+
+  'tag-menu.tsx',
+  'tag-menu.vue',
 ]
 
 export async function genExampleSharedFiles() {

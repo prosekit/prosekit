@@ -52,6 +52,8 @@
 
 - [vue-underline](./examples/vue-underline)
 
+- [vue-user-menu](./examples/vue-user-menu)
+
 - [preact-minimal](./examples/preact-minimal)
 
 - [preact-keymap](./examples/preact-keymap)

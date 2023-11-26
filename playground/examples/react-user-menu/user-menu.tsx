@@ -1,4 +1,3 @@
-import type { MentionAttrs } from 'prosekit/extensions/mention'
 import { useEditor } from 'prosekit/react'
 import { AutocompleteEmpty } from 'prosekit/react/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/react/autocomplete-item'
@@ -12,13 +11,11 @@ export default function UserMenu() {
   const editor = useEditor<EditorExtension>()
 
   const handleUserInsert = (id: number, username: string) => {
-    const attrs: MentionAttrs = {
+    editor.commands.insertMention({
       id: id.toString(),
       value: '@' + username,
       kind: 'user',
-    }
-    const node = editor.nodes.mention(attrs)
-    editor.commands.insertNode({ node })
+    })
     editor.commands.insertText({ text: ' ' })
   }
 

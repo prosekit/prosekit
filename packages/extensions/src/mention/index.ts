@@ -1,4 +1,9 @@
-import { defineNodeSpec, union } from '@prosekit/core'
+import {
+  defineCommands,
+  defineNodeSpec,
+  insertNode,
+  union,
+} from '@prosekit/core'
 
 export interface MentionAttrs {
   id: string
@@ -44,9 +49,17 @@ export function defineMentionSpec() {
   })
 }
 
+export function defineMentionCommands() {
+  return defineCommands({
+    insertMention: (attrs: MentionAttrs) => {
+      return insertNode({ type: 'mention', attrs })
+    },
+  })
+}
+
 /**
  * @public
  */
 export function defineMention() {
-  return union([defineMentionSpec()])
+  return union([defineMentionSpec(), defineMentionCommands()])
 }

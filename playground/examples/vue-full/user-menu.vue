@@ -44,4 +44,3 @@ const handleUserInsert = (id: number, username: string) => {
     </AutocompleteList>
   </AutocompletePopover>
 </template>
-./user-data

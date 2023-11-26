@@ -83,13 +83,13 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: tag-data.ts
+        hidden: false
       - path: tag-menu.tsx
         hidden: false
-      - path: tags.ts
+      - path: user-data.ts
         hidden: false
       - path: user-menu.tsx
-        hidden: false
-      - path: users.ts
         hidden: false
   - name: vue-minimal
     files:
@@ -129,17 +129,17 @@ examples:
         hidden: false
       - path: slash-menu.vue
         hidden: false
-      - path: tag-menu.vue
+      - path: tag-data.ts
         hidden: false
-      - path: tags.ts
+      - path: tag-menu.vue
         hidden: false
       - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
-      - path: user-menu.vue
+      - path: user-data.ts
         hidden: false
-      - path: users.ts
+      - path: user-menu.vue
         hidden: false
   - name: vue-heading
     files:
@@ -255,13 +255,13 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: tag-data.ts
+        hidden: false
       - path: tag-menu.vue
         hidden: false
-      - path: tags.ts
+      - path: user-data.ts
         hidden: false
       - path: user-menu.vue
-        hidden: false
-      - path: users.ts
         hidden: false
   - name: preact-minimal
     files:

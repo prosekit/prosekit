@@ -249,6 +249,20 @@ examples:
         hidden: false
       - path: toolbar.vue
         hidden: false
+  - name: vue-user-menu
+    files:
+      - path: editor.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: tag-menu.vue
+        hidden: false
+      - path: tags.ts
+        hidden: false
+      - path: user-menu.vue
+        hidden: false
+      - path: users.ts
+        hidden: false
   - name: preact-minimal
     files:
       - path: editor.tsx

@@ -26,6 +26,7 @@ import E2937612185 from '../examples/vue-slash-menu/editor.vue'
 import E4080529360 from '../examples/vue-strike/editor.vue'
 import E1709246657 from '../examples/vue-toolbar/editor.vue'
 import E1679720926 from '../examples/vue-underline/editor.vue'
+import E4101103463 from '../examples/vue-user-menu/editor.vue'
 import E2524713032 from '../examples/preact-minimal/editor.tsx'
 import E1515205514 from '../examples/preact-keymap/editor.tsx'
 import E613530047 from '../examples/preact-readonly/editor.tsx'
@@ -68,6 +69,7 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-strike' } },
   { params: { example: 'vue-toolbar' } },
   { params: { example: 'vue-underline' } },
+  { params: { example: 'vue-user-menu' } },
   { params: { example: 'preact-minimal' } },
   { params: { example: 'preact-keymap' } },
   { params: { example: 'preact-readonly' } },
@@ -114,6 +116,7 @@ const { example } = Astro.params
   {example === 'vue-strike' && <E4080529360 client:only="vue" />}
   {example === 'vue-toolbar' && <E1709246657 client:only="vue" />}
   {example === 'vue-underline' && <E1679720926 client:only="vue" />}
+  {example === 'vue-user-menu' && <E4101103463 client:only="vue" />}
   {example === 'preact-minimal' && <E2524713032 client:only="preact" />}
   {example === 'preact-keymap' && <E1515205514 client:only="preact" />}
   {example === 'preact-readonly' && <E613530047 client:only="preact" />}

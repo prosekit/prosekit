@@ -79,6 +79,10 @@ export const exampleItems = [
     "link": "/examples/vue-list"
   },
   {
+    "text": "vue-placeholder",
+    "link": "/examples/vue-placeholder"
+  },
+  {
     "text": "vue-readonly",
     "link": "/examples/vue-readonly"
   },

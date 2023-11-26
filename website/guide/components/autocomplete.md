@@ -26,7 +26,7 @@ import App from '../../components/vue-slash-menu/editor.vue'
 
 :::
 
-## More examples
+## More Examples
 
 Type `@` to show a list of users to mention, or type `#` to show a list of commands.
 

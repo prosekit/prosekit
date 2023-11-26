@@ -40,6 +40,8 @@
 
 - [vue-list](./examples/vue-list)
 
+- [vue-placeholder](./examples/vue-placeholder)
+
 - [vue-readonly](./examples/vue-readonly)
 
 - [vue-slash-menu](./examples/vue-slash-menu)

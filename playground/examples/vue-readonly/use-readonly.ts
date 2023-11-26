@@ -3,7 +3,7 @@ import { useExtension } from 'prosekit/vue'
 import { computed, ref } from 'vue'
 
 export function useReadonly() {
-  const readonly = ref(false)
+  const readonly = ref(true)
   const toggleReadonly = () => (readonly.value = !readonly.value)
 
   const extension = computed(() => (readonly.value ? defineReadonly() : null))

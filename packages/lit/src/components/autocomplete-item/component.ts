@@ -61,7 +61,8 @@ export class AutocompleteItem
     if (
       this.selected &&
       changedProperties.has('selected') &&
-      !changedProperties.get('selected')
+      !changedProperties.get('selected') &&
+      this.listContext?.selectedReason === 'keyboard'
     ) {
       this.scrollIntoView({ block: 'nearest' })
     }

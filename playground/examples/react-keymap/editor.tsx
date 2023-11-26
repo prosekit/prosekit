@@ -7,7 +7,7 @@ import { useMemo } from 'react'
 
 import KeymapConfig from './keymap-config'
 
-export default function App() {
+export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
     return createEditor({ extension })

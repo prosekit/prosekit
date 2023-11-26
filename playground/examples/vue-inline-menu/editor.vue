@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import 'prosekit/basic/style.css'
-import 'prosekit/extensions/placeholder/style.css'
 
 import { watchPostEffect, ref, onMounted } from 'vue'
 import { ProseKit } from 'prosekit/vue'

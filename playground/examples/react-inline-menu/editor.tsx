@@ -13,7 +13,7 @@ const defaultHTML =
     10,
   )
 
-export default function App() {
+export default function Editor() {
   const editor = useMemo(() => {
     return createEditor({ extension: defineExtension(), defaultHTML })
   }, [])

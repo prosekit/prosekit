@@ -5,7 +5,7 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-export default function App() {
+export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
     return createEditor({ extension })

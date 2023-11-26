@@ -18,9 +18,11 @@ import App from '../../components/vue-toolbar/editor.vue'
 <ExamplePlaygroundLazy example="vue-toolbar" />
 :::
 
+## Guide
+
 This guide outlines the general steps to create a toolbar that can be adapted to any UI framework.
 
-## Preparation
+### Extensions
 
 To begin, you need to define the editor extensions by creating an `extension.ts` file:
 
@@ -30,9 +32,11 @@ To begin, you need to define the editor extensions by creating an `extension.ts`
 
 :::
 
-In this example, we simply use the `defineBasicExtensions()`. You might want to customize the extensions to suit your needs. Refer to the [Extensions](../extensions) guide for more information.
+In this example, we simply use the `defineBasicExtensions()`. You might want to customize the extensions to suit your needs. The extensions defined here will determine the available commands later on. Refer to the [Extensions](../extensions) guide for more information.
 
 The `EditorExtension` type is exported to provide type safety and enhance the developer experience with TypeScript's type hints and autocompletion.
+
+### `Editor` Component
 
 Next, construct an `Editor` component. Refer to the [Getting Started](../getting-started) for instructions on building an `Editor` component.
 
@@ -45,7 +49,7 @@ Next, construct an `Editor` component. Refer to the [Getting Started](../getting
 
 The `Editor` component includes the `Toolbar` component, which houses the command buttons. We will define this component shortly.
 
-## `Toolbar` Component
+### `Toolbar` Component
 
 The `Toolbar` component contains all the command buttons that interact with the editor instance.
 
@@ -66,7 +70,7 @@ Each command button within the `Toolbar` component is represented by a `Toggle` 
 
 - `disabled`: Determines if a command can be executed in the current state. Use `editor.commands.COMMAND_NAME.canApply()` to check if a command is executable.
 
-## `Toggle` Component
+### `Toggle` Component
 
 The `Toggle` component represents a single command button in the toolbar, with properties to control its active state, disabled status, and an event handler for executing the command.
 

@@ -3,7 +3,10 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
 
   private getItems: () => Item[]
   private getSelectedValue: () => string
-  private setSelectedValue: (value: string, reason: 'mouse'|'keyboard') => void
+  private setSelectedValue: (
+    value: string,
+    reason: 'mouse' | 'keyboard',
+  ) => void
   private getItemValue: (item: Item) => string
   private queryClosestItem: (element: HTMLElement) => Item | null
   private getActive: () => boolean
@@ -13,7 +16,7 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
   constructor(options: {
     getItems: () => Item[]
     getSelectedValue: () => string
-    setSelectedValue: (value: string, reason: "mouse"|"keyboard") => void
+    setSelectedValue: (value: string, reason: 'mouse' | 'keyboard') => void
     getItemValue: (item: Item) => string
     queryClosestItem: (element: HTMLElement) => Item | null
     getActive: () => boolean
@@ -70,7 +73,7 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
     }
   }
 
-  private handleSelect(item: Item, reason: "mouse"|"keyboard") {
+  private handleSelect(item: Item, reason: 'mouse' | 'keyboard') {
     this.setSelectedValue(this.getItemValue(item), reason)
   }
 

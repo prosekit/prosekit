@@ -66,7 +66,7 @@ Each command button within the `Toolbar` component is represented by a `Toggle` 
 
 - `disabled`: Determines if a command can be executed in the current state. Use `editor.commands.COMMAND_NAME.canApply()` to check if a command is executable.
 
-## Toggle Component
+## `Toggle` Component
 
 The `Toggle` component represents a single command button in the toolbar, with properties to control its active state, disabled status, and an event handler for executing the command.
 

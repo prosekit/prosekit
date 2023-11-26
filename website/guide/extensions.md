@@ -46,7 +46,7 @@ The following three extension functions defines a minimal editor schema. In most
 - `defineText` adds a `text` node type.
 - `defineParagraph` adds a `paragraph` node type.
 
-## A starter set of extensions
+## A Starter Set of Extensions
 
 You can use the `defineBasicExtension` from `prosekit/basic` to quick start an editor with some common features. It includes some common node types, marks, commands, keybindings, and plugins.
 
@@ -54,8 +54,8 @@ You can use the `defineBasicExtension` from `prosekit/basic` to quick start an e
 [node view]: https://prosemirror.net/docs/ref#view.NodeView
 [input rule]: https://prosemirror.net/docs/ref#inputrules
 
-## Enable / Disable Extensions Dynamically
+## Enable Extensions Dynamically
 
-If you want to enable an extension dynamically in your application, you can call `editor.use(extension)` to enable it. It will return a function that can be called to disable the extension.
+If you want to enable an extension after the editor is initialized, you can call `editor.use(extension)` to enable it. It will return a function that can be called to disable the extension.
 
-If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can use the `useExtension` to enable or disable an extension dynamically in your application. Check out the [readonly](/guide/extensions/readonly) for an example.
+If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can also use the `useExtension` to enable or disable an extension dynamically in your application. Check out the [readonly](/guide/extensions/readonly) for an example.

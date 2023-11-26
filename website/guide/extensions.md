@@ -53,3 +53,9 @@ You can use the `defineBasicExtension` from `prosekit/basic` to quick start an e
 [plugin]: https://prosemirror.net/docs/ref#state.Plugin_System
 [node view]: https://prosemirror.net/docs/ref#view.NodeView
 [input rule]: https://prosemirror.net/docs/ref#inputrules
+
+## Enable / Disable Extensions Dynamically
+
+If you want to enable an extension dynamically in your application, you can call `editor.use(extension)` to enable it. It will return a function that can be called to disable the extension.
+
+If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can use the `useExtension` to enable or disable an extension dynamically in your application. Check out the [readonly](/guide/extensions/readonly) for an example.

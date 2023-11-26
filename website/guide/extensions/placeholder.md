@@ -12,7 +12,7 @@ import App from '../../components/vue-placeholder/editor.vue'
 == Preview
 
 <ClientOnly><App/></ClientOnly>
-== React
+== Vue
 <ExamplePlaygroundLazy example="vue-placeholder" />
 :::
 

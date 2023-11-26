@@ -5,7 +5,7 @@ import { AutocompleteItem } from 'prosekit/vue/autocomplete-item'
 import { AutocompleteList } from 'prosekit/vue/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/vue/autocomplete-popover'
 
-import { users } from './users'
+import { users } from './user-data'
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
 
@@ -44,3 +44,4 @@ const handleUserInsert = (id: number, username: string) => {
     </AutocompleteList>
   </AutocompletePopover>
 </template>
+./user-data

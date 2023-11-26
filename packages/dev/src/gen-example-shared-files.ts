@@ -7,6 +7,8 @@ import { vfs, type VirtualFile } from './virtual-file-system.js'
 
 const sharedFiles = [
   'use-readonly.ts',
+  'user-data.ts',
+  'tag-data.ts',
 
   'toggle.vue',
   'toggle.tsx',

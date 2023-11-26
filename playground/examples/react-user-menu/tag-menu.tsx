@@ -6,7 +6,7 @@ import { AutocompleteList } from 'prosekit/react/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/react/autocomplete-popover'
 
 import type { EditorExtension } from './extension'
-import { tags } from './tags'
+import { tags } from './tag-data'
 
 export default function TagMenu() {
   const editor = useEditor<EditorExtension>()

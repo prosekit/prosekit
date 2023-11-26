@@ -5,7 +5,7 @@ import { AutocompleteItem } from 'prosekit/vue/autocomplete-item'
 import { AutocompleteList } from 'prosekit/vue/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/vue/autocomplete-popover'
 
-import { tags } from './tags'
+import { tags } from './tag-data'
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
 

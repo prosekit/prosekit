@@ -20,9 +20,7 @@ import App from '../../components/vue-toolbar/editor.vue'
 
 ## Guide
 
-
 This guide outlines the general steps to create a toolbar that can be adapted to any UI framework.
-
 
 ### Extensions
 

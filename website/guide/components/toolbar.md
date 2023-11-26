@@ -30,7 +30,7 @@ To begin, you need to define the editor extensions by creating an `extension.ts`
 
 :::
 
-In this example, we simply use the `defineBasicExtensions()` function. You might want to customize the extensions to suit your needs. Refer to the [Extensions](../extensions) guide for more information.
+In this example, we simply use the `defineBasicExtensions()`. You might want to customize the extensions to suit your needs. Refer to the [Extensions](../extensions) guide for more information.
 
 The `EditorExtension` type is exported to provide type safety and enhance the developer experience with TypeScript's type hints and autocompletion.
 

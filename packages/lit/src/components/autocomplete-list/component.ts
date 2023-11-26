@@ -34,7 +34,7 @@ export class AutocompleteList
   private listManager = new ListManager<AutocompleteItem>({
     getItems: () => this.items,
     getSelectedValue: () => this.context.selectedValue,
-    setSelectedValue: (value) => this.updateValue(value),
+    setSelectedValue: (value, reason) => this.updateValue(value, reason),
     getItemValue: (item) => item.content,
     queryClosestItem: queryClosestAutocompleteItem,
     getActive: () => this.active,
@@ -69,6 +69,7 @@ export class AutocompleteList
   context: AutocompleteListContext = {
     scores: new Map(),
     selectedValue: '',
+    selectedReason: 'keyboard',
   }
 
   connectedCallback(): void {
@@ -100,11 +101,14 @@ export class AutocompleteList
     this.listManager.selectFirstItem()
   }
 
-  private updateValue(selectedValue: string) {
+  private updateValue(
+    selectedValue: string,
+    selectedReason: 'mouse' | 'keyboard',
+  ) {
     if (this.context.selectedValue === selectedValue) {
       return
     }
-    this.context = { ...this.context, selectedValue }
+    this.context = { ...this.context, selectedValue, selectedReason }
   }
 
   /** @hidden */

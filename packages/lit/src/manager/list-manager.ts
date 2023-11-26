@@ -3,7 +3,10 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
 
   private getItems: () => Item[]
   private getSelectedValue: () => string
-  private setSelectedValue: (value: string) => void
+  private setSelectedValue: (
+    value: string,
+    reason: 'mouse' | 'keyboard',
+  ) => void
   private getItemValue: (item: Item) => string
   private queryClosestItem: (element: HTMLElement) => Item | null
   private getActive: () => boolean
@@ -13,7 +16,7 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
   constructor(options: {
     getItems: () => Item[]
     getSelectedValue: () => string
-    setSelectedValue: (value: string) => void
+    setSelectedValue: (value: string, reason: 'mouse' | 'keyboard') => void
     getItemValue: (item: Item) => string
     queryClosestItem: (element: HTMLElement) => Item | null
     getActive: () => boolean
@@ -66,18 +69,18 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
       nextIndex = items.length - 1
     }
     if (selectedIndex !== nextIndex) {
-      this.setSelectedValue(this.getItemValue(items[nextIndex]))
+      this.setSelectedValue(this.getItemValue(items[nextIndex]), 'keyboard')
     }
   }
 
-  private handleSelect(item: Item) {
-    this.setSelectedValue(this.getItemValue(item))
+  private handleSelect(item: Item, reason: 'mouse' | 'keyboard') {
+    this.setSelectedValue(this.getItemValue(item), reason)
   }
 
   public selectFirstItem() {
     const item = this.firstItem
     const value = item ? this.getItemValue(item) : ''
-    this.setSelectedValue(value)
+    this.setSelectedValue(value, 'keyboard')
   }
 
   handleMouseMove(_event: MouseEvent): void {
@@ -95,7 +98,7 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
     const target = event.target as HTMLElement | null
     const item = target && this.queryClosestItem(target)
     if (item) {
-      this.setSelectedValue(this.getItemValue(item))
+      this.setSelectedValue(this.getItemValue(item), 'mouse')
     }
   }
 
@@ -109,7 +112,7 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
     const target = event.target as HTMLElement | null
     const item = target && this.queryClosestItem(target)
     if (item) {
-      this.handleSelect(item)
+      this.handleSelect(item, 'mouse')
       this.onSelect(item)
     }
   }

@@ -7,7 +7,10 @@ import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
 import { createEditor } from 'prosekit/core'
 
-const editor = createEditor({ extension: defineExtension() })
+const editor = createEditor({
+  extension: defineExtension(),
+  defaultHTML: 'The content in this editor is readonly.',
+})
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect(() => editor.mount(editorRef.value))
 </script>

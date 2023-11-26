@@ -64,9 +64,9 @@ export default defineConfig({
           text: 'Nodes',
           link: '/guide/nodes/',
           items: [
-            { text: 'heading', link: '/guide/nodes/heading' },
-            { text: 'list', link: '/guide/nodes/list' },
-            { text: 'codeBlock', link: '/guide/nodes/code-block' },
+            { text: 'Heading', link: '/guide/nodes/heading' },
+            { text: 'List', link: '/guide/nodes/list' },
+            { text: 'CodeBlock', link: '/guide/nodes/code-block' },
           ],
         },
 
@@ -74,12 +74,17 @@ export default defineConfig({
           text: 'Marks',
           link: '/guide/marks/',
           items: [
-            { text: 'bold', link: '/guide/marks/bold' },
-            { text: 'italic', link: '/guide/marks/italic' },
-            { text: 'link', link: '/guide/marks/link' },
-            { text: 'underline', link: '/guide/marks/underline' },
-            { text: 'strike', link: '/guide/marks/strike' },
+            { text: 'Bold', link: '/guide/marks/bold' },
+            { text: 'Italic', link: '/guide/marks/italic' },
+            { text: 'Link', link: '/guide/marks/link' },
+            { text: 'Underline', link: '/guide/marks/underline' },
+            { text: 'Strike', link: '/guide/marks/strike' },
           ],
+        },
+
+        {
+          text: 'Extensions',
+          items: [{ text: 'Readonly', link: '/guide/extensions/readonly' }],
         },
 
         // {

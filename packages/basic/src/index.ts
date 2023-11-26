@@ -38,4 +38,8 @@ export function defineBasicExtension() {
   ])
 }
 
+
+/**
+ * @public
+ */
 export type BasicExtension = ReturnType<typeof defineBasicExtension>

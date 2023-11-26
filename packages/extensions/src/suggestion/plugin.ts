@@ -4,7 +4,6 @@ import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
 import { defaultIsValid } from './is-valid'
 
-// TODO: make it as a class
 export interface PredictionRule {
   match: RegExp
   matchAfter?: RegExp

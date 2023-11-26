@@ -22,9 +22,6 @@
   "excludeExternals": true,
   "excludeInternal": true,
   "validation": {
-    // TODO: set them as true
-    "notExported": false,
-    "invalidLink": false,
     "notDocumented": false
   },
   "requiredToBeDocumented": [

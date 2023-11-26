@@ -16,7 +16,7 @@ In this example, we simply use the `defineBasicExtensions()` function. You might
 
 The `EditorExtension` type is exported to provide type safety and enhance the developer experience with TypeScript's type hints and autocompletion.
 
-Next, construct an Editor component. Refer to the [Getting Started](../getting-started) for instructions on building an Editor component.
+Next, construct an `Editor` component. Refer to the [Getting Started](../getting-started) for instructions on building an `Editor` component.
 
 ::: code-group
 
@@ -25,11 +25,11 @@ Next, construct an Editor component. Refer to the [Getting Started](../getting-s
 
 :::
 
-The Editor component includes the `Toolbar` component, which houses the command buttons. We will define this component shortly.
+The `Editor` component includes the `Toolbar` component, which houses the command buttons. We will define this component shortly.
 
 ## `Toolbar` Component
 
-The Toolbar component contains all the command buttons that interact with the editor instance.
+The `Toolbar` component contains all the command buttons that interact with the editor instance.
 
 ::: code-group
 

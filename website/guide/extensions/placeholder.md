@@ -1,6 +1,6 @@
 # Placeholder
 
-Show a placeholder when the current text block is empty or the whole document is empty.
+Show some placeholder text when the current text block is empty or the whole document is empty.
 
 <script setup>	 
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'	

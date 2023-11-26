@@ -1,9 +1,10 @@
 import type { Attrs, ProseMirrorNode } from '@prosekit/pm/model'
-import { TextSelection, type Command } from '@prosekit/pm/state'
+import { type Command } from '@prosekit/pm/state'
 import { insertPoint } from '@prosekit/pm/transform'
 
 import { ProseKitError } from '../error'
 import { getNodeType } from '../utils/get-node-type'
+import { safeSetSelection } from '../utils/safe-set-selection'
 
 function insertNode(
   options:
@@ -40,7 +41,7 @@ function insertNode(
 
     if (dispatch) {
       const tr = state.tr.insert(insertPos, node)
-      tr.setSelection(TextSelection.near(tr.doc.resolve(insertPos)))
+      safeSetSelection(tr, insertPos + node.nodeSize)
       dispatch(tr)
     }
     return true

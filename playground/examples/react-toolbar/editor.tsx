@@ -8,7 +8,7 @@ import { useMemo } from 'react'
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'
 
-export default function App() {
+export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineExtension()
     return createEditor({ extension })

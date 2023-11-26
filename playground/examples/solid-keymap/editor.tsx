@@ -7,7 +7,7 @@ import { ProseKit } from 'prosekit/solid'
 
 import KeymapConfig from './keymap-config'
 
-export default function App() {
+export default function Editor() {
   const extension = defineBasicExtension()
   const editor = createEditor({ extension })
 

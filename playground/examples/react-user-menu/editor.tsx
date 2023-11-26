@@ -9,7 +9,7 @@ import { defineExtension } from './extension'
 import TagMenu from './tag-menu'
 import UserMenu from './user-menu'
 
-export default function App() {
+export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineExtension()
     return createEditor({ extension })

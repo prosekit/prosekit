@@ -6,7 +6,7 @@ import { ProseKit } from 'prosekit/solid'
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'
 
-export default function App() {
+export default function Editor() {
   const editor = createEditor({ extension: defineExtension() })
 
   return (

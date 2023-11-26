@@ -19,14 +19,14 @@ import App from '../../components/vue-placeholder/editor.vue'
 ## Usage
 
 ```ts
-import 'prosekit/extensions/placeholder/style.css';
+import 'prosekit/extensions/placeholder/style.css'
 
 import { definePlaceholder } from 'prosekit/extensions/readonly'
 
 extension = definePlaceholder({ placeholder: 'Type Something...' })
 ```
 
-Notice that you would need to import the style file for the extension to work. 
+Notice that you would need to import the style file for the extension to work.
 
 ## API Reference
 

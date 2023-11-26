@@ -2,7 +2,7 @@
 
 A customizable toolbar providing quick access to various commands. This guide outlines the general steps to create a toolbar that can be adapted to any UI framework.
 
-## Basic Configuration
+## Preparation
 
 To begin, you need to define the editor extensions by creating an `extension.ts` file:
 

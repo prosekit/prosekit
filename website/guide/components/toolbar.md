@@ -2,6 +2,11 @@
 
 A customizable toolbar providing quick access to various commands.
 
+<script setup>	 
+import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'	
+import App from '../../components/vue-toolbar/editor.vue'	
+</script>
+
 :::tabs
 
 == Preview

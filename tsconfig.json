@@ -3,7 +3,6 @@
     "target": "es2018",
     "module": "esnext",
     "lib": ["esnext", "DOM"],
-    "experimentalDecorators": true,
     "moduleResolution": "bundler",
     "esModuleInterop": true,
     "strict": true,

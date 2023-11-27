@@ -30,7 +30,7 @@ export class ComboBox extends Popover {
       return (this.getContext().selectedValue ?? '').trim()
     },
     setSelectedValue: (value: string) => {
-      return this.getContext().setSelectedValue(value)
+      return this.setSelectedValue(value)
     },
     getItemValue: (item) => {
       return (item.textContent ?? '').trim()
@@ -43,8 +43,8 @@ export class ComboBox extends Popover {
       this.onDismiss?.()
     },
     onSelect: (item) => {
-      this.getContext().setSelectedValue('')
-      this.getContext().setInputValue('')
+      this.setSelectedValue('')
+      this.setInputValue('')
       item?.onSelect?.()
       this.onDismiss?.()
     },
@@ -55,21 +55,10 @@ export class ComboBox extends Popover {
     initialValue: {
       inputValue: '',
       setInputValue: (inputValue: string) => {
-        const context = this.context.value
-        if (context.inputValue === inputValue) {
-          return
-        }
-        this.context.setValue({ ...context, inputValue })
+        this.setInputValue(inputValue)
       },
 
       selectedValue: '',
-      setSelectedValue: (selectedValue: string) => {
-        const context = this.context.value
-        if (context.selectedValue === selectedValue) {
-          return
-        }
-        this.context.setValue({ ...context, selectedValue })
-      },
 
       listManager: this.listManager,
     },
@@ -77,6 +66,22 @@ export class ComboBox extends Popover {
 
   private getContext(): ComboBoxContext {
     return this.context.value
+  }
+
+  private setInputValue(inputValue: string) {
+    const context = this.context.value
+    if (context.inputValue === inputValue) {
+      return
+    }
+    this.context.setValue({ ...context, inputValue })
+  }
+
+  private setSelectedValue(selectedValue: string) {
+    const context = this.context.value
+    if (context.selectedValue === selectedValue) {
+      return
+    }
+    this.context.setValue({ ...context, selectedValue })
   }
 
   get items(): ComboBoxItem[] {

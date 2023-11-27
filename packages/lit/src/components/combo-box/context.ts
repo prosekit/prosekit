@@ -6,10 +6,7 @@ import type { ComboBoxItem } from '../combo-box-item'
 export interface ComboBoxContext {
   inputValue: string
   setInputValue: (val: string) => void
-
   selectedValue: string
-  setSelectedValue: (val: string) => void
-
   listManager: ListManager<ComboBoxItem>
 }
 

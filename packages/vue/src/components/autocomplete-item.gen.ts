@@ -3,9 +3,9 @@ import '@prosekit/lit/autocomplete-item'
 import { type AutocompleteItemProps as AutocompleteItemElementProps, propNames } from '@prosekit/lit/autocomplete-item'
 import { defineComponent, h } from 'vue'
 
-export type AutocompleteItemProps = {
-  class?: string,
-} & AutocompleteItemElementProps
+import type { PropsWithClass } from '../types'
+
+export type AutocompleteItemProps = PropsWithClass<AutocompleteItemElementProps>
 
 export const AutocompleteItem = defineComponent<AutocompleteItemProps>(
   (props, { slots }) => {

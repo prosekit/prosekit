@@ -3,9 +3,9 @@ import '@prosekit/lit/autocomplete-empty'
 import { type AutocompleteEmptyProps as AutocompleteEmptyElementProps, propNames } from '@prosekit/lit/autocomplete-empty'
 import { defineComponent, h } from 'vue'
 
-export type AutocompleteEmptyProps = {
-  class?: string,
-} & AutocompleteEmptyElementProps
+import type { PropsWithClass } from '../types'
+
+export type AutocompleteEmptyProps = PropsWithClass<AutocompleteEmptyElementProps>
 
 export const AutocompleteEmpty = defineComponent<AutocompleteEmptyProps>(
   (props, { slots }) => {

@@ -3,9 +3,9 @@ import '@prosekit/lit/popover'
 import { type PopoverProps as PopoverElementProps, propNames } from '@prosekit/lit/popover'
 import { defineComponent, h } from 'vue'
 
-export type PopoverProps = {
-  class?: string,
-} & PopoverElementProps
+import type { PropsWithClass } from '../types'
+
+export type PopoverProps = PropsWithClass<PopoverElementProps>
 
 export const Popover = defineComponent<PopoverProps>(
   (props, { slots }) => {

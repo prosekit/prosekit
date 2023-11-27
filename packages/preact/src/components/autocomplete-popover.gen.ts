@@ -1,12 +1,11 @@
 import '@prosekit/lit/autocomplete-popover'
 import type { AutocompletePopoverProps as AutocompletePopoverElementProps } from '@prosekit/lit/autocomplete-popover'
-import type { ComponentChildren, ComponentType } from 'preact'
+import type { ComponentType } from 'preact'
 import { h } from 'preact'
 
-export type AutocompletePopoverProps = {
-  class?: string
-  children?: ComponentChildren
-} & AutocompletePopoverElementProps
+import type { PropsWithClass, PropsWithChildren } from '../types'
+
+export type AutocompletePopoverProps = PropsWithChildren<PropsWithClass<AutocompletePopoverElementProps>>
 
 export const AutocompletePopover: ComponentType<AutocompletePopoverProps> = (props) => {
   return h('prosekit-autocomplete-popover', props)

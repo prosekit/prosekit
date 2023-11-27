@@ -1,13 +1,10 @@
 import { createComponent } from '@lit/react'
-import type { SimplifyUnion } from '@prosekit/core'
 import { AutocompletePopover as AutocompletePopoverElement, type AutocompletePopoverProps as AutocompletePopoverElementProps } from '@prosekit/lit/autocomplete-popover'
-import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
 import React from 'react'
 
-export type AutocompletePopoverProps = SimplifyUnion<{
-  className?: string,
-  children?: React.ReactNode,
-} & AutocompletePopoverElementProps>
+import {type PropsWithClassName} from '../types'
+
+export type AutocompletePopoverProps = React.PropsWithChildren<PropsWithClassName<AutocompletePopoverElementProps>>
 
 const AutocompletePopoverInner = createComponent({
   tagName: 'prosekit-autocomplete-popover',
@@ -16,8 +13,8 @@ const AutocompletePopoverInner = createComponent({
   displayName: 'AutocompletePopoverInner',
 })
 
-export const AutocompletePopover: ForwardRefExoticComponent<
-  PropsWithoutRef<AutocompletePopoverProps> & RefAttributes<AutocompletePopoverElement>
+export const AutocompletePopover: React.ComponentType<
+  AutocompletePopoverProps & React.RefAttributes<AutocompletePopoverElement>
 > = React.forwardRef((props, ref) => {
   return React.createElement(AutocompletePopoverInner, { ...props, ref })
 })

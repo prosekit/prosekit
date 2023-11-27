@@ -82,15 +82,12 @@ function formatReactCode(kebab: string) {
   return (
     `
 import { createComponent } from '@lit/react'
-import type { SimplifyUnion } from '@prosekit/core'
 import { ${pascal} as ${pascal}Element, type ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
-import type { ForwardRefExoticComponent, PropsWithoutRef, RefAttributes } from 'react'
 import React from 'react'
 
-export type ${pascal}Props = SimplifyUnion<{
-  className?: string,
-  children?: React.ReactNode,
-} & ${pascal}ElementProps>
+import {type PropsWithClassName} from '../types'
+
+export type ${pascal}Props = React.PropsWithChildren<PropsWithClassName<${pascal}ElementProps>>
 
 const ${pascal}Inner = createComponent({
   tagName: 'prosekit-${kebab}',
@@ -99,8 +96,8 @@ const ${pascal}Inner = createComponent({
   displayName: '${pascal}Inner',
 })
 
-export const ${pascal}: ForwardRefExoticComponent<
-  PropsWithoutRef<${pascal}Props> & RefAttributes<${pascal}Element>
+export const ${pascal}: React.ComponentType<
+  ${pascal}Props & React.RefAttributes<${pascal}Element>
 > = React.forwardRef((props, ref) => {
   return React.createElement(${pascal}Inner, { ...props, ref })
 })
@@ -119,9 +116,9 @@ import '@prosekit/lit/${kebab}'
 import { type ${pascal}Props as ${pascal}ElementProps, propNames } from '@prosekit/lit/${kebab}'
 import { defineComponent, h } from 'vue'
 
-export type ${pascal}Props = {
-  class?: string,
-} & ${pascal}ElementProps
+import type { PropsWithClass } from '../types'
+
+export type ${pascal}Props = PropsWithClass<${pascal}ElementProps>
 
 export const ${pascal} = defineComponent<${pascal}Props>(
   (props, { slots }) => {
@@ -161,11 +158,11 @@ function formatSvelteTsCode(kebab: string) {
 import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
 import type { SvelteComponent } from 'svelte'
 
+import type { PropsWithClass } from '../types'
+
 import ${pascal}Component from './${kebab}.gen.svelte'
 
-export type ${pascal}Props = {
-  class?: string
-} & ${pascal}ElementProps
+export type ${pascal}Props = PropsWithClass<${pascal}ElementProps>
 
 export const ${pascal} = ${pascal}Component as typeof SvelteComponent<any> as typeof SvelteComponent<${pascal}Props>
 `.trim() + '\n'
@@ -179,15 +176,13 @@ function formatSolidCode(kebab: string) {
 import '@prosekit/lit/${kebab}'
 
 import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
-import type { Component, JSXElement } from 'solid-js'
+import type { Component } from 'solid-js'
 import html from 'solid-js/html'
 
+import type { PropsWithClass, PropsWithChildren } from '../types'
 import { forceProps } from '../utils/force-props'
 
-export type ${pascal}Props = {
-  class?: string
-  children?: JSXElement
-} & ${pascal}ElementProps
+export type ${pascal}Props = PropsWithChildren<PropsWithClass<${pascal}ElementProps>>
 
 export const ${pascal}: Component<${pascal}Props> = (props) => {
   return html\`<prosekit-${kebab} ...\${forceProps(props)} />\`
@@ -202,13 +197,12 @@ function formatPreactCode(kebab: string) {
     `
 import '@prosekit/lit/${kebab}'
 import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
-import type { ComponentChildren, ComponentType } from 'preact'
+import type { ComponentType } from 'preact'
 import { h } from 'preact'
 
-export type ${pascal}Props = {
-  class?: string
-  children?: ComponentChildren
-} & ${pascal}ElementProps
+import type { PropsWithClass, PropsWithChildren } from '../types'
+
+export type ${pascal}Props = PropsWithChildren<PropsWithClass<${pascal}ElementProps>>
 
 export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
   return h('prosekit-${kebab}', props)

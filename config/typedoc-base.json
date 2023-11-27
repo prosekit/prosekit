@@ -54,7 +54,7 @@
   "hidePageHeader": true,
   "memberPageTitle": "{name}",
   "entryFileName": "index.md",
-  "useCodeBlocks": true,
+  "useCodeBlocks": false,
   "excludeGroups": true,
   "typeDeclarationFormat": "table",
   "enumMembersFormat": "table",

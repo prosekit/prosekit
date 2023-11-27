@@ -1,12 +1,11 @@
 import '@prosekit/lit/combo-box-item'
 import type { ComboBoxItemProps as ComboBoxItemElementProps } from '@prosekit/lit/combo-box-item'
-import type { ComponentChildren, ComponentType } from 'preact'
+import type { ComponentType } from 'preact'
 import { h } from 'preact'
 
-export type ComboBoxItemProps = {
-  class?: string
-  children?: ComponentChildren
-} & ComboBoxItemElementProps
+import type { PropsWithClass, PropsWithChildren } from '../types'
+
+export type ComboBoxItemProps = PropsWithChildren<PropsWithClass<ComboBoxItemElementProps>>
 
 export const ComboBoxItem: ComponentType<ComboBoxItemProps> = (props) => {
   return h('prosekit-combo-box-item', props)

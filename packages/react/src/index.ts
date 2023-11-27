@@ -8,3 +8,4 @@ export {
 export { useEditor, type UseEditorOptions } from './hooks/use-editor'
 export { useExtension } from './hooks/use-extension'
 export { useKeymap } from './hooks/use-keymap'
+export { type PropsWithClassName } from './types'

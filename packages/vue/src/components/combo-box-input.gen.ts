@@ -3,9 +3,9 @@ import '@prosekit/lit/combo-box-input'
 import { type ComboBoxInputProps as ComboBoxInputElementProps, propNames } from '@prosekit/lit/combo-box-input'
 import { defineComponent, h } from 'vue'
 
-export type ComboBoxInputProps = {
-  class?: string,
-} & ComboBoxInputElementProps
+import type { PropsWithClass } from '../types'
+
+export type ComboBoxInputProps = PropsWithClass<ComboBoxInputElementProps>
 
 export const ComboBoxInput = defineComponent<ComboBoxInputProps>(
   (props, { slots }) => {

@@ -11,9 +11,6 @@ patchedDependencies:
   prosemirror-highlightjs@0.9.1:
     hash: uj5ddgn5nj4ptnyl3ffi4zkeei
     path: patches/prosemirror-highlightjs@0.9.1.patch
-  typedoc@0.25.3:
-    hash: h4pfjdv4nywwnzgforb3sf7tca
-    path: patches/typedoc@0.25.3.patch
 
 importers:
 
@@ -662,17 +659,17 @@ importers:
         specifier: ^4.8.2
         version: 4.8.2
       typedoc:
-        specifier: ^0.25.3
-        version: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
+        specifier: ^0.25.4
+        version: 0.25.4(typescript@5.2.2)
       typedoc-plugin-external-package-links:
         specifier: ^0.1.0
         version: 0.1.0
       typedoc-plugin-markdown:
         specifier: ^4.0.0-next.31
-        version: 4.0.0-next.31(typedoc@0.25.3)
+        version: 4.0.0-next.31(typedoc@0.25.4)
       typedoc-plugin-mdn-links:
         specifier: ^3.1.5
-        version: 3.1.5(typedoc@0.25.3)
+        version: 3.1.5(typedoc@0.25.4)
       typescript:
         specifier: ~5.2.2
         version: 5.2.2
@@ -10085,24 +10082,24 @@ packages:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
     dev: true
 
-  /typedoc-plugin-markdown@4.0.0-next.31(typedoc@0.25.3):
+  /typedoc-plugin-markdown@4.0.0-next.31(typedoc@0.25.4):
     resolution: {integrity: sha512-dxG+2MDEn7S/0FJCw5gINItW9SIAqd4udZDL2ifwd17ctZ7j4S1CoDwL3Z/Oc1HL4O6WlhDbYTEe8Pizi3unWw==}
     peerDependencies:
       typedoc: 0.25.x
     dependencies:
-      typedoc: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
+      typedoc: 0.25.4(typescript@5.2.2)
     dev: true
 
-  /typedoc-plugin-mdn-links@3.1.5(typedoc@0.25.3):
+  /typedoc-plugin-mdn-links@3.1.5(typedoc@0.25.4):
     resolution: {integrity: sha512-ZwV7fO3+S7KqbmMycBMYdeCyJ2eYVnoIc1CB64kc9NNwuZZuxocLFAqU3ZT+gihp22xNezrXciFas3ctsKLPgg==}
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x'
     dependencies:
-      typedoc: 0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2)
+      typedoc: 0.25.4(typescript@5.2.2)
     dev: true
 
-  /typedoc@0.25.3(patch_hash=h4pfjdv4nywwnzgforb3sf7tca)(typescript@5.2.2):
-    resolution: {integrity: sha512-Ow8Bo7uY1Lwy7GTmphRIMEo6IOZ+yYUyrc8n5KXIZg1svpqhZSWgni2ZrDhe+wLosFS8yswowUzljTAV/3jmWw==}
+  /typedoc@0.25.4(typescript@5.2.2):
+    resolution: {integrity: sha512-Du9ImmpBCw54bX275yJrxPVnjdIyJO/84co0/L9mwe0R3G4FSR6rQ09AlXVRvZEGMUg09+z/usc8mgygQ1aidA==}
     engines: {node: '>= 16'}
     hasBin: true
     peerDependencies:
@@ -10114,7 +10111,6 @@ packages:
       shiki: 0.14.5
       typescript: 5.2.2
     dev: true
-    patched: true
 
   /typescript@5.2.2:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}

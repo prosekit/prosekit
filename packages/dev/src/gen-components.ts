@@ -202,10 +202,9 @@ import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${ke
 import type { ComponentChildren, ComponentType } from 'preact'
 import { h } from 'preact'
 
-export type ${pascal}Props = {
-  class?: string
-  children?: ComponentChildren
-} & ${pascal}ElementProps
+import type { PropsWithClass, PropsWithChildren } from '../types'
+
+export type ${pascal}Props = PropsWithChildren<PropsWithClass<${pascal}ElementProps>>
 
 export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
   return h('prosekit-${kebab}', props)

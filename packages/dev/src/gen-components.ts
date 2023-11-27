@@ -196,7 +196,7 @@ function formatPreactCode(kebab: string) {
     `
 import '@prosekit/lit/${kebab}'
 import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
-import type { ComponentChildren, ComponentType } from 'preact'
+import type { ComponentType } from 'preact'
 import { h } from 'preact'
 
 import type { PropsWithClass, PropsWithChildren } from '../types'

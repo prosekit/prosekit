@@ -180,11 +180,9 @@ import type { Component, JSXElement } from 'solid-js'
 import html from 'solid-js/html'
 
 import { forceProps } from '../utils/force-props'
+import type { PropsWithClass, PropsWithChildren } from '../types'
 
-export type ${pascal}Props = {
-  class?: string
-  children?: JSXElement
-} & ${pascal}ElementProps
+export type ${pascal}Props = PropsWithChildren<PropsWithClass<${pascal}ElementProps>>
 
 export const ${pascal}: Component<${pascal}Props> = (props) => {
   return html\`<prosekit-${kebab} ...\${forceProps(props)} />\`

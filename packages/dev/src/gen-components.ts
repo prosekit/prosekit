@@ -116,9 +116,9 @@ import '@prosekit/lit/${kebab}'
 import { type ${pascal}Props as ${pascal}ElementProps, propNames } from '@prosekit/lit/${kebab}'
 import { defineComponent, h } from 'vue'
 
-export type ${pascal}Props = {
-  class?: string,
-} & ${pascal}ElementProps
+import type { PropsWithClass } from '../types'
+
+export type ${pascal}Props = PropsWithClass<${pascal}ElementProps>
 
 export const ${pascal} = defineComponent<${pascal}Props>(
   (props, { slots }) => {
@@ -159,10 +159,9 @@ import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${ke
 import type { SvelteComponent } from 'svelte'
 
 import ${pascal}Component from './${kebab}.gen.svelte'
+import type { PropsWithClass } from '../types'
 
-export type ${pascal}Props = {
-  class?: string
-} & ${pascal}ElementProps
+export type ${pascal}Props = PropsWithClass<${pascal}ElementProps>
 
 export const ${pascal} = ${pascal}Component as typeof SvelteComponent<any> as typeof SvelteComponent<${pascal}Props>
 `.trim() + '\n'

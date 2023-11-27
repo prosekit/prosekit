@@ -6,7 +6,6 @@ export interface AutocompleteListContext {
   selectedReason: 'mouse' | 'keyboard'
 }
 
-// TODO: rename it
-export const commandListContext = createContext<AutocompleteListContext>(
+export const autocompleteListContext = createContext<AutocompleteListContext>(
   'prosekit-autocomplete-list-context',
 )

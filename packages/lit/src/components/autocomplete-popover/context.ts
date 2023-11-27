@@ -7,7 +7,6 @@ export interface AutocompletePopoverContext {
   handleSubmit: VoidFunction
 }
 
-// TODO: rename it
-export const commandPopoverContext = createContext<AutocompletePopoverContext>(
+export const autocompletePopoverContext = createContext<AutocompletePopoverContext>(
   'prosekit-autocomplete-popover-context',
 )

@@ -10,10 +10,10 @@ import {
   isAutocompleteItem,
   queryClosestAutocompleteItem,
 } from '../autocomplete-item/helpers'
-import { commandPopoverContext } from '../autocomplete-popover/context'
+import { autocompletePopoverContext } from '../autocomplete-popover/context'
 import { LightElement } from '../block-element'
 
-import { commandListContext } from './context'
+import { autocompleteListContext } from './context'
 import { AutocompleteListController } from './controller'
 
 export const propNames = ['editor'] as const
@@ -50,7 +50,7 @@ export class AutocompleteList
   })
 
   private popoverContext = new ContextConsumer(this, {
-    context: commandPopoverContext,
+    context: autocompletePopoverContext,
     subscribe: true,
   })
 
@@ -65,7 +65,7 @@ export class AutocompleteList
   editor?: Editor
 
   private context = new ContextProvider(this, {
-    context: commandListContext,
+    context: autocompleteListContext,
     initialValue: {
       scores: new Map(),
       selectedValue: '',

@@ -8,7 +8,7 @@ import { isAutocompleteList } from '../autocomplete-list/helpers'
 import { Popover } from '../popover'
 import { type PopoverOptions } from '../popover/options'
 
-import { commandPopoverContext } from './context'
+import { autocompletePopoverContext } from './context'
 import { AutocompletePopoverController } from './controller'
 import { defaultPopoverOptions } from './default-popover-options'
 
@@ -46,7 +46,7 @@ export class AutocompletePopover
   onSelect?: VoidFunction
 
   private context = new ContextProvider(this, {
-    context: commandPopoverContext,
+    context: autocompletePopoverContext,
     initialValue: {
       active: false,
       query: '',

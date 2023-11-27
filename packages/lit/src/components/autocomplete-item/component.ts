@@ -2,7 +2,7 @@ import { ContextConsumer } from '@lit/context'
 import { type PropertyDeclarations, type PropertyValues } from 'lit'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
-import { commandListContext } from '../autocomplete-list/context'
+import { autocompleteListContext } from '../autocomplete-list/context'
 import { LightElement } from '../block-element'
 
 export const propNames = ['value', 'onSelect'] as const
@@ -22,7 +22,7 @@ export class AutocompleteItem
   implements Partial<AutocompleteItemProps>
 {
   private listContext = new ContextConsumer(this, {
-    context: commandListContext,
+    context: autocompleteListContext,
     subscribe: true,
   })
 

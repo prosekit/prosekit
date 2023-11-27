@@ -1,5 +1,5 @@
 import { ContextConsumer } from '@lit/context'
-import { type PropertyValues } from 'lit'
+import { type PropertyDeclarations, type PropertyValues } from 'lit'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { commandListContext } from '../autocomplete-list/context'
@@ -29,8 +29,8 @@ export class AutocompleteItem
   static properties = {
     value: { type: String, reflect: true, attribute: 'data-value' },
     selected: { type: Boolean, reflect: true, attribute: 'data-selected' },
-    onSelect: { attribute: false }
-  };
+    onSelect: { attribute: false },
+  } satisfies PropertyDeclarations
 
   value = ''
   selected = false

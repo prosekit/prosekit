@@ -1,6 +1,6 @@
 import { ContextProvider } from '@lit/context'
 import { Editor } from '@prosekit/core'
-import type { PropertyValues } from 'lit'
+import type { PropertyValues, PropertyDeclarations } from 'lit'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { AutocompleteList } from '../autocomplete-list/component'
@@ -33,11 +33,12 @@ export class AutocompletePopover
   )
 
   static properties = {
+    ...Popover.properties,
     editor: { attribute: false },
     regex: { attribute: false },
     popoverOptions: { attribute: false },
     onSelect: { attribute: false },
-  };
+  } satisfies PropertyDeclarations
 
   editor?: Editor
   regex?: RegExp
@@ -69,6 +70,7 @@ export class AutocompletePopover
     }
 
     this.context.setValue({ ...context, query, active })
+    this.requestUpdate()
     requestAnimationFrame(() => {
       this.list?.selectFirstItem()
     })

@@ -1,4 +1,5 @@
 import { Editor } from '@prosekit/core'
+import type { PropertyDeclarations } from 'lit'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { Popover } from '../popover'
@@ -24,9 +25,10 @@ export class InlinePopover
   private controller = new InlinePopoverController(this)
 
   static properties = {
+    ...Popover.properties,
     editor: { attribute: false },
     popoverOptions: { attribute: false },
-  };
+  } satisfies PropertyDeclarations
 
   editor?: Editor
   popoverOptions: PopoverOptions

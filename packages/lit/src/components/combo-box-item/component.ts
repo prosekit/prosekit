@@ -1,5 +1,6 @@
 import { ContextConsumer } from '@lit/context'
 import type { Editor } from '@prosekit/core'
+import type { PropertyDeclarations } from 'lit'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
@@ -16,7 +17,7 @@ export class ComboBoxItem extends LightElement {
     editor: { attribute: false },
     selected: { type: Boolean, reflect: true, attribute: 'data-selected' },
     onSelect: { attribute: false },
-  };
+  } satisfies PropertyDeclarations
 
   editor?: Editor
   selected = false

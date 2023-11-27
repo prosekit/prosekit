@@ -1,4 +1,6 @@
 import { ContextProvider } from '@lit/context'
+import type { PropertyDeclarations } from 'lit'
+
 import { ListManager } from '../../manager/list-manager'
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { ComboBoxItem } from '../combo-box-item'
@@ -18,13 +20,14 @@ export interface ComboBoxProps extends PopoverProps {
 
 export class ComboBox extends Popover {
   static properties = {
+    ...Popover.properties,
     onDismiss: { attribute: false },
-  };
+  } satisfies PropertyDeclarations
 
   onDismiss?: VoidFunction
 
   constructor() {
-    super();
+    super()
   }
 
   private listManager = new ListManager<ComboBoxItem>({

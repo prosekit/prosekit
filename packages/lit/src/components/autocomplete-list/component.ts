@@ -1,6 +1,6 @@
 import { ContextConsumer, ContextProvider } from '@lit/context'
 import { Editor } from '@prosekit/core'
-import { type PropertyValues } from 'lit'
+import { type PropertyDeclarations, type PropertyValues } from 'lit'
 
 import { ListManager } from '../../manager/list-manager'
 import { commandScore } from '../../utils/command-score'
@@ -60,7 +60,7 @@ export class AutocompleteList
 
   static properties = {
     editor: { attribute: false },
-  };
+  } satisfies PropertyDeclarations
 
   editor?: Editor
 

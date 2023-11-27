@@ -1,5 +1,5 @@
 import { ContextConsumer } from '@lit/context'
-import { html } from 'lit'
+import { html, type PropertyDeclarations } from 'lit'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
@@ -14,7 +14,7 @@ export interface ComboBoxInputProps {
 export class ComboBoxInput extends LightElement {
   static properties = {
     placeholder: { attribute: true },
-  };
+  } satisfies PropertyDeclarations
 
   placeholder = ''
 

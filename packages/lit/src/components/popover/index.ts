@@ -4,7 +4,7 @@ import {
   type AutoUpdateOptions,
   type VirtualElement,
 } from '@floating-ui/dom'
-import type { PropertyValues } from 'lit'
+import type { PropertyDeclarations, PropertyValues } from 'lit'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { roundByDPR } from '../../utils/round-by-dpr'
@@ -42,7 +42,7 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     autoUpdate: { type: Boolean, reflect: true },
     autoUpdateOptions: { type: Object },
     dismiss: { type: String, reflect: true },
-  };
+  } satisfies PropertyDeclarations
 
   active = false
   reference?: Element | VirtualElement

@@ -47,8 +47,7 @@
   },
   "pnpm": {
     "overrides": {
-      "typescript": "~5.2.2",
-      "typedoc-plugin-mdn-links": "3.1.0"
+      "typescript": "~5.2.2"
     },
     "patchedDependencies": {
       "prosemirror-highlightjs@0.9.1": "patches/prosemirror-highlightjs@0.9.1.patch",

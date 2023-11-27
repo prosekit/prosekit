@@ -26,7 +26,9 @@ export class AutocompleteList
   extends LightElement
   implements Partial<AutocompleteListProps>
 {
-  /** @hidden */
+  /**
+   * @hidden
+   */
   private listManager = new ListManager<AutocompleteItem>({
     getItems: () => this.items,
     getSelectedValue: () => this.context.value.selectedValue,
@@ -41,7 +43,9 @@ export class AutocompleteList
     },
   })
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   private controller = new AutocompleteListController(this, {
     ArrowUp: () => this.listManager.handleArrowUp(),
     ArrowDown: () => this.listManager.handleArrowDown(),
@@ -58,6 +62,9 @@ export class AutocompleteList
     return this.popoverContext.value?.active ?? false
   }
 
+  /**
+   * @hidden
+   */
   static properties = {
     editor: { attribute: false },
   } satisfies PropertyDeclarations
@@ -113,7 +120,9 @@ export class AutocompleteList
     this.context.setValue({ ...context, selectedValue, selectedReason })
   }
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   willUpdate(changedProperties: PropertyValues<this>): void {
     if (changedProperties.has('editor') && this.editor) {
       this.controller.setEditor(this.editor)

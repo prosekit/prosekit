@@ -13,6 +13,9 @@ export type ComboBoxItemProps = {
 }
 
 export class ComboBoxItem extends LightElement {
+  /**
+   * @hidden
+   */
   static properties = {
     editor: { attribute: false },
     selected: { type: Boolean, reflect: true, attribute: 'data-selected' },

@@ -26,12 +26,17 @@ export class AutocompletePopover
   extends Popover
   implements Partial<AutocompletePopoverProps>
 {
-  /** @hidden */
+  /**
+   * @hidden
+   */
   private controller = new AutocompletePopoverController(
     this,
     this.updateContext.bind(this),
   )
 
+  /**
+   * @hidden
+   */
   static properties = {
     ...Popover.properties,
     editor: { attribute: false },
@@ -76,7 +81,9 @@ export class AutocompletePopover
     })
   }
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   willUpdate(changedProperties: PropertyValues<this>): void {
     super.willUpdate(changedProperties)
 
@@ -91,7 +98,9 @@ export class AutocompletePopover
     this.options = this.popoverOptions
   }
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   hide() {
     super.hide()
 

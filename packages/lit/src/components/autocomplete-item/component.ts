@@ -26,6 +26,9 @@ export class AutocompleteItem
     subscribe: true,
   })
 
+  /**
+   * @hidden
+   */
   static properties = {
     value: { type: String, reflect: true, attribute: 'data-value' },
     selected: { type: Boolean, reflect: true, attribute: 'data-selected' },

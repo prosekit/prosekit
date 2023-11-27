@@ -1,11 +1,8 @@
-import { consume } from '@lit/context'
+import { ContextConsumer } from '@lit/context'
 import { type PropertyValues } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 
-import {
-  commandListContext,
-  type AutocompleteListContext,
-} from '../autocomplete-list/context'
+import { commandListContext } from '../autocomplete-list/context'
 import { LightElement } from '../block-element'
 
 export const propNames = ['value', 'onSelect'] as const
@@ -25,6 +22,11 @@ export class AutocompleteItem
   extends LightElement
   implements Partial<AutocompleteItemProps>
 {
+  private listContext = new ContextConsumer(this, {
+    context: commandListContext,
+    subscribe: true,
+  })
+
   @property({ type: String, reflect: true, attribute: 'data-value' })
   value = ''
 
@@ -34,10 +36,6 @@ export class AutocompleteItem
   /** @hidden */
   @property({ attribute: false })
   onSelect?: VoidFunction
-
-  @consume({ context: commandListContext, subscribe: true })
-  @state({})
-  listContext?: AutocompleteListContext
 
   public get content(): string {
     const text = this.value || this.textContent || ''
@@ -51,8 +49,8 @@ export class AutocompleteItem
 
   protected willUpdate(): void {
     const content = this.content
-    this.selected = content === this.listContext?.selectedValue
-    const score = this.listContext?.scores.get(content) || 0
+    this.selected = content === this.listContext.value?.selectedValue
+    const score = this.listContext.value?.scores.get(content) || 0
 
     this.setHidden(score <= 0)
   }
@@ -62,7 +60,7 @@ export class AutocompleteItem
       this.selected &&
       changedProperties.has('selected') &&
       !changedProperties.get('selected') &&
-      this.listContext?.selectedReason === 'keyboard'
+      this.listContext.value?.selectedReason === 'keyboard'
     ) {
       this.scrollIntoView({ block: 'nearest' })
     }

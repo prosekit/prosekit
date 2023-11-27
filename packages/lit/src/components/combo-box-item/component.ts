@@ -1,9 +1,9 @@
-import { consume } from '@lit/context'
+import { ContextConsumer } from '@lit/context'
 import type { Editor } from '@prosekit/core'
-import { customElement, property, state } from 'lit/decorators.js'
+import { customElement, property } from 'lit/decorators.js'
 
 import { LightElement } from '../block-element'
-import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
+import { comboBoxContext } from '../combo-box/context'
 
 export const propNames = []
 
@@ -19,9 +19,10 @@ export class ComboBoxItem extends LightElement {
   @property({ type: Boolean, reflect: true, attribute: 'data-selected' })
   selected = false
 
-  @consume({ context: comboBoxContext, subscribe: true })
-  @state({})
-  comboBoxContext?: ComboBoxContext
+  private comboBoxContext = new ContextConsumer(this, {
+    context: comboBoxContext,
+    subscribe: true,
+  })
 
   /** @hidden */
   @property({ attribute: false })
@@ -29,10 +30,11 @@ export class ComboBoxItem extends LightElement {
 
   protected updated(): void {
     const content = (this.textContent ?? '').trim()
-    const query = (this.comboBoxContext?.inputValue ?? '').trim()
+    const query = (this.comboBoxContext.value?.inputValue ?? '').trim()
 
     const match = content.toLowerCase().includes(query.toLowerCase())
-    this.selected = match && content === this.comboBoxContext?.selectedValue
+    this.selected =
+      match && content === this.comboBoxContext.value?.selectedValue
     this.ariaSelected = String(this.selected)
     this.setHidden(!match)
   }

@@ -1,8 +1,8 @@
-import { consume } from '@lit/context'
-import { customElement, state } from 'lit/decorators.js'
+import { ContextConsumer } from '@lit/context'
+import { customElement } from 'lit/decorators.js'
 
 import { LightElement } from '../block-element'
-import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
+import { comboBoxContext } from '../combo-box/context'
 
 export const propNames = []
 
@@ -10,24 +10,25 @@ export type ComboBoxListProps = { lang?: string }
 
 @customElement('prosekit-combo-box-list')
 export class ComboBoxList extends LightElement {
-  @consume({ context: comboBoxContext, subscribe: true })
-  @state()
-  comboBoxContext: ComboBoxContext | null = null
+  private comboBoxContext = new ContextConsumer(this, {
+    context: comboBoxContext,
+    subscribe: true,
+  })
 
   connectedCallback(): void {
     super.connectedCallback()
 
     this.addEventListener('mousemove', (event) => {
-      this.comboBoxContext?.listManager.handleMouseMove(event)
+      this.comboBoxContext.value?.listManager.handleMouseMove(event)
     })
     this.addEventListener('mouseover', (event) => {
-      this.comboBoxContext?.listManager.handleMouseOver(event)
+      this.comboBoxContext.value?.listManager.handleMouseOver(event)
     })
     this.addEventListener('mousedown', (event) => {
-      this.comboBoxContext?.listManager.handleMouseDown(event)
+      this.comboBoxContext.value?.listManager.handleMouseDown(event)
     })
     this.addEventListener('click', (event) => {
-      this.comboBoxContext?.listManager.handleClick(event)
+      this.comboBoxContext.value?.listManager.handleClick(event)
     })
   }
 }

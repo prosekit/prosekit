@@ -1,4 +1,4 @@
-import { consume, provide } from '@lit/context'
+import { ContextConsumer, provide } from '@lit/context'
 import { Editor } from '@prosekit/core'
 import { type PropertyValues } from 'lit'
 import { customElement, property, state } from 'lit/decorators.js'
@@ -10,10 +10,7 @@ import {
   isAutocompleteItem,
   queryClosestAutocompleteItem,
 } from '../autocomplete-item/helpers'
-import {
-  commandPopoverContext,
-  type AutocompletePopoverContext,
-} from '../autocomplete-popover/context'
+import { commandPopoverContext } from '../autocomplete-popover/context'
 import { LightElement } from '../block-element'
 
 import { commandListContext, type AutocompleteListContext } from './context'
@@ -38,9 +35,9 @@ export class AutocompleteList
     getItemValue: (item) => item.content,
     queryClosestItem: queryClosestAutocompleteItem,
     getActive: () => this.active,
-    onDismiss: () => this.popoverContext?.handleDismiss?.(),
+    onDismiss: () => this.popoverContext.value?.handleDismiss?.(),
     onSelect: (item) => {
-      this.popoverContext?.handleSubmit?.()
+      this.popoverContext.value?.handleSubmit?.()
       item?.onSelect?.()
     },
   })
@@ -53,16 +50,17 @@ export class AutocompleteList
     Enter: () => this.listManager.handleEnter(),
   })
 
+  private popoverContext = new ContextConsumer(this, {
+    context: commandPopoverContext,
+    subscribe: true,
+  })
+
   private get active(): boolean {
-    return this.popoverContext?.active ?? false
+    return this.popoverContext.value?.active ?? false
   }
 
   @property({ attribute: false })
   editor?: Editor
-
-  @consume({ context: commandPopoverContext, subscribe: true })
-  @state()
-  popoverContext: AutocompletePopoverContext | null = null
 
   @provide({ context: commandListContext })
   @state()
@@ -117,7 +115,7 @@ export class AutocompleteList
       this.controller.setEditor(this.editor)
     }
 
-    const query = this.popoverContext?.query ?? ''
+    const query = this.popoverContext.value?.query ?? ''
 
     const scores = new Map(
       this.items.map((item) => {

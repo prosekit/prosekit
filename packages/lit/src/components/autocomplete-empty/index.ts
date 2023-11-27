@@ -1,11 +1,8 @@
-import { consume } from '@lit/context'
+import { ContextConsumer } from '@lit/context'
 import { type PropertyValues } from 'lit'
-import { customElement, state } from 'lit/decorators.js'
+import { customElement } from 'lit/decorators.js'
 
-import {
-  commandListContext,
-  type AutocompleteListContext,
-} from '../autocomplete-list/context'
+import { commandListContext } from '../autocomplete-list/context'
 import { LightElement } from '../block-element'
 
 export const propNames = [] as const
@@ -18,9 +15,10 @@ export class AutocompleteEmpty
   extends LightElement
   implements AutocompleteEmptyProps
 {
-  @consume({ context: commandListContext, subscribe: true })
-  @state()
-  listContext?: AutocompleteListContext
+  private listContext = new ContextConsumer(this, {
+    context: commandListContext,
+    subscribe: true,
+  })
 
   connectedCallback() {
     super.connectedCallback()
@@ -28,7 +26,7 @@ export class AutocompleteEmpty
   }
 
   protected willUpdate(_changedProperties: PropertyValues<this>): void {
-    const scores = this.listContext?.scores
+    const scores = this.listContext.value?.scores
     let hasMatch = false
 
     if (scores) {

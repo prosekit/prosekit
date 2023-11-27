@@ -1,12 +1,10 @@
 import { createComponent } from '@lit/react'
-import type { SimplifyUnion } from '@prosekit/core'
 import { ComboBoxItem as ComboBoxItemElement, type ComboBoxItemProps as ComboBoxItemElementProps } from '@prosekit/lit/combo-box-item'
 import React from 'react'
 
-export type ComboBoxItemProps = SimplifyUnion<{
-  className?: string,
-  children?: React.ReactNode,
-} & ComboBoxItemElementProps>
+import {type PropsWithClassName} from '../types'
+
+export type ComboBoxItemProps = React.PropsWithChildren<PropsWithClassName<ComboBoxItemElementProps>>
 
 const ComboBoxItemInner = createComponent({
   tagName: 'prosekit-combo-box-item',

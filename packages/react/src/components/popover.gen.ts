@@ -1,12 +1,10 @@
 import { createComponent } from '@lit/react'
-import type { SimplifyUnion } from '@prosekit/core'
 import { Popover as PopoverElement, type PopoverProps as PopoverElementProps } from '@prosekit/lit/popover'
 import React from 'react'
 
-export type PopoverProps = SimplifyUnion<{
-  className?: string,
-  children?: React.ReactNode,
-} & PopoverElementProps>
+import {type PropsWithClassName} from '../types'
+
+export type PopoverProps = React.PropsWithChildren<PropsWithClassName<PopoverElementProps>>
 
 const PopoverInner = createComponent({
   tagName: 'prosekit-popover',

@@ -1,12 +1,10 @@
 import { createComponent } from '@lit/react'
-import type { SimplifyUnion } from '@prosekit/core'
 import { AutocompletePopover as AutocompletePopoverElement, type AutocompletePopoverProps as AutocompletePopoverElementProps } from '@prosekit/lit/autocomplete-popover'
 import React from 'react'
 
-export type AutocompletePopoverProps = SimplifyUnion<{
-  className?: string,
-  children?: React.ReactNode,
-} & AutocompletePopoverElementProps>
+import {type PropsWithClassName} from '../types'
+
+export type AutocompletePopoverProps = React.PropsWithChildren<PropsWithClassName<AutocompletePopoverElementProps>>
 
 const AutocompletePopoverInner = createComponent({
   tagName: 'prosekit-autocomplete-popover',

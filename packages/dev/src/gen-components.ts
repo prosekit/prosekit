@@ -82,14 +82,12 @@ function formatReactCode(kebab: string) {
   return (
     `
 import { createComponent } from '@lit/react'
-import type { SimplifyUnion } from '@prosekit/core'
 import { ${pascal} as ${pascal}Element, type ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
 import React from 'react'
 
-export type ${pascal}Props = SimplifyUnion<{
-  className?: string,
-  children?: React.ReactNode,
-} & ${pascal}ElementProps>
+import {type PropsWithClassName} from '../types'
+
+export type ${pascal}Props = React.PropsWithChildren<PropsWithClassName<${pascal}ElementProps>>
 
 const ${pascal}Inner = createComponent({
   tagName: 'prosekit-${kebab}',

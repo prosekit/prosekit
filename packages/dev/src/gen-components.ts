@@ -158,8 +158,9 @@ function formatSvelteTsCode(kebab: string) {
 import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
 import type { SvelteComponent } from 'svelte'
 
-import ${pascal}Component from './${kebab}.gen.svelte'
 import type { PropsWithClass } from '../types'
+
+import ${pascal}Component from './${kebab}.gen.svelte'
 
 export type ${pascal}Props = PropsWithClass<${pascal}ElementProps>
 

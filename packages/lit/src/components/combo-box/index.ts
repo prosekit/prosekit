@@ -19,16 +19,15 @@ export interface ComboBoxProps extends PopoverProps {
 }
 
 export class ComboBox extends Popover {
+  /**
+   * @hidden
+   */
   static properties = {
     ...Popover.properties,
     onDismiss: { attribute: false },
   } satisfies PropertyDeclarations
 
   onDismiss?: VoidFunction
-
-  constructor() {
-    super()
-  }
 
   private listManager = new ListManager<ComboBoxItem>({
     getItems: () => {

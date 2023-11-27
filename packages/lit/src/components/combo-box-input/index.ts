@@ -12,6 +12,9 @@ export interface ComboBoxInputProps {
 }
 
 export class ComboBoxInput extends LightElement {
+  /**
+   * @hidden
+   */
   static properties = {
     placeholder: { attribute: true },
   } satisfies PropertyDeclarations
@@ -42,6 +45,9 @@ export class ComboBoxInput extends LightElement {
     this.comboBoxContext.value?.setInputValue(value)
   }
 
+  /**
+   * @hidden
+   */
   protected firstUpdated(): void {
     const resizeObserver = new ResizeObserver((entries) => {
       const visible = entries.some(
@@ -56,7 +62,9 @@ export class ComboBoxInput extends LightElement {
     resizeObserver.observe(this)
   }
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   render() {
     return html`
       <input 

@@ -35,6 +35,9 @@ export interface PopoverProps {
  * A custom element that displays a popover anchored to a reference element.
  */
 export class Popover extends LightElement implements Partial<PopoverProps> {
+  /**
+   * @hidden
+   */
   static properties = {
     active: { type: Boolean, reflect: true },
     reference: { attribute: false },
@@ -45,38 +48,44 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
   } satisfies PropertyDeclarations
 
   /**
-   * Controls the visibility of the popover element. When set to `true`, the popover is displayed and positioned
-   * relative to its reference element. When set to `false`, the popover is hidden and its positioning logic is
+   * Controls the visibility of the popover element. When set to `true`, the
+   * popover is displayed and positioned relative to its reference element. When
+   * set to `false`, the popover is hidden and its positioning logic is
    * deactivated.
    */
   active = false
 
   /**
-   * The element that the popover is anchored to. This can be either a DOM element or an object that implements the
-   * virtual element interface from Floating UI.
+   * The element that the popover is anchored to. This can be either a DOM
+   * element or an object that implements the virtual element interface from
+   * Floating UI.
    */
   reference?: Element | VirtualElement
 
   /**
-   * The options that are passed to the `computePosition` function from Floating UI. These options are used to
-   * configure the positioning of the popover element relative to its reference element. For more information on the
+   * The options that are passed to the `computePosition` function from Floating
+   * UI. These options are used to configure the positioning of the popover
+   * element relative to its reference element. For more information on the
    * available options, please refer to the Floating UI documentation.
    */
   options?: PopoverOptions
 
   /**
-   * Controls whether the popover position is automatically updated when the reference element changes position. When
-   * set to `true`, the popover position is updated automatically. When set to `false`, the popover position is only
-   * updated when the given properties are changed.
+   * Controls whether the popover position is automatically updated when the
+   * reference element changes position. When set to `true`, the popover
+   * position is updated automatically. When set to `false`, the popover
+   * position is only updated when the given properties are changed.
    *
    * @default false
    */
   autoUpdate = false
 
   /**
-   * The options that are passed to the `autoUpdate` function from Floating UI. These options are used to configure the
-   * automatic update behavior of the popover position. For more information on the available options, please refer to
-   * the Floating UI documentation. This property is only used when the `autoUpdate` property is set to `true`.
+   * The options that are passed to the `autoUpdate` function from Floating UI.
+   * These options are used to configure the automatic update behavior of the
+   * popover position. For more information on the available options, please
+   * refer to the Floating UI documentation. This property is only used when the
+   * `autoUpdate` property is set to `true`.
    */
   autoUpdateOptions?: AutoUpdateOptions
 
@@ -92,20 +101,21 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
    *
    * @default "on"
    */
-  dismiss = 'on'
+  dismiss: 'off' | 'on' | 'click' | 'escape' = 'on'
 
-  /** @hidden */
-  constructor() {
-    super()
-  }
-
-  /** @hidden */
+  /**
+   * @hidden
+   */
   private disposeAutoUpdate?: VoidFunction
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   private disposeEventListeners?: VoidFunction
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   connectedCallback(): void {
     super.connectedCallback()
 
@@ -129,7 +139,9 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     }
   }
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   disconnectedCallback(): void {
     super.disconnectedCallback()
 
@@ -140,7 +152,9 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     this.disposeEventListeners = undefined
   }
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   protected updated(changedProperties: PropertyValues<this>): void {
     super.updated(changedProperties)
 
@@ -148,7 +162,9 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     this.setHidden(!this.active)
   }
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   private start() {
     this.disposeAutoUpdate?.()
     this.disposeAutoUpdate = undefined
@@ -169,7 +185,9 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     }
   }
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   private async compute() {
     const reference = this.reference
     if (!reference) return
@@ -193,7 +211,9 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     )
   }
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   hide() {
     this.active = false
   }

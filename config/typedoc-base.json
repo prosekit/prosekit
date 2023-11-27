@@ -21,6 +21,7 @@
   "readme": "none",
   "excludeExternals": true,
   "excludeInternal": true,
+  "excludePrivate": true,
   "validation": {
     "notDocumented": false
   },
@@ -58,6 +59,6 @@
   "excludeGroups": true,
   "typeDeclarationFormat": "table",
   "enumMembersFormat": "table",
-  "propertiesFormat": "table",
+  "propertiesFormat": "list",
   "outputFileStrategy": "modules"
 }

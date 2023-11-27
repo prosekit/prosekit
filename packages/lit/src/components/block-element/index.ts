@@ -1,6 +1,13 @@
 import { LitElement } from 'lit'
 
 export class LightElement extends LitElement {
+  /**
+   * @hidden
+   */
+  constructor() {
+    super()
+  }
+
   createRenderRoot() {
     return this
   }

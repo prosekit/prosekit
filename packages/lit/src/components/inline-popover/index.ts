@@ -21,9 +21,9 @@ export class InlinePopover
   extends Popover
   implements Partial<InlinePopoverProps>
 {
-  /** @hidden */
-  private controller = new InlinePopoverController(this)
-
+  /**
+   * @hidden
+   */
   static properties = {
     ...Popover.properties,
     editor: { attribute: false },
@@ -32,13 +32,16 @@ export class InlinePopover
 
   editor?: Editor
   popoverOptions: PopoverOptions = defaultPopoverOptions
+  dismiss = 'escape' as const
 
-  constructor() {
-    super()
-    this.dismiss = 'escape'
-  }
+  /**
+   * @hidden
+   */
+  private controller = new InlinePopoverController(this)
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   willUpdate(): void {
     if (this.editor) {
       this.controller.setEditor(this.editor)
@@ -48,7 +51,9 @@ export class InlinePopover
     this.options = this.popoverOptions
   }
 
-  /** @hidden */
+  /**
+   * @hidden
+   */
   hide() {
     super.hide()
 

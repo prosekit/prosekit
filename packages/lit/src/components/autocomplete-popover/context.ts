@@ -7,6 +7,7 @@ export interface AutocompletePopoverContext {
   handleSubmit: VoidFunction
 }
 
-export const autocompletePopoverContext = createContext<AutocompletePopoverContext>(
-  'prosekit-autocomplete-popover-context',
-)
+export const autocompletePopoverContext =
+  createContext<AutocompletePopoverContext>(
+    'prosekit-autocomplete-popover-context',
+  )

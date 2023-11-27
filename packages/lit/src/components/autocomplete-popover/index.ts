@@ -1,7 +1,7 @@
-import { provide } from '@lit/context'
+import { ContextProvider } from '@lit/context'
 import { Editor } from '@prosekit/core'
 import type { PropertyValues } from 'lit'
-import { property, state } from 'lit/decorators.js'
+import { property } from 'lit/decorators.js'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { AutocompleteList } from '../autocomplete-list/component'
@@ -9,10 +9,7 @@ import { isAutocompleteList } from '../autocomplete-list/helpers'
 import { Popover } from '../popover'
 import { type PopoverOptions } from '../popover/options'
 
-import {
-  commandPopoverContext,
-  type AutocompletePopoverContext,
-} from './context'
+import { commandPopoverContext } from './context'
 import { AutocompletePopoverController } from './controller'
 import { defaultPopoverOptions } from './default-popover-options'
 
@@ -45,16 +42,17 @@ export class AutocompletePopover
   @property({ attribute: false })
   popoverOptions: PopoverOptions = defaultPopoverOptions
 
-  @provide({ context: commandPopoverContext })
-  @state()
-  context: AutocompletePopoverContext = {
-    active: false,
-    query: '',
-    handleDismiss: () => this.controller.handleDismiss?.(),
-    handleSubmit: () => {
-      return this.controller.handleSubmit?.()
+  private context = new ContextProvider(this, {
+    context: commandPopoverContext,
+    initialValue: {
+      active: false,
+      query: '',
+      handleDismiss: () => this.controller.handleDismiss?.(),
+      handleSubmit: () => {
+        return this.controller.handleSubmit?.()
+      },
     },
-  }
+  })
 
   /** @hidden */
   @property({ attribute: false })
@@ -66,11 +64,13 @@ export class AutocompletePopover
   }
 
   private updateContext(query: string, active: boolean) {
-    if (this.context.query === query && this.context.active === active) {
+    const context = this.context.value
+
+    if (context.query === query && context.active === active) {
       return
     }
 
-    this.context = { ...this.context, query, active }
+    this.context.setValue({ ...context, query, active })
     requestAnimationFrame(() => {
       this.list?.selectFirstItem()
     })

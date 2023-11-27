@@ -1,14 +1,11 @@
-import { ContextConsumer, provide } from '@lit/context'
+import { ContextConsumer, ContextProvider } from '@lit/context'
 import { Editor } from '@prosekit/core'
 import { type PropertyValues } from 'lit'
-import { property, state } from 'lit/decorators.js'
+import { property } from 'lit/decorators.js'
 
 import { ListManager } from '../../manager/list-manager'
 import { commandScore } from '../../utils/command-score'
-import {
-  defineCustomElement,
-  defineCustomElement,
-} from '../../utils/define-custom-element'
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { AutocompleteItem } from '../autocomplete-item/component'
 import {
   isAutocompleteItem,
@@ -17,7 +14,7 @@ import {
 import { commandPopoverContext } from '../autocomplete-popover/context'
 import { LightElement } from '../block-element'
 
-import { commandListContext, type AutocompleteListContext } from './context'
+import { commandListContext } from './context'
 import { AutocompleteListController } from './controller'
 
 export const propNames = ['editor'] as const
@@ -33,7 +30,7 @@ export class AutocompleteList
   /** @hidden */
   private listManager = new ListManager<AutocompleteItem>({
     getItems: () => this.items,
-    getSelectedValue: () => this.context.selectedValue,
+    getSelectedValue: () => this.context.value.selectedValue,
     setSelectedValue: (value, reason) => this.updateValue(value, reason),
     getItemValue: (item) => item.content,
     queryClosestItem: queryClosestAutocompleteItem,
@@ -65,13 +62,14 @@ export class AutocompleteList
   @property({ attribute: false })
   editor?: Editor
 
-  @provide({ context: commandListContext })
-  @state()
-  context: AutocompleteListContext = {
-    scores: new Map(),
-    selectedValue: '',
-    selectedReason: 'keyboard',
-  }
+  private context = new ContextProvider(this, {
+    context: commandListContext,
+    initialValue: {
+      scores: new Map(),
+      selectedValue: '',
+      selectedReason: 'keyboard',
+    },
+  })
 
   connectedCallback(): void {
     super.connectedCallback()
@@ -106,10 +104,11 @@ export class AutocompleteList
     selectedValue: string,
     selectedReason: 'mouse' | 'keyboard',
   ) {
-    if (this.context.selectedValue === selectedValue) {
+    const context = this.context.value
+    if (context.selectedValue === selectedValue) {
       return
     }
-    this.context = { ...this.context, selectedValue, selectedReason }
+    this.context.setValue({ ...context, selectedValue, selectedReason })
   }
 
   /** @hidden */
@@ -127,8 +126,8 @@ export class AutocompleteList
         return [content, score]
       }),
     )
-
-    this.context = { ...this.context, scores }
+    const context = this.context.value
+    this.context.setValue({ ...context, scores })
   }
 }
 

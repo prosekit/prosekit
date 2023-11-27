@@ -1,11 +1,8 @@
-import { provide } from '@lit/context'
-import { property, state } from 'lit/decorators.js'
+import { ContextProvider } from '@lit/context'
+import { property } from 'lit/decorators.js'
 
 import { ListManager } from '../../manager/list-manager'
-import {
-  defineCustomElement,
-  defineCustomElement,
-} from '../../utils/define-custom-element'
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { ComboBoxItem } from '../combo-box-item'
 import {
   isComboBoxItem,
@@ -30,10 +27,10 @@ export class ComboBox extends Popover {
       return this.items
     },
     getSelectedValue: () => {
-      return (this.context.selectedValue ?? '').trim()
+      return (this.getContext().selectedValue ?? '').trim()
     },
     setSelectedValue: (value: string) => {
-      return this.context.setSelectedValue(value)
+      return this.getContext().setSelectedValue(value)
     },
     getItemValue: (item) => {
       return (item.textContent ?? '').trim()
@@ -46,33 +43,40 @@ export class ComboBox extends Popover {
       this.onDismiss?.()
     },
     onSelect: (item) => {
-      this.context.setSelectedValue('')
-      this.context.setInputValue('')
+      this.getContext().setSelectedValue('')
+      this.getContext().setInputValue('')
       item?.onSelect?.()
       this.onDismiss?.()
     },
   })
 
-  @provide({ context: comboBoxContext })
-  @state()
-  context: ComboBoxContext = {
-    inputValue: '',
-    setInputValue: (inputValue: string) => {
-      if (this.context.inputValue === inputValue) {
-        return
-      }
-      this.context = { ...this.context, inputValue }
-    },
+  private context = new ContextProvider(this, {
+    context: comboBoxContext,
+    initialValue: {
+      inputValue: '',
+      setInputValue: (inputValue: string) => {
+        const context = this.context.value
+        if (context.inputValue === inputValue) {
+          return
+        }
+        this.context.setValue({ ...context, inputValue })
+      },
 
-    selectedValue: '',
-    setSelectedValue: (selectedValue: string) => {
-      if (this.context.selectedValue === selectedValue) {
-        return
-      }
-      this.context = { ...this.context, selectedValue }
-    },
+      selectedValue: '',
+      setSelectedValue: (selectedValue: string) => {
+        const context = this.context.value
+        if (context.selectedValue === selectedValue) {
+          return
+        }
+        this.context.setValue({ ...context, selectedValue })
+      },
 
-    listManager: this.listManager,
+      listManager: this.listManager,
+    },
+  })
+
+  private getContext(): ComboBoxContext {
+    return this.context.value
   }
 
   get items(): ComboBoxItem[] {

@@ -1,7 +1,6 @@
 import { ContextConsumer, ContextProvider } from '@lit/context'
 import { Editor } from '@prosekit/core'
 import { type PropertyValues } from 'lit'
-import { property } from 'lit/decorators.js'
 
 import { ListManager } from '../../manager/list-manager'
 import { commandScore } from '../../utils/command-score'
@@ -59,7 +58,10 @@ export class AutocompleteList
     return this.popoverContext.value?.active ?? false
   }
 
-  @property({ attribute: false })
+  static properties = {
+    editor: { attribute: false },
+  };
+
   editor?: Editor
 
   private context = new ContextProvider(this, {

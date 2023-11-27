@@ -1,6 +1,5 @@
 import { ContextConsumer } from '@lit/context'
 import { type PropertyValues } from 'lit'
-import { property } from 'lit/decorators.js'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { commandListContext } from '../autocomplete-list/context'
@@ -27,14 +26,14 @@ export class AutocompleteItem
     subscribe: true,
   })
 
-  @property({ type: String, reflect: true, attribute: 'data-value' })
+  static properties = {
+    value: { type: String, reflect: true, attribute: 'data-value' },
+    selected: { type: Boolean, reflect: true, attribute: 'data-selected' },
+    onSelect: { attribute: false }
+  };
+
   value = ''
-
-  @property({ type: Boolean, reflect: true, attribute: 'data-selected' })
   selected = false
-
-  /** @hidden */
-  @property({ attribute: false })
   onSelect?: VoidFunction
 
   public get content(): string {

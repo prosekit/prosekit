@@ -1,6 +1,5 @@
 import { ContextConsumer } from '@lit/context'
 import { html } from 'lit'
-import { property } from 'lit/decorators.js'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
@@ -13,7 +12,10 @@ export interface ComboBoxInputProps {
 }
 
 export class ComboBoxInput extends LightElement {
-  @property({ attribute: true })
+  static properties = {
+    placeholder: { attribute: true },
+  };
+
   placeholder = ''
 
   private comboBoxContext = new ContextConsumer(this, {

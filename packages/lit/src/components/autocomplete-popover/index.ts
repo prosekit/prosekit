@@ -1,7 +1,6 @@
 import { ContextProvider } from '@lit/context'
 import { Editor } from '@prosekit/core'
 import type { PropertyValues } from 'lit'
-import { property } from 'lit/decorators.js'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { AutocompleteList } from '../autocomplete-list/component'
@@ -33,14 +32,17 @@ export class AutocompletePopover
     this.updateContext.bind(this),
   )
 
-  @property({ attribute: false })
+  static properties = {
+    editor: { attribute: false },
+    regex: { attribute: false },
+    popoverOptions: { attribute: false },
+    onSelect: { attribute: false },
+  };
+
   editor?: Editor
-
-  @property({ attribute: false })
   regex?: RegExp
-
-  @property({ attribute: false })
   popoverOptions: PopoverOptions = defaultPopoverOptions
+  onSelect?: VoidFunction
 
   private context = new ContextProvider(this, {
     context: commandPopoverContext,
@@ -53,10 +55,6 @@ export class AutocompletePopover
       },
     },
   })
-
-  /** @hidden */
-  @property({ attribute: false })
-  onSelect?: VoidFunction
 
   private get list(): AutocompleteList | null {
     const element = this.querySelector('prosekit-autocomplete-list')

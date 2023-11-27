@@ -1,6 +1,5 @@
 import { ContextConsumer } from '@lit/context'
 import type { Editor } from '@prosekit/core'
-import { property } from 'lit/decorators.js'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
@@ -13,20 +12,20 @@ export type ComboBoxItemProps = {
 }
 
 export class ComboBoxItem extends LightElement {
-  @property({ attribute: false })
-  editor?: Editor
+  static properties = {
+    editor: { attribute: false },
+    selected: { type: Boolean, reflect: true, attribute: 'data-selected' },
+    onSelect: { attribute: false },
+  };
 
-  @property({ type: Boolean, reflect: true, attribute: 'data-selected' })
+  editor?: Editor
   selected = false
+  onSelect?: VoidFunction
 
   private comboBoxContext = new ContextConsumer(this, {
     context: comboBoxContext,
     subscribe: true,
   })
-
-  /** @hidden */
-  @property({ attribute: false })
-  onSelect?: VoidFunction
 
   protected updated(): void {
     const content = (this.textContent ?? '').trim()

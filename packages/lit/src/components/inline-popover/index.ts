@@ -1,5 +1,4 @@
 import { Editor } from '@prosekit/core'
-import { property } from 'lit/decorators.js'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { Popover } from '../popover'
@@ -24,15 +23,18 @@ export class InlinePopover
   /** @hidden */
   private controller = new InlinePopoverController(this)
 
-  @property({ attribute: false })
-  editor?: Editor
+  static properties = {
+    editor: { attribute: false },
+    popoverOptions: { attribute: false },
+  };
 
-  @property({ attribute: false })
-  popoverOptions: PopoverOptions = defaultPopoverOptions
+  editor?: Editor
+  popoverOptions: PopoverOptions
 
   constructor() {
     super()
     this.dismiss = 'escape'
+    this.popoverOptions = defaultPopoverOptions
   }
 
   /** @hidden */

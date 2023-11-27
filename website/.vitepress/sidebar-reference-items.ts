@@ -82,7 +82,7 @@ export const referenceItems = [
         "link": "/references/extensions/underline"
       }
     ],
-    "collapsed": false,
+    "collapsed": true,
     "link": "/references/extensions"
   },
   {

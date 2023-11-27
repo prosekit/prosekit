@@ -48,15 +48,11 @@ async function genReferenceItems() {
       let currentItems = items
       let currentItem: SidebarItem | null = null
 
-      let depth = 0
       for (const part of parts) {
-        depth += 1
-        const expanded = part === 'extensions' && depth === 1
-
         currentItem = currentItems.find((item) => item.text === part) ?? {
           text: part,
           items: [],
-          collapsed: !expanded,
+          collapsed: true,
         }
 
         if (!currentItems.includes(currentItem)) {

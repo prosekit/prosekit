@@ -44,11 +44,54 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     dismiss: { type: String, reflect: true },
   } satisfies PropertyDeclarations
 
+  /**
+   * Controls the visibility of the popover element. When set to `true`, the popover is displayed and positioned
+   * relative to its reference element. When set to `false`, the popover is hidden and its positioning logic is
+   * deactivated.
+   */
   active = false
+
+  /**
+   * The element that the popover is anchored to. This can be either a DOM element or an object that implements the
+   * virtual element interface from Floating UI.
+   */
   reference?: Element | VirtualElement
+
+  /**
+   * The options that are passed to the `computePosition` function from Floating UI. These options are used to
+   * configure the positioning of the popover element relative to its reference element. For more information on the
+   * available options, please refer to the Floating UI documentation.
+   */
   options?: PopoverOptions
+
+  /**
+   * Controls whether the popover position is automatically updated when the reference element changes position. When
+   * set to `true`, the popover position is updated automatically. When set to `false`, the popover position is only
+   * updated when the given properties are changed.
+   *
+   * @default false
+   */
   autoUpdate = false
+
+  /**
+   * The options that are passed to the `autoUpdate` function from Floating UI. These options are used to configure the
+   * automatic update behavior of the popover position. For more information on the available options, please refer to
+   * the Floating UI documentation. This property is only used when the `autoUpdate` property is set to `true`.
+   */
   autoUpdateOptions?: AutoUpdateOptions
+
+  /**
+   * Controls whether the popover should be dismissed based on user interaction.
+   *
+   * Available options:
+   *
+   * - "off": The popover is not dismissed.
+   * - "on": The popover is dismissed when the user clicks outside of the popover or presses the escape key.
+   * - "click": The popover is dismissed when the user clicks outside of the popover.
+   * - "escape": The popover is dismissed when the user presses the escape key.
+   *
+   * @default "on"
+   */
   dismiss = 'on'
 
   /** @hidden */

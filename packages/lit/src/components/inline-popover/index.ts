@@ -31,12 +31,11 @@ export class InlinePopover
   } satisfies PropertyDeclarations
 
   editor?: Editor
-  popoverOptions: PopoverOptions
+  popoverOptions: PopoverOptions = defaultPopoverOptions
 
   constructor() {
     super()
     this.dismiss = 'escape'
-    this.popoverOptions = defaultPopoverOptions
   }
 
   /** @hidden */

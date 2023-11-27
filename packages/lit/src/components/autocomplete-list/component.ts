@@ -1,22 +1,19 @@
-import { consume, provide } from '@lit/context'
+import { ContextConsumer, ContextProvider } from '@lit/context'
 import { Editor } from '@prosekit/core'
-import { type PropertyValues } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { type PropertyDeclarations, type PropertyValues } from 'lit'
 
 import { ListManager } from '../../manager/list-manager'
 import { commandScore } from '../../utils/command-score'
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { AutocompleteItem } from '../autocomplete-item/component'
 import {
   isAutocompleteItem,
   queryClosestAutocompleteItem,
 } from '../autocomplete-item/helpers'
-import {
-  commandPopoverContext,
-  type AutocompletePopoverContext,
-} from '../autocomplete-popover/context'
+import { autocompletePopoverContext } from '../autocomplete-popover/context'
 import { LightElement } from '../block-element'
 
-import { commandListContext, type AutocompleteListContext } from './context'
+import { autocompleteListContext } from './context'
 import { AutocompleteListController } from './controller'
 
 export const propNames = ['editor'] as const
@@ -25,7 +22,6 @@ export interface AutocompleteListProps {
   editor: Editor
 }
 
-@customElement('prosekit-autocomplete-list')
 export class AutocompleteList
   extends LightElement
   implements Partial<AutocompleteListProps>
@@ -33,14 +29,14 @@ export class AutocompleteList
   /** @hidden */
   private listManager = new ListManager<AutocompleteItem>({
     getItems: () => this.items,
-    getSelectedValue: () => this.context.selectedValue,
+    getSelectedValue: () => this.context.value.selectedValue,
     setSelectedValue: (value, reason) => this.updateValue(value, reason),
     getItemValue: (item) => item.content,
     queryClosestItem: queryClosestAutocompleteItem,
     getActive: () => this.active,
-    onDismiss: () => this.popoverContext?.handleDismiss?.(),
+    onDismiss: () => this.popoverContext.value?.handleDismiss?.(),
     onSelect: (item) => {
-      this.popoverContext?.handleSubmit?.()
+      this.popoverContext.value?.handleSubmit?.()
       item?.onSelect?.()
     },
   })
@@ -53,24 +49,29 @@ export class AutocompleteList
     Enter: () => this.listManager.handleEnter(),
   })
 
+  private popoverContext = new ContextConsumer(this, {
+    context: autocompletePopoverContext,
+    subscribe: true,
+  })
+
   private get active(): boolean {
-    return this.popoverContext?.active ?? false
+    return this.popoverContext.value?.active ?? false
   }
 
-  @property({ attribute: false })
+  static properties = {
+    editor: { attribute: false },
+  } satisfies PropertyDeclarations
+
   editor?: Editor
 
-  @consume({ context: commandPopoverContext, subscribe: true })
-  @state()
-  popoverContext: AutocompletePopoverContext | null = null
-
-  @provide({ context: commandListContext })
-  @state()
-  context: AutocompleteListContext = {
-    scores: new Map(),
-    selectedValue: '',
-    selectedReason: 'keyboard',
-  }
+  private context = new ContextProvider(this, {
+    context: autocompleteListContext,
+    initialValue: {
+      scores: new Map(),
+      selectedValue: '',
+      selectedReason: 'keyboard',
+    },
+  })
 
   connectedCallback(): void {
     super.connectedCallback()
@@ -105,10 +106,11 @@ export class AutocompleteList
     selectedValue: string,
     selectedReason: 'mouse' | 'keyboard',
   ) {
-    if (this.context.selectedValue === selectedValue) {
+    const context = this.context.value
+    if (context.selectedValue === selectedValue) {
       return
     }
-    this.context = { ...this.context, selectedValue, selectedReason }
+    this.context.setValue({ ...context, selectedValue, selectedReason })
   }
 
   /** @hidden */
@@ -117,7 +119,7 @@ export class AutocompleteList
       this.controller.setEditor(this.editor)
     }
 
-    const query = this.popoverContext?.query ?? ''
+    const query = this.popoverContext.value?.query ?? ''
 
     const scores = new Map(
       this.items.map((item) => {
@@ -126,7 +128,9 @@ export class AutocompleteList
         return [content, score]
       }),
     )
-
-    this.context = { ...this.context, scores }
+    const context = this.context.value
+    this.context.setValue({ ...context, scores })
   }
 }
+
+defineCustomElement('prosekit-autocomplete-list', AutocompleteList)

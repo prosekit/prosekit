@@ -4,9 +4,9 @@ import {
   type AutoUpdateOptions,
   type VirtualElement,
 } from '@floating-ui/dom'
-import type { PropertyValues } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import type { PropertyDeclarations, PropertyValues } from 'lit'
 
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { roundByDPR } from '../../utils/round-by-dpr'
 import { LightElement } from '../block-element'
 
@@ -34,26 +34,27 @@ export interface PopoverProps {
 /**
  * A custom element that displays a popover anchored to a reference element.
  */
-@customElement('prosekit-popover')
 export class Popover extends LightElement implements Partial<PopoverProps> {
-  /** @hidden */
-  constructor() {
-    super()
-  }
+  static properties = {
+    active: { type: Boolean, reflect: true },
+    reference: { attribute: false },
+    options: { attribute: false },
+    autoUpdate: { type: Boolean, reflect: true },
+    autoUpdateOptions: { type: Object },
+    dismiss: { type: String, reflect: true },
+  } satisfies PropertyDeclarations
 
   /**
    * Controls the visibility of the popover element. When set to `true`, the popover is displayed and positioned
    * relative to its reference element. When set to `false`, the popover is hidden and its positioning logic is
    * deactivated.
    */
-  @property({ type: Boolean, reflect: true })
   active = false
 
   /**
    * The element that the popover is anchored to. This can be either a DOM element or an object that implements the
    * virtual element interface from Floating UI.
    */
-  @property({ attribute: false })
   reference?: Element | VirtualElement
 
   /**
@@ -61,7 +62,6 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
    * configure the positioning of the popover element relative to its reference element. For more information on the
    * available options, please refer to the Floating UI documentation.
    */
-  @property({ attribute: false })
   options?: PopoverOptions
 
   /**
@@ -71,10 +71,6 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
    *
    * @default false
    */
-  @property({
-    type: Boolean,
-    reflect: true,
-  })
   autoUpdate = false
 
   /**
@@ -82,7 +78,6 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
    * automatic update behavior of the popover position. For more information on the available options, please refer to
    * the Floating UI documentation. This property is only used when the `autoUpdate` property is set to `true`.
    */
-  @property({ type: Object })
   autoUpdateOptions?: AutoUpdateOptions
 
   /**
@@ -97,11 +92,12 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
    *
    * @default "on"
    */
-  @property({
-    type: String,
-    reflect: true,
-  })
   dismiss = 'on'
+
+  /** @hidden */
+  constructor() {
+    super()
+  }
 
   /** @hidden */
   private disposeAutoUpdate?: VoidFunction
@@ -219,3 +215,5 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     }
   }
 }
+
+defineCustomElement('prosekit-popover', Popover)

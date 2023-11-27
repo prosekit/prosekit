@@ -1,9 +1,10 @@
-import { consume } from '@lit/context'
+import { ContextConsumer } from '@lit/context'
 import type { Editor } from '@prosekit/core'
-import { customElement, property, state } from 'lit/decorators.js'
+import type { PropertyDeclarations } from 'lit'
 
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
-import { comboBoxContext, type ComboBoxContext } from '../combo-box/context'
+import { comboBoxContext } from '../combo-box/context'
 
 export const propNames = []
 
@@ -11,29 +12,32 @@ export type ComboBoxItemProps = {
   onSelect?: VoidFunction
 }
 
-@customElement('prosekit-combo-box-item')
 export class ComboBoxItem extends LightElement {
-  @property({ attribute: false })
+  static properties = {
+    editor: { attribute: false },
+    selected: { type: Boolean, reflect: true, attribute: 'data-selected' },
+    onSelect: { attribute: false },
+  } satisfies PropertyDeclarations
+
   editor?: Editor
-
-  @property({ type: Boolean, reflect: true, attribute: 'data-selected' })
   selected = false
-
-  @consume({ context: comboBoxContext, subscribe: true })
-  @state({})
-  comboBoxContext?: ComboBoxContext
-
-  /** @hidden */
-  @property({ attribute: false })
   onSelect?: VoidFunction
+
+  private comboBoxContext = new ContextConsumer(this, {
+    context: comboBoxContext,
+    subscribe: true,
+  })
 
   protected updated(): void {
     const content = (this.textContent ?? '').trim()
-    const query = (this.comboBoxContext?.inputValue ?? '').trim()
+    const query = (this.comboBoxContext.value?.inputValue ?? '').trim()
 
     const match = content.toLowerCase().includes(query.toLowerCase())
-    this.selected = match && content === this.comboBoxContext?.selectedValue
+    this.selected =
+      match && content === this.comboBoxContext.value?.selectedValue
     this.ariaSelected = String(this.selected)
     this.setHidden(!match)
   }
 }
+
+defineCustomElement('prosekit-combo-box-item', ComboBoxItem)

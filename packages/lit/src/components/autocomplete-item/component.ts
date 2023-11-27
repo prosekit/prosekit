@@ -1,11 +1,8 @@
-import { consume } from '@lit/context'
-import { type PropertyValues } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { ContextConsumer } from '@lit/context'
+import { type PropertyDeclarations, type PropertyValues } from 'lit'
 
-import {
-  commandListContext,
-  type AutocompleteListContext,
-} from '../autocomplete-list/context'
+import { defineCustomElement } from '../../utils/define-custom-element'
+import { autocompleteListContext } from '../autocomplete-list/context'
 import { LightElement } from '../block-element'
 
 export const propNames = ['value', 'onSelect'] as const
@@ -20,24 +17,24 @@ export interface AutocompleteItemProps {
  * navigation. Preferably pass a `value`, otherwise the value will be inferred
  * from the rendered item's `textContent`.
  */
-@customElement('prosekit-autocomplete-item')
 export class AutocompleteItem
   extends LightElement
   implements Partial<AutocompleteItemProps>
 {
-  @property({ type: String, reflect: true, attribute: 'data-value' })
+  private listContext = new ContextConsumer(this, {
+    context: autocompleteListContext,
+    subscribe: true,
+  })
+
+  static properties = {
+    value: { type: String, reflect: true, attribute: 'data-value' },
+    selected: { type: Boolean, reflect: true, attribute: 'data-selected' },
+    onSelect: { attribute: false },
+  } satisfies PropertyDeclarations
+
   value = ''
-
-  @property({ type: Boolean, reflect: true, attribute: 'data-selected' })
   selected = false
-
-  /** @hidden */
-  @property({ attribute: false })
   onSelect?: VoidFunction
-
-  @consume({ context: commandListContext, subscribe: true })
-  @state({})
-  listContext?: AutocompleteListContext
 
   public get content(): string {
     const text = this.value || this.textContent || ''
@@ -51,8 +48,8 @@ export class AutocompleteItem
 
   protected willUpdate(): void {
     const content = this.content
-    this.selected = content === this.listContext?.selectedValue
-    const score = this.listContext?.scores.get(content) || 0
+    this.selected = content === this.listContext.value?.selectedValue
+    const score = this.listContext.value?.scores.get(content) || 0
 
     this.setHidden(score <= 0)
   }
@@ -62,9 +59,11 @@ export class AutocompleteItem
       this.selected &&
       changedProperties.has('selected') &&
       !changedProperties.get('selected') &&
-      this.listContext?.selectedReason === 'keyboard'
+      this.listContext.value?.selectedReason === 'keyboard'
     ) {
       this.scrollIntoView({ block: 'nearest' })
     }
   }
 }
+
+defineCustomElement('prosekit-autocomplete-item', AutocompleteItem)

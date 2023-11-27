@@ -1,17 +1,14 @@
-import { provide } from '@lit/context'
+import { ContextProvider } from '@lit/context'
 import { Editor } from '@prosekit/core'
-import type { PropertyValues } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import type { PropertyValues, PropertyDeclarations } from 'lit'
 
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { AutocompleteList } from '../autocomplete-list/component'
 import { isAutocompleteList } from '../autocomplete-list/helpers'
 import { Popover } from '../popover'
 import { type PopoverOptions } from '../popover/options'
 
-import {
-  commandPopoverContext,
-  type AutocompletePopoverContext,
-} from './context'
+import { autocompletePopoverContext } from './context'
 import { AutocompletePopoverController } from './controller'
 import { defaultPopoverOptions } from './default-popover-options'
 
@@ -25,7 +22,6 @@ export interface AutocompletePopoverProps {
   popoverOptions?: PopoverOptions
 }
 
-@customElement('prosekit-autocomplete-popover')
 export class AutocompletePopover
   extends Popover
   implements Partial<AutocompletePopoverProps>
@@ -36,29 +32,30 @@ export class AutocompletePopover
     this.updateContext.bind(this),
   )
 
-  @property({ attribute: false })
+  static properties = {
+    ...Popover.properties,
+    editor: { attribute: false },
+    regex: { attribute: false },
+    popoverOptions: { attribute: false },
+    onSelect: { attribute: false },
+  } satisfies PropertyDeclarations
+
   editor?: Editor
-
-  @property({ attribute: false })
   regex?: RegExp
-
-  @property({ attribute: false })
   popoverOptions: PopoverOptions = defaultPopoverOptions
-
-  @provide({ context: commandPopoverContext })
-  @state()
-  context: AutocompletePopoverContext = {
-    active: false,
-    query: '',
-    handleDismiss: () => this.controller.handleDismiss?.(),
-    handleSubmit: () => {
-      return this.controller.handleSubmit?.()
-    },
-  }
-
-  /** @hidden */
-  @property({ attribute: false })
   onSelect?: VoidFunction
+
+  private context = new ContextProvider(this, {
+    context: autocompletePopoverContext,
+    initialValue: {
+      active: false,
+      query: '',
+      handleDismiss: () => this.controller.handleDismiss?.(),
+      handleSubmit: () => {
+        return this.controller.handleSubmit?.()
+      },
+    },
+  })
 
   private get list(): AutocompleteList | null {
     const element = this.querySelector('prosekit-autocomplete-list')
@@ -66,11 +63,14 @@ export class AutocompletePopover
   }
 
   private updateContext(query: string, active: boolean) {
-    if (this.context.query === query && this.context.active === active) {
+    const context = this.context.value
+
+    if (context.query === query && context.active === active) {
       return
     }
 
-    this.context = { ...this.context, query, active }
+    this.context.setValue({ ...context, query, active })
+    this.requestUpdate()
     requestAnimationFrame(() => {
       this.list?.selectFirstItem()
     })
@@ -101,3 +101,5 @@ export class AutocompletePopover
     }
   }
 }
+
+defineCustomElement('prosekit-autocomplete-popover', AutocompletePopover)

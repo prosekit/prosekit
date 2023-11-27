@@ -1,7 +1,8 @@
-import { provide } from '@lit/context'
-import { customElement, property, state } from 'lit/decorators.js'
+import { ContextProvider } from '@lit/context'
+import type { PropertyDeclarations } from 'lit'
 
 import { ListManager } from '../../manager/list-manager'
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { ComboBoxItem } from '../combo-box-item'
 import {
   isComboBoxItem,
@@ -17,20 +18,27 @@ export interface ComboBoxProps extends PopoverProps {
   onDismiss?: VoidFunction
 }
 
-@customElement('prosekit-combo-box')
 export class ComboBox extends Popover {
-  @property({ attribute: false })
+  static properties = {
+    ...Popover.properties,
+    onDismiss: { attribute: false },
+  } satisfies PropertyDeclarations
+
   onDismiss?: VoidFunction
+
+  constructor() {
+    super()
+  }
 
   private listManager = new ListManager<ComboBoxItem>({
     getItems: () => {
       return this.items
     },
     getSelectedValue: () => {
-      return (this.context.selectedValue ?? '').trim()
+      return (this.getContext().selectedValue ?? '').trim()
     },
     setSelectedValue: (value: string) => {
-      return this.context.setSelectedValue(value)
+      return this.setSelectedValue(value)
     },
     getItemValue: (item) => {
       return (item.textContent ?? '').trim()
@@ -43,33 +51,45 @@ export class ComboBox extends Popover {
       this.onDismiss?.()
     },
     onSelect: (item) => {
-      this.context.setSelectedValue('')
-      this.context.setInputValue('')
+      this.setSelectedValue('')
+      this.setInputValue('')
       item?.onSelect?.()
       this.onDismiss?.()
     },
   })
 
-  @provide({ context: comboBoxContext })
-  @state()
-  context: ComboBoxContext = {
-    inputValue: '',
-    setInputValue: (inputValue: string) => {
-      if (this.context.inputValue === inputValue) {
-        return
-      }
-      this.context = { ...this.context, inputValue }
-    },
+  private context = new ContextProvider(this, {
+    context: comboBoxContext,
+    initialValue: {
+      inputValue: '',
+      setInputValue: (inputValue: string) => {
+        this.setInputValue(inputValue)
+      },
 
-    selectedValue: '',
-    setSelectedValue: (selectedValue: string) => {
-      if (this.context.selectedValue === selectedValue) {
-        return
-      }
-      this.context = { ...this.context, selectedValue }
-    },
+      selectedValue: '',
 
-    listManager: this.listManager,
+      listManager: this.listManager,
+    },
+  })
+
+  private getContext(): ComboBoxContext {
+    return this.context.value
+  }
+
+  private setInputValue(inputValue: string) {
+    const context = this.context.value
+    if (context.inputValue === inputValue) {
+      return
+    }
+    this.context.setValue({ ...context, inputValue })
+  }
+
+  private setSelectedValue(selectedValue: string) {
+    const context = this.context.value
+    if (context.selectedValue === selectedValue) {
+      return
+    }
+    this.context.setValue({ ...context, selectedValue })
   }
 
   get items(): ComboBoxItem[] {
@@ -77,3 +97,5 @@ export class ComboBox extends Popover {
     return Array.from(items).filter(isComboBoxItem)
   }
 }
+
+defineCustomElement('prosekit-combo-box', ComboBox)

@@ -1,11 +1,8 @@
-import { consume } from '@lit/context'
+import { ContextConsumer } from '@lit/context'
 import { type PropertyValues } from 'lit'
-import { customElement, state } from 'lit/decorators.js'
 
-import {
-  commandListContext,
-  type AutocompleteListContext,
-} from '../autocomplete-list/context'
+import { defineCustomElement } from '../../utils/define-custom-element'
+import { autocompleteListContext } from '../autocomplete-list/context'
 import { LightElement } from '../block-element'
 
 export const propNames = [] as const
@@ -13,14 +10,14 @@ export const propNames = [] as const
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface AutocompleteEmptyProps {}
 
-@customElement('prosekit-autocomplete-empty')
 export class AutocompleteEmpty
   extends LightElement
   implements AutocompleteEmptyProps
 {
-  @consume({ context: commandListContext, subscribe: true })
-  @state()
-  listContext?: AutocompleteListContext
+  private listContext = new ContextConsumer(this, {
+    context: autocompleteListContext,
+    subscribe: true,
+  })
 
   connectedCallback() {
     super.connectedCallback()
@@ -28,7 +25,7 @@ export class AutocompleteEmpty
   }
 
   protected willUpdate(_changedProperties: PropertyValues<this>): void {
-    const scores = this.listContext?.scores
+    const scores = this.listContext.value?.scores
     let hasMatch = false
 
     if (scores) {
@@ -43,3 +40,5 @@ export class AutocompleteEmpty
     this.setHidden(hasMatch)
   }
 }
+
+defineCustomElement('prosekit-autocomplete-empty', AutocompleteEmpty)

@@ -1,6 +1,7 @@
 import { Editor } from '@prosekit/core'
-import { customElement, property } from 'lit/decorators.js'
+import type { PropertyDeclarations } from 'lit'
 
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { Popover } from '../popover'
 import { type PopoverOptions } from '../popover/options'
 
@@ -16,7 +17,6 @@ export interface InlinePopoverProps {
   popoverOptions?: PopoverOptions
 }
 
-@customElement('prosekit-inline-popover')
 export class InlinePopover
   extends Popover
   implements Partial<InlinePopoverProps>
@@ -24,10 +24,13 @@ export class InlinePopover
   /** @hidden */
   private controller = new InlinePopoverController(this)
 
-  @property({ attribute: false })
-  editor?: Editor
+  static properties = {
+    ...Popover.properties,
+    editor: { attribute: false },
+    popoverOptions: { attribute: false },
+  } satisfies PropertyDeclarations
 
-  @property({ attribute: false })
+  editor?: Editor
   popoverOptions: PopoverOptions = defaultPopoverOptions
 
   constructor() {
@@ -55,3 +58,5 @@ export class InlinePopover
     }
   }
 }
+
+defineCustomElement('prosekit-inline-popover', InlinePopover)

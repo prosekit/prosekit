@@ -1,8 +1,9 @@
 import { provide } from '@lit/context'
 import { Editor } from '@prosekit/core'
 import type { PropertyValues } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { property, state } from 'lit/decorators.js'
 
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { AutocompleteList } from '../autocomplete-list/component'
 import { isAutocompleteList } from '../autocomplete-list/helpers'
 import { Popover } from '../popover'
@@ -25,7 +26,6 @@ export interface AutocompletePopoverProps {
   popoverOptions?: PopoverOptions
 }
 
-@customElement('prosekit-autocomplete-popover')
 export class AutocompletePopover
   extends Popover
   implements Partial<AutocompletePopoverProps>
@@ -101,3 +101,5 @@ export class AutocompletePopover
     }
   }
 }
+
+defineCustomElement('prosekit-autocomplete-popover', AutocompletePopover)

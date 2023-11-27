@@ -1,10 +1,14 @@
 import { ContextConsumer, provide } from '@lit/context'
 import { Editor } from '@prosekit/core'
 import { type PropertyValues } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
+import { property, state } from 'lit/decorators.js'
 
 import { ListManager } from '../../manager/list-manager'
 import { commandScore } from '../../utils/command-score'
+import {
+  defineCustomElement,
+  defineCustomElement,
+} from '../../utils/define-custom-element'
 import { AutocompleteItem } from '../autocomplete-item/component'
 import {
   isAutocompleteItem,
@@ -22,7 +26,6 @@ export interface AutocompleteListProps {
   editor: Editor
 }
 
-@customElement('prosekit-autocomplete-list')
 export class AutocompleteList
   extends LightElement
   implements Partial<AutocompleteListProps>
@@ -128,3 +131,5 @@ export class AutocompleteList
     this.context = { ...this.context, scores }
   }
 }
+
+defineCustomElement('prosekit-autocomplete-list', AutocompleteList)

@@ -1,7 +1,11 @@
 import { provide } from '@lit/context'
-import { customElement, property, state } from 'lit/decorators.js'
+import { property, state } from 'lit/decorators.js'
 
 import { ListManager } from '../../manager/list-manager'
+import {
+  defineCustomElement,
+  defineCustomElement,
+} from '../../utils/define-custom-element'
 import { ComboBoxItem } from '../combo-box-item'
 import {
   isComboBoxItem,
@@ -17,7 +21,6 @@ export interface ComboBoxProps extends PopoverProps {
   onDismiss?: VoidFunction
 }
 
-@customElement('prosekit-combo-box')
 export class ComboBox extends Popover {
   @property({ attribute: false })
   onDismiss?: VoidFunction
@@ -77,3 +80,5 @@ export class ComboBox extends Popover {
     return Array.from(items).filter(isComboBoxItem)
   }
 }
+
+defineCustomElement('prosekit-combo-box', ComboBox)

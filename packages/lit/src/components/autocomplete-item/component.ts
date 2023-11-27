@@ -1,7 +1,8 @@
 import { ContextConsumer } from '@lit/context'
 import { type PropertyValues } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { property } from 'lit/decorators.js'
 
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { commandListContext } from '../autocomplete-list/context'
 import { LightElement } from '../block-element'
 
@@ -17,7 +18,6 @@ export interface AutocompleteItemProps {
  * navigation. Preferably pass a `value`, otherwise the value will be inferred
  * from the rendered item's `textContent`.
  */
-@customElement('prosekit-autocomplete-item')
 export class AutocompleteItem
   extends LightElement
   implements Partial<AutocompleteItemProps>
@@ -66,3 +66,5 @@ export class AutocompleteItem
     }
   }
 }
+
+defineCustomElement('prosekit-autocomplete-item', AutocompleteItem)

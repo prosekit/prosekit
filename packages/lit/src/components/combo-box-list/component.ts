@@ -1,6 +1,6 @@
 import { ContextConsumer } from '@lit/context'
-import { customElement } from 'lit/decorators.js'
 
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
 import { comboBoxContext } from '../combo-box/context'
 
@@ -8,7 +8,6 @@ export const propNames = []
 
 export type ComboBoxListProps = { lang?: string }
 
-@customElement('prosekit-combo-box-list')
 export class ComboBoxList extends LightElement {
   private comboBoxContext = new ContextConsumer(this, {
     context: comboBoxContext,
@@ -32,3 +31,5 @@ export class ComboBoxList extends LightElement {
     })
   }
 }
+
+defineCustomElement('prosekit-combo-box-list', ComboBoxList)

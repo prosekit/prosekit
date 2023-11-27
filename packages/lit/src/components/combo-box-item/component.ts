@@ -1,7 +1,8 @@
 import { ContextConsumer } from '@lit/context'
 import type { Editor } from '@prosekit/core'
-import { customElement, property } from 'lit/decorators.js'
+import { property } from 'lit/decorators.js'
 
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
 import { comboBoxContext } from '../combo-box/context'
 
@@ -11,7 +12,6 @@ export type ComboBoxItemProps = {
   onSelect?: VoidFunction
 }
 
-@customElement('prosekit-combo-box-item')
 export class ComboBoxItem extends LightElement {
   @property({ attribute: false })
   editor?: Editor
@@ -39,3 +39,5 @@ export class ComboBoxItem extends LightElement {
     this.setHidden(!match)
   }
 }
+
+defineCustomElement('prosekit-combo-box-item', ComboBoxItem)

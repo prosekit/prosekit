@@ -1,7 +1,8 @@
 import { ContextConsumer } from '@lit/context'
 import { html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { property } from 'lit/decorators.js'
 
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
 import { comboBoxContext } from '../combo-box/context'
 
@@ -11,7 +12,6 @@ export interface ComboBoxInputProps {
   placeholder?: string
 }
 
-@customElement('prosekit-combo-box-input')
 export class ComboBoxInput extends LightElement {
   @property({ attribute: true })
   placeholder = ''
@@ -66,3 +66,5 @@ export class ComboBoxInput extends LightElement {
     `
   }
 }
+
+defineCustomElement('prosekit-combo-box-input', ComboBoxInput)

@@ -5,8 +5,9 @@ import {
   type VirtualElement,
 } from '@floating-ui/dom'
 import type { PropertyValues } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
+import { property } from 'lit/decorators.js'
 
+import { defineCustomElement } from '../../utils/define-custom-element'
 import { roundByDPR } from '../../utils/round-by-dpr'
 import { LightElement } from '../block-element'
 
@@ -34,7 +35,6 @@ export interface PopoverProps {
 /**
  * A custom element that displays a popover anchored to a reference element.
  */
-@customElement('prosekit-popover')
 export class Popover extends LightElement implements Partial<PopoverProps> {
   /** @hidden */
   constructor() {
@@ -219,3 +219,5 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     }
   }
 }
+
+defineCustomElement('prosekit-popover', Popover)

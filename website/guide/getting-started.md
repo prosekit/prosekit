@@ -5,9 +5,6 @@
 You can install ProseKit using `npm`, `yarn`, or `pnpm`. Choose the command that
 corresponds to your package manager:
 
-
-
-
 ::: code-group
 
 ```shell [npm]

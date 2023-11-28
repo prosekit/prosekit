@@ -1,9 +1,12 @@
-name: Fix
+# https://autofix.ci/setup
+
+name: autofix.ci
 
 on:
-  push:
-    branches-ignore:
-      - 'master'
+  pull_request:
+
+permissions:
+  contents: read
 
 jobs:
   fix:
@@ -21,12 +24,4 @@ jobs:
           cd website/components
           ln -sf ../../playground/examples/vue-* ./
 
-      - name: Commit files and push
-        continue-on-error: true
-        if: ${{ github.ref != 'refs/heads/master' }}
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add --all
-          git commit -m "chore(ci): fix code"
-          git push
+      - uses: autofix-ci/action@d3e591514b99d0fca6779455ff8338516663f7cc

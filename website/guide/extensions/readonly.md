@@ -32,4 +32,4 @@ You can use `useExtension()` to enable or disable this extension dynamically in 
 
 ## API Reference
 
-- [prosekit/extensions/readonly](/references/extensions/readonly)
+- [prosekit/extensions/readonly](/references/extensions/readonly/)

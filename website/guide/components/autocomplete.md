@@ -34,9 +34,9 @@ Type `@` to show a list of users to mention, or type `#` to show a list of comma
 
 ## API Reference
 
-- [prosekit/react/autocomplete-popover](/references/react/autocomplete-popover)
-- [prosekit/vue/autocomplete-popover](/references/vue/autocomplete-popover)
-- [prosekit/preact/autocomplete-popover](/references/preact/autocomplete-popover)
-- [prosekit/svelte/autocomplete-popover](/references/svelte/autocomplete-popover)
-- [prosekit/solid/autocomplete-popover](/references/solid/autocomplete-popover)
-- [prosekit/lit/autocomplete-popover](/references/lit/autocomplete-popover)
+- [prosekit/react/autocomplete-popover](/references/react/autocomplete-popover/)
+- [prosekit/vue/autocomplete-popover](/references/vue/autocomplete-popover/)
+- [prosekit/preact/autocomplete-popover](/references/preact/autocomplete-popover/)
+- [prosekit/svelte/autocomplete-popover](/references/svelte/autocomplete-popover/)
+- [prosekit/solid/autocomplete-popover](/references/solid/autocomplete-popover/)
+- [prosekit/lit/autocomplete-popover](/references/lit/autocomplete-popover/)

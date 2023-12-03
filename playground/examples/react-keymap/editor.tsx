@@ -1,8 +1,8 @@
 import 'prosekit/basic/style.css'
 
-import { useMemo, useState, useCallback } from 'react'
 import { createEditor, jsonFromNode } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
+import { useMemo, useState, useCallback } from 'react'
 
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'

@@ -6,7 +6,7 @@ test.describe('keymap', () => {
   for (const { url, name } of getExamples('keymap')) {
     test(name, async ({ page }) => {
       // TODO: enable other example
-      if (!['react-keymap', 'preact-keymap'].includes(name)) return
+      if (!['react-keymap', 'preact-keymap', 'vue-keymap'].includes(name)) return
 
       await page.goto(url)
       const editor = locateEditor(page)

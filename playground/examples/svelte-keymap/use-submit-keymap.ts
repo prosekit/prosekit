@@ -1,6 +1,6 @@
 import { type Keymap } from 'prosekit/core'
 import { useKeymap } from 'prosekit/svelte'
-import { readonly, writable, type Readable, derived } from 'svelte/store'
+import { derived, writable, type Readable } from 'svelte/store'
 
 export function useSubmitKeymap(onSubmit: (hotkey: string) => void) {
   const hotkey = writable<'Shift-Enter' | 'Ctrl-Enter'>('Shift-Enter')
@@ -20,5 +20,3 @@ export function useSubmitKeymap(onSubmit: (hotkey: string) => void) {
 
   return { hotkey }
 }
-
-

@@ -1,13 +1,14 @@
 import { test, expect } from '@playwright/test'
 
-import { getExamples } from './helper'
+import { locateEditor, getExamples } from './helper'
 
 test.describe('heading', () => {
   for (const { url, name } of getExamples('heading'))
     test(name, async ({ page }) => {
       await page.goto(url)
+      const editor = locateEditor(page)
 
-      await page.locator('.ProseMirror').click()
+      await editor.click()
 
       expect(await page.locator('h1').isVisible()).toBe(false)
 

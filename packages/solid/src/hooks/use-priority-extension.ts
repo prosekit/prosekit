@@ -1,4 +1,5 @@
 import { Priority, withPriority, type Extension } from '@prosekit/core'
+
 import { useExtension } from './use-extension'
 
 export function usePriorityExtension<T extends Extension = Extension>(

@@ -18,10 +18,7 @@ export default function Toolbar({
         <kbd>Shift + Enter</kbd>
       </Toggle>
 
-      <Toggle
-        pressed={hotkey === 'Enter'}
-        onClick={() => setHotkey('Enter')}
-      >
+      <Toggle pressed={hotkey === 'Enter'} onClick={() => setHotkey('Enter')}>
         <span className="mr-1">Submit with</span>
         <kbd>Enter</kbd>
       </Toggle>

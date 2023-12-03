@@ -22,10 +22,7 @@ const { hotkey } = useSubmitKeymap(props.onSubmit)
       <kbd>Shift + Enter</kbd>
     </Toggle>
 
-    <Toggle
-      :pressed="hotkey === 'Enter'"
-      @click="() => (hotkey = 'Enter')"
-    >
+    <Toggle :pressed="hotkey === 'Enter'" @click="() => (hotkey = 'Enter')">
       <span class="mr-1">Submit with</span>
       <kbd>Enter</kbd>
     </Toggle>

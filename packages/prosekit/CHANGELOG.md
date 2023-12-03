@@ -1,5 +1,25 @@
 # prosekit
 
+## 0.1.9
+
+### Patch Changes
+
+- [90f237bd1517171df3135abbccbc353d18aaad47] ![@prosekit/extensions](https://img.shields.io/badge/prosekit%2Fextensions-444444)
+
+  Deprecate `prosekit/extensions/suggestion`. Please use `prosekit/extensions/autocomplete` instead.
+
+- [74cb6e35c95eadb9ea1511f3b402ebf63f5838a7] ![@prosekit/solid](https://img.shields.io/badge/prosekit%2Fsolid-444444?logo=solid)
+
+  `useKeymap` and `useExtension` now accept Solid accessors.
+
+- [5d83146e35c6d9ec5d855a76ddaac43bf6cc6ded] ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  `defineBaseKeymap` now accepts a `priority` option. By default, the priority is `Priority.low`.
+
+- [5d83146e35c6d9ec5d855a76ddaac43bf6cc6ded] ![@prosekit/preact](https://img.shields.io/badge/prosekit%2Fpreact-444444?logo=preact) ![@prosekit/svelte](https://img.shields.io/badge/prosekit%2Fsvelte-444444?logo=svelte) ![@prosekit/react](https://img.shields.io/badge/prosekit%2Freact-444444?logo=react) ![@prosekit/solid](https://img.shields.io/badge/prosekit%2Fsolid-444444?logo=solid) ![@prosekit/vue](https://img.shields.io/badge/prosekit%2Fvue-444444?logo=vuedotjs)
+
+  `useKeymap` now accepts an optional `priority` option.
+
 ## 0.1.8
 
 ### Patch Changes

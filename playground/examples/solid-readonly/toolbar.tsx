@@ -17,7 +17,7 @@ export default function Toolbar() {
       <Toggle
         pressed={() => !getReadonly()}
         disabled={() => !true}
-        onClick={() => setReadonly(false )}
+        onClick={() => setReadonly(false)}
       >
         Editable
       </Toggle>

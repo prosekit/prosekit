@@ -10,7 +10,7 @@ export default function Toolbar() {
         Readonly
       </Toggle>
 
-      <Toggle pressed={!readonly} onClick={() => setReadonly(false )}>
+      <Toggle pressed={!readonly} onClick={() => setReadonly(false)}>
         Editable
       </Toggle>
     </div>

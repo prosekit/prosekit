@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react'
 import { type Keymap } from 'prosekit/core'
 import { useKeymap } from 'prosekit/react'
+import { useMemo, useState } from 'react'
 
 export function useSubmitKeymap(onSubmit: (hotkey: string) => void) {
   const [hotkey, setHotkey] = useState<'Shift-Enter' | 'Ctrl-Enter'>(

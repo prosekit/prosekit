@@ -13,7 +13,10 @@ const modules = import.meta.glob([
   "../../playground/examples/react-inline-menu/inline-menu.tsx",
   "../../playground/examples/react-inline-menu/toggle.tsx",
   "../../playground/examples/react-keymap/editor.tsx",
-  "../../playground/examples/react-keymap/keymap-config.tsx",
+  "../../playground/examples/react-keymap/extension.ts",
+  "../../playground/examples/react-keymap/toggle.tsx",
+  "../../playground/examples/react-keymap/toolbar.tsx",
+  "../../playground/examples/react-keymap/use-submit-keymap.ts",
   "../../playground/examples/react-list/editor.tsx",
   "../../playground/examples/react-list/extension.ts",
   "../../playground/examples/react-list/toggle.tsx",
@@ -73,7 +76,10 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-italic/toggle.vue",
   "../../playground/examples/vue-italic/toolbar.vue",
   "../../playground/examples/vue-keymap/editor.vue",
-  "../../playground/examples/vue-keymap/keymap-config.vue",
+  "../../playground/examples/vue-keymap/extension.ts",
+  "../../playground/examples/vue-keymap/toggle.vue",
+  "../../playground/examples/vue-keymap/toolbar.vue",
+  "../../playground/examples/vue-keymap/use-submit-keymap.ts",
   "../../playground/examples/vue-link/editor.vue",
   "../../playground/examples/vue-link/extension.ts",
   "../../playground/examples/vue-list/editor.vue",
@@ -216,9 +222,21 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/react-keymap/editor.tsx']
     },
-    "/keymap-config.tsx": {
+    "/extension.ts": {
       "hidden": false,
-      "code": modules['../../playground/examples/react-keymap/keymap-config.tsx']
+      "code": modules['../../playground/examples/react-keymap/extension.ts']
+    },
+    "/toggle.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-keymap/toggle.tsx']
+    },
+    "/toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-keymap/toolbar.tsx']
+    },
+    "/use-submit-keymap.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-keymap/use-submit-keymap.ts']
     }
   },
   "react-list": {
@@ -482,9 +500,21 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/vue-keymap/editor.vue']
     },
-    "/keymap-config.vue": {
+    "/extension.ts": {
       "hidden": false,
-      "code": modules['../../playground/examples/vue-keymap/keymap-config.vue']
+      "code": modules['../../playground/examples/vue-keymap/extension.ts']
+    },
+    "/toggle.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-keymap/toggle.vue']
+    },
+    "/toolbar.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-keymap/toolbar.vue']
+    },
+    "/use-submit-keymap.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-keymap/use-submit-keymap.ts']
     }
   },
   "vue-link": {

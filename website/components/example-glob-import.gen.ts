@@ -138,7 +138,10 @@ const modules = import.meta.glob([
   "../../playground/examples/svelte-italic/toggle.svelte",
   "../../playground/examples/svelte-italic/toolbar.svelte",
   "../../playground/examples/svelte-keymap/editor.svelte",
-  "../../playground/examples/svelte-keymap/keymap-config.svelte",
+  "../../playground/examples/svelte-keymap/extension.ts",
+  "../../playground/examples/svelte-keymap/toggle.svelte",
+  "../../playground/examples/svelte-keymap/toolbar.svelte",
+  "../../playground/examples/svelte-keymap/use-submit-keymap.ts",
   "../../playground/examples/svelte-list/editor.svelte",
   "../../playground/examples/svelte-list/extension.ts",
   "../../playground/examples/svelte-readonly/editor.svelte",
@@ -782,9 +785,21 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/svelte-keymap/editor.svelte']
     },
-    "/keymap-config.svelte": {
+    "/extension.ts": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-keymap/keymap-config.svelte']
+      "code": modules['../../playground/examples/svelte-keymap/extension.ts']
+    },
+    "/toggle.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-keymap/toggle.svelte']
+    },
+    "/toolbar.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-keymap/toolbar.svelte']
+    },
+    "/use-submit-keymap.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-keymap/use-submit-keymap.ts']
     }
   },
   "svelte-list": {

@@ -1,11 +1,10 @@
 <script lang="ts">
 import Toggle from './toggle.svelte'
-import {useSubmitKeymap} from './use-submit-keymap'
+import { useSubmitKeymap } from './use-submit-keymap'
 
-export let onSubmit: (hotkey:string) => void 
+export let onSubmit: (hotkey: string) => void
 
 const { hotkey } = useSubmitKeymap(onSubmit)
-
 </script>
 
 <div class="TOOLBAR">

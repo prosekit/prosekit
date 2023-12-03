@@ -6,7 +6,7 @@ test.describe('keymap', () => {
   for (const { url, name } of getExamples('keymap')) {
     test(name, async ({ page }) => {
       // TODO: fix it
-      if (name === "solid-keymap") return
+      if (name === 'solid-keymap') return
 
       await page.goto(url)
       const editor = locateEditor(page)

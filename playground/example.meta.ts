@@ -716,7 +716,19 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "keymap-config.svelte",
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toggle.svelte",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "use-submit-keymap.ts",
           "hidden": false
         }
       ]

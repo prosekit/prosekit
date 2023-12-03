@@ -19,11 +19,10 @@ export default function Editor() {
     setSubmitions((submitions) => [...submitions, submition])
   }
 
-
   return (
     <ProseKit editor={editor}>
       <div class="EDITOR_VIEWPORT">
-        <Toolbar onSubmit={pushSubmition}/>
+        <Toolbar onSubmit={pushSubmition} />
         <div ref={editor.mount} class="EDITOR_CONTENT"></div>
       </div>
       <fieldset class="mt-4 border">

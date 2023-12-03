@@ -1,8 +1,10 @@
 import { test, expect } from '@playwright/test'
 
+import { getExamples } from './helper'
+
 test.describe('heading', () => {
-  for (let { url, example } of getExamples('heading'))
-    test(example, async ({ page }) => {
+  for (const { url, name } of getExamples('heading'))
+    test(name, async ({ page }) => {
       await page.goto(url)
 
       await page.locator('.ProseMirror').click()
@@ -23,11 +25,3 @@ test.describe('heading', () => {
       expect(await page.locator('h2').textContent()).toEqual('Heading Level 2')
     })
 })
-
-function getExamples(story: string) {
-  return ['react', 'vue'].map((framework) => {
-    const example = framework + '-' + story
-    const url = `http://localhost:4321/${example}`
-    return { story, example, url }
-  })
-}

@@ -11,6 +11,7 @@
     "./uno.config.ts",
     "./playwright.config.ts",
     "./astro.config.mjs",
+    "./example.meta.ts",
     "./tests/**/*.ts"
   ],
   "references": [

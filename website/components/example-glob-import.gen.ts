@@ -158,7 +158,10 @@ const modules = import.meta.glob([
   "../../playground/examples/solid-heading/toggle.tsx",
   "../../playground/examples/solid-heading/toolbar.tsx",
   "../../playground/examples/solid-keymap/editor.tsx",
-  "../../playground/examples/solid-keymap/keymap-config.tsx",
+  "../../playground/examples/solid-keymap/extension.ts",
+  "../../playground/examples/solid-keymap/toggle.tsx",
+  "../../playground/examples/solid-keymap/toolbar.tsx",
+  "../../playground/examples/solid-keymap/use-submit-keymap.ts",
   "../../playground/examples/solid-readonly/editor.tsx",
   "../../playground/examples/solid-readonly/extension.ts",
   "../../playground/examples/solid-readonly/toggle.tsx",
@@ -877,9 +880,21 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/solid-keymap/editor.tsx']
     },
-    "/keymap-config.tsx": {
+    "/extension.ts": {
       "hidden": false,
-      "code": modules['../../playground/examples/solid-keymap/keymap-config.tsx']
+      "code": modules['../../playground/examples/solid-keymap/extension.ts']
+    },
+    "/toggle.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-keymap/toggle.tsx']
+    },
+    "/toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-keymap/toolbar.tsx']
+    },
+    "/use-submit-keymap.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/solid-keymap/use-submit-keymap.ts']
     }
   },
   "solid-readonly": {

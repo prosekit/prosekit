@@ -279,6 +279,8 @@ examples:
         hidden: false
       - path: toolbar.tsx
         hidden: false
+      - path: use-submit-keymap.ts
+        hidden: false
   - name: preact-readonly
     files:
       - path: editor.tsx

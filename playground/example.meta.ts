@@ -588,6 +588,10 @@ export const exampleMeta = {
         {
           "path": "toolbar.tsx",
           "hidden": false
+        },
+        {
+          "path": "use-submit-keymap.ts",
+          "hidden": false
         }
       ]
     },

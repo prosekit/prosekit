@@ -114,6 +114,7 @@ const modules = import.meta.glob([
   "../../playground/examples/preact-keymap/keymap-config.tsx",
   "../../playground/examples/preact-keymap/toggle.tsx",
   "../../playground/examples/preact-keymap/toolbar.tsx",
+  "../../playground/examples/preact-keymap/use-submit-keymap.ts",
   "../../playground/examples/preact-readonly/editor.tsx",
   "../../playground/examples/preact-readonly/extension.ts",
   "../../playground/examples/preact-readonly/toggle.tsx",
@@ -667,6 +668,10 @@ const examples = {
     "/toolbar.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/preact-keymap/toolbar.tsx']
+    },
+    "/use-submit-keymap.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-keymap/use-submit-keymap.ts']
     }
   },
   "preact-readonly": {

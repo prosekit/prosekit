@@ -25,7 +25,7 @@ export function defineKeymap(keymap: Keymap): Extension {
 }
 
 /**
- * Defines some basic keymaps.
+ * Defines some basic key bindings.
  *
  * @public
  */

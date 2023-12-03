@@ -2,12 +2,16 @@
 import Toggle from './toggle.vue'
 import { useReadonly } from './use-readonly'
 
-const { readonly, toggleReadonly } = useReadonly()
+const { readonly } = useReadonly()
 </script>
 
 <template>
   <div class="TOOLBAR">
-    <Toggle :pressed="readonly" :onClick="toggleReadonly">Readonly</Toggle>
-    <Toggle :pressed="!readonly" :onClick="toggleReadonly">Editable</Toggle>
+    <Toggle :pressed="readonly" :onClick="() => (readonly = true)">
+      Readonly
+    </Toggle>
+    <Toggle :pressed="!readonly" :onClick="() => (readonly = false)">
+      Editable
+    </Toggle>
   </div>
 </template>

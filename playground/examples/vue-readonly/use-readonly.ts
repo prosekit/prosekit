@@ -4,10 +4,9 @@ import { computed, ref } from 'vue'
 
 export function useReadonly() {
   const readonly = ref(true)
-  const toggleReadonly = () => (readonly.value = !readonly.value)
 
   const extension = computed(() => (readonly.value ? defineReadonly() : null))
   useExtension(extension)
 
-  return { readonly, toggleReadonly }
+  return { readonly }
 }

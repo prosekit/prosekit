@@ -15,7 +15,7 @@ export default function Toolbar({
         onClick={() => setHotkey('Shift-Enter')}
       >
         <span class="mr-1">Submit with</span>
-        <kbd>Shift</kbd> + <kbd>Enter</kbd>
+        <kbd>Shift + Enter</kbd>
       </Toggle>
 
       <Toggle
@@ -23,7 +23,7 @@ export default function Toolbar({
         onClick={() => setHotkey('Ctrl-Enter')}
       >
         <span class="mr-1">Submit with</span>
-        <kbd>Ctrl</kbd> + <kbd>Enter</kbd>
+        <kbd>Ctrl + Enter</kbd>
       </Toggle>
     </div>
   )

@@ -1,3 +1,5 @@
+import type { Page } from '@playwright/test'
+
 import { exampleMeta } from '../example.meta'
 
 export function getExamples(story: string) {
@@ -13,4 +15,8 @@ export function getExamples(story: string) {
       const url = `http://localhost:4321/${name}`
       return { name, url }
     })
+}
+
+export function locateEditor(page: Page) {
+  return page.locator('.ProseMirror')
 }

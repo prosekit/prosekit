@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, type PropType } from 'vue'
+import { type PropType } from 'vue'
 import Toggle from './toggle.vue'
 import { useSubmitKeymap } from './use-submit-keymap'
 

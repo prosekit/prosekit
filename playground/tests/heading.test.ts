@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-import {  locateEditor, getExamples } from './helper'
+import { locateEditor, getExamples } from './helper'
 
 test.describe('heading', () => {
   for (const { url, name } of getExamples('heading'))

@@ -36,7 +36,7 @@ export default function Editor() {
         <legend>Submit Records</legend>
         <ol>
           {submitions.map((submition, index) => (
-            <li key={index} >
+            <li key={index}>
               <pre>{submition}</pre>
             </li>
           ))}

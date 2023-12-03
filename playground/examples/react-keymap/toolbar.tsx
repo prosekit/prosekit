@@ -19,11 +19,11 @@ export default function Toolbar({
       </Toggle>
 
       <Toggle
-        pressed={hotkey === 'Ctrl-Enter'}
-        onClick={() => setHotkey('Ctrl-Enter')}
+        pressed={hotkey === 'Enter'}
+        onClick={() => setHotkey('Enter')}
       >
         <span className="mr-1">Submit with</span>
-        <kbd>Ctrl + Enter</kbd>
+        <kbd>Enter</kbd>
       </Toggle>
     </div>
   )

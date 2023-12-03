@@ -3,7 +3,7 @@ import { type Keymap } from 'prosekit/core'
 import { useKeymap } from 'prosekit/preact'
 
 export function useSubmitKeymap(onSubmit: (hotkey: string) => void) {
-  const [hotkey, setHotkey] = useState<'Shift-Enter' | 'Ctrl-Enter'>(
+  const [hotkey, setHotkey] = useState<'Shift-Enter' | 'Enter'>(
     'Shift-Enter',
   )
 

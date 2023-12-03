@@ -7,13 +7,14 @@ test.describe('keymap', () => {
     test(name, async ({ page }) => {
       await page.goto(url)
       const editor = locateEditor(page)
-      await editor.click()
 
       await expect(page.getByRole('listitem')).toHaveCount(0)
 
       await page
         .getByRole('button', { name: 'Submit with Shift + Enter' })
         .click()
+
+      await editor.click()
 
       await editor.press('Shift+Enter')
       await expect(page.getByRole('listitem')).toHaveCount(1)

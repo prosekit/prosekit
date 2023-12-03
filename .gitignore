@@ -21,3 +21,5 @@ website/references
 tsup.config.bundled*
 vite.config.ts.timestamp*
 .svelte-kit
+test-results
+playwright-report

@@ -110,7 +110,10 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-user-menu/user-menu.vue",
   "../../playground/examples/preact-minimal/editor.tsx",
   "../../playground/examples/preact-keymap/editor.tsx",
+  "../../playground/examples/preact-keymap/extension.ts",
   "../../playground/examples/preact-keymap/keymap-config.tsx",
+  "../../playground/examples/preact-keymap/toggle.tsx",
+  "../../playground/examples/preact-keymap/toolbar.tsx",
   "../../playground/examples/preact-readonly/editor.tsx",
   "../../playground/examples/preact-readonly/extension.ts",
   "../../playground/examples/preact-readonly/toggle.tsx",
@@ -649,9 +652,21 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/preact-keymap/editor.tsx']
     },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-keymap/extension.ts']
+    },
     "/keymap-config.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/preact-keymap/keymap-config.tsx']
+    },
+    "/toggle.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-keymap/toggle.tsx']
+    },
+    "/toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/preact-keymap/toolbar.tsx']
     }
   },
   "preact-readonly": {

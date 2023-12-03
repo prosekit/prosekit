@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "playwright test"
+    "test": "playwright install chromium && playwright test"
   },
   "devDependencies": {
     "@astrojs/preact": "^3.0.1",

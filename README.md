@@ -1,5 +1,7 @@
 # ProseKit
 
+[![npm](https://img.shields.io/npm/v/prosekit)](https://www.npmjs.com/package/prosekit)
+
 The ultimate toolkit for text editing. Based on [ProseMirror](https://prosemirror.net/).
 
 ## Documentation

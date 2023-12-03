@@ -8,7 +8,11 @@ import { onDestroy, onMount } from 'svelte'
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.svelte'
 
-const editor = createEditor({ extension: defineExtension() })
+const editor = createEditor({
+  extension: defineExtension(),
+  defaultHTML:
+    'The content is readonly. Press the buttons above to toggle the readonly mode.',
+})
 
 let place: HTMLDivElement
 onMount(() => editor.mount(place))

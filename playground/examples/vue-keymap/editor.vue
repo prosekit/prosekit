@@ -16,7 +16,7 @@ const submitions = ref<string[]>([])
 const pushSubmition = (hotkey: string) => {
   const doc = editor.view.state.doc
   const docString = JSON.stringify(jsonFromNode(doc))
-  const submition = `${new Date().toISOString()}\n${hotkey}\n${docString}`
+  const submition = `${new Date().toISOString()}\t${hotkey}\n${docString}`
   submitions.value = [...submitions.value, submition]
 }
 </script>

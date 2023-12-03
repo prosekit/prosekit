@@ -18,7 +18,7 @@ export default function Editor() {
     (hotkey: string) => {
       const doc = editor.view.state.doc
       const docString = JSON.stringify(jsonFromNode(doc))
-      const submition = `${new Date().toISOString()}\n${hotkey}\n${docString}`
+      const submition = `${new Date().toISOString()}\t${hotkey}\n${docString}`
       setSubmitions((submitions) => [...submitions, submition])
     },
     [editor],

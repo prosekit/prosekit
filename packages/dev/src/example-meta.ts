@@ -19,12 +19,12 @@ export interface Example {
 }
 
 export async function readExampleMeta(): Promise<ExampleMeta> {
-  const file = await vfs.getFile(metaJsonPath)
+  const file = await vfs.getFile(metaYamlPath)
   return (await file.readYaml()) as ExampleMeta
 }
 
 export async function writeExampleMeta(meta: ExampleMeta) {
-  const file = await vfs.getFile(metaJsonPath)
+  const file = await vfs.getFile(metaYamlPath)
   file.updateYaml(meta)
 }
 
@@ -71,4 +71,4 @@ export function findExampleFile(
   return collection?.files?.find((f) => f.path === filePath)
 }
 
-const metaJsonPath = path.join('playground', 'example.meta.yaml')
+const metaYamlPath = path.join('playground', 'example.meta.yaml')

@@ -3,7 +3,7 @@ import { useKeymap } from 'prosekit/solid'
 import { createSignal } from 'solid-js'
 
 export function useSubmitKeymap(onSubmit: (hotkey: string) => void) {
-  const [hotkey, setHotkey] = createSignal<'Shift-Enter' | 'Ctrl-Enter'>(
+  const [hotkey, setHotkey] = createSignal<'Shift-Enter' | 'Enter'>(
     'Shift-Enter',
   )
 

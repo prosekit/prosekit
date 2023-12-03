@@ -3,7 +3,7 @@ import { useKeymap } from 'prosekit/vue'
 import { ref, computed, type Ref } from 'vue'
 
 export function useSubmitKeymap(onSubmit: (hotkey: string) => void) {
-  const hotkey = ref<'Shift-Enter' | 'Ctrl-Enter'>('Shift-Enter')
+  const hotkey = ref<'Shift-Enter' | 'Enter'>('Shift-Enter')
 
   const keymap: Ref<Keymap> = computed(() => {
     return {

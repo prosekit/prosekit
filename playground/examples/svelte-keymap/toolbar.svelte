@@ -17,12 +17,9 @@ const { hotkey } = useSubmitKeymap(onSubmit)
       <kbd>Shift + Enter</kbd>
     </Toggle>
 
-    <Toggle
-      pressed={$hotkey === 'Ctrl-Enter'}
-      onClick={() => ($hotkey = 'Ctrl-Enter')}
-    >
+    <Toggle pressed={$hotkey === 'Enter'} onClick={() => ($hotkey = 'Enter')}>
       <span class="mr-1">Submit with</span>
-      <kbd>Ctrl + Enter</kbd>
+      <kbd>Enter</kbd>
     </Toggle>
   </div>
 </div>

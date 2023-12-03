@@ -2,14 +2,14 @@ import Toggle from './toggle'
 import { useReadonly } from './use-readonly'
 
 export default function Toolbar() {
-  const { getReadonly, toggleReadonly } = useReadonly()
+  const { getReadonly, setReadonly } = useReadonly()
 
   return (
     <div class="TOOLBAR">
       <Toggle
         pressed={getReadonly}
         disabled={() => !true}
-        onClick={toggleReadonly}
+        onClick={() => setReadonly(true)}
       >
         Readonly
       </Toggle>
@@ -17,7 +17,7 @@ export default function Toolbar() {
       <Toggle
         pressed={() => !getReadonly()}
         disabled={() => !true}
-        onClick={toggleReadonly}
+        onClick={() => setReadonly(false )}
       >
         Editable
       </Toggle>

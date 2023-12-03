@@ -8,23 +8,29 @@ test.describe('readonly', () => {
       await page.goto(url)
       const editor = locateEditor(page)
 
-      await page.getByRole('button', { name: 'Editable' }).click()
+      const readonlyButton = page.getByRole('button', { name: 'Readonly' })
+      const editableButton = page.getByRole('button', { name: 'Editable' })
+
+      // await expect(editableButton).toHaveAttribute('data-state', 'on')
+      // await expect(readonlyButton).toHaveAttribute('data-state', 'off')
+
+      await editableButton.click()
       await editor.click()
       await editor.pressSequentially('foo')
-      await expect(editor).toHaveText('foo')
+      await expect(editor).toContainText('foo')
 
-      await page.getByRole('button', { name: 'Readonly' }).click()
+      await readonlyButton.click()
       await editor.click()
       await editor.pressSequentially('bar')
-      await expect(editor).toHaveText('foo')
-      await expect(editor).not.toHaveText('bar')
+      await expect(editor).toContainText('foo')
+      await expect(editor).not.toContainText('bar')
 
-      await page.getByRole('button', { name: 'Editable' }).click()
+      await editableButton.click()
       await editor.click()
       await editor.pressSequentially('baz')
-      await expect(editor).toHaveText('foo')
-      await expect(editor).not.toHaveText('bar')
-      await expect(editor).toHaveText('baz')
+      await expect(editor).toContainText('foo')
+      await expect(editor).not.toContainText('bar')
+      await expect(editor).toContainText('baz')
     })
   }
 })

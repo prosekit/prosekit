@@ -3,8 +3,10 @@ import { keydownHandler } from '@prosekit/pm/keymap'
 import { Plugin, PluginKey, type Command } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
+import { withPriority } from '../editor/with-priority'
 import { Facet } from '../facets/facet'
 import { type Extension } from '../types/extension'
+import { Priority } from '../types/priority'
 
 import { pluginFacet } from './plugin'
 
@@ -23,10 +25,20 @@ export function defineKeymap(keymap: Keymap): Extension {
 }
 
 /**
+ * Defines some basic keymaps.
+ *
  * @public
  */
-export function defineBaseKeymap() {
-  return defineKeymap(baseKeymap)
+export function defineBaseKeymap(options?: {
+  /**
+   * The priority of the keymap.
+   *
+   * @default Priority.low
+   */
+  priority?: Priority
+}) {
+  const priority = options?.priority ?? Priority.low
+  return withPriority(defineKeymap(baseKeymap), priority)
 }
 
 const keymapFacet = Facet.define({

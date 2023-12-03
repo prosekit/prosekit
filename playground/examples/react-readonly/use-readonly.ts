@@ -3,13 +3,12 @@ import { useExtension } from 'prosekit/react'
 import { useState, useMemo } from 'react'
 
 export function useReadonly() {
-  const [readonly, setReadonly] = useState(false)
-  const toggleReadonly = () => setReadonly((readonly) => !readonly)
+  const [readonly, setReadonly] = useState(true)
 
   const extension = useMemo(() => {
     return readonly ? defineReadonly() : null
   }, [readonly])
   useExtension(extension)
 
-  return { readonly, toggleReadonly }
+  return { readonly, setReadonly }
 }

@@ -1,16 +1,12 @@
 import { defineReadonly } from 'prosekit/extensions/readonly'
 import { useExtension } from 'prosekit/solid'
-import { createEffect, createSignal } from 'solid-js'
+import { createSignal } from 'solid-js'
 
 export function useReadonly() {
-  const [getReadonly, setReadonly] = createSignal(false)
-  const toggleReadonly = () => setReadonly((readonly) => !readonly)
+  const [getReadonly, setReadonly] = createSignal(true)
+  const getExtension = () => (getReadonly() ? defineReadonly() : null)
 
-  createEffect(() => {
-    const readonly = getReadonly()
-    const extension = readonly ? defineReadonly() : null
-    useExtension(extension)
-  })
+  useExtension(getExtension)
 
-  return { getReadonly, toggleReadonly }
+  return { getReadonly, setReadonly }
 }

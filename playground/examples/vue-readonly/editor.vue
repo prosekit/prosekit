@@ -9,7 +9,8 @@ import { createEditor } from 'prosekit/core'
 
 const editor = createEditor({
   extension: defineExtension(),
-  defaultHTML: 'The content in this editor is readonly.',
+  defaultHTML:
+    'The content is readonly. Press the buttons above to toggle the readonly mode.',
 })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect(() => editor.mount(editorRef.value))

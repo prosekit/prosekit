@@ -9,7 +9,10 @@
     "./layouts",
     "./env.d.ts",
     "./uno.config.ts",
-    "./astro.config.mjs"
+    "./playwright.config.ts",
+    "./astro.config.mjs",
+    "./example.meta.ts",
+    "./tests/**/*.ts"
   ],
   "references": [
     {

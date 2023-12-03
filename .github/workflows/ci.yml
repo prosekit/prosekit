@@ -40,8 +40,11 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - name: Test
+      - name: Run unit tests
         run: nr test:coverage
+
+      - name: Run e2e tests
+        run: nr test:playground
 
   build:
     runs-on: ubuntu-latest

@@ -14,6 +14,7 @@
     "gen": "turbo run gen --force && pnpm install --prefer-offline --no-frozen-lockfile",
     "test": "vitest",
     "test:coverage": "vitest run --coverage.enabled --coverage.provider=istanbul",
+    "test:playground": "pnpm --filter='./playground' run test",
     "typecheck": "tsc --build tsconfig.json",
     "lint": "eslint .",
     "fix": "manypkg fix && turbo run gen --force && eslint . --fix && prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --plugin prettier-plugin-astro --write .",

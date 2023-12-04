@@ -35,7 +35,7 @@
     "@vitest/coverage-istanbul": "^0.34.6",
     "cross-env": "^7.0.3",
     "eslint": "^8.55.0",
-    "jsdom": "^22.1.0",
+    "jsdom": "^23.0.1",
     "prettier": "^3.1.0",
     "prettier-plugin-astro": "^0.12.2",
     "prettier-plugin-svelte": "^3.1.2",

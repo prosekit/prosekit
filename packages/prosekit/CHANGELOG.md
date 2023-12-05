@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.1.10
+
+### Patch Changes
+
+- [`dac24aa`](https://github.com/ocavue/prosekit/commit/dac24aa342df4226b23eef5731574e081f206b87) ![@prosekit/pm](https://img.shields.io/badge/prosekit%2Fpm-444444)
+
+  Update ProseMirror dependencies.
+
 ## 0.1.9
 
 ### Patch Changes

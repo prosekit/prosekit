@@ -13,7 +13,7 @@
     "playground": "pnpm --filter='./playground' run dev",
     "gen": "turbo run gen --force && pnpm install --prefer-offline --no-frozen-lockfile",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage.enabled --coverage.provider=istanbul",
+    "test:coverage": "vitest run --coverage.enabled",
     "test:playground": "pnpm --filter='./playground' run test",
     "typecheck": "tsc --build tsconfig.json",
     "lint": "eslint .",

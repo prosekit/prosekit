@@ -58,7 +58,7 @@
     "minify-literals": "^1.0.8",
     "tsup": "^8.0.1",
     "typescript": "^5.3.2",
-    "vitest": "^0.34.6",
+    "vitest": "^1.0.2",
     "vue": "^3.3.9"
   },
   "publishConfig": {

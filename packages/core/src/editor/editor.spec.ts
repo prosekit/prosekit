@@ -14,7 +14,7 @@ describe('createEditor', () => {
     const editor = createEditor({ extension })
     editor.mount(div)
     expect(div.outerHTML).toMatchInlineSnapshot(
-      '"<div contenteditable=\\"true\\" translate=\\"no\\" class=\\"ProseMirror\\"><p><br class=\\"ProseMirror-trailingBreak\\"></p></div>"',
+      `"<div contenteditable="true" translate="no" class="ProseMirror"><p><br class="ProseMirror-trailingBreak"></p></div>"`,
     )
   })
 })

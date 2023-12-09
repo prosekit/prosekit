@@ -10,19 +10,20 @@ test.describe('heading', () => {
 
       await editor.click()
 
-      expect(await page.locator('h1').isVisible()).toBe(false)
+      await expect(editor.locator('h1')).not.toBeVisible()
+      await expect(editor.locator('h2')).not.toBeVisible()
 
       await page.keyboard.press('#')
       await page.keyboard.press(' ')
       await page.keyboard.type('Heading Level 1')
 
-      expect(await page.locator('h1').isVisible()).toBe(true)
-      expect(await page.locator('h1').textContent()).toEqual('Heading Level 1')
+      await expect(editor.locator('h1')).toBeVisible()
+      await expect(editor.locator('h1')).toHaveText('Heading Level 1')
 
       await page.keyboard.press('Enter')
       await page.keyboard.type('## Heading Level 2')
 
-      expect(await page.locator('h2').isVisible()).toBe(true)
-      expect(await page.locator('h2').textContent()).toEqual('Heading Level 2')
+      await expect(editor.locator('h2')).toBeVisible()
+      await expect(editor.locator('h2')).toHaveText('Heading Level 2')
     })
 })

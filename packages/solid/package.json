@@ -60,7 +60,7 @@
     "@prosekit/dev": "*",
     "solid-js": "^1.8.7",
     "tsup": "^8.0.1",
-    "typescript": "^5.3.2",
+    "typescript": "^5.3.3",
     "vitest": "^1.0.2"
   },
   "publishConfig": {

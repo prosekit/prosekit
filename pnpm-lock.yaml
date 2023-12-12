@@ -351,10 +351,10 @@ importers:
         specifier: 0.1.7
         version: link:../core
       '@prosekit/extensions':
-        specifier: 0.1.4
+        specifier: 0.1.5
         version: link:../extensions
       '@prosekit/lit':
-        specifier: 0.1.3
+        specifier: 0.1.4
         version: link:../lit
       '@prosekit/pm':
         specifier: 0.1.1

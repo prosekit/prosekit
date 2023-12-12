@@ -1,5 +1,24 @@
 # prosekit
 
+## 0.1.11
+
+### Patch Changes
+
+- [`281a2e7`](https://github.com/ocavue/prosekit/commit/281a2e71c3daa7f1aa6b56df64f3e143c5faabe9) ![@prosekit/lit](https://img.shields.io/badge/prosekit%2Flit-444444?logo=lit)
+
+  Use the native Popover API to place popover components in the top layer.
+
+- [`4f79f39`](https://github.com/ocavue/prosekit/commit/4f79f3965b6f81b0310635050202ddd32eef4761) ![@prosekit/lit](https://img.shields.io/badge/prosekit%2Flit-444444?logo=lit)
+
+  Fix various interaction issues in the ComboBox component.
+
+- [`4f79f39`](https://github.com/ocavue/prosekit/commit/4f79f3965b6f81b0310635050202ddd32eef4761) ![@prosekit/extensions](https://img.shields.io/badge/prosekit%2Fextensions-444444)
+
+  Use [prosemirror-highlight] to support syntax highlighting in `codeBlock` nodes.
+  The previous `hljs` API is deprecated and will be removed in the future.
+
+  [prosemirror-highlight]: https://github.com/ocavue/prosemirror-highlight
+
 ## 0.1.10
 
 ### Patch Changes

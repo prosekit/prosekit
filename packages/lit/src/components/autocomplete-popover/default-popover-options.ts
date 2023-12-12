@@ -7,11 +7,12 @@ import {
   size,
 } from '@floating-ui/dom'
 
+import { boundary } from '../../utils/popover-api'
 import { type PopoverOptions } from '../popover/options'
 
 const defaultDetectOverflowOptions = {
-  // Make sure the popover is always at least 8px away from the boundary
   padding: 8,
+  boundary,
 } satisfies DetectOverflowOptions
 
 /**
@@ -29,10 +30,10 @@ export const defaultPopoverOptions: PopoverOptions = {
     // Use the text caret as the reference point
     inline(),
 
-    offset(() => ({
+    offset({
       // Move down the popover by 4px
       mainAxis: 4,
-    })),
+    }),
 
     // Flip the popover to the top if it's overflowing the viewport
     //

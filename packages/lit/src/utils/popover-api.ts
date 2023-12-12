@@ -1,7 +1,7 @@
 /**
  * Whether the browser supports the [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API).
  */
-export const popoverAvailable =
+export const popoverAvailable: boolean =
   typeof HTMLElement !== 'undefined' &&
   HTMLElement.prototype.hasOwnProperty('popover')
 
@@ -10,7 +10,6 @@ export const popoverAvailable =
  * since we don't need to worry about the popover overflowing the parent
  * element.
  */
-export const boundary =
-  popoverAvailable && typeof document !== 'undefined'
-    ? document.body
-    : undefined
+export const boundary: HTMLElement | undefined =
+  (popoverAvailable && typeof document !== 'undefined' && document.body) ||
+  undefined

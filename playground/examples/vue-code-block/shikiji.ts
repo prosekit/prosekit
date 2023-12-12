@@ -3,7 +3,6 @@ import type { Parser } from 'prosemirror-highlight'
 import { createParser } from 'prosemirror-highlight/shikiji'
 import { getHighlighter } from 'shikiji'
 
-const themes = ['github-light']
 export const languages = [
   'javascript',
   'python',
@@ -26,7 +25,7 @@ export const languages = [
   'groovy',
   'sql',
 ]
-
+const themes = ['github-light']
 const highlighter = await getHighlighter({ themes, langs: languages })
 const parser: Parser = createParser(highlighter)
 

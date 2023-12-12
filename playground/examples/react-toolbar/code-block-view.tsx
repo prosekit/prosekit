@@ -10,15 +10,15 @@ import { languages } from './shikiji'
 export default function CodeBlockView(props: ReactNodeViewComponentProps) {
   const [showComboBox, setShowComboBox] = useState(false)
 
-  const setLanguage = (language: string) => {
-    props.setAttrs({ language })
-  }
-
   const closeComboBox = () => {
     setShowComboBox(false)
   }
   const toggleComboBox = () => {
     setShowComboBox((value) => !value)
+  }
+
+  const setLanguage = (language: string) => {
+    props.setAttrs({ language })
   }
 
   const buttonRef = useRef<HTMLButtonElement>(null)

@@ -4,8 +4,6 @@ The `codeBlock` node is used to represent blocks of code in the document.
 
 :::tabs key:framework
 
-== Preview
-
 == React
 <ExamplePlaygroundLazy example="react-code-block" />
 :::

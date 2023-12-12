@@ -649,6 +649,9 @@ importers:
       prosekit:
         specifier: ^0.1.0
         version: link:../packages/prosekit
+      prosemirror-highlight:
+        specifier: ^0.3.1
+        version: 0.3.1(shikiji@0.8.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -658,6 +661,9 @@ importers:
       sandpack-vue3:
         specifier: ^3.1.9
         version: 3.1.9(@lezer/common@1.1.0)(vue@3.3.11)
+      shikiji:
+        specifier: ^0.8.0
+        version: 0.8.0
       tailwindcss:
         specifier: ^3.3.6
         version: 3.3.6

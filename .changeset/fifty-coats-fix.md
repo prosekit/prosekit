@@ -3,4 +3,4 @@
 '@prosekit/lit': patch
 ---
 
-Use native Popover API from the browser to put the Popover components into the top layer.
+Use the native Popover API to place popover components in the top layer.

@@ -11,6 +11,7 @@ const frameworkSharedFiles = [
   '*shikiji.ts',
 
   'use-readonly.ts',
+  'use-submit-keymap.ts',
 
   'toggle.vue',
   'toggle.tsx',

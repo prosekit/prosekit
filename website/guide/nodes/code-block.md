@@ -1,6 +1,14 @@
 # CodeBlock
 
-The `codeBlock` node is a part of the ProseKit extensions and is used to represent blocks of code in the document.
+The `codeBlock` node is used to represent blocks of code in the document.
+
+:::tabs key:framework
+
+== Preview
+
+== React
+<ExamplePlaygroundLazy example="react-code-block" />
+:::
 
 ## Syntax highlighting
 

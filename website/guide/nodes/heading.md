@@ -1,6 +1,6 @@
 # Heading
 
-The `heading` node is used to represent blocks of code in the document.
+The `heading` node is used to represent blocks of heading in the document.
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'

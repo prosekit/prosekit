@@ -556,12 +556,6 @@ importers:
       '@iconify-json/ci':
         specifier: ^1.1.12
         version: 1.1.12
-      '@iconify-json/material-symbols':
-        specifier: ^1.1.66
-        version: 1.1.66
-      '@iconify-json/radix-icons':
-        specifier: ^1.1.13
-        version: 1.1.13
       '@playwright/test':
         specifier: ^1.40.1
         version: 1.40.1
@@ -655,6 +649,9 @@ importers:
       prosekit:
         specifier: ^0.1.0
         version: link:../packages/prosekit
+      prosemirror-highlight:
+        specifier: ^0.3.1
+        version: 0.3.1(shikiji@0.8.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -664,6 +661,9 @@ importers:
       sandpack-vue3:
         specifier: ^3.1.9
         version: 3.1.9(@lezer/common@1.1.0)(vue@3.3.11)
+      shikiji:
+        specifier: ^0.8.0
+        version: 0.8.0
       tailwindcss:
         specifier: ^3.3.6
         version: 3.3.6
@@ -2141,18 +2141,6 @@ packages:
 
   /@iconify-json/logos@1.1.40:
     resolution: {integrity: sha512-F8XapUfZHp9Q53aFvhwFrwmM1NIXOtDV9G0WxIONSu3diiieObmiJQy5oNxla4LgPccyYYHyJQCo0Diys3sIUA==}
-    dependencies:
-      '@iconify/types': 2.0.0
-    dev: true
-
-  /@iconify-json/material-symbols@1.1.66:
-    resolution: {integrity: sha512-+GNuyusf7Lmw8DtLKA4UMdnrQcw1i7+LGskpxq6YIkl4gpfWywXiKrIYWr2GnRgW7PCVuC+kxzrZ06vyCVoM9Q==}
-    dependencies:
-      '@iconify/types': 2.0.0
-    dev: true
-
-  /@iconify-json/radix-icons@1.1.13:
-    resolution: {integrity: sha512-glwumy324LU+b0LM+tOsMenKlRe/+Yuowyw4kaXeksySFH4J231DH2SMWXVEdv8ZvSIVM+qgIYMO7suPnmtMYg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

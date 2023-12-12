@@ -4,6 +4,8 @@
 
 - [react-minimal](./examples/react-minimal)
 
+- [react-code-block](./examples/react-code-block)
+
 - [react-heading](./examples/react-heading)
 
 - [react-inline-menu](./examples/react-inline-menu)
@@ -25,6 +27,8 @@
 - [vue-bold](./examples/vue-bold)
 
 - [vue-code](./examples/vue-code)
+
+- [vue-code-block](./examples/vue-code-block)
 
 - [vue-full](./examples/vue-full)
 

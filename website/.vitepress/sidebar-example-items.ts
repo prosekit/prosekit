@@ -7,6 +7,10 @@ export const exampleItems = [
     "link": "/examples/react-minimal"
   },
   {
+    "text": "react-code-block",
+    "link": "/examples/react-code-block"
+  },
+  {
     "text": "react-heading",
     "link": "/examples/react-heading"
   },
@@ -49,6 +53,10 @@ export const exampleItems = [
   {
     "text": "vue-code",
     "link": "/examples/vue-code"
+  },
+  {
+    "text": "vue-code-block",
+    "link": "/examples/vue-code-block"
   },
   {
     "text": "vue-full",

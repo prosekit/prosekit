@@ -5,10 +5,13 @@ import { sortBy, uniq } from 'lodash-es'
 import { readExampleMeta } from './example-meta.js'
 import { vfs, type VirtualFile } from './virtual-file-system.js'
 
-const sharedFiles = [
+const frameworkSharedFiles = [
+  '*user-data.ts',
+  '*tag-data.ts',
+  '*shikiji.ts',
+
   'use-readonly.ts',
-  'user-data.ts',
-  'tag-data.ts',
+  'use-submit-keymap.ts',
 
   'toggle.vue',
   'toggle.tsx',
@@ -34,14 +37,8 @@ export async function genExampleSharedFiles() {
   const frameworks = uniq(
     meta.examples.map((example) => example.name.split('-')[0]),
   )
-  for (const file of sharedFiles) {
-    let found = false
-
-    for (const framework of frameworks) {
-      if (await cloneSharedFile(framework, file)) {
-        found = true
-      }
-    }
+  for (const file of frameworkSharedFiles) {
+    const found = await cloneSharedFile(frameworks, file)
 
     if (!found) {
       console.warn(
@@ -51,8 +48,22 @@ export async function genExampleSharedFiles() {
   }
 }
 
-async function cloneSharedFile(
-  framework: string,
+async function cloneSharedFile(frameworks: string[], sharedFile: string) {
+  if (sharedFile.startsWith('*')) {
+    return await cloneSharedFileInFramwork(null, sharedFile.slice(1))
+  }
+
+  let found = false
+  for (const framework of frameworks) {
+    if (await cloneSharedFileInFramwork(framework, sharedFile)) {
+      found = true
+    }
+  }
+  return found
+}
+
+async function cloneSharedFileInFramwork(
+  framework: string | null,
   sharedFile: string,
 ): Promise<boolean> {
   const meta = await readExampleMeta()
@@ -63,7 +74,7 @@ async function cloneSharedFile(
   }> = []
 
   for (const example of meta.examples) {
-    if (example.name.split('-')[0] === framework) {
+    if (!framework || example.name.split('-')[0] === framework) {
       for (const f of example.files) {
         if (f.path === sharedFile) {
           const filePath = path.join(

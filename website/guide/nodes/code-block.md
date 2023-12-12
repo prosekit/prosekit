@@ -1,10 +1,44 @@
 # CodeBlock
 
-The `codeBlock` node is a part of the ProseKit extensions and is used to represent blocks of code in the document.
+The `codeBlock` node is for representing blocks of code within your document.
 
-## Syntax highlighting
+<script setup>
+import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
+import App from '../../components/vue-code-block/editor.vue'
+</script>
 
-The `codeBlock` node supports syntax highlighting using the [prosemirror-highlight] library. You can choose from various syntax highlighter including [Shiki], [Shikiji], [lowlight] (based on [Highlight.js]) and [refractor] (based on [Prism]). There is an example of using the [Shikiji] library below.
+:::tabs key:framework
+
+== Preview
+
+<ClientOnly><App/></ClientOnly>
+== React
+<ExamplePlaygroundLazy example="react-code-block" />
+:::
+
+## Syntax Highlighting
+
+The `codeBlock` node comes with support for syntax highlighting, thanks to the [prosemirror-highlight] library. You have the flexibility to choose from a variety of syntax highlighters, including [Shiki], [Shikiji], [lowlight] (which is based on [Highlight.js]) and [refractor] (which is based on [Prism]). Below, you'll find an example of how to use the [Shikiji] library.
+
+Start by installing the necessary dependencies:
+
+::: code-group
+
+```shell [npm]
+npm install prosemirror-highlight shikiji
+```
+
+```shell [yarn]
+yarn add prosemirror-highlight shikiji
+```
+
+```shell [pnpm]
+pnpm add prosemirror-highlight shikiji
+```
+
+:::
+
+Once the dependencies are installed, you can specify the theme and language for the syntax highlighting. Then, create a ProseKit extension function as shown below:
 
 <<< @/../playground/examples/react-toolbar/shikiji.ts
 

@@ -3,6 +3,13 @@
 
 const modules = import.meta.glob([
   "../../playground/examples/react-minimal/editor.tsx",
+  "../../playground/examples/react-code-block/code-block-view.tsx",
+  "../../playground/examples/react-code-block/editor.tsx",
+  "../../playground/examples/react-code-block/extension.ts",
+  "../../playground/examples/react-code-block/package.json",
+  "../../playground/examples/react-code-block/shikiji.ts",
+  "../../playground/examples/react-code-block/toggle.tsx",
+  "../../playground/examples/react-code-block/toolbar.tsx",
   "../../playground/examples/react-heading/editor.tsx",
   "../../playground/examples/react-heading/extension.ts",
   "../../playground/examples/react-heading/toggle.tsx",
@@ -52,6 +59,12 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-code/extension.ts",
   "../../playground/examples/vue-code/toggle.vue",
   "../../playground/examples/vue-code/toolbar.vue",
+  "../../playground/examples/vue-code-block/editor.vue",
+  "../../playground/examples/vue-code-block/extension.ts",
+  "../../playground/examples/vue-code-block/package.json",
+  "../../playground/examples/vue-code-block/shikiji.ts",
+  "../../playground/examples/vue-code-block/toggle.vue",
+  "../../playground/examples/vue-code-block/toolbar.vue",
   "../../playground/examples/vue-full/editor.vue",
   "../../playground/examples/vue-full/extension.ts",
   "../../playground/examples/vue-full/image-upload-popover.vue",
@@ -186,6 +199,36 @@ const examples = {
     "/editor.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-minimal/editor.tsx']
+    }
+  },
+  "react-code-block": {
+    "/code-block-view.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/code-block-view.tsx']
+    },
+    "/editor.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/editor.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/extension.ts']
+    },
+    "/package.json": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/package.json']
+    },
+    "/shikiji.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/shikiji.ts']
+    },
+    "/toggle.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/toggle.tsx']
+    },
+    "/toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/toolbar.tsx']
     }
   },
   "react-heading": {
@@ -404,6 +447,32 @@ const examples = {
     "/toolbar.vue": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-code/toolbar.vue']
+    }
+  },
+  "vue-code-block": {
+    "/editor.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-code-block/editor.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-code-block/extension.ts']
+    },
+    "/package.json": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-code-block/package.json']
+    },
+    "/shikiji.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-code-block/shikiji.ts']
+    },
+    "/toggle.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-code-block/toggle.vue']
+    },
+    "/toolbar.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-code-block/toolbar.vue']
     }
   },
   "vue-full": {

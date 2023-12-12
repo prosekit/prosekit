@@ -7,6 +7,7 @@ import {
 import type { PropertyDeclarations, PropertyValues } from 'lit'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
+import { popoverAvailable } from '../../utils/popover-api'
 import { roundByDPR } from '../../utils/round-by-dpr'
 import { LightElement } from '../block-element'
 
@@ -158,6 +159,11 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
   protected updated(changedProperties: PropertyValues<this>): void {
     super.updated(changedProperties)
 
+    if (popoverAvailable) {
+      this.popover = 'manual'
+      this.togglePopover?.(this.active)
+    }
+
     this.start()
     this.setHidden(!this.active)
   }
@@ -194,6 +200,9 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     if (!this.active) return
 
     this.setHidden(false)
+
+    // Override default popover margin
+    this.style.setProperty('margin', '0')
 
     this.style.setProperty('top', '0')
     this.style.setProperty('left', '0')

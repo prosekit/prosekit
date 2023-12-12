@@ -55,6 +55,10 @@ export const exampleItems = [
     "link": "/examples/vue-code"
   },
   {
+    "text": "vue-code-block",
+    "link": "/examples/vue-code-block"
+  },
+  {
     "text": "vue-full",
     "link": "/examples/vue-full"
   },

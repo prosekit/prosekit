@@ -14,6 +14,7 @@ import E105978888 from '../examples/react-user-menu/editor.tsx'
 import E449861637 from '../examples/vue-minimal/editor.vue'
 import E1911994445 from '../examples/vue-bold/editor.vue'
 import E1589439143 from '../examples/vue-code/editor.vue'
+import E2437121339 from '../examples/vue-code-block/editor.vue'
 import E2097600771 from '../examples/vue-full/editor.vue'
 import E3923017492 from '../examples/vue-heading/editor.vue'
 import E3704694657 from '../examples/vue-inline-menu/editor.vue'
@@ -58,6 +59,7 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-minimal' } },
   { params: { example: 'vue-bold' } },
   { params: { example: 'vue-code' } },
+  { params: { example: 'vue-code-block' } },
   { params: { example: 'vue-full' } },
   { params: { example: 'vue-heading' } },
   { params: { example: 'vue-inline-menu' } },
@@ -106,6 +108,7 @@ const { example } = Astro.params
   {example === 'vue-minimal' && <E449861637 client:only="vue" />}
   {example === 'vue-bold' && <E1911994445 client:only="vue" />}
   {example === 'vue-code' && <E1589439143 client:only="vue" />}
+  {example === 'vue-code-block' && <E2437121339 client:only="vue" />}
   {example === 'vue-full' && <E2097600771 client:only="vue" />}
   {example === 'vue-heading' && <E3923017492 client:only="vue" />}
   {example === 'vue-inline-menu' && <E3704694657 client:only="vue" />}

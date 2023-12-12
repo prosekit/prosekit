@@ -28,6 +28,8 @@
 
 - [vue-code](./examples/vue-code)
 
+- [vue-code-block](./examples/vue-code-block)
+
 - [vue-full](./examples/vue-full)
 
 - [vue-heading](./examples/vue-heading)

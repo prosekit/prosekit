@@ -297,6 +297,35 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "vue-code-block",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "package.json",
+          "hidden": false
+        },
+        {
+          "path": "shikiji.ts",
+          "hidden": false
+        },
+        {
+          "path": "toggle.vue",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-full",
       "files": [
         {

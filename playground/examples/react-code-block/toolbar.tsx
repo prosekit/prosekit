@@ -13,7 +13,7 @@ export default function Toolbar() {
         disabled={!editor.commands.insertNode.canApply({ type: 'codeBlock' })}
         onClick={() => editor.commands.insertNode({ type: 'codeBlock' })}
       >
-        <div className="ICON_H1" />
+        <div className="ICON_CODE_BLOCK" />
       </Toggle>
     </div>
   )

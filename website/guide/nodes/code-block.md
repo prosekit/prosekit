@@ -2,6 +2,11 @@
 
 The `codeBlock` node is used to represent blocks of code in the document.
 
+<script setup>
+import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
+// import App from '../../components/vue-code-block/editor.vue'
+</script>
+
 :::tabs key:framework
 
 == React

@@ -30,7 +30,7 @@ export const shortcuts = {
     'relative box-border min-h-[250px] w-full overflow-auto px-[max(16px,_calc(50%-330px))] py-[16px] outline-none outline-0',
     '[&_span[data-mention="user"]]:color-blue-500',
     '[&_span[data-mention="tag"]]:color-violet-500',
-    '[&_pre]:bg-gray-100',
+    '[&_pre]:bg-bluegray-100',
   ),
 
   INLINE_MENU: clsx(
@@ -115,6 +115,7 @@ export const shortcuts = {
   ICON_LIST_ORDERED: clsx('i-ci-list-ol h-5 w-5'),
   ICON_LIST_TASK: clsx('i-ci-list-checklist h-5 w-5'),
   ICON_LIST_TOGGLE: clsx('i-ci-sort-descending h-5 w-5 rotate-180'),
+  ICON_CODE_BLOCK: clsx('i-ci-window-code-block h-5 w-5'),
 }
 
 /**

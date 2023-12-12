@@ -4,6 +4,8 @@
 
 - [react-minimal](./examples/react-minimal)
 
+- [react-code-block](./examples/react-code-block)
+
 - [react-heading](./examples/react-heading)
 
 - [react-inline-menu](./examples/react-inline-menu)

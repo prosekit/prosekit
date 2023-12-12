@@ -7,6 +7,10 @@ export const exampleItems = [
     "link": "/examples/react-minimal"
   },
   {
+    "text": "react-code-block",
+    "link": "/examples/react-code-block"
+  },
+  {
     "text": "react-heading",
     "link": "/examples/react-heading"
   },

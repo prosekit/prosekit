@@ -2,6 +2,7 @@
 // This file is generated from gen-playground-pages.ts
 import BaseLayout from '../layouts/base-layout.astro'
 import E4207331782 from '../examples/react-minimal/editor.tsx'
+import E3757546706 from '../examples/react-code-block/editor.tsx'
 import E252666119 from '../examples/react-heading/editor.tsx'
 import E4040190458 from '../examples/react-inline-menu/editor.tsx'
 import E1745952196 from '../examples/react-keymap/editor.tsx'
@@ -45,6 +46,7 @@ import E3479383441 from '../examples/solid-readonly/editor.tsx'
 import E3405394164 from '../examples/solid-slash-menu/editor.tsx'
 export const getStaticPaths = () => [
   { params: { example: 'react-minimal' } },
+  { params: { example: 'react-code-block' } },
   { params: { example: 'react-heading' } },
   { params: { example: 'react-inline-menu' } },
   { params: { example: 'react-keymap' } },
@@ -92,6 +94,7 @@ const { example } = Astro.params
 
 <BaseLayout>
   {example === 'react-minimal' && <E4207331782 client:only="react" />}
+  {example === 'react-code-block' && <E3757546706 client:only="react" />}
   {example === 'react-heading' && <E252666119 client:only="react" />}
   {example === 'react-inline-menu' && <E4040190458 client:only="react" />}
   {example === 'react-keymap' && <E1745952196 client:only="react" />}

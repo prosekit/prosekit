@@ -13,6 +13,43 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-code-block",
+      "files": [
+        {
+          "path": "code-block-view.tsx",
+          "hidden": false
+        },
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "image-upload-popover.tsx",
+          "hidden": false
+        },
+        {
+          "path": "package.json",
+          "hidden": false
+        },
+        {
+          "path": "shikiji.ts",
+          "hidden": false
+        },
+        {
+          "path": "toggle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-heading",
       "files": [
         {

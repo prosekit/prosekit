@@ -3,6 +3,14 @@
 
 const modules = import.meta.glob([
   "../../playground/examples/react-minimal/editor.tsx",
+  "../../playground/examples/react-code-block/code-block-view.tsx",
+  "../../playground/examples/react-code-block/editor.tsx",
+  "../../playground/examples/react-code-block/extension.ts",
+  "../../playground/examples/react-code-block/image-upload-popover.tsx",
+  "../../playground/examples/react-code-block/package.json",
+  "../../playground/examples/react-code-block/shikiji.ts",
+  "../../playground/examples/react-code-block/toggle.tsx",
+  "../../playground/examples/react-code-block/toolbar.tsx",
   "../../playground/examples/react-heading/editor.tsx",
   "../../playground/examples/react-heading/extension.ts",
   "../../playground/examples/react-heading/toggle.tsx",
@@ -186,6 +194,40 @@ const examples = {
     "/editor.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-minimal/editor.tsx']
+    }
+  },
+  "react-code-block": {
+    "/code-block-view.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/code-block-view.tsx']
+    },
+    "/editor.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/editor.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/extension.ts']
+    },
+    "/image-upload-popover.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/image-upload-popover.tsx']
+    },
+    "/package.json": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/package.json']
+    },
+    "/shikiji.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/shikiji.ts']
+    },
+    "/toggle.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/toggle.tsx']
+    },
+    "/toolbar.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-code-block/toolbar.tsx']
     }
   },
   "react-heading": {

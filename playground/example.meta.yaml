@@ -11,8 +11,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: image-upload-popover.tsx
-        hidden: false
       - path: package.json
         hidden: false
       - path: shikiji.ts

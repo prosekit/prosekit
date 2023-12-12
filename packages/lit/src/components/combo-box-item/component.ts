@@ -1,6 +1,6 @@
 import { ContextConsumer } from '@lit/context'
 import type { Editor } from '@prosekit/core'
-import type { PropertyDeclarations } from 'lit'
+import type { PropertyDeclarations, PropertyValues } from 'lit'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
@@ -31,7 +31,12 @@ export class ComboBoxItem extends LightElement {
     subscribe: true,
   })
 
-  protected updated(): void {
+  /**
+   * @hidden
+   */
+  protected updated(changedProperties: PropertyValues<this>): void {
+    super.updated(changedProperties)
+
     const content = (this.textContent ?? '').trim()
     const query = (this.comboBoxContext.value?.inputValue ?? '').trim()
 
@@ -40,6 +45,15 @@ export class ComboBoxItem extends LightElement {
       match && content === this.comboBoxContext.value?.selectedValue
     this.ariaSelected = String(this.selected)
     this.setHidden(!match)
+
+    if (
+      this.selected &&
+      changedProperties.has('selected') &&
+      !changedProperties.get('selected') &&
+      this.comboBoxContext.value?.selectedReason === 'keyboard'
+    ) {
+      this.scrollIntoView({ block: 'nearest' })
+    }
   }
 }
 

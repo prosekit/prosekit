@@ -8,8 +8,12 @@ function clsx(...parts) {
     .join(' ')
 }
 
-let FLOATING_MENU = clsx(
+const FLOATING_MENU = clsx(
   'z-10 box-border rounded border border-solid border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-zinc-800',
+)
+
+const FLOATING_MENU_ITEM = clsx(
+  'box-border cursor-default select-none whitespace-nowrap outline-none aria-selected:bg-gray-200/70 aria-selected:dark:bg-gray-700/70',
 )
 
 export const shortcuts = {
@@ -26,6 +30,7 @@ export const shortcuts = {
     'relative box-border min-h-[250px] w-full overflow-auto px-[max(16px,_calc(50%-330px))] py-[16px] outline-none outline-0',
     '[&_span[data-mention="user"]]:color-blue-500',
     '[&_span[data-mention="tag"]]:color-violet-500',
+    '[&_pre]:bg-gray-100',
   ),
 
   INLINE_MENU: clsx(
@@ -34,12 +39,13 @@ export const shortcuts = {
   ),
 
   AUTOCOMPLETE_MENU: clsx(
-    'relative block max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap',
+    'relative block max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap p-1',
     FLOATING_MENU,
   ),
 
   AUTOCOMPLETE_MENU_ITEM: clsx(
-    'relative box-border block min-w-[64px] cursor-default select-none whitespace-nowrap p-2 data-[selected]:bg-gray-200/70 data-[selected]:dark:bg-gray-700/70',
+    'relative block min-w-[120px] scroll-my-1 rounded px-3 py-1.5',
+    FLOATING_MENU_ITEM,
   ),
 
   LANGUAGE_WRAPPER: clsx(
@@ -47,7 +53,7 @@ export const shortcuts = {
   ),
 
   LANGUAGE_BUTTON: clsx(
-    'absolute mx-[0.5em] box-border cursor-pointer rounded-md border-none bg-transparent px-2 py-0.5 text-xs text-gray-400 outline-none hover:bg-gray-500/30',
+    'absolute mx-[0.5em] box-border cursor-pointer rounded-md border-none bg-transparent px-2 py-0.5 text-xs text-gray-400 outline-none transition-colors hover:bg-gray-500/30 hover:text-gray-800',
   ),
 
   LANGUAGE_COMBO_BOX: clsx(
@@ -59,11 +65,12 @@ export const shortcuts = {
   ),
 
   LANGUAGE_COMBO_BOX_LIST: clsx(
-    'box-border flex max-h-[300px] flex-col overflow-y-auto overflow-x-hidden border-0 border-solid px-1 py-2',
+    'box-border flex max-h-[300px] flex-col overflow-y-auto overflow-x-hidden border-0 border-solid p-1',
   ),
 
   LANGUAGE_COMBO_BOX_ITEM: clsx(
-    'relative box-border flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none aria-selected:bg-gray-100 aria-selected:text-gray-900',
+    'relative block scroll-my-1 rounded px-2 py-1.5 text-sm',
+    FLOATING_MENU_ITEM,
   ),
 
   TOOLBAR: clsx(

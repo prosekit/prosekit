@@ -81,6 +81,7 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
     const item = this.firstItem
     const value = item ? this.getItemValue(item) : ''
     this.setSelectedValue(value, 'keyboard')
+    item?.scrollIntoView({ block: 'nearest' })
   }
 
   handleMouseMove(_event: MouseEvent): void {

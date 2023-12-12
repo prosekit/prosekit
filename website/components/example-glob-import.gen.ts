@@ -34,6 +34,7 @@ const modules = import.meta.glob([
   "../../playground/examples/react-toolbar/extension.ts",
   "../../playground/examples/react-toolbar/image-upload-popover.tsx",
   "../../playground/examples/react-toolbar/package.json",
+  "../../playground/examples/react-toolbar/shikiji.ts",
   "../../playground/examples/react-toolbar/toggle.tsx",
   "../../playground/examples/react-toolbar/toolbar.tsx",
   "../../playground/examples/react-user-menu/editor.tsx",
@@ -170,9 +171,13 @@ const modules = import.meta.glob([
   "../../playground/examples/solid-slash-menu/editor.tsx",
   "../../playground/examples/solid-slash-menu/extension.ts",
   "../../playground/examples/solid-slash-menu/slash-menu.tsx",
+  "../../playground/examples/lit/code-block-view.ts",
+  "../../playground/examples/lit/create-element.ts",
   "../../playground/examples/lit/editor.ts",
   "../../playground/examples/lit/extension.ts",
+  "../../playground/examples/lit/get-id.ts",
   "../../playground/examples/lit/package.json",
+  "../../playground/examples/lit/shikiji.ts",
   "../../playground/examples/vanilla/index.js"
 ], { as: 'raw', eager: true }) as Record<string, string>
 
@@ -319,6 +324,10 @@ const examples = {
     "/package.json": {
       "hidden": false,
       "code": modules['../../playground/examples/react-toolbar/package.json']
+    },
+    "/shikiji.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-toolbar/shikiji.ts']
     },
     "/toggle.tsx": {
       "hidden": false,
@@ -934,6 +943,14 @@ const examples = {
     }
   },
   "lit": {
+    "/code-block-view.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/lit/code-block-view.ts']
+    },
+    "/create-element.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/lit/create-element.ts']
+    },
     "/editor.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/lit/editor.ts']
@@ -942,9 +959,17 @@ const examples = {
       "hidden": false,
       "code": modules['../../playground/examples/lit/extension.ts']
     },
+    "/get-id.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/lit/get-id.ts']
+    },
     "/package.json": {
       "hidden": true,
       "code": modules['../../playground/examples/lit/package.json']
+    },
+    "/shikiji.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/lit/shikiji.ts']
     }
   },
   "vanilla": {

@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "highlight.js": "^11.9.0"
+    "prosemirror-highlight": "^0.3.1",
+    "shikiji": "^0.8.0"
   }
 }

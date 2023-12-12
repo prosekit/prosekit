@@ -170,6 +170,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "shikiji.ts",
+          "hidden": false
+        },
+        {
           "path": "toggle.tsx",
           "hidden": false
         },
@@ -889,6 +893,14 @@ export const exampleMeta = {
       "name": "lit",
       "files": [
         {
+          "path": "code-block-view.ts",
+          "hidden": false
+        },
+        {
+          "path": "create-element.ts",
+          "hidden": false
+        },
+        {
           "path": "editor.ts",
           "hidden": false
         },
@@ -897,8 +909,16 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "get-id.ts",
+          "hidden": false
+        },
+        {
           "path": "package.json",
           "hidden": true
+        },
+        {
+          "path": "shikiji.ts",
+          "hidden": false
         }
       ]
     },

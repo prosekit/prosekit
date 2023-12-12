@@ -1,6 +1,5 @@
 // @unocss-include
 
-import 'highlight.js/styles/github-dark-dimmed.css'
 import 'prosekit/basic/style.css'
 
 import { LitElement, html } from 'lit'

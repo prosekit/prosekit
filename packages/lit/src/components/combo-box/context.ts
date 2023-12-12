@@ -7,6 +7,7 @@ export interface ComboBoxContext {
   inputValue: string
   setInputValue: (val: string) => void
   selectedValue: string
+  selectedReason: 'mouse' | 'keyboard'
   listManager: ListManager<ComboBoxItem>
 }
 

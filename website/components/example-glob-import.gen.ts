@@ -6,7 +6,6 @@ const modules = import.meta.glob([
   "../../playground/examples/react-code-block/code-block-view.tsx",
   "../../playground/examples/react-code-block/editor.tsx",
   "../../playground/examples/react-code-block/extension.ts",
-  "../../playground/examples/react-code-block/image-upload-popover.tsx",
   "../../playground/examples/react-code-block/package.json",
   "../../playground/examples/react-code-block/shikiji.ts",
   "../../playground/examples/react-code-block/toggle.tsx",
@@ -208,10 +207,6 @@ const examples = {
     "/extension.ts": {
       "hidden": false,
       "code": modules['../../playground/examples/react-code-block/extension.ts']
-    },
-    "/image-upload-popover.tsx": {
-      "hidden": false,
-      "code": modules['../../playground/examples/react-code-block/image-upload-popover.tsx']
     },
     "/package.json": {
       "hidden": false,

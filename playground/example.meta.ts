@@ -28,10 +28,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "image-upload-popover.tsx",
-          "hidden": false
-        },
-        {
           "path": "package.json",
           "hidden": false
         },

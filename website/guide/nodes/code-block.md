@@ -20,6 +20,24 @@ import App from '../../components/vue-code-block/editor.vue'
 
 The `codeBlock` node supports syntax highlighting using the [prosemirror-highlight] library. You can choose from various syntax highlighter including [Shiki], [Shikiji], [lowlight] (based on [Highlight.js]) and [refractor] (based on [Prism]). There is an example of using the [Shikiji] library below.
 
+First install the required dependencies:
+
+::: code-group
+
+```shell [npm]
+npm install prosemirror-highlight shikiji
+```
+
+```shell [yarn]
+yarn add prosemirror-highlight shikiji
+```
+
+```shell [pnpm]
+pnpm add prosemirror-highlight shikiji
+```
+
+:::
+
 <<< @/../playground/examples/react-toolbar/shikiji.ts
 
 [prosemirror-highlight]: https://github.com/ocavue/prosemirror-highlight

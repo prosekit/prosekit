@@ -4,11 +4,14 @@ The `codeBlock` node is used to represent blocks of code in the document.
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-// import App from '../../components/vue-code-block/editor.vue'
+import App from '../../components/vue-code-block/editor.vue'
 </script>
 
 :::tabs key:framework
 
+== Preview
+
+<ClientOnly><App/></ClientOnly>
 == React
 <ExamplePlaygroundLazy example="react-code-block" />
 :::

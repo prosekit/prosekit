@@ -36,8 +36,8 @@ export class ComboBox extends Popover {
     getSelectedValue: () => {
       return (this.getContext().selectedValue ?? '').trim()
     },
-    setSelectedValue: (value: string) => {
-      return this.setSelectedValue(value)
+    setSelectedValue: (value, reason) => {
+      return this.setSelectedValue(value, reason)
     },
     getItemValue: (item) => {
       return (item.textContent ?? '').trim()
@@ -47,15 +47,23 @@ export class ComboBox extends Popover {
       return true
     },
     onDismiss: () => {
-      this.onDismiss?.()
+      this.hide()
     },
     onSelect: (item) => {
-      this.setSelectedValue('')
-      this.setInputValue('')
+      this.setSelectedValue('', 'keyboard')
       item?.onSelect?.()
-      this.onDismiss?.()
+      this.hide()
     },
   })
+
+  /**
+   * @hidden
+   */
+  hide() {
+    super.hide()
+    this.setInputValue('')
+    this.onDismiss?.()
+  }
 
   private context = new ContextProvider(this, {
     context: comboBoxContext,
@@ -66,6 +74,7 @@ export class ComboBox extends Popover {
       },
 
       selectedValue: '',
+      selectedReason: 'keyboard',
 
       listManager: this.listManager,
     },
@@ -83,16 +92,19 @@ export class ComboBox extends Popover {
     this.context.setValue({ ...context, inputValue })
   }
 
-  private setSelectedValue(selectedValue: string) {
+  private setSelectedValue(
+    selectedValue: string,
+    selectedReason: 'mouse' | 'keyboard',
+  ) {
     const context = this.context.value
     if (context.selectedValue === selectedValue) {
       return
     }
-    this.context.setValue({ ...context, selectedValue })
+    this.context.setValue({ ...context, selectedValue, selectedReason })
   }
 
   get items(): ComboBoxItem[] {
-    const items = this.querySelectorAll('∏prosekit-combo-box-item')
+    const items = this.querySelectorAll('prosekit-combo-box-item')
     return Array.from(items).filter(isComboBoxItem)
   }
 }

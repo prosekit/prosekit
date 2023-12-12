@@ -29,14 +29,23 @@ export class ComboBoxInput extends LightElement {
   private visible = false
 
   private handleKeydown(event: KeyboardEvent) {
-    if (event.code === 'ArrowUp') {
-      this.comboBoxContext.value?.listManager?.handleArrowUp()
-    } else if (event.code === 'ArrowDown') {
-      this.comboBoxContext.value?.listManager?.handleArrowDown()
-    } else if (event.code === 'Escape') {
-      this.comboBoxContext.value?.listManager?.handleEscape()
-    } else if (event.code === 'Enter') {
-      this.comboBoxContext.value?.listManager?.handleEnter()
+    switch (event.code) {
+      case 'ArrowUp':
+        this.comboBoxContext.value?.listManager?.handleArrowUp()
+        event.preventDefault()
+        return
+      case 'ArrowDown':
+        this.comboBoxContext.value?.listManager?.handleArrowDown()
+        event.preventDefault()
+        return
+      case 'Escape':
+        this.comboBoxContext.value?.listManager?.handleEscape()
+        event.preventDefault()
+        return
+      case 'Enter':
+        this.comboBoxContext.value?.listManager?.handleEnter()
+        event.preventDefault()
+        return
     }
   }
 
@@ -71,7 +80,7 @@ export class ComboBoxInput extends LightElement {
         placeholder=${this.placeholder} 
         @keydown=${(event: KeyboardEvent) => this.handleKeydown(event)}
         @input=${(event: InputEvent) => this.handleInput(event)}
-        value=${this.comboBoxContext.value?.inputValue ?? ''}
+        .value=${this.comboBoxContext.value?.inputValue ?? ''}
       ></input>
     `
   }

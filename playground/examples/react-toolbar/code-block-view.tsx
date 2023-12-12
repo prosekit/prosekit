@@ -1,10 +1,11 @@
-import hljs from 'highlight.js/lib/common'
 import { type ReactNodeViewComponentProps } from 'prosekit/react'
 import { ComboBox } from 'prosekit/react/combo-box'
 import { ComboBoxInput } from 'prosekit/react/combo-box-input'
 import { ComboBoxItem } from 'prosekit/react/combo-box-item'
 import { ComboBoxList } from 'prosekit/react/combo-box-list'
 import { useRef, useState } from 'react'
+
+import { languages } from './shikiji'
 
 export default function CodeBlockView(props: ReactNodeViewComponentProps) {
   const [showComboBox, setShowComboBox] = useState(false)
@@ -20,8 +21,6 @@ export default function CodeBlockView(props: ReactNodeViewComponentProps) {
     setShowComboBox((value) => !value)
   }
 
-  const languages = hljs.listLanguages()
-
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   return (
@@ -31,6 +30,7 @@ export default function CodeBlockView(props: ReactNodeViewComponentProps) {
           className="LANGUAGE_BUTTON"
           onClick={toggleComboBox}
           ref={buttonRef}
+          contentEditable={false}
         >
           {props.node.attrs.language || 'Plain Text'}
         </button>
@@ -62,7 +62,6 @@ export default function CodeBlockView(props: ReactNodeViewComponentProps) {
       <pre
         ref={props.contentRef}
         data-language={props.node.attrs.language}
-        className="hljs"
       ></pre>
     </>
   )

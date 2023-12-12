@@ -2,16 +2,16 @@
 
 The `codeBlock` node is a part of the ProseKit extensions and is used to represent blocks of code in the document.
 
-## Usage
+## Syntax highlighting
 
-To add a `codeBlock` node to your document, you can use the `defineCodeBlock` function. This function accepts an optional `hljs` parameter, which is an instance of the `HLJSApi` from the `highlight.js` library. This is used for syntax highlighting of the code block.
+The `codeBlock` node supports syntax highlighting using the [prosemirror-highlight] library. You can choose from various syntax highlighter including [Shiki], [Shikiji], [lowlight] (based on [Highlight.js]) and [refractor] (based on [Prism]). There is an example of using the [Shikiji] library below.
 
-```ts
-import { defineCodeBlock } from 'prosekit/extensions/code-block'
-import 'highlight.js/styles/github-dark-dimmed.css'
-import hljs from 'highlight.js/lib/common'
+<<< @/../playground/examples/react-toolbar/shikiji.ts
 
-function defineMyCodeBlock() {
-  return defineCodeBlock({ hljs })
-}
-```
+[prosemirror-highlight]: https://github.com/ocavue/prosemirror-highlight
+[lowlight]: https://github.com/wooorm/lowlight
+[Highlight.js]: https://github.com/highlightjs/highlight.js
+[Shiki]: https://github.com/shikijs/shiki
+[Shikiji]: https://github.com/antfu/shikiji
+[refractor]: https://github.com/wooorm/refractor
+[Prism]: https://github.com/PrismJS/prism

@@ -51,13 +51,15 @@ export class AutocompleteItem
 
   protected willUpdate(): void {
     const content = this.content
-    this.selected = content === this.listContext.value?.selectedValue
     const score = this.listContext.value?.scores.get(content) || 0
+    const hidden = score <= 0
 
-    this.setHidden(score <= 0)
+    this.selected = !hidden && content === this.listContext.value?.selectedValue
+    this.setHidden(hidden)
   }
 
   protected updated(changedProperties: PropertyValues<this>): void {
+    this.ariaSelected = String(this.selected)
     if (
       this.selected &&
       changedProperties.has('selected') &&

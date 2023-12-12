@@ -2,16 +2,25 @@ import {
   defineCommands,
   defineInputRule,
   defineNodeSpec,
-  union,
   getNodeType,
+  union,
 } from '@prosekit/core'
 import { textblockTypeInputRule } from '@prosekit/pm/inputrules'
 import type { HLJSApi } from 'highlight.js'
+import type { Parser } from 'prosemirror-highlight'
 
 import { defineCodeBlockHighlight } from './code-block-highlight'
+import { defineCodeBlockHighlightDeprecated } from './code-block-highlight-deprecated'
 import type { CodeBlockAttrs } from './code-block-types'
 
 export type { CodeBlockAttrs }
+
+/**
+ * @public
+ *
+ * An alias for the `Parser` type from the `prosemirror-highlight` package.
+ */
+export type HighlightParser = Parser
 
 export function defineCodeBlockSpec() {
   return defineNodeSpec({
@@ -35,6 +44,7 @@ export function defineCodeBlockSpec() {
       const attrs = node.attrs as CodeBlockAttrs
       return [
         'pre',
+        // TODO: remove class 'hljs'
         { 'data-language': attrs.language, class: 'hljs' },
         ['code', 0],
       ]
@@ -71,11 +81,32 @@ export function defineCodeBlockCommands() {
 /**
  * @public
  */
-export function defineCodeBlock(options?: { hljs?: HLJSApi }) {
-  return union([
+export function defineCodeBlock(options?: {
+  /**
+   * @deprecated Use `highlight` instead.
+   */
+  hljs?: HLJSApi
+
+  /**
+   * A parser for the `prosemirror-highlight` package to use for syntax highlighting.
+   */
+  parser?: HighlightParser
+}) {
+  const extensions = [
     defineCodeBlockSpec(),
     defineCodeBlockInputRule(),
-    defineCodeBlockHighlight({ hljs: options?.hljs }),
     defineCodeBlockCommands(),
-  ])
+  ]
+
+  const parser = options?.parser
+  if (parser) {
+    extensions.push(defineCodeBlockHighlight({ parser }))
+  }
+
+  const hljs = options?.hljs
+  if (hljs) {
+    extensions.push(defineCodeBlockHighlightDeprecated({ hljs }))
+  }
+
+  return union(extensions)
 }

@@ -79,6 +79,8 @@ examples:
         hidden: false
       - path: package.json
         hidden: false
+      - path: shikiji.ts
+        hidden: false
       - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
@@ -421,12 +423,20 @@ examples:
         hidden: false
   - name: lit
     files:
+      - path: code-block-view.ts
+        hidden: false
+      - path: create-element.ts
+        hidden: false
       - path: editor.ts
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: get-id.ts
+        hidden: false
       - path: package.json
         hidden: true
+      - path: shikiji.ts
+        hidden: false
   - name: vanilla
     files:
       - path: index.js

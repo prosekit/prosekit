@@ -38,6 +38,8 @@ pnpm add prosemirror-highlight shikiji
 
 :::
 
+Then you can use specific the theme and language for the syntax highlighting, and create a ProseKit extension function:
+
 <<< @/../playground/examples/react-toolbar/shikiji.ts
 
 [prosemirror-highlight]: https://github.com/ocavue/prosemirror-highlight

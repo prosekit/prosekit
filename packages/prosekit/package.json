@@ -176,7 +176,7 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "@types/react": "^18.2.42",
+    "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.17",
     "preact": "^10.19.3",
     "react": "^18.2.0",

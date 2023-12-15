@@ -159,7 +159,7 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
   protected updated(changedProperties: PropertyValues<this>): void {
     super.updated(changedProperties)
 
-    if (popoverAvailable) {
+    if (popoverAvailable && this.isConnected) {
       this.popover = 'manual'
       this.togglePopover?.(this.active)
     }

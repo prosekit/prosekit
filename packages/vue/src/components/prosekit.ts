@@ -1,7 +1,9 @@
 import { Editor } from '@prosekit/core'
-import { defineComponent } from 'vue'
+import { defineComponent, h } from 'vue'
 
 import { provideEditor } from '../injection/editor-injection'
+import { VueViewsProvider } from '../views'
+import { VueViewsConsumer } from '../views/vue-views-comsumer'
 
 export interface ProseKitProps {
   editor: Editor
@@ -10,7 +12,12 @@ export interface ProseKitProps {
 export const ProseKit = defineComponent<ProseKitProps>(
   (props, { slots }) => {
     provideEditor(props.editor)
-    return () => slots.default?.()
+    return () => {
+      return h(VueViewsProvider, null, () => [
+        h(VueViewsConsumer),
+        slots.default?.(),
+      ])
+    }
   },
   { props: ['editor'] },
 )

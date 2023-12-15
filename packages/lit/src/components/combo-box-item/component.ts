@@ -6,7 +6,7 @@ import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
 import { comboBoxContext } from '../combo-box/context'
 
-export const propNames = []
+export const propNames = ['onSelect'] as const
 
 export type ComboBoxItemProps = {
   onSelect?: VoidFunction

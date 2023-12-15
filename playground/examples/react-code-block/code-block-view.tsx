@@ -1,4 +1,4 @@
-import { type ReactNodeViewComponentProps } from 'prosekit/react'
+import { type ReactNodeViewProps } from 'prosekit/react'
 import { ComboBox } from 'prosekit/react/combo-box'
 import { ComboBoxInput } from 'prosekit/react/combo-box-input'
 import { ComboBoxItem } from 'prosekit/react/combo-box-item'
@@ -7,7 +7,7 @@ import { useRef, useState } from 'react'
 
 import { languages } from './shikiji'
 
-export default function CodeBlockView(props: ReactNodeViewComponentProps) {
+export default function CodeBlockView(props: ReactNodeViewProps) {
   const [showComboBox, setShowComboBox] = useState(false)
 
   const closeComboBox = () => {

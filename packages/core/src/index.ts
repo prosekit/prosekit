@@ -1,3 +1,4 @@
+export { getId as _getId } from './utils/get-id'
 export { addMark } from './commands/add-mark'
 export { insertNode } from './commands/insert-node'
 export { removeMark } from './commands/remove-mark'

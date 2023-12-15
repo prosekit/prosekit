@@ -1,52 +1,41 @@
 import { defineNodeViewEffect, type Extension } from '@prosekit/core'
-import {
-  useNodeViewContext,
-  type useNodeViewFactory,
-} from '@prosemirror-adapter/react'
-import type { NodeViewContext } from '@prosemirror-adapter/react'
-import { createElement } from 'react'
 
-export type ReactNodeViewComponentProps = NodeViewContext
+import type { NodeViewFactory } from '../views/node-view/node-view-context'
+import type { ReactNodeViewUserOptions } from '../views/node-view/react-node-view-options'
 
-export interface ReactNodeViewOptions {
+/**
+ * Options for {@link defineReactNodeView}.
+ *
+ * @public
+ */
+export interface ReactNodeViewOptions extends ReactNodeViewUserOptions {
+  /**
+   * The name of the node.
+   */
   name: string
-  component: React.ComponentType<ReactNodeViewComponentProps>
-  dom?: string | (() => HTMLElement)
-  contentDOM?: string | (() => HTMLElement)
 }
 
+/**
+ * Defines a node view using a React component.
+ *
+ * @public
+ */
 export function defineReactNodeView(options: ReactNodeViewOptions): Extension {
-  return defineNodeViewEffect({
+  const { name, ...userOptions } = options
+
+  return defineNodeViewEffect<ReactNodeViewUserOptions>({
     group: 'react',
-    name: options.name,
-    args: options,
+    name,
+    args: userOptions,
   })
 }
 
-export function defineReactNodeViewRenderer({
-  nodeViewFactory,
-}: {
-  nodeViewFactory: ReturnType<typeof useNodeViewFactory>
-}) {
-  return defineNodeViewEffect({
+/**
+ * @internal
+ */
+export function defineReactNodeViewRenderer(nodeViewFactory: NodeViewFactory) {
+  return defineNodeViewEffect<ReactNodeViewUserOptions>({
     group: 'react',
-    factory: (args: unknown) => {
-      const nodeViewOptions = args as ReactNodeViewOptions
-      return nodeViewFactory({
-        component: function ReactNodeViewWrapper() {
-          const context = useNodeViewContext()
-          return createElement(nodeViewOptions.component, context)
-        },
-        // Optional: add some options
-        as: () => {
-          const dom = document.createElement('div')
-
-          dom.style.display = 'contents'
-
-          return dom
-        },
-        contentAs: 'code',
-      })
-    },
+    factory: nodeViewFactory,
   })
 }

@@ -6,26 +6,29 @@ import type { Extension } from '../types/extension'
 
 import { pluginFacet, type PluginPayload } from './plugin'
 
-export type NodeViewEffectOptions =
+export type NodeViewEffectOptions<T> =
   | {
       group: string
       name: string
-      args: unknown
+      args: T
     }
   | {
       group: string
       name?: undefined
-      factory: (args: unknown) => NodeViewConstructor
+      factory: (args: T) => NodeViewConstructor
     }
 
-export function defineNodeViewEffect(
-  options: NodeViewEffectOptions,
+export function defineNodeViewEffect<T>(
+  options: NodeViewEffectOptions<T>,
 ): Extension {
   return nodeViewEffectFacet.extension([options])
 }
 
-const nodeViewEffectFacet = Facet.define<NodeViewEffectOptions, PluginPayload>({
-  convert: (inputs: NodeViewEffectOptions[]): PluginPayload => {
+const nodeViewEffectFacet = Facet.define<
+  NodeViewEffectOptions<any>,
+  PluginPayload
+>({
+  convert: (inputs: NodeViewEffectOptions<any>[]): PluginPayload => {
     const nodeViews: { [nodeName: string]: NodeViewConstructor } = {}
     const options: {
       [group: string]: Array<{

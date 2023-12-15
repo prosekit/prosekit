@@ -6,7 +6,10 @@ import type { Extension } from '../types/extension'
 
 import { pluginFacet, type PluginPayload } from './plugin'
 
-export type NodeViewEffectOptions<T> =
+/**
+ * @internal
+ */
+export type NodeViewFactoryOptions<T> =
   | {
       group: string
       name: string
@@ -18,17 +21,20 @@ export type NodeViewEffectOptions<T> =
       factory: (args: T) => NodeViewConstructor
     }
 
-export function defineNodeViewEffect<T>(
-  options: NodeViewEffectOptions<T>,
+/**
+ * @internal
+ */
+export function defineNodeViewFactory<T>(
+  options: NodeViewFactoryOptions<T>,
 ): Extension {
-  return nodeViewEffectFacet.extension([options])
+  return nodeViewFactoryFacet.extension([options])
 }
 
-const nodeViewEffectFacet = Facet.define<
-  NodeViewEffectOptions<any>,
+const nodeViewFactoryFacet = Facet.define<
+  NodeViewFactoryOptions<any>,
   PluginPayload
 >({
-  convert: (inputs: NodeViewEffectOptions<any>[]): PluginPayload => {
+  convert: (inputs: NodeViewFactoryOptions<any>[]): PluginPayload => {
     const nodeViews: { [nodeName: string]: NodeViewConstructor } = {}
     const options: {
       [group: string]: Array<{
@@ -60,10 +66,7 @@ const nodeViewEffectFacet = Facet.define<
       }
     }
 
-    return () =>
-      Object.keys(nodeViews).length > 0
-        ? [new ProseMirrorPlugin({ props: { nodeViews } })]
-        : []
+    return () => [new ProseMirrorPlugin({ props: { nodeViews } })]
   },
   next: pluginFacet,
 })

@@ -1,4 +1,4 @@
-import { defineNodeViewEffect, type Extension } from '@prosekit/core'
+import { defineNodeViewFactory, type Extension } from '@prosekit/core'
 
 import type { NodeViewFactory } from '../views/node-view/node-view-context'
 import type { VueNodeViewUserOptions } from '../views/node-view/vue-node-view-options'
@@ -23,7 +23,7 @@ export interface VueNodeViewOptions extends VueNodeViewUserOptions {
 export function defineVueNodeView(options: VueNodeViewOptions): Extension {
   const { name, ...userOptions } = options
 
-  return defineNodeViewEffect<VueNodeViewUserOptions>({
+  return defineNodeViewFactory<VueNodeViewUserOptions>({
     group: 'vue',
     name,
     args: userOptions,
@@ -33,8 +33,8 @@ export function defineVueNodeView(options: VueNodeViewOptions): Extension {
 /**
  * @internal
  */
-export function defineVueNodeViewRenderer(nodeViewFactory: NodeViewFactory) {
-  return defineNodeViewEffect<VueNodeViewUserOptions>({
+export function defineVueNodeViewFactory(nodeViewFactory: NodeViewFactory) {
+  return defineNodeViewFactory<VueNodeViewUserOptions>({
     group: 'vue',
     factory: nodeViewFactory,
   })

@@ -1,6 +1,6 @@
 import { useMemo, type FC } from 'react'
 
-import { defineReactNodeViewRenderer } from '../extensions/react-node-view'
+import { defineReactNodeViewFactory } from '../extensions/react-node-view'
 import { useExtension } from '../hooks/use-extension'
 
 import { useNodeViewFactory } from './node-view/node-view-context'
@@ -8,7 +8,7 @@ import { useNodeViewFactory } from './node-view/node-view-context'
 export const ReactViewsConsumer: FC = () => {
   const nodeViewFactory = useNodeViewFactory()
   const extension = useMemo(
-    () => defineReactNodeViewRenderer(nodeViewFactory),
+    () => defineReactNodeViewFactory(nodeViewFactory),
     [nodeViewFactory],
   )
   useExtension(extension)

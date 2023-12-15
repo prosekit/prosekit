@@ -1,4 +1,4 @@
-import { defineNodeViewEffect, type Extension } from '@prosekit/core'
+import { defineNodeViewFactory, type Extension } from '@prosekit/core'
 
 import type { NodeViewFactory } from '../views/node-view/node-view-context'
 import type { ReactNodeViewUserOptions } from '../views/node-view/react-node-view-options'
@@ -23,7 +23,7 @@ export interface ReactNodeViewOptions extends ReactNodeViewUserOptions {
 export function defineReactNodeView(options: ReactNodeViewOptions): Extension {
   const { name, ...userOptions } = options
 
-  return defineNodeViewEffect<ReactNodeViewUserOptions>({
+  return defineNodeViewFactory<ReactNodeViewUserOptions>({
     group: 'react',
     name,
     args: userOptions,
@@ -33,8 +33,8 @@ export function defineReactNodeView(options: ReactNodeViewOptions): Extension {
 /**
  * @internal
  */
-export function defineReactNodeViewRenderer(nodeViewFactory: NodeViewFactory) {
-  return defineNodeViewEffect<ReactNodeViewUserOptions>({
+export function defineReactNodeViewFactory(nodeViewFactory: NodeViewFactory) {
+  return defineNodeViewFactory<ReactNodeViewUserOptions>({
     group: 'react',
     factory: nodeViewFactory,
   })

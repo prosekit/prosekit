@@ -26,8 +26,8 @@ export { defineMarkSpec, type MarkSpecOptions } from './extensions/mark-spec'
 export { defineNodeSpec, type NodeSpecOptions } from './extensions/node-spec'
 export { defineNodeView, type NodeViewOptions } from './extensions/node-view'
 export {
-  defineNodeViewEffect,
-  type NodeViewEffectOptions,
+  defineNodeViewFactory,
+  type NodeViewFactoryOptions,
 } from './extensions/node-view-effect'
 export { defineParagraph } from './extensions/paragraph'
 export {

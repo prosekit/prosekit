@@ -2,7 +2,7 @@
 
 import { computed, defineComponent } from 'vue'
 
-import { defineVueNodeViewRenderer } from '../extensions/vue-node-view'
+import { defineVueNodeViewFactory } from '../extensions/vue-node-view'
 import { useExtension } from '../hooks/use-extension'
 
 import {
@@ -18,7 +18,7 @@ export const VueViewsConsumer = defineComponent({
   setup: () => {
     const nodeViewFactory: NodeViewFactory = useNodeViewFactory()
     const extension = computed(() => {
-      return defineVueNodeViewRenderer(nodeViewFactory)
+      return defineVueNodeViewFactory(nodeViewFactory)
     })
     useExtension(extension)
     return () => null

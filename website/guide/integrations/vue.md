@@ -42,4 +42,4 @@ Adds key bindings to the editor.
 <<< @/../playground/examples/vue-keymap/use-submit-keymap.ts
 :::
 
-Check out [this example](/examples/vue-keymap) for a complete implementation.
+Check out [vue-keymap](/examples/vue-keymap) for a complete implementation.

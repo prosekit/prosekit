@@ -42,4 +42,4 @@ Adds key bindings to the editor.
 <<< @/../playground/examples/react-keymap/use-submit-keymap.ts
 :::
 
-Check out [this example](/examples/react-keymap) for a complete implementation.
+Check out [react-keymap](/examples/react-keymap) for a complete implementation.

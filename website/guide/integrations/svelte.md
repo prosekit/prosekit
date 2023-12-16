@@ -24,6 +24,8 @@ For example, you can calculate the word count of the document after every change
 and display it in the UI. Check out [this example](/examples/svelte-word-count) for
 a complete implementation.
 
+
+
 ## `useExtension`
 
 Adds an extension to the editor.

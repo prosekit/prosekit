@@ -11,6 +11,8 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: language-selector.tsx
+        hidden: false
       - path: package.json
         hidden: false
       - path: shikiji.ts
@@ -85,8 +87,6 @@ examples:
         hidden: false
   - name: react-toolbar
     files:
-      - path: code-block-view.tsx
-        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
@@ -94,8 +94,6 @@ examples:
       - path: image-upload-popover.tsx
         hidden: false
       - path: package.json
-        hidden: false
-      - path: shikiji.ts
         hidden: false
       - path: toggle.tsx
         hidden: false
@@ -154,6 +152,8 @@ examples:
       - path: editor.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: language-selector.vue
         hidden: false
       - path: package.json
         hidden: false

@@ -4,7 +4,7 @@ import type { NodeViewFactory } from '../views/node-view/node-view-context'
 import type { VueNodeViewUserOptions } from '../views/node-view/vue-node-view-options'
 
 /**
- * Options for {@link defineReactNodeView}.
+ * Options for {@link defineVueNodeView}.
  *
  * @public
  */

@@ -57,19 +57,13 @@ const highlighter = await getHighlighter({
 })
 ```
 
-Next, you'll need to create a ProseKit extension function that uses the Shikiji highlighter instance:
+Finally, you'll need to create a ProseKit extension function that uses the Shikiji highlighter instance:
 
 ```ts
 import { createParser } from 'prosemirror-highlight/shikiji'
-
-const parser = createParser(highlighter)
-```
-
-Finally, you can create the `codeBlock` extension:
-
-```ts
 import { defineCodeBlockHighlight } from 'prosekit/extensions/code-block'
 
+const parser = createParser(highlighter)
 defineCodeBlockHighlight({ parser })
 ```
 

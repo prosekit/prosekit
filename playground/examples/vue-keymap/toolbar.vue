@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type PropType } from 'vue'
+import { ref, type PropType } from 'vue'
 import Toggle from './toggle.vue'
 import { useSubmitKeymap } from './use-submit-keymap'
 
@@ -9,7 +9,8 @@ let props = defineProps({
     required: true,
   },
 })
-const { hotkey } = useSubmitKeymap(props.onSubmit)
+const hotkey = ref<'Shift-Enter' | 'Enter'>('Shift-Enter')
+useSubmitKeymap(hotkey, props.onSubmit)
 </script>
 
 <template>

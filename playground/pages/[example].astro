@@ -11,6 +11,7 @@ import E2808803641 from '../examples/react-readonly/editor.tsx'
 import E3738959724 from '../examples/react-slash-menu/editor.tsx'
 import E733855346 from '../examples/react-toolbar/editor.tsx'
 import E105978888 from '../examples/react-user-menu/editor.tsx'
+import E2611097910 from '../examples/react-word-counter/editor.tsx'
 import E449861637 from '../examples/vue-minimal/editor.vue'
 import E1911994445 from '../examples/vue-bold/editor.vue'
 import E1589439143 from '../examples/vue-code/editor.vue'
@@ -29,6 +30,7 @@ import E4080529360 from '../examples/vue-strike/editor.vue'
 import E1709246657 from '../examples/vue-toolbar/editor.vue'
 import E1679720926 from '../examples/vue-underline/editor.vue'
 import E4101103463 from '../examples/vue-user-menu/editor.vue'
+import E62221847 from '../examples/vue-word-counter/editor.vue'
 import E2524713032 from '../examples/preact-minimal/editor.tsx'
 import E1515205514 from '../examples/preact-keymap/editor.tsx'
 import E613530047 from '../examples/preact-readonly/editor.tsx'
@@ -40,6 +42,7 @@ import E3351045146 from '../examples/svelte-keymap/editor.svelte'
 import E2194307417 from '../examples/svelte-list/editor.svelte'
 import E3540862095 from '../examples/svelte-readonly/editor.svelte'
 import E1602218818 from '../examples/svelte-slash-menu/editor.svelte'
+import E1384973015 from '../examples/svelte-word-count/editor.svelte'
 import E2085905006 from '../examples/solid-minimal/editor.tsx'
 import E2498473951 from '../examples/solid-heading/editor.tsx'
 import E36393548 from '../examples/solid-keymap/editor.tsx'
@@ -56,6 +59,7 @@ export const getStaticPaths = () => [
   { params: { example: 'react-slash-menu' } },
   { params: { example: 'react-toolbar' } },
   { params: { example: 'react-user-menu' } },
+  { params: { example: 'react-word-counter' } },
   { params: { example: 'vue-minimal' } },
   { params: { example: 'vue-bold' } },
   { params: { example: 'vue-code' } },
@@ -74,6 +78,7 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-toolbar' } },
   { params: { example: 'vue-underline' } },
   { params: { example: 'vue-user-menu' } },
+  { params: { example: 'vue-word-counter' } },
   { params: { example: 'preact-minimal' } },
   { params: { example: 'preact-keymap' } },
   { params: { example: 'preact-readonly' } },
@@ -85,6 +90,7 @@ export const getStaticPaths = () => [
   { params: { example: 'svelte-list' } },
   { params: { example: 'svelte-readonly' } },
   { params: { example: 'svelte-slash-menu' } },
+  { params: { example: 'svelte-word-count' } },
   { params: { example: 'solid-minimal' } },
   { params: { example: 'solid-heading' } },
   { params: { example: 'solid-keymap' } },
@@ -105,6 +111,7 @@ const { example } = Astro.params
   {example === 'react-slash-menu' && <E3738959724 client:only="react" />}
   {example === 'react-toolbar' && <E733855346 client:only="react" />}
   {example === 'react-user-menu' && <E105978888 client:only="react" />}
+  {example === 'react-word-counter' && <E2611097910 client:only="react" />}
   {example === 'vue-minimal' && <E449861637 client:only="vue" />}
   {example === 'vue-bold' && <E1911994445 client:only="vue" />}
   {example === 'vue-code' && <E1589439143 client:only="vue" />}
@@ -123,6 +130,7 @@ const { example } = Astro.params
   {example === 'vue-toolbar' && <E1709246657 client:only="vue" />}
   {example === 'vue-underline' && <E1679720926 client:only="vue" />}
   {example === 'vue-user-menu' && <E4101103463 client:only="vue" />}
+  {example === 'vue-word-counter' && <E62221847 client:only="vue" />}
   {example === 'preact-minimal' && <E2524713032 client:only="preact" />}
   {example === 'preact-keymap' && <E1515205514 client:only="preact" />}
   {example === 'preact-readonly' && <E613530047 client:only="preact" />}
@@ -134,6 +142,7 @@ const { example } = Astro.params
   {example === 'svelte-list' && <E2194307417 client:only="svelte" />}
   {example === 'svelte-readonly' && <E3540862095 client:only="svelte" />}
   {example === 'svelte-slash-menu' && <E1602218818 client:only="svelte" />}
+  {example === 'svelte-word-count' && <E1384973015 client:only="svelte" />}
   {example === 'solid-minimal' && <E2085905006 client:only="solid" />}
   {example === 'solid-heading' && <E2498473951 client:only="solid" />}
   {example === 'solid-keymap' && <E36393548 client:only="solid" />}

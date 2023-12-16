@@ -246,6 +246,23 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-word-counter",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "word-counter.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-minimal",
       "files": [
         {
@@ -652,6 +669,23 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "vue-word-counter",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "word-counter.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-minimal",
       "files": [
         {
@@ -854,6 +888,27 @@ export const exampleMeta = {
         },
         {
           "path": "slash-menu.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "svelte-word-count",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "use-readonly.ts",
+          "hidden": false
+        },
+        {
+          "path": "word-counter.svelte",
           "hidden": false
         }
       ]

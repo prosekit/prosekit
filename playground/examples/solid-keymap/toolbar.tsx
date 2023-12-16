@@ -1,3 +1,5 @@
+import { createSignal } from 'solid-js'
+
 import Toggle from './toggle'
 import { useSubmitKeymap } from './use-submit-keymap'
 
@@ -6,7 +8,10 @@ export default function Toolbar({
 }: {
   onSubmit: (hotkey: string) => void
 }) {
-  const { hotkey, setHotkey } = useSubmitKeymap(onSubmit)
+  const [hotkey, setHotkey] = createSignal<'Shift-Enter' | 'Enter'>(
+    'Shift-Enter',
+  )
+  useSubmitKeymap(hotkey, onSubmit)
 
   return (
     <div class="TOOLBAR">

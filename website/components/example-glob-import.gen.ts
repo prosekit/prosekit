@@ -59,6 +59,7 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-code/extension.ts",
   "../../playground/examples/vue-code/toggle.vue",
   "../../playground/examples/vue-code/toolbar.vue",
+  "../../playground/examples/vue-code-block/code-block-view.vue",
   "../../playground/examples/vue-code-block/editor.vue",
   "../../playground/examples/vue-code-block/extension.ts",
   "../../playground/examples/vue-code-block/package.json",
@@ -450,6 +451,10 @@ const examples = {
     }
   },
   "vue-code-block": {
+    "/code-block-view.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-code-block/code-block-view.vue']
+    },
     "/editor.vue": {
       "hidden": false,
       "code": modules['../../playground/examples/vue-code-block/editor.vue']

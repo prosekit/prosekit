@@ -46,7 +46,9 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.1.0",
-    "@prosekit/lit": "^0.1.0"
+    "@prosekit/lit": "^0.1.0",
+    "@prosekit/pm": "^0.1.0",
+    "@prosemirror-adapter/core": "^0.2.6"
   },
   "peerDependencies": {
     "vue": ">= 3.0.0"

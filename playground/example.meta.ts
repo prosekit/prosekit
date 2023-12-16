@@ -300,6 +300,10 @@ export const exampleMeta = {
       "name": "vue-code-block",
       "files": [
         {
+          "path": "code-block-view.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },

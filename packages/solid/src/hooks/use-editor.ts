@@ -8,13 +8,9 @@ import { useContext, createEffect, createSignal } from 'solid-js'
 
 import { editorContext } from '../contexts/editor-context'
 
-export interface UseEditorOptions {
+export function useEditor<E extends Extension = any>(options?: {
   update?: boolean
-}
-
-export function useEditor<E extends Extension = any>(
-  options?: UseEditorOptions,
-): () => Editor<E> {
+}): () => Editor<E> {
   const update = options?.update ?? false
 
   const value = useContext(editorContext)

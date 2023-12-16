@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.1.12
+
+### Patch Changes
+
+- [`1b04e65`](https://github.com/ocavue/prosekit/commit/1b04e655cfbe942da9914ef790b0a43807c299ad) ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  Export an internal `_getId()` function.
+
+- [`1b04e65`](https://github.com/ocavue/prosekit/commit/1b04e655cfbe942da9914ef790b0a43807c299ad) ![@prosekit/react](https://img.shields.io/badge/prosekit%2Freact-444444?logo=react) ![@prosekit/vue](https://img.shields.io/badge/prosekit%2Fvue-444444?logo=vuedotjs)
+
+  Add react node view and vue node view support.
+
 ## 0.1.11
 
 ### Patch Changes
@@ -76,9 +88,9 @@
   Add new readonly extension.
 
   ```ts
-  import { defineReadonly } from 'prosekit/extensions/readonly'
+  import { defineReadonly } from "prosekit/extensions/readonly";
 
-  const extension = defineReadonly()
+  const extension = defineReadonly();
   ```
 
 - [`0c60503`](https://github.com/ocavue/prosekit/commit/0c60503) ![@prosekit/preact](https://img.shields.io/badge/prosekit%2Fpreact-444444?logo=preact) ![@prosekit/svelte](https://img.shields.io/badge/prosekit%2Fsvelte-444444?logo=svelte) ![@prosekit/react](https://img.shields.io/badge/prosekit%2Freact-444444?logo=react) ![@prosekit/solid](https://img.shields.io/badge/prosekit%2Fsolid-444444?logo=solid) ![@prosekit/vue](https://img.shields.io/badge/prosekit%2Fvue-444444?logo=vuedotjs)

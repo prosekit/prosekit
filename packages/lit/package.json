@@ -48,7 +48,7 @@
     "@floating-ui/dom": "^1.5.3",
     "@lit/context": "^1.1.0",
     "@prosekit/core": "^0.1.8",
-    "@prosekit/extensions": "^0.1.5",
+    "@prosekit/extensions": "^0.1.6",
     "@prosekit/pm": "^0.1.1",
     "@superhuman/command-score": "^0.5.0",
     "lit": "^3.1.0"

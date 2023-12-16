@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.1.8",
-    "@prosekit/extensions": "^0.1.5"
+    "@prosekit/extensions": "^0.1.6"
   },
   "devDependencies": {
     "@prosekit/dev": "*",

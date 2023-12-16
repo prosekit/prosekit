@@ -1,28 +1,5 @@
 {
   "dependencyDashboard": true,
-  "ignoreDeps": [
-    "@prosekit/basic",
-    "@prosekit/core",
-    "@prosekit/dev",
-    "@prosekit/extensions",
-    "@prosekit/lit",
-    "@prosekit/pm",
-    "@prosekit/preact",
-    "@prosekit/react",
-    "@prosekit/solid",
-    "@prosekit/svelte",
-    "@prosekit/vue",
-    "prosekit",
-    "prosekit-example-lit",
-    "prosekit-example-preact",
-    "prosekit-example-react",
-    "prosekit-example-solid",
-    "prosekit-example-svelte",
-    "prosekit-example-vanilla",
-    "prosekit-example-vue",
-    "prosekit-example-vue-lib",
-    "prosekit-playground",
-    "prosekit-website"
-  ],
+  "ignoreDeps": [],
   "extends": ["github>ocavue/config-renovate"]
 }

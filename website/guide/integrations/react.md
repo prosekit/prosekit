@@ -63,7 +63,7 @@ import App from '../../components/vue-code-block/editor.vue'
 We begin by creating a `CodeBlockView` component to render the node. This component receives [`ReactNodeViewProps`](/references/react/#reactnodeviewoptions) as props, which include the node and other useful details.
 
 ::: code-group
-<<< @/../playground/examples/react-code-block/react-block-view.tsx [react-block-view.tsx]
+<<< @/../playground/examples/react-code-block/code-block-view.tsx [code-block-view.tsx]
 :::
 
 `CodeBlockView` renders a `LanguageSelector` component (the button in the top left corner) and a `<pre>` element to hold the code. We bind the `contentRef` to the `<pre>` element, which allows the editor to manage its content.

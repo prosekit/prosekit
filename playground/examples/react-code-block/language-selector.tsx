@@ -2,7 +2,8 @@ import { ComboBox } from 'prosekit/react/combo-box'
 import { ComboBoxInput } from 'prosekit/react/combo-box-input'
 import { ComboBoxItem } from 'prosekit/react/combo-box-item'
 import { ComboBoxList } from 'prosekit/react/combo-box-list'
-import { useState, useRef } from 'react'
+import { useRef, useState } from 'react'
+
 import { languages } from './shikiji'
 
 export default function LanguageSelector({
@@ -10,7 +11,7 @@ export default function LanguageSelector({
   setLanguage,
 }: {
   language?: string
-  setLanguage: (value: string) => void
+  setLanguage: (language: string) => void
 }) {
   const [showComboBox, setShowComboBox] = useState(false)
 

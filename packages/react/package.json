@@ -46,9 +46,9 @@
   },
   "dependencies": {
     "@lit/react": "^1.0.2",
-    "@prosekit/core": "^0.1.0",
-    "@prosekit/lit": "^0.1.0",
-    "@prosekit/pm": "^0.1.0",
+    "@prosekit/core": "^0.1.8",
+    "@prosekit/lit": "^0.1.4",
+    "@prosekit/pm": "^0.1.1",
     "@prosemirror-adapter/core": "^0.2.6"
   },
   "peerDependencies": {
@@ -66,7 +66,7 @@
   "devDependencies": {
     "@prosekit/dev": "*",
     "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.17",
+    "@types/react-dom": "^18.2.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tsup": "^8.0.1",

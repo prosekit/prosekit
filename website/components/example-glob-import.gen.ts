@@ -173,10 +173,10 @@ const modules = import.meta.glob([
   "../../playground/examples/svelte-slash-menu/editor.svelte",
   "../../playground/examples/svelte-slash-menu/extension.ts",
   "../../playground/examples/svelte-slash-menu/slash-menu.svelte",
-  "../../playground/examples/svelte-word-count/editor.svelte",
-  "../../playground/examples/svelte-word-count/extension.ts",
-  "../../playground/examples/svelte-word-count/use-readonly.ts",
-  "../../playground/examples/svelte-word-count/word-counter.svelte",
+  "../../playground/examples/svelte-word-counter/editor.svelte",
+  "../../playground/examples/svelte-word-counter/extension.ts",
+  "../../playground/examples/svelte-word-counter/use-readonly.ts",
+  "../../playground/examples/svelte-word-counter/word-counter.svelte",
   "../../playground/examples/solid-minimal/editor.tsx",
   "../../playground/examples/solid-heading/editor.tsx",
   "../../playground/examples/solid-heading/extension.ts",
@@ -972,22 +972,22 @@ const examples = {
       "code": modules['../../playground/examples/svelte-slash-menu/slash-menu.svelte']
     }
   },
-  "svelte-word-count": {
+  "svelte-word-counter": {
     "/editor.svelte": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-word-count/editor.svelte']
+      "code": modules['../../playground/examples/svelte-word-counter/editor.svelte']
     },
     "/extension.ts": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-word-count/extension.ts']
+      "code": modules['../../playground/examples/svelte-word-counter/extension.ts']
     },
     "/use-readonly.ts": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-word-count/use-readonly.ts']
+      "code": modules['../../playground/examples/svelte-word-counter/use-readonly.ts']
     },
     "/word-counter.svelte": {
       "hidden": false,
-      "code": modules['../../playground/examples/svelte-word-count/word-counter.svelte']
+      "code": modules['../../playground/examples/svelte-word-counter/word-counter.svelte']
     }
   },
   "solid-minimal": {

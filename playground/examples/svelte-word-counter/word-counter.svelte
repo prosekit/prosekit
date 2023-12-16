@@ -1,7 +1,7 @@
 <script lang="ts">
 import { useEditor } from 'prosekit/svelte'
-import type { EditorExtension } from './extension'
 import { derived } from 'svelte/store'
+import type { EditorExtension } from './extension'
 
 const editor = useEditor<EditorExtension>({ update: true })
 

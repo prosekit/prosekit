@@ -423,7 +423,7 @@ examples:
         hidden: false
       - path: slash-menu.svelte
         hidden: false
-  - name: svelte-word-count
+  - name: svelte-word-counter
     files:
       - path: editor.svelte
         hidden: false

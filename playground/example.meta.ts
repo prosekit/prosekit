@@ -893,7 +893,7 @@ export const exampleMeta = {
       ]
     },
     {
-      "name": "svelte-word-count",
+      "name": "svelte-word-counter",
       "files": [
         {
           "path": "editor.svelte",

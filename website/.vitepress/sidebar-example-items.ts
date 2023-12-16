@@ -167,8 +167,8 @@ export const exampleItems = [
     "link": "/examples/svelte-slash-menu"
   },
   {
-    "text": "svelte-word-count",
-    "link": "/examples/svelte-word-count"
+    "text": "svelte-word-counter",
+    "link": "/examples/svelte-word-counter"
   },
   {
     "text": "solid-minimal",

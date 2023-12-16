@@ -84,7 +84,7 @@
 
 - [svelte-slash-menu](./examples/svelte-slash-menu)
 
-- [svelte-word-count](./examples/svelte-word-count)
+- [svelte-word-counter](./examples/svelte-word-counter)
 
 - [solid-minimal](./examples/solid-minimal)
 

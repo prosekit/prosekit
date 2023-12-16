@@ -1,6 +1,6 @@
 # CodeBlock
 
-The `codeBlock` node is for representing blocks of code within your document.
+The `codeBlock` node is designed to represent blocks of code within your document.
 
 <script setup>
 import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
@@ -16,11 +16,19 @@ import App from '../../components/vue-code-block/editor.vue'
 <ExamplePlaygroundLazy example="react-code-block" />
 :::
 
+## Usage
+
+```ts
+import { defineCodeBlock } from 'prosekit/extensions/code-block'
+
+const extension = defineCodeBlock()
+```
+
 ## Syntax Highlighting
 
-The `codeBlock` node comes with support for syntax highlighting, thanks to the [prosemirror-highlight] library. You have the flexibility to choose from a variety of syntax highlighters, including [Shiki], [Shikiji], [lowlight] (which is based on [Highlight.js]) and [refractor] (which is based on [Prism]). Below, you'll find an example of how to use the [Shikiji] library.
+The `codeBlock` node includes support for syntax highlighting, powered by the [prosemirror-highlight] library. This feature provides the flexibility to select from a range of syntax highlighters, such as [Shiki], [Shikiji], [lowlight] (based on [Highlight.js]) and [refractor] (based on [Prism]). Below is an example demonstrating how to use the [Shikiji] library.
 
-Start by installing the necessary dependencies:
+First, install the necessary dependencies:
 
 ::: code-group
 
@@ -38,9 +46,31 @@ pnpm add prosemirror-highlight shikiji
 
 :::
 
-Once the dependencies are installed, you can specify the theme and language for the syntax highlighting. Then, create a ProseKit extension function as shown below:
+After installing the dependencies, you can set the theme and language for the syntax highlighting and create a Shikiji highlighter instance:
 
-<<< @/../playground/examples/react-toolbar/shikiji.ts
+```ts
+import { getHighlighter } from 'shikiji'
+
+const highlighter = await getHighlighter({
+  themes: ['github-light'],
+  langs: ['javascript', 'typescript'],
+})
+```
+
+Lastly, create a ProseKit extension function that utilizes the Shikiji highlighter instance:
+
+```ts
+import { createParser } from 'prosemirror-highlight/shikiji'
+import { defineCodeBlockHighlight } from 'prosekit/extensions/code-block'
+
+const parser = createParser(highlighter)
+
+function defineCodeBlockShikiji() {
+  return defineCodeBlockHighlight({ parser })
+}
+```
+
+For more details on how to use the other syntax highlighters, refer to the [prosemirror-highlight] documentation.
 
 [prosemirror-highlight]: https://github.com/ocavue/prosemirror-highlight
 [lowlight]: https://github.com/wooorm/lowlight

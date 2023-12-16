@@ -1,5 +1,5 @@
-import { definePlugin } from '@prosekit/core'
-import { type Parser, createHighlightPlugin } from 'prosemirror-highlight'
+import { definePlugin, type Extension } from '@prosekit/core'
+import { createHighlightPlugin, type Parser } from 'prosemirror-highlight'
 
 /**
  * @public
@@ -20,7 +20,7 @@ export function defineCodeBlockHighlight({
   parser,
 }: {
   parser: HighlightParser
-}) {
+}): Extension {
   return definePlugin(
     createHighlightPlugin({ parser, nodeTypes: ['codeBlock'] }),
   )

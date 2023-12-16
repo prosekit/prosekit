@@ -67,6 +67,8 @@ const parser = createParser(highlighter)
 defineCodeBlockHighlight({ parser })
 ```
 
+Check the [prosemirror-highlight] documentation for more information on how to use the other syntax highlighters.
+
 [prosemirror-highlight]: https://github.com/ocavue/prosemirror-highlight
 [lowlight]: https://github.com/wooorm/lowlight
 [Highlight.js]: https://github.com/highlightjs/highlight.js

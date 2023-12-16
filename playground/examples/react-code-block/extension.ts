@@ -16,6 +16,7 @@ export function defineExtension() {
     defineCodeBlockHighlight({ parser }),
     defineReactNodeView({
       name: 'codeBlock',
+      contentAs: 'code',
       component: CodeBlockView,
     }),
   ])

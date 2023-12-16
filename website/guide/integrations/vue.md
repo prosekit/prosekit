@@ -20,9 +20,10 @@ If you pass `{ update: true }`, it will trigger a re-render when the editor stat
 const editor = useEditor({ update: true })
 ```
 
-For example, you can calculate the word count of the document after every change
-and display it in the UI. Check out [this example](/examples/vue-word-count) for
-a complete implementation.
+This is usefull if you want to update the UI based on the current editor state.
+For example, you can calculate the word count of the document after every
+change. Check out [vue-word-count](/examples/vue-word-count) for a
+complete implementation.
 
 ## `useExtension`
 

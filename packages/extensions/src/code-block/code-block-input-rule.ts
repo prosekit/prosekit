@@ -10,7 +10,6 @@ import type { CodeBlockAttrs } from './code-block-types';
  *
  * @public
  */
-
 export function defineCodeBlockInputRule() {
   return defineInputRule(({ schema }) => {
     const nodeType = getNodeType(schema, 'codeBlock');

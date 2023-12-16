@@ -6,7 +6,6 @@ import type { CodeBlockAttrs } from './code-block-types';
  *
  * @public
  */
-
 export function defineCodeBlockSpec() {
   return defineNodeSpec({
     name: 'codeBlock',

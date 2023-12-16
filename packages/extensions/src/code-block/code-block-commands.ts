@@ -5,7 +5,6 @@ import { defineCommands } from '@prosekit/core';
  *
  * @public
  */
-
 export function defineCodeBlockCommands() {
   return defineCommands({
     setCodeBlockLanguage: (language: string) => (state, dispatch) => {

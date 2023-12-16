@@ -43,6 +43,10 @@ export const exampleItems = [
     "link": "/examples/react-user-menu"
   },
   {
+    "text": "react-word-counter",
+    "link": "/examples/react-word-counter"
+  },
+  {
     "text": "vue-minimal",
     "link": "/examples/vue-minimal"
   },
@@ -115,6 +119,10 @@ export const exampleItems = [
     "link": "/examples/vue-user-menu"
   },
   {
+    "text": "vue-word-counter",
+    "link": "/examples/vue-word-counter"
+  },
+  {
     "text": "preact-minimal",
     "link": "/examples/preact-minimal"
   },
@@ -157,6 +165,10 @@ export const exampleItems = [
   {
     "text": "svelte-slash-menu",
     "link": "/examples/svelte-slash-menu"
+  },
+  {
+    "text": "svelte-word-counter",
+    "link": "/examples/svelte-word-counter"
   },
   {
     "text": "solid-minimal",

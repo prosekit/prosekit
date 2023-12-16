@@ -110,6 +110,10 @@ export default defineConfig({
               text: 'Vue',
               link: '/guide/integrations/vue',
             },
+            {
+              text: 'Svelte',
+              link: '/guide/integrations/svelte',
+            },
           ],
         },
 

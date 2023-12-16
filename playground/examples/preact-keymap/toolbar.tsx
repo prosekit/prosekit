@@ -1,3 +1,5 @@
+import { useState } from 'preact/hooks'
+
 import Toggle from './toggle'
 import { useSubmitKeymap } from './use-submit-keymap'
 
@@ -6,7 +8,8 @@ export default function Toolbar({
 }: {
   onSubmit: (hotkey: string) => void
 }) {
-  const { hotkey, setHotkey } = useSubmitKeymap(onSubmit)
+  const [hotkey, setHotkey] = useState<'Shift-Enter' | 'Enter'>('Shift-Enter')
+  useSubmitKeymap(hotkey, onSubmit)
 
   return (
     <div className="TOOLBAR">

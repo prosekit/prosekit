@@ -1,10 +1,12 @@
 <script lang="ts">
+import { writable } from 'svelte/store'
 import Toggle from './toggle.svelte'
 import { useSubmitKeymap } from './use-submit-keymap'
 
 export let onSubmit: (hotkey: string) => void
 
-const { hotkey } = useSubmitKeymap(onSubmit)
+const hotkey = writable<'Shift-Enter' | 'Enter'>('Shift-Enter')
+useSubmitKeymap(hotkey, onSubmit)
 </script>
 
 <div class="TOOLBAR">

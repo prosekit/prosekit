@@ -1,22 +1,20 @@
 import { type Keymap } from 'prosekit/core'
 import { useKeymap } from 'prosekit/vue'
-import { ref, computed, type Ref } from 'vue'
+import { computed, type Ref } from 'vue'
 
-export function useSubmitKeymap(onSubmit: (hotkey: string) => void) {
-  const hotkey = ref<'Shift-Enter' | 'Enter'>('Shift-Enter')
-
+export function useSubmitKeymap(
+  hotkey: Ref<'Shift-Enter' | 'Enter'>,
+  onSubmit: (hotkey: string) => void,
+) {
   const keymap: Ref<Keymap> = computed(() => {
     return {
       [hotkey.value]: () => {
         onSubmit(hotkey.value)
-        // Returning true means that the keypress has been handled and should
-        // not be propagated further.
+        // Return true to stop further keypress propagation.
         return true
       },
     }
   })
 
   useKeymap(keymap)
-
-  return { hotkey }
 }

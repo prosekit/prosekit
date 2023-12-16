@@ -8,15 +8,22 @@ ProseKit is designed to work seamlessly with Vue.
 
 ## `useEditor`
 
-Retrieves the current editor instance within a `ProseKit` component. If you pass `{update: true}`, it will trigger a re-render when the editor state changes.
+Retrieves the current editor instance within a `ProseKit` component.
 
 ```ts
 const editor = useEditor()
 ```
 
+If you pass `{ update: true }`, it will trigger a re-render when the editor state changes.
+
 ```ts
 const editor = useEditor({ update: true })
 ```
+
+This is usefull if you want to update the UI based on the current editor state.
+For example, you can calculate the word count of the document after every
+change. Check out [vue-word-counter](/examples/vue-word-counter) for a
+complete implementation.
 
 ## `useExtension`
 
@@ -31,21 +38,8 @@ useExtension(extension)
 
 Adds key bindings to the editor.
 
-```ts
-import { type Keymap } from 'prosekit/core'
-import { useKeymap } from 'prosekit/vue'
-import { computed } from 'vue'
+::: code-group
+<<< @/../playground/examples/vue-keymap/use-submit-keymap.ts
+:::
 
-const keymap: Keymap = computed((): Keymap => {
-  return {
-    'Shift-Enter': () => {
-      window.alert(`Shift-Enter is pressed!`)
-      return true
-    },
-  }
-})
-
-useKeymap(keymap)
-```
-
-For a comprehensive example of how to use `useKeymap`, refer to [this example](/examples/vue-keymap).
+Check out [this example](/examples/vue-keymap) for a complete implementation.

@@ -22,6 +22,8 @@
 
 - [react-user-menu](./examples/react-user-menu)
 
+- [react-word-counter](./examples/react-word-counter)
+
 - [vue-minimal](./examples/vue-minimal)
 
 - [vue-bold](./examples/vue-bold)
@@ -58,6 +60,8 @@
 
 - [vue-user-menu](./examples/vue-user-menu)
 
+- [vue-word-counter](./examples/vue-word-counter)
+
 - [preact-minimal](./examples/preact-minimal)
 
 - [preact-keymap](./examples/preact-keymap)
@@ -79,6 +83,8 @@
 - [svelte-readonly](./examples/svelte-readonly)
 
 - [svelte-slash-menu](./examples/svelte-slash-menu)
+
+- [svelte-word-counter](./examples/svelte-word-counter)
 
 - [solid-minimal](./examples/solid-minimal)
 

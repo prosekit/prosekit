@@ -50,6 +50,9 @@ const modules = import.meta.glob([
   "../../playground/examples/react-user-menu/tag-menu.tsx",
   "../../playground/examples/react-user-menu/user-data.ts",
   "../../playground/examples/react-user-menu/user-menu.tsx",
+  "../../playground/examples/react-word-counter/editor.tsx",
+  "../../playground/examples/react-word-counter/extension.ts",
+  "../../playground/examples/react-word-counter/word-counter.tsx",
   "../../playground/examples/vue-minimal/editor.vue",
   "../../playground/examples/vue-bold/editor.vue",
   "../../playground/examples/vue-bold/extension.ts",
@@ -129,6 +132,9 @@ const modules = import.meta.glob([
   "../../playground/examples/vue-user-menu/tag-menu.vue",
   "../../playground/examples/vue-user-menu/user-data.ts",
   "../../playground/examples/vue-user-menu/user-menu.vue",
+  "../../playground/examples/vue-word-counter/editor.vue",
+  "../../playground/examples/vue-word-counter/extension.ts",
+  "../../playground/examples/vue-word-counter/word-counter.vue",
   "../../playground/examples/preact-minimal/editor.tsx",
   "../../playground/examples/preact-keymap/editor.tsx",
   "../../playground/examples/preact-keymap/extension.ts",
@@ -167,6 +173,10 @@ const modules = import.meta.glob([
   "../../playground/examples/svelte-slash-menu/editor.svelte",
   "../../playground/examples/svelte-slash-menu/extension.ts",
   "../../playground/examples/svelte-slash-menu/slash-menu.svelte",
+  "../../playground/examples/svelte-word-counter/editor.svelte",
+  "../../playground/examples/svelte-word-counter/extension.ts",
+  "../../playground/examples/svelte-word-counter/use-readonly.ts",
+  "../../playground/examples/svelte-word-counter/word-counter.svelte",
   "../../playground/examples/solid-minimal/editor.tsx",
   "../../playground/examples/solid-heading/editor.tsx",
   "../../playground/examples/solid-heading/extension.ts",
@@ -406,6 +416,20 @@ const examples = {
     "/user-menu.tsx": {
       "hidden": false,
       "code": modules['../../playground/examples/react-user-menu/user-menu.tsx']
+    }
+  },
+  "react-word-counter": {
+    "/editor.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-word-counter/editor.tsx']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-word-counter/extension.ts']
+    },
+    "/word-counter.tsx": {
+      "hidden": false,
+      "code": modules['../../playground/examples/react-word-counter/word-counter.tsx']
     }
   },
   "vue-minimal": {
@@ -760,6 +784,20 @@ const examples = {
       "code": modules['../../playground/examples/vue-user-menu/user-menu.vue']
     }
   },
+  "vue-word-counter": {
+    "/editor.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-word-counter/editor.vue']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-word-counter/extension.ts']
+    },
+    "/word-counter.vue": {
+      "hidden": false,
+      "code": modules['../../playground/examples/vue-word-counter/word-counter.vue']
+    }
+  },
   "preact-minimal": {
     "/editor.tsx": {
       "hidden": false,
@@ -932,6 +970,24 @@ const examples = {
     "/slash-menu.svelte": {
       "hidden": false,
       "code": modules['../../playground/examples/svelte-slash-menu/slash-menu.svelte']
+    }
+  },
+  "svelte-word-counter": {
+    "/editor.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-word-counter/editor.svelte']
+    },
+    "/extension.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-word-counter/extension.ts']
+    },
+    "/use-readonly.ts": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-word-counter/use-readonly.ts']
+    },
+    "/word-counter.svelte": {
+      "hidden": false,
+      "code": modules['../../playground/examples/svelte-word-counter/word-counter.svelte']
     }
   },
   "solid-minimal": {

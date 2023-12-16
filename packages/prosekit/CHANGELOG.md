@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.1.13
+
+### Patch Changes
+
+- [`b29e75b`](https://github.com/ocavue/prosekit/commit/b29e75b6566304b3977c8baca4442bb696d5483b) ![@prosekit/extensions](https://img.shields.io/badge/prosekit%2Fextensions-444444)
+
+  `defineCodeBlockHighlight` is the recommended way to add syntax highlighting to code blocks. The `parser` option for `defineCodeBlock` is deprecated and will be removed in a future version.
+
 ## 0.1.12
 
 ### Patch Changes

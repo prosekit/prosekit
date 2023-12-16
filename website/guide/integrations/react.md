@@ -43,3 +43,45 @@ Adds key bindings to the editor.
 :::
 
 Check out [react-keymap](/examples/react-keymap) for a complete implementation.
+
+## `defineReactNodeView`
+
+Renders a node using a React component.
+
+In some cases, React might be a more convenient tool for implementing certain interactions. For instance, consider the code blocks below, each featuring a language button in the top left corner. Clicking this button opens a combobox that lets you change the language of the code block. This functionality is implemented using a React component.
+
+<script setup>
+import App from '../../components/vue-code-block/editor.vue'
+</script>
+
+:::tabs key:framework
+== Preview
+
+<ClientOnly><App/></ClientOnly>
+:::
+
+We start by defining a `CodeBlockView` component to render the node. This component receives [`ReactNodeViewProps`](/references/react/#reactnodeviewoptions) as props, which include the node and other useful information.
+
+::: code-group
+<<< @/../playground/examples/react-code-block/react-block-view.tsx [react-block-view.tsx]
+:::
+
+`CodeBlockView` renders a `LanguageSelector` component (the button in the top left corner) and a `<pre>` element to hold the code. We bind the `contentRef` to the `<pre>` element, allowing the editor to manage its content.
+
+Once the component is defined, we can register it as a node view using [`defineReactNodeView`](/references/react/#defineReactNodeView). The `name` is the node's name, in this case `"codeBlock"`. `contentAs` is the property name that contains the node's content. Here, it's `"code"`, which means a `<code>` element will be rendered inside the `<pre>` element. `component` is the component we just defined.
+
+```ts
+import {
+  defineReactNodeView,
+  type ReactNodeViewComponent,
+} from 'prosekit/react'
+import CodeBlockView from './code-block-view.tsx'
+
+defineReactNodeView({
+  name: 'codeBlock',
+  contentAs: 'code',
+  component: CodeBlockView,
+})
+```
+
+Check out [react-code-block](/examples/react-code-block) for a complete implementation.

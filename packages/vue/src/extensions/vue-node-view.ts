@@ -1,18 +1,30 @@
-import { defineNodeViewFactory, type Extension } from '@prosekit/core'
+import {
+  defineNodeViewFactory,
+  type BaseNodeViewOptions,
+  type Extension,
+} from '@prosekit/core'
 
 import type { NodeViewFactory } from '../views/node-view/node-view-context'
-import type { VueNodeViewUserOptions } from '../views/node-view/vue-node-view-options'
+import type {
+  VueNodeViewComponent,
+  VueNodeViewUserOptions,
+} from '../views/node-view/vue-node-view-options'
 
 /**
  * Options for {@link defineVueNodeView}.
  *
  * @public
  */
-export interface VueNodeViewOptions extends VueNodeViewUserOptions {
+export interface VueNodeViewOptions extends BaseNodeViewOptions {
   /**
-   * The name of the node.
+   * The name of the node type.
    */
   name: string
+
+  /**
+   * The Vue component to render the node.
+   */
+  component: VueNodeViewComponent
 }
 
 /**

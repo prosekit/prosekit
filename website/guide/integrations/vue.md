@@ -48,7 +48,7 @@ Check out [vue-keymap](/examples/vue-keymap) for a complete implementation.
 
 Renders a node using a Vue component.
 
-Sometimes it's easier to implement some interactions using Vue. For example, in the code blocks below, there is a button at the top left corner that allows you to popup a combobox to change the language of the code block. This is implemented using a Vue component.
+In some cases, Vue might be a more convenient tool for implementing certain interactions. For instance, consider the code blocks below, each featuring a language button in the top left corner. Clicking this button opens a combobox that lets you change the language of the code block. This functionality is implemented using a Vue component.
 
 <script setup>
 import App from '../../components/vue-code-block/editor.vue'
@@ -60,15 +60,15 @@ import App from '../../components/vue-code-block/editor.vue'
 <ClientOnly><App/></ClientOnly>
 :::
 
-We first define a component `CodeBlockView` that renders the node. The component receives [`VueNodeViewProps`](/api/interfaces/vue-node-view-props) as props. The props contains the node and some other useful information.
+We start by defining a `CodeBlockView` component to render the node. This component receives [`VueNodeViewProps`](/references/vue/#vuenodeviewoptions) as props, which include the node and other useful information.
 
 ::: code-group
 <<< @/../playground/examples/vue-code-block/code-block-view.vue [code-block-view.vue]
 :::
 
-`CodeBlockView` would render a `LanguageSelector` component, which is that button at the top left corner, and also a `<pre>` element to contain the code. We bind the `contentRef` to the `<pre>` element so that the editor can manage its content.
+`CodeBlockView` renders a `LanguageSelector` component (the button in the top left corner) and a `<pre>` element to hold the code. We bind the `contentRef` to the `<pre>` element, allowing the editor to manage its content.
 
-After the component is defined, we can register it as a node view using `defineVueNodeView`. The `name` is the name of the node, which is `"codeBlock"`. `contentAs` is the name of the property that contains the content of the node. In this case, it's `"code"`, which means that a `<code>` element would be rendered inside the `<pre>` element. `component` is the component we just defined.
+Once the component is defined, we can register it as a node view using [`defineVueNodeView`](/references/vue/#definevuenodeview). The `name` is the node's name, in this case `"codeBlock"`. `contentAs` is the property name that contains the node's content. Here, it's `"code"`, which means a `<code>` element will be rendered inside the `<pre>` element. `component` is the component we just defined.
 
 ```ts
 import { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'
@@ -81,4 +81,4 @@ defineVueNodeView({
 })
 ```
 
-You can check out [vue-code-block](/examples/vue-code-block) for a complete implementation.
+Check out [vue-code-block](/examples/vue-code-block) for a complete implementation.

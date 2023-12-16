@@ -16,6 +16,14 @@ import App from '../../components/vue-code-block/editor.vue'
 <ExamplePlaygroundLazy example="react-code-block" />
 :::
 
+## Usage
+
+```ts
+import { defineCodeBlock } from 'prosekit/extensions/code-block'
+
+const extension = defineCodeBlock()
+```
+
 ## Syntax Highlighting
 
 The `codeBlock` node comes with support for syntax highlighting, thanks to the [prosemirror-highlight] library. You have the flexibility to choose from a variety of syntax highlighters, including [Shiki], [Shikiji], [lowlight] (which is based on [Highlight.js]) and [refractor] (which is based on [Prism]). Below, you'll find an example of how to use the [Shikiji] library.
@@ -38,9 +46,31 @@ pnpm add prosemirror-highlight shikiji
 
 :::
 
-Once the dependencies are installed, you can specify the theme and language for the syntax highlighting. Then, create a ProseKit extension function as shown below:
+Once the dependencies are installed, you can specify the theme and language for the syntax highlighting and create a Shikiji highlighter instance:
 
-<<< @/../playground/examples/react-toolbar/shikiji.ts
+```ts
+import { getHighlighter } from 'shikiji'
+
+export const languages = ['javascript', 'python', 'cpp', 'typescript' /* ... */]
+const themes = ['github-light']
+const highlighter = await getHighlighter({ themes, langs: languages })
+```
+
+Next, you'll need to create a ProseKit extension function that uses the Shikiji highlighter instance:
+
+```ts
+import { createParser } from 'prosemirror-highlight/shikiji'
+
+const parser = createParser(highlighter)
+```
+
+Finally, you can create the `codeBlock` extension:
+
+````ts
+import { defineCodeBlockHighlight } from 'prosekit/extensions/code-block'
+
+defineCodeBlockHighlight({ parser })
+```Ø
 
 [prosemirror-highlight]: https://github.com/ocavue/prosemirror-highlight
 [lowlight]: https://github.com/wooorm/lowlight
@@ -49,3 +79,4 @@ Once the dependencies are installed, you can specify the theme and language for 
 [Shikiji]: https://github.com/antfu/shikiji
 [refractor]: https://github.com/wooorm/refractor
 [Prism]: https://github.com/PrismJS/prism
+````

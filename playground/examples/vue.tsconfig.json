@@ -4,5 +4,5 @@
     "composite": true,
     "outDir": ".temp"
   },
-  "include": ["./vue-*/*.ts", "./vue-*/*.vue"]
+  "include": ["./vue-*/*.ts", "./vue-*/*.vue", "./shims-vue.d.ts"]
 }

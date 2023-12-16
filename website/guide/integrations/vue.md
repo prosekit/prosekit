@@ -22,7 +22,7 @@ const editor = useEditor({ update: true })
 
 This is usefull if you want to update the UI based on the current editor state.
 For example, you can calculate the word count of the document after every
-change. Check out [vue-word-count](/examples/vue-word-count) for a
+change. Check out [vue-word-counter](/examples/vue-word-counter) for a
 complete implementation.
 
 ## `useExtension`

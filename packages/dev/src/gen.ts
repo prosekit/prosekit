@@ -8,7 +8,6 @@ import { genExampleMetaYaml } from './gen-example-meta-yaml.js'
 import { genExampleSharedFiles } from './gen-example-shared-files.js'
 import { genPackageJson } from './gen-package-json.js'
 import { genPlaygroundPages } from './gen-playground-pages.js'
-import { genRenovateJson } from './gen-renovate-json.js'
 import { genSizeLimitJson } from './gen-size-limit-json.js'
 import { genTsconfigJson } from './gen-tsconfig-json.js'
 import { genTypedocJson } from './gen-typedoc-json.js'
@@ -26,7 +25,6 @@ async function genAll(): Promise<boolean> {
   await genPackageJson()
   await genTsconfigJson()
   await genTypedocJson()
-  await genRenovateJson()
   await genChangesetConfigJson()
   await genSizeLimitJson()
   await genChangeset()

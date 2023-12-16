@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.1.14
+
+### Patch Changes
+
+- [`d76c28b`](https://github.com/ocavue/prosekit/commit/d76c28be9597cf6bae33acfad91d804666497e61) ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  Export `BaseNodeViewOptions` interface. This is useful for defining node views in React, Vue and other frameworks.
+
 ## 0.1.13
 
 ### Patch Changes

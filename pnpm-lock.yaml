@@ -348,7 +348,7 @@ importers:
         specifier: 0.1.0
         version: link:../basic
       '@prosekit/core':
-        specifier: 0.1.8
+        specifier: 0.1.9
         version: link:../core
       '@prosekit/extensions':
         specifier: 0.1.6

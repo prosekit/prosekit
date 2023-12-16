@@ -19,7 +19,12 @@ const frameworkSharedFiles = [
 
   'image-upload-popover.tsx',
   'image-upload-popover.vue',
-  'image-upload-popover.svelte',
+
+  'language-selector.tsx',
+  'language-selector.vue',
+
+  'code-block-view.tsx',
+  'code-block-view.vue',
 
   'slash-menu.tsx',
   'slash-menu.vue',

@@ -28,6 +28,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "language-selector.tsx",
+          "hidden": false
+        },
+        {
           "path": "package.json",
           "hidden": false
         },
@@ -183,10 +187,6 @@ export const exampleMeta = {
       "name": "react-toolbar",
       "files": [
         {
-          "path": "code-block-view.tsx",
-          "hidden": false
-        },
-        {
           "path": "editor.tsx",
           "hidden": false
         },
@@ -200,10 +200,6 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
-          "hidden": false
-        },
-        {
-          "path": "shikiji.ts",
           "hidden": false
         },
         {
@@ -326,6 +322,10 @@ export const exampleMeta = {
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "language-selector.vue",
           "hidden": false
         },
         {

@@ -1,4 +1,3 @@
-export { getId as _getId } from './utils/get-id'
 export { addMark } from './commands/add-mark'
 export { insertNode } from './commands/insert-node'
 export { removeMark } from './commands/remove-mark'
@@ -38,6 +37,7 @@ export {
 export { defineText } from './extensions/text'
 export { defineUpdateHandler } from './extensions/update-handler'
 export { Facet, type FacetOptions } from './facets/facet'
+export type { BaseNodeViewOptions } from './types/base-node-view-options'
 export { type CommandArgs } from './types/command'
 export {
   type Extension,
@@ -51,6 +51,7 @@ export { type ExtensionTyping } from './types/extension-typing'
 export type { NodeJSON, SelectionJSON, StateJSON } from './types/model'
 export { Priority } from './types/priority'
 export { type SimplifyUnion } from './types/simplify-union'
+export { getId as _getId } from './utils/get-id'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
 export {

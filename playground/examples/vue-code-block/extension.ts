@@ -16,6 +16,7 @@ export function defineExtension() {
     defineCodeBlockHighlight({ parser }),
     defineVueNodeView({
       name: 'codeBlock',
+      contentAs: 'code',
       component: CodeBlockView as VueNodeViewComponent,
     }),
   ])

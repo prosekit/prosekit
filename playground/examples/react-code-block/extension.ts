@@ -4,7 +4,10 @@ import {
   defineCodeBlock,
   defineCodeBlockHighlight,
 } from 'prosekit/extensions/code-block'
-import { defineReactNodeView } from 'prosekit/react'
+import {
+  defineReactNodeView,
+  type ReactNodeViewComponent,
+} from 'prosekit/react'
 
 import CodeBlockView from './code-block-view'
 import { parser } from './shikiji'
@@ -16,7 +19,8 @@ export function defineExtension() {
     defineCodeBlockHighlight({ parser }),
     defineReactNodeView({
       name: 'codeBlock',
-      component: CodeBlockView,
+      contentAs: 'code',
+      component: CodeBlockView satisfies ReactNodeViewComponent,
     }),
   ])
 }

@@ -1,7 +1,5 @@
 {
   "dependencyDashboard": true,
-  "ignoreDeps": [
-    "@prosekit/dev"
-  ],
+  "ignoreDeps": ["@prosekit/dev"],
   "extends": ["github>ocavue/config-renovate"]
 }

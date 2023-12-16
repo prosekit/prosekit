@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { VueNodeViewProps } from 'prosekit/vue'
-import { computed, defineProps, ref } from 'vue'
-import LanguageSelector from './language-selector.vue'
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
+import type { VueNodeViewProps } from 'prosekit/vue'
+import { computed, defineProps } from 'vue'
+import LanguageSelector from './language-selector.vue'
 
 const props = defineProps<VueNodeViewProps>()
 
@@ -18,5 +18,5 @@ const setLanguage = (language: string) => {
 
 <template>
   <LanguageSelector :language="language" :setLanguage="setLanguage" />
-  <pre :ref="contentRef" :data-language="props.node.value.attrs.language"></pre>
+  <pre :ref="props.contentRef" :data-language="language"></pre>
 </template>

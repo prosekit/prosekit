@@ -51,9 +51,10 @@ Once the dependencies are installed, you can specify the theme and language for 
 ```ts
 import { getHighlighter } from 'shikiji'
 
-export const languages = ['javascript', 'python', 'cpp', 'typescript' /* ... */]
-const themes = ['github-light']
-const highlighter = await getHighlighter({ themes, langs: languages })
+const highlighter = await getHighlighter({
+  themes: ['github-light'],
+  langs: ['javascript', 'typescript'],
+})
 ```
 
 Next, you'll need to create a ProseKit extension function that uses the Shikiji highlighter instance:
@@ -66,11 +67,11 @@ const parser = createParser(highlighter)
 
 Finally, you can create the `codeBlock` extension:
 
-````ts
+```ts
 import { defineCodeBlockHighlight } from 'prosekit/extensions/code-block'
 
 defineCodeBlockHighlight({ parser })
-```Ø
+```
 
 [prosemirror-highlight]: https://github.com/ocavue/prosemirror-highlight
 [lowlight]: https://github.com/wooorm/lowlight
@@ -79,4 +80,3 @@ defineCodeBlockHighlight({ parser })
 [Shikiji]: https://github.com/antfu/shikiji
 [refractor]: https://github.com/wooorm/refractor
 [Prism]: https://github.com/PrismJS/prism
-````

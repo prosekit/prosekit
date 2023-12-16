@@ -1,5 +1,4 @@
-import { defineCodeBlock } from 'prosekit/extensions/code-block'
-import type { Parser } from 'prosemirror-highlight'
+import { type HighlightParser } from 'prosekit/extensions/code-block'
 import { createParser } from 'prosemirror-highlight/shikiji'
 import { getHighlighter } from 'shikiji'
 
@@ -27,8 +26,4 @@ export const languages = [
 ]
 const themes = ['github-light']
 const highlighter = await getHighlighter({ themes, langs: languages })
-const parser: Parser = createParser(highlighter)
-
-export function defineShikijiCodeBlock() {
-  return defineCodeBlock({ parser })
-}
+export const parser: HighlightParser = createParser(highlighter)

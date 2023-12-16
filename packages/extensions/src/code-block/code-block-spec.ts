@@ -1,5 +1,6 @@
-import { defineNodeSpec } from '@prosekit/core';
-import type { CodeBlockAttrs } from './code-block-types';
+import { defineNodeSpec } from '@prosekit/core'
+
+import type { CodeBlockAttrs } from './code-block-types'
 
 /**
  * Defines the `codeBlock` node spec.
@@ -25,13 +26,13 @@ export function defineCodeBlockSpec() {
       },
     ],
     toDOM(node) {
-      const attrs = node.attrs as CodeBlockAttrs;
+      const attrs = node.attrs as CodeBlockAttrs
       return [
         'pre',
         // TODO: remove class 'hljs'
         { 'data-language': attrs.language, class: 'hljs' },
         ['code', 0],
-      ];
+      ]
     },
-  });
+  })
 }

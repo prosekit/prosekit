@@ -58,40 +58,42 @@ export const ImageUploadPopover: FC<{
     <>
       <div ref={setAnchorElement}>{children}</div>
 
-      <Popover reference={anchorElement ?? undefined} active={open}>
-        <div className="IMAGE_UPLOAD_CARD">
-          <div>Select a local image file or enter a web image URL.</div>
+      <Popover
+        reference={anchorElement ?? undefined}
+        active={open}
+        className="IMAGE_UPLOAD_CARD"
+      >
+        <div>Select a local image file or enter a web image URL.</div>
 
-          {objectUrl ? null : (
-            <div>
-              <label>Web Image URL</label>
-              <input
-                className="IMAGE_UPLOAD_INPUT"
-                placeholder="https://placehold.co/128"
-                type="url"
-                onChange={handleWebUrlChange}
-              />
-            </div>
-          )}
+        {objectUrl ? null : (
+          <div>
+            <label>Web Image URL</label>
+            <input
+              className="IMAGE_UPLOAD_INPUT"
+              placeholder="https://placehold.co/128"
+              type="url"
+              onChange={handleWebUrlChange}
+            />
+          </div>
+        )}
 
-          {webUrl ? null : (
-            <div>
-              <label>Local Image</label>
-              <input
-                className="IMAGE_UPLOAD_INPUT"
-                accept="image/*"
-                type="file"
-                onChange={handleFileChange}
-              />
-            </div>
-          )}
+        {webUrl ? null : (
+          <div>
+            <label>Local Image</label>
+            <input
+              className="IMAGE_UPLOAD_INPUT"
+              accept="image/*"
+              type="file"
+              onChange={handleFileChange}
+            />
+          </div>
+        )}
 
-          {url ? (
-            <button className="IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
-              Upload Image
-            </button>
-          ) : null}
-        </div>
+        {url ? (
+          <button className="IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
+            Upload Image
+          </button>
+        ) : null}
       </Popover>
     </>
   )

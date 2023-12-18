@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.1.15
+
+### Patch Changes
+
+- [`b3c025f`](https://github.com/ocavue/prosekit/commit/b3c025fe5f5533908df44bdae833751dbf9b1ba7) ![@prosekit/lit](https://img.shields.io/badge/prosekit%2Flit-444444?logo=lit)
+
+  Fix a bug where the editor would scroll into view automatically.
+
 ## 0.1.14
 
 ### Patch Changes

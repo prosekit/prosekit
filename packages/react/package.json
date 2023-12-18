@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@lit/react": "^1.0.2",
-    "@prosekit/core": "^0.1.8",
+    "@prosekit/core": "^0.1.9",
     "@prosekit/lit": "^0.1.4",
     "@prosekit/pm": "^0.1.1",
     "@prosemirror-adapter/core": "^0.2.6"

@@ -30,4 +30,4 @@ Note that you would need to import the style file for the extension to work.
 
 ## API Reference
 
-- [prosekit/extensions/placeholder](/references/extensions/placeholder/)
+- [prosekit/extensions/placeholder](/references/extensions/placeholder)

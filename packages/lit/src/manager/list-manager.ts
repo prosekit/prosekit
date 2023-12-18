@@ -37,6 +37,10 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
     return this.getItems()
   }
 
+  get active(): boolean {
+    return this.getActive()
+  }
+
   get availableItems(): Item[] {
     return this.items?.filter((item) => !item.hidden) ?? []
   }
@@ -78,6 +82,8 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
   }
 
   public selectFirstItem() {
+    if (!this.active) return
+
     const item = this.firstItem
     const value = item ? this.getItemValue(item) : ''
     this.setSelectedValue(value, 'keyboard')
@@ -119,28 +125,28 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
   }
 
   handleArrowUp(): boolean {
-    if (!this.getActive()) return false
+    if (!this.active) return false
 
     this.updateSelectedByChange(-1)
     return true
   }
 
   handleArrowDown(): boolean {
-    if (!this.getActive()) return false
+    if (!this.active) return false
 
     this.updateSelectedByChange(+1)
     return true
   }
 
   handleEscape(): boolean {
-    if (!this.getActive()) return false
+    if (!this.active) return false
 
     this.onDismiss()
     return true
   }
 
   handleEnter(): boolean {
-    if (!this.getActive()) return false
+    if (!this.active) return false
 
     this.onSelect(this.selectedItem)
     return true

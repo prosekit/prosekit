@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  typedoc-plugin-markdown: 4.0.0-next.36
-
 patchedDependencies:
   prosemirror-highlightjs@0.9.1:
     hash: uj5ddgn5nj4ptnyl3ffi4zkeei
@@ -686,8 +683,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       typedoc-plugin-markdown:
-        specifier: 4.0.0-next.36
-        version: 4.0.0-next.36(typedoc@0.25.4)
+        specifier: ^4.0.0-next.38
+        version: 4.0.0-next.38(typedoc@0.25.4)
       typedoc-plugin-mdn-links:
         specifier: ^3.1.8
         version: 3.1.8(typedoc@0.25.4)
@@ -10125,8 +10122,8 @@ packages:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
     dev: true
 
-  /typedoc-plugin-markdown@4.0.0-next.36(typedoc@0.25.4):
-    resolution: {integrity: sha512-p2kA4hVlEcJvGffvL/Mn5V7o6qufMQNGnYCXIiXEtqKFZdJCsJ1nehNAEaeS0X0aenA7O+hu6f6U+pgbth7D/g==}
+  /typedoc-plugin-markdown@4.0.0-next.38(typedoc@0.25.4):
+    resolution: {integrity: sha512-XrjVxrTvoR85f+elTdSoo/lRVKqk77XntxZvDXYamuxD9c8RjAqAbztM0chcL0rvMOlMotUScRUIBdsGPE6kqA==}
     peerDependencies:
       typedoc: 0.25.x
     dependencies:

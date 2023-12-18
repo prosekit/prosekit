@@ -47,9 +47,7 @@
     "vitest": "^1.0.4"
   },
   "pnpm": {
-    "overrides": {
-      "typedoc-plugin-markdown": "4.0.0-next.36"
-    },
+    "overrides": {},
     "patchedDependencies": {
       "prosemirror-highlightjs@0.9.1": "patches/prosemirror-highlightjs@0.9.1.patch"
     }

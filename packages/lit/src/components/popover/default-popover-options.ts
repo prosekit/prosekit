@@ -17,7 +17,7 @@ const defaultDetectOverflowOptions = {
 export const defaultPopoverOptions: PopoverOptions = {
   placement: 'bottom',
   middleware: [
-    offset({ mainAxis: 8, crossAxis: 8 }),
+    offset({ mainAxis: 2, crossAxis: 0 }),
     shift({ ...defaultDetectOverflowOptions }),
     size({
       apply: ({ availableWidth, availableHeight, elements }) => {

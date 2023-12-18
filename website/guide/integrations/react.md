@@ -60,7 +60,7 @@ import App from '../../components/vue-code-block/editor.vue'
 <ClientOnly><App/></ClientOnly>
 :::
 
-We begin by creating a `CodeBlockView` component to render the node. This component receives [`ReactNodeViewProps`](/references/react/#reactnodeviewoptions) as props, which include the node and other useful details.
+We begin by creating a `CodeBlockView` component to render the node. This component receives [`ReactNodeViewProps`](/references/react#reactnodeviewoptions) as props, which include the node and other useful details.
 
 ::: code-group
 <<< @/../playground/examples/react-code-block/code-block-view.tsx [code-block-view.tsx]
@@ -68,7 +68,7 @@ We begin by creating a `CodeBlockView` component to render the node. This compon
 
 `CodeBlockView` renders a `LanguageSelector` component (the button in the top left corner) and a `<pre>` element to hold the code. We bind the `contentRef` to the `<pre>` element, which allows the editor to manage its content.
 
-After defining the component, we can register it as a node view using [`defineReactNodeView`](/references/react/#definereactnodeview). The `name` is the node's name, in this case `"codeBlock"`. `contentAs` is the property name that contains the node's content. In this case, it's `"code"`, which means a `<code>` element will be rendered inside the `<pre>` element. `component` is the component we just defined.
+After defining the component, we can register it as a node view using [`defineReactNodeView`](/references/react#definereactnodeview). The `name` is the node's name, in this case `"codeBlock"`. `contentAs` is the property name that contains the node's content. In this case, it's `"code"`, which means a `<code>` element will be rendered inside the `<pre>` element. `component` is the component we just defined.
 
 ```ts
 import {

@@ -84,11 +84,12 @@ export const shortcuts = {
     'box-border bg-transparent data-[state=on]:bg-gray-400/20 hover:data-[state=off]:bg-gray-400/20 dark:data-[state=on]:bg-gray-700 dark:hover:data-[state=off]:bg-gray-700/80',
   ),
 
-  IMAGE_UPLOAD_CARD: clsx('m-4 max-w-md space-y-6 p-6 text-sm', FLOATING_MENU),
+  IMAGE_UPLOAD_CARD: clsx('max-w-md space-y-4 p-6 text-sm', FLOATING_MENU),
 
   IMAGE_UPLOAD_INPUT: clsx(
     'mt-2 box-border flex h-10 w-full rounded-md px-3 py-2 outline-none transition focus-visible:outline-none',
     'file:border-0 file:bg-transparent file:text-sm file:font-medium',
+    '[&[type=file]]:hover:bg-gray-500/10',
     'border border-solid border-gray-200 dark:border-gray-700',
     'ring-gray-500 ring-offset-0 focus-visible:ring-2 focus-visible:ring-offset-0',
   ),

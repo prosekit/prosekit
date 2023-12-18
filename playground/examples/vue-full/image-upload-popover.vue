@@ -59,18 +59,17 @@ const handleSubmit = () => {
       :active="props.open"
       class="IMAGE_UPLOAD_CARD"
     >
-      <div>Select a local image file or enter a web image URL.</div>
       <div v-if="!objectUrl">
-        <label>Web Image URL</label>
+        <label>Embed Link</label>
         <input
           class="IMAGE_UPLOAD_INPUT"
-          placeholder="https://placehold.co/128"
+          placeholder="Paste the image link..."
           type="url"
           @input="handleWebUrlChange"
         />
       </div>
       <div v-if="!webUrl">
-        <label>Local Image</label>
+        <label>Upload</label>
         <input
           class="IMAGE_UPLOAD_INPUT"
           accept="image/*"
@@ -79,7 +78,7 @@ const handleSubmit = () => {
         />
       </div>
       <button v-if="url" class="IMAGE_UPLOAD_BUTTON" @click="handleSubmit">
-        Upload Image
+        Insert Image
       </button>
     </Popover>
   </div>

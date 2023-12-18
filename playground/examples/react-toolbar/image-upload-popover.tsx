@@ -63,14 +63,12 @@ export const ImageUploadPopover: FC<{
         active={open}
         className="IMAGE_UPLOAD_CARD"
       >
-        <div>Select a local image file or enter a web image URL.</div>
-
         {objectUrl ? null : (
           <div>
-            <label>Web Image URL</label>
+            <label>Embed Link</label>
             <input
               className="IMAGE_UPLOAD_INPUT"
-              placeholder="https://placehold.co/128"
+              placeholder="Paste the image link..."
               type="url"
               onChange={handleWebUrlChange}
             />
@@ -79,7 +77,7 @@ export const ImageUploadPopover: FC<{
 
         {webUrl ? null : (
           <div>
-            <label>Local Image</label>
+            <label>Upload</label>
             <input
               className="IMAGE_UPLOAD_INPUT"
               accept="image/*"
@@ -91,7 +89,7 @@ export const ImageUploadPopover: FC<{
 
         {url ? (
           <button className="IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
-            Upload Image
+            Insert Image
           </button>
         ) : null}
       </Popover>

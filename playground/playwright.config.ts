@@ -71,7 +71,7 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     command: 'pnpm -w run playground',
-    url: 'http://localhost:4321',
+    url: 'http://localhost:4321/playground/dist',
     reuseExistingServer: !process.env.CI,
   },
 })

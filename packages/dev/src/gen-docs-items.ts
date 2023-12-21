@@ -2,6 +2,8 @@ import { writeFile } from 'node:fs/promises'
 import path, { basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import { uniq } from 'lodash-es'
+
 import { readExampleMeta } from './example-meta.js'
 import { hideInTypedoc } from './hide-in-typedoc.js'
 import { vfs } from './virtual-file-system.js'
@@ -88,15 +90,12 @@ async function genExampleItems() {
     'sidebar-example-items.ts',
   )
 
-  const items: SidebarItem[] = []
-
   const meta = await readExampleMeta()
-  for (const example of meta.examples) {
-    items.push({
-      text: example.name,
-      link: '/examples/' + example.name,
-    })
-  }
+  const stories = uniq(meta.examples.map((example) => example.story)).sort()
+  const items: SidebarItem[] = stories.map((story) => ({
+    text: story,
+    link: '/examples/' + story,
+  }))
 
   normalizeItems(items)
 

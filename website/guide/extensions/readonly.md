@@ -2,23 +2,7 @@
 
 Disable editing of the editor.
 
-<script setup>	 
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'	
-import App from '../../components/vue-readonly/editor.vue'	
-</script>
-
-:::tabs
-
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== React
-<ExamplePlaygroundLazy example="react-readonly" />
-== Vue
-<ExamplePlaygroundLazy example="vue-readonly" />
-== Svelte
-<ExamplePlaygroundLazy example="svelte-readonly" />
-:::
+<!-- @include: @/examples/readonly.md -->
 
 ## Usage
 

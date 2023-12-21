@@ -2,100 +2,42 @@
 
 # Examples
 
-- [react-minimal](./examples/react-minimal)
+- [bold](./examples/bold)
 
-- [react-code-block](./examples/react-code-block)
+- [code](./examples/code)
 
-- [react-heading](./examples/react-heading)
+- [code-block](./examples/code-block)
 
-- [react-inline-menu](./examples/react-inline-menu)
+- [dom](./examples/dom)
 
-- [react-keymap](./examples/react-keymap)
+- [full](./examples/full)
 
-- [react-list](./examples/react-list)
+- [heading](./examples/heading)
 
-- [react-readonly](./examples/react-readonly)
+- [inline-menu](./examples/inline-menu)
 
-- [react-slash-menu](./examples/react-slash-menu)
+- [italic](./examples/italic)
 
-- [react-toolbar](./examples/react-toolbar)
+- [keymap](./examples/keymap)
 
-- [react-user-menu](./examples/react-user-menu)
+- [link](./examples/link)
 
-- [react-word-counter](./examples/react-word-counter)
+- [list](./examples/list)
 
-- [vue-minimal](./examples/vue-minimal)
+- [minimal](./examples/minimal)
 
-- [vue-bold](./examples/vue-bold)
+- [placeholder](./examples/placeholder)
 
-- [vue-code](./examples/vue-code)
+- [readonly](./examples/readonly)
 
-- [vue-code-block](./examples/vue-code-block)
+- [slash-menu](./examples/slash-menu)
 
-- [vue-full](./examples/vue-full)
+- [strike](./examples/strike)
 
-- [vue-heading](./examples/vue-heading)
+- [toolbar](./examples/toolbar)
 
-- [vue-inline-menu](./examples/vue-inline-menu)
+- [underline](./examples/underline)
 
-- [vue-italic](./examples/vue-italic)
+- [user-menu](./examples/user-menu)
 
-- [vue-keymap](./examples/vue-keymap)
-
-- [vue-link](./examples/vue-link)
-
-- [vue-list](./examples/vue-list)
-
-- [vue-placeholder](./examples/vue-placeholder)
-
-- [vue-readonly](./examples/vue-readonly)
-
-- [vue-slash-menu](./examples/vue-slash-menu)
-
-- [vue-strike](./examples/vue-strike)
-
-- [vue-toolbar](./examples/vue-toolbar)
-
-- [vue-underline](./examples/vue-underline)
-
-- [vue-user-menu](./examples/vue-user-menu)
-
-- [vue-word-counter](./examples/vue-word-counter)
-
-- [preact-minimal](./examples/preact-minimal)
-
-- [preact-keymap](./examples/preact-keymap)
-
-- [preact-readonly](./examples/preact-readonly)
-
-- [preact-slash-menu](./examples/preact-slash-menu)
-
-- [svelte-minimal](./examples/svelte-minimal)
-
-- [svelte-bold](./examples/svelte-bold)
-
-- [svelte-italic](./examples/svelte-italic)
-
-- [svelte-keymap](./examples/svelte-keymap)
-
-- [svelte-list](./examples/svelte-list)
-
-- [svelte-readonly](./examples/svelte-readonly)
-
-- [svelte-slash-menu](./examples/svelte-slash-menu)
-
-- [svelte-word-counter](./examples/svelte-word-counter)
-
-- [solid-minimal](./examples/solid-minimal)
-
-- [solid-heading](./examples/solid-heading)
-
-- [solid-keymap](./examples/solid-keymap)
-
-- [solid-readonly](./examples/solid-readonly)
-
-- [solid-slash-menu](./examples/solid-slash-menu)
-
-- [lit](./examples/lit)
-
-- [vanilla](./examples/vanilla)
+- [word-counter](./examples/word-counter)

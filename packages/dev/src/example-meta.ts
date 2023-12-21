@@ -15,6 +15,8 @@ interface ExampleFile {
 
 export interface Example {
   name: string
+  framework: string
+  story: string
   files: ExampleFile[]
 }
 
@@ -26,7 +28,6 @@ export async function readExampleMeta(): Promise<ExampleMeta> {
 export async function writeExampleMeta(meta: ExampleMeta) {
   const yamlFile = await vfs.getFile(metaYamlPath)
   yamlFile.updateYaml(meta)
-
   const tsFile = await vfs.ensureFile(metaTsPath)
   const ts =
     [
@@ -48,7 +49,7 @@ export function sortExamples(examples: Example[]) {
     'lit',
     'vanilla',
   ]
-  const group = groupBy(examples, (example) => example.name.split('-')[0])
+  const group = groupBy(examples, (example) => example.framework)
 
   const sorted = prefixOrder.flatMap((prefix) =>
     sortBy(group[prefix], (example) => {

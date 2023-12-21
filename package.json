@@ -9,6 +9,7 @@
     "build:force": "turbo build --force",
     "build:package": "turbo build --filter='./packages/*' --concurrency=1",
     "build:website": "turbo build --filter='./website'",
+    "dev": "pnpm --parallel --filter='./website' --filter='./playground' run dev",
     "website": "pnpm --filter='./website' run dev",
     "playground": "pnpm --filter='./playground' run dev",
     "gen": "turbo run gen --force && pnpm install --prefer-offline --no-frozen-lockfile",

@@ -6,5 +6,5 @@
     "composite": true,
     "outDir": ".temp"
   },
-  "include": ["./lit/*"]
+  "include": ["./lit-*/*"]
 }

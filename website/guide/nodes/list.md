@@ -2,22 +2,7 @@
 
 The `list` node is used to represent a list item. It is built on top of [prosemirror-flat-list](https://github.com/ocavue/prosemirror-flat-list).
 
-<script setup>
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-list/editor.vue'
-</script>
-
-:::tabs key:framework
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== React
-<ExamplePlaygroundLazy example="react-list" />
-== Vue
-<ExamplePlaygroundLazy example="vue-list" />
-== Svelte
-<ExamplePlaygroundLazy example="svelte-list" />
-:::
+<!-- @include: @/examples/list.md -->
 
 ## Usage
 

@@ -4,5 +4,5 @@
     "composite": true,
     "outDir": ".temp"
   },
-  "include": ["./vanilla/*.js"]
+  "include": ["./vanilla-*/*"]
 }

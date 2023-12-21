@@ -2,18 +2,7 @@
 
 The `underline` mark is used to represent text with a underline. It will be rendered as `<u>` element in HTML.
 
-<script setup>
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-underline/editor.vue'
-</script>
-
-:::tabs key:framework
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== Vue
-<ExamplePlaygroundLazy example="vue-underline" />
-:::
+<!-- @include: @/examples/underline.md -->
 
 ## Commands
 

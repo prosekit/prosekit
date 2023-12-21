@@ -2,19 +2,7 @@
 
 Show some placeholder text when the current text block is empty or the whole document is empty.
 
-<script setup>	 
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'	
-import App from '../../components/vue-placeholder/editor.vue'	
-</script>
-
-:::tabs
-
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== Vue
-<ExamplePlaygroundLazy example="vue-placeholder" />
-:::
+<!-- @include: @/examples/placeholder.md -->
 
 ## Usage
 

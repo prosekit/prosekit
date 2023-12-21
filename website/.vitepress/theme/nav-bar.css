@@ -7,6 +7,10 @@
     opacity: 1;
   }
 
+  body .Layout .VPNavBar.has-sidebar .curtain {
+    pointer-events: none;
+  }
+
   body .Layout .VPNavBar.has-sidebar .curtain::before {
     border-top-width: 1px;
     border-top-style: solid;
@@ -15,6 +19,7 @@
     max-width: calc(var(--vp-layout-max-width) - var(--vp-sidebar-width));
     background: transparent;
     transition: opacity 0.2s;
+    pointer-events: none;
   }
 }
 

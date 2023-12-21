@@ -22,7 +22,7 @@ const editor = useEditor({ update: true })
 
 This is usefull if you want to update the UI based on the current editor state.
 For example, you can calculate the word count of the document after every
-change. Check out [react-word-counter](/examples/react-word-counter) for a
+change. Check out [word-counter](/examples/word-counter) for a
 complete implementation.
 
 ## `useExtension`
@@ -42,23 +42,13 @@ Adds key bindings to the editor.
 <<< @/../playground/examples/react-keymap/use-submit-keymap.ts
 :::
 
-Check out [react-keymap](/examples/react-keymap) for a complete implementation.
+Check out [keymap](/examples/keymap) for a complete implementation.
 
 ## `defineReactNodeView`
 
 Renders a node using a React component.
 
-In some cases, React might be a more convenient tool for implementing certain interactions. For example, the code blocks below have a language button in the top left corner. Clicking this button opens a combobox that lets you change the language of the code block. This feature is implemented using a React component.
-
-<script setup>
-import App from '../../components/vue-code-block/editor.vue'
-</script>
-
-:::tabs key:framework
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-:::
+In some cases, React might be a more convenient tool for implementing certain interactions. For instance, for a code block, you might want to add a language selector that lets you change the language of the code block. You can implement this using a React component.
 
 We begin by creating a `CodeBlockView` component to render the node. This component receives [`ReactNodeViewProps`](/references/react#reactnodeviewoptions) as props, which include the node and other useful details.
 
@@ -84,4 +74,4 @@ defineReactNodeView({
 })
 ```
 
-Check out [react-code-block](/examples/react-code-block) for a complete implementation.
+Check out [code-block](/examples/code-block) for a complete implementation.

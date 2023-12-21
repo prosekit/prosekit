@@ -1,5 +1,4 @@
 ---
-import Nav from './nav.astro'
 import 'prosekit/basic/internal/preflight.css'
 ---
 
@@ -14,15 +13,12 @@ import 'prosekit/basic/internal/preflight.css'
           'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', system-ui;
       }
     </style>
+
+    <script src="./dark-mode.ts"></script>
   </head>
 
-  <body
-    class="w-100vw h-100vh m-0 box-border flex flex-col p-0 md:flex-row divide-y md:divide-x md:divide-y-none divide-stone-200"
-  >
-    <header class="md:max-w-50 w-full md:h-full" transition:animate="none">
-      <Nav />
-    </header>
-    <main class="flex-1 p-2">
+  <body class="w-100vw h-100vh m-0 box-border flex flex-col p-0">
+    <main class="flex-1 p-1 max-h-full box-border">
       <slot />
     </main>
   </body>

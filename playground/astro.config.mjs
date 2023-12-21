@@ -22,4 +22,5 @@ export default defineConfig({
     solid({ include: ['**/solid-*/*'] }),
     unocss({}),
   ],
+  base: 'playground/dist',
 })

@@ -2,19 +2,7 @@
 
 The `codeBlock` node is designed to represent blocks of code within your document.
 
-<script setup>
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-code-block/editor.vue'
-</script>
-
-:::tabs key:framework
-
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== React
-<ExamplePlaygroundLazy example="react-code-block" />
-:::
+<!-- @include: @/examples/code-block.md -->
 
 ## Usage
 

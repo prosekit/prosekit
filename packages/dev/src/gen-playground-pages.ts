@@ -15,11 +15,6 @@ export async function genPlaygroundPages() {
     'playground/pages/[example].astro',
     getPageContent(exampleNames),
   )
-
-  await vfs.updateText(
-    'playground/layouts/nav-list.astro',
-    getNavList(exampleNames),
-  )
 }
 
 function getPageContent(names: string[]): string {
@@ -66,28 +61,6 @@ function getPageContent(names: string[]): string {
   ]
 
   return lines.join('\n') + '\n'
-}
-
-function getNavList(names: string[]): string {
-  const lines = [
-    `---`,
-    `// This file is generated from ${currentFilename}`,
-    `import NavItem from './nav-item.astro'`,
-    `---`,
-  ]
-
-  let prevFramework = ''
-
-  for (const name of names) {
-    const framework = name.split('-')[0]
-    if (framework !== prevFramework) {
-      prevFramework = framework
-      lines.push(``, `<!-- ${framework} -->`)
-    }
-    lines.push(`<NavItem path="/${name}" />`)
-  }
-
-  return lines.join('\n').trim() + '\n'
 }
 
 const currentFilename = basename(fileURLToPath(import.meta.url))

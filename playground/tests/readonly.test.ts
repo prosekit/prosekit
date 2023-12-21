@@ -3,9 +3,9 @@ import { expect, test } from '@playwright/test'
 import { locateEditor, getExamples } from './helper'
 
 test.describe('readonly', () => {
-  for (const { url, name } of getExamples('readonly')) {
-    test(name, async ({ page }) => {
-      await page.goto(url)
+  for (const example of getExamples('readonly')) {
+    test(example, async ({ page }) => {
+      await page.goto(example)
       const editor = locateEditor(page)
 
       const readonlyButton = page.getByRole('button', { name: 'Readonly' })

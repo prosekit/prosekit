@@ -2,20 +2,7 @@
 
 A popup that shows a list of suggestions based on the text before the text cursor.
 
-<script setup>
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-slash-menu/editor.vue'
-</script>
-
-:::tabs key:framework
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== React
-<ExamplePlaygroundLazy example="react-slash-menu" />
-== Vue
-<ExamplePlaygroundLazy example="vue-slash-menu" />
-:::
+<!-- @include: @/examples/slash-menu.md -->
 
 ## Usage
 
@@ -30,7 +17,7 @@ import App from '../../components/vue-slash-menu/editor.vue'
 
 Type `@` to show a list of users to mention, or type `#` to show a list of commands.
 
-- [react-user-menu](/examples/react-user-menu)
+- [user-menu](/examples/user-menu)
 
 ## API Reference
 

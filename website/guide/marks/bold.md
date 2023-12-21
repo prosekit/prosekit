@@ -2,20 +2,7 @@
 
 The `bold` mark is used to represent text that is using a bold font weight. It will be rendered as `<strong>` element in HTML.
 
-<script setup>
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-bold/editor.vue'
-</script>
-
-:::tabs key:framework
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== Vue
-<ExamplePlaygroundLazy example="vue-bold" />
-== Svelte
-<ExamplePlaygroundLazy example="svelte-bold" />
-:::
+<!-- @include: @/examples/bold.md -->
 
 ## Commands
 

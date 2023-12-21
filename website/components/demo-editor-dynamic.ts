@@ -2,8 +2,9 @@
 
 import { clsx } from 'clsx'
 import { defineClientComponent } from 'vitepress'
-import { useData } from 'vitepress'
 import { defineComponent, h } from 'vue'
+
+import { useDarkMode } from './use-dark-mode'
 
 const Editor = defineClientComponent(async () => {
   const mod = await import('./vue-full/editor.vue')
@@ -11,14 +12,14 @@ const Editor = defineClientComponent(async () => {
 })
 
 export const DemoEditor = defineComponent(() => {
-  const { isDark } = useData()
+  const isDark = useDarkMode()
 
   return () =>
     h(
       'div',
       {
         class: clsx(
-          'mx-auto mt-10 flex w-[760px] max-w-full flex-col items-center p-4',
+          'mx-auto mt-10 flex h-[400px] w-[760px] max-w-full flex-col items-center p-4',
           isDark.value ? 'dark' : null,
         ),
       },

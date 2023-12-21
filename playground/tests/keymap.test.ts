@@ -3,9 +3,9 @@ import { expect, test } from '@playwright/test'
 import { locateEditor, getExamples } from './helper'
 
 test.describe('keymap', () => {
-  for (const { url, name } of getExamples('keymap')) {
-    test(name, async ({ page }) => {
-      await page.goto(url)
+  for (const example of getExamples('keymap')) {
+    test(example, async ({ page }) => {
+      await page.goto(example)
       const editor = locateEditor(page)
       const shiftEnterButton = page.getByRole('button', {
         name: 'Submit with Shift + Enter',

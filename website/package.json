@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vitepress dev",
+    "dev": "vitepress dev --open",
     "preview": "vitepress preview",
     "build": "pnpm build:typedoc && pnpm build:playground && pnpm build:vitepress",
     "build:vitepress": "vitepress build",
@@ -21,7 +21,6 @@
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "clsx": "^2.0.0",
     "dedent": "^1.5.1",
-    "lucide-vue-next": "^0.299.0",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "prosekit": "^0.1.14",

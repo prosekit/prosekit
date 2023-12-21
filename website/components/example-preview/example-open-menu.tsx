@@ -27,11 +27,11 @@ export const ExampleOpenMenu = defineComponent<ExampleLanguageSelectProps>(
         <DropdownMenuContent>
           <DropdownMenuItem onClick={onOpenCodeSandbox}>
             <span>CodeSandbox</span>
-            <span class="i-ci-arrow-up-right-lg ml-2 opacity-50"></span>
+            <span class="i-ci-arrow-up-right-md w-4 h-4 ml-2 opacity-50"></span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={onOpenStackBlitz}>
             <span>StackBlitz</span>
-            <span class="i-ci-arrow-up-right-lg ml-2 opacity-50"></span>
+            <span class="i-ci-arrow-up-right-md w-4 h-4 ml-2 opacity-50"></span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenuRoot>

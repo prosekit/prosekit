@@ -1,4 +1,3 @@
-import { Check } from 'lucide-vue-next'
 import { DropdownMenuRoot } from 'radix-vue'
 import { defineComponent } from 'vue'
 
@@ -22,10 +21,10 @@ export const ExampleFrameworkMenu = defineComponent<{
         <DropdownMenuContent>
           {props.frameworks.map((framework) => (
             <DropdownMenuItem onClick={() => props.onChange(framework)}>
-              <span class="flex items-center justify-center">
-                <span class="w-6">
+              <span class="flex items-center justify-center gap-1">
+                <span class="inline-flex h-full w-6 items-center justify-start">
                   {props.framework === framework ? (
-                    <Check class="h-4 w-4" />
+                    <span class="i-ci-check h-5 w-5 opacity-70"></span>
                   ) : null}
                 </span>
                 <ExampleFrameworkItem framework={framework} />

@@ -646,9 +646,6 @@ importers:
       dedent:
         specifier: ^1.5.1
         version: 1.5.1
-      lucide-vue-next:
-        specifier: ^0.299.0
-        version: 0.299.0(vue@3.3.12)
       postcss:
         specifier: ^8.4.32
         version: 8.4.32
@@ -6828,14 +6825,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
-
-  /lucide-vue-next@0.299.0(vue@3.3.12):
-    resolution: {integrity: sha512-Nv0bP4AvOMfcrUvh/88nwxa69m2cVVvZcw4/NfS/CI09iLDfI8/vH5Q7RoYZ9wBrVnfnehdFiRra/FVGVjW3iA==}
-    peerDependencies:
-      vue: '>=3.0.1'
-    dependencies:
-      vue: 3.3.12(typescript@5.3.3)
-    dev: true
 
   /lunr@2.3.9:
     resolution: {integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==}

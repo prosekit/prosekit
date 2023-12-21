@@ -2,20 +2,7 @@
 
 A popup floating around the current selected text. It can be used to built an inline menu.
 
-<script setup>
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-inline-menu/editor.vue'
-</script>
-
-:::tabs key:framework
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== React
-<ExamplePlaygroundLazy example="react-inline-menu" />
-== Vue
-<ExamplePlaygroundLazy example="vue-inline-menu" />
-:::
+<!-- @include: @/examples/inline-menu.md -->
 
 ## Usage
 

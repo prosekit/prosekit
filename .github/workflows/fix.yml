@@ -19,9 +19,4 @@ jobs:
       - name: Fix
         run: nr fix
 
-      - name: Create symlinks
-        run: |
-          cd website/components
-          ln -sf ../../playground/examples/vue-* ./
-
       - uses: autofix-ci/action@bee19d72e71787c12ca0f29de72f2833e437e4c9

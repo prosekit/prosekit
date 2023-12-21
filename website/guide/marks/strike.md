@@ -2,18 +2,7 @@
 
 The `strike` mark is used to represent text with a strikethrough. It will be rendered as `<s>` element in HTML.
 
-<script setup>
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-strike/editor.vue'
-</script>
-
-:::tabs key:framework
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== Vue
-<ExamplePlaygroundLazy example="vue-strike" />
-:::
+<!-- @include: @/examples/strike.md -->
 
 ## Commands
 

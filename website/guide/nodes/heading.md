@@ -2,23 +2,7 @@
 
 The `heading` node is used to represent blocks of heading in the document.
 
-<script setup>
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-heading/editor.vue'
-</script>
-
-:::tabs key:framework
-
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== React
-<ExamplePlaygroundLazy example="react-heading" />
-== Vue
-<ExamplePlaygroundLazy example="vue-heading" />
-== Solid
-<ExamplePlaygroundLazy example="solid-heading" />
-:::
+<!-- @include: @/examples/heading.md -->
 
 ## Usage
 

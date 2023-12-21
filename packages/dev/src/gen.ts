@@ -2,9 +2,9 @@ import { genChangesetConfigJson } from './gen-changeset-config-json.js'
 import { genChangeset } from './gen-changeset.js'
 import { genComponents } from './gen-components.js'
 import { genDocsItems } from './gen-docs-items.js'
-import { genExampleGlobImport } from './gen-example-glob-import.js'
 import { genExampleIndex } from './gen-example-index.js'
 import { genExampleMetaYaml } from './gen-example-meta-yaml.js'
+import { genExamplePreviews } from './gen-example-previews.js'
 import { genExampleSharedFiles } from './gen-example-shared-files.js'
 import { genPackageJson } from './gen-package-json.js'
 import { genPlaygroundPages } from './gen-playground-pages.js'
@@ -32,10 +32,10 @@ async function genAll(): Promise<boolean> {
   // Example for website
   await genExampleMetaYaml()
   await genExampleIndex()
-  await genExampleGlobImport()
   await genExampleSharedFiles()
   await genPlaygroundPages()
   await genDocsItems()
+  await genExamplePreviews()
 
   return await vfs.commit()
 }

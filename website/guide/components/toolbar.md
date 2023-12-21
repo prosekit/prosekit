@@ -2,21 +2,7 @@
 
 A customizable toolbar providing quick access to various commands.
 
-<script setup>	 
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'	
-import App from '../../components/vue-toolbar/editor.vue'	
-</script>
-
-:::tabs
-
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== React
-<ExamplePlaygroundLazy example="react-toolbar" />
-== Vue
-<ExamplePlaygroundLazy example="vue-toolbar" />
-:::
+<!-- @include: @/examples/toolbar.md -->
 
 ## Guide
 

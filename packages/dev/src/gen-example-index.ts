@@ -1,6 +1,8 @@
 import path, { basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import { uniq } from 'lodash-es'
+
 import { readExampleMeta, type ExampleMeta } from './example-meta.js'
 import { vfs } from './virtual-file-system.js'
 
@@ -12,10 +14,8 @@ export async function genExampleIndex() {
 }
 
 function formatIndexMarkdown(meta: ExampleMeta) {
-  const lines: string[] = []
-  for (const example of meta.examples) {
-    lines.push(`- [${example.name}](./examples/${example.name})`)
-  }
+  const stories = uniq(meta.examples.map((example) => example.story)).sort()
+  const lines = stories.map((story) => `- [${story}](./examples/${story})`)
 
   return (
     `

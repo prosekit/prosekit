@@ -3,199 +3,83 @@
 // prettier-ignore
 export const exampleItems = [
   {
-    "text": "react-minimal",
-    "link": "/examples/react-minimal"
+    "text": "bold",
+    "link": "/examples/bold"
   },
   {
-    "text": "react-code-block",
-    "link": "/examples/react-code-block"
+    "text": "code",
+    "link": "/examples/code"
   },
   {
-    "text": "react-heading",
-    "link": "/examples/react-heading"
+    "text": "code-block",
+    "link": "/examples/code-block"
   },
   {
-    "text": "react-inline-menu",
-    "link": "/examples/react-inline-menu"
+    "text": "dom",
+    "link": "/examples/dom"
   },
   {
-    "text": "react-keymap",
-    "link": "/examples/react-keymap"
+    "text": "full",
+    "link": "/examples/full"
   },
   {
-    "text": "react-list",
-    "link": "/examples/react-list"
+    "text": "heading",
+    "link": "/examples/heading"
   },
   {
-    "text": "react-readonly",
-    "link": "/examples/react-readonly"
+    "text": "inline-menu",
+    "link": "/examples/inline-menu"
   },
   {
-    "text": "react-slash-menu",
-    "link": "/examples/react-slash-menu"
+    "text": "italic",
+    "link": "/examples/italic"
   },
   {
-    "text": "react-toolbar",
-    "link": "/examples/react-toolbar"
+    "text": "keymap",
+    "link": "/examples/keymap"
   },
   {
-    "text": "react-user-menu",
-    "link": "/examples/react-user-menu"
+    "text": "link",
+    "link": "/examples/link"
   },
   {
-    "text": "react-word-counter",
-    "link": "/examples/react-word-counter"
+    "text": "list",
+    "link": "/examples/list"
   },
   {
-    "text": "vue-minimal",
-    "link": "/examples/vue-minimal"
+    "text": "minimal",
+    "link": "/examples/minimal"
   },
   {
-    "text": "vue-bold",
-    "link": "/examples/vue-bold"
+    "text": "placeholder",
+    "link": "/examples/placeholder"
   },
   {
-    "text": "vue-code",
-    "link": "/examples/vue-code"
+    "text": "readonly",
+    "link": "/examples/readonly"
   },
   {
-    "text": "vue-code-block",
-    "link": "/examples/vue-code-block"
+    "text": "slash-menu",
+    "link": "/examples/slash-menu"
   },
   {
-    "text": "vue-full",
-    "link": "/examples/vue-full"
+    "text": "strike",
+    "link": "/examples/strike"
   },
   {
-    "text": "vue-heading",
-    "link": "/examples/vue-heading"
+    "text": "toolbar",
+    "link": "/examples/toolbar"
   },
   {
-    "text": "vue-inline-menu",
-    "link": "/examples/vue-inline-menu"
+    "text": "underline",
+    "link": "/examples/underline"
   },
   {
-    "text": "vue-italic",
-    "link": "/examples/vue-italic"
+    "text": "user-menu",
+    "link": "/examples/user-menu"
   },
   {
-    "text": "vue-keymap",
-    "link": "/examples/vue-keymap"
-  },
-  {
-    "text": "vue-link",
-    "link": "/examples/vue-link"
-  },
-  {
-    "text": "vue-list",
-    "link": "/examples/vue-list"
-  },
-  {
-    "text": "vue-placeholder",
-    "link": "/examples/vue-placeholder"
-  },
-  {
-    "text": "vue-readonly",
-    "link": "/examples/vue-readonly"
-  },
-  {
-    "text": "vue-slash-menu",
-    "link": "/examples/vue-slash-menu"
-  },
-  {
-    "text": "vue-strike",
-    "link": "/examples/vue-strike"
-  },
-  {
-    "text": "vue-toolbar",
-    "link": "/examples/vue-toolbar"
-  },
-  {
-    "text": "vue-underline",
-    "link": "/examples/vue-underline"
-  },
-  {
-    "text": "vue-user-menu",
-    "link": "/examples/vue-user-menu"
-  },
-  {
-    "text": "vue-word-counter",
-    "link": "/examples/vue-word-counter"
-  },
-  {
-    "text": "preact-minimal",
-    "link": "/examples/preact-minimal"
-  },
-  {
-    "text": "preact-keymap",
-    "link": "/examples/preact-keymap"
-  },
-  {
-    "text": "preact-readonly",
-    "link": "/examples/preact-readonly"
-  },
-  {
-    "text": "preact-slash-menu",
-    "link": "/examples/preact-slash-menu"
-  },
-  {
-    "text": "svelte-minimal",
-    "link": "/examples/svelte-minimal"
-  },
-  {
-    "text": "svelte-bold",
-    "link": "/examples/svelte-bold"
-  },
-  {
-    "text": "svelte-italic",
-    "link": "/examples/svelte-italic"
-  },
-  {
-    "text": "svelte-keymap",
-    "link": "/examples/svelte-keymap"
-  },
-  {
-    "text": "svelte-list",
-    "link": "/examples/svelte-list"
-  },
-  {
-    "text": "svelte-readonly",
-    "link": "/examples/svelte-readonly"
-  },
-  {
-    "text": "svelte-slash-menu",
-    "link": "/examples/svelte-slash-menu"
-  },
-  {
-    "text": "svelte-word-counter",
-    "link": "/examples/svelte-word-counter"
-  },
-  {
-    "text": "solid-minimal",
-    "link": "/examples/solid-minimal"
-  },
-  {
-    "text": "solid-heading",
-    "link": "/examples/solid-heading"
-  },
-  {
-    "text": "solid-keymap",
-    "link": "/examples/solid-keymap"
-  },
-  {
-    "text": "solid-readonly",
-    "link": "/examples/solid-readonly"
-  },
-  {
-    "text": "solid-slash-menu",
-    "link": "/examples/solid-slash-menu"
-  },
-  {
-    "text": "lit",
-    "link": "/examples/lit"
-  },
-  {
-    "text": "vanilla",
-    "link": "/examples/vanilla"
+    "text": "word-counter",
+    "link": "/examples/word-counter"
   }
 ]

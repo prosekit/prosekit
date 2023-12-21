@@ -39,7 +39,7 @@ environments:
 
 <<< @/../playground/examples/solid-minimal/editor.tsx [Solid]
 
-<<< @/../playground/examples/vanilla/index.js [Vanilla]
+<<< @/../playground/examples/vanilla-dom/index.js [Vanilla]
 
 :::
 

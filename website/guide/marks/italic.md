@@ -2,20 +2,7 @@
 
 The `italic` mark is used to represent text that is using an italicized type. It will be rendered as `<em>` element in HTML.
 
-<script setup>
-import { ExamplePlaygroundLazy } from '../../components/example-playground-lazy'
-import App from '../../components/vue-italic/editor.vue'
-</script>
-
-:::tabs key:framework
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-== Vue
-<ExamplePlaygroundLazy example="vue-italic" />
-== Svelte
-<ExamplePlaygroundLazy example="svelte-italic" />
-:::
+<!-- @include: @/examples/italic.md -->
 
 ### `toggleItalic`
 

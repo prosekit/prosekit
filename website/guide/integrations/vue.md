@@ -22,7 +22,7 @@ const editor = useEditor({ update: true })
 
 This is usefull if you want to update the UI based on the current editor state.
 For example, you can calculate the word count of the document after every
-change. Check out [vue-word-counter](/examples/vue-word-counter) for a
+change. Check out [word-counter](/examples/word-counter) for a
 complete implementation.
 
 ## `useExtension`
@@ -42,23 +42,13 @@ Adds key bindings to the editor.
 <<< @/../playground/examples/vue-keymap/use-submit-keymap.ts
 :::
 
-Check out [vue-keymap](/examples/vue-keymap) for a complete implementation.
+Check out [keymap](/examples/keymap) for a complete implementation.
 
 ## `defineVueNodeView`
 
 Renders a node using a Vue component.
 
-In some cases, Vue might be a more convenient tool for implementing certain interactions. For instance, consider the code blocks below, each featuring a language button in the top left corner. Clicking this button opens a combobox that lets you change the language of the code block. This functionality is implemented using a Vue component.
-
-<script setup>
-import App from '../../components/vue-code-block/editor.vue'
-</script>
-
-:::tabs key:framework
-== Preview
-
-<ClientOnly><App/></ClientOnly>
-:::
+In some cases, Vue might be a more convenient tool for implementing certain interactions. For instance, for a code block, you might want to add a language selector that lets you change the language of the code block. You can implement this using a Vue component.
 
 We begin by creating a `CodeBlockView` component to render the node. This component receives [`VueNodeViewProps`](/references/vue#vuenodeviewoptions) as props, which include the node and other useful details.
 
@@ -81,4 +71,4 @@ defineVueNodeView({
 })
 ```
 
-Check out [vue-code-block](/examples/vue-code-block) for a complete implementation.
+Check out [code-block](/examples/code-block) for a complete implementation.

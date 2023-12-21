@@ -43,8 +43,12 @@ export async function genExampleMetaYaml() {
   const examples = groupBy(exampleFiles, (item) => item.exampleName)
 
   for (const [exampleName, exampleFiles] of Object.entries(examples)) {
+    const [framework, ...rest] = exampleName.split('-')
+    const story = rest.join('-')
     const newExample: Example = {
       name: exampleName,
+      framework,
+      story,
       files: exampleFiles.map(({ path }) => ({
         path: path,
         hidden:

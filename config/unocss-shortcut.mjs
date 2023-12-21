@@ -19,15 +19,15 @@ const FLOATING_MENU_ITEM = clsx(
 export const shortcuts = {
   // The outermost container of the editor. It limits the height of the editor.
   EDITOR_VIEWPORT: clsx(
-    'box-border max-h-[500px] w-full overflow-y-auto overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700',
+    'box-border h-full max-h-[500px] w-full overflow-y-auto overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700',
   ),
 
   // Use this class if you have floating menus. We want to scroll menus along with the document.
-  EDITOR_DOCUMENT: clsx('relative w-full'),
+  EDITOR_DOCUMENT: clsx('relative flex min-h-full w-full flex-col'),
 
   // Use this class for the contenteditable element.
   EDITOR_CONTENT: clsx(
-    'relative box-border min-h-[250px] w-full overflow-auto px-[max(16px,_calc(50%-330px))] py-[16px] outline-none outline-0',
+    'dark:bg-dark relative box-border min-h-full flex-1 overflow-auto bg-white px-[max(16px,_calc(50%-330px))] py-[16px] outline-none outline-0',
     '[&_span[data-mention="user"]]:color-blue-500',
     '[&_span[data-mention="tag"]]:color-violet-500',
     '[&_pre]:bg-slate-100',

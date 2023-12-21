@@ -12,3 +12,6 @@ rm -rf references
 
 mv temp/typedoc/prosekit references
 rm -rf temp/typedoc
+
+touch references/index.md 
+rm references/index.md

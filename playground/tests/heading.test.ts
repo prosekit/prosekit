@@ -3,9 +3,9 @@ import { test, expect } from '@playwright/test'
 import { locateEditor, getExamples } from './helper'
 
 test.describe('heading', () => {
-  for (const { url, name } of getExamples('heading'))
-    test(name, async ({ page }) => {
-      await page.goto(url)
+  for (const example of getExamples('heading'))
+    test(example, async ({ page }) => {
+      await page.goto(example)
       const editor = locateEditor(page)
 
       await editor.click()

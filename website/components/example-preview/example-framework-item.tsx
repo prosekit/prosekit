@@ -17,10 +17,11 @@ export const ExampleFrameworkItem = defineComponent<{
     return () => {
       const framework = props.framework.toLowerCase()
       const name = framework[0].toUpperCase() + framework.slice(1)
+      const icon = frameworkIcons[framework]
 
       return (
         <span class="flex items-center space-x-2">
-          <span class={frameworkIcons[framework]}></span>
+          <span class={icon}></span>
           <span>{name}</span>
         </span>
       )

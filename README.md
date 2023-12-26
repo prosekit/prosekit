@@ -1,4 +1,4 @@
-# ProseKit
+# [ProseKit](https://prosekit.dev)
 
 [![npm](https://img.shields.io/npm/v/prosekit)](https://www.npmjs.com/package/prosekit)
 

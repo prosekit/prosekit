@@ -33,7 +33,7 @@
     "@ocavue/eslint-config": "^1.4.0",
     "@size-limit/esbuild-why": "^11.0.1",
     "@size-limit/preset-small-lib": "^11.0.1",
-    "@vitest/coverage-istanbul": "^1.0.4",
+    "@vitest/coverage-istanbul": "^1.1.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
     "jsdom": "^23.0.1",
@@ -45,7 +45,7 @@
     "turbo": "^1.11.2",
     "typescript": "^5.3.3",
     "unocss": "^0.58.0",
-    "vitest": "^1.0.4"
+    "vitest": "^1.1.0"
   },
   "pnpm": {
     "overrides": {},

@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.1.9",
-    "@prosekit/lit": "^0.1.4"
+    "@prosekit/lit": "^0.1.5"
   },
   "peerDependencies": {
     "preact": ">= 9.0.0"
@@ -61,7 +61,7 @@
     "preact": "^10.19.3",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
-    "vitest": "^1.0.4"
+    "vitest": "^1.1.0"
   },
   "publishConfig": {
     "exports": {

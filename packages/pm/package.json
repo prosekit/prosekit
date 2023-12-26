@@ -51,13 +51,13 @@
     "prosemirror-model": "^1.19.4",
     "prosemirror-state": "^1.4.3",
     "prosemirror-transform": "^1.8.0",
-    "prosemirror-view": "^1.32.6"
+    "prosemirror-view": "^1.32.7"
   },
   "devDependencies": {
     "@prosekit/dev": "*",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
-    "vitest": "^1.0.4"
+    "vitest": "^1.1.0"
   },
   "publishConfig": {
     "exports": {

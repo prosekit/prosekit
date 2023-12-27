@@ -1,9 +1,6 @@
 import 'virtual:uno.css'
 import 'prosekit/basic/typography.css'
-import './hero.css'
-import './nav-bar.css'
-import './plugin-tabs.css'
-import './sandpack.css'
+import './style.css'
 
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'

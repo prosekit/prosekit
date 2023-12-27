@@ -25,7 +25,3 @@ runs:
     - name: Install
       run: pnpm install
       shell: bash
-
-    - name: Setup ni
-      run: pnpm install --prefer-offline -g @antfu/ni
-      shell: bash

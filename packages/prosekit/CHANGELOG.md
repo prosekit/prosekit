@@ -1,5 +1,24 @@
 # prosekit
 
+## 0.2.0
+
+### Minor Changes
+
+- [`1124758`](https://github.com/ocavue/prosekit/commit/11247589114943e9e42e7dabed990ea9a50a73cb) ![@prosekit/basic](https://img.shields.io/badge/prosekit%2Fbasic-444444) ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  Improve the styling API. Now ProseKit exports two CSS files that you can import to get started.
+
+  ```js
+  import "prosekit/basic/style.css";
+  import "prosekit/basic/typograph.css";
+  ```
+
+### Patch Changes
+
+- [`8fca5fc`](https://github.com/ocavue/prosekit/commit/8fca5fc02b5c836f3e562ac2217dd2c0bbef70bc) ![@prosekit/extensions](https://img.shields.io/badge/prosekit%2Fextensions-444444) ![@prosekit/core](https://img.shields.io/badge/prosekit%2Fcore-444444)
+
+  Remove deprecated API.
+
 ## 0.1.15
 
 ### Patch Changes

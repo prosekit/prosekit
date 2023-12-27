@@ -24,7 +24,7 @@ The `EditorExtension` type is exported to provide type safety and enhance the de
 
 ### `Editor`
 
-Next, construct an `Editor` component. Refer to the [Getting Started](../getting-started) for instructions on building an `Editor` component.
+Next, construct an `Editor` component. Refer to the [Installation](../installation) for instructions on building an `Editor` component.
 
 ::: code-group
 

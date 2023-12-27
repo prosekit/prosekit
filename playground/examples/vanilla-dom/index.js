@@ -1,5 +1,4 @@
 import 'prosekit/basic/style.css'
-import 'prosekit/extensions/placeholder/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, union } from 'prosekit/core'

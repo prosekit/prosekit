@@ -26,8 +26,8 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./internal/preflight.css": "./src/internal/preflight.css",
-    "./style.css": "./src/style.css"
+    "./style.css": "./src/style.css",
+    "./typography.css": "./src/typography.css"
   },
   "files": [
     "dist"
@@ -54,11 +54,11 @@
         "import": "./dist/prosekit-basic.js",
         "default": "./dist/prosekit-basic.js"
       },
-      "./internal/preflight.css": {
-        "default": "./dist/internal/preflight.css"
-      },
       "./style.css": {
         "default": "./dist/style.css"
+      },
+      "./typography.css": {
+        "default": "./dist/typography.css"
       }
     },
     "main": "./dist/prosekit-basic.js",

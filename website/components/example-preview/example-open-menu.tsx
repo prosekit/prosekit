@@ -12,25 +12,27 @@ export interface ExampleLanguageSelectProps {
 export const ExampleOpenMenu = defineComponent<ExampleLanguageSelectProps>(
   (props) => {
     const onOpenCodeSandbox = () => {
-      console.log('onOpenCodeSandbox', props.example)
+      const url = `https://githubbox.com/prosekit/examples/tree/master/${props.example}`
+      window.open(url, '_blank')
     }
 
     const onOpenStackBlitz = () => {
-      console.log('onOpenStackBlitz', props.example)
+      const url = `https://stackblitz.com/github/prosekit/examples/tree/master/${props.example}`
+      window.open(url, '_blank')
     }
 
     return () => (
       <DropdownMenuRoot>
         <DropdownMenuTrigger>
-          <span>Open In...</span>
+          <span>Open...</span>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem onClick={onOpenCodeSandbox}>
-            <span>CodeSandbox</span>
+            <span>Open in CodeSandbox</span>
             <span class="i-ci-arrow-up-right-md ml-2 h-4 w-4 opacity-50"></span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={onOpenStackBlitz}>
-            <span>StackBlitz</span>
+            <span>Open in StackBlitz</span>
             <span class="i-ci-arrow-up-right-md ml-2 h-4 w-4 opacity-50"></span>
           </DropdownMenuItem>
         </DropdownMenuContent>

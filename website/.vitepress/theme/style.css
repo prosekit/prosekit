@@ -1,3 +1,15 @@
+.VPHero.VPHomeHero .main .name {
+  max-width: 100%;
+}
+
+.VPHero.VPHomeHero .main .text {
+  max-width: 100%;
+}
+
+.VPHero.VPHomeHero .main .tagline {
+  max-width: 100%;
+}
+
 @media (min-width: 960px) {
   body:not(.scrolled) .Layout .VPNavBar.has-sidebar .curtain::before {
     opacity: 0;
@@ -48,4 +60,8 @@ body .Layout .VPLocalNav {
     top: var(--vp-nav-height) !important;
     padding-top: 0 !important;
   }
+}
+
+iframe {
+  border-width: 0;
 }

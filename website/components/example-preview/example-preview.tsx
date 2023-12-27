@@ -12,6 +12,7 @@ import { Switch } from '../switch/switch'
 
 import { ExampleEmbed } from './example-embed'
 import { ExampleFrameworkMenu } from './example-framework-menu'
+import { ExampleOpenMenu } from './example-open-menu'
 
 export const ExamplePreview = defineComponent<{
   name: string
@@ -48,7 +49,7 @@ export const ExamplePreview = defineComponent<{
           isExamplePage.value ? '' : '[&_.shiki]:max-h-[calc(100vh-200px)]',
         )}
       >
-        <div class="mx-[-24px] flex justify-end space-x-2 bg-[--vp-code-tab-bg] p-2 sm:mx-0">
+        <div class="mx-[-24px] flex justify-end space-x-2 bg-[--vp-code-tab-bg] px-2 pb-1 pt-2 sm:mx-0">
           <Switch
             checked={showCode.value}
             onChange={(value) => (showCode.value = value)}
@@ -60,8 +61,7 @@ export const ExamplePreview = defineComponent<{
             onChange={onFrameworkChange}
             frameworks={frameworks.value}
           />
-          {/* TODO: enable ExampleOpenMenu */}
-          {/* <ExampleOpenMenu example={framework.value + '-' + props.name} /> */}
+          <ExampleOpenMenu example={framework.value + '-' + props.name} />
         </div>
 
         <div class="mx-[-24px] bg-[--vp-code-tab-bg] px-1 pb-4 sm:mx-0 sm:px-4">

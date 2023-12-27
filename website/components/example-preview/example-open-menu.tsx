@@ -19,18 +19,26 @@ export const ExampleOpenMenu = defineComponent<ExampleLanguageSelectProps>(
       console.log('onOpenStackBlitz', props.example)
     }
 
+    const onDownload = () => {
+      console.log('onDownload', props.example)
+    }
+
     return () => (
       <DropdownMenuRoot>
         <DropdownMenuTrigger>
-          <span>Open In...</span>
+          <span>Open...</span>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuItem onClick={onOpenCodeSandbox}>
-            <span>CodeSandbox</span>
+            <span>Open in CodeSandbox</span>
             <span class="i-ci-arrow-up-right-md ml-2 h-4 w-4 opacity-50"></span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={onOpenStackBlitz}>
-            <span>StackBlitz</span>
+            <span>Open in StackBlitz</span>
+            <span class="i-ci-arrow-up-right-md ml-2 h-4 w-4 opacity-50"></span>
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={onDownload}>
+            <span>Download</span>
             <span class="i-ci-arrow-up-right-md ml-2 h-4 w-4 opacity-50"></span>
           </DropdownMenuItem>
         </DropdownMenuContent>

@@ -1,20 +1,3 @@
-*,
-::before,
-::after {
-  border-width: 0;
-  border-style: solid;
-}
-
-*:has(> div.ProseMirror) {
-  box-sizing: border-box;
-  font-family: ui-sans-serif, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji', system-ui;
-}
-
-*:has(> div.ProseMirror) * {
-  box-sizing: border-box;
-}
-
 div.ProseMirror {
   & {
     /* Disable margin collapsing */

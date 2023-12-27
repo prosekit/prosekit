@@ -1,6 +1,4 @@
-# Getting Started
-
-## Installation
+# Installation
 
 You can install ProseKit using `npm`, `yarn`, or `pnpm`. Choose the command that
 corresponds to your package manager:
@@ -20,8 +18,6 @@ pnpm add prosekit
 ```
 
 :::
-
-## Usage
 
 ProseKit is compatible with various JavaScript frameworks and vanilla
 JavaScript. Here are some minimal examples of how to use ProseKit in different

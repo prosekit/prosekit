@@ -25,7 +25,7 @@ export default defineConfig({
     outline: [2, 3],
 
     nav: [
-      { text: 'Guide', link: '/guide/what-is-prosekit' },
+      { text: 'Guide', link: '/guide/installation' },
       { text: 'API References', link: '/references' },
       { text: 'Examples', link: '/examples' },
       {
@@ -42,10 +42,10 @@ export default defineConfig({
     sidebar: {
       '/guide': [
         {
-          text: 'Introduction',
+          text: 'Getting Started',
           items: [
-            { text: 'What is ProseKit', link: '/guide/what-is-prosekit' },
-            { text: 'Getting Started', link: '/guide/getting-started' },
+            { text: 'Installation', link: '/guide/installation' },
+            { text: 'Styling', link: '/guide/styling' },
           ],
         },
 

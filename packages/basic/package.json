@@ -26,8 +26,8 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./internal/preflight.css": "./src/internal/preflight.css",
-    "./style.css": "./src/style.css"
+    "./style.css": "./src/style.css",
+    "./typography.css": "./src/typography.css"
   },
   "files": [
     "dist"
@@ -38,7 +38,8 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.1.9",
-    "@prosekit/extensions": "^0.1.6"
+    "@prosekit/extensions": "^0.1.6",
+    "@prosekit/pm": "^0.1.1"
   },
   "devDependencies": {
     "@prosekit/dev": "*",
@@ -54,11 +55,11 @@
         "import": "./dist/prosekit-basic.js",
         "default": "./dist/prosekit-basic.js"
       },
-      "./internal/preflight.css": {
-        "default": "./dist/internal/preflight.css"
-      },
       "./style.css": {
         "default": "./dist/style.css"
+      },
+      "./typography.css": {
+        "default": "./dist/typography.css"
       }
     },
     "main": "./dist/prosekit-basic.js",

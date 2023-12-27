@@ -1,2 +1,3 @@
-@import '@prosekit/core/style.css';
+@import '@prosekit/pm/view/style/prosemirror.css';
 @import '@prosekit/extensions/list/style.css';
+@import '@prosekit/extensions/placeholder/style.css';

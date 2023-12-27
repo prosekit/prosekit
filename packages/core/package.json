@@ -25,8 +25,7 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./style.css": "./src/style.css"
+    ".": "./src/index.ts"
   },
   "files": [
     "dist"
@@ -52,9 +51,6 @@
         "types": "./dist/prosekit-core.d.ts",
         "import": "./dist/prosekit-core.js",
         "default": "./dist/prosekit-core.js"
-      },
-      "./style.css": {
-        "default": "./dist/style.css"
       }
     },
     "main": "./dist/prosekit-core.js",

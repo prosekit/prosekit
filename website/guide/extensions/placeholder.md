@@ -7,8 +7,6 @@ Show some placeholder text when the current text block is empty or the whole doc
 ## Usage
 
 ```ts
-import 'prosekit/extensions/placeholder/style.css'
-
 import { definePlaceholder } from 'prosekit/extensions/readonly'
 
 extension = definePlaceholder({ placeholder: 'Type Something...' })

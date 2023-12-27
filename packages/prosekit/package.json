@@ -27,10 +27,9 @@
   "exports": {
     ".": "./src/index.ts",
     "./basic": "./src/basic.gen.ts",
-    "./basic/internal/preflight.css": "./src/basic/internal/preflight.css",
     "./basic/style.css": "./src/basic/style.css",
+    "./basic/typography.css": "./src/basic/typography.css",
     "./core": "./src/core.gen.ts",
-    "./core/style.css": "./src/core/style.css",
     "./extensions": "./src/extensions.gen.ts",
     "./extensions/autocomplete": "./src/extensions/autocomplete.gen.ts",
     "./extensions/blockquote": "./src/extensions/blockquote.gen.ts",
@@ -198,19 +197,16 @@
         "import": "./dist/prosekit-basic.js",
         "default": "./dist/prosekit-basic.js"
       },
-      "./basic/internal/preflight.css": {
-        "default": "./dist/basic/internal/preflight.css"
-      },
       "./basic/style.css": {
         "default": "./dist/basic/style.css"
+      },
+      "./basic/typography.css": {
+        "default": "./dist/basic/typography.css"
       },
       "./core": {
         "types": "./dist/prosekit-core.d.ts",
         "import": "./dist/prosekit-core.js",
         "default": "./dist/prosekit-core.js"
-      },
-      "./core/style.css": {
-        "default": "./dist/core/style.css"
       },
       "./extensions": {
         "types": "./dist/prosekit-extensions.d.ts",

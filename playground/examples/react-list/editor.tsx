@@ -1,5 +1,4 @@
-import 'prosekit/core/style.css'
-import 'prosekit/extensions/list/style.css'
+import 'prosekit/basic/style.css'
 
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'

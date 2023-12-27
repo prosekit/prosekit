@@ -3,7 +3,7 @@ import 'prosekit/basic/style.css'
 
 import { createEditor, jsonFromNode } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import { onMounted, ref, watchPostEffect } from 'vue'
+import { ref, watchPostEffect } from 'vue'
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
 

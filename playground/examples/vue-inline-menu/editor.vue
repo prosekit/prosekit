@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import 'prosekit/basic/style.css'
 
-import { watchPostEffect, ref, onMounted } from 'vue'
+import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
+import { ref, watchPostEffect } from 'vue'
 import { defineExtension } from './extension'
 import InlineMenu from './inline-menu.vue'
-import { createEditor } from 'prosekit/core'
 
 const defaultHTML =
   '<p><b>Try to select some text</b></p>' +

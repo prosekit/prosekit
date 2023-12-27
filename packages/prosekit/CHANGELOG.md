@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.2.1
+
+### Patch Changes
+
+- [`2d2b700`](https://github.com/ocavue/prosekit/commit/2d2b700e817da7c164ff82aadd83a6de7f145868) ![@prosekit/basic](https://img.shields.io/badge/prosekit%2Fbasic-444444)
+
+  Unwrap nested CSS rules in `prosekit/basic/typography.css`.
+
 ## 0.2.0
 
 ### Minor Changes

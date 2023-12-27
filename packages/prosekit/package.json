@@ -1,7 +1,7 @@
 {
   "name": "prosekit",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -133,7 +133,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/basic": "0.2.0",
+    "@prosekit/basic": "0.2.1",
     "@prosekit/core": "0.2.0",
     "@prosekit/extensions": "0.2.0",
     "@prosekit/lit": "0.1.6",

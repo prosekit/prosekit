@@ -15,7 +15,7 @@ export {
   defineCodeBlockInputRule,
   defineCodeBlockSpec,
   type CodeBlockAttrs,
-  type HighlightParser
+  type HighlightParser,
 }
 
 /**

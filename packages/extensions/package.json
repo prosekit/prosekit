@@ -42,7 +42,6 @@
     "./placeholder/style.css": "./src/placeholder/style.css",
     "./readonly": "./src/readonly/index.ts",
     "./strike": "./src/strike/index.ts",
-    "./suggestion": "./src/suggestion/index.ts",
     "./underline": "./src/underline/index.ts"
   },
   "files": [
@@ -202,9 +201,6 @@
         ],
         "strike": [
           "./dist/prosekit-extensions-strike.d.ts"
-        ],
-        "suggestion": [
-          "./dist/prosekit-extensions-suggestion.d.ts"
         ],
         "underline": [
           "./dist/prosekit-extensions-underline.d.ts"

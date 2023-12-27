@@ -92,10 +92,6 @@
     "path": "packages/prosekit/dist/prosekit-extensions-strike.js"
   },
   {
-    "name": "prosekit/extensions/suggestion",
-    "path": "packages/prosekit/dist/prosekit-extensions-suggestion.js"
-  },
-  {
     "name": "prosekit/extensions/underline",
     "path": "packages/prosekit/dist/prosekit-extensions-underline.js"
   },

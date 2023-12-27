@@ -64,7 +64,7 @@ export const ExamplePreview = defineComponent<{
           {/* <ExampleOpenMenu example={framework.value + '-' + props.name} /> */}
         </div>
 
-        <div class="mx-[-24px] bg-[--vp-code-tab-bg] px-4 pb-4 sm:mx-0">
+        <div class="mx-[-24px] bg-[--vp-code-tab-bg] px-1 pb-4 sm:mx-0 sm:px-4">
           <ExampleEmbed
             story={props.name}
             framework={framework.value}

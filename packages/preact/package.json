@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.2.0",
-    "@prosekit/lit": "^0.1.5"
+    "@prosekit/lit": "^0.1.6"
   },
   "peerDependencies": {
     "preact": ">= 9.0.0"

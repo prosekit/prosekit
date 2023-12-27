@@ -1,4 +1,4 @@
-name: 'size'
+name: size
 
 on:
   pull_request:
@@ -8,8 +8,12 @@ on:
 jobs:
   size:
     runs-on: ubuntu-latest
+
     env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
       CI_JOB_NUMBER: 1
+
     steps:
       - uses: actions/checkout@v4
 

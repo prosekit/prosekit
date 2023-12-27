@@ -21,7 +21,7 @@ jobs:
       - uses: ./.github/actions/setup
 
       - name: Lint
-        run: nr lint
+        run: pnpm run lint
 
   typecheck:
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
       - uses: ./.github/actions/setup
 
       - name: Typecheck
-        run: nr typecheck
+        run: pnpm run typecheck
 
   test:
     runs-on: ubuntu-latest
@@ -41,37 +41,40 @@ jobs:
       - uses: ./.github/actions/setup
 
       - name: Run unit tests
-        run: nr test:coverage
+        run: pnpm run test:coverage
 
       - name: Run e2e tests
-        run: nr test:playground
+        run: pnpm run test:playground
 
   build:
     runs-on: ubuntu-latest
+
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
     steps:
       - uses: actions/checkout@v4
 
       - uses: ./.github/actions/setup
 
-      - name: Build TypeScript declarations
-        run: nr typecheck
-
-      - name: Gen
-        run: nr gen
-
       - name: Build
-        run: nr build
+        run: pnpm run build
 
   deploy:
     runs-on: ubuntu-latest
 
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
     steps:
       - uses: actions/checkout@v4
 
       - uses: ./.github/actions/setup
 
       - name: Build
-        run: nr build:website
+        run: pnpm run build:website
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2.1

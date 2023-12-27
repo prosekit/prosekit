@@ -4,7 +4,7 @@
 '@prosekit/core': minor
 ---
 
-Improve the styling guide. Now ProseKit exports two CSS files that you can import to get started.
+Improve the styling API. Now ProseKit exports two CSS files that you can import to get started.
 
 ```js
 import 'prosekit/basic/style.css'

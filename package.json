@@ -49,8 +49,6 @@
   },
   "pnpm": {
     "overrides": {},
-    "patchedDependencies": {
-      "prosemirror-highlightjs@0.9.1": "patches/prosemirror-highlightjs@0.9.1.patch"
-    }
+    "patchedDependencies": {}
   }
 }

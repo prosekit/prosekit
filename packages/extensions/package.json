@@ -42,7 +42,6 @@
     "./placeholder/style.css": "./src/placeholder/style.css",
     "./readonly": "./src/readonly/index.ts",
     "./strike": "./src/strike/index.ts",
-    "./suggestion": "./src/suggestion/index.ts",
     "./underline": "./src/underline/index.ts"
   },
   "files": [
@@ -55,10 +54,8 @@
   "dependencies": {
     "@prosekit/core": "^0.1.9",
     "@prosekit/pm": "^0.1.1",
-    "highlight.js": "^11.9.0",
     "prosemirror-flat-list": "^0.4.5",
-    "prosemirror-highlight": "^0.3.3",
-    "prosemirror-highlightjs": "^0.9.1"
+    "prosemirror-highlight": "^0.3.3"
   },
   "devDependencies": {
     "@prosekit/dev": "*",
@@ -149,11 +146,6 @@
         "import": "./dist/prosekit-extensions-strike.js",
         "default": "./dist/prosekit-extensions-strike.js"
       },
-      "./suggestion": {
-        "types": "./dist/prosekit-extensions-suggestion.d.ts",
-        "import": "./dist/prosekit-extensions-suggestion.js",
-        "default": "./dist/prosekit-extensions-suggestion.js"
-      },
       "./underline": {
         "types": "./dist/prosekit-extensions-underline.d.ts",
         "import": "./dist/prosekit-extensions-underline.js",
@@ -209,9 +201,6 @@
         ],
         "strike": [
           "./dist/prosekit-extensions-strike.d.ts"
-        ],
-        "suggestion": [
-          "./dist/prosekit-extensions-suggestion.d.ts"
         ],
         "underline": [
           "./dist/prosekit-extensions-underline.d.ts"

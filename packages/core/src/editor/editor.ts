@@ -1,4 +1,4 @@
-import { MarkType, NodeType, Schema, type Attrs } from '@prosekit/pm/model'
+import { Schema } from '@prosekit/pm/model'
 import { EditorState, Plugin, type EditorStateConfig } from '@prosekit/pm/state'
 import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
@@ -17,8 +17,6 @@ import type {
   ExtractNodes,
 } from '../types/extension'
 import type { NodeJSON, SelectionJSON } from '../types/model'
-import { isMarkActive } from '../utils/is-mark-active'
-import { isNodeActive } from '../utils/is-node-active'
 
 import {
   createMarkBuilder,
@@ -315,20 +313,6 @@ export class Editor<E extends Extension = any> {
 
     this.instance.updateExtension(extension, 'add')
     return () => this.instance.updateExtension(extension, 'remove')
-  }
-
-  /**
-   * @deprecated
-   */
-  isNodeActive(nodeType: string | NodeType, attrs?: Attrs): boolean {
-    return isNodeActive(this.view.state, nodeType, attrs)
-  }
-
-  /**
-   * @deprecated
-   */
-  isMarkActive(markType: string | MarkType, attrs?: Attrs): boolean {
-    return isMarkActive(this.view.state, markType, attrs)
   }
 
   get nodes(): Record<ExtractNodes<E>, NodeBuilder> {

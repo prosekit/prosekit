@@ -20,7 +20,7 @@ export default defineConfig({
     svelte(),
     vue(),
     solid({ include: ['**/solid-*/*'] }),
-    unocss({}),
+    unocss({ injectReset: true }),
   ],
   base: 'playground/dist',
 })

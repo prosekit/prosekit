@@ -370,6 +370,12 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.18
         version: 18.2.18
+      postcss:
+        specifier: ^8.4.32
+        version: 8.4.32
+      postcss-nesting:
+        specifier: ^12.0.2
+        version: 12.0.2(postcss@8.4.32)
       preact:
         specifier: ^10.19.3
         version: 10.19.3

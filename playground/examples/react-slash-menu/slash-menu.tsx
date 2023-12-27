@@ -3,7 +3,6 @@ import { AutocompleteEmpty } from 'prosekit/react/autocomplete-empty'
 import { AutocompleteItem } from 'prosekit/react/autocomplete-item'
 import { AutocompleteList } from 'prosekit/react/autocomplete-list'
 import { AutocompletePopover } from 'prosekit/react/autocomplete-popover'
-import React from 'react'
 
 import type { EditorExtension } from './extension'
 

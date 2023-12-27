@@ -11,7 +11,6 @@ export const ExampleEmbed = defineComponent<{
     const iframeLoaded = ref(false)
     const isDark = useDarkMode()
 
-    // Use onMounted to ensure the component is mounted before adding the event listener
     effect(() => {
       const iframe = iframeRef.value
       iframe?.addEventListener(

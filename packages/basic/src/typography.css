@@ -47,7 +47,7 @@ div.ProseMirror {
   & ul,
   & ol,
   & pre {
-    padding: 0.25rem;
+    padding: 0.5rem 0;
     line-height: 1.5;
   }
 
@@ -113,6 +113,50 @@ div.ProseMirror {
   }
 
   & .prosemirror-flat-list {
+    /* Use the same line-height as <p> */
     line-height: 1.5;
+
+    &::before,
+    & > .list-marker {
+      /* Use the same padding as <p> */
+      top: 0.5rem;
+    }
+
+    &:has(> div.list-content > h1) {
+      &::before,
+      & > .list-marker {
+        top: 1em;
+      }
+    }
+    &:has(> div.list-content > h2) {
+      &::before,
+      & > .list-marker {
+        top: 0.6em;
+      }
+    }
+    &:has(> div.list-content > h3) {
+      &::before,
+      & > .list-marker {
+        top: 0.25em;
+      }
+    }
+    &:has(> div.list-content > h4) {
+      &::before,
+      & > .list-marker {
+        top: 0;
+      }
+    }
+    &:has(> div.list-content > h5) {
+      &::before,
+      & > .list-marker {
+        top: -0.1em;
+      }
+    }
+    &:has(> div.list-content > h6) {
+      &::before,
+      & > .list-marker {
+        top: -0.1em;
+      }
+    }
   }
 }

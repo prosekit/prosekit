@@ -36,7 +36,13 @@ export const ExamplePreview = defineComponent<{
       <div
         ref={divRef}
         class={clsx(
-          'my-8 flex w-full flex-col content-stretch overflow-hidden rounded-md bg-[--vp-code-tab-bg] [&_.vp-code-group]:mt-0',
+          'my-8 flex w-full flex-col rounded-md bg-[--vp-code-tab-bg] sm:overflow-hidden',
+
+          // Reduce the gap between the preview embed and the code block
+          `[&_.vp-code-group]:-mt-2 `,
+
+          // Remove the bottom margin on the active code block
+          `[&_div.vp-adaptive-theme.active]:mb-0`,
 
           // Don't limit height on example page
           isExamplePage.value ? '' : '[&_.shiki]:max-h-[calc(100vh-200px)]',
@@ -58,7 +64,7 @@ export const ExamplePreview = defineComponent<{
           {/* <ExampleOpenMenu example={framework.value + '-' + props.name} /> */}
         </div>
 
-        <div class="mx-[-24px] bg-[--vp-code-tab-bg] px-2 pb-2 sm:mx-0">
+        <div class="mx-[-24px] bg-[--vp-code-tab-bg] px-4 pb-4 sm:mx-0">
           <ExampleEmbed
             story={props.name}
             framework={framework.value}

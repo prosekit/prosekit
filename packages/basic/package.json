@@ -37,6 +37,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
+    "@prosekit/pm": "^0.1.1",
     "@prosekit/core": "^0.1.9",
     "@prosekit/extensions": "^0.1.6"
   },

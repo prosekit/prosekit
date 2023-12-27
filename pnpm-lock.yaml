@@ -82,6 +82,9 @@ importers:
       '@prosekit/extensions':
         specifier: ^0.1.6
         version: link:../extensions
+      '@prosekit/pm':
+        specifier: ^0.1.1
+        version: link:../pm
     devDependencies:
       '@prosekit/dev':
         specifier: '*'

@@ -77,6 +77,14 @@ div.ProseMirror {
     font-size: 1.125em;
   }
 
+  & h5 {
+    margin: 0.5em 0;
+  }
+
+  & h6 {
+    opacity: 0.8;
+  }
+
   & img,
   & video {
     max-width: 100%;

@@ -707,9 +707,6 @@ importers:
       vitepress:
         specifier: 1.0.0-rc.33
         version: 1.0.0-rc.33(@algolia/client-search@4.19.1)(@types/react@18.2.45)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.3.3)
-      vitepress-plugin-tabs:
-        specifier: ^0.5.0
-        version: 0.5.0(vitepress@1.0.0-rc.33)(vue@3.4.0-rc.3)
       vue:
         specifier: ^3.4.0-rc.3
         version: 3.4.0-rc.3(typescript@5.3.3)
@@ -10356,16 +10353,6 @@ packages:
         optional: true
     dependencies:
       vite: 5.0.10(@types/node@20.10.5)
-    dev: true
-
-  /vitepress-plugin-tabs@0.5.0(vitepress@1.0.0-rc.33)(vue@3.4.0-rc.3):
-    resolution: {integrity: sha512-SIhFWwGsUkTByfc2b279ray/E0Jt8vDTsM1LiHxmCOBAEMmvzIBZSuYYT1DpdDTiS3SuJieBheJkYnwCq/yD9A==}
-    peerDependencies:
-      vitepress: ^1.0.0-rc.27
-      vue: ^3.3.8
-    dependencies:
-      vitepress: 1.0.0-rc.33(@algolia/client-search@4.19.1)(@types/react@18.2.45)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.3.3)
-      vue: 3.4.0-rc.3(typescript@5.3.3)
     dev: true
 
   /vitepress@1.0.0-rc.33(@algolia/client-search@4.19.1)(@types/react@18.2.45)(postcss@8.4.32)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.3.3):

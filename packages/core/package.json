@@ -37,7 +37,7 @@
   "dependencies": {
     "@prosekit/pm": "^0.1.1",
     "orderedmap": "^2.1.1",
-    "type-fest": "^4.8.3"
+    "type-fest": "^4.9.0"
   },
   "devDependencies": {
     "@prosekit/dev": "*",

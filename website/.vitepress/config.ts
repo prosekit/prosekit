@@ -1,7 +1,6 @@
 import { createRequire } from 'node:module'
 
 import { defineConfig } from 'vitepress'
-import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 import { replaceShortcutsPlugin } from './replace-shortcuts-plugin'
 import { exampleItems } from './sidebar-example-items'
@@ -167,7 +166,6 @@ export default defineConfig({
 
   markdown: {
     config(md) {
-      md.use(tabsMarkdownPlugin)
       md.use(replaceShortcutsPlugin)
     },
   },

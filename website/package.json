@@ -42,7 +42,6 @@
     "vite": "^5.0.10",
     "vite-plugin-unocss-watcher": "^0.1.2",
     "vitepress": "1.0.0-rc.33",
-    "vitepress-plugin-tabs": "^0.5.0",
     "vue": "^3.4.0-rc.3"
   }
 }

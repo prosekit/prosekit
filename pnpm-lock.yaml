@@ -331,7 +331,7 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: 0.2.1
+        specifier: 0.2.2
         version: link:../basic
       '@prosekit/core':
         specifier: 0.2.0

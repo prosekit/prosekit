@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.2.2
+
+### Patch Changes
+
+- [`1b6744e`](https://github.com/ocavue/prosekit/commit/1b6744e71b329254ce525edcafe058bdb1d8f448) ![@prosekit/basic](https://img.shields.io/badge/prosekit%2Fbasic-444444)
+
+  Improved `typography.css`. Increased the padding of the `p` element and fix the position of the list checkboxes.
+
 ## 0.2.1
 
 ### Patch Changes

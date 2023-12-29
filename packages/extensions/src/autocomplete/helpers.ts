@@ -17,8 +17,6 @@ function isInsideCode($pos: ResolvedPos): boolean {
   return $pos.marks().some((mark) => mark.type.name === 'code')
 }
 
-export const OBJECT_REPLACEMENT = '\uFFFC'
-
 export interface PredictionPluginState {
   active: boolean
   ignore: number | null

@@ -1,13 +1,13 @@
 import {
   Priority,
   defineCommands,
-  defineInputRule,
   defineKeymap,
   defineNodeSpec,
   definePlugin,
   insertNode,
   union,
   withPriority,
+  type Extension,
 } from '@prosekit/core'
 import {
   createDedentListCommand,
@@ -24,6 +24,8 @@ import {
   listKeymap,
   type ListAttributes,
 } from 'prosemirror-flat-list'
+
+import { defineInputRule } from '../input-rule'
 
 export function defineListSpec() {
   return defineNodeSpec({ ...createListSpec(), name: 'list' })
@@ -42,8 +44,8 @@ export function defineListKeymap() {
   return defineKeymap(listKeymap)
 }
 
-export function defineListInputRules() {
-  return defineInputRule(() => listInputRules)
+export function defineListInputRules(): Extension {
+  return union(listInputRules.map(defineInputRule))
 }
 
 export function defineListCommands() {

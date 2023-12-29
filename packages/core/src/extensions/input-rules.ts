@@ -14,6 +14,8 @@ import { pluginFacet, type PluginPayload } from './plugin'
  * or a function that returns one or multiple input rules.
  *
  * @public
+ *
+ * @deprecated Use `prosekit/extensions/input-rule` instead.
  */
 export function defineInputRule(
   rule:

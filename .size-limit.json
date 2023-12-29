@@ -52,6 +52,10 @@
     "path": "packages/prosekit/dist/prosekit-extensions-image.js"
   },
   {
+    "name": "prosekit/extensions/input-rule",
+    "path": "packages/prosekit/dist/prosekit-extensions-input-rule.js"
+  },
+  {
     "name": "prosekit/extensions/italic",
     "path": "packages/prosekit/dist/prosekit-extensions-italic.js"
   },

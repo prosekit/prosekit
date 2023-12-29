@@ -1,7 +1,5 @@
-import { defineInputRule, getNodeType } from '@prosekit/core'
-import { textblockTypeInputRule } from '@prosekit/pm/inputrules'
-
 import { defineTextBlockEnterRule } from '../enter-rule'
+import { defineTextBlockInputRule } from '../input-rule'
 
 import type { CodeBlockAttrs } from './code-block-types'
 
@@ -11,9 +9,10 @@ import type { CodeBlockAttrs } from './code-block-types'
  * @public
  */
 export function defineCodeBlockInputRule() {
-  return defineInputRule(({ schema }) => {
-    const nodeType = getNodeType(schema, 'codeBlock')
-    return textblockTypeInputRule(/^```(\S*)\s$/, nodeType, getAttrs)
+  return defineTextBlockInputRule({
+    regex: /^```(\S*)\s$/,
+    type: 'codeBlock',
+    attrs: getAttrs,
   })
 }
 

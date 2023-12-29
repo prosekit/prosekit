@@ -33,6 +33,7 @@
     "./code-block": "./src/code-block/index.ts",
     "./heading": "./src/heading/index.ts",
     "./image": "./src/image/index.ts",
+    "./input-rule": "./src/input-rule/index.ts",
     "./italic": "./src/italic/index.ts",
     "./link": "./src/link/index.ts",
     "./list": "./src/list/index.ts",
@@ -104,6 +105,11 @@
         "types": "./dist/prosekit-extensions-image.d.ts",
         "import": "./dist/prosekit-extensions-image.js",
         "default": "./dist/prosekit-extensions-image.js"
+      },
+      "./input-rule": {
+        "types": "./dist/prosekit-extensions-input-rule.d.ts",
+        "import": "./dist/prosekit-extensions-input-rule.js",
+        "default": "./dist/prosekit-extensions-input-rule.js"
       },
       "./italic": {
         "types": "./dist/prosekit-extensions-italic.d.ts",
@@ -180,6 +186,9 @@
         ],
         "image": [
           "./dist/prosekit-extensions-image.d.ts"
+        ],
+        "input-rule": [
+          "./dist/prosekit-extensions-input-rule.d.ts"
         ],
         "italic": [
           "./dist/prosekit-extensions-italic.d.ts"

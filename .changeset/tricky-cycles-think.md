@@ -1,5 +1,6 @@
 ---
-"@prosekit/core": patch
+'prosekit': patch
+'@prosekit/core': patch
 ---
 
 Export internal API `keymapFacet`.

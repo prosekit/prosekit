@@ -11,3 +11,5 @@ export function getExamples(story: string) {
 export function locateEditor(page: Page) {
   return page.locator('.ProseMirror')
 }
+
+export const isApple = process.platform === 'darwin'

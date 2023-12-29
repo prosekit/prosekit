@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import type { VueNodeViewProps } from 'prosekit/vue'
-import { computed, defineProps } from 'vue'
+import { computed } from 'vue'
 import LanguageSelector from './language-selector.vue'
 
 const props = defineProps<VueNodeViewProps>()

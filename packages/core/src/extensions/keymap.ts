@@ -8,7 +8,7 @@ import { Facet } from '../facets/facet'
 import { type Extension } from '../types/extension'
 import { Priority } from '../types/priority'
 
-import { pluginFacet } from './plugin'
+import { pluginFacet, type PluginPayload } from './plugin'
 
 /**
  * @public
@@ -41,7 +41,15 @@ export function defineBaseKeymap(options?: {
   return withPriority(defineKeymap(baseKeymap), priority)
 }
 
-const keymapFacet = Facet.define({
+/**
+ * @internal
+ */
+export type KeymapPayload = Keymap
+
+/**
+ * @internal
+ */
+export const keymapFacet = Facet.define<KeymapPayload, PluginPayload>({
   converter: () => {
     type Handler = (view: EditorView, event: KeyboardEvent) => boolean
 

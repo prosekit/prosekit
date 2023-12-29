@@ -19,7 +19,9 @@ export { defineInputRule } from './extensions/input-rules'
 export {
   defineBaseKeymap,
   defineKeymap,
+  keymapFacet,
   type Keymap,
+  type KeymapPayload,
 } from './extensions/keymap'
 export { defineMarkSpec, type MarkSpecOptions } from './extensions/mark-spec'
 export { defineNodeSpec, type NodeSpecOptions } from './extensions/node-spec'

@@ -3,7 +3,7 @@ import { expect, test, type Page } from '@playwright/test'
 import { getExamples, isApple, locateEditor } from './helper'
 
 for (const example of getExamples('code-block')) {
-  test.describe(example, async () => {
+  test.describe(example, () => {
     test('input rule', async ({ page }) => {
       await page.goto(example)
       const editor = locateEditor(page)

@@ -10,6 +10,7 @@
     "./src/heading/index.ts",
     "./src/image/index.ts",
     "./src/index.ts",
+    "./src/input-rule/index.ts",
     "./src/italic/index.ts",
     "./src/link/index.ts",
     "./src/list/index.ts",

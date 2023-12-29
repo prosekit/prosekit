@@ -1,7 +1,6 @@
 import {
   Priority,
   defineCommands,
-  defineInputRule,
   defineKeymap,
   defineNodeSpec,
   definePlugin,
@@ -25,6 +24,8 @@ import {
   type ListAttributes,
 } from 'prosemirror-flat-list'
 
+import { defineInputRule } from '../input-rule'
+
 export function defineListSpec() {
   return defineNodeSpec({ ...createListSpec(), name: 'list' })
 }
@@ -43,7 +44,7 @@ export function defineListKeymap() {
 }
 
 export function defineListInputRules() {
-  return defineInputRule(() => listInputRules)
+  return union(listInputRules.map(defineInputRule))
 }
 
 export function defineListCommands() {

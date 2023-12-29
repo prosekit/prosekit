@@ -46,6 +46,10 @@ export const referenceItems = [
         "link": "/references/extensions/image/"
       },
       {
+        "text": "input-rule",
+        "link": "/references/extensions/input-rule/"
+      },
+      {
         "text": "italic",
         "link": "/references/extensions/italic/"
       },

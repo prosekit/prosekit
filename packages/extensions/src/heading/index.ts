@@ -1,15 +1,14 @@
 import {
   defineCommands,
-  defineInputRule,
   defineKeymap,
   defineNodeSpec,
-  getNodeType,
   insertNode,
   setBlockType,
   toggleNode,
   union,
 } from '@prosekit/core'
-import { textblockTypeInputRule } from '@prosekit/pm/inputrules'
+
+import { defineTextBlockInputRule } from '../input-rule'
 
 export interface HeadingAttrs {
   level: number
@@ -48,12 +47,13 @@ export function defineHeadingKeymap() {
 }
 
 export function defineHeadingInputRule() {
-  return defineInputRule(({ schema }) => {
-    const nodeSpec = getNodeType(schema, 'heading')
-    return textblockTypeInputRule(/^(#{1,6})\s/, nodeSpec, (match) => {
+  return defineTextBlockInputRule({
+    regex: /^(#{1,6})\s$/,
+    type: 'heading',
+    attrs: (match) => {
       const level: number = match[1]?.length ?? 1
       return { level } satisfies HeadingAttrs
-    })
+    },
   })
 }
 

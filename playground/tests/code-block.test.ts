@@ -54,25 +54,25 @@ for (const example of getExamples('code-block')) {
   })
 }
 
-const expectNotPre = async (page: Page) => {
+async function expectNotPre(page: Page) {
   const editor = locateEditor(page)
   const pre = editor.locator('pre')
   await expect(pre).not.toBeVisible()
 }
 
-const expectAnyPre = async (page: Page) => {
+async function expectAnyPre(page: Page) {
   const editor = locateEditor(page)
   const pre = editor.locator('pre')
   await expect(pre.first()).toBeVisible()
 }
 
-const expectJavaScriptPre = async (page: Page) => {
+async function expectJavaScriptPre(page: Page) {
   const editor = locateEditor(page)
   const pre = editor.locator('pre[data-language="javascript"]')
   await expect(pre.first()).toBeVisible()
 }
 
-const clear = async (page: Page) => {
+async function clear(page: Page) {
   const editor = locateEditor(page)
   await editor.press(isApple ? 'Meta+a' : 'Control+a')
   await editor.press('Backspace')

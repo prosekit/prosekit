@@ -53,7 +53,9 @@ export const shortcuts = {
   ),
 
   LANGUAGE_BUTTON: clsx(
-    'absolute m-2 box-border cursor-pointer rounded-md border-none bg-transparent px-2 py-0.5 text-xs text-gray-400 outline-none transition-colors hover:bg-gray-500/30 hover:text-gray-800',
+    'absolute m-2 box-border cursor-pointer rounded-md border-none bg-transparent px-2 py-0.5 text-xs text-gray-400 outline-none transition hover:bg-gray-500/30 hover:text-gray-800',
+    // Only visible when hovering the code block
+    'opacity-0 [div[data-node-view-root]:hover_&]:opacity-100',
   ),
 
   LANGUAGE_COMBO_BOX: clsx(

@@ -3,7 +3,7 @@ import { ComboBox } from 'prosekit/vue/combo-box'
 import { ComboBoxInput } from 'prosekit/vue/combo-box-input'
 import { ComboBoxItem } from 'prosekit/vue/combo-box-item'
 import { ComboBoxList } from 'prosekit/vue/combo-box-list'
-import { defineProps, ref } from 'vue'
+import { ref } from 'vue'
 import { languages } from './shikiji'
 
 const props = defineProps<{

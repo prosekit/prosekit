@@ -1,13 +1,14 @@
 import { EditorState, Plugin, Transaction } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
+import { OBJECT_REPLACEMENT_CHARACTER } from '../utils/unicode'
+
 import {
-  OBJECT_REPLACEMENT,
+  getPluginState,
   getTrMeta,
   pluginKey,
-  type PredictionPluginState,
-  getPluginState,
   setTrMeta,
+  type PredictionPluginState,
 } from './helpers'
 import type { AutocompleteRule } from './rule'
 
@@ -81,13 +82,16 @@ export function createAutocompletePlugin({
           const textContent = view.state.doc.textBetween(
             from,
             to,
-            OBJECT_REPLACEMENT,
+            OBJECT_REPLACEMENT_CHARACTER,
           )
 
           const deleteMatch = () => {
             if (
-              view.state.doc.textBetween(from, to, OBJECT_REPLACEMENT) ===
-              textContent
+              view.state.doc.textBetween(
+                from,
+                to,
+                OBJECT_REPLACEMENT_CHARACTER,
+              ) === textContent
             ) {
               view.dispatch(view.state.tr.delete(from, to))
             }
@@ -145,7 +149,7 @@ function calcPluginState(
     Math.max(0, parentOffset - MAX_MATCH),
     parentOffset,
     null,
-    OBJECT_REPLACEMENT,
+    OBJECT_REPLACEMENT_CHARACTER,
   )
 
   for (const rule of rules) {

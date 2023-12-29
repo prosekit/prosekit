@@ -582,7 +582,7 @@ importers:
         specifier: ^10.19.3
         version: 10.19.3
       prosekit:
-        specifier: ^0.2.1
+        specifier: ^0.2.2
         version: link:../packages/prosekit
       prosemirror-highlight:
         specifier: ^0.3.3
@@ -651,7 +651,7 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1
       prosekit:
-        specifier: ^0.2.1
+        specifier: ^0.2.2
         version: link:../packages/prosekit
       prosekit-playground:
         specifier: '*'

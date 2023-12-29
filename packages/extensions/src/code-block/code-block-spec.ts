@@ -27,12 +27,7 @@ export function defineCodeBlockSpec() {
     ],
     toDOM(node) {
       const attrs = node.attrs as CodeBlockAttrs
-      return [
-        'pre',
-        // TODO: remove class 'hljs'
-        { 'data-language': attrs.language, class: 'hljs' },
-        ['code', 0],
-      ]
+      return ['pre', { 'data-language': attrs.language }, ['code', 0]]
     },
   })
 }

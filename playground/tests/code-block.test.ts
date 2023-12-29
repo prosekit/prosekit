@@ -24,7 +24,7 @@ for (const example of getExamples('code-block')) {
       await expect(editor).toHaveText('```javascript')
       await expect(pre).not.toBeVisible()
       await editor.press('Space')
-      await expectAnyPre(page)
+      await expectJavaScriptPre(page)
       await expect(editor).not.toHaveText('```')
     })
 
@@ -48,7 +48,7 @@ for (const example of getExamples('code-block')) {
       await expect(editor).toHaveText('```javascript')
       await expect(pre).not.toBeVisible()
       await editor.press('Enter')
-      await expectAnyPre(page)
+      await expectJavaScriptPre(page)
       await expect(editor).not.toHaveText('```')
     })
   })
@@ -63,6 +63,12 @@ const expectNotPre = async (page: Page) => {
 const expectAnyPre = async (page: Page) => {
   const editor = locateEditor(page)
   const pre = editor.locator('pre')
+  await expect(pre.first()).toBeVisible()
+}
+
+const expectJavaScriptPre = async (page: Page) => {
+  const editor = locateEditor(page)
+  const pre = editor.locator('pre[data-language="javascript"]')
   await expect(pre.first()).toBeVisible()
 }
 

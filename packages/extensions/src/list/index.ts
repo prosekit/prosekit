@@ -7,6 +7,7 @@ import {
   insertNode,
   union,
   withPriority,
+  type Extension,
 } from '@prosekit/core'
 import {
   createDedentListCommand,
@@ -43,7 +44,7 @@ export function defineListKeymap() {
   return defineKeymap(listKeymap)
 }
 
-export function defineListInputRules() {
+export function defineListInputRules(): Extension {
   return union(listInputRules.map(defineInputRule))
 }
 

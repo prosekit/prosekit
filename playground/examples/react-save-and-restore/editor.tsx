@@ -42,11 +42,6 @@ export default function Editor() {
 
   return (
     <ProseKit editor={editor}>
-      <div className="EDITOR_VIEWPORT">
-        <div ref={editor.mount} className="EDITOR_CONTENT"></div>
-        <EventHandlers onUpdate={onDocChange} />
-      </div>
-
       <div>
         <button
           onClick={onSave}
@@ -70,6 +65,11 @@ export default function Editor() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="EDITOR_VIEWPORT">
+        <div ref={editor.mount} className="EDITOR_CONTENT"></div>
+        <EventHandlers onUpdate={onDocChange} />
       </div>
     </ProseKit>
   )

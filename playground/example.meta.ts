@@ -177,6 +177,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-save-and-restore",
+      "framework": "react",
+      "story": "save-and-restore",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "event-handlers.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-slash-menu",
       "framework": "react",
       "story": "slash-menu",

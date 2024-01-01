@@ -30,6 +30,8 @@
 
 - [readonly](./examples/readonly)
 
+- [save-and-restore](./examples/save-and-restore)
+
 - [slash-menu](./examples/slash-menu)
 
 - [strike](./examples/strike)

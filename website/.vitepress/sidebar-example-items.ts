@@ -59,6 +59,10 @@ export const exampleItems = [
     "link": "/examples/readonly"
   },
   {
+    "text": "save-and-restore",
+    "link": "/examples/save-and-restore"
+  },
+  {
     "text": "slash-menu",
     "link": "/examples/slash-menu"
   },

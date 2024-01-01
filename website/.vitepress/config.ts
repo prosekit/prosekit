@@ -63,7 +63,7 @@ export default defineConfig({
         {
           text: 'Core Concepts',
           items: [
-            { text: 'Extension', link: '/guide/extensions' },
+            { text: 'Extensions', link: '/guide/extensions' },
             { text: 'Schemas', link: '/guide/schemas' },
             { text: 'Commands', link: '/guide/commands' },
             { text: 'Key Bindings', link: '/guide/key-bindings' },

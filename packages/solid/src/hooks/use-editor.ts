@@ -1,10 +1,10 @@
 import {
   Editor,
   ProseKitError,
-  type Extension,
   defineUpdateHandler,
+  type Extension,
 } from '@prosekit/core'
-import { useContext, createEffect, createSignal } from 'solid-js'
+import { createEffect, createSignal, useContext } from 'solid-js'
 
 import { editorContext } from '../contexts/editor-context'
 

@@ -25,7 +25,6 @@
     "prettier": "^3.1.1",
     "prosekit": "^0.2.2",
     "prosekit-playground": "*",
-    "prosemirror-highlight": "^0.3.3",
     "radix-vue": "^1.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

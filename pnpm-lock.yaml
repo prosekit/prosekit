@@ -207,12 +207,15 @@ importers:
         specifier: ^0.4.5
         version: 0.4.5
       prosemirror-highlight:
-        specifier: ^0.3.3
-        version: 0.3.3(shikiji@0.9.16)
+        specifier: ^0.4.0
+        version: 0.4.0(shikiji@0.9.16)
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
         version: link:../dev
+      shikiji:
+        specifier: ^0.9.16
+        version: 0.9.16
       tsup:
         specifier: ^8.0.1
         version: 8.0.1(@microsoft/api-extractor@7.39.0)(postcss@8.4.32)(typescript@5.3.3)
@@ -385,6 +388,9 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      shikiji:
+        specifier: ^0.9.16
+        version: 0.9.16
       solid-js:
         specifier: ^1.8.7
         version: 1.8.7
@@ -584,9 +590,6 @@ importers:
       prosekit:
         specifier: ^0.2.2
         version: link:../packages/prosekit
-      prosemirror-highlight:
-        specifier: ^0.3.3
-        version: 0.3.3(shikiji@0.9.16)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -656,9 +659,6 @@ importers:
       prosekit-playground:
         specifier: '*'
         version: link:../playground
-      prosemirror-highlight:
-        specifier: ^0.3.3
-        version: 0.3.3(shikiji@0.9.16)
       radix-vue:
         specifier: ^1.2.5
         version: 1.2.5(vue@3.4.3)
@@ -8141,8 +8141,8 @@ packages:
       prosemirror-view: 1.32.7
     dev: false
 
-  /prosemirror-highlight@0.3.3(shikiji@0.9.16):
-    resolution: {integrity: sha512-tOGyPvmRKZ49ubzKmFIwiwS7CNXlU9g/D4zZLaHGzXLVNVnBrmbDOajZ4eP0lylOAWPxZN+vrFZ9DwrtyikuoA==}
+  /prosemirror-highlight@0.4.0(shikiji@0.9.16):
+    resolution: {integrity: sha512-RHGi5QjcWnWgn6bMkjbC2+ehv9Piv3D5UN/dNJG2r738NCQCFye0dkFa6c1oURsvUuwpFiQREqp1YYGpGbZOuA==}
     peerDependencies:
       '@types/hast': ^3.0.0
       highlight.js: ^11.9.0
@@ -8152,7 +8152,7 @@ packages:
       prosemirror-transform: ^1.8.0
       prosemirror-view: ^1.32.4
       refractor: ^4.8.1
-      shiki: ^0.14.6
+      shiki: ^0.14.0
       shikiji: ^0.8.0 || ^0.9.0
     peerDependenciesMeta:
       '@types/hast':
@@ -8177,6 +8177,7 @@ packages:
         optional: true
     dependencies:
       shikiji: 0.9.16
+    dev: false
 
   /prosemirror-history@1.3.2:
     resolution: {integrity: sha512-/zm0XoU/N/+u7i5zepjmZAEnpvjDtzoPWW6VmKptcAnPadN/SStsBjMImdCEbb3seiNTpveziPTIrXQbHLtU1g==}

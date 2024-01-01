@@ -3,8 +3,11 @@ import { ComboBoxInput } from 'prosekit/react/combo-box-input'
 import { ComboBoxItem } from 'prosekit/react/combo-box-item'
 import { ComboBoxList } from 'prosekit/react/combo-box-list'
 import { useRef, useState } from 'react'
+import { bundledLanguagesInfo } from 'shikiji'
 
-import { languages } from './shikiji'
+const languages: Array<[id: string, name: string]> = bundledLanguagesInfo.map(
+  (info) => [info.id, info.name],
+)
 
 export default function LanguageSelector({
   language,
@@ -46,13 +49,13 @@ export default function LanguageSelector({
           className="LANGUAGE_COMBO_BOX_INPUT"
         ></ComboBoxInput>
         <ComboBoxList className="LANGUAGE_COMBO_BOX_LIST">
-          {languages.map((language) => (
+          {languages.map(([languageId, languageName]) => (
             <ComboBoxItem
-              key={language}
+              key={languageId}
               className="LANGUAGE_COMBO_BOX_ITEM"
-              onSelect={() => setLanguage(language)}
+              onSelect={() => setLanguage(languageId)}
             >
-              {language}
+              {languageName}
             </ComboBoxItem>
           ))}
         </ComboBoxList>

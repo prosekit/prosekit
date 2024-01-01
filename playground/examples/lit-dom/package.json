@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "prosemirror-highlight": "^0.3.3",
     "shikiji": "^0.9.16"
   }
 }

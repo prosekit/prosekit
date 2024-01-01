@@ -2,7 +2,7 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
 import {
   defineCodeBlock,
-  defineCodeBlockHighlight,
+  defineCodeBlockShikiji,
 } from 'prosekit/extensions/code-block'
 import {
   defineReactNodeView,
@@ -10,13 +10,12 @@ import {
 } from 'prosekit/react'
 
 import CodeBlockView from './code-block-view'
-import { parser } from './shikiji'
 
 export function defineExtension() {
   return union([
     defineBasicExtension(),
     defineCodeBlock(),
-    defineCodeBlockHighlight({ parser }),
+    defineCodeBlockShikiji(),
     defineReactNodeView({
       name: 'codeBlock',
       contentAs: 'code',

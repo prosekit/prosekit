@@ -40,10 +40,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "shikiji.ts",
-          "hidden": false
-        },
-        {
           "path": "toggle.tsx",
           "hidden": false
         },
@@ -360,10 +356,6 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
-          "hidden": false
-        },
-        {
-          "path": "shikiji.ts",
           "hidden": false
         },
         {
@@ -1132,10 +1124,6 @@ export const exampleMeta = {
         {
           "path": "package.json",
           "hidden": true
-        },
-        {
-          "path": "shikiji.ts",
-          "hidden": false
         }
       ]
     },

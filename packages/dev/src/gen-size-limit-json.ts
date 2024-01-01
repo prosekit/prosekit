@@ -34,8 +34,14 @@ async function* iterateExports(pkg: Package) {
       .join('/')
 
     const subPackage = await vfs.getPackageByName(subPackageName)
-    const peerDependencies: string[] = sortedUniq([
+    const ignored: string[] = sortedUniq([
+      // Ignore peer dependencies
       ...Object.keys(subPackage.packageJson.peerDependencies ?? {}),
+
+      // Ignore dependencies on other ProseKit packages
+      ...Object.keys(subPackage.packageJson.dependencies ?? {}).filter((name) =>
+        name.startsWith('@prosekit'),
+      ),
     ])
 
     const entryPath = typeof entry === 'string' ? entry : entry.default
@@ -43,7 +49,7 @@ async function* iterateExports(pkg: Package) {
     yield {
       name: path.normalize(path.join('prosekit', entryName)),
       path: path.normalize(path.join('packages/prosekit', entryPath)),
-      ignore: peerDependencies.length > 0 ? peerDependencies : undefined,
+      ignore: ignored,
     }
   }
 }

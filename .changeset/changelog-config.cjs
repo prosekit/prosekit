@@ -39,20 +39,6 @@ function formatCommit(commit) {
   return `[\`${shortCommit}\`](https://github.com/ocavue/prosekit/commit/${commit}) `
 }
 
-/**
- * https://shields.io/docs/logos
- *
- * @type {Object.<string, string>}
- */
-const moduleLogos = {
-  '@prosekit/vue': 'vuedotjs',
-  '@prosekit/react': 'react',
-  '@prosekit/preact': 'preact',
-  '@prosekit/lit': 'lit',
-  '@prosekit/svelte': 'svelte',
-  '@prosekit/solid': 'solid',
-}
-
 /** @type import('@changesets/types').GetDependencyReleaseLine */
 async function getDependencyReleaseLine() {
   return ''

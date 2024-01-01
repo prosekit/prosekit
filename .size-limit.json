@@ -1,223 +1,179 @@
 [
   {
     "name": "prosekit/basic",
-    "path": "packages/prosekit/dist/prosekit-basic.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-basic.js"
   },
   {
     "name": "prosekit/basic/style.css",
-    "path": "packages/prosekit/dist/basic/style.css",
-    "ignore": []
+    "path": "packages/prosekit/dist/basic/style.css"
   },
   {
     "name": "prosekit/basic/typography.css",
-    "path": "packages/prosekit/dist/basic/typography.css",
-    "ignore": []
+    "path": "packages/prosekit/dist/basic/typography.css"
   },
   {
     "name": "prosekit/core",
-    "path": "packages/prosekit/dist/prosekit-core.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-core.js"
   },
   {
     "name": "prosekit/extensions",
-    "path": "packages/prosekit/dist/prosekit-extensions.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions.js"
   },
   {
     "name": "prosekit/extensions/autocomplete",
-    "path": "packages/prosekit/dist/prosekit-extensions-autocomplete.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-autocomplete.js"
   },
   {
     "name": "prosekit/extensions/blockquote",
-    "path": "packages/prosekit/dist/prosekit-extensions-blockquote.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-blockquote.js"
   },
   {
     "name": "prosekit/extensions/bold",
-    "path": "packages/prosekit/dist/prosekit-extensions-bold.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-bold.js"
   },
   {
     "name": "prosekit/extensions/code",
-    "path": "packages/prosekit/dist/prosekit-extensions-code.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-code.js"
   },
   {
     "name": "prosekit/extensions/code-block",
-    "path": "packages/prosekit/dist/prosekit-extensions-code-block.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-code-block.js"
   },
   {
     "name": "prosekit/extensions/heading",
-    "path": "packages/prosekit/dist/prosekit-extensions-heading.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-heading.js"
   },
   {
     "name": "prosekit/extensions/image",
-    "path": "packages/prosekit/dist/prosekit-extensions-image.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-image.js"
   },
   {
     "name": "prosekit/extensions/input-rule",
-    "path": "packages/prosekit/dist/prosekit-extensions-input-rule.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-input-rule.js"
   },
   {
     "name": "prosekit/extensions/italic",
-    "path": "packages/prosekit/dist/prosekit-extensions-italic.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-italic.js"
   },
   {
     "name": "prosekit/extensions/link",
-    "path": "packages/prosekit/dist/prosekit-extensions-link.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-link.js"
   },
   {
     "name": "prosekit/extensions/list",
-    "path": "packages/prosekit/dist/prosekit-extensions-list.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-list.js"
   },
   {
     "name": "prosekit/extensions/list/style.css",
-    "path": "packages/prosekit/dist/extensions/list/style.css",
-    "ignore": []
+    "path": "packages/prosekit/dist/extensions/list/style.css"
   },
   {
     "name": "prosekit/extensions/mention",
-    "path": "packages/prosekit/dist/prosekit-extensions-mention.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-mention.js"
   },
   {
     "name": "prosekit/extensions/placeholder",
-    "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js"
   },
   {
     "name": "prosekit/extensions/placeholder/style.css",
-    "path": "packages/prosekit/dist/extensions/placeholder/style.css",
-    "ignore": []
+    "path": "packages/prosekit/dist/extensions/placeholder/style.css"
   },
   {
     "name": "prosekit/extensions/readonly",
-    "path": "packages/prosekit/dist/prosekit-extensions-readonly.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-readonly.js"
   },
   {
     "name": "prosekit/extensions/strike",
-    "path": "packages/prosekit/dist/prosekit-extensions-strike.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-strike.js"
   },
   {
     "name": "prosekit/extensions/underline",
-    "path": "packages/prosekit/dist/prosekit-extensions-underline.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-extensions-underline.js"
   },
   {
     "name": "prosekit/lit",
-    "path": "packages/prosekit/dist/prosekit-lit.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-lit.js"
   },
   {
     "name": "prosekit/lit/autocomplete-empty",
-    "path": "packages/prosekit/dist/prosekit-lit-autocomplete-empty.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-lit-autocomplete-empty.js"
   },
   {
     "name": "prosekit/lit/autocomplete-item",
-    "path": "packages/prosekit/dist/prosekit-lit-autocomplete-item.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-lit-autocomplete-item.js"
   },
   {
     "name": "prosekit/lit/autocomplete-list",
-    "path": "packages/prosekit/dist/prosekit-lit-autocomplete-list.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-lit-autocomplete-list.js"
   },
   {
     "name": "prosekit/lit/autocomplete-popover",
-    "path": "packages/prosekit/dist/prosekit-lit-autocomplete-popover.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-lit-autocomplete-popover.js"
   },
   {
     "name": "prosekit/lit/combo-box",
-    "path": "packages/prosekit/dist/prosekit-lit-combo-box.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-lit-combo-box.js"
   },
   {
     "name": "prosekit/lit/combo-box-input",
-    "path": "packages/prosekit/dist/prosekit-lit-combo-box-input.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-lit-combo-box-input.js"
   },
   {
     "name": "prosekit/lit/combo-box-item",
-    "path": "packages/prosekit/dist/prosekit-lit-combo-box-item.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-lit-combo-box-item.js"
   },
   {
     "name": "prosekit/lit/combo-box-list",
-    "path": "packages/prosekit/dist/prosekit-lit-combo-box-list.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-lit-combo-box-list.js"
   },
   {
     "name": "prosekit/lit/inline-popover",
-    "path": "packages/prosekit/dist/prosekit-lit-inline-popover.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-lit-inline-popover.js"
   },
   {
     "name": "prosekit/lit/popover",
-    "path": "packages/prosekit/dist/prosekit-lit-popover.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-lit-popover.js"
   },
   {
     "name": "prosekit/pm",
-    "path": "packages/prosekit/dist/prosekit-pm.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-pm.js"
   },
   {
     "name": "prosekit/pm/commands",
-    "path": "packages/prosekit/dist/prosekit-pm-commands.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-pm-commands.js"
   },
   {
     "name": "prosekit/pm/history",
-    "path": "packages/prosekit/dist/prosekit-pm-history.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-pm-history.js"
   },
   {
     "name": "prosekit/pm/inputrules",
-    "path": "packages/prosekit/dist/prosekit-pm-inputrules.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-pm-inputrules.js"
   },
   {
     "name": "prosekit/pm/keymap",
-    "path": "packages/prosekit/dist/prosekit-pm-keymap.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-pm-keymap.js"
   },
   {
     "name": "prosekit/pm/model",
-    "path": "packages/prosekit/dist/prosekit-pm-model.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-pm-model.js"
   },
   {
     "name": "prosekit/pm/state",
-    "path": "packages/prosekit/dist/prosekit-pm-state.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-pm-state.js"
   },
   {
     "name": "prosekit/pm/transform",
-    "path": "packages/prosekit/dist/prosekit-pm-transform.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-pm-transform.js"
   },
   {
     "name": "prosekit/pm/view",
-    "path": "packages/prosekit/dist/prosekit-pm-view.js",
-    "ignore": []
+    "path": "packages/prosekit/dist/prosekit-pm-view.js"
   },
   {
     "name": "prosekit/pm/view/style/prosemirror.css",
-    "path": "packages/prosekit/dist/pm/view/style/prosemirror.css",
-    "ignore": []
+    "path": "packages/prosekit/dist/pm/view/style/prosemirror.css"
   },
   {
     "name": "prosekit/preact",

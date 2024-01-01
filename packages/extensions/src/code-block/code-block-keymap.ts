@@ -29,22 +29,24 @@ const existCodeBlock: Command = (state, dispatch) => {
     $head.parentOffset === parent.content.size &&
     parent.textContent.endsWith('\n\n')
   ) {
-    const above = $head.node(-1)
-    const index = $head.indexAfter(-1)
-    const type = defaultBlockAt(above.contentMatchAt(index))
+    const grandParent = $head.node(-1)
+    const insertIndex = $head.indexAfter(-1)
+    const type = defaultBlockAt(grandParent.contentMatchAt(insertIndex))
+
+    if (!type || !grandParent.canReplaceWith(insertIndex, insertIndex, type)) {
+      return false
+    }
 
     if (dispatch) {
       const { tr } = state
       tr.delete($head.pos - 2, $head.pos)
-
-      if (!type || !above.canReplaceWith(index, index, type)) {
-        return false
-      }
-
       const pos = tr.selection.$head.after()
-      tr.replaceWith(pos, pos, type.createAndFill()!)
-      tr.setSelection(TextSelection.near(tr.doc.resolve(pos), 1))
-      dispatch(tr.scrollIntoView())
+      const node = type.createAndFill()
+      if (node) {
+        tr.replaceWith(pos, pos, node)
+        tr.setSelection(TextSelection.near(tr.doc.resolve(pos), 1))
+        dispatch(tr.scrollIntoView())
+      }
     }
 
     return true

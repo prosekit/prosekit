@@ -48,8 +48,9 @@
   "treatWarningsAsErrors": true,
   "cleanOutputDir": true,
 
-  // https://github.com/tgreyuk/typedoc-plugin-markdown/tree/next/packages/typedoc-plugin-markdown#readme
+  // https://www.typedoc-plugin-markdown.org/options
   "namedAnchors": { "headings": true },
+  "preserveAnchorCasing": true,
   "hideBreadcrumbs": true,
   "hideInPageTOC": true,
   "hidePageHeader": true,

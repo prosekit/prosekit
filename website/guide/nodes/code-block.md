@@ -14,8 +14,7 @@ const extension = defineCodeBlock()
 
 ## Syntax Highlighting
 
-You can use `defineCodeBlockShikiji` to enable syntax highlighting for the `codeBlock` node using the [Shikiji] library.
-`defineCodeBlockShikiji` will only load the [Shikiji] library and used languages asynchronously, which is useful for reducing the initial bundle size of your application.
+You can use `defineCodeBlockShikiji` to enable syntax highlighting for the `codeBlock` node using the [Shikiji] library. `defineCodeBlockShikiji` will only load the [Shikiji] library and used languages asynchronously, which is useful for reducing the initial bundle size of your application.
 
 ```ts
 import { defineCodeBlockShikiji } from 'prosekit/extensions/code-block'
@@ -23,11 +22,11 @@ import { defineCodeBlockShikiji } from 'prosekit/extensions/code-block'
 const extension = defineCodeBlockShikiji({ theme: 'github-light' })
 ```
 
-If you want to use a different syntax highlighter or have more control over the syntax highlighting, you can use the `defineCodeBlockHighlight` function to create a extension. This function accepts a `parser` option, which is an instance of the [prosemirror-highlight] library. For more details on how to use the other syntax highlighters, refer to the [prosemirror-highlight] documentation.
+If you want to use a different syntax highlighter or have more control over the syntax highlighting, you can use the `defineCodeBlockHighlight` function to create an extension. This function accepts a `parser` object, defined by the [prosemirror-highlight] library. For more details on how to use the other syntax highlighters, refer to the [prosemirror-highlight] documentation.
 
 ```ts
 import { defineCodeBlockHighlight } from 'prosekit/extensions/code-block'
-import { parser } from './my-highlight-parser'
+import { parser } from './my-prosemirror-highlight-parser'
 
 const extension = defineCodeBlockHighlight({ parser })
 ```

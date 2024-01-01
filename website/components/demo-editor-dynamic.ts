@@ -1,6 +1,6 @@
 // @unocss-include
 
-import { clsx } from 'clsx'
+import { clsx } from 'clsx/lite'
 import { defineClientComponent } from 'vitepress'
 import { defineComponent, h } from 'vue'
 

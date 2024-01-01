@@ -44,7 +44,7 @@ async function* iterateExports(pkg: Package) {
     yield {
       name: path.normalize(path.join('prosekit', entryName)),
       path: path.normalize(path.join('packages/prosekit', entryPath)),
-      ignore: ignored,
+      ignore: ignored.length > 0 ? ignored : undefined,
     }
   }
 }

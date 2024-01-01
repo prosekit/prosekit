@@ -17,79 +17,136 @@
   },
   {
     "name": "prosekit/extensions",
-    "path": "packages/prosekit/dist/prosekit-extensions.js"
+    "path": "packages/prosekit/dist/prosekit-extensions.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/autocomplete",
-    "path": "packages/prosekit/dist/prosekit-extensions-autocomplete.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-autocomplete.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/blockquote",
-    "path": "packages/prosekit/dist/prosekit-extensions-blockquote.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-blockquote.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/bold",
-    "path": "packages/prosekit/dist/prosekit-extensions-bold.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-bold.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/code",
-    "path": "packages/prosekit/dist/prosekit-extensions-code.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-code.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/code-block",
-    "path": "packages/prosekit/dist/prosekit-extensions-code-block.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-code-block.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/heading",
-    "path": "packages/prosekit/dist/prosekit-extensions-heading.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-heading.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/image",
-    "path": "packages/prosekit/dist/prosekit-extensions-image.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-image.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/input-rule",
-    "path": "packages/prosekit/dist/prosekit-extensions-input-rule.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-input-rule.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/italic",
-    "path": "packages/prosekit/dist/prosekit-extensions-italic.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-italic.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/link",
-    "path": "packages/prosekit/dist/prosekit-extensions-link.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-link.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/list",
-    "path": "packages/prosekit/dist/prosekit-extensions-list.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-list.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/list/style.css",
-    "path": "packages/prosekit/dist/extensions/list/style.css"
+    "path": "packages/prosekit/dist/extensions/list/style.css",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/mention",
-    "path": "packages/prosekit/dist/prosekit-extensions-mention.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-mention.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/placeholder",
-    "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/placeholder/style.css",
-    "path": "packages/prosekit/dist/extensions/placeholder/style.css"
+    "path": "packages/prosekit/dist/extensions/placeholder/style.css",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/readonly",
-    "path": "packages/prosekit/dist/prosekit-extensions-readonly.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-readonly.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/strike",
-    "path": "packages/prosekit/dist/prosekit-extensions-strike.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-strike.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/extensions/underline",
-    "path": "packages/prosekit/dist/prosekit-extensions-underline.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-underline.js",
+    "ignore": [
+      "shikiji"
+    ]
   },
   {
     "name": "prosekit/lit",

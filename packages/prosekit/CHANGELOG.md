@@ -1,5 +1,18 @@
 # prosekit
 
+## 0.2.4
+
+### Patch Changes
+
+- [`1393d74`](https://github.com/ocavue/prosekit/commit/1393d740e35118c27b84ae535156cf3030914a6f) ![][badge-core]
+
+  Add the following functions to register event handlers into the editor.
+
+  - `defineMountHandler`
+  - `defineUnmountHandler`
+  - `defineUpdateHandler`
+  - `defineDocChangeHandler`
+
 ## 0.2.3
 
 ### Patch Changes

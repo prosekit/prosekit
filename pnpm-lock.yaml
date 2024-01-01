@@ -72,10 +72,10 @@ importers:
   packages/basic:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.0
+        specifier: ^0.2.2
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.2.0
+        specifier: ^0.2.1
         version: link:../extensions
       '@prosekit/pm':
         specifier: ^0.1.1
@@ -198,7 +198,7 @@ importers:
   packages/extensions:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.0
+        specifier: ^0.2.2
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.1
@@ -235,10 +235,10 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       '@prosekit/core':
-        specifier: ^0.2.0
+        specifier: ^0.2.2
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.2.0
+        specifier: ^0.2.1
         version: link:../extensions
       '@prosekit/pm':
         specifier: ^0.1.1
@@ -309,7 +309,7 @@ importers:
   packages/preact:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.0
+        specifier: ^0.2.2
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.1.6
@@ -413,7 +413,7 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.46)
       '@prosekit/core':
-        specifier: ^0.2.0
+        specifier: ^0.2.2
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.1.6
@@ -453,7 +453,7 @@ importers:
   packages/solid:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.0
+        specifier: ^0.2.2
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.1.6
@@ -478,7 +478,7 @@ importers:
   packages/svelte:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.0
+        specifier: ^0.2.2
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.1.6
@@ -515,7 +515,7 @@ importers:
   packages/vue:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.0
+        specifier: ^0.2.2
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.1.6
@@ -588,7 +588,7 @@ importers:
         specifier: ^10.19.3
         version: 10.19.3
       prosekit:
-        specifier: ^0.2.2
+        specifier: ^0.2.4
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -654,7 +654,7 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1
       prosekit:
-        specifier: ^0.2.2
+        specifier: ^0.2.4
         version: link:../packages/prosekit
       prosekit-playground:
         specifier: '*'
@@ -678,17 +678,17 @@ importers:
         specifier: ^4.9.0
         version: 4.9.0
       typedoc:
-        specifier: ^0.25.5
-        version: 0.25.5(typescript@5.3.3)
+        specifier: ^0.25.6
+        version: 0.25.6(typescript@5.3.3)
       typedoc-plugin-external-package-links:
         specifier: ^0.1.0
         version: 0.1.0
       typedoc-plugin-markdown:
         specifier: ^4.0.0-next.38
-        version: 4.0.0-next.38(typedoc@0.25.5)
+        version: 4.0.0-next.38(typedoc@0.25.6)
       typedoc-plugin-mdn-links:
         specifier: ^3.1.10
-        version: 3.1.10(typedoc@0.25.5)
+        version: 3.1.10(typedoc@0.25.6)
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -9870,24 +9870,24 @@ packages:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
     dev: true
 
-  /typedoc-plugin-markdown@4.0.0-next.38(typedoc@0.25.5):
+  /typedoc-plugin-markdown@4.0.0-next.38(typedoc@0.25.6):
     resolution: {integrity: sha512-XrjVxrTvoR85f+elTdSoo/lRVKqk77XntxZvDXYamuxD9c8RjAqAbztM0chcL0rvMOlMotUScRUIBdsGPE6kqA==}
     peerDependencies:
       typedoc: 0.25.x
     dependencies:
-      typedoc: 0.25.5(typescript@5.3.3)
+      typedoc: 0.25.6(typescript@5.3.3)
     dev: true
 
-  /typedoc-plugin-mdn-links@3.1.10(typedoc@0.25.5):
+  /typedoc-plugin-mdn-links@3.1.10(typedoc@0.25.6):
     resolution: {integrity: sha512-jwf08RS71CMLZ31bDqhW3Y+JRYIS5eHlVD/XwfEuk86prIlBvZqIWN4EuYtK7N757oV30yzSSZOsOdYmcp9Plw==}
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x'
     dependencies:
-      typedoc: 0.25.5(typescript@5.3.3)
+      typedoc: 0.25.6(typescript@5.3.3)
     dev: true
 
-  /typedoc@0.25.5(typescript@5.3.3):
-    resolution: {integrity: sha512-K9HzybxB2pqZwUkJvOCbdGEIvOidMdUoUtJavpzw/rnw8Rm5bM6HugIKbGLveCmeojUEUqYO8Fqgdmnp0R2Vqg==}
+  /typedoc@0.25.6(typescript@5.3.3):
+    resolution: {integrity: sha512-1rdionQMpOkpA58qfym1J+YD+ukyA1IEIa4VZahQI2ZORez7dhOvEyUotQL/8rSoMBopdzOS+vAIsORpQO4cTA==}
     engines: {node: '>= 16'}
     hasBin: true
     peerDependencies:

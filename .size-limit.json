@@ -16,8 +16,7 @@
     "path": "packages/prosekit/dist/prosekit-core.js"
   },
   {
-    "name": "prosekit/extensions",
-    "path": "packages/prosekit/dist/prosekit-extensions.js"
+    "name": "prosekit/extensions"
   },
   {
     "name": "prosekit/extensions/autocomplete",

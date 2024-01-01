@@ -9,14 +9,16 @@ import {
   defineCodeBlockEnterRule,
   defineCodeBlockInputRule,
 } from './code-block-input-rule'
+import { defineCodeBlockShikiji } from './code-block-shikiji'
 import { defineCodeBlockSpec } from './code-block-spec'
 import type { CodeBlockAttrs } from './code-block-types'
 
 export {
   defineCodeBlockCommands,
+  defineCodeBlockEnterRule,
   defineCodeBlockHighlight,
   defineCodeBlockInputRule,
-  defineCodeBlockEnterRule,
+  defineCodeBlockShikiji,
   defineCodeBlockSpec,
   type CodeBlockAttrs,
   type HighlightParser,

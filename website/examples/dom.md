@@ -15,7 +15,6 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 <<< @/../playground/examples/lit-dom/editor.ts
 <<< @/../playground/examples/lit-dom/extension.ts
 <<< @/../playground/examples/lit-dom/get-id.ts
-<<< @/../playground/examples/lit-dom/shikiji.ts
 
 :::
 

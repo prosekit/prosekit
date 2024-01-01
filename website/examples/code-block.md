@@ -15,7 +15,6 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 <<< @/../playground/examples/react-code-block/extension.ts
 <<< @/../playground/examples/react-code-block/language-selector.tsx
 <<< @/../playground/examples/react-code-block/package.json
-<<< @/../playground/examples/react-code-block/shikiji.ts
 <<< @/../playground/examples/react-code-block/toggle.tsx
 <<< @/../playground/examples/react-code-block/toolbar.tsx
 
@@ -32,7 +31,6 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 <<< @/../playground/examples/vue-code-block/extension.ts
 <<< @/../playground/examples/vue-code-block/language-selector.vue
 <<< @/../playground/examples/vue-code-block/package.json
-<<< @/../playground/examples/vue-code-block/shikiji.ts
 <<< @/../playground/examples/vue-code-block/toggle.vue
 <<< @/../playground/examples/vue-code-block/toolbar.vue
 

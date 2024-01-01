@@ -19,8 +19,6 @@ examples:
         hidden: false
       - path: package.json
         hidden: false
-      - path: shikiji.ts
-        hidden: false
       - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
@@ -186,8 +184,6 @@ examples:
       - path: language-selector.vue
         hidden: false
       - path: package.json
-        hidden: false
-      - path: shikiji.ts
         hidden: false
       - path: toggle.vue
         hidden: false
@@ -589,8 +585,6 @@ examples:
         hidden: false
       - path: package.json
         hidden: true
-      - path: shikiji.ts
-        hidden: false
   - name: vanilla-dom
     framework: vanilla
     story: dom

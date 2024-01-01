@@ -56,10 +56,19 @@
     "@prosekit/core": "^0.2.0",
     "@prosekit/pm": "^0.1.1",
     "prosemirror-flat-list": "^0.4.5",
-    "prosemirror-highlight": "^0.3.3"
+    "prosemirror-highlight": "^0.4.0"
+  },
+  "peerDependencies": {
+    "shikiji": ">= 0.9.0"
+  },
+  "peerDependenciesMeta": {
+    "shikiji": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@prosekit/dev": "*",
+    "shikiji": "^0.9.16",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
     "vitest": "^1.1.1"

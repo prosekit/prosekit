@@ -4,7 +4,11 @@ import { ComboBoxInput } from 'prosekit/vue/combo-box-input'
 import { ComboBoxItem } from 'prosekit/vue/combo-box-item'
 import { ComboBoxList } from 'prosekit/vue/combo-box-list'
 import { ref } from 'vue'
-import { languages } from './shikiji'
+import { bundledLanguagesInfo } from 'shikiji'
+
+const languages: Array<[id: string, name: string]> = bundledLanguagesInfo.map(
+  (info) => [info.id, info.name],
+)
 
 const props = defineProps<{
   language?: string
@@ -45,12 +49,12 @@ const toggleComboBox = () => {
       ></ComboBoxInput>
       <ComboBoxList className="LANGUAGE_COMBO_BOX_LIST">
         <ComboBoxItem
-          v-for="language in languages"
-          :key="language"
+          v-for="[languageId, languageName] in languages"
+          :key="languageId"
           className="LANGUAGE_COMBO_BOX_ITEM"
-          @select="() => props.setLanguage(language)"
+          @select="() => props.setLanguage(languageId)"
         >
-          {{ language }}
+          {{ languageName }}
         </ComboBoxItem>
       </ComboBoxList>
     </ComboBox>

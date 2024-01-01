@@ -6,6 +6,9 @@ import { defineUpdateHandler } from './plugin-view'
 /**
  * A function that is called when the editor document is changed.
  *
+ * @param view - The editor view.
+ * @param prevState - The previous editor state.
+ *
  * @public
  */
 export type DocChangeHandler = (

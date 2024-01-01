@@ -1,10 +1,5 @@
 import type { VirtualElement } from '@floating-ui/dom'
-import {
-  Editor,
-  defineMountHandler,
-  defineUpdateHandler,
-  union,
-} from '@prosekit/core'
+import { Editor, defineUpdateHandler } from '@prosekit/core'
 import { type ReactiveController, type ReactiveControllerHost } from 'lit'
 
 import { getVirtualSelectionElement } from './helpers'
@@ -77,10 +72,7 @@ export class InlinePopoverController implements ReactiveController {
       return
     }
 
-    const extension = union([
-      defineUpdateHandler(() => this.update()),
-      defineMountHandler(() => this.update()),
-    ])
+    const extension = defineUpdateHandler(() => this.update())
 
     this.cleanupExtension?.()
     this.cleanupExtension = editor.use(extension)

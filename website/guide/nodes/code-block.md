@@ -14,7 +14,23 @@ const extension = defineCodeBlock()
 
 ## Syntax Highlighting
 
-You can use `defineCodeBlockShikiji` to enable syntax highlighting for the `codeBlock` node using the [Shikiji] library. `defineCodeBlockShikiji` will only load the [Shikiji] library and used languages asynchronously, which is useful for reducing the initial bundle size of your application.
+You can use `defineCodeBlockShikiji` to enable syntax highlighting for the `codeBlock` node using the [Shikiji] library. `defineCodeBlockShikiji` will only load the [Shikiji] library and used languages asynchronously, which is useful for reducing the initial bundle size of your application. You will need to install the `shikiji` package since it's a peer dependency.
+
+::: code-group
+
+```shell [npm]
+npm install shikiji
+```
+
+```shell [yarn]
+yarn add shikiji
+```
+
+```shell [pnpm]
+pnpm add shikiji
+```
+
+:::
 
 ```ts
 import { defineCodeBlockShikiji } from 'prosekit/extensions/code-block'

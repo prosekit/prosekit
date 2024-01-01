@@ -41,7 +41,7 @@
     "unocss-preset-animations": "^1.0.1",
     "vite": "^5.0.10",
     "vite-plugin-unocss-watcher": "^0.1.2",
-    "vitepress": "1.0.0-rc.33",
-    "vue": "^3.4.0-rc.3"
+    "vitepress": "1.0.0-rc.34",
+    "vue": "^3.4.3"
   }
 }

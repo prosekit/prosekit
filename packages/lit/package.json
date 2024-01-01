@@ -47,8 +47,8 @@
   "dependencies": {
     "@floating-ui/dom": "^1.5.3",
     "@lit/context": "^1.1.0",
-    "@prosekit/core": "^0.2.0",
-    "@prosekit/extensions": "^0.2.0",
+    "@prosekit/core": "^0.2.2",
+    "@prosekit/extensions": "^0.2.1",
     "@prosekit/pm": "^0.1.1",
     "@superhuman/command-score": "^0.5.0",
     "lit": "^3.1.0"

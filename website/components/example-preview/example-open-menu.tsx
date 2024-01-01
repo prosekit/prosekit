@@ -5,6 +5,8 @@ import { DropdownMenuContent } from '../dropdown-menu/dropdown-menu-content'
 import { DropdownMenuItem } from '../dropdown-menu/dropdown-menu-item'
 import { DropdownMenuTrigger } from '../dropdown-menu/dropdown-menu-trigger'
 
+import { getExampleUrl } from './example-url'
+
 export interface ExampleLanguageSelectProps {
   example: string
 }
@@ -21,6 +23,11 @@ export const ExampleOpenMenu = defineComponent<ExampleLanguageSelectProps>(
       window.open(url, '_blank')
     }
 
+    const onOpenNewTab = () => {
+      const url = getExampleUrl(props.example)
+      window.open(url, '_blank')
+    }
+
     return () => (
       <DropdownMenuRoot>
         <DropdownMenuTrigger>
@@ -33,6 +40,10 @@ export const ExampleOpenMenu = defineComponent<ExampleLanguageSelectProps>(
           </DropdownMenuItem>
           <DropdownMenuItem onClick={onOpenStackBlitz}>
             <span>Open in StackBlitz</span>
+            <span class="i-ci-arrow-up-right-md ml-2 h-4 w-4 opacity-50"></span>
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={onOpenNewTab}>
+            <span>Open in a new tab</span>
             <span class="i-ci-arrow-up-right-md ml-2 h-4 w-4 opacity-50"></span>
           </DropdownMenuItem>
         </DropdownMenuContent>

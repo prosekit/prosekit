@@ -37,11 +37,6 @@ async function* iterateExports(pkg: Package) {
     const ignored: string[] = sortedUniq([
       // Ignore peer dependencies
       ...Object.keys(subPackage.packageJson.peerDependencies ?? {}),
-
-      // Ignore dependencies on other ProseKit packages
-      ...Object.keys(subPackage.packageJson.dependencies ?? {}).filter((name) =>
-        name.startsWith('@prosekit'),
-      ),
     ])
 
     const entryPath = typeof entry === 'string' ? entry : entry.default

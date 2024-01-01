@@ -12,7 +12,7 @@
   {
     "name": "prosekit/basic/typography.css",
     "path": "packages/prosekit/dist/basic/typography.css",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": ["@prosekit/core",  "@prosekit/pm"]
   },
   {
     "name": "prosekit/core",

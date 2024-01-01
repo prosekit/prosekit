@@ -5,3 +5,4 @@ CHANGELOG.md
 *.gen.css
 .tsup
 .temp
+.size-limit.json

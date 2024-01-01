@@ -2,172 +2,287 @@
   {
     "name": "prosekit/basic",
     "path": "packages/prosekit/dist/prosekit-basic.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/basic/style.css",
     "path": "packages/prosekit/dist/basic/style.css",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/basic/typography.css",
     "path": "packages/prosekit/dist/basic/typography.css",
-    "ignore": ["@prosekit/core",  "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/core",
     "path": "packages/prosekit/dist/prosekit-core.js",
-    "ignore": ["@prosekit/pm"]
+    "ignore": [
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions",
     "path": "packages/prosekit/dist/prosekit-extensions.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/autocomplete",
     "path": "packages/prosekit/dist/prosekit-extensions-autocomplete.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/blockquote",
     "path": "packages/prosekit/dist/prosekit-extensions-blockquote.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/bold",
     "path": "packages/prosekit/dist/prosekit-extensions-bold.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/code",
     "path": "packages/prosekit/dist/prosekit-extensions-code.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/code-block",
     "path": "packages/prosekit/dist/prosekit-extensions-code-block.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/heading",
     "path": "packages/prosekit/dist/prosekit-extensions-heading.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/image",
     "path": "packages/prosekit/dist/prosekit-extensions-image.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/input-rule",
     "path": "packages/prosekit/dist/prosekit-extensions-input-rule.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/italic",
     "path": "packages/prosekit/dist/prosekit-extensions-italic.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/link",
     "path": "packages/prosekit/dist/prosekit-extensions-link.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/list",
     "path": "packages/prosekit/dist/prosekit-extensions-list.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/list/style.css",
     "path": "packages/prosekit/dist/extensions/list/style.css",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/mention",
     "path": "packages/prosekit/dist/prosekit-extensions-mention.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/placeholder",
     "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/placeholder/style.css",
     "path": "packages/prosekit/dist/extensions/placeholder/style.css",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/readonly",
     "path": "packages/prosekit/dist/prosekit-extensions-readonly.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/strike",
     "path": "packages/prosekit/dist/prosekit-extensions-strike.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/extensions/underline",
     "path": "packages/prosekit/dist/prosekit-extensions-underline.js",
-    "ignore": ["@prosekit/core", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/lit",
     "path": "packages/prosekit/dist/prosekit-lit.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/lit/autocomplete-empty",
     "path": "packages/prosekit/dist/prosekit-lit-autocomplete-empty.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/lit/autocomplete-item",
     "path": "packages/prosekit/dist/prosekit-lit-autocomplete-item.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/lit/autocomplete-list",
     "path": "packages/prosekit/dist/prosekit-lit-autocomplete-list.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/lit/autocomplete-popover",
     "path": "packages/prosekit/dist/prosekit-lit-autocomplete-popover.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/lit/combo-box",
     "path": "packages/prosekit/dist/prosekit-lit-combo-box.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/lit/combo-box-input",
     "path": "packages/prosekit/dist/prosekit-lit-combo-box-input.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/lit/combo-box-item",
     "path": "packages/prosekit/dist/prosekit-lit-combo-box-item.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/lit/combo-box-list",
     "path": "packages/prosekit/dist/prosekit-lit-combo-box-list.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/lit/inline-popover",
     "path": "packages/prosekit/dist/prosekit-lit-inline-popover.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/lit/popover",
     "path": "packages/prosekit/dist/prosekit-lit-popover.js",
-    "ignore": ["@prosekit/core", "@prosekit/extensions", "@prosekit/pm"]
+    "ignore": [
+      "@prosekit/core",
+      "@prosekit/extensions",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/pm",
@@ -222,57 +337,101 @@
   {
     "name": "prosekit/preact",
     "path": "packages/prosekit/dist/prosekit-preact.js",
-    "ignore": ["preact", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "preact",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/preact/autocomplete-empty",
     "path": "packages/prosekit/dist/prosekit-preact-autocomplete-empty.js",
-    "ignore": ["preact", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "preact",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/preact/autocomplete-item",
     "path": "packages/prosekit/dist/prosekit-preact-autocomplete-item.js",
-    "ignore": ["preact", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "preact",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/preact/autocomplete-list",
     "path": "packages/prosekit/dist/prosekit-preact-autocomplete-list.js",
-    "ignore": ["preact", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "preact",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/preact/autocomplete-popover",
     "path": "packages/prosekit/dist/prosekit-preact-autocomplete-popover.js",
-    "ignore": ["preact", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "preact",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/preact/combo-box",
     "path": "packages/prosekit/dist/prosekit-preact-combo-box.js",
-    "ignore": ["preact", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "preact",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/preact/combo-box-input",
     "path": "packages/prosekit/dist/prosekit-preact-combo-box-input.js",
-    "ignore": ["preact", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "preact",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/preact/combo-box-item",
     "path": "packages/prosekit/dist/prosekit-preact-combo-box-item.js",
-    "ignore": ["preact", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "preact",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/preact/combo-box-list",
     "path": "packages/prosekit/dist/prosekit-preact-combo-box-list.js",
-    "ignore": ["preact", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "preact",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/preact/inline-popover",
     "path": "packages/prosekit/dist/prosekit-preact-inline-popover.js",
-    "ignore": ["preact", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "preact",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/preact/popover",
     "path": "packages/prosekit/dist/prosekit-preact-popover.js",
-    "ignore": ["preact", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "preact",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/react",
@@ -398,111 +557,210 @@
   {
     "name": "prosekit/solid",
     "path": "packages/prosekit/dist/prosekit-solid.js",
-    "ignore": ["solid-js", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "solid-js",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/solid/autocomplete-empty",
     "path": "packages/prosekit/dist/prosekit-solid-autocomplete-empty.js",
-    "ignore": ["solid-js", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "solid-js",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/solid/autocomplete-item",
     "path": "packages/prosekit/dist/prosekit-solid-autocomplete-item.js",
-    "ignore": ["solid-js", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "solid-js",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/solid/autocomplete-list",
     "path": "packages/prosekit/dist/prosekit-solid-autocomplete-list.js",
-    "ignore": ["solid-js", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "solid-js",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/solid/autocomplete-popover",
     "path": "packages/prosekit/dist/prosekit-solid-autocomplete-popover.js",
-    "ignore": ["solid-js", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "solid-js",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/solid/combo-box",
     "path": "packages/prosekit/dist/prosekit-solid-combo-box.js",
-    "ignore": ["solid-js", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "solid-js",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/solid/combo-box-input",
     "path": "packages/prosekit/dist/prosekit-solid-combo-box-input.js",
-    "ignore": ["solid-js", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "solid-js",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/solid/combo-box-item",
     "path": "packages/prosekit/dist/prosekit-solid-combo-box-item.js",
-    "ignore": ["solid-js", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "solid-js",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/solid/combo-box-list",
     "path": "packages/prosekit/dist/prosekit-solid-combo-box-list.js",
-    "ignore": ["solid-js", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "solid-js",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/solid/inline-popover",
     "path": "packages/prosekit/dist/prosekit-solid-inline-popover.js",
-    "ignore": ["solid-js", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "solid-js",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/solid/popover",
     "path": "packages/prosekit/dist/prosekit-solid-popover.js",
-    "ignore": ["solid-js", "@prosekit/core", "@prosekit/lit"]
+    "ignore": [
+      "solid-js",
+      "@prosekit/core",
+      "@prosekit/lit"
+    ]
   },
   {
     "name": "prosekit/vue",
     "path": "packages/prosekit/dist/prosekit-vue.js",
-    "ignore": ["vue", "@prosekit/core", "@prosekit/lit", "@prosekit/pm"]
+    "ignore": [
+      "vue",
+      "@prosekit/core",
+      "@prosekit/lit",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/vue/autocomplete-empty",
     "path": "packages/prosekit/dist/prosekit-vue-autocomplete-empty.js",
-    "ignore": ["vue", "@prosekit/core", "@prosekit/lit", "@prosekit/pm"]
+    "ignore": [
+      "vue",
+      "@prosekit/core",
+      "@prosekit/lit",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/vue/autocomplete-item",
     "path": "packages/prosekit/dist/prosekit-vue-autocomplete-item.js",
-    "ignore": ["vue", "@prosekit/core", "@prosekit/lit", "@prosekit/pm"]
+    "ignore": [
+      "vue",
+      "@prosekit/core",
+      "@prosekit/lit",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/vue/autocomplete-list",
     "path": "packages/prosekit/dist/prosekit-vue-autocomplete-list.js",
-    "ignore": ["vue", "@prosekit/core", "@prosekit/lit", "@prosekit/pm"]
+    "ignore": [
+      "vue",
+      "@prosekit/core",
+      "@prosekit/lit",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/vue/autocomplete-popover",
     "path": "packages/prosekit/dist/prosekit-vue-autocomplete-popover.js",
-    "ignore": ["vue", "@prosekit/core", "@prosekit/lit", "@prosekit/pm"]
+    "ignore": [
+      "vue",
+      "@prosekit/core",
+      "@prosekit/lit",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/vue/combo-box",
     "path": "packages/prosekit/dist/prosekit-vue-combo-box.js",
-    "ignore": ["vue", "@prosekit/core", "@prosekit/lit", "@prosekit/pm"]
+    "ignore": [
+      "vue",
+      "@prosekit/core",
+      "@prosekit/lit",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/vue/combo-box-input",
     "path": "packages/prosekit/dist/prosekit-vue-combo-box-input.js",
-    "ignore": ["vue", "@prosekit/core", "@prosekit/lit", "@prosekit/pm"]
+    "ignore": [
+      "vue",
+      "@prosekit/core",
+      "@prosekit/lit",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/vue/combo-box-item",
     "path": "packages/prosekit/dist/prosekit-vue-combo-box-item.js",
-    "ignore": ["vue", "@prosekit/core", "@prosekit/lit", "@prosekit/pm"]
+    "ignore": [
+      "vue",
+      "@prosekit/core",
+      "@prosekit/lit",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/vue/combo-box-list",
     "path": "packages/prosekit/dist/prosekit-vue-combo-box-list.js",
-    "ignore": ["vue", "@prosekit/core", "@prosekit/lit", "@prosekit/pm"]
+    "ignore": [
+      "vue",
+      "@prosekit/core",
+      "@prosekit/lit",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/vue/inline-popover",
     "path": "packages/prosekit/dist/prosekit-vue-inline-popover.js",
-    "ignore": ["vue", "@prosekit/core", "@prosekit/lit", "@prosekit/pm"]
+    "ignore": [
+      "vue",
+      "@prosekit/core",
+      "@prosekit/lit",
+      "@prosekit/pm"
+    ]
   },
   {
     "name": "prosekit/vue/popover",
     "path": "packages/prosekit/dist/prosekit-vue-popover.js",
-    "ignore": ["vue", "@prosekit/core", "@prosekit/lit", "@prosekit/pm"]
+    "ignore": [
+      "vue",
+      "@prosekit/core",
+      "@prosekit/lit",
+      "@prosekit/pm"
+    ]
   }
 ]

@@ -27,33 +27,33 @@ function defineAwesomeFeature() {
 
 You can use the following extensions to add more features to the editor. All other extensions are built on top of these extensions.
 
-- `defineNodeSpec` can be used to define a node type.
-- `defineMarkSpec` can be used to define a mark type.
-- `defineCommands` configures some commands into the editor.
-- `defineBaseCommands` configures some pre-defined basic commands.
-- `defineKeymap` configures some keybindings into the editor.
-- `defineBaseKeymap` configures a set of pre-defined basic keybindings.
-- `definePlugin` registers a [plugin] into the editor.
-- `defineNodeView` registers a [node view] into the editor.
-- `defineInputRule` configures an [input rule] into the editor.
-- `defineHistory` allows the editor to undo/redo.
+- [`defineNodeSpec`] can be used to define a node type.
+- [`defineMarkSpec`] can be used to define a mark type.
+- [`defineCommands`] configures some commands into the editor.
+- [`defineBaseCommands`] configures some pre-defined basic commands.
+- [`defineKeymap`] configures some keybindings into the editor.
+- [`defineBaseKeymap`] configures a set of pre-defined basic keybindings.
+- [`definePlugin`] registers a [plugin] into the editor.
+- [`defineNodeView`] registers a [node view] into the editor.
+- [`defineInputRule`] configures an [input rule] into the editor.
+- [`defineHistory`] allows the editor to undo/redo.
 
 ## Vital Node Types
 
 The following three extension functions defines a minimal editor schema. In most cases, you should include them in your editor, unless you are building something very special.
 
-- `defineDoc` adds a `doc` node type.
-- `defineText` adds a `text` node type.
-- `defineParagraph` adds a `paragraph` node type.
+- [`defineDoc`] adds a `doc` node type.
+- [`defineText`] adds a `text` node type.
+- [`defineParagraph`] adds a `paragraph` node type.
 
 ## Event Handlers
 
 You can use the following functions to register event handlers into the editor.
 
-- `defineMountHandler` registers a event handler that's called when the editor is mounted.
-- `defineUnmountHandler` registers a event handler that's called when the editor is unmounted.
-- `defineUpdateHandler` registers a event handler that's called when the editor state is updated.
-- `defineDocChangeHandler` registers a event handler that's called when the editor document is changed.
+- [`defineMountHandler`] registers a event handler that's called when the editor is mounted.
+- [`defineUnmountHandler`] registers a event handler that's called when the editor is unmounted.
+- [`defineUpdateHandler`] registers a event handler that's called when the editor state is updated.
+- [`defineDocChangeHandler`] registers a event handler that's called when the editor document is changed.
 
 Check out the [save-and-restore](/examples/save-and-restore) example for an example of using event handlers to save and restore the editor document.
 
@@ -73,3 +73,20 @@ If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can also use
 [node view]: https://prosemirror.net/docs/ref#view.NodeView
 [input rule]: https://prosemirror.net/docs/ref#inputrules
 [save-and-restore]: /examples/save-and-restore
+[`defineNodeSpec`]: /references/core#defineNodeSpec
+[`defineMarkSpec`]: /references/core#defineMarkSpec
+[`defineCommands`]: /references/core#defineCommands
+[`defineBaseCommands`]: /references/core#defineBaseCommands
+[`defineKeymap`]: /references/core#defineKeymap
+[`defineBaseKeymap`]: /references/core#defineBaseKeymap
+[`definePlugin`]: /references/core#definePlugin
+[`defineNodeView`]: /references/core#defineNodeView
+[`defineInputRule`]: /references/core#defineInputRule
+[`defineHistory`]: /references/core#defineHistory
+[`defineDoc`]: /references/core#defineDoc
+[`defineText`]: /references/core#defineText
+[`defineParagraph`]: /references/core#defineParagraph
+[`defineMountHandler`]: /references/core#defineMountHandler
+[`defineUnmountHandler`]: /references/core#defineUnmountHandler
+[`defineUpdateHandler`]: /references/core#defineUpdateHandler
+[`defineDocChangeHandler`]: /references/core#defineDocChangeHandler

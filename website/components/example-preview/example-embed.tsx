@@ -2,9 +2,10 @@ import { defineComponent, effect, ref } from 'vue'
 
 import { useDarkMode } from '../use-dark-mode'
 
+import { getExampleUrl } from './example-url'
+
 export const ExampleEmbed = defineComponent<{
-  framework: string
-  story: string
+  example: string
 }>(
   (props) => {
     const iframeRef = ref<HTMLIFrameElement>()
@@ -39,24 +40,19 @@ export const ExampleEmbed = defineComponent<{
     })
 
     return () => {
-      const src =
-        import.meta.env.MODE === 'development'
-          ? `http://localhost:4321/playground/dist/${props.framework}-${props.story}`
-          : `/playground/dist/${props.framework}-${props.story}/index.html`
       return (
         <iframe
-          key={src}
           ref={iframeRef}
           style={{
             opacity: iframeLoaded.value ? '1' : '0',
           }}
-          src={src}
+          src={getExampleUrl(props.example)}
           class="h-[300px] w-full overflow-hidden transition-opacity"
         />
       )
     }
   },
   {
-    props: ['framework', 'story'],
+    props: ['example'],
   },
 )

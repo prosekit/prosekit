@@ -66,8 +66,7 @@ export const ExamplePreview = defineComponent<{
 
         <div class="mx-[-24px] bg-[--vp-code-tab-bg] px-1 pb-4 sm:mx-0 sm:px-4">
           <ExampleEmbed
-            story={props.name}
-            framework={framework.value}
+            example={framework.value + '-' + props.name}
             key={framework.value + '-' + props.name}
           />
         </div>

@@ -14,14 +14,26 @@ const pkg = require('../../packages/prosekit/package.json') as {
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'ProseKit',
-  description: 'The Ultimate Toolkit for Text Editing',
+  description: 'Ultimate Rich Text Editor',
 
   cleanUrls: true,
   outDir: 'dist',
 
+  // prettier-ignore
+  head: [
+    ['link', { rel: "icon", type: "image/svg+xml", href: "/assets/logo.svg"}],
+    ['link', { rel: "mask-icon", href: "/assets/logo.svg", color: "#ffffff"}],
+    ['meta', { name: "theme-color", content: "#ffffff"}],
+    ['meta', { property: "twitter:card", content: "summary_large_image" }],
+    ['meta', { property: "twitter:image", content: "https://prosekit.dev/assets/cover.jpg" }],
+    ['meta', { property: "og:image", content: "https://prosekit.dev/assets/cover.jpg" }],
+  ],
+
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     outline: [2, 3],
+
+    logo: '/assets/logo.svg',
 
     nav: [
       { text: 'Guide', link: '/guide/installation' },

@@ -1,40 +1,3 @@
-.VPHero.VPHomeHero .main .name {
-  max-width: 100%;
-}
-
-.VPHero.VPHomeHero .main .text {
-  max-width: 100%;
-}
-
-.VPHero.VPHomeHero .main .tagline {
-  max-width: 100%;
-}
-
-@media (min-width: 960px) {
-  body:not(.scrolled) .Layout .VPNavBar.has-sidebar .curtain::before {
-    opacity: 0;
-  }
-
-  body.scrolled .Layout .VPNavBar.has-sidebar .curtain::before {
-    opacity: 1;
-  }
-
-  body .Layout .VPNavBar.has-sidebar .curtain {
-    pointer-events: none;
-  }
-
-  body .Layout .VPNavBar.has-sidebar .curtain::before {
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-top-color: var(--vp-c-divider);
-    width: 100%;
-    max-width: calc(var(--vp-layout-max-width) - var(--vp-sidebar-width));
-    background: transparent;
-    transition: opacity 0.2s;
-    pointer-events: none;
-  }
-}
-
 :root {
   --prosekit-nav-bg: hsla(0, 0%, 100%, 0.8);
 }
@@ -47,8 +10,6 @@ body .Layout .VPNav .VPNavBar {
   --vp-nav-bg-color: transparent;
   backdrop-filter: saturate(180%) blur(5px);
   background: var(--prosekit-nav-bg) !important;
-  box-shadow: inset 0 -1px 0 0 var(--vp-c-divider);
-  border-bottom: none;
 }
 
 body .Layout .VPLocalNav {
@@ -64,4 +25,8 @@ body .Layout .VPLocalNav {
 
 iframe {
   border-width: 0;
+}
+
+#local-search > .DocSearch-Button {
+  background: rgba(150, 150, 150, 0.08);
 }

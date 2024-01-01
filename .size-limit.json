@@ -16,7 +16,6 @@
   },
   {
     "name": "prosekit/core",
-    "ignore": ["@prosekit/pm"],
     "path": "packages/prosekit/dist/prosekit-core.js"
   },
   {

@@ -14,6 +14,18 @@ export {
   type DefaultStateOptions,
 } from './extensions/default-state'
 export { defineDoc } from './extensions/doc'
+export {
+  defineMountHandler,
+  defineUnmountHandler,
+  defineUpdateHandler,
+  type MountHandler,
+  type UnmountHandler,
+  type UpdateHandler,
+} from './extensions/events/plugin-view'
+export {
+  defineDocChangeHandler,
+  type DocChangeHandler,
+} from './extensions/events/doc-change'
 export { defineHistory } from './extensions/history'
 export { defineInputRule } from './extensions/input-rules'
 export {
@@ -37,7 +49,6 @@ export {
   type PluginPayload,
 } from './extensions/plugin'
 export { defineText } from './extensions/text'
-export { defineUpdateHandler } from './extensions/update-handler'
 export { Facet, type FacetOptions } from './facets/facet'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
 export { type CommandArgs } from './types/command'

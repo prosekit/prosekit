@@ -1,7 +1,7 @@
 import {
   Editor,
-  type Extension,
   ProseKitError,
+  type Extension,
   defineUpdateHandler,
 } from '@prosekit/core'
 import { useContext, useEffect, useReducer } from 'react'

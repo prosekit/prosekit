@@ -46,16 +46,30 @@ The following three extension functions defines a minimal editor schema. In most
 - `defineText` adds a `text` node type.
 - `defineParagraph` adds a `paragraph` node type.
 
+## Event Handlers
+
+You can use the following functions to register event handlers into the editor.
+
+- `defineMountHandler` registers a event handler that's called when the editor is mounted.
+- `defineUnmountHandler` registers a event handler that's called when the editor is unmounted.
+- `defineUpdateHandler` registers a event handler that's called when the editor state is updated.
+- `defineDocChangeHandler` registers a event handler that's called when the editor document is changed.
+
+Check out the [save-and-restore](/examples/save-and-restore) example for an example of using event handlers to save and restore the editor document.
+
 ## A Starter Set of Extensions
 
 You can use the `defineBasicExtension` from `prosekit/basic` to quick start an editor with some common features. It includes some common node types, marks, commands, keybindings, and plugins.
-
-[plugin]: https://prosemirror.net/docs/ref#state.Plugin_System
-[node view]: https://prosemirror.net/docs/ref#view.NodeView
-[input rule]: https://prosemirror.net/docs/ref#inputrules
 
 ## Enable Extensions Dynamically
 
 If you want to enable an extension after the editor is initialized, you can call `editor.use(extension)` to enable it. It will return a function that can be called to disable the extension.
 
 If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can also use the `useExtension` to enable or disable an extension dynamically in your application. Check out the [readonly](/guide/extensions/readonly) for an example.
+
+<!-- Link references -->
+
+[plugin]: https://prosemirror.net/docs/ref#state.Plugin_System
+[node view]: https://prosemirror.net/docs/ref#view.NodeView
+[input rule]: https://prosemirror.net/docs/ref#inputrules
+[save-and-restore]: /examples/save-and-restore

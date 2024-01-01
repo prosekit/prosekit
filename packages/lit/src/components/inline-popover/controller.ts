@@ -2,7 +2,6 @@ import type { VirtualElement } from '@floating-ui/dom'
 import {
   Editor,
   defineMountHandler,
-  defineMountHandler,
   defineUpdateHandler,
   union,
 } from '@prosekit/core'

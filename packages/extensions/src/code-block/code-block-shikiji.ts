@@ -5,13 +5,13 @@ import type { BuiltinLanguage, BundledTheme, Highlighter } from 'shikiji'
 
 import { defineCodeBlockHighlight } from './code-block-highlight'
 
-function getHighlighterLoader() {
+function createHighlighterLoader() {
   let shikijiImport: Promise<void> | undefined
   let highlighter: Highlighter | undefined
   const languages = new Set<string>()
   const themes = new Set<string>()
 
-  function loadHighlighter(
+  return function highlighterLoader(
     lang: BuiltinLanguage,
     theme: BundledTheme,
   ): {
@@ -59,8 +59,25 @@ function getHighlighterLoader() {
 
     return { highlighter }
   }
+}
 
-  return loadHighlighter
+function createLazyParser(theme: BundledTheme): Parser {
+  let parser: Parser | undefined
+  const highlighterLoader = createHighlighterLoader()
+
+  return function lazyParser(options) {
+    const language = (options.language || '') as BuiltinLanguage
+    const { highlighter, promise } = highlighterLoader(language, theme)
+
+    if (!highlighter) {
+      return promise || []
+    }
+
+    if (!parser) {
+      parser = createParser(highlighter)
+    }
+    return parser(options)
+  }
 }
 
 /**
@@ -77,21 +94,6 @@ export function defineCodeBlockShikiji(options?: {
   theme?: BundledTheme
 }): Extension {
   const theme: BundledTheme = options?.theme || 'github-light'
-  let parser: Parser | undefined
-  const highlighterLoader = getHighlighterLoader()
-
-  const lazyParser: Parser = (options) => {
-    const language = (options.language || '') as BuiltinLanguage
-    const { highlighter, promise } = highlighterLoader(language, theme)
-
-    if (!highlighter) {
-      return promise || []
-    }
-
-    if (!parser) {
-      parser = createParser(highlighter)
-    }
-    return parser(options)
-  }
-  return defineCodeBlockHighlight({ parser: lazyParser })
+  const parser = createLazyParser(theme)
+  return defineCodeBlockHighlight({ parser })
 }

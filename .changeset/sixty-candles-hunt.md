@@ -1,6 +1,6 @@
 ---
 'prosekit': patch
-'prosekit/core': patch
+'@prosekit/core': patch
 ---
 
 Add the following functions to register event handlers into the editor.

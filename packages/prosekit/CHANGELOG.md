@@ -1,5 +1,33 @@
 # prosekit
 
+## 0.2.3
+
+### Patch Changes
+
+- [`4d2d656`](https://github.com/ocavue/prosekit/commit/4d2d656bfa0e26306a777b1b045dae27d5e1846e) ![](badge-extensions) ![](badge-core)
+
+  Add a new entry point `prosekit/extensions/input-rule` for the input rule extension. This entry point exports better APIs for creating input rules. The old entry point `defineInputRule` from `prosekit/core` is deprecated now and will be removed in the next minor version.
+
+- [`fe0f64f`](https://github.com/ocavue/prosekit/commit/fe0f64f6cc00210cb82d70fd0efdcd3f50a8372e) ![](badge-extensions)
+
+  Add `defineCodeBlockShikiji` as an easier way to enable syntax highlighting for the `codeBlock` node using the `shikiji` library.
+
+- [`fe62e12`](https://github.com/ocavue/prosekit/commit/fe62e12b32073e7a96d425a35812c1aa4f26e7e8) ![](badge-extensions)
+
+  You can now type triple backticks followed by an optional language name and press Enter to insert a code block.
+
+- [`e09746f`](https://github.com/ocavue/prosekit/commit/e09746fd8d8d11cd2b0408fd0f9cfef76191bcd3) ![](badge-extensions)
+
+  Press `Enter` three times at the end of a code block to exit the block and create a new paragraph below it. Inspired by `@tiptap/extension-code-block`.
+
+- [`74f3ade`](https://github.com/ocavue/prosekit/commit/74f3ade608e4112d58506ae27c3482c77ac29415) ![](badge-basic)
+
+  Update `basic/typography.css` styling for `<h5>` and `<h6>` elements.
+
+- [`fe62e12`](https://github.com/ocavue/prosekit/commit/fe62e12b32073e7a96d425a35812c1aa4f26e7e8) ![](badge-core)
+
+  Export internal API `keymapFacet`.
+
 ## 0.2.2
 
 ### Patch Changes
@@ -226,6 +254,7 @@
   Release v0.1.0.
 
 <!-- https://shields.io/docs/logos -->
+
 [badge-prosekit]: https://img.shields.io/badge/prosekit-444444
 [badge-pm]: https://img.shields.io/badge/prosekit%2Fpm-444444
 [badge-core]: https://img.shields.io/badge/prosekit%2Fcore-444444

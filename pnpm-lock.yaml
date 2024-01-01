@@ -334,13 +334,13 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: 0.2.2
+        specifier: 0.2.3
         version: link:../basic
       '@prosekit/core':
-        specifier: 0.2.0
+        specifier: 0.2.1
         version: link:../core
       '@prosekit/extensions':
-        specifier: 0.2.0
+        specifier: 0.2.1
         version: link:../extensions
       '@prosekit/lit':
         specifier: 0.1.6

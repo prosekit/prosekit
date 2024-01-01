@@ -23,15 +23,7 @@ async function getReleaseLine(changeset) {
  * @param {string} name
  */
 function formatModuleBadge(name) {
-  const logo = moduleLogos[name]
-
-  const url =
-    'https://img.shields.io/badge/' +
-    name.replaceAll('/', '%2F').replace('@', '') +
-    '-444444' +
-    (logo ? `?logo=${logo}` : '')
-
-  return `![${name}](${url})`
+  return `![](badge-${name.split('/').at(-1)})`
 }
 
 /**

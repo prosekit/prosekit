@@ -7,8 +7,10 @@ import {
   toggleNode,
   union,
 } from '@prosekit/core'
+import type { Command } from '@prosekit/pm/state'
 
 import { defineTextBlockInputRule } from '../input-rule'
+import { withSkipCodeBlock } from '../utils/with-skip-code-block'
 
 export interface HeadingAttrs {
   level: number
@@ -37,13 +39,17 @@ export function defineHeadingSpec() {
 
 export function defineHeadingKeymap() {
   return defineKeymap({
-    'mod-1': toggleNode({ type: 'heading', attrs: { level: 1 } }),
-    'mod-2': toggleNode({ type: 'heading', attrs: { level: 2 } }),
-    'mod-3': toggleNode({ type: 'heading', attrs: { level: 3 } }),
-    'mod-4': toggleNode({ type: 'heading', attrs: { level: 4 } }),
-    'mod-5': toggleNode({ type: 'heading', attrs: { level: 5 } }),
-    'mod-6': toggleNode({ type: 'heading', attrs: { level: 6 } }),
+    'mod-1': toggleHeadingKeybinding(1),
+    'mod-2': toggleHeadingKeybinding(2),
+    'mod-3': toggleHeadingKeybinding(3),
+    'mod-4': toggleHeadingKeybinding(4),
+    'mod-5': toggleHeadingKeybinding(5),
+    'mod-6': toggleHeadingKeybinding(6),
   })
+}
+
+function toggleHeadingKeybinding(level: number): Command {
+  return withSkipCodeBlock(toggleNode({ type: 'heading', attrs: { level } }))
 }
 
 export function defineHeadingInputRule() {

@@ -3,6 +3,8 @@ import { ProseMirrorNode } from '@prosekit/pm/model'
 import { EditorState, Plugin, PluginKey } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
+import { isInCodeBlock } from '../utils/is-in-code-block'
+
 export interface PlaceholderOptions {
   /**
    * The placeholder text to use.
@@ -33,6 +35,10 @@ function createPlaceholderPlugin(options: PlaceholderOptions): Plugin {
     props: {
       decorations: (state) => {
         if (options.strategy === 'doc' && !isDocEmpty(state.doc)) {
+          return null
+        }
+
+        if (isInCodeBlock(state.selection)) {
           return null
         }
 

@@ -10,11 +10,13 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 
 ::: code-group
 
+<<< @/../playground/examples/vue-full/code-block-view.vue
 <<< @/../playground/examples/vue-full/editor.vue
 <<< @/../playground/examples/vue-full/extension.ts
 <<< @/../playground/examples/vue-full/image-upload-popover.vue
 <<< @/../playground/examples/vue-full/inline-buttons.vue
 <<< @/../playground/examples/vue-full/inline-menu.vue
+<<< @/../playground/examples/vue-full/language-selector.vue
 <<< @/../playground/examples/vue-full/slash-menu.vue
 <<< @/../playground/examples/vue-full/tag-data.ts
 <<< @/../playground/examples/vue-full/tag-menu.vue

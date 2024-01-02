@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.2.5
+
+### Patch Changes
+
+- [`268bd6c`](https://github.com/ocavue/prosekit/commit/268bd6c4b848a27644f75f3aeeb54a7d0fc4ee12) ![][badge-lit]
+
+  Hide the inline popover when the text cursor is in a code block.
+
+- [`268bd6c`](https://github.com/ocavue/prosekit/commit/268bd6c4b848a27644f75f3aeeb54a7d0fc4ee12) ![][badge-extensions]
+
+  Skip heading keybindings when the text cursor is in a code block.
+
 ## 0.2.4
 
 ### Patch Changes

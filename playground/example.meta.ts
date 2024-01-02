@@ -389,6 +389,10 @@ export const exampleMeta = {
       "story": "full",
       "files": [
         {
+          "path": "code-block-view.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
@@ -406,6 +410,10 @@ export const exampleMeta = {
         },
         {
           "path": "inline-menu.vue",
+          "hidden": false
+        },
+        {
+          "path": "language-selector.vue",
           "hidden": false
         },
         {

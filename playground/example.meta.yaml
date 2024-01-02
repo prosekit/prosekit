@@ -201,6 +201,8 @@ examples:
     framework: vue
     story: full
     files:
+      - path: code-block-view.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
@@ -210,6 +212,8 @@ examples:
       - path: inline-buttons.vue
         hidden: false
       - path: inline-menu.vue
+        hidden: false
+      - path: language-selector.vue
         hidden: false
       - path: slash-menu.vue
         hidden: false

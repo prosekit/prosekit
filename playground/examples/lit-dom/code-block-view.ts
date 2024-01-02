@@ -1,60 +1,30 @@
 import { defineNodeView } from 'prosekit/core'
-import { bundledLanguagesInfo } from 'shikiji'
 
 import { createElement } from './create-element'
-import { getId } from './get-id'
-
-const languages: Array<[id: string, name: string]> = bundledLanguagesInfo.map(
-  (info) => [info.id, info.name],
-)
+import { createLanguageSelector } from './language-selector'
 
 export function defineCodeBlockView() {
   return defineNodeView({
     name: 'codeBlock',
     constructor: (node, view, getPos) => {
-      const type = node.type
+      const language = node.attrs.language as string
 
-      const listId = `code-block-${getId()}`
-
-      const input = createElement('input', {
-        class: 'LANGUAGE_BUTTON',
-        type: 'text',
-        list: listId,
-        placeholder: 'Language...',
-      })
-      input.addEventListener('change', () => {
-        const language = input.value
-
-        const pos = getPos()
-        if (pos == null) {
-          return
-        }
-
+      const setLanguage = (language: string) => {
+        const pos = getPos()!
         const tr = view.state.tr.setNodeAttribute(pos, 'language', language)
         view.dispatch(tr)
-      })
+      }
+
+      const type = node.type
 
       const code = createElement('code', {})
 
       const dom = createElement(
         'div',
-        {},
-        createElement(
-          'div',
-          { class: 'LANGUAGE_WRAPPER' },
-          input,
-          createElement(
-            'datalist',
-            { id: listId },
-            ...languages.map(([languageId, languageName]) => {
-              return createElement(
-                'option',
-                { value: languageId },
-                languageName,
-              )
-            }),
-          ),
-        ),
+        {
+          'data-node-view-root': 'true',
+        },
+        createLanguageSelector({ language, setLanguage }),
         createElement('pre', {}, code),
       )
 

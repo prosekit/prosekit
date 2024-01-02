@@ -591,6 +591,8 @@ examples:
         hidden: false
       - path: get-id.ts
         hidden: false
+      - path: language-selector.ts
+        hidden: false
       - path: package.json
         hidden: true
   - name: vanilla-dom

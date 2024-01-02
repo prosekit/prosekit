@@ -1137,6 +1137,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "language-selector.ts",
+          "hidden": false
+        },
+        {
           "path": "package.json",
           "hidden": true
         }

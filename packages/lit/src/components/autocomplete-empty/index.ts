@@ -5,6 +5,9 @@ import { defineCustomElement } from '../../utils/define-custom-element'
 import { autocompleteListContext } from '../autocomplete-list/context'
 import { LightElement } from '../block-element'
 
+/**
+ * @internal
+ */
 export const propNames = [] as const
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface

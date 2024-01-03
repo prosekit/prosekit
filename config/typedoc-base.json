@@ -23,19 +23,19 @@
   "excludeInternal": true,
   "excludePrivate": true,
   "validation": {
-    "notDocumented": false
+    "notDocumented": true
   },
   "requiredToBeDocumented": [
-    "Enum",
-    "EnumMember",
-    "Variable",
+    "Enum"
+    // "EnumMember",
+    // "Variable"
     // "Function",
-    "Class",
+    // "Class",
     // "Interface",
     // "Property",
     // "Method",
     // "Accessor",
-    "TypeAlias"
+    // "TypeAlias"
   ],
   "visibilityFilters": {
     "protected": false,

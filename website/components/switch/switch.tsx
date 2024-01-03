@@ -12,9 +12,9 @@ export const Switch = defineComponent<{
           id="code"
           checked={props.checked}
           onUpdate:checked={props.onChange}
-          class="border-box peer inline-flex h-[22px] w-[40px] shrink-0 cursor-pointer items-center rounded-full border-2 border-solid border-transparent transition-colors data-[state=checked]:bg-[--vp-c-neutral] data-[state=unchecked]:bg-[--vp-c-gray-1]"
+          class="box-border h-[22px] w-[40px] inline-flex shrink-0 cursor-pointer items-center border-2 border-transparent rounded-full border-solid transition-colors data-[state=checked]:bg-[--vp-c-neutral] data-[state=unchecked]:bg-[--vp-c-gray-1]"
         >
-          <SwitchThumb class="pointer-events-none block h-[18px] w-[18px] rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-[18px] data-[state=unchecked]:translate-x-0  dark:bg-slate-950" />
+          <SwitchThumb class="pointer-events-none block h-[18px] w-[18px] rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-[18px] data-[state=unchecked]:translate-x-0 dark:bg-slate-950" />
         </SwitchRoot>
         <label class="select-none text-sm" for="code">
           {slots.default?.()}

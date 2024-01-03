@@ -49,7 +49,7 @@ export const ExamplePreview = defineComponent<{
           isExamplePage.value ? '' : '[&_.shiki]:max-h-[calc(100vh-200px)]',
         )}
       >
-        <div class="mx-[-24px] flex justify-end space-x-2 bg-[--vp-code-tab-bg] px-2 pb-1 pt-2 sm:mx-0">
+        <div class="mx-[-24px] flex justify-end bg-[--vp-code-tab-bg] px-2 pb-1 pt-2 sm:mx-0 space-x-2">
           <Switch
             checked={showCode.value}
             onChange={(value) => (showCode.value = value)}

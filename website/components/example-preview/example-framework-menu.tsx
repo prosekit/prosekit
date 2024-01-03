@@ -22,7 +22,7 @@ export const ExampleFrameworkMenu = defineComponent<{
           {props.frameworks.map((framework) => (
             <DropdownMenuItem onClick={() => props.onChange(framework)}>
               <span class="flex items-center justify-center gap-1">
-                <span class="inline-flex h-full w-6 items-center justify-start">
+                <span class="h-full w-6 inline-flex items-center justify-start">
                   {props.framework === framework ? (
                     <span class="i-ci-check h-5 w-5 opacity-70"></span>
                   ) : null}

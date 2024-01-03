@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import { basic, react, tsPlugin } from '@ocavue/eslint-config'
+import unocss from '@unocss/eslint-config/flat'
 
 const configs = [
+  unocss,
   ...basic(),
   ...react().map((config) => ({
     ...config,

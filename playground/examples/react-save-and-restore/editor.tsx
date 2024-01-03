@@ -52,7 +52,7 @@ export default function Editor() {
         </button>
         <ul>
           {records.map((record, index) => (
-            <li key={index} className="my-2 flex gap-2 ">
+            <li key={index} className="my-2 flex gap-2">
               <button
                 className="border border-solid bg-white p-2 text-black disabled:text-gray-500"
                 onClick={() => onLoad(record)}

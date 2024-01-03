@@ -16,8 +16,5 @@ export default defineConfig({
       },
     ],
   },
-  plugins: [
-    UnoCSS(),
-    vueJsx(),
-  ],
+  plugins: [UnoCSS(), vueJsx()],
 })

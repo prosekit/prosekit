@@ -1,8 +1,5 @@
 {
-  "plugins": [
-    "prettier-plugin-svelte",
-    "prettier-plugin-astro"
-  ],
+  "plugins": ["prettier-plugin-svelte", "prettier-plugin-astro"],
   "semi": false,
   "singleQuote": true,
   "htmlWhitespaceSensitivity": "ignore",
@@ -20,8 +17,6 @@
       }
     }
   ],
-  "tailwindFunctions": [
-    "clsx"
-  ],
+  "tailwindFunctions": ["clsx"],
   "svelteIndentScriptAndStyle": false
 }

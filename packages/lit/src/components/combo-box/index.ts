@@ -12,12 +12,21 @@ import { Popover, type PopoverProps } from '../popover'
 
 import { comboBoxContext, type ComboBoxContext } from './context'
 
+/**
+ * @internal
+ */
 export const propNames = ['onDismiss'] as const
 
+/**
+ * @internal
+ */
 export interface ComboBoxProps extends PopoverProps {
   onDismiss?: VoidFunction
 }
 
+/**
+ * @internal
+ */
 export class ComboBox extends Popover {
   /**
    * @hidden

@@ -1,4 +1,6 @@
 /**
+ * ProseKit extension priority.
+ *
  * @public
  */
 export const enum Priority {

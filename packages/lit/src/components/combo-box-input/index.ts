@@ -5,12 +5,21 @@ import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
 import { comboBoxContext } from '../combo-box/context'
 
+/**
+ * @internal
+ */
 export const propNames = ['placeholder'] as const
 
+/**
+ * @internal
+ */
 export interface ComboBoxInputProps {
   placeholder?: string
 }
 
+/**
+ * @internal
+ */
 export class ComboBoxInput extends LightElement {
   /**
    * @hidden

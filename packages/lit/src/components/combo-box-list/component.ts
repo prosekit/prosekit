@@ -4,10 +4,19 @@ import { defineCustomElement } from '../../utils/define-custom-element'
 import { LightElement } from '../block-element'
 import { comboBoxContext } from '../combo-box/context'
 
+/**
+ * @internal
+ */
 export const propNames = []
 
+/**
+ * @internal
+ */
 export type ComboBoxListProps = { lang?: string }
 
+/**
+ * @internal
+ */
 export class ComboBoxList extends LightElement {
   private comboBoxContext = new ContextConsumer(this, {
     context: comboBoxContext,

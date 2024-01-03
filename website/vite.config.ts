@@ -3,7 +3,6 @@ import { fileURLToPath, URL } from 'node:url'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vite'
-import unocssWacher from 'vite-plugin-unocss-watcher'
 
 export default defineConfig({
   build: {
@@ -17,9 +16,5 @@ export default defineConfig({
       },
     ],
   },
-  plugins: [
-    UnoCSS(),
-    unocssWacher(['../config/unocss-shortcut.mjs']),
-    vueJsx(),
-  ],
+  plugins: [UnoCSS(), vueJsx()],
 })

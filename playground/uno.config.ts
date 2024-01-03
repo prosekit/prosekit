@@ -17,6 +17,7 @@ const config: UserConfig = defineConfig({
     ],
   },
   transformers: [transformerDirectives()],
+  configDeps: ['../config/unocss-shortcut.mjs'],
   shortcuts,
 })
 

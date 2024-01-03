@@ -17,6 +17,7 @@ const config: UserConfig = defineConfig({
       include: ['**/*.ts', '**/*.tsx', '**/*.vue', '**/*.md'],
     },
   },
+  configDeps: ['../config/unocss-shortcut.mjs'],
   shortcuts,
 })
 

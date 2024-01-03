@@ -1,9 +1,5 @@
 {
-  "plugins": [
-    "prettier-plugin-svelte",
-    "prettier-plugin-astro",
-    "prettier-plugin-tailwindcss"
-  ],
+  "plugins": ["prettier-plugin-svelte", "prettier-plugin-astro"],
   "semi": false,
   "singleQuote": true,
   "htmlWhitespaceSensitivity": "ignore",

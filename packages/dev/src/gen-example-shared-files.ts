@@ -8,7 +8,6 @@ import { vfs, type VirtualFile } from './virtual-file-system.js'
 const frameworkSharedFiles = [
   '*user-data.ts',
   '*tag-data.ts',
-  '*shikiji.ts',
 
   'use-readonly.ts',
   'use-submit-keymap.ts',

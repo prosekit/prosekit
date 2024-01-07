@@ -8,7 +8,7 @@ ProseKit extension priority.
 
 ### Enumeration Members
 
-| Member | Value |
+| Enumeration Member | Value |
 | :------ | :------ |
 | `default` | `2` |
 | `high` | `1` |
@@ -575,8 +575,6 @@ of a type that has them is created.
 
 Parses the attribute value from the DOM.
 
-Parses the attribute value from the DOM.
-
 ##### Parameters
 
 • **node**: [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
@@ -590,8 +588,6 @@ Parses the attribute value from the DOM.
 #### toDom
 
 > **toDom**: (`value`) => `null` \| `void` \| [`string`, `string`]
-
-Returns the attribute key and value to be set on the DOM node.
 
 Returns the attribute key and value to be set on the DOM node.
 
@@ -667,8 +663,6 @@ of a type that has them is created.
 
 Parses the attribute value from the DOM.
 
-Parses the attribute value from the DOM.
-
 ##### Parameters
 
 • **node**: [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
@@ -682,8 +676,6 @@ Parses the attribute value from the DOM.
 #### toDom
 
 > **toDom**: (`value`) => `null` \| `void` \| [`string`, `string`]
-
-Returns the attribute key and value to be set on the DOM node.
 
 Returns the attribute key and value to be set on the DOM node.
 

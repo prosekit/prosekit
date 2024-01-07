@@ -53,16 +53,16 @@ export interface MarkAttrOptions {
 export function defineMarkSpec<Mark extends string>(
   options: MarkSpecOptions<Mark>,
 ): Extension<{ MARKS: Mark }> {
-  return markSpecFacet.extension([[options, undefined]]) as Extension<{
-    MARKS: Mark
-  }>
+  const payload: MarkSpecPayload = [options, undefined]
+  return markSpecFacet.extension([payload]) as Extension<{ MARKS: Mark }>
 }
 
 /**
  * @public
  */
 export function defineMarkAttr(options: MarkAttrOptions): Extension {
-  return markSpecFacet.extension([[undefined, options]])
+  const payload: MarkSpecPayload = [undefined, options]
+  return markSpecFacet.extension([payload])
 }
 
 type MarkSpecPayload = [

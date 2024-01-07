@@ -56,9 +56,8 @@ export interface NodeAttrOptions {
 export function defineNodeSpec<NodeName extends string>(
   options: NodeSpecOptions<NodeName>,
 ): Extension<{ NODES: NodeName }> {
-  return nodeSpecFacet.extension([[options, undefined]]) as Extension<{
-    NODES: NodeName
-  }>
+  const payload: NodeSpecPayload = [options, undefined]
+  return nodeSpecFacet.extension([payload]) as Extension<{ NODES: NodeName }>
 }
 
 /**
@@ -67,7 +66,8 @@ export function defineNodeSpec<NodeName extends string>(
  * @public
  */
 export function defineNodeAttr(options: NodeAttrOptions): Extension {
-  return nodeSpecFacet.extension([[undefined, options]])
+  const payload: NodeSpecPayload = [undefined, options]
+  return nodeSpecFacet.extension([payload])
 }
 
 type NodeSpecPayload = [

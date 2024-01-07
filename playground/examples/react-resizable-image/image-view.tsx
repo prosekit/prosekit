@@ -33,7 +33,10 @@ export default function ImageView(props: ReactNodeViewProps) {
         }}
         className="IMAGE_RESIZEALE_IMAGE"
       />
-      <ResizableHandle className="IMAGE_RESIZEALE_HANDLE">
+      <ResizableHandle
+        className="IMAGE_RESIZEALE_HANDLE"
+        position="bottom-right"
+      >
         <div className="ICON_CORNER_HANDLE"></div>
       </ResizableHandle>
     </Resizable>

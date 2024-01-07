@@ -23,7 +23,7 @@
     "dedent": "^1.5.1",
     "postcss": "^8.4.33",
     "prettier": "^3.1.1",
-    "prosekit": "^0.2.5",
+    "prosekit": "^0.2.6",
     "prosekit-playground": "*",
     "radix-vue": "^1.2.6",
     "react": "^18.2.0",

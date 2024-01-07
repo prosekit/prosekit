@@ -12,6 +12,8 @@
     "./src/components/combo-box/index.ts",
     "./src/components/inline-popover/index.ts",
     "./src/components/popover/index.ts",
+    "./src/components/resizable-handle/index.ts",
+    "./src/components/resizable/index.ts",
     "./src/index.ts"
   ]
 }

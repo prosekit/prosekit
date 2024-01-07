@@ -127,6 +127,14 @@ export const referenceItems = [
       {
         "text": "popover",
         "link": "/references/lit/popover"
+      },
+      {
+        "text": "resizable",
+        "link": "/references/lit/resizable"
+      },
+      {
+        "text": "resizable-handle",
+        "link": "/references/lit/resizable-handle"
       }
     ],
     "collapsed": true,
@@ -174,6 +182,14 @@ export const referenceItems = [
       {
         "text": "popover",
         "link": "/references/preact/popover"
+      },
+      {
+        "text": "resizable",
+        "link": "/references/preact/resizable"
+      },
+      {
+        "text": "resizable-handle",
+        "link": "/references/preact/resizable-handle"
       }
     ],
     "collapsed": true,
@@ -221,6 +237,14 @@ export const referenceItems = [
       {
         "text": "popover",
         "link": "/references/react/popover"
+      },
+      {
+        "text": "resizable",
+        "link": "/references/react/resizable"
+      },
+      {
+        "text": "resizable-handle",
+        "link": "/references/react/resizable-handle"
       }
     ],
     "collapsed": true,
@@ -268,6 +292,14 @@ export const referenceItems = [
       {
         "text": "popover",
         "link": "/references/solid/popover"
+      },
+      {
+        "text": "resizable",
+        "link": "/references/solid/resizable"
+      },
+      {
+        "text": "resizable-handle",
+        "link": "/references/solid/resizable-handle"
       }
     ],
     "collapsed": true,
@@ -315,6 +347,14 @@ export const referenceItems = [
       {
         "text": "popover",
         "link": "/references/svelte/popover"
+      },
+      {
+        "text": "resizable",
+        "link": "/references/svelte/resizable"
+      },
+      {
+        "text": "resizable-handle",
+        "link": "/references/svelte/resizable-handle"
       }
     ],
     "collapsed": true,
@@ -362,6 +402,14 @@ export const referenceItems = [
       {
         "text": "popover",
         "link": "/references/vue/popover"
+      },
+      {
+        "text": "resizable",
+        "link": "/references/vue/resizable"
+      },
+      {
+        "text": "resizable-handle",
+        "link": "/references/vue/resizable-handle"
       }
     ],
     "collapsed": true,

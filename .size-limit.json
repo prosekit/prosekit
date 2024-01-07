@@ -193,6 +193,14 @@
     "path": "packages/prosekit/dist/prosekit-lit-popover.js"
   },
   {
+    "name": "prosekit/lit/resizable",
+    "path": "packages/prosekit/dist/prosekit-lit-resizable.js"
+  },
+  {
+    "name": "prosekit/lit/resizable-handle",
+    "path": "packages/prosekit/dist/prosekit-lit-resizable-handle.js"
+  },
+  {
     "name": "prosekit/pm",
     "path": "packages/prosekit/dist/prosekit-pm.js"
   },
@@ -310,6 +318,20 @@
     ]
   },
   {
+    "name": "prosekit/preact/resizable",
+    "path": "packages/prosekit/dist/prosekit-preact-resizable.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
+    "name": "prosekit/preact/resizable-handle",
+    "path": "packages/prosekit/dist/prosekit-preact-resizable-handle.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
     "name": "prosekit/react",
     "path": "packages/prosekit/dist/prosekit-react.js",
     "ignore": [
@@ -398,6 +420,22 @@
     ]
   },
   {
+    "name": "prosekit/react/resizable",
+    "path": "packages/prosekit/dist/prosekit-react-resizable.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/resizable-handle",
+    "path": "packages/prosekit/dist/prosekit-react-resizable-handle.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
     "name": "prosekit/solid",
     "path": "packages/prosekit/dist/prosekit-solid.js",
     "ignore": [
@@ -475,6 +513,20 @@
     ]
   },
   {
+    "name": "prosekit/solid/resizable",
+    "path": "packages/prosekit/dist/prosekit-solid-resizable.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
+    "name": "prosekit/solid/resizable-handle",
+    "path": "packages/prosekit/dist/prosekit-solid-resizable-handle.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
     "name": "prosekit/vue",
     "path": "packages/prosekit/dist/prosekit-vue.js",
     "ignore": [
@@ -547,6 +599,20 @@
   {
     "name": "prosekit/vue/popover",
     "path": "packages/prosekit/dist/prosekit-vue-popover.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/resizable",
+    "path": "packages/prosekit/dist/prosekit-vue-resizable.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/resizable-handle",
+    "path": "packages/prosekit/dist/prosekit-vue-resizable-handle.js",
     "ignore": [
       "vue"
     ]

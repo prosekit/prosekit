@@ -65,6 +65,14 @@
     "./popover": {
       "svelte": "./src/components/popover.gen.ts",
       "default": "./src/components/popover.gen.ts"
+    },
+    "./resizable": {
+      "svelte": "./src/components/resizable.gen.ts",
+      "default": "./src/components/resizable.gen.ts"
+    },
+    "./resizable-handle": {
+      "svelte": "./src/components/resizable-handle.gen.ts",
+      "default": "./src/components/resizable-handle.gen.ts"
     }
   },
   "files": [
@@ -162,6 +170,18 @@
         "svelte": "./dist/prosekit-svelte-popover.js",
         "import": "./dist/prosekit-svelte-popover.js",
         "default": "./dist/prosekit-svelte-popover.js"
+      },
+      "./resizable": {
+        "types": "./dist/prosekit-svelte-resizable.d.ts",
+        "svelte": "./dist/prosekit-svelte-resizable.js",
+        "import": "./dist/prosekit-svelte-resizable.js",
+        "default": "./dist/prosekit-svelte-resizable.js"
+      },
+      "./resizable-handle": {
+        "types": "./dist/prosekit-svelte-resizable-handle.d.ts",
+        "svelte": "./dist/prosekit-svelte-resizable-handle.js",
+        "import": "./dist/prosekit-svelte-resizable-handle.js",
+        "default": "./dist/prosekit-svelte-resizable-handle.js"
       }
     },
     "main": "./dist/prosekit-svelte.js",
@@ -201,6 +221,12 @@
         ],
         "popover": [
           "./dist/prosekit-svelte-popover.d.ts"
+        ],
+        "resizable": [
+          "./dist/prosekit-svelte-resizable.d.ts"
+        ],
+        "resizable-handle": [
+          "./dist/prosekit-svelte-resizable-handle.d.ts"
         ]
       }
     }

@@ -177,6 +177,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-resizable-image",
+      "framework": "react",
+      "story": "resizable-image",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "image-view.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-save-and-restore",
       "framework": "react",
       "story": "save-and-restore",

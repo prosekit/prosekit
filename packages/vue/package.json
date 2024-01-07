@@ -35,7 +35,9 @@
     "./combo-box-item": "./src/components/combo-box-item.gen.ts",
     "./combo-box-list": "./src/components/combo-box-list.gen.ts",
     "./inline-popover": "./src/components/inline-popover.ts",
-    "./popover": "./src/components/popover.gen.ts"
+    "./popover": "./src/components/popover.gen.ts",
+    "./resizable": "./src/components/resizable.gen.ts",
+    "./resizable-handle": "./src/components/resizable-handle.gen.ts"
   },
   "files": [
     "dist"
@@ -121,6 +123,16 @@
         "types": "./dist/prosekit-vue-popover.d.ts",
         "import": "./dist/prosekit-vue-popover.js",
         "default": "./dist/prosekit-vue-popover.js"
+      },
+      "./resizable": {
+        "types": "./dist/prosekit-vue-resizable.d.ts",
+        "import": "./dist/prosekit-vue-resizable.js",
+        "default": "./dist/prosekit-vue-resizable.js"
+      },
+      "./resizable-handle": {
+        "types": "./dist/prosekit-vue-resizable-handle.d.ts",
+        "import": "./dist/prosekit-vue-resizable-handle.js",
+        "default": "./dist/prosekit-vue-resizable-handle.js"
       }
     },
     "main": "./dist/prosekit-vue.js",
@@ -160,6 +172,12 @@
         ],
         "popover": [
           "./dist/prosekit-vue-popover.d.ts"
+        ],
+        "resizable": [
+          "./dist/prosekit-vue-resizable.d.ts"
+        ],
+        "resizable-handle": [
+          "./dist/prosekit-vue-resizable-handle.d.ts"
         ]
       }
     }

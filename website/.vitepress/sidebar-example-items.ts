@@ -59,6 +59,10 @@ export const exampleItems = [
     "link": "/examples/readonly"
   },
   {
+    "text": "resizable-image",
+    "link": "/examples/resizable-image"
+  },
+  {
     "text": "save-and-restore",
     "link": "/examples/save-and-restore"
   },

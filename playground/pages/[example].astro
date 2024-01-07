@@ -8,6 +8,7 @@ import E4040190458 from '../examples/react-inline-menu/editor.tsx'
 import E1745952196 from '../examples/react-keymap/editor.tsx'
 import E1157502443 from '../examples/react-list/editor.tsx'
 import E2808803641 from '../examples/react-readonly/editor.tsx'
+import E2473342960 from '../examples/react-resizable-image/editor.tsx'
 import E4123516857 from '../examples/react-save-and-restore/editor.tsx'
 import E3738959724 from '../examples/react-slash-menu/editor.tsx'
 import E733855346 from '../examples/react-toolbar/editor.tsx'
@@ -57,6 +58,7 @@ export const getStaticPaths = () => [
   { params: { example: 'react-keymap' } },
   { params: { example: 'react-list' } },
   { params: { example: 'react-readonly' } },
+  { params: { example: 'react-resizable-image' } },
   { params: { example: 'react-save-and-restore' } },
   { params: { example: 'react-slash-menu' } },
   { params: { example: 'react-toolbar' } },
@@ -110,6 +112,7 @@ const { example } = Astro.params
   {example === 'react-keymap' && <E1745952196 client:only="react" />}
   {example === 'react-list' && <E1157502443 client:only="react" />}
   {example === 'react-readonly' && <E2808803641 client:only="react" />}
+  {example === 'react-resizable-image' && <E2473342960 client:only="react" />}
   {example === 'react-save-and-restore' && <E4123516857 client:only="react" />}
   {example === 'react-slash-menu' && <E3738959724 client:only="react" />}
   {example === 'react-toolbar' && <E733855346 client:only="react" />}

@@ -1,6 +1,5 @@
 // @unocss-include
 
-// A helper function to make Prettier format the class names
 function clsx(...parts) {
   return parts
     .map((p) => p || '')

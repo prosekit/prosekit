@@ -17,6 +17,5 @@
       }
     }
   ],
-  "tailwindFunctions": ["clsx"],
   "svelteIndentScriptAndStyle": false
 }

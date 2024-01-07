@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@prosekit/pm": "^0.1.1",
+    "clsx": "^2.1.0",
     "orderedmap": "^2.1.1",
     "type-fest": "^4.9.0"
   },

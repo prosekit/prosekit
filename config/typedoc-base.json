@@ -54,7 +54,6 @@
   "hideBreadcrumbs": true,
   "hideInPageTOC": true,
   "hidePageHeader": true,
-  "memberPageTitle": "{name}",
   "entryFileName": "index.md",
   "useCodeBlocks": false,
   "excludeGroups": true,

@@ -9,7 +9,14 @@ import { resizableContext } from './context'
 /**
  * @internal
  */
-export const propNames = ['width', 'height', 'onResize', 'onResizeEnd'] as const
+export const propNames = [
+  'width',
+  'height',
+  'aspectRatio',
+  'onSizeChangeStart',
+  'onSizeChange',
+  'onSizeChangeEnd',
+] as const
 
 /**
  * @public
@@ -53,7 +60,7 @@ export class Resizable extends LightElement implements Partial<ResizableProps> {
 
   aspectRatio?: number
 
-  resizing?: boolean 
+  resizing?: boolean
 
   onSizeChangeStart?: (size: { width: number; height: number }) => void
 

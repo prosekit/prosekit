@@ -15,6 +15,10 @@ export {
 } from './extensions/default-state'
 export { defineDoc } from './extensions/doc'
 export {
+  defineDocChangeHandler,
+  type DocChangeHandler,
+} from './extensions/events/doc-change'
+export {
   defineMountHandler,
   defineUnmountHandler,
   defineUpdateHandler,
@@ -22,10 +26,6 @@ export {
   type UnmountHandler,
   type UpdateHandler,
 } from './extensions/events/plugin-view'
-export {
-  defineDocChangeHandler,
-  type DocChangeHandler,
-} from './extensions/events/doc-change'
 export { defineHistory } from './extensions/history'
 export { defineInputRule } from './extensions/input-rules'
 export {
@@ -36,7 +36,12 @@ export {
   type KeymapPayload,
 } from './extensions/keymap'
 export { defineMarkSpec, type MarkSpecOptions } from './extensions/mark-spec'
-export { defineNodeSpec, type NodeSpecOptions } from './extensions/node-spec'
+export {
+  defineNodeAttr,
+  defineNodeSpec,
+  type NodeAttrOptions,
+  type NodeSpecOptions,
+} from './extensions/node-spec'
 export { defineNodeView, type NodeViewOptions } from './extensions/node-view'
 export {
   defineNodeViewFactory,

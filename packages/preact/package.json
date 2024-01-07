@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/preact",
   "type": "module",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "author": {
     "name": "ocavue",

@@ -12,6 +12,8 @@
     "./src/components/combo-box.gen.ts",
     "./src/components/inline-popover.gen.ts",
     "./src/components/popover.gen.ts",
+    "./src/components/resizable-handle.gen.ts",
+    "./src/components/resizable.gen.ts",
     "./src/index.ts"
   ]
 }

@@ -83,6 +83,16 @@ export const shortcuts = {
     'dark:text-dark box-border inline-flex h-10 w-full items-center justify-center rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-100',
   ),
 
+  IMAGE_RESIZEALE: clsx('relative block max-h-[600px] max-w-full'),
+
+  IMAGE_RESIZEALE_IMAGE: clsx('h-full w-full object-contain'),
+
+  IMAGE_RESIZEALE_HANDLE: clsx(
+    'absolute bottom-0 right-0 rounded mb-2 mr-2 transition bg-gray-500/20',
+    // Only visible when hovering the image block
+    'hover:opacity-100 opacity-0 [prosekit-resizable:hover_&]:opacity-100 ',
+  ),
+
   ICON_ITALIC: clsx('i-ci-italic h-5 w-5'),
   ICON_BOLD: clsx('i-ci-bold h-5 w-5'),
   ICON_UNDERLINE: clsx('i-ci-underline h-5 w-5'),
@@ -102,6 +112,9 @@ export const shortcuts = {
   ICON_LIST_TASK: clsx('i-ci-list-checklist h-5 w-5'),
   ICON_LIST_TOGGLE: clsx('i-ci-sort-descending h-5 w-5 rotate-180'),
   ICON_CODE_BLOCK: clsx('i-ci-window-code-block h-5 w-5'),
+  ICON_CORNER_HANDLE: clsx(
+    'i-clarity-drag-handle-corner-line h-7 w-7 opacity-60',
+  ),
 }
 
 /**

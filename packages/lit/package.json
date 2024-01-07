@@ -35,7 +35,9 @@
     "./combo-box-item": "./src/components/combo-box-item/index.ts",
     "./combo-box-list": "./src/components/combo-box-list/index.ts",
     "./inline-popover": "./src/components/inline-popover/index.ts",
-    "./popover": "./src/components/popover/index.ts"
+    "./popover": "./src/components/popover/index.ts",
+    "./resizable": "./src/components/resizable/index.ts",
+    "./resizable-handle": "./src/components/resizable-handle/index.ts"
   },
   "files": [
     "dist"
@@ -116,6 +118,16 @@
         "types": "./dist/prosekit-lit-popover.d.ts",
         "import": "./dist/prosekit-lit-popover.js",
         "default": "./dist/prosekit-lit-popover.js"
+      },
+      "./resizable": {
+        "types": "./dist/prosekit-lit-resizable.d.ts",
+        "import": "./dist/prosekit-lit-resizable.js",
+        "default": "./dist/prosekit-lit-resizable.js"
+      },
+      "./resizable-handle": {
+        "types": "./dist/prosekit-lit-resizable-handle.d.ts",
+        "import": "./dist/prosekit-lit-resizable-handle.js",
+        "default": "./dist/prosekit-lit-resizable-handle.js"
       }
     },
     "main": "./dist/prosekit-lit.js",
@@ -155,6 +167,12 @@
         ],
         "popover": [
           "./dist/prosekit-lit-popover.d.ts"
+        ],
+        "resizable": [
+          "./dist/prosekit-lit-resizable.d.ts"
+        ],
+        "resizable-handle": [
+          "./dist/prosekit-lit-resizable-handle.d.ts"
         ]
       }
     }

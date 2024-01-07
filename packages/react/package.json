@@ -35,7 +35,9 @@
     "./combo-box-item": "./src/components/combo-box-item.gen.ts",
     "./combo-box-list": "./src/components/combo-box-list.gen.ts",
     "./inline-popover": "./src/components/inline-popover.gen.ts",
-    "./popover": "./src/components/popover.gen.ts"
+    "./popover": "./src/components/popover.gen.ts",
+    "./resizable": "./src/components/resizable.gen.ts",
+    "./resizable-handle": "./src/components/resizable-handle.gen.ts"
   },
   "files": [
     "dist"
@@ -129,6 +131,16 @@
         "types": "./dist/prosekit-react-popover.d.ts",
         "import": "./dist/prosekit-react-popover.js",
         "default": "./dist/prosekit-react-popover.js"
+      },
+      "./resizable": {
+        "types": "./dist/prosekit-react-resizable.d.ts",
+        "import": "./dist/prosekit-react-resizable.js",
+        "default": "./dist/prosekit-react-resizable.js"
+      },
+      "./resizable-handle": {
+        "types": "./dist/prosekit-react-resizable-handle.d.ts",
+        "import": "./dist/prosekit-react-resizable-handle.js",
+        "default": "./dist/prosekit-react-resizable-handle.js"
       }
     },
     "main": "./dist/prosekit-react.js",
@@ -168,6 +180,12 @@
         ],
         "popover": [
           "./dist/prosekit-react-popover.d.ts"
+        ],
+        "resizable": [
+          "./dist/prosekit-react-resizable.d.ts"
+        ],
+        "resizable-handle": [
+          "./dist/prosekit-react-resizable-handle.d.ts"
         ]
       }
     }

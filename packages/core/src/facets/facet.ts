@@ -19,7 +19,7 @@ export interface FacetOptions<Input, Output> {
   converter?: () => FacetConverter<Input, Output>
   next: Facet<Output, any>
 
-  // Set this to true if you only want to keep one facet payload. For example, this facet corresponds to a ProseMirror plugin with a key.œ
+  // Set this to true if you only want to keep one facet payload. For example, this facet corresponds to a ProseMirror plugin with a key.
   singleton?: boolean
 }
 

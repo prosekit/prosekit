@@ -31,7 +31,7 @@ export interface MarkAttrOptions {
 
   /**
    * The default value for this attribute, to use when no explicit value is
-   * provided. Attributes th¡at have no default must be provided whenever a mark
+   * provided. Attributes that have no default must be provided whenever a mark
    * of a type that has them is created.
    */
   default?: any

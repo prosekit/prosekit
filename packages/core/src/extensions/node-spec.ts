@@ -40,12 +40,12 @@ export interface NodeAttrOptions {
   /**
    * Returns the attribute key and value to be set on the DOM node.
    */
-  toDom: (value: unknown) => [key: string, value: string] | null | void
+  toDOM?: (value: any) => [key: string, value: string] | null | void
 
   /**
    * Parses the attribute value from the DOM.
    */
-  parseDOM?: (node: HTMLElement) => unknown
+  parseDOM?: (node: HTMLElement) => any
 }
 
 /**
@@ -99,7 +99,7 @@ const nodeSpecFacet = Facet.define<NodeSpecPayload, SchemaSpec>({
       type,
       attr,
       default: defaultValue,
-      toDom,
+      toDOM,
       parseDOM,
     } of attrPayloads) {
       const spec = nodes[type]
@@ -113,10 +113,9 @@ const nodeSpecFacet = Facet.define<NodeSpecPayload, SchemaSpec>({
       if (!spec.attrs) {
         spec.attrs = {}
       }
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      spec.attrs[attr] = { default: defaultValue }
+      spec.attrs[attr] = { default: defaultValue as unknown }
 
-      if (toDom && spec.toDOM) {
+      if (toDOM && spec.toDOM) {
         const existingToDom = spec.toDOM
         spec.toDOM = (node): DOMOutputSpec => {
           const dom = existingToDom(node)
@@ -125,7 +124,7 @@ const nodeSpecFacet = Facet.define<NodeSpecPayload, SchemaSpec>({
             return dom
           }
 
-          const attrDOM = toDom(node.attrs[attr])
+          const attrDOM = toDOM(node.attrs[attr])
           if (!attrDOM) {
             return dom
           }
@@ -168,7 +167,7 @@ const nodeSpecFacet = Facet.define<NodeSpecPayload, SchemaSpec>({
               return attrs ?? null
             }
 
-            const value = parseDOM(dom)
+            const value = parseDOM(dom) as unknown
             return {
               ...attrs,
               [attr]: value,

@@ -39,12 +39,12 @@ export interface MarkAttrOptions {
   /**
    * Returns the attribute key and value to be set on the DOM node.
    */
-  toDom: (value: unknown) => [key: string, value: string] | null | void
+  toDOM?: (value: any) => [key: string, value: string] | null | void
 
   /**
    * Parses the attribute value from the DOM.
    */
-  parseDOM?: (node: HTMLElement) => unknown
+  parseDOM?: (node: HTMLElement) => any
 }
 
 /**
@@ -89,7 +89,7 @@ const markSpecFacet = Facet.define<MarkSpecPayload, SchemaSpec>({
       type,
       attr,
       default: defaultValue,
-      toDom,
+      toDOM,
       parseDOM,
     } of attrPayloads) {
       const spec = marks[type]
@@ -103,10 +103,9 @@ const markSpecFacet = Facet.define<MarkSpecPayload, SchemaSpec>({
       if (!spec.attrs) {
         spec.attrs = {}
       }
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      spec.attrs[attr] = { default: defaultValue }
+      spec.attrs[attr] = { default: defaultValue as unknown }
 
-      if (toDom && spec.toDOM) {
+      if (toDOM && spec.toDOM) {
         const existingToDom = spec.toDOM
         spec.toDOM = (mark, inline): DOMOutputSpec => {
           const dom = existingToDom(mark, inline)
@@ -115,7 +114,7 @@ const markSpecFacet = Facet.define<MarkSpecPayload, SchemaSpec>({
             return dom
           }
 
-          const attrDOM = toDom(mark.attrs[attr])
+          const attrDOM = toDOM(mark.attrs[attr])
           if (!attrDOM) {
             return dom
           }
@@ -158,7 +157,7 @@ const markSpecFacet = Facet.define<MarkSpecPayload, SchemaSpec>({
               return attrs ?? null
             }
 
-            const value = parseDOM(dom)
+            const value = parseDOM(dom) as unknown
             return {
               ...attrs,
               [attr]: value,

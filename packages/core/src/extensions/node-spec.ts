@@ -33,7 +33,7 @@ export interface NodeAttrOptions {
   /**
    * The default value for this attribute, to use when no explicit value is
    * provided. Attributes that have no default must be provided whenever a node
-   * or mark of a type that has them is created.
+   * of a type that has them is created.
    */
   default?: any
 

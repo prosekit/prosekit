@@ -44,6 +44,7 @@ export class Resizable extends LightElement implements Partial<ResizableProps> {
     aspectRatio: { attribute: false },
     onResize: { attribute: false },
     onResizeEnd: { attribute: false },
+    resizing: { attribute: 'data-resizing', type: Boolean, reflect: true },
   } satisfies PropertyDeclarations
 
   width?: number | string
@@ -51,6 +52,8 @@ export class Resizable extends LightElement implements Partial<ResizableProps> {
   height?: number | string
 
   aspectRatio?: number
+
+  resizing?: boolean 
 
   onSizeChangeStart?: (size: { width: number; height: number }) => void
 
@@ -78,6 +81,7 @@ export class Resizable extends LightElement implements Partial<ResizableProps> {
     this.startWidth = width
     this.startHeight = height
     this.onSizeChangeStart?.({ width, height })
+    this.resizing = true
     return [width, height, this.aspectRatio ?? width / height] as const
   }
 
@@ -89,6 +93,7 @@ export class Resizable extends LightElement implements Partial<ResizableProps> {
 
   private handleResizeEnd() {
     const { width, height } = this.getBoundingClientRect()
+    this.resizing = false
     this.onSizeChangeEnd?.({ width, height })
   }
 

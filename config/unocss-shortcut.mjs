@@ -88,9 +88,9 @@ export const shortcuts = {
   IMAGE_RESIZEALE_IMAGE: clsx('h-full w-full object-contain'),
 
   IMAGE_RESIZEALE_HANDLE: clsx(
-    'absolute bottom-0 right-0 rounded mb-2 mr-2 transition bg-gray-500/20',
+    'absolute bottom-0 right-0 rounded mb-1.5 mr-1.5 p-0.5 transition bg-gray-900/30 active:bg-gray-800/60 text-white/50 active:text-white/80 active:translate-x-0.5 active:translate-y-0.5',
     // Only visible when hovering the image block
-    'hover:opacity-100 opacity-0 [prosekit-resizable:hover_&]:opacity-100 ',
+    'opacity-0 hover:opacity-100 [prosekit-resizable:hover_&]:opacity-100 [prosekit-resizable[data-resizing]_&]:opacity-100',
   ),
 
   ICON_ITALIC: clsx('i-ci-italic h-5 w-5'),
@@ -112,9 +112,7 @@ export const shortcuts = {
   ICON_LIST_TASK: clsx('i-ci-list-checklist h-5 w-5'),
   ICON_LIST_TOGGLE: clsx('i-ci-sort-descending h-5 w-5 rotate-180'),
   ICON_CODE_BLOCK: clsx('i-ci-window-code-block h-5 w-5'),
-  ICON_CORNER_HANDLE: clsx(
-    'i-clarity-drag-handle-corner-line h-7 w-7 opacity-60',
-  ),
+  ICON_CORNER_HANDLE: clsx('i-lucide-arrow-down-right h-4 w-4'),
 }
 
 /**

@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.2.6
+
+### Patch Changes
+
+- [`b9ee517`](https://github.com/ocavue/prosekit/commit/b9ee5179fe3e97c05b4fab67215eb14cab1d081c) ![][badge-core]
+
+  Re-export `clsx/lite` with stricter types.
+
+- [`cf8787f`](https://github.com/ocavue/prosekit/commit/cf8787fdc2dd8f56a697833d7bffb2a773100517) ![][badge-preact] ![][badge-svelte] ![][badge-react] ![][badge-solid] ![][badge-lit] ![][badge-vue]
+
+  Add components Resizable and ResizableHandle.
+
+- [`8f20d4e`](https://github.com/ocavue/prosekit/commit/8f20d4ebfeadc402416839419a3a0f7aac9c8626) ![][badge-core]
+
+  Add `defineNodeAttr` and `defineMarkAttr`. These functions provide a handy way to define extra attributes for existing node types and mark types.
+
 ## 0.2.5
 
 ### Patch Changes

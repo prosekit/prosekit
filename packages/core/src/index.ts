@@ -35,7 +35,12 @@ export {
   type Keymap,
   type KeymapPayload,
 } from './extensions/keymap'
-export { defineMarkSpec, type MarkSpecOptions } from './extensions/mark-spec'
+export {
+  defineMarkAttr,
+  defineMarkSpec,
+  type MarkAttrOptions,
+  type MarkSpecOptions,
+} from './extensions/mark-spec'
 export {
   defineNodeAttr,
   defineNodeSpec,

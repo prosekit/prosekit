@@ -83,9 +83,7 @@ const nodeSpecFacet = Facet.define<NodeSpecPayload, SchemaSpec>({
     const specPayloads = payloads.map((input) => input[0]).filter(isNotNull)
     const attrPayloads = payloads.map((input) => input[1]).filter(isNotNull)
 
-    for (const specOptions of specPayloads) {
-      const { name, topNode, ...spec } = specOptions
-
+    for (const { name, topNode, ...spec } of specPayloads) {
       if (nodes[name]) {
         throw new ProseKitError(`Node type ${name} has already been defined`)
       }
@@ -97,10 +95,13 @@ const nodeSpecFacet = Facet.define<NodeSpecPayload, SchemaSpec>({
       nodes[name] = spec
     }
 
-    for (const attrOptions of attrPayloads) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      const { type, attr, default: defaultValue, toDom, parseDOM } = attrOptions
-
+    for (const {
+      type,
+      attr,
+      default: defaultValue,
+      toDom,
+      parseDOM,
+    } of attrPayloads) {
       const spec = nodes[type]
 
       if (!spec) {

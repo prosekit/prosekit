@@ -53,7 +53,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/core": "^0.2.2",
+    "@prosekit/core": "^0.2.3",
     "@prosekit/pm": "^0.1.1",
     "prosemirror-flat-list": "^0.4.5",
     "prosemirror-highlight": "^0.4.0"

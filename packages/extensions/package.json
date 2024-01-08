@@ -39,6 +39,7 @@
     "./list": "./src/list/index.ts",
     "./list/style.css": "./src/list/style.css",
     "./mention": "./src/mention/index.ts",
+    "./drop-cursor": "./src/drop-cursor/index.ts",
     "./placeholder": "./src/placeholder/index.ts",
     "./placeholder/style.css": "./src/placeholder/style.css",
     "./readonly": "./src/readonly/index.ts",

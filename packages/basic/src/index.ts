@@ -9,6 +9,7 @@ import {
 } from '@prosekit/core'
 import { defineBold } from '@prosekit/extensions/bold'
 import { defineCode } from '@prosekit/extensions/code'
+import { defineDropCursor } from '@prosekit/extensions/drop-cursor'
 import { defineHeading } from '@prosekit/extensions/heading'
 import { defineImage } from '@prosekit/extensions/image'
 import { defineItalic } from '@prosekit/extensions/italic'
@@ -35,6 +36,7 @@ export function defineBasicExtension() {
     defineCode(),
     defineImage(),
     defineParagraph(),
+    defineDropCursor(),
   ])
 }
 

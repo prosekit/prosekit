@@ -17,7 +17,7 @@ export function defineExtension() {
     defineParagraph(),
     defineHeading(),
     defineImage(),
-    defineDropCursor({color: "red", width: 4}),
+    defineDropCursor({ color: 'red', width: 4 }),
   ])
 }
 

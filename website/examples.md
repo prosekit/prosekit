@@ -8,6 +8,8 @@
 
 - [code-block](./examples/code-block)
 
+- [custom-drop-cursor](./examples/custom-drop-cursor)
+
 - [dom](./examples/dom)
 
 - [full](./examples/full)

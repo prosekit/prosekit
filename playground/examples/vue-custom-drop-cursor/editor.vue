@@ -14,7 +14,7 @@ const defaultDoc: NodeJSON = {
       content: [
         {
           type: 'text',
-          text: 'Try to drag and drop the images below to see the custom drop cursor.',
+          text: 'Drag the images below to see the custom drop cursor.',
         },
       ],
     },

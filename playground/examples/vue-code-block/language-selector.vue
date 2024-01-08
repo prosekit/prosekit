@@ -12,7 +12,7 @@ const handleChange = (event: Event) => {
 </script>
 
 <template>
-  <div className="LANGUAGE_WRAPPER">
+  <div className="LANGUAGE_WRAPPER" contenteditable="false">
     <select
       className="LANGUAGE_SELECT"
       @change="handleChange"

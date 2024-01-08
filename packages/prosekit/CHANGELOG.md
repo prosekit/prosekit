@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.2.7
+
+### Patch Changes
+
+- [`eea5b8d`](https://github.com/ocavue/prosekit/commit/eea5b8d91152ce2d1273ccc1feb794e4793ce3bf) ![][badge-extensions] ![][badge-basic]
+
+  Add `defineDropCursor`, which allows you to show a cursor when something is dragged over the editor.
+
+- [`eea5b8d`](https://github.com/ocavue/prosekit/commit/eea5b8d91152ce2d1273ccc1feb794e4793ce3bf) ![][badge-extensions]
+
+  Make images draggable by default.
+
 ## 0.2.6
 
 ### Patch Changes

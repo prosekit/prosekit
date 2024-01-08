@@ -10,19 +10,36 @@ const defaultDoc: NodeJSON = {
   type: 'doc',
   content: [
     {
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'Try to drag and drop the images below to see the custom drop cursor.',
+        },
+      ],
+    },
+    {
       type: 'image',
       attrs: {
-        src: 'https://placehold.co/150x150/8bd450/ffffff/png',
-        width: 150,
-        height: 150,
+        src: 'https://placehold.co/120x60/f59e0b/FFF?text=Amber',
       },
     },
     {
       type: 'image',
       attrs: {
-        src: 'https://placehold.co/200x80/965fd4/ffffff/png',
-        width: 200,
-        height: 80,
+        src: 'https://placehold.co/120x60/84cc16/FFF?text=Lime',
+      },
+    },
+    {
+      type: 'image',
+      attrs: {
+        src: 'https://placehold.co/120x60/06b6d4/FFF?text=Cyan',
+      },
+    },
+    {
+      type: 'image',
+      attrs: {
+        src: 'https://placehold.co/120x60/f43f5e/FFF?text=Rose',
       },
     },
   ],

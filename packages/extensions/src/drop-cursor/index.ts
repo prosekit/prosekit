@@ -3,11 +3,11 @@ import { dropCursor } from 'prosemirror-dropcursor'
 
 export interface DropCursorOptions {
   /**
-   * The color of the cursor.
+   * The color of the cursor.  Use `false` to apply no color and rely only on class.
    *
    * @default 'black'
    */
-  color?: string
+  color?: string | false 
 
   /**
    * The precise width of the cursor in pixels.

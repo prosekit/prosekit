@@ -7,7 +7,7 @@ export interface DropCursorOptions {
    *
    * @default 'black'
    */
-  color?: string | false 
+  color?: string | false
 
   /**
    * The precise width of the cursor in pixels.

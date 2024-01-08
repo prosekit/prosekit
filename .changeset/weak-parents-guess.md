@@ -1,5 +1,6 @@
 ---
-"@prosekit/extensions": patch
+'prosekit': patch
+'@prosekit/extensions': patch
 ---
 
 Make images draggable by default.

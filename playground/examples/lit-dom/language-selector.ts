@@ -23,5 +23,9 @@ export function createLanguageSelector({
     setLanguage((event.target as HTMLSelectElement).value)
   })
 
-  return createElement('div', { class: 'LANGUAGE_WRAPPER' }, select)
+  return createElement(
+    'div',
+    { class: 'LANGUAGE_WRAPPER', contenteditable: 'false' },
+    select,
+  )
 }

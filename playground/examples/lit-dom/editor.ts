@@ -1,5 +1,3 @@
-// @unocss-include
-
 import 'prosekit/basic/style.css'
 
 import { LitElement, html } from 'lit'

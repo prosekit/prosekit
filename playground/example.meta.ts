@@ -403,6 +403,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "vue-custom-drop-cursor",
+      "framework": "vue",
+      "story": "custom-drop-cursor",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-full",
       "framework": "vue",
       "story": "full",

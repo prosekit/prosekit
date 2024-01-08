@@ -206,6 +206,9 @@ importers:
       '@prosekit/pm':
         specifier: ^0.1.1
         version: link:../pm
+      prosemirror-dropcursor:
+        specifier: ^1.8.1
+        version: 1.8.1
       prosemirror-flat-list:
         specifier: ^0.4.5
         version: 0.4.5
@@ -8147,6 +8150,14 @@ packages:
       prosemirror-model: 1.19.4
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.8.0
+    dev: false
+
+  /prosemirror-dropcursor@1.8.1:
+    resolution: {integrity: sha512-M30WJdJZLyXHi3N8vxN6Zh5O8ZBbQCz0gURTfPmTIBNQ5pxrdU7A58QkNqfa98YEjSAL1HUyyU34f6Pm5xBSGw==}
+    dependencies:
+      prosemirror-state: 1.4.3
+      prosemirror-transform: 1.8.0
+      prosemirror-view: 1.32.7
     dev: false
 
   /prosemirror-flat-list@0.4.5:

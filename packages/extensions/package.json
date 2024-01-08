@@ -31,6 +31,7 @@
     "./bold": "./src/bold/index.ts",
     "./code": "./src/code/index.ts",
     "./code-block": "./src/code-block/index.ts",
+    "./drop-cursor": "./src/drop-cursor/index.ts",
     "./heading": "./src/heading/index.ts",
     "./image": "./src/image/index.ts",
     "./input-rule": "./src/input-rule/index.ts",
@@ -55,6 +56,7 @@
   "dependencies": {
     "@prosekit/core": "^0.2.3",
     "@prosekit/pm": "^0.1.1",
+    "prosemirror-dropcursor": "^1.8.1",
     "prosemirror-flat-list": "^0.4.5",
     "prosemirror-highlight": "^0.4.0"
   },
@@ -104,6 +106,11 @@
         "types": "./dist/prosekit-extensions-code-block.d.ts",
         "import": "./dist/prosekit-extensions-code-block.js",
         "default": "./dist/prosekit-extensions-code-block.js"
+      },
+      "./drop-cursor": {
+        "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
+        "import": "./dist/prosekit-extensions-drop-cursor.js",
+        "default": "./dist/prosekit-extensions-drop-cursor.js"
       },
       "./heading": {
         "types": "./dist/prosekit-extensions-heading.d.ts",
@@ -189,6 +196,9 @@
         ],
         "code-block": [
           "./dist/prosekit-extensions-code-block.d.ts"
+        ],
+        "drop-cursor": [
+          "./dist/prosekit-extensions-drop-cursor.d.ts"
         ],
         "heading": [
           "./dist/prosekit-extensions-heading.d.ts"

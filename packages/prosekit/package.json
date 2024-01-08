@@ -36,6 +36,7 @@
     "./extensions/bold": "./src/extensions/bold.gen.ts",
     "./extensions/code": "./src/extensions/code.gen.ts",
     "./extensions/code-block": "./src/extensions/code-block.gen.ts",
+    "./extensions/drop-cursor": "./src/extensions/drop-cursor.gen.ts",
     "./extensions/heading": "./src/extensions/heading.gen.ts",
     "./extensions/image": "./src/extensions/image.gen.ts",
     "./extensions/input-rule": "./src/extensions/input-rule.gen.ts",
@@ -257,6 +258,11 @@
         "types": "./dist/prosekit-extensions-code-block.d.ts",
         "import": "./dist/prosekit-extensions-code-block.js",
         "default": "./dist/prosekit-extensions-code-block.js"
+      },
+      "./extensions/drop-cursor": {
+        "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
+        "import": "./dist/prosekit-extensions-drop-cursor.js",
+        "default": "./dist/prosekit-extensions-drop-cursor.js"
       },
       "./extensions/heading": {
         "types": "./dist/prosekit-extensions-heading.d.ts",
@@ -789,6 +795,9 @@
         ],
         "extensions/code-block": [
           "./dist/prosekit-extensions-code-block.d.ts"
+        ],
+        "extensions/drop-cursor": [
+          "./dist/prosekit-extensions-drop-cursor.d.ts"
         ],
         "extensions/heading": [
           "./dist/prosekit-extensions-heading.d.ts"

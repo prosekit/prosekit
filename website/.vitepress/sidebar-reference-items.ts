@@ -38,6 +38,10 @@ export const referenceItems = [
         "link": "/references/extensions/code-block"
       },
       {
+        "text": "drop-cursor",
+        "link": "/references/extensions/drop-cursor"
+      },
+      {
         "text": "heading",
         "link": "/references/extensions/heading"
       },

@@ -17,6 +17,7 @@ export function defineImageSpec() {
     },
     group: 'block',
     defining: true,
+    draggable: true,
     parseDOM: [
       {
         tag: 'img[src]',

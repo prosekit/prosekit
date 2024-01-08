@@ -35,6 +35,8 @@ export function defineInputRule(rule: InputRule): Extension {
  * text is typed into it.
  *
  * See also [textblockTypeInputRule](https://prosemirror.net/docs/ref/#inputrules.textblockTypeInputRule)
+ *
+ * @public
  */
 export function defineTextBlockInputRule({
   regex,
@@ -70,6 +72,8 @@ export function defineTextBlockInputRule({
  * string is typed.
  *
  * See also [wrappingInputRule](https://prosemirror.net/docs/ref/#inputrules.wrappingInputRule)
+ *
+ * @public
  */
 export function defineWrappingInputRule({
   regex,

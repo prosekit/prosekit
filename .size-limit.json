@@ -58,6 +58,13 @@
     ]
   },
   {
+    "name": "prosekit/extensions/drop-cursor",
+    "path": "packages/prosekit/dist/prosekit-extensions-drop-cursor.js",
+    "ignore": [
+      "shikiji"
+    ]
+  },
+  {
     "name": "prosekit/extensions/heading",
     "path": "packages/prosekit/dist/prosekit-extensions-heading.js",
     "ignore": [

@@ -93,6 +93,8 @@ export const shortcuts = {
     'opacity-0 hover:opacity-100 [prosekit-resizable:hover_&]:opacity-100 [prosekit-resizable[data-resizing]_&]:opacity-100',
   ),
 
+  DROP_CURSOR: clsx('transition-all bg-blue-500'),
+
   ICON_ITALIC: clsx('i-ci-italic h-5 w-5'),
   ICON_BOLD: clsx('i-ci-bold h-5 w-5'),
   ICON_UNDERLINE: clsx('i-ci-underline h-5 w-5'),

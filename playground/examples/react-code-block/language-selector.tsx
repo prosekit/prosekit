@@ -8,7 +8,7 @@ export default function LanguageSelector({
   setLanguage: (language: string) => void
 }) {
   return (
-    <div className="LANGUAGE_WRAPPER" contenteditable="false">
+    <div className="LANGUAGE_WRAPPER" contentEditable="false">
       <select
         className="LANGUAGE_SELECT"
         onChange={(event) => setLanguage(event.target.value)}

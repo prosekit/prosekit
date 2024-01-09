@@ -1,12 +1,6 @@
-<script setup lang="ts">
-import 'prosekit/basic/style.css'
+import type { NodeJSON } from "prosekit/core";
 
-import { createEditor, type NodeJSON } from 'prosekit/core'
-import { ProseKit } from 'prosekit/vue'
-import { ref, watchPostEffect } from 'vue'
-import { defineExtension } from './extension'
-
-const defaultDoc: NodeJSON = {
+export const defaultDoc: NodeJSON = {
   type: 'doc',
   content: [
     {
@@ -44,18 +38,3 @@ const defaultDoc: NodeJSON = {
     },
   ],
 }
-
-const editor = createEditor({ extension: defineExtension(), defaultDoc })
-const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect(() => editor.mount(editorRef.value))
-</script>
-
-<template>
-  <ProseKit :editor="editor">
-    <div class="EDITOR_VIEWPORT">
-      <div class="EDITOR_DOCUMENT">
-        <div ref="editorRef" class="EDITOR_CONTENT"></div>
-      </div>
-    </div>
-  </ProseKit>
-</template>

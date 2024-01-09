@@ -15,12 +15,12 @@ export const exampleItems = [
     "link": "/examples/code-block"
   },
   {
-    "text": "custom-drop-cursor",
-    "link": "/examples/custom-drop-cursor"
-  },
-  {
     "text": "dom",
     "link": "/examples/dom"
+  },
+  {
+    "text": "drop-cursor",
+    "link": "/examples/drop-cursor"
   },
   {
     "text": "full",

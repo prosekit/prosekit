@@ -6,7 +6,6 @@ import {
   union,
 } from 'prosekit/core'
 import { defineDropCursor } from 'prosekit/extensions/drop-cursor'
-import { defineHeading } from 'prosekit/extensions/heading'
 import { defineImage } from 'prosekit/extensions/image'
 
 export function defineExtension() {
@@ -15,9 +14,12 @@ export function defineExtension() {
     defineDoc(),
     defineText(),
     defineParagraph(),
-    defineHeading(),
     defineImage(),
-    defineDropCursor({ color: false, width: 4, class: 'DROP_CURSOR' }),
+    defineDropCursor({
+      color: false,
+      width: 4,
+      class: 'DROP_CURSOR',
+    }),
   ])
 }
 

@@ -99,6 +99,7 @@ export default defineConfig({
           items: [
             { text: 'Placeholder', link: '/guide/extensions/placeholder' },
             { text: 'Readonly', link: '/guide/extensions/readonly' },
+            { text: 'Drop Cursor', link: '/guide/extensions/drop-cursor' },
           ],
         },
 

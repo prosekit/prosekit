@@ -19,6 +19,10 @@ export {
   type DocChangeHandler,
 } from './extensions/events/doc-change'
 export {
+  defineFocusChangeHandler,
+  type FocusChangeHandler,
+} from './extensions/events/focus'
+export {
   defineMountHandler,
   defineUnmountHandler,
   defineUpdateHandler,

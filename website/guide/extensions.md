@@ -54,6 +54,7 @@ You can use the following functions to register event handlers into the editor.
 - [`defineUnmountHandler`] registers a event handler that's called when the editor is unmounted.
 - [`defineUpdateHandler`] registers a event handler that's called when the editor state is updated.
 - [`defineDocChangeHandler`] registers a event handler that's called when the editor document is changed.
+- [`defineFocusChangeHandler`] registers a event handler that's called when the editor gains or loses focus.
 
 Check out the [save-and-restore](/examples/save-and-restore) example for an example of using event handlers to save and restore the editor document.
 
@@ -90,3 +91,4 @@ If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can also use
 [`defineUnmountHandler`]: /references/core#defineUnmountHandler
 [`defineUpdateHandler`]: /references/core#defineUpdateHandler
 [`defineDocChangeHandler`]: /references/core#defineDocChangeHandler
+[`defineFocusChangeHandler`]: /references/core#defineFocusChangeHandler

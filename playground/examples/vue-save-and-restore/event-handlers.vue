@@ -13,3 +13,5 @@ const extension = computed(() => {
 
 useExtension(extension)
 </script>
+
+<template></template>

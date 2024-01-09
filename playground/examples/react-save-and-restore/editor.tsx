@@ -48,7 +48,7 @@ export default function Editor() {
           disabled={!hasUnsavedChange}
           className="my-2 border border-solid bg-white p-2 text-black disabled:cursor-not-allowed disabled:text-gray-500"
         >
-          {hasUnsavedChange ? 'Save' : 'Save - No Changes'}
+          {hasUnsavedChange ? 'Save' : 'No Changes'}
         </button>
         <ul>
           {records.map((record, index) => (

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import 'prosekit/basic/style.css'
 
-import { createEditor, type NodeJSON } from 'prosekit/core'
+import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
 import { defineExtension } from './extension'

@@ -266,20 +266,36 @@ export class Editor<E extends Extension = any> {
     return new Editor(instance)
   }
 
+  /**
+   * Whether the editor is mounted.
+   */
   get mounted(): boolean {
     return !!this.instance.view
   }
 
+  /**
+   * The editor view.
+   */
   get view(): EditorView {
     return this.instance.assertView
   }
 
+  /**
+   * The editor schema.
+   */
   get schema(): Schema<ExtractNodes<E>, ExtractMarks<E>> {
     return this.instance.schema
   }
 
   get commands(): ExtractCommandAppliers<E> {
     return this.instance.commandAppliers as ExtractCommandAppliers<E>
+  }
+
+  /**
+   * Whether the editor is focused.
+   */
+  get focused(): boolean {
+    return this.instance.view?.hasFocus() ?? false
   }
 
   mount(place: HTMLElement | null | undefined | void): void {
@@ -294,6 +310,20 @@ export class Editor<E extends Extension = any> {
     if (this.mounted) {
       this.instance.unmount()
     }
+  }
+
+  /**
+   * Focus the editor.
+   */
+  focus(): void {
+    this.instance.view?.focus()
+  }
+
+  /**
+   * Blur the editor.
+   */
+  blur(): void {
+    this.instance.view?.dom.blur()
   }
 
   use(extension: Extension): VoidFunction {

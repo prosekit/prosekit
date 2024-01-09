@@ -4,7 +4,7 @@ import { isInCodeBlock } from './is-in-code-block'
 
 /**
  * @internal
- * 
+ *
  * @deprecated Use the one from `@prosekit/core` instead.
  */
 export function withSkipCodeBlock(command: Command): Command {

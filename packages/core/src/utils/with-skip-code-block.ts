@@ -1,6 +1,16 @@
-import type { Command } from '@prosekit/pm/state'
+import type { NodeType } from '@prosekit/pm/model'
+import type { Command, Selection } from '@prosekit/pm/state'
 
-import { isInCodeBlock } from './is-in-code-block'
+function isCodeBlockType(type: NodeType) {
+  return type.spec.code && type.isBlock
+}
+
+function isInCodeBlock(selection: Selection) {
+  return (
+    isCodeBlockType(selection.$from.parent.type) ||
+    isCodeBlockType(selection.$to.parent.type)
+  )
+}
 
 /**
  * @internal

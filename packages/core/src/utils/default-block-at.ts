@@ -1,7 +1,7 @@
 import type { ContentMatch } from '@prosekit/pm/model'
 
 /**
- * @deprecated Use the one from `@prosekit/core` instead.
+ * @internal
  */
 export function defaultBlockAt(match: ContentMatch) {
   for (let i = 0; i < match.edgeCount; i++) {

@@ -75,6 +75,7 @@ export type { NodeJSON, SelectionJSON, StateJSON } from './types/model'
 export { Priority } from './types/priority'
 export { type SimplifyUnion } from './types/simplify-union'
 export { clsx } from './utils/clsx'
+export { defaultBlockAt } from './utils/default-block-at'
 export { getId as _getId } from './utils/get-id'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
@@ -95,3 +96,5 @@ export {
   isProseMirrorNode,
   isTextSelection,
 } from './utils/type-assertion'
+export * from './utils/unicode'
+export { withSkipCodeBlock } from './utils/with-skip-code-block'

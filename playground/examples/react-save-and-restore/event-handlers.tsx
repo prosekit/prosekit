@@ -1,11 +1,15 @@
-import { defineUpdateHandler } from 'prosekit/core'
+import { defineDocChangeHandler } from 'prosekit/core'
 import { useExtension } from 'prosekit/react'
 import { useMemo } from 'react'
 
-export default function EventHandlers({ onUpdate }: { onUpdate: () => void }) {
+export default function EventHandlers({
+  onDocChange,
+}: {
+  onDocChange: () => void
+}) {
   const extension = useMemo(() => {
-    return defineUpdateHandler(onUpdate)
-  }, [onUpdate])
+    return defineDocChangeHandler(onDocChange)
+  }, [onDocChange])
 
   useExtension(extension)
 

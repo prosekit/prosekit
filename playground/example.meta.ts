@@ -661,6 +661,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "vue-save-and-restore",
+      "framework": "vue",
+      "story": "save-and-restore",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "event-handlers.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-slash-menu",
       "framework": "vue",
       "story": "slash-menu",

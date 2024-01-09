@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.2.8
+
+### Patch Changes
+
+- [`7865bc0`](https://github.com/ocavue/prosekit/commit/7865bc03e031f18c06b61db7cfe190f0d3338b7e) ![][badge-core]
+
+  Add `editor.focus()`, `editor.blur()` methods and `editor.focused` property.
+
+- [`7865bc0`](https://github.com/ocavue/prosekit/commit/7865bc03e031f18c06b61db7cfe190f0d3338b7e) ![][badge-core]
+
+  Add `defineFocusChangeHandler` which registers a event handler that is called when the editor gains or loses focus.
+
 ## 0.2.7
 
 ### Patch Changes

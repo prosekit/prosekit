@@ -54,6 +54,22 @@ export class Resizable extends LightElement implements Partial<ResizableProps> {
     resizing: { attribute: 'data-resizing', type: Boolean, reflect: true },
   } satisfies PropertyDeclarations
 
+  /**
+   * @hidden
+   */
+  constructor() {
+    super()
+
+    new ContextProvider(this, {
+      context: resizableContext,
+      initialValue: {
+        onResizeStart: () => this.handleResizeStart(),
+        onResize: (w, h) => this.handleResize(w, h),
+        onResizeEnd: () => this.handleResizeEnd(),
+      },
+    })
+  }
+
   width?: number | string
 
   height?: number | string
@@ -70,15 +86,6 @@ export class Resizable extends LightElement implements Partial<ResizableProps> {
   }
 
   onSizeChangeEnd?: (size: { width: number; height: number }) => void
-
-  private context = new ContextProvider(this, {
-    context: resizableContext,
-    initialValue: {
-      onResizeStart: () => this.handleResizeStart(),
-      onResize: (w, h) => this.handleResize(w, h),
-      onResizeEnd: () => this.handleResizeEnd(),
-    },
-  })
 
   private startWidth = 0
   private startHeight = 0

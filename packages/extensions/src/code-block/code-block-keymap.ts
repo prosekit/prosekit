@@ -1,7 +1,5 @@
-import { defineKeymap } from '@prosekit/core'
+import { defaultBlockAt, defineKeymap } from '@prosekit/core'
 import { TextSelection, type Command } from '@prosekit/pm/state'
-
-import { defaultBlockAt } from '../utils/default-block-at'
 
 /**
  * Defines the keymap for code blocks.

@@ -6,11 +6,11 @@ import {
   setBlockType,
   toggleNode,
   union,
+  withSkipCodeBlock,
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 
 import { defineTextBlockInputRule } from '../input-rule'
-import { withSkipCodeBlock } from '../utils/with-skip-code-block'
 
 export interface HeadingAttrs {
   level: number

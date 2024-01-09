@@ -83,6 +83,7 @@ export { defaultBlockAt } from './utils/default-block-at'
 export { getId as _getId } from './utils/get-id'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
+export { isInCodeBlock } from './utils/is-in-code-block'
 export {
   jsonFromElement,
   jsonFromHTML,

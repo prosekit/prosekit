@@ -72,7 +72,7 @@ importers:
   packages/basic:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.3
+        specifier: ^0.2.4
         version: link:../core
       '@prosekit/extensions':
         specifier: ^0.2.3
@@ -201,7 +201,7 @@ importers:
   packages/extensions:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.3
+        specifier: ^0.2.4
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.1
@@ -241,10 +241,10 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       '@prosekit/core':
-        specifier: ^0.2.3
+        specifier: ^0.2.4
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.2.2
+        specifier: ^0.2.3
         version: link:../extensions
       '@prosekit/pm':
         specifier: ^0.1.1
@@ -315,7 +315,7 @@ importers:
   packages/preact:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.3
+        specifier: ^0.2.4
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.1.8
@@ -419,7 +419,7 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.47)
       '@prosekit/core':
-        specifier: ^0.2.3
+        specifier: ^0.2.4
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.1.8
@@ -459,7 +459,7 @@ importers:
   packages/solid:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.3
+        specifier: ^0.2.4
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.1.8
@@ -484,7 +484,7 @@ importers:
   packages/svelte:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.3
+        specifier: ^0.2.4
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.1.8
@@ -521,7 +521,7 @@ importers:
   packages/vue:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.3
+        specifier: ^0.2.4
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.1.8

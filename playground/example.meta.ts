@@ -403,10 +403,14 @@ export const exampleMeta = {
       ]
     },
     {
-      "name": "vue-custom-drop-cursor",
+      "name": "vue-drop-cursor",
       "framework": "vue",
-      "story": "custom-drop-cursor",
+      "story": "drop-cursor",
       "files": [
+        {
+          "path": "default-doc.ts",
+          "hidden": false
+        },
         {
           "path": "editor.vue",
           "hidden": false
@@ -1053,6 +1057,25 @@ export const exampleMeta = {
       "files": [
         {
           "path": "editor.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-drop-cursor",
+      "framework": "solid",
+      "story": "drop-cursor",
+      "files": [
+        {
+          "path": "default-doc.ts",
+          "hidden": false
+        },
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
           "hidden": false
         }
       ]

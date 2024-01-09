@@ -18,7 +18,7 @@ import E449861637 from '../examples/vue-minimal/editor.vue'
 import E1911994445 from '../examples/vue-bold/editor.vue'
 import E1589439143 from '../examples/vue-code/editor.vue'
 import E2437121339 from '../examples/vue-code-block/editor.vue'
-import E1906109238 from '../examples/vue-custom-drop-cursor/editor.vue'
+import E3216900980 from '../examples/vue-drop-cursor/editor.vue'
 import E2097600771 from '../examples/vue-full/editor.vue'
 import E3923017492 from '../examples/vue-heading/editor.vue'
 import E3704694657 from '../examples/vue-inline-menu/editor.vue'
@@ -47,6 +47,7 @@ import E3540862095 from '../examples/svelte-readonly/editor.svelte'
 import E1602218818 from '../examples/svelte-slash-menu/editor.svelte'
 import E2390951180 from '../examples/svelte-word-counter/editor.svelte'
 import E2085905006 from '../examples/solid-minimal/editor.tsx'
+import E825479991 from '../examples/solid-drop-cursor/editor.tsx'
 import E2498473951 from '../examples/solid-heading/editor.tsx'
 import E36393548 from '../examples/solid-keymap/editor.tsx'
 import E3479383441 from '../examples/solid-readonly/editor.tsx'
@@ -69,7 +70,7 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-bold' } },
   { params: { example: 'vue-code' } },
   { params: { example: 'vue-code-block' } },
-  { params: { example: 'vue-custom-drop-cursor' } },
+  { params: { example: 'vue-drop-cursor' } },
   { params: { example: 'vue-full' } },
   { params: { example: 'vue-heading' } },
   { params: { example: 'vue-inline-menu' } },
@@ -98,6 +99,7 @@ export const getStaticPaths = () => [
   { params: { example: 'svelte-slash-menu' } },
   { params: { example: 'svelte-word-counter' } },
   { params: { example: 'solid-minimal' } },
+  { params: { example: 'solid-drop-cursor' } },
   { params: { example: 'solid-heading' } },
   { params: { example: 'solid-keymap' } },
   { params: { example: 'solid-readonly' } },
@@ -124,7 +126,7 @@ const { example } = Astro.params
   {example === 'vue-bold' && <E1911994445 client:only="vue" />}
   {example === 'vue-code' && <E1589439143 client:only="vue" />}
   {example === 'vue-code-block' && <E2437121339 client:only="vue" />}
-  {example === 'vue-custom-drop-cursor' && <E1906109238 client:only="vue" />}
+  {example === 'vue-drop-cursor' && <E3216900980 client:only="vue" />}
   {example === 'vue-full' && <E2097600771 client:only="vue" />}
   {example === 'vue-heading' && <E3923017492 client:only="vue" />}
   {example === 'vue-inline-menu' && <E3704694657 client:only="vue" />}
@@ -153,6 +155,7 @@ const { example } = Astro.params
   {example === 'svelte-slash-menu' && <E1602218818 client:only="svelte" />}
   {example === 'svelte-word-counter' && <E2390951180 client:only="svelte" />}
   {example === 'solid-minimal' && <E2085905006 client:only="solid" />}
+  {example === 'solid-drop-cursor' && <E825479991 client:only="solid" />}
   {example === 'solid-heading' && <E2498473951 client:only="solid" />}
   {example === 'solid-keymap' && <E36393548 client:only="solid" />}
   {example === 'solid-readonly' && <E3479383441 client:only="solid" />}

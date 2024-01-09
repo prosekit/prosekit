@@ -1,4 +1,4 @@
-import type { NodeJSON } from "prosekit/core";
+import type { NodeJSON } from 'prosekit/core'
 
 export const defaultDoc: NodeJSON = {
   type: 'doc',

@@ -8,9 +8,9 @@
 
 - [code-block](./examples/code-block)
 
-- [custom-drop-cursor](./examples/custom-drop-cursor)
-
 - [dom](./examples/dom)
+
+- [drop-cursor](./examples/drop-cursor)
 
 - [full](./examples/full)
 

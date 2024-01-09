@@ -82,7 +82,7 @@
     "build": "svelte-package -i src -o dist/build && tsx scripts/re-export.ts"
   },
   "dependencies": {
-    "@prosekit/core": "^0.2.3",
+    "@prosekit/core": "^0.2.4",
     "@prosekit/lit": "^0.1.8"
   },
   "peerDependencies": {

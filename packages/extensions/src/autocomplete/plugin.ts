@@ -1,7 +1,6 @@
+import { OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
 import { EditorState, Plugin, Transaction } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
-
-import { OBJECT_REPLACEMENT_CHARACTER } from '../utils/unicode'
 
 import {
   getPluginState,

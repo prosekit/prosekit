@@ -5,12 +5,11 @@ import {
   keymapFacet,
   type Extension,
   type KeymapPayload,
+  OBJECT_REPLACEMENT_CHARACTER,
 } from '@prosekit/core'
 import type { Attrs, NodeType } from '@prosekit/pm/model'
 import type { EditorState, Transaction } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
-
-import { OBJECT_REPLACEMENT_CHARACTER } from '../utils/unicode'
 
 // TODO: Export `prosekit/extension/enter-rule`, when we are happy with the API.
 

@@ -17,4 +17,15 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 
 </template>
 
+<template v-slot:vue>
+
+::: code-group
+
+<<< @/../playground/examples/vue-save-and-restore/editor.vue
+<<< @/../playground/examples/vue-save-and-restore/event-handlers.vue
+
+:::
+
+</template>
+
 </ExamplePreview>

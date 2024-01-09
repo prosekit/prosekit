@@ -71,8 +71,7 @@ export default function Editor() {
         <div ref={editor.mount} className="EDITOR_CONTENT"></div>
       </div>
 
-      
-        <EventHandlers onDocChange={onDocChange} />
+      <EventHandlers onDocChange={onDocChange} />
     </ProseKit>
   )
 }

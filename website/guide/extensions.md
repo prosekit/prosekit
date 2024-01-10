@@ -56,7 +56,7 @@ You can use the following functions to register event handlers into the editor.
 - [`defineDocChangeHandler`] registers a event handler that's called when the editor document is changed.
 - [`defineFocusChangeHandler`] registers a event handler that's called when the editor gains or loses focus.
 
-Check out the [save-and-restore](/examples/save-and-restore) example for an example of using event handlers to save and restore the editor document.
+Check out the [save-and-restore] example for an example of using event handlers to save and restore the editor document.
 
 ## A Starter Set of Extensions
 

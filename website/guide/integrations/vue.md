@@ -20,7 +20,7 @@ If you pass `{ update: true }`, it will trigger a re-render when the editor stat
 const editor = useEditor({ update: true })
 ```
 
-This is usefull if you want to update the UI based on the current editor state.
+This is useful if you want to update the UI based on the current editor state.
 For example, you can calculate the word count of the document after every
 change. Check out [word-counter](/examples/word-counter) for a
 complete implementation.

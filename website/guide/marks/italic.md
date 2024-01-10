@@ -4,6 +4,8 @@ The `italic` mark is used to represent text that is using an italicized type. It
 
 <!-- @include: @/examples/italic.md -->
 
+## Commands
+
 ### `toggleItalic`
 
 ```ts

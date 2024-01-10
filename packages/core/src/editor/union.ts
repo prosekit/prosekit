@@ -3,23 +3,15 @@ import { UnionExtensionImpl } from '../facets/union-extension'
 import type { Extension, SimplifyExtension } from '../types/extension'
 
 /**
- * Merge multiple extensions into one. If only one extension is provided, it
- * will be returned directly.
+ * Merge multiple extensions into one.
  *
  * @public
  */
 export function union<E extends Extension | Extension[]>(
   extension: E,
 ): SimplifyExtension<E> {
-  if (!Array.isArray(extension)) {
-    return extension as SimplifyExtension<E>
-  }
-
-  if (extension.length === 1) {
-    return extension[0] as SimplifyExtension<E>
-  }
-
+  const array = Array.isArray(extension) ? extension : [extension]
   return new UnionExtensionImpl(
-    extension as BaseExtension[],
+    array as BaseExtension[],
   ) as Extension as SimplifyExtension<E>
 }

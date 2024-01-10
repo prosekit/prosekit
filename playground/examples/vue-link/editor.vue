@@ -5,6 +5,7 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
 import { defineExtension } from './extension'
+import InlineMenu from './inline-menu.vue'
 
 const defaultHTML = `
   <p><a href="https://www.example.com">www.example.com</a></p>
@@ -19,6 +20,7 @@ watchPostEffect(() => editor.mount(editorRef.value))
   <ProseKit :editor="editor">
     <div class="EDITOR_VIEWPORT">
       <div ref="editorRef" class="EDITOR_CONTENT"></div>
+      <InlineMenu />
     </div>
   </ProseKit>
 </template>

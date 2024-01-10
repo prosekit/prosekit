@@ -12,6 +12,7 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 
 <<< @/../playground/examples/vue-link/editor.vue
 <<< @/../playground/examples/vue-link/extension.ts
+<<< @/../playground/examples/vue-link/inline-menu.vue
 
 :::
 

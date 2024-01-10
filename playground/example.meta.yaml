@@ -307,6 +307,8 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: inline-menu.vue
+        hidden: false
   - name: vue-list
     framework: vue
     story: list

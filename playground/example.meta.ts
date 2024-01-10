@@ -592,6 +592,10 @@ export const exampleMeta = {
         {
           "path": "extension.ts",
           "hidden": false
+        },
+        {
+          "path": "inline-menu.vue",
+          "hidden": false
         }
       ]
     },

@@ -57,12 +57,11 @@ export interface EditorOptions<E extends Extension> {
 /**
  * @public
  */
-export function createEditor<E extends Extension>({
-  extension,
-  defaultDoc,
-  defaultHTML,
-  defaultSelection,
-}: EditorOptions<E>): Editor<E> {
+export function createEditor<E extends Extension>(
+  options: EditorOptions<E>,
+): Editor<E> {
+  const { defaultDoc, defaultHTML, defaultSelection } = options
+  let extension: E = options.extension
   if (defaultDoc || defaultHTML) {
     extension = union([
       extension,

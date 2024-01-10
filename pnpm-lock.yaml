@@ -710,6 +710,9 @@ importers:
       vitepress:
         specifier: 1.0.0-rc.36
         version: 1.0.0-rc.36(@algolia/client-search@4.19.1)(@types/react@18.2.47)(postcss@8.4.33)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.3.3)
+      vitepress-plugin-twoslash:
+        specifier: ^0.9.18
+        version: 0.9.18(react@18.2.0)(typescript@5.3.3)
       vue:
         specifier: ^3.4.7
         version: 3.4.7(typescript@5.3.3)
@@ -1830,6 +1833,14 @@ packages:
     transitivePeerDependencies:
       - react
 
+  /@floating-ui/dom@1.1.1(react@18.2.0):
+    resolution: {integrity: sha512-TpIO93+DIujg3g7SykEAGZMDtbJRrmnYRCNYSjJlvIbGhBjRSNTLVbNeDQBrzy9qDgUbiWdc7KA0uZHZ2tJmiw==}
+    dependencies:
+      '@floating-ui/core': 1.5.3(react@18.2.0)
+    transitivePeerDependencies:
+      - react
+    dev: true
+
   /@floating-ui/dom@1.5.4(react@18.2.0):
     resolution: {integrity: sha512-jByEsHIY+eEdCjnTVu+E3ephzTOzkQ8hgUfGwos+bg7NlH33Zc5uO+QHz1mrQUOgIKKDD1RtS201P9NvAfq3XQ==}
     dependencies:
@@ -2824,6 +2835,13 @@ packages:
     resolution: {integrity: sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==}
     dev: true
 
+  /@types/lz-string@1.5.0:
+    resolution: {integrity: sha512-s84fKOrzqqNCAPljhVyC5TjAo6BH4jKHw9NRNFNiRUY5QSgZCmVm5XILlWbisiKl+0OcS7eWihmKGS5akc2iQw==}
+    deprecated: This is a stub types definition. lz-string provides its own type definitions, so you do not need this installed.
+    dependencies:
+      lz-string: 1.5.0
+    dev: true
+
   /@types/markdown-it@13.0.7:
     resolution: {integrity: sha512-U/CBi2YUUcTHBt5tjO2r5QV/x0Po6nsYwQU4Y04fBS6vfoImaiZ6f8bi3CjTCxBPQSO1LMyUqkByzi8AidyxfA==}
     dependencies:
@@ -3047,6 +3065,28 @@ packages:
       '@typescript-eslint/types': 6.18.0
       eslint-visitor-keys: 3.4.3
     dev: false
+
+  /@typescript/twoslash@3.2.4(typescript@5.3.3):
+    resolution: {integrity: sha512-/TCIOuPQaKltzUUT1qJo6mplYwjbAxkaSFvkeZD3FeFt3Ovt+HJi8xisu8rcLyDRmM3VJ0+jAx+AAICwn4Zlhw==}
+    peerDependencies:
+      typescript: '*'
+    dependencies:
+      '@types/lz-string': 1.5.0
+      '@typescript/vfs': 1.5.0
+      debug: 4.3.4
+      lz-string: 1.5.0
+      typescript: 5.3.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@typescript/vfs@1.5.0:
+    resolution: {integrity: sha512-AJS307bPgbsZZ9ggCT3wwpg3VbTKMFNHfaY/uF0ahSkYYrPF2dSSKDNIDIQAHm9qJqbLvCsSJH7yN4Vs/CsMMg==}
+    dependencies:
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@ungap/structured-clone@1.2.0:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
@@ -5459,6 +5499,22 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /floating-vue@5.0.2(react@18.2.0)(vue@3.4.7):
+    resolution: {integrity: sha512-CY6emiecyIIvdoK4xYN8mDSNRWutetR+rM10mu6VGrTCqxSdvHyF6TX/zslIgXDC2eIjEkcrpAMg3Mxh724t9w==}
+    peerDependencies:
+      '@nuxt/kit': ^3.2.0
+      vue: ^3.2.0
+    peerDependenciesMeta:
+      '@nuxt/kit':
+        optional: true
+    dependencies:
+      '@floating-ui/dom': 1.1.1(react@18.2.0)
+      vue: 3.4.7(typescript@5.3.3)
+      vue-resize: 2.0.0-alpha.1(vue@3.4.7)
+    transitivePeerDependencies:
+      - react
+    dev: true
+
   /focus-trap@7.5.4:
     resolution: {integrity: sha512-N7kHdlgsO/v+iD/dMoJKtsSqs5Dz/dXZVebRgJw23LDk+jMi/974zyiOYDziY2JPp8xivq9BmUGwIJMiuSBi7w==}
     dependencies:
@@ -6796,6 +6852,11 @@ packages:
 
   /lunr@2.3.9:
     resolution: {integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==}
+    dev: true
+
+  /lz-string@1.5.0:
+    resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
+    hasBin: true
     dev: true
 
   /magic-string@0.27.0:
@@ -8990,6 +9051,16 @@ packages:
       shikiji: 0.9.17
     dev: true
 
+  /shikiji-twoslash@0.9.18(typescript@5.3.3):
+    resolution: {integrity: sha512-+Np6QAdV244p6CVofefszrRWdcmbUNvTXaGV4V+wjKRyfp8jVTUtxjuVjtG7e3vyA8Nu989K99CCjhcTQOuEaw==}
+    dependencies:
+      '@typescript/twoslash': 3.2.4(typescript@5.3.3)
+      shikiji-core: 0.9.18
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
   /shikiji@0.6.13:
     resolution: {integrity: sha512-4T7X39csvhT0p7GDnq9vysWddf2b6BeioiN3Ymhnt3xcy9tXmDcnsEFVxX18Z4YcQgEE/w48dLJ4pPPUcG9KkA==}
     dependencies:
@@ -10363,6 +10434,23 @@ packages:
       vite: 5.0.11(@types/node@20.10.8)
     dev: true
 
+  /vitepress-plugin-twoslash@0.9.18(react@18.2.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-3bu0RKq1ky6lJntSra+zRpKWuXaxPSEkP87JDYHh3HZTdpqolz/yIxeGqdDNJ9/k1emASM8nZDd7hJEyzLeEKg==}
+    dependencies:
+      floating-vue: 5.0.2(react@18.2.0)(vue@3.4.7)
+      mdast-util-from-markdown: 2.0.0
+      mdast-util-gfm: 3.0.0
+      mdast-util-to-hast: 13.0.2
+      shikiji: 0.9.18
+      shikiji-twoslash: 0.9.18(typescript@5.3.3)
+      vue: 3.4.7(typescript@5.3.3)
+    transitivePeerDependencies:
+      - '@nuxt/kit'
+      - react
+      - supports-color
+      - typescript
+    dev: true
+
   /vitepress@1.0.0-rc.36(@algolia/client-search@4.19.1)(@types/react@18.2.47)(postcss@8.4.33)(react-dom@18.2.0)(react@18.2.0)(search-insights@2.6.0)(typescript@5.3.3):
     resolution: {integrity: sha512-2z4dpM9PplN/yvTifhavOIAazlCR6OJ5PvLoRbc+7LdcFeIlCsuDGENLX4HjMW18jQZF5/j7++PNqdBfeazxUA==}
     hasBin: true
@@ -10495,6 +10583,14 @@ packages:
     peerDependenciesMeta:
       '@vue/composition-api':
         optional: true
+    dependencies:
+      vue: 3.4.7(typescript@5.3.3)
+    dev: true
+
+  /vue-resize@2.0.0-alpha.1(vue@3.4.7):
+    resolution: {integrity: sha512-7+iqOueLU7uc9NrMfrzbG8hwMqchfVfSzpVlCMeJQe4pyibqyoifDNbKTZvwxZKDvGkB+PdFeKvnGZMoEb8esg==}
+    peerDependencies:
+      vue: ^3.0.0
     dependencies:
       vue: 3.4.7(typescript@5.3.3)
     dev: true

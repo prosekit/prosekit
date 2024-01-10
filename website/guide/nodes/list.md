@@ -24,7 +24,7 @@ Decreases the indentation of selected list nodes.
 editor.commands.dedentList()
 ```
 
-### `dedentList`
+### `indentList`
 
 Increases the indentation of selected list.
 

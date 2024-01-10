@@ -25,13 +25,13 @@
     "prettier": "^3.1.1",
     "prosekit": "^0.2.8",
     "prosekit-playground": "*",
-    "radix-vue": "^1.2.6",
+    "radix-vue": "^1.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "shadcn-vue": "^0.8.6",
-    "shikiji": "^0.9.17",
+    "shikiji": "^0.9.18",
     "type-fest": "^4.9.0",
-    "typedoc": "^0.25.6",
+    "typedoc": "^0.25.7",
     "typedoc-plugin-external-package-links": "^0.1.0",
     "typedoc-plugin-markdown": "^4.0.0-next.39",
     "typedoc-plugin-mdn-links": "^3.1.11",
@@ -39,7 +39,7 @@
     "unocss": "^0.58.3",
     "unocss-preset-animations": "^1.0.1",
     "vite": "^5.0.11",
-    "vitepress": "1.0.0-rc.35",
-    "vue": "^3.4.5"
+    "vitepress": "1.0.0-rc.36",
+    "vue": "^3.4.7"
   }
 }

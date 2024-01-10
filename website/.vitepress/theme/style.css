@@ -23,10 +23,12 @@ body .Layout .VPLocalNav {
   }
 }
 
-iframe {
-  border-width: 0;
+@media (min-width: 768px) {
+  #local-search > .DocSearch-Button {
+    background: rgba(150, 150, 150, 0.08);
+  }
 }
 
-#local-search > .DocSearch-Button {
-  background: rgba(150, 150, 150, 0.08);
+iframe {
+  border-width: 0;
 }

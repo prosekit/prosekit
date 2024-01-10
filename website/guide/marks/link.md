@@ -12,8 +12,14 @@ The `link` mark is used to represent links. It will be rendered as `<a>` element
 editor.commands.addLink({ href: 'https://www.example.com' })
 ```
 
-### `toggleStrike`
+### `removeLink`
 
 ```ts
-editor.commands.toggleStrike({ href: 'https://www.example.com' })
+editor.commands.removeLink()
+```
+
+### `toggleLink`
+
+```ts
+editor.commands.toggleLink({ href: 'https://www.example.com' })
 ```

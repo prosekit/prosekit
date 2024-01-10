@@ -1,6 +1,8 @@
 import { createRequire } from 'node:module'
 
+import ts from 'typescript'
 import { defineConfig } from 'vitepress'
+import { transformerTwoslash } from 'vitepress-plugin-twoslash'
 
 import { replaceShortcutsPlugin } from './replace-shortcuts-plugin'
 import { exampleItems } from './sidebar-example-items'
@@ -18,6 +20,13 @@ export default defineConfig({
 
   cleanUrls: true,
   outDir: 'dist',
+
+  // See https://github.com/antfu/shikiji/issues/86
+  vite: {
+    ssr: {
+      noExternal: ['shikiji-twoslash', 'vitepress-plugin-twoslash'],
+    },
+  },
 
   // prettier-ignore
   head: [
@@ -181,5 +190,15 @@ export default defineConfig({
     config(md) {
       md.use(replaceShortcutsPlugin)
     },
+
+    codeTransformers: [
+      transformerTwoslash({
+        twoslashOptions: {
+          defaultCompilerOptions: {
+            moduleResolution: ts.ModuleResolutionKind.Bundler,
+          },
+        },
+      }),
+    ],
   },
 })

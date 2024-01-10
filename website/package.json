@@ -40,6 +40,7 @@
     "unocss-preset-animations": "^1.0.1",
     "vite": "^5.0.11",
     "vitepress": "1.0.0-rc.36",
+    "vitepress-plugin-twoslash": "^0.9.18",
     "vue": "^3.4.7"
   }
 }

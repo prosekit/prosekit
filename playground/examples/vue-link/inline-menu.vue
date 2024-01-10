@@ -25,11 +25,19 @@ function addLink() {
 <template>
   <InlinePopover class="INLINE_MENU" :editor="editor">
     <form class="flex gap-2" @submit.prevent="addLink">
-      <input ref="linkInput" v-model="linkUrl" class="outline-none px-1 w-full" type="text" placeholder="https://" />
-      <button type="submit">
-        Add link
-      </button>
-      <button v-if="editor.marks.link.isActive()" @click="addLink()" @mousedown.prevent>
+      <input
+        ref="linkInput"
+        v-model="linkUrl"
+        class="outline-none px-1 w-full"
+        type="text"
+        placeholder="https://"
+      />
+      <button type="submit">Add link</button>
+      <button
+        v-if="editor.marks.link.isActive()"
+        @click="addLink()"
+        @mousedown.prevent
+      >
         Remove link
       </button>
     </form>

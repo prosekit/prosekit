@@ -3,6 +3,7 @@ import {
   addMark,
   defineMarkSpec,
   union,
+  removeMark,
   toggleMark,
 } from '@prosekit/core'
 
@@ -39,6 +40,7 @@ export function defineLinkSpec() {
 export function defineLinkCommands() {
   return defineCommands({
     addLink: (attrs: LinkAttrs) => addMark({ type: 'link', attrs }),
+    removeLink: () => removeMark({ type: 'link' }),
     toggleLink: (attrs: LinkAttrs) => toggleMark({ type: 'link', attrs }),
   })
 }

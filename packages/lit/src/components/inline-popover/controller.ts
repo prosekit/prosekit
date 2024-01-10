@@ -27,9 +27,14 @@ export class InlinePopoverController implements ReactiveController {
     const handleMouseDown = () => {
       this.mouseHovering = true
     }
-    const handleMouseUp = () => {
+    const handleMouseUp = (e: MouseEvent) => {
+      const matched = e.composedPath().find((_el) => {
+        const el = _el as HTMLElement
+        return el.tagName?.toLowerCase() === 'prosekit-inline-popover'
+      })
+
       this.mouseHovering = false
-      this.update()
+      if (!matched) this.update()
     }
 
     document.addEventListener('mousedown', handleMouseDown)

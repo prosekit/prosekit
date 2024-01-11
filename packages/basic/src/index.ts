@@ -13,6 +13,7 @@ import { defineDropCursor } from '@prosekit/extensions/drop-cursor'
 import { defineHeading } from '@prosekit/extensions/heading'
 import { defineImage } from '@prosekit/extensions/image'
 import { defineItalic } from '@prosekit/extensions/italic'
+import { defineLink } from '@prosekit/extensions/link'
 import { defineList } from '@prosekit/extensions/list'
 import { defineStrike } from '@prosekit/extensions/strike'
 import { defineUnderline } from '@prosekit/extensions/underline'
@@ -34,6 +35,7 @@ export function defineBasicExtension() {
     defineUnderline(),
     defineStrike(),
     defineCode(),
+    defineLink(),
     defineImage(),
     defineParagraph(),
     defineDropCursor(),

@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.2.10
+
+### Patch Changes
+
+- [`4d89e38`](https://github.com/ocavue/prosekit/commit/4d89e38e1467f1d612c0e1532cb8dd782e3ee733) ![][badge-basic]
+
+  `defineBasicExtension` now includes the `link` mark.
+
+- [`f24717d`](https://github.com/ocavue/prosekit/commit/f24717dfe927344124eb932e5c5369523bf1d14c) ![][badge-lit]
+
+  Fix a bug where the inline popover would close when clicking on the input inside it.
+
 ## 0.2.9
 
 ### Patch Changes

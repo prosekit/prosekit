@@ -1,5 +1,6 @@
 ---
-"@prosekit/extensions": patch
+'prosekit': patch
+'@prosekit/extensions': patch
 ---
 
 Add `removeLink` command.

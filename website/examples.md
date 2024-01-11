@@ -40,6 +40,8 @@
 
 - [strike](./examples/strike)
 
+- [text-color](./examples/text-color)
+
 - [toolbar](./examples/toolbar)
 
 - [underline](./examples/underline)

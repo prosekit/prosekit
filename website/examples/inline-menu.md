@@ -28,6 +28,7 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 <<< @/../playground/examples/vue-inline-menu/extension.ts
 <<< @/../playground/examples/vue-inline-menu/inline-buttons.vue
 <<< @/../playground/examples/vue-inline-menu/inline-menu.vue
+<<< @/../playground/examples/vue-inline-menu/toggle.vue
 
 :::
 

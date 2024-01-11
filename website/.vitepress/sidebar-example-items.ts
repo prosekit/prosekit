@@ -79,6 +79,10 @@ export const exampleItems = [
     "link": "/examples/strike"
   },
   {
+    "text": "text-color",
+    "link": "/examples/text-color"
+  },
+  {
     "text": "toolbar",
     "link": "/examples/toolbar"
   },

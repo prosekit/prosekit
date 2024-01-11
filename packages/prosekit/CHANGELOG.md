@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.2.9
+
+### Patch Changes
+
+- [`0d9eb6b`](https://github.com/ocavue/prosekit/commit/0d9eb6bd209c344720ce9ad7d4c253eb3952103c) ![][badge-extensions]
+
+  Add `removeLink` command.
+
 ## 0.2.8
 
 ### Patch Changes

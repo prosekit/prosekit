@@ -527,6 +527,10 @@ export const exampleMeta = {
         {
           "path": "inline-menu.vue",
           "hidden": false
+        },
+        {
+          "path": "toggle.vue",
+          "hidden": false
         }
       ]
     },
@@ -713,6 +717,37 @@ export const exampleMeta = {
         },
         {
           "path": "toolbar.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-text-color",
+      "framework": "vue",
+      "story": "text-color",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "inline-buttons.vue",
+          "hidden": false
+        },
+        {
+          "path": "inline-menu.vue",
+          "hidden": false
+        },
+        {
+          "path": "text-color.ts",
+          "hidden": false
+        },
+        {
+          "path": "toggle.vue",
           "hidden": false
         }
       ]

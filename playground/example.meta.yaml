@@ -273,6 +273,8 @@ examples:
         hidden: false
       - path: inline-menu.vue
         hidden: false
+      - path: toggle.vue
+        hidden: false
   - name: vue-italic
     framework: vue
     story: italic
@@ -370,6 +372,22 @@ examples:
       - path: toggle.vue
         hidden: false
       - path: toolbar.vue
+        hidden: false
+  - name: vue-text-color
+    framework: vue
+    story: text-color
+    files:
+      - path: editor.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: inline-buttons.vue
+        hidden: false
+      - path: inline-menu.vue
+        hidden: false
+      - path: text-color.ts
+        hidden: false
+      - path: toggle.vue
         hidden: false
   - name: vue-toolbar
     framework: vue

@@ -31,6 +31,7 @@ import E3694637844 from '../examples/vue-readonly/editor.vue'
 import E152258908 from '../examples/vue-save-and-restore/editor.vue'
 import E2937612185 from '../examples/vue-slash-menu/editor.vue'
 import E4080529360 from '../examples/vue-strike/editor.vue'
+import E1741277739 from '../examples/vue-text-color/editor.vue'
 import E1709246657 from '../examples/vue-toolbar/editor.vue'
 import E1679720926 from '../examples/vue-underline/editor.vue'
 import E4101103463 from '../examples/vue-user-menu/editor.vue'
@@ -84,6 +85,7 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-save-and-restore' } },
   { params: { example: 'vue-slash-menu' } },
   { params: { example: 'vue-strike' } },
+  { params: { example: 'vue-text-color' } },
   { params: { example: 'vue-toolbar' } },
   { params: { example: 'vue-underline' } },
   { params: { example: 'vue-user-menu' } },
@@ -141,6 +143,7 @@ const { example } = Astro.params
   {example === 'vue-save-and-restore' && <E152258908 client:only="vue" />}
   {example === 'vue-slash-menu' && <E2937612185 client:only="vue" />}
   {example === 'vue-strike' && <E4080529360 client:only="vue" />}
+  {example === 'vue-text-color' && <E1741277739 client:only="vue" />}
   {example === 'vue-toolbar' && <E1709246657 client:only="vue" />}
   {example === 'vue-underline' && <E1679720926 client:only="vue" />}
   {example === 'vue-user-menu' && <E4101103463 client:only="vue" />}

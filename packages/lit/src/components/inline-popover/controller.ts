@@ -1,6 +1,7 @@
 import type { VirtualElement } from '@floating-ui/dom'
 import { Editor, defineUpdateHandler } from '@prosekit/core'
-import { type ReactiveController, type ReactiveControllerHost } from 'lit'
+import { trackDismissableElement } from '@zag-js/dismissable'
+import type { LitElement, ReactiveController } from 'lit'
 
 import { getVirtualSelectionElement } from './helpers'
 
@@ -9,9 +10,9 @@ export class InlinePopoverController implements ReactiveController {
   private editor?: Editor
   private cleanupExtension?: VoidFunction
   private cleanupEventListener?: VoidFunction
-  private mouseHovering = false
+  private interacting = false
 
-  constructor(private host: ReactiveControllerHost) {
+  constructor(private host: LitElement) {
     this.host.addController(this)
   }
 
@@ -24,21 +25,24 @@ export class InlinePopoverController implements ReactiveController {
   }
 
   hostConnected() {
-    const handleMouseDown = () => {
-      this.mouseHovering = true
-    }
-    const handleMouseUp = () => {
-      this.mouseHovering = false
-      this.update()
+    const handlePointerDown = () => {
+      this.interacting = true
     }
 
-    document.addEventListener('mousedown', handleMouseDown)
-    document.addEventListener('mouseup', handleMouseUp)
+    this.host.addEventListener('pointerdown', handlePointerDown)
+
+    const cleanupDismissable = trackDismissableElement(this.host, {
+      defer: true,
+      pointerBlocking: false,
+      onDismiss: () => {
+        this.interacting = false
+      },
+    })
 
     this.cleanupEventListener?.()
     this.cleanupEventListener = () => {
-      document.removeEventListener('mousedown', handleMouseDown)
-      document.removeEventListener('mouseup', handleMouseUp)
+      this.host.removeEventListener('pointerdown', handlePointerDown)
+      cleanupDismissable()
     }
   }
 
@@ -53,7 +57,7 @@ export class InlinePopoverController implements ReactiveController {
   private update() {
     const editor = this.editor
 
-    if (!editor || this.mouseHovering) {
+    if (!editor || this.interacting) {
       return
     }
 

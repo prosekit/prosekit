@@ -80,6 +80,7 @@ export function createEditor<E extends Extension>(
  */
 class EditorInstance {
   view: EditorView | null = null
+  cachedState: EditorState
   schema: Schema
   commandAppliers: Record<string, CommandApplier> = {}
 
@@ -105,6 +106,7 @@ class EditorInstance {
       ? stateInput({ schema })
       : { schema }
     const state = EditorState.create(stateConfig)
+    this.cachedState = state
 
     if (commandInput) {
       for (const [name, commandCreator] of Object.entries(commandInput)) {
@@ -115,7 +117,7 @@ class EditorInstance {
     this.directEditorProps = { state, ...viewInput }
     this.schema = this.directEditorProps.state.schema
 
-    const getState = () => this.view?.state
+    const getState = () => this.getState()
 
     this.nodeBuilders = Object.fromEntries(
       Object.values(this.schema.nodes).map((type) => [
@@ -129,6 +131,13 @@ class EditorInstance {
         createMarkBuilder(getState, type),
       ]),
     )
+  }
+
+  public getState() {
+    if (this.view) {
+      this.cachedState = this.view.state
+    }
+    return this.cachedState
   }
 
   public updateExtension(extension: Extension, mode: 'add' | 'remove'): void {
@@ -342,6 +351,10 @@ export class Editor<E extends Extension = any> {
 
     this.instance.updateExtension(extension, 'add')
     return () => this.instance.updateExtension(extension, 'remove')
+  }
+
+  get state(): EditorState {
+    return this.instance.getState()
   }
 
   get nodes(): Record<ExtractNodes<E>, NodeBuilder> {

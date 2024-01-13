@@ -3,7 +3,7 @@ import { useEditor } from 'prosekit/react'
 export default function WordCounter() {
   const editor = useEditor({ update: true })
 
-  const doc = editor.mounted && editor.view.state.doc
+  const doc = editor.state.doc
   const words = doc ? doc.textBetween(0, doc.content.size, ' ') : ''
   const wordCount = words.split(/\s+/).filter((s) => s).length
   const characterCount = doc ? doc.textContent.length : 0

@@ -1,4 +1,6 @@
 import 'prosekit/basic/typography.css'
+import 'vitepress-plugin-twoslash/style.css'
+
 import 'virtual:uno.css'
 import './style.css'
 

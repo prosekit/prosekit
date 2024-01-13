@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.2.4",
-    "@prosekit/lit": "^0.1.9"
+    "@prosekit/lit": "^0.1.8"
   },
   "peerDependencies": {
     "solid-js": ">= 1.7.0"
@@ -60,10 +60,10 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "solid-js": "^1.8.11",
+    "solid-js": "^1.8.10",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
-    "vitest": "^1.2.0"
+    "vitest": "^1.1.3"
   },
   "publishConfig": {
     "exports": {

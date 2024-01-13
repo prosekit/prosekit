@@ -10,11 +10,11 @@ ProseKit extension priority.
 
 | Enumeration Member | Value |
 | :------ | :------ |
-| `default` | `2` |
-| `high` | `1` |
-| `highest` | `0` |
-| `low` | `3` |
-| `lowest` | `4` |
+| <a id="default" name="default"></a> `default` | `2` |
+| <a id="high" name="high"></a> `high` | `1` |
+| <a id="highest" name="highest"></a> `highest` | `0` |
+| <a id="low" name="low"></a> `low` | `3` |
+| <a id="lowest" name="lowest"></a> `lowest` | `4` |
 
 ***
 
@@ -276,7 +276,7 @@ Base class for all ProseKit errors.
 
 Some basic props for custom node views.
 
-### Extended By
+### Extended by
 
 - [`ReactNodeViewOptions`](react.md#ReactNodeViewOptions)
 - [`VueNodeViewOptions`](vue.md#VueNodeViewOptions)
@@ -599,7 +599,7 @@ The schema that this extension represents.
 
 The name of the attribute.
 
-<a id="default" name="default"></a>
+<a id="default-1" name="default-1"></a>
 
 #### default?
 
@@ -687,7 +687,7 @@ The name of the mark type.
 
 The name of the attribute.
 
-<a id="default-1" name="default-1"></a>
+<a id="default-2" name="default-2"></a>
 
 #### default?
 

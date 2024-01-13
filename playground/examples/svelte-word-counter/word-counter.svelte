@@ -6,13 +6,13 @@ import type { EditorExtension } from './extension'
 const editor = useEditor<EditorExtension>({ update: true })
 
 const wordCount = derived(editor, ($editor) => {
-  const doc = $editor.mounted && $editor.view.state.doc
+  const doc = $editor.state.doc
   const words = doc ? doc.textBetween(0, doc.content.size, ' ') : ''
   return words.split(/\s+/).filter((s) => s).length
 })
 
 const characterCount = derived(editor, ($editor) => {
-  const doc = $editor.mounted && $editor.view.state.doc
+  const doc = $editor.state.doc
   return doc ? doc.textContent.length : 0
 })
 </script>

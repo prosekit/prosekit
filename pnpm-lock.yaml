@@ -569,9 +569,6 @@ importers:
       '@astrojs/vue':
         specifier: ^4.0.8
         version: 4.0.8(@babel/core@7.23.6)(astro@4.1.2)(vite@5.0.11)(vue@3.4.13)
-      '@iconify-json/ci':
-        specifier: ^1.1.13
-        version: 1.1.13
       '@iconify-json/lucide':
         specifier: ^1.1.154
         version: 1.1.154
@@ -629,12 +626,12 @@ importers:
 
   website:
     devDependencies:
-      '@iconify-json/ci':
-        specifier: ^1.1.13
-        version: 1.1.13
       '@iconify-json/logos':
         specifier: ^1.1.42
         version: 1.1.42
+      '@iconify-json/lucide':
+        specifier: ^1.1.154
+        version: 1.1.154
       '@prosekit/dev':
         specifier: '*'
         version: link:../packages/dev
@@ -1881,12 +1878,6 @@ packages:
   /@humanwhocodes/object-schema@2.0.1:
     resolution: {integrity: sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==}
     dev: false
-
-  /@iconify-json/ci@1.1.13:
-    resolution: {integrity: sha512-UXKTbxmWMUy4Iz6OL2GXzy2PtzKzT5WkM7IJ9OEdq7fe210yJ535hdNaJ6TeKHsxZ0TrVgTvR2gvctAMVobBeg==}
-    dependencies:
-      '@iconify/types': 2.0.0
-    dev: true
 
   /@iconify-json/logos@1.1.42:
     resolution: {integrity: sha512-/f+frtPm3m3Z30oy8Pk+QqRDkbmAiIaWGPl5CmsCXm15MVfvw9a/V/gD7WzdyuSGAZcFuQaqbHXj92y/n+2ifg==}

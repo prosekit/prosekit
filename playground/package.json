@@ -17,7 +17,6 @@
     "@astrojs/solid-js": "^4.0.1",
     "@astrojs/svelte": "^5.0.3",
     "@astrojs/vue": "^4.0.8",
-    "@iconify-json/ci": "^1.1.13",
     "@iconify-json/lucide": "^1.1.154",
     "@playwright/test": "^1.40.1",
     "@prosekit/dev": "*",

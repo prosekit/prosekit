@@ -36,15 +36,15 @@ export const ExampleOpenMenu = defineComponent<ExampleLanguageSelectProps>(
         <DropdownMenuContent>
           <DropdownMenuItem onClick={onOpenCodeSandbox}>
             <span>Open in CodeSandbox</span>
-            <span class="i-ci-arrow-up-right-md ml-2 h-4 w-4 opacity-50"></span>
+            <span class="i-lucide-arrow-up-right ml-2 h-4 w-4 opacity-50"></span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={onOpenStackBlitz}>
             <span>Open in StackBlitz</span>
-            <span class="i-ci-arrow-up-right-md ml-2 h-4 w-4 opacity-50"></span>
+            <span class="i-lucide-arrow-up-right ml-2 h-4 w-4 opacity-50"></span>
           </DropdownMenuItem>
           <DropdownMenuItem onClick={onOpenNewTab}>
             <span>Open in a new tab</span>
-            <span class="i-ci-arrow-up-right-md ml-2 h-4 w-4 opacity-50"></span>
+            <span class="i-lucide-arrow-up-right ml-2 h-4 w-4 opacity-50"></span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenuRoot>

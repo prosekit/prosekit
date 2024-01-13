@@ -24,7 +24,7 @@ export const ExampleFrameworkMenu = defineComponent<{
               <span class="flex items-center justify-center gap-1">
                 <span class="h-full w-6 inline-flex items-center justify-start">
                   {props.framework === framework ? (
-                    <span class="i-ci-check h-5 w-5 opacity-70"></span>
+                    <span class="i-lucide-check h-4 w-4 opacity-70"></span>
                   ) : null}
                 </span>
                 <ExampleFrameworkItem framework={framework} />

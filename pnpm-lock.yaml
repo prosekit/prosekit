@@ -635,6 +635,9 @@ importers:
       '@iconify-json/logos':
         specifier: ^1.1.42
         version: 1.1.42
+      '@iconify-json/lucide':
+        specifier: ^1.1.154
+        version: 1.1.154
       '@prosekit/dev':
         specifier: '*'
         version: link:../packages/dev

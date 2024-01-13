@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@iconify-json/ci": "^1.1.13",
+    "@iconify-json/lucide": "^1.1.154",
     "@iconify-json/logos": "^1.1.42",
     "@prosekit/dev": "*",
     "@types/react": "^18.2.47",

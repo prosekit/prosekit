@@ -130,6 +130,14 @@ const toggleImagePopover = () => {
       <div class="ICON_LIST_TOGGLE"></div>
     </Toggle>
 
+    <Toggle
+      :pressed="editor.nodes.codeBlock.isActive()"
+      :disabled="!editor.commands.insertNode.canApply({ type: 'codeBlock' })"
+      :onClick="() => editor.commands.insertNode({ type: 'codeBlock' })"
+    >
+      <div class="ICON_CODE_BLOCK"></div>
+    </Toggle>
+
     <ImageUploadPopover :open="imagePopoverOpen" :onClose="closeImagePopover">
       <Toggle
         :pressed="false"

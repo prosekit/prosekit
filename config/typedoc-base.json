@@ -52,7 +52,6 @@
   "namedAnchors": { "headings": true },
   "preserveAnchorCasing": true,
   "hideBreadcrumbs": true,
-  "hideInPageTOC": true,
   "hidePageHeader": true,
   "entryFileName": "index.md",
   "useCodeBlocks": false,

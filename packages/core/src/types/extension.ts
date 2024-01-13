@@ -30,9 +30,8 @@ export interface Extension<T extends ExtensionTyping = ExtensionTyping> {
 /**
  * @internal
  */
-export type ExtractTyping<E extends Extension> = E extends Extension<infer T>
-  ? T
-  : never
+export type ExtractTyping<E extends Extension> =
+  E extends Extension<infer T> ? T : never
 
 /**
  * @public

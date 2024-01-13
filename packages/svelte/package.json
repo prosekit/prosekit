@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/svelte",
   "type": "module",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -82,7 +82,7 @@
     "build": "svelte-package -i src -o dist/build && tsx scripts/re-export.ts"
   },
   "dependencies": {
-    "@prosekit/core": "^0.2.4",
+    "@prosekit/core": "^0.2.5",
     "@prosekit/lit": "^0.1.9"
   },
   "peerDependencies": {

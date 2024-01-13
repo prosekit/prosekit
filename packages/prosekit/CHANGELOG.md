@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.2.11
+
+### Patch Changes
+
+- [`b3cae9a`](https://github.com/ocavue/prosekit/commit/b3cae9a864cb03333c42ae358aba62a1068c53a9) ![][badge-preact] ![][badge-svelte] ![][badge-react] ![][badge-solid] ![][badge-vue]
+
+  `useEditor({ update: true })` now will update the component when the editor view is mounted. This is useful for the first render of the editor.
+
+- [`3234558`](https://github.com/ocavue/prosekit/commit/323455860c3700d2202abf22c9703af47b6fdd35) ![][badge-core]
+
+  Add `state` property to `Editor` class. This property is valid regardless of whether the editor is mounted or not.
+
 ## 0.2.10
 
 ### Patch Changes

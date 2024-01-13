@@ -1,4 +1,10 @@
-import { defineUpdateHandler, Editor, type Extension } from '@prosekit/core'
+import {
+  Editor,
+  defineMountHandler,
+  defineUpdateHandler,
+  union,
+  type Extension,
+} from '@prosekit/core'
 import {
   onMounted,
   onUnmounted,
@@ -10,10 +16,17 @@ import {
 import { injectEditor } from '../injection/editor-injection'
 
 /**
- * Returns a shallow ref to the editor. If `update` is `true`, any editor update
- * will trigger an effect.
+ * Retrieves the editor instance from the nearest ProseKit component.
+ *
+ * @public
  */
 export function useEditor<E extends Extension = any>(options?: {
+  /**
+   * Whether to update the component when the editor is mounted or editor state
+   * is updated.
+   *
+   * @default false
+   */
   update?: boolean
 }): ShallowRef<Editor<E>> {
   const update = options?.update ?? false
@@ -24,7 +37,11 @@ export function useEditor<E extends Extension = any>(options?: {
   if (update) {
     onMounted(() => {
       const forceUpdate = () => triggerRef(editorRef)
-      const dispose = editor.use(defineUpdateHandler(forceUpdate))
+      const extension = union([
+        defineMountHandler(forceUpdate),
+        defineUpdateHandler(forceUpdate),
+      ])
+      const dispose = editor.use(extension)
       onUnmounted(dispose)
     })
   }

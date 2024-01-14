@@ -6,6 +6,21 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 
 <ExamplePreview name="code-block-themes">
 
+<template v-slot:react>
+
+::: code-group
+
+<<< @/../playground/examples/react-code-block-themes/editor.tsx
+<<< @/../playground/examples/react-code-block-themes/extension.ts
+<<< @/../playground/examples/react-code-block-themes/package.json
+<<< @/../playground/examples/react-code-block-themes/theme-selector.tsx
+<<< @/../playground/examples/react-code-block-themes/toggle.tsx
+<<< @/../playground/examples/react-code-block-themes/toolbar.tsx
+
+:::
+
+</template>
+
 <template v-slot:vue>
 
 ::: code-group

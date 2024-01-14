@@ -23,6 +23,22 @@ examples:
         hidden: false
       - path: toolbar.tsx
         hidden: false
+  - name: react-code-block-themes
+    framework: react
+    story: code-block-themes
+    files:
+      - path: editor.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: package.json
+        hidden: false
+      - path: theme-selector.tsx
+        hidden: false
+      - path: toggle.tsx
+        hidden: false
+      - path: toolbar.tsx
+        hidden: false
   - name: react-heading
     framework: react
     story: heading

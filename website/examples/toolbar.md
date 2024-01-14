@@ -13,7 +13,6 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 <<< @/../playground/examples/react-toolbar/editor.tsx
 <<< @/../playground/examples/react-toolbar/extension.ts
 <<< @/../playground/examples/react-toolbar/image-upload-popover.tsx
-<<< @/../playground/examples/react-toolbar/package.json
 <<< @/../playground/examples/react-toolbar/toggle.tsx
 <<< @/../playground/examples/react-toolbar/toolbar.tsx
 

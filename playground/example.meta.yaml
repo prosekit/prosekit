@@ -18,7 +18,7 @@ examples:
       - path: language-selector.tsx
         hidden: false
       - path: package.json
-        hidden: false
+        hidden: true
       - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
@@ -32,7 +32,7 @@ examples:
       - path: extension.ts
         hidden: false
       - path: package.json
-        hidden: false
+        hidden: true
       - path: theme-selector.tsx
         hidden: false
       - path: toggle.tsx
@@ -144,7 +144,7 @@ examples:
       - path: image-upload-popover.tsx
         hidden: false
       - path: package.json
-        hidden: false
+        hidden: true
       - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
@@ -218,7 +218,7 @@ examples:
       - path: language-selector.vue
         hidden: false
       - path: package.json
-        hidden: false
+        hidden: true
       - path: toggle.vue
         hidden: false
       - path: toolbar.vue
@@ -232,7 +232,7 @@ examples:
       - path: extension.ts
         hidden: false
       - path: package.json
-        hidden: false
+        hidden: true
       - path: theme-selector.vue
         hidden: false
       - path: toggle.vue

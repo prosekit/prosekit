@@ -37,7 +37,7 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
-          "hidden": false
+          "hidden": true
         },
         {
           "path": "toggle.tsx",
@@ -64,7 +64,7 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
-          "hidden": false
+          "hidden": true
         },
         {
           "path": "theme-selector.tsx",
@@ -279,7 +279,7 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
-          "hidden": false
+          "hidden": true
         },
         {
           "path": "toggle.tsx",
@@ -421,7 +421,7 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
-          "hidden": false
+          "hidden": true
         },
         {
           "path": "toggle.vue",
@@ -448,7 +448,7 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
-          "hidden": false
+          "hidden": true
         },
         {
           "path": "theme-selector.vue",

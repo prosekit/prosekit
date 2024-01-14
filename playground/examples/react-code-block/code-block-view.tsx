@@ -1,6 +1,4 @@
-import type {
-  CodeBlockAttrs
-} from 'prosekit/extensions/code-block'
+import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { type ReactNodeViewProps } from 'prosekit/react'
 
 import LanguageSelector from './language-selector'

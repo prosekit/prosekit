@@ -71,10 +71,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
-          "hidden": false
-        },
-        {
           "path": "toolbar.tsx",
           "hidden": false
         }
@@ -452,10 +448,6 @@ export const exampleMeta = {
         },
         {
           "path": "theme-selector.vue",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {

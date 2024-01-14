@@ -13,7 +13,6 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 <<< @/../playground/examples/react-code-block-themes/editor.tsx
 <<< @/../playground/examples/react-code-block-themes/extension.ts
 <<< @/../playground/examples/react-code-block-themes/theme-selector.tsx
-<<< @/../playground/examples/react-code-block-themes/toggle.tsx
 <<< @/../playground/examples/react-code-block-themes/toolbar.tsx
 
 :::
@@ -27,7 +26,6 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 <<< @/../playground/examples/vue-code-block-themes/editor.vue
 <<< @/../playground/examples/vue-code-block-themes/extension.ts
 <<< @/../playground/examples/vue-code-block-themes/theme-selector.vue
-<<< @/../playground/examples/vue-code-block-themes/toggle.vue
 <<< @/../playground/examples/vue-code-block-themes/toolbar.vue
 
 :::

@@ -35,8 +35,6 @@ examples:
         hidden: true
       - path: theme-selector.tsx
         hidden: false
-      - path: toggle.tsx
-        hidden: false
       - path: toolbar.tsx
         hidden: false
   - name: react-heading
@@ -234,8 +232,6 @@ examples:
       - path: package.json
         hidden: true
       - path: theme-selector.vue
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false

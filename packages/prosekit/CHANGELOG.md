@@ -1,5 +1,19 @@
 # prosekit
 
+## 0.2.12
+
+### Patch Changes
+
+- [`2d0da02`](https://github.com/ocavue/prosekit/commit/2d0da0228a6b3caa53b4f4a3490a2cb973da8ac6) ![][badge-extensions]
+
+  Add `setCodeBlock`, `insertCodeBlock`, `toggleCodeBlock` and `setCodeBlockAttrs` commands.
+
+  Deprecate `setCodeBlockLanguage` command.
+
+- [`2d0da02`](https://github.com/ocavue/prosekit/commit/2d0da0228a6b3caa53b4f4a3490a2cb973da8ac6) ![][badge-core]
+
+  Add `setNodeAttrs` command.
+
 ## 0.2.11
 
 ### Patch Changes

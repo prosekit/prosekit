@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
-import ThemeSelector from './theme-selector.vue'
 import Toggle from './toggle.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
@@ -16,6 +15,5 @@ const editor = useEditor<EditorExtension>({ update: true })
     >
       <div className="ICON_CODE_BLOCK" />
     </Toggle>
-    <ThemeSelector />
   </div>
 </template>

@@ -1,6 +1,7 @@
 import { useEditor } from 'prosekit/react'
 
 import type { EditorExtension } from './extension'
+import { ThemeSelector } from './theme-selector'
 import Toggle from './toggle'
 
 export default function Toolbar() {
@@ -15,6 +16,7 @@ export default function Toolbar() {
       >
         <div className="ICON_CODE_BLOCK" />
       </Toggle>
+      <ThemeSelector />
     </div>
   )
 }

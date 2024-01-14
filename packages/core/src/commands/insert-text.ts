@@ -1,5 +1,10 @@
 import type { Command } from '@prosekit/pm/state'
 
+/**
+ * Returns a command that inserts the given text.
+ *
+ * @public
+ */
 export function insertText({
   text,
   from,

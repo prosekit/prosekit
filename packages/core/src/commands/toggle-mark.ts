@@ -5,6 +5,11 @@ import { type Command } from '@prosekit/pm/state'
 import { type CommandCreator } from '../types/command'
 import { getMarkType } from '../utils/get-mark-type'
 
+/**
+ * Returns a command that toggles the given mark with the given attributes.
+ * 
+ * @public
+ */
 export function toggleMark({
   type,
   attrs,

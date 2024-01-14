@@ -5,7 +5,9 @@ import { type CommandCreator } from '../types/command'
 import { getMarkType } from '../utils/get-mark-type'
 
 /**
- * Remove the given mark from the inline content.
+ * Returns a command that removes the given mark.
+ * 
+ * @public
  */
 export function removeMark(options: {
   /**

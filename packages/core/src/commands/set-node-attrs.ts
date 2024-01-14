@@ -4,7 +4,7 @@ import type { Command } from '@prosekit/pm/state'
 import { getNodeType } from '../utils/get-node-type'
 
 /**
- * Returns a command that tries to set the attributes of the current node.
+ * Returns a command that set the attributes of the current node.
  *
  * @public
  */

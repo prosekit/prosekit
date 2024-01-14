@@ -5,44 +5,8 @@ import {
   setNodeAttrs,
   toggleNode,
 } from '@prosekit/core'
-import type { Command } from '@prosekit/pm/state'
 
 import type { CodeBlockAttrs } from './code-block-types'
-
-/**
- * @internal
- */
-export function setCodeBlock(attrs?: CodeBlockAttrs): Command {
-  return setBlockType({ type: 'codeBlock', attrs })
-}
-
-/**
- * @internal
- */
-export function insertCodeBlock(attrs?: CodeBlockAttrs): Command {
-  return insertNode({ type: 'codeBlock', attrs })
-}
-
-/**
- * @internal
- */
-export function toggleCodeBlock(attrs?: CodeBlockAttrs): Command {
-  return toggleNode({ type: 'codeBlock', attrs })
-}
-
-/**
- * @internal
- */
-export function setCodeBlockAttrs(attrs: CodeBlockAttrs): Command {
-  return setNodeAttrs({ type: 'codeBlock', attrs })
-}
-
-/**
- * @deprecated Use `setCodeBlockAttrs` instead.
- */
-export function setCodeBlockLanguage(language: string): Command {
-  return setCodeBlockAttrs({ language })
-}
 
 /**
  * Adds commands for working with `codeBlock` nodes.
@@ -51,14 +15,25 @@ export function setCodeBlockLanguage(language: string): Command {
  */
 export function defineCodeBlockCommands() {
   return defineCommands({
-    setCodeBlock: setCodeBlock,
-    insertCodeBlock: insertCodeBlock,
-    toggleCodeBlock: toggleCodeBlock,
-    setCodeBlockAttrs: setCodeBlockAttrs,
+    setCodeBlock: (attrs?: CodeBlockAttrs) => {
+      return setBlockType({ type: 'codeBlock', attrs })
+    },
+    insertCodeBlock: (attrs?: CodeBlockAttrs) => {
+      return insertNode({ type: 'codeBlock', attrs })
+    },
+    toggleCodeBlock: (attrs?: CodeBlockAttrs) => {
+      return toggleNode({ type: 'codeBlock', attrs })
+    },
+    setCodeBlockAttrs: (attrs: CodeBlockAttrs) => {
+      return setNodeAttrs({ type: 'codeBlock', attrs })
+    },
 
     /**
      * @deprecated Use `setCodeBlockAttrs` instead.
      */
-    setCodeBlockLanguage,
+    setCodeBlockLanguage: (language: string) => {
+      const attrs: CodeBlockAttrs = { language }
+      return setNodeAttrs({ type: 'codeBlock', attrs })
+    },
   })
 }

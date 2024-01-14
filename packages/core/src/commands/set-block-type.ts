@@ -7,6 +7,8 @@ import { getNodeType } from '../utils/get-node-type'
 /**
  * Returns a command that tries to set the selected textblocks to the given node
  * type with the given attributes.
+ * 
+ * @public
  */
 export function setBlockType(options: {
   type: NodeType | string

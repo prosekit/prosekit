@@ -14,9 +14,9 @@ const extension = defineCodeBlock()
 
 ## Commands
 
-### `setCodeBlockLanguage`
+### `setCodeBlock`
 
-Set the language of the current `codeBlock` node.
+Set the selected node to a `codeBlock` node.
 
 ```ts twoslash
 import { createEditor } from 'prosekit/core'
@@ -26,7 +26,52 @@ const extension = defineCodeBlock()
 const editor = createEditor({ extension })
 
 // ---cut---
-editor.commands.setCodeBlockLanguage('javascript')
+editor.commands.setCodeBlock()
+```
+
+### `insertCodeBlock`
+
+Insert a new `codeBlock` node.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineCodeBlock } from 'prosekit/extensions/code-block'
+
+const extension = defineCodeBlock()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.insertCodeBlock()
+```
+
+### `toggleCodeBlock`
+
+Toggle the selected node between a `codeBlock` node and a default node (e.g. a `paragraph` node).
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineCodeBlock } from 'prosekit/extensions/code-block'
+
+const extension = defineCodeBlock()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.insertCodeBlock()
+```
+
+### `setCodeBlockAttrs`
+
+Set the attributes of the selected `codeBlock` node.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineCodeBlock } from 'prosekit/extensions/code-block'
+
+const extension = defineCodeBlock()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.setCodeBlockAttrs({ language: 'javascript' })
 ```
 
 ## Keyboard Interaction

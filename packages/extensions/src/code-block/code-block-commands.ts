@@ -1,4 +1,48 @@
-import { defineCommands } from '@prosekit/core'
+import {
+  defineCommands,
+  insertNode,
+  setBlockType,
+  setNodeAttrs,
+  toggleNode,
+} from '@prosekit/core'
+import type { Command } from '@prosekit/pm/state'
+
+import type { CodeBlockAttrs } from './code-block-types'
+
+/**
+ * @internal
+ */
+export function setCodeBlock(attrs?: CodeBlockAttrs): Command {
+  return setBlockType({ type: 'codeBlock', attrs })
+}
+
+/**
+ * @internal
+ */
+export function insertCodeBlock(attrs?: CodeBlockAttrs): Command {
+  return insertNode({ type: 'codeBlock', attrs })
+}
+
+/**
+ * @internal
+ */
+export function toggleCodeBlock(attrs?: CodeBlockAttrs): Command {
+  return toggleNode({ type: 'codeBlock', attrs })
+}
+
+/**
+ * @internal
+ */
+export function setCodeBlockAttrs(attrs: CodeBlockAttrs): Command {
+  return setNodeAttrs({ type: 'codeBlock', attrs })
+}
+
+/**
+ * @deprecated Use `setCodeBlockAttrs` instead.
+ */
+export function setCodeBlockLanguage(language: string): Command {
+  return setCodeBlockAttrs({ language })
+}
 
 /**
  * Adds commands for working with `codeBlock` nodes.
@@ -7,16 +51,14 @@ import { defineCommands } from '@prosekit/core'
  */
 export function defineCodeBlockCommands() {
   return defineCommands({
-    setCodeBlockLanguage: (language: string) => (state, dispatch) => {
-      const pos = state.selection.$from.before()
-      const codeBlock = state.doc.nodeAt(pos)
-      if (!codeBlock || codeBlock.type.name !== 'codeBlock') {
-        return false
-      }
-      const { tr } = state
-      tr.setNodeMarkup(pos, undefined, { language })
-      dispatch?.(tr)
-      return true
-    },
+    setCodeBlock: setCodeBlock,
+    insertCodeBlock: insertCodeBlock,
+    toggleCodeBlock: toggleCodeBlock,
+    setCodeBlockAttrs: setCodeBlockAttrs,
+
+    /**
+     * @deprecated Use `setCodeBlockAttrs` instead.
+     */
+    setCodeBlockLanguage,
   })
 }

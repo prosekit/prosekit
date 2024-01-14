@@ -8,7 +8,8 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
   const language = attrs.language
 
   const setLanguage = (language: string) => {
-    props.setAttrs({ language })
+    const attrs: CodeBlockAttrs = { language }
+    props.setAttrs(attrs)
   }
 
   return (

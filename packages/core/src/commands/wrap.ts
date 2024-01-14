@@ -2,6 +2,12 @@ import { NodeType, type Attrs } from '@prosekit/pm/model'
 import { type Command } from '@prosekit/pm/state'
 import { findWrapping } from '@prosekit/pm/transform'
 
+/**
+ * Returns a command that wraps the selected textblock with the given node type
+ * with the given attributes.
+ *
+ * @public
+ */
 export function wrap({
   nodeType,
   attrs,

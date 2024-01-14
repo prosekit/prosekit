@@ -6,6 +6,12 @@ import { ProseKitError } from '../error'
 import { getNodeType } from '../utils/get-node-type'
 import { setSelectionAround } from '../utils/set-selection-around'
 
+/**
+ * Returns a command that inserts the given node at the current selection or at
+ * the given position.
+ *
+ * @public
+ */
 function insertNode(
   options:
     | {

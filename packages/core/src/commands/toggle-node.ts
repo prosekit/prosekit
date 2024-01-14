@@ -5,6 +5,12 @@ import { type Command } from '@prosekit/pm/state'
 import { getNodeType } from '../utils/get-node-type'
 import { isNodeActive } from '../utils/is-node-active'
 
+/**
+ * Returns a command that set the selected textblocks to the given node type
+ * with the given attributes.
+ *
+ * @public
+ */
 export function toggleNode({
   type,
   attrs,

@@ -5,7 +5,9 @@ import { type CommandCreator } from '../types/command'
 import { getMarkType } from '../utils/get-mark-type'
 
 /**
- * Add the given mark to the inline content.
+ * Returns a command that adds the given mark with the given attributes.
+ *
+ * @public
  */
 export function addMark(options: {
   /**

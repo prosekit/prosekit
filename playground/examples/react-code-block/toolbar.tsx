@@ -10,8 +10,8 @@ export default function Toolbar() {
     <div className="TOOLBAR">
       <Toggle
         pressed={editor.nodes.codeBlock.isActive()}
-        disabled={!editor.commands.insertNode.canApply({ type: 'codeBlock' })}
-        onClick={() => editor.commands.insertNode({ type: 'codeBlock' })}
+        disabled={!editor.commands.setCodeBlock.canApply()}
+        onClick={() => editor.commands.setCodeBlock()}
       >
         <div className="ICON_CODE_BLOCK" />
       </Toggle>

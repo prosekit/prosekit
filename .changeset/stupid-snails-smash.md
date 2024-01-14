@@ -2,4 +2,4 @@
 "@prosekit/core": patch
 ---
 
-Add command `setNodeAttrs`.
+Add `setNodeAttrs` command.

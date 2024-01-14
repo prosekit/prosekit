@@ -40,8 +40,8 @@ function createHighlighterLoader() {
     highlighter?: Highlighter
   } {
     if (!shikijiImport) {
-      shikijiImport = createHighlighter(theme).then((h) => {
-        highlighter = h
+      shikijiImport = createHighlighter(theme).then((result) => {
+        highlighter = result
       })
       return { promise: shikijiImport }
     }

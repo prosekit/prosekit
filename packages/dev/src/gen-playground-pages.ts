@@ -34,6 +34,7 @@ function getIndexContent(names: string[]): string {
     `// This file is generated from ${currentFilename}`,
     `import BaseLayout from '../layouts/base-layout.astro'`,
     `---\n`,
+    `<!-- prettier-ignore -->`,
     `<BaseLayout>`,
     ...htmlLines,
     `</BaseLayout>`,

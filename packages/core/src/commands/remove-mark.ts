@@ -6,7 +6,7 @@ import { getMarkType } from '../utils/get-mark-type'
 
 /**
  * Returns a command that removes the given mark.
- * 
+ *
  * @public
  */
 export function removeMark(options: {

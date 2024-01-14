@@ -7,7 +7,7 @@ import { getMarkType } from '../utils/get-mark-type'
 
 /**
  * Returns a command that toggles the given mark with the given attributes.
- * 
+ *
  * @public
  */
 export function toggleMark({

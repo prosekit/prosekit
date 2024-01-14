@@ -12,6 +12,23 @@ import { defineCodeBlock } from 'prosekit/extensions/code-block'
 const extension = defineCodeBlock()
 ```
 
+## Commands
+
+### `setCodeBlockLanguage`
+
+Set the language of the current `codeBlock` node.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineCodeBlock } from 'prosekit/extensions/code-block'
+
+const extension = defineCodeBlock()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.setCodeBlockLanguage('javascript')
+```
+
 ## Keyboard Interaction
 
 Input ` ``` ` followed by an optional language name and press `Enter` or `Space` to create a new `codeBlock` node.

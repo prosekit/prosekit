@@ -12,6 +12,29 @@ import { defineCodeBlock } from 'prosekit/extensions/code-block'
 const extension = defineCodeBlock()
 ```
 
+## Commands
+
+### `setCodeBlockLanguage`
+
+Set the language of the current `codeBlock` node.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineCodeBlock } from 'prosekit/extensions/code-block'
+
+const extension = defineCodeBlock()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.setCodeBlockLanguage('javascript')
+```
+
+## Keyboard Interaction
+
+Input ` ``` ` followed by an optional language name and press `Enter` or `Space` to create a new `codeBlock` node.
+
+Press `Enter` three times at the end of or press `Shift-Enter` to exit the current `codeBlock` node.
+
 ## Syntax Highlighting
 
 You can use `defineCodeBlockShikiji` to enable syntax highlighting for the `codeBlock` node using the [Shikiji] library. `defineCodeBlockShikiji` will only load the [Shikiji] library and used languages asynchronously, which is useful for reducing the initial bundle size of your application. You will need to install the `shikiji` package since it's a peer dependency.

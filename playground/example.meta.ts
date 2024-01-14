@@ -37,6 +37,37 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
+          "hidden": true
+        },
+        {
+          "path": "toggle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-code-block-themes",
+      "framework": "react",
+      "story": "code-block-themes",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "package.json",
+          "hidden": true
+        },
+        {
+          "path": "theme-selector.tsx",
           "hidden": false
         },
         {
@@ -248,7 +279,7 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
-          "hidden": false
+          "hidden": true
         },
         {
           "path": "toggle.tsx",
@@ -390,6 +421,37 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
+          "hidden": true
+        },
+        {
+          "path": "toggle.vue",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-code-block-themes",
+      "framework": "vue",
+      "story": "code-block-themes",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "package.json",
+          "hidden": true
+        },
+        {
+          "path": "theme-selector.vue",
           "hidden": false
         },
         {

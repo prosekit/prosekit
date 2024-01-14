@@ -3,6 +3,7 @@
 import BaseLayout from '../layouts/base-layout.astro'
 import E4207331782 from '../examples/react-minimal/editor.tsx'
 import E3757546706 from '../examples/react-code-block/editor.tsx'
+import E3575812251 from '../examples/react-code-block-themes/editor.tsx'
 import E252666119 from '../examples/react-heading/editor.tsx'
 import E4040190458 from '../examples/react-inline-menu/editor.tsx'
 import E1745952196 from '../examples/react-keymap/editor.tsx'
@@ -18,6 +19,7 @@ import E449861637 from '../examples/vue-minimal/editor.vue'
 import E1911994445 from '../examples/vue-bold/editor.vue'
 import E1589439143 from '../examples/vue-code/editor.vue'
 import E2437121339 from '../examples/vue-code-block/editor.vue'
+import E2550797952 from '../examples/vue-code-block-themes/editor.vue'
 import E3216900980 from '../examples/vue-drop-cursor/editor.vue'
 import E2097600771 from '../examples/vue-full/editor.vue'
 import E3923017492 from '../examples/vue-heading/editor.vue'
@@ -57,6 +59,7 @@ import E3405394164 from '../examples/solid-slash-menu/editor.tsx'
 export const getStaticPaths = () => [
   { params: { example: 'react-minimal' } },
   { params: { example: 'react-code-block' } },
+  { params: { example: 'react-code-block-themes' } },
   { params: { example: 'react-heading' } },
   { params: { example: 'react-inline-menu' } },
   { params: { example: 'react-keymap' } },
@@ -72,6 +75,7 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-bold' } },
   { params: { example: 'vue-code' } },
   { params: { example: 'vue-code-block' } },
+  { params: { example: 'vue-code-block-themes' } },
   { params: { example: 'vue-drop-cursor' } },
   { params: { example: 'vue-full' } },
   { params: { example: 'vue-heading' } },
@@ -115,6 +119,7 @@ const { example } = Astro.params
 <BaseLayout>
   {example === 'react-minimal' && <E4207331782 client:only="react" />}
   {example === 'react-code-block' && <E3757546706 client:only="react" />}
+  {example === 'react-code-block-themes' && <E3575812251 client:only="react" />}
   {example === 'react-heading' && <E252666119 client:only="react" />}
   {example === 'react-inline-menu' && <E4040190458 client:only="react" />}
   {example === 'react-keymap' && <E1745952196 client:only="react" />}
@@ -130,6 +135,7 @@ const { example } = Astro.params
   {example === 'vue-bold' && <E1911994445 client:only="vue" />}
   {example === 'vue-code' && <E1589439143 client:only="vue" />}
   {example === 'vue-code-block' && <E2437121339 client:only="vue" />}
+  {example === 'vue-code-block-themes' && <E2550797952 client:only="vue" />}
   {example === 'vue-drop-cursor' && <E3216900980 client:only="vue" />}
   {example === 'vue-full' && <E2097600771 client:only="vue" />}
   {example === 'vue-heading' && <E3923017492 client:only="vue" />}

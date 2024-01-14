@@ -1,15 +1,36 @@
-import type { Extension } from '@prosekit/core'
+import { ProseKitError, type Extension } from '@prosekit/core'
 import type { Parser } from 'prosemirror-highlight'
 import { createParser } from 'prosemirror-highlight/shikiji'
 import type { BuiltinLanguage, BundledTheme, Highlighter } from 'shikiji'
 
 import { defineCodeBlockHighlight } from './code-block-highlight'
 
+async function importGetHighlighter() {
+  try {
+    const { getHighlighter } = await import('shikiji')
+    return getHighlighter
+  } catch (error) {
+    throw new ProseKitError(
+      "Failed to import package 'shikiji'. Make sure you've installed it.",
+      { cause: error },
+    )
+  }
+}
+
+async function createHighlighter(theme: BundledTheme) {
+  const getHighlighter = await importGetHighlighter()
+  const fallbackLang = 'md'
+  return await getHighlighter({
+    langs: [fallbackLang],
+    themes: [theme],
+  })
+}
+
 function createHighlighterLoader() {
   let shikijiImport: Promise<void> | undefined
   let highlighter: Highlighter | undefined
-  const languages = new Set<string>()
-  const themes = new Set<string>()
+  const loadLangs = new Set<string>()
+  const loadThemes = new Set<string>()
 
   return function highlighterLoader(
     lang: BuiltinLanguage,
@@ -19,12 +40,8 @@ function createHighlighterLoader() {
     highlighter?: Highlighter
   } {
     if (!shikijiImport) {
-      shikijiImport = import('shikiji').then(async ({ getHighlighter }) => {
-        const fallbackLang = 'md'
-        highlighter = await getHighlighter({
-          langs: [fallbackLang],
-          themes: [],
-        })
+      shikijiImport = createHighlighter(theme).then((result) => {
+        highlighter = result
       })
       return { promise: shikijiImport }
     }
@@ -33,11 +50,11 @@ function createHighlighterLoader() {
       return { promise: shikijiImport }
     }
 
-    if (!languages.has(lang)) {
+    if (!loadLangs.has(lang)) {
       const promise = highlighter
         .loadLanguage(lang)
         .then(() => {
-          languages.add(lang)
+          loadLangs.add(lang)
         })
         .catch(() => {
           // ignore
@@ -45,11 +62,11 @@ function createHighlighterLoader() {
       return { promise }
     }
 
-    if (!themes.has(theme)) {
+    if (!loadThemes.has(theme)) {
       const promise = highlighter
         .loadTheme(theme)
         .then(() => {
-          themes.add(theme)
+          loadThemes.add(theme)
         })
         .catch(() => {
           // ignore
@@ -89,11 +106,11 @@ export function defineCodeBlockShikiji(options?: {
   /**
    * The shikiji theme to use.
    *
-   * @default 'github-light'
+   * @default 'one-dark-pro'
    */
   theme?: BundledTheme
 }): Extension {
-  const theme: BundledTheme = options?.theme || 'github-light'
+  const theme: BundledTheme = options?.theme || 'one-dark-pro'
   const parser = createLazyParser(theme)
   return defineCodeBlockHighlight({ parser })
 }

@@ -12,12 +12,38 @@ export async function genPlaygroundPages() {
   const exampleNames: string[] = meta.examples.map((example) => example.name)
 
   await vfs.updateText(
+    'playground/pages/index.astro',
+    getIndexContent(exampleNames),
+  )
+
+  await vfs.updateText(
     'playground/pages/[example].astro',
-    getPageContent(exampleNames),
+    getExampleContent(exampleNames),
   )
 }
 
-function getPageContent(names: string[]): string {
+function getIndexContent(names: string[]): string {
+  const htmlLines: string[] = []
+
+  names.forEach((name) => {
+    htmlLines.push(`  <p><a href="/playground/dist/${name}">${name}</a></p>`)
+  })
+
+  const lines = [
+    `---`,
+    `// This file is generated from ${currentFilename}`,
+    `import BaseLayout from '../layouts/base-layout.astro'`,
+    `---\n`,
+    `<!-- prettier-ignore -->`,
+    `<BaseLayout>`,
+    ...htmlLines,
+    `</BaseLayout>`,
+  ]
+
+  return lines.join('\n') + '\n'
+}
+
+function getExampleContent(names: string[]): string {
   const importLines: string[] = []
   const pathLines: string[] = []
   const htmlLines: string[] = []

@@ -25,3 +25,9 @@ window.addEventListener('message', (event) => {
     setDarkMode(data.value)
   }
 })
+
+const url: URL = new URL(window.location.href)
+const params: URLSearchParams = url.searchParams
+if (params.has('dark')) {
+  setDarkMode(true)
+}

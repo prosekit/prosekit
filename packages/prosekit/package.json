@@ -1,7 +1,7 @@
 {
   "name": "prosekit",
   "type": "module",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -148,8 +148,8 @@
   },
   "dependencies": {
     "@prosekit/basic": "0.2.5",
-    "@prosekit/core": "0.2.5",
-    "@prosekit/extensions": "0.2.4",
+    "@prosekit/core": "0.2.6",
+    "@prosekit/extensions": "0.2.5",
     "@prosekit/lit": "0.1.9",
     "@prosekit/pm": "0.1.1",
     "@prosekit/preact": "0.1.5",

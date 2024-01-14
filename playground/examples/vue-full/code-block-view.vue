@@ -12,7 +12,8 @@ const language = computed(() => {
 })
 
 const setLanguage = (language: string) => {
-  props.setAttrs({ language })
+  const attrs: CodeBlockAttrs = { language }
+  props.setAttrs(attrs)
 }
 </script>
 

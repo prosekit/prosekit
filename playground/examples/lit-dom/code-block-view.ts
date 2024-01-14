@@ -1,4 +1,4 @@
-import { defineNodeView } from 'prosekit/core'
+import { defineNodeView, setNodeAttrs } from 'prosekit/core'
 
 import { createElement } from './create-element'
 import { createLanguageSelector } from './language-selector'
@@ -11,8 +11,9 @@ export function defineCodeBlockView() {
 
       const setLanguage = (language: string) => {
         const pos = getPos()!
-        const tr = view.state.tr.setNodeAttribute(pos, 'language', language)
-        view.dispatch(tr)
+        const attrs = { language }
+        const command = setNodeAttrs({ type: 'codeBlock', attrs, pos })
+        command(view.state, view.dispatch)
       }
 
       const type = node.type

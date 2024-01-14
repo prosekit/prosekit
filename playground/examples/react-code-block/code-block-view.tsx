@@ -1,4 +1,6 @@
-import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
+import type {
+  CodeBlockAttrs
+} from 'prosekit/extensions/code-block'
 import { type ReactNodeViewProps } from 'prosekit/react'
 
 import LanguageSelector from './language-selector'
@@ -8,7 +10,8 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
   const language = attrs.language
 
   const setLanguage = (language: string) => {
-    props.setAttrs({ language })
+    const attrs: CodeBlockAttrs = { language }
+    props.setAttrs(attrs)
   }
 
   return (

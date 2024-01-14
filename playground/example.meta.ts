@@ -403,6 +403,37 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "vue-code-block-themes",
+      "framework": "vue",
+      "story": "code-block-themes",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "package.json",
+          "hidden": false
+        },
+        {
+          "path": "theme-selector.vue",
+          "hidden": false
+        },
+        {
+          "path": "toggle.vue",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-drop-cursor",
       "framework": "vue",
       "story": "drop-cursor",

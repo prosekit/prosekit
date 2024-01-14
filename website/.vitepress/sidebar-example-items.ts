@@ -15,6 +15,10 @@ export const exampleItems = [
     "link": "/examples/code-block"
   },
   {
+    "text": "code-block-themes",
+    "link": "/examples/code-block-themes"
+  },
+  {
     "text": "dom",
     "link": "/examples/dom"
   },

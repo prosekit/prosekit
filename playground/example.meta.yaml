@@ -264,7 +264,7 @@ examples:
       - path: language-selector.vue
         hidden: false
       - path: package.json
-        hidden: false
+        hidden: true
       - path: slash-menu.vue
         hidden: false
       - path: tag-data.ts

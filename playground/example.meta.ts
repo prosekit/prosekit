@@ -510,7 +510,7 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
-          "hidden": false
+          "hidden": true
         },
         {
           "path": "slash-menu.vue",

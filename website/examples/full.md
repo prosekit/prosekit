@@ -17,7 +17,6 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 <<< @/../playground/examples/vue-full/inline-buttons.vue
 <<< @/../playground/examples/vue-full/inline-menu.vue
 <<< @/../playground/examples/vue-full/language-selector.vue
-<<< @/../playground/examples/vue-full/package.json
 <<< @/../playground/examples/vue-full/slash-menu.vue
 <<< @/../playground/examples/vue-full/tag-data.ts
 <<< @/../playground/examples/vue-full/tag-menu.vue

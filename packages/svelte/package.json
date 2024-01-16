@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/svelte",
   "type": "module",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -83,7 +83,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.2.5",
-    "@prosekit/lit": "^0.1.9"
+    "@prosekit/lit": "^0.2.0"
   },
   "peerDependencies": {
     "svelte": ">= 3.0.0"

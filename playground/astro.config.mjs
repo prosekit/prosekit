@@ -20,9 +20,9 @@ export default defineConfig({
     {
       name: 'astro-integration-dark-mode',
       hooks: {
-        'astro:config:setup': ({addDevToolbarApp}) => {
-          addDevToolbarApp("./helpers/dark-mode-toolbar.ts")
-        }
+        'astro:config:setup': ({ addDevToolbarApp }) => {
+          addDevToolbarApp('./helpers/dark-mode-toolbar.ts')
+        },
       },
     },
   ],

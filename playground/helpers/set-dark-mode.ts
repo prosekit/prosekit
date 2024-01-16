@@ -11,5 +11,3 @@ export function setDarkMode(dark: boolean) {
   }
   meta.setAttribute('content', dark ? 'dark' : 'light')
 }
-
-

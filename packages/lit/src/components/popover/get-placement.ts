@@ -137,13 +137,7 @@ export function getPlacement(
     floating.style.setProperty('--y', `${y}px`)
 
     // TODO: better way to do this?
-    if (hidden) {
-      floating.style.setProperty('--hidden', 'true')
-      floating.style.setProperty('opacity', '0')
-    } else {
-      floating.style.removeProperty('--hidden')
-      floating.style.setProperty('opacity', '1')
-    }
+    floating.style.setProperty('opacity', hidden ? '0' : '1')
 
     const contentEl = floating.firstElementChild
 

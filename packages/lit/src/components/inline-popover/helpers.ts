@@ -1,9 +1,12 @@
+import type { ReferenceElement } from '@floating-ui/dom'
 import { isNodeSelection, isTextSelection } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { isInCodeBlock } from '../../utils/is-in-code-block'
 
-export function getVirtualSelectionElement(view: EditorView) {
+export function getVirtualSelectionElement(
+  view: EditorView,
+): ReferenceElement | undefined {
   if (typeof window === 'undefined' || view.isDestroyed) {
     return
   }
@@ -15,7 +18,16 @@ export function getVirtualSelectionElement(view: EditorView) {
     !isInCodeBlock(selection) &&
     (isTextSelection(selection) || isNodeSelection(selection))
   ) {
-    return getDomRange()
+    const range = getDomRange()
+    if (!range) return
+
+    // To get it work properly in Safari, we cannot return the range directly.
+    // We have to return a contextElement.
+    return {
+      contextElement: view.dom,
+      getBoundingClientRect: () => range.getBoundingClientRect(),
+      getClientRects: () => range.getClientRects(),
+    }
   }
 }
 

@@ -10,6 +10,6 @@ export const popoverAvailable: boolean =
  * since we don't need to worry about the popover overflowing the parent
  * element.
  */
-export const boundary: HTMLElement | undefined =
+export const defaultBoundary: HTMLElement | undefined =
   (popoverAvailable && typeof document !== 'undefined' && document.body) ||
   undefined

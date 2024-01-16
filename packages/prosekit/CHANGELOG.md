@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.3.0
+
+### Minor Changes
+
+- [`237f12f`](https://github.com/ocavue/prosekit/commit/237f12f3004a87c5eb22c34aef63a25033f8354d) ![][badge-lit] ![][badge-preact] ![][badge-react] ![][badge-solid] ![][badge-svelte] ![][badge-vue]
+
+  Rewrite the Popover component. It now provides a more clear API and has a better default behavior for inline reference elements.
+
 ## 0.2.12
 
 ### Patch Changes

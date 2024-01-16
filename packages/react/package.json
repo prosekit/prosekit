@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/react",
   "type": "module",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -49,7 +49,7 @@
   "dependencies": {
     "@lit/react": "^1.0.2",
     "@prosekit/core": "^0.2.5",
-    "@prosekit/lit": "^0.1.9",
+    "@prosekit/lit": "^0.2.0",
     "@prosekit/pm": "^0.1.1",
     "@prosemirror-adapter/core": "^0.2.6"
   },

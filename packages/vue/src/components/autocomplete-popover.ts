@@ -1,4 +1,4 @@
-export type { PopoverOptions } from '@prosekit/lit/autocomplete-popover'
+export type { PositioningOptions } from '@prosekit/lit/autocomplete-popover'
 export {
   AutocompletePopover,
   type AutocompletePopoverProps,

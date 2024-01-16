@@ -1,21 +1,23 @@
 import { Editor } from '@prosekit/core'
-import type { PropertyDeclarations } from 'lit'
+import type { PropertyDeclarations, PropertyValues } from 'lit'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
-import { Popover } from '../popover'
-import { type PopoverOptions } from '../popover/options'
+import {
+  Popover,
+  popoverPropsNames,
+  type PopoverProps,
+  type PositioningOptions,
+} from '../popover'
 
-import { InlinePopoverController } from './controller'
-import { defaultPopoverOptions } from './default-popover-options'
+import { useInlinePopover } from './use-inline-popover'
 
-export { type PopoverOptions }
+export type { PositioningOptions }
 
-export const propNames = ['editor', 'popoverOptions'] as const
+export const propNames = ['editor', ...popoverPropsNames] as const
 
-export interface InlinePopoverProps {
+export type InlinePopoverProps = {
   editor: Editor
-  popoverOptions?: PopoverOptions
-}
+} & PopoverProps
 
 export class InlinePopover
   extends Popover
@@ -27,28 +29,40 @@ export class InlinePopover
   static properties = {
     ...Popover.properties,
     editor: { attribute: false },
-    popoverOptions: { attribute: false },
   } satisfies PropertyDeclarations
 
   editor?: Editor
-  popoverOptions: PopoverOptions = defaultPopoverOptions
-  dismiss = 'escape' as const
+
+  positioning?: PositioningOptions = {
+    strategy: 'fixed',
+    placement: 'top',
+    offset: 12,
+    flip: false,
+    hide: true,
+    shift: true,
+    overlap: true,
+    fitViewport: false,
+    inline: true,
+  }
 
   /**
    * @hidden
    */
-  private controller = new InlinePopoverController(this)
+  constructor() {
+    super()
+
+    useInlinePopover(this, (reference) => {
+      this.reference = reference
+    })
+  }
 
   /**
    * @hidden
    */
-  willUpdate(): void {
-    if (this.editor) {
-      this.controller.setEditor(this.editor)
-    }
-    this.active = !!this.controller?.reference
-    this.reference = this.controller.reference ?? undefined
-    this.options = this.popoverOptions
+  protected updated(changedProperties: PropertyValues<this>): void {
+    super.updated(changedProperties)
+
+    this.open = !!this.reference
   }
 
   /**
@@ -57,10 +71,7 @@ export class InlinePopover
   hide() {
     super.hide()
 
-    if (this.controller?.reference) {
-      this.controller.reference = undefined
-      this.reference = undefined
-    }
+    this.reference = undefined
   }
 }
 

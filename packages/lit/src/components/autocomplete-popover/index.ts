@@ -1,25 +1,23 @@
 import { ContextProvider } from '@lit/context'
 import { Editor } from '@prosekit/core'
-import type { PropertyValues, PropertyDeclarations } from 'lit'
+import type { PropertyDeclarations, PropertyValues } from 'lit'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { AutocompleteList } from '../autocomplete-list/component'
 import { isAutocompleteList } from '../autocomplete-list/helpers'
-import { Popover } from '../popover'
-import { type PopoverOptions } from '../popover/options'
+import { Popover, type PositioningOptions } from '../popover'
 
 import { autocompletePopoverContext } from './context'
 import { AutocompletePopoverController } from './controller'
-import { defaultPopoverOptions } from './default-popover-options'
 
-export { type PopoverOptions }
+export type { PositioningOptions }
 
-export const propNames = ['editor', 'regex', 'popoverOptions'] as const
+export const propNames = ['editor', 'regex', 'positioning'] as const
 
 export interface AutocompletePopoverProps {
   editor: Editor
   regex: RegExp
-  popoverOptions?: PopoverOptions
+  positioning?: PositioningOptions
 }
 
 export class AutocompletePopover
@@ -39,16 +37,19 @@ export class AutocompletePopover
    */
   static properties = {
     ...Popover.properties,
-    editor: { attribute: false },
+    editor: { type: Object, reflect: false, attribute: false },
     regex: { attribute: false },
-    popoverOptions: { attribute: false },
-    onSelect: { attribute: false },
+    positioning: { type: Object, reflect: false, attribute: false },
   } satisfies PropertyDeclarations
 
   editor?: Editor
   regex?: RegExp
-  popoverOptions: PopoverOptions = defaultPopoverOptions
-  onSelect?: VoidFunction
+  positioning?: PositioningOptions = {
+    strategy: 'fixed',
+    placement: 'bottom-start',
+    flip: false,
+    inline: true,
+  }
 
   private context = new ContextProvider(this, {
     context: autocompletePopoverContext,
@@ -93,9 +94,8 @@ export class AutocompletePopover
     if (this.regex) {
       this.controller.setRegex(this.regex)
     }
-    this.active = !!this.controller?.reference
+    this.open = !!this.controller?.reference
     this.reference = this.controller.reference ?? undefined
-    this.options = this.popoverOptions
   }
 
   /**

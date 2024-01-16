@@ -17,6 +17,14 @@ export default defineConfig({
     vue(),
     solid({ include: ['**/solid-*/*'] }),
     unocss({ injectReset: true }),
+    {
+      name: 'astro-integration-dark-mode',
+      hooks: {
+        'astro:config:setup': ({addDevToolbarApp}) => {
+          addDevToolbarApp("./helpers/dark-mode-toolbar.ts")
+        }
+      },
+    },
   ],
   base: 'playground/dist',
 })

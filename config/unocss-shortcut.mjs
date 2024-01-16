@@ -18,7 +18,7 @@ const FLOATING_MENU_ITEM = clsx(
 export const shortcuts = {
   // The outermost container of the editor. It limits the height of the editor.
   EDITOR_VIEWPORT: clsx(
-    'box-border h-full max-h-[500px] w-full overflow-y-auto overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700',
+    'box-border h-full w-full overflow-y-auto overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700',
   ),
 
   // Use this class if you have floating menus. We want to scroll menus along with the document.

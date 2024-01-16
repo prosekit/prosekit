@@ -47,7 +47,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/core": "^0.2.5",
+    "@prosekit/core": "^0.2.6",
     "@prosekit/lit": "^0.2.0"
   },
   "peerDependencies": {

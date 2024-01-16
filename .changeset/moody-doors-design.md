@@ -8,4 +8,4 @@
 '@prosekit/vue': minor
 ---
 
-Refactor the Popover component.
+Rewrite the Popover component. It now provides a more clear API and has a better default behavior for inline reference elements.

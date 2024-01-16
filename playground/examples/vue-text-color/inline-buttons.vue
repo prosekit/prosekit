@@ -1,19 +1,11 @@
 <script setup lang="ts">
 import { useEditor } from 'prosekit/vue'
-import { effect } from 'vue'
 import type { EditorExtension } from './extension'
 import Toggle from './toggle.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
 
-const customColor = defineModel<string>()
-
-effect(() => {
-  const color = customColor.value
-  if (color) {
-    editor.value.commands.addTextColor({ color })
-  }
-})
+const model = defineModel<string>()
 
 const red = '#ef4444'
 const green = '#22c55e'
@@ -42,9 +34,5 @@ const blue = '#3b82f6'
     <span class="text-blue-500">Blue</span>
   </Toggle>
 
-  <input
-    placeholder="Input custom color..."
-    v-model="customColor"
-    class="p-1"
-  />
+  <input placeholder="Input custom color..." v-model="model" class="p-1" />
 </template>

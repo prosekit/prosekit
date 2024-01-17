@@ -57,7 +57,7 @@
     "@prosekit/core": "^0.2.6",
     "@prosekit/pm": "^0.1.1",
     "prosemirror-dropcursor": "^1.8.1",
-    "prosemirror-flat-list": "^0.4.5",
+    "prosemirror-flat-list": "^0.4.6",
     "prosemirror-highlight": "^0.4.0"
   },
   "peerDependencies": {

@@ -9,7 +9,7 @@
     "declarationMap": false,
     "emitDeclarationOnly": false,
     "composite": true,
-    "tsBuildInfoFile": "dist/.tsbuildinfo"
+    "tsBuildInfoFile": "dist/.tsbuildinfo",
   },
-  "include": ["./src"]
+  "include": ["./src"],
 }

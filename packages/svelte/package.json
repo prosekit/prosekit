@@ -95,7 +95,7 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "@sveltejs/package": "^2.2.5",
+    "@sveltejs/package": "^2.2.6",
     "@types/node": "^20.11.4",
     "read-pkg": "^9.0.1",
     "svelte": "^4.2.8",

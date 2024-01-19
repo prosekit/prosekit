@@ -34,18 +34,18 @@
     "@size-limit/esbuild-why": "^11.0.2",
     "@size-limit/preset-small-lib": "^11.0.2",
     "@unocss/eslint-config": "^0.58.3",
-    "@vitest/coverage-istanbul": "^1.2.0",
+    "@vitest/coverage-istanbul": "^1.2.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
     "jsdom": "^23.2.0",
-    "prettier": "^3.2.3",
+    "prettier": "^3.2.4",
     "prettier-plugin-astro": "^0.12.3",
     "prettier-plugin-svelte": "^3.1.2",
     "size-limit": "^11.0.2",
     "turbo": "^1.11.3",
     "typescript": "^5.3.3",
     "unocss": "^0.58.3",
-    "vitest": "^1.2.0"
+    "vitest": "^1.2.1"
   },
   "pnpm": {
     "overrides": {},

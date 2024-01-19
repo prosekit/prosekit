@@ -64,8 +64,8 @@
     "@prosekit/dev": "*",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
-    "vitest": "^1.2.0",
-    "vue": "^3.4.14"
+    "vitest": "^1.2.1",
+    "vue": "^3.4.15"
   },
   "publishConfig": {
     "exports": {

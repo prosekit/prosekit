@@ -194,7 +194,7 @@ export default defineConfig({
     codeTransformers: [
       transformerTwoslash({
         twoslashOptions: {
-          defaultCompilerOptions: {
+          compilerOptions: {
             moduleResolution: ts.ModuleResolutionKind.Bundler,
           },
         },

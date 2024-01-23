@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@8.14.1",
+  "packageManager": "pnpm@8.14.2",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
@@ -39,7 +39,7 @@
     "eslint": "^8.56.0",
     "jsdom": "^23.2.0",
     "prettier": "^3.2.4",
-    "prettier-plugin-astro": "^0.12.3",
+    "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-svelte": "^3.1.2",
     "size-limit": "^11.0.2",
     "turbo": "^1.11.3",

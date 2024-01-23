@@ -213,8 +213,8 @@ importers:
         specifier: ^0.4.6
         version: 0.4.6
       prosemirror-highlight:
-        specifier: ^0.4.0
-        version: 0.4.0(shikiji@0.10.0)
+        specifier: ^0.4.1
+        version: 0.4.1(shikiji@0.10.0)
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -8188,8 +8188,8 @@ packages:
       prosemirror-view: 1.32.7
     dev: false
 
-  /prosemirror-highlight@0.4.0(shikiji@0.10.0):
-    resolution: {integrity: sha512-RHGi5QjcWnWgn6bMkjbC2+ehv9Piv3D5UN/dNJG2r738NCQCFye0dkFa6c1oURsvUuwpFiQREqp1YYGpGbZOuA==}
+  /prosemirror-highlight@0.4.1(shikiji@0.10.0):
+    resolution: {integrity: sha512-cE2KFr6Z+qsWJHO8B2j4qiAeNl5umAYWBKv2jSBVSXrSYzsCqn800NnnojGEyo/wy5pVdxJCAbl2TvB8Qwqaqw==}
     peerDependencies:
       '@types/hast': ^3.0.0
       highlight.js: ^11.9.0
@@ -8200,7 +8200,7 @@ packages:
       prosemirror-view: ^1.32.4
       refractor: ^4.8.1
       shiki: ^0.14.0
-      shikiji: ^0.8.0 || ^0.9.0
+      shikiji: ^0.8.0 || ^0.9.0 || ^0.10.0
     peerDependenciesMeta:
       '@types/hast':
         optional: true

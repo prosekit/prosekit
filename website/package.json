@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@iconify-json/logos": "^1.1.42",
-    "@iconify-json/lucide": "^1.1.155",
+    "@iconify-json/lucide": "^1.1.157",
     "@prosekit/dev": "*",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
@@ -29,18 +29,18 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "shadcn-vue": "^0.8.7",
-    "shikiji": "^0.9.19",
-    "type-fest": "^4.9.0",
+    "shikiji": "^0.10.0",
+    "type-fest": "^4.10.0",
     "typedoc": "^0.25.7",
     "typedoc-plugin-external-package-links": "^0.1.0",
     "typedoc-plugin-markdown": "^4.0.0-next.43",
-    "typedoc-plugin-mdn-links": "^3.1.12",
+    "typedoc-plugin-mdn-links": "^3.1.13",
     "typescript": "^5.3.3",
     "unocss": "^0.58.3",
     "unocss-preset-animations": "^1.0.1",
     "vite": "^5.0.11",
-    "vitepress": "1.0.0-rc.39",
-    "vitepress-plugin-twoslash": "^0.9.19",
+    "vitepress": "1.0.0-rc.40",
+    "vitepress-plugin-twoslash": "^0.10.0",
     "vue": "^3.4.15"
   }
 }

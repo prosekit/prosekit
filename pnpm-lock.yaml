@@ -711,7 +711,7 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1(@unocss/preset-wind@0.58.3)(unocss@0.58.3)
       vite:
-        specifier: ^5.0.11
+        specifier: ^5.0.12
         version: 5.0.12(@types/node@20.11.5)
       vitepress:
         specifier: 1.0.0-rc.40

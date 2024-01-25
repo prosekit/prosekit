@@ -5,6 +5,9 @@ import type { WithEditor } from '../types/with-editor'
 
 import { useEditorExtension } from './use-editor-extension'
 
+/**
+ * @internal 
+ */
 export function useEditorUpdateEvent(
   host: WithEditor<ReactiveControllerHost>,
   handler: UpdateHandler,

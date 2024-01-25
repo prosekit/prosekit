@@ -3,32 +3,30 @@ import type { LitElement } from 'lit'
 
 import { useEditorFocusChangeEvent } from '../../controllers/use-editor-focus-event'
 import { useEditorUpdateEvent } from '../../controllers/use-editor-update-event'
-import { usePointerDownEvent } from '../../controllers/use-pointer-down-event'
 import type { WithEditor } from '../../types/with-editor'
 
 import { getVirtualSelectionElement } from './helpers'
 
+/**
+ * @internal
+ */
 export function useInlinePopover(
   host: WithEditor<LitElement>,
   onReferenceChange: (reference: ReferenceElement | undefined) => void,
 ) {
-  let interacting = false
   let reference: ReferenceElement | undefined
+  let editorFocused = false
 
-  usePointerDownEvent(host, () => {
-    interacting = true
-  })
+  const isPopoverFocused = () => {
+    return !editorFocused && host.contains(host.ownerDocument.activeElement)
+  }
 
   useEditorFocusChangeEvent(host, (focus) => {
-    if (focus) {
-      interacting = false
-    }
+    editorFocused = focus
   })
 
   useEditorUpdateEvent(host, (view) => {
-    if (interacting) {
-      return
-    }
+    if (isPopoverFocused()) return
 
     const ref = getVirtualSelectionElement(view)
 

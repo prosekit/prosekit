@@ -1,5 +1,8 @@
 import type { LitElement } from 'lit'
 
+/**
+ * @internal
+ */
 export function usePointerDownEvent(
   host: LitElement,
   handler: (event: PointerEvent) => void,

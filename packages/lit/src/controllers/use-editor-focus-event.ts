@@ -8,6 +8,9 @@ import type { WithEditor } from '../types/with-editor'
 
 import { useEditorExtension } from './use-editor-extension'
 
+/**
+ * @internal
+ */
 export function useEditorFocusChangeEvent(
   host: WithEditor<ReactiveControllerHost>,
   handler: FocusChangeHandler,

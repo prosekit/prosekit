@@ -1,5 +1,8 @@
 import type { ReactiveControllerHost } from 'lit'
 
+/**
+ * @internal 
+ */
 export function useEffect<T>(
   host: ReactiveControllerHost,
   getValue: () => T,

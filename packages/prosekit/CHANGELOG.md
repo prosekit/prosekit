@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.3.1
+
+### Patch Changes
+
+- [`8641630`](https://github.com/ocavue/prosekit/commit/86416304abf05107b9060d553d2056cf478ee759) ![][badge-lit]
+
+  Fix an issue where the inline popover won't disappear when the text selection collapse after you have clicked the inline popover.
+
 ## 0.3.0
 
 ### Minor Changes

@@ -4,7 +4,7 @@ import type { ReactiveControllerHost } from 'lit'
 import type { WithEditor } from '../types/with-editor'
 
 /**
- * @internal 
+ * @internal
  */
 export function useEditorExtension(
   host: WithEditor<ReactiveControllerHost>,

@@ -4,6 +4,9 @@ import type { LitElement } from 'lit'
 
 import { getReferenceContextElement } from '../utils/get-reference-context-element'
 
+/**
+ * @internal
+ */
 export function useDismissable(
   host: LitElement,
   {

@@ -1,17 +1,20 @@
 import type { Editor } from '@prosekit/core'
 import { h, type ComponentChildren, type ComponentType } from 'preact'
 
-import { editorContext } from '../contexts/editor-context'
+import { EditorContextProvider } from '../contexts/editor-context'
 
 export interface ProseKitProps {
   editor: Editor
   children?: ComponentChildren
 }
 
+/**
+ * The root component for a ProseKit editor.
+ *
+ * @public
+ */
 export const ProseKit: ComponentType<ProseKitProps> = (props) => {
   const { editor, children } = props
 
-  return h(EditorContextProvider, { value: { editor }, children })
+  return h(EditorContextProvider, { value: editor, children })
 }
-
-const EditorContextProvider = editorContext.Provider

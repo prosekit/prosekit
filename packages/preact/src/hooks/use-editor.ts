@@ -6,9 +6,9 @@ import {
   union,
   type Extension,
 } from '@prosekit/core'
-import { useContext, useEffect, useReducer } from 'preact/hooks'
+import { useEffect, useReducer } from 'preact/hooks'
 
-import { editorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context'
 
 /**
  * Retrieves the editor instance from the nearest ProseKit component.
@@ -26,14 +26,13 @@ export function useEditor<E extends Extension = any>(options?: {
 }): Editor<E> {
   const update = options?.update ?? false
 
-  const value = useContext(editorContext)
-  if (!value) {
+  const editor = useEditorContext<E>()
+  if (!editor) {
     throw new ProseKitError(
       'useEditor must be used within the ProseKit component',
     )
   }
 
-  const editor = value.editor as Editor<E>
   const forceUpdate = useForceUpdate()
 
   useEffect(() => {

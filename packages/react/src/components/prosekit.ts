@@ -1,7 +1,7 @@
 import { type Editor } from '@prosekit/core'
 import { createElement, type ComponentType, type ReactNode } from 'react'
 
-import { editorContext } from '../contexts/editor-context'
+import { EditorContextProvider } from '../contexts/editor-context'
 import { ReactViewsConsumer } from '../views/react-views-consumer'
 import { ReactViewsProvider } from '../views/react-views-provider'
 
@@ -10,6 +10,11 @@ export interface ProseKitProps {
   children?: ReactNode
 }
 
+/**
+ * The root component for a ProseKit editor.
+ *
+ * @public
+ */
 export const ProseKit: ComponentType<ProseKitProps> = (props) => {
   const { editor, children } = props
 
@@ -17,8 +22,8 @@ export const ProseKit: ComponentType<ProseKitProps> = (props) => {
     ReactViewsProvider,
     null,
     createElement(
-      editorContext.Provider,
-      { value: { editor } },
+      EditorContextProvider,
+      { value: editor },
       createElement(ReactViewsConsumer),
       children,
     ),

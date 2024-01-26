@@ -1,5 +1,6 @@
 import {
   Editor,
+  ProseKitError,
   defineMountHandler,
   defineUpdateHandler,
   union,
@@ -13,7 +14,7 @@ import {
   type ShallowRef,
 } from 'vue'
 
-import { injectEditor } from '../injection/editor-injection'
+import { useEditorContext } from '../injection/editor-context'
 
 /**
  * Retrieves the editor instance from the nearest ProseKit component.
@@ -31,7 +32,13 @@ export function useEditor<E extends Extension = any>(options?: {
 }): ShallowRef<Editor<E>> {
   const update = options?.update ?? false
 
-  const editor = injectEditor() as Editor<E>
+  const editor = useEditorContext<E>()
+  if (!editor) {
+    throw new ProseKitError(
+      'useEditor must be used within the ProseKit component',
+    )
+  }
+
   const editorRef = shallowRef<Editor<E>>(editor)
 
   if (update) {

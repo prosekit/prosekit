@@ -1,25 +1,24 @@
-import { ProseKitError, type Editor } from '@prosekit/core'
+import { ProseKitError, type Editor, type Extension } from '@prosekit/core'
 import { getContext, hasContext, setContext } from 'svelte'
-
-export interface EditorContext {
-  editor: Editor
-}
 
 const key = 'prosekit-svelte-editor-context'
 
+/**
+ * @internal
+ */
 export function setEditorContext(editor: Editor): void {
   if (!editor) {
     throw new ProseKitError('editor should not be empty')
   }
-  const context: EditorContext = { editor }
-  setContext(key, context)
+  setContext(key, editor)
 }
 
-export function getEditorContext(): EditorContext {
+/**
+ * @internal
+ */
+export function getEditorContext<E extends Extension>(): Editor<E> | null {
   if (!hasContext(key)) {
-    throw new ProseKitError(
-      'Editor context not found. You must call this function inside the ProseKit component',
-    )
+    return null
   }
   return getContext(key)
 }

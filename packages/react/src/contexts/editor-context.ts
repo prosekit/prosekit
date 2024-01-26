@@ -1,7 +1,6 @@
 import type { Editor, Extension } from '@prosekit/core'
 import { createContext, useContext } from 'react'
 
-
 const editorContext = createContext<Editor | null>(null)
 
 /**

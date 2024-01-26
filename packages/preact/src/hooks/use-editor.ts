@@ -45,7 +45,7 @@ export function useEditor<E extends Extension = any>(options?: {
     }
   }, [editor, update, forceUpdate])
 
-  return editor 
+  return editor
 }
 
 function useForceUpdate() {

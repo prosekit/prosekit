@@ -83,7 +83,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.2.6",
-    "@prosekit/lit": "^0.2.0"
+    "@prosekit/lit": "^0.2.1"
   },
   "peerDependencies": {
     "svelte": ">= 3.0.0"
@@ -96,7 +96,7 @@
   "devDependencies": {
     "@prosekit/dev": "*",
     "@sveltejs/package": "^2.2.6",
-    "@types/node": "^20.11.5",
+    "@types/node": "^20.11.7",
     "read-pkg": "^9.0.1",
     "svelte": "^4.2.9",
     "svelte-check": "^3.6.3",

@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.2.6",
-    "@prosekit/lit": "^0.2.0",
+    "@prosekit/lit": "^0.2.1",
     "@prosekit/pm": "^0.1.1",
     "@prosemirror-adapter/core": "^0.2.6"
   },

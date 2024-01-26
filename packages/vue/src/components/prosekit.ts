@@ -9,6 +9,11 @@ export interface ProseKitProps {
   editor: Editor
 }
 
+/**
+ * The root component for a ProseKit editor.
+ *
+ * @public
+ */
 export const ProseKit = defineComponent<ProseKitProps>(
   (props, { slots }) => {
     provideEditor(props.editor)

@@ -4,6 +4,7 @@ import {
   union,
   type Editor,
   type Extension,
+  ProseKitError,
 } from '@prosekit/core'
 import { onDestroy, onMount } from 'svelte'
 import { readonly, writable, type Readable } from 'svelte/store'
@@ -25,7 +26,13 @@ export function useEditor<E extends Extension = any>(options?: {
   update?: boolean
 }): Readable<Editor<E>> {
   const update = options?.update ?? false
-  const editor = getEditorContext().editor as Editor<E>
+  const editor = getEditorContext<E>()
+
+  if (!editor) {
+    throw new ProseKitError(
+      'useEditor must be used within the ProseKit component',
+    )
+  }
 
   const editorStore = writable(editor)
 

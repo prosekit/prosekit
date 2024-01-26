@@ -1,8 +1,17 @@
-import type { Editor } from '@prosekit/core'
-import { createContext } from 'react'
+import type { Editor, Extension } from '@prosekit/core'
+import { createContext, useContext } from 'react'
 
-export interface EditorContext {
-  editor: Editor
+
+const editorContext = createContext<Editor | null>(null)
+
+/**
+ * @internal
+ */
+export function useEditorContext<E extends Extension>(): Editor<E> | null {
+  return useContext(editorContext)
 }
 
-export const editorContext = createContext<EditorContext | null>(null)
+/**
+ * @internal
+ */
+export const EditorContextProvider = editorContext.Provider

@@ -1,14 +1,14 @@
 import {
   Editor,
   ProseKitError,
-  defineUpdateHandler,
-  type Extension,
   defineMountHandler,
+  defineUpdateHandler,
   union,
+  type Extension,
 } from '@prosekit/core'
-import { createEffect, createSignal, useContext } from 'solid-js'
+import { createEffect, createSignal } from 'solid-js'
 
-import { editorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context'
 
 /**
  * Retrieves the editor instance from the nearest ProseKit component.
@@ -26,14 +26,13 @@ export function useEditor<E extends Extension = any>(options?: {
 }): () => Editor<E> {
   const update = options?.update ?? false
 
-  const value = useContext(editorContext)
-  if (!value) {
+  const editor = useEditorContext<E>()
+  if (!editor) {
     throw new ProseKitError(
       'useEditor must be used within the ProseKit component',
     )
   }
 
-  const editor = value.editor as Editor<E>
   const [depend, forceUpdate] = useForceUpdate()
 
   createEffect(() => {

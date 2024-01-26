@@ -1,7 +1,7 @@
 import { Editor } from '@prosekit/core'
 import { defineComponent, h } from 'vue'
 
-import { provideEditor } from '../injection/editor-injection'
+import { provideEditor } from '../injection/editor-context'
 import { VueViewsProvider } from '../views'
 import { VueViewsConsumer } from '../views/vue-views-comsumer'
 

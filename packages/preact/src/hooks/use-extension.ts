@@ -1,18 +1,39 @@
-import { type Extension } from '@prosekit/core'
+import { Editor, ProseKitError, type Extension } from '@prosekit/core'
 import { useEffect } from 'preact/hooks'
 
-import { useEditor } from './use-editor'
+import { useEditorContext } from '../contexts/editor-context'
 
 /**
  * Add an extension to the editor.
- *
- * It accepts an optional extension. If the extension is changed, the previous
- * extension will be removed and the new one (if not null) will be added.
  */
-export function useExtension<T extends Extension = Extension>(
-  extension: T | null,
+export function useExtension(
+  /**
+   * The extension to add to the editor. If it changes, the previous
+   * extension will be removed and the new one (if not null) will be added.
+   */
+  extension: Extension | null,
+  options?: {
+    /**
+     * The editor to add the extension to. If not provided, it will use the
+     * editor from the nearest `ProseKit` component.
+     */
+    editor?: Editor
+  },
 ) {
-  const editor = useEditor()
+  const editorContext = useEditorContext()
+  useEditorExtension(options?.editor || editorContext, extension)
+}
+
+function useEditorExtension(
+  editor: Editor | null | undefined,
+  extension: Extension | null,
+) {
+  if (!editor) {
+    throw new ProseKitError(
+      'Unable to find editor. Pass it as an argument or call this function inside a ProseKit component.',
+    )
+  }
+
   useEffect(() => {
     if (extension) {
       return editor.use(extension)

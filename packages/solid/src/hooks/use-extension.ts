@@ -1,34 +1,44 @@
-import { type Extension } from '@prosekit/core'
-import { type Accessor, createEffect, onCleanup } from 'solid-js'
+import { Editor, ProseKitError, type Extension } from '@prosekit/core'
+import { createEffect, onCleanup, type Accessor } from 'solid-js'
 
-import { useEditor } from './use-editor'
+import { useEditorContext } from '../contexts/editor-context'
 
 /**
  * Add an extension to the editor.
- *
- * It accepts an accessor to an optional extension. If the extension is changed,
- * the previous extension will be removed and the new one (if not null) will be
- * added.
  */
-export function useExtension<T extends Extension = Extension>(
-  extension: (T | null) | (() => T | null),
+export function useExtension(
+  /**
+   * The accessor to an extension to add to the editor. If it changes, the previous
+   * extension will be removed and the new one (if not null) will be added.
+   */
+  extension: () => Extension | null,
+  options?: {
+    /**
+     * The editor to add the extension to. If not provided, it will use the
+     * editor from the nearest `ProseKit` component.
+     */
+    editor?: Editor
+  },
 ): void {
-  if (typeof extension !== 'function') {
-    console.warn(
-      'useExtension should accept a function that returns an extension or null',
+  const editorContext = useEditorContext()
+  const extensionAccessor: Accessor<Extension | null> = extension
+  useEditorExtension(options?.editor || editorContext, extensionAccessor)
+}
+
+function useEditorExtension(
+  editor: Editor | null | undefined,
+  extensionAccessor: Accessor<Extension | null>,
+) {
+  if (!editor) {
+    throw new ProseKitError(
+      'Unable to find editor. Pass it as an argument or call this function inside a ProseKit component.',
     )
-
-    return useExtension(() => extension)
   }
-
-  const extensionAccessor: Accessor<T | null> = extension
-
-  const editor = useEditor()
 
   createEffect(() => {
     const extension = extensionAccessor()
     if (extension) {
-      onCleanup(editor().use(extension))
+      onCleanup(editor.use(extension))
     }
   })
 }

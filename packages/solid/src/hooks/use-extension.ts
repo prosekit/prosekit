@@ -29,8 +29,10 @@ function useEditorExtension(
   editorAccessor: MaybeAccessor<Editor> | undefined | null,
   extensionAccessor: Accessor<Extension | null>,
 ) {
+  const editorContext = useEditorContext()
+
   createEffect(() => {
-    const editor = toValue(editorAccessor) || useEditorContext()
+    const editor = toValue(editorAccessor) || toValue(editorContext)
     const extension = extensionAccessor()
 
     if (!editor) {

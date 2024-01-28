@@ -9,7 +9,7 @@ import {
 import { onDestroy, onMount } from 'svelte'
 import { readonly, writable, type Readable } from 'svelte/store'
 
-import { getEditorContext } from '../contexts/editor-context'
+import { useEditorContext } from '../contexts/editor-context'
 
 /**
  * Retrieves the editor instance from the nearest ProseKit component.
@@ -26,7 +26,7 @@ export function useEditor<E extends Extension = any>(options?: {
   update?: boolean
 }): Readable<Editor<E>> {
   const update = options?.update ?? false
-  const editor = getEditorContext<E>()
+  const editor = useEditorContext<E>()
 
   if (!editor) {
     throw new ProseKitError(

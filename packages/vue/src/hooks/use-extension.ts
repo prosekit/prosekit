@@ -29,14 +29,15 @@ function useEditorExtension(
   editorRef: MaybeRefOrGetter<Editor> | null | undefined,
   extensionRef: MaybeRefOrGetter<Extension | null> | null,
 ) {
+  const editorContext = useEditorContext()
+
   watchPostEffect((onCleanup) => {
-    const editor = toValue(editorRef) || toValue(useEditorContext())
+    const editor = toValue(editorRef) || toValue(editorContext)
     const extension = toValue(extensionRef)
 
     if (!editor) {
       throw new EditorNotFoundError()
     }
-
     if (extension) {
       onCleanup(editor.use(extension))
     }

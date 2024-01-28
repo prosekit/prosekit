@@ -13,5 +13,5 @@ export function toValue<T extends MaybeAccessor<any>>(
   v: T,
 ): MaybeAccessorValue<T> {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return typeof v === 'function' && v.length === 0 ? v() : null
+  return typeof v === 'function' && v.length === 0 ? v() : v
 }

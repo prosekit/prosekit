@@ -8,7 +8,7 @@ export { toggleNode } from './commands/toggle-node'
 export { Editor, createEditor, type EditorOptions } from './editor/editor'
 export { union } from './editor/union'
 export { withPriority } from './editor/with-priority'
-export { ProseKitError } from './error'
+export { ProseKitError, EditorNotFoundError } from './error'
 export { defineBaseCommands, defineCommands } from './extensions/command'
 export {
   defineDefaultState,

@@ -11,7 +11,6 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 ::: code-group
 
 <<< @/../playground/examples/react-save-and-restore/editor.tsx
-<<< @/../playground/examples/react-save-and-restore/event-handlers.tsx
 
 :::
 
@@ -22,7 +21,6 @@ import { ExamplePreview } from '@/components/example-preview/example-preview.tsx
 ::: code-group
 
 <<< @/../playground/examples/vue-save-and-restore/editor.vue
-<<< @/../playground/examples/vue-save-and-restore/event-handlers.vue
 
 :::
 

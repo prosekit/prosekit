@@ -230,10 +230,6 @@ export const exampleMeta = {
         {
           "path": "editor.tsx",
           "hidden": false
-        },
-        {
-          "path": "event-handlers.tsx",
-          "hidden": false
         }
       ]
     },
@@ -729,10 +725,6 @@ export const exampleMeta = {
       "files": [
         {
           "path": "editor.vue",
-          "hidden": false
-        },
-        {
-          "path": "event-handlers.vue",
           "hidden": false
         }
       ]

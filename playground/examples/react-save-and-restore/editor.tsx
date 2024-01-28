@@ -9,7 +9,6 @@ import {
 import { ProseKit, useExtension } from 'prosekit/react'
 import { useCallback, useMemo, useState } from 'react'
 
-
 export default function Editor() {
   const [key, setKey] = useState(1)
   const [defaultDoc, setDefaultDoc] = useState<string | undefined>()

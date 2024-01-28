@@ -1,5 +1,6 @@
 import { defineUpdateHandler } from '@prosekit/core'
 import type { EditorState } from '@prosekit/pm/state'
+import { readable } from 'svelte/store'
 
 import { useExtension, type UseExtensionOptions } from './use-extension'
 
@@ -13,5 +14,5 @@ export function useStateUpdate(
   options?: UseExtensionOptions,
 ) {
   const extension = defineUpdateHandler((view) => handler(view.state))
-  return useExtension(extension, options)
+  return useExtension(readable(extension), options)
 }

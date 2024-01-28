@@ -1,7 +1,6 @@
 import { Priority, withPriority, type Extension } from '@prosekit/core'
 import { derived, type Readable } from 'svelte/store'
 
-
 /**
  * @internal
  */

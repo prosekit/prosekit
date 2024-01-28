@@ -11,8 +11,6 @@ export interface UseExtensionOptions {
    */
   editor?: Editor
 
-
-
   /**
    * Optional priority to add the extension with.
    */
@@ -30,5 +28,8 @@ export function useExtension<T extends Extension = Extension>(
   extension: Readable<T | null>,
   options?: UseExtensionOptions,
 ): void {
-  useEditorExtension(options?.editor, usePriorityExtension(extension, options?.priority))
+  useEditorExtension(
+    options?.editor,
+    usePriorityExtension(extension, options?.priority),
+  )
 }

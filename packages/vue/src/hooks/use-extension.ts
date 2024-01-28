@@ -3,6 +3,14 @@ import { type MaybeRefOrGetter } from 'vue'
 
 import { useEditorExtension } from './use-editor-extension'
 
+export interface UseExtensionOptions {
+  /**
+   * The editor to add the extension to. If not provided, it will use the
+   * editor from the nearest `ProseKit` component.
+   */
+  editor?: MaybeRefOrGetter<Editor>
+}
+
 /**
  * Add an extension to the editor.
  *
@@ -14,13 +22,7 @@ export function useExtension(
    * extension will be removed and the new one (if not null) will be added.
    */
   extension: MaybeRefOrGetter<Extension | null>,
-  options?: {
-    /**
-     * The editor to add the extension to. If not provided, it will use the
-     * editor from the nearest `ProseKit` component.
-     */
-    editor?: MaybeRefOrGetter<Editor>
-  },
+  options?: UseExtensionOptions,
 ) {
   useEditorExtension(options?.editor, extension)
 }

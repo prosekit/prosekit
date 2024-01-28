@@ -1,8 +1,7 @@
-import { Editor, EditorNotFoundError, type Extension } from '@prosekit/core'
-import { onDestroy } from 'svelte'
+import { Editor, type Extension } from '@prosekit/core'
 import { type Readable } from 'svelte/store'
 
-import { useEditorContext } from '../contexts/editor-context'
+import { useEditorExtension } from './use-editor-extension'
 
 /**
  * Add an extension to the editor.
@@ -22,33 +21,4 @@ export function useExtension<T extends Extension = Extension>(
   },
 ): void {
   useEditorExtension(options?.editor, extensionStore)
-}
-
-function useEditorExtension(
-  maybeEditor: Editor | null | undefined,
-  extensionStore: Readable<Extension | null>,
-) {
-  const editorContext = useEditorContext()
-
-  let cleanup: VoidFunction | undefined
-
-  const unsubscribe = extensionStore.subscribe((extension) => {
-    cleanup?.()
-    cleanup = undefined
-
-    const editor = maybeEditor || editorContext
-
-    if (!editor) {
-      throw new EditorNotFoundError()
-    }
-    if (extension) {
-      cleanup = editor.use(extension)
-    }
-  })
-
-  onDestroy(() => {
-    cleanup?.()
-    cleanup = undefined
-    unsubscribe()
-  })
 }

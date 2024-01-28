@@ -1,7 +1,8 @@
-import { Editor, EditorNotFoundError, type Extension } from '@prosekit/core'
-import { useEffect } from 'preact/hooks'
+import { Editor, type Extension } from '@prosekit/core'
 
 import { useEditorContext } from '../contexts/editor-context'
+
+import { useEditorExtension } from './use-editor-extension'
 
 /**
  * Add an extension to the editor.
@@ -22,19 +23,4 @@ export function useExtension(
 ) {
   const editorContext = useEditorContext()
   useEditorExtension(options?.editor || editorContext, extension)
-}
-
-function useEditorExtension(
-  editor: Editor | null | undefined,
-  extension: Extension | null,
-) {
-  if (!editor) {
-    throw new EditorNotFoundError()
-  }
-
-  useEffect(() => {
-    if (extension) {
-      return editor.use(extension)
-    }
-  }, [editor, extension])
 }

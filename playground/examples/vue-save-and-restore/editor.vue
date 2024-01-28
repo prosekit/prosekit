@@ -23,7 +23,7 @@ const editor = computed(() => {
   })
 })
 const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect(() => editor.mount(editorRef.value))
+watchPostEffect(() => editor.value.mount(editorRef.value))
 
 const onDocChange = () => {
   hasUnsavedChange.value = true

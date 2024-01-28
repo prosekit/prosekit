@@ -1,8 +1,9 @@
-import { Editor, type Extension } from '@prosekit/core'
+import { Editor, Priority, type Extension } from '@prosekit/core'
 
 import { useEditorContext } from '../contexts/editor-context'
 
 import { useEditorExtension } from './use-editor-extension'
+import { usePriorityExtension } from './use-priority-extension'
 
 export  interface UseExtensionOptions {
   /**
@@ -10,6 +11,12 @@ export  interface UseExtensionOptions {
    * editor from the nearest `ProseKit` component.
    */
   editor?: Editor
+
+
+  /**
+   * Optional priority to add the extension with.
+   */
+  priority?: Priority
 }
 
 /**
@@ -24,5 +31,5 @@ export function useExtension(
   options?: UseExtensionOptions,
 ) {
   const editorContext = useEditorContext()
-  useEditorExtension(options?.editor || editorContext, extension)
+  useEditorExtension(options?.editor || editorContext, usePriorityExtension(extension, options?.priority))
 }

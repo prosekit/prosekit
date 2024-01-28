@@ -1,9 +1,10 @@
-import { Editor, type Extension } from '@prosekit/core'
+import { Editor, Priority, type Extension } from '@prosekit/core'
 import { type Accessor } from 'solid-js'
 
 import type { MaybeAccessor } from '../types'
 
 import { useEditorExtension } from './use-editor-extension'
+import { usePriorityExtension } from './use-priority-extension'
 
 export interface UseExtensionOptions {
   /**
@@ -11,6 +12,11 @@ export interface UseExtensionOptions {
    * editor from the nearest `ProseKit` component.
    */
   editor?: MaybeAccessor<Editor>
+
+  /**
+   * Optional priority to add the extension with.
+   */
+  priority?: Priority
 }
 
 /**
@@ -24,5 +30,8 @@ export function useExtension(
   extension: Accessor<Extension | null>,
   options?: UseExtensionOptions,
 ): void {
-  useEditorExtension(options?.editor, extension)
+  useEditorExtension(
+    options?.editor,
+    usePriorityExtension(extension, options?.priority),
+  )
 }

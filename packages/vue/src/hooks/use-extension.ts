@@ -1,7 +1,8 @@
-import { Editor, type Extension } from '@prosekit/core'
+import { Editor, Priority, type Extension } from '@prosekit/core'
 import { type MaybeRefOrGetter } from 'vue'
 
 import { useEditorExtension } from './use-editor-extension'
+import { usePriorityExtension } from './use-priority-extension'
 
 export interface UseExtensionOptions {
   /**
@@ -9,6 +10,11 @@ export interface UseExtensionOptions {
    * editor from the nearest `ProseKit` component.
    */
   editor?: MaybeRefOrGetter<Editor>
+
+  /**
+   * Optional priority to add the extension with.
+   */
+  priority?: Priority
 }
 
 /**
@@ -24,5 +30,8 @@ export function useExtension(
   extension: MaybeRefOrGetter<Extension | null>,
   options?: UseExtensionOptions,
 ) {
-  useEditorExtension(options?.editor, extension)
+  useEditorExtension(
+    options?.editor,
+    usePriorityExtension(extension, options?.priority),
+  )
 }

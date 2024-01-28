@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.3.3
+
+### Patch Changes
+
+- [`9c62b10`](https://github.com/ocavue/prosekit/commit/9c62b1060f4bf8b2263e71048258373d6869da63) ![][badge-preact] ![][badge-svelte] ![][badge-react] ![][badge-solid] ![][badge-vue]
+
+  Add `useStateUpdate`.
+
 ## 0.3.2
 
 ### Patch Changes

@@ -1,8 +1,8 @@
-import { Editor, ProseKitError, type Extension } from '@prosekit/core'
+import { Editor, EditorNotFoundError, type Extension } from '@prosekit/core'
 import { createEffect, onCleanup, type Accessor } from 'solid-js'
 
-import type { MaybeAccessor } from '..'
 import { useEditorContext } from '../contexts/editor-context'
+import type { MaybeAccessor } from '../types'
 import { toValue } from '../utils/to-value'
 
 /**
@@ -34,9 +34,7 @@ function useEditorExtension(
     const extension = extensionAccessor()
 
     if (!editor) {
-      throw new ProseKitError(
-        'Unable to find editor. Pass it as an argument or call this function inside a ProseKit component.',
-      )
+      throw new EditorNotFoundError()
     }
     if (extension) {
       onCleanup(editor.use(extension))

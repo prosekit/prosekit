@@ -1,4 +1,4 @@
-import { Editor, ProseKitError, type Extension } from '@prosekit/core'
+import { Editor, EditorNotFoundError, type Extension } from '@prosekit/core'
 import { useEffect } from 'preact/hooks'
 
 import { useEditorContext } from '../contexts/editor-context'
@@ -29,9 +29,7 @@ function useEditorExtension(
   extension: Extension | null,
 ) {
   if (!editor) {
-    throw new ProseKitError(
-      'Unable to find editor. Pass it as an argument or call this function inside a ProseKit component.',
-    )
+    throw new EditorNotFoundError()
   }
 
   useEffect(() => {

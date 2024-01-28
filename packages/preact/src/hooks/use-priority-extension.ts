@@ -1,14 +1,15 @@
 import { withPriority, type Extension, type Priority } from '@prosekit/core'
 import { useMemo } from 'preact/hooks'
 
-import { useExtension } from './use-extension'
 
+/**
+ * @internal
+ */
 export function usePriorityExtension<T extends Extension = Extension>(
   extension: T | null,
   priority?: Priority | null,
 ) {
-  const extensionWithPriority = useMemo(() => {
+  return useMemo(() => {
     return extension && priority ? withPriority(extension, priority) : extension
   }, [extension, priority])
-  return useExtension(extensionWithPriority)
 }

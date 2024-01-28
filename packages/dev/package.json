@@ -27,8 +27,8 @@
     "load-json-file": "^7.0.1",
     "lodash-es": "^4.17.21",
     "path-exists": "^5.0.0",
-    "read-pkg": "^9.0.1",
     "read-package-up": "^11.0.0",
+    "read-pkg": "^9.0.1",
     "tsup": "^8.0.1",
     "write-pkg": "^6.0.1"
   },

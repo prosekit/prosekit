@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.3.2
+
+### Patch Changes
+
+- [`8434456`](https://github.com/ocavue/prosekit/commit/8434456fed17638baf09b5a7bcdb733995efbf05) ![][badge-preact] ![][badge-svelte] ![][badge-react] ![][badge-solid] ![][badge-vue]
+
+  `useExtension` and `useKeymap` now accept an optional options object.
+
+- [`8434456`](https://github.com/ocavue/prosekit/commit/8434456fed17638baf09b5a7bcdb733995efbf05) ![][badge-core]
+
+  Export internal `EditorNotFoundError`.
+
 ## 0.3.1
 
 ### Patch Changes

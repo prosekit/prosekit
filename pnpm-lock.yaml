@@ -324,7 +324,7 @@ importers:
   packages/preact:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.6
+        specifier: ^0.2.7
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.2.1
@@ -352,7 +352,7 @@ importers:
         specifier: 0.2.5
         version: link:../basic
       '@prosekit/core':
-        specifier: 0.2.6
+        specifier: 0.2.7
         version: link:../core
       '@prosekit/extensions':
         specifier: 0.2.5
@@ -364,19 +364,19 @@ importers:
         specifier: 0.1.1
         version: link:../pm
       '@prosekit/preact':
-        specifier: 0.2.0
+        specifier: 0.2.1
         version: link:../preact
       '@prosekit/react':
-        specifier: 0.2.0
+        specifier: 0.2.1
         version: link:../react
       '@prosekit/solid':
-        specifier: 0.2.0
+        specifier: 0.2.1
         version: link:../solid
       '@prosekit/svelte':
-        specifier: 0.2.0
+        specifier: 0.2.1
         version: link:../svelte
       '@prosekit/vue':
-        specifier: 0.2.0
+        specifier: 0.2.1
         version: link:../vue
     devDependencies:
       '@prosekit/dev':
@@ -428,7 +428,7 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(@types/react@18.2.48)
       '@prosekit/core':
-        specifier: ^0.2.6
+        specifier: ^0.2.7
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.2.1
@@ -468,7 +468,7 @@ importers:
   packages/solid:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.6
+        specifier: ^0.2.7
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.2.1
@@ -493,7 +493,7 @@ importers:
   packages/svelte:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.6
+        specifier: ^0.2.7
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.2.1
@@ -530,7 +530,7 @@ importers:
   packages/vue:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.2.6
+        specifier: ^0.2.7
         version: link:../core
       '@prosekit/lit':
         specifier: ^0.2.1
@@ -603,7 +603,7 @@ importers:
         specifier: ^10.19.3
         version: 10.19.3
       prosekit:
-        specifier: ^0.3.1
+        specifier: ^0.3.2
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -666,7 +666,7 @@ importers:
         specifier: ^3.2.4
         version: 3.2.4
       prosekit:
-        specifier: ^0.3.1
+        specifier: ^0.3.2
         version: link:../packages/prosekit
       prosekit-playground:
         specifier: '*'

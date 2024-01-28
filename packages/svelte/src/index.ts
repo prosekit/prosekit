@@ -1,5 +1,5 @@
 export { ProseKit } from './components/prosekit'
 export { useEditor } from './hooks/use-editor'
-export { useExtension } from './hooks/use-extension'
+export { useExtension, type UseExtensionOptions } from './hooks/use-extension'
 export { useKeymap } from './hooks/use-keymap'
 export type { PropsWithClass } from './types'

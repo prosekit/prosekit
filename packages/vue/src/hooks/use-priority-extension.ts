@@ -1,15 +1,15 @@
 import { Priority, withPriority, type Extension } from '@prosekit/core'
-import { computed, unref, type Ref } from 'vue'
+import { computed, toValue, type MaybeRefOrGetter } from 'vue'
 
-import { useExtension } from './use-extension'
-
+/**
+ * @internal
+ */
 export function usePriorityExtension<T extends Extension = Extension>(
-  extension: Ref<T | null>,
-  priority?: Priority | null,
+  extension: MaybeRefOrGetter<T | null>,
+  priority: Priority | null | undefined,
 ) {
-  const extensionWithPriority = computed(() => {
-    const ext = unref(extension)
+  return computed(() => {
+    const ext = toValue(extension)
     return ext && priority ? withPriority(ext, priority) : ext
   })
-  return useExtension(extensionWithPriority)
 }

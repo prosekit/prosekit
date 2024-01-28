@@ -1,22 +1,37 @@
-import { type Extension } from '@prosekit/core'
-import { useEffect } from 'react'
+import { Editor, Priority, type Extension } from '@prosekit/core'
 
-import { useEditor } from './use-editor'
+import { useEditorContext } from '../contexts/editor-context'
+
+import { useEditorExtension } from './use-editor-extension'
+import { usePriorityExtension } from './use-priority-extension'
+
+export interface UseExtensionOptions {
+  /**
+   * The editor to add the extension to. If not provided, it will use the
+   * editor from the nearest `ProseKit` component.
+   */
+  editor?: Editor
+
+  /**
+   * Optional priority to add the extension with.
+   */
+  priority?: Priority
+}
 
 /**
  * Add an extension to the editor.
- *
- * It accepts an optional extension. If the extension is changed, the previous
- * extension will be removed and the new one (if not null) will be added.
  */
-export function useExtension<T extends Extension = Extension>(
-  extension: T | null,
+export function useExtension(
+  /**
+   * The extension to add to the editor. If it changes, the previous
+   * extension will be removed and the new one (if not null) will be added.
+   */
+  extension: Extension | null,
+  options?: UseExtensionOptions,
 ) {
-  const editor = useEditor()
-
-  useEffect(() => {
-    if (extension) {
-      return editor.use(extension)
-    }
-  }, [editor, extension])
+  const editorContext = useEditorContext()
+  useEditorExtension(
+    options?.editor || editorContext,
+    usePriorityExtension(extension, options?.priority),
+  )
 }

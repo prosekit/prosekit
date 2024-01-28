@@ -1,5 +1,5 @@
 import { Editor, type Extension } from '@prosekit/core'
-import { inject, provide } from 'vue'
+import { inject, provide, toRef } from 'vue'
 
 const symbol = Symbol('prosekit-vue-editor-context')
 
@@ -7,7 +7,7 @@ const symbol = Symbol('prosekit-vue-editor-context')
  * @internal
  */
 export function provideEditor(editor: Editor): void {
-  provide(symbol, editor)
+  provide(symbol, toRef(editor))
 }
 
 /**

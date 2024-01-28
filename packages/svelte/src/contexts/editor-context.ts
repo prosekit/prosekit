@@ -16,7 +16,7 @@ export function setEditorContext(editor: Editor): void {
 /**
  * @internal
  */
-export function getEditorContext<E extends Extension>(): Editor<E> | null {
+export function useEditorContext<E extends Extension>(): Editor<E> | null {
   if (!hasContext(key)) {
     return null
   }

@@ -2,11 +2,13 @@
 import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import { createEditor, jsonFromNode } from 'prosekit/core'
-import { ProseKit } from 'prosekit/vue'
+import {
+  createEditor,
+  defineDocChangeHandler,
+  jsonFromNode,
+} from 'prosekit/core'
+import { ProseKit, useExtension } from 'prosekit/vue'
 import { computed, ref, watchPostEffect } from 'vue'
-
-import EventHandlers from './event-handlers.vue'
 
 const key = ref(1)
 const defaultDoc = ref<string | undefined>()
@@ -26,6 +28,8 @@ watchPostEffect(() => editor.value.mount(editorRef.value))
 const onDocChange = () => {
   hasUnsavedChange.value = true
 }
+const docChangeExtension = defineDocChangeHandler(onDocChange)
+useExtension(docChangeExtension, { editor })
 
 const onSave = () => {
   const doc = JSON.stringify(jsonFromNode(editor.value.view.state.doc))
@@ -73,7 +77,5 @@ const onLoad = (record: string) => {
     <div class="EDITOR_VIEWPORT">
       <div ref="editorRef" class="EDITOR_CONTENT"></div>
     </div>
-
-    <EventHandlers :onDocChange="onDocChange" />
   </ProseKit>
 </template>

@@ -1,34 +1,37 @@
-import { type Extension } from '@prosekit/core'
-import { type Accessor, createEffect, onCleanup } from 'solid-js'
+import { Editor, Priority, type Extension } from '@prosekit/core'
+import { type Accessor } from 'solid-js'
 
-import { useEditor } from './use-editor'
+import type { MaybeAccessor } from '../types'
+
+import { useEditorExtension } from './use-editor-extension'
+import { usePriorityExtension } from './use-priority-extension'
+
+export interface UseExtensionOptions {
+  /**
+   * The editor to add the extension to. If not provided, it will use the
+   * editor from the nearest `ProseKit` component.
+   */
+  editor?: MaybeAccessor<Editor>
+
+  /**
+   * Optional priority to add the extension with.
+   */
+  priority?: Priority
+}
 
 /**
  * Add an extension to the editor.
- *
- * It accepts an accessor to an optional extension. If the extension is changed,
- * the previous extension will be removed and the new one (if not null) will be
- * added.
  */
-export function useExtension<T extends Extension = Extension>(
-  extension: (T | null) | (() => T | null),
+export function useExtension(
+  /**
+   * The accessor to an extension to add to the editor. If it changes, the previous
+   * extension will be removed and the new one (if not null) will be added.
+   */
+  extension: Accessor<Extension | null>,
+  options?: UseExtensionOptions,
 ): void {
-  if (typeof extension !== 'function') {
-    console.warn(
-      'useExtension should accept a function that returns an extension or null',
-    )
-
-    return useExtension(() => extension)
-  }
-
-  const extensionAccessor: Accessor<T | null> = extension
-
-  const editor = useEditor()
-
-  createEffect(() => {
-    const extension = extensionAccessor()
-    if (extension) {
-      onCleanup(editor().use(extension))
-    }
-  })
+  useEditorExtension(
+    options?.editor,
+    usePriorityExtension(extension, options?.priority),
+  )
 }

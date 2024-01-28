@@ -1,12 +1,12 @@
-import { Priority, defineKeymap, type Keymap } from '@prosekit/core'
-import { computed, unref, type Ref } from 'vue'
+import { defineKeymap, type Keymap } from '@prosekit/core'
+import { computed, toValue, type MaybeRefOrGetter } from 'vue'
 
-import { usePriorityExtension } from './use-priority-extension'
+import { useExtension, type UseExtensionOptions } from './use-extension'
 
 export function useKeymap(
-  keymap: Ref<Keymap>,
-  options?: { priority?: Priority },
+  keymap: MaybeRefOrGetter<Keymap>,
+  options?: UseExtensionOptions,
 ) {
-  const extension = computed(() => defineKeymap(unref(keymap)))
-  usePriorityExtension(extension, options?.priority)
+  const extension = computed(() => defineKeymap(toValue(keymap)))
+  return useExtension(extension, options)
 }

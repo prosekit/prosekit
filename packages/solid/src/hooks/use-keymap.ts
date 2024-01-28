@@ -1,18 +1,8 @@
-import { Priority, defineKeymap, type Keymap } from '@prosekit/core'
+import { defineKeymap, type Keymap } from '@prosekit/core'
 
-import { usePriorityExtension } from './use-priority-extension'
+import { useExtension, type UseExtensionOptions } from './use-extension'
 
-export function useKeymap(
-  keymap: Keymap | (() => Keymap),
-  options?: { priority?: Priority },
-) {
-  if (typeof keymap !== 'function') {
-    console.warn(
-      'useKeymap should accept a function that returns a keymap object',
-    )
-
-    return useKeymap(() => keymap)
-  }
-
-  return usePriorityExtension(() => defineKeymap(keymap()), options?.priority)
+export function useKeymap(keymap: () => Keymap, options?: UseExtensionOptions) {
+  const extension = () => defineKeymap(keymap())
+  return useExtension(extension, options)
 }

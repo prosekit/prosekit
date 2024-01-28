@@ -1,12 +1,12 @@
-import { Priority, defineKeymap, type Keymap } from '@prosekit/core'
+import { defineKeymap, type Keymap } from '@prosekit/core'
 import { derived, type Readable } from 'svelte/store'
 
-import { usePriorityExtension } from './use-priority-extension'
+import { useExtension, type UseExtensionOptions } from './use-extension'
 
 export function useKeymap(
   keymapStore: Readable<Keymap>,
-  options?: { priority?: Priority },
+  options?: UseExtensionOptions,
 ): void {
   const extension = derived(keymapStore, (keymap) => defineKeymap(keymap))
-  usePriorityExtension(extension, options?.priority)
+  return useExtension(extension, options)
 }

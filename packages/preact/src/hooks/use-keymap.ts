@@ -1,9 +1,9 @@
-import { Priority, defineKeymap, type Keymap } from '@prosekit/core'
+import { defineKeymap, type Keymap } from '@prosekit/core'
 import { useMemo } from 'preact/hooks'
 
-import { usePriorityExtension } from './use-priority-extension'
+import { useExtension, type UseExtensionOptions } from './use-extension'
 
-export function useKeymap(keymap: Keymap, options?: { priority?: Priority }) {
+export function useKeymap(keymap: Keymap, options?: UseExtensionOptions) {
   const extension = useMemo(() => defineKeymap(keymap), [keymap])
-  usePriorityExtension(extension, options?.priority)
+  return useExtension(extension, options)
 }

@@ -1,11 +1,14 @@
 import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import { createEditor, jsonFromNode } from 'prosekit/core'
-import { ProseKit } from 'prosekit/react'
+import {
+  createEditor,
+  defineDocChangeHandler,
+  jsonFromNode,
+} from 'prosekit/core'
+import { ProseKit, useExtension } from 'prosekit/react'
 import { useCallback, useMemo, useState } from 'react'
 
-import EventHandlers from './event-handlers'
 
 export default function Editor() {
   const [key, setKey] = useState(1)
@@ -21,9 +24,11 @@ export default function Editor() {
     })
   }, [key, defaultDoc])
 
-  const onDocChange = useCallback(() => {
-    setHasUnsavedChange(true)
+  const docChangeExtension = useMemo(() => {
+    const onDocChange = () => setHasUnsavedChange(true)
+    return defineDocChangeHandler(onDocChange)
   }, [])
+  useExtension(docChangeExtension, { editor })
 
   const onSave = useCallback(() => {
     const doc = JSON.stringify(jsonFromNode(editor.view.state.doc))
@@ -70,8 +75,6 @@ export default function Editor() {
       <div className="EDITOR_VIEWPORT">
         <div ref={editor.mount} className="EDITOR_CONTENT"></div>
       </div>
-
-      <EventHandlers onDocChange={onDocChange} />
     </ProseKit>
   )
 }

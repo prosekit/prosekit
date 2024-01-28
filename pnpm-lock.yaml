@@ -329,6 +329,9 @@ importers:
       '@prosekit/lit':
         specifier: ^0.2.1
         version: link:../lit
+      '@prosekit/pm':
+        specifier: ^0.1.1
+        version: link:../pm
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -473,6 +476,9 @@ importers:
       '@prosekit/lit':
         specifier: ^0.2.1
         version: link:../lit
+      '@prosekit/pm':
+        specifier: ^0.1.1
+        version: link:../pm
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -498,6 +504,9 @@ importers:
       '@prosekit/lit':
         specifier: ^0.2.1
         version: link:../lit
+      '@prosekit/pm':
+        specifier: ^0.1.1
+        version: link:../pm
     devDependencies:
       '@prosekit/dev':
         specifier: '*'

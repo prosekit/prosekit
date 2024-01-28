@@ -48,7 +48,8 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.2.7",
-    "@prosekit/lit": "^0.2.1"
+    "@prosekit/lit": "^0.2.1",
+    "@prosekit/pm": "^0.1.1"
   },
   "peerDependencies": {
     "solid-js": ">= 1.7.0"

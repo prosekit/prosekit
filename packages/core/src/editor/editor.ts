@@ -306,7 +306,11 @@ export class Editor<E extends Extension = any> {
     return this.instance.view?.hasFocus() ?? false
   }
 
-  mount(place: HTMLElement | null | undefined | void): void {
+  /**
+   * Mount the editor to the given HTML element.
+   * Pass `null` or `undefined` to unmount the editor.
+   */
+  mount(place: HTMLElement | null | undefined): void {
     if (!place) {
       return this.unmount()
     }
@@ -314,6 +318,9 @@ export class Editor<E extends Extension = any> {
     this.afterMounted.forEach((callback) => callback())
   }
 
+  /**
+   * Unmount the editor. This is equivalent to `mount(null)`.
+   */
   unmount(): void {
     if (this.mounted) {
       this.instance.unmount()

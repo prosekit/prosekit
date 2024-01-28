@@ -11,7 +11,7 @@ const editor = createEditor({ extension })
 
 let place: HTMLDivElement
 onMount(() => editor.mount(place))
-onDestroy(() => editor.unmount())
+onDestroy(() => editor.mount(null))
 </script>
 
 <ProseKit {editor}>

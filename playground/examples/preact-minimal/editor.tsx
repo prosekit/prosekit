@@ -14,7 +14,7 @@ export default function Editor() {
   return (
     <ProseKit editor={editor}>
       <div className="EDITOR_VIEWPORT">
-        <div className="EDITOR_CONTENT" ref={editor.mount}></div>
+        <div ref={editor.mount} className="EDITOR_CONTENT"></div>
       </div>
     </ProseKit>
   )

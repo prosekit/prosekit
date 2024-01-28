@@ -19,6 +19,8 @@ import { defineStrike } from '@prosekit/extensions/strike'
 import { defineUnderline } from '@prosekit/extensions/underline'
 
 /**
+ * A basic extension that includes some common functionality. You can copy this
+ * function and customize it to your needs.
  * @public
  */
 export function defineBasicExtension() {

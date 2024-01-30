@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.3.4
+
+### Patch Changes
+
+- [`03a6ce8`](https://github.com/ocavue/prosekit/commit/03a6ce8cc6be99f70240d25b1688953ccb595cf1) ![][badge-preact] ![][badge-svelte] ![][badge-react] ![][badge-solid] ![][badge-vue]
+
+  Add `useDocChange`.
+
 ## 0.3.3
 
 ### Patch Changes

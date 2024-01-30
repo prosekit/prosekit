@@ -47,15 +47,15 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@floating-ui/dom": "^1.6.0",
+    "@floating-ui/dom": "^1.6.1",
     "@lit/context": "^1.1.0",
-    "@prosekit/core": "^0.2.6",
+    "@prosekit/core": "^0.2.7",
     "@prosekit/extensions": "^0.2.5",
     "@prosekit/pm": "^0.1.1",
     "@superhuman/command-score": "^0.5.0",
-    "@zag-js/dismissable": "^0.33.1",
-    "@zag-js/dom-query": "^0.33.1",
-    "@zag-js/utils": "^0.33.1",
+    "@zag-js/dismissable": "^0.34.0",
+    "@zag-js/dom-query": "^0.34.0",
+    "@zag-js/utils": "^0.34.0",
     "lit": "^3.1.1"
   },
   "devDependencies": {
@@ -63,7 +63,7 @@
     "minify-literals": "^1.0.8",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
-    "vitest": "^1.2.1"
+    "vitest": "^1.2.2"
   },
   "publishConfig": {
     "exports": {

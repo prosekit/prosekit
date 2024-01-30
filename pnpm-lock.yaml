@@ -367,19 +367,19 @@ importers:
         specifier: 0.1.1
         version: link:../pm
       '@prosekit/preact':
-        specifier: 0.2.2
+        specifier: 0.2.3
         version: link:../preact
       '@prosekit/react':
-        specifier: 0.2.2
+        specifier: 0.2.3
         version: link:../react
       '@prosekit/solid':
-        specifier: 0.2.2
+        specifier: 0.2.3
         version: link:../solid
       '@prosekit/svelte':
-        specifier: 0.2.2
+        specifier: 0.2.3
         version: link:../svelte
       '@prosekit/vue':
-        specifier: 0.2.2
+        specifier: 0.2.3
         version: link:../vue
     devDependencies:
       '@prosekit/dev':
@@ -612,7 +612,7 @@ importers:
         specifier: ^10.19.3
         version: 10.19.3
       prosekit:
-        specifier: ^0.3.3
+        specifier: ^0.3.4
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -675,7 +675,7 @@ importers:
         specifier: ^3.2.4
         version: 3.2.4
       prosekit:
-        specifier: ^0.3.3
+        specifier: ^0.3.4
         version: link:../packages/prosekit
       prosekit-playground:
         specifier: '*'

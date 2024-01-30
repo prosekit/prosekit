@@ -45,7 +45,7 @@ export default defineConfig({
     logo: '/assets/logo.svg',
 
     nav: [
-      { text: 'Guide', link: '/guide/installation' },
+      { text: 'Guide', link: '/guide/introduction' },
       { text: 'API References', link: '/references' },
       { text: 'Examples', link: '/examples' },
       {
@@ -62,10 +62,10 @@ export default defineConfig({
     sidebar: {
       '/guide': [
         {
-          text: 'Getting Started',
+          text: 'Overview',
           items: [
-            { text: 'Installation', link: '/guide/installation' },
-            { text: 'Styling', link: '/guide/styling' },
+            { text: 'Introduction', link: '/guide/introduction' },
+            { text: 'Get Started', link: '/guide/get-started' },
           ],
         },
 

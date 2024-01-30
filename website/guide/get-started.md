@@ -68,7 +68,7 @@ You need to mount the editor to the DOM by calling the `editor.mount(element)` m
 
 ## Data Persistence
 
-The editor's data should be stored in the JSON format, specifically in the [NodeJSON] format. In the given example, the Editor component takes in two properties: `defaultDoc` and `onDocChange`. The `defaultDoc` is the initial document that is displayed when the editor is first loaded. The `onDocChange` is a callback function that is triggered each time the document changes.
+The editor's data should be stored in the JSON format, specifically in the [`NodeJSON`] format. In the given example, the Editor component takes in two properties: `defaultDoc` and `onDocChange`. The `defaultDoc` is the initial document that is displayed when the editor is first loaded. The `onDocChange` is a callback function that is triggered each time the document changes.
 
 ## Styling
 
@@ -88,4 +88,4 @@ The `prosekit/basic/typograph.css` file offers basic typographic styles for the 
 
 <!-- References -->
 
-[NodeJSON]: https://prosekit.dev/references/core#nodejson
+[`NodeJSON`]: https://prosekit.dev/references/core#nodejson

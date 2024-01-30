@@ -2,12 +2,20 @@
 import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import { createEditor } from 'prosekit/core'
-import { ProseKit } from 'prosekit/vue'
+import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
+import { ProseKit, useDocChange } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
 
+const props = defineProps<{
+  defaultDoc?: NodeJSON
+  onDocUpdate?: (doc: NodeJSON) => void
+}>()
+
 const extension = defineBasicExtension()
-const editor = createEditor({ extension })
+const editor = createEditor({ extension, defaultDoc: props.defaultDoc })
+
+useDocChange((doc) => props.onDocUpdate?.(jsonFromNode(doc)), { editor })
+
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect(() => editor.mount(editorRef.value))
 </script>

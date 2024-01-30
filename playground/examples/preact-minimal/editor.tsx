@@ -1,15 +1,25 @@
 import 'prosekit/basic/style.css'
 
-import { useMemo } from 'preact/hooks'
+import { useCallback, useMemo } from 'preact/hooks'
 import { defineBasicExtension } from 'prosekit/basic'
-import { createEditor } from 'prosekit/core'
-import { ProseKit } from 'prosekit/preact'
+import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
+import type { ProseMirrorNode } from 'prosekit/pm/model'
+import { ProseKit, useDocChange } from 'prosekit/preact'
 
-export default function Editor() {
+export default function Editor(props: {
+  defaultDoc?: NodeJSON
+  onDocUpdate?: (doc: NodeJSON) => void
+}) {
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
-    return createEditor({ extension })
+    return createEditor({ extension, defaultDoc: props.defaultDoc })
   }, [])
+
+  const handleDocChange = useCallback(
+    (doc: ProseMirrorNode) => props.onDocUpdate?.(jsonFromNode(doc)),
+    [props.onDocUpdate],
+  )
+  useDocChange(handleDocChange, { editor })
 
   return (
     <ProseKit editor={editor}>

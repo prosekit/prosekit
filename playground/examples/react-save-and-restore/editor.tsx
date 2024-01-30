@@ -1,12 +1,8 @@
 import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  defineDocChangeHandler,
-  jsonFromNode,
-} from 'prosekit/core'
-import { ProseKit, useExtension } from 'prosekit/react'
+import { createEditor, jsonFromNode } from 'prosekit/core'
+import { ProseKit, useDocChange } from 'prosekit/react'
 import { useCallback, useMemo, useState } from 'react'
 
 export default function Editor() {
@@ -23,19 +19,16 @@ export default function Editor() {
     })
   }, [key, defaultDoc])
 
-  const docChangeExtension = useMemo(() => {
-    const onDocChange = () => setHasUnsavedChange(true)
-    return defineDocChangeHandler(onDocChange)
-  }, [])
-  useExtension(docChangeExtension, { editor })
+  const handleDocChange = useCallback(() => setHasUnsavedChange(true), [])
+  useDocChange(handleDocChange, { editor })
 
-  const onSave = useCallback(() => {
+  const handleSave = useCallback(() => {
     const doc = JSON.stringify(jsonFromNode(editor.view.state.doc))
     setRecords((records) => [...records, doc])
     setHasUnsavedChange(false)
   }, [editor])
 
-  const onLoad = useCallback(
+  const handleLoad = useCallback(
     (record: string) => {
       setDefaultDoc(record)
       setKey((key) => key + 1)
@@ -48,7 +41,7 @@ export default function Editor() {
     <ProseKit editor={editor}>
       <div>
         <button
-          onClick={onSave}
+          onClick={handleSave}
           disabled={!hasUnsavedChange}
           className="my-2 border border-solid bg-white p-2 text-black disabled:cursor-not-allowed disabled:text-gray-500"
         >
@@ -59,7 +52,7 @@ export default function Editor() {
             <li key={index} className="my-2 flex gap-2">
               <button
                 className="border border-solid bg-white p-2 text-black disabled:text-gray-500"
-                onClick={() => onLoad(record)}
+                onClick={() => handleLoad(record)}
               >
                 Load
               </button>

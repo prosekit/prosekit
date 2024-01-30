@@ -2,12 +2,8 @@
 import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  defineDocChangeHandler,
-  jsonFromNode,
-} from 'prosekit/core'
-import { ProseKit, useExtension } from 'prosekit/vue'
+import { createEditor, jsonFromNode } from 'prosekit/core'
+import { ProseKit, useDocChange } from 'prosekit/vue'
 import { computed, ref, watchPostEffect } from 'vue'
 
 const key = ref(1)
@@ -25,19 +21,16 @@ const editor = computed(() => {
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect(() => editor.value.mount(editorRef.value))
 
-const onDocChange = () => {
-  hasUnsavedChange.value = true
-}
-const docChangeExtension = defineDocChangeHandler(onDocChange)
-useExtension(docChangeExtension, { editor })
+const handleDocChange = () => (hasUnsavedChange.value = true)
+useDocChange(handleDocChange, { editor })
 
-const onSave = () => {
+const handleSave = () => {
   const doc = JSON.stringify(jsonFromNode(editor.value.view.state.doc))
   records.value.push(doc)
   hasUnsavedChange.value = false
 }
 
-const onLoad = (record: string) => {
+const handleLoad = (record: string) => {
   defaultDoc.value = record
   key.value += 1
   hasUnsavedChange.value = false
@@ -48,7 +41,7 @@ const onLoad = (record: string) => {
   <ProseKit :editor="editor">
     <div>
       <button
-        @click="onSave"
+        @click="handleSave"
         :disabled="!hasUnsavedChange"
         class="my-2 border border-solid bg-white p-2 text-black disabled:cursor-not-allowed disabled:text-gray-500'"
       >
@@ -63,7 +56,7 @@ const onLoad = (record: string) => {
           <button
             class="border border-solid bg-white p-2 text-black"
             :class="{ 'disabled:text-gray-500': !hasUnsavedChange }"
-            @click="onLoad(record)"
+            @click="handleLoad(record)"
           >
             Load
           </button>

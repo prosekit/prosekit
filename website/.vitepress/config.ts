@@ -1,5 +1,3 @@
-import { createRequire } from 'node:module'
-
 import ts from 'typescript'
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from 'vitepress-plugin-twoslash'
@@ -7,11 +5,6 @@ import { transformerTwoslash } from 'vitepress-plugin-twoslash'
 import { replaceShortcutsPlugin } from './replace-shortcuts-plugin'
 import { exampleItems } from './sidebar-example-items'
 import { referenceItems } from './sidebar-reference-items'
-
-const require = createRequire(import.meta.url)
-const pkg = require('../../packages/prosekit/package.json') as {
-  version: string
-}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -46,17 +39,9 @@ export default defineConfig({
 
     nav: [
       { text: 'Guide', link: '/guide/introduction' },
-      { text: 'API References', link: '/references' },
-      { text: 'Examples', link: '/examples' },
-      {
-        text: 'v' + pkg.version,
-        items: [
-          {
-            text: 'Changelog',
-            link: 'https://github.com/ocavue/prosekit/blob/master/packages/prosekit/CHANGELOG.md',
-          },
-        ],
-      },
+      { text: 'Extensions', link: '/extensions/heading' },
+      { text: 'Components', link: '/components/toolbar' },
+      { text: 'References', link: '/references' },
     ],
 
     sidebar: {
@@ -81,46 +66,6 @@ export default defineConfig({
         },
 
         {
-          text: 'Nodes',
-          link: '/guide/nodes/',
-          items: [
-            { text: 'Heading', link: '/guide/nodes/heading' },
-            { text: 'List', link: '/guide/nodes/list' },
-            { text: 'CodeBlock', link: '/guide/nodes/code-block' },
-            { text: 'Mention', link: '/guide/nodes/mention' },
-          ],
-        },
-
-        {
-          text: 'Marks',
-          link: '/guide/marks/',
-          items: [
-            { text: 'Bold', link: '/guide/marks/bold' },
-            { text: 'Italic', link: '/guide/marks/italic' },
-            { text: 'Link', link: '/guide/marks/link' },
-            { text: 'Underline', link: '/guide/marks/underline' },
-            { text: 'Strike', link: '/guide/marks/strike' },
-          ],
-        },
-
-        {
-          text: 'Extensions',
-          items: [
-            { text: 'Placeholder', link: '/guide/extensions/placeholder' },
-            { text: 'Readonly', link: '/guide/extensions/readonly' },
-            { text: 'Drop Cursor', link: '/guide/extensions/drop-cursor' },
-          ],
-        },
-
-        // {
-        //   text: 'Commands',
-        //   items: [
-        //     { text: 'insertText', link: '/guide/404' },
-        //     { text: 'insertNode', link: '/guide/404' },
-        //   ],
-        // },
-
-        {
           text: 'Integrations',
           items: [
             {
@@ -139,26 +84,67 @@ export default defineConfig({
         },
 
         {
+          text: 'Extensions',
+          link: '/extensions',
+        },
+
+        {
           text: 'Components',
+          link: '/components',
+        },
+
+        {
+          text: 'API References',
+          link: '/references',
+        },
+      ],
+
+      '/extensions': [
+        {
+          text: 'Nodes',
+          link: '/guide/nodes/',
           items: [
-            {
-              text: 'Toolbar',
-              link: '/guide/components/toolbar',
-            },
-            {
-              text: 'Inline Popover',
-              link: '/guide/components/inline-popover',
-            },
-            {
-              text: 'Autocomplete',
-              link: '/guide/components/autocomplete',
-            },
+            { text: 'Heading', link: '/guide/heading' },
+            { text: 'List', link: '/guide/list' },
+            { text: 'CodeBlock', link: '/guide/code-block' },
+            { text: 'Mention', link: '/guide/mention' },
           ],
         },
 
         {
-          text: 'Full API References',
-          link: '/references',
+          text: 'Marks',
+          link: '/guide/marks/',
+          items: [
+            { text: 'Bold', link: '/guide/bold' },
+            { text: 'Italic', link: '/guide/italic' },
+            { text: 'Link', link: '/guide/link' },
+            { text: 'Underline', link: '/guide/underline' },
+            { text: 'Strike', link: '/guide/strike' },
+          ],
+        },
+
+        {
+          text: 'Extensions',
+          items: [
+            { text: 'Placeholder', link: '/guide/placeholder' },
+            { text: 'Readonly', link: '/guide/readonly' },
+            { text: 'Drop Cursor', link: '/guide/drop-cursor' },
+          ],
+        },
+      ],
+
+      '/components': [
+        {
+          text: 'Toolbar',
+          link: '/components/toolbar',
+        },
+        {
+          text: 'Inline Popover',
+          link: '/components/inline-popover',
+        },
+        {
+          text: 'Autocomplete',
+          link: '/components/autocomplete',
         },
       ],
 

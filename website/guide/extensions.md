@@ -66,7 +66,7 @@ You can use the `defineBasicExtension` from `prosekit/basic` to quick start an e
 
 If you want to enable an extension after the editor is initialized, you can call `editor.use(extension)` to enable it. It will return a function that can be called to disable the extension.
 
-If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can also use the `useExtension` to enable or disable an extension dynamically in your application. Check out the [readonly](/guide/extensions/readonly) for an example.
+If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can also use the `useExtension` to enable or disable an extension dynamically in your application. Check out the [readonly](/extensions/readonly) for an example.
 
 <!-- Link references -->
 

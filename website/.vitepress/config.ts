@@ -31,10 +31,26 @@ export default defineConfig({
     logo: '/assets/logo.svg',
 
     nav: [
-      { text: 'Guide', link: '/guide/introduction' },
-      { text: 'Extensions', link: '/extensions/heading' },
-      { text: 'Components', link: '/components/toolbar' },
-      { text: 'References', link: '/references' },
+      {
+        text: 'Guide',
+        activeMatch: '/guide',
+        link: '/guide/introduction',
+      },
+      {
+        text: 'Extensions',
+        activeMatch: '/extensions',
+        link: '/extensions/heading',
+      },
+      {
+        text: 'Components',
+        activeMatch: '/components',
+        link: '/components/toolbar',
+      },
+      {
+        text: 'References',
+        activeMatch: '/references',
+        link: '/references',
+      },
     ],
 
     sidebar: {

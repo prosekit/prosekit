@@ -80,32 +80,32 @@ export default defineConfig({
       '/extensions': [
         {
           text: 'Nodes',
-          link: '/guide/nodes/',
+          link: '/extensions/nodes/',
           items: [
-            { text: 'Heading', link: '/guide/heading' },
-            { text: 'List', link: '/guide/list' },
-            { text: 'CodeBlock', link: '/guide/code-block' },
-            { text: 'Mention', link: '/guide/mention' },
+            { text: 'Heading', link: '/extensions/heading' },
+            { text: 'List', link: '/extensions/list' },
+            { text: 'CodeBlock', link: '/extensions/code-block' },
+            { text: 'Mention', link: '/extensions/mention' },
           ],
         },
 
         {
           text: 'Marks',
-          link: '/guide/marks/',
+          link: '/extensions/marks/',
           items: [
-            { text: 'Bold', link: '/guide/bold' },
-            { text: 'Italic', link: '/guide/italic' },
-            { text: 'Link', link: '/guide/link' },
-            { text: 'Underline', link: '/guide/underline' },
-            { text: 'Strike', link: '/guide/strike' },
+            { text: 'Bold', link: '/extensions/bold' },
+            { text: 'Italic', link: '/extensions/italic' },
+            { text: 'Link', link: '/extensions/link' },
+            { text: 'Underline', link: '/extensions/underline' },
+            { text: 'Strike', link: '/extensions/strike' },
           ],
         },
 
         {
           items: [
-            { text: 'Placeholder', link: '/guide/placeholder' },
-            { text: 'Readonly', link: '/guide/readonly' },
-            { text: 'Drop Cursor', link: '/guide/drop-cursor' },
+            { text: 'Placeholder', link: '/extensions/placeholder' },
+            { text: 'Readonly', link: '/extensions/readonly' },
+            { text: 'Drop Cursor', link: '/extensions/drop-cursor' },
           ],
         },
       ],

@@ -151,5 +151,6 @@ jobs:
         with:
           args: https://${{ env.PR_NUMBER }}--prosekit.netlify.app
           fail: true
+          debug: true
         env:
           PR_NUMBER: ${{ github.event.number }}

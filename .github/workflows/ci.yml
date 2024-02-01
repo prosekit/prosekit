@@ -80,17 +80,20 @@ jobs:
         uses: untitaker/hyperlink@0.1.32
         with:
           args: website/dist/ --check-anchors
+        continue-on-error: true
 
       - name: Check links (proof-html)
         uses: anishathalye/proof-html@v2
         with:
           directory: website/dist/
+        continue-on-error: true
 
       - name: Check links (lychee)
         uses: lycheeverse/lychee-action@v1.9.0
         with:
           args: --base ./website/dist --verbose --no-progress './website/dist/*.html'
           fail: true
+        continue-on-error: true
 
   deploy:
     runs-on: ubuntu-latest

@@ -54,7 +54,6 @@ export default defineConfig({
             { text: 'Schemas', link: '/guide/schemas' },
             { text: 'Commands', link: '/guide/commands' },
             { text: 'Key Bindings', link: '/guide/key-bindings' },
-            // { text: 'Input Rules', link: '/guide/input-rules' },
           ],
         },
 

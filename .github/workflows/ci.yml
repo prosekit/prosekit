@@ -76,32 +76,6 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: Check links (hyperlink)
-        uses: untitaker/hyperlink@0.1.32
-        with:
-          args: website/dist --check-anchors
-        continue-on-error: true
-
-      - name: Check links (lychee)
-        uses: lycheeverse/lychee-action@v1.9.0
-        with:
-          # https://github.com/lycheeverse/remaps
-          args: --base ./website/dist --remap '/((?:.*)/(?:[^.]+))$ $1.html' --verbose --no-progress './website/dist/*.html'
-          fail: true
-        continue-on-error: true
-
-      - name: Check links (proof-html)
-        uses: anishathalye/proof-html@v2
-        with:
-          directory: website/dist/
-          check_css: false
-          check_html: false
-          check_favicon: false
-          allow_missing_href: true
-          ignore_empty_alt: true
-          ignore_missing_alt: true
-        continue-on-error: true
-
   deploy:
     runs-on: ubuntu-latest
 
@@ -172,12 +146,10 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
         timeout-minutes: 5
 
-      - name: Check links (lychee)
+      - name: Check links
         uses: lycheeverse/lychee-action@v1.9.0
         with:
           args: https://${{ env.PR_NUMBER }}--prosekit.netlify.app
           fail: true
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WEBSITE_SITE_ID }}
           PR_NUMBER: ${{ github.event.number }}

@@ -34,8 +34,8 @@ export default defineConfig({
     ['link', { rel: "mask-icon", href: "/assets/logo.svg", color: "#ffffff"}],
     ['meta', { name: "theme-color", content: "#ffffff"}],
     ['meta', { property: "twitter:card", content: "summary_large_image" }],
-    ['meta', { property: "twitter:image", content: "https://prosekit.dev/assets/cover.jpg" }],
-    ['meta', { property: "og:image", content: "https://prosekit.dev/assets/cover.jpg" }],
+    ['meta', { property: "twitter:image", content: "https://prosekit.dev/assets/cover.png" }],
+    ['meta', { property: "og:image", content: "https://prosekit.dev/assets/cover.png" }],
   ],
 
   themeConfig: {

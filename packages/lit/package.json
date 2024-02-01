@@ -56,7 +56,7 @@
     "@zag-js/dismissable": "^0.34.0",
     "@zag-js/dom-query": "^0.34.0",
     "@zag-js/utils": "^0.34.0",
-    "lit": "^3.1.1"
+    "lit": "^3.1.2"
   },
   "devDependencies": {
     "@prosekit/dev": "*",

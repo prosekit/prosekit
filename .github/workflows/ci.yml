@@ -76,6 +76,16 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Check links
+        uses: untitaker/hyperlink@0.1.32
+        with:
+          args: website/dist/ --check-anchors
+
+      - name: Check HTML
+        uses: anishathalye/proof-html@v2
+        with:
+          directory: website/dist/
+
   deploy:
     runs-on: ubuntu-latest
 
@@ -104,10 +114,10 @@ jobs:
         uses: nwtgck/actions-netlify@v2.1
         continue-on-error: true
         with:
-          publish-dir: './website/dist'
+          publish-dir: "./website/dist"
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Deploy from GitHub Actions'
+          deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: true
           enable-commit-comment: false
           enable-commit-status: false
@@ -130,10 +140,10 @@ jobs:
         if: steps.deploy-1.outcome == 'failure'
         uses: nwtgck/actions-netlify@v2.1
         with:
-          publish-dir: './website/dist'
+          publish-dir: "./website/dist"
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Deploy from GitHub Actions (retry)'
+          deploy-message: "Deploy from GitHub Actions (retry)"
           enable-pull-request-comment: false
           enable-commit-comment: false
           enable-commit-status: false

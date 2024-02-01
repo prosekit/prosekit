@@ -82,21 +82,6 @@ export default defineConfig({
             },
           ],
         },
-
-        {
-          text: 'Extensions',
-          link: '/extensions',
-        },
-
-        {
-          text: 'Components',
-          link: '/components',
-        },
-
-        {
-          text: 'API References',
-          link: '/references',
-        },
       ],
 
       '/extensions': [
@@ -124,7 +109,6 @@ export default defineConfig({
         },
 
         {
-          text: 'Extensions',
           items: [
             { text: 'Placeholder', link: '/guide/placeholder' },
             { text: 'Readonly', link: '/guide/readonly' },

@@ -18,13 +18,13 @@ To begin, you need to define the editor extensions by creating an `extension.ts`
 
 :::
 
-In this example, we simply use the `defineBasicExtensions()`. You might want to customize the extensions to suit your needs. The extensions defined here will determine the available commands later on. Refer to the [Extensions](../../guide/extensions) guide for more information.
+In this example, we simply use the `defineBasicExtensions()`. You might want to customize the extensions to suit your needs. The extensions defined here will determine the available commands later on. Refer to the [Extensions](../guide/extensions) guide for more information.
 
 The `EditorExtension` type is exported to provide type safety and enhance the developer experience with TypeScript's type hints and autocompletion.
 
 ### `Editor`
 
-Next, construct an `Editor` component. Refer to the [Installation](../../guide/installation) for instructions on building an `Editor` component.
+Next, construct an `Editor` component. Refer to the [Installation](../guide/installation) for instructions on building an `Editor` component.
 
 ::: code-group
 

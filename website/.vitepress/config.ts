@@ -1,5 +1,3 @@
-import { createRequire } from 'node:module'
-
 import ts from 'typescript'
 import { defineConfig } from 'vitepress'
 import { transformerTwoslash } from 'vitepress-plugin-twoslash'
@@ -7,11 +5,6 @@ import { transformerTwoslash } from 'vitepress-plugin-twoslash'
 import { replaceShortcutsPlugin } from './replace-shortcuts-plugin'
 import { exampleItems } from './sidebar-example-items'
 import { referenceItems } from './sidebar-reference-items'
-
-const require = createRequire(import.meta.url)
-const pkg = require('../../packages/prosekit/package.json') as {
-  version: string
-}
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -38,17 +31,25 @@ export default defineConfig({
     logo: '/assets/logo.svg',
 
     nav: [
-      { text: 'Guide', link: '/guide/introduction' },
-      { text: 'API References', link: '/references' },
-      { text: 'Examples', link: '/examples' },
       {
-        text: 'v' + pkg.version,
-        items: [
-          {
-            text: 'Changelog',
-            link: 'https://github.com/ocavue/prosekit/blob/master/packages/prosekit/CHANGELOG.md',
-          },
-        ],
+        text: 'Guide',
+        activeMatch: '/guide',
+        link: '/guide/introduction',
+      },
+      {
+        text: 'Extensions',
+        activeMatch: '/extensions',
+        link: '/extensions/heading',
+      },
+      {
+        text: 'Components',
+        activeMatch: '/components',
+        link: '/components/toolbar',
+      },
+      {
+        text: 'References',
+        activeMatch: '/references',
+        link: '/references',
       },
     ],
 
@@ -69,49 +70,8 @@ export default defineConfig({
             { text: 'Schemas', link: '/guide/schemas' },
             { text: 'Commands', link: '/guide/commands' },
             { text: 'Key Bindings', link: '/guide/key-bindings' },
-            // { text: 'Input Rules', link: '/guide/input-rules' },
           ],
         },
-
-        {
-          text: 'Nodes',
-          link: '/guide/nodes/',
-          items: [
-            { text: 'Heading', link: '/guide/nodes/heading' },
-            { text: 'List', link: '/guide/nodes/list' },
-            { text: 'CodeBlock', link: '/guide/nodes/code-block' },
-            { text: 'Mention', link: '/guide/nodes/mention' },
-          ],
-        },
-
-        {
-          text: 'Marks',
-          link: '/guide/marks/',
-          items: [
-            { text: 'Bold', link: '/guide/marks/bold' },
-            { text: 'Italic', link: '/guide/marks/italic' },
-            { text: 'Link', link: '/guide/marks/link' },
-            { text: 'Underline', link: '/guide/marks/underline' },
-            { text: 'Strike', link: '/guide/marks/strike' },
-          ],
-        },
-
-        {
-          text: 'Extensions',
-          items: [
-            { text: 'Placeholder', link: '/guide/extensions/placeholder' },
-            { text: 'Readonly', link: '/guide/extensions/readonly' },
-            { text: 'Drop Cursor', link: '/guide/extensions/drop-cursor' },
-          ],
-        },
-
-        // {
-        //   text: 'Commands',
-        //   items: [
-        //     { text: 'insertText', link: '/guide/404' },
-        //     { text: 'insertNode', link: '/guide/404' },
-        //   ],
-        // },
 
         {
           text: 'Integrations',
@@ -130,28 +90,51 @@ export default defineConfig({
             },
           ],
         },
+      ],
 
+      '/extensions': [
         {
-          text: 'Components',
+          text: 'Nodes',
           items: [
-            {
-              text: 'Toolbar',
-              link: '/guide/components/toolbar',
-            },
-            {
-              text: 'Inline Popover',
-              link: '/guide/components/inline-popover',
-            },
-            {
-              text: 'Autocomplete',
-              link: '/guide/components/autocomplete',
-            },
+            { text: 'Heading', link: '/extensions/heading' },
+            { text: 'List', link: '/extensions/list' },
+            { text: 'CodeBlock', link: '/extensions/code-block' },
+            { text: 'Mention', link: '/extensions/mention' },
           ],
         },
 
         {
-          text: 'Full API References',
-          link: '/references',
+          text: 'Marks',
+          items: [
+            { text: 'Bold', link: '/extensions/bold' },
+            { text: 'Italic', link: '/extensions/italic' },
+            { text: 'Link', link: '/extensions/link' },
+            { text: 'Underline', link: '/extensions/underline' },
+            { text: 'Strike', link: '/extensions/strike' },
+          ],
+        },
+
+        {
+          items: [
+            { text: 'Placeholder', link: '/extensions/placeholder' },
+            { text: 'Readonly', link: '/extensions/readonly' },
+            { text: 'Drop Cursor', link: '/extensions/drop-cursor' },
+          ],
+        },
+      ],
+
+      '/components': [
+        {
+          text: 'Toolbar',
+          link: '/components/toolbar',
+        },
+        {
+          text: 'Inline Popover',
+          link: '/components/inline-popover',
+        },
+        {
+          text: 'Autocomplete',
+          link: '/components/autocomplete',
         },
       ],
 

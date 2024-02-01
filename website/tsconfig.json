@@ -11,7 +11,7 @@
     "./vite-env.d.ts",
     "./**/*.ts",
     "./**/*.tsx",
-    "./components/**/*.vue",
+    ".vitepress/components/**/*.vue",
     ".vitepress/**/*.ts",
   ],
 }

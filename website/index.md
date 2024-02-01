@@ -29,7 +29,7 @@ features:
 ---
 
 <script setup>
-import { DemoEditor } from './components/demo-editor-dynamic'
+import { DemoEditor } from './.vitepress/components/demo-editor-dynamic'
 </script>
 
 <DemoEditor />

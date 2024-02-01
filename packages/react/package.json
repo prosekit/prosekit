@@ -47,7 +47,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@lit/react": "^1.0.2",
+    "@lit/react": "^1.0.3",
     "@prosekit/core": "^0.2.7",
     "@prosekit/lit": "^0.2.1",
     "@prosekit/pm": "^0.1.1",
@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "@types/react": "^18.2.48",
+    "@types/react": "^18.2.49",
     "@types/react-dom": "^18.2.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

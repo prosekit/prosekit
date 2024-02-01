@@ -76,7 +76,7 @@ If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can also use
 [save-and-restore]: /examples/save-and-restore
 [`defineNodeSpec`]: /references/core#defineNodeSpe
 [`defineMarkSpec`]: /references/core#defineMarkSpec2
-[`defineCommands`]: /references/core#definecommands
+[`defineCommands`]: /references/core#DeFiNECOMMANDS
 [`defineBaseCommands`]: /references/core#define-baseCommands
 [`defineKeymap`]: /references/core#defineKeymap
 [`defineBaseKeymap`]: /references/core#defineBaseKeymap

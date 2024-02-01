@@ -74,10 +74,10 @@ If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can also use
 [node view]: https://prosemirror.net/docs/ref#view.NodeView
 [input rule]: https://prosemirror.net/docs/ref#inputrules
 [save-and-restore]: /examples/save-and-restore
-[`defineNodeSpec`]: /references/core#defineNodeSpe
-[`defineMarkSpec`]: /references/core#defineMarkSpec2
-[`defineCommands`]: /references/core#DeFiNECOMMANDS
-[`defineBaseCommands`]: /references/core#define-baseCommands
+[`defineNodeSpec`]: /references/core#defineNodeSpec
+[`defineMarkSpec`]: /references/core#defineMarkSpec
+[`defineCommands`]: /references/core#defineCommands
+[`defineBaseCommands`]: /references/core#defineBaseCommands
 [`defineKeymap`]: /references/core#defineKeymap
 [`defineBaseKeymap`]: /references/core#defineBaseKeymap
 [`definePlugin`]: /references/core#definePlugin

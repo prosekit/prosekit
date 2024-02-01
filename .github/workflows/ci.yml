@@ -79,6 +79,10 @@ jobs:
   linkcheck:
     runs-on: ubuntu-latest
 
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      
     steps:
       - uses: actions/checkout@v4
 
@@ -131,11 +135,10 @@ jobs:
           enable-commit-comment: false
           enable-commit-status: false
           overwrites-pull-request-comment: true
-          alias: ${{ env.PR_NUMBER }}
+          alias: ${{ github.head_ref }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WEBSITE_SITE_ID }}
-          PR_NUMBER: ${{ github.event.number }}
         timeout-minutes: 5
 
       - name: Add random file (retry)
@@ -158,9 +161,8 @@ jobs:
           enable-commit-comment: false
           enable-commit-status: false
           overwrites-pull-request-comment: true
-          alias: ${{ env.PR_NUMBER }}
+          alias: ${{ github.head_ref }}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WEBSITE_SITE_ID }}
-          PR_NUMBER: ${{ github.event.number }}
         timeout-minutes: 5

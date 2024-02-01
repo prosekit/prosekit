@@ -79,13 +79,14 @@ jobs:
       - name: Check links (hyperlink)
         uses: untitaker/hyperlink@0.1.32
         with:
-          args: website/dist/ --check-anchors
+          args: website/dist --check-anchors
         continue-on-error: true
 
       - name: Check links (proof-html)
         uses: anishathalye/proof-html@v2
         with:
           directory: website/dist/
+          check_css: false
         continue-on-error: true
 
       - name: Check links (lychee)

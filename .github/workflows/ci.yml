@@ -76,15 +76,21 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: Check links
+      - name: Check links (hyperlink)
         uses: untitaker/hyperlink@0.1.32
         with:
           args: website/dist/ --check-anchors
 
-      - name: Check HTML
+      - name: Check links (proof-html)
         uses: anishathalye/proof-html@v2
         with:
           directory: website/dist/
+
+      - name: Check links (lychee)
+        uses: lycheeverse/lychee-action@v1.9.0
+        with:
+          args: --base ./website/dist --verbose --no-progress './website/dist/*.html'
+          fail: true
 
   deploy:
     runs-on: ubuntu-latest

@@ -149,7 +149,7 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v1.9.0
         with:
-          args: https://${{ env.PR_NUMBER }}--prosekit.netlify.app
+          args: -vv https://${{ env.PR_NUMBER }}--prosekit.netlify.app
           fail: true
           debug: true
         env:

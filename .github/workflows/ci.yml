@@ -14,7 +14,12 @@ env:
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-14]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -24,7 +29,12 @@ jobs:
         run: pnpm run lint
 
   typecheck:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-14]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -34,7 +44,12 @@ jobs:
         run: pnpm run typecheck
 
   test:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-14]
+
+    runs-on: ${{ matrix.os }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -47,7 +62,11 @@ jobs:
         run: pnpm run test:playground
 
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-14]
+
+    runs-on: ${{ matrix.os }}
 
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}

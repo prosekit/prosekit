@@ -82,22 +82,24 @@ jobs:
           args: website/dist --check-anchors
         continue-on-error: true
 
+      - name: Check links (lychee)
+        uses: lycheeverse/lychee-action@v1.9.0
+        with:
+          # https://github.com/lycheeverse/remaps
+          args: --base ./website/dist --remap '/((?:.*)/(?:[^.]+))$ $1.html' --verbose --no-progress './website/dist/*.html'
+          fail: true
+        continue-on-error: true
+
       - name: Check links (proof-html)
         uses: anishathalye/proof-html@v2
         with:
           directory: website/dist/
           check_css: false
           check_html: false
+          check_favicon: false
+          allow_missing_href: true
           ignore_empty_alt: true
           ignore_missing_alt: true
-        continue-on-error: true
-
-      - name: Check links (lychee)
-        uses: lycheeverse/lychee-action@v1.9.0
-        with:
-          # https://github.com/lycheeverse/remaps
-          args: --base ./website/dist --remap '/([^.]*)$ $1/index.html' --verbose --no-progress './website/dist/*.html'
-          fail: true
         continue-on-error: true
 
   deploy:

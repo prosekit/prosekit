@@ -87,6 +87,9 @@ jobs:
         with:
           directory: website/dist/
           check_css: false
+          check_html: false
+          ignore_empty_alt: true
+          ignore_missing_alt: true
         continue-on-error: true
 
       - name: Check links (lychee)

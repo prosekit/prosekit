@@ -11,15 +11,8 @@ export default defineConfig({
   title: 'ProseKit',
   description: 'Ultimate Rich Text Editor',
 
-  cleanUrls: true,
+  cleanUrls: !process.env.PROSEKIT_NO_CLEAN_URLS,
   outDir: 'dist',
-
-  // See https://github.com/antfu/shikiji/issues/86
-  vite: {
-    ssr: {
-      noExternal: ['shikiji-twoslash', 'vitepress-plugin-twoslash'],
-    },
-  },
 
   // prettier-ignore
   head: [
@@ -27,8 +20,8 @@ export default defineConfig({
     ['link', { rel: "mask-icon", href: "/assets/logo.svg", color: "#ffffff"}],
     ['meta', { name: "theme-color", content: "#ffffff"}],
     ['meta', { property: "twitter:card", content: "summary_large_image" }],
-    ['meta', { property: "twitter:image", content: "https://prosekit.dev/assets/cover.jpg" }],
-    ['meta', { property: "og:image", content: "https://prosekit.dev/assets/cover.jpg" }],
+    ['meta', { property: "twitter:image", content: "https://prosekit.dev/assets/cover.png" }],
+    ['meta', { property: "og:image", content: "https://prosekit.dev/assets/cover.png" }],
   ],
 
   themeConfig: {

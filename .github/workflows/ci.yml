@@ -76,6 +76,29 @@ jobs:
       - name: Build
         run: pnpm run build
 
+  linkcheck:
+    runs-on: ubuntu-latest
+
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup
+
+      - name: Build
+        run: pnpm run build
+        env:
+          PROSEKIT_NO_CLEAN_URLS: true
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v1.9.0
+        with:
+          args: --base ./website/dist --verbose --no-progress './website/dist/**/*.html' --include-fragments
+          fail: true
+
   deploy:
     runs-on: ubuntu-latest
 

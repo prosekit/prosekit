@@ -79,7 +79,6 @@ export default defineConfig({
       '/extensions': [
         {
           text: 'Nodes',
-          link: '/extensions/nodes/',
           items: [
             { text: 'Heading', link: '/extensions/heading' },
             { text: 'List', link: '/extensions/list' },
@@ -90,7 +89,6 @@ export default defineConfig({
 
         {
           text: 'Marks',
-          link: '/extensions/marks/',
           items: [
             { text: 'Bold', link: '/extensions/bold' },
             { text: 'Italic', link: '/extensions/italic' },

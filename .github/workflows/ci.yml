@@ -172,10 +172,12 @@ jobs:
           PR_NUMBER: ${{ github.event.number }}
         timeout-minutes: 5
 
-      # - name: Check links (lychee)
-      #   uses: lycheeverse/lychee-action@v1.9.0
-      #   with:
-      #     # https://github.com/lycheeverse/remaps
-      #     args: --base ./website/dist --remap '/((?:.*)/(?:[^.]+))$ $1.html' --verbose --no-progress './website/dist/*.html'
-      #     fail: true
-      #   continue-on-error: true
+      - name: Check links (lychee)
+        uses: lycheeverse/lychee-action@v1.9.0
+        with:
+          args: https://${{ env.PR_NUMBER }}--prosekit.netlify.app
+          fail: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WEBSITE_SITE_ID }}
+          PR_NUMBER: ${{ github.event.number }}

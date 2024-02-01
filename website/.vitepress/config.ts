@@ -18,15 +18,8 @@ export default defineConfig({
   title: 'ProseKit',
   description: 'Ultimate Rich Text Editor',
 
-  cleanUrls: true,
+  cleanUrls: !process.env.PROSEKIT_NO_CLEAN_URLS,
   outDir: 'dist',
-
-  // See https://github.com/antfu/shikiji/issues/86
-  vite: {
-    ssr: {
-      noExternal: ['shikiji-twoslash', 'vitepress-plugin-twoslash'],
-    },
-  },
 
   // prettier-ignore
   head: [

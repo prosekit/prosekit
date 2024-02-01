@@ -76,6 +76,25 @@ jobs:
       - name: Build
         run: pnpm run build
 
+  linkcheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup
+
+      - name: Build
+        run: pnpm run build
+        env:
+          PROSEKIT_NO_CLEAN_URLS: true
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v1.9.0
+        with:
+          args: --base ./website/dist --verbose --no-progress './website/dist/**/*.html' --include-fragments
+          fail: true
+
   deploy:
     runs-on: ubuntu-latest
 
@@ -145,20 +164,3 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WEBSITE_SITE_ID }}
           PR_NUMBER: ${{ github.event.number }}
         timeout-minutes: 5
-
-      - name: Check links
-        uses: lycheeverse/lychee-action@v1.9.0
-        with:
-          args: -vv https://${{ env.PR_NUMBER }}--prosekit.netlify.app
-          fail: true
-          debug: true
-        env:
-          PR_NUMBER: ${{ github.event.number }}
-
-      - name: Check broken links
-        uses: ruzickap/action-my-broken-link-checker@v2
-        with:
-          url: https://${{ env.PR_NUMBER }}--prosekit.netlify.app
-          cmd_params: '--buffer-size=8192 --max-connections=10 --color=always --header="User-Agent:curl/7.54.0" --timeout=20'
-        env:
-          PR_NUMBER: ${{ github.event.number }}          

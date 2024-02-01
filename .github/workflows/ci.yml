@@ -92,7 +92,8 @@ jobs:
       - name: Check links (lychee)
         uses: lycheeverse/lychee-action@v1.9.0
         with:
-          args: --base ./website/dist --verbose --no-progress './website/dist/*.html'
+          # https://github.com/lycheeverse/remaps
+          args: --base ./website/dist --remap '/([^.]*)$ $1/index.html' --verbose --no-progress './website/dist/*.html'
           fail: true
         continue-on-error: true
 

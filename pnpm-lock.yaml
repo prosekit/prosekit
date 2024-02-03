@@ -42,8 +42,8 @@ importers:
         specifier: ^8.56.0
         version: 8.56.0
       jsdom:
-        specifier: ^23.2.0
-        version: 23.2.0
+        specifier: ^24.0.0
+        version: 24.0.0
       prettier:
         specifier: ^3.2.4
         version: 3.2.4
@@ -67,7 +67,7 @@ importers:
         version: 0.58.4(postcss@8.4.33)(vite@5.0.12)
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+        version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
 
   packages/basic:
     dependencies:
@@ -98,7 +98,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+        version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
 
   packages/core:
     dependencies:
@@ -126,7 +126,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+        version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
 
   packages/dev:
     dependencies:
@@ -230,7 +230,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+        version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
 
   packages/lit:
     dependencies:
@@ -279,7 +279,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+        version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
 
   packages/pm:
     dependencies:
@@ -319,7 +319,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+        version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
 
   packages/preact:
     dependencies:
@@ -347,7 +347,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+        version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
 
   packages/prosekit:
     dependencies:
@@ -466,7 +466,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+        version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
 
   packages/solid:
     dependencies:
@@ -494,7 +494,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+        version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
 
   packages/svelte:
     dependencies:
@@ -534,7 +534,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+        version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
 
   packages/vue:
     dependencies:
@@ -562,7 +562,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+        version: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
       vue:
         specifier: ^3.4.15
         version: 3.4.15(typescript@5.3.3)
@@ -892,13 +892,6 @@ packages:
 
   /@antfu/utils@0.7.6:
     resolution: {integrity: sha512-pvFiLP2BeOKA/ZOS6jxx4XhKzdVLHDhGlFEaZ2flWWYf2xOqVniqpk38I04DFRyz+L0ASggl7SkItTc+ZLju4w==}
-
-  /@asamuzakjp/dom-selector@2.0.1:
-    resolution: {integrity: sha512-QJAJffmCiymkv6YyQ7voyQb5caCth6jzZsQncYCpHXrJ7RqdYG5y43+is8mnFcYubdOkr7cn1+na9BdFMxqw7w==}
-    dependencies:
-      bidi-js: 1.0.3
-      css-tree: 2.3.1
-      is-potential-custom-element-name: 1.0.1
 
   /@astrojs/compiler@1.8.1:
     resolution: {integrity: sha512-C28qplQzgIJ+JU9S+1wNx+ue2KCBUp0TTAd10EWAEkk4RsL3Tzlw0BYvLDDb4KP9jS48lXmR4/1TtZ4aavYJ8Q==}
@@ -3218,7 +3211,7 @@ packages:
       magicast: 0.3.3
       picocolors: 1.0.0
       test-exclude: 6.0.0
-      vitest: 1.2.2(@types/node@20.11.14)(jsdom@23.2.0)
+      vitest: 1.2.2(@types/node@20.11.14)(jsdom@24.0.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3911,11 +3904,6 @@ packages:
     engines: {node: '>=4'}
     dependencies:
       is-windows: 1.0.2
-
-  /bidi-js@1.0.3:
-    resolution: {integrity: sha512-RKshQI1R3YQ+n9YJz2QQ147P66ELpa1FQEg20Dk8oW9t2KgLbpDLLp9aGZ7y8WHSshDknG0bknqGw5/tyCs5tw==}
-    dependencies:
-      require-from-string: 2.0.2
 
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
@@ -6473,8 +6461,8 @@ packages:
     dependencies:
       argparse: 2.0.1
 
-  /jsdom@23.2.0:
-    resolution: {integrity: sha512-L88oL7D/8ufIES+Zjz7v0aes+oBMh2Xnh3ygWvL0OaICOomKEPKuPnIfBJekiXr+BHbbMjrWn/xqrDQuxFTeyA==}
+  /jsdom@24.0.0:
+    resolution: {integrity: sha512-UDS2NayCvmXSXVP6mpTj+73JnNQadZlr9N68189xib2tx5Mls7swlTNao26IoHv46BZJFvXygyRtyXd1feAk1A==}
     engines: {node: '>=18'}
     peerDependencies:
       canvas: ^2.11.2
@@ -6482,7 +6470,6 @@ packages:
       canvas:
         optional: true
     dependencies:
-      '@asamuzakjp/dom-selector': 2.0.1
       cssstyle: 4.0.1
       data-urls: 5.0.0
       decimal.js: 10.4.3
@@ -6491,6 +6478,7 @@ packages:
       http-proxy-agent: 7.0.0
       https-proxy-agent: 7.0.2
       is-potential-custom-element-name: 1.0.1
+      nwsapi: 2.2.7
       parse5: 7.1.2
       rrweb-cssom: 0.6.0
       saxes: 6.0.0
@@ -7596,6 +7584,9 @@ packages:
     dependencies:
       path-key: 4.0.0
 
+  /nwsapi@2.2.7:
+    resolution: {integrity: sha512-ub5E4+FBPKwAZx0UwIQOjYWGHTEq5sPqHQNRN8Z9e4A7u3Tj1weLJsL59yH9vmvqEtBHaOmT6cYQKIZOxp35FQ==}
+
   /object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
@@ -8640,10 +8631,6 @@ packages:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
     dev: false
-
-  /require-from-string@2.0.2:
-    resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
-    engines: {node: '>=0.10.0'}
 
   /require-main-filename@2.0.0:
     resolution: {integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==}
@@ -10600,7 +10587,7 @@ packages:
       - universal-cookie
     dev: true
 
-  /vitest@1.2.2(@types/node@20.11.14)(jsdom@23.2.0):
+  /vitest@1.2.2(@types/node@20.11.14)(jsdom@24.0.0):
     resolution: {integrity: sha512-d5Ouvrnms3GD9USIK36KG8OZ5bEvKEkITFtnGv56HFaSlbItJuYr7hv2Lkn903+AvRAgSixiamozUVfORUekjw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -10636,7 +10623,7 @@ packages:
       chai: 4.3.10
       debug: 4.3.4
       execa: 8.0.1
-      jsdom: 23.2.0
+      jsdom: 24.0.0
       local-pkg: 0.5.0
       magic-string: 0.30.5
       pathe: 1.1.2

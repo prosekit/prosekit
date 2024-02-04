@@ -19,14 +19,19 @@ export function getVirtualSelectionElement(
     (isTextSelection(selection) || isNodeSelection(selection))
   ) {
     const range = getDomRange()
-    if (!range) return
+    if (range) {
+      // To get it work properly in Safari, we cannot return the range directly.
+      // We have to return a contextElement.
+      return {
+        contextElement: view.dom,
+        getBoundingClientRect: () => range.getBoundingClientRect(),
+        getClientRects: () => range.getClientRects(),
+      }
+    }
 
-    // To get it work properly in Safari, we cannot return the range directly.
-    // We have to return a contextElement.
-    return {
-      contextElement: view.dom,
-      getBoundingClientRect: () => range.getBoundingClientRect(),
-      getClientRects: () => range.getClientRects(),
+    const decoration = getInlineDecoration(view)
+    if (decoration) {
+      return decoration
     }
   }
 }
@@ -47,4 +52,8 @@ function getDomRange() {
   }
 
   return range
+}
+
+function getInlineDecoration(view: EditorView) {
+  return view.dom.querySelector('.prosekit-virtual-selection')
 }

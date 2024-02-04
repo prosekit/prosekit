@@ -19,6 +19,7 @@
     "./src/placeholder/index.ts",
     "./src/readonly/index.ts",
     "./src/strike/index.ts",
-    "./src/underline/index.ts"
+    "./src/underline/index.ts",
+    "./src/virtual-selection/index.ts"
   ]
 }

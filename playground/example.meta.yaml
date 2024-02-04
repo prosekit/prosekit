@@ -53,8 +53,6 @@ examples:
     framework: react
     story: inline-menu
     files:
-      - path: button-group.tsx
-        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts

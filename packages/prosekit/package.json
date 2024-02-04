@@ -50,6 +50,8 @@
     "./extensions/readonly": "./src/extensions/readonly.gen.ts",
     "./extensions/strike": "./src/extensions/strike.gen.ts",
     "./extensions/underline": "./src/extensions/underline.gen.ts",
+    "./extensions/virtual-selection": "./src/extensions/virtual-selection.gen.ts",
+    "./extensions/virtual-selection/style.css": "./src/extensions/virtual-selection/style.css",
     "./lit": "./src/lit.gen.ts",
     "./lit/autocomplete-empty": "./src/lit/autocomplete-empty.gen.ts",
     "./lit/autocomplete-item": "./src/lit/autocomplete-item.gen.ts",
@@ -324,6 +326,14 @@
         "types": "./dist/prosekit-extensions-underline.d.ts",
         "import": "./dist/prosekit-extensions-underline.js",
         "default": "./dist/prosekit-extensions-underline.js"
+      },
+      "./extensions/virtual-selection": {
+        "types": "./dist/prosekit-extensions-virtual-selection.d.ts",
+        "import": "./dist/prosekit-extensions-virtual-selection.js",
+        "default": "./dist/prosekit-extensions-virtual-selection.js"
+      },
+      "./extensions/virtual-selection/style.css": {
+        "default": "./dist/extensions/virtual-selection/style.css"
       },
       "./lit": {
         "types": "./dist/prosekit-lit.d.ts",
@@ -831,6 +841,9 @@
         ],
         "extensions/underline": [
           "./dist/prosekit-extensions-underline.d.ts"
+        ],
+        "extensions/virtual-selection": [
+          "./dist/prosekit-extensions-virtual-selection.d.ts"
         ],
         "lit": [
           "./dist/prosekit-lit.d.ts"

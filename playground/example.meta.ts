@@ -105,10 +105,6 @@ export const exampleMeta = {
       "story": "inline-menu",
       "files": [
         {
-          "path": "button-group.tsx",
-          "hidden": false
-        },
-        {
           "path": "editor.tsx",
           "hidden": false
         },

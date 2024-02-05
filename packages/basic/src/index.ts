@@ -7,6 +7,7 @@ import {
   defineText,
   union,
 } from '@prosekit/core'
+import { defineBlockquote } from '@prosekit/extensions/blockquote'
 import { defineBold } from '@prosekit/extensions/bold'
 import { defineCode } from '@prosekit/extensions/code'
 import { defineDropCursor } from '@prosekit/extensions/drop-cursor'
@@ -31,6 +32,7 @@ export function defineBasicExtension() {
     defineHeading(),
     defineHistory(),
     defineList(),
+    defineBlockquote(),
     defineBaseKeymap(),
     defineBaseCommands(),
     defineItalic(),

@@ -6,10 +6,10 @@ Show some placeholder text when the current text block is empty or the whole doc
 
 ## Usage
 
-```ts
-import { definePlaceholder } from 'prosekit/extensions/readonly'
+```ts twoslash
+import { definePlaceholder } from 'prosekit/extensions/placeholder'
 
-extension = definePlaceholder({ placeholder: 'Type Something...' })
+const extension = definePlaceholder({ placeholder: 'Type Something...' })
 ```
 
 Note that you would need to import the style file for the extension to work.

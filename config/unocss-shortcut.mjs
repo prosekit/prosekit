@@ -135,7 +135,8 @@ const staticShortcuts = {
   ),
 
   TOOLBAR: clsx(
-    'z-2 sticky top-0 box-border flex flex-wrap gap-1 p-2 items-center border-b border-border',
+    'z-2 sticky top-0 box-border flex flex-wrap gap-1 p-2 items-center',
+    'border-border border-solid border-l-0 border-r-0 border-t-0 border-b',
   ),
 
   TOGGLE_BUTTON: clsx(

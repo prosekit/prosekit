@@ -27,13 +27,5 @@ export function defineCodeBlockCommands() {
     setCodeBlockAttrs: (attrs: CodeBlockAttrs) => {
       return setNodeAttrs({ type: 'codeBlock', attrs })
     },
-
-    /**
-     * @deprecated Use `setCodeBlockAttrs` instead.
-     */
-    setCodeBlockLanguage: (language: string) => {
-      const attrs: CodeBlockAttrs = { language }
-      return setNodeAttrs({ type: 'codeBlock', attrs })
-    },
   })
 }

@@ -1,9 +1,8 @@
-import { definePlugin } from '@prosekit/core'
+import { definePlugin, isInCodeBlock } from '@prosekit/core'
 import { ProseMirrorNode } from '@prosekit/pm/model'
 import { EditorState, Plugin, PluginKey } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
-import { isInCodeBlock } from '../utils/is-in-code-block'
 
 export interface PlaceholderOptions {
   /**

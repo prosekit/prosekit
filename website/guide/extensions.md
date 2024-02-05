@@ -35,7 +35,6 @@ You can use the following extensions to add more features to the editor. All oth
 - [`defineBaseKeymap`] configures a set of pre-defined basic keybindings.
 - [`definePlugin`] registers a [plugin] into the editor.
 - [`defineNodeView`] registers a [node view] into the editor.
-- [`defineInputRule`] configures an [input rule] into the editor.
 - [`defineHistory`] allows the editor to undo/redo.
 
 ## Vital Node Types

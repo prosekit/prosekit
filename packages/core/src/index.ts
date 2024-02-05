@@ -33,7 +33,6 @@ export {
   type UpdateHandler,
 } from './extensions/events/plugin-view'
 export { defineHistory } from './extensions/history'
-export { defineInputRule } from './extensions/input-rules'
 export {
   defineBaseKeymap,
   defineKeymap,

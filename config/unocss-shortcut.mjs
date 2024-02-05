@@ -193,8 +193,7 @@ const staticShortcuts = {
 }
 
 /**
- * Replace CSS class names from shortcuts with the actual tailwindcss/unocss
- * class names.
+ * Replace color aliases.
  */
 function createColorShortcuts(name, color, darkColor) {
   let pattern = new RegExp(

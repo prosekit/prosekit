@@ -14,7 +14,6 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 <<< @/../playground/examples/vue-full/editor.vue
 <<< @/../playground/examples/vue-full/extension.ts
 <<< @/../playground/examples/vue-full/image-upload-popover.vue
-<<< @/../playground/examples/vue-full/inline-buttons.vue
 <<< @/../playground/examples/vue-full/inline-menu.vue
 <<< @/../playground/examples/vue-full/language-selector.vue
 <<< @/../playground/examples/vue-full/slash-menu.vue

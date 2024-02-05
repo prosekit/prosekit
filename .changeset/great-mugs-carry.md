@@ -3,4 +3,4 @@
 "@prosekit/core": patch
 ---
 
-Add new command `expandMark`.
+Add `expandMark` command.

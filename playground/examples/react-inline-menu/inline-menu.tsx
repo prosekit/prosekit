@@ -88,12 +88,12 @@ export default function InlineMenu() {
           <div className="ICON_CODE"></div>
         </Toggle>
 
-        {editor.commands.toggleUnderline.canApply() && (
+        {editor.commands.addLink.canApply({ href: '' }) && (
           <Toggle
             pressed={editor.marks.link.isActive()}
             onClick={() => {
-              toggleLinkMenuAvailable()
               editor.commands.expandLink()
+              toggleLinkMenuAvailable()
             }}
           >
             <div className="ICON_LINK"></div>
@@ -112,11 +112,8 @@ export default function InlineMenu() {
           <form
             onSubmit={(event) => {
               event.preventDefault()
-
-              const target = event.target as HTMLFormElement
-
-              const href = target.querySelector('input')?.value?.trim()
-
+              const target = event.target as HTMLFormElement | null
+              const href = target?.querySelector('input')?.value?.trim()
               handleLinkUpdate(href)
             }}
           >

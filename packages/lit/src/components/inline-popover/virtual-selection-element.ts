@@ -18,6 +18,11 @@ export function getVirtualSelectionElement(
     !isInCodeBlock(selection) &&
     (isTextSelection(selection) || isNodeSelection(selection))
   ) {
+    const decoration = getInlineDecoration(view)
+    if (decoration) {
+      return decoration
+    }
+
     const range = getDomRange()
     if (range) {
       // To get it work properly in Safari, we cannot return the range directly.
@@ -27,11 +32,6 @@ export function getVirtualSelectionElement(
         getBoundingClientRect: () => range.getBoundingClientRect(),
         getClientRects: () => range.getClientRects(),
       }
-    }
-
-    const decoration = getInlineDecoration(view)
-    if (decoration) {
-      return decoration
     }
   }
 }

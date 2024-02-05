@@ -71,11 +71,15 @@ export class AutocompletePopover
   private updateContext(query: string, active: boolean) {
     const context = this.context.value
 
-    if (context.query === query && context.active === active) {
+    if (context.query !== query || context.active !== active) {
+      this.context.setValue({ ...context, query, active })
+    } else if (!active) {
       return
     }
 
-    this.context.setValue({ ...context, query, active })
+    // Notice that even if `query` and `active` are not updated, the editor
+    // state might have changed and we need to request an update to calculate
+    // the new position of the popover.
     this.requestUpdate()
     requestAnimationFrame(() => {
       this.list?.selectFirstItem()

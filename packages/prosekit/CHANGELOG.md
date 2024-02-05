@@ -1,5 +1,43 @@
 # prosekit
 
+## 0.4.0
+
+### Minor Changes
+
+- [`5582e98`](https://github.com/ocavue/prosekit/commit/5582e98f7f7d76e6c14d3da9e3dd7ca844d139d9) ![][badge-core]
+
+  Add `expandMark` command.
+
+- [`5582e98`](https://github.com/ocavue/prosekit/commit/5582e98f7f7d76e6c14d3da9e3dd7ca844d139d9) ![][badge-extensions] ![][badge-basic]
+
+  Add `defineVirtualSelection` to highlight the selected text when the editor is not focused.
+
+### Patch Changes
+
+- [`e41f51a`](https://github.com/ocavue/prosekit/commit/e41f51a1a81444e889a3dcd0e436ee9ca16c939f) ![][badge-vue]
+
+  Fix incorrect editor injection type.
+
+- [`347805b`](https://github.com/ocavue/prosekit/commit/347805b24a4133734718d5d02fb32d3688e3468d) ![][badge-extensions] ![][badge-core]
+
+  Remove some deprecated APIs.
+
+- [`3b54306`](https://github.com/ocavue/prosekit/commit/3b54306c6f99b66162ee8409e72097be16ed5cdd) ![][badge-lit]
+
+  Fix a bug where typing `//` would place the slash menu in a wrong position.
+
+- [`5582e98`](https://github.com/ocavue/prosekit/commit/5582e98f7f7d76e6c14d3da9e3dd7ca844d139d9) ![][badge-lit]
+
+  The inline popover can place itself based on the virtual selection element.
+
+- [`d7f74c6`](https://github.com/ocavue/prosekit/commit/d7f74c646e9a64505758b0474811c2a79cb99684) ![][badge-extensions]
+
+  Add blockquote input rule. Now you can type `> ` to create a blockquote.
+
+- [`5582e98`](https://github.com/ocavue/prosekit/commit/5582e98f7f7d76e6c14d3da9e3dd7ca844d139d9) ![][badge-extensions]
+
+  Add `expandLink` command.
+
 ## 0.3.4
 
 ### Patch Changes

@@ -34,7 +34,7 @@ export function defineHeadingInputRule() {
     type: 'heading',
     attrs: (match) => {
       const level: number = match[1]?.length ?? 1
-      return { level } satisfies HeadingAttrs
+      return { level }
     },
   })
 }

@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/vue",
   "type": "module",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -47,8 +47,8 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/core": "^0.2.7",
-    "@prosekit/lit": "^0.2.1",
+    "@prosekit/core": "^0.3.0",
+    "@prosekit/lit": "^0.2.2",
     "@prosekit/pm": "^0.1.1",
     "@prosemirror-adapter/core": "^0.2.6"
   },

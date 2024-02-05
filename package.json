@@ -30,7 +30,7 @@
     "@changesets/cli": "^2.27.1",
     "@changesets/types": "^6.0.0",
     "@manypkg/cli": "^0.21.2",
-    "@ocavue/eslint-config": "^1.4.1",
+    "@ocavue/eslint-config": "^1.4.2",
     "@size-limit/esbuild-why": "^11.0.2",
     "@size-limit/preset-small-lib": "^11.0.2",
     "@unocss/eslint-config": "^0.58.4",

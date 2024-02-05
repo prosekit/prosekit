@@ -43,7 +43,7 @@ export function defineHeadingInputRule() {
 Use `defineWrappingInputRule` to create a new input rule that can change the current text block into a different node type.
 
 ```ts twoslash
-import { defineBlockquoteInputRule } from 'prosekit/extensions/input-rule'
+import { defineWrappingInputRule } from 'prosekit/extensions/input-rule'
 
 /**
  * Wraps the text block in a blockquote when `>` is typed at the start of a new

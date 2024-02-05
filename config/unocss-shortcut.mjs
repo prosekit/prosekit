@@ -71,9 +71,16 @@ const BUTTON_SIZE_LG = 'h-1 px-8'
 const BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const INPUT = clsx(
-  'flex h-10 rounded-md w-full border box-border border-border bg-background px-3 py-2 text-sm  placeholder:text-muted-foreground transition',
-  'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-ring ring-offset-0 outline-none',
+  'flex h-10 rounded-md w-full border box-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
+  // border
+  'border-border border-solid border',
+  // ring
+  'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0',
+  // outline
+  'outline-none focus-visible:outline-none',
+  // file
   'file:border-0 file:bg-transparent file:text-sm file:font-medium',
+  // disabled
   'disabled:cursor-not-allowed disabled:opacity-50',
 )
 

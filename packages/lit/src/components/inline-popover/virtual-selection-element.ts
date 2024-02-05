@@ -55,5 +55,19 @@ function getDomRange() {
 }
 
 function getInlineDecoration(view: EditorView) {
-  return view.dom.querySelector('.prosekit-virtual-selection')
+  const match = view.dom.querySelectorAll('.prosekit-virtual-selection')
+
+  if (match.length === 0) {
+    return
+  }
+  if (match.length === 1) {
+    return match[0]
+  }
+
+  const items = Array.from(match)
+  return {
+    contextElement: items[0],
+    getBoundingClientRect: () => items[0].getBoundingClientRect(),
+    getClientRects: () => items.map((item) => item.getBoundingClientRect()),
+  }
 }

@@ -7,7 +7,7 @@ Show some placeholder text when the current text block is empty or the whole doc
 ## Usage
 
 ```ts twoslash
-import { definePlaceholder } from 'prosekit/extensions/readonly'
+import { definePlaceholder } from 'prosekit/extensions/placeholder'
 
 const extension = definePlaceholder({ placeholder: 'Type Something...' })
 ```

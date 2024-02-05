@@ -66,7 +66,7 @@ const handleOpenChange = (open: boolean) => {
       :onOpenChange="handleOpenChange"
       class="IMAGE_UPLOAD_CARD"
     >
-      <div v-if="!objectUrl">
+      <template v-if="!objectUrl">
         <label>Embed Link</label>
         <input
           class="IMAGE_UPLOAD_INPUT"
@@ -74,8 +74,8 @@ const handleOpenChange = (open: boolean) => {
           type="url"
           @input="handleWebUrlChange"
         />
-      </div>
-      <div v-if="!webUrl">
+      </template>
+      <template v-if="!webUrl">
         <label>Upload</label>
         <input
           class="IMAGE_UPLOAD_INPUT"
@@ -83,7 +83,7 @@ const handleOpenChange = (open: boolean) => {
           type="file"
           @input="handleFileChange"
         />
-      </div>
+      </template>
       <button v-if="url" class="IMAGE_UPLOAD_BUTTON" @click="handleSubmit">
         Insert Image
       </button>

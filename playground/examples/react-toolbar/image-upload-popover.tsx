@@ -71,7 +71,7 @@ export const ImageUploadPopover: FC<{
         className="IMAGE_UPLOAD_CARD"
       >
         {objectUrl ? null : (
-          <div>
+          <>
             <label>Embed Link</label>
             <input
               className="IMAGE_UPLOAD_INPUT"
@@ -79,11 +79,11 @@ export const ImageUploadPopover: FC<{
               type="url"
               onChange={handleWebUrlChange}
             />
-          </div>
+          </>
         )}
 
         {webUrl ? null : (
-          <div>
+          <>
             <label>Upload</label>
             <input
               className="IMAGE_UPLOAD_INPUT"
@@ -91,7 +91,7 @@ export const ImageUploadPopover: FC<{
               type="file"
               onChange={handleFileChange}
             />
-          </div>
+          </>
         )}
 
         {url ? (

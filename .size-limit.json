@@ -156,6 +156,20 @@
     ]
   },
   {
+    "name": "prosekit/extensions/virtual-selection",
+    "path": "packages/prosekit/dist/prosekit-extensions-virtual-selection.js",
+    "ignore": [
+      "shikiji"
+    ]
+  },
+  {
+    "name": "prosekit/extensions/virtual-selection/style.css",
+    "path": "packages/prosekit/dist/extensions/virtual-selection/style.css",
+    "ignore": [
+      "shikiji"
+    ]
+  },
+  {
     "name": "prosekit/lit",
     "path": "packages/prosekit/dist/prosekit-lit.js"
   },

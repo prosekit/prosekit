@@ -13,10 +13,20 @@ import { useInlinePopover } from './use-inline-popover'
 
 export type { PositioningOptions }
 
-export const propNames = ['editor', ...popoverPropsNames] as const
+export const propNames = ['editor', 'available', ...popoverPropsNames] as const
 
 export type InlinePopoverProps = {
   editor: Editor
+
+  /**
+   * Whether the popover is available to be shown.
+   *
+   * If `true`, the popover will be shown when the editor selection is not empty.
+   * If `false`, the popover will always be hidden.
+   *
+   * @default `true`
+   */
+  available?: boolean
 } & PopoverProps
 
 export class InlinePopover
@@ -29,9 +39,12 @@ export class InlinePopover
   static properties = {
     ...Popover.properties,
     editor: { attribute: false },
+    available: { attribute: false },
   } satisfies PropertyDeclarations
 
   editor?: Editor
+
+  available?: boolean = true
 
   positioning?: PositioningOptions = {
     strategy: 'fixed',
@@ -62,7 +75,7 @@ export class InlinePopover
   protected updated(changedProperties: PropertyValues<this>): void {
     super.updated(changedProperties)
 
-    this.open = !!this.reference
+    this.open = !!(this.reference && this.available)
   }
 
   /**

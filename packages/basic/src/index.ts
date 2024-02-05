@@ -17,6 +17,7 @@ import { defineLink } from '@prosekit/extensions/link'
 import { defineList } from '@prosekit/extensions/list'
 import { defineStrike } from '@prosekit/extensions/strike'
 import { defineUnderline } from '@prosekit/extensions/underline'
+import { defineVirtualSelection } from '@prosekit/extensions/virtual-selection'
 
 /**
  * A basic extension that includes some common functionality. You can copy this
@@ -41,6 +42,7 @@ export function defineBasicExtension() {
     defineImage(),
     defineParagraph(),
     defineDropCursor(),
+    defineVirtualSelection(),
   ])
 }
 

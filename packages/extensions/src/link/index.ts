@@ -5,6 +5,7 @@ import {
   union,
   removeMark,
   toggleMark,
+  expandMark,
 } from '@prosekit/core'
 
 /**
@@ -42,6 +43,7 @@ export function defineLinkCommands() {
     addLink: (attrs: LinkAttrs) => addMark({ type: 'link', attrs }),
     removeLink: () => removeMark({ type: 'link' }),
     toggleLink: (attrs: LinkAttrs) => toggleMark({ type: 'link', attrs }),
+    expandLink: () => expandMark({ type: 'link' }),
   })
 }
 

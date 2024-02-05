@@ -44,7 +44,9 @@
     "./placeholder/style.css": "./src/placeholder/style.css",
     "./readonly": "./src/readonly/index.ts",
     "./strike": "./src/strike/index.ts",
-    "./underline": "./src/underline/index.ts"
+    "./underline": "./src/underline/index.ts",
+    "./virtual-selection": "./src/virtual-selection/index.ts",
+    "./virtual-selection/style.css": "./src/virtual-selection/style.css"
   },
   "files": [
     "dist"
@@ -172,6 +174,14 @@
         "types": "./dist/prosekit-extensions-underline.d.ts",
         "import": "./dist/prosekit-extensions-underline.js",
         "default": "./dist/prosekit-extensions-underline.js"
+      },
+      "./virtual-selection": {
+        "types": "./dist/prosekit-extensions-virtual-selection.d.ts",
+        "import": "./dist/prosekit-extensions-virtual-selection.js",
+        "default": "./dist/prosekit-extensions-virtual-selection.js"
+      },
+      "./virtual-selection/style.css": {
+        "default": "./dist/virtual-selection/style.css"
       }
     },
     "main": "./dist/prosekit-extensions.js",
@@ -232,6 +242,9 @@
         ],
         "underline": [
           "./dist/prosekit-extensions-underline.d.ts"
+        ],
+        "virtual-selection": [
+          "./dist/prosekit-extensions-virtual-selection.d.ts"
         ]
       }
     }

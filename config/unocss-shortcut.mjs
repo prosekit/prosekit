@@ -71,9 +71,16 @@ const BUTTON_SIZE_LG = 'h-1 px-8'
 const BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const INPUT = clsx(
-  'flex h-10 rounded-md w-full border border-input bg-input px-3 py-2 text-sm  placeholder:text-muted-foreground transition',
-  'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-ring ring-offset-0 outline-none',
+  'flex h-10 rounded-md w-full border box-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
+  // border
+  'border-border border-solid border',
+  // ring
+  'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0',
+  // outline
+  'outline-none focus-visible:outline-none',
+  // file
   'file:border-0 file:bg-transparent file:text-sm file:font-medium',
+  // disabled
   'disabled:cursor-not-allowed disabled:opacity-50',
 )
 
@@ -94,9 +101,23 @@ const staticShortcuts = {
     '[&_pre]:color-white [&_pre]:bg-zinc-800',
   ),
 
-  INLINE_MENU: clsx(
-    'relative block max-h-[400px] min-w-[120px] space-x-1 overflow-auto whitespace-nowrap rounded p-1',
+  INLINE_MENU_MAIN: clsx(
     FLOATING_MENU,
+
+    'relative block min-w-[120px] space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
+  ),
+
+  INLINE_MENU_LINK: clsx(
+    FLOATING_MENU,
+    'relative flex flex-col w-xs rounded-lg p-4 gap-y-2 items-stretch',
+  ),
+
+  INLINE_MENU_LINK_INPUT: clsx(INPUT),
+
+  INLINE_MENU_LINK_REMOVE_BUTTON: clsx(
+    BUTTON_BASE,
+    BUTTON_VARIANT_PRIMARY,
+    BUTTON_SIZE_SM,
   ),
 
   AUTOCOMPLETE_MENU: clsx(
@@ -121,7 +142,8 @@ const staticShortcuts = {
   ),
 
   TOOLBAR: clsx(
-    'z-2 sticky top-0 box-border flex flex-wrap gap-1 p-2 items-center border-b border-border',
+    'z-2 sticky top-0 box-border flex flex-wrap gap-1 p-2 items-center',
+    'border-border border-solid border-l-0 border-r-0 border-t-0 border-b',
   ),
 
   TOGGLE_BUTTON: clsx(
@@ -170,6 +192,7 @@ const staticShortcuts = {
   ICON_UNDO: clsx('i-lucide-undo-2 h-5 w-5'),
   ICON_REDO: clsx('i-lucide-redo-2 h-5 w-5'),
   ICON_IMAGE: clsx('i-lucide-image h-5 w-5'),
+  ICON_LINK: clsx('i-lucide-link h-5 w-5'),
   ICON_LIST_BULLET: clsx('i-lucide-list h-5 w-5'),
   ICON_LIST_ORDERED: clsx('i-lucide-list-ordered h-5 w-5'),
   ICON_LIST_TASK: clsx('i-lucide-list-checks h-5 w-5'),
@@ -179,8 +202,7 @@ const staticShortcuts = {
 }
 
 /**
- * Replace CSS class names from shortcuts with the actual tailwindcss/unocss
- * class names.
+ * Replace color aliases.
  */
 function createColorShortcuts(name, color, darkColor) {
   let pattern = new RegExp(

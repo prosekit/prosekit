@@ -53,8 +53,6 @@ examples:
     framework: react
     story: inline-menu
     files:
-      - path: button-group.tsx
-        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
@@ -255,8 +253,6 @@ examples:
         hidden: false
       - path: image-upload-popover.vue
         hidden: false
-      - path: inline-buttons.vue
-        hidden: false
       - path: inline-menu.vue
         hidden: false
       - path: language-selector.vue
@@ -406,8 +402,6 @@ examples:
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: inline-buttons.vue
         hidden: false
       - path: inline-menu.vue
         hidden: false

@@ -5,7 +5,7 @@ import { useEditorFocusChangeEvent } from '../../controllers/use-editor-focus-ev
 import { useEditorUpdateEvent } from '../../controllers/use-editor-update-event'
 import type { WithEditor } from '../../types/with-editor'
 
-import { getVirtualSelectionElement } from './helpers'
+import { getVirtualSelectionElement } from './virtual-selection-element'
 
 /**
  * @internal

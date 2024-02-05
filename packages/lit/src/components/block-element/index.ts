@@ -8,10 +8,16 @@ export class LightElement extends LitElement {
     super()
   }
 
+  /**
+   * @hidden
+   */
   createRenderRoot() {
     return this
   }
 
+  /**
+   * @hidden
+   */
   setHidden(hidden: boolean) {
     if (this.hidden !== hidden) {
       this.hidden = hidden

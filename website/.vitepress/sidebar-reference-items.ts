@@ -84,6 +84,10 @@ export const referenceItems = [
       {
         "text": "underline",
         "link": "/references/extensions/underline"
+      },
+      {
+        "text": "virtual-selection",
+        "link": "/references/extensions/virtual-selection"
       }
     ],
     "collapsed": true,

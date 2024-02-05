@@ -10,7 +10,6 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 ::: code-group
 
-<<< @/../playground/examples/react-inline-menu/button-group.tsx
 <<< @/../playground/examples/react-inline-menu/editor.tsx
 <<< @/../playground/examples/react-inline-menu/extension.ts
 <<< @/../playground/examples/react-inline-menu/inline-menu.tsx

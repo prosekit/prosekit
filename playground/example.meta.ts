@@ -105,10 +105,6 @@ export const exampleMeta = {
       "story": "inline-menu",
       "files": [
         {
-          "path": "button-group.tsx",
-          "hidden": false
-        },
-        {
           "path": "editor.tsx",
           "hidden": false
         },
@@ -493,10 +489,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "inline-buttons.vue",
-          "hidden": false
-        },
-        {
           "path": "inline-menu.vue",
           "hidden": false
         },
@@ -782,10 +774,6 @@ export const exampleMeta = {
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "inline-buttons.vue",
           "hidden": false
         },
         {

@@ -1,5 +1,4 @@
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
-import type { EditorView } from '@prosekit/pm/view'
 
 import { definePlugin } from '../plugin'
 
@@ -23,16 +22,11 @@ export function defineFocusChangeHandler(handler: FocusChangeHandler) {
 
   const plugin = new ProseMirrorPlugin({
     key: new PluginKey('prosekit-focus-handler'),
-    view: (view: EditorView) => {
-      const dom = view.dom
-      dom.addEventListener('focus', handleFocus)
-      dom.addEventListener('blur', handleBlur)
-      return {
-        destroy: () => {
-          dom.removeEventListener('focus', handleFocus)
-          dom.removeEventListener('blur', handleBlur)
-        },
-      }
+    props: {
+      handleDOMEvents: {
+        focus: handleFocus,
+        blur: handleBlur,
+      },
     },
   })
   return definePlugin(plugin)

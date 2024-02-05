@@ -1,6 +1,6 @@
 ---
-"@prosekit/lit": patch
+'prosekit': patch
+'@prosekit/lit': patch
 ---
 
-The inline popover can place itself based on the virtual selection element.  
-
+The inline popover can place itself based on the virtual selection element.

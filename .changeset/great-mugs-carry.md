@@ -1,6 +1,6 @@
 ---
-"prosekit": patch
-"@prosekit/core": patch
+'prosekit': patch
+'@prosekit/core': patch
 ---
 
 Add `expandMark` command.

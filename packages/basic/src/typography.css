@@ -52,9 +52,8 @@ div.ProseMirror {
   }
 
   & blockquote {
-    padding: 0.25rem;
     padding-left: 1em;
-    font-style: italic;
+    border-left: 0.25em solid gray;
   }
 
   & h1 {

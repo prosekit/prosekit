@@ -84,7 +84,7 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v1.9.3
         with:
-          args: --base ./website/dist --verbose --no-progress './website/dist/**/*.html' --include-fragments
+          args: --base ./website/dist --no-progress './website/dist/**/*.html' --include-fragments
           fail: true
 
   deploy:

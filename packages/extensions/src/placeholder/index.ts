@@ -3,7 +3,6 @@ import { ProseMirrorNode } from '@prosekit/pm/model'
 import { EditorState, Plugin, PluginKey } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
-
 export interface PlaceholderOptions {
   /**
    * The placeholder text to use.

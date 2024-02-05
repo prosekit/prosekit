@@ -104,7 +104,17 @@ export default function InlineMenu() {
       <InlinePopover
         className="INLINE_MENU_LINK"
         editor={editor}
-        positioning={{ placement: 'bottom' }}
+        positioning={{
+          strategy: 'fixed',
+          placement: 'bottom',
+          offset: 12,
+          flip: false,
+          hide: true,
+          shift: true,
+          overlap: true,
+          fitViewport: false,
+          inline: true,
+        }}
         available={linkMenuAvailable}
         onOpenChange={setLinkMenuAvailable}
       >

@@ -53,7 +53,7 @@ div.ProseMirror {
 
   & blockquote {
     padding-left: 1em;
-    border-left: 0.25em solid gray;
+    border-left: 0.25em solid hsla(0, 0%, 60%, 0.4);
   }
 
   & h1 {

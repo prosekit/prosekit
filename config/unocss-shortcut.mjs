@@ -71,7 +71,7 @@ const BUTTON_SIZE_LG = 'h-1 px-8'
 const BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const INPUT = clsx(
-  'flex h-10 rounded-md w-full border border-input bg-input px-3 py-2 text-sm  placeholder:text-muted-foreground transition',
+  'flex h-10 rounded-md w-full border box-border border-border bg-background px-3 py-2 text-sm  placeholder:text-muted-foreground transition',
   'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-ring ring-offset-0 outline-none',
   'file:border-0 file:bg-transparent file:text-sm file:font-medium',
   'disabled:cursor-not-allowed disabled:opacity-50',
@@ -94,9 +94,23 @@ const staticShortcuts = {
     '[&_pre]:color-white [&_pre]:bg-zinc-800',
   ),
 
-  INLINE_MENU: clsx(
-    'relative block max-h-[400px] min-w-[120px] space-x-1 overflow-auto whitespace-nowrap rounded p-1',
+  INLINE_MENU_MAIN: clsx(
     FLOATING_MENU,
+
+    'relative block min-w-[120px] space-x-1 overflow-auto whitespace-nowrap rounded-md p-0',
+  ),
+
+  INLINE_MENU_LINK: clsx(
+    FLOATING_MENU,
+    'relative flex flex-col w-xs rounded-lg p-4 gap-y-2 items-stretch',
+  ),
+
+  INLINE_MENU_LINK_INPUT: clsx(INPUT),
+
+  INLINE_MENU_LINK_REMOVE_BUTTON: clsx(
+    BUTTON_BASE,
+    BUTTON_VARIANT_PRIMARY,
+    BUTTON_SIZE_SM,
   ),
 
   AUTOCOMPLETE_MENU: clsx(

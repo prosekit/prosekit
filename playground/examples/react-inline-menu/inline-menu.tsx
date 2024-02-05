@@ -40,7 +40,7 @@ export default function InlineMenu() {
   return (
     <>
       <InlinePopover
-        className="INLINE_MENU"
+        className="INLINE_MENU_MAIN"
         editor={editor}
         onOpenChange={(open) => {
           if (!open) {
@@ -84,7 +84,7 @@ export default function InlineMenu() {
       </InlinePopover>
 
       <InlinePopover
-        className="INLINE_MENU"
+        className="INLINE_MENU_LINK"
         editor={editor}
         positioning={{ placement: 'bottom' }}
         available={linkMenuAvailable}
@@ -103,8 +103,9 @@ export default function InlineMenu() {
             }}
           >
             <input
-              placeholder="Paste link"
+              placeholder="Paste the link..."
               defaultValue={getCurrentLink(editor.state)}
+              className="INLINE_MENU_LINK_INPUT"
             ></input>
           </form>
         )}
@@ -112,6 +113,7 @@ export default function InlineMenu() {
           <button
             onClick={() => handleLinkUpdate()}
             onMouseDown={(event) => event.preventDefault()}
+            className="INLINE_MENU_LINK_REMOVE_BUTTON"
           >
             Remove link
           </button>

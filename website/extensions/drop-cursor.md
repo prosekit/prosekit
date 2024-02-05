@@ -6,10 +6,10 @@ Show a visual indicator when something is dragged over the editor.
 
 ## Usage
 
-```ts
+```ts twoslash
 import { defineDropCursor } from 'prosekit/extensions/drop-cursor'
 
-extension = defineDropCursor()
+const extension = defineDropCursor()
 ```
 
 ## API Reference

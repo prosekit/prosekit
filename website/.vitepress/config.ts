@@ -116,6 +116,7 @@ export default defineConfig({
 
         {
           items: [
+            { text: 'Input Rule', link: '/extensions/input-rule' },
             { text: 'Placeholder', link: '/extensions/placeholder' },
             { text: 'Readonly', link: '/extensions/readonly' },
             { text: 'Drop Cursor', link: '/extensions/drop-cursor' },

@@ -6,10 +6,10 @@ Disable editing of the editor.
 
 ## Usage
 
-```ts
+```ts twoslash
 import { defineReadonly } from 'prosekit/extensions/readonly'
 
-extension = defineReadonly()
+const extension = defineReadonly()
 ```
 
 You can use `useExtension()` to enable or disable this extension dynamically in your application.

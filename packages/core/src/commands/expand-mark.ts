@@ -5,6 +5,8 @@ import { getMarkType } from '../utils/get-mark-type'
 
 /**
  * Expands the selection to include the entire mark at the current position.
+ * 
+ * @public
  */
 export function expandMark(options: {
   /**

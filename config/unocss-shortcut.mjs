@@ -97,7 +97,7 @@ const staticShortcuts = {
   INLINE_MENU_MAIN: clsx(
     FLOATING_MENU,
 
-    'relative block min-w-[120px] space-x-1 overflow-auto whitespace-nowrap rounded-md p-0',
+    'relative block min-w-[120px] space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
   ),
 
   INLINE_MENU_LINK: clsx(
@@ -184,6 +184,7 @@ const staticShortcuts = {
   ICON_UNDO: clsx('i-lucide-undo-2 h-5 w-5'),
   ICON_REDO: clsx('i-lucide-redo-2 h-5 w-5'),
   ICON_IMAGE: clsx('i-lucide-image h-5 w-5'),
+  ICON_LINK: clsx('i-lucide-link h-5 w-5'),
   ICON_LIST_BULLET: clsx('i-lucide-list h-5 w-5'),
   ICON_LIST_ORDERED: clsx('i-lucide-list-ordered h-5 w-5'),
   ICON_LIST_TASK: clsx('i-lucide-list-checks h-5 w-5'),

@@ -20,9 +20,9 @@
     "@iconify-json/lucide": "^1.1.162",
     "@playwright/test": "^1.41.2",
     "@prosekit/dev": "*",
-    "@types/react": "^18.2.52",
+    "@types/react": "^18.2.54",
     "@types/react-dom": "^18.2.18",
-    "@unocss/reset": "^0.58.4",
+    "@unocss/reset": "^0.58.5",
     "astro": "^4.3.2",
     "lit": "^3.1.2",
     "preact": "^10.19.3",
@@ -30,10 +30,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "shikiji": "^0.10.2",
-    "solid-js": "^1.8.12",
-    "svelte": "^4.2.9",
+    "solid-js": "^1.8.14",
+    "svelte": "^4.2.10",
     "typescript": "^5.3.3",
-    "unocss": "^0.58.4",
+    "unocss": "^0.58.5",
     "vue": "^3.4.15"
   }
 }

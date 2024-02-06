@@ -108,7 +108,7 @@ const handleLinkUpdate = (href?: string) => {
       hide: true,
       shift: true,
       overlap: true,
-      fitViewport: false,
+      fitViewport: true,
       inline: true,
     }"
     :available="linkMenuAvailable"

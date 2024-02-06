@@ -54,7 +54,7 @@ export class InlinePopover
     hide: true,
     shift: true,
     overlap: true,
-    fitViewport: false,
+    fitViewport: true,
     inline: true,
   }
 

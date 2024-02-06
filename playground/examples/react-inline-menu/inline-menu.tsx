@@ -112,7 +112,7 @@ export default function InlineMenu() {
           hide: true,
           shift: true,
           overlap: true,
-          fitViewport: false,
+          fitViewport: true,
           inline: true,
         }}
         available={linkMenuAvailable}

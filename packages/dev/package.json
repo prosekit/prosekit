@@ -22,7 +22,7 @@
   "dependencies": {
     "@manypkg/find-root": "^2.2.1",
     "@manypkg/get-packages": "^2.2.0",
-    "@microsoft/api-extractor": "^7.39.4",
+    "@microsoft/api-extractor": "^7.39.5",
     "@sindresorhus/slugify": "^2.2.1",
     "load-json-file": "^7.0.1",
     "lodash-es": "^4.17.21",

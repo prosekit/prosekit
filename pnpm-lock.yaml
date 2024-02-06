@@ -361,7 +361,7 @@ importers:
         specifier: 0.3.0
         version: link:../extensions
       '@prosekit/lit':
-        specifier: 0.2.2
+        specifier: 0.2.3
         version: link:../lit
       '@prosekit/pm':
         specifier: 0.1.1
@@ -612,7 +612,7 @@ importers:
         specifier: ^10.19.3
         version: 10.19.3
       prosekit:
-        specifier: ^0.4.0
+        specifier: ^0.4.1
         version: link:../packages/prosekit
       react:
         specifier: ^18.2.0
@@ -675,7 +675,7 @@ importers:
         specifier: ^3.2.5
         version: 3.2.5
       prosekit:
-        specifier: ^0.4.0
+        specifier: ^0.4.1
         version: link:../packages/prosekit
       prosekit-playground:
         specifier: '*'

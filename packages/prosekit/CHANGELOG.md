@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.4.1
+
+### Patch Changes
+
+- [`9851f2a`](https://github.com/ocavue/prosekit/commit/9851f2a12b86b67e9130cc9a9c4cdeb1f47ea13e) ![][badge-lit]
+
+  Fix an issue where the autocomplete popover would overflow the viewport.
+
 ## 0.4.0
 
 ### Minor Changes

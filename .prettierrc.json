@@ -5,6 +5,12 @@
   "htmlWhitespaceSensitivity": "ignore",
   "overrides": [
     {
+      "files": ["tsconfig.json", "tsconfig.*.json"],
+      "options": {
+        "parser": "jsonc"
+      }
+    },
+    {
       "files": "*.svelte",
       "options": {
         "parser": "svelte"

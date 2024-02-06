@@ -47,6 +47,7 @@ export class AutocompletePopover
   positioning?: PositioningOptions = {
     strategy: 'fixed',
     placement: 'bottom-start',
+    fitViewport: true,
     flip: false,
     inline: true,
   }

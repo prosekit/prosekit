@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "outDir": "temp",
+    "outDir": "temp"
   },
-  "include": ["./src", "./*.js", "./*.ts"],
+  "include": ["./src", "./*.js", "./*.ts"]
 }

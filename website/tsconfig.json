@@ -4,7 +4,7 @@
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "composite": true,
-    "outDir": "temp",
+    "outDir": "temp"
   },
   "include": [
     "./shims-vue.d.ts",
@@ -13,6 +13,6 @@
     "./**/*.tsx",
     ".vitepress/**/*.vue",
     ".vitepress/**/*.tsx",
-    ".vitepress/**/*.ts",
-  ],
+    ".vitepress/**/*.ts"
+  ]
 }

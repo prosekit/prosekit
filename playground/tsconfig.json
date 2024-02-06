@@ -2,7 +2,7 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "outDir": "temp",
+    "outDir": "temp"
   },
   "include": [
     "./pages",
@@ -13,29 +13,29 @@
     "./playwright.config.ts",
     "./astro.config.mjs",
     "./example.meta.ts",
-    "./tests/**/*.ts",
+    "./tests/**/*.ts"
   ],
   "references": [
     {
-      "path": "./examples/lit.tsconfig.json",
+      "path": "./examples/lit.tsconfig.json"
     },
     {
-      "path": "./examples/preact.tsconfig.json",
+      "path": "./examples/preact.tsconfig.json"
     },
     {
-      "path": "./examples/react.tsconfig.json",
+      "path": "./examples/react.tsconfig.json"
     },
     {
-      "path": "./examples/solid.tsconfig.json",
+      "path": "./examples/solid.tsconfig.json"
     },
     {
-      "path": "./examples/svelte.tsconfig.json",
+      "path": "./examples/svelte.tsconfig.json"
     },
     {
-      "path": "./examples/vanilla.tsconfig.json",
+      "path": "./examples/vanilla.tsconfig.json"
     },
     {
-      "path": "./examples/vue.tsconfig.json",
-    },
-  ],
+      "path": "./examples/vue.tsconfig.json"
+    }
+  ]
 }

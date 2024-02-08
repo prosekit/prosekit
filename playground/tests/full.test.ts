@@ -11,16 +11,16 @@ for (const example of getExamples('full')) {
         const a = editor.locator('a')
 
         await editor.pressSequentially('Hello ')
-        await editor.pressSequentially('www.example.com')
+        await editor.pressSequentially('https://www.example.com?query=query#fragment')
 
-        await expect(editor).toHaveText('Hello www.example.com')
+        await expect(editor).toHaveText('Hello https://www.example.com?query=query#fragment')
         await expect(a).not.toBeVisible()
 
         await editor.pressSequentially(' ')
-        await expect(editor).toHaveText('Hello www.example.com ')
+        await expect(editor).toHaveText('Hello https://www.example.com?query=query#fragment ')
         await expect(a).toBeVisible()
-        await expect(a).toHaveAttribute('href', 'www.example.com')
-        await expect(a).toHaveText('www.example.com')
+        await expect(a).toHaveAttribute('href', 'https://www.example.com?query=query#fragment')
+        await expect(a).toHaveText('https://www.example.com?query=query#fragment')
       })
 
       test('press Space to insert a link ends with a period', async ({
@@ -49,16 +49,16 @@ for (const example of getExamples('full')) {
         const a = editor.locator('a')
 
         await editor.pressSequentially('Hello ')
-        await editor.pressSequentially('www.example.com')
+        await editor.pressSequentially('https://www.example.com?query=query#fragment')
 
-        await expect(editor).toHaveText('Hello www.example.com')
+        await expect(editor).toHaveText('Hello https://www.example.com?query=query#fragment')
         await expect(a).not.toBeVisible()
 
         await editor.press('Enter')
-        await expect(editor).toHaveText('Hello www.example.com')
+        await expect(editor).toHaveText('Hello https://www.example.com?query=query#fragment')
         await expect(a).toBeVisible()
-        await expect(a).toHaveAttribute('href', 'www.example.com')
-        await expect(a).toHaveText('www.example.com')
+        await expect(a).toHaveAttribute('href', 'https://www.example.com?query=query#fragment')
+        await expect(a).toHaveText('https://www.example.com?query=query#fragment')
       })
 
       test('press Enter to insert a link ends with a period', async ({

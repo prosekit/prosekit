@@ -3,9 +3,15 @@ import type { Page } from '@playwright/test'
 import { exampleMeta } from '../example.meta'
 
 export function getExamples(story: string) {
-  return exampleMeta.examples
+  const examples = exampleMeta.examples
     .filter((example) => example.story === story)
     .map((example) => example.name)
+
+  if (examples.length === 0) {
+    throw new Error(`No examples found for story "${story}"`)
+  }
+
+  return examples
 }
 
 export function locateEditor(page: Page) {

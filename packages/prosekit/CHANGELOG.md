@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.4.2
+
+### Patch Changes
+
+- [`82c5c7e`](https://github.com/ocavue/prosekit/commit/82c5c7e72ff638bc9080cb34e5fc2f695ad662a3) ![][badge-extensions]
+
+  Now when you type something that's recognized as a link, it will become a link automatically.
+
+- [`82c5c7e`](https://github.com/ocavue/prosekit/commit/82c5c7e72ff638bc9080cb34e5fc2f695ad662a3) ![][badge-lit]
+
+  Fix an issue where autocomplete menus would catch Enter keypress when there is no available command to select.
+
 ## 0.4.1
 
 ### Patch Changes

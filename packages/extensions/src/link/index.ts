@@ -1,12 +1,18 @@
 import {
-  defineCommands,
   addMark,
+  defineCommands,
   defineMarkSpec,
-  union,
+  expandMark,
   removeMark,
   toggleMark,
-  expandMark,
+  union,
 } from '@prosekit/core'
+import { InputRule } from '@prosekit/pm/inputrules'
+
+import { defineEnterRule } from '../enter-rule'
+import { defineInputRule } from '../input-rule'
+
+import { LINK_RE, LINK_SPACE_RE } from './link-regex'
 
 /**
  * @public
@@ -18,6 +24,7 @@ export interface LinkAttrs {
 export function defineLinkSpec() {
   return defineMarkSpec({
     name: 'link',
+    inclusive: false,
     parseDOM: [
       {
         tag: 'a[href]',
@@ -47,9 +54,40 @@ export function defineLinkCommands() {
   })
 }
 
+export function defineLinkInputRule() {
+  return defineInputRule(
+    new InputRule(LINK_SPACE_RE, (state, match, from) => {
+      const href = match[1]
+      if (!href) return null
+
+      const mark = state.schema.marks.link.create({ href })
+      return state.tr.addMark(from, from + href.length, mark).insertText(' ')
+    }),
+  )
+}
+
+export function defineLinkEnterRule() {
+  return defineEnterRule({
+    regex: LINK_RE,
+    handler: ({ state, from, match }) => {
+      const href = match[1]
+      if (!href) return null
+
+      const mark = state.schema.marks.link.create({ href })
+      const tr = state.tr.addMark(from, from + href.length, mark)
+      return tr.docChanged ? tr : null
+    },
+  })
+}
+
 /**
  * @public
  */
 export function defineLink() {
-  return union([defineLinkSpec(), defineLinkCommands()])
+  return union([
+    defineLinkSpec(),
+    defineLinkCommands(),
+    defineLinkInputRule(),
+    defineLinkEnterRule(),
+  ])
 }

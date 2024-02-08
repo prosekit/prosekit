@@ -1,14 +1,20 @@
 import {
   Facet,
+  OBJECT_REPLACEMENT_CHARACTER,
   getNodeType,
   isTextSelection,
-  keymapFacet,
+  pluginFacet,
   type Extension,
-  type KeymapPayload,
-  OBJECT_REPLACEMENT_CHARACTER,
+  type PluginPayload,
 } from '@prosekit/core'
+import { keydownHandler } from '@prosekit/pm/keymap'
 import type { Attrs, NodeType } from '@prosekit/pm/model'
-import type { EditorState, Transaction } from '@prosekit/pm/state'
+import {
+  ProseMirrorPlugin,
+  type Command,
+  type EditorState,
+  type Transaction,
+} from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 // TODO: Export `prosekit/extension/enter-rule`, when we are happy with the API.
@@ -38,6 +44,13 @@ export type EnterRuleOptions = {
    * A handler function to be called when an enter rule is triggered.
    */
   handler: EnterRuleHandler
+
+  /**
+   * Whether to stop further handlers from being called if this rule is triggered.
+   *
+   * @default false
+   */
+  stop?: boolean
 }
 
 /**
@@ -60,6 +73,13 @@ export type TextBlockEnterRuleOptions = {
    * Attributes to set on the node.
    */
   attrs?: Attrs | null | ((match: RegExpMatchArray) => Attrs | null)
+
+  /**
+   * Whether to stop further handlers from being called if this rule is triggered.
+   *
+   * @default true
+   */
+  stop?: boolean
 }
 
 /**
@@ -72,9 +92,10 @@ export type TextBlockEnterRuleOptions = {
 export function defineEnterRule({
   regex,
   handler,
+  stop = false,
 }: EnterRuleOptions): Extension {
-  const rule: EnterRule = new EnterRule(regex, handler)
-  return inputRuleFacet.extension([rule])
+  const rule: EnterRule = new EnterRule(regex, handler, stop)
+  return enterRule.extension([rule])
 }
 
 /**
@@ -88,6 +109,7 @@ export function defineTextBlockEnterRule({
   regex,
   type,
   attrs,
+  stop = true,
 }: TextBlockEnterRuleOptions): Extension {
   return defineEnterRule({
     regex,
@@ -111,6 +133,7 @@ export function defineTextBlockEnterRule({
         .delete(from, to)
         .setBlockType(from, from, nodeType, nodeAttrs)
     },
+    stop,
   })
 }
 
@@ -121,19 +144,35 @@ class EnterRule {
   constructor(
     readonly regex: RegExp,
     readonly handler: EnterRuleHandler,
+    readonly stop: boolean,
   ) {}
 }
 
-const inputRuleFacet = Facet.define<EnterRule, KeymapPayload>({
-  convert: (inputs: EnterRule[]): KeymapPayload => {
+const enterRule = Facet.define<EnterRule, PluginPayload>({
+  converter: () => {
+    let rules: EnterRule[] = []
+
+    const command: Command = (state, dispatch, view) => {
+      if (!view) return false
+      return execRules(view, rules, dispatch)
+    }
+    const handler = keydownHandler({ Enter: command })
+    const plugin = new ProseMirrorPlugin({ props: { handleKeyDown: handler } })
+    const pluginFunc = () => [plugin]
+
     return {
-      Enter: (state, dispatch, view) => {
-        if (!view) return false
-        return execRules(view, inputs, dispatch)
+      create: (inputs: EnterRule[]) => {
+        rules = inputs
+        return pluginFunc
+      },
+      update: (inputs: EnterRule[]) => {
+        rules = inputs
+        return null
       },
     }
   },
-  next: keymapFacet,
+
+  next: pluginFacet,
 })
 
 function execRules(
@@ -168,7 +207,10 @@ function execRules(
       })
     if (!tr) continue
     dispatch?.(tr)
-    return true
+
+    if (rule.stop) {
+      return true
+    }
   }
   return false
 }

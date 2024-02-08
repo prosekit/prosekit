@@ -61,7 +61,6 @@ for (const example of getExamples('full')) {
         await expect(a).toHaveText('www.example.com')
       })
 
-
       test('press Enter to insert a link ends with a period', async ({
         page,
       }) => {
@@ -75,7 +74,7 @@ for (const example of getExamples('full')) {
         await expect(editor).toHaveText('Hello https://example.com.')
         await expect(a).not.toBeVisible()
 
-        await editor.press("Enter")
+        await editor.press('Enter')
         await expect(editor).toHaveText('Hello https://example.com.')
         await expect(a).toBeVisible()
         await expect(a).toHaveAttribute('href', 'https://example.com')

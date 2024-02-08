@@ -11,7 +11,7 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
   private queryClosestItem: (element: HTMLElement) => Item | null
   private getActive: () => boolean
   private onDismiss: () => void
-  private onSelect: (item?: Item | null) => void
+  private onSelect: (item?: Item | null) => boolean
 
   constructor(options: {
     getItems: () => Item[]
@@ -21,7 +21,7 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
     queryClosestItem: (element: HTMLElement) => Item | null
     getActive: () => boolean
     onDismiss: () => void
-    onSelect: (item?: Item | null) => void
+    onSelect: (item?: Item | null) => boolean
   }) {
     this.getItems = options.getItems
     this.getSelectedValue = options.getSelectedValue
@@ -147,8 +147,6 @@ export class ListManager<Item extends { hidden: boolean } & HTMLElement> {
 
   handleEnter(): boolean {
     if (!this.active) return false
-
-    this.onSelect(this.selectedItem)
-    return true
+    return this.onSelect(this.selectedItem)
   }
 }

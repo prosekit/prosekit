@@ -41,7 +41,9 @@ export class AutocompleteList
       if (item?.onSelect) {
         this.popoverContext.value?.handleSubmit?.()
         item.onSelect()
+        return true
       }
+      return false
     },
   })
 

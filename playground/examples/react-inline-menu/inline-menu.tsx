@@ -14,8 +14,8 @@ export default function InlineMenu() {
   const toggleLinkMenuAvailable = () => setLinkMenuAvailable((open) => !open)
 
   const getCurrentLink = (state: EditorState): string | undefined => {
-    const { $from, $to } = state.selection
-    const marks = $from.marksAcross($to)
+    const { $from } = state.selection
+    const marks = $from.marksAcross($from)
     if (!marks) {
       return
     }

@@ -1,4 +1,4 @@
-import type { EditorState, Transaction } from '@prosekit/pm/state'
+import type { EditorState } from '@prosekit/pm/state'
 
 import { defaultCanMatch } from './helpers'
 
@@ -9,7 +9,7 @@ export type MatchHandler = (options: {
   to: number
   ignoreMatch: () => void
   deleteMatch: () => void
-}) => Transaction | null | void
+}) => void
 
 export class AutocompleteRule {
   readonly regex: RegExp

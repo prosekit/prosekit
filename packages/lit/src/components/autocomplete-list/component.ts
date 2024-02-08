@@ -38,8 +38,12 @@ export class AutocompleteList
     getActive: () => this.active,
     onDismiss: () => this.popoverContext.value?.handleDismiss?.(),
     onSelect: (item) => {
-      this.popoverContext.value?.handleSubmit?.()
-      item?.onSelect?.()
+      if (item?.onSelect) {
+        this.popoverContext.value?.handleSubmit?.()
+        item.onSelect()
+        return true
+      }
+      return false
     },
   })
 

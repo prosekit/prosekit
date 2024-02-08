@@ -32,8 +32,8 @@ export function defineTextColorSpec() {
 }
 
 function getCurrentColor(state: EditorState) {
-  const { $from, $to } = state.selection
-  const marks = $from.marksAcross($to)
+  const { $from } = state.selection
+  const marks = $from.marksAcross($from)
   if (!marks) {
     return null
   }

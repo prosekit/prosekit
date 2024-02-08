@@ -59,9 +59,13 @@ export class ComboBox extends Popover {
       this.hide()
     },
     onSelect: (item) => {
-      this.setSelectedValue('', 'keyboard')
-      item?.onSelect?.()
-      this.hide()
+      if (item?.onSelect) {
+        this.setSelectedValue('', 'keyboard')
+        item?.onSelect?.()
+        this.hide()
+        return true
+      }
+      return false
     },
   })
 

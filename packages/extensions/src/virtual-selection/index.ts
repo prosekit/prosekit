@@ -53,8 +53,8 @@ const virtualSelectionPlugin = new ProseMirrorPlugin<PluginState>({
       },
 
       blur: (view) => {
-        const dom = view.dom
-        const activeElement = dom?.ownerDocument?.activeElement
+        const { dom, root } = view
+        const activeElement = root.activeElement
 
         // Don't show the decoration if the dom is blurred because the focus
         // moved outside the browser window.

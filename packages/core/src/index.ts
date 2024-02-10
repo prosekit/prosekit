@@ -21,6 +21,36 @@ export {
   type DocChangeHandler,
 } from './extensions/events/doc-change'
 export {
+  defineDOMEventHandler,
+  type DOMEventHandler,
+} from './extensions/events/dom-event'
+export {
+  defineClickHandler,
+  defineClickOnHandler,
+  defineDoubleClickHandler,
+  defineDoubleClickOnHandler,
+  defineDropHandler,
+  defineKeyDownHandler,
+  defineKeyPressHandler,
+  definePasteHandler,
+  defineScrollToSelectionHandler,
+  defineTextInputHandler,
+  defineTripleClickHandler,
+  defineTripleClickOnHandler,
+  type ClickHandler,
+  type ClickOnHandler,
+  type DoubleClickHandler,
+  type DoubleClickOnHandler,
+  type DropHandler,
+  type KeyDownHandler,
+  type KeyPressHandler,
+  type PasteHandler,
+  type ScrollToSelectionHandler,
+  type TextInputHandler,
+  type TripleClickHandler,
+  type TripleClickOnHandler,
+} from './extensions/events/editor-event'
+export {
   defineFocusChangeHandler,
   type FocusChangeHandler,
 } from './extensions/events/focus'

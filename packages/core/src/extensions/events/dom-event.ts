@@ -2,6 +2,7 @@ import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { DOMEventMap, EditorView } from '@prosekit/pm/view'
 
 import { Facet } from '../../facets/facet'
+import { groupEntries } from '../../utils/group-entries'
 import { pluginFacet, type PluginPayload } from '../plugin'
 
 /**
@@ -42,28 +43,22 @@ export type DOMEventPayload = [event: string, handler: DOMEventHandler]
 export const domEventFacet = Facet.define<DOMEventPayload, PluginPayload>({
   converter: () => {
     const events: Set<string> = new Set<string>()
-    const handlersMap = new Map<string, DOMEventHandler[]>()
+    const handlersMap: Record<string, DOMEventHandler[]> = {}
 
     let plugin: ProseMirrorPlugin = new ProseMirrorPlugin({
       props: { handleDOMEvents: {} },
     })
 
     const updateHandlersMap = (payloads: DOMEventPayload[]) => {
-      for (const callbacks of handlersMap.values()) {
+      for (const callbacks of Object.values(handlersMap)) {
         callbacks.length = 0
       }
-
-      for (const [event, handler] of payloads) {
-        if (!handlersMap.get(event)) {
-          handlersMap.set(event, [])
-        }
-        handlersMap.get(event)!.push(handler)
-      }
+      groupEntries(payloads, handlersMap)
     }
 
     const updatePlugin = () => {
       const handlers = Object.fromEntries(
-        Array.from(handlersMap.entries()).map(([event, handlers]) => {
+        Object.entries(handlersMap).map(([event, handlers]) => {
           return [
             event,
             (view: EditorView, event: Event) => {

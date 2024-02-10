@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.3.0",
-    "@prosekit/lit": "^0.2.2",
+    "@prosekit/lit": "^0.2.4",
     "@prosekit/pm": "^0.1.1"
   },
   "peerDependencies": {
@@ -62,7 +62,7 @@
   "devDependencies": {
     "@prosekit/dev": "*",
     "solid-js": "^1.8.14",
-    "tsup": "^8.0.1",
+    "tsup": "^8.0.2",
     "typescript": "^5.3.3",
     "vitest": "^1.2.2"
   },

@@ -60,7 +60,7 @@
     "@prosekit/pm": "^0.1.1",
     "prosemirror-dropcursor": "^1.8.1",
     "prosemirror-flat-list": "^0.4.6",
-    "prosemirror-highlight": "^0.4.1"
+    "prosemirror-highlight": "^0.5.0"
   },
   "peerDependencies": {
     "shikiji": ">= 0.9.0"
@@ -73,7 +73,7 @@
   "devDependencies": {
     "@prosekit/dev": "*",
     "shikiji": "^0.10.2",
-    "tsup": "^8.0.1",
+    "tsup": "^8.0.2",
     "typescript": "^5.3.3",
     "vitest": "^1.2.2"
   },

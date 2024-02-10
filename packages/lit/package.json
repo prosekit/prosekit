@@ -61,7 +61,7 @@
   "devDependencies": {
     "@prosekit/dev": "*",
     "minify-literals": "^1.0.8",
-    "tsup": "^8.0.1",
+    "tsup": "^8.0.2",
     "typescript": "^5.3.3",
     "vitest": "^1.2.2"
   },

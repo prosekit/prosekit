@@ -38,14 +38,14 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.3.0",
-    "@prosekit/extensions": "^0.3.0",
+    "@prosekit/extensions": "^0.3.1",
     "@prosekit/pm": "^0.1.1"
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "postcss": "^8.4.34",
+    "postcss": "^8.4.35",
     "postcss-nesting": "^12.0.2",
-    "tsup": "^8.0.1",
+    "tsup": "^8.0.2",
     "typescript": "^5.3.3",
     "vitest": "^1.2.2"
   },

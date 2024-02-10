@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.3.0",
-    "@prosekit/lit": "^0.2.2",
+    "@prosekit/lit": "^0.2.4",
     "@prosekit/pm": "^0.1.1",
     "@prosemirror-adapter/core": "^0.2.6"
   },
@@ -62,10 +62,10 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "tsup": "^8.0.1",
+    "tsup": "^8.0.2",
     "typescript": "^5.3.3",
     "vitest": "^1.2.2",
-    "vue": "^3.4.15"
+    "vue": "^3.4.18"
   },
   "publishConfig": {
     "exports": {

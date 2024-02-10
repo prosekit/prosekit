@@ -16,6 +16,6 @@ export function groupEntries<T extends Record<string, any>>(
   return map
 }
 
-export type GroupedEntries<U extends Record<string, any>> = {
-  [K in keyof U]?: U[K][]
+export type GroupedEntries<T extends Record<string, any>> = {
+  [K in keyof T]?: T[K][]
 }

@@ -1,6 +1,4 @@
-import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
-
-import { definePlugin } from '../plugin'
+import { domEventFacet } from './dom-event'
 
 /**
  * A function that is called when the editor gains or loses focus.
@@ -19,15 +17,8 @@ export type FocusChangeHandler = (hasFocus: boolean) => void
 export function defineFocusChangeHandler(handler: FocusChangeHandler) {
   const handleFocus = () => handler(true)
   const handleBlur = () => handler(false)
-
-  const plugin = new ProseMirrorPlugin({
-    key: new PluginKey('prosekit-focus-handler'),
-    props: {
-      handleDOMEvents: {
-        focus: handleFocus,
-        blur: handleBlur,
-      },
-    },
-  })
-  return definePlugin(plugin)
+  return domEventFacet.extension([
+    ['focus', handleFocus],
+    ['blur', handleBlur],
+  ])
 }

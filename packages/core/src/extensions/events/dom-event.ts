@@ -2,6 +2,8 @@ import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { DOMEventMap, EditorView } from '@prosekit/pm/view'
 
 import { Facet } from '../../facets/facet'
+import type { Setter } from '../../types/setter'
+import { combineEventHandlers } from '../../utils/combine-event-handlers'
 import { groupEntries } from '../../utils/group-entries'
 import { pluginFacet, type PluginPayload } from '../plugin'
 
@@ -42,64 +44,48 @@ export type DOMEventPayload = [event: string, handler: DOMEventHandler]
  */
 export const domEventFacet = Facet.define<DOMEventPayload, PluginPayload>({
   converter: () => {
-    const events: Set<string> = new Set<string>()
-    const handlersMap: Record<string, DOMEventHandler[]> = {}
+    const setHandlersMap: Record<string, Setter<DOMEventHandler[]>> = {}
+    const combinedHandlerMap: Record<string, DOMEventHandler> = {}
 
-    let plugin: ProseMirrorPlugin = new ProseMirrorPlugin({
-      props: { handleDOMEvents: {} },
-    })
-
-    const updateHandlersMap = (payloads: DOMEventPayload[]) => {
-      for (const callbacks of Object.values(handlersMap)) {
-        callbacks.length = 0
-      }
-      groupEntries(payloads, handlersMap)
-    }
-
-    const updatePlugin = () => {
-      const handlers = Object.fromEntries(
-        Object.entries(handlersMap).map(([event, handlers]) => {
-          return [
-            event,
-            (view: EditorView, event: Event) => {
-              for (const handler of handlers) {
-                if (handler(view, event)) {
-                  return true
-                }
-              }
-              return false
-            },
-          ]
-        }),
-      )
-      plugin = new ProseMirrorPlugin({
-        key: new PluginKey('prosekit-dom-event-handler'),
-        props: {
-          handleDOMEvents: handlers,
-        },
-      })
-      return plugin
-    }
-
-    const update = (payloads: DOMEventPayload[]): PluginPayload => {
-      const size = events.size
+    const update = (payloads: DOMEventPayload[]) => {
+      let hasNewEvent = false
 
       for (const [event] of payloads) {
-        events.add(event)
+        if (!setHandlersMap[event]) {
+          hasNewEvent = true
+          const [setHandlers, combinedHandler] =
+            combineEventHandlers<DOMEventHandler>()
+          setHandlersMap[event] = setHandlers
+          combinedHandlerMap[event] = combinedHandler
+        }
       }
 
-      updateHandlersMap(payloads)
-      if (events.size !== size) {
-        const newPlugin = updatePlugin()
-        return () => newPlugin
+      const map: Record<string, DOMEventHandler[] | undefined> =
+        groupEntries<DOMEventMap>(payloads)
+      for (const [event, handlers] of Object.entries(map)) {
+        const setHandlers = setHandlersMap[event]
+        setHandlers(handlers ?? [])
+      }
+
+      if (hasNewEvent) {
+        return new ProseMirrorPlugin({
+          key: new PluginKey('prosekit-dom-event-handler'),
+          props: { handleDOMEvents: combinedHandlerMap },
+        })
       } else {
-        return () => []
+        return null
       }
     }
 
     return {
-      create: update,
-      update: update,
+      create: (payloads) => {
+        const plugin = update(payloads)
+        return plugin ? () => plugin : () => []
+      },
+      update: (payloads) => {
+        const plugin = update(payloads)
+        return plugin ? () => plugin : null
+      },
     }
   },
   next: pluginFacet,

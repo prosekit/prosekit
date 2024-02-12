@@ -473,6 +473,10 @@ export const exampleMeta = {
       "story": "full",
       "files": [
         {
+          "path": "block-handle.vue",
+          "hidden": false
+        },
+        {
           "path": "code-block-view.vue",
           "hidden": false
         },

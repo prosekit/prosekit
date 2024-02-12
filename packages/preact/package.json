@@ -30,10 +30,12 @@
     "./autocomplete-item": "./src/components/autocomplete-item.ts",
     "./autocomplete-list": "./src/components/autocomplete-list.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
+    "./block-popover": "./src/components/block-popover.gen.ts",
     "./combo-box": "./src/components/combo-box.gen.ts",
     "./combo-box-input": "./src/components/combo-box-input.gen.ts",
     "./combo-box-item": "./src/components/combo-box-item.gen.ts",
     "./combo-box-list": "./src/components/combo-box-list.gen.ts",
+    "./drag-handle": "./src/components/drag-handle.gen.ts",
     "./inline-popover": "./src/components/inline-popover.gen.ts",
     "./popover": "./src/components/popover.gen.ts",
     "./resizable": "./src/components/resizable.gen.ts",
@@ -93,6 +95,11 @@
         "import": "./dist/prosekit-preact-autocomplete-popover.js",
         "default": "./dist/prosekit-preact-autocomplete-popover.js"
       },
+      "./block-popover": {
+        "types": "./dist/prosekit-preact-block-popover.d.ts",
+        "import": "./dist/prosekit-preact-block-popover.js",
+        "default": "./dist/prosekit-preact-block-popover.js"
+      },
       "./combo-box": {
         "types": "./dist/prosekit-preact-combo-box.d.ts",
         "import": "./dist/prosekit-preact-combo-box.js",
@@ -112,6 +119,11 @@
         "types": "./dist/prosekit-preact-combo-box-list.d.ts",
         "import": "./dist/prosekit-preact-combo-box-list.js",
         "default": "./dist/prosekit-preact-combo-box-list.js"
+      },
+      "./drag-handle": {
+        "types": "./dist/prosekit-preact-drag-handle.d.ts",
+        "import": "./dist/prosekit-preact-drag-handle.js",
+        "default": "./dist/prosekit-preact-drag-handle.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-preact-inline-popover.d.ts",
@@ -154,6 +166,9 @@
         "autocomplete-popover": [
           "./dist/prosekit-preact-autocomplete-popover.d.ts"
         ],
+        "block-popover": [
+          "./dist/prosekit-preact-block-popover.d.ts"
+        ],
         "combo-box": [
           "./dist/prosekit-preact-combo-box.d.ts"
         ],
@@ -165,6 +180,9 @@
         ],
         "combo-box-list": [
           "./dist/prosekit-preact-combo-box-list.d.ts"
+        ],
+        "drag-handle": [
+          "./dist/prosekit-preact-drag-handle.d.ts"
         ],
         "inline-popover": [
           "./dist/prosekit-preact-inline-popover.d.ts"

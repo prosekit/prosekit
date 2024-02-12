@@ -42,6 +42,10 @@
       "svelte": "./src/components/autocomplete-popover.ts",
       "default": "./src/components/autocomplete-popover.ts"
     },
+    "./block-popover": {
+      "svelte": "./src/components/block-popover.gen.ts",
+      "default": "./src/components/block-popover.gen.ts"
+    },
     "./combo-box": {
       "svelte": "./src/components/combo-box.gen.ts",
       "default": "./src/components/combo-box.gen.ts"
@@ -57,6 +61,10 @@
     "./combo-box-list": {
       "svelte": "./src/components/combo-box-list.gen.ts",
       "default": "./src/components/combo-box-list.gen.ts"
+    },
+    "./drag-handle": {
+      "svelte": "./src/components/drag-handle.gen.ts",
+      "default": "./src/components/drag-handle.gen.ts"
     },
     "./inline-popover": {
       "svelte": "./src/components/inline-popover.gen.ts",
@@ -136,6 +144,12 @@
         "import": "./dist/prosekit-svelte-autocomplete-popover.js",
         "default": "./dist/prosekit-svelte-autocomplete-popover.js"
       },
+      "./block-popover": {
+        "types": "./dist/prosekit-svelte-block-popover.d.ts",
+        "svelte": "./dist/prosekit-svelte-block-popover.js",
+        "import": "./dist/prosekit-svelte-block-popover.js",
+        "default": "./dist/prosekit-svelte-block-popover.js"
+      },
       "./combo-box": {
         "types": "./dist/prosekit-svelte-combo-box.d.ts",
         "svelte": "./dist/prosekit-svelte-combo-box.js",
@@ -159,6 +173,12 @@
         "svelte": "./dist/prosekit-svelte-combo-box-list.js",
         "import": "./dist/prosekit-svelte-combo-box-list.js",
         "default": "./dist/prosekit-svelte-combo-box-list.js"
+      },
+      "./drag-handle": {
+        "types": "./dist/prosekit-svelte-drag-handle.d.ts",
+        "svelte": "./dist/prosekit-svelte-drag-handle.js",
+        "import": "./dist/prosekit-svelte-drag-handle.js",
+        "default": "./dist/prosekit-svelte-drag-handle.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-svelte-inline-popover.d.ts",
@@ -205,6 +225,9 @@
         "autocomplete-popover": [
           "./dist/prosekit-svelte-autocomplete-popover.d.ts"
         ],
+        "block-popover": [
+          "./dist/prosekit-svelte-block-popover.d.ts"
+        ],
         "combo-box": [
           "./dist/prosekit-svelte-combo-box.d.ts"
         ],
@@ -216,6 +239,9 @@
         ],
         "combo-box-list": [
           "./dist/prosekit-svelte-combo-box-list.d.ts"
+        ],
+        "drag-handle": [
+          "./dist/prosekit-svelte-drag-handle.d.ts"
         ],
         "inline-popover": [
           "./dist/prosekit-svelte-inline-popover.d.ts"

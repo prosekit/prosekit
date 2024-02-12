@@ -178,6 +178,10 @@ const staticShortcuts = {
 
   DROP_CURSOR: clsx('transition-all bg-blue-500'),
 
+  BLOCK_HANDLE: clsx(
+    'flex items-center box-border justify-center my-[0.5em] h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 transition-colors',
+  ),
+
   ICON_ITALIC: clsx('i-lucide-italic h-5 w-5'),
   ICON_BOLD: clsx('i-lucide-bold h-5 w-5'),
   ICON_UNDERLINE: clsx('i-lucide-underline h-5 w-5'),
@@ -199,6 +203,7 @@ const staticShortcuts = {
   ICON_LIST_TOGGLE: clsx('i-lucide-list-collapse h-5 w-5'),
   ICON_CODE_BLOCK: clsx('i-lucide-square-code h-5 w-5'),
   ICON_CORNER_HANDLE: clsx('i-lucide-arrow-down-right h-4 w-4'),
+  ICON_DRAG_HANDLE: clsx('i-lucide-grip-vertical h-5 w-5'),
 }
 
 /**

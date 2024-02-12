@@ -43,6 +43,15 @@ export interface PopoverProps {
    * The user provided options used to position the popover content.
    */
   positioning?: PositioningOptions
+
+  /**
+   * A boolean that determines if the native [Web Popover
+   * API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) should
+   * be used. If true, the popover will be placed into the top level so that it
+   * will sit on top of all other page content. This is similar to React's
+   * `<Portals>` or Vue's `<Teleport>`.
+   */
+  elevated?: boolean
 }
 
 /**
@@ -57,6 +66,7 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     open: { type: Boolean, reflect: false, attribute: false },
     onOpenChange: { attribute: false },
     positioning: { type: Object, reflect: false, attribute: false },
+    elevated: { type: Boolean, reflect: false, attribute: false },
   } satisfies PropertyDeclarations
 
   reference?: HTMLElement | VirtualElement
@@ -66,6 +76,8 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
   onOpenChange?: ((open: boolean) => void) | undefined
 
   positioning?: PositioningOptions
+
+  elevated?: boolean = true
 
   /**
    * @hidden
@@ -126,6 +138,7 @@ export class Popover extends LightElement implements Partial<PopoverProps> {
     // By doing this, the popover can be placed above all other elements, and
     // won't be clipped by the parent element. The result is similar to React's
     // `<Portals>` or Vue's `<Teleport>`.
+    if (!this.elevated) return
     this.setAttribute('popover', 'manual')
     this.showPopover?.()
     // Override the `margin: auto` style, which breaks the positioning.

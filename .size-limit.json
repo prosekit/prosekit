@@ -190,6 +190,10 @@
     "path": "packages/prosekit/dist/prosekit-lit-autocomplete-popover.js"
   },
   {
+    "name": "prosekit/lit/block-popover",
+    "path": "packages/prosekit/dist/prosekit-lit-block-popover.js"
+  },
+  {
     "name": "prosekit/lit/combo-box",
     "path": "packages/prosekit/dist/prosekit-lit-combo-box.js"
   },
@@ -204,6 +208,10 @@
   {
     "name": "prosekit/lit/combo-box-list",
     "path": "packages/prosekit/dist/prosekit-lit-combo-box-list.js"
+  },
+  {
+    "name": "prosekit/lit/drag-handle",
+    "path": "packages/prosekit/dist/prosekit-lit-drag-handle.js"
   },
   {
     "name": "prosekit/lit/inline-popover",
@@ -297,6 +305,13 @@
     ]
   },
   {
+    "name": "prosekit/preact/block-popover",
+    "path": "packages/prosekit/dist/prosekit-preact-block-popover.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
     "name": "prosekit/preact/combo-box",
     "path": "packages/prosekit/dist/prosekit-preact-combo-box.js",
     "ignore": [
@@ -320,6 +335,13 @@
   {
     "name": "prosekit/preact/combo-box-list",
     "path": "packages/prosekit/dist/prosekit-preact-combo-box-list.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
+    "name": "prosekit/preact/drag-handle",
+    "path": "packages/prosekit/dist/prosekit-preact-drag-handle.js",
     "ignore": [
       "preact"
     ]
@@ -393,6 +415,14 @@
     ]
   },
   {
+    "name": "prosekit/react/block-popover",
+    "path": "packages/prosekit/dist/prosekit-react-block-popover.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
     "name": "prosekit/react/combo-box",
     "path": "packages/prosekit/dist/prosekit-react-combo-box.js",
     "ignore": [
@@ -419,6 +449,14 @@
   {
     "name": "prosekit/react/combo-box-list",
     "path": "packages/prosekit/dist/prosekit-react-combo-box-list.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/drag-handle",
+    "path": "packages/prosekit/dist/prosekit-react-drag-handle.js",
     "ignore": [
       "react",
       "react-dom"
@@ -492,6 +530,13 @@
     ]
   },
   {
+    "name": "prosekit/solid/block-popover",
+    "path": "packages/prosekit/dist/prosekit-solid-block-popover.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
     "name": "prosekit/solid/combo-box",
     "path": "packages/prosekit/dist/prosekit-solid-combo-box.js",
     "ignore": [
@@ -515,6 +560,13 @@
   {
     "name": "prosekit/solid/combo-box-list",
     "path": "packages/prosekit/dist/prosekit-solid-combo-box-list.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
+    "name": "prosekit/solid/drag-handle",
+    "path": "packages/prosekit/dist/prosekit-solid-drag-handle.js",
     "ignore": [
       "solid-js"
     ]
@@ -583,6 +635,13 @@
     ]
   },
   {
+    "name": "prosekit/vue/block-popover",
+    "path": "packages/prosekit/dist/prosekit-vue-block-popover.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
     "name": "prosekit/vue/combo-box",
     "path": "packages/prosekit/dist/prosekit-vue-combo-box.js",
     "ignore": [
@@ -606,6 +665,13 @@
   {
     "name": "prosekit/vue/combo-box-list",
     "path": "packages/prosekit/dist/prosekit-vue-combo-box-list.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/drag-handle",
+    "path": "packages/prosekit/dist/prosekit-vue-drag-handle.js",
     "ignore": [
       "vue"
     ]

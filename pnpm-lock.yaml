@@ -67,7 +67,7 @@ importers:
         version: 0.58.5(postcss@8.4.35)(vite@5.1.1)
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.17)(jsdom@24.0.0)
+        version: 1.2.2(jsdom@24.0.0)
 
   packages/basic:
     dependencies:
@@ -98,7 +98,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.17)(jsdom@24.0.0)
+        version: 1.2.2(jsdom@24.0.0)
 
   packages/core:
     dependencies:
@@ -126,7 +126,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.17)(jsdom@24.0.0)
+        version: 1.2.2(jsdom@24.0.0)
 
   packages/dev:
     dependencies:
@@ -183,8 +183,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1
       globby:
-        specifier: ^14.0.0
-        version: 14.0.0
+        specifier: ^14.0.1
+        version: 14.0.1
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
@@ -230,13 +230,13 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.17)(jsdom@24.0.0)
+        version: 1.2.2(jsdom@24.0.0)
 
   packages/lit:
     dependencies:
       '@floating-ui/dom':
-        specifier: ^1.6.1
-        version: 1.6.1
+        specifier: ^1.6.3
+        version: 1.6.3
       '@lit/context':
         specifier: ^1.1.0
         version: 1.1.0
@@ -253,14 +253,14 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0
       '@zag-js/dismissable':
-        specifier: ^0.34.0
-        version: 0.34.0
+        specifier: ^0.35.0
+        version: 0.35.0
       '@zag-js/dom-query':
-        specifier: ^0.34.0
-        version: 0.34.0
+        specifier: ^0.35.0
+        version: 0.35.0
       '@zag-js/utils':
-        specifier: ^0.34.0
-        version: 0.34.0
+        specifier: ^0.35.0
+        version: 0.35.0
       lit:
         specifier: ^3.1.2
         version: 3.1.2
@@ -279,7 +279,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.17)(jsdom@24.0.0)
+        version: 1.2.2(jsdom@24.0.0)
 
   packages/pm:
     dependencies:
@@ -319,7 +319,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.17)(jsdom@24.0.0)
+        version: 1.2.2(jsdom@24.0.0)
 
   packages/preact:
     dependencies:
@@ -347,7 +347,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.17)(jsdom@24.0.0)
+        version: 1.2.2(jsdom@24.0.0)
 
   packages/prosekit:
     dependencies:
@@ -466,7 +466,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.17)(jsdom@24.0.0)
+        version: 1.2.2(jsdom@24.0.0)
 
   packages/solid:
     dependencies:
@@ -494,7 +494,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.17)(jsdom@24.0.0)
+        version: 1.2.2(jsdom@24.0.0)
 
   packages/svelte:
     dependencies:
@@ -562,7 +562,7 @@ importers:
         version: 5.3.3
       vitest:
         specifier: ^1.2.2
-        version: 1.2.2(@types/node@20.11.17)(jsdom@24.0.0)
+        version: 1.2.2(jsdom@24.0.0)
       vue:
         specifier: ^3.4.18
         version: 3.4.18(typescript@5.3.3)
@@ -585,8 +585,8 @@ importers:
         specifier: ^4.0.8
         version: 4.0.8(@babel/core@7.23.9)(astro@4.3.5)(vite@5.1.1)(vue@3.4.18)
       '@iconify-json/lucide':
-        specifier: ^1.1.163
-        version: 1.1.163
+        specifier: ^1.1.164
+        version: 1.1.164
       '@playwright/test':
         specifier: ^1.41.2
         version: 1.41.2
@@ -645,8 +645,8 @@ importers:
         specifier: ^1.1.42
         version: 1.1.42
       '@iconify-json/lucide':
-        specifier: ^1.1.163
-        version: 1.1.163
+        specifier: ^1.1.164
+        version: 1.1.164
       '@prosekit/dev':
         specifier: '*'
         version: link:../packages/dev
@@ -684,8 +684,8 @@ importers:
         specifier: '*'
         version: link:../playground
       radix-vue:
-        specifier: ^1.4.2
-        version: 1.4.2(vue@3.4.18)
+        specifier: ^1.4.3
+        version: 1.4.3(vue@3.4.18)
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -711,8 +711,8 @@ importers:
         specifier: ^4.0.0-next.53
         version: 4.0.0-next.53(typedoc@0.25.8)
       typedoc-plugin-mdn-links:
-        specifier: ^3.1.15
-        version: 3.1.15(typedoc@0.25.8)
+        specifier: ^3.1.16
+        version: 3.1.16(typedoc@0.25.8)
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -1840,8 +1840,8 @@ packages:
       '@floating-ui/core': 1.6.0
     dev: true
 
-  /@floating-ui/dom@1.6.1:
-    resolution: {integrity: sha512-iA8qE43/H5iGozC3W0YSnVSW42Vh522yyM1gj+BqRwVsTNOyr231PsXDaV04yT39PsO0QL2QpbI/M0ZaLUQgRQ==}
+  /@floating-ui/dom@1.6.3:
+    resolution: {integrity: sha512-RnDthu3mzPlQ31Ss/BTwQ1zjzIhr3lk1gZB1OC56h/1vEtaXkESrOqL5fQVMfXpwGtRwX+YsZBdyHtJMQnkArw==}
     dependencies:
       '@floating-ui/core': 1.6.0
       '@floating-ui/utils': 0.2.1
@@ -1852,7 +1852,7 @@ packages:
   /@floating-ui/vue@1.0.6(vue@3.4.18):
     resolution: {integrity: sha512-EdrOljjkpkkqZnrpqUcPoz9NvHxuTjUtSInh6GMv3+Mcy+giY2cE2pHh9rpacRcZ2eMSCxel9jWkWXTjLmY55w==}
     dependencies:
-      '@floating-ui/dom': 1.6.1
+      '@floating-ui/dom': 1.6.3
       '@floating-ui/utils': 0.2.1
       vue-demi: 0.14.6(vue@3.4.18)
     transitivePeerDependencies:
@@ -1886,8 +1886,8 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
-  /@iconify-json/lucide@1.1.163:
-    resolution: {integrity: sha512-zZWM3FJfsUk6RQOrh3rd9DEek4QLCndiFGHyC6sRTMZQgCQ3muI3q20OQJ5QlvX2Md87OKcxPLgFiY2+Z/wA0w==}
+  /@iconify-json/lucide@1.1.164:
+    resolution: {integrity: sha512-s7pEr9/Uk5Vl8OR2sUF1x8Dyjyn9Gq3b0qwPR6bzhQTED9wB34PjDFVEOPiQhMPTzICYnLzJe21VAM/whKSdPQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -2197,7 +2197,7 @@ packages:
       debug: 4.3.4
       kolorist: 1.8.0
       resolve: 1.22.8
-      vite: 5.1.1(@types/node@20.11.17)
+      vite: 5.1.1(lightningcss@1.23.0)
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -2244,7 +2244,7 @@ packages:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.19.4
-      vite: 5.1.1(@types/node@20.11.17)
+      vite: 5.1.1(lightningcss@1.23.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2414,8 +2414,8 @@ packages:
     engines: {node: '>=14.16'}
     dev: false
 
-  /@sindresorhus/merge-streams@1.0.0:
-    resolution: {integrity: sha512-rUV5WyJrJLoloD4NDN1V1+LDMDWOa4OTsT4yYJwQNpTU6FWxkxHpL7eu4w+DmiH8x/EAM1otkPE1+LaspIbplw==}
+  /@sindresorhus/merge-streams@2.1.0:
+    resolution: {integrity: sha512-g3/sYJWXTAf3Ce861z4/mW9jDxN7hoNHZMEyhd3Zh7GKQPiovWNttzhRW2BeGPwPxPpLDKumL6Sg056VAMjdkg==}
     engines: {node: '>=18'}
 
   /@sindresorhus/slugify@2.2.1:
@@ -2513,7 +2513,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.0.1(svelte@4.2.10)(vite@5.1.1)
       debug: 4.3.4
       svelte: 4.2.10
-      vite: 5.1.1(@types/node@20.11.17)
+      vite: 5.1.1(lightningcss@1.23.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2532,7 +2532,7 @@ packages:
       magic-string: 0.30.7
       svelte: 4.2.10
       svelte-hmr: 0.15.3(svelte@4.2.10)
-      vite: 5.1.1(@types/node@20.11.17)
+      vite: 5.1.1(lightningcss@1.23.0)
       vitefu: 0.2.5(vite@5.1.1)
     transitivePeerDependencies:
       - supports-color
@@ -3107,7 +3107,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.23.9)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.1.1(@types/node@20.11.17)
+      vite: 5.1.1(lightningcss@1.23.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3135,7 +3135,7 @@ packages:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.1.1(@types/node@20.11.17)
+      vite: 5.1.1(lightningcss@1.23.0)
       vue: 3.4.18(typescript@5.3.3)
     dev: true
 
@@ -3164,7 +3164,7 @@ packages:
       magicast: 0.3.3
       picocolors: 1.0.0
       test-exclude: 6.0.0
-      vitest: 1.2.2(@types/node@20.11.17)(jsdom@24.0.0)
+      vitest: 1.2.2(jsdom@24.0.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3447,55 +3447,55 @@ packages:
       - vue
     dev: true
 
-  /@zag-js/dismissable@0.34.0:
-    resolution: {integrity: sha512-JarIjdp3Te30qQVn9N7IxVrptFJr8c8bUJCNpjYrND6etxsLPRNkPVFYeWltXJkrMjA6CmByrbHWNNxHIKHAQw==}
+  /@zag-js/dismissable@0.35.0:
+    resolution: {integrity: sha512-ULMHKAereUayIvGzJ0LVeP990K8cqgHyqViHGkUbCHdxIwrMV5OpqL1dQZIFMbODS2rpJojOnHsCOTpDg9m/8Q==}
     dependencies:
-      '@zag-js/dom-event': 0.34.0
-      '@zag-js/dom-query': 0.34.0
-      '@zag-js/interact-outside': 0.34.0
-      '@zag-js/utils': 0.34.0
+      '@zag-js/dom-event': 0.35.0
+      '@zag-js/dom-query': 0.35.0
+      '@zag-js/interact-outside': 0.35.0
+      '@zag-js/utils': 0.35.0
     dev: false
 
-  /@zag-js/dom-event@0.34.0:
-    resolution: {integrity: sha512-SKsRvaUg43XuktPHMTRRsN3tCPFcdTWhw7KEn/Zf7EyU74BZBzdz0eDT7FtRmRzLPZ9tzl24A3Zeiux1pQ2GNg==}
+  /@zag-js/dom-event@0.35.0:
+    resolution: {integrity: sha512-OkDAZVMcqOAxusuhMSZbBUpyrVU7pCBNPBbSv9wz9gG78HYnt+0v/0QrLeZ5t6lQENUJsUDPaTtH6uVCY6ABrg==}
     dependencies:
-      '@zag-js/text-selection': 0.34.0
-      '@zag-js/types': 0.34.0
+      '@zag-js/text-selection': 0.35.0
+      '@zag-js/types': 0.35.0
     dev: false
 
-  /@zag-js/dom-query@0.34.0:
-    resolution: {integrity: sha512-cgCzqnCMjlZzVs+Zz+oHx43MpVRjolnHnxpYmGnB1oduSw0pV0XBK1x7S0Tbb+DoIrOQ5gik5zQxlQMOxTA6Kg==}
+  /@zag-js/dom-query@0.35.0:
+    resolution: {integrity: sha512-9bKxYGew2LxHhmsSVQ/2vjFX/QdornSjLBFzLXTXH2oEl0wct8HsYdqVVpw9FI5unS6a1t/T2mWuj5Bx5DEtsQ==}
     dev: false
 
-  /@zag-js/interact-outside@0.34.0:
-    resolution: {integrity: sha512-GalK3LqNS0S71+vxH15++uPPvExWy9omlMrR4sgszGEu2FHs2s6JH04kW3ifscEor5OWGHbUjtxT4GMVBIN0Ow==}
+  /@zag-js/interact-outside@0.35.0:
+    resolution: {integrity: sha512-EMYHzYZsoTQ07dXOj9noPe1MFvjhBeShWfwr2tMCPOO4EHLe0bCf4Aiyz20H2z3Uc0nFSx/1nAdlWEwgBhPsJg==}
     dependencies:
-      '@zag-js/dom-event': 0.34.0
-      '@zag-js/dom-query': 0.34.0
-      '@zag-js/tabbable': 0.34.0
-      '@zag-js/utils': 0.34.0
+      '@zag-js/dom-event': 0.35.0
+      '@zag-js/dom-query': 0.35.0
+      '@zag-js/tabbable': 0.35.0
+      '@zag-js/utils': 0.35.0
     dev: false
 
-  /@zag-js/tabbable@0.34.0:
-    resolution: {integrity: sha512-Jl+l8Ux55T/tK99WCIdBmwhSR8sW7YB9jJphDhWhfD0z/u0ps1MPBix4+WdEXJqBmqSBwnvFvgSqiS8GrSaKCQ==}
+  /@zag-js/tabbable@0.35.0:
+    resolution: {integrity: sha512-yrrW2Qg7mMuyJQ6lZB0gPdOu0w3Ww/muOEaaPIXyKlUDrgPZ7zA2JkfcOePpt5XaeP1p1TihExa51INnlY+KnQ==}
     dependencies:
-      '@zag-js/dom-query': 0.34.0
+      '@zag-js/dom-query': 0.35.0
     dev: false
 
-  /@zag-js/text-selection@0.34.0:
-    resolution: {integrity: sha512-ZddPFdb7Txr6n35ImUAOWVfc5NexGdOxvV+Crnj66HrAs1tIP2ZrDiUodZuy/O+iBVE+NR64HcAfiZURMirJ9A==}
+  /@zag-js/text-selection@0.35.0:
+    resolution: {integrity: sha512-fofVyK4SpYigdBRg3fZmK4BuX9CGZZ4eVsuOB+FqqpnW/YTOyzOC883yWByCaGi12J0wUG1LWuCoqkBWLj0S4A==}
     dependencies:
-      '@zag-js/dom-query': 0.34.0
+      '@zag-js/dom-query': 0.35.0
     dev: false
 
-  /@zag-js/types@0.34.0:
-    resolution: {integrity: sha512-0AZCS0e+3tDgJdDK110b2SoKWkxUAzmrY5xSZcGdS/mir7Y8AvC6Jjhm5OHoFnqsLmbIKOEb7zclM5vWQwp8yw==}
+  /@zag-js/types@0.35.0:
+    resolution: {integrity: sha512-/mDgeE1bphn32d5jWK7Wb0K8E2Xnnm8I20Pe0kLW5sTr+EqlAJQ/oxyWO2edS6VLYXGCqr0PNNjr7Teq8aKYEA==}
     dependencies:
       csstype: 3.1.3
     dev: false
 
-  /@zag-js/utils@0.34.0:
-    resolution: {integrity: sha512-I5sgYKi4266Q06qNzHPaHrz3jWi3A6zbsFVe+pI9W2BmDnmJxZKdY/onr9ImdZatXFuzP5n/n/2Ik28YtTbdFQ==}
+  /@zag-js/utils@0.35.0:
+    resolution: {integrity: sha512-jEcpYc4Dg+yUKAwuDTcBPMbi3CQFxaaOot3qLrKXi8b60FIy3xZZt5qMSpPrhmCsUKOnmeoaBB6Eg53sA9ipLg==}
     dev: false
 
   /acorn-jsx@5.3.2(acorn@8.11.3):
@@ -3787,7 +3787,7 @@ packages:
       tsconfck: 3.0.0(typescript@5.3.3)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.1.1(@types/node@20.11.17)
+      vite: 5.1.1(lightningcss@1.23.0)
       vitefu: 0.2.5(vite@5.1.1)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -5671,11 +5671,11 @@ packages:
       merge2: 1.4.1
       slash: 3.0.0
 
-  /globby@14.0.0:
-    resolution: {integrity: sha512-/1WM/LNHRAOH9lZta77uGbq0dAEQM+XjNesWwhlERDVenqothRbnzTrL3/LrIoEPPjeUHC3vrS6TwoyxeHs7MQ==}
+  /globby@14.0.1:
+    resolution: {integrity: sha512-jOMLD2Z7MAhyG8aJpNOpmziMOP4rPLcc95oQPKXBazW82z+CEgPFBQvEpRUa1KeIMUJo4Wsm+q6uzO/Q/4BksQ==}
     engines: {node: '>=18'}
     dependencies:
-      '@sindresorhus/merge-streams': 1.0.0
+      '@sindresorhus/merge-streams': 2.1.0
       fast-glob: 3.3.2
       ignore: 5.2.4
       path-type: 5.0.0
@@ -8430,10 +8430,10 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /radix-vue@1.4.2(vue@3.4.18):
-    resolution: {integrity: sha512-3eENiigXlRBduAXoFjanDmuD/p1M+KU0C2SZWyRD9Mpey8RQSZ593AshroUV4cho8UL4h398RYA6ouMWAvU4Jg==}
+  /radix-vue@1.4.3(vue@3.4.18):
+    resolution: {integrity: sha512-e0yfnxrzI899NNavSmL8nGIOK2jhP+5J7P4NhSxBtVRBxofgLExwrnR1no5epDx9gqWQdy4KkFftcWZZE7enrg==}
     dependencies:
-      '@floating-ui/dom': 1.6.1
+      '@floating-ui/dom': 1.6.3
       '@floating-ui/vue': 1.0.6(vue@3.4.18)
       fast-deep-equal: 3.1.3
     transitivePeerDependencies:
@@ -9032,7 +9032,7 @@ packages:
       node-fetch: 3.3.2
       ora: 7.0.1
       prompts: 2.4.2
-      radix-vue: 1.4.2(vue@3.4.18)
+      radix-vue: 1.4.3(vue@3.4.18)
       recast: 0.23.4
       rimraf: 5.0.5
       ts-morph: 19.0.0
@@ -9187,7 +9187,7 @@ packages:
     dependencies:
       bytes-iec: 3.1.1
       chokidar: 3.5.3
-      globby: 14.0.0
+      globby: 14.0.1
       lilconfig: 3.0.0
       nanospinner: 1.1.0
       picocolors: 1.0.0
@@ -10169,8 +10169,8 @@ packages:
       typedoc: 0.25.8(typescript@5.3.3)
     dev: true
 
-  /typedoc-plugin-mdn-links@3.1.15(typedoc@0.25.8):
-    resolution: {integrity: sha512-PniQgrCAmhbJf8fPiZULxPV9aYVszNoEk1R7XbTBIMluqplaUkG3qfckthb2l++5yDR1lHEycTMu6hQyKyz+QA==}
+  /typedoc-plugin-mdn-links@3.1.16(typedoc@0.25.8):
+    resolution: {integrity: sha512-Jdnw3tI3KOOMMahUNiCwKXJcH+Ov9y3syRQ8HP1ce8nT2O9Bsg9aqqa0LWye+CdCiSpWJ/USzOK3MFNxRYzL4A==}
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x'
     dependencies:
@@ -10494,6 +10494,26 @@ packages:
       vfile-message: 4.0.2
     dev: true
 
+  /vite-node@1.2.2:
+    resolution: {integrity: sha512-1as4rDTgVWJO3n1uHmUYqq7nsFgINQ9u+mRcXpjeOMJUmviqNKjcZB7UfRZrlM7MjYXMKpuWp5oGkjaFLnjawg==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    dependencies:
+      cac: 6.7.14
+      debug: 4.3.4
+      pathe: 1.1.2
+      picocolors: 1.0.0
+      vite: 5.1.1(lightningcss@1.23.0)
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+
   /vite-node@1.2.2(@types/node@20.11.17):
     resolution: {integrity: sha512-1as4rDTgVWJO3n1uHmUYqq7nsFgINQ9u+mRcXpjeOMJUmviqNKjcZB7UfRZrlM7MjYXMKpuWp5oGkjaFLnjawg==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -10513,6 +10533,7 @@ packages:
       - sugarss
       - supports-color
       - terser
+    dev: true
 
   /vite-plugin-solid@2.8.0(solid-js@1.8.14)(vite@5.1.1):
     resolution: {integrity: sha512-n5FAm7ZmTl94VWUoiJCgG7bouF2NlC9CA1wY/qbVnkFbYDWk++bFWyNoU48aLJ+lMtzNeYzJypJXOHzFKxL9xA==}
@@ -10527,7 +10548,7 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.8.14
       solid-refresh: 0.5.3(solid-js@1.8.14)
-      vite: 5.1.1(@types/node@20.11.17)
+      vite: 5.1.1(lightningcss@1.23.0)
       vitefu: 0.2.5(vite@5.1.1)
     transitivePeerDependencies:
       - supports-color
@@ -10584,6 +10605,7 @@ packages:
       rollup: 4.4.1
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
 
   /vite@5.1.1(lightningcss@1.23.0):
     resolution: {integrity: sha512-wclpAgY3F1tR7t9LL5CcHC41YPkQIpKUGeIuT8MdNwNZr6OqOTLs7JX5vIHAtzqLWXts0T+GDrh9pN2arneKqg==}
@@ -10628,7 +10650,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.1.1(@types/node@20.11.17)
+      vite: 5.1.1(lightningcss@1.23.0)
     dev: true
 
   /vitepress-plugin-twoslash@0.10.2(typescript@5.3.3):
@@ -10751,6 +10773,63 @@ packages:
       tinypool: 0.8.2
       vite: 5.1.1(@types/node@20.11.17)
       vite-node: 1.2.2(@types/node@20.11.17)
+      why-is-node-running: 2.2.2
+    transitivePeerDependencies:
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+    dev: true
+
+  /vitest@1.2.2(jsdom@24.0.0):
+    resolution: {integrity: sha512-d5Ouvrnms3GD9USIK36KG8OZ5bEvKEkITFtnGv56HFaSlbItJuYr7hv2Lkn903+AvRAgSixiamozUVfORUekjw==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@edge-runtime/vm': '*'
+      '@types/node': ^18.0.0 || >=20.0.0
+      '@vitest/browser': ^1.0.0
+      '@vitest/ui': ^1.0.0
+      happy-dom: '*'
+      jsdom: '*'
+    peerDependenciesMeta:
+      '@edge-runtime/vm':
+        optional: true
+      '@types/node':
+        optional: true
+      '@vitest/browser':
+        optional: true
+      '@vitest/ui':
+        optional: true
+      happy-dom:
+        optional: true
+      jsdom:
+        optional: true
+    dependencies:
+      '@vitest/expect': 1.2.2
+      '@vitest/runner': 1.2.2
+      '@vitest/snapshot': 1.2.2
+      '@vitest/spy': 1.2.2
+      '@vitest/utils': 1.2.2
+      acorn-walk: 8.3.2
+      cac: 6.7.14
+      chai: 4.3.10
+      debug: 4.3.4
+      execa: 8.0.1
+      jsdom: 24.0.0
+      local-pkg: 0.5.0
+      magic-string: 0.30.7
+      pathe: 1.1.2
+      picocolors: 1.0.0
+      std-env: 3.6.0
+      strip-literal: 1.3.0
+      tinybench: 2.5.1
+      tinypool: 0.8.2
+      vite: 5.1.1(lightningcss@1.23.0)
+      vite-node: 1.2.2
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less

@@ -8,6 +8,9 @@ export default defineConfig({
   build: {
     target: ['es2022', 'chrome89', 'edge89', 'firefox89', 'safari15'],
   },
+  css: {
+    transformer: 'lightningcss',
+  },
   resolve: {
     alias: [
       {

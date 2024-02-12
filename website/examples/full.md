@@ -10,6 +10,7 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 ::: code-group
 
+<<< @/../playground/examples/vue-full/block-handle.vue
 <<< @/../playground/examples/vue-full/code-block-view.vue
 <<< @/../playground/examples/vue-full/editor.vue
 <<< @/../playground/examples/vue-full/extension.ts

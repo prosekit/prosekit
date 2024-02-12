@@ -245,6 +245,8 @@ examples:
     framework: vue
     story: full
     files:
+      - path: block-handle.vue
+        hidden: false
       - path: code-block-view.vue
         hidden: false
       - path: editor.vue

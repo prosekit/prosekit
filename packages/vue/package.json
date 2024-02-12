@@ -30,10 +30,12 @@
     "./autocomplete-item": "./src/components/autocomplete-item.ts",
     "./autocomplete-list": "./src/components/autocomplete-list.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
+    "./block-popover": "./src/components/block-popover.gen.ts",
     "./combo-box": "./src/components/combo-box.gen.ts",
     "./combo-box-input": "./src/components/combo-box-input.gen.ts",
     "./combo-box-item": "./src/components/combo-box-item.gen.ts",
     "./combo-box-list": "./src/components/combo-box-list.gen.ts",
+    "./drag-handle": "./src/components/drag-handle.gen.ts",
     "./inline-popover": "./src/components/inline-popover.ts",
     "./popover": "./src/components/popover.gen.ts",
     "./resizable": "./src/components/resizable.gen.ts",
@@ -94,6 +96,11 @@
         "import": "./dist/prosekit-vue-autocomplete-popover.js",
         "default": "./dist/prosekit-vue-autocomplete-popover.js"
       },
+      "./block-popover": {
+        "types": "./dist/prosekit-vue-block-popover.d.ts",
+        "import": "./dist/prosekit-vue-block-popover.js",
+        "default": "./dist/prosekit-vue-block-popover.js"
+      },
       "./combo-box": {
         "types": "./dist/prosekit-vue-combo-box.d.ts",
         "import": "./dist/prosekit-vue-combo-box.js",
@@ -113,6 +120,11 @@
         "types": "./dist/prosekit-vue-combo-box-list.d.ts",
         "import": "./dist/prosekit-vue-combo-box-list.js",
         "default": "./dist/prosekit-vue-combo-box-list.js"
+      },
+      "./drag-handle": {
+        "types": "./dist/prosekit-vue-drag-handle.d.ts",
+        "import": "./dist/prosekit-vue-drag-handle.js",
+        "default": "./dist/prosekit-vue-drag-handle.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-vue-inline-popover.d.ts",
@@ -155,6 +167,9 @@
         "autocomplete-popover": [
           "./dist/prosekit-vue-autocomplete-popover.d.ts"
         ],
+        "block-popover": [
+          "./dist/prosekit-vue-block-popover.d.ts"
+        ],
         "combo-box": [
           "./dist/prosekit-vue-combo-box.d.ts"
         ],
@@ -166,6 +181,9 @@
         ],
         "combo-box-list": [
           "./dist/prosekit-vue-combo-box-list.d.ts"
+        ],
+        "drag-handle": [
+          "./dist/prosekit-vue-drag-handle.d.ts"
         ],
         "inline-popover": [
           "./dist/prosekit-vue-inline-popover.d.ts"

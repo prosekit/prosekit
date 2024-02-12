@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/solid",
   "type": "module",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -49,8 +49,8 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/core": "^0.3.0",
-    "@prosekit/lit": "^0.2.4",
+    "@prosekit/core": "^0.3.1",
+    "@prosekit/lit": "^0.2.5",
     "@prosekit/pm": "^0.1.1"
   },
   "peerDependencies": {

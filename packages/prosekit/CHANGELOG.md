@@ -1,5 +1,31 @@
 # prosekit
 
+## 0.4.3
+
+### Patch Changes
+
+- [`c23c231`](https://github.com/ocavue/prosekit/commit/c23c2312915616269eea7808729796d51f10a92a) ![][badge-core]
+
+  Add following functions for defining event handlers.
+
+  - `defineDOMEventHandler`
+  - `defineKeyDownHandler`
+  - `defineKeyPressHandler`
+  - `defineTextInputHandler`
+  - `defineClickOnHandler`
+  - `defineClickHandler`
+  - `defineDoubleClickOnHandler`
+  - `defineDoubleClickHandler`
+  - `defineTripleClickOnHandler`
+  - `defineTripleClickHandler`
+  - `definePasteHandler`
+  - `defineDropHandler`
+  - `defineScrollToSelectionHandler`
+
+- [`36503a2`](https://github.com/ocavue/prosekit/commit/36503a2c4ffaa9a43be5ea424819c8b6a1d3eac6) ![][badge-preact] ![][badge-svelte] ![][badge-basic] ![][badge-react] ![][badge-solid] ![][badge-lit] ![][badge-vue]
+
+  Add a block handle component that can be used to drag and drop blocks.
+
 ## 0.4.2
 
 ### Patch Changes

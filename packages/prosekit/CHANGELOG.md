@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.4.5
+
+### Patch Changes
+
+- [`89e8d83`](https://github.com/ocavue/prosekit/commit/89e8d8354e4a758103644f1a293d1376e6ed7dd6) ![][badge-core]
+
+  Add more options to parser and serializer utility functions.
+
+- [`89e8d83`](https://github.com/ocavue/prosekit/commit/89e8d8354e4a758103644f1a293d1376e6ed7dd6) ![][badge-extensions]
+
+  Export `ListDOMSerializer` from `prosekit/extensions/list`.
+
 ## 0.4.4
 
 ### Patch Changes

@@ -219,9 +219,9 @@ export const exampleMeta = {
       ]
     },
     {
-      "name": "react-save-and-restore",
+      "name": "react-save-json",
       "framework": "react",
-      "story": "save-and-restore",
+      "story": "save-json",
       "files": [
         {
           "path": "editor.tsx",
@@ -715,9 +715,9 @@ export const exampleMeta = {
       ]
     },
     {
-      "name": "vue-save-and-restore",
+      "name": "vue-save-json",
       "framework": "vue",
-      "story": "save-and-restore",
+      "story": "save-json",
       "files": [
         {
           "path": "editor.vue",

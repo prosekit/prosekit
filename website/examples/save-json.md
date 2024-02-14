@@ -4,13 +4,13 @@
 import { ExamplePreview } from '@/.vitepress/components/example-preview/example-preview.tsx'
 </script>
 
-<ExamplePreview name="save-and-restore">
+<ExamplePreview name="save-json">
 
 <template v-slot:react>
 
 ::: code-group
 
-<<< @/../playground/examples/react-save-and-restore/editor.tsx
+<<< @/../playground/examples/react-save-json/editor.tsx
 
 :::
 
@@ -20,7 +20,7 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 ::: code-group
 
-<<< @/../playground/examples/vue-save-and-restore/editor.vue
+<<< @/../playground/examples/vue-save-json/editor.vue
 
 :::
 

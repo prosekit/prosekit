@@ -36,7 +36,7 @@
 
 - [resizable-image](./examples/resizable-image)
 
-- [save-and-restore](./examples/save-and-restore)
+- [save-json](./examples/save-json)
 
 - [slash-menu](./examples/slash-menu)
 

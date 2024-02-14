@@ -27,11 +27,11 @@ describe('parse', () => {
   const html = '<p>hello</p>'
 
   test('nodeFromElement', () => {
-    expect(node.eq(nodeFromElement(element, schema))).toBe(true)
+    expect(node.eq(nodeFromElement(element, { schema }))).toBe(true)
   })
 
   test('nodeFromHTML', () => {
-    expect(nodeFromHTML(html, schema).eq(node)).toBe(true)
+    expect(nodeFromHTML(html, { schema }).eq(node)).toBe(true)
   })
 
   test('elementFromHTML', () => {

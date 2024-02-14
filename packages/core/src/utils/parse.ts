@@ -7,67 +7,7 @@ import type { NodeJSON, StateJSON } from '../types/model'
 
 import { getBrowserDocument, getBrowserWindow } from './get-dom-api'
 
-/**
- * Parse a HTML element to a ProseMirror node.
- *
- * @public
- */
-export function nodeFromElement(
-  element: DOMNode,
-  schema: Schema,
-): ProseMirrorNode {
-  return DOMParser.fromSchema(schema).parse(element)
-}
-
-/**
- * Parse a HTML element to a ProseMirror document JSON.
- *
- * @public
- */
-export function jsonFromElement(element: DOMNode, schema: Schema): NodeJSON {
-  return jsonFromNode(nodeFromElement(element, schema))
-}
-
-/**
- * Parse a HTML string to a ProseMirror node.
- *
- * @public
- */
-export function nodeFromHTML(
-  html: string,
-  schema: Schema,
-  options?: { document?: Document },
-): ProseMirrorNode {
-  return nodeFromElement(elementFromHTML(html, options), schema)
-}
-
-/**
- * Parse a HTML string to a ProseMirror document JSON.
- *
- * @public
- */
-export function jsonFromHTML(
-  html: string,
-  schema: Schema,
-  options?: { document?: Document },
-): NodeJSON {
-  return jsonFromElement(elementFromHTML(html, options), schema)
-}
-
-/**
- * Parse a HTML string to a HTML element.
- *
- * @internal
- */
-export function elementFromHTML(
-  html: string,
-  options?: { document?: Document },
-): HTMLElement {
-  const win = getBrowserWindow(options)
-  const parser = new win.DOMParser()
-  return parser.parseFromString(`<body><div>${html}</div></body>`, 'text/html')
-    .body.firstElementChild as HTMLElement
-}
+/////////////// JSON <=> State ///////////////
 
 /**
  * Return a JSON object representing this state.
@@ -77,6 +17,17 @@ export function elementFromHTML(
 export function jsonFromState(state: EditorState): StateJSON {
   return state.toJSON() as StateJSON
 }
+
+/**
+ * Parse a JSON object to a ProseMirror state.
+ *
+ * @public
+ */
+export function stateFromJSON(json: StateJSON, schema: Schema): EditorState {
+  return EditorState.fromJSON({ schema }, json)
+}
+
+/////////////// JSON <=> Node ///////////////
 
 /**
  * Return a JSON object representing this node.
@@ -96,13 +47,18 @@ export function nodeFromJSON(json: NodeJSON, schema: Schema): ProseMirrorNode {
   return schema.nodeFromJSON(json)
 }
 
+/////////////// Node <=> Element ///////////////
+
 /**
- * Parse a JSON object to a ProseMirror state.
+ * Parse a HTML element to a ProseMirror node.
  *
  * @public
  */
-export function stateFromJSON(json: StateJSON, schema: Schema): EditorState {
-  return EditorState.fromJSON({ schema }, json)
+export function nodeFromElement(
+  element: DOMNode,
+  schema: Schema,
+): ProseMirrorNode {
+  return DOMParser.fromSchema(schema).parse(element)
 }
 
 /**
@@ -126,6 +82,45 @@ export function elementFromNode(
   return serializer.serializeFragment(node.content, options, div) as HTMLElement
 }
 
+/////////////// Element <=> HTML ///////////////
+
+/**
+ * Parse a HTML string to a HTML element.
+ *
+ * @internal
+ */
+function elementFromHTML(
+  html: string,
+  options?: { document?: Document },
+): HTMLElement {
+  const win = getBrowserWindow(options)
+  const parser = new win.DOMParser()
+  return parser.parseFromString(`<body><div>${html}</div></body>`, 'text/html')
+    .body.firstElementChild as HTMLElement
+}
+
+/**
+ * @internal
+ */
+function htmlFromElement(element: HTMLElement): string {
+  return element.outerHTML
+}
+
+/////////////// Node <=> HTML ///////////////
+
+/**
+ * Parse a HTML string to a ProseMirror node.
+ *
+ * @public
+ */
+export function nodeFromHTML(
+  html: string,
+  schema: Schema,
+  options?: { document?: Document },
+): ProseMirrorNode {
+  return nodeFromElement(elementFromHTML(html, options), schema)
+}
+
 /**
  * Serialize a ProseMirror node to a HTML string
  *
@@ -133,4 +128,56 @@ export function elementFromNode(
  */
 export function htmlFromNode(node: ProseMirrorNode): string {
   return elementFromNode(node).outerHTML
+}
+
+/////////////// JSON <=> Element ///////////////
+
+/**
+ * Serialize a HTML element to a ProseMirror document JSON object.
+ *
+ * @public
+ */
+export function jsonFromElement(element: DOMNode, schema: Schema): NodeJSON {
+  return jsonFromNode(nodeFromElement(element, schema))
+}
+
+/**
+ * Parse a ProseMirror document JSON object to a HTML element.
+ *
+ * @public
+ */
+export function elementFromJSON(
+  json: NodeJSON,
+  schema: Schema,
+  options?: { document?: Document },
+): HTMLElement {
+  return elementFromNode(nodeFromJSON(json, schema), options)
+}
+
+/////////////// JSON <=> HTML ///////////////
+
+/**
+ * Parse a HTML string to a ProseMirror document JSON object.
+ *
+ * @public
+ */
+export function jsonFromHTML(
+  html: string,
+  schema: Schema,
+  options?: { document?: Document },
+): NodeJSON {
+  return jsonFromElement(elementFromHTML(html, options), schema)
+}
+
+/**
+ * Parse a ProseMirror document JSON object to a HTML string.
+ *
+ * @public
+ */
+export function htmlFromJSON(
+  json: NodeJSON,
+  schema: Schema,
+  options?: { document?: Document },
+): string {
+  return htmlFromElement(elementFromJSON(json, schema, options))
 }

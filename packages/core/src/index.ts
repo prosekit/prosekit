@@ -116,7 +116,10 @@ export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
 export { isInCodeBlock } from './utils/is-in-code-block'
 export {
-  jsonFromElement,
+  elementFromJSON,
+  elementFromNode,
+  htmlFromJSON,
+  htmlFromNode,
   jsonFromHTML,
   jsonFromNode,
   jsonFromState,

@@ -43,23 +43,22 @@ const handleLoad = (record: string) => {
 
 <template>
   <ProseKit :editor="editor">
-    <div>
+    <div class="EDITOR_VIEWPORT">
       <button
         @click="handleSave"
         :disabled="!hasUnsavedChange"
-        class="my-2 border border-solid bg-white p-2 text-black disabled:cursor-not-allowed disabled:text-gray-500'"
+        class="m-1 border border-solid bg-white px-2 py-1 text-sm text-black disabled:cursor-not-allowed disabled:text-gray-500"
       >
         {{ hasUnsavedChange ? 'Save' : 'No Changes' }}
       </button>
-      <ul>
+      <ul class="border-b border-t border-solid text-sm">
         <li
           v-for="(record, index) in records"
           :key="index"
-          class="my-2 flex gap-2"
+          class="m-1 flex gap-2"
         >
           <button
-            class="border border-solid bg-white p-2 text-black"
-            :class="{ 'disabled:text-gray-500': !hasUnsavedChange }"
+            class="border border-solid bg-white px-2 py-1 text-black"
             @click="handleLoad(record)"
           >
             Load
@@ -69,9 +68,6 @@ const handleLoad = (record: string) => {
           </span>
         </li>
       </ul>
-    </div>
-
-    <div class="EDITOR_VIEWPORT">
       <div ref="editorRef" class="EDITOR_CONTENT"></div>
     </div>
   </ProseKit>

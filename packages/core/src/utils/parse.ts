@@ -89,7 +89,7 @@ export function elementFromNode(
  *
  * @internal
  */
-function elementFromHTML(
+export function elementFromHTML(
   html: string,
   options?: { document?: Document },
 ): HTMLElement {
@@ -102,7 +102,7 @@ function elementFromHTML(
 /**
  * @internal
  */
-function htmlFromElement(element: HTMLElement): string {
+export function htmlFromElement(element: HTMLElement): string {
   return element.outerHTML
 }
 

@@ -71,8 +71,16 @@ export const exampleItems = [
     "link": "/examples/resizable-image"
   },
   {
-    "text": "save-and-restore",
-    "link": "/examples/save-and-restore"
+    "text": "save-html",
+    "link": "/examples/save-html"
+  },
+  {
+    "text": "save-json",
+    "link": "/examples/save-json"
+  },
+  {
+    "text": "save-markdown",
+    "link": "/examples/save-markdown"
   },
   {
     "text": "slash-menu",

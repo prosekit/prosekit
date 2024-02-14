@@ -1,36 +1,35 @@
 import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import { createEditor, jsonFromNode } from 'prosekit/core'
+import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/react'
 import { useCallback, useMemo, useState } from 'react'
 
 export default function Editor() {
   const [key, setKey] = useState(1)
-  const [defaultDoc, setDefaultDoc] = useState<string | undefined>()
+  const [defaultDoc, setDefaultDoc] = useState<NodeJSON | undefined>()
   const [records, setRecords] = useState<string[]>([])
   const [hasUnsavedChange, setHasUnsavedChange] = useState(false)
 
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
-    return createEditor({
-      extension,
-      defaultDoc: defaultDoc && JSON.parse(defaultDoc),
-    })
+    return createEditor({ extension, defaultDoc })
   }, [key, defaultDoc])
 
   const handleDocChange = useCallback(() => setHasUnsavedChange(true), [])
   useDocChange(handleDocChange, { editor })
 
+  // Save the current document as a JSON string
   const handleSave = useCallback(() => {
-    const doc = JSON.stringify(jsonFromNode(editor.view.state.doc))
-    setRecords((records) => [...records, doc])
+    const record = JSON.stringify(jsonFromNode(editor.view.state.doc))
+    setRecords((records) => [...records, record])
     setHasUnsavedChange(false)
   }, [editor])
 
+  // Load a document from a JSON string
   const handleLoad = useCallback(
     (record: string) => {
-      setDefaultDoc(record)
+      setDefaultDoc(JSON.parse(record))
       setKey((key) => key + 1)
       setHasUnsavedChange(false)
     },
@@ -39,19 +38,19 @@ export default function Editor() {
 
   return (
     <ProseKit editor={editor}>
-      <div>
+      <div className="EDITOR_VIEWPORT">
         <button
           onClick={handleSave}
           disabled={!hasUnsavedChange}
-          className="my-2 border border-solid bg-white p-2 text-black disabled:cursor-not-allowed disabled:text-gray-500"
+          className="m-1 border border-solid bg-white px-2 py-1 text-sm text-black disabled:cursor-not-allowed disabled:text-gray-500"
         >
-          {hasUnsavedChange ? 'Save' : 'No Changes'}
+          {hasUnsavedChange ? 'Save' : 'No changes to save'}
         </button>
-        <ul>
+        <ul className="border-b border-t border-solid text-sm">
           {records.map((record, index) => (
-            <li key={index} className="my-2 flex gap-2">
+            <li key={index} className="m-1 flex gap-2">
               <button
-                className="border border-solid bg-white p-2 text-black disabled:text-gray-500"
+                className="border border-solid bg-white px-2 py-1 text-black"
                 onClick={() => handleLoad(record)}
               >
                 Load
@@ -62,9 +61,6 @@ export default function Editor() {
             </li>
           ))}
         </ul>
-      </div>
-
-      <div className="EDITOR_VIEWPORT">
         <div ref={editor.mount} className="EDITOR_CONTENT"></div>
       </div>
     </ProseKit>

@@ -9,6 +9,8 @@ export async function genExamplePreviews() {
     return example.story
   })
 
+  await vfs.cleanFilesInDir('website/examples')
+
   for (const [story, examples] of Object.entries(stories)) {
     if (!story) continue
 

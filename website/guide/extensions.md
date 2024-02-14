@@ -55,7 +55,7 @@ You can use the following functions to register event handlers into the editor.
 - [`defineDocChangeHandler`] registers a event handler that's called when the editor document is changed.
 - [`defineFocusChangeHandler`] registers a event handler that's called when the editor gains or loses focus.
 
-Check out the [save-and-restore] example for an example of using event handlers to save and restore the editor document.
+Check out the [save-json] example for an example of using event handlers to save and restore the editor document.
 
 ## A Starter Set of Extensions
 
@@ -72,7 +72,7 @@ If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can also use
 [plugin]: https://prosemirror.net/docs/ref#state.Plugin_System
 [node view]: https://prosemirror.net/docs/ref#view.NodeView
 [input rule]: https://prosemirror.net/docs/ref#inputrules
-[save-and-restore]: /examples/save-and-restore
+[save-json]: /examples/save-json
 [`defineNodeSpec`]: /references/core#defineNodeSpec
 [`defineMarkSpec`]: /references/core#defineMarkSpec
 [`defineCommands`]: /references/core#defineCommands

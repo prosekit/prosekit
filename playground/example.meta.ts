@@ -219,13 +219,43 @@ export const exampleMeta = {
       ]
     },
     {
-      "name": "react-save-and-restore",
+      "name": "react-save-html",
       "framework": "react",
-      "story": "save-and-restore",
+      "story": "save-html",
       "files": [
         {
           "path": "editor.tsx",
           "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-save-json",
+      "framework": "react",
+      "story": "save-json",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-save-markdown",
+      "framework": "react",
+      "story": "save-markdown",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "markdown.ts",
+          "hidden": false
+        },
+        {
+          "path": "package.json",
+          "hidden": true
         }
       ]
     },
@@ -715,13 +745,43 @@ export const exampleMeta = {
       ]
     },
     {
-      "name": "vue-save-and-restore",
+      "name": "vue-save-html",
       "framework": "vue",
-      "story": "save-and-restore",
+      "story": "save-html",
       "files": [
         {
           "path": "editor.vue",
           "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-save-json",
+      "framework": "vue",
+      "story": "save-json",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-save-markdown",
+      "framework": "vue",
+      "story": "save-markdown",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "markdown.ts",
+          "hidden": false
+        },
+        {
+          "path": "package.json",
+          "hidden": true
         }
       ]
     },

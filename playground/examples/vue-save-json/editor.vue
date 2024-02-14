@@ -2,21 +2,18 @@
 import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import { createEditor, jsonFromNode } from 'prosekit/core'
+import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/vue'
 import { computed, ref, watchPostEffect } from 'vue'
 
 const key = ref(1)
-const defaultDoc = ref<string | undefined>()
+const defaultDoc = ref<NodeJSON | undefined>()
 const records = ref<string[]>([])
 const hasUnsavedChange = ref(false)
 
 const editor = computed(() => {
   const extension = defineBasicExtension()
-  return createEditor({
-    extension,
-    defaultDoc: defaultDoc.value && JSON.parse(defaultDoc.value),
-  })
+  return createEditor({ extension, defaultDoc: defaultDoc.value })
 })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect(() => editor.value.mount(editorRef.value))
@@ -33,7 +30,7 @@ const handleSave = () => {
 
 // Load a document from a JSON string
 const handleLoad = (record: string) => {
-  defaultDoc.value = record
+  defaultDoc.value = JSON.parse(record)
   key.value += 1
   hasUnsavedChange.value = false
 }

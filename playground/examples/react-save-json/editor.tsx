@@ -1,22 +1,19 @@
 import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
-import { createEditor, jsonFromNode } from 'prosekit/core'
+import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/react'
 import { useCallback, useMemo, useState } from 'react'
 
 export default function Editor() {
   const [key, setKey] = useState(1)
-  const [defaultDoc, setDefaultDoc] = useState<string | undefined>()
+  const [defaultDoc, setDefaultDoc] = useState<NodeJSON | undefined>()
   const [records, setRecords] = useState<string[]>([])
   const [hasUnsavedChange, setHasUnsavedChange] = useState(false)
 
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
-    return createEditor({
-      extension,
-      defaultDoc: defaultDoc && JSON.parse(defaultDoc),
-    })
+    return createEditor({ extension, defaultDoc })
   }, [key, defaultDoc])
 
   const handleDocChange = useCallback(() => setHasUnsavedChange(true), [])
@@ -32,7 +29,7 @@ export default function Editor() {
   // Load a document from a JSON string
   const handleLoad = useCallback(
     (record: string) => {
-      setDefaultDoc(record)
+      setDefaultDoc(JSON.parse(record))
       setKey((key) => key + 1)
       setHasUnsavedChange(false)
     },

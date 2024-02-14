@@ -68,7 +68,12 @@ You need to mount the editor to the DOM by calling the `editor.mount(element)` m
 
 ## Data Persistence
 
-The editor's data should be stored in the JSON format, specifically in the [`NodeJSON`] format. In the given example, the Editor component takes in two properties: `defaultDoc` and `onDocChange`. The `defaultDoc` is the initial document that is displayed when the editor is first loaded. The `onDocChange` is a callback function that is triggered each time the document changes.
+The editor's document is stored in JSON, using the [`NodeJSON`] format. The `<Editor>` component requires two properties: `defaultDoc` and `onDocChange`. `defaultDoc` is the initial content shown when the editor loads. `onDocChange` is a callback function that is executed whenever the document changes.
+
+> ProseKit also provides utilities for converting the editor's document to and from HTML. Be aware that converting to HTML format may not capture all details. See the examples below to see how to use these tools:
+>
+> - [save-html]
+> - [save-markdown]
 
 ## Styling
 
@@ -89,3 +94,5 @@ The `prosekit/basic/typograph.css` file offers basic typographic styles for the 
 <!-- References -->
 
 [`NodeJSON`]: https://prosekit.dev/references/core#nodejson
+[save-html]: /examples/save-html
+[save-markdown]: /examples/save-markdown

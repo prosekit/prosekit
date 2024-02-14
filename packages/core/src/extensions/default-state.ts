@@ -43,9 +43,9 @@ export function defineDefaultState({
 
       if (defaultHTML) {
         if (typeof defaultHTML === 'string') {
-          defaultDoc = jsonFromHTML(defaultHTML, schema)
+          defaultDoc = jsonFromHTML(defaultHTML, { schema })
         } else {
-          defaultDoc = jsonFromElement(defaultHTML, schema)
+          defaultDoc = jsonFromElement(defaultHTML, { schema })
         }
       }
 

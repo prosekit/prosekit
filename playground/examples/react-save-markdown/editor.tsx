@@ -7,6 +7,7 @@ import {
   htmlFromNode,
   type NodeJSON,
 } from 'prosekit/core'
+import { ListDOMSerializer } from 'prosekit/extensions/list'
 import { ProseKit, useDocChange } from 'prosekit/react'
 import { useCallback, useMemo, useState } from 'react'
 
@@ -28,7 +29,9 @@ export default function Editor() {
 
   // Save the current document as a Markdown string
   const handleSave = useCallback(() => {
-    const html = htmlFromNode(editor.view.state.doc)
+    const html = htmlFromNode(editor.view.state.doc, {
+      DOMSerializer: ListDOMSerializer,
+    })
     const record = markdownFromHTML(html)
     setRecords((records) => [...records, record])
     setHasUnsavedChange(false)
@@ -38,7 +41,7 @@ export default function Editor() {
   const handleLoad = useCallback(
     (record: string) => {
       const html = htmlFromMarkdown(record)
-      setDefaultDoc(jsonFromHTML(html, editor.schema))
+      setDefaultDoc(jsonFromHTML(html, { schema: editor.schema }))
       setKey((key) => key + 1)
       setHasUnsavedChange(false)
     },

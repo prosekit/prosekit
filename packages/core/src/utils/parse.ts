@@ -7,6 +7,26 @@ import type { NodeJSON, StateJSON } from '../types/model'
 
 import { getBrowserDocument, getBrowserWindow } from './get-dom-api'
 
+/** @public */
+export type DOMParserOptions = {
+  DOMParser?: typeof DOMParser
+}
+
+/** @public */
+export type DOMSerializerOptions = {
+  DOMSerializer?: typeof DOMSerializer
+}
+
+/** @public */
+export type DOMDocumentOptions = {
+  document?: Document
+}
+
+/** @public */
+export type JSONParserOptions = {
+  schema: Schema
+}
+
 /////////////// JSON <=> State ///////////////
 
 /**
@@ -23,8 +43,11 @@ export function jsonFromState(state: EditorState): StateJSON {
  *
  * @public
  */
-export function stateFromJSON(json: StateJSON, schema: Schema): EditorState {
-  return EditorState.fromJSON({ schema }, json)
+export function stateFromJSON(
+  json: StateJSON,
+  options: JSONParserOptions,
+): EditorState {
+  return EditorState.fromJSON({ schema: options.schema }, json)
 }
 
 /////////////// JSON <=> Node ///////////////
@@ -43,8 +66,11 @@ export function jsonFromNode(node: ProseMirrorNode): NodeJSON {
  *
  * @public
  */
-export function nodeFromJSON(json: NodeJSON, schema: Schema): ProseMirrorNode {
-  return schema.nodeFromJSON(json)
+export function nodeFromJSON(
+  json: NodeJSON,
+  options: JSONParserOptions,
+): ProseMirrorNode {
+  return options.schema.nodeFromJSON(json)
 }
 
 /////////////// Node <=> Element ///////////////
@@ -56,9 +82,11 @@ export function nodeFromJSON(json: NodeJSON, schema: Schema): ProseMirrorNode {
  */
 export function nodeFromElement(
   element: DOMNode,
-  schema: Schema,
+  options: DOMParserOptions & JSONParserOptions,
 ): ProseMirrorNode {
-  return DOMParser.fromSchema(schema).parse(element)
+  const Parser = options.DOMParser || DOMParser
+  const schema = options.schema
+  return Parser.fromSchema(schema).parse(element)
 }
 
 /**
@@ -68,18 +96,22 @@ export function nodeFromElement(
  */
 export function elementFromNode(
   node: ProseMirrorNode,
-  options?: { document?: Document },
+  options?: DOMSerializerOptions & DOMDocumentOptions,
 ): HTMLElement {
+  const Serializer = options?.DOMSerializer || DOMSerializer
+  const document = getBrowserDocument(options)
   const schema = node.type.schema
-  const serializer = DOMSerializer.fromSchema(schema)
+  const serializer = Serializer.fromSchema(schema)
 
   if (schema.topNodeType !== node.type) {
-    return serializer.serializeNode(node, options) as HTMLElement
+    return serializer.serializeNode(node, { document }) as HTMLElement
+  } else {
+    return serializer.serializeFragment(
+      node.content,
+      { document },
+      document.createElement('div'),
+    ) as HTMLElement
   }
-
-  const doc = getBrowserDocument()
-  const div = doc.createElement('div')
-  return serializer.serializeFragment(node.content, options, div) as HTMLElement
 }
 
 /////////////// Element <=> HTML ///////////////
@@ -91,7 +123,7 @@ export function elementFromNode(
  */
 export function elementFromHTML(
   html: string,
-  options?: { document?: Document },
+  options?: DOMDocumentOptions,
 ): HTMLElement {
   const win = getBrowserWindow(options)
   const parser = new win.DOMParser()
@@ -115,10 +147,9 @@ export function htmlFromElement(element: HTMLElement): string {
  */
 export function nodeFromHTML(
   html: string,
-  schema: Schema,
-  options?: { document?: Document },
+  options: DOMParserOptions & JSONParserOptions & DOMDocumentOptions,
 ): ProseMirrorNode {
-  return nodeFromElement(elementFromHTML(html, options), schema)
+  return nodeFromElement(elementFromHTML(html, options), options)
 }
 
 /**
@@ -126,8 +157,11 @@ export function nodeFromHTML(
  *
  * @public
  */
-export function htmlFromNode(node: ProseMirrorNode): string {
-  return elementFromNode(node).outerHTML
+export function htmlFromNode(
+  node: ProseMirrorNode,
+  options?: DOMSerializerOptions & DOMDocumentOptions,
+): string {
+  return elementFromNode(node, options).outerHTML
 }
 
 /////////////// JSON <=> Element ///////////////
@@ -137,8 +171,11 @@ export function htmlFromNode(node: ProseMirrorNode): string {
  *
  * @public
  */
-export function jsonFromElement(element: DOMNode, schema: Schema): NodeJSON {
-  return jsonFromNode(nodeFromElement(element, schema))
+export function jsonFromElement(
+  element: DOMNode,
+  options: DOMParserOptions & JSONParserOptions,
+): NodeJSON {
+  return jsonFromNode(nodeFromElement(element, options))
 }
 
 /**
@@ -148,10 +185,9 @@ export function jsonFromElement(element: DOMNode, schema: Schema): NodeJSON {
  */
 export function elementFromJSON(
   json: NodeJSON,
-  schema: Schema,
-  options?: { document?: Document },
+  options: JSONParserOptions & DOMSerializerOptions & DOMDocumentOptions,
 ): HTMLElement {
-  return elementFromNode(nodeFromJSON(json, schema), options)
+  return elementFromNode(nodeFromJSON(json, options), options)
 }
 
 /////////////// JSON <=> HTML ///////////////
@@ -163,10 +199,9 @@ export function elementFromJSON(
  */
 export function jsonFromHTML(
   html: string,
-  schema: Schema,
-  options?: { document?: Document },
+  options: DOMDocumentOptions & DOMParserOptions & JSONParserOptions,
 ): NodeJSON {
-  return jsonFromElement(elementFromHTML(html, options), schema)
+  return jsonFromElement(elementFromHTML(html, options), options)
 }
 
 /**
@@ -176,8 +211,7 @@ export function jsonFromHTML(
  */
 export function htmlFromJSON(
   json: NodeJSON,
-  schema: Schema,
-  options?: { document?: Document },
+  options: JSONParserOptions & DOMSerializerOptions & DOMDocumentOptions,
 ): string {
-  return htmlFromElement(elementFromJSON(json, schema, options))
+  return htmlFromElement(elementFromJSON(json, options))
 }

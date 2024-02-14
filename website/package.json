@@ -24,7 +24,7 @@
     "lightningcss": "^1.23.0",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
-    "prosekit": "^0.4.4",
+    "prosekit": "^0.4.5",
     "prosekit-playground": "*",
     "radix-vue": "^1.4.3",
     "react": "^18.2.0",

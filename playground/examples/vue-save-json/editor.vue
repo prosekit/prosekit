@@ -16,7 +16,11 @@ const editor = computed(() => {
   return createEditor({ extension, defaultDoc: defaultDoc.value })
 })
 const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect(() => editor.value.mount(editorRef.value))
+watchPostEffect((onCleanup) => {
+  const editorValue = editor.value
+  editorValue.mount(editorRef.value)
+  onCleanup(() => editorValue.mount(null))
+})
 
 const handleDocChange = () => (hasUnsavedChange.value = true)
 useDocChange(handleDocChange, { editor })

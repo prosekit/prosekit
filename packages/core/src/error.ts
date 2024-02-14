@@ -15,3 +15,14 @@ export class EditorNotFoundError extends ProseKitError {
     )
   }
 }
+
+/**
+ * @internal
+ */
+export class DOMDocumentNotFoundError extends ProseKitError {
+  constructor() {
+    super(
+      'Unable to find browser Document. When not in the browser environment, you need to pass a DOM Document.',
+    )
+  }
+}

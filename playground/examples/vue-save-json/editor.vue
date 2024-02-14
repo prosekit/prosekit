@@ -24,12 +24,14 @@ watchPostEffect(() => editor.value.mount(editorRef.value))
 const handleDocChange = () => (hasUnsavedChange.value = true)
 useDocChange(handleDocChange, { editor })
 
+// Save the current document as a JSON string
 const handleSave = () => {
   const doc = JSON.stringify(jsonFromNode(editor.value.view.state.doc))
   records.value.push(doc)
   hasUnsavedChange.value = false
 }
 
+// Load a document from a JSON string
 const handleLoad = (record: string) => {
   defaultDoc.value = record
   key.value += 1

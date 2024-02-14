@@ -21,8 +21,8 @@ export default function Editor() {
 
   // Save the current document as a JSON string
   const handleSave = useCallback(() => {
-    const doc = JSON.stringify(jsonFromNode(editor.view.state.doc))
-    setRecords((records) => [...records, doc])
+    const record = JSON.stringify(jsonFromNode(editor.view.state.doc))
+    setRecords((records) => [...records, record])
     setHasUnsavedChange(false)
   }, [editor])
 

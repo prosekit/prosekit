@@ -28,8 +28,8 @@ useDocChange(handleDocChange, { editor })
 
 // Save the current document as a HTML string
 const handleSave = () => {
-  const doc = htmlFromNode(editor.value.view.state.doc)
-  records.value.push(doc)
+  const record = htmlFromNode(editor.value.view.state.doc)
+  records.value.push(record)
   hasUnsavedChange.value = false
 }
 

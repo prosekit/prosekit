@@ -26,8 +26,8 @@ export default function Editor() {
 
   // Save the current document as a HTML string
   const handleSave = useCallback(() => {
-    const doc = htmlFromNode(editor.view.state.doc)
-    setRecords((records) => [...records, doc])
+    const record = htmlFromNode(editor.view.state.doc)
+    setRecords((records) => [...records, record])
     setHasUnsavedChange(false)
   }, [editor])
 

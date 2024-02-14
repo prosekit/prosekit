@@ -23,8 +23,8 @@ useDocChange(handleDocChange, { editor })
 
 // Save the current document as a JSON string
 const handleSave = () => {
-  const doc = JSON.stringify(jsonFromNode(editor.value.view.state.doc))
-  records.value.push(doc)
+  const record = JSON.stringify(jsonFromNode(editor.value.view.state.doc))
+  records.value.push(record)
   hasUnsavedChange.value = false
 }
 

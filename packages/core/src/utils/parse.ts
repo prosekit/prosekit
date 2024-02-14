@@ -1,11 +1,11 @@
 import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
-import { DOMParser } from '@prosekit/pm/model'
+import { DOMParser, DOMSerializer } from '@prosekit/pm/model'
 import { EditorState } from '@prosekit/pm/state'
 
-import { ProseKitError } from '../error'
+import type { DOMNode } from '../types/dom-node'
 import type { NodeJSON, StateJSON } from '../types/model'
 
-import { getBrowserWindow } from './get-dom-api'
+import { getBrowserDocument, getBrowserWindow } from './get-dom-api'
 
 /**
  * Parse a HTML element to a ProseMirror node.
@@ -13,7 +13,7 @@ import { getBrowserWindow } from './get-dom-api'
  * @public
  */
 export function nodeFromElement(
-  element: HTMLElement,
+  element: DOMNode,
   schema: Schema,
 ): ProseMirrorNode {
   return DOMParser.fromSchema(schema).parse(element)
@@ -24,10 +24,7 @@ export function nodeFromElement(
  *
  * @public
  */
-export function jsonFromElement(
-  element: HTMLElement,
-  schema: Schema,
-): NodeJSON {
+export function jsonFromElement(element: DOMNode, schema: Schema): NodeJSON {
   return jsonFromNode(nodeFromElement(element, schema))
 }
 
@@ -36,8 +33,12 @@ export function jsonFromElement(
  *
  * @public
  */
-export function nodeFromHTML(html: string, schema: Schema): ProseMirrorNode {
-  return nodeFromElement(elementFromHTML(html), schema)
+export function nodeFromHTML(
+  html: string,
+  schema: Schema,
+  options?: { document?: Document },
+): ProseMirrorNode {
+  return nodeFromElement(elementFromHTML(html, options), schema)
 }
 
 /**
@@ -45,8 +46,12 @@ export function nodeFromHTML(html: string, schema: Schema): ProseMirrorNode {
  *
  * @public
  */
-export function jsonFromHTML(html: string, schema: Schema): NodeJSON {
-  return jsonFromElement(elementFromHTML(html), schema)
+export function jsonFromHTML(
+  html: string,
+  schema: Schema,
+  options?: { document?: Document },
+): NodeJSON {
+  return jsonFromElement(elementFromHTML(html, options), schema)
 }
 
 /**
@@ -54,15 +59,14 @@ export function jsonFromHTML(html: string, schema: Schema): NodeJSON {
  *
  * @internal
  */
-export function elementFromHTML(html: string): HTMLElement {
-  const win = getBrowserWindow()
-  if (!win) {
-    throw new ProseKitError(
-      'No Browser Document Found. You can only parse a HTML string in the browser environment.',
-    )
-  }
+export function elementFromHTML(
+  html: string,
+  options?: { document?: Document },
+): HTMLElement {
+  const win = getBrowserWindow(options)
   const parser = new win.DOMParser()
-  return parser.parseFromString(`<body>${html}</body>`, 'text/html').body
+  return parser.parseFromString(`<body><div>${html}</div></body>`, 'text/html')
+    .body.firstElementChild as HTMLElement
 }
 
 /**
@@ -99,4 +103,34 @@ export function nodeFromJSON(json: NodeJSON, schema: Schema): ProseMirrorNode {
  */
 export function stateFromJSON(json: StateJSON, schema: Schema): EditorState {
   return EditorState.fromJSON({ schema }, json)
+}
+
+/**
+ * Serialize a ProseMirror node to a HTML element.
+ *
+ * @public
+ */
+export function elementFromNode(
+  node: ProseMirrorNode,
+  options?: { document?: Document },
+): HTMLElement {
+  const schema = node.type.schema
+  const serializer = DOMSerializer.fromSchema(schema)
+
+  if (schema.topNodeType !== node.type) {
+    return serializer.serializeNode(node, options) as HTMLElement
+  }
+
+  const doc = getBrowserDocument()
+  const div = doc.createElement('div')
+  return serializer.serializeFragment(node.content, options, div) as HTMLElement
+}
+
+/**
+ * Serialize a ProseMirror node to a HTML string
+ *
+ * @public
+ */
+export function htmlFromNode(node: ProseMirrorNode): string {
+  return elementFromNode(node).outerHTML
 }

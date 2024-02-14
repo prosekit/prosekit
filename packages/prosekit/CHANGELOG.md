@@ -1,5 +1,18 @@
 # prosekit
 
+## 0.4.4
+
+### Patch Changes
+
+- [`c0f4e51`](https://github.com/ocavue/prosekit/commit/c0f4e51af135a594e0949ed2dfd8c543be290668) ![][badge-core]
+
+  Added new utility functions for converting between ProseMirror data and HTML:
+
+  - `elementFromJSON`
+  - `elementFromNode`
+  - `htmlFromJSON`
+  - `htmlFromNode`
+
 ## 0.4.3
 
 ### Patch Changes

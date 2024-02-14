@@ -241,6 +241,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-save-markdown",
+      "framework": "react",
+      "story": "save-markdown",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "markdown.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-slash-menu",
       "framework": "react",
       "story": "slash-menu",
@@ -743,6 +758,21 @@ export const exampleMeta = {
       "files": [
         {
           "path": "editor.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-save-markdown",
+      "framework": "vue",
+      "story": "save-markdown",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "markdown.ts",
           "hidden": false
         }
       ]

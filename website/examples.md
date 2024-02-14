@@ -40,6 +40,8 @@
 
 - [save-json](./examples/save-json)
 
+- [save-markdown](./examples/save-markdown)
+
 - [slash-menu](./examples/slash-menu)
 
 - [strike](./examples/strike)

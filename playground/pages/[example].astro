@@ -12,6 +12,7 @@ import E2808803641 from '../examples/react-readonly/editor.tsx'
 import E2473342960 from '../examples/react-resizable-image/editor.tsx'
 import E2240445596 from '../examples/react-save-html/editor.tsx'
 import E1586999831 from '../examples/react-save-json/editor.tsx'
+import E3429186088 from '../examples/react-save-markdown/editor.tsx'
 import E3738959724 from '../examples/react-slash-menu/editor.tsx'
 import E733855346 from '../examples/react-toolbar/editor.tsx'
 import E105978888 from '../examples/react-user-menu/editor.tsx'
@@ -33,6 +34,7 @@ import E365230847 from '../examples/vue-placeholder/editor.vue'
 import E3694637844 from '../examples/vue-readonly/editor.vue'
 import E281679667 from '../examples/vue-save-html/editor.vue'
 import E76883160 from '../examples/vue-save-json/editor.vue'
+import E3896002027 from '../examples/vue-save-markdown/editor.vue'
 import E2937612185 from '../examples/vue-slash-menu/editor.vue'
 import E4080529360 from '../examples/vue-strike/editor.vue'
 import E1741277739 from '../examples/vue-text-color/editor.vue'
@@ -70,6 +72,7 @@ export const getStaticPaths = () => [
   { params: { example: 'react-resizable-image' } },
   { params: { example: 'react-save-html' } },
   { params: { example: 'react-save-json' } },
+  { params: { example: 'react-save-markdown' } },
   { params: { example: 'react-slash-menu' } },
   { params: { example: 'react-toolbar' } },
   { params: { example: 'react-user-menu' } },
@@ -91,6 +94,7 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-readonly' } },
   { params: { example: 'vue-save-html' } },
   { params: { example: 'vue-save-json' } },
+  { params: { example: 'vue-save-markdown' } },
   { params: { example: 'vue-slash-menu' } },
   { params: { example: 'vue-strike' } },
   { params: { example: 'vue-text-color' } },
@@ -132,6 +136,7 @@ const { example } = Astro.params
   {example === 'react-resizable-image' && <E2473342960 client:only="react" />}
   {example === 'react-save-html' && <E2240445596 client:only="react" />}
   {example === 'react-save-json' && <E1586999831 client:only="react" />}
+  {example === 'react-save-markdown' && <E3429186088 client:only="react" />}
   {example === 'react-slash-menu' && <E3738959724 client:only="react" />}
   {example === 'react-toolbar' && <E733855346 client:only="react" />}
   {example === 'react-user-menu' && <E105978888 client:only="react" />}
@@ -153,6 +158,7 @@ const { example } = Astro.params
   {example === 'vue-readonly' && <E3694637844 client:only="vue" />}
   {example === 'vue-save-html' && <E281679667 client:only="vue" />}
   {example === 'vue-save-json' && <E76883160 client:only="vue" />}
+  {example === 'vue-save-markdown' && <E3896002027 client:only="vue" />}
   {example === 'vue-slash-menu' && <E2937612185 client:only="vue" />}
   {example === 'vue-strike' && <E4080529360 client:only="vue" />}
   {example === 'vue-text-color' && <E1741277739 client:only="vue" />}

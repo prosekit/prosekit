@@ -79,6 +79,10 @@ export const exampleItems = [
     "link": "/examples/save-json"
   },
   {
+    "text": "save-markdown",
+    "link": "/examples/save-markdown"
+  },
+  {
     "text": "slash-menu",
     "link": "/examples/slash-menu"
   },

@@ -11,6 +11,7 @@ import {
 import { ProseKit, useDocChange } from 'prosekit/vue'
 import { computed, ref, watchPostEffect } from 'vue'
 import { htmlFromMarkdown, markdownFromHTML } from './markdown'
+import { ListDOMSerializer } from 'prosekit/extensions/list'
 
 const key = ref(1)
 const defaultDoc = ref<NodeJSON | undefined>()
@@ -33,7 +34,9 @@ useDocChange(handleDocChange, { editor })
 
 // Save the current document as a Markdown string
 const handleSave = () => {
-  const html = htmlFromNode(editor.value.view.state.doc)
+  const html = htmlFromNode(editor.value.view.state.doc, {
+    DOMSerializer: ListDOMSerializer,
+  })
   const record = markdownFromHTML(html)
   records.value.push(record)
   hasUnsavedChange.value = false
@@ -42,7 +45,7 @@ const handleSave = () => {
 // Load a document from a Markdown string
 const handleLoad = (record: string) => {
   const html = htmlFromMarkdown(record)
-  defaultDoc.value = jsonFromHTML(html, editor.value.schema)
+  defaultDoc.value = jsonFromHTML(html, { schema: editor.value.schema })
   key.value += 1
   hasUnsavedChange.value = false
 }

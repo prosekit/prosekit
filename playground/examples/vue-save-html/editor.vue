@@ -10,6 +10,7 @@ import {
 } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/vue'
 import { computed, ref, watchPostEffect } from 'vue'
+import { ListDOMSerializer } from 'prosekit/extensions/list'
 
 const key = ref(1)
 const defaultDoc = ref<NodeJSON | undefined>()
@@ -32,14 +33,16 @@ useDocChange(handleDocChange, { editor })
 
 // Save the current document as a HTML string
 const handleSave = () => {
-  const record = htmlFromNode(editor.value.view.state.doc)
+  const record = htmlFromNode(editor.value.view.state.doc, {
+    DOMSerializer: ListDOMSerializer,
+  })
   records.value.push(record)
   hasUnsavedChange.value = false
 }
 
 // Load a document from a HTML string
 const handleLoad = (record: string) => {
-  defaultDoc.value = jsonFromHTML(record, editor.value.schema)
+  defaultDoc.value = jsonFromHTML(record, { schema: editor.value.schema })
   key.value += 1
   hasUnsavedChange.value = false
 }

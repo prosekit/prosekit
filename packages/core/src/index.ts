@@ -127,6 +127,10 @@ export {
   nodeFromHTML,
   nodeFromJSON,
   stateFromJSON,
+  type DOMDocumentOptions,
+  type DOMParserOptions,
+  type DOMSerializerOptions,
+  type JSONParserOptions,
 } from './utils/parse'
 export {
   isAllSelection,

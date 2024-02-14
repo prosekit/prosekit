@@ -27,6 +27,8 @@ import {
 
 import { defineInputRule } from '../input-rule'
 
+export { ListDOMSerializer } from 'prosemirror-flat-list'
+
 export function defineListSpec() {
   return defineNodeSpec({ ...createListSpec(), name: 'list' })
 }

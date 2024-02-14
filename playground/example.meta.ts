@@ -219,6 +219,17 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-save-html",
+      "framework": "react",
+      "story": "save-html",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-save-json",
       "framework": "react",
       "story": "save-json",
@@ -710,6 +721,17 @@ export const exampleMeta = {
         },
         {
           "path": "use-readonly.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-save-html",
+      "framework": "vue",
+      "story": "save-html",
+      "files": [
+        {
+          "path": "editor.vue",
           "hidden": false
         }
       ]

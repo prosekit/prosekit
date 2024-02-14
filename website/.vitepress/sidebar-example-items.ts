@@ -71,6 +71,10 @@ export const exampleItems = [
     "link": "/examples/resizable-image"
   },
   {
+    "text": "save-html",
+    "link": "/examples/save-html"
+  },
+  {
     "text": "save-json",
     "link": "/examples/save-json"
   },

@@ -36,6 +36,8 @@
 
 - [resizable-image](./examples/resizable-image)
 
+- [save-html](./examples/save-html)
+
 - [save-json](./examples/save-json)
 
 - [slash-menu](./examples/slash-menu)

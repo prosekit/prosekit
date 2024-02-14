@@ -252,6 +252,10 @@ export const exampleMeta = {
         {
           "path": "markdown.ts",
           "hidden": false
+        },
+        {
+          "path": "package.json",
+          "hidden": true
         }
       ]
     },
@@ -774,6 +778,10 @@ export const exampleMeta = {
         {
           "path": "markdown.ts",
           "hidden": false
+        },
+        {
+          "path": "package.json",
+          "hidden": true
         }
       ]
     },

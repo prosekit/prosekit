@@ -29,10 +29,16 @@
     "prosekit": "^0.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rehype-parse": "^9.0.0",
+    "rehype-remark": "^10.0.0",
+    "remark-html": "^16.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-stringify": "^11.0.0",
     "shikiji": "^0.10.2",
     "solid-js": "^1.8.14",
     "svelte": "^4.2.10",
     "typescript": "^5.3.3",
+    "unified": "^11.0.4",
     "unocss": "^0.58.5",
     "vue": "^3.4.18"
   }

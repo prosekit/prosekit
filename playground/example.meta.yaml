@@ -131,6 +131,8 @@ examples:
         hidden: false
       - path: markdown.ts
         hidden: false
+      - path: package.json
+        hidden: true
   - name: react-slash-menu
     framework: react
     story: slash-menu
@@ -403,6 +405,8 @@ examples:
         hidden: false
       - path: markdown.ts
         hidden: false
+      - path: package.json
+        hidden: true
   - name: vue-slash-menu
     framework: vue
     story: slash-menu

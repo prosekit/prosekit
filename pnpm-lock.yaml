@@ -191,6 +191,9 @@ importers:
       json5:
         specifier: ^2.2.3
         version: 2.2.3
+      shiki:
+        specifier: ^1.1.2
+        version: 1.1.2
       tsx:
         specifier: ^4.7.1
         version: 4.7.1
@@ -2406,7 +2409,6 @@ packages:
 
   /@shikijs/core@1.1.2:
     resolution: {integrity: sha512-ERVzNQz88ZkDqUpWeC57Kp+Kmx5RjqeDBR1M8AGWGom4yrkITiTfXCGmjchlDSw12MhDTuPYR4HVFW8uT61RaQ==}
-    dev: false
 
   /@shikijs/transformers@1.1.1:
     resolution: {integrity: sha512-kOGqxMWtgPxivmDB6WH/lq3oUv0FrGPleovfBCqNVYsyGwRDa01OBOqQxO6oz8a7QbdEq0fbt7CaK1yjv4epXw==}
@@ -9216,7 +9218,6 @@ packages:
     resolution: {integrity: sha512-qNzFwTv5uhEDNUIwp7wHjsrffVeLbmOgWnM5mZZhoiz7G2qAUvqVfUzuWfieD45/YAKipzCtdV9SndacKtABow==}
     dependencies:
       '@shikijs/core': 1.1.2
-    dev: false
 
   /shikiji-core@0.10.2:
     resolution: {integrity: sha512-9Of8HMlF96usXJHmCL3Gd0Fcf0EcyJUF9m8EoAKKd98mHXi0La2AZl1h6PegSFGtiYcBDK/fLuKbDa1l16r1fA==}
@@ -10828,7 +10829,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.3.0
       postcss: 8.4.35
-      shiki: 1.1.1
+      shiki: 1.1.2
       vite: 5.1.1(lightningcss@1.23.0)
       vue: 3.4.18(typescript@5.3.3)
     transitivePeerDependencies:

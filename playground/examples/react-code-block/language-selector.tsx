@@ -1,4 +1,4 @@
-import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
+import { shikiBundledLanguages } from 'prosekit/extensions/code-block'
 
 export default function LanguageSelector({
   language,
@@ -15,7 +15,7 @@ export default function LanguageSelector({
         value={language || ''}
       >
         <option value="">Plain Text</option>
-        {shikiBundledLanguagesInfo.map((info) => (
+        {shikiBundledLanguages.map((info) => (
           <option key={info.id} value={info.id}>
             {info.name}
           </option>

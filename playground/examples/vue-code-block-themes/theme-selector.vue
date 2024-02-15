@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import {
   defineCodeBlockShiki,
-  shikiBundledThemesInfo,
+  shikiBundledThemes,
+  type ShikiBundledTheme,
 } from 'prosekit/extensions/code-block'
 import { useExtension } from 'prosekit/vue'
 import { computed } from 'vue'
 
 const theme = defineModel({ default: 'github-dark' })
 const extension = computed(() => {
-  return defineCodeBlockShiki({ themes: [theme.value] })
+  return defineCodeBlockShiki({ themes: [theme.value as ShikiBundledTheme] })
 })
 useExtension(extension)
 </script>
@@ -16,11 +17,7 @@ useExtension(extension)
 <template>
   <label>Theme:</label>
   <select v-model="theme" class="TOGGLE_BUTTON">
-    <option
-      v-for="info of shikiBundledThemesInfo"
-      :key="info.id"
-      :value="info.id"
-    >
+    <option v-for="info of shikiBundledThemes" :key="info.id" :value="info.id">
       {{ info.id }}
     </option>
   </select>

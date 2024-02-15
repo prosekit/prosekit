@@ -8,12 +8,13 @@ export {
   defineCodeBlockEnterRule,
   defineCodeBlockInputRule,
 } from './code-block-input-rule'
-export {
-  defineCodeBlockShiki,
-  shikiBundledLanguagesInfo,
-  shikiBundledThemesInfo,
-  type ShikiBundledLanguage,
-  type ShikiBundledTheme,
-} from './code-block-shiki'
+export { defineCodeBlockShiki } from './code-block-shiki'
 export { defineCodeBlockSpec } from './code-block-spec'
 export type { CodeBlockAttrs } from './code-block-types'
+export { type BundledLanguageInfo, type BundledThemeInfo } from './shiki-bundle'
+export {
+  shikiBundledLanguages,
+  shikiBundledThemes,
+  type ShikiBundledLanguage,
+  type ShikiBundledTheme,
+} from './shiki-bundle.gen'

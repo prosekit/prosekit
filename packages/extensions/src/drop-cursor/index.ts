@@ -32,3 +32,5 @@ export interface DropCursorOptions {
 export function defineDropCursor(options?: DropCursorOptions) {
   return definePlugin(() => dropCursor(options))
 }
+
+export { bundledLanguagesInfo } from 'shiki/dist/bundle-web.mjs'

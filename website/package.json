@@ -30,7 +30,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "shadcn-vue": "^0.9.0",
-    "shikiji": "^0.10.2",
     "type-fest": "^4.10.2",
     "typedoc": "^0.25.8",
     "typedoc-plugin-external-package-links": "^0.1.0",

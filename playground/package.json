@@ -34,7 +34,6 @@
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
-    "shikiji": "^0.10.2",
     "solid-js": "^1.8.14",
     "svelte": "^4.2.10",
     "typescript": "^5.3.3",

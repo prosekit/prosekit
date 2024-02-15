@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { defineCodeBlockShikiji } from 'prosekit/extensions/code-block'
+import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
 import { useExtension } from 'prosekit/vue'
-import { bundledThemesInfo, type BundledTheme } from 'shikiji'
+import { bundledThemesInfo, type BundledTheme } from 'shiki'
 import { computed } from 'vue'
 
 const theme = defineModel({ default: 'github-dark' })
 const extension = computed(() => {
-  return defineCodeBlockShikiji({ theme: theme.value as BundledTheme })
+  return defineCodeBlockShiki({ theme: theme.value as BundledTheme })
 })
 useExtension(extension)
 </script>

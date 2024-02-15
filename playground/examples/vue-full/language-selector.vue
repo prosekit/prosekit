@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { bundledLanguagesInfo } from 'shikiji'
+import { bundledLanguagesInfo } from 'shiki'
 
 const props = defineProps<{
   language?: string

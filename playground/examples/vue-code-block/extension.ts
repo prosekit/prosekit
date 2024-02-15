@@ -2,7 +2,7 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
 import {
   defineCodeBlock,
-  defineCodeBlockShikiji,
+  defineCodeBlockShiki,
 } from 'prosekit/extensions/code-block'
 import { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'
 
@@ -12,7 +12,7 @@ export function defineExtension() {
   return union([
     defineBasicExtension(),
     defineCodeBlock(),
-    defineCodeBlockShikiji(),
+    defineCodeBlockShiki(),
     defineVueNodeView({
       name: 'codeBlock',
       contentAs: 'code',

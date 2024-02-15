@@ -82,28 +82,12 @@ Press `Enter` three times at the end of or press `Shift-Enter` to exit the curre
 
 ## Syntax Highlighting
 
-You can use `defineCodeBlockShikiji` to enable syntax highlighting for the `codeBlock` node using the [Shikiji] library. `defineCodeBlockShikiji` will only load the [Shikiji] library and used languages asynchronously, which is useful for reducing the initial bundle size of your application. You will need to install the `shikiji` package since it's a peer dependency.
-
-::: code-group
-
-```shell [npm]
-npm install shikiji
-```
-
-```shell [yarn]
-yarn add shikiji
-```
-
-```shell [pnpm]
-pnpm add shikiji
-```
-
-:::
+You can use `defineCodeBlockShiki` to enable syntax highlighting for the `codeBlock` node using the [Shiki] library. `defineCodeBlockShiki` will only load used languages and themes asynchronously, which is useful for reducing the initial bundle size of your application.
 
 ```ts
-import { defineCodeBlockShikiji } from 'prosekit/extensions/code-block'
+import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
 
-const extension = defineCodeBlockShikiji({ theme: 'github-light' })
+const extension = defineCodeBlockShiki({ themes: ['github-light'] })
 ```
 
 If you want to use a different syntax highlighter or have more control over the syntax highlighting, you can use the `defineCodeBlockHighlight` function to create an extension. This function accepts a `parser` object, defined by the [prosemirror-highlight] library. For more details on how to use the other syntax highlighters, refer to the [prosemirror-highlight] documentation.
@@ -116,9 +100,4 @@ const extension = defineCodeBlockHighlight({ parser })
 ```
 
 [prosemirror-highlight]: https://github.com/ocavue/prosemirror-highlight
-[lowlight]: https://github.com/wooorm/lowlight
-[Highlight.js]: https://github.com/highlightjs/highlight.js
 [Shiki]: https://github.com/shikijs/shiki
-[Shikiji]: https://github.com/antfu/shikiji
-[refractor]: https://github.com/wooorm/refractor
-[Prism]: https://github.com/PrismJS/prism

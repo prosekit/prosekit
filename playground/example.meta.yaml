@@ -17,8 +17,6 @@ examples:
         hidden: false
       - path: language-selector.tsx
         hidden: false
-      - path: package.json
-        hidden: true
       - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
@@ -31,8 +29,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: package.json
-        hidden: true
       - path: theme-selector.tsx
         hidden: false
       - path: toolbar.tsx

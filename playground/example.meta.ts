@@ -36,10 +36,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "package.json",
-          "hidden": true
-        },
-        {
           "path": "toggle.tsx",
           "hidden": false
         },
@@ -61,10 +57,6 @@ export const exampleMeta = {
         {
           "path": "extension.ts",
           "hidden": false
-        },
-        {
-          "path": "package.json",
-          "hidden": true
         },
         {
           "path": "theme-selector.tsx",

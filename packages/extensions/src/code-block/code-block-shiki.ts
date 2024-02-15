@@ -2,10 +2,7 @@ import type { Extension } from '@prosekit/core'
 import type { SpecialLanguage } from 'shiki'
 
 import { defineCodeBlockHighlight } from './code-block-highlight'
-import type {
-  ShikiBundledLanguage,
-  ShikiBundledTheme,
-} from './shiki-bundle.gen'
+import type { ShikiBundledLanguage, ShikiBundledTheme } from './shiki-bundle'
 import { createLazyParser } from './shiki-parser'
 
 /**

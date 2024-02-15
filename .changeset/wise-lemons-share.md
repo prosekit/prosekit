@@ -3,8 +3,8 @@
 'prosekit': minor
 ---
 
-Add `defineCodeBlockShiki` for code block highlighting using `shiki` v1, providing a solid default for syntax highlighting.
+Added `defineCodeBlockShiki` for code block highlighting using `shiki` v1, providing a solid default for syntax highlighting.
 
-Expose all supported languages and themes accessible through `shikiBundledLanguages` and `shikiBundledThemes`.
+Exported all `shiki` supported languages and themes via `shikiBundledLanguagesInfo` and `shikiBundledThemesInfo`.
 
-Remove `defineCodeBlockShikiji` as `shikiji` is merged back to `shiki`.
+Removed `defineCodeBlockShikiji` because `shikiji` is merged back to `shiki`.

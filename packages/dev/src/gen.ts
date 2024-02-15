@@ -8,7 +8,6 @@ import { genExamplePreviews } from './gen-example-previews.js'
 import { genExampleSharedFiles } from './gen-example-shared-files.js'
 import { genPackageJson } from './gen-package-json.js'
 import { genPlaygroundPages } from './gen-playground-pages.js'
-import { genShikiBundle } from './gen-shiki-bundle.js'
 import { genSizeLimitJson } from './gen-size-limit-json.js'
 import { genTsconfigJson } from './gen-tsconfig-json.js'
 import { genTypedocJson } from './gen-typedoc-json.js'
@@ -29,7 +28,6 @@ async function genAll(): Promise<boolean> {
   await genChangesetConfigJson()
   await genSizeLimitJson()
   await genChangeset()
-  await genShikiBundle()
 
   // Example for website
   await genExampleMetaYaml()

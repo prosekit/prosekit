@@ -11,10 +11,11 @@ export {
 export { defineCodeBlockShiki } from './code-block-shiki'
 export { defineCodeBlockSpec } from './code-block-spec'
 export type { CodeBlockAttrs } from './code-block-types'
-export { type BundledLanguageInfo, type BundledThemeInfo } from './shiki-bundle'
 export {
-  shikiBundledLanguages,
-  shikiBundledThemes,
+  shikiBundledLanguagesInfo,
+  shikiBundledThemesInfo,
   type ShikiBundledLanguage,
+  type ShikiBundledLanguageInfo,
   type ShikiBundledTheme,
-} from './shiki-bundle.gen'
+  type ShikiBundledThemeInfo,
+} from './shiki-bundle'

@@ -1,6 +1,6 @@
 import {
   defineCodeBlockShiki,
-  shikiBundledLanguages,
+  shikiBundledLanguagesInfo,
   type ShikiBundledTheme,
 } from 'prosekit/extensions/code-block'
 import { useExtension } from 'prosekit/react'
@@ -21,7 +21,7 @@ export function ThemeSelector() {
         onChange={(event) => setTheme(event.target.value)}
         className="TOGGLE_BUTTON"
       >
-        {shikiBundledLanguages.map((info) => (
+        {shikiBundledLanguagesInfo.map((info) => (
           <option key={info.id} value={info.id}>
             {info.id}
           </option>

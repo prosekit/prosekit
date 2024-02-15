@@ -1,17 +1,8 @@
-/**
- * @public
- */
-export interface BundledLanguageInfo {
-  id: string
-  name: string
-  aliases?: Readonly<string[]>
-}
-
-/**
- * @public
- */
-export interface BundledThemeInfo {
-  id: string
-  displayName: string
-  type: 'light' | 'dark'
-}
+export {
+  bundledLanguagesInfo as shikiBundledLanguagesInfo,
+  bundledThemesInfo as shikiBundledThemesInfo,
+  type BundledLanguageInfo as ShikiBundledLanguageInfo,
+  type BundledThemeInfo as ShikiBundledThemeInfo,
+  type BundledLanguage as ShikiBundledLanguage,
+  type BundledTheme as ShikiBundledTheme,
+} from 'shiki'

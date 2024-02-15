@@ -1,4 +1,4 @@
-import { bundledLanguagesInfo } from 'shikiji'
+import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 
 import { createElement } from './create-element'
 
@@ -13,7 +13,7 @@ export function createLanguageSelector({
     'select',
     { class: 'LANGUAGE_SELECT' },
     createElement('option', { value: '' }, 'Plain Text'),
-    ...bundledLanguagesInfo.map((info) => {
+    ...shikiBundledLanguagesInfo.map((info) => {
       return createElement('option', { value: info.id }, info.name)
     }),
   )

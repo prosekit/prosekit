@@ -17,8 +17,6 @@ examples:
         hidden: false
       - path: language-selector.tsx
         hidden: false
-      - path: package.json
-        hidden: true
       - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
@@ -31,8 +29,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: package.json
-        hidden: true
       - path: theme-selector.tsx
         hidden: false
       - path: toolbar.tsx
@@ -153,8 +149,6 @@ examples:
         hidden: false
       - path: image-upload-popover.tsx
         hidden: false
-      - path: package.json
-        hidden: true
       - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
@@ -227,8 +221,6 @@ examples:
         hidden: false
       - path: language-selector.vue
         hidden: false
-      - path: package.json
-        hidden: true
       - path: toggle.vue
         hidden: false
       - path: toolbar.vue
@@ -241,8 +233,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: package.json
-        hidden: true
       - path: theme-selector.vue
         hidden: false
       - path: toolbar.vue
@@ -275,8 +265,6 @@ examples:
         hidden: false
       - path: language-selector.vue
         hidden: false
-      - path: package.json
-        hidden: true
       - path: slash-menu.vue
         hidden: false
       - path: tag-data.ts
@@ -707,8 +695,6 @@ examples:
         hidden: false
       - path: language-selector.ts
         hidden: false
-      - path: package.json
-        hidden: true
   - name: vanilla-dom
     framework: vanilla
     story: dom

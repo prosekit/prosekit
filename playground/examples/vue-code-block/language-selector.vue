@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { bundledLanguagesInfo } from 'shikiji'
+import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 
 const props = defineProps<{
   language?: string
@@ -20,7 +20,7 @@ const handleChange = (event: Event) => {
     >
       <option value="">Plain Text</option>
       <option
-        v-for="info of bundledLanguagesInfo"
+        v-for="info of shikiBundledLanguagesInfo"
         :key="info.id"
         :value="info.id"
       >

@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.4.0",
-    "@prosekit/lit": "^0.2.6",
+    "@prosekit/lit": "^0.2.7",
     "@prosekit/pm": "^0.1.1"
   },
   "peerDependencies": {

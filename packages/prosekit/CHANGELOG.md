@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.5.1
+
+### Patch Changes
+
+- [`c335a24`](https://github.com/ocavue/prosekit/commit/c335a24f4868703c7419a91e3773459ed10d8cc5) ![][badge-pm]
+
+  Update ProseMirror packages.
+
+- [`fc68e48`](https://github.com/ocavue/prosekit/commit/fc68e48f279088bd3220883137dc29ddafa8f2d8) ![][badge-extensions]
+
+  Add `prosekit/extensions/enter-rule`, to execute some action when `Enter` is pressed after a certain text pattern.
+
 ## 0.5.0
 
 ### Minor Changes

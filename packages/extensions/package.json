@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/extensions",
   "type": "module",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "@prosekit/core": "^0.4.0",
-    "@prosekit/pm": "^0.1.1",
+    "@prosekit/pm": "^0.1.2",
     "prosemirror-dropcursor": "^1.8.1",
     "prosemirror-flat-list": "^0.4.6",
     "prosemirror-highlight": "^0.5.0",

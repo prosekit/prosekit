@@ -8,6 +8,7 @@
     "./src/code-block/index.ts",
     "./src/code/index.ts",
     "./src/drop-cursor/index.ts",
+    "./src/enter-rule/index.ts",
     "./src/heading/index.ts",
     "./src/image/index.ts",
     "./src/index.ts",

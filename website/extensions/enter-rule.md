@@ -1,0 +1,56 @@
+# Enter Rule
+
+Execute some action when `Enter` is pressed after a certain text pattern. This is similar to [Input Rule].
+
+## Usage
+
+Use `defineTextBlockEnterRule` to create a new enter rule that can change the current text block into a different node type.
+
+```ts twoslash
+import { defineTextBlockEnterRule } from 'prosekit/extensions/enter-rule'
+
+/**
+ * Converts the text block to a heading when pressing `Enter` if the current
+ * line is starting with `#` followed by a space.
+ */
+export function defineHeadingEnterRule() {
+  return defineTextBlockEnterRule({
+    regex: /^(#{1,6})\s.*$/,
+    type: 'heading',
+    attrs: (match) => {
+      const level: number = match[1]?.length ?? 1
+      return { level }
+    },
+  })
+}
+```
+
+> Unlike `defineHeadingInputRule` in [Input Rule], this rule will only transform the current text block into a heading and remove the leading `#` when you press `Enter` after typing the whole line.
+
+Use `defineEnterRule` to create an ambiguous enter rule.
+
+```ts twoslash
+import { defineEnterRule } from 'prosekit/extensions/enter-rule'
+
+/**
+ * Converts the text before the text cursor into an emoji when pressing `Enter`.
+ */
+export function defineEmojiEnterRule() {
+  return defineEnterRule({
+    regex: /:(apple|banana):$/,
+    handler: ({ match, from, to, state }) => {
+      const text = match[1] as 'apple' | 'banana'
+      const emoji = text === 'apple' ? '🍎' : '🍌'
+      return state.tr.replaceWith(from, to, state.schema.text(emoji))
+    },
+  })
+}
+```
+
+## API Reference
+
+- [prosekit/extensions/enter-rule](/references/extensions/enter-rule)
+
+<!-- Link references -->
+
+[Input Rule]: ./input-rule

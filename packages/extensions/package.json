@@ -32,6 +32,7 @@
     "./code": "./src/code/index.ts",
     "./code-block": "./src/code-block/index.ts",
     "./drop-cursor": "./src/drop-cursor/index.ts",
+    "./enter-rule": "./src/enter-rule/index.ts",
     "./heading": "./src/heading/index.ts",
     "./image": "./src/image/index.ts",
     "./input-rule": "./src/input-rule/index.ts",
@@ -105,6 +106,11 @@
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
         "import": "./dist/prosekit-extensions-drop-cursor.js",
         "default": "./dist/prosekit-extensions-drop-cursor.js"
+      },
+      "./enter-rule": {
+        "types": "./dist/prosekit-extensions-enter-rule.d.ts",
+        "import": "./dist/prosekit-extensions-enter-rule.js",
+        "default": "./dist/prosekit-extensions-enter-rule.js"
       },
       "./heading": {
         "types": "./dist/prosekit-extensions-heading.d.ts",
@@ -201,6 +207,9 @@
         ],
         "drop-cursor": [
           "./dist/prosekit-extensions-drop-cursor.d.ts"
+        ],
+        "enter-rule": [
+          "./dist/prosekit-extensions-enter-rule.d.ts"
         ],
         "heading": [
           "./dist/prosekit-extensions-heading.d.ts"

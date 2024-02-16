@@ -14,6 +14,8 @@
 
 - [drop-cursor](./examples/drop-cursor)
 
+- [emoji-rules](./examples/emoji-rules)
+
 - [full](./examples/full)
 
 - [heading](./examples/heading)

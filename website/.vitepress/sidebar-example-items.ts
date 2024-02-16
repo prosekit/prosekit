@@ -27,6 +27,10 @@ export const exampleItems = [
     "link": "/examples/drop-cursor"
   },
   {
+    "text": "emoji-rules",
+    "link": "/examples/emoji-rules"
+  },
+  {
     "text": "full",
     "link": "/examples/full"
   },

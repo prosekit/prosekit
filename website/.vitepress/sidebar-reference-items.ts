@@ -42,6 +42,10 @@ export const referenceItems = [
         "link": "/references/extensions/drop-cursor"
       },
       {
+        "text": "enter-rule",
+        "link": "/references/extensions/enter-rule"
+      },
+      {
         "text": "heading",
         "link": "/references/extensions/heading"
       },

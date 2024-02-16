@@ -17,20 +17,33 @@ import {
 } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-// TODO: Export `prosekit/extension/enter-rule`, when we are happy with the API.
-
 /**
  * @public
  */
 export type EnterRuleHandler = (options: {
+  /**
+   * The current editor state.
+   */
   state: EditorState
+
+  /**
+   * The start position of the matched text.
+   */
   from: number
+
+  /**
+   * The end position of the matched text.
+   */
   to: number
+
+  /**
+   * The matched result from the regular expression.
+   */
   match: RegExpExecArray
 }) => Transaction | null
 
 /**
- * Options for {@link createEnterRule}.
+ * Options for {@link defineEnterRule}.
  *
  * @public
  */
@@ -41,7 +54,7 @@ export type EnterRuleOptions = {
   regex: RegExp
 
   /**
-   * A handler function to be called when an enter rule is triggered.
+   * A function to be called when an enter rule is triggered.
    */
   handler: EnterRuleHandler
 
@@ -54,7 +67,7 @@ export type EnterRuleOptions = {
 }
 
 /**
- * Options for {@link createTextBlockEnterRule}.
+ * Options for {@link defineTextBlockEnterRule}.
  *
  * @public
  */
@@ -70,7 +83,8 @@ export type TextBlockEnterRuleOptions = {
   type: string | NodeType
 
   /**
-   * Attributes to set on the node.
+   * Attributes to set on the node. If a function is provided, it will be called
+   * with the matched result from the regular expression.
    */
   attrs?: Attrs | null | ((match: RegExpMatchArray) => Attrs | null)
 

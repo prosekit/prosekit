@@ -1,6 +1,6 @@
 # Input Rule
 
-Defines a new input rule for the editor, which can execute some action when a certain pattern is typed. This is based on the [prosemirror-inputrules].
+Execute some action when a certain pattern is typed. This is based on the [prosemirror-inputrules].
 
 ## Usage
 

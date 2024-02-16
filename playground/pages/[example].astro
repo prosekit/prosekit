@@ -48,6 +48,7 @@ import E613530047 from '../examples/preact-readonly/editor.tsx'
 import E1898726994 from '../examples/preact-slash-menu/editor.tsx'
 import E1333128888 from '../examples/svelte-minimal/editor.svelte'
 import E657501006 from '../examples/svelte-bold/editor.svelte'
+import E2998513711 from '../examples/svelte-emoji-rules/editor.svelte'
 import E889141525 from '../examples/svelte-italic/editor.svelte'
 import E3351045146 from '../examples/svelte-keymap/editor.svelte'
 import E2194307417 from '../examples/svelte-list/editor.svelte'
@@ -108,6 +109,7 @@ export const getStaticPaths = () => [
   { params: { example: 'preact-slash-menu' } },
   { params: { example: 'svelte-minimal' } },
   { params: { example: 'svelte-bold' } },
+  { params: { example: 'svelte-emoji-rules' } },
   { params: { example: 'svelte-italic' } },
   { params: { example: 'svelte-keymap' } },
   { params: { example: 'svelte-list' } },
@@ -172,6 +174,7 @@ const { example } = Astro.params
   {example === 'preact-slash-menu' && <E1898726994 client:only="preact" />}
   {example === 'svelte-minimal' && <E1333128888 client:only="svelte" />}
   {example === 'svelte-bold' && <E657501006 client:only="svelte" />}
+  {example === 'svelte-emoji-rules' && <E2998513711 client:only="svelte" />}
   {example === 'svelte-italic' && <E889141525 client:only="svelte" />}
   {example === 'svelte-keymap' && <E3351045146 client:only="svelte" />}
   {example === 'svelte-list' && <E2194307417 client:only="svelte" />}

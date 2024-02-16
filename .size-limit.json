@@ -44,6 +44,10 @@
     "path": "packages/prosekit/dist/prosekit-extensions-drop-cursor.js"
   },
   {
+    "name": "prosekit/extensions/enter-rule",
+    "path": "packages/prosekit/dist/prosekit-extensions-enter-rule.js"
+  },
+  {
     "name": "prosekit/extensions/heading",
     "path": "packages/prosekit/dist/prosekit-extensions-heading.js"
   },

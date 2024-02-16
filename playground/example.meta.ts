@@ -1045,6 +1045,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-emoji-rules",
+      "framework": "svelte",
+      "story": "emoji-rules",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "emoji.ts",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-italic",
       "framework": "svelte",
       "story": "italic",

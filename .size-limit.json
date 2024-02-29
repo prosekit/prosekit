@@ -96,6 +96,10 @@
     "path": "packages/prosekit/dist/prosekit-extensions-strike.js"
   },
   {
+    "name": "prosekit/extensions/table",
+    "path": "packages/prosekit/dist/prosekit-extensions-table.js"
+  },
+  {
     "name": "prosekit/extensions/underline",
     "path": "packages/prosekit/dist/prosekit-extensions-underline.js"
   },

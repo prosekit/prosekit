@@ -17,6 +17,7 @@ import { defineItalic } from '@prosekit/extensions/italic'
 import { defineLink } from '@prosekit/extensions/link'
 import { defineList } from '@prosekit/extensions/list'
 import { defineStrike } from '@prosekit/extensions/strike'
+import { defineTable } from '@prosekit/extensions/table'
 import { defineUnderline } from '@prosekit/extensions/underline'
 import { defineVirtualSelection } from '@prosekit/extensions/virtual-selection'
 
@@ -39,6 +40,7 @@ export function defineBasicExtension() {
     defineBold(),
     defineUnderline(),
     defineStrike(),
+    defineTable(),
     defineCode(),
     defineLink(),
     defineImage(),

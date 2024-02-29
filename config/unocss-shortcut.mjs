@@ -71,9 +71,9 @@ const BUTTON_SIZE_LG = 'h-1 px-8'
 const BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const INPUT = clsx(
-  'flex h-10 rounded-md w-full border box-border bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
+  'flex h-10 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
   // border
-  'border-border border-solid border',
+  'border box-border border-border border-solid',
   // ring
   'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0',
   // outline
@@ -147,7 +147,7 @@ const staticShortcuts = {
   ),
 
   TOGGLE_BUTTON: clsx(
-    'outline-unset focus-visible:outline-unset inline-flex items-center justify-center rounded-md bg-transparent bg-transparent p-2 font-medium transition focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none',
+    'outline-unset focus-visible:outline-unset inline-flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none',
     'disabled:opacity-50 hover:disabled:opacity-50',
     'bg-transparent hover:bg-secondary data-[state=on]:bg-accent/60',
   ),

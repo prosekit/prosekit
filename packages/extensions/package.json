@@ -62,7 +62,7 @@
     "prosemirror-dropcursor": "^1.8.1",
     "prosemirror-flat-list": "^0.4.6",
     "prosemirror-highlight": "^0.5.0",
-    "shiki": "^1.1.6"
+    "shiki": "^1.1.7"
   },
   "devDependencies": {
     "@prosekit/dev": "*",

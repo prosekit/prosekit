@@ -5,15 +5,11 @@
     "outDir": "temp",
   },
   "include": [
-    "./pages",
-    "./layouts",
-    "./helpers",
-    "./env.d.ts",
-    "./uno.config.ts",
-    "./playwright.config.ts",
-    "./astro.config.mjs",
-    "./example.meta.ts",
-    "./tests/**/*.ts",
+    "./.astro/**/*",
+    "./src/**/*",
+    "./tests/**/*",
+    "./*.ts",
+    "./*.mjs",
   ],
   "references": [
     {

@@ -29,14 +29,17 @@ export async function genExampleMetaYaml() {
         return null
       }
 
-      const exampleName = parts[2]
-      const path = parts[3]
+      const [playgroundDir, examplesDir, exampleName, fileName] = parts
 
-      if (path.endsWith('.astro')) {
+      if (
+        playgroundDir !== 'playground' ||
+        examplesDir !== 'examples' ||
+        fileName.endsWith('.astro')
+      ) {
         return null
       }
 
-      return { exampleName, path }
+      return { exampleName, fileName }
     })
     .filter(notEmpty)
 
@@ -49,12 +52,12 @@ export async function genExampleMetaYaml() {
       name: exampleName,
       framework,
       story,
-      files: exampleFiles.map(({ path }) => ({
-        path: path,
+      files: exampleFiles.map(({ fileName }) => ({
+        path: fileName,
         hidden:
-          path === 'tsconfig.json'
+          fileName === 'tsconfig.json'
             ? true
-            : findExampleFile(oldMeta, exampleName, path)?.hidden ?? false,
+            : findExampleFile(oldMeta, exampleName, fileName)?.hidden ?? false,
       })),
     }
     newMeta.examples.push(newExample)

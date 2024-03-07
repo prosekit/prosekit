@@ -8,7 +8,6 @@ import unocss from 'unocss/astro'
 
 // https://astro.build/config
 export default defineConfig({
-  srcDir: './',
   // Enable many frameworks to support all different kinds of components.
   integrations: [
     preact({ include: ['**/preact-*/*'] }),
@@ -21,7 +20,7 @@ export default defineConfig({
       name: 'astro-integration-dark-mode',
       hooks: {
         'astro:config:setup': ({ addDevToolbarApp }) => {
-          addDevToolbarApp('./helpers/dark-mode-toolbar.ts')
+          addDevToolbarApp('./src/helpers/dark-mode-toolbar.ts')
         },
       },
     },

@@ -12,12 +12,12 @@ export async function genPlaygroundPages() {
   const exampleNames: string[] = meta.examples.map((example) => example.name)
 
   await vfs.updateText(
-    'playground/pages/index.astro',
+    'playground/src/pages/index.astro',
     getIndexContent(exampleNames),
   )
 
   await vfs.updateText(
-    'playground/pages/[example].astro',
+    'playground/src/pages/[example].astro',
     getExampleContent(exampleNames),
   )
 }
@@ -53,18 +53,18 @@ function getExampleContent(names: string[]): string {
     const framework = name.split('-')[0]
 
     const ext = {
-      react: 'tsx',
-      preact: 'tsx',
-      solid: 'tsx',
-      svelte: 'svelte',
-      vue: 'vue',
+      react: '',
+      preact: '',
+      solid: '',
+      svelte: '.svelte',
+      vue: '.vue',
     }[framework]
 
-    if (!ext) {
-      return null
+    if (ext == null) {
+      return
     }
 
-    importLines.push(`import E${id} from '../examples/${name}/editor.${ext}'`)
+    importLines.push(`import E${id} from '../../examples/${name}/editor${ext}'`)
     pathLines.push(`  { params: { example: '${name}' } },`)
     htmlLines.push(
       `  {example === '${name}' && <E${id} client:only="${framework}" />}`,

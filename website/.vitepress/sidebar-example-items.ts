@@ -95,6 +95,10 @@ export const exampleItems = [
     "link": "/examples/strike"
   },
   {
+    "text": "table",
+    "link": "/examples/table"
+  },
+  {
     "text": "text-color",
     "link": "/examples/text-color"
   },

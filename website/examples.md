@@ -48,6 +48,8 @@
 
 - [strike](./examples/strike)
 
+- [table](./examples/table)
+
 - [text-color](./examples/text-color)
 
 - [toolbar](./examples/toolbar)

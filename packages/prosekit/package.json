@@ -50,6 +50,8 @@
     "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
     "./extensions/readonly": "./src/extensions/readonly.gen.ts",
     "./extensions/strike": "./src/extensions/strike.gen.ts",
+    "./extensions/table": "./src/extensions/table.gen.ts",
+    "./extensions/table/style.css": "./src/extensions/table/style.css",
     "./extensions/underline": "./src/extensions/underline.gen.ts",
     "./extensions/virtual-selection": "./src/extensions/virtual-selection.gen.ts",
     "./extensions/virtual-selection/style.css": "./src/extensions/virtual-selection/style.css",
@@ -334,6 +336,14 @@
         "types": "./dist/prosekit-extensions-strike.d.ts",
         "import": "./dist/prosekit-extensions-strike.js",
         "default": "./dist/prosekit-extensions-strike.js"
+      },
+      "./extensions/table": {
+        "types": "./dist/prosekit-extensions-table.d.ts",
+        "import": "./dist/prosekit-extensions-table.js",
+        "default": "./dist/prosekit-extensions-table.js"
+      },
+      "./extensions/table/style.css": {
+        "default": "./dist/extensions/table/style.css"
       },
       "./extensions/underline": {
         "types": "./dist/prosekit-extensions-underline.d.ts",
@@ -914,6 +924,9 @@
         ],
         "extensions/strike": [
           "./dist/prosekit-extensions-strike.d.ts"
+        ],
+        "extensions/table": [
+          "./dist/prosekit-extensions-table.d.ts"
         ],
         "extensions/underline": [
           "./dist/prosekit-extensions-underline.d.ts"

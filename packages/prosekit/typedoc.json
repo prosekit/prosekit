@@ -22,6 +22,7 @@
     "./src/extensions/placeholder.gen.ts",
     "./src/extensions/readonly.gen.ts",
     "./src/extensions/strike.gen.ts",
+    "./src/extensions/table.gen.ts",
     "./src/extensions/underline.gen.ts",
     "./src/extensions/virtual-selection.gen.ts",
     "./src/index.ts",

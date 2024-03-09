@@ -804,6 +804,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "vue-table",
+      "framework": "vue",
+      "story": "table",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-text-color",
       "framework": "vue",
       "story": "text-color",

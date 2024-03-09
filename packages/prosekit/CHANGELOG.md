@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.5.2
+
+### Patch Changes
+
+- [`b29fe28`](https://github.com/ocavue/prosekit/commit/b29fe28583afe1e79cb718feea5f40a04e6cc4ae) ![][badge-extensions] ![][badge-basic]
+
+  Add basic table support.
+
 ## 0.5.1
 
 ### Patch Changes

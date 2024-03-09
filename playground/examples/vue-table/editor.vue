@@ -41,11 +41,3 @@ const addTable = () => {
     </div>
   </ProseKit>
 </template>
-
-<style>
-table,
-td {
-  border: 1px solid gray;
-  min-width: 80px;
-}
-</style>

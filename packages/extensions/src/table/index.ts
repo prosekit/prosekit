@@ -1,17 +1,13 @@
-import { definePlugin, union } from '@prosekit/core'
-import { columnResizing, tableEditing } from 'prosemirror-tables'
+import { union } from '@prosekit/core'
 
 import { defineTableCommands } from './table-commands'
+import { defineTablePlugins } from './table-plugins'
 import {
   defineTableCellSpec,
   defineTableHeaderCellSpec,
   defineTableRowSpec,
   defineTableSpec,
 } from './table-spec'
-
-function defineTablePlugins() {
-  return definePlugin([tableEditing(), columnResizing()])
-}
 
 /**
  * @public

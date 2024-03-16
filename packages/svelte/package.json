@@ -104,14 +104,14 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "@sveltejs/package": "^2.2.7",
-    "@types/node": "^20.11.25",
+    "@sveltejs/package": "^2.3.0",
+    "@types/node": "^20.11.28",
     "read-pkg": "^9.0.1",
     "svelte": "^4.2.12",
-    "svelte-check": "^3.6.6",
+    "svelte-check": "^3.6.7",
     "tsx": "^4.7.1",
-    "typescript": "^5.3.3",
-    "vitest": "^1.3.1"
+    "typescript": "^5.4.2",
+    "vitest": "^1.4.0"
   },
   "publishConfig": {
     "exports": {

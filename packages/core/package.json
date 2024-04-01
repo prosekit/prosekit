@@ -38,12 +38,12 @@
     "@prosekit/pm": "^0.1.2",
     "clsx": "^2.1.0",
     "orderedmap": "^2.1.1",
-    "type-fest": "^4.12.0"
+    "type-fest": "^4.14.0"
   },
   "devDependencies": {
     "@prosekit/dev": "*",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.2",
+    "typescript": "^5.4.3",
     "vitest": "^1.4.0"
   },
   "publishConfig": {

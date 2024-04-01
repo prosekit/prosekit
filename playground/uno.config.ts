@@ -5,11 +5,12 @@ import {
   transformerDirectives,
   type UserConfig,
 } from 'unocss'
+import presetAnimations from 'unocss-preset-animations'
 
 import { shortcuts } from '../config/unocss-shortcut.mjs'
 
 const config: UserConfig = defineConfig({
-  presets: [presetWind(), presetIcons()],
+  presets: [presetWind(), presetIcons(), presetAnimations()],
   content: {
     filesystem: [
       './examples/**/*.{vue,tsx,jsx,ts,js,svelte}',

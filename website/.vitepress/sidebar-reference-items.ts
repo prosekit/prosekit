@@ -153,6 +153,18 @@ export const referenceItems = [
         "link": "/references/lit/popover"
       },
       {
+        "text": "popover-content",
+        "link": "/references/lit/popover-content"
+      },
+      {
+        "text": "popover-root",
+        "link": "/references/lit/popover-root"
+      },
+      {
+        "text": "popover-trigger",
+        "link": "/references/lit/popover-trigger"
+      },
+      {
         "text": "resizable",
         "link": "/references/lit/resizable"
       },
@@ -214,6 +226,18 @@ export const referenceItems = [
       {
         "text": "popover",
         "link": "/references/preact/popover"
+      },
+      {
+        "text": "popover-content",
+        "link": "/references/preact/popover-content"
+      },
+      {
+        "text": "popover-root",
+        "link": "/references/preact/popover-root"
+      },
+      {
+        "text": "popover-trigger",
+        "link": "/references/preact/popover-trigger"
       },
       {
         "text": "resizable",
@@ -279,6 +303,18 @@ export const referenceItems = [
         "link": "/references/react/popover"
       },
       {
+        "text": "popover-content",
+        "link": "/references/react/popover-content"
+      },
+      {
+        "text": "popover-root",
+        "link": "/references/react/popover-root"
+      },
+      {
+        "text": "popover-trigger",
+        "link": "/references/react/popover-trigger"
+      },
+      {
         "text": "resizable",
         "link": "/references/react/resizable"
       },
@@ -340,6 +376,18 @@ export const referenceItems = [
       {
         "text": "popover",
         "link": "/references/solid/popover"
+      },
+      {
+        "text": "popover-content",
+        "link": "/references/solid/popover-content"
+      },
+      {
+        "text": "popover-root",
+        "link": "/references/solid/popover-root"
+      },
+      {
+        "text": "popover-trigger",
+        "link": "/references/solid/popover-trigger"
       },
       {
         "text": "resizable",
@@ -405,6 +453,18 @@ export const referenceItems = [
         "link": "/references/svelte/popover"
       },
       {
+        "text": "popover-content",
+        "link": "/references/svelte/popover-content"
+      },
+      {
+        "text": "popover-root",
+        "link": "/references/svelte/popover-root"
+      },
+      {
+        "text": "popover-trigger",
+        "link": "/references/svelte/popover-trigger"
+      },
+      {
         "text": "resizable",
         "link": "/references/svelte/resizable"
       },
@@ -466,6 +526,18 @@ export const referenceItems = [
       {
         "text": "popover",
         "link": "/references/vue/popover"
+      },
+      {
+        "text": "popover-content",
+        "link": "/references/vue/popover-content"
+      },
+      {
+        "text": "popover-root",
+        "link": "/references/vue/popover-root"
+      },
+      {
+        "text": "popover-trigger",
+        "link": "/references/vue/popover-trigger"
       },
       {
         "text": "resizable",

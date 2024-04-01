@@ -39,6 +39,7 @@
     "typescript": "^5.4.3",
     "unified": "^11.0.4",
     "unocss": "^0.58.9",
+    "unocss-preset-animations": "^1.0.2",
     "vue": "^3.4.21"
   }
 }

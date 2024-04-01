@@ -1,13 +1,13 @@
 import '@prosekit/lit/inline-popover'
 
 import { type InlinePopoverProps as InlinePopoverElementProps, propNames } from '@prosekit/lit/inline-popover'
-import { defineComponent, h } from 'vue'
+import { defineComponent, h, type DefineSetupFnComponent } from 'vue'
 
 import type { PropsWithClass } from '../types'
 
 export type InlinePopoverProps = PropsWithClass<InlinePopoverElementProps>
 
-export const InlinePopover = defineComponent<InlinePopoverProps>(
+export const InlinePopover: DefineSetupFnComponent<InlinePopoverProps> = defineComponent<InlinePopoverProps>(
   (props, { slots }) => {
     return () => {
       const webComponentProps = Object.fromEntries(

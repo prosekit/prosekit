@@ -38,6 +38,9 @@
     "./drag-handle": "./src/components/drag-handle.gen.ts",
     "./inline-popover": "./src/components/inline-popover.gen.ts",
     "./popover": "./src/components/popover.gen.ts",
+    "./popover-content": "./src/components/popover-content.gen.ts",
+    "./popover-root": "./src/components/popover-root.gen.ts",
+    "./popover-trigger": "./src/components/popover-trigger.gen.ts",
     "./resizable": "./src/components/resizable.gen.ts",
     "./resizable-handle": "./src/components/resizable-handle.gen.ts"
   },
@@ -135,6 +138,21 @@
         "import": "./dist/prosekit-solid-popover.js",
         "default": "./dist/prosekit-solid-popover.js"
       },
+      "./popover-content": {
+        "types": "./dist/prosekit-solid-popover-content.d.ts",
+        "import": "./dist/prosekit-solid-popover-content.js",
+        "default": "./dist/prosekit-solid-popover-content.js"
+      },
+      "./popover-root": {
+        "types": "./dist/prosekit-solid-popover-root.d.ts",
+        "import": "./dist/prosekit-solid-popover-root.js",
+        "default": "./dist/prosekit-solid-popover-root.js"
+      },
+      "./popover-trigger": {
+        "types": "./dist/prosekit-solid-popover-trigger.d.ts",
+        "import": "./dist/prosekit-solid-popover-trigger.js",
+        "default": "./dist/prosekit-solid-popover-trigger.js"
+      },
       "./resizable": {
         "types": "./dist/prosekit-solid-resizable.d.ts",
         "import": "./dist/prosekit-solid-resizable.js",
@@ -189,6 +207,15 @@
         ],
         "popover": [
           "./dist/prosekit-solid-popover.d.ts"
+        ],
+        "popover-content": [
+          "./dist/prosekit-solid-popover-content.d.ts"
+        ],
+        "popover-root": [
+          "./dist/prosekit-solid-popover-root.d.ts"
+        ],
+        "popover-trigger": [
+          "./dist/prosekit-solid-popover-trigger.d.ts"
         ],
         "resizable": [
           "./dist/prosekit-solid-resizable.d.ts"

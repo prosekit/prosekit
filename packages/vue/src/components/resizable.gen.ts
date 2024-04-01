@@ -1,13 +1,13 @@
 import '@prosekit/lit/resizable'
 
 import { type ResizableProps as ResizableElementProps, propNames } from '@prosekit/lit/resizable'
-import { defineComponent, h } from 'vue'
+import { defineComponent, h, type DefineSetupFnComponent } from 'vue'
 
 import type { PropsWithClass } from '../types'
 
 export type ResizableProps = PropsWithClass<ResizableElementProps>
 
-export const Resizable = defineComponent<ResizableProps>(
+export const Resizable: DefineSetupFnComponent<ResizableProps> = defineComponent<ResizableProps>(
   (props, { slots }) => {
     return () => {
       const webComponentProps = Object.fromEntries(

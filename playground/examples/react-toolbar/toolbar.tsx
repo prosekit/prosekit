@@ -1,5 +1,4 @@
 import { useEditor } from 'prosekit/react'
-import { useState } from 'react'
 
 import type { EditorExtension } from './extension'
 import { ImageUploadPopover } from './image-upload-popover'
@@ -7,14 +6,6 @@ import Toggle from './toggle'
 
 export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
-
-  const [imagePopoverOpen, setImagePopoverOpen] = useState(false)
-  const closeImagePopover = () => {
-    setImagePopoverOpen(false)
-  }
-  const toggleImagePopover = () => {
-    setImagePopoverOpen((value) => !value)
-  }
 
   return (
     <div className="TOOLBAR">
@@ -74,14 +65,8 @@ export default function Toolbar() {
         <div className="ICON_H3" />
       </Toggle>
 
-      <ImageUploadPopover open={imagePopoverOpen} onClose={closeImagePopover}>
-        <Toggle
-          pressed={false}
-          disabled={!editor.commands.insertImage.canApply()}
-          onClick={toggleImagePopover}
-        >
-          <div className="ICON_IMAGE" />
-        </Toggle>
+      <ImageUploadPopover>
+        <div className="ICON_IMAGE" />
       </ImageUploadPopover>
     </div>
   )

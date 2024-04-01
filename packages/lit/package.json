@@ -38,6 +38,9 @@
     "./drag-handle": "./src/components/drag-handle/index.ts",
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover": "./src/components/popover/index.ts",
+    "./popover-content": "./src/components/popover-content/index.ts",
+    "./popover-root": "./src/components/popover-root/index.ts",
+    "./popover-trigger": "./src/components/popover-trigger/index.ts",
     "./resizable": "./src/components/resizable/index.ts",
     "./resizable-handle": "./src/components/resizable-handle/index.ts"
   },
@@ -49,6 +52,8 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
+    "@aria-ui/core": "^0.0.9",
+    "@aria-ui/popover": "^0.0.7",
     "@floating-ui/dom": "^1.6.3",
     "@lit/context": "^1.1.0",
     "@prosekit/core": "^0.4.0",
@@ -133,6 +138,21 @@
         "import": "./dist/prosekit-lit-popover.js",
         "default": "./dist/prosekit-lit-popover.js"
       },
+      "./popover-content": {
+        "types": "./dist/prosekit-lit-popover-content.d.ts",
+        "import": "./dist/prosekit-lit-popover-content.js",
+        "default": "./dist/prosekit-lit-popover-content.js"
+      },
+      "./popover-root": {
+        "types": "./dist/prosekit-lit-popover-root.d.ts",
+        "import": "./dist/prosekit-lit-popover-root.js",
+        "default": "./dist/prosekit-lit-popover-root.js"
+      },
+      "./popover-trigger": {
+        "types": "./dist/prosekit-lit-popover-trigger.d.ts",
+        "import": "./dist/prosekit-lit-popover-trigger.js",
+        "default": "./dist/prosekit-lit-popover-trigger.js"
+      },
       "./resizable": {
         "types": "./dist/prosekit-lit-resizable.d.ts",
         "import": "./dist/prosekit-lit-resizable.js",
@@ -187,6 +207,15 @@
         ],
         "popover": [
           "./dist/prosekit-lit-popover.d.ts"
+        ],
+        "popover-content": [
+          "./dist/prosekit-lit-popover-content.d.ts"
+        ],
+        "popover-root": [
+          "./dist/prosekit-lit-popover-root.d.ts"
+        ],
+        "popover-trigger": [
+          "./dist/prosekit-lit-popover-trigger.d.ts"
         ],
         "resizable": [
           "./dist/prosekit-lit-resizable.d.ts"

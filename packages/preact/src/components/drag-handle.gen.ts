@@ -8,5 +8,5 @@ import type { PropsWithClass, PropsWithChildren } from '../types'
 export type DragHandleProps = PropsWithChildren<PropsWithClass<DragHandleElementProps>>
 
 export const DragHandle: ComponentType<DragHandleProps> = (props) => {
-  return h('prosekit-drag-handle', props)
+  return h('prosekit-drag-handle', props as object)
 }

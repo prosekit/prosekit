@@ -8,5 +8,5 @@ import type { PropsWithClass, PropsWithChildren } from '../types'
 export type ResizableProps = PropsWithChildren<PropsWithClass<ResizableElementProps>>
 
 export const Resizable: ComponentType<ResizableProps> = (props) => {
-  return h('prosekit-resizable', props)
+  return h('prosekit-resizable', props as object)
 }

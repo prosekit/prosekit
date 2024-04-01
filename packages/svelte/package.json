@@ -74,6 +74,18 @@
       "svelte": "./src/components/popover.gen.ts",
       "default": "./src/components/popover.gen.ts"
     },
+    "./popover-content": {
+      "svelte": "./src/components/popover-content.gen.ts",
+      "default": "./src/components/popover-content.gen.ts"
+    },
+    "./popover-root": {
+      "svelte": "./src/components/popover-root.gen.ts",
+      "default": "./src/components/popover-root.gen.ts"
+    },
+    "./popover-trigger": {
+      "svelte": "./src/components/popover-trigger.gen.ts",
+      "default": "./src/components/popover-trigger.gen.ts"
+    },
     "./resizable": {
       "svelte": "./src/components/resizable.gen.ts",
       "default": "./src/components/resizable.gen.ts"
@@ -192,6 +204,24 @@
         "import": "./dist/prosekit-svelte-popover.js",
         "default": "./dist/prosekit-svelte-popover.js"
       },
+      "./popover-content": {
+        "types": "./dist/prosekit-svelte-popover-content.d.ts",
+        "svelte": "./dist/prosekit-svelte-popover-content.js",
+        "import": "./dist/prosekit-svelte-popover-content.js",
+        "default": "./dist/prosekit-svelte-popover-content.js"
+      },
+      "./popover-root": {
+        "types": "./dist/prosekit-svelte-popover-root.d.ts",
+        "svelte": "./dist/prosekit-svelte-popover-root.js",
+        "import": "./dist/prosekit-svelte-popover-root.js",
+        "default": "./dist/prosekit-svelte-popover-root.js"
+      },
+      "./popover-trigger": {
+        "types": "./dist/prosekit-svelte-popover-trigger.d.ts",
+        "svelte": "./dist/prosekit-svelte-popover-trigger.js",
+        "import": "./dist/prosekit-svelte-popover-trigger.js",
+        "default": "./dist/prosekit-svelte-popover-trigger.js"
+      },
       "./resizable": {
         "types": "./dist/prosekit-svelte-resizable.d.ts",
         "svelte": "./dist/prosekit-svelte-resizable.js",
@@ -248,6 +278,15 @@
         ],
         "popover": [
           "./dist/prosekit-svelte-popover.d.ts"
+        ],
+        "popover-content": [
+          "./dist/prosekit-svelte-popover-content.d.ts"
+        ],
+        "popover-root": [
+          "./dist/prosekit-svelte-popover-root.d.ts"
+        ],
+        "popover-trigger": [
+          "./dist/prosekit-svelte-popover-trigger.d.ts"
         ],
         "resizable": [
           "./dist/prosekit-svelte-resizable.d.ts"

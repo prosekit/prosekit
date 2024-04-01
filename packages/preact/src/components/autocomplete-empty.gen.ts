@@ -8,5 +8,5 @@ import type { PropsWithClass, PropsWithChildren } from '../types'
 export type AutocompleteEmptyProps = PropsWithChildren<PropsWithClass<AutocompleteEmptyElementProps>>
 
 export const AutocompleteEmpty: ComponentType<AutocompleteEmptyProps> = (props) => {
-  return h('prosekit-autocomplete-empty', props)
+  return h('prosekit-autocomplete-empty', props as object)
 }

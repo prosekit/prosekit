@@ -8,5 +8,5 @@ import type { PropsWithClass, PropsWithChildren } from '../types'
 export type ComboBoxProps = PropsWithChildren<PropsWithClass<ComboBoxElementProps>>
 
 export const ComboBox: ComponentType<ComboBoxProps> = (props) => {
-  return h('prosekit-combo-box', props)
+  return h('prosekit-combo-box', props as object)
 }

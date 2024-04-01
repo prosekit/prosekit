@@ -161,8 +161,8 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2(@microsoft/api-extractor@7.42.3)(postcss@8.4.35)(typescript@5.4.2)
       write-pkg:
-        specifier: ^6.0.1
-        version: 6.0.1
+        specifier: ^7.0.0
+        version: 7.0.0
     devDependencies:
       '@changesets/read':
         specifier: ^0.6.0
@@ -11340,9 +11340,10 @@ packages:
       write-file-atomic: 3.0.3
     dev: false
 
-  /write-pkg@6.0.1:
-    resolution: {integrity: sha512-ZwKp0+CQCNrJbhHStRy6IVDnVjvD4gYy6MhQLKgBnl85oaiTNXhvtuox7AqvOSf1wta0YW4U5JidjpJnd1i8TA==}
+  /write-pkg@7.0.0:
+    resolution: {integrity: sha512-wXBOrcEUstxZxfqy2hQO0O+c7wcwuVkZCCmBfaFtFssa5kcFqf7SQGYL6YtxKXt/O41z6reAPFJcumUyyiYnTQ==}
     engines: {node: '>=16'}
+    deprecated: Renamed to write-package
     dependencies:
       deepmerge-ts: 5.1.0
       read-pkg: 8.1.0

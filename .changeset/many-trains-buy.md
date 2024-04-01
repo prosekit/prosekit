@@ -8,4 +8,4 @@
 '@prosekit/vue': patch
 ---
 
-Rewrite `Popover` components.
+Rewrite popover completely. Now a popover is made of 3 components: `PopoverRoot`, `PopoverPositioner` and `PopoverTrigger`.

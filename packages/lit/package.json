@@ -38,7 +38,7 @@
     "./drag-handle": "./src/components/drag-handle/index.ts",
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover": "./src/components/popover/index.ts",
-    "./popover-positioner": "./src/components/popover-positioner/index.ts",
+    "./popover-content": "./src/components/popover-positioner/index.ts",
     "./popover-root": "./src/components/popover-root/index.ts",
     "./popover-trigger": "./src/components/popover-trigger/index.ts",
     "./resizable": "./src/components/resizable/index.ts",

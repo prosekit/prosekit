@@ -74,9 +74,9 @@
       "svelte": "./src/components/popover.gen.ts",
       "default": "./src/components/popover.gen.ts"
     },
-    "./popover-positioner": {
-      "svelte": "./src/components/popover-positioner.gen.ts",
-      "default": "./src/components/popover-positioner.gen.ts"
+    "./popover-content": {
+      "svelte": "./src/components/popover-content.gen.ts",
+      "default": "./src/components/popover-content.gen.ts"
     },
     "./popover-root": {
       "svelte": "./src/components/popover-root.gen.ts",
@@ -204,11 +204,11 @@
         "import": "./dist/prosekit-svelte-popover.js",
         "default": "./dist/prosekit-svelte-popover.js"
       },
-      "./popover-positioner": {
-        "types": "./dist/prosekit-svelte-popover-positioner.d.ts",
-        "svelte": "./dist/prosekit-svelte-popover-positioner.js",
-        "import": "./dist/prosekit-svelte-popover-positioner.js",
-        "default": "./dist/prosekit-svelte-popover-positioner.js"
+      "./popover-content": {
+        "types": "./dist/prosekit-svelte-popover-content.d.ts",
+        "svelte": "./dist/prosekit-svelte-popover-content.js",
+        "import": "./dist/prosekit-svelte-popover-content.js",
+        "default": "./dist/prosekit-svelte-popover-content.js"
       },
       "./popover-root": {
         "types": "./dist/prosekit-svelte-popover-root.d.ts",
@@ -279,8 +279,8 @@
         "popover": [
           "./dist/prosekit-svelte-popover.d.ts"
         ],
-        "popover-positioner": [
-          "./dist/prosekit-svelte-popover-positioner.d.ts"
+        "popover-content": [
+          "./dist/prosekit-svelte-popover-content.d.ts"
         ],
         "popover-root": [
           "./dist/prosekit-svelte-popover-root.d.ts"

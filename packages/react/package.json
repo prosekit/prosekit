@@ -38,7 +38,7 @@
     "./drag-handle": "./src/components/drag-handle.gen.ts",
     "./inline-popover": "./src/components/inline-popover.gen.ts",
     "./popover": "./src/components/popover.gen.ts",
-    "./popover-positioner": "./src/components/popover-positioner.gen.ts",
+    "./popover-content": "./src/components/popover-content.gen.ts",
     "./popover-root": "./src/components/popover-root.gen.ts",
     "./popover-trigger": "./src/components/popover-trigger.gen.ts",
     "./resizable": "./src/components/resizable.gen.ts",
@@ -147,10 +147,10 @@
         "import": "./dist/prosekit-react-popover.js",
         "default": "./dist/prosekit-react-popover.js"
       },
-      "./popover-positioner": {
-        "types": "./dist/prosekit-react-popover-positioner.d.ts",
-        "import": "./dist/prosekit-react-popover-positioner.js",
-        "default": "./dist/prosekit-react-popover-positioner.js"
+      "./popover-content": {
+        "types": "./dist/prosekit-react-popover-content.d.ts",
+        "import": "./dist/prosekit-react-popover-content.js",
+        "default": "./dist/prosekit-react-popover-content.js"
       },
       "./popover-root": {
         "types": "./dist/prosekit-react-popover-root.d.ts",
@@ -217,8 +217,8 @@
         "popover": [
           "./dist/prosekit-react-popover.d.ts"
         ],
-        "popover-positioner": [
-          "./dist/prosekit-react-popover-positioner.d.ts"
+        "popover-content": [
+          "./dist/prosekit-react-popover-content.d.ts"
         ],
         "popover-root": [
           "./dist/prosekit-react-popover-root.d.ts"

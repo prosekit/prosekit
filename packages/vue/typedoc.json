@@ -13,7 +13,7 @@
     "./src/components/combo-box.gen.ts",
     "./src/components/drag-handle.gen.ts",
     "./src/components/inline-popover.ts",
-    "./src/components/popover-positioner.gen.ts",
+    "./src/components/popover-content.gen.ts",
     "./src/components/popover-root.gen.ts",
     "./src/components/popover-trigger.gen.ts",
     "./src/components/popover.gen.ts",

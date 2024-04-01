@@ -153,8 +153,8 @@ export const referenceItems = [
         "link": "/references/lit/popover"
       },
       {
-        "text": "popover-positioner",
-        "link": "/references/lit/popover-positioner"
+        "text": "popover-content",
+        "link": "/references/lit/popover-content"
       },
       {
         "text": "popover-root",
@@ -228,8 +228,8 @@ export const referenceItems = [
         "link": "/references/preact/popover"
       },
       {
-        "text": "popover-positioner",
-        "link": "/references/preact/popover-positioner"
+        "text": "popover-content",
+        "link": "/references/preact/popover-content"
       },
       {
         "text": "popover-root",
@@ -303,8 +303,8 @@ export const referenceItems = [
         "link": "/references/react/popover"
       },
       {
-        "text": "popover-positioner",
-        "link": "/references/react/popover-positioner"
+        "text": "popover-content",
+        "link": "/references/react/popover-content"
       },
       {
         "text": "popover-root",
@@ -378,8 +378,8 @@ export const referenceItems = [
         "link": "/references/solid/popover"
       },
       {
-        "text": "popover-positioner",
-        "link": "/references/solid/popover-positioner"
+        "text": "popover-content",
+        "link": "/references/solid/popover-content"
       },
       {
         "text": "popover-root",
@@ -453,8 +453,8 @@ export const referenceItems = [
         "link": "/references/svelte/popover"
       },
       {
-        "text": "popover-positioner",
-        "link": "/references/svelte/popover-positioner"
+        "text": "popover-content",
+        "link": "/references/svelte/popover-content"
       },
       {
         "text": "popover-root",
@@ -528,8 +528,8 @@ export const referenceItems = [
         "link": "/references/vue/popover"
       },
       {
-        "text": "popover-positioner",
-        "link": "/references/vue/popover-positioner"
+        "text": "popover-content",
+        "link": "/references/vue/popover-content"
       },
       {
         "text": "popover-root",

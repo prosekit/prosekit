@@ -38,7 +38,7 @@
     "./drag-handle": "./src/components/drag-handle/index.ts",
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover": "./src/components/popover/index.ts",
-    "./popover-content": "./src/components/popover-positioner/index.ts",
+    "./popover-content": "./src/components/popover-content/index.ts",
     "./popover-root": "./src/components/popover-root/index.ts",
     "./popover-trigger": "./src/components/popover-trigger/index.ts",
     "./resizable": "./src/components/resizable/index.ts",
@@ -138,10 +138,10 @@
         "import": "./dist/prosekit-lit-popover.js",
         "default": "./dist/prosekit-lit-popover.js"
       },
-      "./popover-positioner": {
-        "types": "./dist/prosekit-lit-popover-positioner.d.ts",
-        "import": "./dist/prosekit-lit-popover-positioner.js",
-        "default": "./dist/prosekit-lit-popover-positioner.js"
+      "./popover-content": {
+        "types": "./dist/prosekit-lit-popover-content.d.ts",
+        "import": "./dist/prosekit-lit-popover-content.js",
+        "default": "./dist/prosekit-lit-popover-content.js"
       },
       "./popover-root": {
         "types": "./dist/prosekit-lit-popover-root.d.ts",
@@ -208,8 +208,8 @@
         "popover": [
           "./dist/prosekit-lit-popover.d.ts"
         ],
-        "popover-positioner": [
-          "./dist/prosekit-lit-popover-positioner.d.ts"
+        "popover-content": [
+          "./dist/prosekit-lit-popover-content.d.ts"
         ],
         "popover-root": [
           "./dist/prosekit-lit-popover-root.d.ts"

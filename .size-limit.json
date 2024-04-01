@@ -168,8 +168,8 @@
     "path": "packages/prosekit/dist/prosekit-lit-popover.js"
   },
   {
-    "name": "prosekit/lit/popover-positioner",
-    "path": "packages/prosekit/dist/prosekit-lit-popover-positioner.js"
+    "name": "prosekit/lit/popover-content",
+    "path": "packages/prosekit/dist/prosekit-lit-popover-content.js"
   },
   {
     "name": "prosekit/lit/popover-root",
@@ -319,8 +319,8 @@
     ]
   },
   {
-    "name": "prosekit/preact/popover-positioner",
-    "path": "packages/prosekit/dist/prosekit-preact-popover-positioner.js",
+    "name": "prosekit/preact/popover-content",
+    "path": "packages/prosekit/dist/prosekit-preact-popover-content.js",
     "ignore": [
       "preact"
     ]
@@ -458,8 +458,8 @@
     ]
   },
   {
-    "name": "prosekit/react/popover-positioner",
-    "path": "packages/prosekit/dist/prosekit-react-popover-positioner.js",
+    "name": "prosekit/react/popover-content",
+    "path": "packages/prosekit/dist/prosekit-react-popover-content.js",
     "ignore": [
       "react",
       "react-dom"
@@ -589,8 +589,8 @@
     ]
   },
   {
-    "name": "prosekit/solid/popover-positioner",
-    "path": "packages/prosekit/dist/prosekit-solid-popover-positioner.js",
+    "name": "prosekit/solid/popover-content",
+    "path": "packages/prosekit/dist/prosekit-solid-popover-content.js",
     "ignore": [
       "solid-js"
     ]
@@ -715,8 +715,8 @@
     ]
   },
   {
-    "name": "prosekit/vue/popover-positioner",
-    "path": "packages/prosekit/dist/prosekit-vue-popover-positioner.js",
+    "name": "prosekit/vue/popover-content",
+    "path": "packages/prosekit/dist/prosekit-vue-popover-content.js",
     "ignore": [
       "vue"
     ]

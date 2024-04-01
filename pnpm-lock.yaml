@@ -238,8 +238,8 @@ importers:
         specifier: ^0.0.9
         version: 0.0.9
       '@aria-ui/popover':
-        specifier: ^0.0.6
-        version: 0.0.6
+        specifier: ^0.0.7
+        version: 0.0.7
       '@floating-ui/dom':
         specifier: ^1.6.3
         version: 1.6.3
@@ -928,8 +928,8 @@ packages:
       '@zag-js/dom-query': 0.41.0
     dev: false
 
-  /@aria-ui/popover@0.0.6:
-    resolution: {integrity: sha512-k1ZBgcPfilZHlwgPpcvLjcFA2vvQ8lUikuolpiwHrlwlboynGQWeR8QrKy0QARJ+P+djHoKMrLpuAZBHxTDLig==}
+  /@aria-ui/popover@0.0.7:
+    resolution: {integrity: sha512-JrPUXe/6RH0qj2bKk3yQAa9ENGfU1lLjnTpW/IThyr5qp+nCGI5zLyl9DlJNIQHEFCA+36Sj7h8W3sT0+LU9qA==}
     dependencies:
       '@aria-ui/core': 0.0.9
       '@aria-ui/overlay': 0.0.9

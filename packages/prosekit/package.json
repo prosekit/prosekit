@@ -1,7 +1,7 @@
 {
   "name": "prosekit",
   "type": "module",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -185,13 +185,13 @@
     "@prosekit/basic": "0.3.4",
     "@prosekit/core": "0.4.0",
     "@prosekit/extensions": "0.4.2",
-    "@prosekit/lit": "0.2.7",
+    "@prosekit/lit": "0.2.8",
     "@prosekit/pm": "0.1.2",
-    "@prosekit/preact": "0.2.6",
-    "@prosekit/react": "0.2.6",
-    "@prosekit/solid": "0.2.6",
-    "@prosekit/svelte": "0.2.6",
-    "@prosekit/vue": "0.2.6"
+    "@prosekit/preact": "0.2.7",
+    "@prosekit/react": "0.2.7",
+    "@prosekit/solid": "0.2.7",
+    "@prosekit/svelte": "0.2.7",
+    "@prosekit/vue": "0.2.7"
   },
   "peerDependencies": {
     "preact": ">= 9.0.0",

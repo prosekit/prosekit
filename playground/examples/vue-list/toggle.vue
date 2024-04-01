@@ -1,13 +1,17 @@
 <script setup lang="ts">
-defineProps<{
+import { defineProps, type Component } from 'vue'
+
+const props = defineProps<{
+  as?: string | Component
   pressed: Boolean
   disabled?: Boolean
-  onClick: VoidFunction
+  onClick?: VoidFunction
 }>()
 </script>
 
 <template>
-  <button
+  <component
+    :is="props.as || 'button'"
     :data-state="pressed ? 'on' : 'off'"
     :disabled="disabled ? true : undefined"
     @click="onClick"
@@ -15,5 +19,5 @@ defineProps<{
     class="TOGGLE_BUTTON"
   >
     <slot></slot>
-  </button>
+  </component>
 </template>

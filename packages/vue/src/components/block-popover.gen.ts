@@ -1,13 +1,13 @@
 import '@prosekit/lit/block-popover'
 
 import { type BlockPopoverProps as BlockPopoverElementProps, propNames } from '@prosekit/lit/block-popover'
-import { defineComponent, h } from 'vue'
+import { defineComponent, h, type DefineSetupFnComponent } from 'vue'
 
 import type { PropsWithClass } from '../types'
 
 export type BlockPopoverProps = PropsWithClass<BlockPopoverElementProps>
 
-export const BlockPopover = defineComponent<BlockPopoverProps>(
+export const BlockPopover: DefineSetupFnComponent<BlockPopoverProps> = defineComponent<BlockPopoverProps>(
   (props, { slots }) => {
     return () => {
       const webComponentProps = Object.fromEntries(

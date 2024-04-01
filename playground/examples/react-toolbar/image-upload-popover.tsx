@@ -1,16 +1,16 @@
 import { useEditor } from 'prosekit/react'
-import { Popover } from 'prosekit/react/popover'
+import { PopoverPositioner } from 'prosekit/react/popover-positioner'
+import { PopoverRoot } from 'prosekit/react/popover-root'
+import { PopoverTrigger } from 'prosekit/react/popover-trigger'
 import { useState, type FC, type ReactNode } from 'react'
 
 import type { EditorExtension } from './extension'
+import Toggle from './toggle'
 
 export const ImageUploadPopover: FC<{
-  open: boolean
-  onClose: VoidFunction
   children: ReactNode
-}> = ({ open, onClose, children }) => {
-  const [anchorElement, setAnchorElement] = useState<HTMLElement | null>(null)
-
+}> = ({ children }) => {
+  const [open, setOpen] = useState(false)
   const [webUrl, setWebUrl] = useState('')
   const [objectUrl, setObjectUrl] = useState('')
   const url = webUrl || objectUrl
@@ -43,33 +43,37 @@ export const ImageUploadPopover: FC<{
     }
   }
 
-  const handleClose = () => {
-    setWebUrl('')
-    setObjectUrl('')
-    onClose()
+  const deferResetState = () => {
+    setTimeout(() => {
+      setWebUrl('')
+      setObjectUrl('')
+    }, 300)
   }
 
   const handleSubmit = () => {
     editor.commands.insertImage({ src: url })
-    setTimeout(handleClose, 100)
+    deferResetState()
+    setOpen(false)
   }
 
   const handleOpenChange = (open: boolean) => {
     if (!open) {
-      handleClose()
+      deferResetState()
     }
+    setOpen(open)
   }
 
   return (
-    <>
-      <div ref={setAnchorElement}>{children}</div>
-
-      <Popover
-        reference={anchorElement ?? undefined}
-        open={open}
-        onOpenChange={handleOpenChange}
-        className="IMAGE_UPLOAD_CARD"
+    <PopoverRoot open={open} onOpenChange={handleOpenChange}>
+      <Toggle
+        as={PopoverTrigger}
+        pressed={open}
+        disabled={!editor.commands.insertImage.canApply()}
       >
+        {children}
+      </Toggle>
+
+      <PopoverPositioner className="IMAGE_UPLOAD_CARD">
         {objectUrl ? null : (
           <>
             <label>Embed Link</label>
@@ -77,6 +81,7 @@ export const ImageUploadPopover: FC<{
               className="IMAGE_UPLOAD_INPUT"
               placeholder="Paste the image link..."
               type="url"
+              value={webUrl}
               onChange={handleWebUrlChange}
             />
           </>
@@ -99,7 +104,7 @@ export const ImageUploadPopover: FC<{
             Insert Image
           </button>
         ) : null}
-      </Popover>
-    </>
+      </PopoverPositioner>
+    </PopoverRoot>
   )
 }

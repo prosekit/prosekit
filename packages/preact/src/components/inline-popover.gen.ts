@@ -8,5 +8,5 @@ import type { PropsWithClass, PropsWithChildren } from '../types'
 export type InlinePopoverProps = PropsWithChildren<PropsWithClass<InlinePopoverElementProps>>
 
 export const InlinePopover: ComponentType<InlinePopoverProps> = (props) => {
-  return h('prosekit-inline-popover', props)
+  return h('prosekit-inline-popover', props as object)
 }

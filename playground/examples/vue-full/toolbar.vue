@@ -1,19 +1,10 @@
 <script setup lang="ts">
 import { useEditor } from 'prosekit/vue'
-import { ref } from 'vue'
 import type { EditorExtension } from './extension'
 import ImageUploadPopover from './image-upload-popover.vue'
 import Toggle from './toggle.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
-
-const imagePopoverOpen = ref(false)
-const closeImagePopover = () => {
-  imagePopoverOpen.value = false
-}
-const toggleImagePopover = () => {
-  imagePopoverOpen.value = !imagePopoverOpen.value
-}
 </script>
 
 <template>
@@ -130,14 +121,8 @@ const toggleImagePopover = () => {
       <div class="ICON_LIST_TOGGLE"></div>
     </Toggle>
 
-    <ImageUploadPopover :open="imagePopoverOpen" :onClose="closeImagePopover">
-      <Toggle
-        :pressed="false"
-        :disabled="!editor.commands.insertImage.canApply()"
-        :onClick="toggleImagePopover"
-      >
-        <div className="ICON_IMAGE"></div>
-      </Toggle>
+    <ImageUploadPopover>
+      <div className="ICON_IMAGE"></div>
     </ImageUploadPopover>
   </div>
 </template>

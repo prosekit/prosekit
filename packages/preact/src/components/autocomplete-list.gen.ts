@@ -8,5 +8,5 @@ import type { PropsWithClass, PropsWithChildren } from '../types'
 export type AutocompleteListProps = PropsWithChildren<PropsWithClass<AutocompleteListElementProps>>
 
 export const AutocompleteList: ComponentType<AutocompleteListProps> = (props) => {
-  return h('prosekit-autocomplete-list', props)
+  return h('prosekit-autocomplete-list', props as object)
 }

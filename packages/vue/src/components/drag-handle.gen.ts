@@ -1,13 +1,13 @@
 import '@prosekit/lit/drag-handle'
 
 import { type DragHandleProps as DragHandleElementProps, propNames } from '@prosekit/lit/drag-handle'
-import { defineComponent, h } from 'vue'
+import { defineComponent, h, type DefineSetupFnComponent } from 'vue'
 
 import type { PropsWithClass } from '../types'
 
 export type DragHandleProps = PropsWithClass<DragHandleElementProps>
 
-export const DragHandle = defineComponent<DragHandleProps>(
+export const DragHandle: DefineSetupFnComponent<DragHandleProps> = defineComponent<DragHandleProps>(
   (props, { slots }) => {
     return () => {
       const webComponentProps = Object.fromEntries(

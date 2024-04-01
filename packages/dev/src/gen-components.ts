@@ -114,13 +114,13 @@ function formatVueCode(kebab: string) {
 import '@prosekit/lit/${kebab}'
 
 import { type ${pascal}Props as ${pascal}ElementProps, propNames } from '@prosekit/lit/${kebab}'
-import { defineComponent, h } from 'vue'
+import { defineComponent, h, type DefineSetupFnComponent } from 'vue'
 
 import type { PropsWithClass } from '../types'
 
 export type ${pascal}Props = PropsWithClass<${pascal}ElementProps>
 
-export const ${pascal} = defineComponent<${pascal}Props>(
+export const ${pascal}: DefineSetupFnComponent<${pascal}Props> = defineComponent<${pascal}Props>(
   (props, { slots }) => {
     return () => {
       const webComponentProps = Object.fromEntries(
@@ -205,7 +205,7 @@ import type { PropsWithClass, PropsWithChildren } from '../types'
 export type ${pascal}Props = PropsWithChildren<PropsWithClass<${pascal}ElementProps>>
 
 export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
-  return h('prosekit-${kebab}', props)
+  return h('prosekit-${kebab}', props as object)
 }
 `.trim() + '\n'
   )

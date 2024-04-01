@@ -168,6 +168,18 @@
     "path": "packages/prosekit/dist/prosekit-lit-popover.js"
   },
   {
+    "name": "prosekit/lit/popover-positioner",
+    "path": "packages/prosekit/dist/prosekit-lit-popover-positioner.js"
+  },
+  {
+    "name": "prosekit/lit/popover-root",
+    "path": "packages/prosekit/dist/prosekit-lit-popover-root.js"
+  },
+  {
+    "name": "prosekit/lit/popover-trigger",
+    "path": "packages/prosekit/dist/prosekit-lit-popover-trigger.js"
+  },
+  {
     "name": "prosekit/lit/resizable",
     "path": "packages/prosekit/dist/prosekit-lit-resizable.js"
   },
@@ -307,6 +319,27 @@
     ]
   },
   {
+    "name": "prosekit/preact/popover-positioner",
+    "path": "packages/prosekit/dist/prosekit-preact-popover-positioner.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
+    "name": "prosekit/preact/popover-root",
+    "path": "packages/prosekit/dist/prosekit-preact-popover-root.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
+    "name": "prosekit/preact/popover-trigger",
+    "path": "packages/prosekit/dist/prosekit-preact-popover-trigger.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
     "name": "prosekit/preact/resizable",
     "path": "packages/prosekit/dist/prosekit-preact-resizable.js",
     "ignore": [
@@ -425,6 +458,30 @@
     ]
   },
   {
+    "name": "prosekit/react/popover-positioner",
+    "path": "packages/prosekit/dist/prosekit-react-popover-positioner.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/popover-root",
+    "path": "packages/prosekit/dist/prosekit-react-popover-root.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/popover-trigger",
+    "path": "packages/prosekit/dist/prosekit-react-popover-trigger.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
     "name": "prosekit/react/resizable",
     "path": "packages/prosekit/dist/prosekit-react-resizable.js",
     "ignore": [
@@ -532,6 +589,27 @@
     ]
   },
   {
+    "name": "prosekit/solid/popover-positioner",
+    "path": "packages/prosekit/dist/prosekit-solid-popover-positioner.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
+    "name": "prosekit/solid/popover-root",
+    "path": "packages/prosekit/dist/prosekit-solid-popover-root.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
+    "name": "prosekit/solid/popover-trigger",
+    "path": "packages/prosekit/dist/prosekit-solid-popover-trigger.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
     "name": "prosekit/solid/resizable",
     "path": "packages/prosekit/dist/prosekit-solid-resizable.js",
     "ignore": [
@@ -632,6 +710,27 @@
   {
     "name": "prosekit/vue/popover",
     "path": "packages/prosekit/dist/prosekit-vue-popover.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/popover-positioner",
+    "path": "packages/prosekit/dist/prosekit-vue-popover-positioner.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/popover-root",
+    "path": "packages/prosekit/dist/prosekit-vue-popover-root.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/popover-trigger",
+    "path": "packages/prosekit/dist/prosekit-vue-popover-trigger.js",
     "ignore": [
       "vue"
     ]

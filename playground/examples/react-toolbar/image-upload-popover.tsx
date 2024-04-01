@@ -1,5 +1,5 @@
 import { useEditor } from 'prosekit/react'
-import { PopoverPositioner } from 'prosekit/react/popover-positioner'
+import { PopoverContent } from 'prosekit/react/popover-content'
 import { PopoverRoot } from 'prosekit/react/popover-root'
 import { PopoverTrigger } from 'prosekit/react/popover-trigger'
 import { useState, type FC, type ReactNode } from 'react'
@@ -73,7 +73,7 @@ export const ImageUploadPopover: FC<{
         {children}
       </Toggle>
 
-      <PopoverPositioner className="IMAGE_UPLOAD_CARD">
+      <PopoverContent className="IMAGE_UPLOAD_CARD">
         {objectUrl ? null : (
           <>
             <label>Embed Link</label>
@@ -104,7 +104,7 @@ export const ImageUploadPopover: FC<{
             Insert Image
           </button>
         ) : null}
-      </PopoverPositioner>
+      </PopoverContent>
     </PopoverRoot>
   )
 }

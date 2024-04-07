@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.5.3
+
+### Patch Changes
+
+- [`9bc0e4b`](https://github.com/ocavue/prosekit/commit/9bc0e4b5d717faf5e7feef8ec525787f278c53f3) ![][badge-preact] ![][badge-svelte] ![][badge-react] ![][badge-solid] ![][badge-lit] ![][badge-vue]
+
+  Rewrite popover completely. Now a popover is made of 3 parts: `PopoverRoot`, `PopoverContent` and `PopoverTrigger`.
+
 ## 0.5.2
 
 ### Patch Changes

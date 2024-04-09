@@ -62,9 +62,13 @@ const POPOVER_ANIMATE = clsx(
   'data-[state=open]:animate-duration-150',
   'data-[state=closed]:animate-duration-200',
   'data-[side=bottom]:slide-in-from-top-2',
+  'data-[side=bottom]:slide-out-to-top-2',
   'data-[side=left]:slide-in-from-right-2',
+  'data-[side=left]:slide-out-to-right-2',
   'data-[side=right]:slide-in-from-left-2',
+  'data-[side=right]:slide-out-to-left-2',
   'data-[side=top]:slide-in-from-bottom-2',
+  'data-[side=top]:slide-out-to-bottom-2',
 )
 
 const FLOATING_MENU_ITEM = clsx(
@@ -162,7 +166,7 @@ const staticShortcuts = {
   ),
 
   TOGGLE_BUTTON: clsx(
-    'outline-unset focus-visible:outline-unset inline-flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none',
+    'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none',
     'disabled:opacity-50 hover:disabled:opacity-50',
     'bg-transparent hover:bg-secondary data-[state=on]:bg-accent/60',
   ),
@@ -196,6 +200,12 @@ const staticShortcuts = {
 
   BLOCK_HANDLE: clsx(
     'flex items-center box-border justify-center my-[0.5em] h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 transition-colors',
+  ),
+
+  TOOLTIP_TRIGGER: clsx('block'),
+  TOOLTIP_CONTENT: clsx(
+    'z-50 overflow-hidden rounded-md border border-solid bg-primary px-3 py-1.5 text-xs text-primary-foreground shadow-sm',
+    POPOVER_ANIMATE,
   ),
 
   ICON_ITALIC: clsx('i-lucide-italic h-5 w-5'),

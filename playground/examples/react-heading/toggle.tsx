@@ -1,28 +1,39 @@
-import type { ElementType, HTMLAttributes, ReactNode } from 'react'
+import { TooltipContent } from 'prosekit/react/tooltip-content'
+import { TooltipRoot } from 'prosekit/react/tooltip-root'
+import { TooltipTrigger } from 'prosekit/react/tooltip-trigger'
+import type { ReactNode } from 'react'
 
 export default function Toggle({
-  as,
   pressed,
   disabled,
   onClick,
+  tooltip,
   children,
 }: {
-  as?: ElementType<HTMLAttributes<HTMLElement>>
   pressed: boolean
   disabled?: boolean
   onClick?: VoidFunction
+  tooltip?: string
   children: ReactNode
 }) {
-  const Component = as ?? 'button'
   return (
-    <Component
-      data-state={pressed ? 'on' : 'off'}
-      disabled={disabled}
-      onClick={() => onClick?.()}
-      onMouseDown={(event) => event.preventDefault()}
-      className="TOGGLE_BUTTON"
-    >
-      {children}
-    </Component>
+    <TooltipRoot>
+      <TooltipTrigger className="TOOLTIP_TRIGGER">
+        <button
+          data-state={pressed ? 'on' : 'off'}
+          disabled={disabled}
+          onClick={() => onClick?.()}
+          onMouseDown={(event) => event.preventDefault()}
+          className="TOGGLE_BUTTON"
+        >
+          {children}
+        </button>
+      </TooltipTrigger>
+      {tooltip && !disabled ? (
+        <TooltipContent offset={4} className="TOOLTIP_CONTENT">
+          {tooltip}
+        </TooltipContent>
+      ) : null}
+    </TooltipRoot>
   )
 }

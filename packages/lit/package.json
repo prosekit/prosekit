@@ -42,7 +42,10 @@
     "./popover-root": "./src/components/popover-root/index.ts",
     "./popover-trigger": "./src/components/popover-trigger/index.ts",
     "./resizable": "./src/components/resizable/index.ts",
-    "./resizable-handle": "./src/components/resizable-handle/index.ts"
+    "./resizable-handle": "./src/components/resizable-handle/index.ts",
+    "./tooltip-content": "./src/components/tooltip-content/index.ts",
+    "./tooltip-root": "./src/components/tooltip-root/index.ts",
+    "./tooltip-trigger": "./src/components/tooltip-trigger/index.ts"
   },
   "files": [
     "dist"
@@ -53,7 +56,8 @@
   },
   "dependencies": {
     "@aria-ui/core": "^0.0.9",
-    "@aria-ui/popover": "^0.0.7",
+    "@aria-ui/popover": "^0.0.8",
+    "@aria-ui/tooltip": "^0.0.10",
     "@floating-ui/dom": "^1.6.3",
     "@lit/context": "^1.1.0",
     "@prosekit/core": "^0.4.0",
@@ -162,6 +166,21 @@
         "types": "./dist/prosekit-lit-resizable-handle.d.ts",
         "import": "./dist/prosekit-lit-resizable-handle.js",
         "default": "./dist/prosekit-lit-resizable-handle.js"
+      },
+      "./tooltip-content": {
+        "types": "./dist/prosekit-lit-tooltip-content.d.ts",
+        "import": "./dist/prosekit-lit-tooltip-content.js",
+        "default": "./dist/prosekit-lit-tooltip-content.js"
+      },
+      "./tooltip-root": {
+        "types": "./dist/prosekit-lit-tooltip-root.d.ts",
+        "import": "./dist/prosekit-lit-tooltip-root.js",
+        "default": "./dist/prosekit-lit-tooltip-root.js"
+      },
+      "./tooltip-trigger": {
+        "types": "./dist/prosekit-lit-tooltip-trigger.d.ts",
+        "import": "./dist/prosekit-lit-tooltip-trigger.js",
+        "default": "./dist/prosekit-lit-tooltip-trigger.js"
       }
     },
     "main": "./dist/prosekit-lit.js",
@@ -222,6 +241,15 @@
         ],
         "resizable-handle": [
           "./dist/prosekit-lit-resizable-handle.d.ts"
+        ],
+        "tooltip-content": [
+          "./dist/prosekit-lit-tooltip-content.d.ts"
+        ],
+        "tooltip-root": [
+          "./dist/prosekit-lit-tooltip-root.d.ts"
+        ],
+        "tooltip-trigger": [
+          "./dist/prosekit-lit-tooltip-trigger.d.ts"
         ]
       }
     }

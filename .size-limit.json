@@ -188,6 +188,18 @@
     "path": "packages/prosekit/dist/prosekit-lit-resizable-handle.js"
   },
   {
+    "name": "prosekit/lit/tooltip-content",
+    "path": "packages/prosekit/dist/prosekit-lit-tooltip-content.js"
+  },
+  {
+    "name": "prosekit/lit/tooltip-root",
+    "path": "packages/prosekit/dist/prosekit-lit-tooltip-root.js"
+  },
+  {
+    "name": "prosekit/lit/tooltip-trigger",
+    "path": "packages/prosekit/dist/prosekit-lit-tooltip-trigger.js"
+  },
+  {
     "name": "prosekit/pm",
     "path": "packages/prosekit/dist/prosekit-pm.js"
   },
@@ -354,6 +366,27 @@
     ]
   },
   {
+    "name": "prosekit/preact/tooltip-content",
+    "path": "packages/prosekit/dist/prosekit-preact-tooltip-content.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
+    "name": "prosekit/preact/tooltip-root",
+    "path": "packages/prosekit/dist/prosekit-preact-tooltip-root.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
+    "name": "prosekit/preact/tooltip-trigger",
+    "path": "packages/prosekit/dist/prosekit-preact-tooltip-trigger.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
     "name": "prosekit/react",
     "path": "packages/prosekit/dist/prosekit-react.js",
     "ignore": [
@@ -498,6 +531,30 @@
     ]
   },
   {
+    "name": "prosekit/react/tooltip-content",
+    "path": "packages/prosekit/dist/prosekit-react-tooltip-content.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/tooltip-root",
+    "path": "packages/prosekit/dist/prosekit-react-tooltip-root.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/tooltip-trigger",
+    "path": "packages/prosekit/dist/prosekit-react-tooltip-trigger.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
     "name": "prosekit/solid",
     "path": "packages/prosekit/dist/prosekit-solid.js",
     "ignore": [
@@ -624,6 +681,27 @@
     ]
   },
   {
+    "name": "prosekit/solid/tooltip-content",
+    "path": "packages/prosekit/dist/prosekit-solid-tooltip-content.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
+    "name": "prosekit/solid/tooltip-root",
+    "path": "packages/prosekit/dist/prosekit-solid-tooltip-root.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
+    "name": "prosekit/solid/tooltip-trigger",
+    "path": "packages/prosekit/dist/prosekit-solid-tooltip-trigger.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
     "name": "prosekit/vue",
     "path": "packages/prosekit/dist/prosekit-vue.js",
     "ignore": [
@@ -745,6 +823,27 @@
   {
     "name": "prosekit/vue/resizable-handle",
     "path": "packages/prosekit/dist/prosekit-vue-resizable-handle.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/tooltip-content",
+    "path": "packages/prosekit/dist/prosekit-vue-tooltip-content.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/tooltip-root",
+    "path": "packages/prosekit/dist/prosekit-vue-tooltip-root.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/tooltip-trigger",
+    "path": "packages/prosekit/dist/prosekit-vue-tooltip-trigger.js",
     "ignore": [
       "vue"
     ]

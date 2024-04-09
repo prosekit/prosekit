@@ -42,7 +42,10 @@
     "./popover-root": "./src/components/popover-root.gen.ts",
     "./popover-trigger": "./src/components/popover-trigger.gen.ts",
     "./resizable": "./src/components/resizable.gen.ts",
-    "./resizable-handle": "./src/components/resizable-handle.gen.ts"
+    "./resizable-handle": "./src/components/resizable-handle.gen.ts",
+    "./tooltip-content": "./src/components/tooltip-content.gen.ts",
+    "./tooltip-root": "./src/components/tooltip-root.gen.ts",
+    "./tooltip-trigger": "./src/components/tooltip-trigger.gen.ts"
   },
   "files": [
     "dist"
@@ -163,6 +166,21 @@
         "types": "./dist/prosekit-vue-resizable-handle.d.ts",
         "import": "./dist/prosekit-vue-resizable-handle.js",
         "default": "./dist/prosekit-vue-resizable-handle.js"
+      },
+      "./tooltip-content": {
+        "types": "./dist/prosekit-vue-tooltip-content.d.ts",
+        "import": "./dist/prosekit-vue-tooltip-content.js",
+        "default": "./dist/prosekit-vue-tooltip-content.js"
+      },
+      "./tooltip-root": {
+        "types": "./dist/prosekit-vue-tooltip-root.d.ts",
+        "import": "./dist/prosekit-vue-tooltip-root.js",
+        "default": "./dist/prosekit-vue-tooltip-root.js"
+      },
+      "./tooltip-trigger": {
+        "types": "./dist/prosekit-vue-tooltip-trigger.d.ts",
+        "import": "./dist/prosekit-vue-tooltip-trigger.js",
+        "default": "./dist/prosekit-vue-tooltip-trigger.js"
       }
     },
     "main": "./dist/prosekit-vue.js",
@@ -223,6 +241,15 @@
         ],
         "resizable-handle": [
           "./dist/prosekit-vue-resizable-handle.d.ts"
+        ],
+        "tooltip-content": [
+          "./dist/prosekit-vue-tooltip-content.d.ts"
+        ],
+        "tooltip-root": [
+          "./dist/prosekit-vue-tooltip-root.d.ts"
+        ],
+        "tooltip-trigger": [
+          "./dist/prosekit-vue-tooltip-trigger.d.ts"
         ]
       }
     }

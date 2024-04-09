@@ -171,6 +171,18 @@ export const referenceItems = [
       {
         "text": "resizable-handle",
         "link": "/references/lit/resizable-handle"
+      },
+      {
+        "text": "tooltip-content",
+        "link": "/references/lit/tooltip-content"
+      },
+      {
+        "text": "tooltip-root",
+        "link": "/references/lit/tooltip-root"
+      },
+      {
+        "text": "tooltip-trigger",
+        "link": "/references/lit/tooltip-trigger"
       }
     ],
     "collapsed": true,
@@ -246,6 +258,18 @@ export const referenceItems = [
       {
         "text": "resizable-handle",
         "link": "/references/preact/resizable-handle"
+      },
+      {
+        "text": "tooltip-content",
+        "link": "/references/preact/tooltip-content"
+      },
+      {
+        "text": "tooltip-root",
+        "link": "/references/preact/tooltip-root"
+      },
+      {
+        "text": "tooltip-trigger",
+        "link": "/references/preact/tooltip-trigger"
       }
     ],
     "collapsed": true,
@@ -321,6 +345,18 @@ export const referenceItems = [
       {
         "text": "resizable-handle",
         "link": "/references/react/resizable-handle"
+      },
+      {
+        "text": "tooltip-content",
+        "link": "/references/react/tooltip-content"
+      },
+      {
+        "text": "tooltip-root",
+        "link": "/references/react/tooltip-root"
+      },
+      {
+        "text": "tooltip-trigger",
+        "link": "/references/react/tooltip-trigger"
       }
     ],
     "collapsed": true,
@@ -396,6 +432,18 @@ export const referenceItems = [
       {
         "text": "resizable-handle",
         "link": "/references/solid/resizable-handle"
+      },
+      {
+        "text": "tooltip-content",
+        "link": "/references/solid/tooltip-content"
+      },
+      {
+        "text": "tooltip-root",
+        "link": "/references/solid/tooltip-root"
+      },
+      {
+        "text": "tooltip-trigger",
+        "link": "/references/solid/tooltip-trigger"
       }
     ],
     "collapsed": true,
@@ -471,6 +519,18 @@ export const referenceItems = [
       {
         "text": "resizable-handle",
         "link": "/references/svelte/resizable-handle"
+      },
+      {
+        "text": "tooltip-content",
+        "link": "/references/svelte/tooltip-content"
+      },
+      {
+        "text": "tooltip-root",
+        "link": "/references/svelte/tooltip-root"
+      },
+      {
+        "text": "tooltip-trigger",
+        "link": "/references/svelte/tooltip-trigger"
       }
     ],
     "collapsed": true,
@@ -546,6 +606,18 @@ export const referenceItems = [
       {
         "text": "resizable-handle",
         "link": "/references/vue/resizable-handle"
+      },
+      {
+        "text": "tooltip-content",
+        "link": "/references/vue/tooltip-content"
+      },
+      {
+        "text": "tooltip-root",
+        "link": "/references/vue/tooltip-root"
+      },
+      {
+        "text": "tooltip-trigger",
+        "link": "/references/vue/tooltip-trigger"
       }
     ],
     "collapsed": true,

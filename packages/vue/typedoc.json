@@ -19,6 +19,9 @@
     "./src/components/popover.gen.ts",
     "./src/components/resizable-handle.gen.ts",
     "./src/components/resizable.gen.ts",
+    "./src/components/tooltip-content.gen.ts",
+    "./src/components/tooltip-root.gen.ts",
+    "./src/components/tooltip-trigger.gen.ts",
     "./src/index.ts"
   ]
 }

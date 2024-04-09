@@ -19,6 +19,9 @@
     "./src/components/popover/index.ts",
     "./src/components/resizable-handle/index.ts",
     "./src/components/resizable/index.ts",
+    "./src/components/tooltip-content/index.ts",
+    "./src/components/tooltip-root/index.ts",
+    "./src/components/tooltip-trigger/index.ts",
     "./src/index.ts"
   ]
 }

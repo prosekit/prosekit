@@ -8,15 +8,15 @@ import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
 import { tags } from './tag-data'
 
-const editor = useEditor<EditorExtension>().value
+const editor = useEditor<EditorExtension>()
 
 const handleTagInsert = (id: number, label: string) => {
-  editor.commands.insertMention({
+  editor.value.commands.insertMention({
     id: id.toString(),
     value: '#' + label,
     kind: 'tag',
   })
-  editor.commands.insertText({ text: ' ' })
+  editor.value.commands.insertText({ text: ' ' })
 }
 </script>
 

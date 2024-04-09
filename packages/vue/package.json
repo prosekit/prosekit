@@ -31,10 +31,6 @@
     "./autocomplete-list": "./src/components/autocomplete-list.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
     "./block-popover": "./src/components/block-popover.gen.ts",
-    "./combo-box": "./src/components/combo-box.gen.ts",
-    "./combo-box-input": "./src/components/combo-box-input.gen.ts",
-    "./combo-box-item": "./src/components/combo-box-item.gen.ts",
-    "./combo-box-list": "./src/components/combo-box-list.gen.ts",
     "./drag-handle": "./src/components/drag-handle.gen.ts",
     "./inline-popover": "./src/components/inline-popover.ts",
     "./popover": "./src/components/popover.gen.ts",
@@ -106,26 +102,6 @@
         "types": "./dist/prosekit-vue-block-popover.d.ts",
         "import": "./dist/prosekit-vue-block-popover.js",
         "default": "./dist/prosekit-vue-block-popover.js"
-      },
-      "./combo-box": {
-        "types": "./dist/prosekit-vue-combo-box.d.ts",
-        "import": "./dist/prosekit-vue-combo-box.js",
-        "default": "./dist/prosekit-vue-combo-box.js"
-      },
-      "./combo-box-input": {
-        "types": "./dist/prosekit-vue-combo-box-input.d.ts",
-        "import": "./dist/prosekit-vue-combo-box-input.js",
-        "default": "./dist/prosekit-vue-combo-box-input.js"
-      },
-      "./combo-box-item": {
-        "types": "./dist/prosekit-vue-combo-box-item.d.ts",
-        "import": "./dist/prosekit-vue-combo-box-item.js",
-        "default": "./dist/prosekit-vue-combo-box-item.js"
-      },
-      "./combo-box-list": {
-        "types": "./dist/prosekit-vue-combo-box-list.d.ts",
-        "import": "./dist/prosekit-vue-combo-box-list.js",
-        "default": "./dist/prosekit-vue-combo-box-list.js"
       },
       "./drag-handle": {
         "types": "./dist/prosekit-vue-drag-handle.d.ts",
@@ -205,18 +181,6 @@
         ],
         "block-popover": [
           "./dist/prosekit-vue-block-popover.d.ts"
-        ],
-        "combo-box": [
-          "./dist/prosekit-vue-combo-box.d.ts"
-        ],
-        "combo-box-input": [
-          "./dist/prosekit-vue-combo-box-input.d.ts"
-        ],
-        "combo-box-item": [
-          "./dist/prosekit-vue-combo-box-item.d.ts"
-        ],
-        "combo-box-list": [
-          "./dist/prosekit-vue-combo-box-list.d.ts"
         ],
         "drag-handle": [
           "./dist/prosekit-vue-drag-handle.d.ts"

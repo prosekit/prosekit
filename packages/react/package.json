@@ -31,10 +31,6 @@
     "./autocomplete-list": "./src/components/autocomplete-list.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
     "./block-popover": "./src/components/block-popover.gen.ts",
-    "./combo-box": "./src/components/combo-box.gen.ts",
-    "./combo-box-input": "./src/components/combo-box-input.gen.ts",
-    "./combo-box-item": "./src/components/combo-box-item.gen.ts",
-    "./combo-box-list": "./src/components/combo-box-list.gen.ts",
     "./drag-handle": "./src/components/drag-handle.gen.ts",
     "./inline-popover": "./src/components/inline-popover.gen.ts",
     "./popover": "./src/components/popover.gen.ts",
@@ -115,26 +111,6 @@
         "import": "./dist/prosekit-react-block-popover.js",
         "default": "./dist/prosekit-react-block-popover.js"
       },
-      "./combo-box": {
-        "types": "./dist/prosekit-react-combo-box.d.ts",
-        "import": "./dist/prosekit-react-combo-box.js",
-        "default": "./dist/prosekit-react-combo-box.js"
-      },
-      "./combo-box-input": {
-        "types": "./dist/prosekit-react-combo-box-input.d.ts",
-        "import": "./dist/prosekit-react-combo-box-input.js",
-        "default": "./dist/prosekit-react-combo-box-input.js"
-      },
-      "./combo-box-item": {
-        "types": "./dist/prosekit-react-combo-box-item.d.ts",
-        "import": "./dist/prosekit-react-combo-box-item.js",
-        "default": "./dist/prosekit-react-combo-box-item.js"
-      },
-      "./combo-box-list": {
-        "types": "./dist/prosekit-react-combo-box-list.d.ts",
-        "import": "./dist/prosekit-react-combo-box-list.js",
-        "default": "./dist/prosekit-react-combo-box-list.js"
-      },
       "./drag-handle": {
         "types": "./dist/prosekit-react-drag-handle.d.ts",
         "import": "./dist/prosekit-react-drag-handle.js",
@@ -213,18 +189,6 @@
         ],
         "block-popover": [
           "./dist/prosekit-react-block-popover.d.ts"
-        ],
-        "combo-box": [
-          "./dist/prosekit-react-combo-box.d.ts"
-        ],
-        "combo-box-input": [
-          "./dist/prosekit-react-combo-box-input.d.ts"
-        ],
-        "combo-box-item": [
-          "./dist/prosekit-react-combo-box-item.d.ts"
-        ],
-        "combo-box-list": [
-          "./dist/prosekit-react-combo-box-list.d.ts"
         ],
         "drag-handle": [
           "./dist/prosekit-react-drag-handle.d.ts"

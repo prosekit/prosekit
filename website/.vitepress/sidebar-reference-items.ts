@@ -125,22 +125,6 @@ export const referenceItems = [
         "link": "/references/lit/block-popover"
       },
       {
-        "text": "combo-box",
-        "link": "/references/lit/combo-box"
-      },
-      {
-        "text": "combo-box-input",
-        "link": "/references/lit/combo-box-input"
-      },
-      {
-        "text": "combo-box-item",
-        "link": "/references/lit/combo-box-item"
-      },
-      {
-        "text": "combo-box-list",
-        "link": "/references/lit/combo-box-list"
-      },
-      {
         "text": "drag-handle",
         "link": "/references/lit/drag-handle"
       },
@@ -210,22 +194,6 @@ export const referenceItems = [
       {
         "text": "block-popover",
         "link": "/references/preact/block-popover"
-      },
-      {
-        "text": "combo-box",
-        "link": "/references/preact/combo-box"
-      },
-      {
-        "text": "combo-box-input",
-        "link": "/references/preact/combo-box-input"
-      },
-      {
-        "text": "combo-box-item",
-        "link": "/references/preact/combo-box-item"
-      },
-      {
-        "text": "combo-box-list",
-        "link": "/references/preact/combo-box-list"
       },
       {
         "text": "drag-handle",
@@ -299,22 +267,6 @@ export const referenceItems = [
         "link": "/references/react/block-popover"
       },
       {
-        "text": "combo-box",
-        "link": "/references/react/combo-box"
-      },
-      {
-        "text": "combo-box-input",
-        "link": "/references/react/combo-box-input"
-      },
-      {
-        "text": "combo-box-item",
-        "link": "/references/react/combo-box-item"
-      },
-      {
-        "text": "combo-box-list",
-        "link": "/references/react/combo-box-list"
-      },
-      {
         "text": "drag-handle",
         "link": "/references/react/drag-handle"
       },
@@ -384,22 +336,6 @@ export const referenceItems = [
       {
         "text": "block-popover",
         "link": "/references/solid/block-popover"
-      },
-      {
-        "text": "combo-box",
-        "link": "/references/solid/combo-box"
-      },
-      {
-        "text": "combo-box-input",
-        "link": "/references/solid/combo-box-input"
-      },
-      {
-        "text": "combo-box-item",
-        "link": "/references/solid/combo-box-item"
-      },
-      {
-        "text": "combo-box-list",
-        "link": "/references/solid/combo-box-list"
       },
       {
         "text": "drag-handle",
@@ -473,22 +409,6 @@ export const referenceItems = [
         "link": "/references/svelte/block-popover"
       },
       {
-        "text": "combo-box",
-        "link": "/references/svelte/combo-box"
-      },
-      {
-        "text": "combo-box-input",
-        "link": "/references/svelte/combo-box-input"
-      },
-      {
-        "text": "combo-box-item",
-        "link": "/references/svelte/combo-box-item"
-      },
-      {
-        "text": "combo-box-list",
-        "link": "/references/svelte/combo-box-list"
-      },
-      {
         "text": "drag-handle",
         "link": "/references/svelte/drag-handle"
       },
@@ -558,22 +478,6 @@ export const referenceItems = [
       {
         "text": "block-popover",
         "link": "/references/vue/block-popover"
-      },
-      {
-        "text": "combo-box",
-        "link": "/references/vue/combo-box"
-      },
-      {
-        "text": "combo-box-input",
-        "link": "/references/vue/combo-box-input"
-      },
-      {
-        "text": "combo-box-item",
-        "link": "/references/vue/combo-box-item"
-      },
-      {
-        "text": "combo-box-list",
-        "link": "/references/vue/combo-box-list"
       },
       {
         "text": "drag-handle",

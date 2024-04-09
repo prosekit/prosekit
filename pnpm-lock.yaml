@@ -238,8 +238,11 @@ importers:
         specifier: ^0.0.9
         version: 0.0.9
       '@aria-ui/popover':
-        specifier: ^0.0.7
-        version: 0.0.7
+        specifier: ^0.0.8
+        version: 0.0.8
+      '@aria-ui/tooltip':
+        specifier: ^0.0.10
+        version: 0.0.10
       '@floating-ui/dom':
         specifier: ^1.6.3
         version: 1.6.3
@@ -928,8 +931,8 @@ packages:
       '@zag-js/dom-query': 0.41.0
     dev: false
 
-  /@aria-ui/popover@0.0.7:
-    resolution: {integrity: sha512-JrPUXe/6RH0qj2bKk3yQAa9ENGfU1lLjnTpW/IThyr5qp+nCGI5zLyl9DlJNIQHEFCA+36Sj7h8W3sT0+LU9qA==}
+  /@aria-ui/popover@0.0.8:
+    resolution: {integrity: sha512-+LsQZM1N+XKRvxPXiDnatqad8h14mPKEnZuH8T7+zJQdYyrV3AHHhcjS4o4FgEUOfbQbReTGy41lddP3TPeqzw==}
     dependencies:
       '@aria-ui/core': 0.0.9
       '@aria-ui/overlay': 0.0.9
@@ -942,6 +945,15 @@ packages:
     resolution: {integrity: sha512-yxBZBh6TXWJ598KrrhSWTBf1uiOqMnSc6m7MCiSrNeDv040UeGG0eQOFWUU/CRHs5NIhVBaW/LggFThzUczB8A==}
     dependencies:
       '@aria-ui/core': 0.0.9
+    dev: false
+
+  /@aria-ui/tooltip@0.0.10:
+    resolution: {integrity: sha512-UebiiNhFA5GKZzdpmjatPnUIMgteRAduoalLpkTynSNGQ0RoMKuTMNDfT9htRAGlv19NYeqR0llh+cczBRkSqw==}
+    dependencies:
+      '@aria-ui/core': 0.0.9
+      '@aria-ui/overlay': 0.0.9
+      '@aria-ui/presence': 0.0.4
+      nanoid: 5.0.6
     dev: false
 
   /@astrojs/compiler@1.8.1:

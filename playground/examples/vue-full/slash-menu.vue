@@ -6,26 +6,26 @@ import { AutocompletePopover } from 'prosekit/vue/autocomplete-popover'
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
 
-const editor = useEditor<EditorExtension>().value
+const editor = useEditor<EditorExtension>()
 
 const isBlockEmpty = () => {
-  let selection = editor.view.state.selection
+  let selection = editor.value.view.state.selection
   return selection.empty && selection.$from.parent.content.size === 0
 }
 
 const handleSelectHeading = (level: number) => {
   if (isBlockEmpty()) {
-    editor.commands.setHeading({ level })
+    editor.value.commands.setHeading({ level })
   } else {
-    editor.commands.insertHeading({ level })
+    editor.value.commands.insertHeading({ level })
   }
 }
 
 const handleSelectList = (kind: 'task' | 'bullet' | 'ordered' | 'toggle') => {
   if (isBlockEmpty()) {
-    editor.commands.wrapInList({ kind })
+    editor.value.commands.wrapInList({ kind })
   } else {
-    editor.commands.insertList({ kind })
+    editor.value.commands.insertList({ kind })
   }
 }
 </script>

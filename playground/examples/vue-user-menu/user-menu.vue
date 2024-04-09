@@ -8,15 +8,15 @@ import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
 import { users } from './user-data'
 
-const editor = useEditor<EditorExtension>().value
+const editor = useEditor<EditorExtension>()
 
 const handleUserInsert = (id: number, username: string) => {
-  editor.commands.insertMention({
+  editor.value.commands.insertMention({
     id: id.toString(),
     value: '@' + username,
     kind: 'user',
   })
-  editor.commands.insertText({ text: ' ' })
+  editor.value.commands.insertText({ text: ' ' })
 }
 </script>
 

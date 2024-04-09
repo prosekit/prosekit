@@ -7,11 +7,16 @@ import { computed, ref } from 'vue'
 import type { EditorExtension } from './extension'
 import Toggle from './toggle.vue'
 
+const props = defineProps<{
+  disabled: Boolean
+  tooltip: string
+}>()
+
 const open = ref(false)
 const webUrl = ref('')
 const objectUrl = ref('')
 const url = computed(() => webUrl.value || objectUrl.value)
-const editor = useEditor<EditorExtension>().value
+const editor = useEditor<EditorExtension>()
 
 const handleFileChange = (event: Event) => {
   const file = (event.target as HTMLInputElement)?.files?.[0]
@@ -43,7 +48,7 @@ const deferResetState = () => {
 }
 
 const handleSubmit = () => {
-  editor.commands.insertImage({ src: url.value })
+  editor.value.commands.insertImage({ src: url.value })
   deferResetState()
   open.value = false
 }
@@ -58,13 +63,15 @@ const handleOpenChange = (openValue: boolean) => {
 
 <template>
   <PopoverRoot :open="open" :onOpenChange="handleOpenChange">
-    <Toggle
-      :as="PopoverTrigger"
-      :pressed="open"
-      :disabled="!editor.commands.insertImage.canApply()"
-    >
-      <slot />
-    </Toggle>
+    <PopoverTrigger>
+      <Toggle
+        :pressed="open"
+        :disabled="props.disabled"
+        :tooltip="props.tooltip"
+      >
+        <slot />
+      </Toggle>
+    </PopoverTrigger>
 
     <PopoverContent class="IMAGE_UPLOAD_CARD">
       <template v-if="!objectUrl">

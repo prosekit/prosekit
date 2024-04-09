@@ -73,6 +73,9 @@
     "./lit/popover-trigger": "./src/lit/popover-trigger.gen.ts",
     "./lit/resizable": "./src/lit/resizable.gen.ts",
     "./lit/resizable-handle": "./src/lit/resizable-handle.gen.ts",
+    "./lit/tooltip-content": "./src/lit/tooltip-content.gen.ts",
+    "./lit/tooltip-root": "./src/lit/tooltip-root.gen.ts",
+    "./lit/tooltip-trigger": "./src/lit/tooltip-trigger.gen.ts",
     "./pm": "./src/pm.gen.ts",
     "./pm/commands": "./src/pm/commands.gen.ts",
     "./pm/history": "./src/pm/history.gen.ts",
@@ -101,6 +104,9 @@
     "./preact/popover-trigger": "./src/preact/popover-trigger.gen.ts",
     "./preact/resizable": "./src/preact/resizable.gen.ts",
     "./preact/resizable-handle": "./src/preact/resizable-handle.gen.ts",
+    "./preact/tooltip-content": "./src/preact/tooltip-content.gen.ts",
+    "./preact/tooltip-root": "./src/preact/tooltip-root.gen.ts",
+    "./preact/tooltip-trigger": "./src/preact/tooltip-trigger.gen.ts",
     "./react": "./src/react.gen.ts",
     "./react/autocomplete-empty": "./src/react/autocomplete-empty.gen.ts",
     "./react/autocomplete-item": "./src/react/autocomplete-item.gen.ts",
@@ -119,6 +125,9 @@
     "./react/popover-trigger": "./src/react/popover-trigger.gen.ts",
     "./react/resizable": "./src/react/resizable.gen.ts",
     "./react/resizable-handle": "./src/react/resizable-handle.gen.ts",
+    "./react/tooltip-content": "./src/react/tooltip-content.gen.ts",
+    "./react/tooltip-root": "./src/react/tooltip-root.gen.ts",
+    "./react/tooltip-trigger": "./src/react/tooltip-trigger.gen.ts",
     "./solid": "./src/solid.gen.ts",
     "./solid/autocomplete-empty": "./src/solid/autocomplete-empty.gen.ts",
     "./solid/autocomplete-item": "./src/solid/autocomplete-item.gen.ts",
@@ -137,6 +146,9 @@
     "./solid/popover-trigger": "./src/solid/popover-trigger.gen.ts",
     "./solid/resizable": "./src/solid/resizable.gen.ts",
     "./solid/resizable-handle": "./src/solid/resizable-handle.gen.ts",
+    "./solid/tooltip-content": "./src/solid/tooltip-content.gen.ts",
+    "./solid/tooltip-root": "./src/solid/tooltip-root.gen.ts",
+    "./solid/tooltip-trigger": "./src/solid/tooltip-trigger.gen.ts",
     "./svelte": "./src/svelte.gen.ts",
     "./svelte/autocomplete-empty": "./src/svelte/autocomplete-empty.gen.ts",
     "./svelte/autocomplete-item": "./src/svelte/autocomplete-item.gen.ts",
@@ -155,6 +167,9 @@
     "./svelte/popover-trigger": "./src/svelte/popover-trigger.gen.ts",
     "./svelte/resizable": "./src/svelte/resizable.gen.ts",
     "./svelte/resizable-handle": "./src/svelte/resizable-handle.gen.ts",
+    "./svelte/tooltip-content": "./src/svelte/tooltip-content.gen.ts",
+    "./svelte/tooltip-root": "./src/svelte/tooltip-root.gen.ts",
+    "./svelte/tooltip-trigger": "./src/svelte/tooltip-trigger.gen.ts",
     "./vue": "./src/vue.gen.ts",
     "./vue/autocomplete-empty": "./src/vue/autocomplete-empty.gen.ts",
     "./vue/autocomplete-item": "./src/vue/autocomplete-item.gen.ts",
@@ -172,7 +187,10 @@
     "./vue/popover-root": "./src/vue/popover-root.gen.ts",
     "./vue/popover-trigger": "./src/vue/popover-trigger.gen.ts",
     "./vue/resizable": "./src/vue/resizable.gen.ts",
-    "./vue/resizable-handle": "./src/vue/resizable-handle.gen.ts"
+    "./vue/resizable-handle": "./src/vue/resizable-handle.gen.ts",
+    "./vue/tooltip-content": "./src/vue/tooltip-content.gen.ts",
+    "./vue/tooltip-root": "./src/vue/tooltip-root.gen.ts",
+    "./vue/tooltip-trigger": "./src/vue/tooltip-trigger.gen.ts"
   },
   "files": [
     "dist"
@@ -466,6 +484,21 @@
         "import": "./dist/prosekit-lit-resizable-handle.js",
         "default": "./dist/prosekit-lit-resizable-handle.js"
       },
+      "./lit/tooltip-content": {
+        "types": "./dist/prosekit-lit-tooltip-content.d.ts",
+        "import": "./dist/prosekit-lit-tooltip-content.js",
+        "default": "./dist/prosekit-lit-tooltip-content.js"
+      },
+      "./lit/tooltip-root": {
+        "types": "./dist/prosekit-lit-tooltip-root.d.ts",
+        "import": "./dist/prosekit-lit-tooltip-root.js",
+        "default": "./dist/prosekit-lit-tooltip-root.js"
+      },
+      "./lit/tooltip-trigger": {
+        "types": "./dist/prosekit-lit-tooltip-trigger.d.ts",
+        "import": "./dist/prosekit-lit-tooltip-trigger.js",
+        "default": "./dist/prosekit-lit-tooltip-trigger.js"
+      },
       "./pm": {
         "types": "./dist/prosekit-pm.d.ts",
         "import": "./dist/prosekit-pm.js",
@@ -604,6 +637,21 @@
         "import": "./dist/prosekit-preact-resizable-handle.js",
         "default": "./dist/prosekit-preact-resizable-handle.js"
       },
+      "./preact/tooltip-content": {
+        "types": "./dist/prosekit-preact-tooltip-content.d.ts",
+        "import": "./dist/prosekit-preact-tooltip-content.js",
+        "default": "./dist/prosekit-preact-tooltip-content.js"
+      },
+      "./preact/tooltip-root": {
+        "types": "./dist/prosekit-preact-tooltip-root.d.ts",
+        "import": "./dist/prosekit-preact-tooltip-root.js",
+        "default": "./dist/prosekit-preact-tooltip-root.js"
+      },
+      "./preact/tooltip-trigger": {
+        "types": "./dist/prosekit-preact-tooltip-trigger.d.ts",
+        "import": "./dist/prosekit-preact-tooltip-trigger.js",
+        "default": "./dist/prosekit-preact-tooltip-trigger.js"
+      },
       "./react": {
         "types": "./dist/prosekit-react.d.ts",
         "import": "./dist/prosekit-react.js",
@@ -693,6 +741,21 @@
         "types": "./dist/prosekit-react-resizable-handle.d.ts",
         "import": "./dist/prosekit-react-resizable-handle.js",
         "default": "./dist/prosekit-react-resizable-handle.js"
+      },
+      "./react/tooltip-content": {
+        "types": "./dist/prosekit-react-tooltip-content.d.ts",
+        "import": "./dist/prosekit-react-tooltip-content.js",
+        "default": "./dist/prosekit-react-tooltip-content.js"
+      },
+      "./react/tooltip-root": {
+        "types": "./dist/prosekit-react-tooltip-root.d.ts",
+        "import": "./dist/prosekit-react-tooltip-root.js",
+        "default": "./dist/prosekit-react-tooltip-root.js"
+      },
+      "./react/tooltip-trigger": {
+        "types": "./dist/prosekit-react-tooltip-trigger.d.ts",
+        "import": "./dist/prosekit-react-tooltip-trigger.js",
+        "default": "./dist/prosekit-react-tooltip-trigger.js"
       },
       "./solid": {
         "types": "./dist/prosekit-solid.d.ts",
@@ -784,6 +847,21 @@
         "import": "./dist/prosekit-solid-resizable-handle.js",
         "default": "./dist/prosekit-solid-resizable-handle.js"
       },
+      "./solid/tooltip-content": {
+        "types": "./dist/prosekit-solid-tooltip-content.d.ts",
+        "import": "./dist/prosekit-solid-tooltip-content.js",
+        "default": "./dist/prosekit-solid-tooltip-content.js"
+      },
+      "./solid/tooltip-root": {
+        "types": "./dist/prosekit-solid-tooltip-root.d.ts",
+        "import": "./dist/prosekit-solid-tooltip-root.js",
+        "default": "./dist/prosekit-solid-tooltip-root.js"
+      },
+      "./solid/tooltip-trigger": {
+        "types": "./dist/prosekit-solid-tooltip-trigger.d.ts",
+        "import": "./dist/prosekit-solid-tooltip-trigger.js",
+        "default": "./dist/prosekit-solid-tooltip-trigger.js"
+      },
       "./svelte": {
         "types": "./dist/prosekit-svelte.d.ts",
         "import": "./dist/prosekit-svelte.js",
@@ -874,6 +952,21 @@
         "import": "./dist/prosekit-svelte-resizable-handle.js",
         "default": "./dist/prosekit-svelte-resizable-handle.js"
       },
+      "./svelte/tooltip-content": {
+        "types": "./dist/prosekit-svelte-tooltip-content.d.ts",
+        "import": "./dist/prosekit-svelte-tooltip-content.js",
+        "default": "./dist/prosekit-svelte-tooltip-content.js"
+      },
+      "./svelte/tooltip-root": {
+        "types": "./dist/prosekit-svelte-tooltip-root.d.ts",
+        "import": "./dist/prosekit-svelte-tooltip-root.js",
+        "default": "./dist/prosekit-svelte-tooltip-root.js"
+      },
+      "./svelte/tooltip-trigger": {
+        "types": "./dist/prosekit-svelte-tooltip-trigger.d.ts",
+        "import": "./dist/prosekit-svelte-tooltip-trigger.js",
+        "default": "./dist/prosekit-svelte-tooltip-trigger.js"
+      },
       "./vue": {
         "types": "./dist/prosekit-vue.d.ts",
         "import": "./dist/prosekit-vue.js",
@@ -963,6 +1056,21 @@
         "types": "./dist/prosekit-vue-resizable-handle.d.ts",
         "import": "./dist/prosekit-vue-resizable-handle.js",
         "default": "./dist/prosekit-vue-resizable-handle.js"
+      },
+      "./vue/tooltip-content": {
+        "types": "./dist/prosekit-vue-tooltip-content.d.ts",
+        "import": "./dist/prosekit-vue-tooltip-content.js",
+        "default": "./dist/prosekit-vue-tooltip-content.js"
+      },
+      "./vue/tooltip-root": {
+        "types": "./dist/prosekit-vue-tooltip-root.d.ts",
+        "import": "./dist/prosekit-vue-tooltip-root.js",
+        "default": "./dist/prosekit-vue-tooltip-root.js"
+      },
+      "./vue/tooltip-trigger": {
+        "types": "./dist/prosekit-vue-tooltip-trigger.d.ts",
+        "import": "./dist/prosekit-vue-tooltip-trigger.js",
+        "default": "./dist/prosekit-vue-tooltip-trigger.js"
       }
     },
     "main": "./dist/prosekit.js",
@@ -1096,6 +1204,15 @@
         "lit/resizable-handle": [
           "./dist/prosekit-lit-resizable-handle.d.ts"
         ],
+        "lit/tooltip-content": [
+          "./dist/prosekit-lit-tooltip-content.d.ts"
+        ],
+        "lit/tooltip-root": [
+          "./dist/prosekit-lit-tooltip-root.d.ts"
+        ],
+        "lit/tooltip-trigger": [
+          "./dist/prosekit-lit-tooltip-trigger.d.ts"
+        ],
         "pm": [
           "./dist/prosekit-pm.d.ts"
         ],
@@ -1177,6 +1294,15 @@
         "preact/resizable-handle": [
           "./dist/prosekit-preact-resizable-handle.d.ts"
         ],
+        "preact/tooltip-content": [
+          "./dist/prosekit-preact-tooltip-content.d.ts"
+        ],
+        "preact/tooltip-root": [
+          "./dist/prosekit-preact-tooltip-root.d.ts"
+        ],
+        "preact/tooltip-trigger": [
+          "./dist/prosekit-preact-tooltip-trigger.d.ts"
+        ],
         "react": [
           "./dist/prosekit-react.d.ts"
         ],
@@ -1230,6 +1356,15 @@
         ],
         "react/resizable-handle": [
           "./dist/prosekit-react-resizable-handle.d.ts"
+        ],
+        "react/tooltip-content": [
+          "./dist/prosekit-react-tooltip-content.d.ts"
+        ],
+        "react/tooltip-root": [
+          "./dist/prosekit-react-tooltip-root.d.ts"
+        ],
+        "react/tooltip-trigger": [
+          "./dist/prosekit-react-tooltip-trigger.d.ts"
         ],
         "solid": [
           "./dist/prosekit-solid.d.ts"
@@ -1285,6 +1420,15 @@
         "solid/resizable-handle": [
           "./dist/prosekit-solid-resizable-handle.d.ts"
         ],
+        "solid/tooltip-content": [
+          "./dist/prosekit-solid-tooltip-content.d.ts"
+        ],
+        "solid/tooltip-root": [
+          "./dist/prosekit-solid-tooltip-root.d.ts"
+        ],
+        "solid/tooltip-trigger": [
+          "./dist/prosekit-solid-tooltip-trigger.d.ts"
+        ],
         "svelte": [
           "./dist/prosekit-svelte.d.ts"
         ],
@@ -1339,6 +1483,15 @@
         "svelte/resizable-handle": [
           "./dist/prosekit-svelte-resizable-handle.d.ts"
         ],
+        "svelte/tooltip-content": [
+          "./dist/prosekit-svelte-tooltip-content.d.ts"
+        ],
+        "svelte/tooltip-root": [
+          "./dist/prosekit-svelte-tooltip-root.d.ts"
+        ],
+        "svelte/tooltip-trigger": [
+          "./dist/prosekit-svelte-tooltip-trigger.d.ts"
+        ],
         "vue": [
           "./dist/prosekit-vue.d.ts"
         ],
@@ -1392,6 +1545,15 @@
         ],
         "vue/resizable-handle": [
           "./dist/prosekit-vue-resizable-handle.d.ts"
+        ],
+        "vue/tooltip-content": [
+          "./dist/prosekit-vue-tooltip-content.d.ts"
+        ],
+        "vue/tooltip-root": [
+          "./dist/prosekit-vue-tooltip-root.d.ts"
+        ],
+        "vue/tooltip-trigger": [
+          "./dist/prosekit-vue-tooltip-trigger.d.ts"
         ]
       }
     }

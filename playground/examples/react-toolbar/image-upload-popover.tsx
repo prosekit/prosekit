@@ -8,8 +8,10 @@ import type { EditorExtension } from './extension'
 import Toggle from './toggle'
 
 export const ImageUploadPopover: FC<{
+  tooltip: string
+  disabled: boolean
   children: ReactNode
-}> = ({ children }) => {
+}> = ({ tooltip, disabled, children }) => {
   const [open, setOpen] = useState(false)
   const [webUrl, setWebUrl] = useState('')
   const [objectUrl, setObjectUrl] = useState('')
@@ -65,13 +67,11 @@ export const ImageUploadPopover: FC<{
 
   return (
     <PopoverRoot open={open} onOpenChange={handleOpenChange}>
-      <Toggle
-        as={PopoverTrigger}
-        pressed={open}
-        disabled={!editor.commands.insertImage.canApply()}
-      >
-        {children}
-      </Toggle>
+      <PopoverTrigger>
+        <Toggle pressed={open} disabled={disabled} tooltip={tooltip}>
+          {children}
+        </Toggle>
+      </PopoverTrigger>
 
       <PopoverContent className="IMAGE_UPLOAD_CARD">
         {objectUrl ? null : (

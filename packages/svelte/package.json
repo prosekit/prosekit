@@ -46,22 +46,6 @@
       "svelte": "./src/components/block-popover.gen.ts",
       "default": "./src/components/block-popover.gen.ts"
     },
-    "./combo-box": {
-      "svelte": "./src/components/combo-box.gen.ts",
-      "default": "./src/components/combo-box.gen.ts"
-    },
-    "./combo-box-input": {
-      "svelte": "./src/components/combo-box-input.gen.ts",
-      "default": "./src/components/combo-box-input.gen.ts"
-    },
-    "./combo-box-item": {
-      "svelte": "./src/components/combo-box-item.gen.ts",
-      "default": "./src/components/combo-box-item.gen.ts"
-    },
-    "./combo-box-list": {
-      "svelte": "./src/components/combo-box-list.gen.ts",
-      "default": "./src/components/combo-box-list.gen.ts"
-    },
     "./drag-handle": {
       "svelte": "./src/components/drag-handle.gen.ts",
       "default": "./src/components/drag-handle.gen.ts"
@@ -174,30 +158,6 @@
         "import": "./dist/prosekit-svelte-block-popover.js",
         "default": "./dist/prosekit-svelte-block-popover.js"
       },
-      "./combo-box": {
-        "types": "./dist/prosekit-svelte-combo-box.d.ts",
-        "svelte": "./dist/prosekit-svelte-combo-box.js",
-        "import": "./dist/prosekit-svelte-combo-box.js",
-        "default": "./dist/prosekit-svelte-combo-box.js"
-      },
-      "./combo-box-input": {
-        "types": "./dist/prosekit-svelte-combo-box-input.d.ts",
-        "svelte": "./dist/prosekit-svelte-combo-box-input.js",
-        "import": "./dist/prosekit-svelte-combo-box-input.js",
-        "default": "./dist/prosekit-svelte-combo-box-input.js"
-      },
-      "./combo-box-item": {
-        "types": "./dist/prosekit-svelte-combo-box-item.d.ts",
-        "svelte": "./dist/prosekit-svelte-combo-box-item.js",
-        "import": "./dist/prosekit-svelte-combo-box-item.js",
-        "default": "./dist/prosekit-svelte-combo-box-item.js"
-      },
-      "./combo-box-list": {
-        "types": "./dist/prosekit-svelte-combo-box-list.d.ts",
-        "svelte": "./dist/prosekit-svelte-combo-box-list.js",
-        "import": "./dist/prosekit-svelte-combo-box-list.js",
-        "default": "./dist/prosekit-svelte-combo-box-list.js"
-      },
       "./drag-handle": {
         "types": "./dist/prosekit-svelte-drag-handle.d.ts",
         "svelte": "./dist/prosekit-svelte-drag-handle.js",
@@ -287,18 +247,6 @@
         ],
         "block-popover": [
           "./dist/prosekit-svelte-block-popover.d.ts"
-        ],
-        "combo-box": [
-          "./dist/prosekit-svelte-combo-box.d.ts"
-        ],
-        "combo-box-input": [
-          "./dist/prosekit-svelte-combo-box-input.d.ts"
-        ],
-        "combo-box-item": [
-          "./dist/prosekit-svelte-combo-box-item.d.ts"
-        ],
-        "combo-box-list": [
-          "./dist/prosekit-svelte-combo-box-list.d.ts"
         ],
         "drag-handle": [
           "./dist/prosekit-svelte-drag-handle.d.ts"

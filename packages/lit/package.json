@@ -31,10 +31,6 @@
     "./autocomplete-list": "./src/components/autocomplete-list/index.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover/index.ts",
     "./block-popover": "./src/components/block-popover/index.ts",
-    "./combo-box": "./src/components/combo-box/index.ts",
-    "./combo-box-input": "./src/components/combo-box-input/index.ts",
-    "./combo-box-item": "./src/components/combo-box-item/index.ts",
-    "./combo-box-list": "./src/components/combo-box-list/index.ts",
     "./drag-handle": "./src/components/drag-handle/index.ts",
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover": "./src/components/popover/index.ts",
@@ -106,26 +102,6 @@
         "types": "./dist/prosekit-lit-block-popover.d.ts",
         "import": "./dist/prosekit-lit-block-popover.js",
         "default": "./dist/prosekit-lit-block-popover.js"
-      },
-      "./combo-box": {
-        "types": "./dist/prosekit-lit-combo-box.d.ts",
-        "import": "./dist/prosekit-lit-combo-box.js",
-        "default": "./dist/prosekit-lit-combo-box.js"
-      },
-      "./combo-box-input": {
-        "types": "./dist/prosekit-lit-combo-box-input.d.ts",
-        "import": "./dist/prosekit-lit-combo-box-input.js",
-        "default": "./dist/prosekit-lit-combo-box-input.js"
-      },
-      "./combo-box-item": {
-        "types": "./dist/prosekit-lit-combo-box-item.d.ts",
-        "import": "./dist/prosekit-lit-combo-box-item.js",
-        "default": "./dist/prosekit-lit-combo-box-item.js"
-      },
-      "./combo-box-list": {
-        "types": "./dist/prosekit-lit-combo-box-list.d.ts",
-        "import": "./dist/prosekit-lit-combo-box-list.js",
-        "default": "./dist/prosekit-lit-combo-box-list.js"
       },
       "./drag-handle": {
         "types": "./dist/prosekit-lit-drag-handle.d.ts",
@@ -205,18 +181,6 @@
         ],
         "block-popover": [
           "./dist/prosekit-lit-block-popover.d.ts"
-        ],
-        "combo-box": [
-          "./dist/prosekit-lit-combo-box.d.ts"
-        ],
-        "combo-box-input": [
-          "./dist/prosekit-lit-combo-box-input.d.ts"
-        ],
-        "combo-box-item": [
-          "./dist/prosekit-lit-combo-box-item.d.ts"
-        ],
-        "combo-box-list": [
-          "./dist/prosekit-lit-combo-box-list.d.ts"
         ],
         "drag-handle": [
           "./dist/prosekit-lit-drag-handle.d.ts"

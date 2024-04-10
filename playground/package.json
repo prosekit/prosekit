@@ -36,7 +36,7 @@
     "remark-stringify": "^11.0.0",
     "solid-js": "^1.8.16",
     "svelte": "^4.2.12",
-    "typescript": "^5.4.3",
+    "typescript": "^5.4.4",
     "unified": "^11.0.4",
     "unocss": "^0.58.9",
     "unocss-preset-animations": "^1.0.2",

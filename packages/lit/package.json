@@ -30,7 +30,9 @@
     "./autocomplete-item": "./src/components/autocomplete-item/index.ts",
     "./autocomplete-list": "./src/components/autocomplete-list/index.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover/index.ts",
+    "./block-drag-handle": "./src/components/block-drag-handle/index.ts",
     "./block-popover": "./src/components/block-popover/index.ts",
+    "./block-positioner": "./src/components/block-positioner/index.ts",
     "./drag-handle": "./src/components/drag-handle/index.ts",
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover": "./src/components/popover/index.ts",
@@ -51,9 +53,11 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@aria-ui/core": "^0.0.9",
-    "@aria-ui/popover": "^0.0.8",
-    "@aria-ui/tooltip": "^0.0.10",
+    "@aria-ui/core": "^0.0.10",
+    "@aria-ui/overlay": "^0.0.10",
+    "@aria-ui/popover": "^0.0.9",
+    "@aria-ui/presence": "^0.0.5",
+    "@aria-ui/tooltip": "^0.0.11",
     "@floating-ui/dom": "^1.6.3",
     "@lit/context": "^1.1.0",
     "@prosekit/core": "^0.4.0",
@@ -98,10 +102,20 @@
         "import": "./dist/prosekit-lit-autocomplete-popover.js",
         "default": "./dist/prosekit-lit-autocomplete-popover.js"
       },
+      "./block-drag-handle": {
+        "types": "./dist/prosekit-lit-block-drag-handle.d.ts",
+        "import": "./dist/prosekit-lit-block-drag-handle.js",
+        "default": "./dist/prosekit-lit-block-drag-handle.js"
+      },
       "./block-popover": {
         "types": "./dist/prosekit-lit-block-popover.d.ts",
         "import": "./dist/prosekit-lit-block-popover.js",
         "default": "./dist/prosekit-lit-block-popover.js"
+      },
+      "./block-positioner": {
+        "types": "./dist/prosekit-lit-block-positioner.d.ts",
+        "import": "./dist/prosekit-lit-block-positioner.js",
+        "default": "./dist/prosekit-lit-block-positioner.js"
       },
       "./drag-handle": {
         "types": "./dist/prosekit-lit-drag-handle.d.ts",
@@ -179,8 +193,14 @@
         "autocomplete-popover": [
           "./dist/prosekit-lit-autocomplete-popover.d.ts"
         ],
+        "block-drag-handle": [
+          "./dist/prosekit-lit-block-drag-handle.d.ts"
+        ],
         "block-popover": [
           "./dist/prosekit-lit-block-popover.d.ts"
+        ],
+        "block-positioner": [
+          "./dist/prosekit-lit-block-positioner.d.ts"
         ],
         "drag-handle": [
           "./dist/prosekit-lit-drag-handle.d.ts"

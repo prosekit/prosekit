@@ -21,6 +21,9 @@ export interface BlockPopoverProps {
   editor: Editor
 }
 
+/**
+ * @deprecated Please use BlockPositioner instead.
+ */
 export class BlockPopover extends Popover {
   /**
    * @hidden

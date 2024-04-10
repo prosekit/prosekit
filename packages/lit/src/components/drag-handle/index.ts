@@ -15,6 +15,9 @@ export interface DragHandleProps {
   editor: Editor
 }
 
+/**
+ * @deprecated Please use BlockDragHandle instead.
+ */
 export class DragHandle extends LightElement {
   /**
    * @hidden

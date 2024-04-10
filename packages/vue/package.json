@@ -30,7 +30,9 @@
     "./autocomplete-item": "./src/components/autocomplete-item.ts",
     "./autocomplete-list": "./src/components/autocomplete-list.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
+    "./block-drag-handle": "./src/components/block-drag-handle.gen.ts",
     "./block-popover": "./src/components/block-popover.gen.ts",
+    "./block-positioner": "./src/components/block-positioner.gen.ts",
     "./drag-handle": "./src/components/drag-handle.gen.ts",
     "./inline-popover": "./src/components/inline-popover.ts",
     "./popover": "./src/components/popover.gen.ts",
@@ -98,10 +100,20 @@
         "import": "./dist/prosekit-vue-autocomplete-popover.js",
         "default": "./dist/prosekit-vue-autocomplete-popover.js"
       },
+      "./block-drag-handle": {
+        "types": "./dist/prosekit-vue-block-drag-handle.d.ts",
+        "import": "./dist/prosekit-vue-block-drag-handle.js",
+        "default": "./dist/prosekit-vue-block-drag-handle.js"
+      },
       "./block-popover": {
         "types": "./dist/prosekit-vue-block-popover.d.ts",
         "import": "./dist/prosekit-vue-block-popover.js",
         "default": "./dist/prosekit-vue-block-popover.js"
+      },
+      "./block-positioner": {
+        "types": "./dist/prosekit-vue-block-positioner.d.ts",
+        "import": "./dist/prosekit-vue-block-positioner.js",
+        "default": "./dist/prosekit-vue-block-positioner.js"
       },
       "./drag-handle": {
         "types": "./dist/prosekit-vue-drag-handle.d.ts",
@@ -179,8 +191,14 @@
         "autocomplete-popover": [
           "./dist/prosekit-vue-autocomplete-popover.d.ts"
         ],
+        "block-drag-handle": [
+          "./dist/prosekit-vue-block-drag-handle.d.ts"
+        ],
         "block-popover": [
           "./dist/prosekit-vue-block-popover.d.ts"
+        ],
+        "block-positioner": [
+          "./dist/prosekit-vue-block-positioner.d.ts"
         ],
         "drag-handle": [
           "./dist/prosekit-vue-drag-handle.d.ts"

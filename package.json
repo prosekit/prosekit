@@ -45,6 +45,7 @@
     "turbo": "^1.13.0",
     "typescript": "^5.4.3",
     "unocss": "^0.58.9",
+    "unocss-preset-animations": "^1.0.2",
     "vitest": "^1.4.0"
   },
   "pnpm": {

@@ -42,9 +42,17 @@
       "svelte": "./src/components/autocomplete-popover.ts",
       "default": "./src/components/autocomplete-popover.ts"
     },
+    "./block-drag-handle": {
+      "svelte": "./src/components/block-drag-handle.gen.ts",
+      "default": "./src/components/block-drag-handle.gen.ts"
+    },
     "./block-popover": {
       "svelte": "./src/components/block-popover.gen.ts",
       "default": "./src/components/block-popover.gen.ts"
+    },
+    "./block-positioner": {
+      "svelte": "./src/components/block-positioner.gen.ts",
+      "default": "./src/components/block-positioner.gen.ts"
     },
     "./drag-handle": {
       "svelte": "./src/components/drag-handle.gen.ts",
@@ -152,11 +160,23 @@
         "import": "./dist/prosekit-svelte-autocomplete-popover.js",
         "default": "./dist/prosekit-svelte-autocomplete-popover.js"
       },
+      "./block-drag-handle": {
+        "types": "./dist/prosekit-svelte-block-drag-handle.d.ts",
+        "svelte": "./dist/prosekit-svelte-block-drag-handle.js",
+        "import": "./dist/prosekit-svelte-block-drag-handle.js",
+        "default": "./dist/prosekit-svelte-block-drag-handle.js"
+      },
       "./block-popover": {
         "types": "./dist/prosekit-svelte-block-popover.d.ts",
         "svelte": "./dist/prosekit-svelte-block-popover.js",
         "import": "./dist/prosekit-svelte-block-popover.js",
         "default": "./dist/prosekit-svelte-block-popover.js"
+      },
+      "./block-positioner": {
+        "types": "./dist/prosekit-svelte-block-positioner.d.ts",
+        "svelte": "./dist/prosekit-svelte-block-positioner.js",
+        "import": "./dist/prosekit-svelte-block-positioner.js",
+        "default": "./dist/prosekit-svelte-block-positioner.js"
       },
       "./drag-handle": {
         "types": "./dist/prosekit-svelte-drag-handle.d.ts",
@@ -245,8 +265,14 @@
         "autocomplete-popover": [
           "./dist/prosekit-svelte-autocomplete-popover.d.ts"
         ],
+        "block-drag-handle": [
+          "./dist/prosekit-svelte-block-drag-handle.d.ts"
+        ],
         "block-popover": [
           "./dist/prosekit-svelte-block-popover.d.ts"
+        ],
+        "block-positioner": [
+          "./dist/prosekit-svelte-block-positioner.d.ts"
         ],
         "drag-handle": [
           "./dist/prosekit-svelte-drag-handle.d.ts"

@@ -4,15 +4,15 @@
 
 ## defineList()
 
-> **defineList**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineList**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.dedentList` | [`DedentListOptions`] | createDedentListCommand |
 > | `COMMAND_ARGS.indentList` | [`IndentListOptions`] | createIndentListCommand |
 > | `COMMAND_ARGS.insertList` | [`ListAttributes`] | - |
@@ -31,15 +31,15 @@
 
 ## defineListCommands()
 
-> **defineListCommands**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineListCommands**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.dedentList` | [`DedentListOptions`] | createDedentListCommand |
 > | `COMMAND_ARGS.indentList` | [`IndentListOptions`] | createIndentListCommand |
 > | `COMMAND_ARGS.insertList` | [`ListAttributes`] | - |
@@ -95,11 +95,11 @@ Returns a extension that adds key bindings for list.
 
 ## defineListSpec()
 
-> **defineListSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineListSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

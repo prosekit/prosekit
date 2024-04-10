@@ -4,17 +4,17 @@
 
 ## defineTable()
 
-> **defineTable**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineTable**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.exitTable` | [] | - |
-> | `COMMAND_ARGS.insertTable` | [`Object`] | - |
+> | `COMMAND_ARGS.insertTable` | [`object`] | - |
 > | `NODES` | `"table"` \| `"tableRow"` \| `"tableCell"` \| `"tableHeaderCell"` | - |
 >
 
@@ -24,11 +24,11 @@
 
 ## defineTableCellSpec()
 
-> **defineTableCellSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineTableCellSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |
@@ -41,19 +41,19 @@
 
 ## defineTableCommands()
 
-> **defineTableCommands**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineTableCommands**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 Adds commands for working with `table` nodes.
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.exitTable` | [] | - |
-> | `COMMAND_ARGS.insertTable` | [`Object`] | - |
+> | `COMMAND_ARGS.insertTable` | [`object`] | - |
 >
 
 ***
@@ -62,11 +62,11 @@ Adds commands for working with `table` nodes.
 
 ## defineTableHeaderCellSpec()
 
-> **defineTableHeaderCellSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineTableHeaderCellSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |
@@ -91,11 +91,11 @@ Adds commands for working with `table` nodes.
 
 ## defineTableRowSpec()
 
-> **defineTableRowSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineTableRowSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |
@@ -108,11 +108,11 @@ Adds commands for working with `table` nodes.
 
 ## defineTableSpec()
 
-> **defineTableSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineTableSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

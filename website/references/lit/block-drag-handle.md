@@ -94,7 +94,7 @@ null
 
 ## defaultBlockDragHandleProps
 
-> **`const`** **defaultBlockDragHandleProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`Object`\>
+> **`const`** **defaultBlockDragHandleProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`object`\>
 
 ### Type declaration
 

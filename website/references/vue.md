@@ -309,7 +309,7 @@ The name of the node type.
 
 ## ProseKit
 
-> **`const`** **ProseKit**: `DefineSetupFnComponent`\<[`ProseKitProps`](vue.md#ProseKitProps), `Object`, `Object`, [`ProseKitProps`](vue.md#ProseKitProps) & `Object`, `PublicProps`\>
+> **`const`** **ProseKit**: `DefineSetupFnComponent`\<[`ProseKitProps`](vue.md#ProseKitProps), `object`, `object`, [`ProseKitProps`](vue.md#ProseKitProps) & `object`, `PublicProps`\>
 
 The root component for a ProseKit editor.
 

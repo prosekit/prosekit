@@ -4,15 +4,15 @@
 
 ## defineStrike()
 
-> **defineStrike**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineStrike**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.toggleStrike` | [] | - |
 > | `MARKS` | `"strike"` | - |
 >
@@ -23,15 +23,15 @@
 
 ## defineStrikeCommands()
 
-> **defineStrikeCommands**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineStrikeCommands**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.toggleStrike` | [] | - |
 >
 
@@ -53,11 +53,11 @@
 
 ## defineStrikeSpec()
 
-> **defineStrikeSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineStrikeSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

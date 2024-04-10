@@ -4,15 +4,15 @@
 
 ## defineCode()
 
-> **defineCode**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineCode**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.toggleCode` | [] | - |
 > | `MARKS` | `"code"` | - |
 >
@@ -23,15 +23,15 @@
 
 ## defineCodeCommands()
 
-> **defineCodeCommands**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineCodeCommands**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.toggleCode` | [] | - |
 >
 
@@ -41,11 +41,11 @@
 
 ## defineCodeSpec()
 
-> **defineCodeSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineCodeSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

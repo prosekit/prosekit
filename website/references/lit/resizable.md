@@ -38,7 +38,7 @@
 
 #### onSizeChange()?
 
-> **`optional`** **onSizeChange**: (`size`) => `void` \| `Object`
+> **`optional`** **onSizeChange**: (`size`) => `void` \| `object`
 
 ##### Parameters
 
@@ -50,7 +50,7 @@
 
 ##### Returns
 
-`void` \| `Object`
+`void` \| `object`
 
 ##### Implementation of
 
@@ -140,7 +140,7 @@
 
 #### onSizeChange()?
 
-> **`optional`** **onSizeChange**: (`size`) => `void` \| `Object`
+> **`optional`** **onSizeChange**: (`size`) => `void` \| `object`
 
 ##### Parameters
 
@@ -152,7 +152,7 @@
 
 ##### Returns
 
-`void` \| `Object`
+`void` \| `object`
 
 <a id="onSizeChangeEnd-1" name="onSizeChangeEnd-1"></a>
 

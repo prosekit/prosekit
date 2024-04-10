@@ -896,7 +896,7 @@ The current selection.
 
 ## DOMDocumentOptions
 
-> **DOMDocumentOptions**: `Object`
+> **DOMDocumentOptions**: `object`
 
 ### Type declaration
 
@@ -937,7 +937,7 @@ behavior).
 
 ## DOMParserOptions
 
-> **DOMParserOptions**: `Object`
+> **DOMParserOptions**: `object`
 
 ### Type declaration
 
@@ -951,7 +951,7 @@ behavior).
 
 ## DOMSerializerOptions
 
-> **DOMSerializerOptions**: `Object`
+> **DOMSerializerOptions**: `object`
 
 ### Type declaration
 
@@ -1125,7 +1125,7 @@ Whether the editor has focus.
 
 ## JSONParserOptions
 
-> **JSONParserOptions**: `Object`
+> **JSONParserOptions**: `object`
 
 ### Type declaration
 
@@ -1425,25 +1425,25 @@ It is a re-export of [clsx/lite](https://www.npmjs.com/package/clsx) with strict
 
 ## defineBaseCommands()
 
-> **defineBaseCommands**(): [`Extension`](core.md#ExtensionT)\<`Object`\>
+> **defineBaseCommands**(): [`Extension`](core.md#ExtensionT)\<`object`\>
 
 Add some base commands
 
 ### Returns
 
-[`Extension`](core.md#ExtensionT)\<`Object`\>
+[`Extension`](core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` |
-> | `COMMAND_ARGS.addMark` | [`Object`] |
-> | `COMMAND_ARGS.insertNode` | [`Object` \| `Object`] |
-> | `COMMAND_ARGS.insertText` | [`Object`] |
-> | `COMMAND_ARGS.removeMark` | [`Object`] |
+> | `COMMAND_ARGS` | `object` |
+> | `COMMAND_ARGS.addMark` | [`object`] |
+> | `COMMAND_ARGS.insertNode` | [`object` \| `object`] |
+> | `COMMAND_ARGS.insertText` | [`object`] |
+> | `COMMAND_ARGS.removeMark` | [`object`] |
 > | `COMMAND_ARGS.selectAll` | [] |
-> | `COMMAND_ARGS.setBlockType` | [`Object`] |
-> | `COMMAND_ARGS.setNodeAttrs` | [`Object`] |
-> | `COMMAND_ARGS.wrap` | [`Object`] |
+> | `COMMAND_ARGS.setBlockType` | [`object`] |
+> | `COMMAND_ARGS.setNodeAttrs` | [`object`] |
+> | `COMMAND_ARGS.wrap` | [`object`] |
 >
 
 ***
@@ -1515,7 +1515,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn](https://p
 
 ## defineCommands()
 
-> **defineCommands**\<`T`\>(`commands`): [`Extension`](core.md#ExtensionT)\<`Object`\>
+> **defineCommands**\<`T`\>(`commands`): [`Extension`](core.md#ExtensionT)\<`object`\>
 
 ### Type parameters
 
@@ -1527,7 +1527,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn](https://p
 
 ### Returns
 
-[`Extension`](core.md#ExtensionT)\<`Object`\>
+[`Extension`](core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |
@@ -1580,11 +1580,11 @@ Register a new event handler for the given event type.
 
 ## defineDoc()
 
-> **defineDoc**(): [`Extension`](core.md#ExtensionT)\<`Object`\>
+> **defineDoc**(): [`Extension`](core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](core.md#ExtensionT)\<`Object`\>
+[`Extension`](core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |
@@ -1687,17 +1687,17 @@ Registers a event handler that is called when the editor gains or loses focus.
 
 ## defineHistory()
 
-> **defineHistory**(): [`Extension`](core.md#ExtensionT)\<`Object`\>
+> **defineHistory**(): [`Extension`](core.md#ExtensionT)\<`object`\>
 
 Add undo/redo history to the editor.
 
 ### Returns
 
-[`Extension`](core.md#ExtensionT)\<`Object`\>
+[`Extension`](core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.redo` | [] | - |
 > | `COMMAND_ARGS.undo` | [] | - |
 >
@@ -1776,7 +1776,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 
 ## defineMarkSpec()
 
-> **defineMarkSpec**\<`Mark`\>(`options`): [`Extension`](core.md#ExtensionT)\<`Object`\>
+> **defineMarkSpec**\<`Mark`\>(`options`): [`Extension`](core.md#ExtensionT)\<`object`\>
 
 ### Type parameters
 
@@ -1788,7 +1788,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 
 ### Returns
 
-[`Extension`](core.md#ExtensionT)\<`Object`\>
+[`Extension`](core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |
@@ -1837,7 +1837,7 @@ Defines an attribute for a node type.
 
 ## defineNodeSpec()
 
-> **defineNodeSpec**\<`NodeName`\>(`options`): [`Extension`](core.md#ExtensionT)\<`Object`\>
+> **defineNodeSpec**\<`NodeName`\>(`options`): [`Extension`](core.md#ExtensionT)\<`object`\>
 
 Defines a node type.
 
@@ -1851,7 +1851,7 @@ Defines a node type.
 
 ### Returns
 
-[`Extension`](core.md#ExtensionT)\<`Object`\>
+[`Extension`](core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |
@@ -1880,13 +1880,13 @@ Defines a node type.
 
 ## defineParagraph()
 
-> **defineParagraph**(): [`Extension`](core.md#ExtensionT)\<`Object`\>
+> **defineParagraph**(): [`Extension`](core.md#ExtensionT)\<`object`\>
 
 Defines a paragraph node spec as the highest priority, because it should be the default block node for most cases.
 
 ### Returns
 
-[`Extension`](core.md#ExtensionT)\<`Object`\>
+[`Extension`](core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |
@@ -1956,11 +1956,11 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleScrollToSelection]
 
 ## defineText()
 
-> **defineText**(): [`Extension`](core.md#ExtensionT)\<`Object`\>
+> **defineText**(): [`Extension`](core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](core.md#ExtensionT)\<`Object`\>
+[`Extension`](core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |
@@ -2172,7 +2172,7 @@ the given position.
 
 ### Parameters
 
-• **options**: `Object` \| `Object`
+• **options**: `object` \| `object`
 
 ### Returns
 

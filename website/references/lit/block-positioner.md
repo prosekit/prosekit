@@ -108,7 +108,7 @@ The placement of the block positioner, relative to the hovered block.
 
 ## defaultBlockPositionerProps
 
-> **`const`** **defaultBlockPositionerProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`Object`\>
+> **`const`** **defaultBlockPositionerProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`object`\>
 
 ### Type declaration
 

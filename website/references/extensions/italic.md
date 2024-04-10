@@ -4,15 +4,15 @@
 
 ## defineItalic()
 
-> **defineItalic**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineItalic**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.toggleItalic` | [] | - |
 > | `MARKS` | `"italic"` | - |
 >
@@ -23,15 +23,15 @@
 
 ## defineItalicCommands()
 
-> **defineItalicCommands**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineItalicCommands**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.toggleItalic` | [] | - |
 >
 
@@ -53,11 +53,11 @@
 
 ## defineItalicSpec()
 
-> **defineItalicSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineItalicSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

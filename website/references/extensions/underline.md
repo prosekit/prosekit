@@ -4,15 +4,15 @@
 
 ## defineUnderline()
 
-> **defineUnderline**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineUnderline**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.toggleUnderline` | [] | - |
 > | `MARKS` | `"underline"` | - |
 >
@@ -23,15 +23,15 @@
 
 ## defineUnderlineCommands()
 
-> **defineUnderlineCommands**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineUnderlineCommands**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.toggleUnderline` | [] | - |
 >
 
@@ -53,11 +53,11 @@
 
 ## defineUnderlineSpec()
 
-> **defineUnderlineSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineUnderlineSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

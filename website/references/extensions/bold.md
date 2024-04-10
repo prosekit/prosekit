@@ -4,15 +4,15 @@
 
 ## defineBold()
 
-> **defineBold**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineBold**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.toggleBold` | [] | - |
 > | `MARKS` | `"bold"` | - |
 >
@@ -23,15 +23,15 @@
 
 ## defineBoldCommands()
 
-> **defineBoldCommands**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineBoldCommands**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.toggleBold` | [] | - |
 >
 
@@ -53,11 +53,11 @@
 
 ## defineBoldSpec()
 
-> **defineBoldSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineBoldSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

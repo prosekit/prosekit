@@ -130,7 +130,7 @@ Use `prosekit-popover-root` instead.
 
 ## InlinePopoverProps
 
-> **InlinePopoverProps**: `Object` & [`PopoverProps`](popover.md#PopoverProps)
+> **InlinePopoverProps**: `object` & [`PopoverProps`](popover.md#PopoverProps)
 
 ### Type declaration
 

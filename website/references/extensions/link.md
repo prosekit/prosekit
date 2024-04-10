@@ -18,15 +18,15 @@
 
 ## defineLink()
 
-> **defineLink**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineLink**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.addLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | - |
 > | `COMMAND_ARGS.expandLink` | [] | - |
 > | `COMMAND_ARGS.removeLink` | [] | - |
@@ -40,15 +40,15 @@
 
 ## defineLinkCommands()
 
-> **defineLinkCommands**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineLinkCommands**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.addLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | - |
 > | `COMMAND_ARGS.expandLink` | [] | - |
 > | `COMMAND_ARGS.removeLink` | [] | - |
@@ -85,11 +85,11 @@
 
 ## defineLinkSpec()
 
-> **defineLinkSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineLinkSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

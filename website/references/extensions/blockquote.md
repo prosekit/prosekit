@@ -4,11 +4,11 @@
 
 ## defineBlockquote()
 
-> **defineBlockquote**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineBlockquote**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |
@@ -36,11 +36,11 @@ line followed by a space.
 
 ## defineBlockquoteSpec()
 
-> **defineBlockquoteSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineBlockquoteSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

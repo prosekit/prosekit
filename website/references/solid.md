@@ -43,7 +43,7 @@ T or a reactive/non-reactive function returning T
 
 ## ProseKitProps
 
-> **ProseKitProps**: `ParentProps`\<`Object`\>
+> **ProseKitProps**: `ParentProps`\<`object`\>
 
 ### Type declaration
 

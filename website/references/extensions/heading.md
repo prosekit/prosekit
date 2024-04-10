@@ -18,15 +18,15 @@
 
 ## defineHeading()
 
-> **defineHeading**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineHeading**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.insertHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
 > | `COMMAND_ARGS.setHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
 > | `COMMAND_ARGS.toggleHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
@@ -39,15 +39,15 @@
 
 ## defineHeadingCommands()
 
-> **defineHeadingCommands**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineHeadingCommands**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.insertHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
 > | `COMMAND_ARGS.setHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
 > | `COMMAND_ARGS.toggleHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
@@ -86,11 +86,11 @@ line followed by a space.
 
 ## defineHeadingSpec()
 
-> **defineHeadingSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineHeadingSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

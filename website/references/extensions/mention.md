@@ -30,15 +30,15 @@
 
 ## defineMention()
 
-> **defineMention**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineMention**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.insertMention` | [[`MentionAttrs`](mention.md#MentionAttrs)] | - |
 > | `NODES` | `"mention"` | - |
 >
@@ -49,15 +49,15 @@
 
 ## defineMentionCommands()
 
-> **defineMentionCommands**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineMentionCommands**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.insertMention` | [[`MentionAttrs`](mention.md#MentionAttrs)] | - |
 >
 
@@ -67,11 +67,11 @@
 
 ## defineMentionSpec()
 
-> **defineMentionSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineMentionSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

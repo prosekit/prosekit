@@ -36,7 +36,7 @@ The end position of the matched text.
 
 ## EnterRuleOptions
 
-> **EnterRuleOptions**: `Object`
+> **EnterRuleOptions**: `object`
 
 Options for [defineEnterRule](enter-rule.md#defineEnterRule).
 
@@ -54,7 +54,7 @@ Options for [defineEnterRule](enter-rule.md#defineEnterRule).
 
 ## TextBlockEnterRuleOptions
 
-> **TextBlockEnterRuleOptions**: `Object`
+> **TextBlockEnterRuleOptions**: `object`
 
 Options for [defineTextBlockEnterRule](enter-rule.md#defineTextBlockEnterRule).
 

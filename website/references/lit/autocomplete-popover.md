@@ -140,7 +140,7 @@ Use `prosekit-popover-root` instead.
 
 #### autoUpdate?
 
-> **`optional`** **autoUpdate**: `boolean` \| [`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`Object`\>
+> **`optional`** **autoUpdate**: `boolean` \| [`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`object`\>
 
 Options to activate auto-update listeners
 
@@ -225,7 +225,7 @@ false
 
 #### offset?
 
-> **`optional`** **offset**: `number` \| `Object`
+> **`optional`** **offset**: `number` \| `object`
 
 The distance between the reference and floating element.
 

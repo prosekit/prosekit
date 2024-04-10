@@ -30,7 +30,7 @@ An alias for the `Parser` type from the `prosemirror-highlight` package.
 
 ## defineCodeBlock()
 
-> **defineCodeBlock**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineCodeBlock**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 Adds `codeBlock` nodes to the editor. This includes the following extensions:
 
@@ -42,11 +42,11 @@ Adds `codeBlock` nodes to the editor. This includes the following extensions:
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.insertCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
 > | `COMMAND_ARGS.setCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
 > | `COMMAND_ARGS.setCodeBlockAttrs` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
@@ -60,17 +60,17 @@ Adds `codeBlock` nodes to the editor. This includes the following extensions:
 
 ## defineCodeBlockCommands()
 
-> **defineCodeBlockCommands**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineCodeBlockCommands**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 Adds commands for working with `codeBlock` nodes.
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
-> | `COMMAND_ARGS` | `Object` | - |
+> | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.insertCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
 > | `COMMAND_ARGS.setCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
 > | `COMMAND_ARGS.setCodeBlockAttrs` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
@@ -152,13 +152,13 @@ Adds syntax highlighting to code blocks using the [shiki](https://github.com/shi
 
 ## defineCodeBlockSpec()
 
-> **defineCodeBlockSpec**(): [`Extension`](../core.md#ExtensionT)\<`Object`\>
+> **defineCodeBlockSpec**(): [`Extension`](../core.md#ExtensionT)\<`object`\>
 
 Defines the `codeBlock` node spec.
 
 ### Returns
 
-[`Extension`](../core.md#ExtensionT)\<`Object`\>
+[`Extension`](../core.md#ExtensionT)\<`object`\>
 
 > | Member | Type |
 > | :------ | :------ |

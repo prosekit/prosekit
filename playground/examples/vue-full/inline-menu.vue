@@ -46,6 +46,7 @@ const handleLinkUpdate = (href?: string) => {
     <Toggle
       :pressed="editor.marks.bold.isActive()"
       :disabled="!editor.commands.toggleBold.canApply()"
+      tooltip="Bold"
       @click="() => editor.commands.toggleBold()"
     >
       <div class="ICON_BOLD"></div>
@@ -55,6 +56,7 @@ const handleLinkUpdate = (href?: string) => {
       :pressed="editor.marks.italic.isActive()"
       :disabled="!editor.commands.toggleItalic.canApply()"
       @click="() => editor.commands.toggleItalic()"
+      tooltip="Italic"
     >
       <div class="ICON_ITALIC"></div>
     </Toggle>
@@ -63,6 +65,7 @@ const handleLinkUpdate = (href?: string) => {
       :pressed="editor.marks.underline.isActive()"
       :disabled="!editor.commands.toggleUnderline.canApply()"
       @click="() => editor.commands.toggleUnderline()"
+      tooltip="Underline"
     >
       <div class="ICON_UNDERLINE"></div>
     </Toggle>
@@ -71,6 +74,7 @@ const handleLinkUpdate = (href?: string) => {
       :pressed="editor.marks.strike.isActive()"
       :disabled="!editor.commands.toggleStrike.canApply()"
       @click="() => editor.commands.toggleStrike()"
+      tooltip="Strike"
     >
       <div class="ICON_STRIKE"></div>
     </Toggle>
@@ -79,6 +83,7 @@ const handleLinkUpdate = (href?: string) => {
       :pressed="editor.marks.code.isActive()"
       :disabled="!editor.commands.toggleCode.canApply()"
       @click="() => editor.commands.toggleCode()"
+      tooltip="Code"
     >
       <div class="ICON_CODE"></div>
     </Toggle>
@@ -92,6 +97,7 @@ const handleLinkUpdate = (href?: string) => {
           toggleLinkMenuAvailable()
         }
       "
+      tooltip="Link"
     >
       <div class="ICON_LINK"></div>
     </Toggle>

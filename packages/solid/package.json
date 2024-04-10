@@ -69,7 +69,7 @@
     "@prosekit/dev": "*",
     "solid-js": "^1.8.16",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.3",
+    "typescript": "^5.4.4",
     "vitest": "^1.4.0"
   },
   "publishConfig": {

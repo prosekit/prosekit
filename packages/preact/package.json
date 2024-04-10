@@ -69,7 +69,7 @@
     "@prosekit/dev": "*",
     "preact": "^10.20.1",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.3",
+    "typescript": "^5.4.4",
     "vitest": "^1.4.0"
   },
   "publishConfig": {

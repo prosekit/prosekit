@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-import { basic, react, tsPlugin } from '@ocavue/eslint-config'
+import { basic, react } from '@ocavue/eslint-config'
 import unocss from '@unocss/eslint-config/flat'
 
 const configs = [
@@ -11,9 +11,6 @@ const configs = [
     files: ['packages/react/**/*.@(mts|cts|ts|mtsx|ctsx|tsx)'],
   })),
   {
-    plugins: {
-      '@typescript-eslint/': tsPlugin,
-    },
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unsafe-declaration-merging': 'off',
@@ -27,9 +24,6 @@ const configs = [
       'playground/**/*.ts',
       'playground/**/*.tsx',
     ],
-    plugins: {
-      '@typescript-eslint/': tsPlugin,
-    },
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unsafe-argument': 'off',

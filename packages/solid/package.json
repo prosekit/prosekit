@@ -30,7 +30,9 @@
     "./autocomplete-item": "./src/components/autocomplete-item.ts",
     "./autocomplete-list": "./src/components/autocomplete-list.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
+    "./block-drag-handle": "./src/components/block-drag-handle.gen.ts",
     "./block-popover": "./src/components/block-popover.gen.ts",
+    "./block-positioner": "./src/components/block-positioner.gen.ts",
     "./drag-handle": "./src/components/drag-handle.gen.ts",
     "./inline-popover": "./src/components/inline-popover.gen.ts",
     "./popover": "./src/components/popover.gen.ts",
@@ -97,10 +99,20 @@
         "import": "./dist/prosekit-solid-autocomplete-popover.js",
         "default": "./dist/prosekit-solid-autocomplete-popover.js"
       },
+      "./block-drag-handle": {
+        "types": "./dist/prosekit-solid-block-drag-handle.d.ts",
+        "import": "./dist/prosekit-solid-block-drag-handle.js",
+        "default": "./dist/prosekit-solid-block-drag-handle.js"
+      },
       "./block-popover": {
         "types": "./dist/prosekit-solid-block-popover.d.ts",
         "import": "./dist/prosekit-solid-block-popover.js",
         "default": "./dist/prosekit-solid-block-popover.js"
+      },
+      "./block-positioner": {
+        "types": "./dist/prosekit-solid-block-positioner.d.ts",
+        "import": "./dist/prosekit-solid-block-positioner.js",
+        "default": "./dist/prosekit-solid-block-positioner.js"
       },
       "./drag-handle": {
         "types": "./dist/prosekit-solid-drag-handle.d.ts",
@@ -178,8 +190,14 @@
         "autocomplete-popover": [
           "./dist/prosekit-solid-autocomplete-popover.d.ts"
         ],
+        "block-drag-handle": [
+          "./dist/prosekit-solid-block-drag-handle.d.ts"
+        ],
         "block-popover": [
           "./dist/prosekit-solid-block-popover.d.ts"
+        ],
+        "block-positioner": [
+          "./dist/prosekit-solid-block-positioner.d.ts"
         ],
         "drag-handle": [
           "./dist/prosekit-solid-drag-handle.d.ts"

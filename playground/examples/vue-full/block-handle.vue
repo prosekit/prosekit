@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { useEditor } from 'prosekit/vue'
-import { BlockPopover } from 'prosekit/vue/block-popover'
-import { DragHandle } from 'prosekit/vue/drag-handle'
+import { BlockPositioner } from 'prosekit/vue/block-positioner'
+import { BlockDragHandle } from 'prosekit/vue/block-drag-handle'
 
 const editor = useEditor()
 </script>
 
 <template>
-  <BlockPopover :editor="editor" class="BLOCK_HANDLE">
-    <DragHandle :editor="editor">
+  <BlockPositioner :editor="editor" class="BLOCK_HANDLE">
+    <BlockDragHandle :editor="editor">
       <div class="ICON_DRAG_HANDLE"></div>
-    </DragHandle>
-  </BlockPopover>
+    </BlockDragHandle>
+  </BlockPositioner>
 </template>

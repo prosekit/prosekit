@@ -52,15 +52,21 @@ const FLOATING_MENU = clsx(
   'z-10 box-border rounded-lg border border-border bg-background shadow-lg',
 )
 
-const POPOVER_ANIMATE = clsx(
+const PRESENCE_ANIMATE = clsx(
+  'will-change-transform',
+
   'data-[state=open]:animate-in',
   'data-[state=closed]:animate-out',
-  'data-[state=closed]:fade-out-0',
   'data-[state=open]:fade-in-0',
-  'data-[state=closed]:zoom-out-95',
+  'data-[state=closed]:fade-out-0',
   'data-[state=open]:zoom-in-95',
+  'data-[state=closed]:zoom-out-95',
   'data-[state=open]:animate-duration-150',
   'data-[state=closed]:animate-duration-200',
+)
+
+const POPOVER_ANIMATE = clsx(
+  PRESENCE_ANIMATE,
   'data-[side=bottom]:slide-in-from-top-2',
   'data-[side=bottom]:slide-out-to-top-2',
   'data-[side=left]:slide-in-from-right-2',
@@ -199,7 +205,8 @@ const staticShortcuts = {
   DROP_CURSOR: clsx('transition-all bg-blue-500'),
 
   BLOCK_HANDLE: clsx(
-    'flex items-center box-border justify-center my-[0.5em] h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 transition-colors',
+    'flex items-center box-border justify-center my-[0.5em] h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 transition',
+    PRESENCE_ANIMATE,
   ),
 
   TOOLTIP_TRIGGER: clsx('block'),

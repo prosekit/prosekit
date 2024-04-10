@@ -129,7 +129,7 @@ const staticShortcuts = {
   INLINE_MENU_MAIN: clsx(
     FLOATING_MENU,
 
-    'relative block min-w-[120px] space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
+    'relative flex min-w-[120px] space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
   ),
 
   INLINE_MENU_LINK: clsx(

@@ -150,7 +150,8 @@ const markSpecFacet = Facet.define<MarkSpecPayload, SchemaSpec>({
           const existingGetAttrs = rule.getAttrs
           const existingAttrs = rule.attrs
 
-          rule.getAttrs = (dom) => {
+          rule.getAttrs = (dom: HTMLElement | string) => {
+            // @ts-expect-error: the type here is too strict
             const attrs = existingGetAttrs?.(dom) ?? existingAttrs
 
             if (attrs === false || !dom || !isElement(dom)) {

@@ -9,7 +9,7 @@ import {
 import { Fragment, Slice } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
 
-import { blockPopoverContext } from '../block-positioner'
+import { blockPopoverContext } from '../block-popover'
 
 import { defaultBlockDragHandleProps, type BlockDragHandleProps } from './props'
 

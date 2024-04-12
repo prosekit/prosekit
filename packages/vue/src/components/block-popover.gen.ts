@@ -1,13 +1,13 @@
-import '@prosekit/lit/block-positioner'
+import '@prosekit/lit/block-popover'
 
-import { type BlockPositionerProps as BlockPositionerElementProps, propNames } from '@prosekit/lit/block-positioner'
+import { type BlockPopoverProps as BlockPopoverElementProps, propNames } from '@prosekit/lit/block-popover'
 import { defineComponent, h, type DefineSetupFnComponent } from 'vue'
 
 import type { PropsWithClass } from '../types'
 
-export type BlockPositionerProps = PropsWithClass<BlockPositionerElementProps>
+export type BlockPopoverProps = PropsWithClass<BlockPopoverElementProps>
 
-export const BlockPositioner: DefineSetupFnComponent<BlockPositionerProps> = defineComponent<BlockPositionerProps>(
+export const BlockPopover: DefineSetupFnComponent<BlockPopoverProps> = defineComponent<BlockPopoverProps>(
   (props, { slots }) => {
     return () => {
       const webComponentProps = Object.fromEntries(
@@ -15,7 +15,7 @@ export const BlockPositioner: DefineSetupFnComponent<BlockPositionerProps> = def
           .filter((entry) => entry[1] !== undefined)
           .map(([key, value]) => [(key === 'class' ? '' : '.') + key, value]),
       )
-      return h('prosekit-block-positioner', webComponentProps, slots.default?.())
+      return h('prosekit-block-popover', webComponentProps, slots.default?.())
     }
   }, 
   { props: ['class', ...propNames] }

@@ -46,9 +46,9 @@
       "svelte": "./src/components/block-drag-handle.gen.ts",
       "default": "./src/components/block-drag-handle.gen.ts"
     },
-    "./block-positioner": {
-      "svelte": "./src/components/block-positioner.gen.ts",
-      "default": "./src/components/block-positioner.gen.ts"
+    "./block-popover": {
+      "svelte": "./src/components/block-popover.gen.ts",
+      "default": "./src/components/block-popover.gen.ts"
     },
     "./inline-popover": {
       "svelte": "./src/components/inline-popover.gen.ts",
@@ -158,11 +158,11 @@
         "import": "./dist/prosekit-svelte-block-drag-handle.js",
         "default": "./dist/prosekit-svelte-block-drag-handle.js"
       },
-      "./block-positioner": {
-        "types": "./dist/prosekit-svelte-block-positioner.d.ts",
-        "svelte": "./dist/prosekit-svelte-block-positioner.js",
-        "import": "./dist/prosekit-svelte-block-positioner.js",
-        "default": "./dist/prosekit-svelte-block-positioner.js"
+      "./block-popover": {
+        "types": "./dist/prosekit-svelte-block-popover.d.ts",
+        "svelte": "./dist/prosekit-svelte-block-popover.js",
+        "import": "./dist/prosekit-svelte-block-popover.js",
+        "default": "./dist/prosekit-svelte-block-popover.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-svelte-inline-popover.d.ts",
@@ -248,8 +248,8 @@
         "block-drag-handle": [
           "./dist/prosekit-svelte-block-drag-handle.d.ts"
         ],
-        "block-positioner": [
-          "./dist/prosekit-svelte-block-positioner.d.ts"
+        "block-popover": [
+          "./dist/prosekit-svelte-block-popover.d.ts"
         ],
         "inline-popover": [
           "./dist/prosekit-svelte-inline-popover.d.ts"

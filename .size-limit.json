@@ -140,8 +140,8 @@
     "path": "packages/prosekit/dist/prosekit-lit-block-drag-handle.js"
   },
   {
-    "name": "prosekit/lit/block-positioner",
-    "path": "packages/prosekit/dist/prosekit-lit-block-positioner.js"
+    "name": "prosekit/lit/block-popover",
+    "path": "packages/prosekit/dist/prosekit-lit-block-popover.js"
   },
   {
     "name": "prosekit/lit/inline-popover",
@@ -266,8 +266,8 @@
     ]
   },
   {
-    "name": "prosekit/preact/block-positioner",
-    "path": "packages/prosekit/dist/prosekit-preact-block-positioner.js",
+    "name": "prosekit/preact/block-popover",
+    "path": "packages/prosekit/dist/prosekit-preact-block-popover.js",
     "ignore": [
       "preact"
     ]
@@ -391,8 +391,8 @@
     ]
   },
   {
-    "name": "prosekit/react/block-positioner",
-    "path": "packages/prosekit/dist/prosekit-react-block-positioner.js",
+    "name": "prosekit/react/block-popover",
+    "path": "packages/prosekit/dist/prosekit-react-block-popover.js",
     "ignore": [
       "react",
       "react-dom"
@@ -521,8 +521,8 @@
     ]
   },
   {
-    "name": "prosekit/solid/block-positioner",
-    "path": "packages/prosekit/dist/prosekit-solid-block-positioner.js",
+    "name": "prosekit/solid/block-popover",
+    "path": "packages/prosekit/dist/prosekit-solid-block-popover.js",
     "ignore": [
       "solid-js"
     ]
@@ -640,8 +640,8 @@
     ]
   },
   {
-    "name": "prosekit/vue/block-positioner",
-    "path": "packages/prosekit/dist/prosekit-vue-block-positioner.js",
+    "name": "prosekit/vue/block-popover",
+    "path": "packages/prosekit/dist/prosekit-vue-block-popover.js",
     "ignore": [
       "vue"
     ]

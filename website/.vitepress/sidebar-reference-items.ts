@@ -125,8 +125,8 @@ export const referenceItems = [
         "link": "/references/lit/block-drag-handle"
       },
       {
-        "text": "block-positioner",
-        "link": "/references/lit/block-positioner"
+        "text": "block-popover",
+        "link": "/references/lit/block-popover"
       },
       {
         "text": "inline-popover",
@@ -196,8 +196,8 @@ export const referenceItems = [
         "link": "/references/preact/block-drag-handle"
       },
       {
-        "text": "block-positioner",
-        "link": "/references/preact/block-positioner"
+        "text": "block-popover",
+        "link": "/references/preact/block-popover"
       },
       {
         "text": "inline-popover",
@@ -267,8 +267,8 @@ export const referenceItems = [
         "link": "/references/react/block-drag-handle"
       },
       {
-        "text": "block-positioner",
-        "link": "/references/react/block-positioner"
+        "text": "block-popover",
+        "link": "/references/react/block-popover"
       },
       {
         "text": "inline-popover",
@@ -338,8 +338,8 @@ export const referenceItems = [
         "link": "/references/solid/block-drag-handle"
       },
       {
-        "text": "block-positioner",
-        "link": "/references/solid/block-positioner"
+        "text": "block-popover",
+        "link": "/references/solid/block-popover"
       },
       {
         "text": "inline-popover",
@@ -409,8 +409,8 @@ export const referenceItems = [
         "link": "/references/svelte/block-drag-handle"
       },
       {
-        "text": "block-positioner",
-        "link": "/references/svelte/block-positioner"
+        "text": "block-popover",
+        "link": "/references/svelte/block-popover"
       },
       {
         "text": "inline-popover",
@@ -480,8 +480,8 @@ export const referenceItems = [
         "link": "/references/vue/block-drag-handle"
       },
       {
-        "text": "block-positioner",
-        "link": "/references/vue/block-positioner"
+        "text": "block-popover",
+        "link": "/references/vue/block-popover"
       },
       {
         "text": "inline-popover",

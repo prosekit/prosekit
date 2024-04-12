@@ -13,14 +13,13 @@ export interface InlinePopoverProps
   editor: Editor | null
 
   /**
-   * Whether the popover is available to be shown.
+   * Whether the popover is open.
    *
-   * If `true`, the popover will be shown when the editor selection is not empty.
-   * If `false`, the popover will always be hidden.
+   * Notice that the popover will be always hidden if the inline selection is empty.
    *
    * @default `true`
    */
-  available: boolean
+  open: boolean
 
   /**
    * A callback that is called when the popover's open state changes.
@@ -47,7 +46,7 @@ export interface InlinePopoverProps
 export const defaultInlinePopoverProps = Object.freeze({
   ...defaultOverlayPositionerProps,
   editor: null,
-  available: true,
+  open: true,
   onOpenChange: null,
 
   placement: 'top',

@@ -33,13 +33,13 @@ export function useInlinePopoverState(
   host: ConnectableElement,
   state: SingalState<InlinePopoverProps>,
 ) {
-  const { editor, available, onOpenChange, ...overlayState } = state
+  const { editor, open, onOpenChange, ...overlayState } = state
 
   const reference = useInlinePopoverReference(host, editor)
 
   useOverlayPositionerState(host, overlayState, { reference })
 
-  const presence = createComputed(() => !!reference.value && available.value)
+  const presence = createComputed(() => !!reference.value && open.value)
   useAttribute(host, 'data-state', () => (presence.value ? 'open' : 'closed'))
   usePresence(host, presence)
 

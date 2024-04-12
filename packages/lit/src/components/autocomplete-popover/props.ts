@@ -12,6 +12,13 @@ export interface AutocompletePopoverProps extends OverlayPositionerProps {
   editor: Editor | null
 
   /**
+   * The regular expression to match the text to autocomplete.
+   *
+   * @default null
+   */
+  regex: RegExp | null
+
+  /**
    * The placement of the popover, relative to the text cursor.
    *
    * @default "bottom-start"
@@ -34,6 +41,7 @@ export interface AutocompletePopoverProps extends OverlayPositionerProps {
 export const defaultAutocompletePopoverProps = Object.freeze({
   ...defaultOverlayPositionerProps,
   editor: null,
+  regex: null,
   placement: 'bottom-start',
   offset: 4,
   inline: true,

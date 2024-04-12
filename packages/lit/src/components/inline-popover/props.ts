@@ -3,7 +3,7 @@ import { defaultOverlayPositionerProps } from '@aria-ui/overlay'
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-export interface BlockPopoverProps
+export interface InlinePopoverProps
   extends Omit<OverlayPositionerProps, 'placement' | 'offset'> {
   /**
    * The ProseKit editor instance.
@@ -13,23 +13,23 @@ export interface BlockPopoverProps
   editor: Editor | null
 
   /**
-   * The placement of the popover, relative to the hovered block.
+   * The placement of the popover, relative to the selected inline content.
    *
    * @default "left-start"
    */
   placement: Placement
 
   /**
-   * The distance between the popover and the hovered block.
+   * The distance between the popover and the selected inline content.
    *
    * @default 4
    */
   offset: number
 }
 
-export const defaultBlockPopoverProps = Object.freeze({
+export const defaultInlinePopoverProps = Object.freeze({
   ...defaultOverlayPositionerProps,
   editor: null,
   placement: 'left-start',
   offset: 4,
-}) satisfies BlockPopoverProps
+}) satisfies InlinePopoverProps

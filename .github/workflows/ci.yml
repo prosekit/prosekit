@@ -112,7 +112,7 @@ jobs:
 
       - name: Deploy to Netlify
         id: deploy-1
-        uses: nwtgck/actions-netlify@v2.1
+        uses: nwtgck/actions-netlify@v3.0
         continue-on-error: true
         with:
           publish-dir: './website/dist'
@@ -139,7 +139,7 @@ jobs:
       - name: Deploy to Netlify (retry)
         id: deploy-2
         if: steps.deploy-1.outcome == 'failure'
-        uses: nwtgck/actions-netlify@v2.1
+        uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: './website/dist'
           production-branch: master

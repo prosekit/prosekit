@@ -12,7 +12,9 @@ import {
 import { useOverlayPositionerState } from '@aria-ui/overlay'
 import { usePresence } from '@aria-ui/presence'
 import type { VirtualElement } from '@floating-ui/dom'
-import type { Editor, Extension } from '@prosekit/core'
+import type { Editor } from '@prosekit/core'
+
+import { useEditorExtension } from '../../hooks/use-editor-extension'
 
 import { blockPopoverContext, type BlockPopoverContext } from './context'
 import {
@@ -76,15 +78,5 @@ function useHoverExtension(
     },
   )
 
-  useExtension(host, editor, extension)
-}
-
-function useExtension(
-  host: ConnectableElement,
-  editor: ReadonlySignal<Editor | null>,
-  extension: Extension,
-) {
-  useEffect(host, () => {
-    return editor.value?.use(extension)
-  })
+  useEditorExtension(host, editor, extension)
 }

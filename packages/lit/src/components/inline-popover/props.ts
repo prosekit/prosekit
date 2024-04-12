@@ -13,16 +13,26 @@ export interface InlinePopoverProps
   editor: Editor | null
 
   /**
+   * Whether the popover is available to be shown.
+   *
+   * If `true`, the popover will be shown when the editor selection is not empty.
+   * If `false`, the popover will always be hidden.
+   *
+   * @default `true`
+   */
+  available: boolean
+
+  /**
    * The placement of the popover, relative to the selected inline content.
    *
-   * @default "left-start"
+   * @default "top"
    */
   placement: Placement
 
   /**
    * The distance between the popover and the selected inline content.
    *
-   * @default 4
+   * @default 12
    */
   offset: number
 }
@@ -30,6 +40,13 @@ export interface InlinePopoverProps
 export const defaultInlinePopoverProps = Object.freeze({
   ...defaultOverlayPositionerProps,
   editor: null,
-  placement: 'left-start',
-  offset: 4,
+  placement: 'top',
+  offset: 12,
+  available: true,
+  flip: false,
+  hide: true,
+  shift: true,
+  overlap: true,
+  fitViewport: true,
+  inline: true,
 }) satisfies InlinePopoverProps

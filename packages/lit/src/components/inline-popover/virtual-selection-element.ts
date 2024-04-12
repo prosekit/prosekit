@@ -6,9 +6,9 @@ import { isInCodeBlock } from '../../utils/is-in-code-block'
 
 export function getVirtualSelectionElement(
   view: EditorView,
-): ReferenceElement | undefined {
+): ReferenceElement | null {
   if (typeof window === 'undefined' || view.isDestroyed) {
-    return
+    return null
   }
 
   const selection = view.state.selection
@@ -34,6 +34,8 @@ export function getVirtualSelectionElement(
       }
     }
   }
+
+  return null
 }
 
 function getDomRange() {

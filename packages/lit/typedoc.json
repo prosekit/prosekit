@@ -8,8 +8,6 @@
     "./src/components/autocomplete-popover/index.ts",
     "./src/components/block-drag-handle/index.ts",
     "./src/components/block-popover/index.ts",
-    "./src/components/block-positioner/index.ts",
-    "./src/components/drag-handle/index.ts",
     "./src/components/inline-popover/index.ts",
     "./src/components/popover-content/index.ts",
     "./src/components/popover-root/index.ts",

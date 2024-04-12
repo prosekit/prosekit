@@ -32,8 +32,6 @@
     "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
     "./block-drag-handle": "./src/components/block-drag-handle.gen.ts",
     "./block-popover": "./src/components/block-popover.gen.ts",
-    "./block-positioner": "./src/components/block-positioner.gen.ts",
-    "./drag-handle": "./src/components/drag-handle.gen.ts",
     "./inline-popover": "./src/components/inline-popover.gen.ts",
     "./popover": "./src/components/popover.gen.ts",
     "./popover-content": "./src/components/popover-content.gen.ts",
@@ -108,16 +106,6 @@
         "types": "./dist/prosekit-solid-block-popover.d.ts",
         "import": "./dist/prosekit-solid-block-popover.js",
         "default": "./dist/prosekit-solid-block-popover.js"
-      },
-      "./block-positioner": {
-        "types": "./dist/prosekit-solid-block-positioner.d.ts",
-        "import": "./dist/prosekit-solid-block-positioner.js",
-        "default": "./dist/prosekit-solid-block-positioner.js"
-      },
-      "./drag-handle": {
-        "types": "./dist/prosekit-solid-drag-handle.d.ts",
-        "import": "./dist/prosekit-solid-drag-handle.js",
-        "default": "./dist/prosekit-solid-drag-handle.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-solid-inline-popover.d.ts",
@@ -195,12 +183,6 @@
         ],
         "block-popover": [
           "./dist/prosekit-solid-block-popover.d.ts"
-        ],
-        "block-positioner": [
-          "./dist/prosekit-solid-block-positioner.d.ts"
-        ],
-        "drag-handle": [
-          "./dist/prosekit-solid-drag-handle.d.ts"
         ],
         "inline-popover": [
           "./dist/prosekit-solid-inline-popover.d.ts"

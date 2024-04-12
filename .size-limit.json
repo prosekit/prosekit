@@ -144,14 +144,6 @@
     "path": "packages/prosekit/dist/prosekit-lit-block-popover.js"
   },
   {
-    "name": "prosekit/lit/block-positioner",
-    "path": "packages/prosekit/dist/prosekit-lit-block-positioner.js"
-  },
-  {
-    "name": "prosekit/lit/drag-handle",
-    "path": "packages/prosekit/dist/prosekit-lit-drag-handle.js"
-  },
-  {
     "name": "prosekit/lit/inline-popover",
     "path": "packages/prosekit/dist/prosekit-lit-inline-popover.js"
   },
@@ -281,20 +273,6 @@
     ]
   },
   {
-    "name": "prosekit/preact/block-positioner",
-    "path": "packages/prosekit/dist/prosekit-preact-block-positioner.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/drag-handle",
-    "path": "packages/prosekit/dist/prosekit-preact-drag-handle.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
     "name": "prosekit/preact/inline-popover",
     "path": "packages/prosekit/dist/prosekit-preact-inline-popover.js",
     "ignore": [
@@ -415,22 +393,6 @@
   {
     "name": "prosekit/react/block-popover",
     "path": "packages/prosekit/dist/prosekit-react-block-popover.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/block-positioner",
-    "path": "packages/prosekit/dist/prosekit-react-block-positioner.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/drag-handle",
-    "path": "packages/prosekit/dist/prosekit-react-drag-handle.js",
     "ignore": [
       "react",
       "react-dom"
@@ -566,20 +528,6 @@
     ]
   },
   {
-    "name": "prosekit/solid/block-positioner",
-    "path": "packages/prosekit/dist/prosekit-solid-block-positioner.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/drag-handle",
-    "path": "packages/prosekit/dist/prosekit-solid-drag-handle.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
     "name": "prosekit/solid/inline-popover",
     "path": "packages/prosekit/dist/prosekit-solid-inline-popover.js",
     "ignore": [
@@ -694,20 +642,6 @@
   {
     "name": "prosekit/vue/block-popover",
     "path": "packages/prosekit/dist/prosekit-vue-block-popover.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/block-positioner",
-    "path": "packages/prosekit/dist/prosekit-vue-block-positioner.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/drag-handle",
-    "path": "packages/prosekit/dist/prosekit-vue-drag-handle.js",
     "ignore": [
       "vue"
     ]

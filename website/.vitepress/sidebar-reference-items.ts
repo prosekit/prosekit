@@ -129,14 +129,6 @@ export const referenceItems = [
         "link": "/references/lit/block-popover"
       },
       {
-        "text": "block-positioner",
-        "link": "/references/lit/block-positioner"
-      },
-      {
-        "text": "drag-handle",
-        "link": "/references/lit/drag-handle"
-      },
-      {
         "text": "inline-popover",
         "link": "/references/lit/inline-popover"
       },
@@ -206,14 +198,6 @@ export const referenceItems = [
       {
         "text": "block-popover",
         "link": "/references/preact/block-popover"
-      },
-      {
-        "text": "block-positioner",
-        "link": "/references/preact/block-positioner"
-      },
-      {
-        "text": "drag-handle",
-        "link": "/references/preact/drag-handle"
       },
       {
         "text": "inline-popover",
@@ -287,14 +271,6 @@ export const referenceItems = [
         "link": "/references/react/block-popover"
       },
       {
-        "text": "block-positioner",
-        "link": "/references/react/block-positioner"
-      },
-      {
-        "text": "drag-handle",
-        "link": "/references/react/drag-handle"
-      },
-      {
         "text": "inline-popover",
         "link": "/references/react/inline-popover"
       },
@@ -364,14 +340,6 @@ export const referenceItems = [
       {
         "text": "block-popover",
         "link": "/references/solid/block-popover"
-      },
-      {
-        "text": "block-positioner",
-        "link": "/references/solid/block-positioner"
-      },
-      {
-        "text": "drag-handle",
-        "link": "/references/solid/drag-handle"
       },
       {
         "text": "inline-popover",
@@ -445,14 +413,6 @@ export const referenceItems = [
         "link": "/references/svelte/block-popover"
       },
       {
-        "text": "block-positioner",
-        "link": "/references/svelte/block-positioner"
-      },
-      {
-        "text": "drag-handle",
-        "link": "/references/svelte/drag-handle"
-      },
-      {
         "text": "inline-popover",
         "link": "/references/svelte/inline-popover"
       },
@@ -522,14 +482,6 @@ export const referenceItems = [
       {
         "text": "block-popover",
         "link": "/references/vue/block-popover"
-      },
-      {
-        "text": "block-positioner",
-        "link": "/references/vue/block-positioner"
-      },
-      {
-        "text": "drag-handle",
-        "link": "/references/vue/drag-handle"
       },
       {
         "text": "inline-popover",

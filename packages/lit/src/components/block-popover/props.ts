@@ -3,7 +3,7 @@ import { defaultOverlayPositionerProps } from '@aria-ui/overlay'
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-export interface BlockPositionerProps
+export interface BlockPopoverProps
   extends Omit<OverlayPositionerProps, 'placement' | 'offset'> {
   /**
    * The ProseKit editor instance.
@@ -27,9 +27,9 @@ export interface BlockPositionerProps
   offset: number
 }
 
-export const defaultBlockPositionerProps = Object.freeze({
+export const defaultBlockPopoverProps = Object.freeze({
   ...defaultOverlayPositionerProps,
   editor: null,
   placement: 'left-start',
   offset: 4,
-}) satisfies BlockPositionerProps
+}) satisfies BlockPopoverProps

@@ -9,7 +9,7 @@ import {
 import { Fragment, Slice } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
 
-import { blockPositionerContext } from '../block-positioner'
+import { blockPopoverContext } from '../block-popover'
 
 import { defaultBlockDragHandleProps, type BlockDragHandleProps } from './props'
 
@@ -17,7 +17,7 @@ export function useBlockDragHandle(
   host: ConnectableElement,
   props?: Partial<BlockDragHandleProps>,
 ): SingalState<BlockDragHandleProps> {
-  const context = blockPositionerContext.consume(host)
+  const context = blockPopoverContext.consume(host)
 
   const state = mapSignals(assignProps(defaultBlockDragHandleProps, props))
 

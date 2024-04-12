@@ -14,28 +14,28 @@ import { usePresence } from '@aria-ui/presence'
 import type { VirtualElement } from '@floating-ui/dom'
 import type { Editor, Extension } from '@prosekit/core'
 
-import { blockPositionerContext, type BlockPositionerContext } from './context'
+import { blockPopoverContext, type BlockPopoverContext } from './context'
 import {
   defineElementHoverHandler,
   type ElementHoverHandler,
 } from './pointer-move'
-import { defaultBlockPositionerProps, type BlockPositionerProps } from './props'
+import { defaultBlockPopoverProps, type BlockPopoverProps } from './props'
 
-export function useBlockPositioner(
+export function useBlockPopover(
   host: ConnectableElement,
-  props?: Partial<BlockPositionerProps>,
-): SingalState<BlockPositionerProps> {
-  const state = mapSignals(assignProps(defaultBlockPositionerProps, props))
+  props?: Partial<BlockPopoverProps>,
+): SingalState<BlockPopoverProps> {
+  const state = mapSignals(assignProps(defaultBlockPopoverProps, props))
   const { editor, ...overlayState } = state
   const reference = createSignal<VirtualElement | null>(null)
   useOverlayPositionerState(host, overlayState, { reference })
 
-  const context = createSignal<BlockPositionerContext>({
+  const context = createSignal<BlockPopoverContext>({
     pos: null,
     node: null,
     element: null,
   })
-  blockPositionerContext.provide(host, context)
+  blockPopoverContext.provide(host, context)
 
   const open = createSignal(false)
 

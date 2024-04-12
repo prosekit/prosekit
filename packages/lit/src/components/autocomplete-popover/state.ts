@@ -1,9 +1,11 @@
 import {
+  assignProps,
+  createSignal,
+  mapSignals,
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
   type Signal,
-  createSignal,
   type SingalState,
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay'
@@ -18,7 +20,19 @@ import { useEditorExtension } from '../../hooks/use-editor-extension'
 
 import { onSubmitContext, queryContext } from './context-v2'
 import { defaultQueryBuilder } from './helpers'
-import type { AutocompletePopoverProps } from './props'
+import {
+  defaultAutocompletePopoverProps,
+  type AutocompletePopoverProps,
+} from './props'
+
+export function useAutocompletePopover(
+  host: ConnectableElement,
+  props?: Partial<AutocompletePopoverProps>,
+) {
+  const state = mapSignals(assignProps(defaultAutocompletePopoverProps, props))
+  useAutocompletePopoverState(host, state)
+  return state
+}
 
 export function useAutocompletePopoverState(
   host: ConnectableElement,

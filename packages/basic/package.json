@@ -46,8 +46,8 @@
     "postcss": "^8.4.38",
     "postcss-nesting": "^12.1.1",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.4",
-    "vitest": "^1.4.0"
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.0"
   },
   "publishConfig": {
     "exports": {

@@ -52,22 +52,17 @@ export interface InlinePopoverProps
   /**
    * @default true
    */
-  shift: OverlayPositionerProps['shift']
-
-  /**
-   * @default true
-   */
   overlap: OverlayPositionerProps['overlap']
 
   /**
    * @default true
    */
-  fitViewport: OverlayPositionerProps['fitViewport']
+  inline: OverlayPositionerProps['inline']
 
   /**
    * @default true
    */
-  inline: OverlayPositionerProps['inline']
+  hoist: OverlayPositionerProps['hoist']
 }
 
 export const defaultInlinePopoverProps = Object.freeze({
@@ -80,8 +75,7 @@ export const defaultInlinePopoverProps = Object.freeze({
   offset: 12,
   flip: true,
   hide: true,
-  shift: true,
   overlap: true,
-  fitViewport: true,
   inline: true,
+  hoist: true,
 }) satisfies InlinePopoverProps

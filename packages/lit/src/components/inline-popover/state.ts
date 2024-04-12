@@ -58,7 +58,7 @@ function useInlinePopoverReference(
     const isPopoverFocused =
       !editorFocused && host.contains(host.ownerDocument.activeElement)
 
-    if (!isPopoverFocused) {
+    if (isPopoverFocused) {
       return
     }
 

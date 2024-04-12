@@ -19,6 +19,6 @@ interface BlockPopover extends BlockPopoverProps {}
 
 defineProperties(BlockPopover, defaultBlockPopoverProps)
 
-defineCustomElement('prosekit-block-positioner', BlockPopover)
+defineCustomElement('prosekit-block-popover', BlockPopover)
 
 export { BlockPopover }

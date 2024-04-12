@@ -14,7 +14,7 @@ export interface BlockPopoverContext {
  * @internal
  */
 export const blockPopoverContext = createContext<BlockPopoverContext>(
-  'prosekit-block-positioner-context',
+  'prosekit-block-popover-context',
   {
     pos: null,
     node: null,

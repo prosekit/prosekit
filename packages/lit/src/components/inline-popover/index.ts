@@ -29,6 +29,7 @@ export type InlinePopoverProps = {
   available?: boolean
 } & PopoverProps
 
+// TODO: update
 export class InlinePopover
   extends Popover
   implements Partial<InlinePopoverProps>

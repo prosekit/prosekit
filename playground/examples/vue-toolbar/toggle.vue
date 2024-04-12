@@ -3,7 +3,6 @@ import { TooltipContent } from 'prosekit/vue/tooltip-content'
 import { TooltipRoot } from 'prosekit/vue/tooltip-root'
 import { TooltipTrigger } from 'prosekit/vue/tooltip-trigger'
 
-
 defineProps<{
   pressed: Boolean
   disabled?: Boolean

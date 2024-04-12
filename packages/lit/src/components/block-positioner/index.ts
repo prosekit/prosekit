@@ -1,14 +1,14 @@
 import {
-  defaultBlockPositionerProps,
-  type BlockPositionerProps as _BlockPositionerProps,
+  defaultBlockPopoverProps,
+  type BlockPopoverProps as _BlockPopoverProps,
 } from './props'
 
-export { blockPositionerContext, type BlockPositionerContext } from './context'
-export { BlockPositioner } from './element'
-export { defaultBlockPositionerProps } from './props'
+export { blockPopoverContext, type BlockPopoverContext } from './context'
+export { BlockPopover } from './element'
+export { defaultBlockPopoverProps } from './props'
 
-export const propNames = Object.keys(defaultBlockPositionerProps) as Array<
-  keyof BlockPositionerProps
+export const propNames = Object.keys(defaultBlockPopoverProps) as Array<
+  keyof BlockPopoverProps
 >
 
-export type BlockPositionerProps = Partial<_BlockPositionerProps>
+export type BlockPopoverProps = Partial<_BlockPopoverProps>

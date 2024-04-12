@@ -4,7 +4,7 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 /**
  * @internal
  */
-export interface BlockPositionerContext {
+export interface BlockPopoverContext {
   pos: number | null
   node: ProseMirrorNode | null
   element: HTMLElement | null
@@ -13,7 +13,7 @@ export interface BlockPositionerContext {
 /**
  * @internal
  */
-export const blockPositionerContext = createContext<BlockPositionerContext>(
+export const blockPopoverContext = createContext<BlockPopoverContext>(
   'prosekit-block-positioner-context',
   {
     pos: null,

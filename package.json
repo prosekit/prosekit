@@ -33,8 +33,8 @@
     "@ocavue/eslint-config": "^1.5.0",
     "@size-limit/esbuild-why": "^11.1.2",
     "@size-limit/preset-small-lib": "^11.1.2",
-    "@unocss/eslint-config": "^0.59.0",
-    "@vitest/coverage-istanbul": "^1.4.0",
+    "@unocss/eslint-config": "^0.59.1",
+    "@vitest/coverage-istanbul": "^1.5.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "jsdom": "^24.0.0",
@@ -43,10 +43,10 @@
     "prettier-plugin-svelte": "^3.2.2",
     "size-limit": "^11.1.2",
     "turbo": "^1.13.2",
-    "typescript": "^5.4.4",
-    "unocss": "^0.59.0",
+    "typescript": "^5.4.5",
+    "unocss": "^0.59.1",
     "unocss-preset-animations": "^1.0.2",
-    "vitest": "^1.4.0"
+    "vitest": "^1.5.0"
   },
   "pnpm": {
     "overrides": {},

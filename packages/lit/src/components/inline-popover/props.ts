@@ -1,6 +1,5 @@
 import type { OverlayPositionerProps } from '@aria-ui/overlay'
 import { defaultOverlayPositionerProps } from '@aria-ui/overlay'
-import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
 export interface InlinePopoverProps
@@ -33,14 +32,42 @@ export interface InlinePopoverProps
    *
    * @default "top"
    */
-  placement: Placement
+  placement: OverlayPositionerProps['placement']
 
   /**
-   * The distance between the popover and the selected inline content.
-   *
    * @default 12
    */
-  offset: number
+  offset: OverlayPositionerProps['offset']
+
+  /**
+   * @default true
+   */
+  flip: OverlayPositionerProps['flip']
+
+  /**
+   * @default true
+   */
+  hide: OverlayPositionerProps['hide']
+
+  /**
+   * @default true
+   */
+  shift: OverlayPositionerProps['shift']
+
+  /**
+   * @default true
+   */
+  overlap: OverlayPositionerProps['overlap']
+
+  /**
+   * @default true
+   */
+  fitViewport: OverlayPositionerProps['fitViewport']
+
+  /**
+   * @default true
+   */
+  inline: OverlayPositionerProps['inline']
 }
 
 export const defaultInlinePopoverProps = Object.freeze({
@@ -51,7 +78,7 @@ export const defaultInlinePopoverProps = Object.freeze({
 
   placement: 'top',
   offset: 12,
-  flip: false,
+  flip: true,
   hide: true,
   shift: true,
   overlap: true,

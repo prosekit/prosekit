@@ -4,6 +4,7 @@ import {
   createSignal,
   mapSignals,
   useAttribute,
+  useEffect,
   type ConnectableElement,
   type ReadonlySignal,
   type SingalState,
@@ -32,7 +33,7 @@ export function useInlinePopoverState(
   host: ConnectableElement,
   state: SingalState<InlinePopoverProps>,
 ) {
-  const { editor, available, ...overlayState } = state
+  const { editor, available, onOpenChange, ...overlayState } = state
 
   const reference = useInlinePopoverReference(host, editor)
 
@@ -41,6 +42,11 @@ export function useInlinePopoverState(
   const presence = createComputed(() => !!reference.value && available.value)
   useAttribute(host, 'data-state', () => (presence.value ? 'open' : 'closed'))
   usePresence(host, presence)
+
+  useEffect(host, () => {
+    const presenceValue = presence.value
+    onOpenChange.peek()?.(presenceValue)
+  })
 }
 
 function useInlinePopoverReference(

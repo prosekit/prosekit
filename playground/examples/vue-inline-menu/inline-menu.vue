@@ -100,17 +100,7 @@ const handleLinkUpdate = (href?: string) => {
   <InlinePopover
     class="INLINE_MENU_LINK"
     :editor="editor"
-    :positioning="{
-      strategy: 'fixed',
-      placement: 'bottom',
-      offset: 12,
-      flip: false,
-      hide: true,
-      shift: true,
-      overlap: true,
-      fitViewport: true,
-      inline: true,
-    }"
+    :placement="'bottom'"
     :available="linkMenuAvailable"
     @openChange="setLinkMenuAvailable"
   >

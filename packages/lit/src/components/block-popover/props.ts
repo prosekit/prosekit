@@ -13,14 +13,14 @@ export interface BlockPopoverProps
   editor: Editor | null
 
   /**
-   * The placement of the block positioner, relative to the hovered block.
+   * The placement of the popover, relative to the hovered block.
    *
    * @default "left-start"
    */
   placement: Placement
 
   /**
-   * The distance from the hovered block to the block positioner.
+   * The distance between the popover and the hovered block.
    *
    * @default 4
    */

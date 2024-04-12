@@ -7,13 +7,13 @@ import type { EditorExtension } from './extension'
 import Toggle from './toggle.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
-const linkMenuAvailable = ref(false)
+const linkMenuOpen = ref(false)
 
-const setLinkMenuAvailable = (value: boolean) => {
-  linkMenuAvailable.value = value
+const setLinkMenuOpen = (value: boolean) => {
+  linkMenuOpen.value = value
 }
-const toggleLinkMenuAvailable = () => {
-  linkMenuAvailable.value = !linkMenuAvailable.value
+const toggleLinkMenuOpen = () => {
+  linkMenuOpen.value = !linkMenuOpen.value
 }
 
 const getCurrentLink = (state: EditorState): string | undefined => {
@@ -36,7 +36,7 @@ const handleLinkUpdate = (href?: string) => {
     editor.value.commands.removeLink()
   }
 
-  linkMenuAvailable.value = false
+  linkMenuOpen.value = false
   editor.value.focus()
 }
 </script>
@@ -89,7 +89,7 @@ const handleLinkUpdate = (href?: string) => {
       @click="
         () => {
           editor.commands.expandLink()
-          toggleLinkMenuAvailable()
+          toggleLinkMenuOpen()
         }
       "
     >
@@ -100,22 +100,12 @@ const handleLinkUpdate = (href?: string) => {
   <InlinePopover
     class="INLINE_MENU_LINK"
     :editor="editor"
-    :positioning="{
-      strategy: 'fixed',
-      placement: 'bottom',
-      offset: 12,
-      flip: false,
-      hide: true,
-      shift: true,
-      overlap: true,
-      fitViewport: true,
-      inline: true,
-    }"
-    :available="linkMenuAvailable"
-    @openChange="setLinkMenuAvailable"
+    :placement="'bottom'"
+    :open="linkMenuOpen"
+    @openChange="setLinkMenuOpen"
   >
     <form
-      v-if="linkMenuAvailable"
+      v-if="linkMenuOpen"
       @submit.prevent="
         (event) => {
           const target = event.target as HTMLFormElement | null

@@ -10,8 +10,8 @@ import Toggle from './toggle'
 export default function InlineMenu() {
   const editor = useEditor<EditorExtension>({ update: true })
 
-  const [linkMenuAvailable, setLinkMenuAvailable] = useState(false)
-  const toggleLinkMenuAvailable = () => setLinkMenuAvailable((open) => !open)
+  const [linkMenuOpen, setLinkMenuOpen] = useState(false)
+  const toggleLinkMenuOpen = () => setLinkMenuOpen((open) => !open)
 
   const getCurrentLink = (state: EditorState): string | undefined => {
     const { $from } = state.selection
@@ -33,7 +33,7 @@ export default function InlineMenu() {
       editor.commands.removeLink()
     }
 
-    setLinkMenuAvailable(false)
+    setLinkMenuOpen(false)
     editor.focus()
   }
 
@@ -44,7 +44,7 @@ export default function InlineMenu() {
         editor={editor}
         onOpenChange={(open) => {
           if (!open) {
-            setLinkMenuAvailable(false)
+            setLinkMenuOpen(false)
           }
         }}
       >
@@ -93,7 +93,7 @@ export default function InlineMenu() {
             pressed={editor.marks.link.isActive()}
             onClick={() => {
               editor.commands.expandLink()
-              toggleLinkMenuAvailable()
+              toggleLinkMenuOpen()
             }}
           >
             <div className="ICON_LINK"></div>
@@ -104,21 +104,11 @@ export default function InlineMenu() {
       <InlinePopover
         className="INLINE_MENU_LINK"
         editor={editor}
-        positioning={{
-          strategy: 'fixed',
-          placement: 'bottom',
-          offset: 12,
-          flip: false,
-          hide: true,
-          shift: true,
-          overlap: true,
-          fitViewport: true,
-          inline: true,
-        }}
-        available={linkMenuAvailable}
-        onOpenChange={setLinkMenuAvailable}
+        placement={'bottom'}
+        open={linkMenuOpen}
+        onOpenChange={setLinkMenuOpen}
       >
-        {linkMenuAvailable && (
+        {linkMenuOpen && (
           <form
             onSubmit={(event) => {
               event.preventDefault()

@@ -22,13 +22,12 @@ export interface InlinePopoverProps
    */
   available: boolean
 
-
   /**
    * A callback that is called when the popover's open state changes.
    *
    * @default null
    */
-  onOpenChange: ((open: boolean) => void)|null
+  onOpenChange: ((open: boolean) => void) | null
 
   /**
    * The placement of the popover, relative to the selected inline content.
@@ -49,7 +48,7 @@ export const defaultInlinePopoverProps = Object.freeze({
   ...defaultOverlayPositionerProps,
   editor: null,
   available: true,
-  onOpenChange: null, 
+  onOpenChange: null,
 
   placement: 'top',
   offset: 12,

@@ -11,7 +11,7 @@ import {
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay'
 import { usePresence } from '@aria-ui/presence'
-import { type Editor } from '@prosekit/core'
+import type { Editor } from '@prosekit/core'
 import {
   AutocompleteRule,
   defineAutocomplete,

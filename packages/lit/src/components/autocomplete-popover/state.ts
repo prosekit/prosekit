@@ -11,14 +11,12 @@ import {
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay'
 import { usePresence } from '@aria-ui/presence'
-import { defineKeymap, type Editor } from '@prosekit/core'
+import { type Editor } from '@prosekit/core'
 import {
   AutocompleteRule,
   defineAutocomplete,
   type MatchHandler,
 } from '@prosekit/extensions/autocomplete'
-
-import { useEditorExtension } from '../../hooks/use-editor-extension'
 
 import { onSubmitContext, openContext, queryContext } from './context'
 import { defaultQueryBuilder } from './helpers'
@@ -52,11 +50,7 @@ export function useAutocompletePopoverState(
   onSubmitContext.provide(host, onSubmit)
   openContext.provide(host, presence)
 
-  useEditorExtension(
-    host,
-    editor,
-    defineKeymap({ Escape: createKeymapHandler(onDismiss) }),
-  )
+  useEscapeKeydown(host, createKeymapHandler(onDismiss, presence))
 
   useAutocompleteExtension(
     host,
@@ -141,11 +135,36 @@ function addAutocompleteExtension(
   return editor.use(extension)
 }
 
-function createKeymapHandler(handler: ReadonlySignal<VoidFunction | null>) {
+function createKeymapHandler(
+  handler: ReadonlySignal<VoidFunction | null>,
+  enabled: Signal<boolean>,
+) {
   return () => {
+    if (!enabled.value) {
+      return false
+    }
+
     const fn = handler.peek()
     if (!fn) return false
     fn()
     return true
   }
+}
+
+// TODO: it seems that `defineKeymap` is not working as expected. I don't know why yet.
+function useEscapeKeydown(host: ConnectableElement, handler: () => boolean) {
+  useEffect(host, () => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') {
+        return
+      }
+
+      if (handler()) {
+        event.preventDefault()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  })
 }

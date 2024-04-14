@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@aria-ui/core": "^0.0.12",
-    "@aria-ui/listbox": "^0.0.8",
+    "@aria-ui/listbox": "^0.0.9",
     "@aria-ui/overlay": "^0.0.12",
     "@aria-ui/popover": "^0.0.11",
     "@aria-ui/presence": "^0.0.7",

@@ -241,8 +241,8 @@ importers:
         specifier: ^0.0.12
         version: 0.0.12
       '@aria-ui/listbox':
-        specifier: ^0.0.8
-        version: 0.0.8
+        specifier: ^0.0.9
+        version: 0.0.9
       '@aria-ui/overlay':
         specifier: ^0.0.12
         version: 0.0.12
@@ -927,8 +927,8 @@ packages:
   /@antfu/utils@0.7.7:
     resolution: {integrity: sha512-gFPqTG7otEJ8uP6wrhDv6mqwGWYZKNvAcCq6u9hOj0c+IKCEsY4L1oC9trPq2SaWIzAfHvqfBDxF591JkMf+kg==}
 
-  /@aria-ui/collection@0.0.2:
-    resolution: {integrity: sha512-GExMi4PQWVQKEMo5tyu9Z1puMuLDrACCFfSu6cPPCP/hKEcxdwTjsrilUo3/Do4yagberFimxlcQ7luBdb8iHA==}
+  /@aria-ui/collection@0.0.3:
+    resolution: {integrity: sha512-20mUHlpTCYQnv1LTGMkCy1SLCxRK5pxHrvTr2beaaCgBKPjMEB3MlemL0PbIj3WsXbCldsvLBWX1L67FgWowSg==}
     dev: false
 
   /@aria-ui/core@0.0.12:
@@ -939,10 +939,10 @@ packages:
       '@preact/signals-core': 1.6.0
     dev: false
 
-  /@aria-ui/listbox@0.0.8:
-    resolution: {integrity: sha512-1VRrKzhKy2AbcE1992KlmRFMGmU7fPUvlB4k15Ls0U/q9oHa3fRLADqecS3/nQ/wiqe033exKglpFd6ON/+bWA==}
+  /@aria-ui/listbox@0.0.9:
+    resolution: {integrity: sha512-EvUiJrpMvyFOmjlKxZB9IFEuRU1oVQtxkMzH1G8lRBV+DPs9Ti4+zmkW4tZ5w6dT3tXsLrDf7vgHA7O6AzS+RA==}
     dependencies:
-      '@aria-ui/collection': 0.0.2
+      '@aria-ui/collection': 0.0.3
       '@aria-ui/core': 0.0.12
       '@aria-ui/presence': 0.0.7
       immer: 10.0.4

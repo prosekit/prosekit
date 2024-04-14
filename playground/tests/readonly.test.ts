@@ -1,12 +1,12 @@
 import { expect, test } from '@playwright/test'
 
-import { locateEditor, getExamples } from './helper'
+import { getExamples, waitForEditor } from './helper'
 
 test.describe('readonly', () => {
   for (const example of getExamples('readonly')) {
     test(example, async ({ page }) => {
       await page.goto(example)
-      const editor = locateEditor(page)
+      const editor = await waitForEditor(page)
 
       const readonlyButton = page.getByRole('button', { name: 'Readonly' })
       const editableButton = page.getByRole('button', { name: 'Editable' })

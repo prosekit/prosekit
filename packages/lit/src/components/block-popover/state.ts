@@ -7,7 +7,7 @@ import {
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
-  type SingalState,
+  type SignalState,
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay'
 import { usePresence } from '@aria-ui/presence'
@@ -26,7 +26,7 @@ import { defaultBlockPopoverProps, type BlockPopoverProps } from './props'
 export function useBlockPopover(
   host: ConnectableElement,
   props?: Partial<BlockPopoverProps>,
-): SingalState<BlockPopoverProps> {
+): SignalState<BlockPopoverProps> {
   const state = mapSignals(assignProps(defaultBlockPopoverProps, props))
   const { editor, ...overlayState } = state
   const reference = createSignal<VirtualElement | null>(null)

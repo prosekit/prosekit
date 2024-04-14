@@ -148,10 +148,6 @@
     "path": "packages/prosekit/dist/prosekit-lit-inline-popover.js"
   },
   {
-    "name": "prosekit/lit/popover",
-    "path": "packages/prosekit/dist/prosekit-lit-popover.js"
-  },
-  {
     "name": "prosekit/lit/popover-content",
     "path": "packages/prosekit/dist/prosekit-lit-popover-content.js"
   },
@@ -280,13 +276,6 @@
     ]
   },
   {
-    "name": "prosekit/preact/popover",
-    "path": "packages/prosekit/dist/prosekit-preact-popover.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
     "name": "prosekit/preact/popover-content",
     "path": "packages/prosekit/dist/prosekit-preact-popover-content.js",
     "ignore": [
@@ -401,14 +390,6 @@
   {
     "name": "prosekit/react/inline-popover",
     "path": "packages/prosekit/dist/prosekit-react-inline-popover.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/popover",
-    "path": "packages/prosekit/dist/prosekit-react-popover.js",
     "ignore": [
       "react",
       "react-dom"
@@ -535,13 +516,6 @@
     ]
   },
   {
-    "name": "prosekit/solid/popover",
-    "path": "packages/prosekit/dist/prosekit-solid-popover.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
     "name": "prosekit/solid/popover-content",
     "path": "packages/prosekit/dist/prosekit-solid-popover-content.js",
     "ignore": [
@@ -649,13 +623,6 @@
   {
     "name": "prosekit/vue/inline-popover",
     "path": "packages/prosekit/dist/prosekit-vue-inline-popover.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/popover",
-    "path": "packages/prosekit/dist/prosekit-vue-popover.js",
     "ignore": [
       "vue"
     ]

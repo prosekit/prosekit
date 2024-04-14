@@ -12,7 +12,6 @@
     "./src/components/popover-content.gen.ts",
     "./src/components/popover-root.gen.ts",
     "./src/components/popover-trigger.gen.ts",
-    "./src/components/popover.gen.ts",
     "./src/components/resizable-handle.gen.ts",
     "./src/components/resizable.gen.ts",
     "./src/components/tooltip-content.gen.ts",

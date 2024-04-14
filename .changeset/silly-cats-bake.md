@@ -1,5 +1,6 @@
 ---
-"@prosekit/lit": minor
+'prosekit': patch
+'@prosekit/lit': minor
 ---
 
 Rewrite autocomplete.

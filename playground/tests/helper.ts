@@ -18,4 +18,10 @@ export function locateEditor(page: Page) {
   return page.locator('.ProseMirror')
 }
 
+export async function waitForEditor(page: Page) {
+  const locator = locateEditor(page)
+  await locator.waitFor({ state: 'visible' })
+  return locator 
+}
+
 export const isApple = process.platform === 'darwin'

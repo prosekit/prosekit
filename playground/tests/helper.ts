@@ -21,7 +21,7 @@ export function locateEditor(page: Page) {
 export async function waitForEditor(page: Page) {
   const locator = locateEditor(page)
   await locator.waitFor({ state: 'visible' })
-  return locator 
+  return locator
 }
 
 export const isApple = process.platform === 'darwin'

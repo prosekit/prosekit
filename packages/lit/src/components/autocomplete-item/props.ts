@@ -1,5 +1,4 @@
 export interface AutocompleteItemProps {
-
   /**
    * The value of the item, which will be matched against the query.
    *
@@ -7,7 +6,7 @@ export interface AutocompleteItemProps {
    *
    * @default ""
    */
-  value: string  
+  value: string
 
   /**
    * The function to call when the item is selected.
@@ -17,6 +16,7 @@ export interface AutocompleteItemProps {
   onSelect: VoidFunction | null
 }
 
-export const defaultAutocompleteItemProps = {value: "",
+export const defaultAutocompleteItemProps = {
+  value: '',
   onSelect: null,
 } satisfies AutocompleteItemProps

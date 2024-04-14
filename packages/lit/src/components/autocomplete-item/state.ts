@@ -1,4 +1,8 @@
-import {  useEffect, type ConnectableElement, type SignalState } from '@aria-ui/core'
+import {
+  useEffect,
+  type ConnectableElement,
+  type SignalState,
+} from '@aria-ui/core'
 import { useListboxItem } from '@aria-ui/listbox'
 
 import type { AutocompleteItemProps } from './props'

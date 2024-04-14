@@ -48,7 +48,6 @@ export function useAutocompletePopoverState(
   const onSubmit = createSignal<VoidFunction | null>(null)
   const presence = createComputed(() => !!reference.value)
 
-
   queryContext.provide(host, query)
   onSubmitContext.provide(host, onSubmit)
   openContext.provide(host, presence)
@@ -71,8 +70,7 @@ export function useAutocompletePopoverState(
 
   useOverlayPositionerState(host, overlayState, { reference })
 
-
-  usePresence(host , presence)
+  usePresence(host, presence)
 }
 
 export function useAutocompleteExtension(

@@ -34,7 +34,7 @@ export function useAutocompletePopover(
   return state
 }
 
-export function useAutocompletePopoverState(
+function useAutocompletePopoverState(
   host: ConnectableElement,
   state: SignalState<AutocompletePopoverProps>,
 ) {
@@ -67,7 +67,7 @@ export function useAutocompletePopoverState(
   usePresence(host, presence)
 }
 
-export function useAutocompleteExtension(
+function useAutocompleteExtension(
   host: ConnectableElement,
 
   editor: ReadonlySignal<Editor | null>,

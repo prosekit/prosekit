@@ -3,7 +3,7 @@ import { createContext } from '@lit/context'
 /**
  * @internal
  */
-export interface ResizableContext {
+interface ResizableContext {
   onResizeStart: () => readonly [
     width: number,
     height: number,

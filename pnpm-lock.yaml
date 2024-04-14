@@ -270,18 +270,6 @@ importers:
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
-      '@superhuman/command-score':
-        specifier: ^0.5.0
-        version: 0.5.0
-      '@zag-js/dismissable':
-        specifier: ^0.45.0
-        version: 0.45.0
-      '@zag-js/dom-query':
-        specifier: ^0.45.0
-        version: 0.45.0
-      '@zag-js/utils':
-        specifier: ^0.45.0
-        version: 0.45.0
       lit:
         specifier: ^3.1.2
         version: 3.1.2
@@ -2865,10 +2853,6 @@ packages:
       size-limit: 11.1.2
     dev: false
 
-  /@superhuman/command-score@0.5.0:
-    resolution: {integrity: sha512-Et940NvqU74IZauOWQdLW0dNGNL67OYSL/ULcM+I62WUmpvsAEKPR3DF0YCut6bNcN5TK67rOC1mPjiNK2O80w==}
-    dev: false
-
   /@sveltejs/package@2.3.1(svelte@4.2.13)(typescript@5.4.5):
     resolution: {integrity: sha512-JvR2J4ost1oCn1CSdqenYRwGX/1RX+7LN+VZ71aPnz3JAlIFaEKQd1pBxlb+OSQTfeugJO0W39gB9voAbBO5ow==}
     engines: {node: ^16.14 || >=18}
@@ -3889,15 +3873,6 @@ packages:
       - vue
     dev: true
 
-  /@zag-js/dismissable@0.45.0:
-    resolution: {integrity: sha512-Svrx2aM3QJp6H7oMPVeNd+0+1Zk9fIKYHkNklkxbokVk7YBYXk1WhL2srKBPqCVlXF9mmERkW/MUqS8rAoI5cw==}
-    dependencies:
-      '@zag-js/dom-event': 0.45.0
-      '@zag-js/dom-query': 0.45.0
-      '@zag-js/interact-outside': 0.45.0
-      '@zag-js/utils': 0.45.0
-    dev: false
-
   /@zag-js/dismissable@0.46.0:
     resolution: {integrity: sha512-lL6g0rjIXQhFbiakaUDIIX2JTGvkMiKLRM99e3zyh7XGsC1o79UieBRuCLX8yCs00jAPORvFIZg8oehT2jD7Kw==}
     dependencies:
@@ -3905,13 +3880,6 @@ packages:
       '@zag-js/dom-query': 0.46.0
       '@zag-js/interact-outside': 0.46.0
       '@zag-js/utils': 0.46.0
-    dev: false
-
-  /@zag-js/dom-event@0.45.0:
-    resolution: {integrity: sha512-6V6X8kjz8ElkaAFvYCgrXtv2eTY9gDfMbqv3NlA5Cbb1E61r1A8l7h/VOF+4RP84s/davNOUASRlFUtYXzVhRw==}
-    dependencies:
-      '@zag-js/text-selection': 0.45.0
-      '@zag-js/types': 0.45.0
     dev: false
 
   /@zag-js/dom-event@0.46.0:
@@ -3922,21 +3890,8 @@ packages:
       '@zag-js/types': 0.46.0
     dev: false
 
-  /@zag-js/dom-query@0.45.0:
-    resolution: {integrity: sha512-8HuQcifb+2VQ9NJwqhI2kjefw9V+B1w00xbPk+pUszaYJ4VFM8y4nu9ifXvMmhoPXrGKSg5F8RuOq7sPn8HMmw==}
-    dev: false
-
   /@zag-js/dom-query@0.46.0:
     resolution: {integrity: sha512-aUZsDq22ibtYK2Pp/h6J3c9fZvKyQOn/BnVRO3rmAShC8JSZajElRPkTpRNWJiFErP2uMGPrjjkmlhKh2J0Yew==}
-    dev: false
-
-  /@zag-js/interact-outside@0.45.0:
-    resolution: {integrity: sha512-LOhr7vsUo2/UwI+BfgUtI2GCMUCjvaTNL1r0gG59MvxG3WSI44mipHzHgf38qnJTO5OzpCLW7+rAHG76Jenb4w==}
-    dependencies:
-      '@zag-js/dom-event': 0.45.0
-      '@zag-js/dom-query': 0.45.0
-      '@zag-js/tabbable': 0.45.0
-      '@zag-js/utils': 0.45.0
     dev: false
 
   /@zag-js/interact-outside@0.46.0:
@@ -3948,22 +3903,10 @@ packages:
       '@zag-js/utils': 0.46.0
     dev: false
 
-  /@zag-js/tabbable@0.45.0:
-    resolution: {integrity: sha512-tHg3tYnL9oKbZGhtRwII8ky+jpV5SFUKH12ydn0MoJCv2BZAeaYlDgZV13QypA/jJxSzzDjZleRCL7E0wpsurQ==}
-    dependencies:
-      '@zag-js/dom-query': 0.45.0
-    dev: false
-
   /@zag-js/tabbable@0.46.0:
     resolution: {integrity: sha512-Cj/2Dlh62OXhUbMewlS59iK7uMHywlwgQMFpYs1JCt0eQfWndB3VvhRFgNDEfOdtZVOBZacKMIBfcByFbNTnmQ==}
     dependencies:
       '@zag-js/dom-query': 0.46.0
-    dev: false
-
-  /@zag-js/text-selection@0.45.0:
-    resolution: {integrity: sha512-k4gyzp/h53vUMA3ZSUwVk7PXdEG3qZ0cEi7LSLfl2+Ol9MFuQbSdupM8FvC1OGbNJD4opTO85yBWaOh8yli3gQ==}
-    dependencies:
-      '@zag-js/dom-query': 0.45.0
     dev: false
 
   /@zag-js/text-selection@0.46.0:
@@ -3972,20 +3915,10 @@ packages:
       '@zag-js/dom-query': 0.46.0
     dev: false
 
-  /@zag-js/types@0.45.0:
-    resolution: {integrity: sha512-E23L0pvy+Ky5stw1/BKjkVBOdx7Py0DPaM6UZPMAzkJMo1mMI6pehTFzk0Ks96svxxlZqTF6liR0tqtZYIwLFw==}
-    dependencies:
-      csstype: 3.1.3
-    dev: false
-
   /@zag-js/types@0.46.0:
     resolution: {integrity: sha512-4qr0VzcD4gkGnsa4uRnFirtEZEoLbpnKHEkOLa2BGs7Z616m/tIb2UkysJ29WS2nSwSsek+V+ob6NyVl0VECGQ==}
     dependencies:
       csstype: 3.1.3
-    dev: false
-
-  /@zag-js/utils@0.45.0:
-    resolution: {integrity: sha512-DR5z7b4d0ZoqY/jzq/QA6g5b6ClPqJwna8YMxaplL3+uTey6I41UPvChSnsksr8HHf384m0sVzl2dMhzGVb47Q==}
     dev: false
 
   /@zag-js/utils@0.46.0:

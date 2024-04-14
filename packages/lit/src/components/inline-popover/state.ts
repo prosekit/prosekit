@@ -29,7 +29,7 @@ export function useInlinePopover(
   return state
 }
 
-export function useInlinePopoverState(
+function useInlinePopoverState(
   host: ConnectableElement,
   state: SignalState<InlinePopoverProps>,
 ) {

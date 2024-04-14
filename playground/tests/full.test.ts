@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test'
 
-import { getExamples, locateEditor } from './helper'
+import { getExamples, locateEditor, waitForEditor } from './helper'
 
 for (const example of getExamples('full')) {
   test.describe(example, () => {
@@ -101,6 +101,38 @@ for (const example of getExamples('full')) {
         await expect(a).toBeVisible()
         await expect(a).toHaveAttribute('href', 'https://example.com')
         await expect(a).toHaveText('https://example.com')
+      })
+    })
+
+    test.describe('slash menu', () => {
+      test('press Space to insert a link', async ({ page }) => {
+        await page.goto(example)
+        const editor = await waitForEditor(page)
+
+        const getPopovers = async () => {
+          const locator = page.locator('prosekit-autocomplete-popover')
+          return await locator.all()
+        }
+
+        const getVisiblePopoverCount = async () => {
+          const locators = await getPopovers()
+          let count = 0
+          for (const locator of locators) {
+            if (await locator.isVisible()) {
+              count += 1
+            }
+          }
+          return count
+        }
+
+        await editor.pressSequentially('Hello ')
+        expect(await getVisiblePopoverCount()).toBe(0)
+
+        await editor.pressSequentially('/')
+        expect(await getVisiblePopoverCount()).toBe(1)
+
+        await editor.press('Escape')
+        expect(await getVisiblePopoverCount()).toBe(0)
       })
     })
   })

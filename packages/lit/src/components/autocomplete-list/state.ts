@@ -16,10 +16,7 @@ import {
 } from '@prosekit/core'
 
 import { queryContext } from '../autocomplete-popover'
-import {
-  onSubmitContext,
-  openContext,
-} from '../autocomplete-popover/context'
+import { onSubmitContext, openContext } from '../autocomplete-popover/context'
 
 import {
   defaultAutocompleteListProps,

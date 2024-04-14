@@ -20,7 +20,7 @@ import {
 
 import { useEditorExtension } from '../../hooks/use-editor-extension'
 
-import { onSubmitContext, openContext, queryContext } from './context-v2'
+import { onSubmitContext, openContext, queryContext } from './context'
 import { defaultQueryBuilder } from './helpers'
 import {
   defaultAutocompletePopoverProps,

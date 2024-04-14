@@ -3,7 +3,7 @@ import {
   type AutocompletePopoverProps as _AutocompletePopoverProps,
 } from './props'
 
-export { queryContext, onSubmitContext } from './context-v2'
+export { queryContext, onSubmitContext } from './context'
 export { AutocompletePopover } from './element'
 export { defaultAutocompletePopoverProps } from './props'
 

@@ -19,7 +19,7 @@ import { queryContext } from '../autocomplete-popover'
 import {
   onSubmitContext,
   openContext,
-} from '../autocomplete-popover/context-v2'
+} from '../autocomplete-popover/context'
 
 import {
   defaultAutocompleteListProps,

@@ -55,8 +55,6 @@ export interface PopoverProps {
 }
 
 /**
- * A custom element that displays a popover anchored to a reference element.
- *
  * @deprecated Use `prosekit-popover-root` instead.
  */
 export class Popover extends LightElement implements Partial<PopoverProps> {

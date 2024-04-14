@@ -1,14 +1,16 @@
 import {
   assignProps,
+  createComputed,
   createSignal,
   mapSignals,
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
   type Signal,
-  type SingalState,
+  type SignalState,
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay'
+import { usePresence } from '@aria-ui/presence'
 import { defineKeymap, type Editor } from '@prosekit/core'
 import {
   AutocompleteRule,
@@ -18,7 +20,7 @@ import {
 
 import { useEditorExtension } from '../../hooks/use-editor-extension'
 
-import { onSubmitContext, queryContext } from './context-v2'
+import { onSubmitContext, openContext, queryContext } from './context-v2'
 import { defaultQueryBuilder } from './helpers'
 import {
   defaultAutocompletePopoverProps,
@@ -36,7 +38,7 @@ export function useAutocompletePopover(
 
 export function useAutocompletePopoverState(
   host: ConnectableElement,
-  state: SingalState<AutocompletePopoverProps>,
+  state: SignalState<AutocompletePopoverProps>,
 ) {
   const { editor, regex, ...overlayState } = state
 
@@ -44,9 +46,12 @@ export function useAutocompletePopoverState(
   const query = createSignal<string>('')
   const onDismiss = createSignal<VoidFunction | null>(null)
   const onSubmit = createSignal<VoidFunction | null>(null)
+  const presence = createComputed(() => !!reference.value)
+
 
   queryContext.provide(host, query)
   onSubmitContext.provide(host, onSubmit)
+  openContext.provide(host, presence)
 
   useEditorExtension(
     host,
@@ -65,6 +70,9 @@ export function useAutocompletePopoverState(
   )
 
   useOverlayPositionerState(host, overlayState, { reference })
+
+
+  usePresence(host , presence)
 }
 
 export function useAutocompleteExtension(

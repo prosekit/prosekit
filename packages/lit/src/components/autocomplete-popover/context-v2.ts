@@ -9,3 +9,9 @@ export const onSubmitContext = createContext<VoidFunction | null>(
   'prosekit/autocomplete-popover/onSubmit',
   null,
 )
+
+
+export const openContext = createContext<boolean>(
+  'prosekit/autocomplete-popover/open',
+  false , 
+)

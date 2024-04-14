@@ -7,7 +7,7 @@ import {
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
-  type SingalState,
+  type SignalState,
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay'
 import { usePresence } from '@aria-ui/presence'
@@ -31,7 +31,7 @@ export function useInlinePopover(
 
 export function useInlinePopoverState(
   host: ConnectableElement,
-  state: SingalState<InlinePopoverProps>,
+  state: SignalState<InlinePopoverProps>,
 ) {
   const { editor, open, onOpenChange, ...overlayState } = state
 

@@ -1,4 +1,4 @@
-import { BaseElement, type SingalState } from '@aria-ui/core'
+import { BaseElement, type SignalState } from '@aria-ui/core'
 
 import { defineCustomElement } from '../../utils/define-custom-element'
 import { defineProperties } from '../../utils/define-properties'
@@ -13,7 +13,7 @@ class AutocompletePopover
   extends BaseElement
   implements AutocompletePopoverProps
 {
-  readonly _s: SingalState<AutocompletePopoverProps>
+  readonly _s: SignalState<AutocompletePopoverProps>
 
   constructor(props?: Partial<AutocompletePopoverProps>) {
     super()

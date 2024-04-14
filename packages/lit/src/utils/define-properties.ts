@@ -2,10 +2,10 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-return */
 
-import type { SingalState } from '@aria-ui/core'
+import type { SignalState } from '@aria-ui/core'
 
 export function defineProperties(
-  ElementConstructor: new () => { _s: SingalState<any> },
+  ElementConstructor: new () => { _s: SignalState<any> },
   defaultProps: Record<string, any>,
 ) {
   for (const prop of Object.keys(defaultProps)) {

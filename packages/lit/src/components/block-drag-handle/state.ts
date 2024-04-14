@@ -4,7 +4,7 @@ import {
   useEffect,
   useEventListener,
   type ConnectableElement,
-  type SingalState,
+  type SignalState,
 } from '@aria-ui/core'
 import { Fragment, Slice } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
@@ -16,7 +16,7 @@ import { defaultBlockDragHandleProps, type BlockDragHandleProps } from './props'
 export function useBlockDragHandle(
   host: ConnectableElement,
   props?: Partial<BlockDragHandleProps>,
-): SingalState<BlockDragHandleProps> {
+): SignalState<BlockDragHandleProps> {
   const context = blockPopoverContext.consume(host)
 
   const state = mapSignals(assignProps(defaultBlockDragHandleProps, props))

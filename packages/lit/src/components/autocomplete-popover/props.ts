@@ -1,6 +1,5 @@
 import type { OverlayPositionerProps } from '@aria-ui/overlay'
 import { defaultOverlayPositionerProps } from '@aria-ui/overlay'
-import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
 export interface AutocompletePopoverProps extends OverlayPositionerProps {
@@ -23,20 +22,43 @@ export interface AutocompletePopoverProps extends OverlayPositionerProps {
    *
    * @default "bottom-start"
    */
-  placement: Placement
+  placement: OverlayPositionerProps['placement']
 
   /**
    * The distance between the popover and the hovered block.
    *
    * @default 4
    */
-  offset: number
+  offset: OverlayPositionerProps['offset']
 
   /**
    * @default true
    */
-  inline: boolean
+  inline: OverlayPositionerProps['inline']
+
+  /**
+   * @default true
+   */
+  hoist: OverlayPositionerProps['hoist']
+
+  /**
+   * @default true
+   */
+  fitViewport: OverlayPositionerProps['fitViewport']
+
+  /**
+   * @default "The body element"
+   */
+  boundary: OverlayPositionerProps['boundary']
+
+  /**
+   * @default 8
+   */
+  overflowPadding: OverlayPositionerProps['overflowPadding']
 }
+
+const body = typeof document !== 'undefined' && document.querySelector('body')
+const defaultBoundary = body || 'clippingAncestors'
 
 export const defaultAutocompletePopoverProps = Object.freeze({
   ...defaultOverlayPositionerProps,
@@ -45,4 +67,8 @@ export const defaultAutocompletePopoverProps = Object.freeze({
   placement: 'bottom-start',
   offset: 4,
   inline: true,
+  hoist: true,
+  fitViewport: true,
+  boundary: defaultBoundary,
+  overflowPadding: 8,
 }) satisfies AutocompletePopoverProps

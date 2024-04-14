@@ -78,7 +78,7 @@ const POPOVER_ANIMATE = clsx(
 )
 
 const FLOATING_MENU_ITEM = clsx(
-  'box-border cursor-default select-none whitespace-nowrap outline-none aria-selected:bg-secondary',
+  'box-border cursor-default select-none whitespace-nowrap outline-none data-[focused]:bg-secondary',
 )
 
 const BUTTON_BASE = clsx(

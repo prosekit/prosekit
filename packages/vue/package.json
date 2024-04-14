@@ -33,7 +33,6 @@
     "./block-drag-handle": "./src/components/block-drag-handle.gen.ts",
     "./block-popover": "./src/components/block-popover.gen.ts",
     "./inline-popover": "./src/components/inline-popover.ts",
-    "./popover": "./src/components/popover.gen.ts",
     "./popover-content": "./src/components/popover-content.gen.ts",
     "./popover-root": "./src/components/popover-root.gen.ts",
     "./popover-trigger": "./src/components/popover-trigger.gen.ts",
@@ -113,11 +112,6 @@
         "import": "./dist/prosekit-vue-inline-popover.js",
         "default": "./dist/prosekit-vue-inline-popover.js"
       },
-      "./popover": {
-        "types": "./dist/prosekit-vue-popover.d.ts",
-        "import": "./dist/prosekit-vue-popover.js",
-        "default": "./dist/prosekit-vue-popover.js"
-      },
       "./popover-content": {
         "types": "./dist/prosekit-vue-popover-content.d.ts",
         "import": "./dist/prosekit-vue-popover-content.js",
@@ -187,9 +181,6 @@
         ],
         "inline-popover": [
           "./dist/prosekit-vue-inline-popover.d.ts"
-        ],
-        "popover": [
-          "./dist/prosekit-vue-popover.d.ts"
         ],
         "popover-content": [
           "./dist/prosekit-vue-popover-content.d.ts"

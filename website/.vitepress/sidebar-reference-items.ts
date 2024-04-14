@@ -133,10 +133,6 @@ export const referenceItems = [
         "link": "/references/lit/inline-popover"
       },
       {
-        "text": "popover",
-        "link": "/references/lit/popover"
-      },
-      {
         "text": "popover-content",
         "link": "/references/lit/popover-content"
       },
@@ -202,10 +198,6 @@ export const referenceItems = [
       {
         "text": "inline-popover",
         "link": "/references/preact/inline-popover"
-      },
-      {
-        "text": "popover",
-        "link": "/references/preact/popover"
       },
       {
         "text": "popover-content",
@@ -275,10 +267,6 @@ export const referenceItems = [
         "link": "/references/react/inline-popover"
       },
       {
-        "text": "popover",
-        "link": "/references/react/popover"
-      },
-      {
         "text": "popover-content",
         "link": "/references/react/popover-content"
       },
@@ -344,10 +332,6 @@ export const referenceItems = [
       {
         "text": "inline-popover",
         "link": "/references/solid/inline-popover"
-      },
-      {
-        "text": "popover",
-        "link": "/references/solid/popover"
       },
       {
         "text": "popover-content",
@@ -417,10 +401,6 @@ export const referenceItems = [
         "link": "/references/svelte/inline-popover"
       },
       {
-        "text": "popover",
-        "link": "/references/svelte/popover"
-      },
-      {
         "text": "popover-content",
         "link": "/references/svelte/popover-content"
       },
@@ -486,10 +466,6 @@ export const referenceItems = [
       {
         "text": "inline-popover",
         "link": "/references/vue/inline-popover"
-      },
-      {
-        "text": "popover",
-        "link": "/references/vue/popover"
       },
       {
         "text": "popover-content",

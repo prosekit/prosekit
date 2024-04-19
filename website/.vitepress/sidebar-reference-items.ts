@@ -368,48 +368,12 @@ export const referenceItems = [
         "link": "/references/svelte/autocomplete-popover"
       },
       {
-        "text": "block-drag-handle",
-        "link": "/references/svelte/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/svelte/block-popover"
-      },
-      {
-        "text": "inline-popover",
-        "link": "/references/svelte/inline-popover"
-      },
-      {
-        "text": "popover-content",
-        "link": "/references/svelte/popover-content"
-      },
-      {
-        "text": "popover-root",
-        "link": "/references/svelte/popover-root"
-      },
-      {
-        "text": "popover-trigger",
-        "link": "/references/svelte/popover-trigger"
-      },
-      {
         "text": "resizable",
         "link": "/references/svelte/resizable"
       },
       {
-        "text": "resizable-handle",
-        "link": "/references/svelte/resizable-handle"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/svelte/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/svelte/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/svelte/tooltip-trigger"
+        "text": "tooltip",
+        "link": "/references/svelte/tooltip"
       }
     ],
     "collapsed": true,

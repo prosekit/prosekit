@@ -199,7 +199,7 @@ function formatSvelteIndexCode(group:string, components: string[]) {
 
   for (const kebab of components) {
     const pascal = kebabToPascal(kebab)
-    lines.push(`import type { ${pascal}Props } from '@prosekit/primitives/${group}`)
+    lines.push(`import type { ${pascal}Props } from '@prosekit/primitives/${group}'`)
   }
 
 

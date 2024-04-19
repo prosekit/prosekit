@@ -13,25 +13,25 @@ export async function genComponents() {
   const solidPackage = await vfs.getPackageByName('@prosekit/solid')
   const preactPackage = await vfs.getPackageByName('@prosekit/preact')
 
-  // await vfs.cleanGeneratedFilesInPackage(reactPackage)
+  await vfs.cleanGeneratedFilesInPackage(reactPackage)
   // await vfs.cleanGeneratedFilesInPackage(vuePackage)
   // await vfs.cleanGeneratedFilesInPackage(sveltePackage)
   // await vfs.cleanGeneratedFilesInPackage(solidPackage)
   // await vfs.cleanGeneratedFilesInPackage(preactPackage)
 
   const primitives = await readPrimitives(primitivesPackage)
-  await writePrimitivesComponent(primitivesPackage, primitives)
-  await writeReactComponent(reactPackage, primitives)
+  await writePrimitivesComponents(primitivesPackage, primitives)
+  await writeReactComponents(reactPackage, primitives)
+  await writeVueComponents(vuePackage, primitives)
 
   if (Math.random() > 2) {
-    await writeVueComponents(vuePackage, ['componentNames'])
     await writeSvelteComponents(sveltePackage, ['componentNames'])
     await writeSolidComponents(solidPackage, ['componentNames'])
     await writePreactComponents(preactPackage, ['componentNames'])
   }
 }
 
-async function writePrimitivesComponent(pkg: Package, info: Primitives) {
+async function writePrimitivesComponents(pkg: Package, info: Primitives) {
   const exports = (pkg.packageJson as any).exports
 
   for (const [group, components] of Object.entries(info)) {
@@ -51,7 +51,7 @@ async function writePrimitivesComponent(pkg: Package, info: Primitives) {
   }
 }
 
-async function writeReactComponent(pkg: Package, info: Primitives) {
+async function writeReactComponents(pkg: Package, info: Primitives) {
   const exports = (pkg.packageJson as any).exports
 
   for (const [group, components] of Object.entries(info)) {
@@ -71,12 +71,23 @@ async function writeReactComponent(pkg: Package, info: Primitives) {
   }
 }
 
-async function writeVueComponents(pkg: Package, componentNames: string[]) {
+async function writeVueComponents(pkg: Package, info: Primitives) {
   const exports = (pkg.packageJson as any).exports
-  for (const kebab of componentNames) {
-    exports[`./${kebab}`] = ''
-    const code = formatVueCode(kebab)
-    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
+
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
+
+    const code = formatReactIndexCode(components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+
+    for (const component of components) {
+      const code = formatReactComponentCode(group, component)
+      await vfs.updateTextInPackage(
+        pkg,
+        `src/components/${group}/${component}.gen.ts`,
+        code,
+      )
+    }
   }
 }
 

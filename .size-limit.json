@@ -384,54 +384,6 @@
     ]
   },
   {
-    "name": "prosekit/react/block-drag-handle",
-    "path": "packages/prosekit/dist/prosekit-react-block-drag-handle.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/block-popover",
-    "path": "packages/prosekit/dist/prosekit-react-block-popover.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/inline-popover",
-    "path": "packages/prosekit/dist/prosekit-react-inline-popover.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/popover-content",
-    "path": "packages/prosekit/dist/prosekit-react-popover-content.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/popover-root",
-    "path": "packages/prosekit/dist/prosekit-react-popover-root.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/popover-trigger",
-    "path": "packages/prosekit/dist/prosekit-react-popover-trigger.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
     "name": "prosekit/react/resizable",
     "path": "packages/prosekit/dist/prosekit-react-resizable.js",
     "ignore": [
@@ -440,40 +392,8 @@
     ]
   },
   {
-    "name": "prosekit/react/resizable-handle",
-    "path": "packages/prosekit/dist/prosekit-react-resizable-handle.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
     "name": "prosekit/react/tooltip",
     "path": "packages/prosekit/dist/prosekit-react-tooltip.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/tooltip-content",
-    "path": "packages/prosekit/dist/prosekit-react-tooltip-content.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/tooltip-root",
-    "path": "packages/prosekit/dist/prosekit-react-tooltip-root.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/tooltip-trigger",
-    "path": "packages/prosekit/dist/prosekit-react-tooltip-trigger.js",
     "ignore": [
       "react",
       "react-dom"
@@ -678,6 +598,13 @@
   {
     "name": "prosekit/vue/resizable-handle",
     "path": "packages/prosekit/dist/prosekit-vue-resizable-handle.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/tooltip",
+    "path": "packages/prosekit/dist/prosekit-vue-tooltip.js",
     "ignore": [
       "vue"
     ]

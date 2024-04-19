@@ -92,19 +92,19 @@ async function writeVueComponents(pkg: Package, info: Primitives) {
 }
 
 async function writeSvelteComponents(pkg: Package, componentNames: string[]) {
-  const exports = (pkg.packageJson as any).exports
-  for (const kebab of componentNames) {
-    exports[`./${kebab}`] = ''
-    const code = formatSvelteCode(kebab)
-    await vfs.updateTextInPackage(
-      pkg,
-      `src/components/${kebab}.gen.svelte`,
-      code,
-    )
+  // const exports = (pkg.packageJson as any).exports
+  // for (const kebab of componentNames) {
+  //   exports[`./${kebab}`] = ''
+  //   const code = formatSvelteCode(kebab)
+  //   await vfs.updateTextInPackage(
+  //     pkg,
+  //     `src/components/${kebab}.gen.svelte`,
+  //     code,
+  //   )
 
-    const codeTs = formatSvelteTsCode(kebab)
-    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, codeTs)
-  }
+  //   const codeTs = formatSvelteTsCode(kebab)
+  //   await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, codeTs)
+  // }
 }
 
 async function writeSolidComponents(pkg: Package, componentNames: string[]) {

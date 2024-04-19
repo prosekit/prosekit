@@ -77,17 +77,7 @@
     "./src/react/autocomplete-item.gen.ts",
     "./src/react/autocomplete-list.gen.ts",
     "./src/react/autocomplete-popover.gen.ts",
-    "./src/react/block-drag-handle.gen.ts",
-    "./src/react/block-popover.gen.ts",
-    "./src/react/inline-popover.gen.ts",
-    "./src/react/popover-content.gen.ts",
-    "./src/react/popover-root.gen.ts",
-    "./src/react/popover-trigger.gen.ts",
-    "./src/react/resizable-handle.gen.ts",
     "./src/react/resizable.gen.ts",
-    "./src/react/tooltip-content.gen.ts",
-    "./src/react/tooltip-root.gen.ts",
-    "./src/react/tooltip-trigger.gen.ts",
     "./src/react/tooltip.gen.ts",
     "./src/solid.gen.ts",
     "./src/solid/autocomplete-empty.gen.ts",
@@ -136,6 +126,7 @@
     "./src/vue/resizable.gen.ts",
     "./src/vue/tooltip-content.gen.ts",
     "./src/vue/tooltip-root.gen.ts",
-    "./src/vue/tooltip-trigger.gen.ts"
+    "./src/vue/tooltip-trigger.gen.ts",
+    "./src/vue/tooltip.gen.ts"
   ]
 }

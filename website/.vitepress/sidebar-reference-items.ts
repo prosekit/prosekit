@@ -270,52 +270,12 @@ export const referenceItems = [
         "link": "/references/react/autocomplete-popover"
       },
       {
-        "text": "block-drag-handle",
-        "link": "/references/react/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/react/block-popover"
-      },
-      {
-        "text": "inline-popover",
-        "link": "/references/react/inline-popover"
-      },
-      {
-        "text": "popover-content",
-        "link": "/references/react/popover-content"
-      },
-      {
-        "text": "popover-root",
-        "link": "/references/react/popover-root"
-      },
-      {
-        "text": "popover-trigger",
-        "link": "/references/react/popover-trigger"
-      },
-      {
         "text": "resizable",
         "link": "/references/react/resizable"
       },
       {
-        "text": "resizable-handle",
-        "link": "/references/react/resizable-handle"
-      },
-      {
         "text": "tooltip",
         "link": "/references/react/tooltip"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/react/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/react/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/react/tooltip-trigger"
       }
     ],
     "collapsed": true,
@@ -505,6 +465,10 @@ export const referenceItems = [
       {
         "text": "resizable-handle",
         "link": "/references/vue/resizable-handle"
+      },
+      {
+        "text": "tooltip",
+        "link": "/references/vue/tooltip"
       },
       {
         "text": "tooltip-content",

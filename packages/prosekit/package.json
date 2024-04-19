@@ -105,18 +105,8 @@
     "./react/autocomplete-item": "./src/react/autocomplete-item.gen.ts",
     "./react/autocomplete-list": "./src/react/autocomplete-list.gen.ts",
     "./react/autocomplete-popover": "./src/react/autocomplete-popover.gen.ts",
-    "./react/block-drag-handle": "./src/react/block-drag-handle.gen.ts",
-    "./react/block-popover": "./src/react/block-popover.gen.ts",
-    "./react/inline-popover": "./src/react/inline-popover.gen.ts",
-    "./react/popover-content": "./src/react/popover-content.gen.ts",
-    "./react/popover-root": "./src/react/popover-root.gen.ts",
-    "./react/popover-trigger": "./src/react/popover-trigger.gen.ts",
     "./react/resizable": "./src/react/resizable.gen.ts",
-    "./react/resizable-handle": "./src/react/resizable-handle.gen.ts",
     "./react/tooltip": "./src/react/tooltip.gen.ts",
-    "./react/tooltip-content": "./src/react/tooltip-content.gen.ts",
-    "./react/tooltip-root": "./src/react/tooltip-root.gen.ts",
-    "./react/tooltip-trigger": "./src/react/tooltip-trigger.gen.ts",
     "./solid": "./src/solid.gen.ts",
     "./solid/autocomplete-empty": "./src/solid/autocomplete-empty.gen.ts",
     "./solid/autocomplete-item": "./src/solid/autocomplete-item.gen.ts",
@@ -162,6 +152,7 @@
     "./vue/popover-trigger": "./src/vue/popover-trigger.gen.ts",
     "./vue/resizable": "./src/vue/resizable.gen.ts",
     "./vue/resizable-handle": "./src/vue/resizable-handle.gen.ts",
+    "./vue/tooltip": "./src/vue/tooltip.gen.ts",
     "./vue/tooltip-content": "./src/vue/tooltip-content.gen.ts",
     "./vue/tooltip-root": "./src/vue/tooltip-root.gen.ts",
     "./vue/tooltip-trigger": "./src/vue/tooltip-trigger.gen.ts"
@@ -617,65 +608,15 @@
         "import": "./dist/prosekit-react-autocomplete-popover.js",
         "default": "./dist/prosekit-react-autocomplete-popover.js"
       },
-      "./react/block-drag-handle": {
-        "types": "./dist/prosekit-react-block-drag-handle.d.ts",
-        "import": "./dist/prosekit-react-block-drag-handle.js",
-        "default": "./dist/prosekit-react-block-drag-handle.js"
-      },
-      "./react/block-popover": {
-        "types": "./dist/prosekit-react-block-popover.d.ts",
-        "import": "./dist/prosekit-react-block-popover.js",
-        "default": "./dist/prosekit-react-block-popover.js"
-      },
-      "./react/inline-popover": {
-        "types": "./dist/prosekit-react-inline-popover.d.ts",
-        "import": "./dist/prosekit-react-inline-popover.js",
-        "default": "./dist/prosekit-react-inline-popover.js"
-      },
-      "./react/popover-content": {
-        "types": "./dist/prosekit-react-popover-content.d.ts",
-        "import": "./dist/prosekit-react-popover-content.js",
-        "default": "./dist/prosekit-react-popover-content.js"
-      },
-      "./react/popover-root": {
-        "types": "./dist/prosekit-react-popover-root.d.ts",
-        "import": "./dist/prosekit-react-popover-root.js",
-        "default": "./dist/prosekit-react-popover-root.js"
-      },
-      "./react/popover-trigger": {
-        "types": "./dist/prosekit-react-popover-trigger.d.ts",
-        "import": "./dist/prosekit-react-popover-trigger.js",
-        "default": "./dist/prosekit-react-popover-trigger.js"
-      },
       "./react/resizable": {
         "types": "./dist/prosekit-react-resizable.d.ts",
         "import": "./dist/prosekit-react-resizable.js",
         "default": "./dist/prosekit-react-resizable.js"
       },
-      "./react/resizable-handle": {
-        "types": "./dist/prosekit-react-resizable-handle.d.ts",
-        "import": "./dist/prosekit-react-resizable-handle.js",
-        "default": "./dist/prosekit-react-resizable-handle.js"
-      },
       "./react/tooltip": {
         "types": "./dist/prosekit-react-tooltip.d.ts",
         "import": "./dist/prosekit-react-tooltip.js",
         "default": "./dist/prosekit-react-tooltip.js"
-      },
-      "./react/tooltip-content": {
-        "types": "./dist/prosekit-react-tooltip-content.d.ts",
-        "import": "./dist/prosekit-react-tooltip-content.js",
-        "default": "./dist/prosekit-react-tooltip-content.js"
-      },
-      "./react/tooltip-root": {
-        "types": "./dist/prosekit-react-tooltip-root.d.ts",
-        "import": "./dist/prosekit-react-tooltip-root.js",
-        "default": "./dist/prosekit-react-tooltip-root.js"
-      },
-      "./react/tooltip-trigger": {
-        "types": "./dist/prosekit-react-tooltip-trigger.d.ts",
-        "import": "./dist/prosekit-react-tooltip-trigger.js",
-        "default": "./dist/prosekit-react-tooltip-trigger.js"
       },
       "./solid": {
         "types": "./dist/prosekit-solid.d.ts",
@@ -901,6 +842,11 @@
         "types": "./dist/prosekit-vue-resizable-handle.d.ts",
         "import": "./dist/prosekit-vue-resizable-handle.js",
         "default": "./dist/prosekit-vue-resizable-handle.js"
+      },
+      "./vue/tooltip": {
+        "types": "./dist/prosekit-vue-tooltip.d.ts",
+        "import": "./dist/prosekit-vue-tooltip.js",
+        "default": "./dist/prosekit-vue-tooltip.js"
       },
       "./vue/tooltip-content": {
         "types": "./dist/prosekit-vue-tooltip-content.d.ts",
@@ -1142,41 +1088,11 @@
         "react/autocomplete-popover": [
           "./dist/prosekit-react-autocomplete-popover.d.ts"
         ],
-        "react/block-drag-handle": [
-          "./dist/prosekit-react-block-drag-handle.d.ts"
-        ],
-        "react/block-popover": [
-          "./dist/prosekit-react-block-popover.d.ts"
-        ],
-        "react/inline-popover": [
-          "./dist/prosekit-react-inline-popover.d.ts"
-        ],
-        "react/popover-content": [
-          "./dist/prosekit-react-popover-content.d.ts"
-        ],
-        "react/popover-root": [
-          "./dist/prosekit-react-popover-root.d.ts"
-        ],
-        "react/popover-trigger": [
-          "./dist/prosekit-react-popover-trigger.d.ts"
-        ],
         "react/resizable": [
           "./dist/prosekit-react-resizable.d.ts"
         ],
-        "react/resizable-handle": [
-          "./dist/prosekit-react-resizable-handle.d.ts"
-        ],
         "react/tooltip": [
           "./dist/prosekit-react-tooltip.d.ts"
-        ],
-        "react/tooltip-content": [
-          "./dist/prosekit-react-tooltip-content.d.ts"
-        ],
-        "react/tooltip-root": [
-          "./dist/prosekit-react-tooltip-root.d.ts"
-        ],
-        "react/tooltip-trigger": [
-          "./dist/prosekit-react-tooltip-trigger.d.ts"
         ],
         "solid": [
           "./dist/prosekit-solid.d.ts"
@@ -1312,6 +1228,9 @@
         ],
         "vue/resizable-handle": [
           "./dist/prosekit-vue-resizable-handle.d.ts"
+        ],
+        "vue/tooltip": [
+          "./dist/prosekit-vue-tooltip.d.ts"
         ],
         "vue/tooltip-content": [
           "./dist/prosekit-vue-tooltip-content.d.ts"

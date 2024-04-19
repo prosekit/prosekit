@@ -113,6 +113,7 @@
     "./react/popover-trigger": "./src/react/popover-trigger.gen.ts",
     "./react/resizable": "./src/react/resizable.gen.ts",
     "./react/resizable-handle": "./src/react/resizable-handle.gen.ts",
+    "./react/tooltip": "./src/react/tooltip.gen.ts",
     "./react/tooltip-content": "./src/react/tooltip-content.gen.ts",
     "./react/tooltip-root": "./src/react/tooltip-root.gen.ts",
     "./react/tooltip-trigger": "./src/react/tooltip-trigger.gen.ts",
@@ -173,11 +174,11 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
+    "@prosekit/pm": "0.1.2",
     "@prosekit/basic": "0.3.4",
     "@prosekit/core": "0.4.0",
     "@prosekit/extensions": "0.4.2",
     "@prosekit/lit": "0.2.8",
-    "@prosekit/pm": "0.1.2",
     "@prosekit/preact": "0.2.7",
     "@prosekit/primitives": "0.0.0",
     "@prosekit/react": "0.2.7",
@@ -655,6 +656,11 @@
         "types": "./dist/prosekit-react-resizable-handle.d.ts",
         "import": "./dist/prosekit-react-resizable-handle.js",
         "default": "./dist/prosekit-react-resizable-handle.js"
+      },
+      "./react/tooltip": {
+        "types": "./dist/prosekit-react-tooltip.d.ts",
+        "import": "./dist/prosekit-react-tooltip.js",
+        "default": "./dist/prosekit-react-tooltip.js"
       },
       "./react/tooltip-content": {
         "types": "./dist/prosekit-react-tooltip-content.d.ts",
@@ -1159,6 +1165,9 @@
         ],
         "react/resizable-handle": [
           "./dist/prosekit-react-resizable-handle.d.ts"
+        ],
+        "react/tooltip": [
+          "./dist/prosekit-react-tooltip.d.ts"
         ],
         "react/tooltip-content": [
           "./dist/prosekit-react-tooltip-content.d.ts"

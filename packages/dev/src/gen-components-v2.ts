@@ -21,8 +21,9 @@ export async function genComponents() {
 
   const primitives = await readPrimitives(primitivesPackage)
   await writePrimitivesComponent(primitivesPackage, primitives)
+  await writeReactComponent(reactPackage, primitives)
+
   if (Math.random() > 2) {
-    await writeReactComponents(reactPackage, ['componentNames'])
     await writeVueComponents(vuePackage, ['componentNames'])
     await writeSvelteComponents(sveltePackage, ['componentNames'])
     await writeSolidComponents(solidPackage, ['componentNames'])
@@ -50,12 +51,23 @@ async function writePrimitivesComponent(pkg: Package, info: Primitives) {
   }
 }
 
-async function writeReactComponents(pkg: Package, componentNames: string[]) {
+async function writeReactComponent(pkg: Package, info: Primitives) {
   const exports = (pkg.packageJson as any).exports
-  for (const kebab of componentNames) {
-    exports[`./${kebab}`] = ''
-    const code = formatReactCode(kebab)
-    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
+
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
+
+    const code = formatReactIndexCode(components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+
+    for (const component of components) {
+      const code = formatReactComponentCode(group, component)
+      await vfs.updateTextInPackage(
+        pkg,
+        `src/components/${group}/${component}.gen.ts`,
+        code,
+      )
+    }
   }
 }
 
@@ -106,7 +118,6 @@ function formatPrimitiveIndexCode(components: string[]) {
   const lines = components.flatMap((kebab) => {
     const pascal = kebabToPascal(kebab)
     return [
-      `// ${pascal}`,
       `export { ${pascal}Element } from './${kebab}/element.gen'`,
       `export { default${pascal}Props } from './${kebab}/props'`,
       `export type { ${pascal}Props } from './${kebab}/props'`,
@@ -151,32 +162,43 @@ export { ${pascal}Element }
   )
 }
 
-function formatReactCode(kebab: string) {
+function formatReactIndexCode(components: string[]) {
+  const lines = components.flatMap((kebab) => {
+    const pascal = kebabToPascal(kebab)
+    return [`export { ${pascal} } from './${kebab}.gen'`, '']
+  })
+
+  return lines.join('\n')
+}
+
+function formatReactComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import { createComponent } from '@lit/react'
-import { ${pascal} as ${pascal}Element, type ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
-import React from 'react'
 
-import {type PropsWithClassName} from '../types'
+import {
+  ${pascal}Element,
+  default${pascal}Props,
+  type ${pascal}Props,
+} from '@prosekit/primitives/${group}'
+import type {
+  ForwardRefExoticComponent,
+  HTMLAttributes,
+  RefAttributes,
+} from 'react'
 
-export type ${pascal}Props = React.PropsWithChildren<PropsWithClassName<${pascal}ElementProps>>
+import { createComponent } from '../create-component'
 
-const ${pascal}Inner = createComponent({
-  tagName: 'prosekit-${kebab}',
-  elementClass: ${pascal}Element,
-  react: React,
-  displayName: '${pascal}Inner',
-})
-
-export const ${pascal}: React.ComponentType<
-  ${pascal}Props & React.RefAttributes<${pascal}Element>
-> = React.forwardRef((props, ref) => {
-  return React.createElement(${pascal}Inner, { ...props, ref })
-})
-
-${pascal}.displayName = '${pascal}'
+export const ${pascal}: ForwardRefExoticComponent<
+  RefAttributes<${pascal}Element> &
+    ${pascal}Props &
+    HTMLAttributes<${pascal}Element>
+> = createComponent<${pascal}Props, ${pascal}Element>(
+  '${kebab}-v2',
+  '${pascal}',
+  default${pascal}Props,
+)
+    
 `.trim() + '\n'
   )
 }

@@ -448,6 +448,14 @@
     ]
   },
   {
+    "name": "prosekit/react/tooltip",
+    "path": "packages/prosekit/dist/prosekit-react-tooltip.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
     "name": "prosekit/react/tooltip-content",
     "path": "packages/prosekit/dist/prosekit-react-tooltip-content.js",
     "ignore": [

@@ -302,6 +302,10 @@ export const referenceItems = [
         "link": "/references/react/resizable-handle"
       },
       {
+        "text": "tooltip",
+        "link": "/references/react/tooltip"
+      },
+      {
         "text": "tooltip-content",
         "link": "/references/react/tooltip-content"
       },

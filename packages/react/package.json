@@ -38,6 +38,7 @@
     "./popover-trigger": "./src/components/popover-trigger.gen.ts",
     "./resizable": "./src/components/resizable.gen.ts",
     "./resizable-handle": "./src/components/resizable-handle.gen.ts",
+    "./tooltip": "./src/components/tooltip/index.ts",
     "./tooltip-content": "./src/components/tooltip-content.gen.ts",
     "./tooltip-root": "./src/components/tooltip-root.gen.ts",
     "./tooltip-trigger": "./src/components/tooltip-trigger.gen.ts"
@@ -147,6 +148,11 @@
         "import": "./dist/prosekit-react-resizable-handle.js",
         "default": "./dist/prosekit-react-resizable-handle.js"
       },
+      "./tooltip": {
+        "types": "./dist/prosekit-react-tooltip.d.ts",
+        "import": "./dist/prosekit-react-tooltip.js",
+        "default": "./dist/prosekit-react-tooltip.js"
+      },
       "./tooltip-content": {
         "types": "./dist/prosekit-react-tooltip-content.d.ts",
         "import": "./dist/prosekit-react-tooltip-content.js",
@@ -206,6 +212,9 @@
         ],
         "resizable-handle": [
           "./dist/prosekit-react-resizable-handle.d.ts"
+        ],
+        "tooltip": [
+          "./dist/prosekit-react-tooltip.d.ts"
         ],
         "tooltip-content": [
           "./dist/prosekit-react-tooltip-content.d.ts"

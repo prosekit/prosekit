@@ -547,43 +547,8 @@
     ]
   },
   {
-    "name": "prosekit/vue/block-drag-handle",
-    "path": "packages/prosekit/dist/prosekit-vue-block-drag-handle.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/block-popover",
-    "path": "packages/prosekit/dist/prosekit-vue-block-popover.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
     "name": "prosekit/vue/inline-popover",
     "path": "packages/prosekit/dist/prosekit-vue-inline-popover.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/popover-content",
-    "path": "packages/prosekit/dist/prosekit-vue-popover-content.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/popover-root",
-    "path": "packages/prosekit/dist/prosekit-vue-popover-root.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/popover-trigger",
-    "path": "packages/prosekit/dist/prosekit-vue-popover-trigger.js",
     "ignore": [
       "vue"
     ]
@@ -596,36 +561,8 @@
     ]
   },
   {
-    "name": "prosekit/vue/resizable-handle",
-    "path": "packages/prosekit/dist/prosekit-vue-resizable-handle.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
     "name": "prosekit/vue/tooltip",
     "path": "packages/prosekit/dist/prosekit-vue-tooltip.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/tooltip-content",
-    "path": "packages/prosekit/dist/prosekit-vue-tooltip-content.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/tooltip-root",
-    "path": "packages/prosekit/dist/prosekit-vue-tooltip-root.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/tooltip-trigger",
-    "path": "packages/prosekit/dist/prosekit-vue-tooltip-trigger.js",
     "ignore": [
       "vue"
     ]

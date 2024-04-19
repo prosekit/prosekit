@@ -435,52 +435,16 @@ export const referenceItems = [
         "link": "/references/vue/autocomplete-popover"
       },
       {
-        "text": "block-drag-handle",
-        "link": "/references/vue/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/vue/block-popover"
-      },
-      {
         "text": "inline-popover",
         "link": "/references/vue/inline-popover"
-      },
-      {
-        "text": "popover-content",
-        "link": "/references/vue/popover-content"
-      },
-      {
-        "text": "popover-root",
-        "link": "/references/vue/popover-root"
-      },
-      {
-        "text": "popover-trigger",
-        "link": "/references/vue/popover-trigger"
       },
       {
         "text": "resizable",
         "link": "/references/vue/resizable"
       },
       {
-        "text": "resizable-handle",
-        "link": "/references/vue/resizable-handle"
-      },
-      {
         "text": "tooltip",
         "link": "/references/vue/tooltip"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/vue/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/vue/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/vue/tooltip-trigger"
       }
     ],
     "collapsed": true,

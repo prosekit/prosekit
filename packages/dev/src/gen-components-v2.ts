@@ -14,7 +14,7 @@ export async function genComponents() {
   const preactPackage = await vfs.getPackageByName('@prosekit/preact')
 
   await vfs.cleanGeneratedFilesInPackage(reactPackage)
-  // await vfs.cleanGeneratedFilesInPackage(vuePackage)
+  await vfs.cleanGeneratedFilesInPackage(vuePackage)
   // await vfs.cleanGeneratedFilesInPackage(sveltePackage)
   // await vfs.cleanGeneratedFilesInPackage(solidPackage)
   // await vfs.cleanGeneratedFilesInPackage(preactPackage)

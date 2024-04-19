@@ -116,17 +116,8 @@
     "./src/vue/autocomplete-item.gen.ts",
     "./src/vue/autocomplete-list.gen.ts",
     "./src/vue/autocomplete-popover.gen.ts",
-    "./src/vue/block-drag-handle.gen.ts",
-    "./src/vue/block-popover.gen.ts",
     "./src/vue/inline-popover.gen.ts",
-    "./src/vue/popover-content.gen.ts",
-    "./src/vue/popover-root.gen.ts",
-    "./src/vue/popover-trigger.gen.ts",
-    "./src/vue/resizable-handle.gen.ts",
     "./src/vue/resizable.gen.ts",
-    "./src/vue/tooltip-content.gen.ts",
-    "./src/vue/tooltip-root.gen.ts",
-    "./src/vue/tooltip-trigger.gen.ts",
     "./src/vue/tooltip.gen.ts"
   ]
 }

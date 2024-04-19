@@ -1,5 +1,11 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
-  "entryPoints": ["./src/components/resizable/index.ts", "./src/index.ts"]
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
+  "entryPoints": [
+    "./src/components/resizable/index.ts",
+    "./src/components/tooltip/index.ts",
+    "./src/index.ts"
+  ]
 }

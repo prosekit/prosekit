@@ -26,7 +26,8 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./resizable": "./src/components/resizable/index.ts"
+    "./resizable": "./src/components/resizable/index.ts",
+    "./tooltip": "./src/components/tooltip/index.ts"
   },
   "files": [
     "dist"
@@ -64,6 +65,11 @@
         "types": "./dist/prosekit-primitives-resizable.d.ts",
         "import": "./dist/prosekit-primitives-resizable.js",
         "default": "./dist/prosekit-primitives-resizable.js"
+      },
+      "./tooltip": {
+        "types": "./dist/prosekit-primitives-tooltip.d.ts",
+        "import": "./dist/prosekit-primitives-tooltip.js",
+        "default": "./dist/prosekit-primitives-tooltip.js"
       }
     },
     "main": "./dist/prosekit-primitives.js",
@@ -76,6 +82,9 @@
         ],
         "resizable": [
           "./dist/prosekit-primitives-resizable.d.ts"
+        ],
+        "tooltip": [
+          "./dist/prosekit-primitives-tooltip.d.ts"
         ]
       }
     }

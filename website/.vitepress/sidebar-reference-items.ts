@@ -241,6 +241,10 @@ export const referenceItems = [
       {
         "text": "resizable",
         "link": "/references/primitives/resizable"
+      },
+      {
+        "text": "tooltip",
+        "link": "/references/primitives/tooltip"
       }
     ],
     "collapsed": true,

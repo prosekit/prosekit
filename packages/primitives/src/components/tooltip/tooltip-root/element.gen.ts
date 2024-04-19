@@ -19,6 +19,6 @@ interface TooltipRootElement extends TooltipRootProps {}
 
 defineProperties(TooltipRootElement, defaultTooltipRootProps)
 
-defineCustomElement('prosekit-resizable-root', TooltipRootElement)
+defineCustomElement('prosekit-tooltip-root-v2', TooltipRootElement)
 
 export { TooltipRootElement }

@@ -143,7 +143,7 @@ interface ${pascal}Element extends ${pascal}Props {}
 
 defineProperties(${pascal}Element, default${pascal}Props)
 
-defineCustomElement('prosekit-resizable-root', ${pascal}Element)
+defineCustomElement('prosekit-${kebab}-v2', ${pascal}Element)
 
 export { ${pascal}Element }
     

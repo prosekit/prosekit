@@ -19,6 +19,6 @@ interface TooltipContentElement extends TooltipContentProps {}
 
 defineProperties(TooltipContentElement, defaultTooltipContentProps)
 
-defineCustomElement('prosekit-resizable-root', TooltipContentElement)
+defineCustomElement('prosekit-tooltip-content-v2', TooltipContentElement)
 
 export { TooltipContentElement }

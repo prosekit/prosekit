@@ -19,6 +19,6 @@ interface ResizableRootElement extends ResizableRootProps {}
 
 defineProperties(ResizableRootElement, defaultResizableRootProps)
 
-defineCustomElement('prosekit-resizable-root', ResizableRootElement)
+defineCustomElement('prosekit-resizable-root-v2', ResizableRootElement)
 
 export { ResizableRootElement }

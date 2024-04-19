@@ -16,7 +16,7 @@ export const TooltipContent: ForwardRefExoticComponent<
     TooltipContentProps &
     HTMLAttributes<TooltipContentElement>
 > = createComponent<TooltipContentProps, TooltipContentElement>(
-  'prosekit-tooltip-content',
+  'prosekit-tooltip-content-v2',
   'TooltipContent',
   defaultTooltipContentProps,
 )

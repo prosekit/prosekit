@@ -424,6 +424,9 @@ importers:
       '@prosekit/preact':
         specifier: 0.2.7
         version: link:../preact
+      '@prosekit/primitives':
+        specifier: 0.0.0
+        version: link:../primitives
       '@prosekit/react':
         specifier: 0.2.7
         version: link:../react

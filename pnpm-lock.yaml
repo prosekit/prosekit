@@ -358,6 +358,52 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0(jsdom@24.0.0)
 
+  packages/primitives:
+    dependencies:
+      '@aria-ui/core':
+        specifier: ^0.0.12
+        version: 0.0.12
+      '@aria-ui/listbox':
+        specifier: ^0.0.10
+        version: 0.0.10
+      '@aria-ui/overlay':
+        specifier: ^0.0.12
+        version: 0.0.12
+      '@aria-ui/popover':
+        specifier: ^0.0.11
+        version: 0.0.11
+      '@aria-ui/presence':
+        specifier: ^0.0.7
+        version: 0.0.7
+      '@aria-ui/tooltip':
+        specifier: ^0.0.13
+        version: 0.0.13
+      '@prosekit/core':
+        specifier: ^0.4.0
+        version: link:../core
+      '@prosekit/extensions':
+        specifier: ^0.4.2
+        version: link:../extensions
+      '@prosekit/pm':
+        specifier: ^0.1.2
+        version: link:../pm
+      '@zag-js/dom-query':
+        specifier: ^0.47.0
+        version: 0.47.0
+    devDependencies:
+      '@prosekit/dev':
+        specifier: '*'
+        version: link:../dev
+      tsup:
+        specifier: ^8.0.2
+        version: 8.0.2(@microsoft/api-extractor@7.43.1)(postcss@8.4.38)(typescript@5.4.5)
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      vitest:
+        specifier: ^1.5.0
+        version: 1.5.0(jsdom@24.0.0)
+
   packages/prosekit:
     dependencies:
       '@prosekit/basic':

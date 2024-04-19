@@ -1,0 +1,74 @@
+{
+  "name": "@prosekit/primitives",
+  "type": "module",
+  "version": "0.0.0",
+  "private": false,
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/primitives"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": true,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsup": "tsup",
+    "build:tsc": "tsc -b tsconfig.json"
+  },
+  "dependencies": {
+    "@aria-ui/core": "^0.0.12",
+    "@aria-ui/listbox": "^0.0.10",
+    "@aria-ui/overlay": "^0.0.12",
+    "@aria-ui/popover": "^0.0.11",
+    "@aria-ui/presence": "^0.0.7",
+    "@aria-ui/tooltip": "^0.0.13",
+    "@prosekit/core": "^0.4.0",
+    "@prosekit/extensions": "^0.4.2",
+    "@prosekit/pm": "^0.1.2",
+    "@zag-js/dom-query": "^0.47.0"
+  },
+  "devDependencies": {
+    "@prosekit/dev": "*",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.0"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-primitives.d.ts",
+        "import": "./dist/prosekit-primitives.js",
+        "default": "./dist/prosekit-primitives.js"
+      }
+    },
+    "main": "./dist/prosekit-primitives.js",
+    "module": "./dist/prosekit-primitives.js",
+    "types": "./dist/prosekit-primitives.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-primitives.d.ts"
+        ]
+      }
+    }
+  }
+}

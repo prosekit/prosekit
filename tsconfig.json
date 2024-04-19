@@ -5,7 +5,6 @@
     "lib": ["esnext", "DOM"],
     "composite": true,
     "allowJs": true,
-    /* Bundling */
     "moduleResolution": "bundler",
     "useDefineForClassFields": false,
     "resolveJsonModule": true,
@@ -16,7 +15,6 @@
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
-    /* Linting */
     "strict": true,
     "strictNullChecks": true,
     "skipLibCheck": true,
@@ -49,6 +47,9 @@
     },
     {
       "path": "packages/preact/tsconfig.json",
+    },
+    {
+      "path": "packages/primitives/tsconfig.json",
     },
     {
       "path": "packages/prosekit/tsconfig.json",

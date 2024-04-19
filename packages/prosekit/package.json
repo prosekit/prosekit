@@ -97,6 +97,7 @@
     "./preact/tooltip-content": "./src/preact/tooltip-content.gen.ts",
     "./preact/tooltip-root": "./src/preact/tooltip-root.gen.ts",
     "./preact/tooltip-trigger": "./src/preact/tooltip-trigger.gen.ts",
+    "./primitives": "./src/primitives.gen.ts",
     "./react": "./src/react.gen.ts",
     "./react/autocomplete-empty": "./src/react/autocomplete-empty.gen.ts",
     "./react/autocomplete-item": "./src/react/autocomplete-item.gen.ts",
@@ -176,6 +177,7 @@
     "@prosekit/lit": "0.2.8",
     "@prosekit/pm": "0.1.2",
     "@prosekit/preact": "0.2.7",
+    "@prosekit/primitives": "0.0.0",
     "@prosekit/react": "0.2.7",
     "@prosekit/solid": "0.2.7",
     "@prosekit/svelte": "0.2.7",
@@ -571,6 +573,11 @@
         "types": "./dist/prosekit-preact-tooltip-trigger.d.ts",
         "import": "./dist/prosekit-preact-tooltip-trigger.js",
         "default": "./dist/prosekit-preact-tooltip-trigger.js"
+      },
+      "./primitives": {
+        "types": "./dist/prosekit-primitives.d.ts",
+        "import": "./dist/prosekit-primitives.js",
+        "default": "./dist/prosekit-primitives.js"
       },
       "./react": {
         "types": "./dist/prosekit-react.d.ts",
@@ -1092,6 +1099,9 @@
         ],
         "preact/tooltip-trigger": [
           "./dist/prosekit-preact-tooltip-trigger.d.ts"
+        ],
+        "primitives": [
+          "./dist/prosekit-primitives.d.ts"
         ],
         "react": [
           "./dist/prosekit-react.d.ts"

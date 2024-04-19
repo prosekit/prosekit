@@ -236,6 +236,10 @@ export const referenceItems = [
     "link": "/references/preact"
   },
   {
+    "text": "primitives",
+    "link": "/references/primitives"
+  },
+  {
     "text": "react",
     "items": [
       {

@@ -332,6 +332,10 @@
     ]
   },
   {
+    "name": "prosekit/primitives",
+    "path": "packages/prosekit/dist/prosekit-primitives.js"
+  },
+  {
     "name": "prosekit/react",
     "path": "packages/prosekit/dist/prosekit-react.js",
     "ignore": [

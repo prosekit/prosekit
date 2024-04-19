@@ -67,6 +67,7 @@
     "./src/preact/tooltip-content.gen.ts",
     "./src/preact/tooltip-root.gen.ts",
     "./src/preact/tooltip-trigger.gen.ts",
+    "./src/primitives.gen.ts",
     "./src/react.gen.ts",
     "./src/react/autocomplete-empty.gen.ts",
     "./src/react/autocomplete-item.gen.ts",

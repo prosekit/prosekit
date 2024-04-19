@@ -1,4 +1,4 @@
-export interface ResizableProps {
+export interface ResizableRootProps {
   width: number | null
   height: number | null
   aspectRatio: number | null
@@ -7,11 +7,11 @@ export interface ResizableProps {
   onSizeChangeEnd: ((size: { width: number; height: number }) => void) | null
 }
 
-export const defaultResizableProps = {
+export const defaultResizableRootProps = {
   width: null,
   height: null,
   aspectRatio: null,
   onSizeChangeStart: null,
   onSizeChange: null,
   onSizeChangeEnd: null,
-} satisfies ResizableProps
+} satisfies ResizableRootProps

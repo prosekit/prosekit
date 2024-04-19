@@ -3,22 +3,22 @@ import { BaseElement, type SignalState } from '@aria-ui/core'
 import { defineCustomElement } from '../../../utils/define-custom-element'
 import { defineProperties } from '../../../utils/define-properties'
 
-import { defaultResizableProps, type ResizableProps } from './props'
-import { useResizable } from './state'
+import { defaultResizableRootProps, type ResizableRootProps } from './props'
+import { useResizableRoot } from './state'
 
-class Resizable extends BaseElement implements ResizableProps {
-  readonly _s: SignalState<ResizableProps>
+class ResizableRoot extends BaseElement implements ResizableRootProps {
+  readonly _s: SignalState<ResizableRootProps>
 
-  constructor(props?: Partial<ResizableProps>) {
+  constructor(props?: Partial<ResizableRootProps>) {
     super()
-    this._s = useResizable(this, props)
+    this._s = useResizableRoot(this, props)
   }
 }
 
-interface Resizable extends ResizableProps {}
+interface ResizableRoot extends ResizableRootProps {}
 
-defineProperties(Resizable, defaultResizableProps)
+defineProperties(ResizableRoot, defaultResizableRootProps)
 
-defineCustomElement('prosekit-resizable', Resizable)
+defineCustomElement('prosekit-resizable-root', ResizableRoot)
 
-export { Resizable }
+export { ResizableRoot as Resizable }

@@ -16,7 +16,7 @@ import {
   type OnResizeStart,
   type OnResizeEnd,
   onResizeEndContext,
-} from '../resizable-root/context'
+} from '../context'
 
 import { calcResize } from './calc-resize'
 import { defaultResizableHandleProps, type ResizableHandleProps } from './props'

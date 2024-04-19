@@ -8,7 +8,6 @@ import {
 } from '@aria-ui/core'
 
 import { isFinitePositiveNumber } from '../../../utils/is-finite-positive-number'
-
 import {
   onResizeContext,
   onResizeEndContext,
@@ -16,21 +15,22 @@ import {
   type OnResize,
   type OnResizeEnd,
   type OnResizeStart,
-} from './context'
-import { defaultResizableProps, type ResizableProps } from './props'
+} from '../context'
 
-export function useResizable(
+import { defaultResizableRootProps, type ResizableRootProps } from './props'
+
+export function useResizableRoot(
   host: ConnectableElement,
-  props?: Partial<ResizableProps>,
+  props?: Partial<ResizableRootProps>,
 ) {
-  const state = mapSignals(assignProps(defaultResizableProps, props))
-  useResizableState(host, state)
+  const state = mapSignals(assignProps(defaultResizableRootProps, props))
+  useResizableRootState(host, state)
   return state
 }
 
-function useResizableState(
+function useResizableRootState(
   host: ConnectableElement,
-  state: SignalState<ResizableProps>,
+  state: SignalState<ResizableRootProps>,
 ) {
   const onResizeStart: OnResizeStart = () => {
     const { width, height } = host.getBoundingClientRect()
@@ -61,7 +61,7 @@ function useResizableState(
   onResizeEndContext.provide(host, createSignal(onResizeEnd))
 
   useEffect(host, () => {
-    updateResizableStyles(
+    updateResizableRootStyles(
       host,
       state.width.value,
       state.height.value,
@@ -70,7 +70,7 @@ function useResizableState(
   })
 }
 
-function updateResizableStyles(
+function updateResizableRootStyles(
   host: ConnectableElement,
   width: number | null,
   height: number | null,

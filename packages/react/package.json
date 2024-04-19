@@ -52,9 +52,11 @@
   "dependencies": {
     "@lit/react": "^1.0.4",
     "@prosekit/core": "^0.4.0",
+    "@prosekit/primitives": "^0.0.0",
     "@prosekit/lit": "^0.2.8",
     "@prosekit/pm": "^0.1.2",
-    "@prosemirror-adapter/core": "^0.2.6"
+    "@prosemirror-adapter/core": "^0.2.6",
+    "react-merge-refs": "^2.1.1"
   },
   "peerDependencies": {
     "react": ">= 17.0.0",

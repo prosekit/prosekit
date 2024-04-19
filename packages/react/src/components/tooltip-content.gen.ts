@@ -1,22 +1,22 @@
-import { createComponent } from '@lit/react'
-import { TooltipContent as TooltipContentElement, type TooltipContentProps as TooltipContentElementProps } from '@prosekit/lit/tooltip-content'
-import React from 'react'
+import {
+  TooltipContentElement,
+  defaultTooltipContentProps,
+  type TooltipContentProps,
+} from '@prosekit/primitives/tooltip'
+import {
+  type ForwardRefExoticComponent,
+  type HTMLAttributes,
+  type RefAttributes,
+} from 'react'
 
-import {type PropsWithClassName} from '../types'
+import { createComponent } from './create-component'
 
-export type TooltipContentProps = React.PropsWithChildren<PropsWithClassName<TooltipContentElementProps>>
-
-const TooltipContentInner = createComponent({
-  tagName: 'prosekit-tooltip-content',
-  elementClass: TooltipContentElement,
-  react: React,
-  displayName: 'TooltipContentInner',
-})
-
-export const TooltipContent: React.ComponentType<
-  TooltipContentProps & React.RefAttributes<TooltipContentElement>
-> = React.forwardRef((props, ref) => {
-  return React.createElement(TooltipContentInner, { ...props, ref })
-})
-
-TooltipContent.displayName = 'TooltipContent'
+export const TooltipContent: ForwardRefExoticComponent<
+  RefAttributes<TooltipContentElement> &
+    TooltipContentProps &
+    HTMLAttributes<TooltipContentElement>
+> = createComponent<TooltipContentProps, TooltipContentElement>(
+  'prosekit-tooltip-content',
+  'TooltipContent',
+  defaultTooltipContentProps,
+)

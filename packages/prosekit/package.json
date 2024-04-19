@@ -98,6 +98,7 @@
     "./preact/tooltip-root": "./src/preact/tooltip-root.gen.ts",
     "./preact/tooltip-trigger": "./src/preact/tooltip-trigger.gen.ts",
     "./primitives": "./src/primitives.gen.ts",
+    "./primitives/resizable": "./src/primitives/resizable.gen.ts",
     "./react": "./src/react.gen.ts",
     "./react/autocomplete-empty": "./src/react/autocomplete-empty.gen.ts",
     "./react/autocomplete-item": "./src/react/autocomplete-item.gen.ts",
@@ -171,11 +172,11 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
+    "@prosekit/pm": "0.1.2",
     "@prosekit/basic": "0.3.4",
     "@prosekit/core": "0.4.0",
     "@prosekit/extensions": "0.4.2",
     "@prosekit/lit": "0.2.8",
-    "@prosekit/pm": "0.1.2",
     "@prosekit/preact": "0.2.7",
     "@prosekit/primitives": "0.0.0",
     "@prosekit/react": "0.2.7",
@@ -578,6 +579,11 @@
         "types": "./dist/prosekit-primitives.d.ts",
         "import": "./dist/prosekit-primitives.js",
         "default": "./dist/prosekit-primitives.js"
+      },
+      "./primitives/resizable": {
+        "types": "./dist/prosekit-primitives-resizable.d.ts",
+        "import": "./dist/prosekit-primitives-resizable.js",
+        "default": "./dist/prosekit-primitives-resizable.js"
       },
       "./react": {
         "types": "./dist/prosekit-react.d.ts",
@@ -1102,6 +1108,9 @@
         ],
         "primitives": [
           "./dist/prosekit-primitives.d.ts"
+        ],
+        "primitives/resizable": [
+          "./dist/prosekit-primitives-resizable.d.ts"
         ],
         "react": [
           "./dist/prosekit-react.d.ts"

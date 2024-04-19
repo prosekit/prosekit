@@ -6,19 +6,19 @@ import { defineProperties } from '../../../utils/define-properties'
 import { defaultResizableHandleProps, type ResizableHandleProps } from './props'
 import { useResizableHandle } from './state'
 
-class ResizableHandle extends BaseElement implements ResizableHandleProps {
+class ResizableHandleElement extends BaseElement implements ResizableHandleProps {
   readonly _s: SignalState<ResizableHandleProps>
 
-  constructor(props?: Partial<ResizableHandleProps>) {
+  constructor() {
     super()
-    this._s = useResizableHandle(this, props)
+    this._s = useResizableHandle(this)
   }
 }
 
-interface ResizableHandle extends ResizableHandleProps {}
+interface ResizableHandleElement extends ResizableHandleProps {}
 
-defineProperties(ResizableHandle, defaultResizableHandleProps)
+defineProperties(ResizableHandleElement, defaultResizableHandleProps)
 
-defineCustomElement('prosekit-resizable-handle', ResizableHandle)
+defineCustomElement('prosekit-resizable-root', ResizableHandleElement)
 
-export { ResizableHandle }
+export { ResizableHandleElement }

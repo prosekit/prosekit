@@ -6,19 +6,19 @@ import { defineProperties } from '../../../utils/define-properties'
 import { defaultResizableRootProps, type ResizableRootProps } from './props'
 import { useResizableRoot } from './state'
 
-class ResizableRoot extends BaseElement implements ResizableRootProps {
+class ResizableRootElement extends BaseElement implements ResizableRootProps {
   readonly _s: SignalState<ResizableRootProps>
 
-  constructor(props?: Partial<ResizableRootProps>) {
+  constructor() {
     super()
-    this._s = useResizableRoot(this, props)
+    this._s = useResizableRoot(this)
   }
 }
 
-interface ResizableRoot extends ResizableRootProps {}
+interface ResizableRootElement extends ResizableRootProps {}
 
-defineProperties(ResizableRoot, defaultResizableRootProps)
+defineProperties(ResizableRootElement, defaultResizableRootProps)
 
-defineCustomElement('prosekit-resizable-root', ResizableRoot)
+defineCustomElement('prosekit-resizable-root', ResizableRootElement)
 
-export { ResizableRoot }
+export { ResizableRootElement }

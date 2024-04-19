@@ -336,6 +336,10 @@
     "path": "packages/prosekit/dist/prosekit-primitives.js"
   },
   {
+    "name": "prosekit/primitives/resizable",
+    "path": "packages/prosekit/dist/prosekit-primitives-resizable.js"
+  },
+  {
     "name": "prosekit/react",
     "path": "packages/prosekit/dist/prosekit-react.js",
     "ignore": [

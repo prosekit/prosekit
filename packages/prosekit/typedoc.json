@@ -1,6 +1,8 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
   "entryPoints": [
     "./src/basic.gen.ts",
     "./src/core.gen.ts",
@@ -68,6 +70,7 @@
     "./src/preact/tooltip-root.gen.ts",
     "./src/preact/tooltip-trigger.gen.ts",
     "./src/primitives.gen.ts",
+    "./src/primitives/resizable.gen.ts",
     "./src/react.gen.ts",
     "./src/react/autocomplete-empty.gen.ts",
     "./src/react/autocomplete-item.gen.ts",

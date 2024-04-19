@@ -25,7 +25,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./resizable": "./src/components/resizable/index.ts"
   },
   "files": [
     "dist"
@@ -58,6 +59,11 @@
         "types": "./dist/prosekit-primitives.d.ts",
         "import": "./dist/prosekit-primitives.js",
         "default": "./dist/prosekit-primitives.js"
+      },
+      "./resizable": {
+        "types": "./dist/prosekit-primitives-resizable.d.ts",
+        "import": "./dist/prosekit-primitives-resizable.js",
+        "default": "./dist/prosekit-primitives-resizable.js"
       }
     },
     "main": "./dist/prosekit-primitives.js",
@@ -67,6 +73,9 @@
       "*": {
         ".": [
           "./dist/prosekit-primitives.d.ts"
+        ],
+        "resizable": [
+          "./dist/prosekit-primitives-resizable.d.ts"
         ]
       }
     }

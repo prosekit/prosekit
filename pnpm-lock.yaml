@@ -270,6 +270,9 @@ importers:
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
+      '@zag-js/dom-query':
+        specifier: ^0.47.0
+        version: 0.47.0
       lit:
         specifier: ^3.1.2
         version: 3.1.2
@@ -3892,6 +3895,10 @@ packages:
 
   /@zag-js/dom-query@0.46.0:
     resolution: {integrity: sha512-aUZsDq22ibtYK2Pp/h6J3c9fZvKyQOn/BnVRO3rmAShC8JSZajElRPkTpRNWJiFErP2uMGPrjjkmlhKh2J0Yew==}
+    dev: false
+
+  /@zag-js/dom-query@0.47.0:
+    resolution: {integrity: sha512-B1wZ3o/8uHOn75BkfcT45zwc23hqZJ/gUF7Z6UrmxWFNpr6JKiDNvOW+QaAKzYNEpvz3NnUOB4tEY0IhDms7Sg==}
     dev: false
 
   /@zag-js/interact-outside@0.46.0:

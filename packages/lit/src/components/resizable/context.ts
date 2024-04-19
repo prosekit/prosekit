@@ -1,21 +1,42 @@
-import { createContext } from '@lit/context'
+import { createContext } from '@aria-ui/core'
 
 /**
  * @internal
  */
-interface ResizableContext {
-  onResizeStart: () => readonly [
-    width: number,
-    height: number,
-    aspectRatio: number,
-  ]
-  onResize: (width: number, height: number) => void
-  onResizeEnd: () => void
-}
-
-/**
- * @internal
- */
-export const resizableContext = createContext<ResizableContext>(
-  'prosekit-resizable-context',
+export const onResizeContext = createContext<OnResize>(
+  'prosekit/resizable/onResize',
+  null,
 )
+
+/**
+ * @internal
+ */
+export const onResizeStartContext = createContext<OnResizeStart>(
+  'prosekit/resizable/onResizeStart',
+  null,
+)
+
+/**
+ * @internal
+ */
+export const onResizeEndContext = createContext<OnResizeEnd>(
+  'prosekit/resizable/onResizeEnd',
+  null,
+)
+
+/**
+ * @internal
+ */
+export type OnResize = ((width: number, height: number) => void) | null
+
+/**
+ * @internal
+ */
+export type OnResizeStart =
+  | (() => readonly [width: number, height: number, aspectRatio: number])
+  | null
+
+/**
+ * @internal
+ */
+export type OnResizeEnd = (() => void) | null

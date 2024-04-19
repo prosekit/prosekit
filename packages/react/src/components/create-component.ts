@@ -1,12 +1,11 @@
-import { propNames } from '@prosekit/lit/autocomplete-empty'
 import {
   createElement,
   forwardRef,
   useLayoutEffect,
   useState,
   type ForwardRefExoticComponent,
-  type RefAttributes,
   type HTMLAttributes,
+  type RefAttributes,
 } from 'react'
 import { mergeRefs } from 'react-merge-refs'
 
@@ -32,7 +31,7 @@ export function createComponent<
       if (propertyNames.includes(name)) {
         properties[name] = value
       } else {
-        attributes[name] = value
+        attributes[name === 'className' ? 'class' : name] = value
       }
     }
 
@@ -46,7 +45,7 @@ export function createComponent<
         }
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [el, ...propNames.map((name) => properties[name])])
+    }, [el, ...propertyNames.map((name) => properties[name])])
 
     return createElement(tagName, {
       ...attributes,

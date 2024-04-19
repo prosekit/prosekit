@@ -101,17 +101,18 @@ async function writePreactComponents(pkg: Package, componentNames: string[]) {
 }
 
 function formatPrimitiveIndexCode(components: string[]) {
-  return components
-    .flatMap((kebab) => {
-      const pascal = kebabToPascal(kebab)
-      return [
-        `export { ${pascal}Element } from './${kebab}/element'`,
-        `export { default${pascal}Props } from './${kebab}/props'`,
-        `export type { ${pascal}Props } from './${kebab}/props'`,
-        '',
-      ]
-    })
-    .join('\n')
+  const lines = components.flatMap((kebab) => {
+    const pascal = kebabToPascal(kebab)
+    return [
+      `// ${pascal}`,
+      `export { ${pascal}Element } from './${kebab}/element'`,
+      `export { default${pascal}Props } from './${kebab}/props'`,
+      `export type { ${pascal}Props } from './${kebab}/props'`,
+      '',
+    ]
+  })
+
+  return lines.join('\n')
 }
 
 function formatPrimitiveElementCode(kebab: string) {

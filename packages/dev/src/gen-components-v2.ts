@@ -42,11 +42,8 @@ async function writePrimitivesComponents(pkg: Package, info: Primitives) {
 
     for (const component of components) {
       const code = formatPrimitiveElementCode(component)
-      await vfs.updateTextInPackage(
-        pkg,
-        `src/components/${group}/${component}/element.gen.ts`,
-        code,
-      )
+      const path = `src/components/${group}/${component}/element.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
     }
   }
 }
@@ -62,11 +59,8 @@ async function writeReactComponents(pkg: Package, info: Primitives) {
 
     for (const component of components) {
       const code = formatReactComponentCode(group, component)
-      await vfs.updateTextInPackage(
-        pkg,
-        `src/components/${group}/${component}.gen.ts`,
-        code,
-      )
+      const path = `src/components/${group}/${component}.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
     }
   }
 }
@@ -82,11 +76,8 @@ async function writeVueComponents(pkg: Package, info: Primitives) {
 
     for (const component of components) {
       const code = formatVueComponentCode(group, component)
-      await vfs.updateTextInPackage(
-        pkg,
-        `src/components/${group}/${component}.gen.ts`,
-        code,
-      )
+      const path = `src/components/${group}/${component}.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
     }
   }
 }
@@ -102,19 +93,13 @@ async function writeSvelteComponents(pkg: Package, info: Primitives) {
 
     for (const component of components) {
       const code = formatSvelteComponentCode(group, component)
-      await vfs.updateTextInPackage(
-        pkg,
-        `src/components/${group}/${component}.gen.svelte`,
-        code,
-      )
+      const path = `src/components/${group}/${component}.gen.svelte`
+      await vfs.updateTextInPackage(pkg, path, code)
     }
     for (const component of components) {
       const code = formatSvelteTsCode(group, component)
-      await vfs.updateTextInPackage(
-        pkg,
-        `src/components/${group}/${component}.gen.ts`,
-        code,
-      )
+      const path = `src/components/${group}/${component}.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
     }
   }
 }

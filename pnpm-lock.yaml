@@ -568,6 +568,9 @@ importers:
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
+      '@prosekit/primitives':
+        specifier: ^0.0.0
+        version: link:../primitives
     devDependencies:
       '@prosekit/dev':
         specifier: '*'

@@ -97,7 +97,7 @@ async function writeSvelteComponents(pkg: Package, info: Primitives) {
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
 
-    const code = formatSvelteIndexCode(group, components)
+    const code = formatSvelteIndexCode(components)
     await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
 
     for (const component of components) {
@@ -105,6 +105,14 @@ async function writeSvelteComponents(pkg: Package, info: Primitives) {
       await vfs.updateTextInPackage(
         pkg,
         `src/components/${group}/${component}.gen.svelte`,
+        code,
+      )
+    }
+    for (const component of components) {
+      const code = formatSvelteTsCode(group, component)
+      await vfs.updateTextInPackage(
+        pkg,
+        `src/components/${group}/${component}.gen.ts`,
         code,
       )
     }
@@ -191,37 +199,8 @@ function formatVueIndexCode(components: string[]) {
   return formatReactIndexCode(components)
 }
 
-function formatSvelteIndexCode(group:string, components: string[]) {
-  const lines : string[] = [
-    `import type { SvelteComponent } from 'svelte'`,
-    ''
-  ] 
-
-  for (const kebab of components) {
-    const pascal = kebabToPascal(kebab)
-    lines.push(`import type { ${pascal}Props } from '@prosekit/primitives/${group}'`)
-  }
-
-
-  for (const kebab of components) {
-    const pascal = kebabToPascal(kebab)
-    lines.push(`import { ${pascal}Component } from './${kebab}.gen.svelte'`)
-  }
-
-  lines.push("")
-
-  for (const kebab of components) {
-    const pascal = kebabToPascal(kebab)
-    lines.push([
-      `export const ${pascal} =`,
-      `${pascal}Component`,
-      `as typeof SvelteComponent<any>`,
-      `as typeof SvelteComponent<Partial<${pascal}Props> & {class?: number}>`
-    ].join(" "))
-  }
-
-  return lines.join('\n')
- 
+function formatSvelteIndexCode(components: string[]) {
+  return formatReactIndexCode(components)
 }
 
 function formatReactComponentCode(group: string, kebab: string) {
@@ -284,6 +263,22 @@ import '@prosekit/primitives/${group}'
 <${kebab} {...$$props}>
   <slot />
 </${kebab}>
+`.trim() + '\n'
+  )
+}
+
+function formatSvelteTsCode(group: string, kebab: string) {
+  const pascal = kebabToPascal(kebab)
+  return (
+    `
+
+import type { ${pascal}Props } from '@prosekit/primitives/${group}'    
+import type { SvelteComponent } from 'svelte'
+
+import Component from './${kebab}.gen.svelte'
+
+export const ${pascal} = Component as typeof SvelteComponent<any> as typeof SvelteComponent<Partial<${pascal}Props> & {class?: number}>
+  
 `.trim() + '\n'
   )
 }

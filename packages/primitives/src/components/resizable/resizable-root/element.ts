@@ -21,4 +21,4 @@ defineProperties(ResizableRoot, defaultResizableRootProps)
 
 defineCustomElement('prosekit-resizable-root', ResizableRoot)
 
-export { ResizableRoot as Resizable }
+export { ResizableRoot }

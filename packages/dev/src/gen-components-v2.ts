@@ -130,6 +130,7 @@ function formatPrimitiveIndexCode(components: string[]) {
 
 function formatPrimitiveElementCode(kebab: string) {
   const pascal = kebabToPascal(kebab)
+  // TODO: remove -v2 in the template
   return (
     `
 

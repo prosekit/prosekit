@@ -34,7 +34,7 @@ export function useResizableHandle(
   return state
 }
 
-export function useResizableHandleState(
+function useResizableHandleState(
   host: ConnectableElement,
   state: SignalState<ResizableHandleProps>,
   context: {

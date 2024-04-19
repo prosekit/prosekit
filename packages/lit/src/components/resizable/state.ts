@@ -26,7 +26,7 @@ export function useResizable(
   return state
 }
 
-export function useResizableState(
+function useResizableState(
   host: ConnectableElement,
   state: SignalState<ResizableProps>,
 ) {

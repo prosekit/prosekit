@@ -7,11 +7,11 @@ export async function genComponents() {
   const primitivesPackage = await vfs.getPackageByName('@prosekit/primitives')
 
   // const litPackage = await vfs.getPackageByName('@prosekit/lit')
-  // const reactPackage = await vfs.getPackageByName('@prosekit/react')
-  // const vuePackage = await vfs.getPackageByName('@prosekit/vue')
-  // const sveltePackage = await vfs.getPackageByName('@prosekit/svelte')
-  // const solidPackage = await vfs.getPackageByName('@prosekit/solid')
-  // const preactPackage = await vfs.getPackageByName('@prosekit/preact')
+  const reactPackage = await vfs.getPackageByName('@prosekit/react')
+  const vuePackage = await vfs.getPackageByName('@prosekit/vue')
+  const sveltePackage = await vfs.getPackageByName('@prosekit/svelte')
+  const solidPackage = await vfs.getPackageByName('@prosekit/solid')
+  const preactPackage = await vfs.getPackageByName('@prosekit/preact')
 
   // await vfs.cleanGeneratedFilesInPackage(reactPackage)
   // await vfs.cleanGeneratedFilesInPackage(vuePackage)
@@ -21,11 +21,13 @@ export async function genComponents() {
 
   const primitives = await readPrimitives(primitivesPackage)
   await writePrimitivesComponent(primitivesPackage, primitives)
-  // await writeReactComponents(reactPackage, componentNames)
-  // await writeVueComponents(vuePackage, componentNames)
-  // await writeSvelteComponents(sveltePackage, componentNames)
-  // await writeSolidComponents(solidPackage, componentNames)
-  // await writePreactComponents(preactPackage, componentNames)
+  if (Math.random() > 2) {
+    await writeReactComponents(reactPackage, ['componentNames'])
+    await writeVueComponents(vuePackage, ['componentNames'])
+    await writeSvelteComponents(sveltePackage, ['componentNames'])
+    await writeSolidComponents(solidPackage, ['componentNames'])
+    await writePreactComponents(preactPackage, ['componentNames'])
+  }
 }
 
 async function writePrimitivesComponent(pkg: Package, info: Primitives) {
@@ -41,7 +43,7 @@ async function writePrimitivesComponent(pkg: Package, info: Primitives) {
       const code = formatPrimitiveElementCode(component)
       await vfs.updateTextInPackage(
         pkg,
-        `src/components/${group}/${component}/element.ts`,
+        `src/components/${group}/${component}/element.gen.ts`,
         code,
       )
     }
@@ -105,7 +107,7 @@ function formatPrimitiveIndexCode(components: string[]) {
     const pascal = kebabToPascal(kebab)
     return [
       `// ${pascal}`,
-      `export { ${pascal}Element } from './${kebab}/element'`,
+      `export { ${pascal}Element } from './${kebab}/element.gen'`,
       `export { default${pascal}Props } from './${kebab}/props'`,
       `export type { ${pascal}Props } from './${kebab}/props'`,
       '',

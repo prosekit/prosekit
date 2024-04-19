@@ -3,10 +3,10 @@ import {
   defaultTooltipContentProps,
   type TooltipContentProps,
 } from '@prosekit/primitives/tooltip'
-import {
-  type ForwardRefExoticComponent,
-  type HTMLAttributes,
-  type RefAttributes,
+import type {
+  ForwardRefExoticComponent,
+  HTMLAttributes,
+  RefAttributes,
 } from 'react'
 
 import { createComponent } from './create-component'

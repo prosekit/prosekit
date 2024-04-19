@@ -77,11 +77,11 @@ async function writeVueComponents(pkg: Package, info: Primitives) {
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
 
-    const code = formatReactIndexCode(components)
+    const code = formatVueIndexCode(components)
     await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
 
     for (const component of components) {
-      const code = formatReactComponentCode(group, component)
+      const code = formatVueComponentCode(group, component)
       await vfs.updateTextInPackage(
         pkg,
         `src/components/${group}/${component}.gen.ts`,
@@ -183,6 +183,10 @@ function formatReactIndexCode(components: string[]) {
   return lines.join('\n')
 }
 
+function formatVueIndexCode(components: string[]) {
+  return formatReactIndexCode(components)
+}
+
 function formatReactComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
@@ -218,49 +222,22 @@ export const ${pascal}: ForwardRefExoticComponent<
   )
 }
 
-function formatVueCode(kebab: string) {
+
+function formatVueComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import '@prosekit/lit/${kebab}'
 
-import { type ${pascal}Props as ${pascal}ElementProps, propNames } from '@prosekit/lit/${kebab}'
-import { defineComponent, h, type DefineSetupFnComponent } from 'vue'
+import { default${pascal}Props, type ${pascal}Props } from '@prosekit/primitives/${group}'
 
-import type { PropsWithClass } from '../types'
+import { createComponent } from './create-component'
 
-export type ${pascal}Props = PropsWithClass<${pascal}ElementProps>
+export const ${pascal} = createComponent<${pascal}Props>('prosekit-${kebab}', '${pascal}', default${pascal}Props)
 
-export const ${pascal}: DefineSetupFnComponent<${pascal}Props> = defineComponent<${pascal}Props>(
-  (props, { slots }) => {
-    return () => {
-      const webComponentProps = Object.fromEntries(
-        Object.entries(props)
-          .filter((entry) => entry[1] !== undefined)
-          .map(([key, value]) => [(key === 'class' ? '' : '.') + key, value]),
-      )
-      return h('prosekit-${kebab}', webComponentProps, slots.default?.())
-    }
-  }, 
-  { props: ['class', ...propNames] }
-)
 `.trim() + '\n'
   )
 }
 
-function formatSvelteCode(kebab: string) {
-  return (
-    `
-<script lang="ts">
-import '@prosekit/lit/${kebab}'
-</script>
-
-<prosekit-${kebab} {...$$props}>
-  <slot />
-</prosekit-${kebab}>
-`.trim() + '\n'
-  )
-}
 
 function formatSvelteTsCode(kebab: string) {
   const pascal = kebabToPascal(kebab)

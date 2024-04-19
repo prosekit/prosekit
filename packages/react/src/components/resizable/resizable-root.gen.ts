@@ -12,10 +12,13 @@ import type {
 import { createComponent } from '../create-component'
 
 export const ResizableRoot: ForwardRefExoticComponent<
+  Partial<ResizableRootProps> &
   RefAttributes<ResizableRootElement> &
-    ResizableRootProps &
-    HTMLAttributes<ResizableRootElement>
-> = createComponent<ResizableRootProps, ResizableRootElement>(
+  HTMLAttributes<ResizableRootElement>
+> = createComponent<
+  ResizableRootProps, 
+  ResizableRootElement
+>(
   'resizable-root-v2',
   'ResizableRoot',
   defaultResizableRootProps,

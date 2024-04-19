@@ -190,10 +190,13 @@ import type {
 import { createComponent } from '../create-component'
 
 export const ${pascal}: ForwardRefExoticComponent<
+  Partial<${pascal}Props> &
   RefAttributes<${pascal}Element> &
-    ${pascal}Props &
-    HTMLAttributes<${pascal}Element>
-> = createComponent<${pascal}Props, ${pascal}Element>(
+  HTMLAttributes<${pascal}Element>
+> = createComponent<
+  ${pascal}Props, 
+  ${pascal}Element
+>(
   '${kebab}-v2',
   '${pascal}',
   default${pascal}Props,

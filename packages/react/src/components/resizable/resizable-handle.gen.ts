@@ -12,10 +12,13 @@ import type {
 import { createComponent } from '../create-component'
 
 export const ResizableHandle: ForwardRefExoticComponent<
+  Partial<ResizableHandleProps> &
   RefAttributes<ResizableHandleElement> &
-    ResizableHandleProps &
-    HTMLAttributes<ResizableHandleElement>
-> = createComponent<ResizableHandleProps, ResizableHandleElement>(
+  HTMLAttributes<ResizableHandleElement>
+> = createComponent<
+  ResizableHandleProps, 
+  ResizableHandleElement
+>(
   'resizable-handle-v2',
   'ResizableHandle',
   defaultResizableHandleProps,

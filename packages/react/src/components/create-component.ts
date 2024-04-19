@@ -17,7 +17,7 @@ export function createComponent<
   displayName: string,
   defaultProps: Props,
 ): ForwardRefExoticComponent<
-  Props & RefAttributes<CustomElement> & HTMLAttributes<CustomElement>
+  Partial<Props> & RefAttributes<CustomElement> & HTMLAttributes<CustomElement>
 > {
   const propertyNames = Object.keys(defaultProps)
 

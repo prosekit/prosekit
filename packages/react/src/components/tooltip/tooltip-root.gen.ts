@@ -12,10 +12,13 @@ import type {
 import { createComponent } from '../create-component'
 
 export const TooltipRoot: ForwardRefExoticComponent<
+  Partial<TooltipRootProps> &
   RefAttributes<TooltipRootElement> &
-    TooltipRootProps &
-    HTMLAttributes<TooltipRootElement>
-> = createComponent<TooltipRootProps, TooltipRootElement>(
+  HTMLAttributes<TooltipRootElement>
+> = createComponent<
+  TooltipRootProps, 
+  TooltipRootElement
+>(
   'tooltip-root-v2',
   'TooltipRoot',
   defaultTooltipRootProps,

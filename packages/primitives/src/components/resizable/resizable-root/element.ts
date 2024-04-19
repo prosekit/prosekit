@@ -1,7 +1,7 @@
 import { BaseElement, type SignalState } from '@aria-ui/core'
 
-import { defineCustomElement } from '../../utils/define-custom-element'
-import { defineProperties } from '../../utils/define-properties'
+import { defineCustomElement } from '../../../utils/define-custom-element'
+import { defineProperties } from '../../../utils/define-properties'
 
 import { defaultResizableProps, type ResizableProps } from './props'
 import { useResizable } from './state'

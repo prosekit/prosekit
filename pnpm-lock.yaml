@@ -608,6 +608,9 @@ importers:
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
+      '@prosekit/primitives':
+        specifier: ^0.0.0
+        version: link:../primitives
       '@prosemirror-adapter/core':
         specifier: ^0.2.6
         version: 0.2.6

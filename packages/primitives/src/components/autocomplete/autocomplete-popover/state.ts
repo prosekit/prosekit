@@ -19,6 +19,7 @@ import {
 } from '@prosekit/extensions/autocomplete'
 
 import { onSubmitContext, openContext, queryContext } from '../context'
+
 import { defaultQueryBuilder } from './helpers'
 import {
   defaultAutocompletePopoverProps,

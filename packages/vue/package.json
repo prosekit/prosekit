@@ -27,12 +27,8 @@
   "exports": {
     ".": "./src/index.ts",
     "./autocomplete": "./src/components/autocomplete/index.ts",
-    "./autocomplete-empty": "./src/components/autocomplete-empty.ts",
-    "./autocomplete-item": "./src/components/autocomplete-item.ts",
-    "./autocomplete-list": "./src/components/autocomplete-list.ts",
-    "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
     "./block-handle": "./src/components/block-handle/index.ts",
-    "./inline-popover": "./src/components/inline-popover.ts",
+    "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover": "./src/components/popover/index.ts",
     "./resizable": "./src/components/resizable/index.ts",
     "./tooltip": "./src/components/tooltip/index.ts"
@@ -78,26 +74,6 @@
         "import": "./dist/prosekit-vue-autocomplete.js",
         "default": "./dist/prosekit-vue-autocomplete.js"
       },
-      "./autocomplete-empty": {
-        "types": "./dist/prosekit-vue-autocomplete-empty.d.ts",
-        "import": "./dist/prosekit-vue-autocomplete-empty.js",
-        "default": "./dist/prosekit-vue-autocomplete-empty.js"
-      },
-      "./autocomplete-item": {
-        "types": "./dist/prosekit-vue-autocomplete-item.d.ts",
-        "import": "./dist/prosekit-vue-autocomplete-item.js",
-        "default": "./dist/prosekit-vue-autocomplete-item.js"
-      },
-      "./autocomplete-list": {
-        "types": "./dist/prosekit-vue-autocomplete-list.d.ts",
-        "import": "./dist/prosekit-vue-autocomplete-list.js",
-        "default": "./dist/prosekit-vue-autocomplete-list.js"
-      },
-      "./autocomplete-popover": {
-        "types": "./dist/prosekit-vue-autocomplete-popover.d.ts",
-        "import": "./dist/prosekit-vue-autocomplete-popover.js",
-        "default": "./dist/prosekit-vue-autocomplete-popover.js"
-      },
       "./block-handle": {
         "types": "./dist/prosekit-vue-block-handle.d.ts",
         "import": "./dist/prosekit-vue-block-handle.js",
@@ -134,18 +110,6 @@
         ],
         "autocomplete": [
           "./dist/prosekit-vue-autocomplete.d.ts"
-        ],
-        "autocomplete-empty": [
-          "./dist/prosekit-vue-autocomplete-empty.d.ts"
-        ],
-        "autocomplete-item": [
-          "./dist/prosekit-vue-autocomplete-item.d.ts"
-        ],
-        "autocomplete-list": [
-          "./dist/prosekit-vue-autocomplete-list.d.ts"
-        ],
-        "autocomplete-popover": [
-          "./dist/prosekit-vue-autocomplete-popover.d.ts"
         ],
         "block-handle": [
           "./dist/prosekit-vue-block-handle.d.ts"

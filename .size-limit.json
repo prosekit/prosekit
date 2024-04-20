@@ -363,34 +363,6 @@
     ]
   },
   {
-    "name": "prosekit/solid/autocomplete-empty",
-    "path": "packages/prosekit/dist/prosekit-solid-autocomplete-empty.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/autocomplete-item",
-    "path": "packages/prosekit/dist/prosekit-solid-autocomplete-item.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/autocomplete-list",
-    "path": "packages/prosekit/dist/prosekit-solid-autocomplete-list.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/autocomplete-popover",
-    "path": "packages/prosekit/dist/prosekit-solid-autocomplete-popover.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
     "name": "prosekit/solid/block-handle",
     "path": "packages/prosekit/dist/prosekit-solid-block-handle.js",
     "ignore": [
@@ -435,34 +407,6 @@
   {
     "name": "prosekit/vue/autocomplete",
     "path": "packages/prosekit/dist/prosekit-vue-autocomplete.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/autocomplete-empty",
-    "path": "packages/prosekit/dist/prosekit-vue-autocomplete-empty.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/autocomplete-item",
-    "path": "packages/prosekit/dist/prosekit-vue-autocomplete-item.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/autocomplete-list",
-    "path": "packages/prosekit/dist/prosekit-vue-autocomplete-list.js",
-    "ignore": [
-      "vue"
-    ]
-  },
-  {
-    "name": "prosekit/vue/autocomplete-popover",
-    "path": "packages/prosekit/dist/prosekit-vue-autocomplete-popover.js",
     "ignore": [
       "vue"
     ]

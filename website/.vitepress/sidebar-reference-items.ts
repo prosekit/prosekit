@@ -249,22 +249,6 @@ export const referenceItems = [
         "link": "/references/solid/autocomplete"
       },
       {
-        "text": "autocomplete-empty",
-        "link": "/references/solid/autocomplete-empty"
-      },
-      {
-        "text": "autocomplete-item",
-        "link": "/references/solid/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/solid/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/solid/autocomplete-popover"
-      },
-      {
         "text": "block-handle",
         "link": "/references/solid/block-handle"
       },
@@ -341,22 +325,6 @@ export const referenceItems = [
       {
         "text": "autocomplete",
         "link": "/references/vue/autocomplete"
-      },
-      {
-        "text": "autocomplete-empty",
-        "link": "/references/vue/autocomplete-empty"
-      },
-      {
-        "text": "autocomplete-item",
-        "link": "/references/vue/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/vue/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/vue/autocomplete-popover"
       },
       {
         "text": "block-handle",

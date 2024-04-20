@@ -1,6 +1,8 @@
-import { TooltipContent } from 'prosekit/react/tooltip-content'
-import { TooltipRoot } from 'prosekit/react/tooltip-root'
-import { TooltipTrigger } from 'prosekit/react/tooltip-trigger'
+import {
+  TooltipContent,
+  TooltipRoot,
+  TooltipTrigger,
+} from 'prosekit/react/tooltip'
 import type { ReactNode } from 'react'
 
 export default function Toggle({

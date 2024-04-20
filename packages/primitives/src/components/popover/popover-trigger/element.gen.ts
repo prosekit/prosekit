@@ -11,7 +11,7 @@ class PopoverTriggerElement extends BaseElement implements PopoverTriggerProps {
 
   constructor() {
     super()
-  this._s = usePopoverTrigger(this)
+    this._s = usePopoverTrigger(this)
   }
 }
 

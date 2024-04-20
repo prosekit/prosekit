@@ -15,8 +15,8 @@ import type { VirtualElement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
-
 import { blockPopoverContext, type BlockPopoverContext } from '../context'
+
 import {
   defineElementHoverHandler,
   type ElementHoverHandler,

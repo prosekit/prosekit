@@ -138,7 +138,6 @@ async function writePreactComponents(pkg: Package, info: Primitives) {
   }
 }
 
-
 async function writeLitComponents(pkg: Package, info: Primitives) {
   const exports = (pkg.packageJson as any).exports
 
@@ -149,7 +148,6 @@ async function writeLitComponents(pkg: Package, info: Primitives) {
     await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
   }
 }
-
 
 function formatPrimitiveIndexCode(components: string[]) {
   const lines = components.flatMap((kebab) => {
@@ -225,10 +223,13 @@ function formatPreactIndexCode(components: string[]) {
   return formatReactIndexCode(components)
 }
 
-function formatLitIndexCode(group:string, components: string[]) {
+function formatLitIndexCode(group: string, components: string[]) {
   const lines = components.flatMap((kebab) => {
     const pascal = kebabToPascal(kebab)
-    return [`export { ${pascal}Element as ${pascal} } from '@prosekit/primitives/${group}'`, '']
+    return [
+      `export { ${pascal}Element as ${pascal} } from '@prosekit/primitives/${group}'`,
+      '',
+    ]
   })
 
   return lines.join('\n')

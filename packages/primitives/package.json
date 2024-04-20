@@ -26,6 +26,10 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
+    "./autocomplete": "./src/components/autocomplete/index.ts",
+    "./block-handle": "./src/components/block-handle/index.ts",
+    "./inline-popover": "./src/components/inline-popover/index.ts",
+    "./popover": "./src/components/popover/index.ts",
     "./resizable": "./src/components/resizable/index.ts",
     "./tooltip": "./src/components/tooltip/index.ts"
   },
@@ -62,6 +66,26 @@
         "import": "./dist/prosekit-primitives.js",
         "default": "./dist/prosekit-primitives.js"
       },
+      "./autocomplete": {
+        "types": "./dist/prosekit-primitives-autocomplete.d.ts",
+        "import": "./dist/prosekit-primitives-autocomplete.js",
+        "default": "./dist/prosekit-primitives-autocomplete.js"
+      },
+      "./block-handle": {
+        "types": "./dist/prosekit-primitives-block-handle.d.ts",
+        "import": "./dist/prosekit-primitives-block-handle.js",
+        "default": "./dist/prosekit-primitives-block-handle.js"
+      },
+      "./inline-popover": {
+        "types": "./dist/prosekit-primitives-inline-popover.d.ts",
+        "import": "./dist/prosekit-primitives-inline-popover.js",
+        "default": "./dist/prosekit-primitives-inline-popover.js"
+      },
+      "./popover": {
+        "types": "./dist/prosekit-primitives-popover.d.ts",
+        "import": "./dist/prosekit-primitives-popover.js",
+        "default": "./dist/prosekit-primitives-popover.js"
+      },
       "./resizable": {
         "types": "./dist/prosekit-primitives-resizable.d.ts",
         "import": "./dist/prosekit-primitives-resizable.js",
@@ -80,6 +104,18 @@
       "*": {
         ".": [
           "./dist/prosekit-primitives.d.ts"
+        ],
+        "autocomplete": [
+          "./dist/prosekit-primitives-autocomplete.d.ts"
+        ],
+        "block-handle": [
+          "./dist/prosekit-primitives-block-handle.d.ts"
+        ],
+        "inline-popover": [
+          "./dist/prosekit-primitives-inline-popover.d.ts"
+        ],
+        "popover": [
+          "./dist/prosekit-primitives-popover.d.ts"
         ],
         "resizable": [
           "./dist/prosekit-primitives-resizable.d.ts"

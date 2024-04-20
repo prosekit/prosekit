@@ -26,11 +26,14 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
+    "./autocomplete": "./src/components/autocomplete/index.ts",
     "./autocomplete-empty": "./src/components/autocomplete-empty.ts",
     "./autocomplete-item": "./src/components/autocomplete-item.ts",
     "./autocomplete-list": "./src/components/autocomplete-list.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
+    "./block-handle": "./src/components/block-handle/index.ts",
     "./inline-popover": "./src/components/inline-popover.ts",
+    "./popover": "./src/components/popover/index.ts",
     "./resizable": "./src/components/resizable/index.ts",
     "./tooltip": "./src/components/tooltip/index.ts"
   },
@@ -70,6 +73,11 @@
         "import": "./dist/prosekit-vue.js",
         "default": "./dist/prosekit-vue.js"
       },
+      "./autocomplete": {
+        "types": "./dist/prosekit-vue-autocomplete.d.ts",
+        "import": "./dist/prosekit-vue-autocomplete.js",
+        "default": "./dist/prosekit-vue-autocomplete.js"
+      },
       "./autocomplete-empty": {
         "types": "./dist/prosekit-vue-autocomplete-empty.d.ts",
         "import": "./dist/prosekit-vue-autocomplete-empty.js",
@@ -90,10 +98,20 @@
         "import": "./dist/prosekit-vue-autocomplete-popover.js",
         "default": "./dist/prosekit-vue-autocomplete-popover.js"
       },
+      "./block-handle": {
+        "types": "./dist/prosekit-vue-block-handle.d.ts",
+        "import": "./dist/prosekit-vue-block-handle.js",
+        "default": "./dist/prosekit-vue-block-handle.js"
+      },
       "./inline-popover": {
         "types": "./dist/prosekit-vue-inline-popover.d.ts",
         "import": "./dist/prosekit-vue-inline-popover.js",
         "default": "./dist/prosekit-vue-inline-popover.js"
+      },
+      "./popover": {
+        "types": "./dist/prosekit-vue-popover.d.ts",
+        "import": "./dist/prosekit-vue-popover.js",
+        "default": "./dist/prosekit-vue-popover.js"
       },
       "./resizable": {
         "types": "./dist/prosekit-vue-resizable.d.ts",
@@ -114,6 +132,9 @@
         ".": [
           "./dist/prosekit-vue.d.ts"
         ],
+        "autocomplete": [
+          "./dist/prosekit-vue-autocomplete.d.ts"
+        ],
         "autocomplete-empty": [
           "./dist/prosekit-vue-autocomplete-empty.d.ts"
         ],
@@ -126,8 +147,14 @@
         "autocomplete-popover": [
           "./dist/prosekit-vue-autocomplete-popover.d.ts"
         ],
+        "block-handle": [
+          "./dist/prosekit-vue-block-handle.d.ts"
+        ],
         "inline-popover": [
           "./dist/prosekit-vue-inline-popover.d.ts"
+        ],
+        "popover": [
+          "./dist/prosekit-vue-popover.d.ts"
         ],
         "resizable": [
           "./dist/prosekit-vue-resizable.d.ts"

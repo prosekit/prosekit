@@ -1,7 +1,13 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
   "entryPoints": [
+    "./src/components/autocomplete/index.ts",
+    "./src/components/block-handle/index.ts",
+    "./src/components/inline-popover/index.ts",
+    "./src/components/popover/index.ts",
     "./src/components/resizable/index.ts",
     "./src/components/tooltip/index.ts",
     "./src/index.ts"

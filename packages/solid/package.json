@@ -26,10 +26,14 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
+    "./autocomplete": "./src/components/autocomplete/index.ts",
     "./autocomplete-empty": "./src/components/autocomplete-empty.ts",
     "./autocomplete-item": "./src/components/autocomplete-item.ts",
     "./autocomplete-list": "./src/components/autocomplete-list.ts",
     "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
+    "./block-handle": "./src/components/block-handle/index.ts",
+    "./inline-popover": "./src/components/inline-popover/index.ts",
+    "./popover": "./src/components/popover/index.ts",
     "./resizable": "./src/components/resizable/index.ts",
     "./tooltip": "./src/components/tooltip/index.ts"
   },
@@ -68,6 +72,11 @@
         "import": "./dist/prosekit-solid.js",
         "default": "./dist/prosekit-solid.js"
       },
+      "./autocomplete": {
+        "types": "./dist/prosekit-solid-autocomplete.d.ts",
+        "import": "./dist/prosekit-solid-autocomplete.js",
+        "default": "./dist/prosekit-solid-autocomplete.js"
+      },
       "./autocomplete-empty": {
         "types": "./dist/prosekit-solid-autocomplete-empty.d.ts",
         "import": "./dist/prosekit-solid-autocomplete-empty.js",
@@ -88,6 +97,21 @@
         "import": "./dist/prosekit-solid-autocomplete-popover.js",
         "default": "./dist/prosekit-solid-autocomplete-popover.js"
       },
+      "./block-handle": {
+        "types": "./dist/prosekit-solid-block-handle.d.ts",
+        "import": "./dist/prosekit-solid-block-handle.js",
+        "default": "./dist/prosekit-solid-block-handle.js"
+      },
+      "./inline-popover": {
+        "types": "./dist/prosekit-solid-inline-popover.d.ts",
+        "import": "./dist/prosekit-solid-inline-popover.js",
+        "default": "./dist/prosekit-solid-inline-popover.js"
+      },
+      "./popover": {
+        "types": "./dist/prosekit-solid-popover.d.ts",
+        "import": "./dist/prosekit-solid-popover.js",
+        "default": "./dist/prosekit-solid-popover.js"
+      },
       "./resizable": {
         "types": "./dist/prosekit-solid-resizable.d.ts",
         "import": "./dist/prosekit-solid-resizable.js",
@@ -107,6 +131,9 @@
         ".": [
           "./dist/prosekit-solid.d.ts"
         ],
+        "autocomplete": [
+          "./dist/prosekit-solid-autocomplete.d.ts"
+        ],
         "autocomplete-empty": [
           "./dist/prosekit-solid-autocomplete-empty.d.ts"
         ],
@@ -118,6 +145,15 @@
         ],
         "autocomplete-popover": [
           "./dist/prosekit-solid-autocomplete-popover.d.ts"
+        ],
+        "block-handle": [
+          "./dist/prosekit-solid-block-handle.d.ts"
+        ],
+        "inline-popover": [
+          "./dist/prosekit-solid-inline-popover.d.ts"
+        ],
+        "popover": [
+          "./dist/prosekit-solid-popover.d.ts"
         ],
         "resizable": [
           "./dist/prosekit-solid-resizable.d.ts"

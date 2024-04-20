@@ -143,14 +143,6 @@ export const referenceItems = [
       {
         "text": "popover-trigger",
         "link": "/references/lit/popover-trigger"
-      },
-      {
-        "text": "resizable",
-        "link": "/references/lit/resizable"
-      },
-      {
-        "text": "resizable-handle",
-        "link": "/references/lit/resizable-handle"
       }
     ],
     "collapsed": true,
@@ -159,6 +151,22 @@ export const referenceItems = [
   {
     "text": "preact",
     "items": [
+      {
+        "text": "autocomplete",
+        "link": "/references/preact/autocomplete"
+      },
+      {
+        "text": "block-handle",
+        "link": "/references/preact/block-handle"
+      },
+      {
+        "text": "inline-popover",
+        "link": "/references/preact/inline-popover"
+      },
+      {
+        "text": "popover",
+        "link": "/references/preact/popover"
+      },
       {
         "text": "resizable",
         "link": "/references/preact/resizable"
@@ -175,6 +183,22 @@ export const referenceItems = [
     "text": "primitives",
     "items": [
       {
+        "text": "autocomplete",
+        "link": "/references/primitives/autocomplete"
+      },
+      {
+        "text": "block-handle",
+        "link": "/references/primitives/block-handle"
+      },
+      {
+        "text": "inline-popover",
+        "link": "/references/primitives/inline-popover"
+      },
+      {
+        "text": "popover",
+        "link": "/references/primitives/popover"
+      },
+      {
         "text": "resizable",
         "link": "/references/primitives/resizable"
       },
@@ -189,6 +213,10 @@ export const referenceItems = [
   {
     "text": "react",
     "items": [
+      {
+        "text": "autocomplete",
+        "link": "/references/react/autocomplete"
+      },
       {
         "text": "autocomplete-empty",
         "link": "/references/react/autocomplete-empty"
@@ -206,6 +234,18 @@ export const referenceItems = [
         "link": "/references/react/autocomplete-popover"
       },
       {
+        "text": "block-handle",
+        "link": "/references/react/block-handle"
+      },
+      {
+        "text": "inline-popover",
+        "link": "/references/react/inline-popover"
+      },
+      {
+        "text": "popover",
+        "link": "/references/react/popover"
+      },
+      {
         "text": "resizable",
         "link": "/references/react/resizable"
       },
@@ -220,6 +260,10 @@ export const referenceItems = [
   {
     "text": "solid",
     "items": [
+      {
+        "text": "autocomplete",
+        "link": "/references/solid/autocomplete"
+      },
       {
         "text": "autocomplete-empty",
         "link": "/references/solid/autocomplete-empty"
@@ -237,6 +281,18 @@ export const referenceItems = [
         "link": "/references/solid/autocomplete-popover"
       },
       {
+        "text": "block-handle",
+        "link": "/references/solid/block-handle"
+      },
+      {
+        "text": "inline-popover",
+        "link": "/references/solid/inline-popover"
+      },
+      {
+        "text": "popover",
+        "link": "/references/solid/popover"
+      },
+      {
         "text": "resizable",
         "link": "/references/solid/resizable"
       },
@@ -251,6 +307,10 @@ export const referenceItems = [
   {
     "text": "svelte",
     "items": [
+      {
+        "text": "autocomplete",
+        "link": "/references/svelte/autocomplete"
+      },
       {
         "text": "autocomplete-empty",
         "link": "/references/svelte/autocomplete-empty"
@@ -268,6 +328,18 @@ export const referenceItems = [
         "link": "/references/svelte/autocomplete-popover"
       },
       {
+        "text": "block-handle",
+        "link": "/references/svelte/block-handle"
+      },
+      {
+        "text": "inline-popover",
+        "link": "/references/svelte/inline-popover"
+      },
+      {
+        "text": "popover",
+        "link": "/references/svelte/popover"
+      },
+      {
         "text": "resizable",
         "link": "/references/svelte/resizable"
       },
@@ -282,6 +354,10 @@ export const referenceItems = [
   {
     "text": "vue",
     "items": [
+      {
+        "text": "autocomplete",
+        "link": "/references/vue/autocomplete"
+      },
       {
         "text": "autocomplete-empty",
         "link": "/references/vue/autocomplete-empty"
@@ -299,8 +375,16 @@ export const referenceItems = [
         "link": "/references/vue/autocomplete-popover"
       },
       {
+        "text": "block-handle",
+        "link": "/references/vue/block-handle"
+      },
+      {
         "text": "inline-popover",
         "link": "/references/vue/inline-popover"
+      },
+      {
+        "text": "popover",
+        "link": "/references/vue/popover"
       },
       {
         "text": "resizable",

@@ -160,14 +160,6 @@
     "path": "packages/prosekit/dist/prosekit-lit-popover-trigger.js"
   },
   {
-    "name": "prosekit/lit/resizable",
-    "path": "packages/prosekit/dist/prosekit-lit-resizable.js"
-  },
-  {
-    "name": "prosekit/lit/resizable-handle",
-    "path": "packages/prosekit/dist/prosekit-lit-resizable-handle.js"
-  },
-  {
     "name": "prosekit/pm",
     "path": "packages/prosekit/dist/prosekit-pm.js"
   },
@@ -215,6 +207,34 @@
     ]
   },
   {
+    "name": "prosekit/preact/autocomplete",
+    "path": "packages/prosekit/dist/prosekit-preact-autocomplete.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
+    "name": "prosekit/preact/block-handle",
+    "path": "packages/prosekit/dist/prosekit-preact-block-handle.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
+    "name": "prosekit/preact/inline-popover",
+    "path": "packages/prosekit/dist/prosekit-preact-inline-popover.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
+    "name": "prosekit/preact/popover",
+    "path": "packages/prosekit/dist/prosekit-preact-popover.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
     "name": "prosekit/preact/resizable",
     "path": "packages/prosekit/dist/prosekit-preact-resizable.js",
     "ignore": [
@@ -233,6 +253,22 @@
     "path": "packages/prosekit/dist/prosekit-primitives.js"
   },
   {
+    "name": "prosekit/primitives/autocomplete",
+    "path": "packages/prosekit/dist/prosekit-primitives-autocomplete.js"
+  },
+  {
+    "name": "prosekit/primitives/block-handle",
+    "path": "packages/prosekit/dist/prosekit-primitives-block-handle.js"
+  },
+  {
+    "name": "prosekit/primitives/inline-popover",
+    "path": "packages/prosekit/dist/prosekit-primitives-inline-popover.js"
+  },
+  {
+    "name": "prosekit/primitives/popover",
+    "path": "packages/prosekit/dist/prosekit-primitives-popover.js"
+  },
+  {
     "name": "prosekit/primitives/resizable",
     "path": "packages/prosekit/dist/prosekit-primitives-resizable.js"
   },
@@ -243,6 +279,14 @@
   {
     "name": "prosekit/react",
     "path": "packages/prosekit/dist/prosekit-react.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/autocomplete",
+    "path": "packages/prosekit/dist/prosekit-react-autocomplete.js",
     "ignore": [
       "react",
       "react-dom"
@@ -281,6 +325,30 @@
     ]
   },
   {
+    "name": "prosekit/react/block-handle",
+    "path": "packages/prosekit/dist/prosekit-react-block-handle.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/inline-popover",
+    "path": "packages/prosekit/dist/prosekit-react-inline-popover.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/popover",
+    "path": "packages/prosekit/dist/prosekit-react-popover.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
     "name": "prosekit/react/resizable",
     "path": "packages/prosekit/dist/prosekit-react-resizable.js",
     "ignore": [
@@ -299,6 +367,13 @@
   {
     "name": "prosekit/solid",
     "path": "packages/prosekit/dist/prosekit-solid.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
+    "name": "prosekit/solid/autocomplete",
+    "path": "packages/prosekit/dist/prosekit-solid-autocomplete.js",
     "ignore": [
       "solid-js"
     ]
@@ -332,6 +407,27 @@
     ]
   },
   {
+    "name": "prosekit/solid/block-handle",
+    "path": "packages/prosekit/dist/prosekit-solid-block-handle.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
+    "name": "prosekit/solid/inline-popover",
+    "path": "packages/prosekit/dist/prosekit-solid-inline-popover.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
+    "name": "prosekit/solid/popover",
+    "path": "packages/prosekit/dist/prosekit-solid-popover.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
     "name": "prosekit/solid/resizable",
     "path": "packages/prosekit/dist/prosekit-solid-resizable.js",
     "ignore": [
@@ -348,6 +444,13 @@
   {
     "name": "prosekit/vue",
     "path": "packages/prosekit/dist/prosekit-vue.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/autocomplete",
+    "path": "packages/prosekit/dist/prosekit-vue-autocomplete.js",
     "ignore": [
       "vue"
     ]
@@ -381,8 +484,22 @@
     ]
   },
   {
+    "name": "prosekit/vue/block-handle",
+    "path": "packages/prosekit/dist/prosekit-vue-block-handle.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
     "name": "prosekit/vue/inline-popover",
     "path": "packages/prosekit/dist/prosekit-vue-inline-popover.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/popover",
+    "path": "packages/prosekit/dist/prosekit-vue-popover.js",
     "ignore": [
       "vue"
     ]

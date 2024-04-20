@@ -35,9 +35,7 @@
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover-content": "./src/components/popover-content/index.ts",
     "./popover-root": "./src/components/popover-root/index.ts",
-    "./popover-trigger": "./src/components/popover-trigger/index.ts",
-    "./resizable": "./src/components/resizable/index.ts",
-    "./resizable-handle": "./src/components/resizable-handle/index.ts"
+    "./popover-trigger": "./src/components/popover-trigger/index.ts"
   },
   "files": [
     "dist"
@@ -124,16 +122,6 @@
         "types": "./dist/prosekit-lit-popover-trigger.d.ts",
         "import": "./dist/prosekit-lit-popover-trigger.js",
         "default": "./dist/prosekit-lit-popover-trigger.js"
-      },
-      "./resizable": {
-        "types": "./dist/prosekit-lit-resizable.d.ts",
-        "import": "./dist/prosekit-lit-resizable.js",
-        "default": "./dist/prosekit-lit-resizable.js"
-      },
-      "./resizable-handle": {
-        "types": "./dist/prosekit-lit-resizable-handle.d.ts",
-        "import": "./dist/prosekit-lit-resizable-handle.js",
-        "default": "./dist/prosekit-lit-resizable-handle.js"
       }
     },
     "main": "./dist/prosekit-lit.js",
@@ -173,12 +161,6 @@
         ],
         "popover-trigger": [
           "./dist/prosekit-lit-popover-trigger.d.ts"
-        ],
-        "resizable": [
-          "./dist/prosekit-lit-resizable.d.ts"
-        ],
-        "resizable-handle": [
-          "./dist/prosekit-lit-resizable-handle.d.ts"
         ]
       }
     }

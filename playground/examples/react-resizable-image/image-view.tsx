@@ -1,7 +1,6 @@
 import { clsx } from 'prosekit/core'
 import { type ReactNodeViewProps } from 'prosekit/react'
-import { Resizable } from 'prosekit/react/resizable'
-import { ResizableHandle } from 'prosekit/react/resizable-handle'
+import { ResizableHandle, ResizableRoot } from 'prosekit/react/resizable'
 import { useState } from 'react'
 
 import type { ImageAttrs } from './extension'
@@ -11,7 +10,7 @@ export default function ImageView(props: ReactNodeViewProps) {
   const [aspectRatio, setAspectRatio] = useState<number | undefined>()
 
   return (
-    <Resizable
+    <ResizableRoot
       width={attrs.width ?? undefined}
       height={attrs.height ?? undefined}
       aspectRatio={aspectRatio}
@@ -39,6 +38,6 @@ export default function ImageView(props: ReactNodeViewProps) {
       >
         <div className="ICON_CORNER_HANDLE"></div>
       </ResizableHandle>
-    </Resizable>
+    </ResizableRoot>
   )
 }

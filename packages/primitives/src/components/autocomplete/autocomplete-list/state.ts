@@ -1,11 +1,11 @@
 import {
-  mapSignals,
-  type ConnectableElement,
-  type SignalState,
   assignProps,
-  useEffect,
   createSignal,
+  mapSignals,
+  useEffect,
+  type ConnectableElement,
   type ReadonlySignal,
+  type SignalState,
 } from '@aria-ui/core'
 import { useListbox, type ListboxProps } from '@aria-ui/listbox'
 import {
@@ -15,8 +15,7 @@ import {
   withPriority,
 } from '@prosekit/core'
 
-import { queryContext } from '../autocomplete-popover'
-import { onSubmitContext, openContext } from '../autocomplete-popover/context'
+import { onSubmitContext, openContext, queryContext } from '../context'
 
 import {
   defaultAutocompleteListProps,

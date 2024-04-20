@@ -4,5 +4,5 @@
     "composite": true,
     "outDir": "temp",
   },
-  "include": ["./src", "./*.js", "./*.ts"],
+  "include": ["./src", "./*.js", "./*.ts", "../primitives/src/components/autocomplete-empty", "../primitives/src/components/autocomplete-item", "../primitives/src/components/autocomplete-list", "../primitives/src/components/autocomplete-popover", "../primitives/src/components/block-drag-handle", "../primitives/src/components/block-element", "../primitives/src/components/block-popover", "../primitives/src/components/inline-popover", "../primitives/src/components/popover/popover-content", "../primitives/src/components/popover/popover-root", "../primitives/src/components/popover/popover-trigger"],
 }

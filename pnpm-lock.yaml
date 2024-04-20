@@ -384,6 +384,9 @@ importers:
       '@aria-ui/tooltip':
         specifier: ^0.0.13
         version: 0.0.13
+      '@floating-ui/dom':
+        specifier: ^1.6.3
+        version: 1.6.3
       '@prosekit/core':
         specifier: ^0.4.0
         version: link:../core

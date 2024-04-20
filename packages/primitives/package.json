@@ -43,6 +43,7 @@
     "@aria-ui/popover": "^0.0.11",
     "@aria-ui/presence": "^0.0.7",
     "@aria-ui/tooltip": "^0.0.13",
+    "@floating-ui/dom": "^1.6.3",
     "@prosekit/core": "^0.4.0",
     "@prosekit/extensions": "^0.4.2",
     "@prosekit/pm": "^0.1.2",

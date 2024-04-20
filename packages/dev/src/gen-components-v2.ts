@@ -298,6 +298,7 @@ export const ${pascal} = createComponent<
   ${pascal}Element
 >(
   'prosekit-${kebab}', 
+  '${pascal}',
   default${pascal}Props,
 )
 

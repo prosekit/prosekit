@@ -19,6 +19,6 @@ interface PopoverContentElement extends PopoverContentProps {}
 
 defineProperties(PopoverContentElement, defaultPopoverContentProps)
 
-defineCustomElement('prosekit-popover-content-v2', PopoverContentElement)
+defineCustomElement('prosekit-popover-content', PopoverContentElement)
 
 export { PopoverContentElement }

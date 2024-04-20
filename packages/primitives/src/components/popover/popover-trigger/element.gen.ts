@@ -19,6 +19,6 @@ interface PopoverTriggerElement extends PopoverTriggerProps {}
 
 defineProperties(PopoverTriggerElement, defaultPopoverTriggerProps)
 
-defineCustomElement('prosekit-popover-trigger-v2', PopoverTriggerElement)
+defineCustomElement('prosekit-popover-trigger', PopoverTriggerElement)
 
 export { PopoverTriggerElement }

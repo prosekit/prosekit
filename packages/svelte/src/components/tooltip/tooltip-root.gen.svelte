@@ -2,6 +2,6 @@
 import '@prosekit/primitives/tooltip'
 </script>
 
-<tooltip-root {...$$props}>
+<prosekit-tooltip-root {...$$props}>
   <slot />
-</tooltip-root>
+</prosekit-tooltip-root>

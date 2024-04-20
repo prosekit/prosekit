@@ -19,6 +19,6 @@ interface AutocompleteEmptyElement extends AutocompleteEmptyProps {}
 
 defineProperties(AutocompleteEmptyElement, defaultAutocompleteEmptyProps)
 
-defineCustomElement('prosekit-autocomplete-empty-v2', AutocompleteEmptyElement)
+defineCustomElement('prosekit-autocomplete-empty', AutocompleteEmptyElement)
 
 export { AutocompleteEmptyElement }

@@ -19,6 +19,6 @@ interface BlockDragHandleElement extends BlockDragHandleProps {}
 
 defineProperties(BlockDragHandleElement, defaultBlockDragHandleProps)
 
-defineCustomElement('prosekit-block-drag-handle-v2', BlockDragHandleElement)
+defineCustomElement('prosekit-block-drag-handle', BlockDragHandleElement)
 
 export { BlockDragHandleElement }

@@ -19,7 +19,7 @@ export const PopoverRoot: ForwardRefExoticComponent<
   PopoverRootProps, 
   PopoverRootElement
 >(
-  'popover-root-v2',
+  'prosekit-popover-root',
   'PopoverRoot',
   defaultPopoverRootProps,
 )

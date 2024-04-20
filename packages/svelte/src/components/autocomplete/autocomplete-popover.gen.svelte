@@ -2,6 +2,6 @@
 import '@prosekit/primitives/autocomplete'
 </script>
 
-<autocomplete-popover {...$$props}>
+<prosekit-autocomplete-popover {...$$props}>
   <slot />
-</autocomplete-popover>
+</prosekit-autocomplete-popover>

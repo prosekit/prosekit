@@ -19,6 +19,6 @@ interface ResizableHandleElement extends ResizableHandleProps {}
 
 defineProperties(ResizableHandleElement, defaultResizableHandleProps)
 
-defineCustomElement('prosekit-resizable-handle-v2', ResizableHandleElement)
+defineCustomElement('prosekit-resizable-handle', ResizableHandleElement)
 
 export { ResizableHandleElement }

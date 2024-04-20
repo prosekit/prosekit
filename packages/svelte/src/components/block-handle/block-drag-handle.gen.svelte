@@ -2,6 +2,6 @@
 import '@prosekit/primitives/block-handle'
 </script>
 
-<block-drag-handle {...$$props}>
+<prosekit-block-drag-handle {...$$props}>
   <slot />
-</block-drag-handle>
+</prosekit-block-drag-handle>

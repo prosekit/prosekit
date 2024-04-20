@@ -19,7 +19,7 @@ export const BlockDragHandle: ForwardRefExoticComponent<
   BlockDragHandleProps, 
   BlockDragHandleElement
 >(
-  'block-drag-handle-v2',
+  'prosekit-block-drag-handle',
   'BlockDragHandle',
   defaultBlockDragHandleProps,
 )

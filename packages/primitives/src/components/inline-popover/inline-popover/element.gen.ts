@@ -19,6 +19,6 @@ interface InlinePopoverElement extends InlinePopoverProps {}
 
 defineProperties(InlinePopoverElement, defaultInlinePopoverProps)
 
-defineCustomElement('prosekit-inline-popover-v2', InlinePopoverElement)
+defineCustomElement('prosekit-inline-popover', InlinePopoverElement)
 
 export { InlinePopoverElement }

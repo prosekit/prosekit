@@ -19,6 +19,6 @@ interface AutocompletePopoverElement extends AutocompletePopoverProps {}
 
 defineProperties(AutocompletePopoverElement, defaultAutocompletePopoverProps)
 
-defineCustomElement('prosekit-autocomplete-popover-v2', AutocompletePopoverElement)
+defineCustomElement('prosekit-autocomplete-popover', AutocompletePopoverElement)
 
 export { AutocompletePopoverElement }

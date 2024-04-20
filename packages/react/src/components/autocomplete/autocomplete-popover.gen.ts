@@ -19,7 +19,7 @@ export const AutocompletePopover: ForwardRefExoticComponent<
   AutocompletePopoverProps, 
   AutocompletePopoverElement
 >(
-  'autocomplete-popover-v2',
+  'prosekit-autocomplete-popover',
   'AutocompletePopover',
   defaultAutocompletePopoverProps,
 )

@@ -19,7 +19,7 @@ export const PopoverTrigger: ForwardRefExoticComponent<
   PopoverTriggerProps, 
   PopoverTriggerElement
 >(
-  'popover-trigger-v2',
+  'prosekit-popover-trigger',
   'PopoverTrigger',
   defaultPopoverTriggerProps,
 )

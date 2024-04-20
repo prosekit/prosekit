@@ -19,6 +19,6 @@ interface TooltipTriggerElement extends TooltipTriggerProps {}
 
 defineProperties(TooltipTriggerElement, defaultTooltipTriggerProps)
 
-defineCustomElement('prosekit-tooltip-trigger-v2', TooltipTriggerElement)
+defineCustomElement('prosekit-tooltip-trigger', TooltipTriggerElement)
 
 export { TooltipTriggerElement }

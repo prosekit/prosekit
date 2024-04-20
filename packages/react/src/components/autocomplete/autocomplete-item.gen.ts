@@ -19,7 +19,7 @@ export const AutocompleteItem: ForwardRefExoticComponent<
   AutocompleteItemProps, 
   AutocompleteItemElement
 >(
-  'autocomplete-item-v2',
+  'prosekit-autocomplete-item',
   'AutocompleteItem',
   defaultAutocompleteItemProps,
 )

@@ -19,6 +19,6 @@ interface PopoverRootElement extends PopoverRootProps {}
 
 defineProperties(PopoverRootElement, defaultPopoverRootProps)
 
-defineCustomElement('prosekit-popover-root-v2', PopoverRootElement)
+defineCustomElement('prosekit-popover-root', PopoverRootElement)
 
 export { PopoverRootElement }

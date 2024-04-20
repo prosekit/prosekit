@@ -19,7 +19,7 @@ export const AutocompleteList: ForwardRefExoticComponent<
   AutocompleteListProps, 
   AutocompleteListElement
 >(
-  'autocomplete-list-v2',
+  'prosekit-autocomplete-list',
   'AutocompleteList',
   defaultAutocompleteListProps,
 )

@@ -2,6 +2,6 @@
 import '@prosekit/primitives/resizable'
 </script>
 
-<resizable-root {...$$props}>
+<prosekit-resizable-root {...$$props}>
   <slot />
-</resizable-root>
+</prosekit-resizable-root>

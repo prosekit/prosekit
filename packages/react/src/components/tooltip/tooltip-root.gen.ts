@@ -19,7 +19,7 @@ export const TooltipRoot: ForwardRefExoticComponent<
   TooltipRootProps, 
   TooltipRootElement
 >(
-  'tooltip-root-v2',
+  'prosekit-tooltip-root',
   'TooltipRoot',
   defaultTooltipRootProps,
 )

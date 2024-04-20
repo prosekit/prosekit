@@ -2,6 +2,6 @@
 import '@prosekit/primitives/block-handle'
 </script>
 
-<block-popover {...$$props}>
+<prosekit-block-popover {...$$props}>
   <slot />
-</block-popover>
+</prosekit-block-popover>

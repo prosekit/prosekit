@@ -19,7 +19,7 @@ export const TooltipTrigger: ForwardRefExoticComponent<
   TooltipTriggerProps, 
   TooltipTriggerElement
 >(
-  'tooltip-trigger-v2',
+  'prosekit-tooltip-trigger',
   'TooltipTrigger',
   defaultTooltipTriggerProps,
 )

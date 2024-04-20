@@ -19,7 +19,7 @@ export const PopoverContent: ForwardRefExoticComponent<
   PopoverContentProps, 
   PopoverContentElement
 >(
-  'popover-content-v2',
+  'prosekit-popover-content',
   'PopoverContent',
   defaultPopoverContentProps,
 )

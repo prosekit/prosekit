@@ -2,6 +2,6 @@
 import '@prosekit/primitives/popover'
 </script>
 
-<popover-content {...$$props}>
+<prosekit-popover-content {...$$props}>
   <slot />
-</popover-content>
+</prosekit-popover-content>

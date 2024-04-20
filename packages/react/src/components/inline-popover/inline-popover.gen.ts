@@ -19,7 +19,7 @@ export const InlinePopover: ForwardRefExoticComponent<
   InlinePopoverProps, 
   InlinePopoverElement
 >(
-  'inline-popover-v2',
+  'prosekit-inline-popover',
   'InlinePopover',
   defaultInlinePopoverProps,
 )

@@ -19,7 +19,7 @@ export const TooltipContent: ForwardRefExoticComponent<
   TooltipContentProps, 
   TooltipContentElement
 >(
-  'tooltip-content-v2',
+  'prosekit-tooltip-content',
   'TooltipContent',
   defaultTooltipContentProps,
 )

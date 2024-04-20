@@ -19,7 +19,7 @@ export const ResizableRoot: ForwardRefExoticComponent<
   ResizableRootProps, 
   ResizableRootElement
 >(
-  'resizable-root-v2',
+  'prosekit-resizable-root',
   'ResizableRoot',
   defaultResizableRootProps,
 )

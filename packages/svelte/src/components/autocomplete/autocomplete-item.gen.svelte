@@ -2,6 +2,6 @@
 import '@prosekit/primitives/autocomplete'
 </script>
 
-<autocomplete-item {...$$props}>
+<prosekit-autocomplete-item {...$$props}>
   <slot />
-</autocomplete-item>
+</prosekit-autocomplete-item>

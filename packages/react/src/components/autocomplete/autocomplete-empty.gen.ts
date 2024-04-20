@@ -19,7 +19,7 @@ export const AutocompleteEmpty: ForwardRefExoticComponent<
   AutocompleteEmptyProps, 
   AutocompleteEmptyElement
 >(
-  'autocomplete-empty-v2',
+  'prosekit-autocomplete-empty',
   'AutocompleteEmpty',
   defaultAutocompleteEmptyProps,
 )

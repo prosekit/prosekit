@@ -19,6 +19,6 @@ interface TooltipRootElement extends TooltipRootProps {}
 
 defineProperties(TooltipRootElement, defaultTooltipRootProps)
 
-defineCustomElement('prosekit-tooltip-root-v2', TooltipRootElement)
+defineCustomElement('prosekit-tooltip-root', TooltipRootElement)
 
 export { TooltipRootElement }

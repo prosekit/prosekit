@@ -19,7 +19,7 @@ export const BlockPopover: ForwardRefExoticComponent<
   BlockPopoverProps, 
   BlockPopoverElement
 >(
-  'block-popover-v2',
+  'prosekit-block-popover',
   'BlockPopover',
   defaultBlockPopoverProps,
 )

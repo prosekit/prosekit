@@ -165,7 +165,6 @@ function formatPrimitiveIndexCode(components: string[]) {
 
 function formatPrimitiveElementCode(kebab: string) {
   const pascal = kebabToPascal(kebab)
-  // TODO: remove -v2 in the template
   return (
     `
 
@@ -190,7 +189,7 @@ interface ${pascal}Element extends ${pascal}Props {}
 
 defineProperties(${pascal}Element, default${pascal}Props)
 
-defineCustomElement('prosekit-${kebab}-v2', ${pascal}Element)
+defineCustomElement('prosekit-${kebab}', ${pascal}Element)
 
 export { ${pascal}Element }
     
@@ -261,7 +260,7 @@ export const ${pascal}: ForwardRefExoticComponent<
   ${pascal}Props, 
   ${pascal}Element
 >(
-  '${kebab}-v2',
+  'prosekit-${kebab}',
   '${pascal}',
   default${pascal}Props,
 )
@@ -292,9 +291,9 @@ function formatSvelteComponentCode(group: string, kebab: string) {
 import '@prosekit/primitives/${group}'
 </script>
 
-<${kebab} {...$$props}>
+<prosekit-${kebab} {...$$props}>
   <slot />
-</${kebab}>
+</prosekit-${kebab}>
 `.trim() + '\n'
   )
 }

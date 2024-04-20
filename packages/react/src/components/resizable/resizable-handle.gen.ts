@@ -19,7 +19,7 @@ export const ResizableHandle: ForwardRefExoticComponent<
   ResizableHandleProps, 
   ResizableHandleElement
 >(
-  'resizable-handle-v2',
+  'prosekit-resizable-handle',
   'ResizableHandle',
   defaultResizableHandleProps,
 )

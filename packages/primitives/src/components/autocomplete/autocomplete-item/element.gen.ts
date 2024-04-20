@@ -19,6 +19,6 @@ interface AutocompleteItemElement extends AutocompleteItemProps {}
 
 defineProperties(AutocompleteItemElement, defaultAutocompleteItemProps)
 
-defineCustomElement('prosekit-autocomplete-item-v2', AutocompleteItemElement)
+defineCustomElement('prosekit-autocomplete-item', AutocompleteItemElement)
 
 export { AutocompleteItemElement }

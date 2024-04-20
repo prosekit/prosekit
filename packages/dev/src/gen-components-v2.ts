@@ -16,8 +16,8 @@ export async function genComponents() {
   await vfs.cleanGeneratedFilesInPackage(reactPackage)
   await vfs.cleanGeneratedFilesInPackage(vuePackage)
   await vfs.cleanGeneratedFilesInPackage(sveltePackage)
-  // await vfs.cleanGeneratedFilesInPackage(solidPackage)
-  // await vfs.cleanGeneratedFilesInPackage(preactPackage)
+  await vfs.cleanGeneratedFilesInPackage(solidPackage)
+  await vfs.cleanGeneratedFilesInPackage(preactPackage)
 
   const primitives = await readPrimitives(primitivesPackage)
   await writePrimitivesComponents(primitivesPackage, primitives)

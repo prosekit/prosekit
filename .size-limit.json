@@ -255,48 +255,6 @@
     ]
   },
   {
-    "name": "prosekit/preact/block-drag-handle",
-    "path": "packages/prosekit/dist/prosekit-preact-block-drag-handle.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/block-popover",
-    "path": "packages/prosekit/dist/prosekit-preact-block-popover.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/inline-popover",
-    "path": "packages/prosekit/dist/prosekit-preact-inline-popover.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/popover-content",
-    "path": "packages/prosekit/dist/prosekit-preact-popover-content.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/popover-root",
-    "path": "packages/prosekit/dist/prosekit-preact-popover-root.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/popover-trigger",
-    "path": "packages/prosekit/dist/prosekit-preact-popover-trigger.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
     "name": "prosekit/preact/resizable",
     "path": "packages/prosekit/dist/prosekit-preact-resizable.js",
     "ignore": [
@@ -304,36 +262,8 @@
     ]
   },
   {
-    "name": "prosekit/preact/resizable-handle",
-    "path": "packages/prosekit/dist/prosekit-preact-resizable-handle.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
     "name": "prosekit/preact/tooltip",
     "path": "packages/prosekit/dist/prosekit-preact-tooltip.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/tooltip-content",
-    "path": "packages/prosekit/dist/prosekit-preact-tooltip-content.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/tooltip-root",
-    "path": "packages/prosekit/dist/prosekit-preact-tooltip-root.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/tooltip-trigger",
-    "path": "packages/prosekit/dist/prosekit-preact-tooltip-trigger.js",
     "ignore": [
       "preact"
     ]
@@ -442,48 +372,6 @@
     ]
   },
   {
-    "name": "prosekit/solid/block-drag-handle",
-    "path": "packages/prosekit/dist/prosekit-solid-block-drag-handle.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/block-popover",
-    "path": "packages/prosekit/dist/prosekit-solid-block-popover.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/inline-popover",
-    "path": "packages/prosekit/dist/prosekit-solid-inline-popover.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/popover-content",
-    "path": "packages/prosekit/dist/prosekit-solid-popover-content.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/popover-root",
-    "path": "packages/prosekit/dist/prosekit-solid-popover-root.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/popover-trigger",
-    "path": "packages/prosekit/dist/prosekit-solid-popover-trigger.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
     "name": "prosekit/solid/resizable",
     "path": "packages/prosekit/dist/prosekit-solid-resizable.js",
     "ignore": [
@@ -491,36 +379,8 @@
     ]
   },
   {
-    "name": "prosekit/solid/resizable-handle",
-    "path": "packages/prosekit/dist/prosekit-solid-resizable-handle.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
     "name": "prosekit/solid/tooltip",
     "path": "packages/prosekit/dist/prosekit-solid-tooltip.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/tooltip-content",
-    "path": "packages/prosekit/dist/prosekit-solid-tooltip-content.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/tooltip-root",
-    "path": "packages/prosekit/dist/prosekit-solid-tooltip-root.js",
-    "ignore": [
-      "solid-js"
-    ]
-  },
-  {
-    "name": "prosekit/solid/tooltip-trigger",
-    "path": "packages/prosekit/dist/prosekit-solid-tooltip-trigger.js",
     "ignore": [
       "solid-js"
     ]

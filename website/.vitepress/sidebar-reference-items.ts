@@ -188,52 +188,12 @@ export const referenceItems = [
         "link": "/references/preact/autocomplete-popover"
       },
       {
-        "text": "block-drag-handle",
-        "link": "/references/preact/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/preact/block-popover"
-      },
-      {
-        "text": "inline-popover",
-        "link": "/references/preact/inline-popover"
-      },
-      {
-        "text": "popover-content",
-        "link": "/references/preact/popover-content"
-      },
-      {
-        "text": "popover-root",
-        "link": "/references/preact/popover-root"
-      },
-      {
-        "text": "popover-trigger",
-        "link": "/references/preact/popover-trigger"
-      },
-      {
         "text": "resizable",
         "link": "/references/preact/resizable"
       },
       {
-        "text": "resizable-handle",
-        "link": "/references/preact/resizable-handle"
-      },
-      {
         "text": "tooltip",
         "link": "/references/preact/tooltip"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/preact/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/preact/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/preact/tooltip-trigger"
       }
     ],
     "collapsed": true,
@@ -305,52 +265,12 @@ export const referenceItems = [
         "link": "/references/solid/autocomplete-popover"
       },
       {
-        "text": "block-drag-handle",
-        "link": "/references/solid/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/solid/block-popover"
-      },
-      {
-        "text": "inline-popover",
-        "link": "/references/solid/inline-popover"
-      },
-      {
-        "text": "popover-content",
-        "link": "/references/solid/popover-content"
-      },
-      {
-        "text": "popover-root",
-        "link": "/references/solid/popover-root"
-      },
-      {
-        "text": "popover-trigger",
-        "link": "/references/solid/popover-trigger"
-      },
-      {
         "text": "resizable",
         "link": "/references/solid/resizable"
       },
       {
-        "text": "resizable-handle",
-        "link": "/references/solid/resizable-handle"
-      },
-      {
         "text": "tooltip",
         "link": "/references/solid/tooltip"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/solid/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/solid/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/solid/tooltip-trigger"
       }
     ],
     "collapsed": true,

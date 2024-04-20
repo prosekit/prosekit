@@ -1,8 +1,10 @@
 <script lang="ts">
-import { AutocompleteItem } from 'prosekit/svelte/autocomplete'
-import { AutocompletePopover } from 'prosekit/svelte/autocomplete'
-import { AutocompleteEmpty } from 'prosekit/svelte/autocomplete'
-import { AutocompleteList } from 'prosekit/svelte/autocomplete'
+import {
+  AutocompleteItem,
+  AutocompletePopover,
+  AutocompleteEmpty,
+  AutocompleteList,
+} from 'prosekit/svelte/autocomplete'
 import { useEditor } from 'prosekit/svelte'
 import type { EditorExtension } from './extension'
 

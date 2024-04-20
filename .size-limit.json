@@ -277,38 +277,6 @@
     ]
   },
   {
-    "name": "prosekit/react/autocomplete-empty",
-    "path": "packages/prosekit/dist/prosekit-react-autocomplete-empty.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/autocomplete-item",
-    "path": "packages/prosekit/dist/prosekit-react-autocomplete-item.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/autocomplete-list",
-    "path": "packages/prosekit/dist/prosekit-react-autocomplete-list.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
-    "name": "prosekit/react/autocomplete-popover",
-    "path": "packages/prosekit/dist/prosekit-react-autocomplete-popover.js",
-    "ignore": [
-      "react",
-      "react-dom"
-    ]
-  },
-  {
     "name": "prosekit/react/block-handle",
     "path": "packages/prosekit/dist/prosekit-react-block-handle.js",
     "ignore": [

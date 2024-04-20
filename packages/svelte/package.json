@@ -30,22 +30,6 @@
       "svelte": "./src/components/autocomplete/index.ts",
       "default": "./src/components/autocomplete/index.ts"
     },
-    "./autocomplete-empty": {
-      "svelte": "./src/components/autocomplete-empty.ts",
-      "default": "./src/components/autocomplete-empty.ts"
-    },
-    "./autocomplete-item": {
-      "svelte": "./src/components/autocomplete-item.ts",
-      "default": "./src/components/autocomplete-item.ts"
-    },
-    "./autocomplete-list": {
-      "svelte": "./src/components/autocomplete-list.ts",
-      "default": "./src/components/autocomplete-list.ts"
-    },
-    "./autocomplete-popover": {
-      "svelte": "./src/components/autocomplete-popover.ts",
-      "default": "./src/components/autocomplete-popover.ts"
-    },
     "./block-handle": {
       "svelte": "./src/components/block-handle/index.ts",
       "default": "./src/components/block-handle/index.ts"
@@ -111,30 +95,6 @@
         "import": "./dist/prosekit-svelte-autocomplete.js",
         "default": "./dist/prosekit-svelte-autocomplete.js"
       },
-      "./autocomplete-empty": {
-        "types": "./dist/prosekit-svelte-autocomplete-empty.d.ts",
-        "svelte": "./dist/prosekit-svelte-autocomplete-empty.js",
-        "import": "./dist/prosekit-svelte-autocomplete-empty.js",
-        "default": "./dist/prosekit-svelte-autocomplete-empty.js"
-      },
-      "./autocomplete-item": {
-        "types": "./dist/prosekit-svelte-autocomplete-item.d.ts",
-        "svelte": "./dist/prosekit-svelte-autocomplete-item.js",
-        "import": "./dist/prosekit-svelte-autocomplete-item.js",
-        "default": "./dist/prosekit-svelte-autocomplete-item.js"
-      },
-      "./autocomplete-list": {
-        "types": "./dist/prosekit-svelte-autocomplete-list.d.ts",
-        "svelte": "./dist/prosekit-svelte-autocomplete-list.js",
-        "import": "./dist/prosekit-svelte-autocomplete-list.js",
-        "default": "./dist/prosekit-svelte-autocomplete-list.js"
-      },
-      "./autocomplete-popover": {
-        "types": "./dist/prosekit-svelte-autocomplete-popover.d.ts",
-        "svelte": "./dist/prosekit-svelte-autocomplete-popover.js",
-        "import": "./dist/prosekit-svelte-autocomplete-popover.js",
-        "default": "./dist/prosekit-svelte-autocomplete-popover.js"
-      },
       "./block-handle": {
         "types": "./dist/prosekit-svelte-block-handle.d.ts",
         "svelte": "./dist/prosekit-svelte-block-handle.js",
@@ -176,18 +136,6 @@
         ],
         "autocomplete": [
           "./dist/prosekit-svelte-autocomplete.d.ts"
-        ],
-        "autocomplete-empty": [
-          "./dist/prosekit-svelte-autocomplete-empty.d.ts"
-        ],
-        "autocomplete-item": [
-          "./dist/prosekit-svelte-autocomplete-item.d.ts"
-        ],
-        "autocomplete-list": [
-          "./dist/prosekit-svelte-autocomplete-list.d.ts"
-        ],
-        "autocomplete-popover": [
-          "./dist/prosekit-svelte-autocomplete-popover.d.ts"
         ],
         "block-handle": [
           "./dist/prosekit-svelte-block-handle.d.ts"

@@ -202,22 +202,6 @@ export const referenceItems = [
         "link": "/references/react/autocomplete"
       },
       {
-        "text": "autocomplete-empty",
-        "link": "/references/react/autocomplete-empty"
-      },
-      {
-        "text": "autocomplete-item",
-        "link": "/references/react/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/react/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/react/autocomplete-popover"
-      },
-      {
         "text": "block-handle",
         "link": "/references/react/block-handle"
       },
@@ -278,22 +262,6 @@ export const referenceItems = [
       {
         "text": "autocomplete",
         "link": "/references/svelte/autocomplete"
-      },
-      {
-        "text": "autocomplete-empty",
-        "link": "/references/svelte/autocomplete-empty"
-      },
-      {
-        "text": "autocomplete-item",
-        "link": "/references/svelte/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/svelte/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/svelte/autocomplete-popover"
       },
       {
         "text": "block-handle",

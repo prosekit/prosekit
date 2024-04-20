@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { useEditor } from 'prosekit/vue'
-import { PopoverTrigger } from 'prosekit/vue/popover-trigger'
-import { PopoverRoot } from 'prosekit/vue/popover-root'
-import { PopoverContent } from 'prosekit/vue/popover-content'
+import {
+  PopoverContent,
+  PopoverRoot,
+  PopoverTrigger,
+} from 'prosekit/vue/popover'
 import { computed, ref } from 'vue'
 import type { EditorExtension } from './extension'
 import Toggle from './toggle.vue'

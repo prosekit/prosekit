@@ -12,15 +12,17 @@ export function createComponent<Props extends object>(
       return () => {
         const p: Record<string, unknown> = {}
 
-        for (const key of Object.keys(props)) {
-          p[propertyNames.includes(key) ? '.' + key : key] = props[key]
+        for (const [key, value] of Object.entries(props)) {
+          if (value !== undefined) {
+            p[propertyNames.includes(key) ? '.' + key : key] = value
+          }
         }
 
         return h(tagName, p, slots.default?.())
       }
     },
     {
-      props: ['class', ...propertyNames],
+      props: propertyNames,
       name: displayName,
     },
   )

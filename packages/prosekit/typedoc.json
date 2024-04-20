@@ -1,6 +1,8 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
   "entryPoints": [
     "./src/basic.gen.ts",
     "./src/core.gen.ts",
@@ -39,9 +41,6 @@
     "./src/lit/popover-trigger.gen.ts",
     "./src/lit/resizable-handle.gen.ts",
     "./src/lit/resizable.gen.ts",
-    "./src/lit/tooltip-content.gen.ts",
-    "./src/lit/tooltip-root.gen.ts",
-    "./src/lit/tooltip-trigger.gen.ts",
     "./src/pm.gen.ts",
     "./src/pm/commands.gen.ts",
     "./src/pm/history.gen.ts",
@@ -52,10 +51,6 @@
     "./src/pm/transform.gen.ts",
     "./src/pm/view.gen.ts",
     "./src/preact.gen.ts",
-    "./src/preact/autocomplete-empty.gen.ts",
-    "./src/preact/autocomplete-item.gen.ts",
-    "./src/preact/autocomplete-list.gen.ts",
-    "./src/preact/autocomplete-popover.gen.ts",
     "./src/preact/resizable.gen.ts",
     "./src/preact/tooltip.gen.ts",
     "./src/primitives.gen.ts",

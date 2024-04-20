@@ -26,10 +26,6 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./autocomplete-empty": "./src/components/autocomplete-empty.ts",
-    "./autocomplete-item": "./src/components/autocomplete-item.ts",
-    "./autocomplete-list": "./src/components/autocomplete-list.ts",
-    "./autocomplete-popover": "./src/components/autocomplete-popover.ts",
     "./resizable": "./src/components/resizable/index.ts",
     "./tooltip": "./src/components/tooltip/index.ts"
   },
@@ -68,26 +64,6 @@
         "import": "./dist/prosekit-preact.js",
         "default": "./dist/prosekit-preact.js"
       },
-      "./autocomplete-empty": {
-        "types": "./dist/prosekit-preact-autocomplete-empty.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-empty.js",
-        "default": "./dist/prosekit-preact-autocomplete-empty.js"
-      },
-      "./autocomplete-item": {
-        "types": "./dist/prosekit-preact-autocomplete-item.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-item.js",
-        "default": "./dist/prosekit-preact-autocomplete-item.js"
-      },
-      "./autocomplete-list": {
-        "types": "./dist/prosekit-preact-autocomplete-list.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-list.js",
-        "default": "./dist/prosekit-preact-autocomplete-list.js"
-      },
-      "./autocomplete-popover": {
-        "types": "./dist/prosekit-preact-autocomplete-popover.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-popover.js",
-        "default": "./dist/prosekit-preact-autocomplete-popover.js"
-      },
       "./resizable": {
         "types": "./dist/prosekit-preact-resizable.d.ts",
         "import": "./dist/prosekit-preact-resizable.js",
@@ -106,18 +82,6 @@
       "*": {
         ".": [
           "./dist/prosekit-preact.d.ts"
-        ],
-        "autocomplete-empty": [
-          "./dist/prosekit-preact-autocomplete-empty.d.ts"
-        ],
-        "autocomplete-item": [
-          "./dist/prosekit-preact-autocomplete-item.d.ts"
-        ],
-        "autocomplete-list": [
-          "./dist/prosekit-preact-autocomplete-list.d.ts"
-        ],
-        "autocomplete-popover": [
-          "./dist/prosekit-preact-autocomplete-popover.d.ts"
         ],
         "resizable": [
           "./dist/prosekit-preact-resizable.d.ts"

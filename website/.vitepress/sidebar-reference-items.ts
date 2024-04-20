@@ -151,18 +151,6 @@ export const referenceItems = [
       {
         "text": "resizable-handle",
         "link": "/references/lit/resizable-handle"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/lit/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/lit/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/lit/tooltip-trigger"
       }
     ],
     "collapsed": true,
@@ -171,22 +159,6 @@ export const referenceItems = [
   {
     "text": "preact",
     "items": [
-      {
-        "text": "autocomplete-empty",
-        "link": "/references/preact/autocomplete-empty"
-      },
-      {
-        "text": "autocomplete-item",
-        "link": "/references/preact/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/preact/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/preact/autocomplete-popover"
-      },
       {
         "text": "resizable",
         "link": "/references/preact/resizable"

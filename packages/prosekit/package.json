@@ -68,9 +68,6 @@
     "./lit/popover-trigger": "./src/lit/popover-trigger.gen.ts",
     "./lit/resizable": "./src/lit/resizable.gen.ts",
     "./lit/resizable-handle": "./src/lit/resizable-handle.gen.ts",
-    "./lit/tooltip-content": "./src/lit/tooltip-content.gen.ts",
-    "./lit/tooltip-root": "./src/lit/tooltip-root.gen.ts",
-    "./lit/tooltip-trigger": "./src/lit/tooltip-trigger.gen.ts",
     "./pm": "./src/pm.gen.ts",
     "./pm/commands": "./src/pm/commands.gen.ts",
     "./pm/history": "./src/pm/history.gen.ts",
@@ -82,10 +79,6 @@
     "./pm/view": "./src/pm/view.gen.ts",
     "./pm/view/style/prosemirror.css": "./src/pm/view/style/prosemirror.css",
     "./preact": "./src/preact.gen.ts",
-    "./preact/autocomplete-empty": "./src/preact/autocomplete-empty.gen.ts",
-    "./preact/autocomplete-item": "./src/preact/autocomplete-item.gen.ts",
-    "./preact/autocomplete-list": "./src/preact/autocomplete-list.gen.ts",
-    "./preact/autocomplete-popover": "./src/preact/autocomplete-popover.gen.ts",
     "./preact/resizable": "./src/preact/resizable.gen.ts",
     "./preact/tooltip": "./src/preact/tooltip.gen.ts",
     "./primitives": "./src/primitives.gen.ts",
@@ -129,11 +122,11 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
+    "@prosekit/pm": "0.1.2",
     "@prosekit/basic": "0.3.4",
     "@prosekit/core": "0.4.0",
     "@prosekit/extensions": "0.4.2",
     "@prosekit/lit": "0.2.8",
-    "@prosekit/pm": "0.1.2",
     "@prosekit/preact": "0.2.7",
     "@prosekit/primitives": "0.0.0",
     "@prosekit/react": "0.2.7",
@@ -389,21 +382,6 @@
         "import": "./dist/prosekit-lit-resizable-handle.js",
         "default": "./dist/prosekit-lit-resizable-handle.js"
       },
-      "./lit/tooltip-content": {
-        "types": "./dist/prosekit-lit-tooltip-content.d.ts",
-        "import": "./dist/prosekit-lit-tooltip-content.js",
-        "default": "./dist/prosekit-lit-tooltip-content.js"
-      },
-      "./lit/tooltip-root": {
-        "types": "./dist/prosekit-lit-tooltip-root.d.ts",
-        "import": "./dist/prosekit-lit-tooltip-root.js",
-        "default": "./dist/prosekit-lit-tooltip-root.js"
-      },
-      "./lit/tooltip-trigger": {
-        "types": "./dist/prosekit-lit-tooltip-trigger.d.ts",
-        "import": "./dist/prosekit-lit-tooltip-trigger.js",
-        "default": "./dist/prosekit-lit-tooltip-trigger.js"
-      },
       "./pm": {
         "types": "./dist/prosekit-pm.d.ts",
         "import": "./dist/prosekit-pm.js",
@@ -456,26 +434,6 @@
         "types": "./dist/prosekit-preact.d.ts",
         "import": "./dist/prosekit-preact.js",
         "default": "./dist/prosekit-preact.js"
-      },
-      "./preact/autocomplete-empty": {
-        "types": "./dist/prosekit-preact-autocomplete-empty.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-empty.js",
-        "default": "./dist/prosekit-preact-autocomplete-empty.js"
-      },
-      "./preact/autocomplete-item": {
-        "types": "./dist/prosekit-preact-autocomplete-item.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-item.js",
-        "default": "./dist/prosekit-preact-autocomplete-item.js"
-      },
-      "./preact/autocomplete-list": {
-        "types": "./dist/prosekit-preact-autocomplete-list.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-list.js",
-        "default": "./dist/prosekit-preact-autocomplete-list.js"
-      },
-      "./preact/autocomplete-popover": {
-        "types": "./dist/prosekit-preact-autocomplete-popover.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-popover.js",
-        "default": "./dist/prosekit-preact-autocomplete-popover.js"
       },
       "./preact/resizable": {
         "types": "./dist/prosekit-preact-resizable.d.ts",
@@ -764,15 +722,6 @@
         "lit/resizable-handle": [
           "./dist/prosekit-lit-resizable-handle.d.ts"
         ],
-        "lit/tooltip-content": [
-          "./dist/prosekit-lit-tooltip-content.d.ts"
-        ],
-        "lit/tooltip-root": [
-          "./dist/prosekit-lit-tooltip-root.d.ts"
-        ],
-        "lit/tooltip-trigger": [
-          "./dist/prosekit-lit-tooltip-trigger.d.ts"
-        ],
         "pm": [
           "./dist/prosekit-pm.d.ts"
         ],
@@ -802,18 +751,6 @@
         ],
         "preact": [
           "./dist/prosekit-preact.d.ts"
-        ],
-        "preact/autocomplete-empty": [
-          "./dist/prosekit-preact-autocomplete-empty.d.ts"
-        ],
-        "preact/autocomplete-item": [
-          "./dist/prosekit-preact-autocomplete-item.d.ts"
-        ],
-        "preact/autocomplete-list": [
-          "./dist/prosekit-preact-autocomplete-list.d.ts"
-        ],
-        "preact/autocomplete-popover": [
-          "./dist/prosekit-preact-autocomplete-popover.d.ts"
         ],
         "preact/resizable": [
           "./dist/prosekit-preact-resizable.d.ts"

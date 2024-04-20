@@ -1,6 +1,8 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
   "entryPoints": [
     "./src/components/autocomplete-empty/index.ts",
     "./src/components/autocomplete-item/index.ts",
@@ -14,9 +16,6 @@
     "./src/components/popover-trigger/index.ts",
     "./src/components/resizable-handle/index.ts",
     "./src/components/resizable/index.ts",
-    "./src/components/tooltip-content/index.ts",
-    "./src/components/tooltip-root/index.ts",
-    "./src/components/tooltip-trigger/index.ts",
     "./src/index.ts"
   ]
 }

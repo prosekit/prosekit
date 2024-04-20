@@ -168,18 +168,6 @@
     "path": "packages/prosekit/dist/prosekit-lit-resizable-handle.js"
   },
   {
-    "name": "prosekit/lit/tooltip-content",
-    "path": "packages/prosekit/dist/prosekit-lit-tooltip-content.js"
-  },
-  {
-    "name": "prosekit/lit/tooltip-root",
-    "path": "packages/prosekit/dist/prosekit-lit-tooltip-root.js"
-  },
-  {
-    "name": "prosekit/lit/tooltip-trigger",
-    "path": "packages/prosekit/dist/prosekit-lit-tooltip-trigger.js"
-  },
-  {
     "name": "prosekit/pm",
     "path": "packages/prosekit/dist/prosekit-pm.js"
   },
@@ -222,34 +210,6 @@
   {
     "name": "prosekit/preact",
     "path": "packages/prosekit/dist/prosekit-preact.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/autocomplete-empty",
-    "path": "packages/prosekit/dist/prosekit-preact-autocomplete-empty.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/autocomplete-item",
-    "path": "packages/prosekit/dist/prosekit-preact-autocomplete-item.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/autocomplete-list",
-    "path": "packages/prosekit/dist/prosekit-preact-autocomplete-list.js",
-    "ignore": [
-      "preact"
-    ]
-  },
-  {
-    "name": "prosekit/preact/autocomplete-popover",
-    "path": "packages/prosekit/dist/prosekit-preact-autocomplete-popover.js",
     "ignore": [
       "preact"
     ]

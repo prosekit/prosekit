@@ -69,6 +69,7 @@
     "./src/preact/tooltip-content.gen.ts",
     "./src/preact/tooltip-root.gen.ts",
     "./src/preact/tooltip-trigger.gen.ts",
+    "./src/preact/tooltip.gen.ts",
     "./src/primitives.gen.ts",
     "./src/primitives/resizable.gen.ts",
     "./src/primitives/tooltip.gen.ts",

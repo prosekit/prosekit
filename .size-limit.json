@@ -311,6 +311,13 @@
     ]
   },
   {
+    "name": "prosekit/preact/tooltip",
+    "path": "packages/prosekit/dist/prosekit-preact-tooltip.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
     "name": "prosekit/preact/tooltip-content",
     "path": "packages/prosekit/dist/prosekit-preact-tooltip-content.js",
     "ignore": [

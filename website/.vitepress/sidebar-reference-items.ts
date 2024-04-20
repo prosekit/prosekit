@@ -220,6 +220,10 @@ export const referenceItems = [
         "link": "/references/preact/resizable-handle"
       },
       {
+        "text": "tooltip",
+        "link": "/references/preact/tooltip"
+      },
+      {
         "text": "tooltip-content",
         "link": "/references/preact/tooltip-content"
       },

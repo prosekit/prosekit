@@ -94,6 +94,7 @@
     "./preact/popover-trigger": "./src/preact/popover-trigger.gen.ts",
     "./preact/resizable": "./src/preact/resizable.gen.ts",
     "./preact/resizable-handle": "./src/preact/resizable-handle.gen.ts",
+    "./preact/tooltip": "./src/preact/tooltip.gen.ts",
     "./preact/tooltip-content": "./src/preact/tooltip-content.gen.ts",
     "./preact/tooltip-root": "./src/preact/tooltip-root.gen.ts",
     "./preact/tooltip-trigger": "./src/preact/tooltip-trigger.gen.ts",
@@ -536,6 +537,11 @@
         "import": "./dist/prosekit-preact-resizable-handle.js",
         "default": "./dist/prosekit-preact-resizable-handle.js"
       },
+      "./preact/tooltip": {
+        "types": "./dist/prosekit-preact-tooltip.d.ts",
+        "import": "./dist/prosekit-preact-tooltip.js",
+        "default": "./dist/prosekit-preact-tooltip.js"
+      },
       "./preact/tooltip-content": {
         "types": "./dist/prosekit-preact-tooltip-content.d.ts",
         "import": "./dist/prosekit-preact-tooltip-content.js",
@@ -952,6 +958,9 @@
         ],
         "preact/resizable-handle": [
           "./dist/prosekit-preact-resizable-handle.d.ts"
+        ],
+        "preact/tooltip": [
+          "./dist/prosekit-preact-tooltip.d.ts"
         ],
         "preact/tooltip-content": [
           "./dist/prosekit-preact-tooltip-content.d.ts"

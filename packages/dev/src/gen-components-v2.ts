@@ -25,10 +25,7 @@ export async function genComponents() {
   await writeVueComponents(vuePackage, primitives)
   await writeSvelteComponents(sveltePackage, primitives)
   await writeSolidComponents(solidPackage, primitives)
-
-  if (Math.random() > 2) {
-    await writePreactComponents(preactPackage, ['componentNames'])
-  }
+  await writePreactComponents(preactPackage, primitives)
 }
 
 async function writePrimitivesComponents(pkg: Package, info: Primitives) {
@@ -121,12 +118,20 @@ async function writeSolidComponents(pkg: Package, info: Primitives) {
   }
 }
 
-async function writePreactComponents(pkg: Package, componentNames: string[]) {
+async function writePreactComponents(pkg: Package, info: Primitives) {
   const exports = (pkg.packageJson as any).exports
-  for (const kebab of componentNames) {
-    exports[`./${kebab}`] = ''
-    const code = formatPreactCode(kebab)
-    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
+
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
+
+    const code = formatPreactIndexCode(components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+
+    for (const component of components) {
+      const code = formatPreactComponentCode(group, component)
+      const path = `src/components/${group}/${component}.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
+    }
   }
 }
 
@@ -197,6 +202,10 @@ function formatSvelteIndexCode(components: string[]) {
 }
 
 function formatSolidIndexCode(components: string[]) {
+  return formatReactIndexCode(components)
+}
+
+function formatPreactIndexCode(components: string[]) {
   return formatReactIndexCode(components)
 }
 
@@ -306,22 +315,27 @@ export const ${pascal} = createComponent<
   )
 }
 
-function formatPreactCode(kebab: string) {
+function formatPreactComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import '@prosekit/lit/${kebab}'
-import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
-import type { ComponentType } from 'preact'
-import { h } from 'preact'
+import '@prosekit/primitives/${group}'
 
-import type { PropsWithClass, PropsWithChildren } from '../types'
+import type { 
+  ${pascal}Element,
+  ${pascal}Props,
+} from '@prosekit/primitives/${group}'
 
-export type ${pascal}Props = PropsWithChildren<PropsWithClass<${pascal}ElementProps>>
+import { createComponent } from '../create-component'
 
-export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
-  return h('prosekit-${kebab}', props as object)
-}
+export const ${pascal} = createComponent<
+  ${pascal}Props,
+  ${pascal}Element
+>(
+  'prosekit-${kebab}', 
+  '${pascal}',
+)
+
 `.trim() + '\n'
   )
 }

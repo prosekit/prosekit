@@ -4,16 +4,12 @@
     "../../config/typedoc-base.json"
   ],
   "entryPoints": [
-    "./src/components/autocomplete-empty/index.ts",
-    "./src/components/autocomplete-item/index.ts",
-    "./src/components/autocomplete-list/index.ts",
-    "./src/components/autocomplete-popover/index.ts",
-    "./src/components/block-drag-handle/index.ts",
-    "./src/components/block-popover/index.ts",
+    "./src/components/autocomplete/index.ts",
+    "./src/components/block-handle/index.ts",
     "./src/components/inline-popover/index.ts",
-    "./src/components/popover-content/index.ts",
-    "./src/components/popover-root/index.ts",
-    "./src/components/popover-trigger/index.ts",
+    "./src/components/popover/index.ts",
+    "./src/components/resizable/index.ts",
+    "./src/components/tooltip/index.ts",
     "./src/index.ts"
   ]
 }

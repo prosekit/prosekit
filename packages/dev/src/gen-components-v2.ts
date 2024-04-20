@@ -11,7 +11,7 @@ export async function genComponents() {
   const sveltePackage = await vfs.getPackageByName('@prosekit/svelte')
   const solidPackage = await vfs.getPackageByName('@prosekit/solid')
   const preactPackage = await vfs.getPackageByName('@prosekit/preact')
-  // const litPackage = await vfs.getPackageByName('@prosekit/lit')
+  const litPackage = await vfs.getPackageByName('@prosekit/lit')
 
   await vfs.cleanGeneratedFilesInPackage(reactPackage)
   await vfs.cleanGeneratedFilesInPackage(reactPackage)
@@ -19,7 +19,7 @@ export async function genComponents() {
   await vfs.cleanGeneratedFilesInPackage(sveltePackage)
   await vfs.cleanGeneratedFilesInPackage(solidPackage)
   await vfs.cleanGeneratedFilesInPackage(preactPackage)
-  // await vfs.cleanGeneratedFilesInPackage(litPackage)
+  await vfs.cleanGeneratedFilesInPackage(litPackage)
 
   const primitives = await readPrimitives(primitivesPackage)
   await writePrimitivesComponents(primitivesPackage, primitives)
@@ -28,7 +28,7 @@ export async function genComponents() {
   await writeSvelteComponents(sveltePackage, primitives)
   await writeSolidComponents(solidPackage, primitives)
   await writePreactComponents(preactPackage, primitives)
-  // await writeLitComponents(litPackage, primitives)
+  await writeLitComponents(litPackage, primitives)
 }
 
 async function writePrimitivesComponents(pkg: Package, info: Primitives) {
@@ -138,6 +138,19 @@ async function writePreactComponents(pkg: Package, info: Primitives) {
   }
 }
 
+
+async function writeLitComponents(pkg: Package, info: Primitives) {
+  const exports = (pkg.packageJson as any).exports
+
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
+
+    const code = formatLitIndexCode(group, components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+  }
+}
+
+
 function formatPrimitiveIndexCode(components: string[]) {
   const lines = components.flatMap((kebab) => {
     const pascal = kebabToPascal(kebab)
@@ -210,6 +223,15 @@ function formatSolidIndexCode(components: string[]) {
 
 function formatPreactIndexCode(components: string[]) {
   return formatReactIndexCode(components)
+}
+
+function formatLitIndexCode(group:string, components: string[]) {
+  const lines = components.flatMap((kebab) => {
+    const pascal = kebabToPascal(kebab)
+    return [`export { ${pascal}Element as ${pascal} } from '@prosekit/primitives/${group}'`, '']
+  })
+
+  return lines.join('\n')
 }
 
 function formatReactComponentCode(group: string, kebab: string) {

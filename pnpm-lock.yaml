@@ -237,45 +237,12 @@ importers:
 
   packages/lit:
     dependencies:
-      '@aria-ui/core':
-        specifier: ^0.0.12
-        version: 0.0.12
-      '@aria-ui/listbox':
-        specifier: ^0.0.10
-        version: 0.0.10
-      '@aria-ui/overlay':
-        specifier: ^0.0.12
-        version: 0.0.12
-      '@aria-ui/popover':
-        specifier: ^0.0.11
-        version: 0.0.11
-      '@aria-ui/presence':
-        specifier: ^0.0.7
-        version: 0.0.7
-      '@aria-ui/tooltip':
-        specifier: ^0.0.13
-        version: 0.0.13
-      '@floating-ui/dom':
-        specifier: ^1.6.3
-        version: 1.6.3
       '@lit/context':
         specifier: ^1.1.0
         version: 1.1.0
-      '@prosekit/core':
-        specifier: ^0.4.0
-        version: link:../core
-      '@prosekit/extensions':
-        specifier: ^0.4.2
-        version: link:../extensions
-      '@prosekit/pm':
-        specifier: ^0.1.2
-        version: link:../pm
       '@prosekit/primitives':
         specifier: ^0.0.0
         version: link:../primitives
-      '@zag-js/dom-query':
-        specifier: ^0.47.0
-        version: 0.47.0
       lit:
         specifier: ^3.1.2
         version: 3.1.2

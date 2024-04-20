@@ -105,44 +105,28 @@ export const referenceItems = [
     "text": "lit",
     "items": [
       {
-        "text": "autocomplete-empty",
-        "link": "/references/lit/autocomplete-empty"
+        "text": "autocomplete",
+        "link": "/references/lit/autocomplete"
       },
       {
-        "text": "autocomplete-item",
-        "link": "/references/lit/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/lit/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/lit/autocomplete-popover"
-      },
-      {
-        "text": "block-drag-handle",
-        "link": "/references/lit/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/lit/block-popover"
+        "text": "block-handle",
+        "link": "/references/lit/block-handle"
       },
       {
         "text": "inline-popover",
         "link": "/references/lit/inline-popover"
       },
       {
-        "text": "popover-content",
-        "link": "/references/lit/popover-content"
+        "text": "popover",
+        "link": "/references/lit/popover"
       },
       {
-        "text": "popover-root",
-        "link": "/references/lit/popover-root"
+        "text": "resizable",
+        "link": "/references/lit/resizable"
       },
       {
-        "text": "popover-trigger",
-        "link": "/references/lit/popover-trigger"
+        "text": "tooltip",
+        "link": "/references/lit/tooltip"
       }
     ],
     "collapsed": true,

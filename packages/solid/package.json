@@ -41,10 +41,10 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/primitives": "^0.0.0",
     "@prosekit/core": "^0.4.0",
     "@prosekit/lit": "^0.2.8",
-    "@prosekit/pm": "^0.1.2"
+    "@prosekit/pm": "^0.1.2",
+    "@prosekit/primitives": "^0.0.0"
   },
   "peerDependencies": {
     "solid-js": ">= 1.7.0"

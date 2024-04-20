@@ -270,6 +270,9 @@ importers:
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
+      '@prosekit/primitives':
+        specifier: ^0.0.0
+        version: link:../primitives
       '@zag-js/dom-query':
         specifier: ^0.47.0
         version: 0.47.0

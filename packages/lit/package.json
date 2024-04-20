@@ -50,6 +50,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
+    "@prosekit/primitives": "^0.0.0",
     "@aria-ui/core": "^0.0.12",
     "@aria-ui/listbox": "^0.0.10",
     "@aria-ui/overlay": "^0.0.12",

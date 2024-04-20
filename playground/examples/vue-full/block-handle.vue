@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useEditor } from 'prosekit/vue'
-import { BlockPopover } from 'prosekit/vue/block-popover'
-import { BlockDragHandle } from 'prosekit/vue/block-drag-handle'
+import { BlockDragHandle, BlockPopover } from 'prosekit/vue/block-handle'
 
 const editor = useEditor()
 </script>

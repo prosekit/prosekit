@@ -333,6 +333,10 @@ export const referenceItems = [
         "link": "/references/solid/resizable-handle"
       },
       {
+        "text": "tooltip",
+        "link": "/references/solid/tooltip"
+      },
+      {
         "text": "tooltip-content",
         "link": "/references/solid/tooltip-content"
       },

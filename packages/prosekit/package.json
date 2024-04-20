@@ -120,6 +120,7 @@
     "./solid/popover-trigger": "./src/solid/popover-trigger.gen.ts",
     "./solid/resizable": "./src/solid/resizable.gen.ts",
     "./solid/resizable-handle": "./src/solid/resizable-handle.gen.ts",
+    "./solid/tooltip": "./src/solid/tooltip.gen.ts",
     "./solid/tooltip-content": "./src/solid/tooltip-content.gen.ts",
     "./solid/tooltip-root": "./src/solid/tooltip-root.gen.ts",
     "./solid/tooltip-trigger": "./src/solid/tooltip-trigger.gen.ts",
@@ -665,6 +666,11 @@
         "import": "./dist/prosekit-solid-resizable-handle.js",
         "default": "./dist/prosekit-solid-resizable-handle.js"
       },
+      "./solid/tooltip": {
+        "types": "./dist/prosekit-solid-tooltip.d.ts",
+        "import": "./dist/prosekit-solid-tooltip.js",
+        "default": "./dist/prosekit-solid-tooltip.js"
+      },
       "./solid/tooltip-content": {
         "types": "./dist/prosekit-solid-tooltip-content.d.ts",
         "import": "./dist/prosekit-solid-tooltip-content.js",
@@ -1024,6 +1030,9 @@
         ],
         "solid/resizable-handle": [
           "./dist/prosekit-solid-resizable-handle.d.ts"
+        ],
+        "solid/tooltip": [
+          "./dist/prosekit-solid-tooltip.d.ts"
         ],
         "solid/tooltip-content": [
           "./dist/prosekit-solid-tooltip-content.d.ts"

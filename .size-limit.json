@@ -491,6 +491,13 @@
     ]
   },
   {
+    "name": "prosekit/solid/tooltip",
+    "path": "packages/prosekit/dist/prosekit-solid-tooltip.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
     "name": "prosekit/solid/tooltip-content",
     "path": "packages/prosekit/dist/prosekit-solid-tooltip-content.js",
     "ignore": [

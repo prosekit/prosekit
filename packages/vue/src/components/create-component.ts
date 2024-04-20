@@ -8,20 +8,15 @@ export function createComponent<Props extends object>(
   const propertyNames = Object.keys(defaultProps)
 
   const Component = defineComponent(
-    (props: any, { slots }) => {
+    (props: Record<string, unknown>, { slots }) => {
       return () => {
-        return h(
-          tagName,
-          Object.fromEntries(
-            Object.entries(props as Props)
-              .filter((entry) => entry[1] !== undefined)
-              .map(([key, value]) => [
-                propertyNames.includes(key) ? '.' + key : key,
-                value,
-              ]),
-          ),
-          slots.default?.(),
-        )
+        const p: Record<string, unknown> = {}
+
+        for (const key of Object.keys(props)) {
+          p[propertyNames.includes(key) ? '.' + key : key] = props[key]
+        }
+
+        return h(tagName, p, slots.default?.())
       }
     },
     {

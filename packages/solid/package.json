@@ -38,6 +38,7 @@
     "./popover-trigger": "./src/components/popover-trigger.gen.ts",
     "./resizable": "./src/components/resizable.gen.ts",
     "./resizable-handle": "./src/components/resizable-handle.gen.ts",
+    "./tooltip": "./src/components/tooltip/index.ts",
     "./tooltip-content": "./src/components/tooltip-content.gen.ts",
     "./tooltip-root": "./src/components/tooltip-root.gen.ts",
     "./tooltip-trigger": "./src/components/tooltip-trigger.gen.ts"
@@ -50,6 +51,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
+    "@prosekit/primitives": "^0.0.0",
     "@prosekit/core": "^0.4.0",
     "@prosekit/lit": "^0.2.8",
     "@prosekit/pm": "^0.1.2"
@@ -136,6 +138,11 @@
         "import": "./dist/prosekit-solid-resizable-handle.js",
         "default": "./dist/prosekit-solid-resizable-handle.js"
       },
+      "./tooltip": {
+        "types": "./dist/prosekit-solid-tooltip.d.ts",
+        "import": "./dist/prosekit-solid-tooltip.js",
+        "default": "./dist/prosekit-solid-tooltip.js"
+      },
       "./tooltip-content": {
         "types": "./dist/prosekit-solid-tooltip-content.d.ts",
         "import": "./dist/prosekit-solid-tooltip-content.js",
@@ -195,6 +202,9 @@
         ],
         "resizable-handle": [
           "./dist/prosekit-solid-resizable-handle.d.ts"
+        ],
+        "tooltip": [
+          "./dist/prosekit-solid-tooltip.d.ts"
         ],
         "tooltip-content": [
           "./dist/prosekit-solid-tooltip-content.d.ts"

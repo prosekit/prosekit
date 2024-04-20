@@ -24,9 +24,9 @@ export async function genComponents() {
   await writeReactComponents(reactPackage, primitives)
   await writeVueComponents(vuePackage, primitives)
   await writeSvelteComponents(sveltePackage, primitives)
+  await writeSolidComponents(solidPackage, primitives)
 
   if (Math.random() > 2) {
-    await writeSolidComponents(solidPackage, ['componentNames'])
     await writePreactComponents(preactPackage, ['componentNames'])
   }
 }
@@ -104,12 +104,20 @@ async function writeSvelteComponents(pkg: Package, info: Primitives) {
   }
 }
 
-async function writeSolidComponents(pkg: Package, componentNames: string[]) {
+async function writeSolidComponents(pkg: Package, info: Primitives) {
   const exports = (pkg.packageJson as any).exports
-  for (const kebab of componentNames) {
-    exports[`./${kebab}`] = ''
-    const code = formatSolidCode(kebab)
-    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
+
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
+
+    const code = formatSolidIndexCode(components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+
+    for (const component of components) {
+      const code = formatSolidComponentCode(group, component)
+      const path = `src/components/${group}/${component}.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
+    }
   }
 }
 
@@ -188,6 +196,10 @@ function formatSvelteIndexCode(components: string[]) {
   return formatReactIndexCode(components)
 }
 
+function formatSolidIndexCode(components: string[]) {
+  return formatReactIndexCode(components)
+}
+
 function formatReactComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
@@ -230,7 +242,7 @@ function formatVueComponentCode(group: string, kebab: string) {
 
 import { default${pascal}Props, type ${pascal}Props } from '@prosekit/primitives/${group}'
 
-import { createComponent } from './create-component'
+import { createComponent } from '../create-component'
 
 export const ${pascal} = createComponent<${pascal}Props>('prosekit-${kebab}', '${pascal}', default${pascal}Props)
 
@@ -268,24 +280,27 @@ export const ${pascal} = Component as typeof SvelteComponent<any> as typeof Svel
   )
 }
 
-function formatSolidCode(kebab: string) {
+function formatSolidComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import '@prosekit/lit/${kebab}'
 
-import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
-import type { Component } from 'solid-js'
-import html from 'solid-js/html'
+import { 
+  ${pascal}Element,
+  default${pascal}Props,
+  type ${pascal}Props,
+} from '@prosekit/primitives/${group}'
 
-import type { PropsWithClass, PropsWithChildren } from '../types'
-import { forceProps } from '../utils/force-props'
+import { createComponent } from '../create-component'
 
-export type ${pascal}Props = PropsWithChildren<PropsWithClass<${pascal}ElementProps>>
+export const ${pascal} = createComponent<
+  ${pascal}Props,
+  ${pascal}Element
+>(
+  'prosekit-${kebab}', 
+  default${pascal}Props,
+)
 
-export const ${pascal}: Component<${pascal}Props> = (props) => {
-  return html\`<prosekit-${kebab} ...\${forceProps(props)} />\`
-}
 `.trim() + '\n'
   )
 }

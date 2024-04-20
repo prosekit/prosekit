@@ -95,6 +95,7 @@
     "./src/solid/tooltip-content.gen.ts",
     "./src/solid/tooltip-root.gen.ts",
     "./src/solid/tooltip-trigger.gen.ts",
+    "./src/solid/tooltip.gen.ts",
     "./src/svelte.gen.ts",
     "./src/svelte/autocomplete-empty.gen.ts",
     "./src/svelte/autocomplete-item.gen.ts",

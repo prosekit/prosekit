@@ -6,18 +6,20 @@ import { vfs } from './virtual-file-system'
 export async function genComponents() {
   const primitivesPackage = await vfs.getPackageByName('@prosekit/primitives')
 
-  // const litPackage = await vfs.getPackageByName('@prosekit/lit')
   const reactPackage = await vfs.getPackageByName('@prosekit/react')
   const vuePackage = await vfs.getPackageByName('@prosekit/vue')
   const sveltePackage = await vfs.getPackageByName('@prosekit/svelte')
   const solidPackage = await vfs.getPackageByName('@prosekit/solid')
   const preactPackage = await vfs.getPackageByName('@prosekit/preact')
+  // const litPackage = await vfs.getPackageByName('@prosekit/lit')
 
+  await vfs.cleanGeneratedFilesInPackage(reactPackage)
   await vfs.cleanGeneratedFilesInPackage(reactPackage)
   await vfs.cleanGeneratedFilesInPackage(vuePackage)
   await vfs.cleanGeneratedFilesInPackage(sveltePackage)
   await vfs.cleanGeneratedFilesInPackage(solidPackage)
   await vfs.cleanGeneratedFilesInPackage(preactPackage)
+  // await vfs.cleanGeneratedFilesInPackage(litPackage)
 
   const primitives = await readPrimitives(primitivesPackage)
   await writePrimitivesComponents(primitivesPackage, primitives)
@@ -26,6 +28,7 @@ export async function genComponents() {
   await writeSvelteComponents(sveltePackage, primitives)
   await writeSolidComponents(solidPackage, primitives)
   await writePreactComponents(preactPackage, primitives)
+  // await writeLitComponents(litPackage, primitives)
 }
 
 async function writePrimitivesComponents(pkg: Package, info: Primitives) {

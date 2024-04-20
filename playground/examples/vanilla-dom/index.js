@@ -3,7 +3,11 @@ import 'prosekit/basic/style.css'
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, union } from 'prosekit/core'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
-import { AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/lit/autocomplete'
+import {
+  AutocompleteItem,
+  AutocompleteList,
+  AutocompletePopover,
+} from 'prosekit/lit/autocomplete'
 
 export function defineExtension() {
   return union([

@@ -1,5 +1,10 @@
 import { useEditor } from 'prosekit/react'
-import { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/react/autocomplete'
+import {
+  AutocompleteEmpty,
+  AutocompleteItem,
+  AutocompleteList,
+  AutocompletePopover,
+} from 'prosekit/react/autocomplete'
 
 import type { EditorExtension } from './extension'
 import { tags } from './tag-data'

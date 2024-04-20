@@ -1,5 +1,10 @@
 <script setup lang="ts">
-import { AutocompleteEmpty, AutocompleteItem, AutocompleteList, AutocompletePopover } from 'prosekit/vue/autocomplete'
+import {
+  AutocompleteEmpty,
+  AutocompleteItem,
+  AutocompleteList,
+  AutocompletePopover,
+} from 'prosekit/vue/autocomplete'
 
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'

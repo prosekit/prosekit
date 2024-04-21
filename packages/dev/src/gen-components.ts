@@ -308,7 +308,7 @@ import type { SvelteComponent } from 'svelte'
 
 import Component from './${kebab}.gen.svelte'
 
-export const ${pascal} = Component as typeof SvelteComponent<any> as typeof SvelteComponent<Partial<${pascal}Props> & {class?: number}>
+export const ${pascal} = Component as typeof SvelteComponent<any> as typeof SvelteComponent<Partial<${pascal}Props> & {class?: string}>
   
 `.trim() + '\n'
   )

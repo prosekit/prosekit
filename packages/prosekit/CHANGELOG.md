@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.6.3
+
+### Patch Changes
+
+- [`1a10dba`](https://github.com/ocavue/prosekit/commit/1a10dba997bdd7388b22790b83b58189aeb4eea3) ![](https://prosekit.dev/b/web) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/vue)
+
+  Fix an issue where the null filter for the autocomplete component doesn't work.
+
 ## 0.6.2
 
 ### Patch Changes

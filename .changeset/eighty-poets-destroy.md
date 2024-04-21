@@ -9,4 +9,4 @@
 '@prosekit/vue': minor
 ---
 
-Refactor web components for improved performance and reduced size by removing dependency on Lit.
+Redesign editor web components without using Lit. This results in improved performance and a smaller bundled size.

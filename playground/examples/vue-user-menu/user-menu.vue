@@ -26,7 +26,7 @@ const handleUserInsert = (id: number, username: string) => {
   <AutocompletePopover :regex="/@\w*$/" class="AUTOCOMPLETE_MENU">
     <AutocompleteList>
       <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
-        No User match
+        No results
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="user in users"

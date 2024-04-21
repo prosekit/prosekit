@@ -25,7 +25,7 @@ export default function UserMenu() {
     <AutocompletePopover regex={/@\w*$/} className="AUTOCOMPLETE_MENU">
       <AutocompleteList>
         <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
-          No User match
+          No results
         </AutocompleteEmpty>
 
         {users.map((user) => (

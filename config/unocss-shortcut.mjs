@@ -121,9 +121,9 @@ const staticShortcuts = {
   // Use this class for the contenteditable element.
   EDITOR_CONTENT: clsx(
     'relative box-border min-h-full flex-1 overflow-auto bg-background px-[max(16px,_calc(50%-330px))] py-[16px] outline-none outline-0',
-    '[&_span[data-mention="user"]]:color-blue-500',
-    '[&_span[data-mention="tag"]]:color-violet-500',
-    '[&_pre]:color-white [&_pre]:bg-zinc-800',
+    '[&_span[data-mention="user"]]:text-blue-500',
+    '[&_span[data-mention="tag"]]:text-violet-500',
+    '[&_pre]:text-white [&_pre]:bg-zinc-800',
   ),
 
   INLINE_MENU_MAIN: clsx(
@@ -160,7 +160,7 @@ const staticShortcuts = {
   ),
 
   LANGUAGE_SELECT: clsx(
-    'outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded border-none bg-transparent px-2 py-1 text-xs transition color-white',
+    'outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded border-none bg-transparent px-2 py-1 text-xs transition text-white',
 
     // Only visible when hovering the code block
     'opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 [div[data-node-view-root]:hover_&]:hover:opacity-80',

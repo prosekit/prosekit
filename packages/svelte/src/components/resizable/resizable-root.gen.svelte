@@ -9,6 +9,6 @@ const editorContext = useEditorContext()
 const editor = hasEditor ? editorContext : undefined
 </script>
 
-<prosekit-resizable-root editor={editor} {...$$props}>
+<prosekit-resizable-root {editor} {...$$props}>
   <slot />
 </prosekit-resizable-root>

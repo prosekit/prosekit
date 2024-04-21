@@ -285,7 +285,6 @@ export const ${pascal} = createComponent<${pascal}Props>('prosekit-${kebab}', '$
 }
 
 function formatSvelteComponentCode(group: string, kebab: string) {
-
   const pascal = kebabToPascal(kebab)
 
   return (

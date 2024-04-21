@@ -9,6 +9,6 @@ const editorContext = useEditorContext()
 const editor = hasEditor ? editorContext : undefined
 </script>
 
-<prosekit-autocomplete-list editor={editor} {...$$props}>
+<prosekit-autocomplete-list {editor} {...$$props}>
   <slot />
 </prosekit-autocomplete-list>

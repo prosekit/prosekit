@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-import { users as allUsers } from './user-data';
+import { users as allUsers } from './user-data'
 
 export function useUserQuery(query: string) {
   const [users, setUsers] = useState<{ name: string; id: number }[]>([])
@@ -8,7 +8,7 @@ export function useUserQuery(query: string) {
 
   useEffect(() => {
     setLoading(true)
-    
+
     const id = setTimeout(() => {
       setLoading(false)
 

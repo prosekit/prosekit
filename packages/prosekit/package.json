@@ -165,7 +165,7 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "@types/react": "^18.2.78",
+    "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
     "postcss": "^8.4.38",
     "postcss-nesting": "^12.1.1",
@@ -173,10 +173,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "solid-js": "^1.8.16",
-    "svelte": "^4.2.14",
+    "svelte": "^4.2.15",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "vue": "^3.4.21"
+    "vue": "^3.4.23"
   },
   "publishConfig": {
     "exports": {

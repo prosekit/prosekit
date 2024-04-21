@@ -25,7 +25,7 @@ export default function TagMenu() {
     <AutocompletePopover regex={/#[\da-z]*$/i} className="AUTOCOMPLETE_MENU">
       <AutocompleteList>
         <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
-          No Tag match
+          No results
         </AutocompleteEmpty>
 
         {tags.map((tag) => (

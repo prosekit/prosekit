@@ -36,7 +36,7 @@ const handleSelectList = (kind: 'task' | 'bullet' | 'ordered' | 'toggle') => {
   <AutocompletePopover :regex="/\/.*$/iu" class="AUTOCOMPLETE_MENU">
     <AutocompleteList>
       <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
-        No Command match
+        No results
       </AutocompleteEmpty>
 
       <AutocompleteItem

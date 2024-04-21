@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.6.0
+
+### Minor Changes
+
+- [`3bfeff5`](https://github.com/ocavue/prosekit/commit/3bfeff5fbbcff28ceab5b15e0fee07a7afab40d0) ![](https://prosekit.dev/b/web) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue)
+
+  Redesign editor web components, including the removal of the Lit dependency and various other enhancements.
+
 ## 0.5.3
 
 ### Patch Changes

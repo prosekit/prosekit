@@ -561,8 +561,8 @@ importers:
         specifier: ^0.0.12
         version: 0.0.12
       '@aria-ui/listbox':
-        specifier: ^0.0.10
-        version: 0.0.10
+        specifier: ^0.0.11
+        version: 0.0.11
       '@aria-ui/overlay':
         specifier: ^0.0.12
         version: 0.0.12
@@ -961,8 +961,8 @@ packages:
       '@preact/signals-core': 1.6.0
     dev: false
 
-  /@aria-ui/listbox@0.0.10:
-    resolution: {integrity: sha512-s6nyzXNINmoOtbL45yB5a0VoTxwzr+bmWBPr+w/ZLAuYN7rXM5BPNXh53FwpH/EeWB6zhltNa7EQr4MhYgAQGg==}
+  /@aria-ui/listbox@0.0.11:
+    resolution: {integrity: sha512-8wPeyBn0FUt52s65l/6iK0UfY0stkBIyTJyZA71utzdvKZCCLPb9HP5iYA/IAvkWJs+Hdchy8Txu3sZ2T8/T5Q==}
     dependencies:
       '@aria-ui/collection': 0.0.3
       '@aria-ui/core': 0.0.12

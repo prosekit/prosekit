@@ -305,9 +305,6 @@ importers:
       '@prosekit/core':
         specifier: ^0.4.0
         version: link:../core
-      '@prosekit/lit':
-        specifier: ^0.3.0
-        version: link:../lit
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
@@ -418,9 +415,6 @@ importers:
       '@prosekit/core':
         specifier: ^0.4.0
         version: link:../core
-      '@prosekit/lit':
-        specifier: ^0.3.0
-        version: link:../lit
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
@@ -464,9 +458,6 @@ importers:
       '@prosekit/core':
         specifier: ^0.4.0
         version: link:../core
-      '@prosekit/lit':
-        specifier: ^0.3.0
-        version: link:../lit
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
@@ -495,9 +486,6 @@ importers:
       '@prosekit/core':
         specifier: ^0.4.0
         version: link:../core
-      '@prosekit/lit':
-        specifier: ^0.3.0
-        version: link:../lit
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
@@ -538,9 +526,6 @@ importers:
       '@prosekit/core':
         specifier: ^0.4.0
         version: link:../core
-      '@prosekit/lit':
-        specifier: ^0.3.0
-        version: link:../lit
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm

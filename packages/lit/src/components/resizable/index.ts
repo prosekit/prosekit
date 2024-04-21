@@ -1,3 +1,3 @@
-export { ResizableHandleElement as ResizableHandle } from '@prosekit/primitives/resizable'
+export { ResizableHandleElement as ResizableHandle } from '@prosekit/web/resizable'
 
-export { ResizableRootElement as ResizableRoot } from '@prosekit/primitives/resizable'
+export { ResizableRootElement as ResizableRoot } from '@prosekit/web/resizable'

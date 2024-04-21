@@ -1,5 +1,5 @@
 <script lang="ts">
-import '@prosekit/primitives/block-handle'
+import '@prosekit/web/block-handle'
 </script>
 
 <prosekit-block-popover {...$$props}>

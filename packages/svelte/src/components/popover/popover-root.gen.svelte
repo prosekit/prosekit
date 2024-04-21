@@ -1,5 +1,5 @@
 <script lang="ts">
-import '@prosekit/primitives/popover'
+import '@prosekit/web/popover'
 </script>
 
 <prosekit-popover-root {...$$props}>

@@ -1,5 +1,5 @@
 <script lang="ts">
-import '@prosekit/primitives/inline-popover'
+import '@prosekit/web/inline-popover'
 </script>
 
 <prosekit-inline-popover {...$$props}>

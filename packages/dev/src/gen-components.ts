@@ -4,7 +4,7 @@ import { kebabToPascal } from './kebab-to-pascal'
 import { vfs } from './virtual-file-system'
 
 export async function genComponents() {
-  const primitivesPackage = await vfs.getPackageByName('@prosekit/primitives')
+  const primitivesPackage = await vfs.getPackageByName('@prosekit/web')
 
   const reactPackage = await vfs.getPackageByName('@prosekit/react')
   const vuePackage = await vfs.getPackageByName('@prosekit/vue')
@@ -226,7 +226,7 @@ function formatLitIndexCode(group: string, components: string[]) {
   const lines = components.flatMap((kebab) => {
     const pascal = kebabToPascal(kebab)
     return [
-      `export { ${pascal}Element as ${pascal} } from '@prosekit/primitives/${group}'`,
+      `export { ${pascal}Element as ${pascal} } from '@prosekit/web/${group}'`,
       '',
     ]
   })
@@ -243,7 +243,7 @@ import {
   ${pascal}Element,
   default${pascal}Props,
   type ${pascal}Props,
-} from '@prosekit/primitives/${group}'
+} from '@prosekit/web/${group}'
 import type {
   ForwardRefExoticComponent,
   HTMLAttributes,
@@ -274,7 +274,7 @@ function formatVueComponentCode(group: string, kebab: string) {
   return (
     `
 
-import { default${pascal}Props, type ${pascal}Props } from '@prosekit/primitives/${group}'
+import { default${pascal}Props, type ${pascal}Props } from '@prosekit/web/${group}'
 
 import { createComponent } from '../create-component'
 
@@ -288,7 +288,7 @@ function formatSvelteComponentCode(group: string, kebab: string) {
   return (
     `
 <script lang="ts">
-import '@prosekit/primitives/${group}'
+import '@prosekit/web/${group}'
 </script>
 
 <prosekit-${kebab} {...$$props}>
@@ -303,7 +303,7 @@ function formatSvelteTsCode(group: string, kebab: string) {
   return (
     `
 
-import type { ${pascal}Props } from '@prosekit/primitives/${group}'    
+import type { ${pascal}Props } from '@prosekit/web/${group}'    
 import type { SvelteComponent } from 'svelte'
 
 import Component from './${kebab}.gen.svelte'
@@ -323,7 +323,7 @@ import {
   ${pascal}Element,
   default${pascal}Props,
   type ${pascal}Props,
-} from '@prosekit/primitives/${group}'
+} from '@prosekit/web/${group}'
 
 import { createComponent } from '../create-component'
 
@@ -344,12 +344,12 @@ function formatPreactComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import '@prosekit/primitives/${group}'
+import '@prosekit/web/${group}'
 
 import type { 
   ${pascal}Element,
   ${pascal}Props,
-} from '@prosekit/primitives/${group}'
+} from '@prosekit/web/${group}'
 
 import { createComponent } from '../create-component'
 

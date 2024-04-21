@@ -1,6 +1,6 @@
 ---
 'prosekit': minor
-'@prosekit/primitives': minor
+'@prosekit/web': minor
 '@prosekit/preact': minor
 '@prosekit/svelte': minor
 '@prosekit/react': minor

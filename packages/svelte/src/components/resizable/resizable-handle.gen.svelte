@@ -1,5 +1,5 @@
 <script lang="ts">
-import '@prosekit/primitives/resizable'
+import '@prosekit/web/resizable'
 </script>
 
 <prosekit-resizable-handle {...$$props}>

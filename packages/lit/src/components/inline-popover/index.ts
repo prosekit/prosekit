@@ -1,1 +1,1 @@
-export { InlinePopoverElement as InlinePopover } from '@prosekit/primitives/inline-popover'
+export { InlinePopoverElement as InlinePopover } from '@prosekit/web/inline-popover'

@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@lit/context": "^1.1.0",
-    "@prosekit/primitives": "^0.0.0",
+    "@prosekit/web": "^0.0.0",
     "lit": "^3.1.2"
   },
   "devDependencies": {

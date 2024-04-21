@@ -1,5 +1,5 @@
 <script lang="ts">
-import '@prosekit/primitives/tooltip'
+import '@prosekit/web/tooltip'
 </script>
 
 <prosekit-tooltip-trigger {...$$props}>

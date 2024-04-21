@@ -11,6 +11,5 @@ export const InlinePopover = createComponent<
   InlinePopoverElement
 >(
   'prosekit-inline-popover', 
-  'InlinePopover',
   defaultInlinePopoverProps,
 )

@@ -11,6 +11,5 @@ export const BlockPopover = createComponent<
   BlockPopoverElement
 >(
   'prosekit-block-popover', 
-  'BlockPopover',
   defaultBlockPopoverProps,
 )

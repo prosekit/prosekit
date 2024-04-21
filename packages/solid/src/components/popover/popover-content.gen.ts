@@ -11,6 +11,5 @@ export const PopoverContent = createComponent<
   PopoverContentElement
 >(
   'prosekit-popover-content', 
-  'PopoverContent',
   defaultPopoverContentProps,
 )

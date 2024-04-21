@@ -6,7 +6,6 @@ export function createComponent<
   CustomElement extends HTMLElement,
 >(
   tagName: string,
-  displayName: string,
   defaultProps: Props,
 ): Component<Partial<Props> & JSX.HTMLAttributes<CustomElement>> {
   const propertyNames = Object.keys(defaultProps)
@@ -21,8 +20,6 @@ export function createComponent<
 
     return h(tagName, p)
   }
-
-  Component.name = displayName
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return Component as any

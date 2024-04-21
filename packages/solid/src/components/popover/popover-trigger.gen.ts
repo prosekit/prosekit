@@ -11,6 +11,5 @@ export const PopoverTrigger = createComponent<
   PopoverTriggerElement
 >(
   'prosekit-popover-trigger', 
-  'PopoverTrigger',
   defaultPopoverTriggerProps,
 )

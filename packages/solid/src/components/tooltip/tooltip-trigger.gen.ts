@@ -11,6 +11,5 @@ export const TooltipTrigger = createComponent<
   TooltipTriggerElement
 >(
   'prosekit-tooltip-trigger', 
-  'TooltipTrigger',
   defaultTooltipTriggerProps,
 )

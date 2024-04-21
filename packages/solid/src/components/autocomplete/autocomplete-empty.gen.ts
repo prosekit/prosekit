@@ -11,6 +11,5 @@ export const AutocompleteEmpty = createComponent<
   AutocompleteEmptyElement
 >(
   'prosekit-autocomplete-empty', 
-  'AutocompleteEmpty',
   defaultAutocompleteEmptyProps,
 )

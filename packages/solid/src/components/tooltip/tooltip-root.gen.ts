@@ -11,6 +11,5 @@ export const TooltipRoot = createComponent<
   TooltipRootElement
 >(
   'prosekit-tooltip-root', 
-  'TooltipRoot',
   defaultTooltipRootProps,
 )

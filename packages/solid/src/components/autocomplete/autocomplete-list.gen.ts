@@ -11,6 +11,5 @@ export const AutocompleteList = createComponent<
   AutocompleteListElement
 >(
   'prosekit-autocomplete-list', 
-  'AutocompleteList',
   defaultAutocompleteListProps,
 )

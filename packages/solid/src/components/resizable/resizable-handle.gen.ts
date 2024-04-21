@@ -11,6 +11,5 @@ export const ResizableHandle = createComponent<
   ResizableHandleElement
 >(
   'prosekit-resizable-handle', 
-  'ResizableHandle',
   defaultResizableHandleProps,
 )

@@ -11,6 +11,5 @@ export const PopoverRoot = createComponent<
   PopoverRootElement
 >(
   'prosekit-popover-root', 
-  'PopoverRoot',
   defaultPopoverRootProps,
 )

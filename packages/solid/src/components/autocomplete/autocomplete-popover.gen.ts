@@ -11,6 +11,5 @@ export const AutocompletePopover = createComponent<
   AutocompletePopoverElement
 >(
   'prosekit-autocomplete-popover', 
-  'AutocompletePopover',
   defaultAutocompletePopoverProps,
 )

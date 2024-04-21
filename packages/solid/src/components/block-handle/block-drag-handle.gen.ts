@@ -11,6 +11,5 @@ export const BlockDragHandle = createComponent<
   BlockDragHandleElement
 >(
   'prosekit-block-drag-handle', 
-  'BlockDragHandle',
   defaultBlockDragHandleProps,
 )

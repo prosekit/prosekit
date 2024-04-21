@@ -11,6 +11,5 @@ export const TooltipContent = createComponent<
   TooltipContentElement
 >(
   'prosekit-tooltip-content', 
-  'TooltipContent',
   defaultTooltipContentProps,
 )

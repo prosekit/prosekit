@@ -23,7 +23,7 @@ async function getReleaseLine(changeset) {
  * @param {string} name
  */
 function formatModuleBadge(name) {
-  return `![][badge-${name.split('/').at(-1)}]`
+  return `![](prosekit.dev/b/${name.split('/').at(-1)})`
 }
 
 /**

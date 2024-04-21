@@ -5,7 +5,6 @@
     "lib": ["esnext", "DOM"],
     "composite": true,
     "allowJs": true,
-    /* Bundling */
     "moduleResolution": "bundler",
     "useDefineForClassFields": false,
     "resolveJsonModule": true,
@@ -16,7 +15,6 @@
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
-    /* Linting */
     "strict": true,
     "strictNullChecks": true,
     "skipLibCheck": true,
@@ -64,6 +62,9 @@
     },
     {
       "path": "packages/vue/tsconfig.json",
+    },
+    {
+      "path": "packages/web/tsconfig.json",
     },
     {
       "path": "playground/examples/lit.tsconfig.json",

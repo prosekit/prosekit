@@ -237,42 +237,12 @@ importers:
 
   packages/lit:
     dependencies:
-      '@aria-ui/core':
-        specifier: ^0.0.12
-        version: 0.0.12
-      '@aria-ui/listbox':
-        specifier: ^0.0.10
-        version: 0.0.10
-      '@aria-ui/overlay':
-        specifier: ^0.0.12
-        version: 0.0.12
-      '@aria-ui/popover':
-        specifier: ^0.0.11
-        version: 0.0.11
-      '@aria-ui/presence':
-        specifier: ^0.0.7
-        version: 0.0.7
-      '@aria-ui/tooltip':
-        specifier: ^0.0.13
-        version: 0.0.13
-      '@floating-ui/dom':
-        specifier: ^1.6.3
-        version: 1.6.3
       '@lit/context':
         specifier: ^1.1.0
         version: 1.1.0
-      '@prosekit/core':
-        specifier: ^0.4.0
-        version: link:../core
-      '@prosekit/extensions':
-        specifier: ^0.4.2
-        version: link:../extensions
-      '@prosekit/pm':
-        specifier: ^0.1.2
-        version: link:../pm
-      '@zag-js/dom-query':
-        specifier: ^0.47.0
-        version: 0.47.0
+      '@prosekit/web':
+        specifier: ^0.0.0
+        version: link:../web
       lit:
         specifier: ^3.1.2
         version: 3.1.2
@@ -341,6 +311,12 @@ importers:
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
+      '@prosekit/web':
+        specifier: ^0.0.0
+        version: link:../web
+      react-merge-refs:
+        specifier: ^2.1.1
+        version: 2.1.1
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -390,6 +366,9 @@ importers:
       '@prosekit/vue':
         specifier: 0.2.7
         version: link:../vue
+      '@prosekit/web':
+        specifier: 0.0.0
+        version: link:../web
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -445,9 +424,15 @@ importers:
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
+      '@prosekit/web':
+        specifier: ^0.0.0
+        version: link:../web
       '@prosemirror-adapter/core':
         specifier: ^0.2.6
         version: 0.2.6
+      react-merge-refs:
+        specifier: ^2.1.1
+        version: 2.1.1
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -485,6 +470,9 @@ importers:
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
+      '@prosekit/web':
+        specifier: ^0.0.0
+        version: link:../web
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -513,6 +501,9 @@ importers:
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
+      '@prosekit/web':
+        specifier: ^0.0.0
+        version: link:../web
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -553,6 +544,9 @@ importers:
       '@prosekit/pm':
         specifier: ^0.1.2
         version: link:../pm
+      '@prosekit/web':
+        specifier: ^0.0.0
+        version: link:../web
       '@prosemirror-adapter/core':
         specifier: ^0.2.6
         version: 0.2.6
@@ -572,6 +566,55 @@ importers:
       vue:
         specifier: ^3.4.21
         version: 3.4.21(typescript@5.4.5)
+
+  packages/web:
+    dependencies:
+      '@aria-ui/core':
+        specifier: ^0.0.12
+        version: 0.0.12
+      '@aria-ui/listbox':
+        specifier: ^0.0.10
+        version: 0.0.10
+      '@aria-ui/overlay':
+        specifier: ^0.0.12
+        version: 0.0.12
+      '@aria-ui/popover':
+        specifier: ^0.0.11
+        version: 0.0.11
+      '@aria-ui/presence':
+        specifier: ^0.0.7
+        version: 0.0.7
+      '@aria-ui/tooltip':
+        specifier: ^0.0.13
+        version: 0.0.13
+      '@floating-ui/dom':
+        specifier: ^1.6.3
+        version: 1.6.3
+      '@prosekit/core':
+        specifier: ^0.4.0
+        version: link:../core
+      '@prosekit/extensions':
+        specifier: ^0.4.2
+        version: link:../extensions
+      '@prosekit/pm':
+        specifier: ^0.1.2
+        version: link:../pm
+      '@zag-js/dom-query':
+        specifier: ^0.47.0
+        version: 0.47.0
+    devDependencies:
+      '@prosekit/dev':
+        specifier: '*'
+        version: link:../dev
+      tsup:
+        specifier: ^8.0.2
+        version: 8.0.2(@microsoft/api-extractor@7.43.1)(postcss@8.4.38)(typescript@5.4.5)
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      vitest:
+        specifier: ^1.5.0
+        version: 1.5.0(jsdom@24.0.0)
 
   playground:
     devDependencies:
@@ -8996,6 +9039,10 @@ packages:
 
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
+
+  /react-merge-refs@2.1.1:
+    resolution: {integrity: sha512-jLQXJ/URln51zskhgppGJ2ub7b2WFKGq3cl3NYKtlHoTG+dN2q7EzWrn3hN3EgPsTMvpR9tpq5ijdp7YwFZkag==}
+    dev: false
 
   /react-refresh@0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}

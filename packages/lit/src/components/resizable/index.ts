@@ -1,13 +1,3 @@
-import {
-  defaultResizableProps,
-  type ResizableProps as _ResizableProps,
-} from './props'
+export { ResizableHandleElement as ResizableHandle } from '@prosekit/web/resizable'
 
-export { Resizable } from './element'
-export { defaultResizableProps } from './props'
-
-export const propNames = Object.keys(defaultResizableProps) as Array<
-  keyof ResizableProps
->
-
-export type ResizableProps = Partial<_ResizableProps>
+export { ResizableRootElement as ResizableRoot } from '@prosekit/web/resizable'

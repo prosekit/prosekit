@@ -2,21 +2,12 @@
   "$schema": "https://typedoc.org/schema.json",
   "extends": ["../../config/typedoc-base.json"],
   "entryPoints": [
-    "./src/components/autocomplete-empty.ts",
-    "./src/components/autocomplete-item.ts",
-    "./src/components/autocomplete-list.ts",
-    "./src/components/autocomplete-popover.ts",
-    "./src/components/block-drag-handle.gen.ts",
-    "./src/components/block-popover.gen.ts",
-    "./src/components/inline-popover.gen.ts",
-    "./src/components/popover-content.gen.ts",
-    "./src/components/popover-root.gen.ts",
-    "./src/components/popover-trigger.gen.ts",
-    "./src/components/resizable-handle.gen.ts",
-    "./src/components/resizable.gen.ts",
-    "./src/components/tooltip-content.gen.ts",
-    "./src/components/tooltip-root.gen.ts",
-    "./src/components/tooltip-trigger.gen.ts",
+    "./src/components/autocomplete/index.ts",
+    "./src/components/block-handle/index.ts",
+    "./src/components/inline-popover/index.ts",
+    "./src/components/popover/index.ts",
+    "./src/components/resizable/index.ts",
+    "./src/components/tooltip/index.ts",
     "./src/index.ts"
   ]
 }

@@ -1,8 +1,10 @@
 import { useEditor } from 'prosekit/solid'
-import { AutocompleteEmpty } from 'prosekit/solid/autocomplete-empty'
-import { AutocompleteItem } from 'prosekit/solid/autocomplete-item'
-import { AutocompleteList } from 'prosekit/solid/autocomplete-list'
-import { AutocompletePopover } from 'prosekit/solid/autocomplete-popover'
+import {
+  AutocompleteEmpty,
+  AutocompleteItem,
+  AutocompleteList,
+  AutocompletePopover,
+} from 'prosekit/solid/autocomplete'
 
 import type { EditorExtension } from './extension'
 

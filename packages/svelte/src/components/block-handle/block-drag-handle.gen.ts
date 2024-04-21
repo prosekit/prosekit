@@ -1,4 +1,4 @@
-import type { BlockDragHandleProps } from '@prosekit/primitives/block-handle'    
+import type { BlockDragHandleProps } from '@prosekit/web/block-handle'    
 import type { SvelteComponent } from 'svelte'
 
 import Component from './block-drag-handle.gen.svelte'

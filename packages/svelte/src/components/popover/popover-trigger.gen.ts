@@ -1,4 +1,4 @@
-import type { PopoverTriggerProps } from '@prosekit/primitives/popover'    
+import type { PopoverTriggerProps } from '@prosekit/web/popover'    
 import type { SvelteComponent } from 'svelte'
 
 import Component from './popover-trigger.gen.svelte'

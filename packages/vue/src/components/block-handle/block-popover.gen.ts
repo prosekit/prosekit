@@ -1,4 +1,4 @@
-import { defaultBlockPopoverProps, type BlockPopoverProps } from '@prosekit/primitives/block-handle'
+import { defaultBlockPopoverProps, type BlockPopoverProps } from '@prosekit/web/block-handle'
 
 import { createComponent } from '../create-component'
 

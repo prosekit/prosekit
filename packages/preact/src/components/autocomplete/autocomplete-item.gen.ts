@@ -1,9 +1,9 @@
-import '@prosekit/primitives/autocomplete'
+import '@prosekit/web/autocomplete'
 
 import type { 
   AutocompleteItemElement,
   AutocompleteItemProps,
-} from '@prosekit/primitives/autocomplete'
+} from '@prosekit/web/autocomplete'
 
 import { createComponent } from '../create-component'
 

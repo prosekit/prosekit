@@ -1,4 +1,4 @@
-import type { PopoverContentProps } from '@prosekit/primitives/popover'    
+import type { PopoverContentProps } from '@prosekit/web/popover'    
 import type { SvelteComponent } from 'svelte'
 
 import Component from './popover-content.gen.svelte'

@@ -2,7 +2,7 @@ import {
   BlockPopoverElement,
   defaultBlockPopoverProps,
   type BlockPopoverProps,
-} from '@prosekit/primitives/block-handle'
+} from '@prosekit/web/block-handle'
 import type {
   ForwardRefExoticComponent,
   HTMLAttributes,

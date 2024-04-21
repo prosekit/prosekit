@@ -233,34 +233,6 @@
     ]
   },
   {
-    "name": "prosekit/primitives",
-    "path": "packages/prosekit/dist/prosekit-primitives.js"
-  },
-  {
-    "name": "prosekit/primitives/autocomplete",
-    "path": "packages/prosekit/dist/prosekit-primitives-autocomplete.js"
-  },
-  {
-    "name": "prosekit/primitives/block-handle",
-    "path": "packages/prosekit/dist/prosekit-primitives-block-handle.js"
-  },
-  {
-    "name": "prosekit/primitives/inline-popover",
-    "path": "packages/prosekit/dist/prosekit-primitives-inline-popover.js"
-  },
-  {
-    "name": "prosekit/primitives/popover",
-    "path": "packages/prosekit/dist/prosekit-primitives-popover.js"
-  },
-  {
-    "name": "prosekit/primitives/resizable",
-    "path": "packages/prosekit/dist/prosekit-primitives-resizable.js"
-  },
-  {
-    "name": "prosekit/primitives/tooltip",
-    "path": "packages/prosekit/dist/prosekit-primitives-tooltip.js"
-  },
-  {
     "name": "prosekit/react",
     "path": "packages/prosekit/dist/prosekit-react.js",
     "ignore": [
@@ -413,5 +385,33 @@
     "ignore": [
       "vue"
     ]
+  },
+  {
+    "name": "prosekit/web",
+    "path": "packages/prosekit/dist/prosekit-web.js"
+  },
+  {
+    "name": "prosekit/web/autocomplete",
+    "path": "packages/prosekit/dist/prosekit-web-autocomplete.js"
+  },
+  {
+    "name": "prosekit/web/block-handle",
+    "path": "packages/prosekit/dist/prosekit-web-block-handle.js"
+  },
+  {
+    "name": "prosekit/web/inline-popover",
+    "path": "packages/prosekit/dist/prosekit-web-inline-popover.js"
+  },
+  {
+    "name": "prosekit/web/popover",
+    "path": "packages/prosekit/dist/prosekit-web-popover.js"
+  },
+  {
+    "name": "prosekit/web/resizable",
+    "path": "packages/prosekit/dist/prosekit-web-resizable.js"
+  },
+  {
+    "name": "prosekit/web/tooltip",
+    "path": "packages/prosekit/dist/prosekit-web-tooltip.js"
   }
 ]

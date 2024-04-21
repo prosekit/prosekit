@@ -49,13 +49,6 @@
     "./src/preact/popover.gen.ts",
     "./src/preact/resizable.gen.ts",
     "./src/preact/tooltip.gen.ts",
-    "./src/primitives.gen.ts",
-    "./src/primitives/autocomplete.gen.ts",
-    "./src/primitives/block-handle.gen.ts",
-    "./src/primitives/inline-popover.gen.ts",
-    "./src/primitives/popover.gen.ts",
-    "./src/primitives/resizable.gen.ts",
-    "./src/primitives/tooltip.gen.ts",
     "./src/react.gen.ts",
     "./src/react/autocomplete.gen.ts",
     "./src/react/block-handle.gen.ts",
@@ -83,6 +76,13 @@
     "./src/vue/inline-popover.gen.ts",
     "./src/vue/popover.gen.ts",
     "./src/vue/resizable.gen.ts",
-    "./src/vue/tooltip.gen.ts"
+    "./src/vue/tooltip.gen.ts",
+    "./src/web.gen.ts",
+    "./src/web/autocomplete.gen.ts",
+    "./src/web/block-handle.gen.ts",
+    "./src/web/inline-popover.gen.ts",
+    "./src/web/popover.gen.ts",
+    "./src/web/resizable.gen.ts",
+    "./src/web/tooltip.gen.ts"
   ]
 }

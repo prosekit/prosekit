@@ -2,7 +2,7 @@ import {
   ResizableRootElement,
   defaultResizableRootProps,
   type ResizableRootProps,
-} from '@prosekit/primitives/resizable'
+} from '@prosekit/web/resizable'
 import type {
   ForwardRefExoticComponent,
   HTMLAttributes,

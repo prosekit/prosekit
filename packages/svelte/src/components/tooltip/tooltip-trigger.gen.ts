@@ -1,4 +1,4 @@
-import type { TooltipTriggerProps } from '@prosekit/primitives/tooltip'    
+import type { TooltipTriggerProps } from '@prosekit/web/tooltip'    
 import type { SvelteComponent } from 'svelte'
 
 import Component from './tooltip-trigger.gen.svelte'

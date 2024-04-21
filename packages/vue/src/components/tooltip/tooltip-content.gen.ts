@@ -1,4 +1,4 @@
-import { defaultTooltipContentProps, type TooltipContentProps } from '@prosekit/primitives/tooltip'
+import { defaultTooltipContentProps, type TooltipContentProps } from '@prosekit/web/tooltip'
 
 import { createComponent } from '../create-component'
 

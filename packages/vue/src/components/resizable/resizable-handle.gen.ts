@@ -1,4 +1,4 @@
-import { defaultResizableHandleProps, type ResizableHandleProps } from '@prosekit/primitives/resizable'
+import { defaultResizableHandleProps, type ResizableHandleProps } from '@prosekit/web/resizable'
 
 import { createComponent } from '../create-component'
 

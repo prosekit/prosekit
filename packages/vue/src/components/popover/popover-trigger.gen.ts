@@ -1,4 +1,4 @@
-import { defaultPopoverTriggerProps, type PopoverTriggerProps } from '@prosekit/primitives/popover'
+import { defaultPopoverTriggerProps, type PopoverTriggerProps } from '@prosekit/web/popover'
 
 import { createComponent } from '../create-component'
 

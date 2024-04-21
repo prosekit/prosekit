@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ocavue/prosekit.git",
-    "directory": "packages/primitives"
+    "directory": "packages/web"
   },
   "bugs": {
     "url": "https://github.com/ocavue/prosekit/issues"
@@ -62,66 +62,66 @@
   "publishConfig": {
     "exports": {
       ".": {
-        "types": "./dist/prosekit-primitives.d.ts",
-        "import": "./dist/prosekit-primitives.js",
-        "default": "./dist/prosekit-primitives.js"
+        "types": "./dist/prosekit-web.d.ts",
+        "import": "./dist/prosekit-web.js",
+        "default": "./dist/prosekit-web.js"
       },
       "./autocomplete": {
-        "types": "./dist/prosekit-primitives-autocomplete.d.ts",
-        "import": "./dist/prosekit-primitives-autocomplete.js",
-        "default": "./dist/prosekit-primitives-autocomplete.js"
+        "types": "./dist/prosekit-web-autocomplete.d.ts",
+        "import": "./dist/prosekit-web-autocomplete.js",
+        "default": "./dist/prosekit-web-autocomplete.js"
       },
       "./block-handle": {
-        "types": "./dist/prosekit-primitives-block-handle.d.ts",
-        "import": "./dist/prosekit-primitives-block-handle.js",
-        "default": "./dist/prosekit-primitives-block-handle.js"
+        "types": "./dist/prosekit-web-block-handle.d.ts",
+        "import": "./dist/prosekit-web-block-handle.js",
+        "default": "./dist/prosekit-web-block-handle.js"
       },
       "./inline-popover": {
-        "types": "./dist/prosekit-primitives-inline-popover.d.ts",
-        "import": "./dist/prosekit-primitives-inline-popover.js",
-        "default": "./dist/prosekit-primitives-inline-popover.js"
+        "types": "./dist/prosekit-web-inline-popover.d.ts",
+        "import": "./dist/prosekit-web-inline-popover.js",
+        "default": "./dist/prosekit-web-inline-popover.js"
       },
       "./popover": {
-        "types": "./dist/prosekit-primitives-popover.d.ts",
-        "import": "./dist/prosekit-primitives-popover.js",
-        "default": "./dist/prosekit-primitives-popover.js"
+        "types": "./dist/prosekit-web-popover.d.ts",
+        "import": "./dist/prosekit-web-popover.js",
+        "default": "./dist/prosekit-web-popover.js"
       },
       "./resizable": {
-        "types": "./dist/prosekit-primitives-resizable.d.ts",
-        "import": "./dist/prosekit-primitives-resizable.js",
-        "default": "./dist/prosekit-primitives-resizable.js"
+        "types": "./dist/prosekit-web-resizable.d.ts",
+        "import": "./dist/prosekit-web-resizable.js",
+        "default": "./dist/prosekit-web-resizable.js"
       },
       "./tooltip": {
-        "types": "./dist/prosekit-primitives-tooltip.d.ts",
-        "import": "./dist/prosekit-primitives-tooltip.js",
-        "default": "./dist/prosekit-primitives-tooltip.js"
+        "types": "./dist/prosekit-web-tooltip.d.ts",
+        "import": "./dist/prosekit-web-tooltip.js",
+        "default": "./dist/prosekit-web-tooltip.js"
       }
     },
-    "main": "./dist/prosekit-primitives.js",
-    "module": "./dist/prosekit-primitives.js",
-    "types": "./dist/prosekit-primitives.d.ts",
+    "main": "./dist/prosekit-web.js",
+    "module": "./dist/prosekit-web.js",
+    "types": "./dist/prosekit-web.d.ts",
     "typesVersions": {
       "*": {
         ".": [
-          "./dist/prosekit-primitives.d.ts"
+          "./dist/prosekit-web.d.ts"
         ],
         "autocomplete": [
-          "./dist/prosekit-primitives-autocomplete.d.ts"
+          "./dist/prosekit-web-autocomplete.d.ts"
         ],
         "block-handle": [
-          "./dist/prosekit-primitives-block-handle.d.ts"
+          "./dist/prosekit-web-block-handle.d.ts"
         ],
         "inline-popover": [
-          "./dist/prosekit-primitives-inline-popover.d.ts"
+          "./dist/prosekit-web-inline-popover.d.ts"
         ],
         "popover": [
-          "./dist/prosekit-primitives-popover.d.ts"
+          "./dist/prosekit-web-popover.d.ts"
         ],
         "resizable": [
-          "./dist/prosekit-primitives-resizable.d.ts"
+          "./dist/prosekit-web-resizable.d.ts"
         ],
         "tooltip": [
-          "./dist/prosekit-primitives-tooltip.d.ts"
+          "./dist/prosekit-web-tooltip.d.ts"
         ]
       }
     }

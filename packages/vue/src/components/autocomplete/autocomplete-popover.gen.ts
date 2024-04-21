@@ -1,4 +1,4 @@
-import { defaultAutocompletePopoverProps, type AutocompletePopoverProps } from '@prosekit/primitives/autocomplete'
+import { defaultAutocompletePopoverProps, type AutocompletePopoverProps } from '@prosekit/web/autocomplete'
 
 import { createComponent } from '../create-component'
 

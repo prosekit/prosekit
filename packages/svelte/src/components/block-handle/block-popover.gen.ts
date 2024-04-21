@@ -1,4 +1,4 @@
-import type { BlockPopoverProps } from '@prosekit/primitives/block-handle'    
+import type { BlockPopoverProps } from '@prosekit/web/block-handle'    
 import type { SvelteComponent } from 'svelte'
 
 import Component from './block-popover.gen.svelte'

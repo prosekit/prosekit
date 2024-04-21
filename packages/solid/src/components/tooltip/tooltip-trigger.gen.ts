@@ -2,7 +2,7 @@ import {
   TooltipTriggerElement,
   defaultTooltipTriggerProps,
   type TooltipTriggerProps,
-} from '@prosekit/primitives/tooltip'
+} from '@prosekit/web/tooltip'
 
 import { createComponent } from '../create-component'
 

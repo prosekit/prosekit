@@ -1,4 +1,4 @@
-import type { InlinePopoverProps } from '@prosekit/primitives/inline-popover'    
+import type { InlinePopoverProps } from '@prosekit/web/inline-popover'    
 import type { SvelteComponent } from 'svelte'
 
 import Component from './inline-popover.gen.svelte'

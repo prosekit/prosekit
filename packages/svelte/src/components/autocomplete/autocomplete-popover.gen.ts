@@ -1,4 +1,4 @@
-import type { AutocompletePopoverProps } from '@prosekit/primitives/autocomplete'    
+import type { AutocompletePopoverProps } from '@prosekit/web/autocomplete'    
 import type { SvelteComponent } from 'svelte'
 
 import Component from './autocomplete-popover.gen.svelte'

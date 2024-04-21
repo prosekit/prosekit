@@ -1,9 +1,9 @@
-import '@prosekit/primitives/resizable'
+import '@prosekit/web/resizable'
 
 import type { 
   ResizableHandleElement,
   ResizableHandleProps,
-} from '@prosekit/primitives/resizable'
+} from '@prosekit/web/resizable'
 
 import { createComponent } from '../create-component'
 

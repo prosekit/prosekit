@@ -1,9 +1,9 @@
-import '@prosekit/primitives/resizable'
+import '@prosekit/web/resizable'
 
 import type { 
   ResizableRootElement,
   ResizableRootProps,
-} from '@prosekit/primitives/resizable'
+} from '@prosekit/web/resizable'
 
 import { createComponent } from '../create-component'
 

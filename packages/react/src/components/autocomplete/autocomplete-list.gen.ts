@@ -2,7 +2,7 @@ import {
   AutocompleteListElement,
   defaultAutocompleteListProps,
   type AutocompleteListProps,
-} from '@prosekit/primitives/autocomplete'
+} from '@prosekit/web/autocomplete'
 import type {
   ForwardRefExoticComponent,
   HTMLAttributes,

@@ -2,7 +2,7 @@ import {
   PopoverRootElement,
   defaultPopoverRootProps,
   type PopoverRootProps,
-} from '@prosekit/primitives/popover'
+} from '@prosekit/web/popover'
 
 import { createComponent } from '../create-component'
 

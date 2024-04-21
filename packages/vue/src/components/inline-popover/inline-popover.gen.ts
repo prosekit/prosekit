@@ -1,4 +1,4 @@
-import { defaultInlinePopoverProps, type InlinePopoverProps } from '@prosekit/primitives/inline-popover'
+import { defaultInlinePopoverProps, type InlinePopoverProps } from '@prosekit/web/inline-popover'
 
 import { createComponent } from '../create-component'
 

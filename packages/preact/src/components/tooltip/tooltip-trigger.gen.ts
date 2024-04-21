@@ -1,9 +1,9 @@
-import '@prosekit/primitives/tooltip'
+import '@prosekit/web/tooltip'
 
 import type { 
   TooltipTriggerElement,
   TooltipTriggerProps,
-} from '@prosekit/primitives/tooltip'
+} from '@prosekit/web/tooltip'
 
 import { createComponent } from '../create-component'
 

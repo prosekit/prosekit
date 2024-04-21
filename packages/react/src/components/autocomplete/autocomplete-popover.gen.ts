@@ -2,7 +2,7 @@ import {
   AutocompletePopoverElement,
   defaultAutocompletePopoverProps,
   type AutocompletePopoverProps,
-} from '@prosekit/primitives/autocomplete'
+} from '@prosekit/web/autocomplete'
 import type {
   ForwardRefExoticComponent,
   HTMLAttributes,

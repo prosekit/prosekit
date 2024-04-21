@@ -1,4 +1,4 @@
-import { defaultAutocompleteItemProps, type AutocompleteItemProps } from '@prosekit/primitives/autocomplete'
+import { defaultAutocompleteItemProps, type AutocompleteItemProps } from '@prosekit/web/autocomplete'
 
 import { createComponent } from '../create-component'
 

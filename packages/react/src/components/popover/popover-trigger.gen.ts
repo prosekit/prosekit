@@ -2,7 +2,7 @@ import {
   PopoverTriggerElement,
   defaultPopoverTriggerProps,
   type PopoverTriggerProps,
-} from '@prosekit/primitives/popover'
+} from '@prosekit/web/popover'
 import type {
   ForwardRefExoticComponent,
   HTMLAttributes,

@@ -1,9 +1,9 @@
-import '@prosekit/primitives/block-handle'
+import '@prosekit/web/block-handle'
 
 import type { 
   BlockDragHandleElement,
   BlockDragHandleProps,
-} from '@prosekit/primitives/block-handle'
+} from '@prosekit/web/block-handle'
 
 import { createComponent } from '../create-component'
 

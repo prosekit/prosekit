@@ -2,7 +2,7 @@ import {
   TooltipContentElement,
   defaultTooltipContentProps,
   type TooltipContentProps,
-} from '@prosekit/primitives/tooltip'
+} from '@prosekit/web/tooltip'
 import type {
   ForwardRefExoticComponent,
   HTMLAttributes,

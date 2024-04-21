@@ -1,9 +1,9 @@
-import '@prosekit/primitives/inline-popover'
+import '@prosekit/web/inline-popover'
 
 import type { 
   InlinePopoverElement,
   InlinePopoverProps,
-} from '@prosekit/primitives/inline-popover'
+} from '@prosekit/web/inline-popover'
 
 import { createComponent } from '../create-component'
 

@@ -1,4 +1,4 @@
-import { defaultTooltipTriggerProps, type TooltipTriggerProps } from '@prosekit/primitives/tooltip'
+import { defaultTooltipTriggerProps, type TooltipTriggerProps } from '@prosekit/web/tooltip'
 
 import { createComponent } from '../create-component'
 

@@ -1,4 +1,4 @@
-import type { ResizableRootProps } from '@prosekit/primitives/resizable'    
+import type { ResizableRootProps } from '@prosekit/web/resizable'    
 import type { SvelteComponent } from 'svelte'
 
 import Component from './resizable-root.gen.svelte'

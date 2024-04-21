@@ -1,4 +1,4 @@
-import { defaultResizableRootProps, type ResizableRootProps } from '@prosekit/primitives/resizable'
+import { defaultResizableRootProps, type ResizableRootProps } from '@prosekit/web/resizable'
 
 import { createComponent } from '../create-component'
 

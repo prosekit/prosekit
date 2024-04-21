@@ -1,4 +1,4 @@
-import type { TooltipContentProps } from '@prosekit/primitives/tooltip'    
+import type { TooltipContentProps } from '@prosekit/web/tooltip'    
 import type { SvelteComponent } from 'svelte'
 
 import Component from './tooltip-content.gen.svelte'

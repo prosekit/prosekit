@@ -2,7 +2,7 @@ import {
   AutocompleteEmptyElement,
   defaultAutocompleteEmptyProps,
   type AutocompleteEmptyProps,
-} from '@prosekit/primitives/autocomplete'
+} from '@prosekit/web/autocomplete'
 
 import { createComponent } from '../create-component'
 

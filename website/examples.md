@@ -58,4 +58,6 @@
 
 - [user-menu](./examples/user-menu)
 
+- [user-menu-dynamic](./examples/user-menu-dynamic)
+
 - [word-counter](./examples/word-counter)

@@ -115,6 +115,10 @@ export const exampleItems = [
     "link": "/examples/user-menu"
   },
   {
+    "text": "user-menu-dynamic",
+    "link": "/examples/user-menu-dynamic"
+  },
+  {
     "text": "word-counter",
     "link": "/examples/word-counter"
   }

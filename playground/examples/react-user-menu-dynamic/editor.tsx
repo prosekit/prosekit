@@ -5,7 +5,7 @@ import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
 import { defineExtension } from './extension'
-import UserMenu from './user-menu'
+import UserMenuDynamic from './user-menu-dynamic'
 
 export default function Editor() {
   const editor = useMemo(() => {
@@ -18,7 +18,7 @@ export default function Editor() {
       <div className="EDITOR_VIEWPORT">
         <div className="EDITOR_DOCUMENT">
           <div ref={editor.mount} className="EDITOR_CONTENT"></div>
-          <UserMenu />
+          <UserMenuDynamic/>
         </div>
       </div>
     </ProseKit>

@@ -10,7 +10,7 @@ import { useState } from 'react'
 import type { EditorExtension } from './extension'
 import { useUserQuery } from './use-user-query'
 
-export default function UserMenu() {
+export default function UserMenuDynamic() {
   const editor = useEditor<EditorExtension>()
   const [query, setQuery] = useState('')
 

@@ -9,4 +9,4 @@
 '@prosekit/vue': minor
 ---
 
-Add a new primitives package for a set of lightweight web components.
+Refactor web components for improved performance and reduced size by removing dependency on Lit.

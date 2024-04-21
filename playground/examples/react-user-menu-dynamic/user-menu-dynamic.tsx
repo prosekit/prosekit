@@ -31,7 +31,7 @@ export default function UserMenuDynamic() {
       onQueryChange={setQuery}
       className="AUTOCOMPLETE_MENU"
     >
-      <AutocompleteList>
+      <AutocompleteList filter={null}>
         <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
           {loading ? 'Loading...' : 'No results'}
         </AutocompleteEmpty>

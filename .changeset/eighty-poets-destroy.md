@@ -9,4 +9,4 @@
 '@prosekit/vue': minor
 ---
 
-Redesign editor web components without using Lit. This results in improved performance and a smaller bundled size.
+Redesign editor web components, including the removal of the Lit dependency and various other enhancements.

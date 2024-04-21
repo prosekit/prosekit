@@ -8,6 +8,8 @@ import {
 import { useLayoutEffect, useState } from 'preact/hooks'
 import { mergeRefs } from 'react-merge-refs'
 
+import { useEditorContext } from '../contexts/editor-context'
+
 export function createComponent<
   Props extends object,
   CustomElement extends HTMLElement,
@@ -19,6 +21,8 @@ export function createComponent<
   Partial<Props> & RefAttributes<CustomElement> & HTMLAttributes<CustomElement>
 > {
   const propertyNames = Object.keys(defaultProps)
+
+  const needsEditor = propertyNames.includes('editor')
 
   const Component = forwardRef<any, any>((props: Props, ref) => {
     const [el, setEl] = useState<HTMLElement | null>(null)
@@ -32,6 +36,12 @@ export function createComponent<
       } else {
         attributes[name === 'className' ? 'class' : name] = value
       }
+    }
+
+    const editor = useEditorContext()
+
+    if (needsEditor && editor && !properties['editor']) {
+      properties['editor'] = editor
     }
 
     useLayoutEffect(() => {

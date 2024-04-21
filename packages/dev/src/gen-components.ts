@@ -343,21 +343,31 @@ function formatPreactComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import '@prosekit/web/${group}'
 
-import type { 
+import {
   ${pascal}Element,
-  ${pascal}Props,
+  default${pascal}Props,
+  type ${pascal}Props,
 } from '@prosekit/web/${group}'
+import type {
+  ForwardRefExoticComponent,
+  HTMLAttributes,
+  RefAttributes,
+} from 'preact/compat'
 
 import { createComponent } from '../create-component'
 
-export const ${pascal} = createComponent<
-  ${pascal}Props,
+export const ${pascal}: ForwardRefExoticComponent<
+  Partial<${pascal}Props> &
+  RefAttributes<${pascal}Element> &
+  HTMLAttributes<${pascal}Element>
+> = createComponent<
+  ${pascal}Props, 
   ${pascal}Element
 >(
-  'prosekit-${kebab}', 
+  'prosekit-${kebab}',
   '${pascal}',
+  default${pascal}Props,
 )
 
 `.trim() + '\n'

@@ -1,16 +1,25 @@
-import '@prosekit/web/resizable'
-
-import type { 
+import {
   ResizableRootElement,
-  ResizableRootProps,
+  defaultResizableRootProps,
+  type ResizableRootProps,
 } from '@prosekit/web/resizable'
+import type {
+  ForwardRefExoticComponent,
+  HTMLAttributes,
+  RefAttributes,
+} from 'preact/compat'
 
 import { createComponent } from '../create-component'
 
-export const ResizableRoot = createComponent<
-  ResizableRootProps,
+export const ResizableRoot: ForwardRefExoticComponent<
+  Partial<ResizableRootProps> &
+  RefAttributes<ResizableRootElement> &
+  HTMLAttributes<ResizableRootElement>
+> = createComponent<
+  ResizableRootProps, 
   ResizableRootElement
 >(
-  'prosekit-resizable-root', 
+  'prosekit-resizable-root',
   'ResizableRoot',
+  defaultResizableRootProps,
 )

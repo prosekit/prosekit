@@ -1,16 +1,25 @@
-import '@prosekit/web/resizable'
-
-import type { 
+import {
   ResizableHandleElement,
-  ResizableHandleProps,
+  defaultResizableHandleProps,
+  type ResizableHandleProps,
 } from '@prosekit/web/resizable'
+import type {
+  ForwardRefExoticComponent,
+  HTMLAttributes,
+  RefAttributes,
+} from 'preact/compat'
 
 import { createComponent } from '../create-component'
 
-export const ResizableHandle = createComponent<
-  ResizableHandleProps,
+export const ResizableHandle: ForwardRefExoticComponent<
+  Partial<ResizableHandleProps> &
+  RefAttributes<ResizableHandleElement> &
+  HTMLAttributes<ResizableHandleElement>
+> = createComponent<
+  ResizableHandleProps, 
   ResizableHandleElement
 >(
-  'prosekit-resizable-handle', 
+  'prosekit-resizable-handle',
   'ResizableHandle',
+  defaultResizableHandleProps,
 )

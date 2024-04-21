@@ -1,16 +1,25 @@
-import '@prosekit/web/autocomplete'
-
-import type { 
+import {
   AutocompleteItemElement,
-  AutocompleteItemProps,
+  defaultAutocompleteItemProps,
+  type AutocompleteItemProps,
 } from '@prosekit/web/autocomplete'
+import type {
+  ForwardRefExoticComponent,
+  HTMLAttributes,
+  RefAttributes,
+} from 'preact/compat'
 
 import { createComponent } from '../create-component'
 
-export const AutocompleteItem = createComponent<
-  AutocompleteItemProps,
+export const AutocompleteItem: ForwardRefExoticComponent<
+  Partial<AutocompleteItemProps> &
+  RefAttributes<AutocompleteItemElement> &
+  HTMLAttributes<AutocompleteItemElement>
+> = createComponent<
+  AutocompleteItemProps, 
   AutocompleteItemElement
 >(
-  'prosekit-autocomplete-item', 
+  'prosekit-autocomplete-item',
   'AutocompleteItem',
+  defaultAutocompleteItemProps,
 )

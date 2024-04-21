@@ -285,7 +285,6 @@ export const ${pascal} = createComponent<${pascal}Props>('prosekit-${kebab}', '$
 }
 
 function formatSvelteComponentCode(group: string, kebab: string) {
-
   const pascal = kebabToPascal(kebab)
 
   return (
@@ -301,7 +300,7 @@ const editorContext = useEditorContext()
 const editor = hasEditor ? editorContext : undefined
 </script>
 
-<prosekit-${kebab} editor={editor} {...$$props}>
+<prosekit-${kebab} {editor} {...$$props}>
   <slot />
 </prosekit-${kebab}>
 `.trim() + '\n'

@@ -5,7 +5,10 @@ export interface AutocompleteListProps extends Pick<ListboxProps, 'filter'> {
   editor: Editor | null
 }
 
+const defaultFilter: (options: { query: string; value: string }) => boolean =
+  defaultListboxProps.filter
+
 export const defaultAutocompleteListProps = {
-  filter: defaultListboxProps.filter,
+  filter: defaultFilter,
   editor: null,
 } satisfies AutocompleteListProps

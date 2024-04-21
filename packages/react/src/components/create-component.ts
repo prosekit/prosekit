@@ -23,7 +23,7 @@ export function createComponent<
 > {
   const propertyNames = Object.keys(defaultProps)
 
-  const needsEditor = propertyNames.includes('editor')
+  const hasEditor = Object.hasOwn(defaultProps, 'editor')
 
   const Component = forwardRef<any, any>((props: Props, ref) => {
     const [el, setEl] = useState<HTMLElement | null>(null)
@@ -41,7 +41,7 @@ export function createComponent<
 
     const editor = useEditorContext()
 
-    if (needsEditor && editor && !properties['editor']) {
+    if (hasEditor && editor && !properties['editor']) {
       properties['editor'] = editor
     }
 

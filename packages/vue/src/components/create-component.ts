@@ -9,7 +9,7 @@ export function createComponent<Props extends object>(
 ): DefineSetupFnComponent<Partial<Props> & { class?: string }> {
   const propertyNames = Object.keys(defaultProps)
 
-  const needsEditor = propertyNames.includes('editor')
+  const hasEditor = Object.hasOwn(defaultProps, 'editor')
 
   const Component = defineComponent(
     (props: Record<string, unknown>, { slots }) => {
@@ -24,7 +24,7 @@ export function createComponent<Props extends object>(
           }
         }
 
-        if (needsEditor && editor && !p['editor']) {
+        if (hasEditor && editor && !p['editor']) {
           p.editor = editor
         }
 

@@ -12,7 +12,7 @@ export function createComponent<
 ): Component<Partial<Props> & JSX.HTMLAttributes<CustomElement>> {
   const propertyNames = Object.keys(defaultProps)
 
-  const needsEditor = propertyNames.includes('editor')
+  const hasEditor = Object.hasOwn(defaultProps, 'editor')
 
   const Component = (props: Record<string, unknown>) => {
     const p: Record<string, () => unknown> = {}
@@ -24,7 +24,7 @@ export function createComponent<
 
     const editor = useEditorContext()
 
-    if (needsEditor && editor) {
+    if (hasEditor && editor) {
       p['prop:editor'] = () => props['editor'] || editor
     }
 

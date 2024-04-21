@@ -4,7 +4,7 @@ import { kebabToPascal } from './kebab-to-pascal'
 import { vfs } from './virtual-file-system'
 
 export async function genComponents() {
-  const primitivesPackage = await vfs.getPackageByName('@prosekit/web')
+  const webPackages = await vfs.getPackageByName('@prosekit/web')
 
   const reactPackage = await vfs.getPackageByName('@prosekit/react')
   const vuePackage = await vfs.getPackageByName('@prosekit/vue')
@@ -21,17 +21,17 @@ export async function genComponents() {
   await vfs.cleanGeneratedFilesInPackage(preactPackage)
   await vfs.cleanGeneratedFilesInPackage(litPackage)
 
-  const primitives = await readPrimitives(primitivesPackage)
-  await writePrimitivesComponents(primitivesPackage, primitives)
-  await writeReactComponents(reactPackage, primitives)
-  await writeVueComponents(vuePackage, primitives)
-  await writeSvelteComponents(sveltePackage, primitives)
-  await writeSolidComponents(solidPackage, primitives)
-  await writePreactComponents(preactPackage, primitives)
-  await writeLitComponents(litPackage, primitives)
+  const components = await readWeb(webPackages)
+  await writeWebComponents(webPackages, components)
+  await writeReactComponents(reactPackage, components)
+  await writeVueComponents(vuePackage, components)
+  await writeSvelteComponents(sveltePackage, components)
+  await writeSolidComponents(solidPackage, components)
+  await writePreactComponents(preactPackage, components)
+  await writeLitComponents(litPackage, components)
 }
 
-async function writePrimitivesComponents(pkg: Package, info: Primitives) {
+async function writeWebComponents(pkg: Package, info: Components) {
   const exports = (pkg.packageJson as any).exports
 
   for (const [group, components] of Object.entries(info)) {
@@ -48,7 +48,7 @@ async function writePrimitivesComponents(pkg: Package, info: Primitives) {
   }
 }
 
-async function writeReactComponents(pkg: Package, info: Primitives) {
+async function writeReactComponents(pkg: Package, info: Components) {
   const exports = (pkg.packageJson as any).exports
 
   for (const [group, components] of Object.entries(info)) {
@@ -65,7 +65,7 @@ async function writeReactComponents(pkg: Package, info: Primitives) {
   }
 }
 
-async function writeVueComponents(pkg: Package, info: Primitives) {
+async function writeVueComponents(pkg: Package, info: Components) {
   const exports = (pkg.packageJson as any).exports
 
   for (const [group, components] of Object.entries(info)) {
@@ -82,7 +82,7 @@ async function writeVueComponents(pkg: Package, info: Primitives) {
   }
 }
 
-async function writeSvelteComponents(pkg: Package, info: Primitives) {
+async function writeSvelteComponents(pkg: Package, info: Components) {
   const exports = (pkg.packageJson as any).exports
 
   for (const [group, components] of Object.entries(info)) {
@@ -104,7 +104,7 @@ async function writeSvelteComponents(pkg: Package, info: Primitives) {
   }
 }
 
-async function writeSolidComponents(pkg: Package, info: Primitives) {
+async function writeSolidComponents(pkg: Package, info: Components) {
   const exports = (pkg.packageJson as any).exports
 
   for (const [group, components] of Object.entries(info)) {
@@ -121,7 +121,7 @@ async function writeSolidComponents(pkg: Package, info: Primitives) {
   }
 }
 
-async function writePreactComponents(pkg: Package, info: Primitives) {
+async function writePreactComponents(pkg: Package, info: Components) {
   const exports = (pkg.packageJson as any).exports
 
   for (const [group, components] of Object.entries(info)) {
@@ -138,7 +138,7 @@ async function writePreactComponents(pkg: Package, info: Primitives) {
   }
 }
 
-async function writeLitComponents(pkg: Package, info: Primitives) {
+async function writeLitComponents(pkg: Package, info: Components) {
   const exports = (pkg.packageJson as any).exports
 
   for (const [group, components] of Object.entries(info)) {
@@ -369,10 +369,10 @@ export const ${pascal} = createComponent<
  * Returns a list of components names in kebab case
  * e.g. { 'resizable': [ 'resizable-handle', 'resizable-root' ] }
  */
-async function readPrimitives(pkg: Package): Promise<Primitives> {
+async function readWeb(pkg: Package): Promise<Components> {
   const filePaths = await vfs.getFilePathsByPackage(pkg)
 
-  const result: Primitives = {}
+  const result: Components = {}
 
   for (const filePath of filePaths) {
     const re = /components\/(?<group>.*)\/(?<component>.*)\/props\.ts$/
@@ -390,4 +390,4 @@ async function readPrimitives(pkg: Package): Promise<Primitives> {
   return result
 }
 
-type Primitives = { [group: string]: string[] }
+type Components = { [group: string]: string[] }

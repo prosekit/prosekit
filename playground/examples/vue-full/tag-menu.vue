@@ -26,7 +26,7 @@ const handleTagInsert = (id: number, label: string) => {
   <AutocompletePopover :regex="/#[\da-z]*$/i" class="AUTOCOMPLETE_MENU">
     <AutocompleteList>
       <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
-        No Tag match
+        No results
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="tag in tags"

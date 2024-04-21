@@ -23,7 +23,7 @@ export default function SlashMenu() {
     <AutocompletePopover regex={/\/.*$/iu} className="AUTOCOMPLETE_MENU">
       <AutocompleteList>
         <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
-          No Command match
+          No results
         </AutocompleteEmpty>
 
         <AutocompleteItem

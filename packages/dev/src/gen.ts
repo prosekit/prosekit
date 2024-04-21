@@ -1,6 +1,6 @@
 import { genChangesetConfigJson } from './gen-changeset-config-json.js'
 import { genChangeset } from './gen-changeset.js'
-import { genComponents } from './gen-components-v2.js'
+import { genComponents } from './gen-components.js'
 import { genDocsItems } from './gen-docs-items.js'
 import { genExampleIndex } from './gen-example-index.js'
 import { genExampleMetaYaml } from './gen-example-meta-yaml.js'

@@ -20,7 +20,7 @@ export interface AutocompletePopoverProps extends OverlayPositionerProps {
   /**
    * A callback that is called when the query changes.
    */
-  onQueryChange: ((query: string) => void) | null 
+  onQueryChange: ((query: string) => void) | null
 
   /**
    * A callback that is called when the open state changes.

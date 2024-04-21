@@ -18,7 +18,7 @@ export default function Editor() {
       <div className="EDITOR_VIEWPORT">
         <div className="EDITOR_DOCUMENT">
           <div ref={editor.mount} className="EDITOR_CONTENT"></div>
-          <UserMenuDynamic/>
+          <UserMenuDynamic />
         </div>
       </div>
     </ProseKit>

@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.6.1
+
+### Patch Changes
+
+- [`4371e8b`](https://github.com/ocavue/prosekit/commit/4371e8b843505f4d7603bac28d58191cc33b2ee5) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue)
+
+  Remove unnecessary dependencies.
+
 ## 0.6.0
 
 ### Minor Changes

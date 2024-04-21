@@ -5,4 +5,4 @@
 "@prosekit/web": patch
 ---
 
-Remove unnecessary dependencies.
+Update dependencies.

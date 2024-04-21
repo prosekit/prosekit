@@ -16,6 +16,7 @@ import E3429186088 from '../../examples/react-save-markdown/editor'
 import E3738959724 from '../../examples/react-slash-menu/editor'
 import E733855346 from '../../examples/react-toolbar/editor'
 import E105978888 from '../../examples/react-user-menu/editor'
+import E4072355092 from '../../examples/react-user-menu-dynamic/editor'
 import E2611097910 from '../../examples/react-word-counter/editor'
 import E449861637 from '../../examples/vue-minimal/editor.vue'
 import E1911994445 from '../../examples/vue-bold/editor.vue'
@@ -78,6 +79,7 @@ export const getStaticPaths = () => [
   { params: { example: 'react-slash-menu' } },
   { params: { example: 'react-toolbar' } },
   { params: { example: 'react-user-menu' } },
+  { params: { example: 'react-user-menu-dynamic' } },
   { params: { example: 'react-word-counter' } },
   { params: { example: 'vue-minimal' } },
   { params: { example: 'vue-bold' } },
@@ -144,6 +146,7 @@ const { example } = Astro.params
   {example === 'react-slash-menu' && <E3738959724 client:only="react" />}
   {example === 'react-toolbar' && <E733855346 client:only="react" />}
   {example === 'react-user-menu' && <E105978888 client:only="react" />}
+  {example === 'react-user-menu-dynamic' && <E4072355092 client:only="react" />}
   {example === 'react-word-counter' && <E2611097910 client:only="react" />}
   {example === 'vue-minimal' && <E449861637 client:only="vue" />}
   {example === 'vue-bold' && <E1911994445 client:only="vue" />}

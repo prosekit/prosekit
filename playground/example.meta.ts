@@ -329,6 +329,33 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-user-menu-dynamic",
+      "framework": "react",
+      "story": "user-menu-dynamic",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "use-user-query.ts",
+          "hidden": false
+        },
+        {
+          "path": "user-data.ts",
+          "hidden": false
+        },
+        {
+          "path": "user-menu-dynamic.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-word-counter",
       "framework": "react",
       "story": "word-counter",

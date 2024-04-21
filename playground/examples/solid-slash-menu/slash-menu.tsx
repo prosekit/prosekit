@@ -20,12 +20,8 @@ export default function SlashMenu() {
   }
 
   return (
-    <AutocompletePopover
-      editor={editor()}
-      regex={/\/.*$/iu}
-      class="AUTOCOMPLETE_MENU"
-    >
-      <AutocompleteList editor={editor()}>
+    <AutocompletePopover regex={/\/.*$/iu} class="AUTOCOMPLETE_MENU">
+      <AutocompleteList>
         <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
           No Command match
         </AutocompleteEmpty>

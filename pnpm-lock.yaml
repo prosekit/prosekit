@@ -242,7 +242,7 @@ importers:
         version: 1.1.0
       '@prosekit/web':
         specifier: ^0.0.0
-        version: link:../primitives
+        version: link:../web
       lit:
         specifier: ^3.1.2
         version: 3.1.2
@@ -313,7 +313,7 @@ importers:
         version: link:../pm
       '@prosekit/web':
         specifier: ^0.0.0
-        version: link:../primitives
+        version: link:../web
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -321,55 +321,6 @@ importers:
       preact:
         specifier: ^10.20.2
         version: 10.20.2
-      tsup:
-        specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.1)(postcss@8.4.38)(typescript@5.4.5)
-      typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
-      vitest:
-        specifier: ^1.5.0
-        version: 1.5.0(jsdom@24.0.0)
-
-  packages/primitives:
-    dependencies:
-      '@aria-ui/core':
-        specifier: ^0.0.12
-        version: 0.0.12
-      '@aria-ui/listbox':
-        specifier: ^0.0.10
-        version: 0.0.10
-      '@aria-ui/overlay':
-        specifier: ^0.0.12
-        version: 0.0.12
-      '@aria-ui/popover':
-        specifier: ^0.0.11
-        version: 0.0.11
-      '@aria-ui/presence':
-        specifier: ^0.0.7
-        version: 0.0.7
-      '@aria-ui/tooltip':
-        specifier: ^0.0.13
-        version: 0.0.13
-      '@floating-ui/dom':
-        specifier: ^1.6.3
-        version: 1.6.3
-      '@prosekit/core':
-        specifier: ^0.4.0
-        version: link:../core
-      '@prosekit/extensions':
-        specifier: ^0.4.2
-        version: link:../extensions
-      '@prosekit/pm':
-        specifier: ^0.1.2
-        version: link:../pm
-      '@zag-js/dom-query':
-        specifier: ^0.47.0
-        version: 0.47.0
-    devDependencies:
-      '@prosekit/dev':
-        specifier: '*'
-        version: link:../dev
       tsup:
         specifier: ^8.0.2
         version: 8.0.2(@microsoft/api-extractor@7.43.1)(postcss@8.4.38)(typescript@5.4.5)
@@ -400,9 +351,6 @@ importers:
       '@prosekit/preact':
         specifier: 0.2.7
         version: link:../preact
-      '@prosekit/web':
-        specifier: 0.0.0
-        version: link:../primitives
       '@prosekit/react':
         specifier: 0.2.7
         version: link:../react
@@ -415,6 +363,9 @@ importers:
       '@prosekit/vue':
         specifier: 0.2.7
         version: link:../vue
+      '@prosekit/web':
+        specifier: 0.0.0
+        version: link:../web
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -472,7 +423,7 @@ importers:
         version: link:../pm
       '@prosekit/web':
         specifier: ^0.0.0
-        version: link:../primitives
+        version: link:../web
       '@prosemirror-adapter/core':
         specifier: ^0.2.6
         version: 0.2.6
@@ -518,7 +469,7 @@ importers:
         version: link:../pm
       '@prosekit/web':
         specifier: ^0.0.0
-        version: link:../primitives
+        version: link:../web
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -549,7 +500,7 @@ importers:
         version: link:../pm
       '@prosekit/web':
         specifier: ^0.0.0
-        version: link:../primitives
+        version: link:../web
     devDependencies:
       '@prosekit/dev':
         specifier: '*'
@@ -592,7 +543,7 @@ importers:
         version: link:../pm
       '@prosekit/web':
         specifier: ^0.0.0
-        version: link:../primitives
+        version: link:../web
       '@prosemirror-adapter/core':
         specifier: ^0.2.6
         version: 0.2.6
@@ -612,6 +563,55 @@ importers:
       vue:
         specifier: ^3.4.21
         version: 3.4.21(typescript@5.4.5)
+
+  packages/web:
+    dependencies:
+      '@aria-ui/core':
+        specifier: ^0.0.12
+        version: 0.0.12
+      '@aria-ui/listbox':
+        specifier: ^0.0.10
+        version: 0.0.10
+      '@aria-ui/overlay':
+        specifier: ^0.0.12
+        version: 0.0.12
+      '@aria-ui/popover':
+        specifier: ^0.0.11
+        version: 0.0.11
+      '@aria-ui/presence':
+        specifier: ^0.0.7
+        version: 0.0.7
+      '@aria-ui/tooltip':
+        specifier: ^0.0.13
+        version: 0.0.13
+      '@floating-ui/dom':
+        specifier: ^1.6.3
+        version: 1.6.3
+      '@prosekit/core':
+        specifier: ^0.4.0
+        version: link:../core
+      '@prosekit/extensions':
+        specifier: ^0.4.2
+        version: link:../extensions
+      '@prosekit/pm':
+        specifier: ^0.1.2
+        version: link:../pm
+      '@zag-js/dom-query':
+        specifier: ^0.47.0
+        version: 0.47.0
+    devDependencies:
+      '@prosekit/dev':
+        specifier: '*'
+        version: link:../dev
+      tsup:
+        specifier: ^8.0.2
+        version: 8.0.2(@microsoft/api-extractor@7.43.1)(postcss@8.4.38)(typescript@5.4.5)
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+      vitest:
+        specifier: ^1.5.0
+        version: 1.5.0(jsdom@24.0.0)
 
   playground:
     devDependencies:

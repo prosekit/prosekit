@@ -8,7 +8,6 @@ import {
 import { useEditor } from 'prosekit/svelte'
 import type { EditorExtension } from './extension'
 
-
 const editor = useEditor<EditorExtension>()
 
 const handleHeadingInsert = (level: number) => {

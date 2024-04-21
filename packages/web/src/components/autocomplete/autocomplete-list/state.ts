@@ -1,7 +1,6 @@
 import {
   assignProps,
   createSignal,
-  mapSignals,
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
@@ -26,27 +25,31 @@ export function useAutocompleteList(
   element: ConnectableElement,
   props?: Partial<AutocompleteListProps>,
 ): SignalState<AutocompleteListProps> {
-  const state = mapSignals(assignProps(defaultAutocompleteListProps, props))
+  const fullProps = assignProps(defaultAutocompleteListProps, props)
+
+  const editor = createSignal(fullProps.editor)
 
   const open = openContext.consume(element)
   const query = queryContext.consume(element)
   const onSubmit = onSubmitContext.consume(element)
 
-  const onKeydownHandlerAdd = useKeyboardHandler(element, open, state.editor)
+  const onKeydownHandlerAdd = useKeyboardHandler(element, open, editor)
+
+  const onValueChange = (value: string) => {
+    if (value) {
+      onSubmit.peek()?.()
+    }
+  }
 
   const {
     query: listboxQuery,
     value: listboxValue,
+    filter,
     autoFocus,
   } = useListbox(element, {
     onKeydownHandlerAdd,
-
-    // This function will be called before `onSubmit()`.
-    onValueChange: (value) => {
-      if (value) {
-        onSubmit.value?.()
-      }
-    },
+    onValueChange,
+    filter: fullProps.filter,
   })
 
   useEffect(element, () => {
@@ -84,7 +87,7 @@ export function useAutocompleteList(
     }
   })
 
-  return state
+  return { editor, filter }
 }
 
 function useKeyboardHandler(

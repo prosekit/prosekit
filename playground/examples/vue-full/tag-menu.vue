@@ -23,12 +23,8 @@ const handleTagInsert = (id: number, label: string) => {
 </script>
 
 <template>
-  <AutocompletePopover
-    :editor="editor"
-    :regex="/#[\da-z]*$/i"
-    class="AUTOCOMPLETE_MENU"
-  >
-    <AutocompleteList :editor="editor">
+  <AutocompletePopover :regex="/#[\da-z]*$/i" class="AUTOCOMPLETE_MENU">
+    <AutocompleteList>
       <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
         No Tag match
       </AutocompleteEmpty>

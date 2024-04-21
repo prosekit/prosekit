@@ -23,12 +23,8 @@ const handleUserInsert = (id: number, username: string) => {
 </script>
 
 <template>
-  <AutocompletePopover
-    :editor="editor"
-    :regex="/@\w*$/"
-    class="AUTOCOMPLETE_MENU"
-  >
-    <AutocompleteList :editor="editor">
+  <AutocompletePopover :regex="/@\w*$/" class="AUTOCOMPLETE_MENU">
+    <AutocompleteList>
       <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
         No User match
       </AutocompleteEmpty>

@@ -6,8 +6,8 @@ const editor = useEditor()
 </script>
 
 <template>
-  <BlockPopover :editor="editor" class="BLOCK_HANDLE">
-    <BlockDragHandle :editor="editor">
+  <BlockPopover class="BLOCK_HANDLE">
+    <BlockDragHandle>
       <div class="ICON_DRAG_HANDLE"></div>
     </BlockDragHandle>
   </BlockPopover>

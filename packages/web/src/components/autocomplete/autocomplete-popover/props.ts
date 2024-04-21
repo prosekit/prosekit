@@ -11,11 +11,21 @@ export interface AutocompletePopoverProps extends OverlayPositionerProps {
   editor: Editor | null
 
   /**
-   * The regular expression to match the text to autocomplete.
+   * The regular expression to match the query text to autocomplete.
    *
    * @default null
    */
   regex: RegExp | null
+
+  /**
+   * A callback that is called when the query changes.
+   */
+  onQueryChange: ((query: string) => void) | null 
+
+  /**
+   * A callback that is called when the open state changes.
+   */
+  onOpenChange: ((open: boolean) => void) | null
 
   /**
    * The placement of the popover, relative to the text cursor.
@@ -64,6 +74,8 @@ export const defaultAutocompletePopoverProps = Object.freeze({
   ...defaultOverlayPositionerProps,
   editor: null,
   regex: null,
+  onQueryChange: null,
+  onOpenChange: null,
   placement: 'bottom-start',
   offset: 4,
   inline: true,

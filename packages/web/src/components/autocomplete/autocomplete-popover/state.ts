@@ -66,6 +66,18 @@ function useAutocompletePopoverState(
   useOverlayPositionerState(host, overlayState, { reference })
 
   usePresence(host, presence)
+
+  useEffect(host, () => {
+    const queryValue = query.value
+    if (presence.peek()) {
+      state.onQueryChange.peek()?.(queryValue)
+    }
+  })
+
+  useEffect(host, () => {
+    const presenceValue = presence.value
+    state.onOpenChange.peek()?.(presenceValue)
+  })
 }
 
 function useAutocompleteExtension(

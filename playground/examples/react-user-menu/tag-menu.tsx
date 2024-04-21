@@ -22,12 +22,8 @@ export default function TagMenu() {
   }
 
   return (
-    <AutocompletePopover
-      editor={editor}
-      regex={/#[\da-z]*$/i}
-      className="AUTOCOMPLETE_MENU"
-    >
-      <AutocompleteList editor={editor}>
+    <AutocompletePopover regex={/#[\da-z]*$/i} className="AUTOCOMPLETE_MENU">
+      <AutocompleteList>
         <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
           No Tag match
         </AutocompleteEmpty>

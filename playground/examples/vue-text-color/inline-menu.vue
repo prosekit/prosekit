@@ -29,7 +29,6 @@ effect(() => {
 
 <template>
   <InlinePopover
-    :editor="editor"
     :open="open"
     :onOpenChange="handleOpenChange"
     class="INLINE_MENU_MAIN"

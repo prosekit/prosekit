@@ -33,12 +33,8 @@ const handleSelectList = (kind: 'task' | 'bullet' | 'ordered' | 'toggle') => {
 </script>
 
 <template>
-  <AutocompletePopover
-    :editor="editor"
-    :regex="/\/.*$/iu"
-    class="AUTOCOMPLETE_MENU"
-  >
-    <AutocompleteList :editor="editor">
+  <AutocompletePopover :regex="/\/.*$/iu" class="AUTOCOMPLETE_MENU">
+    <AutocompleteList>
       <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
         No Command match
       </AutocompleteEmpty>

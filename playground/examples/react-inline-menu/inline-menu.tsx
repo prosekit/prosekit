@@ -41,7 +41,6 @@ export default function InlineMenu() {
     <>
       <InlinePopover
         className="INLINE_MENU_MAIN"
-        editor={editor}
         onOpenChange={(open) => {
           if (!open) {
             setLinkMenuOpen(false)
@@ -103,7 +102,6 @@ export default function InlineMenu() {
 
       <InlinePopover
         className="INLINE_MENU_LINK"
-        editor={editor}
         placement={'bottom'}
         open={linkMenuOpen}
         onOpenChange={setLinkMenuOpen}

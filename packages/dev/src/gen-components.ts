@@ -285,13 +285,22 @@ export const ${pascal} = createComponent<${pascal}Props>('prosekit-${kebab}', '$
 }
 
 function formatSvelteComponentCode(group: string, kebab: string) {
+  const pascal = kebabToPascal(kebab)
+
   return (
     `
 <script lang="ts">
 import '@prosekit/web/${group}'
+import { default${pascal}Props } from '@prosekit/web/${group}'
+
+import { useEditorContext } from '../../contexts/editor-context'
+
+const hasEditor = Object.hasOwn(default${pascal}Props, 'editor')
+const editorContext = useEditorContext()
+const editor = hasEditor ? editorContext : undefined
 </script>
 
-<prosekit-${kebab} {...$$props}>
+<prosekit-${kebab} {editor} {...$$props}>
   <slot />
 </prosekit-${kebab}>
 `.trim() + '\n'

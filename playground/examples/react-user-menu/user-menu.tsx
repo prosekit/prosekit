@@ -22,12 +22,8 @@ export default function UserMenu() {
   }
 
   return (
-    <AutocompletePopover
-      editor={editor}
-      regex={/@\w*$/}
-      className="AUTOCOMPLETE_MENU"
-    >
-      <AutocompleteList editor={editor}>
+    <AutocompletePopover regex={/@\w*$/} className="AUTOCOMPLETE_MENU">
+      <AutocompleteList>
         <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
           No User match
         </AutocompleteEmpty>

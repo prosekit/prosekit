@@ -9,6 +9,6 @@ const editorContext = useEditorContext()
 const editor = hasEditor ? editorContext : undefined
 </script>
 
-<prosekit-popover-content editor={editor} {...$$props}>
+<prosekit-popover-content {editor} {...$$props}>
   <slot />
 </prosekit-popover-content>

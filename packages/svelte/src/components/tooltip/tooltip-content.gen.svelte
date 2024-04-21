@@ -9,6 +9,6 @@ const editorContext = useEditorContext()
 const editor = hasEditor ? editorContext : undefined
 </script>
 
-<prosekit-tooltip-content editor={editor} {...$$props}>
+<prosekit-tooltip-content {editor} {...$$props}>
   <slot />
 </prosekit-tooltip-content>

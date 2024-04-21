@@ -9,6 +9,6 @@ const editorContext = useEditorContext()
 const editor = hasEditor ? editorContext : undefined
 </script>
 
-<prosekit-block-drag-handle editor={editor} {...$$props}>
+<prosekit-block-drag-handle {editor} {...$$props}>
   <slot />
 </prosekit-block-drag-handle>

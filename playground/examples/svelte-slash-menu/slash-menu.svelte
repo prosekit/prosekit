@@ -19,10 +19,7 @@ const handleHeadingConvert = (level: number) => {
 }
 </script>
 
-<AutocompletePopover
-  regex={/\/.*$/iu}
-  class="AUTOCOMPLETE_MENU"
->
+<AutocompletePopover regex={/\/.*$/iu} class="AUTOCOMPLETE_MENU">
   <AutocompleteList>
     <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
       No Command match

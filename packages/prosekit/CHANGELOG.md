@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.6.2
+
+### Patch Changes
+
+- [`20f09c3`](https://github.com/ocavue/prosekit/commit/20f09c3f8e34af930ebd4f3c9515fc45ff66be48) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/web)
+
+  Update dependencies.
+
 ## 0.6.1
 
 ### Patch Changes

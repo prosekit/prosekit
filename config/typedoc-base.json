@@ -48,7 +48,7 @@
   "treatWarningsAsErrors": true,
   "cleanOutputDir": true,
 
-  // https://www.typedoc-plugin-markdown.org/options
+  // https://www.typedoc-plugin-markdown.org/docs/options
   "preserveAnchorCasing": true,
   "hideBreadcrumbs": true,
   "hidePageHeader": true,

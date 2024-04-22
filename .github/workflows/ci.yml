@@ -74,7 +74,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - name: Build
+      - name: Build without clean URLs
         run: pnpm run build
         env:
           PROSEKIT_NO_CLEAN_URLS: true

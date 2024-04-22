@@ -49,7 +49,6 @@
   "cleanOutputDir": true,
 
   // https://www.typedoc-plugin-markdown.org/options
-  "namedAnchors": { "headings": true },
   "preserveAnchorCasing": true,
   "hideBreadcrumbs": true,
   "hidePageHeader": true,

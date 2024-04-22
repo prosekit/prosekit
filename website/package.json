@@ -34,7 +34,7 @@
     "typedoc": "^0.25.13",
     "typedoc-plugin-external-package-links": "^0.1.0",
     "typedoc-plugin-markdown": "4.0.0-next.58",
-    "typedoc-plugin-mdn-links": "^3.1.21",
+    "typedoc-plugin-mdn-links": "^3.1.20",
     "typescript": "^5.4.5",
     "unocss": "^0.59.4",
     "unocss-preset-animations": "^1.0.2",

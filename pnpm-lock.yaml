@@ -754,7 +754,7 @@ importers:
         specifier: 4.0.0-next.58
         version: 4.0.0-next.58(typedoc@0.25.13)
       typedoc-plugin-mdn-links:
-        specifier: ^3.1.21
+        specifier: ^3.1.20
         version: 3.1.22(typedoc@0.25.13)
       typescript:
         specifier: ^5.4.5

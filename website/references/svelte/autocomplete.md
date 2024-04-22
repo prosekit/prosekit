@@ -4,7 +4,7 @@
 
 ## AutocompleteEmpty
 
-> **`const`** **AutocompleteEmpty**: *typeof* `SvelteComponent`
+> `const` **AutocompleteEmpty**: *typeof* `SvelteComponent`
 
 ***
 
@@ -12,7 +12,7 @@
 
 ## AutocompleteItem
 
-> **`const`** **AutocompleteItem**: *typeof* `SvelteComponent`
+> `const` **AutocompleteItem**: *typeof* `SvelteComponent`
 
 ***
 
@@ -20,7 +20,7 @@
 
 ## AutocompleteList
 
-> **`const`** **AutocompleteList**: *typeof* `SvelteComponent`
+> `const` **AutocompleteList**: *typeof* `SvelteComponent`
 
 ***
 
@@ -28,4 +28,4 @@
 
 ## AutocompletePopover
 
-> **`const`** **AutocompletePopover**: *typeof* `SvelteComponent`
+> `const` **AutocompletePopover**: *typeof* `SvelteComponent`

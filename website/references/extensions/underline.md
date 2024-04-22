@@ -13,7 +13,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.toggleUnderline` | [] | - |
+> | `COMMAND_ARGS.toggleUnderline` | [] | ... |
 > | `MARKS` | `"underline"` | - |
 >
 
@@ -32,7 +32,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.toggleUnderline` | [] | - |
+> | `COMMAND_ARGS.toggleUnderline` | [] | ... |
 >
 
 ***

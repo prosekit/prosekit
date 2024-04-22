@@ -16,7 +16,7 @@
 
 <a id="Constructors" name="Constructors"></a>
 
-#### new PopoverContent(undefined)
+#### new PopoverContent()
 
 > **new PopoverContent**(): [`PopoverContent`](popover.md#PopoverContent)
 
@@ -34,7 +34,7 @@
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<`PopoverContentProps`\>
+> `readonly` **\_s**: `SignalState`\<`PopoverContentProps`\>
 
 ***
 
@@ -54,7 +54,7 @@
 
 <a id="Constructors-1" name="Constructors-1"></a>
 
-#### new PopoverRoot(undefined)
+#### new PopoverRoot()
 
 > **new PopoverRoot**(): [`PopoverRoot`](popover.md#PopoverRoot)
 
@@ -72,7 +72,7 @@
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<`PopoverRootProps`\>
+> `readonly` **\_s**: `SignalState`\<`PopoverRootProps`\>
 
 ***
 
@@ -92,7 +92,7 @@
 
 <a id="Constructors-2" name="Constructors-2"></a>
 
-#### new PopoverTrigger(undefined)
+#### new PopoverTrigger()
 
 > **new PopoverTrigger**(): [`PopoverTrigger`](popover.md#PopoverTrigger)
 
@@ -110,4 +110,4 @@
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<`PopoverTriggerProps`\>
+> `readonly` **\_s**: `SignalState`\<`PopoverTriggerProps`\>

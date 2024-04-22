@@ -10,7 +10,7 @@
 
 #### children?
 
-> **`optional`** **children**: `ReactNode`
+> `optional` **children**: `ReactNode`
 
 <a id="editor" name="editor"></a>
 
@@ -36,7 +36,7 @@ Options for [defineReactNodeView](react.md#defineReactNodeView).
 
 #### as?
 
-> **`optional`** **as**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement ) \| (`node`) => [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
+> `optional` **as**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement ) \| (`node`) => [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
 
 The wrapping DOM element for the node view. Defaults to `div` for block nodes and `span` for inline nodes.
 
@@ -56,7 +56,7 @@ The React component to render the node.
 
 #### contentAs?
 
-> **`optional`** **contentAs**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement ) \| (`node`) => [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
+> `optional` **contentAs**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement ) \| (`node`) => [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
 
 The wrapping DOM element for the node view's content. Defaults to `div` for block nodes and `span` for inline nodes.
 
@@ -68,7 +68,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### deselectNode()?
 
-> **`optional`** **deselectNode**: () => `void`
+> `optional` **deselectNode**: () => `void`
 
 ##### Returns
 
@@ -82,7 +82,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### destroy()?
 
-> **`optional`** **destroy**: () => `void`
+> `optional` **destroy**: () => `void`
 
 ##### Returns
 
@@ -96,7 +96,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### ignoreMutation()?
 
-> **`optional`** **ignoreMutation**: (`mutation`) => `boolean`
+> `optional` **ignoreMutation**: (`mutation`) => `boolean`
 
 ##### Parameters
 
@@ -122,7 +122,7 @@ The name of the node type.
 
 #### onUpdate()?
 
-> **`optional`** **onUpdate**: () => `void`
+> `optional` **onUpdate**: () => `void`
 
 ##### Returns
 
@@ -136,7 +136,7 @@ The name of the node type.
 
 #### selectNode()?
 
-> **`optional`** **selectNode**: () => `void`
+> `optional` **selectNode**: () => `void`
 
 ##### Returns
 
@@ -150,7 +150,7 @@ The name of the node type.
 
 #### setSelection()?
 
-> **`optional`** **setSelection**: (`anchor`, `head`, `root`) => `void`
+> `optional` **setSelection**: (`anchor`, `head`, `root`) => `void`
 
 ##### Parameters
 
@@ -172,7 +172,7 @@ The name of the node type.
 
 #### stopEvent()?
 
-> **`optional`** **stopEvent**: (`event`) => `boolean`
+> `optional` **stopEvent**: (`event`) => `boolean`
 
 ##### Parameters
 
@@ -190,7 +190,7 @@ The name of the node type.
 
 #### update()?
 
-> **`optional`** **update**: (`node`, `decorations`, `innerDecorations`) => `boolean`
+> `optional` **update**: (`node`, `decorations`, `innerDecorations`) => `boolean`
 
 ##### Parameters
 
@@ -296,7 +296,7 @@ The name of the node type.
 
 #### editor?
 
-> **`optional`** **editor**: [`Editor`](core.md#EditorE)\<`any`\>
+> `optional` **editor**: [`Editor`](core.md#EditorE)\<`any`\>
 
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
@@ -305,7 +305,7 @@ editor from the nearest `ProseKit` component.
 
 #### priority?
 
-> **`optional`** **priority**: [`Priority`](core.md#Priority)
+> `optional` **priority**: [`Priority`](core.md#Priority)
 
 Optional priority to add the extension with.
 
@@ -323,7 +323,7 @@ Optional priority to add the extension with.
 
 ## ProseKit
 
-> **`const`** **ProseKit**: `ComponentType`\<[`ProseKitProps`](react.md#ProseKitProps)\>
+> `const` **ProseKit**: `ComponentType`\<[`ProseKitProps`](react.md#ProseKitProps)\>
 
 The root component for a ProseKit editor.
 
@@ -377,13 +377,13 @@ Retrieves the editor instance from the nearest ProseKit component.
 
 ### Type parameters
 
-• **E** extends [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\> = `any`
+• **E** *extends* [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\> = `any`
 
 ### Parameters
 
 • **options?**
 
-• **options\.update?**: `boolean`
+• **options.update?**: `boolean`
 
 Whether to update the component when the editor is mounted or editor state
 is updated.

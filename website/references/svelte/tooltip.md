@@ -4,7 +4,7 @@
 
 ## TooltipContent
 
-> **`const`** **TooltipContent**: *typeof* `SvelteComponent`
+> `const` **TooltipContent**: *typeof* `SvelteComponent`
 
 ***
 
@@ -12,7 +12,7 @@
 
 ## TooltipRoot
 
-> **`const`** **TooltipRoot**: *typeof* `SvelteComponent`
+> `const` **TooltipRoot**: *typeof* `SvelteComponent`
 
 ***
 
@@ -20,4 +20,4 @@
 
 ## TooltipTrigger
 
-> **`const`** **TooltipTrigger**: *typeof* `SvelteComponent`
+> `const` **TooltipTrigger**: *typeof* `SvelteComponent`

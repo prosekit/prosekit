@@ -24,7 +24,7 @@ ProseKit extension priority.
 
 ### Type parameters
 
-• **E** extends [`Extension`](core.md#ExtensionT) = `any`
+• **E** *extends* [`Extension`](core.md#ExtensionT) = `any`
 
 ### Accessors
 
@@ -32,7 +32,7 @@ ProseKit extension priority.
 
 #### commands
 
-> **`get`** **commands**(): `ToCommandApplier`\<`ExtractCommandArgs`\<`E`\>\>
+> `get` **commands**(): `ToCommandApplier`\<`ExtractCommandArgs`\<`E`\>\>
 
 ##### Returns
 
@@ -42,7 +42,7 @@ ProseKit extension priority.
 
 #### focused
 
-> **`get`** **focused**(): `boolean`
+> `get` **focused**(): `boolean`
 
 Whether the editor is focused.
 
@@ -54,7 +54,7 @@ Whether the editor is focused.
 
 #### marks
 
-> **`get`** **marks**(): [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<[`ExtractMarks`](core.md#ExtractMarksE)\<`E`\>, `MarkBuilder`\>
+> `get` **marks**(): [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<[`ExtractMarks`](core.md#ExtractMarksE)\<`E`\>, `MarkBuilder`\>
 
 ##### Returns
 
@@ -64,7 +64,7 @@ Whether the editor is focused.
 
 #### mounted
 
-> **`get`** **mounted**(): `boolean`
+> `get` **mounted**(): `boolean`
 
 Whether the editor is mounted.
 
@@ -76,7 +76,7 @@ Whether the editor is mounted.
 
 #### nodes
 
-> **`get`** **nodes**(): [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<[`ExtractNodes`](core.md#ExtractNodesE)\<`E`\>, `NodeBuilder`\>
+> `get` **nodes**(): [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<[`ExtractNodes`](core.md#ExtractNodesE)\<`E`\>, `NodeBuilder`\>
 
 ##### Returns
 
@@ -86,7 +86,7 @@ Whether the editor is mounted.
 
 #### schema
 
-> **`get`** **schema**(): [`Schema`](https://prosemirror.net/docs/ref/#model.Schema)\<[`ExtractNodes`](core.md#ExtractNodesE)\<`E`\>, [`ExtractMarks`](core.md#ExtractMarksE)\<`E`\>\>
+> `get` **schema**(): [`Schema`](https://prosemirror.net/docs/ref/#model.Schema)\<[`ExtractNodes`](core.md#ExtractNodesE)\<`E`\>, [`ExtractMarks`](core.md#ExtractMarksE)\<`E`\>\>
 
 The editor schema.
 
@@ -98,7 +98,7 @@ The editor schema.
 
 #### state
 
-> **`get`** **state**(): [`EditorState`]( https://prosemirror.net/docs/ref/#state.EditorState )
+> `get` **state**(): [`EditorState`]( https://prosemirror.net/docs/ref/#state.EditorState )
 
 ##### Returns
 
@@ -108,7 +108,7 @@ The editor schema.
 
 #### view
 
-> **`get`** **view**(): [`EditorView`]( https://prosemirror.net/docs/ref/#view.EditorView )
+> `get` **view**(): [`EditorView`]( https://prosemirror.net/docs/ref/#view.EditorView )
 
 The editor view.
 
@@ -217,7 +217,7 @@ Unmount the editor. This is equivalent to `mount(null)`.
 
 #### define()
 
-> **`static`** **define**\<`Input`, `Output`\>(`__namedParameters`): [`Facet`](core.md#FacetInputOutput)\<`Input`, `Output`\>
+> `static` **define**\<`Input`, `Output`\>(`__namedParameters`): [`Facet`](core.md#FacetInputOutput)\<`Input`, `Output`\>
 
 ##### Type parameters
 
@@ -252,7 +252,7 @@ Some basic props for custom node views.
 
 #### as?
 
-> **`optional`** **as**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement ) \| (`node`) => [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
+> `optional` **as**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement ) \| (`node`) => [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
 
 The wrapping DOM element for the node view. Defaults to `div` for block nodes and `span` for inline nodes.
 
@@ -260,7 +260,7 @@ The wrapping DOM element for the node view. Defaults to `div` for block nodes an
 
 #### contentAs?
 
-> **`optional`** **contentAs**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement ) \| (`node`) => [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
+> `optional` **contentAs**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement ) \| (`node`) => [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
 
 The wrapping DOM element for the node view's content. Defaults to `div` for block nodes and `span` for inline nodes.
 
@@ -268,7 +268,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### deselectNode()?
 
-> **`optional`** **deselectNode**: () => `void`
+> `optional` **deselectNode**: () => `void`
 
 ##### Returns
 
@@ -278,7 +278,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### destroy()?
 
-> **`optional`** **destroy**: () => `void`
+> `optional` **destroy**: () => `void`
 
 ##### Returns
 
@@ -288,7 +288,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### ignoreMutation()?
 
-> **`optional`** **ignoreMutation**: (`mutation`) => `boolean`
+> `optional` **ignoreMutation**: (`mutation`) => `boolean`
 
 ##### Parameters
 
@@ -302,7 +302,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### onUpdate()?
 
-> **`optional`** **onUpdate**: () => `void`
+> `optional` **onUpdate**: () => `void`
 
 ##### Returns
 
@@ -312,7 +312,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### selectNode()?
 
-> **`optional`** **selectNode**: () => `void`
+> `optional` **selectNode**: () => `void`
 
 ##### Returns
 
@@ -322,7 +322,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### setSelection()?
 
-> **`optional`** **setSelection**: (`anchor`, `head`, `root`) => `void`
+> `optional` **setSelection**: (`anchor`, `head`, `root`) => `void`
 
 ##### Parameters
 
@@ -340,7 +340,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### stopEvent()?
 
-> **`optional`** **stopEvent**: (`event`) => `boolean`
+> `optional` **stopEvent**: (`event`) => `boolean`
 
 ##### Parameters
 
@@ -354,7 +354,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### update()?
 
-> **`optional`** **update**: (`node`, `decorations`, `innerDecorations`) => `boolean`
+> `optional` **update**: (`node`, `decorations`, `innerDecorations`) => `boolean`
 
 ##### Parameters
 
@@ -380,7 +380,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 #### defaultDoc?
 
-> **`optional`** **defaultDoc**: [`NodeJSON`](core.md#NodeJSON)
+> `optional` **defaultDoc**: [`NodeJSON`](core.md#NodeJSON)
 
 A JSON object representing the starting document to use when creating the
 editor.
@@ -389,7 +389,7 @@ editor.
 
 #### defaultHTML?
 
-> **`optional`** **defaultHTML**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
+> `optional` **defaultHTML**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
 
 A HTML element or a HTML string representing the starting document to use
 when creating the editor.
@@ -398,7 +398,7 @@ when creating the editor.
 
 #### defaultSelection?
 
-> **`optional`** **defaultSelection**: [`SelectionJSON`](core.md#SelectionJSON)
+> `optional` **defaultSelection**: [`SelectionJSON`](core.md#SelectionJSON)
 
 A JSON object representing the starting selection to use when creating the
 editor. It's only used when `defaultDoc` or `defaultHTML` is also provided.
@@ -411,7 +411,7 @@ editor. It's only used when `defaultDoc` or `defaultHTML` is also provided.
 
 ### Type parameters
 
-• **E** extends [`Extension`](core.md#ExtensionT)
+• **E** *extends* [`Extension`](core.md#ExtensionT)
 
 ### Properties
 
@@ -419,7 +419,7 @@ editor. It's only used when `defaultDoc` or `defaultHTML` is also provided.
 
 #### defaultDoc?
 
-> **`optional`** **defaultDoc**: [`NodeJSON`](core.md#NodeJSON)
+> `optional` **defaultDoc**: [`NodeJSON`](core.md#NodeJSON)
 
 A JSON object representing the starting document to use when creating the
 editor.
@@ -428,7 +428,7 @@ editor.
 
 #### defaultHTML?
 
-> **`optional`** **defaultHTML**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
+> `optional` **defaultHTML**: `string` \| [`HTMLElement`]( https://developer.mozilla.org/docs/Web/API/HTMLElement )
 
 A HTML element or a HTML string representing the starting document to use
 when creating the editor.
@@ -437,7 +437,7 @@ when creating the editor.
 
 #### defaultSelection?
 
-> **`optional`** **defaultSelection**: [`SelectionJSON`](core.md#SelectionJSON)
+> `optional` **defaultSelection**: [`SelectionJSON`](core.md#SelectionJSON)
 
 A JSON object representing the starting selection to use when creating the
 editor. It's only used when `defaultDoc` or `defaultHTML` is also provided.
@@ -458,7 +458,7 @@ The extension to use when creating the editor.
 
 ### Type parameters
 
-• **T** extends `ExtensionTyping` = `ExtensionTyping`
+• **T** *extends* `ExtensionTyping` = `ExtensionTyping`
 
 ### Properties
 
@@ -466,7 +466,7 @@ The extension to use when creating the editor.
 
 #### \_type?
 
-> **`optional`** **\_type**: `T`
+> `optional` **\_type**: `T`
 
 <a id="extension-2" name="extension-2"></a>
 
@@ -478,7 +478,7 @@ The extension to use when creating the editor.
 
 #### priority?
 
-> **`optional`** **priority**: [`Priority`](core.md#Priority)
+> `optional` **priority**: [`Priority`](core.md#Priority)
 
 <a id="schema-1" name="schema-1"></a>
 
@@ -506,7 +506,7 @@ The schema that this extension represents.
 
 #### convert()?
 
-> **`optional`** **convert**: (`payloads`) => `Output`
+> `optional` **convert**: (`payloads`) => `Output`
 
 ##### Parameters
 
@@ -520,7 +520,7 @@ The schema that this extension represents.
 
 #### converter()?
 
-> **`optional`** **converter**: () => `FacetConverter`\<`Input`, `Output`\>
+> `optional` **converter**: () => `FacetConverter`\<`Input`, `Output`\>
 
 ##### Returns
 
@@ -536,7 +536,7 @@ The schema that this extension represents.
 
 #### singleton?
 
-> **`optional`** **singleton**: `boolean`
+> `optional` **singleton**: `boolean`
 
 ***
 
@@ -568,7 +568,7 @@ The name of the attribute.
 
 #### default?
 
-> **`optional`** **default**: `any`
+> `optional` **default**: `any`
 
 The default value for this attribute, to use when no explicit value is
 provided. Attributes that have no default must be provided whenever a mark
@@ -578,7 +578,7 @@ of a type that has them is created.
 
 #### parseDOM()?
 
-> **`optional`** **parseDOM**: (`node`) => `any`
+> `optional` **parseDOM**: (`node`) => `any`
 
 Parses the attribute value from the DOM.
 
@@ -594,7 +594,7 @@ Parses the attribute value from the DOM.
 
 #### toDOM()?
 
-> **`optional`** **toDOM**: (`value`) => `null` \| `void` \| [`string`, `string`]
+> `optional` **toDOM**: (`value`) => `null` \| `void` \| [`string`, `string`]
 
 Returns the attribute key and value to be set on the DOM node.
 
@@ -626,7 +626,7 @@ The name of the mark type.
 
 ### Type parameters
 
-• **MarkName** extends `string` = `string`
+• **MarkName** *extends* `string` = `string`
 
 ### Properties
 
@@ -656,7 +656,7 @@ The name of the attribute.
 
 #### default?
 
-> **`optional`** **default**: `any`
+> `optional` **default**: `any`
 
 The default value for this attribute, to use when no explicit value is
 provided. Attributes that have no default must be provided whenever a node
@@ -666,7 +666,7 @@ of a type that has them is created.
 
 #### parseDOM()?
 
-> **`optional`** **parseDOM**: (`node`) => `any`
+> `optional` **parseDOM**: (`node`) => `any`
 
 Parses the attribute value from the DOM.
 
@@ -682,7 +682,7 @@ Parses the attribute value from the DOM.
 
 #### toDOM()?
 
-> **`optional`** **toDOM**: (`value`) => `null` \| `void` \| [`string`, `string`]
+> `optional` **toDOM**: (`value`) => `null` \| `void` \| [`string`, `string`]
 
 Returns the attribute key and value to be set on the DOM node.
 
@@ -716,25 +716,25 @@ A JSON representation of the prosemirror node.
 
 #### attrs?
 
-> **`optional`** **attrs**: [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `any`\>
+> `optional` **attrs**: [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `any`\>
 
 <a id="content" name="content"></a>
 
 #### content?
 
-> **`optional`** **content**: [`NodeJSON`](core.md#NodeJSON)[]
+> `optional` **content**: [`NodeJSON`](core.md#NodeJSON)[]
 
 <a id="marks-1" name="marks-1"></a>
 
 #### marks?
 
-> **`optional`** **marks**: `any`[]
+> `optional` **marks**: `any`[]
 
 <a id="text" name="text"></a>
 
 #### text?
 
-> **`optional`** **text**: `string`
+> `optional` **text**: `string`
 
 <a id="type-2" name="type-2"></a>
 
@@ -754,7 +754,7 @@ A JSON representation of the prosemirror node.
 
 ### Type parameters
 
-• **NodeName** extends `string` = `string`
+• **NodeName** *extends* `string` = `string`
 
 ### Properties
 
@@ -768,7 +768,7 @@ A JSON representation of the prosemirror node.
 
 #### topNode?
 
-> **`optional`** **topNode**: `boolean`
+> `optional` **topNode**: `boolean`
 
 ***
 
@@ -919,7 +919,7 @@ behavior).
 
 ### Type parameters
 
-• **Event** extends keyof [`DOMEventMap`]( https://prosemirror.net/docs/ref/#view.DOMEventMap ) = `string`
+• **Event** *extends* keyof [`DOMEventMap`]( https://prosemirror.net/docs/ref/#view.DOMEventMap ) = `string`
 
 ### Parameters
 
@@ -1061,7 +1061,7 @@ The previous editor state.
 
 ### Type parameters
 
-• **E** extends [`Extension`](core.md#ExtensionT)
+• **E** *extends* [`Extension`](core.md#ExtensionT)
 
 ***
 
@@ -1073,7 +1073,7 @@ The previous editor state.
 
 ### Type parameters
 
-• **E** extends [`Extension`](core.md#ExtensionT)
+• **E** *extends* [`Extension`](core.md#ExtensionT)
 
 ***
 
@@ -1085,7 +1085,7 @@ The previous editor state.
 
 ### Type parameters
 
-• **E** extends [`Extension`](core.md#ExtensionT)
+• **E** *extends* [`Extension`](core.md#ExtensionT)
 
 ***
 
@@ -1097,7 +1097,7 @@ The previous editor state.
 
 ### Type parameters
 
-• **E** extends [`Extension`](core.md#ExtensionT)
+• **E** *extends* [`Extension`](core.md#ExtensionT)
 
 ***
 
@@ -1359,19 +1359,19 @@ Returns a command that adds the given mark with the given attributes.
 
 • **options**
 
-• **options\.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
+• **options.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
 
 The attributes of the mark to add.
 
-• **options\.from?**: `number`
+• **options.from?**: `number`
 
 The start position of the document. By default it will be the start position of current selection.
 
-• **options\.to?**: `number`
+• **options.to?**: `number`
 
 The end position of the document. By default it will be the end position of current selection.
 
-• **options\.type**: `string` \| [`MarkType`]( https://prosemirror.net/docs/ref/#model.MarkType )
+• **options.type**: `string` \| [`MarkType`]( https://prosemirror.net/docs/ref/#model.MarkType )
 
 The type of the mark to add.
 
@@ -1409,7 +1409,7 @@ It is a re-export of [clsx/lite](https://www.npmjs.com/package/clsx) with strict
 
 ### Type parameters
 
-• **E** extends [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>
+• **E** *extends* [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>
 
 ### Parameters
 
@@ -1460,7 +1460,7 @@ Defines some basic key bindings.
 
 • **options?**
 
-• **options\.priority?**: [`Priority`](core.md#Priority)
+• **options.priority?**: [`Priority`](core.md#Priority)
 
 The priority of the keymap.
 
@@ -1519,7 +1519,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn](https://p
 
 ### Type parameters
 
-• **T** extends [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `CommandCreator`\> = [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `CommandCreator`\>
+• **T** *extends* [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `CommandCreator`\> = [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `CommandCreator`\>
 
 ### Parameters
 
@@ -1546,7 +1546,7 @@ Register a new event handler for the given event type.
 
 ### Type parameters
 
-• **Event** extends keyof [`DOMEventMap`]( https://prosemirror.net/docs/ref/#view.DOMEventMap ) = `string`
+• **Event** *extends* keyof [`DOMEventMap`]( https://prosemirror.net/docs/ref/#view.DOMEventMap ) = `string`
 
 ### Parameters
 
@@ -1698,8 +1698,8 @@ Add undo/redo history to the editor.
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.redo` | [] | - |
-> | `COMMAND_ARGS.undo` | [] | - |
+> | `COMMAND_ARGS.redo` | [] | ... |
+> | `COMMAND_ARGS.undo` | [] | ... |
 >
 
 ***
@@ -1780,7 +1780,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 
 ### Type parameters
 
-• **Mark** extends `string`
+• **Mark** *extends* `string`
 
 ### Parameters
 
@@ -1843,7 +1843,7 @@ Defines a node type.
 
 ### Type parameters
 
-• **NodeName** extends `string`
+• **NodeName** *extends* `string`
 
 ### Parameters
 
@@ -2111,7 +2111,7 @@ Expands the selection to include the entire mark at the current position.
 
 • **options**
 
-• **options\.type**: `string` \| [`MarkType`]( https://prosemirror.net/docs/ref/#model.MarkType )
+• **options.type**: `string` \| [`MarkType`]( https://prosemirror.net/docs/ref/#model.MarkType )
 
 The type of the mark to expand.
 
@@ -2308,19 +2308,19 @@ Returns a command that removes the given mark.
 
 • **options**
 
-• **options\.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
+• **options.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
 
 If attrs is given, remove precisely the mark with the given attrs. Otherwise, remove all marks of the given type.
 
-• **options\.from?**: `number`
+• **options.from?**: `number`
 
 The start position of the document. By default it will be the start position of current selection.
 
-• **options\.to?**: `number`
+• **options.to?**: `number`
 
 The end position of the document. By default it will be the end position of current selection.
 
-• **options\.type**: `string` \| [`MarkType`]( https://prosemirror.net/docs/ref/#model.MarkType )
+• **options.type**: `string` \| [`MarkType`]( https://prosemirror.net/docs/ref/#model.MarkType )
 
 The type of the mark to remove.
 
@@ -2343,13 +2343,13 @@ type with the given attributes.
 
 • **options**
 
-• **options\.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
+• **options.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
 
-• **options\.from?**: `number`
+• **options.from?**: `number`
 
-• **options\.to?**: `number`
+• **options.to?**: `number`
 
-• **options\.type**: `string` \| [`NodeType`]( https://prosemirror.net/docs/ref/#model.NodeType )
+• **options.type**: `string` \| [`NodeType`]( https://prosemirror.net/docs/ref/#model.NodeType )
 
 ### Returns
 
@@ -2369,16 +2369,16 @@ Returns a command that set the attributes of the current node.
 
 • **options**
 
-• **options\.attrs**: [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
+• **options.attrs**: [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
 
 The attributes to set.
 
-• **options\.pos?**: `number`
+• **options.pos?**: `number`
 
 The position of the node. Defaults to the position of the wrapping node
 containing the current selection.
 
-• **options\.type**: `string` \| [`NodeType`]( https://prosemirror.net/docs/ref/#model.NodeType )
+• **options.type**: `string` \| [`NodeType`]( https://prosemirror.net/docs/ref/#model.NodeType )
 
 The type of node to set the attributes of.
 
@@ -2422,9 +2422,9 @@ Returns a command that toggles the given mark with the given attributes.
 
 • **\_\_namedParameters**
 
-• **\_\_namedParameters\.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
+• **\_\_namedParameters.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
 
-• **\_\_namedParameters\.type**: `string` \| [`MarkType`]( https://prosemirror.net/docs/ref/#model.MarkType )
+• **\_\_namedParameters.type**: `string` \| [`MarkType`]( https://prosemirror.net/docs/ref/#model.MarkType )
 
 ### Returns
 
@@ -2445,9 +2445,9 @@ with the given attributes.
 
 • **\_\_namedParameters**
 
-• **\_\_namedParameters\.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
+• **\_\_namedParameters.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
 
-• **\_\_namedParameters\.type**: `string` \| [`NodeType`]( https://prosemirror.net/docs/ref/#model.NodeType )
+• **\_\_namedParameters.type**: `string` \| [`NodeType`]( https://prosemirror.net/docs/ref/#model.NodeType )
 
 ### Returns
 
@@ -2465,7 +2465,7 @@ Merge multiple extensions into one.
 
 ### Type parameters
 
-• **E** extends [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\> \| [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>[]
+• **E** *extends* [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\> \| [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>[]
 
 ### Parameters
 
@@ -2485,7 +2485,7 @@ Merge multiple extensions into one.
 
 ### Type parameters
 
-• **T** extends [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>
+• **T** *extends* [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\>
 
 ### Parameters
 

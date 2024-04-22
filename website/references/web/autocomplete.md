@@ -270,7 +270,7 @@ null
 
 ## defaultAutocompleteEmptyProps
 
-> **`const`** **defaultAutocompleteEmptyProps**: `object`
+> `const` **defaultAutocompleteEmptyProps**: `object`
 
 ***
 
@@ -278,7 +278,7 @@ null
 
 ## defaultAutocompleteItemProps
 
-> **`const`** **defaultAutocompleteItemProps**: `object`
+> `const` **defaultAutocompleteItemProps**: `object`
 
 ### Type declaration
 
@@ -293,7 +293,7 @@ null
 
 ## defaultAutocompleteListProps
 
-> **`const`** **defaultAutocompleteListProps**: `object`
+> `const` **defaultAutocompleteListProps**: `object`
 
 ### Type declaration
 
@@ -308,7 +308,7 @@ null
 
 ## defaultAutocompletePopoverProps
 
-> **`const`** **defaultAutocompletePopoverProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`object`\>
+> `const` **defaultAutocompletePopoverProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`object`\>
 
 ### Type declaration
 

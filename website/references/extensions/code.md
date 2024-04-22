@@ -13,7 +13,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.toggleCode` | [] | - |
+> | `COMMAND_ARGS.toggleCode` | [] | ... |
 > | `MARKS` | `"code"` | - |
 >
 
@@ -32,7 +32,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.toggleCode` | [] | - |
+> | `COMMAND_ARGS.toggleCode` | [] | ... |
 >
 
 ***

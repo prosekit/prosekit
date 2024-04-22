@@ -4,7 +4,7 @@
 
 ## BlockDragHandle
 
-> **`const`** **BlockDragHandle**: *typeof* `SvelteComponent`
+> `const` **BlockDragHandle**: *typeof* `SvelteComponent`
 
 ***
 
@@ -12,4 +12,4 @@
 
 ## BlockPopover
 
-> **`const`** **BlockPopover**: *typeof* `SvelteComponent`
+> `const` **BlockPopover**: *typeof* `SvelteComponent`

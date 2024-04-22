@@ -12,7 +12,7 @@ The attributes for the `codeBlock` node.
 
 #### language?
 
-> **`optional`** **language**: `string`
+> `optional` **language**: `string`
 
 ***
 
@@ -47,10 +47,10 @@ Adds `codeBlock` nodes to the editor. This includes the following extensions:
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.insertCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
-> | `COMMAND_ARGS.setCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
-> | `COMMAND_ARGS.setCodeBlockAttrs` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
-> | `COMMAND_ARGS.toggleCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
+> | `COMMAND_ARGS.insertCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
+> | `COMMAND_ARGS.setCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
+> | `COMMAND_ARGS.setCodeBlockAttrs` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
+> | `COMMAND_ARGS.toggleCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
 > | `NODES` | `"codeBlock"` | - |
 >
 
@@ -71,10 +71,10 @@ Adds commands for working with `codeBlock` nodes.
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.insertCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
-> | `COMMAND_ARGS.setCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
-> | `COMMAND_ARGS.setCodeBlockAttrs` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
-> | `COMMAND_ARGS.toggleCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | - |
+> | `COMMAND_ARGS.insertCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
+> | `COMMAND_ARGS.setCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
+> | `COMMAND_ARGS.setCodeBlockAttrs` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
+> | `COMMAND_ARGS.toggleCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
 >
 
 ***
@@ -108,7 +108,7 @@ information.
 
 • **\_\_namedParameters**
 
-• **\_\_namedParameters\.parser**: `Parser`
+• **\_\_namedParameters.parser**: `Parser`
 
 ### Returns
 

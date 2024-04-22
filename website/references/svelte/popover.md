@@ -4,7 +4,7 @@
 
 ## PopoverContent
 
-> **`const`** **PopoverContent**: *typeof* `SvelteComponent`
+> `const` **PopoverContent**: *typeof* `SvelteComponent`
 
 ***
 
@@ -12,7 +12,7 @@
 
 ## PopoverRoot
 
-> **`const`** **PopoverRoot**: *typeof* `SvelteComponent`
+> `const` **PopoverRoot**: *typeof* `SvelteComponent`
 
 ***
 
@@ -20,4 +20,4 @@
 
 ## PopoverTrigger
 
-> **`const`** **PopoverTrigger**: *typeof* `SvelteComponent`
+> `const` **PopoverTrigger**: *typeof* `SvelteComponent`

@@ -27,10 +27,10 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.addLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | - |
-> | `COMMAND_ARGS.expandLink` | [] | - |
-> | `COMMAND_ARGS.removeLink` | [] | - |
-> | `COMMAND_ARGS.toggleLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | - |
+> | `COMMAND_ARGS.addLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | ... |
+> | `COMMAND_ARGS.expandLink` | [] | ... |
+> | `COMMAND_ARGS.removeLink` | [] | ... |
+> | `COMMAND_ARGS.toggleLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | ... |
 > | `MARKS` | `"link"` | - |
 >
 
@@ -49,10 +49,10 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.addLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | - |
-> | `COMMAND_ARGS.expandLink` | [] | - |
-> | `COMMAND_ARGS.removeLink` | [] | - |
-> | `COMMAND_ARGS.toggleLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | - |
+> | `COMMAND_ARGS.addLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | ... |
+> | `COMMAND_ARGS.expandLink` | [] | ... |
+> | `COMMAND_ARGS.removeLink` | [] | ... |
+> | `COMMAND_ARGS.toggleLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | ... |
 >
 
 ***

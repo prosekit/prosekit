@@ -16,7 +16,7 @@
 
 <a id="Constructors" name="Constructors"></a>
 
-#### new InlinePopover(undefined)
+#### new InlinePopover()
 
 > **new InlinePopover**(): [`InlinePopover`](inline-popover.md#InlinePopover)
 
@@ -34,7 +34,7 @@
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<[`InlinePopoverProps`](../web/inline-popover.md#InlinePopoverProps)\>
+> `readonly` **\_s**: `SignalState`\<[`InlinePopoverProps`](../web/inline-popover.md#InlinePopoverProps)\>
 
 <a id="editor" name="editor"></a>
 

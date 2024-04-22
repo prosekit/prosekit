@@ -13,7 +13,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.toggleItalic` | [] | - |
+> | `COMMAND_ARGS.toggleItalic` | [] | ... |
 > | `MARKS` | `"italic"` | - |
 >
 
@@ -32,7 +32,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.toggleItalic` | [] | - |
+> | `COMMAND_ARGS.toggleItalic` | [] | ... |
 >
 
 ***

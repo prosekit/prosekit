@@ -32,4 +32,4 @@ Renames and re-exports [TooltipTrigger](../lit/tooltip.md#TooltipTrigger)
 
 ## defaultTooltipTriggerProps
 
-> **`const`** **defaultTooltipTriggerProps**: `object` = `{}`
+> `const` **defaultTooltipTriggerProps**: `object` = `{}`

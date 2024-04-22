@@ -16,7 +16,7 @@
 
 <a id="Constructors" name="Constructors"></a>
 
-#### new TooltipContent(undefined)
+#### new TooltipContent()
 
 > **new TooltipContent**(): [`TooltipContent`](tooltip.md#TooltipContent)
 
@@ -34,7 +34,7 @@
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<`TooltipContentProps`\>
+> `readonly` **\_s**: `SignalState`\<`TooltipContentProps`\>
 
 ***
 
@@ -54,7 +54,7 @@
 
 <a id="Constructors-1" name="Constructors-1"></a>
 
-#### new TooltipRoot(undefined)
+#### new TooltipRoot()
 
 > **new TooltipRoot**(): [`TooltipRoot`](tooltip.md#TooltipRoot)
 
@@ -72,7 +72,7 @@
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<`TooltipRootProps`\>
+> `readonly` **\_s**: `SignalState`\<`TooltipRootProps`\>
 
 ***
 
@@ -92,7 +92,7 @@
 
 <a id="Constructors-2" name="Constructors-2"></a>
 
-#### new TooltipTrigger(undefined)
+#### new TooltipTrigger()
 
 > **new TooltipTrigger**(): [`TooltipTrigger`](tooltip.md#TooltipTrigger)
 
@@ -110,4 +110,4 @@
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<[`TooltipTriggerProps`](../web/tooltip.md#TooltipTriggerProps)\>
+> `readonly` **\_s**: `SignalState`\<[`TooltipTriggerProps`](../web/tooltip.md#TooltipTriggerProps)\>

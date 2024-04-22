@@ -4,7 +4,7 @@
 
 ## ResizableHandle
 
-> **`const`** **ResizableHandle**: *typeof* `SvelteComponent`
+> `const` **ResizableHandle**: *typeof* `SvelteComponent`
 
 ***
 
@@ -12,4 +12,4 @@
 
 ## ResizableRoot
 
-> **`const`** **ResizableRoot**: *typeof* `SvelteComponent`
+> `const` **ResizableRoot**: *typeof* `SvelteComponent`

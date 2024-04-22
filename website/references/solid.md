@@ -10,7 +10,7 @@
 
 #### editor?
 
-> **`optional`** **editor**: [`MaybeAccessor`](solid.md#MaybeAccessorT)\<[`Editor`](core.md#EditorE)\<`any`\>\>
+> `optional` **editor**: [`MaybeAccessor`](solid.md#MaybeAccessorT)\<[`Editor`](core.md#EditorE)\<`any`\>\>
 
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
@@ -19,7 +19,7 @@ editor from the nearest `ProseKit` component.
 
 #### priority?
 
-> **`optional`** **priority**: [`Priority`](core.md#Priority)
+> `optional` **priority**: [`Priority`](core.md#Priority)
 
 Optional priority to add the extension with.
 
@@ -101,13 +101,13 @@ Retrieves the editor instance from the nearest ProseKit component.
 
 ### Type parameters
 
-• **E** extends [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\> = `any`
+• **E** *extends* [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`string`, `string`, `CommandArgs`\>\> = `any`
 
 ### Parameters
 
 • **options?**
 
-• **options\.update?**: `boolean`
+• **options.update?**: `boolean`
 
 Whether to update the component when the editor is mounted or editor state
 is updated.

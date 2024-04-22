@@ -27,9 +27,9 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.insertHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
-> | `COMMAND_ARGS.setHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
-> | `COMMAND_ARGS.toggleHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
+> | `COMMAND_ARGS.insertHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | ... |
+> | `COMMAND_ARGS.setHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | ... |
+> | `COMMAND_ARGS.toggleHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | ... |
 > | `NODES` | `"heading"` | - |
 >
 
@@ -48,9 +48,9 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.insertHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
-> | `COMMAND_ARGS.setHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
-> | `COMMAND_ARGS.toggleHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | - |
+> | `COMMAND_ARGS.insertHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | ... |
+> | `COMMAND_ARGS.setHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | ... |
+> | `COMMAND_ARGS.toggleHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | ... |
 >
 
 ***

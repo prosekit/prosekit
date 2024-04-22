@@ -16,7 +16,7 @@
 
 <a id="Constructors" name="Constructors"></a>
 
-#### new BlockDragHandle(undefined)
+#### new BlockDragHandle()
 
 > **new BlockDragHandle**(): [`BlockDragHandle`](block-handle.md#BlockDragHandle)
 
@@ -34,7 +34,7 @@
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<[`BlockDragHandleProps`](../web/block-handle.md#BlockDragHandleProps)\>
+> `readonly` **\_s**: `SignalState`\<[`BlockDragHandleProps`](../web/block-handle.md#BlockDragHandleProps)\>
 
 <a id="editor" name="editor"></a>
 
@@ -76,7 +76,7 @@ null
 
 <a id="Constructors-1" name="Constructors-1"></a>
 
-#### new BlockPopover(undefined)
+#### new BlockPopover()
 
 > **new BlockPopover**(): [`BlockPopover`](block-handle.md#BlockPopover)
 
@@ -94,7 +94,7 @@ null
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<[`BlockPopoverProps`](../web/block-handle.md#BlockPopoverProps)\>
+> `readonly` **\_s**: `SignalState`\<[`BlockPopoverProps`](../web/block-handle.md#BlockPopoverProps)\>
 
 <a id="editor-1" name="editor-1"></a>
 

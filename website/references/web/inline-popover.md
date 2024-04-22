@@ -170,7 +170,7 @@ The placement of the popover, relative to the selected inline content.
 
 ## defaultInlinePopoverProps
 
-> **`const`** **defaultInlinePopoverProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`object`\>
+> `const` **defaultInlinePopoverProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`object`\>
 
 ### Type declaration
 

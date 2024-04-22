@@ -90,7 +90,7 @@ The position of the handle.
 
 ## defaultResizableHandleProps
 
-> **`const`** **defaultResizableHandleProps**: `object`
+> `const` **defaultResizableHandleProps**: `object`
 
 ### Type declaration
 
@@ -104,7 +104,7 @@ The position of the handle.
 
 ## defaultResizableRootProps
 
-> **`const`** **defaultResizableRootProps**: `object`
+> `const` **defaultResizableRootProps**: `object`
 
 ### Type declaration
 

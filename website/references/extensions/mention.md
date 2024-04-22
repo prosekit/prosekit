@@ -39,7 +39,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.insertMention` | [[`MentionAttrs`](mention.md#MentionAttrs)] | - |
+> | `COMMAND_ARGS.insertMention` | [[`MentionAttrs`](mention.md#MentionAttrs)] | ... |
 > | `NODES` | `"mention"` | - |
 >
 
@@ -58,7 +58,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.insertMention` | [[`MentionAttrs`](mention.md#MentionAttrs)] | - |
+> | `COMMAND_ARGS.insertMention` | [[`MentionAttrs`](mention.md#MentionAttrs)] | ... |
 >
 
 ***

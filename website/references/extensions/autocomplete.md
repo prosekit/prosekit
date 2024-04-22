@@ -8,7 +8,7 @@
 
 <a id="Constructors" name="Constructors"></a>
 
-#### new AutocompleteRule(options)
+#### new AutocompleteRule()
 
 > **new AutocompleteRule**(`options`): [`AutocompleteRule`](autocomplete.md#AutocompleteRule)
 
@@ -16,13 +16,13 @@
 
 • **options**
 
-• **options\.canMatch?**
+• **options.canMatch?**
 
-• **options\.onEnter**: [`MatchHandler`](autocomplete.md#MatchHandler)
+• **options.onEnter**: [`MatchHandler`](autocomplete.md#MatchHandler)
 
-• **options\.onLeave?**: `VoidFunction`
+• **options.onLeave?**: `VoidFunction`
 
-• **options\.regex**: [`RegExp`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp )
+• **options.regex**: [`RegExp`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp )
 
 ##### Returns
 
@@ -34,13 +34,13 @@
 
 #### canMatch()
 
-> **`readonly`** **canMatch**: (`options`) => `boolean`
+> `readonly` **canMatch**: (`options`) => `boolean`
 
 ##### Parameters
 
 • **options**
 
-• **options\.state**: [`EditorState`]( https://prosemirror.net/docs/ref/#state.EditorState )
+• **options.state**: [`EditorState`]( https://prosemirror.net/docs/ref/#state.EditorState )
 
 ##### Returns
 
@@ -50,19 +50,19 @@
 
 #### onLeave?
 
-> **`optional`** **`readonly`** **onLeave**: `VoidFunction`
+> `optional` `readonly` **onLeave**: `VoidFunction`
 
 <a id="onMatch" name="onMatch"></a>
 
 #### onMatch
 
-> **`readonly`** **onMatch**: [`MatchHandler`](autocomplete.md#MatchHandler)
+> `readonly` **onMatch**: [`MatchHandler`](autocomplete.md#MatchHandler)
 
 <a id="regex" name="regex"></a>
 
 #### regex
 
-> **`readonly`** **regex**: [`RegExp`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp )
+> `readonly` **regex**: [`RegExp`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp )
 
 ***
 
@@ -76,17 +76,17 @@
 
 • **options**
 
-• **options\.deleteMatch**
+• **options.deleteMatch**
 
-• **options\.from**: `number`
+• **options.from**: `number`
 
-• **options\.ignoreMatch**
+• **options.ignoreMatch**
 
-• **options\.match**: `RegExpExecArray`
+• **options.match**: `RegExpExecArray`
 
-• **options\.state**: [`EditorState`]( https://prosemirror.net/docs/ref/#state.EditorState )
+• **options.state**: [`EditorState`]( https://prosemirror.net/docs/ref/#state.EditorState )
 
-• **options\.to**: `number`
+• **options.to**: `number`
 
 ### Returns
 

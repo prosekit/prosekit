@@ -13,7 +13,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.toggleStrike` | [] | - |
+> | `COMMAND_ARGS.toggleStrike` | [] | ... |
 > | `MARKS` | `"strike"` | - |
 >
 
@@ -32,7 +32,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.toggleStrike` | [] | - |
+> | `COMMAND_ARGS.toggleStrike` | [] | ... |
 >
 
 ***

@@ -4,4 +4,4 @@
 
 ## InlinePopover
 
-> **`const`** **InlinePopover**: *typeof* `SvelteComponent`
+> `const` **InlinePopover**: *typeof* `SvelteComponent`

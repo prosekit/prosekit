@@ -13,7 +13,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.toggleBold` | [] | - |
+> | `COMMAND_ARGS.toggleBold` | [] | ... |
 > | `MARKS` | `"bold"` | - |
 >
 
@@ -32,7 +32,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.toggleBold` | [] | - |
+> | `COMMAND_ARGS.toggleBold` | [] | ... |
 >
 
 ***

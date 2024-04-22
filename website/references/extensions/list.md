@@ -15,7 +15,7 @@
 > | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.dedentList` | [`DedentListOptions`] | createDedentListCommand |
 > | `COMMAND_ARGS.indentList` | [`IndentListOptions`] | createIndentListCommand |
-> | `COMMAND_ARGS.insertList` | [`ListAttributes`] | - |
+> | `COMMAND_ARGS.insertList` | [`ListAttributes`] | ... |
 > | `COMMAND_ARGS.moveList` | [`"up"` \| `"down"`] | createMoveListCommand |
 > | `COMMAND_ARGS.splitList` | [] | createSplitListCommand |
 > | `COMMAND_ARGS.toggleCollapsed` | [`ToggleCollapsedOptions?`] | createToggleCollapsedCommand |
@@ -42,7 +42,7 @@
 > | `COMMAND_ARGS` | `object` | - |
 > | `COMMAND_ARGS.dedentList` | [`DedentListOptions`] | createDedentListCommand |
 > | `COMMAND_ARGS.indentList` | [`IndentListOptions`] | createIndentListCommand |
-> | `COMMAND_ARGS.insertList` | [`ListAttributes`] | - |
+> | `COMMAND_ARGS.insertList` | [`ListAttributes`] | ... |
 > | `COMMAND_ARGS.moveList` | [`"up"` \| `"down"`] | createMoveListCommand |
 > | `COMMAND_ARGS.splitList` | [] | createSplitListCommand |
 > | `COMMAND_ARGS.toggleCollapsed` | [`ToggleCollapsedOptions?`] | createToggleCollapsedCommand |

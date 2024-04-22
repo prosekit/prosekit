@@ -10,7 +10,7 @@
 
 #### src?
 
-> **`optional`** **src**: `null` \| `string`
+> `optional` **src**: `null` \| `string`
 
 ***
 
@@ -27,7 +27,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.insertImage` | [[`ImageAttrs`](image.md#ImageAttrs)] | - |
+> | `COMMAND_ARGS.insertImage` | [[`ImageAttrs`](image.md#ImageAttrs)] | ... |
 > | `NODES` | `"image"` | - |
 >
 
@@ -46,7 +46,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.insertImage` | [[`ImageAttrs`](image.md#ImageAttrs)] | - |
+> | `COMMAND_ARGS.insertImage` | [[`ImageAttrs`](image.md#ImageAttrs)] | ... |
 >
 
 ***

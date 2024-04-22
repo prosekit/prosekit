@@ -4,7 +4,7 @@
 
 ## PopoverContent
 
-> **`const`** **PopoverContent**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`PopoverContentProps`\> & `object`\>
+> `const` **PopoverContent**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`PopoverContentProps`\> & `object`\>
 
 ***
 
@@ -12,7 +12,7 @@
 
 ## PopoverRoot
 
-> **`const`** **PopoverRoot**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`PopoverRootProps`\> & `object`\>
+> `const` **PopoverRoot**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`PopoverRootProps`\> & `object`\>
 
 ***
 
@@ -20,4 +20,4 @@
 
 ## PopoverTrigger
 
-> **`const`** **PopoverTrigger**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`PopoverTriggerProps`\> & `object`\>
+> `const` **PopoverTrigger**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`PopoverTriggerProps`\> & `object`\>

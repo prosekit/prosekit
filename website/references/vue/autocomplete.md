@@ -4,7 +4,7 @@
 
 ## AutocompleteEmpty
 
-> **`const`** **AutocompleteEmpty**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`AutocompleteEmptyProps`](../web/autocomplete.md#AutocompleteEmptyProps)\> & `object`\>
+> `const` **AutocompleteEmpty**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`AutocompleteEmptyProps`](../web/autocomplete.md#AutocompleteEmptyProps)\> & `object`\>
 
 ***
 
@@ -12,7 +12,7 @@
 
 ## AutocompleteItem
 
-> **`const`** **AutocompleteItem**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`AutocompleteItemProps`](../web/autocomplete.md#AutocompleteItemProps)\> & `object`\>
+> `const` **AutocompleteItem**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`AutocompleteItemProps`](../web/autocomplete.md#AutocompleteItemProps)\> & `object`\>
 
 ***
 
@@ -20,7 +20,7 @@
 
 ## AutocompleteList
 
-> **`const`** **AutocompleteList**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`AutocompleteListProps`](../web/autocomplete.md#AutocompleteListProps)\> & `object`\>
+> `const` **AutocompleteList**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`AutocompleteListProps`](../web/autocomplete.md#AutocompleteListProps)\> & `object`\>
 
 ***
 
@@ -28,4 +28,4 @@
 
 ## AutocompletePopover
 
-> **`const`** **AutocompletePopover**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`AutocompletePopoverProps`](../web/autocomplete.md#AutocompletePopoverProps)\> & `object`\>
+> `const` **AutocompletePopover**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`AutocompletePopoverProps`](../web/autocomplete.md#AutocompletePopoverProps)\> & `object`\>

@@ -96,7 +96,7 @@ The placement of the popover, relative to the hovered block.
 
 ## defaultBlockDragHandleProps
 
-> **`const`** **defaultBlockDragHandleProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`object`\>
+> `const` **defaultBlockDragHandleProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`object`\>
 
 ### Type declaration
 
@@ -110,7 +110,7 @@ The placement of the popover, relative to the hovered block.
 
 ## defaultBlockPopoverProps
 
-> **`const`** **defaultBlockPopoverProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`object`\>
+> `const` **defaultBlockPopoverProps**: [`Readonly`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype)\<`object`\>
 
 ### Type declaration
 

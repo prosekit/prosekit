@@ -16,7 +16,7 @@
 
 <a id="Constructors" name="Constructors"></a>
 
-#### new AutocompleteEmpty(undefined)
+#### new AutocompleteEmpty()
 
 > **new AutocompleteEmpty**(): [`AutocompleteEmpty`](autocomplete.md#AutocompleteEmpty)
 
@@ -34,7 +34,7 @@
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<[`AutocompleteEmptyProps`](../web/autocomplete.md#AutocompleteEmptyProps)\>
+> `readonly` **\_s**: `SignalState`\<[`AutocompleteEmptyProps`](../web/autocomplete.md#AutocompleteEmptyProps)\>
 
 ***
 
@@ -54,7 +54,7 @@
 
 <a id="Constructors-1" name="Constructors-1"></a>
 
-#### new AutocompleteItem(undefined)
+#### new AutocompleteItem()
 
 > **new AutocompleteItem**(): [`AutocompleteItem`](autocomplete.md#AutocompleteItem)
 
@@ -72,7 +72,7 @@
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<[`AutocompleteItemProps`](../web/autocomplete.md#AutocompleteItemProps)\>
+> `readonly` **\_s**: `SignalState`\<[`AutocompleteItemProps`](../web/autocomplete.md#AutocompleteItemProps)\>
 
 <a id="onSelect" name="onSelect"></a>
 
@@ -138,7 +138,7 @@ If not provided, the value is the item's text content.
 
 <a id="Constructors-2" name="Constructors-2"></a>
 
-#### new AutocompleteList(undefined)
+#### new AutocompleteList()
 
 > **new AutocompleteList**(): [`AutocompleteList`](autocomplete.md#AutocompleteList)
 
@@ -156,7 +156,7 @@ If not provided, the value is the item's text content.
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<[`AutocompleteListProps`](../web/autocomplete.md#AutocompleteListProps)\>
+> `readonly` **\_s**: `SignalState`\<[`AutocompleteListProps`](../web/autocomplete.md#AutocompleteListProps)\>
 
 <a id="editor" name="editor"></a>
 
@@ -190,7 +190,7 @@ If not provided, the value is the item's text content.
 
 <a id="Constructors-3" name="Constructors-3"></a>
 
-#### new AutocompletePopover(undefined)
+#### new AutocompletePopover()
 
 > **new AutocompletePopover**(): [`AutocompletePopover`](autocomplete.md#AutocompletePopover)
 
@@ -208,7 +208,7 @@ If not provided, the value is the item's text content.
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<[`AutocompletePopoverProps`](../web/autocomplete.md#AutocompletePopoverProps)\>
+> `readonly` **\_s**: `SignalState`\<[`AutocompletePopoverProps`](../web/autocomplete.md#AutocompletePopoverProps)\>
 
 <a id="boundary" name="boundary"></a>
 

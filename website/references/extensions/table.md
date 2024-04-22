@@ -13,7 +13,7 @@
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.exitTable` | [] | - |
+> | `COMMAND_ARGS.exitTable` | [] | ... |
 > | `COMMAND_ARGS.insertTable` | [`object`] | - |
 > | `NODES` | `"table"` \| `"tableRow"` \| `"tableCell"` \| `"tableHeaderCell"` | - |
 >
@@ -52,7 +52,7 @@ Adds commands for working with `table` nodes.
 > | Member | Type | Value |
 > | :------ | :------ | :------ |
 > | `COMMAND_ARGS` | `object` | - |
-> | `COMMAND_ARGS.exitTable` | [] | - |
+> | `COMMAND_ARGS.exitTable` | [] | ... |
 > | `COMMAND_ARGS.insertTable` | [`object`] | - |
 >
 

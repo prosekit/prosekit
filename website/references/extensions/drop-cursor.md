@@ -10,7 +10,7 @@
 
 #### class?
 
-> **`optional`** **class**: `string`
+> `optional` **class**: `string`
 
 A CSS class name to add to the cursor element.
 
@@ -18,7 +18,7 @@ A CSS class name to add to the cursor element.
 
 #### color?
 
-> **`optional`** **color**: `string` \| `false`
+> `optional` **color**: `string` \| `false`
 
 The color of the cursor.  Use `false` to apply no color and rely only on class.
 
@@ -32,7 +32,7 @@ The color of the cursor.  Use `false` to apply no color and rely only on class.
 
 #### width?
 
-> **`optional`** **width**: `number`
+> `optional` **width**: `number`
 
 The precise width of the cursor in pixels.
 

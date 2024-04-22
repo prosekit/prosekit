@@ -4,7 +4,7 @@
 
 ## TooltipContent
 
-> **`const`** **TooltipContent**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`TooltipContentProps`\> & `object`\>
+> `const` **TooltipContent**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`TooltipContentProps`\> & `object`\>
 
 ***
 
@@ -12,7 +12,7 @@
 
 ## TooltipRoot
 
-> **`const`** **TooltipRoot**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`TooltipRootProps`\> & `object`\>
+> `const` **TooltipRoot**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<`TooltipRootProps`\> & `object`\>
 
 ***
 
@@ -20,4 +20,4 @@
 
 ## TooltipTrigger
 
-> **`const`** **TooltipTrigger**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`TooltipTriggerProps`](../web/tooltip.md#TooltipTriggerProps)\> & `object`\>
+> `const` **TooltipTrigger**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`TooltipTriggerProps`](../web/tooltip.md#TooltipTriggerProps)\> & `object`\>

@@ -16,7 +16,7 @@
 
 <a id="Constructors" name="Constructors"></a>
 
-#### new ResizableHandle(undefined)
+#### new ResizableHandle()
 
 > **new ResizableHandle**(): [`ResizableHandle`](resizable.md#ResizableHandle)
 
@@ -34,7 +34,7 @@
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<[`ResizableHandleProps`](../web/resizable.md#ResizableHandleProps)\>
+> `readonly` **\_s**: `SignalState`\<[`ResizableHandleProps`](../web/resizable.md#ResizableHandleProps)\>
 
 <a id="position" name="position"></a>
 
@@ -76,7 +76,7 @@ The position of the handle.
 
 <a id="Constructors-1" name="Constructors-1"></a>
 
-#### new ResizableRoot(undefined)
+#### new ResizableRoot()
 
 > **new ResizableRoot**(): [`ResizableRoot`](resizable.md#ResizableRoot)
 
@@ -94,7 +94,7 @@ The position of the handle.
 
 #### \_s
 
-> **`readonly`** **\_s**: `SignalState`\<[`ResizableRootProps`](../web/resizable.md#ResizableRootProps)\>
+> `readonly` **\_s**: `SignalState`\<[`ResizableRootProps`](../web/resizable.md#ResizableRootProps)\>
 
 <a id="aspectRatio" name="aspectRatio"></a>
 

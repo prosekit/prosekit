@@ -35,16 +35,16 @@ See also [textblockTypeInputRule](https://prosemirror.net/docs/ref/#inputrules.t
 
 • **\_\_namedParameters**
 
-• **\_\_namedParameters\.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs ) \| (`match`) => `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
+• **\_\_namedParameters.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs ) \| (`match`) => `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
 
 Attributes to set on the node.
 
-• **\_\_namedParameters\.regex**: [`RegExp`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp )
+• **\_\_namedParameters.regex**: [`RegExp`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp )
 
 The regular expression to match against. You'll usually want to start it
 with `^` to that it is only matched at the start of a textblock.
 
-• **\_\_namedParameters\.type**: `string` \| [`NodeType`]( https://prosemirror.net/docs/ref/#model.NodeType )
+• **\_\_namedParameters.type**: `string` \| [`NodeType`]( https://prosemirror.net/docs/ref/#model.NodeType )
 
 The node type to replace the matched text with.
 
@@ -69,11 +69,11 @@ See also [wrappingInputRule](https://prosemirror.net/docs/ref/#inputrules.wrappi
 
 • **\_\_namedParameters**
 
-• **\_\_namedParameters\.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs ) \| (`match`) => `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
+• **\_\_namedParameters.attrs?**: `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs ) \| (`match`) => `null` \| [`Attrs`]( https://prosemirror.net/docs/ref/#model.Attrs )
 
 Attributes to set on the node.
 
-• **\_\_namedParameters\.join?**
+• **\_\_namedParameters.join?**
 
 By default, if there's a node with the same type above the newly wrapped
 node, the rule will try to
@@ -82,12 +82,12 @@ two nodes. You can pass a join predicate, which takes a regular expression
 match and the node before the wrapped node, and can return a boolean to
 indicate whether a join should happen.
 
-• **\_\_namedParameters\.regex**: [`RegExp`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp )
+• **\_\_namedParameters.regex**: [`RegExp`]( https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp )
 
 The regular expression to match against. You'll usually want to start it
 with `^` to that it is only matched at the start of a textblock.
 
-• **\_\_namedParameters\.type**: `string` \| [`NodeType`]( https://prosemirror.net/docs/ref/#model.NodeType )
+• **\_\_namedParameters.type**: `string` \| [`NodeType`]( https://prosemirror.net/docs/ref/#model.NodeType )
 
 The type of node to wrap in.
 

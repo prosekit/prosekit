@@ -4,4 +4,4 @@
 
 ## InlinePopover
 
-> **`const`** **InlinePopover**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`InlinePopoverProps`](../web/inline-popover.md#InlinePopoverProps)\> & `object`\>
+> `const` **InlinePopover**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`InlinePopoverProps`](../web/inline-popover.md#InlinePopoverProps)\> & `object`\>

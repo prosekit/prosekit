@@ -4,7 +4,7 @@
 
 ## BlockDragHandle
 
-> **`const`** **BlockDragHandle**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`BlockDragHandleProps`](../web/block-handle.md#BlockDragHandleProps)\> & `object`\>
+> `const` **BlockDragHandle**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`BlockDragHandleProps`](../web/block-handle.md#BlockDragHandleProps)\> & `object`\>
 
 ***
 
@@ -12,4 +12,4 @@
 
 ## BlockPopover
 
-> **`const`** **BlockPopover**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`BlockPopoverProps`](../web/block-handle.md#BlockPopoverProps)\> & `object`\>
+> `const` **BlockPopover**: `DefineSetupFnComponent`\<[`Partial`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype)\<[`BlockPopoverProps`](../web/block-handle.md#BlockPopoverProps)\> & `object`\>

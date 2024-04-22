@@ -18,7 +18,7 @@ The placeholder text to use.
 
 #### strategy?
 
-> **`optional`** **strategy**: `"doc"` \| `"block"`
+> `optional` **strategy**: `"doc"` \| `"block"`
 
 By default, the placeholder text will be shown whenever the current text
 cursor is in an empty text node. If you only want to show the placeholder

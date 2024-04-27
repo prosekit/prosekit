@@ -8,32 +8,41 @@ test.describe('markRule', () => {
       await page.goto(example)
       const editor = await waitForEditor(page)
 
+      const getLinkContent = async () => {
+        const locators = await editor.locator('a').all()
+        return await Promise.all(
+          locators.map(async (locator) => {
+            return await locator.innerText()
+          }),
+        )
+      }
+
       await editor.pressSequentially('Fix ')
-      expect(await editor.innerHTML()).toMatchSnapshot()
+      expect(await getLinkContent()).toEqual([])
 
       await editor.pressSequentially('#')
-      expect(await editor.innerHTML()).toMatchSnapshot()
+      expect(await getLinkContent()).toEqual([])
 
       await editor.pressSequentially('1')
-      expect(await editor.innerHTML()).toMatchSnapshot()
+      expect(await getLinkContent()).toEqual(['#1'])
 
       await editor.pressSequentially('2')
-      expect(await editor.innerHTML()).toMatchSnapshot()
+      expect(await getLinkContent()).toEqual(['#12'])
 
       await editor.pressSequentially(' and ')
-      expect(await editor.innerHTML()).toMatchSnapshot()
+      expect(await getLinkContent()).toEqual(['#12'])
 
       await editor.pressSequentially('#')
-      expect(await editor.innerHTML()).toMatchSnapshot()
+      expect(await getLinkContent()).toEqual(['#12'])
 
       await editor.pressSequentially('3')
-      expect(await editor.innerHTML()).toMatchSnapshot()
+      expect(await getLinkContent()).toEqual(['#12', '#3'])
 
       await editor.pressSequentially('4')
-      expect(await editor.innerHTML()).toMatchSnapshot()
+      expect(await getLinkContent()).toEqual(['#12', '#34'])
 
       await editor.pressSequentially('.')
-      expect(await editor.innerHTML()).toMatchSnapshot()
+      expect(await getLinkContent()).toEqual(['#12', '#34'])
     })
   }
 })

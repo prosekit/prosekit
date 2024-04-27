@@ -43,6 +43,15 @@ test.describe('markRule', () => {
 
       await editor.pressSequentially('.')
       expect(await getLinkContent()).toEqual(['#12', '#34'])
+
+      await editor.press('Backspace')
+      expect(await getLinkContent()).toEqual(['#12', '#34'])
+
+      await editor.press('Backspace')
+      expect(await getLinkContent()).toEqual(['#12', '#3'])
+
+      await editor.pressSequentially('5')
+      expect(await getLinkContent()).toEqual(['#12', '#35'])
     })
   }
 })

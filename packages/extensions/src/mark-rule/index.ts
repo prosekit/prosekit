@@ -18,7 +18,7 @@ import { getSpanTextRanges } from './changed-range'
 
 export interface MarkRuleOptions {
   /**
-   * The regular expression to match against. It should have a `g` flag to match
+   * The regular expression to match against. It must has a `g` flag to match
    * all instances of the mark.
    */
   regex: RegExp
@@ -31,8 +31,19 @@ export interface MarkRuleOptions {
   /**
    * Attributes to set on the mark. If a function is provided, it will be called
    * with the matched result from the regular expression.
+   *
+   * @default null
    */
   attrs?: Attrs | null | ((match: RegExpMatchArray) => Attrs | null)
+
+  /**
+   * Whether to remove other marks of the same type when they don't match the
+   * regular expression. It can be a boolean value or a function that takes the
+   * mark and returns a boolean.
+   *
+   * @default true
+   */
+  remove?: boolean | ((mark: Mark) => boolean)
 }
 
 /**

@@ -52,6 +52,8 @@ test.describe('markRule', () => {
 
       await editor.pressSequentially('5')
       expect(await getLinkContent()).toEqual(['#12', '#35'])
+
+      expect(await editor.innerText()).toEqual('Fix #12 and #35')
     })
   }
 })

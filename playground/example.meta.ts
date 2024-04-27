@@ -165,6 +165,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-mark-rule",
+      "framework": "react",
+      "story": "mark-rule",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-readonly",
       "framework": "react",
       "story": "readonly",

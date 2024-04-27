@@ -59,6 +59,10 @@ export const exampleItems = [
     "link": "/examples/list"
   },
   {
+    "text": "mark-rule",
+    "link": "/examples/mark-rule"
+  },
+  {
     "text": "minimal",
     "link": "/examples/minimal"
   },

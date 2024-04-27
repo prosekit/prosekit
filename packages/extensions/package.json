@@ -26,6 +26,7 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
+    "./mark-rule": "./src/mark-rule/index.ts",
     "./autocomplete": "./src/autocomplete/index.ts",
     "./blockquote": "./src/blockquote/index.ts",
     "./bold": "./src/bold/index.ts",
@@ -79,6 +80,11 @@
         "types": "./dist/prosekit-extensions.d.ts",
         "import": "./dist/prosekit-extensions.js",
         "default": "./dist/prosekit-extensions.js"
+      },
+      "./mark-rule": {
+        "types": "./dist/prosekit-extensions-mark-rule.d.ts",
+        "import": "./dist/prosekit-extensions-mark-rule.js",
+        "default": "./dist/prosekit-extensions-mark-rule.js"
       },
       "./autocomplete": {
         "types": "./dist/prosekit-extensions-autocomplete.d.ts",
@@ -200,6 +206,9 @@
       "*": {
         ".": [
           "./dist/prosekit-extensions.d.ts"
+        ],
+        "mark-rule": [
+          "./dist/prosekit-extensions-mark-rule.d.ts"
         ],
         "autocomplete": [
           "./dist/prosekit-extensions-autocomplete.d.ts"

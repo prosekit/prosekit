@@ -1,0 +1,1 @@
+<p>Fix <a href="https://example.com/issue/12" title="Issue #12">#12</a> and <a href="https://example.com/issue/34" title="Issue #34">#34</a></p>

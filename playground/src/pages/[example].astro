@@ -8,6 +8,7 @@ import E252666119 from '../../examples/react-heading/editor'
 import E4040190458 from '../../examples/react-inline-menu/editor'
 import E1745952196 from '../../examples/react-keymap/editor'
 import E1157502443 from '../../examples/react-list/editor'
+import E3484995575 from '../../examples/react-mark-rule/editor'
 import E2808803641 from '../../examples/react-readonly/editor'
 import E2473342960 from '../../examples/react-resizable-image/editor'
 import E2240445596 from '../../examples/react-save-html/editor'
@@ -71,6 +72,7 @@ export const getStaticPaths = () => [
   { params: { example: 'react-inline-menu' } },
   { params: { example: 'react-keymap' } },
   { params: { example: 'react-list' } },
+  { params: { example: 'react-mark-rule' } },
   { params: { example: 'react-readonly' } },
   { params: { example: 'react-resizable-image' } },
   { params: { example: 'react-save-html' } },
@@ -138,6 +140,7 @@ const { example } = Astro.params
   {example === 'react-inline-menu' && <E4040190458 client:only="react" />}
   {example === 'react-keymap' && <E1745952196 client:only="react" />}
   {example === 'react-list' && <E1157502443 client:only="react" />}
+  {example === 'react-mark-rule' && <E3484995575 client:only="react" />}
   {example === 'react-readonly' && <E2808803641 client:only="react" />}
   {example === 'react-resizable-image' && <E2473342960 client:only="react" />}
   {example === 'react-save-html' && <E2240445596 client:only="react" />}

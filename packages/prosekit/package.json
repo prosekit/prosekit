@@ -31,6 +31,7 @@
     "./basic/typography.css": "./src/basic/typography.css",
     "./core": "./src/core.gen.ts",
     "./extensions": "./src/extensions.gen.ts",
+    "./extensions/mark-rule": "./src/extensions/mark-rule.gen.ts",
     "./extensions/autocomplete": "./src/extensions/autocomplete.gen.ts",
     "./extensions/blockquote": "./src/extensions/blockquote.gen.ts",
     "./extensions/bold": "./src/extensions/bold.gen.ts",
@@ -205,6 +206,11 @@
         "types": "./dist/prosekit-extensions.d.ts",
         "import": "./dist/prosekit-extensions.js",
         "default": "./dist/prosekit-extensions.js"
+      },
+      "./extensions/mark-rule": {
+        "types": "./dist/prosekit-extensions-mark-rule.d.ts",
+        "import": "./dist/prosekit-extensions-mark-rule.js",
+        "default": "./dist/prosekit-extensions-mark-rule.js"
       },
       "./extensions/autocomplete": {
         "types": "./dist/prosekit-extensions-autocomplete.d.ts",
@@ -628,6 +634,9 @@
         ],
         "extensions": [
           "./dist/prosekit-extensions.d.ts"
+        ],
+        "extensions/mark-rule": [
+          "./dist/prosekit-extensions-mark-rule.d.ts"
         ],
         "extensions/autocomplete": [
           "./dist/prosekit-extensions-autocomplete.d.ts"

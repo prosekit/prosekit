@@ -30,6 +30,8 @@
 
 - [list](./examples/list)
 
+- [mark-rule](./examples/mark-rule)
+
 - [minimal](./examples/minimal)
 
 - [placeholder](./examples/placeholder)

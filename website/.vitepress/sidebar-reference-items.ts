@@ -70,6 +70,10 @@ export const referenceItems = [
         "link": "/references/extensions/list"
       },
       {
+        "text": "mark-rule",
+        "link": "/references/extensions/mark-rule"
+      },
+      {
         "text": "mention",
         "link": "/references/extensions/mention"
       },

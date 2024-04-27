@@ -61,13 +61,13 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "vitest": "^1.5.0"
+    "vitest": "^1.5.2"
   },
   "publishConfig": {
     "exports": {

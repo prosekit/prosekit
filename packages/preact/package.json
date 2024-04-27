@@ -47,7 +47,7 @@
     "react-merge-refs": "^2.1.1"
   },
   "peerDependencies": {
-    "preact": ">= 9.0.0"
+    "preact": ">= 10.11.0"
   },
   "peerDependenciesMeta": {
     "preact": {

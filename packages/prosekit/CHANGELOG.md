@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.6.4
+
+### Patch Changes
+
+- [`27fff29`](https://github.com/ocavue/prosekit/commit/27fff296a312148e8c014f6b5935d1f5e474b801) ![](https://prosekit.dev/b/preact)
+
+  Require minimal `preact` version 10.11.0.
+
+- [`c6f22e3`](https://github.com/ocavue/prosekit/commit/c6f22e3c6faf62ac601373ce63e7948596cdfbae) ![](https://prosekit.dev/b/pm)
+
+  Update `prosemirror-view`.
+
+- [`03f9eb2`](https://github.com/ocavue/prosekit/commit/03f9eb2c1285a912f5d862e4fe3a572e47046f42) ![](https://prosekit.dev/b/react)
+
+  Require minimal `react` version 18.2.0.
+
 ## 0.6.3
 
 ### Patch Changes

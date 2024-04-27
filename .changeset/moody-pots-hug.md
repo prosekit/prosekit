@@ -3,4 +3,4 @@
 '@prosekit/preact': patch
 ---
 
-Require minimal preact version `10.11.0`.
+Require minimal `preact` version 10.11.0.

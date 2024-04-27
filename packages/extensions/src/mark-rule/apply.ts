@@ -84,7 +84,6 @@ export function applyMarkRules(
     const expected = getExpectedMarkings(rules, newState.doc, from, to)
     const received = getReceivedMarkings(rules, newState.doc, from, to)
 
-    // TODO: use remove 
     toRemove.push(...markingDiffs(received, expected))
     toCreate.push(...markingDiffs(expected, received))
   }

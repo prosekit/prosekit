@@ -37,7 +37,7 @@ export function getCheckRanges(
   const $from = doc.resolve(from)
   const $to = doc.resolve(to)
 
-  if ($from.sameParent($to)) {
+  if ($from.sameParent($to) && $from.parent.isTextblock) {
     return [[$from.start(), $to.end()]]
   } else {
     const nodeRange = $from.blockRange($to)

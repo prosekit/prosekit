@@ -38,7 +38,7 @@ function getExpectedMarkings(
 }
 
 function getReceivedMarkings(
-  rules: MarkRuleOptions[],
+  rules: MarkRule[],
   doc: ProseMirrorNode,
   from: number,
   to: number,
@@ -47,24 +47,17 @@ function getReceivedMarkings(
   const schema = doc.type.schema
   const markTypes = rules.map((rule) => getMarkType(schema, rule.type))
 
-  let seen = false
-
-  doc.nodesBetween(from, to, (node) => {
-    if (!node.isTextblock || seen) {
-      // Unexpectedly
+  doc.nodesBetween(from, to, (node, pos) => {
+    if (!node.isInline) {
       return
     }
 
-    seen = true
-
-    node.content.forEach((child, offset) => {
-      for (const markType of markTypes) {
-        const mark = child.marks.find((mark) => mark.type === markType)
-        if (mark) {
-          result.push([mark, from + offset, from + offset + child.nodeSize])
-        }
+    for (const markType of markTypes) {
+      const mark = node.marks.find((mark) => mark.type === markType)
+      if (mark) {
+        result.push([mark, pos, pos + node.nodeSize])
       }
-    })
+    }
   })
   return result
 }

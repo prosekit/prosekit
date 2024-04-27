@@ -55,6 +55,9 @@ export function defineLinkCommands() {
   })
 }
 
+/**
+ * Apply link marks after pressing Space.
+ */
 export function defineLinkInputRule() {
   return defineInputRule(
     new InputRule(LINK_INPUT_RE, (state, match, from) => {
@@ -67,6 +70,9 @@ export function defineLinkInputRule() {
   )
 }
 
+/**
+ * Apply link marks after typing Enter.
+ */
 export function defineLinkEnterRule() {
   return defineEnterRule({
     regex: LINK_ENTER_RE,
@@ -81,6 +87,9 @@ export function defineLinkEnterRule() {
   })
 }
 
+/**
+ * Apply and remove link marks to the text during typing.
+ */
 export function defineLinkMarkRule() {
   return defineMarkRule({
     regex: LINK_MARK_RE,

@@ -165,18 +165,18 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
     "postcss": "^8.4.38",
     "postcss-nesting": "^12.1.2",
     "preact": "^10.20.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "solid-js": "^1.8.16",
+    "solid-js": "^1.8.17",
     "svelte": "^4.2.15",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "vue": "^3.4.24"
+    "vue": "^3.4.25"
   },
   "publishConfig": {
     "exports": {

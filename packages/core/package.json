@@ -36,15 +36,15 @@
   },
   "dependencies": {
     "@prosekit/pm": "^0.1.2",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "orderedmap": "^2.1.1",
-    "type-fest": "^4.16.0"
+    "type-fest": "^4.17.0"
   },
   "devDependencies": {
     "@prosekit/dev": "*",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "vitest": "^1.5.0"
+    "vitest": "^1.5.2"
   },
   "publishConfig": {
     "exports": {

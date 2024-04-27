@@ -11,6 +11,7 @@ import { InputRule } from '@prosekit/pm/inputrules'
 
 import { defineEnterRule } from '../enter-rule'
 import { defineInputRule } from '../input-rule'
+import { defineMarkRule } from '../mark-rule'
 
 import { LINK_RE, LINK_SPACE_RE } from './link-regex'
 
@@ -77,6 +78,14 @@ export function defineLinkEnterRule() {
       const tr = state.tr.addMark(from, from + href.length, mark)
       return tr.docChanged ? tr : null
     },
+  })
+}
+
+export function defineLinkMarkRule() {
+  return defineMarkRule({
+    regex: LINK_RE,
+    type: 'link',
+    attrs: (match) => ({ href: match[1] }),
   })
 }
 

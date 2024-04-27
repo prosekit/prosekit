@@ -2,7 +2,7 @@ import { OBJECT_REPLACEMENT_CHARACTER, getMarkType } from '@prosekit/core'
 import { Mark, ProseMirrorNode } from '@prosekit/pm/model'
 import { EditorState, Transaction } from '@prosekit/pm/state'
 
-import { getAffectedRange, getCheckRanges } from './range'
+import { getCheckRanges } from './range'
 import type { MarkRule } from './rule'
 
 type MarkRange = [mark: Mark, from: number, to: number]
@@ -74,8 +74,7 @@ export function applyMarkRules(
     return null
   }
 
-  const [from, to] = getAffectedRange(transactions, oldState, newState)
-  const ranges = getCheckRanges(newState.doc, from, to)
+  const ranges = getCheckRanges(transactions, oldState, newState)
 
   const toRemove: MarkRange[] = []
   const toCreate: MarkRange[] = []

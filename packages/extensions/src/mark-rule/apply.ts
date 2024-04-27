@@ -1,14 +1,14 @@
 import { OBJECT_REPLACEMENT_CHARACTER, getMarkType } from '@prosekit/core'
-import { Mark, ProseMirrorNode, type Attrs } from '@prosekit/pm/model'
+import { Mark, ProseMirrorNode } from '@prosekit/pm/model'
 import { EditorState, Transaction } from '@prosekit/pm/state'
 
 import { getAffectedRange, getCheckRanges } from './range'
-import type { MarkRule, MarkRuleOptions } from './rule'
+import type { MarkRule } from './rule'
 
 type MarkRange = [mark: Mark, from: number, to: number]
 
 function getExpectedMarkings(
-  rules: MarkRuleOptions[],
+  rules: MarkRule[],
   doc: ProseMirrorNode,
   from: number,
   to: number,
@@ -19,17 +19,11 @@ function getExpectedMarkings(
     rule.regex.lastIndex = 0
     const matches = text.matchAll(rule.regex)
     const markType = getMarkType(doc.type.schema, rule.type)
-    const getAttrs = rule.attrs
 
     for (const match of matches) {
       const index = match.index
       if (index == null) continue
-      const attrs: Attrs | null = getAttrs
-        ? typeof getAttrs === 'function'
-          ? (getAttrs(match) as Attrs)
-          : getAttrs
-        : null
-
+      const attrs = rule.getAttrs(match)
       const mark = markType.create(attrs)
       result.push([mark, from + index, from + index + match[0].length])
     }
@@ -90,6 +84,7 @@ export function applyMarkRules(
     const expected = getExpectedMarkings(rules, newState.doc, from, to)
     const received = getReceivedMarkings(rules, newState.doc, from, to)
 
+    // TODO: use remove 
     toRemove.push(...markingDiffs(received, expected))
     toCreate.push(...markingDiffs(expected, received))
   }

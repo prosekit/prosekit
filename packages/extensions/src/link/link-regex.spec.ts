@@ -26,6 +26,9 @@ test('LINK_MARK_RE', () => {
   expect(run('https://example.com/path?query=1#fragment')).toEqual(
     'https://example.com/path?query=1#fragment',
   )
+  expect(run('Foo https://example.com/path?query=1#fragment Bar')).toEqual(
+    'https://example.com/path?query=1#fragment',
+  )
 
   // Ignore the period at the end
   expect(run('https://example.com.')).toEqual('https://example.com')
@@ -37,4 +40,14 @@ test('LINK_MARK_RE', () => {
   expect(run('Foo www.googl')).toEqual(null)
   // .google is a TLD
   expect(run('Foo www.google')).toEqual('www.google')
+
+  // Don't match ? when there is nothing after it
+  expect(run('www.example.com?')).toEqual('www.example.com')
+  expect(run('www.example.com/?')).toEqual('www.example.com/')
+  expect(run('www.example.com/?=')).toEqual('www.example.com/?=')
+
+  // Don't match . when there is nothing after it
+  expect(run('www.example.com.')).toEqual('www.example.com')
+  expect(run('www.example.com/.')).toEqual('www.example.com/')
+  expect(run('www.example.com/.gitignore')).toEqual('www.example.com/.gitignore')
 })

@@ -3,4 +3,4 @@
 'prosekit': patch
 ---
 
-Add `defineLinkMarkRule`, which can be used as an alternative to the combination of `defineLinkMarkRule` and `defineLinkEnterRule`.
+Add `defineLinkMarkRule`, which can be used as an alternative to the combination of `defineLinkInputRule` and `defineLinkEnterRule`.

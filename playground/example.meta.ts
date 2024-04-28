@@ -165,6 +165,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-mark-rule",
+      "framework": "react",
+      "story": "mark-rule",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "issue-link.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-readonly",
       "framework": "react",
       "story": "readonly",
@@ -701,6 +720,25 @@ export const exampleMeta = {
         },
         {
           "path": "toolbar.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-mark-rule",
+      "framework": "vue",
+      "story": "mark-rule",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "issue-link.ts",
           "hidden": false
         }
       ]

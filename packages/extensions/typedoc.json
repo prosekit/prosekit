@@ -16,6 +16,7 @@
     "./src/italic/index.ts",
     "./src/link/index.ts",
     "./src/list/index.ts",
+    "./src/mark-rule/index.ts",
     "./src/mention/index.ts",
     "./src/placeholder/index.ts",
     "./src/readonly/index.ts",

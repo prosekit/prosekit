@@ -5,9 +5,17 @@ import { sortBy, uniq } from 'lodash-es'
 import { readExampleMeta } from './example-meta.js'
 import { vfs, type VirtualFile } from './virtual-file-system.js'
 
+/**
+ * A list of shared files that are used by multiple examples.
+ *
+ * If a file is prefixed with `*`, it is a shared file that can be used by all
+ * frameworks. Otherwise, it is a shared file that is used by examples with the
+ * same framework.
+ */
 const frameworkSharedFiles = [
   '*user-data.ts',
   '*tag-data.ts',
+  '*issue-link.ts',
 
   'use-readonly.ts',
   'use-submit-keymap.ts',

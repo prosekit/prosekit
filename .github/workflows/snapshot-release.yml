@@ -38,6 +38,9 @@ jobs:
       - name: Update package version
         run: pnpm ci:version:next
 
+      - name: Build packages
+        run: pnpm build:package
+
       - name: Publish to NPM
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ".npmrc"

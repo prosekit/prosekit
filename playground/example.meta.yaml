@@ -91,6 +91,8 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: issue-link.ts
+        hidden: false
   - name: react-readonly
     framework: react
     story: readonly
@@ -372,6 +374,16 @@ examples:
       - path: toggle.vue
         hidden: false
       - path: toolbar.vue
+        hidden: false
+  - name: vue-mark-rule
+    framework: vue
+    story: mark-rule
+    files:
+      - path: editor.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: issue-link.ts
         hidden: false
   - name: vue-placeholder
     framework: vue

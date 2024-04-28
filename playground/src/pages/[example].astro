@@ -32,6 +32,7 @@ import E3742569998 from '../../examples/vue-italic/editor.vue'
 import E1518313277 from '../../examples/vue-keymap/editor.vue'
 import E1881772066 from '../../examples/vue-link/editor.vue'
 import E1429320806 from '../../examples/vue-list/editor.vue'
+import E1512793020 from '../../examples/vue-mark-rule/editor.vue'
 import E365230847 from '../../examples/vue-placeholder/editor.vue'
 import E3694637844 from '../../examples/vue-readonly/editor.vue'
 import E281679667 from '../../examples/vue-save-html/editor.vue'
@@ -96,6 +97,7 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-keymap' } },
   { params: { example: 'vue-link' } },
   { params: { example: 'vue-list' } },
+  { params: { example: 'vue-mark-rule' } },
   { params: { example: 'vue-placeholder' } },
   { params: { example: 'vue-readonly' } },
   { params: { example: 'vue-save-html' } },
@@ -164,6 +166,7 @@ const { example } = Astro.params
   {example === 'vue-keymap' && <E1518313277 client:only="vue" />}
   {example === 'vue-link' && <E1881772066 client:only="vue" />}
   {example === 'vue-list' && <E1429320806 client:only="vue" />}
+  {example === 'vue-mark-rule' && <E1512793020 client:only="vue" />}
   {example === 'vue-placeholder' && <E365230847 client:only="vue" />}
   {example === 'vue-readonly' && <E3694637844 client:only="vue" />}
   {example === 'vue-save-html' && <E281679667 client:only="vue" />}

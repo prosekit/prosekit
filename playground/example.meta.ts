@@ -176,6 +176,10 @@ export const exampleMeta = {
         {
           "path": "extension.ts",
           "hidden": false
+        },
+        {
+          "path": "issue-link.ts",
+          "hidden": false
         }
       ]
     },
@@ -716,6 +720,25 @@ export const exampleMeta = {
         },
         {
           "path": "toolbar.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-mark-rule",
+      "framework": "vue",
+      "story": "mark-rule",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "issue-link.ts",
           "hidden": false
         }
       ]

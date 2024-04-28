@@ -65,12 +65,12 @@ const LINK_RE_BASE_PATTERN = (
     ')'
 )
 
-const LINK_ENTER_PATTERN =
-  LINK_RE_BASE_PATTERN +   STOP_CHAR_PATTERN + '?' + '$'
-const LINK_INPUT_PATTERN =
-  LINK_RE_BASE_PATTERN +   STOP_CHAR_PATTERN + '?' + '\\s$'
-const LINK_MARK_PATTERN =
-  LINK_RE_BASE_PATTERN + '(?=' + STOP_CHAR_PATTERN + '|\\s|$)'
+// prettier-ignore
+const LINK_ENTER_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?' + '$'
+// prettier-ignore
+const LINK_INPUT_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?' + '\\s$'
+// prettier-ignore
+const LINK_MARK_PATTERN = LINK_RE_BASE_PATTERN + '(?=' + STOP_CHAR_PATTERN + '|\\s|$)'
 
 export const LINK_ENTER_RE = new RegExp(LINK_ENTER_PATTERN, 'gi')
 export const LINK_INPUT_RE = new RegExp(LINK_INPUT_PATTERN, 'gi')

@@ -73,12 +73,12 @@ function getReceivedMarkings(
   return result
 }
 
-function markingEquals(a: MarkRange, b: MarkRange): boolean {
+function markRangeEquals(a: MarkRange, b: MarkRange): boolean {
   return a[1] === b[1] && a[2] === b[2] && a[0].eq(b[0])
 }
 
-function markingDiffs(a: MarkRange[], b: MarkRange[]): MarkRange[] {
-  return a.filter((x) => !b.some((y) => markingEquals(x, y)))
+function markRangeDiffs(a: MarkRange[], b: MarkRange[]): MarkRange[] {
+  return a.filter((x) => !b.some((y) => markRangeEquals(x, y)))
 }
 
 export function applyMarkRules(
@@ -100,8 +100,8 @@ export function applyMarkRules(
     const expected = getExpectedMarkings(rules, newState.doc, from, to)
     const received = getReceivedMarkings(rules, newState.doc, from, to)
 
-    toRemove.push(...markingDiffs(received, expected))
-    toCreate.push(...markingDiffs(expected, received))
+    toRemove.push(...markRangeDiffs(received, expected))
+    toCreate.push(...markRangeDiffs(expected, received))
   }
 
   if (toCreate.length === 0 && toRemove.length === 0) {

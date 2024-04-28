@@ -14,7 +14,7 @@ export function defineIssueLink() {
         return [
           'a',
           {
-            href: `https://example.com/issue/${issueNumber}`,
+            href: `https://example.com/issues/${issueNumber}`,
             title: `Issue #${issueNumber}`,
           },
           0,

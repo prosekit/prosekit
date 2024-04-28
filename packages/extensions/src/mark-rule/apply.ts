@@ -3,9 +3,9 @@ import { Mark, ProseMirrorNode } from '@prosekit/pm/model'
 import { EditorState, Transaction } from '@prosekit/pm/state'
 
 import { getCheckRanges } from './range'
-import type { MarkRule } from './rule'
+import type { MarkRule } from './types'
 
-type MarkRange = [mark: Mark, from: number, to: number]
+type MarkRange = [from: number, to: number, mark: Mark]
 
 function getExpectedMarkings(
   rules: MarkRule[],
@@ -14,7 +14,8 @@ function getExpectedMarkings(
   to: number,
 ): MarkRange[] {
   const text = doc.textBetween(from, to, OBJECT_REPLACEMENT_CHARACTER)
-  const result: MarkRange[] = []
+  const ranges: MarkRange[] = []
+
   for (const rule of rules) {
     rule.regex.lastIndex = 0
     const matches = text.matchAll(rule.regex)
@@ -23,11 +24,27 @@ function getExpectedMarkings(
     for (const match of matches) {
       const index = match.index
       if (index == null) continue
-      const attrs = rule.getAttrs(match)
+      const attrs = rule.getAttrs?.(match)
       const mark = markType.create(attrs)
-      result.push([mark, from + index, from + index + match[0].length])
+      ranges.push([from + index, from + index + match[0].length, mark])
     }
   }
+
+  // Sort by start position. If start positions are equal, the longer match
+  // should be prioritized.
+  ranges.sort((a, b) => a[0] - b[0] || b[1] - a[1])
+
+  // Remove overlapped marks.
+  const result: MarkRange[] = []
+  let freeIndex = 0
+
+  for (const range of ranges) {
+    if (range[0] >= freeIndex) {
+      result.push(range)
+      freeIndex = range[1]
+    }
+  }
+
   return result
 }
 
@@ -49,19 +66,19 @@ function getReceivedMarkings(
     for (const markType of markTypes) {
       const mark = node.marks.find((mark) => mark.type === markType)
       if (mark) {
-        result.push([mark, pos, pos + node.nodeSize])
+        result.push([pos, pos + node.nodeSize, mark])
       }
     }
   })
   return result
 }
 
-function markingEquals(a: MarkRange, b: MarkRange): boolean {
-  return a[1] === b[1] && a[2] === b[2] && a[0].eq(b[0])
+function markRangeEquals(a: MarkRange, b: MarkRange): boolean {
+  return a[0] === b[0] && a[1] === b[1] && a[2].eq(b[2])
 }
 
-function markingDiffs(a: MarkRange[], b: MarkRange[]): MarkRange[] {
-  return a.filter((x) => !b.some((y) => markingEquals(x, y)))
+function markRangeDiffs(a: MarkRange[], b: MarkRange[]): MarkRange[] {
+  return a.filter((x) => !b.some((y) => markRangeEquals(x, y)))
 }
 
 export function applyMarkRules(
@@ -83,8 +100,8 @@ export function applyMarkRules(
     const expected = getExpectedMarkings(rules, newState.doc, from, to)
     const received = getReceivedMarkings(rules, newState.doc, from, to)
 
-    toRemove.push(...markingDiffs(received, expected))
-    toCreate.push(...markingDiffs(expected, received))
+    toRemove.push(...markRangeDiffs(received, expected))
+    toCreate.push(...markRangeDiffs(expected, received))
   }
 
   if (toCreate.length === 0 && toRemove.length === 0) {
@@ -92,10 +109,10 @@ export function applyMarkRules(
   }
 
   const tr = newState.tr
-  for (const [mark, from, to] of toRemove) {
+  for (const [from, to, mark] of toRemove) {
     tr.removeMark(from, to, mark)
   }
-  for (const [mark, from, to] of toCreate) {
+  for (const [from, to, mark] of toCreate) {
     tr.addMark(from, to, mark)
   }
   return tr

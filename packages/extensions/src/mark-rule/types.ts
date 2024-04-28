@@ -29,17 +29,8 @@ export interface MarkRuleOptions {
 /**
  * @internal
  */
-export class MarkRule {
-  readonly regex: RegExp
-  readonly type: string | MarkType
-  readonly getAttrs: (match: RegExpMatchArray) => Attrs | null
-
-  constructor({ regex, type, attrs = null }: MarkRuleOptions) {
-    this.regex = regex
-    this.type = type
-    this.getAttrs =
-      typeof attrs === 'function'
-        ? (attrs as (match: RegExpMatchArray) => Attrs | null)
-        : () => attrs
-  }
+export interface MarkRule {
+  regex: RegExp
+  type: string | MarkType
+  getAttrs?: ((match: RegExpMatchArray) => Attrs | null) | null
 }

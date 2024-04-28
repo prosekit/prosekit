@@ -14,7 +14,8 @@ function getExpectedMarkings(
   to: number,
 ): MarkRange[] {
   const text = doc.textBetween(from, to, OBJECT_REPLACEMENT_CHARACTER)
-  const result: MarkRange[] = []
+  const ranges: MarkRange[] = []
+
   for (const rule of rules) {
     rule.regex.lastIndex = 0
     const matches = text.matchAll(rule.regex)
@@ -25,9 +26,25 @@ function getExpectedMarkings(
       if (index == null) continue
       const attrs = rule.getAttrs(match)
       const mark = markType.create(attrs)
-      result.push([mark, from + index, from + index + match[0].length])
+      ranges.push([mark, from + index, from + index + match[0].length])
     }
   }
+
+  // Sort by start position. If start positions are equal, the longer match
+  // should be prioritized.
+  ranges.sort((a, b) => a[1] - b[1] || b[2] - a[2])
+
+  // Remove overlapping markings.
+  const result: MarkRange[] = []
+  let freeIndex = 0
+
+  for (const range of ranges) {
+    if (range[1] >= freeIndex) {
+      result.push(range)
+      freeIndex = range[2]
+    }
+  }
+
   return result
 }
 

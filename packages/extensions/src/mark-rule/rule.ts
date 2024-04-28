@@ -31,12 +31,12 @@ export interface MarkRuleOptions {
  */
 export class MarkRule {
   readonly regex: RegExp
-  readonly type: string | MarkType
+  readonly type: string
   readonly getAttrs: (match: RegExpMatchArray) => Attrs | null
 
   constructor({ regex, type, attrs = null }: MarkRuleOptions) {
     this.regex = regex
-    this.type = type
+    this.type = typeof type === 'string' ? type : type.name
     this.getAttrs =
       typeof attrs === 'function'
         ? (attrs as (match: RegExpMatchArray) => Attrs | null)

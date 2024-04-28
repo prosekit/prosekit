@@ -80,7 +80,7 @@ function getMapRange(
 
       map.forEach((_oldStart, _oldEnd, newStart, newEnd) => {
         lo = Math.min(lo, hi, newStart)
-        hi = Math.max(hi, hi, newEnd)
+        hi = Math.max(lo, hi, newEnd)
       })
     }
   }

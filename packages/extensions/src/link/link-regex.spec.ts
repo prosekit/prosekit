@@ -1,13 +1,8 @@
-import { test, it, expect, describe } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { LINK_MARK_RE } from './link-regex'
 
 describe('LINK_MARK_RE', () => {
-  const run = (str: string) => {
-    LINK_MARK_RE.lastIndex = 0
-    return LINK_MARK_RE.exec(str)?.[0] ?? null
-  }
-
   const cases = [
     ['Not a link', null],
 
@@ -65,6 +60,8 @@ describe('LINK_MARK_RE', () => {
   ] as const
 
   it.each(cases)('should handle %s', (str, expected) => {
-    expect(run(str)).toBe(expected)
+    LINK_MARK_RE.lastIndex = 0
+    const received = LINK_MARK_RE.exec(str)?.[0] ?? null
+    expect(received).toEqual(expected)
   })
 })

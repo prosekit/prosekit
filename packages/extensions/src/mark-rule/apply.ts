@@ -5,7 +5,7 @@ import { EditorState, Transaction } from '@prosekit/pm/state'
 import { getCheckRanges } from './range'
 import type { MarkRule } from './types'
 
-type MarkRange = [mark: Mark, from: number, to: number]
+type MarkRange = [from: number, to: number, mark: Mark]
 
 function getExpectedMarkings(
   rules: MarkRule[],
@@ -26,22 +26,22 @@ function getExpectedMarkings(
       if (index == null) continue
       const attrs = rule.getAttrs?.(match)
       const mark = markType.create(attrs)
-      ranges.push([mark, from + index, from + index + match[0].length])
+      ranges.push([from + index, from + index + match[0].length, mark])
     }
   }
 
   // Sort by start position. If start positions are equal, the longer match
   // should be prioritized.
-  ranges.sort((a, b) => a[1] - b[1] || b[2] - a[2])
+  ranges.sort((a, b) => a[0] - b[0] || b[1] - a[1])
 
   // Remove overlapping markings.
   const result: MarkRange[] = []
   let freeIndex = 0
 
   for (const range of ranges) {
-    if (range[1] >= freeIndex) {
+    if (range[0] >= freeIndex) {
       result.push(range)
-      freeIndex = range[2]
+      freeIndex = range[1]
     }
   }
 
@@ -66,7 +66,7 @@ function getReceivedMarkings(
     for (const markType of markTypes) {
       const mark = node.marks.find((mark) => mark.type === markType)
       if (mark) {
-        result.push([mark, pos, pos + node.nodeSize])
+        result.push([pos, pos + node.nodeSize, mark])
       }
     }
   })
@@ -74,7 +74,7 @@ function getReceivedMarkings(
 }
 
 function markRangeEquals(a: MarkRange, b: MarkRange): boolean {
-  return a[1] === b[1] && a[2] === b[2] && a[0].eq(b[0])
+  return a[0] === b[0] && a[1] === b[1] && a[2].eq(b[2])
 }
 
 function markRangeDiffs(a: MarkRange[], b: MarkRange[]): MarkRange[] {
@@ -109,10 +109,10 @@ export function applyMarkRules(
   }
 
   const tr = newState.tr
-  for (const [mark, from, to] of toRemove) {
+  for (const [from, to, mark] of toRemove) {
     tr.removeMark(from, to, mark)
   }
-  for (const [mark, from, to] of toCreate) {
+  for (const [from, to, mark] of toCreate) {
     tr.addMark(from, to, mark)
   }
   return tr

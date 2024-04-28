@@ -82,6 +82,45 @@ function run(example: string) {
 
     await editor.pressSequentially('l')
     expect(await getLinkContent()).toEqual([])
+
+    await editor.pressSequentially('e')
+    expect(await getLinkContent()).toEqual(['www.google'])
+
+    await editor.pressSequentially('.com')
+    expect(await getLinkContent()).toEqual(['www.google.com'])
+
+    await editor.pressSequentially('/')
+    expect(await getLinkContent()).toEqual(['www.google.com/'])
+
+    await editor.pressSequentially('?')
+    expect(await getLinkContent()).toEqual(['www.google.com/'])
+
+    await editor.pressSequentially('a')
+    expect(await getLinkContent()).toEqual(['www.google.com/?a'])
+
+    await editor.pressSequentially('.')
+    expect(await getLinkContent()).toEqual(['www.google.com/?a'])
+
+    await editor.pressSequentially(' ')
+    expect(await getLinkContent()).toEqual(['www.google.com/?a'])
+
+    await editor.pressSequentially('https://example.com/subpath?query#fragment')
+    expect(await getLinkContent()).toEqual([
+      'www.google.com/?a',
+      'https://example.com/subpath?query#fragment',
+    ])
+
+    await editor.pressSequentially('.')
+    expect(await getLinkContent()).toEqual([
+      'www.google.com/?a',
+      'https://example.com/subpath?query#fragment',
+    ])
+
+    await editor.pressSequentially(' ')
+    expect(await getLinkContent()).toEqual([
+      'www.google.com/?a',
+      'https://example.com/subpath?query#fragment',
+    ])
   })
 }
 

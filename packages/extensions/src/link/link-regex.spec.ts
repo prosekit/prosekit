@@ -26,4 +26,15 @@ test('LINK_MARK_RE', () => {
   expect(run('https://example.com/path?query=1#fragment')).toEqual(
     'https://example.com/path?query=1#fragment',
   )
+
+  // Ignore the period at the end
+  expect(run('https://example.com.')).toEqual('https://example.com')
+  expect(run('https://example.com.uk')).toEqual('https://example.com.uk')
+
+  // .goog is a TLD
+  expect(run('Foo www.goog')).toEqual('www.goog')
+  // .googl is not a TLD
+  expect(run('Foo www.googl')).toEqual(null)
+  // .google is a TLD
+  expect(run('Foo www.google')).toEqual('www.google')
 })

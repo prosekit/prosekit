@@ -34,7 +34,7 @@ function getExpectedMarkings(
   // should be prioritized.
   ranges.sort((a, b) => a[0] - b[0] || b[1] - a[1])
 
-  // Remove overlapping markings.
+  // Remove overlapped marks.
   const result: MarkRange[] = []
   let freeIndex = 0
 

@@ -59,6 +59,15 @@ describe('LINK_MARK_RE', () => {
       `https://en.wikipedia.org/wiki/The_Power_of_the_Powerless#Havel's_greengrocer`,
       `https://en.wikipedia.org/wiki/The_Power_of_the_Powerless#Havel's_greengrocer`,
     ],
+
+    // Trailing punctuation
+    [`www.example.com?a!`, `www.example.com?a`],
+    [`www.example.com?a! `, `www.example.com?a`],
+    [`www.example.com?a!!`, `www.example.com?a`],
+    [`www.example.com?a!b`, `www.example.com?a!b`],
+    [`www.example.com?a!b `, `www.example.com?a!b`],
+    [`www.example.com?a!b! `, `www.example.com?a!b`],
+    [`www.example.com?a!b!! `, `www.example.com?a!b`],
   ] as const
 
   it.each(cases)('should handle %s', (str, expected) => {

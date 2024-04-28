@@ -7,7 +7,6 @@ import {
   defineParagraph,
   defineText,
   elementFromNode,
-  htmlFromNode,
   union,
 } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
@@ -70,9 +69,7 @@ describe('defineMarkRule', () => {
     const doc = n.doc(n.paragraph('#12345'))
     const html = triggerMarkRule(doc)
 
-    expect(html).toMatchInlineSnapshot(
-      `"<p> <mark-tag>#12345</mark-tag></p>"`,
-    )
+    expect(html).toMatchInlineSnapshot(`"<p> <mark-tag>#12345</mark-tag></p>"`)
   })
 
   it('can match link', () => {

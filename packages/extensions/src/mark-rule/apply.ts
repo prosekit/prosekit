@@ -3,7 +3,7 @@ import { Mark, ProseMirrorNode } from '@prosekit/pm/model'
 import { EditorState, Transaction } from '@prosekit/pm/state'
 
 import { getCheckRanges } from './range'
-import type { MarkRule } from './rule'
+import type { MarkRule } from './types'
 
 type MarkRange = [mark: Mark, from: number, to: number]
 
@@ -24,7 +24,7 @@ function getExpectedMarkings(
     for (const match of matches) {
       const index = match.index
       if (index == null) continue
-      const attrs = rule.getAttrs(match)
+      const attrs = rule.getAttrs?.(match)
       const mark = markType.create(attrs)
       ranges.push([mark, from + index, from + index + match[0].length])
     }

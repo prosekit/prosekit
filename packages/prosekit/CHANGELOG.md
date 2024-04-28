@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.6.6
+
+### Patch Changes
+
+- [`6d05193`](https://github.com/ocavue/prosekit/commit/6d051931991f3f1149bf776db42588c3b83ddfe4) ![](https://prosekit.dev/b/core)
+
+  Do not use const enums. This resolves the "Cannot access ambient const enums when 'isolatedModules' is enabled" error for the downstream TypeScript projects.
+
+- [`d1d2085`](https://github.com/ocavue/prosekit/commit/d1d2085dd5110e7d0e6f0887958108c139b471cc) ![](https://prosekit.dev/b/extensions)
+
+  Fix an issue where mark rules could generate overlapped marks.
+
 ## 0.6.5
 
 ### Patch Changes

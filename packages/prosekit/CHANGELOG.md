@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.6.5
+
+### Patch Changes
+
+- [`91d77a4`](https://github.com/ocavue/prosekit/commit/91d77a405e9ccb8b84fdd9edb2ed16aec76de3f0) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineLinkMarkRule`, which can be used as an alternative to the combination of `defineLinkInputRule` and `defineLinkEnterRule`.
+
+- [`91d77a4`](https://github.com/ocavue/prosekit/commit/91d77a405e9ccb8b84fdd9edb2ed16aec76de3f0) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineMarkRule` for adding or removing marks based on text content.
+
 ## 0.6.4
 
 ### Patch Changes

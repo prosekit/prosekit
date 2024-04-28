@@ -1,8 +1,8 @@
-import { test, expect } from 'vitest'
+import { test, expect, describe } from 'vitest'
 
 import { LINK_MARK_RE } from './link-regex'
 
-test('LINK_MARK_RE', () => {
+describe('LINK_MARK_RE', () => {
   const run = (str: string) => {
     LINK_MARK_RE.lastIndex = 0
     return LINK_MARK_RE.exec(str)?.[0] ?? null
@@ -49,5 +49,21 @@ test('LINK_MARK_RE', () => {
   // Don't match . when there is nothing after it
   expect(run('www.example.com.')).toEqual('www.example.com')
   expect(run('www.example.com/.')).toEqual('www.example.com/')
-  expect(run('www.example.com/.gitignore')).toEqual('www.example.com/.gitignore')
+  expect(run('www.example.com/.gitignore')).toEqual(
+    'www.example.com/.gitignore',
+  )
+
+  // with ( and )
+  expect(run('https://en.wikipedia.org/wiki/Specials_(Unicode_block)')).toEqual(
+    'https://en.wikipedia.org/wiki/Specials_(Unicode_block)',
+  )
+
+  // with '
+  expect(
+    run(
+      `https://en.wikipedia.org/wiki/The_Power_of_the_Powerless#Havel's_greengrocer`,
+    ),
+  ).toEqual(
+    `https://en.wikipedia.org/wiki/The_Power_of_the_Powerless#Havel's_greengrocer`,
+  )
 })

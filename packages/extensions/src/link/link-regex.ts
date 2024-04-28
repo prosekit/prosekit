@@ -6,6 +6,8 @@ const TLD_RE_PATTERN =
 // Some common punctuations that can be used to stop a link
 const STOP_PUNCTUATIONS = '\\.|\\,|\\;|\\!|\\?'
 
+const VALID_LAST_CHARACTER = '[^\\s\\.\\,\\;\\!\\?]'
+
 // prettier-ignore
 const LINK_RE_BASE_PATTERN = (
     // start of the link group
@@ -34,13 +36,28 @@ const LINK_RE_BASE_PATTERN = (
         '(?::\\d{2,5})?' +
 
         // sub path (optional)
-        '(?:/\\S*)?' +
+        '(?:/' +
+            '(?:' + 
+                '\\S*' +
+                VALID_LAST_CHARACTER +
+            ')?' +
+        ')?' +
 
         // query string (optional)
-        '(?:\\?\\S*[^\\s|' + STOP_PUNCTUATIONS + '])?' +
+        '(?:\\?' + 
+            '(?:' + 
+                '\\S*' +
+                VALID_LAST_CHARACTER +
+            ')' +
+        ')?' +
 
         // fragment (optional)
-        '(?:#\\S*)?'  +
+        '(?:\\#' + 
+            '(?:' + 
+                '\\S*' +
+                VALID_LAST_CHARACTER +
+            ')?' +
+        ')?' +
 
     // end of the link group
     ')'
@@ -51,7 +68,7 @@ const LINK_ENTER_PATTERN =
 const LINK_INPUT_PATTERN =
   LINK_RE_BASE_PATTERN + '(?:' + STOP_PUNCTUATIONS + ')?' + '\\s$'
 const LINK_MARK_PATTERN =
-  LINK_RE_BASE_PATTERN + '(?:(?=' + STOP_PUNCTUATIONS + '|\\s' + ')|$)'
+  LINK_RE_BASE_PATTERN + '(?=(?:' + STOP_PUNCTUATIONS + '|\\s' + ')|$)'
 
 export const LINK_ENTER_RE = new RegExp(LINK_ENTER_PATTERN, 'gi')
 export const LINK_INPUT_RE = new RegExp(LINK_INPUT_PATTERN, 'gi')

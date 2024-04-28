@@ -44,6 +44,8 @@ describe('LINK_MARK_RE', () => {
     // Don't match . when there is nothing after it
     ['www.example.com.', 'www.example.com'],
     ['www.example.com/.', 'www.example.com/'],
+    ['www.example.com/subpath.', 'www.example.com/subpath'],
+    ['www.example.com/subpath/.', 'www.example.com/subpath/'],
     ['www.example.com/.gitignore', 'www.example.com/.gitignore'],
 
     // with ( and )

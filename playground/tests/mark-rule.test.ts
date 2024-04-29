@@ -1,8 +1,8 @@
 import { expect, test } from '@playwright/test'
 
-import { getExamples, waitForEditor } from './helper'
+import { testStory, waitForEditor } from './helper'
 
-function run(example: string) {
+testStory('mark-rule', ({ example }) => {
   test('hashtag', async ({ page }) => {
     await page.goto(example)
     const editor = await waitForEditor(page)
@@ -122,8 +122,4 @@ function run(example: string) {
       'https://example.com/subpath?query#fragment',
     ])
   })
-}
-
-for (const example of getExamples('mark-rule')) {
-  test.describe(example, () => run(example))
-}
+})

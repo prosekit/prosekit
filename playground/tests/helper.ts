@@ -1,8 +1,9 @@
 import type { Page } from '@playwright/test'
+import { test } from '@playwright/test'
 
 import { exampleMeta } from '../example.meta'
 
-export function getExamples(story: string) {
+function getExamples(story: string) {
   const examples = exampleMeta.examples
     .filter((example) => example.story === story)
     .map((example) => example.name)
@@ -12,6 +13,19 @@ export function getExamples(story: string) {
   }
 
   return examples
+}
+
+export function testStory(
+  story: string,
+  callback: (options: { example: string }) => void,
+) {
+  test.describe(story, () => {
+    for (const example of getExamples(story)) {
+      test.describe(example, () => {
+        callback({ example })
+      })
+    }
+  })
 }
 
 export function locateEditor(page: Page) {

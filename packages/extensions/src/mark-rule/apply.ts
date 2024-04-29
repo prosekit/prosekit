@@ -1,14 +1,18 @@
-import { OBJECT_REPLACEMENT_CHARACTER, getMarkType } from '@prosekit/core'
+import {
+  OBJECT_REPLACEMENT_CHARACTER,
+  getMarkType,
+  maybeRun,
+} from '@prosekit/core'
 import { Mark, ProseMirrorNode } from '@prosekit/pm/model'
 import { EditorState, Transaction } from '@prosekit/pm/state'
 
 import { getCheckRanges } from './range'
-import type { MarkRule } from './types'
+import type { MarkRuleOptions } from './types'
 
 type MarkRange = [from: number, to: number, mark: Mark]
 
 function getExpectedMarkings(
-  rules: MarkRule[],
+  rules: MarkRuleOptions[],
   doc: ProseMirrorNode,
   from: number,
   to: number,
@@ -24,7 +28,7 @@ function getExpectedMarkings(
     for (const match of matches) {
       const index = match.index
       if (index == null) continue
-      const attrs = rule.getAttrs?.(match)
+      const attrs = maybeRun(rule.attrs, match)
       const mark = markType.create(attrs)
       ranges.push([from + index, from + index + match[0].length, mark])
     }
@@ -49,7 +53,7 @@ function getExpectedMarkings(
 }
 
 function getReceivedMarkings(
-  rules: MarkRule[],
+  rules: MarkRuleOptions[],
   doc: ProseMirrorNode,
   from: number,
   to: number,
@@ -82,7 +86,7 @@ function markRangeDiffs(a: MarkRange[], b: MarkRange[]): MarkRange[] {
 }
 
 export function applyMarkRules(
-  rules: MarkRule[],
+  rules: MarkRuleOptions[],
   transactions: readonly Transaction[],
   oldState: EditorState,
   newState: EditorState,

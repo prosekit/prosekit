@@ -2,22 +2,19 @@ import { Facet, pluginFacet, type PluginPayload } from '@prosekit/core'
 import { EditorState, ProseMirrorPlugin, Transaction } from '@prosekit/pm/state'
 
 import { applyMarkRules } from './apply'
-import type { MarkRule, MarkRuleOptions } from './types'
+import type { MarkRuleOptions } from './types'
 
 /**
  * A mark rule is something that can automatically apply marks to text if it
  * matches a certain pattern, and remove them if it doesn't match anymore.
  */
 export function defineMarkRule(options: MarkRuleOptions) {
-  const { regex, type, attrs } = options
-  const getAttrs = attrs && typeof attrs === 'object' ? () => attrs : attrs
-
-  return markRuleFacet.extension([{ regex, type, getAttrs }])
+  return markRuleFacet.extension([options])
 }
 
-const markRuleFacet = Facet.define<MarkRule, PluginPayload>({
+const markRuleFacet = Facet.define<MarkRuleOptions, PluginPayload>({
   converter: () => {
-    let rules: MarkRule[] = []
+    let rules: MarkRuleOptions[] = []
 
     const plugin = new ProseMirrorPlugin({
       appendTransaction: (
@@ -31,11 +28,11 @@ const markRuleFacet = Facet.define<MarkRule, PluginPayload>({
     const pluginFunc = () => [plugin]
 
     return {
-      create: (inputs: MarkRule[]) => {
+      create: (inputs: MarkRuleOptions[]) => {
         rules = inputs
         return pluginFunc
       },
-      update: (inputs: MarkRule[]) => {
+      update: (inputs: MarkRuleOptions[]) => {
         rules = inputs
         return null
       },

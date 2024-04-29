@@ -1,7 +1,8 @@
 import type { Attrs, Mark, MarkType, ProseMirrorNode } from '@prosekit/pm/model'
 
 /**
- * Returns true if the given mark is not seen in the given range.
+ * Returns true if the given mark is missing in some part of the range.
+ * Returns false if the entire range has the given mark.
  *
  * @internal
  */

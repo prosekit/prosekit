@@ -3,6 +3,7 @@ import {
   OBJECT_REPLACEMENT_CHARACTER,
   getNodeType,
   isTextSelection,
+  maybeRun,
   pluginFacet,
   type Extension,
   type PluginPayload,
@@ -139,10 +140,7 @@ export function defineTextBlockEnterRule({
         return null
       }
 
-      const nodeAttrs: Attrs | null | undefined =
-        attrs && typeof attrs === 'function'
-          ? (attrs(match) as Attrs | null)
-          : attrs
+      const nodeAttrs = maybeRun(attrs, match)
       return state.tr
         .delete(from, to)
         .setBlockType(from, from, nodeType, nodeAttrs)

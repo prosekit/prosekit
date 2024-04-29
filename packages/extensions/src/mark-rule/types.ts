@@ -25,12 +25,3 @@ export interface MarkRuleOptions {
    */
   attrs?: Attrs | null | ((match: RegExpMatchArray) => Attrs | null)
 }
-
-/**
- * @internal
- */
-export interface MarkRule {
-  regex: RegExp
-  type: string | MarkType
-  getAttrs?: ((match: RegExpMatchArray) => Attrs | null) | null
-}

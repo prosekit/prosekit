@@ -1,2 +1,2 @@
-export type { MarkRuleOptions } from './types'
 export { defineMarkRule } from './extension'
+export type { MarkRuleOptions } from './types'

@@ -4,7 +4,10 @@ import {
   defineMarkSpec,
   union,
   toggleMark,
+  canUseRegexLookbehind,
 } from '@prosekit/core'
+
+import { defineMarkInputRule } from '../input-rule'
 
 export function defineStrikeSpec() {
   return defineMarkSpec({
@@ -35,6 +38,15 @@ export function defineStrikeKeymap() {
   })
 }
 
+export function defineStrikeInputRule() {
+  return defineMarkInputRule({
+    regex: canUseRegexLookbehind()
+      ? /(?<=\s|^)~~([^\s~]|[^\s~][^~]*[^\s~])~~$/
+      : /~~([^\s~]|[^\s~][^~]*[^\s~])~~$/,
+    type: 'strike',
+  })
+}
+
 /**
  * @public
  */
@@ -43,5 +55,6 @@ export function defineStrike() {
     defineStrikeSpec(),
     defineStrikeCommands(),
     defineStrikeKeymap(),
+    defineStrikeInputRule(),
   ])
 }

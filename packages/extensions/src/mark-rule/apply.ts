@@ -17,7 +17,7 @@ function getExpectedMarkings(
   from: number,
   to: number,
 ): MarkRange[] {
-  const text = doc.textBetween(from, to, OBJECT_REPLACEMENT_CHARACTER)
+  const text = doc.textBetween(from, to, null, OBJECT_REPLACEMENT_CHARACTER)
   const ranges: MarkRange[] = []
 
   for (const rule of rules) {

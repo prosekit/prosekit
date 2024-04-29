@@ -1,6 +1,9 @@
 import {
   Facet,
+  getMarkType,
   getNodeType,
+  isMarkAbsent,
+  maybeRun,
   pluginFacet,
   type Extension,
   type PluginPayload,
@@ -12,6 +15,7 @@ import {
   wrappingInputRule,
 } from '@prosekit/pm/inputrules'
 import {
+  MarkType,
   NodeType,
   ProseMirrorNode,
   Schema,
@@ -31,6 +35,94 @@ export function defineInputRule(rule: InputRule): Extension {
 }
 
 /**
+ * Options for {@link defineMarkInputRule}.
+ *
+ * @public
+ */
+export interface MarkInputRuleOptions {
+  /**
+   * The regular expression to match against, which should end with `$` and has
+   * exactly one capture group. All other matched text outside the capture group
+   * will be deleted.
+   */
+  regex: RegExp
+
+  /**
+   * The type of mark to set.
+   */
+  type: string | MarkType
+
+  /**
+   * Attributes to set on the mark.
+   */
+  attrs?: Attrs | null | ((match: RegExpMatchArray) => Attrs | null)
+}
+
+/**
+ * @internal
+ */
+export function createMarkInputRule({
+  regex,
+  type,
+  attrs = null,
+}: MarkInputRuleOptions): InputRule {
+  const rule = new InputRule(regex, (state, match, start, end) => {
+    const { tr, schema } = state
+    const [fullText, markText] = match
+
+    if (!markText) {
+      return null
+    }
+
+    const markStart = start + fullText.indexOf(markText)
+    const markEnd = markStart + markText.length
+
+    if (!(start <= markStart && markStart < markEnd && markEnd <= end)) {
+      // Incorrect regex.
+      return null
+    }
+
+    const markType = getMarkType(schema, type)
+    const mark = markType.create(maybeRun(attrs, match))
+
+    if (!isMarkAbsent(tr.doc, markStart, markEnd, markType, attrs)) {
+      // The mark is already active.
+      return null
+    }
+
+    const initialStoredMarks = tr.storedMarks ?? []
+
+    tr.addMark(markStart, markEnd, mark)
+
+    if (markEnd < end) {
+      tr.delete(markEnd, end)
+    }
+    if (start < markStart) {
+      tr.delete(start, markStart)
+    }
+
+    // Make sure not to reactivate any marks which had previously been
+    // deactivated. By keeping track of the initial stored marks we are able to
+    // discard any unintended consequences of deleting text and adding it again.
+    tr.setStoredMarks(initialStoredMarks)
+
+    return tr
+  })
+
+  return rule
+}
+
+/**
+ * Defines an input rule for automatically adding inline marks when a given
+ * pattern is typed.
+ *
+ * @public
+ */
+export function defineMarkInputRule(options: MarkInputRuleOptions): Extension {
+  return defineInputRule(createMarkInputRule(options))
+}
+
+/**
  * Defines an input rule that changes the type of a textblock when the matched
  * text is typed into it.
  *
@@ -44,8 +136,9 @@ export function defineTextBlockInputRule({
   attrs,
 }: {
   /**
-   * The regular expression to match against. You'll usually want to start it
-   * with `^` to that it is only matched at the start of a textblock.
+   * The regular expression to match against, which should end with `$`. It
+   * usually also starts with `^` to that it is only matched at the start of a
+   * textblock.
    */
   regex: RegExp
 
@@ -82,8 +175,9 @@ export function defineWrappingInputRule({
   join,
 }: {
   /**
-   * The regular expression to match against. You'll usually want to start it
-   * with `^` to that it is only matched at the start of a textblock.
+   * The regular expression to match against, which should end with `$`. It
+   * usually also starts with `^` to that it is only matched at the start of a
+   * textblock.
    */
   regex: RegExp
 

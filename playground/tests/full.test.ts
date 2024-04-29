@@ -3,6 +3,10 @@ import { expect, test } from '@playwright/test'
 import { locateEditor, testStory, waitForEditor } from './helper'
 
 testStory('full', ({ example }) => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto(example)
+  })
+
   test.describe('link', () => {
     test('press Space to insert a link', async ({ page }) => {
       await page.goto(example)
@@ -34,7 +38,6 @@ testStory('full', ({ example }) => {
     test('press Space to insert a link ends with a period', async ({
       page,
     }) => {
-      await page.goto(example)
       const editor = locateEditor(page)
       const a = editor.locator('a')
 
@@ -52,7 +55,6 @@ testStory('full', ({ example }) => {
     })
 
     test('press Enter to insert', async ({ page }) => {
-      await page.goto(example)
       const editor = locateEditor(page)
       const a = editor.locator('a')
 
@@ -81,7 +83,6 @@ testStory('full', ({ example }) => {
     test('press Enter to insert a link ends with a period', async ({
       page,
     }) => {
-      await page.goto(example)
       const editor = locateEditor(page)
       const a = editor.locator('a')
 
@@ -101,7 +102,6 @@ testStory('full', ({ example }) => {
 
   test.describe('slash menu', () => {
     test('press Space to insert a link', async ({ page }) => {
-      await page.goto(example)
       const editor = await waitForEditor(page)
 
       const getPopovers = async () => {
@@ -128,6 +128,86 @@ testStory('full', ({ example }) => {
 
       await editor.press('Escape')
       expect(await getVisiblePopoverCount()).toBe(0)
+    })
+  })
+
+  test.describe('mark input rules', () => {
+    test('bold', async ({ page }) => {
+      const editor = await waitForEditor(page)
+
+      await editor.pressSequentially('**bold** **no bold **')
+      await editor.press('Enter')
+      await editor.pressSequentially('*****')
+      await editor.press('Enter')
+      await editor.pressSequentially('no**bold**')
+      await editor.press('Enter')
+      await editor.pressSequentially('**no*bold**')
+
+      expect(await editor.innerHTML()).toEqual(
+        [
+          '<p><strong>bold</strong> **no bold **</p>',
+          '<p>*****</p>',
+          '<p>no**bold**</p>',
+          '<p>**no*bold**</p>',
+        ].join(''),
+      )
+    })
+
+    test('italic', async ({ page }) => {
+      const editor = await waitForEditor(page)
+
+      await editor.pressSequentially('*italic* *no italic *')
+      await editor.press('Enter')
+      await editor.pressSequentially('***')
+      await editor.press('Enter')
+      await editor.pressSequentially('no*italic*')
+
+      expect(await editor.innerHTML()).toEqual(
+        [
+          '<p><em>italic</em> *no italic *</p>',
+          '<p>***</p>',
+          '<p>no*italic*</p>',
+        ].join(''),
+      )
+    })
+
+    test('code', async ({ page }) => {
+      const editor = await waitForEditor(page)
+
+      await editor.pressSequentially('`code` `no code `')
+      await editor.press('Enter')
+      await editor.pressSequentially('`` ``')
+      await editor.press('Enter')
+      await editor.pressSequentially('no`code`')
+
+      expect(await editor.innerHTML()).toEqual(
+        [
+          '<p><code>code</code> `no code `</p>',
+          '<p>`` ``</p>',
+          '<p>no`code`</p>',
+        ].join(''),
+      )
+    })
+
+    test('strike', async ({ page }) => {
+      const editor = await waitForEditor(page)
+
+      await editor.pressSequentially('~~strike~~ ~~no strike ~~')
+      await editor.press('Enter')
+      await editor.pressSequentially('~~~~~')
+      await editor.press('Enter')
+      await editor.pressSequentially('no~~strike~~')
+      await editor.press('Enter')
+      await editor.pressSequentially('~~no~strike~~')
+
+      expect(await editor.innerHTML()).toEqual(
+        [
+          '<p><s>strike</s> ~~no strike ~~</p>',
+          '<p>~~~~~</p>',
+          '<p>no~~strike~~</p>',
+          '<p>~~no~strike~~</p>',
+        ].join(''),
+      )
     })
   })
 })

@@ -1,10 +1,13 @@
 import {
+  canUseRegexLookbehind,
   defineCommands,
   defineKeymap,
   defineMarkSpec,
   toggleMark,
   union,
 } from '@prosekit/core'
+
+import { defineMarkInputRule } from '../input-rule'
 
 /**
  * @public
@@ -25,9 +28,18 @@ export function defineCodeCommands() {
   })
 }
 
-export function defineItalicKeymap() {
+export function defineCodeKeymap() {
   return defineKeymap({
     'Mod-e': toggleMark({ type: 'code' }),
+  })
+}
+
+export function defineCodeInputRule() {
+  return defineMarkInputRule({
+    regex: canUseRegexLookbehind()
+      ? /(?<=\s|^)`([^\s`]|[^\s`][^`]*[^\s`])`$/
+      : /`([^\s`]|[^\s`][^`]*[^\s`])`$/,
+    type: 'code',
   })
 }
 
@@ -35,5 +47,10 @@ export function defineItalicKeymap() {
  * @public
  */
 export function defineCode() {
-  return union([defineCodeSpec(), defineCodeCommands(), defineItalicKeymap()])
+  return union([
+    defineCodeSpec(),
+    defineCodeCommands(),
+    defineCodeKeymap(),
+    defineCodeInputRule(),
+  ])
 }

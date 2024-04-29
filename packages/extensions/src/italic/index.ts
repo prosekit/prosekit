@@ -1,10 +1,13 @@
 import {
+  canUseRegexLookbehind,
   defineCommands,
   defineKeymap,
   defineMarkSpec,
-  union,
   toggleMark,
+  union,
 } from '@prosekit/core'
+
+import { defineMarkInputRule } from '../input-rule'
 
 export function defineItalicSpec() {
   return defineMarkSpec({
@@ -36,6 +39,15 @@ export function defineItalicKeymap() {
   })
 }
 
+export function defineItalicInputRule() {
+  return defineMarkInputRule({
+    regex: canUseRegexLookbehind()
+      ? /(?<=\s|^)\*([^\s*]|[^\s*][^*]*[^\s*])\*$/
+      : /\*([^\s*]|[^\s*][^*]*[^\s*])\*$/,
+    type: 'italic',
+  })
+}
+
 /**
  * @public
  */
@@ -44,5 +56,6 @@ export function defineItalic() {
     defineItalicSpec(),
     defineItalicCommands(),
     defineItalicKeymap(),
+    defineItalicInputRule(),
   ])
 }

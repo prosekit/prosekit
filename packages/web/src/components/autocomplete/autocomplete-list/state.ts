@@ -59,6 +59,7 @@ export function useAutocompleteList(
   useEffect(element, () => {
     if (!open.value) {
       listboxValue.value = ''
+      query.value = ''
     }
   })
 

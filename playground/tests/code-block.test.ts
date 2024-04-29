@@ -1,58 +1,56 @@
 import { expect, test, type Page } from '@playwright/test'
 
-import { getExamples, isApple, locateEditor } from './helper'
+import { isApple, locateEditor, testStory } from './helper'
 
-for (const example of getExamples('code-block')) {
-  test.describe(example, () => {
-    test('input rule', async ({ page }) => {
-      await page.goto(example)
-      const editor = locateEditor(page)
-      const pre = editor.locator('pre')
+testStory('code-block', ({ example }) => {
+  test('input rule', async ({ page }) => {
+    await page.goto(example)
+    const editor = locateEditor(page)
+    const pre = editor.locator('pre')
 
-      // Type triple backticks and press space to create a code block
-      await clear(page)
-      await editor.pressSequentially('```')
-      await expect(editor).toHaveText('```')
-      await expect(pre).not.toBeVisible()
-      await editor.press('Space')
-      await expectAnyPre(page)
-      await expect(editor).not.toHaveText('```')
+    // Type triple backticks and press space to create a code block
+    await clear(page)
+    await editor.pressSequentially('```')
+    await expect(editor).toHaveText('```')
+    await expect(pre).not.toBeVisible()
+    await editor.press('Space')
+    await expectAnyPre(page)
+    await expect(editor).not.toHaveText('```')
 
-      // Type triple backticks followed by a language and press space to create a code block
-      await clear(page)
-      await editor.pressSequentially('```javascript')
-      await expect(editor).toHaveText('```javascript')
-      await expect(pre).not.toBeVisible()
-      await editor.press('Space')
-      await expectJavaScriptPre(page)
-      await expect(editor).not.toHaveText('```')
-    })
-
-    test('enter rule', async ({ page }) => {
-      await page.goto(example)
-      const editor = locateEditor(page)
-      const pre = editor.locator('pre')
-
-      // Type triple backticks and press enter to create a code block
-      await clear(page)
-      await editor.pressSequentially('```')
-      await expect(editor).toHaveText('```')
-      await expect(pre).not.toBeVisible()
-      await editor.press('Enter')
-      await expectAnyPre(page)
-      await expect(editor).not.toHaveText('```')
-
-      // Type triple backticks followed by a language and press enter to create a code block
-      await clear(page)
-      await editor.pressSequentially('```javascript')
-      await expect(editor).toHaveText('```javascript')
-      await expect(pre).not.toBeVisible()
-      await editor.press('Enter')
-      await expectJavaScriptPre(page)
-      await expect(editor).not.toHaveText('```')
-    })
+    // Type triple backticks followed by a language and press space to create a code block
+    await clear(page)
+    await editor.pressSequentially('```javascript')
+    await expect(editor).toHaveText('```javascript')
+    await expect(pre).not.toBeVisible()
+    await editor.press('Space')
+    await expectJavaScriptPre(page)
+    await expect(editor).not.toHaveText('```')
   })
-}
+
+  test('enter rule', async ({ page }) => {
+    await page.goto(example)
+    const editor = locateEditor(page)
+    const pre = editor.locator('pre')
+
+    // Type triple backticks and press enter to create a code block
+    await clear(page)
+    await editor.pressSequentially('```')
+    await expect(editor).toHaveText('```')
+    await expect(pre).not.toBeVisible()
+    await editor.press('Enter')
+    await expectAnyPre(page)
+    await expect(editor).not.toHaveText('```')
+
+    // Type triple backticks followed by a language and press enter to create a code block
+    await clear(page)
+    await editor.pressSequentially('```javascript')
+    await expect(editor).toHaveText('```javascript')
+    await expect(pre).not.toBeVisible()
+    await editor.press('Enter')
+    await expectJavaScriptPre(page)
+    await expect(editor).not.toHaveText('```')
+  })
+})
 
 async function expectNotPre(page: Page) {
   const editor = locateEditor(page)

@@ -18,6 +18,7 @@ import {
   type MatchHandler,
 } from '@prosekit/extensions/autocomplete'
 
+import { useFirstRendering } from '../../../hooks/use-first-rendering'
 import { onSubmitContext, openContext, queryContext } from '../context'
 
 import { defaultQueryBuilder } from './helpers'
@@ -67,16 +68,14 @@ function useAutocompletePopoverState(
 
   usePresence(host, presence)
 
-  let firstRender = true
+  const firstRendering = useFirstRendering(host)
 
   useEffect(host, () => {
     const queryValue = query.value
 
-    if (!firstRender) {
+    if (!firstRendering.peek()) {
       state.onQueryChange.peek()?.(queryValue)
     }
-
-    firstRender = false
   })
 
   useEffect(host, () => {

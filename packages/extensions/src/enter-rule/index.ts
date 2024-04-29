@@ -18,7 +18,6 @@ import {
 } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-
 /**
  * @public
  */

@@ -67,11 +67,16 @@ function useAutocompletePopoverState(
 
   usePresence(host, presence)
 
+  let firstRender = true
+
   useEffect(host, () => {
     const queryValue = query.value
-    if (presence.value) {
+
+    if (!firstRender) {
       state.onQueryChange.peek()?.(queryValue)
     }
+
+    firstRender = false
   })
 
   useEffect(host, () => {

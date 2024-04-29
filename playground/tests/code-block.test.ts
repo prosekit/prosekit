@@ -1,8 +1,8 @@
 import { expect, test, type Page } from '@playwright/test'
 
-import { getExamples, isApple, locateEditor } from './helper'
+import { isApple, locateEditor, testStory } from './helper'
 
-function run(example: string) {
+testStory('code-block', ({ example }) => {
   test('input rule', async ({ page }) => {
     await page.goto(example)
     const editor = locateEditor(page)
@@ -50,11 +50,7 @@ function run(example: string) {
     await expectJavaScriptPre(page)
     await expect(editor).not.toHaveText('```')
   })
-}
-
-for (const example of getExamples('code-block')) {
-  test.describe(example, () => run(example))
-}
+})
 
 async function expectNotPre(page: Page) {
   const editor = locateEditor(page)

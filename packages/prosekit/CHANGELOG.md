@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.6.8
+
+### Patch Changes
+
+- [`dbf6ccb`](https://github.com/ocavue/prosekit/commit/dbf6ccb66a7e526918159698667cdac88a58cc32) ![](https://prosekit.dev/b/extensions)
+
+  Fix an issue where mark rules apply marks to the wrong position.
+
+- [`dbf6ccb`](https://github.com/ocavue/prosekit/commit/dbf6ccb66a7e526918159698667cdac88a58cc32) ![](https://prosekit.dev/b/web)
+
+  Fix incorrect autocomplete query update.
+
 ## 0.6.7
 
 ### Patch Changes

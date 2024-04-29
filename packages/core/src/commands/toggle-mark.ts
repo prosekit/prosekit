@@ -23,13 +23,9 @@ function markApplies(
   return false
 }
 
-/// Create a command function that toggles the given mark with the
-/// given attributes. Will return `false` when the current selection
-/// doesn't support that mark. This will remove the mark if any marks
-/// of that type exist in the selection, or add it otherwise. If the
-/// selection is empty, this applies to the [stored
-/// marks](#state.EditorState.storedMarks) instead of a range of the
-/// document.
+// Copied from unreleased prosemirror-commands https://github.com/prosemirror/prosemirror-commands/blob/2da5f6621ab684b5b3b2a2982b8f91d293d4a582/src/commands.ts#L583
+//
+// This should be removed when prosemirror-commands v1.5.3 is released.
 export function baseToggleMark(
   markType: MarkType,
   attrs: Attrs | null = null,

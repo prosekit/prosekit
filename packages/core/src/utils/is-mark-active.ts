@@ -14,8 +14,8 @@ export function isMarkActive(
 ): boolean {
   const { from, $from, to, empty } = state.selection
   const markType = getMarkType(state.schema, type)
-  const mark: Mark | MarkType = attrs ? markType.create(attrs) : markType
   if (empty) {
+    const mark: Mark | MarkType = attrs ? markType.create(attrs) : markType
     return !!mark.isInSet(state.storedMarks || $from.marks())
   } else {
     return !isMarkAbsent(state.doc, from, to, markType, attrs)

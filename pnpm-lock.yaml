@@ -201,7 +201,7 @@ importers:
   packages/extensions:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.4.1
+        specifier: ^0.4.2
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.2
@@ -331,10 +331,10 @@ importers:
         specifier: 0.3.4
         version: link:../basic
       '@prosekit/core':
-        specifier: 0.4.1
+        specifier: 0.4.2
         version: link:../core
       '@prosekit/extensions':
-        specifier: 0.4.4
+        specifier: 0.4.5
         version: link:../extensions
       '@prosekit/lit':
         specifier: 0.3.1
@@ -640,7 +640,7 @@ importers:
         specifier: ^10.20.2
         version: 10.20.2
       prosekit:
-        specifier: ^0.6.6
+        specifier: ^0.6.7
         version: link:../packages/prosekit
       react:
         specifier: ^18.3.1
@@ -724,7 +724,7 @@ importers:
         specifier: ^3.2.5
         version: 3.2.5
       prosekit:
-        specifier: ^0.6.6
+        specifier: ^0.6.7
         version: link:../packages/prosekit
       prosekit-playground:
         specifier: '*'

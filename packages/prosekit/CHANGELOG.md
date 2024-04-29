@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.6.7
+
+### Patch Changes
+
+- [`b7cc26d`](https://github.com/ocavue/prosekit/commit/b7cc26dbe8c905f8a2fcab0846da5513450620b2) ![](https://prosekit.dev/b/core)
+
+  The `toggleMark` command function will add the mark when only part of the selection has the mark already.
+
+- [`f270db4`](https://github.com/ocavue/prosekit/commit/f270db4479b9a383ab9853fb4b8031442866ed94) ![](https://prosekit.dev/b/extensions)
+
+  Add input mark rules for marks `bold`, `italic`, `code`, `strike`. For example, you can type `**text**` to bold text now.
+
 ## 0.6.6
 
 ### Patch Changes

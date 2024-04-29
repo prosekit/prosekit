@@ -3,7 +3,7 @@ import { test } from '@playwright/test'
 
 import { exampleMeta } from '../example.meta'
 
-export function getExamples(story: string) {
+  function getExamples(story: string) {
   const examples = exampleMeta.examples
     .filter((example) => example.story === story)
     .map((example) => example.name)

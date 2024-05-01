@@ -36,7 +36,7 @@
     "@unocss/eslint-config": "^0.59.4",
     "@vitest/coverage-istanbul": "^1.5.2",
     "cross-env": "^7.0.3",
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "jsdom": "^24.0.0",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",

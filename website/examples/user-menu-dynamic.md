@@ -28,7 +28,7 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 <<< @/../playground/examples/vue-user-menu-dynamic/extension.ts
 <<< @/../playground/examples/vue-user-menu-dynamic/use-user-query.ts
 <<< @/../playground/examples/vue-user-menu-dynamic/user-data.ts
-<<< @/../playground/examples/vue-user-menu-dynamic/user-menu.vue
+<<< @/../playground/examples/vue-user-menu-dynamic/user-menu-dynamic.vue
 
 :::
 

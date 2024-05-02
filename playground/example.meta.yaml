@@ -525,7 +525,7 @@ examples:
         hidden: false
       - path: user-data.ts
         hidden: false
-      - path: user-menu.vue
+      - path: user-menu-dynamic.vue
         hidden: false
   - name: vue-word-counter
     framework: vue

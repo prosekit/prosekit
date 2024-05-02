@@ -1009,7 +1009,7 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "user-menu.vue",
+          "path": "user-menu-dynamic.vue",
           "hidden": false
         }
       ]

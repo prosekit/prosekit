@@ -43,7 +43,7 @@ const { users, loading } = useUserQuery(query)
         @select="handleUserInsert(user.id, user.name)"
         class="AUTOCOMPLETE_MENU_ITEM"
       >
-        <span :class="loading && 'AUTOCOMPLETE_MENU_TEXT'">
+        <span :class="loading && 'AUTOCOMPLETE_MENU_ITEM_LOADING_TEXT'">
           {{ user.name }}
         </span>
       </AutocompleteItem>

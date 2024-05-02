@@ -155,7 +155,7 @@ const staticShortcuts = {
     FLOATING_MENU_ITEM,
   ),
 
-  AUTOCOMPLETE_MENU_ITEM_TEXT: clsx(
+  AUTOCOMPLETE_MENU_ITEM_LOADING_TEXT: clsx(
     'opacity-50 transition-duration-500 transition-opacity',
   ),
 

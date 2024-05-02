@@ -58,9 +58,9 @@
     "build": "svelte-package -i src -o dist/build && tsx scripts/re-export.ts"
   },
   "dependencies": {
-    "@prosekit/core": "^0.4.0",
-    "@prosekit/pm": "^0.1.2",
-    "@prosekit/web": "^0.1.2"
+    "@prosekit/core": "^0.4.2",
+    "@prosekit/pm": "^0.1.3",
+    "@prosekit/web": "^0.1.3"
   },
   "peerDependencies": {
     "svelte": ">= 3.0.0"
@@ -73,13 +73,13 @@
   "devDependencies": {
     "@prosekit/dev": "*",
     "@sveltejs/package": "^2.3.1",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.12.8",
     "read-pkg": "^9.0.1",
     "svelte": "^4.2.15",
     "svelte-check": "^3.7.0",
-    "tsx": "^4.7.3",
+    "tsx": "^4.8.2",
     "typescript": "^5.4.5",
-    "vitest": "^1.5.2"
+    "vitest": "^1.5.3"
   },
   "publishConfig": {
     "exports": {

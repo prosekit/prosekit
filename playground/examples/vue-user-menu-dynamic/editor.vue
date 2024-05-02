@@ -4,7 +4,7 @@ import 'prosekit/basic/style.css'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
-import UserMenu from './user-menu.vue'
+import UserMenuDynamic from './user-menu-dynamic.vue'
 import { defineExtension } from './extension'
 
 const editor = createEditor({ extension: defineExtension() })
@@ -17,7 +17,7 @@ watchPostEffect(() => editor.mount(editorRef.value))
     <div class="EDITOR_VIEWPORT">
       <div class="EDITOR_DOCUMENT">
         <div ref="editorRef" class="EDITOR_CONTENT"></div>
-        <UserMenu />
+        <UserMenuDynamic />
       </div>
     </div>
   </ProseKit>

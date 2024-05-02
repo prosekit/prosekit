@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 
 import { users as allUsers } from './user-data'
 
+/**
+ * Simulate a user searching based on a query string.
+ */
 export function useUserQuery(query: string) {
   const [users, setUsers] = useState<{ name: string; id: number }[]>([])
   const [loading, setLoading] = useState(false)
@@ -26,5 +29,5 @@ export function useUserQuery(query: string) {
     }
   }, [query])
 
-  return { loading, users: loading ? [] : users }
+  return { loading, users }
 }

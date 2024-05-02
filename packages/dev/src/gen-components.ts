@@ -168,26 +168,14 @@ function formatPrimitiveElementCode(kebab: string) {
   return (
     `
 
-import { BaseElement, type SignalState } from '@aria-ui/core'
+import { ElementMixin } from '@aria-ui/core'
 
 import { defineCustomElement } from '../../../utils/define-custom-element'
-import { defineProperties } from '../../../utils/define-properties'
 
 import { default${pascal}Props, type ${pascal}Props } from './props'
 import { use${pascal} } from './state'
 
-class ${pascal}Element extends BaseElement implements ${pascal}Props {
-  readonly _s: SignalState<${pascal}Props>
-
-  constructor() {
-    super()
-    this._s = use${pascal}(this)
-  }
-}
-
-interface ${pascal}Element extends ${pascal}Props {}
-
-defineProperties(${pascal}Element, default${pascal}Props)
+class ${pascal}Element extends ElementMixin<${pascal}Props>(use${pascal}, default${pascal}Props) {}
 
 defineCustomElement('prosekit-${kebab}', ${pascal}Element)
 

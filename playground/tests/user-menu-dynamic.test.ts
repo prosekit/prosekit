@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 import { testStory, waitForEditor } from './helper'
 
 testStory('user-menu-dynamic', ({ example }) => {
-  test('readonly', async ({ page }) => {
+  test('show user menu', async ({ page }) => {
     await page.goto(example)
     const editor = await waitForEditor(page)
 
@@ -18,6 +18,23 @@ testStory('user-menu-dynamic', ({ example }) => {
     await editor.pressSequentially('ali')
 
     await expect(itemAlice).toBeVisible()
+    await expect(itemBob).toBeHidden()
+
+    await editor.press('Backspace')
+    await editor.press('Backspace')
+    await editor.press('Backspace')
+
+    await expect(itemAlice).toBeVisible()
+    await expect(itemBob).toBeVisible()
+
+    await editor.pressSequentially('bo')
+
+    await expect(itemAlice).toBeHidden()
+    await expect(itemBob).toBeVisible()
+
+    await editor.pressSequentially('12345678')
+
+    await expect(itemAlice).toBeHidden()
     await expect(itemBob).toBeHidden()
   })
 })

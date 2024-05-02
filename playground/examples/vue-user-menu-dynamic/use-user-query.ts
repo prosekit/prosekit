@@ -20,7 +20,7 @@ export function useUserQuery(query: Ref<string>) {
       users.value = allUsers
         .filter((user) => user.name.toLowerCase().includes(searchQuery))
         .slice(0, 10)
-    }, 1000)
+    }, 500)
 
     onInvalidate(() => {
       clearTimeout(timeoutId)

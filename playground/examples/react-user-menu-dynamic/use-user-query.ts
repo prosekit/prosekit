@@ -22,7 +22,7 @@ export function useUserQuery(query: string) {
           .filter((user) => user.name.toLowerCase().includes(searchQuery))
           .slice(0, 10),
       )
-    }, 1000)
+    }, 500)
 
     return () => {
       clearTimeout(id)

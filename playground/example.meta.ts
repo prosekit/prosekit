@@ -988,6 +988,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "vue-user-menu-dynamic",
+      "framework": "vue",
+      "story": "user-menu-dynamic",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "user-data.ts",
+          "hidden": false
+        },
+        {
+          "path": "user-menu.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-word-counter",
       "framework": "vue",
       "story": "word-counter",

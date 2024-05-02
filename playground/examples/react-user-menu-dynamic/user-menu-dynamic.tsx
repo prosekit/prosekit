@@ -42,7 +42,13 @@ export default function UserMenuDynamic() {
             className="AUTOCOMPLETE_MENU_ITEM"
             onSelect={() => handleUserInsert(user.id, user.name)}
           >
-            {user.name}
+            <span
+              className={
+                loading ? 'AUTOCOMPLETE_MENU_ITEM_LOADING_TEXT' : undefined
+              }
+            >
+              {user.name}
+            </span>
           </AutocompleteItem>
         ))}
       </AutocompleteList>

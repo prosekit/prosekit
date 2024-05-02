@@ -40,13 +40,14 @@ export default function UserMenuDynamic() {
         {users.map((user) => (
           <AutocompleteItem
             key={user.id}
-            className={clsx(
-              'AUTOCOMPLETE_MENU_ITEM',
-              loading && 'AUTOCOMPLETE_MENU_ITEM_LOADING',
-            )}
+            className={clsx('AUTOCOMPLETE_MENU_ITEM')}
             onSelect={() => handleUserInsert(user.id, user.name)}
           >
-            {user.name}
+            <span
+              className={loading ? 'AUTOCOMPLETE_MENU_ITEM_TEXT' : undefined}
+            >
+              {user.name}
+            </span>
           </AutocompleteItem>
         ))}
       </AutocompleteList>

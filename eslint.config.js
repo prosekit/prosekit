@@ -60,7 +60,8 @@ for (const config of configs) {
     config.languageOptions.parserOptions.EXPERIMENTAL_useProjectService = {
       // TODO: remove MAX_SAFE_INTEGER once the following is fixed
       // https://github.com/typescript-eslint/typescript-eslint/issues/9032
-      maximumDefaultProjectFileMatchCount_THIS_WILL_SLOW_DOWN_LINTING: Number.MAX_SAFE_INTEGER,
+      maximumDefaultProjectFileMatchCount_THIS_WILL_SLOW_DOWN_LINTING:
+        Number.MAX_SAFE_INTEGER,
     }
   }
 }

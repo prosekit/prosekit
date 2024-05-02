@@ -1,10 +1,13 @@
 import {
+  canUseRegexLookbehind,
   defineCommands,
   defineKeymap,
   defineMarkSpec,
-  union,
   toggleMark,
+  union,
 } from '@prosekit/core'
+
+import { defineMarkInputRule } from '../input-rule'
 
 export function defineBoldSpec() {
   return defineMarkSpec({
@@ -54,9 +57,23 @@ export function defineBoldKeymap() {
   })
 }
 
+export function defineBoldInputRule() {
+  return defineMarkInputRule({
+    regex: canUseRegexLookbehind()
+      ? /(?<=\s|^)\*\*([^\s*]|[^\s*][^*]*[^\s*])\*\*$/
+      : /\*\*([^\s*]|[^\s*][^*]*[^\s*])\*\*$/,
+    type: 'bold',
+  })
+}
+
 /**
  * @public
  */
 export function defineBold() {
-  return union([defineBoldSpec(), defineBoldCommands(), defineBoldKeymap()])
+  return union([
+    defineBoldSpec(),
+    defineBoldCommands(),
+    defineBoldKeymap(),
+    defineBoldInputRule(),
+  ])
 }

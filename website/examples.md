@@ -30,6 +30,8 @@
 
 - [list](./examples/list)
 
+- [mark-rule](./examples/mark-rule)
+
 - [minimal](./examples/minimal)
 
 - [placeholder](./examples/placeholder)
@@ -57,5 +59,7 @@
 - [underline](./examples/underline)
 
 - [user-menu](./examples/user-menu)
+
+- [user-menu-dynamic](./examples/user-menu-dynamic)
 
 - [word-counter](./examples/word-counter)

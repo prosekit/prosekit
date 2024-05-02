@@ -1,8 +1,10 @@
 <script lang="ts">
-import { AutocompleteItem } from 'prosekit/svelte/autocomplete-item'
-import { AutocompletePopover } from 'prosekit/svelte/autocomplete-popover'
-import { AutocompleteEmpty } from 'prosekit/svelte/autocomplete-empty'
-import { AutocompleteList } from 'prosekit/svelte/autocomplete-list'
+import {
+  AutocompleteItem,
+  AutocompletePopover,
+  AutocompleteEmpty,
+  AutocompleteList,
+} from 'prosekit/svelte/autocomplete'
 import { useEditor } from 'prosekit/svelte'
 import type { EditorExtension } from './extension'
 
@@ -17,14 +19,10 @@ const handleHeadingConvert = (level: number) => {
 }
 </script>
 
-<AutocompletePopover
-  editor={$editor}
-  regex={/\/.*$/iu}
-  class="AUTOCOMPLETE_MENU"
->
-  <AutocompleteList editor={$editor}>
+<AutocompletePopover regex={/\/.*$/iu} class="AUTOCOMPLETE_MENU">
+  <AutocompleteList>
     <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
-      No Command match
+      No results
     </AutocompleteEmpty>
 
     <AutocompleteItem

@@ -59,6 +59,10 @@ export const exampleItems = [
     "link": "/examples/list"
   },
   {
+    "text": "mark-rule",
+    "link": "/examples/mark-rule"
+  },
+  {
     "text": "minimal",
     "link": "/examples/minimal"
   },
@@ -113,6 +117,10 @@ export const exampleItems = [
   {
     "text": "user-menu",
     "link": "/examples/user-menu"
+  },
+  {
+    "text": "user-menu-dynamic",
+    "link": "/examples/user-menu-dynamic"
   },
   {
     "text": "word-counter",

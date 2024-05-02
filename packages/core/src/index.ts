@@ -109,12 +109,16 @@ export { type ExtensionTyping } from './types/extension-typing'
 export type { NodeJSON, SelectionJSON, StateJSON } from './types/model'
 export { Priority } from './types/priority'
 export { type SimplifyUnion } from './types/simplify-union'
+export { canUseRegexLookbehind } from './utils/can-use-regex-lookbehind'
 export { clsx } from './utils/clsx'
 export { defaultBlockAt } from './utils/default-block-at'
 export { getId as _getId } from './utils/get-id'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
 export { isInCodeBlock } from './utils/is-in-code-block'
+export { isMarkAbsent } from './utils/is-mark-absent'
+export { isMarkActive } from './utils/is-mark-active'
+export { maybeRun } from './utils/maybe-run'
 export {
   elementFromJSON,
   elementFromNode,

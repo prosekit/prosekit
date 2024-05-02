@@ -1,6 +1,9 @@
 CHANGELOG.md
 !packages/prosekit/CHANGELOG.md
 **/vite.*.timestamp-*.mjs
+.yalc
+yalc.lock
+**/.astro/settings.json
 
 .cache
 .DS_Store

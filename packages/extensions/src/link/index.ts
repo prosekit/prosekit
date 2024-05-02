@@ -11,8 +11,9 @@ import { InputRule } from '@prosekit/pm/inputrules'
 
 import { defineEnterRule } from '../enter-rule'
 import { defineInputRule } from '../input-rule'
+import { defineMarkRule } from '../mark-rule'
 
-import { LINK_RE, LINK_SPACE_RE } from './link-regex'
+import { LINK_ENTER_RE, LINK_INPUT_RE, LINK_MARK_RE } from './link-regex'
 
 /**
  * @public
@@ -54,9 +55,12 @@ export function defineLinkCommands() {
   })
 }
 
+/**
+ * Apply link marks after pressing Space.
+ */
 export function defineLinkInputRule() {
   return defineInputRule(
-    new InputRule(LINK_SPACE_RE, (state, match, from) => {
+    new InputRule(LINK_INPUT_RE, (state, match, from) => {
       const href = match[1]
       if (!href) return null
 
@@ -66,9 +70,12 @@ export function defineLinkInputRule() {
   )
 }
 
+/**
+ * Apply link marks after typing Enter.
+ */
 export function defineLinkEnterRule() {
   return defineEnterRule({
-    regex: LINK_RE,
+    regex: LINK_ENTER_RE,
     handler: ({ state, from, match }) => {
       const href = match[1]
       if (!href) return null
@@ -77,6 +84,17 @@ export function defineLinkEnterRule() {
       const tr = state.tr.addMark(from, from + href.length, mark)
       return tr.docChanged ? tr : null
     },
+  })
+}
+
+/**
+ * Apply and remove link marks to the text during typing.
+ */
+export function defineLinkMarkRule() {
+  return defineMarkRule({
+    regex: LINK_MARK_RE,
+    type: 'link',
+    attrs: (match) => ({ href: match[1] }),
   })
 }
 

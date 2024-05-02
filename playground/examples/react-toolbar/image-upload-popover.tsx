@@ -1,7 +1,9 @@
 import { useEditor } from 'prosekit/react'
-import { PopoverContent } from 'prosekit/react/popover-content'
-import { PopoverRoot } from 'prosekit/react/popover-root'
-import { PopoverTrigger } from 'prosekit/react/popover-trigger'
+import {
+  PopoverContent,
+  PopoverRoot,
+  PopoverTrigger,
+} from 'prosekit/react/popover'
 import { useState, type FC, type ReactNode } from 'react'
 
 import type { EditorExtension } from './extension'

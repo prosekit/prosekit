@@ -4,227 +4,408 @@ import { kebabToPascal } from './kebab-to-pascal'
 import { vfs } from './virtual-file-system'
 
 export async function genComponents() {
-  const litPackage = await vfs.getPackageByName('@prosekit/lit')
+  const webPackages = await vfs.getPackageByName('@prosekit/web')
+
   const reactPackage = await vfs.getPackageByName('@prosekit/react')
   const vuePackage = await vfs.getPackageByName('@prosekit/vue')
   const sveltePackage = await vfs.getPackageByName('@prosekit/svelte')
   const solidPackage = await vfs.getPackageByName('@prosekit/solid')
   const preactPackage = await vfs.getPackageByName('@prosekit/preact')
+  const litPackage = await vfs.getPackageByName('@prosekit/lit')
 
+  await vfs.cleanGeneratedFilesInPackage(reactPackage)
   await vfs.cleanGeneratedFilesInPackage(reactPackage)
   await vfs.cleanGeneratedFilesInPackage(vuePackage)
   await vfs.cleanGeneratedFilesInPackage(sveltePackage)
   await vfs.cleanGeneratedFilesInPackage(solidPackage)
   await vfs.cleanGeneratedFilesInPackage(preactPackage)
+  await vfs.cleanGeneratedFilesInPackage(litPackage)
 
-  const componentNames = readLitComponents(litPackage)
-  await writeReactComponents(reactPackage, componentNames)
-  await writeVueComponents(vuePackage, componentNames)
-  await writeSvelteComponents(sveltePackage, componentNames)
-  await writeSolidComponents(solidPackage, componentNames)
-  await writePreactComponents(preactPackage, componentNames)
+  const components = await readWeb(webPackages)
+  await writeWebComponents(webPackages, components)
+  await writeReactComponents(reactPackage, components)
+  await writeVueComponents(vuePackage, components)
+  await writeSvelteComponents(sveltePackage, components)
+  await writeSolidComponents(solidPackage, components)
+  await writePreactComponents(preactPackage, components)
+  await writeLitComponents(litPackage, components)
 }
 
-async function writeReactComponents(pkg: Package, componentNames: string[]) {
+async function writeWebComponents(pkg: Package, info: Components) {
   const exports = (pkg.packageJson as any).exports
-  for (const kebab of componentNames) {
-    exports[`./${kebab}`] = ''
-    const code = formatReactCode(kebab)
-    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
-  }
-}
 
-async function writeVueComponents(pkg: Package, componentNames: string[]) {
-  const exports = (pkg.packageJson as any).exports
-  for (const kebab of componentNames) {
-    exports[`./${kebab}`] = ''
-    const code = formatVueCode(kebab)
-    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
-  }
-}
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
 
-async function writeSvelteComponents(pkg: Package, componentNames: string[]) {
-  const exports = (pkg.packageJson as any).exports
-  for (const kebab of componentNames) {
-    exports[`./${kebab}`] = ''
-    const code = formatSvelteCode(kebab)
-    await vfs.updateTextInPackage(
-      pkg,
-      `src/components/${kebab}.gen.svelte`,
-      code,
-    )
+    const code = formatPrimitiveIndexCode(components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
 
-    const codeTs = formatSvelteTsCode(kebab)
-    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, codeTs)
-  }
-}
-
-async function writeSolidComponents(pkg: Package, componentNames: string[]) {
-  const exports = (pkg.packageJson as any).exports
-  for (const kebab of componentNames) {
-    exports[`./${kebab}`] = ''
-    const code = formatSolidCode(kebab)
-    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
-  }
-}
-
-async function writePreactComponents(pkg: Package, componentNames: string[]) {
-  const exports = (pkg.packageJson as any).exports
-  for (const kebab of componentNames) {
-    exports[`./${kebab}`] = ''
-    const code = formatPreactCode(kebab)
-    await vfs.updateTextInPackage(pkg, `src/components/${kebab}.gen.ts`, code)
-  }
-}
-
-function formatReactCode(kebab: string) {
-  const pascal = kebabToPascal(kebab)
-  return (
-    `
-import { createComponent } from '@lit/react'
-import { ${pascal} as ${pascal}Element, type ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
-import React from 'react'
-
-import {type PropsWithClassName} from '../types'
-
-export type ${pascal}Props = React.PropsWithChildren<PropsWithClassName<${pascal}ElementProps>>
-
-const ${pascal}Inner = createComponent({
-  tagName: 'prosekit-${kebab}',
-  elementClass: ${pascal}Element,
-  react: React,
-  displayName: '${pascal}Inner',
-})
-
-export const ${pascal}: React.ComponentType<
-  ${pascal}Props & React.RefAttributes<${pascal}Element>
-> = React.forwardRef((props, ref) => {
-  return React.createElement(${pascal}Inner, { ...props, ref })
-})
-
-${pascal}.displayName = '${pascal}'
-`.trim() + '\n'
-  )
-}
-
-function formatVueCode(kebab: string) {
-  const pascal = kebabToPascal(kebab)
-  return (
-    `
-import '@prosekit/lit/${kebab}'
-
-import { type ${pascal}Props as ${pascal}ElementProps, propNames } from '@prosekit/lit/${kebab}'
-import { defineComponent, h, type DefineSetupFnComponent } from 'vue'
-
-import type { PropsWithClass } from '../types'
-
-export type ${pascal}Props = PropsWithClass<${pascal}ElementProps>
-
-export const ${pascal}: DefineSetupFnComponent<${pascal}Props> = defineComponent<${pascal}Props>(
-  (props, { slots }) => {
-    return () => {
-      const webComponentProps = Object.fromEntries(
-        Object.entries(props)
-          .filter((entry) => entry[1] !== undefined)
-          .map(([key, value]) => [(key === 'class' ? '' : '.') + key, value]),
-      )
-      return h('prosekit-${kebab}', webComponentProps, slots.default?.())
+    for (const component of components) {
+      const code = formatPrimitiveElementCode(component)
+      const path = `src/components/${group}/${component}/element.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
     }
-  }, 
-  { props: ['class', ...propNames] }
-)
+  }
+}
+
+async function writeReactComponents(pkg: Package, info: Components) {
+  const exports = (pkg.packageJson as any).exports
+
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
+
+    const code = formatReactIndexCode(components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+
+    for (const component of components) {
+      const code = formatReactComponentCode(group, component)
+      const path = `src/components/${group}/${component}.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
+    }
+  }
+}
+
+async function writeVueComponents(pkg: Package, info: Components) {
+  const exports = (pkg.packageJson as any).exports
+
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
+
+    const code = formatVueIndexCode(components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+
+    for (const component of components) {
+      const code = formatVueComponentCode(group, component)
+      const path = `src/components/${group}/${component}.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
+    }
+  }
+}
+
+async function writeSvelteComponents(pkg: Package, info: Components) {
+  const exports = (pkg.packageJson as any).exports
+
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
+
+    const code = formatSvelteIndexCode(components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+
+    for (const component of components) {
+      const code = formatSvelteComponentCode(group, component)
+      const path = `src/components/${group}/${component}.gen.svelte`
+      await vfs.updateTextInPackage(pkg, path, code)
+    }
+    for (const component of components) {
+      const code = formatSvelteTsCode(group, component)
+      const path = `src/components/${group}/${component}.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
+    }
+  }
+}
+
+async function writeSolidComponents(pkg: Package, info: Components) {
+  const exports = (pkg.packageJson as any).exports
+
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
+
+    const code = formatSolidIndexCode(components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+
+    for (const component of components) {
+      const code = formatSolidComponentCode(group, component)
+      const path = `src/components/${group}/${component}.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
+    }
+  }
+}
+
+async function writePreactComponents(pkg: Package, info: Components) {
+  const exports = (pkg.packageJson as any).exports
+
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
+
+    const code = formatPreactIndexCode(components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+
+    for (const component of components) {
+      const code = formatPreactComponentCode(group, component)
+      const path = `src/components/${group}/${component}.gen.ts`
+      await vfs.updateTextInPackage(pkg, path, code)
+    }
+  }
+}
+
+async function writeLitComponents(pkg: Package, info: Components) {
+  const exports = (pkg.packageJson as any).exports
+
+  for (const [group, components] of Object.entries(info)) {
+    exports[`./${group}`] = ''
+
+    const code = formatLitIndexCode(group, components)
+    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+  }
+}
+
+function formatPrimitiveIndexCode(components: string[]) {
+  const lines = components.flatMap((kebab) => {
+    const pascal = kebabToPascal(kebab)
+    return [
+      `export { ${pascal}Element } from './${kebab}/element.gen'`,
+      `export { default${pascal}Props } from './${kebab}/props'`,
+      `export type { ${pascal}Props } from './${kebab}/props'`,
+      '',
+    ]
+  })
+
+  return lines.join('\n')
+}
+
+function formatPrimitiveElementCode(kebab: string) {
+  const pascal = kebabToPascal(kebab)
+  return (
+    `
+
+import { BaseElement, type SignalState } from '@aria-ui/core'
+
+import { defineCustomElement } from '../../../utils/define-custom-element'
+import { defineProperties } from '../../../utils/define-properties'
+
+import { default${pascal}Props, type ${pascal}Props } from './props'
+import { use${pascal} } from './state'
+
+class ${pascal}Element extends BaseElement implements ${pascal}Props {
+  readonly _s: SignalState<${pascal}Props>
+
+  constructor() {
+    super()
+    this._s = use${pascal}(this)
+  }
+}
+
+interface ${pascal}Element extends ${pascal}Props {}
+
+defineProperties(${pascal}Element, default${pascal}Props)
+
+defineCustomElement('prosekit-${kebab}', ${pascal}Element)
+
+export { ${pascal}Element }
+    
 `.trim() + '\n'
   )
 }
 
-function formatSvelteCode(kebab: string) {
+function formatReactIndexCode(components: string[]) {
+  const lines = components.flatMap((kebab) => {
+    const pascal = kebabToPascal(kebab)
+    return [`export { ${pascal} } from './${kebab}.gen'`, '']
+  })
+
+  return lines.join('\n')
+}
+
+function formatVueIndexCode(components: string[]) {
+  return formatReactIndexCode(components)
+}
+
+function formatSvelteIndexCode(components: string[]) {
+  return formatReactIndexCode(components)
+}
+
+function formatSolidIndexCode(components: string[]) {
+  return formatReactIndexCode(components)
+}
+
+function formatPreactIndexCode(components: string[]) {
+  return formatReactIndexCode(components)
+}
+
+function formatLitIndexCode(group: string, components: string[]) {
+  const lines = components.flatMap((kebab) => {
+    const pascal = kebabToPascal(kebab)
+    return [
+      `export { ${pascal}Element as ${pascal} } from '@prosekit/web/${group}'`,
+      '',
+    ]
+  })
+
+  return lines.join('\n')
+}
+
+function formatReactComponentCode(group: string, kebab: string) {
+  const pascal = kebabToPascal(kebab)
+  return (
+    `
+
+import {
+  ${pascal}Element,
+  default${pascal}Props,
+  type ${pascal}Props,
+} from '@prosekit/web/${group}'
+import type {
+  ForwardRefExoticComponent,
+  HTMLAttributes,
+  RefAttributes,
+} from 'react'
+
+import { createComponent } from '../create-component'
+
+export const ${pascal}: ForwardRefExoticComponent<
+  Partial<${pascal}Props> &
+  RefAttributes<${pascal}Element> &
+  HTMLAttributes<${pascal}Element>
+> = createComponent<
+  ${pascal}Props, 
+  ${pascal}Element
+>(
+  'prosekit-${kebab}',
+  '${pascal}',
+  default${pascal}Props,
+)
+    
+`.trim() + '\n'
+  )
+}
+
+function formatVueComponentCode(group: string, kebab: string) {
+  const pascal = kebabToPascal(kebab)
+  return (
+    `
+
+import { default${pascal}Props, type ${pascal}Props } from '@prosekit/web/${group}'
+
+import { createComponent } from '../create-component'
+
+export const ${pascal} = createComponent<${pascal}Props>('prosekit-${kebab}', '${pascal}', default${pascal}Props)
+
+`.trim() + '\n'
+  )
+}
+
+function formatSvelteComponentCode(group: string, kebab: string) {
+  const pascal = kebabToPascal(kebab)
+
   return (
     `
 <script lang="ts">
-import '@prosekit/lit/${kebab}'
+import '@prosekit/web/${group}'
+import { default${pascal}Props } from '@prosekit/web/${group}'
+
+import { useEditorContext } from '../../contexts/editor-context'
+
+const hasEditor = Object.hasOwn(default${pascal}Props, 'editor')
+const editorContext = useEditorContext()
+const editor = hasEditor ? editorContext : undefined
 </script>
 
-<prosekit-${kebab} {...$$props}>
+<prosekit-${kebab} {editor} {...$$props}>
   <slot />
 </prosekit-${kebab}>
 `.trim() + '\n'
   )
 }
 
-function formatSvelteTsCode(kebab: string) {
+function formatSvelteTsCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
+
+import type { ${pascal}Props } from '@prosekit/web/${group}'    
 import type { SvelteComponent } from 'svelte'
 
-import type { PropsWithClass } from '../types'
+import Component from './${kebab}.gen.svelte'
 
-import ${pascal}Component from './${kebab}.gen.svelte'
-
-export type ${pascal}Props = PropsWithClass<${pascal}ElementProps>
-
-export const ${pascal} = ${pascal}Component as typeof SvelteComponent<any> as typeof SvelteComponent<${pascal}Props>
+export const ${pascal} = Component as typeof SvelteComponent<any> as typeof SvelteComponent<Partial<${pascal}Props> & {class?: string}>
+  
 `.trim() + '\n'
   )
 }
 
-function formatSolidCode(kebab: string) {
+function formatSolidComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import '@prosekit/lit/${kebab}'
 
-import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
-import type { Component } from 'solid-js'
-import html from 'solid-js/html'
+import { 
+  ${pascal}Element,
+  default${pascal}Props,
+  type ${pascal}Props,
+} from '@prosekit/web/${group}'
 
-import type { PropsWithClass, PropsWithChildren } from '../types'
-import { forceProps } from '../utils/force-props'
+import { createComponent } from '../create-component'
 
-export type ${pascal}Props = PropsWithChildren<PropsWithClass<${pascal}ElementProps>>
+export const ${pascal} = createComponent<
+  ${pascal}Props,
+  ${pascal}Element
+>(
+  'prosekit-${kebab}', 
+  default${pascal}Props,
+)
 
-export const ${pascal}: Component<${pascal}Props> = (props) => {
-  return html\`<prosekit-${kebab} ...\${forceProps(props)} />\`
-}
 `.trim() + '\n'
   )
 }
 
-function formatPreactCode(kebab: string) {
+function formatPreactComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import '@prosekit/lit/${kebab}'
-import type { ${pascal}Props as ${pascal}ElementProps } from '@prosekit/lit/${kebab}'
-import type { ComponentType } from 'preact'
-import { h } from 'preact'
 
-import type { PropsWithClass, PropsWithChildren } from '../types'
+import {
+  ${pascal}Element,
+  default${pascal}Props,
+  type ${pascal}Props,
+} from '@prosekit/web/${group}'
+import type {
+  ForwardRefExoticComponent,
+  HTMLAttributes,
+  RefAttributes,
+} from 'preact/compat'
 
-export type ${pascal}Props = PropsWithChildren<PropsWithClass<${pascal}ElementProps>>
+import { createComponent } from '../create-component'
 
-export const ${pascal}: ComponentType<${pascal}Props> = (props) => {
-  return h('prosekit-${kebab}', props as object)
-}
+export const ${pascal}: ForwardRefExoticComponent<
+  Partial<${pascal}Props> &
+  RefAttributes<${pascal}Element> &
+  HTMLAttributes<${pascal}Element>
+> = createComponent<
+  ${pascal}Props, 
+  ${pascal}Element
+>(
+  'prosekit-${kebab}',
+  '${pascal}',
+  default${pascal}Props,
+)
+
 `.trim() + '\n'
   )
 }
 
 /**
  * Returns a list of components names in kebab case
- * e.g. ["menu-item", "menu"]
+ * e.g. { 'resizable': [ 'resizable-handle', 'resizable-root' ] }
  */
-function readLitComponents(pkg: Package): string[] {
-  const paths: string[] = Object.values((pkg.packageJson as any).exports)
-  const names: string[] = []
+async function readWeb(pkg: Package): Promise<Components> {
+  const filePaths = await vfs.getFilePathsByPackage(pkg)
 
-  for (const path of paths) {
-    const match = /components\/([^/]*)\//.exec(path)
-    if (match) {
-      names.push(match[1])
+  const result: Components = {}
+
+  for (const filePath of filePaths) {
+    const re = /components\/(?<group>.*)\/(?<component>.*)\/props\.ts$/
+    const match = re.exec(filePath)
+
+    if (!match) {
+      continue
     }
+
+    const { group, component } = match.groups as Record<string, string>
+    const components = (result[group] ||= [])
+    components.push(component)
   }
 
-  return names
+  return result
 }
+
+type Components = { [group: string]: string[] }

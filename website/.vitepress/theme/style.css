@@ -12,8 +12,12 @@ body .Layout .VPNav .VPNavBar {
   background: var(--prosekit-nav-bg) !important;
 }
 
-body .Layout .VPLocalNav {
-  border-top: none;
+body .Layout .VPNav .VPNavBar .VPNavBarTitle * {
+  border: none;
+}
+
+body .Layout .VPNav .VPNavBar .divider {
+  padding-left: 0;
 }
 
 @media (min-width: 960px) {

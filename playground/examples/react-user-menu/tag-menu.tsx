@@ -1,8 +1,10 @@
 import { useEditor } from 'prosekit/react'
-import { AutocompleteEmpty } from 'prosekit/react/autocomplete-empty'
-import { AutocompleteItem } from 'prosekit/react/autocomplete-item'
-import { AutocompleteList } from 'prosekit/react/autocomplete-list'
-import { AutocompletePopover } from 'prosekit/react/autocomplete-popover'
+import {
+  AutocompleteEmpty,
+  AutocompleteItem,
+  AutocompleteList,
+  AutocompletePopover,
+} from 'prosekit/react/autocomplete'
 
 import type { EditorExtension } from './extension'
 import { tags } from './tag-data'
@@ -20,14 +22,10 @@ export default function TagMenu() {
   }
 
   return (
-    <AutocompletePopover
-      editor={editor}
-      regex={/#[\da-z]*$/i}
-      className="AUTOCOMPLETE_MENU"
-    >
-      <AutocompleteList editor={editor}>
+    <AutocompletePopover regex={/#[\da-z]*$/i} className="AUTOCOMPLETE_MENU">
+      <AutocompleteList>
         <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
-          No Tag match
+          No results
         </AutocompleteEmpty>
 
         {tags.map((tag) => (

@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { AutocompleteEmpty } from 'prosekit/vue/autocomplete-empty'
-import { AutocompleteItem } from 'prosekit/vue/autocomplete-item'
-import { AutocompleteList } from 'prosekit/vue/autocomplete-list'
-import { AutocompletePopover } from 'prosekit/vue/autocomplete-popover'
 import { useEditor } from 'prosekit/vue'
+import {
+  AutocompleteEmpty,
+  AutocompleteItem,
+  AutocompleteList,
+  AutocompletePopover,
+} from 'prosekit/vue/autocomplete'
 import type { EditorExtension } from './extension'
 
 const editor = useEditor<EditorExtension>()
@@ -31,14 +33,10 @@ const handleSelectList = (kind: 'task' | 'bullet' | 'ordered' | 'toggle') => {
 </script>
 
 <template>
-  <AutocompletePopover
-    :editor="editor"
-    :regex="/\/.*$/iu"
-    class="AUTOCOMPLETE_MENU"
-  >
-    <AutocompleteList :editor="editor">
+  <AutocompletePopover :regex="/\/.*$/iu" class="AUTOCOMPLETE_MENU">
+    <AutocompleteList>
       <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
-        No Command match
+        No results
       </AutocompleteEmpty>
 
       <AutocompleteItem

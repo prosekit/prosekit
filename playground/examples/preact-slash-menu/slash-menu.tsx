@@ -1,8 +1,10 @@
 import { useEditor } from 'prosekit/preact'
-import { AutocompleteEmpty } from 'prosekit/preact/autocomplete-empty'
-import { AutocompleteItem } from 'prosekit/preact/autocomplete-item'
-import { AutocompleteList } from 'prosekit/preact/autocomplete-list'
-import { AutocompletePopover } from 'prosekit/preact/autocomplete-popover'
+import {
+  AutocompleteEmpty,
+  AutocompleteItem,
+  AutocompleteList,
+  AutocompletePopover,
+} from 'prosekit/preact/autocomplete'
 
 import type { EditorExtension } from './extension'
 
@@ -18,14 +20,10 @@ export default function SlashMenu() {
   }
 
   return (
-    <AutocompletePopover
-      editor={editor}
-      regex={/\/.*$/iu}
-      class="AUTOCOMPLETE_MENU"
-    >
-      <AutocompleteList editor={editor}>
+    <AutocompletePopover regex={/\/.*$/iu} class="AUTOCOMPLETE_MENU">
+      <AutocompleteList>
         <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
-          No Command match
+          No results
         </AutocompleteEmpty>
 
         <AutocompleteItem

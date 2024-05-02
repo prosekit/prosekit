@@ -74,13 +74,13 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - name: Build
+      - name: Build without clean URLs
         run: pnpm run build
         env:
-          PROSEKIT_NO_CLEAN_URLS: true
+          PROSEKIT_NO_CLEAN_URLS: 'yes'
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v1.9.3
+        uses: lycheeverse/lychee-action@v1.10.0
         with:
           args: --base ./website/dist --no-progress './website/dist/**/*.html' --include-fragments
           fail: true

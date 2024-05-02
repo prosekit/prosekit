@@ -81,6 +81,7 @@ export function createAutocompletePlugin({
           const textContent = view.state.doc.textBetween(
             from,
             to,
+            null,
             OBJECT_REPLACEMENT_CHARACTER,
           )
 
@@ -89,6 +90,7 @@ export function createAutocompletePlugin({
               view.state.doc.textBetween(
                 from,
                 to,
+                null,
                 OBJECT_REPLACEMENT_CHARACTER,
               ) === textContent
             ) {

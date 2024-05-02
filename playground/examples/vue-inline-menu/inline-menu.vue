@@ -42,7 +42,7 @@ const handleLinkUpdate = (href?: string) => {
 </script>
 
 <template>
-  <InlinePopover class="INLINE_MENU_MAIN" :editor="editor">
+  <InlinePopover class="INLINE_MENU_MAIN">
     <Toggle
       :pressed="editor.marks.bold.isActive()"
       :disabled="!editor.commands.toggleBold.canApply()"
@@ -99,7 +99,6 @@ const handleLinkUpdate = (href?: string) => {
 
   <InlinePopover
     class="INLINE_MENU_LINK"
-    :editor="editor"
     :placement="'bottom'"
     :open="linkMenuOpen"
     @openChange="setLinkMenuOpen"

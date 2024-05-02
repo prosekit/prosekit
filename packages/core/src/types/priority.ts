@@ -3,7 +3,7 @@
  *
  * @public
  */
-export const enum Priority {
+export enum Priority {
   lowest = 4,
   low = 3,
   default = 2,

@@ -70,6 +70,10 @@ export const referenceItems = [
         "link": "/references/extensions/list"
       },
       {
+        "text": "mark-rule",
+        "link": "/references/extensions/mark-rule"
+      },
+      {
         "text": "mention",
         "link": "/references/extensions/mention"
       },
@@ -105,28 +109,12 @@ export const referenceItems = [
     "text": "lit",
     "items": [
       {
-        "text": "autocomplete-empty",
-        "link": "/references/lit/autocomplete-empty"
+        "text": "autocomplete",
+        "link": "/references/lit/autocomplete"
       },
       {
-        "text": "autocomplete-item",
-        "link": "/references/lit/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/lit/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/lit/autocomplete-popover"
-      },
-      {
-        "text": "block-drag-handle",
-        "link": "/references/lit/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/lit/block-popover"
+        "text": "block-handle",
+        "link": "/references/lit/block-handle"
       },
       {
         "text": "inline-popover",
@@ -137,36 +125,12 @@ export const referenceItems = [
         "link": "/references/lit/popover"
       },
       {
-        "text": "popover-content",
-        "link": "/references/lit/popover-content"
-      },
-      {
-        "text": "popover-root",
-        "link": "/references/lit/popover-root"
-      },
-      {
-        "text": "popover-trigger",
-        "link": "/references/lit/popover-trigger"
-      },
-      {
         "text": "resizable",
         "link": "/references/lit/resizable"
       },
       {
-        "text": "resizable-handle",
-        "link": "/references/lit/resizable-handle"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/lit/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/lit/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/lit/tooltip-trigger"
+        "text": "tooltip",
+        "link": "/references/lit/tooltip"
       }
     ],
     "collapsed": true,
@@ -176,28 +140,12 @@ export const referenceItems = [
     "text": "preact",
     "items": [
       {
-        "text": "autocomplete-empty",
-        "link": "/references/preact/autocomplete-empty"
+        "text": "autocomplete",
+        "link": "/references/preact/autocomplete"
       },
       {
-        "text": "autocomplete-item",
-        "link": "/references/preact/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/preact/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/preact/autocomplete-popover"
-      },
-      {
-        "text": "block-drag-handle",
-        "link": "/references/preact/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/preact/block-popover"
+        "text": "block-handle",
+        "link": "/references/preact/block-handle"
       },
       {
         "text": "inline-popover",
@@ -208,36 +156,12 @@ export const referenceItems = [
         "link": "/references/preact/popover"
       },
       {
-        "text": "popover-content",
-        "link": "/references/preact/popover-content"
-      },
-      {
-        "text": "popover-root",
-        "link": "/references/preact/popover-root"
-      },
-      {
-        "text": "popover-trigger",
-        "link": "/references/preact/popover-trigger"
-      },
-      {
         "text": "resizable",
         "link": "/references/preact/resizable"
       },
       {
-        "text": "resizable-handle",
-        "link": "/references/preact/resizable-handle"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/preact/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/preact/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/preact/tooltip-trigger"
+        "text": "tooltip",
+        "link": "/references/preact/tooltip"
       }
     ],
     "collapsed": true,
@@ -247,28 +171,12 @@ export const referenceItems = [
     "text": "react",
     "items": [
       {
-        "text": "autocomplete-empty",
-        "link": "/references/react/autocomplete-empty"
+        "text": "autocomplete",
+        "link": "/references/react/autocomplete"
       },
       {
-        "text": "autocomplete-item",
-        "link": "/references/react/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/react/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/react/autocomplete-popover"
-      },
-      {
-        "text": "block-drag-handle",
-        "link": "/references/react/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/react/block-popover"
+        "text": "block-handle",
+        "link": "/references/react/block-handle"
       },
       {
         "text": "inline-popover",
@@ -279,36 +187,12 @@ export const referenceItems = [
         "link": "/references/react/popover"
       },
       {
-        "text": "popover-content",
-        "link": "/references/react/popover-content"
-      },
-      {
-        "text": "popover-root",
-        "link": "/references/react/popover-root"
-      },
-      {
-        "text": "popover-trigger",
-        "link": "/references/react/popover-trigger"
-      },
-      {
         "text": "resizable",
         "link": "/references/react/resizable"
       },
       {
-        "text": "resizable-handle",
-        "link": "/references/react/resizable-handle"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/react/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/react/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/react/tooltip-trigger"
+        "text": "tooltip",
+        "link": "/references/react/tooltip"
       }
     ],
     "collapsed": true,
@@ -318,28 +202,12 @@ export const referenceItems = [
     "text": "solid",
     "items": [
       {
-        "text": "autocomplete-empty",
-        "link": "/references/solid/autocomplete-empty"
+        "text": "autocomplete",
+        "link": "/references/solid/autocomplete"
       },
       {
-        "text": "autocomplete-item",
-        "link": "/references/solid/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/solid/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/solid/autocomplete-popover"
-      },
-      {
-        "text": "block-drag-handle",
-        "link": "/references/solid/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/solid/block-popover"
+        "text": "block-handle",
+        "link": "/references/solid/block-handle"
       },
       {
         "text": "inline-popover",
@@ -350,36 +218,12 @@ export const referenceItems = [
         "link": "/references/solid/popover"
       },
       {
-        "text": "popover-content",
-        "link": "/references/solid/popover-content"
-      },
-      {
-        "text": "popover-root",
-        "link": "/references/solid/popover-root"
-      },
-      {
-        "text": "popover-trigger",
-        "link": "/references/solid/popover-trigger"
-      },
-      {
         "text": "resizable",
         "link": "/references/solid/resizable"
       },
       {
-        "text": "resizable-handle",
-        "link": "/references/solid/resizable-handle"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/solid/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/solid/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/solid/tooltip-trigger"
+        "text": "tooltip",
+        "link": "/references/solid/tooltip"
       }
     ],
     "collapsed": true,
@@ -389,28 +233,12 @@ export const referenceItems = [
     "text": "svelte",
     "items": [
       {
-        "text": "autocomplete-empty",
-        "link": "/references/svelte/autocomplete-empty"
+        "text": "autocomplete",
+        "link": "/references/svelte/autocomplete"
       },
       {
-        "text": "autocomplete-item",
-        "link": "/references/svelte/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/svelte/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/svelte/autocomplete-popover"
-      },
-      {
-        "text": "block-drag-handle",
-        "link": "/references/svelte/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/svelte/block-popover"
+        "text": "block-handle",
+        "link": "/references/svelte/block-handle"
       },
       {
         "text": "inline-popover",
@@ -421,36 +249,12 @@ export const referenceItems = [
         "link": "/references/svelte/popover"
       },
       {
-        "text": "popover-content",
-        "link": "/references/svelte/popover-content"
-      },
-      {
-        "text": "popover-root",
-        "link": "/references/svelte/popover-root"
-      },
-      {
-        "text": "popover-trigger",
-        "link": "/references/svelte/popover-trigger"
-      },
-      {
         "text": "resizable",
         "link": "/references/svelte/resizable"
       },
       {
-        "text": "resizable-handle",
-        "link": "/references/svelte/resizable-handle"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/svelte/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/svelte/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/svelte/tooltip-trigger"
+        "text": "tooltip",
+        "link": "/references/svelte/tooltip"
       }
     ],
     "collapsed": true,
@@ -460,28 +264,12 @@ export const referenceItems = [
     "text": "vue",
     "items": [
       {
-        "text": "autocomplete-empty",
-        "link": "/references/vue/autocomplete-empty"
+        "text": "autocomplete",
+        "link": "/references/vue/autocomplete"
       },
       {
-        "text": "autocomplete-item",
-        "link": "/references/vue/autocomplete-item"
-      },
-      {
-        "text": "autocomplete-list",
-        "link": "/references/vue/autocomplete-list"
-      },
-      {
-        "text": "autocomplete-popover",
-        "link": "/references/vue/autocomplete-popover"
-      },
-      {
-        "text": "block-drag-handle",
-        "link": "/references/vue/block-drag-handle"
-      },
-      {
-        "text": "block-popover",
-        "link": "/references/vue/block-popover"
+        "text": "block-handle",
+        "link": "/references/vue/block-handle"
       },
       {
         "text": "inline-popover",
@@ -492,39 +280,46 @@ export const referenceItems = [
         "link": "/references/vue/popover"
       },
       {
-        "text": "popover-content",
-        "link": "/references/vue/popover-content"
-      },
-      {
-        "text": "popover-root",
-        "link": "/references/vue/popover-root"
-      },
-      {
-        "text": "popover-trigger",
-        "link": "/references/vue/popover-trigger"
-      },
-      {
         "text": "resizable",
         "link": "/references/vue/resizable"
       },
       {
-        "text": "resizable-handle",
-        "link": "/references/vue/resizable-handle"
-      },
-      {
-        "text": "tooltip-content",
-        "link": "/references/vue/tooltip-content"
-      },
-      {
-        "text": "tooltip-root",
-        "link": "/references/vue/tooltip-root"
-      },
-      {
-        "text": "tooltip-trigger",
-        "link": "/references/vue/tooltip-trigger"
+        "text": "tooltip",
+        "link": "/references/vue/tooltip"
       }
     ],
     "collapsed": true,
     "link": "/references/vue"
+  },
+  {
+    "text": "web",
+    "items": [
+      {
+        "text": "autocomplete",
+        "link": "/references/web/autocomplete"
+      },
+      {
+        "text": "block-handle",
+        "link": "/references/web/block-handle"
+      },
+      {
+        "text": "inline-popover",
+        "link": "/references/web/inline-popover"
+      },
+      {
+        "text": "popover",
+        "link": "/references/web/popover"
+      },
+      {
+        "text": "resizable",
+        "link": "/references/web/resizable"
+      },
+      {
+        "text": "tooltip",
+        "link": "/references/web/tooltip"
+      }
+    ],
+    "collapsed": true,
+    "link": "/references/web"
   }
 ]

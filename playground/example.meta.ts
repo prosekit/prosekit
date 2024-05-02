@@ -165,6 +165,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-mark-rule",
+      "framework": "react",
+      "story": "mark-rule",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "issue-link.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-readonly",
       "framework": "react",
       "story": "readonly",
@@ -324,6 +343,33 @@ export const exampleMeta = {
         },
         {
           "path": "user-menu.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-user-menu-dynamic",
+      "framework": "react",
+      "story": "user-menu-dynamic",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "use-user-query.ts",
+          "hidden": false
+        },
+        {
+          "path": "user-data.ts",
+          "hidden": false
+        },
+        {
+          "path": "user-menu-dynamic.tsx",
           "hidden": false
         }
       ]
@@ -674,6 +720,25 @@ export const exampleMeta = {
         },
         {
           "path": "toolbar.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-mark-rule",
+      "framework": "vue",
+      "story": "mark-rule",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "issue-link.ts",
           "hidden": false
         }
       ]

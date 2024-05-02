@@ -1,7 +1,7 @@
 {
   "name": "prosekit",
   "type": "module",
-  "version": "0.5.3",
+  "version": "0.6.8",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -31,6 +31,7 @@
     "./basic/typography.css": "./src/basic/typography.css",
     "./core": "./src/core.gen.ts",
     "./extensions": "./src/extensions.gen.ts",
+    "./extensions/mark-rule": "./src/extensions/mark-rule.gen.ts",
     "./extensions/autocomplete": "./src/extensions/autocomplete.gen.ts",
     "./extensions/blockquote": "./src/extensions/blockquote.gen.ts",
     "./extensions/bold": "./src/extensions/bold.gen.ts",
@@ -56,22 +57,12 @@
     "./extensions/virtual-selection": "./src/extensions/virtual-selection.gen.ts",
     "./extensions/virtual-selection/style.css": "./src/extensions/virtual-selection/style.css",
     "./lit": "./src/lit.gen.ts",
-    "./lit/autocomplete-empty": "./src/lit/autocomplete-empty.gen.ts",
-    "./lit/autocomplete-item": "./src/lit/autocomplete-item.gen.ts",
-    "./lit/autocomplete-list": "./src/lit/autocomplete-list.gen.ts",
-    "./lit/autocomplete-popover": "./src/lit/autocomplete-popover.gen.ts",
-    "./lit/block-drag-handle": "./src/lit/block-drag-handle.gen.ts",
-    "./lit/block-popover": "./src/lit/block-popover.gen.ts",
+    "./lit/autocomplete": "./src/lit/autocomplete.gen.ts",
+    "./lit/block-handle": "./src/lit/block-handle.gen.ts",
     "./lit/inline-popover": "./src/lit/inline-popover.gen.ts",
     "./lit/popover": "./src/lit/popover.gen.ts",
-    "./lit/popover-content": "./src/lit/popover-content.gen.ts",
-    "./lit/popover-root": "./src/lit/popover-root.gen.ts",
-    "./lit/popover-trigger": "./src/lit/popover-trigger.gen.ts",
     "./lit/resizable": "./src/lit/resizable.gen.ts",
-    "./lit/resizable-handle": "./src/lit/resizable-handle.gen.ts",
-    "./lit/tooltip-content": "./src/lit/tooltip-content.gen.ts",
-    "./lit/tooltip-root": "./src/lit/tooltip-root.gen.ts",
-    "./lit/tooltip-trigger": "./src/lit/tooltip-trigger.gen.ts",
+    "./lit/tooltip": "./src/lit/tooltip.gen.ts",
     "./pm": "./src/pm.gen.ts",
     "./pm/commands": "./src/pm/commands.gen.ts",
     "./pm/history": "./src/pm/history.gen.ts",
@@ -83,90 +74,47 @@
     "./pm/view": "./src/pm/view.gen.ts",
     "./pm/view/style/prosemirror.css": "./src/pm/view/style/prosemirror.css",
     "./preact": "./src/preact.gen.ts",
-    "./preact/autocomplete-empty": "./src/preact/autocomplete-empty.gen.ts",
-    "./preact/autocomplete-item": "./src/preact/autocomplete-item.gen.ts",
-    "./preact/autocomplete-list": "./src/preact/autocomplete-list.gen.ts",
-    "./preact/autocomplete-popover": "./src/preact/autocomplete-popover.gen.ts",
-    "./preact/block-drag-handle": "./src/preact/block-drag-handle.gen.ts",
-    "./preact/block-popover": "./src/preact/block-popover.gen.ts",
+    "./preact/autocomplete": "./src/preact/autocomplete.gen.ts",
+    "./preact/block-handle": "./src/preact/block-handle.gen.ts",
     "./preact/inline-popover": "./src/preact/inline-popover.gen.ts",
     "./preact/popover": "./src/preact/popover.gen.ts",
-    "./preact/popover-content": "./src/preact/popover-content.gen.ts",
-    "./preact/popover-root": "./src/preact/popover-root.gen.ts",
-    "./preact/popover-trigger": "./src/preact/popover-trigger.gen.ts",
     "./preact/resizable": "./src/preact/resizable.gen.ts",
-    "./preact/resizable-handle": "./src/preact/resizable-handle.gen.ts",
-    "./preact/tooltip-content": "./src/preact/tooltip-content.gen.ts",
-    "./preact/tooltip-root": "./src/preact/tooltip-root.gen.ts",
-    "./preact/tooltip-trigger": "./src/preact/tooltip-trigger.gen.ts",
+    "./preact/tooltip": "./src/preact/tooltip.gen.ts",
     "./react": "./src/react.gen.ts",
-    "./react/autocomplete-empty": "./src/react/autocomplete-empty.gen.ts",
-    "./react/autocomplete-item": "./src/react/autocomplete-item.gen.ts",
-    "./react/autocomplete-list": "./src/react/autocomplete-list.gen.ts",
-    "./react/autocomplete-popover": "./src/react/autocomplete-popover.gen.ts",
-    "./react/block-drag-handle": "./src/react/block-drag-handle.gen.ts",
-    "./react/block-popover": "./src/react/block-popover.gen.ts",
+    "./react/autocomplete": "./src/react/autocomplete.gen.ts",
+    "./react/block-handle": "./src/react/block-handle.gen.ts",
     "./react/inline-popover": "./src/react/inline-popover.gen.ts",
     "./react/popover": "./src/react/popover.gen.ts",
-    "./react/popover-content": "./src/react/popover-content.gen.ts",
-    "./react/popover-root": "./src/react/popover-root.gen.ts",
-    "./react/popover-trigger": "./src/react/popover-trigger.gen.ts",
     "./react/resizable": "./src/react/resizable.gen.ts",
-    "./react/resizable-handle": "./src/react/resizable-handle.gen.ts",
-    "./react/tooltip-content": "./src/react/tooltip-content.gen.ts",
-    "./react/tooltip-root": "./src/react/tooltip-root.gen.ts",
-    "./react/tooltip-trigger": "./src/react/tooltip-trigger.gen.ts",
+    "./react/tooltip": "./src/react/tooltip.gen.ts",
     "./solid": "./src/solid.gen.ts",
-    "./solid/autocomplete-empty": "./src/solid/autocomplete-empty.gen.ts",
-    "./solid/autocomplete-item": "./src/solid/autocomplete-item.gen.ts",
-    "./solid/autocomplete-list": "./src/solid/autocomplete-list.gen.ts",
-    "./solid/autocomplete-popover": "./src/solid/autocomplete-popover.gen.ts",
-    "./solid/block-drag-handle": "./src/solid/block-drag-handle.gen.ts",
-    "./solid/block-popover": "./src/solid/block-popover.gen.ts",
+    "./solid/autocomplete": "./src/solid/autocomplete.gen.ts",
+    "./solid/block-handle": "./src/solid/block-handle.gen.ts",
     "./solid/inline-popover": "./src/solid/inline-popover.gen.ts",
     "./solid/popover": "./src/solid/popover.gen.ts",
-    "./solid/popover-content": "./src/solid/popover-content.gen.ts",
-    "./solid/popover-root": "./src/solid/popover-root.gen.ts",
-    "./solid/popover-trigger": "./src/solid/popover-trigger.gen.ts",
     "./solid/resizable": "./src/solid/resizable.gen.ts",
-    "./solid/resizable-handle": "./src/solid/resizable-handle.gen.ts",
-    "./solid/tooltip-content": "./src/solid/tooltip-content.gen.ts",
-    "./solid/tooltip-root": "./src/solid/tooltip-root.gen.ts",
-    "./solid/tooltip-trigger": "./src/solid/tooltip-trigger.gen.ts",
+    "./solid/tooltip": "./src/solid/tooltip.gen.ts",
     "./svelte": "./src/svelte.gen.ts",
-    "./svelte/autocomplete-empty": "./src/svelte/autocomplete-empty.gen.ts",
-    "./svelte/autocomplete-item": "./src/svelte/autocomplete-item.gen.ts",
-    "./svelte/autocomplete-list": "./src/svelte/autocomplete-list.gen.ts",
-    "./svelte/autocomplete-popover": "./src/svelte/autocomplete-popover.gen.ts",
-    "./svelte/block-drag-handle": "./src/svelte/block-drag-handle.gen.ts",
-    "./svelte/block-popover": "./src/svelte/block-popover.gen.ts",
+    "./svelte/autocomplete": "./src/svelte/autocomplete.gen.ts",
+    "./svelte/block-handle": "./src/svelte/block-handle.gen.ts",
     "./svelte/inline-popover": "./src/svelte/inline-popover.gen.ts",
     "./svelte/popover": "./src/svelte/popover.gen.ts",
-    "./svelte/popover-content": "./src/svelte/popover-content.gen.ts",
-    "./svelte/popover-root": "./src/svelte/popover-root.gen.ts",
-    "./svelte/popover-trigger": "./src/svelte/popover-trigger.gen.ts",
     "./svelte/resizable": "./src/svelte/resizable.gen.ts",
-    "./svelte/resizable-handle": "./src/svelte/resizable-handle.gen.ts",
-    "./svelte/tooltip-content": "./src/svelte/tooltip-content.gen.ts",
-    "./svelte/tooltip-root": "./src/svelte/tooltip-root.gen.ts",
-    "./svelte/tooltip-trigger": "./src/svelte/tooltip-trigger.gen.ts",
+    "./svelte/tooltip": "./src/svelte/tooltip.gen.ts",
     "./vue": "./src/vue.gen.ts",
-    "./vue/autocomplete-empty": "./src/vue/autocomplete-empty.gen.ts",
-    "./vue/autocomplete-item": "./src/vue/autocomplete-item.gen.ts",
-    "./vue/autocomplete-list": "./src/vue/autocomplete-list.gen.ts",
-    "./vue/autocomplete-popover": "./src/vue/autocomplete-popover.gen.ts",
-    "./vue/block-drag-handle": "./src/vue/block-drag-handle.gen.ts",
-    "./vue/block-popover": "./src/vue/block-popover.gen.ts",
+    "./vue/autocomplete": "./src/vue/autocomplete.gen.ts",
+    "./vue/block-handle": "./src/vue/block-handle.gen.ts",
     "./vue/inline-popover": "./src/vue/inline-popover.gen.ts",
     "./vue/popover": "./src/vue/popover.gen.ts",
-    "./vue/popover-content": "./src/vue/popover-content.gen.ts",
-    "./vue/popover-root": "./src/vue/popover-root.gen.ts",
-    "./vue/popover-trigger": "./src/vue/popover-trigger.gen.ts",
     "./vue/resizable": "./src/vue/resizable.gen.ts",
-    "./vue/resizable-handle": "./src/vue/resizable-handle.gen.ts",
-    "./vue/tooltip-content": "./src/vue/tooltip-content.gen.ts",
-    "./vue/tooltip-root": "./src/vue/tooltip-root.gen.ts",
-    "./vue/tooltip-trigger": "./src/vue/tooltip-trigger.gen.ts"
+    "./vue/tooltip": "./src/vue/tooltip.gen.ts",
+    "./web": "./src/web.gen.ts",
+    "./web/autocomplete": "./src/web/autocomplete.gen.ts",
+    "./web/block-handle": "./src/web/block-handle.gen.ts",
+    "./web/inline-popover": "./src/web/inline-popover.gen.ts",
+    "./web/popover": "./src/web/popover.gen.ts",
+    "./web/resizable": "./src/web/resizable.gen.ts",
+    "./web/tooltip": "./src/web/tooltip.gen.ts"
   },
   "files": [
     "dist"
@@ -177,20 +125,21 @@
   },
   "dependencies": {
     "@prosekit/basic": "0.3.4",
-    "@prosekit/core": "0.4.0",
-    "@prosekit/extensions": "0.4.2",
-    "@prosekit/lit": "0.2.8",
-    "@prosekit/pm": "0.1.2",
-    "@prosekit/preact": "0.2.7",
-    "@prosekit/react": "0.2.7",
-    "@prosekit/solid": "0.2.7",
-    "@prosekit/svelte": "0.2.7",
-    "@prosekit/vue": "0.2.7"
+    "@prosekit/core": "0.4.2",
+    "@prosekit/extensions": "0.4.6",
+    "@prosekit/lit": "0.3.1",
+    "@prosekit/pm": "0.1.3",
+    "@prosekit/preact": "0.3.3",
+    "@prosekit/react": "0.3.4",
+    "@prosekit/solid": "0.3.2",
+    "@prosekit/svelte": "0.3.2",
+    "@prosekit/vue": "0.3.2",
+    "@prosekit/web": "0.1.3"
   },
   "peerDependencies": {
-    "preact": ">= 9.0.0",
-    "react": ">= 17.0.0",
-    "react-dom": ">= 17.0.0",
+    "preact": ">= 10.11.0",
+    "react": ">= 18.2.0",
+    "react-dom": ">= 18.2.0",
     "solid-js": ">= 1.7.0",
     "svelte": ">= 3.0.0",
     "vue": ">= 3.0.0"
@@ -217,18 +166,18 @@
   },
   "devDependencies": {
     "@prosekit/dev": "*",
-    "@types/react": "^18.2.77",
-    "@types/react-dom": "^18.2.25",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.0",
     "postcss": "^8.4.38",
-    "postcss-nesting": "^12.1.1",
-    "preact": "^10.20.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "solid-js": "^1.8.16",
-    "svelte": "^4.2.13",
+    "postcss-nesting": "^12.1.2",
+    "preact": "^10.21.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "solid-js": "^1.8.17",
+    "svelte": "^4.2.15",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "vue": "^3.4.21"
+    "vue": "^3.4.26"
   },
   "publishConfig": {
     "exports": {
@@ -257,6 +206,11 @@
         "types": "./dist/prosekit-extensions.d.ts",
         "import": "./dist/prosekit-extensions.js",
         "default": "./dist/prosekit-extensions.js"
+      },
+      "./extensions/mark-rule": {
+        "types": "./dist/prosekit-extensions-mark-rule.d.ts",
+        "import": "./dist/prosekit-extensions-mark-rule.js",
+        "default": "./dist/prosekit-extensions-mark-rule.js"
       },
       "./extensions/autocomplete": {
         "types": "./dist/prosekit-extensions-autocomplete.d.ts",
@@ -375,35 +329,15 @@
         "import": "./dist/prosekit-lit.js",
         "default": "./dist/prosekit-lit.js"
       },
-      "./lit/autocomplete-empty": {
-        "types": "./dist/prosekit-lit-autocomplete-empty.d.ts",
-        "import": "./dist/prosekit-lit-autocomplete-empty.js",
-        "default": "./dist/prosekit-lit-autocomplete-empty.js"
+      "./lit/autocomplete": {
+        "types": "./dist/prosekit-lit-autocomplete.d.ts",
+        "import": "./dist/prosekit-lit-autocomplete.js",
+        "default": "./dist/prosekit-lit-autocomplete.js"
       },
-      "./lit/autocomplete-item": {
-        "types": "./dist/prosekit-lit-autocomplete-item.d.ts",
-        "import": "./dist/prosekit-lit-autocomplete-item.js",
-        "default": "./dist/prosekit-lit-autocomplete-item.js"
-      },
-      "./lit/autocomplete-list": {
-        "types": "./dist/prosekit-lit-autocomplete-list.d.ts",
-        "import": "./dist/prosekit-lit-autocomplete-list.js",
-        "default": "./dist/prosekit-lit-autocomplete-list.js"
-      },
-      "./lit/autocomplete-popover": {
-        "types": "./dist/prosekit-lit-autocomplete-popover.d.ts",
-        "import": "./dist/prosekit-lit-autocomplete-popover.js",
-        "default": "./dist/prosekit-lit-autocomplete-popover.js"
-      },
-      "./lit/block-drag-handle": {
-        "types": "./dist/prosekit-lit-block-drag-handle.d.ts",
-        "import": "./dist/prosekit-lit-block-drag-handle.js",
-        "default": "./dist/prosekit-lit-block-drag-handle.js"
-      },
-      "./lit/block-popover": {
-        "types": "./dist/prosekit-lit-block-popover.d.ts",
-        "import": "./dist/prosekit-lit-block-popover.js",
-        "default": "./dist/prosekit-lit-block-popover.js"
+      "./lit/block-handle": {
+        "types": "./dist/prosekit-lit-block-handle.d.ts",
+        "import": "./dist/prosekit-lit-block-handle.js",
+        "default": "./dist/prosekit-lit-block-handle.js"
       },
       "./lit/inline-popover": {
         "types": "./dist/prosekit-lit-inline-popover.d.ts",
@@ -415,45 +349,15 @@
         "import": "./dist/prosekit-lit-popover.js",
         "default": "./dist/prosekit-lit-popover.js"
       },
-      "./lit/popover-content": {
-        "types": "./dist/prosekit-lit-popover-content.d.ts",
-        "import": "./dist/prosekit-lit-popover-content.js",
-        "default": "./dist/prosekit-lit-popover-content.js"
-      },
-      "./lit/popover-root": {
-        "types": "./dist/prosekit-lit-popover-root.d.ts",
-        "import": "./dist/prosekit-lit-popover-root.js",
-        "default": "./dist/prosekit-lit-popover-root.js"
-      },
-      "./lit/popover-trigger": {
-        "types": "./dist/prosekit-lit-popover-trigger.d.ts",
-        "import": "./dist/prosekit-lit-popover-trigger.js",
-        "default": "./dist/prosekit-lit-popover-trigger.js"
-      },
       "./lit/resizable": {
         "types": "./dist/prosekit-lit-resizable.d.ts",
         "import": "./dist/prosekit-lit-resizable.js",
         "default": "./dist/prosekit-lit-resizable.js"
       },
-      "./lit/resizable-handle": {
-        "types": "./dist/prosekit-lit-resizable-handle.d.ts",
-        "import": "./dist/prosekit-lit-resizable-handle.js",
-        "default": "./dist/prosekit-lit-resizable-handle.js"
-      },
-      "./lit/tooltip-content": {
-        "types": "./dist/prosekit-lit-tooltip-content.d.ts",
-        "import": "./dist/prosekit-lit-tooltip-content.js",
-        "default": "./dist/prosekit-lit-tooltip-content.js"
-      },
-      "./lit/tooltip-root": {
-        "types": "./dist/prosekit-lit-tooltip-root.d.ts",
-        "import": "./dist/prosekit-lit-tooltip-root.js",
-        "default": "./dist/prosekit-lit-tooltip-root.js"
-      },
-      "./lit/tooltip-trigger": {
-        "types": "./dist/prosekit-lit-tooltip-trigger.d.ts",
-        "import": "./dist/prosekit-lit-tooltip-trigger.js",
-        "default": "./dist/prosekit-lit-tooltip-trigger.js"
+      "./lit/tooltip": {
+        "types": "./dist/prosekit-lit-tooltip.d.ts",
+        "import": "./dist/prosekit-lit-tooltip.js",
+        "default": "./dist/prosekit-lit-tooltip.js"
       },
       "./pm": {
         "types": "./dist/prosekit-pm.d.ts",
@@ -508,35 +412,15 @@
         "import": "./dist/prosekit-preact.js",
         "default": "./dist/prosekit-preact.js"
       },
-      "./preact/autocomplete-empty": {
-        "types": "./dist/prosekit-preact-autocomplete-empty.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-empty.js",
-        "default": "./dist/prosekit-preact-autocomplete-empty.js"
+      "./preact/autocomplete": {
+        "types": "./dist/prosekit-preact-autocomplete.d.ts",
+        "import": "./dist/prosekit-preact-autocomplete.js",
+        "default": "./dist/prosekit-preact-autocomplete.js"
       },
-      "./preact/autocomplete-item": {
-        "types": "./dist/prosekit-preact-autocomplete-item.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-item.js",
-        "default": "./dist/prosekit-preact-autocomplete-item.js"
-      },
-      "./preact/autocomplete-list": {
-        "types": "./dist/prosekit-preact-autocomplete-list.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-list.js",
-        "default": "./dist/prosekit-preact-autocomplete-list.js"
-      },
-      "./preact/autocomplete-popover": {
-        "types": "./dist/prosekit-preact-autocomplete-popover.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete-popover.js",
-        "default": "./dist/prosekit-preact-autocomplete-popover.js"
-      },
-      "./preact/block-drag-handle": {
-        "types": "./dist/prosekit-preact-block-drag-handle.d.ts",
-        "import": "./dist/prosekit-preact-block-drag-handle.js",
-        "default": "./dist/prosekit-preact-block-drag-handle.js"
-      },
-      "./preact/block-popover": {
-        "types": "./dist/prosekit-preact-block-popover.d.ts",
-        "import": "./dist/prosekit-preact-block-popover.js",
-        "default": "./dist/prosekit-preact-block-popover.js"
+      "./preact/block-handle": {
+        "types": "./dist/prosekit-preact-block-handle.d.ts",
+        "import": "./dist/prosekit-preact-block-handle.js",
+        "default": "./dist/prosekit-preact-block-handle.js"
       },
       "./preact/inline-popover": {
         "types": "./dist/prosekit-preact-inline-popover.d.ts",
@@ -548,80 +432,30 @@
         "import": "./dist/prosekit-preact-popover.js",
         "default": "./dist/prosekit-preact-popover.js"
       },
-      "./preact/popover-content": {
-        "types": "./dist/prosekit-preact-popover-content.d.ts",
-        "import": "./dist/prosekit-preact-popover-content.js",
-        "default": "./dist/prosekit-preact-popover-content.js"
-      },
-      "./preact/popover-root": {
-        "types": "./dist/prosekit-preact-popover-root.d.ts",
-        "import": "./dist/prosekit-preact-popover-root.js",
-        "default": "./dist/prosekit-preact-popover-root.js"
-      },
-      "./preact/popover-trigger": {
-        "types": "./dist/prosekit-preact-popover-trigger.d.ts",
-        "import": "./dist/prosekit-preact-popover-trigger.js",
-        "default": "./dist/prosekit-preact-popover-trigger.js"
-      },
       "./preact/resizable": {
         "types": "./dist/prosekit-preact-resizable.d.ts",
         "import": "./dist/prosekit-preact-resizable.js",
         "default": "./dist/prosekit-preact-resizable.js"
       },
-      "./preact/resizable-handle": {
-        "types": "./dist/prosekit-preact-resizable-handle.d.ts",
-        "import": "./dist/prosekit-preact-resizable-handle.js",
-        "default": "./dist/prosekit-preact-resizable-handle.js"
-      },
-      "./preact/tooltip-content": {
-        "types": "./dist/prosekit-preact-tooltip-content.d.ts",
-        "import": "./dist/prosekit-preact-tooltip-content.js",
-        "default": "./dist/prosekit-preact-tooltip-content.js"
-      },
-      "./preact/tooltip-root": {
-        "types": "./dist/prosekit-preact-tooltip-root.d.ts",
-        "import": "./dist/prosekit-preact-tooltip-root.js",
-        "default": "./dist/prosekit-preact-tooltip-root.js"
-      },
-      "./preact/tooltip-trigger": {
-        "types": "./dist/prosekit-preact-tooltip-trigger.d.ts",
-        "import": "./dist/prosekit-preact-tooltip-trigger.js",
-        "default": "./dist/prosekit-preact-tooltip-trigger.js"
+      "./preact/tooltip": {
+        "types": "./dist/prosekit-preact-tooltip.d.ts",
+        "import": "./dist/prosekit-preact-tooltip.js",
+        "default": "./dist/prosekit-preact-tooltip.js"
       },
       "./react": {
         "types": "./dist/prosekit-react.d.ts",
         "import": "./dist/prosekit-react.js",
         "default": "./dist/prosekit-react.js"
       },
-      "./react/autocomplete-empty": {
-        "types": "./dist/prosekit-react-autocomplete-empty.d.ts",
-        "import": "./dist/prosekit-react-autocomplete-empty.js",
-        "default": "./dist/prosekit-react-autocomplete-empty.js"
+      "./react/autocomplete": {
+        "types": "./dist/prosekit-react-autocomplete.d.ts",
+        "import": "./dist/prosekit-react-autocomplete.js",
+        "default": "./dist/prosekit-react-autocomplete.js"
       },
-      "./react/autocomplete-item": {
-        "types": "./dist/prosekit-react-autocomplete-item.d.ts",
-        "import": "./dist/prosekit-react-autocomplete-item.js",
-        "default": "./dist/prosekit-react-autocomplete-item.js"
-      },
-      "./react/autocomplete-list": {
-        "types": "./dist/prosekit-react-autocomplete-list.d.ts",
-        "import": "./dist/prosekit-react-autocomplete-list.js",
-        "default": "./dist/prosekit-react-autocomplete-list.js"
-      },
-      "./react/autocomplete-popover": {
-        "types": "./dist/prosekit-react-autocomplete-popover.d.ts",
-        "import": "./dist/prosekit-react-autocomplete-popover.js",
-        "default": "./dist/prosekit-react-autocomplete-popover.js"
-      },
-      "./react/block-drag-handle": {
-        "types": "./dist/prosekit-react-block-drag-handle.d.ts",
-        "import": "./dist/prosekit-react-block-drag-handle.js",
-        "default": "./dist/prosekit-react-block-drag-handle.js"
-      },
-      "./react/block-popover": {
-        "types": "./dist/prosekit-react-block-popover.d.ts",
-        "import": "./dist/prosekit-react-block-popover.js",
-        "default": "./dist/prosekit-react-block-popover.js"
+      "./react/block-handle": {
+        "types": "./dist/prosekit-react-block-handle.d.ts",
+        "import": "./dist/prosekit-react-block-handle.js",
+        "default": "./dist/prosekit-react-block-handle.js"
       },
       "./react/inline-popover": {
         "types": "./dist/prosekit-react-inline-popover.d.ts",
@@ -633,80 +467,30 @@
         "import": "./dist/prosekit-react-popover.js",
         "default": "./dist/prosekit-react-popover.js"
       },
-      "./react/popover-content": {
-        "types": "./dist/prosekit-react-popover-content.d.ts",
-        "import": "./dist/prosekit-react-popover-content.js",
-        "default": "./dist/prosekit-react-popover-content.js"
-      },
-      "./react/popover-root": {
-        "types": "./dist/prosekit-react-popover-root.d.ts",
-        "import": "./dist/prosekit-react-popover-root.js",
-        "default": "./dist/prosekit-react-popover-root.js"
-      },
-      "./react/popover-trigger": {
-        "types": "./dist/prosekit-react-popover-trigger.d.ts",
-        "import": "./dist/prosekit-react-popover-trigger.js",
-        "default": "./dist/prosekit-react-popover-trigger.js"
-      },
       "./react/resizable": {
         "types": "./dist/prosekit-react-resizable.d.ts",
         "import": "./dist/prosekit-react-resizable.js",
         "default": "./dist/prosekit-react-resizable.js"
       },
-      "./react/resizable-handle": {
-        "types": "./dist/prosekit-react-resizable-handle.d.ts",
-        "import": "./dist/prosekit-react-resizable-handle.js",
-        "default": "./dist/prosekit-react-resizable-handle.js"
-      },
-      "./react/tooltip-content": {
-        "types": "./dist/prosekit-react-tooltip-content.d.ts",
-        "import": "./dist/prosekit-react-tooltip-content.js",
-        "default": "./dist/prosekit-react-tooltip-content.js"
-      },
-      "./react/tooltip-root": {
-        "types": "./dist/prosekit-react-tooltip-root.d.ts",
-        "import": "./dist/prosekit-react-tooltip-root.js",
-        "default": "./dist/prosekit-react-tooltip-root.js"
-      },
-      "./react/tooltip-trigger": {
-        "types": "./dist/prosekit-react-tooltip-trigger.d.ts",
-        "import": "./dist/prosekit-react-tooltip-trigger.js",
-        "default": "./dist/prosekit-react-tooltip-trigger.js"
+      "./react/tooltip": {
+        "types": "./dist/prosekit-react-tooltip.d.ts",
+        "import": "./dist/prosekit-react-tooltip.js",
+        "default": "./dist/prosekit-react-tooltip.js"
       },
       "./solid": {
         "types": "./dist/prosekit-solid.d.ts",
         "import": "./dist/prosekit-solid.js",
         "default": "./dist/prosekit-solid.js"
       },
-      "./solid/autocomplete-empty": {
-        "types": "./dist/prosekit-solid-autocomplete-empty.d.ts",
-        "import": "./dist/prosekit-solid-autocomplete-empty.js",
-        "default": "./dist/prosekit-solid-autocomplete-empty.js"
+      "./solid/autocomplete": {
+        "types": "./dist/prosekit-solid-autocomplete.d.ts",
+        "import": "./dist/prosekit-solid-autocomplete.js",
+        "default": "./dist/prosekit-solid-autocomplete.js"
       },
-      "./solid/autocomplete-item": {
-        "types": "./dist/prosekit-solid-autocomplete-item.d.ts",
-        "import": "./dist/prosekit-solid-autocomplete-item.js",
-        "default": "./dist/prosekit-solid-autocomplete-item.js"
-      },
-      "./solid/autocomplete-list": {
-        "types": "./dist/prosekit-solid-autocomplete-list.d.ts",
-        "import": "./dist/prosekit-solid-autocomplete-list.js",
-        "default": "./dist/prosekit-solid-autocomplete-list.js"
-      },
-      "./solid/autocomplete-popover": {
-        "types": "./dist/prosekit-solid-autocomplete-popover.d.ts",
-        "import": "./dist/prosekit-solid-autocomplete-popover.js",
-        "default": "./dist/prosekit-solid-autocomplete-popover.js"
-      },
-      "./solid/block-drag-handle": {
-        "types": "./dist/prosekit-solid-block-drag-handle.d.ts",
-        "import": "./dist/prosekit-solid-block-drag-handle.js",
-        "default": "./dist/prosekit-solid-block-drag-handle.js"
-      },
-      "./solid/block-popover": {
-        "types": "./dist/prosekit-solid-block-popover.d.ts",
-        "import": "./dist/prosekit-solid-block-popover.js",
-        "default": "./dist/prosekit-solid-block-popover.js"
+      "./solid/block-handle": {
+        "types": "./dist/prosekit-solid-block-handle.d.ts",
+        "import": "./dist/prosekit-solid-block-handle.js",
+        "default": "./dist/prosekit-solid-block-handle.js"
       },
       "./solid/inline-popover": {
         "types": "./dist/prosekit-solid-inline-popover.d.ts",
@@ -718,80 +502,30 @@
         "import": "./dist/prosekit-solid-popover.js",
         "default": "./dist/prosekit-solid-popover.js"
       },
-      "./solid/popover-content": {
-        "types": "./dist/prosekit-solid-popover-content.d.ts",
-        "import": "./dist/prosekit-solid-popover-content.js",
-        "default": "./dist/prosekit-solid-popover-content.js"
-      },
-      "./solid/popover-root": {
-        "types": "./dist/prosekit-solid-popover-root.d.ts",
-        "import": "./dist/prosekit-solid-popover-root.js",
-        "default": "./dist/prosekit-solid-popover-root.js"
-      },
-      "./solid/popover-trigger": {
-        "types": "./dist/prosekit-solid-popover-trigger.d.ts",
-        "import": "./dist/prosekit-solid-popover-trigger.js",
-        "default": "./dist/prosekit-solid-popover-trigger.js"
-      },
       "./solid/resizable": {
         "types": "./dist/prosekit-solid-resizable.d.ts",
         "import": "./dist/prosekit-solid-resizable.js",
         "default": "./dist/prosekit-solid-resizable.js"
       },
-      "./solid/resizable-handle": {
-        "types": "./dist/prosekit-solid-resizable-handle.d.ts",
-        "import": "./dist/prosekit-solid-resizable-handle.js",
-        "default": "./dist/prosekit-solid-resizable-handle.js"
-      },
-      "./solid/tooltip-content": {
-        "types": "./dist/prosekit-solid-tooltip-content.d.ts",
-        "import": "./dist/prosekit-solid-tooltip-content.js",
-        "default": "./dist/prosekit-solid-tooltip-content.js"
-      },
-      "./solid/tooltip-root": {
-        "types": "./dist/prosekit-solid-tooltip-root.d.ts",
-        "import": "./dist/prosekit-solid-tooltip-root.js",
-        "default": "./dist/prosekit-solid-tooltip-root.js"
-      },
-      "./solid/tooltip-trigger": {
-        "types": "./dist/prosekit-solid-tooltip-trigger.d.ts",
-        "import": "./dist/prosekit-solid-tooltip-trigger.js",
-        "default": "./dist/prosekit-solid-tooltip-trigger.js"
+      "./solid/tooltip": {
+        "types": "./dist/prosekit-solid-tooltip.d.ts",
+        "import": "./dist/prosekit-solid-tooltip.js",
+        "default": "./dist/prosekit-solid-tooltip.js"
       },
       "./svelte": {
         "types": "./dist/prosekit-svelte.d.ts",
         "import": "./dist/prosekit-svelte.js",
         "default": "./dist/prosekit-svelte.js"
       },
-      "./svelte/autocomplete-empty": {
-        "types": "./dist/prosekit-svelte-autocomplete-empty.d.ts",
-        "import": "./dist/prosekit-svelte-autocomplete-empty.js",
-        "default": "./dist/prosekit-svelte-autocomplete-empty.js"
+      "./svelte/autocomplete": {
+        "types": "./dist/prosekit-svelte-autocomplete.d.ts",
+        "import": "./dist/prosekit-svelte-autocomplete.js",
+        "default": "./dist/prosekit-svelte-autocomplete.js"
       },
-      "./svelte/autocomplete-item": {
-        "types": "./dist/prosekit-svelte-autocomplete-item.d.ts",
-        "import": "./dist/prosekit-svelte-autocomplete-item.js",
-        "default": "./dist/prosekit-svelte-autocomplete-item.js"
-      },
-      "./svelte/autocomplete-list": {
-        "types": "./dist/prosekit-svelte-autocomplete-list.d.ts",
-        "import": "./dist/prosekit-svelte-autocomplete-list.js",
-        "default": "./dist/prosekit-svelte-autocomplete-list.js"
-      },
-      "./svelte/autocomplete-popover": {
-        "types": "./dist/prosekit-svelte-autocomplete-popover.d.ts",
-        "import": "./dist/prosekit-svelte-autocomplete-popover.js",
-        "default": "./dist/prosekit-svelte-autocomplete-popover.js"
-      },
-      "./svelte/block-drag-handle": {
-        "types": "./dist/prosekit-svelte-block-drag-handle.d.ts",
-        "import": "./dist/prosekit-svelte-block-drag-handle.js",
-        "default": "./dist/prosekit-svelte-block-drag-handle.js"
-      },
-      "./svelte/block-popover": {
-        "types": "./dist/prosekit-svelte-block-popover.d.ts",
-        "import": "./dist/prosekit-svelte-block-popover.js",
-        "default": "./dist/prosekit-svelte-block-popover.js"
+      "./svelte/block-handle": {
+        "types": "./dist/prosekit-svelte-block-handle.d.ts",
+        "import": "./dist/prosekit-svelte-block-handle.js",
+        "default": "./dist/prosekit-svelte-block-handle.js"
       },
       "./svelte/inline-popover": {
         "types": "./dist/prosekit-svelte-inline-popover.d.ts",
@@ -803,80 +537,30 @@
         "import": "./dist/prosekit-svelte-popover.js",
         "default": "./dist/prosekit-svelte-popover.js"
       },
-      "./svelte/popover-content": {
-        "types": "./dist/prosekit-svelte-popover-content.d.ts",
-        "import": "./dist/prosekit-svelte-popover-content.js",
-        "default": "./dist/prosekit-svelte-popover-content.js"
-      },
-      "./svelte/popover-root": {
-        "types": "./dist/prosekit-svelte-popover-root.d.ts",
-        "import": "./dist/prosekit-svelte-popover-root.js",
-        "default": "./dist/prosekit-svelte-popover-root.js"
-      },
-      "./svelte/popover-trigger": {
-        "types": "./dist/prosekit-svelte-popover-trigger.d.ts",
-        "import": "./dist/prosekit-svelte-popover-trigger.js",
-        "default": "./dist/prosekit-svelte-popover-trigger.js"
-      },
       "./svelte/resizable": {
         "types": "./dist/prosekit-svelte-resizable.d.ts",
         "import": "./dist/prosekit-svelte-resizable.js",
         "default": "./dist/prosekit-svelte-resizable.js"
       },
-      "./svelte/resizable-handle": {
-        "types": "./dist/prosekit-svelte-resizable-handle.d.ts",
-        "import": "./dist/prosekit-svelte-resizable-handle.js",
-        "default": "./dist/prosekit-svelte-resizable-handle.js"
-      },
-      "./svelte/tooltip-content": {
-        "types": "./dist/prosekit-svelte-tooltip-content.d.ts",
-        "import": "./dist/prosekit-svelte-tooltip-content.js",
-        "default": "./dist/prosekit-svelte-tooltip-content.js"
-      },
-      "./svelte/tooltip-root": {
-        "types": "./dist/prosekit-svelte-tooltip-root.d.ts",
-        "import": "./dist/prosekit-svelte-tooltip-root.js",
-        "default": "./dist/prosekit-svelte-tooltip-root.js"
-      },
-      "./svelte/tooltip-trigger": {
-        "types": "./dist/prosekit-svelte-tooltip-trigger.d.ts",
-        "import": "./dist/prosekit-svelte-tooltip-trigger.js",
-        "default": "./dist/prosekit-svelte-tooltip-trigger.js"
+      "./svelte/tooltip": {
+        "types": "./dist/prosekit-svelte-tooltip.d.ts",
+        "import": "./dist/prosekit-svelte-tooltip.js",
+        "default": "./dist/prosekit-svelte-tooltip.js"
       },
       "./vue": {
         "types": "./dist/prosekit-vue.d.ts",
         "import": "./dist/prosekit-vue.js",
         "default": "./dist/prosekit-vue.js"
       },
-      "./vue/autocomplete-empty": {
-        "types": "./dist/prosekit-vue-autocomplete-empty.d.ts",
-        "import": "./dist/prosekit-vue-autocomplete-empty.js",
-        "default": "./dist/prosekit-vue-autocomplete-empty.js"
+      "./vue/autocomplete": {
+        "types": "./dist/prosekit-vue-autocomplete.d.ts",
+        "import": "./dist/prosekit-vue-autocomplete.js",
+        "default": "./dist/prosekit-vue-autocomplete.js"
       },
-      "./vue/autocomplete-item": {
-        "types": "./dist/prosekit-vue-autocomplete-item.d.ts",
-        "import": "./dist/prosekit-vue-autocomplete-item.js",
-        "default": "./dist/prosekit-vue-autocomplete-item.js"
-      },
-      "./vue/autocomplete-list": {
-        "types": "./dist/prosekit-vue-autocomplete-list.d.ts",
-        "import": "./dist/prosekit-vue-autocomplete-list.js",
-        "default": "./dist/prosekit-vue-autocomplete-list.js"
-      },
-      "./vue/autocomplete-popover": {
-        "types": "./dist/prosekit-vue-autocomplete-popover.d.ts",
-        "import": "./dist/prosekit-vue-autocomplete-popover.js",
-        "default": "./dist/prosekit-vue-autocomplete-popover.js"
-      },
-      "./vue/block-drag-handle": {
-        "types": "./dist/prosekit-vue-block-drag-handle.d.ts",
-        "import": "./dist/prosekit-vue-block-drag-handle.js",
-        "default": "./dist/prosekit-vue-block-drag-handle.js"
-      },
-      "./vue/block-popover": {
-        "types": "./dist/prosekit-vue-block-popover.d.ts",
-        "import": "./dist/prosekit-vue-block-popover.js",
-        "default": "./dist/prosekit-vue-block-popover.js"
+      "./vue/block-handle": {
+        "types": "./dist/prosekit-vue-block-handle.d.ts",
+        "import": "./dist/prosekit-vue-block-handle.js",
+        "default": "./dist/prosekit-vue-block-handle.js"
       },
       "./vue/inline-popover": {
         "types": "./dist/prosekit-vue-inline-popover.d.ts",
@@ -888,45 +572,50 @@
         "import": "./dist/prosekit-vue-popover.js",
         "default": "./dist/prosekit-vue-popover.js"
       },
-      "./vue/popover-content": {
-        "types": "./dist/prosekit-vue-popover-content.d.ts",
-        "import": "./dist/prosekit-vue-popover-content.js",
-        "default": "./dist/prosekit-vue-popover-content.js"
-      },
-      "./vue/popover-root": {
-        "types": "./dist/prosekit-vue-popover-root.d.ts",
-        "import": "./dist/prosekit-vue-popover-root.js",
-        "default": "./dist/prosekit-vue-popover-root.js"
-      },
-      "./vue/popover-trigger": {
-        "types": "./dist/prosekit-vue-popover-trigger.d.ts",
-        "import": "./dist/prosekit-vue-popover-trigger.js",
-        "default": "./dist/prosekit-vue-popover-trigger.js"
-      },
       "./vue/resizable": {
         "types": "./dist/prosekit-vue-resizable.d.ts",
         "import": "./dist/prosekit-vue-resizable.js",
         "default": "./dist/prosekit-vue-resizable.js"
       },
-      "./vue/resizable-handle": {
-        "types": "./dist/prosekit-vue-resizable-handle.d.ts",
-        "import": "./dist/prosekit-vue-resizable-handle.js",
-        "default": "./dist/prosekit-vue-resizable-handle.js"
+      "./vue/tooltip": {
+        "types": "./dist/prosekit-vue-tooltip.d.ts",
+        "import": "./dist/prosekit-vue-tooltip.js",
+        "default": "./dist/prosekit-vue-tooltip.js"
       },
-      "./vue/tooltip-content": {
-        "types": "./dist/prosekit-vue-tooltip-content.d.ts",
-        "import": "./dist/prosekit-vue-tooltip-content.js",
-        "default": "./dist/prosekit-vue-tooltip-content.js"
+      "./web": {
+        "types": "./dist/prosekit-web.d.ts",
+        "import": "./dist/prosekit-web.js",
+        "default": "./dist/prosekit-web.js"
       },
-      "./vue/tooltip-root": {
-        "types": "./dist/prosekit-vue-tooltip-root.d.ts",
-        "import": "./dist/prosekit-vue-tooltip-root.js",
-        "default": "./dist/prosekit-vue-tooltip-root.js"
+      "./web/autocomplete": {
+        "types": "./dist/prosekit-web-autocomplete.d.ts",
+        "import": "./dist/prosekit-web-autocomplete.js",
+        "default": "./dist/prosekit-web-autocomplete.js"
       },
-      "./vue/tooltip-trigger": {
-        "types": "./dist/prosekit-vue-tooltip-trigger.d.ts",
-        "import": "./dist/prosekit-vue-tooltip-trigger.js",
-        "default": "./dist/prosekit-vue-tooltip-trigger.js"
+      "./web/block-handle": {
+        "types": "./dist/prosekit-web-block-handle.d.ts",
+        "import": "./dist/prosekit-web-block-handle.js",
+        "default": "./dist/prosekit-web-block-handle.js"
+      },
+      "./web/inline-popover": {
+        "types": "./dist/prosekit-web-inline-popover.d.ts",
+        "import": "./dist/prosekit-web-inline-popover.js",
+        "default": "./dist/prosekit-web-inline-popover.js"
+      },
+      "./web/popover": {
+        "types": "./dist/prosekit-web-popover.d.ts",
+        "import": "./dist/prosekit-web-popover.js",
+        "default": "./dist/prosekit-web-popover.js"
+      },
+      "./web/resizable": {
+        "types": "./dist/prosekit-web-resizable.d.ts",
+        "import": "./dist/prosekit-web-resizable.js",
+        "default": "./dist/prosekit-web-resizable.js"
+      },
+      "./web/tooltip": {
+        "types": "./dist/prosekit-web-tooltip.d.ts",
+        "import": "./dist/prosekit-web-tooltip.js",
+        "default": "./dist/prosekit-web-tooltip.js"
       }
     },
     "main": "./dist/prosekit.js",
@@ -945,6 +634,9 @@
         ],
         "extensions": [
           "./dist/prosekit-extensions.d.ts"
+        ],
+        "extensions/mark-rule": [
+          "./dist/prosekit-extensions-mark-rule.d.ts"
         ],
         "extensions/autocomplete": [
           "./dist/prosekit-extensions-autocomplete.d.ts"
@@ -1009,23 +701,11 @@
         "lit": [
           "./dist/prosekit-lit.d.ts"
         ],
-        "lit/autocomplete-empty": [
-          "./dist/prosekit-lit-autocomplete-empty.d.ts"
+        "lit/autocomplete": [
+          "./dist/prosekit-lit-autocomplete.d.ts"
         ],
-        "lit/autocomplete-item": [
-          "./dist/prosekit-lit-autocomplete-item.d.ts"
-        ],
-        "lit/autocomplete-list": [
-          "./dist/prosekit-lit-autocomplete-list.d.ts"
-        ],
-        "lit/autocomplete-popover": [
-          "./dist/prosekit-lit-autocomplete-popover.d.ts"
-        ],
-        "lit/block-drag-handle": [
-          "./dist/prosekit-lit-block-drag-handle.d.ts"
-        ],
-        "lit/block-popover": [
-          "./dist/prosekit-lit-block-popover.d.ts"
+        "lit/block-handle": [
+          "./dist/prosekit-lit-block-handle.d.ts"
         ],
         "lit/inline-popover": [
           "./dist/prosekit-lit-inline-popover.d.ts"
@@ -1033,29 +713,11 @@
         "lit/popover": [
           "./dist/prosekit-lit-popover.d.ts"
         ],
-        "lit/popover-content": [
-          "./dist/prosekit-lit-popover-content.d.ts"
-        ],
-        "lit/popover-root": [
-          "./dist/prosekit-lit-popover-root.d.ts"
-        ],
-        "lit/popover-trigger": [
-          "./dist/prosekit-lit-popover-trigger.d.ts"
-        ],
         "lit/resizable": [
           "./dist/prosekit-lit-resizable.d.ts"
         ],
-        "lit/resizable-handle": [
-          "./dist/prosekit-lit-resizable-handle.d.ts"
-        ],
-        "lit/tooltip-content": [
-          "./dist/prosekit-lit-tooltip-content.d.ts"
-        ],
-        "lit/tooltip-root": [
-          "./dist/prosekit-lit-tooltip-root.d.ts"
-        ],
-        "lit/tooltip-trigger": [
-          "./dist/prosekit-lit-tooltip-trigger.d.ts"
+        "lit/tooltip": [
+          "./dist/prosekit-lit-tooltip.d.ts"
         ],
         "pm": [
           "./dist/prosekit-pm.d.ts"
@@ -1087,23 +749,11 @@
         "preact": [
           "./dist/prosekit-preact.d.ts"
         ],
-        "preact/autocomplete-empty": [
-          "./dist/prosekit-preact-autocomplete-empty.d.ts"
+        "preact/autocomplete": [
+          "./dist/prosekit-preact-autocomplete.d.ts"
         ],
-        "preact/autocomplete-item": [
-          "./dist/prosekit-preact-autocomplete-item.d.ts"
-        ],
-        "preact/autocomplete-list": [
-          "./dist/prosekit-preact-autocomplete-list.d.ts"
-        ],
-        "preact/autocomplete-popover": [
-          "./dist/prosekit-preact-autocomplete-popover.d.ts"
-        ],
-        "preact/block-drag-handle": [
-          "./dist/prosekit-preact-block-drag-handle.d.ts"
-        ],
-        "preact/block-popover": [
-          "./dist/prosekit-preact-block-popover.d.ts"
+        "preact/block-handle": [
+          "./dist/prosekit-preact-block-handle.d.ts"
         ],
         "preact/inline-popover": [
           "./dist/prosekit-preact-inline-popover.d.ts"
@@ -1111,50 +761,20 @@
         "preact/popover": [
           "./dist/prosekit-preact-popover.d.ts"
         ],
-        "preact/popover-content": [
-          "./dist/prosekit-preact-popover-content.d.ts"
-        ],
-        "preact/popover-root": [
-          "./dist/prosekit-preact-popover-root.d.ts"
-        ],
-        "preact/popover-trigger": [
-          "./dist/prosekit-preact-popover-trigger.d.ts"
-        ],
         "preact/resizable": [
           "./dist/prosekit-preact-resizable.d.ts"
         ],
-        "preact/resizable-handle": [
-          "./dist/prosekit-preact-resizable-handle.d.ts"
-        ],
-        "preact/tooltip-content": [
-          "./dist/prosekit-preact-tooltip-content.d.ts"
-        ],
-        "preact/tooltip-root": [
-          "./dist/prosekit-preact-tooltip-root.d.ts"
-        ],
-        "preact/tooltip-trigger": [
-          "./dist/prosekit-preact-tooltip-trigger.d.ts"
+        "preact/tooltip": [
+          "./dist/prosekit-preact-tooltip.d.ts"
         ],
         "react": [
           "./dist/prosekit-react.d.ts"
         ],
-        "react/autocomplete-empty": [
-          "./dist/prosekit-react-autocomplete-empty.d.ts"
+        "react/autocomplete": [
+          "./dist/prosekit-react-autocomplete.d.ts"
         ],
-        "react/autocomplete-item": [
-          "./dist/prosekit-react-autocomplete-item.d.ts"
-        ],
-        "react/autocomplete-list": [
-          "./dist/prosekit-react-autocomplete-list.d.ts"
-        ],
-        "react/autocomplete-popover": [
-          "./dist/prosekit-react-autocomplete-popover.d.ts"
-        ],
-        "react/block-drag-handle": [
-          "./dist/prosekit-react-block-drag-handle.d.ts"
-        ],
-        "react/block-popover": [
-          "./dist/prosekit-react-block-popover.d.ts"
+        "react/block-handle": [
+          "./dist/prosekit-react-block-handle.d.ts"
         ],
         "react/inline-popover": [
           "./dist/prosekit-react-inline-popover.d.ts"
@@ -1162,50 +782,20 @@
         "react/popover": [
           "./dist/prosekit-react-popover.d.ts"
         ],
-        "react/popover-content": [
-          "./dist/prosekit-react-popover-content.d.ts"
-        ],
-        "react/popover-root": [
-          "./dist/prosekit-react-popover-root.d.ts"
-        ],
-        "react/popover-trigger": [
-          "./dist/prosekit-react-popover-trigger.d.ts"
-        ],
         "react/resizable": [
           "./dist/prosekit-react-resizable.d.ts"
         ],
-        "react/resizable-handle": [
-          "./dist/prosekit-react-resizable-handle.d.ts"
-        ],
-        "react/tooltip-content": [
-          "./dist/prosekit-react-tooltip-content.d.ts"
-        ],
-        "react/tooltip-root": [
-          "./dist/prosekit-react-tooltip-root.d.ts"
-        ],
-        "react/tooltip-trigger": [
-          "./dist/prosekit-react-tooltip-trigger.d.ts"
+        "react/tooltip": [
+          "./dist/prosekit-react-tooltip.d.ts"
         ],
         "solid": [
           "./dist/prosekit-solid.d.ts"
         ],
-        "solid/autocomplete-empty": [
-          "./dist/prosekit-solid-autocomplete-empty.d.ts"
+        "solid/autocomplete": [
+          "./dist/prosekit-solid-autocomplete.d.ts"
         ],
-        "solid/autocomplete-item": [
-          "./dist/prosekit-solid-autocomplete-item.d.ts"
-        ],
-        "solid/autocomplete-list": [
-          "./dist/prosekit-solid-autocomplete-list.d.ts"
-        ],
-        "solid/autocomplete-popover": [
-          "./dist/prosekit-solid-autocomplete-popover.d.ts"
-        ],
-        "solid/block-drag-handle": [
-          "./dist/prosekit-solid-block-drag-handle.d.ts"
-        ],
-        "solid/block-popover": [
-          "./dist/prosekit-solid-block-popover.d.ts"
+        "solid/block-handle": [
+          "./dist/prosekit-solid-block-handle.d.ts"
         ],
         "solid/inline-popover": [
           "./dist/prosekit-solid-inline-popover.d.ts"
@@ -1213,50 +803,20 @@
         "solid/popover": [
           "./dist/prosekit-solid-popover.d.ts"
         ],
-        "solid/popover-content": [
-          "./dist/prosekit-solid-popover-content.d.ts"
-        ],
-        "solid/popover-root": [
-          "./dist/prosekit-solid-popover-root.d.ts"
-        ],
-        "solid/popover-trigger": [
-          "./dist/prosekit-solid-popover-trigger.d.ts"
-        ],
         "solid/resizable": [
           "./dist/prosekit-solid-resizable.d.ts"
         ],
-        "solid/resizable-handle": [
-          "./dist/prosekit-solid-resizable-handle.d.ts"
-        ],
-        "solid/tooltip-content": [
-          "./dist/prosekit-solid-tooltip-content.d.ts"
-        ],
-        "solid/tooltip-root": [
-          "./dist/prosekit-solid-tooltip-root.d.ts"
-        ],
-        "solid/tooltip-trigger": [
-          "./dist/prosekit-solid-tooltip-trigger.d.ts"
+        "solid/tooltip": [
+          "./dist/prosekit-solid-tooltip.d.ts"
         ],
         "svelte": [
           "./dist/prosekit-svelte.d.ts"
         ],
-        "svelte/autocomplete-empty": [
-          "./dist/prosekit-svelte-autocomplete-empty.d.ts"
+        "svelte/autocomplete": [
+          "./dist/prosekit-svelte-autocomplete.d.ts"
         ],
-        "svelte/autocomplete-item": [
-          "./dist/prosekit-svelte-autocomplete-item.d.ts"
-        ],
-        "svelte/autocomplete-list": [
-          "./dist/prosekit-svelte-autocomplete-list.d.ts"
-        ],
-        "svelte/autocomplete-popover": [
-          "./dist/prosekit-svelte-autocomplete-popover.d.ts"
-        ],
-        "svelte/block-drag-handle": [
-          "./dist/prosekit-svelte-block-drag-handle.d.ts"
-        ],
-        "svelte/block-popover": [
-          "./dist/prosekit-svelte-block-popover.d.ts"
+        "svelte/block-handle": [
+          "./dist/prosekit-svelte-block-handle.d.ts"
         ],
         "svelte/inline-popover": [
           "./dist/prosekit-svelte-inline-popover.d.ts"
@@ -1264,50 +824,20 @@
         "svelte/popover": [
           "./dist/prosekit-svelte-popover.d.ts"
         ],
-        "svelte/popover-content": [
-          "./dist/prosekit-svelte-popover-content.d.ts"
-        ],
-        "svelte/popover-root": [
-          "./dist/prosekit-svelte-popover-root.d.ts"
-        ],
-        "svelte/popover-trigger": [
-          "./dist/prosekit-svelte-popover-trigger.d.ts"
-        ],
         "svelte/resizable": [
           "./dist/prosekit-svelte-resizable.d.ts"
         ],
-        "svelte/resizable-handle": [
-          "./dist/prosekit-svelte-resizable-handle.d.ts"
-        ],
-        "svelte/tooltip-content": [
-          "./dist/prosekit-svelte-tooltip-content.d.ts"
-        ],
-        "svelte/tooltip-root": [
-          "./dist/prosekit-svelte-tooltip-root.d.ts"
-        ],
-        "svelte/tooltip-trigger": [
-          "./dist/prosekit-svelte-tooltip-trigger.d.ts"
+        "svelte/tooltip": [
+          "./dist/prosekit-svelte-tooltip.d.ts"
         ],
         "vue": [
           "./dist/prosekit-vue.d.ts"
         ],
-        "vue/autocomplete-empty": [
-          "./dist/prosekit-vue-autocomplete-empty.d.ts"
+        "vue/autocomplete": [
+          "./dist/prosekit-vue-autocomplete.d.ts"
         ],
-        "vue/autocomplete-item": [
-          "./dist/prosekit-vue-autocomplete-item.d.ts"
-        ],
-        "vue/autocomplete-list": [
-          "./dist/prosekit-vue-autocomplete-list.d.ts"
-        ],
-        "vue/autocomplete-popover": [
-          "./dist/prosekit-vue-autocomplete-popover.d.ts"
-        ],
-        "vue/block-drag-handle": [
-          "./dist/prosekit-vue-block-drag-handle.d.ts"
-        ],
-        "vue/block-popover": [
-          "./dist/prosekit-vue-block-popover.d.ts"
+        "vue/block-handle": [
+          "./dist/prosekit-vue-block-handle.d.ts"
         ],
         "vue/inline-popover": [
           "./dist/prosekit-vue-inline-popover.d.ts"
@@ -1315,29 +845,32 @@
         "vue/popover": [
           "./dist/prosekit-vue-popover.d.ts"
         ],
-        "vue/popover-content": [
-          "./dist/prosekit-vue-popover-content.d.ts"
-        ],
-        "vue/popover-root": [
-          "./dist/prosekit-vue-popover-root.d.ts"
-        ],
-        "vue/popover-trigger": [
-          "./dist/prosekit-vue-popover-trigger.d.ts"
-        ],
         "vue/resizable": [
           "./dist/prosekit-vue-resizable.d.ts"
         ],
-        "vue/resizable-handle": [
-          "./dist/prosekit-vue-resizable-handle.d.ts"
+        "vue/tooltip": [
+          "./dist/prosekit-vue-tooltip.d.ts"
         ],
-        "vue/tooltip-content": [
-          "./dist/prosekit-vue-tooltip-content.d.ts"
+        "web": [
+          "./dist/prosekit-web.d.ts"
         ],
-        "vue/tooltip-root": [
-          "./dist/prosekit-vue-tooltip-root.d.ts"
+        "web/autocomplete": [
+          "./dist/prosekit-web-autocomplete.d.ts"
         ],
-        "vue/tooltip-trigger": [
-          "./dist/prosekit-vue-tooltip-trigger.d.ts"
+        "web/block-handle": [
+          "./dist/prosekit-web-block-handle.d.ts"
+        ],
+        "web/inline-popover": [
+          "./dist/prosekit-web-inline-popover.d.ts"
+        ],
+        "web/popover": [
+          "./dist/prosekit-web-popover.d.ts"
+        ],
+        "web/resizable": [
+          "./dist/prosekit-web-resizable.d.ts"
+        ],
+        "web/tooltip": [
+          "./dist/prosekit-web-tooltip.d.ts"
         ]
       }
     }

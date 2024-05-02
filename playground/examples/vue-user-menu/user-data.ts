@@ -2,7 +2,7 @@ export const users = [
   { id: 1, name: 'Alex' },
   { id: 2, name: 'Alice' },
   { id: 3, name: 'Ben' },
-  { id: 4, name: 'Bella' },
+  { id: 4, name: 'Bob' },
   { id: 5, name: 'Charlie' },
   { id: 6, name: 'Cara' },
   { id: 7, name: 'Derek' },

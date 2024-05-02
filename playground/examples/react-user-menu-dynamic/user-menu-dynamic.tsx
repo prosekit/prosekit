@@ -1,4 +1,3 @@
-import { clsx } from 'prosekit/core'
 import { useEditor } from 'prosekit/react'
 import {
   AutocompleteEmpty,
@@ -40,7 +39,7 @@ export default function UserMenuDynamic() {
         {users.map((user) => (
           <AutocompleteItem
             key={user.id}
-            className={clsx('AUTOCOMPLETE_MENU_ITEM')}
+            className='AUTOCOMPLETE_MENU_ITEM'
             onSelect={() => handleUserInsert(user.id, user.name)}
           >
             <span

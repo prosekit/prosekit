@@ -156,7 +156,7 @@ const staticShortcuts = {
   ),
 
   AUTOCOMPLETE_MENU_ITEM_LOADING: clsx(
-    'opacity-50 transition-duration-500 transition-opacity'
+    'opacity-50 transition-duration-500 transition-opacity',
   ),
 
   LANGUAGE_WRAPPER: clsx(

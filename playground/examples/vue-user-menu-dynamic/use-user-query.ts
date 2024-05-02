@@ -1,6 +1,6 @@
-import { ref, watchEffect, type Ref } from 'vue';
+import { ref, watchEffect, type Ref } from 'vue'
 
-import { users as allUsers } from './user-data';
+import { users as allUsers } from './user-data'
 
 export function useUserQuery(query: Ref<string>) {
   const users = ref<{ id: number; name: string }[]>([])

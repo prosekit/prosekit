@@ -1001,6 +1001,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "use-user-query.ts",
+          "hidden": false
+        },
+        {
           "path": "user-data.ts",
           "hidden": false
         },

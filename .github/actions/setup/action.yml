@@ -22,6 +22,6 @@ runs:
         cache: pnpm
         registry-url: 'https://registry.npmjs.org'
 
-    - name: Install
-      run: pnpm install --no-frozen-lockfile
+    - name: Install PNPM
+      run: pnpm install --no-frozen-lockfile --fix-lockfile
       shell: bash

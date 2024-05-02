@@ -23,5 +23,5 @@ runs:
         registry-url: 'https://registry.npmjs.org'
 
     - name: Install
-      run: pnpm install
+      run: pnpm install --no-frozen-lockfile
       shell: bash

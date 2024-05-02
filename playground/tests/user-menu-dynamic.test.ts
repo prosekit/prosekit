@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 import { testStory, waitForEditor } from './helper'
 
 testStory('user-menu-dynamic', ({ example }) => {
-  test('show user menu', async ({ page }) => {
+  test('user-menu-dynamic', async ({ page }) => {
     await page.goto(example)
     const editor = await waitForEditor(page)
 

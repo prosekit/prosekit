@@ -34,7 +34,7 @@
     "@size-limit/esbuild-why": "^11.1.2",
     "@size-limit/preset-small-lib": "^11.1.2",
     "@unocss/eslint-config": "^0.59.4",
-    "@vitest/coverage-istanbul": "^1.5.3",
+    "@vitest/coverage-istanbul": "^1.6.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "jsdom": "^24.0.0",
@@ -46,7 +46,7 @@
     "typescript": "^5.4.5",
     "unocss": "^0.59.4",
     "unocss-preset-animations": "^1.0.2",
-    "vitest": "^1.5.3"
+    "vitest": "^1.6.0"
   },
   "pnpm": {
     "overrides": {},

@@ -76,10 +76,10 @@
     "@types/node": "^20.12.8",
     "read-pkg": "^9.0.1",
     "svelte": "^4.2.15",
-    "svelte-check": "^3.7.0",
-    "tsx": "^4.8.2",
+    "svelte-check": "^3.7.1",
+    "tsx": "^4.9.0",
     "typescript": "^5.4.5",
-    "vitest": "^1.5.3"
+    "vitest": "^1.6.0"
   },
   "publishConfig": {
     "exports": {

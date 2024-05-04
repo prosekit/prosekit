@@ -1,5 +1,25 @@
 # prosekit
 
+## 0.6.9
+
+### Patch Changes
+
+- [`cb98437`](https://github.com/ocavue/prosekit/commit/cb9843750c0409daf39d225fddde2ff00c49b39e) ![](https://prosekit.dev/b/web)
+
+  Don't show the inline popover when an inline node is selected.
+
+- [`4531781`](https://github.com/ocavue/prosekit/commit/453178169d16b0d6e8c1c8b4a3accf8bad86db66) ![](https://prosekit.dev/b/web)
+
+  Update dependencies.
+
+- [`611658f`](https://github.com/ocavue/prosekit/commit/611658ff1842aaa017c892e0c3e52cc87ad22d2e) ![](https://prosekit.dev/b/basic)
+
+  Includes `defineModClickPrevention()`.
+
+- [`611658f`](https://github.com/ocavue/prosekit/commit/611658ff1842aaa017c892e0c3e52cc87ad22d2e) ![](https://prosekit.dev/b/extensions)
+
+  Add a new function `defineModClickPrevention()` that can prevent the default mod-clicking selection.
+
 ## 0.6.8
 
 ### Patch Changes

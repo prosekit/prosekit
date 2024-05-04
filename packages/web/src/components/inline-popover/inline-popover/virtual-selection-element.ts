@@ -1,5 +1,5 @@
 import type { ReferenceElement } from '@floating-ui/dom'
-import { isNodeSelection, isTextSelection } from '@prosekit/core'
+import { isTextSelection } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { isInCodeBlock } from '../../../utils/is-in-code-block'
@@ -16,7 +16,7 @@ export function getVirtualSelectionElement(
   if (
     !selection.empty &&
     !isInCodeBlock(selection) &&
-    (isTextSelection(selection) || isNodeSelection(selection))
+    isTextSelection(selection)
   ) {
     const decoration = getInlineDecoration(view)
     if (decoration) {

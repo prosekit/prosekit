@@ -18,10 +18,10 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           append: true
-          header: 'snapshot_version_comment'
+          header: "snapshot_version_comment"
           number: ${{ github.event.issue.number }}
           message: |
-            Publishing snapshot packages...
+            ## 🚀 Publishing snapshot packages...
 
       - uses: ./.github/actions/setup
 
@@ -65,10 +65,10 @@ jobs:
       - name: Update GitHub PR comment
         uses: marocchino/sticky-pull-request-comment@v2
         with:
-          header: 'snapshot_version_comment'
+          header: "snapshot_version_comment"
           number: ${{ github.event.issue.number }}
           message: |
-            Snapshot packages published
+            ## 📦 Snapshot packages published
 
             ```
             npm install prosekit@${{ env.NPM_VERSION_NUMBER }}

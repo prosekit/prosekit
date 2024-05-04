@@ -46,3 +46,20 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ".npmrc"
           pnpm ci:publish:next
           rm ".npmrc"
+
+      - name: Get version number
+        run: |
+          NPM_VERSION_NUMBER=$(cat packages/prosekit/package.json | jq -r .version)
+          echo "NPM_VERSION_NUMBER=$NPM_VERSION_NUMBER"
+          echo "NPM_VERSION_NUMBER=$NPM_VERSION_NUMBER" >> $GITHUB_ENV
+
+      - name: Update GitHub PR comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: 'snapshot_version_comment'
+          message: |
+            Snapshot version published
+
+            ```
+            npm install prosekit@${{ env.NPM_VERSION_NUMBER }}
+            ```

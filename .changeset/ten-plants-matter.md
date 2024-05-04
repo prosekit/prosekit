@@ -1,6 +1,6 @@
 ---
 'prosekit': patch
-"@prosekit/basic": patch
+'@prosekit/basic': patch
 ---
 
 Includes `defineModClickPrevention()`.

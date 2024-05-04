@@ -84,6 +84,10 @@
     "path": "packages/prosekit/dist/prosekit-extensions-mention.js"
   },
   {
+    "name": "prosekit/extensions/mod-click-prevention",
+    "path": "packages/prosekit/dist/prosekit-extensions-mod-click-prevention.js"
+  },
+  {
     "name": "prosekit/extensions/placeholder",
     "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js"
   },

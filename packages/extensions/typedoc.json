@@ -18,6 +18,7 @@
     "./src/list/index.ts",
     "./src/mark-rule/index.ts",
     "./src/mention/index.ts",
+    "./src/mod-click-prevention/index.ts",
     "./src/placeholder/index.ts",
     "./src/readonly/index.ts",
     "./src/strike/index.ts",

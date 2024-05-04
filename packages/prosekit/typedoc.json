@@ -20,6 +20,7 @@
     "./src/extensions/list.gen.ts",
     "./src/extensions/mark-rule.gen.ts",
     "./src/extensions/mention.gen.ts",
+    "./src/extensions/mod-click-prevention.gen.ts",
     "./src/extensions/placeholder.gen.ts",
     "./src/extensions/readonly.gen.ts",
     "./src/extensions/strike.gen.ts",

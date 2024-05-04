@@ -31,7 +31,6 @@
     "./basic/typography.css": "./src/basic/typography.css",
     "./core": "./src/core.gen.ts",
     "./extensions": "./src/extensions.gen.ts",
-    "./extensions/mark-rule": "./src/extensions/mark-rule.gen.ts",
     "./extensions/autocomplete": "./src/extensions/autocomplete.gen.ts",
     "./extensions/blockquote": "./src/extensions/blockquote.gen.ts",
     "./extensions/bold": "./src/extensions/bold.gen.ts",
@@ -46,7 +45,9 @@
     "./extensions/link": "./src/extensions/link.gen.ts",
     "./extensions/list": "./src/extensions/list.gen.ts",
     "./extensions/list/style.css": "./src/extensions/list/style.css",
+    "./extensions/mark-rule": "./src/extensions/mark-rule.gen.ts",
     "./extensions/mention": "./src/extensions/mention.gen.ts",
+    "./extensions/mod-click-prevention": "./src/extensions/mod-click-prevention.gen.ts",
     "./extensions/placeholder": "./src/extensions/placeholder.gen.ts",
     "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
     "./extensions/readonly": "./src/extensions/readonly.gen.ts",
@@ -207,11 +208,6 @@
         "import": "./dist/prosekit-extensions.js",
         "default": "./dist/prosekit-extensions.js"
       },
-      "./extensions/mark-rule": {
-        "types": "./dist/prosekit-extensions-mark-rule.d.ts",
-        "import": "./dist/prosekit-extensions-mark-rule.js",
-        "default": "./dist/prosekit-extensions-mark-rule.js"
-      },
       "./extensions/autocomplete": {
         "types": "./dist/prosekit-extensions-autocomplete.d.ts",
         "import": "./dist/prosekit-extensions-autocomplete.js",
@@ -280,10 +276,20 @@
       "./extensions/list/style.css": {
         "default": "./dist/extensions/list/style.css"
       },
+      "./extensions/mark-rule": {
+        "types": "./dist/prosekit-extensions-mark-rule.d.ts",
+        "import": "./dist/prosekit-extensions-mark-rule.js",
+        "default": "./dist/prosekit-extensions-mark-rule.js"
+      },
       "./extensions/mention": {
         "types": "./dist/prosekit-extensions-mention.d.ts",
         "import": "./dist/prosekit-extensions-mention.js",
         "default": "./dist/prosekit-extensions-mention.js"
+      },
+      "./extensions/mod-click-prevention": {
+        "types": "./dist/prosekit-extensions-mod-click-prevention.d.ts",
+        "import": "./dist/prosekit-extensions-mod-click-prevention.js",
+        "default": "./dist/prosekit-extensions-mod-click-prevention.js"
       },
       "./extensions/placeholder": {
         "types": "./dist/prosekit-extensions-placeholder.d.ts",
@@ -635,9 +641,6 @@
         "extensions": [
           "./dist/prosekit-extensions.d.ts"
         ],
-        "extensions/mark-rule": [
-          "./dist/prosekit-extensions-mark-rule.d.ts"
-        ],
         "extensions/autocomplete": [
           "./dist/prosekit-extensions-autocomplete.d.ts"
         ],
@@ -677,8 +680,14 @@
         "extensions/list": [
           "./dist/prosekit-extensions-list.d.ts"
         ],
+        "extensions/mark-rule": [
+          "./dist/prosekit-extensions-mark-rule.d.ts"
+        ],
         "extensions/mention": [
           "./dist/prosekit-extensions-mention.d.ts"
+        ],
+        "extensions/mod-click-prevention": [
+          "./dist/prosekit-extensions-mod-click-prevention.d.ts"
         ],
         "extensions/placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"

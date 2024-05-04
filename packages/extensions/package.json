@@ -26,8 +26,6 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./mod-click-prevention": "./src/mark-rule/index.ts",
-    "./mark-rule": "./src/mark-rule/index.ts",
     "./autocomplete": "./src/autocomplete/index.ts",
     "./blockquote": "./src/blockquote/index.ts",
     "./bold": "./src/bold/index.ts",
@@ -42,7 +40,9 @@
     "./link": "./src/link/index.ts",
     "./list": "./src/list/index.ts",
     "./list/style.css": "./src/list/style.css",
+    "./mark-rule": "./src/mark-rule/index.ts",
     "./mention": "./src/mention/index.ts",
+    "./mod-click-prevention": "./src/mod-click-prevention/index.ts",
     "./placeholder": "./src/placeholder/index.ts",
     "./placeholder/style.css": "./src/placeholder/style.css",
     "./readonly": "./src/readonly/index.ts",
@@ -81,11 +81,6 @@
         "types": "./dist/prosekit-extensions.d.ts",
         "import": "./dist/prosekit-extensions.js",
         "default": "./dist/prosekit-extensions.js"
-      },
-      "./mark-rule": {
-        "types": "./dist/prosekit-extensions-mark-rule.d.ts",
-        "import": "./dist/prosekit-extensions-mark-rule.js",
-        "default": "./dist/prosekit-extensions-mark-rule.js"
       },
       "./autocomplete": {
         "types": "./dist/prosekit-extensions-autocomplete.d.ts",
@@ -155,10 +150,20 @@
       "./list/style.css": {
         "default": "./dist/list/style.css"
       },
+      "./mark-rule": {
+        "types": "./dist/prosekit-extensions-mark-rule.d.ts",
+        "import": "./dist/prosekit-extensions-mark-rule.js",
+        "default": "./dist/prosekit-extensions-mark-rule.js"
+      },
       "./mention": {
         "types": "./dist/prosekit-extensions-mention.d.ts",
         "import": "./dist/prosekit-extensions-mention.js",
         "default": "./dist/prosekit-extensions-mention.js"
+      },
+      "./mod-click-prevention": {
+        "types": "./dist/prosekit-extensions-mod-click-prevention.d.ts",
+        "import": "./dist/prosekit-extensions-mod-click-prevention.js",
+        "default": "./dist/prosekit-extensions-mod-click-prevention.js"
       },
       "./placeholder": {
         "types": "./dist/prosekit-extensions-placeholder.d.ts",
@@ -208,9 +213,6 @@
         ".": [
           "./dist/prosekit-extensions.d.ts"
         ],
-        "mark-rule": [
-          "./dist/prosekit-extensions-mark-rule.d.ts"
-        ],
         "autocomplete": [
           "./dist/prosekit-extensions-autocomplete.d.ts"
         ],
@@ -250,8 +252,14 @@
         "list": [
           "./dist/prosekit-extensions-list.d.ts"
         ],
+        "mark-rule": [
+          "./dist/prosekit-extensions-mark-rule.d.ts"
+        ],
         "mention": [
           "./dist/prosekit-extensions-mention.d.ts"
+        ],
+        "mod-click-prevention": [
+          "./dist/prosekit-extensions-mod-click-prevention.d.ts"
         ],
         "placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"

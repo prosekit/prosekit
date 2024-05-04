@@ -21,7 +21,7 @@ jobs:
           header: 'snapshot_version_comment'
           number: ${{ github.event.issue.number }}
           message: |
-            Publishing snapshot packages...
+            ## 🚀 Publishing snapshot packages...
 
       - uses: ./.github/actions/setup
 
@@ -68,7 +68,7 @@ jobs:
           header: 'snapshot_version_comment'
           number: ${{ github.event.issue.number }}
           message: |
-            Snapshot packages published
+            ## 📦 Snapshot packages published
 
             ```
             npm install prosekit@${{ env.NPM_VERSION_NUMBER }}

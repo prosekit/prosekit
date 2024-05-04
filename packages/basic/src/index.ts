@@ -16,6 +16,7 @@ import { defineImage } from '@prosekit/extensions/image'
 import { defineItalic } from '@prosekit/extensions/italic'
 import { defineLink } from '@prosekit/extensions/link'
 import { defineList } from '@prosekit/extensions/list'
+import { defineModClickPrevention } from '@prosekit/extensions/mod-click-prevention'
 import { defineStrike } from '@prosekit/extensions/strike'
 import { defineTable } from '@prosekit/extensions/table'
 import { defineUnderline } from '@prosekit/extensions/underline'
@@ -46,6 +47,7 @@ export function defineBasicExtension() {
     defineParagraph(),
     defineDropCursor(),
     defineVirtualSelection(),
+    defineModClickPrevention(),
     defineTable(),
   ])
 }

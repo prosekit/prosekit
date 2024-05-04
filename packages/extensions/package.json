@@ -26,6 +26,7 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
+    "./mod-click-prevention": "./src/mark-rule/index.ts",
     "./mark-rule": "./src/mark-rule/index.ts",
     "./autocomplete": "./src/autocomplete/index.ts",
     "./blockquote": "./src/blockquote/index.ts",

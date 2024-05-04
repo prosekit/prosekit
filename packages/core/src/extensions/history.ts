@@ -1,7 +1,7 @@
 import { history, redo, undo } from '@prosekit/pm/history'
 
 import { union } from '../editor/union'
-import { isMac } from '../utils/env'
+import { isApple } from '../utils/env'
 
 import { defineCommands } from './command'
 import { defineKeymap, type Keymap } from './keymap'
@@ -16,7 +16,7 @@ export function defineHistory() {
     'Shift-Mod-z': redo,
   }
 
-  if (!isMac) {
+  if (!isApple) {
     keymap['Mod-y'] = redo
   }
 

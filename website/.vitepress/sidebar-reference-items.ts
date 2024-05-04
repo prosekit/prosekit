@@ -78,6 +78,10 @@ export const referenceItems = [
         "link": "/references/extensions/mention"
       },
       {
+        "text": "mod-click-prevention",
+        "link": "/references/extensions/mod-click-prevention"
+      },
+      {
         "text": "placeholder",
         "link": "/references/extensions/placeholder"
       },

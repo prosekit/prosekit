@@ -1,7 +1,7 @@
 /* eslint-disable deprecation/deprecation */
 
 /**
- * @private
+ * @deprecated Use `isApple` from `@prosekit/core`
  */
 export const isApple: boolean =
   typeof navigator !== 'undefined'

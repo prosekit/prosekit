@@ -56,7 +56,7 @@ jobs:
       - name: Update GitHub PR comment
         uses: marocchino/sticky-pull-request-comment@v2
         with:
-          header: "snapshot_version_comment"
+          header: 'snapshot_version_comment'
           message: |
             Snapshot version published
 

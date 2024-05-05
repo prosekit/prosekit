@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.6.10
+
+### Patch Changes
+
+- [`c632b4e`](https://github.com/ocavue/prosekit/commit/c632b4e3e2692f4b78752b7ea7c35745584b27a9) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the first autocomplete item won't focus.
+
 ## 0.6.9
 
 ### Patch Changes

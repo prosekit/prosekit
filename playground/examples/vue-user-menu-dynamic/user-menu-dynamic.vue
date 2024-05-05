@@ -23,14 +23,17 @@ const handleUserInsert = (id: number, username: string) => {
 }
 
 const query = ref('')
+const open = ref(false)
 const handleQueryChange = (value: string) => (query.value = value)
-const { users, loading } = useUserQuery(query)
+const handleOpenChange = (value: boolean) => (open.value = value)
+const { users, loading } = useUserQuery(query, open)
 </script>
 
 <template>
   <AutocompletePopover
     :regex="/@\w*$/"
     @query-change="handleQueryChange"
+    @open-change="handleOpenChange"
     class="AUTOCOMPLETE_MENU"
   >
     <AutocompleteList :filter="null">

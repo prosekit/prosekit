@@ -5,11 +5,15 @@ import { users as allUsers } from './user-data'
 /**
  * Simulate a user searching with some delay.
  */
-export function useUserQuery(query: string) {
+export function useUserQuery(query: string, enabled: boolean) {
   const [users, setUsers] = useState<{ name: string; id: number }[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    if (!enabled) {
+      return
+    }
+
     setLoading(true)
 
     const searchQuery = query.toLowerCase()

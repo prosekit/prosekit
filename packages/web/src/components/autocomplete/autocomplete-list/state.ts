@@ -63,23 +63,16 @@ export function useAutocompleteList(
     }
   })
 
-  // Reset the focused item when the popover is closed or the query changes.
+  // Reset the focused item when the popover is open
   useEffect(element, () => {
     if (!open.value) {
       autoFocus.value = false
     } else {
-      query.value
-
       let canceled = false
 
       requestAnimationFrame(() => {
         if (canceled) return
         autoFocus.value = true
-
-        setTimeout(() => {
-          if (canceled) return
-          autoFocus.value = false
-        }, 40)
       })
 
       return () => {

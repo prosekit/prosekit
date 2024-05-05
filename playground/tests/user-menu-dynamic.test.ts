@@ -9,6 +9,7 @@ testStory('user-menu-dynamic', ({ example }) => {
 
     const itemAlice = page.getByText('Alice')
     const itemBob = page.getByText('Bob')
+    const itemFocused = page.locator('[role="option"][data-focused="true"]')
 
     await setTestBlocking(page, true)
 
@@ -16,6 +17,7 @@ testStory('user-menu-dynamic', ({ example }) => {
 
     await expect(itemAlice).toBeHidden()
     await expect(itemBob).toBeHidden()
+    await expect(itemFocused).toBeHidden()
 
     await setTestBlocking(page, false)
 
@@ -28,8 +30,11 @@ testStory('user-menu-dynamic', ({ example }) => {
     await expect(itemBob).toBeHidden()
 
     await editor.press('Backspace')
+    await expect(itemFocused).toBeVisible()
     await editor.press('Backspace')
+    await expect(itemFocused).toBeVisible()
     await editor.press('Backspace')
+    await expect(itemFocused).toBeVisible()
 
     await expect(itemAlice).toBeVisible()
     await expect(itemBob).toBeVisible()

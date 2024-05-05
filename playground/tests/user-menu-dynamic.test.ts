@@ -21,13 +21,16 @@ testStory('user-menu-dynamic', ({ example }) => {
 
     await setTestBlocking(page, false)
 
-    await expect(itemBob).toBeVisible()
     await expect(itemAlice).toBeVisible()
+    await expect(itemBob).toBeVisible()
+    await expect(itemFocused).toBeVisible()
 
     await editor.pressSequentially('ali')
 
     await expect(itemAlice).toBeVisible()
     await expect(itemBob).toBeHidden()
+    await expect(itemFocused).toBeVisible()
+    await expect(itemFocused).toHaveText('Alice')
 
     await editor.press('Backspace')
     await expect(itemFocused).toBeVisible()

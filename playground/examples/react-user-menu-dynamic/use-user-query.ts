@@ -18,7 +18,9 @@ export function useUserQuery(query: string, enabled: boolean) {
 
     const searchQuery = query.toLowerCase()
 
-    const id = setTimeout(() => {
+    const id = setTimeout(async () => {
+      await waitForTestBlocking()
+
       setLoading(false)
 
       setUsers(
@@ -31,7 +33,22 @@ export function useUserQuery(query: string, enabled: boolean) {
     return () => {
       clearTimeout(id)
     }
-  }, [query])
+  }, [enabled, query])
 
   return { loading, users }
+}
+
+/**
+ * Use a global variable to simulate a network request delay.
+ */
+async function waitForTestBlocking() {
+  return await new Promise((resolve) => {
+    const id = setInterval(() => {
+      const hasTestBlocking = !!(window as any)._PROSEKIT_TEST_BLOCKING
+      if (!hasTestBlocking) {
+        clearInterval(id)
+        resolve(true)
+      }
+    }, 100)
+  })
 }

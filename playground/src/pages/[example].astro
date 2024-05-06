@@ -45,6 +45,7 @@ import E1741277739 from '../../examples/vue-text-color/editor.vue'
 import E1709246657 from '../../examples/vue-toolbar/editor.vue'
 import E1679720926 from '../../examples/vue-underline/editor.vue'
 import E4101103463 from '../../examples/vue-user-menu/editor.vue'
+import E3111955867 from '../../examples/vue-user-menu-dynamic/editor.vue'
 import E62221847 from '../../examples/vue-word-counter/editor.vue'
 import E2524713032 from '../../examples/preact-minimal/editor'
 import E1515205514 from '../../examples/preact-keymap/editor'
@@ -110,6 +111,7 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-toolbar' } },
   { params: { example: 'vue-underline' } },
   { params: { example: 'vue-user-menu' } },
+  { params: { example: 'vue-user-menu-dynamic' } },
   { params: { example: 'vue-word-counter' } },
   { params: { example: 'preact-minimal' } },
   { params: { example: 'preact-keymap' } },
@@ -179,6 +181,7 @@ const { example } = Astro.params
   {example === 'vue-toolbar' && <E1709246657 client:only="vue" />}
   {example === 'vue-underline' && <E1679720926 client:only="vue" />}
   {example === 'vue-user-menu' && <E4101103463 client:only="vue" />}
+  {example === 'vue-user-menu-dynamic' && <E3111955867 client:only="vue" />}
   {example === 'vue-word-counter' && <E62221847 client:only="vue" />}
   {example === 'preact-minimal' && <E2524713032 client:only="preact" />}
   {example === 'preact-keymap' && <E1515205514 client:only="preact" />}

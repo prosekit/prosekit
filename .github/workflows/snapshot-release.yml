@@ -14,6 +14,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Create GitHub PR comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          append: true
+          header: 'snapshot_version_comment'
+          number: ${{ github.event.issue.number }}
+          message: |
+            ## 🚀 Publishing snapshot packages...
+
       - uses: ./.github/actions/setup
 
       - name: Print PR infomation
@@ -46,3 +55,21 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ".npmrc"
           pnpm ci:publish:next
           rm ".npmrc"
+
+      - name: Get version number
+        run: |
+          NPM_VERSION_NUMBER=$(cat packages/prosekit/package.json | jq -r .version)
+          echo "NPM_VERSION_NUMBER=$NPM_VERSION_NUMBER"
+          echo "NPM_VERSION_NUMBER=$NPM_VERSION_NUMBER" >> $GITHUB_ENV
+
+      - name: Update GitHub PR comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: 'snapshot_version_comment'
+          number: ${{ github.event.issue.number }}
+          message: |
+            ## 📦 Snapshot packages published
+
+            ```
+            npm install prosekit@${{ env.NPM_VERSION_NUMBER }}
+            ```

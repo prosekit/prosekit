@@ -47,6 +47,11 @@ export default defineConfig({
         link: '/components/toolbar',
       },
       {
+        text: 'Examples',
+        activeMatch: '/examples',
+        link: '/examples',
+      },
+      {
         text: 'References',
         activeMatch: '/references',
         link: '/references',

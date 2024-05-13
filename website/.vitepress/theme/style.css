@@ -58,6 +58,12 @@ body .Layout .VPNav .VPNavBarExtra {
       display: block;
     }
   }
+
+  @media (min-width: 1280px) {
+    .VPNavBarExtra {
+      display: none;
+    }
+  }
 }
 
 body .Layout .VPLocalNav > .container {

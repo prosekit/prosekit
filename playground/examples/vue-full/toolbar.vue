@@ -135,6 +135,24 @@ const editor = useEditor<EditorExtension>({ update: true })
       <div class="ICON_LIST_TOGGLE"></div>
     </Toggle>
 
+    <Toggle
+      :pressed="false"
+      :disabled="!editor.commands.indentList.canApply()"
+      :onClick="() => editor.commands.indentList()"
+      tooltip="Increase indentation"
+    >
+      <div class="ICON_LIST_INDENT"></div>
+    </Toggle>
+
+    <Toggle
+      :pressed="false"
+      :disabled="!editor.commands.dedentList.canApply()"
+      :onClick="() => editor.commands.dedentList()"
+      tooltip="Decrease indentation"
+    >
+      <div class="ICON_LIST_DEDENT"></div>
+    </Toggle>
+
     <ImageUploadPopover
       :disabled="!editor.commands.insertImage.canApply()"
       tooltip="Insert Image"

@@ -64,7 +64,7 @@ body .Layout .VPNav .VPNavBarExtra {
   }
 
   @media (min-width: 1280px) {
-    .VPNavBarExtra {
+    & {
       display: none;
     }
   }

@@ -20,6 +20,7 @@ body .Layout .VPNav .VPNavBar .divider {
   padding-left: 0;
 }
 
+/* Override https://github.com/vuejs/vitepress/blob/v1.1.4/src/client/theme-default/components/VPNavBarHamburger.vue#L38-L42 */
 body .Layout .VPNav .VPNavBarHamburger {
   display: flex;
 
@@ -30,6 +31,7 @@ body .Layout .VPNav .VPNavBarHamburger {
   }
 }
 
+/* Override https://github.com/vuejs/vitepress/blob/v1.1.4/src/client/theme-default/components/VPNavScreen.vue#L74-L78 */
 body .Layout .VPNav .VPNavScreen {
   display: block;
 
@@ -40,6 +42,7 @@ body .Layout .VPNav .VPNavScreen {
   }
 }
 
+/* Override https://github.com/vuejs/vitepress/blob/v1.1.4/src/client/theme-default/components/VPNavBarMenu.vue#L20-L28 */
 body .Layout .VPNav .VPNavBarMenu {
   display: none;
 
@@ -50,6 +53,7 @@ body .Layout .VPNav .VPNavBarMenu {
   }
 }
 
+/* Override https://github.com/vuejs/vitepress/blob/v1.1.4/src/client/theme-default/components/VPNavBarExtra.vue#L51-L66 */
 body .Layout .VPNav .VPNavBarExtra {
   display: none;
 

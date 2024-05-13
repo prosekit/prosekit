@@ -10,7 +10,7 @@ import { defineDOMEventHandler } from './dom-event'
 
 describe('defineDOMEventHandler', () => {
   // TODO: enable this test
-  it.fails('should register and unregister event handlers dynamically', () => {
+  it('should register and unregister event handlers dynamically', () => {
     const div = document.body.appendChild(document.createElement('div'))
     const handleFocus = vi.fn()
     const handleBlur = vi.fn()
@@ -36,14 +36,27 @@ describe('defineDOMEventHandler', () => {
     expect(handleBlur).toHaveBeenCalledTimes(1)
 
     disposeFocus()
-    disposeBlur()
     expect(handleFocus).toHaveBeenCalledTimes(1)
     expect(handleBlur).toHaveBeenCalledTimes(1)
 
     editor.focus()
-    editor.blur()
     expect(handleFocus).toHaveBeenCalledTimes(1)
     expect(handleBlur).toHaveBeenCalledTimes(1)
+
+    editor.blur()
+    expect(handleFocus).toHaveBeenCalledTimes(1)
+    expect(handleBlur).toHaveBeenCalledTimes(2)
+
+    disposeBlur()
+    expect(handleFocus).toHaveBeenCalledTimes(1)
+    expect(handleBlur).toHaveBeenCalledTimes(2)
+
+    editor.focus()
+    editor.blur()
+    editor.focus()
+    editor.blur()
+    expect(handleFocus).toHaveBeenCalledTimes(1)
+    expect(handleBlur).toHaveBeenCalledTimes(2)
   })
 })
 

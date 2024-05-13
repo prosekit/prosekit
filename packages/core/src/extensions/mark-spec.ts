@@ -1,8 +1,9 @@
 import type { DOMOutputSpec, MarkSpec, SchemaSpec } from '@prosekit/pm/model'
 
 import { ProseKitError } from '../error'
-import { Facet } from '../facets/facet'
-import { schemaFacet } from '../facets/schema'
+import { defineFacet } from '../facets/facet'
+import { defineFacetPayload } from '../facets/facet-extension'
+import { schemaSpecFacet } from '../facets/schema-spec'
 import { type Extension } from '../types/extension'
 import { isElement } from '../utils/is-element'
 import { isNotNull } from '../utils/is-not-null'
@@ -54,7 +55,9 @@ export function defineMarkSpec<Mark extends string>(
   options: MarkSpecOptions<Mark>,
 ): Extension<{ MARKS: Mark }> {
   const payload: MarkSpecPayload = [options, undefined]
-  return markSpecFacet.extension([payload]) as Extension<{ MARKS: Mark }>
+  return defineFacetPayload(markSpecFacet, [payload]) as Extension<{
+    MARKS: Mark
+  }>
 }
 
 /**
@@ -62,7 +65,7 @@ export function defineMarkSpec<Mark extends string>(
  */
 export function defineMarkAttr(options: MarkAttrOptions): Extension {
   const payload: MarkSpecPayload = [undefined, options]
-  return markSpecFacet.extension([payload])
+  return defineFacetPayload(markSpecFacet, [payload])
 }
 
 type MarkSpecPayload = [
@@ -70,8 +73,8 @@ type MarkSpecPayload = [
   MarkAttrOptions | undefined,
 ]
 
-const markSpecFacet = Facet.define<MarkSpecPayload, SchemaSpec>({
-  convert: (payloads: MarkSpecPayload[]): SchemaSpec => {
+const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
+  reducer: (payloads: MarkSpecPayload[]): SchemaSpec => {
     const marks: Record<string, MarkSpec> = {}
 
     const specPayloads = payloads.map((input) => input[0]).filter(isNotNull)
@@ -170,6 +173,6 @@ const markSpecFacet = Facet.define<MarkSpecPayload, SchemaSpec>({
 
     return { marks, nodes: {} }
   },
-  next: schemaFacet,
+  parent: schemaSpecFacet,
   singleton: true,
 })

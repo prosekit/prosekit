@@ -1,14 +1,15 @@
 import { Schema } from '@prosekit/pm/model'
-import { EditorState, Plugin, type EditorStateConfig } from '@prosekit/pm/state'
+import { EditorState, Plugin } from '@prosekit/pm/state'
 import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
 import { defineDefaultState } from '../extensions/default-state'
+import type { BaseExtension } from '../facets/base-extension'
 import {
-  updateExtension,
-  type Converters,
-  type Payloads,
-} from '../facets/flatten'
+  FacetNode,
+  subtractFacetNode,
+  unionFacetNode,
+} from '../facets/facet-node'
 import { type CommandApplier, type CommandCreator } from '../types/command'
 import type {
   Extension,
@@ -17,6 +18,8 @@ import type {
   ExtractNodes,
 } from '../types/extension'
 import type { NodeJSON, SelectionJSON } from '../types/model'
+import { assert } from '../utils/assert'
+import { deepEquals } from '../utils/deep-equals'
 
 import {
   createMarkBuilder,
@@ -84,8 +87,7 @@ class EditorInstance {
   schema: Schema
   commandAppliers: Record<string, CommandApplier> = {}
 
-  private payloads: Payloads = []
-  private converters: Converters = []
+  private tree: FacetNode
   private directEditorProps: DirectEditorProps
   readonly nodeBuilders: Record<string, NodeBuilder>
   readonly markBuilders: Record<string, MarkBuilder>
@@ -93,28 +95,24 @@ class EditorInstance {
   constructor(extension: Extension) {
     this.mount = this.mount.bind(this)
     this.unmount = this.unmount.bind(this)
+    this.tree = (extension as BaseExtension).getTree()
 
-    const { schemaInput, stateInput, viewInput, commandInput } =
-      updateExtension(this.payloads, this.converters, extension, 'add')
+    const payload = this.tree.getRootOutput()
+    const schema = payload.schema
+    const stateConfig = payload.state
 
-    if (!schemaInput) {
-      throw new ProseKitError('Schema must be defined')
-    }
-    const schema = new Schema(schemaInput)
+    assert(schema && stateConfig, 'Schema must be defined')
 
-    const stateConfig: EditorStateConfig = stateInput
-      ? stateInput({ schema })
-      : { schema }
     const state = EditorState.create(stateConfig)
     this.cachedState = state
 
-    if (commandInput) {
-      for (const [name, commandCreator] of Object.entries(commandInput)) {
+    if (payload.commands) {
+      for (const [name, commandCreator] of Object.entries(payload.commands)) {
         this.defineCommand(name, commandCreator)
       }
     }
 
-    this.directEditorProps = { state, ...viewInput }
+    this.directEditorProps = { state, ...payload.view }
     this.schema = this.directEditorProps.state.schema
 
     const getState = () => this.getState()
@@ -140,34 +138,42 @@ class EditorInstance {
     return this.cachedState
   }
 
-  public updateExtension(extension: Extension, mode: 'add' | 'remove'): void {
-    const { schemaInput, stateInput, viewInput, commandInput } =
-      updateExtension(this.payloads, this.converters, extension, mode)
+  public updateExtension(extension: Extension, add: boolean): void {
+    const tree = (extension as BaseExtension).getTree()
+    const payload = tree.getRootOutput()
 
-    if (schemaInput) {
+    if (payload?.schema) {
       throw new ProseKitError('Schema cannot be changed')
     }
 
-    if (viewInput) {
+    if (payload?.view) {
       throw new ProseKitError('View cannot be changed')
     }
 
-    const plugins = stateInput?.({ schema: this.schema })?.plugins
-    if (plugins && plugins.length > 0) {
-      if (!this.view) {
-        throw new ProseKitError(
-          'Unexpected inner state: EditorInstance.view is not defined',
-        )
-      }
+    const oldPayload = this.tree.getRootOutput()
+    const oldPlugins = [...(this.view?.state?.plugins ?? [])]
 
-      const state = this.view.state.reconfigure({ plugins })
+    this.tree = add
+      ? unionFacetNode(this.tree, tree)
+      : subtractFacetNode(this.tree, tree)
+
+    const newPayload = this.tree.getRootOutput()
+    const newPlugins = [...(newPayload?.state?.plugins ?? [])]
+
+    if (!deepEquals(oldPlugins, newPlugins)) {
+      assert(this.view, 'EditorInstance.view is not defined')
+      const state = this.view.state.reconfigure({ plugins: newPlugins })
       this.view.updateState(state)
     }
 
-    if (commandInput) {
-      const names = Object.keys(commandInput)
+    if (
+      newPayload?.commands &&
+      !deepEquals(oldPayload?.commands, newPayload?.commands)
+    ) {
+      const commands = newPayload.commands
+      const names = Object.keys(commands)
       for (const name of names) {
-        this.defineCommand(name, commandInput[name])
+        this.defineCommand(name, commands[name])
       }
     }
   }
@@ -356,8 +362,8 @@ export class Editor<E extends Extension = any> {
       }
     }
 
-    this.instance.updateExtension(extension, 'add')
-    return () => this.instance.updateExtension(extension, 'remove')
+    this.instance.updateExtension(extension, true)
+    return () => this.instance.updateExtension(extension, false)
   }
 
   get state(): EditorState {

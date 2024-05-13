@@ -1,16 +1,19 @@
 import type { Schema } from '@prosekit/pm/model'
 import type { EditorStateConfig } from '@prosekit/pm/state'
 
-import { ProseKitError } from '../error'
-import { uniqPush } from '../utils/uniq-array'
+import { uniqPush } from '../utils/array'
+import { assert } from '../utils/assert'
 
-import { Facet } from './facet'
+import { defineFacet } from './facet'
+import { rootFacet, type RootPayload } from './root'
 
 export type StatePayload = (ctx: { schema: Schema }) => EditorStateConfig
 
-export const stateFacet = Facet.defineRootFacet<StatePayload>({
-  convert: (callbacks: StatePayload[]): StatePayload => {
-    return (ctx) => {
+export const stateFacet = defineFacet<StatePayload, RootPayload>({
+  reduce: () => {
+    let callbacks: StatePayload[] = []
+
+    const state: StatePayload = (ctx) => {
       const configs = callbacks.map((cb) => cb(ctx))
       const config: EditorStateConfig = {
         schema: ctx.schema,
@@ -26,11 +29,10 @@ export const stateFacet = Facet.defineRootFacet<StatePayload>({
         config.plugins = uniqPush(config.plugins ?? [], c.plugins ?? [])
       }
 
-      if (!config.doc && !config.schema) {
-        throw new ProseKitError(
-          "Can't create state without a schema nor a document",
-        )
-      }
+      assert(
+        config.doc || config.schema,
+        "Can't create state without a schema nor a document",
+      )
 
       if (config.doc) {
         config.schema = undefined
@@ -38,5 +40,12 @@ export const stateFacet = Facet.defineRootFacet<StatePayload>({
 
       return config
     }
+
+    return function reducer(inputs) {
+      callbacks = inputs
+      return { state }
+    }
   },
+  singleton: true,
+  parent: rootFacet,
 })

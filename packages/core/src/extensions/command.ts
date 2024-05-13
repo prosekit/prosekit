@@ -7,6 +7,7 @@ import { setBlockType } from '../commands/set-block-type'
 import { setNodeAttrs } from '../commands/set-node-attrs'
 import { wrap } from '../commands/wrap'
 import { commandFacet } from '../facets/command'
+import { defineFacetPayload } from '../facets/facet-extension'
 import { type CommandCreator } from '../types/command'
 import { type Extension } from '../types/extension'
 
@@ -15,7 +16,7 @@ export function defineCommands<
 >(
   commands: T,
 ): Extension<{ COMMAND_ARGS: { [K in keyof T]: Parameters<T[K]> } }> {
-  return commandFacet.extension([commands]) as Extension<{
+  return defineFacetPayload(commandFacet, [commands]) as Extension<{
     COMMAND_ARGS: { [K in keyof T]: Parameters<T[K]> }
   }>
 }

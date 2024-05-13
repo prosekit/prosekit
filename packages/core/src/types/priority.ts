@@ -4,9 +4,9 @@
  * @public
  */
 export enum Priority {
-  lowest = 4,
-  low = 3,
+  lowest = 0,
+  low = 1,
   default = 2,
-  high = 1,
-  highest = 0,
+  high = 3,
+  highest = 4,
 }

@@ -4,9 +4,11 @@ import { Plugin, PluginKey, type Command } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { withPriority } from '../editor/with-priority'
-import { Facet } from '../facets/facet'
+import { defineFacet } from '../facets/facet'
+import { defineFacetPayload } from '../facets/facet-extension'
 import { type Extension } from '../types/extension'
 import { Priority } from '../types/priority'
+import { toReversed } from '../utils/array'
 
 import { pluginFacet, type PluginPayload } from './plugin'
 
@@ -21,7 +23,7 @@ export interface Keymap {
  * @public
  */
 export function defineKeymap(keymap: Keymap): Extension {
-  return keymapFacet.extension([keymap])
+  return defineFacetPayload(keymapFacet, [keymap])
 }
 
 /**
@@ -49,8 +51,8 @@ export type KeymapPayload = Keymap
 /**
  * @internal
  */
-export const keymapFacet = Facet.define<KeymapPayload, PluginPayload>({
-  converter: () => {
+export const keymapFacet = defineFacet<KeymapPayload, PluginPayload>({
+  reduce: () => {
     type Handler = (view: EditorView, event: KeyboardEvent) => boolean
 
     let handler: Handler | null = null
@@ -65,20 +67,17 @@ export const keymapFacet = Facet.define<KeymapPayload, PluginPayload>({
       props: { handleKeyDown: handlerWrapper },
     })
 
-    const pluginFunc = () => [plugin]
-
-    return {
-      create: (keymaps: Keymap[]) => {
-        handler = keydownHandler(mergeKeymaps(keymaps))
-        return pluginFunc
-      },
-      update: (keymaps: Keymap[]) => {
-        handler = keydownHandler(mergeKeymaps(keymaps))
-        return null
-      },
+    return (keymaps: Keymap[]) => {
+      handler = keydownHandler(
+        mergeKeymaps(
+          // The keymap at the end have a higher priority.
+          toReversed(keymaps),
+        ),
+      )
+      return plugin
     }
   },
-  next: pluginFacet,
+  parent: pluginFacet,
   singleton: true,
 })
 

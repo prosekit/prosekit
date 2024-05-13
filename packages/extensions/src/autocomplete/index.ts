@@ -1,5 +1,6 @@
 import {
-  Facet,
+  defineFacet,
+  defineFacetPayload,
   pluginFacet,
   type Extension,
   type PluginPayload,
@@ -11,25 +12,20 @@ import { AutocompleteRule, type MatchHandler } from './rule'
 export { AutocompleteRule, type MatchHandler }
 
 export function defineAutocomplete(rule: AutocompleteRule): Extension {
-  return autocompleteFacet.extension([rule])
+  return defineFacetPayload(autocompleteFacet, [rule])
 }
 
-const autocompleteFacet = Facet.define<AutocompleteRule, PluginPayload>({
-  converter: () => {
-    let localRules: AutocompleteRule[] = []
-    const getRules = () => localRules
+const autocompleteFacet = defineFacet<AutocompleteRule, PluginPayload>({
+  reduce: () => {
+    let rules: AutocompleteRule[] = []
+    const getRules = () => rules
+    const plugin = createAutocompletePlugin({ getRules })
 
-    return {
-      create: (rules) => {
-        localRules = rules
-        const plugin = createAutocompletePlugin({ getRules })
-        return () => [plugin]
-      },
-      update: (rules) => {
-        localRules = rules
-        return null
-      },
+    return function reducer(inputs) {
+      rules = inputs
+      return plugin
     }
   },
-  next: pluginFacet,
+  parent: pluginFacet,
+  singleton: true,
 })

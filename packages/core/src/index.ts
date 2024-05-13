@@ -94,7 +94,8 @@ export {
   type PluginPayload,
 } from './extensions/plugin'
 export { defineText } from './extensions/text'
-export { Facet, type FacetOptions } from './facets/facet'
+export { defineFacet, type Facet } from './facets/facet'
+export { defineFacetPayload } from './facets/facet-extension'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
 export { type CommandArgs } from './types/command'
 export {

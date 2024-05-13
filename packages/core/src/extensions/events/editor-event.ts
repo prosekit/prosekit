@@ -2,7 +2,8 @@ import type { Node, Slice } from '@prosekit/pm/model'
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { Facet } from '../../facets/facet'
+import { defineFacet } from '../../facets/facet'
+import { defineFacetPayload } from '../../facets/facet-extension'
 import type { ObjectEntries } from '../../types/object-entries'
 import { combineEventHandlers } from '../../utils/combine-event-handlers'
 import { groupEntries, type GroupedEntries } from '../../utils/group-entries'
@@ -80,7 +81,7 @@ export type ScrollToSelectionHandler = (view: EditorView) => boolean
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyDown}
  */
 export function defineKeyDownHandler(handler: KeyDownHandler) {
-  return editorEventFacet.extension([['keyDown', handler]])
+  return defineFacetPayload(editorEventFacet, [['keyDown', handler]])
 }
 /**
  * @public
@@ -88,7 +89,7 @@ export function defineKeyDownHandler(handler: KeyDownHandler) {
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress}
  */
 export function defineKeyPressHandler(handler: KeyPressHandler) {
-  return editorEventFacet.extension([['keyPress', handler]])
+  return defineFacetPayload(editorEventFacet, [['keyPress', handler]])
 }
 /**
  * @public
@@ -96,7 +97,7 @@ export function defineKeyPressHandler(handler: KeyPressHandler) {
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTextInput}
  */
 export function defineTextInputHandler(handler: TextInputHandler) {
-  return editorEventFacet.extension([['textInput', handler]])
+  return defineFacetPayload(editorEventFacet, [['textInput', handler]])
 }
 /**
  * @public
@@ -104,7 +105,7 @@ export function defineTextInputHandler(handler: TextInputHandler) {
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn}
  */
 export function defineClickOnHandler(handler: ClickOnHandler) {
-  return editorEventFacet.extension([['clickOn', handler]])
+  return defineFacetPayload(editorEventFacet, [['clickOn', handler]])
 }
 /**
  * @public
@@ -112,7 +113,7 @@ export function defineClickOnHandler(handler: ClickOnHandler) {
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleClick}
  */
 export function defineClickHandler(handler: ClickHandler) {
-  return editorEventFacet.extension([['click', handler]])
+  return defineFacetPayload(editorEventFacet, [['click', handler]])
 }
 /**
  * @public
@@ -120,7 +121,7 @@ export function defineClickHandler(handler: ClickHandler) {
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClickOn}
  */
 export function defineDoubleClickOnHandler(handler: DoubleClickOnHandler) {
-  return editorEventFacet.extension([['doubleClickOn', handler]])
+  return defineFacetPayload(editorEventFacet, [['doubleClickOn', handler]])
 }
 /**
  * @public
@@ -128,7 +129,7 @@ export function defineDoubleClickOnHandler(handler: DoubleClickOnHandler) {
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClick}
  */
 export function defineDoubleClickHandler(handler: DoubleClickHandler) {
-  return editorEventFacet.extension([['doubleClick', handler]])
+  return defineFacetPayload(editorEventFacet, [['doubleClick', handler]])
 }
 /**
  * @public
@@ -136,7 +137,7 @@ export function defineDoubleClickHandler(handler: DoubleClickHandler) {
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClickOn}
  */
 export function defineTripleClickOnHandler(handler: TripleClickOnHandler) {
-  return editorEventFacet.extension([['tripleClickOn', handler]])
+  return defineFacetPayload(editorEventFacet, [['tripleClickOn', handler]])
 }
 /**
  * @public
@@ -144,7 +145,7 @@ export function defineTripleClickOnHandler(handler: TripleClickOnHandler) {
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClick}
  */
 export function defineTripleClickHandler(handler: TripleClickHandler) {
-  return editorEventFacet.extension([['tripleClick', handler]])
+  return defineFacetPayload(editorEventFacet, [['tripleClick', handler]])
 }
 /**
  * @public
@@ -152,7 +153,7 @@ export function defineTripleClickHandler(handler: TripleClickHandler) {
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handlePaste}
  */
 export function definePasteHandler(handler: PasteHandler) {
-  return editorEventFacet.extension([['paste', handler]])
+  return defineFacetPayload(editorEventFacet, [['paste', handler]])
 }
 /**
  * @public
@@ -160,7 +161,7 @@ export function definePasteHandler(handler: PasteHandler) {
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDrop}
  */
 export function defineDropHandler(handler: DropHandler) {
-  return editorEventFacet.extension([['drop', handler]])
+  return defineFacetPayload(editorEventFacet, [['drop', handler]])
 }
 /**
  * @public
@@ -170,7 +171,7 @@ export function defineDropHandler(handler: DropHandler) {
 export function defineScrollToSelectionHandler(
   handler: ScrollToSelectionHandler,
 ) {
-  return editorEventFacet.extension([['scrollToSelection', handler]])
+  return defineFacetPayload(editorEventFacet, [['scrollToSelection', handler]])
 }
 
 interface EditorEventMap {
@@ -193,22 +194,16 @@ type EditorEventEntries = ObjectEntries<EditorEventMap>
 /**
  * @internal
  */
-const editorEventFacet = Facet.define<EditorEventEntries, PluginPayload>({
-  converter: () => {
+const editorEventFacet = defineFacet<EditorEventEntries, PluginPayload>({
+  reduce: () => {
     const [update, plugin] = setupEditorEventPlugin()
 
-    return {
-      create: (entries) => {
-        update(entries)
-        return () => plugin
-      },
-      update: (entries) => {
-        update(entries)
-        return null
-      },
+    return (entries) => {
+      update(entries)
+      return plugin
     }
   },
-  next: pluginFacet,
+  parent: pluginFacet,
   singleton: true,
 })
 
@@ -245,7 +240,7 @@ function setupEditorEventPlugin() {
   }
 
   const plugin = new ProseMirrorPlugin({
-    key: new PluginKey('prosekit-editor-handler'),
+    key: new PluginKey('prosekit-editor-event'),
     props: {
       handleKeyDown,
       handleKeyPress,

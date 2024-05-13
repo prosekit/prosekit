@@ -1,5 +1,6 @@
 import {
-  Facet,
+  defineFacet,
+  defineFacetPayload,
   getMarkType,
   getNodeType,
   isMarkAbsent,
@@ -31,7 +32,7 @@ import { Plugin } from '@prosekit/pm/state'
  * @public
  */
 export function defineInputRule(rule: InputRule): Extension {
-  return inputRuleFacet.extension([() => rule])
+  return defineFacetPayload(inputRuleFacet, [() => rule])
 }
 
 /**
@@ -152,7 +153,7 @@ export function defineTextBlockInputRule({
    */
   attrs?: Attrs | null | ((match: RegExpMatchArray) => Attrs | null)
 }): Extension {
-  return inputRuleFacet.extension([
+  return defineFacetPayload(inputRuleFacet, [
     ({ schema }): InputRule => {
       const nodeType = getNodeType(schema, type)
       return textblockTypeInputRule(regex, nodeType, attrs)
@@ -201,7 +202,7 @@ export function defineWrappingInputRule({
    */
   join?: (match: RegExpMatchArray, node: ProseMirrorNode) => boolean
 }): Extension {
-  return inputRuleFacet.extension([
+  return defineFacetPayload(inputRuleFacet, [
     ({ schema }): InputRule => {
       const nodeType = getNodeType(schema, type)
       return wrappingInputRule(regex, nodeType, attrs, join)
@@ -211,12 +212,12 @@ export function defineWrappingInputRule({
 
 type InputRulePayload = (context: { schema: Schema }) => InputRule
 
-const inputRuleFacet = Facet.define<InputRulePayload, PluginPayload>({
-  convert: (inputs: InputRulePayload[]): PluginPayload => {
+const inputRuleFacet = defineFacet<InputRulePayload, PluginPayload>({
+  reducer: (inputs: InputRulePayload[]): PluginPayload => {
     return (context): Plugin[] => {
       const rules: InputRule[] = inputs.flatMap((callback) => callback(context))
       return [inputRules({ rules })]
     }
   },
-  next: pluginFacet,
+  parent: pluginFacet,
 })

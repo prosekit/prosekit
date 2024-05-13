@@ -1,11 +1,15 @@
 import type { CommandCreators } from '../types/command'
 
-import { Facet } from './facet'
+import { defineFacet } from './facet'
+import { rootFacet, type RootPayload } from './root'
 
 export type CommandPayload = CommandCreators
 
-export const commandFacet = Facet.defineRootFacet<CommandPayload>({
-  convert: (inputs) => {
-    return Object.assign({}, ...inputs) as CommandPayload
+export const commandFacet = defineFacet<CommandPayload, RootPayload>({
+  reducer: (inputs) => {
+    const commands = Object.assign({}, ...inputs) as CommandPayload
+    return { commands }
   },
+  parent: rootFacet,
+  singleton: true,
 })

@@ -238,6 +238,8 @@ const staticShortcuts = {
   ICON_LIST_ORDERED: clsx('i-lucide-list-ordered h-5 w-5'),
   ICON_LIST_TASK: clsx('i-lucide-list-checks h-5 w-5'),
   ICON_LIST_TOGGLE: clsx('i-lucide-list-collapse h-5 w-5'),
+  ICON_LIST_INDENT: clsx('i-lucide-indent-increase h-5 w-5'),
+  ICON_LIST_DEDENT: clsx('i-lucide-indent-decrease h-5 w-5'),
   ICON_CODE_BLOCK: clsx('i-lucide-square-code h-5 w-5'),
   ICON_CORNER_HANDLE: clsx('i-lucide-arrow-down-right h-4 w-4'),
   ICON_DRAG_HANDLE: clsx('i-lucide-grip-vertical h-5 w-5'),

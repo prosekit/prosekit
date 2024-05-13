@@ -101,7 +101,7 @@ testStory('full', ({ example }) => {
   })
 
   test.describe('slash menu', () => {
-    test('press Space to insert a link', async ({ page }) => {
+    test('slash menu', async ({ page }) => {
       const editor = await waitForEditor(page)
 
       const getPopovers = async () => {
@@ -128,6 +128,29 @@ testStory('full', ({ example }) => {
 
       await editor.press('Escape')
       expect(await getVisiblePopoverCount()).toBe(0)
+    })
+
+    test('list', async ({ page }) => {
+      const editor = await waitForEditor(page)
+
+      expect(await editor.innerHTML()).not.toContain('data-list-kind="task"')
+      expect(await editor.innerHTML()).not.toContain('data-list-kind="ordered"')
+
+      await editor.pressSequentially('/task')
+      await editor.press('Enter')
+
+      expect(await editor.innerHTML()).toContain('data-list-kind="task"')
+
+      await editor.press('Backspace')
+      await editor.press('Backspace')
+      await editor.press('Backspace')
+      await editor.press('Backspace')
+      await editor.pressSequentially('Some text ')
+      await editor.pressSequentially('/order')
+      await editor.press('Enter')
+      await editor.press('Enter')
+
+      expect(await editor.innerHTML()).toContain('data-list-kind="ordered"')
     })
   })
 

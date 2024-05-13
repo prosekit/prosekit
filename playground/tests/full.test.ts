@@ -148,7 +148,6 @@ testStory('full', ({ example }) => {
       await editor.pressSequentially('Some text ')
       await editor.pressSequentially('/order')
       await editor.press('Enter')
-      await editor.press('Enter')
 
       expect(await editor.innerHTML()).toContain('data-list-kind="ordered"')
     })

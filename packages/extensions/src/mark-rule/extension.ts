@@ -1,5 +1,15 @@
-import { Facet, pluginFacet, type PluginPayload } from '@prosekit/core'
-import { EditorState, ProseMirrorPlugin, Transaction } from '@prosekit/pm/state'
+import {
+  defineFacet,
+  defineFacetPayload,
+  pluginFacet,
+  type PluginPayload,
+} from '@prosekit/core'
+import {
+  EditorState,
+  PluginKey,
+  ProseMirrorPlugin,
+  Transaction,
+} from '@prosekit/pm/state'
 
 import { applyMarkRules } from './apply'
 import type { MarkRuleOptions } from './types'
@@ -9,14 +19,15 @@ import type { MarkRuleOptions } from './types'
  * matches a certain pattern, and remove them if it doesn't match anymore.
  */
 export function defineMarkRule(options: MarkRuleOptions) {
-  return markRuleFacet.extension([options])
+  return defineFacetPayload(markRuleFacet, [options])
 }
 
-const markRuleFacet = Facet.define<MarkRuleOptions, PluginPayload>({
-  converter: () => {
+const markRuleFacet = defineFacet<MarkRuleOptions, PluginPayload>({
+  reduce: () => {
     let rules: MarkRuleOptions[] = []
 
     const plugin = new ProseMirrorPlugin({
+      key: new PluginKey('prosekit-mark-rule'),
       appendTransaction: (
         transactions: readonly Transaction[],
         oldState: EditorState,
@@ -25,19 +36,12 @@ const markRuleFacet = Facet.define<MarkRuleOptions, PluginPayload>({
         return applyMarkRules(rules, transactions, oldState, newState)
       },
     })
-    const pluginFunc = () => [plugin]
 
-    return {
-      create: (inputs: MarkRuleOptions[]) => {
-        rules = inputs
-        return pluginFunc
-      },
-      update: (inputs: MarkRuleOptions[]) => {
-        rules = inputs
-        return null
-      },
+    return function reducer(input) {
+      rules = input
+      return plugin
     }
   },
 
-  next: pluginFacet,
+  parent: pluginFacet,
 })

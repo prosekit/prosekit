@@ -1,7 +1,8 @@
 import { EditorState, PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { Facet } from '../../facets/facet'
+import { defineFacet } from '../../facets/facet'
+import { defineFacetPayload } from '../../facets/facet-extension'
 import { pluginFacet, type PluginPayload } from '../plugin'
 
 /**
@@ -36,7 +37,7 @@ export type UnmountHandler = () => void
  * @public
  */
 export function defineMountHandler(handler: MountHandler) {
-  return pluginViewFacet.extension([['mount', handler]])
+  return defineFacetPayload(pluginViewFacet, [['mount', handler]])
 }
 
 /**
@@ -45,7 +46,7 @@ export function defineMountHandler(handler: MountHandler) {
  * @public
  */
 export function defineUpdateHandler(handler: UpdateHandler) {
-  return pluginViewFacet.extension([['update', handler]])
+  return defineFacetPayload(pluginViewFacet, [['update', handler]])
 }
 
 /**
@@ -54,7 +55,7 @@ export function defineUpdateHandler(handler: UpdateHandler) {
  * @public
  */
 export function defineUnmountHandler(handler: UnmountHandler) {
-  return pluginViewFacet.extension([['unmount', handler]])
+  return defineFacetPayload(pluginViewFacet, [['unmount', handler]])
 }
 
 type PluginViewHandlerArgs =
@@ -62,8 +63,8 @@ type PluginViewHandlerArgs =
   | ['update', UpdateHandler]
   | ['unmount', UnmountHandler]
 
-const pluginViewFacet = Facet.define<PluginViewHandlerArgs, PluginPayload>({
-  converter: () => {
+const pluginViewFacet = defineFacet<PluginViewHandlerArgs, PluginPayload>({
+  reduce: () => {
     let mountHandlers: MountHandler[] = []
     let updateHandlers: UpdateHandler[] = []
     let unmountHandlers: UnmountHandler[] = []
@@ -85,8 +86,6 @@ const pluginViewFacet = Facet.define<PluginViewHandlerArgs, PluginPayload>({
       },
     })
 
-    const pluginFunc = () => [plugin]
-
     const register = (input: PluginViewHandlerArgs[]) => {
       mountHandlers = []
       updateHandlers = []
@@ -107,18 +106,12 @@ const pluginViewFacet = Facet.define<PluginViewHandlerArgs, PluginPayload>({
       }
     }
 
-    return {
-      create: (input: PluginViewHandlerArgs[]) => {
-        register(input)
-        return pluginFunc
-      },
-      update: (input: PluginViewHandlerArgs[]) => {
-        register(input)
-        return null
-      },
+    return function reducer(input: PluginViewHandlerArgs[]) {
+      register(input)
+      return plugin
     }
   },
-  next: pluginFacet,
+  parent: pluginFacet,
   singleton: true,
 })
 

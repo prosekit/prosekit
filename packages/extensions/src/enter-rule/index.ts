@@ -1,6 +1,7 @@
 import {
-  Facet,
   OBJECT_REPLACEMENT_CHARACTER,
+  defineFacet,
+  defineFacetPayload,
   getNodeType,
   isTextSelection,
   maybeRun,
@@ -15,6 +16,7 @@ import {
   type Command,
   type EditorState,
   type Transaction,
+  PluginKey,
 } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
@@ -110,7 +112,7 @@ export function defineEnterRule({
   stop = false,
 }: EnterRuleOptions): Extension {
   const rule: EnterRule = new EnterRule(regex, handler, stop)
-  return enterRule.extension([rule])
+  return defineFacetPayload(enterRule, [rule])
 }
 
 /**
@@ -160,8 +162,8 @@ class EnterRule {
   ) {}
 }
 
-const enterRule = Facet.define<EnterRule, PluginPayload>({
-  converter: () => {
+const enterRule = defineFacet<EnterRule, PluginPayload>({
+  reduce: () => {
     let rules: EnterRule[] = []
 
     const command: Command = (state, dispatch, view) => {
@@ -169,22 +171,18 @@ const enterRule = Facet.define<EnterRule, PluginPayload>({
       return execRules(view, rules, dispatch)
     }
     const handler = keydownHandler({ Enter: command })
-    const plugin = new ProseMirrorPlugin({ props: { handleKeyDown: handler } })
-    const pluginFunc = () => [plugin]
+    const plugin = new ProseMirrorPlugin({
+      key: new PluginKey('prosekit-enter-rule'),
+      props: { handleKeyDown: handler },
+    })
 
-    return {
-      create: (inputs: EnterRule[]) => {
-        rules = inputs
-        return pluginFunc
-      },
-      update: (inputs: EnterRule[]) => {
-        rules = inputs
-        return null
-      },
+    return function reducer(inputs) {
+      rules = inputs
+      return plugin
     }
   },
 
-  next: pluginFacet,
+  parent: pluginFacet,
 })
 
 function execRules(

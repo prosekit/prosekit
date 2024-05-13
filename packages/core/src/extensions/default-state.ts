@@ -1,6 +1,7 @@
 import { Selection, type EditorStateConfig } from '@prosekit/pm/state'
 
 import { ProseKitError } from '../error'
+import { defineFacetPayload } from '../facets/facet-extension'
 import { stateFacet } from '../facets/state'
 import type { Extension } from '../types/extension'
 import type { NodeJSON, SelectionJSON } from '../types/model'
@@ -37,7 +38,7 @@ export function defineDefaultState({
     )
   }
 
-  return stateFacet.extension([
+  return defineFacetPayload(stateFacet, [
     ({ schema }) => {
       const config: EditorStateConfig = {}
 

@@ -1,7 +1,9 @@
 import { Schema } from '@prosekit/pm/model'
-import { Plugin } from '@prosekit/pm/state'
+import { Plugin, ProseMirrorPlugin } from '@prosekit/pm/state'
 
-import { Facet } from '../facets/facet'
+import { ProseKitError } from '../error'
+import { defineFacet } from '../facets/facet'
+import { defineFacetPayload } from '../facets/facet-extension'
 import { stateFacet, type StatePayload } from '../facets/state'
 import { type Extension } from '../types/extension'
 
@@ -20,15 +22,15 @@ export function definePlugin(
     | ((context: { schema: Schema }) => Plugin | Plugin[]),
 ): Extension {
   if (plugin instanceof Plugin) {
-    return pluginFacet.extension([() => [plugin]])
+    return defineFacetPayload(pluginFacet, [() => [plugin]])
   }
 
   if (Array.isArray(plugin) && plugin.every((p) => p instanceof Plugin)) {
-    return pluginFacet.extension([() => plugin])
+    return defineFacetPayload(pluginFacet, [() => plugin])
   }
 
   if (typeof plugin === 'function') {
-    return pluginFacet.extension([plugin])
+    return defineFacetPayload(pluginFacet, [plugin])
   }
 
   throw new TypeError('Invalid plugin')
@@ -37,30 +39,41 @@ export function definePlugin(
 /**
  * @internal
  */
-export type PluginPayload = (context: { schema: Schema }) => Plugin | Plugin[]
+export type PluginPayload =
+  | Plugin
+  | Plugin[]
+  | ((context: { schema: Schema }) => Plugin | Plugin[])
 
 /**
  * @internal
  */
-export const pluginFacet = Facet.define<PluginPayload, StatePayload>({
-  converter: () => {
-    let inputs: PluginPayload[] = []
+export const pluginFacet = defineFacet<PluginPayload, StatePayload>({
+  reducer: (payloads): StatePayload => {
+    return ({ schema }) => {
+      const plugins: ProseMirrorPlugin[] = []
 
-    const output: StatePayload = ({ schema }) => {
-      const plugins = inputs.flatMap((func) => func({ schema }))
+      for (const payload of payloads) {
+        if (payload instanceof Plugin) {
+          plugins.push(payload)
+        } else if (
+          Array.isArray(payload) &&
+          payload.every((p) => p instanceof Plugin)
+        ) {
+          plugins.push(...payload)
+        } else if (typeof payload === 'function') {
+          plugins.push(...[payload({ schema })].flat())
+        } else {
+          throw new ProseKitError('Invalid plugin')
+        }
+      }
+
+      // In ProseMirror, the plugins at the beginning have a higher priority.
+      // However, in ProseKit, the extensions at the end have a higher priority
+      // because we want to easily override the default behaviors by appending
+      // new extensions. Therefore, we need to reverse plugins here.
+      plugins.reverse()
       return { plugins }
     }
-
-    return {
-      create: (payloads: PluginPayload[]) => {
-        inputs = payloads
-        return output
-      },
-      update: (payloads: PluginPayload[]) => {
-        inputs = payloads
-        return output
-      },
-    }
   },
-  next: stateFacet,
+  parent: stateFacet,
 })

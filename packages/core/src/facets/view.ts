@@ -1,11 +1,15 @@
 import type { DirectEditorProps } from '@prosekit/pm/view'
 
-import { Facet } from './facet'
+import { defineFacet } from './facet'
+import { rootFacet, type RootPayload } from './root'
 
 export type ViewPayload = Omit<DirectEditorProps, 'state'>
 
-export const viewFacet = Facet.defineRootFacet<ViewPayload>({
-  convert: (props) => {
-    return Object.assign({}, ...props) as ViewPayload
+export const viewFacet = defineFacet<ViewPayload, RootPayload>({
+  reducer: (props) => {
+    const view = Object.assign({}, ...props) as ViewPayload
+    return { view }
   },
+  singleton: true,
+  parent: rootFacet,
 })

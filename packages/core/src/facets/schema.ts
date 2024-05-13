@@ -1,24 +1,17 @@
-import type { MarkSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
-import OrderedMap from 'orderedmap'
+import { Schema, type SchemaSpec } from '@prosekit/pm/model'
 
-import { Facet } from './facet'
+import { assert } from '../utils/assert'
 
-export type SchemaPayload = SchemaSpec
+import { defineFacet } from './facet'
+import { rootFacet, type RootPayload } from './root'
 
-export const schemaFacet = Facet.defineRootFacet<SchemaPayload>({
-  convert: (specs): SchemaPayload => {
-    let nodes = OrderedMap.from<NodeSpec>({})
-    let marks = OrderedMap.from<MarkSpec>({})
-    let topNode: string | undefined = undefined
-
-    for (const spec of specs) {
-      nodes = nodes.append(spec.nodes)
-      marks = marks.append(spec.marks ?? {})
-      topNode = topNode ?? spec.topNode
-    }
-
-    return { nodes, marks, topNode }
+export const schemaFacet = defineFacet<SchemaSpec, RootPayload>({
+  reducer: (specs) => {
+    assert(specs.length <= 1)
+    const spec = specs[0]
+    const schema = spec ? new Schema(spec) : null
+    return { schema }
   },
+  parent: rootFacet,
+  singleton: true,
 })
-
-schemaFacet.isSchema = true

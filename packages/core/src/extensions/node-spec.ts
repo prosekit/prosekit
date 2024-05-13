@@ -1,8 +1,10 @@
 import type { DOMOutputSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
+import OrderedMap from 'orderedmap'
 
 import { ProseKitError } from '../error'
-import { Facet } from '../facets/facet'
-import { schemaFacet } from '../facets/schema'
+import { defineFacet } from '../facets/facet'
+import { defineFacetPayload } from '../facets/facet-extension'
+import { schemaSpecFacet } from '../facets/schema-spec'
 import type { Extension } from '../types/extension'
 import { isElement } from '../utils/is-element'
 import { isNotNull } from '../utils/is-not-null'
@@ -57,7 +59,9 @@ export function defineNodeSpec<NodeName extends string>(
   options: NodeSpecOptions<NodeName>,
 ): Extension<{ NODES: NodeName }> {
   const payload: NodeSpecPayload = [options, undefined]
-  return nodeSpecFacet.extension([payload]) as Extension<{ NODES: NodeName }>
+  return defineFacetPayload(nodeSpecFacet, [payload]) as Extension<{
+    NODES: NodeName
+  }>
 }
 
 /**
@@ -67,7 +71,7 @@ export function defineNodeSpec<NodeName extends string>(
  */
 export function defineNodeAttr(options: NodeAttrOptions): Extension {
   const payload: NodeSpecPayload = [undefined, options]
-  return nodeSpecFacet.extension([payload])
+  return defineFacetPayload(nodeSpecFacet, [payload])
 }
 
 type NodeSpecPayload = [
@@ -75,16 +79,16 @@ type NodeSpecPayload = [
   NodeAttrOptions | undefined,
 ]
 
-const nodeSpecFacet = Facet.define<NodeSpecPayload, SchemaSpec>({
-  convert: (payloads: NodeSpecPayload[]): SchemaSpec => {
-    const nodes: Record<string, NodeSpec> = {}
+const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
+  reducer: (payloads: NodeSpecPayload[]): SchemaSpec => {
+    let nodes = OrderedMap.from<NodeSpec>({})
     let topNodeName: string | undefined = undefined
 
     const specPayloads = payloads.map((input) => input[0]).filter(isNotNull)
     const attrPayloads = payloads.map((input) => input[1]).filter(isNotNull)
 
     for (const { name, topNode, ...spec } of specPayloads) {
-      if (nodes[name]) {
+      if (nodes.get(name)) {
         throw new ProseKitError(`Node type ${name} has already been defined`)
       }
 
@@ -92,7 +96,9 @@ const nodeSpecFacet = Facet.define<NodeSpecPayload, SchemaSpec>({
         topNodeName = name
       }
 
-      nodes[name] = spec
+      // The latest spec has the highest priority, so we put it at the start of
+      // the map.
+      nodes = nodes.addToStart(name, spec)
     }
 
     for (const {
@@ -102,7 +108,7 @@ const nodeSpecFacet = Facet.define<NodeSpecPayload, SchemaSpec>({
       toDOM,
       parseDOM,
     } of attrPayloads) {
-      const spec = nodes[type]
+      const spec = nodes.get(type)
 
       if (!spec) {
         throw new ProseKitError(
@@ -179,6 +185,6 @@ const nodeSpecFacet = Facet.define<NodeSpecPayload, SchemaSpec>({
 
     return { nodes, topNode: topNodeName }
   },
-  next: schemaFacet,
+  parent: schemaSpecFacet,
   singleton: true,
 })

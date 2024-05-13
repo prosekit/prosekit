@@ -1,36 +1,11 @@
-import { ProseKitError } from '../error'
-import type { Extension } from '../types/extension'
+import { assert } from '../utils/assert'
 
-import { BaseExtension } from './base-extension'
-
-/**
- * @public
- */
-export interface FacetConverter<Input = any, Output = any> {
-  create: (inputs: Input[]) => Output
-  update: (inputs: Input[]) => Output | null
-}
-
-/**
- * @public
- */
-export interface FacetOptions<Input, Output> {
-  convert?: (payloads: Input[]) => Output
-  converter?: () => FacetConverter<Input, Output>
-  next: Facet<Output, any>
-
-  // Set this to true if you only want to keep one facet payload. For example, this facet corresponds to a ProseMirror plugin with a key.
-  singleton?: boolean
-}
+import type { FacetReducer } from './facet-types'
 
 let facetCount = 0
 
-export function getFacetCount() {
-  return facetCount
-}
-
 /**
- * @public
+ * @internal
  */
 export class Facet<Input, Output> {
   /**
@@ -40,81 +15,70 @@ export class Facet<Input, Output> {
   /**
    * @internal
    */
-  readonly converter: () => FacetConverter<Input, Output>
-  /**
-   * @internal
-   */
-  readonly next: Facet<Output, any> | null
+  readonly parent: Facet<Output, any> | null
   /**
    * @internal
    */
   readonly singleton: boolean
   /**
+   * A index path to retrieve the current facet in a tree from the root.
+   *
    * @internal
    */
-  public isSchema = false
-
-  private constructor(
-    converter: () => FacetConverter<Input, Output>,
-    next: Facet<Output, any> | null,
-    singleton: boolean,
-  ) {
-    this.converter = converter
-    this.next = next
-    this.singleton = singleton
-  }
-
-  static define<Input, Output>({
-    converter,
-    convert,
-    next,
-    singleton,
-  }: FacetOptions<Input, Output>) {
-    const converterFunction = converter
-      ? converter
-      : convert
-        ? () => ({
-            create: convert,
-            update: convert,
-          })
-        : null
-
-    if (!converterFunction) {
-      throw new ProseKitError("Facet must have either 'convert' or 'converter'")
-    }
-
-    return new Facet<Input, Output>(converterFunction, next, singleton ?? false)
-  }
+  readonly path: number[]
 
   /**
    * @internal
    */
-  static defineRootFacet<Input>(
-    options: Omit<FacetOptions<Input, Input>, 'next'>,
+  constructor(
+    parent: Facet<Output, any> | null,
+    singleton: boolean,
+    private _reducer?: FacetReducer<Input, Output>,
+    private _reduce?: () => FacetReducer<Input, Output>,
   ) {
-    // @ts-expect-error: next is empty here
-    return Facet.define(options)
+    // Only one of _reducer or _reduce can be defined
+    assert((_reduce || _reducer) && !(_reduce && _reducer))
+
+    this.parent = parent
+    this.singleton = singleton
+    this.path = parent ? [...parent.path, this.index] : []
   }
 
-  extension(payloads: Input[]): Extension {
-    return new FacetExtensionImpl(this, payloads)
+  get reducer(): FacetReducer<Input, Output> {
+    return (this._reducer ?? this._reduce?.())!
   }
 }
 
 /**
- * @public
+ * @internal
  */
-export class FacetExtensionImpl<Input, Output> extends BaseExtension {
-  declare extension: Extension
+export function defineFacet<Input, Output>(options: {
+  /**
+   * The parent facet in the tree.
+   */
+  parent: Facet<Output, any>
 
-  public hasSchema: boolean
-  public schema = null
+  /**
+   * Set this to true if you only want to keep one facet payload. For example,
+   * this facet corresponds to a ProseMirror plugin with a key.
+   */
+  singleton?: boolean
 
-  constructor(
-    readonly facet: Facet<Input, Output>,
-    readonly payloads: Input[],
-  ) {
-    super()
-    this.hasSchema = !!(facet.isSchema || facet.next?.isSchema)
-  }
+  /**
+   * A reducer is a function that accepts an array of input and produce a single
+   * output.
+   */
+  reducer?: FacetReducer<Input, Output>
+  /**
+   * A callback function that returns a reducer. This is useful if you want to
+   * store something in the closure.
+   */
+  reduce?: () => FacetReducer<Input, Output>
+}) {
+  return new Facet<Input, Output>(
+    options.parent,
+    options.singleton ?? false,
+    options.reducer,
+    options.reduce,
+  )
 }

@@ -1,3 +1,5 @@
+import { defineFacetPayload } from '../../facets/facet-extension'
+
 import { domEventFacet } from './dom-event'
 
 /**
@@ -17,7 +19,7 @@ export type FocusChangeHandler = (hasFocus: boolean) => void
 export function defineFocusChangeHandler(handler: FocusChangeHandler) {
   const handleFocus = () => handler(true)
   const handleBlur = () => handler(false)
-  return domEventFacet.extension([
+  return defineFacetPayload(domEventFacet, [
     ['focus', handleFocus],
     ['blur', handleBlur],
   ])

@@ -2,7 +2,7 @@ import type { Attrs, ProseMirrorNode } from '@prosekit/pm/model'
 import { type Command } from '@prosekit/pm/state'
 import { insertPoint } from '@prosekit/pm/transform'
 
-import { ProseKitError } from '../error'
+import { assert } from '../utils/assert'
 import { getNodeType } from '../utils/get-node-type'
 import { setSelectionAround } from '../utils/set-selection-around'
 
@@ -31,12 +31,10 @@ function insertNode(
     const node = options.node
       ? options.node
       : options.type
-        ? getNodeType(state.schema, options.type).createChecked(options.attrs)
+        ? getNodeType(state.schema, options.type).createAndFill(options.attrs)
         : null
 
-    if (!node) {
-      throw new ProseKitError('You must provide either a node or a type')
-    }
+    assert(node, 'You must provide either a node or a type')
 
     const insertPos = insertPoint(
       state.doc,

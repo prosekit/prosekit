@@ -20,6 +20,50 @@ body .Layout .VPNav .VPNavBar .divider {
   padding-left: 0;
 }
 
+body .Layout .VPNav .VPNavBarHamburger {
+  display: flex;
+
+  @media (min-width: 1024px) {
+    & {
+      display: none;
+    }
+  }
+}
+
+body .Layout .VPNav .VPNavScreen {
+  display: block;
+
+  @media (min-width: 1024px) {
+    & {
+      display: none;
+    }
+  }
+}
+
+body .Layout .VPNav .VPNavBarMenu {
+  display: none;
+
+  @media (min-width: 1024px) {
+    & {
+      display: flex;
+    }
+  }
+}
+
+body .Layout .VPNav .VPNavBarExtra {
+  display: none;
+
+  @media (min-width: 1024px) {
+    & {
+      display: block;
+    }
+  }
+}
+
+body .Layout .VPLocalNav > .container {
+  max-width: 100%;
+}
+
 @media (min-width: 960px) {
   body .VPSidebar {
     top: var(--vp-nav-height) !important;

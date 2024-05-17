@@ -3,4 +3,4 @@
 "prosekit": minor
 ---
 
-Add `defineTextAlign` to set the `text-align` CSS rule for block nodes. 
+Add `defineTextAlign` to set the `text-align` CSS property for block nodes. 

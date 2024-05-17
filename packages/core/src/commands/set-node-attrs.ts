@@ -31,24 +31,29 @@ export function setNodeAttrs(options: {
     const nodeTypes = getNodeTypes(state.schema, options.type)
     const from = options.pos ?? state.selection.from
     const to = options.pos ?? state.selection.to
-    const { tr } = state
+    const positions: number[] = []
 
-    let found = false
-
-    tr.doc.nodesBetween(from, to, (node, pos) => {
+    state.doc.nodesBetween(from, to, (node, pos) => {
       if (nodeTypes.includes(node.type)) {
-        found = true
-        if (dispatch) {
-          for (const [key, value] of Object.entries(options.attrs)) {
-            tr.setNodeAttribute(pos, key, value)
-          }
-        }
+        positions.push(pos)
+      }
+      if (!dispatch && positions.length > 0) {
+        return false
       }
     })
 
-    if (found) {
-      dispatch?.(tr)
+    if (positions.length === 0) {
+      return false
     }
-    return found
+
+    if (dispatch) {
+      const tr = state.tr
+      for (const pos of positions) {
+        for (const [key, value] of Object.entries(options.attrs)) {
+          tr.setNodeAttribute(pos, key, value)
+        }
+      }
+    }
+    return true
   }
 }

@@ -34,12 +34,12 @@ editor.commands.setTextAlign('right')
 
 ## Keyboard Shortcuts
 
-| Non-Apple      | Apple             | Description  |
-| -------------- | ----------------- | ------------ |
-| `Ctrl-Shift-L` | `Command-Shift-L` | Left align   |
-| `Ctrl-Shift-E` | `Command-Shift-E` | Center align |
-| `Ctrl-Shift-R` | `Command-Shift-R` | Right align  |
-| `Ctrl-Shift-J` | `Command-Shift-J` | Justified    |
+| Non-Apple      | Apple             | Description                        |
+| -------------- | ----------------- | ---------------------------------- |
+| `Ctrl-Shift-L` | `Command-Shift-L` | Align selected blocks to the left  |
+| `Ctrl-Shift-R` | `Command-Shift-R` | Align selected blocks to the right |
+| `Ctrl-Shift-E` | `Command-Shift-E` | Center selected blocks             |
+| `Ctrl-Shift-J` | `Command-Shift-J` | Justify selected blocks            |
 
 ## API Reference
 

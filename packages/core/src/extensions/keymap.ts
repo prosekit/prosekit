@@ -1,8 +1,15 @@
-import { baseKeymap, chainCommands } from '@prosekit/pm/commands'
+import {
+  baseKeymap,
+  chainCommands,
+  createParagraphNear,
+  liftEmptyBlock,
+  newlineInCode,
+} from '@prosekit/pm/commands'
 import { keydownHandler } from '@prosekit/pm/keymap'
 import { Plugin, PluginKey, type Command } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
+import { splitBlockEnter } from '../commands/split-block-enter'
 import { withPriority } from '../editor/with-priority'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
@@ -11,6 +18,16 @@ import { Priority } from '../types/priority'
 import { toReversed } from '../utils/array'
 
 import { pluginFacet, type PluginPayload } from './plugin'
+
+const customBaseKeymap = {
+  ...baseKeymap,
+  Enter: chainCommands(
+    newlineInCode,
+    createParagraphNear,
+    liftEmptyBlock,
+    splitBlockEnter,
+  ),
+}
 
 /**
  * @public
@@ -40,7 +57,7 @@ export function defineBaseKeymap(options?: {
   priority?: Priority
 }) {
   const priority = options?.priority ?? Priority.low
-  return withPriority(defineKeymap(baseKeymap), priority)
+  return withPriority(defineKeymap(customBaseKeymap), priority)
 }
 
 /**

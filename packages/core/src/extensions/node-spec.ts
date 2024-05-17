@@ -1,11 +1,11 @@
 import type { DOMOutputSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
 import OrderedMap from 'orderedmap'
 
-import { ProseKitError } from '../error'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
 import type { Extension } from '../types/extension'
+import { assert } from '../utils/assert'
 import { isElement } from '../utils/is-element'
 import { isNotNull } from '../utils/is-not-null'
 
@@ -40,7 +40,19 @@ export interface NodeAttrOptions {
   default?: any
 
   /**
+   * Whether the attribute should be kept when the node is split. Set it to
+   * `true` if you want to inherit the attribute from the previous node when
+   * splitting the node by pressing `Enter`.
+   *
+   * @default undefined
+   */
+  splittable?: boolean
+
+  /**
    * Returns the attribute key and value to be set on the DOM node.
+   *
+   * If the `key` is `"style"`, the value is a string of CSS properties and will
+   * be prepended to the existing `style` attribute on the DOM node.
    */
   toDOM?: (value: any) => [key: string, value: string] | null | void
 
@@ -88,9 +100,7 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
     const attrPayloads = payloads.map((input) => input[1]).filter(isNotNull)
 
     for (const { name, topNode, ...spec } of specPayloads) {
-      if (nodes.get(name)) {
-        throw new ProseKitError(`Node type ${name} has already been defined`)
-      }
+      assert(!nodes.get(name), `Node type ${name} can only be defined once`)
 
       if (topNode) {
         topNodeName = name
@@ -105,21 +115,18 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
       type,
       attr,
       default: defaultValue,
+      splittable,
       toDOM,
       parseDOM,
     } of attrPayloads) {
       const spec = nodes.get(type)
 
-      if (!spec) {
-        throw new ProseKitError(
-          `Node type ${type} must be defined before defining attributes`,
-        )
-      }
+      assert(spec, `Node type ${type} must be defined`)
 
       if (!spec.attrs) {
         spec.attrs = {}
       }
-      spec.attrs[attr] = { default: defaultValue as unknown }
+      spec.attrs[attr] = { default: defaultValue as unknown, splittable }
 
       if (toDOM && spec.toDOM) {
         const existingToDom = spec.toDOM
@@ -143,18 +150,26 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
 
           if (Array.isArray(dom)) {
             if (typeof dom[1] === 'object') {
-              return [dom[0], { ...dom[1], [key]: value }, ...dom.slice(2)]
+              return [
+                dom[0],
+                setObjectAttribute(
+                  dom[1] as Record<string, unknown>,
+                  key,
+                  value,
+                ),
+                ...dom.slice(2),
+              ]
             } else {
               return [dom[0], { [key]: value }, ...dom.slice(1)]
             }
           } else if (isElement(dom)) {
-            dom.setAttribute(key, value)
+            setElementAttribute(dom, key, value)
           } else if (
             typeof dom === 'object' &&
             'dom' in dom &&
             isElement(dom.dom)
           ) {
-            dom.dom.setAttribute(key, value)
+            setElementAttribute(dom.dom, key, value)
           }
 
           return dom
@@ -188,3 +203,21 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
   parent: schemaSpecFacet,
   singleton: true,
 })
+
+function setObjectAttribute(
+  obj: Record<string, unknown>,
+  key: string,
+  value: string,
+) {
+  if (key === 'style') {
+    value = `${value}${obj.style || ''}`
+  }
+  return { ...obj, [key]: value }
+}
+
+function setElementAttribute(element: Element, key: string, value: string) {
+  if (key === 'style') {
+    value = `${value}${element.getAttribute('style') || ''}`
+  }
+  element.setAttribute(key, value)
+}

@@ -74,4 +74,7 @@ export default defineConfig({
     url: 'http://localhost:4321/playground/dist/',
     reuseExistingServer: !process.env.CI,
   },
+
+  snapshotPathTemplate:
+    '{snapshotDir}/{testFileDir}/{testFileName}.snapshots/{arg}{ext}',
 })

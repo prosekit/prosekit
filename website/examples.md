@@ -52,6 +52,8 @@
 
 - [table](./examples/table)
 
+- [text-align](./examples/text-align)
+
 - [text-color](./examples/text-color)
 
 - [toolbar](./examples/toolbar)

@@ -112,6 +112,10 @@
     "path": "packages/prosekit/dist/extensions/table/style.css"
   },
   {
+    "name": "prosekit/extensions/text-align",
+    "path": "packages/prosekit/dist/prosekit-extensions-text-align.js"
+  },
+  {
     "name": "prosekit/extensions/underline",
     "path": "packages/prosekit/dist/prosekit-extensions-underline.js"
   },

@@ -23,6 +23,7 @@
     "./src/readonly/index.ts",
     "./src/strike/index.ts",
     "./src/table/index.ts",
+    "./src/text-align/index.ts",
     "./src/underline/index.ts",
     "./src/virtual-selection/index.ts"
   ]

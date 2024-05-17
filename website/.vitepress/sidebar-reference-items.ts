@@ -98,6 +98,10 @@ export const referenceItems = [
         "link": "/references/extensions/table"
       },
       {
+        "text": "text-align",
+        "link": "/references/extensions/text-align"
+      },
+      {
         "text": "underline",
         "link": "/references/extensions/underline"
       },

@@ -15,6 +15,15 @@ const extension = defineTextAlign({
 })
 ```
 
+## Keyboard Shortcuts
+
+| Non-Apple      | Apple             | Description  |
+| -------------- | ----------------- | ------------ |
+| `Ctrl-Shift-L` | `Command-Shift-L` | Left align   |
+| `Ctrl-Shift-E` | `Command-Shift-E` | Center align |
+| `Ctrl-Shift-R` | `Command-Shift-R` | Right align  |
+| `Ctrl-Shift-J` | `Command-Shift-J` | Justified    |
+
 ## API Reference
 
 - [prosekit/extensions/text-align](/references/extensions/text-align)

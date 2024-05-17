@@ -73,11 +73,11 @@
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
     "@sveltejs/package": "^2.3.1",
-    "@types/node": "^20.12.8",
+    "@types/node": "^20.12.12",
     "read-pkg": "^9.0.1",
-    "svelte": "^4.2.15",
+    "svelte": "^4.2.17",
     "svelte-check": "^3.7.1",
-    "tsx": "^4.9.2",
+    "tsx": "^4.10.4",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
   },

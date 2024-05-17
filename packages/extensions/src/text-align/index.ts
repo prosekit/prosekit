@@ -13,7 +13,7 @@ export interface TextAlignOptions {
    * The names of node to add the attribute to.
    *
    * @example
-   * 
+   *
    * ["paragraph", "heading"]
    */
   types: string[]

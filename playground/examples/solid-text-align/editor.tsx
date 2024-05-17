@@ -10,7 +10,7 @@ export default function Editor() {
   const editor = createEditor({
     extension: defineExtension(),
     defaultHTML:
-      '<h1 style="text-align:center;">Center subject</h1>' +
+      '<h1 style="text-align:center;">Heading</h1>' +
       '<p style="text-align:left;">First paragraph</p>' +
       '<p style="text-align:center;">Second paragraph</p>' +
       '<p style="text-align:right;">Third paragraph</p>',

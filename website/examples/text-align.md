@@ -6,6 +6,19 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <ExamplePreview name="text-align">
 
+<template v-slot:vue>
+
+::: code-group
+
+<<< @/../playground/examples/vue-text-align/editor.vue
+<<< @/../playground/examples/vue-text-align/extension.ts
+<<< @/../playground/examples/vue-text-align/toggle.vue
+<<< @/../playground/examples/vue-text-align/toolbar.vue
+
+:::
+
+</template>
+
 <template v-slot:svelte>
 
 ::: code-group

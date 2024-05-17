@@ -54,6 +54,4 @@ async function formatHTML(html: string) {
 
 export const IS_APPLE = process.platform === 'darwin'
 
-
-export const MOD_KEY = IS_APPLE ? "Meta" : "Control"
-
+export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'

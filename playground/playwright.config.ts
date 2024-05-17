@@ -75,5 +75,6 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
   },
 
-  snapshotPathTemplate: '{snapshotDir}/{testFileDir}/{testFileName}.snapshots/{arg}{ext}'
+  snapshotPathTemplate:
+    '{snapshotDir}/{testFileDir}/{testFileName}.snapshots/{arg}{ext}',
 })

@@ -22,6 +22,11 @@ jobs:
       - name: Lint
         run: pnpm run lint
 
+      - name: Lint vue examples
+        run: |
+          cd playground 
+          pnpm run lint:vue
+
   typecheck:
     runs-on: ubuntu-latest
 

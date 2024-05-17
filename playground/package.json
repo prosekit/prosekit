@@ -8,6 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "lint:vue": "vue-tsc --noEmit --emitDeclarationOnly false --project examples/vue.tsconfig.json",
     "astro": "astro",
     "test": "playwright install chromium && playwright test"
   },
@@ -41,6 +42,7 @@
     "unified": "^11.0.4",
     "unocss": "^0.60.2",
     "unocss-preset-animations": "^1.0.2",
-    "vue": "^3.4.27"
+    "vue": "^3.4.27",
+    "vue-tsc": "^2.0.19"
   }
 }

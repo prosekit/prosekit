@@ -53,6 +53,7 @@ export function setNodeAttrs(options: {
           tr.setNodeAttribute(pos, key, value)
         }
       }
+      dispatch?.(tr)
     }
     return true
   }

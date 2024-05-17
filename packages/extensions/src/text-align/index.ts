@@ -75,10 +75,10 @@ export function defineTextAlignCommands(types: string[]) {
  */
 export function defineTextAlignKeymap(types: string[]) {
   return defineKeymap({
-    'Mod-Shift-l': setTextAlign({ types, value: 'left' }),
-    'Mod-Shift-e': setTextAlign({ types, value: 'center' }),
-    'Mod-Shift-r': setTextAlign({ types, value: 'right' }),
-    'Mod-Shift-j': setTextAlign({ types, value: 'justify' }),
+    'mod-shift-l': setTextAlign({ types, value: 'left' }),
+    'mod-shift-e': setTextAlign({ types, value: 'center' }),
+    'mod-shift-r': setTextAlign({ types, value: 'right' }),
+    'mod-shift-j': setTextAlign({ types, value: 'justify' }),
   })
 }
 

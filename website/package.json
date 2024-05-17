@@ -14,7 +14,7 @@
   "devDependencies": {
     "@iconify-json/logos": "^1.1.42",
     "@iconify-json/lucide": "^1.1.186",
-    "@prosekit/dev": "*",
+    "@prosekit/dev": "workspace:*",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "@unocss/cli": "^0.59.4",

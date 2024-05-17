@@ -54,7 +54,7 @@
     "prosemirror-view": "^1.33.6"
   },
   "devDependencies": {
-    "@prosekit/dev": "*",
+    "@prosekit/dev": "workspace:*",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"

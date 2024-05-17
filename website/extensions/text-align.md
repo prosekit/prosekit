@@ -25,7 +25,7 @@ Apply an alignment value to selected blocks.
 import { createEditor } from 'prosekit/core'
 import { defineTextAlign } from 'prosekit/extensions/text-align'
 
-const extension = defineTextAlign(types: ['paragraph', 'heading'])
+const extension = defineTextAlign({types: ['paragraph', 'heading']})
 const editor = createEditor({ extension })
 
 // ---cut---

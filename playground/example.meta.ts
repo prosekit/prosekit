@@ -884,6 +884,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "vue-text-align",
+      "framework": "vue",
+      "story": "text-align",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toggle.vue",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-text-color",
       "framework": "vue",
       "story": "text-color",

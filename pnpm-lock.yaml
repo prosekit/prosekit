@@ -85,7 +85,7 @@ importers:
         version: link:../pm
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       postcss:
         specifier: ^8.4.38
@@ -119,7 +119,7 @@ importers:
         version: 4.18.1
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       tsup:
         specifier: ^8.0.2
@@ -223,7 +223,7 @@ importers:
         version: 1.4.0
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       tsup:
         specifier: ^8.0.2
@@ -242,7 +242,7 @@ importers:
         version: link:../web
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       tsup:
         specifier: ^8.0.2
@@ -282,7 +282,7 @@ importers:
         version: 1.33.6
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       tsup:
         specifier: ^8.0.2
@@ -310,7 +310,7 @@ importers:
         version: 2.1.1
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       preact:
         specifier: ^10.21.0
@@ -362,7 +362,7 @@ importers:
         version: link:../web
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       '@types/react':
         specifier: ^18.3.1
@@ -420,7 +420,7 @@ importers:
         version: 2.1.1
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       '@types/react':
         specifier: ^18.3.1
@@ -457,7 +457,7 @@ importers:
         version: link:../web
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       solid-js:
         specifier: ^1.8.17
@@ -485,7 +485,7 @@ importers:
         version: link:../web
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       '@sveltejs/package':
         specifier: ^2.3.1
@@ -528,7 +528,7 @@ importers:
         version: 0.2.6
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       tsup:
         specifier: ^8.0.2
@@ -583,7 +583,7 @@ importers:
         version: 0.49.0
     devDependencies:
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../dev
       tsup:
         specifier: ^8.0.2
@@ -619,7 +619,7 @@ importers:
         specifier: ^1.43.1
         version: 1.43.1
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../packages/dev
       '@types/react':
         specifier: ^18.3.1
@@ -697,7 +697,7 @@ importers:
         specifier: ^1.1.186
         version: 1.1.186
       '@prosekit/dev':
-        specifier: '*'
+        specifier: workspace:*
         version: link:../packages/dev
       '@types/react':
         specifier: ^18.3.1

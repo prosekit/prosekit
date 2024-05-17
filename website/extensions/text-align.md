@@ -11,8 +11,25 @@ const extension = defineTextAlign({
   // A list of nodes that will be applied.
   types: ['paragraph', 'heading'],
   // An optional default alignment value. Defaults to `left`.
-  default: 'right',
+  default: 'center',
 })
+```
+
+## Commands
+
+### `setTextAlign`
+
+Apply an alignment value to selected blocks.
+
+```ts
+import { createEditor } from 'prosekit/core'
+import { defineTextAlign } from 'prosekit/extensions/text-align'
+
+const extension = defineTextAlign(types: ['paragraph', 'heading'])
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.setTextAlign('right')
 ```
 
 ## Keyboard Shortcuts

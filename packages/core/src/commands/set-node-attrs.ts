@@ -47,13 +47,13 @@ export function setNodeAttrs(options: {
     }
 
     if (dispatch) {
-      const tr = state.tr
+      const { tr } = state
       for (const pos of positions) {
         for (const [key, value] of Object.entries(options.attrs)) {
           tr.setNodeAttribute(pos, key, value)
         }
       }
-      dispatch?.(tr)
+      dispatch(tr)
     }
     return true
   }

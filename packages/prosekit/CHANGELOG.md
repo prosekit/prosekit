@@ -1,5 +1,31 @@
 # prosekit
 
+## 0.7.0
+
+### Minor Changes
+
+- [`b136cd7`](https://github.com/ocavue/prosekit/commit/b136cd73b22a7a8eb5cb5fc3a924d2f02407b180) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineTextAlign` to set the `text-align` CSS property for block nodes.
+
+- [`b136cd7`](https://github.com/ocavue/prosekit/commit/b136cd73b22a7a8eb5cb5fc3a924d2f02407b180) ![](https://prosekit.dev/b/core)
+
+  Add a new `splittable` option to `defineNodeAttr`.
+
+- [`9e4d8d5`](https://github.com/ocavue/prosekit/commit/9e4d8d575f5a429eb7a6f61525e5aa6cfda1e2ee) ![](https://prosekit.dev/b/core)
+
+  Rewrite to the internal extension facet data structure.
+
+### Patch Changes
+
+- [`b136cd7`](https://github.com/ocavue/prosekit/commit/b136cd73b22a7a8eb5cb5fc3a924d2f02407b180) ![](https://prosekit.dev/b/core)
+
+  `setNodeAttrs` now accepts an array of node types.
+
+- [`a51199d`](https://github.com/ocavue/prosekit/commit/a51199d1d70e8c43cf7c84f55d874703debb2a3a) ![](https://prosekit.dev/b/core)
+
+  Fix an issue where the `insertNode` command creates an invalid node.
+
 ## 0.6.10
 
 ### Patch Changes

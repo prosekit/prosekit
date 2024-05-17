@@ -21,7 +21,7 @@ const extension = defineTextAlign({
 
 Apply an alignment value to selected blocks.
 
-```ts
+```ts twoslash
 import { createEditor } from 'prosekit/core'
 import { defineTextAlign } from 'prosekit/extensions/text-align'
 

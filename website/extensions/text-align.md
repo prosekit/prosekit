@@ -1,10 +1,8 @@
 # Text Align
 
-Sets the horizontal alignment of the block nodes via the [`text-align`] CSS property.
+Sets the horizontal alignment of the block nodes using the [`text-align`] CSS property.
 
 ## Usage
-
-You can directly pass an `InputRule` instance to `defineInputRule`.
 
 ```ts twoslash
 import { defineTextAlign } from 'prosekit/extensions/text-align'
@@ -12,7 +10,7 @@ import { defineTextAlign } from 'prosekit/extensions/text-align'
 const extension = defineTextAlign({
   // A list of nodes that will be applied.
   types: ['paragraph', 'heading'],
-  // An optional default value.
+  // An optional default alignment value. Defaults to `left`.
   default: 'right',
 })
 ```

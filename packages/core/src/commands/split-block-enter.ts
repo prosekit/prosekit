@@ -26,3 +26,9 @@ function pickSplittableAttrs(node: ProseMirrorNode, type: NodeType) {
   }
   return found ? attrs : null
 }
+
+declare module '@prosekit/pm/model' {
+  export interface AttributeSpec {
+    splittable?: boolean
+  }
+}

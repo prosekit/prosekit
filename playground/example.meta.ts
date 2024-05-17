@@ -1282,6 +1282,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-text-align",
+      "framework": "svelte",
+      "story": "text-align",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toggle.svelte",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-word-counter",
       "framework": "svelte",
       "story": "word-counter",
@@ -1426,6 +1449,29 @@ export const exampleMeta = {
         },
         {
           "path": "slash-menu.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-text-align",
+      "framework": "solid",
+      "story": "text-align",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toggle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
           "hidden": false
         }
       ]

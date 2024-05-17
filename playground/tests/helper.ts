@@ -1,5 +1,6 @@
 import type { Page } from '@playwright/test'
 import { test } from '@playwright/test'
+import prettier from 'prettier'
 
 import { exampleMeta } from '../example.meta'
 
@@ -38,4 +39,21 @@ export async function waitForEditor(page: Page) {
   return locator
 }
 
-export const isApple = process.platform === 'darwin'
+export async function getEditorHTML(page: Page) {
+  const editor = await waitForEditor(page)
+  const html = await editor.innerHTML()
+  return await formatHTML(html)
+}
+
+async function formatHTML(html: string) {
+  return await prettier.format(html, {
+    parser: 'html',
+    htmlWhitespaceSensitivity: 'ignore',
+  })
+}
+
+export const IS_APPLE = process.platform === 'darwin'
+
+
+export const MOD_KEY = IS_APPLE ? "Meta" : "Control"
+

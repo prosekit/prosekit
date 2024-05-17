@@ -1,6 +1,6 @@
 import { expect, test, type Page } from '@playwright/test'
 
-import { isApple, locateEditor, testStory } from './helper'
+import { IS_APPLE, locateEditor, testStory } from './helper'
 
 testStory('code-block', ({ example }) => {
   test('input rule', async ({ page }) => {
@@ -72,7 +72,7 @@ async function expectJavaScriptPre(page: Page) {
 
 async function clear(page: Page) {
   const editor = locateEditor(page)
-  await editor.press(isApple ? 'Meta+a' : 'Control+a')
+  await editor.press(IS_APPLE ? 'Meta+a' : 'Control+a')
   await editor.press('Backspace')
   await expect(editor).toHaveText('')
   await expectNotPre(page)

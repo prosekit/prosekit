@@ -1,7 +1,7 @@
 import type { Attrs, NodeType } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
-import { getNodeType } from '../utils/get-node-type'
+import { getNodeTypes } from '../utils/get-node-types'
 
 /**
  * Returns a command that set the attributes of the current node.
@@ -14,7 +14,7 @@ export function setNodeAttrs(options: {
    *
    * If current node is not of this type, the command will do nothing.
    */
-  type: string | NodeType
+  type: string | NodeType | string[] | NodeType[]
 
   /**
    * The attributes to set.
@@ -28,22 +28,27 @@ export function setNodeAttrs(options: {
   pos?: number
 }): Command {
   return (state, dispatch) => {
-    const nodeType = getNodeType(state.schema, options.type)
-    const pos = options.pos ?? state.selection.$from.before()
-    const node = state.doc.nodeAt(pos)
-    if (!node || node.type !== nodeType) {
-      return false
-    }
+    const nodeTypes = getNodeTypes(state.schema, options.type)
+    const from = options.pos ?? state.selection.from
+    const to = options.pos ?? state.selection.to
 
-    if (dispatch) {
-      const { tr } = state
-      for (const [key, value] of Object.entries(options.attrs)) {
-        if (value !== undefined) {
-          tr.setNodeAttribute(pos, key, value)
+    const { tr } = state
+
+    let found = false
+
+    tr.doc.nodesBetween(from, to, (node, pos) => {
+      if (nodeTypes.includes(node.type)) {
+        found = true
+        if (dispatch) {
+          for (const [key, value] of Object.entries(options.attrs)) {
+            tr.setNodeAttribute(pos, key, value)
+          }
         }
       }
-      dispatch(tr)
-    }
-    return true
+    })
+
+    dispatch?.(tr)
+
+    return found
   }
 }

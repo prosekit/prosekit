@@ -103,6 +103,10 @@ export const exampleItems = [
     "link": "/examples/table"
   },
   {
+    "text": "text-align",
+    "link": "/examples/text-align"
+  },
+  {
     "text": "text-color",
     "link": "/examples/text-color"
   },

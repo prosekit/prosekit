@@ -49,6 +49,7 @@
     "./strike": "./src/strike/index.ts",
     "./table": "./src/table/index.ts",
     "./table/style.css": "./src/table/style.css",
+    "./text-align": "./src/text-align/index.ts",
     "./underline": "./src/underline/index.ts",
     "./virtual-selection": "./src/virtual-selection/index.ts",
     "./virtual-selection/style.css": "./src/virtual-selection/style.css"
@@ -191,6 +192,11 @@
       "./table/style.css": {
         "default": "./dist/table/style.css"
       },
+      "./text-align": {
+        "types": "./dist/prosekit-extensions-text-align.d.ts",
+        "import": "./dist/prosekit-extensions-text-align.js",
+        "default": "./dist/prosekit-extensions-text-align.js"
+      },
       "./underline": {
         "types": "./dist/prosekit-extensions-underline.d.ts",
         "import": "./dist/prosekit-extensions-underline.js",
@@ -272,6 +278,9 @@
         ],
         "table": [
           "./dist/prosekit-extensions-table.d.ts"
+        ],
+        "text-align": [
+          "./dist/prosekit-extensions-text-align.d.ts"
         ],
         "underline": [
           "./dist/prosekit-extensions-underline.d.ts"

@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       '@antfu/ni':
-        specifier: ^0.21.12
+        specifier: ^0.21.11
         version: 0.21.12
       '@changesets/cli':
         specifier: ^2.27.1

@@ -1,8 +1,6 @@
-import { definePlugin, type Extension } from '@prosekit/core'
+import { definePlugin, isApple, type Extension } from '@prosekit/core'
 import { Plugin, PluginKey } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
-
-import { isApple } from './env'
 
 /**
  * By default, clicking a node while holding the mod key will select the node. This

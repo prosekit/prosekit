@@ -19,7 +19,7 @@ const isTextAlignActive = (editor: Editor<EditorExtension>, value: string) => {
     disabled={!$editor.commands.setTextAlign.canApply('left')}
     onClick={() => $editor.commands.setTextAlign('left')}
   >
-    Left (Mod+Shift+L)
+    Left
   </Toggle>
 
   <Toggle
@@ -27,7 +27,7 @@ const isTextAlignActive = (editor: Editor<EditorExtension>, value: string) => {
     disabled={!$editor.commands.setTextAlign.canApply('center')}
     onClick={() => $editor.commands.setTextAlign('center')}
   >
-    Center (Mod+Shift+E)
+    Center
   </Toggle>
 
   <Toggle
@@ -35,7 +35,7 @@ const isTextAlignActive = (editor: Editor<EditorExtension>, value: string) => {
     disabled={!$editor.commands.setTextAlign.canApply('right')}
     onClick={() => $editor.commands.setTextAlign('right')}
   >
-    Right (Mod+Shift+R)
+    Right
   </Toggle>
 
   <Toggle
@@ -43,6 +43,6 @@ const isTextAlignActive = (editor: Editor<EditorExtension>, value: string) => {
     disabled={!$editor.commands.setTextAlign.canApply('justify')}
     onClick={() => $editor.commands.setTextAlign('justify')}
   >
-    Justify (Mod+Shift+J)
+    Justify
   </Toggle>
 </div>

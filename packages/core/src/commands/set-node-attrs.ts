@@ -31,7 +31,6 @@ export function setNodeAttrs(options: {
     const nodeTypes = getNodeTypes(state.schema, options.type)
     const from = options.pos ?? state.selection.from
     const to = options.pos ?? state.selection.to
-
     const { tr } = state
 
     let found = false
@@ -47,8 +46,9 @@ export function setNodeAttrs(options: {
       }
     })
 
-    dispatch?.(tr)
-
+    if (found) {
+      dispatch?.(tr)
+    }
     return found
   }
 }

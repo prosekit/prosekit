@@ -25,7 +25,10 @@ export interface TextAlignOptions {
   default?: string
 }
 
-function defineTextAlignAttr(type: string, defaultValue: string): Extension {
+function defineTextAlignAttr(
+  type: string,
+  defaultValue: string | null,
+): Extension {
   return defineNodeAttr({
     type,
     attr: 'textAlign',
@@ -40,7 +43,7 @@ function defineTextAlignAttr(type: string, defaultValue: string): Extension {
 
 function defineTextAlignAttrs(
   types: string[],
-  defaultValue: string,
+  defaultValue: string | null,
 ): Extension {
   return union(types.map((type) => defineTextAlignAttr(type, defaultValue)))
 }
@@ -70,7 +73,7 @@ export function defineTextAlignCommands(types: string[]) {
 /**
  * @internal
  */
-function defineTextAlignKeymap(types: string[]) {
+export function defineTextAlignKeymap(types: string[]) {
   return defineKeymap({
     'Mod-Shift-l': setTextAlign({ types, value: 'left' }),
     'Mod-Shift-e': setTextAlign({ types, value: 'center' }),
@@ -80,7 +83,8 @@ function defineTextAlignKeymap(types: string[]) {
 }
 
 /**
- * Adds a `textAlign` attribute to the specified nodes. This will be rendered as a CSS `text-align` style.
+ * Adds a `textAlign` attribute to the specified nodes. This will be rendered as
+ * a CSS `text-align` style.
  *
  * @public
  */

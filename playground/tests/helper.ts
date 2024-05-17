@@ -1,8 +1,11 @@
 import type { Page } from '@playwright/test'
-import { test } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 import prettier from 'prettier'
 
 import { exampleMeta } from '../example.meta'
+
+export const IS_APPLE = process.platform === 'darwin'
+export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'
 
 function getExamples(story: string) {
   const examples = exampleMeta.examples
@@ -52,6 +55,10 @@ async function formatHTML(html: string) {
   })
 }
 
-export const IS_APPLE = process.platform === 'darwin'
-
-export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'
+export async function emptyEditor(page: Page) {
+  const editor = await waitForEditor(page)
+  await editor.press(IS_APPLE ? 'Meta+a' : 'Control+a')
+  await editor.press('Backspace')
+  await editor.press('Backspace')
+  await expect(editor).toHaveText('')
+}

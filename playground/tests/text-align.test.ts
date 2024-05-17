@@ -1,6 +1,12 @@
 import { expect, test, type Page } from '@playwright/test'
 
-import { MOD_KEY, getEditorHTML, testStory, waitForEditor } from './helper'
+import {
+  MOD_KEY,
+  emptyEditor,
+  getEditorHTML,
+  testStory,
+  waitForEditor,
+} from './helper'
 
 testStory('text-align', ({ example }) => {
   test('commands', async ({ page }) => {
@@ -83,17 +89,4 @@ async function resetCursor(page: Page) {
     await editor.press('ArrowUp')
     await editor.press('ArrowLeft')
   }
-}
-
-// Dumb way to clean all content
-async function emptyEditor(page: Page) {
-  const editor = await waitForEditor(page)
-  await editor.focus()
-
-  await editor.press(MOD_KEY + '+a')
-  await editor.press('Backspace')
-
-  await editor.press('Backspace')
-  await editor.press('Backspace')
-  await editor.press('Backspace')
 }

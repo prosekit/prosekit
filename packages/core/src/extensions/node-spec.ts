@@ -40,7 +40,9 @@ export interface NodeAttrOptions {
   default?: any
 
   /**
-   * Whether the attribute should be kept when the node is split.
+   * Whether the attribute should be kept when the node is split. Set it to
+   * `true` if you want to inherit the attribute from the previous node when
+   * splitting the node by pressing `Enter`.
    *
    * @default undefined
    */
@@ -150,20 +152,24 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
             if (typeof dom[1] === 'object') {
               return [
                 dom[0],
-                addObjectValue(dom[1] as Record<string, unknown>, key, value),
+                setObjectAttribute(
+                  dom[1] as Record<string, unknown>,
+                  key,
+                  value,
+                ),
                 ...dom.slice(2),
               ]
             } else {
               return [dom[0], { [key]: value }, ...dom.slice(1)]
             }
           } else if (isElement(dom)) {
-            addElementAttribute(dom, key, value)
+            setElementAttribute(dom, key, value)
           } else if (
             typeof dom === 'object' &&
             'dom' in dom &&
             isElement(dom.dom)
           ) {
-            addElementAttribute(dom.dom, key, value)
+            setElementAttribute(dom.dom, key, value)
           }
 
           return dom
@@ -198,7 +204,7 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
   singleton: true,
 })
 
-function addObjectValue(
+function setObjectAttribute(
   obj: Record<string, unknown>,
   key: string,
   value: string,
@@ -209,7 +215,7 @@ function addObjectValue(
   return { ...obj, [key]: value }
 }
 
-function addElementAttribute(element: Element, key: string, value: string) {
+function setElementAttribute(element: Element, key: string, value: string) {
   if (key === 'style') {
     value = `${value}${element.getAttribute('style') || ''}`
   }

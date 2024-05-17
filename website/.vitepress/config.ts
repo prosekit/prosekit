@@ -121,10 +121,10 @@ export default defineConfig({
 
         {
           items: [
-            { text: 'Input Rule', link: '/extensions/input-rule' },
             { text: 'Placeholder', link: '/extensions/placeholder' },
             { text: 'Text Align', link: '/extensions/text-align' },
             { text: 'Readonly', link: '/extensions/readonly' },
+            { text: 'Input Rule', link: '/extensions/input-rule' },
             { text: 'Drop Cursor', link: '/extensions/drop-cursor' },
           ],
         },

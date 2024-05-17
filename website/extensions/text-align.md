@@ -2,6 +2,8 @@
 
 Sets the horizontal alignment of the block nodes using the [`text-align`] CSS property.
 
+<!-- @include: @/examples/text-align.md -->
+
 ## Usage
 
 ```ts twoslash

@@ -163,6 +163,16 @@ examples:
         hidden: false
       - path: toolbar.tsx
         hidden: false
+  - name: react-unmount
+    framework: react
+    story: unmount
+    files:
+      - path: editor-component.tsx
+        hidden: false
+      - path: editor.tsx
+        hidden: false
+      - path: extension-component.tsx
+        hidden: false
   - name: react-user-menu
     framework: react
     story: user-menu
@@ -508,6 +518,16 @@ examples:
       - path: toggle.vue
         hidden: false
       - path: toolbar.vue
+        hidden: false
+  - name: vue-unmount
+    framework: vue
+    story: unmount
+    files:
+      - path: editor-component.vue
+        hidden: false
+      - path: editor.vue
+        hidden: false
+      - path: extension-component.vue
         hidden: false
   - name: vue-user-menu
     framework: vue

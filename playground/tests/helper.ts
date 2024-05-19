@@ -26,6 +26,10 @@ export function testStory(
   test.describe(story, () => {
     for (const example of getExamples(story)) {
       test.describe(example, () => {
+        test.beforeEach(async ({ page }) => {
+          await page.goto(example)
+        })
+
         callback({ example })
       })
     }

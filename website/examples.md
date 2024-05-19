@@ -60,6 +60,8 @@
 
 - [underline](./examples/underline)
 
+- [unmount](./examples/unmount)
+
 - [user-menu](./examples/user-menu)
 
 - [user-menu-dynamic](./examples/user-menu-dynamic)

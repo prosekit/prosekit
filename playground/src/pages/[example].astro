@@ -16,6 +16,7 @@ import E1586999831 from '../../examples/react-save-json/editor'
 import E3429186088 from '../../examples/react-save-markdown/editor'
 import E3738959724 from '../../examples/react-slash-menu/editor'
 import E733855346 from '../../examples/react-toolbar/editor'
+import E4115691489 from '../../examples/react-unmount/editor'
 import E105978888 from '../../examples/react-user-menu/editor'
 import E4072355092 from '../../examples/react-user-menu-dynamic/editor'
 import E2611097910 from '../../examples/react-word-counter/editor'
@@ -45,6 +46,7 @@ import E153847761 from '../../examples/vue-text-align/editor.vue'
 import E1741277739 from '../../examples/vue-text-color/editor.vue'
 import E1709246657 from '../../examples/vue-toolbar/editor.vue'
 import E1679720926 from '../../examples/vue-underline/editor.vue'
+import E1739191790 from '../../examples/vue-unmount/editor.vue'
 import E4101103463 from '../../examples/vue-user-menu/editor.vue'
 import E3111955867 from '../../examples/vue-user-menu-dynamic/editor.vue'
 import E62221847 from '../../examples/vue-word-counter/editor.vue'
@@ -85,6 +87,7 @@ export const getStaticPaths = () => [
   { params: { example: 'react-save-markdown' } },
   { params: { example: 'react-slash-menu' } },
   { params: { example: 'react-toolbar' } },
+  { params: { example: 'react-unmount' } },
   { params: { example: 'react-user-menu' } },
   { params: { example: 'react-user-menu-dynamic' } },
   { params: { example: 'react-word-counter' } },
@@ -114,6 +117,7 @@ export const getStaticPaths = () => [
   { params: { example: 'vue-text-color' } },
   { params: { example: 'vue-toolbar' } },
   { params: { example: 'vue-underline' } },
+  { params: { example: 'vue-unmount' } },
   { params: { example: 'vue-user-menu' } },
   { params: { example: 'vue-user-menu-dynamic' } },
   { params: { example: 'vue-word-counter' } },
@@ -158,6 +162,7 @@ const { example } = Astro.params
   {example === 'react-save-markdown' && <E3429186088 client:only="react" />}
   {example === 'react-slash-menu' && <E3738959724 client:only="react" />}
   {example === 'react-toolbar' && <E733855346 client:only="react" />}
+  {example === 'react-unmount' && <E4115691489 client:only="react" />}
   {example === 'react-user-menu' && <E105978888 client:only="react" />}
   {example === 'react-user-menu-dynamic' && <E4072355092 client:only="react" />}
   {example === 'react-word-counter' && <E2611097910 client:only="react" />}
@@ -187,6 +192,7 @@ const { example } = Astro.params
   {example === 'vue-text-color' && <E1741277739 client:only="vue" />}
   {example === 'vue-toolbar' && <E1709246657 client:only="vue" />}
   {example === 'vue-underline' && <E1679720926 client:only="vue" />}
+  {example === 'vue-unmount' && <E1739191790 client:only="vue" />}
   {example === 'vue-user-menu' && <E4101103463 client:only="vue" />}
   {example === 'vue-user-menu-dynamic' && <E3111955867 client:only="vue" />}
   {example === 'vue-word-counter' && <E62221847 client:only="vue" />}

@@ -24,7 +24,7 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0(@typescript-eslint/parser@7.8.0)(eslint@8.57.0)(typescript@5.4.5)
       '@prosekit/unocss-preset':
-        specifier: 0.0.0
+        specifier: workspace:*
         version: link:packages/unocss-preset
       '@size-limit/esbuild-why':
         specifier: ^11.1.4

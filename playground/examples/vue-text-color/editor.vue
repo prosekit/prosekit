@@ -9,9 +9,9 @@ import InlineMenu from './inline-menu.vue'
 
 const defaultHTML =
   '<p>Select some text and click the buttons to change the color, or input a custom color.</p>' +
-  '<p style="color:#ef4444;">Select some text and click the buttons to change the color, or input a custom color.</p>' +
-  '<p style="color:#22c55e;">Select some text and click the buttons to change the color, or input a custom color.</p>' +
-  '<p style="color:#3b82f6;">Select some text and click the buttons to change the color, or input a custom color.</p>'
+  '<p style="color:peru;">Select some text and click the buttons to change the color, or input a custom color.</p>' +
+  '<p style="color:gold;">Select some text and click the buttons to change the color, or input a custom color.</p>' +
+  '<p style="color:plum;">Select some text and click the buttons to change the color, or input a custom color.</p>'
 
 const editor = createEditor({ extension: defineExtension(), defaultHTML })
 

@@ -15,10 +15,6 @@ const handleOpenChange = (value: boolean) => {
   }
 }
 
-const red = '#ef4444'
-const green = '#22c55e'
-const blue = '#3b82f6'
-
 effect(() => {
   const color = customColor.value
   if (color) {
@@ -28,30 +24,26 @@ effect(() => {
 </script>
 
 <template>
-  <InlinePopover
-    :open="open"
-    :onOpenChange="handleOpenChange"
-    class="INLINE_MENU_MAIN"
-  >
+  <InlinePopover :onOpenChange="handleOpenChange" class="INLINE_MENU_MAIN">
     <Toggle
-      :pressed="editor.marks.textColor.isActive({ color: red })"
-      :onClick="() => editor.commands.toggleTextColor({ color: red })"
+      :pressed="editor.marks.textColor.isActive({ color: 'peru' })"
+      :onClick="() => editor.commands.toggleTextColor({ color: 'peru' })"
     >
-      <span class="text-red-500">Red</span>
+      <span style="color: peru">peru</span>
     </Toggle>
 
     <Toggle
-      :pressed="editor.marks.textColor.isActive({ color: green })"
-      :onClick="() => editor.commands.toggleTextColor({ color: green })"
+      :pressed="editor.marks.textColor.isActive({ color: 'gold' })"
+      :onClick="() => editor.commands.toggleTextColor({ color: 'gold' })"
     >
-      <span class="text-green-500">Green</span>
+      <span style="color: gold">gold</span>
     </Toggle>
 
     <Toggle
-      :pressed="editor.marks.textColor.isActive({ color: blue })"
-      :onClick="() => editor.commands.toggleTextColor({ color: blue })"
+      :pressed="editor.marks.textColor.isActive({ color: 'plum' })"
+      :onClick="() => editor.commands.toggleTextColor({ color: 'plum' })"
     >
-      <span class="text-blue-500">Blue</span>
+      <span style="color: plum">plum</span>
     </Toggle>
 
     <input

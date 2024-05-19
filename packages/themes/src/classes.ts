@@ -79,6 +79,8 @@ export const EDITOR_DOCUMENT = cn('relative flex min-h-full w-full flex-col')
 
 // Use this class for the contenteditable element.
 export const EDITOR_CONTENT = cn(
+  // SolidJS will override the class name which removes the ProseMirror class, so we add it back.
+  'ProseMirror',
   'relative box-border min-h-full flex-1 overflow-auto bg-background px-[max(16px,_calc(50%-330px))] py-[16px] outline-none outline-0',
   '[&_span[data-mention="user"]]:text-blue-500',
   '[&_span[data-mention="tag"]]:text-violet-500',

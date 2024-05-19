@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import { clsx } from 'prosekit/core'
 import { type ReactNodeViewProps } from 'prosekit/react'
 import { ResizableHandle, ResizableRoot } from 'prosekit/react/resizable'
@@ -16,7 +17,7 @@ export default function ImageView(props: ReactNodeViewProps) {
       aspectRatio={aspectRatio}
       onSizeChangeEnd={(attrs) => props.setAttrs(attrs satisfies ImageAttrs)}
       className={clsx(
-        'IMAGE_RESIZEALE',
+        Themes.IMAGE_RESIZEALE,
         (!aspectRatio || aspectRatio <= 1) && 'min-h-[100px]',
         (!aspectRatio || aspectRatio >= 1) && 'min-w-[100px]',
       )}
@@ -30,13 +31,13 @@ export default function ImageView(props: ReactNodeViewProps) {
             setAspectRatio(aspectRatio)
           }
         }}
-        className="IMAGE_RESIZEALE_IMAGE"
+        className={Themes.IMAGE_RESIZEALE_IMAGE}
       />
       <ResizableHandle
-        className="IMAGE_RESIZEALE_HANDLE"
+        className={Themes.IMAGE_RESIZEALE_HANDLE}
         position="bottom-right"
       >
-        <div className="ICON_CORNER_HANDLE"></div>
+        <div className={Themes.ICON_CORNER_HANDLE}></div>
       </ResizableHandle>
     </ResizableRoot>
   )

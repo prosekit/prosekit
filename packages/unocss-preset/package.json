@@ -1,0 +1,41 @@
+{
+  "name": "@prosekit/unocss-preset",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/unocss-preset"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "unocss-preset-animations": "^1.0.2"
+  },
+  "peerDependencies": {
+    "unocss": "^0.60.2"
+  },
+  "devDependencies": {
+    "@prosekit/themes": "0.0.0",
+    "typescript": "^5.4.5",
+    "unocss": "^0.60.2"
+  }
+}

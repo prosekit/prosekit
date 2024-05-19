@@ -40,7 +40,6 @@ const configs = [
   },
   {
     ignores: [
-      'config/unocss-shortcut.mjs',
       '**/.temp',
       '**/.tsup',
       '**/config-tsup.d.ts',

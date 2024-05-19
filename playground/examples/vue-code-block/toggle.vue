@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import {
   TooltipContent,
   TooltipRoot,
@@ -15,13 +16,13 @@ defineProps<{
 
 <template>
   <TooltipRoot>
-    <TooltipTrigger className="TOOLTIP_TRIGGER">
+    <TooltipTrigger :class="Themes.TOOLTIP_TRIGGER">
       <button
         :data-state="pressed ? 'on' : 'off'"
         :disabled="disabled ? true : undefined"
         @click="onClick"
         @mousedown.prevent
-        class="TOGGLE_BUTTON"
+        :class="Themes.TOGGLE_BUTTON"
       >
         <slot></slot>
       </button>
@@ -29,7 +30,7 @@ defineProps<{
     <TooltipContent
       v-if="tooltip && !disabled"
       :offset="4"
-      className="TOOLTIP_CONTENT"
+      :class="Themes.TOOLTIP_CONTENT"
     >
       {{ tooltip }}
     </TooltipContent>

@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/solid'
 
 import type { EditorExtension } from './extension'
@@ -13,7 +14,7 @@ export default function Toolbar() {
   }
 
   return (
-    <div class="TOOLBAR">
+    <div class={Themes.TOOLBAR}>
       <Toggle
         pressed={() => isTextAlignActive('left')}
         disabled={() => !editor().commands.setTextAlign.canApply('left')}

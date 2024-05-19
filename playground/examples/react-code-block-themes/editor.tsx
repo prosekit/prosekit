@@ -1,5 +1,5 @@
 import 'prosekit/basic/style.css'
-
+import { Themes } from '@prosekit/themes'
 import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
@@ -15,10 +15,10 @@ export default function Editor() {
 
   return (
     <ProseKit editor={editor}>
-      <div className="EDITOR_VIEWPORT">
-        <div className="EDITOR_DOCUMENT">
+      <div className={Themes.EDITOR_VIEWPORT}>
+        <div className={Themes.EDITOR_DOCUMENT}>
           <Toolbar />
-          <div ref={editor.mount} className="EDITOR_CONTENT"></div>
+          <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
         </div>
       </div>
     </ProseKit>

@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import {
   defineCodeBlockShiki,
   shikiBundledThemesInfo,
@@ -19,7 +20,7 @@ export function ThemeSelector() {
       <select
         value={theme}
         onChange={(event) => setTheme(event.target.value)}
-        className="TOGGLE_BUTTON"
+        className={Themes.TOGGLE_BUTTON}
       >
         {shikiBundledThemesInfo.map((info) => (
           <option key={info.id} value={info.id}>

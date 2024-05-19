@@ -1,5 +1,5 @@
 import 'prosekit/basic/style.css'
-
+import { Themes } from '@prosekit/themes'
 import { createEditor, jsonFromNode } from 'prosekit/core'
 import { ProseKit } from 'prosekit/solid'
 import { createSignal } from 'solid-js'
@@ -21,9 +21,9 @@ export default function Editor() {
 
   return (
     <ProseKit editor={editor}>
-      <div class="EDITOR_VIEWPORT">
+      <div class={Themes.EDITOR_VIEWPORT}>
         <Toolbar onSubmit={pushSubmition} />
-        <div ref={editor.mount} class="EDITOR_CONTENT"></div>
+        <div ref={editor.mount} class={Themes.EDITOR_CONTENT}></div>
       </div>
       <fieldset class="mt-4 border">
         <legend>Submit Records</legend>

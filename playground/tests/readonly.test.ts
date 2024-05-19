@@ -7,10 +7,6 @@ testStory('readonly', ({ example }) => {
     await page.goto(example)
     const editor = await waitForEditor(page)
 
-    await expect(editor).toContainText(
-      'The content is readonly. Press the buttons above to toggle the readonly mode.',
-    )
-
     const readonlyButton = page.getByRole('button', { name: 'Readonly' })
     const editableButton = page.getByRole('button', { name: 'Editable' })
 

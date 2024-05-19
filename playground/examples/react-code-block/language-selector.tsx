@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 
 export default function LanguageSelector({
@@ -8,9 +9,9 @@ export default function LanguageSelector({
   setLanguage: (language: string) => void
 }) {
   return (
-    <div className="LANGUAGE_WRAPPER" contentEditable={false}>
+    <div className={Themes.LANGUAGE_WRAPPER} contentEditable={false}>
       <select
-        className="LANGUAGE_SELECT"
+        className={Themes.LANGUAGE_SELECT}
         onChange={(event) => setLanguage(event.target.value)}
         value={language || ''}
       >

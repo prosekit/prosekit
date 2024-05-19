@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/react'
@@ -40,7 +41,7 @@ export default function InlineMenu() {
   return (
     <>
       <InlinePopover
-        className="INLINE_MENU_MAIN"
+        className={Themes.INLINE_MENU_MAIN}
         onOpenChange={(open) => {
           if (!open) {
             setLinkMenuOpen(false)
@@ -52,7 +53,7 @@ export default function InlineMenu() {
           disabled={!editor.commands.toggleBold.canApply()}
           onClick={() => editor.commands.toggleBold()}
         >
-          <div className="ICON_BOLD"></div>
+          <div className={Themes.ICON_BOLD}></div>
         </Toggle>
 
         <Toggle
@@ -60,7 +61,7 @@ export default function InlineMenu() {
           disabled={!editor.commands.toggleItalic.canApply()}
           onClick={() => editor.commands.toggleItalic()}
         >
-          <div className="ICON_ITALIC"></div>
+          <div className={Themes.ICON_ITALIC}></div>
         </Toggle>
 
         <Toggle
@@ -68,7 +69,7 @@ export default function InlineMenu() {
           disabled={!editor.commands.toggleUnderline.canApply()}
           onClick={() => editor.commands.toggleUnderline()}
         >
-          <div className="ICON_UNDERLINE"></div>
+          <div className={Themes.ICON_UNDERLINE}></div>
         </Toggle>
 
         <Toggle
@@ -76,7 +77,7 @@ export default function InlineMenu() {
           disabled={!editor.commands.toggleStrike.canApply()}
           onClick={() => editor.commands.toggleStrike()}
         >
-          <div className="ICON_STRIKE"></div>
+          <div className={Themes.ICON_STRIKE}></div>
         </Toggle>
 
         <Toggle
@@ -84,7 +85,7 @@ export default function InlineMenu() {
           disabled={!editor.commands.toggleCode.canApply()}
           onClick={() => editor.commands.toggleCode()}
         >
-          <div className="ICON_CODE"></div>
+          <div className={Themes.ICON_CODE}></div>
         </Toggle>
 
         {editor.commands.addLink.canApply({ href: '' }) && (
@@ -95,13 +96,13 @@ export default function InlineMenu() {
               toggleLinkMenuOpen()
             }}
           >
-            <div className="ICON_LINK"></div>
+            <div className={Themes.ICON_LINK}></div>
           </Toggle>
         )}
       </InlinePopover>
 
       <InlinePopover
-        className="INLINE_MENU_LINK"
+        className={Themes.INLINE_MENU_LINK}
         placement={'bottom'}
         open={linkMenuOpen}
         onOpenChange={setLinkMenuOpen}
@@ -118,7 +119,7 @@ export default function InlineMenu() {
             <input
               placeholder="Paste the link..."
               defaultValue={getCurrentLink(editor.state)}
-              className="INLINE_MENU_LINK_INPUT"
+              className={Themes.INLINE_MENU_LINK_INPUT}
             ></input>
           </form>
         )}
@@ -126,7 +127,7 @@ export default function InlineMenu() {
           <button
             onClick={() => handleLinkUpdate()}
             onMouseDown={(event) => event.preventDefault()}
-            className="INLINE_MENU_LINK_REMOVE_BUTTON"
+            className={Themes.INLINE_MENU_LINK_REMOVE_BUTTON}
           >
             Remove link
           </button>

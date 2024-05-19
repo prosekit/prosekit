@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import type { ComponentChild } from 'preact'
 
 export default function Toggle({
@@ -17,7 +18,7 @@ export default function Toggle({
       disabled={disabled}
       onClick={() => onClick()}
       onMouseDown={(event) => event.preventDefault()}
-      class="TOGGLE_BUTTON"
+      class={Themes.TOGGLE_BUTTON}
     >
       {children}
     </button>

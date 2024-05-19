@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 
 import type { EditorExtension } from './extension'
@@ -7,13 +8,13 @@ export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <div className="TOOLBAR">
+    <div className={Themes.TOOLBAR}>
       <Toggle
         pressed={editor.nodes.list.isActive({ kind: 'bullet' })}
         disabled={!editor.commands.toggleList.canApply({ kind: 'bullet' })}
         onClick={() => editor.commands.toggleList({ kind: 'bullet' })}
       >
-        <div className="ICON_LIST_BULLET" />
+        <div className={Themes.ICON_LIST_BULLET} />
       </Toggle>
 
       <Toggle
@@ -21,7 +22,7 @@ export default function Toolbar() {
         disabled={!editor.commands.toggleList.canApply({ kind: 'ordered' })}
         onClick={() => editor.commands.toggleList({ kind: 'ordered' })}
       >
-        <div className="ICON_LIST_ORDERED" />
+        <div className={Themes.ICON_LIST_ORDERED} />
       </Toggle>
 
       <Toggle
@@ -29,7 +30,7 @@ export default function Toolbar() {
         disabled={!editor.commands.toggleList.canApply({ kind: 'task' })}
         onClick={() => editor.commands.toggleList({ kind: 'task' })}
       >
-        <div className="ICON_LIST_TASK" />
+        <div className={Themes.ICON_LIST_TASK} />
       </Toggle>
 
       <Toggle
@@ -37,7 +38,7 @@ export default function Toolbar() {
         disabled={!editor.commands.toggleList.canApply({ kind: 'toggle' })}
         onClick={() => editor.commands.toggleList({ kind: 'toggle' })}
       >
-        <div className="ICON_LIST_TOGGLE" />
+        <div className={Themes.ICON_LIST_TOGGLE} />
       </Toggle>
     </div>
   )

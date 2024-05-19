@@ -1,3 +1,5 @@
+import { Themes } from '@prosekit/themes'
+
 import Toggle from './toggle'
 import { useReadonly } from './use-readonly'
 
@@ -5,7 +7,7 @@ export default function Toolbar() {
   const { getReadonly, setReadonly } = useReadonly()
 
   return (
-    <div class="TOOLBAR">
+    <div class={Themes.TOOLBAR}>
       <Toggle
         pressed={getReadonly}
         disabled={() => !true}

@@ -1,0 +1,42 @@
+{
+  "name": "@prosekit/themes",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/themes"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./dist": {
+      "types": "./dist/prosekit-themes.d.ts",
+      "default": "./dist/prosekit-themes.gen.js"
+    }
+  },
+  "scripts": {
+    "gen": "esbuild --bundle --format=esm --minify --outfile=dist/prosekit-themes.gen.js src/index.ts"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.3.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.3",
+    "typescript": "^5.4.5"
+  }
+}

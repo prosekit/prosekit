@@ -1,5 +1,5 @@
 import 'prosekit/basic/style.css'
-
+import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, union } from 'prosekit/core'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
@@ -34,7 +34,7 @@ function createList() {
     createItem('Insert Heading 2', () => handleHeadingConvert(2)),
     createItem('Insert Heading 3', () => handleHeadingConvert(3)),
   )
-  list.className = 'AUTOCOMPLETE_MENU'
+  list.className = Themes.AUTOCOMPLETE_MENU
   return list
 }
 
@@ -46,7 +46,7 @@ function createItem(text, callback) {
   const item = new AutocompleteItem()
   item.append(text)
   item.onSelect = callback
-  item.className = 'AUTOCOMPLETE_MENU_ITEM'
+  item.className = Themes.AUTOCOMPLETE_MENU_ITEM
   return item
 }
 
@@ -70,13 +70,13 @@ function main() {
   root.innerHTML = ''
 
   const viewport = root.appendChild(document.createElement('div'))
-  viewport.className = 'EDITOR_VIEWPORT'
+  viewport.className = Themes.EDITOR_VIEWPORT
 
   const doc = viewport.appendChild(document.createElement('div'))
-  doc.className = 'EDITOR_DOCUMENT'
+  doc.className = Themes.EDITOR_DOCUMENT
 
   const content = doc.appendChild(document.createElement('div'))
-  content.className = 'EDITOR_CONTENT'
+  content.className = Themes.EDITOR_CONTENT
 
   editor.mount(content)
 

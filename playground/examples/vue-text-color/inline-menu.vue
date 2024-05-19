@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
 import { effect, ref } from 'vue'
@@ -15,6 +16,10 @@ const handleOpenChange = (value: boolean) => {
   }
 }
 
+const red = '#ef4444'
+const green = '#22c55e'
+const blue = '#3b82f6'
+
 effect(() => {
   const color = customColor.value
   if (color) {
@@ -24,26 +29,30 @@ effect(() => {
 </script>
 
 <template>
-  <InlinePopover :onOpenChange="handleOpenChange" class="INLINE_MENU_MAIN">
+  <InlinePopover
+    :open="open"
+    :onOpenChange="handleOpenChange"
+    :class="Themes.INLINE_MENU_MAIN"
+  >
     <Toggle
-      :pressed="editor.marks.textColor.isActive({ color: 'peru' })"
-      :onClick="() => editor.commands.toggleTextColor({ color: 'peru' })"
+      :pressed="editor.marks.textColor.isActive({ color: red })"
+      :onClick="() => editor.commands.toggleTextColor({ color: red })"
     >
-      <span style="color: peru">peru</span>
+      <span class="text-red-500">Red</span>
     </Toggle>
 
     <Toggle
-      :pressed="editor.marks.textColor.isActive({ color: 'gold' })"
-      :onClick="() => editor.commands.toggleTextColor({ color: 'gold' })"
+      :pressed="editor.marks.textColor.isActive({ color: green })"
+      :onClick="() => editor.commands.toggleTextColor({ color: green })"
     >
-      <span style="color: gold">gold</span>
+      <span class="text-green-500">Green</span>
     </Toggle>
 
     <Toggle
-      :pressed="editor.marks.textColor.isActive({ color: 'plum' })"
-      :onClick="() => editor.commands.toggleTextColor({ color: 'plum' })"
+      :pressed="editor.marks.textColor.isActive({ color: blue })"
+      :onClick="() => editor.commands.toggleTextColor({ color: blue })"
     >
-      <span style="color: plum">plum</span>
+      <span class="text-blue-500">Blue</span>
     </Toggle>
 
     <input

@@ -1,16 +1,16 @@
 import 'prosekit/basic/typography.css'
-import 'vitepress-plugin-twoslash/style.css'
+import '@shikijs/vitepress-twoslash/style.css'
 
 import 'virtual:uno.css'
 import './style.css'
 
+import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
 import type { EnhanceAppContext, Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import TwoSlashFloatingVue from 'vitepress-plugin-twoslash/client'
 
 export default {
   extends: DefaultTheme,
   enhanceApp: ({ app }: EnhanceAppContext) => {
-    app.use(TwoSlashFloatingVue)
+    app.use(TwoslashFloatingVue)
   },
 } satisfies Theme

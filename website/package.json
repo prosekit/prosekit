@@ -41,7 +41,7 @@
     "unocss": "^0.60.2",
     "vite": "^5.2.11",
     "vitepress": "1.1.4",
-    "vitepress-plugin-twoslash": "^0.10.2",
+    "@shikijs/vitepress-twoslash": "^1.6.0",
     "vue": "^3.4.27"
   }
 }

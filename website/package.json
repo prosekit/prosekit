@@ -11,14 +11,12 @@
     "build:playground": "bash build-playground.sh",
     "build:typedoc": "bash build-typedoc.sh"
   },
-  "dependencies": {
-    "@prosekit/themes": "workspace:^"
-  },
   "devDependencies": {
     "@iconify-json/logos": "^1.1.42",
     "@iconify-json/lucide": "^1.1.187",
     "@prosekit/dev": "workspace:*",
-    "@prosekit/unocss-preset": "workspace:0.0.0",
+    "@prosekit/themes": "workspace:*",
+    "@prosekit/unocss-preset": "workspace:*",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "@unocss/cli": "^0.60.2",

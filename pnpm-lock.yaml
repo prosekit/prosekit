@@ -654,10 +654,10 @@ importers:
         specifier: workspace:*
         version: link:../packages/dev
       '@prosekit/themes':
-        specifier: workspace:0.0.0
+        specifier: workspace:*
         version: link:../packages/themes
       '@prosekit/unocss-preset':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../packages/unocss-preset
       '@types/react':
         specifier: ^18.3.2
@@ -727,10 +727,6 @@ importers:
         version: 2.0.19(typescript@5.4.5)
 
   website:
-    dependencies:
-      '@prosekit/themes':
-        specifier: workspace:^
-        version: link:../packages/themes
     devDependencies:
       '@iconify-json/logos':
         specifier: ^1.1.42
@@ -741,8 +737,11 @@ importers:
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../packages/dev
+      '@prosekit/themes':
+        specifier: workspace:*
+        version: link:../packages/themes
       '@prosekit/unocss-preset':
-        specifier: workspace:0.0.0
+        specifier: workspace:*
         version: link:../packages/unocss-preset
       '@types/react':
         specifier: ^18.3.2

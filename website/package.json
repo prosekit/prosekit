@@ -24,7 +24,7 @@
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "clsx": "^2.1.1",
     "dedent": "^1.5.3",
-    "lightningcss": "^1.24.1",
+    "lightningcss": "^1.25.0",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "prosekit": "^0.7.1",
@@ -37,11 +37,11 @@
     "typedoc": "^0.25.13",
     "typedoc-plugin-external-package-links": "^0.1.0",
     "typedoc-plugin-markdown": "4.0.2",
-    "typedoc-plugin-mdn-links": "^3.1.25",
+    "typedoc-plugin-mdn-links": "^3.1.26",
     "typescript": "^5.4.5",
     "unocss": "^0.60.2",
     "vite": "^5.2.11",
-    "vitepress": "1.1.4",
+    "vitepress": "1.2.0",
     "vue": "^3.4.27"
   }
 }

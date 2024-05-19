@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.7.1
+
+### Patch Changes
+
+- [`8a79a11`](https://github.com/ocavue/prosekit/commit/8a79a116157650bb6590787a87f98af90efd29a4) ![](https://prosekit.dev/b/pm)
+
+  Update ProseMirror packages.
+
+- [`dd5f781`](https://github.com/ocavue/prosekit/commit/dd5f78157d3b8eb5c1944ec83e6d45690ddd8034) ![](https://prosekit.dev/b/core)
+
+  Fix a bug where the editor would crash during unmounting.
+
 ## 0.7.0
 
 ### Minor Changes
@@ -507,8 +519,8 @@
   Improve the styling API. Now ProseKit exports two CSS files that you can import to get started.
 
   ```js
-  import "prosekit/basic/style.css";
-  import "prosekit/basic/typograph.css";
+  import 'prosekit/basic/style.css'
+  import 'prosekit/basic/typograph.css'
   ```
 
 ### Patch Changes
@@ -629,9 +641,9 @@
   Add new readonly extension.
 
   ```ts
-  import { defineReadonly } from "prosekit/extensions/readonly";
+  import { defineReadonly } from 'prosekit/extensions/readonly'
 
-  const extension = defineReadonly();
+  const extension = defineReadonly()
   ```
 
 - [`0c60503`](https://github.com/ocavue/prosekit/commit/0c60503) ![](https://prosekit.dev/b/preact) !![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue)

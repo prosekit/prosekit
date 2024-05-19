@@ -18,19 +18,17 @@ function replaceShortcut(code: string, source: string, target: string) {
     throw new Error('Target cannot contain single quotes: ' + target)
   }
 
-  target = target.replaceAll(`"`, `'`)
-
   return (
     code
       // vue
-      .replaceAll(` :class="Themes.${source}"`, ` class="${target}"`)
+      .replaceAll(` :class="Themes.${source}"`, ` class='${target}'`)
       // react
-      .replaceAll(` className={Themes.${source}}`, ` className="${target}"`)
+      .replaceAll(` className={Themes.${source}}`, ` className='${target}'`)
       // svelte etc
-      .replaceAll(` class={Themes.${source}}`, ` class="${target}"`)
+      .replaceAll(` class={Themes.${source}}`, ` class='${target}'`)
       // lit-html
-      .replaceAll(` class=\${Themes.${source}}`, ` class="${target}"`)
+      .replaceAll(` class=\${Themes.${source}}`, ` class='${target}'`)
       // vanilla-dom
-      .replaceAll(`Themes.${source}`, `"${target}"`)
+      .replaceAll(`Themes.${source}`, `'${target}'`)
   )
 }

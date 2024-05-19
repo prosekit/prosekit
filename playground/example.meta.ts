@@ -322,11 +322,15 @@ export const exampleMeta = {
       "story": "unmount",
       "files": [
         {
+          "path": "editor-component.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
-          "path": "extension.ts",
+          "path": "extension-component.tsx",
           "hidden": false
         }
       ]
@@ -990,6 +994,25 @@ export const exampleMeta = {
         },
         {
           "path": "toolbar.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-unmount",
+      "framework": "vue",
+      "story": "unmount",
+      "files": [
+        {
+          "path": "editor-component.vue",
+          "hidden": false
+        },
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension-component.vue",
           "hidden": false
         }
       ]

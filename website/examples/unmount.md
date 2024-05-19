@@ -10,8 +10,21 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 ::: code-group
 
+<<< @/../playground/examples/react-unmount/editor-component.tsx
 <<< @/../playground/examples/react-unmount/editor.tsx
-<<< @/../playground/examples/react-unmount/extension.ts
+<<< @/../playground/examples/react-unmount/extension-component.tsx
+
+:::
+
+</template>
+
+<template v-slot:vue>
+
+::: code-group
+
+<<< @/../playground/examples/vue-unmount/editor-component.vue
+<<< @/../playground/examples/vue-unmount/editor.vue
+<<< @/../playground/examples/vue-unmount/extension-component.vue
 
 :::
 

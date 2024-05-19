@@ -28,10 +28,7 @@ effect(() => {
 </script>
 
 <template>
-  <InlinePopover
-    :onOpenChange="handleOpenChange"
-    class="INLINE_MENU_MAIN"
-  >
+  <InlinePopover :onOpenChange="handleOpenChange" class="INLINE_MENU_MAIN">
     <Toggle
       :pressed="editor.marks.textColor.isActive({ color: red })"
       :onClick="() => editor.commands.toggleTextColor({ color: red })"

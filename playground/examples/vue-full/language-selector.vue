@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 
 const props = defineProps<{

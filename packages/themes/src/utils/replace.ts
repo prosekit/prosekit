@@ -30,5 +30,7 @@ function replaceShortcut(code: string, source: string, target: string) {
       .replaceAll(` class=\${Themes.${source}}`, ` class='${target}'`)
       // vanilla-dom
       .replaceAll(`Themes.${source}`, `'${target}'`)
+      // class names
+      .replaceAll(source, target)
   )
 }

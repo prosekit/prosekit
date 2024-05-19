@@ -1,4 +1,4 @@
-import { Colors, Themes } from '@prosekit/themes'
+import { Themes } from '@prosekit/themes'
 import {
   definePreset,
   presetIcons,
@@ -18,7 +18,6 @@ const preset: PresetFactory = definePreset(() => ({
   name: 'prosekit',
   presets: [presetWind(), presetIcons(), presetAnimations()],
   safelist,
-  shortcuts: Colors,
 }))
 
 export default preset

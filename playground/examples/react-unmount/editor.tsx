@@ -1,10 +1,10 @@
 import 'prosekit/basic/style.css'
 
 import { createEditor } from 'prosekit/core'
+import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { ProseKit } from 'prosekit/react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
-import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { defineExtension } from './extension'
 
 export function EditorComponent({ placeholder }: { placeholder: string }) {

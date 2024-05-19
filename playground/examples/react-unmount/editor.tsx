@@ -1,8 +1,6 @@
-import 'prosekit/basic/style.css'
-
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-import { EditorComponent } from './editor-component'
+import EditorComponent from './editor-component'
 
 function EditorGroup() {
   const nextKeyRef = useRef(1)
@@ -43,11 +41,11 @@ function EditorGroup() {
       {editorKeys.map((key) => (
         <div key={key} className="h-32">
           <EditorComponent
-            key={key}
             placeholder={`Editor No.${key} of ${editorKeys.length}`}
           />
         </div>
       ))}
+      
     </div>
   )
 }

@@ -1,17 +1,19 @@
+import 'prosekit/basic/style.css'
+
+import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
-import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { ProseKit } from 'prosekit/react'
-import { useEffect, useMemo } from 'react'
-import { defineExtension } from './extension'
+import { useMemo } from 'react'
+import ExtensionComponent from './extension-component'
 
-export function EditorComponent({ placeholder }: { placeholder: string }) {
+export default function EditorComponent({
+  placeholder,
+}: {
+  placeholder: string
+}) {
   const editor = useMemo(() => {
-    return createEditor({ extension: defineExtension() })
+    return createEditor({ extension: defineBasicExtension() })
   }, [])
-
-  useEffect(() => {
-    return editor.use(definePlaceholder({ placeholder }))
-  }, [placeholder])
 
   return (
     <ProseKit editor={editor}>
@@ -20,6 +22,7 @@ export function EditorComponent({ placeholder }: { placeholder: string }) {
           <div ref={editor.mount} className="EDITOR_CONTENT"></div>
         </div>
       </div>
+      <ExtensionComponent placeholder={placeholder} />
     </ProseKit>
   )
 }

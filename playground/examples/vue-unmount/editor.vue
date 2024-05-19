@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import 'prosekit/basic/style.css'
 import { ref, watchEffect } from 'vue'
+import EditorComponent from './editor-component.vue'
 
 const editorKeys = ref<number[]>([])
 const nextKey = ref(1)

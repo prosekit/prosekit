@@ -11,7 +11,9 @@ function createElement(
   const element = document.createElement(tagName)
   const { class: className, ...rest } = attributes
   if (className) {
-    element.classList.add(className)
+    for (const c of className.split(' ')) {
+      element.classList.add(c)
+    }
   }
   Object.entries(rest).forEach(([key, value]) => {
     element.setAttribute(key, value)

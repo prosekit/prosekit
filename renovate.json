@@ -1,5 +1,13 @@
 {
   "dependencyDashboard": true,
-  "ignoreDeps": ["@prosekit/dev", "prosekit-playground", "prosekit-website"],
-  "extends": ["github>ocavue/config-renovate"]
+  "ignoreDeps": [
+    "@prosekit/dev",
+    "@prosekit/themes",
+    "@prosekit/unocss-preset",
+    "prosekit-playground",
+    "prosekit-website"
+  ],
+  "extends": [
+    "github>ocavue/config-renovate"
+  ]
 }

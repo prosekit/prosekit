@@ -23,7 +23,9 @@ function replaceShortcut(code: string, source: string, target: string) {
       // svelte etc
       .replaceAll(` class={Themes.${source}}`, ` class="${target}"`)
       // lit-html
-      .replaceAll(` class=\${Themes.${source}}`, ` class="${source}"`)
+      .replaceAll(` class=\${Themes.${source}}`, ` class="${target}"`)
+      // vanilla-dom
+      .replaceAll(`Themes.${source}`, `'${target}'`)
       // fallback
       .replaceAll(source, target)
   )

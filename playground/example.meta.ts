@@ -328,18 +328,6 @@ export const exampleMeta = {
         {
           "path": "extension.ts",
           "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
-          "hidden": false
-        },
-        {
-          "path": "toolbar.tsx",
-          "hidden": false
-        },
-        {
-          "path": "use-submit-keymap.ts",
-          "hidden": false
         }
       ]
     },

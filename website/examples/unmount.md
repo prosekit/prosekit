@@ -12,9 +12,6 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/react-unmount/editor.tsx
 <<< @/../playground/examples/react-unmount/extension.ts
-<<< @/../playground/examples/react-unmount/toggle.tsx
-<<< @/../playground/examples/react-unmount/toolbar.tsx
-<<< @/../playground/examples/react-unmount/use-submit-keymap.ts
 
 :::
 

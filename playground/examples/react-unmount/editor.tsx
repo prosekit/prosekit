@@ -1,10 +1,10 @@
 import 'prosekit/basic/style.css'
 
 import { createEditor } from 'prosekit/core'
+import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { ProseKit } from 'prosekit/react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
-import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { defineExtension } from './extension'
 
 export function EditorComponent({ placeholder }: { placeholder: string }) {
@@ -42,8 +42,8 @@ function EditorGroup() {
   }, [])
 
   return (
-    <div className='flex flex-col gap-2'>
-      <div className="gap-2 flex">
+    <div className="flex flex-col gap-2">
+      <div className="flex gap-2">
         <button onClick={addEditor} className="border p-2">
           Add Editor
         </button>
@@ -58,7 +58,7 @@ function EditorGroup() {
         ))}
       </div>
       {editorKeys.map((key) => (
-        <div key={key} className='h-32'>
+        <div key={key} className="h-32">
           <EditorComponent
             key={key}
             placeholder={`Editor No.${key} of ${editorKeys.length}`}

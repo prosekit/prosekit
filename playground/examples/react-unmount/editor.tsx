@@ -41,11 +41,17 @@ function EditorGroup() {
     setEditorKeys((keys) => keys.filter((k) => k !== key))
   }, [])
 
+  useEffect(() => {
+    if (nextKeyRef.current === 1) {
+      addEditor()
+    }
+  }, [addEditor])
+
   return (
-    <div className='flex flex-col gap-2'>
+    <div className="flex flex-col gap-2">
       <div className="gap-2 flex">
         <button onClick={addEditor} className="border p-2">
-          Add Editor
+          Add editor
         </button>
         {editorKeys.map((key) => (
           <button
@@ -58,7 +64,7 @@ function EditorGroup() {
         ))}
       </div>
       {editorKeys.map((key) => (
-        <div key={key} className='h-32'>
+        <div key={key} className="h-32">
           <EditorComponent
             key={key}
             placeholder={`Editor No.${key} of ${editorKeys.length}`}

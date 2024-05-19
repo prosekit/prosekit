@@ -1,6 +1,6 @@
+import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import ts from 'typescript'
 import { defineConfig } from 'vitepress'
-import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 
 import { replaceShortcutsPlugin } from './replace-shortcuts-plugin'
 import { exampleItems } from './sidebar-example-items'

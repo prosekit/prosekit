@@ -1,4 +1,5 @@
 <script lang="ts">
+import { Themes } from '@prosekit/themes'
 import Toggle from './toggle.svelte'
 import type { EditorExtension } from './extension'
 import { useEditor } from 'prosekit/svelte'
@@ -13,7 +14,7 @@ const isTextAlignActive = (editor: Editor<EditorExtension>, value: string) => {
 }
 </script>
 
-<div class="TOOLBAR">
+<div class={Themes.TOOLBAR}>
   <Toggle
     pressed={isTextAlignActive($editor, 'left')}
     disabled={!$editor.commands.setTextAlign.canApply('left')}

@@ -1,5 +1,5 @@
 import 'prosekit/basic/style.css'
-
+import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import {
   createEditor,
@@ -43,7 +43,7 @@ export default function Editor() {
 
   return (
     <ProseKit editor={editor}>
-      <div className="EDITOR_VIEWPORT">
+      <div className={Themes.EDITOR_VIEWPORT}>
         <button
           onClick={handleSave}
           disabled={!hasUnsavedChange}
@@ -66,7 +66,7 @@ export default function Editor() {
             </li>
           ))}
         </ul>
-        <div ref={editor.mount} className="EDITOR_CONTENT"></div>
+        <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
       </div>
     </ProseKit>
   )

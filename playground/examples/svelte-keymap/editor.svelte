@@ -1,4 +1,5 @@
 <script lang="ts">
+import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
@@ -26,9 +27,9 @@ const pushSubmition = (hotkey: string) => {
 </script>
 
 <ProseKit {editor}>
-  <div class="EDITOR_VIEWPORT">
+  <div class={Themes.EDITOR_VIEWPORT}>
     <Toolbar onSubmit={pushSubmition} />
-    <div bind:this={place} class="EDITOR_CONTENT"></div>
+    <div bind:this={place} class={Themes.EDITOR_CONTENT}></div>
   </div>
   <fieldset class="mt-4 border">
     <legend>Submit Records</legend>

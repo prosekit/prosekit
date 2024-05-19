@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import {
   AutocompleteEmpty,
   AutocompleteItem,
@@ -23,15 +24,15 @@ const handleTagInsert = (id: number, label: string) => {
 </script>
 
 <template>
-  <AutocompletePopover :regex="/#[\da-z]*$/i" class="AUTOCOMPLETE_MENU">
+  <AutocompletePopover :regex="/#[\da-z]*$/i" :class="Themes.AUTOCOMPLETE_MENU">
     <AutocompleteList>
-      <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
+      <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
         No results
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="tag in tags"
         :key="tag.id"
-        class="AUTOCOMPLETE_MENU_ITEM"
+        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
         @select="() => handleTagInsert(tag.id, tag.label)"
       >
         {{ tag.label }}

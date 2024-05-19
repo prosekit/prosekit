@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
@@ -42,13 +43,13 @@ const handleLinkUpdate = (href?: string) => {
 </script>
 
 <template>
-  <InlinePopover class="INLINE_MENU_MAIN">
+  <InlinePopover :class="Themes.INLINE_MENU_MAIN">
     <Toggle
       :pressed="editor.marks.bold.isActive()"
       :disabled="!editor.commands.toggleBold.canApply()"
       @click="() => editor.commands.toggleBold()"
     >
-      <div class="ICON_BOLD"></div>
+      <div :class="Themes.ICON_BOLD"></div>
     </Toggle>
 
     <Toggle
@@ -56,7 +57,7 @@ const handleLinkUpdate = (href?: string) => {
       :disabled="!editor.commands.toggleItalic.canApply()"
       @click="() => editor.commands.toggleItalic()"
     >
-      <div class="ICON_ITALIC"></div>
+      <div :class="Themes.ICON_ITALIC"></div>
     </Toggle>
 
     <Toggle
@@ -64,7 +65,7 @@ const handleLinkUpdate = (href?: string) => {
       :disabled="!editor.commands.toggleUnderline.canApply()"
       @click="() => editor.commands.toggleUnderline()"
     >
-      <div class="ICON_UNDERLINE"></div>
+      <div :class="Themes.ICON_UNDERLINE"></div>
     </Toggle>
 
     <Toggle
@@ -72,7 +73,7 @@ const handleLinkUpdate = (href?: string) => {
       :disabled="!editor.commands.toggleStrike.canApply()"
       @click="() => editor.commands.toggleStrike()"
     >
-      <div class="ICON_STRIKE"></div>
+      <div :class="Themes.ICON_STRIKE"></div>
     </Toggle>
 
     <Toggle
@@ -80,7 +81,7 @@ const handleLinkUpdate = (href?: string) => {
       :disabled="!editor.commands.toggleCode.canApply()"
       @click="() => editor.commands.toggleCode()"
     >
-      <div class="ICON_CODE"></div>
+      <div :class="Themes.ICON_CODE"></div>
     </Toggle>
 
     <Toggle
@@ -93,12 +94,12 @@ const handleLinkUpdate = (href?: string) => {
         }
       "
     >
-      <div class="ICON_LINK"></div>
+      <div :class="Themes.ICON_LINK"></div>
     </Toggle>
   </InlinePopover>
 
   <InlinePopover
-    class="INLINE_MENU_LINK"
+    :class="Themes.INLINE_MENU_LINK"
     :placement="'bottom'"
     :open="linkMenuOpen"
     @openChange="setLinkMenuOpen"
@@ -116,14 +117,14 @@ const handleLinkUpdate = (href?: string) => {
       <input
         placeholder="Paste the link..."
         :defaultValue="getCurrentLink(editor.state)"
-        class="INLINE_MENU_LINK_INPUT"
+        :class="Themes.INLINE_MENU_LINK_INPUT"
       />
     </form>
     <button
       v-if="editor.marks.link.isActive()"
       @click="handleLinkUpdate()"
       @mousedown.prevent
-      class="INLINE_MENU_LINK_REMOVE_BUTTON"
+      :class="Themes.INLINE_MENU_LINK_REMOVE_BUTTON"
     >
       Remove link
     </button>

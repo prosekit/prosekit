@@ -12,9 +12,9 @@ const handleChange = (event: Event) => {
 </script>
 
 <template>
-  <div className="LANGUAGE_WRAPPER" contenteditable="false">
+  <div :class="Themes.LANGUAGE_WRAPPER" contenteditable="false">
     <select
-      className="LANGUAGE_SELECT"
+      :class="Themes.LANGUAGE_SELECT"
       @change="handleChange"
       :value="props.language || ''"
     >

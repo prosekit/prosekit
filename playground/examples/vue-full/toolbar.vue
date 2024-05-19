@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
 import ImageUploadPopover from './image-upload-popover.vue'
@@ -8,14 +9,14 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div class="TOOLBAR">
+  <div :class="Themes.TOOLBAR">
     <Toggle
       :pressed="false"
       :disabled="!editor.commands.undo.canApply()"
       :onClick="() => editor.commands.undo()"
       tooltip="Undo"
     >
-      <div className="ICON_UNDO" />
+      <div :class="Themes.ICON_UNDO" />
     </Toggle>
 
     <Toggle
@@ -24,7 +25,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.redo()"
       tooltip="Redo"
     >
-      <div className="ICON_REDO" />
+      <div :class="Themes.ICON_REDO" />
     </Toggle>
 
     <Toggle
@@ -33,7 +34,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleBold()"
       tooltip="Bold"
     >
-      <div class="ICON_BOLD"></div>
+      <div :class="Themes.ICON_BOLD"></div>
     </Toggle>
 
     <Toggle
@@ -42,7 +43,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleItalic()"
       tooltip="Italic"
     >
-      <div class="ICON_ITALIC"></div>
+      <div :class="Themes.ICON_ITALIC"></div>
     </Toggle>
 
     <Toggle
@@ -51,7 +52,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleUnderline()"
       tooltip="Underline"
     >
-      <div class="ICON_UNDERLINE"></div>
+      <div :class="Themes.ICON_UNDERLINE"></div>
     </Toggle>
 
     <Toggle
@@ -60,7 +61,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleStrike()"
       tooltip="Strike"
     >
-      <div class="ICON_STRIKE"></div>
+      <div :class="Themes.ICON_STRIKE"></div>
     </Toggle>
 
     <Toggle
@@ -69,7 +70,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleCode()"
       tooltip="Code"
     >
-      <div class="ICON_CODE"></div>
+      <div :class="Themes.ICON_CODE"></div>
     </Toggle>
 
     <Toggle
@@ -78,7 +79,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleHeading({ level: 1 })"
       tooltip="Heading 1"
     >
-      <div class="ICON_H1"></div>
+      <div :class="Themes.ICON_H1"></div>
     </Toggle>
 
     <Toggle
@@ -87,7 +88,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleHeading({ level: 2 })"
       tooltip="Heading 2"
     >
-      <div class="ICON_H2"></div>
+      <div :class="Themes.ICON_H2"></div>
     </Toggle>
 
     <Toggle
@@ -96,7 +97,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleHeading({ level: 3 })"
       tooltip="Heading 3"
     >
-      <div class="ICON_H3"></div>
+      <div :class="Themes.ICON_H3"></div>
     </Toggle>
 
     <Toggle
@@ -105,7 +106,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleList({ kind: 'bullet' })"
       tooltip="Bullet List"
     >
-      <div class="ICON_LIST_BULLET"></div>
+      <div :class="Themes.ICON_LIST_BULLET"></div>
     </Toggle>
 
     <Toggle
@@ -114,7 +115,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleList({ kind: 'ordered' })"
       tooltip="Ordered List"
     >
-      <div class="ICON_LIST_ORDERED"></div>
+      <div :class="Themes.ICON_LIST_ORDERED"></div>
     </Toggle>
 
     <Toggle
@@ -123,7 +124,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleList({ kind: 'task' })"
       tooltip="Task List"
     >
-      <div class="ICON_LIST_TASK"></div>
+      <div :class="Themes.ICON_LIST_TASK"></div>
     </Toggle>
 
     <Toggle
@@ -132,7 +133,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.toggleList({ kind: 'toggle' })"
       tooltip="Toggle List"
     >
-      <div class="ICON_LIST_TOGGLE"></div>
+      <div :class="Themes.ICON_LIST_TOGGLE"></div>
     </Toggle>
 
     <Toggle
@@ -141,7 +142,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.indentList()"
       tooltip="Increase indentation"
     >
-      <div class="ICON_LIST_INDENT"></div>
+      <div :class="Themes.ICON_LIST_INDENT"></div>
     </Toggle>
 
     <Toggle
@@ -150,14 +151,14 @@ const editor = useEditor<EditorExtension>({ update: true })
       :onClick="() => editor.commands.dedentList()"
       tooltip="Decrease indentation"
     >
-      <div class="ICON_LIST_DEDENT"></div>
+      <div :class="Themes.ICON_LIST_DEDENT"></div>
     </Toggle>
 
     <ImageUploadPopover
       :disabled="!editor.commands.insertImage.canApply()"
       tooltip="Insert Image"
     >
-      <div className="ICON_IMAGE"></div>
+      <div :class="Themes.ICON_IMAGE"></div>
     </ImageUploadPopover>
   </div>
 </template>

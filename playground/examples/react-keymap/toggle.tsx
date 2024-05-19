@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import {
   TooltipContent,
   TooltipRoot,
@@ -20,19 +21,19 @@ export default function Toggle({
 }) {
   return (
     <TooltipRoot>
-      <TooltipTrigger className="TOOLTIP_TRIGGER">
+      <TooltipTrigger className={Themes.TOOLTIP_TRIGGER}>
         <button
           data-state={pressed ? 'on' : 'off'}
           disabled={disabled}
           onClick={() => onClick?.()}
           onMouseDown={(event) => event.preventDefault()}
-          className="TOGGLE_BUTTON"
+          className={Themes.TOGGLE_BUTTON}
         >
           {children}
         </button>
       </TooltipTrigger>
       {tooltip && !disabled ? (
-        <TooltipContent offset={4} className="TOOLTIP_CONTENT">
+        <TooltipContent offset={4} className={Themes.TOOLTIP_CONTENT}>
           {tooltip}
         </TooltipContent>
       ) : null}

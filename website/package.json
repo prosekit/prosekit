@@ -11,10 +11,14 @@
     "build:playground": "bash build-playground.sh",
     "build:typedoc": "bash build-typedoc.sh"
   },
+  "dependencies": {
+    "@prosekit/themes": "workspace:^"
+  },
   "devDependencies": {
     "@iconify-json/logos": "^1.1.42",
     "@iconify-json/lucide": "^1.1.187",
     "@prosekit/dev": "workspace:*",
+    "@prosekit/unocss-preset": "workspace:0.0.0",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "@unocss/cli": "^0.60.2",
@@ -37,7 +41,6 @@
     "typedoc-plugin-mdn-links": "^3.1.25",
     "typescript": "^5.4.5",
     "unocss": "^0.60.2",
-    "unocss-preset-animations": "^1.0.2",
     "vite": "^5.2.11",
     "vitepress": "1.1.4",
     "vitepress-plugin-twoslash": "^0.10.2",

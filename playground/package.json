@@ -21,6 +21,8 @@
     "@iconify-json/lucide": "^1.1.187",
     "@playwright/test": "^1.44.0",
     "@prosekit/dev": "workspace:*",
+    "@prosekit/themes": "workspace:0.0.0",
+    "@prosekit/unocss-preset": "workspace:^",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "@unocss/reset": "^0.60.2",
@@ -41,7 +43,6 @@
     "typescript": "^5.4.5",
     "unified": "^11.0.4",
     "unocss": "^0.60.2",
-    "unocss-preset-animations": "^1.0.2",
     "vue": "^3.4.27",
     "vue-tsc": "^2.0.19"
   }

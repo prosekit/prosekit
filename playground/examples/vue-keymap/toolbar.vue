@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import { ref, type PropType } from 'vue'
 import Toggle from './toggle.vue'
 import { useSubmitKeymap } from './use-submit-keymap'
@@ -14,7 +15,7 @@ useSubmitKeymap(hotkey, props.onSubmit)
 </script>
 
 <template>
-  <div class="TOOLBAR">
+  <div :class="Themes.TOOLBAR">
     <Toggle
       :pressed="hotkey === 'Shift-Enter'"
       @click="() => (hotkey = 'Shift-Enter')"

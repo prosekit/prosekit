@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import {
   AutocompleteEmpty,
@@ -33,48 +34,48 @@ const handleSelectList = (kind: 'task' | 'bullet' | 'ordered' | 'toggle') => {
 </script>
 
 <template>
-  <AutocompletePopover :regex="/\/.*$/iu" class="AUTOCOMPLETE_MENU">
+  <AutocompletePopover :regex="/\/.*$/iu" :class="Themes.AUTOCOMPLETE_MENU">
     <AutocompleteList>
-      <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
+      <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
         No results
       </AutocompleteEmpty>
 
       <AutocompleteItem
-        class="AUTOCOMPLETE_MENU_ITEM"
+        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
         :onSelect="() => handleSelectHeading(1)"
       >
         Heading 1
       </AutocompleteItem>
       <AutocompleteItem
-        class="AUTOCOMPLETE_MENU_ITEM"
+        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
         :onSelect="() => handleSelectHeading(2)"
       >
         Heading 2
       </AutocompleteItem>
 
       <AutocompleteItem
-        class="AUTOCOMPLETE_MENU_ITEM"
+        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
         :onSelect="() => handleSelectList('task')"
       >
         Task list
       </AutocompleteItem>
 
       <AutocompleteItem
-        class="AUTOCOMPLETE_MENU_ITEM"
+        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
         :onSelect="() => handleSelectList('bullet')"
       >
         Bullet list
       </AutocompleteItem>
 
       <AutocompleteItem
-        class="AUTOCOMPLETE_MENU_ITEM"
+        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
         :onSelect="() => handleSelectList('ordered')"
       >
         Ordered list
       </AutocompleteItem>
 
       <AutocompleteItem
-        class="AUTOCOMPLETE_MENU_ITEM"
+        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
         :onSelect="() => handleSelectList('toggle')"
       >
         Toggle list

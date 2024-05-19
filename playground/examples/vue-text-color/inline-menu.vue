@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
 import { effect, ref } from 'vue'
@@ -31,7 +32,7 @@ effect(() => {
   <InlinePopover
     :open="open"
     :onOpenChange="handleOpenChange"
-    class="INLINE_MENU_MAIN"
+    :class="Themes.INLINE_MENU_MAIN"
   >
     <Toggle
       :pressed="editor.marks.textColor.isActive({ color: red })"

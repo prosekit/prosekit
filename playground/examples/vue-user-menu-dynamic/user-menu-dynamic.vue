@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import {
   AutocompleteEmpty,
   AutocompleteItem,
@@ -34,17 +35,17 @@ const { users, loading } = useUserQuery(query, open)
     :regex="/@\w*$/"
     @query-change="handleQueryChange"
     @open-change="handleOpenChange"
-    class="AUTOCOMPLETE_MENU"
+    :class="Themes.AUTOCOMPLETE_MENU"
   >
     <AutocompleteList :filter="null">
-      <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
+      <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
         No results
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="user in users"
         :key="user.id"
         @select="handleUserInsert(user.id, user.name)"
-        class="AUTOCOMPLETE_MENU_ITEM"
+        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
       >
         <span :class="loading && 'AUTOCOMPLETE_MENU_ITEM_LOADING_TEXT'">
           {{ user.name }}

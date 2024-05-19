@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 
 import type { EditorExtension } from './extension'
@@ -7,7 +8,7 @@ export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <div className="TOOLBAR">
+    <div className={Themes.TOOLBAR}>
       <Toggle
         pressed={editor.nodes.heading.isActive({ level: 1 })}
         disabled={!editor.commands.toggleHeading.canApply({ level: 1 })}

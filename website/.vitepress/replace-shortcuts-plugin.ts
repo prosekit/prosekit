@@ -1,4 +1,4 @@
-import { replaceThemes } from '@prosekit/themes'
+import { replaceThemes } from '@prosekit/themes/dist'
 import { type MarkdownRenderer as MarkdownIt } from 'vitepress'
 
 export function replaceShortcutsPlugin(md: MarkdownIt) {

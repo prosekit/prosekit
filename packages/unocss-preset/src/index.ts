@@ -18,10 +18,6 @@ const preset: PresetFactory = definePreset(() => ({
   name: 'prosekit',
   presets: [presetWind(), presetIcons(), presetAnimations()],
   safelist,
-  // configDeps: [
-  //   './packages/themes/src/colors.ts',
-  //   './packages/themes/src/classes.ts',
-  // ],
 }))
 
 export default preset

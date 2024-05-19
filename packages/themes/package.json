@@ -22,17 +22,21 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./dist": {
+      "types": "./dist/prosekit-themes.d.ts",
+      "default": "./dist/prosekit-themes.gen.js"
+    }
   },
-  "files": [
-    "dist"
-  ],
-  "scripts": {},
+  "scripts": {
+    "build": "esbuild --bundle --format=esm --minify --outfile=dist/prosekit-themes.gen.js src/index.ts"
+  },
   "dependencies": {
     "clsx": "^2.1.1",
     "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
+    "esbuild": "^0.21.3",
     "typescript": "^5.4.5"
   }
 }

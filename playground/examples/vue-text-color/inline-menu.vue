@@ -29,21 +29,21 @@ effect(() => {
       :pressed="editor.marks.textColor.isActive({ color: 'peru' })"
       :onClick="() => editor.commands.toggleTextColor({ color: 'peru' })"
     >
-      <span style="color:peru;">peru</span>
+      <span style="color: peru">peru</span>
     </Toggle>
 
     <Toggle
       :pressed="editor.marks.textColor.isActive({ color: 'gold' })"
       :onClick="() => editor.commands.toggleTextColor({ color: 'gold' })"
     >
-      <span style="color:gold;">gold</span>
+      <span style="color: gold">gold</span>
     </Toggle>
 
     <Toggle
       :pressed="editor.marks.textColor.isActive({ color: 'plum' })"
       :onClick="() => editor.commands.toggleTextColor({ color: 'plum' })"
     >
-      <span style="color:plum;">plum</span>
+      <span style="color: plum">plum</span>
     </Toggle>
 
     <input

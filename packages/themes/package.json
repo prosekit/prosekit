@@ -29,7 +29,7 @@
     }
   },
   "scripts": {
-    "build": "esbuild --bundle --format=esm --minify --outfile=dist/prosekit-themes.gen.js src/index.ts"
+    "gen": "esbuild --bundle --format=esm --minify --outfile=dist/prosekit-themes.gen.js src/index.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",

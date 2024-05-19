@@ -1,4 +1,5 @@
 import * as Themes from './classes'
+import { Colors } from './colors'
 import { replaceThemes } from './replace'
 
-export { Themes, replaceThemes }
+export { Colors, Themes, replaceThemes }

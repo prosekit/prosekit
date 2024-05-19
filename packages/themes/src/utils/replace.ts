@@ -14,6 +14,12 @@ export function replaceShortcuts(
 }
 
 function replaceShortcut(code: string, source: string, target: string) {
+  if (target.includes(`'`)) {
+    throw new Error('Target cannot contain single quotes: ' + target)
+  }
+
+  target = target.replaceAll(`"`, `'`)
+
   return (
     code
       // vue
@@ -25,8 +31,6 @@ function replaceShortcut(code: string, source: string, target: string) {
       // lit-html
       .replaceAll(` class=\${Themes.${source}}`, ` class="${target}"`)
       // vanilla-dom
-      .replaceAll(`Themes.${source}`, `'${target}'`)
-      // fallback
-      .replaceAll(source, target)
+      .replaceAll(`Themes.${source}`, `"${target}"`)
   )
 }

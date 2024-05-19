@@ -1,3 +1,5 @@
+// @unocss-include
+
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
@@ -47,8 +49,7 @@ const BUTTON_BASE = cn(
 
 const BUTTON_VARIANT_PRIMARY =
   'bg-primary text-primary-foreground hover:bg-primary/90'
-// const BUTTON_VARIANT_SECONDARY =
-// ;('bg-secondary text-secondary-foreground hover:bg-secondary/80')
+// const BUTTON_VARIANT_SECONDARY = 'bg-secondary text-secondary-foreground hover:bg-secondary/80')
 
 const BUTTON_SIZE_DEFAULT = 'h-10 px-4 py-2'
 const BUTTON_SIZE_SM = 'h-9 px-3'
@@ -134,7 +135,7 @@ export const TOOLBAR = cn(
 export const TOGGLE_BUTTON = cn(
   'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none',
   'disabled:opacity-50 hover:disabled:opacity-50',
-  'bg-transparent hover:bg-secondary data-[state=on]:bg-accent/60',
+  'bg-transparent hover:bg-secondary data-[state=on]:bg-accent',
 )
 
 export const IMAGE_UPLOAD_CARD = cn(

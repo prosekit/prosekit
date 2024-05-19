@@ -139,6 +139,13 @@ class EditorInstance {
   }
 
   public updateExtension(extension: Extension, add: boolean): void {
+    const view = this.view
+
+    // Don't update the extension if the editor is already unmounted
+    if (!view || view.isDestroyed) {
+      return
+    }
+
     const tree = (extension as BaseExtension).getTree()
     const payload = tree.getRootOutput()
 
@@ -151,7 +158,7 @@ class EditorInstance {
     }
 
     const oldPayload = this.tree.getRootOutput()
-    const oldPlugins = [...(this.view?.state?.plugins ?? [])]
+    const oldPlugins = [...(view.state?.plugins ?? [])]
 
     this.tree = add
       ? unionFacetNode(this.tree, tree)
@@ -161,9 +168,8 @@ class EditorInstance {
     const newPlugins = [...(newPayload?.state?.plugins ?? [])]
 
     if (!deepEquals(oldPlugins, newPlugins)) {
-      assert(this.view, 'EditorInstance.view is not defined')
-      const state = this.view.state.reconfigure({ plugins: newPlugins })
-      this.view.updateState(state)
+      const state = view.state.reconfigure({ plugins: newPlugins })
+      view.updateState(state)
     }
 
     if (
@@ -196,6 +202,10 @@ class EditorInstance {
 
     this.view.destroy()
     this.view = null
+  }
+
+  get mounted(): boolean {
+    return !!this.view && !this.view.isDestroyed
   }
 
   public get assertView(): EditorView {
@@ -284,7 +294,7 @@ export class Editor<E extends Extension = any> {
    * Whether the editor is mounted.
    */
   get mounted(): boolean {
-    return !!this.instance.view
+    return this.instance.mounted
   }
 
   /**

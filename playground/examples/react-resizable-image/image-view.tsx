@@ -17,7 +17,7 @@ export default function ImageView(props: ReactNodeViewProps) {
       aspectRatio={aspectRatio}
       onSizeChangeEnd={(attrs) => props.setAttrs(attrs satisfies ImageAttrs)}
       className={clsx(
-        'IMAGE_RESIZEALE',
+        Themes.IMAGE_RESIZEALE,
         (!aspectRatio || aspectRatio <= 1) && 'min-h-[100px]',
         (!aspectRatio || aspectRatio >= 1) && 'min-w-[100px]',
       )}

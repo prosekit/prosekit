@@ -1,5 +1,6 @@
 import 'prosekit/basic/style.css'
 
+import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
@@ -18,9 +19,9 @@ export default function EditorComponent({
 
   return (
     <ProseKit editor={editor}>
-      <div className="EDITOR_VIEWPORT">
-        <div className="EDITOR_DOCUMENT">
-          <div ref={editor.mount} className="EDITOR_CONTENT"></div>
+      <div className={Themes.EDITOR_VIEWPORT}>
+        <div className={Themes.EDITOR_DOCUMENT}>
+          <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
         </div>
       </div>
       <ExtensionComponent placeholder={placeholder} />

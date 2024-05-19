@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import 'prosekit/basic/style.css'
 
+import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
@@ -17,9 +18,9 @@ watchPostEffect(() => editor.mount(editorRef.value))
 
 <template>
   <ProseKit :editor="editor">
-    <div class="EDITOR_VIEWPORT">
-      <div class="EDITOR_DOCUMENT">
-        <div ref="editorRef" spellcheck="false" class="EDITOR_CONTENT"></div>
+    <div :class="Themes.EDITOR_VIEWPORT">
+      <div :class="Themes.EDITOR_DOCUMENT">
+        <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
       </div>
     </div>
     <ExtensionComponent :placeholder="props.placeholder" />

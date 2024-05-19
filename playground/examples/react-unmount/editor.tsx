@@ -45,7 +45,6 @@ function EditorGroup() {
           />
         </div>
       ))}
-      
     </div>
   )
 }

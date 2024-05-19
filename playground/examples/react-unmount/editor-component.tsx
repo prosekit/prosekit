@@ -4,6 +4,7 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
+
 import ExtensionComponent from './extension-component'
 
 export default function EditorComponent({

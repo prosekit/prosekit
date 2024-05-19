@@ -1,48 +1,72 @@
 import 'prosekit/basic/style.css'
 
-import { createEditor, jsonFromNode } from 'prosekit/core'
+import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
-import { useMemo, useState, useCallback } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
+import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { defineExtension } from './extension'
-import Toolbar from './toolbar'
 
-export default function Editor() {
+export function EditorComponent({ placeholder }: { placeholder: string }) {
   const editor = useMemo(() => {
     return createEditor({ extension: defineExtension() })
   }, [])
 
-  const [submitions, setSubmitions] = useState<string[]>([])
-
-  const pushSubmition = useCallback(
-    (hotkey: string) => {
-      const doc = editor.view.state.doc
-      const docString = JSON.stringify(jsonFromNode(doc))
-      const submition = `${new Date().toISOString()}\t${hotkey}\n${docString}`
-      setSubmitions((submitions) => [...submitions, submition])
-    },
-    [editor],
-  )
+  useEffect(() => {
+    return editor.use(definePlaceholder({ placeholder }))
+  }, [placeholder])
 
   return (
     <ProseKit editor={editor}>
       <div className="EDITOR_VIEWPORT">
         <div className="EDITOR_DOCUMENT">
-          <Toolbar onSubmit={pushSubmition} />
           <div ref={editor.mount} className="EDITOR_CONTENT"></div>
         </div>
       </div>
-      <fieldset className="mt-4 border">
-        <legend>Submit Records</legend>
-        <ol>
-          {submitions.map((submition, index) => (
-            <li key={index}>
-              <pre>{submition}</pre>
-            </li>
-          ))}
-        </ol>
-        {submitions.length === 0 && <div>No submitions yet</div>}
-      </fieldset>
     </ProseKit>
   )
 }
+
+function EditorGroup() {
+  const nextKeyRef = useRef(1)
+  const [editorKeys, setEditorKeys] = useState<number[]>([])
+
+  const addEditor = useCallback(() => {
+    const key = nextKeyRef.current
+    nextKeyRef.current += 1
+    setEditorKeys((keys) => [...keys, key])
+  }, [])
+
+  const removeEditor = useCallback((key: number) => {
+    setEditorKeys((keys) => keys.filter((k) => k !== key))
+  }, [])
+
+  return (
+    <div className='flex flex-col gap-2'>
+      <div className="gap-2 flex">
+        <button onClick={addEditor} className="border p-2">
+          Add Editor
+        </button>
+        {editorKeys.map((key) => (
+          <button
+            key={key}
+            onClick={() => removeEditor(key)}
+            className="border p-2"
+          >
+            Unmount No.{key}
+          </button>
+        ))}
+      </div>
+      {editorKeys.map((key) => (
+        <div key={key} className='h-32'>
+          <EditorComponent
+            key={key}
+            placeholder={`Editor No.${key} of ${editorKeys.length}`}
+          />
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export default EditorGroup

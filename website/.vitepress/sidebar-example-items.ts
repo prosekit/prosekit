@@ -119,6 +119,10 @@ export const exampleItems = [
     "link": "/examples/underline"
   },
   {
+    "text": "unmount",
+    "link": "/examples/unmount"
+  },
+  {
     "text": "user-menu",
     "link": "/examples/user-menu"
   },

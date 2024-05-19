@@ -317,6 +317,33 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-unmount",
+      "framework": "react",
+      "story": "unmount",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toggle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "use-submit-keymap.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-user-menu",
       "framework": "react",
       "story": "user-menu",

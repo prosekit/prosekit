@@ -11,7 +11,6 @@ useSubmitKeymap(hotkey, onSubmit)
 </script>
 
 <div class={Themes.TOOLBAR}>
-  <div class={Themes.TOOLBAR}>
     <Toggle
       pressed={$hotkey === 'Shift-Enter'}
       onClick={() => ($hotkey = 'Shift-Enter')}
@@ -24,5 +23,4 @@ useSubmitKeymap(hotkey, onSubmit)
       <span class="mr-1">Submit with</span>
       <kbd>Enter</kbd>
     </Toggle>
-  </div>
 </div>

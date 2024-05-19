@@ -28,9 +28,11 @@ const pushSubmition = (hotkey: string) => {
 
 <ProseKit {editor}>
   <div class={Themes.EDITOR_VIEWPORT}>
+    <div class={Themes.EDITOR_DOCUMENT}>
     <Toolbar onSubmit={pushSubmition} />
     <div bind:this={place} class={Themes.EDITOR_CONTENT}></div>
   </div>
+</div>
   <fieldset class="mt-4 border">
     <legend>Submit Records</legend>
     <ol>

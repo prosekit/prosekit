@@ -49,7 +49,7 @@ function EditorGroup() {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="gap-2 flex">
+      <div className="flex gap-2">
         <button onClick={addEditor} className="border p-2">
           Add editor
         </button>

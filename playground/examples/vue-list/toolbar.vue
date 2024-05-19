@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
 import Toggle from './toggle.vue'
@@ -7,13 +8,13 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div class="TOOLBAR">
+  <div :class="Themes.TOOLBAR">
     <Toggle
       :pressed="editor.nodes.list.isActive({ kind: 'bullet' })"
       :disabled="!editor.commands.toggleList.canApply({ kind: 'bullet' })"
       :onClick="() => editor.commands.toggleList({ kind: 'bullet' })"
     >
-      <div class="ICON_LIST_BULLET"></div>
+      <div :class="Themes.ICON_LIST_BULLET"></div>
     </Toggle>
 
     <Toggle
@@ -21,7 +22,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleList.canApply({ kind: 'ordered' })"
       :onClick="() => editor.commands.toggleList({ kind: 'ordered' })"
     >
-      <div class="ICON_LIST_ORDERED"></div>
+      <div :class="Themes.ICON_LIST_ORDERED"></div>
     </Toggle>
 
     <Toggle
@@ -29,7 +30,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleList.canApply({ kind: 'task' })"
       :onClick="() => editor.commands.toggleList({ kind: 'task' })"
     >
-      <div class="ICON_LIST_TASK"></div>
+      <div :class="Themes.ICON_LIST_TASK"></div>
     </Toggle>
 
     <Toggle
@@ -37,7 +38,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleList.canApply({ kind: 'toggle' })"
       :onClick="() => editor.commands.toggleList({ kind: 'toggle' })"
     >
-      <div class="ICON_LIST_TOGGLE"></div>
+      <div :class="Themes.ICON_LIST_TOGGLE"></div>
     </Toggle>
   </div>
 </template>

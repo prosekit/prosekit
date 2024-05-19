@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 import {
   AutocompleteEmpty,
@@ -20,32 +21,32 @@ export default function SlashMenu() {
   }
 
   return (
-    <AutocompletePopover regex={/\/.*$/iu} className="AUTOCOMPLETE_MENU">
+    <AutocompletePopover regex={/\/.*$/iu} className={Themes.AUTOCOMPLETE_MENU}>
       <AutocompleteList>
-        <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
+        <AutocompleteEmpty className={Themes.AUTOCOMPLETE_MENU_ITEM}>
           No results
         </AutocompleteEmpty>
 
         <AutocompleteItem
-          className="AUTOCOMPLETE_MENU_ITEM"
+          className={Themes.AUTOCOMPLETE_MENU_ITEM}
           onSelect={() => handleHeadingInsert(1)}
         >
           Insert Heading 1
         </AutocompleteItem>
         <AutocompleteItem
-          className="AUTOCOMPLETE_MENU_ITEM"
+          className={Themes.AUTOCOMPLETE_MENU_ITEM}
           onSelect={() => handleHeadingInsert(2)}
         >
           Insert Heading 2
         </AutocompleteItem>
         <AutocompleteItem
-          className="AUTOCOMPLETE_MENU_ITEM"
+          className={Themes.AUTOCOMPLETE_MENU_ITEM}
           onSelect={() => handleHeadingConvert(1)}
         >
           Turn into Heading 1
         </AutocompleteItem>
         <AutocompleteItem
-          className="AUTOCOMPLETE_MENU_ITEM"
+          className={Themes.AUTOCOMPLETE_MENU_ITEM}
           onSelect={() => handleHeadingConvert(2)}
         >
           Turn into Heading 2

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
@@ -50,7 +51,7 @@ const handleLoad = (record: string) => {
 
 <template>
   <ProseKit :editor="editor">
-    <div class="EDITOR_VIEWPORT">
+    <div :class="Themes.EDITOR_VIEWPORT">
       <button
         @click="handleSave"
         :disabled="!hasUnsavedChange"
@@ -75,7 +76,7 @@ const handleLoad = (record: string) => {
           </span>
         </li>
       </ul>
-      <div ref="editorRef" class="EDITOR_CONTENT"></div>
+      <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
     </div>
   </ProseKit>
 </template>

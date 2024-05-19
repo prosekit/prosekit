@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 import {
   AutocompleteEmpty,
@@ -22,16 +23,16 @@ export default function UserMenu() {
   }
 
   return (
-    <AutocompletePopover regex={/@\w*$/} className="AUTOCOMPLETE_MENU">
+    <AutocompletePopover regex={/@\w*$/} className={Themes.AUTOCOMPLETE_MENU}>
       <AutocompleteList>
-        <AutocompleteEmpty className="AUTOCOMPLETE_MENU_ITEM">
+        <AutocompleteEmpty className={Themes.AUTOCOMPLETE_MENU_ITEM}>
           No results
         </AutocompleteEmpty>
 
         {users.map((user) => (
           <AutocompleteItem
             key={user.id}
-            className="AUTOCOMPLETE_MENU_ITEM"
+            className={Themes.AUTOCOMPLETE_MENU_ITEM}
             onSelect={() => handleUserInsert(user.id, user.name)}
           >
             {user.name}

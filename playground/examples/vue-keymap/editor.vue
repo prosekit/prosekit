@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
 import { createEditor, jsonFromNode } from 'prosekit/core'
@@ -23,9 +24,9 @@ const pushSubmition = (hotkey: string) => {
 
 <template>
   <ProseKit :editor="editor">
-    <div class="EDITOR_VIEWPORT">
+    <div :class="Themes.EDITOR_VIEWPORT">
       <Toolbar @submit="pushSubmition" />
-      <div ref="editorRef" class="EDITOR_CONTENT"></div>
+      <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
     </div>
     <fieldset class="mt-4 border">
       <legend>Submit Records</legend>

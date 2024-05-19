@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import {
   defineCodeBlockShiki,
   shikiBundledThemesInfo,
@@ -16,7 +17,7 @@ useExtension(extension)
 
 <template>
   <label>Theme:</label>
-  <select v-model="theme" class="TOGGLE_BUTTON">
+  <select v-model="theme" :class="Themes.TOGGLE_BUTTON">
     <option
       v-for="info of shikiBundledThemesInfo"
       :key="info.id"

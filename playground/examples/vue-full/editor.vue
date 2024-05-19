@@ -11,6 +11,7 @@ import SlashMenu from './slash-menu.vue'
 import TagMenu from './tag-menu.vue'
 import Toolbar from './toolbar.vue'
 import UserMenu from './user-menu.vue'
+import { Themes } from '@prosekit/themes'
 
 const editor = createEditor({ extension: defineExtension() })
 const editorRef = ref<HTMLDivElement | null>(null)
@@ -19,10 +20,10 @@ watchPostEffect(() => editor.mount(editorRef.value))
 
 <template>
   <ProseKit :editor="editor">
-    <div class="EDITOR_VIEWPORT">
-      <div class="EDITOR_DOCUMENT">
+    <div :class="Themes.EDITOR_VIEWPORT">
+      <div :class="Themes.EDITOR_DOCUMENT">
         <Toolbar />
-        <div ref="editorRef" class="EDITOR_CONTENT"></div>
+        <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
         <InlineMenu />
         <SlashMenu />
         <UserMenu />

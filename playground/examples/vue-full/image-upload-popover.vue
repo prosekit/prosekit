@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import {
   PopoverContent,
@@ -75,11 +76,11 @@ const handleOpenChange = (openValue: boolean) => {
       </Toggle>
     </PopoverTrigger>
 
-    <PopoverContent class="IMAGE_UPLOAD_CARD">
+    <PopoverContent :class="Themes.IMAGE_UPLOAD_CARD">
       <template v-if="!objectUrl">
         <label>Embed Link</label>
         <input
-          class="IMAGE_UPLOAD_INPUT"
+          :class="Themes.IMAGE_UPLOAD_INPUT"
           placeholder="Paste the image link..."
           type="url"
           :value="webUrl"
@@ -89,13 +90,17 @@ const handleOpenChange = (openValue: boolean) => {
       <template v-if="!webUrl">
         <label>Upload</label>
         <input
-          class="IMAGE_UPLOAD_INPUT"
+          :class="Themes.IMAGE_UPLOAD_INPUT"
           accept="image/*"
           type="file"
           @input="handleFileChange"
         />
       </template>
-      <button v-if="url" class="IMAGE_UPLOAD_BUTTON" @click="handleSubmit">
+      <button
+        v-if="url"
+        :class="Themes.IMAGE_UPLOAD_BUTTON"
+        @click="handleSubmit"
+      >
         Insert Image
       </button>
     </PopoverContent>

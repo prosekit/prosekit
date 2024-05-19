@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import {
   defineBaseKeymap,
   defineDoc,
@@ -18,7 +19,7 @@ export function defineExtension() {
     defineDropCursor({
       color: false,
       width: 4,
-      class: 'DROP_CURSOR',
+      class: Themes.DROP_CURSOR,
     }),
   ])
 }

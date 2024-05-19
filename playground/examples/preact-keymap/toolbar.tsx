@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import { useState } from 'preact/hooks'
 
 import Toggle from './toggle'
@@ -12,7 +13,7 @@ export default function Toolbar({
   useSubmitKeymap(hotkey, onSubmit)
 
   return (
-    <div className="TOOLBAR">
+    <div className={Themes.TOOLBAR}>
       <Toggle
         pressed={hotkey === 'Shift-Enter'}
         onClick={() => setHotkey('Shift-Enter')}

@@ -1,4 +1,5 @@
 <script lang="ts">
+import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
 import { defineBasicExtension } from 'prosekit/basic'
@@ -20,7 +21,7 @@ onDestroy(() => editor.mount(null))
 </script>
 
 <ProseKit {editor}>
-  <div class="EDITOR_VIEWPORT">
-    <div bind:this={place} class="EDITOR_CONTENT"></div>
+  <div class={Themes.EDITOR_VIEWPORT}>
+    <div bind:this={place} class={Themes.EDITOR_CONTENT}></div>
   </div>
 </ProseKit>

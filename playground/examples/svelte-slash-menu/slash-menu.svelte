@@ -1,4 +1,5 @@
 <script lang="ts">
+import { Themes } from '@prosekit/themes'
 import {
   AutocompleteItem,
   AutocompletePopover,
@@ -19,32 +20,32 @@ const handleHeadingConvert = (level: number) => {
 }
 </script>
 
-<AutocompletePopover regex={/\/.*$/iu} class="AUTOCOMPLETE_MENU">
+<AutocompletePopover regex={/\/.*$/iu} class={Themes.AUTOCOMPLETE_MENU}>
   <AutocompleteList>
-    <AutocompleteEmpty class="AUTOCOMPLETE_MENU_ITEM">
+    <AutocompleteEmpty class={Themes.AUTOCOMPLETE_MENU_ITEM}>
       No results
     </AutocompleteEmpty>
 
     <AutocompleteItem
-      class="AUTOCOMPLETE_MENU_ITEM"
+      class={Themes.AUTOCOMPLETE_MENU_ITEM}
       onSelect={() => handleHeadingInsert(1)}
     >
       Insert Heading 1
     </AutocompleteItem>
     <AutocompleteItem
-      class="AUTOCOMPLETE_MENU_ITEM"
+      class={Themes.AUTOCOMPLETE_MENU_ITEM}
       onSelect={() => handleHeadingInsert(2)}
     >
       Insert Heading 2
     </AutocompleteItem>
     <AutocompleteItem
-      class="AUTOCOMPLETE_MENU_ITEM"
+      class={Themes.AUTOCOMPLETE_MENU_ITEM}
       onSelect={() => handleHeadingConvert(1)}
     >
       Turn into Heading 1
     </AutocompleteItem>
     <AutocompleteItem
-      class="AUTOCOMPLETE_MENU_ITEM"
+      class={Themes.AUTOCOMPLETE_MENU_ITEM}
       onSelect={() => handleHeadingConvert(2)}
     >
       Turn into Heading 2

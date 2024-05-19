@@ -1,3 +1,4 @@
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 
 import type { EditorExtension } from './extension'
@@ -7,13 +8,13 @@ export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <div className="TOOLBAR">
+    <div className={Themes.TOOLBAR}>
       <Toggle
         pressed={editor.nodes.codeBlock.isActive()}
         disabled={!editor.commands.setCodeBlock.canApply()}
         onClick={() => editor.commands.setCodeBlock()}
       >
-        <div className="ICON_CODE_BLOCK" />
+        <div className={Themes.ICON_CODE_BLOCK} />
       </Toggle>
     </div>
   )

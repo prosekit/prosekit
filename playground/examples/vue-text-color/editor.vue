@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
 import { createEditor } from 'prosekit/core'
@@ -9,9 +10,9 @@ import InlineMenu from './inline-menu.vue'
 
 const defaultHTML =
   '<p>Select some text and click the buttons to change the color, or input a custom color.</p>' +
-  '<p style="color:peru;">Select some text and click the buttons to change the color, or input a custom color.</p>' +
-  '<p style="color:gold;">Select some text and click the buttons to change the color, or input a custom color.</p>' +
-  '<p style="color:plum;">Select some text and click the buttons to change the color, or input a custom color.</p>'
+  '<p style="color:#ef4444;">Select some text and click the buttons to change the color, or input a custom color.</p>' +
+  '<p style="color:#22c55e;">Select some text and click the buttons to change the color, or input a custom color.</p>' +
+  '<p style="color:#3b82f6;">Select some text and click the buttons to change the color, or input a custom color.</p>'
 
 const editor = createEditor({ extension: defineExtension(), defaultHTML })
 
@@ -21,9 +22,13 @@ watchPostEffect(() => editor.mount(editorRef.value))
 
 <template>
   <ProseKit :editor="editor">
-    <div class="EDITOR_VIEWPORT">
-      <div class="EDITOR_DOCUMENT">
-        <div ref="editorRef" spellcheck="false" class="EDITOR_CONTENT"></div>
+    <div :class="Themes.EDITOR_VIEWPORT">
+      <div :class="Themes.EDITOR_DOCUMENT">
+        <div
+          ref="editorRef"
+          spellcheck="false"
+          :class="Themes.EDITOR_CONTENT"
+        ></div>
         <InlineMenu />
       </div>
     </div>

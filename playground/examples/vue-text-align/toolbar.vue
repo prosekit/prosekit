@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import Toggle from './toggle.vue'
 import type { Editor } from 'prosekit/core'
@@ -14,7 +15,7 @@ const isTextAlignActive = (editor: Editor<EditorExtension>, value: string) => {
 </script>
 
 <template>
-  <div class="TOOLBAR">
+  <div :class="Themes.TOOLBAR">
     <Toggle
       :pressed="isTextAlignActive(editor, 'left')"
       :disabled="!editor.commands.setTextAlign.canApply('left')"

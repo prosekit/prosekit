@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
 import { createEditor } from 'prosekit/core'
@@ -36,8 +37,8 @@ const addTable = () => {
 <template>
   <button @click="addTable">Add table</button>
   <ProseKit :editor="editor">
-    <div class="EDITOR_VIEWPORT">
-      <div ref="editorRef" class="EDITOR_CONTENT"></div>
+    <div :class="Themes.EDITOR_VIEWPORT">
+      <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
     </div>
   </ProseKit>
 </template>

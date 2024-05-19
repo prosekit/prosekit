@@ -1,6 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["config/unocss-shortcut.mjs", "tsconfig.json"],
+  "globalDependencies": ["tsconfig.json"],
   "pipeline": {
     "build": {
       "dependsOn": ["gen", "^build", "build:tsc", "build:tsup"],

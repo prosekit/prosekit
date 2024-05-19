@@ -32,13 +32,12 @@ testStory('text-color', ({ example }) => {
 
     await expect(menu).toBeHidden()
 
-    // Select the first word "Select"
+    // Select the first word "Select" and open the inline menu
     await page.keyboard.down('Shift')
     for (const _ of 'Select') {
       await page.keyboard.press('ArrowRight', { delay: 10 })
     }
     await page.keyboard.up('Shift')
-
     await expect(menu).toBeVisible()
 
     await btnPeru.click()
@@ -50,6 +49,9 @@ testStory('text-color', ({ example }) => {
     await btnPlum.click()
     await checkColor({ plum: true })
 
+    // Close the inline menu
     await expect(menu).toBeVisible()
+    await page.keyboard.press('ArrowRight')
+    await expect(menu).toBeHidden()
   })
 })

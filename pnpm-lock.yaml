@@ -75,13 +75,13 @@ importers:
   packages/basic:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.0
+        specifier: ^0.5.1
         version: link:../core
       '@prosekit/extensions':
         specifier: ^0.5.0
         version: link:../extensions
       '@prosekit/pm':
-        specifier: ^0.1.3
+        specifier: ^0.1.4
         version: link:../pm
     devDependencies:
       '@prosekit/dev':
@@ -192,8 +192,8 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3
       tsx:
-        specifier: ^4.10.4
-        version: 4.10.4
+        specifier: ^4.10.5
+        version: 4.10.5
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -201,10 +201,10 @@ importers:
   packages/extensions:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.0
+        specifier: ^0.5.1
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.3
+        specifier: ^0.1.4
         version: link:../pm
       prosemirror-dropcursor:
         specifier: ^1.8.1
@@ -219,7 +219,7 @@ importers:
         specifier: ^1.3.7
         version: 1.3.7
       shiki:
-        specifier: ^1.5.2
+        specifier: ^1.6.0
         version: 1.6.0
     devDependencies:
       '@prosekit/dev':
@@ -297,10 +297,10 @@ importers:
   packages/preact:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.0
+        specifier: ^0.5.1
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.3
+        specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
         specifier: ^0.1.6
@@ -404,10 +404,10 @@ importers:
   packages/react:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.0
+        specifier: ^0.5.1
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.3
+        specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
         specifier: ^0.1.6
@@ -447,10 +447,10 @@ importers:
   packages/solid:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.0
+        specifier: ^0.5.1
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.3
+        specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
         specifier: ^0.1.6
@@ -475,10 +475,10 @@ importers:
   packages/svelte:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.0
+        specifier: ^0.5.1
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.3
+        specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
         specifier: ^0.1.6
@@ -503,8 +503,8 @@ importers:
         specifier: ^3.7.1
         version: 3.7.1(@babel/core@7.24.5)(postcss@8.4.38)(svelte@4.2.17)
       tsx:
-        specifier: ^4.10.4
-        version: 4.10.4
+        specifier: ^4.10.5
+        version: 4.10.5
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -547,10 +547,10 @@ importers:
   packages/vue:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.0
+        specifier: ^0.5.1
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.3
+        specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
         specifier: ^0.1.6
@@ -602,13 +602,13 @@ importers:
         specifier: ^1.6.5
         version: 1.6.5
       '@prosekit/core':
-        specifier: ^0.5.0
+        specifier: ^0.5.1
         version: link:../core
       '@prosekit/extensions':
         specifier: ^0.5.0
         version: link:../extensions
       '@prosekit/pm':
-        specifier: ^0.1.3
+        specifier: ^0.1.4
         version: link:../pm
       '@zag-js/dom-query':
         specifier: ^0.50.0
@@ -765,8 +765,8 @@ importers:
         specifier: ^1.5.3
         version: 1.5.3
       lightningcss:
-        specifier: ^1.24.1
-        version: 1.24.1
+        specifier: ^1.25.0
+        version: 1.25.0
       postcss:
         specifier: ^8.4.38
         version: 8.4.38
@@ -804,8 +804,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2(typedoc@0.25.13)
       typedoc-plugin-mdn-links:
-        specifier: ^3.1.25
-        version: 3.1.25(typedoc@0.25.13)
+        specifier: ^3.1.26
+        version: 3.1.26(typedoc@0.25.13)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -814,10 +814,10 @@ importers:
         version: 0.60.2(postcss@8.4.38)(vite@5.2.11)
       vite:
         specifier: ^5.2.11
-        version: 5.2.11(lightningcss@1.24.1)
+        version: 5.2.11(lightningcss@1.25.0)
       vitepress:
-        specifier: 1.1.4
-        version: 1.1.4(@algolia/client-search@4.23.3)(@types/react@18.3.2)(lightningcss@1.24.1)(postcss@8.4.38)(react-dom@18.3.1)(react@18.3.1)(search-insights@2.13.0)(typescript@5.4.5)
+        specifier: 1.2.0
+        version: 1.2.0(@algolia/client-search@4.23.3)(@types/react@18.3.2)(lightningcss@1.25.0)(postcss@8.4.38)(react-dom@18.3.1)(react@18.3.1)(search-insights@2.13.0)(typescript@5.4.5)
       vue:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
@@ -3103,7 +3103,7 @@ packages:
       resolve: 1.22.8
       source-map: 0.7.4
       stack-trace: 1.0.0-pre2
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -3149,7 +3149,7 @@ packages:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.22.0
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3337,17 +3337,13 @@ packages:
     transitivePeerDependencies:
       - '@types/node'
 
-  /@shikijs/core@1.3.0:
-    resolution: {integrity: sha512-7fedsBfuILDTBmrYZNFI8B6ATTxhQAasUHllHmjvSZPnoq4bULWoTpHwmuQvZ8Aq03/tAa2IGo6RXqWtHdWaCA==}
-    dev: true
-
   /@shikijs/core@1.6.0:
     resolution: {integrity: sha512-NIEAi5U5R7BLkbW1pG/ZKu3eb1lzc3/+jD0lFsuxMT7zjaf9bbNwdNyMr7zh/Zl8EXQtQ+MYBAt5G+JLu+5DlA==}
 
-  /@shikijs/transformers@1.3.0:
-    resolution: {integrity: sha512-3mlpg2I9CjhjE96dEWQOGeCWoPcyTov3s4aAsHmgvnTHa8MBknEnCQy8/xivJPSpD+olqOqIEoHnLfbNJK29AA==}
+  /@shikijs/transformers@1.6.0:
+    resolution: {integrity: sha512-qGfHe1ECiqfE2STPWvfogIj/9Q0SK+MCRJdoITkW7AmFuB7DmbFnBT2US84+zklJOB51MzNO8RUXZiauWssJlQ==}
     dependencies:
-      shiki: 1.3.0
+      shiki: 1.6.0
     dev: true
 
   /@shikijs/twoslash@1.6.0(typescript@5.4.5):
@@ -3468,7 +3464,7 @@ packages:
       chokidar: 3.6.0
       kleur: 4.1.5
       sade: 1.8.1
-      semver: 7.5.4
+      semver: 7.6.2
       svelte: 4.2.17
       svelte2tsx: 0.7.6(svelte@4.2.17)(typescript@5.4.5)
     transitivePeerDependencies:
@@ -3486,7 +3482,7 @@ packages:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.17)(vite@5.2.11)
       debug: 4.3.4
       svelte: 4.2.17
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3505,7 +3501,7 @@ packages:
       magic-string: 0.30.10
       svelte: 4.2.17
       svelte-hmr: 0.15.3(svelte@4.2.17)
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
       vitefu: 0.2.5(vite@5.2.11)
     transitivePeerDependencies:
       - supports-color
@@ -4010,7 +4006,7 @@ packages:
       '@unocss/core': 0.60.2
       '@unocss/reset': 0.60.2
       '@unocss/vite': 0.60.2(vite@5.2.11)
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - rollup
 
@@ -4211,7 +4207,7 @@ packages:
       chokidar: 3.6.0
       fast-glob: 3.3.2
       magic-string: 0.30.10
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - rollup
 
@@ -4226,7 +4222,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.24.1(@babel/core@7.24.5)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4241,7 +4237,7 @@ packages:
       '@babel/core': 7.24.5
       '@babel/plugin-transform-typescript': 7.24.5(@babel/core@7.24.5)
       '@vue/babel-plugin-jsx': 1.2.2(@babel/core@7.24.5)
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
       vue: 3.4.27(typescript@5.4.5)
     transitivePeerDependencies:
       - supports-color
@@ -4254,7 +4250,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
       vue: 3.4.27(typescript@5.4.5)
     dev: true
 
@@ -4270,7 +4266,7 @@ packages:
       istanbul-lib-source-maps: 5.0.4
       istanbul-reports: 3.1.7
       magicast: 0.3.3
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       test-exclude: 6.0.0
       vitest: 1.6.0(jsdom@24.0.0)
     transitivePeerDependencies:
@@ -4421,8 +4417,8 @@ packages:
       '@vue/shared': 3.4.27
     dev: true
 
-  /@vue/devtools-api@7.1.3(vue@3.4.27):
-    resolution: {integrity: sha512-W8IwFJ/o5iUk78jpqhvScbgCsPiOp2uileDVC0NDtW38gCWhsnu9SeBTjcdu3lbwLdsjc+H1c5Msd/x9ApbcFA==}
+  /@vue/devtools-api@7.2.0(vue@3.4.27):
+    resolution: {integrity: sha512-92RsjyH9WKNFO6U/dECUMakq4dm2CeqEDJYLJ8wZ81AnCifpXE7d4jPIjK34ENsPaapA6BSfIZdH/qzLOHiepA==}
     dependencies:
       '@vue/devtools-kit': 7.2.0(vue@3.4.27)
     transitivePeerDependencies:
@@ -4973,7 +4969,7 @@ packages:
       tsconfck: 3.0.3(typescript@5.4.5)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
       vitefu: 0.2.5(vite@5.2.11)
       which-pm: 2.1.1
       yargs-parser: 21.1.1
@@ -5147,7 +5143,7 @@ packages:
     resolution: {integrity: sha512-0SsG7UDhoRWcuSvKWHaXmu5uNjDCDN3nkQLRL4Q42IlFy+ze58FcCoI3uPwINXinkz7ZinbhEgyzYFw9u9ZV8g==}
     dependencies:
       chokidar: 3.6.0
-      confbox: 0.1.3
+      confbox: 0.1.7
       defu: 6.1.4
       dotenv: 16.4.5
       giget: 1.2.3
@@ -5466,10 +5462,6 @@ packages:
 
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
-
-  /confbox@0.1.3:
-    resolution: {integrity: sha512-eH3ZxAihl1PhKfpr4VfEN6/vUd87fmgb6JkldHgg/YR6aEBhW63qUDgzP2Y6WM0UumdsYp5H3kibalXAdHfbgg==}
-    dev: true
 
   /confbox@0.1.7:
     resolution: {integrity: sha512-uJcB/FKZtBMCJpK8MQji6bJHgu1tixKPxRLeGkNzBoOZzpnZUJm0jm2/sBDWcuBx1dYgxV4JU+g5hmNxCyAmdA==}
@@ -7887,93 +7879,93 @@ packages:
       type-check: 0.4.0
     dev: false
 
-  /lightningcss-darwin-arm64@1.24.1:
-    resolution: {integrity: sha512-1jQ12jBy+AE/73uGQWGSafK5GoWgmSiIQOGhSEXiFJSZxzV+OXIx+a9h2EYHxdJfX864M+2TAxWPWb0Vv+8y4w==}
+  /lightningcss-darwin-arm64@1.25.0:
+    resolution: {integrity: sha512-neCU5PrQUAec/b2mpXv13rrBWObQVaG/y0yhGKzAqN9cj7lOv13Wegnpiro0M66XAxx/cIkZfmJstRfriOR2SQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /lightningcss-darwin-x64@1.24.1:
-    resolution: {integrity: sha512-R4R1d7VVdq2mG4igMU+Di8GPf0b64ZLnYVkubYnGG0Qxq1KaXQtAzcLI43EkpnoWvB/kUg8JKCWH4S13NfiLcQ==}
+  /lightningcss-darwin-x64@1.25.0:
+    resolution: {integrity: sha512-h1XBxDHdED7TY4/1V30UNjiqXceGbcL8ARhUfbf8CWAEhD7wMKK/4UqMHi94RDl31ko4LTmt9fS2u1uyeWYE6g==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     optional: true
 
-  /lightningcss-freebsd-x64@1.24.1:
-    resolution: {integrity: sha512-z6NberUUw5ALES6Ixn2shmjRRrM1cmEn1ZQPiM5IrZ6xHHL5a1lPin9pRv+w6eWfcrEo+qGG6R9XfJrpuY3e4g==}
+  /lightningcss-freebsd-x64@1.25.0:
+    resolution: {integrity: sha512-f7v6QwrqCFtQOG1Y7iZ4P1/EAmMsyUyRBrYbSmDxihMzdsL7xyTM753H2138/oCpam+maw2RZrXe/NA1r/I5cQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
     optional: true
 
-  /lightningcss-linux-arm-gnueabihf@1.24.1:
-    resolution: {integrity: sha512-NLQLnBQW/0sSg74qLNI8F8QKQXkNg4/ukSTa+XhtkO7v3BnK19TS1MfCbDHt+TTdSgNEBv0tubRuapcKho2EWw==}
+  /lightningcss-linux-arm-gnueabihf@1.25.0:
+    resolution: {integrity: sha512-7KSVcjci9apHxUKNjiLKXn8hVQJqCtwFg5YNvTeKi/BM91A9lQTuO57RpmpPbRIb20Qm8vR7fZtL1iL5Yo3j9A==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /lightningcss-linux-arm64-gnu@1.24.1:
-    resolution: {integrity: sha512-AQxWU8c9E9JAjAi4Qw9CvX2tDIPjgzCTrZCSXKELfs4mCwzxRkHh2RCxX8sFK19RyJoJAjA/Kw8+LMNRHS5qEg==}
+  /lightningcss-linux-arm64-gnu@1.25.0:
+    resolution: {integrity: sha512-1+6tuAsUyMVG5N2rzgwaOOf84yEU+Gjl71b+wLcz26lyM/ohgFgeqPWeB/Dor0wyUnq7vg184l8goGT26cRxoQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /lightningcss-linux-arm64-musl@1.24.1:
-    resolution: {integrity: sha512-JCgH/SrNrhqsguUA0uJUM1PvN5+dVuzPIlXcoWDHSv2OU/BWlj2dUYr3XNzEw748SmNZPfl2NjQrAdzaPOn1lA==}
+  /lightningcss-linux-arm64-musl@1.25.0:
+    resolution: {integrity: sha512-4kw3ZnGQzxD8KkaB4doqfi32hP5h3o04OlrdfZ7T9VLTbUxeh3YZUKcJmhINV2rdMOOmVODqaRw1kuvvF16Q+Q==}
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /lightningcss-linux-x64-gnu@1.24.1:
-    resolution: {integrity: sha512-TYdEsC63bHV0h47aNRGN3RiK7aIeco3/keN4NkoSQ5T8xk09KHuBdySltWAvKLgT8JvR+ayzq8ZHnL1wKWY0rw==}
+  /lightningcss-linux-x64-gnu@1.25.0:
+    resolution: {integrity: sha512-oVEP5rBrFQB5V7fRIPYkDxKLmd2fAbz9VagKWIRu1TlYDUFWXK4F3KztAtAKuD7tLMBSGGi1LMUueFzVe+cZbw==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /lightningcss-linux-x64-musl@1.24.1:
-    resolution: {integrity: sha512-HLfzVik3RToot6pQ2Rgc3JhfZkGi01hFetHt40HrUMoeKitLoqUUT5owM6yTZPTytTUW9ukLBJ1pc3XNMSvlLw==}
+  /lightningcss-linux-x64-musl@1.25.0:
+    resolution: {integrity: sha512-7ssY6HwCvmPDohqtXuZG2Mh9q32LbVBhiF/SS/VMj2jUcXcsBilUEviq/zFDzhZMxl5f1lXi5/+mCuSGrMir1A==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     optional: true
 
-  /lightningcss-win32-x64-msvc@1.24.1:
-    resolution: {integrity: sha512-joEupPjYJ7PjZtDsS5lzALtlAudAbgIBMGJPNeFe5HfdmJXFd13ECmEM+5rXNxYVMRHua2w8132R6ab5Z6K9Ow==}
+  /lightningcss-win32-x64-msvc@1.25.0:
+    resolution: {integrity: sha512-DUVxj1S6dCQkixQ5qiHcYojamxE02bgmSpc4p6lejPwW7WRd/pvDPDAr+BvZWAkX5MRphxB7ei6+93+42ZtvmQ==}
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     optional: true
 
-  /lightningcss@1.24.1:
-    resolution: {integrity: sha512-kUpHOLiH5GB0ERSv4pxqlL0RYKnOXtgGtVe7shDGfhS0AZ4D1ouKFYAcLcZhql8aMspDNzaUCumGHZ78tb2fTg==}
+  /lightningcss@1.25.0:
+    resolution: {integrity: sha512-B08o6QQikGaY4rPuQohtFVE+X2++mm/QemwAJ/1sgnMgTwwUnafJbTmSSBWC8Tv4JPfhelXZB6sWA0Y/6eYJmQ==}
     engines: {node: '>= 12.0.0'}
     dependencies:
       detect-libc: 1.0.3
     optionalDependencies:
-      lightningcss-darwin-arm64: 1.24.1
-      lightningcss-darwin-x64: 1.24.1
-      lightningcss-freebsd-x64: 1.24.1
-      lightningcss-linux-arm-gnueabihf: 1.24.1
-      lightningcss-linux-arm64-gnu: 1.24.1
-      lightningcss-linux-arm64-musl: 1.24.1
-      lightningcss-linux-x64-gnu: 1.24.1
-      lightningcss-linux-x64-musl: 1.24.1
-      lightningcss-win32-x64-msvc: 1.24.1
+      lightningcss-darwin-arm64: 1.25.0
+      lightningcss-darwin-x64: 1.25.0
+      lightningcss-freebsd-x64: 1.25.0
+      lightningcss-linux-arm-gnueabihf: 1.25.0
+      lightningcss-linux-arm64-gnu: 1.25.0
+      lightningcss-linux-arm64-musl: 1.25.0
+      lightningcss-linux-x64-gnu: 1.25.0
+      lightningcss-linux-x64-musl: 1.25.0
+      lightningcss-win32-x64-msvc: 1.25.0
 
   /lilconfig@3.1.1:
     resolution: {integrity: sha512-O18pf7nyvHTckunPWCV1XUNXU1piu01y2b7ATJ0ppkUkk8ocqVWBrYjJBCwHDjD/ZWcfyrA0P4gKhzWGi5EINQ==}
@@ -9254,9 +9246,6 @@ packages:
       estree-walker: 3.0.3
       is-reference: 3.0.2
 
-  /picocolors@1.0.0:
-    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
-
   /picocolors@1.0.1:
     resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
 
@@ -9352,7 +9341,7 @@ packages:
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.7
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       source-map-js: 1.2.0
 
   /preact-render-to-string@6.3.1(preact@10.22.0):
@@ -10243,7 +10232,7 @@ packages:
       radix-vue: 1.8.0(vue@3.4.27)
       ts-morph: 22.0.0
       tsconfig-paths: 4.2.0
-      zod: 3.23.4
+      zod: 3.23.8
     transitivePeerDependencies:
       - '@vue/composition-api'
       - supports-color
@@ -10308,12 +10297,6 @@ packages:
       jsonc-parser: 3.2.1
       vscode-oniguruma: 1.7.0
       vscode-textmate: 8.0.0
-    dev: true
-
-  /shiki@1.3.0:
-    resolution: {integrity: sha512-9aNdQy/etMXctnPzsje1h1XIGm9YfRcSksKOGqZWXA/qP9G18/8fpz5Bjpma8bOgz3tqIpjERAd6/lLjFyzoww==}
-    dependencies:
-      '@shikijs/core': 1.3.0
     dev: true
 
   /shiki@1.6.0:
@@ -10684,7 +10667,7 @@ packages:
       chokidar: 3.6.0
       fast-glob: 3.3.2
       import-fresh: 3.3.0
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       sade: 1.8.1
       svelte: 4.2.17
       svelte-preprocess: 5.1.3(@babel/core@7.24.5)(postcss@8.4.38)(svelte@4.2.17)(typescript@5.4.5)
@@ -11060,8 +11043,8 @@ packages:
       typescript: 5.4.5
     dev: false
 
-  /tsx@4.10.4:
-    resolution: {integrity: sha512-Gtg9qnZWNqC/OtcgiXfoAUdAKx3/cgKOYvEocAsv+m21MV/eKpV/WUjRXe6/sDCaGBl2/v8S6v29BpUnGMCX5A==}
+  /tsx@4.10.5:
+    resolution: {integrity: sha512-twDSbf7Gtea4I2copqovUiNTEDrT8XNFXsuHpfGbdpW/z9ZW4fTghzzhAG0WfrCuJmJiOEY1nLIjq4u3oujRWQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
@@ -11270,8 +11253,8 @@ packages:
       typedoc: 0.25.13(typescript@5.4.5)
     dev: true
 
-  /typedoc-plugin-mdn-links@3.1.25(typedoc@0.25.13):
-    resolution: {integrity: sha512-Tox8kt/yUt+vUiSjz22D+yJyKH7z1f9/CtWbrJdOkfGpmt4SOssEmCPYgxmKPTTCt+SMHL8w5S5tWSc+gj3GYA==}
+  /typedoc-plugin-mdn-links@3.1.26(typedoc@0.25.13):
+    resolution: {integrity: sha512-5U6qTzMcSw0ceFXQR641COJBLaQCfl7/XuNVBygTq/c+kJjX0jsAfhHyPJXyqzbJcyfe9v5u2srHQ1nIF+Pg5w==}
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x'
     dependencies:
@@ -11527,7 +11510,7 @@ packages:
       '@unocss/transformer-directives': 0.60.2
       '@unocss/transformer-variant-group': 0.60.2
       '@unocss/vite': 0.60.2(vite@5.2.11)
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -11621,7 +11604,7 @@ packages:
     peerDependencies:
       vite: ^2.6.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0
     dependencies:
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
     dev: true
 
   /vite-node@1.6.0:
@@ -11632,8 +11615,8 @@ packages:
       cac: 6.7.14
       debug: 4.3.4
       pathe: 1.1.2
-      picocolors: 1.0.0
-      vite: 5.2.11(lightningcss@1.24.1)
+      picocolors: 1.0.1
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -11684,7 +11667,7 @@ packages:
       perfect-debounce: 1.0.0
       picocolors: 1.0.1
       sirv: 2.0.4
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -11706,7 +11689,7 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.8.17
       solid-refresh: 0.6.3(solid-js@1.8.17)
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
       vitefu: 0.2.5(vite@5.2.11)
     transitivePeerDependencies:
       - supports-color
@@ -11723,7 +11706,7 @@ packages:
       '@vue/devtools-shared': 7.2.0
       execa: 8.0.1
       sirv: 2.0.4
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
       vite-plugin-inspect: 0.8.4(vite@5.2.11)
       vite-plugin-vue-inspector: 5.1.0(vite@5.2.11)
     transitivePeerDependencies:
@@ -11747,7 +11730,7 @@ packages:
       '@vue/compiler-dom': 3.4.27
       kolorist: 1.8.0
       magic-string: 0.30.10
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -11788,7 +11771,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@5.2.11(lightningcss@1.24.1):
+  /vite@5.2.11(lightningcss@1.25.0):
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -11817,7 +11800,7 @@ packages:
         optional: true
     dependencies:
       esbuild: 0.20.2
-      lightningcss: 1.24.1
+      lightningcss: 1.25.0
       postcss: 8.4.38
       rollup: 4.17.0
     optionalDependencies:
@@ -11831,11 +11814,11 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
     dev: true
 
-  /vitepress@1.1.4(@algolia/client-search@4.23.3)(@types/react@18.3.2)(lightningcss@1.24.1)(postcss@8.4.38)(react-dom@18.3.1)(react@18.3.1)(search-insights@2.13.0)(typescript@5.4.5):
-    resolution: {integrity: sha512-bWIzFZXpPB6NIDBuWnS20aMADH+FcFKDfQNYFvbOWij03PR29eImTceQHIzCKordjXYBhM/TjE5VKFTUJ3EheA==}
+  /vitepress@1.2.0(@algolia/client-search@4.23.3)(@types/react@18.3.2)(lightningcss@1.25.0)(postcss@8.4.38)(react-dom@18.3.1)(react@18.3.1)(search-insights@2.13.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-m/4PAQVyPBvKHV7sFKwcmNmrsoSxdjnw/Eg40YyuBSaBHhrro9ubnfWk5GT0xGfE98LqjZkHCWKNJlR6G/7Ayg==}
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4
@@ -11849,10 +11832,11 @@ packages:
       '@docsearch/css': 3.6.0
       '@docsearch/js': 3.6.0(@algolia/client-search@4.23.3)(@types/react@18.3.2)(react-dom@18.3.1)(react@18.3.1)(search-insights@2.13.0)
       '@shikijs/core': 1.6.0
-      '@shikijs/transformers': 1.3.0
+      '@shikijs/transformers': 1.6.0
       '@types/markdown-it': 14.1.1
       '@vitejs/plugin-vue': 5.0.4(vite@5.2.11)(vue@3.4.27)
-      '@vue/devtools-api': 7.1.3(vue@3.4.27)
+      '@vue/devtools-api': 7.2.0(vue@3.4.27)
+      '@vue/shared': 3.4.27
       '@vueuse/core': 10.9.0(vue@3.4.27)
       '@vueuse/integrations': 10.9.0(focus-trap@7.5.4)(vue@3.4.27)
       focus-trap: 7.5.4
@@ -11860,7 +11844,7 @@ packages:
       minisearch: 6.3.0
       postcss: 8.4.38
       shiki: 1.6.0
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
       vue: 3.4.27(typescript@5.4.5)
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -11929,7 +11913,7 @@ packages:
       local-pkg: 0.5.0
       magic-string: 0.30.10
       pathe: 1.1.2
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       std-env: 3.7.0
       strip-literal: 2.1.0
       tinybench: 2.8.0
@@ -11985,12 +11969,12 @@ packages:
       local-pkg: 0.5.0
       magic-string: 0.30.10
       pathe: 1.1.2
-      picocolors: 1.0.0
+      picocolors: 1.0.1
       std-env: 3.7.0
       strip-literal: 2.1.0
       tinybench: 2.8.0
       tinypool: 0.8.4
-      vite: 5.2.11(lightningcss@1.24.1)
+      vite: 5.2.11(lightningcss@1.25.0)
       vite-node: 1.6.0
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
@@ -12362,10 +12346,6 @@ packages:
       zod: ^3.23.3
     dependencies:
       zod: 3.23.8
-    dev: true
-
-  /zod@3.23.4:
-    resolution: {integrity: sha512-/AtWOKbBgjzEYYQRNfoGKHObgfAZag6qUJX1VbHo2PRBgS+wfWagEY2mizjfyAPcGesrJOcx/wcl0L9WnVrHFw==}
     dev: true
 
   /zod@3.23.8:

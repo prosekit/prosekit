@@ -45,11 +45,7 @@ export default function UserMenuDynamic() {
             className={Themes.AUTOCOMPLETE_MENU_ITEM}
             onSelect={() => handleUserInsert(user.id, user.name)}
           >
-            <span
-              className={
-                loading ? 'AUTOCOMPLETE_MENU_ITEM_LOADING_TEXT' : undefined
-              }
-            >
+            <span className={loading ? 'opacity-50' : undefined}>
               {user.name}
             </span>
           </AutocompleteItem>

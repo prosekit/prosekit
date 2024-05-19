@@ -115,10 +115,6 @@ export const AUTOCOMPLETE_MENU_ITEM = cn(
   FLOATING_MENU_ITEM,
 )
 
-export const AUTOCOMPLETE_MENU_ITEM_LOADING_TEXT = cn(
-  'opacity-50 transition-duration-500 transition-opacity',
-)
-
 export const LANGUAGE_WRAPPER = cn(
   'relative left-2 top-3 h-0 select-none overflow-visible',
 )

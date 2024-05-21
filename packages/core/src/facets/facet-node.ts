@@ -27,7 +27,7 @@ function unionInput<T>(a: T[] | null, b: T[] | null): T[] | null {
 
 function subtractInput<T>(a: T[] | null, b: T[] | null): T[] | null {
   if (!a) return null
-  if (!b) return []
+  if (!b) return [...a]
   return arraySubstract(a, b)
 }
 
@@ -50,7 +50,9 @@ function subtractChildren(
   const merged = new Map(a)
   for (const [key, valueB] of b.entries()) {
     const valueA = a.get(key)
-    merged.set(key, valueA ? subtractFacetNode(valueA, valueB) : valueB)
+    if (valueA) {
+      merged.set(key, subtractFacetNode(valueA, valueB))
+    }
   }
   return merged
 }

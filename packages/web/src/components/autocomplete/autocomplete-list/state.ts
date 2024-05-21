@@ -81,6 +81,12 @@ export function useAutocompleteList(
     }
   })
 
+  // The autocomplet list should not be focusable because the editor will get
+  // the focus during typing.
+  useEffect(element, () => {
+    element.tabIndex = -1
+  })
+
   return { editor, filter }
 }
 

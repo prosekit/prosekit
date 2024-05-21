@@ -29,7 +29,7 @@ export function definePlaceholder(options: PlaceholderOptions) {
 
 function createPlaceholderPlugin(options: PlaceholderOptions): Plugin {
   return new Plugin({
-    key: placeholderPluginKey,
+    key: new PluginKey('prosekit-placeholder'),
     props: {
       decorations: (state) => {
         if (options.strategy === 'doc' && !isDocEmpty(state.doc)) {
@@ -51,8 +51,6 @@ function createPlaceholderPlugin(options: PlaceholderOptions): Plugin {
     },
   })
 }
-
-const placeholderPluginKey = new PluginKey('prosekit-placeholder')
 
 function isDocEmpty(doc: ProseMirrorNode) {
   return doc.childCount <= 1 && !doc.firstChild?.content.size

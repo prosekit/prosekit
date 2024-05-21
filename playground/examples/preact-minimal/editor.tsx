@@ -1,4 +1,5 @@
 import 'prosekit/basic/style.css'
+
 import { Themes } from '@prosekit/themes'
 import { useCallback, useMemo } from 'preact/hooks'
 import { defineBasicExtension } from 'prosekit/basic'

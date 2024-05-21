@@ -11,6 +11,7 @@ export function useUserQuery(query: Ref<string>, enabled: Ref<boolean>) {
 
   watchEffect((onInvalidate) => {
     if (!enabled.value) {
+      users.value = []
       return
     }
 

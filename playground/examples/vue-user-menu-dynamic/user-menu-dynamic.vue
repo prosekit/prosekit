@@ -39,7 +39,7 @@ const { users, loading } = useUserQuery(query, open)
   >
     <AutocompleteList :filter="null">
       <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
-        No results
+        {{ loading ? 'Loading...' : 'No results' }}
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="user in users"

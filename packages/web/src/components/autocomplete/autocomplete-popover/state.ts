@@ -3,6 +3,7 @@ import {
   createComputed,
   createSignal,
   mapSignals,
+  useAnimationFrame,
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
@@ -78,9 +79,14 @@ function useAutocompletePopoverState(
     }
   })
 
-  useEffect(host, () => {
+  useAnimationFrame(host, () => {
     const presenceValue = presence.value
-    state.onOpenChange.peek()?.(presenceValue)
+    const onOpenChangeValue = state.onOpenChange.peek()
+
+    if (!onOpenChangeValue) {
+      return
+    }
+    return () => onOpenChangeValue(presenceValue)
   })
 }
 

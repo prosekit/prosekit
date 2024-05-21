@@ -92,7 +92,9 @@ function useAutocompletePopoverState(
     if (!onOpenChangeValue) {
       return
     }
-    return () => onOpenChangeValue(presenceValue)
+    return () => {
+      onOpenChangeValue(presenceValue)
+    }
   })
 }
 

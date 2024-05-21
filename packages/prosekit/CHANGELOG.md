@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.7.2
+
+### Patch Changes
+
+- [`b4a70d7`](https://github.com/ocavue/prosekit/commit/b4a70d7456a86e2a8201629931afe476e052a7e7) ![](https://prosekit.dev/b/web)
+
+  Fix the initial position of autocomplete popover.
+
 ## 0.7.1
 
 ### Patch Changes

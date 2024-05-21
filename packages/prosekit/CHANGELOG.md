@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.7.3
+
+### Patch Changes
+
+- [`05d765f`](https://github.com/ocavue/prosekit/commit/05d765f9947c6800d5e073407e11927774fd454f) ![](https://prosekit.dev/b/core)
+
+  Fix an issue where removing an extension could lead to incorrect editor states.
+
 ## 0.7.2
 
 ### Patch Changes

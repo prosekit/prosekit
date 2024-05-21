@@ -11,6 +11,7 @@ export function useUserQuery(query: string, enabled: boolean) {
 
   useEffect(() => {
     if (!enabled) {
+      setUsers([])
       return
     }
 

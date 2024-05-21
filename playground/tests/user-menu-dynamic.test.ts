@@ -6,10 +6,13 @@ testStory('user-menu-dynamic', () => {
   test('user-menu-dynamic', async ({ page }) => {
     const editor = await waitForEditor(page)
 
-    const itemAlice = page.getByText('Alice')
-    const itemBob = page.getByText('Bob')
-    const itemLoading = page.getByText('Loading...')
-    const itemNoResults = page.getByText('No results')
+    const item = page
+      .locator('prosekit-autocomplete-item')
+      .or(page.locator('prosekit-autocomplete-empty'))
+    const itemAlice = item.getByText('Alice')
+    const itemBob = item.getByText('Bob')
+    const itemLoading = item.getByText('Loading...')
+    const itemNoResults = item.getByText('No results')
     const itemFocused = page.locator('[role="option"][data-focused="true"]')
     const menu = page.locator('prosekit-autocomplete-popover', {
       has: itemAlice.or(itemBob).or(itemLoading).or(itemNoResults),

@@ -2,14 +2,9 @@ import { expect, test } from '@playwright/test'
 
 import { locateEditor, testStory, waitForEditor } from './helper'
 
-testStory('full', ({ example }) => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto(example)
-  })
-
+testStory('full', () => {
   test.describe('link', () => {
     test('press Space to insert a link', async ({ page }) => {
-      await page.goto(example)
       const editor = locateEditor(page)
       const a = editor.locator('a')
 

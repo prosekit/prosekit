@@ -8,10 +8,8 @@ import {
   waitForEditor,
 } from './helper'
 
-testStory('text-align', ({ example }) => {
+testStory('text-align', () => {
   test('commands', async ({ page }) => {
-    await page.goto(example)
-
     const btnL = page.getByRole('button', { name: 'Left' })
     const btnR = page.getByRole('button', { name: 'Right' })
     const editor = await waitForEditor(page)
@@ -32,8 +30,6 @@ testStory('text-align', ({ example }) => {
   })
 
   test('inherence', async ({ page }) => {
-    await page.goto(example)
-
     await emptyEditor(page)
 
     const btnC = page.getByRole('button', { name: 'Center' })
@@ -49,8 +45,6 @@ testStory('text-align', ({ example }) => {
   })
 
   test('keymap', async ({ page }) => {
-    await page.goto(example)
-
     await emptyEditor(page)
     const editor = await waitForEditor(page)
 

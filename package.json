@@ -12,6 +12,7 @@
     "dev": "pnpm --parallel --filter='./website' --filter='./playground' run dev",
     "website": "pnpm --filter='./website' run dev",
     "playground": "pnpm --filter='./playground' run dev",
+    "preview:playground": "pnpm --filter='./playground' run build && pnpm --filter='./playground' run preview",
     "gen": "turbo run gen --force && pnpm install --prefer-offline --no-frozen-lockfile",
     "test": "vitest",
     "test:coverage": "vitest run --coverage.enabled",

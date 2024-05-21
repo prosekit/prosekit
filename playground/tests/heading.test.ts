@@ -2,9 +2,8 @@ import { expect, test } from '@playwright/test'
 
 import { locateEditor, testStory } from './helper'
 
-testStory('heading', ({ example }) => {
+testStory('heading', () => {
   test('input rule', async ({ page }) => {
-    await page.goto(example)
     const editor = locateEditor(page)
 
     await editor.click()

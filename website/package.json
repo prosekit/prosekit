@@ -20,7 +20,7 @@
     "@shikijs/vitepress-twoslash": "^1.6.0",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
-    "@unocss/cli": "^0.60.2",
+    "@unocss/cli": "^0.60.3",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "clsx": "^2.1.1",
     "dedent": "^1.5.3",
@@ -39,9 +39,9 @@
     "typedoc-plugin-markdown": "4.0.2",
     "typedoc-plugin-mdn-links": "^3.1.26",
     "typescript": "^5.4.5",
-    "unocss": "^0.60.2",
+    "unocss": "^0.60.3",
     "vite": "^5.2.11",
-    "vitepress": "1.2.0",
+    "vitepress": "1.2.1",
     "vue": "^3.4.27"
   }
 }

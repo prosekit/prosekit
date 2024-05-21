@@ -2,9 +2,8 @@ import { expect, test, type Page } from '@playwright/test'
 
 import { testStory, waitForEditor } from './helper'
 
-testStory('user-menu-dynamic', ({ example }) => {
+testStory('user-menu-dynamic', () => {
   test('user-menu-dynamic', async ({ page }) => {
-    await page.goto(example)
     const editor = await waitForEditor(page)
 
     const itemAlice = page.getByText('Alice')

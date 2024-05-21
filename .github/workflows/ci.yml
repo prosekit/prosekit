@@ -38,7 +38,7 @@ jobs:
       - name: Typecheck
         run: pnpm run typecheck
 
-  test:
+  test-unit:
     runs-on: ubuntu-latest
 
     steps:
@@ -49,8 +49,21 @@ jobs:
       - name: Run unit tests
         run: pnpm run test:coverage
 
+  test-e2e:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup
+
       - name: Run e2e tests
-        run: pnpm run test:playground
+        run: pnpm run test:playground --shard="${{ matrix.shard }}/3"
 
   build:
     runs-on: ubuntu-latest

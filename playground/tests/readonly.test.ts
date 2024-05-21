@@ -2,9 +2,8 @@ import { expect, test } from '@playwright/test'
 
 import { testStory, waitForEditor } from './helper'
 
-testStory('readonly', ({ example }) => {
+testStory('readonly', () => {
   test('readonly', async ({ page }) => {
-    await page.goto(example)
     const editor = await waitForEditor(page)
 
     const readonlyButton = page.getByRole('button', { name: 'Readonly' })

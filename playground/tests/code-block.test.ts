@@ -2,9 +2,8 @@ import { expect, test, type Page } from '@playwright/test'
 
 import { emptyEditor, locateEditor, testStory } from './helper'
 
-testStory('code-block', ({ example }) => {
+testStory('code-block', () => {
   test('input rule', async ({ page }) => {
-    await page.goto(example)
     const editor = locateEditor(page)
     const pre = editor.locator('pre')
 
@@ -28,7 +27,6 @@ testStory('code-block', ({ example }) => {
   })
 
   test('enter rule', async ({ page }) => {
-    await page.goto(example)
     const editor = locateEditor(page)
     const pre = editor.locator('pre')
 

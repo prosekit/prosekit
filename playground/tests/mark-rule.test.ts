@@ -2,9 +2,8 @@ import { expect, test } from '@playwright/test'
 
 import { testStory, waitForEditor } from './helper'
 
-testStory('mark-rule', ({ example }) => {
+testStory('mark-rule', () => {
   test('hashtag', async ({ page }) => {
-    await page.goto(example)
     const editor = await waitForEditor(page)
 
     const getLinkContent = async () => {
@@ -56,7 +55,6 @@ testStory('mark-rule', ({ example }) => {
   })
 
   test('link', async ({ page }) => {
-    await page.goto(example)
     const editor = await waitForEditor(page)
 
     const getLinkContent = async () => {

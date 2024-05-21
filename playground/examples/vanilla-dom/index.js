@@ -31,9 +31,10 @@ function createList() {
   const list = new AutocompleteList()
   list.editor = editor
   list.append(
-    createItem('Insert Heading 1', () => handleHeadingConvert(1)),
-    createItem('Insert Heading 2', () => handleHeadingConvert(2)),
-    createItem('Insert Heading 3', () => handleHeadingConvert(3)),
+    createItem('Insert Heading 1', () => handleHeadingInsert(1)),
+    createItem('Insert Heading 2', () => handleHeadingInsert(2)),
+    createItem('Turn into Heading 1', () => handleHeadingConvert(1)),
+    createItem('Turn into Heading 2', () => handleHeadingConvert(2)),
   )
   list.className = Themes.AUTOCOMPLETE_MENU
   return list
@@ -54,10 +55,15 @@ function createItem(text, callback) {
 /**
  * @param {number} level
  */
+function handleHeadingInsert(level) {
+  editor.commands.insertHeading({ level })
+}
+
+/**
+ * @param {number} level
+ */
 function handleHeadingConvert(level) {
-  const nodeType = editor.schema.nodes.heading
-  const attrs = { level }
-  editor.commands.setBlockType({ nodeType, attrs })
+  editor.commands.setHeading({ level })
 }
 
 function main() {

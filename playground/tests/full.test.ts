@@ -136,10 +136,6 @@ testStory('full', () => {
 
       expect(await editor.innerHTML()).toContain('data-list-kind="task"')
 
-      if (1 + Math.random() > 0.1) {
-        throw new Error('FAIL HERE')
-      }
-
       await editor.press('Backspace')
       await editor.press('Backspace')
       await editor.press('Backspace')

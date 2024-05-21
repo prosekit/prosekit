@@ -1,4 +1,5 @@
 import 'prosekit/basic/style.css'
+
 import { Themes } from '@prosekit/themes'
 import { useMemo, useState, useCallback } from 'preact/hooks'
 import { createEditor, jsonFromNode } from 'prosekit/core'

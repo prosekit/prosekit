@@ -34,7 +34,8 @@ testStory('user-menu-dynamic', () => {
 
     await setTestBlocking(page, true)
 
-    await test.step('show loading', async () => {
+    // Show loading
+    {
       await editor.pressSequentially('@')
 
       await expect(itemAlice).toBeHidden()
@@ -44,9 +45,10 @@ testStory('user-menu-dynamic', () => {
       await expect(itemNoResults).toBeHidden()
 
       await checkMenuPosition()
-    })
+    }
 
-    await test.step('show all users', async () => {
+    // Show all users
+    {
       await setTestBlocking(page, false)
 
       await expect(itemAlice).toBeVisible()
@@ -55,9 +57,10 @@ testStory('user-menu-dynamic', () => {
       await expect(itemFocused).toContainText('A')
 
       await checkMenuPosition()
-    })
+    }
 
-    await test.step('search alice', async () => {
+    // Search alice
+    {
       await editor.pressSequentially('ali')
 
       await expect(itemAlice).toBeVisible()
@@ -66,9 +69,10 @@ testStory('user-menu-dynamic', () => {
       await expect(itemFocused).toHaveText('Alice')
 
       await checkMenuPosition()
-    })
+    }
 
-    await test.step('backspace and show all users again', async () => {
+    // Press Backspace and show all users again
+    {
       await editor.press('Backspace')
       await expect(itemFocused).toBeVisible()
       await editor.press('Backspace')
@@ -80,16 +84,18 @@ testStory('user-menu-dynamic', () => {
       await expect(itemBob).toBeVisible()
 
       await checkMenuPosition()
-    })
+    }
 
-    await test.step('search bob', async () => {
+    // Search bob
+    {
       await editor.pressSequentially('bo')
 
       await expect(itemAlice).toBeHidden()
       await expect(itemBob).toBeVisible()
-    })
+    }
 
-    await test.step('search a non-existing user', async () => {
+    // Search a non-existing user
+    {
       await editor.pressSequentially('12345678')
 
       await expect(itemAlice).toBeHidden()
@@ -97,15 +103,17 @@ testStory('user-menu-dynamic', () => {
       await expect(itemNoResults).toBeVisible()
 
       await checkMenuPosition()
-    })
+    }
 
-    await test.step('press Escape to dismiss', async () => {
+    // Press Escape to dismiss the menu
+    {
       await editor.press('Escape')
 
       await expect(menu).toBeHidden()
-    })
+    }
 
-    await test.step('press Backspace and the menu should still be dismissed', async () => {
+    // Press Backspace and the menu should still be hidden
+    {
       while ((await editor.textContent())?.includes('@')) {
         const text1 = (await editor.textContent()) ?? ''
         await editor.press('Backspace')
@@ -114,9 +122,10 @@ testStory('user-menu-dynamic', () => {
 
         await expect(menu).toBeHidden()
       }
-    })
+    }
 
-    await test.step('type @ and show the menu again', async () => {
+    // Type @ and show the menu again
+    {
       await editor.pressSequentially('@')
 
       await expect(menu).toBeVisible()
@@ -125,7 +134,35 @@ testStory('user-menu-dynamic', () => {
       await expect(itemNoResults).toBeHidden()
 
       await checkMenuPosition()
-    })
+    }
+
+    // Press Enter and insert the user
+    {
+      await editor.pressSequentially('ali')
+
+      await expect(menu).toBeVisible()
+      await expect(itemAlice).toBeVisible()
+      await expect(itemBob).toBeHidden()
+      await expect(itemNoResults).toBeHidden()
+      await expect(itemLoading).toBeHidden()
+      await expect(itemFocused).toHaveText('Alice')
+
+      await checkMenuPosition()
+
+      expect(await editor.textContent()).toEqual('@ali')
+      expect(await editor.innerHTML()).not.toContain('data-mention')
+
+      await editor.press('Enter')
+
+      expect(await editor.textContent()).toEqual('@Alice ')
+      expect(await editor.innerHTML()).toContain('data-mention')
+
+      await expect(menu).toBeHidden()
+      await expect(itemAlice).toBeHidden()
+      await expect(itemBob).toBeHidden()
+      await expect(itemNoResults).toBeHidden()
+      await expect(itemLoading).toBeHidden()
+    }
   })
 })
 

@@ -53,6 +53,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         shard: [1, 2, 3]
 
@@ -94,7 +95,7 @@ jobs:
       - name: Build without clean URLs
         run: pnpm run build
         env:
-          PROSEKIT_NO_CLEAN_URLS: 'yes'
+          PROSEKIT_NO_CLEAN_URLS: "yes"
 
       - name: Check links
         uses: lycheeverse/lychee-action@v1.10.0
@@ -130,10 +131,10 @@ jobs:
         uses: nwtgck/actions-netlify@v3.0
         continue-on-error: true
         with:
-          publish-dir: './website/dist'
+          publish-dir: "./website/dist"
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Deploy from GitHub Actions'
+          deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: true
           enable-commit-comment: false
           enable-commit-status: false
@@ -156,10 +157,10 @@ jobs:
         if: steps.deploy-1.outcome == 'failure'
         uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: './website/dist'
+          publish-dir: "./website/dist"
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Deploy from GitHub Actions (retry)'
+          deploy-message: "Deploy from GitHub Actions (retry)"
           enable-pull-request-comment: false
           enable-commit-comment: false
           enable-commit-status: false

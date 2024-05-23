@@ -17,6 +17,7 @@ export const ExampleFrameworkMenu = defineComponent<{
       <DropdownMenuRoot>
         <DropdownMenuTrigger>
           <ExampleFrameworkItem framework={props.framework} />
+          <span class="i-lucide-chevron-down size-4 opacity-50" />
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           {props.frameworks.map((framework) => (
@@ -24,7 +25,7 @@ export const ExampleFrameworkMenu = defineComponent<{
               <span class="flex items-center justify-center gap-1">
                 <span class="h-full w-6 inline-flex items-center justify-start">
                   {props.framework === framework ? (
-                    <span class="i-lucide-check h-4 w-4 opacity-70"></span>
+                    <span class="i-lucide-check size-4 opacity-70"></span>
                   ) : null}
                 </span>
                 <ExampleFrameworkItem framework={framework} />

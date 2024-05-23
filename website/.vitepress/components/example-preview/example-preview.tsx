@@ -10,9 +10,10 @@ import {
 
 import { Switch } from '../switch/switch'
 
+import { ExampleDownloadButton } from './example-download-button'
 import { ExampleEmbed } from './example-embed'
+import { ExampleForkMenu } from './example-fork-menu'
 import { ExampleFrameworkMenu } from './example-framework-menu'
-import { ExampleOpenMenu } from './example-open-menu'
 
 export const ExamplePreview = defineComponent<{
   name: string
@@ -50,21 +51,23 @@ export const ExamplePreview = defineComponent<{
         )}
       >
         <div class="mx-[-24px] flex justify-end bg-[--vp-code-tab-bg] px-2 pb-1 pt-2 sm:mx-0 space-x-2">
+          <ExampleFrameworkMenu
+            framework={framework.value}
+            onChange={onFrameworkChange}
+            frameworks={frameworks.value}
+          />
           <Switch
             checked={showCode.value}
             onChange={(value) => (showCode.value = value)}
           >
             Code
           </Switch>
-          <ExampleFrameworkMenu
-            framework={framework.value}
-            onChange={onFrameworkChange}
-            frameworks={frameworks.value}
-          />
-          <ExampleOpenMenu example={framework.value + '-' + props.name} />
+          <div class="flex-1"></div>
+          <ExampleDownloadButton example={framework.value + '-' + props.name} />
+          <ExampleForkMenu example={framework.value + '-' + props.name} />
         </div>
 
-        <div class="mx-[-24px] bg-[--vp-code-tab-bg] px-1 pb-4 sm:mx-0 sm:px-4">
+        <div class="mx-[-24px] bg-[--vp-code-tab-bg] px-1 pb-2 pt-0 sm:mx-0">
           <ExampleEmbed
             example={framework.value + '-' + props.name}
             key={framework.value + '-' + props.name}

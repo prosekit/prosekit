@@ -16,7 +16,7 @@ export const ExampleDownloadButton = defineComponent<{
       window.open(url, '_blank')
     }
 
-    https: return () => (
+    return () => (
       <DropdownMenuRoot>
         <DropdownMenuTrigger onClick={handleDownload} class="flex gap-1">
           <span class="i-lucide-arrow-down-to-line size-4 opacity-70" />

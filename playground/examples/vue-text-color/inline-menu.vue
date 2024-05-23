@@ -2,63 +2,44 @@
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
-import { effect, ref } from 'vue'
 import type { EditorExtension } from './extension'
 import Toggle from './toggle.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
-const customColor = ref('')
-const open = ref(false)
-const handleOpenChange = (value: boolean) => {
-  open.value = value
-  if (!open.value) {
-    customColor.value = ''
-  }
+const colors = [
+  { name: 'default', value: '' },
+  { name: 'red', value: '#ef4444' },
+  { name: 'orange', value: '#f97316' },
+  { name: 'yellow', value: '#eab308' },
+  { name: 'green', value: '#22c55e' },
+  { name: 'blue', value: '#3b82f6' },
+  { name: 'indigo', value: '#6366f1' },
+  { name: 'violet', value: '#a855f7' },
+]
+
+const hasTextColor = (color: string) => {
+  return editor.value.marks.textColor.isActive({ color })
 }
 
-const red = '#ef4444'
-const green = '#22c55e'
-const blue = '#3b82f6'
-
-effect(() => {
-  const color = customColor.value
-  if (color) {
-    editor.value.commands.addTextColor({ color })
+const toggleTextColor = (color: string) => {
+  if (!color || hasTextColor(color)) {
+    editor.value.commands.removeTextColor()
+  } else {
+    editor.value.commands.setTextColor({ color })
   }
-})
+}
 </script>
 
 <template>
-  <InlinePopover
-    :open="open"
-    :onOpenChange="handleOpenChange"
-    :class="Themes.INLINE_MENU_MAIN"
-  >
+  <InlinePopover :class="Themes.INLINE_MENU_MAIN">
     <Toggle
-      :pressed="editor.marks.textColor.isActive({ color: red })"
-      :onClick="() => editor.commands.toggleTextColor({ color: red })"
+      v-for="color in colors"
+      :key="color.name"
+      :pressed="hasTextColor(color.value)"
+      :onClick="() => toggleTextColor(color.value)"
+      :tooltip="color.name"
     >
-      <span class="text-red-500">Red</span>
+      <span :style="{ color: color.value }">A</span>
     </Toggle>
-
-    <Toggle
-      :pressed="editor.marks.textColor.isActive({ color: green })"
-      :onClick="() => editor.commands.toggleTextColor({ color: green })"
-    >
-      <span class="text-green-500">Green</span>
-    </Toggle>
-
-    <Toggle
-      :pressed="editor.marks.textColor.isActive({ color: blue })"
-      :onClick="() => editor.commands.toggleTextColor({ color: blue })"
-    >
-      <span class="text-blue-500">Blue</span>
-    </Toggle>
-
-    <input
-      placeholder="Input custom color..."
-      v-model="customColor"
-      class="p-1"
-    />
   </InlinePopover>
 </template>

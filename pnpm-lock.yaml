@@ -521,12 +521,18 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0
     devDependencies:
+      dedent:
+        specifier: ^1.5.3
+        version: 1.5.3
       esbuild:
         specifier: ^0.21.3
         version: 0.21.3
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
+      vitest:
+        specifier: ^1.6.0
+        version: 1.6.0(jsdom@24.0.0)
 
   packages/unocss-preset:
     dependencies:

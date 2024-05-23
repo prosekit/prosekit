@@ -8,7 +8,7 @@ export const ExampleDownloadButton = defineComponent<{
 }>(
   (props) => {
     const handleDownload = () => {
-      const url = new URL(`https://download-directory.github.io/`)
+      const url = new URL(`https://downgit.github.io/#/home`)
       url.searchParams.set(
         'url',
         `https://github.com/prosekit/examples/tree/master/${props.example}`,

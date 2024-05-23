@@ -5,7 +5,7 @@ import {
   removeMark,
   union,
 } from 'prosekit/core'
-import type { Command, EditorState } from 'prosekit/pm/state'
+import type { Command } from 'prosekit/pm/state'
 
 export interface TextColorAttrs {
   color: string | null
@@ -31,20 +31,7 @@ export function defineTextColorSpec() {
   })
 }
 
-function getCurrentColor(state: EditorState) {
-  const { $from } = state.selection
-  const marks = $from.marksAcross($from)
-  if (!marks) {
-    return null
-  }
-  for (const mark of marks) {
-    if (mark.type.name === 'textColor') {
-      return (mark.attrs as TextColorAttrs).color
-    }
-  }
-}
-
-function addTextColor(attrs: TextColorAttrs): Command {
+function setTextColor(attrs: TextColorAttrs): Command {
   return addMark({ type: 'textColor', attrs })
 }
 
@@ -52,21 +39,10 @@ function removeTextColor(): Command {
   return removeMark({ type: 'textColor' })
 }
 
-function toggleTextColor(attrs: TextColorAttrs): Command {
-  return (state, dispatch, view) => {
-    if (!attrs.color || getCurrentColor(state) === attrs.color) {
-      return removeTextColor()(state, dispatch, view)
-    } else {
-      return addTextColor(attrs)(state, dispatch, view)
-    }
-  }
-}
-
 export function defineTextColorCommands() {
   return defineCommands({
-    addTextColor,
+    setTextColor,
     removeTextColor,
-    toggleTextColor,
   })
 }
 

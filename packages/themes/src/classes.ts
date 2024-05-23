@@ -3,11 +3,10 @@
 import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
-import { Colors } from './colors'
-import { replaceShortcuts } from './utils/replace'
+import { replaceColor } from './colors'
 
 function cn(...args: Array<string | undefined | null | false>): string {
-  return twMerge(replaceShortcuts(clsx(...args), Colors))
+  return twMerge(replaceColor(clsx(...args)))
 }
 
 const FLOATING_MENU = cn(

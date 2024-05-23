@@ -1,53 +1,83 @@
 // @unocss-include
 
-import { mergeRecords } from './utils/merge-records'
+const COLORS = [
+  ['background', 'white', 'neutral-900'],
+  ['foreground', 'neutral-900', 'zinc-50'],
+  ['primary', 'zinc-900', 'zinc-50'],
+  ['primary-foreground', 'zinc-50', 'zinc-900'],
+  ['secondary', 'zinc-100', 'zinc-800'],
+  ['secondary-foreground', 'zinc-900', 'zinc-50'],
+  ['muted', 'zinc-100', 'zinc-800'],
+  ['muted-foreground', 'zinc-500', 'zinc-500'],
+  ['accent', 'gray-200', 'gray-700'],
+  ['accent-foreground', 'zinc-900', 'zinc-50'],
+  ['destructive', 'red-500', 'red-900'],
+  ['destructive-foreground', 'zinc-50', 'zinc-50'],
+  ['border', 'zinc-200', 'zinc-800'],
+  ['input', 'zinc-200', 'zinc-800'],
+  ['ring', 'zinc-900', 'zinc-300'],
+] as const
 
-export const Colors = mergeRecords(
-  createColorAliases('background', 'white', 'neutral-900'),
-  createColorAliases('foreground', 'neutral-900', 'zinc-50'),
-  createColorAliases('primary', 'zinc-900', 'zinc-50'),
-  createColorAliases('primary-foreground', 'zinc-50', 'zinc-900'),
-  createColorAliases('secondary', 'zinc-100', 'zinc-800'),
-  createColorAliases('secondary-foreground', 'zinc-900', 'zinc-50'),
-  createColorAliases('muted', 'zinc-100', 'zinc-800'),
-  createColorAliases('muted-foreground', 'zinc-500', 'zinc-500'),
-  createColorAliases('accent', 'gray-200', 'gray-700'),
-  createColorAliases('accent-foreground', 'zinc-900', 'zinc-50'),
-  createColorAliases('destructive', 'red-500', 'red-900'),
-  createColorAliases('destructive-foreground', 'zinc-50', 'zinc-50'),
-  createColorAliases('border', 'zinc-200', 'zinc-800'),
-  createColorAliases('input', 'zinc-200', 'zinc-800'),
-  createColorAliases('ring', 'zinc-900', 'zinc-300'),
+const GROUPS = ['text', 'bg', 'border', 'ring', 'ring-offset'] as const
+
+// prettier-ignore
+const COLOR_REGEX = new RegExp(
+    (
+        `^` +
+        `(?<prefix>.*?)` +
+        `(?<group>` +
+            GROUPS.join('|') +
+        `)` +
+        `-` +
+        `(?<alias>` +
+            COLORS.map(([name]) => name).sort((a, b) => b.length - a.length).join('|') +
+        `)` +
+        `(?<suffix>.*)` + 
+        `$`
+    ),
+    'g',
 )
 
-function createColorAliases<
-  N extends string,
-  A extends string,
-  B extends string,
->(name: N, color: A, darkColor: B) {
-  return mergeRecords(
-    createColorAlias(name, color, darkColor, 'text'),
-    createColorAlias(name, color, darkColor, 'bg'),
-    createColorAlias(name, color, darkColor, 'border'),
-    createColorAlias(name, color, darkColor, 'ring'),
-    createColorAlias(name, color, darkColor, 'ring-offset'),
-  )
+export function replaceColor(className: string) {
+  COLOR_REGEX.lastIndex = 0
+  if (!COLOR_REGEX.test(className)) {
+    return className
+  }
+
+  const output: string[] = []
+
+  for (const input of className.split(' ')) {
+    COLOR_REGEX.lastIndex = 0
+    const match = COLOR_REGEX.exec(input)
+    if (match) {
+      const { prefix, group, alias, suffix } = match.groups || {}
+      const [, color, darkColor] = COLORS.find(([name]) => name === alias)!
+
+      if (!color || !darkColor || !group || !alias) {
+        throw new Error(`Unable to parse color from "${input}"`)
+      }
+
+      output.push(
+        `${prefix}${group}-${color}${suffix} dark:${prefix}${group}-${darkColor}${suffix}`,
+      )
+    } else {
+      output.push(input)
+    }
+  }
+
+  return output.join(' ')
 }
 
-function createColorAlias<
-  N extends string,
-  A extends string,
-  B extends string,
-  P extends string,
->(
-  name: N,
-  color: A,
-  darkColor: B,
-  prefix: P,
-): Record<`${P}-${N}`, `${P}-${A} dark:${P}-${B}`> {
-  type Key = `${P}-${N}`
-  type Val = `${P}-${A} dark:${P}-${B}`
-  const key: Key = `${prefix}-${name}`
-  const val: Val = `${prefix}-${color} dark:${prefix}-${darkColor}`
-  return { [key]: val } as Record<Key, Val>
+const Colors: Record<string, string> = {}
+
+for (const [alias, color, darkColor] of COLORS) {
+  for (const group of GROUPS) {
+    for (let opacity = 0; opacity <= 100; opacity += 5) {
+      const suffix = opacity === 0 ? '' : `/${opacity}`
+      Colors[`${group}-${alias}${suffix}`] =
+        `${group}-${color}${suffix} dark:${group}-${darkColor}${suffix}`
+    }
+  }
 }
+
+export { Colors }

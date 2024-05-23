@@ -19,8 +19,6 @@ export const ExampleForkMenu = defineComponent<{
       window.open(url, '_blank')
     }
 
-    
-
     return () => (
       <DropdownMenuRoot>
         <DropdownMenuTrigger hideButton={true} class="flex gap-1">

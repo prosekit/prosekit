@@ -75,7 +75,7 @@ importers:
   packages/basic:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.1
+        specifier: ^0.5.2
         version: link:../core
       '@prosekit/extensions':
         specifier: ^0.5.0
@@ -95,7 +95,7 @@ importers:
         version: 12.1.4(postcss@8.4.38)
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -123,7 +123,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -140,8 +140,8 @@ importers:
         specifier: ^2.2.1
         version: 2.2.1
       '@microsoft/api-extractor':
-        specifier: ^7.43.7
-        version: 7.43.7(@types/node@20.12.12)
+        specifier: ^7.43.8
+        version: 7.43.8(@types/node@20.12.12)
       '@sindresorhus/slugify':
         specifier: ^2.2.1
         version: 2.2.1
@@ -162,7 +162,7 @@ importers:
         version: 9.0.1
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
     devDependencies:
       '@changesets/read':
         specifier: ^0.6.0
@@ -192,8 +192,8 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3
       tsx:
-        specifier: ^4.10.5
-        version: 4.10.5
+        specifier: ^4.11.0
+        version: 4.11.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -201,7 +201,7 @@ importers:
   packages/extensions:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.1
+        specifier: ^0.5.2
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
@@ -227,7 +227,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -238,7 +238,7 @@ importers:
   packages/lit:
     dependencies:
       '@prosekit/web':
-        specifier: ^0.1.6
+        specifier: ^0.1.7
         version: link:../web
     devDependencies:
       '@prosekit/dev':
@@ -246,7 +246,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -286,7 +286,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -297,13 +297,13 @@ importers:
   packages/preact:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.1
+        specifier: ^0.5.2
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.6
+        specifier: ^0.1.7
         version: link:../web
       react-merge-refs:
         specifier: ^2.1.1
@@ -317,7 +317,7 @@ importers:
         version: 10.22.0
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -393,7 +393,7 @@ importers:
         version: 4.2.17
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -404,13 +404,13 @@ importers:
   packages/react:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.1
+        specifier: ^0.5.2
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.6
+        specifier: ^0.1.7
         version: link:../web
       '@prosemirror-adapter/core':
         specifier: ^0.2.6
@@ -436,7 +436,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -447,13 +447,13 @@ importers:
   packages/solid:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.1
+        specifier: ^0.5.2
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.6
+        specifier: ^0.1.7
         version: link:../web
     devDependencies:
       '@prosekit/dev':
@@ -464,7 +464,7 @@ importers:
         version: 1.8.17
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -475,13 +475,13 @@ importers:
   packages/svelte:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.1
+        specifier: ^0.5.2
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.6
+        specifier: ^0.1.7
         version: link:../web
     devDependencies:
       '@prosekit/dev':
@@ -503,8 +503,8 @@ importers:
         specifier: ^3.7.1
         version: 3.7.1(@babel/core@7.24.5)(postcss@8.4.38)(svelte@4.2.17)
       tsx:
-        specifier: ^4.10.5
-        version: 4.10.5
+        specifier: ^4.11.0
+        version: 4.11.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -547,13 +547,13 @@ importers:
   packages/vue:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.1
+        specifier: ^0.5.2
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.6
+        specifier: ^0.1.7
         version: link:../web
       '@prosemirror-adapter/core':
         specifier: ^0.2.6
@@ -564,7 +564,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -602,7 +602,7 @@ importers:
         specifier: ^1.6.5
         version: 1.6.5
       '@prosekit/core':
-        specifier: ^0.5.1
+        specifier: ^0.5.2
         version: link:../core
       '@prosekit/extensions':
         specifier: ^0.5.0
@@ -611,15 +611,15 @@ importers:
         specifier: ^0.1.4
         version: link:../pm
       '@zag-js/dom-query':
-        specifier: ^0.50.0
-        version: 0.50.0
+        specifier: ^0.51.0
+        version: 0.51.0
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
       tsup:
         specifier: ^8.0.2
-        version: 8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5)
+        version: 8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -633,23 +633,23 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0(@babel/core@7.24.5)(preact@10.22.0)(vite@5.2.11)
       '@astrojs/react':
-        specifier: ^3.3.4
-        version: 3.3.4(@types/react-dom@18.3.0)(@types/react@18.3.2)(react-dom@18.3.1)(react@18.3.1)(vite@5.2.11)
+        specifier: ^3.4.0
+        version: 3.4.0(@types/react-dom@18.3.0)(@types/react@18.3.2)(react-dom@18.3.1)(react@18.3.1)(vite@5.2.11)
       '@astrojs/solid-js':
         specifier: ^4.2.0
         version: 4.2.0(solid-js@1.8.17)(vite@5.2.11)
       '@astrojs/svelte':
         specifier: ^5.4.0
-        version: 5.4.0(astro@4.8.6)(svelte@4.2.17)(typescript@5.4.5)(vite@5.2.11)
+        version: 5.4.0(astro@4.9.1)(svelte@4.2.17)(typescript@5.4.5)(vite@5.2.11)
       '@astrojs/vue':
-        specifier: ^4.2.0
-        version: 4.2.0(astro@4.8.6)(vite@5.2.11)(vue@3.4.27)
+        specifier: ^4.3.0
+        version: 4.3.0(astro@4.9.1)(vite@5.2.11)(vue@3.4.27)
       '@iconify-json/lucide':
-        specifier: ^1.1.187
-        version: 1.1.187
+        specifier: ^1.1.188
+        version: 1.1.188
       '@playwright/test':
-        specifier: ^1.44.0
-        version: 1.44.0
+        specifier: ^1.44.1
+        version: 1.44.1
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../packages/dev
@@ -669,8 +669,8 @@ importers:
         specifier: ^0.60.3
         version: 0.60.3
       astro:
-        specifier: ^4.8.6
-        version: 4.8.6(typescript@5.4.5)
+        specifier: ^4.9.1
+        version: 4.9.1(typescript@5.4.5)
       lit:
         specifier: ^3.1.3
         version: 3.1.3
@@ -732,8 +732,8 @@ importers:
         specifier: ^1.1.42
         version: 1.1.42
       '@iconify-json/lucide':
-        specifier: ^1.1.187
-        version: 1.1.187
+        specifier: ^1.1.188
+        version: 1.1.188
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../packages/dev
@@ -780,8 +780,8 @@ importers:
         specifier: '*'
         version: link:../playground
       radix-vue:
-        specifier: ^1.8.0
-        version: 1.8.0(vue@3.4.27)
+        specifier: ^1.8.1
+        version: 1.8.1(vue@3.4.27)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -789,8 +789,8 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       shadcn-vue:
-        specifier: ^0.10.4
-        version: 0.10.4(vue@3.4.27)
+        specifier: ^0.10.5
+        version: 0.10.5(@vitest/ui@1.6.0)(vitest@1.6.0)(vue@3.4.27)
       type-fest:
         specifier: ^4.18.2
         version: 4.18.2
@@ -816,8 +816,8 @@ importers:
         specifier: ^5.2.11
         version: 5.2.11(lightningcss@1.25.0)
       vitepress:
-        specifier: 1.2.1
-        version: 1.2.1(@algolia/client-search@4.23.3)(@types/react@18.3.2)(lightningcss@1.25.0)(postcss@8.4.38)(react-dom@18.3.1)(react@18.3.1)(search-insights@2.13.0)(typescript@5.4.5)
+        specifier: 1.2.2
+        version: 1.2.2(@algolia/client-search@4.23.3)(@types/react@18.3.2)(lightningcss@1.25.0)(postcss@8.4.38)(react-dom@18.3.1)(react@18.3.1)(search-insights@2.13.0)(typescript@5.4.5)
       vue:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
@@ -1149,8 +1149,8 @@ packages:
       prismjs: 1.29.0
     dev: true
 
-  /@astrojs/react@3.3.4(@types/react-dom@18.3.0)(@types/react@18.3.2)(react-dom@18.3.1)(react@18.3.1)(vite@5.2.11):
-    resolution: {integrity: sha512-azFYckxcMnHcc5kfXW38oNXR3Na+OMFnzimXVBxRJ906tHkO/sBOBXhsmgQ8JGr/4WEjyaz8zKZj76TWjNMCdw==}
+  /@astrojs/react@3.4.0(@types/react-dom@18.3.0)(@types/react@18.3.2)(react-dom@18.3.1)(react@18.3.1)(vite@5.2.11):
+    resolution: {integrity: sha512-5MpU+1WVqirEIoEmF1r6HkxqjOWEMjni/qCzPX/oaSyumOZNdCGfDN9GoGJhgSxiZOVfob+MNy46H4d3AgrYpQ==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       '@types/react': ^17.0.50 || ^18.0.21
@@ -1187,7 +1187,7 @@ packages:
       - vite
     dev: true
 
-  /@astrojs/svelte@5.4.0(astro@4.8.6)(svelte@4.2.17)(typescript@5.4.5)(vite@5.2.11):
+  /@astrojs/svelte@5.4.0(astro@4.9.1)(svelte@4.2.17)(typescript@5.4.5)(vite@5.2.11):
     resolution: {integrity: sha512-D9/CVJ+Fy3fu+FzJ7x+0GnRUhHsJKsU6tW/xQQ1QzrFMABuEoM5U4YKTYtxWkqB4B4jNb7gbA4p9ZtEhYZ3/+w==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
@@ -1196,7 +1196,7 @@ packages:
       typescript: ^5.3.3
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.0.2(svelte@4.2.17)(vite@5.2.11)
-      astro: 4.8.6(typescript@5.4.5)
+      astro: 4.9.1(typescript@5.4.5)
       svelte: 4.2.17
       svelte2tsx: 0.6.27(svelte@4.2.17)(typescript@5.4.5)
       typescript: 5.4.5
@@ -1220,8 +1220,8 @@ packages:
       - supports-color
     dev: true
 
-  /@astrojs/vue@4.2.0(astro@4.8.6)(vite@5.2.11)(vue@3.4.27):
-    resolution: {integrity: sha512-cjgPCeZtD2hcqC6vlL1GBdfEQdXcw5nd68IF5NFSiZNdcGpkug1TRgn7QeO2sfjUxI683igy7EwDYvRBXqzZ+A==}
+  /@astrojs/vue@4.3.0(astro@4.9.1)(vite@5.2.11)(vue@3.4.27):
+    resolution: {integrity: sha512-kgemamWBGxSILInyINmK6jZlnUShWBKq9cekgBuiKK7NXUbEYWJQ4B9pE4gNlY0masybr8TYfhth6GaWBpenIw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       astro: ^4.0.0
@@ -1230,7 +1230,7 @@ packages:
       '@vitejs/plugin-vue': 5.0.4(vite@5.2.11)(vue@3.4.27)
       '@vitejs/plugin-vue-jsx': 3.1.0(vite@5.2.11)(vue@3.4.27)
       '@vue/compiler-sfc': 3.4.27
-      astro: 4.8.6(typescript@5.4.5)
+      astro: 4.9.1(typescript@5.4.5)
       vite-plugin-vue-devtools: 7.2.0(vite@5.2.11)(vue@3.4.27)
       vue: 3.4.27(typescript@5.4.5)
     transitivePeerDependencies:
@@ -2610,8 +2610,8 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
-  /@iconify-json/lucide@1.1.187:
-    resolution: {integrity: sha512-ToklgtHDm2Tb6WrXZOEubXx0bH3D2Tpp3LayIbmzF1c8IS0Fb/qLnISYiZ5UbQZMODwTB1Hj9RnGPl1O9W061A==}
+  /@iconify-json/lucide@1.1.188:
+    resolution: {integrity: sha512-yJNoU7vX11OvdeSKBiAvmbk/etAq2HPCZQkZX1U687NZhn8dTfx1PfyNhPxtJilrd288XGDKK+NQgygcZ+Ho4g==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
@@ -2820,14 +2820,14 @@ packages:
     dev: true
     optional: true
 
-  /@internationalized/date@3.5.2:
-    resolution: {integrity: sha512-vo1yOMUt2hzp63IutEaTUxROdvQg1qlMRsbCvbay2AK2Gai7wIgCyK5weEX3nHkiLgo4qCXHijFNC/ILhlRpOQ==}
+  /@internationalized/date@3.5.4:
+    resolution: {integrity: sha512-qoVJVro+O0rBaw+8HPjUB1iH8Ihf8oziEnqMnvhJUSuVIrHOuZ6eNLHNvzXJKUvAtaDiqMnRlg8Z2mgh09BlUw==}
     dependencies:
       '@swc/helpers': 0.5.8
     dev: true
 
-  /@internationalized/number@3.5.2:
-    resolution: {integrity: sha512-4FGHTi0rOEX1giSkt5MH4/te0eHBq3cvAYsfLlpguV6pzJAReXymiYpE5wPCqKqjkUO3PIsyvk+tBiIV1pZtbA==}
+  /@internationalized/number@3.5.3:
+    resolution: {integrity: sha512-rd1wA3ebzlp0Mehj5YTuTI50AQEx80gWFyHcQu+u91/5NgdwBecO8BH6ipPfE+lmQ9d63vpB3H9SHoIUiupllw==}
     dependencies:
       '@swc/helpers': 0.5.8
     dev: true
@@ -2953,26 +2953,26 @@ packages:
       read-yaml-file: 1.1.0
     dev: false
 
-  /@microsoft/api-extractor-model@7.28.17(@types/node@20.12.12):
-    resolution: {integrity: sha512-b2AfLP33oEVtWLeNavSBRdyDa8sKlXjN4pdhBnC4HLontOtjILhL1ERAmZObF4PWSyChnnC2vjb47C9WKCFRGg==}
+  /@microsoft/api-extractor-model@7.28.18(@types/node@20.12.12):
+    resolution: {integrity: sha512-5j8Vp4IiXD68Auccf9wP/VQ0GYfI5x3bW447SLwJOqinvnnXfNZlaYp7sj3u/LyzhrJFsynJ+tBJlN/koDGfZg==}
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 4.3.0(@types/node@20.12.12)
+      '@rushstack/node-core-library': 5.0.0(@types/node@20.12.12)
     transitivePeerDependencies:
       - '@types/node'
 
-  /@microsoft/api-extractor@7.43.7(@types/node@20.12.12):
-    resolution: {integrity: sha512-t5M8BdnS+TmroUA/Z9HJXExS9iL4pK9I3yGu9PsXVTXPmcVXlBlA1CVI7TjRa1jwm+vusG/+sbX1/t5UkJhQMg==}
+  /@microsoft/api-extractor@7.43.8(@types/node@20.12.12):
+    resolution: {integrity: sha512-rGEFjr9xnjP/5YwDpPL10BBPQnWEz7X7sSF8twHevZVJTlBFKRetMLE7v8tIw6CX1iIJeYO6NWQcUz23cGthdA==}
     hasBin: true
     dependencies:
-      '@microsoft/api-extractor-model': 7.28.17(@types/node@20.12.12)
+      '@microsoft/api-extractor-model': 7.28.18(@types/node@20.12.12)
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 4.3.0(@types/node@20.12.12)
+      '@rushstack/node-core-library': 5.0.0(@types/node@20.12.12)
       '@rushstack/rig-package': 0.5.2
-      '@rushstack/terminal': 0.11.0(@types/node@20.12.12)
-      '@rushstack/ts-command-line': 4.21.0(@types/node@20.12.12)
+      '@rushstack/terminal': 0.11.1(@types/node@20.12.12)
+      '@rushstack/ts-command-line': 4.21.1(@types/node@20.12.12)
       lodash: 4.17.21
       minimatch: 3.0.8
       resolve: 1.22.8
@@ -3052,12 +3052,12 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: false
 
-  /@playwright/test@1.44.0:
-    resolution: {integrity: sha512-rNX5lbNidamSUorBhB4XZ9SQTjAqfe5M+p37Z8ic0jPFBMo5iCtQz1kRWkEMg+rYOKSlVycpQmpqjSFq7LXOfg==}
+  /@playwright/test@1.44.1:
+    resolution: {integrity: sha512-1hZ4TNvD5z9VuhNJ/walIjvMVvYkZKf71axoF/uiAqpntQJXpG64dlXhoDXE3OczPuTuvjf/M5KWFg5VAVUS3Q==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      playwright: 1.44.0
+      playwright: 1.44.1
     dev: true
 
   /@pnpm/config.env-replace@1.1.0:
@@ -3293,8 +3293,8 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@rushstack/node-core-library@4.3.0(@types/node@20.12.12):
-    resolution: {integrity: sha512-JuNZ7lwaYQ4R1TugpryyWBn4lIxK+L7fF+muibFp0by5WklG22nsvH868fuBoZMLo5FqAs6WFOifNos4PJjWSA==}
+  /@rushstack/node-core-library@5.0.0(@types/node@20.12.12):
+    resolution: {integrity: sha512-5VpOqJ48ADNTl3AOQlFbck6ig0fFGxT22eXAFtW0zOfCtrqJi50lyzEWjhJ8o+xyfEh+mD6ay0cJImkWJYoshg==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
@@ -3302,12 +3302,14 @@ packages:
         optional: true
     dependencies:
       '@types/node': 20.12.12
+      ajv: 8.13.0
+      ajv-draft-04: 1.0.0(ajv@8.13.0)
+      ajv-formats: 3.0.1(ajv@8.13.0)
       fs-extra: 7.0.1
       import-lazy: 4.0.0
       jju: 1.4.0
       resolve: 1.22.8
       semver: 7.5.4
-      z-schema: 5.0.5
 
   /@rushstack/rig-package@0.5.2:
     resolution: {integrity: sha512-mUDecIJeH3yYGZs2a48k+pbhM6JYwWlgjs2Ca5f2n1G2/kgdgP9D/07oglEGf6mRyXEnazhEENeYTSNDRCwdqA==}
@@ -3315,22 +3317,22 @@ packages:
       resolve: 1.22.8
       strip-json-comments: 3.1.1
 
-  /@rushstack/terminal@0.11.0(@types/node@20.12.12):
-    resolution: {integrity: sha512-LKz7pv0G9Py5uULahNSixK1pTqIIKd103pAGhDW51YfzPojvmO5wfITe0PEUNAJZjuufN/KgeRW83dJo1gL2rQ==}
+  /@rushstack/terminal@0.11.1(@types/node@20.12.12):
+    resolution: {integrity: sha512-DtTYA8ujZFJZUYD+dJkH3soAeOJ710Bu/5sLO5T0QBoMFR1PkCUUBYsGo9r8f2vLKSATbAJCeWH9ijoP7hhN9w==}
     peerDependencies:
       '@types/node': '*'
     peerDependenciesMeta:
       '@types/node':
         optional: true
     dependencies:
-      '@rushstack/node-core-library': 4.3.0(@types/node@20.12.12)
+      '@rushstack/node-core-library': 5.0.0(@types/node@20.12.12)
       '@types/node': 20.12.12
       supports-color: 8.1.1
 
-  /@rushstack/ts-command-line@4.21.0(@types/node@20.12.12):
-    resolution: {integrity: sha512-z38FLUCn8M9FQf19gJ9eltdwkvc47PxvJmVZS6aKwbBAa3Pis3r3A+ZcBCVPNb9h/Tbga+i0tHdzoSGUoji9GQ==}
+  /@rushstack/ts-command-line@4.21.1(@types/node@20.12.12):
+    resolution: {integrity: sha512-D4sNIzGqgPRPSJ3UirnpMmxlVzs+x7vL+hwC0b73CE0aflFoU87P/93Fm2QJFGYM099ErM4Usxa1JR4eICIiKw==}
     dependencies:
-      '@rushstack/terminal': 0.11.0(@types/node@20.12.12)
+      '@rushstack/terminal': 0.11.1(@types/node@20.12.12)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -4296,6 +4298,21 @@ packages:
     dependencies:
       tinyspy: 2.2.1
 
+  /@vitest/ui@1.6.0(vitest@1.6.0):
+    resolution: {integrity: sha512-k3Lyo+ONLOgylctiGovRKy7V4+dIN2yxstX3eY5cWFXH6WP+ooVX79YSyi0GagdTQzLmT43BF27T0s6dOIPBXA==}
+    peerDependencies:
+      vitest: 1.6.0
+    dependencies:
+      '@vitest/utils': 1.6.0
+      fast-glob: 3.3.2
+      fflate: 0.8.2
+      flatted: 3.3.1
+      pathe: 1.1.2
+      picocolors: 1.0.1
+      sirv: 2.0.4
+      vitest: 1.6.0(@vitest/ui@1.6.0)(jsdom@24.0.0)(lightningcss@1.25.0)
+    dev: true
+
   /@vitest/utils@1.6.0:
     resolution: {integrity: sha512-21cPiuGMoMZwiOHa2i4LXkMkMkCGzA+MVFV70jRwHo95dL4x/ts5GZhML1QWuy7yfp3WzK3lRvZi3JnXTYqrBw==}
     dependencies:
@@ -4634,6 +4651,10 @@ packages:
     resolution: {integrity: sha512-AXTZIpTfCoJZ5+Oj9woSBPKILbrSXpEbXjbBRQ3/JFb+VSbmljNrLpr5OblGEzhVD7enLc+rEmrgGiRC4je6Jg==}
     dev: false
 
+  /@zag-js/dom-query@0.51.0:
+    resolution: {integrity: sha512-4fM0vcBqYsywaGylMHaK9zchFBNPiMNWnV4OIzDG+csFVc9aBYmliWZXIIKrdBfvUaTLUlZ8Ui4hYW7y51u7Lw==}
+    dev: false
+
   /@zag-js/interact-outside@0.50.0:
     resolution: {integrity: sha512-dqE4sNjmw28ZZGF78v++aXBO/iYN7nz28PEsHDu2T/+DqgYWWiSQ3akxorfUWewSUUw3qZcz9P8kIBYFaBDwcQ==}
     dependencies:
@@ -4689,12 +4710,40 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /ajv-draft-04@1.0.0(ajv@8.13.0):
+    resolution: {integrity: sha512-mv00Te6nmYbRp5DCwclxtt7yV/joXJPGS7nM+97GdxvuttCOfgI3K4U25zboyeX0O+myI8ERluxQe5wljMmVIw==}
+    peerDependencies:
+      ajv: ^8.5.0
+    peerDependenciesMeta:
+      ajv:
+        optional: true
+    dependencies:
+      ajv: 8.13.0
+
+  /ajv-formats@3.0.1(ajv@8.13.0):
+    resolution: {integrity: sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==}
+    peerDependencies:
+      ajv: ^8.0.0
+    peerDependenciesMeta:
+      ajv:
+        optional: true
+    dependencies:
+      ajv: 8.13.0
+
   /ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
     dependencies:
       fast-deep-equal: 3.1.3
       fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
+      uri-js: 4.4.1
+
+  /ajv@8.13.0:
+    resolution: {integrity: sha512-PRA911Blj99jR5RMeTunVbNXMF6Lp4vZXnk5GQjcnUWUTsrXtekg/pnmFFI2u/I36Y/2bITGS30GZCXei6uNkA==}
+    dependencies:
+      fast-deep-equal: 3.1.3
+      json-schema-traverse: 1.0.0
+      require-from-string: 2.0.2
       uri-js: 4.4.1
 
   /algoliasearch@4.23.2:
@@ -4903,8 +4952,8 @@ packages:
   /assertion-error@1.1.0:
     resolution: {integrity: sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==}
 
-  /astro@4.8.6(typescript@5.4.5):
-    resolution: {integrity: sha512-psHIfK+e+bMPhRwghV9yCGH/uc1jvY4DHmDZdoEepax9yA7kzYH0wt3dpkqlcrO2zxl5jzSC3DmqZfkD6wnW9A==}
+  /astro@4.9.1(typescript@5.4.5):
+    resolution: {integrity: sha512-9TsoAu0WBPiqyAIj9H0JW7R+tIjPjFsPKo70Nja6WL3imTTuUJQmnCre4ZVmoNV3oicTTlb+N4zjRYANW0Ty9A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
     dependencies:
@@ -5442,12 +5491,6 @@ packages:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
     engines: {node: '>= 6'}
 
-  /commander@9.5.0:
-    resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
-    engines: {node: ^12.20.0 || >=14}
-    requiresBuild: true
-    optional: true
-
   /common-ancestor-path@1.0.1:
     resolution: {integrity: sha512-L3sHRo1pXXEqX8VU28kfgUY+YGsk09hPqZiZmLacNib6XNTCM8ubYeT7ryXQw8asB1sKgcU5lkB7ONug08aB8w==}
     dev: true
@@ -5777,8 +5820,8 @@ packages:
       base-64: 1.0.0
     dev: true
 
-  /detypes@0.7.9:
-    resolution: {integrity: sha512-4dGl/e6rHnIFU+2HB9B//0sV0pMx8eLnzN4zfTg9FWAkuFqv8MPVmZo1fLoOjHzTGRzKH8mr/mzKmZ2DcOuCkg==}
+  /detypes@0.8.0:
+    resolution: {integrity: sha512-BlPqlSZSIPlMmivkswXVeGkS97RfLZ5KU3BSU443gQBY9K7Ake+qMltrKJoL5pXzhcjWtnzyl2fGAVRvjCzBtw==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
@@ -5788,7 +5831,7 @@ packages:
       '@vue/compiler-sfc': 3.4.27
       '@vuedx/template-ast-types': 0.7.1
       fast-glob: 3.3.2
-      prettier: 2.8.8
+      prettier: 3.2.5
       typescript: 5.4.5
     transitivePeerDependencies:
       - supports-color
@@ -6590,6 +6633,10 @@ packages:
     dependencies:
       reusify: 1.0.4
 
+  /fflate@0.8.2:
+    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
+    dev: true
+
   /file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
     engines: {node: ^10.12.0 || >=12.0.0}
@@ -6639,7 +6686,6 @@ packages:
 
   /flatted@3.3.1:
     resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==}
-    dev: false
 
   /flattie@1.1.1:
     resolution: {integrity: sha512-9UbaD6XdAL97+k/n+N7JwX46K/M6Zc6KcFYskrYL8wbBV/Uyk0CTAMY0VT+qiK5PM7AIc9aTWYtq65U7T+aCNQ==}
@@ -7304,6 +7350,7 @@ packages:
 
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
@@ -7792,6 +7839,9 @@ packages:
   /json-schema-traverse@0.4.1:
     resolution: {integrity: sha512-xbbCH5dCYU5T8LcEhhuh7HJ88HXuW3qsI3Y0zOZFKfZEHcpWiHU/Jxzk629Brsab/mMiHQti9wMP+845RPe3Vg==}
 
+  /json-schema-traverse@1.0.0:
+    resolution: {integrity: sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==}
+
   /json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
     dev: false
@@ -8034,12 +8084,6 @@ packages:
 
   /lodash-es@4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
-
-  /lodash.get@4.4.2:
-    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
-
-  /lodash.isequal@4.5.0:
-    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
 
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -9270,18 +9314,18 @@ packages:
       mlly: 1.6.1
       pathe: 1.1.2
 
-  /playwright-core@1.44.0:
-    resolution: {integrity: sha512-ZTbkNpFfYcGWohvTTl+xewITm7EOuqIqex0c7dNZ+aXsbrLj0qI8XlGKfPpipjm0Wny/4Lt4CJsWJk1stVS5qQ==}
+  /playwright-core@1.44.1:
+    resolution: {integrity: sha512-wh0JWtYTrhv1+OSsLPgFzGzt67Y7BE/ZS3jEqgGBlp2ppp1ZDj8c+9IARNW4dwf1poq5MgHreEM2KV/GuR4cFA==}
     engines: {node: '>=16'}
     hasBin: true
     dev: true
 
-  /playwright@1.44.0:
-    resolution: {integrity: sha512-F9b3GUCLQ3Nffrfb6dunPOkE5Mh68tR7zN32L4jCk4FjQamgesGay7/dAAe1WaMEGV04DkdJfcJzjoCKygUaRQ==}
+  /playwright@1.44.1:
+    resolution: {integrity: sha512-qr/0UJ5CFAtloI3avF95Y0L1xQo6r3LQArLIg/z/PoGJ6xa+EwzrwO5lpNr/09STxdHuUoP2mvuELJS+hLdtgg==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      playwright-core: 1.44.0
+      playwright-core: 1.44.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
@@ -9398,6 +9442,7 @@ packages:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
+    dev: false
 
   /prettier@3.2.5:
     resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
@@ -9600,15 +9645,15 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /radix-vue@1.8.0(vue@3.4.27):
-    resolution: {integrity: sha512-RT98WcrsHMG4P4DuN4G4EeHnSV2Lk+J2k2LWr/UF/7oF2STxUFEjg2Zg0uxFG8B/evutOmp9S5kqujJVmp3sgQ==}
+  /radix-vue@1.8.1(vue@3.4.27):
+    resolution: {integrity: sha512-DFyUt2vc/89tpSHiJvv7Qb/Qs8zVxq2g7q4kuuDV46fmDmSC3mnV3hdSAYruU7k/KvoDpS3sd99kLGRtuG63Rw==}
     peerDependencies:
       vue: '>= 3.2.0'
     dependencies:
       '@floating-ui/dom': 1.6.5
       '@floating-ui/vue': 1.0.6(vue@3.4.27)
-      '@internationalized/date': 3.5.2
-      '@internationalized/number': 3.5.2
+      '@internationalized/date': 3.5.4
+      '@internationalized/number': 3.5.3
       '@tanstack/vue-virtual': 3.5.0(vue@3.4.27)
       '@vueuse/core': 10.9.0(vue@3.4.27)
       '@vueuse/shared': 10.9.0(vue@3.4.27)
@@ -9902,6 +9947,10 @@ packages:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
     dev: false
+
+  /require-from-string@2.0.2:
+    resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
+    engines: {node: '>=0.10.0'}
 
   /require-main-filename@2.0.0:
     resolution: {integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==}
@@ -10207,17 +10256,21 @@ packages:
       has-property-descriptors: 1.0.2
     dev: false
 
-  /shadcn-vue@0.10.4(vue@3.4.27):
-    resolution: {integrity: sha512-CAY/8gnNoctUhO360R5lC0Iy2R2aopV8GFWsdsFbe73NhJdNw4pGuelxqMjQUyIrWsTFzcdo4QfBrC1Jbo2eRw==}
+  /shadcn-vue@0.10.5(@vitest/ui@1.6.0)(vitest@1.6.0)(vue@3.4.27):
+    resolution: {integrity: sha512-YMFbQrYTBhbHbOrVOuPoIia445dTzBvZEnadfwUypt0I5jERw8PL2Pt/0N251NqJtJj+o8Geaq+rHFNTWoJ+NA==}
     hasBin: true
+    peerDependencies:
+      '@vitest/ui': '*'
+      vitest: '*'
     dependencies:
       '@babel/core': 7.24.5
       '@babel/parser': 7.24.5
+      '@vitest/ui': 1.6.0(vitest@1.6.0)
       '@vue/compiler-sfc': 3.4.27
       c12: 1.10.0
       commander: 12.0.0
       consola: 3.2.3
-      detype: /detypes@0.7.9
+      detype: /detypes@0.8.0
       diff: 5.2.0
       fs-extra: 11.2.0
       https-proxy-agent: 7.0.4
@@ -10228,9 +10281,10 @@ packages:
       ora: 8.0.1
       pathe: 1.1.2
       prompts: 2.4.2
-      radix-vue: 1.8.0(vue@3.4.27)
+      radix-vue: 1.8.1(vue@3.4.27)
       ts-morph: 22.0.0
       tsconfig-paths: 4.2.0
+      vitest: 1.6.0(@vitest/ui@1.6.0)(jsdom@24.0.0)(lightningcss@1.25.0)
       zod: 3.23.8
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -10992,7 +11046,7 @@ packages:
   /tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
-  /tsup@8.0.2(@microsoft/api-extractor@7.43.7)(postcss@8.4.38)(typescript@5.4.5):
+  /tsup@8.0.2(@microsoft/api-extractor@7.43.8)(postcss@8.4.38)(typescript@5.4.5):
     resolution: {integrity: sha512-NY8xtQXdH7hDUAZwcQdY/Vzlw9johQsaqf7iwZ6g1DOUlFYQ5/AtVAjTvihhEyeRlGo4dLRVHtrRaL35M1daqQ==}
     engines: {node: '>=18'}
     hasBin: true
@@ -11011,7 +11065,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@microsoft/api-extractor': 7.43.7(@types/node@20.12.12)
+      '@microsoft/api-extractor': 7.43.8(@types/node@20.12.12)
       bundle-require: 4.0.2(esbuild@0.19.12)
       cac: 6.7.14
       chokidar: 3.6.0
@@ -11042,8 +11096,8 @@ packages:
       typescript: 5.4.5
     dev: false
 
-  /tsx@4.10.5:
-    resolution: {integrity: sha512-twDSbf7Gtea4I2copqovUiNTEDrT8XNFXsuHpfGbdpW/z9ZW4fTghzzhAG0WfrCuJmJiOEY1nLIjq4u3oujRWQ==}
+  /tsx@4.11.0:
+    resolution: {integrity: sha512-vzGGELOgAupsNVssAmZjbUDfdm/pWP4R+Kg8TVdsonxbXk0bEpE1qh0yV6/QxUVXaVlNemgcPajGdJJ82n3stg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
@@ -11556,10 +11610,6 @@ packages:
       builtins: 1.0.3
     dev: false
 
-  /validator@13.11.0:
-    resolution: {integrity: sha512-Ii+sehpSfZy+At5nPdnyMhx78fEoPDkR2XW/zimHEL3MyGJQOCQ7WeP20jPYRz7ZCpcKLB21NxuXHF3bxjStBQ==}
-    engines: {node: '>= 0.10'}
-
   /vfile-location@5.0.2:
     resolution: {integrity: sha512-NXPYyxyBSH7zB5U6+3uDdd6Nybz6o6/od9rk8bp9H8GR3L+cm/fC0uUTbqBmUTnMCUDslAGBOIKNfvvb+gGlDg==}
     dependencies:
@@ -11636,6 +11686,27 @@ packages:
       pathe: 1.1.2
       picocolors: 1.0.1
       vite: 5.2.11(@types/node@20.12.12)
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+    dev: true
+
+  /vite-node@1.6.0(lightningcss@1.25.0):
+    resolution: {integrity: sha512-de6HJgzC+TFzOu0NTC4RAIsyf/DY/ibWDYQUcuEA84EMHhcefTUGkjFHKKEJhQN4A+6I0u++kr3l36ZF2d7XRw==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    dependencies:
+      cac: 6.7.14
+      debug: 4.3.4
+      pathe: 1.1.2
+      picocolors: 1.0.1
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -11816,8 +11887,8 @@ packages:
       vite: 5.2.11(lightningcss@1.25.0)
     dev: true
 
-  /vitepress@1.2.1(@algolia/client-search@4.23.3)(@types/react@18.3.2)(lightningcss@1.25.0)(postcss@8.4.38)(react-dom@18.3.1)(react@18.3.1)(search-insights@2.13.0)(typescript@5.4.5):
-    resolution: {integrity: sha512-mBqrwKdGgyZHTnzoPVF1D4bk7BYDtAiup/VnL/mU/VNEPzE7uzrkDvMdxOhjGXPcBG5Bv/MGZjZmpAGtyjanqg==}
+  /vitepress@1.2.2(@algolia/client-search@4.23.3)(@types/react@18.3.2)(lightningcss@1.25.0)(postcss@8.4.38)(react-dom@18.3.1)(react@18.3.1)(search-insights@2.13.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-uZ3nXR5NY4nYj3RJWCo5jev9qlNZAQo5SUXu1U0QSUx84cUm/o7hCTDVjZ4njVSVui+PsV1oAbdQOg8ygbaf4w==}
     hasBin: true
     peerDependencies:
       markdown-it-mathjax3: ^4
@@ -11919,6 +11990,63 @@ packages:
       tinypool: 0.8.4
       vite: 5.2.11(@types/node@20.12.12)
       vite-node: 1.6.0(@types/node@20.12.12)
+      why-is-node-running: 2.2.2
+    transitivePeerDependencies:
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+    dev: true
+
+  /vitest@1.6.0(@vitest/ui@1.6.0)(jsdom@24.0.0)(lightningcss@1.25.0):
+    resolution: {integrity: sha512-H5r/dN06swuFnzNFhq/dnz37bPXnq8xB2xB5JOVk8K09rUtoeNN+LHWkoQ0A/i3hvbUKKcCei9KpbxqHMLhLLA==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@edge-runtime/vm': '*'
+      '@types/node': ^18.0.0 || >=20.0.0
+      '@vitest/browser': 1.6.0
+      '@vitest/ui': 1.6.0
+      happy-dom: '*'
+      jsdom: '*'
+    peerDependenciesMeta:
+      '@edge-runtime/vm':
+        optional: true
+      '@types/node':
+        optional: true
+      '@vitest/browser':
+        optional: true
+      '@vitest/ui':
+        optional: true
+      happy-dom:
+        optional: true
+      jsdom:
+        optional: true
+    dependencies:
+      '@vitest/expect': 1.6.0
+      '@vitest/runner': 1.6.0
+      '@vitest/snapshot': 1.6.0
+      '@vitest/spy': 1.6.0
+      '@vitest/ui': 1.6.0(vitest@1.6.0)
+      '@vitest/utils': 1.6.0
+      acorn-walk: 8.3.2
+      chai: 4.4.1
+      debug: 4.3.4
+      execa: 8.0.1
+      jsdom: 24.0.0
+      local-pkg: 0.5.0
+      magic-string: 0.30.10
+      pathe: 1.1.2
+      picocolors: 1.0.1
+      std-env: 3.7.0
+      strip-literal: 2.1.0
+      tinybench: 2.8.0
+      tinypool: 0.8.4
+      vite: 5.2.11(lightningcss@1.25.0)
+      vite-node: 1.6.0(lightningcss@1.25.0)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
@@ -12327,17 +12455,6 @@ packages:
   /yocto-queue@1.0.0:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
-
-  /z-schema@5.0.5:
-    resolution: {integrity: sha512-D7eujBWkLa3p2sIpJA0d1pr7es+a7m0vFAnZLlCEKq/Ij2k0MLi9Br2UPxoxdYystm5K1yeBGzub0FlYUEWj2Q==}
-    engines: {node: '>=8.0.0'}
-    hasBin: true
-    dependencies:
-      lodash.get: 4.4.2
-      lodash.isequal: 4.5.0
-      validator: 13.11.0
-    optionalDependencies:
-      commander: 9.5.0
 
   /zod-to-json-schema@3.23.0(zod@3.23.8):
     resolution: {integrity: sha512-az0uJ243PxsRIa2x1WmNE/pnuA05gUq/JB8Lwe1EDCCL/Fz9MgjYQ0fPlyc2Tcv6aF2ZA7WM5TWaRZVEFaAIag==}

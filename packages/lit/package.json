@@ -41,7 +41,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/web": "^0.1.6"
+    "@prosekit/web": "^0.1.7"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",

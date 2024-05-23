@@ -2,7 +2,7 @@ import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 import ts from 'typescript'
 import { defineConfig } from 'vitepress'
 
-import { replaceShortcutsPlugin } from './replace-shortcuts-plugin'
+import { replaceThemesPlugin } from './markdown-it-replace-themes'
 import { exampleItems } from './sidebar-example-items'
 import { referenceItems } from './sidebar-reference-items'
 
@@ -171,7 +171,7 @@ export default defineConfig({
 
   markdown: {
     config(md) {
-      md.use(replaceShortcutsPlugin)
+      md.use(replaceThemesPlugin)
     },
 
     codeTransformers: [

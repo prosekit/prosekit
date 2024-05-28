@@ -548,9 +548,15 @@ importers:
         specifier: ^1.0.2
         version: 1.0.2(@unocss/preset-wind@0.60.3)(unocss@0.60.3)
     devDependencies:
+      '@manypkg/find-root':
+        specifier: ^2.2.1
+        version: 2.2.1
       '@prosekit/themes':
         specifier: 0.0.0
         version: link:../themes
+      '@types/node':
+        specifier: ^20.12.12
+        version: 20.12.12
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2937,7 +2943,6 @@ packages:
       '@manypkg/tools': 1.1.0
       find-up: 4.1.0
       fs-extra: 8.1.0
-    dev: false
 
   /@manypkg/get-packages@1.1.3:
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
@@ -2965,7 +2970,6 @@ packages:
       globby: 11.1.0
       jju: 1.4.0
       read-yaml-file: 1.1.0
-    dev: false
 
   /@microsoft/api-extractor-model@7.28.18(@types/node@20.12.12):
     resolution: {integrity: sha512-5j8Vp4IiXD68Auccf9wP/VQ0GYfI5x3bW447SLwJOqinvnnXfNZlaYp7sj3u/LyzhrJFsynJ+tBJlN/koDGfZg==}
@@ -4019,7 +4023,7 @@ packages:
       '@unocss/core': 0.60.3
       '@unocss/reset': 0.60.3
       '@unocss/vite': 0.60.3(vite@5.2.11)
-      vite: 5.2.11(lightningcss@1.25.0)
+      vite: 5.2.11(@types/node@20.12.12)
     transitivePeerDependencies:
       - rollup
 
@@ -4220,7 +4224,7 @@ packages:
       chokidar: 3.6.0
       fast-glob: 3.3.2
       magic-string: 0.30.10
-      vite: 5.2.11(lightningcss@1.25.0)
+      vite: 5.2.11(@types/node@20.12.12)
     transitivePeerDependencies:
       - rollup
 
@@ -11593,7 +11597,7 @@ packages:
       '@unocss/transformer-directives': 0.60.3
       '@unocss/transformer-variant-group': 0.60.3
       '@unocss/vite': 0.60.3(vite@5.2.11)
-      vite: 5.2.11(lightningcss@1.25.0)
+      vite: 5.2.11(@types/node@20.12.12)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -11869,7 +11873,6 @@ packages:
       rollup: 4.17.0
     optionalDependencies:
       fsevents: 2.3.3
-    dev: true
 
   /vite@5.2.11(lightningcss@1.25.0):
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}

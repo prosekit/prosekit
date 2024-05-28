@@ -1,3 +1,7 @@
+import path from 'node:path'
+import process from 'node:process'
+
+import { findRootSync } from '@manypkg/find-root'
 import { Colors, Themes } from '@prosekit/themes'
 import {
   definePreset,
@@ -14,7 +18,7 @@ const safeset = new Set(
 )
 const safelist = Array.from(safeset).sort()
 
-const preset: PresetFactory = definePreset(() => ({
+export const preset: PresetFactory = definePreset(() => ({
   name: 'prosekit',
   presets: [presetWind(), presetIcons(), presetAnimations()],
   safelist,
@@ -22,4 +26,14 @@ const preset: PresetFactory = definePreset(() => ({
   shortcuts: Colors,
 }))
 
-export default preset
+export function configDeps(): string[] {
+  try {
+    const root = findRootSync(process.cwd()).rootDir
+    // Colors are calculated on the fly, so we need to reload UnoCSS when the
+    // color source file changes.
+    return [path.join(root, 'packages/themes/src/colors.ts')]
+  } catch (error) {
+    console.warn('[@prosekit/unocss-preset] Unable to get configDeps', error)
+    return []
+  }
+}

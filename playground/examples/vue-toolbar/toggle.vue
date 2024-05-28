@@ -27,11 +27,7 @@ defineProps<{
         <slot></slot>
       </button>
     </TooltipTrigger>
-    <TooltipContent
-      v-if="tooltip && !disabled"
-      :offset="4"
-      :class="Themes.TOOLTIP_CONTENT"
-    >
+    <TooltipContent v-if="tooltip && !disabled" :class="Themes.TOOLTIP_CONTENT">
       {{ tooltip }}
     </TooltipContent>
   </TooltipRoot>

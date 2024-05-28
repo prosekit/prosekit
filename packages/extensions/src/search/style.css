@@ -1,11 +1,12 @@
 .ProseMirror-search-match {
-  background-color: #ffff0054;
+  background-color: hsla(60, 100%, 50%, 0.329);
+  box-shadow: 0 0 0 2px hsla(60, 100%, 50%, 0.329);
+  border-radius: 2px;
 }
 
-.ProseMirror.ProseMirror-focused .ProseMirror-active-search-match::selection {
-  background-color: #ff6a0054;
-}
-
+.ProseMirror.ProseMirror-focused .ProseMirror-active-search-match::selection,
 .ProseMirror:not(.ProseMirror-focused) .ProseMirror-active-search-match {
-  background-color: #ff6a0054;
+  background-color: hsla(25, 100%, 50%, 0.329);
+  box-shadow: 0 0 0 2px hsla(25, 100%, 50%, 0.329);
+  border-radius: 2px;
 }

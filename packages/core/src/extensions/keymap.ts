@@ -8,8 +8,8 @@ import {
 import { keydownHandler } from '@prosekit/pm/keymap'
 import { Plugin, PluginKey, type Command } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
+import { splitSplittableBlock } from 'prosemirror-splittable'
 
-import { splitBlockEnter } from '../commands/split-block-enter'
 import { withPriority } from '../editor/with-priority'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
@@ -25,7 +25,7 @@ const customBaseKeymap = {
     newlineInCode,
     createParagraphNear,
     liftEmptyBlock,
-    splitBlockEnter,
+    splitSplittableBlock,
   ),
 }
 

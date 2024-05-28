@@ -1,4 +1,9 @@
-import type { DOMOutputSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
+import type {
+  AttributeSpec,
+  DOMOutputSpec,
+  NodeSpec,
+  SchemaSpec,
+} from '@prosekit/pm/model'
 import OrderedMap from 'orderedmap'
 
 import { defineFacet } from '../facets/facet'
@@ -126,7 +131,10 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
       if (!spec.attrs) {
         spec.attrs = {}
       }
-      spec.attrs[attr] = { default: defaultValue as unknown, splittable }
+      spec.attrs[attr] = {
+        default: defaultValue as unknown,
+        splittable,
+      } as AttributeSpec
 
       if (toDOM && spec.toDOM) {
         const existingToDom = spec.toDOM

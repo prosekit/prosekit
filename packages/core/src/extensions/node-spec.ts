@@ -1,5 +1,6 @@
 import type { DOMOutputSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
 import OrderedMap from 'orderedmap'
+import 'prosemirror-splittable'
 
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'

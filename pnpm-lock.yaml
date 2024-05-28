@@ -114,6 +114,9 @@ importers:
       orderedmap:
         specifier: ^2.1.1
         version: 2.1.1
+      prosemirror-splittable:
+        specifier: ^0.1.0
+        version: 0.1.0
       type-fest:
         specifier: ^4.18.2
         version: 4.18.2
@@ -9587,6 +9590,21 @@ packages:
     resolution: {integrity: sha512-zLpS1mVCZLA7VTp82P+BfMiYVPcX1/z0Mf3gsjKZtzMWubwn2pN7CceMV0DycjlgE5JeXPR7UF4hJPbBV98oWA==}
     dependencies:
       orderedmap: 2.1.1
+    dev: false
+
+  /prosemirror-splittable@0.1.0:
+    resolution: {integrity: sha512-+RTwiWcYY4VpcVYySlS3ERAWZjqDxQGe91AtFLvjZ++E8LdHOe73qHVZuei0UrQlvcHIEOTVMA3Wdn9goL48mA==}
+    peerDependencies:
+      prosemirror-model: ^1.21.0
+      prosemirror-state: ^1.4.3
+      prosemirror-transform: ^1.9.0
+    peerDependenciesMeta:
+      prosemirror-model:
+        optional: true
+      prosemirror-state:
+        optional: true
+      prosemirror-transform:
+        optional: true
     dev: false
 
   /prosemirror-state@1.4.3:

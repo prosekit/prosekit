@@ -73,9 +73,13 @@ export const defaultInlinePopoverProps = Object.freeze({
 
   placement: 'top',
   offset: 12,
+  shift: true,
   flip: true,
   hide: true,
   overlap: true,
   inline: true,
+  overflowPadding: 8,
+  // Don't need boundary when hoist is true.
   hoist: true,
+  boundary: [],
 }) satisfies InlinePopoverProps

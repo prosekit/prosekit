@@ -51,6 +51,8 @@
   },
   "pnpm": {
     "overrides": {},
-    "patchedDependencies": {}
+    "patchedDependencies": {
+      "prosemirror-splittable@0.1.0": "patches/prosemirror-splittable@0.1.0.patch"
+    }
   }
 }

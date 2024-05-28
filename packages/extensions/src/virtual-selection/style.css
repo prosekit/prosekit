@@ -1,5 +1,5 @@
 .prosekit-virtual-selection {
-  background-color: Highlight;
-  box-shadow: 0 0 0 3px Highlight;
+  background-color: #8888884d;
+  box-shadow: 0 0 0 2px #8888884d;
   border-radius: 2px;
 }

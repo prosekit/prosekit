@@ -33,7 +33,7 @@ export default function Toggle({
         </button>
       </TooltipTrigger>
       {tooltip && !disabled ? (
-        <TooltipContent offset={4} className={Themes.TOOLTIP_CONTENT}>
+        <TooltipContent className={Themes.TOOLTIP_CONTENT}>
           {tooltip}
         </TooltipContent>
       ) : null}

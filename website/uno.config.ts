@@ -1,8 +1,9 @@
-import presetProseKit from '@prosekit/unocss-preset'
+import { configDeps, preset } from '@prosekit/unocss-preset'
 import { defineConfig, transformerDirectives, type UserConfig } from 'unocss'
 
 const config: UserConfig = defineConfig({
-  presets: [presetProseKit()],
+  presets: [preset()],
+  configDeps: configDeps(),
   transformers: [transformerDirectives()],
   content: {
     pipeline: {

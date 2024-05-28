@@ -104,6 +104,10 @@
     "path": "packages/prosekit/dist/prosekit-extensions-search.js"
   },
   {
+    "name": "prosekit/extensions/search/style.css",
+    "path": "packages/prosekit/dist/extensions/search/style.css"
+  },
+  {
     "name": "prosekit/extensions/strike",
     "path": "packages/prosekit/dist/prosekit-extensions-strike.js"
   },

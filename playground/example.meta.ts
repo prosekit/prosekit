@@ -290,10 +290,6 @@ export const exampleMeta = {
         {
           "path": "search.tsx",
           "hidden": false
-        },
-        {
-          "path": "toolbar.tsx",
-          "hidden": false
         }
       ]
     },

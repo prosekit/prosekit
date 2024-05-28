@@ -1,0 +1,11 @@
+.ProseMirror-search-match {
+  background-color: #ffff0054;
+}
+
+.ProseMirror.ProseMirror-focused .ProseMirror-active-search-match::selection {
+  background-color: #ff6a0054;
+}
+
+.ProseMirror:not(.ProseMirror-focused) .ProseMirror-active-search-match {
+  background-color: #ff6a0054;
+}

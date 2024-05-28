@@ -1,16 +1,33 @@
 import { Themes } from '@prosekit/themes'
 import { clsx } from 'prosekit/core'
-import { useState } from 'react'
+import { defineSearchQuery } from 'prosekit/extensions/search'
+import { useEditor, useExtension } from 'prosekit/react'
+import { useMemo, useState } from 'react'
 
-import Toggle from './button'
+import Button from './button'
+import type { EditorExtension } from './extension'
 
-export default function Search({ onClose }: { onClose: VoidFunction }) {
+export default function Search({ onClose }: { onClose?: VoidFunction }) {
   const [showReplace, setShowReplace] = useState(false)
   const toggleReplace = () => setShowReplace((value) => !value)
 
+  const [searchText, setSearchText] = useState('')
+  const [replaceText, setReplaceText] = useState('')
+
+  const extension = useMemo(() => {
+    if (!searchText) {
+      return null
+    }
+    return defineSearchQuery({ search: searchText, replace: replaceText })
+  }, [searchText, replaceText])
+
+  useExtension(extension)
+
+  const editor = useEditor<EditorExtension>()
+
   return (
     <div className={Themes.SEARCH}>
-      <Toggle tooltip="Toggle Replace" onClick={toggleReplace}>
+      <Button tooltip="Toggle Replace" onClick={toggleReplace}>
         <span
           className={clsx(
             Themes.ICON_CHEVRON_RIGHT,
@@ -19,30 +36,42 @@ export default function Search({ onClose }: { onClose: VoidFunction }) {
               : 'transition-transform',
           )}
         />
-      </Toggle>
-      <input className={Themes.SEARCH_INPUT} placeholder="Search" type="text" />
+      </Button>
+      <input
+        placeholder="Search"
+        type="text"
+        value={searchText}
+        onChange={(event) => setSearchText(event.target.value)}
+        className={Themes.SEARCH_INPUT}
+      />
       <div className={Themes.SEARCH_CONTROLLER}>
-        <Toggle tooltip="Previous">
+        <Button tooltip="Previous" onClick={editor.commands.findPrev}>
           <span className={Themes.ICON_ARROW_LEFT} />
-        </Toggle>
-        <Toggle tooltip="Next">
+        </Button>
+        <Button tooltip="Next" onClick={editor.commands.findNext}>
           <span className={Themes.ICON_ARROW_RIGHT} />
-        </Toggle>
-        <Toggle tooltip="Close" onClick={onClose}>
+        </Button>
+        <Button tooltip="Close" onClick={onClose}>
           <span className={Themes.ICON_CLOSE} />
-        </Toggle>
+        </Button>
       </div>
       {showReplace && (
         <input
-          className={Themes.SEARCH_INPUT}
           placeholder="Replace"
           type="text"
+          value={replaceText}
+          onChange={(event) => setReplaceText(event.target.value)}
+          className={Themes.SEARCH_INPUT}
         />
       )}
       {showReplace && (
         <div className={Themes.SEARCH_CONTROLLER}>
-          <Toggle tooltip="Replace">Replace</Toggle>
-          <Toggle tooltip="Replace All">All</Toggle>
+          <Button tooltip="Replace" onClick={editor.commands.replaceNext}>
+            Replace
+          </Button>
+          <Button tooltip="Replace All" onClick={editor.commands.replaceAll}>
+            All
+          </Button>
         </div>
       )}
     </div>

@@ -14,7 +14,6 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 <<< @/../playground/examples/react-search/editor.tsx
 <<< @/../playground/examples/react-search/extension.ts
 <<< @/../playground/examples/react-search/search.tsx
-<<< @/../playground/examples/react-search/toolbar.tsx
 
 :::
 

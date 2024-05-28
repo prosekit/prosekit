@@ -151,8 +151,6 @@ examples:
         hidden: false
       - path: search.tsx
         hidden: false
-      - path: toolbar.tsx
-        hidden: false
   - name: react-slash-menu
     framework: react
     story: slash-menu

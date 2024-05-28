@@ -52,6 +52,7 @@
     "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
     "./extensions/readonly": "./src/extensions/readonly.gen.ts",
     "./extensions/search": "./src/extensions/search.gen.ts",
+    "./extensions/search/style.css": "./src/extensions/search/style.css",
     "./extensions/strike": "./src/extensions/strike.gen.ts",
     "./extensions/table": "./src/extensions/table.gen.ts",
     "./extensions/table/style.css": "./src/extensions/table/style.css",
@@ -310,6 +311,9 @@
         "types": "./dist/prosekit-extensions-search.d.ts",
         "import": "./dist/prosekit-extensions-search.js",
         "default": "./dist/prosekit-extensions-search.js"
+      },
+      "./extensions/search/style.css": {
+        "default": "./dist/extensions/search/style.css"
       },
       "./extensions/strike": {
         "types": "./dist/prosekit-extensions-strike.d.ts",

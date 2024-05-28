@@ -14,6 +14,7 @@ import E2473342960 from '../../examples/react-resizable-image/editor'
 import E2240445596 from '../../examples/react-save-html/editor'
 import E1586999831 from '../../examples/react-save-json/editor'
 import E3429186088 from '../../examples/react-save-markdown/editor'
+import E220129051 from '../../examples/react-search/editor'
 import E3738959724 from '../../examples/react-slash-menu/editor'
 import E733855346 from '../../examples/react-toolbar/editor'
 import E4115691489 from '../../examples/react-unmount/editor'
@@ -85,6 +86,7 @@ export const getStaticPaths = () => [
   { params: { example: 'react-save-html' } },
   { params: { example: 'react-save-json' } },
   { params: { example: 'react-save-markdown' } },
+  { params: { example: 'react-search' } },
   { params: { example: 'react-slash-menu' } },
   { params: { example: 'react-toolbar' } },
   { params: { example: 'react-unmount' } },
@@ -160,6 +162,7 @@ const { example } = Astro.params
   {example === 'react-save-html' && <E2240445596 client:only="react" />}
   {example === 'react-save-json' && <E1586999831 client:only="react" />}
   {example === 'react-save-markdown' && <E3429186088 client:only="react" />}
+  {example === 'react-search' && <E220129051 client:only="react" />}
   {example === 'react-slash-menu' && <E3738959724 client:only="react" />}
   {example === 'react-toolbar' && <E733855346 client:only="react" />}
   {example === 'react-unmount' && <E4115691489 client:only="react" />}

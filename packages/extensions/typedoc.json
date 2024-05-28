@@ -21,6 +21,7 @@
     "./src/mod-click-prevention/index.ts",
     "./src/placeholder/index.ts",
     "./src/readonly/index.ts",
+    "./src/search/index.ts",
     "./src/strike/index.ts",
     "./src/table/index.ts",
     "./src/text-align/index.ts",

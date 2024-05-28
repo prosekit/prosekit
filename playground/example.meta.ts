@@ -271,6 +271,37 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-search",
+      "framework": "react",
+      "story": "search",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "image-upload-popover.tsx",
+          "hidden": false
+        },
+        {
+          "path": "search.tsx",
+          "hidden": false
+        },
+        {
+          "path": "toggle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-slash-menu",
       "framework": "react",
       "story": "slash-menu",

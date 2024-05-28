@@ -46,6 +46,7 @@
     "./placeholder": "./src/placeholder/index.ts",
     "./placeholder/style.css": "./src/placeholder/style.css",
     "./readonly": "./src/readonly/index.ts",
+    "./search": "./src/search/index.ts",
     "./strike": "./src/strike/index.ts",
     "./table": "./src/table/index.ts",
     "./table/style.css": "./src/table/style.css",
@@ -67,6 +68,7 @@
     "prosemirror-dropcursor": "^1.8.1",
     "prosemirror-flat-list": "^0.5.0",
     "prosemirror-highlight": "^0.6.0",
+    "prosemirror-search": "github:ProseMirror/prosemirror-search#e27d19fdb7a4a809a8bb1daf45a179c13358bbd4",
     "prosemirror-tables": "^1.3.7",
     "shiki": "^1.6.0"
   },
@@ -179,6 +181,11 @@
         "import": "./dist/prosekit-extensions-readonly.js",
         "default": "./dist/prosekit-extensions-readonly.js"
       },
+      "./search": {
+        "types": "./dist/prosekit-extensions-search.d.ts",
+        "import": "./dist/prosekit-extensions-search.js",
+        "default": "./dist/prosekit-extensions-search.js"
+      },
       "./strike": {
         "types": "./dist/prosekit-extensions-strike.d.ts",
         "import": "./dist/prosekit-extensions-strike.js",
@@ -272,6 +279,9 @@
         ],
         "readonly": [
           "./dist/prosekit-extensions-readonly.d.ts"
+        ],
+        "search": [
+          "./dist/prosekit-extensions-search.d.ts"
         ],
         "strike": [
           "./dist/prosekit-extensions-strike.d.ts"

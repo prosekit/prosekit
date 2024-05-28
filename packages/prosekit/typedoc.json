@@ -23,6 +23,7 @@
     "./src/extensions/mod-click-prevention.gen.ts",
     "./src/extensions/placeholder.gen.ts",
     "./src/extensions/readonly.gen.ts",
+    "./src/extensions/search.gen.ts",
     "./src/extensions/strike.gen.ts",
     "./src/extensions/table.gen.ts",
     "./src/extensions/text-align.gen.ts",

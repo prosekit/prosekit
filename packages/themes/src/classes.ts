@@ -46,17 +46,21 @@ const BUTTON_BASE = cn(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
 )
 
-const BUTTON_VARIANT_PRIMARY =
-  'bg-primary text-primary-foreground hover:bg-primary/90'
-// const BUTTON_VARIANT_SECONDARY = 'bg-secondary text-secondary-foreground hover:bg-secondary/80')
+const BUTTON_VARIANT_PRIMARY = cn(
+  'bg-primary text-primary-foreground hover:bg-primary/90',
+)
+
+const BUTTON_VARIANT_SECONDARY = cn(
+  'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+)
 
 const BUTTON_SIZE_DEFAULT = 'h-10 px-4 py-2'
 const BUTTON_SIZE_SM = 'h-9 px-3'
 // const BUTTON_SIZE_LG = 'h-1 px-8'
-// const BUTTON_SIZE_ICON = 'h-10 w-10'
+const BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const INPUT = cn(
-  'flex h-10 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
+  'flex h-9 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
   // border
   'border box-border border-border border-solid',
   // ring
@@ -126,13 +130,15 @@ export const LANGUAGE_SELECT = cn(
   'opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 [div[data-node-view-root]:hover_&]:hover:opacity-80',
 )
 
-export const TOOLBAR = cn(
-  'z-2 sticky top-0 box-border flex flex-wrap gap-1 p-2 items-center bg-background',
+const TOP_BAR = cn(
+  'z-2 sticky top-0 box-border bg-background',
   'border-border border-solid border-l-0 border-r-0 border-t-0 border-b',
 )
 
+export const TOOLBAR = cn(TOP_BAR, 'flex flex-wrap gap-1 p-2 items-center')
+
 export const TOGGLE_BUTTON = cn(
-  'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none',
+  'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-ring disabled:pointer-events-none min-w-9 min-h-9',
   'disabled:opacity-50 hover:disabled:opacity-50',
   'bg-transparent hover:bg-secondary data-[state=on]:bg-accent',
 )
@@ -175,6 +181,26 @@ export const TOOLTIP_CONTENT = cn(
   POPOVER_ANIMATE,
 )
 
+export const SEARCH = cn(
+  TOP_BAR,
+  'grid grid-cols-[min-content_1fr_min-content] gap-2 p-2',
+)
+
+export const SEARCH_ICON_BUTTON = cn(
+  BUTTON_BASE,
+  BUTTON_VARIANT_SECONDARY,
+  BUTTON_SIZE_ICON,
+)
+
+export const SEARCH_TEXT_BUTTON = cn(
+  BUTTON_BASE,
+  BUTTON_VARIANT_SECONDARY,
+  BUTTON_SIZE_DEFAULT,
+)
+
+export const SEARCH_INPUT = cn(INPUT, 'col-start-2')
+export const SEARCH_CONTROLLER = cn('flex items-center justify-between gap-1')
+
 export const ICON_ITALIC = cn('i-lucide-italic h-5 w-5')
 export const ICON_BOLD = cn('i-lucide-bold h-5 w-5')
 export const ICON_UNDERLINE = cn('i-lucide-underline h-5 w-5')
@@ -199,3 +225,8 @@ export const ICON_LIST_DEDENT = cn('i-lucide-indent-decrease h-5 w-5')
 export const ICON_CODE_BLOCK = cn('i-lucide-square-code h-5 w-5')
 export const ICON_CORNER_HANDLE = cn('i-lucide-arrow-down-right h-4 w-4')
 export const ICON_DRAG_HANDLE = cn('i-lucide-grip-vertical h-5 w-5')
+export const ICON_SEARCH = cn('i-lucide-search h-5 w-5')
+export const ICON_CLOSE = cn('i-lucide-x h-5 w-5')
+export const ICON_ARROW_LEFT = cn('i-lucide-arrow-left h-5 w-5')
+export const ICON_ARROW_RIGHT = cn('i-lucide-arrow-right h-5 w-5')
+export const ICON_CHEVRON_RIGHT = cn('i-lucide-chevron-right h-5 w-5')

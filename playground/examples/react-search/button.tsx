@@ -6,14 +6,14 @@ import {
 } from 'prosekit/react/tooltip'
 import type { ReactNode } from 'react'
 
-export default function Toggle({
+export default function Button({
   pressed,
   disabled,
   onClick,
   tooltip,
   children,
 }: {
-  pressed: boolean
+  pressed?: boolean
   disabled?: boolean
   onClick?: VoidFunction
   tooltip?: string

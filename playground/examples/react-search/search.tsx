@@ -2,7 +2,7 @@ import { Themes } from '@prosekit/themes'
 import { clsx } from 'prosekit/core'
 import { useState } from 'react'
 
-import Toggle from './toggle'
+import Toggle from './button'
 
 export default function Search({ onClose }: { onClose: VoidFunction }) {
   const [showReplace, setShowReplace] = useState(false)

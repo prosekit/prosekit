@@ -97,15 +97,24 @@ export { defineText } from './extensions/text'
 export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
-export type { CommandTyping } from './types/command'
+export type { CommandTyping,
+  CommandApplier,
+  CommandCreator,
+  CommandCreators,
+  ToCommandCreators,
+  ToCommandApplier,
+
+ } from './types/command'
 export type {
   Extension,
+  ExtensionTyping,
   ExtractCommandAppliers,
   ExtractCommandCreators,
+  ExtractCommands,
   ExtractMarks,
   ExtractNodes,
+  ExtractTyping,
   UnionExtension,
-  ExtensionTyping,
 } from './types/extension'
 export type { NodeJSON, SelectionJSON, StateJSON } from './types/model'
 export { Priority } from './types/priority'

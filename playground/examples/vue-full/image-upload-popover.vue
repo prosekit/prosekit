@@ -67,13 +67,13 @@ const handleOpenChange = (openValue: boolean) => {
 <template>
   <PopoverRoot :open="open" :onOpenChange="handleOpenChange">
     <PopoverTrigger>
-      <Toggle
+      <Button
         :pressed="open"
         :disabled="props.disabled"
         :tooltip="props.tooltip"
       >
         <slot />
-      </Toggle>
+      </Button>
     </PopoverTrigger>
 
     <PopoverContent :class="Themes.IMAGE_UPLOAD_CARD">

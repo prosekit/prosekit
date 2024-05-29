@@ -8,21 +8,21 @@ export default function Toolbar() {
 
   return (
     <div class={Themes.TOOLBAR}>
-      <Toggle
+      <Button
         pressed={getReadonly}
         disabled={() => !true}
         onClick={() => setReadonly(true)}
       >
         Readonly
-      </Toggle>
+      </Button>
 
-      <Toggle
+      <Button
         pressed={() => !getReadonly()}
         disabled={() => !true}
         onClick={() => setReadonly(false)}
       >
         Editable
-      </Toggle>
+      </Button>
     </div>
   )
 }

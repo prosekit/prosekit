@@ -9,11 +9,11 @@ const editor = useEditor<EditorExtension>({ update: true })
 
 <template>
   <div :class="Themes.TOOLBAR">
-    <Toggle
+    <Button
       :pressed="editor.marks.code.isActive()"
       :onClick="() => editor.commands.toggleCode()"
     >
       Code
-    </Toggle>
+    </Button>
   </div>
 </template>

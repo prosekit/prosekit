@@ -9,12 +9,12 @@ const editor = useEditor<EditorExtension>({ update: true })
 
 <template>
   <div :class="Themes.TOOLBAR">
-    <Toggle
+    <Button
       :pressed="editor.nodes.codeBlock.isActive()"
       :disabled="!editor.commands.setCodeBlock.canApply()"
       :onClick="() => editor.commands.setCodeBlock()"
     >
       <div :class="Themes.ICON_CODE_BLOCK" />
-    </Toggle>
+    </Button>
   </div>
 </template>

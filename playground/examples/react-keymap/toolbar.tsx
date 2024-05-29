@@ -14,18 +14,18 @@ export default function Toolbar({
 
   return (
     <div className={Themes.TOOLBAR}>
-      <Toggle
+      <Button
         pressed={hotkey === 'Shift-Enter'}
         onClick={() => setHotkey('Shift-Enter')}
       >
         <span className="mr-1">Submit with</span>
         <kbd>Shift + Enter</kbd>
-      </Toggle>
+      </Button>
 
-      <Toggle pressed={hotkey === 'Enter'} onClick={() => setHotkey('Enter')}>
+      <Button pressed={hotkey === 'Enter'} onClick={() => setHotkey('Enter')}>
         <span className="mr-1">Submit with</span>
         <kbd>Enter</kbd>
-      </Toggle>
+      </Button>
     </div>
   )
 }

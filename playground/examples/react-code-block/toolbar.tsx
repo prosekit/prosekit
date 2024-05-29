@@ -9,13 +9,13 @@ export default function Toolbar() {
 
   return (
     <div className={Themes.TOOLBAR}>
-      <Toggle
+      <Button
         pressed={editor.nodes.codeBlock.isActive()}
         disabled={!editor.commands.setCodeBlock.canApply()}
         onClick={() => editor.commands.setCodeBlock()}
       >
         <div className={Themes.ICON_CODE_BLOCK} />
-      </Toggle>
+      </Button>
     </div>
   )
 }

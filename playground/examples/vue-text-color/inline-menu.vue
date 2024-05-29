@@ -32,7 +32,7 @@ const toggleTextColor = (color: string) => {
 
 <template>
   <InlinePopover :class="Themes.INLINE_MENU_MAIN">
-    <Toggle
+    <Button
       v-for="color in colors"
       :key="color.name"
       :pressed="hasTextColor(color.value)"
@@ -40,6 +40,6 @@ const toggleTextColor = (color: string) => {
       :tooltip="color.name"
     >
       <span :style="{ color: color.value }">A</span>
-    </Toggle>
+    </Button>
   </InlinePopover>
 </template>

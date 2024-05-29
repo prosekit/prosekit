@@ -9,11 +9,11 @@ const editor = useEditor<EditorExtension>({ update: true })
 
 <template>
   <div :class="Themes.TOOLBAR">
-    <Toggle
+    <Button
       :pressed="editor.marks.italic.isActive()"
       :onClick="() => editor.commands.toggleItalic()"
     >
       Italic
-    </Toggle>
+    </Button>
   </div>
 </template>

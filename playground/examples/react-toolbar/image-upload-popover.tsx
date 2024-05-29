@@ -71,9 +71,9 @@ export const ImageUploadPopover: FC<{
   return (
     <PopoverRoot open={open} onOpenChange={handleOpenChange}>
       <PopoverTrigger>
-        <Toggle pressed={open} disabled={disabled} tooltip={tooltip}>
+        <Button pressed={open} disabled={disabled} tooltip={tooltip}>
           {children}
-        </Toggle>
+        </Button>
       </PopoverTrigger>
 
       <PopoverContent className={Themes.IMAGE_UPLOAD_CARD}>

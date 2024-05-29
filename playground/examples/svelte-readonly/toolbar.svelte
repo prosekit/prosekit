@@ -8,11 +8,11 @@ const { readonly } = useReadonly()
 </script>
 
 <div class={Themes.TOOLBAR}>
-  <Toggle pressed={$readonly} onClick={() => ($readonly = true)}>
+  <Button pressed={$readonly} onClick={() => ($readonly = true)}>
     Readonly
-  </Toggle>
+  </Button>
 
-  <Toggle pressed={!$readonly} onClick={() => ($readonly = false)}>
+  <Button pressed={!$readonly} onClick={() => ($readonly = false)}>
     Editable
-  </Toggle>
+  </Button>
 </div>

@@ -48,48 +48,48 @@ export default function InlineMenu() {
           }
         }}
       >
-        <Toggle
+        <Button
           pressed={editor.marks.bold.isActive()}
           disabled={!editor.commands.toggleBold.canApply()}
           onClick={() => editor.commands.toggleBold()}
         >
           <div className={Themes.ICON_BOLD}></div>
-        </Toggle>
+        </Button>
 
-        <Toggle
+        <Button
           pressed={editor.marks.italic.isActive()}
           disabled={!editor.commands.toggleItalic.canApply()}
           onClick={() => editor.commands.toggleItalic()}
         >
           <div className={Themes.ICON_ITALIC}></div>
-        </Toggle>
+        </Button>
 
-        <Toggle
+        <Button
           pressed={editor.marks.underline.isActive()}
           disabled={!editor.commands.toggleUnderline.canApply()}
           onClick={() => editor.commands.toggleUnderline()}
         >
           <div className={Themes.ICON_UNDERLINE}></div>
-        </Toggle>
+        </Button>
 
-        <Toggle
+        <Button
           pressed={editor.marks.strike.isActive()}
           disabled={!editor.commands.toggleStrike.canApply()}
           onClick={() => editor.commands.toggleStrike()}
         >
           <div className={Themes.ICON_STRIKE}></div>
-        </Toggle>
+        </Button>
 
-        <Toggle
+        <Button
           pressed={editor.marks.code.isActive()}
           disabled={!editor.commands.toggleCode.canApply()}
           onClick={() => editor.commands.toggleCode()}
         >
           <div className={Themes.ICON_CODE}></div>
-        </Toggle>
+        </Button>
 
         {editor.commands.addLink.canApply({ href: '' }) && (
-          <Toggle
+          <Button
             pressed={editor.marks.link.isActive()}
             onClick={() => {
               editor.commands.expandLink()
@@ -97,7 +97,7 @@ export default function InlineMenu() {
             }}
           >
             <div className={Themes.ICON_LINK}></div>
-          </Toggle>
+          </Button>
         )}
       </InlinePopover>
 

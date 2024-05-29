@@ -25,6 +25,7 @@ defineProps<{
         :class="Themes.TOGGLE_BUTTON"
       >
         <slot></slot>
+        <span v-if="tooltip" class="sr-only">{{ tooltip }}</span>
       </button>
     </TooltipTrigger>
     <TooltipContent v-if="tooltip && !disabled" :class="Themes.TOOLTIP_CONTENT">

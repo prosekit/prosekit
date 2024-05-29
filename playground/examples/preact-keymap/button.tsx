@@ -7,7 +7,7 @@ export default function Button({
   onClick,
   children,
 }: {
-  pressed: boolean
+  pressed?: boolean
   disabled?: boolean
   onClick: VoidFunction
   children: ComponentChild

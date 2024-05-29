@@ -13,7 +13,7 @@ export default function Button({
   tooltip,
   children,
 }: {
-  pressed: boolean
+  pressed?: boolean
   disabled?: boolean
   onClick?: VoidFunction
   tooltip?: string

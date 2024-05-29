@@ -7,7 +7,7 @@ import {
 } from 'prosekit/vue/tooltip'
 
 defineProps<{
-  pressed: Boolean
+  pressed?: Boolean
   disabled?: Boolean
   tooltip?: string
   onClick?: VoidFunction

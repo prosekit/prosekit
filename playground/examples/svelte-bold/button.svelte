@@ -1,6 +1,6 @@
 <script lang="ts">
 import { Themes } from '@prosekit/themes'
-export let pressed: boolean
+export let pressed: boolean = false 
 export let disabled: boolean = false
 export let onClick: VoidFunction
 </script>

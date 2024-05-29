@@ -29,6 +29,7 @@ export default function Button({
           onMouseDown={(event) => event.preventDefault()}
           className={Themes.TOGGLE_BUTTON}
         >
+          <div className="sr-only">{tooltip}</div>
           {children}
         </button>
       </TooltipTrigger>

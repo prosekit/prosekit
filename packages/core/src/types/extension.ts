@@ -12,13 +12,13 @@ import type { SimplifyUnion } from './simplify-union'
  * @internal
  */
 export interface ExtensionTyping<
-  Nodes extends string | never = never,
-  Marks extends string | never = never,
-  Commands extends CommandTyping | never = never,
+  N extends string | never = never,
+  M extends string | never = never,
+  C extends CommandTyping | never = never,
 > {
-  Nodes: Nodes
-  Marks: Marks
-  Commands: Commands
+  Nodes: N
+  Marks: M
+  Commands: C
 }
 
 /**

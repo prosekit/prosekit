@@ -10,20 +10,20 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 ::: code-group
 
-<<< @/../playground/examples/vue-full/block-handle.vue
-<<< @/../playground/examples/vue-full/button.vue
-<<< @/../playground/examples/vue-full/code-block-view.vue
 <<< @/../playground/examples/vue-full/editor.vue
 <<< @/../playground/examples/vue-full/extension.ts
+<<< @/../playground/examples/vue-full/toolbar.vue
+<<< @/../playground/examples/vue-full/block-handle.vue
+<<< @/../playground/examples/vue-full/code-block-view.vue
 <<< @/../playground/examples/vue-full/image-upload-popover.vue
 <<< @/../playground/examples/vue-full/inline-menu.vue
 <<< @/../playground/examples/vue-full/language-selector.vue
 <<< @/../playground/examples/vue-full/slash-menu.vue
 <<< @/../playground/examples/vue-full/tag-data.ts
 <<< @/../playground/examples/vue-full/tag-menu.vue
-<<< @/../playground/examples/vue-full/toolbar.vue
 <<< @/../playground/examples/vue-full/user-data.ts
 <<< @/../playground/examples/vue-full/user-menu.vue
+<<< @/../playground/examples/vue-full/button.vue
 
 :::
 

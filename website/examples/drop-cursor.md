@@ -10,9 +10,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 ::: code-group
 
-<<< @/../playground/examples/vue-drop-cursor/default-doc.ts
 <<< @/../playground/examples/vue-drop-cursor/editor.vue
 <<< @/../playground/examples/vue-drop-cursor/extension.ts
+<<< @/../playground/examples/vue-drop-cursor/default-doc.ts
 
 :::
 
@@ -22,9 +22,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 ::: code-group
 
-<<< @/../playground/examples/solid-drop-cursor/default-doc.ts
 <<< @/../playground/examples/solid-drop-cursor/editor.tsx
 <<< @/../playground/examples/solid-drop-cursor/extension.ts
+<<< @/../playground/examples/solid-drop-cursor/default-doc.ts
 
 :::
 

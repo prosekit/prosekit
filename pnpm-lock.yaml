@@ -123,8 +123,8 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)
       type-fest:
-        specifier: ^4.18.2
-        version: 4.18.2
+        specifier: ^4.18.3
+        version: 4.18.3
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -812,8 +812,8 @@ importers:
         specifier: ^0.10.5
         version: 0.10.5(@vitest/ui@1.6.0)(vitest@1.6.0)(vue@3.4.27)
       type-fest:
-        specifier: ^4.18.2
-        version: 4.18.2
+        specifier: ^4.18.3
+        version: 4.18.3
       typedoc:
         specifier: ^0.25.13
         version: 0.25.13(typescript@5.4.5)
@@ -9219,7 +9219,7 @@ packages:
     dependencies:
       '@babel/code-frame': 7.24.2
       index-to-position: 0.1.2
-      type-fest: 4.18.2
+      type-fest: 4.18.3
 
   /parse-latin@5.0.1:
     resolution: {integrity: sha512-b/K8ExXaWC9t34kKeDV8kGXBkXZ1HCSAZRYE7HR14eA1GlXX5L8iWhs8USJNhQU9q5ci413jCKF0gOyovvyRBg==}
@@ -9756,7 +9756,7 @@ packages:
     dependencies:
       find-up-simple: 1.0.0
       read-pkg: 9.0.1
-      type-fest: 4.18.2
+      type-fest: 4.18.3
     dev: false
 
   /read-pkg-up@7.0.1:
@@ -9785,7 +9785,7 @@ packages:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.0
       parse-json: 8.1.0
-      type-fest: 4.18.2
+      type-fest: 4.18.3
       unicorn-magic: 0.1.0
 
   /read-yaml-file@1.1.0:
@@ -11280,8 +11280,8 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /type-fest@4.18.2:
-    resolution: {integrity: sha512-+suCYpfJLAe4OXS6+PPXjW3urOS4IoP9waSiLuXfLgqZODKw/aWwASvzqE886wA0kQgGy0mIWyhd87VpqIy6Xg==}
+  /type-fest@4.18.3:
+    resolution: {integrity: sha512-Q08/0IrpvM+NMY9PA2rti9Jb+JejTddwmwmVQGskAlhtcrw1wsRzoR6ode6mR+OAabNa75w/dxedSUY2mlphaQ==}
     engines: {node: '>=16'}
 
   /typed-array-buffer@1.0.2:

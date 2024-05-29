@@ -12,7 +12,7 @@ export type CommandCreator<Args extends any[] = any[]> = (
 /**
  * @internal
  */
-export interface CommandArgs {
+export interface CommandTyping {
   [name: string]: any[]
 }
 
@@ -20,14 +20,10 @@ export interface CommandCreators {
   [name: string]: CommandCreator
 }
 
-export type ToCommandArgs<T extends CommandCreators> = {
-  [K in keyof T]: Parameters<T[K]>
-}
-
-export type ToCommandCreators<T extends CommandArgs> = {
+export type ToCommandCreators<T extends CommandTyping> = {
   [K in keyof T]: CommandCreator<T[K]>
 }
 
-export type ToCommandApplier<T extends CommandArgs> = {
+export type ToCommandApplier<T extends CommandTyping> = {
   [K in keyof T]: CommandApplier<T[K]>
 }

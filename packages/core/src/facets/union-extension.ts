@@ -1,5 +1,4 @@
-import type { Extension } from '../types/extension'
-import type { ExtensionTyping } from '../types/extension-typing'
+import type { Extension, ExtensionTyping } from '../types/extension'
 import { Priority } from '../types/priority'
 
 import { BaseExtension } from './base-extension'

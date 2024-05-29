@@ -15,9 +15,15 @@ export function defineCommands<
   T extends Record<string, CommandCreator> = Record<string, CommandCreator>,
 >(
   commands: T,
-): Extension<{ COMMAND_ARGS: { [K in keyof T]: Parameters<T[K]> } }> {
+): Extension<{
+  Commands: { [K in keyof T]: Parameters<T[K]> }
+  Nodes: never
+  Marks: never
+}> {
   return defineFacetPayload(commandFacet, [commands]) as Extension<{
-    COMMAND_ARGS: { [K in keyof T]: Parameters<T[K]> }
+    Commands: { [K in keyof T]: Parameters<T[K]> }
+    Nodes: never
+    Marks: never
   }>
 }
 

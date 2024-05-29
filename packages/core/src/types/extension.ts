@@ -1,20 +1,30 @@
 import type { Schema } from '@prosekit/pm/model'
 
-import type { ToCommandApplier, ToCommandCreators } from './command'
-import type { ExceptEmptyValue } from './except-empty-value'
 import type {
-  ExtensionTyping,
-  ExtractCommandArgsFromTyping,
-  ExtractMarksFromTyping,
-  ExtractNodesFromTyping,
-} from './extension-typing'
-import { Priority } from './priority'
+  CommandTyping,
+  ToCommandApplier,
+  ToCommandCreators,
+} from './command'
+import type { Priority } from './priority'
 import type { SimplifyUnion } from './simplify-union'
+
+/**
+ * @internal
+ */
+export interface ExtensionTyping<
+  Nodes extends string | never = never,
+  Marks extends string | never = never,
+  Commands extends CommandTyping | never = never,
+> {
+  Nodes: Nodes
+  Marks: Marks
+  Commands: Commands
+}
 
 /**
  * @public
  */
-export interface Extension<T extends ExtensionTyping = ExtensionTyping> {
+export interface Extension<T extends ExtensionTyping<any, any, any> = any> {
   extension: Extension | Extension[]
   priority?: Priority
   _type?: T
@@ -36,47 +46,42 @@ export type ExtractTyping<E extends Extension> =
 /**
  * @public
  */
-export type ExtractNodes<E extends Extension> = ExtractNodesFromTyping<
-  ExtractTyping<E>
->
+export type ExtractNodes<E extends Extension> = ExtractTyping<E>['Nodes']
 
 /**
  * @public
  */
-export type ExtractMarks<E extends Extension> = ExtractMarksFromTyping<
-  ExtractTyping<E>
->
+export type ExtractMarks<E extends Extension> = ExtractTyping<E>['Marks']
 
 /**
  * @internal
  */
-export type ExtractCommandArgs<E extends Extension> =
-  ExtractCommandArgsFromTyping<ExtractTyping<E>>
+export type ExtractCommands<E extends Extension> = SimplifyUnion<
+  ExtractTyping<E>['Commands']
+>
 
 /**
  * @public
  */
 export type ExtractCommandCreators<E extends Extension> = ToCommandCreators<
-  ExtractCommandArgs<E>
+  ExtractCommands<E>
 >
 
 /**
  * @public
  */
 export type ExtractCommandAppliers<E extends Extension> = ToCommandApplier<
-  ExtractCommandArgs<E>
+  ExtractCommands<E>
 >
 
 /**
  * @internal
  */
-export type SimplifyExtension<E extends Extension | Extension[]> =
+export type UnionExtension<E extends Extension | Extension[]> =
   E extends Extension[]
-    ? Extension<
-        ExceptEmptyValue<{
-          NODES: ExtractNodes<E[number]>
-          MARKS: ExtractMarks<E[number]>
-          COMMAND_ARGS: SimplifyUnion<ExtractCommandArgs<E[number]>>
-        }>
-      >
+    ? Extension<{
+        Nodes: ExtractNodes<E[number]>
+        Marks: ExtractMarks<E[number]>
+        Commands: ExtractCommands<E[number]>
+      }>
     : E

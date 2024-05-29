@@ -1,8 +1,8 @@
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/solid'
 
+import Button from './button'
 import type { EditorExtension } from './extension'
-import Toggle from './button'
 
 export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })

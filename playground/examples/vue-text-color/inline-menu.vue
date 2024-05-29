@@ -3,7 +3,7 @@ import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
 import type { EditorExtension } from './extension'
-import Toggle from './button.vue'
+import Button from './button.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
 const colors = [

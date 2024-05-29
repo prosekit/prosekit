@@ -5,8 +5,8 @@ import { useEditor } from 'prosekit/react'
 import { InlinePopover } from 'prosekit/react/inline-popover'
 import { useState } from 'react'
 
+import Button from './button'
 import type { EditorExtension } from './extension'
-import Toggle from './button'
 
 export default function InlineMenu() {
   const editor = useEditor<EditorExtension>({ update: true })

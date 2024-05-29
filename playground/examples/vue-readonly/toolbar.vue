@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
-import Toggle from './button.vue'
+import Button from './button.vue'
 import { useReadonly } from './use-readonly'
 
 const { readonly } = useReadonly()

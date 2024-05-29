@@ -1,7 +1,7 @@
 import { Themes } from '@prosekit/themes'
 import { useState } from 'preact/hooks'
 
-import Toggle from './button'
+import Button from './button'
 import { useSubmitKeymap } from './use-submit-keymap'
 
 export default function Toolbar({

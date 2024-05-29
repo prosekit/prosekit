@@ -5,7 +5,7 @@ import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
 import { ref } from 'vue'
 import type { EditorExtension } from './extension'
-import Toggle from './button.vue'
+import Button from './button.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
 const linkMenuOpen = ref(false)

@@ -1,6 +1,6 @@
 import { Themes } from '@prosekit/themes'
 
-import Toggle from './button'
+import Button from './button'
 import { useReadonly } from './use-readonly'
 
 export default function Toolbar() {

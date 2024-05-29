@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
-import Toggle from './button.vue'
+import Button from './button.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
 </script>

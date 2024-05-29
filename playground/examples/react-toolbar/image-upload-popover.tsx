@@ -7,8 +7,8 @@ import {
 } from 'prosekit/react/popover'
 import { useState, type FC, type ReactNode } from 'react'
 
+import Button from './button'
 import type { EditorExtension } from './extension'
-import Toggle from './button'
 
 export const ImageUploadPopover: FC<{
   tooltip: string

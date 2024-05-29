@@ -3,7 +3,7 @@ import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
 import ImageUploadPopover from './image-upload-popover.vue'
-import Toggle from './button.vue'
+import Button from './button.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
 </script>

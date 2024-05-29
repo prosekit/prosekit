@@ -8,7 +8,7 @@ import {
 } from 'prosekit/vue/popover'
 import { computed, ref } from 'vue'
 import type { EditorExtension } from './extension'
-import Toggle from './button.vue'
+import Button from './button.vue'
 
 const props = defineProps<{
   disabled: Boolean

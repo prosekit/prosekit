@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Themes } from '@prosekit/themes'
 import { writable } from 'svelte/store'
-import Toggle from './toggle.svelte'
+import Toggle from './button.svelte'
 import { useSubmitKeymap } from './use-submit-keymap'
 
 export let onSubmit: (hotkey: string) => void

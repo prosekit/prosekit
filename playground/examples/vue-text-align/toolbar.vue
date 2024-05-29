@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
-import Toggle from './toggle.vue'
+import Toggle from './button.vue'
 import type { Editor } from 'prosekit/core'
 import type { EditorExtension } from './extension'
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 import { Themes } from '@prosekit/themes'
-import Toggle from './toggle.svelte'
+import Toggle from './button.svelte'
 import type { EditorExtension } from './extension'
 import { useEditor } from 'prosekit/svelte'
 import type { Editor } from 'prosekit/core'

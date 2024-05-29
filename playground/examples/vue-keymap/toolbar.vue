@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
 import { ref, type PropType } from 'vue'
-import Toggle from './toggle.vue'
+import Toggle from './button.vue'
 import { useSubmitKeymap } from './use-submit-keymap'
 
 let props = defineProps({

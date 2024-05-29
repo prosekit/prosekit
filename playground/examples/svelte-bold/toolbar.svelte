@@ -2,7 +2,7 @@
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/svelte'
 import type { EditorExtension } from './extension'
-import Toggle from './toggle.svelte'
+import Toggle from './button.svelte'
 
 const editor = useEditor<EditorExtension>({ update: true })
 </script>

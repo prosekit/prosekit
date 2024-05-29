@@ -3,7 +3,7 @@ import { useEditor } from 'prosekit/react'
 
 import type { EditorExtension } from './extension'
 import { ImageUploadPopover } from './image-upload-popover'
-import Toggle from './toggle'
+import Toggle from './button'
 
 export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })

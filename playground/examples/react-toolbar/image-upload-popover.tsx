@@ -8,7 +8,7 @@ import {
 import { useState, type FC, type ReactNode } from 'react'
 
 import type { EditorExtension } from './extension'
-import Toggle from './toggle'
+import Toggle from './button'
 
 export const ImageUploadPopover: FC<{
   tooltip: string

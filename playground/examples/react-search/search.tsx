@@ -25,20 +25,30 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
 
   const editor = useEditor<EditorExtension>()
 
+  const scrollActiveMatch = () => {
+    const dom = editor.view.dom
+    const active = dom.querySelector('.ProseMirror-active-search-match')
+    active?.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: "smooth" })
+  }
+
   const findNext = () => {
     editor.commands.findNext()
+    scrollActiveMatch()
   }
 
   const findPrev = () => {
     editor.commands.findPrev()
+    scrollActiveMatch()
   }
 
   const replaceNext = () => {
     editor.commands.replaceNext()
+    scrollActiveMatch()
   }
 
   const replaceAll = () => {
     editor.commands.replaceAll()
+    scrollActiveMatch()
   }
 
   const isEnter = (event: React.KeyboardEvent) => {
@@ -47,7 +57,8 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
       !event.shiftKey &&
       !event.metaKey &&
       !event.altKey &&
-      !event.ctrlKey
+      !event.ctrlKey &&
+      !event.nativeEvent.isComposing
     )
   }
 
@@ -57,7 +68,8 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
       event.shiftKey &&
       !event.metaKey &&
       !event.altKey &&
-      !event.ctrlKey
+      !event.ctrlKey &&
+      !event.nativeEvent.isComposing
     )
   }
 

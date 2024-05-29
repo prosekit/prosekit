@@ -126,6 +126,7 @@ export default defineConfig({
             { text: 'Readonly', link: '/extensions/readonly' },
             { text: 'Input Rule', link: '/extensions/input-rule' },
             { text: 'Drop Cursor', link: '/extensions/drop-cursor' },
+            { text: 'Search', link: '/extensions/search' },
           ],
         },
       ],

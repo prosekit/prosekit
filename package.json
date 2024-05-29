@@ -52,7 +52,7 @@
   "pnpm": {
     "overrides": {},
     "patchedDependencies": {
-      "prosemirror-splittable@0.1.0": "patches/prosemirror-splittable@0.1.0.patch"
+      "prosemirror-splittable@0.1.1": "patches/prosemirror-splittable@0.1.1.patch"
     }
   }
 }

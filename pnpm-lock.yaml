@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
-  prosemirror-splittable@0.1.0:
-    hash: tnwvrvhk7jftxq4gactddx4rom
-    path: patches/prosemirror-splittable@0.1.0.patch
+  prosemirror-splittable@0.1.1:
+    hash: ltdjze5wh25pjc2y4z24yafn7u
+    path: patches/prosemirror-splittable@0.1.1.patch
 
 importers:
 
@@ -120,8 +120,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       prosemirror-splittable:
-        specifier: ^0.1.0
-        version: 0.1.0(patch_hash=tnwvrvhk7jftxq4gactddx4rom)
+        specifier: ^0.1.1
+        version: 0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)
       type-fest:
         specifier: ^4.18.2
         version: 4.18.2
@@ -4023,7 +4023,7 @@ packages:
       '@unocss/core': 0.60.3
       '@unocss/reset': 0.60.3
       '@unocss/vite': 0.60.3(vite@5.2.11)
-      vite: 5.2.11(@types/node@20.12.12)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - rollup
 
@@ -4224,7 +4224,7 @@ packages:
       chokidar: 3.6.0
       fast-glob: 3.3.2
       magic-string: 0.30.10
-      vite: 5.2.11(@types/node@20.12.12)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - rollup
 
@@ -9601,8 +9601,8 @@ packages:
       orderedmap: 2.1.1
     dev: false
 
-  /prosemirror-splittable@0.1.0(patch_hash=tnwvrvhk7jftxq4gactddx4rom):
-    resolution: {integrity: sha512-+RTwiWcYY4VpcVYySlS3ERAWZjqDxQGe91AtFLvjZ++E8LdHOe73qHVZuei0UrQlvcHIEOTVMA3Wdn9goL48mA==}
+  /prosemirror-splittable@0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u):
+    resolution: {integrity: sha512-mUaOrp4aT2rPZNyZMRCSd+JrVuUU+w7+SFg+l8r6JFtF/ECkA+ZVXxXO0c9vLQ0VWG8UcfszQaD+X+cxKuA2Uw==}
     peerDependencies:
       prosemirror-model: ^1.21.0
       prosemirror-state: ^1.4.3
@@ -11597,7 +11597,7 @@ packages:
       '@unocss/transformer-directives': 0.60.3
       '@unocss/transformer-variant-group': 0.60.3
       '@unocss/vite': 0.60.3(vite@5.2.11)
-      vite: 5.2.11(@types/node@20.12.12)
+      vite: 5.2.11(lightningcss@1.25.0)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -11873,6 +11873,7 @@ packages:
       rollup: 4.17.0
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
 
   /vite@5.2.11(lightningcss@1.25.0):
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}

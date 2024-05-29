@@ -7,6 +7,7 @@ import {
   type Example,
   type ExampleMeta,
   sortExamples,
+  sortFiles,
 } from './example-meta'
 import { notEmpty } from './not-empty'
 import { skipGen } from './skip-gen'
@@ -48,17 +49,20 @@ export async function genExampleMetaYaml() {
   for (const [exampleName, exampleFiles] of Object.entries(examples)) {
     const [framework, ...rest] = exampleName.split('-')
     const story = rest.join('-')
+
+    const files = exampleFiles.map(({ fileName }) => ({
+      path: fileName,
+      hidden:
+        fileName === 'tsconfig.json'
+          ? true
+          : findExampleFile(oldMeta, exampleName, fileName)?.hidden ?? false,
+    }))
+
     const newExample: Example = {
       name: exampleName,
       framework,
       story,
-      files: exampleFiles.map(({ fileName }) => ({
-        path: fileName,
-        hidden:
-          fileName === 'tsconfig.json'
-            ? true
-            : findExampleFile(oldMeta, exampleName, fileName)?.hidden ?? false,
-      })),
+      files: sortFiles(files),
     }
     newMeta.examples.push(newExample)
   }

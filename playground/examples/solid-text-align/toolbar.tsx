@@ -1,8 +1,8 @@
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/solid'
 
+import Button from './button'
 import type { EditorExtension } from './extension'
-import Toggle from './toggle'
 
 export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
@@ -15,37 +15,37 @@ export default function Toolbar() {
 
   return (
     <div class={Themes.TOOLBAR}>
-      <Toggle
+      <Button
         pressed={() => isTextAlignActive('left')}
         disabled={() => !editor().commands.setTextAlign.canApply('left')}
         onClick={() => editor().commands.setTextAlign('left')}
       >
         Left
-      </Toggle>
+      </Button>
 
-      <Toggle
+      <Button
         pressed={() => isTextAlignActive('center')}
         disabled={() => !editor().commands.setTextAlign.canApply('center')}
         onClick={() => editor().commands.setTextAlign('center')}
       >
         Center
-      </Toggle>
+      </Button>
 
-      <Toggle
+      <Button
         pressed={() => isTextAlignActive('right')}
         disabled={() => !editor().commands.setTextAlign.canApply('right')}
         onClick={() => editor().commands.setTextAlign('right')}
       >
         Right
-      </Toggle>
+      </Button>
 
-      <Toggle
+      <Button
         pressed={() => isTextAlignActive('justify')}
         disabled={() => !editor().commands.setTextAlign.canApply('justify')}
         onClick={() => editor().commands.setTextAlign('justify')}
       >
         Justify
-      </Toggle>
+      </Button>
     </div>
   )
 }

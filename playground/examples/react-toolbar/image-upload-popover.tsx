@@ -7,8 +7,8 @@ import {
 } from 'prosekit/react/popover'
 import { useState, type FC, type ReactNode } from 'react'
 
+import Button from './button'
 import type { EditorExtension } from './extension'
-import Toggle from './toggle'
 
 export const ImageUploadPopover: FC<{
   tooltip: string
@@ -71,9 +71,9 @@ export const ImageUploadPopover: FC<{
   return (
     <PopoverRoot open={open} onOpenChange={handleOpenChange}>
       <PopoverTrigger>
-        <Toggle pressed={open} disabled={disabled} tooltip={tooltip}>
+        <Button pressed={open} disabled={disabled} tooltip={tooltip}>
           {children}
-        </Toggle>
+        </Button>
       </PopoverTrigger>
 
       <PopoverContent className={Themes.IMAGE_UPLOAD_CARD}>

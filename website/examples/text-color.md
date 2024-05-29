@@ -14,7 +14,7 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 <<< @/../playground/examples/vue-text-color/extension.ts
 <<< @/../playground/examples/vue-text-color/inline-menu.vue
 <<< @/../playground/examples/vue-text-color/text-color.ts
-<<< @/../playground/examples/vue-text-color/toggle.vue
+<<< @/../playground/examples/vue-text-color/button.vue
 
 :::
 

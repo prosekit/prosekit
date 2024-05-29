@@ -2,18 +2,18 @@
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
-import type Toggle from './toggle.vue'
+import Button from './button.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
   <div :class="Themes.TOOLBAR">
-    <Toggle
+    <Button
       :pressed="editor.marks.code.isActive()"
       :onClick="() => editor.commands.toggleCode()"
     >
       Code
-    </Toggle>
+    </Button>
   </div>
 </template>

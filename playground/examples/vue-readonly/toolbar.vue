@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
-import Toggle from './toggle.vue'
+import Button from './button.vue'
 import { useReadonly } from './use-readonly'
 
 const { readonly } = useReadonly()
@@ -8,11 +8,11 @@ const { readonly } = useReadonly()
 
 <template>
   <div :class="Themes.TOOLBAR">
-    <Toggle :pressed="readonly" :onClick="() => (readonly = true)">
+    <Button :pressed="readonly" :onClick="() => (readonly = true)">
       Readonly
-    </Toggle>
-    <Toggle :pressed="!readonly" :onClick="() => (readonly = false)">
+    </Button>
+    <Button :pressed="!readonly" :onClick="() => (readonly = false)">
       Editable
-    </Toggle>
+    </Button>
   </div>
 </template>

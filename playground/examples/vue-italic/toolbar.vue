@@ -2,18 +2,18 @@
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
-import Toggle from './toggle.vue'
+import Button from './button.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
   <div :class="Themes.TOOLBAR">
-    <Toggle
+    <Button
       :pressed="editor.marks.italic.isActive()"
       :onClick="() => editor.commands.toggleItalic()"
     >
       Italic
-    </Toggle>
+    </Button>
   </div>
 </template>

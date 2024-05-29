@@ -8,7 +8,7 @@ import {
 } from 'prosekit/vue/popover'
 import { computed, ref } from 'vue'
 import type { EditorExtension } from './extension'
-import Toggle from './toggle.vue'
+import Button from './button.vue'
 
 const props = defineProps<{
   disabled: Boolean
@@ -67,13 +67,13 @@ const handleOpenChange = (openValue: boolean) => {
 <template>
   <PopoverRoot :open="open" :onOpenChange="handleOpenChange">
     <PopoverTrigger>
-      <Toggle
+      <Button
         :pressed="open"
         :disabled="props.disabled"
         :tooltip="props.tooltip"
       >
         <slot />
-      </Toggle>
+      </Button>
     </PopoverTrigger>
 
     <PopoverContent :class="Themes.IMAGE_UPLOAD_CARD">

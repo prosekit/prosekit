@@ -20,10 +20,6 @@ export const exampleMeta = {
       "story": "code-block",
       "files": [
         {
-          "path": "code-block-view.tsx",
-          "hidden": false
-        },
-        {
           "path": "editor.tsx",
           "hidden": false
         },
@@ -32,15 +28,19 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "code-block-view.tsx",
+          "hidden": false
+        },
+        {
           "path": "language-selector.tsx",
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
-          "hidden": false
-        },
-        {
-          "path": "toolbar.tsx",
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -59,11 +59,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "theme-selector.tsx",
+          "path": "toolbar.tsx",
           "hidden": false
         },
         {
-          "path": "toolbar.tsx",
+          "path": "theme-selector.tsx",
           "hidden": false
         }
       ]
@@ -82,11 +82,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
+          "path": "toolbar.tsx",
           "hidden": false
         },
         {
-          "path": "toolbar.tsx",
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -109,7 +109,7 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -128,15 +128,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
-          "hidden": false
-        },
-        {
           "path": "toolbar.tsx",
           "hidden": false
         },
         {
           "path": "use-submit-keymap.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -155,11 +155,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
+          "path": "toolbar.tsx",
           "hidden": false
         },
         {
-          "path": "toolbar.tsx",
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -197,15 +197,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
-          "hidden": false
-        },
-        {
           "path": "toolbar.tsx",
           "hidden": false
         },
         {
           "path": "use-readonly.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -303,15 +303,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
           "path": "image-upload-popover.tsx",
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
-          "hidden": false
-        },
-        {
-          "path": "toolbar.tsx",
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -437,11 +437,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
+          "path": "toolbar.vue",
           "hidden": false
         },
         {
-          "path": "toolbar.vue",
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -460,11 +460,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
+          "path": "toolbar.vue",
           "hidden": false
         },
         {
-          "path": "toolbar.vue",
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -475,10 +475,6 @@ export const exampleMeta = {
       "story": "code-block",
       "files": [
         {
-          "path": "code-block-view.vue",
-          "hidden": false
-        },
-        {
           "path": "editor.vue",
           "hidden": false
         },
@@ -487,15 +483,19 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "toolbar.vue",
+          "hidden": false
+        },
+        {
+          "path": "code-block-view.vue",
+          "hidden": false
+        },
+        {
           "path": "language-selector.vue",
           "hidden": false
         },
         {
-          "path": "toggle.vue",
-          "hidden": false
-        },
-        {
-          "path": "toolbar.vue",
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -514,11 +514,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "theme-selector.vue",
+          "path": "toolbar.vue",
           "hidden": false
         },
         {
-          "path": "toolbar.vue",
+          "path": "theme-selector.vue",
           "hidden": false
         }
       ]
@@ -529,15 +529,15 @@ export const exampleMeta = {
       "story": "drop-cursor",
       "files": [
         {
-          "path": "default-doc.ts",
-          "hidden": false
-        },
-        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "default-doc.ts",
           "hidden": false
         }
       ]
@@ -548,19 +548,23 @@ export const exampleMeta = {
       "story": "full",
       "files": [
         {
-          "path": "block-handle.vue",
-          "hidden": false
-        },
-        {
-          "path": "code-block-view.vue",
-          "hidden": false
-        },
-        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.vue",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.vue",
+          "hidden": false
+        },
+        {
+          "path": "code-block-view.vue",
           "hidden": false
         },
         {
@@ -588,19 +592,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
-          "hidden": false
-        },
-        {
-          "path": "toolbar.vue",
-          "hidden": false
-        },
-        {
           "path": "user-data.ts",
           "hidden": false
         },
         {
           "path": "user-menu.vue",
+          "hidden": false
+        },
+        {
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -619,11 +619,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
+          "path": "toolbar.vue",
           "hidden": false
         },
         {
-          "path": "toolbar.vue",
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -642,15 +642,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "inline-buttons.vue",
-          "hidden": false
-        },
-        {
           "path": "inline-menu.vue",
           "hidden": false
         },
         {
-          "path": "toggle.vue",
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
+          "path": "inline-buttons.vue",
           "hidden": false
         }
       ]
@@ -669,11 +669,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
+          "path": "toolbar.vue",
           "hidden": false
         },
         {
-          "path": "toolbar.vue",
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -692,15 +692,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
-          "hidden": false
-        },
-        {
           "path": "toolbar.vue",
           "hidden": false
         },
         {
           "path": "use-submit-keymap.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -734,11 +734,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
+          "path": "toolbar.vue",
           "hidden": false
         },
         {
-          "path": "toolbar.vue",
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -791,15 +791,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
-          "hidden": false
-        },
-        {
           "path": "toolbar.vue",
           "hidden": false
         },
         {
           "path": "use-readonly.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -878,11 +878,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
+          "path": "toolbar.vue",
           "hidden": false
         },
         {
-          "path": "toolbar.vue",
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -916,11 +916,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
+          "path": "toolbar.vue",
           "hidden": false
         },
         {
-          "path": "toolbar.vue",
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -947,7 +947,7 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -966,11 +966,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
+          "path": "toolbar.vue",
           "hidden": false
         },
         {
-          "path": "toolbar.vue",
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -989,11 +989,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
+          "path": "toolbar.vue",
           "hidden": false
         },
         {
-          "path": "toolbar.vue",
+          "path": "button.vue",
           "hidden": false
         }
       ]
@@ -1119,15 +1119,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
-          "hidden": false
-        },
-        {
           "path": "toolbar.tsx",
           "hidden": false
         },
         {
           "path": "use-submit-keymap.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -1146,15 +1146,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
-          "hidden": false
-        },
-        {
           "path": "toolbar.tsx",
           "hidden": false
         },
         {
           "path": "use-readonly.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -1203,11 +1203,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.svelte",
+          "path": "toolbar.svelte",
           "hidden": false
         },
         {
-          "path": "toolbar.svelte",
+          "path": "button.svelte",
           "hidden": false
         }
       ]
@@ -1222,11 +1222,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "emoji.ts",
+          "path": "extension.ts",
           "hidden": false
         },
         {
-          "path": "extension.ts",
+          "path": "emoji.ts",
           "hidden": false
         }
       ]
@@ -1245,11 +1245,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.svelte",
+          "path": "toolbar.svelte",
           "hidden": false
         },
         {
-          "path": "toolbar.svelte",
+          "path": "button.svelte",
           "hidden": false
         }
       ]
@@ -1268,15 +1268,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.svelte",
-          "hidden": false
-        },
-        {
           "path": "toolbar.svelte",
           "hidden": false
         },
         {
           "path": "use-submit-keymap.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
           "hidden": false
         }
       ]
@@ -1310,15 +1310,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.svelte",
-          "hidden": false
-        },
-        {
           "path": "toolbar.svelte",
           "hidden": false
         },
         {
           "path": "use-readonly.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
           "hidden": false
         }
       ]
@@ -1356,11 +1356,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.svelte",
+          "path": "toolbar.svelte",
           "hidden": false
         },
         {
-          "path": "toolbar.svelte",
+          "path": "button.svelte",
           "hidden": false
         }
       ]
@@ -1405,15 +1405,15 @@ export const exampleMeta = {
       "story": "drop-cursor",
       "files": [
         {
-          "path": "default-doc.ts",
-          "hidden": false
-        },
-        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "default-doc.ts",
           "hidden": false
         }
       ]
@@ -1432,11 +1432,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
+          "path": "toolbar.tsx",
           "hidden": false
         },
         {
-          "path": "toolbar.tsx",
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -1455,15 +1455,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
-          "hidden": false
-        },
-        {
           "path": "toolbar.tsx",
           "hidden": false
         },
         {
           "path": "use-submit-keymap.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -1482,15 +1482,15 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
-          "hidden": false
-        },
-        {
           "path": "toolbar.tsx",
           "hidden": false
         },
         {
           "path": "use-readonly.ts",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -1528,11 +1528,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.tsx",
+          "path": "toolbar.tsx",
           "hidden": false
         },
         {
-          "path": "toolbar.tsx",
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -1543,19 +1543,19 @@ export const exampleMeta = {
       "story": "dom",
       "files": [
         {
-          "path": "code-block-view.ts",
-          "hidden": false
-        },
-        {
-          "path": "create-element.ts",
-          "hidden": false
-        },
-        {
           "path": "editor.ts",
           "hidden": false
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "code-block-view.ts",
+          "hidden": false
+        },
+        {
+          "path": "create-element.ts",
           "hidden": false
         },
         {

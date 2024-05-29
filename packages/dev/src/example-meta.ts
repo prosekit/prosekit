@@ -69,6 +69,19 @@ export function sortExamples(examples: Example[]) {
   return sorted
 }
 
+// Put important files first
+export function sortFiles<T extends { path: string }>(files: T[]): T[] {
+  return sortBy(files, (file) => {
+    const name = file.path.split('/').at(-1) || ''
+
+    if (name.includes('editor')) return 1
+    if (name.includes('extension')) return 2
+    if (name.includes('toolbar')) return 3
+    if (name.includes('button')) return 9
+    return 5
+  })
+}
+
 export function findExample(meta: ExampleMeta, name: string) {
   return meta.examples.find((c) => c.name === name)
 }

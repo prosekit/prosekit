@@ -1,6 +1,6 @@
 import { Themes } from '@prosekit/themes'
 
-import Toggle from './toggle'
+import Button from './button'
 import { useReadonly } from './use-readonly'
 
 export default function Toolbar() {
@@ -8,21 +8,21 @@ export default function Toolbar() {
 
   return (
     <div class={Themes.TOOLBAR}>
-      <Toggle
+      <Button
         pressed={getReadonly}
         disabled={() => !true}
         onClick={() => setReadonly(true)}
       >
         Readonly
-      </Toggle>
+      </Button>
 
-      <Toggle
+      <Button
         pressed={() => !getReadonly()}
         disabled={() => !true}
         onClick={() => setReadonly(false)}
       >
         Editable
-      </Toggle>
+      </Button>
     </div>
   )
 }

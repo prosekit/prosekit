@@ -5,7 +5,7 @@ import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
 import { ref } from 'vue'
 import type { EditorExtension } from './extension'
-import Toggle from './toggle.vue'
+import Button from './button.vue'
 
 const editor = useEditor<EditorExtension>({ update: true })
 const linkMenuOpen = ref(false)
@@ -44,52 +44,52 @@ const handleLinkUpdate = (href?: string) => {
 
 <template>
   <InlinePopover :class="Themes.INLINE_MENU_MAIN">
-    <Toggle
+    <Button
       :pressed="editor.marks.bold.isActive()"
       :disabled="!editor.commands.toggleBold.canApply()"
       tooltip="Bold"
       @click="() => editor.commands.toggleBold()"
     >
       <div :class="Themes.ICON_BOLD"></div>
-    </Toggle>
+    </Button>
 
-    <Toggle
+    <Button
       :pressed="editor.marks.italic.isActive()"
       :disabled="!editor.commands.toggleItalic.canApply()"
       @click="() => editor.commands.toggleItalic()"
       tooltip="Italic"
     >
       <div :class="Themes.ICON_ITALIC"></div>
-    </Toggle>
+    </Button>
 
-    <Toggle
+    <Button
       :pressed="editor.marks.underline.isActive()"
       :disabled="!editor.commands.toggleUnderline.canApply()"
       @click="() => editor.commands.toggleUnderline()"
       tooltip="Underline"
     >
       <div :class="Themes.ICON_UNDERLINE"></div>
-    </Toggle>
+    </Button>
 
-    <Toggle
+    <Button
       :pressed="editor.marks.strike.isActive()"
       :disabled="!editor.commands.toggleStrike.canApply()"
       @click="() => editor.commands.toggleStrike()"
       tooltip="Strike"
     >
       <div :class="Themes.ICON_STRIKE"></div>
-    </Toggle>
+    </Button>
 
-    <Toggle
+    <Button
       :pressed="editor.marks.code.isActive()"
       :disabled="!editor.commands.toggleCode.canApply()"
       @click="() => editor.commands.toggleCode()"
       tooltip="Code"
     >
       <div :class="Themes.ICON_CODE"></div>
-    </Toggle>
+    </Button>
 
-    <Toggle
+    <Button
       v-if="editor.commands.addLink.canApply({ href: '' })"
       :pressed="editor.marks.link.isActive()"
       @click="
@@ -101,7 +101,7 @@ const handleLinkUpdate = (href?: string) => {
       tooltip="Link"
     >
       <div :class="Themes.ICON_LINK"></div>
-    </Toggle>
+    </Button>
   </InlinePopover>
 
   <InlinePopover

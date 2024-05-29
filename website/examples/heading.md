@@ -12,8 +12,8 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/react-heading/editor.tsx
 <<< @/../playground/examples/react-heading/extension.ts
-<<< @/../playground/examples/react-heading/toggle.tsx
 <<< @/../playground/examples/react-heading/toolbar.tsx
+<<< @/../playground/examples/react-heading/button.tsx
 
 :::
 
@@ -25,8 +25,8 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/vue-heading/editor.vue
 <<< @/../playground/examples/vue-heading/extension.ts
-<<< @/../playground/examples/vue-heading/toggle.vue
 <<< @/../playground/examples/vue-heading/toolbar.vue
+<<< @/../playground/examples/vue-heading/button.vue
 
 :::
 
@@ -38,8 +38,8 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/solid-heading/editor.tsx
 <<< @/../playground/examples/solid-heading/extension.ts
-<<< @/../playground/examples/solid-heading/toggle.tsx
 <<< @/../playground/examples/solid-heading/toolbar.tsx
+<<< @/../playground/examples/solid-heading/button.tsx
 
 :::
 

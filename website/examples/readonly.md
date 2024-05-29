@@ -12,9 +12,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/react-readonly/editor.tsx
 <<< @/../playground/examples/react-readonly/extension.ts
-<<< @/../playground/examples/react-readonly/toggle.tsx
 <<< @/../playground/examples/react-readonly/toolbar.tsx
 <<< @/../playground/examples/react-readonly/use-readonly.ts
+<<< @/../playground/examples/react-readonly/button.tsx
 
 :::
 
@@ -26,9 +26,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/vue-readonly/editor.vue
 <<< @/../playground/examples/vue-readonly/extension.ts
-<<< @/../playground/examples/vue-readonly/toggle.vue
 <<< @/../playground/examples/vue-readonly/toolbar.vue
 <<< @/../playground/examples/vue-readonly/use-readonly.ts
+<<< @/../playground/examples/vue-readonly/button.vue
 
 :::
 
@@ -40,9 +40,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/preact-readonly/editor.tsx
 <<< @/../playground/examples/preact-readonly/extension.ts
-<<< @/../playground/examples/preact-readonly/toggle.tsx
 <<< @/../playground/examples/preact-readonly/toolbar.tsx
 <<< @/../playground/examples/preact-readonly/use-readonly.ts
+<<< @/../playground/examples/preact-readonly/button.tsx
 
 :::
 
@@ -54,9 +54,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/svelte-readonly/editor.svelte
 <<< @/../playground/examples/svelte-readonly/extension.ts
-<<< @/../playground/examples/svelte-readonly/toggle.svelte
 <<< @/../playground/examples/svelte-readonly/toolbar.svelte
 <<< @/../playground/examples/svelte-readonly/use-readonly.ts
+<<< @/../playground/examples/svelte-readonly/button.svelte
 
 :::
 
@@ -68,9 +68,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/solid-readonly/editor.tsx
 <<< @/../playground/examples/solid-readonly/extension.ts
-<<< @/../playground/examples/solid-readonly/toggle.tsx
 <<< @/../playground/examples/solid-readonly/toolbar.tsx
 <<< @/../playground/examples/solid-readonly/use-readonly.ts
+<<< @/../playground/examples/solid-readonly/button.tsx
 
 :::
 

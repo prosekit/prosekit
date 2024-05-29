@@ -8,11 +8,11 @@ const editor = useEditor<EditorExtension>({ update: true })
 
 <template>
   <div :class="Themes.TOOLBAR">
-    <Toggle
+    <Button
       :pressed="editor.marks.strike.isActive()"
       :onClick="() => editor.commands.toggleStrike()"
     >
       Underline
-    </Toggle>
+    </Button>
   </div>
 </template>

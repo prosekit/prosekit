@@ -12,9 +12,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/react-toolbar/editor.tsx
 <<< @/../playground/examples/react-toolbar/extension.ts
-<<< @/../playground/examples/react-toolbar/image-upload-popover.tsx
-<<< @/../playground/examples/react-toolbar/toggle.tsx
 <<< @/../playground/examples/react-toolbar/toolbar.tsx
+<<< @/../playground/examples/react-toolbar/image-upload-popover.tsx
+<<< @/../playground/examples/react-toolbar/button.tsx
 
 :::
 
@@ -26,8 +26,8 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/vue-toolbar/editor.vue
 <<< @/../playground/examples/vue-toolbar/extension.ts
-<<< @/../playground/examples/vue-toolbar/toggle.vue
 <<< @/../playground/examples/vue-toolbar/toolbar.vue
+<<< @/../playground/examples/vue-toolbar/button.vue
 
 :::
 

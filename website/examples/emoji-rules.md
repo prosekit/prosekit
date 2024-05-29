@@ -11,8 +11,8 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 ::: code-group
 
 <<< @/../playground/examples/svelte-emoji-rules/editor.svelte
-<<< @/../playground/examples/svelte-emoji-rules/emoji.ts
 <<< @/../playground/examples/svelte-emoji-rules/extension.ts
+<<< @/../playground/examples/svelte-emoji-rules/emoji.ts
 
 :::
 

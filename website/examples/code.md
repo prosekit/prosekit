@@ -12,8 +12,8 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/vue-code/editor.vue
 <<< @/../playground/examples/vue-code/extension.ts
-<<< @/../playground/examples/vue-code/toggle.vue
 <<< @/../playground/examples/vue-code/toolbar.vue
+<<< @/../playground/examples/vue-code/button.vue
 
 :::
 

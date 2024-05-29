@@ -1,7 +1,7 @@
 import { Themes } from '@prosekit/themes'
 import { createSignal } from 'solid-js'
 
-import Toggle from './toggle'
+import Button from './button'
 import { useSubmitKeymap } from './use-submit-keymap'
 
 export default function Toolbar({
@@ -16,21 +16,21 @@ export default function Toolbar({
 
   return (
     <div class={Themes.TOOLBAR}>
-      <Toggle
+      <Button
         pressed={() => hotkey() === 'Shift-Enter'}
         onClick={() => setHotkey('Shift-Enter')}
       >
         <span class="mr-1">Submit with</span>
         <kbd>Shift + Enter</kbd>
-      </Toggle>
+      </Button>
 
-      <Toggle
+      <Button
         pressed={() => hotkey() === 'Enter'}
         onClick={() => setHotkey('Enter')}
       >
         <span class="mr-1">Submit with</span>
         <kbd>Enter</kbd>
-      </Toggle>
+      </Button>
     </div>
   )
 }

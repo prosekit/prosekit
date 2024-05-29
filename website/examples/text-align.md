@@ -12,8 +12,8 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/vue-text-align/editor.vue
 <<< @/../playground/examples/vue-text-align/extension.ts
-<<< @/../playground/examples/vue-text-align/toggle.vue
 <<< @/../playground/examples/vue-text-align/toolbar.vue
+<<< @/../playground/examples/vue-text-align/button.vue
 
 :::
 
@@ -25,8 +25,8 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/svelte-text-align/editor.svelte
 <<< @/../playground/examples/svelte-text-align/extension.ts
-<<< @/../playground/examples/svelte-text-align/toggle.svelte
 <<< @/../playground/examples/svelte-text-align/toolbar.svelte
+<<< @/../playground/examples/svelte-text-align/button.svelte
 
 :::
 
@@ -38,8 +38,8 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/solid-text-align/editor.tsx
 <<< @/../playground/examples/solid-text-align/extension.ts
-<<< @/../playground/examples/solid-text-align/toggle.tsx
 <<< @/../playground/examples/solid-text-align/toolbar.tsx
+<<< @/../playground/examples/solid-text-align/button.tsx
 
 :::
 

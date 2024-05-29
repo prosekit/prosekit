@@ -13,7 +13,7 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 <<< @/../playground/examples/react-inline-menu/editor.tsx
 <<< @/../playground/examples/react-inline-menu/extension.ts
 <<< @/../playground/examples/react-inline-menu/inline-menu.tsx
-<<< @/../playground/examples/react-inline-menu/toggle.tsx
+<<< @/../playground/examples/react-inline-menu/button.tsx
 
 :::
 
@@ -25,9 +25,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/vue-inline-menu/editor.vue
 <<< @/../playground/examples/vue-inline-menu/extension.ts
-<<< @/../playground/examples/vue-inline-menu/inline-buttons.vue
 <<< @/../playground/examples/vue-inline-menu/inline-menu.vue
-<<< @/../playground/examples/vue-inline-menu/toggle.vue
+<<< @/../playground/examples/vue-inline-menu/button.vue
+<<< @/../playground/examples/vue-inline-menu/inline-buttons.vue
 
 :::
 

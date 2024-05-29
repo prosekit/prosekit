@@ -56,15 +56,15 @@ Each command button within the `Toolbar` component is represented by a `Toggle` 
 
 - `disabled`: Determines if a command can be executed in the current state. Use `editor.commands.COMMAND_NAME.canApply()` to check if a command is executable.
 
-### `Toggle`
+### `Button`
 
-The `Toggle` component represents a single command button in the toolbar, with properties to control its active state, disabled status, and an event handler for executing the command.
+The `Button` component represents a single command button in the toolbar, with properties to control its active state, disabled status, and an event handler for executing the command.
 
 ::: code-group
 
-<<< @/../playground/examples/react-toolbar/toggle.tsx [<span class="text-gray-500 italic">React</span> toggle.tsx]
-<<< @/../playground/examples/vue-toolbar/toggle.vue [<span class="text-gray-500 italic">Vue</span> toggle.vue]
+<<< @/../playground/examples/react-toolbar/button.tsx [<span class="text-gray-500 italic">React</span> button.tsx]
+<<< @/../playground/examples/vue-toolbar/button.vue [<span class="text-gray-500 italic">Vue</span> button.vue]
 
 :::
 
-In the `Toggle` component, the `mousedown` event is prevented. This is because we do not want the editor to lose focus when the user clicks the button.
+In the `Button` component, the `mousedown` event is prevented. This is because we do not want the editor to lose focus when the user clicks the button.

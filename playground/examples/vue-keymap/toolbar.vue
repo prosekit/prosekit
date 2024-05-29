@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
 import { ref, type PropType } from 'vue'
-import Toggle from './toggle.vue'
+import Button from './button.vue'
 import { useSubmitKeymap } from './use-submit-keymap'
 
 let props = defineProps({
@@ -16,17 +16,17 @@ useSubmitKeymap(hotkey, props.onSubmit)
 
 <template>
   <div :class="Themes.TOOLBAR">
-    <Toggle
+    <Button
       :pressed="hotkey === 'Shift-Enter'"
       @click="() => (hotkey = 'Shift-Enter')"
     >
       <span class="mr-1">Submit with</span>
       <kbd>Shift + Enter</kbd>
-    </Toggle>
+    </Button>
 
-    <Toggle :pressed="hotkey === 'Enter'" @click="() => (hotkey = 'Enter')">
+    <Button :pressed="hotkey === 'Enter'" @click="() => (hotkey = 'Enter')">
       <span class="mr-1">Submit with</span>
       <kbd>Enter</kbd>
-    </Toggle>
+    </Button>
   </div>
 </template>

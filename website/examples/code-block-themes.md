@@ -12,8 +12,8 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/react-code-block-themes/editor.tsx
 <<< @/../playground/examples/react-code-block-themes/extension.ts
-<<< @/../playground/examples/react-code-block-themes/theme-selector.tsx
 <<< @/../playground/examples/react-code-block-themes/toolbar.tsx
+<<< @/../playground/examples/react-code-block-themes/theme-selector.tsx
 
 :::
 
@@ -25,8 +25,8 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 <<< @/../playground/examples/vue-code-block-themes/editor.vue
 <<< @/../playground/examples/vue-code-block-themes/extension.ts
-<<< @/../playground/examples/vue-code-block-themes/theme-selector.vue
 <<< @/../playground/examples/vue-code-block-themes/toolbar.vue
+<<< @/../playground/examples/vue-code-block-themes/theme-selector.vue
 
 :::
 

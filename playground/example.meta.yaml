@@ -9,17 +9,17 @@ examples:
     framework: react
     story: code-block
     files:
-      - path: code-block-view.tsx
-        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: toolbar.tsx
+        hidden: false
+      - path: code-block-view.tsx
+        hidden: false
       - path: language-selector.tsx
         hidden: false
-      - path: toggle.tsx
-        hidden: false
-      - path: toolbar.tsx
+      - path: button.tsx
         hidden: false
   - name: react-code-block-themes
     framework: react
@@ -29,9 +29,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: theme-selector.tsx
-        hidden: false
       - path: toolbar.tsx
+        hidden: false
+      - path: theme-selector.tsx
         hidden: false
   - name: react-heading
     framework: react
@@ -41,9 +41,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.tsx
-        hidden: false
       - path: toolbar.tsx
+        hidden: false
+      - path: button.tsx
         hidden: false
   - name: react-inline-menu
     framework: react
@@ -55,7 +55,7 @@ examples:
         hidden: false
       - path: inline-menu.tsx
         hidden: false
-      - path: toggle.tsx
+      - path: button.tsx
         hidden: false
   - name: react-keymap
     framework: react
@@ -65,11 +65,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.tsx
-        hidden: false
       - path: toolbar.tsx
         hidden: false
       - path: use-submit-keymap.ts
+        hidden: false
+      - path: button.tsx
         hidden: false
   - name: react-list
     framework: react
@@ -79,9 +79,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.tsx
-        hidden: false
       - path: toolbar.tsx
+        hidden: false
+      - path: button.tsx
         hidden: false
   - name: react-mark-rule
     framework: react
@@ -101,11 +101,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.tsx
-        hidden: false
       - path: toolbar.tsx
         hidden: false
       - path: use-readonly.ts
+        hidden: false
+      - path: button.tsx
         hidden: false
   - name: react-resizable-image
     framework: react
@@ -169,11 +169,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: toolbar.tsx
+        hidden: false
       - path: image-upload-popover.tsx
         hidden: false
-      - path: toggle.tsx
-        hidden: false
-      - path: toolbar.tsx
+      - path: button.tsx
         hidden: false
   - name: react-unmount
     framework: react
@@ -239,9 +239,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-code
     framework: vue
@@ -251,25 +251,25 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-code-block
     framework: vue
     story: code-block
     files:
-      - path: code-block-view.vue
-        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: toolbar.vue
+        hidden: false
+      - path: code-block-view.vue
+        hidden: false
       - path: language-selector.vue
         hidden: false
-      - path: toggle.vue
-        hidden: false
-      - path: toolbar.vue
+      - path: button.vue
         hidden: false
   - name: vue-code-block-themes
     framework: vue
@@ -279,31 +279,33 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: theme-selector.vue
-        hidden: false
       - path: toolbar.vue
+        hidden: false
+      - path: theme-selector.vue
         hidden: false
   - name: vue-drop-cursor
     framework: vue
     story: drop-cursor
     files:
-      - path: default-doc.ts
-        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: default-doc.ts
         hidden: false
   - name: vue-full
     framework: vue
     story: full
     files:
-      - path: block-handle.vue
-        hidden: false
-      - path: code-block-view.vue
-        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: toolbar.vue
+        hidden: false
+      - path: block-handle.vue
+        hidden: false
+      - path: code-block-view.vue
         hidden: false
       - path: image-upload-popover.vue
         hidden: false
@@ -317,13 +319,11 @@ examples:
         hidden: false
       - path: tag-menu.vue
         hidden: false
-      - path: toggle.vue
-        hidden: false
-      - path: toolbar.vue
-        hidden: false
       - path: user-data.ts
         hidden: false
       - path: user-menu.vue
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-heading
     framework: vue
@@ -333,9 +333,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-inline-menu
     framework: vue
@@ -345,11 +345,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: inline-buttons.vue
-        hidden: false
       - path: inline-menu.vue
         hidden: false
-      - path: toggle.vue
+      - path: button.vue
+        hidden: false
+      - path: inline-buttons.vue
         hidden: false
   - name: vue-italic
     framework: vue
@@ -359,9 +359,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-keymap
     framework: vue
@@ -371,11 +371,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
         hidden: false
       - path: use-submit-keymap.ts
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-link
     framework: vue
@@ -393,9 +393,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-mark-rule
     framework: vue
@@ -423,11 +423,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
         hidden: false
       - path: use-readonly.ts
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-save-html
     framework: vue
@@ -469,9 +469,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-table
     framework: vue
@@ -489,9 +489,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-text-color
     framework: vue
@@ -505,7 +505,7 @@ examples:
         hidden: false
       - path: text-color.ts
         hidden: false
-      - path: toggle.vue
+      - path: button.vue
         hidden: false
   - name: vue-toolbar
     framework: vue
@@ -515,9 +515,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-underline
     framework: vue
@@ -527,9 +527,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-unmount
     framework: vue
@@ -595,11 +595,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.tsx
-        hidden: false
       - path: toolbar.tsx
         hidden: false
       - path: use-submit-keymap.ts
+        hidden: false
+      - path: button.tsx
         hidden: false
   - name: preact-readonly
     framework: preact
@@ -609,11 +609,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.tsx
-        hidden: false
       - path: toolbar.tsx
         hidden: false
       - path: use-readonly.ts
+        hidden: false
+      - path: button.tsx
         hidden: false
   - name: preact-slash-menu
     framework: preact
@@ -639,9 +639,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.svelte
-        hidden: false
       - path: toolbar.svelte
+        hidden: false
+      - path: button.svelte
         hidden: false
   - name: svelte-emoji-rules
     framework: svelte
@@ -649,9 +649,9 @@ examples:
     files:
       - path: editor.svelte
         hidden: false
-      - path: emoji.ts
-        hidden: false
       - path: extension.ts
+        hidden: false
+      - path: emoji.ts
         hidden: false
   - name: svelte-italic
     framework: svelte
@@ -661,9 +661,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.svelte
-        hidden: false
       - path: toolbar.svelte
+        hidden: false
+      - path: button.svelte
         hidden: false
   - name: svelte-keymap
     framework: svelte
@@ -673,11 +673,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.svelte
-        hidden: false
       - path: toolbar.svelte
         hidden: false
       - path: use-submit-keymap.ts
+        hidden: false
+      - path: button.svelte
         hidden: false
   - name: svelte-list
     framework: svelte
@@ -695,11 +695,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.svelte
-        hidden: false
       - path: toolbar.svelte
         hidden: false
       - path: use-readonly.ts
+        hidden: false
+      - path: button.svelte
         hidden: false
   - name: svelte-slash-menu
     framework: svelte
@@ -719,9 +719,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.svelte
-        hidden: false
       - path: toolbar.svelte
+        hidden: false
+      - path: button.svelte
         hidden: false
   - name: svelte-word-counter
     framework: svelte
@@ -745,11 +745,11 @@ examples:
     framework: solid
     story: drop-cursor
     files:
-      - path: default-doc.ts
-        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: default-doc.ts
         hidden: false
   - name: solid-heading
     framework: solid
@@ -759,9 +759,9 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.tsx
-        hidden: false
       - path: toolbar.tsx
+        hidden: false
+      - path: button.tsx
         hidden: false
   - name: solid-keymap
     framework: solid
@@ -771,11 +771,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.tsx
-        hidden: false
       - path: toolbar.tsx
         hidden: false
       - path: use-submit-keymap.ts
+        hidden: false
+      - path: button.tsx
         hidden: false
   - name: solid-readonly
     framework: solid
@@ -785,11 +785,11 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.tsx
-        hidden: false
       - path: toolbar.tsx
         hidden: false
       - path: use-readonly.ts
+        hidden: false
+      - path: button.tsx
         hidden: false
   - name: solid-slash-menu
     framework: solid
@@ -809,21 +809,21 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: toggle.tsx
-        hidden: false
       - path: toolbar.tsx
+        hidden: false
+      - path: button.tsx
         hidden: false
   - name: lit-dom
     framework: lit
     story: dom
     files:
-      - path: code-block-view.ts
-        hidden: false
-      - path: create-element.ts
-        hidden: false
       - path: editor.ts
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: code-block-view.ts
+        hidden: false
+      - path: create-element.ts
         hidden: false
       - path: get-id.ts
         hidden: false

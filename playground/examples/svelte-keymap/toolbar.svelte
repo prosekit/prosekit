@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Themes } from '@prosekit/themes'
 import { writable } from 'svelte/store'
-import Toggle from './toggle.svelte'
+import Button from './button.svelte'
 import { useSubmitKeymap } from './use-submit-keymap'
 
 export let onSubmit: (hotkey: string) => void
@@ -11,16 +11,16 @@ useSubmitKeymap(hotkey, onSubmit)
 </script>
 
 <div class={Themes.TOOLBAR}>
-  <Toggle
+  <Button
     pressed={$hotkey === 'Shift-Enter'}
     onClick={() => ($hotkey = 'Shift-Enter')}
   >
     <span class="mr-1">Submit with</span>
     <kbd>Shift + Enter</kbd>
-  </Toggle>
+  </Button>
 
-  <Toggle pressed={$hotkey === 'Enter'} onClick={() => ($hotkey = 'Enter')}>
+  <Button pressed={$hotkey === 'Enter'} onClick={() => ($hotkey = 'Enter')}>
     <span class="mr-1">Submit with</span>
     <kbd>Enter</kbd>
-  </Toggle>
+  </Button>
 </div>

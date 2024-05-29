@@ -97,14 +97,14 @@ export { defineText } from './extensions/text'
 export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
-export type { CommandTyping,
+export type {
+  CommandTyping,
   CommandApplier,
   CommandCreator,
   CommandCreators,
   ToCommandCreators,
   ToCommandApplier,
-
- } from './types/command'
+} from './types/command'
 export type {
   Extension,
   ExtensionTyping,

@@ -83,6 +83,10 @@ jobs:
   linkcheck:
     runs-on: ubuntu-latest
 
+    # Wait for the deploy job to complete. This should help reduce Vercel's 429
+    # Too Many Requests errors.
+    needs: [deploy]
+
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ vars.TURBO_TEAM }}

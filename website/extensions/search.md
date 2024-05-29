@@ -45,6 +45,111 @@ const editor = createEditor({ extension })
 editor.commands.findNext()
 ```
 
+### `findPrev`
+
+Find the previous instance of the search query and move the selection to it.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineSearchCommands } from 'prosekit/extensions/search'
+
+const extension = defineSearchCommands()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.findPrev()
+```
+
+### `findNextNoWrap`
+
+Find the next instance of the search query and move the selection to it. Don't wrap around at the end of document or search range.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineSearchCommands } from 'prosekit/extensions/search'
+
+const extension = defineSearchCommands()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.findNextNoWrap()
+```
+
+### `findPrevNoWrap`
+
+Find the previous instance of the search query and move the selection to it. Don't wrap at the start of the document or search range.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineSearchCommands } from 'prosekit/extensions/search'
+
+const extension = defineSearchCommands()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.findPrevNoWrap()
+```
+
+### `replaceNext`
+
+Replace the currently selected instance of the search query, and move to the next one. Or select the next match, if none is already selected.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineSearchCommands } from 'prosekit/extensions/search'
+
+const extension = defineSearchCommands()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.replaceNext()
+```
+
+### `replaceNextNoWrap`
+
+Replace the next instance of the search query. Don't wrap around at the end of the document.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineSearchCommands } from 'prosekit/extensions/search'
+
+const extension = defineSearchCommands()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.replaceNextNoWrap()
+```
+
+### `replaceCurrent`
+
+Replace the currently selected instance of the search query, if any, and keep it selected.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineSearchCommands } from 'prosekit/extensions/search'
+
+const extension = defineSearchCommands()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.replaceCurrent()
+```
+
+### `replaceAll`
+
+Replace all instances of the search query.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineSearchCommands } from 'prosekit/extensions/search'
+
+const extension = defineSearchCommands()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.replaceAll()
+```
+
 ## API Reference
 
 - [prosekit/extensions/search](/references/extensions/search)

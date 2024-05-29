@@ -1,7 +1,7 @@
 import { Themes } from '@prosekit/themes'
 import type { ParentProps } from 'solid-js'
 
-export default function Toggle({
+export default function Button({
   pressed,
   disabled,
   onClick,

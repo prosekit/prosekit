@@ -28,7 +28,11 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
   const scrollActiveMatch = () => {
     const dom = editor.view.dom
     const active = dom.querySelector('.ProseMirror-active-search-match')
-    active?.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: "smooth" })
+    active?.scrollIntoView({
+      block: 'nearest',
+      inline: 'nearest',
+      behavior: 'smooth',
+    })
   }
 
   const findNext = () => {

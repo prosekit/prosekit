@@ -118,13 +118,10 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
         className={Themes.SEARCH_INPUT}
       />
       <div className={Themes.SEARCH_CONTROLLER}>
-        <Button
-          tooltip="Previous (Shift Enter)"
-          onClick={editor.commands.findPrev}
-        >
+        <Button tooltip="Previous (Shift Enter)" onClick={findPrev}>
           <span className={Themes.ICON_ARROW_LEFT} />
         </Button>
-        <Button tooltip="Next (Enter)" onClick={editor.commands.findNext}>
+        <Button tooltip="Next (Enter)" onClick={findNext}>
           <span className={Themes.ICON_ARROW_RIGHT} />
         </Button>
         <Button tooltip="Close" onClick={onClose}>
@@ -143,16 +140,10 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
       )}
       {showReplace && (
         <div className={Themes.SEARCH_CONTROLLER}>
-          <Button
-            tooltip="Replace (Enter)"
-            onClick={editor.commands.replaceNext}
-          >
+          <Button tooltip="Replace (Enter)" onClick={replaceNext}>
             Replace
           </Button>
-          <Button
-            tooltip="Replace All (Shift Enter)"
-            onClick={editor.commands.replaceAll}
-          >
+          <Button tooltip="Replace All (Shift Enter)" onClick={replaceAll}>
             All
           </Button>
         </div>

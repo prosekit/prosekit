@@ -11,6 +11,7 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 ::: code-group
 
 <<< @/../playground/examples/vue-full/block-handle.vue
+<<< @/../playground/examples/vue-full/button.vue
 <<< @/../playground/examples/vue-full/code-block-view.vue
 <<< @/../playground/examples/vue-full/editor.vue
 <<< @/../playground/examples/vue-full/extension.ts
@@ -20,7 +21,6 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 <<< @/../playground/examples/vue-full/slash-menu.vue
 <<< @/../playground/examples/vue-full/tag-data.ts
 <<< @/../playground/examples/vue-full/tag-menu.vue
-<<< @/../playground/examples/vue-full/toggle.vue
 <<< @/../playground/examples/vue-full/toolbar.vue
 <<< @/../playground/examples/vue-full/user-data.ts
 <<< @/../playground/examples/vue-full/user-menu.vue

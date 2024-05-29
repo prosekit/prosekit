@@ -10,9 +10,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 ::: code-group
 
+<<< @/../playground/examples/react-list/button.tsx
 <<< @/../playground/examples/react-list/editor.tsx
 <<< @/../playground/examples/react-list/extension.ts
-<<< @/../playground/examples/react-list/toggle.tsx
 <<< @/../playground/examples/react-list/toolbar.tsx
 
 :::
@@ -23,9 +23,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 ::: code-group
 
+<<< @/../playground/examples/vue-list/button.vue
 <<< @/../playground/examples/vue-list/editor.vue
 <<< @/../playground/examples/vue-list/extension.ts
-<<< @/../playground/examples/vue-list/toggle.vue
 <<< @/../playground/examples/vue-list/toolbar.vue
 
 :::

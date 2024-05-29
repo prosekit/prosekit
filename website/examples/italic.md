@@ -10,9 +10,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 ::: code-group
 
+<<< @/../playground/examples/vue-italic/button.vue
 <<< @/../playground/examples/vue-italic/editor.vue
 <<< @/../playground/examples/vue-italic/extension.ts
-<<< @/../playground/examples/vue-italic/toggle.vue
 <<< @/../playground/examples/vue-italic/toolbar.vue
 
 :::
@@ -23,9 +23,9 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview/example-
 
 ::: code-group
 
+<<< @/../playground/examples/svelte-italic/button.svelte
 <<< @/../playground/examples/svelte-italic/editor.svelte
 <<< @/../playground/examples/svelte-italic/extension.ts
-<<< @/../playground/examples/svelte-italic/toggle.svelte
 <<< @/../playground/examples/svelte-italic/toolbar.svelte
 
 :::

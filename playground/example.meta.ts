@@ -20,6 +20,10 @@ export const exampleMeta = {
       "story": "code-block",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "code-block-view.tsx",
           "hidden": false
         },
@@ -33,10 +37,6 @@ export const exampleMeta = {
         },
         {
           "path": "language-selector.tsx",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {
@@ -74,15 +74,15 @@ export const exampleMeta = {
       "story": "heading",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {
@@ -97,6 +97,10 @@ export const exampleMeta = {
       "story": "inline-menu",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
@@ -107,10 +111,6 @@ export const exampleMeta = {
         {
           "path": "inline-menu.tsx",
           "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
-          "hidden": false
         }
       ]
     },
@@ -120,15 +120,15 @@ export const exampleMeta = {
       "story": "keymap",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {
@@ -147,15 +147,15 @@ export const exampleMeta = {
       "story": "list",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {
@@ -189,15 +189,15 @@ export const exampleMeta = {
       "story": "readonly",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {
@@ -295,6 +295,10 @@ export const exampleMeta = {
       "story": "toolbar",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
@@ -304,10 +308,6 @@ export const exampleMeta = {
         },
         {
           "path": "image-upload-popover.tsx",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {
@@ -429,15 +429,15 @@ export const exampleMeta = {
       "story": "bold",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -452,15 +452,15 @@ export const exampleMeta = {
       "story": "code",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -475,6 +475,10 @@ export const exampleMeta = {
       "story": "code-block",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "code-block-view.vue",
           "hidden": false
         },
@@ -488,10 +492,6 @@ export const exampleMeta = {
         },
         {
           "path": "language-selector.vue",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -552,6 +552,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "code-block-view.vue",
           "hidden": false
         },
@@ -588,10 +592,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "toggle.vue",
-          "hidden": false
-        },
-        {
           "path": "toolbar.vue",
           "hidden": false
         },
@@ -611,15 +611,15 @@ export const exampleMeta = {
       "story": "heading",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -633,6 +633,10 @@ export const exampleMeta = {
       "framework": "vue",
       "story": "inline-menu",
       "files": [
+        {
+          "path": "button.vue",
+          "hidden": false
+        },
         {
           "path": "editor.vue",
           "hidden": false
@@ -648,10 +652,6 @@ export const exampleMeta = {
         {
           "path": "inline-menu.vue",
           "hidden": false
-        },
-        {
-          "path": "toggle.vue",
-          "hidden": false
         }
       ]
     },
@@ -661,15 +661,15 @@ export const exampleMeta = {
       "story": "italic",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -684,15 +684,15 @@ export const exampleMeta = {
       "story": "keymap",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -726,15 +726,15 @@ export const exampleMeta = {
       "story": "list",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -783,15 +783,15 @@ export const exampleMeta = {
       "story": "readonly",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -870,15 +870,15 @@ export const exampleMeta = {
       "story": "strike",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -908,15 +908,15 @@ export const exampleMeta = {
       "story": "text-align",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -930,6 +930,10 @@ export const exampleMeta = {
       "framework": "vue",
       "story": "text-color",
       "files": [
+        {
+          "path": "button.vue",
+          "hidden": false
+        },
         {
           "path": "editor.vue",
           "hidden": false
@@ -945,10 +949,6 @@ export const exampleMeta = {
         {
           "path": "text-color.ts",
           "hidden": false
-        },
-        {
-          "path": "toggle.vue",
-          "hidden": false
         }
       ]
     },
@@ -958,15 +958,15 @@ export const exampleMeta = {
       "story": "toolbar",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -981,15 +981,15 @@ export const exampleMeta = {
       "story": "underline",
       "files": [
         {
+          "path": "button.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.vue",
           "hidden": false
         },
         {
@@ -1111,15 +1111,15 @@ export const exampleMeta = {
       "story": "keymap",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {
@@ -1138,15 +1138,15 @@ export const exampleMeta = {
       "story": "readonly",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {
@@ -1195,15 +1195,15 @@ export const exampleMeta = {
       "story": "bold",
       "files": [
         {
+          "path": "button.svelte",
+          "hidden": false
+        },
+        {
           "path": "editor.svelte",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.svelte",
           "hidden": false
         },
         {
@@ -1237,15 +1237,15 @@ export const exampleMeta = {
       "story": "italic",
       "files": [
         {
+          "path": "button.svelte",
+          "hidden": false
+        },
+        {
           "path": "editor.svelte",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.svelte",
           "hidden": false
         },
         {
@@ -1260,15 +1260,15 @@ export const exampleMeta = {
       "story": "keymap",
       "files": [
         {
+          "path": "button.svelte",
+          "hidden": false
+        },
+        {
           "path": "editor.svelte",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.svelte",
           "hidden": false
         },
         {
@@ -1302,15 +1302,15 @@ export const exampleMeta = {
       "story": "readonly",
       "files": [
         {
+          "path": "button.svelte",
+          "hidden": false
+        },
+        {
           "path": "editor.svelte",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.svelte",
           "hidden": false
         },
         {
@@ -1348,15 +1348,15 @@ export const exampleMeta = {
       "story": "text-align",
       "files": [
         {
+          "path": "button.svelte",
+          "hidden": false
+        },
+        {
           "path": "editor.svelte",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.svelte",
           "hidden": false
         },
         {
@@ -1424,15 +1424,15 @@ export const exampleMeta = {
       "story": "heading",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {
@@ -1447,15 +1447,15 @@ export const exampleMeta = {
       "story": "keymap",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {
@@ -1474,15 +1474,15 @@ export const exampleMeta = {
       "story": "readonly",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {
@@ -1520,15 +1520,15 @@ export const exampleMeta = {
       "story": "text-align",
       "files": [
         {
+          "path": "button.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },
         {
           "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "toggle.tsx",
           "hidden": false
         },
         {

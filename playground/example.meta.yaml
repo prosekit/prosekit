@@ -9,6 +9,8 @@ examples:
     framework: react
     story: code-block
     files:
+      - path: button.tsx
+        hidden: false
       - path: code-block-view.tsx
         hidden: false
       - path: editor.tsx
@@ -16,8 +18,6 @@ examples:
       - path: extension.ts
         hidden: false
       - path: language-selector.tsx
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false
@@ -37,11 +37,11 @@ examples:
     framework: react
     story: heading
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false
@@ -49,23 +49,23 @@ examples:
     framework: react
     story: inline-menu
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
       - path: inline-menu.tsx
         hidden: false
-      - path: toggle.tsx
-        hidden: false
   - name: react-keymap
     framework: react
     story: keymap
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false
@@ -75,11 +75,11 @@ examples:
     framework: react
     story: list
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false
@@ -97,11 +97,11 @@ examples:
     framework: react
     story: readonly
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false
@@ -153,13 +153,13 @@ examples:
     framework: react
     story: toolbar
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
       - path: image-upload-popover.tsx
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false
@@ -223,11 +223,11 @@ examples:
     framework: vue
     story: bold
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -235,11 +235,11 @@ examples:
     framework: vue
     story: code
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -247,6 +247,8 @@ examples:
     framework: vue
     story: code-block
     files:
+      - path: button.vue
+        hidden: false
       - path: code-block-view.vue
         hidden: false
       - path: editor.vue
@@ -254,8 +256,6 @@ examples:
       - path: extension.ts
         hidden: false
       - path: language-selector.vue
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -287,6 +287,8 @@ examples:
     files:
       - path: block-handle.vue
         hidden: false
+      - path: button.vue
+        hidden: false
       - path: code-block-view.vue
         hidden: false
       - path: editor.vue
@@ -305,8 +307,6 @@ examples:
         hidden: false
       - path: tag-menu.vue
         hidden: false
-      - path: toggle.vue
-        hidden: false
       - path: toolbar.vue
         hidden: false
       - path: user-data.ts
@@ -317,11 +317,11 @@ examples:
     framework: vue
     story: heading
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -329,6 +329,8 @@ examples:
     framework: vue
     story: inline-menu
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
@@ -337,17 +339,15 @@ examples:
         hidden: false
       - path: inline-menu.vue
         hidden: false
-      - path: toggle.vue
-        hidden: false
   - name: vue-italic
     framework: vue
     story: italic
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -355,11 +355,11 @@ examples:
     framework: vue
     story: keymap
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -377,11 +377,11 @@ examples:
     framework: vue
     story: list
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -407,11 +407,11 @@ examples:
     framework: vue
     story: readonly
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -453,11 +453,11 @@ examples:
     framework: vue
     story: strike
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -473,11 +473,11 @@ examples:
     framework: vue
     story: text-align
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -485,6 +485,8 @@ examples:
     framework: vue
     story: text-color
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
@@ -493,17 +495,15 @@ examples:
         hidden: false
       - path: text-color.ts
         hidden: false
-      - path: toggle.vue
-        hidden: false
   - name: vue-toolbar
     framework: vue
     story: toolbar
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -511,11 +511,11 @@ examples:
     framework: vue
     story: underline
     files:
+      - path: button.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.vue
         hidden: false
       - path: toolbar.vue
         hidden: false
@@ -579,11 +579,11 @@ examples:
     framework: preact
     story: keymap
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false
@@ -593,11 +593,11 @@ examples:
     framework: preact
     story: readonly
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false
@@ -623,11 +623,11 @@ examples:
     framework: svelte
     story: bold
     files:
+      - path: button.svelte
+        hidden: false
       - path: editor.svelte
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.svelte
         hidden: false
       - path: toolbar.svelte
         hidden: false
@@ -645,11 +645,11 @@ examples:
     framework: svelte
     story: italic
     files:
+      - path: button.svelte
+        hidden: false
       - path: editor.svelte
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.svelte
         hidden: false
       - path: toolbar.svelte
         hidden: false
@@ -657,11 +657,11 @@ examples:
     framework: svelte
     story: keymap
     files:
+      - path: button.svelte
+        hidden: false
       - path: editor.svelte
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.svelte
         hidden: false
       - path: toolbar.svelte
         hidden: false
@@ -679,11 +679,11 @@ examples:
     framework: svelte
     story: readonly
     files:
+      - path: button.svelte
+        hidden: false
       - path: editor.svelte
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.svelte
         hidden: false
       - path: toolbar.svelte
         hidden: false
@@ -703,11 +703,11 @@ examples:
     framework: svelte
     story: text-align
     files:
+      - path: button.svelte
+        hidden: false
       - path: editor.svelte
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.svelte
         hidden: false
       - path: toolbar.svelte
         hidden: false
@@ -743,11 +743,11 @@ examples:
     framework: solid
     story: heading
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false
@@ -755,11 +755,11 @@ examples:
     framework: solid
     story: keymap
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false
@@ -769,11 +769,11 @@ examples:
     framework: solid
     story: readonly
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false
@@ -793,11 +793,11 @@ examples:
     framework: solid
     story: text-align
     files:
+      - path: button.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
-        hidden: false
-      - path: toggle.tsx
         hidden: false
       - path: toolbar.tsx
         hidden: false

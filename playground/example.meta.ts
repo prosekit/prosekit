@@ -276,10 +276,6 @@ export const exampleMeta = {
       "story": "search",
       "files": [
         {
-          "path": "button.tsx",
-          "hidden": false
-        },
-        {
           "path": "editor.tsx",
           "hidden": false
         },
@@ -289,6 +285,10 @@ export const exampleMeta = {
         },
         {
           "path": "search.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]

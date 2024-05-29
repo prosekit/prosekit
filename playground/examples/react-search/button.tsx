@@ -29,12 +29,12 @@ export default function Button({
           onMouseDown={(event) => event.preventDefault()}
           className={Themes.TOGGLE_BUTTON}
         >
-          <div className="sr-only">{tooltip}</div>
           {children}
+          {tooltip ? <span className="sr-only">{tooltip}</span> : null}
         </button>
       </TooltipTrigger>
       {tooltip && !disabled ? (
-        <TooltipContent offset={4} className={Themes.TOOLTIP_CONTENT}>
+        <TooltipContent className={Themes.TOOLTIP_CONTENT}>
           {tooltip}
         </TooltipContent>
       ) : null}

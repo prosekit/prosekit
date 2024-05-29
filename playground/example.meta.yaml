@@ -143,13 +143,13 @@ examples:
     framework: react
     story: search
     files:
-      - path: button.tsx
-        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts
         hidden: false
       - path: search.tsx
+        hidden: false
+      - path: button.tsx
         hidden: false
   - name: react-slash-menu
     framework: react

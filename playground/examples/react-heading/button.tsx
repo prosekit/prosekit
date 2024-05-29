@@ -30,6 +30,7 @@ export default function Button({
           className={Themes.TOGGLE_BUTTON}
         >
           {children}
+          {tooltip ? <span className="sr-only">{tooltip}</span> : null}
         </button>
       </TooltipTrigger>
       {tooltip && !disabled ? (

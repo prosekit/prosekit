@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.7.4
+
+### Patch Changes
+
+- [`0cd5671`](https://github.com/ocavue/prosekit/commit/0cd5671b3047bf7ad417f7d36cd48227a8aecf00) ![](https://prosekit.dev/b/extensions)
+
+  Set the default background color of the `.prosekit-virtual-selection` element to a gray color.
+
+- [`8caedd0`](https://github.com/ocavue/prosekit/commit/8caedd0f9f4cf1b192923a31118b89d301edb3a5) ![](https://prosekit.dev/b/web)
+
+  Prevent inline popovers and tooltips from overflowing.
+
 ## 0.7.3
 
 ### Patch Changes

@@ -342,7 +342,7 @@ importers:
         specifier: 0.5.2
         version: link:../core
       '@prosekit/extensions':
-        specifier: 0.5.0
+        specifier: 0.5.1
         version: link:../extensions
       '@prosekit/lit':
         specifier: 0.3.1
@@ -366,7 +366,7 @@ importers:
         specifier: 0.3.3
         version: link:../vue
       '@prosekit/web':
-        specifier: 0.1.7
+        specifier: 0.1.8
         version: link:../web
     devDependencies:
       '@prosekit/dev':
@@ -625,7 +625,7 @@ importers:
         specifier: ^0.5.2
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.5.0
+        specifier: ^0.5.1
         version: link:../extensions
       '@prosekit/pm':
         specifier: ^0.1.4
@@ -701,7 +701,7 @@ importers:
         specifier: ^3.2.5
         version: 3.2.5
       prosekit:
-        specifier: ^0.7.3
+        specifier: ^0.7.4
         version: link:../packages/prosekit
       react:
         specifier: ^18.3.1
@@ -794,7 +794,7 @@ importers:
         specifier: ^3.2.5
         version: 3.2.5
       prosekit:
-        specifier: ^0.7.3
+        specifier: ^0.7.4
         version: link:../packages/prosekit
       prosekit-playground:
         specifier: '*'
@@ -4038,7 +4038,7 @@ packages:
       '@unocss/core': 0.60.3
       '@unocss/reset': 0.60.3
       '@unocss/vite': 0.60.3(vite@5.2.12)
-      vite: 5.2.12(@types/node@20.12.13)
+      vite: 5.2.12(lightningcss@1.25.1)
     transitivePeerDependencies:
       - rollup
 
@@ -4239,7 +4239,7 @@ packages:
       chokidar: 3.6.0
       fast-glob: 3.3.2
       magic-string: 0.30.10
-      vite: 5.2.12(@types/node@20.12.13)
+      vite: 5.2.12(lightningcss@1.25.1)
     transitivePeerDependencies:
       - rollup
 
@@ -11629,7 +11629,7 @@ packages:
       '@unocss/transformer-directives': 0.60.3
       '@unocss/transformer-variant-group': 0.60.3
       '@unocss/vite': 0.60.3(vite@5.2.12)
-      vite: 5.2.12(@types/node@20.12.13)
+      vite: 5.2.12(lightningcss@1.25.1)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -11905,6 +11905,7 @@ packages:
       rollup: 4.17.0
     optionalDependencies:
       fsevents: 2.3.3
+    dev: true
 
   /vite@5.2.12(lightningcss@1.25.1):
     resolution: {integrity: sha512-/gC8GxzxMK5ntBwb48pR32GGhENnjtY30G4A0jemunsBkiEZFw60s8InGpN8gkhHEkjnRK1aSAxeQgwvFhUHAA==}

@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/web",
   "type": "module",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -50,7 +50,7 @@
     "@aria-ui/tooltip": "^0.0.16",
     "@floating-ui/dom": "^1.6.5",
     "@prosekit/core": "^0.5.2",
-    "@prosekit/extensions": "^0.5.0",
+    "@prosekit/extensions": "^0.5.1",
     "@prosekit/pm": "^0.1.4",
     "@zag-js/dom-query": "^0.51.2"
   },

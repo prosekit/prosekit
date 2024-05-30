@@ -36,7 +36,7 @@
   "devDependencies": {
     "@manypkg/find-root": "^2.2.1",
     "@prosekit/themes": "0.0.0",
-    "@types/node": "^20.12.12",
+    "@types/node": "^20.12.13",
     "typescript": "^5.4.5",
     "unocss": "^0.60.3"
   }

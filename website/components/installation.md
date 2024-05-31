@@ -54,8 +54,8 @@ ProseKit Components are styled using [Tailwind CSS](https://tailwindcss.com/) or
    Add the following presets to your UnoCSS config.
 
    ```ts
-   import { defineConfig, presetIcons, presetWind } from 'unocss'
-   import { presetAnimations } from 'unocss-preset-animations'
+   import { defineConfig, presetIcons, presetWind } from 'unocss' // [!code highlight]
+   import { presetAnimations } from 'unocss-preset-animations' // [!code highlight]
 
    export default defineConfig({
      presets: [presetIcons(), presetWind(), presetAnimations()], // [!code highlight]

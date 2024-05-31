@@ -4,6 +4,7 @@ CHANGELOG.md
 .yalc
 yalc.lock
 **/.astro/settings.json
+_/
 
 .cache
 .DS_Store

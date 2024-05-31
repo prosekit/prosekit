@@ -80,10 +80,10 @@ importers:
   packages/basic:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.2
+        specifier: ^0.5.3
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.5.0
+        specifier: ^0.5.1
         version: link:../extensions
       '@prosekit/pm':
         specifier: ^0.1.4
@@ -209,7 +209,7 @@ importers:
   packages/extensions:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.2
+        specifier: ^0.5.3
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
@@ -246,7 +246,7 @@ importers:
   packages/lit:
     dependencies:
       '@prosekit/web':
-        specifier: ^0.1.7
+        specifier: ^0.1.8
         version: link:../web
     devDependencies:
       '@prosekit/dev':
@@ -305,13 +305,13 @@ importers:
   packages/preact:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.2
+        specifier: ^0.5.3
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.7
+        specifier: ^0.1.8
         version: link:../web
       react-merge-refs:
         specifier: ^2.1.1
@@ -412,13 +412,13 @@ importers:
   packages/react:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.2
+        specifier: ^0.5.3
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.7
+        specifier: ^0.1.8
         version: link:../web
       '@prosemirror-adapter/core':
         specifier: ^0.2.6
@@ -455,13 +455,13 @@ importers:
   packages/solid:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.2
+        specifier: ^0.5.3
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.7
+        specifier: ^0.1.8
         version: link:../web
     devDependencies:
       '@prosekit/dev':
@@ -483,13 +483,13 @@ importers:
   packages/svelte:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.2
+        specifier: ^0.5.3
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.7
+        specifier: ^0.1.8
         version: link:../web
     devDependencies:
       '@prosekit/dev':
@@ -567,13 +567,13 @@ importers:
   packages/vue:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.2
+        specifier: ^0.5.3
         version: link:../core
       '@prosekit/pm':
         specifier: ^0.1.4
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.7
+        specifier: ^0.1.8
         version: link:../web
       '@prosemirror-adapter/core':
         specifier: ^0.2.6
@@ -622,7 +622,7 @@ importers:
         specifier: ^1.6.5
         version: 1.6.5
       '@prosekit/core':
-        specifier: ^0.5.2
+        specifier: ^0.5.3
         version: link:../core
       '@prosekit/extensions':
         specifier: ^0.5.1
@@ -4038,7 +4038,7 @@ packages:
       '@unocss/core': 0.60.3
       '@unocss/reset': 0.60.3
       '@unocss/vite': 0.60.3(vite@5.2.12)
-      vite: 5.2.12(lightningcss@1.25.1)
+      vite: 5.2.12(@types/node@20.12.13)
     transitivePeerDependencies:
       - rollup
 
@@ -4239,7 +4239,7 @@ packages:
       chokidar: 3.6.0
       fast-glob: 3.3.2
       magic-string: 0.30.10
-      vite: 5.2.12(lightningcss@1.25.1)
+      vite: 5.2.12(@types/node@20.12.13)
     transitivePeerDependencies:
       - rollup
 
@@ -11629,7 +11629,7 @@ packages:
       '@unocss/transformer-directives': 0.60.3
       '@unocss/transformer-variant-group': 0.60.3
       '@unocss/vite': 0.60.3(vite@5.2.12)
-      vite: 5.2.12(lightningcss@1.25.1)
+      vite: 5.2.12(@types/node@20.12.13)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -11905,7 +11905,6 @@ packages:
       rollup: 4.17.0
     optionalDependencies:
       fsevents: 2.3.3
-    dev: true
 
   /vite@5.2.12(lightningcss@1.25.1):
     resolution: {integrity: sha512-/gC8GxzxMK5ntBwb48pR32GGhENnjtY30G4A0jemunsBkiEZFw60s8InGpN8gkhHEkjnRK1aSAxeQgwvFhUHAA==}

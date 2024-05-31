@@ -12,6 +12,4 @@ Copy and paste the following code into your project.
 
 ## Usage
 
-Add the `Toolbar` component to your `Editor` component.
-
-<!-- @include: @/example-code-blocks/toolbar/editor.md -->
+`Button` component is used in [`Toolbar`](/components/toolbar.md) and [`Inline Menu`](/components/inline-menu.md) components.

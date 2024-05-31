@@ -20,8 +20,8 @@ export default function Editor() {
   return (
     <ProseKit editor={editor}>
       <div className={Themes.EDITOR_VIEWPORT}>
-        <div className={Themes.EDITOR_DOCUMENT}>
-          <Toolbar />
+        <Toolbar />
+        <div className={Themes.EDITOR_SCROLLING}>
           <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
         </div>
       </div>

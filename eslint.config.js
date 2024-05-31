@@ -40,6 +40,7 @@ const configs = [
   },
   {
     ignores: [
+      '**/_/**',
       '**/.temp',
       '**/.tsup',
       '**/config-tsup.d.ts',

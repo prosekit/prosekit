@@ -37,7 +37,7 @@ export class MyEditor extends LitElement {
   render() {
     return html`
       <div class=${Themes.EDITOR_VIEWPORT}>
-        <div class=${Themes.EDITOR_DOCUMENT}>
+        <div class=${Themes.EDITOR_SCROLLING}>
           <div class=${Themes.EDITOR_CONTENT} ${ref(this.editorRef)}></div>
         </div>
       </div>

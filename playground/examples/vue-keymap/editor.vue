@@ -26,7 +26,9 @@ const pushSubmition = (hotkey: string) => {
   <ProseKit :editor="editor">
     <div :class="Themes.EDITOR_VIEWPORT">
       <Toolbar @submit="pushSubmition" />
-      <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+      <div :class="Themes.EDITOR_SCROLLING">
+        <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+      </div>
     </div>
     <fieldset class="mt-4 border">
       <legend>Submit Records</legend>

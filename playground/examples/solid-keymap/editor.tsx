@@ -24,7 +24,9 @@ export default function Editor() {
     <ProseKit editor={editor}>
       <div class={Themes.EDITOR_VIEWPORT}>
         <Toolbar onSubmit={pushSubmition} />
-        <div ref={editor.mount} class={Themes.EDITOR_CONTENT}></div>
+        <div class={Themes.EDITOR_SCROLLING}>
+          <div ref={editor.mount} class={Themes.EDITOR_CONTENT}></div>
+        </div>
       </div>
       <fieldset class="mt-4 border">
         <legend>Submit Records</legend>

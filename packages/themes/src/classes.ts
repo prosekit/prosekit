@@ -75,17 +75,19 @@ const INPUT = cn(
 
 // The outermost container of the editor. It limits the height of the editor.
 export const EDITOR_VIEWPORT = cn(
-  'box-border h-full w-full min-h-32 overflow-y-auto overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700',
+  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700 flex flex-col bg-background',
 )
 
-// Use this class if you have floating menus. We want to scroll menus along with the document.
-export const EDITOR_DOCUMENT = cn('relative flex min-h-full w-full flex-col')
+// A scrolling container for the editor content and floating menus.
+export const EDITOR_SCROLLING = cn(
+  'relative w-full flex-1 box-border overflow-y-scroll',
+)
 
 // Use this class for the contenteditable element.
 export const EDITOR_CONTENT = cn(
   // SolidJS will override the class name which removes the ProseMirror class, so we add it back.
   'ProseMirror',
-  'relative box-border min-h-full flex-1 overflow-auto bg-background px-[max(16px,_calc(50%-330px))] py-[16px] outline-none outline-0',
+  'box-border min-h-full px-[max(40px,_calc(50%-330px))] py-[24px] outline-none outline-0',
   '[&_span[data-mention="user"]]:text-blue-500',
   '[&_span[data-mention="tag"]]:text-violet-500',
   '[&_pre]:text-white [&_pre]:bg-zinc-800',
@@ -131,7 +133,7 @@ export const LANGUAGE_SELECT = cn(
 )
 
 const TOP_BAR = cn(
-  'z-2 sticky top-0 box-border bg-background',
+  'z-2 box-border',
   'border-border border-solid border-l-0 border-r-0 border-t-0 border-b',
 )
 

@@ -2,7 +2,7 @@ set -ex
 
 cd $(dirname $0)
 
-mkdir -p public/playground/dist
-rm -rf public/playground/dist
+mkdir -p public/_
+rm -rf public/_
 
-cp -r ../playground/dist public/playground/dist
+cp -r ../playground/dist public/_

@@ -17,7 +17,9 @@ export default function Editor(props: {
   return (
     <ProseKit editor={editor}>
       <div class={Themes.EDITOR_VIEWPORT}>
-        <div ref={editor.mount} class={Themes.EDITOR_CONTENT}></div>
+        <div class={Themes.EDITOR_SCROLLING}>
+          <div ref={editor.mount} class={Themes.EDITOR_CONTENT}></div>
+        </div>
       </div>
     </ProseKit>
   )

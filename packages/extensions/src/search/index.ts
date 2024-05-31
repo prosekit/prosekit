@@ -1,15 +1,17 @@
 import { defineCommands, definePlugin } from '@prosekit/core'
+import type { Command } from '@prosekit/pm/state'
+import type { EditorView } from '@prosekit/pm/view'
 import {
   SearchQuery,
-  search,
   findNext,
-  findPrev,
   findNextNoWrap,
+  findPrev,
   findPrevNoWrap,
+  replaceAll,
+  replaceCurrent,
   replaceNext,
   replaceNextNoWrap,
-  replaceCurrent,
-  replaceAll,
+  search,
 } from 'prosemirror-search'
 
 /**
@@ -70,19 +72,48 @@ export function defineSearchQuery(options: SearchQueryOptions) {
 }
 
 /**
+ * Scrolls the active search match into view.
+ */
+function scrollActiveIntoView(view: EditorView) {
+  if (view.isDestroyed) return
+  const active = view.dom.querySelector('.ProseMirror-active-search-match')
+  active?.scrollIntoView({
+    block: 'nearest',
+    inline: 'nearest',
+    behavior: 'smooth',
+  })
+}
+
+/**
+ * Wraps a command and scrolls the active search match into view when the command
+ * is applied.
+ */
+function withScrollActiveIntoView(command: Command): Command {
+  return (state, dispatch, view) => {
+    const result = command(state, dispatch, view)
+    if (result && dispatch && view) {
+      // Add a small delay because the command itself will handle scrolling if
+      // the view is focused.
+      setTimeout(() => scrollActiveIntoView(view), 50)
+    }
+    return result
+  }
+}
+
+/**
  * Defines commands for search and replace.
  *
  * @public
  */
 export function defineSearchCommands() {
   return defineCommands({
-    findNext: () => findNext,
-    findPrev: () => findPrev,
-    findNextNoWrap: () => findNextNoWrap,
-    findPrevNoWrap: () => findPrevNoWrap,
-    replaceNext: () => replaceNext,
-    replaceNextNoWrap: () => replaceNextNoWrap,
-    replaceCurrent: () => replaceCurrent,
-    replaceAll: () => replaceAll,
+    findNext: () => withScrollActiveIntoView(findNext),
+    findPrev: () => withScrollActiveIntoView(findPrev),
+    findNextNoWrap: () => withScrollActiveIntoView(findNextNoWrap),
+    findPrevNoWrap: () => withScrollActiveIntoView(findPrevNoWrap),
+    replaceNext: () => withScrollActiveIntoView(replaceNext),
+    replaceNextNoWrap: () => withScrollActiveIntoView(replaceNextNoWrap),
+    replaceCurrent: () => withScrollActiveIntoView(replaceCurrent),
+    replaceAll: () => withScrollActiveIntoView(replaceAll),
   })
 }

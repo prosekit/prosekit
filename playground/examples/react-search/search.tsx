@@ -25,36 +25,6 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
 
   const editor = useEditor<EditorExtension>()
 
-  const scrollActiveMatch = () => {
-    const dom = editor.view.dom
-    const active = dom.querySelector('.ProseMirror-active-search-match')
-    active?.scrollIntoView({
-      block: 'nearest',
-      inline: 'nearest',
-      behavior: 'smooth',
-    })
-  }
-
-  const findNext = () => {
-    editor.commands.findNext()
-    scrollActiveMatch()
-  }
-
-  const findPrev = () => {
-    editor.commands.findPrev()
-    scrollActiveMatch()
-  }
-
-  const replaceNext = () => {
-    editor.commands.replaceNext()
-    scrollActiveMatch()
-  }
-
-  const replaceAll = () => {
-    editor.commands.replaceAll()
-    scrollActiveMatch()
-  }
-
   const isEnter = (event: React.KeyboardEvent) => {
     return (
       event.key === 'Enter' &&
@@ -80,20 +50,20 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
   const handleSearchKeyDown = (event: React.KeyboardEvent) => {
     if (isEnter(event)) {
       event.preventDefault()
-      findNext()
+      editor.commands.findNext()
     } else if (isShiftEnter(event)) {
       event.preventDefault()
-      findPrev()
+      editor.commands.findPrev()
     }
   }
 
   const handleReplaceKeyDown = (event: React.KeyboardEvent) => {
     if (isEnter(event)) {
       event.preventDefault()
-      replaceNext()
+      editor.commands.replaceNext()
     } else if (isShiftEnter(event)) {
       event.preventDefault()
-      replaceAll()
+      editor.commands.replaceAll()
     }
   }
 
@@ -118,10 +88,13 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
         className={Themes.SEARCH_INPUT}
       />
       <div className={Themes.SEARCH_CONTROLLER}>
-        <Button tooltip="Previous (Shift Enter)" onClick={findPrev}>
+        <Button
+          tooltip="Previous (Shift Enter)"
+          onClick={editor.commands.findPrev}
+        >
           <span className={Themes.ICON_ARROW_LEFT} />
         </Button>
-        <Button tooltip="Next (Enter)" onClick={findNext}>
+        <Button tooltip="Next (Enter)" onClick={editor.commands.findNext}>
           <span className={Themes.ICON_ARROW_RIGHT} />
         </Button>
         <Button tooltip="Close" onClick={onClose}>
@@ -140,10 +113,16 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
       )}
       {showReplace && (
         <div className={Themes.SEARCH_CONTROLLER}>
-          <Button tooltip="Replace (Enter)" onClick={replaceNext}>
+          <Button
+            tooltip="Replace (Enter)"
+            onClick={editor.commands.replaceNext}
+          >
             Replace
           </Button>
-          <Button tooltip="Replace All (Shift Enter)" onClick={replaceAll}>
+          <Button
+            tooltip="Replace All (Shift Enter)"
+            onClick={editor.commands.replaceAll}
+          >
             All
           </Button>
         </div>

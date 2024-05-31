@@ -2,6 +2,7 @@ import { genChangesetConfigJson } from './gen-changeset-config-json.js'
 import { genChangeset } from './gen-changeset.js'
 import { genComponents } from './gen-components.js'
 import { genDocsItems } from './gen-docs-items.js'
+import { genExampleCodeBlocks } from './gen-example-code-blocks.js'
 import { genExampleIndex } from './gen-example-index.js'
 import { genExampleMetaYaml } from './gen-example-meta-yaml.js'
 import { genExamplePreviews } from './gen-example-previews.js'
@@ -36,6 +37,7 @@ async function genAll(): Promise<boolean> {
   await genPlaygroundPages()
   await genDocsItems()
   await genExamplePreviews()
+  await genExampleCodeBlocks()
 
   return await vfs.commit()
 }

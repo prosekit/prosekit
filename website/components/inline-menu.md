@@ -1,17 +1,22 @@
-# Inline Popover
+# Inline Menu
 
 A popup floating around the current selected text. It can be used to built an inline menu.
 
 <!-- @include: @/examples/inline-menu.md -->
 
+## Installation
+
+Install the [`Button`](/components/button) component.
+
+Copy and paste the following code into your project.
+
+<!-- @include: @/example-code-blocks/inline-menu/inline-menu.md -->
+
 ## Usage
 
-::: code-group
+Add the `InlineMenu` component to your `Editor` component.
 
-<<< @/../playground/examples/react-inline-menu/inline-menu.tsx [React]
-<<< @/../playground/examples/vue-inline-menu/inline-menu.vue [Vue]
-
-:::
+<!-- @include: @/example-code-blocks/inline-menu/editor.md -->
 
 ## API Reference
 

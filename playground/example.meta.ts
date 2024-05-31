@@ -11,6 +11,10 @@ export const exampleMeta = {
         {
           "path": "editor.tsx",
           "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
         }
       ]
     },
@@ -442,6 +446,10 @@ export const exampleMeta = {
       "files": [
         {
           "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
           "hidden": false
         }
       ]

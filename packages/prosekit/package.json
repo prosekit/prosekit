@@ -1,7 +1,7 @@
 {
   "name": "prosekit",
   "type": "module",
-  "version": "0.7.4",
+  "version": "0.7.6",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -128,17 +128,17 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/basic": "0.3.6",
-    "@prosekit/core": "0.5.2",
-    "@prosekit/extensions": "0.5.1",
-    "@prosekit/lit": "0.3.1",
+    "@prosekit/basic": "0.3.7",
+    "@prosekit/core": "0.5.4",
+    "@prosekit/extensions": "0.5.2",
+    "@prosekit/lit": "0.3.2",
     "@prosekit/pm": "0.1.4",
-    "@prosekit/preact": "0.3.4",
-    "@prosekit/react": "0.3.5",
-    "@prosekit/solid": "0.3.3",
-    "@prosekit/svelte": "0.3.3",
-    "@prosekit/vue": "0.3.3",
-    "@prosekit/web": "0.1.8"
+    "@prosekit/preact": "0.3.5",
+    "@prosekit/react": "0.3.6",
+    "@prosekit/solid": "0.3.4",
+    "@prosekit/svelte": "0.3.4",
+    "@prosekit/vue": "0.3.4",
+    "@prosekit/web": "0.1.9"
   },
   "peerDependencies": {
     "preact": ">= 10.11.0",

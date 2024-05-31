@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/lit",
   "type": "module",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": false,
   "author": {
     "name": "ocavue",
@@ -41,7 +41,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/web": "^0.1.7"
+    "@prosekit/web": "^0.1.9"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",

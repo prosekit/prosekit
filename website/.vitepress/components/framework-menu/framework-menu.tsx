@@ -5,9 +5,9 @@ import { DropdownMenuContent } from '../dropdown-menu/dropdown-menu-content'
 import { DropdownMenuItem } from '../dropdown-menu/dropdown-menu-item'
 import { DropdownMenuTrigger } from '../dropdown-menu/dropdown-menu-trigger'
 
-import { ExampleFrameworkItem } from './example-framework-item'
+import { FrameworkItem } from './framework-item'
 
-export const ExampleFrameworkMenu = defineComponent<{
+export const FrameworkMenu = defineComponent<{
   framework: string
   frameworks: string[]
   onChange: (framework: string) => void
@@ -16,7 +16,7 @@ export const ExampleFrameworkMenu = defineComponent<{
     return () => (
       <DropdownMenuRoot>
         <DropdownMenuTrigger>
-          <ExampleFrameworkItem framework={props.framework} />
+          <FrameworkItem framework={props.framework} />
           <span class="i-lucide-chevron-down size-4 opacity-50" />
         </DropdownMenuTrigger>
         <DropdownMenuContent>
@@ -28,7 +28,7 @@ export const ExampleFrameworkMenu = defineComponent<{
                     <span class="i-lucide-check size-4 opacity-70"></span>
                   ) : null}
                 </span>
-                <ExampleFrameworkItem framework={framework} />
+                <FrameworkItem framework={framework} />
               </span>
             </DropdownMenuItem>
           ))}

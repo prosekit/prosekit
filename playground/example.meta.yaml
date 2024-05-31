@@ -5,6 +5,8 @@ examples:
     files:
       - path: editor.tsx
         hidden: false
+      - path: extension.ts
+        hidden: false
   - name: react-code-block
     framework: react
     story: code-block
@@ -230,6 +232,8 @@ examples:
     story: minimal
     files:
       - path: editor.vue
+        hidden: false
+      - path: extension.ts
         hidden: false
   - name: vue-bold
     framework: vue

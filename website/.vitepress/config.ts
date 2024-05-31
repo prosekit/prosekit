@@ -44,7 +44,7 @@ export default defineConfig({
       {
         text: 'Components',
         activeMatch: '/components',
-        link: '/components/toolbar',
+        link: '/components/introduction',
       },
       {
         text: 'Examples',
@@ -133,16 +133,22 @@ export default defineConfig({
 
       '/components': [
         {
-          text: 'Toolbar',
-          link: '/components/toolbar',
+          text: 'Getting Started',
+          items: [
+            { text: 'Introduction', link: '/components/introduction' },
+            { text: 'Installation', link: '/components/installation' },
+            { text: 'Basic Editor', link: '/components/editor' },
+          ],
         },
         {
-          text: 'Inline Popover',
-          link: '/components/inline-popover',
-        },
-        {
-          text: 'Autocomplete',
-          link: '/components/autocomplete',
+          text: 'Components',
+          items: [
+            { text: 'Button', link: '/components/button' },
+            { text: 'Toolbar', link: '/components/toolbar' },
+            { text: 'Inline Menu', link: '/components/inline-menu' },
+            { text: 'Slash Menu', link: '/components/slash-menu' },
+            { text: 'User Menu', link: '/components/user-menu' },
+          ],
         },
       ],
 

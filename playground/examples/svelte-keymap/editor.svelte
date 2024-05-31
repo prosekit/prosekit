@@ -28,8 +28,8 @@ const pushSubmition = (hotkey: string) => {
 
 <ProseKit {editor}>
   <div class={Themes.EDITOR_VIEWPORT}>
-    <div class={Themes.EDITOR_DOCUMENT}>
-      <Toolbar onSubmit={pushSubmition} />
+    <Toolbar onSubmit={pushSubmition} />
+    <div class={Themes.EDITOR_SCROLLING}>
       <div bind:this={place} class={Themes.EDITOR_CONTENT}></div>
     </div>
   </div>

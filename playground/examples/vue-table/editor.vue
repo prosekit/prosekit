@@ -38,7 +38,9 @@ const addTable = () => {
   <button @click="addTable">Add table</button>
   <ProseKit :editor="editor">
     <div :class="Themes.EDITOR_VIEWPORT">
-      <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+      <div :class="Themes.EDITOR_SCROLLING">
+        <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+      </div>
     </div>
   </ProseKit>
 </template>

@@ -17,8 +17,8 @@ export default function Editor() {
   return (
     <ProseKit editor={editor}>
       <div class={Themes.EDITOR_VIEWPORT}>
-        <div class={Themes.EDITOR_DOCUMENT}>
-          <Toolbar />
+        <Toolbar />
+        <div class={Themes.EDITOR_SCROLLING}>
           <div ref={editor.mount} class={Themes.EDITOR_CONTENT}></div>
         </div>
       </div>

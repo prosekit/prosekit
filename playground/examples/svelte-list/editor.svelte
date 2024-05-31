@@ -62,6 +62,8 @@ onDestroy(() => editor.mount(null))
 
 <ProseKit {editor}>
   <div class={Themes.EDITOR_VIEWPORT}>
-    <div bind:this={place} class={Themes.EDITOR_CONTENT}></div>
+    <div class={Themes.EDITOR_SCROLLING}>
+      <div bind:this={place} class={Themes.EDITOR_CONTENT}></div>
+    </div>
   </div>
 </ProseKit>

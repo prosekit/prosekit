@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.7.5
+
+### Patch Changes
+
+- [`dabd297`](https://github.com/ocavue/prosekit/commit/dabd29714eac21b36bfbe78dab1c5c8cacf0fbb7) ![](https://prosekit.dev/b/core)
+
+  Simplify the TypeScript types for extensions.
+
 ## 0.7.4
 
 ### Patch Changes

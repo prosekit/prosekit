@@ -1,23 +1,20 @@
-# Autocomplete
+# Slash Menu
 
-A popup that shows a list of suggestions based on the text before the text cursor.
+A popup that shows a list of command suggestions after pressing `/`.
 
 <!-- @include: @/examples/slash-menu.md -->
 
+## Installation
+
+Copy and paste the following code into your project.
+
+<!-- @include: @/example-code-blocks/slash-menu/slash-menu.md -->
+
 ## Usage
 
-::: code-group
+Add the `SlashMenu` component to your `Editor` component.
 
-<<< @/../playground/examples/react-slash-menu/slash-menu.tsx [React]
-<<< @/../playground/examples/vue-slash-menu/slash-menu.vue [Vue]
-
-:::
-
-## More Examples
-
-Type `@` to show a list of users to mention, or type `#` to show a list of commands.
-
-- [user-menu](/examples/user-menu)
+<!-- @include: @/example-code-blocks/slash-menu/editor.md -->
 
 ## API Reference
 

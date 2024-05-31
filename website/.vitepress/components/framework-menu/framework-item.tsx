@@ -10,7 +10,7 @@ const frameworkIcons: Record<string, string> = {
   vanilla: 'i-logos-javascript',
 }
 
-export const ExampleFrameworkItem = defineComponent<{
+export const FrameworkItem = defineComponent<{
   framework: string
 }>(
   (props) => {

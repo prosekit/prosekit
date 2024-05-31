@@ -2,17 +2,17 @@
 import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
-import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
+import { defineExtension } from './extension'
 
 const props = defineProps<{
   defaultDoc?: NodeJSON
   onDocUpdate?: (doc: NodeJSON) => void
 }>()
 
-const extension = defineBasicExtension()
+const extension = defineExtension()
 const editor = createEditor({ extension, defaultDoc: props.defaultDoc })
 
 useDocChange((doc) => props.onDocUpdate?.(jsonFromNode(doc)), { editor })

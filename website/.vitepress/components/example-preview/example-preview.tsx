@@ -1,19 +1,13 @@
 import clsx from 'clsx/lite'
-import {
-  computed,
-  defineComponent,
-  effect,
-  onMounted,
-  ref,
-  type Ref,
-} from 'vue'
+import { computed, defineComponent, effect, onMounted, ref } from 'vue'
 
+import { FrameworkMenu } from '../framework-menu'
 import { Switch } from '../switch/switch'
+import { useFramework } from '../use-framework'
 
 import { ExampleDownloadButton } from './example-download-button'
 import { ExampleEmbed } from './example-embed'
 import { ExampleForkMenu } from './example-fork-menu'
-import { ExampleFrameworkMenu } from './example-framework-menu'
 
 export const ExamplePreview = defineComponent<{
   name: string
@@ -51,7 +45,7 @@ export const ExamplePreview = defineComponent<{
         )}
       >
         <div class="mx-[-24px] flex justify-end bg-[--vp-code-tab-bg] px-2 pb-1 pt-2 sm:mx-0 space-x-2">
-          <ExampleFrameworkMenu
+          <FrameworkMenu
             framework={framework.value}
             onChange={onFrameworkChange}
             frameworks={frameworks.value}
@@ -82,32 +76,6 @@ export const ExamplePreview = defineComponent<{
     props: ['name'],
   },
 )
-
-function useFramework(frameworks: Ref<string[]>) {
-  const selected = ref('')
-
-  onMounted(() => {
-    const framework = localStorage.getItem('prosekit-docs-framework')
-    if (framework) {
-      selected.value = framework
-    }
-  })
-
-  const framework = computed(() => {
-    const value = selected.value || frameworks.value[0]
-    return frameworks.value.includes(value) ? value : frameworks.value[0]
-  })
-
-  const onFrameworkChange = (framework: string) => {
-    localStorage.setItem('prosekit-docs-framework', framework)
-    selected.value = framework
-  }
-
-  return {
-    framework,
-    onFrameworkChange,
-  }
-}
 
 function useIsExamplePage() {
   const isExamplePage = ref(false)

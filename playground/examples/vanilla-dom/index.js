@@ -79,15 +79,15 @@ function main() {
   const viewport = root.appendChild(document.createElement('div'))
   viewport.className = Themes.EDITOR_VIEWPORT
 
-  const doc = viewport.appendChild(document.createElement('div'))
-  doc.className = Themes.EDITOR_DOCUMENT
+  const scrolling = viewport.appendChild(document.createElement('div'))
+  scrolling.className = Themes.EDITOR_SCROLLING
 
-  const content = doc.appendChild(document.createElement('div'))
+  const content = scrolling.appendChild(document.createElement('div'))
   content.className = Themes.EDITOR_CONTENT
 
   editor.mount(content)
 
-  doc.appendChild(createPopover())
+  scrolling.appendChild(createPopover())
 }
 
 main()

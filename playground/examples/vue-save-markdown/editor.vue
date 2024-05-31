@@ -79,7 +79,9 @@ const handleLoad = (record: string) => {
           </span>
         </li>
       </ul>
-      <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+      <div :class="Themes.EDITOR_SCROLLING">
+        <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+      </div>
     </div>
   </ProseKit>
 </template>

@@ -62,7 +62,9 @@ export default function Editor() {
             </li>
           ))}
         </ul>
-        <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
+        <div className={Themes.EDITOR_SCROLLING}>
+          <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
+        </div>
       </div>
     </ProseKit>
   )

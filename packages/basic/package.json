@@ -44,7 +44,7 @@
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
     "postcss": "^8.4.38",
-    "postcss-nesting": "^12.1.4",
+    "postcss-nesting": "^12.1.5",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"

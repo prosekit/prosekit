@@ -16,7 +16,9 @@ describe('union', () => {
     const output = union(input)
     type Outout = typeof output
     type Expected = Extension<{
-      NODES: 'node3'
+      Nodes: 'node3'
+      Marks: never
+      Commands: never
     }>
 
     assertTypeEqual<Outout, Expected>(true)
@@ -27,9 +29,9 @@ describe('union', () => {
     const output = union(input)
     type Outout = typeof output
     type Expected = Extension<{
-      NODES: 'node3' | 'node4'
-      MARKS: 'mark5'
-      COMMAND_ARGS: {
+      Nodes: 'node3' | 'node4'
+      Marks: 'mark5'
+      Commands: {
         command1: [{ arg1: string }]
         command2: [{ arg2: number }]
         command3: [number, boolean]
@@ -48,9 +50,9 @@ describe('union', () => {
     const output = union(input)
     type Outout = typeof output
     type Expected = Extension<{
-      NODES: 'node3' | 'node4'
-      MARKS: 'mark5'
-      COMMAND_ARGS: {
+      Nodes: 'node3' | 'node4'
+      Marks: 'mark5'
+      Commands: {
         command1: [{ arg1: string }]
         command2: [{ arg2: number }]
         command3: [number, boolean]

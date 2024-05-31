@@ -53,10 +53,16 @@ export interface MarkAttrOptions {
  */
 export function defineMarkSpec<Mark extends string>(
   options: MarkSpecOptions<Mark>,
-): Extension<{ MARKS: Mark }> {
+): Extension<{
+  Marks: Mark
+  Nodes: never
+  Commands: never
+}> {
   const payload: MarkSpecPayload = [options, undefined]
   return defineFacetPayload(markSpecFacet, [payload]) as Extension<{
-    MARKS: Mark
+    Marks: Mark
+    Nodes: never
+    Commands: never
   }>
 }
 

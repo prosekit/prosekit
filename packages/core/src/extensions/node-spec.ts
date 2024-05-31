@@ -72,12 +72,18 @@ export interface NodeAttrOptions {
  *
  * @public
  */
-export function defineNodeSpec<NodeName extends string>(
-  options: NodeSpecOptions<NodeName>,
-): Extension<{ NODES: NodeName }> {
+export function defineNodeSpec<Node extends string>(
+  options: NodeSpecOptions<Node>,
+): Extension<{
+  Nodes: Node
+  Marks: never
+  Commands: never
+}> {
   const payload: NodeSpecPayload = [options, undefined]
   return defineFacetPayload(nodeSpecFacet, [payload]) as Extension<{
-    NODES: NodeName
+    Nodes: Node
+    Marks: never
+    Commands: never
   }>
 }
 

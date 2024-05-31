@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@antfu/ni": "^0.21.12",
-    "@changesets/cli": "^2.27.3",
+    "@changesets/cli": "^2.27.5",
     "@changesets/types": "^6.0.0",
     "@manypkg/cli": "^0.21.4",
     "@ocavue/eslint-config": "^1.5.0",
@@ -39,9 +39,9 @@
     "@vitest/coverage-istanbul": "^1.6.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
-    "jsdom": "^24.0.0",
+    "jsdom": "^24.1.0",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-svelte": "^3.2.3",
     "size-limit": "^11.1.4",
     "turbo": "^1.13.3",
@@ -52,7 +52,7 @@
   "pnpm": {
     "overrides": {},
     "patchedDependencies": {
-      "prosemirror-splittable@0.1.0": "patches/prosemirror-splittable@0.1.0.patch"
+      "prosemirror-splittable@0.1.1": "patches/prosemirror-splittable@0.1.1.patch"
     }
   }
 }

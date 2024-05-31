@@ -97,19 +97,19 @@ export { defineText } from './extensions/text'
 export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
-export { type CommandArgs } from './types/command'
-export {
-  type Extension,
-  type ExtractCommandAppliers,
-  type ExtractCommandCreators,
-  type ExtractMarks,
-  type ExtractNodes,
-  type SimplifyExtension,
+export type { CommandTyping } from './types/command'
+export type {
+  Extension,
+  ExtensionTyping,
+  ExtractCommandAppliers,
+  ExtractCommandCreators,
+  ExtractMarks,
+  ExtractNodes,
+  UnionExtension,
 } from './types/extension'
-export { type ExtensionTyping } from './types/extension-typing'
 export type { NodeJSON, SelectionJSON, StateJSON } from './types/model'
 export { Priority } from './types/priority'
-export { type SimplifyUnion } from './types/simplify-union'
+export type { SimplifyUnion } from './types/simplify-union'
 export { assert } from './utils/assert'
 export { canUseRegexLookbehind } from './utils/can-use-regex-lookbehind'
 export { clsx } from './utils/clsx'

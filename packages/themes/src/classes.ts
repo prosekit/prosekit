@@ -83,7 +83,7 @@ export const EDITOR_SCROLLING = cn(
 export const EDITOR_CONTENT = cn(
   // SolidJS will override the class name which removes the ProseMirror class, so we add it back.
   'ProseMirror',
-  'box-border min-h-full px-[max(40px,_calc(50%-330px))] py-[32px] outline-none outline-0',
+  'box-border min-h-full px-[max(40px,_calc(50%-330px))] py-[24px] outline-none outline-0',
   '[&_span[data-mention="user"]]:text-blue-500',
   '[&_span[data-mention="tag"]]:text-violet-500',
   '[&_pre]:text-white [&_pre]:bg-zinc-800',

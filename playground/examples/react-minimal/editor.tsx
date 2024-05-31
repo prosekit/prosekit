@@ -1,18 +1,19 @@
 import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
-import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import type { ProseMirrorNode } from 'prosekit/pm/model'
 import { ProseKit, useDocChange } from 'prosekit/react'
 import { useCallback, useMemo } from 'react'
+
+import { defineExtension } from './extension'
 
 export default function Editor(props: {
   defaultDoc?: NodeJSON
   onDocUpdate?: (doc: NodeJSON) => void
 }) {
   const editor = useMemo(() => {
-    const extension = defineBasicExtension()
+    const extension = defineExtension()
     return createEditor({ extension, defaultDoc: props.defaultDoc })
   }, [])
 

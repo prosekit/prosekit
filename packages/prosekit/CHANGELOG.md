@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.7.6
+
+### Patch Changes
+
+- [`63e3bf8`](https://github.com/ocavue/prosekit/commit/63e3bf8a5f27ea7c53206cd1a2ea693b6c96bfc3) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/basic) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/core) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Bump version to resolve outdated TypeScript declaration.
+
 ## 0.7.5
 
 ### Patch Changes

@@ -56,7 +56,7 @@ const BUTTON_SIZE_SM = 'h-9 px-3'
 // const BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const INPUT = cn(
-  'flex h-10 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
+  'flex h-9 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
   // border
   'border box-border border-border border-solid',
   // ring
@@ -71,17 +71,19 @@ const INPUT = cn(
 
 // The outermost container of the editor. It limits the height of the editor.
 export const EDITOR_VIEWPORT = cn(
-  'box-border h-full w-full min-h-32 overflow-y-auto overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700',
+  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700 flex flex-col bg-background',
 )
 
-// Use this class if you have floating menus. We want to scroll menus along with the document.
-export const EDITOR_DOCUMENT = cn('relative flex min-h-full w-full flex-col')
+// A scrolling container for the editor content and floating menus.
+export const EDITOR_SCROLLING = cn(
+  'relative w-full flex-1 box-border overflow-y-scroll',
+)
 
 // Use this class for the contenteditable element.
 export const EDITOR_CONTENT = cn(
   // SolidJS will override the class name which removes the ProseMirror class, so we add it back.
   'ProseMirror',
-  'relative box-border min-h-full flex-1 overflow-auto bg-background px-[max(16px,_calc(50%-330px))] py-[16px] outline-none outline-0',
+  'box-border min-h-full px-[max(40px,_calc(50%-330px))] py-[32px] outline-none outline-0',
   '[&_span[data-mention="user"]]:text-blue-500',
   '[&_span[data-mention="tag"]]:text-violet-500',
   '[&_pre]:text-white [&_pre]:bg-zinc-800',
@@ -126,13 +128,15 @@ export const LANGUAGE_SELECT = cn(
   'opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 [div[data-node-view-root]:hover_&]:hover:opacity-80',
 )
 
-export const TOOLBAR = cn(
-  'z-2 sticky top-0 box-border flex flex-wrap gap-1 p-2 items-center bg-background',
+const TOP_BAR = cn(
+  'z-2 box-border',
   'border-border border-solid border-l-0 border-r-0 border-t-0 border-b',
 )
 
+export const TOOLBAR = cn(TOP_BAR, 'flex flex-wrap gap-1 p-2 items-center')
+
 export const TOGGLE_BUTTON = cn(
-  'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none',
+  'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-ring disabled:pointer-events-none min-w-9 min-h-9',
   'disabled:opacity-50 hover:disabled:opacity-50',
   'bg-transparent hover:bg-secondary data-[state=on]:bg-accent',
 )

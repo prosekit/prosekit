@@ -25,5 +25,5 @@ export default defineConfig({
       },
     },
   ],
-  base: 'playground/dist',
+  base: '_',
 })

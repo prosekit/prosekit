@@ -26,7 +26,7 @@ function getIndexContent(names: string[]): string {
   const htmlLines: string[] = []
 
   names.forEach((name) => {
-    htmlLines.push(`  <p><a href="/playground/dist/${name}">${name}</a></p>`)
+    htmlLines.push(`  <p><a href="/_/${name}">${name}</a></p>`)
   })
 
   const lines = [

@@ -2,10 +2,10 @@ import path from 'node:path'
 
 import { execa } from 'execa'
 import { pathExists } from 'path-exists'
-
+import { globby } from 'globby'
 import { findRootDir } from './find-root-dir.js'
 
-export async function listGitFiles(dir: string) {
+async function listFilesWithGit(dir: string) {
   const { stdout } = await execa(
     'git',
     [
@@ -39,4 +39,28 @@ export async function listGitFiles(dir: string) {
   )
 
   return existingFilePaths.sort()
+}
+
+async function listFilesWithGlobby(dir: string) {
+  const files = await globby('**', {
+    cwd: dir,
+    ignore: [
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/.git/**',
+      '**/temp/**',
+      '**/_/**',
+    ],
+  })
+  return files.sort()
+}
+
+export async function listGitFiles(dir: string): Promise<string[]> {
+  // Some environments like stackblitz don't have git installed, so we fall back to globby.
+  try {
+    return await listFilesWithGit(dir)
+  } catch (e) {
+    console.warn('Failed to list files with git, falling back to globby:', e)
+    return await listFilesWithGlobby(dir)
+  }
 }

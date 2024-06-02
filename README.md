@@ -12,6 +12,10 @@ For full documentation, visit [prosekit.dev](https://prosekit.dev).
 
 Detailed changes for each release are documented in the [CHANGELOG.md](https://github.com/ocavue/prosekit/blob/master/packages/prosekit/CHANGELOG.md).
 
+## Contributing
+
+See [CONTRIBUTING.md](https://github.com/ocavue/prosekit/blob/master/CONTRIBUTING.md) for details.
+
 ## License
 
 MIT

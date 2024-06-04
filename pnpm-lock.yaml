@@ -223,9 +223,6 @@ importers:
       prosemirror-highlight:
         specifier: ^0.6.0
         version: 0.6.0(shiki@1.6.1)
-      prosemirror-search:
-        specifier: github:ProseMirror/prosemirror-search#e27d19fdb7a4a809a8bb1daf45a179c13358bbd4
-        version: github.com/ProseMirror/prosemirror-search/e27d19fdb7a4a809a8bb1daf45a179c13358bbd4
       prosemirror-tables:
         specifier: ^1.3.7
         version: 1.3.7
@@ -12627,15 +12624,3 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
-
-  github.com/ProseMirror/prosemirror-search/e27d19fdb7a4a809a8bb1daf45a179c13358bbd4:
-    resolution: {tarball: https://codeload.github.com/ProseMirror/prosemirror-search/tar.gz/e27d19fdb7a4a809a8bb1daf45a179c13358bbd4}
-    name: prosemirror-search
-    version: 1.0.0
-    prepare: true
-    requiresBuild: true
-    dependencies:
-      prosemirror-model: 1.21.0
-      prosemirror-state: 1.4.3
-      prosemirror-view: 1.33.6
-    dev: false

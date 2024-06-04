@@ -39,11 +39,11 @@
     "clsx": "^2.1.1",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^0.1.1",
-    "type-fest": "^4.18.3"
+    "type-fest": "^4.19.0"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "tsup": "^8.0.2",
+    "tsup": "^8.1.0",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
   },

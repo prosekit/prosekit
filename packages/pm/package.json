@@ -48,14 +48,14 @@
     "prosemirror-history": "^1.4.0",
     "prosemirror-inputrules": "^1.4.0",
     "prosemirror-keymap": "^1.2.2",
-    "prosemirror-model": "^1.21.0",
+    "prosemirror-model": "^1.21.1",
     "prosemirror-state": "^1.4.3",
     "prosemirror-transform": "^1.9.0",
-    "prosemirror-view": "^1.33.6"
+    "prosemirror-view": "^1.33.7"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "tsup": "^8.0.2",
+    "tsup": "^8.1.0",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
   },

@@ -1,3 +1,5 @@
+/* eslint-disable unicorn/prefer-string-raw -- Don't use String.raw here for better bundler minification */
+
 // All valid alpha TLDs.
 // Data source: https://data.iana.org/TLD/tlds-alpha-by-domain.txt
 const TLD_RE_PATTERN =

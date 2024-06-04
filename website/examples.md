@@ -46,6 +46,8 @@
 
 - [save-markdown](./examples/save-markdown)
 
+- [search](./examples/search)
+
 - [slash-menu](./examples/slash-menu)
 
 - [strike](./examples/strike)

@@ -90,6 +90,10 @@ export const referenceItems = [
         "link": "/references/extensions/readonly"
       },
       {
+        "text": "search",
+        "link": "/references/extensions/search"
+      },
+      {
         "text": "strike",
         "link": "/references/extensions/strike"
       },

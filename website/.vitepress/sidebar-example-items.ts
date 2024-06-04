@@ -91,6 +91,10 @@ export const exampleItems = [
     "link": "/examples/save-markdown"
   },
   {
+    "text": "search",
+    "link": "/examples/search"
+  },
+  {
     "text": "slash-menu",
     "link": "/examples/slash-menu"
   },

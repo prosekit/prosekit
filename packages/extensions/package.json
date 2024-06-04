@@ -46,6 +46,8 @@
     "./placeholder": "./src/placeholder/index.ts",
     "./placeholder/style.css": "./src/placeholder/style.css",
     "./readonly": "./src/readonly/index.ts",
+    "./search": "./src/search/index.ts",
+    "./search/style.css": "./src/search/style.css",
     "./strike": "./src/strike/index.ts",
     "./table": "./src/table/index.ts",
     "./table/style.css": "./src/table/style.css",
@@ -179,6 +181,14 @@
         "import": "./dist/prosekit-extensions-readonly.js",
         "default": "./dist/prosekit-extensions-readonly.js"
       },
+      "./search": {
+        "types": "./dist/prosekit-extensions-search.d.ts",
+        "import": "./dist/prosekit-extensions-search.js",
+        "default": "./dist/prosekit-extensions-search.js"
+      },
+      "./search/style.css": {
+        "default": "./dist/search/style.css"
+      },
       "./strike": {
         "types": "./dist/prosekit-extensions-strike.d.ts",
         "import": "./dist/prosekit-extensions-strike.js",
@@ -272,6 +282,9 @@
         ],
         "readonly": [
           "./dist/prosekit-extensions-readonly.d.ts"
+        ],
+        "search": [
+          "./dist/prosekit-extensions-search.d.ts"
         ],
         "strike": [
           "./dist/prosekit-extensions-strike.d.ts"

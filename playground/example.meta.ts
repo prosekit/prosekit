@@ -275,6 +275,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-search",
+      "framework": "react",
+      "story": "search",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "search.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-slash-menu",
       "framework": "react",
       "story": "slash-menu",

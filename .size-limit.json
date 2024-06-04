@@ -100,6 +100,14 @@
     "path": "packages/prosekit/dist/prosekit-extensions-readonly.js"
   },
   {
+    "name": "prosekit/extensions/search",
+    "path": "packages/prosekit/dist/prosekit-extensions-search.js"
+  },
+  {
+    "name": "prosekit/extensions/search/style.css",
+    "path": "packages/prosekit/dist/extensions/search/style.css"
+  },
+  {
     "name": "prosekit/extensions/strike",
     "path": "packages/prosekit/dist/prosekit-extensions-strike.js"
   },

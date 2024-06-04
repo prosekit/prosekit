@@ -46,14 +46,18 @@ const BUTTON_BASE = cn(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
 )
 
-const BUTTON_VARIANT_PRIMARY =
-  'bg-primary text-primary-foreground hover:bg-primary/90'
-// const BUTTON_VARIANT_SECONDARY = 'bg-secondary text-secondary-foreground hover:bg-secondary/80')
+const BUTTON_VARIANT_PRIMARY = cn(
+  'bg-primary text-primary-foreground hover:bg-primary/90',
+)
+
+const BUTTON_VARIANT_SECONDARY = cn(
+  'bg-secondary text-secondary-foreground hover:bg-secondary/80',
+)
 
 const BUTTON_SIZE_DEFAULT = 'h-10 px-4 py-2'
 const BUTTON_SIZE_SM = 'h-9 px-3'
 // const BUTTON_SIZE_LG = 'h-1 px-8'
-// const BUTTON_SIZE_ICON = 'h-10 w-10'
+const BUTTON_SIZE_ICON = 'h-10 w-10'
 
 const INPUT = cn(
   'flex h-9 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
@@ -179,6 +183,26 @@ export const TOOLTIP_CONTENT = cn(
   POPOVER_ANIMATE,
 )
 
+export const SEARCH = cn(
+  TOP_BAR,
+  'grid grid-cols-[min-content_1fr_min-content] gap-2 p-2',
+)
+
+export const SEARCH_ICON_BUTTON = cn(
+  BUTTON_BASE,
+  BUTTON_VARIANT_SECONDARY,
+  BUTTON_SIZE_ICON,
+)
+
+export const SEARCH_TEXT_BUTTON = cn(
+  BUTTON_BASE,
+  BUTTON_VARIANT_SECONDARY,
+  BUTTON_SIZE_DEFAULT,
+)
+
+export const SEARCH_INPUT = cn(INPUT, 'col-start-2')
+export const SEARCH_CONTROLLER = cn('flex items-center justify-between gap-1')
+
 export const ICON_ITALIC = cn('i-lucide-italic h-5 w-5')
 export const ICON_BOLD = cn('i-lucide-bold h-5 w-5')
 export const ICON_UNDERLINE = cn('i-lucide-underline h-5 w-5')
@@ -203,3 +227,8 @@ export const ICON_LIST_DEDENT = cn('i-lucide-indent-decrease h-5 w-5')
 export const ICON_CODE_BLOCK = cn('i-lucide-square-code h-5 w-5')
 export const ICON_CORNER_HANDLE = cn('i-lucide-arrow-down-right h-4 w-4')
 export const ICON_DRAG_HANDLE = cn('i-lucide-grip-vertical h-5 w-5')
+export const ICON_SEARCH = cn('i-lucide-search h-5 w-5')
+export const ICON_CLOSE = cn('i-lucide-x h-5 w-5')
+export const ICON_ARROW_LEFT = cn('i-lucide-arrow-left h-5 w-5')
+export const ICON_ARROW_RIGHT = cn('i-lucide-arrow-right h-5 w-5')
+export const ICON_CHEVRON_RIGHT = cn('i-lucide-chevron-right h-5 w-5')

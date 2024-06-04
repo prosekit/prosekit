@@ -52,11 +52,11 @@
     "@prosekit/core": "^0.5.4",
     "@prosekit/extensions": "^0.5.2",
     "@prosekit/pm": "^0.1.4",
-    "@zag-js/dom-query": "^0.51.2"
+    "@zag-js/dom-query": "^0.53.0"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "tsup": "^8.0.2",
+    "tsup": "^8.1.0",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
   },

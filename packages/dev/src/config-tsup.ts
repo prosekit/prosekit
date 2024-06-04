@@ -27,6 +27,7 @@ async function getConfig(options?: Options): Promise<Options> {
     sourcemap: false,
     clean: false,
     noExternal: [/\.css$/i],
+    minifySyntax: true,
     experimentalDts: {
       entry: removeCssEntryPoints(entryPoints),
     },

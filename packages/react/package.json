@@ -41,9 +41,9 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/core": "workspace:^",
-    "@prosekit/pm": "workspace:^",
-    "@prosekit/web": "workspace:^",
+    "@prosekit/core": "^0.5.4",
+    "@prosekit/pm": "^0.1.4",
+    "@prosekit/web": "^0.1.9",
     "@prosemirror-adapter/core": "^0.2.6",
     "react-merge-refs": "^2.1.1"
   },

@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.7.7
+
+### Patch Changes
+
+- [`5ae30fd`](https://github.com/ocavue/prosekit/commit/5ae30fdee965a0be0c14fa9cbd0070546005c1a4) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies `prosemirror-view` and `prosemirror-model`.
+
 ## 0.7.6
 
 ### Patch Changes

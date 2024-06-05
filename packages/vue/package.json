@@ -41,9 +41,9 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/core": "^0.5.4",
-    "@prosekit/pm": "^0.1.4",
-    "@prosekit/web": "^0.1.9",
+    "@prosekit/core": "workspace:^",
+    "@prosekit/pm": "workspace:^",
+    "@prosekit/web": "workspace:^",
     "@prosemirror-adapter/core": "^0.2.6"
   },
   "peerDependencies": {

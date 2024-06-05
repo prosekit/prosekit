@@ -80,13 +80,13 @@ importers:
   packages/basic:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.4
+        specifier: workspace:^
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.5.2
+        specifier: workspace:^
         version: link:../extensions
       '@prosekit/pm':
-        specifier: ^0.1.4
+        specifier: workspace:^
         version: link:../pm
     devDependencies:
       '@prosekit/dev':
@@ -111,7 +111,7 @@ importers:
   packages/core:
     dependencies:
       '@prosekit/pm':
-        specifier: ^0.1.4
+        specifier: workspace:^
         version: link:../pm
       clsx:
         specifier: ^2.1.1
@@ -209,10 +209,10 @@ importers:
   packages/extensions:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.4
+        specifier: workspace:^
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.4
+        specifier: workspace:^
         version: link:../pm
       prosemirror-dropcursor:
         specifier: ^1.8.1
@@ -246,7 +246,7 @@ importers:
   packages/lit:
     dependencies:
       '@prosekit/web':
-        specifier: ^0.1.9
+        specifier: workspace:^
         version: link:../web
     devDependencies:
       '@prosekit/dev':
@@ -305,13 +305,13 @@ importers:
   packages/preact:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.4
+        specifier: workspace:^
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.4
+        specifier: workspace:^
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.9
+        specifier: workspace:^
         version: link:../web
       react-merge-refs:
         specifier: ^2.1.1
@@ -336,37 +336,37 @@ importers:
   packages/prosekit:
     dependencies:
       '@prosekit/basic':
-        specifier: 0.3.7
+        specifier: workspace:*
         version: link:../basic
       '@prosekit/core':
-        specifier: 0.5.4
+        specifier: workspace:*
         version: link:../core
       '@prosekit/extensions':
-        specifier: 0.5.2
+        specifier: workspace:*
         version: link:../extensions
       '@prosekit/lit':
-        specifier: 0.3.2
+        specifier: workspace:*
         version: link:../lit
       '@prosekit/pm':
-        specifier: 0.1.4
+        specifier: workspace:*
         version: link:../pm
       '@prosekit/preact':
-        specifier: 0.3.5
+        specifier: workspace:*
         version: link:../preact
       '@prosekit/react':
-        specifier: 0.3.6
+        specifier: workspace:*
         version: link:../react
       '@prosekit/solid':
-        specifier: 0.3.4
+        specifier: workspace:*
         version: link:../solid
       '@prosekit/svelte':
-        specifier: 0.3.4
+        specifier: workspace:*
         version: link:../svelte
       '@prosekit/vue':
-        specifier: 0.3.4
+        specifier: workspace:*
         version: link:../vue
       '@prosekit/web':
-        specifier: 0.1.9
+        specifier: workspace:*
         version: link:../web
     devDependencies:
       '@prosekit/dev':
@@ -412,13 +412,13 @@ importers:
   packages/react:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.4
+        specifier: workspace:^
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.4
+        specifier: workspace:^
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.9
+        specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
         specifier: ^0.2.6
@@ -455,13 +455,13 @@ importers:
   packages/solid:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.4
+        specifier: workspace:^
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.4
+        specifier: workspace:^
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.9
+        specifier: workspace:^
         version: link:../web
     devDependencies:
       '@prosekit/dev':
@@ -483,13 +483,13 @@ importers:
   packages/svelte:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.4
+        specifier: workspace:^
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.4
+        specifier: workspace:^
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.9
+        specifier: workspace:^
         version: link:../web
     devDependencies:
       '@prosekit/dev':
@@ -544,16 +544,16 @@ importers:
 
   packages/unocss-preset:
     dependencies:
-      unocss-preset-animations:
-        specifier: ^1.0.2
-        version: 1.0.2(@unocss/preset-wind@0.60.4)(unocss@0.60.4)
-    devDependencies:
       '@manypkg/find-root':
         specifier: ^2.2.1
         version: 2.2.1
       '@prosekit/themes':
-        specifier: 0.0.0
+        specifier: workspace:*
         version: link:../themes
+      unocss-preset-animations:
+        specifier: ^1.0.2
+        version: 1.0.2(@unocss/preset-wind@0.60.4)(unocss@0.60.4)
+    devDependencies:
       '@types/node':
         specifier: ^20.14.1
         version: 20.14.1
@@ -567,13 +567,13 @@ importers:
   packages/vue:
     dependencies:
       '@prosekit/core':
-        specifier: ^0.5.4
+        specifier: workspace:^
         version: link:../core
       '@prosekit/pm':
-        specifier: ^0.1.4
+        specifier: workspace:^
         version: link:../pm
       '@prosekit/web':
-        specifier: ^0.1.9
+        specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
         specifier: ^0.2.6
@@ -622,13 +622,13 @@ importers:
         specifier: ^1.6.5
         version: 1.6.5
       '@prosekit/core':
-        specifier: ^0.5.4
+        specifier: workspace:^
         version: link:../core
       '@prosekit/extensions':
-        specifier: ^0.5.2
+        specifier: workspace:^
         version: link:../extensions
       '@prosekit/pm':
-        specifier: ^0.1.4
+        specifier: workspace:^
         version: link:../pm
       '@zag-js/dom-query':
         specifier: ^0.53.0
@@ -701,7 +701,7 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
       prosekit:
-        specifier: ^0.7.6
+        specifier: workspace:*
         version: link:../packages/prosekit
       react:
         specifier: ^18.3.1
@@ -794,10 +794,10 @@ importers:
         specifier: ^3.3.0
         version: 3.3.0
       prosekit:
-        specifier: ^0.7.6
+        specifier: workspace:*
         version: link:../packages/prosekit
       prosekit-playground:
-        specifier: '*'
+        specifier: workspace:*
         version: link:../playground
       radix-vue:
         specifier: ^1.8.3
@@ -2784,6 +2784,7 @@ packages:
       '@manypkg/tools': 1.1.0
       find-up: 4.1.0
       fs-extra: 8.1.0
+    dev: false
 
   /@manypkg/get-packages@1.1.3:
     resolution: {integrity: sha512-fo+QhuU3qE/2TQMQmbVMqaQ6EWbMhi4ABWP+O4AM1NqPBuy0OrApV5LO6BrrgnhtAHS2NH6RrVk9OL181tTi8A==}
@@ -2811,6 +2812,7 @@ packages:
       globby: 11.1.0
       jju: 1.4.0
       read-yaml-file: 1.1.0
+    dev: false
 
   /@microsoft/api-extractor-model@7.29.2(@types/node@20.14.1):
     resolution: {integrity: sha512-hAYajOjQan3uslhKJRwvvHIdLJ+ZByKqdSsJ/dgHFxPtEbdKpzMDO8zuW4K5gkSMYl5D0LbNwxkhxr51P2zsmw==}

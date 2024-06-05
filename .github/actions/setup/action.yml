@@ -10,10 +10,12 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: Enable corepack
+      run: corepack enable
+      shell: bash
+
     - name: Install pnpm
-      run: |
-        corepack enable
-        pnpm --version
+      run: pnpm --version
       shell: bash
 
     - name: Setup node
@@ -23,9 +25,12 @@ runs:
         cache: pnpm
         registry-url: 'https://registry.npmjs.org'
 
-    - name: Install
+    - name: Show versions
       run: |
         node --version
         pnpm --version
-        pnpm install
+      shell: bash
+
+    - name: Install
+      run: pnpm install
       shell: bash

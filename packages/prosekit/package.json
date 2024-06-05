@@ -128,17 +128,17 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/basic":              "workspace:*",
-    "@prosekit/core":               "workspace:*",
-    "@prosekit/extensions":         "workspace:*",
-    "@prosekit/lit":                "workspace:*",
-    "@prosekit/pm":                 "workspace:*",
-    "@prosekit/preact":             "workspace:*",
-    "@prosekit/react":              "workspace:*",
-    "@prosekit/solid":              "workspace:*",
-    "@prosekit/svelte":             "workspace:*",
-    "@prosekit/vue":                "workspace:*",
-    "@prosekit/web"  :              "workspace:*"
+    "@prosekit/basic": "workspace:*",
+    "@prosekit/core": "workspace:*",
+    "@prosekit/extensions": "workspace:*",
+    "@prosekit/lit": "workspace:*",
+    "@prosekit/pm": "workspace:*",
+    "@prosekit/preact": "workspace:*",
+    "@prosekit/react": "workspace:*",
+    "@prosekit/solid": "workspace:*",
+    "@prosekit/svelte": "workspace:*",
+    "@prosekit/vue": "workspace:*",
+    "@prosekit/web": "workspace:*"
   },
   "peerDependencies": {
     "preact": ">= 10.11.0",

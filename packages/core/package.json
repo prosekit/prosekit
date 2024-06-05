@@ -35,7 +35,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@prosekit/pm": "^0.1.4",
+    "@prosekit/pm": "workspace:^",
     "clsx": "^2.1.1",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^0.1.1",

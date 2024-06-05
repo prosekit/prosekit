@@ -28,14 +28,14 @@
     "dist"
   ],
   "dependencies": {
+    "@manypkg/find-root": "^2.2.1",
+    "@prosekit/themes": "workspace:*",
     "unocss-preset-animations": "^1.0.2"
   },
   "peerDependencies": {
-    "unocss": "^0.60.2"
+    "unocss": "^0.60.4"
   },
   "devDependencies": {
-    "@manypkg/find-root": "^2.2.1",
-    "@prosekit/themes": "0.0.0",
     "@types/node": "^20.14.1",
     "typescript": "^5.4.5",
     "unocss": "^0.60.4"

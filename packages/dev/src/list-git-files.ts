@@ -1,12 +1,18 @@
 import path from 'node:path'
 
 import { execa } from 'execa'
-import { globby } from 'globby'
 import { pathExists } from 'path-exists'
 
 import { findRootDir } from './find-root-dir.js'
 
-async function listFilesWithGit(dir: string) {
+function splitLines(stdout: string): string[] {
+  return stdout
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+}
+
+async function findFilesWithGit(dir: string): Promise<string[]> {
   const { stdout } = await execa(
     'git',
     [
@@ -23,10 +29,25 @@ async function listFilesWithGit(dir: string) {
     ],
     { cwd: dir },
   )
-  const filePaths = stdout
-    .split('\n')
-    .map((line) => line.trim())
-    .filter((line) => line)
+  return splitLines(stdout)
+}
+
+async function findFilesWithGitFallback(dir: string): Promise<string[]> {
+  const { stdout } = await execa('git', ['ls-files'], { cwd: dir })
+  return splitLines(stdout)
+}
+
+async function findFiles(dir: string): Promise<string[]> {
+  try {
+    return await findFilesWithGit(dir)
+  } catch {
+    // Some older versions of git don't support `--others` and `--exclude-standard`
+    return await findFilesWithGitFallback(dir)
+  }
+}
+
+export async function listGitFiles(dir: string): Promise<string[]> {
+  const filePaths = await findFiles(dir)
 
   const existingFilePaths: string[] = []
   const rootDir = await findRootDir()
@@ -40,28 +61,4 @@ async function listFilesWithGit(dir: string) {
   )
 
   return existingFilePaths.sort()
-}
-
-async function listFilesWithGlobby(dir: string) {
-  const files = await globby('**', {
-    cwd: dir,
-    ignore: [
-      '**/node_modules/**',
-      '**/dist/**',
-      '**/.git/**',
-      '**/temp/**',
-      '**/_/**',
-    ],
-  })
-  return files.sort()
-}
-
-export async function listGitFiles(dir: string): Promise<string[]> {
-  // Some environments like stackblitz don't have git installed, so we fall back to globby.
-  try {
-    return await listFilesWithGit(dir)
-  } catch (e) {
-    console.warn('Failed to list files with git, falling back to globby:', e)
-    return await listFilesWithGlobby(dir)
-  }
 }

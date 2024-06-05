@@ -24,7 +24,7 @@ export async function buildUmbrellaPackageJson() {
     const fullPackageName = pkg.packageJson.name
     const entries = Object.keys((pkg.packageJson as any).exports ?? {})
 
-    pkgDependencies[fullPackageName] = pkg.packageJson.version
+    pkgDependencies[fullPackageName] = 'workspace:*'
 
     Object.assign(pkgPeerDependencies, pkg.packageJson.peerDependencies)
     // @ts-expect-error: peerDependenciesMeta is not in the type

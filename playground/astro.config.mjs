@@ -26,7 +26,4 @@ export default defineConfig({
     },
   ],
   base: '_',
-  redirects: {
-    '/': '/_',
-  },
 })

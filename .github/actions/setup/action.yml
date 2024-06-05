@@ -11,9 +11,10 @@ runs:
   using: composite
   steps:
     - name: Install pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        run_install: false
+      run: |
+        corepack enable
+        pnpm --version
+      shell: bash
 
     - name: Setup node
       uses: actions/setup-node@v4
@@ -23,5 +24,8 @@ runs:
         registry-url: 'https://registry.npmjs.org'
 
     - name: Install
-      run: pnpm install
+      run: |
+        node --version
+        pnpm --version
+        pnpm install
       shell: bash

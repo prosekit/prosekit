@@ -49,9 +49,9 @@
     "@aria-ui/presence": "^0.0.9",
     "@aria-ui/tooltip": "^0.0.16",
     "@floating-ui/dom": "^1.6.5",
-    "@prosekit/core": "^0.5.4",
-    "@prosekit/extensions": "^0.5.2",
-    "@prosekit/pm": "^0.1.4",
+    "@prosekit/core": "workspace:^",
+    "@prosekit/extensions": "workspace:^",
+    "@prosekit/pm": "workspace:^",
     "@zag-js/dom-query": "^0.53.0"
   },
   "devDependencies": {

@@ -30,7 +30,7 @@
     "lit": "^3.1.3",
     "preact": "^10.22.0",
     "prettier": "^3.3.0",
-    "prosekit": "^0.7.6",
+    "prosekit": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rehype-parse": "^9.0.0",

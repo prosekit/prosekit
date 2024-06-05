@@ -44,7 +44,7 @@
     "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-svelte": "^3.2.3",
     "size-limit": "^11.1.4",
-    "turbo": "^2.0.1",
+    "turbo": "^1.13.3",
     "typescript": "^5.4.5",
     "unocss": "^0.60.4",
     "vitest": "^1.6.0"

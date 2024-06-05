@@ -4,7 +4,7 @@
     "build": {
       "dependsOn": ["^build"],
       "env": ["PROSEKIT_NO_CLEAN_URLS"],
-      "outputs": ["dist/**"],
+      "outputs": ["dist/"],
       "outputLogs": "new-only"
     }
   }

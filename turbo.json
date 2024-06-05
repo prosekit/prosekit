@@ -4,21 +4,21 @@
   "tasks": {
     "build": {
       "dependsOn": ["gen", "^build", "build:tsc", "build:tsup"],
-      "outputs": ["dist/**"],
+      "outputs": ["dist/"],
       "outputLogs": "new-only"
     },
     "build:tsc": {
       "dependsOn": ["^build"],
-      "outputs": ["temp/**"],
+      "outputs": ["temp/"],
       "outputLogs": "new-only"
     },
     "build:tsup": {
       "dependsOn": ["^build", "build:tsc"],
-      "outputs": ["dist/**"],
+      "outputs": ["dist/"],
       "outputLogs": "new-only"
     },
     "gen": {
-      "inputs": ["src/**", "../*/tsconfig.json"],
+      "inputs": ["src/", "../*/tsconfig.json"],
       "outputs": ["../*/tsconfig.json"],
       "outputLogs": "new-only"
     }

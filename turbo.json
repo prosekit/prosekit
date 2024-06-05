@@ -1,26 +1,49 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["tsconfig.json"],
-  "pipeline": {
+  "globalDependencies": [
+    "tsconfig.json"
+  ],
+  "tasks": {
     "build": {
-      "dependsOn": ["gen", "^build", "build:tsc", "build:tsup"],
-      "outputs": ["dist/**"],
-      "outputMode": "new-only"
+      "dependsOn": [
+        "gen",
+        "^build",
+        "build:tsc",
+        "build:tsup"
+      ],
+      "outputs": [
+        "dist/**"
+      ],
+      "outputLogs": "new-only"
     },
     "build:tsc": {
-      "dependsOn": ["^build"],
-      "outputs": ["temp/**"],
-      "outputMode": "new-only"
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "temp/**"
+      ],
+      "outputLogs": "new-only"
     },
     "build:tsup": {
-      "dependsOn": ["^build", "build:tsc"],
-      "outputs": ["dist/**"],
-      "outputMode": "new-only"
+      "dependsOn": [
+        "^build",
+        "build:tsc"
+      ],
+      "outputs": [
+        "dist/**"
+      ],
+      "outputLogs": "new-only"
     },
     "gen": {
-      "inputs": ["src/**", "../*/tsconfig.json"],
-      "outputs": ["../*/tsconfig.json"],
-      "outputMode": "new-only"
+      "inputs": [
+        "src/**",
+        "../*/tsconfig.json"
+      ],
+      "outputs": [
+        "../*/tsconfig.json"
+      ],
+      "outputLogs": "new-only"
     }
   }
 }

@@ -1,11 +1,19 @@
 {
-  "extends": ["//"],
-  "pipeline": {
+  "extends": [
+    "//"
+  ],
+  "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "env": ["PROSEKIT_NO_CLEAN_URLS"],
-      "outputs": ["dist/**"],
-      "outputMode": "new-only"
+      "dependsOn": [
+        "^build"
+      ],
+      "env": [
+        "PROSEKIT_NO_CLEAN_URLS"
+      ],
+      "outputs": [
+        "dist/**"
+      ],
+      "outputLogs": "new-only"
     }
   }
 }

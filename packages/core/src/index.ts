@@ -1,6 +1,7 @@
 export { addMark } from './commands/add-mark'
 export { expandMark } from './commands/expand-mark'
 export { insertNode } from './commands/insert-node'
+export { removeNode } from './commands/remove-node'
 export { removeMark } from './commands/remove-mark'
 export { setBlockType } from './commands/set-block-type'
 export { setNodeAttrs } from './commands/set-node-attrs'

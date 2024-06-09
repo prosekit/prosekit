@@ -2,6 +2,7 @@ import { addMark } from '../commands/add-mark'
 import { insertNode } from '../commands/insert-node'
 import { insertText } from '../commands/insert-text'
 import { removeMark } from '../commands/remove-mark'
+import { removeNode } from '../commands/remove-node'
 import { selectAll } from '../commands/select-all'
 import { setBlockType } from '../commands/set-block-type'
 import { setNodeAttrs } from '../commands/set-node-attrs'
@@ -37,6 +38,8 @@ export function defineBaseCommands() {
     insertText,
 
     insertNode,
+
+    removeNode,
 
     wrap,
 

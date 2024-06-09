@@ -1,7 +1,9 @@
 import { test, expect } from 'vitest'
-import { FacetNode, subtractFacetNode, unionFacetNode } from './facet-node'
-import { Facet } from './facet'
+
 import { Priority } from '../types/priority'
+
+import { Facet } from './facet'
+import { FacetNode, subtractFacetNode, unionFacetNode } from './facet-node'
 
 const sum = (input: number[]) => input.reduce((acc, cur) => acc + cur, 0)
 

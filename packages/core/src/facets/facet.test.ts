@@ -1,4 +1,5 @@
 import { test, expect } from 'vitest'
+
 import { Facet } from './facet'
 
 type RootInput = {
@@ -6,7 +7,7 @@ type RootInput = {
 }
 type RootOutput = {
   count: number
-  id: Symbol
+  id: symbol
 }
 const id = Symbol('root-facet')
 const rootFacet = new Facet<RootInput, RootOutput>(null, true, (input) => {

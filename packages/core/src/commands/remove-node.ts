@@ -10,26 +10,27 @@ import { getNodeType } from '../utils/get-node-type'
  *
  * @public
  */
-export function removeNode(
-  options: {
-    /**
-     * The type of the mark to remove.
-     */
-    type: string | NodeType
+export function removeNode(options: {
+  /**
+   * The type of the mark to remove.
+   */
+  type: string | NodeType
 
-    /**
-     * The position of the document. By default it will be the anchor position of current selection.
-     */
-    position?: number
-  }
-): Command {
+  /**
+   * The position of the document. By default it will be the anchor position of current selection.
+   */
+  position?: number
+}): Command {
   return (state, dispatch) => {
-    const nodeType = getNodeType(state.schema, options.type);
-    const $pos = typeof options.position === 'number'
-      ? state.doc.resolve(options.position)
-      : state.selection.$anchor
+    const nodeType = getNodeType(state.schema, options.type)
+    const $pos =
+      typeof options.position === 'number'
+        ? state.doc.resolve(options.position)
+        : state.selection.$anchor
 
-    const getNodePos = ($pos: ResolvedPos): { from: number | null, to: number | null } => {
+    const getNodePos = (
+      $pos: ResolvedPos,
+    ): { from: number | null; to: number | null } => {
       for (let depth = $pos.depth; depth > 0; depth -= 1) {
         const node = $pos.node(depth)
 
@@ -38,7 +39,7 @@ export function removeNode(
           const to = $pos.after(depth)
           return {
             from,
-            to
+            to,
           }
         }
       }
@@ -51,7 +52,7 @@ export function removeNode(
 
     const { from, to } = getNodePos($pos)
     if (!from || !to || from > to) {
-      return false;
+      return false
     }
 
     dispatch?.(state.tr.delete(from, to))

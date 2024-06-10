@@ -57,6 +57,14 @@ function subtractChildren(
   return merged
 }
 
+/**
+ * Takes two facet nodes and returns a new facet node containing inputs and
+ * children from both nodes.
+ *
+ * The reducers of the first facet node will be reused.
+ *
+ * @internal
+ */
 export function unionFacetNode<I, O>(
   a: FacetNode<I, O>,
   b: FacetNode<I, O>,
@@ -66,9 +74,18 @@ export function unionFacetNode<I, O>(
     a.facet,
     zip5(a.inputs, b.inputs, unionInput),
     unionChildren(a.children, b.children),
+    a.reducers,
   )
 }
 
+/**
+ * Takes two facet nodes and returns a new facet node containing inputs and
+ * children from the first node but not the second.
+ *
+ * The reducers of the first facet node will be reused.
+ *
+ * @internal
+ */
 export function subtractFacetNode<I, O>(
   a: FacetNode<I, O>,
   b: FacetNode<I, O>,
@@ -78,17 +95,24 @@ export function subtractFacetNode<I, O>(
     a.facet,
     zip5(a.inputs, b.inputs, subtractInput),
     subtractChildren(a.children, b.children),
+    a.reducers,
   )
 }
 
 export class FacetNode<I = any, O = any> {
-  reducers: Tuple5<FacetReducer<I, O> | null> = [null, null, null, null, null]
   output: Tuple5<O | null> | null = null
 
   constructor(
     readonly facet: Facet<I, O>,
     readonly inputs: Tuple5<I[] | null> = [null, null, null, null, null],
     readonly children: Map<number, FacetNode> = new Map(),
+    readonly reducers: Tuple5<FacetReducer<I, O> | null> = [
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
   ) {}
 
   private calcOutput(): Tuple5<O | null> {

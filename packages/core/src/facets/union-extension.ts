@@ -1,9 +1,9 @@
 import type { Extension, ExtensionTyping } from '../types/extension'
 import { Priority } from '../types/priority'
+import { assert } from '../utils/assert'
 
 import { BaseExtension } from './base-extension'
 import { FacetNode, unionFacetNode } from './facet-node'
-import { rootFacet } from './root'
 
 export class UnionExtensionImpl<T extends ExtensionTyping = ExtensionTyping>
   extends BaseExtension<T>
@@ -25,7 +25,14 @@ export class UnionExtensionImpl<T extends ExtensionTyping = ExtensionTyping>
     const extensions = [...this.extension]
     extensions.sort((a, b) => (a.priority ?? pri) - (b.priority ?? pri))
 
-    const children = extensions.map((ext) => ext.getTree(pri))
-    return children.reduce(unionFacetNode, new FacetNode(rootFacet))
+    const children: FacetNode[] = extensions.map((ext) => ext.getTree(pri))
+
+    assert(children.length > 0)
+
+    let node = children[0]
+    for (let i = 1; i < children.length; i++) {
+      node = unionFacetNode(node, children[i])
+    }
+    return node
   }
 }

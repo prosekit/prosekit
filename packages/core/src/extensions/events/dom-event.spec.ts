@@ -9,7 +9,6 @@ import { defineText } from '../text'
 import { defineDOMEventHandler } from './dom-event'
 
 describe('defineDOMEventHandler', () => {
-  // TODO: enable this test
   it('should register and unregister event handlers dynamically', () => {
     const div = document.body.appendChild(document.createElement('div'))
     const handleFocus = vi.fn()

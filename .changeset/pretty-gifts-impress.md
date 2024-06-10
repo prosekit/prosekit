@@ -1,6 +1,6 @@
 ---
-'prosekit': patch
-'@prosekit/core': patch
+'prosekit': minor
+'@prosekit/core': minor
 ---
 
 Add `removeNode` command.

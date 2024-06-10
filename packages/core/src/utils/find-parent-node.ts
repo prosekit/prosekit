@@ -1,6 +1,6 @@
 import type { NodeType, ResolvedPos } from '@prosekit/pm/model'
 
-export function findParentNode (
+export function findParentNode(
   nodeType: NodeType,
   $pos: ResolvedPos,
 ): { from: number | null; to: number | null } {

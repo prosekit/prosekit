@@ -5,7 +5,7 @@ import { assert } from '../utils/assert'
 
 /**
  * Merge multiple extensions into one.
- * 
+ *
  * Throws an error if no extensions are provided.
  *
  * @public

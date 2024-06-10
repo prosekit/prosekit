@@ -55,7 +55,7 @@ describe('facet extension', () => {
   // Bar facet uses `reducer` directly thus the `onBar` function is a different instance every time.
   const barReducer: FacetReducer<BarInput, RootInput> = (input) => {
     return {
-      onBar: (value: string ) => {
+      onBar: (value: string) => {
         input.forEach((handler) => handler(value))
       },
     }

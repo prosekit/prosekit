@@ -16,7 +16,7 @@ export function removeNode(options: {
   type: string | NodeType
 
   /**
-   * The position of the document. By default it will be the anchor position of current selection.
+   * The document position to start searching node. By default it will be the anchor position of current selection.
    */
   position?: number
 }): Command {

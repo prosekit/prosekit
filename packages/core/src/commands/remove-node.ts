@@ -5,8 +5,7 @@ import type { CommandCreator } from '../types/command'
 import { getNodeType } from '../utils/get-node-type'
 
 /**
- * Returns a command that removes the given type of node at the current selection or at
- * the given position.
+ * Returns a command to remove the nearest ancestor node of a specific type from the current position.
  *
  * @public
  */

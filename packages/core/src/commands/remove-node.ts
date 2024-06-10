@@ -29,7 +29,7 @@ export function removeNode(options: {
         : state.selection.$anchor
 
     const { from, to } = findParentNode(nodeType, $pos)
-    if (!from || !to || from > to) {
+    if (from == null || to == null || from > to) {
       return false
     }
 

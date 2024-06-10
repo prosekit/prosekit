@@ -11,7 +11,7 @@ import { getNodeType } from '../utils/get-node-type'
  */
 export function removeNode(options: {
   /**
-   * The type of the mark to remove.
+   * The type of the node to remove.
    */
   type: string | NodeType
 

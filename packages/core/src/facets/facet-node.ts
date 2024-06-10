@@ -57,6 +57,14 @@ function subtractChildren(
   return merged
 }
 
+/**
+ * Takes two facet nodes and returns a new facet node containing inputs and
+ * children from both nodes.
+ *
+ * The reducers of the first facet node will be reused.
+ *
+ * @internal
+ */
 export function unionFacetNode<I, O>(
   a: FacetNode<I, O>,
   b: FacetNode<I, O>,
@@ -66,9 +74,18 @@ export function unionFacetNode<I, O>(
     a.facet,
     zip5(a.inputs, b.inputs, unionInput),
     unionChildren(a.children, b.children),
+    a.reducers,
   )
 }
 
+/**
+ * Takes two facet nodes and returns a new facet node containing inputs and
+ * children from the first node but not the second.
+ *
+ * The reducers of the first facet node will be reused.
+ *
+ * @internal
+ */
 export function subtractFacetNode<I, O>(
   a: FacetNode<I, O>,
   b: FacetNode<I, O>,
@@ -78,20 +95,29 @@ export function subtractFacetNode<I, O>(
     a.facet,
     zip5(a.inputs, b.inputs, subtractInput),
     subtractChildren(a.children, b.children),
+    a.reducers,
   )
 }
 
 export class FacetNode<I = any, O = any> {
-  reducers: Tuple5<FacetReducer<I, O> | null> = [null, null, null, null, null]
   output: Tuple5<O | null> | null = null
 
   constructor(
     readonly facet: Facet<I, O>,
     readonly inputs: Tuple5<I[] | null> = [null, null, null, null, null],
     readonly children: Map<number, FacetNode> = new Map(),
+    readonly reducers: Tuple5<FacetReducer<I, O> | null> = [
+      null,
+      null,
+      null,
+      null,
+      null,
+    ],
   ) {}
 
   private calcOutput(): Tuple5<O | null> {
+    // console.log("calcOutput 1", this.facet.index, this.reducers.map(r => !!r))
+
     const inputs: Tuple5<I[] | null> = [null, null, null, null, null]
     const output: Tuple5<O | null> = [null, null, null, null, null]
 
@@ -113,6 +139,10 @@ export class FacetNode<I = any, O = any> {
     }
 
     if (this.facet.singleton) {
+      if (!this.reducers[Priority.default]) {
+        console.log(`Cannot find existing reducer for facet ${this.facet.index} in priority ${Priority.default}. creating`)
+      }
+
       const reducer = (this.reducers[Priority.default] ||= this.facet.reducer)
       // @ts-expect-error: TS 5.5 will fix it.
       const input: I[] = inputs.filter(Boolean).flat()
@@ -121,11 +151,17 @@ export class FacetNode<I = any, O = any> {
       for (let pri = 0; pri < 5; pri++) {
         const input = inputs[pri]
         if (input) {
+          if (!this.reducers[pri]) {
+            console.log(`Cannot find existing reducer for facet ${this.facet.index} in priority ${Priority.default}. creating`)
+          }
+
           const reducer = (this.reducers[pri] ||= this.facet.reducer)
           output[pri] = reducer(input)
         }
       }
     }
+
+    // console.log("calcOutput 2", this.facet.index, this.reducers.map(r => !!r))
 
     return output
   }

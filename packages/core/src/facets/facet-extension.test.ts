@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 
 import { Priority } from '../types/priority'
+import { isNotNull } from '../utils/is-not-null'
 
 import { Facet, defineFacet } from './facet'
 import { FacetExtensionImpl } from './facet-extension'
@@ -18,37 +19,31 @@ describe('facet extension', () => {
   }
 
   interface RootOutput {
-    onKeyDown: KeyDownHandler
-    onMouseDown: MouseDownHandler
+    keyDownHandlers: KeyDownHandler[]
+    mouseDownHandlers: MouseDownHandler[]
   }
 
   type KeyDownInput = KeyDownHandler
   type MouseDownInput = MouseDownHandler
 
   const rootReducerImpl: FacetReducer<RootInput, RootOutput> = (input) => {
-    console.log('rootReducerImpl')
-    return {
-      onKeyDown: (key: string) => {
-        input.forEach((input) => input?.onKeyDown?.(key))
-      },
-      onMouseDown: (double: boolean) => {
-        input.forEach((input) => input?.onMouseDown?.(double))
-      },
-    }
+    const keyDownHandlers = input.map((i) => i.onKeyDown).filter(isNotNull)
+    const mouseDownHandlers = input.map((i) => i.onMouseDown).filter(isNotNull)
+    return { keyDownHandlers, mouseDownHandlers }
   }
   const rootReducer = vi.fn(rootReducerImpl)
   const rootFacet = new Facet(null, true, rootReducer)
 
   const keyDownReduce: () => FacetReducer<KeyDownInput, RootInput> = () => {
-    let keyDownHandlers: KeyDownHandler[] = []
+    let keyDownHandlers: KeyDownHandler[] | undefined
+
+    const onKeyDown = (key: string): void => {
+      keyDownHandlers?.forEach((handler) => handler(key))
+    }
 
     return (input) => {
       keyDownHandlers = input
-      return {
-        onKeyDown: (key: string) => {
-          keyDownHandlers.forEach((handler) => handler(key))
-        },
-      }
+      return { onKeyDown }
     }
   }
   const keyDownFacet = defineFacet({
@@ -92,25 +87,25 @@ describe('facet extension', () => {
 
     const tree = extension1.createTree(Priority.default)
     const rootOutput = tree.getSingletonOutput() as RootOutput
-    expect(rootOutput.onKeyDown).toBeTypeOf('function')
-    expect(rootOutput.onMouseDown).toBeTypeOf('function')
+    expect(rootOutput.keyDownHandlers).toHaveLength(1)
+    expect(rootOutput.mouseDownHandlers).toHaveLength(1)
 
     expect(keyDownHandler1).toHaveBeenCalledTimes(0)
     expect(keyDownHandler2).toHaveBeenCalledTimes(0)
     expect(mouseDownHandler1).toHaveBeenCalledTimes(0)
 
-    rootOutput.onKeyDown('a')
+    rootOutput.keyDownHandlers.forEach((handler) => handler('a'))
     expect(keyDownHandler1).toHaveBeenCalledWith('a')
     expect(keyDownHandler1).toHaveBeenCalledTimes(1)
     expect(keyDownHandler2).toHaveBeenCalledWith('a')
     expect(keyDownHandler2).toHaveBeenCalledTimes(1)
 
-    rootOutput.onMouseDown(true)
+    rootOutput.mouseDownHandlers.forEach((handler) => handler(true))
     expect(mouseDownHandler1).toHaveBeenCalledWith(true)
     expect(mouseDownHandler1).toHaveBeenCalledTimes(1)
   })
 
-  it.only('can skip unnecessary update', () => {
+  it('can skip unnecessary update', () => {
     const keyDownHandler1: KeyDownHandler = vi.fn()
     const keybindExtension1 = new FacetExtensionImpl(keyDownFacet, [
       keyDownHandler1,
@@ -138,31 +133,16 @@ describe('facet extension', () => {
 
     const tree1 = extension1.createTree(Priority.default)
     const rootOutput1 = tree1.getSingletonOutput() as RootOutput
-    const rootOnKeyDown1 = rootOutput1.onKeyDown
-    const rootOnMouseDown1 = rootOutput1.onMouseDown
+    const rootKeyDownHandlers1 = rootOutput1.keyDownHandlers
+    const rootMouseDownHandlers1 = rootOutput1.mouseDownHandlers
 
-    expect(keyDownHandler1).toHaveBeenCalledTimes(0)
-    expect(keyDownHandler2).toHaveBeenCalledTimes(0)
-    expect(mouseDownHandler1).toHaveBeenCalledTimes(0)
-    expect(mouseDownHandler2).toHaveBeenCalledTimes(0)
-
-    rootOnKeyDown1('a')
-    expect(keyDownHandler1).toHaveBeenCalledWith('a')
-    expect(keyDownHandler1).toHaveBeenCalledTimes(1)
-    expect(keyDownHandler2).toHaveBeenCalledTimes(0)
-
-    rootOnMouseDown1(true)
-    expect(mouseDownHandler1).toHaveBeenCalledWith(true)
-    expect(mouseDownHandler1).toHaveBeenCalledTimes(1)
-    expect(mouseDownHandler2).toHaveBeenCalledTimes(0)
-
-    // Add mouseExtension2
-    const tree2 = unionFacetNode(tree1, mouseExtension2.getTree())
+    // Add keybindExtension2
+    const tree2 = unionFacetNode(tree1, keybindExtension2.getTree())
     const rootOutput2 = tree2.getSingletonOutput() as RootOutput
-    const rootOnKeyDown2 = rootOutput2.onKeyDown
-    const rootOnMouseDown2 = rootOutput2.onMouseDown
+    const rootKeyDownHandlers2 = rootOutput2.keyDownHandlers
+    const rootMouseDownHandlers2 = rootOutput2.mouseDownHandlers
 
-    expect(rootOnKeyDown1).toBe(rootOnKeyDown2)
-    expect(rootOnMouseDown1).toBe(rootOnMouseDown2)
+    expect(rootKeyDownHandlers1).toEqual(rootKeyDownHandlers2)
+    expect(rootMouseDownHandlers1).toEqual(rootMouseDownHandlers2)
   })
 })

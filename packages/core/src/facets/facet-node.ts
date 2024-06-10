@@ -139,10 +139,6 @@ export class FacetNode<I = any, O = any> {
     }
 
     if (this.facet.singleton) {
-      if (!this.reducers[Priority.default]) {
-        console.log(`Cannot find existing reducer for facet ${this.facet.index} in priority ${Priority.default}. creating`)
-      }
-
       const reducer = (this.reducers[Priority.default] ||= this.facet.reducer)
       // @ts-expect-error: TS 5.5 will fix it.
       const input: I[] = inputs.filter(Boolean).flat()
@@ -151,10 +147,6 @@ export class FacetNode<I = any, O = any> {
       for (let pri = 0; pri < 5; pri++) {
         const input = inputs[pri]
         if (input) {
-          if (!this.reducers[pri]) {
-            console.log(`Cannot find existing reducer for facet ${this.facet.index} in priority ${Priority.default}. creating`)
-          }
-
           const reducer = (this.reducers[pri] ||= this.facet.reducer)
           output[pri] = reducer(input)
         }

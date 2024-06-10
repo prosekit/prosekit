@@ -5,144 +5,158 @@ import { isNotNull } from '../utils/is-not-null'
 
 import { Facet, defineFacet } from './facet'
 import { FacetExtensionImpl } from './facet-extension'
-import { unionFacetNode } from './facet-node'
+import { subtractFacetNode, unionFacetNode } from './facet-node'
 import type { FacetReducer } from './facet-types'
 import { UnionExtensionImpl } from './union-extension'
 
 describe('facet extension', () => {
-  type KeyDownHandler = (key: string) => void
-  type MouseDownHandler = (double: boolean) => void
+  type FooHandler = (foo: string) => void
+  type BarHandler = (bar: string) => void
 
   interface RootInput {
-    onKeyDown?: KeyDownHandler
-    onMouseDown?: MouseDownHandler
+    onFoo?: FooHandler
+    onBar?: BarHandler
   }
 
   interface RootOutput {
-    keyDownHandlers: KeyDownHandler[]
-    mouseDownHandlers: MouseDownHandler[]
+    fooHandlers: FooHandler[]
+    barHandlers: BarHandler[]
   }
 
-  type KeyDownInput = KeyDownHandler
-  type MouseDownInput = MouseDownHandler
+  type FooInput = FooHandler
+  type BarInput = BarHandler
 
   const rootReducerImpl: FacetReducer<RootInput, RootOutput> = (input) => {
-    const keyDownHandlers = input.map((i) => i.onKeyDown).filter(isNotNull)
-    const mouseDownHandlers = input.map((i) => i.onMouseDown).filter(isNotNull)
-    return { keyDownHandlers, mouseDownHandlers }
+    const fooHandlers = input.map((i) => i.onFoo).filter(isNotNull)
+    const barHandlers = input.map((i) => i.onBar).filter(isNotNull)
+    return { fooHandlers, barHandlers }
   }
   const rootReducer = vi.fn(rootReducerImpl)
   const rootFacet = new Facet(null, true, rootReducer)
 
-  const keyDownReduce: () => FacetReducer<KeyDownInput, RootInput> = () => {
-    let keyDownHandlers: KeyDownHandler[] | undefined
+  // Foo facet uses `reduce` closure to return the same `onFoo` function every time.
+  const fooReduce: () => FacetReducer<FooInput, RootInput> = () => {
+    let fooHandlers: FooHandler[] | undefined
 
-    const onKeyDown = (key: string): void => {
-      keyDownHandlers?.forEach((handler) => handler(key))
+    const onFoo = (value: string): void => {
+      fooHandlers?.forEach((handler) => handler(value))
     }
 
     return (input) => {
-      keyDownHandlers = input
-      return { onKeyDown }
+      fooHandlers = input
+      return { onFoo }
     }
   }
-  const keyDownFacet = defineFacet({
+  const fooFacet = defineFacet<FooInput, RootInput>({
     parent: rootFacet,
-    reduce: keyDownReduce,
+    reduce: fooReduce,
   })
 
-  const mouseDownReducer: FacetReducer<MouseDownInput, RootInput> = (input) => {
+  // Bar facet uses `reducer` directly thus the `onBar` function is a different instance every time.
+  const barReducer: FacetReducer<BarInput, RootInput> = (input) => {
     return {
-      onMouseDown: (double: boolean) => {
-        input.forEach((handler) => handler(double))
+      onBar: (value: string ) => {
+        input.forEach((handler) => handler(value))
       },
     }
   }
-  const mouseDownFacet = defineFacet({
+  const barFacet = defineFacet<BarInput, RootInput>({
     parent: rootFacet,
-    reducer: mouseDownReducer,
+    reducer: barReducer,
   })
 
   it('can merge payloads', () => {
-    const keyDownHandler1: KeyDownHandler = vi.fn()
-    const keybindExtension1 = new FacetExtensionImpl(keyDownFacet, [
-      keyDownHandler1,
-    ])
+    const fooHandler1: FooHandler = vi.fn()
+    const fooExtension1 = new FacetExtensionImpl(fooFacet, [fooHandler1])
 
-    const keyDownHandler2: KeyDownHandler = vi.fn()
-    const keybindExtension2 = new FacetExtensionImpl(keyDownFacet, [
-      keyDownHandler2,
-    ])
+    const fooHandler2: FooHandler = vi.fn()
+    const fooExtension2 = new FacetExtensionImpl(fooFacet, [fooHandler2])
 
-    const mouseDownHandler1: MouseDownHandler = vi.fn()
-    const mouseExtension1 = new FacetExtensionImpl(mouseDownFacet, [
-      mouseDownHandler1,
-    ])
+    const barHandler1: BarHandler = vi.fn()
+    const barExtension1 = new FacetExtensionImpl(barFacet, [barHandler1])
 
     const extension1 = new UnionExtensionImpl([
-      keybindExtension1,
-      keybindExtension2,
-      mouseExtension1,
+      fooExtension1,
+      fooExtension2,
+      barExtension1,
     ])
 
     const tree = extension1.createTree(Priority.default)
     const rootOutput = tree.getSingletonOutput() as RootOutput
-    expect(rootOutput.keyDownHandlers).toHaveLength(1)
-    expect(rootOutput.mouseDownHandlers).toHaveLength(1)
+    expect(rootOutput.fooHandlers).toHaveLength(1)
+    expect(rootOutput.barHandlers).toHaveLength(1)
 
-    expect(keyDownHandler1).toHaveBeenCalledTimes(0)
-    expect(keyDownHandler2).toHaveBeenCalledTimes(0)
-    expect(mouseDownHandler1).toHaveBeenCalledTimes(0)
+    expect(fooHandler1).toHaveBeenCalledTimes(0)
+    expect(fooHandler2).toHaveBeenCalledTimes(0)
+    expect(barHandler1).toHaveBeenCalledTimes(0)
 
-    rootOutput.keyDownHandlers.forEach((handler) => handler('a'))
-    expect(keyDownHandler1).toHaveBeenCalledWith('a')
-    expect(keyDownHandler1).toHaveBeenCalledTimes(1)
-    expect(keyDownHandler2).toHaveBeenCalledWith('a')
-    expect(keyDownHandler2).toHaveBeenCalledTimes(1)
+    rootOutput.fooHandlers.forEach((handler) => handler('a'))
+    expect(fooHandler1).toHaveBeenCalledWith('a')
+    expect(fooHandler1).toHaveBeenCalledTimes(1)
+    expect(fooHandler2).toHaveBeenCalledWith('a')
+    expect(fooHandler2).toHaveBeenCalledTimes(1)
 
-    rootOutput.mouseDownHandlers.forEach((handler) => handler(true))
-    expect(mouseDownHandler1).toHaveBeenCalledWith(true)
-    expect(mouseDownHandler1).toHaveBeenCalledTimes(1)
+    rootOutput.barHandlers.forEach((handler) => handler('b'))
+    expect(barHandler1).toHaveBeenCalledWith('b')
+    expect(barHandler1).toHaveBeenCalledTimes(1)
   })
 
   it('can skip unnecessary update', () => {
-    const keyDownHandler1: KeyDownHandler = vi.fn()
-    const keybindExtension1 = new FacetExtensionImpl(keyDownFacet, [
-      keyDownHandler1,
-    ])
+    const fooHandler1: FooHandler = vi.fn()
+    const fooExtension1 = new FacetExtensionImpl(fooFacet, [fooHandler1])
 
-    const keyDownHandler2: KeyDownHandler = vi.fn()
-    const keybindExtension2 = new FacetExtensionImpl(keyDownFacet, [
-      keyDownHandler2,
-    ])
+    const fooHandler2: FooHandler = vi.fn()
+    const fooExtension2 = new FacetExtensionImpl(fooFacet, [fooHandler2])
 
-    const mouseDownHandler1: MouseDownHandler = vi.fn()
-    const mouseExtension1 = new FacetExtensionImpl(mouseDownFacet, [
-      mouseDownHandler1,
-    ])
+    const barHandler1: BarHandler = vi.fn()
+    const barExtension1 = new FacetExtensionImpl(barFacet, [barHandler1])
 
-    const mouseDownHandler2: MouseDownHandler = vi.fn()
-    const mouseExtension2 = new FacetExtensionImpl(mouseDownFacet, [
-      mouseDownHandler2,
-    ])
+    const barHandler2: BarHandler = vi.fn()
+    const barExtension2 = new FacetExtensionImpl(barFacet, [barHandler2])
 
-    const extension1 = new UnionExtensionImpl([
-      keybindExtension1,
-      mouseExtension1,
-    ])
+    // Initial the root output with fooExtension1 and barExtension1.
+    const rootExtension = new UnionExtensionImpl([fooExtension1, barExtension1])
+    let tree = rootExtension.createTree(Priority.default)
+    let rootOutput = tree.getSingletonOutput() as RootOutput
 
-    const tree1 = extension1.createTree(Priority.default)
-    const rootOutput1 = tree1.getSingletonOutput() as RootOutput
-    const rootKeyDownHandlers1 = rootOutput1.keyDownHandlers
-    const rootMouseDownHandlers1 = rootOutput1.mouseDownHandlers
+    // Save the initial root output.
+    const rootFooHandlers1 = [...rootOutput.fooHandlers]
+    const rootBarHandlers1 = [...rootOutput.barHandlers]
 
-    // Add keybindExtension2
-    const tree2 = unionFacetNode(tree1, keybindExtension2.getTree())
-    const rootOutput2 = tree2.getSingletonOutput() as RootOutput
-    const rootKeyDownHandlers2 = rootOutput2.keyDownHandlers
-    const rootMouseDownHandlers2 = rootOutput2.mouseDownHandlers
+    // Add fooExtension2.
+    // This should not trigger any updates to the root output.
+    tree = unionFacetNode(tree, fooExtension2.getTree())
+    rootOutput = tree.getSingletonOutput() as RootOutput
+    const rootFooHandlers2 = [...rootOutput.fooHandlers]
+    const rootBarHandlers2 = [...rootOutput.barHandlers]
+    expect(rootFooHandlers2).toEqual(rootFooHandlers1)
+    expect(rootBarHandlers2).toEqual(rootBarHandlers1)
 
-    expect(rootKeyDownHandlers1).toEqual(rootKeyDownHandlers2)
-    expect(rootMouseDownHandlers1).toEqual(rootMouseDownHandlers2)
+    // Add barExtension2.
+    // This should change rootOutput.barHandlers
+    tree = unionFacetNode(tree, barExtension2.getTree())
+    rootOutput = tree.getSingletonOutput() as RootOutput
+    const rootFooHandlers3 = [...rootOutput.fooHandlers]
+    const rootBarHandlers3 = [...rootOutput.barHandlers]
+    expect(rootFooHandlers3).toEqual(rootFooHandlers2)
+    expect(rootBarHandlers3).not.toEqual(rootBarHandlers2)
+
+    // Remove fooExtension1
+    // This should not trigger any updates to the root output.
+    tree = subtractFacetNode(tree, fooExtension1.getTree())
+    rootOutput = tree.getSingletonOutput() as RootOutput
+    const rootFooHandlers4 = [...rootOutput.fooHandlers]
+    const rootBarHandlers4 = [...rootOutput.barHandlers]
+    expect(rootFooHandlers4).toEqual(rootFooHandlers3)
+    expect(rootBarHandlers4).toEqual(rootBarHandlers3)
+
+    // Remove barExtension2
+    // This should change rootOutput.barHandlers
+    tree = subtractFacetNode(tree, barExtension2.getTree())
+    rootOutput = tree.getSingletonOutput() as RootOutput
+    const rootFooHandlers5 = [...rootOutput.fooHandlers]
+    const rootBarHandlers5 = [...rootOutput.barHandlers]
+    expect(rootFooHandlers5).toEqual(rootFooHandlers4)
+    expect(rootBarHandlers5).not.toEqual(rootBarHandlers4)
   })
 })

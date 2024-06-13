@@ -36,12 +36,12 @@
     "@sindresorhus/string-hash": "^2.0.0",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^20.14.1",
-    "execa": "^9.1.0",
+    "@types/node": "^20.14.2",
+    "execa": "^9.2.0",
     "globby": "^14.0.1",
     "js-yaml": "^4.1.0",
     "json5": "^2.2.3",
-    "tsx": "^4.11.2",
+    "tsx": "^4.15.4",
     "typescript": "^5.4.5"
   }
 }

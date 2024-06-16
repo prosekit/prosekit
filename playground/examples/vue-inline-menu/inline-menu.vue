@@ -4,8 +4,8 @@ import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
 import { ref } from 'vue'
-import type { EditorExtension } from './extension'
 import Button from './button.vue'
+import type { EditorExtension } from './extension'
 
 const editor = useEditor<EditorExtension>({ update: true })
 const linkMenuOpen = ref(false)
@@ -43,10 +43,14 @@ const handleLinkUpdate = (href?: string) => {
 </script>
 
 <template>
-  <InlinePopover :class="Themes.INLINE_MENU_MAIN">
+  <InlinePopover
+    data-testid="inline-menu-main"
+    :class="Themes.INLINE_MENU_MAIN"
+  >
     <Button
       :pressed="editor.marks.bold.isActive()"
       :disabled="!editor.commands.toggleBold.canApply()"
+      tooltip="Bold"
       @click="() => editor.commands.toggleBold()"
     >
       <div :class="Themes.ICON_BOLD"></div>
@@ -56,6 +60,7 @@ const handleLinkUpdate = (href?: string) => {
       :pressed="editor.marks.italic.isActive()"
       :disabled="!editor.commands.toggleItalic.canApply()"
       @click="() => editor.commands.toggleItalic()"
+      tooltip="Italic"
     >
       <div :class="Themes.ICON_ITALIC"></div>
     </Button>
@@ -64,6 +69,7 @@ const handleLinkUpdate = (href?: string) => {
       :pressed="editor.marks.underline.isActive()"
       :disabled="!editor.commands.toggleUnderline.canApply()"
       @click="() => editor.commands.toggleUnderline()"
+      tooltip="Underline"
     >
       <div :class="Themes.ICON_UNDERLINE"></div>
     </Button>
@@ -72,6 +78,7 @@ const handleLinkUpdate = (href?: string) => {
       :pressed="editor.marks.strike.isActive()"
       :disabled="!editor.commands.toggleStrike.canApply()"
       @click="() => editor.commands.toggleStrike()"
+      tooltip="Strike"
     >
       <div :class="Themes.ICON_STRIKE"></div>
     </Button>
@@ -80,6 +87,7 @@ const handleLinkUpdate = (href?: string) => {
       :pressed="editor.marks.code.isActive()"
       :disabled="!editor.commands.toggleCode.canApply()"
       @click="() => editor.commands.toggleCode()"
+      tooltip="Code"
     >
       <div :class="Themes.ICON_CODE"></div>
     </Button>
@@ -93,16 +101,19 @@ const handleLinkUpdate = (href?: string) => {
           toggleLinkMenuOpen()
         }
       "
+      tooltip="Link"
     >
       <div :class="Themes.ICON_LINK"></div>
     </Button>
   </InlinePopover>
 
   <InlinePopover
-    :class="Themes.INLINE_MENU_LINK"
     :placement="'bottom'"
+    :defaultOpen="false"
     :open="linkMenuOpen"
     @openChange="setLinkMenuOpen"
+    data-testid="inline-menu-link"
+    :class="Themes.INLINE_MENU_LINK"
   >
     <form
       v-if="linkMenuOpen"

@@ -41,6 +41,7 @@ export default function InlineMenu() {
   return (
     <>
       <InlinePopover
+        data-testid="inline-menu-main"
         className={Themes.INLINE_MENU_MAIN}
         onOpenChange={(open) => {
           if (!open) {
@@ -52,6 +53,7 @@ export default function InlineMenu() {
           pressed={editor.marks.bold.isActive()}
           disabled={!editor.commands.toggleBold.canApply()}
           onClick={() => editor.commands.toggleBold()}
+          tooltip="Bold"
         >
           <div className={Themes.ICON_BOLD}></div>
         </Button>
@@ -60,6 +62,7 @@ export default function InlineMenu() {
           pressed={editor.marks.italic.isActive()}
           disabled={!editor.commands.toggleItalic.canApply()}
           onClick={() => editor.commands.toggleItalic()}
+          tooltip="Italic"
         >
           <div className={Themes.ICON_ITALIC}></div>
         </Button>
@@ -68,6 +71,7 @@ export default function InlineMenu() {
           pressed={editor.marks.underline.isActive()}
           disabled={!editor.commands.toggleUnderline.canApply()}
           onClick={() => editor.commands.toggleUnderline()}
+          tooltip="Underline"
         >
           <div className={Themes.ICON_UNDERLINE}></div>
         </Button>
@@ -76,6 +80,7 @@ export default function InlineMenu() {
           pressed={editor.marks.strike.isActive()}
           disabled={!editor.commands.toggleStrike.canApply()}
           onClick={() => editor.commands.toggleStrike()}
+          tooltip="Strikethrough"
         >
           <div className={Themes.ICON_STRIKE}></div>
         </Button>
@@ -84,6 +89,7 @@ export default function InlineMenu() {
           pressed={editor.marks.code.isActive()}
           disabled={!editor.commands.toggleCode.canApply()}
           onClick={() => editor.commands.toggleCode()}
+          tooltip="Code"
         >
           <div className={Themes.ICON_CODE}></div>
         </Button>
@@ -95,6 +101,7 @@ export default function InlineMenu() {
               editor.commands.expandLink()
               toggleLinkMenuOpen()
             }}
+            tooltip="Link"
           >
             <div className={Themes.ICON_LINK}></div>
           </Button>
@@ -102,10 +109,12 @@ export default function InlineMenu() {
       </InlinePopover>
 
       <InlinePopover
-        className={Themes.INLINE_MENU_LINK}
         placement={'bottom'}
+        defaultOpen={false}
         open={linkMenuOpen}
         onOpenChange={setLinkMenuOpen}
+        data-testid="inline-menu-link"
+        className={Themes.INLINE_MENU_LINK}
       >
         {linkMenuOpen && (
           <form

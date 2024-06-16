@@ -35,10 +35,15 @@ async function testInlineMenu(page: Page) {
   await expect(inlineMenuMain).toBeVisible()
   await expect(inlineMenuLink).toBeHidden()
 
-  // Apply italic
+  // Add italic
   expect(await editor.innerHTML()).not.toContain('<em>world</em>')
   await inlineMenuMain.getByRole('button', { name: 'Italic' }).click()
   expect(await editor.innerHTML()).toContain('<em>world</em>')
+
+  // Remove italic
+  expect(await editor.innerHTML()).toContain('<em>world</em>')
+  await inlineMenuMain.getByRole('button', { name: 'Italic' }).click()
+  expect(await editor.innerHTML()).not.toContain('<em>world</em>')
 
   // Show the link menu
   await inlineMenuMain.getByRole('button', { name: 'Link' }).click()
@@ -56,4 +61,14 @@ async function testInlineMenu(page: Page) {
   await expect(inlineMenuLink).toBeHidden()
   await expect(linkInput).toBeHidden()
   await expect(linkExample).toBeVisible()
+  expect(await linkExample.textContent()).toEqual('world')
+
+  // Remove the link
+  await expect(inlineMenuLink).toBeHidden()
+  await inlineMenuMain.getByRole('button', { name: 'Link' }).click()
+  await expect(inlineMenuLink).toBeVisible()
+  await inlineMenuLink.getByRole('button', { name: 'Remove link' }).click()
+  await expect(inlineMenuLink).toBeHidden()
+  await expect(linkExample).toBeHidden()
+  expect(await editor.textContent()).toContain('world')
 }

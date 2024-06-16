@@ -168,7 +168,7 @@ function addAutocompleteExtension(
 
 function createKeymapHandler(
   handler: ReadonlySignal<VoidFunction | null>,
-  enabled: Signal<boolean>,
+  enabled: ReadonlySignal<boolean>,
 ) {
   return () => {
     if (!enabled.value) {

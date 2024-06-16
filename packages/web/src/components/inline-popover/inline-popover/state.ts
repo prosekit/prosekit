@@ -33,15 +33,31 @@ function useInlinePopoverState(
   host: ConnectableElement,
   state: SignalState<InlinePopoverProps>,
 ) {
-  const { editor, open, onOpenChange, ...overlayState } = state
+  const { editor, defaultOpen, open, onOpenChange, ...overlayState } = state
 
   const reference = useInlinePopoverReference(host, editor)
   const hasReference = createComputed(() => !!reference.get())
 
   useEffect(host, () => {
     const hasReferenceValue = hasReference.get()
-    open.set(hasReferenceValue)
-    onOpenChange.peek()?.(hasReferenceValue)
+    const onOpenChangeValue = onOpenChange.peek()
+    const defaultOpenValue = defaultOpen.peek()
+    const openValue = open.peek()
+
+    if (onOpenChangeValue && (defaultOpenValue || openValue)) {
+      onOpenChangeValue(hasReferenceValue)
+    }
+  })
+
+  useEffect(host, () => {
+    const hasReferenceValue = hasReference.get()
+    const defaultOpenValue = defaultOpen.peek()
+
+    if (hasReferenceValue && defaultOpenValue) {
+      open.set(true)
+    } else if (!hasReferenceValue) {
+      open.set(false)
+    }
   })
 
   useOverlayPositionerState(host, overlayState, { reference })

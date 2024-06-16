@@ -12,11 +12,23 @@ export interface InlinePopoverProps
   editor: Editor | null
 
   /**
+   * Whether the popover is open by default when some inline content is
+   * selected.
+   *
+   * When `defaultOpen` is true, the popover will open or close based on the
+   * inline selection. When `defaultOpen` is false, the popover will never be
+   * opened unless the `open` prop is true.
+   *
+   * @default true
+   */
+  defaultOpen: boolean
+
+  /**
    * Whether the popover is open.
    *
    * Notice that the popover will be always hidden if the inline selection is empty.
    *
-   * @default `true`
+   * @default false
    */
   open: boolean
 
@@ -68,7 +80,8 @@ export interface InlinePopoverProps
 export const defaultInlinePopoverProps = Object.freeze({
   ...defaultOverlayPositionerProps,
   editor: null,
-  open: true,
+  defaultOpen: true,
+  open: false,
   onOpenChange: null,
 
   placement: 'top',

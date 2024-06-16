@@ -4,8 +4,8 @@ import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
 import { ref } from 'vue'
-import type { EditorExtension } from './extension'
 import Button from './button.vue'
+import type { EditorExtension } from './extension'
 
 const editor = useEditor<EditorExtension>({ update: true })
 const linkMenuOpen = ref(false)
@@ -105,10 +105,11 @@ const handleLinkUpdate = (href?: string) => {
   </InlinePopover>
 
   <InlinePopover
-    :class="Themes.INLINE_MENU_LINK"
     :placement="'bottom'"
+    :defaultOpen="false"
     :open="linkMenuOpen"
     @openChange="setLinkMenuOpen"
+    :class="Themes.INLINE_MENU_LINK"
   >
     <form
       v-if="linkMenuOpen"

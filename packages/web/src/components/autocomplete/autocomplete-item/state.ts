@@ -19,8 +19,8 @@ export function useAutocompleteItem(
 
   useEffect(element, () => {
     // Check the text content again when the open state changes
-    if (!value.peek() && open.value) {
-      value.value = element.textContent ?? ''
+    if (!value.peek() && open.get()) {
+      value.set(element.textContent ?? '')
     }
   })
 

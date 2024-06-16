@@ -42,16 +42,16 @@ export function useBlockPopover(
   const open = createSignal(false)
 
   useEffect(host, () => {
-    open.value = !!context.value.element
+    open.set(!!context.get().element)
   })
 
   useHoverExtension(host, editor, (referenceValue, element, node, pos) => {
-    reference.value = referenceValue
-    context.value = { element, node, pos }
+    reference.set(referenceValue)
+    context.set({ element, node, pos })
   })
 
-  const presence = createComputed(() => !!reference.value)
-  useAttribute(host, 'data-state', () => (presence.value ? 'open' : 'closed'))
+  const presence = createComputed(() => !!reference.get())
+  useAttribute(host, 'data-state', () => (presence.get() ? 'open' : 'closed'))
   usePresence(host, presence)
 
   return state

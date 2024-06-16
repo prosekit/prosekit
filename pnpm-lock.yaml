@@ -601,23 +601,23 @@ importers:
         specifier: ^0.0.3
         version: 0.0.3
       '@aria-ui/core':
-        specifier: ^0.0.14
-        version: 0.0.14
-      '@aria-ui/listbox':
-        specifier: ^0.0.13
-        version: 0.0.13
-      '@aria-ui/overlay':
         specifier: ^0.0.15
         version: 0.0.15
-      '@aria-ui/popover':
+      '@aria-ui/listbox':
         specifier: ^0.0.14
         version: 0.0.14
-      '@aria-ui/presence':
-        specifier: ^0.0.9
-        version: 0.0.9
-      '@aria-ui/tooltip':
+      '@aria-ui/overlay':
         specifier: ^0.0.16
         version: 0.0.16
+      '@aria-ui/popover':
+        specifier: ^0.0.16
+        version: 0.0.16
+      '@aria-ui/presence':
+        specifier: ^0.0.10
+        version: 0.0.10
+      '@aria-ui/tooltip':
+        specifier: ^0.0.17
+        version: 0.0.17
       '@floating-ui/dom':
         specifier: ^1.6.5
         version: 1.6.5
@@ -631,8 +631,8 @@ importers:
         specifier: workspace:^
         version: link:../pm
       '@zag-js/dom-query':
-        specifier: ^0.56.1
-        version: 0.56.1
+        specifier: ^0.57.0
+        version: 0.57.0
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -944,23 +944,23 @@ packages:
   '@aria-ui/collection@0.0.3':
     resolution: {integrity: sha512-20mUHlpTCYQnv1LTGMkCy1SLCxRK5pxHrvTr2beaaCgBKPjMEB3MlemL0PbIj3WsXbCldsvLBWX1L67FgWowSg==}
 
-  '@aria-ui/core@0.0.14':
-    resolution: {integrity: sha512-1oVRaG4mHIUe+H/wEib8FI7Y8CIcQNVfaZZ0nky4QHsflzJujkRtUW8W7b7dLh2ThE3+d7gUIwJv/ILHzgJYXQ==}
+  '@aria-ui/core@0.0.15':
+    resolution: {integrity: sha512-P3z8kgLrhX9zjQaAovJJydQKHVJ2cm05wuyO+8thARb4+XoNyKkF651x3jvFtWjJRUxeMe10zLxTYJeEByGffQ==}
 
-  '@aria-ui/listbox@0.0.13':
-    resolution: {integrity: sha512-7wULQl0QE/+g009rULHrisDLiRKX51X5k5bkYrNqANZTCna9h4mroF24113mGjyn9C07sGS/LrimfkucoSanBg==}
+  '@aria-ui/listbox@0.0.14':
+    resolution: {integrity: sha512-QdroeA2rYWG8eX+1IZryUY6R+kS4lelzHE4paUK4XooHnEXfos7Vvi29fJ1u22LtZ8b6LWNea/nsBKG6cbEYBg==}
 
-  '@aria-ui/overlay@0.0.15':
-    resolution: {integrity: sha512-amzUZ/tBpIlS30bM0C9kBkP21IzK5n83D09F67IiDdbubwlEWISbJOMH4qsM83EYnUbD8UMBDgI7qhYeHsdFMg==}
+  '@aria-ui/overlay@0.0.16':
+    resolution: {integrity: sha512-op0L1Eod2DsmPqjUv6pTDuiKpIXZ4gq4qpuw+bW37XeTkrCZB/MQexppRHbPG51aspN+Bu+oby8/pedd21zudg==}
 
-  '@aria-ui/popover@0.0.14':
-    resolution: {integrity: sha512-vym3EopMmXXbUiO8R+SPR0BQoiCe6az8vJ5aLkEPU5jnRDIS1ssucL3YBrwjGkPedthbrnmFSs3lkbyYsla8mA==}
+  '@aria-ui/popover@0.0.16':
+    resolution: {integrity: sha512-LYreZfvMgZ3aU3jpDgJk4urLucTPPhfwvSpW+qmwpBm8GjSp7+2H805JnxJLUNoxhbch/8056TwwN9N6egcNgw==}
 
-  '@aria-ui/presence@0.0.9':
-    resolution: {integrity: sha512-KwzkQEHlfTwhzK5RV2r4lO1IeQO2eI/i42mVtZdLDz2BDuRqr4MV+q0SvAkQo62ZmuqN7XIqDAHDi4YxWwNxTA==}
+  '@aria-ui/presence@0.0.10':
+    resolution: {integrity: sha512-w+1K74rT5gwUDIoxX/QdJxdWxNqXvU20nYQk8lwkm6tIkxcz8tkW8YZZu/eycEzHGCDxbX6FKEbujCpIzGidfg==}
 
-  '@aria-ui/tooltip@0.0.16':
-    resolution: {integrity: sha512-CqrNIsI8CjIAJVz6vS1Z6lvoaN++qr7999infjlIbs8HdPDS6OrCp1bxCK7d1UNQJG1WuJ/27NYrt0uIWV4/Ww==}
+  '@aria-ui/tooltip@0.0.17':
+    resolution: {integrity: sha512-vb1vLNsXctCFT3PrdGApZQGpeY7CiaAWrIM2lmJerd72wY/6aIoaIYOesaj/uPJHC8kFBjKiNDJTIdDOPR/PMg==}
 
   '@astrojs/compiler@1.8.2':
     resolution: {integrity: sha512-o/ObKgtMzl8SlpIdzaxFnt7SATKPxu4oIP/1NL+HDJRzxfJcAkOTAb/ZKMRyULbz4q+1t2/DAebs2Z1QairkZw==}
@@ -1178,8 +1178,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/plugin-transform-react-jsx-development@7.24.7':
-    resolution: {integrity: sha512-QG9EnzoGn+Qar7rxuW+ZOsbWOt56FvvI93xInqsZDC5fsekx1AlIO4KIJ5M+D0p0SqSH156EpmZyXq630B8OlQ==}
+  '@babel/plugin-transform-react-jsx-development@7.24.6':
+    resolution: {integrity: sha512-F7EsNp5StNDouSSdYyDSxh4J+xvj/JqG+Cb6s2fA+jCyHOzigG5vTwgH8tU2U8Voyiu5zCG9bAK49wTr/wPH0w==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -1192,6 +1192,12 @@ packages:
 
   '@babel/plugin-transform-react-jsx-source@7.24.1':
     resolution: {integrity: sha512-1v202n7aUq4uXAieRTKcwPzNyphlCuqHHDcdSNc+vdhoTEZcFMh+L5yZuCmGaIO7bs1nJUNfHB89TZyoL48xNA==}
+    engines: {node: '>=6.9.0'}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+
+  '@babel/plugin-transform-react-jsx@7.24.6':
+    resolution: {integrity: sha512-pCtPHhpRZHfwdA5G1Gpk5mIzMA99hv0R8S/Ket50Rw+S+8hkt3wBWqdqHaPw0CuUYxdshUgsPiLQ5fAs4ASMhw==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -1687,7 +1693,6 @@ packages:
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
-    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -1695,7 +1700,6 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
-    deprecated: Use @eslint/object-schema instead
 
   '@iconify-json/logos@1.1.43':
     resolution: {integrity: sha512-UtvL1yDHUr9dl1Tqihh6K9m5dmbYKOYyLf3i9aKhymSW76QjOCGjpgQc0PQ4GJCAdU1cAMu+WO61TgPxdonrlg==}
@@ -1949,8 +1953,8 @@ packages:
       '@babel/core': 7.x
       vite: 2.x || 3.x || 4.x || 5.x
 
-  '@preact/signals-core@1.6.0':
-    resolution: {integrity: sha512-O/XGxwP85h1F7+ouqTMOIZ3+V1whfaV9ToIVcuyGriD4JkSD00cQo54BKdqjvBJxbenvp7ynfqRHEwI6e+NIhw==}
+  '@preact/signals-core@1.6.1':
+    resolution: {integrity: sha512-KXEEmJoKDlo0Igju/cj9YvKIgyaWFDgnprShQjzimUd5VynAAdTWMshawEOjUVeKbsI0aR58V6WOQp+DNcKApw==}
 
   '@preact/signals@1.2.3':
     resolution: {integrity: sha512-M2DXse3Wi8HwjI1d2vQWOLJ3lHogvqTsJYvl4ofXRXgMFQzJ7kmlZvlt5i8x5S5VwgZu0ghru4HkLqOoFfU2JQ==}
@@ -2684,35 +2688,32 @@ packages:
   '@vueuse/shared@10.10.0':
     resolution: {integrity: sha512-2aW33Ac0Uk0U+9yo3Ypg9s5KcR42cuehRWl7vnUHadQyFvCktseyxxEPBi1Eiq4D2yBGACOnqLZpx1eMc7g5Og==}
 
-  '@zag-js/dismissable@0.50.0':
-    resolution: {integrity: sha512-pTtW7QrO1dhMaMCl//fb5pQ3x8b6TNVTRonUW58vtlpJog1M3PAVS83or8ltp/97UvrCuhMgWynxMB9l6+Omvg==}
+  '@zag-js/dismissable@0.57.0':
+    resolution: {integrity: sha512-ogEJsYwnNkSkGi/sb2eUvUTMx1SQW7ex/eejetIQxiKH7xPRpKcBRLRLV86Cpe3Q6o8XPbKOgZfX7JMOdcXufA==}
 
-  '@zag-js/dom-event@0.50.0':
-    resolution: {integrity: sha512-/Ij7FTR3qD1Zk7rZXw5Ou/VTnsvOO+LOQHhJaA2xTGoR7jurrNdBNSfYNNRA0pfG5JqHvaTZu0nFDTZTaN+Sng==}
+  '@zag-js/dom-event@0.57.0':
+    resolution: {integrity: sha512-HXciG8coVkQgFsUxX9nGLfm84M0mxe01DGWVlFiPbtCTnKiSA07sAUzL4YE7jU+o/tCgpFypo1U27V/NTX25PA==}
 
   '@zag-js/dom-query@0.49.0':
     resolution: {integrity: sha512-lA+8ZdfU27GcoMZFRUANYfd6FI2ukPNwlecpJp8E9t4BVZK2o5V7xpAaN99m1TePw5JlcZ7gGXe4I82Ej11Yjg==}
 
-  '@zag-js/dom-query@0.50.0':
-    resolution: {integrity: sha512-AXTZIpTfCoJZ5+Oj9woSBPKILbrSXpEbXjbBRQ3/JFb+VSbmljNrLpr5OblGEzhVD7enLc+rEmrgGiRC4je6Jg==}
+  '@zag-js/dom-query@0.57.0':
+    resolution: {integrity: sha512-RSJyVZTL21UxIVWnylJKuRI/Ixa4IjF3xa9JfvvmGF4+WCdtdcDdr18eRE82iuHaBoV100i0BKtZaJubsal6lg==}
 
-  '@zag-js/dom-query@0.56.1':
-    resolution: {integrity: sha512-mxUa7vzI+NhaMpf0D3cci0kmRuCPBkZCvoV+jsokkLfFKEUvAMVftnzxMxeydAEK6LFZL6PK6icOXP5FxbzzLA==}
-
-  '@zag-js/interact-outside@0.50.0':
-    resolution: {integrity: sha512-dqE4sNjmw28ZZGF78v++aXBO/iYN7nz28PEsHDu2T/+DqgYWWiSQ3akxorfUWewSUUw3qZcz9P8kIBYFaBDwcQ==}
+  '@zag-js/interact-outside@0.57.0':
+    resolution: {integrity: sha512-l3v9StXL/07GloGjMqqsoXOt7P8cZjXmV6sL30HgxfC3IJwTHNcx1rLqjU8KYH5EQ/l0HOC9wQzrGs5hDIS9Vg==}
 
   '@zag-js/tabbable@0.49.0':
     resolution: {integrity: sha512-GwJAuBWTU7dvj7GVcM1KLt6th1kraIewr+A3q7SKXb3e/SyIZ7MbORQDVnEU/LIyhyUz9cwAoHNrgO+3V0ph9A==}
 
-  '@zag-js/text-selection@0.50.0':
-    resolution: {integrity: sha512-+nYxhshEEO3r0FaPN32RlqP7K5JyL4UzaUXccpLygLnzTjAfcoIkwKz/HYSsHohtf3hTXKQft/zC9OOHc7JrFw==}
+  '@zag-js/text-selection@0.57.0':
+    resolution: {integrity: sha512-R3gPIzQwB+3Ii96N+obeFfuph8zbYDCIuzGM0DJkkcYRrcRv0zCxPxCgkNQO0OOZUjly5HfXs6YkQkuUo6P2sQ==}
 
-  '@zag-js/types@0.50.0':
-    resolution: {integrity: sha512-VhnCunY8Q90vBunOWFJWhXbnJBpY+Z02ahxlbBV5GItsInXkupaR/KKWnBXucHKoIckhxzw8yaoJoT91dOPweQ==}
+  '@zag-js/types@0.57.0':
+    resolution: {integrity: sha512-03uU/sXThESf/KhIDaeyUI8BpAB9dWdt16yyK8xjCu3K/I/gMrG1wl2z8LnefXUwkUPS8N9/vrK3wWbD9W7Q3w==}
 
-  '@zag-js/utils@0.50.0':
-    resolution: {integrity: sha512-eYyDE6aMr90IBF2XNDTu2OsMKNr1AHWV43W6DdDtS/rVIYFd73jqc2hCOaizwLSli1KwdRQObK80URDLIOclcw==}
+  '@zag-js/utils@0.57.0':
+    resolution: {integrity: sha512-UoEpkPj8Dvp2AhS9EZHp2HLTOVDF3oHgnNDKzl9EA1AuJinObFPVEz+A4PP+lHBMBhnb9DDeWbReef041HxOdw==}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -4706,6 +4707,9 @@ packages:
 
   mdast-util-phrasing@4.1.0:
     resolution: {integrity: sha512-TqICwyvJJpBwvGAMZjj4J2n0X8QWp21b9l0o7eXyVJ25YNWYbJDVIyD1bZXE6WtV6RmKJVYmQAKWa0zWOABz2w==}
+
+  mdast-util-to-hast@13.1.0:
+    resolution: {integrity: sha512-/e2l/6+OdGp/FB+ctrJ9Avz71AN/GRH3oi/3KAx/kMnoUsD6q0woXlDT8lLEeViVKE7oZxE7RXzvO3T8kF2/sA==}
 
   mdast-util-to-hast@13.2.0:
     resolution: {integrity: sha512-QGYKEuUsYT9ykKBCMOEDLsU5JRObWQusAolFMeko/tYPufNkRffBAQjIE+99jbA87xv6FgmjLtwjh9wBWajwAA==}
@@ -6986,43 +6990,43 @@ snapshots:
 
   '@aria-ui/collection@0.0.3': {}
 
-  '@aria-ui/core@0.0.14':
+  '@aria-ui/core@0.0.15':
     dependencies:
       '@dddstack/ariatype-aria-attributes': 2.0.0
       '@dddstack/ariatype-aria-roles': 2.0.0
-      '@preact/signals-core': 1.6.0
+      '@preact/signals-core': 1.6.1
       server-dom-shim: 1.0.2
 
-  '@aria-ui/listbox@0.0.13':
+  '@aria-ui/listbox@0.0.14':
     dependencies:
       '@aria-ui/collection': 0.0.3
-      '@aria-ui/core': 0.0.14
-      '@aria-ui/presence': 0.0.9
+      '@aria-ui/core': 0.0.15
+      '@aria-ui/presence': 0.0.10
       immer: 10.1.1
 
-  '@aria-ui/overlay@0.0.15':
+  '@aria-ui/overlay@0.0.16':
     dependencies:
-      '@aria-ui/core': 0.0.14
+      '@aria-ui/core': 0.0.15
       '@floating-ui/dom': 1.6.5
-      '@zag-js/dom-query': 0.50.0
+      '@zag-js/dom-query': 0.57.0
 
-  '@aria-ui/popover@0.0.14':
+  '@aria-ui/popover@0.0.16':
     dependencies:
-      '@aria-ui/core': 0.0.14
-      '@aria-ui/overlay': 0.0.15
-      '@aria-ui/presence': 0.0.9
-      '@zag-js/dismissable': 0.50.0
+      '@aria-ui/core': 0.0.15
+      '@aria-ui/overlay': 0.0.16
+      '@aria-ui/presence': 0.0.10
+      '@zag-js/dismissable': 0.57.0
       '@zag-js/tabbable': 0.49.0
 
-  '@aria-ui/presence@0.0.9':
+  '@aria-ui/presence@0.0.10':
     dependencies:
-      '@aria-ui/core': 0.0.14
+      '@aria-ui/core': 0.0.15
 
-  '@aria-ui/tooltip@0.0.16':
+  '@aria-ui/tooltip@0.0.17':
     dependencies:
-      '@aria-ui/core': 0.0.14
-      '@aria-ui/overlay': 0.0.15
-      '@aria-ui/presence': 0.0.9
+      '@aria-ui/core': 0.0.15
+      '@aria-ui/overlay': 0.0.16
+      '@aria-ui/presence': 0.0.10
       nanoid: 5.0.7
 
   '@astrojs/compiler@1.8.2': {}
@@ -7056,8 +7060,8 @@ snapshots:
 
   '@astrojs/preact@3.4.0(@babel/core@7.24.7)(preact@10.22.0)(vite@5.2.13(@types/node@20.14.2)(lightningcss@1.25.1))':
     dependencies:
-      '@babel/plugin-transform-react-jsx': 7.24.7(@babel/core@7.24.7)
-      '@babel/plugin-transform-react-jsx-development': 7.24.7(@babel/core@7.24.7)
+      '@babel/plugin-transform-react-jsx': 7.24.6(@babel/core@7.24.7)
+      '@babel/plugin-transform-react-jsx-development': 7.24.6(@babel/core@7.24.7)
       '@preact/preset-vite': 2.8.2(@babel/core@7.24.7)(preact@10.22.0)(vite@5.2.13(@types/node@20.14.2)(lightningcss@1.25.1))
       '@preact/signals': 1.2.3(preact@10.22.0)
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.24.7)
@@ -7336,7 +7340,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-react-jsx-development@7.24.7(@babel/core@7.24.7)':
+  '@babel/plugin-transform-react-jsx-development@7.24.6(@babel/core@7.24.7)':
     dependencies:
       '@babel/core': 7.24.7
       '@babel/plugin-transform-react-jsx': 7.24.7(@babel/core@7.24.7)
@@ -7352,6 +7356,17 @@ snapshots:
     dependencies:
       '@babel/core': 7.24.7
       '@babel/helper-plugin-utils': 7.24.7
+
+  '@babel/plugin-transform-react-jsx@7.24.6(@babel/core@7.24.7)':
+    dependencies:
+      '@babel/core': 7.24.7
+      '@babel/helper-annotate-as-pure': 7.24.7
+      '@babel/helper-module-imports': 7.24.7
+      '@babel/helper-plugin-utils': 7.24.7
+      '@babel/plugin-syntax-jsx': 7.24.7(@babel/core@7.24.7)
+      '@babel/types': 7.24.7
+    transitivePeerDependencies:
+      - supports-color
 
   '@babel/plugin-transform-react-jsx@7.24.7(@babel/core@7.24.7)':
     dependencies:
@@ -8177,7 +8192,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.24.7
       '@babel/plugin-transform-react-jsx': 7.24.7(@babel/core@7.24.7)
-      '@babel/plugin-transform-react-jsx-development': 7.24.7(@babel/core@7.24.7)
+      '@babel/plugin-transform-react-jsx-development': 7.24.6(@babel/core@7.24.7)
       '@prefresh/vite': 2.4.5(preact@10.22.0)(vite@5.2.13(@types/node@20.14.2)(lightningcss@1.25.1))
       '@rollup/pluginutils': 4.2.1
       babel-plugin-transform-hook-names: 1.0.2(@babel/core@7.24.7)
@@ -8193,11 +8208,11 @@ snapshots:
       - preact
       - supports-color
 
-  '@preact/signals-core@1.6.0': {}
+  '@preact/signals-core@1.6.1': {}
 
   '@preact/signals@1.2.3(preact@10.22.0)':
     dependencies:
-      '@preact/signals-core': 1.6.0
+      '@preact/signals-core': 1.6.1
       preact: 10.22.0
 
   '@prefresh/babel-plugin@0.5.1': {}
@@ -9135,44 +9150,42 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@zag-js/dismissable@0.50.0':
+  '@zag-js/dismissable@0.57.0':
     dependencies:
-      '@zag-js/dom-event': 0.50.0
-      '@zag-js/dom-query': 0.50.0
-      '@zag-js/interact-outside': 0.50.0
-      '@zag-js/utils': 0.50.0
+      '@zag-js/dom-event': 0.57.0
+      '@zag-js/dom-query': 0.57.0
+      '@zag-js/interact-outside': 0.57.0
+      '@zag-js/utils': 0.57.0
 
-  '@zag-js/dom-event@0.50.0':
+  '@zag-js/dom-event@0.57.0':
     dependencies:
-      '@zag-js/dom-query': 0.50.0
-      '@zag-js/text-selection': 0.50.0
-      '@zag-js/types': 0.50.0
+      '@zag-js/dom-query': 0.57.0
+      '@zag-js/text-selection': 0.57.0
+      '@zag-js/types': 0.57.0
 
   '@zag-js/dom-query@0.49.0': {}
 
-  '@zag-js/dom-query@0.50.0': {}
+  '@zag-js/dom-query@0.57.0': {}
 
-  '@zag-js/dom-query@0.56.1': {}
-
-  '@zag-js/interact-outside@0.50.0':
+  '@zag-js/interact-outside@0.57.0':
     dependencies:
-      '@zag-js/dom-event': 0.50.0
-      '@zag-js/dom-query': 0.50.0
-      '@zag-js/utils': 0.50.0
+      '@zag-js/dom-event': 0.57.0
+      '@zag-js/dom-query': 0.57.0
+      '@zag-js/utils': 0.57.0
 
   '@zag-js/tabbable@0.49.0':
     dependencies:
       '@zag-js/dom-query': 0.49.0
 
-  '@zag-js/text-selection@0.50.0':
+  '@zag-js/text-selection@0.57.0':
     dependencies:
-      '@zag-js/dom-query': 0.50.0
+      '@zag-js/dom-query': 0.57.0
 
-  '@zag-js/types@0.50.0':
+  '@zag-js/types@0.57.0':
     dependencies:
       csstype: 3.1.3
 
-  '@zag-js/utils@0.50.0': {}
+  '@zag-js/utils@0.57.0': {}
 
   acorn-jsx@5.3.2(acorn@8.11.3):
     dependencies:
@@ -10216,7 +10229,7 @@ snapshots:
 
   eslint-plugin-deprecation@3.0.0(eslint@8.57.0)(typescript@5.4.5):
     dependencies:
-      '@typescript-eslint/utils': 7.13.0(eslint@8.57.0)(typescript@5.4.5)
+      '@typescript-eslint/utils': 7.12.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
       ts-api-utils: 1.3.0(typescript@5.4.5)
       tslib: 2.6.2
@@ -11570,6 +11583,18 @@ snapshots:
       '@types/mdast': 4.0.3
       unist-util-is: 6.0.0
 
+  mdast-util-to-hast@13.1.0:
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/mdast': 4.0.3
+      '@ungap/structured-clone': 1.2.0
+      devlop: 1.1.0
+      micromark-util-sanitize-uri: 2.0.0
+      trim-lines: 3.0.1
+      unist-util-position: 5.0.0
+      unist-util-visit: 5.0.0
+      vfile: 6.0.1
+
   mdast-util-to-hast@13.2.0:
     dependencies:
       '@types/hast': 3.0.4
@@ -12604,7 +12629,7 @@ snapshots:
       '@types/mdast': 4.0.3
       hast-util-sanitize: 5.0.1
       hast-util-to-html: 9.0.1
-      mdast-util-to-hast: 13.2.0
+      mdast-util-to-hast: 13.1.0
       unified: 11.0.4
 
   remark-parse@11.0.0:
@@ -13813,7 +13838,7 @@ snapshots:
     dependencies:
       '@docsearch/css': 3.6.0
       '@docsearch/js': 3.6.0(@algolia/client-search@4.23.3)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.13.0)
-      '@shikijs/core': 1.6.4
+      '@shikijs/core': 1.6.2
       '@shikijs/transformers': 1.6.2
       '@types/markdown-it': 14.1.1
       '@vitejs/plugin-vue': 5.0.5(vite@5.2.13(@types/node@20.14.2)(lightningcss@1.25.1))(vue@3.4.27(typescript@5.4.5))

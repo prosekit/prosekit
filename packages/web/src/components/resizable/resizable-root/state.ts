@@ -47,8 +47,8 @@ function useResizableRootState(
 
   const onResize: OnResize = (width, height) => {
     state.onSizeChange.peek()?.({ width, height })
-    state.width.value = width
-    state.height.value = height
+    state.width.set(width)
+    state.height.set(height)
   }
 
   const onResizeEnd: OnResizeEnd = () => {
@@ -63,9 +63,9 @@ function useResizableRootState(
   useEffect(host, () => {
     updateResizableRootStyles(
       host,
-      state.width.value,
-      state.height.value,
-      state.aspectRatio.value,
+      state.width.get(),
+      state.height.get(),
+      state.aspectRatio.get(),
     )
   })
 }

@@ -11,6 +11,6 @@ export function useEditorExtension(
   extension: Extension,
 ) {
   useEffect(host, () => {
-    return editor.value?.use(extension)
+    return editor.get()?.use(extension)
   })
 }

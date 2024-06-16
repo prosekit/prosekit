@@ -53,12 +53,12 @@ function useResizableHandleState(
 
   const handlePointerDown = (event: PointerEvent) => {
     event.preventDefault()
-    pointerPressing.value = true
+    pointerPressing.set(true)
 
     startX = event.x
     startY = event.y
 
-    const size = context.onResizeStart.value?.()
+    const size = context.onResizeStart.get()?.()
     if (size) {
       ;[width, height, aspectRatio] = size
     }
@@ -79,14 +79,14 @@ function useResizableHandleState(
       aspectRatio,
     )
 
-    context.onResize.value?.(w, h)
+    context.onResize.get()?.(w, h)
   }
 
   const handlePointerUp = (event: PointerEvent) => {
     event.preventDefault()
-    pointerPressing.value = false
+    pointerPressing.set(false)
 
-    context.onResizeEnd.value?.()
+    context.onResizeEnd.get()?.()
   }
 
   useEffect(host, () => {
@@ -97,7 +97,7 @@ function useResizableHandleState(
   })
 
   useEffect(host, () => {
-    if (!pointerPressing.value) {
+    if (!pointerPressing.get()) {
       return
     }
 

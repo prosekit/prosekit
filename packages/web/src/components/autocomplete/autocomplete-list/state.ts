@@ -53,26 +53,26 @@ export function useAutocompleteList(
   })
 
   useEffect(element, () => {
-    listboxQuery.value = query.value
+    listboxQuery.set(query.get())
   })
 
   useEffect(element, () => {
-    if (!open.value) {
-      listboxValue.value = ''
-      query.value = ''
+    if (!open.get()) {
+      listboxValue.set('')
+      query.set('')
     }
   })
 
   // Reset the focused item when the popover is open
   useEffect(element, () => {
-    if (!open.value) {
-      autoFocus.value = false
+    if (!open.get()) {
+      autoFocus.set(false)
     } else {
       let canceled = false
 
       requestAnimationFrame(() => {
         if (canceled) return
-        autoFocus.value = true
+        autoFocus.set(true)
       })
 
       return () => {
@@ -102,8 +102,8 @@ function useKeyboardHandler(
   let disposeKeydownHandler: VoidFunction | null = null
 
   useEffect(element, () => {
-    const editorValue = editor.value
-    const keydownHandlerValue = keydownHandler.value
+    const editorValue = editor.get()
+    const keydownHandlerValue = keydownHandler.get()
 
     if (!editorValue || !keydownHandlerValue) {
       return
@@ -112,7 +112,7 @@ function useKeyboardHandler(
     const extension = defineDOMEventHandler(
       'keydown',
       (view, event): boolean => {
-        if (view.composing || event.defaultPrevented || !open.value) {
+        if (view.composing || event.defaultPrevented || !open.get()) {
           return false
         }
         keydownHandlerValue(event)
@@ -127,7 +127,7 @@ function useKeyboardHandler(
   })
 
   return (keydownHandlerValue) => {
-    keydownHandler.value = keydownHandlerValue
+    keydownHandler.set(keydownHandlerValue)
     return () => {
       disposeKeydownHandler?.()
       disposeKeydownHandler = null

@@ -36,17 +36,17 @@ function useInlinePopoverState(
   const { editor, open, onOpenChange, ...overlayState } = state
 
   const reference = useInlinePopoverReference(host, editor)
-  const hasReference = createComputed(() => !!reference.value)
+  const hasReference = createComputed(() => !!reference.get())
 
   useEffect(host, () => {
-    const hasReferenceValue = hasReference.value
-    open.value = hasReferenceValue
+    const hasReferenceValue = hasReference.get()
+    open.set(hasReferenceValue)
     onOpenChange.peek()?.(hasReferenceValue)
   })
 
   useOverlayPositionerState(host, overlayState, { reference })
 
-  useAttribute(host, 'data-state', () => (open.value ? 'open' : 'closed'))
+  useAttribute(host, 'data-state', () => (open.get() ? 'open' : 'closed'))
   usePresence(host, open)
 }
 
@@ -69,7 +69,7 @@ function useInlinePopoverReference(
       return
     }
 
-    reference.value = getVirtualSelectionElement(view)
+    reference.set(getVirtualSelectionElement(view))
   })
 
   return reference

@@ -12,7 +12,7 @@ export function useFirstRendering(
 
   useEffect(host, () => {
     requestAnimationFrame(() => {
-      firstRendering.value = false
+      firstRendering.set(false)
     })
   })
 

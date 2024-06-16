@@ -53,7 +53,7 @@ function useAutocompletePopoverState(
   const query = createSignal<string>('')
   const onDismiss = createSignal<VoidFunction | null>(null)
   const onSubmit = createSignal<VoidFunction | null>(null)
-  const presence = createComputed(() => !!reference.value)
+  const presence = createComputed(() => !!reference.get())
 
   queryContext.provide(host, query)
   onSubmitContext.provide(host, onSubmit)
@@ -78,7 +78,7 @@ function useAutocompletePopoverState(
   const firstRendering = useFirstRendering(host)
 
   useEffect(host, () => {
-    const queryValue = query.value
+    const queryValue = query.get()
 
     if (!firstRendering.peek()) {
       state.onQueryChange.peek()?.(queryValue)
@@ -86,7 +86,7 @@ function useAutocompletePopoverState(
   })
 
   useAnimationFrame(host, () => {
-    const presenceValue = presence.value
+    const presenceValue = presence.get()
     const onOpenChangeValue = state.onOpenChange.peek()
 
     if (!onOpenChangeValue) {
@@ -110,8 +110,8 @@ function useAutocompleteExtension(
   onSubmit: Signal<VoidFunction | null>,
 ) {
   useEffect(host, () => {
-    const editorValue = editor.value
-    const regexValue = regex.value
+    const editorValue = editor.get()
+    const regexValue = regex.get()
 
     if (!editorValue || !regexValue) {
       return
@@ -142,19 +142,19 @@ function addAutocompleteExtension(
     const span = editor.view.dom.querySelector('.prosemirror-prediction-match')
 
     if (span) {
-      reference.value = span
+      reference.set(span)
     }
 
-    query.value = defaultQueryBuilder(options.match)
-    onDismiss.value = options.ignoreMatch
-    onSubmit.value = options.deleteMatch
+    query.set(defaultQueryBuilder(options.match))
+    onDismiss.set(options.ignoreMatch)
+    onSubmit.set(options.deleteMatch)
   }
 
   const handleLeave = () => {
-    reference.value = null
-    query.value = ''
-    onDismiss.value = null
-    onSubmit.value = null
+    reference.set(null)
+    query.set('')
+    onDismiss.set(null)
+    onSubmit.set(null)
   }
 
   const rule = new AutocompleteRule({
@@ -171,7 +171,7 @@ function createKeymapHandler(
   enabled: ReadonlySignal<boolean>,
 ) {
   return () => {
-    if (!enabled.value) {
+    if (!enabled.get()) {
       return false
     }
 

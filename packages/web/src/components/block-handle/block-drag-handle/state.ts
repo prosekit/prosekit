@@ -26,8 +26,8 @@ export function useBlockDragHandle(
   })
 
   useEventListener(host, 'pointerdown', () => {
-    const { pos } = context.value ?? {}
-    const { view } = state.editor.value ?? {}
+    const { pos } = context.get() ?? {}
+    const { view } = state.editor.get() ?? {}
 
     if (pos == null || view == null) {
       return
@@ -46,8 +46,8 @@ export function useBlockDragHandle(
   })
 
   useEventListener(host, 'dragstart', (event) => {
-    const { pos, element, node } = context.value ?? {}
-    const { view } = state.editor.value ?? {}
+    const { pos, element, node } = context.get() ?? {}
+    const { view } = state.editor.get() ?? {}
 
     if (pos == null || !element || !node || !view || !event.dataTransfer) {
       return

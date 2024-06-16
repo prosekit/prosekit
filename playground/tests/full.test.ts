@@ -232,8 +232,12 @@ testStory('full', () => {
     test('select text', async ({ page }) => {
       const editor = await waitForEditor(page)
 
-      const inlineMenuMain = page.getByTestId('inline-menu-main')
-      const inlineMenuLink = page.getByTestId('inline-menu-link')
+      const inlineMenuMain = page.locator('prosekit-inline-popover', {
+        has: page.getByRole('button', { name: 'Bold' }),
+      })
+      const inlineMenuLink = page.locator('prosekit-inline-popover', {
+        has: page.getByPlaceholder('Paste the link...'),
+      })
       const linkInput = page.getByPlaceholder('Paste the link...')
       const linkExample = editor.locator('a[href="https://www.example.com"]')
 

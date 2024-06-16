@@ -19,7 +19,7 @@ function getExamples(story: string) {
   return examples
 }
 
-export function testStory(
+function testSingleStory(
   story: string,
   callback: (options: { example: string }) => void,
 ) {
@@ -34,6 +34,17 @@ export function testStory(
       })
     }
   })
+}
+
+export function testStory(
+  story: string | string[],
+  callback: (options: { example: string }) => void,
+) {
+  const stories = Array.isArray(story) ? story : [story]
+
+  for (const story of stories) {
+    testSingleStory(story, callback)
+  }
 }
 
 export function locateEditor(page: Page) {

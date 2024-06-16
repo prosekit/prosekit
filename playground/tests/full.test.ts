@@ -1,7 +1,6 @@
 import { expect, test } from '@playwright/test'
 
 import { locateEditor, testStory, waitForEditor } from './helper'
-import { testInlineMenu } from './inline-menu'
 
 testStory('full', () => {
   test.describe('link', () => {
@@ -226,12 +225,6 @@ testStory('full', () => {
           '<p>~~no~strike~~</p>',
         ].join(''),
       )
-    })
-  })
-
-  test.describe('inline menu', () => {
-    test('select text', async ({ page }) => {
-      await testInlineMenu(page)
     })
   })
 })

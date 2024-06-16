@@ -21,7 +21,7 @@ export interface InlinePopoverProps
   open: boolean
 
   /**
-   * A callback that is called when the popover's open state changes.
+   * Event handler called when the open state changed caused by user interaction (i.e. select or unselect inline content).
    *
    * @default null
    */

@@ -4,7 +4,7 @@ Hi! We're really excited that you're interested in contributing to ProseKit! Bef
 
 You can use [StackBlitz Codeflow](https://stackblitz.com/codeflow) to fix bugs or implement features. If you'd like to learn more, check out the [Codeflow docs](https://developer.stackblitz.com/codeflow/what-is-codeflow).
 
-[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://pr.new/ocavue/prosekit)
+[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://pr.new/prosekit/prosekit)
 
 ## Setup
 

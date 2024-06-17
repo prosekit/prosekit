@@ -30,3 +30,9 @@ ProseKit includes unit tests and integration tests. To run the tests, you can us
 
 - `pnpm run test` to run all unit tests.
 - `pnpm run test:playground` to run all integration tests.
+
+## Pull Requests
+
+Please title your GitHub pull requests using the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) style.
+
+For managing our project's versions and changelogs, we use a tool called [Changesets](https://github.com/changesets/changesets). After making your changes, run `pnpm run change` in the ProseKit root folder. This command will guide you to create a small file that describes your changes.

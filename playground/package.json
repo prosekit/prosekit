@@ -18,7 +18,7 @@
     "@astrojs/solid-js": "^4.3.0",
     "@astrojs/svelte": "^5.5.0",
     "@astrojs/vue": "^4.4.0",
-    "@iconify-json/lucide": "^1.1.191",
+    "@iconify-json/lucide": "^1.1.192",
     "@playwright/test": "^1.44.1",
     "@prosekit/dev": "workspace:*",
     "@prosekit/themes": "workspace:*",
@@ -43,7 +43,7 @@
     "typescript": "^5.4.5",
     "unified": "^11.0.4",
     "unocss": "^0.61.0",
-    "vue": "^3.4.27",
+    "vue": "^3.4.29",
     "vue-tsc": "^2.0.21"
   }
 }

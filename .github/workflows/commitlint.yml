@@ -1,16 +1,28 @@
-name: Lint Commit Messages
-on: [pull_request]
+name: 'commitlint'
 
-permissions:
-  contents: read
-  pull-requests: read
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
 
 jobs:
-  commitlint:
+  lint-pr-title:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: wagoid/commitlint-github-action@v6
-        with:
-          failOnErrors: true
-          failOnWarnings: true
+      - name: Install commitlint
+        run: npm install -g @commitlint/config-conventional@19 @commitlint/cli@19
+
+      - name: Configure commitlint
+        run: |
+          echo "export default { extends: ['@commitlint/config-conventional'] };" > commitlint.config.mjs
+
+      - name: Check PR Title
+        run: |
+          echo The Title of your PR is "$PR_TITLE"
+          echo "$PR_TITLE" | commitlint --verbose
+        env:
+          # Use an intermediate environment variable to avoid script injection attacks
+          # https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
+          PR_TITLE: ${{ github.event.pull_request.title }}

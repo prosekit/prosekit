@@ -11,10 +11,7 @@ type HighlighterOptions = {
 }
 
 function createHighlighterLoader() {
-  let highlighterPromise: Promise<void> | undefined
   let highlighter: Highlighter | undefined
-
-  const loadLangs = new Set<string>()
 
   return function highlighterLoader(
     lang: ShikiBundledLanguage,
@@ -23,30 +20,24 @@ function createHighlighterLoader() {
     promise?: Promise<void>
     highlighter?: Highlighter
   } {
-    if (!highlighterPromise) {
-      highlighterPromise = import('./shiki-import')
-        .then(({ getHighlighter }) => {
-          return getHighlighter(options)
+    if (!highlighter) {
+      const promise = import('./shiki-import')
+        .then(({ getSingletonHighlighter }) => {
+          return getSingletonHighlighter(options)
         })
         .then((h) => {
           highlighter = h
         })
-      return { promise: highlighterPromise }
+      return { promise }
     }
 
-    if (!highlighter) {
-      return { promise: highlighterPromise }
-    }
-
-    if (!loadLangs.has(lang)) {
-      const promise = highlighter
-        .loadLanguage(lang)
-        .then(() => {
-          loadLangs.add(lang)
-        })
-        .catch((error) => {
-          console.warn(`Failed to load language '${lang}'`, error)
-        })
+    if (!highlighter.getLoadedLanguages().includes(lang)) {
+      const promise = highlighter.loadLanguage(lang).catch((error) => {
+        console.warn(
+          `[prosekit] Failed to load shiki language '${lang}'`,
+          error,
+        )
+      })
       return { promise }
     }
 

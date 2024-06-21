@@ -221,8 +221,8 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0
       prosemirror-highlight:
-        specifier: ^0.6.0
-        version: 0.6.0(@types/hast@3.0.4)(prosemirror-model@1.21.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)(prosemirror-view@1.33.8)(shiki@1.6.5)
+        specifier: ^0.8.0
+        version: 0.8.0(@types/hast@3.0.4)(prosemirror-model@1.21.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)(prosemirror-view@1.33.8)(shiki@1.9.0)
       prosemirror-search:
         specifier: ^0.1.0
         version: 0.1.0
@@ -230,8 +230,8 @@ importers:
         specifier: ^1.3.7
         version: 1.3.7
       shiki:
-        specifier: ^1.6.5
-        version: 1.6.5
+        specifier: ^1.9.0
+        version: 1.9.0
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -767,8 +767,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/unocss-preset
       '@shikijs/vitepress-twoslash':
-        specifier: ^1.6.5
-        version: 1.6.5(typescript@5.4.5)
+        specifier: ^1.9.0
+        version: 1.9.0(typescript@5.4.5)
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -1966,14 +1966,17 @@ packages:
   '@shikijs/core@1.6.5':
     resolution: {integrity: sha512-XcQYt6e4L61ruAxHiL3Xg1DL/XkWWjzDdeckB/DtN8jAxoAU+bcxsV6DetC8NafHpL4YpGhxy9iXF0ND/u6HmA==}
 
+  '@shikijs/core@1.9.0':
+    resolution: {integrity: sha512-cbSoY8P/jgGByG8UOl3jnP/CWg/Qk+1q+eAKWtcrU3pNoILF8wTsLB0jT44qUBV8Ce1SvA9uqcM9Xf+u3fJFBw==}
+
   '@shikijs/transformers@1.6.2':
     resolution: {integrity: sha512-ndqTWyHnxmsLkowhKWTam26opw8hg5a34y6FAUG/Xf6E49n3MM//nenKxXiWpPYkNPl1KZnYXB1k+Ia46wjOZg==}
 
-  '@shikijs/twoslash@1.6.5':
-    resolution: {integrity: sha512-vEdG64AKiTTppyVX60DBkvEntxCwG9vIi4gGJFeIpFu87nt88iCiPmUBO7ZzXBLAW2VjlzE4Bu0av3Tp3MAM6A==}
+  '@shikijs/twoslash@1.9.0':
+    resolution: {integrity: sha512-XKaiR85K3Bk/MNdZ7tmJDm740iLpt4YDvYrV90pwbvxkSEZ8SPV4gbaX8ONwndNqdf2awF9g7DKYHsyU/XwJdw==}
 
-  '@shikijs/vitepress-twoslash@1.6.5':
-    resolution: {integrity: sha512-KjLkzlLuWA1ywd9UCg/bAi5Rs62yc8JH4nxVv+OvmAuJWM8l6Zu9KsQH5UjXMw1RDEHf3a2bBrzLf1bnDmVy1g==}
+  '@shikijs/vitepress-twoslash@1.9.0':
+    resolution: {integrity: sha512-ILhRKIyU0g2409dhM5QVbvZ7E4XOonKGuqgVsccJFEXvG7rB1ckYtyBr7CSMIVqJtN6bMgCBzjItvOQcTPYJgA==}
 
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
@@ -5211,8 +5214,8 @@ packages:
   prosemirror-flat-list@0.5.0:
     resolution: {integrity: sha512-atRnGz7OPOw+NTc+D/RBjG5xL/UhiVI3dhkMtevNKw2lokHq5aRKJnDEcy02u25vP8MBwbugQxhvBoZrA6/ynw==}
 
-  prosemirror-highlight@0.6.0:
-    resolution: {integrity: sha512-A2mITZJndQZE9x99pkpRMUMBGj3gDcyseVEh8CVRTxFFY39nsJiEBJD11VGPEj1TzhPoHvLfsi4yoE/kxghCRg==}
+  prosemirror-highlight@0.8.0:
+    resolution: {integrity: sha512-b5BPX7z57fJuKS+JvxJa0gaQ4GWam28KqXMhef6VYLuCyjM54XDwgn81PoxWUzy82MopCFBwOls+7Ls8uQBqFw==}
     peerDependencies:
       '@types/hast': ^3.0.0
       highlight.js: ^11.9.0
@@ -5222,8 +5225,7 @@ packages:
       prosemirror-transform: ^1.8.0
       prosemirror-view: ^1.32.4
       refractor: ^4.8.1
-      shiki: ^1.0.0
-      shikiji: ^0.8.0 || ^0.9.0 || ^0.10.0
+      shiki: ^1.9.0
       sugar-high: ^0.6.1
     peerDependenciesMeta:
       '@types/hast':
@@ -5243,8 +5245,6 @@ packages:
       refractor:
         optional: true
       shiki:
-        optional: true
-      shikiji:
         optional: true
       sugar-high:
         optional: true
@@ -5653,8 +5653,8 @@ packages:
   shiki@1.6.2:
     resolution: {integrity: sha512-X3hSm5GzzBd/BmPmGfkueOUADLyBoZo1ojYQXhd+NU2VJn458yt4duaS0rVzC+WtqftSV7mTVvDw+OB9AHi3Eg==}
 
-  shiki@1.6.5:
-    resolution: {integrity: sha512-iFzypldJG0zeyRHKAhaSGCf+YWXpMMyUyOrCVFBFKGGdF5vrB6jbd66/SQljxV20aSrVZEAQwUto/hhuNi/CIg==}
+  shiki@1.9.0:
+    resolution: {integrity: sha512-i6//Lqgn7+7nZA0qVjoYH0085YdNk4MC+tJV4bo+HgjgRMJ0JmkLZzFAuvVioJqLkcGDK5GAMpghZEZkCnwxpQ==}
 
   side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
@@ -6905,7 +6905,7 @@ snapshots:
       remark-parse: 11.0.0
       remark-rehype: 11.1.0
       remark-smartypants: 2.1.0
-      shiki: 1.6.5
+      shiki: 1.9.0
       unified: 11.0.4
       unist-util-remove-position: 5.0.0
       unist-util-visit: 5.0.0
@@ -8116,26 +8116,28 @@ snapshots:
 
   '@shikijs/core@1.6.5': {}
 
+  '@shikijs/core@1.9.0': {}
+
   '@shikijs/transformers@1.6.2':
     dependencies:
       shiki: 1.6.2
 
-  '@shikijs/twoslash@1.6.5(typescript@5.4.5)':
+  '@shikijs/twoslash@1.9.0(typescript@5.4.5)':
     dependencies:
-      '@shikijs/core': 1.6.5
+      '@shikijs/core': 1.9.0
       twoslash: 0.2.8(typescript@5.4.5)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  '@shikijs/vitepress-twoslash@1.6.5(typescript@5.4.5)':
+  '@shikijs/vitepress-twoslash@1.9.0(typescript@5.4.5)':
     dependencies:
-      '@shikijs/twoslash': 1.6.5(typescript@5.4.5)
+      '@shikijs/twoslash': 1.9.0(typescript@5.4.5)
       floating-vue: 5.2.2(vue@3.4.29(typescript@5.4.5))
       mdast-util-from-markdown: 2.0.1
       mdast-util-gfm: 3.0.0
       mdast-util-to-hast: 13.2.0
-      shiki: 1.6.5
+      shiki: 1.9.0
       twoslash: 0.2.8(typescript@5.4.5)
       twoslash-vue: 0.2.8(typescript@5.4.5)
       vue: 3.4.29(typescript@5.4.5)
@@ -9203,7 +9205,7 @@ snapshots:
       rehype: 13.0.1
       resolve: 1.22.8
       semver: 7.6.2
-      shiki: 1.6.5
+      shiki: 1.9.0
       string-width: 7.1.0
       strip-ansi: 7.1.0
       tsconfck: 3.1.0(typescript@5.4.5)
@@ -12112,14 +12114,14 @@ snapshots:
       prosemirror-transform: 1.9.0
       prosemirror-view: 1.33.8
 
-  prosemirror-highlight@0.6.0(@types/hast@3.0.4)(prosemirror-model@1.21.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)(prosemirror-view@1.33.8)(shiki@1.6.5):
+  prosemirror-highlight@0.8.0(@types/hast@3.0.4)(prosemirror-model@1.21.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)(prosemirror-view@1.33.8)(shiki@1.9.0):
     optionalDependencies:
       '@types/hast': 3.0.4
       prosemirror-model: 1.21.1
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.9.0
       prosemirror-view: 1.33.8
-      shiki: 1.6.5
+      shiki: 1.9.0
 
   prosemirror-history@1.4.0:
     dependencies:
@@ -12686,9 +12688,9 @@ snapshots:
     dependencies:
       '@shikijs/core': 1.6.2
 
-  shiki@1.6.5:
+  shiki@1.9.0:
     dependencies:
-      '@shikijs/core': 1.6.5
+      '@shikijs/core': 1.9.0
 
   side-channel@1.0.6:
     dependencies:
@@ -13594,7 +13596,7 @@ snapshots:
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 6.3.0
-      shiki: 1.6.5
+      shiki: 1.9.0
       vite: 5.3.1(@types/node@20.14.2)(lightningcss@1.25.1)
       vue: 3.4.29(typescript@5.4.5)
     optionalDependencies:

@@ -17,7 +17,7 @@
     "@prosekit/dev": "workspace:*",
     "@prosekit/themes": "workspace:*",
     "@prosekit/unocss-preset": "workspace:*",
-    "@shikijs/vitepress-twoslash": "^1.6.5",
+    "@shikijs/vitepress-twoslash": "^1.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@unocss/cli": "^0.61.0",

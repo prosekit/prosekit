@@ -10,17 +10,20 @@ import { createLazyParser } from './shiki-parser'
  */
 export interface CodeBlockShikiOptions {
   /**
-   * Theme registation
+   * A list of shiki themes to pre-load. The first theme in the list will be
+   * used to render the code block.
    *
    * @default ['one-dark-pro']
    */
   themes?: ShikiBundledTheme[]
+
   /**
-   * Language registation
+   * A list of shiki languages to pre-load.
    *
    * @default ['text']
    */
   langs?: (ShikiBundledLanguage | SpecialLanguage)[]
+
   /**
    * Alias of languages
    *

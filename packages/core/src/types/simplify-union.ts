@@ -1,6 +1,6 @@
 import type { Simplify, UnionToIntersection } from 'type-fest'
 
 /**
- * @intneral
+ * @internal
  */
 export type SimplifyUnion<T> = Simplify<UnionToIntersection<T>>

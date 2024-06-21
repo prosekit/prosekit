@@ -13,7 +13,7 @@ import {
   replaceNext,
   replaceNextNoWrap,
   search,
-} from './prosemirror-search'
+} from 'prosemirror-search'
 
 /**
  * Options for {@link defineSearchQuery}

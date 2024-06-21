@@ -20,7 +20,7 @@ type HighlighterResult =
     }
   | {
       highlighter?: undefined
-      promise: Promise<unknown>
+      promise: Promise<void>
     }
 
 async function createHighlighter(options: HighlighterOptions): Promise<void> {
@@ -40,7 +40,7 @@ function loadLanguages(
   return Promise.all(toLoad.map((lang) => highlighter?.loadLanguage(lang)))
 }
 
-function loadThemes(themes: BundledTheme[]) {
+function loadThemes(themes: BundledTheme[]): Promise<unknown> | void {
   if (!highlighter) return
 
   const loaded = new Set(highlighter.getLoadedThemes())
@@ -50,12 +50,14 @@ function loadThemes(themes: BundledTheme[]) {
   return Promise.all(toLoad.map((theme) => highlighter?.loadTheme(theme)))
 }
 
-export function getHighlighter(options: HighlighterOptions): HighlighterResult {
+export function prepareHighlighter(
+  options: HighlighterOptions,
+): HighlighterResult {
   if (!highlighter) {
     return { promise: createHighlighter(options) }
   }
 
   const promise = loadLanguages(options.langs) || loadThemes(options.themes)
 
-  return promise ? { promise } : { highlighter }
+  return promise ? { promise: promise.then(() => void 0) } : { highlighter }
 }

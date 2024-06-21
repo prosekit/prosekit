@@ -619,8 +619,8 @@ importers:
         specifier: ^0.0.10
         version: 0.0.10
       '@aria-ui/tooltip':
-        specifier: ^0.0.17
-        version: 0.0.17
+        specifier: ^0.0.18
+        version: 0.0.18
       '@floating-ui/dom':
         specifier: ^1.6.5
         version: 1.6.5
@@ -962,8 +962,8 @@ packages:
   '@aria-ui/presence@0.0.10':
     resolution: {integrity: sha512-w+1K74rT5gwUDIoxX/QdJxdWxNqXvU20nYQk8lwkm6tIkxcz8tkW8YZZu/eycEzHGCDxbX6FKEbujCpIzGidfg==}
 
-  '@aria-ui/tooltip@0.0.17':
-    resolution: {integrity: sha512-vb1vLNsXctCFT3PrdGApZQGpeY7CiaAWrIM2lmJerd72wY/6aIoaIYOesaj/uPJHC8kFBjKiNDJTIdDOPR/PMg==}
+  '@aria-ui/tooltip@0.0.18':
+    resolution: {integrity: sha512-A/KRQb5fbDSLmJIIDWq6wHaeclH7wXnClArBfbjPeWCXZJLAub9JhujiuSGEmQ5z0+22/+GTKeqrKLMhQpWVjQ==}
 
   '@astrojs/compiler@1.8.2':
     resolution: {integrity: sha512-o/ObKgtMzl8SlpIdzaxFnt7SATKPxu4oIP/1NL+HDJRzxfJcAkOTAb/ZKMRyULbz4q+1t2/DAebs2Z1QairkZw==}
@@ -6878,7 +6878,7 @@ snapshots:
     dependencies:
       '@aria-ui/core': 0.0.15
 
-  '@aria-ui/tooltip@0.0.17':
+  '@aria-ui/tooltip@0.0.18':
     dependencies:
       '@aria-ui/core': 0.0.15
       '@aria-ui/overlay': 0.0.16

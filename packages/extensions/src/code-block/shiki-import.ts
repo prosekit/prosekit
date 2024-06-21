@@ -1,3 +1,3 @@
-import { createHighlighter, getSingletonHighlighter } from 'shiki/bundle/full'
+import { getSingletonHighlighter } from 'shiki/bundle/full'
 
-export { createHighlighter, getSingletonHighlighter }
+export { getSingletonHighlighter }

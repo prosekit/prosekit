@@ -9,7 +9,7 @@ let highlighter: Highlighter | undefined
 const loadedLangs = new Set<BundledLanguage | SpecialLanguage>()
 const loadedThemes = new Set<BundledTheme>()
 
-type HighlighterOptions = {
+export type HighlighterOptions = {
   themes: BundledTheme[]
   langs: (BundledLanguage | SpecialLanguage)[]
   langAlias?: Record<string, BundledLanguage>
@@ -27,7 +27,9 @@ type HighlighterResult =
 
 async function createHighlighter(options: HighlighterOptions): Promise<void> {
   const { getSingletonHighlighter } = await import('./shiki-import')
-  highlighter = await getSingletonHighlighter(options)
+  if (!highlighter) {
+    highlighter = await getSingletonHighlighter(options)
+  }
 }
 
 async function loadLanguages(langs: (BundledLanguage | SpecialLanguage)[]) {

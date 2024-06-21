@@ -1,5 +1,5 @@
 ---
-'prosekit': patch
+'prosekit': minor
 '@prosekit/extensions': minor
 ---
 

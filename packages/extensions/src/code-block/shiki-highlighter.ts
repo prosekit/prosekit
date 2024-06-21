@@ -6,6 +6,8 @@ import type {
 } from 'shiki'
 
 let highlighter: Highlighter | undefined
+const loadedLangs = new Set<BundledLanguage | SpecialLanguage>()
+const loadedThemes = new Set<BundledTheme>()
 
 type HighlighterOptions = {
   themes: BundledTheme[]
@@ -28,26 +30,20 @@ async function createHighlighter(options: HighlighterOptions): Promise<void> {
   highlighter = await getSingletonHighlighter(options)
 }
 
-function loadLanguages(
-  langs: (BundledLanguage | SpecialLanguage)[],
-): Promise<unknown> | void {
-  if (!highlighter) return
-
-  const loaded = new Set(highlighter.getLoadedLanguages())
-  const toLoad = langs.filter((lang) => !loaded.has(lang))
-  if (toLoad.length === 0) return
-
-  return Promise.all(toLoad.map((lang) => highlighter?.loadLanguage(lang)))
+async function loadLanguages(langs: (BundledLanguage | SpecialLanguage)[]) {
+  for (const lang of langs) {
+    if (!highlighter) break
+    await highlighter.loadLanguage(lang)
+    loadedLangs.add(lang)
+  }
 }
 
-function loadThemes(themes: BundledTheme[]): Promise<unknown> | void {
-  if (!highlighter) return
-
-  const loaded = new Set(highlighter.getLoadedThemes())
-  const toLoad = themes.filter((theme) => !loaded.has(theme))
-  if (toLoad.length === 0) return
-
-  return Promise.all(toLoad.map((theme) => highlighter?.loadTheme(theme)))
+async function loadThemes(themes: BundledTheme[]) {
+  for (const theme of themes) {
+    if (!highlighter) break
+    await highlighter.loadTheme(theme)
+    loadedThemes.add(theme)
+  }
 }
 
 export function prepareHighlighter(
@@ -57,7 +53,15 @@ export function prepareHighlighter(
     return { promise: createHighlighter(options) }
   }
 
-  const promise = loadLanguages(options.langs) || loadThemes(options.themes)
+  const langs = options.langs.filter((lang) => !loadedLangs.has(lang))
+  if (langs.length > 0) {
+    return { promise: loadLanguages(langs) }
+  }
 
-  return promise ? { promise: promise.then(() => void 0) } : { highlighter }
+  const themes = options.themes.filter((theme) => !loadedThemes.has(theme))
+  if (themes.length > 0) {
+    return { promise: loadThemes(themes) }
+  }
+
+  return { highlighter }
 }

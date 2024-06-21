@@ -1,7 +1,5 @@
 import {
-  assignProps,
   createSignal,
-  mapSignals,
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
@@ -11,27 +9,25 @@ import { getWindow } from '@zag-js/dom-query'
 
 import {
   onResizeContext,
+  onResizeEndContext,
   onResizeStartContext,
   type OnResize,
-  type OnResizeStart,
   type OnResizeEnd,
-  onResizeEndContext,
+  type OnResizeStart,
 } from '../context'
 
 import { calcResize } from './calc-resize'
-import { defaultResizableHandleProps, type ResizableHandleProps } from './props'
+import { type ResizableHandleProps } from './props'
 
 export function useResizableHandle(
   host: ConnectableElement,
-  props?: Partial<ResizableHandleProps>,
-) {
-  const state = mapSignals(assignProps(defaultResizableHandleProps, props))
+  state: SignalState<ResizableHandleProps>,
+): void {
   const onResize = onResizeContext.consume(host)
   const onResizeStart = onResizeStartContext.consume(host)
   const onResizeEnd = onResizeEndContext.consume(host)
 
   useResizableHandleState(host, state, { onResize, onResizeStart, onResizeEnd })
-  return state
 }
 
 function useResizableHandleState(

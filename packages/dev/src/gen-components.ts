@@ -167,15 +167,14 @@ function formatPrimitiveElementCode(kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-
-import { ElementMixin } from '@aria-ui/core'
+import { ElementBuilder } from '@aria-ui/core'
 
 import { defineCustomElement } from '../../../utils/define-custom-element'
 
 import { default${pascal}Props, type ${pascal}Props } from './props'
 import { use${pascal} } from './state'
 
-class ${pascal}Element extends ElementMixin<${pascal}Props>(use${pascal}, default${pascal}Props) {}
+class ${pascal}Element extends ElementBuilder<${pascal}Props>(use${pascal}, default${pascal}Props) {}
 
 defineCustomElement('prosekit-${kebab}', ${pascal}Element)
 

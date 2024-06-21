@@ -1,7 +1,5 @@
 import {
-  assignProps,
   createSignal,
-  mapSignals,
   useEffect,
   type ConnectableElement,
   type SignalState,
@@ -17,21 +15,12 @@ import {
   type OnResizeStart,
 } from '../context'
 
-import { defaultResizableRootProps, type ResizableRootProps } from './props'
+import { type ResizableRootProps } from './props'
 
 export function useResizableRoot(
   host: ConnectableElement,
-  props?: Partial<ResizableRootProps>,
-) {
-  const state = mapSignals(assignProps(defaultResizableRootProps, props))
-  useResizableRootState(host, state)
-  return state
-}
-
-function useResizableRootState(
-  host: ConnectableElement,
   state: SignalState<ResizableRootProps>,
-) {
+): void {
   const onResizeStart: OnResizeStart = () => {
     const { width, height } = host.getBoundingClientRect()
 

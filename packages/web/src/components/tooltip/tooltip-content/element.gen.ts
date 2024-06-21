@@ -1,11 +1,11 @@
-import { ElementMixin } from '@aria-ui/core'
+import { ElementBuilder } from '@aria-ui/core'
 
 import { defineCustomElement } from '../../../utils/define-custom-element'
 
 import { defaultTooltipContentProps, type TooltipContentProps } from './props'
 import { useTooltipContent } from './state'
 
-class TooltipContentElement extends ElementMixin<TooltipContentProps>(useTooltipContent, defaultTooltipContentProps) {}
+class TooltipContentElement extends ElementBuilder<TooltipContentProps>(useTooltipContent, defaultTooltipContentProps) {}
 
 defineCustomElement('prosekit-tooltip-content', TooltipContentElement)
 

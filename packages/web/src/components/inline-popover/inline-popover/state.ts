@@ -1,8 +1,6 @@
 import {
-  assignProps,
   createComputed,
   createSignal,
-  mapSignals,
   useAttribute,
   useEffect,
   type ConnectableElement,
@@ -17,22 +15,13 @@ import type { Editor } from '@prosekit/core'
 import { useEditorFocusChangeEvent } from '../../../hooks/use-editor-focus-event'
 import { useEditorUpdateEvent } from '../../../hooks/use-editor-update-event'
 
-import { defaultInlinePopoverProps, type InlinePopoverProps } from './props'
+import { type InlinePopoverProps } from './props'
 import { getVirtualSelectionElement } from './virtual-selection-element'
 
 export function useInlinePopover(
   host: ConnectableElement,
-  props?: Partial<InlinePopoverProps>,
-) {
-  const state = mapSignals(assignProps(defaultInlinePopoverProps, props))
-  useInlinePopoverState(host, state)
-  return state
-}
-
-function useInlinePopoverState(
-  host: ConnectableElement,
   state: SignalState<InlinePopoverProps>,
-) {
+): void {
   const { editor, defaultOpen, open, onOpenChange, ...overlayState } = state
 
   const reference = useInlinePopoverReference(host, editor)

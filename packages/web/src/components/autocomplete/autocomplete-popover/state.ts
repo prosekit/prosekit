@@ -1,8 +1,6 @@
 import {
-  assignProps,
   createComputed,
   createSignal,
-  mapSignals,
   useAnimationFrame,
   useEffect,
   type ConnectableElement,
@@ -29,24 +27,12 @@ import { useFirstRendering } from '../../../hooks/use-first-rendering'
 import { onSubmitContext, openContext, queryContext } from '../context'
 
 import { defaultQueryBuilder } from './helpers'
-import {
-  defaultAutocompletePopoverProps,
-  type AutocompletePopoverProps,
-} from './props'
+import type { AutocompletePopoverProps } from './props'
 
 export function useAutocompletePopover(
   host: ConnectableElement,
-  props?: Partial<AutocompletePopoverProps>,
-) {
-  const state = mapSignals(assignProps(defaultAutocompletePopoverProps, props))
-  useAutocompletePopoverState(host, state)
-  return state
-}
-
-function useAutocompletePopoverState(
-  host: ConnectableElement,
   state: SignalState<AutocompletePopoverProps>,
-) {
+): void {
   const { editor, regex, ...overlayState } = state
 
   const reference = createSignal<Element | null>(null)

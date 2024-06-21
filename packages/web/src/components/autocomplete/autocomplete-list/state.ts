@@ -1,12 +1,16 @@
 import {
-  assignProps,
   createSignal,
+  mapSignals,
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
   type SignalState,
 } from '@aria-ui/core'
-import { useListbox, type ListboxProps } from '@aria-ui/listbox'
+import {
+  defaultListboxProps,
+  useListbox,
+  type ListboxProps,
+} from '@aria-ui/listbox'
 import {
   Editor,
   Priority,
@@ -14,26 +18,20 @@ import {
   withPriority,
 } from '@prosekit/core'
 
+import { omit } from '../../../utils/omit'
 import { onSubmitContext, openContext, queryContext } from '../context'
 
-import {
-  defaultAutocompleteListProps,
-  type AutocompleteListProps,
-} from './props'
+import { type AutocompleteListProps } from './props'
 
 export function useAutocompleteList(
   element: ConnectableElement,
-  props?: Partial<AutocompleteListProps>,
-): SignalState<AutocompleteListProps> {
-  const fullProps = assignProps(defaultAutocompleteListProps, props)
-
-  const editor = createSignal(fullProps.editor)
-
+  state: SignalState<AutocompleteListProps>,
+): void {
   const open = openContext.consume(element)
   const query = queryContext.consume(element)
   const onSubmit = onSubmitContext.consume(element)
 
-  const onKeydownHandlerAdd = useKeyboardHandler(element, open, editor)
+  const onKeydownHandlerAdd = useKeyboardHandler(element, open, state.editor)
 
   const onValueChange = (value: string) => {
     if (value) {
@@ -41,24 +39,24 @@ export function useAutocompleteList(
     }
   }
 
-  const {
-    query: listboxQuery,
-    value: listboxValue,
-    filter,
-    autoFocus,
-  } = useListbox(element, {
-    onKeydownHandlerAdd,
-    onValueChange,
-    filter: fullProps.filter,
-  })
+  const listboxState: SignalState<ListboxProps> = {
+    ...mapSignals({
+      ...omit(defaultListboxProps, ['filter']),
+      onKeydownHandlerAdd,
+      onValueChange,
+    }),
+    filter: state.filter,
+  }
+
+  useListbox(element, listboxState)
 
   useEffect(element, () => {
-    listboxQuery.set(query.get())
+    listboxState.query.set(query.get())
   })
 
   useEffect(element, () => {
     if (!open.get()) {
-      listboxValue.set('')
+      listboxState.value.set('')
       query.set('')
     }
   })
@@ -66,13 +64,13 @@ export function useAutocompleteList(
   // Reset the focused item when the popover is open
   useEffect(element, () => {
     if (!open.get()) {
-      autoFocus.set(false)
+      listboxState.autoFocus.set(false)
     } else {
       let canceled = false
 
       requestAnimationFrame(() => {
         if (canceled) return
-        autoFocus.set(true)
+        listboxState.autoFocus.set(true)
       })
 
       return () => {
@@ -86,8 +84,6 @@ export function useAutocompleteList(
   useEffect(element, () => {
     element.tabIndex = -1
   })
-
-  return { editor, filter }
 }
 
 function useKeyboardHandler(

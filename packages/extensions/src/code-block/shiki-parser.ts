@@ -32,12 +32,7 @@ function createHighlighterLoader() {
     }
 
     if (!highlighter.getLoadedLanguages().includes(lang)) {
-      const promise = highlighter.loadLanguage(lang).catch((error) => {
-        console.warn(
-          `[prosekit] Failed to load shiki language '${lang}'`,
-          error,
-        )
-      })
+      const promise = highlighter.loadLanguage(lang)
       return { promise }
     }
 

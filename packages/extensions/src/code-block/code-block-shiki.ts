@@ -12,15 +12,24 @@ export interface CodeBlockShikiOptions {
   /**
    * Theme registation
    *
-   * @default ['one-dark-pro']
+   * @default 'one-dark-pro'
+   */
+  theme?: ShikiBundledTheme
+
+  /**
+   * Theme registation
+   *
+   * @deprecated Use `theme` instead
    */
   themes?: ShikiBundledTheme[]
+
   /**
    * Language registation
    *
    * @default ['text']
    */
   langs?: (ShikiBundledLanguage | SpecialLanguage)[]
+
   /**
    * Alias of languages
    *
@@ -35,10 +44,11 @@ export interface CodeBlockShikiOptions {
  * @public
  */
 export function defineCodeBlockShiki({
-  themes = ['one-dark-pro'],
+  theme = 'one-dark-pro',
+  themes,
   langs = ['text'],
   langAlias = {},
 }: CodeBlockShikiOptions = {}): Extension {
-  const parser = createLazyParser({ themes, langs, langAlias })
+  const parser = createLazyParser({ themes: [theme, ...(themes || [])], langs, langAlias })
   return defineCodeBlockHighlight({ parser })
 }

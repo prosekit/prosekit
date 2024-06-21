@@ -3,6 +3,7 @@ import { createParser } from 'prosemirror-highlight/shiki'
 import type { Highlighter, SpecialLanguage } from 'shiki'
 
 import type { ShikiBundledLanguage, ShikiBundledTheme } from './shiki-bundle'
+import { getHighlighter } from './shiki-highlighter'
 
 type HighlighterOptions = {
   themes: ShikiBundledTheme[]
@@ -10,35 +11,6 @@ type HighlighterOptions = {
   langAlias?: Record<string, ShikiBundledLanguage>
 }
 
-function createHighlighterLoader() {
-  let highlighter: Highlighter | undefined
-
-  return function highlighterLoader(
-    lang: ShikiBundledLanguage,
-    options: HighlighterOptions,
-  ): {
-    promise?: Promise<void>
-    highlighter?: Highlighter
-  } {
-    if (!highlighter) {
-      const promise = import('./shiki-import')
-        .then(({ getSingletonHighlighter }) => {
-          return getSingletonHighlighter(options)
-        })
-        .then((h) => {
-          highlighter = h
-        })
-      return { promise }
-    }
-
-    if (!highlighter.getLoadedLanguages().includes(lang)) {
-      const promise = highlighter.loadLanguage(lang)
-      return { promise }
-    }
-
-    return { highlighter }
-  }
-}
 
 /**
  * @internal
@@ -46,8 +18,9 @@ function createHighlighterLoader() {
 export function createLazyParser(
   highlighterOptions: HighlighterOptions,
 ): Parser {
+  console.log("createLazyParser")
   let parser: Parser | undefined
-  const highlighterLoader = createHighlighterLoader()
+  const highlighterLoader = getHighlighter(highlighterOptions)
 
   return function lazyParser(options) {
     const language = (options.language || '') as ShikiBundledLanguage

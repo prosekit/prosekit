@@ -4,7 +4,7 @@ import {
   TooltipRoot,
   TooltipTrigger,
 } from 'prosekit/react/tooltip'
-import type { ReactNode } from 'react'
+import { useState, type ReactNode } from 'react'
 
 export default function Button({
   pressed,
@@ -19,8 +19,10 @@ export default function Button({
   tooltip?: string
   children: ReactNode
 }) {
+  const [tooltipOpen, setTooltipOpen] = useState(false)
+
   return (
-    <TooltipRoot>
+    <TooltipRoot open={tooltipOpen} onOpenChange={setTooltipOpen}>
       <TooltipTrigger className={Themes.TOOLTIP_TRIGGER}>
         <button
           data-state={pressed ? 'on' : 'off'}
@@ -33,7 +35,7 @@ export default function Button({
           {tooltip ? <span className="sr-only">{tooltip}</span> : null}
         </button>
       </TooltipTrigger>
-      {tooltip && !disabled ? (
+      {tooltip && !disabled && tooltipOpen ? (
         <TooltipContent className={Themes.TOOLTIP_CONTENT}>
           {tooltip}
         </TooltipContent>

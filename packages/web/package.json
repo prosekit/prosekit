@@ -47,7 +47,7 @@
     "@aria-ui/overlay": "^0.0.16",
     "@aria-ui/popover": "^0.0.16",
     "@aria-ui/presence": "^0.0.10",
-    "@aria-ui/tooltip": "^0.0.17",
+    "@aria-ui/tooltip": "^0.0.18",
     "@floating-ui/dom": "^1.6.5",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",

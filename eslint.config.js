@@ -43,6 +43,7 @@ const configs = [
       '**/_/**',
       '**/.temp',
       '**/.tsup',
+      '**/playwright-report',
       '**/config-tsup.d.ts',
       '**/vite.config.ts.timestamp*',
       '**/tsup.config.bundled*',

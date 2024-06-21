@@ -11,18 +11,16 @@ import type { AutocompleteItemProps } from './props'
 
 export function useAutocompleteItem(
   element: ConnectableElement,
-  props?: Partial<AutocompleteItemProps>,
-): SignalState<AutocompleteItemProps> {
-  const { onSelect, value } = useListboxItem(element, props)
+  state: SignalState<AutocompleteItemProps>,
+): void {
+  useListboxItem(element, state)
 
   const open = openContext.consume(element)
 
   useEffect(element, () => {
     // Check the text content again when the open state changes
-    if (!value.peek() && open.get()) {
-      value.set(element.textContent ?? '')
+    if (!state.value.peek() && open.get()) {
+      state.value.set(element.textContent ?? '')
     }
   })
-
-  return { onSelect, value }
 }

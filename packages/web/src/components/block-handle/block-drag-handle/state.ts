@@ -1,6 +1,4 @@
 import {
-  assignProps,
-  mapSignals,
   useEffect,
   useEventListener,
   type ConnectableElement,
@@ -11,15 +9,13 @@ import { NodeSelection } from '@prosekit/pm/state'
 
 import { blockPopoverContext } from '../context'
 
-import { defaultBlockDragHandleProps, type BlockDragHandleProps } from './props'
+import { type BlockDragHandleProps } from './props'
 
 export function useBlockDragHandle(
   host: ConnectableElement,
-  props?: Partial<BlockDragHandleProps>,
-): SignalState<BlockDragHandleProps> {
+  state: SignalState<BlockDragHandleProps>,
+): void {
   const context = blockPopoverContext.consume(host)
-
-  const state = mapSignals(assignProps(defaultBlockDragHandleProps, props))
 
   useEffect(host, () => {
     host.draggable = true
@@ -63,6 +59,4 @@ export function useBlockDragHandle(
       move: true,
     }
   })
-
-  return state
 }

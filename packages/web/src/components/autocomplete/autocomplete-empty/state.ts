@@ -1,12 +1,6 @@
-import type { ConnectableElement, SignalState } from '@aria-ui/core'
+import type { ConnectableElement } from '@aria-ui/core'
 import { useListboxEmpty } from '@aria-ui/listbox'
 
-import type { AutocompleteEmptyProps } from './props'
-
-export function useAutocompleteEmpty(
-  element: ConnectableElement,
-  _props?: Partial<AutocompleteEmptyProps>,
-): SignalState<AutocompleteEmptyProps> {
+export function useAutocompleteEmpty(element: ConnectableElement): void {
   useListboxEmpty(element)
-  return {}
 }

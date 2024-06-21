@@ -42,17 +42,17 @@
   },
   "dependencies": {
     "@aria-ui/collection": "^0.0.3",
-    "@aria-ui/core": "^0.0.15",
-    "@aria-ui/listbox": "^0.0.14",
-    "@aria-ui/overlay": "^0.0.16",
-    "@aria-ui/popover": "^0.0.16",
-    "@aria-ui/presence": "^0.0.10",
-    "@aria-ui/tooltip": "^0.0.18",
+    "@aria-ui/core": "^0.0.16",
+    "@aria-ui/listbox": "^0.0.15",
+    "@aria-ui/overlay": "^0.0.17",
+    "@aria-ui/popover": "^0.0.17",
+    "@aria-ui/presence": "^0.0.11",
+    "@aria-ui/tooltip": "^0.0.19",
     "@floating-ui/dom": "^1.6.5",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^0.57.0"
+    "@zag-js/dom-query": "^0.58.1"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",

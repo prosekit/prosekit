@@ -1,8 +1,6 @@
 import {
-  assignProps,
   createComputed,
   createSignal,
-  mapSignals,
   useAttribute,
   useEffect,
   type ConnectableElement,
@@ -21,13 +19,12 @@ import {
   defineElementHoverHandler,
   type ElementHoverHandler,
 } from './pointer-move'
-import { defaultBlockPopoverProps, type BlockPopoverProps } from './props'
+import { type BlockPopoverProps } from './props'
 
 export function useBlockPopover(
   host: ConnectableElement,
-  props?: Partial<BlockPopoverProps>,
-): SignalState<BlockPopoverProps> {
-  const state = mapSignals(assignProps(defaultBlockPopoverProps, props))
+  state: SignalState<BlockPopoverProps>,
+): void {
   const { editor, ...overlayState } = state
   const reference = createSignal<VirtualElement | null>(null)
   useOverlayPositionerState(host, overlayState, { reference })
@@ -53,8 +50,6 @@ export function useBlockPopover(
   const presence = createComputed(() => !!reference.get())
   useAttribute(host, 'data-state', () => (presence.get() ? 'open' : 'closed'))
   usePresence(host, presence)
-
-  return state
 }
 
 function useHoverExtension(

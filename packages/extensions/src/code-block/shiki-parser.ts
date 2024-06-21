@@ -32,6 +32,7 @@ export function createLazyParser(
     }
 
     if (!parser) {
+      console.log("createParser", highlighterOptions.themes[0])
       parser = createParser(highlighter, {
         theme: highlighterOptions.themes[0],
       })

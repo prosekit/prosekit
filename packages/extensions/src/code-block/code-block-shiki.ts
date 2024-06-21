@@ -41,7 +41,6 @@ export function defineCodeBlockShiki({
   langs = ['text'],
   langAlias = {},
 }: CodeBlockShikiOptions = {}): Extension {
-  console.log('defineCodeBlockShiki', themes)
   const parser = createLazyParser({ themes, langs, langAlias })
   return defineCodeBlockHighlight({ parser })
 }

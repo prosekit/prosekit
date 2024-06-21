@@ -223,6 +223,9 @@ importers:
       prosemirror-highlight:
         specifier: ^0.6.0
         version: 0.6.0(@types/hast@3.0.4)(prosemirror-model@1.21.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)(prosemirror-view@1.33.8)(shiki@1.6.5)
+      prosemirror-search:
+        specifier: ^0.1.0
+        version: 0.1.0
       prosemirror-tables:
         specifier: ^1.3.7
         version: 1.3.7
@@ -5257,6 +5260,9 @@ packages:
 
   prosemirror-model@1.21.1:
     resolution: {integrity: sha512-IVBAuMqOfltTr7yPypwpfdGT+6rGAteVOw2FO6GEvCGGa1ZwxLseqC1Eax/EChDvG/xGquB2d/hLdgh3THpsYg==}
+
+  prosemirror-search@0.1.0:
+    resolution: {integrity: sha512-xZ2uDZsza+CfTA4wk2hD81Uchw3r/8EOGGYNPLoepIEH0MYcBFj1bMD2Fe81Mi4wE57XLqMB3JyckceNgLKDzw==}
 
   prosemirror-splittable@0.1.1:
     resolution: {integrity: sha512-mUaOrp4aT2rPZNyZMRCSd+JrVuUU+w7+SFg+l8r6JFtF/ECkA+ZVXxXO0c9vLQ0VWG8UcfszQaD+X+cxKuA2Uw==}
@@ -12135,6 +12141,12 @@ snapshots:
   prosemirror-model@1.21.1:
     dependencies:
       orderedmap: 2.1.1
+
+  prosemirror-search@0.1.0:
+    dependencies:
+      prosemirror-model: 1.21.1
+      prosemirror-state: 1.4.3
+      prosemirror-view: 1.33.8
 
   prosemirror-splittable@0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.21.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0):
     optionalDependencies:

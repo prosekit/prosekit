@@ -126,8 +126,7 @@ export default defineConfig({
             { text: 'Readonly', link: '/extensions/readonly' },
             { text: 'Input Rule', link: '/extensions/input-rule' },
             { text: 'Drop Cursor', link: '/extensions/drop-cursor' },
-            // TODO: hide search until prosemirror-search is released
-            // { text: 'Search', link: '/extensions/search' },
+            { text: 'Search', link: '/extensions/search' },
           ],
         },
       ],

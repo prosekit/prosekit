@@ -16,8 +16,9 @@ export function ThemeSelector() {
 
   return (
     <>
-      <label>Theme:</label>
+      <label htmlFor="code-block-theme-selector">Theme</label>
       <select
+        id="code-block-theme-selector"
         value={theme}
         onChange={(event) => setTheme(event.target.value)}
         className={Themes.TOGGLE_BUTTON}

@@ -16,8 +16,12 @@ useExtension(extension)
 </script>
 
 <template>
-  <label>Theme:</label>
-  <select v-model="theme" :class="Themes.TOGGLE_BUTTON">
+  <label for="code-block-theme-selector">Theme</label>
+  <select
+    id="code-block-theme-selector"
+    v-model="theme"
+    :class="Themes.TOGGLE_BUTTON"
+  >
     <option
       v-for="info of shikiBundledThemesInfo"
       :key="info.id"

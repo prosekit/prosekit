@@ -36,12 +36,12 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
-| `Commands` | `object` | - |
-| `Commands.insertMention` | [[`MentionAttrs`](mention.md#MentionAttrs)] | ... |
-| `Marks` | `never` | - |
-| `Nodes` | `"mention"` | - |
+| Name | Type |
+| ------ | ------ |
+| `Commands` | `object` |
+| `Commands.insertMention` | [[`MentionAttrs`](mention.md#MentionAttrs)] |
+| `Marks` | `never` |
+| `Nodes` | `"mention"` |
 
 ***
 
@@ -55,12 +55,12 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
-| `Commands` | `object` | - |
-| `Commands.insertMention` | [[`MentionAttrs`](mention.md#MentionAttrs)] | ... |
-| `Marks` | `never` | - |
-| `Nodes` | `never` | - |
+| Name | Type |
+| ------ | ------ |
+| `Commands` | `object` |
+| `Commands.insertMention` | [[`MentionAttrs`](mention.md#MentionAttrs)] |
+| `Marks` | `never` |
+| `Nodes` | `never` |
 
 ***
 
@@ -74,8 +74,8 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `never` |
 | `Nodes` | `"mention"` |

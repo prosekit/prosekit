@@ -195,8 +195,8 @@ The placement of the popover, relative to the selected inline content.
 
 ### Type declaration
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
+| Name | Type | Default value |
+| ------ | ------ | ------ |
 | `boundary` | `never`[] | \[\] |
 | `defaultOpen` | `true` | true |
 | `editor` | `null` | null |

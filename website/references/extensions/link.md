@@ -24,8 +24,8 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `object` |
 | `Marks` | `any` |
 | `Nodes` | `any` |
@@ -42,15 +42,15 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
-| `Commands` | `object` | - |
-| `Commands.addLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | ... |
-| `Commands.expandLink` | [] | ... |
-| `Commands.removeLink` | [] | ... |
-| `Commands.toggleLink` | [[`LinkAttrs`](link.md#LinkAttrs)] | ... |
-| `Marks` | `never` | - |
-| `Nodes` | `never` | - |
+| Name | Type |
+| ------ | ------ |
+| `Commands` | `object` |
+| `Commands.addLink` | [[`LinkAttrs`](link.md#LinkAttrs)] |
+| `Commands.expandLink` | [] |
+| `Commands.removeLink` | [] |
+| `Commands.toggleLink` | [[`LinkAttrs`](link.md#LinkAttrs)] |
+| `Marks` | `never` |
+| `Nodes` | `never` |
 
 ***
 
@@ -106,8 +106,8 @@ Apply and remove link marks to the text during typing.
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `"link"` |
 | `Nodes` | `never` |

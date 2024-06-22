@@ -96,8 +96,8 @@ The placement of the popover, relative to the hovered block.
 
 ### Type declaration
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
+| Name | Type | Default value |
+| ------ | ------ | ------ |
 | `editor` | `null` | null |
 
 ***
@@ -110,8 +110,8 @@ The placement of the popover, relative to the hovered block.
 
 ### Type declaration
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
+| Name | Type | Default value |
+| ------ | ------ | ------ |
 | `editor` | `null` | null |
 | `offset` | `4` | 4 |
 | `placement` | `"left-start"` | 'left-start' |

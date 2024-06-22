@@ -96,19 +96,19 @@ Defines commands for search and replace.
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
-| `Commands` | `object` | - |
-| `Commands.findNext` | [] | ... |
-| `Commands.findNextNoWrap` | [] | ... |
-| `Commands.findPrev` | [] | ... |
-| `Commands.findPrevNoWrap` | [] | ... |
-| `Commands.replaceAll` | [] | ... |
-| `Commands.replaceCurrent` | [] | ... |
-| `Commands.replaceNext` | [] | ... |
-| `Commands.replaceNextNoWrap` | [] | ... |
-| `Marks` | `never` | - |
-| `Nodes` | `never` | - |
+| Name | Type |
+| ------ | ------ |
+| `Commands` | `object` |
+| `Commands.findNext` | [] |
+| `Commands.findNextNoWrap` | [] |
+| `Commands.findPrev` | [] |
+| `Commands.findPrevNoWrap` | [] |
+| `Commands.replaceAll` | [] |
+| `Commands.replaceCurrent` | [] |
+| `Commands.replaceNext` | [] |
+| `Commands.replaceNextNoWrap` | [] |
+| `Marks` | `never` |
+| `Nodes` | `never` |
 
 ***
 

@@ -274,8 +274,8 @@ null
 
 ### Type declaration
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
+| Name | Type | Default value |
+| ------ | ------ | ------ |
 | `onSelect` | `null` | null |
 | `value` | `string` | '' |
 
@@ -289,8 +289,8 @@ null
 
 ### Type declaration
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
+| Name | Type | Default value |
+| ------ | ------ | ------ |
 | `editor` | `null` | null |
 | `filter` | (`options`) => `boolean` | defaultFilter |
 
@@ -304,8 +304,8 @@ null
 
 ### Type declaration
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
+| Name | Type | Default value |
+| ------ | ------ | ------ |
 | `boundary` | [`HTMLBodyElement`](https://developer.mozilla.org/docs/Web/API/HTMLBodyElement) \| `"clippingAncestors"` | defaultBoundary |
 | `editor` | `null` | null |
 | `fitViewport` | `true` | true |

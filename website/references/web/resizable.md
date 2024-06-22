@@ -86,8 +86,8 @@ The position of the handle.
 
 ### Type declaration
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
+| Name | Type | Default value |
+| ------ | ------ | ------ |
 | `position` | `"bottom-right"` | 'bottom-right' |
 
 ***
@@ -100,8 +100,8 @@ The position of the handle.
 
 ### Type declaration
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
+| Name | Type | Default value |
+| ------ | ------ | ------ |
 | `aspectRatio` | `null` | null |
 | `height` | `null` | null |
 | `onSizeChange` | `null` | null |

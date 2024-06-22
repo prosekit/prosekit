@@ -53,8 +53,8 @@ a CSS `text-align` style.
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `object` |
 | `Marks` | `any` |
 | `Nodes` | `any` |

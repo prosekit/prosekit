@@ -42,11 +42,11 @@ Options for [defineEnterRule](enter-rule.md#defineEnterRule).
 
 ### Type declaration
 
-| Member | Type | Description |
-| :------ | :------ | :------ |
+| Name | Type | Description |
+| ------ | ------ | ------ |
 | `handler` | [`EnterRuleHandler`](enter-rule.md#EnterRuleHandler) | A function to be called when an enter rule is triggered. |
 | `regex` | [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp) | The regular expression to match against. It should end with `$`. |
-| `stop` | `boolean` | <p>Whether to stop further handlers from being called if this rule is triggered.</p><p>**Default**</p><code>false</code> |
+| `stop` | `boolean` | Whether to stop further handlers from being called if this rule is triggered. **Default** `false` |
 
 ***
 
@@ -60,11 +60,11 @@ Options for [defineTextBlockEnterRule](enter-rule.md#defineTextBlockEnterRule).
 
 ### Type declaration
 
-| Member | Type | Description |
-| :------ | :------ | :------ |
+| Name | Type | Description |
+| ------ | ------ | ------ |
 | `attrs` | [`Attrs`](https://prosemirror.net/docs/ref/#model.Attrs) \| `null` \| (`match`) => [`Attrs`](https://prosemirror.net/docs/ref/#model.Attrs) \| `null` | Attributes to set on the node. If a function is provided, it will be called with the matched result from the regular expression. |
 | `regex` | [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp) | The regular expression to match against. It should end with `$`. |
-| `stop` | `boolean` | <p>Whether to stop further handlers from being called if this rule is triggered.</p><p>**Default**</p><code>true</code> |
+| `stop` | `boolean` | Whether to stop further handlers from being called if this rule is triggered. **Default** `true` |
 | `type` | `string` \| [`NodeType`](https://prosemirror.net/docs/ref/#model.NodeType) | The node type to replace the matched text with. |
 
 ***

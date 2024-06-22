@@ -44,8 +44,8 @@ Adds `codeBlock` nodes to the editor. This includes the following extensions:
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `object` |
 | `Marks` | `any` |
 | `Nodes` | `any` |
@@ -64,15 +64,15 @@ Adds commands for working with `codeBlock` nodes.
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
-| `Commands` | `object` | - |
-| `Commands.insertCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
-| `Commands.setCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
-| `Commands.setCodeBlockAttrs` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
-| `Commands.toggleCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] | ... |
-| `Marks` | `never` | - |
-| `Nodes` | `never` | - |
+| Name | Type |
+| ------ | ------ |
+| `Commands` | `object` |
+| `Commands.insertCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] |
+| `Commands.setCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] |
+| `Commands.setCodeBlockAttrs` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] |
+| `Commands.toggleCodeBlock` | [[`CodeBlockAttrs`](code-block.md#CodeBlockAttrs)] |
+| `Marks` | `never` |
+| `Nodes` | `never` |
 
 ***
 
@@ -137,7 +137,7 @@ Adds syntax highlighting to code blocks using the [shiki](https://github.com/shi
 
 ### Parameters
 
-• **\_\_namedParameters**: `CodeBlockShikiOptions`= `{}`
+• **\_\_namedParameters**: `CodeBlockShikiOptions` = `{}`
 
 ### Returns
 
@@ -157,8 +157,8 @@ Defines the `codeBlock` node spec.
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `never` |
 | `Nodes` | `"codeBlock"` |

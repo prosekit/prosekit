@@ -10,8 +10,8 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `object` |
 | `Marks` | `any` |
 | `Nodes` | `any` |
@@ -43,8 +43,8 @@ line followed by a space.
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `never` |
 | `Nodes` | `"blockquote"` |

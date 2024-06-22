@@ -83,7 +83,7 @@ Calls the given handler whenever the editor document changes.
 
 Retrieves the editor instance from the nearest ProseKit component.
 
-### Type parameters
+### Type Parameters
 
 • **E** *extends* [`Extension`](core.md#ExtensionT)\<`any`\> = `any`
 

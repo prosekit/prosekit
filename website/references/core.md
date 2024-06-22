@@ -9,7 +9,7 @@ ProseKit extension priority.
 ### Enumeration Members
 
 | Enumeration Member | Value |
-| :------ | :------ |
+| ------ | ------ |
 | <a id="default" name="default"></a> `default` | `2` |
 | <a id="high" name="high"></a> `high` | `3` |
 | <a id="highest" name="highest"></a> `highest` | `4` |
@@ -22,7 +22,7 @@ ProseKit extension priority.
 
 ## Editor\<E\>
 
-### Type parameters
+### Type Parameters
 
 • **E** *extends* [`Extension`](core.md#ExtensionT) = `any`
 
@@ -361,7 +361,7 @@ editor. It's only used when `defaultDoc` or `defaultHTML` is also provided.
 
 ## EditorOptions\<E\>
 
-### Type parameters
+### Type Parameters
 
 • **E** *extends* [`Extension`](core.md#ExtensionT)
 
@@ -408,7 +408,7 @@ The extension to use when creating the editor.
 
 ## Extension\<T\>
 
-### Type parameters
+### Type Parameters
 
 • **T** *extends* `ExtensionTyping`\<`any`, `any`, `any`\> = `any`
 
@@ -526,7 +526,7 @@ The name of the mark type.
 
 - [`MarkSpec`](https://prosemirror.net/docs/ref/#model.MarkSpec)
 
-### Type parameters
+### Type Parameters
 
 • **MarkName** *extends* `string` = `string`
 
@@ -673,7 +673,7 @@ A JSON representation of the prosemirror node.
 
 - [`NodeSpec`](https://prosemirror.net/docs/ref/#model.NodeSpec)
 
-### Type parameters
+### Type Parameters
 
 • **NodeName** *extends* `string` = `string`
 
@@ -821,8 +821,8 @@ The current selection.
 
 ### Type declaration
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `document` | [`Document`](https://developer.mozilla.org/docs/Web/API/Document) |
 
 ***
@@ -838,7 +838,7 @@ A function to handle the events fired on the editable DOM element. Returns
 calling `preventDefault` yourself (or not, if you want to allow the default
 behavior).
 
-### Type parameters
+### Type Parameters
 
 • **Event** *extends* keyof [`DOMEventMap`](https://prosemirror.net/docs/ref/#view.DOMEventMap) = `string`
 
@@ -862,8 +862,8 @@ behavior).
 
 ### Type declaration
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `DOMParser` | *typeof* [`DOMParser`](https://prosemirror.net/docs/ref/#model.DOMParser) |
 
 ***
@@ -876,8 +876,8 @@ behavior).
 
 ### Type declaration
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `DOMSerializer` | *typeof* [`DOMSerializer`](https://prosemirror.net/docs/ref/#model.DOMSerializer) |
 
 ***
@@ -980,7 +980,7 @@ The previous editor state.
 
 > **ExtractCommandAppliers**\<`E`\>: `ToCommandApplier`\<`ExtractCommands`\<`E`\>\>
 
-### Type parameters
+### Type Parameters
 
 • **E** *extends* [`Extension`](core.md#ExtensionT)
 
@@ -992,7 +992,7 @@ The previous editor state.
 
 > **ExtractCommandCreators**\<`E`\>: `ToCommandCreators`\<`ExtractCommands`\<`E`\>\>
 
-### Type parameters
+### Type Parameters
 
 • **E** *extends* [`Extension`](core.md#ExtensionT)
 
@@ -1004,7 +1004,7 @@ The previous editor state.
 
 > **ExtractMarks**\<`E`\>: `ExtractTyping`\<`E`\>\[`"Marks"`\]
 
-### Type parameters
+### Type Parameters
 
 • **E** *extends* [`Extension`](core.md#ExtensionT)
 
@@ -1016,7 +1016,7 @@ The previous editor state.
 
 > **ExtractNodes**\<`E`\>: `ExtractTyping`\<`E`\>\[`"Nodes"`\]
 
-### Type parameters
+### Type Parameters
 
 • **E** *extends* [`Extension`](core.md#ExtensionT)
 
@@ -1050,8 +1050,8 @@ Whether the editor has focus.
 
 ### Type declaration
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `schema` | [`Schema`](https://prosemirror.net/docs/ref/#model.Schema) |
 
 ***
@@ -1326,7 +1326,7 @@ It is a re-export of [clsx/lite](https://www.npmjs.com/package/clsx) with strict
 
 > **createEditor**\<`E`\>(`options`): [`Editor`](core.md#EditorE)\<`E`\>
 
-### Type parameters
+### Type Parameters
 
 • **E** *extends* [`Extension`](core.md#ExtensionT)\<`any`\>
 
@@ -1352,8 +1352,8 @@ Add some base commands
 
 [`Extension`](core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `object` |
 | `Commands.addMark` | [`object`] |
 | `Commands.insertNode` | [`object` \| `object`] |
@@ -1439,7 +1439,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn](https://p
 
 > **defineCommands**\<`T`\>(`commands`): [`Extension`](core.md#ExtensionT)\<`object`\>
 
-### Type parameters
+### Type Parameters
 
 • **T** *extends* [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `CommandCreator`\> = [`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `CommandCreator`\>
 
@@ -1451,8 +1451,8 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn](https://p
 
 [`Extension`](core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `{ [K in keyof T]: Parameters<T[K]> }` |
 | `Marks` | `never` |
 | `Nodes` | `never` |
@@ -1467,7 +1467,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn](https://p
 
 Register a new event handler for the given event type.
 
-### Type parameters
+### Type Parameters
 
 • **Event** *extends* keyof [`DOMEventMap`](https://prosemirror.net/docs/ref/#view.DOMEventMap) = `string`
 
@@ -1509,8 +1509,8 @@ Register a new event handler for the given event type.
 
 [`Extension`](core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `never` |
 | `Nodes` | `"doc"` |
@@ -1619,8 +1619,8 @@ Add undo/redo history to the editor.
 
 [`Extension`](core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `object` |
 | `Marks` | `any` |
 | `Nodes` | `any` |
@@ -1701,7 +1701,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 
 > **defineMarkSpec**\<`Mark`\>(`options`): [`Extension`](core.md#ExtensionT)\<`object`\>
 
-### Type parameters
+### Type Parameters
 
 • **Mark** *extends* `string`
 
@@ -1713,8 +1713,8 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 
 [`Extension`](core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `Mark` |
 | `Nodes` | `never` |
@@ -1765,7 +1765,7 @@ Defines an attribute for a node type.
 
 Defines a node type.
 
-### Type parameters
+### Type Parameters
 
 • **Node** *extends* `string`
 
@@ -1777,8 +1777,8 @@ Defines a node type.
 
 [`Extension`](core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `never` |
 | `Nodes` | `Node` |
@@ -1813,8 +1813,8 @@ Defines a paragraph node spec as the highest priority, because it should be the 
 
 [`Extension`](core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `never` |
 | `Nodes` | `"paragraph"` |
@@ -1888,8 +1888,8 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleScrollToSelection]
 
 [`Extension`](core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `never` |
 | `Nodes` | `"text"` |
@@ -2416,7 +2416,7 @@ with the given attributes.
 
 Merge multiple extensions into one.
 
-### Type parameters
+### Type Parameters
 
 • **E** *extends* [`Extension`](core.md#ExtensionT)\<`any`\> \| [`Extension`](core.md#ExtensionT)\<`any`\>[]
 
@@ -2440,7 +2440,7 @@ If no extensions are provided.
 
 > **withPriority**\<`T`\>(`extension`, `priority`): `T`
 
-### Type parameters
+### Type Parameters
 
 • **T** *extends* [`Extension`](core.md#ExtensionT)\<`any`\>
 

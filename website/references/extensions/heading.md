@@ -24,8 +24,8 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `object` |
 | `Marks` | `any` |
 | `Nodes` | `any` |
@@ -42,14 +42,14 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
-| `Commands` | `object` | - |
-| `Commands.insertHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | ... |
-| `Commands.setHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | ... |
-| `Commands.toggleHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] | ... |
-| `Marks` | `never` | - |
-| `Nodes` | `never` | - |
+| Name | Type |
+| ------ | ------ |
+| `Commands` | `object` |
+| `Commands.insertHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] |
+| `Commands.setHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] |
+| `Commands.toggleHeading` | [[`HeadingAttrs`](heading.md#HeadingAttrs)] |
+| `Marks` | `never` |
+| `Nodes` | `never` |
 
 ***
 
@@ -90,8 +90,8 @@ line followed by a space.
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `never` |
 | `Nodes` | `"heading"` |

@@ -10,8 +10,8 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `object` |
 | `Marks` | `any` |
 | `Nodes` | `any` |
@@ -28,12 +28,12 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
+| Name | Type | Default value |
+| ------ | ------ | ------ |
 | `Commands` | `object` | - |
 | `Commands.dedentList` | [`DedentListOptions`] | createDedentListCommand |
 | `Commands.indentList` | [`IndentListOptions`] | createIndentListCommand |
-| `Commands.insertList` | [`ListAttributes`] | ... |
+| `Commands.insertList` | [`ListAttributes`] | - |
 | `Commands.moveList` | [`"up"` \| `"down"`] | createMoveListCommand |
 | `Commands.splitList` | [] | createSplitListCommand |
 | `Commands.toggleCollapsed` | [`ToggleCollapsedOptions?`] | createToggleCollapsedCommand |
@@ -93,8 +93,8 @@ Returns a extension that adds key bindings for list.
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `never` |
 | `Nodes` | `"list"` |

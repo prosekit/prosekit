@@ -24,12 +24,12 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
-| `Commands` | `object` | - |
-| `Commands.insertImage` | [[`ImageAttrs`](image.md#ImageAttrs)] | ... |
-| `Marks` | `never` | - |
-| `Nodes` | `"image"` | - |
+| Name | Type |
+| ------ | ------ |
+| `Commands` | `object` |
+| `Commands.insertImage` | [[`ImageAttrs`](image.md#ImageAttrs)] |
+| `Marks` | `never` |
+| `Nodes` | `"image"` |
 
 ***
 
@@ -43,12 +43,12 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
-| `Commands` | `object` | - |
-| `Commands.insertImage` | [[`ImageAttrs`](image.md#ImageAttrs)] | ... |
-| `Marks` | `never` | - |
-| `Nodes` | `never` | - |
+| Name | Type |
+| ------ | ------ |
+| `Commands` | `object` |
+| `Commands.insertImage` | [[`ImageAttrs`](image.md#ImageAttrs)] |
+| `Marks` | `never` |
+| `Nodes` | `never` |
 
 ***
 
@@ -62,8 +62,8 @@
 
 [`Extension`](../core.md#ExtensionT)\<`object`\>
 
-| Member | Type |
-| :------ | :------ |
+| Name | Type |
+| ------ | ------ |
 | `Commands` | `never` |
 | `Marks` | `never` |
 | `Nodes` | `"image"` |

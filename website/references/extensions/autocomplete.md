@@ -50,7 +50,7 @@
 
 #### onLeave?
 
-> `optional` `readonly` **onLeave**: `VoidFunction`
+> `readonly` `optional` **onLeave**: `VoidFunction`
 
 <a id="onMatch" name="onMatch"></a>
 

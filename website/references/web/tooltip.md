@@ -26,8 +26,8 @@ Renames and re-exports [TooltipTrigger](../lit/tooltip.md#TooltipTrigger)
 
 ### Type declaration
 
-| Member | Type | Value |
-| :------ | :------ | :------ |
+| Name | Type | Default value |
+| ------ | ------ | ------ |
 | `boundary` | `never`[] | \[\] |
 | `flip` | `true` | true |
 | `hoist` | `true` | true |

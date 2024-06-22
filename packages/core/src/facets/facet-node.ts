@@ -139,7 +139,6 @@ export class FacetNode<I = any, O = any> {
 
     if (this.facet.singleton) {
       const reducer = (this.reducers[Priority.default] ||= this.facet.reducer)
-      // @ts-expect-error: TS 5.5 will fix it.
       const input: I[] = inputs.filter(isNotNull).flat()
       output[Priority.default] = reducer(input)
     } else {

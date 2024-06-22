@@ -129,9 +129,6 @@ importers:
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
-      '@total-typescript/ts-reset':
-        specifier: ^0.5.1
-        version: 0.5.1
       tsup:
         specifier: ^8.1.0
         version: 8.1.0(@microsoft/api-extractor@7.47.0(@types/node@20.14.2))(postcss@8.4.38)(typescript@5.5.2)
@@ -2071,9 +2068,6 @@ packages:
     resolution: {integrity: sha512-wvRQ8sFxn/NDr3WvI5XabhFovZ5MBmpEck2GHpTxYunmV63Ovpl30lRu6W5BPQo35a1GqDZ+Pvzlz6WDWRNqqw==}
     peerDependencies:
       vue: ^2.7.0 || ^3.0.0
-
-  '@total-typescript/ts-reset@0.5.1':
-    resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}
 
   '@ts-morph/common@0.23.0':
     resolution: {integrity: sha512-m7Lllj9n/S6sOkCkRftpM7L24uvmfXQFedlW/4hENcuJH1HHm9u5EgxZb9uVjQSCGrbBWBkOGgcTxNg36r6ywA==}
@@ -8250,8 +8244,6 @@ snapshots:
     dependencies:
       '@tanstack/virtual-core': 3.5.0
       vue: 3.4.29(typescript@5.5.2)
-
-  '@total-typescript/ts-reset@0.5.1': {}
 
   '@ts-morph/common@0.23.0':
     dependencies:

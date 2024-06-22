@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@iconify-json/logos": "^1.1.43",
-    "@iconify-json/lucide": "^1.1.192",
+    "@iconify-json/lucide": "^1.1.194",
     "@prosekit/dev": "workspace:*",
     "@prosekit/themes": "workspace:*",
     "@prosekit/unocss-preset": "workspace:*",
@@ -29,7 +29,7 @@
     "prettier": "^3.3.2",
     "prosekit": "workspace:*",
     "prosekit-playground": "workspace:*",
-    "radix-vue": "^1.8.3",
+    "radix-vue": "^1.8.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "shadcn-vue": "^0.10.5",

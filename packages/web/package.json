@@ -52,7 +52,7 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^0.58.1"
+    "@zag-js/dom-query": "^0.58.2"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",

@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.8.1
+
+### Patch Changes
+
+- [`41e1f58`](https://github.com/ocavue/prosekit/commit/41e1f58a915a380c3aa2cdf421e45639abad553a) ![](https://prosekit.dev/b/core)
+
+  Fix an issue where the TypeScript typings for commands are not correctly inferred. This requires a minimum TypeScript version of 5.0.
+
 ## 0.8.0
 
 ### Minor Changes

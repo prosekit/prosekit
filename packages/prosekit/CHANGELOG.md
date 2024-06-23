@@ -1,5 +1,35 @@
 # prosekit
 
+## 0.8.0
+
+### Minor Changes
+
+- [`9b40642`](https://github.com/ocavue/prosekit/commit/9b40642ef32f3e34cb5f4e3ce20d2cf1db0559fa) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineSearchQuery` and `defineSearchCommands` to provide search, replace, and match highlighting features.
+
+- [`5a9b4d7`](https://github.com/ocavue/prosekit/commit/5a9b4d7a71d5aeb9055f7b91e050fee1f66fd3ad) ![](https://prosekit.dev/b/web)
+
+  Add `defaultOpen` prop to inline popover. It's useful for when you want to control the open state of the popover from outside.
+
+- [`166b79b`](https://github.com/ocavue/prosekit/commit/166b79ba4c01676bc66b4763c3ef6deb95de89a7) ![](https://prosekit.dev/b/core)
+
+  Add `removeNode` command.
+
+### Patch Changes
+
+- [`343b28d`](https://github.com/ocavue/prosekit/commit/343b28d495382b98c84aed9a5dfa298514ec98a6) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the `onOpenChange` handler in `InlinePopover` would not be triggered when inline content is selected.
+
+- [`3b022aa`](https://github.com/ocavue/prosekit/commit/3b022aa207965be380d28bd2460e803d3aff460a) ![](https://prosekit.dev/b/core)
+
+  Fix an issue where state plugins are updated unnecessarily when updating extensions.
+
+- [`529b1d9`](https://github.com/ocavue/prosekit/commit/529b1d9270372db0ef4a09ca65953c0807101a01) ![](https://prosekit.dev/b/extensions)
+
+  Remove blank state between code block theme switching when the theme is already loaded.
+
 ## 0.7.7
 
 ### Patch Changes

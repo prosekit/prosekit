@@ -73,7 +73,7 @@ export function createEditor<E extends Extension>(
         defaultHTML,
         defaultSelection,
       }),
-    ]) as E
+    ]) as Extension as E
   }
   return Editor.create(new EditorInstance(extension)) as Editor<E>
 }
@@ -239,10 +239,7 @@ class EditorInstance {
   ): void {
     const applier: CommandApplier<Args> = (...args: Args) => {
       const view = this.view
-      if (!view) {
-        return false
-      }
-
+      assert(view, `Cannot call command "${name}" before the editor is mounted`)
       const command = commandCreator(...args)
       return command(view.state, view.dispatch.bind(view), view)
     }

@@ -20,3 +20,33 @@ describe('defineBasicExtension', () => {
     expect(marks).toContain('italic')
   })
 })
+
+describe('BasicExtension', () => {
+  const extension = defineBasicExtension()
+  const editor = createEditor({ extension })
+  const dom = document.createElement('div')
+  editor.mount(dom)
+
+  it('can throw TypeScript error for non existing command', () => {
+    expect(() => {
+      // @ts-expect-error: expected to throw
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      editor.commands.this_command_does_not_exit()
+    }).toThrow()
+
+    expect(() => {
+      editor.commands.insertNode({ type: 'heading' })
+    }).not.toThrow()
+  })
+
+  it('can throw TypeScript error for incorrect command arguments', () => {
+    expect(() => {
+      // @ts-expect-error: expected to throw
+      editor.commands.insertNode({ this_argument_does_not_exist: true })
+    }).toThrow()
+
+    expect(() => {
+      editor.commands.insertNode({ type: 'heading' })
+    }).not.toThrow()
+  })
+})

@@ -10,7 +10,7 @@ import { assert } from '../utils/assert'
  *
  * @public
  */
-export function union<E extends Extension | Extension[]>(
+export function union<const E extends Extension | readonly Extension[]>(
   extension: E,
 ): UnionExtension<E> {
   const array = Array.isArray(extension) ? extension : [extension]

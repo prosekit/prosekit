@@ -41,7 +41,29 @@ export interface Extension<T extends ExtensionTyping<any, any, any> = any> {
  * @internal
  */
 export type ExtractTyping<E extends Extension> =
-  E extends Extension<infer T> ? T : never
+  E extends Extension<ExtensionTyping<infer N, infer M, infer C>>
+    ? ExtensionTyping<
+        PickStringLiteral<N>,
+        PickStringLiteral<M>,
+        PickKnownCommandTyping<C>
+      >
+    : never
+
+/**
+ * @internal
+ */
+export type PickStringLiteral<T extends string> = [string] extends [T]
+  ? never
+  : T
+
+/**
+ * @internal
+ */
+export type PickKnownCommandTyping<T extends CommandTyping> = [
+  CommandTyping,
+] extends [T]
+  ? never
+  : T
 
 /**
  * @public
@@ -77,8 +99,8 @@ export type ExtractCommandAppliers<E extends Extension> = ToCommandApplier<
 /**
  * @internal
  */
-export type UnionExtension<E extends Extension | Extension[]> =
-  E extends Extension[]
+export type UnionExtension<E extends Extension | readonly Extension[]> =
+  E extends readonly Extension[]
     ? Extension<{
         Nodes: ExtractNodes<E[number]>
         Marks: ExtractMarks<E[number]>

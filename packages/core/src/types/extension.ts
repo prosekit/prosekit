@@ -1,5 +1,4 @@
 import type { Schema } from '@prosekit/pm/model'
-import type { IsStringLiteral } from 'type-fest'
 
 import type {
   CommandTyping,
@@ -44,22 +43,29 @@ export interface Extension<T extends ExtensionTyping<any, any, any> = any> {
 export type ExtractTyping<E extends Extension> =
   E extends Extension<ExtensionTyping<infer N, infer M, infer C>>
     ? ExtensionTyping<
-        ToStringLiteral<N>,
-        ToStringLiteral<M>,
-        ToKnownCommandTyping<C>
+        PickStringLiteral<N>,
+        PickStringLiteral<M>,
+        PickKnownCommandTyping<C>
       >
     : never
 
 /**
  * @internal
  */
-export type ToStringLiteral<T extends string> =
+export type IsStringLiteral<T extends string> = [string] extends [T]
+  ? false
+  : true
+
+/**
+ * @internal
+ */
+export type PickStringLiteral<T extends string> =
   IsStringLiteral<T> extends true ? T : never
 
 /**
  * @internal
  */
-export type ToKnownCommandTyping<T extends CommandTyping> = [
+export type PickKnownCommandTyping<T extends CommandTyping> = [
   CommandTyping,
 ] extends [T]
   ? never

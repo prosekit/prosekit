@@ -22,24 +22,31 @@ describe('defineBasicExtension', () => {
 })
 
 describe('BasicExtension', () => {
-  it('can throw TypeScript error for non existing command', () => {
-    const extension = defineBasicExtension()
-    const editor = createEditor({ extension })
+  const extension = defineBasicExtension()
+  const editor = createEditor({ extension })
+  const dom = document.createElement('div')
+  editor.mount(dom)
 
+  it('can throw TypeScript error for non existing command', () => {
     expect(() => {
       // @ts-expect-error: expected to throw
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       editor.commands.this_command_does_not_exit()
     }).toThrow()
+
+    expect(() => {
+      editor.commands.insertNode({ type: 'heading' })
+    }).not.toThrow()
   })
 
   it('can throw TypeScript error for incorrect command arguments', () => {
-    const extension = defineBasicExtension()
-    const editor = createEditor({ extension })
-
     expect(() => {
       // @ts-expect-error: expected to throw
       editor.commands.insertNode({ this_argument_does_not_exist: true })
     }).toThrow()
+
+    expect(() => {
+      editor.commands.insertNode({ type: 'heading' })
+    }).not.toThrow()
   })
 })

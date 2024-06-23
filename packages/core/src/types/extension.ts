@@ -52,15 +52,9 @@ export type ExtractTyping<E extends Extension> =
 /**
  * @internal
  */
-export type IsStringLiteral<T extends string> = [string] extends [T]
-  ? false
-  : true
-
-/**
- * @internal
- */
-export type PickStringLiteral<T extends string> =
-  IsStringLiteral<T> extends true ? T : never
+export type PickStringLiteral<T extends string> = [string] extends [T]
+  ? never
+  : T
 
 /**
  * @internal

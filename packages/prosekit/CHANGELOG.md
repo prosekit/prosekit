@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.8.2
+
+### Patch Changes
+
+- [`da8322f`](https://github.com/ocavue/prosekit/commit/da8322f979253df18b4d9d555d64b2d58bbfd5a3) ![](https://prosekit.dev/b/vue)
+
+  Fix an issue where `useExtension` from `prosekit/vue` will print unnecessary warnings when the editor context is not available.
+
 ## 0.8.1
 
 ### Patch Changes

@@ -17,4 +17,68 @@ describe('createEditor', () => {
       `"<div contenteditable="true" translate="no" class="ProseMirror"><p><br class="ProseMirror-trailingBreak"></p></div>"`,
     )
   })
+
+  it('can get and update state', () => {
+    const extension = union([defineDoc(), defineText(), defineParagraph()])
+    const editor = createEditor({ extension })
+
+    const update = (text: string) => {
+      const s1 = editor.state
+      const s2 = s1.apply(s1.tr.insertText(text, 1))
+      editor.updateState(s2)
+      const s3 = editor.state
+
+      expect(s3).toBe(s2)
+      expect(s2).not.toEqual(s1)
+
+      return s3
+    }
+
+    const expectStateEqual = (fn: VoidFunction) => {
+      const s1 = editor.state
+      fn()
+      const s2 = editor.state
+      expect(s1).toBe(s2)
+    }
+
+    const expectStateNotEqual = (fn: VoidFunction) => {
+      const s1 = editor.state
+      fn()
+      const s2 = editor.state
+      expect(s1).not.toEqual(s2)
+    }
+
+    // Initial state
+    expect(editor.state).toBeDefined()
+    expect(editor.state.doc.textContent).toMatchInlineSnapshot(`""`)
+
+    // Update state before mounting
+    expectStateNotEqual(() => update('1'))
+    expect(editor.state.doc.textContent).toMatchInlineSnapshot(`"1"`)
+
+    // Mount editor
+    const div = document.body.appendChild(document.createElement('div'))
+    expectStateEqual(() => editor.mount(div))
+    expect(editor.state.doc.textContent).toMatchInlineSnapshot(`"1"`)
+
+    // Update state after mounting
+    expectStateNotEqual(() => update('2'))
+    expect(editor.state.doc.textContent).toMatchInlineSnapshot(`"21"`)
+
+    // Unmount editor
+    expectStateEqual(() => editor.unmount())
+    expect(editor.state.doc.textContent).toMatchInlineSnapshot(`"21"`)
+
+    // Update state after unmounting
+    expectStateNotEqual(() => update('3'))
+    expect(editor.state.doc.textContent).toMatchInlineSnapshot(`"321"`)
+
+    // Re-mount editor
+    expectStateEqual(() => editor.mount(div))
+    expect(editor.state.doc.textContent).toMatchInlineSnapshot(`"321"`)
+
+    // Update state after re-mounting
+    expectStateNotEqual(() => update('4'))
+    expect(editor.state.doc.textContent).toMatchInlineSnapshot(`"4321"`)
+  })
 })

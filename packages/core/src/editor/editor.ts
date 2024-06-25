@@ -83,7 +83,6 @@ export function createEditor<E extends Extension>(
  */
 class EditorInstance {
   view: EditorView | null = null
-  cachedState: EditorState
   schema: Schema
   commandAppliers: Record<string, CommandApplier> = {}
 
@@ -93,8 +92,6 @@ class EditorInstance {
   readonly markBuilders: Record<string, MarkBuilder>
 
   constructor(extension: Extension) {
-    this.mount = this.mount.bind(this)
-    this.unmount = this.unmount.bind(this)
     this.tree = (extension as BaseExtension).getTree()
 
     const payload = this.tree.getRootOutput()
@@ -104,7 +101,6 @@ class EditorInstance {
     assert(schema && stateConfig, 'Schema must be defined')
 
     const state = EditorState.create(stateConfig)
-    this.cachedState = state
 
     if (payload.commands) {
       for (const [name, commandCreator] of Object.entries(payload.commands)) {
@@ -112,11 +108,10 @@ class EditorInstance {
       }
     }
 
+    this.schema = state.schema
     this.directEditorProps = { state, ...payload.view }
-    this.schema = this.directEditorProps.state.schema
 
-    const getState = () => this.getState()
-
+    const getState = this.getState.bind(this)
     this.nodeBuilders = Object.fromEntries(
       Object.values(this.schema.nodes).map((type) => [
         type.name,
@@ -133,9 +128,16 @@ class EditorInstance {
 
   public getState() {
     if (this.view) {
-      this.cachedState = this.view.state
+      return this.view.state
     }
-    return this.cachedState
+    return this.directEditorProps.state
+  }
+
+  public updateState = (state: EditorState) => {
+    if (this.view) {
+      this.view.updateState(state)
+    }
+    this.directEditorProps.state = state
   }
 
   public updateExtension(extension: Extension, add: boolean): void {
@@ -200,6 +202,7 @@ class EditorInstance {
       throw new ProseKitError('Editor is not mounted yet')
     }
 
+    this.directEditorProps.state = this.view.state
     this.view.destroy()
     this.view = null
   }
@@ -308,6 +311,9 @@ export class Editor<E extends Extension = any> {
     return this.instance.schema
   }
 
+  /**
+   * All commands defined by the editor.
+   */
   get commands(): ExtractCommandAppliers<E> {
     return this.instance.commandAppliers as ExtractCommandAppliers<E>
   }
@@ -354,17 +360,25 @@ export class Editor<E extends Extension = any> {
     this.instance.view?.dom.blur()
   }
 
+  /**
+   * Register an extension to the editor. Return a function to unregister the
+   * extension.
+   */
   use(extension: Extension): VoidFunction {
     if (!this.mounted) {
-      let lazyRemove: VoidFunction | null = null
+      let canceled = false
+      let lazyRemove: VoidFunction | undefined
 
       const lazyCreate = () => {
-        lazyRemove = this.use(extension)
+        if (!canceled) {
+          lazyRemove = this.use(extension)
+        }
       }
 
       this.afterMounted.push(lazyCreate)
 
       return () => {
+        canceled = true
         lazyRemove?.()
       }
     }
@@ -373,8 +387,23 @@ export class Editor<E extends Extension = any> {
     return () => this.instance.updateExtension(extension, false)
   }
 
+  /**
+   * The editor's current state.
+   */
   get state(): EditorState {
     return this.instance.getState()
+  }
+
+  /**
+   * Update the editor's state.
+   *
+   * @remarks
+   *
+   * This is an advanced method. Use it only if you have a specific reason to
+   * directly manipulate the editor's state.
+   */
+  updateState(state: EditorState): void {
+    this.instance.updateState(state)
   }
 
   get nodes(): Record<ExtractNodes<E>, NodeBuilder> {

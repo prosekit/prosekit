@@ -14,5 +14,5 @@ export function provideEditor(editor: Editor): void {
  * @internal
  */
 export function useEditorContext<E extends Extension>(): Editor<E> | undefined {
-  return inject(symbol)
+  return inject(symbol, undefined)
 }

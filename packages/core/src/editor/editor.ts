@@ -367,7 +367,7 @@ export class Editor<E extends Extension = any> {
   use(extension: Extension): VoidFunction {
     if (!this.mounted) {
       let canceled = false
-      let lazyRemove: VoidFunction | undefined
+      let lazyRemove: VoidFunction | null = null
 
       const lazyCreate = () => {
         if (!canceled) {

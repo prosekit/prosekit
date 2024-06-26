@@ -13,11 +13,11 @@
   },
   "devDependencies": {
     "@iconify-json/logos": "^1.1.43",
-    "@iconify-json/lucide": "^1.1.194",
+    "@iconify-json/lucide": "^1.1.195",
     "@prosekit/dev": "workspace:*",
     "@prosekit/themes": "workspace:*",
     "@prosekit/unocss-preset": "workspace:*",
-    "@shikijs/vitepress-twoslash": "^1.9.0",
+    "@shikijs/vitepress-twoslash": "^1.9.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@unocss/cli": "^0.61.0",
@@ -29,19 +29,19 @@
     "prettier": "^3.3.2",
     "prosekit": "workspace:*",
     "prosekit-playground": "workspace:*",
-    "radix-vue": "^1.8.4",
+    "radix-vue": "^1.8.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "shadcn-vue": "^0.10.5",
     "type-fest": "^4.20.1",
-    "typedoc": "^0.26.0",
+    "typedoc": "^0.26.2",
     "typedoc-plugin-external-package-links": "^0.1.0",
     "typedoc-plugin-markdown": "^4.1.0",
-    "typedoc-plugin-mdn-links": "^3.1.30",
+    "typedoc-plugin-mdn-links": "^3.2.1",
     "typescript": "^5.5.2",
     "unocss": "^0.61.0",
     "vite": "^5.3.1",
     "vitepress": "1.2.3",
-    "vue": "^3.4.29"
+    "vue": "^3.4.30"
   }
 }

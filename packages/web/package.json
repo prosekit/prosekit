@@ -48,7 +48,7 @@
     "@aria-ui/popover": "^0.0.17",
     "@aria-ui/presence": "^0.0.11",
     "@aria-ui/tooltip": "^0.0.19",
-    "@floating-ui/dom": "^1.6.5",
+    "@floating-ui/dom": "^1.6.6",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",

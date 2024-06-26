@@ -7,9 +7,9 @@ import {
   type ProseMirrorNode,
 } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
-import { assert } from 'vitest'
 
 import { ProseKitError } from '../error'
+import { assert } from '../utils/assert'
 import { isMarkActive } from '../utils/is-mark-active'
 import { isNodeActive } from '../utils/is-node-active'
 import { isProseMirrorNode } from '../utils/type-assertion'

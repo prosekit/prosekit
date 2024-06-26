@@ -42,7 +42,7 @@ importers:
         version: 0.61.0(eslint@8.57.0)(typescript@5.5.2)
       '@vitest/browser':
         specifier: ^2.0.0-beta.12
-        version: 2.0.0-beta.12(playwright@1.44.1)(typescript@5.5.2)(vitest@2.0.0-beta.12)
+        version: 2.0.0-beta.12(playwright@1.45.0)(typescript@5.5.2)(vitest@2.0.0-beta.12)
       '@vitest/coverage-istanbul':
         specifier: ^2.0.0-beta.12
         version: 2.0.0-beta.12(vitest@2.0.0-beta.12(@types/node@20.14.8)(@vitest/browser@2.0.0-beta.12)(jsdom@24.1.0)(lightningcss@1.25.1))
@@ -55,6 +55,9 @@ importers:
       jsdom:
         specifier: ^24.1.0
         version: 24.1.0
+      playwright:
+        specifier: ^1.45.0
+        version: 1.45.0
       prettier:
         specifier: ^3.3.2
         version: 3.3.2
@@ -677,8 +680,8 @@ importers:
         specifier: ^1.1.194
         version: 1.1.194
       '@playwright/test':
-        specifier: ^1.44.1
-        version: 1.44.1
+        specifier: ^1.45.0
+        version: 1.45.0
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../packages/dev
@@ -1836,9 +1839,9 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@playwright/test@1.44.1':
-    resolution: {integrity: sha512-1hZ4TNvD5z9VuhNJ/walIjvMVvYkZKf71axoF/uiAqpntQJXpG64dlXhoDXE3OczPuTuvjf/M5KWFg5VAVUS3Q==}
-    engines: {node: '>=16'}
+  '@playwright/test@1.45.0':
+    resolution: {integrity: sha512-TVYsfMlGAaxeUllNkywbwek67Ncf8FRGn8ZlRdO291OL3NjG9oMbfVhyP82HQF0CZLMrYsvesqoUekxdWuF9Qw==}
+    engines: {node: '>=18'}
     hasBin: true
 
   '@pnpm/config.env-replace@1.1.0':
@@ -5262,14 +5265,14 @@ packages:
   pkg-types@1.1.0:
     resolution: {integrity: sha512-/RpmvKdxKf8uILTtoOhAgf30wYbP2Qw+L9p3Rvshx1JZVX+XQNZQFjlbmGHEGIm4CkVPlSn+NXmIM8+9oWQaSA==}
 
-  playwright-core@1.44.1:
-    resolution: {integrity: sha512-wh0JWtYTrhv1+OSsLPgFzGzt67Y7BE/ZS3jEqgGBlp2ppp1ZDj8c+9IARNW4dwf1poq5MgHreEM2KV/GuR4cFA==}
-    engines: {node: '>=16'}
+  playwright-core@1.45.0:
+    resolution: {integrity: sha512-lZmHlFQ0VYSpAs43dRq1/nJ9G/6SiTI7VPqidld9TDefL9tX87bTKExWZZUF5PeRyqtXqd8fQi2qmfIedkwsNQ==}
+    engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.44.1:
-    resolution: {integrity: sha512-qr/0UJ5CFAtloI3avF95Y0L1xQo6r3LQArLIg/z/PoGJ6xa+EwzrwO5lpNr/09STxdHuUoP2mvuELJS+hLdtgg==}
-    engines: {node: '>=16'}
+  playwright@1.45.0:
+    resolution: {integrity: sha512-4z3ac3plDfYzGB6r0Q3LF8POPR20Z8D0aXcxbJvmfMgSSq1hkcgvFRXJk9rUq5H/MJ0Ktal869hhOdI/zUTeLA==}
+    engines: {node: '>=18'}
     hasBin: true
 
   pluralize@8.0.0:
@@ -8166,7 +8169,7 @@ snapshots:
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-antfu: 2.3.3(eslint@8.57.0)
       eslint-plugin-deprecation: 3.0.0(eslint@8.57.0)(typescript@5.5.2)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       eslint-plugin-jsonc: 2.16.0(eslint@8.57.0)
       eslint-plugin-markdown: 5.0.0(eslint@8.57.0)
       eslint-plugin-no-only-tests: 3.1.0
@@ -8199,9 +8202,9 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
-  '@playwright/test@1.44.1':
+  '@playwright/test@1.45.0':
     dependencies:
-      playwright: 1.44.1
+      playwright: 1.45.0
 
   '@pnpm/config.env-replace@1.1.0': {}
 
@@ -8966,7 +8969,7 @@ snapshots:
       vite: 5.3.1(@types/node@20.14.8)(lightningcss@1.25.1)
       vue: 3.4.29(typescript@5.5.2)
 
-  '@vitest/browser@2.0.0-beta.12(playwright@1.44.1)(typescript@5.5.2)(vitest@2.0.0-beta.12)':
+  '@vitest/browser@2.0.0-beta.12(playwright@1.45.0)(typescript@5.5.2)(vitest@2.0.0-beta.12)':
     dependencies:
       '@testing-library/dom': 10.2.0
       '@testing-library/user-event': 14.5.2(@testing-library/dom@10.2.0)
@@ -8977,7 +8980,7 @@ snapshots:
       vitest: 2.0.0-beta.12(@types/node@20.14.8)(@vitest/browser@2.0.0-beta.12)(@vitest/ui@1.6.0)(jsdom@24.1.0)(lightningcss@1.25.1)
       ws: 8.17.1
     optionalDependencies:
-      playwright: 1.44.1
+      playwright: 1.45.0
     transitivePeerDependencies:
       - bufferutil
       - typescript
@@ -10265,7 +10268,7 @@ snapshots:
       enhanced-resolve: 5.16.0
       eslint: 8.57.0
       eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.5
       is-core-module: 2.13.1
@@ -10302,7 +10305,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.5.2))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
@@ -12374,11 +12377,11 @@ snapshots:
       mlly: 1.6.1
       pathe: 1.1.2
 
-  playwright-core@1.44.1: {}
+  playwright-core@1.45.0: {}
 
-  playwright@1.44.1:
+  playwright@1.45.0:
     dependencies:
-      playwright-core: 1.44.1
+      playwright-core: 1.45.0
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -14039,7 +14042,7 @@ snapshots:
       why-is-node-running: 2.2.2
     optionalDependencies:
       '@types/node': 20.14.8
-      '@vitest/browser': 2.0.0-beta.12(playwright@1.44.1)(typescript@5.5.2)(vitest@2.0.0-beta.12)
+      '@vitest/browser': 2.0.0-beta.12(playwright@1.45.0)(typescript@5.5.2)(vitest@2.0.0-beta.12)
       '@vitest/ui': 1.6.0(vitest@2.0.0-beta.12)
       jsdom: 24.1.0
     transitivePeerDependencies:

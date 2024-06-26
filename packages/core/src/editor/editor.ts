@@ -126,18 +126,16 @@ class EditorInstance {
     )
   }
 
-  public getState() {
-    if (this.view) {
-      return this.view.state
-    }
-    return this.directEditorProps.state
+  public getState(): EditorState {
+    return this.view?.state || this.directEditorProps.state
   }
 
-  public updateState = (state: EditorState) => {
+  public updateState(state: EditorState): void {
     if (this.view) {
       this.view.updateState(state)
+    } else {
+      this.directEditorProps.state = state
     }
-    this.directEditorProps.state = state
   }
 
   public updateExtension(extension: Extension, add: boolean): void {

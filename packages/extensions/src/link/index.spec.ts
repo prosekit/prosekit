@@ -1,3 +1,4 @@
+import { userEvent } from '@vitest/browser/context'
 import { describe, expect, it } from 'vitest'
 
 import { setupDefaultTest } from '../test'
@@ -23,12 +24,11 @@ describe('defineLinkCommands', () => {
 
   it('should toggle a link', () => {
     editor.set(doc1)
-    editor.commands.toggleLink({href})
+    editor.commands.toggleLink({ href })
     expect(editor.view.state.doc.toJSON()).toEqual(doc2.toJSON())
-    editor.commands.toggleLink({href})
+    editor.commands.toggleLink({ href })
     expect(editor.view.state.doc.toJSON()).toEqual(doc1.toJSON())
   })
-
 
   it('should expand the selection to cover the link', () => {
     editor.set(doc3)
@@ -36,5 +36,49 @@ describe('defineLinkCommands', () => {
     editor.commands.expandLink()
     expect(editor.view.state.selection.empty).toBe(false)
     expect(editor.view.state.doc.toJSON()).toEqual(doc2.toJSON())
+  })
+})
+
+describe('defineLinkInputRule', () => {
+  it('should insert a link after pressing Space', async () => {
+    const { editor } = setupDefaultTest()
+    await userEvent.keyboard('https://example.com')
+    expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
+      `"doc(paragraph("https://example.com"))"`,
+    )
+    await userEvent.keyboard(' ')
+    expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
+      `"doc(paragraph(link("https://example.com"), " "))"`,
+    )
+  })
+
+  it('should handle a link before a period', async () => {
+    const { editor } = setupDefaultTest()
+    await userEvent.keyboard('https://example.com')
+    expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
+      `"doc(paragraph("https://example.com"))"`,
+    )
+    await userEvent.keyboard('.')
+    expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
+      `"doc(paragraph("https://example.com."))"`,
+    )
+    await userEvent.keyboard(' ')
+    expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
+      `"doc(paragraph(link("https://example.com"), ". "))"`,
+    )
+  })
+})
+
+describe('defineLinkEnterRule', () => {
+  it('should insert a link after pressing Enter', async () => {
+    const { editor } = setupDefaultTest()
+    await userEvent.keyboard('https://example.com')
+    expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
+      `"doc(paragraph("https://example.com"))"`,
+    )
+    await userEvent.keyboard('{Enter}')
+    expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
+      `"doc(paragraph(link("https://example.com")), paragraph)"`,
+    )
   })
 })

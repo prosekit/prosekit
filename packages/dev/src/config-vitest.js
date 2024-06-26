@@ -7,6 +7,8 @@ export const config = defineProject({
       provider: 'playwright',
       name: 'chromium',
       headless: true,
+      ui: false,
+      screenshotFailures: false,
     },
     fileParallelism: false,
   },

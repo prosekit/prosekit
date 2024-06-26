@@ -21,6 +21,15 @@ describe('defineLinkCommands', () => {
     expect(editor.view.state.doc.toJSON()).toEqual(doc1.toJSON())
   })
 
+  it('should toggle a link', () => {
+    editor.set(doc1)
+    editor.commands.toggleLink({href})
+    expect(editor.view.state.doc.toJSON()).toEqual(doc2.toJSON())
+    editor.commands.toggleLink({href})
+    expect(editor.view.state.doc.toJSON()).toEqual(doc1.toJSON())
+  })
+
+
   it('should expand the selection to cover the link', () => {
     editor.set(doc3)
     expect(editor.view.state.selection.empty).toBe(true)

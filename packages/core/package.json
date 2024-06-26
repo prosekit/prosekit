@@ -25,7 +25,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./test": "./src/test/index.ts"
   },
   "files": [
     "dist"
@@ -53,6 +54,11 @@
         "types": "./dist/prosekit-core.d.ts",
         "import": "./dist/prosekit-core.js",
         "default": "./dist/prosekit-core.js"
+      },
+      "./test": {
+        "types": "./dist/prosekit-core-test.d.ts",
+        "import": "./dist/prosekit-core-test.js",
+        "default": "./dist/prosekit-core-test.js"
       }
     },
     "main": "./dist/prosekit-core.js",
@@ -62,6 +68,9 @@
       "*": {
         ".": [
           "./dist/prosekit-core.d.ts"
+        ],
+        "test": [
+          "./dist/prosekit-core-test.d.ts"
         ]
       }
     }

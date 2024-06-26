@@ -12,6 +12,13 @@ export const referenceItems = [
   },
   {
     "text": "core",
+    "items": [
+      {
+        "text": "test",
+        "link": "/references/core/test"
+      }
+    ],
+    "collapsed": true,
     "link": "/references/core"
   },
   {

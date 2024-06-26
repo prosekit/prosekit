@@ -22,8 +22,8 @@ import { assert } from '../utils/assert'
 import { deepEquals } from '../utils/deep-equals'
 
 import {
-  createMarkBuilder,
-  createNodeBuilder,
+  createMarkBuilders,
+  createNodeBuilders,
   type MarkBuilder,
   type NodeBuilder,
 } from './builder'
@@ -58,16 +58,15 @@ export interface EditorOptions<E extends Extension> {
 }
 
 /**
- * @public
+ * @internal
  */
-export function createEditor<E extends Extension>(
+export function setupEditorExtension<E extends Extension>(
   options: EditorOptions<E>,
-): Editor<E> {
+): E {
   const { defaultDoc, defaultHTML, defaultSelection } = options
-  let extension: E = options.extension
   if (defaultDoc || defaultHTML) {
-    extension = union([
-      extension,
+    return union([
+      options.extension,
       defineDefaultState({
         defaultDoc,
         defaultHTML,
@@ -75,21 +74,31 @@ export function createEditor<E extends Extension>(
       }),
     ]) as Extension as E
   }
+  return options.extension
+}
+
+/**
+ * @public
+ */
+export function createEditor<E extends Extension>(
+  options: EditorOptions<E>,
+): Editor<E> {
+  const extension = setupEditorExtension(options)
   return Editor.create(new EditorInstance(extension)) as Editor<E>
 }
 
 /**
  * @internal
  */
-class EditorInstance {
+export class EditorInstance {
   view: EditorView | null = null
   schema: Schema
+  nodeBuilders: Record<string, NodeBuilder>
+  markBuilders: Record<string, MarkBuilder>
   commandAppliers: Record<string, CommandApplier> = {}
 
   private tree: FacetNode
   private directEditorProps: DirectEditorProps
-  readonly nodeBuilders: Record<string, NodeBuilder>
-  readonly markBuilders: Record<string, MarkBuilder>
 
   constructor(extension: Extension) {
     this.tree = (extension as BaseExtension).getTree()
@@ -108,25 +117,14 @@ class EditorInstance {
       }
     }
 
+    this.nodeBuilders = createNodeBuilders(state.schema, this.getState)
+    this.markBuilders = createMarkBuilders(state.schema, this.getState)
+
     this.schema = state.schema
     this.directEditorProps = { state, ...payload.view }
-
-    const getState = this.getState.bind(this)
-    this.nodeBuilders = Object.fromEntries(
-      Object.values(this.schema.nodes).map((type) => [
-        type.name,
-        createNodeBuilder(getState, type),
-      ]),
-    )
-    this.markBuilders = Object.fromEntries(
-      Object.values(this.schema.marks).map((type) => [
-        type.name,
-        createMarkBuilder(getState, type),
-      ]),
-    )
   }
 
-  public getState(): EditorState {
+  public getState = (): EditorState => {
     return this.view?.state || this.directEditorProps.state
   }
 
@@ -268,15 +266,17 @@ class EditorInstance {
  */
 export class Editor<E extends Extension = any> {
   private instance: EditorInstance
+  private afterMounted: Array<VoidFunction> = []
 
-  private constructor(instance: EditorInstance) {
+  /**
+   * @internal
+   */
+  constructor(instance: EditorInstance) {
     this.instance = instance
     this.mount = this.mount.bind(this)
     this.unmount = this.unmount.bind(this)
     this.use = this.use.bind(this)
   }
-
-  private afterMounted: Array<VoidFunction> = []
 
   /**
    * @internal

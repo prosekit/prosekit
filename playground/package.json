@@ -10,7 +10,7 @@
     "preview": "astro preview",
     "lint:vue": "vue-tsc --noEmit --emitDeclarationOnly false --project examples/vue.tsconfig.json",
     "astro": "astro",
-    "test": "playwright install chromium && playwright test"
+    "test": "playwright test"
   },
   "devDependencies": {
     "@astrojs/preact": "^3.5.0",
@@ -19,7 +19,7 @@
     "@astrojs/svelte": "^5.6.0",
     "@astrojs/vue": "^4.5.0",
     "@iconify-json/lucide": "^1.1.194",
-    "@playwright/test": "^1.44.1",
+    "@playwright/test": "^1.45.0",
     "@prosekit/dev": "workspace:*",
     "@prosekit/themes": "workspace:*",
     "@prosekit/unocss-preset": "workspace:*",

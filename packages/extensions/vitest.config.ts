@@ -1,7 +1,3 @@
-import { defineProject } from 'vitest/config'
+import { config } from '@prosekit/dev/config-vitest'
 
-export default defineProject({
-  test: {
-    environment: 'jsdom',
-  },
-})
+export default config

@@ -62,7 +62,11 @@ export function setupTest<E extends Extension>(
   m: Record<ExtractMarks<E>, MarkBuilder>
 } {
   const editor = createTestEditor({ extension })
-  editor.mount(document.createElement('div'))
+
+  const div = document.body.appendChild(document.createElement('div'))
+  div.style.minWidth = '200px'
+  div.style.minHeight = '200px'
+  editor.mount(div)
   editor.view.dom.focus()
 
   const n = editor.nodes

@@ -1,17 +1,14 @@
-import { defineConfig } from 'vitest/config'
+import { defineProject } from 'vitest/config'
 
-export default defineConfig({
+export const config = defineProject({
   test: {
-    coverage: {
-      enabled: false,
-      all: false,
-      provider: 'istanbul',
-    },
     browser: {
       enabled: true,
       provider: 'playwright',
       name: 'chromium',
       headless: true,
+      ui: false,
+      screenshotFailures: false,
     },
     fileParallelism: false,
   },

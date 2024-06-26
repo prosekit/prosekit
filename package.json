@@ -16,7 +16,8 @@
     "gen": "turbo run gen --force && pnpm install --prefer-offline --no-frozen-lockfile",
     "test": "vitest",
     "test:coverage": "vitest run --coverage.enabled",
-    "test:playground": "pnpm --filter='./playground' run test",
+    "test:e2e": "pnpm --filter='./playground' run test",
+    "test:install": "playwright install chromium",
     "typecheck": "tsc --build tsconfig.json",
     "lint": "eslint .",
     "fix": "manypkg fix && turbo run gen --force && eslint . --fix && prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-astro --write .",
@@ -36,10 +37,12 @@
     "@size-limit/esbuild-why": "^11.1.4",
     "@size-limit/preset-small-lib": "^11.1.4",
     "@unocss/eslint-config": "^0.61.0",
-    "@vitest/coverage-istanbul": "^1.6.0",
+    "@vitest/browser": "^2.0.0-beta.12",
+    "@vitest/coverage-istanbul": "^2.0.0-beta.12",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "jsdom": "^24.1.0",
+    "playwright": "^1.45.0",
     "prettier": "^3.3.2",
     "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-svelte": "^3.2.5",
@@ -47,7 +50,7 @@
     "turbo": "^2.0.4",
     "typescript": "^5.5.2",
     "unocss": "^0.61.0",
-    "vitest": "^1.6.0"
+    "vitest": "^2.0.0-beta.12"
   },
   "pnpm": {
     "overrides": {},

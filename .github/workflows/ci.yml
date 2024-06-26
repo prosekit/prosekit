@@ -69,7 +69,7 @@ jobs:
         run: pnpm run test:install
 
       - name: Run e2e tests
-        run: pnpm run test:playground --shard="${{ matrix.shard }}/3"
+        run: pnpm run test:e2e --shard="${{ matrix.shard }}/3"
 
   build:
     runs-on: ubuntu-latest

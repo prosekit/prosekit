@@ -16,7 +16,7 @@
     "gen": "turbo run gen --force && pnpm install --prefer-offline --no-frozen-lockfile",
     "test": "vitest",
     "test:coverage": "vitest run --coverage.enabled",
-    "test:playground": "pnpm --filter='./playground' run test",
+    "test:e2e": "pnpm --filter='./playground' run test",
     "test:install": "playwright install chromium",
     "typecheck": "tsc --build tsconfig.json",
     "lint": "eslint .",

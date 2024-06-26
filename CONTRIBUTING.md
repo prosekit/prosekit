@@ -30,7 +30,7 @@ ProseKit includes unit tests and integration tests. To run the tests, you can us
 
 - `pnpm run test:install` to install Playwright, which is required for running unit and integration tests.
 - `pnpm run test` to run all unit tests.
-- `pnpm run test:playground` to run all integration tests.
+- `pnpm run test:e2e` to run all integration tests.
 
 ## Pull Requests
 

@@ -24,7 +24,9 @@ export interface ExtensionTyping<
 /**
  * @public
  */
-export interface Extension<T extends ExtensionTyping<any, any, any> = any> {
+export interface Extension<
+  T extends ExtensionTyping<any, any, any> = ExtensionTyping<any, any, any>,
+> {
   extension: Extension | Extension[]
   priority?: Priority
   _type?: T

@@ -4,6 +4,7 @@
   "entryPoints": [
     "./src/basic.gen.ts",
     "./src/core.gen.ts",
+    "./src/core/test.gen.ts",
     "./src/extensions.gen.ts",
     "./src/extensions/autocomplete.gen.ts",
     "./src/extensions/blockquote.gen.ts",

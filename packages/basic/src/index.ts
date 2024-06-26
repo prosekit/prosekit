@@ -23,8 +23,8 @@ import { defineUnderline } from '@prosekit/extensions/underline'
 import { defineVirtualSelection } from '@prosekit/extensions/virtual-selection'
 
 /**
- * A basic extension that includes some common functionality. You can copy this
- * function and customize it to your needs.
+ * Define a basic extension that includes some common functionality. You can
+ * copy this function and customize it to your needs.
  * @public
  */
 export function defineBasicExtension() {

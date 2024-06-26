@@ -30,6 +30,7 @@
     "./basic/style.css": "./src/basic/style.css",
     "./basic/typography.css": "./src/basic/typography.css",
     "./core": "./src/core.gen.ts",
+    "./core/test": "./src/core/test.gen.ts",
     "./extensions": "./src/extensions.gen.ts",
     "./extensions/autocomplete": "./src/extensions/autocomplete.gen.ts",
     "./extensions/blockquote": "./src/extensions/blockquote.gen.ts",
@@ -205,6 +206,11 @@
         "types": "./dist/prosekit-core.d.ts",
         "import": "./dist/prosekit-core.js",
         "default": "./dist/prosekit-core.js"
+      },
+      "./core/test": {
+        "types": "./dist/prosekit-core-test.d.ts",
+        "import": "./dist/prosekit-core-test.js",
+        "default": "./dist/prosekit-core-test.js"
       },
       "./extensions": {
         "types": "./dist/prosekit-extensions.d.ts",
@@ -653,6 +659,9 @@
         ],
         "core": [
           "./dist/prosekit-core.d.ts"
+        ],
+        "core/test": [
+          "./dist/prosekit-core-test.d.ts"
         ],
         "extensions": [
           "./dist/prosekit-extensions.d.ts"

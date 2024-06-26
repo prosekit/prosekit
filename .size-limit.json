@@ -16,6 +16,10 @@
     "path": "packages/prosekit/dist/prosekit-core.js"
   },
   {
+    "name": "prosekit/core/test",
+    "path": "packages/prosekit/dist/prosekit-core-test.js"
+  },
+  {
     "name": "prosekit/extensions",
     "path": "packages/prosekit/dist/prosekit-extensions.js"
   },

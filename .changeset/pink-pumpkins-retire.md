@@ -3,4 +3,4 @@
 '@prosekit/core': minor
 ---
 
-Introduce the `prosekit/test` module, which provides a set of utilities for testing purposes.
+Introduce the `prosekit/core/test` entry point, which provides helpers for writing tests for ProseKit.

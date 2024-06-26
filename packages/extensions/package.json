@@ -75,6 +75,7 @@
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
+    "@vitest/browser": "^2.0.0-beta.12",
     "tsup": "^8.1.0",
     "typescript": "^5.5.2",
     "vitest": "^2.0.0-beta.12"

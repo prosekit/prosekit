@@ -245,6 +245,9 @@ importers:
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
+      '@vitest/browser':
+        specifier: ^2.0.0-beta.12
+        version: 2.0.0-beta.12(playwright@1.45.0)(typescript@5.5.2)(vitest@2.0.0-beta.12)
       tsup:
         specifier: ^8.1.0
         version: 8.1.0(@microsoft/api-extractor@7.47.0(@types/node@20.14.8))(postcss@8.4.38)(typescript@5.5.2)

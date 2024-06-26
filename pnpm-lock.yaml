@@ -211,6 +211,9 @@ importers:
       typescript:
         specifier: ^5.5.2
         version: 5.5.2
+      vitest:
+        specifier: ^2.0.0-beta.12
+        version: 2.0.0-beta.12(@types/node@20.14.8)(@vitest/browser@2.0.0-beta.12)(@vitest/ui@1.6.0)(jsdom@24.1.0)(lightningcss@1.25.1)
 
   packages/extensions:
     dependencies:

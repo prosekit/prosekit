@@ -6,7 +6,6 @@ import { defineReadonly } from 'prosekit/extensions/readonly'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-
 export default function DiffViewer({ commit }: { commit: Commit }) {
   const editor = useMemo(() => {
     const extension = union([

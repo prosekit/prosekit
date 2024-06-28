@@ -144,7 +144,7 @@ function decorateDeletedSlice(
     serializer.serializeFragment(content, { document }, element)
 
     // Add the class to the element
-    element.classList.add('prosekit-commit-deleted')
+    element.classList.add('prosekit-commit-deletion')
     return element
   }
 
@@ -181,7 +181,7 @@ function decorateInserted(
   /** The end position of the inserted text in the doc node */
   to: number,
 ): Decoration {
-  return Decoration.inline(from, to, { class: 'prosekit-commit-inserted' })
+  return Decoration.inline(from, to, { class: 'prosekit-commit-addition' })
 }
 
 function decorateChange(prev: ProseMirrorNode, change: Change): Decoration[] {

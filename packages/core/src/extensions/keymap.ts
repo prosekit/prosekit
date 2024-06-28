@@ -72,7 +72,7 @@ export const keymapFacet = defineFacet<KeymapPayload, PluginPayload>({
   reduce: () => {
     type Handler = (view: EditorView, event: KeyboardEvent) => boolean
 
-    let handler: Handler | null = null
+    let handler: Handler | undefined
 
     const handlerWrapper: Handler = (view, event) => {
       if (handler) return handler(view, event)

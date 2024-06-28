@@ -48,7 +48,7 @@ async function genReferenceItems() {
 
       const parts = importPath.split('/')
       let currentItems = items
-      let currentItem: SidebarItem | null = null
+      let currentItem: SidebarItem | undefined
 
       for (const part of parts) {
         currentItem = currentItems.find((item) => item.text === part) ?? {

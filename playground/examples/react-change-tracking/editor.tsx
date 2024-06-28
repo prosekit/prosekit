@@ -1,12 +1,8 @@
 import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
-import {
-  CommitRecorder,
-  type Commit,
-  } from 'prosekit/extensions/commit'
+import { CommitRecorder, type Commit } from 'prosekit/extensions/commit'
 import { useCallback, useMemo, useState } from 'react'
-
 
 import EditorDiff from './editor-diff'
 import EditorMain from './editor-main'

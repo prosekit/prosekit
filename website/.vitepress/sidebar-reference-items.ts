@@ -45,6 +45,10 @@ export const referenceItems = [
         "link": "/references/extensions/code-block"
       },
       {
+        "text": "commit",
+        "link": "/references/extensions/commit"
+      },
+      {
         "text": "drop-cursor",
         "link": "/references/extensions/drop-cursor"
       },

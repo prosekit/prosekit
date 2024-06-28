@@ -37,6 +37,8 @@
     "./extensions/bold": "./src/extensions/bold.gen.ts",
     "./extensions/code": "./src/extensions/code.gen.ts",
     "./extensions/code-block": "./src/extensions/code-block.gen.ts",
+    "./extensions/commit": "./src/extensions/commit.gen.ts",
+    "./extensions/commit/style.css": "./src/extensions/commit/style.css",
     "./extensions/drop-cursor": "./src/extensions/drop-cursor.gen.ts",
     "./extensions/enter-rule": "./src/extensions/enter-rule.gen.ts",
     "./extensions/heading": "./src/extensions/heading.gen.ts",
@@ -241,6 +243,14 @@
         "types": "./dist/prosekit-extensions-code-block.d.ts",
         "import": "./dist/prosekit-extensions-code-block.js",
         "default": "./dist/prosekit-extensions-code-block.js"
+      },
+      "./extensions/commit": {
+        "types": "./dist/prosekit-extensions-commit.d.ts",
+        "import": "./dist/prosekit-extensions-commit.js",
+        "default": "./dist/prosekit-extensions-commit.js"
+      },
+      "./extensions/commit/style.css": {
+        "default": "./dist/extensions/commit/style.css"
       },
       "./extensions/drop-cursor": {
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
@@ -680,6 +690,9 @@
         ],
         "extensions/code-block": [
           "./dist/prosekit-extensions-code-block.d.ts"
+        ],
+        "extensions/commit": [
+          "./dist/prosekit-extensions-commit.d.ts"
         ],
         "extensions/drop-cursor": [
           "./dist/prosekit-extensions-drop-cursor.d.ts"

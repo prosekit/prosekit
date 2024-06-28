@@ -4,6 +4,8 @@
 
 - [bold](./examples/bold)
 
+- [change-tracking](./examples/change-tracking)
+
 - [code](./examples/code)
 
 - [code-block](./examples/code-block)

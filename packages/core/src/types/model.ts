@@ -38,3 +38,17 @@ export interface StateJSON {
    */
   selection: SelectionJSON
 }
+
+/**
+ * A JSON representation of the prosemirror step.
+ *
+ * @public
+ */
+export interface StepJSON {
+  /**
+   * The type of the step.
+   */
+  stepType: string
+
+  [x: string]: unknown
+}

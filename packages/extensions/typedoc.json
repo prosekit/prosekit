@@ -7,6 +7,7 @@
     "./src/bold/index.ts",
     "./src/code-block/index.ts",
     "./src/code/index.ts",
+    "./src/commit/index.ts",
     "./src/drop-cursor/index.ts",
     "./src/enter-rule/index.ts",
     "./src/heading/index.ts",

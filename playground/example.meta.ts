@@ -19,6 +19,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-change-tracking",
+      "framework": "react",
+      "story": "change-tracking",
+      "files": [
+        {
+          "path": "editor-diff.tsx",
+          "hidden": false
+        },
+        {
+          "path": "editor-main.tsx",
+          "hidden": false
+        },
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-code-block",
       "framework": "react",
       "story": "code-block",

@@ -2,8 +2,16 @@ import { ProseMirrorFragment, ProseMirrorNode } from '@prosekit/pm/model'
 
 import { ProseKitError } from '../error'
 
+/**
+ * @public
+ */
 export type NodeContent = ProseMirrorNode | ProseMirrorFragment | NodeContent[]
 
+/**
+ * Collects all nodes from a given content.
+ *
+ * @public
+ */
 export function collectNodes(content: NodeContent): ProseMirrorNode[] {
   if (Array.isArray(content)) {
     return content.flatMap(collectNodes)

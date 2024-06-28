@@ -120,6 +120,7 @@ export default defineConfig({
         },
 
         {
+          text: 'Functionality',
           items: [
             { text: 'Placeholder', link: '/extensions/placeholder' },
             { text: 'Text Align', link: '/extensions/text-align' },
@@ -127,6 +128,7 @@ export default defineConfig({
             { text: 'Input Rule', link: '/extensions/input-rule' },
             { text: 'Drop Cursor', link: '/extensions/drop-cursor' },
             { text: 'Search', link: '/extensions/search' },
+            { text: 'Commit', link: '/extensions/commit' },
           ],
         },
       ],

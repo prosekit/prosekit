@@ -36,10 +36,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "add-class.ts",
-          "hidden": false
-        },
-        {
           "path": "commit.ts",
           "hidden": false
         },

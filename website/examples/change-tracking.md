@@ -14,7 +14,6 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/react-change-tracking/editor-diff.tsx
 <<< @/../playground/examples/react-change-tracking/editor-main.tsx
 <<< @/../playground/examples/react-change-tracking/editor.tsx
-<<< @/../playground/examples/react-change-tracking/add-class.ts
 <<< @/../playground/examples/react-change-tracking/commit.ts
 <<< @/../playground/examples/react-change-tracking/markdown.ts
 <<< @/../playground/examples/react-change-tracking/package.json

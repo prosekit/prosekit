@@ -13,6 +13,7 @@ export { union } from './editor/union'
 export { withPriority } from './editor/with-priority'
 export { EditorNotFoundError, ProseKitError } from './error'
 export { defineBaseCommands, defineCommands } from './extensions/command'
+export { collectNodes, type NodeContent } from './utils/collect-nodes'
 export {
   defineDefaultState,
   type DefaultStateOptions,
@@ -109,7 +110,12 @@ export type {
   ExtractNodes,
   UnionExtension,
 } from './types/extension'
-export type { NodeJSON, SelectionJSON, StateJSON } from './types/model'
+export type {
+  NodeJSON,
+  SelectionJSON,
+  StateJSON,
+  StepJSON,
+} from './types/model'
 export { Priority } from './types/priority'
 export type { SimplifyUnion } from './types/simplify-union'
 export { assert } from './utils/assert'

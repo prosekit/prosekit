@@ -1,10 +1,13 @@
 import 'prosekit/basic/style.css'
-import './style.css'
 
 import { Themes } from '@prosekit/themes'
+import {
+  CommitRecorder,
+  type Commit,
+  } from 'prosekit/extensions/commit'
 import { useCallback, useMemo, useState } from 'react'
 
-import { CommitRecorder, type Commit } from './commit'
+
 import EditorDiff from './editor-diff'
 import EditorMain from './editor-main'
 
@@ -15,9 +18,7 @@ export default function Editor() {
   const commitRecorder = useMemo(() => new CommitRecorder(), [])
   const handleCommit = useCallback(() => {
     const commit = commitRecorder.commit()
-    if (!commit) {
-      return
-    }
+    if (!commit) return
     const id = Math.random().toString(36).slice(2, 9)
     setCommits((prev) => [{ id, date: new Date(), commit }, ...prev])
   }, [commitRecorder])

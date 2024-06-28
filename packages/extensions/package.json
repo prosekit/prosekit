@@ -31,6 +31,8 @@
     "./bold": "./src/bold/index.ts",
     "./code": "./src/code/index.ts",
     "./code-block": "./src/code-block/index.ts",
+    "./commit": "./src/commit/index.ts",
+    "./commit/style.css": "./src/commit/style.css",
     "./drop-cursor": "./src/drop-cursor/index.ts",
     "./enter-rule": "./src/enter-rule/index.ts",
     "./heading": "./src/heading/index.ts",
@@ -66,6 +68,7 @@
   "dependencies": {
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
+    "prosemirror-changeset": "^2.2.1",
     "prosemirror-dropcursor": "^1.8.1",
     "prosemirror-flat-list": "^0.5.0",
     "prosemirror-highlight": "^0.8.0",
@@ -111,6 +114,14 @@
         "types": "./dist/prosekit-extensions-code-block.d.ts",
         "import": "./dist/prosekit-extensions-code-block.js",
         "default": "./dist/prosekit-extensions-code-block.js"
+      },
+      "./commit": {
+        "types": "./dist/prosekit-extensions-commit.d.ts",
+        "import": "./dist/prosekit-extensions-commit.js",
+        "default": "./dist/prosekit-extensions-commit.js"
+      },
+      "./commit/style.css": {
+        "default": "./dist/commit/style.css"
       },
       "./drop-cursor": {
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
@@ -245,6 +256,9 @@
         ],
         "code-block": [
           "./dist/prosekit-extensions-code-block.d.ts"
+        ],
+        "commit": [
+          "./dist/prosekit-extensions-commit.d.ts"
         ],
         "drop-cursor": [
           "./dist/prosekit-extensions-drop-cursor.d.ts"

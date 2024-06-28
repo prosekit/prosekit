@@ -11,6 +11,7 @@
     "./src/extensions/bold.gen.ts",
     "./src/extensions/code-block.gen.ts",
     "./src/extensions/code.gen.ts",
+    "./src/extensions/commit.gen.ts",
     "./src/extensions/drop-cursor.gen.ts",
     "./src/extensions/enter-rule.gen.ts",
     "./src/extensions/heading.gen.ts",

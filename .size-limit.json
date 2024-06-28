@@ -44,6 +44,14 @@
     "path": "packages/prosekit/dist/prosekit-extensions-code-block.js"
   },
   {
+    "name": "prosekit/extensions/commit",
+    "path": "packages/prosekit/dist/prosekit-extensions-commit.js"
+  },
+  {
+    "name": "prosekit/extensions/commit/style.css",
+    "path": "packages/prosekit/dist/extensions/commit/style.css"
+  },
+  {
     "name": "prosekit/extensions/drop-cursor",
     "path": "packages/prosekit/dist/prosekit-extensions-drop-cursor.js"
   },

@@ -223,6 +223,9 @@ importers:
       '@prosekit/pm':
         specifier: workspace:^
         version: link:../pm
+      prosemirror-changeset:
+        specifier: ^2.2.1
+        version: 2.2.1
       prosemirror-dropcursor:
         specifier: ^1.8.1
         version: 1.8.1
@@ -721,9 +724,6 @@ importers:
       prosekit:
         specifier: workspace:*
         version: link:../packages/prosekit
-      prosemirror-changeset:
-        specifier: ^2.2.1
-        version: 2.2.1
       react:
         specifier: ^18.3.1
         version: 18.3.1

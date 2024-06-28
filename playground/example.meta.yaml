@@ -17,10 +17,6 @@ examples:
         hidden: false
       - path: editor.tsx
         hidden: false
-      - path: commit.ts
-        hidden: false
-      - path: style.css
-        hidden: false
   - name: react-code-block
     framework: react
     story: code-block

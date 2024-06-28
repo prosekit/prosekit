@@ -34,14 +34,6 @@ export const exampleMeta = {
         {
           "path": "editor.tsx",
           "hidden": false
-        },
-        {
-          "path": "commit.ts",
-          "hidden": false
-        },
-        {
-          "path": "style.css",
-          "hidden": false
         }
       ]
     },

@@ -56,7 +56,7 @@ function renderDivWeight(view: EditorView): HTMLElement {
   return document.createElement('div')
 }
 
-function decorateDeletedSlice(
+function decorateDeletionSlice(
   slice: Slice,
 ): Array<(view: EditorView) => HTMLElement> {
   // Get the fragment of the deleted content
@@ -87,9 +87,9 @@ function decorateDeletedSlice(
     const head = Fragment.from([content.child(0)])
     const tail = Fragment.from([content.child(1)])
     return [
-      ...decorateDeletedSlice(new Slice(head, openStart, openStart)),
+      ...decorateDeletionSlice(new Slice(head, openStart, openStart)),
       renderDivWeight,
-      ...decorateDeletedSlice(new Slice(tail, openEnd, openEnd)),
+      ...decorateDeletionSlice(new Slice(tail, openEnd, openEnd)),
     ]
   }
 
@@ -108,8 +108,8 @@ function decorateDeletedSlice(
     const body = Fragment.from(nodes.slice(1))
 
     return [
-      ...decorateDeletedSlice(new Slice(head, openStart, openStart)),
-      ...decorateDeletedSlice(new Slice(body, 0, openEnd)),
+      ...decorateDeletionSlice(new Slice(head, openStart, openStart)),
+      ...decorateDeletionSlice(new Slice(body, 0, openEnd)),
     ]
   }
 
@@ -127,8 +127,8 @@ function decorateDeletedSlice(
     const body = Fragment.from(nodes.slice(0, -1))
     const tail = Fragment.from(nodes.slice(-1))
     return [
-      ...decorateDeletedSlice(new Slice(body, openStart, 0)),
-      ...decorateDeletedSlice(new Slice(tail, openEnd, openEnd)),
+      ...decorateDeletionSlice(new Slice(body, openStart, 0)),
+      ...decorateDeletionSlice(new Slice(tail, openEnd, openEnd)),
     ]
   }
 
@@ -151,7 +151,7 @@ function decorateDeletedSlice(
   return [render]
 }
 
-function decorateDeleted(
+function decorateDeletion(
   /** The doc node before the deletion */
   doc: ProseMirrorNode,
   /** The start position of the deleted text in the doc node */
@@ -163,7 +163,7 @@ function decorateDeleted(
 ): Decoration[] {
   const slice = doc.slice(from, to)
 
-  const renders = decorateDeletedSlice(slice)
+  const renders = decorateDeletionSlice(slice)
   const count = renders.length
 
   return renders.map((render, index) =>
@@ -175,7 +175,7 @@ function decorateDeleted(
   )
 }
 
-function decorateInserted(
+function decorateAddition(
   /** The start position of the inserted text in the doc node */
   from: number,
   /** The end position of the inserted text in the doc node */
@@ -189,10 +189,10 @@ function decorateChange(prev: ProseMirrorNode, change: Change): Decoration[] {
   const decorations: Decoration[] = []
 
   if (fromA < toA) {
-    decorations.push(...decorateDeleted(prev, fromA, toA, fromB))
+    decorations.push(...decorateDeletion(prev, fromA, toA, fromB))
   }
   if (fromB < toB) {
-    decorations.push(decorateInserted(fromB, toB))
+    decorations.push(decorateAddition(fromB, toB))
   }
 
   return decorations

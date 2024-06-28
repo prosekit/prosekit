@@ -7,6 +7,10 @@ export const exampleItems = [
     "link": "/examples/bold"
   },
   {
+    "text": "change-tracking",
+    "link": "/examples/change-tracking"
+  },
+  {
     "text": "code",
     "link": "/examples/code"
   },

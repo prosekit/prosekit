@@ -256,10 +256,12 @@ class CommitRecorder {
    * will be returned if there is no change.
    */
   commit(): Commit | null {
-    if (!this.parent || !this.doc) {
-      return null
-    }
-    if (this.parent.eq(this.doc)) {
+    if (
+      !this.parent ||
+      !this.doc ||
+      this.steps.length === 0 ||
+      this.parent.eq(this.doc)
+    ) {
       return null
     }
 

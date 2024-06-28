@@ -200,6 +200,12 @@ export const SEARCH_TEXT_BUTTON = cn(
   BUTTON_SIZE_DEFAULT,
 )
 
+export const BUTTON_PRIMARY = cn(
+  BUTTON_BASE,
+  BUTTON_VARIANT_PRIMARY,
+  BUTTON_SIZE_DEFAULT,
+)
+
 export const SEARCH_INPUT = cn(INPUT, 'col-start-2')
 export const SEARCH_CONTROLLER = cn('flex items-center justify-between gap-1')
 

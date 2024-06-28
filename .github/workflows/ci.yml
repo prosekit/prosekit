@@ -84,7 +84,7 @@ jobs:
       - uses: ./.github/actions/setup
 
       - name: Build
-        run: pnpm run build
+        run: pnpm run build:package
 
   linkcheck:
     runs-on: ubuntu-latest
@@ -103,7 +103,7 @@ jobs:
       - uses: ./.github/actions/setup
 
       - name: Build without clean URLs
-        run: pnpm run build
+        run: pnpm run build:website
         env:
           PROSEKIT_NO_CLEAN_URLS: 'yes'
 

@@ -62,9 +62,10 @@ function decorateDeleted(
 
   const render = (view: EditorView): HTMLElement => {
     const document = view.dom.ownerDocument
+    const isInline = content.firstChild?.isInline
 
     // Render the fragment to HTML
-    const element = document.createElement('span')
+    const element = document.createElement(isInline ? 'span' : 'div')
     const serializer = DOMSerializer.fromSchema(doc.type.schema)
     serializer.serializeFragment(content, { document }, element)
 

@@ -1,5 +1,6 @@
 .prosekit-commit-deleted {
   background-color: #f08080;
+  text-decoration: line-through;
 }
 .prosekit-commit-inserted {
   background-color: #80f080;

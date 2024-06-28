@@ -48,7 +48,7 @@ export const domEventFacet = defineFacet<DOMEventPayload, PluginPayload>({
     const setHandlersMap: Record<string, Setter<DOMEventHandler[]>> = {}
     const combinedHandlerMap: Record<string, DOMEventHandler> = {}
 
-    let plugin: ProseMirrorPlugin | null = null
+    let plugin: ProseMirrorPlugin | undefined
 
     const update = (payloads: DOMEventPayload[]): void => {
       let hasNewEvent = false

@@ -1,6 +1,6 @@
 import { findRoot } from '@manypkg/find-root'
 
-let rootDir: string | null = null
+let rootDir: string | undefined
 
 export async function findRootDir() {
   if (!rootDir) {

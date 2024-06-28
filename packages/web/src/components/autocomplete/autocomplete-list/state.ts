@@ -95,7 +95,7 @@ function useKeyboardHandler(
     null,
   )
 
-  let disposeKeydownHandler: VoidFunction | null = null
+  let disposeKeydownHandler: VoidFunction | undefined
 
   useEffect(element, () => {
     const editorValue = editor.get()
@@ -126,7 +126,7 @@ function useKeyboardHandler(
     keydownHandler.set(keydownHandlerValue)
     return () => {
       disposeKeydownHandler?.()
-      disposeKeydownHandler = null
+      disposeKeydownHandler = undefined
     }
   }
 }

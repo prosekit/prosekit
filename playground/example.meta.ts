@@ -40,14 +40,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "markdown.ts",
-          "hidden": false
-        },
-        {
-          "path": "package.json",
-          "hidden": false
-        },
-        {
           "path": "style.css",
           "hidden": false
         }

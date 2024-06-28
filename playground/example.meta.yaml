@@ -19,10 +19,6 @@ examples:
         hidden: false
       - path: commit.ts
         hidden: false
-      - path: markdown.ts
-        hidden: false
-      - path: package.json
-        hidden: false
       - path: style.css
         hidden: false
   - name: react-code-block

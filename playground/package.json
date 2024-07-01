@@ -18,7 +18,7 @@
     "@astrojs/solid-js": "^4.4.0",
     "@astrojs/svelte": "^5.6.0",
     "@astrojs/vue": "^4.5.0",
-    "@iconify-json/lucide": "^1.1.195",
+    "@iconify-json/lucide": "^1.1.197",
     "@playwright/test": "^1.45.0",
     "@prosekit/dev": "workspace:*",
     "@prosekit/themes": "workspace:*",
@@ -28,7 +28,7 @@
     "@unocss/reset": "^0.61.0",
     "astro": "^4.11.3",
     "lit": "^3.1.4",
-    "preact": "^10.22.0",
+    "preact": "^10.22.1",
     "prettier": "^3.3.2",
     "prosekit": "workspace:*",
     "react": "^18.3.1",
@@ -38,12 +38,12 @@
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
-    "solid-js": "^1.8.17",
+    "solid-js": "^1.8.18",
     "svelte": "^4.2.18",
     "typescript": "^5.5.2",
     "unified": "^11.0.5",
     "unocss": "^0.61.0",
-    "vue": "^3.4.30",
-    "vue-tsc": "^2.0.22"
+    "vue": "^3.4.31",
+    "vue-tsc": "^2.0.24"
   }
 }

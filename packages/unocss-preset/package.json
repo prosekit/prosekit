@@ -28,7 +28,7 @@
     "dist"
   ],
   "dependencies": {
-    "@manypkg/find-root": "^2.2.1",
+    "@manypkg/find-root": "^2.2.2",
     "@prosekit/themes": "workspace:*",
     "unocss-preset-animations": "^1.0.2"
   },

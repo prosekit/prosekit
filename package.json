@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@antfu/ni": "^0.21.12",
-    "@changesets/cli": "^2.27.6",
+    "@changesets/cli": "^2.27.7",
     "@changesets/types": "^6.0.0",
     "@manypkg/cli": "^0.21.4",
     "@ocavue/eslint-config": "^1.6.0",
@@ -47,7 +47,7 @@
     "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-svelte": "^3.2.5",
     "size-limit": "^11.1.4",
-    "turbo": "^2.0.5",
+    "turbo": "^2.0.6",
     "typescript": "^5.5.2",
     "unocss": "^0.61.0",
     "vitest": "^2.0.0-beta.12"

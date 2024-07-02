@@ -23,7 +23,7 @@ export function defineFancyParagraph() {
 }
 ```
 
-You can use `union` to merge multiple extensions into one.
+You can use [`union`] to merge multiple extensions into one.
 
 ```ts twoslash
 import {
@@ -86,7 +86,7 @@ Check out the [save-json] example for an example of using event handlers to save
 
 ## Priority
 
-By default, later extensions have higher priority. To override this, such as for setting keybinding order, use the `withPriority` function.
+By default, later extensions have higher priority. To override this, such as for setting keybinding order, use the [`withPriority`] function.
 
 ## A Starter Set of Extensions
 

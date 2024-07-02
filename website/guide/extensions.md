@@ -2,52 +2,79 @@
 
 In ProseKit, many features are provided in the form of extensions. Extensions can do various things, such as defining a Node or Mark, adding a shortcut key, or combining a series of complex functionalities.
 
-Extensions are provided in the form of functions. An extension function can return one or more extensions. By convention, the name of an extension function should start with `define`.
+Extensions are provided in the form of functions. By convention, the name of an extension function should start with `define`.
 
-```js
-function defineFancyHeading() {
-  return defineFeatureA({ optionA: '...', optionB: '...' })
+```ts twoslash
+import { defineNodeSpec } from 'prosekit/core'
+
+/**
+ * Return an extension that defines a paragraph type with custom styles.
+ */
+export function defineFancyParagraph() {
+  return defineNodeSpec({
+    name: 'paragraph',
+    content: 'inline*',
+    group: 'block',
+    parseDOM: [{ tag: 'p' }],
+    toDOM() {
+      return ['p', { class: 'fancy-paragraph' }, 0]
+    },
+  })
 }
 ```
 
-```js
+You can use `union` to merge multiple extensions into one.
+
+```ts twoslash
+import {
+  defineHeadingSpec as defineFancyHeadingSpec,
+  defineHeadingKeymap as defineFancyHeadingKeymap,
+  defineHeadingCommands as defineFancyHeadingCommands,
+} from 'prosekit/extensions/heading'
+
+// ---cut---
 import { union } from 'prosekit/core'
 
-function defineAwesomeFeature() {
+/**
+ * Return an extension that defines heading node spec, keymap and commands.
+ */
+function defineFancyHeading() {
   return union([
-    defineFeatureA({optionA: "...", optionB: "..."})
-    defineFeatureB()
+    defineFancyHeadingSpec(),
+    defineFancyHeadingKeymap(),
+    defineFancyHeadingCommands(),
   ])
 }
 ```
 
 ## List of Core Extensions
 
-`prosekit/core` provides some core extensions that's used by almost all editors.
+`prosekit/core` includes essential extensions used by nearly all editors. These
+extensions add various features to the editor, and allother extensions are built
+upon them.
 
-You can use the following extensions to add more features to the editor. All other extensions are built on top of these extensions.
-
-- [`defineNodeSpec`] can be used to define a node type.
-- [`defineMarkSpec`] can be used to define a mark type.
-- [`defineCommands`] configures some commands into the editor.
-- [`defineBaseCommands`] configures some pre-defined basic commands.
-- [`defineKeymap`] configures some keybindings into the editor.
-- [`defineBaseKeymap`] configures a set of pre-defined basic keybindings.
-- [`definePlugin`] registers a [plugin] into the editor.
-- [`defineNodeView`] registers a [node view] into the editor.
-- [`defineHistory`] allows the editor to undo/redo.
+- [`defineNodeSpec`] defines a node type.
+- [`defineMarkSpec`] defines a mark type.
+- [`defineCommands`] configures commands in the editor.
+- [`defineBaseCommands`] sets up basic predefined commands.
+- [`defineKeymap`] configures keybindings.
+- [`defineBaseKeymap`]sets up basic predefined keybindings.
+- [`definePlugin`] registers a plugin in the editor.
+- [`defineNodeView`] registers a node view in the editor.
+- [`defineHistory`] enables undo/redo functionality.
 
 ## Vital Node Types
 
-The following three extension functions defines a minimal editor schema. In most cases, you should include them in your editor, unless you are building something very special.
+The following extension functions define a minimal editor schema. They are
+generally included unless creating a highly specialized editor.
 
-- [`defineDoc`] adds a `doc` node type.
-- [`defineText`] adds a `text` node type.
-- [`defineParagraph`] adds a `paragraph` node type.
+- `defineDoc` adds a `doc` node type, serving as the root node of a document.
+- `defineParagraph` adds a `paragraph` node type, which holds inline nodes like `text`.
+- `defineText` adds a `text` node type, which holds text content.
 
 ## Event Handlers
 
-You can use the following functions to register event handlers into the editor.
+Use these functions to register event handlers in the editor.
 
 - [`defineMountHandler`] registers a event handler that's called when the editor is mounted.
 - [`defineUnmountHandler`] registers a event handler that's called when the editor is unmounted.
@@ -57,13 +84,17 @@ You can use the following functions to register event handlers into the editor.
 
 Check out the [save-json] example for an example of using event handlers to save and restore the editor document.
 
+## Priority
+
+By default, later extensions have higher priority. To override this, such as for setting keybinding order, use the `withPriority` function.
+
 ## A Starter Set of Extensions
 
-You can use the `defineBasicExtension` from `prosekit/basic` to quick start an editor with some common features. It includes some common node types, marks, commands, keybindings, and plugins.
+The `defineBasicExtension` from `prosekit/basic` can quickly set up an editor with common features, including node types, marks, commands, keybindings, and plugins.
 
 ## Enable Extensions Dynamically
 
-If you want to enable an extension after the editor is initialized, you can call `editor.use(extension)` to enable it. It will return a function that can be called to disable the extension.
+To enable an extension after initializing the editor, call `editor.use(extension)`. This method returns a function to disable the extension later.
 
 If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can also use the `useExtension` to enable or disable an extension dynamically in your application. Check out the [readonly](/extensions/readonly) for an example.
 
@@ -91,3 +122,5 @@ If you are using `React`, `Vue`, `Preact`, `Svelte` or `Solid`, you can also use
 [`defineUpdateHandler`]: /references/core#defineUpdateHandler
 [`defineDocChangeHandler`]: /references/core#defineDocChangeHandler
 [`defineFocusChangeHandler`]: /references/core#defineFocusChangeHandler
+[`withPriority`]: /references/core#withPriority
+[`union`]: /references/core#union

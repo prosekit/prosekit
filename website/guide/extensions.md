@@ -68,9 +68,9 @@ upon them.
 The following extension functions define a minimal editor schema. They are
 generally included unless creating a highly specialized editor.
 
-- `defineDoc` adds a `doc` node type, serving as the root node of a document.
-- `defineParagraph` adds a `paragraph` node type, which holds inline nodes like `text`.
-- `defineText` adds a `text` node type, which holds text content.
+- [`defineDoc`] adds a `doc` node type, serving as the root node of a document.
+- [`defineParagraph`] adds a `paragraph` node type, which holds inline nodes like `text`.
+- [`defineText`] adds a `text` node type, which holds text content.
 
 ## Event Handlers
 

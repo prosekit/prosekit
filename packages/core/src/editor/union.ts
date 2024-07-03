@@ -8,6 +8,17 @@ import { assert } from '../utils/assert'
  *
  * @throws If no extensions are provided.
  *
+ * @example
+ *
+ * ```ts
+ * function defineFancyNodes() {
+ *   return union([
+ *     defineFancyParagraph(),
+ *     defineFancyHeading(),
+ *   ])
+ * }
+ * ```
+ *
  * @public
  */
 export function union<const E extends Extension | readonly Extension[]>(

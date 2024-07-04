@@ -1,4 +1,4 @@
-import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
+import type { ParseOptions, ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import { DOMParser, DOMSerializer } from '@prosekit/pm/model'
 import { EditorState } from '@prosekit/pm/state'
 
@@ -8,22 +8,22 @@ import type { NodeJSON, StateJSON } from '../types/model'
 import { getBrowserDocument, getBrowserWindow } from './get-dom-api'
 
 /** @public */
-export type DOMParserOptions = {
+export interface DOMParserOptions extends ParseOptions {
   DOMParser?: typeof DOMParser
 }
 
 /** @public */
-export type DOMSerializerOptions = {
+export interface DOMSerializerOptions {
   DOMSerializer?: typeof DOMSerializer
 }
 
 /** @public */
-export type DOMDocumentOptions = {
+export interface DOMDocumentOptions {
   document?: Document
 }
 
 /** @public */
-export type JSONParserOptions = {
+export interface JSONParserOptions {
   schema: Schema
 }
 
@@ -84,9 +84,10 @@ export function nodeFromElement(
   element: DOMNode,
   options: DOMParserOptions & JSONParserOptions,
 ): ProseMirrorNode {
-  const Parser = options.DOMParser || DOMParser
-  const schema = options.schema
-  return Parser.fromSchema(schema).parse(element)
+  const { DOMParser: CustomDOMParser, schema, ...parseOptions } = options
+  return (CustomDOMParser || DOMParser)
+    .fromSchema(schema)
+    .parse(element, parseOptions)
 }
 
 /**

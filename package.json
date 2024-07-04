@@ -37,8 +37,8 @@
     "@size-limit/esbuild-why": "^11.1.4",
     "@size-limit/preset-small-lib": "^11.1.4",
     "@unocss/eslint-config": "^0.61.0",
-    "@vitest/browser": "^2.0.0-beta.12",
-    "@vitest/coverage-istanbul": "^2.0.0-beta.12",
+    "@vitest/browser": "^2.0.0-beta.13",
+    "@vitest/coverage-istanbul": "^2.0.0-beta.13",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "jsdom": "^24.1.0",
@@ -50,7 +50,7 @@
     "turbo": "^2.0.6",
     "typescript": "^5.5.3",
     "unocss": "^0.61.0",
-    "vitest": "^2.0.0-beta.12"
+    "vitest": "^2.0.0-beta.13"
   },
   "pnpm": {
     "overrides": {},

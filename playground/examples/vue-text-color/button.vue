@@ -5,7 +5,6 @@ import {
   TooltipRoot,
   TooltipTrigger,
 } from 'prosekit/vue/tooltip'
-import { ref } from 'vue'
 
 defineProps<{
   pressed?: Boolean
@@ -13,15 +12,10 @@ defineProps<{
   tooltip?: string
   onClick?: VoidFunction
 }>()
-
-const tooltipOpen = ref(false)
 </script>
 
 <template>
-  <TooltipRoot
-    :open="tooltipOpen"
-    @openChange="(value) => (tooltipOpen = value)"
-  >
+  <TooltipRoot>
     <TooltipTrigger :class="Themes.TOOLTIP_TRIGGER">
       <button
         :data-state="pressed ? 'on' : 'off'"
@@ -34,10 +28,7 @@ const tooltipOpen = ref(false)
         <span v-if="tooltip" class="sr-only">{{ tooltip }}</span>
       </button>
     </TooltipTrigger>
-    <TooltipContent
-      v-if="tooltip && !disabled && tooltipOpen"
-      :class="Themes.TOOLTIP_CONTENT"
-    >
+    <TooltipContent :class="Themes.TOOLTIP_CONTENT">
       {{ tooltip }}
     </TooltipContent>
   </TooltipRoot>

@@ -4,7 +4,7 @@ import {
   TooltipRoot,
   TooltipTrigger,
 } from 'prosekit/react/tooltip'
-import { type ReactNode } from 'react'
+import type { ReactNode } from 'react'
 
 export default function Button({
   pressed,
@@ -33,7 +33,6 @@ export default function Button({
           {tooltip ? <span className="sr-only">{tooltip}</span> : null}
         </button>
       </TooltipTrigger>
-
       <TooltipContent className={Themes.TOOLTIP_CONTENT}>
         {tooltip}
       </TooltipContent>

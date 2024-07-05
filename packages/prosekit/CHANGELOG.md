@@ -1,5 +1,27 @@
 # prosekit
 
+## 0.9.0
+
+### Minor Changes
+
+- [`4d5a32a`](https://github.com/ocavue/prosekit/commit/4d5a32a0ccb72d0a92a91802067c489a728d3e15) ![](https://prosekit.dev/b/core)
+
+  Introduce the `prosekit/core/test` entry point, which provides helpers for writing tests for ProseKit.
+
+- [`6c28770`](https://github.com/ocavue/prosekit/commit/6c28770f9a71bdfffbb0dc5bbae23d26c123ae97) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineCommitRecorder` and `defineCommitViewer` to track the changes in the document, and display them in a diff view.
+
+- [`259bc99`](https://github.com/ocavue/prosekit/commit/259bc99daa209b72b58e4c0c7a246d36e47172a2) ![](https://prosekit.dev/b/core)
+
+  Add `editor.updateState()` method.
+
+### Patch Changes
+
+- [`1970bb9`](https://github.com/ocavue/prosekit/commit/1970bb905c67659ae24c2b73dd6a162491aaf1c2) ![](https://prosekit.dev/b/core)
+
+  Add `ParseOptions` to `nodeFromElement`.
+
 ## 0.8.2
 
 ### Patch Changes

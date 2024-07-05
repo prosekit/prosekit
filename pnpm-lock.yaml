@@ -13875,7 +13875,7 @@ snapshots:
       '@vitejs/plugin-vue': 5.0.5(vite@5.3.3(@types/node@20.14.9)(lightningcss@1.25.1))(vue@3.4.31(typescript@5.5.3))
       '@vue/devtools-api': 7.2.1
       '@vue/shared': 3.4.31
-      '@vueuse/core': 10.11.0(vue@3.4.31(typescript@5.5.3))
+      '@vueuse/core': 10.10.0(vue@3.4.31(typescript@5.5.3))
       '@vueuse/integrations': 10.10.0(focus-trap@7.5.4)(vue@3.4.31(typescript@5.5.3))
       focus-trap: 7.5.4
       mark.js: 8.11.1

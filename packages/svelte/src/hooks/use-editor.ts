@@ -1,10 +1,10 @@
 import {
+  ProseKitError,
   defineMountHandler,
   defineUpdateHandler,
   union,
   type Editor,
   type Extension,
-  ProseKitError,
 } from '@prosekit/core'
 import { onMount } from 'svelte'
 import { readonly, writable, type Readable } from 'svelte/store'
@@ -45,10 +45,7 @@ export function useEditor<E extends Extension = any>(options?: {
         defineMountHandler(forceUpdate),
         defineUpdateHandler(forceUpdate),
       ])
-      const dispose = editor.use(extension)
-      return () => {
-        dispose()
-      }
+      return editor.use(extension)
     })
   }
 

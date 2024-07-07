@@ -34,4 +34,17 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 </template>
 
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte-toolbar/editor.svelte
+<<< @/../playground/examples/svelte-toolbar/extension.ts
+<<< @/../playground/examples/svelte-toolbar/toolbar.svelte
+<<< @/../playground/examples/svelte-toolbar/button.svelte
+
+:::
+
+</template>
+
 </ExamplePreview>

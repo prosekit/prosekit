@@ -1,4 +1,5 @@
 import {
+  defineNodeViewComponent,
   defineNodeViewFactory,
   type BaseNodeViewOptions,
   type Extension,
@@ -35,7 +36,7 @@ export interface VueNodeViewOptions extends BaseNodeViewOptions {
 export function defineVueNodeView(options: VueNodeViewOptions): Extension {
   const { name, ...userOptions } = options
 
-  return defineNodeViewFactory<VueNodeViewUserOptions>({
+  return defineNodeViewComponent<VueNodeViewUserOptions>({
     group: 'vue',
     name,
     args: userOptions,

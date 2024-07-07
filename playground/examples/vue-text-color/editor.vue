@@ -22,7 +22,10 @@ const defaultHTML =
 const editor = createEditor({ extension: defineExtension(), defaultHTML })
 
 const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect(() => editor.mount(editorRef.value))
+watchPostEffect((onCleanup) => {
+  editor.mount(editorRef.value)
+  onCleanup(() => editor.unmount())
+})
 </script>
 
 <template>

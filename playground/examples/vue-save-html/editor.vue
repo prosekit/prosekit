@@ -13,7 +13,6 @@ import { ProseKit, useDocChange } from 'prosekit/vue'
 import { computed, ref, watchPostEffect } from 'vue'
 import { ListDOMSerializer } from 'prosekit/extensions/list'
 
-const key = ref(1)
 const defaultDoc = ref<NodeJSON | undefined>()
 const records = ref<string[]>([])
 const hasUnsavedChange = ref(false)
@@ -23,7 +22,11 @@ const editor = computed(() => {
   return createEditor({ extension, defaultDoc: defaultDoc.value })
 })
 const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect(() => editor.value.mount(editorRef.value))
+watchPostEffect((onCleanup) => {
+  const editorValue = editor.value
+  editorValue.mount(editorRef.value)
+  onCleanup(() => editorValue.unmount())
+})
 
 const handleDocChange = () => (hasUnsavedChange.value = true)
 useDocChange(handleDocChange, { editor })
@@ -40,7 +43,6 @@ const handleSave = () => {
 // Load a document from a HTML string
 const handleLoad = (record: string) => {
   defaultDoc.value = jsonFromHTML(record, { schema: editor.value.schema })
-  key.value += 1
   hasUnsavedChange.value = false
 }
 </script>

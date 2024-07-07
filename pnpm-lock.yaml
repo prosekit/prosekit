@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
+  '@astrojs/svelte@5.6.0':
+    hash: eog74k3gb7iqiraojtgs3jtqfe
+    path: patches/@astrojs__svelte@5.6.0.patch
   prosemirror-splittable@0.1.1:
     hash: ltdjze5wh25pjc2y4z24yafn7u
     path: patches/prosemirror-splittable@0.1.1.patch
@@ -681,7 +684,7 @@ importers:
         version: 4.4.0(solid-js@1.8.18)(vite@5.3.3(@types/node@20.14.9)(lightningcss@1.25.1))
       '@astrojs/svelte':
         specifier: ^5.6.0
-        version: 5.6.0(astro@4.11.5(@types/node@20.14.9)(lightningcss@1.25.1)(typescript@5.5.3))(svelte@5.0.0-next.175)(typescript@5.5.3)(vite@5.3.3(@types/node@20.14.9)(lightningcss@1.25.1))
+        version: 5.6.0(patch_hash=eog74k3gb7iqiraojtgs3jtqfe)(astro@4.11.5(@types/node@20.14.9)(lightningcss@1.25.1)(typescript@5.5.3))(svelte@5.0.0-next.175)(typescript@5.5.3)(vite@5.3.3(@types/node@20.14.9)(lightningcss@1.25.1))
       '@astrojs/vue':
         specifier: ^4.5.0
         version: 4.5.0(astro@4.11.5(@types/node@20.14.9)(lightningcss@1.25.1)(typescript@5.5.3))(rollup@4.17.0)(vite@5.3.3(@types/node@20.14.9)(lightningcss@1.25.1))(vue@3.4.31(typescript@5.5.3))
@@ -7134,7 +7137,7 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/svelte@5.6.0(astro@4.11.5(@types/node@20.14.9)(lightningcss@1.25.1)(typescript@5.5.3))(svelte@5.0.0-next.175)(typescript@5.5.3)(vite@5.3.3(@types/node@20.14.9)(lightningcss@1.25.1))':
+  '@astrojs/svelte@5.6.0(patch_hash=eog74k3gb7iqiraojtgs3jtqfe)(astro@4.11.5(@types/node@20.14.9)(lightningcss@1.25.1)(typescript@5.5.3))(svelte@5.0.0-next.175)(typescript@5.5.3)(vite@5.3.3(@types/node@20.14.9)(lightningcss@1.25.1))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@5.0.0-next.175)(vite@5.3.3(@types/node@20.14.9)(lightningcss@1.25.1))
       astro: 4.11.5(@types/node@20.14.9)(lightningcss@1.25.1)(typescript@5.5.3)

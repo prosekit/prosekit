@@ -1,10 +1,10 @@
 import {
+  ProseKitError,
   defineMountHandler,
   defineUpdateHandler,
   union,
   type Editor,
   type Extension,
-  ProseKitError,
 } from '@prosekit/core'
 import { onDestroy, onMount } from 'svelte'
 import { readonly, writable, type Readable } from 'svelte/store'

@@ -60,7 +60,8 @@
   "dependencies": {
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@prosekit/web": "workspace:^"
+    "@prosekit/web": "workspace:^",
+    "@prosemirror-adapter/svelte": "^0.2.6"
   },
   "peerDependencies": {
     "svelte": ">= 3.0.0"

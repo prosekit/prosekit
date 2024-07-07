@@ -60,14 +60,19 @@ We begin by creating a `CodeBlockView` component to render the node. This compon
 
 After defining the component, we can register it as a node view using [`defineReactNodeView`](/references/react#definereactnodeview). The `name` is the node's name, in this case `"codeBlock"`. `contentAs` is the property name that contains the node's content. In this case, it's `"code"`, which means a `<code>` element will be rendered inside the `<pre>` element. `component` is the component we just defined.
 
-```ts
+```ts twoslash
+// @filename: code-block-view.ts
+import * as m from 'prosekit/react'
+const Component: m.ReactNodeViewComponent = {} as any
+export default Component
+// ---cut---
 import {
   defineReactNodeView,
   type ReactNodeViewComponent,
 } from 'prosekit/react'
-import CodeBlockView from './code-block-view.tsx'
+import CodeBlockView from './code-block-view'
 
-defineReactNodeView({
+const extension = defineReactNodeView({
   name: 'codeBlock',
   contentAs: 'code',
   component: CodeBlockView satisfies ReactNodeViewComponent,

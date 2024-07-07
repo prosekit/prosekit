@@ -6,7 +6,7 @@ import { customElement, property, state } from 'lit/decorators.js'
 import { createRef, ref, type Ref } from 'lit/directives/ref.js'
 import { createEditor, type Editor, type NodeJSON } from 'prosekit/core'
 
-import { defineRootExtension, type RootExtension } from './extension'
+import { defineExtension, type EditorExtension } from './extension'
 
 @customElement('my-editor')
 export class MyEditor extends LitElement {
@@ -15,7 +15,7 @@ export class MyEditor extends LitElement {
   }
 
   @state()
-  editor?: Editor<RootExtension>
+  editor?: Editor<EditorExtension>
 
   @property({ type: Object, attribute: false })
   defaultDoc?: NodeJSON
@@ -24,7 +24,7 @@ export class MyEditor extends LitElement {
 
   protected firstUpdated(): void {
     if (!this.editor) {
-      const extension = defineRootExtension()
+      const extension = defineExtension()
       this.editor = createEditor({
         extension,
         defaultDoc: this.defaultDoc || defaultDoc,

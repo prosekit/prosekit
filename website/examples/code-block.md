@@ -15,6 +15,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/react-code-block/extension.ts
 <<< @/../playground/examples/react-code-block/toolbar.tsx
 <<< @/../playground/examples/react-code-block/code-block-view.tsx
+<<< @/../playground/examples/react-code-block/default-doc.ts
 <<< @/../playground/examples/react-code-block/language-selector.tsx
 <<< @/../playground/examples/react-code-block/button.tsx
 
@@ -30,8 +31,26 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/vue-code-block/extension.ts
 <<< @/../playground/examples/vue-code-block/toolbar.vue
 <<< @/../playground/examples/vue-code-block/code-block-view.vue
+<<< @/../playground/examples/vue-code-block/default-doc.ts
 <<< @/../playground/examples/vue-code-block/language-selector.vue
 <<< @/../playground/examples/vue-code-block/button.vue
+
+:::
+
+</template>
+
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte-code-block/editor.svelte
+<<< @/../playground/examples/svelte-code-block/extension.ts
+<<< @/../playground/examples/svelte-code-block/toolbar.svelte
+<<< @/../playground/examples/svelte-code-block/code-block-view.svelte
+<<< @/../playground/examples/svelte-code-block/default-doc.ts
+<<< @/../playground/examples/svelte-code-block/emoji.ts
+<<< @/../playground/examples/svelte-code-block/language-selector.svelte
+<<< @/../playground/examples/svelte-code-block/button.svelte
 
 :::
 

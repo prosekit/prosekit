@@ -509,6 +509,9 @@ importers:
       '@prosekit/web':
         specifier: workspace:^
         version: link:../web
+      '@prosemirror-adapter/svelte':
+        specifier: ^0.2.6
+        version: 0.2.6(svelte@4.2.18)
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -2051,6 +2054,11 @@ packages:
     peerDependencies:
       react: '*'
       react-dom: '*'
+
+  '@prosemirror-adapter/svelte@0.2.6':
+    resolution: {integrity: sha512-EQpdYC9Q8smGCqbQ9P7TKjYdxM4edSmgf9BbJBCbEunQaDN2pZi0A/iwTcFNASkVxXDrmn3AJhXkzsPfFyMuaA==}
+    peerDependencies:
+      svelte: ^4.0.0
 
   '@prosemirror-adapter/vue@0.2.6':
     resolution: {integrity: sha512-NYjgHfjfmeS3QtMvGpL885BNdE8OnsdlNfzqO78fT2QIsKITR6hiiqsghlVBzrn41UxBILwVH3rf1gfXi7f7kg==}
@@ -8334,6 +8342,13 @@ snapshots:
       nanoid: 4.0.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+      tslib: 2.6.2
+
+  '@prosemirror-adapter/svelte@0.2.6(svelte@4.2.18)':
+    dependencies:
+      '@prosemirror-adapter/core': 0.2.6
+      nanoid: 4.0.2
+      svelte: 4.2.18
       tslib: 2.6.2
 
   '@prosemirror-adapter/vue@0.2.6(vue@3.4.31(typescript@5.5.3))':

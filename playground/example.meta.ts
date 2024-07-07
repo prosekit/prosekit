@@ -1439,6 +1439,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-toolbar",
+      "framework": "svelte",
+      "story": "toolbar",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-word-counter",
       "framework": "svelte",
       "story": "word-counter",

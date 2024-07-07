@@ -66,6 +66,7 @@ import E2194307417 from '../../examples/svelte-list/editor.svelte'
 import E3540862095 from '../../examples/svelte-readonly/editor.svelte'
 import E1602218818 from '../../examples/svelte-slash-menu/editor.svelte'
 import E1967201386 from '../../examples/svelte-text-align/editor.svelte'
+import E4074649968 from '../../examples/svelte-toolbar/editor.svelte'
 import E2390951180 from '../../examples/svelte-word-counter/editor.svelte'
 import E2085905006 from '../../examples/solid-minimal/editor'
 import E825479991 from '../../examples/solid-drop-cursor/editor'
@@ -140,6 +141,7 @@ export const getStaticPaths = () => [
   { params: { example: 'svelte-readonly' } },
   { params: { example: 'svelte-slash-menu' } },
   { params: { example: 'svelte-text-align' } },
+  { params: { example: 'svelte-toolbar' } },
   { params: { example: 'svelte-word-counter' } },
   { params: { example: 'solid-minimal' } },
   { params: { example: 'solid-drop-cursor' } },
@@ -218,6 +220,7 @@ const { example } = Astro.params
   {example === 'svelte-readonly' && <E3540862095 client:only="svelte" />}
   {example === 'svelte-slash-menu' && <E1602218818 client:only="svelte" />}
   {example === 'svelte-text-align' && <E1967201386 client:only="svelte" />}
+  {example === 'svelte-toolbar' && <E4074649968 client:only="svelte" />}
   {example === 'svelte-word-counter' && <E2390951180 client:only="svelte" />}
   {example === 'solid-minimal' && <E2085905006 client:only="solid" />}
   {example === 'solid-drop-cursor' && <E825479991 client:only="solid" />}

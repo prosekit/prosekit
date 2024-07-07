@@ -70,7 +70,7 @@ export interface VueNodeViewOptions extends BaseNodeViewOptions {
 function withNodeViewProps(component: VueNodeViewComponent) {
   return defineComponent({
     name: 'NodeViewPropsWrapper',
-    render: () => {
+    setup: () => {
       const props: Readonly<VueNodeViewProps> = useNodeViewContext()
       return () => h(component, props)
     },
@@ -80,7 +80,7 @@ function withNodeViewProps(component: VueNodeViewComponent) {
 /**
  * @internal
  */
-export const VueViewsConsumer = defineComponent({
+export const VueViewsConsumer = /* @__PURE__ */ defineComponent({
   name: 'VueViewsConsumer',
   setup: () => {
     const nodeViewFactory: NodeViewFactory = useNodeViewFactory()

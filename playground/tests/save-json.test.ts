@@ -18,6 +18,7 @@ testStory('save-json', () => {
       name: 'Load',
       exact: true,
     })
+    const pre = page.locator('ul').locator('li').locator('pre')
     const expectSaveButtonEnabled = async () => {
       await expect(saveButtonEnabled).toBeVisible()
       await expect(saveButtonDisabled).toBeHidden()
@@ -44,6 +45,7 @@ testStory('save-json', () => {
     await expect(loadButton).toHaveCount(0)
     await clickSaveButton()
     await expect(loadButton).toHaveCount(1)
+    expect(await pre.nth(0).innerText()).toContain(`"text":"Foo"`)
 
     // Type something
     await editor.focus()
@@ -55,6 +57,8 @@ testStory('save-json', () => {
     await expect(loadButton).toHaveCount(1)
     await clickSaveButton()
     await expect(loadButton).toHaveCount(2)
+    expect(await pre.nth(0).innerText()).toContain(`"text":"Foo"`)
+    expect(await pre.nth(1).innerText()).toContain(`"text":"FooBar"`)
 
     // Load content
     expect(await editor.innerText()).toBe('FooBar')

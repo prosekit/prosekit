@@ -16,12 +16,15 @@ export default function Editor() {
   const [records, setRecords] = useState<string[]>([])
   const [hasUnsavedChange, setHasUnsavedChange] = useState(false)
 
+  // Create a new editor instance whenever `defaultDoc` changes
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
     return createEditor({ extension, defaultDoc })
   }, [defaultDoc])
 
+  // Enable the save button
   const handleDocChange = useCallback(() => setHasUnsavedChange(true), [])
+
   useDocChange(handleDocChange, { editor })
 
   // Save the current document as a HTML string

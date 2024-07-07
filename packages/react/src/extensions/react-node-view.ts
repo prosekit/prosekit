@@ -59,6 +59,13 @@ export interface ReactNodeViewOptions extends BaseNodeViewOptions {
   component: ReactNodeViewComponent
 }
 
+function withNodeViewProps(component: ReactNodeViewComponent) {
+  return function NodeViewPropsWrapper() {
+    const props: ReactNodeViewProps = useNodeViewContext()
+    return createElement(component, props)
+  }
+}
+
 /**
  * @internal
  */
@@ -71,13 +78,6 @@ export const ReactViewsConsumer: FC = () => {
   useExtension(extension)
 
   return null
-}
-
-function withNodeViewProps(component: ReactNodeViewComponent) {
-  return function NodeViewPropsWrapper() {
-    const props: ReactNodeViewProps = useNodeViewContext()
-    return createElement(component, props)
-  }
 }
 
 /**

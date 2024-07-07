@@ -266,6 +266,10 @@ export const exampleMeta = {
       "story": "save-html",
       "files": [
         {
+          "path": "editor-component.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         }
@@ -277,6 +281,10 @@ export const exampleMeta = {
       "story": "save-json",
       "files": [
         {
+          "path": "editor-component.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         }
@@ -287,6 +295,10 @@ export const exampleMeta = {
       "framework": "react",
       "story": "save-markdown",
       "files": [
+        {
+          "path": "editor-component.tsx",
+          "hidden": false
+        },
         {
           "path": "editor.tsx",
           "hidden": false
@@ -890,6 +902,10 @@ export const exampleMeta = {
       "framework": "vue",
       "story": "save-json",
       "files": [
+        {
+          "path": "editor-component.vue",
+          "hidden": false
+        },
         {
           "path": "editor.vue",
           "hidden": false

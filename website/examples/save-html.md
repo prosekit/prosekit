@@ -11,6 +11,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
+<<< @/../playground/examples/react-save-html/editor-component.tsx
 <<< @/../playground/examples/react-save-html/editor.tsx
 
 :::

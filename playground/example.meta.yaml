@@ -137,18 +137,24 @@ examples:
     framework: react
     story: save-html
     files:
+      - path: editor-component.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
   - name: react-save-json
     framework: react
     story: save-json
     files:
+      - path: editor-component.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
   - name: react-save-markdown
     framework: react
     story: save-markdown
     files:
+      - path: editor-component.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: markdown.ts
@@ -463,6 +469,8 @@ examples:
     framework: vue
     story: save-json
     files:
+      - path: editor-component.vue
+        hidden: false
       - path: editor.vue
         hidden: false
   - name: vue-save-markdown

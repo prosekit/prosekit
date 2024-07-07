@@ -2,6 +2,26 @@
 
 <FrameworkCodeBlock>
 
+<template v-slot:react>
+
+::: code-group
+
+<<< @/../playground/examples/react-save-json/editor-component.tsx
+
+:::
+
+</template>
+
+<template v-slot:vue>
+
+::: code-group
+
+<<< @/../playground/examples/vue-save-json/editor-component.vue
+
+:::
+
+</template>
+
 <template v-slot:svelte>
 
 ::: code-group

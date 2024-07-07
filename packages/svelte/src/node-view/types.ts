@@ -5,7 +5,7 @@ import type {
   DecorationSource,
   EditorView,
 } from '@prosekit/pm/view'
-import type { SvelteComponent } from 'svelte'
+import type { ComponentType, SvelteComponent } from 'svelte'
 import type { Writable } from 'svelte/store'
 
 /**
@@ -28,7 +28,7 @@ export interface SvelteNodeViewProps {
 /**
  * @public
  */
-export type SvelteNodeViewComponent = SvelteComponent<SvelteNodeViewProps>
+export type SvelteNodeViewComponent = ComponentType<SvelteComponent<SvelteNodeViewProps>>
 
 /**
  * Options for {@link defineSvelteNodeView}.

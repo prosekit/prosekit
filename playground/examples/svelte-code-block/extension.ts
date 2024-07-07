@@ -19,7 +19,7 @@ export function defineExtension() {
     defineSvelteNodeView({
       name: 'codeBlock',
       contentAs: 'code',
-      component: CodeBlockView satisfies SvelteNodeViewComponent,
+      component: CodeBlockView as SvelteNodeViewComponent,
     }),
   ])
 }

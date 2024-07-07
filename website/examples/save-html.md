@@ -21,6 +21,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
+<<< @/../playground/examples/vue-save-html/editor-component.vue
 <<< @/../playground/examples/vue-save-html/editor.vue
 
 :::

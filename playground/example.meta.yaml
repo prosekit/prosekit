@@ -455,6 +455,8 @@ examples:
     framework: vue
     story: save-html
     files:
+      - path: editor-component.vue
+        hidden: false
       - path: editor.vue
         hidden: false
   - name: vue-save-json
@@ -467,6 +469,8 @@ examples:
     framework: vue
     story: save-markdown
     files:
+      - path: editor-component.vue
+        hidden: false
       - path: editor.vue
         hidden: false
       - path: markdown.ts

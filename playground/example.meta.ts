@@ -876,6 +876,10 @@ export const exampleMeta = {
       "story": "save-html",
       "files": [
         {
+          "path": "editor-component.vue",
+          "hidden": false
+        },
+        {
           "path": "editor.vue",
           "hidden": false
         }
@@ -897,6 +901,10 @@ export const exampleMeta = {
       "framework": "vue",
       "story": "save-markdown",
       "files": [
+        {
+          "path": "editor-component.vue",
+          "hidden": false
+        },
         {
           "path": "editor.vue",
           "hidden": false

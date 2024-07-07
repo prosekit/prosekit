@@ -56,7 +56,7 @@ const editor = createEditor({ extension: defineExtension(), defaultDoc })
 
 const mount = (element: HTMLElement) => {
   editor.mount(element)
-  return { destroy: () => editor.mount(null) }
+  return { destroy: () => editor.unmount() }
 }
 </script>
 

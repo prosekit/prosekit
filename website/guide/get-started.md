@@ -64,7 +64,7 @@ const extension = defineBasicExtension()
 const editor = createEditor({ extension })
 ```
 
-You need to mount the editor to the DOM by calling the `editor.mount(element)` method. When the editor is unmounted, you should call the `editor.mount(null)` method to clean up the editor. Check out the minimal examples above to see how to mount the editor in different frameworks.
+You need to mount the editor to the DOM by calling the `editor.mount(element)` method. When the editor is unmounted, you should call `editor.unmount()` or `editor.mount(null)` to clean up the editor. Check out the minimal examples above to see how to mount the editor in different frameworks.
 
 ## Data Persistence
 

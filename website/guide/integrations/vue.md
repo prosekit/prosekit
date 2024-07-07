@@ -60,7 +60,12 @@ We begin by creating a `CodeBlockView` component to render the node. This compon
 
 After defining the component, we can register it as a node view using [`defineVueNodeView`](/references/vue#definevuenodeview). The `name` is the node's name, in this case `"codeBlock"`. `contentAs` is the property name that contains the node's content. In this case, it's `"code"`, which means a `<code>` element will be rendered inside the `<pre>` element. `component` is the component we just defined.
 
-```ts
+```ts twoslash
+// @filename: code-block-view.vue.ts
+import { type VueNodeViewComponent } from 'prosekit/vue'
+const CodeBlockView: VueNodeViewComponent = {} as any
+export default CodeBlockView
+// ---cut---
 import { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'
 import CodeBlockView from './code-block-view.vue'
 

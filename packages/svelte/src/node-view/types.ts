@@ -28,7 +28,9 @@ export interface SvelteNodeViewProps {
 /**
  * @public
  */
-export type SvelteNodeViewComponent = ComponentType<SvelteComponent<SvelteNodeViewProps>>
+export type SvelteNodeViewComponent = ComponentType<
+  SvelteComponent<SvelteNodeViewProps>
+>
 
 /**
  * Options for {@link defineSvelteNodeView}.

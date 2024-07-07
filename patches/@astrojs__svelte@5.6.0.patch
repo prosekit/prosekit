@@ -1,0 +1,35 @@
+diff --git a/client-v5.js b/client-v5.js
+index 755a6aa5381ee602ba8ece2f91f6439c8b19dd3f..327e303ed87c671926187b7f40e1cf4c086f27b3 100644
+--- a/client-v5.js
++++ b/client-v5.js
+@@ -1,5 +1,11 @@
+ import { hydrate, mount, unmount } from 'svelte';
+-import { add_snippet_symbol } from 'svelte/internal/client';
++
++const snippet_symbol = Symbol.for('svelte.snippet');
++
++export function add_snippet_symbol(fn) {
++	fn[snippet_symbol] = true;
++	return fn;
++}
+ 
+ // Allow a slot to be rendered as a snippet (dev validation only)
+ const tagSlotAsSnippet = import.meta.env.DEV ? add_snippet_symbol : (s) => s;
+diff --git a/server-v5.js b/server-v5.js
+index 04a24eff2474b7fc38423c03c43e4e82d0f09a4d..fe6446bbdb6a12968d5eb932352a99bd3b478f14 100644
+--- a/server-v5.js
++++ b/server-v5.js
+@@ -1,6 +1,12 @@
+-import { add_snippet_symbol } from 'svelte/internal/server';
+ import { render } from 'svelte/server';
+ 
++const snippet_symbol = Symbol.for('svelte.snippet');
++
++export function add_snippet_symbol(fn) {
++	fn[snippet_symbol] = true;
++	return fn;
++}
++
+ // Allow a slot to be rendered as a snippet (dev validation only)
+ const tagSlotAsSnippet = import.meta.env.DEV ? add_snippet_symbol : (s) => s;
+ 

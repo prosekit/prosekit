@@ -39,7 +39,7 @@
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
     "solid-js": "^1.8.18",
-    "svelte": "^4.2.18",
+    "svelte": "^5.0.0-next.175",
     "typescript": "^5.5.3",
     "unified": "^11.0.5",
     "unocss": "^0.61.2",

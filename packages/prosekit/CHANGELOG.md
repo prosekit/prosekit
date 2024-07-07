@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.9.2
+
+### Patch Changes
+
+- [`b48c703`](https://github.com/ocavue/prosekit/commit/b48c70300615ae5f90b7f025167469221660acf8) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/core) ![](https://prosekit.dev/b/vue)
+
+  Refactor node view implementation to improve maintainability.
+
 ## 0.9.1
 
 ### Patch Changes

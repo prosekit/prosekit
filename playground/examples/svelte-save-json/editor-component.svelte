@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
-import { useDocChange } from 'prosekit/svelte'
+import { useDocChange, ProseKit } from 'prosekit/svelte'
 import type { Editor } from 'prosekit/core'
 
 export let editor: Editor
@@ -20,6 +20,8 @@ const mount = (element: HTMLElement) => {
 }
 </script>
 
-<div class={Themes.EDITOR_SCROLLING}>
-  <div use:mount class={Themes.EDITOR_CONTENT}></div>
-</div>
+<ProseKit {editor}>
+  <div class={Themes.EDITOR_SCROLLING}>
+    <div use:mount class={Themes.EDITOR_CONTENT}></div>
+  </div>
+</ProseKit>

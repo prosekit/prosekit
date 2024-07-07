@@ -11,6 +11,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
+<<< @/../playground/examples/react-save-json/editor-component.tsx
 <<< @/../playground/examples/react-save-json/editor.tsx
 
 :::
@@ -21,6 +22,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
+<<< @/../playground/examples/vue-save-json/editor-component.vue
 <<< @/../playground/examples/vue-save-json/editor.vue
 
 :::

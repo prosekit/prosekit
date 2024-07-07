@@ -1,4 +1,5 @@
 ---
+'prosekit': patch
 '@prosekit/react': patch
 '@prosekit/core': patch
 '@prosekit/vue': patch

@@ -16,8 +16,6 @@ export function defineSvelteNodeView(
 ): Extension {
   const { name, component, ...userOptions } = options
 
-  console.log("component", component)
-
   const args: SvelteNodeViewUserOptions = {
     ...userOptions,
     component: class NodeViewPropsWrapper extends NodeViewWrapper {

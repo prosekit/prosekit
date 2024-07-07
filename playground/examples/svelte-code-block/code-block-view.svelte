@@ -20,5 +20,4 @@ const setLanguage = (language: string) => {
 }
 </script>
 
-<LanguageSelector {language} {setLanguage} /><pre use:contentRef data-language={language}></pre>
-
+<LanguageSelector {language} {setLanguage}/><pre use:contentRef data-language={language}></pre>

@@ -596,9 +596,6 @@ importers:
       '@prosekit/web':
         specifier: workspace:^
         version: link:../web
-      '@prosemirror-adapter/core':
-        specifier: ^0.2.6
-        version: 0.2.6
       '@prosemirror-adapter/vue':
         specifier: ^0.2.6
         version: 0.2.6(vue@3.4.31(typescript@5.5.3))

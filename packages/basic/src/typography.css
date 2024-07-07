@@ -183,4 +183,11 @@ div.ProseMirror {
   .ProseMirror-selectednode {
     z-index: calc(infinity);
   }
+
+  /*
+   Don't generate box for node view wrapper. This make 
+   */
+  div[data-node-view-root='true'] {
+    display: contents;
+  }
 }

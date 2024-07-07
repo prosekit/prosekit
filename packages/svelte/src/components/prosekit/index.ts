@@ -3,7 +3,7 @@ import type { SvelteComponent } from 'svelte'
 
 import Comp from './prosekit.svelte'
 
-interface ProseKitProps {
+export interface ProseKitProps {
   editor: Editor
 }
 

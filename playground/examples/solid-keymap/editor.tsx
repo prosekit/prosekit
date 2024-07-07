@@ -28,7 +28,7 @@ export default function Editor() {
           <div ref={editor.mount} class={Themes.EDITOR_CONTENT}></div>
         </div>
       </div>
-      <fieldset class="mt-4 box-border block w-full border p-4">
+      <fieldset class={Themes.KEYMAP_FIELDSET}>
         <legend>Submit Records</legend>
         <ol>
           {submitions().map((submition) => (

@@ -12,16 +12,6 @@ export let tooltip: string = ''
 export let onClick: VoidFunction | undefined = undefined
 </script>
 
-<button
-  data-state={pressed ? 'on' : 'off'}
-  disabled={disabled ? true : undefined}
-  on:click={onClick}
-  on:mousedown|preventDefault
-  class={Themes.TOGGLE_BUTTON}
->
-  <slot />
-</button>
-
 <TooltipRoot>
   <TooltipTrigger class={Themes.TOOLTIP_TRIGGER}>
     <button

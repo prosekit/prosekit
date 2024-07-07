@@ -769,8 +769,6 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
-      - path: use-readonly.ts
-        hidden: false
       - path: word-counter.svelte
         hidden: false
   - name: solid-minimal

@@ -1475,10 +1475,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "use-readonly.ts",
-          "hidden": false
-        },
-        {
           "path": "word-counter.svelte",
           "hidden": false
         }

@@ -33,7 +33,7 @@ const pushSubmition = (hotkey: string) => {
       <div bind:this={place} class={Themes.EDITOR_CONTENT}></div>
     </div>
   </div>
-  <fieldset class="mt-4 border">
+  <fieldset class="mt-4 box-border block w-full border p-4">
     <legend>Submit Records</legend>
     <ol>
       {#each $submitions as submition, index (index)}

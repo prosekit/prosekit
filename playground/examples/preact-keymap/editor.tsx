@@ -33,7 +33,7 @@ export default function Editor() {
           <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
         </div>
       </div>
-      <fieldset className="mt-4 border">
+      <fieldset className="mt-4 box-border block w-full border p-4">
         <legend>Submit Records</legend>
         <ol>
           {submitions.map((submition, index) => (

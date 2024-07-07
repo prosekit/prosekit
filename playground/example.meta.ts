@@ -1397,6 +1397,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-save-json",
+      "framework": "svelte",
+      "story": "save-json",
+      "files": [
+        {
+          "path": "editor-component.svelte",
+          "hidden": false
+        },
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-slash-menu",
       "framework": "svelte",
       "story": "slash-menu",

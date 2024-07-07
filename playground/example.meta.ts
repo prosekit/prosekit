@@ -1282,6 +1282,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-heading",
+      "framework": "svelte",
+      "story": "heading",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-italic",
       "framework": "svelte",
       "story": "italic",

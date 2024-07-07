@@ -11,6 +11,7 @@ const editor = useEditor<EditorExtension>({ update: true })
   <Button
     pressed={$editor.marks.bold.isActive()}
     onClick={() => $editor.commands.toggleBold()}
+    tooltip="Bold"
   >
     Bold
   </Button>

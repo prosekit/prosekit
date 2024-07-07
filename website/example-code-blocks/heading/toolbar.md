@@ -22,6 +22,16 @@
 
 </template>
 
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte-heading/toolbar.svelte
+
+:::
+
+</template>
+
 <template v-slot:solid>
 
 ::: code-group

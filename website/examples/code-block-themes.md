@@ -14,6 +14,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/react-code-block-themes/editor.tsx
 <<< @/../playground/examples/react-code-block-themes/extension.ts
 <<< @/../playground/examples/react-code-block-themes/toolbar.tsx
+<<< @/../playground/examples/react-code-block-themes/default-doc.ts
 <<< @/../playground/examples/react-code-block-themes/theme-selector.tsx
 
 :::
@@ -27,6 +28,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/vue-code-block-themes/editor.vue
 <<< @/../playground/examples/vue-code-block-themes/extension.ts
 <<< @/../playground/examples/vue-code-block-themes/toolbar.vue
+<<< @/../playground/examples/vue-code-block-themes/default-doc.ts
 <<< @/../playground/examples/vue-code-block-themes/theme-selector.vue
 
 :::

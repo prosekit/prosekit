@@ -4,15 +4,23 @@ import {
   defineCodeBlock,
   defineCodeBlockShiki,
 } from 'prosekit/extensions/code-block'
+import {
+  defineSvelteNodeView,
+  type SvelteNodeViewComponent,
+} from 'prosekit/svelte'
 
-import { defineCodeBlockView } from './code-block-view'
+import CodeBlockView from './code-block-view.svelte'
 
 export function defineExtension() {
   return union([
     defineBasicExtension(),
     defineCodeBlock(),
     defineCodeBlockShiki(),
-    defineCodeBlockView(),
+    defineSvelteNodeView({
+      name: 'codeBlock',
+      contentAs: 'code',
+      component: CodeBlockView satisfies SvelteNodeViewComponent,
+    }),
   ])
 }
 

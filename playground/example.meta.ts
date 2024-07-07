@@ -59,6 +59,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "default-doc.ts",
+          "hidden": false
+        },
+        {
           "path": "language-selector.tsx",
           "hidden": false
         },
@@ -83,6 +87,10 @@ export const exampleMeta = {
         },
         {
           "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "default-doc.ts",
           "hidden": false
         },
         {
@@ -541,6 +549,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "default-doc.ts",
+          "hidden": false
+        },
+        {
           "path": "language-selector.vue",
           "hidden": false
         },
@@ -565,6 +577,10 @@ export const exampleMeta = {
         },
         {
           "path": "toolbar.vue",
+          "hidden": false
+        },
+        {
+          "path": "default-doc.ts",
           "hidden": false
         },
         {
@@ -1254,6 +1270,45 @@ export const exampleMeta = {
         },
         {
           "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "svelte-code-block",
+      "framework": "svelte",
+      "story": "code-block",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "code-block-view.svelte",
+          "hidden": false
+        },
+        {
+          "path": "default-doc.ts",
+          "hidden": false
+        },
+        {
+          "path": "emoji.ts",
+          "hidden": false
+        },
+        {
+          "path": "language-selector.svelte",
           "hidden": false
         },
         {

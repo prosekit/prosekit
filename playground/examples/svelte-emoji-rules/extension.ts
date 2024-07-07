@@ -3,8 +3,8 @@ import { union } from 'prosekit/core'
 
 import { defineEmojiEnterRule } from './emoji'
 
-export function defineRootExtension() {
+export function defineExtension() {
   return union([defineBasicExtension(), defineEmojiEnterRule()])
 }
 
-export type RootExtension = ReturnType<typeof defineRootExtension>
+export type EditorExtension = ReturnType<typeof defineExtension>

@@ -29,6 +29,8 @@ examples:
         hidden: false
       - path: code-block-view.tsx
         hidden: false
+      - path: default-doc.ts
+        hidden: false
       - path: language-selector.tsx
         hidden: false
       - path: button.tsx
@@ -42,6 +44,8 @@ examples:
       - path: extension.ts
         hidden: false
       - path: toolbar.tsx
+        hidden: false
+      - path: default-doc.ts
         hidden: false
       - path: theme-selector.tsx
         hidden: false
@@ -281,6 +285,8 @@ examples:
         hidden: false
       - path: code-block-view.vue
         hidden: false
+      - path: default-doc.ts
+        hidden: false
       - path: language-selector.vue
         hidden: false
       - path: button.vue
@@ -294,6 +300,8 @@ examples:
       - path: extension.ts
         hidden: false
       - path: toolbar.vue
+        hidden: false
+      - path: default-doc.ts
         hidden: false
       - path: theme-selector.vue
         hidden: false
@@ -654,6 +662,26 @@ examples:
       - path: extension.ts
         hidden: false
       - path: toolbar.svelte
+        hidden: false
+      - path: button.svelte
+        hidden: false
+  - name: svelte-code-block
+    framework: svelte
+    story: code-block
+    files:
+      - path: editor.svelte
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: toolbar.svelte
+        hidden: false
+      - path: code-block-view.svelte
+        hidden: false
+      - path: default-doc.ts
+        hidden: false
+      - path: emoji.ts
+        hidden: false
+      - path: language-selector.svelte
         hidden: false
       - path: button.svelte
         hidden: false

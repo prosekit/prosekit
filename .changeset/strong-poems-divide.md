@@ -3,4 +3,4 @@
 '@prosekit/svelte': patch
 ---
 
-fix editor dispose lifecycle error
+Fix a bug in `useEditor` that causes `Function called outside component initialization` errors.

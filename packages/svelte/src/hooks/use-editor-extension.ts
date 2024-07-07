@@ -12,8 +12,6 @@ export function useEditorExtension(
   extensionStore: Readable<Extension | null>,
 ) {
   onMount(() => {
-    const editorContext = useEditorContext()
-
     let cleanup: VoidFunction | undefined
     let unsubscribe: VoidFunction | undefined
 
@@ -21,6 +19,7 @@ export function useEditorExtension(
       cleanup?.()
       cleanup = undefined
 
+      const editorContext = useEditorContext()
       const editor = maybeEditor || editorContext
 
       if (!editor) {

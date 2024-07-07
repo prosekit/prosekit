@@ -7,7 +7,6 @@ import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/vue'
 import { computed, ref, watchPostEffect } from 'vue'
 
-const key = ref(1)
 const defaultDoc = ref<NodeJSON | undefined>()
 const records = ref<string[]>([])
 const hasUnsavedChange = ref(false)
@@ -32,7 +31,6 @@ const handleSave = () => {
 // Load a document from a JSON string
 const handleLoad = (record: string) => {
   defaultDoc.value = JSON.parse(record)
-  key.value += 1
   hasUnsavedChange.value = false
 }
 </script>

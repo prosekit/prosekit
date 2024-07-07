@@ -5,7 +5,6 @@ import 'prosekit/basic/style.css'
 import { defineExtension } from './extension'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
-import { onDestroy, onMount } from 'svelte'
 import Toolbar from './toolbar.svelte'
 
 const extension = defineExtension()
@@ -18,16 +17,17 @@ const editor = createEditor({
     '<p style="text-align:right;">Third paragraph</p>',
 })
 
-let place: HTMLDivElement
-onMount(() => editor.mount(place))
-onDestroy(() => editor.mount(null))
+const mount = (element: HTMLElement) => {
+  editor.mount(element)
+  return { destroy: () => editor.mount(null) }
+}
 </script>
 
 <ProseKit {editor}>
   <div class={Themes.EDITOR_VIEWPORT}>
     <Toolbar />
     <div class={Themes.EDITOR_SCROLLING}>
-      <div bind:this={place} class={Themes.EDITOR_CONTENT}></div>
+      <div use:mount class={Themes.EDITOR_CONTENT}></div>
     </div>
   </div>
 </ProseKit>

@@ -15,7 +15,6 @@ import { useCallback, useMemo, useState } from 'react'
 import { markdownFromHTML, htmlFromMarkdown } from './markdown'
 
 export default function Editor() {
-  const [key, setKey] = useState(1)
   const [defaultDoc, setDefaultDoc] = useState<NodeJSON | undefined>()
   const [records, setRecords] = useState<string[]>([])
   const [hasUnsavedChange, setHasUnsavedChange] = useState(false)
@@ -23,7 +22,7 @@ export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
     return createEditor({ extension, defaultDoc })
-  }, [key, defaultDoc])
+  }, [defaultDoc])
 
   const handleDocChange = useCallback(() => setHasUnsavedChange(true), [])
   useDocChange(handleDocChange, { editor })
@@ -43,7 +42,6 @@ export default function Editor() {
     (record: string) => {
       const html = htmlFromMarkdown(record)
       setDefaultDoc(jsonFromHTML(html, { schema: editor.schema }))
-      setKey((key) => key + 1)
       setHasUnsavedChange(false)
     },
     [records, editor.schema],

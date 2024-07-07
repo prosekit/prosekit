@@ -50,7 +50,7 @@ Renders a node using a Svelte component.
 
 In some cases, Svelte might be a more convenient tool for implementing certain interactions. For instance, for a code block, you might want to add a language selector that lets you change the language of the code block. You can implement this using a Svelte component.
 
-We begin by creating a `CodeBlockView` component to render the node. This component receives [`SvelteNodeViewProps`](/references/svetel#sveltenodeviewoptions) as props, which include the node and other useful details.
+We begin by creating a `CodeBlockView` component to render the node. This component receives [`SvelteNodeViewProps`](/references/svelte#sveltenodeviewoptions) as props, which include the node and other useful details.
 
 ::: code-group
 <<< @/../playground/examples/svelte-code-block/code-block-view.svelte [code-block-view.svelte]
@@ -62,9 +62,9 @@ After defining the component, we can register it as a node view using [`defineSv
 
 ```ts twoslash
 // @filename: code-block-view.svelte.ts
-import { type SvelteNodeViewComponent } from 'prosekit/svelte'
-const CodeBlockView: SvelteNodeViewComponent = {} as any
-export default CodeBlockView
+import * as m from 'prosekit/svelte'
+const Component: m.SvelteNodeViewComponent = {} as any
+export default Component
 // ---cut---
 import {
   defineSvelteNodeView,

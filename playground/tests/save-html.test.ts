@@ -2,8 +2,8 @@ import { expect, test } from '@playwright/test'
 
 import { testStory, waitForEditor } from './helper'
 
-testStory('save-json', () => {
-  test('save-json', async ({ page }) => {
+testStory('save-html', () => {
+  test('save-html', async ({ page }) => {
     const editor = await waitForEditor(page)
 
     const saveButtonEnabled = page.getByRole('button', {
@@ -37,7 +37,7 @@ testStory('save-json', () => {
 
     // Type something
     await editor.focus()
-    await editor.press('ControlOrMeta+B')
+    await editor.press('ControlOrMeta+b')
     await editor.pressSequentially('Foo')
     await expectSaveButtonEnabled()
     expect(await editor.innerText()).toBe('Foo')
@@ -46,7 +46,7 @@ testStory('save-json', () => {
     await expect(loadButton).toHaveCount(0)
     await clickSaveButton()
     await expect(loadButton).toHaveCount(1)
-    expect(await pre.nth(0).innerText()).toContain(`"text":"Foo"`)
+    expect(await pre.nth(0).innerText()).toContain(`<strong>Foo</strong>`)
 
     // Type something
     await editor.focus()
@@ -58,8 +58,8 @@ testStory('save-json', () => {
     await expect(loadButton).toHaveCount(1)
     await clickSaveButton()
     await expect(loadButton).toHaveCount(2)
-    expect(await pre.nth(0).innerText()).toContain(`"text":"Foo"`)
-    expect(await pre.nth(1).innerText()).toContain(`"text":"FooBar"`)
+    expect(await pre.nth(0).innerText()).toContain(`<strong>Foo</strong>`)
+    expect(await pre.nth(1).innerText()).toContain(`<strong>FooBar</strong>`)
 
     // Load content
     expect(await editor.innerText()).toBe('FooBar')

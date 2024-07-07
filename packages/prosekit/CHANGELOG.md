@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.9.1
+
+### Patch Changes
+
+- [`3292022`](https://github.com/ocavue/prosekit/commit/3292022de6544ad1d83e3daf2f32c625ba43509a) ![](https://prosekit.dev/b/svelte)
+
+  Fix a bug in `useEditor` that causes `Function called outside component initialization` errors.
+
 ## 0.9.0
 
 ### Minor Changes

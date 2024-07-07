@@ -47,7 +47,7 @@ const handleLoad = (record: string) => {
         :disabled="!hasUnsavedChange"
         class="m-1 border border-solid bg-white px-2 py-1 text-sm text-black disabled:cursor-not-allowed disabled:text-gray-500"
       >
-        {{ hasUnsavedChange ? 'Save' : 'No Changes' }}
+        {{ hasUnsavedChange ? 'Save' : 'No changes to save' }}
       </button>
       <ul class="border-b border-t border-solid text-sm">
         <li

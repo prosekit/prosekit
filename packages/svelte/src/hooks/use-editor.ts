@@ -6,7 +6,7 @@ import {
   type Extension,
   ProseKitError,
 } from '@prosekit/core'
-import { onDestroy, onMount } from 'svelte'
+import { onMount } from 'svelte'
 import { readonly, writable, type Readable } from 'svelte/store'
 
 import { useEditorContext } from '../contexts/editor-context'
@@ -46,7 +46,9 @@ export function useEditor<E extends Extension = any>(options?: {
         defineUpdateHandler(forceUpdate),
       ])
       const dispose = editor.use(extension)
-      onDestroy(dispose)
+      return () => {
+        dispose()
+      }
     })
   }
 

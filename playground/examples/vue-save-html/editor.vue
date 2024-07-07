@@ -17,10 +17,12 @@ const defaultDoc = ref<NodeJSON | undefined>()
 const records = ref<string[]>([])
 const hasUnsavedChange = ref(false)
 
+// Create a new editor instance whenever `defaultDoc` changes
 const editor = computed(() => {
   const extension = defineBasicExtension()
   return createEditor({ extension, defaultDoc: defaultDoc.value })
 })
+
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {
   const editorValue = editor.value
@@ -28,7 +30,9 @@ watchPostEffect((onCleanup) => {
   onCleanup(() => editorValue.unmount())
 })
 
+// Enable the save button
 const handleDocChange = () => (hasUnsavedChange.value = true)
+
 useDocChange(handleDocChange, { editor })
 
 // Save the current document as a HTML string

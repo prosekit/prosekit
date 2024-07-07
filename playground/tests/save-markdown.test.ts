@@ -2,8 +2,8 @@ import { expect, test } from '@playwright/test'
 
 import { testStory, waitForEditor } from './helper'
 
-testStory('save-json', () => {
-  test('save-json', async ({ page }) => {
+testStory('save-markdown', () => {
+  test('save-markdown', async ({ page }) => {
     const editor = await waitForEditor(page)
 
     const saveButtonEnabled = page.getByRole('button', {
@@ -46,7 +46,7 @@ testStory('save-json', () => {
     await expect(loadButton).toHaveCount(0)
     await clickSaveButton()
     await expect(loadButton).toHaveCount(1)
-    expect(await pre.nth(0).innerText()).toContain(`"text":"Foo"`)
+    expect(await pre.nth(0).innerText()).toContain(`**Foo**`)
 
     // Type something
     await editor.focus()
@@ -58,8 +58,8 @@ testStory('save-json', () => {
     await expect(loadButton).toHaveCount(1)
     await clickSaveButton()
     await expect(loadButton).toHaveCount(2)
-    expect(await pre.nth(0).innerText()).toContain(`"text":"Foo"`)
-    expect(await pre.nth(1).innerText()).toContain(`"text":"FooBar"`)
+    expect(await pre.nth(0).innerText()).toContain(`**Foo**`)
+    expect(await pre.nth(1).innerText()).toContain(`**FooBar**`)
 
     // Load content
     expect(await editor.innerText()).toBe('FooBar')

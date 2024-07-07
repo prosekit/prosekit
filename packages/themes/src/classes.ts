@@ -209,6 +209,10 @@ export const BUTTON_PRIMARY = cn(
 export const SEARCH_INPUT = cn(INPUT, 'col-start-2')
 export const SEARCH_CONTROLLER = cn('flex items-center justify-between gap-1')
 
+export const KEYMAP_FIELDSET = cn(
+  'mt-4 box-border flex max-w-full w-full overflow-x-auto border p-4 rounded-md shadow min-w-0',
+)
+
 export const ICON_ITALIC = cn('i-lucide-italic h-5 w-5')
 export const ICON_BOLD = cn('i-lucide-bold h-5 w-5')
 export const ICON_UNDERLINE = cn('i-lucide-underline h-5 w-5')

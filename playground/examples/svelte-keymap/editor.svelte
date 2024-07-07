@@ -6,8 +6,8 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, jsonFromNode } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { onDestroy, onMount } from 'svelte'
-import Toolbar from './toolbar.svelte'
 import { writable } from 'svelte/store'
+import Toolbar from './toolbar.svelte'
 
 const extension = defineBasicExtension()
 const editor = createEditor({ extension })
@@ -33,7 +33,7 @@ const pushSubmition = (hotkey: string) => {
       <div bind:this={place} class={Themes.EDITOR_CONTENT}></div>
     </div>
   </div>
-  <fieldset class="mt-4 box-border block w-full border p-4">
+  <fieldset class={Themes.KEYMAP_FIELDSET}>
     <legend>Submit Records</legend>
     <ol>
       {#each $submitions as submition, index (index)}

@@ -30,7 +30,7 @@ const pushSubmition = (hotkey: string) => {
         <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
       </div>
     </div>
-    <fieldset class="mt-4 box-border block w-full border p-4">
+    <fieldset :class="Themes.KEYMAP_FIELDSET">
       <legend>Submit Records</legend>
       <ol>
         <li v-for="(submition, index) in submitions" :key="index">

@@ -3,7 +3,7 @@ import 'prosekit/basic/style.css'
 import { Themes } from '@prosekit/themes'
 import { createEditor, jsonFromNode } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
-import { useMemo, useState, useCallback } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 import { defineExtension } from './extension'
 import Toolbar from './toolbar'
@@ -33,7 +33,7 @@ export default function Editor() {
           <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
         </div>
       </div>
-      <fieldset className="mt-4 box-border block w-full border p-4">
+      <fieldset className={Themes.KEYMAP_FIELDSET}>
         <legend>Submit Records</legend>
         <ol>
           {submitions.map((submition, index) => (

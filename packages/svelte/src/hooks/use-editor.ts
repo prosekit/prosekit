@@ -45,10 +45,7 @@ export function useEditor<E extends Extension = any>(options?: {
         defineMountHandler(forceUpdate),
         defineUpdateHandler(forceUpdate),
       ])
-      const dispose = editor.use(extension)
-      return () => {
-        dispose()
-      }
+      return editor.use(extension)
     })
   }
 

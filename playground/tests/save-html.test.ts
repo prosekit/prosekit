@@ -37,7 +37,7 @@ testStory('save-html', () => {
 
     // Type something
     await editor.focus()
-    await editor.press('ControlOrMeta+B')
+    await editor.press('ControlOrMeta+b')
     await editor.pressSequentially('Foo')
     await expectSaveButtonEnabled()
     expect(await editor.innerText()).toBe('Foo')

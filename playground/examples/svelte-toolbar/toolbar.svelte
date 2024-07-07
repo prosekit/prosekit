@@ -27,7 +27,7 @@ const editor = useEditor<EditorExtension>({ update: true })
   <Button
     pressed={$editor.marks.bold.isActive()}
     disabled={!$editor.commands.toggleBold.canApply()}
-    onClick={() =>  $editor.commands.toggleBold()       }
+    onClick={() => $editor.commands.toggleBold()}
   >
     <div class={Themes.ICON_BOLD}></div>
   </Button>

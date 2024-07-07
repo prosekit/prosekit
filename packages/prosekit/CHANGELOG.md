@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.9.3
+
+### Patch Changes
+
+- [`435728f`](https://github.com/ocavue/prosekit/commit/435728f67f28b216e3c5bd53765d3fc00b24538f) ![](https://prosekit.dev/b/svelte)
+
+  Add `defineSvelteNodeView`, which allows you to render ProseMirror nodes using Svelte components.
+
+- [`435728f`](https://github.com/ocavue/prosekit/commit/435728f67f28b216e3c5bd53765d3fc00b24538f) ![](https://prosekit.dev/b/basic)
+
+  Apply styles `display: contents` to node view wrappers.
+
 ## 0.9.2
 
 ### Patch Changes

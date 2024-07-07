@@ -37,7 +37,6 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 <<< @/../playground/examples/svelte-word-counter/editor.svelte
 <<< @/../playground/examples/svelte-word-counter/extension.ts
-<<< @/../playground/examples/svelte-word-counter/use-readonly.ts
 <<< @/../playground/examples/svelte-word-counter/word-counter.svelte
 
 :::

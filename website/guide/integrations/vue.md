@@ -69,7 +69,7 @@ export default CodeBlockView
 import { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'
 import CodeBlockView from './code-block-view.vue'
 
-defineVueNodeView({
+const extension = defineVueNodeView({
   name: 'codeBlock',
   contentAs: 'code',
   component: CodeBlockView as VueNodeViewComponent,

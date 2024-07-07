@@ -72,7 +72,7 @@ import {
 } from 'prosekit/react'
 import CodeBlockView from './code-block-view.tsx'
 
-defineReactNodeView({
+const extension = defineReactNodeView({
   name: 'codeBlock',
   contentAs: 'code',
   component: CodeBlockView satisfies ReactNodeViewComponent,

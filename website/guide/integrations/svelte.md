@@ -72,7 +72,7 @@ import {
 } from 'prosekit/svelte'
 import CodeBlockView from './code-block-view.svelte'
 
-defineSvelteNodeView({
+const extension = defineSvelteNodeView({
   name: 'codeBlock',
   contentAs: 'code',
   component: CodeBlockView as SvelteNodeViewComponent,

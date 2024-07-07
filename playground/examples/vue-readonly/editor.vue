@@ -14,7 +14,10 @@ const editor = createEditor({
     'The content is readonly. Press the buttons above to toggle the readonly mode.',
 })
 const editorRef = ref<HTMLDivElement | null>(null)
-watchPostEffect(() => editor.mount(editorRef.value))
+watchPostEffect((onCleanup) => {
+  editor.mount(editorRef.value)
+  onCleanup(() => editor.unmount())
+})
 </script>
 
 <template>

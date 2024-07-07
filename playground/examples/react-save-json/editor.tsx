@@ -7,17 +7,19 @@ import { ProseKit, useDocChange } from 'prosekit/react'
 import { useCallback, useMemo, useState } from 'react'
 
 export default function Editor() {
-  const [key, setKey] = useState(1)
   const [defaultDoc, setDefaultDoc] = useState<NodeJSON | undefined>()
   const [records, setRecords] = useState<string[]>([])
   const [hasUnsavedChange, setHasUnsavedChange] = useState(false)
 
+  // Create a new editor instance whenever `defaultDoc` changes
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
     return createEditor({ extension, defaultDoc })
-  }, [key, defaultDoc])
+  }, [defaultDoc])
 
+  // Enable the save button
   const handleDocChange = useCallback(() => setHasUnsavedChange(true), [])
+
   useDocChange(handleDocChange, { editor })
 
   // Save the current document as a JSON string
@@ -31,7 +33,6 @@ export default function Editor() {
   const handleLoad = useCallback(
     (record: string) => {
       setDefaultDoc(JSON.parse(record))
-      setKey((key) => key + 1)
       setHasUnsavedChange(false)
     },
     [records],

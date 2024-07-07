@@ -1,9 +1,9 @@
 import { type Editor } from '@prosekit/core'
+import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/react'
 import { createElement, type ComponentType, type ReactNode } from 'react'
 
 import { EditorContextProvider } from '../contexts/editor-context'
-import { ReactViewsConsumer } from '../views/react-views-consumer'
-import { ReactViewsProvider } from '../views/react-views-provider'
+import { ReactViewsConsumer } from '../extensions/react-node-view'
 
 export interface ProseKitProps {
   editor: Editor
@@ -19,7 +19,7 @@ export const ProseKit: ComponentType<ProseKitProps> = (props) => {
   const { editor, children } = props
 
   return createElement(
-    ReactViewsProvider,
+    ProsemirrorAdapterProvider,
     null,
     createElement(
       EditorContextProvider,

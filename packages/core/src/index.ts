@@ -13,7 +13,6 @@ export { union } from './editor/union'
 export { withPriority } from './editor/with-priority'
 export { EditorNotFoundError, ProseKitError } from './error'
 export { defineBaseCommands, defineCommands } from './extensions/command'
-export { collectNodes, type NodeContent } from './utils/collect-nodes'
 export {
   defineDefaultState,
   type DefaultStateOptions,
@@ -87,7 +86,9 @@ export {
 } from './extensions/node-spec'
 export { defineNodeView, type NodeViewOptions } from './extensions/node-view'
 export {
+  defineNodeViewComponent,
   defineNodeViewFactory,
+  type NodeViewComponentOptions,
   type NodeViewFactoryOptions,
 } from './extensions/node-view-effect'
 export { defineParagraph } from './extensions/paragraph'
@@ -121,6 +122,7 @@ export type { SimplifyUnion } from './types/simplify-union'
 export { assert } from './utils/assert'
 export { canUseRegexLookbehind } from './utils/can-use-regex-lookbehind'
 export { clsx } from './utils/clsx'
+export { collectNodes, type NodeContent } from './utils/collect-nodes'
 export { defaultBlockAt } from './utils/default-block-at'
 export { isApple } from './utils/env'
 export { getId as _getId } from './utils/get-id'

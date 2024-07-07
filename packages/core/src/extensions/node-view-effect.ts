@@ -4,23 +4,31 @@ import { type NodeViewConstructor } from '@prosekit/pm/view'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import type { Extension } from '../types/extension'
+import { isNotNull } from '../utils/is-not-null'
 
 import { pluginFacet, type PluginPayload } from './plugin'
 
 /**
  * @internal
  */
-export type NodeViewFactoryOptions<T> =
-  | {
-      group: string
-      name: string
-      args: T
-    }
-  | {
-      group: string
-      name?: undefined
-      factory: (args: T) => NodeViewConstructor
-    }
+export type NodeViewFactoryOptions<T> = {
+  group: string
+  factory: (args: T) => NodeViewConstructor
+}
+
+/**
+ * @internal
+ */
+export type NodeViewComponentOptions<T> = {
+  group: string
+  name: string
+  args: T
+}
+
+type NodeViewFactoryInput = [
+  NodeViewFactoryOptions<any> | null,
+  NodeViewComponentOptions<any> | null,
+]
 
 /**
  * @internal
@@ -28,43 +36,31 @@ export type NodeViewFactoryOptions<T> =
 export function defineNodeViewFactory<T>(
   options: NodeViewFactoryOptions<T>,
 ): Extension {
-  return defineFacetPayload(nodeViewFactoryFacet, [options])
+  const input: NodeViewFactoryInput = [options, null]
+  return defineFacetPayload(nodeViewFactoryFacet, [input])
 }
 
-const nodeViewFactoryFacet = defineFacet<
-  NodeViewFactoryOptions<any>,
-  PluginPayload
->({
-  reducer: (inputs: NodeViewFactoryOptions<any>[]): PluginPayload => {
+/**
+ * @internal
+ */
+export function defineNodeViewComponent<T>(
+  options: NodeViewComponentOptions<T>,
+): Extension {
+  const input: NodeViewFactoryInput = [null, options]
+  return defineFacetPayload(nodeViewFactoryFacet, [input])
+}
+
+const nodeViewFactoryFacet = defineFacet<NodeViewFactoryInput, PluginPayload>({
+  reducer: (inputs: NodeViewFactoryInput[]): PluginPayload => {
     const nodeViews: { [nodeName: string]: NodeViewConstructor } = {}
-    const options: {
-      [group: string]: Array<{
-        name: string
-        args: unknown
-      }>
-    } = {}
-    const factories: {
-      [group: string]: (options: unknown) => NodeViewConstructor
-    } = {}
 
-    for (const input of inputs) {
-      const group = input.group
-      if (input.name == null) {
-        factories[group] = input.factory
-      } else {
-        options[group] ||= []
-        options[group].push({
-          name: input.name,
-          args: input.args,
-        })
-      }
-    }
+    const factories = inputs.map((x) => x[0]).filter(isNotNull)
+    const options = inputs.map((x) => x[1]).filter(isNotNull)
 
-    for (const [group, factory] of Object.entries(factories)) {
-      const groupOptions = options[group] || []
-      for (const { name, args } of groupOptions) {
-        nodeViews[name] = factory(args)
-      }
+    for (const { group, name, args } of options) {
+      const factory = factories.find((factory) => factory.group === group)
+      if (!factory) continue
+      nodeViews[name] = factory.factory(args)
     }
 
     return () => [

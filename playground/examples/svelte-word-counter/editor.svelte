@@ -14,7 +14,7 @@ const editor = createEditor({
 
 const mount = (element: HTMLElement) => {
   editor.mount(element)
-  return { destroy: () => editor.mount(null) }
+  return { destroy: () => editor.unmount() }
 }
 </script>
 

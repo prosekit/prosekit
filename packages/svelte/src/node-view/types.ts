@@ -13,7 +13,7 @@ import type { Writable } from 'svelte/store'
  */
 export interface SvelteNodeViewProps {
   // won't change
-  contentRef: (node: HTMLElement | null) => void
+  contentRef: (node: Element | null) => void
   view: EditorView
   getPos: () => number | undefined
   setAttrs: (attrs: Attrs) => void

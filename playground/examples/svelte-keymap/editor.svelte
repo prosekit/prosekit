@@ -2,13 +2,13 @@
 import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
-import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, jsonFromNode } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { writable } from 'svelte/store'
+import { defineExtension } from './extension'
 import Toolbar from './toolbar.svelte'
 
-const extension = defineBasicExtension()
+const extension = defineExtension()
 const editor = createEditor({ extension })
 
 const mount = (element: HTMLElement) => {

@@ -166,6 +166,7 @@ export const getStaticPaths = () => [
 const { example } = Astro.params
 ---
 
+<!-- prettier-ignore -->
 <BaseLayout>
   {example === 'react-minimal' && <E4207331782 client:only="react" />}
   {example === 'react-change-tracking' && <E1589612019 client:only="react" />}
@@ -227,11 +228,7 @@ const { example } = Astro.params
   {example === 'svelte-change-tracking' && <E3396086889 client:only="svelte" />}
   {example === 'svelte-code' && <E533256892 client:only="svelte" />}
   {example === 'svelte-code-block' && <E1909582716 client:only="svelte" />}
-  {
-    example === 'svelte-code-block-themes' && (
-      <E2034881373 client:only="svelte" />
-    )
-  }
+  {example === 'svelte-code-block-themes' && <E2034881373 client:only="svelte" />}
   {example === 'svelte-emoji-rules' && <E2998513711 client:only="svelte" />}
   {example === 'svelte-full' && <E1757071860 client:only="svelte" />}
   {example === 'svelte-heading' && <E1660059821 client:only="svelte" />}

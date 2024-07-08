@@ -47,7 +47,7 @@ const handleSubmit = (event: Event) => {
 }
 </script>
 
-<InlinePopover class={Themes.INLINE_MENU_MAIN}>
+<InlinePopover data-testid="inline-menu-main" class={Themes.INLINE_MENU_MAIN}>
   <Button
     pressed={$editor.marks.bold.isActive()}
     disabled={!$editor.commands.toggleBold.canApply()}
@@ -112,6 +112,7 @@ const handleSubmit = (event: Event) => {
   defaultOpen={false}
   open={linkMenuOpen}
   on:openChange={setLinkMenuOpen}
+  data-testid="inline-menu-link"
   class={Themes.INLINE_MENU_LINK}
 >
   {#if linkMenuOpen}

@@ -48,6 +48,11 @@ async function testInlineMenu(page: Page) {
   // Show the link menu
   await inlineMenuMain.getByRole('button', { name: 'Link' }).click()
   await expect(inlineMenuLink).toBeVisible()
+  await expect(inlineMenuLink.getByRole('textbox')).toBeEmpty()
+  await expect(inlineMenuLink.getByRole('textbox')).toHaveAttribute(
+    'placeholder',
+    'Paste the link...',
+  )
   await inlineMenuMain.getByRole('button', { name: 'Link' }).click()
   await expect(inlineMenuLink).toBeHidden()
 
@@ -67,6 +72,9 @@ async function testInlineMenu(page: Page) {
   await expect(inlineMenuLink).toBeHidden()
   await inlineMenuMain.getByRole('button', { name: 'Link' }).click()
   await expect(inlineMenuLink).toBeVisible()
+  await expect(inlineMenuLink.getByRole('textbox')).toHaveValue(
+    'https://www.example.com',
+  )
   await inlineMenuLink.getByRole('button', { name: 'Remove link' }).click()
   await expect(inlineMenuLink).toBeHidden()
   await expect(linkExample).toBeHidden()

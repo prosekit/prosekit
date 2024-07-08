@@ -22,4 +22,14 @@
 
 </template>
 
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte-code-block-themes/toolbar.svelte
+
+:::
+
+</template>
+
 </FrameworkCodeBlock>

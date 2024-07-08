@@ -1365,6 +1365,33 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-code-block-themes",
+      "framework": "svelte",
+      "story": "code-block-themes",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "default-doc.ts",
+          "hidden": false
+        },
+        {
+          "path": "theme-selector.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-emoji-rules",
       "framework": "svelte",
       "story": "emoji-rules",

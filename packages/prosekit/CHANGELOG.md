@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.9.5
+
+### Patch Changes
+
+- [`a1cc545`](https://github.com/ocavue/prosekit/commit/a1cc545a8fc8e8ed29061b7b42a35746309c3917) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/vue)
+
+  Improve TypeScript declaration for Svelte components and Vue components. Now these components accept all HTML attributes as props.
+
+- [`73d1741`](https://github.com/ocavue/prosekit/commit/73d1741f36deacdc8682747f9b9020622fd49143) ![](https://prosekit.dev/b/web)
+
+  Add a new prop `dismissOnEscape` to the inline popover component. This prop allows you to control whether the inline popover should be dismissed when the editor receives an Escape key press.
+
 ## 0.9.4
 
 ### Patch Changes

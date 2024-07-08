@@ -33,7 +33,7 @@ const handleUserInsert = (id: number, username: string) => {
         v-for="user in users"
         :key="user.id"
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        @select="handleUserInsert(user.id, user.name)"
+        @select="() => handleUserInsert(user.id, user.name)"
       >
         {{ user.name }}
       </AutocompleteItem>

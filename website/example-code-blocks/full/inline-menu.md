@@ -12,4 +12,14 @@
 
 </template>
 
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte-full/inline-menu.svelte
+
+:::
+
+</template>
+
 </FrameworkCodeBlock>

@@ -1361,6 +1361,69 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-full",
+      "framework": "svelte",
+      "story": "full",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.svelte",
+          "hidden": false
+        },
+        {
+          "path": "code-block-view.svelte",
+          "hidden": false
+        },
+        {
+          "path": "image-upload-popover.svelte",
+          "hidden": false
+        },
+        {
+          "path": "inline-menu.svelte",
+          "hidden": false
+        },
+        {
+          "path": "language-selector.svelte",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu.svelte",
+          "hidden": false
+        },
+        {
+          "path": "tag-data.ts",
+          "hidden": false
+        },
+        {
+          "path": "tag-menu.svelte",
+          "hidden": false
+        },
+        {
+          "path": "user-data.ts",
+          "hidden": false
+        },
+        {
+          "path": "user-menu.svelte",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-heading",
       "framework": "svelte",
       "story": "heading",

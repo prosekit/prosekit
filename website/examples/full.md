@@ -30,4 +30,27 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 </template>
 
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte-full/editor.svelte
+<<< @/../playground/examples/svelte-full/extension.ts
+<<< @/../playground/examples/svelte-full/toolbar.svelte
+<<< @/../playground/examples/svelte-full/block-handle.svelte
+<<< @/../playground/examples/svelte-full/code-block-view.svelte
+<<< @/../playground/examples/svelte-full/image-upload-popover.svelte
+<<< @/../playground/examples/svelte-full/inline-menu.svelte
+<<< @/../playground/examples/svelte-full/language-selector.svelte
+<<< @/../playground/examples/svelte-full/slash-menu.svelte
+<<< @/../playground/examples/svelte-full/tag-data.ts
+<<< @/../playground/examples/svelte-full/tag-menu.svelte
+<<< @/../playground/examples/svelte-full/user-data.ts
+<<< @/../playground/examples/svelte-full/user-menu.svelte
+<<< @/../playground/examples/svelte-full/button.svelte
+
+:::
+
+</template>
+
 </ExamplePreview>

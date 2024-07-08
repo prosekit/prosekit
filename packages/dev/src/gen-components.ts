@@ -300,12 +300,13 @@ function formatSvelteTsCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-import type { ${pascal}Props } from '@prosekit/web/${group}'    
+import type { ${pascal}Element, ${pascal}Props } from '@prosekit/web/${group}'    
 import type { SvelteComponent } from 'svelte'
+import type { HTMLAttributes } from 'svelte/elements'
 
 import Component from './${kebab}.gen.svelte'
 
-export const ${pascal} = Component as typeof SvelteComponent<any> as typeof SvelteComponent<Partial<${pascal}Props> & {class?: string}>
+export const ${pascal} = Component as typeof SvelteComponent<Partial<${pascal}Props> & HTMLAttributes<${pascal}Element>>
   
 `.trim() + '\n'
   )

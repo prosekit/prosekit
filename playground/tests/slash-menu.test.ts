@@ -2,12 +2,7 @@ import { expect, test } from '@playwright/test'
 
 import { testStory, waitForEditor } from './helper'
 
-testStory('slash-menu', ({ example }) => {
-  // TODO: svelte-slash-menu is not working
-  if (example === 'svelte-slash-menu') {
-    return
-  }
-
+testStory('slash-menu', () => {
   test('slash-menu', async ({ page }) => {
     const editor = await waitForEditor(page)
 

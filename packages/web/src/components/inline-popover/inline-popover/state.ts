@@ -14,6 +14,7 @@ import type { Editor } from '@prosekit/core'
 
 import { useEditorFocusChangeEvent } from '../../../hooks/use-editor-focus-event'
 import { useEditorUpdateEvent } from '../../../hooks/use-editor-update-event'
+import { useKeymap } from '../../../hooks/use-keymap'
 
 import { type InlinePopoverProps } from './props'
 import { getVirtualSelectionElement } from './virtual-selection-element'
@@ -47,6 +48,17 @@ export function useInlinePopover(
     } else if (!hasReferenceValue) {
       open.set(false)
     }
+  })
+
+  useKeymap(host, editor, {
+    Escape: () => {
+      if (!state.dismissOnEscape.get() || !open.get()) {
+        return false
+      }
+      open.set(false)
+      onOpenChange.peek()?.(false)
+      return true
+    },
   })
 
   useOverlayPositionerState(host, overlayState, { reference })

@@ -281,7 +281,7 @@ import { default${pascal}Props } from '@prosekit/web/${group}'
 import { useWebComponent } from '../../utils/use-web-component'
 
 let attributes: Record<string, unknown> = {}
-let element: HTMLElement | undefined = undefined 
+let element: HTMLElement | undefined = undefined
 const handleChange = useWebComponent(default${pascal}Props)
 
 $: {

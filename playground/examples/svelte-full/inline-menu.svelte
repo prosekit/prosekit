@@ -119,7 +119,7 @@ const handleSubmit = (event: Event) => {
     <form on:submit|preventDefault={handleSubmit}>
       <input
         placeholder="Paste the link..."
-        value={getCurrentLink($editor.state)}
+        value={getCurrentLink($editor.state) || ''}
         class={Themes.INLINE_MENU_LINK_INPUT}
       />
     </form>
@@ -127,7 +127,7 @@ const handleSubmit = (event: Event) => {
 
   {#if $editor.marks.link.isActive()}
     <button
-      on:click={() => handleLinkUpdate(undefined)}
+      on:click={() => handleLinkUpdate()}
       on:mousedown|preventDefault
       class={Themes.INLINE_MENU_LINK_REMOVE_BUTTON}
     >

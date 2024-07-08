@@ -1,4 +1,9 @@
-import { defineComponent, h, type DefineSetupFnComponent } from 'vue'
+import {
+  defineComponent,
+  h,
+  type DefineSetupFnComponent,
+  type HTMLAttributes,
+} from 'vue'
 
 import { useEditorContext } from '../injection/editor-context'
 
@@ -6,7 +11,7 @@ export function createComponent<Props extends object>(
   tagName: string,
   displayName: string,
   defaultProps: Props,
-): DefineSetupFnComponent<Partial<Props> & { class?: string }> {
+): DefineSetupFnComponent<Partial<Props> & HTMLAttributes> {
   const propertyNames = Object.keys(defaultProps)
 
   const hasEditor = Object.hasOwn(defaultProps, 'editor')

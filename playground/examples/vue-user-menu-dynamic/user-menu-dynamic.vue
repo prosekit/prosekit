@@ -44,7 +44,7 @@ const { users, loading } = useUserQuery(query, open)
       <AutocompleteItem
         v-for="user in users"
         :key="user.id"
-        @select="handleUserInsert(user.id, user.name)"
+        @select="() => handleUserInsert(user.id, user.name)"
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
       >
         <span :class="loading && 'opacity-50'">

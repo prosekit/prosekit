@@ -1,5 +1,14 @@
 # prosekit
 
+## 0.9.4
+
+### Patch Changes
+
+- [`4762835`](https://github.com/ocavue/prosekit/commit/476283551857ebf0aebdf7a9aac9716a1b264c7e) ![](https://prosekit.dev/b/svelte)
+
+  Fix an issue where Svelte components cannot set properties on the underlying web
+  components.
+
 ## 0.9.3
 
 ### Patch Changes

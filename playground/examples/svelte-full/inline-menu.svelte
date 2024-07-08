@@ -111,7 +111,7 @@ const handleSubmit = (event: Event) => {
   placement="bottom"
   defaultOpen={false}
   open={linkMenuOpen}
-  on:openChange={setLinkMenuOpen}
+  onOpenChange={setLinkMenuOpen}
   data-testid="inline-menu-link"
   class={Themes.INLINE_MENU_LINK}
 >

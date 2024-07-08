@@ -63,6 +63,12 @@ export async function getEditorHTML(page: Page) {
   return await formatHTML(html)
 }
 
+export async function getSelectedText(page: Page): Promise<string> {
+  return await page.evaluate(() => {
+    return window.getSelection()?.toString() || ''
+  })
+}
+
 async function formatHTML(html: string) {
   return await prettier.format(html, {
     parser: 'html',

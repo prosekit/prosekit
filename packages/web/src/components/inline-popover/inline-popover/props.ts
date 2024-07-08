@@ -26,18 +26,28 @@ export interface InlinePopoverProps
   /**
    * Whether the popover is open.
    *
-   * Notice that the popover will be always hidden if the inline selection is empty.
+   * Notice that the popover will be always hidden if the inline selection is
+   * empty.
    *
    * @default false
    */
   open: boolean
 
   /**
-   * Event handler called when the open state changed caused by user interaction (i.e. select or unselect inline content).
+   * Event handler called when the open state changed caused by user interaction
+   * (i.e. select or unselect inline content).
    *
    * @default null
    */
   onOpenChange: ((open: boolean) => void) | null
+
+  /**
+   * Whether the inline popover should be dismissed when the editor receives an
+   * Escape key press.
+   *
+   * @default true
+   */
+  dismissOnEscape: boolean
 
   /**
    * The placement of the popover, relative to the selected inline content.
@@ -83,6 +93,7 @@ export const defaultInlinePopoverProps = Object.freeze({
   defaultOpen: true,
   open: false,
   onOpenChange: null,
+  dismissOnEscape: true,
 
   placement: 'top',
   offset: 12,

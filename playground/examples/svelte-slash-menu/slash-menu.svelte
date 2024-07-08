@@ -9,7 +9,6 @@ import {
 import { useEditor } from 'prosekit/svelte'
 import type { EditorExtension } from './extension'
 
-// 2
 const editor = useEditor<EditorExtension>()
 
 const isBlockEmpty = () => {

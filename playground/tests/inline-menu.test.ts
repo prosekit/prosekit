@@ -1,8 +1,40 @@
 import { expect, test, type Page } from '@playwright/test'
 
-import { testStory, waitForEditor } from './helper'
+import { emptyEditor, testStory, waitForEditor } from './helper'
 
 testStory(['inline-menu', 'full'], () => {
+  test('show and dismiss', async ({ page }) => {
+    const { editor, mainMenu, linkMenu, typeAndSelect } = await setup(page)
+
+    // Initially, the menu is hidden
+    expect(await editor.textContent()).toEqual('')
+    await expect(mainMenu).toBeHidden()
+    await expect(linkMenu).toBeHidden()
+
+    // Select a word
+    await typeAndSelect()
+    expect(await editor.textContent()).toEqual('Hello world')
+    await expect(mainMenu).toBeVisible()
+    await expect(linkMenu).toBeHidden()
+
+    // Deselect the word
+    await page.keyboard.press('ArrowRight')
+    await expect(mainMenu).toBeHidden()
+    await expect(linkMenu).toBeHidden()
+
+    // Type something and select a word again
+    await editor.pressSequentially(' ')
+    await typeAndSelect()
+    expect(await editor.textContent()).toEqual('Hello world Hello world')
+    await expect(mainMenu).toBeVisible()
+    await expect(linkMenu).toBeHidden()
+
+    // Press Escape to dismiss the menu
+    await page.keyboard.press('Escape')
+    await expect(mainMenu).toBeHidden()
+    await expect(linkMenu).toBeHidden()
+  })
+
   test('inline mark', async ({ page }) => {
     const { editor, mainMenu, linkMenu, typeAndSelect } = await setup(page)
 
@@ -81,6 +113,8 @@ async function setup(page: Page) {
   const linkMenu = page.getByTestId('inline-menu-link')
   const linkInput = page.getByPlaceholder('Paste the link...')
   const linkTag = editor.locator('a[href="https://www.example.com"]')
+
+  await emptyEditor(page)
 
   const typeAndSelect = async () => {
     // Type "Hello world"

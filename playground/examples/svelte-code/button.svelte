@@ -6,9 +6,9 @@ import {
   TooltipTrigger,
 } from 'prosekit/svelte/tooltip'
 
-export let pressed: boolean | undefined = undefined
-export let disabled: boolean | undefined = undefined
-export let tooltip: string | undefined = undefined
+export let pressed: boolean = false
+export let disabled: boolean = false
+export let tooltip: string = ''
 export let onClick: VoidFunction | undefined = undefined
 </script>
 
@@ -16,12 +16,12 @@ export let onClick: VoidFunction | undefined = undefined
   <TooltipTrigger class={Themes.TOOLTIP_TRIGGER}>
     <button
       data-state={pressed ? 'on' : 'off'}
-      disabled={disabled ? true : undefined}
-      on:click={onClick}
-      on:mousedown|preventDefault
+      {disabled}
+      on:click={() => onClick?.()}
+      on:mousedown={(event) => event.preventDefault()}
       class={Themes.TOGGLE_BUTTON}
     >
-      <slot></slot>
+      <slot />
       {#if tooltip}
         <span class="sr-only">{tooltip}</span>
       {/if}

@@ -1303,6 +1303,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-code",
+      "framework": "svelte",
+      "story": "code",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.svelte",
+          "hidden": false
+        },
+        {
+          "path": "button.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-code-block",
       "framework": "svelte",
       "story": "code-block",

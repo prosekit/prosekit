@@ -12,4 +12,14 @@
 
 </template>
 
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte-code/toolbar.svelte
+
+:::
+
+</template>
+
 </FrameworkCodeBlock>

@@ -20,4 +20,17 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 </template>
 
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte-code/editor.svelte
+<<< @/../playground/examples/svelte-code/extension.ts
+<<< @/../playground/examples/svelte-code/toolbar.svelte
+<<< @/../playground/examples/svelte-code/button.svelte
+
+:::
+
+</template>
+
 </ExamplePreview>

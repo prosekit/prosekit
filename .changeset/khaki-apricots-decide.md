@@ -1,4 +1,5 @@
 ---
+'prosekit': patch
 '@prosekit/svelte': patch
 '@prosekit/vue': patch
 ---

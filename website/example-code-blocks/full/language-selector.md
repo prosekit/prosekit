@@ -12,4 +12,14 @@
 
 </template>
 
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte-full/language-selector.svelte
+
+:::
+
+</template>
+
 </FrameworkCodeBlock>

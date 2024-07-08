@@ -224,7 +224,11 @@ const { example } = Astro.params
   {example === 'svelte-bold' && <E657501006 client:only="svelte" />}
   {example === 'svelte-code' && <E533256892 client:only="svelte" />}
   {example === 'svelte-code-block' && <E1909582716 client:only="svelte" />}
-  {example === 'svelte-code-block-themes' && <E2034881373 client:only="svelte" />}
+  {
+    example === 'svelte-code-block-themes' && (
+      <E2034881373 client:only="svelte" />
+    )
+  }
   {example === 'svelte-emoji-rules' && <E2998513711 client:only="svelte" />}
   {example === 'svelte-full' && <E1757071860 client:only="svelte" />}
   {example === 'svelte-heading' && <E1660059821 client:only="svelte" />}

@@ -81,6 +81,7 @@ function getExampleContent(names: string[]): string {
     `]`,
     `const { example } = Astro.params`,
     `---\n`,
+    `<!-- prettier-ignore -->`,
     `<BaseLayout>`,
     ...htmlLines,
     `</BaseLayout>`,

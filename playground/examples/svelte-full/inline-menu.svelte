@@ -52,7 +52,7 @@ const handleSubmit = (event: Event) => {
     pressed={$editor.marks.bold.isActive()}
     disabled={!$editor.commands.toggleBold.canApply()}
     tooltip="Bold"
-    on:click={() => $editor.commands.toggleBold()}
+    onClick={() => $editor.commands.toggleBold()}
   >
     <div class={Themes.ICON_BOLD}></div>
   </Button>
@@ -60,7 +60,7 @@ const handleSubmit = (event: Event) => {
   <Button
     pressed={$editor.marks.italic.isActive()}
     disabled={!$editor.commands.toggleItalic.canApply()}
-    on:click={() => $editor.commands.toggleItalic()}
+    onClick={() => $editor.commands.toggleItalic()}
     tooltip="Italic"
   >
     <div class={Themes.ICON_ITALIC}></div>
@@ -69,7 +69,7 @@ const handleSubmit = (event: Event) => {
   <Button
     pressed={$editor.marks.underline.isActive()}
     disabled={!$editor.commands.toggleUnderline.canApply()}
-    on:click={() => $editor.commands.toggleUnderline()}
+    onClick={() => $editor.commands.toggleUnderline()}
     tooltip="Underline"
   >
     <div class={Themes.ICON_UNDERLINE}></div>
@@ -78,7 +78,7 @@ const handleSubmit = (event: Event) => {
   <Button
     pressed={$editor.marks.strike.isActive()}
     disabled={!$editor.commands.toggleStrike.canApply()}
-    on:click={() => $editor.commands.toggleStrike()}
+    onClick={() => $editor.commands.toggleStrike()}
     tooltip="Strike"
   >
     <div class={Themes.ICON_STRIKE}></div>
@@ -87,7 +87,7 @@ const handleSubmit = (event: Event) => {
   <Button
     pressed={$editor.marks.code.isActive()}
     disabled={!$editor.commands.toggleCode.canApply()}
-    on:click={() => $editor.commands.toggleCode()}
+    onClick={() => $editor.commands.toggleCode()}
     tooltip="Code"
   >
     <div class={Themes.ICON_CODE}></div>
@@ -96,7 +96,7 @@ const handleSubmit = (event: Event) => {
   {#if $editor.commands.addLink.canApply({ href: '' })}
     <Button
       pressed={$editor.marks.link.isActive()}
-      on:click={() => {
+      onClick={() => {
         $editor.commands.expandLink()
         toggleLinkMenuOpen()
       }}

@@ -4,23 +4,12 @@ import { testStory, waitForEditor } from './helper'
 
 testStory(['inline-menu', 'full'], () => {
   test('inline mark', async ({ page }) => {
-    const { editor, mainMenu, linkMenu } = await setup(page)
+    const { editor, mainMenu, linkMenu, typeAndSelect } = await setup(page)
 
     await expect(mainMenu).toBeHidden()
     await expect(linkMenu).toBeHidden()
 
-    // Type "Hello world"
-    await editor.focus()
-    await editor.pressSequentially('Hello world')
-
-    // Select the word "world"
-    await page.keyboard.down('Shift')
-    await page.keyboard.press('ArrowLeft')
-    await page.keyboard.press('ArrowLeft')
-    await page.keyboard.press('ArrowLeft')
-    await page.keyboard.press('ArrowLeft')
-    await page.keyboard.press('ArrowLeft')
-    await page.keyboard.up('Shift')
+    await typeAndSelect()
 
     await expect(mainMenu).toBeVisible()
     await expect(linkMenu).toBeHidden()
@@ -37,23 +26,13 @@ testStory(['inline-menu', 'full'], () => {
   })
 
   test('inline link', async ({ page }) => {
-    const { editor, mainMenu, linkMenu, linkInput, linkTag } = await setup(page)
+    const { editor, mainMenu, linkMenu, linkInput, linkTag, typeAndSelect } =
+      await setup(page)
 
     await expect(mainMenu).toBeHidden()
     await expect(linkMenu).toBeHidden()
 
-    // Type "Hello world"
-    await editor.focus()
-    await editor.pressSequentially('Hello world')
-
-    // Select the word "world"
-    await page.keyboard.down('Shift')
-    await page.keyboard.press('ArrowLeft')
-    await page.keyboard.press('ArrowLeft')
-    await page.keyboard.press('ArrowLeft')
-    await page.keyboard.press('ArrowLeft')
-    await page.keyboard.press('ArrowLeft')
-    await page.keyboard.up('Shift')
+    await typeAndSelect()
 
     await expect(mainMenu).toBeVisible()
     await expect(linkMenu).toBeHidden()
@@ -103,11 +82,27 @@ async function setup(page: Page) {
   const linkInput = page.getByPlaceholder('Paste the link...')
   const linkTag = editor.locator('a[href="https://www.example.com"]')
 
+  const typeAndSelect = async () => {
+    // Type "Hello world"
+    await editor.focus()
+    await editor.pressSequentially('Hello world')
+
+    // Select the word "world"
+    await page.keyboard.down('Shift')
+    await page.keyboard.press('ArrowLeft')
+    await page.keyboard.press('ArrowLeft')
+    await page.keyboard.press('ArrowLeft')
+    await page.keyboard.press('ArrowLeft')
+    await page.keyboard.press('ArrowLeft')
+    await page.keyboard.up('Shift')
+  }
+
   return {
     editor,
     mainMenu,
     linkMenu,
     linkInput,
     linkTag,
+    typeAndSelect,
   }
 }

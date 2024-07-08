@@ -8,13 +8,25 @@ testStory(['inline-menu', 'full'], () => {
   })
 })
 
-async function testInlineMenu(page: Page) {
+async function setup(page: Page) {
   const editor = await waitForEditor(page)
 
   const mainMenu = page.getByTestId('inline-menu-main')
   const linkMenu = page.getByTestId('inline-menu-link')
   const linkInput = page.getByPlaceholder('Paste the link...')
   const linkTag = editor.locator('a[href="https://www.example.com"]')
+
+  return {
+    editor,
+    mainMenu,
+    linkMenu,
+    linkInput,
+    linkTag,
+  }
+}
+
+async function testInlineMenu(page: Page) {
+  const { editor, mainMenu, linkMenu, linkInput, linkTag } = await setup(page)
 
   await expect(mainMenu).toBeHidden()
   await expect(linkMenu).toBeHidden()

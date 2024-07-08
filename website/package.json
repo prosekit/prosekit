@@ -17,10 +17,10 @@
     "@prosekit/dev": "workspace:*",
     "@prosekit/themes": "workspace:*",
     "@prosekit/unocss-preset": "workspace:*",
-    "@shikijs/vitepress-twoslash": "^1.10.1",
+    "@shikijs/vitepress-twoslash": "^1.10.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@unocss/cli": "^0.61.2",
+    "@unocss/cli": "^0.61.3",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "clsx": "^2.1.1",
     "dedent": "^1.5.3",
@@ -37,11 +37,11 @@
     "typedoc": "^0.26.3",
     "typedoc-plugin-external-package-links": "^0.1.0",
     "typedoc-plugin-markdown": "^4.1.2",
-    "typedoc-plugin-mdn-links": "^3.2.2",
+    "typedoc-plugin-mdn-links": "^3.2.3",
     "typescript": "^5.5.3",
-    "unocss": "^0.61.2",
+    "unocss": "^0.61.3",
     "vite": "^5.3.3",
-    "vitepress": "1.2.3",
+    "vitepress": "1.3.0",
     "vue": "^3.4.31"
   }
 }

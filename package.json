@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9.4.0",
+  "packageManager": "pnpm@9.5.0",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
@@ -36,7 +36,7 @@
     "@prosekit/unocss-preset": "workspace:*",
     "@size-limit/esbuild-why": "^11.1.4",
     "@size-limit/preset-small-lib": "^11.1.4",
-    "@unocss/eslint-config": "^0.61.2",
+    "@unocss/eslint-config": "^0.61.3",
     "@vitest/browser": "^2.0.0-beta.13",
     "@vitest/coverage-istanbul": "^2.0.0-beta.13",
     "cross-env": "^7.0.3",
@@ -49,7 +49,7 @@
     "size-limit": "^11.1.4",
     "turbo": "^2.0.6",
     "typescript": "^5.5.3",
-    "unocss": "^0.61.2",
+    "unocss": "^0.61.3",
     "vitest": "^2.0.0-beta.13"
   },
   "pnpm": {

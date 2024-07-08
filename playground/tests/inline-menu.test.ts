@@ -1,6 +1,11 @@
 import { expect, test, type Page } from '@playwright/test'
 
-import { emptyEditor, testStory, waitForEditor } from './helper'
+import {
+  emptyEditor,
+  getSelectedText,
+  testStory,
+  waitForEditor,
+} from './helper'
 
 testStory(['inline-menu', 'full'], () => {
   test('show and dismiss', async ({ page }) => {
@@ -42,7 +47,9 @@ testStory(['inline-menu', 'full'], () => {
     await expect(mainMenu).toBeHidden()
     await expect(linkMenu).toBeHidden()
 
+    expect(await getSelectedText(page)).toEqual('')
     await typeAndSelect()
+    expect(await getSelectedText(page)).toEqual('world')
 
     await expect(mainMenu).toBeVisible()
     await expect(linkMenu).toBeHidden()

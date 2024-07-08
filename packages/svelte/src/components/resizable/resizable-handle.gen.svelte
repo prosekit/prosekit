@@ -1,14 +1,17 @@
 <script lang="ts">
 import '@prosekit/web/resizable'
 import { defaultResizableHandleProps } from '@prosekit/web/resizable'
+import { useWebComponent } from '../../utils/use-web-component'
 
-import { useEditorContext } from '../../contexts/editor-context'
+let attributes: Record<string, unknown> = {}
+let element: HTMLElement | undefined = undefined
+const handleChange = useWebComponent(defaultResizableHandleProps)
 
-const hasEditor = Object.hasOwn(defaultResizableHandleProps, 'editor')
-const editorContext = useEditorContext()
-const editor = hasEditor ? editorContext : undefined
+$: {
+  attributes = handleChange(element, $$props)
+}
 </script>
 
-<prosekit-resizable-handle {editor} {...$$props}>
+<prosekit-resizable-handle {...attributes} bind:this={element}>
   <slot />
 </prosekit-resizable-handle>

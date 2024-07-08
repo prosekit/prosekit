@@ -225,7 +225,6 @@ function formatReactComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-
 import {
   ${pascal}Element,
   default${pascal}Props,
@@ -279,15 +278,18 @@ function formatSvelteComponentCode(group: string, kebab: string) {
 <script lang="ts">
 import '@prosekit/web/${group}'
 import { default${pascal}Props } from '@prosekit/web/${group}'
+import { useWebComponent } from '../../utils/use-web-component'
 
-import { useEditorContext } from '../../contexts/editor-context'
+let attributes: Record<string, unknown> = {}
+let element: HTMLElement | undefined = undefined
+const handleChange = useWebComponent(default${pascal}Props)
 
-const hasEditor = Object.hasOwn(default${pascal}Props, 'editor')
-const editorContext = useEditorContext()
-const editor = hasEditor ? editorContext : undefined
+$: {
+  attributes = handleChange(element, $$props)
+}
 </script>
 
-<prosekit-${kebab} {editor} {...$$props}>
+<prosekit-${kebab} {...attributes} bind:this={element}>
   <slot />
 </prosekit-${kebab}>
 `.trim() + '\n'
@@ -298,7 +300,6 @@ function formatSvelteTsCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-
 import type { ${pascal}Props } from '@prosekit/web/${group}'    
 import type { SvelteComponent } from 'svelte'
 
@@ -314,7 +315,6 @@ function formatSolidComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-
 import { 
   ${pascal}Element,
   default${pascal}Props,
@@ -339,7 +339,6 @@ function formatPreactComponentCode(group: string, kebab: string) {
   const pascal = kebabToPascal(kebab)
   return (
     `
-
 import {
   ${pascal}Element,
   default${pascal}Props,

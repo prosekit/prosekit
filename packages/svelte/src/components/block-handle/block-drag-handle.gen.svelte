@@ -1,14 +1,17 @@
 <script lang="ts">
 import '@prosekit/web/block-handle'
 import { defaultBlockDragHandleProps } from '@prosekit/web/block-handle'
+import { useWebComponent } from '../../utils/use-web-component'
 
-import { useEditorContext } from '../../contexts/editor-context'
+let attributes: Record<string, unknown> = {}
+let element: HTMLElement | undefined = undefined
+const handleChange = useWebComponent(defaultBlockDragHandleProps)
 
-const hasEditor = Object.hasOwn(defaultBlockDragHandleProps, 'editor')
-const editorContext = useEditorContext()
-const editor = hasEditor ? editorContext : undefined
+$: {
+  attributes = handleChange(element, $$props)
+}
 </script>
 
-<prosekit-block-drag-handle {editor} {...$$props}>
+<prosekit-block-drag-handle {...attributes} bind:this={element}>
   <slot />
 </prosekit-block-drag-handle>

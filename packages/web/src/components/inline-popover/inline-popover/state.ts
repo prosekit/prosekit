@@ -56,6 +56,7 @@ export function useInlinePopover(
         return false
       }
       open.set(false)
+      onOpenChange.peek()?.(false)
       return true
     },
   })

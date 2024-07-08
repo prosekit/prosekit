@@ -1303,6 +1303,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-change-tracking",
+      "framework": "svelte",
+      "story": "change-tracking",
+      "files": [
+        {
+          "path": "editor-diff.svelte",
+          "hidden": false
+        },
+        {
+          "path": "editor-main.svelte",
+          "hidden": false
+        },
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-code",
       "framework": "svelte",
       "story": "code",

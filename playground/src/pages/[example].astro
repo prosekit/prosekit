@@ -58,6 +58,7 @@ import E613530047 from '../../examples/preact-readonly/editor'
 import E1898726994 from '../../examples/preact-slash-menu/editor'
 import E1333128888 from '../../examples/svelte-minimal/editor.svelte'
 import E657501006 from '../../examples/svelte-bold/editor.svelte'
+import E3396086889 from '../../examples/svelte-change-tracking/editor.svelte'
 import E533256892 from '../../examples/svelte-code/editor.svelte'
 import E1909582716 from '../../examples/svelte-code-block/editor.svelte'
 import E2034881373 from '../../examples/svelte-code-block-themes/editor.svelte'
@@ -138,6 +139,7 @@ export const getStaticPaths = () => [
   { params: { example: 'preact-slash-menu' } },
   { params: { example: 'svelte-minimal' } },
   { params: { example: 'svelte-bold' } },
+  { params: { example: 'svelte-change-tracking' } },
   { params: { example: 'svelte-code' } },
   { params: { example: 'svelte-code-block' } },
   { params: { example: 'svelte-code-block-themes' } },
@@ -223,6 +225,7 @@ const { example } = Astro.params
   {example === 'preact-slash-menu' && <E1898726994 client:only="preact" />}
   {example === 'svelte-minimal' && <E1333128888 client:only="svelte" />}
   {example === 'svelte-bold' && <E657501006 client:only="svelte" />}
+  {example === 'svelte-change-tracking' && <E3396086889 client:only="svelte" />}
   {example === 'svelte-code' && <E533256892 client:only="svelte" />}
   {example === 'svelte-code-block' && <E1909582716 client:only="svelte" />}
   {example === 'svelte-code-block-themes' && <E2034881373 client:only="svelte" />}

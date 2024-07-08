@@ -11,13 +11,13 @@ testStory(['inline-menu', 'full'], () => {
 async function testInlineMenu(page: Page) {
   const editor = await waitForEditor(page)
 
-  const inlineMenuMain = page.getByTestId('inline-menu-main')
-  const inlineMenuLink = page.getByTestId('inline-menu-link')
+  const mainMenu = page.getByTestId('inline-menu-main')
+  const linkMenu = page.getByTestId('inline-menu-link')
   const linkInput = page.getByPlaceholder('Paste the link...')
-  const linkExample = editor.locator('a[href="https://www.example.com"]')
+  const linkTag = editor.locator('a[href="https://www.example.com"]')
 
-  await expect(inlineMenuMain).toBeHidden()
-  await expect(inlineMenuLink).toBeHidden()
+  await expect(mainMenu).toBeHidden()
+  await expect(linkMenu).toBeHidden()
 
   // Type "Hello world"
   await editor.focus()
@@ -32,51 +32,51 @@ async function testInlineMenu(page: Page) {
   await page.keyboard.press('ArrowLeft')
   await page.keyboard.up('Shift')
 
-  await expect(inlineMenuMain).toBeVisible()
-  await expect(inlineMenuLink).toBeHidden()
+  await expect(mainMenu).toBeVisible()
+  await expect(linkMenu).toBeHidden()
 
   // Add italic
   expect(await editor.innerHTML()).not.toContain('<em>world</em>')
-  await inlineMenuMain.getByRole('button', { name: 'Italic' }).click()
+  await mainMenu.getByRole('button', { name: 'Italic' }).click()
   expect(await editor.innerHTML()).toContain('<em>world</em>')
 
   // Remove italic
   expect(await editor.innerHTML()).toContain('<em>world</em>')
-  await inlineMenuMain.getByRole('button', { name: 'Italic' }).click()
+  await mainMenu.getByRole('button', { name: 'Italic' }).click()
   expect(await editor.innerHTML()).not.toContain('<em>world</em>')
 
   // Show the link menu
-  await inlineMenuMain.getByRole('button', { name: 'Link' }).click()
-  await expect(inlineMenuLink).toBeVisible()
-  await expect(inlineMenuLink.getByRole('textbox')).toBeEmpty()
-  await expect(inlineMenuLink.getByRole('textbox')).toHaveAttribute(
+  await mainMenu.getByRole('button', { name: 'Link' }).click()
+  await expect(linkMenu).toBeVisible()
+  await expect(linkMenu.getByRole('textbox')).toBeEmpty()
+  await expect(linkMenu.getByRole('textbox')).toHaveAttribute(
     'placeholder',
     'Paste the link...',
   )
-  await inlineMenuMain.getByRole('button', { name: 'Link' }).click()
-  await expect(inlineMenuLink).toBeHidden()
+  await mainMenu.getByRole('button', { name: 'Link' }).click()
+  await expect(linkMenu).toBeHidden()
 
   // Apply the link
-  await expect(linkExample).toBeHidden()
-  await inlineMenuMain.getByRole('button', { name: 'Link' }).click()
-  await expect(inlineMenuLink).toBeVisible()
+  await expect(linkTag).toBeHidden()
+  await mainMenu.getByRole('button', { name: 'Link' }).click()
+  await expect(linkMenu).toBeVisible()
   await expect(linkInput).toBeVisible()
   await linkInput.fill('https://www.example.com')
   await linkInput.press('Enter')
-  await expect(inlineMenuLink).toBeHidden()
+  await expect(linkMenu).toBeHidden()
   await expect(linkInput).toBeHidden()
-  await expect(linkExample).toBeVisible()
-  expect(await linkExample.textContent()).toEqual('world')
+  await expect(linkTag).toBeVisible()
+  expect(await linkTag.textContent()).toEqual('world')
 
   // Remove the link
-  await expect(inlineMenuLink).toBeHidden()
-  await inlineMenuMain.getByRole('button', { name: 'Link' }).click()
-  await expect(inlineMenuLink).toBeVisible()
-  await expect(inlineMenuLink.getByRole('textbox')).toHaveValue(
+  await expect(linkMenu).toBeHidden()
+  await mainMenu.getByRole('button', { name: 'Link' }).click()
+  await expect(linkMenu).toBeVisible()
+  await expect(linkMenu.getByRole('textbox')).toHaveValue(
     'https://www.example.com',
   )
-  await inlineMenuLink.getByRole('button', { name: 'Remove link' }).click()
-  await expect(inlineMenuLink).toBeHidden()
-  await expect(linkExample).toBeHidden()
+  await linkMenu.getByRole('button', { name: 'Remove link' }).click()
+  await expect(linkMenu).toBeHidden()
+  await expect(linkTag).toBeHidden()
   expect(await editor.textContent()).toContain('world')
 }

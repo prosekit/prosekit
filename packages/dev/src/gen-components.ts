@@ -283,6 +283,10 @@ import { useWebComponent } from '../../utils/use-web-component'
 let attributes: Record<string, unknown> = {}
 let element: HTMLElement | undefined = undefined 
 const handleChange = useWebComponent(default${pascal}Props)
+
+$: {
+  attributes = handleChange(element, $$props)
+}
 </script>
 
 <prosekit-${kebab} {...attributes} bind:this={element}>

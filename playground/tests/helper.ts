@@ -23,9 +23,9 @@ function testSingleStory(
   story: string,
   callback: (options: { example: string }) => void,
 ) {
-  test.describe(story, () => {
+  test.describe('story:' + story, () => {
     for (const example of getExamples(story)) {
-      test.describe(example, () => {
+      test.describe('example:' + example, () => {
         test.beforeEach(async ({ page }) => {
           await page.goto(example)
         })

@@ -1,14 +1,17 @@
 <script lang="ts">
 import '@prosekit/web/inline-popover'
 import { defaultInlinePopoverProps } from '@prosekit/web/inline-popover'
+import { useWebComponent } from '../../utils/use-web-component'
 
-import { useEditorContext } from '../../contexts/editor-context'
+let attributes: Record<string, unknown> = {}
+let element: HTMLElement | undefined = undefined
+const handleChange = useWebComponent(defaultInlinePopoverProps)
 
-const hasEditor = Object.hasOwn(defaultInlinePopoverProps, 'editor')
-const editorContext = useEditorContext()
-const editor = hasEditor ? editorContext : undefined
+$: {
+  attributes = handleChange(element, $$props)
+}
 </script>
 
-<prosekit-inline-popover {editor} {...$$props}>
+<prosekit-inline-popover {...attributes} bind:this={element}>
   <slot />
 </prosekit-inline-popover>

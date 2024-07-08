@@ -1,14 +1,17 @@
 <script lang="ts">
 import '@prosekit/web/tooltip'
 import { defaultTooltipTriggerProps } from '@prosekit/web/tooltip'
+import { useWebComponent } from '../../utils/use-web-component'
 
-import { useEditorContext } from '../../contexts/editor-context'
+let attributes: Record<string, unknown> = {}
+let element: HTMLElement | undefined = undefined
+const handleChange = useWebComponent(defaultTooltipTriggerProps)
 
-const hasEditor = Object.hasOwn(defaultTooltipTriggerProps, 'editor')
-const editorContext = useEditorContext()
-const editor = hasEditor ? editorContext : undefined
+$: {
+  attributes = handleChange(element, $$props)
+}
 </script>
 
-<prosekit-tooltip-trigger {editor} {...$$props}>
+<prosekit-tooltip-trigger {...attributes} bind:this={element}>
   <slot />
 </prosekit-tooltip-trigger>

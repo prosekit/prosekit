@@ -1,14 +1,17 @@
 <script lang="ts">
 import '@prosekit/web/popover'
 import { defaultPopoverTriggerProps } from '@prosekit/web/popover'
+import { useWebComponent } from '../../utils/use-web-component'
 
-import { useEditorContext } from '../../contexts/editor-context'
+let attributes: Record<string, unknown> = {}
+let element: HTMLElement | undefined = undefined
+const handleChange = useWebComponent(defaultPopoverTriggerProps)
 
-const hasEditor = Object.hasOwn(defaultPopoverTriggerProps, 'editor')
-const editorContext = useEditorContext()
-const editor = hasEditor ? editorContext : undefined
+$: {
+  attributes = handleChange(element, $$props)
+}
 </script>
 
-<prosekit-popover-trigger {editor} {...$$props}>
+<prosekit-popover-trigger {...attributes} bind:this={element}>
   <slot />
 </prosekit-popover-trigger>

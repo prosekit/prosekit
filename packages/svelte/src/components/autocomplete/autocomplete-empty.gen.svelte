@@ -1,14 +1,17 @@
 <script lang="ts">
 import '@prosekit/web/autocomplete'
 import { defaultAutocompleteEmptyProps } from '@prosekit/web/autocomplete'
+import { useWebComponent } from '../../utils/use-web-component'
 
-import { useEditorContext } from '../../contexts/editor-context'
+let attributes: Record<string, unknown> = {}
+let element: HTMLElement | undefined = undefined
+const handleChange = useWebComponent(defaultAutocompleteEmptyProps)
 
-const hasEditor = Object.hasOwn(defaultAutocompleteEmptyProps, 'editor')
-const editorContext = useEditorContext()
-const editor = hasEditor ? editorContext : undefined
+$: {
+  attributes = handleChange(element, $$props)
+}
 </script>
 
-<prosekit-autocomplete-empty {editor} {...$$props}>
+<prosekit-autocomplete-empty {...attributes} bind:this={element}>
   <slot />
 </prosekit-autocomplete-empty>

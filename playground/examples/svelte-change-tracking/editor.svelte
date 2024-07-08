@@ -9,7 +9,6 @@ import EditorDiff from './editor-diff.svelte'
 import EditorMain from './editor-main.svelte'
 
 let commits: { id: string; date: Date; commit: Commit }[] = []
-let key = 0
 let defaultDoc: NodeJSON
 
 const commitRecorder = new CommitRecorder()
@@ -26,7 +25,6 @@ function handleRestore(id: string) {
   if (index === -1) return
   defaultDoc = commits[index].commit.doc
   commits = commits.slice(index)
-  key += 1
 }
 </script>
 

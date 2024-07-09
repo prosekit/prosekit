@@ -9,21 +9,21 @@ const editor = useEditor<EditorExtension>({ update: true })
 <template>
   <Button
     :pressed="editor.marks.bold.isActive()"
-    :onClick="() => editor.commands.toggleBold()"
+    @click="() => editor.commands.toggleBold()"
   >
     Bold
   </Button>
 
   <Button
     :pressed="editor.marks.italic.isActive()"
-    :onClick="() => editor.commands.toggleItalic()"
+    @click="() => editor.commands.toggleItalic()"
   >
     Italic
   </Button>
 
   <Button
     :pressed="editor.marks.underline.isActive()"
-    :onClick="() => editor.commands.toggleUnderline()"
+    @click="() => editor.commands.toggleUnderline()"
   >
     Underline
   </Button>

@@ -56,7 +56,7 @@ useKeymap({ Escape: onEscape })
       v-for="color in colors"
       :key="color.name"
       :pressed="hasTextColor(color.value)"
-      :onClick="() => toggleTextColor(color.value)"
+      @click="() => toggleTextColor(color.value)"
       :tooltip="color.name"
     >
       <span :style="{ color: color.value }">A</span>

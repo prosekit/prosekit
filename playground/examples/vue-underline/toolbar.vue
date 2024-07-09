@@ -11,7 +11,7 @@ const editor = useEditor<EditorExtension>({ update: true })
   <div :class="Themes.TOOLBAR">
     <Button
       :pressed="editor.marks.underline.isActive()"
-      :onClick="() => editor.commands.toggleUnderline()"
+      @click="() => editor.commands.toggleUnderline()"
     >
       Underline
     </Button>

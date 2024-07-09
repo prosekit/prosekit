@@ -32,13 +32,13 @@
     "@changesets/cli": "^2.27.7",
     "@changesets/types": "^6.0.0",
     "@manypkg/cli": "^0.21.4",
-    "@ocavue/eslint-config": "^1.7.0",
+    "@ocavue/eslint-config": "^1.8.0",
     "@prosekit/unocss-preset": "workspace:*",
     "@size-limit/esbuild-why": "^11.1.4",
     "@size-limit/preset-small-lib": "^11.1.4",
     "@unocss/eslint-config": "^0.61.3",
-    "@vitest/browser": "^2.0.0",
-    "@vitest/coverage-istanbul": "^2.0.0",
+    "@vitest/browser": "^2.0.1",
+    "@vitest/coverage-istanbul": "^2.0.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
     "jsdom": "^24.1.0",
@@ -50,7 +50,7 @@
     "turbo": "^2.0.6",
     "typescript": "^5.5.3",
     "unocss": "^0.61.3",
-    "vitest": "^2.0.0"
+    "vitest": "^2.0.1"
   },
   "pnpm": {
     "overrides": {},

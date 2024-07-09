@@ -52,13 +52,13 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^0.60.0"
+    "@zag-js/dom-query": "^0.61.0"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
     "tsup": "^8.1.0",
     "typescript": "^5.5.3",
-    "vitest": "^2.0.0"
+    "vitest": "^2.0.1"
   },
   "publishConfig": {
     "exports": {

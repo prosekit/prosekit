@@ -9,13 +9,21 @@ import { defineExtension } from './extension'
 
 const props = defineProps<{
   defaultDoc?: NodeJSON
-  onDocUpdate?: (doc: NodeJSON) => void
+}>()
+
+const emit = defineEmits<{
+  docUpdate: [doc: NodeJSON]
 }>()
 
 const extension = defineExtension()
 const editor = createEditor({ extension, defaultDoc: props.defaultDoc })
 
-useDocChange((doc) => props.onDocUpdate?.(jsonFromNode(doc)), { editor })
+useDocChange(
+  (doc) => {
+    emit('docUpdate', jsonFromNode(doc))
+  },
+  { editor },
+)
 
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {

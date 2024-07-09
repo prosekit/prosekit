@@ -1,17 +1,15 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
-import { ref, type PropType } from 'vue'
+import { ref } from 'vue'
 import Button from './button.vue'
 import { useSubmitKeymap } from './use-submit-keymap'
 
-let props = defineProps({
-  onSubmit: {
-    type: Function as PropType<(hotkey: string) => void>,
-    required: true,
-  },
-})
+const emit = defineEmits<{
+  submit: [hotkey: string]
+}>()
+
 const hotkey = ref<'Shift-Enter' | 'Enter'>('Shift-Enter')
-useSubmitKeymap(hotkey, props.onSubmit)
+useSubmitKeymap(hotkey, (hotkey) => emit('submit', hotkey))
 </script>
 
 <template>

@@ -10,7 +10,10 @@ defineProps<{
   pressed?: Boolean
   disabled?: Boolean
   tooltip?: string
-  onClick?: VoidFunction
+}>()
+
+const emit = defineEmits<{
+  click: []
 }>()
 </script>
 
@@ -20,7 +23,7 @@ defineProps<{
       <button
         :data-state="pressed ? 'on' : 'off'"
         :disabled="disabled ? true : undefined"
-        @click="onClick"
+        @click="() => emit('click')"
         @mousedown.prevent
         :class="Themes.TOGGLE_BUTTON"
       >

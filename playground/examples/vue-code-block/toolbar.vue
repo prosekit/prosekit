@@ -12,7 +12,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     <Button
       :pressed="editor.nodes.codeBlock.isActive()"
       :disabled="!editor.commands.setCodeBlock.canApply()"
-      :onClick="() => editor.commands.setCodeBlock()"
+      @click="() => editor.commands.setCodeBlock()"
     >
       <div :class="Themes.ICON_CODE_BLOCK" />
     </Button>

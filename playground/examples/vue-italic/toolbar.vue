@@ -11,7 +11,7 @@ const editor = useEditor<EditorExtension>({ update: true })
   <div :class="Themes.TOOLBAR">
     <Button
       :pressed="editor.marks.italic.isActive()"
-      :onClick="() => editor.commands.toggleItalic()"
+      @click="() => editor.commands.toggleItalic()"
     >
       Italic
     </Button>

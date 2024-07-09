@@ -49,14 +49,14 @@ useKeymap({ Escape: onEscape })
 <template>
   <InlinePopover
     :class="Themes.INLINE_MENU_MAIN"
-    :onOpenChange="onOpenChange"
     :open="open"
+    @openChange="onOpenChange"
   >
     <Button
       v-for="color in colors"
       :key="color.name"
       :pressed="hasTextColor(color.value)"
-      :onClick="() => toggleTextColor(color.value)"
+      @click="() => toggleTextColor(color.value)"
       :tooltip="color.name"
     >
       <span :style="{ color: color.value }">A</span>

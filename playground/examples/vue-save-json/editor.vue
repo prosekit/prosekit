@@ -62,10 +62,6 @@ const handleLoad = (record: string) => {
         </span>
       </li>
     </ul>
-    <EditorComponent
-      :key="key"
-      :editor="editor"
-      :onDocChange="handleDocChange"
-    />
+    <EditorComponent :key="key" :editor="editor" @docChange="handleDocChange" />
   </div>
 </template>

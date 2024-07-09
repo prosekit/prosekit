@@ -49,8 +49,8 @@ useKeymap({ Escape: onEscape })
 <template>
   <InlinePopover
     :class="Themes.INLINE_MENU_MAIN"
-    :onOpenChange="onOpenChange"
     :open="open"
+    @openChange="onOpenChange"
   >
     <Button
       v-for="color in colors"

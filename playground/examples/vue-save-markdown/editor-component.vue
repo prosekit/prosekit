@@ -11,12 +11,12 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  docUpdate: []
+  docChange: []
 }>()
 
 useDocChange(
   () => {
-    emit('docUpdate')
+    emit('docChange')
   },
   { editor: props.editor },
 )

@@ -28,7 +28,6 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/vue-inline-menu/extension.ts
 <<< @/../playground/examples/vue-inline-menu/inline-menu.vue
 <<< @/../playground/examples/vue-inline-menu/button.vue
-<<< @/../playground/examples/vue-inline-menu/inline-buttons.vue
 
 :::
 

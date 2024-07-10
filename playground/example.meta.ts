@@ -726,10 +726,6 @@ export const exampleMeta = {
         {
           "path": "button.vue",
           "hidden": false
-        },
-        {
-          "path": "inline-buttons.vue",
-          "hidden": false
         }
       ]
     },

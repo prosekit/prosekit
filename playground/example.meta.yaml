@@ -377,8 +377,6 @@ examples:
         hidden: false
       - path: button.vue
         hidden: false
-      - path: inline-buttons.vue
-        hidden: false
   - name: vue-italic
     framework: vue
     story: italic

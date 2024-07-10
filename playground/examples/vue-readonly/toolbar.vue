@@ -8,7 +8,11 @@ const { readonly } = useReadonly()
 
 <template>
   <div :class="Themes.TOOLBAR">
-    <Button :pressed="readonly" @click="readonly = true">Readonly</Button>
-    <Button :pressed="!readonly" @click="readonly = false">Editable</Button>
+    <Button :pressed="readonly" @click="readonly = true">
+      Readonly
+    </Button>
+    <Button :pressed="!readonly" @click="readonly = false">
+      Editable
+    </Button>
   </div>
 </template>

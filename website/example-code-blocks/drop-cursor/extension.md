@@ -12,6 +12,16 @@
 
 </template>
 
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte-drop-cursor/extension.ts
+
+:::
+
+</template>
+
 <template v-slot:solid>
 
 ::: code-group

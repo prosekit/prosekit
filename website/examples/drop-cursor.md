@@ -19,6 +19,18 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 </template>
 
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte-drop-cursor/editor.svelte
+<<< @/../playground/examples/svelte-drop-cursor/extension.ts
+<<< @/../playground/examples/svelte-drop-cursor/default-doc.ts
+
+:::
+
+</template>
+
 <template v-slot:solid>
 
 ::: code-group

@@ -1411,6 +1411,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-drop-cursor",
+      "framework": "svelte",
+      "story": "drop-cursor",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "default-doc.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-emoji-rules",
       "framework": "svelte",
       "story": "emoji-rules",

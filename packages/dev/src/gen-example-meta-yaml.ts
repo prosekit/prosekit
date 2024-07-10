@@ -26,11 +26,11 @@ export async function genExampleMetaYaml() {
   const exampleFiles = files
     .map((file) => {
       const parts = file.split('/')
-      if (parts.length !== 4) {
+      if (parts.length !== 5) {
         return null
       }
 
-      const [playgroundDir, examplesDir, exampleName, fileName] = parts
+      const [playgroundDir, examplesDir, framework, story, fileName] = parts
 
       if (
         playgroundDir !== 'playground' ||
@@ -39,6 +39,8 @@ export async function genExampleMetaYaml() {
       ) {
         return null
       }
+
+      const exampleName = `${framework}-${story}`
 
       return { exampleName, fileName }
     })

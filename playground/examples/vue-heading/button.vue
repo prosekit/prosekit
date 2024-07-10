@@ -23,7 +23,7 @@ const emit = defineEmits<{
       <button
         :data-state="pressed ? 'on' : 'off'"
         :disabled="disabled ? true : undefined"
-        @click="() => emit('click')"
+        @click="emit('click')"
         @mousedown.prevent
         :class="Themes.TOGGLE_BUTTON"
       >

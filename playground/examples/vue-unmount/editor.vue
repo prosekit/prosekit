@@ -29,7 +29,7 @@ watchEffect(() => {
       <button
         v-for="key in editorKeys"
         :key="key"
-        @click="() => removeEditor(key)"
+        @click="removeEditor(key)"
         className="border p-2"
       >
         Unmount No.{{ key }}

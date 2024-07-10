@@ -2,8 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "outDir": ".temp",
-    "jsx": "react-jsx"
+    "outDir": ".temp"
   },
-  "include": ["./react-*/*"]
+  "include": ["./**/*.ts", "./**/*.svelte"]
 }

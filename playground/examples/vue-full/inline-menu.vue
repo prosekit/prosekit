@@ -51,7 +51,7 @@ const handleLinkUpdate = (href?: string) => {
       :pressed="editor.marks.bold.isActive()"
       :disabled="!editor.commands.toggleBold.canApply()"
       tooltip="Bold"
-      @click="editor.commands.toggleBold()"
+      @click="() => editor.commands.toggleBold()"
     >
       <div :class="Themes.ICON_BOLD"></div>
     </Button>
@@ -59,7 +59,7 @@ const handleLinkUpdate = (href?: string) => {
     <Button
       :pressed="editor.marks.italic.isActive()"
       :disabled="!editor.commands.toggleItalic.canApply()"
-      @click="editor.commands.toggleItalic()"
+      @click="() => editor.commands.toggleItalic()"
       tooltip="Italic"
     >
       <div :class="Themes.ICON_ITALIC"></div>
@@ -68,7 +68,7 @@ const handleLinkUpdate = (href?: string) => {
     <Button
       :pressed="editor.marks.underline.isActive()"
       :disabled="!editor.commands.toggleUnderline.canApply()"
-      @click="editor.commands.toggleUnderline()"
+      @click="() => editor.commands.toggleUnderline()"
       tooltip="Underline"
     >
       <div :class="Themes.ICON_UNDERLINE"></div>
@@ -77,7 +77,7 @@ const handleLinkUpdate = (href?: string) => {
     <Button
       :pressed="editor.marks.strike.isActive()"
       :disabled="!editor.commands.toggleStrike.canApply()"
-      @click="editor.commands.toggleStrike()"
+      @click="() => editor.commands.toggleStrike()"
       tooltip="Strike"
     >
       <div :class="Themes.ICON_STRIKE"></div>
@@ -86,7 +86,7 @@ const handleLinkUpdate = (href?: string) => {
     <Button
       :pressed="editor.marks.code.isActive()"
       :disabled="!editor.commands.toggleCode.canApply()"
-      @click="editor.commands.toggleCode()"
+      @click="() => editor.commands.toggleCode()"
       tooltip="Code"
     >
       <div :class="Themes.ICON_CODE"></div>

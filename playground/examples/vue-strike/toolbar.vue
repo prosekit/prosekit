@@ -10,7 +10,7 @@ const editor = useEditor<EditorExtension>({ update: true })
   <div :class="Themes.TOOLBAR">
     <Button
       :pressed="editor.marks.strike.isActive()"
-      @click="editor.commands.toggleStrike()"
+      @click="() => editor.commands.toggleStrike()"
     >
       Strikethrough
     </Button>

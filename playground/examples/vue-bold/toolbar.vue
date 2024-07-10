@@ -11,7 +11,7 @@ const editor = useEditor<EditorExtension>({ update: true })
   <div :class="Themes.TOOLBAR">
     <Button
       :pressed="editor.marks.bold.isActive()"
-      @click="editor.commands.toggleBold()"
+      @click="() => editor.commands.toggleBold()"
     >
       Bold
     </Button>

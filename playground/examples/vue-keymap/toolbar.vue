@@ -16,13 +16,13 @@ useSubmitKeymap(hotkey, (hotkey) => emit('submit', hotkey))
   <div :class="Themes.TOOLBAR">
     <Button
       :pressed="hotkey === 'Shift-Enter'"
-      @click="hotkey = 'Shift-Enter'"
+      @click="() => (hotkey = 'Shift-Enter')"
     >
       <span class="mr-1">Submit with</span>
       <kbd>Shift + Enter</kbd>
     </Button>
 
-    <Button :pressed="hotkey === 'Enter'" @click="hotkey = 'Enter'">
+    <Button :pressed="hotkey === 'Enter'" @click="() => (hotkey = 'Enter')">
       <span class="mr-1">Submit with</span>
       <kbd>Enter</kbd>
     </Button>

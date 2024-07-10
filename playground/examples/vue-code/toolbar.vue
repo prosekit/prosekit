@@ -11,7 +11,7 @@ const editor = useEditor<EditorExtension>({ update: true })
   <div :class="Themes.TOOLBAR">
     <Button
       :pressed="editor.marks.code.isActive()"
-      @click="editor.commands.toggleCode()"
+      @click="() => editor.commands.toggleCode()"
     >
       Code
     </Button>

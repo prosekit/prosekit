@@ -6,18 +6,19 @@ import LanguageSelector from './language-selector.vue'
 
 const props = defineProps<VueNodeViewProps>()
 
-const language = computed(() => {
-  const attrs = props.node.value.attrs as CodeBlockAttrs
-  return attrs.language
+const language = computed({
+  get() {
+    const attrs = props.node.value.attrs as CodeBlockAttrs
+    return attrs.language || ''
+  },
+  set(language: string) {
+    const attrs: CodeBlockAttrs = { language }
+    props.setAttrs(attrs)
+  },
 })
-
-const setLanguage = (language: string) => {
-  const attrs: CodeBlockAttrs = { language }
-  props.setAttrs(attrs)
-}
 </script>
 
 <template>
-  <LanguageSelector :language="language" :setLanguage="setLanguage" />
+  <LanguageSelector v-model="language" />
   <pre :ref="props.contentRef" :data-language="language"></pre>
 </template>

@@ -14,7 +14,7 @@ const language = computed({
   set(language: string) {
     const attrs: CodeBlockAttrs = { language }
     props.setAttrs(attrs)
-  }
+  },
 })
 </script>
 

@@ -12,7 +12,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :pressed="editor.marks.strike.isActive()"
       @click="editor.commands.toggleStrike()"
     >
-      Underline
+      Strikethrough
     </Button>
   </div>
 </template>

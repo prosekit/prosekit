@@ -1,4 +1,4 @@
-import type { Attrs, ProseMirrorNode } from '@prosekit/pm/model'
+import type { Attrs, NodeType, ProseMirrorNode } from '@prosekit/pm/model'
 import { type Command } from '@prosekit/pm/state'
 import { insertPoint } from '@prosekit/pm/transform'
 
@@ -7,26 +7,38 @@ import { getNodeType } from '../utils/get-node-type'
 import { setSelectionAround } from '../utils/set-selection-around'
 
 /**
+ * @public
+ */
+export interface InsertNodeOptions {
+  /**
+   * The node to insert. Either this or `type` must be provided.
+   */
+  node?: ProseMirrorNode
+
+  /**
+   * The type of the node to insert. Either this or `node` must be provided.
+   */
+  type?: string | NodeType
+
+  /**
+   * When `type` is provided, the attributes of the node to insert.
+   */
+  attrs?: Attrs
+
+  /**
+   * The position to insert the node at. By default it will be the anchor
+   * position of current selection.
+   */
+  pos?: number
+}
+
+/**
  * Returns a command that inserts the given node at the current selection or at
  * the given position.
  *
  * @public
  */
-function insertNode(
-  options:
-    | {
-        node: ProseMirrorNode
-        pos?: number
-        type?: undefined
-        attrs?: undefined
-      }
-    | {
-        node?: undefined
-        pos?: number
-        type: string
-        attrs?: Attrs
-      },
-): Command {
+function insertNode(options: InsertNodeOptions): Command {
   return (state, dispatch) => {
     const node = options.node
       ? options.node
@@ -38,7 +50,7 @@ function insertNode(
 
     const insertPos = insertPoint(
       state.doc,
-      options.pos ?? state.selection.to,
+      options.pos ?? state.selection.anchor,
       node.type,
     )
     if (insertPos == null) return false

@@ -27,6 +27,11 @@ jobs:
           cd playground 
           pnpm run lint:vue
 
+      - name: Lint svelte examples
+        run: |
+          cd playground 
+          pnpm run lint:svelte
+
   typecheck:
     runs-on: ubuntu-latest
 

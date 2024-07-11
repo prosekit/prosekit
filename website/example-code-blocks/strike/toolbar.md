@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-strike/toolbar.vue
+<<< @/../playground/examples/vue/strike/toolbar.vue
 
 :::
 

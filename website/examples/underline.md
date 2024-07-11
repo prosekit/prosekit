@@ -11,10 +11,10 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-underline/editor.vue
-<<< @/../playground/examples/vue-underline/extension.ts
-<<< @/../playground/examples/vue-underline/toolbar.vue
-<<< @/../playground/examples/vue-underline/button.vue
+<<< @/../playground/examples/vue/underline/editor.vue
+<<< @/../playground/examples/vue/underline/extension.ts
+<<< @/../playground/examples/vue/underline/toolbar.vue
+<<< @/../playground/examples/vue/underline/button.vue
 
 :::
 

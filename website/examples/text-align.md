@@ -11,10 +11,10 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-text-align/editor.vue
-<<< @/../playground/examples/vue-text-align/extension.ts
-<<< @/../playground/examples/vue-text-align/toolbar.vue
-<<< @/../playground/examples/vue-text-align/button.vue
+<<< @/../playground/examples/vue/text-align/editor.vue
+<<< @/../playground/examples/vue/text-align/extension.ts
+<<< @/../playground/examples/vue/text-align/toolbar.vue
+<<< @/../playground/examples/vue/text-align/button.vue
 
 :::
 
@@ -24,10 +24,10 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-text-align/editor.svelte
-<<< @/../playground/examples/svelte-text-align/extension.ts
-<<< @/../playground/examples/svelte-text-align/toolbar.svelte
-<<< @/../playground/examples/svelte-text-align/button.svelte
+<<< @/../playground/examples/svelte/text-align/editor.svelte
+<<< @/../playground/examples/svelte/text-align/extension.ts
+<<< @/../playground/examples/svelte/text-align/toolbar.svelte
+<<< @/../playground/examples/svelte/text-align/button.svelte
 
 :::
 
@@ -37,10 +37,10 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/solid-text-align/editor.tsx
-<<< @/../playground/examples/solid-text-align/extension.ts
-<<< @/../playground/examples/solid-text-align/toolbar.tsx
-<<< @/../playground/examples/solid-text-align/button.tsx
+<<< @/../playground/examples/solid/text-align/editor.tsx
+<<< @/../playground/examples/solid/text-align/extension.ts
+<<< @/../playground/examples/solid/text-align/toolbar.tsx
+<<< @/../playground/examples/solid/text-align/button.tsx
 
 :::
 

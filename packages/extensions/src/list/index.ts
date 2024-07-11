@@ -9,19 +9,20 @@ import {
   withPriority,
   type Extension,
 } from '@prosekit/core'
+import type { Command } from '@prosekit/pm/state'
 import {
-  createDedentListCommand,
-  createIndentListCommand,
   createListPlugins,
   createListSpec,
-  createMoveListCommand,
-  createSplitListCommand,
-  createToggleCollapsedCommand,
-  createToggleListCommand,
-  createUnwrapListCommand,
-  createWrapInListCommand,
+  createDedentListCommand as dedentList,
+  createIndentListCommand as indentList,
   listInputRules,
   listKeymap,
+  createMoveListCommand as moveList,
+  createSplitListCommand as splitList,
+  createToggleCollapsedCommand as toggleCollapsed,
+  createToggleListCommand as toggleList,
+  createUnwrapListCommand as unwrapList,
+  createWrapInListCommand as wrapInList,
   type ListAttributes,
 } from 'prosemirror-flat-list'
 
@@ -29,8 +30,38 @@ import { defineInputRule } from '../input-rule'
 
 export { ListDOMSerializer } from 'prosemirror-flat-list'
 
+export type {
+  DedentListOptions,
+  IndentListOptions,
+  ListAttributes,
+  ToggleCollapsedOptions,
+  UnwrapListOptions,
+  WrapInListGetAttrs,
+} from 'prosemirror-flat-list'
+
 export function defineListSpec() {
   return defineNodeSpec({ ...createListSpec(), name: 'list' })
+}
+
+function insertList(attrs?: ListAttributes): Command {
+  return insertNode({ type: 'list', attrs })
+}
+
+/**
+ * Define list commands
+ */
+export function defineListCommands() {
+  return defineCommands({
+    dedentList,
+    indentList,
+    moveList,
+    splitList,
+    toggleCollapsed,
+    toggleList,
+    unwrapList,
+    wrapInList,
+    insertList,
+  })
 }
 
 export function defineListPlugins() {
@@ -48,22 +79,6 @@ export function defineListKeymap() {
 
 export function defineListInputRules(): Extension {
   return union(listInputRules.map(defineInputRule))
-}
-
-export function defineListCommands() {
-  return defineCommands({
-    dedentList: createDedentListCommand,
-    indentList: createIndentListCommand,
-    moveList: createMoveListCommand,
-    splitList: createSplitListCommand,
-    toggleCollapsed: createToggleCollapsedCommand,
-    toggleList: createToggleListCommand,
-    unwrapList: createUnwrapListCommand,
-    wrapInList: createWrapInListCommand,
-    insertList: (attrs?: ListAttributes) => {
-      return insertNode({ type: 'list', attrs })
-    },
-  })
 }
 
 /**

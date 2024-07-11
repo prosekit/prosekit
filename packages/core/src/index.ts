@@ -1,12 +1,19 @@
-export { addMark } from './commands/add-mark'
-export { expandMark } from './commands/expand-mark'
-export { insertNode } from './commands/insert-node'
-export { removeMark } from './commands/remove-mark'
-export { removeNode } from './commands/remove-node'
-export { setBlockType } from './commands/set-block-type'
-export { setNodeAttrs } from './commands/set-node-attrs'
-export { toggleMark } from './commands/toggle-mark'
-export { toggleNode } from './commands/toggle-node'
+export { addMark, type AddMarkOptions } from './commands/add-mark'
+export { expandMark, type ExpandMarkOptions } from './commands/expand-mark'
+export { insertNode, type InsertNodeOptions } from './commands/insert-node'
+export { removeMark, type RemoveMarkOptions } from './commands/remove-mark'
+export { removeNode, type RemoveNodeOptions } from './commands/remove-node'
+export {
+  setBlockType,
+  type SetBlockTypeOptions,
+} from './commands/set-block-type'
+export {
+  setNodeAttrs,
+  type SetNodeAttrsOptions,
+} from './commands/set-node-attrs'
+export { toggleMark, type ToggleMarkOptions } from './commands/toggle-mark'
+export { toggleNode, type ToggleNodeOptions } from './commands/toggle-node'
+export { wrap, type WrapOptions } from './commands/wrap'
 export type { MarkBuilder, NodeBuilder } from './editor/builder'
 export { Editor, createEditor, type EditorOptions } from './editor/editor'
 export { union } from './editor/union'

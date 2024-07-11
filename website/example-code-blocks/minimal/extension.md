@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-minimal/extension.ts
+<<< @/../playground/examples/react/minimal/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-minimal/extension.ts
+<<< @/../playground/examples/vue/minimal/extension.ts
 
 :::
 

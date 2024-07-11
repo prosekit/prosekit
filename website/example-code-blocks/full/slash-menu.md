@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-full/slash-menu.vue
+<<< @/../playground/examples/vue/full/slash-menu.vue
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-full/slash-menu.svelte
+<<< @/../playground/examples/svelte/full/slash-menu.svelte
 
 :::
 

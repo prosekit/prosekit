@@ -11,8 +11,8 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-placeholder/editor.vue
-<<< @/../playground/examples/vue-placeholder/extension.ts
+<<< @/../playground/examples/vue/placeholder/editor.vue
+<<< @/../playground/examples/vue/placeholder/extension.ts
 
 :::
 

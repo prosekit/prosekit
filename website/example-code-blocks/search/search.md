@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-search/search.tsx
+<<< @/../playground/examples/react/search/search.tsx
 
 :::
 

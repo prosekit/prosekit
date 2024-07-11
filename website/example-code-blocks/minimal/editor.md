@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-minimal/editor.tsx
+<<< @/../playground/examples/react/minimal/editor.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-minimal/editor.vue
+<<< @/../playground/examples/vue/minimal/editor.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/preact-minimal/editor.tsx
+<<< @/../playground/examples/preact/minimal/editor.tsx
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-minimal/editor.svelte
+<<< @/../playground/examples/svelte/minimal/editor.svelte
 
 :::
 
@@ -46,7 +46,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid-minimal/editor.tsx
+<<< @/../playground/examples/solid/minimal/editor.tsx
 
 :::
 

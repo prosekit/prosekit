@@ -11,9 +11,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/react-slash-menu/editor.tsx
-<<< @/../playground/examples/react-slash-menu/extension.ts
-<<< @/../playground/examples/react-slash-menu/slash-menu.tsx
+<<< @/../playground/examples/react/slash-menu/editor.tsx
+<<< @/../playground/examples/react/slash-menu/extension.ts
+<<< @/../playground/examples/react/slash-menu/slash-menu.tsx
 
 :::
 
@@ -23,9 +23,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-slash-menu/editor.vue
-<<< @/../playground/examples/vue-slash-menu/extension.ts
-<<< @/../playground/examples/vue-slash-menu/slash-menu.vue
+<<< @/../playground/examples/vue/slash-menu/editor.vue
+<<< @/../playground/examples/vue/slash-menu/extension.ts
+<<< @/../playground/examples/vue/slash-menu/slash-menu.vue
 
 :::
 
@@ -35,8 +35,8 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/preact-slash-menu/editor.tsx
-<<< @/../playground/examples/preact-slash-menu/slash-menu.tsx
+<<< @/../playground/examples/preact/slash-menu/editor.tsx
+<<< @/../playground/examples/preact/slash-menu/slash-menu.tsx
 
 :::
 
@@ -46,9 +46,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-slash-menu/editor.svelte
-<<< @/../playground/examples/svelte-slash-menu/extension.ts
-<<< @/../playground/examples/svelte-slash-menu/slash-menu.svelte
+<<< @/../playground/examples/svelte/slash-menu/editor.svelte
+<<< @/../playground/examples/svelte/slash-menu/extension.ts
+<<< @/../playground/examples/svelte/slash-menu/slash-menu.svelte
 
 :::
 
@@ -58,9 +58,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/solid-slash-menu/editor.tsx
-<<< @/../playground/examples/solid-slash-menu/extension.ts
-<<< @/../playground/examples/solid-slash-menu/slash-menu.tsx
+<<< @/../playground/examples/solid/slash-menu/editor.tsx
+<<< @/../playground/examples/solid/slash-menu/extension.ts
+<<< @/../playground/examples/solid/slash-menu/slash-menu.tsx
 
 :::
 

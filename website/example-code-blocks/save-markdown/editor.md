@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-save-markdown/editor.tsx
+<<< @/../playground/examples/react/save-markdown/editor.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-save-markdown/editor.vue
+<<< @/../playground/examples/vue/save-markdown/editor.vue
 
 :::
 

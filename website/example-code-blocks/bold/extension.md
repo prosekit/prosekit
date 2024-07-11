@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-bold/extension.ts
+<<< @/../playground/examples/vue/bold/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-bold/extension.ts
+<<< @/../playground/examples/svelte/bold/extension.ts
 
 :::
 

@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-save-json/editor.tsx
+<<< @/../playground/examples/react/save-json/editor.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-save-json/editor.vue
+<<< @/../playground/examples/vue/save-json/editor.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-save-json/editor.svelte
+<<< @/../playground/examples/svelte/save-json/editor.svelte
 
 :::
 

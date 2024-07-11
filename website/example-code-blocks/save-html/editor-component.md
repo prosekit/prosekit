@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-save-html/editor-component.tsx
+<<< @/../playground/examples/react/save-html/editor-component.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-save-html/editor-component.vue
+<<< @/../playground/examples/vue/save-html/editor-component.vue
 
 :::
 

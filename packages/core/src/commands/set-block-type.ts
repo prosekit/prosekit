@@ -5,17 +5,22 @@ import { getCustomSelection } from '../utils/get-custom-selection'
 import { getNodeType } from '../utils/get-node-type'
 
 /**
+ * @public
+ */
+export interface SetBlockTypeOptions {
+  type: NodeType | string
+  attrs?: Attrs | null
+  from?: number
+  to?: number
+}
+
+/**
  * Returns a command that tries to set the selected textblocks to the given node
  * type with the given attributes.
  *
  * @public
  */
-export function setBlockType(options: {
-  type: NodeType | string
-  attrs?: Attrs | null
-  from?: number
-  to?: number
-}): Command {
+export function setBlockType(options: SetBlockTypeOptions): Command {
   return (state, dispatch) => {
     const nodeType = getNodeType(state.schema, options.type)
     const selection = getCustomSelection(state, options.from, options.to)

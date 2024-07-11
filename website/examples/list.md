@@ -11,10 +11,10 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/react-list/editor.tsx
-<<< @/../playground/examples/react-list/extension.ts
-<<< @/../playground/examples/react-list/toolbar.tsx
-<<< @/../playground/examples/react-list/button.tsx
+<<< @/../playground/examples/react/list/editor.tsx
+<<< @/../playground/examples/react/list/extension.ts
+<<< @/../playground/examples/react/list/toolbar.tsx
+<<< @/../playground/examples/react/list/button.tsx
 
 :::
 
@@ -24,10 +24,10 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-list/editor.vue
-<<< @/../playground/examples/vue-list/extension.ts
-<<< @/../playground/examples/vue-list/toolbar.vue
-<<< @/../playground/examples/vue-list/button.vue
+<<< @/../playground/examples/vue/list/editor.vue
+<<< @/../playground/examples/vue/list/extension.ts
+<<< @/../playground/examples/vue/list/toolbar.vue
+<<< @/../playground/examples/vue/list/button.vue
 
 :::
 
@@ -37,8 +37,8 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-list/editor.svelte
-<<< @/../playground/examples/svelte-list/extension.ts
+<<< @/../playground/examples/svelte/list/editor.svelte
+<<< @/../playground/examples/svelte/list/extension.ts
 
 :::
 

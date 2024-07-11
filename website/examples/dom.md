@@ -11,12 +11,12 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/lit-dom/editor.ts
-<<< @/../playground/examples/lit-dom/extension.ts
-<<< @/../playground/examples/lit-dom/code-block-view.ts
-<<< @/../playground/examples/lit-dom/create-element.ts
-<<< @/../playground/examples/lit-dom/get-id.ts
-<<< @/../playground/examples/lit-dom/language-selector.ts
+<<< @/../playground/examples/lit/dom/editor.ts
+<<< @/../playground/examples/lit/dom/extension.ts
+<<< @/../playground/examples/lit/dom/code-block-view.ts
+<<< @/../playground/examples/lit/dom/create-element.ts
+<<< @/../playground/examples/lit/dom/get-id.ts
+<<< @/../playground/examples/lit/dom/language-selector.ts
 
 :::
 
@@ -26,7 +26,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vanilla-dom/index.js
+<<< @/../playground/examples/vanilla/dom/index.js
 
 :::
 

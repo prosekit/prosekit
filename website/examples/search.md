@@ -11,10 +11,10 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/react-search/editor.tsx
-<<< @/../playground/examples/react-search/extension.ts
-<<< @/../playground/examples/react-search/search.tsx
-<<< @/../playground/examples/react-search/button.tsx
+<<< @/../playground/examples/react/search/editor.tsx
+<<< @/../playground/examples/react/search/extension.ts
+<<< @/../playground/examples/react/search/search.tsx
+<<< @/../playground/examples/react/search/button.tsx
 
 :::
 

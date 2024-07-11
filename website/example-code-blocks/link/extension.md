@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-link/extension.ts
+<<< @/../playground/examples/vue/link/extension.ts
 
 :::
 

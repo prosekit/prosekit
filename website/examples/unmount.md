@@ -11,9 +11,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/react-unmount/editor-component.tsx
-<<< @/../playground/examples/react-unmount/editor.tsx
-<<< @/../playground/examples/react-unmount/extension-component.tsx
+<<< @/../playground/examples/react/unmount/editor-component.tsx
+<<< @/../playground/examples/react/unmount/editor.tsx
+<<< @/../playground/examples/react/unmount/extension-component.tsx
 
 :::
 
@@ -23,9 +23,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-unmount/editor-component.vue
-<<< @/../playground/examples/vue-unmount/editor.vue
-<<< @/../playground/examples/vue-unmount/extension-component.vue
+<<< @/../playground/examples/vue/unmount/editor-component.vue
+<<< @/../playground/examples/vue/unmount/editor.vue
+<<< @/../playground/examples/vue/unmount/extension-component.vue
 
 :::
 

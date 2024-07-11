@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-full/block-handle.vue
+<<< @/../playground/examples/vue/full/block-handle.vue
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-full/block-handle.svelte
+<<< @/../playground/examples/svelte/full/block-handle.svelte
 
 :::
 

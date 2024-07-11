@@ -73,25 +73,25 @@
       "path": "packages/web/tsconfig.json",
     },
     {
-      "path": "playground/examples/lit.tsconfig.json",
+      "path": "playground/examples/lit/tsconfig.json",
     },
     {
-      "path": "playground/examples/preact.tsconfig.json",
+      "path": "playground/examples/preact/tsconfig.json",
     },
     {
-      "path": "playground/examples/react.tsconfig.json",
+      "path": "playground/examples/react/tsconfig.json",
     },
     {
-      "path": "playground/examples/solid.tsconfig.json",
+      "path": "playground/examples/solid/tsconfig.json",
     },
     {
-      "path": "playground/examples/svelte.tsconfig.json",
+      "path": "playground/examples/svelte/tsconfig.json",
     },
     {
-      "path": "playground/examples/vanilla.tsconfig.json",
+      "path": "playground/examples/vanilla/tsconfig.json",
     },
     {
-      "path": "playground/examples/vue.tsconfig.json",
+      "path": "playground/examples/vue/tsconfig.json",
     },
     {
       "path": "playground/tsconfig.json",

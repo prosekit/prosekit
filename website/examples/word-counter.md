@@ -11,9 +11,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/react-word-counter/editor.tsx
-<<< @/../playground/examples/react-word-counter/extension.ts
-<<< @/../playground/examples/react-word-counter/word-counter.tsx
+<<< @/../playground/examples/react/word-counter/editor.tsx
+<<< @/../playground/examples/react/word-counter/extension.ts
+<<< @/../playground/examples/react/word-counter/word-counter.tsx
 
 :::
 
@@ -23,9 +23,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-word-counter/editor.vue
-<<< @/../playground/examples/vue-word-counter/extension.ts
-<<< @/../playground/examples/vue-word-counter/word-counter.vue
+<<< @/../playground/examples/vue/word-counter/editor.vue
+<<< @/../playground/examples/vue/word-counter/extension.ts
+<<< @/../playground/examples/vue/word-counter/word-counter.vue
 
 :::
 
@@ -35,9 +35,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-word-counter/editor.svelte
-<<< @/../playground/examples/svelte-word-counter/extension.ts
-<<< @/../playground/examples/svelte-word-counter/word-counter.svelte
+<<< @/../playground/examples/svelte/word-counter/editor.svelte
+<<< @/../playground/examples/svelte/word-counter/extension.ts
+<<< @/../playground/examples/svelte/word-counter/word-counter.svelte
 
 :::
 

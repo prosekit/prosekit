@@ -11,8 +11,8 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/react-minimal/editor.tsx
-<<< @/../playground/examples/react-minimal/extension.ts
+<<< @/../playground/examples/react/minimal/editor.tsx
+<<< @/../playground/examples/react/minimal/extension.ts
 
 :::
 
@@ -22,8 +22,8 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-minimal/editor.vue
-<<< @/../playground/examples/vue-minimal/extension.ts
+<<< @/../playground/examples/vue/minimal/editor.vue
+<<< @/../playground/examples/vue/minimal/extension.ts
 
 :::
 
@@ -33,7 +33,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/preact-minimal/editor.tsx
+<<< @/../playground/examples/preact/minimal/editor.tsx
 
 :::
 
@@ -43,7 +43,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-minimal/editor.svelte
+<<< @/../playground/examples/svelte/minimal/editor.svelte
 
 :::
 
@@ -53,7 +53,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/solid-minimal/editor.tsx
+<<< @/../playground/examples/solid/minimal/editor.tsx
 
 :::
 

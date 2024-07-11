@@ -11,10 +11,10 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-code/editor.vue
-<<< @/../playground/examples/vue-code/extension.ts
-<<< @/../playground/examples/vue-code/toolbar.vue
-<<< @/../playground/examples/vue-code/button.vue
+<<< @/../playground/examples/vue/code/editor.vue
+<<< @/../playground/examples/vue/code/extension.ts
+<<< @/../playground/examples/vue/code/toolbar.vue
+<<< @/../playground/examples/vue/code/button.vue
 
 :::
 
@@ -24,10 +24,10 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-code/editor.svelte
-<<< @/../playground/examples/svelte-code/extension.ts
-<<< @/../playground/examples/svelte-code/toolbar.svelte
-<<< @/../playground/examples/svelte-code/button.svelte
+<<< @/../playground/examples/svelte/code/editor.svelte
+<<< @/../playground/examples/svelte/code/extension.ts
+<<< @/../playground/examples/svelte/code/toolbar.svelte
+<<< @/../playground/examples/svelte/code/button.svelte
 
 :::
 

@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-user-menu-dynamic/user-menu-dynamic.tsx
+<<< @/../playground/examples/react/user-menu-dynamic/user-menu-dynamic.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-user-menu-dynamic/user-menu-dynamic.vue
+<<< @/../playground/examples/vue/user-menu-dynamic/user-menu-dynamic.vue
 
 :::
 

@@ -7,7 +7,7 @@ import { type CommandCreator } from '../types/command'
 /**
  * @public
  */
-export interface UnsetNodeOptions {
+export interface UnsetBlockTypeOptions {
   /**
    * The start position of the document. By default it will be the start position of current selection.
    */
@@ -25,10 +25,10 @@ export interface UnsetNodeOptions {
  *
  * @public
  */
-export function unsetBlockType(options: UnsetNodeOptions): Command {
+export function unsetBlockType(options?: UnsetBlockTypeOptions): Command {
   return (state, dispatch) => {
-    const from = options.from ?? state.selection.from
-    const to = options.to ?? state.selection.to
+    const from = options?.from ?? state.selection.from
+    const to = options?.to ?? state.selection.to
     if (from > to) return false
 
     const tr = state.tr

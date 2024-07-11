@@ -22,13 +22,12 @@ export interface UnsetMarkOptions {
  *
  * @public
  */
-export function unsetMark(options: UnsetMarkOptions): Command {
+export function unsetMark(options?: UnsetMarkOptions): Command {
   return (state, dispatch) => {
-    const from = options.from ?? state.selection.from
-    const to = options.to ?? state.selection.to
-    if (from > to) {
-      return false
-    }
+    const from = options?.from ?? state.selection.from
+    const to = options?.to ?? state.selection.to
+    if (from > to) return false
+
     dispatch?.(state.tr.removeMark(from, to))
     return true
   }

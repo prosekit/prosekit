@@ -15,7 +15,6 @@ describe('unsetMark', () => {
         '<b>',
         m.italic('4'),
         m.italic('5'),
-        '<b>',
       ),
     )
 
@@ -26,7 +25,6 @@ describe('unsetMark', () => {
         '<b>',
         m.italic('4'),
         m.italic('5'),
-        '<b>',
       ),
     )
 

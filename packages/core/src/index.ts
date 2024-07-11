@@ -13,6 +13,11 @@ export {
 } from './commands/set-node-attrs'
 export { toggleMark, type ToggleMarkOptions } from './commands/toggle-mark'
 export { toggleNode, type ToggleNodeOptions } from './commands/toggle-node'
+export {
+  unsetBlockType,
+  type UnsetBlockTypeOptions,
+} from './commands/unset-block-type'
+export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark'
 export { wrap, type WrapOptions } from './commands/wrap'
 export type { MarkBuilder, NodeBuilder } from './editor/builder'
 export { Editor, createEditor, type EditorOptions } from './editor/editor'

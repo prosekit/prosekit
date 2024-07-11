@@ -1,13 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
-import { createTestEditor } from './test-editor'
-import { defineTestExtension } from './test-extension'
+import { setupTest } from '../testing'
 
 describe('TestEditor', () => {
   it('should create nodes and marks', () => {
-    const editor = createTestEditor({ extension: defineTestExtension() })
-    const n = editor.nodes
-    const m = editor.marks
+    const { editor, m, n } = setupTest()
 
     const doc = n.doc(n.paragraph('Hello ', m.bold('world!')))
     editor.set(doc)
@@ -39,9 +36,7 @@ describe('TestEditor', () => {
   })
 
   it('should set text selection', () => {
-    const editor = createTestEditor({ extension: defineTestExtension() })
-    const n = editor.nodes
-    const m = editor.marks
+    const { editor, m, n } = setupTest()
 
     editor.set(n.doc(n.paragraph('Hello ', m.bold('<a>world<b>!'))))
     expect(editor.state.selection.toJSON()).toMatchInlineSnapshot(`
@@ -78,8 +73,7 @@ describe('TestEditor', () => {
   })
 
   it('should set node selection', () => {
-    const editor = createTestEditor({ extension: defineTestExtension() })
-    const n = editor.nodes
+    const { editor, n } = setupTest()
 
     editor.set(n.doc('<a>', n.paragraph('foo')))
     expect(editor.state.selection.toJSON()).toMatchInlineSnapshot(`

@@ -6,6 +6,8 @@ import { removeNode } from '../commands/remove-node'
 import { selectAll } from '../commands/select-all'
 import { setBlockType } from '../commands/set-block-type'
 import { setNodeAttrs } from '../commands/set-node-attrs'
+import { unsetBlockType } from '../commands/unset-block-type'
+import { unsetMark } from '../commands/unset-mark'
 import { wrap } from '../commands/wrap'
 import { commandFacet } from '../facets/command'
 import { defineFacetPayload } from '../facets/facet-extension'
@@ -52,5 +54,9 @@ export function defineBaseCommands() {
     addMark,
 
     removeMark,
+
+    unsetBlockType,
+
+    unsetMark,
   })
 }

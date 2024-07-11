@@ -8,7 +8,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint:vue": "vue-tsc --noEmit --emitDeclarationOnly false --project examples/vue.tsconfig.json",
+    "lint:vue": "vue-tsc --noEmit --emitDeclarationOnly false --project examples/vue/tsconfig.json",
     "astro": "astro",
     "test": "playwright test"
   },

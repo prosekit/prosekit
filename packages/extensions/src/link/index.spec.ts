@@ -1,10 +1,10 @@
 import { userEvent } from '@vitest/browser/context'
 import { describe, expect, it } from 'vitest'
 
-import { setupDefaultTest } from '../test'
+import { setupTest } from '../test'
 
 describe('defineLinkCommands', () => {
-  const { editor, n, m } = setupDefaultTest()
+  const { editor, n, m } = setupTest()
   const href = 'https://example.com'
   const doc1 = n.doc(n.paragraph('<a>foo<b> bar'))
   const doc2 = n.doc(n.paragraph(m.link({ href }, '<a>foo<b>'), ' bar'))
@@ -41,7 +41,7 @@ describe('defineLinkCommands', () => {
 
 describe('defineLinkInputRule', () => {
   it('should insert a link after pressing Space', async () => {
-    const { editor } = setupDefaultTest()
+    const { editor } = setupTest()
     await userEvent.keyboard('https://example.com')
     expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
       `"doc(paragraph("https://example.com"))"`,
@@ -53,7 +53,7 @@ describe('defineLinkInputRule', () => {
   })
 
   it('should handle a link before a period', async () => {
-    const { editor } = setupDefaultTest()
+    const { editor } = setupTest()
     await userEvent.keyboard('https://example.com')
     expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
       `"doc(paragraph("https://example.com"))"`,
@@ -71,7 +71,7 @@ describe('defineLinkInputRule', () => {
 
 describe('defineLinkEnterRule', () => {
   it('should insert a link after pressing Enter', async () => {
-    const { editor } = setupDefaultTest()
+    const { editor } = setupTest()
     await userEvent.keyboard('https://example.com')
     expect(editor.view.state.doc.toString()).toMatchInlineSnapshot(
       `"doc(paragraph("https://example.com"))"`,

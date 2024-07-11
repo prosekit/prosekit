@@ -1,40 +1,66 @@
 import {
-  baseKeymap,
   chainCommands,
   createParagraphNear,
   deleteSelection,
+  exitCode,
+  joinForward,
   joinTextblockBackward,
   liftEmptyBlock,
   newlineInCode,
+  selectAll,
   selectNodeBackward,
+  selectNodeForward,
+  selectTextblockEnd,
+  selectTextblockStart,
 } from '@prosekit/pm/commands'
 import { splitSplittableBlock } from 'prosemirror-splittable'
 
 import { withPriority } from '../editor/with-priority'
 import { Priority } from '../types/priority'
+import { isApple } from '../utils/env'
 
-import { defineKeymap } from './keymap'
+import { defineKeymap, type Keymap } from './keymap'
+
+// Replace `joinBackward` with `joinTextblockBackward`
+const backspace = chainCommands(
+  deleteSelection,
+  joinTextblockBackward,
+  selectNodeBackward,
+)
 
 // Replace `splitBlock` with `splitSplittableBlock`
-const customEnter = chainCommands(
+const enter = chainCommands(
   newlineInCode,
   createParagraphNear,
   liftEmptyBlock,
   splitSplittableBlock,
 )
 
-// Replace `joinBackward` with `joinTextblockBackward`
-const customBackspace = chainCommands(
-  deleteSelection,
-  joinTextblockBackward,
-  selectNodeBackward,
-)
+const del = chainCommands(deleteSelection, joinForward, selectNodeForward)
 
-const customBaseKeymap = {
-  ...baseKeymap,
-  Enter: customEnter,
-  Backspace: customBackspace,
+const pcBaseKeymap: Keymap = {
+  Enter: enter,
+  'Mod-Enter': exitCode,
+  Backspace: backspace,
+  'Mod-Backspace': backspace,
+  'Shift-Backspace': backspace,
+  Delete: del,
+  'Mod-Delete': del,
+  'Mod-a': selectAll,
 }
+
+const macBseKeymap: Keymap = {
+  'Ctrl-h': pcBaseKeymap['Backspace'],
+  'Alt-Backspace': pcBaseKeymap['Mod-Backspace'],
+  'Ctrl-d': pcBaseKeymap['Delete'],
+  'Ctrl-Alt-Backspace': pcBaseKeymap['Mod-Delete'],
+  'Alt-Delete': pcBaseKeymap['Mod-Delete'],
+  'Alt-d': pcBaseKeymap['Mod-Delete'],
+  'Ctrl-a': selectTextblockStart,
+  'Ctrl-e': selectTextblockEnd,
+}
+
+const baseKeymap = isApple ? { ...pcBaseKeymap, ...macBseKeymap } : pcBaseKeymap
 
 /**
  * Defines some basic key bindings.
@@ -50,5 +76,5 @@ export function defineBaseKeymap(options?: {
   priority?: Priority
 }) {
   const priority = options?.priority ?? Priority.low
-  return withPriority(defineKeymap(customBaseKeymap), priority)
+  return withPriority(defineKeymap(baseKeymap), priority)
 }

@@ -10,11 +10,11 @@ import unocss from 'unocss/astro'
 export default defineConfig({
   // Enable many frameworks to support all different kinds of components.
   integrations: [
-    preact({ include: ['**/preact-*/*'] }),
-    react({ include: ['**/react-*/*'] }),
+    preact({ include: ['examples/preact/*/**'] }),
+    react({ include: ['examples/react/**/*'] }),
     svelte(),
     vue(),
-    solid({ include: ['**/solid-*/*'] }),
+    solid({ include: ['examples/solid/**/*'] }),
     unocss({ injectReset: true }),
     {
       name: 'astro-integration-dark-mode',

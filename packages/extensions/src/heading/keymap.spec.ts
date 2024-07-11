@@ -34,7 +34,7 @@ describe('defineHeadingKeymap', () => {
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
   })
 
-  it.skip('should unset heading by pressing Backspace around text', async () => {
+  it('should unset heading by pressing Backspace around text', async () => {
     const { editor, n } = setupTest()
 
     const doc1 = n.doc(n.heading('Foo'), n.heading('<a>Bar'))

@@ -37,6 +37,6 @@ export function defineHeadingKeymap() {
       'mod-6': toggleHeadingKeybinding(6),
       Backspace: backspaceUnsetHeading,
     }),
-    Priority.high,
+    Priority.highest,
   )
 }

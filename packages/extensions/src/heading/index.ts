@@ -39,7 +39,6 @@ export function defineHeadingSpec() {
 
 export function defineHeadingKeymap() {
   return defineKeymap({
-    
     'mod-1': toggleHeadingKeybinding(1),
     'mod-2': toggleHeadingKeybinding(2),
     'mod-3': toggleHeadingKeybinding(3),

@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.9.6
+
+### Patch Changes
+
+- [`4c681bb`](https://github.com/ocavue/prosekit/commit/4c681bb7a0e599d05b17f7cffb1860bc037d007b) ![](https://prosekit.dev/b/core)
+
+  Add `unsetBlockType` command and `unsetMark` command.
+
+- [`9bbfd5d`](https://github.com/ocavue/prosekit/commit/9bbfd5dbe67088478f3e5eba7a8aa8924d1bc405) ![](https://prosekit.dev/b/extensions)
+
+  When the text cursor is at the start of a heading node, press `Backspace` will set it to the default text block (usually a paragraph node).
+
 ## 0.9.5
 
 ### Patch Changes

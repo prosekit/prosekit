@@ -1,5 +1,4 @@
-import { defineNodeSpec } from "@prosekit/core";
-
+import { defineNodeSpec } from '@prosekit/core'
 
 export function defineHeadingSpec() {
   return defineNodeSpec({
@@ -17,7 +16,7 @@ export function defineHeadingSpec() {
       { tag: 'h6', attrs: { level: 6 } },
     ],
     toDOM(node) {
-      return [`h${node.attrs.level}`, 0];
+      return [`h${node.attrs.level}`, 0]
     },
-  });
+  })
 }

@@ -1,4 +1,3 @@
-
 export interface HeadingAttrs {
-  level: number;
+  level: number
 }

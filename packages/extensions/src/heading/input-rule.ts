@@ -1,5 +1,6 @@
-import { defineTextBlockInputRule } from "../input-rule";
-import type { HeadingAttrs } from "./types";
+import { defineTextBlockInputRule } from '../input-rule'
+
+import type { HeadingAttrs } from './types'
 
 /**
  * Converts the text block to a heading when `#` is typed at the start of a new
@@ -11,8 +12,8 @@ export function defineHeadingInputRule() {
     regex: /^(#{1,6})\s$/,
     type: 'heading',
     attrs: (match) => {
-      const level: number = match[1]?.length ?? 1;
-      return { level } satisfies HeadingAttrs;
+      const level: number = match[1]?.length ?? 1
+      return { level } satisfies HeadingAttrs
     },
-  });
+  })
 }

@@ -19,7 +19,7 @@
     "@astrojs/solid-js": "^4.4.0",
     "@astrojs/svelte": "^5.6.0",
     "@astrojs/vue": "^4.5.0",
-    "@iconify-json/lucide": "^1.1.198",
+    "@iconify-json/lucide": "^1.1.199",
     "@playwright/test": "^1.45.1",
     "@prosekit/dev": "workspace:*",
     "@prosekit/themes": "workspace:*",

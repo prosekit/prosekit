@@ -30,7 +30,7 @@
   "dependencies": {
     "@manypkg/find-root": "^2.2.2",
     "@prosekit/themes": "workspace:*",
-    "unocss-preset-animations": "^1.0.2"
+    "unocss-preset-animations": "^1.1.0"
   },
   "peerDependencies": {
     "unocss": "^0.60.4"

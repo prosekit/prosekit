@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "prosemirror-commands": "^1.5.2",
-    "prosemirror-history": "^1.4.0",
+    "prosemirror-history": "^1.4.1",
     "prosemirror-inputrules": "^1.4.0",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-model": "^1.21.3",
@@ -57,7 +57,7 @@
     "@prosekit/dev": "workspace:*",
     "tsup": "^8.1.0",
     "typescript": "^5.5.3",
-    "vitest": "^2.0.1"
+    "vitest": "^2.0.2"
   },
   "publishConfig": {
     "exports": {

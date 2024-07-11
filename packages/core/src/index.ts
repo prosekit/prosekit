@@ -78,12 +78,12 @@ export {
 } from './extensions/events/plugin-view'
 export { defineHistory } from './extensions/history'
 export {
-  defineBaseKeymap,
   defineKeymap,
   keymapFacet,
   type Keymap,
   type KeymapPayload,
 } from './extensions/keymap'
+export { defineBaseKeymap } from './extensions/keymap-base'
 export {
   defineMarkAttr,
   defineMarkSpec,

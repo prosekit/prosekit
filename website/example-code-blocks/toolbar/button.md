@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-toolbar/button.tsx
+<<< @/../playground/examples/react/toolbar/button.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-toolbar/button.vue
+<<< @/../playground/examples/vue/toolbar/button.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-toolbar/button.svelte
+<<< @/../playground/examples/svelte/toolbar/button.svelte
 
 :::
 

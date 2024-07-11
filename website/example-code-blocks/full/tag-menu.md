@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-full/tag-menu.vue
+<<< @/../playground/examples/vue/full/tag-menu.vue
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-full/tag-menu.svelte
+<<< @/../playground/examples/svelte/full/tag-menu.svelte
 
 :::
 

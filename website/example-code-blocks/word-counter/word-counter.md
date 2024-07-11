@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-word-counter/word-counter.tsx
+<<< @/../playground/examples/react/word-counter/word-counter.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-word-counter/word-counter.vue
+<<< @/../playground/examples/vue/word-counter/word-counter.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-word-counter/word-counter.svelte
+<<< @/../playground/examples/svelte/word-counter/word-counter.svelte
 
 :::
 

@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/lit-dom/create-element.ts
+<<< @/../playground/examples/lit/dom/create-element.ts
 
 :::
 

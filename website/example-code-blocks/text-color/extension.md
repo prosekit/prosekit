@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-text-color/extension.ts
+<<< @/../playground/examples/vue/text-color/extension.ts
 
 :::
 

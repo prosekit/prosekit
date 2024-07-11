@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-text-align/toolbar.vue
+<<< @/../playground/examples/vue/text-align/toolbar.vue
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-text-align/toolbar.svelte
+<<< @/../playground/examples/svelte/text-align/toolbar.svelte
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid-text-align/toolbar.tsx
+<<< @/../playground/examples/solid/text-align/toolbar.tsx
 
 :::
 

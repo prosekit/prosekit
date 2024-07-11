@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-strike/editor.vue
+<<< @/../playground/examples/vue/strike/editor.vue
 
 :::
 

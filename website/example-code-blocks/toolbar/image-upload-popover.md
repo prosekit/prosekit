@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-toolbar/image-upload-popover.tsx
+<<< @/../playground/examples/react/toolbar/image-upload-popover.tsx
 
 :::
 

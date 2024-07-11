@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-readonly/extension.ts
+<<< @/../playground/examples/react/readonly/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-readonly/extension.ts
+<<< @/../playground/examples/vue/readonly/extension.ts
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/preact-readonly/extension.ts
+<<< @/../playground/examples/preact/readonly/extension.ts
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-readonly/extension.ts
+<<< @/../playground/examples/svelte/readonly/extension.ts
 
 :::
 
@@ -46,7 +46,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid-readonly/extension.ts
+<<< @/../playground/examples/solid/readonly/extension.ts
 
 :::
 

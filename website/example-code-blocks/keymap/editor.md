@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-keymap/editor.tsx
+<<< @/../playground/examples/react/keymap/editor.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-keymap/editor.vue
+<<< @/../playground/examples/vue/keymap/editor.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/preact-keymap/editor.tsx
+<<< @/../playground/examples/preact/keymap/editor.tsx
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-keymap/editor.svelte
+<<< @/../playground/examples/svelte/keymap/editor.svelte
 
 :::
 
@@ -46,7 +46,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid-keymap/editor.tsx
+<<< @/../playground/examples/solid/keymap/editor.tsx
 
 :::
 

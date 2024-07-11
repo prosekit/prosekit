@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-mark-rule/extension.ts
+<<< @/../playground/examples/react/mark-rule/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-mark-rule/extension.ts
+<<< @/../playground/examples/vue/mark-rule/extension.ts
 
 :::
 

@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-keymap/use-submit-keymap.ts
+<<< @/../playground/examples/react/keymap/use-submit-keymap.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-keymap/use-submit-keymap.ts
+<<< @/../playground/examples/vue/keymap/use-submit-keymap.ts
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/preact-keymap/use-submit-keymap.ts
+<<< @/../playground/examples/preact/keymap/use-submit-keymap.ts
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-keymap/use-submit-keymap.ts
+<<< @/../playground/examples/svelte/keymap/use-submit-keymap.ts
 
 :::
 
@@ -46,7 +46,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid-keymap/use-submit-keymap.ts
+<<< @/../playground/examples/solid/keymap/use-submit-keymap.ts
 
 :::
 

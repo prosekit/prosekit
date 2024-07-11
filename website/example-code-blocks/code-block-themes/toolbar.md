@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-code-block-themes/toolbar.tsx
+<<< @/../playground/examples/react/code-block-themes/toolbar.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-code-block-themes/toolbar.vue
+<<< @/../playground/examples/vue/code-block-themes/toolbar.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-code-block-themes/toolbar.svelte
+<<< @/../playground/examples/svelte/code-block-themes/toolbar.svelte
 
 :::
 

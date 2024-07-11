@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-heading/extension.ts
+<<< @/../playground/examples/react/heading/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-heading/extension.ts
+<<< @/../playground/examples/vue/heading/extension.ts
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-heading/extension.ts
+<<< @/../playground/examples/svelte/heading/extension.ts
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid-heading/extension.ts
+<<< @/../playground/examples/solid/heading/extension.ts
 
 :::
 

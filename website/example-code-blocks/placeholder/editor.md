@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-placeholder/editor.vue
+<<< @/../playground/examples/vue/placeholder/editor.vue
 
 :::
 

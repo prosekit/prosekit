@@ -25,17 +25,17 @@ environments:
 
 ::: code-group
 
-<<< @/../playground/examples/react-minimal/editor.tsx [React]
+<<< @/../playground/examples/react/minimal/editor.tsx [React]
 
-<<< @/../playground/examples/vue-minimal/editor.vue [Vue]
+<<< @/../playground/examples/vue/minimal/editor.vue [Vue]
 
-<<< @/../playground/examples/preact-minimal/editor.tsx [Preact]
+<<< @/../playground/examples/preact/minimal/editor.tsx [Preact]
 
-<<< @/../playground/examples/svelte-minimal/editor.svelte [Svelte]
+<<< @/../playground/examples/svelte/minimal/editor.svelte [Svelte]
 
-<<< @/../playground/examples/solid-minimal/editor.tsx [Solid]
+<<< @/../playground/examples/solid/minimal/editor.tsx [Solid]
 
-<<< @/../playground/examples/vanilla-dom/index.js [Vanilla]
+<<< @/../playground/examples/vanilla/dom/index.js [Vanilla]
 
 :::
 

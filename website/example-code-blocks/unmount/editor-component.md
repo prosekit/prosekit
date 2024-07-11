@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-unmount/editor-component.tsx
+<<< @/../playground/examples/react/unmount/editor-component.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-unmount/editor-component.vue
+<<< @/../playground/examples/vue/unmount/editor-component.vue
 
 :::
 

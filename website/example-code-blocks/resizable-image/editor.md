@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-resizable-image/editor.tsx
+<<< @/../playground/examples/react/resizable-image/editor.tsx
 
 :::
 

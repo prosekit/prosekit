@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-unmount/extension-component.tsx
+<<< @/../playground/examples/react/unmount/extension-component.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-unmount/extension-component.vue
+<<< @/../playground/examples/vue/unmount/extension-component.vue
 
 :::
 

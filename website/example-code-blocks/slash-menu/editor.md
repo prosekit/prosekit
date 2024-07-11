@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-slash-menu/editor.tsx
+<<< @/../playground/examples/react/slash-menu/editor.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-slash-menu/editor.vue
+<<< @/../playground/examples/vue/slash-menu/editor.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/preact-slash-menu/editor.tsx
+<<< @/../playground/examples/preact/slash-menu/editor.tsx
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-slash-menu/editor.svelte
+<<< @/../playground/examples/svelte/slash-menu/editor.svelte
 
 :::
 
@@ -46,7 +46,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid-slash-menu/editor.tsx
+<<< @/../playground/examples/solid/slash-menu/editor.tsx
 
 :::
 

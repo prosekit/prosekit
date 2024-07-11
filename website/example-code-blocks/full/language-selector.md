@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-full/language-selector.vue
+<<< @/../playground/examples/vue/full/language-selector.vue
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-full/language-selector.svelte
+<<< @/../playground/examples/svelte/full/language-selector.svelte
 
 :::
 

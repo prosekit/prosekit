@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-readonly/toolbar.tsx
+<<< @/../playground/examples/react/readonly/toolbar.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-readonly/toolbar.vue
+<<< @/../playground/examples/vue/readonly/toolbar.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/preact-readonly/toolbar.tsx
+<<< @/../playground/examples/preact/readonly/toolbar.tsx
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-readonly/toolbar.svelte
+<<< @/../playground/examples/svelte/readonly/toolbar.svelte
 
 :::
 
@@ -46,7 +46,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid-readonly/toolbar.tsx
+<<< @/../playground/examples/solid/readonly/toolbar.tsx
 
 :::
 

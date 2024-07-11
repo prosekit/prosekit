@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-text-align/editor.vue
+<<< @/../playground/examples/vue/text-align/editor.vue
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-text-align/editor.svelte
+<<< @/../playground/examples/svelte/text-align/editor.svelte
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid-text-align/editor.tsx
+<<< @/../playground/examples/solid/text-align/editor.tsx
 
 :::
 

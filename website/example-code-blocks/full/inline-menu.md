@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue-full/inline-menu.vue
+<<< @/../playground/examples/vue/full/inline-menu.vue
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte-full/inline-menu.svelte
+<<< @/../playground/examples/svelte/full/inline-menu.svelte
 
 :::
 

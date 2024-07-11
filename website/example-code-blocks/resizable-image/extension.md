@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react-resizable-image/extension.ts
+<<< @/../playground/examples/react/resizable-image/extension.ts
 
 :::
 

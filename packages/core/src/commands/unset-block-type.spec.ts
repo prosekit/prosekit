@@ -3,7 +3,20 @@ import { describe, expect, it } from 'vitest'
 import { setupTest } from '../testing'
 
 describe('unsetBlockType', () => {
-  it('can unset block type', () => {
+  it('can unset a single block', () => {
+    const { editor, n } = setupTest()
+
+    const doc1 = n.doc(n.heading('<a>1'), n.heading('2'))
+    const doc2 = n.doc(n.paragraph('<a>1'), n.heading('2'))
+
+    editor.set(doc1)
+    expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
+
+    editor.commands.unsetBlockType()
+    expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
+  })
+
+  it('can unset multiple blocks', () => {
     const { editor, n } = setupTest()
 
     const doc1 = n.doc(

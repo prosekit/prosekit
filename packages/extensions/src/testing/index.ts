@@ -84,27 +84,30 @@ export function setupTest() {
 }
 
 /**
+ * @example
+ *
+ * ```ts
+ * await pressKey('mod-1')
+ * await pressKey('Backspace')
+ * ```
+ *
  * @internal
  */
-export async function pressKeys(input: string) {
-  if (input.includes('-')) {
-    const keys = input.split('-').map((key) => {
-      if (key.toLowerCase() === 'mod') {
-        return isApple ? 'Meta' : 'Ctrl'
-      }
-      return key
-    })
-    const seq: string[] = []
-    for (const key of keys) {
-      // Press key without releasing it
-      seq.push('{' + key + '>}')
+export async function pressKey(input: string) {
+  const keys = input.split('-').map((key) => {
+    if (key.toLowerCase() === 'mod') {
+      return isApple ? 'Meta' : 'Ctrl'
     }
-    for (const key of keys.toReversed()) {
-      // Release a previously pressed key
-      seq.push('{/' + key + '}')
-    }
-    return await userEvent.keyboard(seq.join(''))
-  } else {
-    return await userEvent.keyboard(input)
+    return key
+  })
+  const seq: string[] = []
+  for (const key of keys) {
+    // Press key without releasing it
+    seq.push('{' + key + '>}')
   }
+  for (const key of keys.toReversed()) {
+    // Release a previously pressed key
+    seq.push('{/' + key + '}')
+  }
+  return await userEvent.keyboard(seq.join(''))
 }

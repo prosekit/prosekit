@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { pressKeys, setupTest } from '../testing'
+import { pressKey, setupTest } from '../testing'
 
 describe('defineHeadingKeymap', () => {
   it('should toggle heading', async () => {
@@ -12,13 +12,37 @@ describe('defineHeadingKeymap', () => {
 
     editor.set(doc)
     expect(editor.state.doc.toJSON()).toEqual(doc.toJSON())
-    await pressKeys('mod-1')
+    await pressKey('mod-1')
     expect(editor.state.doc.toJSON()).toEqual(docH1.toJSON())
-    await pressKeys('mod-1')
+    await pressKey('mod-1')
     expect(editor.state.doc.toJSON()).toEqual(doc.toJSON())
-    await pressKeys('mod-3')
+    await pressKey('mod-3')
     expect(editor.state.doc.toJSON()).toEqual(docH3.toJSON())
-    await pressKeys('mod-1')
+    await pressKey('mod-1')
     expect(editor.state.doc.toJSON()).toEqual(docH1.toJSON())
+  })
+
+  it('should unset heading by pressing Backspace', async () => {
+    const { editor, n } = setupTest()
+
+    const doc1 = n.doc(n.heading('<a>'))
+    const doc2 = n.doc(n.paragraph('<a>'))
+
+    editor.set(doc1)
+    expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
+    await pressKey('Backspace')
+    expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
+  })
+
+  it.skip('should unset heading by pressing Backspace around text', async () => {
+    const { editor, n } = setupTest()
+
+    const doc1 = n.doc(n.heading('Foo'), n.heading('<a>Bar'))
+    const doc2 = n.doc(n.heading('Foo'), n.paragraph('<a>Bar'))
+
+    editor.set(doc1)
+    expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
+    await pressKey('Backspace')
+    expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
   })
 })

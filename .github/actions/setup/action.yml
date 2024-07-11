@@ -5,7 +5,7 @@ inputs:
   node-version:
     description: The version of node.js
     required: false
-    default: '18'
+    default: "18"
 
 runs:
   using: composite
@@ -13,8 +13,8 @@ runs:
     - name: Set environment variables
       shell: bash
       run: |
-        echo "FORCE_COLOR=1" >> "${GITHUB_OUTPUT}"
-        echo "DO_NOT_TRACK=1" >> "${GITHUB_OUTPUT}"
+        echo "FORCE_COLOR=1" >> "${GITHUB_ENV}"
+        echo "DO_NOT_TRACK=1" >> "${GITHUB_ENV}"
 
     - name: Enable corepack
       run: corepack enable
@@ -29,7 +29,7 @@ runs:
       with:
         node-version: ${{ inputs.node-version }}
         cache: pnpm
-        registry-url: 'https://registry.npmjs.org'
+        registry-url: "https://registry.npmjs.org"
 
     - name: Show versions
       run: |

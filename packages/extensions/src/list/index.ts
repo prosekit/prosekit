@@ -1,12 +1,9 @@
 import {
-  Priority,
   defineCommands,
-  defineKeymap,
   defineNodeSpec,
   definePlugin,
   insertNode,
   union,
-  withPriority,
   type Extension,
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
@@ -16,7 +13,6 @@ import {
   createDedentListCommand as dedentList,
   createIndentListCommand as indentList,
   listInputRules,
-  listKeymap,
   createMoveListCommand as moveList,
   createSplitListCommand as splitList,
   createToggleCollapsedCommand as toggleCollapsed,
@@ -27,6 +23,8 @@ import {
 } from 'prosemirror-flat-list'
 
 import { defineInputRule } from '../input-rule'
+
+import { defineListKeymap } from './keymap'
 
 export { ListDOMSerializer } from 'prosemirror-flat-list'
 
@@ -68,15 +66,6 @@ export function defineListPlugins() {
   return definePlugin(({ schema }) => createListPlugins({ schema }))
 }
 
-/**
- * Returns a extension that adds key bindings for list.
- *
- * @public
- */
-export function defineListKeymap() {
-  return defineKeymap(listKeymap)
-}
-
 export function defineListInputRules(): Extension {
   return union(listInputRules.map(defineInputRule))
 }
@@ -88,9 +77,10 @@ export function defineList() {
   return union([
     defineListSpec(),
     defineListPlugins(),
-    // Use a high priority to override the default key bindings.
-    withPriority(defineListKeymap(), Priority.high),
+    defineListKeymap(),
     defineListInputRules(),
     defineListCommands(),
   ])
 }
+
+export { defineListKeymap }

@@ -2,8 +2,11 @@ import {
   baseKeymap,
   chainCommands,
   createParagraphNear,
+  deleteSelection,
+  joinTextblockBackward,
   liftEmptyBlock,
   newlineInCode,
+  selectNodeBackward,
 } from '@prosekit/pm/commands'
 import { keydownHandler } from '@prosekit/pm/keymap'
 import { Plugin, PluginKey, type Command } from '@prosekit/pm/state'
@@ -19,14 +22,25 @@ import { toReversed } from '../utils/array'
 
 import { pluginFacet, type PluginPayload } from './plugin'
 
+// Replace `splitBlock` with `splitSplittableBlock`
+const customEnter = chainCommands(
+  newlineInCode,
+  createParagraphNear,
+  liftEmptyBlock,
+  splitSplittableBlock,
+)
+
+// Replace `joinBackward` with `joinTextblockBackward`
+const customBackspace = chainCommands(
+  deleteSelection,
+  joinTextblockBackward,
+  selectNodeBackward,
+)
+
 const customBaseKeymap = {
   ...baseKeymap,
-  Enter: chainCommands(
-    newlineInCode,
-    createParagraphNear,
-    liftEmptyBlock,
-    splitSplittableBlock,
-  ),
+  Enter: customEnter,
+  Backspace: customBackspace,
 }
 
 /**

@@ -1,47 +1,14 @@
-import {
-  baseKeymap,
-  chainCommands,
-  createParagraphNear,
-  deleteSelection,
-  joinTextblockBackward,
-  liftEmptyBlock,
-  newlineInCode,
-  selectNodeBackward,
-} from '@prosekit/pm/commands'
+import { chainCommands } from '@prosekit/pm/commands'
 import { keydownHandler } from '@prosekit/pm/keymap'
 import { Plugin, PluginKey, type Command } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
-import { splitSplittableBlock } from 'prosemirror-splittable'
 
-import { withPriority } from '../editor/with-priority'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
-import { type Extension } from '../types/extension'
-import { Priority } from '../types/priority'
+import type { Extension } from '../types/extension'
 import { toReversed } from '../utils/array'
 
 import { pluginFacet, type PluginPayload } from './plugin'
-
-// Replace `splitBlock` with `splitSplittableBlock`
-const customEnter = chainCommands(
-  newlineInCode,
-  createParagraphNear,
-  liftEmptyBlock,
-  splitSplittableBlock,
-)
-
-// Replace `joinBackward` with `joinTextblockBackward`
-const customBackspace = chainCommands(
-  deleteSelection,
-  joinTextblockBackward,
-  selectNodeBackward,
-)
-
-const customBaseKeymap = {
-  ...baseKeymap,
-  Enter: customEnter,
-  Backspace: customBackspace,
-}
 
 /**
  * @public
@@ -55,23 +22,6 @@ export interface Keymap {
  */
 export function defineKeymap(keymap: Keymap): Extension {
   return defineFacetPayload(keymapFacet, [keymap])
-}
-
-/**
- * Defines some basic key bindings.
- *
- * @public
- */
-export function defineBaseKeymap(options?: {
-  /**
-   * The priority of the keymap.
-   *
-   * @default Priority.low
-   */
-  priority?: Priority
-}) {
-  const priority = options?.priority ?? Priority.low
-  return withPriority(defineKeymap(customBaseKeymap), priority)
 }
 
 /**

@@ -10,6 +10,12 @@ inputs:
 runs:
   using: composite
   steps:
+    - name: Set environment variables
+      shell: bash
+      run: |
+        echo "FORCE_COLOR=1" >> "${GITHUB_ENV}"
+        echo "DO_NOT_TRACK=1" >> "${GITHUB_ENV}"
+
     - name: Enable corepack
       run: corepack enable
       shell: bash

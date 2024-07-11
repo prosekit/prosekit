@@ -96,7 +96,7 @@ export function setupTest() {
 export async function pressKey(input: string) {
   const keys = input.split('-').map((key) => {
     if (key.toLowerCase() === 'mod') {
-      return isApple ? 'Meta' : 'Ctrl'
+      return isApple ? 'Meta' : 'Control'
     }
     return key
   })

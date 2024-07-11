@@ -1,21 +1,15 @@
-import {
-  defineBaseCommands,
-  defineBaseKeymap,
-  defineDoc,
-  defineHistory,
-  defineNodeSpec,
-  defineParagraph,
-  defineText,
-  union,
-  type Extension,
-  type ExtractMarks,
-  type ExtractNodes,
-  type MarkBuilder,
-  type NodeBuilder,
-} from '@prosekit/core'
-import { createTestEditor, type TestEditor } from '@prosekit/core/test'
-
+import type { MarkBuilder, NodeBuilder } from '../editor/builder'
+import { union } from '../editor/union'
+import { defineBaseCommands } from '../extensions/command'
+import { defineDoc } from '../extensions/doc'
+import { defineHistory } from '../extensions/history'
+import { defineBaseKeymap } from '../extensions/keymap'
 import { defineMarkSpec } from '../extensions/mark-spec'
+import { defineNodeSpec } from '../extensions/node-spec'
+import { defineParagraph } from '../extensions/paragraph'
+import { defineText } from '../extensions/text'
+import { createTestEditor, type TestEditor } from '../test'
+import type { Extension, ExtractMarks, ExtractNodes } from '../types/extension'
 
 function defineBold() {
   return defineMarkSpec({

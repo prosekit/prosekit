@@ -1,12 +1,11 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
-    // Turn off composite to avoid the following error: The inferred type of
-    // 'defineExtension' cannot be named without a reference to
-    // 'prosemirror-flat-list'. This is likely not portable. A type annotation
-    // is necessary.
-    "composite": false,
+    "composite": true,
     "outDir": ".temp",
   },
-  "include": ["./**/*.ts", "./**/*.svelte"],
+  "include": [
+    "./**/*.ts",
+    "./**/*.svelte"
+  ],
 }

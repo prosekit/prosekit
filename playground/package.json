@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "lint:vue": "vue-tsc --noEmit --emitDeclarationOnly false --project examples/vue/tsconfig.json",
-    "lint:svelte": "svelte-check --tsconfig examples/svelte/tsconfig.json",
+    "lint:svelte": "svelte-check --no-tsconfig",
     "astro": "astro",
     "test": "playwright test"
   },

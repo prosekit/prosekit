@@ -3,12 +3,11 @@ import type { Command } from '@prosekit/pm/state'
 
 import { getNodeTypes } from '../utils/get-node-types'
 
+
 /**
- * Returns a command that set the attributes of the current node.
- *
  * @public
  */
-export function setNodeAttrs(options: {
+export interface SetNodeAttrsOptions {
   /**
    * The type of node to set the attributes of.
    *
@@ -26,7 +25,18 @@ export function setNodeAttrs(options: {
    * containing the current selection.
    */
   pos?: number
-}): Command {
+}
+
+
+
+
+
+/**
+ * Returns a command that set the attributes of the current node.
+ *
+ * @public
+ */
+export function setNodeAttrs(options: SetNodeAttrsOptions): Command {
   return (state, dispatch) => {
     const nodeTypes = getNodeTypes(state.schema, options.type)
     const from = options.pos ?? state.selection.from

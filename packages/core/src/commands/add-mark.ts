@@ -5,11 +5,9 @@ import { type CommandCreator } from '../types/command'
 import { getMarkType } from '../utils/get-mark-type'
 
 /**
- * Returns a command that adds the given mark with the given attributes.
- *
  * @public
  */
-export function addMark(options: {
+export interface AddMarkOptions {
   /**
    * The type of the mark to add.
    */
@@ -29,7 +27,14 @@ export function addMark(options: {
    * The end position of the document. By default it will be the end position of current selection.
    */
   to?: number
-}): Command {
+}
+
+/**
+ * Returns a command that adds the given mark with the given attributes.
+ *
+ * @public
+ */
+export function addMark(options: AddMarkOptions): Command {
   return (state, dispatch) => {
     const mark = getMarkType(state.schema, options.type).create(options.attrs)
     const from = options.from ?? state.selection.from

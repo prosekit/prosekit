@@ -6,6 +6,21 @@ import { getNodeType } from '../utils/get-node-type'
 import { isNodeActive } from '../utils/is-node-active'
 
 /**
+ * @public
+ */
+export interface ToggleNodeOptions {
+  /**
+   * The type of the node to toggle.
+   */
+  type: string | NodeType
+
+  /**
+   * The attributes of the node to toggle.
+   */
+  attrs?: Attrs | null
+}
+
+/**
  * Returns a command that set the selected textblocks to the given node type
  * with the given attributes.
  *
@@ -14,10 +29,7 @@ import { isNodeActive } from '../utils/is-node-active'
 export function toggleNode({
   type,
   attrs,
-}: {
-  type: string | NodeType
-  attrs?: Attrs | null
-}): Command {
+}: ToggleNodeOptions): Command {
   return (state, dispatch, view) => {
     if (isNodeActive(state, type, attrs)) {
       const defaultType = state.schema.topNodeType.contentMatch.defaultType

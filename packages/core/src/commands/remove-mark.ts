@@ -4,12 +4,11 @@ import { type Command } from '@prosekit/pm/state'
 import { type CommandCreator } from '../types/command'
 import { getMarkType } from '../utils/get-mark-type'
 
+
 /**
- * Returns a command that removes the given mark.
- *
  * @public
  */
-export function removeMark(options: {
+export interface RemoveMarkOptions {
   /**
    * The type of the mark to remove.
    */
@@ -29,7 +28,15 @@ export function removeMark(options: {
    * The end position of the document. By default it will be the end position of current selection.
    */
   to?: number
-}): Command {
+}
+
+
+/**
+ * Returns a command that removes the given mark.
+ *
+ * @public
+ */
+export function removeMark(options: RemoveMarkOptions): Command {
   return (state, dispatch) => {
     const markType = getMarkType(state.schema, options.type)
     const mark = options.attrs ? markType.create(options.attrs) : markType

@@ -101,6 +101,15 @@ export function baseToggleMark(
   }
 }
 
+
+/**
+ * @public
+ */
+export interface ToggleMarkOptions {
+  type: string | MarkType
+  attrs?: Attrs | null
+}
+
 /**
  * Returns a command that toggles the given mark with the given attributes.
  *
@@ -109,10 +118,7 @@ export function baseToggleMark(
 export function toggleMark({
   type,
   attrs,
-}: {
-  type: string | MarkType
-  attrs?: Attrs | null
-}): Command {
+}: ToggleMarkOptions): Command {
   return (state, dispatch, view) => {
     return baseToggleMark(getMarkType(state.schema, type), attrs, {
       removeWhenPresent: false,

@@ -3,17 +3,23 @@ import { TextSelection, type Command } from '@prosekit/pm/state'
 
 import { getMarkType } from '../utils/get-mark-type'
 
+
+/**
+ * @public
+ */
+export interface ExpandMarkOptions {
+  /**
+   * The type of the mark to expand.
+   */
+  type: string | MarkType
+}
+
 /**
  * Expands the selection to include the entire mark at the current position.
  *
  * @public
  */
-export function expandMark(options: {
-  /**
-   * The type of the mark to expand.
-   */
-  type: string | MarkType
-}): Command {
+export function expandMark(options: ExpandMarkOptions): Command {
   return (state, dispatch) => {
     const markType = getMarkType(state.schema, options.type)
     const predicate = (mark: Mark) => mark.type === markType

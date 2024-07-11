@@ -5,12 +5,11 @@ import type { CommandCreator } from '../types/command'
 import { findParentNode } from '../utils/find-parent-node'
 import { getNodeType } from '../utils/get-node-type'
 
+
 /**
- * Returns a command to remove the nearest ancestor node of a specific type from the current position.
- *
  * @public
  */
-export function removeNode(options: {
+export interface RemoveNodeOptions {
   /**
    * The type of the node to remove.
    */
@@ -20,7 +19,15 @@ export function removeNode(options: {
    * The document position to start searching node. By default it will be the anchor position of current selection.
    */
   pos?: number
-}): Command {
+}
+
+
+/**
+ * Returns a command to remove the nearest ancestor node of a specific type from the current position.
+ *
+ * @public
+ */
+export function removeNode(options: RemoveNodeOptions): Command {
   return (state, dispatch) => {
     const nodeType = getNodeType(state.schema, options.type)
     const $pos =

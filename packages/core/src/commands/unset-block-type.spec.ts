@@ -20,6 +20,7 @@ describe('unsetBlockType', () => {
     const { editor, n } = setupTest()
 
     const doc1 = n.doc(
+      n.heading('0'),
       n.heading('<a>1'),
       n.heading('2'),
       n.heading('<b>3'),
@@ -27,6 +28,7 @@ describe('unsetBlockType', () => {
       n.heading('5'),
     )
     const doc2 = n.doc(
+      n.heading('0'),
       n.paragraph('<a>1'),
       n.paragraph('2'),
       n.paragraph('<b>3'),

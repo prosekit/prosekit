@@ -4,7 +4,6 @@ import { type Command } from '@prosekit/pm/state'
 import { type CommandCreator } from '../types/command'
 import { getMarkType } from '../utils/get-mark-type'
 
-
 /**
  * @public
  */
@@ -29,7 +28,6 @@ export interface RemoveMarkOptions {
    */
   to?: number
 }
-
 
 /**
  * Returns a command that removes the given mark.

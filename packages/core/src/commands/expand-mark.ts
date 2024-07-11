@@ -3,7 +3,6 @@ import { TextSelection, type Command } from '@prosekit/pm/state'
 
 import { getMarkType } from '../utils/get-mark-type'
 
-
 /**
  * @public
  */

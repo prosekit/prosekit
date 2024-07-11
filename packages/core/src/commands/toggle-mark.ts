@@ -101,7 +101,6 @@ export function baseToggleMark(
   }
 }
 
-
 /**
  * @public
  */
@@ -115,10 +114,7 @@ export interface ToggleMarkOptions {
  *
  * @public
  */
-export function toggleMark({
-  type,
-  attrs,
-}: ToggleMarkOptions): Command {
+export function toggleMark({ type, attrs }: ToggleMarkOptions): Command {
   return (state, dispatch, view) => {
     return baseToggleMark(getMarkType(state.schema, type), attrs, {
       removeWhenPresent: false,

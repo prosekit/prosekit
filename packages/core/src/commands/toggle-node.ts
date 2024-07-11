@@ -26,10 +26,7 @@ export interface ToggleNodeOptions {
  *
  * @public
  */
-export function toggleNode({
-  type,
-  attrs,
-}: ToggleNodeOptions): Command {
+export function toggleNode({ type, attrs }: ToggleNodeOptions): Command {
   return (state, dispatch, view) => {
     if (isNodeActive(state, type, attrs)) {
       const defaultType = state.schema.topNodeType.contentMatch.defaultType

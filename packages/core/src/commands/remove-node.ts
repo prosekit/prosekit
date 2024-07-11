@@ -5,7 +5,6 @@ import type { CommandCreator } from '../types/command'
 import { findParentNode } from '../utils/find-parent-node'
 import { getNodeType } from '../utils/get-node-type'
 
-
 /**
  * @public
  */
@@ -20,7 +19,6 @@ export interface RemoveNodeOptions {
    */
   pos?: number
 }
-
 
 /**
  * Returns a command to remove the nearest ancestor node of a specific type from the current position.

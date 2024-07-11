@@ -3,7 +3,6 @@ import type { Command } from '@prosekit/pm/state'
 
 import { getNodeTypes } from '../utils/get-node-types'
 
-
 /**
  * @public
  */
@@ -26,10 +25,6 @@ export interface SetNodeAttrsOptions {
    */
   pos?: number
 }
-
-
-
-
 
 /**
  * Returns a command that set the attributes of the current node.

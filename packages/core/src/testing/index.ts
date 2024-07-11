@@ -26,6 +26,16 @@ function defineBold() {
   })
 }
 
+function defineItalic() {
+  return defineMarkSpec({
+    name: 'italic',
+    parseDOM: [{ tag: 'em' }],
+    toDOM() {
+      return ['em', 0]
+    },
+  })
+}
+
 /**
  * @internal
  */
@@ -38,6 +48,7 @@ export function defineTestExtension() {
     defineParagraph(),
     defineText(),
     defineBold(),
+    defineItalic(),
   ])
 }
 

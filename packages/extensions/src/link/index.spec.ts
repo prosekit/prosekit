@@ -1,7 +1,7 @@
 import { userEvent } from '@vitest/browser/context'
 import { describe, expect, it } from 'vitest'
 
-import { setupTest } from '../test'
+import { setupTest } from '../testing'
 
 describe('defineLinkCommands', () => {
   const { editor, n, m } = setupTest()

@@ -4,7 +4,7 @@ import { setupTest } from '../testing'
 
 describe('unsetBlockType', () => {
   it('can unset block type', () => {
-    const { editor,  n } = setupTest()
+    const { editor, n } = setupTest()
 
     const doc1 = n.doc(
       n.heading('<a>1'),

@@ -69,7 +69,7 @@ export function defineTestExtension() {
 /**
  * @internal
  */
-export function setupTestExtension<E extends Extension>(
+export function setupTestFromExtension<E extends Extension>(
   extension: E,
 ): {
   editor: TestEditor<E>
@@ -93,5 +93,5 @@ export function setupTestExtension<E extends Extension>(
  * @internal
  */
 export function setupTest() {
-  return setupTestExtension(defineTestExtension())
+  return setupTestFromExtension(defineTestExtension())
 }

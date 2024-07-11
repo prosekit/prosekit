@@ -10,7 +10,8 @@ import {
   protectCollapsed,
 } from 'prosemirror-flat-list'
 
-// This is different from the one exported by prosemirror-flat-list, because `joinTextblockBackward` are moved `defineBaseKeymap` in `prosekit/core`.
+// This is different from the one exported by prosemirror-flat-list, because
+// some commands are moved to `defineBaseKeymap` in `prosekit/core`.
 const backspaceCommand = chainCommands(
   protectCollapsed,
   deleteSelection,

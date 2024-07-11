@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/react",
   "type": "module",
-  "version": "0.3.12",
+  "version": "0.3.13",
   "private": false,
   "author": {
     "name": "ocavue",

@@ -5,7 +5,7 @@ import { union } from '../editor/union'
 
 import { defineDoc } from './doc'
 import { defineHistory } from './history'
-import { defineBaseKeymap } from './keymap'
+import { defineBaseKeymap } from './keymap-base'
 import { defineNodeSpec } from './node-spec'
 import { defineParagraph } from './paragraph'
 import { defineText } from './text'

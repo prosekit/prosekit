@@ -3,6 +3,7 @@ import {
   defineBaseKeymap,
   defineDoc,
   defineHistory,
+  defineNodeSpec,
   defineParagraph,
   defineText,
   union,
@@ -36,6 +37,18 @@ function defineItalic() {
   })
 }
 
+function defineHeading() {
+  return defineNodeSpec({
+    name: 'heading',
+    content: 'inline*',
+    group: 'block',
+    parseDOM: [{ tag: 'h1' }],
+    toDOM() {
+      return ['h1', 0]
+    },
+  })
+}
+
 /**
  * @internal
  */
@@ -49,6 +62,7 @@ export function defineTestExtension() {
     defineText(),
     defineBold(),
     defineItalic(),
+    defineHeading(),
   ])
 }
 

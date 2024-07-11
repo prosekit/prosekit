@@ -2,10 +2,7 @@
   "compilerOptions": {
     "target": "es2018",
     "module": "esnext",
-    "lib": [
-      "esnext",
-      "DOM"
-    ],
+    "lib": ["esnext", "DOM"],
     "composite": true,
     "allowJs": true,
     "moduleResolution": "bundler",
@@ -25,86 +22,82 @@
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
   },
-  "include": [
-    "./*.js",
-    "./*.ts",
-    ".changeset/*.cjs"
-  ],
+  "include": ["./*.js", "./*.ts", ".changeset/*.cjs"],
   "files": [],
   "references": [
     {
-      "path": "packages/basic/tsconfig.json"
+      "path": "packages/basic/tsconfig.json",
     },
     {
-      "path": "packages/core/tsconfig.json"
+      "path": "packages/core/tsconfig.json",
     },
     {
-      "path": "packages/dev/tsconfig.json"
+      "path": "packages/dev/tsconfig.json",
     },
     {
-      "path": "packages/extensions/tsconfig.json"
+      "path": "packages/extensions/tsconfig.json",
     },
     {
-      "path": "packages/lit/tsconfig.json"
+      "path": "packages/lit/tsconfig.json",
     },
     {
-      "path": "packages/pm/tsconfig.json"
+      "path": "packages/pm/tsconfig.json",
     },
     {
-      "path": "packages/preact/tsconfig.json"
+      "path": "packages/preact/tsconfig.json",
     },
     {
-      "path": "packages/prosekit/tsconfig.json"
+      "path": "packages/prosekit/tsconfig.json",
     },
     {
-      "path": "packages/react/tsconfig.json"
+      "path": "packages/react/tsconfig.json",
     },
     {
-      "path": "packages/solid/tsconfig.json"
+      "path": "packages/solid/tsconfig.json",
     },
     {
-      "path": "packages/svelte/tsconfig.json"
+      "path": "packages/svelte/tsconfig.json",
     },
     {
-      "path": "packages/themes/tsconfig.json"
+      "path": "packages/themes/tsconfig.json",
     },
     {
-      "path": "packages/unocss-preset/tsconfig.json"
+      "path": "packages/unocss-preset/tsconfig.json",
     },
     {
-      "path": "packages/vue/tsconfig.json"
+      "path": "packages/vue/tsconfig.json",
     },
     {
-      "path": "packages/web/tsconfig.json"
+      "path": "packages/web/tsconfig.json",
     },
     {
-      "path": "playground/examples/lit/tsconfig.json"
+      "path": "playground/examples/lit/tsconfig.json",
     },
     {
-      "path": "playground/examples/preact/preact.tsconfig.json"
+      "path": "playground/examples/preact/tsconfig.json",
     },
     {
-      "path": "playground/examples/react/tsconfig.json"
+      "path": "playground/examples/react/tsconfig.json",
     },
     {
-      "path": "playground/examples/solid/tsconfig.json"
+      "path": "playground/examples/solid/tsconfig.json",
     },
     {
-      "path": "playground/examples/svelte/tsconfig.json"
+      "path": "playground/examples/svelte/tsconfig.json",
     },
     {
-      "path": "playground/examples/vanilla/vanilla.tsconfig.json"
+      "path": "playground/examples/vanilla/tsconfig.json",
     },
     {
-      "path": "playground/examples/vue/tsconfig.json"
+      "path": "playground/examples/vue/tsconfig.json",
     },
     {
-      "path": "playground/tsconfig.json"
+      "path": "playground/tsconfig.json",
     },
     {
-      "path": "website/tsconfig.json"
-    }
-  ]
+      "path": "website/tsconfig.json",
+    },
+  ],
 }

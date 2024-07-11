@@ -2,7 +2,7 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "outDir": ".temp"
+    "outDir": ".temp",
   },
-  "include": ["./**/*.ts", "./**/*.vue", "./shims-vue.d.ts"]
+  "include": ["./**/*.ts", "./**/*.vue", "./shims-vue.d.ts"],
 }

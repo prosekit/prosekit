@@ -4,7 +4,7 @@
     "experimentalDecorators": true,
     "target": "ESNext",
     "composite": true,
-    "outDir": ".temp"
+    "outDir": ".temp",
   },
-  "include": ["./"]
+  "include": ["./"],
 }

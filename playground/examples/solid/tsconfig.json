@@ -4,7 +4,7 @@
     "composite": true,
     "outDir": ".temp",
     "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    "jsxImportSource": "solid-js",
   },
-  "include": ["./"]
+  "include": ["./"],
 }

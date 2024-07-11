@@ -3,7 +3,7 @@
   "compilerOptions": {
     "composite": true,
     "outDir": ".temp",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
   },
-  "include": ["./"]
+  "include": ["./"],
 }

@@ -92,7 +92,8 @@ async function cloneSharedFileInFramwork(
           const filePath = path.join(
             'playground',
             'examples',
-            example.name,
+            example.framework,
+            example.story,
             sharedFile,
           )
           const file = await vfs.getFile(filePath)

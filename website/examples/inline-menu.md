@@ -11,10 +11,10 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/react-inline-menu/editor.tsx
-<<< @/../playground/examples/react-inline-menu/extension.ts
-<<< @/../playground/examples/react-inline-menu/inline-menu.tsx
-<<< @/../playground/examples/react-inline-menu/button.tsx
+<<< @/../playground/examples/react/inline-menu/editor.tsx
+<<< @/../playground/examples/react/inline-menu/extension.ts
+<<< @/../playground/examples/react/inline-menu/inline-menu.tsx
+<<< @/../playground/examples/react/inline-menu/button.tsx
 
 :::
 
@@ -24,10 +24,10 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-inline-menu/editor.vue
-<<< @/../playground/examples/vue-inline-menu/extension.ts
-<<< @/../playground/examples/vue-inline-menu/inline-menu.vue
-<<< @/../playground/examples/vue-inline-menu/button.vue
+<<< @/../playground/examples/vue/inline-menu/editor.vue
+<<< @/../playground/examples/vue/inline-menu/extension.ts
+<<< @/../playground/examples/vue/inline-menu/inline-menu.vue
+<<< @/../playground/examples/vue/inline-menu/button.vue
 
 :::
 

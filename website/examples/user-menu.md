@@ -11,12 +11,12 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/react-user-menu/editor.tsx
-<<< @/../playground/examples/react-user-menu/extension.ts
-<<< @/../playground/examples/react-user-menu/tag-data.ts
-<<< @/../playground/examples/react-user-menu/tag-menu.tsx
-<<< @/../playground/examples/react-user-menu/user-data.ts
-<<< @/../playground/examples/react-user-menu/user-menu.tsx
+<<< @/../playground/examples/react/user-menu/editor.tsx
+<<< @/../playground/examples/react/user-menu/extension.ts
+<<< @/../playground/examples/react/user-menu/tag-data.ts
+<<< @/../playground/examples/react/user-menu/tag-menu.tsx
+<<< @/../playground/examples/react/user-menu/user-data.ts
+<<< @/../playground/examples/react/user-menu/user-menu.tsx
 
 :::
 
@@ -26,12 +26,12 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-user-menu/editor.vue
-<<< @/../playground/examples/vue-user-menu/extension.ts
-<<< @/../playground/examples/vue-user-menu/tag-data.ts
-<<< @/../playground/examples/vue-user-menu/tag-menu.vue
-<<< @/../playground/examples/vue-user-menu/user-data.ts
-<<< @/../playground/examples/vue-user-menu/user-menu.vue
+<<< @/../playground/examples/vue/user-menu/editor.vue
+<<< @/../playground/examples/vue/user-menu/extension.ts
+<<< @/../playground/examples/vue/user-menu/tag-data.ts
+<<< @/../playground/examples/vue/user-menu/tag-menu.vue
+<<< @/../playground/examples/vue/user-menu/user-data.ts
+<<< @/../playground/examples/vue/user-menu/user-menu.vue
 
 :::
 

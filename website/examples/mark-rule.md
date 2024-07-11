@@ -11,9 +11,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/react-mark-rule/editor.tsx
-<<< @/../playground/examples/react-mark-rule/extension.ts
-<<< @/../playground/examples/react-mark-rule/issue-link.ts
+<<< @/../playground/examples/react/mark-rule/editor.tsx
+<<< @/../playground/examples/react/mark-rule/extension.ts
+<<< @/../playground/examples/react/mark-rule/issue-link.ts
 
 :::
 
@@ -23,9 +23,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-mark-rule/editor.vue
-<<< @/../playground/examples/vue-mark-rule/extension.ts
-<<< @/../playground/examples/vue-mark-rule/issue-link.ts
+<<< @/../playground/examples/vue/mark-rule/editor.vue
+<<< @/../playground/examples/vue/mark-rule/extension.ts
+<<< @/../playground/examples/vue/mark-rule/issue-link.ts
 
 :::
 

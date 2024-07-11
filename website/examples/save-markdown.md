@@ -11,9 +11,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/react-save-markdown/editor-component.tsx
-<<< @/../playground/examples/react-save-markdown/editor.tsx
-<<< @/../playground/examples/react-save-markdown/markdown.ts
+<<< @/../playground/examples/react/save-markdown/editor-component.tsx
+<<< @/../playground/examples/react/save-markdown/editor.tsx
+<<< @/../playground/examples/react/save-markdown/markdown.ts
 
 :::
 
@@ -23,9 +23,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/vue-save-markdown/editor-component.vue
-<<< @/../playground/examples/vue-save-markdown/editor.vue
-<<< @/../playground/examples/vue-save-markdown/markdown.ts
+<<< @/../playground/examples/vue/save-markdown/editor-component.vue
+<<< @/../playground/examples/vue/save-markdown/editor.vue
+<<< @/../playground/examples/vue/save-markdown/markdown.ts
 
 :::
 

@@ -11,9 +11,9 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
-<<< @/../playground/examples/react-resizable-image/editor.tsx
-<<< @/../playground/examples/react-resizable-image/extension.ts
-<<< @/../playground/examples/react-resizable-image/image-view.tsx
+<<< @/../playground/examples/react/resizable-image/editor.tsx
+<<< @/../playground/examples/react/resizable-image/extension.ts
+<<< @/../playground/examples/react/resizable-image/image-view.tsx
 
 :::
 

@@ -57,7 +57,7 @@ export async function genExampleMetaYaml() {
       hidden:
         fileName === 'tsconfig.json'
           ? true
-          : findExampleFile(oldMeta, exampleName, fileName)?.hidden ?? false,
+          : (findExampleFile(oldMeta, exampleName, fileName)?.hidden ?? false),
     }))
 
     const newExample: Example = {

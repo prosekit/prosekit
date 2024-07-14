@@ -28,7 +28,7 @@
     "ci:publish:next": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag next"
   },
   "dependencies": {
-    "@antfu/ni": "^0.21.12",
+    "@antfu/ni": "^0.22.0",
     "@changesets/cli": "^2.27.7",
     "@changesets/types": "^6.0.0",
     "@manypkg/cli": "^0.21.4",
@@ -43,7 +43,7 @@
     "eslint": "^8.57.0",
     "jsdom": "^24.1.0",
     "playwright": "^1.45.1",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-svelte": "^3.2.5",
     "size-limit": "^11.1.4",

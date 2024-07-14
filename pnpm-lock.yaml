@@ -14,8 +14,8 @@ importers:
   .:
     dependencies:
       '@antfu/ni':
-        specifier: ^0.21.12
-        version: 0.21.12
+        specifier: ^0.22.0
+        version: 0.22.0
       '@changesets/cli':
         specifier: ^2.27.7
         version: 2.27.7
@@ -59,14 +59,14 @@ importers:
         specifier: ^1.45.1
         version: 1.45.1
       prettier:
-        specifier: ^3.3.2
-        version: 3.3.2
+        specifier: ^3.3.3
+        version: 3.3.3
       prettier-plugin-astro:
         specifier: ^0.14.0
         version: 0.14.0
       prettier-plugin-svelte:
         specifier: ^3.2.5
-        version: 3.2.5(prettier@3.3.2)(svelte@4.2.18)
+        version: 3.2.5(prettier@3.3.3)(svelte@4.2.18)
       size-limit:
         specifier: ^11.1.4
         version: 11.1.4
@@ -689,8 +689,8 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0(astro@4.11.5(@types/node@20.14.10)(lightningcss@1.25.1)(typescript@5.5.3))(rollup@4.17.0)(vite@5.3.3(@types/node@20.14.10)(lightningcss@1.25.1))(vue@3.4.31(typescript@5.5.3))
       '@iconify-json/lucide':
-        specifier: ^1.1.199
-        version: 1.1.199
+        specifier: ^1.1.200
+        version: 1.1.200
       '@playwright/test':
         specifier: ^1.45.1
         version: 1.45.1
@@ -722,8 +722,8 @@ importers:
         specifier: ^10.22.1
         version: 10.22.1
       prettier:
-        specifier: ^3.3.2
-        version: 3.3.2
+        specifier: ^3.3.3
+        version: 3.3.3
       prosekit:
         specifier: workspace:*
         version: link:../packages/prosekit
@@ -779,8 +779,8 @@ importers:
         specifier: ^1.1.43
         version: 1.1.43
       '@iconify-json/lucide':
-        specifier: ^1.1.199
-        version: 1.1.199
+        specifier: ^1.1.200
+        version: 1.1.200
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../packages/dev
@@ -818,8 +818,8 @@ importers:
         specifier: ^8.4.39
         version: 8.4.39
       prettier:
-        specifier: ^3.3.2
-        version: 3.3.2
+        specifier: ^3.3.3
+        version: 3.3.3
       prosekit:
         specifier: workspace:*
         version: link:../packages/prosekit
@@ -848,11 +848,11 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       typedoc-plugin-markdown:
-        specifier: ^4.2.0
-        version: 4.2.0(typedoc@0.26.4(typescript@5.5.3))
+        specifier: ^4.2.1
+        version: 4.2.1(typedoc@0.26.4(typescript@5.5.3))
       typedoc-plugin-mdn-links:
-        specifier: ^3.2.3
-        version: 3.2.3(typedoc@0.26.4(typescript@5.5.3))
+        specifier: ^3.2.4
+        version: 3.2.4(typedoc@0.26.4(typescript@5.5.3))
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -961,8 +961,8 @@ packages:
   '@antfu/install-pkg@0.1.1':
     resolution: {integrity: sha512-LyB/8+bSfa0DFGC06zpCEfs89/XoWZwws5ygEa5D+Xsm3OfI+aXQ86VgVG7Acyef+rSZ5HE7J8rrxzrQeM3PjQ==}
 
-  '@antfu/ni@0.21.12':
-    resolution: {integrity: sha512-2aDL3WUv8hMJb2L3r/PIQWsTLyq7RQr3v9xD16fiz6O8ys1xEyLhhTOv8gxtZvJiTzjTF5pHoArvRdesGL1DMQ==}
+  '@antfu/ni@0.22.0':
+    resolution: {integrity: sha512-qP2zFsmypfWpKnmQcjoqMfYrPRHbqcXnhaUrg3VGqPGFXyN9sKz2+/TvNKByWDqAfuVStE8Fy2ppuVdoWQDjkw==}
     hasBin: true
 
   '@antfu/utils@0.7.10':
@@ -1739,8 +1739,8 @@ packages:
   '@iconify-json/logos@1.1.43':
     resolution: {integrity: sha512-UtvL1yDHUr9dl1Tqihh6K9m5dmbYKOYyLf3i9aKhymSW76QjOCGjpgQc0PQ4GJCAdU1cAMu+WO61TgPxdonrlg==}
 
-  '@iconify-json/lucide@1.1.199':
-    resolution: {integrity: sha512-v/LEtxQ1mjncAm9Na8ZVyVH0ET3oYBj8hNRk3FYiDDfh6Ta0koUy/S+tQ0pdmlITbQKJstK4Q32qGFE2nOU5eQ==}
+  '@iconify-json/lucide@1.1.200':
+    resolution: {integrity: sha512-imZeWdgMcJ6xZ15U0h35kehDcrVShvrTui3RvuY/ZUxFGC23wxPt1OQXiu+KQ/GEiujGEeOtQ1BL3Jf+7dQiqw==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -5416,8 +5416,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.3.2:
-    resolution: {integrity: sha512-rAVeHYMcv8ATV5d508CFdn+8/pHPpXeIid1DdrPwXnaAdH7cqjVbpJaT5eq4yRAFU/lsbwYwSF/n5iNrdJHPQA==}
+  prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -6417,14 +6417,14 @@ packages:
   typedoc-plugin-external-package-links@0.1.0:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
 
-  typedoc-plugin-markdown@4.2.0:
-    resolution: {integrity: sha512-6ok97BeH99X+yJ8wx8AkaGU8nOfxqCHKO0DIL6hl7QwWNyj0cklEO+fRfsQpzo6j/P7egkonOVDfd6EfXzc+Kg==}
+  typedoc-plugin-markdown@4.2.1:
+    resolution: {integrity: sha512-7hQt/1WaW/VI4+x3sxwcCGsEylP1E1GvF6OTTELK5sfTEp6AeK+83jkCOgZGp1pI2DiOammMYQMnxxOny9TKsQ==}
     engines: {node: '>= 18'}
     peerDependencies:
       typedoc: 0.26.x
 
-  typedoc-plugin-mdn-links@3.2.3:
-    resolution: {integrity: sha512-hz22UgFuzdtgpBXet2dxKf9d2HVixL2VcE9Ke1+X1Nu8W8jSGIB2awIA6HFVsD0vk1OLe3ehU0ibyD5sN7wh4w==}
+  typedoc-plugin-mdn-links@3.2.4:
+    resolution: {integrity: sha512-TmBBmtIuTR4mSuYjcmiibjvmpM2oSeUC0E5cgPnrM3HEdhiXsDGNA6SyPorvauqYN5Hd0si2EJLJs6KjP9b4Lw==}
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x || 0.26.x'
 
@@ -7029,7 +7029,7 @@ snapshots:
       execa: 5.1.1
       find-up: 5.0.0
 
-  '@antfu/ni@0.21.12': {}
+  '@antfu/ni@0.22.0': {}
 
   '@antfu/utils@0.7.10': {}
 
@@ -7947,7 +7947,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.1.199':
+  '@iconify-json/lucide@1.1.200':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -10016,7 +10016,7 @@ snapshots:
       '@vue/compiler-sfc': 3.4.31
       '@vuedx/template-ast-types': 0.7.1
       fast-glob: 3.3.2
-      prettier: 3.3.2
+      prettier: 3.3.3
       typescript: 5.5.3
     transitivePeerDependencies:
       - supports-color
@@ -12432,17 +12432,17 @@ snapshots:
   prettier-plugin-astro@0.14.0:
     dependencies:
       '@astrojs/compiler': 1.8.2
-      prettier: 3.3.2
+      prettier: 3.3.3
       sass-formatter: 0.7.9
 
-  prettier-plugin-svelte@3.2.5(prettier@3.3.2)(svelte@4.2.18):
+  prettier-plugin-svelte@3.2.5(prettier@3.3.3)(svelte@4.2.18):
     dependencies:
-      prettier: 3.3.2
+      prettier: 3.3.3
       svelte: 4.2.18
 
   prettier@2.8.8: {}
 
-  prettier@3.3.2: {}
+  prettier@3.3.3: {}
 
   pretty-format@27.5.1:
     dependencies:
@@ -13602,11 +13602,11 @@ snapshots:
 
   typedoc-plugin-external-package-links@0.1.0: {}
 
-  typedoc-plugin-markdown@4.2.0(typedoc@0.26.4(typescript@5.5.3)):
+  typedoc-plugin-markdown@4.2.1(typedoc@0.26.4(typescript@5.5.3)):
     dependencies:
       typedoc: 0.26.4(typescript@5.5.3)
 
-  typedoc-plugin-mdn-links@3.2.3(typedoc@0.26.4(typescript@5.5.3)):
+  typedoc-plugin-mdn-links@3.2.4(typedoc@0.26.4(typescript@5.5.3)):
     dependencies:
       typedoc: 0.26.4(typescript@5.5.3)
 

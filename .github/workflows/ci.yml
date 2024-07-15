@@ -130,13 +130,6 @@ jobs:
       - name: Build
         run: pnpm run build:website
 
-      # Temporary file to identify the website deployment
-      - name: Add random file
-        run: |
-          uuidgen >> ./website/dist/build.log
-          date >> ./website/dist/build.log
-          echo "provider-cloudflare" >> ./website/dist/build.log
-
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
@@ -145,58 +138,4 @@ jobs:
           projectName: prosekit-dev
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           directory: website/dist
-
-      # When deploying to Netlify, sometimes the build fails with 422 Unprocessable
-      # Entity error. I suspect it's because I deploy the same content in a short time.
-      # As a workaround, a unique file is created for each build.
-      - name: Add random file
-        run: |
-          echo "" > ./website/dist/build.log
-          uuidgen >> ./website/dist/build.log
-          date >> ./website/dist/build.log
-          echo "provider-netlify" >> ./website/dist/build.log
-
-      - name: Deploy to Netlify
-        id: deploy-1
-        uses: nwtgck/actions-netlify@v3.0
-        continue-on-error: true
-        with:
-          publish-dir: './website/dist'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Deploy from GitHub Actions'
-          enable-pull-request-comment: true
-          enable-commit-comment: false
-          enable-commit-status: false
-          overwrites-pull-request-comment: true
-          alias: ${{ github.head_ref }}
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WEBSITE_SITE_ID }}
-        timeout-minutes: 5
-
-      - name: Add random file (retry)
-        if: steps.deploy-1.outcome == 'failure'
-        run: |
-          sleep 30
-          uuidgen >> ./website/dist/build.log
-          date >> ./website/dist/build.log
-
-      - name: Deploy to Netlify (retry)
-        id: deploy-2
-        if: steps.deploy-1.outcome == 'failure'
-        uses: nwtgck/actions-netlify@v3.0
-        with:
-          publish-dir: './website/dist'
-          production-branch: master
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: 'Deploy from GitHub Actions (retry)'
-          enable-pull-request-comment: false
-          enable-commit-comment: false
-          enable-commit-status: false
-          overwrites-pull-request-comment: true
-          alias: ${{ github.head_ref }}
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_WEBSITE_SITE_ID }}
         timeout-minutes: 5

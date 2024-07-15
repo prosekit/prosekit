@@ -1,4 +1,5 @@
-# Redirects configuration for Netlify
+# Redirects configuration for Cloudflare Pages
+# https://developers.cloudflare.com/pages/configuration/redirects/
 
 /b/prosekit          https://img.shields.io/badge/prosekit-444444
 /b/pm                https://img.shields.io/badge/prosekit%2Fpm-444444

@@ -1,5 +1,27 @@
 # prosekit
 
+## 0.9.7
+
+### Patch Changes
+
+- [`e638611`](https://github.com/ocavue/prosekit/commit/e63861176c18fd04fb8eeab8977e508745369935) ![](https://prosekit.dev/b/svelte)
+
+  Fix an issue where Svelte component node views break the server-side rendering.
+
+- [`8468d05`](https://github.com/ocavue/prosekit/commit/8468d05211ad1d4f701437b6dbed556bd7e0bdcd) ![](https://prosekit.dev/b/core)
+
+  `defineHistory` now accepts an options object to configure the history plugin.
+
+  Reduce the default delay for the history plugin from 500ms to 250ms.
+
+- [`500c6b4`](https://github.com/ocavue/prosekit/commit/500c6b447f848b9c7bafcd931b245bf9122fbe65) ![](https://prosekit.dev/b/pm)
+
+  Update ProseMirror dependencies.
+
+- [`3b7a6f1`](https://github.com/ocavue/prosekit/commit/3b7a6f1d22f5e43bbbe4a1d52bfc6f02a738fd72) ![](https://prosekit.dev/b/vue)
+
+  Fix server-side rendering hydration for some Vue components.
+
 ## 0.9.6
 
 ### Patch Changes

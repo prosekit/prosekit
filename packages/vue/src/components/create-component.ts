@@ -1,6 +1,7 @@
 import {
   defineComponent,
   h,
+  onMounted,
   type DefineSetupFnComponent,
   type HTMLAttributes,
 } from 'vue'
@@ -19,6 +20,10 @@ export function createComponent<Props extends object>(
   const Component = defineComponent(
     (props: Record<string, unknown>, { slots }) => {
       const editor = useEditorContext()
+
+      onMounted(() => {
+        console.log('[prosekit] onMounted')
+      })
 
       return () => {
         const p: Record<string, unknown> = {}

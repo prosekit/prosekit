@@ -1,9 +1,10 @@
 import dedent from 'dedent'
 import { describe, expect, it } from 'vitest'
 
-import { replaceThemes } from './replace'
+import { replaceThemesWith } from './replace'
+import { Themes } from './themes'
 
-describe('replaceThemes', () => {
+describe('replaceThemesWith', () => {
   it('can replace class names', () => {
     const code = dedent`
       import { Themes } from '@prosekit/themes'
@@ -14,7 +15,7 @@ describe('replaceThemes', () => {
         </div>
       );
       `
-    expect(replaceThemes(code)).toMatchInlineSnapshot(`
+    expect(replaceThemesWith(code, Themes)).toMatchInlineSnapshot(`
       "
       const App = () => (
         <div class='ProseMirror box-border min-h-full px-[max(40px,_calc(50%-330px))] py-[24px] outline-none outline-0 [&_span[data-mention="user"]]:text-blue-500 [&_span[data-mention="tag"]]:text-violet-500 [&_pre]:text-white [&_pre]:bg-zinc-800'>

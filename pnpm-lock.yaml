@@ -556,9 +556,15 @@ importers:
       esbuild:
         specifier: ^0.23.0
         version: 0.23.0
+      prettier:
+        specifier: ^3.3.3
+        version: 3.3.3
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
+      unplugin-macros:
+        specifier: ^0.13.1
+        version: 0.13.1(@types/node@20.14.10)(lightningcss@1.25.1)(rollup@4.17.0)
       vitest:
         specifier: ^2.0.2
         version: 2.0.2(@types/node@20.14.10)(@vitest/browser@2.0.2)(@vitest/ui@1.6.0)(jsdom@24.1.0)(lightningcss@1.25.1)
@@ -2956,6 +2962,10 @@ packages:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
 
+  ast-kit@0.12.2:
+    resolution: {integrity: sha512-es1zHFsnZ4Y4efz412nnrU3KvVAhgqy90a7Yt9Wpi5vQ3l4aYMOX0Qx4FD0elKr5ITEhiUGCSFcgGYf4YTuACg==}
+    engines: {node: '>=16.14.0'}
+
   astro@4.11.5:
     resolution: {integrity: sha512-TCRhuaLwrxwMhS8S1GG+ZTdrAXigX9C8E/YUTs/r2t+owHxDgwl86IV9xH1IHrCPoqhK6civyAQNOT+GKmkb0A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
@@ -4724,6 +4734,10 @@ packages:
   lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
+
+  magic-string-ast@0.6.2:
+    resolution: {integrity: sha512-oN3Bcd7ZVt+0VGEs7402qR/tjgjbM7kPlH/z7ufJnzTLVBzXJITRHOJiwMmmYMgZfdoWQsfQcY+iKlxiBppnMA==}
+    engines: {node: '>=16.14.0'}
 
   magic-string@0.30.10:
     resolution: {integrity: sha512-iIRwTIf0QKV3UAnYK4PU8uiEc4SRh5jX0mwpIwETPpHdhVM4f53RSwS/vXvN1JhGX+Cs7B8qIq3d6AH49O5fAQ==}
@@ -6540,6 +6554,14 @@ packages:
       vite:
         optional: true
 
+  unplugin-macros@0.13.1:
+    resolution: {integrity: sha512-P7G5qer03UbtSTKJ6MGZeZ2eUy7tvucNM17myyFzb99vxcd/br5gi0NCUOALYMtJjtWnl0D/j4ww8ZEwpIlm4w==}
+    engines: {node: '>=18.12.0'}
+
+  unplugin@1.11.0:
+    resolution: {integrity: sha512-3r7VWZ/webh0SGgJScpWl2/MRCZK5d3ZYFcNaeci/GQ7Teop7zf0Nl2pUuz7G21BwPd9pcUPOC5KmJ2L3WgC5g==}
+    engines: {node: '>=14.0.0'}
+
   update-browserslist-db@1.0.13:
     resolution: {integrity: sha512-xebP81SNcPuNpPP3uzeW1NYXxI3rxyJzF3pD6sH4jE7o/IX+WtSpwnVU+qIsDPyk0d3hmFQ7mjqc6AtV604hbg==}
     hasBin: true
@@ -6577,6 +6599,11 @@ packages:
     resolution: {integrity: sha512-rOGAV7rUlUHX89fP2p2v0A2WWvV3QMX2UYq0fRqsWSvFvev4atHWqjwGoKaZT1VTKyLGk533ecu3eyd0o59CAg==}
     peerDependencies:
       vite: ^2.6.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0
+
+  vite-node@1.6.0:
+    resolution: {integrity: sha512-de6HJgzC+TFzOu0NTC4RAIsyf/DY/ibWDYQUcuEA84EMHhcefTUGkjFHKKEJhQN4A+6I0u++kr3l36ZF2d7XRw==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
 
   vite-node@2.0.2:
     resolution: {integrity: sha512-w4vkSz1Wo+NIQg8pjlEn0jQbcM/0D+xVaYjhw3cvarTanLLBh54oNiRbsT8PNK5GfuST0IlVXjsNRoNlqvY/fw==}
@@ -6742,6 +6769,13 @@ packages:
   webidl-conversions@7.0.0:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
     engines: {node: '>=12'}
+
+  webpack-sources@3.2.3:
+    resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
+    engines: {node: '>=10.13.0'}
+
+  webpack-virtual-modules@0.6.2:
+    resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
 
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
@@ -9496,6 +9530,11 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
+  ast-kit@0.12.2:
+    dependencies:
+      '@babel/parser': 7.24.7
+      pathe: 1.1.2
+
   astro@4.11.5(@types/node@20.14.10)(lightningcss@1.25.1)(typescript@5.5.3):
     dependencies:
       '@astrojs/compiler': 2.8.1
@@ -11559,6 +11598,10 @@ snapshots:
   lunr@2.3.9: {}
 
   lz-string@1.5.0: {}
+
+  magic-string-ast@0.6.2:
+    dependencies:
+      magic-string: 0.30.10
 
   magic-string@0.30.10:
     dependencies:
@@ -13753,6 +13796,32 @@ snapshots:
       - rollup
       - supports-color
 
+  unplugin-macros@0.13.1(@types/node@20.14.10)(lightningcss@1.25.1)(rollup@4.17.0):
+    dependencies:
+      '@rollup/pluginutils': 5.1.0(rollup@4.17.0)
+      ast-kit: 0.12.2
+      magic-string-ast: 0.6.2
+      unplugin: 1.11.0
+      vite: 5.3.3(@types/node@20.14.10)(lightningcss@1.25.1)
+      vite-node: 1.6.0(@types/node@20.14.10)(lightningcss@1.25.1)
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - rollup
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+
+  unplugin@1.11.0:
+    dependencies:
+      acorn: 8.12.0
+      chokidar: 3.6.0
+      webpack-sources: 3.2.3
+      webpack-virtual-modules: 0.6.2
+
   update-browserslist-db@1.0.13(browserslist@4.23.0):
     dependencies:
       browserslist: 4.23.0
@@ -13800,6 +13869,23 @@ snapshots:
   vite-hot-client@0.2.3(vite@5.3.3(@types/node@20.14.10)(lightningcss@1.25.1)):
     dependencies:
       vite: 5.3.3(@types/node@20.14.10)(lightningcss@1.25.1)
+
+  vite-node@1.6.0(@types/node@20.14.10)(lightningcss@1.25.1):
+    dependencies:
+      cac: 6.7.14
+      debug: 4.3.5
+      pathe: 1.1.2
+      picocolors: 1.0.1
+      vite: 5.3.3(@types/node@20.14.10)(lightningcss@1.25.1)
+    transitivePeerDependencies:
+      - '@types/node'
+      - less
+      - lightningcss
+      - sass
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
 
   vite-node@2.0.2(@types/node@20.14.10)(lightningcss@1.25.1):
     dependencies:
@@ -14018,6 +14104,10 @@ snapshots:
   webidl-conversions@4.0.2: {}
 
   webidl-conversions@7.0.0: {}
+
+  webpack-sources@3.2.3: {}
+
+  webpack-virtual-modules@0.6.2: {}
 
   whatwg-encoding@3.1.1:
     dependencies:

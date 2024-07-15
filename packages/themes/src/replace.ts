@@ -1,5 +1,3 @@
-import * as Themes from './classes'
-
 function replaceShortcuts(code: string, shortcuts: Record<string, string>) {
   const keys = Object.keys(shortcuts)
   // Sort keys by length in descending order
@@ -41,6 +39,9 @@ function replaceImport(code: string) {
   )
 }
 
-export function replaceThemes(code: string) {
-  return replaceImport(replaceShortcuts(code, Themes))
+export function replaceThemesWith(
+  code: string,
+  shortcuts: Record<string, string>,
+) {
+  return replaceImport(replaceShortcuts(code, shortcuts))
 }

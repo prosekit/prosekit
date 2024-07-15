@@ -16,6 +16,11 @@ const FLOATING_MENU = cn(
 const PRESENCE_ANIMATE = cn(
   'will-change-transform',
 
+  // For those elements that need to toggle visibility based on the `data-state`
+  // attribute, we hide them by default. This ensures that they don't get
+  // displayed before SSR hydration is complete.
+  '[&:not(data-state)]:hidden',
+
   'data-[state=open]:animate-in',
   'data-[state=closed]:animate-out',
   'data-[state=open]:fade-in-0',
@@ -43,7 +48,7 @@ const FLOATING_MENU_ITEM = cn(
 )
 
 const BUTTON_BASE = cn(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
 )
 
 const BUTTON_VARIANT_PRIMARY = cn(

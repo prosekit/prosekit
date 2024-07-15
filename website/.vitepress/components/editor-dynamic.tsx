@@ -16,7 +16,10 @@ const EditorFallback = defineComponent(() => {
 export const EditorDynamic = defineComponent(() => {
   const comp = shallowRef()
   onMounted(async () => {
-    comp.value = (await import('./vue-full/editor.vue')).default
+    const mod = await import('./vue-full/editor.vue')
+    const viewTransition = document?.startViewTransition?.(() => void 0)
+    await viewTransition?.ready
+    comp.value = mod.default
   })
   return () => (comp.value ? h(comp.value) : h(EditorFallback))
 })

@@ -16,7 +16,7 @@ export function createComponent<Props extends object>(
 ): DefineSetupFnComponent<Partial<Props> & HTMLAttributes> {
   const propertyNames = Object.keys(defaultProps)
 
-  const needsEditor = Object.hasOwn(defaultProps, 'editor')
+  const hasEditor = Object.hasOwn(defaultProps, 'editor')
 
   const Component = defineComponent(
     (props: Record<string, unknown>, { slots }) => {
@@ -38,7 +38,7 @@ export function createComponent<Props extends object>(
         }
 
         // Try to add the editor prop if it's missing.
-        if (needsEditor && editor && !properties['editor']) {
+        if (hasEditor && editor && !properties['editor']) {
           properties.editor = editor
         }
 

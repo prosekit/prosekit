@@ -1,4 +1,8 @@
-import { defineNodeViewComponent, type Extension } from '@prosekit/core'
+import {
+  defineNodeViewComponent,
+  definePlugin,
+  type Extension,
+} from '@prosekit/core'
 import type { SvelteNodeViewUserOptions } from '@prosemirror-adapter/svelte'
 import type {
   ComponentConstructorOptions,
@@ -10,6 +14,8 @@ import { NodeViewWrapper } from '../components/node-view-wrapper'
 
 import type { SvelteNodeViewComponent, SvelteNodeViewOptions } from './types'
 
+const isServer = typeof window === 'undefined'
+
 /**
  * Defines a node view using a Svelte component.
  *
@@ -18,6 +24,11 @@ import type { SvelteNodeViewComponent, SvelteNodeViewOptions } from './types'
 export function defineSvelteNodeView(
   options: SvelteNodeViewOptions,
 ): Extension {
+  // Don't register node views on the server
+  if (isServer) {
+    return definePlugin([])
+  }
+
   const { name, component, ...userOptions } = options
 
   const args: SvelteNodeViewUserOptions = {

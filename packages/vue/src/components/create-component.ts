@@ -2,7 +2,6 @@ import {
   defineComponent,
   h,
   onBeforeMount,
-  onMounted,
   ref,
   type DefineSetupFnComponent,
   type HTMLAttributes,

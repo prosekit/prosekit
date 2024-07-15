@@ -1,7 +1,7 @@
 import {
   defineComponent,
   h,
-  onBeforeMount,
+  onMounted,
   ref,
   type DefineSetupFnComponent,
   type HTMLAttributes,
@@ -22,10 +22,10 @@ export function createComponent<Props extends object>(
     (props: Record<string, unknown>, { slots }) => {
       const editor = useEditorContext()
 
-      const isClient = ref(false)
+      const mounted = ref(false)
 
-      onBeforeMount(() => {
-        isClient.value = true
+      onMounted(() => {
+        mounted.value = true
       })
 
       return () => {
@@ -43,7 +43,7 @@ export function createComponent<Props extends object>(
         }
 
         // Ensure web components work after SSR hydration.
-        properties.key = isClient.value ? 1 : 0
+        properties.key = mounted.value ? 1 : 0
 
         return h(tagName, properties, slots.default?.())
       }

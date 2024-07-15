@@ -25,7 +25,6 @@ export function createComponent<Props extends object>(
       const mounted = ref(false)
 
       onMounted(() => {
-        console.log('[prosekit] onMounted')
         mounted.value = true
       })
 
@@ -33,15 +32,18 @@ export function createComponent<Props extends object>(
         const properties: Record<string, unknown> = {}
 
         for (const [key, value] of Object.entries(props)) {
-          if (value !== undefined) {
+          if (value !== undefined && !key.startsWith('.')) {
             properties[propertyNames.includes(key) ? '.' + key : key] = value
           }
         }
 
         if (hasEditor && editor && !properties['editor']) {
-          console.log('[prosekit] mounted', mounted.value)
           properties.editor = editor
         }
+
+        // Force a re-render when the component is mounted, to ensure web components
+        // to work after SSR hydration.
+        properties.key = mounted.value ? 1 : 0
 
         return h(tagName, properties, slots.default?.())
       }

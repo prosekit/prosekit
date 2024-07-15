@@ -130,6 +130,13 @@ jobs:
       - name: Build
         run: pnpm run build:website
 
+      # Temporary file to identify the website deployment
+      - name: Add random file
+        run: |
+          uuidgen >> ./website/dist/build.log
+          date >> ./website/dist/build.log
+          echo "provider-cloudflare" >> ./website/dist/build.log
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
@@ -144,8 +151,10 @@ jobs:
       # As a workaround, a unique file is created for each build.
       - name: Add random file
         run: |
+          echo "" > ./website/dist/build.log
           uuidgen >> ./website/dist/build.log
           date >> ./website/dist/build.log
+          echo "provider-netlify" >> ./website/dist/build.log
 
       - name: Deploy to Netlify
         id: deploy-1

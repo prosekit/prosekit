@@ -1,5 +1,9 @@
-import * as Themes from './classes'
-import { Colors } from './colors'
-import { replaceThemes } from './replace'
+import { Colors } from './colors'  
+import { replaceThemesWith } from './replace'
+import { Themes } from './themes' 
 
-export { Colors, Themes, replaceThemes }
+function replaceThemes(code: string) {
+  return replaceThemesWith(code, Themes)
+}
+
+export { Colors, replaceThemes, Themes }

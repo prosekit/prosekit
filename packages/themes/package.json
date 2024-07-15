@@ -29,7 +29,7 @@
     }
   },
   "scripts": {
-    "gen": "esbuild --bundle --format=esm --minify --outfile=dist/prosekit-themes.gen.js src/index.ts"
+    "gen": "node build.js"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -38,7 +38,9 @@
   "devDependencies": {
     "dedent": "^1.5.3",
     "esbuild": "^0.23.0",
+    "prettier": "^3.3.3",
     "typescript": "^5.5.3",
+    "unplugin-macros": "^0.13.1",
     "vitest": "^2.0.2"
   }
 }

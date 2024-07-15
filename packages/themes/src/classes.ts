@@ -22,10 +22,7 @@ const FLOATING_MENU = cn(
 const PRESENCE_ANIMATE = cn(
   DEFAULT_HIDDEN,
 
-
   'will-change-transform',
-
-  
 
   'data-[state=open]:animate-in',
   'data-[state=closed]:animate-out',

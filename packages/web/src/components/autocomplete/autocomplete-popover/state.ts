@@ -63,7 +63,6 @@ export function useAutocompletePopover(
   useAttribute(host, 'data-state', () => (presence.get() ? 'open' : 'closed'))
   usePresence(host, presence)
 
-
   const firstRendering = useFirstRendering(host)
 
   useEffect(host, () => {

@@ -2,6 +2,7 @@ import {
   defineComponent,
   h,
   onMounted,
+  ref,
   type DefineSetupFnComponent,
   type HTMLAttributes,
 } from 'vue'
@@ -21,8 +22,11 @@ export function createComponent<Props extends object>(
     (props: Record<string, unknown>, { slots }) => {
       const editor = useEditorContext()
 
+      const mounted = ref(false)
+
       onMounted(() => {
         console.log('[prosekit] onMounted')
+        mounted.value = true
       })
 
       return () => {
@@ -35,6 +39,7 @@ export function createComponent<Props extends object>(
         }
 
         if (hasEditor && editor && !p['editor']) {
+          console.log('[prosekit] mounted', mounted.value)
           p.editor = editor
         }
 

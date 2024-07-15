@@ -130,6 +130,15 @@ jobs:
       - name: Build
         run: pnpm run build:website
 
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: prosekit-dev
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          directory: website/dist
+
       # When deploying to Netlify, sometimes the build fails with 422 Unprocessable
       # Entity error. I suspect it's because I deploy the same content in a short time.
       # As a workaround, a unique file is created for each build.

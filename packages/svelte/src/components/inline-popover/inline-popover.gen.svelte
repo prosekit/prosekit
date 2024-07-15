@@ -1,7 +1,7 @@
 <script lang="ts">
 import '@prosekit/web/inline-popover'
 import { defaultInlinePopoverProps } from '@prosekit/web/inline-popover'
-import { ClientOnly } from '../client-update'
+import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'
 
 let attributes: Record<string, unknown> = {}
@@ -13,8 +13,8 @@ $: {
 }
 </script>
 
-<ClientOnly>
+<ClientUpdate>
   <prosekit-inline-popover {...attributes} bind:this={element}>
     <slot />
   </prosekit-inline-popover>
-</ClientOnly>
+</ClientUpdate>

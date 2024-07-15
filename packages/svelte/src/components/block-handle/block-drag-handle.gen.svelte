@@ -1,7 +1,7 @@
 <script lang="ts">
 import '@prosekit/web/block-handle'
 import { defaultBlockDragHandleProps } from '@prosekit/web/block-handle'
-import { ClientOnly } from '../client-update'
+import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'
 
 let attributes: Record<string, unknown> = {}
@@ -13,8 +13,8 @@ $: {
 }
 </script>
 
-<ClientOnly>
+<ClientUpdate>
   <prosekit-block-drag-handle {...attributes} bind:this={element}>
     <slot />
   </prosekit-block-drag-handle>
-</ClientOnly>
+</ClientUpdate>

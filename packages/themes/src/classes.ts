@@ -9,17 +9,20 @@ function cn(...args: Array<string | undefined | null | false>): string {
   return twMerge(replaceColor(clsx(...args)))
 }
 
+// For those elements that need to toggle visibility based on the `data-state`
+// attribute, we hide them by default. This ensures that they don't get
+// displayed before SSR hydration is complete.
+const DEFAULT_HIDDEN = '[&:not([data-state])]:hidden'
+
 const FLOATING_MENU = cn(
   'z-10 box-border rounded-lg border border-border bg-background shadow-lg',
+  DEFAULT_HIDDEN,
 )
 
 const PRESENCE_ANIMATE = cn(
-  'will-change-transform',
+  DEFAULT_HIDDEN,
 
-  // For those elements that need to toggle visibility based on the `data-state`
-  // attribute, we hide them by default. This ensures that they don't get
-  // displayed before SSR hydration is complete.
-  '[&:not([data-state])]:hidden',
+  'will-change-transform',
 
   'data-[state=open]:animate-in',
   'data-[state=closed]:animate-out',

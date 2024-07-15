@@ -2,6 +2,7 @@ import {
   createComputed,
   createSignal,
   useAnimationFrame,
+  useAttribute,
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
@@ -59,6 +60,7 @@ export function useAutocompletePopover(
 
   useOverlayPositionerState(host, overlayState, { reference })
 
+  useAttribute(host, 'data-state', () => (presence.get() ? 'open' : 'closed'))
   usePresence(host, presence)
 
   const firstRendering = useFirstRendering(host)

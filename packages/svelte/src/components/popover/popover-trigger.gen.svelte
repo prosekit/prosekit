@@ -1,6 +1,7 @@
 <script lang="ts">
 import '@prosekit/web/popover'
 import { defaultPopoverTriggerProps } from '@prosekit/web/popover'
+import { ClientOnly } from '../client-only'
 import { useWebComponent } from '../../utils/use-web-component'
 
 let attributes: Record<string, unknown> = {}
@@ -12,6 +13,8 @@ $: {
 }
 </script>
 
-<prosekit-popover-trigger {...attributes} bind:this={element}>
-  <slot />
-</prosekit-popover-trigger>
+<ClientOnly>
+  <prosekit-popover-trigger {...attributes} bind:this={element}>
+    <slot />
+  </prosekit-popover-trigger>
+</ClientOnly>

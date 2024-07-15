@@ -1,6 +1,7 @@
 <script lang="ts">
 import '@prosekit/web/autocomplete'
 import { defaultAutocompletePopoverProps } from '@prosekit/web/autocomplete'
+import { ClientOnly } from '../client-only'
 import { useWebComponent } from '../../utils/use-web-component'
 
 let attributes: Record<string, unknown> = {}
@@ -12,6 +13,8 @@ $: {
 }
 </script>
 
-<prosekit-autocomplete-popover {...attributes} bind:this={element}>
-  <slot />
-</prosekit-autocomplete-popover>
+<ClientOnly>
+  <prosekit-autocomplete-popover {...attributes} bind:this={element}>
+    <slot />
+  </prosekit-autocomplete-popover>
+</ClientOnly>

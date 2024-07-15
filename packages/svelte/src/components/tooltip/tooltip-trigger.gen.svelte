@@ -1,6 +1,7 @@
 <script lang="ts">
 import '@prosekit/web/tooltip'
 import { defaultTooltipTriggerProps } from '@prosekit/web/tooltip'
+import { ClientOnly } from '../client-only'
 import { useWebComponent } from '../../utils/use-web-component'
 
 let attributes: Record<string, unknown> = {}
@@ -12,6 +13,8 @@ $: {
 }
 </script>
 
-<prosekit-tooltip-trigger {...attributes} bind:this={element}>
-  <slot />
-</prosekit-tooltip-trigger>
+<ClientOnly>
+  <prosekit-tooltip-trigger {...attributes} bind:this={element}>
+    <slot />
+  </prosekit-tooltip-trigger>
+</ClientOnly>

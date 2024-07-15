@@ -30,20 +30,20 @@ export function createComponent<Props extends object>(
       })
 
       return () => {
-        const p: Record<string, unknown> = {}
+        const properties: Record<string, unknown> = {}
 
         for (const [key, value] of Object.entries(props)) {
           if (value !== undefined) {
-            p[propertyNames.includes(key) ? '.' + key : key] = value
+            properties[propertyNames.includes(key) ? '.' + key : key] = value
           }
         }
 
-        if (hasEditor && editor && !p['editor']) {
+        if (hasEditor && editor && !properties['editor']) {
           console.log('[prosekit] mounted', mounted.value)
-          p.editor = editor
+          properties.editor = editor
         }
 
-        return h(tagName, p, slots.default?.())
+        return h(tagName, properties, slots.default?.())
       }
     },
     {

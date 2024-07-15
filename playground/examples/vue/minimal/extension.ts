@@ -1,7 +1,7 @@
-import { defineBaseKeymap } from 'prosekit/core'
+import { defineBasicExtension } from 'prosekit/basic'
 
 export function defineExtension() {
-  return defineBaseKeymap()
+  return defineBasicExtension()
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>

@@ -3,7 +3,7 @@ import { useNodeViewContext } from '@prosemirror-adapter/svelte'
 import type { SvelteNodeViewProps } from '../../node-view/types'
 import type { SvelteComponent } from 'svelte'
 
-export let component: SvelteComponent<SvelteNodeViewProps>
+export let component: SvelteComponent<SvelteNodeViewProps> | undefined
 
 const nodeViewProps: SvelteNodeViewProps = {
   contentRef: useNodeViewContext('contentRef'),
@@ -17,4 +17,6 @@ const nodeViewProps: SvelteNodeViewProps = {
 }
 </script>
 
-<svelte:component this={component} {...nodeViewProps} />
+{#if component}
+  <svelte:component this={component} {...nodeViewProps} />
+{/if}

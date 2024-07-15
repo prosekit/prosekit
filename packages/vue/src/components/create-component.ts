@@ -1,6 +1,7 @@
 import {
   defineComponent,
   h,
+  onBeforeMount,
   onMounted,
   ref,
   type DefineSetupFnComponent,
@@ -22,10 +23,10 @@ export function createComponent<Props extends object>(
     (props: Record<string, unknown>, { slots }) => {
       const editor = useEditorContext()
 
-      const mounted = ref(false)
+      const isClient = ref(false)
 
-      onMounted(() => {
-        mounted.value = true
+      onBeforeMount(() => {
+        isClient.value = true
       })
 
       return () => {
@@ -41,9 +42,8 @@ export function createComponent<Props extends object>(
           properties.editor = editor
         }
 
-        // Force a re-render when the component is mounted, to ensure web components
-        // to work after SSR hydration.
-        properties.key = mounted.value ? 1 : 0
+        // Ensure web components work after SSR hydration.
+        properties.key = isClient.value ? 1 : 0
 
         return h(tagName, properties, slots.default?.())
       }

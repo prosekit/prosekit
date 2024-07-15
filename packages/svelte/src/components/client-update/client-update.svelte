@@ -1,11 +1,14 @@
 <script lang="ts">
 import { onMount } from 'svelte'
 
-let mounted = false
+// 
+let key = 1
 
-onMount(() => (mounted = true))
+onMount(() => {
+  key = 2
+})
 </script>
 
-{#if mounted}
+{#key key}
   <slot />
-{/if}
+{/key}

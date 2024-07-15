@@ -1,10 +1,20 @@
-import { defineNodeViewComponent, type Extension } from '@prosekit/core'
+import {
+  defineNodeViewComponent,
+  definePlugin,
+  type Extension,
+} from '@prosekit/core'
 import type { SvelteNodeViewUserOptions } from '@prosemirror-adapter/svelte'
-import type { ComponentConstructorOptions } from 'svelte'
+import type {
+  ComponentConstructorOptions,
+  ComponentType,
+  SvelteComponent,
+} from 'svelte'
 
 import { NodeViewWrapper } from '../components/node-view-wrapper'
 
-import type { SvelteNodeViewOptions } from './types'
+import type { SvelteNodeViewComponent, SvelteNodeViewOptions } from './types'
+
+const isServer = typeof window === 'undefined'
 
 /**
  * Defines a node view using a Svelte component.
@@ -14,18 +24,16 @@ import type { SvelteNodeViewOptions } from './types'
 export function defineSvelteNodeView(
   options: SvelteNodeViewOptions,
 ): Extension {
+  // Don't register node views on the server
+  if (isServer) {
+    return definePlugin([])
+  }
+
   const { name, component, ...userOptions } = options
 
   const args: SvelteNodeViewUserOptions = {
     ...userOptions,
-    component: class NodeViewPropsWrapper extends NodeViewWrapper {
-      constructor(options: ComponentConstructorOptions) {
-        super({
-          ...options,
-          props: { ...options.props, component },
-        })
-      }
-    },
+    component: wrapComponent(component),
   }
 
   return defineNodeViewComponent<SvelteNodeViewUserOptions>({
@@ -33,4 +41,20 @@ export function defineSvelteNodeView(
     name,
     args,
   })
+}
+
+function wrapComponent(
+  component: SvelteNodeViewComponent,
+): ComponentType<SvelteComponent> {
+  // `NodeViewWrapper` is an object during SSR
+  if (!NodeViewWrapper || typeof NodeViewWrapper !== 'function') {
+    return component
+  }
+
+  class NodeViewPropsWrapper extends NodeViewWrapper {
+    constructor(options: ComponentConstructorOptions) {
+      super({ ...options, props: { ...options.props, component } })
+    }
+  }
+  return NodeViewPropsWrapper
 }

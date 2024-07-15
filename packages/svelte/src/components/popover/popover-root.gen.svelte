@@ -1,6 +1,7 @@
 <script lang="ts">
 import '@prosekit/web/popover'
 import { defaultPopoverRootProps } from '@prosekit/web/popover'
+import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'
 
 let attributes: Record<string, unknown> = {}
@@ -12,6 +13,8 @@ $: {
 }
 </script>
 
-<prosekit-popover-root {...attributes} bind:this={element}>
-  <slot />
-</prosekit-popover-root>
+<ClientUpdate>
+  <prosekit-popover-root {...attributes} bind:this={element}>
+    <slot />
+  </prosekit-popover-root>
+</ClientUpdate>

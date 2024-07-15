@@ -278,6 +278,7 @@ function formatSvelteComponentCode(group: string, kebab: string) {
 <script lang="ts">
 import '@prosekit/web/${group}'
 import { default${pascal}Props } from '@prosekit/web/${group}'
+import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'
 
 let attributes: Record<string, unknown> = {}
@@ -289,9 +290,11 @@ $: {
 }
 </script>
 
-<prosekit-${kebab} {...attributes} bind:this={element}>
-  <slot />
-</prosekit-${kebab}>
+<ClientUpdate>
+  <prosekit-${kebab} {...attributes} bind:this={element}>
+    <slot />
+  </prosekit-${kebab}>
+</ClientUpdate>
 `.trim() + '\n'
   )
 }

@@ -50,8 +50,13 @@ export function defineNodeViewComponent<T>(
   return defineFacetPayload(nodeViewFactoryFacet, [input])
 }
 
+const isServer = typeof window === 'undefined'
+
 const nodeViewFactoryFacet = defineFacet<NodeViewFactoryInput, PluginPayload>({
   reducer: (inputs: NodeViewFactoryInput[]): PluginPayload => {
+    // Don't register node views on the server
+    if (isServer) return []
+
     const nodeViews: { [nodeName: string]: NodeViewConstructor } = {}
 
     const factories = inputs.map((x) => x[0]).filter(isNotNull)

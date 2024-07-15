@@ -1,6 +1,7 @@
 <script lang="ts">
 import '@prosekit/web/autocomplete'
 import { defaultAutocompleteItemProps } from '@prosekit/web/autocomplete'
+import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'
 
 let attributes: Record<string, unknown> = {}
@@ -12,6 +13,8 @@ $: {
 }
 </script>
 
-<prosekit-autocomplete-item {...attributes} bind:this={element}>
-  <slot />
-</prosekit-autocomplete-item>
+<ClientUpdate>
+  <prosekit-autocomplete-item {...attributes} bind:this={element}>
+    <slot />
+  </prosekit-autocomplete-item>
+</ClientUpdate>

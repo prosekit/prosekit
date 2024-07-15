@@ -19,7 +19,7 @@ const PRESENCE_ANIMATE = cn(
   // For those elements that need to toggle visibility based on the `data-state`
   // attribute, we hide them by default. This ensures that they don't get
   // displayed before SSR hydration is complete.
-  '[&:not(data-state)]:hidden',
+  '[&:not([data-state])]:hidden',
 
   'data-[state=open]:animate-in',
   'data-[state=closed]:animate-out',

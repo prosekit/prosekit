@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.9.8
+
+### Patch Changes
+
+- [`510e438`](https://github.com/ocavue/prosekit/commit/510e4384b81139835b6dcb1d3a9a5b30ba291c0c) ![](https://prosekit.dev/b/web)
+
+  Add a `data-state` attribute to autocomplete popover, indicating its visibility state ('open' or 'closed').
+
 ## 0.9.7
 
 ### Patch Changes

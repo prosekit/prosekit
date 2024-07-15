@@ -3,4 +3,4 @@
 '@prosekit/web': patch
 ---
 
-Add data-state attribute to autocomplete popover.
+Add a `data-state` attribute to autocomplete popover. The attribute value is `open` if the popover is open and `closed` if the popover is closed.

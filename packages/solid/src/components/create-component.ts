@@ -15,20 +15,20 @@ export function createComponent<
   const hasEditor = Object.hasOwn(defaultProps, 'editor')
 
   const Component = (props: Record<string, unknown>) => {
-    const p: Record<string, () => unknown> = {}
+    const properties: Record<string, () => unknown> = {}
 
     for (const key of Object.keys(props)) {
-      p[propertyNames.includes(key) ? 'prop:' + key : key] = (): unknown =>
-        props[key] as unknown
+      properties[propertyNames.includes(key) ? 'prop:' + key : key] =
+        (): unknown => props[key] as unknown
     }
 
     const editor = useEditorContext()
 
     if (hasEditor && editor) {
-      p['prop:editor'] = () => props['editor'] || editor
+      properties['prop:editor'] = () => props['editor'] || editor
     }
 
-    return h(tagName, p)
+    return h(tagName, properties)
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return

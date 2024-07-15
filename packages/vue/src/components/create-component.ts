@@ -1,6 +1,8 @@
 import {
   defineComponent,
   h,
+  onMounted,
+  ref,
   type DefineSetupFnComponent,
   type HTMLAttributes,
 } from 'vue'
@@ -20,20 +22,30 @@ export function createComponent<Props extends object>(
     (props: Record<string, unknown>, { slots }) => {
       const editor = useEditorContext()
 
+      const mounted = ref(false)
+
+      onMounted(() => {
+        mounted.value = true
+      })
+
       return () => {
-        const p: Record<string, unknown> = {}
+        const properties: Record<string, unknown> = {}
 
         for (const [key, value] of Object.entries(props)) {
-          if (value !== undefined) {
-            p[propertyNames.includes(key) ? '.' + key : key] = value
+          if (value !== undefined && !key.startsWith('.')) {
+            properties[propertyNames.includes(key) ? '.' + key : key] = value
           }
         }
 
-        if (hasEditor && editor && !p['editor']) {
-          p.editor = editor
+        // Try to add the editor prop if it's missing.
+        if (hasEditor && editor && !properties['editor']) {
+          properties.editor = editor
         }
 
-        return h(tagName, p, slots.default?.())
+        // Ensure web components work after SSR hydration.
+        properties.key = mounted.value ? 1 : 0
+
+        return h(tagName, properties, slots.default?.())
       }
     },
     {

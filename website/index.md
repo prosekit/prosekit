@@ -29,10 +29,10 @@ features:
 ---
 
 <script setup>
-import { DemoEditor } from './.vitepress/components/demo-editor-dynamic'
+import { EditorDemo } from './.vitepress/components/editor-demo'
 </script>
 
-<DemoEditor />
+<EditorDemo />
 
 <style>
 .VPHero.has-image * {

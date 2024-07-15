@@ -799,6 +799,9 @@ importers:
       '@shikijs/vitepress-twoslash':
         specifier: ^1.10.3
         version: 1.10.3(typescript@5.5.3)
+      '@types/dom-view-transitions':
+        specifier: ^1.0.4
+        version: 1.0.4
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
@@ -2331,6 +2334,9 @@ packages:
 
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
+
+  '@types/dom-view-transitions@1.0.4':
+    resolution: {integrity: sha512-oDuagM6G+xPLrLU4KeCKlr1oalMF5mJqV5pDPMDVIEaa8AkUW00i6u+5P02XCjdEEUQJC9dpnxqSLsZeAciSLQ==}
 
   '@types/eslint-plugin-markdown@2.0.2':
     resolution: {integrity: sha512-ImmEw5xBVb9vCaFfQ+5kUcVatUO4XPpTvryAmhpKzalUKhDb3EZmeuHvIUO6E1/WDOTw+/b9qlWsZhxULhZdfQ==}
@@ -8662,6 +8668,8 @@ snapshots:
   '@types/debug@4.1.12':
     dependencies:
       '@types/ms': 0.7.34
+
+  '@types/dom-view-transitions@1.0.4': {}
 
   '@types/eslint-plugin-markdown@2.0.2':
     dependencies:

@@ -1,6 +1,6 @@
-import { Colors } from './colors'  
+import { Colors } from './colors'
 import { replaceThemesWith } from './replace'
-import { Themes } from './themes' 
+import { Themes } from './themes'
 
 function replaceThemes(code: string) {
   return replaceThemesWith(code, Themes)

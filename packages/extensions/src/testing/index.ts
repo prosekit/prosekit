@@ -12,11 +12,11 @@ import {
   type ExtractNodes,
   type MarkBuilder,
   type NodeBuilder,
+  type NodeChild,
 } from '@prosekit/core'
 import { createTestEditor, type TestEditor } from '@prosekit/core/test'
 import { userEvent } from '@vitest/browser/context'
 
-import type { NodeChild } from '../../../core/src/editor/builder'
 import { defineBlockquote } from '../blockquote'
 import { defineBold } from '../bold'
 import { defineCode } from '../code'

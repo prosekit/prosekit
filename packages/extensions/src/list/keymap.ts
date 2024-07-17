@@ -19,12 +19,17 @@ const backspaceCommand = chainCommands(
   joinCollapsedListBackward,
 )
 
+const dedentListCommand = createDedentListCommand()
+const indentListCommand = createIndentListCommand()
+
 const listKeymap = {
   Enter: enterCommand,
   Backspace: backspaceCommand,
   Delete: deleteCommand,
-  'Mod-[': createDedentListCommand(),
-  'Mod-]': createIndentListCommand(),
+  'Mod-]': indentListCommand,
+  'Mod-[': dedentListCommand,
+  Tab: indentListCommand,
+  'Shift-Tab': dedentListCommand,
 }
 
 /**

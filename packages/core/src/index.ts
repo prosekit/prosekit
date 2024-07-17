@@ -19,7 +19,13 @@ export {
 } from './commands/unset-block-type'
 export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark'
 export { wrap, type WrapOptions } from './commands/wrap'
-export type {  MarkAction, NodeAction, MarkBuilder, NodeBuilder, NodeChild } from './editor/builder'
+export type {
+  MarkAction,
+  NodeAction,
+  MarkBuilder,
+  NodeBuilder,
+  NodeChild,
+} from './editor/actions'
 export { Editor, createEditor, type EditorOptions } from './editor/editor'
 export { union } from './editor/union'
 export { withPriority } from './editor/with-priority'

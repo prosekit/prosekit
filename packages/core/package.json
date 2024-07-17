@@ -40,13 +40,13 @@
     "clsx": "^2.1.1",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^0.1.1",
-    "type-fest": "^4.21.0"
+    "type-fest": "^4.22.0"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "tsup": "^8.1.0",
+    "tsup": "^8.1.2",
     "typescript": "^5.5.3",
-    "vitest": "^2.0.2"
+    "vitest": "^2.0.3"
   },
   "publishConfig": {
     "exports": {

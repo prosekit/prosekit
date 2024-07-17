@@ -15,37 +15,73 @@ import { isNodeActive } from '../utils/is-node-active'
 import { isProseMirrorNode } from '../utils/type-assertion'
 
 /**
+ * Available children parameters for {@link NodeAction} and {@link MarkAction}.
+ *
  * @public
  */
 export type NodeChild = ProseMirrorNode | string | NodeChild[]
 
 /**
+ * A function for creating a node with optional attributes and any number of
+ * children.
+ *
+ * It also has a `isActive` method for checking if the node is active in the
+ * current editor selection.
+ *
  * @public
  */
-export interface NodeBuilder {
+export interface NodeAction {
   (attrs: Attrs | null, ...children: NodeChild[]): ProseMirrorNode
   (...children: NodeChild[]): ProseMirrorNode
+
+  /**
+   * Checks if the node is active in the current editor selection. If the
+   * optional `attrs` parameter is provided, it will check if the node is active
+   * with the given attributes.
+   */
   isActive: (attrs?: Attrs) => boolean
 }
 
 /**
+ * A function for creating a mark with optional attributes and any number of
+ * children.
+ *
+ * It also has a `isActive` method for checking if the mark is active in the
+ * current editor selection.
+ *
  * @public
  */
-export interface MarkBuilder {
+export interface MarkAction {
   (attrs: Attrs | null, ...children: NodeChild[]): ProseMirrorNode[]
   (...children: NodeChild[]): ProseMirrorNode[]
+
+  /**
+   * Checks if the mark is active in the current editor selection. If the
+   * optional `attrs` parameter is provided, it will check if the mark is active
+   * with the given attributes.
+   */
   isActive: (attrs?: Attrs) => boolean
 }
+
+/**
+ * @deprecated Use type {@link NodeAction} instead.
+ */
+export type NodeBuilder = NodeAction
+
+/**
+ * @deprecated Use type {@link MarkAction} instead.
+ */
+export type MarkBuilder = MarkAction
 
 /**
  * @internal
  */
-export function createNodeBuilders(
+export function createNodeActions(
   schema: Schema,
   getState: () => EditorState | null | undefined,
   createNode: CreateNodeFunction = defaultCreateNode,
-): Record<string, NodeBuilder> {
-  const builders: Record<string, NodeBuilder> = {}
+): Record<string, NodeAction> {
+  const builders: Record<string, NodeAction> = {}
   for (const type of Object.values(schema.nodes)) {
     const builder = (
       ...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]
@@ -62,12 +98,12 @@ export function createNodeBuilders(
 /**
  * @internal
  */
-export function createMarkBuilders(
+export function createMarkActions(
   schema: Schema,
   getState: () => EditorState | null | undefined,
   applyMark: ApplyMarkFunction = defaultApplyMark,
-): Record<string, MarkBuilder> {
-  const builders: Record<string, MarkBuilder> = {}
+): Record<string, MarkAction> {
+  const builders: Record<string, MarkAction> = {}
   for (const type of Object.values(schema.marks)) {
     const builder = (
       ...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]

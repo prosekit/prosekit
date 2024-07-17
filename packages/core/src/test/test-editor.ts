@@ -1,7 +1,7 @@
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { EditorState, NodeSelection, TextSelection } from '@prosekit/pm/state'
 
-import { createMarkBuilders, createNodeBuilders } from '../editor/builder'
+import { createMarkActions, createNodeActions } from '../editor/actions'
 import {
   Editor,
   EditorInstance,
@@ -42,12 +42,12 @@ function getSelection(doc: TaggedProseMirrorNode) {
 class TestEditorInstance extends EditorInstance {
   constructor(extension: Extension) {
     super(extension)
-    this.nodeBuilders = createNodeBuilders(
+    this.nodeBuilders = createNodeActions(
       this.schema,
       this.getState,
       createNodeForTest,
     )
-    this.markBuilders = createMarkBuilders(
+    this.markBuilders = createMarkActions(
       this.schema,
       this.getState,
       applyMarkForTest,

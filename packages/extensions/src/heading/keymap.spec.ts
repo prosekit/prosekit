@@ -6,9 +6,9 @@ describe('defineHeadingKeymap', () => {
   it('should toggle heading', async () => {
     const { editor, n } = setupTest()
 
-    const doc = n.doc(n.paragraph('<a>Foo'), n.paragraph('Bar'))
-    const docH1 = n.doc(n.heading({ level: 1 }, 'Foo'), n.paragraph('Bar'))
-    const docH3 = n.doc(n.heading({ level: 3 }, 'Foo'), n.paragraph('Bar'))
+    const doc = n.doc(n.p('<a>Foo'), n.p('Bar'))
+    const docH1 = n.doc(n.h1('Foo'), n.p('Bar'))
+    const docH3 = n.doc(n.h3('Foo'), n.p('Bar'))
 
     editor.set(doc)
     expect(editor.state.doc.toJSON()).toEqual(doc.toJSON())
@@ -25,8 +25,8 @@ describe('defineHeadingKeymap', () => {
   it('should unset heading by pressing Backspace', async () => {
     const { editor, n } = setupTest()
 
-    const doc1 = n.doc(n.heading('<a>'))
-    const doc2 = n.doc(n.paragraph('<a>'))
+    const doc1 = n.doc(n.h1('<a>'))
+    const doc2 = n.doc(n.p('<a>'))
 
     editor.set(doc1)
     expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())
@@ -37,8 +37,8 @@ describe('defineHeadingKeymap', () => {
   it('should unset heading by pressing Backspace around text', async () => {
     const { editor, n } = setupTest()
 
-    const doc1 = n.doc(n.heading('Foo'), n.heading('<a>Bar'))
-    const doc2 = n.doc(n.heading('Foo'), n.paragraph('<a>Bar'))
+    const doc1 = n.doc(n.h1('Foo'), n.h1('<a>Bar'))
+    const doc2 = n.doc(n.h1('Foo'), n.p('<a>Bar'))
 
     editor.set(doc1)
     expect(editor.state.doc.toJSON()).toEqual(doc1.toJSON())

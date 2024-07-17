@@ -63,17 +63,17 @@ describe('defineMarkRule', () => {
     return elementFromNode(editor.state.doc).innerHTML
   }
 
-  const n = editor.nodes
+  const n = { ...editor.nodes, p: editor.nodes.paragraph }
 
   it('can match tag', () => {
-    const doc = n.doc(n.paragraph('#12345'))
+    const doc = n.doc(n.p('#12345'))
     const html = triggerMarkRule(doc)
 
     expect(html).toMatchInlineSnapshot(`"<p> <mark-tag>#12345</mark-tag></p>"`)
   })
 
   it('can match link', () => {
-    const doc = n.doc(n.paragraph('example.com'))
+    const doc = n.doc(n.p('example.com'))
     const html = triggerMarkRule(doc)
 
     expect(html).toMatchInlineSnapshot(
@@ -82,7 +82,7 @@ describe('defineMarkRule', () => {
   })
 
   it('can match link with anchor', () => {
-    const doc = n.doc(n.paragraph('example.com#12345'))
+    const doc = n.doc(n.p('example.com#12345'))
     const html = triggerMarkRule(doc)
 
     expect(html).toMatchInlineSnapshot(
@@ -91,7 +91,7 @@ describe('defineMarkRule', () => {
   })
 
   it('can match email', () => {
-    const doc = n.doc(n.paragraph('hello@example.com'))
+    const doc = n.doc(n.p('hello@example.com'))
     const html = triggerMarkRule(doc)
 
     expect(html).toMatchInlineSnapshot(
@@ -100,7 +100,7 @@ describe('defineMarkRule', () => {
   })
 
   it('can match email and tag', () => {
-    const doc = n.doc(n.paragraph('hello@example.com#12345'))
+    const doc = n.doc(n.p('hello@example.com#12345'))
     const html = triggerMarkRule(doc)
 
     expect(html).toMatchInlineSnapshot(

@@ -26,7 +26,7 @@ import {
   createNodeActions,
   type MarkAction,
   type NodeAction,
-} from './actions'
+} from './action'
 import { union } from './union'
 
 /**

@@ -1,4 +1,4 @@
-import type { MarkAction, NodeAction } from '../editor/actions'
+import type { MarkAction, NodeAction } from '../editor/action'
 import { union } from '../editor/union'
 import { defineBaseCommands } from '../extensions/command'
 import { defineDoc } from '../extensions/doc'

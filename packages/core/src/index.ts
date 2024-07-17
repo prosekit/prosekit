@@ -25,7 +25,7 @@ export type {
   MarkBuilder,
   NodeBuilder,
   NodeChild,
-} from './editor/actions'
+} from './editor/action'
 export { Editor, createEditor, type EditorOptions } from './editor/editor'
 export { union } from './editor/union'
 export { withPriority } from './editor/with-priority'

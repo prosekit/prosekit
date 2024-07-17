@@ -22,11 +22,11 @@ import { assert } from '../utils/assert'
 import { deepEquals } from '../utils/deep-equals'
 
 import {
-  createMarkBuilders,
-  createNodeBuilders,
-  type MarkBuilder,
-  type NodeBuilder,
-} from './builder'
+  createMarkActions,
+  createNodeActions,
+  type MarkAction,
+  type NodeAction,
+} from './action'
 import { union } from './union'
 
 /**
@@ -93,8 +93,8 @@ export function createEditor<E extends Extension>(
 export class EditorInstance {
   view: EditorView | null = null
   schema: Schema
-  nodeBuilders: Record<string, NodeBuilder>
-  markBuilders: Record<string, MarkBuilder>
+  nodeBuilders: Record<string, NodeAction>
+  markBuilders: Record<string, MarkAction>
   commandAppliers: Record<string, CommandApplier> = {}
 
   private tree: FacetNode
@@ -117,8 +117,8 @@ export class EditorInstance {
       }
     }
 
-    this.nodeBuilders = createNodeBuilders(state.schema, this.getState)
-    this.markBuilders = createMarkBuilders(state.schema, this.getState)
+    this.nodeBuilders = createNodeActions(state.schema, this.getState)
+    this.markBuilders = createMarkActions(state.schema, this.getState)
 
     this.schema = state.schema
     this.directEditorProps = { state, ...payload.view }
@@ -404,10 +404,10 @@ export class Editor<E extends Extension = any> {
     this.instance.updateState(state)
   }
 
-  get nodes(): Record<ExtractNodes<E>, NodeBuilder> {
+  get nodes(): Record<ExtractNodes<E>, NodeAction> {
     return this.instance.nodeBuilders
   }
-  get marks(): Record<ExtractMarks<E>, MarkBuilder> {
+  get marks(): Record<ExtractMarks<E>, MarkAction> {
     return this.instance.markBuilders
   }
 }

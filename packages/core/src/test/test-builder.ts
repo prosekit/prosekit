@@ -3,7 +3,7 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import {
   type ApplyMarkFunction,
   type CreateNodeFunction,
-} from '../editor/builder'
+} from '../editor/action'
 import { assert } from '../utils/assert'
 
 type Tags = Record<string, number>

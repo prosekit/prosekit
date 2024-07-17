@@ -1,4 +1,4 @@
-import type { MarkBuilder, NodeBuilder } from '../editor/builder'
+import type { MarkAction, NodeAction } from '../editor/action'
 import { union } from '../editor/union'
 import { defineBaseCommands } from '../extensions/command'
 import { defineDoc } from '../extensions/doc'
@@ -67,8 +67,8 @@ export function setupTestFromExtension<E extends Extension>(
   extension: E,
 ): {
   editor: TestEditor<E>
-  n: Record<ExtractNodes<E>, NodeBuilder>
-  m: Record<ExtractMarks<E>, MarkBuilder>
+  n: Record<ExtractNodes<E>, NodeAction>
+  m: Record<ExtractMarks<E>, MarkAction>
 } {
   const editor = createTestEditor({ extension })
 

@@ -10,8 +10,8 @@ import {
   type Extension,
   type ExtractMarks,
   type ExtractNodes,
-  type MarkBuilder,
-  type NodeBuilder,
+  type MarkAction,
+  type NodeAction,
   type NodeChild,
 } from '@prosekit/core'
 import { createTestEditor, type TestEditor } from '@prosekit/core/test'
@@ -61,8 +61,8 @@ export function setupTestFromExtension<E extends Extension>(
   extension: E,
 ): {
   editor: TestEditor<E>
-  n: Record<ExtractNodes<E>, NodeBuilder>
-  m: Record<ExtractMarks<E>, MarkBuilder>
+  n: Record<ExtractNodes<E>, NodeAction>
+  m: Record<ExtractMarks<E>, MarkAction>
 } {
   const editor = createTestEditor({ extension })
 

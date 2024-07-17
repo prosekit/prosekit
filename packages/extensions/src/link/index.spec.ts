@@ -6,9 +6,9 @@ import { setupTest } from '../testing'
 describe('defineLinkCommands', () => {
   const { editor, n, m } = setupTest()
   const href = 'https://example.com'
-  const doc1 = n.doc(n.paragraph('<a>foo<b> bar'))
-  const doc2 = n.doc(n.paragraph(m.link({ href }, '<a>foo<b>'), ' bar'))
-  const doc3 = n.doc(n.paragraph(m.link({ href }, 'f<a>oo'), ' bar'))
+  const doc1 = n.doc(n.p('<a>foo<b> bar'))
+  const doc2 = n.doc(n.p(m.link({ href }, '<a>foo<b>'), ' bar'))
+  const doc3 = n.doc(n.p(m.link({ href }, 'f<a>oo'), ' bar'))
 
   it('should add a link', () => {
     editor.set(doc1)

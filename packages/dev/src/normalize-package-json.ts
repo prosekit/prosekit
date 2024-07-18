@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import { type Package } from '@manypkg/get-packages'
+import type { Package } from '@manypkg/get-packages'
 import slugify from '@sindresorhus/slugify'
 
 import { isPrivatePackage } from './is-public-package.js'

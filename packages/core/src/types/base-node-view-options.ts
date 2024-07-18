@@ -1,5 +1,5 @@
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import { type NodeView } from '@prosekit/pm/view'
+import type { NodeView } from '@prosekit/pm/view'
 
 // This should be synced with the type `CoreNodeViewUserOptions` from `@prosemirror-adapter/core`
 

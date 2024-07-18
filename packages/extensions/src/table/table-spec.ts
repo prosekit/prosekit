@@ -1,6 +1,6 @@
 import { defineNodeSpec } from '@prosekit/core'
 import type { AttributeSpec, Attrs, ProseMirrorNode } from '@prosekit/pm/model'
-import { type TableRole } from 'prosemirror-tables'
+import type { TableRole } from 'prosemirror-tables'
 
 const cellAttrs: Record<string, AttributeSpec> = {
   colspan: { default: 1 },

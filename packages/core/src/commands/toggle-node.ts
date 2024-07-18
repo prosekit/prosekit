@@ -1,6 +1,6 @@
 import { setBlockType } from '@prosekit/pm/commands'
 import { NodeType, type Attrs } from '@prosekit/pm/model'
-import { type Command } from '@prosekit/pm/state'
+import type { Command } from '@prosekit/pm/state'
 
 import { getNodeType } from '../utils/get-node-type'
 import { isNodeActive } from '../utils/is-node-active'

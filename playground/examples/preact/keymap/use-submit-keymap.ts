@@ -1,5 +1,5 @@
 import { useMemo } from 'preact/hooks'
-import { type Keymap } from 'prosekit/core'
+import type { Keymap } from 'prosekit/core'
 import { useKeymap } from 'prosekit/preact'
 
 export function useSubmitKeymap(

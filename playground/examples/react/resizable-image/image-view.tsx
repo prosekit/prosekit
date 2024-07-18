@@ -1,6 +1,6 @@
 import { Themes } from '@prosekit/themes'
 import { clsx } from 'prosekit/core'
-import { type ReactNodeViewProps } from 'prosekit/react'
+import type { ReactNodeViewProps } from 'prosekit/react'
 import { ResizableHandle, ResizableRoot } from 'prosekit/react/resizable'
 import { useState } from 'react'
 

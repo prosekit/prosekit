@@ -1,4 +1,4 @@
-import { type Package } from '@manypkg/get-packages'
+import type { Package } from '@manypkg/get-packages'
 
 import { kebabToPascal } from './kebab-to-pascal'
 import { vfs } from './virtual-file-system'

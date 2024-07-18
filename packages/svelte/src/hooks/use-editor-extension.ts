@@ -1,6 +1,6 @@
 import { Editor, EditorNotFoundError, type Extension } from '@prosekit/core'
 import { onMount } from 'svelte'
-import { type Readable } from 'svelte/store'
+import type { Readable } from 'svelte/store'
 
 import { useEditorContext } from '../contexts/editor-context'
 

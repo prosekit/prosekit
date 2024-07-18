@@ -21,7 +21,7 @@ import {
 import { omit } from '../../../utils/omit'
 import { onSubmitContext, openContext, queryContext } from '../context'
 
-import { type AutocompleteListProps } from './props'
+import type { AutocompleteListProps } from './props'
 
 export function useAutocompleteList(
   element: ConnectableElement,

@@ -9,7 +9,7 @@ import { ProseKitError } from '../error'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
-import { type Extension } from '../types/extension'
+import type { Extension } from '../types/extension'
 import { isElement } from '../utils/is-element'
 import { isNotNull } from '../utils/is-not-null'
 

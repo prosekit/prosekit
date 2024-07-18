@@ -1,5 +1,5 @@
 import { Editor, Priority, type Extension } from '@prosekit/core'
-import { type Accessor } from 'solid-js'
+import type { Accessor } from 'solid-js'
 
 import type { MaybeAccessor } from '../types'
 

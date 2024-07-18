@@ -22,7 +22,7 @@ import { defineHeading } from '../heading'
 import { defineImage } from '../image'
 import { defineItalic } from '../italic'
 import { defineLink } from '../link'
-import { defineList, type ListAttributes } from '../list'
+import { defineList, type ListAttrs } from '../list'
 import { defineStrike } from '../strike'
 import { defineTable } from '../table'
 import { defineUnderline } from '../underline'
@@ -81,7 +81,7 @@ export function setupTestFromExtension<E extends Extension>(
 export function setupTest() {
   const { editor, m, n } = setupTestFromExtension(defineTestExtension())
 
-  const listWithAttrs = (attrs: ListAttributes) => {
+  const listWithAttrs = (attrs: ListAttrs) => {
     return (...children: NodeChild[]) => {
       return n.list(attrs, ...children)
     }

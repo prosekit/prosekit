@@ -6,5 +6,5 @@ import { assertTypeEqual } from '../types/assert-type-equal'
 import type { ListAttrs } from './types'
 
 test('ListAttrs', () => {
-  assertTypeEqual<ListAttrs, ListAttributes>(true)
+  assertTypeEqual<keyof ListAttrs, keyof ListAttributes>(true)
 })

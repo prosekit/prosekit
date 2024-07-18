@@ -1,11 +1,13 @@
 /**
  * The attributes of a list node.
+ * 
+ * @public
  */
 export interface ListAttrs {
   /**
-   * The kind of list node. Can be `"bullet"`, `"ordered"`, `"task"` or `"toggle"`.
+   * The kind of list node.
    */
-  kind?: string
+  kind?: 'bullet' | 'ordered' | 'task' | 'toggle'
   /**
    * The optional order of the list node.
    */

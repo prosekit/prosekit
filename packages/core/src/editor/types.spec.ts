@@ -6,7 +6,7 @@ import { defineCommands } from '../extensions/command'
 import { defineMarkSpec } from '../extensions/mark-spec'
 import { defineNodeSpec } from '../extensions/node-spec'
 import { assertTypeEqual } from '../types/assert-type-equal'
-import { type CommandCreator } from '../types/extension-command'
+import { type CommandCreator } from '../types/command'
 import { type Extension } from '../types/extension'
 
 import { union } from './union'

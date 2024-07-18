@@ -1,12 +1,13 @@
 import type { Schema } from '@prosekit/pm/model'
 
 import type {
+  AttrsTyping,
   CommandTyping,
   ToCommandAction,
   ToCommandCreators,
-} from './extension-command'
-import type { MarkTyping, ToMarkAction } from './extension-mark'
-import type { NodeTyping, ToNodeAction } from './extension-node'
+  ToMarkAction,
+  ToNodeAction,
+} from './command'
 import type { Priority } from './priority'
 import type { SimplifyDeeper } from './simplify-deeper'
 import type { SimplifyUnion } from './simplify-union'
@@ -15,8 +16,8 @@ import type { SimplifyUnion } from './simplify-union'
  * @internal
  */
 export interface ExtensionTyping<
-  N extends NodeTyping | never = never,
-  M extends MarkTyping | never = never,
+  N extends AttrsTyping | never = never,
+  M extends AttrsTyping | never = never,
   C extends CommandTyping | never = never,
 > {
   Nodes: N
@@ -48,8 +49,8 @@ export interface Extension<
 export type ExtractTyping<E extends Extension> =
   E extends Extension<ExtensionTyping<infer N, infer M, infer C>>
     ? ExtensionTyping<
-        PickKnownNodeTyping<N>,
-        PickKnownMarkTyping<M>,
+        PickKnownAttrsTyping<N>,
+        PickKnownAttrsTyping<M>,
         PickKnownCommandTyping<C>
       >
     : never
@@ -68,14 +69,9 @@ export type PickStringLiteral<T extends string | number | symbol> = [
 /**
  * @internal
  */
-export type PickKnownMarkTyping<T extends MarkTyping> = [MarkTyping] extends [T]
-  ? never
-  : T
-
-/**
- * @internal
- */
-export type PickKnownNodeTyping<T extends NodeTyping> = [NodeTyping] extends [T]
+export type PickKnownAttrsTyping<T extends AttrsTyping> = [
+  AttrsTyping,
+] extends [T]
   ? never
   : T
 

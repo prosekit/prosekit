@@ -1,4 +1,4 @@
-import type { CommandCreators } from '../types/extension-command'
+import type { CommandCreators } from '../types/command'
 
 import { defineFacet } from './facet'
 import { rootFacet, type RootPayload } from './root'

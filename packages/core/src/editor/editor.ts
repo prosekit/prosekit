@@ -10,7 +10,7 @@ import {
   subtractFacetNode,
   unionFacetNode,
 } from '../facets/facet-node'
-import type { CommandAction, CommandCreator } from '../types/extension-command'
+import type { CommandAction, CommandCreator } from '../types/command'
 import type {
   Extension,
   ExtractCommandActions,

@@ -1,3 +1,4 @@
+import type { Attrs } from '@prosekit/pm/model'
 import { type Command } from '@prosekit/pm/state'
 import { describe, it } from 'vitest'
 
@@ -16,7 +17,7 @@ describe('union', () => {
     const output = union(input)
     type Outout = typeof output
     type Expected = Extension<{
-      Nodes: 'node3'
+      Nodes: { node3: Attrs }
       Marks: never
       Commands: never
     }>
@@ -29,8 +30,13 @@ describe('union', () => {
     const output = union(input)
     type Outout = typeof output
     type Expected = Extension<{
-      Nodes: 'node3' | 'node4'
-      Marks: 'mark5'
+      Nodes: {
+        node3: Attrs
+        node4: Attrs
+      }
+      Marks: {
+        mark5: { attr5: string }
+      }
       Commands: {
         command1: [{ arg1: string }]
         command2: [{ arg2: number }]
@@ -50,8 +56,13 @@ describe('union', () => {
     const output = union(input)
     type Outout = typeof output
     type Expected = Extension<{
-      Nodes: 'node3' | 'node4'
-      Marks: 'mark5'
+      Nodes: {
+        node3: Attrs
+        node4: Attrs
+      }
+      Marks: {
+        mark5: { attr5: string }
+      }
       Commands: {
         command1: [{ arg1: string }]
         command2: [{ arg2: number }]
@@ -81,4 +92,4 @@ const extension1 = defineCommands({ command1 })
 const extension2 = defineCommands({ command2, command3 })
 const extension3 = defineNodeSpec({ name: 'node3' })
 const extension4 = defineNodeSpec({ name: 'node4' })
-const extension5 = defineMarkSpec({ name: 'mark5' })
+const extension5 = defineMarkSpec<'mark5', { attr5: string }>({ name: 'mark5' })

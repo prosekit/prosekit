@@ -4,15 +4,8 @@ import { assertTypeEqual } from './assert-type-equal'
 import type {
   Extension,
   PickKnownCommandTyping,
-  PickStringLiteral,
   UnionExtension,
 } from './extension'
-
-test('PickStringLiteral', () => {
-  assertTypeEqual<PickStringLiteral<'foo'>, 'foo'>(true)
-  assertTypeEqual<PickStringLiteral<'foo' | 'bar'>, 'foo' | 'bar'>(true)
-  assertTypeEqual<PickStringLiteral<string>, never>(true)
-})
 
 test('PickKnownCommandTyping', () => {
   assertTypeEqual<

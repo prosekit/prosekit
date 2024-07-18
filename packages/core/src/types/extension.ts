@@ -7,6 +7,7 @@ import type {
 } from './extension-command'
 import type { MarkTyping, ToMarkAction } from './extension-mark'
 import type { NodeTyping, ToNodeAction } from './extension-node'
+import type { PickStringLiteral } from './pick-string-literal'
 import type { Priority } from './priority'
 import type { SimplifyDeeper } from './simplify-deeper'
 import type { SimplifyUnion } from './simplify-union'
@@ -52,17 +53,6 @@ export type ExtractTyping<E extends Extension> =
         PickKnownMarkTyping<M>,
         PickKnownCommandTyping<C>
       >
-    : never
-
-/**
- * @internal
- */
-export type PickStringLiteral<T extends string | number | symbol> = [
-  string,
-] extends [T]
-  ? never
-  : T extends string
-    ? T
     : never
 
 /**

@@ -8,15 +8,15 @@ import {
   isApple,
   union,
   type Extension,
-  type ExtractMarks,
-  type ExtractNodes,
-  type MarkAction,
-  type NodeAction,
   type NodeChild,
 } from '@prosekit/core'
 import { createTestEditor, type TestEditor } from '@prosekit/core/test'
 import { userEvent } from '@vitest/browser/context'
 
+import type {
+  ExtractMarkActions,
+  ExtractNodeActions,
+} from '../../../core/src/types/extension'
 import { defineBlockquote } from '../blockquote'
 import { defineBold } from '../bold'
 import { defineCode } from '../code'
@@ -61,8 +61,8 @@ export function setupTestFromExtension<E extends Extension>(
   extension: E,
 ): {
   editor: TestEditor<E>
-  n: Record<ExtractNodes<E>, NodeAction>
-  m: Record<ExtractMarks<E>, MarkAction>
+  n: ExtractNodeActions<E>
+  m: ExtractMarkActions<E>
 } {
   const editor = createTestEditor({ extension })
 

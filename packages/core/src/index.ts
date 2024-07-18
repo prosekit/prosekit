@@ -127,6 +127,8 @@ export type {
   ExtractCommandAppliers,
   ExtractCommandCreators,
   ExtractMarks,
+  ExtractMarkActions,
+  ExtractNodeActions,
   ExtractNodes,
   UnionExtension,
 } from './types/extension'
@@ -137,6 +139,7 @@ export type {
   StepJSON,
 } from './types/model'
 export { Priority } from './types/priority'
+export type { SimplifyDeeper } from './types/simplify-deeper'
 export type { SimplifyUnion } from './types/simplify-union'
 export { assert } from './utils/assert'
 export { canUseRegexLookbehind } from './utils/can-use-regex-lookbehind'

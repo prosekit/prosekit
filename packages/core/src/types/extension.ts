@@ -1,6 +1,7 @@
 import type { Schema } from '@prosekit/pm/model'
 
 import type {
+  AttrsTyping,
   CommandTyping,
   ToCommandAction,
   ToCommandCreators,
@@ -12,8 +13,8 @@ import type { SimplifyUnion } from './simplify-union'
  * @internal
  */
 export interface ExtensionTyping<
-  N extends string | never = never,
-  M extends string | never = never,
+  N extends AttrsTyping | never = never,
+  M extends AttrsTyping | never = never,
   C extends CommandTyping | never = never,
 > {
   Nodes: N
@@ -45,8 +46,8 @@ export interface Extension<
 export type ExtractTyping<E extends Extension> =
   E extends Extension<ExtensionTyping<infer N, infer M, infer C>>
     ? ExtensionTyping<
-        PickStringLiteral<N>,
-        PickStringLiteral<M>,
+        PickKnownAttrsTyping<N>,
+        PickKnownAttrsTyping<M>,
         PickKnownCommandTyping<C>
       >
     : never
@@ -55,6 +56,15 @@ export type ExtractTyping<E extends Extension> =
  * @internal
  */
 export type PickStringLiteral<T extends string> = [string] extends [T]
+  ? never
+  : T
+
+/**
+ * @internal
+ */
+export type PickKnownAttrsTyping<T extends AttrsTyping> = [
+  AttrsTyping,
+] extends [T]
   ? never
   : T
 
@@ -70,12 +80,16 @@ export type PickKnownCommandTyping<T extends CommandTyping> = [
 /**
  * @public
  */
-export type ExtractNodes<E extends Extension> = ExtractTyping<E>['Nodes']
+export type ExtractNodes<E extends Extension> = SimplifyUnion<
+  ExtractTyping<E>['Nodes']
+>
 
 /**
  * @public
  */
-export type ExtractMarks<E extends Extension> = ExtractTyping<E>['Marks']
+export type ExtractMarks<E extends Extension> = SimplifyUnion<
+  ExtractTyping<E>['Marks']
+>
 
 /**
  * @internal

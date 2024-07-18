@@ -23,6 +23,13 @@ export interface CommandTyping {
   [name: string]: any[]
 }
 
+/**
+ * @internal
+ */
+export interface AttrsTyping {
+  [name: string]: Record<string, any>
+}
+
 export interface CommandCreators {
   [name: string]: CommandCreator
 }

@@ -1,6 +1,6 @@
 import { type Command } from '@prosekit/pm/state'
 
-import { type CommandCreator } from '../types/command'
+import { type CommandCreator } from '../types/extension-command'
 
 /**
  * @public

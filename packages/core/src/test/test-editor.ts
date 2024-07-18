@@ -42,16 +42,10 @@ function getSelection(doc: TaggedProseMirrorNode) {
 class TestEditorInstance extends EditorInstance {
   constructor(extension: Extension) {
     super(extension)
-    this.nodeBuilders = createNodeActions(
-      this.schema,
-      this.getState,
-      createNodeForTest,
-    )
-    this.markBuilders = createMarkActions(
-      this.schema,
-      this.getState,
-      applyMarkForTest,
-    )
+    // prettier-ignore
+    this.nodes = createNodeActions(this.schema, this.getState, createNodeForTest)
+    // prettier-ignore
+    this.marks = createMarkActions(this.schema, this.getState, applyMarkForTest)
   }
 }
 

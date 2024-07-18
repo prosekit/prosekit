@@ -93,9 +93,9 @@ export function createEditor<E extends Extension>(
 export class EditorInstance {
   view: EditorView | null = null
   schema: Schema
-  nodeBuilders: Record<string, NodeAction>
-  markBuilders: Record<string, MarkAction>
-  commandActions: Record<string, CommandAction> = {}
+  nodes: Record<string, NodeAction>
+  marks: Record<string, MarkAction>
+  commands: Record<string, CommandAction> = {}
 
   private tree: FacetNode
   private directEditorProps: DirectEditorProps
@@ -117,8 +117,8 @@ export class EditorInstance {
       }
     }
 
-    this.nodeBuilders = createNodeActions(state.schema, this.getState)
-    this.markBuilders = createMarkActions(state.schema, this.getState)
+    this.nodes = createNodeActions(state.schema, this.getState)
+    this.marks = createMarkActions(state.schema, this.getState)
 
     this.schema = state.schema
     this.directEditorProps = { state, ...payload.view }
@@ -253,11 +253,11 @@ export class EditorInstance {
       return command(view.state, undefined, view)
     }
 
-    this.commandActions[name] = action as CommandAction
+    this.commands[name] = action as CommandAction
   }
 
   public removeCommand(name: string) {
-    delete this.commandActions[name]
+    delete this.commands[name]
   }
 }
 
@@ -307,13 +307,6 @@ export class Editor<E extends Extension = any> {
    */
   get schema(): Schema<ExtractNodes<E>, ExtractMarks<E>> {
     return this.instance.schema
-  }
-
-  /**
-   * All commands defined by the editor.
-   */
-  get commands(): ExtractCommandActions<E> {
-    return this.instance.commandActions as ExtractCommandActions<E>
   }
 
   /**
@@ -404,10 +397,24 @@ export class Editor<E extends Extension = any> {
     this.instance.updateState(state)
   }
 
-  get nodes(): Record<ExtractNodes<E>, NodeAction> {
-    return this.instance.nodeBuilders
+  /**
+   * All {@link CommandAction}s defined by the editor.
+   */
+  get commands(): ExtractCommandActions<E> {
+    return this.instance.commands as ExtractCommandActions<E>
   }
+
+  /**
+   * All {@link NodeAction}s defined by the editor.
+   */
+  get nodes(): Record<ExtractNodes<E>, NodeAction> {
+    return this.instance.nodes
+  }
+
+  /**
+   * All {@link MarkAction}s defined by the editor.
+   */
   get marks(): Record<ExtractMarks<E>, MarkAction> {
-    return this.instance.markBuilders
+    return this.instance.marks
   }
 }

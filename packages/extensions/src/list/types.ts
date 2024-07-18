@@ -19,4 +19,3 @@ export interface ListAttrs {
    */
   collapsed?: boolean
 }
-

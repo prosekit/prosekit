@@ -40,7 +40,7 @@
     "clsx": "^2.1.1",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^0.1.1",
-    "type-fest": "^4.22.0"
+    "type-fest": "^4.22.1"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",

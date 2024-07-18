@@ -129,8 +129,8 @@ importers:
         specifier: ^0.1.1
         version: 0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.22.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)
       type-fest:
-        specifier: ^4.22.0
-        version: 4.22.0
+        specifier: ^4.22.1
+        version: 4.22.1
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -230,8 +230,8 @@ importers:
         specifier: ^1.8.1
         version: 1.8.1
       prosemirror-flat-list:
-        specifier: ^0.5.2
-        version: 0.5.2
+        specifier: ^0.5.3
+        version: 0.5.3
       prosemirror-highlight:
         specifier: ^0.8.0
         version: 0.8.0(@types/hast@3.0.4)(prosemirror-model@1.22.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)(prosemirror-view@1.33.8)(shiki@1.10.3)
@@ -255,8 +255,8 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.0)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       type-fest:
-        specifier: ^4.22.0
-        version: 4.22.0
+        specifier: ^4.22.1
+        version: 4.22.1
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -692,11 +692,11 @@ importers:
         specifier: ^4.4.0
         version: 4.4.0(solid-js@1.8.18)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))
       '@astrojs/svelte':
-        specifier: ^5.6.0
-        version: 5.6.0(astro@4.11.6(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3))(svelte@4.2.18)(typescript@5.5.3)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))
+        specifier: ^5.7.0
+        version: 5.7.0(astro@4.12.0(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3))(svelte@4.2.18)(typescript@5.5.3)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))
       '@astrojs/vue':
         specifier: ^4.5.0
-        version: 4.5.0(astro@4.11.6(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3))(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))(vue@3.4.32(typescript@5.5.3))
+        version: 4.5.0(astro@4.12.0(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3))(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))(vue@3.4.32(typescript@5.5.3))
       '@iconify-json/lucide':
         specifier: ^1.1.200
         version: 1.1.200
@@ -722,8 +722,8 @@ importers:
         specifier: ^0.61.5
         version: 0.61.5
       astro:
-        specifier: ^4.11.6
-        version: 4.11.6(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3)
+        specifier: ^4.12.0
+        version: 4.12.0(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3)
       lit:
         specifier: ^3.1.4
         version: 3.1.4
@@ -851,8 +851,8 @@ importers:
         specifier: ^0.10.5
         version: 0.10.5(@vitest/ui@1.6.0(vitest@2.0.3))(vitest@2.0.3(@types/node@20.14.11)(@vitest/browser@2.0.3)(@vitest/ui@1.6.0)(jsdom@24.1.0)(lightningcss@1.25.1))(vue@3.4.32(typescript@5.5.3))
       type-fest:
-        specifier: ^4.22.0
-        version: 4.22.0
+        specifier: ^4.22.1
+        version: 4.22.1
       typedoc:
         specifier: ^0.26.4
         version: 0.26.4(typescript@5.5.3)
@@ -1007,8 +1007,8 @@ packages:
   '@astrojs/internal-helpers@0.4.1':
     resolution: {integrity: sha512-bMf9jFihO8YP940uD70SI/RDzIhUHJAolWVcO1v5PUivxGKvfLZTLTVVxEYzGYyPsA3ivdLNqMnL5VgmQySa+g==}
 
-  '@astrojs/markdown-remark@5.1.1':
-    resolution: {integrity: sha512-rkWWjR9jVo0LAMxQ2+T19RKbQUa7NwBGhFj03bAz3hGf3blqeBIXs1NSPpizshO5kZzcOqKe8OlG6XpYO8esHg==}
+  '@astrojs/markdown-remark@5.2.0':
+    resolution: {integrity: sha512-vWGM24KZXz11jR3JO+oqYU3T2qpuOi4uGivJ9SQLCAI01+vEkHC60YJMRvHPc+hwd60F7euNs1PeOEixIIiNQw==}
 
   '@astrojs/preact@3.5.1':
     resolution: {integrity: sha512-sKF0Di7kwr2pMAc0PbEGuNF9AhJdLImQqtbgUUP3x75zaBg6mJsHmVt5jMqYpW4zWBfLuqACTaNLxWwu6u4nzw==}
@@ -1039,12 +1039,12 @@ packages:
       solid-devtools:
         optional: true
 
-  '@astrojs/svelte@5.6.0':
-    resolution: {integrity: sha512-rdHBlqMQE6UOA1ySF1t3sdb6pf44yP8Dd0TqxGO0yR4HAgbtKtW8XToJ3mQ1PmuRmf5fisH9xzt3EEx7NAQuZg==}
+  '@astrojs/svelte@5.7.0':
+    resolution: {integrity: sha512-pC/xM5ejDzqIhfr8e6gbjBkIwyTQDLuOH778LfH0EiVlTq5H0WUHCnIcjFBvcaJv9ye8AR0TlGvQmZtkt9x3Eg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       astro: ^4.0.0
-      svelte: ^4.0.0 || ^5.0.0-next.90
+      svelte: ^4.0.0 || ^5.0.0-next.190
       typescript: ^5.3.3
 
   '@astrojs/telemetry@3.1.0':
@@ -2999,8 +2999,8 @@ packages:
     resolution: {integrity: sha512-es1zHFsnZ4Y4efz412nnrU3KvVAhgqy90a7Yt9Wpi5vQ3l4aYMOX0Qx4FD0elKr5ITEhiUGCSFcgGYf4YTuACg==}
     engines: {node: '>=16.14.0'}
 
-  astro@4.11.6:
-    resolution: {integrity: sha512-h2n8tJJrexuIVbeceQDxPJv+0D9sDUqiN5K2Ao7akkpxslllpsa5f5aIsLHKKVD2xAwgDIhGTzkm8pn40Im6Cw==}
+  astro@4.12.0:
+    resolution: {integrity: sha512-JCfrJemDRgc87KVBQ9x4zIwadSuWdG1WjzR3b59nUY+mVeph8W5Y68DrYU5s1JMhQN3+yn2p3lexg4lJM41rsg==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3053,9 +3053,9 @@ packages:
   boolbase@1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
 
-  boxen@8.0.0:
-    resolution: {integrity: sha512-Mzw0gi6A0zH9bVVLSuoyaPFbae4gv3luQkkt3FmVgA1g/oeKpqxFII39OuV58AiwcN2FR+rwlZhJ2mfggjEWKw==}
-    engines: {node: '>=18'}
+  boxen@7.1.1:
+    resolution: {integrity: sha512-2hCgjEmP8YLWQ130n2FerGv7rYpfBmnmp9Uy2Le1vge6X3gZIfSmEzP5QTDElFxcvVcXlEn8Aq6MU/PZygIOog==}
+    engines: {node: '>=14.16'}
 
   brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -3123,9 +3123,9 @@ packages:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
 
-  camelcase@8.0.0:
-    resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
-    engines: {node: '>=16'}
+  camelcase@7.0.1:
+    resolution: {integrity: sha512-xlx1yCK2Oc1APsPXDL2LdlNP6+uu8OCDdhOBSVT279M/S+y75O30C2VuD8T2ogdePBBl7PfPF4504tnLgX3zfw==}
+    engines: {node: '>=14.16'}
 
   caniuse-lite@1.0.30001642:
     resolution: {integrity: sha512-3XQ0DoRgLijXJErLSl+bLnJ+Et4KqV1PY6JJBGAFlsNsz31zeAIncyeZfLCabHK/jtSh+671RM9YMldxjUPZtA==}
@@ -3197,9 +3197,9 @@ packages:
     resolution: {integrity: sha512-GfisEZEJvzKrmGWkvfhgzcz/BllN1USeqD2V6tg14OAOgaCD2Z/PUEuxnAZ/nPvmaHRG7a8y77p1T/IRQ4D1Hw==}
     engines: {node: '>=4'}
 
-  cli-boxes@4.0.0:
-    resolution: {integrity: sha512-RU4tOq6V6/HggQwAumv7c8O2tuvg0gElkQ5FEdWULl4itMhvgqy1kWXq5oy3FbKOF65Ml8J4lxWbHDZcKaWLQA==}
-    engines: {node: '>=18.20'}
+  cli-boxes@3.0.0:
+    resolution: {integrity: sha512-/lzGpEWL/8PfI0BmBOPRwp0c/wFNX1RdUML3jK/RcSBA9T8mZDdQpqYBKtCFTOfQbwPqWEOpjqW+Fnayc0969g==}
+    engines: {node: '>=10'}
 
   cli-cursor@4.0.0:
     resolution: {integrity: sha512-VGtlMu3x/4DOtIUwEkRezxUZ2lBacNJCHash0N0WeZDBS+7Ux1dm3XWAgWYxLJFMMdOeXMHXorshEFhbMSGelg==}
@@ -5521,8 +5521,8 @@ packages:
   prosemirror-dropcursor@1.8.1:
     resolution: {integrity: sha512-M30WJdJZLyXHi3N8vxN6Zh5O8ZBbQCz0gURTfPmTIBNQ5pxrdU7A58QkNqfa98YEjSAL1HUyyU34f6Pm5xBSGw==}
 
-  prosemirror-flat-list@0.5.2:
-    resolution: {integrity: sha512-jedlCrjTJmBG79+hh6VaVn2PPQc30nAmlB7AjL3D3nVHDvE/VlHwy2aOp6HnqyGaJD1tyijyD3gUrJs2YH1+Bw==}
+  prosemirror-flat-list@0.5.3:
+    resolution: {integrity: sha512-9otmxGutu97MCl4R+JWSnRCCmc+hinY/X9wgqLLjdNPh+io7xNbP5MMJWMKBHX5JBTHbqOmw3SHgc66e+ieJmQ==}
 
   prosemirror-highlight@0.8.0:
     resolution: {integrity: sha512-b5BPX7z57fJuKS+JvxJa0gaQ4GWam28KqXMhef6VYLuCyjM54XDwgn81PoxWUzy82MopCFBwOls+7Ls8uQBqFw==}
@@ -5748,8 +5748,8 @@ packages:
   remark-rehype@11.1.0:
     resolution: {integrity: sha512-z3tJrAs2kIs1AqIIy6pzHmAHlF1hWQ+OdY4/hv+Wxe35EhyLKcajL33iUEn3ScxtFox9nUvRufR/Zre8Q08H/g==}
 
-  remark-smartypants@3.0.1:
-    resolution: {integrity: sha512-qyshfCl2eLO0i0558e79ZJsfojC5wjnYLByjt0FmjJQN6aYwcRxpoj784LZJSoWCdnA2ubh5rLNGb8Uur/wDng==}
+  remark-smartypants@3.0.2:
+    resolution: {integrity: sha512-ILTWeOriIluwEvPjv67v7Blgrcx+LZOkAUVtKI3putuhlZm84FnqDORNXPPm+HY3NdZOMhyDwZ1E+eZB/Df5dA==}
     engines: {node: '>=16.0.0'}
 
   remark-stringify@11.0.0:
@@ -6218,8 +6218,8 @@ packages:
       typescript:
         optional: true
 
-  svelte2tsx@0.7.9:
-    resolution: {integrity: sha512-Rm+0LAwg9wT4H2IsR8EaM9EWErTzi9LmuZKxkH5b1ua94XjQmwHstBP4VabLgA9AE6XmwBg+xK7Cjzwfm6ustQ==}
+  svelte2tsx@0.7.13:
+    resolution: {integrity: sha512-aObZ93/kGAiLXA/I/kP+x9FriZM+GboB/ReOIGmLNbVGEd2xC+aTCppm3mk1cc9I/z60VQf7b2QDxC3jOXu3yw==}
     peerDependencies:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
@@ -6452,8 +6452,12 @@ packages:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
 
-  type-fest@4.22.0:
-    resolution: {integrity: sha512-hxMO1k4ip1uTVGgPbs1hVpYyhz2P91A6tQyH2H9POx3U6T3MdhIcfY8L2hRu/LRmzPFdfduOS0RIDjFlP2urPw==}
+  type-fest@2.19.0:
+    resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
+    engines: {node: '>=12.20'}
+
+  type-fest@4.22.1:
+    resolution: {integrity: sha512-9tHNEa0Ov81YOopiVkcCJVz5TM6AEQ+CHHjFIktqPnE3NV0AHIkx+gh9tiCl58m/66wWxkOC9eltpa75J4lQPA==}
     engines: {node: '>=16'}
 
   typed-array-buffer@1.0.2:
@@ -6877,9 +6881,9 @@ packages:
     engines: {node: '>=8'}
     hasBin: true
 
-  widest-line@5.0.0:
-    resolution: {integrity: sha512-c9bZp7b5YtRj2wOe6dlj32MK+Bx/M/d+9VB2SHM1OtsUHR0aV0tdP6DWh/iMt0kWi1t5g1Iudu6hQRNd1A4PVA==}
-    engines: {node: '>=18'}
+  widest-line@4.0.1:
+    resolution: {integrity: sha512-o0cyEG0e8GPzT4iGHphIOh0cJOV8fivsXxddQasHPHfoZf1ZexrfeA21w2NaEN1RHE+fXlfISmOE8R9N3u3Qig==}
+    engines: {node: '>=12'}
 
   word-wrap@1.2.5:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
@@ -6896,10 +6900,6 @@ packages:
   wrap-ansi@8.1.0:
     resolution: {integrity: sha512-si7QWI6zUMq56bESFvagtmzMdGOtoxfR+Sez11Mobfc7tm+VkUckk9bW2UeffTGVUbOksxmSw0AA2gs8g71NCQ==}
     engines: {node: '>=12'}
-
-  wrap-ansi@9.0.0:
-    resolution: {integrity: sha512-G8ura3S+3Z2G+mkgNRq8dqaFZAuxfsxpBB8OCTGRTCtp+l/v9nbFNmCUP1BZMts3G1142MsZfn6eeUKrr4PD1Q==}
-    engines: {node: '>=18'}
 
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
@@ -7162,7 +7162,7 @@ snapshots:
 
   '@astrojs/internal-helpers@0.4.1': {}
 
-  '@astrojs/markdown-remark@5.1.1':
+  '@astrojs/markdown-remark@5.2.0':
     dependencies:
       '@astrojs/prism': 3.1.0
       github-slugger: 2.0.0
@@ -7175,7 +7175,7 @@ snapshots:
       remark-gfm: 4.0.0
       remark-parse: 11.0.0
       remark-rehype: 11.1.0
-      remark-smartypants: 3.0.1
+      remark-smartypants: 3.0.2
       shiki: 1.10.3
       unified: 11.0.5
       unist-util-remove-position: 5.0.0
@@ -7224,12 +7224,12 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/svelte@5.6.0(astro@4.11.6(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3))(svelte@4.2.18)(typescript@5.5.3)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))':
+  '@astrojs/svelte@5.7.0(astro@4.12.0(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3))(svelte@4.2.18)(typescript@5.5.3)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))
-      astro: 4.11.6(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3)
+      astro: 4.12.0(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3)
       svelte: 4.2.18
-      svelte2tsx: 0.7.9(svelte@4.2.18)(typescript@5.5.3)
+      svelte2tsx: 0.7.13(svelte@4.2.18)(typescript@5.5.3)
       typescript: 5.5.3
     transitivePeerDependencies:
       - supports-color
@@ -7247,12 +7247,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vue@4.5.0(astro@4.11.6(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3))(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))(vue@3.4.32(typescript@5.5.3))':
+  '@astrojs/vue@4.5.0(astro@4.12.0(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3))(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))(vue@3.4.32(typescript@5.5.3))':
     dependencies:
       '@vitejs/plugin-vue': 5.0.5(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))(vue@3.4.32(typescript@5.5.3))
       '@vitejs/plugin-vue-jsx': 4.0.0(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))(vue@3.4.32(typescript@5.5.3))
       '@vue/compiler-sfc': 3.4.32
-      astro: 4.11.6(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3)
+      astro: 4.12.0(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3)
       vite-plugin-vue-devtools: 7.3.3(rollup@4.18.1)(vite@5.3.4(@types/node@20.14.11)(lightningcss@1.25.1))
       vue: 3.4.32(typescript@5.5.3)
     transitivePeerDependencies:
@@ -8613,7 +8613,7 @@ snapshots:
       sade: 1.8.1
       semver: 7.6.2
       svelte: 4.2.18
-      svelte2tsx: 0.7.9(svelte@4.2.18)(typescript@5.5.3)
+      svelte2tsx: 0.7.13(svelte@4.2.18)(typescript@5.5.3)
     transitivePeerDependencies:
       - typescript
 
@@ -9620,11 +9620,11 @@ snapshots:
       '@babel/parser': 7.24.8
       pathe: 1.1.2
 
-  astro@4.11.6(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3):
+  astro@4.12.0(@types/node@20.14.11)(lightningcss@1.25.1)(typescript@5.5.3):
     dependencies:
       '@astrojs/compiler': 2.9.1
       '@astrojs/internal-helpers': 0.4.1
-      '@astrojs/markdown-remark': 5.1.1
+      '@astrojs/markdown-remark': 5.2.0
       '@astrojs/telemetry': 3.1.0
       '@babel/core': 7.24.9
       '@babel/generator': 7.24.10
@@ -9637,7 +9637,7 @@ snapshots:
       acorn: 8.12.1
       aria-query: 5.3.0
       axobject-query: 4.1.0
-      boxen: 8.0.0
+      boxen: 7.1.1
       chokidar: 3.6.0
       ci-info: 4.0.0
       clsx: 2.1.1
@@ -9739,16 +9739,16 @@ snapshots:
 
   boolbase@1.0.0: {}
 
-  boxen@8.0.0:
+  boxen@7.1.1:
     dependencies:
       ansi-align: 3.0.1
-      camelcase: 8.0.0
+      camelcase: 7.0.1
       chalk: 5.3.0
-      cli-boxes: 4.0.0
-      string-width: 7.2.0
-      type-fest: 4.22.0
-      widest-line: 5.0.0
-      wrap-ansi: 9.0.0
+      cli-boxes: 3.0.0
+      string-width: 5.1.2
+      type-fest: 2.19.0
+      widest-line: 4.0.1
+      wrap-ansi: 8.1.0
 
   brace-expansion@1.1.11:
     dependencies:
@@ -9828,7 +9828,7 @@ snapshots:
 
   camelcase@6.3.0: {}
 
-  camelcase@8.0.0: {}
+  camelcase@7.0.1: {}
 
   caniuse-lite@1.0.30001642: {}
 
@@ -9897,7 +9897,7 @@ snapshots:
     dependencies:
       escape-string-regexp: 1.0.5
 
-  cli-boxes@4.0.0: {}
+  cli-boxes@3.0.0: {}
 
   cli-cursor@4.0.0:
     dependencies:
@@ -12154,7 +12154,7 @@ snapshots:
       outvariant: 1.4.2
       path-to-regexp: 6.2.2
       strict-event-emitter: 0.5.1
-      type-fest: 4.22.0
+      type-fest: 4.22.1
       yargs: 17.7.2
     optionalDependencies:
       typescript: 5.5.3
@@ -12421,7 +12421,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.24.7
       index-to-position: 0.1.2
-      type-fest: 4.22.0
+      type-fest: 4.22.1
 
   parse-latin@7.0.0:
     dependencies:
@@ -12628,7 +12628,7 @@ snapshots:
       prosemirror-transform: 1.9.0
       prosemirror-view: 1.33.8
 
-  prosemirror-flat-list@0.5.2:
+  prosemirror-flat-list@0.5.3:
     dependencies:
       prosemirror-commands: 1.5.2
       prosemirror-inputrules: 1.4.0
@@ -12778,7 +12778,7 @@ snapshots:
     dependencies:
       find-up-simple: 1.0.0
       read-pkg: 9.0.1
-      type-fest: 4.22.0
+      type-fest: 4.22.1
 
   read-pkg-up@7.0.1:
     dependencies:
@@ -12798,7 +12798,7 @@ snapshots:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.0
       parse-json: 8.1.0
-      type-fest: 4.22.0
+      type-fest: 4.22.1
       unicorn-magic: 0.1.0
 
   read-yaml-file@1.1.0:
@@ -12922,7 +12922,7 @@ snapshots:
       unified: 11.0.5
       vfile: 6.0.2
 
-  remark-smartypants@3.0.1:
+  remark-smartypants@3.0.2:
     dependencies:
       retext: 9.0.0
       retext-smartypants: 6.1.0
@@ -13467,7 +13467,7 @@ snapshots:
       postcss-load-config: 4.0.2(postcss@8.4.39)
       typescript: 5.5.3
 
-  svelte2tsx@0.7.9(svelte@4.2.18)(typescript@5.5.3):
+  svelte2tsx@0.7.13(svelte@4.2.18)(typescript@5.5.3):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
@@ -13702,7 +13702,9 @@ snapshots:
 
   type-fest@0.8.1: {}
 
-  type-fest@4.22.0: {}
+  type-fest@2.19.0: {}
+
+  type-fest@4.22.1: {}
 
   typed-array-buffer@1.0.2:
     dependencies:
@@ -14281,9 +14283,9 @@ snapshots:
       siginfo: 2.0.0
       stackback: 0.0.2
 
-  widest-line@5.0.0:
+  widest-line@4.0.1:
     dependencies:
-      string-width: 7.2.0
+      string-width: 5.1.2
 
   word-wrap@1.2.5: {}
 
@@ -14303,12 +14305,6 @@ snapshots:
     dependencies:
       ansi-styles: 6.2.1
       string-width: 5.1.2
-      strip-ansi: 7.1.0
-
-  wrap-ansi@9.0.0:
-    dependencies:
-      ansi-styles: 6.2.1
-      string-width: 7.2.0
       strip-ansi: 7.1.0
 
   wrappy@1.0.2: {}

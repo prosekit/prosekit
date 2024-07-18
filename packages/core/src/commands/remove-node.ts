@@ -1,7 +1,7 @@
 import type { NodeType } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
-import type { CommandCreator } from '../types/command'
+import type { CommandCreator } from '../types/extension-command'
 import { findParentNode } from '../utils/find-parent-node'
 import { getNodeType } from '../utils/get-node-type'
 

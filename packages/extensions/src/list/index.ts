@@ -1,41 +1,20 @@
-import {
-  defineNodeSpec,
-  definePlugin,
-  union,
-  type Extension,
-} from '@prosekit/core'
-import {
-  createListPlugins,
-  createListSpec,
-  listInputRules,
-} from 'prosemirror-flat-list'
-
-import { defineInputRule } from '../input-rule'
+import { union } from '@prosekit/core'
 
 import { defineListCommands } from './commands'
+import { defineListInputRules } from './input-rules'
 import { defineListKeymap } from './keymap'
+import { defineListPlugins } from './plugins'
+import { defineListSpec } from './spec'
+import type { ListAttrs } from './types'
 
 export { ListDOMSerializer } from 'prosemirror-flat-list'
 export type {
   DedentListOptions,
   IndentListOptions,
-  ListAttributes,
   ToggleCollapsedOptions,
   UnwrapListOptions,
   WrapInListGetAttrs,
 } from 'prosemirror-flat-list'
-
-export function defineListSpec() {
-  return defineNodeSpec({ ...createListSpec(), name: 'list' })
-}
-
-export function defineListPlugins() {
-  return definePlugin(({ schema }) => createListPlugins({ schema }))
-}
-
-export function defineListInputRules(): Extension {
-  return union(listInputRules.map(defineInputRule))
-}
 
 /**
  * @public
@@ -50,4 +29,11 @@ export function defineList() {
   ])
 }
 
-export { defineListCommands, defineListKeymap }
+export {
+  defineListCommands,
+  defineListInputRules,
+  defineListKeymap,
+  defineListPlugins,
+  defineListSpec,
+  type ListAttrs,
+}

@@ -17,7 +17,7 @@ import {
 } from '../context'
 
 import { calcResize } from './calc-resize'
-import { type ResizableHandleProps } from './props'
+import type { ResizableHandleProps } from './props'
 
 export function useResizableHandle(
   host: ConnectableElement,

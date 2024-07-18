@@ -9,6 +9,7 @@ import {
 import type { EditorState } from '@prosekit/pm/state'
 
 import { ProseKitError } from '../error'
+import type { AnyAttrs } from '../types/attrs'
 import { assert } from '../utils/assert'
 import { isMarkActive } from '../utils/is-mark-active'
 import { isNodeActive } from '../utils/is-node-active'
@@ -30,7 +31,7 @@ export type NodeChild = ProseMirrorNode | string | NodeChild[]
  *
  * @public
  */
-export interface NodeAction {
+export interface NodeAction<Attrs extends AnyAttrs = AnyAttrs> {
   (attrs: Attrs | null, ...children: NodeChild[]): ProseMirrorNode
   (...children: NodeChild[]): ProseMirrorNode
 
@@ -51,7 +52,7 @@ export interface NodeAction {
  *
  * @public
  */
-export interface MarkAction {
+export interface MarkAction<Attrs extends AnyAttrs = AnyAttrs> {
   (attrs: Attrs | null, ...children: NodeChild[]): ProseMirrorNode[]
   (...children: NodeChild[]): ProseMirrorNode[]
 

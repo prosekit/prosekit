@@ -1,4 +1,3 @@
-import type { MarkAction, NodeAction } from '../editor/action'
 import { union } from '../editor/union'
 import { defineBaseCommands } from '../extensions/command'
 import { defineDoc } from '../extensions/doc'
@@ -9,7 +8,11 @@ import { defineNodeSpec } from '../extensions/node-spec'
 import { defineParagraph } from '../extensions/paragraph'
 import { defineText } from '../extensions/text'
 import { createTestEditor, type TestEditor } from '../test'
-import type { Extension, ExtractMarks, ExtractNodes } from '../types/extension'
+import type {
+  Extension,
+  ExtractMarkActions,
+  ExtractNodeActions,
+} from '../types/extension'
 
 function defineBold() {
   return defineMarkSpec({
@@ -67,8 +70,8 @@ export function setupTestFromExtension<E extends Extension>(
   extension: E,
 ): {
   editor: TestEditor<E>
-  n: Record<ExtractNodes<E>, NodeAction>
-  m: Record<ExtractMarks<E>, MarkAction>
+  n: ExtractNodeActions<E>
+  m: ExtractMarkActions<E>
 } {
   const editor = createTestEditor({ extension })
 

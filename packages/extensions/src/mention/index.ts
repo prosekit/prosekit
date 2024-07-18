@@ -7,15 +7,15 @@ import {
 
 export interface MentionAttrs {
   id: string
-  kind: string
   value: string
+  kind: string
 }
 
 /**
  * @public
  */
 export function defineMentionSpec() {
-  return defineNodeSpec({
+  return defineNodeSpec<'mention', MentionAttrs>({
     name: 'mention',
     atom: true,
     group: 'inline',

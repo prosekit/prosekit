@@ -1,7 +1,7 @@
 import { type Attrs, MarkType, ProseMirrorNode } from '@prosekit/pm/model'
 import { SelectionRange, TextSelection, type Command } from '@prosekit/pm/state'
 
-import { type CommandCreator } from '../types/command'
+import type { CommandCreator } from '../types/extension-command'
 import { getMarkType } from '../utils/get-mark-type'
 
 function markApplies(

@@ -8,10 +8,8 @@ import {
   isApple,
   union,
   type Extension,
-  type ExtractMarks,
-  type ExtractNodes,
-  type MarkAction,
-  type NodeAction,
+  type ExtractMarkActions,
+  type ExtractNodeActions,
   type NodeChild,
 } from '@prosekit/core'
 import { createTestEditor, type TestEditor } from '@prosekit/core/test'
@@ -24,7 +22,7 @@ import { defineHeading } from '../heading'
 import { defineImage } from '../image'
 import { defineItalic } from '../italic'
 import { defineLink } from '../link'
-import { defineList, type ListAttributes } from '../list'
+import { defineList, type ListAttrs } from '../list'
 import { defineStrike } from '../strike'
 import { defineTable } from '../table'
 import { defineUnderline } from '../underline'
@@ -61,8 +59,8 @@ export function setupTestFromExtension<E extends Extension>(
   extension: E,
 ): {
   editor: TestEditor<E>
-  n: Record<ExtractNodes<E>, NodeAction>
-  m: Record<ExtractMarks<E>, MarkAction>
+  n: ExtractNodeActions<E>
+  m: ExtractMarkActions<E>
 } {
   const editor = createTestEditor({ extension })
 
@@ -83,7 +81,7 @@ export function setupTestFromExtension<E extends Extension>(
 export function setupTest() {
   const { editor, m, n } = setupTestFromExtension(defineTestExtension())
 
-  const listWithAttrs = (attrs: ListAttributes) => {
+  const listWithAttrs = (attrs: ListAttrs) => {
     return (...children: NodeChild[]) => {
       return n.list(attrs, ...children)
     }

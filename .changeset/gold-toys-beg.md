@@ -3,4 +3,6 @@
 '@prosekit/core': patch
 ---
 
-Rename types `NodeBuilder` and `MarkBuilder` to `NodeAction` and `MarkAction`.
+Rename type `NodeBuilder` to `NodeAction`.
+
+Rename type `MarkBuilder` to `MarkAction`.

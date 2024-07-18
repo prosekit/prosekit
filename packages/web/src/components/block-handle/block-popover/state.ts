@@ -19,7 +19,7 @@ import {
   defineElementHoverHandler,
   type ElementHoverHandler,
 } from './pointer-move'
-import { type BlockPopoverProps } from './props'
+import type { BlockPopoverProps } from './props'
 
 export function useBlockPopover(
   host: ConnectableElement,

@@ -1,5 +1,5 @@
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
-import { type NodeViewConstructor } from '@prosekit/pm/view'
+import type { NodeViewConstructor } from '@prosekit/pm/view'
 
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'

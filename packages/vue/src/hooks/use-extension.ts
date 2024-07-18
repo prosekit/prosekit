@@ -1,5 +1,5 @@
 import { Editor, Priority, type Extension } from '@prosekit/core'
-import { type MaybeRefOrGetter } from 'vue'
+import type { MaybeRefOrGetter } from 'vue'
 
 import { useEditorExtension } from './use-editor-extension'
 import { usePriorityExtension } from './use-priority-extension'

@@ -1,4 +1,4 @@
-import { type Extension } from '../types/extension'
+import type { Extension } from '../types/extension'
 import { Priority } from '../types/priority'
 
 import { union } from './union'

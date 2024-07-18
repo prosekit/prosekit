@@ -10,13 +10,15 @@ import {
   subtractFacetNode,
   unionFacetNode,
 } from '../facets/facet-node'
-import type { CommandAction, CommandCreator } from '../types/command'
 import type {
   Extension,
   ExtractCommandActions,
-  ExtractMarks,
-  ExtractNodes,
+  ExtractMarkActions,
+  ExtractMarkNames,
+  ExtractNodeActions,
+  ExtractNodeNames,
 } from '../types/extension'
+import type { CommandAction, CommandCreator } from '../types/extension-command'
 import type { NodeJSON, SelectionJSON } from '../types/model'
 import { assert } from '../utils/assert'
 import { deepEquals } from '../utils/deep-equals'
@@ -305,7 +307,7 @@ export class Editor<E extends Extension = any> {
   /**
    * The editor schema.
    */
-  get schema(): Schema<ExtractNodes<E>, ExtractMarks<E>> {
+  get schema(): Schema<ExtractNodeNames<E>, ExtractMarkNames<E>> {
     return this.instance.schema
   }
 
@@ -407,14 +409,14 @@ export class Editor<E extends Extension = any> {
   /**
    * All {@link NodeAction}s defined by the editor.
    */
-  get nodes(): Record<ExtractNodes<E>, NodeAction> {
-    return this.instance.nodes
+  get nodes(): ExtractNodeActions<E> {
+    return this.instance.nodes as ExtractNodeActions<E>
   }
 
   /**
    * All {@link MarkAction}s defined by the editor.
    */
-  get marks(): Record<ExtractMarks<E>, MarkAction> {
-    return this.instance.marks
+  get marks(): ExtractMarkActions<E> {
+    return this.instance.marks as ExtractMarkActions<E>
   }
 }

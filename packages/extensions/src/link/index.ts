@@ -23,9 +23,12 @@ export interface LinkAttrs {
 }
 
 export function defineLinkSpec() {
-  return defineMarkSpec({
+  return defineMarkSpec<'link', LinkAttrs>({
     name: 'link',
     inclusive: false,
+    attrs: {
+      href: {},
+    },
     parseDOM: [
       {
         tag: 'a[href]',
@@ -36,9 +39,6 @@ export function defineLinkSpec() {
         },
       },
     ],
-    attrs: {
-      href: {},
-    },
     toDOM(node) {
       const { href } = node.attrs as LinkAttrs
       return ['a', { href }, 0]

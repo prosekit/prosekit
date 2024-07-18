@@ -5,7 +5,7 @@ import { ProseKitError } from '../error'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { stateFacet, type StatePayload } from '../facets/state'
-import { type Extension } from '../types/extension'
+import type { Extension } from '../types/extension'
 
 /**
  * Adds a ProseMirror plugin to the editor.

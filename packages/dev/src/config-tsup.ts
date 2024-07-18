@@ -1,7 +1,7 @@
 import path from 'node:path'
 
 import { readPackage } from 'read-pkg'
-import { type Options } from 'tsup'
+import type { Options } from 'tsup'
 
 import { findRootDir } from './find-root-dir.js'
 import { normalizePackageJson } from './normalize-package-json.js'

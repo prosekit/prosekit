@@ -9,7 +9,7 @@ import { NodeSelection } from '@prosekit/pm/state'
 
 import { blockPopoverContext } from '../context'
 
-import { type BlockDragHandleProps } from './props'
+import type { BlockDragHandleProps } from './props'
 
 export function useBlockDragHandle(
   host: ConnectableElement,

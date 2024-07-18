@@ -1,4 +1,4 @@
-import { type Keymap } from 'prosekit/core'
+import type { Keymap } from 'prosekit/core'
 import { useKeymap } from 'prosekit/solid'
 
 export function useSubmitKeymap(

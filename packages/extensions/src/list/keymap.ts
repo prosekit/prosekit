@@ -35,7 +35,7 @@ const listKeymap = {
 /**
  * Returns a extension that adds key bindings for list.
  *
- * @public
+ * @internal
  */
 export function defineListKeymap() {
   return defineKeymap(listKeymap)

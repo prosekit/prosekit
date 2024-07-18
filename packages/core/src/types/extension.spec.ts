@@ -1,47 +1,55 @@
 import { test } from 'vitest'
 
 import { assertTypeEqual } from './assert-type-equal'
-import type {
-  Extension,
-  PickKnownCommandTyping,
-  PickStringLiteral,
-  UnionExtension,
-} from './extension'
-
-test('PickStringLiteral', () => {
-  assertTypeEqual<PickStringLiteral<'foo'>, 'foo'>(true)
-  assertTypeEqual<PickStringLiteral<'foo' | 'bar'>, 'foo' | 'bar'>(true)
-  assertTypeEqual<PickStringLiteral<string>, never>(true)
-})
-
-test('PickKnownCommandTyping', () => {
-  assertTypeEqual<
-    PickKnownCommandTyping<{
-      foo: ['bar']
-    }>,
-    { foo: ['bar'] }
-  >(true)
-  assertTypeEqual<PickKnownCommandTyping<{ [x: string]: any }>, never>(true)
-})
+import type { Extension, UnionExtension } from './extension'
 
 test('ExtractTyping', () => {
-  type E1 = Extension<{ Nodes: 'foo'; Marks: never; Commands: never }>
-  type E2 = Extension<{ Nodes: 'bar'; Marks: never; Commands: never }>
-  type E3 = Extension<{ Nodes: never; Marks: 'baz'; Commands: never }>
-  type E4 = Extension<{ Nodes: never; Marks: never; Commands: { a: [''] } }>
+  type E1 = Extension<{
+    Nodes: { foo: { attr1: string } }
+    Marks: never
+    Commands: never
+  }>
+  type E2 = Extension<{
+    Nodes: { foo: { attr2: number } }
+    Marks: never
+    Commands: never
+  }>
+  type E3 = Extension<{
+    Nodes: never
+    Marks: { bar: { attr3: boolean } }
+    Commands: never
+  }>
+  type E4 = Extension<{
+    Nodes: never
+    Marks: never
+    Commands: { a: [''] }
+  }>
   type E5 = Extension<{
-    Nodes: 'Foo'
+    Nodes: { baz: { attr4: null } }
     Marks: never
     Commands: { b: [string, number]; c: [{ c: boolean }] }
   }>
-  type E6 = Extension<{ Nodes: never; Marks: never; Commands: never }>
-  type E7 = Extension<{ Nodes: any; Marks: any; Commands: any }>
+  type E6 = Extension<{
+    Nodes: never
+    Marks: never
+    Commands: never
+  }>
+  type E7 = Extension<{
+    Nodes: any
+    Marks: any
+    Commands: any
+  }>
   type E = [E1, E2, E3, E4, E5, E6, E7]
 
   type Received = UnionExtension<E>
   type Expected = Extension<{
-    Nodes: 'bar' | 'foo' | 'Foo'
-    Marks: 'baz'
+    Nodes: {
+      foo: { attr1: string; attr2: number }
+      baz: { attr4: null }
+    }
+    Marks: {
+      bar: { attr3: boolean }
+    }
     Commands: {
       a: ['']
       b: [string, number]

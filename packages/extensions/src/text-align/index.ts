@@ -8,7 +8,7 @@ import {
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 
-export interface TextAlignOptions {
+export interface TextAlignOptions<NodeName extends string = string> {
   /**
    * The names of node to add the attribute to.
    *
@@ -16,7 +16,7 @@ export interface TextAlignOptions {
    *
    * ["paragraph", "heading"]
    */
-  types: string[]
+  types: NodeName[]
 
   /**
    * The default value for the attribute.
@@ -26,11 +26,11 @@ export interface TextAlignOptions {
   default?: string
 }
 
-function defineTextAlignAttr(
-  type: string,
+function defineTextAlignAttr<NodeName extends string>(
+  type: NodeName,
   defaultValue: string | null,
-): Extension {
-  return defineNodeAttr({
+) {
+  return defineNodeAttr<NodeName, 'textAlign', string | null>({
     type,
     attr: 'textAlign',
     default: defaultValue,
@@ -42,10 +42,14 @@ function defineTextAlignAttr(
   })
 }
 
-function defineTextAlignAttrs(
-  types: string[],
+function defineTextAlignAttrs<NodeName extends string>(
+  types: NodeName[],
   defaultValue: string | null,
-): Extension {
+): Extension<{
+  Nodes: { [K in NodeName]: { textAlign: string | null } }
+  Marks: never
+  Commands: never
+}> {
   return union(types.map((type) => defineTextAlignAttr(type, defaultValue)))
 }
 
@@ -65,7 +69,18 @@ export function setTextAlign({
 /**
  * @internal
  */
-export function defineTextAlignCommands(types: string[]) {
+export type TextAlignCommandTyping = {
+  setTextAlign: [value: string | null]
+}
+
+/**
+ * @internal
+ */
+export function defineTextAlignCommands(types: string[]): Extension<{
+  Nodes: never
+  Marks: never
+  Commands: TextAlignCommandTyping
+}> {
   return defineCommands({
     setTextAlign: (value: string | null) => setTextAlign({ types, value }),
   })
@@ -89,9 +104,15 @@ export function defineTextAlignKeymap(types: string[]) {
  *
  * @public
  */
-export function defineTextAlign(options: TextAlignOptions) {
+export function defineTextAlign<NodeName extends string = string>(
+  options: TextAlignOptions<NodeName>,
+): Extension<{
+  Nodes: { [K in NodeName]: { textAlign: string | null } }
+  Marks: never
+  Commands: TextAlignCommandTyping
+}> {
   return union([
-    defineTextAlignAttrs(options.types, options.default || 'left'),
+    defineTextAlignAttrs<NodeName>(options.types, options.default || 'left'),
     defineTextAlignKeymap(options.types),
     defineTextAlignCommands(options.types),
   ])

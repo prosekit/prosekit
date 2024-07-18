@@ -1,4 +1,4 @@
-import { type Editor } from '@prosekit/core'
+import type { Editor } from '@prosekit/core'
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/react'
 import { createElement, type ComponentType, type ReactNode } from 'react'
 

@@ -11,8 +11,8 @@ import { unsetMark } from '../commands/unset-mark'
 import { wrap } from '../commands/wrap'
 import { commandFacet } from '../facets/command'
 import { defineFacetPayload } from '../facets/facet-extension'
-import { type CommandCreator } from '../types/command'
-import { type Extension } from '../types/extension'
+import type { Extension } from '../types/extension'
+import type { CommandCreator } from '../types/extension-command'
 
 export function defineCommands<
   T extends Record<string, CommandCreator> = Record<string, CommandCreator>,

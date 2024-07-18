@@ -12,7 +12,7 @@ export interface TextColorAttrs {
 }
 
 export function defineTextColorSpec() {
-  return defineMarkSpec({
+  return defineMarkSpec<'textColor', TextColorAttrs>({
     name: 'textColor',
     attrs: {
       color: { default: null },

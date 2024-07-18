@@ -21,8 +21,8 @@ export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark'
 export { wrap, type WrapOptions } from './commands/wrap'
 export type {
   MarkAction,
-  NodeAction,
   MarkBuilder,
+  NodeAction,
   NodeBuilder,
   NodeChild,
 } from './editor/action'
@@ -119,10 +119,11 @@ export { defineText } from './extensions/text'
 export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
-export type { CommandTyping } from './types/command'
+export type { CommandAction, CommandTyping } from './types/command'
 export type {
   Extension,
   ExtensionTyping,
+  ExtractCommandActions,
   ExtractCommandAppliers,
   ExtractCommandCreators,
   ExtractMarks,

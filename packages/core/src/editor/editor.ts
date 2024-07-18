@@ -10,10 +10,10 @@ import {
   subtractFacetNode,
   unionFacetNode,
 } from '../facets/facet-node'
-import { type CommandApplier, type CommandCreator } from '../types/command'
+import type { CommandAction, CommandCreator } from '../types/command'
 import type {
   Extension,
-  ExtractCommandAppliers,
+  ExtractCommandActions,
   ExtractMarks,
   ExtractNodes,
 } from '../types/extension'
@@ -93,9 +93,9 @@ export function createEditor<E extends Extension>(
 export class EditorInstance {
   view: EditorView | null = null
   schema: Schema
-  nodeBuilders: Record<string, NodeAction>
-  markBuilders: Record<string, MarkAction>
-  commandAppliers: Record<string, CommandApplier> = {}
+  nodes: Record<string, NodeAction>
+  marks: Record<string, MarkAction>
+  commands: Record<string, CommandAction> = {}
 
   private tree: FacetNode
   private directEditorProps: DirectEditorProps
@@ -117,8 +117,8 @@ export class EditorInstance {
       }
     }
 
-    this.nodeBuilders = createNodeActions(state.schema, this.getState)
-    this.markBuilders = createMarkActions(state.schema, this.getState)
+    this.nodes = createNodeActions(state.schema, this.getState)
+    this.marks = createMarkActions(state.schema, this.getState)
 
     this.schema = state.schema
     this.directEditorProps = { state, ...payload.view }
@@ -236,14 +236,14 @@ export class EditorInstance {
     name: string,
     commandCreator: CommandCreator<Args>,
   ): void {
-    const applier: CommandApplier<Args> = (...args: Args) => {
+    const action: CommandAction<Args> = (...args: Args) => {
       const view = this.view
       assert(view, `Cannot call command "${name}" before the editor is mounted`)
       const command = commandCreator(...args)
       return command(view.state, view.dispatch.bind(view), view)
     }
 
-    applier.canApply = (...args: Args) => {
+    action.canApply = (...args: Args) => {
       const view = this.view
       if (!view) {
         return false
@@ -253,11 +253,11 @@ export class EditorInstance {
       return command(view.state, undefined, view)
     }
 
-    this.commandAppliers[name] = applier as CommandApplier
+    this.commands[name] = action as CommandAction
   }
 
   public removeCommand(name: string) {
-    delete this.commandAppliers[name]
+    delete this.commands[name]
   }
 }
 
@@ -307,13 +307,6 @@ export class Editor<E extends Extension = any> {
    */
   get schema(): Schema<ExtractNodes<E>, ExtractMarks<E>> {
     return this.instance.schema
-  }
-
-  /**
-   * All commands defined by the editor.
-   */
-  get commands(): ExtractCommandAppliers<E> {
-    return this.instance.commandAppliers as ExtractCommandAppliers<E>
   }
 
   /**
@@ -404,10 +397,24 @@ export class Editor<E extends Extension = any> {
     this.instance.updateState(state)
   }
 
-  get nodes(): Record<ExtractNodes<E>, NodeAction> {
-    return this.instance.nodeBuilders
+  /**
+   * All {@link CommandAction}s defined by the editor.
+   */
+  get commands(): ExtractCommandActions<E> {
+    return this.instance.commands as ExtractCommandActions<E>
   }
+
+  /**
+   * All {@link NodeAction}s defined by the editor.
+   */
+  get nodes(): Record<ExtractNodes<E>, NodeAction> {
+    return this.instance.nodes
+  }
+
+  /**
+   * All {@link MarkAction}s defined by the editor.
+   */
   get marks(): Record<ExtractMarks<E>, MarkAction> {
-    return this.instance.markBuilders
+    return this.instance.marks
   }
 }

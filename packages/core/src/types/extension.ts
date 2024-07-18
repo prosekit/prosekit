@@ -2,7 +2,7 @@ import type { Schema } from '@prosekit/pm/model'
 
 import type {
   CommandTyping,
-  ToCommandApplier,
+  ToCommandAction,
   ToCommandCreators,
 } from './command'
 import type { Priority } from './priority'
@@ -92,11 +92,19 @@ export type ExtractCommandCreators<E extends Extension> = ToCommandCreators<
 >
 
 /**
+ * Extracts the command actions from an extension type.
+ *
  * @public
  */
-export type ExtractCommandAppliers<E extends Extension> = ToCommandApplier<
+export type ExtractCommandActions<E extends Extension> = ToCommandAction<
   ExtractCommands<E>
 >
+
+/**
+ * @deprecated Use `ExtractCommandActions` instead.
+ */
+export type ExtractCommandAppliers<E extends Extension> =
+  ExtractCommandActions<E>
 
 /**
  * @internal

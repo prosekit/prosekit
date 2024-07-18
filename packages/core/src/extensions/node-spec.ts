@@ -10,7 +10,7 @@ import OrderedMap from 'orderedmap'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
-import type { AttrSpec } from '../types/attrs-spec'
+import type { AttrSpec, AttrsSpec } from '../types/attrs-spec'
 import type { Extension } from '../types/extension'
 import { assert } from '../utils/assert'
 import { isElement } from '../utils/is-element'
@@ -21,7 +21,7 @@ import { isNotNull } from '../utils/is-not-null'
  */
 export interface NodeSpecOptions<
   NodeName extends string = string,
-  A extends Attrs = Attrs,
+  AttrTypes extends Attrs = Attrs,
 > extends NodeSpec {
   /**
    * The name of the node type.
@@ -37,7 +37,7 @@ export interface NodeSpecOptions<
   /**
    * The attributes that nodes of this type get.
    */
-  attrs?: { [K in keyof A]: AttrSpec<A[K]> }
+  attrs?: AttrsSpec<AttrTypes>
 }
 
 /**
@@ -86,16 +86,19 @@ export interface NodeAttrOptions<
  *
  * @public
  */
-export function defineNodeSpec<Node extends string, A extends Attrs = Attrs>(
-  options: NodeSpecOptions<Node, A>,
+export function defineNodeSpec<
+  Node extends string,
+  AttrsTypes extends Attrs = Attrs,
+>(
+  options: NodeSpecOptions<Node, AttrsTypes>,
 ): Extension<{
-  Nodes: { [K in Node]: A }
+  Nodes: { [K in Node]: AttrsTypes }
   Marks: never
   Commands: never
 }> {
   const payload: NodeSpecPayload = [options, undefined]
   return defineFacetPayload(nodeSpecFacet, [payload]) as Extension<{
-    Nodes: { [K in Node]: A }
+    Nodes: { [K in Node]: AttrsTypes }
     Marks: never
     Commands: never
   }>

@@ -6,6 +6,7 @@ import {
   removeMark,
   toggleMark,
   union,
+  type AttrsSpec,
 } from '@prosekit/core'
 import { InputRule } from '@prosekit/pm/inputrules'
 
@@ -22,10 +23,15 @@ export interface LinkAttrs {
   href: string
 }
 
+const attrs: AttrsSpec<LinkAttrs> = {
+  href: {},
+}
+
 export function defineLinkSpec() {
   return defineMarkSpec({
     name: 'link',
     inclusive: false,
+    attrs,
     parseDOM: [
       {
         tag: 'a[href]',
@@ -36,9 +42,6 @@ export function defineLinkSpec() {
         },
       },
     ],
-    attrs: {
-      href: {},
-    },
     toDOM(node) {
       const { href } = node.attrs as LinkAttrs
       return ['a', { href }, 0]

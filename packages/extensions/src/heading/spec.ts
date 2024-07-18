@@ -1,9 +1,7 @@
 import { defineNodeSpec } from '@prosekit/core'
 
-import type { HeadingAttrs } from './types'
-
 export function defineHeadingSpec() {
-  return defineNodeSpec<'heading', HeadingAttrs>({
+  return defineNodeSpec({
     name: 'heading',
     attrs: { level: { default: 1 } },
     content: 'inline*',

@@ -2,14 +2,14 @@ import type {
   Attrs,
   DOMOutputSpec,
   MarkSpec,
-  SchemaSpec,
+  SchemaSpec
 } from '@prosekit/pm/model'
 
 import { ProseKitError } from '../error'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
-import type { AttrSpec } from '../types/attrs-spec'
+import type { AttrSpec, AttrsSpec } from '../types/attrs-spec'
 import type { Extension } from '../types/extension'
 import { isElement } from '../utils/is-element'
 import { isNotNull } from '../utils/is-not-null'
@@ -19,7 +19,7 @@ import { isNotNull } from '../utils/is-not-null'
  */
 export interface MarkSpecOptions<
   MarkName extends string = string,
-  A extends Attrs = Attrs,
+  AttrsTypes extends Attrs = Attrs,
 > extends MarkSpec {
   /**
    * The name of the mark type.
@@ -29,7 +29,7 @@ export interface MarkSpecOptions<
   /**
    * The attributes that marks of this type get.
    */
-  attrs?: { [K in keyof A]: AttrSpec<A[K]> }
+  attrs?: { [K in keyof AttrsTypes]: AttrSpec<AttrsTypes[K]> }
 }
 
 /**
@@ -64,16 +64,19 @@ export interface MarkAttrOptions<
 /**
  * @public
  */
-export function defineMarkSpec<Mark extends string, A extends Attrs = Attrs>(
-  options: MarkSpecOptions<Mark>,
+export function defineMarkSpec<
+  Mark extends string,
+  AttrsTypes extends Attrs = Attrs,
+>(
+  options: MarkSpecOptions<Mark, AttrsTypes>,
 ): Extension<{
-  Marks: { [K in Mark]: A }
+  Marks: AttrsSpec<AttrsTypes>
   Nodes: never
   Commands: never
 }> {
   const payload: MarkSpecPayload = [options, undefined]
   return defineFacetPayload(markSpecFacet, [payload]) as Extension<{
-    Marks: { [K in Mark]: A }
+    Marks: any
     Nodes: never
     Commands: never
   }>

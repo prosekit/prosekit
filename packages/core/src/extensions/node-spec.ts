@@ -92,7 +92,7 @@ export function defineNodeSpec<
 >(
   options: NodeSpecOptions<Node, AttrsType>,
 ): Extension<{
-  Nodes: { [K in Node]: AttrsType }
+  Nodes: { [K in Node]: AttrsSpec<AttrsType> }
   Marks: never
   Commands: never
 }> {

@@ -254,6 +254,9 @@ importers:
       tsup:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.0)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
+      type-fest:
+        specifier: ^4.22.0
+        version: 4.22.0
       typescript:
         specifier: ^5.5.3
         version: 5.5.3

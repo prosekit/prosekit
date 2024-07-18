@@ -8,6 +8,7 @@ import {
   createListPlugins,
   createListSpec,
   listInputRules,
+  type ListAttributes,
 } from 'prosemirror-flat-list'
 
 import { defineInputRule } from '../input-rule'
@@ -26,7 +27,10 @@ export type {
 } from 'prosemirror-flat-list'
 
 export function defineListSpec() {
-  return defineNodeSpec({ ...createListSpec(), name: 'list' })
+  return defineNodeSpec<'list', ListAttributes>({
+    ...createListSpec(),
+    name: 'list',
+  })
 }
 
 export function defineListPlugins() {

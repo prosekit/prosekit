@@ -120,6 +120,8 @@ export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
 export type { CommandAction, CommandTyping } from './types/extension-command'
+export type { ToMarkAction } from './types/extension-mark'
+export type { ToNodeAction } from './types/extension-node'
 export type {
   Extension,
   ExtensionTyping,

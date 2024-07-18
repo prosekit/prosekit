@@ -9,7 +9,7 @@ import { ProseKitError } from '../error'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
-import type { AttrSpec, AttrsSpec } from '../types/attrs-spec'
+import type { AttrSpec } from '../types/attrs-spec'
 import type { Extension } from '../types/extension'
 import { isElement } from '../utils/is-element'
 import { isNotNull } from '../utils/is-not-null'
@@ -70,7 +70,7 @@ export function defineMarkSpec<
 >(
   options: MarkSpecOptions<Mark, AttrsType>,
 ): Extension<{
-  Marks: { [K in Mark]: AttrsSpec<AttrsType> }
+  Marks: { [K in Mark]: AttrsType }
   Nodes: never
   Commands: never
 }> {

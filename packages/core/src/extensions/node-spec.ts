@@ -88,17 +88,17 @@ export interface NodeAttrOptions<
  */
 export function defineNodeSpec<
   Node extends string,
-  AttrsTypes extends Attrs = Attrs,
+  AttrsType extends Attrs = Attrs,
 >(
-  options: NodeSpecOptions<Node, AttrsTypes>,
+  options: NodeSpecOptions<Node, AttrsType>,
 ): Extension<{
-  Nodes: { [K in Node]: AttrsTypes }
+  Nodes: { [K in Node]: AttrsType }
   Marks: never
   Commands: never
 }> {
   const payload: NodeSpecPayload = [options, undefined]
   return defineFacetPayload(nodeSpecFacet, [payload]) as Extension<{
-    Nodes: { [K in Node]: AttrsTypes }
+    Nodes: any
     Marks: never
     Commands: never
   }>

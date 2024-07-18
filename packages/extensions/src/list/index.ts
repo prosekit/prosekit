@@ -8,13 +8,13 @@ import {
   createListPlugins,
   createListSpec,
   listInputRules,
-  type ListAttributes,
 } from 'prosemirror-flat-list'
 
 import { defineInputRule } from '../input-rule'
 
 import { defineListCommands } from './commands'
 import { defineListKeymap } from './keymap'
+import type { ListAttrs } from './types'
 
 export { ListDOMSerializer } from 'prosemirror-flat-list'
 export type {
@@ -27,7 +27,7 @@ export type {
 } from 'prosemirror-flat-list'
 
 export function defineListSpec() {
-  return defineNodeSpec<'list', ListAttributes>({
+  return defineNodeSpec<'list', ListAttrs>({
     ...createListSpec(),
     name: 'list',
   })
@@ -54,4 +54,4 @@ export function defineList() {
   ])
 }
 
-export { defineListCommands, defineListKeymap }
+export { defineListCommands, defineListKeymap, type ListAttrs }

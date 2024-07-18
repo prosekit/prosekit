@@ -1,3 +1,6 @@
+/**
+ * The attributes of a list node.
+ */
 export interface ListAttrs {
   /**
    * The kind of list node. Can be `"bullet"`, `"ordered"`, `"task"` or `"toggle"`.
@@ -16,3 +19,4 @@ export interface ListAttrs {
    */
   collapsed?: boolean
 }
+

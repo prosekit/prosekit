@@ -10,10 +10,10 @@ import {
   subtractFacetNode,
   unionFacetNode,
 } from '../facets/facet-node'
-import { type CommandApplier, type CommandCreator } from '../types/command'
+import type { CommandAction, CommandCreator } from '../types/command'
 import type {
   Extension,
-  ExtractCommandAppliers,
+  ExtractCommandActions,
   ExtractMarks,
   ExtractNodes,
 } from '../types/extension'
@@ -95,7 +95,7 @@ export class EditorInstance {
   schema: Schema
   nodeBuilders: Record<string, NodeAction>
   markBuilders: Record<string, MarkAction>
-  commandAppliers: Record<string, CommandApplier> = {}
+  commandActions: Record<string, CommandAction> = {}
 
   private tree: FacetNode
   private directEditorProps: DirectEditorProps
@@ -236,14 +236,14 @@ export class EditorInstance {
     name: string,
     commandCreator: CommandCreator<Args>,
   ): void {
-    const applier: CommandApplier<Args> = (...args: Args) => {
+    const action: CommandAction<Args> = (...args: Args) => {
       const view = this.view
       assert(view, `Cannot call command "${name}" before the editor is mounted`)
       const command = commandCreator(...args)
       return command(view.state, view.dispatch.bind(view), view)
     }
 
-    applier.canApply = (...args: Args) => {
+    action.canApply = (...args: Args) => {
       const view = this.view
       if (!view) {
         return false
@@ -253,11 +253,11 @@ export class EditorInstance {
       return command(view.state, undefined, view)
     }
 
-    this.commandAppliers[name] = applier as CommandApplier
+    this.commandActions[name] = action as CommandAction
   }
 
   public removeCommand(name: string) {
-    delete this.commandAppliers[name]
+    delete this.commandActions[name]
   }
 }
 
@@ -312,8 +312,8 @@ export class Editor<E extends Extension = any> {
   /**
    * All commands defined by the editor.
    */
-  get commands(): ExtractCommandAppliers<E> {
-    return this.instance.commandAppliers as ExtractCommandAppliers<E>
+  get commands(): ExtractCommandActions<E> {
+    return this.instance.commandActions as ExtractCommandActions<E>
   }
 
   /**

@@ -9,6 +9,7 @@ import { ProseKitError } from '../error'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
+import type { AttrSpec } from '../types/attrs-spec'
 import type { Extension } from '../types/extension'
 import { isElement } from '../utils/is-element'
 import { isNotNull } from '../utils/is-not-null'
@@ -16,31 +17,38 @@ import { isNotNull } from '../utils/is-not-null'
 /**
  * @public
  */
-export interface MarkSpecOptions<MarkName extends string = string>
-  extends MarkSpec {
+export interface MarkSpecOptions<
+  MarkName extends string = string,
+  A extends Attrs = Attrs,
+> extends MarkSpec {
+  /**
+   * The name of the mark type.
+   */
   name: MarkName
+
+  /**
+   * The attributes that marks of this type get.
+   */
+  attrs?: { [K in keyof A]: AttrSpec<A[K]> }
 }
 
 /**
  * @public
  */
-export interface MarkAttrOptions {
+export interface MarkAttrOptions<
+  MarkName extends string = string,
+  AttrName extends string = string,
+  AttrType = any,
+> extends AttrSpec<AttrType> {
   /**
    * The name of the mark type.
    */
-  type: string
+  type: MarkName
 
   /**
    * The name of the attribute.
    */
-  attr: string
-
-  /**
-   * The default value for this attribute, to use when no explicit value is
-   * provided. Attributes that have no default must be provided whenever a mark
-   * of a type that has them is created.
-   */
-  default?: any
+  attr: AttrName
 
   /**
    * Returns the attribute key and value to be set on the DOM node.
@@ -74,9 +82,23 @@ export function defineMarkSpec<Mark extends string, A extends Attrs = Attrs>(
 /**
  * @public
  */
-export function defineMarkAttr(options: MarkAttrOptions): Extension {
+export function defineMarkAttr<
+  MarkType extends string = string,
+  AttrName extends string = string,
+  AttrType = any,
+>(
+  options: MarkAttrOptions<MarkType, AttrName, AttrType>,
+): Extension<{
+  Nodes: never
+  Marks: { [K in MarkType]: AttrType }
+  Commands: never
+}> {
   const payload: MarkSpecPayload = [undefined, options]
-  return defineFacetPayload(markSpecFacet, [payload])
+  return defineFacetPayload(markSpecFacet, [payload]) as Extension<{
+    Nodes: never
+    Marks: any
+    Commands: never
+  }>
 }
 
 type MarkSpecPayload = [

@@ -1,7 +1,5 @@
 import type { Command } from '@prosekit/pm/state'
 
-
-
 /**
  * A function to apply a command to the editor. It will return `true` if the command was applied, and `false` otherwise.
  *
@@ -18,16 +16,12 @@ export type CommandCreator<Args extends any[] = any[]> = (
   ...arg: Args
 ) => Command
 
-
 /**
  * @internal
  */
 export interface CommandTyping {
-  [name: string]: any[];
+  [name: string]: any[]
 }
-
-
-
 
 export interface CommandCreators {
   [name: string]: CommandCreator
@@ -40,4 +34,3 @@ export type ToCommandCreators<T extends CommandTyping> = {
 export type ToCommandAction<T extends CommandTyping> = {
   [K in keyof T]: CommandAction<T[K]>
 }
-

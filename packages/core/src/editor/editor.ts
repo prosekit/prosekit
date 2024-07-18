@@ -10,7 +10,6 @@ import {
   subtractFacetNode,
   unionFacetNode,
 } from '../facets/facet-node'
-import type { CommandAction, CommandCreator } from '../types/extension-command'
 import type {
   Extension,
   ExtractCommandActions,
@@ -19,6 +18,7 @@ import type {
   ExtractNodeActions,
   ExtractNodeNames,
 } from '../types/extension'
+import type { CommandAction, CommandCreator } from '../types/extension-command'
 import type { NodeJSON, SelectionJSON } from '../types/model'
 import { assert } from '../utils/assert'
 import { deepEquals } from '../utils/deep-equals'

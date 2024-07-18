@@ -13,4 +13,3 @@ export interface MarkTyping {
 export type ToMarkAction<T extends MarkTyping> = {
   [K in keyof T]: MarkAction<T[K]>
 }
-

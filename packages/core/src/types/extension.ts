@@ -7,6 +7,7 @@ import type {
   ToCommandCreators,
 } from './command'
 import type { Priority } from './priority'
+import type { SimplifyDeeper } from './simplify-deeper'
 import type { SimplifyUnion } from './simplify-union'
 
 /**
@@ -80,15 +81,15 @@ export type PickKnownCommandTyping<T extends CommandTyping> = [
 /**
  * @public
  */
-export type ExtractNodes<E extends Extension> = SimplifyUnion<
-  ExtractTyping<E>['Nodes']
+export type ExtractNodes<E extends Extension> = SimplifyDeeper<
+  SimplifyUnion<ExtractTyping<E>['Nodes']>
 >
 
 /**
  * @public
  */
-export type ExtractMarks<E extends Extension> = SimplifyUnion<
-  ExtractTyping<E>['Marks']
+export type ExtractMarks<E extends Extension> = SimplifyDeeper<
+  SimplifyUnion<ExtractTyping<E>['Marks']>
 >
 
 /**

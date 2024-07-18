@@ -1,6 +1,5 @@
 import type {
   AttributeSpec,
-  Attrs,
   DOMOutputSpec,
   NodeSpec,
   SchemaSpec,
@@ -10,7 +9,7 @@ import OrderedMap from 'orderedmap'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
-import type { AttrSpec } from '../types/attrs-spec'
+import type { AnyAttrs, AttrSpec } from '../types/attrs'
 import type { Extension } from '../types/extension'
 import { assert } from '../utils/assert'
 import { isElement } from '../utils/is-element'
@@ -21,7 +20,7 @@ import { isNotNull } from '../utils/is-not-null'
  */
 export interface NodeSpecOptions<
   NodeName extends string = string,
-  AttrsType extends Attrs = Attrs,
+  Attrs extends AnyAttrs = AnyAttrs,
 > extends NodeSpec {
   /**
    * The name of the node type.
@@ -38,7 +37,7 @@ export interface NodeSpecOptions<
    * The attributes that nodes of this type get.
    */
   attrs?: {
-    [key in keyof AttrsType]: AttrSpec<AttrsType[key]>
+    [key in keyof Attrs]: AttrSpec<Attrs[key]>
   }
 }
 
@@ -90,11 +89,11 @@ export interface NodeAttrOptions<
  */
 export function defineNodeSpec<
   Node extends string,
-  AttrsType extends Attrs = Attrs,
+  Attrs extends AnyAttrs = AnyAttrs,
 >(
-  options: NodeSpecOptions<Node, AttrsType>,
+  options: NodeSpecOptions<Node, Attrs>,
 ): Extension<{
-  Nodes: { [K in Node]: AttrsType }
+  Nodes: { [K in Node]: Attrs }
   Marks: never
   Commands: never
 }> {

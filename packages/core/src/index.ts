@@ -19,7 +19,6 @@ export {
 } from './commands/unset-block-type'
 export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark'
 export { wrap, type WrapOptions } from './commands/wrap'
-export type { AttrSpec } from './types/attrs-spec'
 export type {
   MarkAction,
   MarkBuilder,
@@ -119,31 +118,32 @@ export {
 export { defineText } from './extensions/text'
 export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
+export type { AnyAttrs, AttrSpec } from './types/attrs'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
-export type { CommandAction, CommandTyping } from './types/extension-command'
-export type { ToMarkAction, MarkTyping } from './types/extension-mark'
-export type { ToNodeAction, NodeTyping } from './types/extension-node'
 export type {
   Extension,
   ExtensionTyping,
   ExtractCommandActions,
   ExtractCommandAppliers,
   ExtractCommandCreators,
-  ExtractMarks,
   ExtractMarkActions,
+  ExtractMarks,
   ExtractNodeActions,
   ExtractNodes,
   UnionExtension,
 } from './types/extension'
+export type { CommandAction, CommandTyping } from './types/extension-command'
+export type { MarkTyping, ToMarkAction } from './types/extension-mark'
+export type { NodeTyping, ToNodeAction } from './types/extension-node'
 export type {
   NodeJSON,
   SelectionJSON,
   StateJSON,
   StepJSON,
 } from './types/model'
+export type { PickSubType } from './types/pick-sub-type'
 export { Priority } from './types/priority'
 export type { SimplifyDeeper } from './types/simplify-deeper'
-export type { PickSubType } from './types/pick-sub-type'
 export type { SimplifyUnion } from './types/simplify-union'
 export { assert } from './utils/assert'
 export { canUseRegexLookbehind } from './utils/can-use-regex-lookbehind'

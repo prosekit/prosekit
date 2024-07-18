@@ -1,3 +1,12 @@
+import type { Attrs } from '@prosekit/pm/model'
+
+/**
+ * An object holding the attributes of a node.
+
+ * @public
+ */
+export type AnyAttrs = Attrs
+
 /**
  * @public
  */

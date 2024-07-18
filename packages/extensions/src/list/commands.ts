@@ -18,8 +18,8 @@ function insertList(attrs?: ListAttributes): Command {
 
 /**
  * Defines list commands.
- * 
- * @internal 
+ *
+ * @internal
  */
 export function defineListCommands() {
   return defineCommands({

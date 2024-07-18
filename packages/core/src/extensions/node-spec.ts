@@ -10,6 +10,7 @@ import OrderedMap from 'orderedmap'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
+import type { AttrSpec } from '../types/attrs-spec'
 import type { Extension } from '../types/extension'
 import { assert } from '../utils/assert'
 import { isElement } from '../utils/is-element'
@@ -18,32 +19,44 @@ import { isNotNull } from '../utils/is-not-null'
 /**
  * @public
  */
-export interface NodeSpecOptions<NodeName extends string = string>
-  extends NodeSpec {
+export interface NodeSpecOptions<
+  NodeName extends string = string,
+  A extends Attrs = Attrs,
+> extends NodeSpec {
+  /**
+   * The name of the node type.
+   */
   name: NodeName
+
+  /**
+   * Whether this is the top-level node type. Only one node type can be the
+   * top-level node type in a schema.
+   */
   topNode?: boolean
+
+  /**
+   * The attributes that nodes of this type get.
+   */
+  attrs?: { [K in keyof A]: AttrSpec<A[K]> }
 }
 
 /**
  * @public
  */
-export interface NodeAttrOptions {
+export interface NodeAttrOptions<
+  NodeName extends string = string,
+  AttrName extends string = string,
+  AttrType = any,
+> extends AttrSpec<AttrType> {
   /**
    * The name of the node type.
    */
-  type: string
+  type: NodeName
 
   /**
    * The name of the attribute.
    */
-  attr: string
-
-  /**
-   * The default value for this attribute, to use when no explicit value is
-   * provided. Attributes that have no default must be provided whenever a node
-   * of a type that has them is created.
-   */
-  default?: any
+  attr: AttrName
 
   /**
    * Whether the attribute should be kept when the node is split. Set it to
@@ -74,7 +87,7 @@ export interface NodeAttrOptions {
  * @public
  */
 export function defineNodeSpec<Node extends string, A extends Attrs = Attrs>(
-  options: NodeSpecOptions<Node>,
+  options: NodeSpecOptions<Node, A>,
 ): Extension<{
   Nodes: { [K in Node]: A }
   Marks: never
@@ -93,9 +106,23 @@ export function defineNodeSpec<Node extends string, A extends Attrs = Attrs>(
  *
  * @public
  */
-export function defineNodeAttr(options: NodeAttrOptions): Extension {
+export function defineNodeAttr<
+  NodeType extends string = string,
+  AttrName extends string = string,
+  AttrType = any,
+>(
+  options: NodeAttrOptions<NodeType, AttrName, AttrType>,
+): Extension<{
+  Nodes: { [K in NodeType]: AttrType }
+  Marks: never
+  Commands: never
+}> {
   const payload: NodeSpecPayload = [undefined, options]
-  return defineFacetPayload(nodeSpecFacet, [payload])
+  return defineFacetPayload(nodeSpecFacet, [payload]) as Extension<{
+    Nodes: any
+    Marks: never
+    Commands: never
+  }>
 }
 
 type NodeSpecPayload = [

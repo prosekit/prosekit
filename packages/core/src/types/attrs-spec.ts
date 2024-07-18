@@ -1,5 +1,3 @@
-import type { Attrs } from '@prosekit/pm/model'
-
 /**
  * @public
  */
@@ -22,11 +20,4 @@ export type AttrSpec<AttrType = any> = {
    * one of those types.
    */
   validate?: string | ((value: unknown) => void)
-}
-
-/**
- * @public
- */
-export type AttrsSpec<AttrTypes extends Attrs = Attrs> = {
-  [key in keyof AttrTypes]: AttrSpec<AttrTypes[key]>
 }

@@ -19,7 +19,7 @@ export {
 } from './commands/unset-block-type'
 export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark'
 export { wrap, type WrapOptions } from './commands/wrap'
-export type { AttrSpec, AttrsSpec } from './types/attrs-spec'
+export type { AttrSpec,   } from './types/attrs-spec'
 export type {
   MarkAction,
   MarkBuilder,

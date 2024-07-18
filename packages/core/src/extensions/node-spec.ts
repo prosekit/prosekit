@@ -10,7 +10,7 @@ import OrderedMap from 'orderedmap'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
-import type { AttrSpec, AttrsSpec } from '../types/attrs-spec'
+import type { AttrSpec } from '../types/attrs-spec'
 import type { Extension } from '../types/extension'
 import { assert } from '../utils/assert'
 import { isElement } from '../utils/is-element'
@@ -21,7 +21,7 @@ import { isNotNull } from '../utils/is-not-null'
  */
 export interface NodeSpecOptions<
   NodeName extends string = string,
-  AttrTypes extends Attrs = Attrs,
+  AttrsType extends Attrs = Attrs,
 > extends NodeSpec {
   /**
    * The name of the node type.
@@ -37,7 +37,9 @@ export interface NodeSpecOptions<
   /**
    * The attributes that nodes of this type get.
    */
-  attrs?: AttrsSpec<AttrTypes>
+  attrs?: {
+    [key in keyof AttrsType]: AttrSpec<AttrsType[key]>
+  }
 }
 
 /**

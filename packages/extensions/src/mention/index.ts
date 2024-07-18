@@ -3,7 +3,6 @@ import {
   defineNodeSpec,
   insertNode,
   union,
-  type AttrsSpec,
 } from '@prosekit/core'
 
 export interface MentionAttrs {
@@ -12,21 +11,19 @@ export interface MentionAttrs {
   kind: string
 }
 
-const attrs: AttrsSpec<MentionAttrs> = {
-  id: {},
-  value: {},
-  kind: { default: '' },
-}
-
 /**
  * @public
  */
 export function defineMentionSpec() {
-  return defineNodeSpec({
+  return defineNodeSpec<'mention', MentionAttrs>({
     name: 'mention',
     atom: true,
     group: 'inline',
-    attrs,
+    attrs: {
+      id: {},
+      value: {},
+      kind: { default: '' },
+    },
     inline: true,
     leafText: (node) => (node.attrs as MentionAttrs).value.toString(),
     parseDOM: [

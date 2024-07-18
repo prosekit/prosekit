@@ -121,8 +121,8 @@ export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
 export type { CommandAction, CommandTyping } from './types/extension-command'
-export type { ToMarkAction } from './types/extension-mark'
-export type { ToNodeAction } from './types/extension-node'
+export type { ToMarkAction, MarkTyping } from './types/extension-mark'
+export type { ToNodeAction, NodeTyping } from './types/extension-node'
 export type {
   Extension,
   ExtensionTyping,
@@ -143,6 +143,7 @@ export type {
 } from './types/model'
 export { Priority } from './types/priority'
 export type { SimplifyDeeper } from './types/simplify-deeper'
+export type { PickSubType } from './types/pick-sub-type'
 export type { SimplifyUnion } from './types/simplify-union'
 export { assert } from './utils/assert'
 export { canUseRegexLookbehind } from './utils/can-use-regex-lookbehind'

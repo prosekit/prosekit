@@ -113,7 +113,7 @@ export function defineNodeAttr<
 >(
   options: NodeAttrOptions<NodeType, AttrName, AttrType>,
 ): Extension<{
-  Nodes: { [K in NodeType]: AttrType }
+  Nodes: { [K in NodeType]: { [K in AttrName]: AttrType } }
   Marks: never
   Commands: never
 }> {

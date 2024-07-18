@@ -8,6 +8,7 @@ import type {
 import type { MarkTyping, ToMarkAction } from './extension-mark'
 import type { NodeTyping, ToNodeAction } from './extension-node'
 import type { PickStringLiteral } from './pick-string-literal'
+import type { PickSubType } from './pick-sub-type'
 import type { Priority } from './priority'
 import type { SimplifyDeeper } from './simplify-deeper'
 import type { SimplifyUnion } from './simplify-union'
@@ -49,34 +50,11 @@ export interface Extension<
 export type ExtractTyping<E extends Extension> =
   E extends Extension<ExtensionTyping<infer N, infer M, infer C>>
     ? ExtensionTyping<
-        PickKnownNodeTyping<N>,
-        PickKnownMarkTyping<M>,
-        PickKnownCommandTyping<C>
+        PickSubType<N, NodeTyping>,
+        PickSubType<M, MarkTyping>,
+        PickSubType<C, CommandTyping>
       >
     : never
-
-/**
- * @internal
- */
-export type PickKnownMarkTyping<T extends MarkTyping> = [MarkTyping] extends [T]
-  ? never
-  : T
-
-/**
- * @internal
- */
-export type PickKnownNodeTyping<T extends NodeTyping> = [NodeTyping] extends [T]
-  ? never
-  : T
-
-/**
- * @internal
- */
-export type PickKnownCommandTyping<T extends CommandTyping> = [
-  CommandTyping,
-] extends [T]
-  ? never
-  : T
 
 /**
  * @public

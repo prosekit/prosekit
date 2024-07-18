@@ -1,21 +1,7 @@
 import { test } from 'vitest'
 
 import { assertTypeEqual } from './assert-type-equal'
-import type {
-  Extension,
-  PickKnownCommandTyping,
-  UnionExtension,
-} from './extension'
-
-test('PickKnownCommandTyping', () => {
-  assertTypeEqual<
-    PickKnownCommandTyping<{
-      foo: ['bar']
-    }>,
-    { foo: ['bar'] }
-  >(true)
-  assertTypeEqual<PickKnownCommandTyping<{ [x: string]: any }>, never>(true)
-})
+import type { Extension, UnionExtension } from './extension'
 
 test('ExtractTyping', () => {
   type E1 = Extension<{

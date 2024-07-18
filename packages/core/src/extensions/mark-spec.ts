@@ -1,4 +1,9 @@
-import type { DOMOutputSpec, MarkSpec, SchemaSpec } from '@prosekit/pm/model'
+import type {
+  Attrs,
+  DOMOutputSpec,
+  MarkSpec,
+  SchemaSpec,
+} from '@prosekit/pm/model'
 
 import { ProseKitError } from '../error'
 import { defineFacet } from '../facets/facet'
@@ -51,16 +56,16 @@ export interface MarkAttrOptions {
 /**
  * @public
  */
-export function defineMarkSpec<Mark extends string>(
+export function defineMarkSpec<Mark extends string, A extends Attrs = Attrs>(
   options: MarkSpecOptions<Mark>,
 ): Extension<{
-  Marks: Mark
+  Marks: { [K in Mark]: A }
   Nodes: never
   Commands: never
 }> {
   const payload: MarkSpecPayload = [options, undefined]
   return defineFacetPayload(markSpecFacet, [payload]) as Extension<{
-    Marks: Mark
+    Marks: { [K in Mark]: A }
     Nodes: never
     Commands: never
   }>

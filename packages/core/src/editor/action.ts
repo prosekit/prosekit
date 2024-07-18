@@ -30,8 +30,8 @@ export type NodeChild = ProseMirrorNode | string | NodeChild[]
  *
  * @public
  */
-export interface NodeAction {
-  (attrs: Attrs | null, ...children: NodeChild[]): ProseMirrorNode
+export interface NodeAction<T extends Attrs = Attrs> {
+  (attrs: T | null, ...children: NodeChild[]): ProseMirrorNode
   (...children: NodeChild[]): ProseMirrorNode
 
   /**
@@ -39,7 +39,7 @@ export interface NodeAction {
    * optional `attrs` parameter is provided, it will check if the node is active
    * with the given attributes.
    */
-  isActive: (attrs?: Attrs) => boolean
+  isActive: (attrs?: T) => boolean
 }
 
 /**
@@ -51,8 +51,8 @@ export interface NodeAction {
  *
  * @public
  */
-export interface MarkAction {
-  (attrs: Attrs | null, ...children: NodeChild[]): ProseMirrorNode[]
+export interface MarkAction<T extends Attrs = Attrs> {
+  (attrs: T | null, ...children: NodeChild[]): ProseMirrorNode[]
   (...children: NodeChild[]): ProseMirrorNode[]
 
   /**
@@ -60,7 +60,7 @@ export interface MarkAction {
    * optional `attrs` parameter is provided, it will check if the mark is active
    * with the given attributes.
    */
-  isActive: (attrs?: Attrs) => boolean
+  isActive: (attrs?: T) => boolean
 }
 
 /**

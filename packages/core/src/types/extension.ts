@@ -5,6 +5,8 @@ import type {
   CommandTyping,
   ToCommandAction,
   ToCommandCreators,
+  ToMarkAction,
+  ToNodeAction,
 } from './command'
 import type { Priority } from './priority'
 import type { SimplifyDeeper } from './simplify-deeper'
@@ -56,9 +58,13 @@ export type ExtractTyping<E extends Extension> =
 /**
  * @internal
  */
-export type PickStringLiteral<T extends string> = [string] extends [T]
+export type PickStringLiteral<T extends string | number | symbol> = [
+  string,
+] extends [T]
   ? never
-  : T
+  : T extends string
+    ? T
+    : never
 
 /**
  * @internal
@@ -88,8 +94,22 @@ export type ExtractNodes<E extends Extension> = SimplifyDeeper<
 /**
  * @public
  */
+export type ExtractNodeNames<E extends Extension> = PickStringLiteral<
+  keyof ExtractNodes<E>
+>
+
+/**
+ * @public
+ */
 export type ExtractMarks<E extends Extension> = SimplifyDeeper<
   SimplifyUnion<ExtractTyping<E>['Marks']>
+>
+
+/**
+ * @public
+ */
+export type ExtractMarkNames<E extends Extension> = PickStringLiteral<
+  keyof ExtractMarks<E>
 >
 
 /**
@@ -107,12 +127,30 @@ export type ExtractCommandCreators<E extends Extension> = ToCommandCreators<
 >
 
 /**
- * Extracts the command actions from an extension type.
+ * Extracts the {@link CommandAction}s from an extension type.
  *
  * @public
  */
 export type ExtractCommandActions<E extends Extension> = ToCommandAction<
   ExtractCommands<E>
+>
+
+/**
+ * Extracts the {@link NodeAction}s from an extension type.
+ *
+ * @public
+ */
+export type ExtractNodeActions<E extends Extension> = ToNodeAction<
+  ExtractNodes<E>
+>
+
+/**
+ * Extracts the {@link MarkAction}s from an extension type.
+ *
+ * @public
+ */
+export type ExtractMarkActions<E extends Extension> = ToMarkAction<
+  ExtractMarks<E>
 >
 
 /**

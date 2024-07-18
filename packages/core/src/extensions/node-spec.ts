@@ -1,5 +1,6 @@
 import type {
   AttributeSpec,
+  Attrs,
   DOMOutputSpec,
   NodeSpec,
   SchemaSpec,
@@ -72,16 +73,16 @@ export interface NodeAttrOptions {
  *
  * @public
  */
-export function defineNodeSpec<Node extends string>(
+export function defineNodeSpec<Node extends string, A extends Attrs = Attrs>(
   options: NodeSpecOptions<Node>,
 ): Extension<{
-  Nodes: Node
+  Nodes: { [K in Node]: A }
   Marks: never
   Commands: never
 }> {
   const payload: NodeSpecPayload = [options, undefined]
   return defineFacetPayload(nodeSpecFacet, [payload]) as Extension<{
-    Nodes: Node
+    Nodes: { [K in Node]: A }
     Marks: never
     Commands: never
   }>

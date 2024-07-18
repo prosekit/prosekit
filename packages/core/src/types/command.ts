@@ -1,5 +1,7 @@
 import type { Command } from '@prosekit/pm/state'
 
+import type { MarkAction, NodeAction } from '../editor/action'
+
 /**
  * A function to apply a command to the editor. It will return `true` if the command was applied, and `false` otherwise.
  *
@@ -40,4 +42,12 @@ export type ToCommandCreators<T extends CommandTyping> = {
 
 export type ToCommandAction<T extends CommandTyping> = {
   [K in keyof T]: CommandAction<T[K]>
+}
+
+export type ToNodeAction<T extends AttrsTyping> = {
+  [K in keyof T]: NodeAction<T[K]>
+}
+
+export type ToMarkAction<T extends AttrsTyping> = {
+  [K in keyof T]: MarkAction<T[K]>
 }

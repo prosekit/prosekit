@@ -2,7 +2,7 @@ import type { Schema } from '@prosekit/pm/model'
 import type { EditorStateConfig } from '@prosekit/pm/state'
 import type { DirectEditorProps } from '@prosekit/pm/view'
 
-import type { CommandCreators } from '../types/command'
+import type { CommandCreators } from '../types/extension-command'
 
 import { Facet } from './facet'
 

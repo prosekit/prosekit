@@ -1,5 +1,27 @@
 # prosekit
 
+## 0.9.9
+
+### Patch Changes
+
+- [`0f5a8e6`](https://github.com/ocavue/prosekit/commit/0f5a8e6eafa455ba5023f780b1b9fdd14064675d) ![](https://prosekit.dev/b/core)
+
+  Rename type `NodeBuilder` to `NodeAction`.
+
+  Rename type `MarkBuilder` to `MarkAction`.
+
+- [`333c9bb`](https://github.com/ocavue/prosekit/commit/333c9bb286762ec806aa6f3af79f2946f4aa6855) ![](https://prosekit.dev/b/core)
+
+  Rename type `CommandApplier` to `CommandAction`.
+
+- [`e9798f5`](https://github.com/ocavue/prosekit/commit/e9798f5005636039cb48fc96379f8a5e082f94e5) ![](https://prosekit.dev/b/core)
+
+  `defineNodeSpec` and `defineMarkSpec` now accept an `Attrs` type parameter. This allows you to type the attributes of your nodes and marks.
+
+- [`ae4c940`](https://github.com/ocavue/prosekit/commit/ae4c940144dfe3f8b950cc7ed7765999c8b74dbb) ![](https://prosekit.dev/b/extensions)
+
+  Add key bindings `Tab` and `Shift-Tab` for incrementing and decrementing list indentation.
+
 ## 0.9.8
 
 ### Patch Changes

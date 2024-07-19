@@ -230,8 +230,8 @@ importers:
         specifier: ^1.8.1
         version: 1.8.1
       prosemirror-flat-list:
-        specifier: ^0.5.3
-        version: 0.5.3
+        specifier: ^0.5.4
+        version: 0.5.4
       prosemirror-highlight:
         specifier: ^0.8.0
         version: 0.8.0(@types/hast@3.0.4)(prosemirror-model@1.22.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)(prosemirror-view@1.33.9)(shiki@1.10.3)
@@ -5446,8 +5446,8 @@ packages:
   prosemirror-dropcursor@1.8.1:
     resolution: {integrity: sha512-M30WJdJZLyXHi3N8vxN6Zh5O8ZBbQCz0gURTfPmTIBNQ5pxrdU7A58QkNqfa98YEjSAL1HUyyU34f6Pm5xBSGw==}
 
-  prosemirror-flat-list@0.5.3:
-    resolution: {integrity: sha512-9otmxGutu97MCl4R+JWSnRCCmc+hinY/X9wgqLLjdNPh+io7xNbP5MMJWMKBHX5JBTHbqOmw3SHgc66e+ieJmQ==}
+  prosemirror-flat-list@0.5.4:
+    resolution: {integrity: sha512-37hyy9ZIE9PktGQS+yI71icW3QuG7Dz/1CoPOEcZVrzG95r16f+VTiX8BzZ4h3h848uF2MKxCqY5LtU9ZoIUCg==}
 
   prosemirror-highlight@0.8.0:
     resolution: {integrity: sha512-b5BPX7z57fJuKS+JvxJa0gaQ4GWam28KqXMhef6VYLuCyjM54XDwgn81PoxWUzy82MopCFBwOls+7Ls8uQBqFw==}
@@ -12464,7 +12464,7 @@ snapshots:
       prosemirror-transform: 1.9.0
       prosemirror-view: 1.33.9
 
-  prosemirror-flat-list@0.5.3:
+  prosemirror-flat-list@0.5.4:
     dependencies:
       prosemirror-commands: 1.5.2
       prosemirror-inputrules: 1.4.0

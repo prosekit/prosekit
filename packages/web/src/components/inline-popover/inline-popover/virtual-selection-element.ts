@@ -1,9 +1,8 @@
 import type { ReferenceElement } from '@floating-ui/dom'
-import { isTextSelection } from '@prosekit/core'
+import { isInCodeBlock, isTextSelection } from '@prosekit/core'
 import type { TextSelection } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { isInCodeBlock } from '../../../utils/is-in-code-block'
 
 export function getVirtualSelectionElement(
   view: EditorView,

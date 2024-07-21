@@ -1,5 +1,6 @@
 import type { ReferenceElement } from '@floating-ui/dom'
 import { isTextSelection } from '@prosekit/core'
+import type { TextSelection } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { isInCodeBlock } from '../../../utils/is-in-code-block'
@@ -16,7 +17,8 @@ export function getVirtualSelectionElement(
   if (
     !selection.empty &&
     !isInCodeBlock(selection) &&
-    isTextSelection(selection)
+    isTextSelection(selection) &&
+    containsInlineNode(selection)
   ) {
     const decoration = getInlineDecoration(view)
     if (decoration) {
@@ -38,7 +40,18 @@ export function getVirtualSelectionElement(
   return null
 }
 
-function getDomRange() {
+function containsInlineNode(selection: TextSelection) {
+  const doc = selection.$anchor.doc
+  const { from, to } = selection
+  let found = false
+  doc.nodesBetween(from, to, (node) => {
+    if (found) return false
+    if (node.isInline) found = true
+  })
+  return found
+}
+
+function getDomRange(): Range | undefined {
   const selection = window.getSelection()
   if (!selection || selection.isCollapsed) {
     return
@@ -56,7 +69,7 @@ function getDomRange() {
   return range
 }
 
-function getInlineDecoration(view: EditorView) {
+function getInlineDecoration(view: EditorView): ReferenceElement | undefined {
   const match = view.dom.querySelectorAll('.prosekit-virtual-selection')
 
   if (match.length === 0) {

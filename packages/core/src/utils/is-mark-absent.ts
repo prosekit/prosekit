@@ -5,7 +5,7 @@ import { includesMark } from './includes-mark'
 /**
  * Returns true if the given mark is missing in some part of the range.
  * Returns false if the entire range has the given mark.
- * Returns null if the mark is not allowed in the range.
+ * Returns true if the mark is not allowed in the range.
  *
  * @internal
  */
@@ -15,7 +15,7 @@ export function isMarkAbsent(
   to: number,
   markType: MarkType,
   attrs?: Attrs | null,
-): boolean | null {
+): boolean {
   let missing = false
   let available = false
 
@@ -35,5 +35,5 @@ export function isMarkAbsent(
       }
     }
   })
-  return available ? missing : null
+  return available ? missing : true
 }

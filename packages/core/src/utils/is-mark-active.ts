@@ -19,7 +19,6 @@ export function isMarkActive(
     const marks = state.storedMarks || $from.marks()
     return includesMark(marks, markType, attrs)
   } else {
-    const absent = isMarkAbsent(state.doc, from, to, markType, attrs)
-    return absent === null ? false : !absent
+    return !isMarkAbsent(state.doc, from, to, markType, attrs)
   }
 }

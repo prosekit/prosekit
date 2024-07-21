@@ -2,6 +2,7 @@ import { expect, test, type Page } from '@playwright/test'
 
 import {
   emptyEditor,
+  getSelectedHtml,
   getSelectedText,
   testStory,
   waitForEditor,
@@ -38,6 +39,33 @@ testStory(['inline-menu', 'full'], () => {
     await page.keyboard.press('Escape')
     await expect(mainMenu).toBeHidden()
     await expect(linkMenu).toBeHidden()
+  })
+
+  test('multiple empty paragraphs selection', async ({ page }) => {
+    const { editor, mainMenu, selectTextFromEnd } = await setup(page)
+
+    const countSelectedParagraphs = async () => {
+      const html = await getSelectedHtml(page)
+      return html.split('<p>').length - 1
+    }
+
+    // Initially, the menu is hidden, and no paragraph is selected
+    await expect(mainMenu).toBeHidden()
+    expect(await countSelectedParagraphs()).toEqual(0)
+
+    // Press Enter to create paragraphs
+    await editor.focus()
+    for (let i = 0; i < 6; i++) {
+      await page.keyboard.press('Enter')
+    }
+    expect(await countSelectedParagraphs()).toEqual(0)
+
+    // Select empty paragraphs
+    await selectTextFromEnd(5)
+    expect(await countSelectedParagraphs()).toBeGreaterThan(3)
+
+    // The menu should still be hidden
+    await expect(mainMenu).toBeHidden()
   })
 
   test('inline mark', async ({ page }) => {

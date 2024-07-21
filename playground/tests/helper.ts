@@ -69,6 +69,22 @@ export async function getSelectedText(page: Page): Promise<string> {
   })
 }
 
+export async function getSelectedHtml(page: Page): Promise<string> {
+  return await page.evaluate(() => {
+    const selection = window.getSelection()
+    let output = ''
+    if (selection) {
+      for (let i = 0; i < selection.rangeCount; i++) {
+        const range = selection.getRangeAt(i)
+        const div = document.createElement('div')
+        div.appendChild(range.cloneContents())
+        output += div.innerHTML
+      }
+    }
+    return output
+  })
+}
+
 async function formatHTML(html: string) {
   return await prettier.format(html, {
     parser: 'html',

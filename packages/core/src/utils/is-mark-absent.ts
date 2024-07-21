@@ -1,8 +1,11 @@
-import type { Attrs, Mark, MarkType, ProseMirrorNode } from '@prosekit/pm/model'
+import type { Attrs, MarkType, ProseMirrorNode } from '@prosekit/pm/model'
+
+import { includesMark } from './includes-mark'
 
 /**
  * Returns true if the given mark is missing in some part of the range.
  * Returns false if the entire range has the given mark.
+ * Returns null if the mark is not allowed in the range.
  *
  * @internal
  */
@@ -12,16 +15,25 @@ export function isMarkAbsent(
   to: number,
   markType: MarkType,
   attrs?: Attrs | null,
-): boolean {
-  const mark: MarkType | Mark = attrs ? markType.create(attrs) : markType
-
+): boolean | null {
   let missing = false
+  let available = false
+
   node.nodesBetween(from, to, (node, pos, parent) => {
-    if (missing) return false
-    missing =
-      !mark.isInSet(node.marks) &&
-      !!parent &&
-      parent.type.allowsMarkType(markType)
+    if (missing) {
+      return false
+    }
+
+    const allowed =
+      parent?.type.allowsMarkType(markType) &&
+      !node.marks.some((m) => m.type !== markType && m.type.excludes(markType))
+
+    if (allowed) {
+      available = true
+      if (!includesMark(node.marks, markType, attrs)) {
+        missing = true
+      }
+    }
   })
-  return missing
+  return available ? missing : null
 }

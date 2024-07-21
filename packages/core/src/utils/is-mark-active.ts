@@ -1,7 +1,8 @@
-import type { Attrs, Mark, MarkType } from '@prosekit/pm/model'
+import type { Attrs, MarkType } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 
 import { getMarkType } from './get-mark-type'
+import { includesMark } from './includes-mark'
 import { isMarkAbsent } from './is-mark-absent'
 
 /**
@@ -15,8 +16,8 @@ export function isMarkActive(
   const { from, $from, to, empty } = state.selection
   const markType = getMarkType(state.schema, type)
   if (empty) {
-    const mark: Mark | MarkType = attrs ? markType.create(attrs) : markType
-    return !!mark.isInSet(state.storedMarks || $from.marks())
+    const marks = state.storedMarks || $from.marks()
+    return includesMark(marks, markType, attrs)
   } else {
     return !isMarkAbsent(state.doc, from, to, markType, attrs)
   }

@@ -1,8 +1,10 @@
 import type { ReferenceElement } from '@floating-ui/dom'
-import { isInCodeBlock, isTextSelection } from '@prosekit/core'
-import type { TextSelection } from '@prosekit/pm/state'
+import {
+  containsInlineNode,
+  isInCodeBlock,
+  isTextSelection,
+} from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
-
 
 export function getVirtualSelectionElement(
   view: EditorView,
@@ -17,20 +19,10 @@ export function getVirtualSelectionElement(
     !selection.empty &&
     !isInCodeBlock(selection) &&
     isTextSelection(selection) &&
-    containsInlineNode(selection)
+    containsInlineNode(view.state.doc, selection.from, selection.to)
   ) {
     return getDomDecoration(view) || getInlineDecoration(view)
   }
-}
-
-function containsInlineNode(selection: TextSelection) {
-  const doc = selection.$head.doc
-  let found = false
-  doc.nodesBetween(selection.from, selection.to, (node) => {
-    if (found) return false
-    if (node.isInline) found = true
-  })
-  return found
 }
 
 function getDomDecoration(view: EditorView): ReferenceElement | undefined {

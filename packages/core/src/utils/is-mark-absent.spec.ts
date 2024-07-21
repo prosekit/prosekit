@@ -37,6 +37,14 @@ test('isMarkAbsent', () => {
   editor.set(n.doc(n.p('<a>'), n.p(''), n.p(''), n.p('<b>')))
   expect(isBoldAbsent()).toBe(true)
 
+  editor.set(
+    n.doc(n.p('<a>'), n.p(m.bold('foo')), n.p(m.bold('bar')), n.p('<b>')),
+  )
+  expect(isBoldAbsent()).toBe(false)
+
+  editor.set(n.doc(n.p('<a>'), n.p(m.bold('foo')), n.p(), n.p('<b>')))
+  expect(isBoldAbsent()).toBe(false)
+
   editor.set(n.doc(n.codeBlock('<a>', m.bold('foo'), '<b>')))
   expect(isBoldAbsent()).toBe(true)
 })

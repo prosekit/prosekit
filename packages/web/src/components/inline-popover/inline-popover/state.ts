@@ -86,7 +86,7 @@ function useInlinePopoverReference(
       return
     }
 
-    reference.set(getVirtualSelectionElement(view))
+    reference.set(getVirtualSelectionElement(view) || null)
   })
 
   return reference

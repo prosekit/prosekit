@@ -46,6 +46,21 @@ function defineHeading() {
   })
 }
 
+function defineCodeBlock() {
+  return defineNodeSpec({
+    name: 'codeBlock',
+    content: 'text*',
+    group: 'block',
+    code: true,
+    defining: true,
+    marks: '',
+    attrs: { language: { default: '' } },
+    toDOM() {
+      return ['pre', ['code', 0]]
+    },
+  })
+}
+
 /**
  * @internal
  */
@@ -60,6 +75,7 @@ export function defineTestExtension() {
     defineBold(),
     defineItalic(),
     defineHeading(),
+    defineCodeBlock(),
   ])
 }
 
@@ -90,5 +106,11 @@ export function setupTestFromExtension<E extends Extension>(
  * @internal
  */
 export function setupTest() {
-  return setupTestFromExtension(defineTestExtension())
+  const { editor, m, n } = setupTestFromExtension(defineTestExtension())
+
+  return {
+    editor,
+    m,
+    n: { ...n, p: n.paragraph },
+  }
 }

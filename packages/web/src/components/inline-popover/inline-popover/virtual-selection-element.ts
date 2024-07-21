@@ -1,14 +1,16 @@
 import type { ReferenceElement } from '@floating-ui/dom'
-import { isTextSelection } from '@prosekit/core'
+import {
+  containsInlineNode,
+  isInCodeBlock,
+  isTextSelection,
+} from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
-
-import { isInCodeBlock } from '../../../utils/is-in-code-block'
 
 export function getVirtualSelectionElement(
   view: EditorView,
-): ReferenceElement | null {
+): ReferenceElement | undefined {
   if (typeof window === 'undefined' || view.isDestroyed) {
-    return null
+    return
   }
 
   const selection = view.state.selection
@@ -16,30 +18,29 @@ export function getVirtualSelectionElement(
   if (
     !selection.empty &&
     !isInCodeBlock(selection) &&
-    isTextSelection(selection)
+    isTextSelection(selection) &&
+    containsInlineNode(view.state.doc, selection.from, selection.to)
   ) {
-    const decoration = getInlineDecoration(view)
-    if (decoration) {
-      return decoration
-    }
-
-    const range = getDomRange()
-    if (range) {
-      // To get it work properly in Safari, we cannot return the range directly.
-      // We have to return a contextElement.
-      return {
-        contextElement: view.dom,
-        getBoundingClientRect: () => range.getBoundingClientRect(),
-        getClientRects: () => range.getClientRects(),
-      }
-    }
+    return getDomDecoration(view) || getInlineDecoration(view)
   }
-
-  return null
 }
 
-function getDomRange() {
-  const selection = window.getSelection()
+function getDomDecoration(view: EditorView): ReferenceElement | undefined {
+  const range = getDomRange(view)
+  if (range) {
+    // To get it work properly in Safari, we cannot return the range directly.
+    // We have to return a contextElement.
+    return {
+      contextElement: view.dom,
+      getBoundingClientRect: () => range.getBoundingClientRect(),
+      getClientRects: () => range.getClientRects(),
+    }
+  }
+}
+
+function getDomRange(view: EditorView): Range | undefined {
+  const win = view.dom.ownerDocument.defaultView
+  const selection = win?.getSelection()
   if (!selection || selection.isCollapsed) {
     return
   }
@@ -56,7 +57,7 @@ function getDomRange() {
   return range
 }
 
-function getInlineDecoration(view: EditorView) {
+function getInlineDecoration(view: EditorView): ReferenceElement | undefined {
   const match = view.dom.querySelectorAll('.prosekit-virtual-selection')
 
   if (match.length === 0) {

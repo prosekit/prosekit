@@ -41,10 +41,9 @@ export function getVirtualSelectionElement(
 }
 
 function containsInlineNode(selection: TextSelection) {
-  const doc = selection.$anchor.doc
-  const { from, to } = selection
+  const doc = selection.$head.doc
   let found = false
-  doc.nodesBetween(from, to, (node) => {
+  doc.nodesBetween(selection.from, selection.to, (node) => {
     if (found) return false
     if (node.isInline) found = true
   })

@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.9.10
+
+### Patch Changes
+
+- [`415b931`](https://github.com/ocavue/prosekit/commit/415b931b22932d7eb6f7082e9761d8d9d1da6128) ![](https://prosekit.dev/b/core)
+
+  Fix an issue where the `MarkAction.isActive()` always returns `true` when multiple empty text blocks are selected.
+
+- [`9c483cf`](https://github.com/ocavue/prosekit/commit/9c483cf4133624f354f6c7b394dba3528e8ee5af) ![](https://prosekit.dev/b/web)
+
+  Hide the inline popover when no inline node is selected.
+
+- [`0a09c15`](https://github.com/ocavue/prosekit/commit/0a09c15d02a0edcc29ee4f0882ab71f021172286) ![](https://prosekit.dev/b/pm)
+
+  Update ProseMirror dependencies.
+
 ## 0.9.9
 
 ### Patch Changes

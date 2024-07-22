@@ -39,6 +39,10 @@ export const exampleItems = [
     "link": "/examples/full"
   },
   {
+    "text": "gap-cursor",
+    "link": "/examples/gap-cursor"
+  },
+  {
     "text": "heading",
     "link": "/examples/heading"
   },

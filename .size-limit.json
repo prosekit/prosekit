@@ -60,6 +60,14 @@
     "path": "packages/prosekit/dist/prosekit-extensions-enter-rule.js"
   },
   {
+    "name": "prosekit/extensions/gap-cursor",
+    "path": "packages/prosekit/dist/prosekit-extensions-gap-cursor.js"
+  },
+  {
+    "name": "prosekit/extensions/gap-cursor/style.css",
+    "path": "packages/prosekit/dist/extensions/gap-cursor/style.css"
+  },
+  {
     "name": "prosekit/extensions/heading",
     "path": "packages/prosekit/dist/prosekit-extensions-heading.js"
   },

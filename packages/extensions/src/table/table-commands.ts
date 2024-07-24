@@ -3,6 +3,7 @@ import {
   defineCommands,
   getNodeType,
   insertNode,
+  type Extension,
 } from '@prosekit/core'
 import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import { TextSelection, type Command } from '@prosekit/pm/state'
@@ -41,20 +42,21 @@ function createEmptyTable(
 }
 
 /**
+ * @public
+ */
+export interface InsertTableOptions {
+  row: number
+  col: number
+  header: boolean
+}
+
+/**
  * Insert a table node with the given number of rows and columns, and optionally
  * a header row.
  *
  * @public
  */
-export function insertTable({
-  row,
-  col,
-  header,
-}: {
-  row: number
-  col: number
-  header: boolean
-}): Command {
+export function insertTable({ row, col, header }: InsertTableOptions): Command {
   return (state, dispatch, view) => {
     const table = createEmptyTable(state.schema, row, col, header)
     return insertNode({ node: table })(state, dispatch, view)
@@ -107,11 +109,21 @@ export const exitTable: Command = (state, dispatch) => {
 }
 
 /**
+ * @internal
+ */
+export type TableCommandsExtension = Extension<{
+  Commands: {
+    insertTable: [InsertTableOptions]
+    exitTable: []
+  }
+}>
+
+/**
  * Adds commands for working with `table` nodes.
  *
  * @public
  */
-export function defineTableCommands() {
+export function defineTableCommands(): TableCommandsExtension {
   return defineCommands({
     insertTable,
     exitTable: () => exitTable,

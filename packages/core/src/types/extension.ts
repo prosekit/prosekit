@@ -21,9 +21,9 @@ export interface ExtensionTyping<
   M extends MarkTyping | never = never,
   C extends CommandTyping | never = never,
 > {
-  Nodes: N
-  Marks: M
-  Commands: C
+  Nodes?: N
+  Marks?: M
+  Commands?: C
 }
 
 /**
@@ -55,6 +55,17 @@ export type ExtractTyping<E extends Extension> =
         PickSubType<C, CommandTyping>
       >
     : never
+
+/**
+ * An extension that does not define any nodes, marks, or commands.
+ *
+ * @internal
+ */
+export type PlainExtension = Extension<{
+  Nodes: never
+  Marks: never
+  Commands: never
+}>
 
 /**
  * @public
@@ -132,6 +143,16 @@ export type ExtractCommandAppliers<E extends Extension> =
   ExtractCommandActions<E>
 
 /**
+ * @internal
+ */
+export type Union<E extends readonly Extension[]> = Extension<{
+  Nodes: ExtractNodes<E[number]>
+  Marks: ExtractMarks<E[number]>
+  Commands: ExtractCommands<E[number]>
+}>
+
+/**
+ * @deprecated Use `Union` instead.
  * @internal
  */
 export type UnionExtension<E extends Extension | readonly Extension[]> =

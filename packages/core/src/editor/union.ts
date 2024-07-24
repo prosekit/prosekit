@@ -1,6 +1,6 @@
 import type { BaseExtension } from '../facets/base-extension'
 import { UnionExtensionImpl } from '../facets/union-extension'
-import type { Extension, UnionExtension } from '../types/extension'
+import type { Extension, Union } from '../types/extension'
 import { assert } from '../utils/assert'
 
 /**
@@ -21,12 +21,12 @@ import { assert } from '../utils/assert'
  *
  * @public
  */
-export function union<const E extends Extension | readonly Extension[]>(
-  extension: E,
-): UnionExtension<E> {
-  const array = Array.isArray(extension) ? extension : [extension]
-  assert(array.length > 0, 'At least one extension is required')
-  return new UnionExtensionImpl(
-    array as BaseExtension[],
-  ) as Extension as UnionExtension<E>
+function union<const E extends readonly Extension[]>(...exts: E): Union<E>
+function union<const E extends readonly Extension[]>(exts: E): Union<E>
+function union(...exts: Array<Extension | Extension[]>): Extension {
+  const extensions: Extension[] = exts.flat()
+  assert(extensions.length > 0, 'At least one extension is required')
+  return new UnionExtensionImpl(extensions as BaseExtension[]) as Extension
 }
+
+export { union }

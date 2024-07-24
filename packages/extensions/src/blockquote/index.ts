@@ -1,8 +1,23 @@
-import { defineNodeSpec, union } from '@prosekit/core'
+import {
+  defineNodeSpec,
+  union,
+  type Extension,
+  type Union,
+} from '@prosekit/core'
+import type { Attrs } from '@prosekit/pm/model'
 
 import { defineWrappingInputRule } from '../input-rule'
 
-export function defineBlockquoteSpec() {
+/**
+ * @internal
+ */
+export type BlockquoteSpecExtension = Extension<{
+  Nodes: {
+    blockquote: Attrs
+  }
+}>
+
+export function defineBlockquoteSpec(): BlockquoteSpecExtension {
   return defineNodeSpec({
     name: 'blockquote',
     content: 'block+',
@@ -27,8 +42,13 @@ export function defineBlockquoteInputRule() {
 }
 
 /**
+ * @internal
+ */
+export type BlockquoteExtension = Union<[BlockquoteSpecExtension]>
+
+/**
  * @public
  */
-export function defineBlockquote() {
+export function defineBlockquote(): BlockquoteExtension {
   return union([defineBlockquoteSpec(), defineBlockquoteInputRule()])
 }

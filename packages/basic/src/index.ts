@@ -6,28 +6,81 @@ import {
   defineParagraph,
   defineText,
   union,
+  type BaseCommandsExtension,
+  type BaseKeymapExtension,
+  type DocExtension,
+  type HistoryExtension,
+  type ParagraphExtension,
+  type TextExtension,
+  type Union,
 } from '@prosekit/core'
-import { defineBlockquote } from '@prosekit/extensions/blockquote'
-import { defineBold } from '@prosekit/extensions/bold'
-import { defineCode } from '@prosekit/extensions/code'
-import { defineDropCursor } from '@prosekit/extensions/drop-cursor'
-import { defineHeading } from '@prosekit/extensions/heading'
-import { defineImage } from '@prosekit/extensions/image'
-import { defineItalic } from '@prosekit/extensions/italic'
-import { defineLink } from '@prosekit/extensions/link'
-import { defineList } from '@prosekit/extensions/list'
-import { defineModClickPrevention } from '@prosekit/extensions/mod-click-prevention'
-import { defineStrike } from '@prosekit/extensions/strike'
-import { defineTable } from '@prosekit/extensions/table'
-import { defineUnderline } from '@prosekit/extensions/underline'
-import { defineVirtualSelection } from '@prosekit/extensions/virtual-selection'
+import {
+  defineBlockquote,
+  type BlockquoteExtension,
+} from '@prosekit/extensions/blockquote'
+import { defineBold, type BoldExtension } from '@prosekit/extensions/bold'
+import { defineCode, type CodeExtension } from '@prosekit/extensions/code'
+import {
+  defineDropCursor,
+  type DropCursorExtension,
+} from '@prosekit/extensions/drop-cursor'
+import {
+  defineHeading,
+  type HeadingExtension,
+} from '@prosekit/extensions/heading'
+import { defineImage, type ImageExtension } from '@prosekit/extensions/image'
+import { defineItalic, type ItalicExtension } from '@prosekit/extensions/italic'
+import { defineLink, type LinkExtension } from '@prosekit/extensions/link'
+import { defineList, type ListExtension } from '@prosekit/extensions/list'
+import {
+  defineModClickPrevention,
+  type ModClickPreventionExtension,
+} from '@prosekit/extensions/mod-click-prevention'
+import { defineStrike, type StrikeExtension } from '@prosekit/extensions/strike'
+import { defineTable, type TableExtension } from '@prosekit/extensions/table'
+import {
+  defineUnderline,
+  type UnderlineExtension,
+} from '@prosekit/extensions/underline'
+import {
+  defineVirtualSelection,
+  type VirtualSelectionExtension,
+} from '@prosekit/extensions/virtual-selection'
+
+/**
+ * @internal
+ */
+export type BasicExtension = Union<
+  [
+    DocExtension,
+    TextExtension,
+    HeadingExtension,
+    HistoryExtension,
+    ListExtension,
+    BlockquoteExtension,
+    BaseKeymapExtension,
+    BaseCommandsExtension,
+    ItalicExtension,
+    BoldExtension,
+    UnderlineExtension,
+    StrikeExtension,
+    CodeExtension,
+    LinkExtension,
+    ImageExtension,
+    ParagraphExtension,
+    DropCursorExtension,
+    VirtualSelectionExtension,
+    ModClickPreventionExtension,
+    TableExtension,
+  ]
+>
 
 /**
  * Define a basic extension that includes some common functionality. You can
  * copy this function and customize it to your needs.
  * @public
  */
-export function defineBasicExtension() {
+export function defineBasicExtension(): BasicExtension {
   return union([
     defineDoc(),
     defineText(),
@@ -51,8 +104,3 @@ export function defineBasicExtension() {
     defineTable(),
   ])
 }
-
-/**
- * @public
- */
-export type BasicExtension = ReturnType<typeof defineBasicExtension>

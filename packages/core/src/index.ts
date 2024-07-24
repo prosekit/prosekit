@@ -30,12 +30,16 @@ export { Editor, createEditor, type EditorOptions } from './editor/editor'
 export { union } from './editor/union'
 export { withPriority } from './editor/with-priority'
 export { EditorNotFoundError, ProseKitError } from './error'
-export { defineBaseCommands, defineCommands } from './extensions/command'
+export {
+  defineBaseCommands,
+  defineCommands,
+  type BaseCommandsExtension,
+} from './extensions/command'
 export {
   defineDefaultState,
   type DefaultStateOptions,
 } from './extensions/default-state'
-export { defineDoc } from './extensions/doc'
+export { defineDoc, type DocExtension } from './extensions/doc'
 export {
   defineDocChangeHandler,
   type DocChangeHandler,
@@ -82,14 +86,21 @@ export {
   type UnmountHandler,
   type UpdateHandler,
 } from './extensions/events/plugin-view'
-export { defineHistory, type HistoryOptions } from './extensions/history'
+export {
+  defineHistory,
+  type HistoryExtension,
+  type HistoryOptions,
+} from './extensions/history'
 export {
   defineKeymap,
   keymapFacet,
   type Keymap,
   type KeymapPayload,
 } from './extensions/keymap'
-export { defineBaseKeymap } from './extensions/keymap-base'
+export {
+  defineBaseKeymap,
+  type BaseKeymapExtension,
+} from './extensions/keymap-base'
 export {
   defineMarkAttr,
   defineMarkSpec,
@@ -109,13 +120,16 @@ export {
   type NodeViewComponentOptions,
   type NodeViewFactoryOptions,
 } from './extensions/node-view-effect'
-export { defineParagraph } from './extensions/paragraph'
+export {
+  defineParagraph,
+  type ParagraphExtension,
+} from './extensions/paragraph'
 export {
   definePlugin,
   pluginFacet,
   type PluginPayload,
 } from './extensions/plugin'
-export { defineText } from './extensions/text'
+export { defineText, type TextExtension } from './extensions/text'
 export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
 export type { AnyAttrs, AttrSpec } from './types/attrs'
@@ -130,6 +144,8 @@ export type {
   ExtractMarks,
   ExtractNodeActions,
   ExtractNodes,
+  PlainExtension,
+  Union,
   UnionExtension,
 } from './types/extension'
 export type { CommandAction, CommandTyping } from './types/extension-command'

@@ -5,11 +5,26 @@ import {
   union,
   toggleMark,
   canUseRegexLookbehind,
+  type Extension,
+  type Union,
 } from '@prosekit/core'
+import type { Attrs } from '@prosekit/pm/model'
 
 import { defineMarkInputRule } from '../input-rule'
 
-export function defineStrikeSpec() {
+/**
+ * @internal
+ */
+export type StrikeSpecExtension = Extension<{
+  Marks: {
+    strike: Attrs
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineStrikeSpec(): StrikeSpecExtension {
   return defineMarkSpec({
     name: 'strike',
     parseDOM: [
@@ -25,12 +40,27 @@ export function defineStrikeSpec() {
   })
 }
 
-export function defineStrikeCommands() {
+/**
+ * @internal
+ */
+export type StrikeCommandsExtension = Extension<{
+  Commands: {
+    toggleStrike: []
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineStrikeCommands(): StrikeCommandsExtension {
   return defineCommands({
     toggleStrike: () => toggleMark({ type: 'strike' }),
   })
 }
 
+/**
+ * @internal
+ */
 export function defineStrikeKeymap() {
   return defineKeymap({
     'Mod-shift-s': toggleMark({ type: 'strike' }),
@@ -38,6 +68,9 @@ export function defineStrikeKeymap() {
   })
 }
 
+/**
+ * @internal
+ */
 export function defineStrikeInputRule() {
   return defineMarkInputRule({
     regex: canUseRegexLookbehind()
@@ -48,9 +81,16 @@ export function defineStrikeInputRule() {
 }
 
 /**
+ * @internal
+ */
+export type StrikeExtension = Union<
+  [StrikeSpecExtension, StrikeCommandsExtension]
+>
+
+/**
  * @public
  */
-export function defineStrike() {
+export function defineStrike(): StrikeExtension {
   return union([
     defineStrikeSpec(),
     defineStrikeCommands(),

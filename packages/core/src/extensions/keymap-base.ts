@@ -11,6 +11,7 @@ import {
 import { splitSplittableBlock } from 'prosemirror-splittable'
 
 import { withPriority } from '../editor/with-priority'
+import type { PlainExtension } from '../types/extension'
 import { Priority } from '../types/priority'
 
 import { defineKeymap } from './keymap'
@@ -37,6 +38,11 @@ const customBaseKeymap = {
 }
 
 /**
+ * @internal
+ */
+export type BaseKeymapExtension = PlainExtension
+
+/**
  * Defines some basic key bindings.
  *
  * @public
@@ -48,7 +54,10 @@ export function defineBaseKeymap(options?: {
    * @default Priority.low
    */
   priority?: Priority
-}) {
+}): BaseKeymapExtension {
   const priority = options?.priority ?? Priority.low
-  return withPriority(defineKeymap(customBaseKeymap), priority)
+  return withPriority(
+    defineKeymap(customBaseKeymap),
+    priority,
+  ) as BaseKeymapExtension
 }

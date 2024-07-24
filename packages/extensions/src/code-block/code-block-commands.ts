@@ -4,16 +4,29 @@ import {
   setBlockType,
   setNodeAttrs,
   toggleNode,
+  type Extension,
 } from '@prosekit/core'
 
 import type { CodeBlockAttrs } from './code-block-types'
+
+/**
+ * @internal
+ */
+export type CodeBlockCommandsExtension = Extension<{
+  Commands: {
+    setCodeBlock: [attrs?: CodeBlockAttrs]
+    insertCodeBlock: [attrs?: CodeBlockAttrs]
+    toggleCodeBlock: [attrs?: CodeBlockAttrs]
+    setCodeBlockAttrs: [attrs: CodeBlockAttrs]
+  }
+}>
 
 /**
  * Adds commands for working with `codeBlock` nodes.
  *
  * @public
  */
-export function defineCodeBlockCommands() {
+export function defineCodeBlockCommands(): CodeBlockCommandsExtension {
   return defineCommands({
     setCodeBlock: (attrs?: CodeBlockAttrs) => {
       return setBlockType({ type: 'codeBlock', attrs })

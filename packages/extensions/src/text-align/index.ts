@@ -5,9 +5,14 @@ import {
   setNodeAttrs,
   union,
   type Extension,
+  type PlainExtension,
+  type Union,
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 
+/**
+ * @public
+ */
 export interface TextAlignOptions<NodeName extends string = string> {
   /**
    * The names of node to add the attribute to.
@@ -42,14 +47,20 @@ function defineTextAlignAttr<NodeName extends string>(
   })
 }
 
+/**
+ * @internal
+ */
+export type TextAlignAttrsExtension<NodeName extends string> = Extension<{
+  Nodes: { [K in NodeName]: { textAlign: string | null } }
+}>
+
+/**
+ * @internal
+ */
 function defineTextAlignAttrs<NodeName extends string>(
   types: NodeName[],
   defaultValue: string | null,
-): Extension<{
-  Nodes: { [K in NodeName]: { textAlign: string | null } }
-  Marks: never
-  Commands: never
-}> {
+): TextAlignAttrsExtension<NodeName> {
   return union(types.map((type) => defineTextAlignAttr(type, defaultValue)))
 }
 
@@ -69,18 +80,18 @@ export function setTextAlign({
 /**
  * @internal
  */
-export type TextAlignCommandTyping = {
-  setTextAlign: [value: string | null]
-}
+export type TextAlignCommandsExtension = Extension<{
+  Commands: {
+    setTextAlign: [value: string | null]
+  }
+}>
 
 /**
  * @internal
  */
-export function defineTextAlignCommands(types: string[]): Extension<{
-  Nodes: never
-  Marks: never
-  Commands: TextAlignCommandTyping
-}> {
+export function defineTextAlignCommands(
+  types: string[],
+): TextAlignCommandsExtension {
   return defineCommands({
     setTextAlign: (value: string | null) => setTextAlign({ types, value }),
   })
@@ -89,7 +100,7 @@ export function defineTextAlignCommands(types: string[]): Extension<{
 /**
  * @internal
  */
-export function defineTextAlignKeymap(types: string[]) {
+export function defineTextAlignKeymap(types: string[]): PlainExtension {
   return defineKeymap({
     'mod-shift-l': setTextAlign({ types, value: 'left' }),
     'mod-shift-e': setTextAlign({ types, value: 'center' }),
@@ -99,6 +110,13 @@ export function defineTextAlignKeymap(types: string[]) {
 }
 
 /**
+ * @internal
+ */
+export type TextAlignExtension<NodeName extends string> = Union<
+  [TextAlignAttrsExtension<NodeName>, TextAlignCommandsExtension]
+>
+
+/**
  * Adds a `textAlign` attribute to the specified nodes. This will be rendered as
  * a CSS `text-align` style.
  *
@@ -106,11 +124,7 @@ export function defineTextAlignKeymap(types: string[]) {
  */
 export function defineTextAlign<NodeName extends string = string>(
   options: TextAlignOptions<NodeName>,
-): Extension<{
-  Nodes: { [K in NodeName]: { textAlign: string | null } }
-  Marks: never
-  Commands: TextAlignCommandTyping
-}> {
+): TextAlignExtension<NodeName> {
   return union([
     defineTextAlignAttrs<NodeName>(options.types, options.default || 'left'),
     defineTextAlignKeymap(options.types),

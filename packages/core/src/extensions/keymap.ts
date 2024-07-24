@@ -5,7 +5,7 @@ import type { EditorView } from '@prosekit/pm/view'
 
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
-import type { Extension } from '../types/extension'
+import type { PlainExtension } from '../types/extension'
 import { toReversed } from '../utils/array'
 
 import { pluginFacet, type PluginPayload } from './plugin'
@@ -20,8 +20,8 @@ export interface Keymap {
 /**
  * @public
  */
-export function defineKeymap(keymap: Keymap): Extension {
-  return defineFacetPayload(keymapFacet, [keymap])
+export function defineKeymap(keymap: Keymap): PlainExtension {
+  return defineFacetPayload(keymapFacet, [keymap]) as PlainExtension
 }
 
 /**

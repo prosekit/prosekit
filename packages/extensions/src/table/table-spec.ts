@@ -1,16 +1,14 @@
-import { defineNodeSpec } from '@prosekit/core'
+import { defineNodeSpec, type Extension } from '@prosekit/core'
 import type { AttributeSpec, Attrs, ProseMirrorNode } from '@prosekit/pm/model'
 import type { TableRole } from 'prosemirror-tables'
-
-const cellAttrs: Record<string, AttributeSpec> = {
-  colspan: { default: 1 },
-  rowspan: { default: 1 },
-  colwidth: { default: null },
-}
 
 const cellContent = 'block+'
 
 // TODO: export this from prosemirror-tables
+
+/**
+ * @public
+ */
 export interface CellAttrs {
   colspan: number
   rowspan: number
@@ -52,7 +50,19 @@ function setCellAttrs(node: ProseMirrorNode): Attrs {
   return domAttrs
 }
 
-export function defineTableSpec() {
+/**
+ * @internal
+ */
+export type TableSpecExtension = Extension<{
+  Nodes: {
+    table: Attrs
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineTableSpec(): TableSpecExtension {
   return defineNodeSpec({
     name: 'table',
 
@@ -67,7 +77,19 @@ export function defineTableSpec() {
   })
 }
 
-export function defineTableRowSpec() {
+/**
+ * @internal
+ */
+export type TableRowSpecExtension = Extension<{
+  Nodes: {
+    tableRow: Attrs
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineTableRowSpec(): TableRowSpecExtension {
   return defineNodeSpec({
     name: 'tableRow',
 
@@ -80,7 +102,25 @@ export function defineTableRowSpec() {
   })
 }
 
-export function defineTableCellSpec() {
+const cellAttrs = {
+  colspan: { default: 1 },
+  rowspan: { default: 1 },
+  colwidth: { default: null },
+} satisfies Record<string, AttributeSpec>
+
+/**
+ * @internal
+ */
+export type TableCellSpecExtension = Extension<{
+  Nodes: {
+    tableCell: CellAttrs
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineTableCellSpec(): TableCellSpecExtension {
   return defineNodeSpec({
     name: 'tableCell',
 
@@ -95,7 +135,16 @@ export function defineTableCellSpec() {
   })
 }
 
-export function defineTableHeaderCellSpec() {
+/**
+ * @internal
+ */
+export type TableHeaderCellSpecExtension = Extension<{
+  Nodes: {
+    tableHeaderCell: CellAttrs
+  }
+}>
+
+export function defineTableHeaderCellSpec(): TableHeaderCellSpecExtension {
   return defineNodeSpec({
     name: 'tableHeaderCell',
 

@@ -184,7 +184,7 @@ export class EditorInstance {
     }
   }
 
-  public mount(place: HTMLElement) {
+  public mount(place: HTMLElement): void {
     if (this.view) {
       throw new ProseKitError('Editor is already mounted')
     }
@@ -195,7 +195,7 @@ export class EditorInstance {
     this.view = new EditorView({ mount: place }, this.directEditorProps)
   }
 
-  public unmount() {
+  public unmount(): void {
     if (!this.view) {
       throw new ProseKitError('Editor is not mounted yet')
     }
@@ -258,7 +258,7 @@ export class EditorInstance {
     this.commands[name] = action as CommandAction
   }
 
-  public removeCommand(name: string) {
+  public removeCommand(name: string): void {
     delete this.commands[name]
   }
 }
@@ -283,7 +283,7 @@ export class Editor<E extends Extension = any> {
   /**
    * @internal
    */
-  static create(instance: any) {
+  static create(instance: any): Editor {
     if (!(instance instanceof EditorInstance)) {
       throw new TypeError('Invalid EditorInstance')
     }

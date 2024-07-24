@@ -2,11 +2,26 @@ import {
   defineCommands,
   defineKeymap,
   defineMarkSpec,
-  union,
   toggleMark,
+  union,
+  type Extension,
+  type Union,
 } from '@prosekit/core'
+import type { Attrs } from '@prosekit/pm/model'
 
-export function defineUnderlineSpec() {
+/**
+ * @internal
+ */
+export type UnderlineSpecExtension = Extension<{
+  Marks: {
+    underline: Attrs
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineUnderlineSpec(): UnderlineSpecExtension {
   return defineMarkSpec({
     name: 'underline',
     parseDOM: [
@@ -21,12 +36,27 @@ export function defineUnderlineSpec() {
   })
 }
 
-export function defineUnderlineCommands() {
+/**
+ * @internal
+ */
+export type UnderlineCommandsExtension = Extension<{
+  Commands: {
+    toggleUnderline: []
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineUnderlineCommands(): UnderlineCommandsExtension {
   return defineCommands({
     toggleUnderline: () => toggleMark({ type: 'underline' }),
   })
 }
 
+/**
+ * @internal
+ */
 export function defineUnderlineKeymap() {
   return defineKeymap({
     'Mod-u': toggleMark({ type: 'underline' }),
@@ -34,9 +64,16 @@ export function defineUnderlineKeymap() {
 }
 
 /**
+ * @internal
+ */
+export type UnderlineExtension = Union<
+  [UnderlineSpecExtension, UnderlineCommandsExtension]
+>
+
+/**
  * @public
  */
-export function defineUnderline() {
+export function defineUnderline(): UnderlineExtension {
   return union([
     defineUnderlineSpec(),
     defineUnderlineCommands(),

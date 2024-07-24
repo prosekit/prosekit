@@ -1,12 +1,25 @@
-import { union } from '@prosekit/core'
+import { union, type Union } from '@prosekit/core'
 
-import { defineCodeBlockCommands } from './code-block-commands'
+import {
+  defineCodeBlockCommands,
+  type CodeBlockCommandsExtension,
+} from './code-block-commands'
 import {
   defineCodeBlockEnterRule,
   defineCodeBlockInputRule,
 } from './code-block-input-rule'
 import { defineCodeBlockKeymap } from './code-block-keymap'
-import { defineCodeBlockSpec } from './code-block-spec'
+import {
+  defineCodeBlockSpec,
+  type CodeBlockSpecExtension,
+} from './code-block-spec'
+
+/**
+ * @internal
+ */
+export type CodeBlockExtension = Union<
+  [CodeBlockSpecExtension, CodeBlockCommandsExtension]
+>
 
 /**
  * Adds `codeBlock` nodes to the editor. This includes the following extensions:
@@ -19,7 +32,7 @@ import { defineCodeBlockSpec } from './code-block-spec'
  *
  * @public
  */
-export function defineCodeBlock() {
+export function defineCodeBlock(): CodeBlockExtension {
   return union([
     defineCodeBlockSpec(),
     defineCodeBlockInputRule(),

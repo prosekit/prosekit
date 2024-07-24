@@ -2,10 +2,10 @@ import { Schema } from '@prosekit/pm/model'
 import { Plugin, ProseMirrorPlugin } from '@prosekit/pm/state'
 
 import { ProseKitError } from '../error'
-import { defineFacet } from '../facets/facet'
+import { defineFacet, Facet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { stateFacet, type StatePayload } from '../facets/state'
-import type { Extension } from '../types/extension'
+import type { PlainExtension } from '../types/extension'
 
 /**
  * Adds a ProseMirror plugin to the editor.
@@ -20,20 +20,23 @@ export function definePlugin(
     | Plugin
     | Plugin[]
     | ((context: { schema: Schema }) => Plugin | Plugin[]),
-): Extension {
-  if (plugin instanceof Plugin) {
-    return defineFacetPayload(pluginFacet, [() => [plugin]])
-  }
-
-  if (Array.isArray(plugin) && plugin.every((p) => p instanceof Plugin)) {
-    return defineFacetPayload(pluginFacet, [() => plugin])
+): PlainExtension {
+  if (
+    plugin instanceof Plugin ||
+    (Array.isArray(plugin) && plugin.every((p) => p instanceof Plugin))
+  ) {
+    return definePluginPayload(() => plugin)
   }
 
   if (typeof plugin === 'function') {
-    return defineFacetPayload(pluginFacet, [plugin])
+    return definePluginPayload(plugin)
   }
 
   throw new TypeError('Invalid plugin')
+}
+
+function definePluginPayload(payload: PluginPayload): PlainExtension {
+  return defineFacetPayload(pluginFacet, [payload]) as PlainExtension
 }
 
 /**
@@ -47,7 +50,7 @@ export type PluginPayload =
 /**
  * @internal
  */
-export const pluginFacet = defineFacet<PluginPayload, StatePayload>({
+export const pluginFacet: Facet<PluginPayload, StatePayload> = defineFacet({
   reducer: (payloads): StatePayload => {
     return ({ schema }) => {
       const plugins: ProseMirrorPlugin[] = []

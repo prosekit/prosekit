@@ -4,5 +4,5 @@
  * @public
  */
 export interface CodeBlockAttrs {
-  language?: string
+  language: string
 }

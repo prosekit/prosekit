@@ -1,6 +1,8 @@
 import type { EditorState } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
+import type { PlainExtension } from '../../types/extension'
+
 import { defineUpdateHandler } from './plugin-view'
 
 /**
@@ -21,7 +23,9 @@ export type DocChangeHandler = (
  *
  * @public
  */
-export function defineDocChangeHandler(handler: DocChangeHandler) {
+export function defineDocChangeHandler(
+  handler: DocChangeHandler,
+): PlainExtension {
   return defineUpdateHandler((view, prevState) => {
     if (!view.state.doc.eq(prevState.doc)) {
       handler(view, prevState)

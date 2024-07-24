@@ -1,6 +1,20 @@
-import { defineNodeSpec } from '@prosekit/core'
+import { defineNodeSpec, type Extension } from '@prosekit/core'
 
-export function defineHeadingSpec() {
+import type { HeadingAttrs } from './types'
+
+/**
+ * @internal
+ */
+export type HeadingSpecExtension = Extension<{
+  Nodes: {
+    heading: HeadingAttrs
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineHeadingSpec(): HeadingSpecExtension {
   return defineNodeSpec({
     name: 'heading',
     attrs: { level: { default: 1 } },

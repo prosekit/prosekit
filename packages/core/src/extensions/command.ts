@@ -1,14 +1,23 @@
-import { addMark } from '../commands/add-mark'
-import { insertNode } from '../commands/insert-node'
-import { insertText } from '../commands/insert-text'
-import { removeMark } from '../commands/remove-mark'
-import { removeNode } from '../commands/remove-node'
+import { addMark, type AddMarkOptions } from '../commands/add-mark'
+import { insertNode, type InsertNodeOptions } from '../commands/insert-node'
+import { insertText, type InsertTextOptions } from '../commands/insert-text'
+import { removeMark, type RemoveMarkOptions } from '../commands/remove-mark'
+import { removeNode, type RemoveNodeOptions } from '../commands/remove-node'
 import { selectAll } from '../commands/select-all'
-import { setBlockType } from '../commands/set-block-type'
-import { setNodeAttrs } from '../commands/set-node-attrs'
-import { unsetBlockType } from '../commands/unset-block-type'
-import { unsetMark } from '../commands/unset-mark'
-import { wrap } from '../commands/wrap'
+import {
+  setBlockType,
+  type SetBlockTypeOptions,
+} from '../commands/set-block-type'
+import {
+  setNodeAttrs,
+  type SetNodeAttrsOptions,
+} from '../commands/set-node-attrs'
+import {
+  unsetBlockType,
+  type UnsetBlockTypeOptions,
+} from '../commands/unset-block-type'
+import { unsetMark, type UnsetMarkOptions } from '../commands/unset-mark'
+import { wrap, type WrapOptions } from '../commands/wrap'
 import { commandFacet } from '../facets/command'
 import { defineFacetPayload } from '../facets/facet-extension'
 import type { Extension } from '../types/extension'
@@ -20,22 +29,37 @@ export function defineCommands<
   commands: T,
 ): Extension<{
   Commands: { [K in keyof T]: Parameters<T[K]> }
-  Nodes: never
-  Marks: never
 }> {
   return defineFacetPayload(commandFacet, [commands]) as Extension<{
     Commands: { [K in keyof T]: Parameters<T[K]> }
-    Nodes: never
-    Marks: never
   }>
 }
+
+/**
+ * @internal
+ */
+export type BaseCommandsExtension = Extension<{
+  Commands: {
+    insertText: [options: InsertTextOptions]
+    insertNode: [options: InsertNodeOptions]
+    removeNode: [options: RemoveNodeOptions]
+    wrap: [options: WrapOptions]
+    setBlockType: [options: SetBlockTypeOptions]
+    setNodeAttrs: [options: SetNodeAttrsOptions]
+    selectAll: []
+    addMark: [options: AddMarkOptions]
+    removeMark: [options: RemoveMarkOptions]
+    unsetBlockType: [options?: UnsetBlockTypeOptions]
+    unsetMark: [options?: UnsetMarkOptions]
+  }
+}>
 
 /**
  * Add some base commands
  *
  * @public
  */
-export function defineBaseCommands() {
+export function defineBaseCommands(): BaseCommandsExtension {
   return defineCommands({
     insertText,
 

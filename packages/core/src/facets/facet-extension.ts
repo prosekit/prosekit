@@ -25,7 +25,7 @@ export class FacetExtensionImpl<Input, Output> extends BaseExtension {
   /**
    * @internal
    */
-  createTree(priority: Priority) {
+  createTree(priority: Priority): FacetNode {
     const pri = this.priority ?? priority
 
     const inputs: Tuple5<Input[] | null> = [null, null, null, null, null]

@@ -6,17 +6,17 @@ import {
   isTextSelection,
   maybeRun,
   pluginFacet,
-  type Extension,
+  type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
 import { keydownHandler } from '@prosekit/pm/keymap'
 import type { Attrs, NodeType } from '@prosekit/pm/model'
 import {
+  PluginKey,
   ProseMirrorPlugin,
   type Command,
   type EditorState,
   type Transaction,
-  PluginKey,
 } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
@@ -106,13 +106,10 @@ export type TextBlockEnterRuleOptions = {
  *
  * @public
  */
-export function defineEnterRule({
-  regex,
-  handler,
-  stop = false,
-}: EnterRuleOptions): Extension {
+export function defineEnterRule(options: EnterRuleOptions): PlainExtension {
+  const { regex, handler, stop = false } = options
   const rule: EnterRule = new EnterRule(regex, handler, stop)
-  return defineFacetPayload(enterRule, [rule])
+  return defineFacetPayload(enterRule, [rule]) as PlainExtension
 }
 
 /**
@@ -122,12 +119,10 @@ export function defineEnterRule({
  *
  * @public
  */
-export function defineTextBlockEnterRule({
-  regex,
-  type,
-  attrs,
-  stop = true,
-}: TextBlockEnterRuleOptions): Extension {
+export function defineTextBlockEnterRule(
+  options: TextBlockEnterRuleOptions,
+): PlainExtension {
+  const { regex, type, attrs, stop = true } = options
   return defineEnterRule({
     regex,
     handler: ({ state, from, to, match }) => {

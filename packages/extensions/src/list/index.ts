@@ -1,10 +1,10 @@
-import { union } from '@prosekit/core'
+import { union, type Union } from '@prosekit/core'
 
-import { defineListCommands } from './commands'
+import { defineListCommands, type ListCommandsExtension } from './commands'
 import { defineListInputRules } from './input-rules'
 import { defineListKeymap } from './keymap'
 import { defineListPlugins } from './plugins'
-import { defineListSpec } from './spec'
+import { defineListSpec, type ListSpecExtension } from './spec'
 import type { ListAttrs } from './types'
 
 export { ListDOMSerializer } from 'prosemirror-flat-list'
@@ -17,9 +17,14 @@ export type {
 } from 'prosemirror-flat-list'
 
 /**
+ * @internal
+ */
+export type ListExtension = Union<[ListSpecExtension, ListCommandsExtension]>
+
+/**
  * @public
  */
-export function defineList() {
+export function defineList(): ListExtension {
   return union([
     defineListSpec(),
     defineListPlugins(),
@@ -36,4 +41,6 @@ export {
   defineListPlugins,
   defineListSpec,
   type ListAttrs,
+  type ListCommandsExtension,
+  type ListSpecExtension,
 }

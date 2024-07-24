@@ -23,6 +23,9 @@ const backspaceUnsetHeading: Command = (state, dispatch, view) => {
   return false
 }
 
+/**
+ * @internal
+ */
 export function defineHeadingKeymap() {
   return defineKeymap({
     'mod-1': toggleHeadingKeybinding(1),

@@ -13,18 +13,18 @@ import {
   type Union,
 } from '@prosekit/core'
 import { defineBlockquote, type BlockquoteExtension } from '@prosekit/extensions/blockquote'
-import { defineBold } from '@prosekit/extensions/bold'
+import { defineBold, type BoldExtension } from '@prosekit/extensions/bold'
 import { defineCode } from '@prosekit/extensions/code'
 import { defineDropCursor } from '@prosekit/extensions/drop-cursor'
 import { defineHeading, type HeadingExtension } from '@prosekit/extensions/heading'
 import { defineImage } from '@prosekit/extensions/image'
-import { defineItalic } from '@prosekit/extensions/italic'
+import { defineItalic, type ItalicExtension } from '@prosekit/extensions/italic'
 import { defineLink } from '@prosekit/extensions/link'
 import { defineList, type ListExtension } from '@prosekit/extensions/list'
 import { defineModClickPrevention } from '@prosekit/extensions/mod-click-prevention'
 import { defineStrike } from '@prosekit/extensions/strike'
 import { defineTable } from '@prosekit/extensions/table'
-import { defineUnderline } from '@prosekit/extensions/underline'
+import { defineUnderline, type UnderlineExtension } from '@prosekit/extensions/underline'
 import { defineVirtualSelection } from '@prosekit/extensions/virtual-selection'
 
 /**
@@ -38,6 +38,9 @@ export type BasicExtension = Union<[
   ListExtension,
   BlockquoteExtension,
   BaseKeymapExtension,
+  ItalicExtension,
+  BoldExtension,
+  UnderlineExtension,
 ]>
 
 
@@ -46,7 +49,7 @@ export type BasicExtension = Union<[
  * copy this function and customize it to your needs.
  * @public
  */
-export function defineBasicExtension() {
+export function defineBasicExtension(): BasicExtension {
   return union([
     defineDoc(),
     defineText(),
@@ -58,7 +61,7 @@ export function defineBasicExtension() {
     defineBaseCommands(),
     defineItalic(),
     defineBold(),
-    // defineUnderline(),
+    defineUnderline(),
     // defineStrike(),
     // defineCode(),
     // defineLink(),

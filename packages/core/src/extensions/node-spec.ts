@@ -98,8 +98,6 @@ export function defineNodeSpec<
   const payload: NodeSpecPayload = [options, undefined]
   return defineFacetPayload(nodeSpecFacet, [payload]) as Extension<{
     Nodes: any
-    
-    
   }>
 }
 
@@ -116,14 +114,10 @@ export function defineNodeAttr<
   options: NodeAttrOptions<NodeType, AttrName, AttrType>,
 ): Extension<{
   Nodes: { [K in NodeType]: { [K in AttrName]: AttrType } }
-  
-  
 }> {
   const payload: NodeSpecPayload = [undefined, options]
   return defineFacetPayload(nodeSpecFacet, [payload]) as Extension<{
     Nodes: any
-    
-    
   }>
 }
 

@@ -18,15 +18,21 @@ describe('union', () => {
     type Outout = typeof output
     type Expected = Extension<{
       Nodes: { node3: Attrs }
-      Marks: never,
-      Commands: never,
+      Marks: never
+      Commands: never
     }>
 
     assertTypeEqual<Outout, Expected>(true)
   })
 
   it('can merge an extension array', () => {
-    const output = union([extension1, extension2, extension3, extension4, extension5])
+    const output = union([
+      extension1,
+      extension2,
+      extension3,
+      extension4,
+      extension5,
+    ])
     type Outout = typeof output
     type Expected = Extension<{
       Nodes: {

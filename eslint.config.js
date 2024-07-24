@@ -7,7 +7,6 @@ import unocss from '@unocss/eslint-config/flat'
 const configs = [
   unocss,
   ...basic(),
-
   ...react().map((config) => ({
     ...config,
     files: ['**/react/**/*.?([cm])[jt]s?(x)'],

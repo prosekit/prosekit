@@ -58,7 +58,7 @@
     "@prosekit/dev": "workspace:*",
     "preact": "^10.22.1",
     "tsup": "^8.1.2",
-    "typescript": "^5.5.3",
+    "typescript": "^5.5.4",
     "vitest": "^2.0.3"
   },
   "publishConfig": {

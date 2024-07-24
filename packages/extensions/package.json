@@ -81,7 +81,7 @@
     "@vitest/browser": "^2.0.3",
     "tsup": "^8.1.2",
     "type-fest": "^4.22.1",
-    "typescript": "^5.5.3",
+    "typescript": "^5.5.4",
     "vitest": "^2.0.3"
   },
   "publishConfig": {

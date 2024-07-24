@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/solid",
   "type": "module",
-  "version": "0.3.15",
+  "version": "0.3.16",
   "private": false,
   "author": {
     "name": "ocavue",

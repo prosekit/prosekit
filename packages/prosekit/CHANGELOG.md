@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.9.11
+
+### Patch Changes
+
+- [`2c0d8ba`](https://github.com/ocavue/prosekit/commit/2c0d8ba5efabe176d5553573aeebf3e41b168111) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineGapCursor` to provide a block-level cursor that can be used to focus places that don't allow regular selection.
+
 ## 0.9.10
 
 ### Patch Changes

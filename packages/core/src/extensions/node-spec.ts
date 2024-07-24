@@ -136,14 +136,14 @@ type NodeSpecPayload = [
 
 const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
   reducer: (payloads: NodeSpecPayload[]): SchemaSpec => {
-    let nodes = OrderedMap.from<NodeSpec>({})
+    let specs = OrderedMap.from<NodeSpec>({})
     let topNodeName: string | undefined = undefined
 
     const specPayloads = payloads.map((input) => input[0]).filter(isNotNull)
     const attrPayloads = payloads.map((input) => input[1]).filter(isNotNull)
 
     for (const { name, topNode, ...spec } of specPayloads) {
-      assert(!nodes.get(name), `Node type ${name} can only be defined once`)
+      assert(!specs.get(name), `Node type ${name} can only be defined once`)
 
       if (topNode) {
         topNodeName = name
@@ -151,7 +151,7 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
 
       // The latest spec has the highest priority, so we put it at the start of
       // the map.
-      nodes = nodes.addToStart(name, spec)
+      specs = specs.addToStart(name, spec)
     }
 
     for (const {
@@ -162,8 +162,7 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
       toDOM,
       parseDOM,
     } of attrPayloads) {
-      const spec = nodes.get(type)
-
+      const spec = specs.get(type)
       assert(spec, `Node type ${type} must be defined`)
 
       if (!spec.attrs) {
@@ -244,7 +243,7 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
       }
     }
 
-    return { nodes, topNode: topNodeName }
+    return { nodes: specs, topNode: topNodeName }
   },
   parent: schemaSpecFacet,
   singleton: true,

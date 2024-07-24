@@ -3,7 +3,7 @@ import { Selection, type EditorStateConfig } from '@prosekit/pm/state'
 import { ProseKitError } from '../error'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { stateFacet } from '../facets/state'
-import type { Extension } from '../types/extension'
+import type { PlainExtension } from '../types/extension'
 import type { NodeJSON, SelectionJSON } from '../types/model'
 import { jsonFromElement, jsonFromHTML } from '../utils/parse'
 
@@ -31,7 +31,7 @@ export function defineDefaultState({
   defaultDoc,
   defaultHTML,
   defaultSelection,
-}: DefaultStateOptions): Extension {
+}: DefaultStateOptions): PlainExtension {
   if (defaultHTML && defaultDoc) {
     throw new ProseKitError(
       'Only one of defaultHTML and defaultDoc can be provided',
@@ -60,5 +60,5 @@ export function defineDefaultState({
 
       return config
     },
-  ])
+  ]) as PlainExtension
 }

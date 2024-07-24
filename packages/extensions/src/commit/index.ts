@@ -5,6 +5,7 @@ import {
   jsonFromNode,
   union,
   type NodeJSON,
+  type PlainExtension,
   type StepJSON,
 } from '@prosekit/core'
 import {
@@ -210,7 +211,7 @@ function decorateCommit(
   return DecorationSet.create(doc, decorations)
 }
 
-function defineCommitDecoration(commit: Commit) {
+function defineCommitDecoration(commit: Commit): PlainExtension {
   const key = new PluginKey<DecorationSet>('prosekit-commit-decoration')
 
   return definePlugin(({ schema }): ProseMirrorPlugin => {
@@ -239,7 +240,7 @@ function defineCommitDecoration(commit: Commit) {
 /**
  * Define an extension to display the changes from the given commit in the editor.
  */
-function defineCommitViewer(commit: Commit) {
+function defineCommitViewer(commit: Commit): PlainExtension {
   return union([
     defineDefaultState({ defaultDoc: commit.doc }),
     defineCommitDecoration(commit),

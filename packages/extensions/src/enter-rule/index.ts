@@ -6,7 +6,6 @@ import {
   isTextSelection,
   maybeRun,
   pluginFacet,
-  type Extension,
   type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
@@ -107,11 +106,8 @@ export type TextBlockEnterRuleOptions = {
  *
  * @public
  */
-export function defineEnterRule({
-  regex,
-  handler,
-  stop = false,
-}: EnterRuleOptions): PlainExtension {
+export function defineEnterRule(options: EnterRuleOptions): PlainExtension {
+  const { regex, handler, stop = false } = options
   const rule: EnterRule = new EnterRule(regex, handler, stop)
   return defineFacetPayload(enterRule, [rule]) as PlainExtension
 }
@@ -123,12 +119,10 @@ export function defineEnterRule({
  *
  * @public
  */
-export function defineTextBlockEnterRule({
-  regex,
-  type,
-  attrs,
-  stop = true,
-}: TextBlockEnterRuleOptions): Extension {
+export function defineTextBlockEnterRule(
+  options: TextBlockEnterRuleOptions,
+): PlainExtension {
+  const { regex, type, attrs, stop = true } = options
   return defineEnterRule({
     regex,
     handler: ({ state, from, to, match }) => {

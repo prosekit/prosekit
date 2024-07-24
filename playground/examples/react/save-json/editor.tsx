@@ -30,14 +30,11 @@ export default function Editor() {
   }, [editor])
 
   // Load a document from a JSON string
-  const handleLoad = useCallback(
-    (record: string) => {
-      setDefaultDoc(JSON.parse(record))
-      setHasUnsavedChange(false)
-      setKey((key) => key + 1)
-    },
-    [records],
-  )
+  const handleLoad = useCallback((record: string) => {
+    setDefaultDoc(JSON.parse(record))
+    setHasUnsavedChange(false)
+    setKey((key) => key + 1)
+  }, [])
 
   return (
     <div className={Themes.EDITOR_VIEWPORT}>

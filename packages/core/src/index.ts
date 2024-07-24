@@ -35,7 +35,7 @@ export {
   defineDefaultState,
   type DefaultStateOptions,
 } from './extensions/default-state'
-export { defineDoc } from './extensions/doc'
+export { defineDoc , type DocExtension} from './extensions/doc'
 export {
   defineDocChangeHandler,
   type DocChangeHandler,

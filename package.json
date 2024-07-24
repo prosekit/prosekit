@@ -54,7 +54,7 @@
   },
   "pnpm": {
     "overrides": {
-      "typescript": "5.5.3"
+      "typescript@^5.5.3": "5.5.3"
     },
     "patchedDependencies": {
       "prosemirror-splittable@0.1.1": "patches/prosemirror-splittable@0.1.1.patch"

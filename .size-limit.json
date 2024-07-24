@@ -156,6 +156,14 @@
     "path": "packages/prosekit/dist/extensions/virtual-selection/style.css"
   },
   {
+    "name": "prosekit/extensions/yjs",
+    "path": "packages/prosekit/dist/prosekit-extensions-yjs.js"
+  },
+  {
+    "name": "prosekit/extensions/yjs/style.css",
+    "path": "packages/prosekit/dist/extensions/yjs/style.css"
+  },
+  {
     "name": "prosekit/lit",
     "path": "packages/prosekit/dist/prosekit-lit.js"
   },

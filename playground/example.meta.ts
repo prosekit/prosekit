@@ -494,6 +494,33 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-yjs",
+      "framework": "react",
+      "story": "yjs",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "input.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-minimal",
       "framework": "vue",
       "story": "minimal",

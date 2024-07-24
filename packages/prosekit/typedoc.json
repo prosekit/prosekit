@@ -1,6 +1,8 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
   "entryPoints": [
     "./src/basic.gen.ts",
     "./src/core.gen.ts",
@@ -32,6 +34,7 @@
     "./src/extensions/text-align.gen.ts",
     "./src/extensions/underline.gen.ts",
     "./src/extensions/virtual-selection.gen.ts",
+    "./src/extensions/yjs.gen.ts",
     "./src/index.ts",
     "./src/lit.gen.ts",
     "./src/lit/autocomplete.gen.ts",

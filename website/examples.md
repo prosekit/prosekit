@@ -73,3 +73,5 @@
 - [user-menu-dynamic](./examples/user-menu-dynamic)
 
 - [word-counter](./examples/word-counter)
+
+- [yjs](./examples/yjs)

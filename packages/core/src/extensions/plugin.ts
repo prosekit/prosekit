@@ -21,19 +21,22 @@ export function definePlugin(
     | Plugin[]
     | ((context: { schema: Schema }) => Plugin | Plugin[]),
 ): PlainExtension {
-  if (plugin instanceof Plugin) {
-    return defineFacetPayload(pluginFacet, [() => [plugin]]) as PlainExtension
-  }
-
-  if (Array.isArray(plugin) && plugin.every((p) => p instanceof Plugin)) {
-    return defineFacetPayload(pluginFacet, [() => plugin]) as PlainExtension
+  if (
+    plugin instanceof Plugin ||
+    (Array.isArray(plugin) && plugin.every((p) => p instanceof Plugin))
+  ) {
+    return definePluginPayload(() => plugin)
   }
 
   if (typeof plugin === 'function') {
-    return defineFacetPayload(pluginFacet, [plugin]) as PlainExtension
+    return definePluginPayload(plugin)
   }
 
   throw new TypeError('Invalid plugin')
+}
+
+function definePluginPayload(payload: PluginPayload): PlainExtension {
+  return defineFacetPayload(pluginFacet, [payload]) as PlainExtension
 }
 
 /**

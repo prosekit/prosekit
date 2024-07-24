@@ -14,6 +14,7 @@
     "./src/extensions/commit.gen.ts",
     "./src/extensions/drop-cursor.gen.ts",
     "./src/extensions/enter-rule.gen.ts",
+    "./src/extensions/gap-cursor.gen.ts",
     "./src/extensions/heading.gen.ts",
     "./src/extensions/image.gen.ts",
     "./src/extensions/input-rule.gen.ts",

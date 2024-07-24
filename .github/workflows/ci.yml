@@ -134,6 +134,9 @@ jobs:
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
+        # Only run this step if the CLOUDFLARE_PAGES_API_TOKEN is set (i.e. it's
+        # not from a fork). Notice that secrets cannot be directly referenced in
+        # `if:` conditionals.
         if: ${{ env.CLOUDFLARE_PAGES_API_TOKEN != '' }}
         with:
           apiToken: ${{ env.CLOUDFLARE_PAGES_API_TOKEN }}

@@ -7,12 +7,12 @@ import unocss from '@unocss/eslint-config/flat'
 const configs = [
   unocss,
   ...basic(),
+  ...markdown(),
   ...react().map((config) => ({
     ...config,
     files: ['**/react/**/*.?([cm])[jt]s?(x)'],
   })),
   ...vue(),
-  ...markdown(),
   {
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',

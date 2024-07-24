@@ -18,8 +18,8 @@ describe('union', () => {
     type Outout = typeof output
     type Expected = Extension<{
       Nodes: { node3: Attrs }
-      Marks: never
-      Commands: never
+      Marks: never,
+      Commands: never,
     }>
 
     assertTypeEqual<Outout, Expected>(true)

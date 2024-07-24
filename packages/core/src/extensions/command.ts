@@ -20,13 +20,13 @@ export function defineCommands<
   commands: T,
 ): Extension<{
   Commands: { [K in keyof T]: Parameters<T[K]> }
-  Nodes: never
-  Marks: never
+  
+  
 }> {
   return defineFacetPayload(commandFacet, [commands]) as Extension<{
     Commands: { [K in keyof T]: Parameters<T[K]> }
-    Nodes: never
-    Marks: never
+    
+    
   }>
 }
 

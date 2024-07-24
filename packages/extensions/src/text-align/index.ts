@@ -47,8 +47,8 @@ function defineTextAlignAttrs<NodeName extends string>(
   defaultValue: string | null,
 ): Extension<{
   Nodes: { [K in NodeName]: { textAlign: string | null } }
-  Marks: never
-  Commands: never
+  
+  
 }> {
   return union(types.map((type) => defineTextAlignAttr(type, defaultValue)))
 }
@@ -77,8 +77,8 @@ export type TextAlignCommandTyping = {
  * @internal
  */
 export function defineTextAlignCommands(types: string[]): Extension<{
-  Nodes: never
-  Marks: never
+  
+  
   Commands: TextAlignCommandTyping
 }> {
   return defineCommands({
@@ -108,7 +108,7 @@ export function defineTextAlign<NodeName extends string = string>(
   options: TextAlignOptions<NodeName>,
 ): Extension<{
   Nodes: { [K in NodeName]: { textAlign: string | null } }
-  Marks: never
+  
   Commands: TextAlignCommandTyping
 }> {
   return union([

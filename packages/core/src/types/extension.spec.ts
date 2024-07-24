@@ -6,33 +6,33 @@ import type { Extension, UnionExtension } from './extension'
 test('ExtractTyping', () => {
   type E1 = Extension<{
     Nodes: { foo: { attr1: string } }
-    Marks: never
-    Commands: never
+    
+    
   }>
   type E2 = Extension<{
     Nodes: { foo: { attr2: number } }
-    Marks: never
-    Commands: never
+    
+    
   }>
   type E3 = Extension<{
-    Nodes: never
+    
     Marks: { bar: { attr3: boolean } }
-    Commands: never
+    
   }>
   type E4 = Extension<{
-    Nodes: never
-    Marks: never
+    
+    
     Commands: { a: [''] }
   }>
   type E5 = Extension<{
     Nodes: { baz: { attr4: null } }
-    Marks: never
+    
     Commands: { b: [string, number]; c: [{ c: boolean }] }
   }>
   type E6 = Extension<{
-    Nodes: never
-    Marks: never
-    Commands: never
+    
+    
+    
   }>
   type E7 = Extension<{
     Nodes: any

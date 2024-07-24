@@ -67,14 +67,10 @@ export function defineMarkSpec<
   options: MarkSpecOptions<Mark, Attrs>,
 ): Extension<{
   Marks: { [K in Mark]: Attrs }
-  
-  
 }> {
   const payload: MarkSpecPayload = [options, undefined]
   return defineFacetPayload(markSpecFacet, [payload]) as Extension<{
     Marks: any
-    
-    
   }>
 }
 
@@ -88,15 +84,11 @@ export function defineMarkAttr<
 >(
   options: MarkAttrOptions<MarkType, AttrName, AttrType>,
 ): Extension<{
-  
   Marks: { [K in MarkType]: AttrType }
-  
 }> {
   const payload: MarkSpecPayload = [undefined, options]
   return defineFacetPayload(markSpecFacet, [payload]) as Extension<{
-    
     Marks: any
-    
   }>
 }
 

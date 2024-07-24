@@ -1,13 +1,22 @@
-import { defineNodeSpec } from '@prosekit/core'
+import { defineNodeSpec, type Extension } from '@prosekit/core'
 
 import type { CodeBlockAttrs } from './code-block-types'
+
+/**
+ * @internal
+ */
+export type CodeBlockSpecExtension = Extension<{
+  Nodes: {
+    codeBlock: CodeBlockAttrs
+  }
+}>
 
 /**
  * Defines the `codeBlock` node spec.
  *
  * @public
  */
-export function defineCodeBlockSpec() {
+export function defineCodeBlockSpec(): CodeBlockSpecExtension {
   return defineNodeSpec({
     name: 'codeBlock',
     content: 'text*',

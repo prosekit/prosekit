@@ -4,11 +4,8 @@ import {
   defineHeadingCommands,
   type HeadingCommandsExtension,
 } from './commands'
-import {
-  defineHeadingInputRule,
-  
-} from './input-rule'
-import { defineHeadingKeymap  } from './keymap'
+import { defineHeadingInputRule } from './input-rule'
+import { defineHeadingKeymap } from './keymap'
 import { defineHeadingSpec, type HeadingSpecExtension } from './spec'
 import type { HeadingAttrs } from './types'
 
@@ -16,12 +13,7 @@ import type { HeadingAttrs } from './types'
  * @internal
  */
 export type HeadingExtension = Union<
-  [
-    HeadingSpecExtension,
-  
- 
-    HeadingCommandsExtension,
-  ]
+  [HeadingSpecExtension, HeadingCommandsExtension]
 >
 
 /**
@@ -41,7 +33,6 @@ export {
   defineHeadingInputRule,
   defineHeadingKeymap,
   defineHeadingSpec,
- 
   type HeadingCommandsExtension,
   type HeadingSpecExtension,
   type HeadingAttrs,

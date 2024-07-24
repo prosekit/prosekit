@@ -4,7 +4,6 @@ import {
   toggleNode,
   unsetBlockType,
   withSkipCodeBlock,
- 
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 
@@ -24,7 +23,6 @@ const backspaceUnsetHeading: Command = (state, dispatch, view) => {
   return false
 }
 
- 
 /**
  * @internal
  */

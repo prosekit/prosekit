@@ -3,8 +3,6 @@ import { createListSpec } from 'prosemirror-flat-list'
 
 import type { ListAttrs } from './types'
 
-
-
 /**
  * @internal
  */

@@ -35,8 +35,7 @@ export function defineParagraphSpec(): ParagraphSpecExtension {
 /**
  * @internal
  */
-export type ParagraphExtension =  ParagraphSpecExtension
-
+export type ParagraphExtension = ParagraphSpecExtension
 
 /**
  * @public

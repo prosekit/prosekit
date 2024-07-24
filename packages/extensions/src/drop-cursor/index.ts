@@ -27,7 +27,6 @@ export interface DropCursorOptions {
  */
 export type DropCursorExtension = PluginExtension
 
-
 /**
  * Show up a decoration at the drop position when something is dragged over the editor.
  *
@@ -35,6 +34,8 @@ export type DropCursorExtension = PluginExtension
  *
  * @public
  */
-export function defineDropCursor(options?: DropCursorOptions): DropCursorExtension {
+export function defineDropCursor(
+  options?: DropCursorOptions,
+): DropCursorExtension {
   return definePlugin(() => dropCursor(options))
 }

@@ -63,11 +63,12 @@ export function defineUnderlineKeymap() {
   })
 }
 
-
 /**
  * @internal
  */
-export type UnderlineExtension = Union<[UnderlineSpecExtension, UnderlineCommandsExtension]>
+export type UnderlineExtension = Union<
+  [UnderlineSpecExtension, UnderlineCommandsExtension]
+>
 
 /**
  * @public

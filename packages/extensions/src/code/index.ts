@@ -12,7 +12,6 @@ import type { Attrs } from '@prosekit/pm/model'
 
 import { defineMarkInputRule } from '../input-rule'
 
-
 /**
  * @internal
  */

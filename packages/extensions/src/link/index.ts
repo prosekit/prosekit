@@ -83,7 +83,7 @@ export function defineLinkCommands(): LinkCommandsExtension {
 
 /**
  * Apply link marks after pressing Space.
- * 
+ *
  * @internal
  */
 export function defineLinkInputRule() {
@@ -100,7 +100,7 @@ export function defineLinkInputRule() {
 
 /**
  * Apply link marks after typing Enter.
- * 
+ *
  * @internal
  */
 export function defineLinkEnterRule() {
@@ -119,7 +119,7 @@ export function defineLinkEnterRule() {
 
 /**
  * Apply and remove link marks to the text during typing.
- * 
+ *
  * @internal
  */
 export function defineLinkMarkRule() {
@@ -129,7 +129,6 @@ export function defineLinkMarkRule() {
     attrs: (match) => ({ href: match[1] }),
   })
 }
-
 
 /**
  * @internal

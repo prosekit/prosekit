@@ -7,7 +7,6 @@ import type { EditorView } from '@prosekit/pm/view'
  */
 export type ModClickPreventionExtension = PluginExtension
 
-
 /**
  * By default, clicking a node while holding the mod key will select the node. This
  * extension disables that behavior.

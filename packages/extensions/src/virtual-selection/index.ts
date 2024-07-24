@@ -1,4 +1,4 @@
-import { definePlugin, type Extension, type PluginExtension } from '@prosekit/core'
+import { definePlugin, type PluginExtension } from '@prosekit/core'
 import {
   EditorState,
   PluginKey,

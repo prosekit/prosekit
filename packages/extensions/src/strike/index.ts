@@ -12,7 +12,6 @@ import type { Attrs } from '@prosekit/pm/model'
 
 import { defineMarkInputRule } from '../input-rule'
 
-
 /**
  * @internal
  */
@@ -84,7 +83,9 @@ export function defineStrikeInputRule() {
 /**
  * @internal
  */
-export type StrikeExtension = Union<[StrikeSpecExtension, StrikeCommandsExtension]>
+export type StrikeExtension = Union<
+  [StrikeSpecExtension, StrikeCommandsExtension]
+>
 
 /**
  * @public

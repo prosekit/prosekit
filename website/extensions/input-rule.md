@@ -14,7 +14,7 @@ import { defineInputRule } from 'prosekit/extensions/input-rule'
  * Converts three dots to an ellipsis character.
  */
 function defineEllipsis() {
-  const rule = new InputRule(/\.\.\.$/, '…')
+  const rule = new InputRule(/\.{3}$/, '…')
   return defineInputRule(rule)
 }
 ```

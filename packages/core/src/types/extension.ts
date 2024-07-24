@@ -57,6 +57,8 @@ export type ExtractTyping<E extends Extension> =
     : never
 
 /**
+ * An extension that does not define any nodes, marks, or commands.
+ *
  * @internal
  */
 export type PlainExtension = Extension<{

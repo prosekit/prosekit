@@ -6,9 +6,9 @@ import {
 } from './commands'
 import {
   defineHeadingInputRule,
-  type HeadingInputRuleExtension,
+  
 } from './input-rule'
-import { defineHeadingKeymap, type HeadingKeymapExtension } from './keymap'
+import { defineHeadingKeymap  } from './keymap'
 import { defineHeadingSpec, type HeadingSpecExtension } from './spec'
 import type { HeadingAttrs } from './types'
 
@@ -18,8 +18,8 @@ import type { HeadingAttrs } from './types'
 export type HeadingExtension = Union<
   [
     HeadingSpecExtension,
-    HeadingInputRuleExtension,
-    HeadingKeymapExtension,
+  
+ 
     HeadingCommandsExtension,
   ]
 >
@@ -41,8 +41,7 @@ export {
   defineHeadingInputRule,
   defineHeadingKeymap,
   defineHeadingSpec,
-  type HeadingInputRuleExtension,
-  type HeadingKeymapExtension,
+ 
   type HeadingCommandsExtension,
   type HeadingSpecExtension,
   type HeadingAttrs,

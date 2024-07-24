@@ -2,19 +2,15 @@ import { Schema } from '@prosekit/pm/model'
 import { Plugin, ProseMirrorPlugin } from '@prosekit/pm/state'
 
 import { ProseKitError } from '../error'
-import { defineFacet } from '../facets/facet'
+import { defineFacet, Facet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { stateFacet, type StatePayload } from '../facets/state'
-import type { Extension } from '../types/extension'
+import type { PlainExtension } from '../types/extension'
 
 /**
  * @internal
  */
-export type PluginExtension = Extension<{
-  Nodes: never
-  Marks: never
-  Commands: never
-}>
+export type PluginExtension = PlainExtension
 
 /**
  * Adds a ProseMirror plugin to the editor.
@@ -56,7 +52,7 @@ export type PluginPayload =
 /**
  * @internal
  */
-export const pluginFacet = defineFacet<PluginPayload, StatePayload>({
+export const pluginFacet: Facet<PluginPayload, StatePayload> = defineFacet({
   reducer: (payloads): StatePayload => {
     return ({ schema }) => {
       const plugins: ProseMirrorPlugin[] = []

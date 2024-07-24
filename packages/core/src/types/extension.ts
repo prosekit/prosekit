@@ -57,6 +57,15 @@ export type ExtractTyping<E extends Extension> =
     : never
 
 /**
+ * @internal
+ */
+export type PlainExtension = Extension<{
+  Nodes: never
+  Marks: never
+  Commands: never
+}>
+
+/**
  * @public
  */
 export type ExtractNodes<E extends Extension> = SimplifyDeeper<

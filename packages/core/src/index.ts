@@ -145,6 +145,7 @@ export type {
   ExtractMarks,
   ExtractNodeActions,
   ExtractNodes,
+  PlainExtension,
   Union,
   UnionExtension,
 } from './types/extension'

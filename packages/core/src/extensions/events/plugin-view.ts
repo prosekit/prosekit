@@ -3,6 +3,7 @@ import type { EditorView } from '@prosekit/pm/view'
 
 import { defineFacet } from '../../facets/facet'
 import { defineFacetPayload } from '../../facets/facet-extension'
+import type { PlainExtension } from '../../types/extension'
 import { pluginFacet, type PluginPayload } from '../plugin'
 
 /**
@@ -36,8 +37,8 @@ export type UnmountHandler = () => void
  *
  * @public
  */
-export function defineMountHandler(handler: MountHandler) {
-  return defineFacetPayload(pluginViewFacet, [['mount', handler]])
+export function defineMountHandler(handler: MountHandler): PlainExtension {
+  return definePluginViewFacetPayload(['mount', handler])
 }
 
 /**
@@ -45,8 +46,8 @@ export function defineMountHandler(handler: MountHandler) {
  *
  * @public
  */
-export function defineUpdateHandler(handler: UpdateHandler) {
-  return defineFacetPayload(pluginViewFacet, [['update', handler]])
+export function defineUpdateHandler(handler: UpdateHandler): PlainExtension {
+  return definePluginViewFacetPayload(['update', handler])
 }
 
 /**
@@ -54,8 +55,14 @@ export function defineUpdateHandler(handler: UpdateHandler) {
  *
  * @public
  */
-export function defineUnmountHandler(handler: UnmountHandler) {
-  return defineFacetPayload(pluginViewFacet, [['unmount', handler]])
+export function defineUnmountHandler(handler: UnmountHandler): PlainExtension {
+  return definePluginViewFacetPayload(['unmount', handler])
+}
+
+function definePluginViewFacetPayload(
+  input: PluginViewHandlerArgs,
+): PlainExtension {
+  return defineFacetPayload(pluginViewFacet, [input]) as PlainExtension
 }
 
 type PluginViewHandlerArgs =

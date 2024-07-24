@@ -1,11 +1,12 @@
 import type { DOMOutputSpec, MarkSpec, SchemaSpec } from '@prosekit/pm/model'
+import OrderedMap from 'orderedmap'
 
-import { ProseKitError } from '../error'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
 import type { AnyAttrs, AttrSpec } from '../types/attrs'
 import type { Extension } from '../types/extension'
+import { assert } from '../utils/assert'
 import { isElement } from '../utils/is-element'
 import { isNotNull } from '../utils/is-not-null'
 
@@ -106,17 +107,17 @@ type MarkSpecPayload = [
 
 const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
   reducer: (payloads: MarkSpecPayload[]): SchemaSpec => {
-    const marks: Record<string, MarkSpec> = {}
+    let specs = OrderedMap.from<MarkSpec>({})
 
     const specPayloads = payloads.map((input) => input[0]).filter(isNotNull)
     const attrPayloads = payloads.map((input) => input[1]).filter(isNotNull)
 
     for (const { name, ...spec } of specPayloads) {
-      if (marks[name]) {
-        throw new ProseKitError(`Mark type ${name} has already been defined`)
-      }
+      assert(!specs.get(name), `Mark type ${name} can only be defined once`)
 
-      marks[name] = spec
+      // The latest spec has the highest priority, so we put it at the start of
+      // the map.
+      specs = specs.addToStart(name, spec)
     }
 
     for (const {
@@ -126,13 +127,8 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
       toDOM,
       parseDOM,
     } of attrPayloads) {
-      const spec = marks[type]
-
-      if (!spec) {
-        throw new ProseKitError(
-          `Mark type ${type} must be defined before defining attributes`,
-        )
-      }
+      const spec = specs.get(type)
+      assert(spec, `Mark type ${type} must be defined`)
 
       if (!spec.attrs) {
         spec.attrs = {}
@@ -202,7 +198,7 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
       }
     }
 
-    return { marks, nodes: {} }
+    return { marks: specs, nodes: {} }
   },
   parent: schemaSpecFacet,
   singleton: true,

@@ -134,11 +134,8 @@ export type ExtractCommandAppliers<E extends Extension> =
 /**
  * @internal
  */
-export type UnionExtension<E extends Extension | readonly Extension[]> =
-  E extends readonly Extension[]
-    ? Extension<{
-        Nodes: ExtractNodes<E[number]>
-        Marks: ExtractMarks<E[number]>
-        Commands: ExtractCommands<E[number]>
-      }>
-    : E
+export type UnionExtension<E extends readonly Extension[]> = Extension<{
+  Nodes: ExtractNodes<E[number]>
+  Marks: ExtractMarks<E[number]>
+  Commands: ExtractCommands<E[number]>
+}>

@@ -21,12 +21,16 @@ import { assert } from '../utils/assert'
  *
  * @public
  */
-export function union<const E extends Extension | readonly Extension[]>(
-  extension: E,
-): UnionExtension<E> {
-  const array = Array.isArray(extension) ? extension : [extension]
-  assert(array.length > 0, 'At least one extension is required')
-  return new UnionExtensionImpl(
-    array as BaseExtension[],
-  ) as Extension as UnionExtension<E>
+function union<const Extensions extends readonly Extension[]>(
+  ...exts: Extensions
+): UnionExtension<Extensions>
+function union<const Extensions extends readonly Extension[]>(
+  exts: Extensions,
+): UnionExtension<Extensions>
+function union(...exts: Array<Extension | Extension[]>): Extension {
+  const extensions: Extension[] = exts.flat()
+  assert(extensions.length > 0, 'At least one extension is required')
+  return new UnionExtensionImpl(extensions as BaseExtension[]) as Extension
 }
+
+export { union }

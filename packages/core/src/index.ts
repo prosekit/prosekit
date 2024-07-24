@@ -130,6 +130,7 @@ export type {
   ExtractMarks,
   ExtractNodeActions,
   ExtractNodes,
+  Union,
   UnionExtension,
 } from './types/extension'
 export type { CommandAction, CommandTyping } from './types/extension-command'

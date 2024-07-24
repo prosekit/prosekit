@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  typescript@^5.5.3: 5.5.3
+
 patchedDependencies:
   prosemirror-splittable@0.1.1:
     hash: ltdjze5wh25pjc2y4z24yafn7u
@@ -74,7 +77,7 @@ importers:
         specifier: ^2.0.7
         version: 2.0.7
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       unocss:
         specifier: ^0.61.5
@@ -108,7 +111,7 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -139,7 +142,7 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -209,7 +212,7 @@ importers:
         specifier: ^4.16.2
         version: 4.16.2
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -242,8 +245,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       prosemirror-tables:
-        specifier: ^1.3.7
-        version: 1.3.7
+        specifier: ^1.4.0
+        version: 1.4.0
       shiki:
         specifier: ^1.10.3
         version: 1.10.3
@@ -261,7 +264,7 @@ importers:
         specifier: ^4.22.1
         version: 4.22.1
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -280,7 +283,7 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -320,7 +323,7 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -351,7 +354,7 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -427,7 +430,7 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vue:
         specifier: ^3.4.32
@@ -470,7 +473,7 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -498,7 +501,7 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -541,7 +544,7 @@ importers:
         specifier: ^4.16.2
         version: 4.16.2
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -566,7 +569,7 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       unplugin-macros:
         specifier: ^0.13.1
@@ -591,7 +594,7 @@ importers:
         specifier: ^20.14.11
         version: 20.14.11
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       unocss:
         specifier: ^0.61.5
@@ -622,7 +625,7 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -677,7 +680,7 @@ importers:
         specifier: ^8.1.2
         version: 8.1.2(@microsoft/api-extractor@7.47.2(@types/node@20.14.11))(jiti@1.21.6)(postcss@8.4.39)(tsx@4.16.2)(typescript@5.5.3)(yaml@2.4.5)
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       vitest:
         specifier: ^2.0.3
@@ -770,7 +773,7 @@ importers:
         specifier: ^3.8.4
         version: 3.8.4(@babel/core@7.24.9)(postcss@8.4.39)(svelte@4.2.18)
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       unified:
         specifier: ^11.0.5
@@ -869,7 +872,7 @@ importers:
         specifier: ^3.2.4
         version: 3.2.4(typedoc@0.26.4(typescript@5.5.3))
       typescript:
-        specifier: ^5.5.3
+        specifier: 5.5.3
         version: 5.5.3
       unocss:
         specifier: ^0.61.5
@@ -1030,7 +1033,7 @@ packages:
     peerDependencies:
       astro: ^4.0.0
       svelte: ^4.0.0 || ^5.0.0-next.190
-      typescript: ^5.3.3
+      typescript: 5.5.3
 
   '@astrojs/telemetry@3.1.0':
     resolution: {integrity: sha512-/ca/+D8MIKEC8/A9cSaPUqQNZm+Es/ZinRv0ZAzvu2ios7POQSsVD+VOj7/hypWNsNM3T7RpfgNq7H2TU1KEHA==}
@@ -2690,7 +2693,7 @@ packages:
   '@vue/language-core@2.0.26':
     resolution: {integrity: sha512-/lt6SfQ3O1yDAhPsnLv9iSUgXd1dMHqUm/t3RctfqjuwQf1LnftZ414X3UBn6aXT4MiwXWtbNJ4Z0NZWwDWgJQ==}
     peerDependencies:
-      typescript: '*'
+      typescript: 5.5.3
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -3643,7 +3646,7 @@ packages:
     resolution: {integrity: sha512-JuVLdNg/uf0Adjg2tpTyYoYaMbwQNn/c78P1HcccokvhtRphgnRjZDKmhlxbxYptppex03zO76f97DD/yQHv7A==}
     peerDependencies:
       eslint: ^8.0.0
-      typescript: ^4.2.4 || ^5.0.0
+      typescript: 5.5.3
 
   eslint-plugin-import@2.29.1:
     resolution: {integrity: sha512-BbPC0cuExzhiMo4Ff1BTVwHpjjv28C5R+btTOGaCRC7UEz801up0JadwkeSk5Ued6TG34uaczuVuH6qyy5YUxw==}
@@ -5000,7 +5003,7 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
-      typescript: '>= 4.7.x'
+      typescript: 5.5.3
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -5525,8 +5528,8 @@ packages:
   prosemirror-state@1.4.3:
     resolution: {integrity: sha512-goFKORVbvPuAQaXhpbemJFRKJ2aixr+AZMGiquiqKxaucC6hlpHNZHWgz5R7dS4roHiwq9vDctE//CZ++o0W1Q==}
 
-  prosemirror-tables@1.3.7:
-    resolution: {integrity: sha512-oEwX1wrziuxMtwFvdDWSFHVUWrFJWt929kVVfHvtTi8yvw+5ppxjXZkMG/fuTdFo+3DXyIPSKfid+Be1npKXDA==}
+  prosemirror-tables@1.4.0:
+    resolution: {integrity: sha512-fxryZZkQG12fSCNuZDrYx6Xvo2rLYZTbKLRd8rglOPgNJGMKIS8uvTt6gGC38m7UCu/ENnXIP9pEz5uDaPc+cA==}
 
   prosemirror-transform@1.9.0:
     resolution: {integrity: sha512-5UXkr1LIRx3jmpXXNKDhv8OyAOeLTGuXNwdVfg8x27uASna/wQkr9p6fD3eupGOi4PLJfbezxTyi/7fSJypXHg==}
@@ -6126,7 +6129,7 @@ packages:
       stylus: ^0.55.0
       sugarss: ^2.0.0 || ^3.0.0 || ^4.0.0
       svelte: ^3.23.0 || ^4.0.0-next.0 || ^4.0.0 || ^5.0.0-next.0
-      typescript: '>=3.9.5 || ^4.0.0 || ^5.0.0'
+      typescript: 5.5.3
     peerDependenciesMeta:
       '@babel/core':
         optional: true
@@ -6153,7 +6156,7 @@ packages:
     resolution: {integrity: sha512-aObZ93/kGAiLXA/I/kP+x9FriZM+GboB/ReOIGmLNbVGEd2xC+aTCppm3mk1cc9I/z60VQf7b2QDxC3jOXu3yw==}
     peerDependencies:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
-      typescript: ^4.9.4 || ^5.0.0
+      typescript: 5.5.3
 
   svelte@4.2.18:
     resolution: {integrity: sha512-d0FdzYIiAePqRJEb90WlJDkjUEx42xhivxN8muUBmfZnP+tzUgz12DJ2hRJi8sIHCME7jeK1PTMgKPSfTd8JrA==}
@@ -6264,7 +6267,7 @@ packages:
     resolution: {integrity: sha512-UQMIo7pb8WRomKR1/+MFVLTroIvDVtMX3K6OUir8ynLyzB8Jeriont2bTAtmNPa1ekAgN7YPDyf6V+ygrdU+eQ==}
     engines: {node: '>=16'}
     peerDependencies:
-      typescript: '>=4.2.0'
+      typescript: 5.5.3
 
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
@@ -6277,7 +6280,7 @@ packages:
     engines: {node: ^18 || >=20}
     hasBin: true
     peerDependencies:
-      typescript: ^5.0.0
+      typescript: 5.5.3
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -6300,7 +6303,7 @@ packages:
       '@microsoft/api-extractor': ^7.36.0
       '@swc/core': ^1
       postcss: ^8.4.12
-      typescript: '>=4.5.0'
+      typescript: 5.5.3
     peerDependenciesMeta:
       '@microsoft/api-extractor':
         optional: true
@@ -6356,12 +6359,12 @@ packages:
   twoslash-vue@0.2.9:
     resolution: {integrity: sha512-1f/AMB7jvifOMWjG2xdqnEywmkt+U2xef2TBfXugZasNDkqeTwdHCRGafi37Kk6smyzYYj2JLemMECfdSjWwoQ==}
     peerDependencies:
-      typescript: '*'
+      typescript: 5.5.3
 
   twoslash@0.2.9:
     resolution: {integrity: sha512-oj7XY6h8E9nTZBmfRE1gpsSSUqAQo5kcIpFkXyQPp8UCsyCQsUlP2bJ2s32o02c1n5+xl4h9rcCsQ1F97Z6LZg==}
     peerDependencies:
-      typescript: '*'
+      typescript: 5.5.3
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -6426,7 +6429,7 @@ packages:
     engines: {node: '>= 18'}
     hasBin: true
     peerDependencies:
-      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x
+      typescript: 5.5.3
 
   typescript-eslint@7.16.1:
     resolution: {integrity: sha512-889oE5qELj65q/tGeOSvlreNKhimitFwZqQ0o7PcWC7/lgRkAMknznsCsV8J8mZGTP/Z+cIbX8accf2DE33hrA==}
@@ -6722,12 +6725,12 @@ packages:
     resolution: {integrity: sha512-tOhuwy2bIXbMhz82ef37qeiaQHMXKQkD6mOF6CCPl3/uYtST3l6fdNyfMxipudrQTxTfXVPlgJdMENBFfC1CfQ==}
     hasBin: true
     peerDependencies:
-      typescript: '>=5.0.0'
+      typescript: 5.5.3
 
   vue@3.4.32:
     resolution: {integrity: sha512-9mCGIAi/CAq7GtaLLLp2J92pEic+HArstG+pq6F+H7+/jB9a0Z7576n4Bh4k79/50L1cKMIhZC3MC0iGpl+1IA==}
     peerDependencies:
-      typescript: '*'
+      typescript: 5.5.3
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -8218,7 +8221,7 @@ snapshots:
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-antfu: 2.3.4(eslint@8.57.0)
       eslint-plugin-deprecation: 3.0.0(eslint@8.57.0)(typescript@5.5.3)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-jsonc: 2.16.0(eslint@8.57.0)
       eslint-plugin-markdown: 5.1.0(eslint@8.57.0)
       eslint-plugin-no-only-tests: 3.1.0
@@ -10278,7 +10281,7 @@ snapshots:
       enhanced-resolve: 5.17.0
       eslint: 8.57.0
       eslint-module-utils: 2.8.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
-      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
+      eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0)
       fast-glob: 3.3.2
       get-tsconfig: 4.7.5
       is-core-module: 2.15.0
@@ -10315,7 +10318,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0):
+  eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.16.1(eslint@8.57.0)(typescript@5.5.3))(eslint@8.57.0))(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       array-includes: 3.1.8
       array.prototype.findlastindex: 1.2.5
@@ -12540,7 +12543,7 @@ snapshots:
       prosemirror-transform: 1.9.0
       prosemirror-view: 1.33.9
 
-  prosemirror-tables@1.3.7:
+  prosemirror-tables@1.4.0:
     dependencies:
       prosemirror-keymap: 1.2.2
       prosemirror-model: 1.22.2

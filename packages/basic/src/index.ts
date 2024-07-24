@@ -6,21 +6,40 @@ import {
   defineParagraph,
   defineText,
   union,
+  type BaseKeymapExtension,
+  type DocExtension,
+  type HistoryExtension,
+  type TextExtension,
+  type Union,
 } from '@prosekit/core'
-import { defineBlockquote } from '@prosekit/extensions/blockquote'
+import { defineBlockquote, type BlockquoteExtension } from '@prosekit/extensions/blockquote'
 import { defineBold } from '@prosekit/extensions/bold'
 import { defineCode } from '@prosekit/extensions/code'
 import { defineDropCursor } from '@prosekit/extensions/drop-cursor'
-import { defineHeading } from '@prosekit/extensions/heading'
+import { defineHeading, type HeadingExtension } from '@prosekit/extensions/heading'
 import { defineImage } from '@prosekit/extensions/image'
 import { defineItalic } from '@prosekit/extensions/italic'
 import { defineLink } from '@prosekit/extensions/link'
-import { defineList } from '@prosekit/extensions/list'
+import { defineList, type ListExtension } from '@prosekit/extensions/list'
 import { defineModClickPrevention } from '@prosekit/extensions/mod-click-prevention'
 import { defineStrike } from '@prosekit/extensions/strike'
 import { defineTable } from '@prosekit/extensions/table'
 import { defineUnderline } from '@prosekit/extensions/underline'
 import { defineVirtualSelection } from '@prosekit/extensions/virtual-selection'
+
+/**
+ * @public
+ */
+export type BasicExtension = Union<[
+  DocExtension,
+  TextExtension,
+  HeadingExtension,
+  HistoryExtension,
+  ListExtension,
+  BlockquoteExtension,
+  BaseKeymapExtension,
+]>
+
 
 /**
  * Define a basic extension that includes some common functionality. You can
@@ -37,22 +56,18 @@ export function defineBasicExtension() {
     defineBlockquote(),
     defineBaseKeymap(),
     defineBaseCommands(),
-    defineItalic(),
-    defineBold(),
-    defineUnderline(),
-    defineStrike(),
-    defineCode(),
-    defineLink(),
-    defineImage(),
-    defineParagraph(),
-    defineDropCursor(),
-    defineVirtualSelection(),
-    defineModClickPrevention(),
-    defineTable(),
+    // defineItalic(),
+    // defineBold(),
+    // defineUnderline(),
+    // defineStrike(),
+    // defineCode(),
+    // defineLink(),
+    // defineImage(),
+    // defineParagraph(),
+    // defineDropCursor(),
+    // defineVirtualSelection(),
+    // defineModClickPrevention(),
+    // defineTable(),
   ])
 }
 
-/**
- * @public
- */
-export type BasicExtension = ReturnType<typeof defineBasicExtension>

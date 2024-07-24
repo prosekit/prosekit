@@ -89,7 +89,7 @@ export {
   type Keymap,
   type KeymapPayload,
 } from './extensions/keymap'
-export { defineBaseKeymap } from './extensions/keymap-base'
+export { defineBaseKeymap , type BaseKeymapExtension} from './extensions/keymap-base'
 export {
   defineMarkAttr,
   defineMarkSpec,

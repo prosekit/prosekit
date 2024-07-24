@@ -65,9 +65,9 @@
     "@types/react-dom": "^18.3.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tsup": "^8.1.2",
+    "tsup": "^8.2.2",
     "typescript": "^5.5.3",
-    "vitest": "^2.0.3"
+    "vitest": "^2.0.4"
   },
   "publishConfig": {
     "exports": {

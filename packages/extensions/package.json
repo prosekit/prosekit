@@ -77,15 +77,15 @@
     "prosemirror-highlight": "^0.8.0",
     "prosemirror-search": "^1.0.0",
     "prosemirror-tables": "^1.4.0",
-    "shiki": "^1.10.3"
+    "shiki": "^1.11.1"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "@vitest/browser": "^2.0.3",
-    "tsup": "^8.1.2",
-    "type-fest": "^4.22.1",
+    "@vitest/browser": "^2.0.4",
+    "tsup": "^8.2.2",
+    "type-fest": "^4.23.0",
     "typescript": "^5.5.3",
-    "vitest": "^2.0.3"
+    "vitest": "^2.0.4"
   },
   "publishConfig": {
     "exports": {

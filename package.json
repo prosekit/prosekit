@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.6.0",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
@@ -37,20 +37,20 @@
     "@size-limit/esbuild-why": "^11.1.4",
     "@size-limit/preset-small-lib": "^11.1.4",
     "@unocss/eslint-config": "^0.61.5",
-    "@vitest/browser": "^2.0.3",
-    "@vitest/coverage-istanbul": "^2.0.3",
+    "@vitest/browser": "^2.0.4",
+    "@vitest/coverage-istanbul": "^2.0.4",
     "cross-env": "^7.0.3",
     "eslint": "^8.57.0",
-    "jsdom": "^24.1.0",
-    "playwright": "^1.45.2",
+    "jsdom": "^24.1.1",
+    "playwright": "^1.45.3",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.2.6",
     "size-limit": "^11.1.4",
-    "turbo": "^2.0.7",
+    "turbo": "^2.0.9",
     "typescript": "^5.5.3",
     "unocss": "^0.61.5",
-    "vitest": "^2.0.3"
+    "vitest": "^2.0.4"
   },
   "pnpm": {
     "overrides": {

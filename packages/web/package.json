@@ -48,17 +48,17 @@
     "@aria-ui/popover": "^0.0.19",
     "@aria-ui/presence": "^0.0.13",
     "@aria-ui/tooltip": "^0.0.21",
-    "@floating-ui/dom": "^1.6.7",
+    "@floating-ui/dom": "^1.6.8",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^0.61.1"
+    "@zag-js/dom-query": "^0.62.0"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "tsup": "^8.1.2",
+    "tsup": "^8.2.2",
     "typescript": "^5.5.3",
-    "vitest": "^2.0.3"
+    "vitest": "^2.0.4"
   },
   "publishConfig": {
     "exports": {

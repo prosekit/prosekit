@@ -57,10 +57,10 @@
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
     "@vue/test-utils": "^2.4.6",
-    "tsup": "^8.1.2",
+    "tsup": "^8.2.2",
     "typescript": "^5.5.3",
-    "vitest": "^2.0.3",
-    "vue": "^3.4.32"
+    "vitest": "^2.0.4",
+    "vue": "^3.4.33"
   },
   "publishConfig": {
     "exports": {

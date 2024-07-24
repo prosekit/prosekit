@@ -1,7 +1,12 @@
-import { definePlugin } from '@prosekit/core'
+import { definePlugin, type PluginExtension } from '@prosekit/core'
 import { gapCursor } from 'prosemirror-gapcursor'
 
 export { GapCursor } from 'prosemirror-gapcursor'
+
+/**
+ * @internal
+ */
+export type GapCursorExtension = PluginExtension
 
 /**
  * Capture clicks near and arrow-key-motion past places that don't have a
@@ -17,6 +22,6 @@ export { GapCursor } from 'prosemirror-gapcursor'
  *
  * @public
  */
-export function defineGapCursor() {
+export function defineGapCursor(): GapCursorExtension {
   return definePlugin(() => gapCursor())
 }

@@ -49,7 +49,7 @@ import {
 import type { ParagraphExtension } from '../../core/src/extensions/paragraph'
 
 /**
- * @public
+ * @internal
  */
 export type BasicExtension = Union<
   [

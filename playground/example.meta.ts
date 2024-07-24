@@ -100,6 +100,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-gap-cursor",
+      "framework": "react",
+      "story": "gap-cursor",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-heading",
       "framework": "react",
       "story": "heading",

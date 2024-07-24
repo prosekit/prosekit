@@ -57,6 +57,10 @@ export const referenceItems = [
         "link": "/references/extensions/enter-rule"
       },
       {
+        "text": "gap-cursor",
+        "link": "/references/extensions/gap-cursor"
+      },
+      {
         "text": "heading",
         "link": "/references/extensions/heading"
       },

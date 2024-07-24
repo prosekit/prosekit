@@ -5,6 +5,7 @@ import E4207331782 from '../../examples/react/minimal/editor'
 import E1589612019 from '../../examples/react/change-tracking/editor'
 import E3757546706 from '../../examples/react/code-block/editor'
 import E3575812251 from '../../examples/react/code-block-themes/editor'
+import E3513345674 from '../../examples/react/gap-cursor/editor'
 import E252666119 from '../../examples/react/heading/editor'
 import E4040190458 from '../../examples/react/inline-menu/editor'
 import E1745952196 from '../../examples/react/keymap/editor'
@@ -87,6 +88,7 @@ export const getStaticPaths = () => [
   { params: { example: 'react-change-tracking' } },
   { params: { example: 'react-code-block' } },
   { params: { example: 'react-code-block-themes' } },
+  { params: { example: 'react-gap-cursor' } },
   { params: { example: 'react-heading' } },
   { params: { example: 'react-inline-menu' } },
   { params: { example: 'react-keymap' } },
@@ -174,6 +176,7 @@ const { example } = Astro.params
   {example === 'react-change-tracking' && <E1589612019 client:only="react" />}
   {example === 'react-code-block' && <E3757546706 client:only="react" />}
   {example === 'react-code-block-themes' && <E3575812251 client:only="react" />}
+  {example === 'react-gap-cursor' && <E3513345674 client:only="react" />}
   {example === 'react-heading' && <E252666119 client:only="react" />}
   {example === 'react-inline-menu' && <E4040190458 client:only="react" />}
   {example === 'react-keymap' && <E1745952196 client:only="react" />}

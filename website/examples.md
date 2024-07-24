@@ -20,6 +20,8 @@
 
 - [full](./examples/full)
 
+- [gap-cursor](./examples/gap-cursor)
+
 - [heading](./examples/heading)
 
 - [inline-menu](./examples/inline-menu)

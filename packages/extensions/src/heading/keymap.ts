@@ -4,6 +4,7 @@ import {
   toggleNode,
   unsetBlockType,
   withSkipCodeBlock,
+  type Extension,
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 
@@ -23,7 +24,15 @@ const backspaceUnsetHeading: Command = (state, dispatch, view) => {
   return false
 }
 
-export function defineHeadingKeymap() {
+/**
+ * @internal
+ */
+export type HeadingKeymapExtension = Extension
+
+/**
+ * @internal
+ */
+export function defineHeadingKeymap(): HeadingKeymapExtension {
   return defineKeymap({
     'mod-1': toggleHeadingKeybinding(1),
     'mod-2': toggleHeadingKeybinding(2),

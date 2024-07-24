@@ -58,6 +58,7 @@ The `createEditor` function creates an editor instance.
 ```ts twoslash
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
+
 const extension = defineBasicExtension()
 
 // ---cut---

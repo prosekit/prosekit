@@ -30,7 +30,7 @@ export { Editor, createEditor, type EditorOptions } from './editor/editor'
 export { union } from './editor/union'
 export { withPriority } from './editor/with-priority'
 export { EditorNotFoundError, ProseKitError } from './error'
-export { defineBaseCommands, defineCommands } from './extensions/command'
+export { defineBaseCommands, defineCommands, type BaseCommandsExtension } from './extensions/command'
 export {
   defineDefaultState,
   type DefaultStateOptions,

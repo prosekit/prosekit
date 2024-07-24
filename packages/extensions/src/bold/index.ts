@@ -5,11 +5,26 @@ import {
   defineMarkSpec,
   toggleMark,
   union,
+  type Extension,
+  type Union,
 } from '@prosekit/core'
+import type { Attrs } from '@prosekit/pm/model'
 
 import { defineMarkInputRule } from '../input-rule'
 
-export function defineBoldSpec() {
+/**
+ * @internal
+ */
+export type BoldSpecExtension = Extension<{
+  Marks: {
+    bold: Attrs
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineBoldSpec(): BoldSpecExtension {
   return defineMarkSpec({
     name: 'bold',
     parseDOM: [
@@ -45,18 +60,36 @@ export function defineBoldSpec() {
   })
 }
 
-export function defineBoldCommands() {
+/**
+ * @internal
+ */
+export type BoldCommandsExtension = Extension<{
+  Commands: {
+    toggleBold: []
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineBoldCommands(): BoldCommandsExtension {
   return defineCommands({
     toggleBold: () => toggleMark({ type: 'bold' }),
   })
 }
 
+/**
+ * @internal
+ */
 export function defineBoldKeymap() {
   return defineKeymap({
     'Mod-b': toggleMark({ type: 'bold' }),
   })
 }
 
+/**
+ * @internal
+ */
 export function defineBoldInputRule() {
   return defineMarkInputRule({
     regex: canUseRegexLookbehind()
@@ -67,9 +100,14 @@ export function defineBoldInputRule() {
 }
 
 /**
+ * @internal
+ */
+export type BoldExtension = Union<[BoldSpecExtension, BoldCommandsExtension]>
+
+/**
  * @public
  */
-export function defineBold() {
+export function defineBold(): BoldExtension {
   return union([
     defineBoldSpec(),
     defineBoldCommands(),

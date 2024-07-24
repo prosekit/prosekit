@@ -5,11 +5,26 @@ import {
   defineMarkSpec,
   toggleMark,
   union,
+  type Extension,
+  type Union,
 } from '@prosekit/core'
+import type { Attrs } from '@prosekit/pm/model'
 
 import { defineMarkInputRule } from '../input-rule'
 
-export function defineItalicSpec() {
+/**
+ * @internal
+ */
+export type ItalicSpecExtension = Extension<{
+  Marks: {
+    italic: Attrs
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineItalicSpec(): ItalicSpecExtension {
   return defineMarkSpec({
     name: 'italic',
     parseDOM: [
@@ -27,18 +42,36 @@ export function defineItalicSpec() {
   })
 }
 
-export function defineItalicCommands() {
+/**
+ * @internal
+ */
+export type ItalicCommandsExtension = Extension<{
+  Commands: {
+    toggleItalic: []
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineItalicCommands(): ItalicCommandsExtension {
   return defineCommands({
     toggleItalic: () => toggleMark({ type: 'italic' }),
   })
 }
 
+/**
+ * @internal
+ */
 export function defineItalicKeymap() {
   return defineKeymap({
     'Mod-i': toggleMark({ type: 'italic' }),
   })
 }
 
+/**
+ * @internal
+ */
 export function defineItalicInputRule() {
   return defineMarkInputRule({
     regex: canUseRegexLookbehind()
@@ -49,9 +82,16 @@ export function defineItalicInputRule() {
 }
 
 /**
+ * @internal
+ */
+export type ItalicExtension = Union<
+  [ItalicSpecExtension, ItalicCommandsExtension]
+>
+
+/**
  * @public
  */
-export function defineItalic() {
+export function defineItalic(): ItalicExtension {
   return union([
     defineItalicSpec(),
     defineItalicCommands(),

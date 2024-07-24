@@ -111,7 +111,7 @@ export {
 } from './extensions/node-view-effect'
 export { defineParagraph } from './extensions/paragraph'
 export {
-  definePlugin,
+  definePlugin, type PluginExtension,
   pluginFacet,
   type PluginPayload,
 } from './extensions/plugin'

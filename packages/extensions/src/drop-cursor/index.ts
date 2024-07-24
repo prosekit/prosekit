@@ -1,4 +1,4 @@
-import { definePlugin } from '@prosekit/core'
+import { definePlugin, type PluginExtension } from '@prosekit/core'
 import { dropCursor } from 'prosemirror-dropcursor'
 
 export interface DropCursorOptions {
@@ -23,12 +23,18 @@ export interface DropCursorOptions {
 }
 
 /**
+ * @internal
+ */
+export type DropCursorExtension = PluginExtension
+
+
+/**
  * Show up a decoration at the drop position when something is dragged over the editor.
  *
  * See [prosemirror-dropcursor](https://github.com/ProseMirror/prosemirror-dropcursor) for more information.
  *
  * @public
  */
-export function defineDropCursor(options?: DropCursorOptions) {
+export function defineDropCursor(options?: DropCursorOptions): DropCursorExtension {
   return definePlugin(() => dropCursor(options))
 }

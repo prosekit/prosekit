@@ -1,18 +1,38 @@
-import { union } from '@prosekit/core'
+import { union, type Union } from '@prosekit/core'
 
-import { defineTableCommands } from './table-commands'
+import {
+  defineTableCommands,
+  type TableCommandsExtension,
+} from './table-commands'
 import { defineTablePlugins } from './table-plugins'
 import {
   defineTableCellSpec,
   defineTableHeaderCellSpec,
   defineTableRowSpec,
   defineTableSpec,
+  type TableCellSpecExtension,
+  type TableHeaderCellSpecExtension,
+  type TableRowSpecExtension,
+  type TableSpecExtension,
 } from './table-spec'
+
+/**
+ * @internal
+ */
+export type TableExtension = Union<
+  [
+    TableSpecExtension,
+    TableRowSpecExtension,
+    TableCellSpecExtension,
+    TableHeaderCellSpecExtension,
+    TableCommandsExtension,
+  ]
+>
 
 /**
  * @public
  */
-export function defineTable() {
+export function defineTable(): TableExtension {
   return union([
     defineTableSpec(),
     defineTableRowSpec(),
@@ -30,4 +50,9 @@ export {
   defineTablePlugins,
   defineTableRowSpec,
   defineTableSpec,
+  type TableCellSpecExtension,
+  type TableCommandsExtension,
+  type TableHeaderCellSpecExtension,
+  type TableRowSpecExtension,
+  type TableSpecExtension,
 }

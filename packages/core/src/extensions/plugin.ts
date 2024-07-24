@@ -8,6 +8,15 @@ import { stateFacet, type StatePayload } from '../facets/state'
 import type { Extension } from '../types/extension'
 
 /**
+ * @internal
+ */
+export type PluginExtension = Extension<{
+  Nodes: never
+  Marks: never
+  Commands: never
+}>
+
+/**
  * Adds a ProseMirror plugin to the editor.
  *
  * @param plugin - The ProseMirror plugin to add, or an array of plugins, or a
@@ -20,17 +29,17 @@ export function definePlugin(
     | Plugin
     | Plugin[]
     | ((context: { schema: Schema }) => Plugin | Plugin[]),
-): Extension {
+): PluginExtension {
   if (plugin instanceof Plugin) {
-    return defineFacetPayload(pluginFacet, [() => [plugin]])
+    return defineFacetPayload(pluginFacet, [() => [plugin]]) as PluginExtension
   }
 
   if (Array.isArray(plugin) && plugin.every((p) => p instanceof Plugin)) {
-    return defineFacetPayload(pluginFacet, [() => plugin])
+    return defineFacetPayload(pluginFacet, [() => plugin]) as PluginExtension
   }
 
   if (typeof plugin === 'function') {
-    return defineFacetPayload(pluginFacet, [plugin])
+    return defineFacetPayload(pluginFacet, [plugin]) as PluginExtension
   }
 
   throw new TypeError('Invalid plugin')

@@ -34,7 +34,7 @@ function replaceShortcut(code: string, source: string, target: string) {
 
 function replaceImport(code: string) {
   return code.replace(
-    /import\s*{\s*Themes\s*}\s*from\s*["']@prosekit\/themes["'];?\n/m,
+    /import\s*{\s*Themes\s*}\s*from\s*["']@prosekit\/themes["'];?\n{1,2}/m,
     '',
   )
 }

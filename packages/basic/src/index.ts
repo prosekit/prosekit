@@ -12,37 +12,48 @@ import {
   type TextExtension,
   type Union,
 } from '@prosekit/core'
-import { defineBlockquote, type BlockquoteExtension } from '@prosekit/extensions/blockquote'
+import {
+  defineBlockquote,
+  type BlockquoteExtension,
+} from '@prosekit/extensions/blockquote'
 import { defineBold, type BoldExtension } from '@prosekit/extensions/bold'
 import { defineCode } from '@prosekit/extensions/code'
 import { defineDropCursor } from '@prosekit/extensions/drop-cursor'
-import { defineHeading, type HeadingExtension } from '@prosekit/extensions/heading'
+import {
+  defineHeading,
+  type HeadingExtension,
+} from '@prosekit/extensions/heading'
 import { defineImage } from '@prosekit/extensions/image'
 import { defineItalic, type ItalicExtension } from '@prosekit/extensions/italic'
 import { defineLink } from '@prosekit/extensions/link'
 import { defineList, type ListExtension } from '@prosekit/extensions/list'
 import { defineModClickPrevention } from '@prosekit/extensions/mod-click-prevention'
-import { defineStrike } from '@prosekit/extensions/strike'
+import { defineStrike, type StrikeExtension } from '@prosekit/extensions/strike'
 import { defineTable } from '@prosekit/extensions/table'
-import { defineUnderline, type UnderlineExtension } from '@prosekit/extensions/underline'
+import {
+  defineUnderline,
+  type UnderlineExtension,
+} from '@prosekit/extensions/underline'
 import { defineVirtualSelection } from '@prosekit/extensions/virtual-selection'
 
 /**
  * @public
  */
-export type BasicExtension = Union<[
-  DocExtension,
-  TextExtension,
-  HeadingExtension,
-  HistoryExtension,
-  ListExtension,
-  BlockquoteExtension,
-  BaseKeymapExtension,
-  ItalicExtension,
-  BoldExtension,
-  UnderlineExtension,
-]>
-
+export type BasicExtension = Union<
+  [
+    DocExtension,
+    TextExtension,
+    HeadingExtension,
+    HistoryExtension,
+    ListExtension,
+    BlockquoteExtension,
+    BaseKeymapExtension,
+    ItalicExtension,
+    BoldExtension,
+    UnderlineExtension,
+    StrikeExtension,
+  ]
+>
 
 /**
  * Define a basic extension that includes some common functionality. You can
@@ -62,7 +73,7 @@ export function defineBasicExtension(): BasicExtension {
     defineItalic(),
     defineBold(),
     defineUnderline(),
-    // defineStrike(),
+    defineStrike(),
     // defineCode(),
     // defineLink(),
     // defineImage(),
@@ -73,4 +84,3 @@ export function defineBasicExtension(): BasicExtension {
     // defineTable(),
   ])
 }
-

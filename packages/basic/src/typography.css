@@ -4,7 +4,7 @@ div.ProseMirror {
     display: flex;
     flex-direction: column;
   }
-  
+
   & p:first-child,
   & h1:first-child,
   & h2:first-child,

@@ -23,6 +23,7 @@ export default function Editor() {
 }
 
 const defaultHTML = `
-<p>Move with mouse/keyboard below the horizontal rule to see the gap cursor</p>
-<img src="https://placehold.co/800x400" />
+<p>Click the gap between two images or press arrow keys to see the gap cursor between two images</p>
+<img src="https://placehold.co/200x100" />
+<img src="https://placehold.co/200x100" />
 `

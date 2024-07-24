@@ -120,7 +120,10 @@ export {
   type NodeViewComponentOptions,
   type NodeViewFactoryOptions,
 } from './extensions/node-view-effect'
-export { defineParagraph } from './extensions/paragraph'
+export {
+  defineParagraph,
+  type ParagraphExtension,
+} from './extensions/paragraph'
 export {
   definePlugin,
   pluginFacet,

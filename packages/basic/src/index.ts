@@ -10,6 +10,7 @@ import {
   type BaseKeymapExtension,
   type DocExtension,
   type HistoryExtension,
+  type ParagraphExtension,
   type TextExtension,
   type Union,
 } from '@prosekit/core'
@@ -45,8 +46,6 @@ import {
   defineVirtualSelection,
   type VirtualSelectionExtension,
 } from '@prosekit/extensions/virtual-selection'
-
-import type { ParagraphExtension } from '../../core/src/extensions/paragraph'
 
 /**
  * @internal

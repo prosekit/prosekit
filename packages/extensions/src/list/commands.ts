@@ -1,6 +1,12 @@
-import { defineCommands, insertNode } from '@prosekit/core'
+import { defineCommands, insertNode, type Extension } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
-import type { ListAttributes } from 'prosemirror-flat-list'
+import type {
+  DedentListOptions,
+  IndentListOptions,
+  ListAttributes,
+  ToggleCollapsedOptions,
+  UnwrapListOptions,
+} from 'prosemirror-flat-list'
 import {
   createDedentListCommand as dedentList,
   createIndentListCommand as indentList,
@@ -17,19 +23,36 @@ function insertList(attrs?: ListAttributes): Command {
 }
 
 /**
+ * @internal
+ */
+export type ListCommandsExtension = Extension<{
+  Commands: {
+    dedentList: [options?: DedentListOptions]
+    indentList: [options?: IndentListOptions]
+    moveList: [direction: 'up' | 'down']
+    splitList: []
+    toggleCollapsed: [options?: ToggleCollapsedOptions]
+    unwrapList: [options?: UnwrapListOptions]
+    toggleList: [attrs?: ListAttributes]
+    wrapInList: [attrs?: ListAttributes]
+    insertList: [attrs?: ListAttributes]
+  }
+}>
+
+/**
  * Defines list commands.
  *
  * @internal
  */
-export function defineListCommands() {
+export function defineListCommands(): ListCommandsExtension {
   return defineCommands({
     dedentList,
     indentList,
     moveList,
     splitList,
     toggleCollapsed,
-    toggleList,
     unwrapList,
+    toggleList,
     wrapInList,
     insertList,
   })

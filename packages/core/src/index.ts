@@ -82,7 +82,7 @@ export {
   type UnmountHandler,
   type UpdateHandler,
 } from './extensions/events/plugin-view'
-export { defineHistory, type HistoryOptions } from './extensions/history'
+export { defineHistory, type HistoryOptions, type HistoryExtension } from './extensions/history'
 export {
   defineKeymap,
   keymapFacet,

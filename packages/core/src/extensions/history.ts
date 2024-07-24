@@ -1,6 +1,7 @@
 import { history, redo, undo } from '@prosekit/pm/history'
 
 import { union } from '../editor/union'
+import type { Extension } from '../types/extension'
 import { isApple } from '../utils/env'
 
 import { defineCommands } from './command'
@@ -45,6 +46,16 @@ export interface HistoryOptions {
 }
 
 /**
+ * @internal
+ */
+export type HistoryExtension = Extension<{
+  Commands: {
+    undo: []
+    redo: []
+  }
+}>
+
+/**
  * Add undo/redo history to the editor.
  *
  * @public
@@ -52,7 +63,7 @@ export interface HistoryOptions {
 export function defineHistory({
   depth = 200,
   newGroupDelay = 250,
-}: HistoryOptions = {}) {
+}: HistoryOptions = {}): HistoryExtension {
   return union([
     definePlugin(history({ depth, newGroupDelay })),
     defineKeymap(keymap),

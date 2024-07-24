@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.9.12
+
+### Patch Changes
+
+- [`6161a33`](https://github.com/ocavue/prosekit/commit/6161a33215c66e0e4490ff7fc7d0a0e5c90b20e7) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/basic) ![](https://prosekit.dev/b/core)
+
+  Explicitly declare the return type of extension functions. This would make TypeScript easier to infer extension types.
+
 ## 0.9.11
 
 ### Patch Changes

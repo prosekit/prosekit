@@ -35,7 +35,7 @@ export {
   defineDefaultState,
   type DefaultStateOptions,
 } from './extensions/default-state'
-export { defineDoc , type DocExtension} from './extensions/doc'
+export { defineDoc, type DocExtension } from './extensions/doc'
 export {
   defineDocChangeHandler,
   type DocChangeHandler,
@@ -115,7 +115,7 @@ export {
   pluginFacet,
   type PluginPayload,
 } from './extensions/plugin'
-export { defineText } from './extensions/text'
+export { defineText, type TextExtension } from './extensions/text'
 export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
 export type { AnyAttrs, AttrSpec } from './types/attrs'

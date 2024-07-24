@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
+import { Themes } from '@prosekit/themes'
 import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
+
 import { defineExtension } from './extension'
 
 const props = defineProps<{
@@ -36,7 +37,7 @@ watchPostEffect((onCleanup) => {
   <ProseKit :editor="editor">
     <div :class="Themes.EDITOR_VIEWPORT">
       <div :class="Themes.EDITOR_SCROLLING">
-        <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+        <div ref="editorRef" :class="Themes.EDITOR_CONTENT" />
       </div>
     </div>
   </ProseKit>

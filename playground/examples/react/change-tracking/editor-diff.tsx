@@ -14,7 +14,7 @@ export default function DiffViewer({ commit }: { commit: Commit }) {
       defineCommitViewer(commit),
     ])
     return createEditor({ extension })
-  }, [])
+  }, [commit])
 
   return (
     <ProseKit editor={editor}>

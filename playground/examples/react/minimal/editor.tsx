@@ -8,18 +8,21 @@ import { useCallback, useMemo } from 'react'
 
 import { defineExtension } from './extension'
 
-export default function Editor(props: {
+export default function Editor({
+  defaultDoc,
+  onDocUpdate,
+}: {
   defaultDoc?: NodeJSON
   onDocUpdate?: (doc: NodeJSON) => void
 }) {
   const editor = useMemo(() => {
     const extension = defineExtension()
-    return createEditor({ extension, defaultDoc: props.defaultDoc })
-  }, [])
+    return createEditor({ extension, defaultDoc })
+  }, [defaultDoc])
 
   const handleDocChange = useCallback(
-    (doc: ProseMirrorNode) => props.onDocUpdate?.(jsonFromNode(doc)),
-    [props.onDocUpdate],
+    (doc: ProseMirrorNode) => onDocUpdate?.(jsonFromNode(doc)),
+    [onDocUpdate],
   )
   useDocChange(handleDocChange, { editor })
 

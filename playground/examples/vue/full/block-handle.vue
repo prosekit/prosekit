@@ -6,7 +6,7 @@ import { BlockDragHandle, BlockPopover } from 'prosekit/vue/block-handle'
 <template>
   <BlockPopover :class="Themes.BLOCK_HANDLE">
     <BlockDragHandle>
-      <div :class="Themes.ICON_DRAG_HANDLE"></div>
+      <div :class="Themes.ICON_DRAG_HANDLE" />
     </BlockDragHandle>
   </BlockPopover>
 </template>

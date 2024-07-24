@@ -8,7 +8,7 @@ import {
 import { useExtension } from 'prosekit/vue'
 import { computed } from 'vue'
 
-const theme = defineModel({ default: 'github-dark' })
+const theme = defineModel({ default: 'github-dark', type: String })
 const extension = computed(() => {
   return defineCodeBlockShiki({ themes: [theme.value as ShikiBundledTheme] })
 })

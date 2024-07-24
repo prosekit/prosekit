@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
-import { useEditor } from 'prosekit/vue'
-import Button from './button.vue'
 import type { Editor, NodeAction } from 'prosekit/core'
+import { useEditor } from 'prosekit/vue'
+
+import Button from './button.vue'
 import type { EditorExtension } from './extension'
 
 const editor = useEditor<EditorExtension>({ update: true })
 
-const isTextAlignActive = (editor: Editor<EditorExtension>, value: string) => {
+function isTextAlignActive(editor: Editor<EditorExtension>, value: string) {
   return Object.values(editor.nodes).some((node: NodeAction<any>) => {
     return node.isActive({ textAlign: value })
   })

@@ -7,16 +7,17 @@ import {
   AutocompleteList,
   AutocompletePopover,
 } from 'prosekit/vue/autocomplete'
+
 import type { EditorExtension } from './extension'
 
 const editor = useEditor<EditorExtension>()
 
-const isBlockEmpty = () => {
+function isBlockEmpty() {
   let selection = editor.value.view.state.selection
   return selection.empty && selection.$from.parent.content.size === 0
 }
 
-const handleSelectHeading = (level: number) => {
+function handleSelectHeading(level: number) {
   if (isBlockEmpty()) {
     editor.value.commands.setHeading({ level })
   } else {
@@ -24,7 +25,7 @@ const handleSelectHeading = (level: number) => {
   }
 }
 
-const handleSelectList = (kind: 'task' | 'bullet' | 'ordered' | 'toggle') => {
+function handleSelectList(kind: 'task' | 'bullet' | 'ordered' | 'toggle') {
   if (isBlockEmpty()) {
     editor.value.commands.wrapInList({ kind })
   } else {
@@ -42,41 +43,41 @@ const handleSelectList = (kind: 'task' | 'bullet' | 'ordered' | 'toggle') => {
 
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :onSelect="() => handleSelectHeading(1)"
+        :on-select="() => handleSelectHeading(1)"
       >
         Heading 1
       </AutocompleteItem>
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :onSelect="() => handleSelectHeading(2)"
+        :on-select="() => handleSelectHeading(2)"
       >
         Heading 2
       </AutocompleteItem>
 
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :onSelect="() => handleSelectList('task')"
+        :on-select="() => handleSelectList('task')"
       >
         Task list
       </AutocompleteItem>
 
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :onSelect="() => handleSelectList('bullet')"
+        :on-select="() => handleSelectList('bullet')"
       >
         Bullet list
       </AutocompleteItem>
 
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :onSelect="() => handleSelectList('ordered')"
+        :on-select="() => handleSelectList('ordered')"
       >
         Ordered list
       </AutocompleteItem>
 
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :onSelect="() => handleSelectList('toggle')"
+        :on-select="() => handleSelectList('toggle')"
       >
         Toggle list
       </AutocompleteItem>

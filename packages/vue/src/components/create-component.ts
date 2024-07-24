@@ -49,8 +49,8 @@ export function createComponent<Props extends object>(
       }
     },
     {
-      props: propertyNames,
       name: displayName,
+      props: propertyNames,
     },
   )
 

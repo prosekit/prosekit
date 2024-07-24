@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
+import { Themes } from '@prosekit/themes'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
+
 import { defineExtension } from './extension'
 
 const defaultHTML = `
@@ -31,7 +32,7 @@ watchPostEffect((onCleanup) => {
   onCleanup(() => editor.unmount())
 })
 
-const addTable = () => {
+function addTable() {
   editor.commands.exitTable()
   editor.commands.insertTable({ row: 3, col: 3, header: true })
 }
@@ -42,7 +43,7 @@ const addTable = () => {
   <ProseKit :editor="editor">
     <div :class="Themes.EDITOR_VIEWPORT">
       <div :class="Themes.EDITOR_SCROLLING">
-        <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+        <div ref="editorRef" :class="Themes.EDITOR_CONTENT" />
       </div>
     </div>
   </ProseKit>

@@ -1,6 +1,7 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
+
+import { Themes } from '@prosekit/themes'
 
 import { ProseKit } from 'prosekit/svelte'
 import { defineExtension } from './extension'

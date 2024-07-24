@@ -4,20 +4,21 @@ import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
 import { ref } from 'vue'
+
 import Button from './button.vue'
 import type { EditorExtension } from './extension'
 
 const editor = useEditor<EditorExtension>({ update: true })
 const linkMenuOpen = ref(false)
 
-const setLinkMenuOpen = (value: boolean) => {
+function setLinkMenuOpen(value: boolean) {
   linkMenuOpen.value = value
 }
-const toggleLinkMenuOpen = () => {
+function toggleLinkMenuOpen() {
   linkMenuOpen.value = !linkMenuOpen.value
 }
 
-const getCurrentLink = (state: EditorState): string | undefined => {
+function getCurrentLink(state: EditorState): string | undefined {
   const { $from } = state.selection
   const marks = $from.marksAcross($from)
   if (!marks) {
@@ -30,7 +31,7 @@ const getCurrentLink = (state: EditorState): string | undefined => {
   }
 }
 
-const handleLinkUpdate = (href?: string) => {
+function handleLinkUpdate(href?: string) {
   if (href) {
     editor.value.commands.addLink({ href })
   } else {
@@ -53,67 +54,67 @@ const handleLinkUpdate = (href?: string) => {
       tooltip="Bold"
       @click="() => editor.commands.toggleBold()"
     >
-      <div :class="Themes.ICON_BOLD"></div>
+      <div :class="Themes.ICON_BOLD" />
     </Button>
 
     <Button
       :pressed="editor.marks.italic.isActive()"
       :disabled="!editor.commands.toggleItalic.canApply()"
-      @click="() => editor.commands.toggleItalic()"
       tooltip="Italic"
+      @click="() => editor.commands.toggleItalic()"
     >
-      <div :class="Themes.ICON_ITALIC"></div>
+      <div :class="Themes.ICON_ITALIC" />
     </Button>
 
     <Button
       :pressed="editor.marks.underline.isActive()"
       :disabled="!editor.commands.toggleUnderline.canApply()"
-      @click="() => editor.commands.toggleUnderline()"
       tooltip="Underline"
+      @click="() => editor.commands.toggleUnderline()"
     >
-      <div :class="Themes.ICON_UNDERLINE"></div>
+      <div :class="Themes.ICON_UNDERLINE" />
     </Button>
 
     <Button
       :pressed="editor.marks.strike.isActive()"
       :disabled="!editor.commands.toggleStrike.canApply()"
-      @click="() => editor.commands.toggleStrike()"
       tooltip="Strike"
+      @click="() => editor.commands.toggleStrike()"
     >
-      <div :class="Themes.ICON_STRIKE"></div>
+      <div :class="Themes.ICON_STRIKE" />
     </Button>
 
     <Button
       :pressed="editor.marks.code.isActive()"
       :disabled="!editor.commands.toggleCode.canApply()"
-      @click="() => editor.commands.toggleCode()"
       tooltip="Code"
+      @click="() => editor.commands.toggleCode()"
     >
-      <div :class="Themes.ICON_CODE"></div>
+      <div :class="Themes.ICON_CODE" />
     </Button>
 
     <Button
       v-if="editor.commands.addLink.canApply({ href: '' })"
       :pressed="editor.marks.link.isActive()"
+      tooltip="Link"
       @click="
         () => {
           editor.commands.expandLink()
           toggleLinkMenuOpen()
         }
       "
-      tooltip="Link"
     >
-      <div :class="Themes.ICON_LINK"></div>
+      <div :class="Themes.ICON_LINK" />
     </Button>
   </InlinePopover>
 
   <InlinePopover
     :placement="'bottom'"
-    :defaultOpen="false"
+    :default-open="false"
     :open="linkMenuOpen"
-    @openChange="setLinkMenuOpen"
     data-testid="inline-menu-link"
     :class="Themes.INLINE_MENU_LINK"
+    @open-change="setLinkMenuOpen"
   >
     <form
       v-if="linkMenuOpen"
@@ -133,9 +134,9 @@ const handleLinkUpdate = (href?: string) => {
     </form>
     <button
       v-if="editor.marks.link.isActive()"
+      :class="Themes.INLINE_MENU_LINK_REMOVE_BUTTON"
       @click="handleLinkUpdate()"
       @mousedown.prevent
-      :class="Themes.INLINE_MENU_LINK_REMOVE_BUTTON"
     >
       Remove link
     </button>

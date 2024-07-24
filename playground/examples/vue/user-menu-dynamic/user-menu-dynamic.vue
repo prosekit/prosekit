@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
+import { useEditor } from 'prosekit/vue'
 import {
   AutocompleteEmpty,
   AutocompleteItem,
   AutocompleteList,
   AutocompletePopover,
 } from 'prosekit/vue/autocomplete'
+import { ref } from 'vue'
 
-import { useEditor } from 'prosekit/vue'
 import type { EditorExtension } from './extension'
 import { useUserQuery } from './use-user-query'
-import { ref } from 'vue'
 
 const editor = useEditor<EditorExtension>()
 
-const handleUserInsert = (id: number, username: string) => {
+function handleUserInsert(id: number, username: string) {
   editor.value.commands.insertMention({
     id: id.toString(),
     value: '@' + username,
@@ -33,9 +33,9 @@ const { users, loading } = useUserQuery(query, open)
 <template>
   <AutocompletePopover
     :regex="/@\w*$/"
+    :class="Themes.AUTOCOMPLETE_MENU"
     @query-change="handleQueryChange"
     @open-change="handleOpenChange"
-    :class="Themes.AUTOCOMPLETE_MENU"
   >
     <AutocompleteList :filter="null">
       <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
@@ -44,8 +44,8 @@ const { users, loading } = useUserQuery(query, open)
       <AutocompleteItem
         v-for="user in users"
         :key="user.id"
-        @select="() => handleUserInsert(user.id, user.name)"
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
+        @select="() => handleUserInsert(user.id, user.name)"
       >
         <span :class="loading && 'opacity-50'">
           {{ user.name }}

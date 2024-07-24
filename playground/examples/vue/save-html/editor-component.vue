@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
-import type { Editor } from 'prosekit/core'
 
+import { Themes } from '@prosekit/themes'
+import type { Editor } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
 
@@ -32,7 +32,7 @@ watchPostEffect((onCleanup) => {
 <template>
   <ProseKit :editor="editor">
     <div :class="Themes.EDITOR_SCROLLING">
-      <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+      <div ref="editorRef" :class="Themes.EDITOR_CONTENT" />
     </div>
   </ProseKit>
 </template>

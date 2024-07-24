@@ -1,6 +1,8 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
+
+import { Themes } from '@prosekit/themes'
+
 import { useDocChange, ProseKit } from 'prosekit/svelte'
 import type { Editor } from 'prosekit/core'
 

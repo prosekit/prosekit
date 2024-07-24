@@ -2,6 +2,7 @@
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import type { VueNodeViewProps } from 'prosekit/vue'
 import { computed } from 'vue'
+
 import LanguageSelector from './language-selector.vue'
 
 const props = defineProps<VueNodeViewProps>()
@@ -20,5 +21,5 @@ const language = computed({
 
 <template>
   <LanguageSelector v-model="language" />
-  <pre :ref="props.contentRef" :data-language="language"></pre>
+  <pre :ref="props.contentRef" :data-language="language" />
 </template>

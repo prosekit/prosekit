@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-import { basic, react, vue } from '@ocavue/eslint-config'
+import { basic, markdown, react, vue } from '@ocavue/eslint-config'
 import unocss from '@unocss/eslint-config/flat'
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
@@ -12,6 +12,7 @@ const configs = [
     files: ['**/react/**/*.?([cm])[jt]s?(x)'],
   })),
   ...vue(),
+  ...markdown(),
   {
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',

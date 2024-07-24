@@ -17,7 +17,7 @@ export type BlockquoteSpecExtension = Extension<{
   }
 }>
 
-export function defineBlockquoteSpec() {
+export function defineBlockquoteSpec(): BlockquoteSpecExtension {
   return defineNodeSpec({
     name: 'blockquote',
     content: 'block+',

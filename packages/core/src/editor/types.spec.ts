@@ -26,8 +26,7 @@ describe('union', () => {
   })
 
   it('can merge an extension array', () => {
-    const input = [extension1, extension2, extension3, extension4, extension5]
-    const output = union(input)
+    const output = union([extension1, extension2, extension3, extension4, extension5])
     type Outout = typeof output
     type Expected = Extension<{
       Nodes: {

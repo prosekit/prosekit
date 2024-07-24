@@ -21,9 +21,9 @@ export interface ExtensionTyping<
   M extends MarkTyping | never = never,
   C extends CommandTyping | never = never,
 > {
-  Nodes: N
-  Marks: M
-  Commands: C
+  Nodes?: N
+  Marks?: M
+  Commands?: C
 }
 
 /**

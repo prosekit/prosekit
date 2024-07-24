@@ -17,7 +17,7 @@ import {
   type BlockquoteExtension,
 } from '@prosekit/extensions/blockquote'
 import { defineBold, type BoldExtension } from '@prosekit/extensions/bold'
-import { defineCode } from '@prosekit/extensions/code'
+import { defineCode, type CodeExtension } from '@prosekit/extensions/code'
 import { defineDropCursor } from '@prosekit/extensions/drop-cursor'
 import {
   defineHeading,
@@ -52,6 +52,7 @@ export type BasicExtension = Union<
     BoldExtension,
     UnderlineExtension,
     StrikeExtension,
+    CodeExtension,
   ]
 >
 
@@ -74,7 +75,7 @@ export function defineBasicExtension(): BasicExtension {
     defineBold(),
     defineUnderline(),
     defineStrike(),
-    // defineCode(),
+    defineCode(),
     // defineLink(),
     // defineImage(),
     // defineParagraph(),

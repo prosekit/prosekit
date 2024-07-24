@@ -1,21 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-import { basic, react } from '@ocavue/eslint-config'
+import { basic, react, vue } from '@ocavue/eslint-config'
 import unocss from '@unocss/eslint-config/flat'
 
+/** @type {import('eslint').Linter.FlatConfig[]} */
 const configs = [
   unocss,
   ...basic(),
+
   ...react().map((config) => ({
     ...config,
     files: ['**/react/**/*.?([cm])[jt]s?(x)'],
   })),
+  ...vue(),
   {
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unsafe-declaration-merging': 'off',
       '@typescript-eslint/no-empty-interface': 'off',
-      'import/no-extraneous-dependencies': process.env.CI ? 'error' : 'off',
     },
   },
   {

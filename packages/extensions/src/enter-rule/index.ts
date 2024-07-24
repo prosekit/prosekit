@@ -7,16 +7,17 @@ import {
   maybeRun,
   pluginFacet,
   type Extension,
+  type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
 import { keydownHandler } from '@prosekit/pm/keymap'
 import type { Attrs, NodeType } from '@prosekit/pm/model'
 import {
+  PluginKey,
   ProseMirrorPlugin,
   type Command,
   type EditorState,
   type Transaction,
-  PluginKey,
 } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
@@ -110,9 +111,9 @@ export function defineEnterRule({
   regex,
   handler,
   stop = false,
-}: EnterRuleOptions): Extension {
+}: EnterRuleOptions): PlainExtension {
   const rule: EnterRule = new EnterRule(regex, handler, stop)
-  return defineFacetPayload(enterRule, [rule])
+  return defineFacetPayload(enterRule, [rule]) as PlainExtension
 }
 
 /**

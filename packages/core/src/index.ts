@@ -127,7 +127,6 @@ export {
 export {
   definePlugin,
   pluginFacet,
-  type PluginExtension,
   type PluginPayload,
 } from './extensions/plugin'
 export { defineText, type TextExtension } from './extensions/text'

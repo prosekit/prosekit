@@ -1,8 +1,6 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "allowJs": false,
-    "isolatedDeclarations": true,
     "composite": true,
     "outDir": "temp",
   },

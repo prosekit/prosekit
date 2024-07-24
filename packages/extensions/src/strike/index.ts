@@ -24,7 +24,7 @@ export type StrikeSpecExtension = Extension<{
 /**
  * @internal
  */
-export function defineStrikeSpec() {
+export function defineStrikeSpec(): StrikeSpecExtension {
   return defineMarkSpec({
     name: 'strike',
     parseDOM: [

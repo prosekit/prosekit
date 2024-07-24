@@ -1,4 +1,4 @@
-import { definePlugin, type PluginExtension } from '@prosekit/core'
+import { definePlugin, type PlainExtension } from '@prosekit/core'
 import {
   EditorState,
   PluginKey,
@@ -10,7 +10,7 @@ import { Decoration, DecorationSet } from '@prosekit/pm/view'
 /**
  * @internal
  */
-export type VirtualSelectionExtension = PluginExtension
+export type VirtualSelectionExtension = PlainExtension
 
 /**
  * Shows a virtual selection when the editor is not focused. When the editor is

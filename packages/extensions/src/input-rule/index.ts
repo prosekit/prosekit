@@ -6,7 +6,7 @@ import {
   isMarkAbsent,
   maybeRun,
   pluginFacet,
-  type Extension,
+  type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
 import {
@@ -31,8 +31,8 @@ import { Plugin } from '@prosekit/pm/state'
  *
  * @public
  */
-export function defineInputRule(rule: InputRule): Extension {
-  return defineFacetPayload(inputRuleFacet, [() => rule])
+export function defineInputRule(rule: InputRule): PlainExtension {
+  return defineInputRuleFacetPayload(() => rule)
 }
 
 /**
@@ -119,7 +119,9 @@ export function createMarkInputRule({
  *
  * @public
  */
-export function defineMarkInputRule(options: MarkInputRuleOptions): Extension {
+export function defineMarkInputRule(
+  options: MarkInputRuleOptions,
+): PlainExtension {
   return defineInputRule(createMarkInputRule(options))
 }
 
@@ -152,13 +154,11 @@ export function defineTextBlockInputRule({
    * Attributes to set on the node.
    */
   attrs?: Attrs | null | ((match: RegExpMatchArray) => Attrs | null)
-}): Extension {
-  return defineFacetPayload(inputRuleFacet, [
-    ({ schema }): InputRule => {
-      const nodeType = getNodeType(schema, type)
-      return textblockTypeInputRule(regex, nodeType, attrs)
-    },
-  ])
+}): PlainExtension {
+  return defineInputRuleFacetPayload(({ schema }): InputRule => {
+    const nodeType = getNodeType(schema, type)
+    return textblockTypeInputRule(regex, nodeType, attrs)
+  })
 }
 
 /**
@@ -201,13 +201,15 @@ export function defineWrappingInputRule({
    * indicate whether a join should happen.
    */
   join?: (match: RegExpMatchArray, node: ProseMirrorNode) => boolean
-}): Extension {
-  return defineFacetPayload(inputRuleFacet, [
-    ({ schema }): InputRule => {
-      const nodeType = getNodeType(schema, type)
-      return wrappingInputRule(regex, nodeType, attrs, join)
-    },
-  ])
+}): PlainExtension {
+  return defineInputRuleFacetPayload(({ schema }): InputRule => {
+    const nodeType = getNodeType(schema, type)
+    return wrappingInputRule(regex, nodeType, attrs, join)
+  })
+}
+
+function defineInputRuleFacetPayload(input: InputRulePayload): PlainExtension {
+  return defineFacetPayload(inputRuleFacet, [input]) as PlainExtension
 }
 
 type InputRulePayload = (context: { schema: Schema }) => InputRule

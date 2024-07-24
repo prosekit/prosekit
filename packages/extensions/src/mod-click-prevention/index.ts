@@ -1,11 +1,11 @@
-import { definePlugin, isApple, type PluginExtension } from '@prosekit/core'
+import { definePlugin, isApple, type PlainExtension } from '@prosekit/core'
 import { Plugin, PluginKey } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 /**
  * @internal
  */
-export type ModClickPreventionExtension = PluginExtension
+export type ModClickPreventionExtension = PlainExtension
 
 /**
  * By default, clicking a node while holding the mod key will select the node. This

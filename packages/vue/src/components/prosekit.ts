@@ -1,6 +1,6 @@
 import { Editor } from '@prosekit/core'
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/vue'
-import { defineComponent, h } from 'vue'
+import { defineComponent, h, type PropType } from 'vue'
 
 import { VueViewsConsumer } from '../extensions/vue-node-view'
 import { provideEditor } from '../injection/editor-context'
@@ -24,5 +24,5 @@ export const ProseKit = defineComponent<ProseKitProps>(
       ])
     }
   },
-  { props: ['editor'] },
+  { props: { editor: { type: Object as PropType<Editor>, required: true } } },
 )

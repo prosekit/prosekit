@@ -3,6 +3,7 @@ import { createEditor } from 'prosekit/core'
 import 'prosekit/basic/style.css'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
+
 import { defineExtension } from './extension'
 
 export default function Editor() {
@@ -21,7 +22,7 @@ export default function Editor() {
   )
 }
 
-const defaultHTML: string = `
+const defaultHTML = `
 <p>Move with mouse/keyboard below the horizontal rule to see the gap cursor</p>
 <img src="https://placehold.co/800x400" />
 `

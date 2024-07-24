@@ -1,5 +1,6 @@
 import { definePlugin } from '@prosekit/core'
 import { gapCursor } from 'prosemirror-gapcursor'
+
 export { GapCursor } from 'prosemirror-gapcursor'
 
 /**

@@ -3,7 +3,7 @@ import { union } from '@prosekit/core'
 import { defineHeadingCommands } from './commands'
 import { defineHeadingInputRule } from './input-rule'
 import { defineHeadingKeymap } from './keymap'
-import { defineHeadingSpec } from './spec'
+import { defineHeadingSpec, type HeadingSpecExtension } from './spec'
 import type { HeadingAttrs } from './types'
 
 /**
@@ -23,5 +23,6 @@ export {
   defineHeadingInputRule,
   defineHeadingKeymap,
   defineHeadingSpec,
+  type HeadingSpecExtension,
   type HeadingAttrs,
 }

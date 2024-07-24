@@ -8,7 +8,7 @@ const configs = [
   ...basic(),
   ...react().map((config) => ({
     ...config,
-    files: ['packages/react/**/*.@(mts|cts|ts|mtsx|ctsx|tsx)'],
+    files: ['**/react/**/*.?([cm])[jt]s?(x)'],
   })),
   {
     rules: {
@@ -52,6 +52,8 @@ const configs = [
 ]
 
 // Enable EXPERIMENTAL_useProjectService
+//
+// TODO: remove EXPERIMENTAL_useProjectService when typescript-eslint v8 stable is released
 //
 // See https://github.com/typescript-eslint/typescript-eslint/pull/6754
 let projectServiceEnabled = false

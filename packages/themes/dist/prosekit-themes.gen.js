@@ -20,7 +20,7 @@ function replaceShortcut(code, source, target) {
 }
 function replaceImport(code) {
   return code.replace(
-    /import\s*{\s*Themes\s*}\s*from\s*["']@prosekit\/themes["'];?\n/m,
+    /import\s*{\s*Themes\s*}\s*from\s*["']@prosekit\/themes["'];?\n{1,2}/m,
     "",
   );
 }

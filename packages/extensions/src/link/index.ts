@@ -6,6 +6,8 @@ import {
   removeMark,
   toggleMark,
   union,
+  type Extension,
+  type Union,
 } from '@prosekit/core'
 import { InputRule } from '@prosekit/pm/inputrules'
 
@@ -22,7 +24,19 @@ export interface LinkAttrs {
   href: string
 }
 
-export function defineLinkSpec() {
+/**
+ * @internal
+ */
+export type LinkSpecExtension = Extension<{
+  Marks: {
+    link: LinkAttrs
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineLinkSpec(): LinkSpecExtension {
   return defineMarkSpec<'link', LinkAttrs>({
     name: 'link',
     inclusive: false,
@@ -46,7 +60,19 @@ export function defineLinkSpec() {
   })
 }
 
-export function defineLinkCommands() {
+/**
+ * @internal
+ */
+export type LinkCommandsExtension = Extension<{
+  Commands: {
+    addLink: [LinkAttrs]
+    removeLink: []
+    toggleLink: [LinkAttrs]
+    expandLink: []
+  }
+}>
+
+export function defineLinkCommands(): LinkCommandsExtension {
   return defineCommands({
     addLink: (attrs: LinkAttrs) => addMark({ type: 'link', attrs }),
     removeLink: () => removeMark({ type: 'link' }),
@@ -57,6 +83,8 @@ export function defineLinkCommands() {
 
 /**
  * Apply link marks after pressing Space.
+ * 
+ * @internal
  */
 export function defineLinkInputRule() {
   return defineInputRule(
@@ -72,6 +100,8 @@ export function defineLinkInputRule() {
 
 /**
  * Apply link marks after typing Enter.
+ * 
+ * @internal
  */
 export function defineLinkEnterRule() {
   return defineEnterRule({
@@ -89,6 +119,8 @@ export function defineLinkEnterRule() {
 
 /**
  * Apply and remove link marks to the text during typing.
+ * 
+ * @internal
  */
 export function defineLinkMarkRule() {
   return defineMarkRule({
@@ -98,10 +130,16 @@ export function defineLinkMarkRule() {
   })
 }
 
+
+/**
+ * @internal
+ */
+export type LinkExtension = Union<[LinkSpecExtension, LinkCommandsExtension]>
+
 /**
  * @public
  */
-export function defineLink() {
+export function defineLink(): LinkExtension {
   return union([
     defineLinkSpec(),
     defineLinkCommands(),

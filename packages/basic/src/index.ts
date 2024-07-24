@@ -25,7 +25,7 @@ import {
 } from '@prosekit/extensions/heading'
 import { defineImage } from '@prosekit/extensions/image'
 import { defineItalic, type ItalicExtension } from '@prosekit/extensions/italic'
-import { defineLink } from '@prosekit/extensions/link'
+import { defineLink, type LinkExtension } from '@prosekit/extensions/link'
 import { defineList, type ListExtension } from '@prosekit/extensions/list'
 import { defineModClickPrevention } from '@prosekit/extensions/mod-click-prevention'
 import { defineStrike, type StrikeExtension } from '@prosekit/extensions/strike'
@@ -53,6 +53,7 @@ export type BasicExtension = Union<
     UnderlineExtension,
     StrikeExtension,
     CodeExtension,
+    LinkExtension,
   ]
 >
 
@@ -76,7 +77,7 @@ export function defineBasicExtension(): BasicExtension {
     defineUnderline(),
     defineStrike(),
     defineCode(),
-    // defineLink(),
+    defineLink(),
     // defineImage(),
     // defineParagraph(),
     // defineDropCursor(),

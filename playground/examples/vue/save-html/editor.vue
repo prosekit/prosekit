@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
+import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import {
   createEditor,
@@ -11,6 +11,7 @@ import {
 } from 'prosekit/core'
 import { ListDOMSerializer } from 'prosekit/extensions/list'
 import { computed, ref } from 'vue'
+
 import EditorComponent from './editor-component.vue'
 
 const defaultDoc = ref<NodeJSON | undefined>()
@@ -28,7 +29,7 @@ const editor = computed(() => {
 const handleDocChange = () => (hasUnsavedChange.value = true)
 
 // Save the current document as a HTML string
-const handleSave = () => {
+function handleSave() {
   const record = htmlFromNode(editor.value.view.state.doc, {
     DOMSerializer: ListDOMSerializer,
   })
@@ -37,7 +38,7 @@ const handleSave = () => {
 }
 
 // Load a document from a HTML string
-const handleLoad = (record: string) => {
+function handleLoad(record: string) {
   defaultDoc.value = jsonFromHTML(record, { schema: editor.value.schema })
   hasUnsavedChange.value = false
   key.value++
@@ -47,9 +48,9 @@ const handleLoad = (record: string) => {
 <template>
   <div :class="Themes.EDITOR_VIEWPORT">
     <button
-      @click="handleSave"
       :disabled="!hasUnsavedChange"
       class="m-1 border border-solid bg-white px-2 py-1 text-sm text-black disabled:cursor-not-allowed disabled:text-gray-500"
+      @click="handleSave"
     >
       {{ hasUnsavedChange ? 'Save' : 'No changes to save' }}
     </button>
@@ -70,6 +71,10 @@ const handleLoad = (record: string) => {
         </span>
       </li>
     </ul>
-    <EditorComponent :key="key" :editor="editor" @docChange="handleDocChange" />
+    <EditorComponent
+      :key="key"
+      :editor="editor"
+      @doc-change="handleDocChange"
+    />
   </div>
 </template>

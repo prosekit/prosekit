@@ -7,8 +7,9 @@ import {
   PopoverTrigger,
 } from 'prosekit/vue/popover'
 import { computed, ref } from 'vue'
-import type { EditorExtension } from './extension'
+
 import Button from './button.vue'
+import type { EditorExtension } from './extension'
 
 const props = defineProps<{
   disabled: Boolean
@@ -21,7 +22,7 @@ const objectUrl = ref('')
 const url = computed(() => webUrl.value || objectUrl.value)
 const editor = useEditor<EditorExtension>()
 
-const handleFileChange = (event: Event) => {
+function handleFileChange(event: Event) {
   const file = (event.target as HTMLInputElement)?.files?.[0]
 
   if (file) {
@@ -32,7 +33,7 @@ const handleFileChange = (event: Event) => {
   }
 }
 
-const handleWebUrlChange = (event: Event) => {
+function handleWebUrlChange(event: Event) {
   const url = (event.target as HTMLInputElement)?.value
 
   if (url) {
@@ -43,20 +44,20 @@ const handleWebUrlChange = (event: Event) => {
   }
 }
 
-const deferResetState = () => {
+function deferResetState() {
   setTimeout(() => {
     webUrl.value = ''
     objectUrl.value = ''
   }, 300)
 }
 
-const handleSubmit = () => {
+function handleSubmit() {
   editor.value.commands.insertImage({ src: url.value })
   deferResetState()
   open.value = false
 }
 
-const handleOpenChange = (openValue: boolean) => {
+function handleOpenChange(openValue: boolean) {
   if (!openValue) {
     deferResetState()
   }
@@ -65,7 +66,7 @@ const handleOpenChange = (openValue: boolean) => {
 </script>
 
 <template>
-  <PopoverRoot :open="open" @openChange="handleOpenChange">
+  <PopoverRoot :open="open" @open-change="handleOpenChange">
     <PopoverTrigger>
       <Button
         :pressed="open"

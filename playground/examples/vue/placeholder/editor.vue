@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
-import { watchPostEffect, ref } from 'vue'
-import { ProseKit } from 'prosekit/vue'
-import { defineExtension } from './extension'
+import { Themes } from '@prosekit/themes'
 import { createEditor } from 'prosekit/core'
+import { ProseKit } from 'prosekit/vue'
+import { watchPostEffect, ref } from 'vue'
+
+import { defineExtension } from './extension'
 
 const editor = createEditor({ extension: defineExtension() })
 
@@ -24,7 +25,7 @@ watchPostEffect((onCleanup) => {
           ref="editorRef"
           spellcheck="false"
           :class="Themes.EDITOR_CONTENT"
-        ></div>
+        />
       </div>
     </div>
   </ProseKit>

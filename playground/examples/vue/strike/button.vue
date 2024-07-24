@@ -23,11 +23,11 @@ const emit = defineEmits<{
       <button
         :data-state="pressed ? 'on' : 'off'"
         :disabled="disabled ? true : undefined"
+        :class="Themes.TOGGLE_BUTTON"
         @click="() => emit('click')"
         @mousedown.prevent
-        :class="Themes.TOGGLE_BUTTON"
       >
-        <slot></slot>
+        <slot />
         <span v-if="tooltip" class="sr-only">{{ tooltip }}</span>
       </button>
     </TooltipTrigger>

@@ -3,6 +3,7 @@ import { Themes } from '@prosekit/themes'
 import { useEditor, useKeymap } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
 import { ref } from 'vue'
+
 import Button from './button.vue'
 import type { EditorExtension } from './extension'
 
@@ -18,11 +19,11 @@ const colors = [
   { name: 'violet', value: '#a855f7' },
 ]
 
-const hasTextColor = (color: string) => {
+function hasTextColor(color: string) {
   return editor.value.marks.textColor.isActive({ color })
 }
 
-const toggleTextColor = (color: string) => {
+function toggleTextColor(color: string) {
   if (!color || hasTextColor(color)) {
     editor.value.commands.removeTextColor()
   } else {
@@ -31,11 +32,11 @@ const toggleTextColor = (color: string) => {
 }
 
 const open = ref(false)
-const onOpenChange = (value: boolean) => {
+function onOpenChange(value: boolean) {
   open.value = value
 }
 
-const onEscape = () => {
+function onEscape() {
   if (open.value) {
     open.value = false
     return true
@@ -50,14 +51,14 @@ useKeymap({ Escape: onEscape })
   <InlinePopover
     :class="Themes.INLINE_MENU_MAIN"
     :open="open"
-    @openChange="onOpenChange"
+    @open-change="onOpenChange"
   >
     <Button
       v-for="color in colors"
       :key="color.name"
       :pressed="hasTextColor(color.value)"
-      @click="() => toggleTextColor(color.value)"
       :tooltip="color.name"
+      @click="() => toggleTextColor(color.value)"
     >
       <span :style="{ color: color.value }">A</span>
     </Button>

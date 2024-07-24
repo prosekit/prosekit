@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
+import { Themes } from '@prosekit/themes'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
-import Toolbar from './toolbar.vue'
+
 import { defineExtension } from './extension'
+import Toolbar from './toolbar.vue'
 
 const defaultHTML = `
   <p><i>This is italic</i></p>
@@ -27,7 +28,7 @@ watchPostEffect((onCleanup) => {
     <div :class="Themes.EDITOR_VIEWPORT">
       <Toolbar />
       <div :class="Themes.EDITOR_SCROLLING">
-        <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+        <div ref="editorRef" :class="Themes.EDITOR_CONTENT" />
       </div>
     </div>
   </ProseKit>

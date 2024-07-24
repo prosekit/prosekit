@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
-import type { EditorExtension } from './extension'
+
 import Button from './button.vue'
+import type { EditorExtension } from './extension'
 
 const editor = useEditor<EditorExtension>({ update: true })
 </script>
@@ -14,7 +15,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleList.canApply({ kind: 'bullet' })"
       @click="() => editor.commands.toggleList({ kind: 'bullet' })"
     >
-      <div :class="Themes.ICON_LIST_BULLET"></div>
+      <div :class="Themes.ICON_LIST_BULLET" />
     </Button>
 
     <Button
@@ -22,7 +23,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleList.canApply({ kind: 'ordered' })"
       @click="() => editor.commands.toggleList({ kind: 'ordered' })"
     >
-      <div :class="Themes.ICON_LIST_ORDERED"></div>
+      <div :class="Themes.ICON_LIST_ORDERED" />
     </Button>
 
     <Button
@@ -30,7 +31,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleList.canApply({ kind: 'task' })"
       @click="() => editor.commands.toggleList({ kind: 'task' })"
     >
-      <div :class="Themes.ICON_LIST_TASK"></div>
+      <div :class="Themes.ICON_LIST_TASK" />
     </Button>
 
     <Button
@@ -38,7 +39,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleList.canApply({ kind: 'toggle' })"
       @click="() => editor.commands.toggleList({ kind: 'toggle' })"
     >
-      <div :class="Themes.ICON_LIST_TOGGLE"></div>
+      <div :class="Themes.ICON_LIST_TOGGLE" />
     </Button>
   </div>
 </template>

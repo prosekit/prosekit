@@ -6,6 +6,7 @@ import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
+
 import ExtensionComponent from './extension-component.vue'
 
 const props = defineProps<{ placeholder: string }>()
@@ -23,7 +24,7 @@ watchPostEffect((onCleanup) => {
   <ProseKit :editor="editor">
     <div :class="Themes.EDITOR_VIEWPORT">
       <div :class="Themes.EDITOR_SCROLLING">
-        <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+        <div ref="editorRef" :class="Themes.EDITOR_CONTENT" />
       </div>
     </div>
     <ExtensionComponent :placeholder="props.placeholder" />

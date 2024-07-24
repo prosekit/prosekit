@@ -1,17 +1,18 @@
 <script setup lang="ts">
 import { ref, watchEffect } from 'vue'
+
 import EditorComponent from './editor-component.vue'
 
 const editorKeys = ref<number[]>([])
 const nextKey = ref(1)
 
-const addEditor = () => {
+function addEditor() {
   const key = nextKey.value
   nextKey.value += 1
   editorKeys.value.push(key)
 }
 
-const removeEditor = (key: number) => {
+function removeEditor(key: number) {
   editorKeys.value = editorKeys.value.filter((k) => k !== key)
 }
 
@@ -25,12 +26,12 @@ watchEffect(() => {
 <template>
   <div className="flex flex-col gap-2">
     <div className="flex gap-2">
-      <button @click="addEditor" className="border p-2">Add editor</button>
+      <button className="border p-2" @click="addEditor">Add editor</button>
       <button
         v-for="key in editorKeys"
         :key="key"
-        @click="() => removeEditor(key)"
         className="border p-2"
+        @click="() => removeEditor(key)"
       >
         Unmount No.{{ key }}
       </button>

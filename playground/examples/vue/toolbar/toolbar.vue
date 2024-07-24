@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
+
 import Button from './button.vue'
 import type { EditorExtension } from './extension'
 
@@ -30,7 +31,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleBold.canApply()"
       @click="() => editor.commands.toggleBold()"
     >
-      <div :class="Themes.ICON_BOLD"></div>
+      <div :class="Themes.ICON_BOLD" />
     </Button>
 
     <Button
@@ -38,7 +39,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleItalic.canApply()"
       @click="() => editor.commands.toggleItalic()"
     >
-      <div :class="Themes.ICON_ITALIC"></div>
+      <div :class="Themes.ICON_ITALIC" />
     </Button>
 
     <Button
@@ -46,7 +47,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleHeading.canApply({ level: 1 })"
       @click="() => editor.commands.toggleHeading({ level: 1 })"
     >
-      <div :class="Themes.ICON_H1"></div>
+      <div :class="Themes.ICON_H1" />
     </Button>
 
     <Button
@@ -54,7 +55,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleHeading.canApply({ level: 2 })"
       @click="() => editor.commands.toggleHeading({ level: 2 })"
     >
-      <div :class="Themes.ICON_H2"></div>
+      <div :class="Themes.ICON_H2" />
     </Button>
 
     <Button
@@ -62,7 +63,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleHeading.canApply({ level: 3 })"
       @click="() => editor.commands.toggleHeading({ level: 3 })"
     >
-      <div :class="Themes.ICON_H3"></div>
+      <div :class="Themes.ICON_H3" />
     </Button>
   </div>
 </template>

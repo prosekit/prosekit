@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import 'prosekit/basic/style.css'
 
+import { Themes } from '@prosekit/themes'
 import { createEditor, jsonFromNode } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
+
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
 
@@ -17,7 +18,7 @@ watchPostEffect((onCleanup) => {
 
 const submitions = ref<string[]>([])
 
-const pushSubmition = (hotkey: string) => {
+function pushSubmition(hotkey: string) {
   const doc = editor.view.state.doc
   const docString = JSON.stringify(jsonFromNode(doc))
   const submition = `${new Date().toISOString()}\t${hotkey}\n${docString}`
@@ -30,7 +31,7 @@ const pushSubmition = (hotkey: string) => {
     <div :class="Themes.EDITOR_VIEWPORT">
       <Toolbar @submit="pushSubmition" />
       <div :class="Themes.EDITOR_SCROLLING">
-        <div ref="editorRef" :class="Themes.EDITOR_CONTENT"></div>
+        <div ref="editorRef" :class="Themes.EDITOR_CONTENT" />
       </div>
     </div>
     <fieldset :class="Themes.KEYMAP_FIELDSET">

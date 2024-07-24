@@ -7,7 +7,7 @@ const language = defineModel<string>()
 
 <template>
   <div :class="Themes.LANGUAGE_WRAPPER" contenteditable="false">
-    <select :class="Themes.LANGUAGE_SELECT" v-model="language">
+    <select v-model="language" :class="Themes.LANGUAGE_SELECT">
       <option value="">Plain Text</option>
       <option
         v-for="info of shikiBundledLanguagesInfo"

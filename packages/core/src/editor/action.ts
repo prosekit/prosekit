@@ -7,6 +7,7 @@ import {
   type ProseMirrorNode,
 } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
+import { mapValues } from 'radash'
 
 import { ProseKitError } from '../error'
 import type { AnyAttrs } from '../types/attrs'
@@ -73,15 +74,6 @@ export type NodeBuilder = NodeAction
  * @deprecated Use type {@link MarkAction} instead.
  */
 export type MarkBuilder = MarkAction
-
-function mapValues<T, P>(
-  obj: Record<string, T>,
-  fn: (value: T) => P,
-): Record<string, P> {
-  return Object.fromEntries(
-    Object.entries(obj).map(([key, value]) => [key, fn(value)]),
-  )
-}
 
 /**
  * @internal

@@ -140,7 +140,7 @@ const defaultApplyMark: ApplyMarkFunction = (
   mark: Mark,
   children: ProseMirrorNode[],
 ): ProseMirrorNode[] => {
-  return children.map((child) => child.mark([mark]))
+  return children.map((child) => child.mark([...child.marks, mark]))
 }
 
 export function buildNode(

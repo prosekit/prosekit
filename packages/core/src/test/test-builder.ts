@@ -61,7 +61,7 @@ export const applyMarkForTest: ApplyMarkFunction = (
   children: TaggedProseMirrorNode[],
 ): TaggedProseMirrorNode[] => {
   return children.map((node) => {
-    const newNode: TaggedProseMirrorNode = node.mark([mark])
+    const newNode: TaggedProseMirrorNode = node.mark([...node.marks, mark])
     newNode.tags = node.tags
     return newNode
   })

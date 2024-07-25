@@ -1,3 +1,5 @@
+import type { Attrs } from '@prosekit/pm/model'
+
 import { union } from '../editor/union'
 import { defineBaseCommands } from '../extensions/command'
 import { defineDoc } from '../extensions/doc'
@@ -14,7 +16,13 @@ import type {
   ExtractNodeActions,
 } from '../types/extension'
 
-function defineBold() {
+type BoldExtension = Extension<{
+  Marks: {
+    bold: Attrs
+  }
+}>
+
+function defineBold(): BoldExtension {
   return defineMarkSpec({
     name: 'bold',
     parseDOM: [{ tag: 'strong' }],
@@ -24,7 +32,13 @@ function defineBold() {
   })
 }
 
-function defineItalic() {
+type ItalicExtension = Extension<{
+  Marks: {
+    italic: Attrs
+  }
+}>
+
+function defineItalic(): ItalicExtension {
   return defineMarkSpec({
     name: 'italic',
     parseDOM: [{ tag: 'em' }],
@@ -61,7 +75,13 @@ function defineHeading(): HeadingExtension {
   })
 }
 
-function defineCodeBlock() {
+type CodeBlockExtension = Extension<{
+  Nodes: {
+    codeBlock: { language: string }
+  }
+}>
+
+function defineCodeBlock(): CodeBlockExtension {
   return defineNodeSpec({
     name: 'codeBlock',
     content: 'text*',

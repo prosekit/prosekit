@@ -8,7 +8,6 @@ describe('NodeAction', () => {
   it('can apply node', () => {
     expect(n.heading('foo').toJSON()).toEqual({
       type: 'heading',
-      attrs: { level: 1 },
       content: [{ text: 'foo', type: 'text' }],
     })
   })

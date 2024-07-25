@@ -7,7 +7,7 @@ import {
   type ProseMirrorNode,
 } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
-import { mapValues } from 'radash'
+import mapValues from 'just-map-values'
 
 import { ProseKitError } from '../error'
 import type { AnyAttrs } from '../types/attrs'

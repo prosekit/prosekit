@@ -53,7 +53,7 @@
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@zag-js/dom-query": "^0.62.0",
-    "radash": "^12.1.0"
+    "just-omit": "^2.2.0"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",

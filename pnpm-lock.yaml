@@ -125,15 +125,15 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      just-map-values:
+        specifier: ^3.2.0
+        version: 3.2.0
       orderedmap:
         specifier: ^2.1.1
         version: 2.1.1
       prosemirror-splittable:
         specifier: ^0.1.1
         version: 0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.22.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)
-      radash:
-        specifier: ^12.1.0
-        version: 12.1.0
       type-fest:
         specifier: ^4.23.0
         version: 4.23.0
@@ -211,9 +211,9 @@ importers:
       json5:
         specifier: ^2.2.3
         version: 2.2.3
-      radash:
-        specifier: ^12.1.0
-        version: 12.1.0
+      just-filter-object:
+        specifier: ^3.2.0
+        version: 3.2.0
       tsx:
         specifier: ^4.16.2
         version: 4.16.2
@@ -678,9 +678,9 @@ importers:
       '@zag-js/dom-query':
         specifier: ^0.62.0
         version: 0.62.0
-      radash:
-        specifier: ^12.1.0
-        version: 12.1.0
+      just-omit:
+        specifier: ^2.2.0
+        version: 2.2.0
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -4564,6 +4564,15 @@ packages:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
 
+  just-filter-object@3.2.0:
+    resolution: {integrity: sha512-OeorYJxmp2zhy/0LxjS1UjbJ7XMY8M4gVa1RRKxnIVheCYmng2E2hE0lEbDGv4aRh/HI7FgNUXtOMnmNxpoXRQ==}
+
+  just-map-values@3.2.0:
+    resolution: {integrity: sha512-TyqCKtK3NxiUgOjRYMIKURvBTHesi3XzomDY0QVPZ3rYzLCF+nNq5rSi0B/L5aOd/WMTZo6ukzA4wih4HUbrDg==}
+
+  just-omit@2.2.0:
+    resolution: {integrity: sha512-Js7+HxDOGcB3RhI38Mird/RgyMf3t0DAJFda1QWqqlAKTa36NeSYIufJXxrZUbysFTRcTOFcoMCiFK5FwCoI7Q==}
+
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
@@ -5590,10 +5599,6 @@ packages:
   quick-lru@5.1.1:
     resolution: {integrity: sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==}
     engines: {node: '>=10'}
-
-  radash@12.1.0:
-    resolution: {integrity: sha512-b0Zcf09AhqKS83btmUeYBS8tFK7XL2e3RvLmZcm0sTdF1/UUlHSsjXdCcWNxe7yfmAlPve5ym0DmKGtTzP6kVQ==}
-    engines: {node: '>=14.18.0'}
 
   radix-vue@1.9.2:
     resolution: {integrity: sha512-XXwEMmXJmzcy9SebywbQdrZg8UE1jueqPMpxKK6NoquRC0CP4dvlBcuzp4lDWNSsqOgmkXa6CNbwEzdCX96umg==}
@@ -11485,6 +11490,12 @@ snapshots:
       object.assign: 4.1.5
       object.values: 1.2.0
 
+  just-filter-object@3.2.0: {}
+
+  just-map-values@3.2.0: {}
+
+  just-omit@2.2.0: {}
+
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
@@ -12672,8 +12683,6 @@ snapshots:
   queue-microtask@1.2.3: {}
 
   quick-lru@5.1.1: {}
-
-  radash@12.1.0: {}
 
   radix-vue@1.9.2(vue@3.4.33(typescript@5.5.3)):
     dependencies:

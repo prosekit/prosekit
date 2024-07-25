@@ -17,7 +17,7 @@ import {
   defineDOMEventHandler,
   withPriority,
 } from '@prosekit/core'
-import { omit } from 'radash'
+import omit from 'just-omit'
 
 import { onSubmitContext, openContext, queryContext } from '../context'
 

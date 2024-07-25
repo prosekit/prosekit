@@ -1,5 +1,6 @@
 import path from 'node:path'
 
+import { shake } from 'radash'
 import { readPackage } from 'read-pkg'
 import type { Options } from 'tsup'
 
@@ -37,9 +38,5 @@ async function getConfig(options?: Options): Promise<Options> {
 }
 
 function removeCssEntryPoints(entryPoints: Record<string, string>) {
-  return Object.fromEntries(
-    Object.entries(entryPoints).filter(
-      ([_, filePath]) => !filePath.endsWith('.css'),
-    ),
-  )
+  return shake(entryPoints, (filePath: string) => filePath.endsWith('.css'))
 }

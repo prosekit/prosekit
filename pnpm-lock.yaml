@@ -211,6 +211,9 @@ importers:
       json5:
         specifier: ^2.2.3
         version: 2.2.3
+      radash:
+        specifier: ^12.1.0
+        version: 12.1.0
       tsx:
         specifier: ^4.16.2
         version: 4.16.2
@@ -675,6 +678,9 @@ importers:
       '@zag-js/dom-query':
         specifier: ^0.62.0
         version: 0.62.0
+      radash:
+        specifier: ^12.1.0
+        version: 12.1.0
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*

@@ -71,7 +71,6 @@ export default function Toolbar() {
       >
         <div className={Themes.ICON_H3} />
       </Button>
-
     </div>
   )
 }

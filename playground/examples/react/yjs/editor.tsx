@@ -69,7 +69,7 @@ export function Editor({ appId, token }: { appId: string; token: string }) {
       const extension = defineExtension()
       return createEditor({ extension })
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

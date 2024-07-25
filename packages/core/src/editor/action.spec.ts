@@ -14,9 +14,9 @@ describe('NodeAction', () => {
   })
 
   it('can apply node with attrs', () => {
-    expect(n.heading({ level: 2 }, 'foo').toJSON()).toEqual({
-      type: 'heading',
-      attrs: { level: 2 },
+    expect(n.codeBlock({ language: 'javascript' }, 'foo').toJSON()).toEqual({
+      type: 'codeBlock',
+      attrs: { language: 'javascript' },
       content: [{ text: 'foo', type: 'text' }],
     })
   })

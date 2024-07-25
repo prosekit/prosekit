@@ -37,6 +37,21 @@ describe('MarkAction', () => {
     })
   })
 
+  it('can apply mark with attrs', () => {
+    expect(
+      n.p(m.link({ href: 'https://example.com' }, 'foo')).toJSON(),
+    ).toEqual({
+      type: 'paragraph',
+      content: [
+        {
+          marks: [{ type: 'link', attrs: { href: 'https://example.com' } }],
+          text: 'foo',
+          type: 'text',
+        },
+      ],
+    })
+  })
+
   it('can check mark activity', () => {
     editor.set(n.doc(n.p('<a>foo<b>')))
     expect(editor.marks.bold.isActive()).toBe(false)

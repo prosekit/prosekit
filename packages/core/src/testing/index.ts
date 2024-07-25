@@ -48,6 +48,40 @@ function defineItalic(): ItalicExtension {
   })
 }
 
+interface LinkAttrs {
+  href: string
+}
+
+type LinkExtension = Extension<{
+  Marks: {
+    link: LinkAttrs
+  }
+}>
+
+function defineLink(): LinkExtension {
+  return defineMarkSpec<'link', LinkAttrs>({
+    name: 'link',
+    inclusive: false,
+    attrs: {
+      href: {},
+    },
+    parseDOM: [
+      {
+        tag: 'a[href]',
+        getAttrs: (dom) => {
+          return {
+            href: (dom as HTMLElement).getAttribute('href'),
+          }
+        },
+      },
+    ],
+    toDOM(node) {
+      const { href } = node.attrs as LinkAttrs
+      return ['a', { href }, 0]
+    },
+  })
+}
+
 type HeadingExtension = Extension<{
   Nodes: {
     heading: Attrs
@@ -101,6 +135,7 @@ export function defineTestExtension() {
     defineText(),
     defineBold(),
     defineItalic(),
+    defineLink(),
     defineHeading(),
     defineCodeBlock(),
   ])

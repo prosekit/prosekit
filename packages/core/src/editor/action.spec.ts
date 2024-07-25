@@ -2,8 +2,41 @@ import { describe, expect, it } from 'vitest'
 
 import { setupTest } from '../testing'
 
+describe('NodeAction', () => {
+  const { editor, n } = setupTest()
+
+  it('can apply node', () => {
+    expect(n.heading('foo').toJSON()).toEqual({
+      type: 'heading',
+      attrs: { level: 1 },
+      content: [{ text: 'foo', type: 'text' }],
+    })
+  })
+
+  it('can apply node with attrs', () => {
+    expect(n.heading({ level: 2 }, 'foo').toJSON()).toEqual({
+      type: 'heading',
+      attrs: { level: 2 },
+      content: [{ text: 'foo', type: 'text' }],
+    })
+  })
+
+  it('can check node activity', () => {
+    editor.set(n.doc(n.heading('<a>foo<b>')))
+    expect(editor.nodes.heading.isActive()).toBe(true)
+    expect(editor.nodes.paragraph.isActive()).toBe(false)
+  })
+})
+
 describe('MarkAction', () => {
   const { editor, m, n } = setupTest()
+
+  it('can apply mark', () => {
+    expect(n.p(m.bold('foo')).toJSON()).toEqual({
+      type: 'paragraph',
+      content: [{ marks: [{ type: 'bold' }], text: 'foo', type: 'text' }],
+    })
+  })
 
   it('can check mark activity', () => {
     editor.set(n.doc(n.p('<a>foo<b>')))

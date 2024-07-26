@@ -304,7 +304,6 @@ export class Editor<E extends Extension = any> {
     if (!(instance instanceof EditorInstance)) {
       throw new TypeError('Invalid EditorInstance')
     }
-
     this.instance = instance
   }
 
@@ -327,6 +326,13 @@ export class Editor<E extends Extension = any> {
    */
   get schema(): Schema<ExtractNodeNames<E>, ExtractMarkNames<E>> {
     return this.instance.schema
+  }
+
+  /**
+   * The editor's current state.
+   */
+  get state(): EditorState {
+    return this.instance.getState()
   }
 
   /**
@@ -374,13 +380,6 @@ export class Editor<E extends Extension = any> {
    */
   use = (extension: Extension): VoidFunction => {
     return this.instance.use(extension)
-  }
-
-  /**
-   * The editor's current state.
-   */
-  get state(): EditorState {
-    return this.instance.getState()
   }
 
   /**

@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.9.13
+
+### Patch Changes
+
+- [`3ce86ec`](https://github.com/ocavue/prosekit/commit/3ce86ec98297d23ffc1b5204622dd86acb84cb5c) ![](https://prosekit.dev/b/core)
+
+  Fix a bug where `MarkAction` would erase the existing marks of a node when applying a new mark.
+
+- [`df5bd07`](https://github.com/ocavue/prosekit/commit/df5bd073c13073cca6daa4e8920d66db67c845f1) ![](https://prosekit.dev/b/core)
+
+  `createEditor` now accepts a new `defaultContent` option to set the initial content of the editor, which can be a JSON object, a HTML string, or a HTML element instance. It replaces the `defaultDoc` and `defaultHTML` options.
+
+- [`bcda993`](https://github.com/ocavue/prosekit/commit/bcda99300ed0dc424c05c8271b58ffcc12eb7617) ![](https://prosekit.dev/b/core)
+
+  Add `editor.setContent` method to update the document and selection of the editor.
+
 ## 0.9.12
 
 ### Patch Changes

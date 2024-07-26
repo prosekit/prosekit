@@ -7,6 +7,7 @@ import {
   type ProseMirrorNode,
 } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
+import mapValues from 'just-map-values'
 
 import { ProseKitError } from '../error'
 import type { AnyAttrs } from '../types/attrs'
@@ -79,21 +80,27 @@ export type MarkBuilder = MarkAction
  */
 export function createNodeActions(
   schema: Schema,
-  getState: () => EditorState | null | undefined,
+  getState: GetStateFunction,
   createNode: CreateNodeFunction = defaultCreateNode,
 ): Record<string, NodeAction> {
-  const builders: Record<string, NodeAction> = {}
-  for (const type of Object.values(schema.nodes)) {
-    const builder = (
-      ...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]
-    ) => buildNode(type, args, createNode)
-    builder.isActive = (attrs?: Attrs) => {
-      const state = getState()
-      return state ? isNodeActive(state, type, attrs) : false
-    }
-    builders[type.name] = builder
+  return mapValues(schema.nodes, (type) =>
+    createNodeAction(type, getState, createNode),
+  )
+}
+
+function createNodeAction(
+  type: NodeType,
+  getState: GetStateFunction,
+  createNode: CreateNodeFunction,
+): NodeAction {
+  const action = (
+    ...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]
+  ) => buildNode(type, args, createNode)
+  action.isActive = (attrs?: Attrs) => {
+    const state = getState()
+    return state ? isNodeActive(state, type, attrs) : false
   }
-  return builders
+  return action
 }
 
 /**
@@ -101,21 +108,27 @@ export function createNodeActions(
  */
 export function createMarkActions(
   schema: Schema,
-  getState: () => EditorState | null | undefined,
+  getState: GetStateFunction,
   applyMark: ApplyMarkFunction = defaultApplyMark,
 ): Record<string, MarkAction> {
-  const builders: Record<string, MarkAction> = {}
-  for (const type of Object.values(schema.marks)) {
-    const builder = (
-      ...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]
-    ) => buildMark(type, args, applyMark)
-    builder.isActive = (attrs?: Attrs) => {
-      const state = getState()
-      return state ? isMarkActive(state, type, attrs) : false
-    }
-    builders[type.name] = builder
+  return mapValues(schema.marks, (type) =>
+    createMarkAction(type, getState, applyMark),
+  )
+}
+
+function createMarkAction(
+  type: MarkType,
+  getState: GetStateFunction,
+  applyMark: ApplyMarkFunction,
+): MarkAction {
+  const action = (
+    ...args: [Attrs | NodeChild | null | undefined, ...NodeChild[]]
+  ) => buildMark(type, args, applyMark)
+  action.isActive = (attrs?: Attrs) => {
+    const state = getState()
+    return state ? isMarkActive(state, type, attrs) : false
   }
-  return builders
+  return action
 }
 
 function buildMark(
@@ -140,7 +153,7 @@ const defaultApplyMark: ApplyMarkFunction = (
   mark: Mark,
   children: ProseMirrorNode[],
 ): ProseMirrorNode[] => {
-  return children.map((child) => child.mark([mark]))
+  return children.map((node) => node.mark(mark.addToSet(node.marks)))
 }
 
 export function buildNode(
@@ -160,6 +173,8 @@ export type CreateNodeFunction = (
   attrs: Attrs | null,
   children: ProseMirrorNode[],
 ) => ProseMirrorNode
+
+type GetStateFunction = () => EditorState | null | undefined
 
 const defaultCreateNode: CreateNodeFunction = (
   type: NodeType,

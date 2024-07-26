@@ -1,5 +1,6 @@
 import path from 'node:path'
 
+import filterObject from 'just-filter-object'
 import { readPackage } from 'read-pkg'
 import type { Options } from 'tsup'
 
@@ -36,10 +37,11 @@ async function getConfig(options?: Options): Promise<Options> {
   return merged
 }
 
-function removeCssEntryPoints(entryPoints: Record<string, string>) {
-  return Object.fromEntries(
-    Object.entries(entryPoints).filter(
-      ([_, filePath]) => !filePath.endsWith('.css'),
-    ),
-  )
+function removeCssEntryPoints(
+  entryPoints: Record<string, string>,
+): Record<string, string> {
+  return filterObject(
+    entryPoints,
+    (key, filePath) => !filePath.endsWith('.css'),
+  ) as Record<string, string>
 }

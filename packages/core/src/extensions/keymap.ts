@@ -2,6 +2,7 @@ import { chainCommands } from '@prosekit/pm/commands'
 import { keydownHandler } from '@prosekit/pm/keymap'
 import { Plugin, PluginKey, type Command } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
+import mapValues from 'just-map-values'
 
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
@@ -72,12 +73,11 @@ function mergeKeymaps(keymaps: Keymap[]): Keymap {
     }
   }
 
-  return Object.fromEntries(
-    Object.entries(bindings).map(([key, commands]) => [
-      key,
-      chainCommands(...commands),
-    ]),
-  )
+  return mapValues(bindings, mergeCommands)
+}
+
+function mergeCommands(commands: Command[]): Command {
+  return chainCommands(...commands)
 }
 
 const keymapPluginKey = new PluginKey('prosekit-keymap')

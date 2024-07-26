@@ -125,6 +125,9 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      just-map-values:
+        specifier: ^3.2.0
+        version: 3.2.0
       orderedmap:
         specifier: ^2.1.1
         version: 2.1.1
@@ -208,6 +211,9 @@ importers:
       json5:
         specifier: ^2.2.3
         version: 2.2.3
+      just-filter-object:
+        specifier: ^3.2.0
+        version: 3.2.0
       tsx:
         specifier: ^4.16.2
         version: 4.16.2
@@ -672,6 +678,9 @@ importers:
       '@zag-js/dom-query':
         specifier: ^0.62.0
         version: 0.62.0
+      just-omit:
+        specifier: ^2.2.0
+        version: 2.2.0
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -4554,6 +4563,15 @@ packages:
   jsx-ast-utils@3.3.5:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
+
+  just-filter-object@3.2.0:
+    resolution: {integrity: sha512-OeorYJxmp2zhy/0LxjS1UjbJ7XMY8M4gVa1RRKxnIVheCYmng2E2hE0lEbDGv4aRh/HI7FgNUXtOMnmNxpoXRQ==}
+
+  just-map-values@3.2.0:
+    resolution: {integrity: sha512-TyqCKtK3NxiUgOjRYMIKURvBTHesi3XzomDY0QVPZ3rYzLCF+nNq5rSi0B/L5aOd/WMTZo6ukzA4wih4HUbrDg==}
+
+  just-omit@2.2.0:
+    resolution: {integrity: sha512-Js7+HxDOGcB3RhI38Mird/RgyMf3t0DAJFda1QWqqlAKTa36NeSYIufJXxrZUbysFTRcTOFcoMCiFK5FwCoI7Q==}
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -11471,6 +11489,12 @@ snapshots:
       array.prototype.flat: 1.3.2
       object.assign: 4.1.5
       object.values: 1.2.0
+
+  just-filter-object@3.2.0: {}
+
+  just-map-values@3.2.0: {}
+
+  just-omit@2.2.0: {}
 
   keyv@4.5.4:
     dependencies:

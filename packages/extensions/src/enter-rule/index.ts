@@ -104,10 +104,11 @@ export type TextBlockEnterRuleOptions = {
  * the cursor matches `regex` and user presses Enter. The `regex` should end
  * with `$`.
  *
+ * @param options
+ *
  * @public
  */
-export function defineEnterRule(options: EnterRuleOptions): PlainExtension {
-  const { regex, handler, stop = false } = options
+export function defineEnterRule({regex, handler, stop = false}: EnterRuleOptions): PlainExtension {
   const rule: EnterRule = new EnterRule(regex, handler, stop)
   return defineFacetPayload(enterRule, [rule]) as PlainExtension
 }
@@ -117,12 +118,11 @@ export function defineEnterRule(options: EnterRuleOptions): PlainExtension {
  *
  * See also {@link defineEnterRule}.
  *
+ * @param options
+ *
  * @public
  */
-export function defineTextBlockEnterRule(
-  options: TextBlockEnterRuleOptions,
-): PlainExtension {
-  const { regex, type, attrs, stop = true } = options
+export function defineTextBlockEnterRule({regex, type, attrs, stop = true}: TextBlockEnterRuleOptions): PlainExtension {
   return defineEnterRule({
     regex,
     handler: ({ state, from, to, match }) => {

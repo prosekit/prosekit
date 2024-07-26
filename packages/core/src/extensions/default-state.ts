@@ -42,12 +42,16 @@ export interface DefaultStateOptions {
 /**
  * Define a default state for the editor.
  *
+ * @param options
+ *
  * @public
  */
-export function defineDefaultState(
-  options: DefaultStateOptions,
-): PlainExtension {
-  const { defaultSelection, defaultContent, defaultDoc, defaultHTML } = options
+export function defineDefaultState({
+  defaultSelection,
+  defaultContent,
+  defaultDoc,
+  defaultHTML,
+}: DefaultStateOptions): PlainExtension {
   const defaultDocContent = defaultContent || defaultDoc || defaultHTML
 
   return defineFacetPayload(stateFacet, [

@@ -3,4 +3,4 @@
 '@prosekit/core': patch
 ---
 
-Add `editor.updateContent` method to update the document of the editor.
+Add `editor.setContent` method to update the document and selection of the editor.

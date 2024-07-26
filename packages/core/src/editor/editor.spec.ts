@@ -83,7 +83,7 @@ describe('createEditor', () => {
     expect(editor.state.doc.textContent).toMatchInlineSnapshot(`"4321"`)
   })
 
-  it('can get update document and selection', () => {
+  it('can update document and selection', () => {
     const extension = union([defineDoc(), defineText(), defineParagraph()])
     const editor = createEditor({ extension })
 
@@ -151,7 +151,7 @@ describe('createEditor', () => {
     `)
   })
 
-  it('can refute invalid document', () => {
+  it('can refuse invalid document', () => {
     const extension = union([defineDoc(), defineText(), defineParagraph()])
     const editor = createEditor({ extension })
 

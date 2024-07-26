@@ -40,6 +40,21 @@ describe('MarkAction', () => {
     })
   })
 
+  it('can apply mark with attrs', () => {
+    expect(
+      n.p(m.link({ href: 'https://example.com' }, 'foo')).toJSON(),
+    ).toEqual({
+      type: 'paragraph',
+      content: [
+        {
+          marks: [{ type: 'link', attrs: { href: 'https://example.com' } }],
+          text: 'foo',
+          type: 'text',
+        },
+      ],
+    })
+  })
+
   it('can apply multiple marks', () => {
     const json = jsonFromNode(n.p(m.bold(m.italic('foo'))))
     const marks = json.content?.[0].marks?.map((mark) => mark.type)
@@ -81,21 +96,6 @@ describe('MarkAction', () => {
           type: 'text',
           text: 'foo',
           marks: [{ attrs: { href: href2 }, type: 'link' }],
-        },
-      ],
-    })
-  })
-
-  it('can apply mark with attrs', () => {
-    expect(
-      n.p(m.link({ href: 'https://example.com' }, 'foo')).toJSON(),
-    ).toEqual({
-      type: 'paragraph',
-      content: [
-        {
-          marks: [{ type: 'link', attrs: { href: 'https://example.com' } }],
-          text: 'foo',
-          type: 'text',
         },
       ],
     })

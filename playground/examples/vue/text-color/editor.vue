@@ -9,7 +9,7 @@ import { ref, watchPostEffect } from 'vue'
 import { defineExtension } from './extension'
 import InlineMenu from './inline-menu.vue'
 
-const defaultHTML =
+const defaultContent =
   '<p>' +
   '<span style="color: #ef4444">Select</span> ' +
   '<span style="color: #f97316">some</span> ' +
@@ -20,7 +20,7 @@ const defaultHTML =
   '<span style="color: #a855f7">color</span> ' +
   '</p>'
 
-const editor = createEditor({ extension: defineExtension(), defaultHTML })
+const editor = createEditor({ extension: defineExtension(), defaultContent })
 
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {

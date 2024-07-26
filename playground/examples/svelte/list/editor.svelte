@@ -7,7 +7,7 @@ import { createEditor, type NodeJSON } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { defineExtension } from './extension'
 
-const defaultDoc: NodeJSON = {
+const defaultContent: NodeJSON = {
   type: 'doc',
   content: [
     {
@@ -53,7 +53,7 @@ const defaultDoc: NodeJSON = {
   ],
 }
 
-const editor = createEditor({ extension: defineExtension(), defaultDoc })
+const editor = createEditor({ extension: defineExtension(), defaultContent })
 
 const mount = (element: HTMLElement) => {
   editor.mount(element)

@@ -15,15 +15,15 @@ import { computed, ref } from 'vue'
 import EditorComponent from './editor-component.vue'
 import { htmlFromMarkdown, markdownFromHTML } from './markdown'
 
-const defaultDoc = ref<NodeJSON | undefined>()
+const defaultContent = ref<NodeJSON | undefined>()
 const records = ref<string[]>([])
 const hasUnsavedChange = ref(false)
 const key = ref(1)
 
-// Create a new editor instance whenever `defaultDoc` changes
+// Create a new editor instance whenever `defaultContent` changes
 const editor = computed(() => {
   const extension = defineBasicExtension()
-  return createEditor({ extension, defaultDoc: defaultDoc.value })
+  return createEditor({ extension, defaultContent: defaultContent.value })
 })
 
 // Enable the save button
@@ -42,7 +42,7 @@ function handleSave() {
 // Load a document from a Markdown string
 function handleLoad(record: string) {
   const html = htmlFromMarkdown(record)
-  defaultDoc.value = jsonFromHTML(html, { schema: editor.value.schema })
+  defaultContent.value = jsonFromHTML(html, { schema: editor.value.schema })
   hasUnsavedChange.value = false
   key.value++
 }

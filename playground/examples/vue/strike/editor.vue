@@ -9,14 +9,14 @@ import { watchPostEffect, ref } from 'vue'
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
 
-const defaultHTML = `
+const defaultContent = `
   <p><s>Strikethrough</s></p>
   <p><del>Strikethrough</del></p>
   <p><span style="text-decoration: line-through;">Strikethrough</span></p>
   <p><span>Normal text</span></p>
 `
 
-const editor = createEditor({ extension: defineExtension(), defaultHTML })
+const editor = createEditor({ extension: defineExtension(), defaultContent })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {
   editor.mount(editorRef.value)

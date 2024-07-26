@@ -10,7 +10,7 @@ import WordCounter from './word-counter.svelte'
 
 const editor = createEditor({
   extension: defineExtension(),
-  defaultHTML: 'Start typing and observe the word count update below.',
+  defaultContent: 'Start typing and observe the word count update below.',
 })
 
 const mount = (element: HTMLElement) => {

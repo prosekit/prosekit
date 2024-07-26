@@ -9,13 +9,13 @@ import { ref, watchPostEffect } from 'vue'
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
 
-const defaultHTML = `
+const defaultContent = `
   <p><i>This is italic</i></p>
   <p><em>This is italic too</em></p>
   <p><span>This is normal text</span></p>
 `
 
-const editor = createEditor({ extension: defineExtension(), defaultHTML })
+const editor = createEditor({ extension: defineExtension(), defaultContent })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {
   editor.mount(editorRef.value)

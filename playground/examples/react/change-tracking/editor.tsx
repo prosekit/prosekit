@@ -13,7 +13,7 @@ export default function Editor() {
     { id: string; date: Date; commit: Commit }[]
   >([])
   const [key, setKey] = useState(0)
-  const [defaultDoc, setDefaultDoc] = useState<NodeJSON | undefined>()
+  const [defaultContent, setDefaultDoc] = useState<NodeJSON | undefined>()
   const commitRecorder = useMemo(() => new CommitRecorder(), [])
 
   const handleCommit = useCallback(() => {
@@ -41,7 +41,7 @@ export default function Editor() {
         <div className="max-h-md">
           <EditorMain
             key={key}
-            defaultDoc={defaultDoc}
+            defaultContent={defaultContent}
             commitRecorder={commitRecorder}
           />
         </div>

@@ -6,9 +6,9 @@ import { Themes } from '@prosekit/themes'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { defineExtension } from './extension'
-import { defaultDoc } from './default-doc'
+import { defaultContent } from './default-doc'
 
-const editor = createEditor({ extension: defineExtension(), defaultDoc })
+const editor = createEditor({ extension: defineExtension(), defaultContent })
 
 const mount = (element: HTMLElement) => {
   editor.mount(element)

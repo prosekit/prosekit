@@ -12,7 +12,7 @@ export default function Editor() {
   const editor = useMemo(() => {
     return createEditor({
       extension: defineExtension(),
-      defaultHTML:
+      defaultContent:
         'The content is readonly. Press the buttons above to toggle the readonly mode.',
     })
   }, [])

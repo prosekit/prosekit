@@ -9,13 +9,13 @@ import { ref, watchPostEffect } from 'vue'
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
 
-const defaultHTML =
+const defaultContent =
   '<h1 style="text-align:center;">Heading</h1>' +
   '<p style="text-align:left;">First paragraph</p>' +
   '<p style="text-align:center;">Second paragraph</p>' +
   '<p style="text-align:right;">Third paragraph</p>'
 
-const editor = createEditor({ extension: defineExtension(), defaultHTML })
+const editor = createEditor({ extension: defineExtension(), defaultContent })
 
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {

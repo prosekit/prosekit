@@ -11,7 +11,7 @@ import WordCounter from './word-counter.vue'
 
 const editor = createEditor({
   extension: defineExtension(),
-  defaultHTML: 'Start typing and observe the word count update below.',
+  defaultContent: 'Start typing and observe the word count update below.',
 })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {

@@ -8,12 +8,12 @@ import type { ProseMirrorNode } from 'prosekit/pm/model'
 import { ProseKit, useDocChange } from 'prosekit/preact'
 
 export default function Editor(props: {
-  defaultDoc?: NodeJSON
+  defaultContent?: NodeJSON
   onDocUpdate?: (doc: NodeJSON) => void
 }) {
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
-    return createEditor({ extension, defaultDoc: props.defaultDoc })
+    return createEditor({ extension, defaultContent: props.defaultContent })
   }, [])
 
   const handleDocChange = useCallback(

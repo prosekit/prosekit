@@ -8,12 +8,12 @@ import { defineExtension } from './extension'
 import Toolbar from './toolbar.svelte'
 import { createEditor } from 'prosekit/core'
 
-const defaultHTML = `
+const defaultContent = `
   <p><code>This is code</code></p>
   <p><span>This is normal text</span></p>
 `
 
-const editor = createEditor({ extension: defineExtension(), defaultHTML })
+const editor = createEditor({ extension: defineExtension(), defaultContent })
 
 const mount = (element: HTMLElement) => {
   editor.mount(element)

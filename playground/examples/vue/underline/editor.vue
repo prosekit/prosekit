@@ -9,13 +9,13 @@ import { watchPostEffect, ref } from 'vue'
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
 
-const defaultHTML = `
+const defaultContent = `
   <p><u>Underline</u></p>
   <p><span style="text-decoration-line: underline;">Underline</span></p>
   <p><span>Normal text</span></p>
 `
 
-const editor = createEditor({ extension: defineExtension(), defaultHTML })
+const editor = createEditor({ extension: defineExtension(), defaultContent })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {
   editor.mount(editorRef.value)

@@ -8,11 +8,11 @@ import { ref, watchPostEffect } from 'vue'
 
 import { defineExtension } from './extension'
 
-const defaultHTML = `
+const defaultContent = `
   <p><a href="https://www.example.com">www.example.com</a></p>
 `
 
-const editor = createEditor({ extension: defineExtension(), defaultHTML })
+const editor = createEditor({ extension: defineExtension(), defaultContent })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {
   editor.mount(editorRef.value)

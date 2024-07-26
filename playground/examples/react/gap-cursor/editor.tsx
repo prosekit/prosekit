@@ -8,7 +8,7 @@ import { defineExtension } from './extension'
 
 export default function Editor() {
   const editor = useMemo(() => {
-    return createEditor({ extension: defineExtension(), defaultHTML })
+    return createEditor({ extension: defineExtension(), defaultContent })
   }, [])
 
   return (
@@ -22,7 +22,7 @@ export default function Editor() {
   )
 }
 
-const defaultHTML = `
+const defaultContent = `
 <p>Click the gap between two images or press arrow keys to see the gap cursor between two images</p>
 <img src="https://placehold.co/200x100" />
 <img src="https://placehold.co/200x100" />

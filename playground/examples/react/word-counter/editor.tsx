@@ -13,7 +13,7 @@ export default function Editor() {
     const extension = defineExtension()
     return createEditor({
       extension,
-      defaultHTML: 'Start typing and observe the word count update below.',
+      defaultContent: 'Start typing and observe the word count update below.',
     })
   }, [])
 

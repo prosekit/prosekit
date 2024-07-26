@@ -7,13 +7,13 @@ import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 
-let defaultDoc: NodeJSON | undefined
+let defaultContent: NodeJSON | undefined
 let hasUnsavedChange = false
 let records: string[] = []
 let key = 1
 
-// Create a new editor instance whenever `defaultDoc` changes
-$: editor = createEditor({ extension: defineBasicExtension(), defaultDoc })
+// Create a new editor instance whenever `defaultContent` changes
+$: editor = createEditor({ extension: defineBasicExtension(), defaultContent })
 
 // Enable the save button
 function handleDocChange() {
@@ -29,7 +29,7 @@ function handleSave() {
 
 // Load a document from a JSON string
 function handleLoad(record: string) {
-  defaultDoc = JSON.parse(record)
+  defaultContent = JSON.parse(record)
   key++
   hasUnsavedChange = false
 }

@@ -11,7 +11,7 @@ import Toolbar from './toolbar.svelte'
 const extension = defineExtension()
 const editor = createEditor({
   extension,
-  defaultHTML:
+  defaultContent:
     '<h1 style="text-align:center;">Heading</h1>' +
     '<p style="text-align:left;"">First paragraph</p>' +
     '<p style="text-align:center;">Second paragraph</p>' +

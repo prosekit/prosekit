@@ -29,7 +29,7 @@ test('isElement', () => {
   expect(isElement({})).toBe(false)
   expect(isElement(null)).toBe(false)
   expect(isElement(undefined)).toBe(false)
-  expect(isElement("string")).toBe(false)
+  expect(isElement('string')).toBe(false)
   expect(isElement(123)).toBe(false)
   expect(isElement(true)).toBe(false)
   expect(isElement(() => void 0)).toBe(false)

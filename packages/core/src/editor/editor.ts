@@ -357,14 +357,14 @@ export class Editor<E extends Extension = any> {
   /**
    * Focus the editor.
    */
-  focus(): void {
+  focus = (): void => {
     this.instance.view?.focus()
   }
 
   /**
    * Blur the editor.
    */
-  blur(): void {
+  blur = (): void => {
     this.instance.view?.dom.blur()
   }
 
@@ -391,7 +391,7 @@ export class Editor<E extends Extension = any> {
    * This is an advanced method. Use it only if you have a specific reason to
    * directly manipulate the editor's state.
    */
-  updateState(state: EditorState): void {
+  updateState = (state: EditorState): void => {
     this.instance.updateState(state)
   }
 

@@ -91,7 +91,8 @@ export function createEditor<E extends Extension>(
   options: EditorOptions<E>,
 ): Editor<E> {
   const extension = setupEditorExtension(options)
-  return Editor.create(new EditorInstance(extension)) as Editor<E>
+  const instance = new EditorInstance(extension)
+  return new Editor(instance) as Editor<E>
 }
 
 /**
@@ -279,20 +280,14 @@ export class Editor<E extends Extension = any> {
    * @internal
    */
   constructor(instance: EditorInstance) {
+    if (!(instance instanceof EditorInstance)) {
+      throw new TypeError('Invalid EditorInstance')
+    }
+
     this.instance = instance
     this.mount = this.mount.bind(this)
     this.unmount = this.unmount.bind(this)
     this.use = this.use.bind(this)
-  }
-
-  /**
-   * @internal
-   */
-  static create(instance: any): Editor {
-    if (!(instance instanceof EditorInstance)) {
-      throw new TypeError('Invalid EditorInstance')
-    }
-    return new Editor(instance)
   }
 
   /**

@@ -40,16 +40,12 @@ export interface EditorOptions<E extends Extension> {
    */
   extension: E
 
-
-
   /**
    * The starting document to use when creating the editor. It can be a
    * ProseMirror node JSON object, a HTML string, or a HTML element.
    */
   defaultContent?: NodeJSON | string | HTMLElement
 
-
-  
   /**
    * A JSON object representing the starting document to use when creating the
    * editor.
@@ -65,7 +61,6 @@ export interface EditorOptions<E extends Extension> {
    * @deprecated Use `defaultContent` instead.
    */
   defaultHTML?: string | HTMLElement
-
 
   /**
    * A JSON object representing the starting selection to use when creating the

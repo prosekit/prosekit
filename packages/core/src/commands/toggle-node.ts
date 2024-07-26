@@ -23,7 +23,7 @@ export interface ToggleNodeOptions {
 /**
  * Returns a command that set the selected textblocks to the given node type
  * with the given attributes.
- * 
+ *
  * @param options
  *
  * @public

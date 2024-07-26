@@ -1,4 +1,4 @@
-export { defineCodeBlock, type CodeBlockExtension , } from './code-block'
+export { defineCodeBlock, type CodeBlockExtension } from './code-block'
 export {
   defineCodeBlockCommands,
   type CodeBlockCommandsExtension,

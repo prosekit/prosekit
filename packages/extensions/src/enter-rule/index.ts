@@ -108,7 +108,11 @@ export type TextBlockEnterRuleOptions = {
  *
  * @public
  */
-export function defineEnterRule({regex, handler, stop = false}: EnterRuleOptions): PlainExtension {
+export function defineEnterRule({
+  regex,
+  handler,
+  stop = false,
+}: EnterRuleOptions): PlainExtension {
   const rule: EnterRule = new EnterRule(regex, handler, stop)
   return defineFacetPayload(enterRule, [rule]) as PlainExtension
 }
@@ -122,7 +126,12 @@ export function defineEnterRule({regex, handler, stop = false}: EnterRuleOptions
  *
  * @public
  */
-export function defineTextBlockEnterRule({regex, type, attrs, stop = true}: TextBlockEnterRuleOptions): PlainExtension {
+export function defineTextBlockEnterRule({
+  regex,
+  type,
+  attrs,
+  stop = true,
+}: TextBlockEnterRuleOptions): PlainExtension {
   return defineEnterRule({
     regex,
     handler: ({ state, from, to, match }) => {

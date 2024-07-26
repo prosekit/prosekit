@@ -35,6 +35,8 @@ export interface CodeBlockShikiOptions {
 /**
  * Adds syntax highlighting to code blocks using the [shiki](https://github.com/shikijs/shiki) package.
  *
+ * @param options
+ *
  * @public
  */
 export function defineCodeBlockShiki({

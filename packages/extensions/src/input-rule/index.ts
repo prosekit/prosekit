@@ -131,6 +131,8 @@ export function defineMarkInputRule(
  *
  * See also [textblockTypeInputRule](https://prosemirror.net/docs/ref/#inputrules.textblockTypeInputRule)
  *
+ * @param options
+ *
  * @public
  */
 export function defineTextBlockInputRule({
@@ -166,6 +168,8 @@ export function defineTextBlockInputRule({
  * string is typed.
  *
  * See also [wrappingInputRule](https://prosemirror.net/docs/ref/#inputrules.wrappingInputRule)
+ *
+ * @param options
  *
  * @public
  */

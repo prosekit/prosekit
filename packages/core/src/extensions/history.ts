@@ -58,6 +58,8 @@ export type HistoryExtension = Extension<{
 /**
  * Add undo/redo history to the editor.
  *
+ * @param options
+ *
  * @public
  */
 export function defineHistory({

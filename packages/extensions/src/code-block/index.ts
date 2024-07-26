@@ -1,10 +1,11 @@
-export { defineCodeBlock, type CodeBlockExtension } from './code-block'
+export { defineCodeBlock, type CodeBlockExtension , } from './code-block'
 export {
   defineCodeBlockCommands,
   type CodeBlockCommandsExtension,
 } from './code-block-commands'
 export {
   defineCodeBlockHighlight,
+  type CodeBlockHighlightOptions,
   type HighlightParser,
 } from './code-block-highlight'
 export {

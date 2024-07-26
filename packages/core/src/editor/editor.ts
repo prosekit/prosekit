@@ -151,7 +151,7 @@ export class EditorInstance {
     }
   }
 
-  public updateContent(
+  public setContent(
     content: NodeJSON | string | HTMLElement | ProseMirrorNode,
     selection: SelectionJSON | Selection | 'start' | 'end',
   ): void {
@@ -420,7 +420,7 @@ export class Editor<E extends Extension = any> {
   }
 
   /**
-   * Update the editor's content.
+   * Update the editor's document and selection.
    *
    * @param content - The new document to set. It can be one of the following:
    *   - A ProseMirror node instance
@@ -433,11 +433,11 @@ export class Editor<E extends Extension = any> {
    *   - The string "start" (to set selection at the beginning, default value)
    *   - The string "end" (to set selection at the end)
    */
-  updateContent = (
+  setContent = (
     content: ProseMirrorNode | NodeJSON | string | HTMLElement,
     selection: SelectionJSON | Selection | 'start' | 'end' = 'start',
   ): void => {
-    return this.instance.updateContent(content, selection)
+    return this.instance.setContent(content, selection)
   }
 
   /**

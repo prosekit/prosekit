@@ -49,14 +49,14 @@ class TestEditorInstance extends EditorInstance {
     this.marks = createMarkActions(this.schema, this.getState, applyMarkForTest)
   }
 
-  updateContent = (
+  setContent = (
     content: ProseMirrorNode | NodeJSON | string | HTMLElement,
     selection: SelectionJSON | Selection | 'start' | 'end',
   ): void => {
     if (isProseMirrorNode(content) && !selection) {
-      return super.updateContent(content, getSelection(content))
+      return super.setContent(content, getSelection(content))
     }
-    return super.updateContent(content, selection)
+    return super.setContent(content, selection)
   }
 }
 
@@ -83,7 +83,7 @@ export class TestEditor<E extends Extension = Extension> extends Editor<E> {
    * ```
    */
   set(doc: ProseMirrorNode): void {
-    return this.updateContent(doc)
+    return this.setContent(doc)
   }
 
   dispatchEvent(event: Event): void {

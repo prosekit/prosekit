@@ -153,11 +153,11 @@ export class EditorInstance {
 
   public setContent(
     content: NodeJSON | string | HTMLElement | ProseMirrorNode,
-    selection: SelectionJSON | Selection | 'start' | 'end',
+    selection?: SelectionJSON | Selection | 'start' | 'end',
   ): void {
     const doc = getEditorContentDoc(this.schema, content)
     doc.check()
-    const sel = getEditorSelection(doc, selection)
+    const sel = getEditorSelection(doc, selection || 'start')
 
     const oldState = this.getState()
     if (doc.eq(oldState.doc) && (!selection || sel.eq(oldState.selection))) {
@@ -436,7 +436,7 @@ export class Editor<E extends Extension = any> {
    */
   setContent = (
     content: ProseMirrorNode | NodeJSON | string | HTMLElement,
-    selection: SelectionJSON | Selection | 'start' | 'end' = 'start',
+    selection?: SelectionJSON | Selection | 'start' | 'end' 
   ): void => {
     return this.instance.setContent(content, selection)
   }

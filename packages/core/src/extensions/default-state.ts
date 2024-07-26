@@ -1,12 +1,10 @@
-import type { Schema } from '@prosekit/pm/model'
 import { Selection, type EditorStateConfig } from '@prosekit/pm/state'
 
 import { defineFacetPayload } from '../facets/facet-extension'
 import { stateFacet } from '../facets/state'
 import type { PlainExtension } from '../types/extension'
 import type { NodeJSON, SelectionJSON } from '../types/model'
-import { isElement } from '../utils/is-element'
-import { jsonFromElement, jsonFromHTML } from '../utils/parse'
+import { getEditorContentJSON } from '../utils/editor-content'
 
 /**
  * @public
@@ -56,7 +54,7 @@ export function defineDefaultState(
     ({ schema }) => {
       const config: EditorStateConfig = {}
       if (defaultDocContent) {
-        const json = getContentJSON(schema, defaultDocContent)
+        const json = getEditorContentJSON(schema, defaultDocContent)
         config.doc = schema.nodeFromJSON(json)
         if (defaultSelection) {
           config.selection = Selection.fromJSON(config.doc, defaultSelection)
@@ -65,17 +63,4 @@ export function defineDefaultState(
       return config
     },
   ]) as PlainExtension
-}
-
-function getContentJSON(
-  schema: Schema,
-  content: NodeJSON | string | HTMLElement,
-): NodeJSON {
-  if (typeof content === 'string') {
-    return jsonFromHTML(content, { schema })
-  } else if (isElement(content)) {
-    return jsonFromElement(content, { schema })
-  } else {
-    return content
-  }
 }

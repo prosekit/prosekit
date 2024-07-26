@@ -1,5 +1,5 @@
-import { Schema } from '@prosekit/pm/model'
-import { EditorState, Plugin } from '@prosekit/pm/state'
+import { ProseMirrorNode, Schema } from '@prosekit/pm/model'
+import { EditorState, Plugin, Selection } from '@prosekit/pm/state'
 import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
@@ -22,6 +22,10 @@ import type { CommandAction, CommandCreator } from '../types/extension-command'
 import type { NodeJSON, SelectionJSON } from '../types/model'
 import { assert } from '../utils/assert'
 import { deepEquals } from '../utils/deep-equals'
+import {
+  getEditorContentDoc,
+  getEditorSelection,
+} from '../utils/editor-content'
 
 import {
   createMarkActions,
@@ -145,6 +149,27 @@ export class EditorInstance {
     } else {
       this.directEditorProps.state = state
     }
+  }
+
+  public setContent(
+    content: NodeJSON | string | HTMLElement | ProseMirrorNode,
+    selection?: SelectionJSON | Selection | 'start' | 'end',
+  ): void {
+    const doc = getEditorContentDoc(this.schema, content)
+    doc.check()
+    const sel = getEditorSelection(doc, selection || 'start')
+
+    const oldState = this.getState()
+    if (doc.eq(oldState.doc) && (!selection || sel.eq(oldState.selection))) {
+      return
+    }
+
+    const newState = EditorState.create({
+      doc,
+      selection: sel,
+      plugins: oldState.plugins,
+    })
+    this.updateState(newState)
   }
 
   private updateExtension(extension: Extension, add: boolean): void {
@@ -393,6 +418,27 @@ export class Editor<E extends Extension = any> {
    */
   updateState = (state: EditorState): void => {
     this.instance.updateState(state)
+  }
+
+  /**
+   * Update the editor's document and selection.
+   *
+   * @param content - The new document to set. It can be one of the following:
+   *   - A ProseMirror node instance
+   *   - A ProseMirror node JSON object
+   *   - An HTML string
+   *   - An HTML element instance
+   * @param selection - Optional. Specifies the new selection. It can be one of the following:
+   *   - A ProseMirror selection instance
+   *   - A ProseMirror selection JSON object
+   *   - The string "start" (to set selection at the beginning, default value)
+   *   - The string "end" (to set selection at the end)
+   */
+  setContent = (
+    content: ProseMirrorNode | NodeJSON | string | HTMLElement,
+    selection?: SelectionJSON | Selection | 'start' | 'end',
+  ): void => {
+    return this.instance.setContent(content, selection)
   }
 
   /**

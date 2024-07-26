@@ -1,5 +1,5 @@
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import { EditorState, NodeSelection, TextSelection } from '@prosekit/pm/state'
+import { NodeSelection, Selection, TextSelection } from '@prosekit/pm/state'
 
 import { createMarkActions, createNodeActions } from '../editor/action'
 import {
@@ -9,7 +9,8 @@ import {
   type EditorOptions,
 } from '../editor/editor'
 import type { Extension } from '../types/extension'
-import { assert } from '../utils/assert'
+import type { NodeJSON, SelectionJSON } from '../types/model'
+import { isProseMirrorNode } from '../utils/type-assertion'
 
 import {
   applyMarkForTest,
@@ -24,7 +25,7 @@ function maybeResolve(doc: ProseMirrorNode, pos?: number) {
   return undefined
 }
 
-function getSelection(doc: TaggedProseMirrorNode) {
+function getSelection(doc: TaggedProseMirrorNode): Selection {
   const tags = doc.tags
   const $a = maybeResolve(doc, tags?.a)
   const $b = maybeResolve(doc, tags?.b)
@@ -46,6 +47,18 @@ class TestEditorInstance extends EditorInstance {
     this.nodes = createNodeActions(this.schema, this.getState, createNodeForTest)
     // prettier-ignore
     this.marks = createMarkActions(this.schema, this.getState, applyMarkForTest)
+  }
+
+  setContent(
+    content: ProseMirrorNode | NodeJSON | string | HTMLElement,
+    selection?: SelectionJSON | Selection | 'start' | 'end',
+  ): void {
+    return super.setContent(
+      content,
+      isProseMirrorNode(content) && !selection
+        ? getSelection(content)
+        : selection,
+    )
   }
 }
 
@@ -72,21 +85,7 @@ export class TestEditor<E extends Extension = Extension> extends Editor<E> {
    * ```
    */
   set(doc: ProseMirrorNode): void {
-    assert(
-      doc.type.schema === this.schema,
-      'Document schema does not match editor schema',
-    )
-    assert(
-      doc.type === this.schema.topNodeType,
-      'Document type does not match editor top node type',
-    )
-    const selection = getSelection(doc)
-    const state = EditorState.create({
-      doc,
-      selection,
-      plugins: this.state.plugins,
-    })
-    this.updateState(state)
+    return this.setContent(doc)
   }
 
   dispatchEvent(event: Event): void {
@@ -101,5 +100,6 @@ export function createTestEditor<E extends Extension>(
   options: EditorOptions<E>,
 ): TestEditor<E> {
   const extension = setupEditorExtension(options)
-  return new TestEditor(new TestEditorInstance(extension))
+  const instance = new TestEditorInstance(extension)
+  return new TestEditor(instance)
 }

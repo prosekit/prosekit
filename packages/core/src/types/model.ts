@@ -5,7 +5,7 @@
  */
 export interface NodeJSON {
   type: string
-  marks?: Array<any>
+  marks?: Array<{ type: string; attrs?: Record<string, any> }>
   text?: string
   content?: NodeJSON[]
   attrs?: Record<string, any>

@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest'
 
 import { setupTest } from '../testing'
+import { jsonFromNode } from '../utils/parse'
+
+import type { NodeChild } from './action'
 
 describe('NodeAction', () => {
   const { editor, n } = setupTest()
@@ -34,6 +37,52 @@ describe('MarkAction', () => {
     expect(n.p(m.bold('foo')).toJSON()).toEqual({
       type: 'paragraph',
       content: [{ marks: [{ type: 'bold' }], text: 'foo', type: 'text' }],
+    })
+  })
+
+  it('can apply multiple marks', () => {
+    const json = jsonFromNode(n.p(m.bold(m.italic('foo'))))
+    const marks = json.content?.[0].marks?.map((mark) => mark.type)
+    expect(marks?.sort()).toEqual(['bold', 'italic'])
+  })
+
+  it('can apply the same mark multiple times', () => {
+    const href1 = 'https://example.com/1'
+    const href2 = 'https://example.com/2'
+    const link1 = (node: NodeChild) => m.link({ href: href1 }, node)
+    const link2 = (node: NodeChild) => m.link({ href: href2 }, node)
+
+    expect(n.p(link1('foo')).toJSON()).toEqual({
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'foo',
+          marks: [{ attrs: { href: href1 }, type: 'link' }],
+        },
+      ],
+    })
+
+    expect(n.p(link2(link1('foo'))).toJSON()).toEqual({
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'foo',
+          marks: [{ attrs: { href: href2 }, type: 'link' }],
+        },
+      ],
+    })
+
+    expect(n.p(link2(link2(link2('foo')))).toJSON()).toEqual({
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'foo',
+          marks: [{ attrs: { href: href2 }, type: 'link' }],
+        },
+      ],
     })
   })
 

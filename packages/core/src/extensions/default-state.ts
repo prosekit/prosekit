@@ -56,7 +56,8 @@ export function defineDefaultState(
     ({ schema }) => {
       const config: EditorStateConfig = {}
       if (defaultDocContent) {
-        config.doc = schema.nodeFromJSON(getJSON(schema, defaultDocContent))
+        const json = getContentJSON(schema, defaultDocContent)
+        config.doc = schema.nodeFromJSON(json)
         if (defaultSelection) {
           config.selection = Selection.fromJSON(config.doc, defaultSelection)
         }
@@ -66,7 +67,7 @@ export function defineDefaultState(
   ]) as PlainExtension
 }
 
-function getJSON(
+function getContentJSON(
   schema: Schema,
   content: NodeJSON | string | HTMLElement,
 ): NodeJSON {

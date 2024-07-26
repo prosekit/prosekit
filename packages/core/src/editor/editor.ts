@@ -156,6 +156,7 @@ export class EditorInstance {
     selection: SelectionJSON | Selection | 'start' | 'end',
   ): void {
     const doc = getEditorContentDoc(this.schema, content)
+    doc.check()
     const sel = getEditorSelection(doc, selection)
 
     const oldState = this.getState()

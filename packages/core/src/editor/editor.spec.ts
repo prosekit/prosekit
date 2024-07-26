@@ -3,6 +3,7 @@ import { describe, it, expect } from 'vitest'
 import { defineDoc } from '../extensions/doc'
 import { defineParagraph } from '../extensions/paragraph'
 import { defineText } from '../extensions/text'
+import type { NodeJSON } from '../types/model'
 
 import { createEditor } from './editor'
 import { union } from './union'
@@ -80,5 +81,84 @@ describe('createEditor', () => {
     // Update state after re-mounting
     expectStateNotEqual(() => update('4'))
     expect(editor.state.doc.textContent).toMatchInlineSnapshot(`"4321"`)
+  })
+
+  it('can get update document and selection', () => {
+    const extension = union([defineDoc(), defineText(), defineParagraph()])
+    const editor = createEditor({ extension })
+
+    expect(editor.state.doc.textContent).toMatchInlineSnapshot(`""`)
+
+    editor.setContent('foo')
+    expect(editor.state.toJSON()).toMatchInlineSnapshot(`
+      {
+        "doc": {
+          "content": [
+            {
+              "content": [
+                {
+                  "text": "foo",
+                  "type": "text",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "type": "doc",
+        },
+        "selection": {
+          "anchor": 1,
+          "head": 1,
+          "type": "text",
+        },
+      }
+    `)
+
+    editor.setContent(
+      {
+        type: 'doc',
+        content: [
+          {
+            type: 'paragraph',
+            content: [{ type: 'text', text: 'bar' }],
+          },
+        ],
+      },
+      'end',
+    )
+    expect(editor.state.toJSON()).toMatchInlineSnapshot(`
+      {
+        "doc": {
+          "content": [
+            {
+              "content": [
+                {
+                  "text": "bar",
+                  "type": "text",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "type": "doc",
+        },
+        "selection": {
+          "anchor": 4,
+          "head": 4,
+          "type": "text",
+        },
+      }
+    `)
+  })
+
+  it('can refute invalid document', () => {
+    const extension = union([defineDoc(), defineText(), defineParagraph()])
+    const editor = createEditor({ extension })
+
+    const invalidDoc: NodeJSON = {
+      type: 'doc',
+      content: [{ type: 'text', text: 'bar aaa aa' }],
+    }
+    expect(() => editor.setContent(invalidDoc)).toThrow()
   })
 })

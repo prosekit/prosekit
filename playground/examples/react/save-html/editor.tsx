@@ -13,16 +13,16 @@ import { useCallback, useMemo, useState } from 'react'
 import EditorComponent from './editor-component'
 
 export default function Editor() {
-  const [defaultDoc, setDefaultDoc] = useState<NodeJSON | undefined>()
+  const [defaultContent, setDefaultDoc] = useState<NodeJSON | undefined>()
   const [records, setRecords] = useState<string[]>([])
   const [hasUnsavedChange, setHasUnsavedChange] = useState(false)
   const [key, setKey] = useState(1)
 
-  // Create a new editor instance whenever `defaultDoc` changes
+  // Create a new editor instance whenever `defaultContent` changes
   const editor = useMemo(() => {
     const extension = defineBasicExtension()
-    return createEditor({ extension, defaultDoc })
-  }, [defaultDoc])
+    return createEditor({ extension, defaultContent })
+  }, [defaultContent])
 
   // Enable the save button
   const handleDocChange = useCallback(() => setHasUnsavedChange(true), [])

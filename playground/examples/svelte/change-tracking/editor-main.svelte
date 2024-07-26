@@ -11,14 +11,14 @@ import {
 import { ProseKit } from 'prosekit/svelte'
 
 export let commitRecorder: CommitRecorder
-export let defaultDoc: NodeJSON
+export let defaultContent: NodeJSON
 
 const extension = union([
   defineBasicExtension(),
   defineCommitRecorder(commitRecorder),
 ])
 
-const editor = createEditor({ extension, defaultDoc })
+const editor = createEditor({ extension, defaultContent })
 
 const mount = (element: HTMLElement) => {
   editor.mount(element)

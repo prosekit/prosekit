@@ -14,7 +14,7 @@ export default function Editor() {
     const extension = defineExtension()
     return createEditor({
       extension,
-      defaultHTML:
+      defaultContent:
         '<p>Baa, baa, black sheep,</p>' +
         '<p>Have you any wool?</p>' +
         '<p>Yes, sir, yes, sir,</p>' +

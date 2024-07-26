@@ -11,7 +11,7 @@ import Toolbar from './toolbar.vue'
 
 const editor = createEditor({
   extension: defineExtension(),
-  defaultHTML:
+  defaultContent:
     'The content is readonly. Press the buttons above to toggle the readonly mode.',
 })
 const editorRef = ref<HTMLDivElement | null>(null)

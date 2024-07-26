@@ -14,15 +14,15 @@ import { computed, ref } from 'vue'
 
 import EditorComponent from './editor-component.vue'
 
-const defaultDoc = ref<NodeJSON | undefined>()
+const defaultContent = ref<NodeJSON | undefined>()
 const records = ref<string[]>([])
 const hasUnsavedChange = ref(false)
 const key = ref(1)
 
-// Create a new editor instance whenever `defaultDoc` changes
+// Create a new editor instance whenever `defaultContent` changes
 const editor = computed(() => {
   const extension = defineBasicExtension()
-  return createEditor({ extension, defaultDoc: defaultDoc.value })
+  return createEditor({ extension, defaultContent: defaultContent.value })
 })
 
 // Enable the save button
@@ -39,7 +39,7 @@ function handleSave() {
 
 // Load a document from a HTML string
 function handleLoad(record: string) {
-  defaultDoc.value = jsonFromHTML(record, { schema: editor.value.schema })
+  defaultContent.value = jsonFromHTML(record, { schema: editor.value.schema })
   hasUnsavedChange.value = false
   key.value++
 }

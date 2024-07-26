@@ -8,7 +8,7 @@ import { ref, watchPostEffect } from 'vue'
 
 import { defineExtension } from './extension'
 
-const defaultHTML = `
+const defaultContent = `
 <table><tbody>
   <tr>
     <td>1</td>
@@ -25,7 +25,7 @@ const defaultHTML = `
 </tbody></table>
 `
 
-const editor = createEditor({ extension: defineExtension(), defaultHTML })
+const editor = createEditor({ extension: defineExtension(), defaultContent })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {
   editor.mount(editorRef.value)

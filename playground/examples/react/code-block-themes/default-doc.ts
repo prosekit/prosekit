@@ -4,7 +4,7 @@ const js = `async function main() {\n  while (true) {\n    await sleep();\n    a
 const py = `async def main():\n    while True:\n        await sleep()\n        await eat()\n        await code("Python!")`
 const go = `func main() {\n\tfor {\n\t\tsleep()\n\t\teat()\n\t\tcode("Go!")\n\t}\n}`
 
-export const defaultDoc: NodeJSON = {
+export const defaultContent: NodeJSON = {
   type: 'doc',
   content: [
     {

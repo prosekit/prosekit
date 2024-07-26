@@ -7,11 +7,11 @@ import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
 import { ProseKit, useDocChange } from 'prosekit/svelte'
 import { defineExtension } from './extension'
 
-export let defaultDoc: NodeJSON | undefined = undefined
+export let defaultContent: NodeJSON | undefined = undefined
 export let onDocUpdate: ((doc: NodeJSON) => void) | undefined = undefined
 
 const extension = defineExtension()
-const editor = createEditor({ extension, defaultDoc })
+const editor = createEditor({ extension, defaultContent })
 
 useDocChange((doc) => onDocUpdate?.(jsonFromNode(doc)), { editor })
 

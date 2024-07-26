@@ -436,7 +436,7 @@ export class Editor<E extends Extension = any> {
    */
   setContent = (
     content: ProseMirrorNode | NodeJSON | string | HTMLElement,
-    selection?: SelectionJSON | Selection | 'start' | 'end' 
+    selection?: SelectionJSON | Selection | 'start' | 'end',
   ): void => {
     return this.instance.setContent(content, selection)
   }

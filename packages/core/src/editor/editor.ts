@@ -347,10 +347,11 @@ export class Editor<E extends Extension = any> {
    * Pass `null` or `undefined` to unmount the editor.
    */
   mount = (place: HTMLElement | null | undefined): void => {
-    if (!place) {
-      return this.unmount()
+    if (place) {
+      this.instance.mount(place)
+    } else {
+      this.instance.unmount()
     }
-    this.instance.mount(place)
   }
 
   /**

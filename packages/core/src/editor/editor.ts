@@ -41,14 +41,24 @@ export interface EditorOptions<E extends Extension> {
   extension: E
 
   /**
+   * The starting document to use when creating the editor. It can be a
+   * ProseMirror node JSON object, a HTML string, or a HTML element instance.
+   */
+  defaultContent?: NodeJSON | string | HTMLElement
+
+  /**
    * A JSON object representing the starting document to use when creating the
    * editor.
+   *
+   * @deprecated Use `defaultContent` instead.
    */
   defaultDoc?: NodeJSON
 
   /**
    * A HTML element or a HTML string representing the starting document to use
    * when creating the editor.
+   *
+   * @deprecated Use `defaultContent` instead.
    */
   defaultHTML?: string | HTMLElement
 
@@ -65,15 +75,10 @@ export interface EditorOptions<E extends Extension> {
 export function setupEditorExtension<E extends Extension>(
   options: EditorOptions<E>,
 ): E {
-  const { defaultDoc, defaultHTML, defaultSelection } = options
-  if (defaultDoc || defaultHTML) {
+  if (options.defaultContent || options.defaultDoc || options.defaultHTML) {
     return union([
       options.extension,
-      defineDefaultState({
-        defaultDoc,
-        defaultHTML,
-        defaultSelection,
-      }),
+      defineDefaultState(options),
     ]) as Extension as E
   }
   return options.extension
@@ -86,10 +91,13 @@ export function createEditor<E extends Extension>(
   options: EditorOptions<E>,
 ): Editor<E> {
   const extension = setupEditorExtension(options)
-  return Editor.create(new EditorInstance(extension)) as Editor<E>
+  const instance = new EditorInstance(extension)
+  return new Editor(instance) as Editor<E>
 }
 
 /**
+ * An internal class to make TypeScript generic type easier to use.
+ *
  * @internal
  */
 export class EditorInstance {
@@ -101,6 +109,7 @@ export class EditorInstance {
 
   private tree: FacetNode
   private directEditorProps: DirectEditorProps
+  private afterMounted: Array<VoidFunction> = []
 
   constructor(extension: Extension) {
     this.tree = (extension as BaseExtension).getTree()
@@ -138,7 +147,7 @@ export class EditorInstance {
     }
   }
 
-  public updateExtension(extension: Extension, add: boolean): void {
+  private updateExtension(extension: Extension, add: boolean): void {
     const view = this.view
 
     // Don't update the extension if the editor is already unmounted
@@ -184,21 +193,40 @@ export class EditorInstance {
     }
   }
 
+  public use(extension: Extension): VoidFunction {
+    if (!this.mounted) {
+      let canceled = false
+      let lazyRemove: VoidFunction | null = null
+
+      const lazyCreate = () => {
+        if (!canceled) {
+          lazyRemove = this.use(extension)
+        }
+      }
+
+      this.afterMounted.push(lazyCreate)
+
+      return () => {
+        canceled = true
+        lazyRemove?.()
+      }
+    }
+
+    this.updateExtension(extension, true)
+    return () => this.updateExtension(extension, false)
+  }
+
   public mount(place: HTMLElement): void {
     if (this.view) {
       throw new ProseKitError('Editor is already mounted')
     }
-    if (!place) {
-      throw new ProseKitError("Can't mount editor without a place")
-    }
-
     this.view = new EditorView({ mount: place }, this.directEditorProps)
+    this.afterMounted.forEach((callback) => callback())
   }
 
   public unmount(): void {
-    if (!this.view) {
-      throw new ProseKitError('Editor is not mounted yet')
-    }
+    // If the editor is not mounted, do nothing
+    if (!this.view) return
 
     this.directEditorProps.state = this.view.state
     this.view.destroy()
@@ -268,26 +296,15 @@ export class EditorInstance {
  */
 export class Editor<E extends Extension = any> {
   private instance: EditorInstance
-  private afterMounted: Array<VoidFunction> = []
 
   /**
    * @internal
    */
   constructor(instance: EditorInstance) {
-    this.instance = instance
-    this.mount = this.mount.bind(this)
-    this.unmount = this.unmount.bind(this)
-    this.use = this.use.bind(this)
-  }
-
-  /**
-   * @internal
-   */
-  static create(instance: any): Editor {
     if (!(instance instanceof EditorInstance)) {
       throw new TypeError('Invalid EditorInstance')
     }
-    return new Editor(instance)
+    this.instance = instance
   }
 
   /**
@@ -312,6 +329,13 @@ export class Editor<E extends Extension = any> {
   }
 
   /**
+   * The editor's current state.
+   */
+  get state(): EditorState {
+    return this.instance.getState()
+  }
+
+  /**
    * Whether the editor is focused.
    */
   get focused(): boolean {
@@ -322,34 +346,32 @@ export class Editor<E extends Extension = any> {
    * Mount the editor to the given HTML element.
    * Pass `null` or `undefined` to unmount the editor.
    */
-  mount(place: HTMLElement | null | undefined): void {
-    if (!place) {
-      return this.unmount()
-    }
-    this.instance.mount(place)
-    this.afterMounted.forEach((callback) => callback())
-  }
-
-  /**
-   * Unmount the editor. This is equivalent to `mount(null)`.
-   */
-  unmount(): void {
-    if (this.mounted) {
+  mount = (place: HTMLElement | null | undefined): void => {
+    if (place) {
+      this.instance.mount(place)
+    } else {
       this.instance.unmount()
     }
   }
 
   /**
+   * Unmount the editor. This is equivalent to `mount(null)`.
+   */
+  unmount = (): void => {
+    this.instance.unmount()
+  }
+
+  /**
    * Focus the editor.
    */
-  focus(): void {
+  focus = (): void => {
     this.instance.view?.focus()
   }
 
   /**
    * Blur the editor.
    */
-  blur(): void {
+  blur = (): void => {
     this.instance.view?.dom.blur()
   }
 
@@ -357,34 +379,8 @@ export class Editor<E extends Extension = any> {
    * Register an extension to the editor. Return a function to unregister the
    * extension.
    */
-  use(extension: Extension): VoidFunction {
-    if (!this.mounted) {
-      let canceled = false
-      let lazyRemove: VoidFunction | null = null
-
-      const lazyCreate = () => {
-        if (!canceled) {
-          lazyRemove = this.use(extension)
-        }
-      }
-
-      this.afterMounted.push(lazyCreate)
-
-      return () => {
-        canceled = true
-        lazyRemove?.()
-      }
-    }
-
-    this.instance.updateExtension(extension, true)
-    return () => this.instance.updateExtension(extension, false)
-  }
-
-  /**
-   * The editor's current state.
-   */
-  get state(): EditorState {
-    return this.instance.getState()
+  use = (extension: Extension): VoidFunction => {
+    return this.instance.use(extension)
   }
 
   /**
@@ -395,7 +391,7 @@ export class Editor<E extends Extension = any> {
    * This is an advanced method. Use it only if you have a specific reason to
    * directly manipulate the editor's state.
    */
-  updateState(state: EditorState): void {
+  updateState = (state: EditorState): void => {
     this.instance.updateState(state)
   }
 

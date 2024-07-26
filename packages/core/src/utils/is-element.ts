@@ -1,5 +1,11 @@
-const hasElement = typeof Element !== 'undefined'
+import { isObject } from './is-object'
 
-export function isElement(value: unknown): value is Element {
-  return hasElement && value instanceof Element
+const ELEMENT_NODE: typeof Node.ELEMENT_NODE = 1
+
+export function isElement(el: unknown): el is Element {
+  return (
+    isObject(el) &&
+    el.nodeType === ELEMENT_NODE &&
+    typeof el.nodeName === 'string'
+  )
 }

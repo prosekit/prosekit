@@ -49,7 +49,7 @@ export function getEditorContentDoc(
 
 export function getEditorSelection(
   doc: ProseMirrorNode,
-  selection?: SelectionJSON | Selection | 'start' | 'end',
+  selection: SelectionJSON | Selection | 'start' | 'end',
 ): Selection {
   if (isSelection(selection)) {
     assert(selection.$head.doc === doc, 'Selection and doc do not match')
@@ -58,7 +58,7 @@ export function getEditorSelection(
   if (selection === 'start') {
     return Selection.atStart(doc)
   }
-  if (selection === 'end' || !selection) {
+  if (selection === 'end') {
     return Selection.atEnd(doc)
   }
   return Selection.fromJSON(doc, selection)

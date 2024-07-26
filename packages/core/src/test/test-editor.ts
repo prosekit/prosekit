@@ -51,7 +51,7 @@ class TestEditorInstance extends EditorInstance {
 
   updateContent = (
     content: ProseMirrorNode | NodeJSON | string | HTMLElement,
-    selection?: SelectionJSON | Selection | 'start' | 'end',
+    selection: SelectionJSON | Selection | 'start' | 'end',
   ): void => {
     if (isProseMirrorNode(content) && !selection) {
       return super.updateContent(content, getSelection(content))

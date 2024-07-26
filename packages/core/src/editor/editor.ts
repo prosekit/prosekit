@@ -153,7 +153,7 @@ export class EditorInstance {
 
   public updateContent(
     content: NodeJSON | string | HTMLElement | ProseMirrorNode,
-    selection?: SelectionJSON | Selection | 'start' | 'end',
+    selection: SelectionJSON | Selection | 'start' | 'end',
   ): void {
     const doc = getEditorContentDoc(this.schema, content)
     const sel = getEditorSelection(doc, selection)
@@ -430,12 +430,12 @@ export class Editor<E extends Extension = any> {
    * @param selection - Optional. Specifies the new selection. It can be one of the following:
    *   - A ProseMirror selection instance
    *   - A ProseMirror selection JSON object
-   *   - The string "start" (to set selection at the beginning)
+   *   - The string "start" (to set selection at the beginning, default value)
    *   - The string "end" (to set selection at the end)
    */
   updateContent = (
     content: ProseMirrorNode | NodeJSON | string | HTMLElement,
-    selection?: SelectionJSON | Selection | 'start' | 'end',
+    selection: SelectionJSON | Selection | 'start' | 'end' = 'start',
   ): void => {
     return this.instance.updateContent(content, selection)
   }

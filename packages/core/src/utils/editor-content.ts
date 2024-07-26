@@ -1,9 +1,9 @@
 import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import { Selection } from '@prosekit/pm/state'
-import { assert } from 'vitest'
 
 import type { NodeJSON, SelectionJSON } from '../types/model'
 
+import { assert } from './assert'
 import { isElement } from './is-element'
 import { jsonFromElement, jsonFromHTML } from './parse'
 import { isProseMirrorNode, isSelection } from './type-assertion'

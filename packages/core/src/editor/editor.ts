@@ -196,16 +196,12 @@ export class EditorInstance {
     if (this.view) {
       throw new ProseKitError('Editor is already mounted')
     }
-    if (!place) {
-      throw new ProseKitError("Can't mount editor without a place")
-    }
-
     this.view = new EditorView({ mount: place }, this.directEditorProps)
   }
 
   public unmount(): void {
     if (!this.view) {
-      throw new ProseKitError('Editor is not mounted yet')
+      return
     }
 
     this.directEditorProps.state = this.view.state
@@ -333,9 +329,7 @@ export class Editor<E extends Extension = any> {
    * Unmount the editor. This is equivalent to `mount(null)`.
    */
   unmount = (): void => {
-    if (this.mounted) {
-      this.instance.unmount()
-    }
+    this.instance.unmount()
   }
 
   /**

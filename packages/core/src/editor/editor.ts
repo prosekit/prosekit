@@ -96,6 +96,8 @@ export function createEditor<E extends Extension>(
 }
 
 /**
+ * An internal class to make TypeScript generic type easier to use.
+ *
  * @internal
  */
 export class EditorInstance {
@@ -285,9 +287,6 @@ export class Editor<E extends Extension = any> {
     }
 
     this.instance = instance
-    this.mount = this.mount.bind(this)
-    this.unmount = this.unmount.bind(this)
-    this.use = this.use.bind(this)
   }
 
   /**
@@ -322,7 +321,7 @@ export class Editor<E extends Extension = any> {
    * Mount the editor to the given HTML element.
    * Pass `null` or `undefined` to unmount the editor.
    */
-  mount(place: HTMLElement | null | undefined): void {
+  mount = (place: HTMLElement | null | undefined): void => {
     if (!place) {
       return this.unmount()
     }
@@ -333,7 +332,7 @@ export class Editor<E extends Extension = any> {
   /**
    * Unmount the editor. This is equivalent to `mount(null)`.
    */
-  unmount(): void {
+  unmount = (): void => {
     if (this.mounted) {
       this.instance.unmount()
     }
@@ -357,7 +356,7 @@ export class Editor<E extends Extension = any> {
    * Register an extension to the editor. Return a function to unregister the
    * extension.
    */
-  use(extension: Extension): VoidFunction {
+  use = (extension: Extension): VoidFunction => {
     if (!this.mounted) {
       let canceled = false
       let lazyRemove: VoidFunction | null = null

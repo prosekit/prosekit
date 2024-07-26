@@ -12,16 +12,12 @@ import { jsonFromElement, jsonFromHTML } from '../utils/parse'
  * @public
  */
 export interface DefaultStateOptions {
-
-
   /**
    * The starting document to use when creating the editor. It can be a
-   * ProseMirror node JSON object, a HTML string, or a HTML element.
+   * ProseMirror node JSON object, a HTML string, or a HTML element instance.
    */
   defaultContent?: NodeJSON | string | HTMLElement
 
-
-  
   /**
    * A JSON object representing the starting document to use when creating the
    * editor.
@@ -37,7 +33,6 @@ export interface DefaultStateOptions {
    * @deprecated Use `defaultContent` instead.
    */
   defaultHTML?: string | HTMLElement
-
 
   /**
    * A JSON object representing the starting selection to use when creating the

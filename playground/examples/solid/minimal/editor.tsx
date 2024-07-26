@@ -10,7 +10,10 @@ export default function Editor(props: {
   onDocUpdate?: (doc: NodeJSON) => void
 }) {
   const extension = defineBasicExtension()
-  const editor = createEditor({ extension, defaultContent: props.defaultContent })
+  const editor = createEditor({
+    extension,
+    defaultContent: props.defaultContent,
+  })
 
   useDocChange((doc) => props.onDocUpdate?.(jsonFromNode(doc)), { editor })
 

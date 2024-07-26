@@ -198,6 +198,7 @@ export {
   isMark,
   isNodeSelection,
   isProseMirrorNode,
+  isSelection,
   isTextSelection,
 } from './utils/type-assertion'
 export * from './utils/unicode'

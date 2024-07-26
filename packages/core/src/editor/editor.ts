@@ -200,9 +200,8 @@ export class EditorInstance {
   }
 
   public unmount(): void {
-    if (!this.view) {
-      return
-    }
+    // If the editor is not mounted, do nothing
+    if (!this.view) return
 
     this.directEditorProps.state = this.view.state
     this.view.destroy()

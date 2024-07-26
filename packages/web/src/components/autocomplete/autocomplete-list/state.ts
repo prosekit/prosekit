@@ -17,8 +17,8 @@ import {
   defineDOMEventHandler,
   withPriority,
 } from '@prosekit/core'
+import omit from 'just-omit'
 
-import { omit } from '../../../utils/omit'
 import { onSubmitContext, openContext, queryContext } from '../context'
 
 import type { AutocompleteListProps } from './props'

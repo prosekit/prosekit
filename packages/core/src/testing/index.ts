@@ -1,3 +1,5 @@
+import type { Attrs } from '@prosekit/pm/model'
+
 import { union } from '../editor/union'
 import { defineBaseCommands } from '../extensions/command'
 import { defineDoc } from '../extensions/doc'
@@ -14,7 +16,13 @@ import type {
   ExtractNodeActions,
 } from '../types/extension'
 
-function defineBold() {
+type BoldExtension = Extension<{
+  Marks: {
+    bold: Attrs
+  }
+}>
+
+function defineBold(): BoldExtension {
   return defineMarkSpec({
     name: 'bold',
     parseDOM: [{ tag: 'strong' }],
@@ -24,7 +32,13 @@ function defineBold() {
   })
 }
 
-function defineItalic() {
+type ItalicExtension = Extension<{
+  Marks: {
+    italic: Attrs
+  }
+}>
+
+function defineItalic(): ItalicExtension {
   return defineMarkSpec({
     name: 'italic',
     parseDOM: [{ tag: 'em' }],
@@ -34,11 +48,52 @@ function defineItalic() {
   })
 }
 
-function defineHeading() {
+interface LinkAttrs {
+  href: string
+}
+
+type LinkExtension = Extension<{
+  Marks: {
+    link: LinkAttrs
+  }
+}>
+
+function defineLink(): LinkExtension {
+  return defineMarkSpec<'link', LinkAttrs>({
+    name: 'link',
+    inclusive: false,
+    attrs: {
+      href: {},
+    },
+    parseDOM: [
+      {
+        tag: 'a[href]',
+        getAttrs: (dom) => {
+          return {
+            href: (dom as HTMLElement).getAttribute('href'),
+          }
+        },
+      },
+    ],
+    toDOM(node) {
+      const { href } = node.attrs as LinkAttrs
+      return ['a', { href }, 0]
+    },
+  })
+}
+
+type HeadingExtension = Extension<{
+  Nodes: {
+    heading: Attrs
+  }
+}>
+
+function defineHeading(): HeadingExtension {
   return defineNodeSpec({
     name: 'heading',
     content: 'inline*',
     group: 'block',
+    defining: true,
     parseDOM: [{ tag: 'h1' }],
     toDOM() {
       return ['h1', 0]
@@ -46,7 +101,13 @@ function defineHeading() {
   })
 }
 
-function defineCodeBlock() {
+type CodeBlockExtension = Extension<{
+  Nodes: {
+    codeBlock: { language: string }
+  }
+}>
+
+function defineCodeBlock(): CodeBlockExtension {
   return defineNodeSpec({
     name: 'codeBlock',
     content: 'text*',
@@ -74,6 +135,7 @@ export function defineTestExtension() {
     defineText(),
     defineBold(),
     defineItalic(),
+    defineLink(),
     defineHeading(),
     defineCodeBlock(),
   ])

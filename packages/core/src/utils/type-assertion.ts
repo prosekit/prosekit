@@ -3,7 +3,7 @@ import {
   AllSelection,
   NodeSelection,
   TextSelection,
-  type Selection,
+  Selection,
 } from '@prosekit/pm/state'
 
 /**
@@ -18,6 +18,13 @@ export function isProseMirrorNode(node: unknown): node is ProseMirrorNode {
  */
 export function isMark(mark: unknown): mark is Mark {
   return mark instanceof Mark
+}
+
+/**
+ * @internal
+ */
+export function isSelection(sel: unknown): sel is Selection {
+  return sel instanceof Selection
 }
 
 /**

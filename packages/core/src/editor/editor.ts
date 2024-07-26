@@ -109,6 +109,7 @@ export class EditorInstance {
 
   private tree: FacetNode
   private directEditorProps: DirectEditorProps
+  private afterMounted: Array<VoidFunction> = []
 
   constructor(extension: Extension) {
     this.tree = (extension as BaseExtension).getTree()
@@ -146,7 +147,7 @@ export class EditorInstance {
     }
   }
 
-  public updateExtension(extension: Extension, add: boolean): void {
+  private updateExtension(extension: Extension, add: boolean): void {
     const view = this.view
 
     // Don't update the extension if the editor is already unmounted
@@ -192,11 +193,35 @@ export class EditorInstance {
     }
   }
 
+  public use(extension: Extension): VoidFunction {
+    if (!this.mounted) {
+      let canceled = false
+      let lazyRemove: VoidFunction | null = null
+
+      const lazyCreate = () => {
+        if (!canceled) {
+          lazyRemove = this.use(extension)
+        }
+      }
+
+      this.afterMounted.push(lazyCreate)
+
+      return () => {
+        canceled = true
+        lazyRemove?.()
+      }
+    }
+
+    this.updateExtension(extension, true)
+    return () => this.updateExtension(extension, false)
+  }
+
   public mount(place: HTMLElement): void {
     if (this.view) {
       throw new ProseKitError('Editor is already mounted')
     }
     this.view = new EditorView({ mount: place }, this.directEditorProps)
+    this.afterMounted.forEach((callback) => callback())
   }
 
   public unmount(): void {
@@ -271,7 +296,6 @@ export class EditorInstance {
  */
 export class Editor<E extends Extension = any> {
   private instance: EditorInstance
-  private afterMounted: Array<VoidFunction> = []
 
   /**
    * @internal
@@ -321,7 +345,6 @@ export class Editor<E extends Extension = any> {
       return this.unmount()
     }
     this.instance.mount(place)
-    this.afterMounted.forEach((callback) => callback())
   }
 
   /**
@@ -350,26 +373,7 @@ export class Editor<E extends Extension = any> {
    * extension.
    */
   use = (extension: Extension): VoidFunction => {
-    if (!this.mounted) {
-      let canceled = false
-      let lazyRemove: VoidFunction | null = null
-
-      const lazyCreate = () => {
-        if (!canceled) {
-          lazyRemove = this.use(extension)
-        }
-      }
-
-      this.afterMounted.push(lazyCreate)
-
-      return () => {
-        canceled = true
-        lazyRemove?.()
-      }
-    }
-
-    this.instance.updateExtension(extension, true)
-    return () => this.instance.updateExtension(extension, false)
+    return this.instance.use(extension)
   }
 
   /**

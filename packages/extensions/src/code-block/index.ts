@@ -5,6 +5,7 @@ export {
 } from './code-block-commands'
 export {
   defineCodeBlockHighlight,
+  type CodeBlockHighlightOptions,
   type HighlightParser,
 } from './code-block-highlight'
 export {

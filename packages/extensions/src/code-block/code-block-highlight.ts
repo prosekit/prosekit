@@ -9,18 +9,25 @@ import { createHighlightPlugin, type Parser } from 'prosemirror-highlight'
 export type HighlightParser = Parser
 
 /**
+ * @public
+ */
+export type CodeBlockHighlightOptions = {
+  parser: HighlightParser
+}
+
+/**
  * Adds syntax highlighting to code blocks. This function requires a `Parser`
  * instance from the `prosemirror-highlight` package. See the
  * [documentation](https://github.com/ocavue/prosemirror-highlight) for more
  * information.
  *
+ * @param options
+ *
  * @public
  */
 export function defineCodeBlockHighlight({
   parser,
-}: {
-  parser: HighlightParser
-}): Extension {
+}: CodeBlockHighlightOptions): Extension {
   return definePlugin(
     createHighlightPlugin({ parser, nodeTypes: ['codeBlock'] }),
   )

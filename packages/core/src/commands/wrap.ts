@@ -14,6 +14,8 @@ export interface WrapOptions {
  * Returns a command that wraps the selected textblock with the given node type
  * with the given attributes.
  *
+ * @param options
+ *
  * @public
  */
 export function wrap({ nodeType, attrs }: WrapOptions): Command {

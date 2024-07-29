@@ -1,5 +1,5 @@
 import type { DOMOutputSpec, Schema, TagParseRule } from '@prosekit/pm/model'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { union } from '../editor/union'
 import { setupTestFromExtension } from '../testing'
@@ -14,12 +14,12 @@ import { defineText } from './text'
 
 describe('defineNodeSpec', () => {
   it('can merge node specs', () => {
-    const toDOM1 = vi.fn((): DOMOutputSpec => ['p', { 'data-ext1': '' }])
-    const toDOM2 = vi.fn((): DOMOutputSpec => ['p', { 'data-ext2': '' }])
+    const toDOM1 = (): DOMOutputSpec => ['p', { 'data-ext1': '' }]
+    const toDOM2 = (): DOMOutputSpec => ['p', { 'data-ext2': '' }]
     const parseDOM1: TagParseRule = { tag: 'p[data-ext1]' }
     const parseDOM2: TagParseRule = { tag: 'p[data-ext2]' }
-    const toDebugString2 = vi.fn(() => 'ext2')
-    const leafText1 = vi.fn(() => 'text')
+    const toDebugString2 = () => 'ext2'
+    const leafText1 = () => 'text'
 
     const ext1 = defineNodeSpec({
       name: 'paragraph',

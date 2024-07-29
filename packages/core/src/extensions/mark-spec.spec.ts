@@ -1,5 +1,5 @@
 import type { DOMOutputSpec, TagParseRule } from '@prosekit/pm/model'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 import { union } from '../editor/union'
 import { setupTestFromExtension } from '../testing'
@@ -12,11 +12,11 @@ import { defineText } from './text'
 
 describe('defineMarkSpec', () => {
   it('can merge mark specs', () => {
-    const toDOM1 = vi.fn((): DOMOutputSpec => ['strong', { 'data-ext1': '' }])
-    const toDOM2 = vi.fn((): DOMOutputSpec => ['strong', { 'data-ext2': '' }])
+    const toDOM1 = (): DOMOutputSpec => ['strong', { 'data-ext1': '' }]
+    const toDOM2 = (): DOMOutputSpec => ['strong', { 'data-ext2': '' }]
     const parseDOM1: TagParseRule = { tag: 'strong[data-ext1]' }
     const parseDOM2: TagParseRule = { tag: 'strong[data-ext2]' }
-    const toDebugString2 = vi.fn(() => 'ext2')
+    const toDebugString2 = () => 'ext2'
 
     const ext1 = defineMarkSpec({
       name: 'bold',

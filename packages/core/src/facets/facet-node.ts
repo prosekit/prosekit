@@ -1,7 +1,7 @@
 import { Priority } from '../types/priority'
 import { arraySubstract, uniqPush } from '../utils/array'
 import { assert } from '../utils/assert'
-import { isNotNull } from '../utils/is-not-null'
+import { isNotNullish } from '../utils/type-assertion'
 
 import type { Facet } from './facet'
 import type { FacetReducer, Tuple5 } from './facet-types'
@@ -139,7 +139,7 @@ export class FacetNode<I = any, O = any> {
 
     if (this.facet.singleton) {
       const reducer = (this.reducers[Priority.default] ||= this.facet.reducer)
-      const input: I[] = inputs.filter(isNotNull).flat()
+      const input: I[] = inputs.filter(isNotNullish).flat()
       output[Priority.default] = reducer(input)
     } else {
       for (let pri = 0; pri < 5; pri++) {

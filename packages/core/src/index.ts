@@ -201,10 +201,12 @@ export {
 } from './utils/parse'
 export {
   isAllSelection,
+  isFragment,
   isMark,
   isNodeSelection,
   isProseMirrorNode,
   isSelection,
+  isSlice,
   isTextSelection,
 } from './utils/type-assertion'
 export * from './utils/unicode'

@@ -1,9 +1,9 @@
-import { Mark, ProseMirrorNode } from '@prosekit/pm/model'
+import { Fragment, Mark, ProseMirrorNode, Slice } from '@prosekit/pm/model'
 import {
   AllSelection,
   NodeSelection,
-  TextSelection,
   Selection,
+  TextSelection,
 } from '@prosekit/pm/state'
 
 /**
@@ -20,6 +20,24 @@ export function isProseMirrorNode(node: unknown): node is ProseMirrorNode {
  */
 export function isMark(mark: unknown): mark is Mark {
   return mark instanceof Mark
+}
+
+/**
+ * Checks if the given object is a `Fragment` instance.
+ *
+ * @public
+ */
+export function isFragment(fragment: unknown): fragment is Fragment {
+  return fragment instanceof Fragment
+}
+
+/**
+ * Checks if the given object is a `Slice` instance.
+ *
+ * @public
+ */
+export function isSlice(slice: unknown): slice is Slice {
+  return slice instanceof Slice
 }
 
 /**

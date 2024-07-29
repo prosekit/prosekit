@@ -1,0 +1,5 @@
+---
+'@prosekit/core': patch
+---
+
+You can now call `defineNodeSpec` or `defineMarkSpec` multiple times again the same node or mark name. Their specs will be merged together. This is useful if you want to tweak the built-in node or mark specs.

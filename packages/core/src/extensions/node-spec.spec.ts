@@ -51,7 +51,6 @@ describe('defineNodeSpec', () => {
     const schema = extension.schema
     expect(schema).toBeTruthy()
     expect(schema?.spec.nodes.get('paragraph')).toEqual({
-      name: 'paragraph',
       group: 'block',
       content: 'text*',
       leafText: leafText1,

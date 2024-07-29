@@ -9,6 +9,7 @@ import type { AnyAttrs, AttrSpec } from '../types/attrs'
 import type { Extension } from '../types/extension'
 import { groupBy } from '../utils/array-grouping'
 import { assert } from '../utils/assert'
+import { mergeSpecs } from '../utils/merge-specs'
 import {
   wrapOutputSpecAttrs,
   wrapTagParseRuleAttrs,
@@ -117,7 +118,7 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
     for (const { name, ...spec } of specPayloads) {
       const prevSpec = specs.get(name)
       if (prevSpec) {
-        specs = specs.update(name, mergeMarkSpec(prevSpec, spec))
+        specs = specs.update(name, mergeSpecs(prevSpec, spec))
       } else {
         // The latest spec has the highest priority, so we put it at the start
         // of the map.
@@ -172,13 +173,4 @@ function wrapParseRuleAttrs(
     return wrapTagParseRuleAttrs(rule, attrs)
   }
   return rule
-}
-
-function mergeMarkSpec(a: MarkSpec, b: MarkSpec): MarkSpec {
-  return {
-    ...a,
-    ...b,
-    attrs: { ...a.attrs, ...b.attrs },
-    parseDOM: [...(a.parseDOM ?? []), ...(b.parseDOM ?? [])],
-  }
 }

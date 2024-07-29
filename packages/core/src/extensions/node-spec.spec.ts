@@ -13,13 +13,13 @@ import { defineParagraph } from './paragraph'
 import { defineText } from './text'
 
 describe('defineNodeSpec', () => {
-  it('can merge specs', () => {
-    const leafText1 = vi.fn(() => 'text')
+  it('can merge node specs', () => {
     const toDOM1 = vi.fn((): DOMOutputSpec => ['p', { 'data-ext1': '' }])
     const toDOM2 = vi.fn((): DOMOutputSpec => ['p', { 'data-ext2': '' }])
     const parseDOM1: TagParseRule = { tag: 'p[data-ext1]' }
     const parseDOM2: TagParseRule = { tag: 'p[data-ext2]' }
     const toDebugString2 = vi.fn(() => 'ext2')
+    const leafText1 = vi.fn(() => 'text')
 
     const ext1 = defineNodeSpec({
       name: 'paragraph',

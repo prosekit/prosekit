@@ -1,5 +1,5 @@
 import {
-  collectNodes,
+  collectChildren,
   defineDefaultState,
   definePlugin,
   jsonFromNode,
@@ -104,7 +104,7 @@ function decorateDeletionSlice(
   //   <span>Hello</span>
   //   <div><p>World</p></div>
   if (openStart > 0 && content.childCount >= 2) {
-    const nodes = collectNodes(content)
+    const nodes = collectChildren(content)
     const head = Fragment.from(nodes.slice(0, 1))
     const body = Fragment.from(nodes.slice(1))
 
@@ -124,7 +124,7 @@ function decorateDeletionSlice(
   //   <div><p>Hello</p></div>
   //   <span>World</span>
   if (openEnd > 0 && content.childCount >= 2) {
-    const nodes = collectNodes(content)
+    const nodes = collectChildren(content)
     const body = Fragment.from(nodes.slice(0, -1))
     const tail = Fragment.from(nodes.slice(-1))
     return [

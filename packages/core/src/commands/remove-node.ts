@@ -2,8 +2,7 @@ import type { NodeType } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
 import type { CommandCreator } from '../types/extension-command'
-import { findParentNode } from '../utils/find-parent-node'
-import { getNodeType } from '../utils/get-node-type'
+import { findParentNodeOfType } from '../utils/find-parent-node-of-type'
 
 /**
  * @public
@@ -15,7 +14,8 @@ export interface RemoveNodeOptions {
   type: string | NodeType
 
   /**
-   * The document position to start searching node. By default it will be the anchor position of current selection.
+   * The document position to start searching node. By default it will be the
+   * anchor position of current selection.
    */
   pos?: number
 }
@@ -27,18 +27,16 @@ export interface RemoveNodeOptions {
  */
 export function removeNode(options: RemoveNodeOptions): Command {
   return (state, dispatch) => {
-    const nodeType = getNodeType(state.schema, options.type)
     const $pos =
       typeof options.pos === 'number'
         ? state.doc.resolve(options.pos)
         : state.selection.$anchor
 
-    const { from, to } = findParentNode(nodeType, $pos)
-    if (from == null || to == null || from > to) {
-      return false
-    }
+    const found = findParentNodeOfType(options.type, $pos)
+    if (!found) return false
 
-    dispatch?.(state.tr.delete(from, to))
+    const { pos, node } = found
+    dispatch?.(state.tr.delete(pos, pos + node.nodeSize))
     return true
   }
 }

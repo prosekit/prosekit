@@ -164,10 +164,16 @@ export type { SimplifyUnion } from './types/simplify-union'
 export { assert } from './utils/assert'
 export { canUseRegexLookbehind } from './utils/can-use-regex-lookbehind'
 export { clsx } from './utils/clsx'
+export { collectChildren } from './utils/collect-children'
 export { collectNodes, type NodeContent } from './utils/collect-nodes'
 export { containsInlineNode } from './utils/contains-inline-node'
 export { defaultBlockAt } from './utils/default-block-at'
 export { isApple } from './utils/env'
+export {
+  findParentNode,
+  type FindParentNodeResult,
+} from './utils/find-parent-node'
+export { findParentNodeOfType } from './utils/find-parent-node-of-type'
 export { getId as _getId } from './utils/get-id'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
@@ -195,10 +201,12 @@ export {
 } from './utils/parse'
 export {
   isAllSelection,
+  isFragment,
   isMark,
   isNodeSelection,
   isProseMirrorNode,
   isSelection,
+  isSlice,
   isTextSelection,
 } from './utils/type-assertion'
 export * from './utils/unicode'

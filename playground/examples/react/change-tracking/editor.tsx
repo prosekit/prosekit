@@ -13,7 +13,7 @@ export default function Editor() {
     { id: string; date: Date; commit: Commit }[]
   >([])
   const [key, setKey] = useState(0)
-  const [defaultContent, setDefaultDoc] = useState<NodeJSON | undefined>()
+  const [defaultContent, setDefaultContent] = useState<NodeJSON | undefined>()
   const commitRecorder = useMemo(() => new CommitRecorder(), [])
 
   const handleCommit = useCallback(() => {
@@ -28,7 +28,7 @@ export default function Editor() {
       const index = commits.findIndex((commit) => commit.id === id)
       if (index === -1) return
       const doc = commits[index].commit.doc
-      setDefaultDoc(doc)
+      setDefaultContent(doc)
       setCommits((commits) => commits.slice(index))
       setKey((key) => key + 1)
     },

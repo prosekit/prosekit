@@ -22,14 +22,14 @@ describe('defineMarkAttr', () => {
       type: 'bold',
       attr: 'textColor',
       default: 'black',
-      toDOM: (value  ) => ['style', `color: ${value}`],
+      toDOM: (value) => ['style', `color: ${value}`],
       parseDOM: (node: HTMLElement) => node.style.color,
     })
     const backgroundColorExt = defineMarkAttr({
       type: 'bold',
       attr: 'backgroundColor',
       default: 'white',
-      toDOM: (value  ) => ['style', `background-color: ${value}`],
+      toDOM: (value) => ['style', `background-color: ${value}`],
       parseDOM: (node: HTMLElement) => node.style.backgroundColor,
     })
     const nodeIdExt = defineMarkAttr<'bold', 'markId', string | null>({

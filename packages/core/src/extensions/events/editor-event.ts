@@ -12,17 +12,17 @@ import { pluginFacet, type PluginPayload } from '../plugin'
 export type KeyDownHandler = (
   view: EditorView,
   event: KeyboardEvent,
-) => boolean | undefined
+) => boolean | void
 export type KeyPressHandler = (
   view: EditorView,
   event: KeyboardEvent,
-) => boolean | undefined
+) => boolean | void
 export type TextInputHandler = (
   view: EditorView,
   from: number,
   to: number,
   text: string,
-) => boolean | undefined
+) => boolean | void
 export type ClickOnHandler = (
   view: EditorView,
   pos: number,
@@ -30,12 +30,12 @@ export type ClickOnHandler = (
   nodePos: number,
   event: MouseEvent,
   direct: boolean,
-) => boolean | undefined
+) => boolean | void
 export type ClickHandler = (
   view: EditorView,
   pos: number,
   event: MouseEvent,
-) => boolean | undefined
+) => boolean | void
 export type DoubleClickOnHandler = (
   view: EditorView,
   pos: number,
@@ -43,12 +43,12 @@ export type DoubleClickOnHandler = (
   nodePos: number,
   event: MouseEvent,
   direct: boolean,
-) => boolean | undefined
+) => boolean | void
 export type DoubleClickHandler = (
   view: EditorView,
   pos: number,
   event: MouseEvent,
-) => boolean | undefined
+) => boolean | void
 export type TripleClickOnHandler = (
   view: EditorView,
   pos: number,
@@ -56,23 +56,23 @@ export type TripleClickOnHandler = (
   nodePos: number,
   event: MouseEvent,
   direct: boolean,
-) => boolean | undefined
+) => boolean | void
 export type TripleClickHandler = (
   view: EditorView,
   pos: number,
   event: MouseEvent,
-) => boolean | undefined
+) => boolean | void
 export type PasteHandler = (
   view: EditorView,
   event: ClipboardEvent,
   slice: Slice,
-) => boolean | undefined
+) => boolean | void
 export type DropHandler = (
   view: EditorView,
   event: DragEvent,
   slice: Slice,
   moved: boolean,
-) => boolean | undefined
+) => boolean | void
 export type ScrollToSelectionHandler = (view: EditorView) => boolean
 
 /**

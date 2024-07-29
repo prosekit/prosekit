@@ -1,7 +1,7 @@
 import { toReversed } from './array'
 
 export function combineEventHandlers<
-  Handler extends (...args: any[]) => boolean | undefined,
+  Handler extends (...args: any[]) => boolean | void,
   Args extends Parameters<Handler> = Parameters<Handler>,
 >() {
   let _handlers: Handler[] = []

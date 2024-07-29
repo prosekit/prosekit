@@ -4,7 +4,7 @@ import type { NodeViewConstructor } from '@prosekit/pm/view'
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import type { Extension } from '../types/extension'
-import { isNotNull } from '../utils/is-not-null'
+import { isNotNullish } from '../utils/type-assertion'
 
 import { pluginFacet, type PluginPayload } from './plugin'
 
@@ -59,8 +59,8 @@ const nodeViewFactoryFacet = defineFacet<NodeViewFactoryInput, PluginPayload>({
 
     const nodeViews: { [nodeName: string]: NodeViewConstructor } = {}
 
-    const factories = inputs.map((x) => x[0]).filter(isNotNull)
-    const options = inputs.map((x) => x[1]).filter(isNotNull)
+    const factories = inputs.map((x) => x[0]).filter(isNotNullish)
+    const options = inputs.map((x) => x[1]).filter(isNotNullish)
 
     for (const { group, name, args } of options) {
       const factory = factories.find((factory) => factory.group === group)

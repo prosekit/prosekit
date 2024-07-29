@@ -4,8 +4,8 @@ import type { DOMEventMap, EditorView } from '@prosekit/pm/view'
 import { defineFacet } from '../../facets/facet'
 import { defineFacetPayload } from '../../facets/facet-extension'
 import type { Setter } from '../../types/setter'
+import { groupEntries } from '../../utils/array-grouping'
 import { combineEventHandlers } from '../../utils/combine-event-handlers'
-import { groupEntries } from '../../utils/group-entries'
 import { pluginFacet, type PluginPayload } from '../plugin'
 
 /**

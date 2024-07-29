@@ -1,9 +1,5 @@
-import type {
-  AttributeSpec,
-  DOMOutputSpec,
-  NodeSpec,
-  SchemaSpec,
-} from '@prosekit/pm/model'
+import type { AttributeSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
+import clone from 'just-clone'
 import OrderedMap from 'orderedmap'
 
 import { defineFacet } from '../facets/facet'
@@ -11,9 +7,13 @@ import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
 import type { AnyAttrs, AttrSpec } from '../types/attrs'
 import type { Extension } from '../types/extension'
+import { groupBy } from '../utils/array-grouping'
 import { assert } from '../utils/assert'
-import { isElement } from '../utils/is-element'
-import { isNotNull } from '../utils/is-not-null'
+import {
+  wrapOutputSpecAttrs,
+  wrapTagParseRuleAttrs,
+} from '../utils/output-spec'
+import { isNotNullish } from '../utils/type-assertion'
 
 /**
  * @public
@@ -69,17 +69,19 @@ export interface NodeAttrOptions<
   splittable?: boolean
 
   /**
-   * Returns the attribute key and value to be set on the DOM node.
+   * Returns the attribute key and value to be set on the HTML element.
    *
-   * If the `key` is `"style"`, the value is a string of CSS properties and will
+   * If the returned `key` is `"style"`, the value is a string of CSS properties and will
    * be prepended to the existing `style` attribute on the DOM node.
+   *
+   * @param value - The value of the attribute of current ProseMirror node.
    */
-  toDOM?: (value: any) => [key: string, value: string] | null | void
+  toDOM?: (value: AttrType) => [key: string, value: string] | null | undefined
 
   /**
    * Parses the attribute value from the DOM.
    */
-  parseDOM?: (node: HTMLElement) => any
+  parseDOM?: (node: HTMLElement) => AttrType
 }
 
 /**
@@ -131,8 +133,8 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
     let specs = OrderedMap.from<NodeSpec>({})
     let topNodeName: string | undefined = undefined
 
-    const specPayloads = payloads.map((input) => input[0]).filter(isNotNull)
-    const attrPayloads = payloads.map((input) => input[1]).filter(isNotNull)
+    const specPayloads = payloads.map((input) => input[0]).filter(isNotNullish)
+    const attrPayloads = payloads.map((input) => input[1]).filter(isNotNullish)
 
     for (const { name, topNode, ...spec } of specPayloads) {
       assert(!specs.get(name), `Node type ${name} can only be defined once`)
@@ -146,93 +148,39 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
       specs = specs.addToStart(name, spec)
     }
 
-    for (const {
-      type,
-      attr,
-      default: defaultValue,
-      splittable,
-      toDOM,
-      parseDOM,
-    } of attrPayloads) {
-      const spec = specs.get(type)
-      assert(spec, `Node type ${type} must be defined`)
+    const groupedAttrs = groupBy(attrPayloads, (payload) => payload.type)
+
+    for (const [type, attrs] of Object.entries(groupedAttrs)) {
+      if (!attrs) continue
+
+      const maybeSpec = specs.get(type)
+      assert(maybeSpec, `Node type ${type} must be defined`)
+
+      const spec = clone(maybeSpec)
 
       if (!spec.attrs) {
         spec.attrs = {}
       }
-      spec.attrs[attr] = {
-        default: defaultValue as unknown,
-        splittable,
-      } as AttributeSpec
 
-      if (toDOM && spec.toDOM) {
-        const existingToDom = spec.toDOM
-        spec.toDOM = (node): DOMOutputSpec => {
-          const dom = existingToDom(node)
-
-          if (!dom) {
-            return dom
-          }
-
-          const attrDOM = toDOM(node.attrs[attr])
-          if (!attrDOM) {
-            return dom
-          }
-
-          const [key, value] = attrDOM
-
-          if (!key) {
-            return dom
-          }
-
-          if (Array.isArray(dom)) {
-            if (typeof dom[1] === 'object') {
-              return [
-                dom[0],
-                setObjectAttribute(
-                  dom[1] as Record<string, unknown>,
-                  key,
-                  value,
-                ),
-                ...dom.slice(2),
-              ]
-            } else {
-              return [dom[0], { [key]: value }, ...dom.slice(1)]
-            }
-          } else if (isElement(dom)) {
-            setElementAttribute(dom, key, value)
-          } else if (
-            typeof dom === 'object' &&
-            'dom' in dom &&
-            isElement(dom.dom)
-          ) {
-            setElementAttribute(dom.dom, key, value)
-          }
-
-          return dom
-        }
+      for (const attr of attrs) {
+        spec.attrs[attr.attr] = {
+          default: attr.default as unknown,
+          validate: attr.validate,
+          splittable: attr.splittable,
+        } as AttributeSpec
       }
 
-      if (parseDOM && spec.parseDOM) {
-        for (const rule of spec.parseDOM) {
-          const existingGetAttrs = rule.getAttrs
-          const existingAttrs = rule.attrs
-
-          rule.getAttrs = (dom) => {
-            const attrs = existingGetAttrs?.(dom) ?? existingAttrs
-
-            if (attrs === false || !dom || !isElement(dom)) {
-              return attrs ?? null
-            }
-
-            const value = parseDOM(dom) as unknown
-            return {
-              ...attrs,
-              [attr]: value,
-            }
-          }
-        }
+      if (spec.toDOM) {
+        spec.toDOM = wrapOutputSpecAttrs(spec.toDOM, attrs)
       }
+
+      if (spec.parseDOM) {
+        spec.parseDOM = spec.parseDOM.map((rule) =>
+          wrapTagParseRuleAttrs(rule, attrs),
+        )
+      }
+
+      specs = specs.update(type, spec)
     }
 
     return { nodes: specs, topNode: topNodeName }
@@ -240,21 +188,3 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
   parent: schemaSpecFacet,
   singleton: true,
 })
-
-function setObjectAttribute(
-  obj: Record<string, unknown>,
-  key: string,
-  value: string,
-) {
-  if (key === 'style') {
-    value = `${value}${obj.style || ''}`
-  }
-  return { ...obj, [key]: value }
-}
-
-function setElementAttribute(element: Element, key: string, value: string) {
-  if (key === 'style') {
-    value = `${value}${element.getAttribute('style') || ''}`
-  }
-  element.setAttribute(key, value)
-}

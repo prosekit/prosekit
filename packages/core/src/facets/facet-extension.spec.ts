@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 
 import { Priority } from '../types/priority'
-import { isNotNull } from '../utils/is-not-null'
+import { isNotNullish } from '../utils/type-assertion'
 
 import { Facet, defineFacet } from './facet'
 import { FacetExtensionImpl } from './facet-extension'
@@ -27,8 +27,8 @@ describe('facet extension', () => {
   type BarInput = BarHandler
 
   const rootReducerImpl: FacetReducer<RootInput, RootOutput> = (input) => {
-    const fooHandlers = input.map((i) => i.onFoo).filter(isNotNull)
-    const barHandlers = input.map((i) => i.onBar).filter(isNotNull)
+    const fooHandlers = input.map((i) => i.onFoo).filter(isNotNullish)
+    const barHandlers = input.map((i) => i.onBar).filter(isNotNullish)
     return { fooHandlers, barHandlers }
   }
   const rootReducer = vi.fn(rootReducerImpl)

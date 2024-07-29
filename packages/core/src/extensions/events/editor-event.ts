@@ -5,8 +5,8 @@ import type { EditorView } from '@prosekit/pm/view'
 import { defineFacet } from '../../facets/facet'
 import { defineFacetPayload } from '../../facets/facet-extension'
 import type { ObjectEntries } from '../../types/object-entries'
+import { groupEntries } from '../../utils/array-grouping'
 import { combineEventHandlers } from '../../utils/combine-event-handlers'
-import { groupEntries, type GroupedEntries } from '../../utils/group-entries'
 import { pluginFacet, type PluginPayload } from '../plugin'
 
 export type KeyDownHandler = (
@@ -223,7 +223,7 @@ function setupEditorEventPlugin() {
   const [setScrollToSelectionHandlers, handleScrollToSelection] = combineEventHandlers<ScrollToSelectionHandler>()
 
   const update = (entries: EditorEventEntries[]) => {
-    const map: GroupedEntries<EditorEventMap> = groupEntries(entries)
+    const map = groupEntries<EditorEventMap>(entries)
 
     setKeyDownHandlers(map.keyDown ?? [])
     setKeyPressHandlers(map.keyPress ?? [])

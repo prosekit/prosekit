@@ -4,11 +4,15 @@ import { ProseKitError } from '../error'
 
 /**
  * @public
+ *
+ * @deprecated
  */
 export type NodeContent = ProseMirrorNode | ProseMirrorFragment | NodeContent[]
 
 /**
  * Collects all nodes from a given content.
+ *
+ * @deprecated Use `collectChildren` instead.
  *
  * @public
  */

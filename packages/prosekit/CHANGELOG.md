@@ -1,5 +1,37 @@
 # prosekit
 
+## 0.9.14
+
+### Patch Changes
+
+- [`a9bc925`](https://github.com/ocavue/prosekit/commit/a9bc9259faebfb787b143595107d779d60aa15bf) ![](https://prosekit.dev/b/core)
+
+  You can now call `defineNodeSpec` or `defineMarkSpec` multiple times again the same node or mark name. Their specs will be merged together. This is useful if you want to extend an existing node or mark spec but tweak some of its properties.
+
+- [`0d1243c`](https://github.com/ocavue/prosekit/commit/0d1243c68d101de5a5c472e40177807a7380784b) ![](https://prosekit.dev/b/core)
+
+  `defineMarkSpec` can now merge multiple `style` attributes applied to the output HTML element.
+
+- [`76fb642`](https://github.com/ocavue/prosekit/commit/76fb64238637f76a9c26b2f2dcca5a79c3a45e3b) ![](https://prosekit.dev/b/core)
+
+  Add some common util functions for working with ProseMirror.
+
+  - `findParentNode`
+  - `findParentNodeOfTypes`
+  - `collectChildren`
+  - `isProseMirrorNode`
+  - `isMark`
+  - `isFragment`
+  - `isSlice`
+  - `isSelection`
+  - `isTextSelection`
+  - `isNodeSelection`
+  - `isAllSelection`
+
+- [`ee8597b`](https://github.com/ocavue/prosekit/commit/ee8597b89812c4a80c326e8261e90068c2025416) ![](https://prosekit.dev/b/pm)
+
+  Update ProseMirror packages.
+
 ## 0.9.13
 
 ### Patch Changes

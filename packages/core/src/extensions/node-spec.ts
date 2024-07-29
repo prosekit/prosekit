@@ -1,8 +1,6 @@
 import type {
   AttributeSpec,
-  DOMOutputSpec,
   NodeSpec,
-  ProseMirrorNode,
   SchemaSpec,
   TagParseRule,
 } from '@prosekit/pm/model'
@@ -17,7 +15,7 @@ import type { Extension } from '../types/extension'
 import { groupBy } from '../utils/array-grouping'
 import { assert } from '../utils/assert'
 import { isElement } from '../utils/is-element'
-import { insertOutputSpecAttrs } from '../utils/output-spec'
+import { wrapOutputSpecAttrs } from '../utils/output-spec'
 import { isNotNullish } from '../utils/type-assertion'
 
 /**
@@ -81,7 +79,7 @@ export interface NodeAttrOptions<
    *
    * @param value - The value of the attribute of current ProseMirror node.
    */
-  toDOM?: (value: AttrType) => [key: string, value: string] | null | void
+  toDOM?: (value: AttrType) => [key: string, value: string] | null | undefined
 
   /**
    * Parses the attribute value from the DOM.
@@ -176,7 +174,7 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
       }
 
       if (spec.toDOM) {
-        spec.toDOM = wrapToDOM(spec.toDOM, attrs)
+        spec.toDOM = wrapOutputSpecAttrs(spec.toDOM, attrs)
       }
 
       if (spec.parseDOM) {
@@ -193,19 +191,6 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
   parent: schemaSpecFacet,
   singleton: true,
 })
-
-function wrapToDOM(
-  toDOM: (node: ProseMirrorNode) => DOMOutputSpec,
-  attrs: NodeAttrOptions[],
-) {
-  return (node: ProseMirrorNode) => {
-    const dom = toDOM(node)
-    const pairs = attrs
-      .map((attr) => attr.toDOM?.(node.attrs[attr.attr]))
-      .filter(isNotNullish)
-    return insertOutputSpecAttrs(dom, pairs)
-  }
-}
 
 function wrapTagParseRule(
   rule: TagParseRule,

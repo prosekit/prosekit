@@ -19,7 +19,7 @@ import { pluginFacet, type PluginPayload } from '../plugin'
 export type DOMEventHandler<Event extends keyof DOMEventMap = string> = (
   view: EditorView,
   event: DOMEventMap[Event],
-) => boolean | void
+) => boolean | undefined
 
 /**
  * Register a new event handler for the given event type.

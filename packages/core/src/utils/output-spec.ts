@@ -1,6 +1,26 @@
-import type { DOMOutputSpec } from '@prosekit/pm/model'
+import type { DOMOutputSpec, Mark, ProseMirrorNode } from '@prosekit/pm/model'
 
 import { isElement } from './is-element'
+import { isNotNullish } from './type-assertion'
+
+export function wrapOutputSpecAttrs<
+  T extends ProseMirrorNode | Mark,
+  Args extends readonly unknown[],
+>(
+  toDOM: (node: T, ...args: Args) => DOMOutputSpec,
+  options: Array<{
+    attr: string
+    toDOM?: (value: unknown) => [key: string, value: string] | null | undefined
+  }>,
+): (node: T, ...args: Args) => DOMOutputSpec {
+  return (node, ...args) => {
+    const dom = toDOM(node, ...args)
+    const pairs = options
+      .map((option) => option.toDOM?.(node.attrs[option.attr]))
+      .filter(isNotNullish)
+    return insertOutputSpecAttrs(dom, pairs)
+  }
+}
 
 export function insertOutputSpecAttrs(
   dom: DOMOutputSpec,

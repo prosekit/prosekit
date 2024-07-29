@@ -1,6 +1,4 @@
 import type {
-  DOMOutputSpec,
-  Mark,
   MarkSpec,
   ParseRule,
   SchemaSpec,
@@ -17,7 +15,7 @@ import type { Extension } from '../types/extension'
 import { groupBy } from '../utils/array-grouping'
 import { assert } from '../utils/assert'
 import { isElement } from '../utils/is-element'
-import { insertOutputSpecAttrs } from '../utils/output-spec'
+import { wrapOutputSpecAttrs } from '../utils/output-spec'
 import { isNotNullish } from '../utils/type-assertion'
 
 /**
@@ -64,7 +62,7 @@ export interface MarkAttrOptions<
    *
    * @param value - The value of the attribute of current ProseMirror node.
    */
-  toDOM?: (value: AttrType) => [key: string, value: string] | null | void
+  toDOM?: (value: AttrType) => [key: string, value: string] | null | undefined
 
   /**
    * Parses the attribute value from the DOM.
@@ -148,7 +146,7 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
       }
 
       if (spec.toDOM) {
-        spec.toDOM = wrapToDOM(spec.toDOM, attrs)
+        spec.toDOM = wrapOutputSpecAttrs(spec.toDOM, attrs)
       }
 
       if (spec.parseDOM) {
@@ -163,19 +161,6 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
   parent: schemaSpecFacet,
   singleton: true,
 })
-
-function wrapToDOM(
-  toDOM: (mark: Mark, inline: boolean) => DOMOutputSpec,
-  attrs: MarkAttrOptions[],
-) {
-  return (mark: Mark, inline: boolean) => {
-    const dom = toDOM(mark, inline)
-    const pairs = attrs
-      .map((attr) => attr.toDOM?.(mark.attrs[attr.attr]))
-      .filter(isNotNullish)
-    return insertOutputSpecAttrs(dom, pairs)
-  }
-}
 
 function wrapParseRule(rule: ParseRule, attrs: MarkAttrOptions[]): ParseRule {
   if (rule.tag) {

@@ -169,7 +169,10 @@ export { collectNodes, type NodeContent } from './utils/collect-nodes'
 export { containsInlineNode } from './utils/contains-inline-node'
 export { defaultBlockAt } from './utils/default-block-at'
 export { isApple } from './utils/env'
-export { findParentNode } from './utils/find-parent-node'
+export {
+  findParentNode,
+  type FindParentNodeResult,
+} from './utils/find-parent-node'
 export { findParentNodeOfType } from './utils/find-parent-node-of-type'
 export { getId as _getId } from './utils/get-id'
 export { getMarkType } from './utils/get-mark-type'

@@ -2,24 +2,17 @@ import type { Schema } from '@prosekit/pm/model'
 import { describe, expect, it } from 'vitest'
 
 import { union } from '../editor/union'
+import { setupTestFromExtension } from '../testing'
+import { htmlFromNode, jsonFromNode } from '../utils/parse'
 
 import { defineDoc } from './doc'
 import { defineHistory } from './history'
 import { defineBaseKeymap } from './keymap-base'
-import { defineNodeSpec } from './node-spec'
+import { defineNodeAttr, defineNodeSpec } from './node-spec'
 import { defineParagraph } from './paragraph'
 import { defineText } from './text'
 
-function defineCodeBlockSpec() {
-  return defineNodeSpec({
-    name: 'codeBlock',
-    content: 'text*',
-    group: 'block',
-    code: true,
-  })
-}
-
-describe('node-spec', () => {
+describe('defineNodeSpec', () => {
   it('can reuse schema', () => {
     const ext1 = union([defineDoc(), defineText(), defineParagraph()])
     const ext2 = union([defineBaseKeymap()])
@@ -65,6 +58,81 @@ describe('node-spec', () => {
     expect(schema6 === schema5).toBe(true)
   })
 })
+
+describe('defineNodeAttr', () => {
+  it('can add a new attribute', () => {
+    const textColorExt = defineNodeAttr({
+      type: 'paragraph',
+      attr: 'textColor',
+      default: 'black',
+      toDOM: (value) => ['style', `color: ${value}`],
+      parseDOM: (node: HTMLElement) => node.style.color,
+    })
+    const backgroundColorExt = defineNodeAttr({
+      type: 'paragraph',
+      attr: 'backgroundColor',
+      default: 'white',
+      toDOM: (value) => ['style', `background-color: ${value}`],
+      parseDOM: (node: HTMLElement) => node.style.backgroundColor,
+    })
+    const nodeIdExt = defineNodeAttr<'paragraph', 'nodeId', string | null>({
+      type: 'paragraph',
+      attr: 'nodeId',
+      default: null,
+      toDOM: (value) => (value ? ['data-node-id', value] : null),
+      parseDOM: (node: HTMLElement) => node.dataset.nodeId,
+    })
+    const extension = union([
+      defineDoc(),
+      defineText(),
+      defineParagraph(),
+      textColorExt,
+      backgroundColorExt,
+      nodeIdExt,
+    ])
+    const { editor } = setupTestFromExtension(extension)
+
+    expect(Object.keys(editor.schema.nodes.paragraph.spec.attrs || {}))
+      .toMatchInlineSnapshot(`
+      [
+        "textColor",
+        "backgroundColor",
+        "nodeId",
+      ]
+    `)
+
+    editor.setContent(
+      '<p data-node-id="123" style="background-color:blue;color:red;">Hello</p>',
+    )
+
+    const json1 = jsonFromNode(editor.state.doc)
+    expect(json1).toEqual({
+      type: 'doc',
+      content: [
+        {
+          type: 'paragraph',
+          attrs: { nodeId: '123', textColor: 'red', backgroundColor: 'blue' },
+          content: [{ type: 'text', text: 'Hello' }],
+        },
+      ],
+    })
+    expect(htmlFromNode(editor.state.doc)).toMatchInlineSnapshot(
+      `"<div><p style="background-color: blue; color: red" data-node-id="123">Hello</p></div>"`,
+    )
+    editor.setContent(htmlFromNode(editor.state.doc))
+    const json2 = jsonFromNode(editor.state.doc)
+    expect(json2).toEqual(json1)
+  })
+})
+
+function defineCodeBlockSpec() {
+  return defineNodeSpec({
+    name: 'codeBlock',
+    content: 'text*',
+    group: 'block',
+    code: true,
+  })
+}
 
 function formatSchema(schema: Schema | null | undefined) {
   if (!schema) {

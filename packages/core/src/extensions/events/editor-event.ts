@@ -5,8 +5,8 @@ import type { EditorView } from '@prosekit/pm/view'
 import { defineFacet } from '../../facets/facet'
 import { defineFacetPayload } from '../../facets/facet-extension'
 import type { ObjectEntries } from '../../types/object-entries'
+import { groupEntries, type GroupedEntries } from '../../utils/array-grouping'
 import { combineEventHandlers } from '../../utils/combine-event-handlers'
-import { groupEntries, type GroupedEntries } from '../../utils/group-entries'
 import { pluginFacet, type PluginPayload } from '../plugin'
 
 export type KeyDownHandler = (

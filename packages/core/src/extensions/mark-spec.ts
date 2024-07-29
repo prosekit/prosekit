@@ -1,4 +1,12 @@
-import type { DOMOutputSpec, MarkSpec, SchemaSpec } from '@prosekit/pm/model'
+import type {
+  DOMOutputSpec,
+  Mark,
+  MarkSpec,
+  ParseRule,
+  SchemaSpec,
+  TagParseRule,
+} from '@prosekit/pm/model'
+import clone from 'just-clone'
 import OrderedMap from 'orderedmap'
 
 import { defineFacet } from '../facets/facet'
@@ -6,9 +14,11 @@ import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
 import type { AnyAttrs, AttrSpec } from '../types/attrs'
 import type { Extension } from '../types/extension'
+import { groupBy } from '../utils/array-grouping'
 import { assert } from '../utils/assert'
 import { isElement } from '../utils/is-element'
-import { isNotNull } from '../utils/is-not-null'
+import { insertOutputSpecAttrs } from '../utils/output-spec'
+import { isNotNullish } from '../utils/type-assertion'
 
 /**
  * @public
@@ -47,7 +57,12 @@ export interface MarkAttrOptions<
   attr: AttrName
 
   /**
-   * Returns the attribute key and value to be set on the DOM node.
+   * Returns the attribute key and value to be set on the HTML element.
+   *
+   * If the returned `key` is `"style"`, the value is a string of CSS properties and will
+   * be prepended to the existing `style` attribute on the DOM node.
+   *
+   * @param value - The value of the attribute of current ProseMirror node.
    */
   toDOM?: (value: any) => [key: string, value: string] | null | void
 
@@ -101,8 +116,8 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
   reducer: (payloads: MarkSpecPayload[]): SchemaSpec => {
     let specs = OrderedMap.from<MarkSpec>({})
 
-    const specPayloads = payloads.map((input) => input[0]).filter(isNotNull)
-    const attrPayloads = payloads.map((input) => input[1]).filter(isNotNull)
+    const specPayloads = payloads.map((input) => input[0]).filter(isNotNullish)
+    const attrPayloads = payloads.map((input) => input[1]).filter(isNotNullish)
 
     for (const { name, ...spec } of specPayloads) {
       assert(!specs.get(name), `Mark type ${name} can only be defined once`)
@@ -112,82 +127,35 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
       specs = specs.addToStart(name, spec)
     }
 
-    for (const {
-      type,
-      attr,
-      default: defaultValue,
-      toDOM,
-      parseDOM,
-    } of attrPayloads) {
-      const spec = specs.get(type)
-      assert(spec, `Mark type ${type} must be defined`)
+    const groupedAttrs = groupBy(attrPayloads, (payload) => payload.type)
+
+    for (const [type, attrs] of Object.entries(groupedAttrs)) {
+      if (!attrs) continue
+
+      const maybeSpec = specs.get(type)
+      assert(maybeSpec, `Mark type ${type} must be defined`)
+      const spec = clone(maybeSpec)
 
       if (!spec.attrs) {
         spec.attrs = {}
       }
-      spec.attrs[attr] = { default: defaultValue as unknown }
 
-      if (toDOM && spec.toDOM) {
-        const existingToDom = spec.toDOM
-        spec.toDOM = (mark, inline): DOMOutputSpec => {
-          const dom = existingToDom(mark, inline)
-
-          if (!dom) {
-            return dom
-          }
-
-          const attrDOM = toDOM(mark.attrs[attr])
-          if (!attrDOM) {
-            return dom
-          }
-
-          const [key, value] = attrDOM
-
-          if (!key) {
-            return dom
-          }
-
-          if (Array.isArray(dom)) {
-            if (typeof dom[1] === 'object') {
-              return [dom[0], { ...dom[1], [key]: value }, ...dom.slice(2)]
-            } else {
-              return [dom[0], { [key]: value }, ...dom.slice(1)]
-            }
-          } else if (isElement(dom)) {
-            dom.setAttribute(key, value)
-          } else if (
-            typeof dom === 'object' &&
-            'dom' in dom &&
-            isElement(dom.dom)
-          ) {
-            dom.dom.setAttribute(key, value)
-          }
-
-          return dom
+      for (const attr of attrs) {
+        spec.attrs[attr.attr] = {
+          default: attr.default as unknown,
+          validate: attr.validate,
         }
       }
 
-      if (parseDOM && spec.parseDOM) {
-        for (const rule of spec.parseDOM) {
-          const existingGetAttrs = rule.getAttrs
-          const existingAttrs = rule.attrs
-
-          rule.getAttrs = (dom: HTMLElement | string) => {
-            // @ts-expect-error: the type here is too strict
-            const attrs = existingGetAttrs?.(dom) ?? existingAttrs
-
-            if (attrs === false || !dom || !isElement(dom)) {
-              return attrs ?? null
-            }
-
-            const value = parseDOM(dom) as unknown
-            return {
-              ...attrs,
-              [attr]: value,
-            }
-          }
-        }
+      if (spec.toDOM) {
+        spec.toDOM = wrapToDOM(spec.toDOM, attrs)
       }
+
+      if (spec.parseDOM) {
+        spec.parseDOM = spec.parseDOM.map((rule) => wrapParseRule(rule, attrs))
+      }
+
+      specs = specs.update(type, spec)
     }
 
     return { marks: specs, nodes: {} }
@@ -195,3 +163,52 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
   parent: schemaSpecFacet,
   singleton: true,
 })
+
+function wrapToDOM(
+  toDOM: (mark: Mark, inline: boolean) => DOMOutputSpec,
+  attrs: MarkAttrOptions[],
+) {
+  return (mark: Mark, inline: boolean) => {
+    const dom = toDOM(mark, inline)
+    const pairs = attrs
+      .map((attr) => attr.toDOM?.(mark.attrs[attr.attr]))
+      .filter(isNotNullish)
+    return insertOutputSpecAttrs(dom, pairs)
+  }
+}
+
+function wrapParseRule(rule: ParseRule, attrs: MarkAttrOptions[]): ParseRule {
+  if (rule.tag) {
+    return wrapTagParseRule(rule, attrs)
+  }
+  return rule
+}
+
+function wrapTagParseRule(
+  rule: TagParseRule,
+  attrs: MarkAttrOptions[],
+): TagParseRule {
+  const existingGetAttrs = rule.getAttrs
+  const existingAttrs = rule.attrs
+
+  return {
+    ...rule,
+    getAttrs: (dom) => {
+      const baseAttrs = existingGetAttrs?.(dom) ?? existingAttrs ?? {}
+
+      if (baseAttrs === false || !dom || !isElement(dom)) {
+        return baseAttrs ?? null
+      }
+
+      const insertedAttrs: Record<string, unknown> = {}
+
+      for (const attr of attrs) {
+        if (attr.parseDOM) {
+          insertedAttrs[attr.attr] = attr.parseDOM(dom)
+        }
+      }
+
+      return { ...baseAttrs, ...insertedAttrs }
+    },
+  }
+}

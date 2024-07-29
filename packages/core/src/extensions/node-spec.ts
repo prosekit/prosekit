@@ -1,9 +1,4 @@
-import type {
-  AttributeSpec,
-  NodeSpec,
-  SchemaSpec,
-  TagParseRule,
-} from '@prosekit/pm/model'
+import type { AttributeSpec, NodeSpec, SchemaSpec } from '@prosekit/pm/model'
 import clone from 'just-clone'
 import OrderedMap from 'orderedmap'
 
@@ -14,8 +9,10 @@ import type { AnyAttrs, AttrSpec } from '../types/attrs'
 import type { Extension } from '../types/extension'
 import { groupBy } from '../utils/array-grouping'
 import { assert } from '../utils/assert'
-import { isElement } from '../utils/is-element'
-import { wrapOutputSpecAttrs } from '../utils/output-spec'
+import {
+  wrapOutputSpecAttrs,
+  wrapTagParseRuleAttrs,
+} from '../utils/output-spec'
 import { isNotNullish } from '../utils/type-assertion'
 
 /**
@@ -179,7 +176,7 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
 
       if (spec.parseDOM) {
         spec.parseDOM = spec.parseDOM.map((rule) =>
-          wrapTagParseRule(rule, attrs),
+          wrapTagParseRuleAttrs(rule, attrs),
         )
       }
 
@@ -191,32 +188,3 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
   parent: schemaSpecFacet,
   singleton: true,
 })
-
-function wrapTagParseRule(
-  rule: TagParseRule,
-  attrs: NodeAttrOptions[],
-): TagParseRule {
-  const existingGetAttrs = rule.getAttrs
-  const existingAttrs = rule.attrs
-
-  return {
-    ...rule,
-    getAttrs: (dom) => {
-      const baseAttrs = existingGetAttrs?.(dom) ?? existingAttrs ?? {}
-
-      if (baseAttrs === false || !dom || !isElement(dom)) {
-        return baseAttrs ?? null
-      }
-
-      const insertedAttrs: Record<string, unknown> = {}
-
-      for (const attr of attrs) {
-        if (attr.parseDOM) {
-          insertedAttrs[attr.attr] = attr.parseDOM(dom)
-        }
-      }
-
-      return { ...baseAttrs, ...insertedAttrs }
-    },
-  }
-}

@@ -1,17 +1,25 @@
-import type { DOMOutputSpec, Mark, ProseMirrorNode } from '@prosekit/pm/model'
+import type {
+  DOMOutputSpec,
+  Mark,
+  ProseMirrorNode,
+  TagParseRule,
+} from '@prosekit/pm/model'
 
 import { isElement } from './is-element'
 import { isNotNullish } from './type-assertion'
+
+interface AttrOptions {
+  attr: string
+  toDOM?: (value: unknown) => [key: string, value: string] | null | undefined
+  parseDOM?: (node: HTMLElement) => unknown
+}
 
 export function wrapOutputSpecAttrs<
   T extends ProseMirrorNode | Mark,
   Args extends readonly unknown[],
 >(
   toDOM: (node: T, ...args: Args) => DOMOutputSpec,
-  options: Array<{
-    attr: string
-    toDOM?: (value: unknown) => [key: string, value: string] | null | undefined
-  }>,
+  options: AttrOptions[],
 ): (node: T, ...args: Args) => DOMOutputSpec {
   return (node, ...args) => {
     const dom = toDOM(node, ...args)
@@ -19,6 +27,35 @@ export function wrapOutputSpecAttrs<
       .map((option) => option.toDOM?.(node.attrs[option.attr]))
       .filter(isNotNullish)
     return insertOutputSpecAttrs(dom, pairs)
+  }
+}
+
+export function wrapTagParseRuleAttrs(
+  rule: TagParseRule,
+  options: AttrOptions[],
+): TagParseRule {
+  const existingGetAttrs = rule.getAttrs
+  const existingAttrs = rule.attrs
+
+  return {
+    ...rule,
+    getAttrs: (dom) => {
+      const baseAttrs = existingGetAttrs?.(dom) ?? existingAttrs ?? {}
+
+      if (baseAttrs === false || !dom || !isElement(dom)) {
+        return baseAttrs ?? null
+      }
+
+      const insertedAttrs: Record<string, unknown> = {}
+
+      for (const option of options) {
+        if (option.parseDOM) {
+          insertedAttrs[option.attr] = option.parseDOM(dom)
+        }
+      }
+
+      return { ...baseAttrs, ...insertedAttrs }
+    },
   }
 }
 

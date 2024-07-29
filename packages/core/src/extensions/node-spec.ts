@@ -137,15 +137,18 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
     const attrPayloads = payloads.map((input) => input[1]).filter(isNotNullish)
 
     for (const { name, topNode, ...spec } of specPayloads) {
-      assert(!specs.get(name), `Node type ${name} can only be defined once`)
-
       if (topNode) {
         topNodeName = name
       }
 
-      // The latest spec has the highest priority, so we put it at the start of
-      // the map.
-      specs = specs.addToStart(name, spec)
+      const prevSpec = specs.get(name)
+      if (prevSpec) {
+        specs = specs.update(name, mergeNodeSpec(prevSpec, spec))
+      } else {
+        // The latest spec has the highest priority, so we put it at the start
+        // of the map.
+        specs = specs.addToStart(name, spec)
+      }
     }
 
     const groupedAttrs = groupBy(attrPayloads, (payload) => payload.type)
@@ -188,3 +191,12 @@ const nodeSpecFacet = defineFacet<NodeSpecPayload, SchemaSpec>({
   parent: schemaSpecFacet,
   singleton: true,
 })
+
+function mergeNodeSpec(a: NodeSpec, b: NodeSpec): NodeSpec {
+  return {
+    ...a,
+    ...b,
+    attrs: { ...a.attrs, ...b.attrs },
+    parseDOM: [...(a.parseDOM ?? []), ...(b.parseDOM ?? [])],
+  }
+}

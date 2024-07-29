@@ -29,4 +29,36 @@ describe('findParentNode', () => {
       }
     `)
   })
+
+  it('can handle the top level node', () => {
+    const { editor, n } = setupTest()
+    editor.set(n.doc(n.p('foo<a>')))
+
+    expect(
+      findParentNode(
+        (node) => node.type.name === 'doc',
+        editor.state.selection.$anchor,
+      ),
+    ).toMatchInlineSnapshot(`
+      {
+        "depth": 0,
+        "node": {
+          "content": [
+            {
+              "content": [
+                {
+                  "text": "foo",
+                  "type": "text",
+                },
+              ],
+              "type": "paragraph",
+            },
+          ],
+          "type": "doc",
+        },
+        "pos": 0,
+        "start": 0,
+      }
+    `)
+  })
 })

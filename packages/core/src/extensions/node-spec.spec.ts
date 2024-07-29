@@ -80,7 +80,7 @@ describe('defineNodeAttr', () => {
       attr: 'nodeId',
       default: null,
       toDOM: (value) => (value ? ['data-node-id', value] : null),
-      parseDOM: (node: HTMLElement) => node.dataset.nodeId,
+      parseDOM: (node: HTMLElement) => node.dataset.nodeId ?? null ,
     })
     const extension = union([
       defineDoc(),

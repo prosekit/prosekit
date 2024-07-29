@@ -22,22 +22,22 @@ describe('defineMarkAttr', () => {
       type: 'bold',
       attr: 'textColor',
       default: 'black',
-      toDOM: (value: any) => ['style', `color: ${value}`],
+      toDOM: (value  ) => ['style', `color: ${value}`],
       parseDOM: (node: HTMLElement) => node.style.color,
     })
     const backgroundColorExt = defineMarkAttr({
       type: 'bold',
       attr: 'backgroundColor',
       default: 'white',
-      toDOM: (value: any) => ['style', `background-color: ${value}`],
+      toDOM: (value  ) => ['style', `background-color: ${value}`],
       parseDOM: (node: HTMLElement) => node.style.backgroundColor,
     })
     const nodeIdExt = defineMarkAttr<'bold', 'markId', string | null>({
       type: 'bold',
       attr: 'markId',
       default: null,
-      toDOM: (value: any) => (value ? ['data-mark-id', value] : null),
-      parseDOM: (node: HTMLElement) => node.dataset.markId,
+      toDOM: (value) => (value ? ['data-mark-id', value] : null),
+      parseDOM: (node: HTMLElement) => node.dataset.markId || null,
     })
     const extension = union([
       defineDoc(),

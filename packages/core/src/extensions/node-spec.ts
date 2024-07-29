@@ -81,12 +81,12 @@ export interface NodeAttrOptions<
    *
    * @param value - The value of the attribute of current ProseMirror node.
    */
-  toDOM?: (value: any) => [key: string, value: string] | null | void
+  toDOM?: (value: AttrType) => [key: string, value: string] | null | void
 
   /**
    * Parses the attribute value from the DOM.
    */
-  parseDOM?: (node: HTMLElement) => any
+  parseDOM?: (node: HTMLElement) => AttrType
 }
 
 /**

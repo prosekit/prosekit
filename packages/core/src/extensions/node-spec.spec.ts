@@ -1,4 +1,4 @@
-import type { Schema } from '@prosekit/pm/model'
+import type { DOMOutputSpec, Schema, TagParseRule } from '@prosekit/pm/model'
 import { describe, expect, it } from 'vitest'
 
 import { union } from '../editor/union'
@@ -13,6 +13,58 @@ import { defineParagraph } from './paragraph'
 import { defineText } from './text'
 
 describe('defineNodeSpec', () => {
+  it('can merge node specs', () => {
+    const toDOM1 = (): DOMOutputSpec => ['p', { 'data-ext1': '' }]
+    const toDOM2 = (): DOMOutputSpec => ['p', { 'data-ext2': '' }]
+    const parseDOM1: TagParseRule = { tag: 'p[data-ext1]' }
+    const parseDOM2: TagParseRule = { tag: 'p[data-ext2]' }
+    const toDebugString2 = () => 'ext2'
+    const leafText1 = () => 'text'
+
+    const ext1 = defineNodeSpec({
+      name: 'paragraph',
+      content: 'text*',
+      leafText: leafText1,
+      parseDOM: [parseDOM1],
+      toDOM: toDOM1,
+      attrs: {
+        foo: { default: undefined },
+        bar: { default: 'bar' },
+        baz: { default: 'baz:1 ' },
+      },
+    })
+    const ext2 = defineNodeSpec({
+      name: 'paragraph',
+      group: 'block',
+      leafText: undefined,
+      parseDOM: [parseDOM2],
+      toDOM: toDOM2,
+      toDebugString: toDebugString2,
+      attrs: {
+        foo: { default: 'foo' },
+        bar: { default: undefined },
+        baz: { default: 'baz:2' },
+      },
+    })
+
+    const extension = union([ext1, ext2, defineDoc(), defineText()])
+    const schema = extension.schema
+    expect(schema).toBeTruthy()
+    expect(schema?.spec.nodes.get('paragraph')).toEqual({
+      group: 'block',
+      content: 'text*',
+      leafText: leafText1,
+      parseDOM: [parseDOM1, parseDOM2],
+      toDOM: toDOM2,
+      toDebugString: toDebugString2,
+      attrs: {
+        foo: { default: 'foo' },
+        bar: { default: 'bar' },
+        baz: { default: 'baz:2' },
+      },
+    })
+  })
+
   it('can reuse schema', () => {
     const ext1 = union([defineDoc(), defineText(), defineParagraph()])
     const ext2 = union([defineBaseKeymap()])

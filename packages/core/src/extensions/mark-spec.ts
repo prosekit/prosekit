@@ -9,6 +9,7 @@ import type { AnyAttrs, AttrSpec } from '../types/attrs'
 import type { Extension } from '../types/extension'
 import { groupBy } from '../utils/array-grouping'
 import { assert } from '../utils/assert'
+import { mergeSpecs } from '../utils/merge-specs'
 import {
   wrapOutputSpecAttrs,
   wrapTagParseRuleAttrs,
@@ -115,11 +116,14 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
     const attrPayloads = payloads.map((input) => input[1]).filter(isNotNullish)
 
     for (const { name, ...spec } of specPayloads) {
-      assert(!specs.get(name), `Mark type ${name} can only be defined once`)
-
-      // The latest spec has the highest priority, so we put it at the start of
-      // the map.
-      specs = specs.addToStart(name, spec)
+      const prevSpec = specs.get(name)
+      if (prevSpec) {
+        specs = specs.update(name, mergeSpecs(prevSpec, spec))
+      } else {
+        // The latest spec has the highest priority, so we put it at the start
+        // of the map.
+        specs = specs.addToStart(name, spec)
+      }
     }
 
     const groupedAttrs = groupBy(attrPayloads, (payload) => payload.type)

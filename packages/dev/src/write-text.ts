@@ -12,7 +12,7 @@ export async function writeText(
   let original = ''
   try {
     original = await readFile(filePath, { encoding: 'utf-8' })
-  } catch   {
+  } catch {
     // ignore
   }
 

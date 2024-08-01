@@ -9,4 +9,4 @@ import type { EmptyObject as _EmptyObject } from 'type-fest'
  *
  * @internal
  */
-export type EmptyObject = _EmptyObject
+export interface EmptyObject extends _EmptyObject {}

@@ -1,6 +1,6 @@
 import type { Attrs } from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
-import { describe, it } from 'vitest'
+import { describe, expectTypeOf, it } from 'vitest'
 
 import { defineCommands } from '../extensions/command'
 import { defineMarkSpec } from '../extensions/mark-spec'
@@ -22,6 +22,7 @@ describe('union', () => {
       Commands: never
     }>
 
+    expectTypeOf(output).toEqualTypeOf<Expected>()
     assertTypeEqual<Outout, Expected>(true)
   })
 
@@ -49,6 +50,7 @@ describe('union', () => {
       }
     }>
 
+    expectTypeOf(output).toEqualTypeOf<Expected>()
     assertTypeEqual<Outout, Expected>(true)
   })
 
@@ -59,6 +61,7 @@ describe('union', () => {
 
     const input = union([e12345])
     const output = union(input)
+
     type Outout = typeof output
     type Expected = Extension<{
       Nodes: {
@@ -75,6 +78,7 @@ describe('union', () => {
       }
     }>
 
+    expectTypeOf(output).toEqualTypeOf<Expected>()
     assertTypeEqual<Outout, Expected>(true)
   })
 })

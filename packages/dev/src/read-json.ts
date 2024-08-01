@@ -9,7 +9,7 @@ export async function readJson(filePath: string) {
     const content = await readFile(filePath, 'utf-8')
     try {
       return JSON5.parse(content)
-    } catch (error) {
+    } catch {
       throw new Error(`Failed to parse ${filePath}`)
     }
   }

@@ -48,14 +48,12 @@
     "prettier-plugin-svelte": "^3.2.6",
     "size-limit": "^11.1.4",
     "turbo": "^2.0.9",
-    "typescript": "^5.5.3",
+    "typescript": "^5.5.4",
     "unocss": "^0.61.6",
     "vitest": "^2.0.4"
   },
   "pnpm": {
-    "overrides": {
-      "typescript@^5.5.3": "5.5.3"
-    },
+    "overrides": {},
     "patchedDependencies": {
       "prosemirror-splittable@0.1.1": "patches/prosemirror-splittable@0.1.1.patch"
     }

@@ -33,7 +33,7 @@ function fixYUndoPlugin(yUndoPluginInstance: ProseMirrorPlugin) {
     return {
       destroy: () => {
         const hasUndoManSelf = undoManager.trackedOrigins.has(undoManager)
-        // eslint-disable-next-line
+
         const observers = undoManager._observers
 
         undoManager.restore = () => {
@@ -45,7 +45,7 @@ function fixYUndoPlugin(yUndoPluginInstance: ProseMirrorPlugin) {
             'afterTransaction',
             undoManager.afterTransactionHandler,
           )
-          // eslint-disable-next-line
+
           undoManager._observers = observers
         }
 

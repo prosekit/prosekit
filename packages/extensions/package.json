@@ -81,11 +81,11 @@
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "@vitest/browser": "^2.0.4",
+    "@vitest/browser": "^2.0.5",
     "tsup": "^8.2.3",
     "type-fest": "^4.23.0",
     "typescript": "^5.5.4",
-    "vitest": "^2.0.4"
+    "vitest": "^2.0.5"
   },
   "publishConfig": {
     "exports": {

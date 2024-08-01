@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@astrojs/preact": "^3.5.1",
-    "@astrojs/react": "^3.6.0",
+    "@astrojs/react": "^3.6.1",
     "@astrojs/solid-js": "^4.4.0",
     "@astrojs/svelte": "^5.7.0",
     "@astrojs/vue": "^4.5.0",
@@ -26,8 +26,8 @@
     "@prosekit/unocss-preset": "workspace:*",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@unocss/reset": "^0.61.6",
-    "astro": "^4.12.2",
+    "@unocss/reset": "^0.61.9",
+    "astro": "^4.12.3",
     "lit": "^3.1.4",
     "preact": "^10.23.1",
     "prettier": "^3.3.3",
@@ -44,8 +44,8 @@
     "svelte-check": "^3.8.5",
     "typescript": "^5.5.4",
     "unified": "^11.0.5",
-    "unocss": "^0.61.6",
-    "vue": "^3.4.34",
+    "unocss": "^0.61.9",
+    "vue": "^3.4.35",
     "vue-tsc": "^2.0.29"
   }
 }

@@ -1,4 +1,4 @@
-import type { EmptyObject } from '@prosekit/core'
+import type { EmptyObject } from '@aria-ui/core'
 
 export type AutocompleteEmptyProps = EmptyObject
 

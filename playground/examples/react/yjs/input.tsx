@@ -20,18 +20,3 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 )
 
 Input.displayName = 'Input'
-
-export function InputWithLabel(props: InputProps) {
-  const { id } = props
-  return (
-    <div className="grid max-w-sm w-full items-center gap-1.5">
-      <label
-        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-        htmlFor={id}
-      >
-        {id}
-      </label>
-      <Input type="text" {...props} id={id} placeholder={id} />
-    </div>
-  )
-}

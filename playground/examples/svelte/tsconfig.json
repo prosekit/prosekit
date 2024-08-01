@@ -3,6 +3,8 @@
   "compilerOptions": {
     "composite": true,
     "outDir": ".temp",
+    // `declarationMap` doesn't work well with `svelte-check`
+    "declarationMap": false,
   },
   "include": ["./**/*.ts", "./**/*.svelte"],
 }

@@ -1,7 +1,6 @@
 {
   "dependencyDashboard": true,
   "ignoreDeps": [
-    "typescript",
     "@prosekit/dev",
     "@prosekit/themes",
     "@prosekit/unocss-preset",

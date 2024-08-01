@@ -134,6 +134,7 @@ export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
 export type { AnyAttrs, AttrSpec } from './types/attrs'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
+export type { EmptyObject } from './types/empty-object'
 export type {
   Extension,
   ExtensionTyping,

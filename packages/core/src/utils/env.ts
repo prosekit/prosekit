@@ -1,5 +1,3 @@
-/* eslint-disable deprecation/deprecation */
-
 /**
  * @private
  */

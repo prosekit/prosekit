@@ -1,7 +1,7 @@
 import {
   Editor,
   createEditor,
-  defineBaseCommands,
+  type defineBaseCommands,
   defineDoc,
   defineParagraph,
   definePlugin,

@@ -9,7 +9,7 @@ export async function writeJson(
   let original: any = null
   try {
     original = await readJson(filePath)
-  } catch (error) {
+  } catch  {
     // ignore
   }
 

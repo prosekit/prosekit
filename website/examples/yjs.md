@@ -11,6 +11,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 ::: code-group
 
+<<< @/../playground/examples/react/yjs/editor-component.tsx
 <<< @/../playground/examples/react/yjs/editor.tsx
 <<< @/../playground/examples/react/yjs/extension.ts
 <<< @/../playground/examples/react/yjs/toolbar.tsx

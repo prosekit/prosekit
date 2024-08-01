@@ -499,6 +499,10 @@ export const exampleMeta = {
       "story": "yjs",
       "files": [
         {
+          "path": "editor-component.tsx",
+          "hidden": false
+        },
+        {
           "path": "editor.tsx",
           "hidden": false
         },

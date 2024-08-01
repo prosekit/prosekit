@@ -259,6 +259,8 @@ examples:
     framework: react
     story: yjs
     files:
+      - path: editor-component.tsx
+        hidden: false
       - path: editor.tsx
         hidden: false
       - path: extension.ts

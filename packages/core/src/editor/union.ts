@@ -19,7 +19,7 @@ import { assert } from '../utils/assert'
  *   )
  * }
  * ```
- * 
+ *
  * @example
  *
  * ```ts

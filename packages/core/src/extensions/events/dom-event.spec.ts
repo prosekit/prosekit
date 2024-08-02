@@ -14,7 +14,7 @@ describe('defineDOMEventHandler', () => {
     const handleFocus = vi.fn()
     const handleBlur = vi.fn()
 
-    const extension = union([defineDoc(), defineText(), defineParagraph()])
+    const extension = union(defineDoc(), defineText(), defineParagraph())
     const editor = createEditor({ extension })
     editor.mount(div)
 

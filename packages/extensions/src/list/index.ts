@@ -25,13 +25,13 @@ export type ListExtension = Union<[ListSpecExtension, ListCommandsExtension]>
  * @public
  */
 export function defineList(): ListExtension {
-  return union([
+  return union(
     defineListSpec(),
     defineListPlugins(),
     defineListKeymap(),
     defineListInputRules(),
     defineListCommands(),
-  ])
+  )
 }
 
 export {

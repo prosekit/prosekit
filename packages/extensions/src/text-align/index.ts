@@ -125,9 +125,9 @@ export type TextAlignExtension<NodeName extends string> = Union<
 export function defineTextAlign<NodeName extends string = string>(
   options: TextAlignOptions<NodeName>,
 ): TextAlignExtension<NodeName> {
-  return union([
+  return union(
     defineTextAlignAttrs<NodeName>(options.types, options.default || 'left'),
     defineTextAlignKeymap(options.types),
     defineTextAlignCommands(options.types),
-  ])
+  )
 }

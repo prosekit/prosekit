@@ -11,7 +11,7 @@ import { union } from './union'
 describe('createEditor', () => {
   it('can mount the editor', () => {
     const div = document.body.appendChild(document.createElement('div'))
-    const extension = union([defineDoc(), defineText(), defineParagraph()])
+    const extension = union(defineDoc(), defineText(), defineParagraph())
     const editor = createEditor({ extension })
     editor.mount(div)
     expect(div.outerHTML).toMatchInlineSnapshot(
@@ -20,7 +20,7 @@ describe('createEditor', () => {
   })
 
   it('can get and update state', () => {
-    const extension = union([defineDoc(), defineText(), defineParagraph()])
+    const extension = union(defineDoc(), defineText(), defineParagraph())
     const editor = createEditor({ extension })
 
     const update = (text: string) => {
@@ -84,7 +84,7 @@ describe('createEditor', () => {
   })
 
   it('can update document and selection', () => {
-    const extension = union([defineDoc(), defineText(), defineParagraph()])
+    const extension = union(defineDoc(), defineText(), defineParagraph())
     const editor = createEditor({ extension })
 
     expect(editor.state.doc.textContent).toMatchInlineSnapshot(`""`)
@@ -152,7 +152,7 @@ describe('createEditor', () => {
   })
 
   it('can refuse invalid document', () => {
-    const extension = union([defineDoc(), defineText(), defineParagraph()])
+    const extension = union(defineDoc(), defineText(), defineParagraph())
     const editor = createEditor({ extension })
 
     const invalidDoc: NodeJSON = {

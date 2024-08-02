@@ -33,14 +33,14 @@ export type TableExtension = Union<
  * @public
  */
 export function defineTable(): TableExtension {
-  return union([
+  return union(
     defineTableSpec(),
     defineTableRowSpec(),
     defineTableCellSpec(),
     defineTableHeaderCellSpec(),
     defineTablePlugins(),
     defineTableCommands(),
-  ])
+  )
 }
 
 export {

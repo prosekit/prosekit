@@ -8,13 +8,13 @@ import {
 import { defineStrike } from 'prosekit/extensions/strike'
 
 export function defineExtension() {
-  return union([
+  return union(
     defineBaseKeymap(),
     defineDoc(),
     defineText(),
     defineParagraph(),
     defineStrike(),
-  ])
+  )
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>

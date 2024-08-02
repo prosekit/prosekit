@@ -61,5 +61,5 @@ export function defineMentionCommands() {
  * @public
  */
 export function defineMention() {
-  return union([defineMentionSpec(), defineMentionCommands()])
+  return union(defineMentionSpec(), defineMentionCommands())
 }

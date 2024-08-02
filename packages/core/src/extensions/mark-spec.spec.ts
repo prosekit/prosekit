@@ -40,13 +40,13 @@ describe('defineMarkSpec', () => {
       },
     })
 
-    const extension = union([
+    const extension = union(
       ext1,
       ext2,
       defineDoc(),
       defineText(),
       defineParagraph(),
-    ])
+    )
     const schema = extension.schema
     expect(schema).toBeTruthy()
     expect(schema?.spec.marks.get('bold')).toEqual({
@@ -92,7 +92,7 @@ describe('defineMarkAttr', () => {
       toDOM: (value) => (value ? ['data-mark-id', value] : null),
       parseDOM: (node: HTMLElement) => node.dataset.markId || null,
     })
-    const extension = union([
+    const extension = union(
       defineDoc(),
       defineText(),
       defineParagraph(),
@@ -100,7 +100,7 @@ describe('defineMarkAttr', () => {
       backgroundColorExt,
       nodeIdExt,
       boldExt,
-    ])
+    )
     const { editor } = setupTestFromExtension(extension)
 
     expect(Object.keys(editor.schema.marks.bold.spec.attrs || {}))

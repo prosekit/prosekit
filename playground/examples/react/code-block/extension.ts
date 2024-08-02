@@ -12,7 +12,7 @@ import {
 import CodeBlockView from './code-block-view'
 
 export function defineExtension() {
-  return union([
+  return union(
     defineBasicExtension(),
     defineCodeBlock(),
     defineCodeBlockShiki(),
@@ -21,7 +21,7 @@ export function defineExtension() {
       contentAs: 'code',
       component: CodeBlockView satisfies ReactNodeViewComponent,
     }),
-  ])
+  )
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>

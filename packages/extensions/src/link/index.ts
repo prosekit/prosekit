@@ -139,10 +139,10 @@ export type LinkExtension = Union<[LinkSpecExtension, LinkCommandsExtension]>
  * @public
  */
 export function defineLink(): LinkExtension {
-  return union([
+  return union(
     defineLinkSpec(),
     defineLinkCommands(),
     defineLinkInputRule(),
     defineLinkEnterRule(),
-  ])
+  )
 }

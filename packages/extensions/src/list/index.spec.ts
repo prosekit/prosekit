@@ -11,12 +11,12 @@ import { defineList } from './index'
 
 describe('defineList', () => {
   it('can add list node', () => {
-    const extension = union([
+    const extension = union(
       defineList(),
       defineDoc(),
       defineText(),
       defineParagraph(),
-    ])
+    )
     const editor = createEditor({ extension })
     const schema = editor.schema
     const nodes = Object.keys(schema.nodes)

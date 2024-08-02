@@ -18,7 +18,7 @@ import { useExtension } from './use-extension'
 describe('useExtension', () => {
   it('should register and dispose an extension', async () => {
     const editor = createEditor({
-      extension: union([defineDoc(), defineParagraph(), defineText()]),
+      extension: union(defineDoc(), defineParagraph(), defineText()),
     }) as Editor<ReturnType<typeof defineBaseCommands>>
 
     editor.mount(document.createElement('div'))
@@ -47,7 +47,7 @@ describe('useExtension', () => {
 
   it('should not print warning if the editor context is not available', () => {
     const editor = createEditor({
-      extension: union([defineDoc(), defineParagraph(), defineText()]),
+      extension: union(defineDoc(), defineParagraph(), defineText()),
     }) as Editor<ReturnType<typeof defineBaseCommands>>
     editor.mount(document.createElement('div'))
 

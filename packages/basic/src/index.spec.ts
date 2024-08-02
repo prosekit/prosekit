@@ -5,7 +5,7 @@ import { defineBasicExtension } from './index'
 
 describe('defineBasicExtension', () => {
   it('can add nodes and marks', () => {
-    const extension = union([defineBasicExtension()])
+    const extension = union(defineBasicExtension())
     const editor = createEditor({ extension })
     const schema = editor.schema
     const nodes = Object.keys(schema.nodes).sort()

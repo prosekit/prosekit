@@ -76,9 +76,9 @@ export function defineElementHoverHandler(handler: ElementHoverHandler) {
     handler(element, element, node, pos)
   }
 
-  return union([
+  return union(
     defineDOMEventHandler('pointermove', throttle(handlePointerEvent, 200)),
     defineDOMEventHandler('pointerout', handlePointerEvent),
     defineDOMEventHandler('keypress', () => handler(null, null, null, null)),
-  ])
+  )
 }

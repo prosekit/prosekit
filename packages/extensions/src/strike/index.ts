@@ -91,10 +91,10 @@ export type StrikeExtension = Union<
  * @public
  */
 export function defineStrike(): StrikeExtension {
-  return union([
+  return union(
     defineStrikeSpec(),
     defineStrikeCommands(),
     defineStrikeKeymap(),
     defineStrikeInputRule(),
-  ])
+  )
 }

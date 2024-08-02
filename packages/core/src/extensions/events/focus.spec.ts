@@ -13,12 +13,12 @@ describe('defineFocusChangeHandler', () => {
     const div = document.body.appendChild(document.createElement('div'))
     const handleFocusChange = vi.fn()
 
-    const extension = union([
+    const extension = union(
       defineDoc(),
       defineText(),
       defineParagraph(),
       defineFocusChangeHandler(handleFocusChange),
-    ])
+    )
     const editor = createEditor({ extension })
     editor.mount(div)
 

@@ -47,7 +47,7 @@ describe('defineNodeSpec', () => {
       },
     })
 
-    const extension = union([ext1, ext2, defineDoc(), defineText()])
+    const extension = union(ext1, ext2, defineDoc(), defineText())
     const schema = extension.schema
     expect(schema).toBeTruthy()
     expect(schema?.spec.nodes.get('paragraph')).toEqual({
@@ -66,9 +66,9 @@ describe('defineNodeSpec', () => {
   })
 
   it('can reuse schema', () => {
-    const ext1 = union([defineDoc(), defineText(), defineParagraph()])
-    const ext2 = union([defineBaseKeymap()])
-    const ext3 = union([ext1, ext2])
+    const ext1 = union(defineDoc(), defineText(), defineParagraph())
+    const ext2 = union(defineBaseKeymap())
+    const ext3 = union(ext1, ext2)
 
     const schema1 = ext1.schema
     const schema2 = ext2.schema
@@ -89,7 +89,7 @@ describe('defineNodeSpec', () => {
     `)
 
     const ext4 = defineCodeBlockSpec()
-    const ext5 = union([ext3, ext4])
+    const ext5 = union(ext3, ext4)
     const schema5 = ext5.schema
     expect(schema5).toBeTruthy()
 
@@ -103,7 +103,7 @@ describe('defineNodeSpec', () => {
 
     expect(schema5 !== schema1).toBe(true)
 
-    const ext6 = union([ext5, defineHistory()])
+    const ext6 = union(ext5, defineHistory())
     const schema6 = ext6.schema
     expect(schema6).toBeTruthy()
 
@@ -134,14 +134,14 @@ describe('defineNodeAttr', () => {
       toDOM: (value) => (value ? ['data-node-id', value] : null),
       parseDOM: (node: HTMLElement) => node.dataset.nodeId ?? null,
     })
-    const extension = union([
+    const extension = union(
       defineDoc(),
       defineText(),
       defineParagraph(),
       textColorExt,
       backgroundColorExt,
       nodeIdExt,
-    ])
+    )
     const { editor } = setupTestFromExtension(extension)
 
     expect(Object.keys(editor.schema.nodes.paragraph.spec.attrs || {}))

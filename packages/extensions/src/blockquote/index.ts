@@ -50,5 +50,5 @@ export type BlockquoteExtension = Union<[BlockquoteSpecExtension]>
  * @public
  */
 export function defineBlockquote(): BlockquoteExtension {
-  return union([defineBlockquoteSpec(), defineBlockquoteInputRule()])
+  return union(defineBlockquoteSpec(), defineBlockquoteInputRule())
 }

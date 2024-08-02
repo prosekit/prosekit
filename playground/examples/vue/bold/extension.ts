@@ -8,13 +8,13 @@ import {
 import { defineBold } from 'prosekit/extensions/bold'
 
 export function defineExtension() {
-  return union([
+  return union(
     defineBaseKeymap(),
     defineDoc(),
     defineText(),
     defineParagraph(),
     defineBold(),
-  ])
+  )
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>

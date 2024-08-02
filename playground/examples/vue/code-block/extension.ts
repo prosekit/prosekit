@@ -9,7 +9,7 @@ import { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'
 import CodeBlockView from './code-block-view.vue'
 
 export function defineExtension() {
-  return union([
+  return union(
     defineBasicExtension(),
     defineCodeBlock(),
     defineCodeBlockShiki(),
@@ -18,7 +18,7 @@ export function defineExtension() {
       contentAs: 'code',
       component: CodeBlockView as VueNodeViewComponent,
     }),
-  ])
+  )
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>

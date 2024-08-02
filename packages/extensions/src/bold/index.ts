@@ -108,10 +108,10 @@ export type BoldExtension = Union<[BoldSpecExtension, BoldCommandsExtension]>
  * @public
  */
 export function defineBold(): BoldExtension {
-  return union([
+  return union(
     defineBoldSpec(),
     defineBoldCommands(),
     defineBoldKeymap(),
     defineBoldInputRule(),
-  ])
+  )
 }

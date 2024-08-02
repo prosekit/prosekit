@@ -92,10 +92,10 @@ export type ItalicExtension = Union<
  * @public
  */
 export function defineItalic(): ItalicExtension {
-  return union([
+  return union(
     defineItalicSpec(),
     defineItalicCommands(),
     defineItalicKeymap(),
     defineItalicInputRule(),
-  ])
+  )
 }

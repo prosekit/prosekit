@@ -8,13 +8,13 @@ import {
 import { defineList } from 'prosekit/extensions/list'
 
 export function defineExtension() {
-  return union([
+  return union(
     defineBaseKeymap(),
     defineDoc(),
     defineText(),
     defineParagraph(),
     defineList(),
-  ])
+  )
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>

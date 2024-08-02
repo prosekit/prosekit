@@ -74,9 +74,9 @@ export type UnderlineExtension = Union<
  * @public
  */
 export function defineUnderline(): UnderlineExtension {
-  return union([
+  return union(
     defineUnderlineSpec(),
     defineUnderlineCommands(),
     defineUnderlineKeymap(),
-  ])
+  )
 }

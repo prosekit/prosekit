@@ -14,7 +14,7 @@ import {
 } from './parse'
 
 describe('parse', () => {
-  const extension = union([defineParagraph(), defineText(), defineDoc()])
+  const extension = union(defineParagraph(), defineText(), defineDoc())
   const editor = createEditor({ extension })
   const schema = editor.schema
   const n = editor.nodes

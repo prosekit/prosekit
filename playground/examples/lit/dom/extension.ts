@@ -8,12 +8,12 @@ import {
 import { defineCodeBlockView } from './code-block-view'
 
 export function defineExtension() {
-  return union([
+  return union(
     defineBasicExtension(),
     defineCodeBlock(),
     defineCodeBlockShiki(),
     defineCodeBlockView(),
-  ])
+  )
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>

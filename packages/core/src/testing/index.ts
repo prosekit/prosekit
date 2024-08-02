@@ -126,7 +126,7 @@ function defineCodeBlock(): CodeBlockExtension {
  * @internal
  */
 export function defineTestExtension() {
-  return union([
+  return union(
     defineBaseCommands(),
     defineBaseKeymap(),
     defineDoc(),
@@ -138,7 +138,7 @@ export function defineTestExtension() {
     defineLink(),
     defineHeading(),
     defineCodeBlock(),
-  ])
+  )
 }
 
 /**

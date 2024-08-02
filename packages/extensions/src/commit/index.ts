@@ -241,10 +241,10 @@ function defineCommitDecoration(commit: Commit): PlainExtension {
  * Define an extension to display the changes from the given commit in the editor.
  */
 function defineCommitViewer(commit: Commit): PlainExtension {
-  return union([
+  return union(
     defineDefaultState({ defaultDoc: commit.doc }),
     defineCommitDecoration(commit),
-  ])
+  )
 }
 
 class CommitRecorder {

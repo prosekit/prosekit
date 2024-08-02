@@ -11,10 +11,10 @@ import {
 } from 'prosekit/lit/autocomplete'
 
 export function defineExtension() {
-  return union([
+  return union(
     defineBasicExtension(),
     definePlaceholder({ placeholder: 'Press / for commands...' }),
-  ])
+  )
 }
 
 const editor = createEditor({ extension: defineExtension() })

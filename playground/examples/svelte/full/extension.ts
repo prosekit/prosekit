@@ -14,7 +14,7 @@ import {
 import CodeBlockView from './code-block-view.svelte'
 
 export function defineExtension() {
-  return union([
+  return union(
     defineBasicExtension(),
     definePlaceholder({ placeholder: 'Press / for commands...' }),
     defineMention(),
@@ -25,7 +25,7 @@ export function defineExtension() {
       contentAs: 'code',
       component: CodeBlockView as unknown as SvelteNodeViewComponent,
     }),
-  ])
+  )
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>

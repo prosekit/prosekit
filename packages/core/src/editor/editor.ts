@@ -80,10 +80,10 @@ export function setupEditorExtension<E extends Extension>(
   options: EditorOptions<E>,
 ): E {
   if (options.defaultContent || options.defaultDoc || options.defaultHTML) {
-    return union([
+    return union(
       options.extension,
       defineDefaultState(options),
-    ]) as Extension as E
+    ) as Extension as E
   }
   return options.extension
 }

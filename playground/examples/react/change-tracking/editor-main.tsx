@@ -18,10 +18,10 @@ export default function Editor({
   defaultContent?: NodeJSON
 }) {
   const editor = useMemo(() => {
-    const extension = union([
+    const extension = union(
       defineBasicExtension(),
       defineCommitRecorder(commitRecorder),
-    ])
+    )
     return createEditor({ extension, defaultContent })
   }, [commitRecorder, defaultContent])
 

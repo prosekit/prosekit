@@ -2,7 +2,7 @@ import { defineMarkSpec, union } from 'prosekit/core'
 import { defineMarkRule } from 'prosekit/extensions/mark-rule'
 
 export function defineIssueLink() {
-  return union([
+  return union(
     defineMarkSpec({
       name: 'issueLink',
       inclusive: false,
@@ -28,5 +28,5 @@ export function defineIssueLink() {
         return { issueNumber: Number.parseInt(match[1]) }
       },
     }),
-  ])
+  )
 }

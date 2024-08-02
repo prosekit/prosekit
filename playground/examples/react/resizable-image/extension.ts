@@ -9,7 +9,7 @@ import {
 import ImageView from './image-view'
 
 export function defineExtension() {
-  return union([
+  return union(
     defineBasicExtension(),
 
     defineNodeAttr({
@@ -29,7 +29,7 @@ export function defineExtension() {
       contentAs: 'div',
       component: ImageView satisfies ReactNodeViewComponent,
     }),
-  ])
+  )
 }
 
 export type ImageAttrs = BaseImageAttrs & {

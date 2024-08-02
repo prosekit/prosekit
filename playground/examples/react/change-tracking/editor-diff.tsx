@@ -8,11 +8,11 @@ import { useMemo } from 'react'
 
 export default function DiffViewer({ commit }: { commit: Commit }) {
   const editor = useMemo(() => {
-    const extension = union([
+    const extension = union(
       defineBasicExtension(),
       defineReadonly(),
       defineCommitViewer(commit),
-    ])
+    )
     return createEditor({ extension })
   }, [commit])
 

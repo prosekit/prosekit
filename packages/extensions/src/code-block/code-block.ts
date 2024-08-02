@@ -33,11 +33,11 @@ export type CodeBlockExtension = Union<
  * @public
  */
 export function defineCodeBlock(): CodeBlockExtension {
-  return union([
+  return union(
     defineCodeBlockSpec(),
     defineCodeBlockInputRule(),
     defineCodeBlockEnterRule(),
     defineCodeBlockKeymap(),
     defineCodeBlockCommands(),
-  ])
+  )
 }

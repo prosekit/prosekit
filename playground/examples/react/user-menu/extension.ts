@@ -4,13 +4,13 @@ import { defineMention } from 'prosekit/extensions/mention'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
 
 export function defineExtension() {
-  return union([
+  return union(
     defineBasicExtension(),
     definePlaceholder({
       placeholder: 'Type @ to metion someone or # to tag something...',
     }),
     defineMention(),
-  ])
+  )
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>

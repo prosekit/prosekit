@@ -20,12 +20,12 @@ export type HeadingExtension = Union<
  * @public
  */
 export function defineHeading(): HeadingExtension {
-  return union([
+  return union(
     defineHeadingSpec(),
     defineHeadingInputRule(),
     defineHeadingKeymap(),
     defineHeadingCommands(),
-  ])
+  )
 }
 
 export {

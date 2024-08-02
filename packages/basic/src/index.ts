@@ -81,7 +81,7 @@ export type BasicExtension = Union<
  * @public
  */
 export function defineBasicExtension(): BasicExtension {
-  return union([
+  return union(
     defineDoc(),
     defineText(),
     defineHeading(),
@@ -102,5 +102,5 @@ export function defineBasicExtension(): BasicExtension {
     defineVirtualSelection(),
     defineModClickPrevention(),
     defineTable(),
-  ])
+  )
 }

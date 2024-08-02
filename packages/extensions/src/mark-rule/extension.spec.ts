@@ -16,7 +16,7 @@ import { defineMarkRule } from './index'
 
 describe('defineMarkRule', () => {
   const editor = createEditor({
-    extension: union([
+    extension: union(
       defineDoc(),
       defineText(),
       defineParagraph(),
@@ -54,7 +54,7 @@ describe('defineMarkRule', () => {
         regex: /[a-z]+@example\.com/g,
         type: 'email',
       }),
-    ]),
+    ),
   })
 
   const triggerMarkRule = (doc: ProseMirrorNode): string => {

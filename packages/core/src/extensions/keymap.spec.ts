@@ -13,7 +13,7 @@ describe('keymap', () => {
   it('can register and unregister keymap', () => {
     const div = document.body.appendChild(document.createElement('div'))
     const editor = createEditor({
-      extension: union([defineDoc(), defineText(), defineParagraph()]),
+      extension: union(defineDoc(), defineText(), defineParagraph()),
     })
     editor.mount(div)
 
@@ -54,7 +54,7 @@ describe('keymap', () => {
   it('can skip unnecessary plugin update', () => {
     const div = document.body.appendChild(document.createElement('div'))
     const editor = createEditor({
-      extension: union([defineDoc(), defineText(), defineParagraph()]),
+      extension: union(defineDoc(), defineText(), defineParagraph()),
     })
     editor.mount(div)
 

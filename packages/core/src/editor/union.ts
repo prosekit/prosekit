@@ -4,10 +4,22 @@ import type { Extension, Union } from '../types/extension'
 import { assert } from '../utils/assert'
 
 /**
- * Merge multiple extensions into one.
+ * Merges multiple extensions into one. You can pass multiple extensions as
+ * arguments or a single array containing multiple extensions.
  *
  * @throws If no extensions are provided.
  *
+ * @example
+ *
+ * ```ts
+ * function defineFancyNodes() {
+ *   return union(
+ *     defineFancyParagraph(),
+ *     defineFancyHeading(),
+ *   )
+ * }
+ * ```
+ * 
  * @example
  *
  * ```ts

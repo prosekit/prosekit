@@ -66,9 +66,9 @@ export function defineHistory({
   depth = 200,
   newGroupDelay = 250,
 }: HistoryOptions = {}): HistoryExtension {
-  return union([
+  return union(
     definePlugin(history({ depth, newGroupDelay })),
     defineKeymap(keymap),
     defineCommands(commands),
-  ])
+  )
 }

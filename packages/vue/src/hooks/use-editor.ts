@@ -44,10 +44,10 @@ export function useEditor<E extends Extension = any>(options?: {
   if (update) {
     onMounted(() => {
       const forceUpdate = () => triggerRef(editorRef)
-      const extension = union([
+      const extension = union(
         defineMountHandler(forceUpdate),
         defineUpdateHandler(forceUpdate),
-      ])
+      )
       const dispose = editor.use(extension)
       onUnmounted(dispose)
     })

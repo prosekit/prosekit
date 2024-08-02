@@ -82,10 +82,10 @@ export type CodeExtension = Union<[CodeSpecExtension, CodeCommandsExtension]>
  * @public
  */
 export function defineCode(): CodeExtension {
-  return union([
+  return union(
     defineCodeSpec(),
     defineCodeCommands(),
     defineCodeKeymap(),
     defineCodeInputRule(),
-  ])
+  )
 }

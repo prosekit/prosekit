@@ -11,13 +11,13 @@ import { describe, expect, it } from 'vitest'
 import { defineItalic } from './index'
 
 describe('command', () => {
-  const extension = union([
+  const extension = union(
     defineDoc(),
     defineParagraph(),
     defineText(),
     defineItalic(),
     defineBaseCommands(),
-  ])
+  )
   const editor = createEditor({ extension })
   const div = document.body.appendChild(document.createElement('div'))
   editor.mount(div)

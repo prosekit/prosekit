@@ -37,10 +37,10 @@ export function useEditor<E extends Extension = any>(options?: {
 
   createEffect(() => {
     if (update) {
-      const extension = union([
+      const extension = union(
         defineMountHandler(forceUpdate),
         defineUpdateHandler(forceUpdate),
-      ])
+      )
       return editor.use(extension)
     }
   }, [editor, update, forceUpdate])

@@ -84,5 +84,5 @@ export type ImageExtension = Union<[ImageSpecExtension, ImageCommandsExtension]>
  * @public
  */
 export function defineImage(): ImageExtension {
-  return union([defineImageSpec(), defineImageCommands()])
+  return union(defineImageSpec(), defineImageCommands())
 }

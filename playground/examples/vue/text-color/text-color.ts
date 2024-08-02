@@ -47,5 +47,5 @@ export function defineTextColorCommands() {
 }
 
 export function defineTextColor() {
-  return union([defineTextColorSpec(), defineTextColorCommands()])
+  return union(defineTextColorSpec(), defineTextColorCommands())
 }

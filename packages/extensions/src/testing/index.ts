@@ -31,7 +31,7 @@ import { defineUnderline } from '../underline'
  * @internal
  */
 export function defineTestExtension() {
-  return union([
+  return union(
     defineDoc(),
     defineText(),
     defineHeading(),
@@ -49,7 +49,7 @@ export function defineTestExtension() {
     defineImage(),
     defineParagraph(),
     defineTable(),
-  ])
+  )
 }
 
 /**

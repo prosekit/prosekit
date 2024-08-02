@@ -26,8 +26,8 @@ importers:
         specifier: ^0.21.4
         version: 0.21.4
       '@ocavue/eslint-config':
-        specifier: ^2.0.2
-        version: 2.0.2(@typescript-eslint/parser@8.0.0(eslint@9.8.0)(typescript@5.5.4))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.0(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0))(eslint@9.8.0)(typescript@5.5.4)
+        specifier: ^2.1.0
+        version: 2.1.0(@typescript-eslint/parser@8.0.0(eslint@9.8.0)(typescript@5.5.4))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.0(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0))(eslint@9.8.0)(typescript@5.5.4)
       '@prosekit/unocss-preset':
         specifier: workspace:*
         version: link:packages/unocss-preset
@@ -106,7 +106,7 @@ importers:
         version: 12.1.5(postcss@8.4.40)
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -143,7 +143,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -182,7 +182,7 @@ importers:
         version: 9.0.1
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
     devDependencies:
       '@changesets/read':
         specifier: ^0.6.0
@@ -215,8 +215,8 @@ importers:
         specifier: ^3.2.0
         version: 3.2.0
       tsx:
-        specifier: ^4.16.4
-        version: 4.16.4
+        specifier: ^4.16.5
+        version: 4.16.5
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -246,7 +246,7 @@ importers:
         version: 1.3.2
       prosemirror-highlight:
         specifier: ^0.8.0
-        version: 0.8.0(@types/hast@3.0.4)(prosemirror-model@1.22.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)(prosemirror-view@1.33.9)(shiki@1.12.0)
+        version: 0.8.0(@types/hast@3.0.4)(prosemirror-model@1.22.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)(prosemirror-view@1.33.9)(shiki@1.12.1)
       prosemirror-search:
         specifier: ^1.0.0
         version: 1.0.0
@@ -254,8 +254,8 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       shiki:
-        specifier: ^1.12.0
-        version: 1.12.0
+        specifier: ^1.12.1
+        version: 1.12.1
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -265,7 +265,7 @@ importers:
         version: 2.0.5(playwright@1.45.3)(typescript@5.5.4)(vitest@2.0.5)
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       type-fest:
         specifier: ^4.23.0
         version: 4.23.0
@@ -287,7 +287,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -327,7 +327,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -358,7 +358,7 @@ importers:
         version: 10.23.1
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -434,7 +434,7 @@ importers:
         version: 4.2.18
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -477,7 +477,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -505,7 +505,7 @@ importers:
         version: 1.8.19
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -547,8 +547,8 @@ importers:
         specifier: ^3.8.5
         version: 3.8.5(@babel/core@7.25.2)(postcss@8.4.40)(svelte@4.2.18)
       tsx:
-        specifier: ^4.16.4
-        version: 4.16.4
+        specifier: ^4.16.5
+        version: 4.16.5
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -629,7 +629,7 @@ importers:
         version: 2.4.6
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -676,8 +676,8 @@ importers:
         specifier: workspace:^
         version: link:../pm
       '@zag-js/dom-query':
-        specifier: ^0.63.0
-        version: 0.63.0
+        specifier: ^0.64.0
+        version: 0.64.0
       just-omit:
         specifier: ^2.2.0
         version: 2.2.0
@@ -687,7 +687,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.2.3
-        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -708,13 +708,13 @@ importers:
         version: 4.4.0(solid-js@1.8.19)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))
       '@astrojs/svelte':
         specifier: ^5.7.0
-        version: 5.7.0(astro@4.12.3(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))
+        version: 5.7.0(astro@4.13.0(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))
       '@astrojs/vue':
         specifier: ^4.5.0
-        version: 4.5.0(astro@4.12.3(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4))(rollup@4.19.0)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))
+        version: 4.5.0(astro@4.13.0(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4))(rollup@4.19.0)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))
       '@iconify-json/lucide':
-        specifier: ^1.1.203
-        version: 1.1.203
+        specifier: ^1.1.204
+        version: 1.1.204
       '@playwright/test':
         specifier: ^1.45.3
         version: 1.45.3
@@ -737,8 +737,8 @@ importers:
         specifier: ^0.61.9
         version: 0.61.9
       astro:
-        specifier: ^4.12.3
-        version: 4.12.3(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4)
+        specifier: ^4.13.0
+        version: 4.13.0(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4)
       lit:
         specifier: ^3.1.4
         version: 3.1.4
@@ -803,8 +803,8 @@ importers:
         specifier: ^1.1.43
         version: 1.1.43
       '@iconify-json/lucide':
-        specifier: ^1.1.203
-        version: 1.1.203
+        specifier: ^1.1.204
+        version: 1.1.204
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../packages/dev
@@ -815,8 +815,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/unocss-preset
       '@shikijs/vitepress-twoslash':
-        specifier: ^1.12.0
-        version: 1.12.0(typescript@5.5.4)
+        specifier: ^1.12.1
+        version: 1.12.1(typescript@5.5.4)
       '@types/dom-view-transitions':
         specifier: ^1.0.5
         version: 1.0.5
@@ -998,8 +998,8 @@ packages:
   '@aria-ui/tooltip@0.0.22':
     resolution: {integrity: sha512-0C0ZQ46hzjzOSUJ3i7YNKRq/l1Q2i+IxfKUKKLC5tB+MJrieD66qBtETSlw3HLRtBBuLlcmIugz/IFgfHfAmmg==}
 
-  '@astrojs/compiler@2.9.2':
-    resolution: {integrity: sha512-Vpu0Ffsj8SoV+N0DFHlxxOMKHwSC9059Xy/OlG1t6uFYSoJXxkBC2WyF6igO7x10V+8uJrhOxaXr3nA90kJXow==}
+  '@astrojs/compiler@2.10.1':
+    resolution: {integrity: sha512-XmM4j6BjvOVMag2xELq0JuG2yKOW8wgIu6dvb9BsjbGYmnvoStJn/pqEzVqc1EBszf2xYT7onIkftIOUz9AwrQ==}
 
   '@astrojs/internal-helpers@0.4.1':
     resolution: {integrity: sha512-bMf9jFihO8YP940uD70SI/RDzIhUHJAolWVcO1v5PUivxGKvfLZTLTVVxEYzGYyPsA3ivdLNqMnL5VgmQySa+g==}
@@ -1225,8 +1225,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/plugin-transform-react-jsx@7.24.7':
-    resolution: {integrity: sha512-+Dj06GDZEFRYvclU6k4bme55GKBEWUmByM/eoKuqg4zTNQHiApWRhQph5fxQB2wAEFvRzL1tOEj1RJ19wJrhoA==}
+  '@babel/plugin-transform-react-jsx@7.25.2':
+    resolution: {integrity: sha512-KQsqEAVBpU82NM/B/N9j9WOdphom1SZH3R+2V7INrQUH+V9EBFwZsEJl8eBIVeQE62FxJCc70jzEZwqU7RcVqA==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -1744,8 +1744,8 @@ packages:
   '@iconify-json/logos@1.1.43':
     resolution: {integrity: sha512-UtvL1yDHUr9dl1Tqihh6K9m5dmbYKOYyLf3i9aKhymSW76QjOCGjpgQc0PQ4GJCAdU1cAMu+WO61TgPxdonrlg==}
 
-  '@iconify-json/lucide@1.1.203':
-    resolution: {integrity: sha512-0GgFxPHQt53K+KiM26lwbC8t/J1gaOhX9Cq3hXIX/vtMDqjxGVA9nULQD2b6bK029RKnXryk9zQ3MI5kCot3/g==}
+  '@iconify-json/lucide@1.1.204':
+    resolution: {integrity: sha512-yu85ErrSULW+4/glQjfa+RhwNVq/N55nxQJMUSo2d/gojSr6DdyaoI/l/o6YkPrG0UEwvnP6nWDD8YEJSThVrA==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -1972,8 +1972,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@ocavue/eslint-config@2.0.2':
-    resolution: {integrity: sha512-hfxrcvjy6ku83OoY9owm9vEoTDlarPGpfHth9xjKXRojn+J2tu9pGxLDb+IR+bO1bF2KY7cwbXdkvMI6n4LsWQ==}
+  '@ocavue/eslint-config@2.1.0':
+    resolution: {integrity: sha512-rt0rj2fZkKaAaOcalIZiL6AWpj9q/+T/6Pq3qCK2NY56HJvPEgucrNjf6sJk5lQjMQZSNYlUvdNrWdA11Pp1jA==}
 
   '@one-ini/wasm@0.1.1':
     resolution: {integrity: sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw==}
@@ -2186,17 +2186,17 @@ packages:
   '@shikijs/core@1.10.3':
     resolution: {integrity: sha512-D45PMaBaeDHxww+EkcDQtDAtzv00Gcsp72ukBtaLSmqRvh0WgGMq3Al0rl1QQBZfuneO75NXMIzEZGFitThWbg==}
 
-  '@shikijs/core@1.12.0':
-    resolution: {integrity: sha512-mc1cLbm6UQ8RxLc0dZES7v5rkH+99LxQp/ZvTqV3NLyYsO/fD6JhEflP1H5b2SDq9gI0+0G36AVZWxvounfR9w==}
+  '@shikijs/core@1.12.1':
+    resolution: {integrity: sha512-biCz/mnkMktImI6hMfMX3H9kOeqsInxWEyCHbSlL8C/2TR1FqfmGxTLRNwYCKsyCyxWLbB8rEqXRVZuyxuLFmA==}
 
   '@shikijs/transformers@1.10.3':
     resolution: {integrity: sha512-MNjsyye2WHVdxfZUSr5frS97sLGe6G1T+1P41QjyBFJehZphMcr4aBlRLmq6OSPBslYe9byQPVvt/LJCOfxw8Q==}
 
-  '@shikijs/twoslash@1.12.0':
-    resolution: {integrity: sha512-SX0NpsTYnO26mpWCu2asByzgWnlMP5NPzrhYNGyqS/AQI14sM1AL3/Egc3F2x5u2wa7I9IyokViXOiaPNL46+Q==}
+  '@shikijs/twoslash@1.12.1':
+    resolution: {integrity: sha512-k4D6sC9p9GksbHa4RnB1VkQIZtQ+L7nQMqi/YAxEgTKZF5v7IW6dHak0Z7bvZXrfhle36NIqWMJXz5xDexupvw==}
 
-  '@shikijs/vitepress-twoslash@1.12.0':
-    resolution: {integrity: sha512-ogFziKJAWcI7Fgl2MnkVS59gDggPjnUNZHNCvpHEkzs7Q1y/7Vdg4aphAkLjD//K0pRhgHZW8xqG/qfBdXj0Xw==}
+  '@shikijs/vitepress-twoslash@1.12.1':
+    resolution: {integrity: sha512-zFW9im65bkyBUCLFA8wHte3QvOKyQybScqAZqaSuRm442KyKwGxAEpe+5F0Sj8BOPGNjekzMLJPtTDqUURuSYQ==}
 
   '@sindresorhus/fnv1a@3.1.0':
     resolution: {integrity: sha512-KV321z5m/0nuAg83W1dPLy85HpHDk7Sdi4fJbwvacWsEhAh+rZUW4ZfGcXmUIvjZg4ss2bcwNlRhJ7GBEUG08w==}
@@ -2828,6 +2828,9 @@ packages:
   '@zag-js/dom-query@0.63.0':
     resolution: {integrity: sha512-ChgdEzojNNRv79yR1AXTlRWkQhD0rujIcwljzhceyn2oNKpKLDXNKQj8DP+nYYnmeI66dNlOGY35iUAbDaLV2g==}
 
+  '@zag-js/dom-query@0.64.0':
+    resolution: {integrity: sha512-1NnFveHoCwj9/yk3SpAW0Ri4sK0LAjQtWDhpdycVe1DmvNGD/fGfw9Bk+NL2jyH1HkZGI7LM8vTOojFQE4eR1A==}
+
   '@zag-js/interact-outside@0.63.0':
     resolution: {integrity: sha512-a8sq3D8wWiGnUySdg2UtStwNXfvqqtA84PLoWCYBNi2l/gvsnIIBxikkaEadisVdfQYGyCcRf4hh3BQ6T9FTzw==}
 
@@ -2991,8 +2994,8 @@ packages:
     resolution: {integrity: sha512-es1zHFsnZ4Y4efz412nnrU3KvVAhgqy90a7Yt9Wpi5vQ3l4aYMOX0Qx4FD0elKr5ITEhiUGCSFcgGYf4YTuACg==}
     engines: {node: '>=16.14.0'}
 
-  astro@4.12.3:
-    resolution: {integrity: sha512-rFcRktbZk8CsHufLOB51gYAia3RTuOyaBD8iZXRHP7Oqo6QviquNaa/5U6RoUqyF5KS8vyq/ldJ5jfboJzxuuw==}
+  astro@4.13.0:
+    resolution: {integrity: sha512-tExzJeK1rh7OdVipi1e8S6koVgjQyveSy5fNEc/4Tit4GKl/olMTUEHepZSAKR7VCyiEC/hi3rjaV3t4lxR3tA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -5950,8 +5953,8 @@ packages:
   shiki@1.10.3:
     resolution: {integrity: sha512-eneCLncGuvPdTutJuLyUGS8QNPAVFO5Trvld2wgEq1e002mwctAhJKeMGWtWVXOIEzmlcLRqcgPSorR6AVzOmQ==}
 
-  shiki@1.12.0:
-    resolution: {integrity: sha512-BuAxWOm5JhRcbSOl7XCei8wGjgJJonnV0oipUupPY58iULxUGyHhW5CF+9FRMuM1pcJ5cGEJGll1LusX6FwpPA==}
+  shiki@1.12.1:
+    resolution: {integrity: sha512-nwmjbHKnOYYAe1aaQyEBHvQymJgfm86ZSS7fT8OaPRr4sbAcBNz7PbfAikMEFSDQ6se2j2zobkXvVKcBOm0ysg==}
 
   side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
@@ -6383,8 +6386,8 @@ packages:
       typescript:
         optional: true
 
-  tsx@4.16.4:
-    resolution: {integrity: sha512-E0EDobc7FtOxdNtG0ZQWztLa9PK/TqC5QvdV0heyIMJySwcJ8vyvziOznzO1MIM2IDfacLGBgfiCUmba6mvI7Q==}
+  tsx@4.16.5:
+    resolution: {integrity: sha512-ArsiAQHEW2iGaqZ8fTA1nX0a+lN5mNTyuGRRO6OW3H/Yno1y9/t1f9YOI1Cfoqz63VAthn++ZYcbDP7jPflc+A==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -6974,8 +6977,8 @@ packages:
     resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
     engines: {node: '>=18'}
 
-  zod-to-json-schema@3.23.1:
-    resolution: {integrity: sha512-oT9INvydob1XV0v1d2IadrR74rLtDInLvDFfAa1CG0Pmg/vxATk7I2gSelfj271mbzeM4Da0uuDQE/Nkj3DWNw==}
+  zod-to-json-schema@3.23.2:
+    resolution: {integrity: sha512-uSt90Gzc/tUfyNqxnjlfBs8W6WSGpNBv0rVsNxP/BVSMHMKGdthPYff4xtCHYloJGM0CFxFsb3NbC0eqPhfImw==}
     peerDependencies:
       zod: ^3.23.3
 
@@ -7148,7 +7151,7 @@ snapshots:
       '@aria-ui/presence': 0.0.14
       nanoid: 5.0.7
 
-  '@astrojs/compiler@2.9.2': {}
+  '@astrojs/compiler@2.10.1': {}
 
   '@astrojs/internal-helpers@0.4.1': {}
 
@@ -7166,7 +7169,7 @@ snapshots:
       remark-parse: 11.0.0
       remark-rehype: 11.1.0
       remark-smartypants: 3.0.2
-      shiki: 1.12.0
+      shiki: 1.12.1
       unified: 11.0.5
       unist-util-remove-position: 5.0.0
       unist-util-visit: 5.0.0
@@ -7177,7 +7180,7 @@ snapshots:
 
   '@astrojs/preact@3.5.1(@babel/core@7.25.2)(preact@10.23.1)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))':
     dependencies:
-      '@babel/plugin-transform-react-jsx': 7.24.7(@babel/core@7.25.2)
+      '@babel/plugin-transform-react-jsx': 7.25.2(@babel/core@7.25.2)
       '@babel/plugin-transform-react-jsx-development': 7.24.7(@babel/core@7.25.2)
       '@preact/preset-vite': 2.8.2(@babel/core@7.25.2)(preact@10.23.1)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))
       '@preact/signals': 1.3.0(preact@10.23.1)
@@ -7214,10 +7217,10 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/svelte@5.7.0(astro@4.12.3(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))':
+  '@astrojs/svelte@5.7.0(astro@4.13.0(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))
-      astro: 4.12.3(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4)
+      astro: 4.13.0(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4)
       svelte: 4.2.18
       svelte2tsx: 0.7.13(svelte@4.2.18)(typescript@5.5.4)
       typescript: 5.5.4
@@ -7237,12 +7240,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vue@4.5.0(astro@4.12.3(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4))(rollup@4.19.0)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))':
+  '@astrojs/vue@4.5.0(astro@4.13.0(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4))(rollup@4.19.0)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))':
     dependencies:
       '@vitejs/plugin-vue': 5.0.5(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))
       '@vitejs/plugin-vue-jsx': 4.0.0(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))
       '@vue/compiler-sfc': 3.4.35
-      astro: 4.12.3(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4)
+      astro: 4.13.0(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4)
       vite-plugin-vue-devtools: 7.3.6(rollup@4.19.0)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))
       vue: 3.4.35(typescript@5.5.4)
     transitivePeerDependencies:
@@ -7454,7 +7457,7 @@ snapshots:
   '@babel/plugin-transform-react-jsx-development@7.24.7(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/plugin-transform-react-jsx': 7.24.7(@babel/core@7.25.2)
+      '@babel/plugin-transform-react-jsx': 7.25.2(@babel/core@7.25.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -7468,7 +7471,7 @@ snapshots:
       '@babel/core': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
 
-  '@babel/plugin-transform-react-jsx@7.24.7(@babel/core@7.25.2)':
+  '@babel/plugin-transform-react-jsx@7.25.2(@babel/core@7.25.2)':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-annotate-as-pure': 7.24.7
@@ -8001,7 +8004,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/lucide@1.1.203':
+  '@iconify-json/lucide@1.1.204':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -8269,7 +8272,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@ocavue/eslint-config@2.0.2(@typescript-eslint/parser@8.0.0(eslint@9.8.0)(typescript@5.5.4))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.0(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0))(eslint@9.8.0)(typescript@5.5.4)':
+  '@ocavue/eslint-config@2.1.0(@typescript-eslint/parser@8.0.0(eslint@9.8.0)(typescript@5.5.4))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.0(eslint@9.8.0)(typescript@5.5.4))(eslint@9.8.0))(eslint@9.8.0)(typescript@5.5.4)':
     dependencies:
       '@eslint-types/unicorn': 52.0.0
       '@eslint/compat': 1.1.1
@@ -8335,7 +8338,7 @@ snapshots:
   '@preact/preset-vite@2.8.2(@babel/core@7.25.2)(preact@10.23.1)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))':
     dependencies:
       '@babel/core': 7.25.2
-      '@babel/plugin-transform-react-jsx': 7.24.7(@babel/core@7.25.2)
+      '@babel/plugin-transform-react-jsx': 7.25.2(@babel/core@7.25.2)
       '@babel/plugin-transform-react-jsx-development': 7.24.7(@babel/core@7.25.2)
       '@prefresh/vite': 2.4.6(preact@10.23.1)(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))
       '@rollup/pluginutils': 4.2.1
@@ -8506,7 +8509,7 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
 
-  '@shikijs/core@1.12.0':
+  '@shikijs/core@1.12.1':
     dependencies:
       '@types/hast': 3.0.4
 
@@ -8514,22 +8517,22 @@ snapshots:
     dependencies:
       shiki: 1.10.3
 
-  '@shikijs/twoslash@1.12.0(typescript@5.5.4)':
+  '@shikijs/twoslash@1.12.1(typescript@5.5.4)':
     dependencies:
-      '@shikijs/core': 1.12.0
+      '@shikijs/core': 1.12.1
       twoslash: 0.2.9(typescript@5.5.4)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  '@shikijs/vitepress-twoslash@1.12.0(typescript@5.5.4)':
+  '@shikijs/vitepress-twoslash@1.12.1(typescript@5.5.4)':
     dependencies:
-      '@shikijs/twoslash': 1.12.0(typescript@5.5.4)
+      '@shikijs/twoslash': 1.12.1(typescript@5.5.4)
       floating-vue: 5.2.2(vue@3.4.35(typescript@5.5.4))
       mdast-util-from-markdown: 2.0.1
       mdast-util-gfm: 3.0.0
       mdast-util-to-hast: 13.2.0
-      shiki: 1.12.0
+      shiki: 1.12.1
       twoslash: 0.2.9(typescript@5.5.4)
       twoslash-vue: 0.2.9(typescript@5.5.4)
       vue: 3.4.35(typescript@5.5.4)
@@ -9401,6 +9404,8 @@ snapshots:
 
   '@zag-js/dom-query@0.63.0': {}
 
+  '@zag-js/dom-query@0.64.0': {}
+
   '@zag-js/interact-outside@0.63.0':
     dependencies:
       '@zag-js/dom-event': 0.63.0
@@ -9605,16 +9610,16 @@ snapshots:
       '@babel/parser': 7.25.3
       pathe: 1.1.2
 
-  astro@4.12.3(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4):
+  astro@4.13.0(@types/node@20.14.13)(lightningcss@1.25.1)(typescript@5.5.4):
     dependencies:
-      '@astrojs/compiler': 2.9.2
+      '@astrojs/compiler': 2.10.1
       '@astrojs/internal-helpers': 0.4.1
       '@astrojs/markdown-remark': 5.2.0
       '@astrojs/telemetry': 3.1.0
       '@babel/core': 7.25.2
       '@babel/generator': 7.25.0
       '@babel/parser': 7.25.3
-      '@babel/plugin-transform-react-jsx': 7.24.7(@babel/core@7.25.2)
+      '@babel/plugin-transform-react-jsx': 7.25.2(@babel/core@7.25.2)
       '@babel/traverse': 7.25.3
       '@babel/types': 7.25.2
       '@types/babel__core': 7.20.5
@@ -9657,7 +9662,7 @@ snapshots:
       prompts: 2.4.2
       rehype: 13.0.1
       semver: 7.6.3
-      shiki: 1.12.0
+      shiki: 1.12.1
       string-width: 7.2.0
       strip-ansi: 7.1.0
       tsconfck: 3.1.1(typescript@5.5.4)
@@ -9668,7 +9673,7 @@ snapshots:
       which-pm: 3.0.0
       yargs-parser: 21.1.1
       zod: 3.23.8
-      zod-to-json-schema: 3.23.1(zod@3.23.8)
+      zod-to-json-schema: 3.23.2(zod@3.23.8)
     optionalDependencies:
       sharp: 0.33.4
     transitivePeerDependencies:
@@ -11208,7 +11213,7 @@ snapshots:
       jiti-v1: jiti@1.21.6
       pathe: 1.1.2
       pkg-types: 1.1.3
-      tsx: 4.16.4
+      tsx: 4.16.5
     transitivePeerDependencies:
       - supports-color
 
@@ -12539,13 +12544,13 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(yaml@2.4.5):
+  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(yaml@2.4.5):
     dependencies:
       lilconfig: 3.1.2
     optionalDependencies:
       jiti: 1.21.6
       postcss: 8.4.40
-      tsx: 4.16.4
+      tsx: 4.16.5
       yaml: 2.4.5
 
   postcss-nesting@12.1.5(postcss@8.4.40):
@@ -12589,7 +12594,7 @@ snapshots:
 
   prettier-plugin-astro@0.14.1:
     dependencies:
-      '@astrojs/compiler': 2.9.2
+      '@astrojs/compiler': 2.10.1
       prettier: 3.3.3
       sass-formatter: 0.7.9
 
@@ -12660,14 +12665,14 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.33.9
 
-  prosemirror-highlight@0.8.0(@types/hast@3.0.4)(prosemirror-model@1.22.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)(prosemirror-view@1.33.9)(shiki@1.12.0):
+  prosemirror-highlight@0.8.0(@types/hast@3.0.4)(prosemirror-model@1.22.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.9.0)(prosemirror-view@1.33.9)(shiki@1.12.1):
     optionalDependencies:
       '@types/hast': 3.0.4
       prosemirror-model: 1.22.2
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.9.0
       prosemirror-view: 1.33.9
-      shiki: 1.12.0
+      shiki: 1.12.1
 
   prosemirror-history@1.4.1:
     dependencies:
@@ -13220,9 +13225,9 @@ snapshots:
       '@shikijs/core': 1.10.3
       '@types/hast': 3.0.4
 
-  shiki@1.12.0:
+  shiki@1.12.1:
     dependencies:
-      '@shikijs/core': 1.12.0
+      '@shikijs/core': 1.12.1
       '@types/hast': 3.0.4
 
   side-channel@1.0.6:
@@ -13638,7 +13643,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsup@8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(typescript@5.5.4)(yaml@2.4.5):
+  tsup@8.2.3(@microsoft/api-extractor@7.47.4(@types/node@20.14.13))(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(typescript@5.5.4)(yaml@2.4.5):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -13650,7 +13655,7 @@ snapshots:
       globby: 11.1.0
       joycon: 3.1.1
       picocolors: 1.0.1
-      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.4)(yaml@2.4.5)
+      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.40)(tsx@4.16.5)(yaml@2.4.5)
       resolve-from: 5.0.0
       rollup: 4.19.0
       source-map: 0.8.0-beta.0
@@ -13666,7 +13671,7 @@ snapshots:
       - tsx
       - yaml
 
-  tsx@4.16.4:
+  tsx@4.16.5:
     dependencies:
       esbuild: 0.21.5
       get-tsconfig: 4.7.5
@@ -13782,7 +13787,7 @@ snapshots:
       lunr: 2.3.9
       markdown-it: 14.1.0
       minimatch: 9.0.5
-      shiki: 1.12.0
+      shiki: 1.12.1
       typescript: 5.5.4
       yaml: 2.4.5
 
@@ -14108,7 +14113,7 @@ snapshots:
     dependencies:
       '@docsearch/css': 3.6.1
       '@docsearch/js': 3.6.1(@algolia/client-search@4.24.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.15.0)
-      '@shikijs/core': 1.12.0
+      '@shikijs/core': 1.12.1
       '@shikijs/transformers': 1.10.3
       '@types/markdown-it': 14.1.1
       '@vitejs/plugin-vue': 5.0.5(vite@5.3.5(@types/node@20.14.13)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))
@@ -14119,7 +14124,7 @@ snapshots:
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 7.0.2
-      shiki: 1.12.0
+      shiki: 1.12.1
       vite: 5.3.5(@types/node@20.14.13)(lightningcss@1.25.1)
       vue: 3.4.35(typescript@5.5.4)
     optionalDependencies:
@@ -14387,7 +14392,7 @@ snapshots:
 
   yoctocolors@2.1.1: {}
 
-  zod-to-json-schema@3.23.1(zod@3.23.8):
+  zod-to-json-schema@3.23.2(zod@3.23.8):
     dependencies:
       zod: 3.23.8
 

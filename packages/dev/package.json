@@ -46,7 +46,7 @@
     "js-yaml": "^4.1.0",
     "json5": "^2.2.3",
     "just-filter-object": "^3.2.0",
-    "tsx": "^4.16.4",
+    "tsx": "^4.16.5",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5"
   }

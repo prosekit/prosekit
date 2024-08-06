@@ -57,7 +57,7 @@
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
     "@vue/test-utils": "^2.4.6",
-    "tsup": "^8.2.3",
+    "tsup": "^8.2.4",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5",
     "vue": "^3.4.35"

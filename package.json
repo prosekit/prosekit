@@ -42,7 +42,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^9.8.0",
     "jsdom": "^24.1.1",
-    "playwright": "^1.45.3",
+    "playwright": "^1.46.0",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.2.6",

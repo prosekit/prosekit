@@ -79,8 +79,19 @@
     "prosemirror-highlight": "^0.8.0",
     "prosemirror-search": "^1.0.0",
     "prosemirror-tables": "^1.4.0",
-    "shiki": "^1.12.1",
-    "y-prosemirror": "^1.2.9"
+    "shiki": "^1.12.1"
+  },
+  "peerDependencies": {
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18"
+  },
+  "peerDependenciesMeta": {
+    "y-prosemirror": {
+      "optional": true
+    },
+    "yjs": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
@@ -89,6 +100,7 @@
     "type-fest": "^4.23.0",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5",
+    "y-prosemirror": ">= 1.2.9",
     "y-protocols": "^1.0.6",
     "yjs": "^13.6.18"
   },

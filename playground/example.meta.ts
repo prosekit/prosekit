@@ -515,10 +515,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "input.tsx",
-          "hidden": false
-        },
-        {
           "path": "button.tsx",
           "hidden": false
         }

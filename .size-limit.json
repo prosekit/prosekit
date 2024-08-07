@@ -21,147 +21,291 @@
   },
   {
     "name": "prosekit/extensions",
-    "path": "packages/prosekit/dist/prosekit-extensions.js"
+    "path": "packages/prosekit/dist/prosekit-extensions.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/autocomplete",
-    "path": "packages/prosekit/dist/prosekit-extensions-autocomplete.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-autocomplete.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/blockquote",
-    "path": "packages/prosekit/dist/prosekit-extensions-blockquote.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-blockquote.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/bold",
-    "path": "packages/prosekit/dist/prosekit-extensions-bold.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-bold.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/code",
-    "path": "packages/prosekit/dist/prosekit-extensions-code.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-code.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/code-block",
-    "path": "packages/prosekit/dist/prosekit-extensions-code-block.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-code-block.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/commit",
-    "path": "packages/prosekit/dist/prosekit-extensions-commit.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-commit.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/commit/style.css",
-    "path": "packages/prosekit/dist/extensions/commit/style.css"
+    "path": "packages/prosekit/dist/extensions/commit/style.css",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/drop-cursor",
-    "path": "packages/prosekit/dist/prosekit-extensions-drop-cursor.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-drop-cursor.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/enter-rule",
-    "path": "packages/prosekit/dist/prosekit-extensions-enter-rule.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-enter-rule.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/gap-cursor",
-    "path": "packages/prosekit/dist/prosekit-extensions-gap-cursor.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-gap-cursor.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/gap-cursor/style.css",
-    "path": "packages/prosekit/dist/extensions/gap-cursor/style.css"
+    "path": "packages/prosekit/dist/extensions/gap-cursor/style.css",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/heading",
-    "path": "packages/prosekit/dist/prosekit-extensions-heading.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-heading.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/image",
-    "path": "packages/prosekit/dist/prosekit-extensions-image.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-image.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/input-rule",
-    "path": "packages/prosekit/dist/prosekit-extensions-input-rule.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-input-rule.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/italic",
-    "path": "packages/prosekit/dist/prosekit-extensions-italic.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-italic.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/link",
-    "path": "packages/prosekit/dist/prosekit-extensions-link.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-link.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/list",
-    "path": "packages/prosekit/dist/prosekit-extensions-list.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-list.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/list/style.css",
-    "path": "packages/prosekit/dist/extensions/list/style.css"
+    "path": "packages/prosekit/dist/extensions/list/style.css",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/mark-rule",
-    "path": "packages/prosekit/dist/prosekit-extensions-mark-rule.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-mark-rule.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/mention",
-    "path": "packages/prosekit/dist/prosekit-extensions-mention.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-mention.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/mod-click-prevention",
-    "path": "packages/prosekit/dist/prosekit-extensions-mod-click-prevention.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-mod-click-prevention.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/placeholder",
-    "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/placeholder/style.css",
-    "path": "packages/prosekit/dist/extensions/placeholder/style.css"
+    "path": "packages/prosekit/dist/extensions/placeholder/style.css",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/readonly",
-    "path": "packages/prosekit/dist/prosekit-extensions-readonly.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-readonly.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/search",
-    "path": "packages/prosekit/dist/prosekit-extensions-search.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-search.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/search/style.css",
-    "path": "packages/prosekit/dist/extensions/search/style.css"
+    "path": "packages/prosekit/dist/extensions/search/style.css",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/strike",
-    "path": "packages/prosekit/dist/prosekit-extensions-strike.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-strike.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/table",
-    "path": "packages/prosekit/dist/prosekit-extensions-table.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-table.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/table/style.css",
-    "path": "packages/prosekit/dist/extensions/table/style.css"
+    "path": "packages/prosekit/dist/extensions/table/style.css",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/text-align",
-    "path": "packages/prosekit/dist/prosekit-extensions-text-align.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-text-align.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/underline",
-    "path": "packages/prosekit/dist/prosekit-extensions-underline.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-underline.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/virtual-selection",
-    "path": "packages/prosekit/dist/prosekit-extensions-virtual-selection.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-virtual-selection.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/virtual-selection/style.css",
-    "path": "packages/prosekit/dist/extensions/virtual-selection/style.css"
+    "path": "packages/prosekit/dist/extensions/virtual-selection/style.css",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/yjs",
-    "path": "packages/prosekit/dist/prosekit-extensions-yjs.js"
+    "path": "packages/prosekit/dist/prosekit-extensions-yjs.js",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/extensions/yjs/style.css",
-    "path": "packages/prosekit/dist/extensions/yjs/style.css"
+    "path": "packages/prosekit/dist/extensions/yjs/style.css",
+    "ignore": [
+      "y-prosemirror",
+      "yjs"
+    ]
   },
   {
     "name": "prosekit/lit",

@@ -29,11 +29,3 @@
 .ProseMirror > .ProseMirror-yjs-cursor:first-child {
   margin-top: 16px;
 }
-#y-functions {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-#y-functions > * {
-  display: inline-block;
-}

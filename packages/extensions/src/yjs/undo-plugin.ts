@@ -1,3 +1,4 @@
+import { definePlugin } from '@prosekit/core'
 import type { Command, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 import {
@@ -22,7 +23,7 @@ function fixYUndoPlugin(yUndoPluginInstance: ProseMirrorPlugin) {
 
     if (undoManager.restore) {
       undoManager.restore()
-      // eslint-disable-next-line
+      // eslint-disable-next-line @typescript-eslint/no-empty-function
       undoManager.restore = () => {}
     }
 
@@ -57,13 +58,13 @@ function fixYUndoPlugin(yUndoPluginInstance: ProseMirrorPlugin) {
   }
 }
 
-export type YUndoOpts = Parameters<typeof originalYUndoPlugin>[0]
+export type YjsUndoOptions = Parameters<typeof originalYUndoPlugin>[0]
 
 /**
  * @internal
  */
-export function yUndoPlugin(opts?: YUndoOpts) {
-  const yUndoPluginInstance = originalYUndoPlugin(opts)
+export function yUndoPlugin(options?: YjsUndoOptions) {
+  const yUndoPluginInstance = originalYUndoPlugin(options)
   fixYUndoPlugin(yUndoPluginInstance)
   return yUndoPluginInstance
 }
@@ -72,9 +73,6 @@ export function yUndoPlugin(opts?: YUndoOpts) {
  * @internal
  */
 export const undo: Command = (state, dispatch) => {
-  const { tr } = state
-  tr.setMeta('preventDispatch', true)
-
   const { undoManager } = yUndoPluginKey.getState(state) as {
     undoManager: UndoManager
   }
@@ -93,10 +91,6 @@ export const undo: Command = (state, dispatch) => {
  * @internal
  */
 export const redo: Command = (state, dispatch) => {
-  const { tr } = state
-
-  tr.setMeta('preventDispatch', true)
-
   const { undoManager } = yUndoPluginKey.getState(state) as {
     undoManager: UndoManager
   }
@@ -110,4 +104,8 @@ export const redo: Command = (state, dispatch) => {
   }
 
   return yRedo(state)
+}
+
+export function defineYjsUndoPlugin(options: YjsUndoOptions) {
+  return definePlugin(yUndoPlugin(options))
 }

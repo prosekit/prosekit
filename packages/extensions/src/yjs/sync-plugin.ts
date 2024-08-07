@@ -7,8 +7,6 @@ export type YjsSyncOptions = Parameters<typeof ySyncPlugin>[1] & {
   fragment: Y.XmlFragment
 }
 
-export function defineYjsSyncPlugin(
-  options: YjsSyncOptions,
-) {
+export function defineYjsSyncPlugin(options: YjsSyncOptions) {
   return definePlugin(ySyncPlugin(options.fragment, options) as Plugin)
 }

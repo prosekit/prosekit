@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.9.15
+
+### Patch Changes
+
+- [`fe686fa`](https://github.com/ocavue/prosekit/commit/fe686fa8f846306e68c61a6dc7b0a3569b2582dd) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineYjs` to bind [Yjs](https://github.com/yjs/yjs) to ProseKit.
+
 ## 0.9.14
 
 ### Patch Changes

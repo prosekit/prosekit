@@ -197,7 +197,7 @@
     "tsup": "^8.2.4",
     "typescript": "^5.5.4",
     "vue": "^3.4.35",
-    "y-prosemirror": ">= 1.2.9",
+    "y-prosemirror": "^1.2.9",
     "yjs": "^13.6.18"
   },
   "publishConfig": {

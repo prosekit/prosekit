@@ -45,7 +45,7 @@ export function defineExtension(doc: Y.Doc, awareness: Awareness) {
     defineVirtualSelection(),
     defineModClickPrevention(),
     defineTable(),
-    defineYjs(doc, awareness),
+    defineYjs({ doc, awareness }),
   ])
 }
 

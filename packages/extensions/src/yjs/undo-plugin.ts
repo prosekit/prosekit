@@ -58,12 +58,19 @@ function fixYUndoPlugin(yUndoPluginInstance: ProseMirrorPlugin) {
   }
 }
 
-export type YjsUndoOptions = Parameters<typeof originalYUndoPlugin>[0]
+/**
+ * Options for the `y-prosemirror`'s `yUndoPlugin`.
+ */
+export type YjsUndoPluginOptions = NonNullable<
+  Parameters<typeof originalYUndoPlugin>[0]
+>
+
+export interface YjsUndoOptions extends YjsUndoPluginOptions {}
 
 /**
  * @internal
  */
-export function yUndoPlugin(options?: YjsUndoOptions) {
+function yUndoPlugin(options?: YjsUndoOptions) {
   const yUndoPluginInstance = originalYUndoPlugin(options)
   fixYUndoPlugin(yUndoPluginInstance)
   return yUndoPluginInstance

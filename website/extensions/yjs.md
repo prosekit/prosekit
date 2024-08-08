@@ -1,14 +1,14 @@
 # Yjs
 
-[`Yjs`](https://github.com/yjs/yjs) is a CRDT framework with a powerful abstraction of shared data.
-
-By integrating yjs and prosekit, it is possible to create a document editor that allows multiple users to collaborate.
+Make the editor collaborative by integrating [Yjs](https://github.com/yjs/yjs) with ProseKit.
 
 <!-- @include: @/examples/yjs.md -->
 
 ## Usage
 
-it is necessary to install the latest versions of `yjs` and `y-prosemirror` as dependencies.
+You need to install `yjs` and `y-prosemirror` to use this extension.
+
+::: code-group
 
 ```shell [npm]
 npm install yjs y-prosemirror
@@ -21,6 +21,8 @@ yarn add yjs y-prosemirror
 ```shell [pnpm]
 pnpm add yjs y-prosemirror
 ```
+
+:::
 
 ```ts twoslash
 import 'prosekit/extensions/yjs/style.css'
@@ -35,7 +37,7 @@ const provider = new WebsocketProvider(
   doc,
 )
 
-const extension = defineYjs(doc, provider.awareness)
+const extension = defineYjs({ doc, awareness: provider.awareness })
 ```
 
 ## API Reference

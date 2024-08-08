@@ -1,53 +1,98 @@
-import { Priority, union, withPriority } from '@prosekit/core'
+import {
+  Priority,
+  union,
+  withPriority,
+  type PlainExtension,
+  type Union,
+} from '@prosekit/core'
 import { Awareness } from 'y-protocols/awareness'
 import * as Y from 'yjs'
 
-import { defineYjsCommands } from './commands'
-import { defineYjsCursorPlugin, type YjsCursorOptions } from './cursor-plugin'
+import { defineYjsCommands, type YjsCommandsExtension } from './commands'
+import {
+  defineYjsCursorPlugin,
+  type YjsCursorOptions,
+  type YjsCursorPluginOptions,
+} from './cursor-plugin'
 import { defineYjsKeymap } from './keymap'
-import { type YjsSyncOptions, defineYjsSyncPlugin } from './sync-plugin'
-import { defineYjsUndoPlugin, type YjsUndoOptions } from './undo-plugin'
+import {
+  defineYjsSyncPlugin,
+  type YjsSyncOptions,
+  type YjsSyncPluginOptions,
+} from './sync-plugin'
+import {
+  defineYjsUndoPlugin,
+  type YjsUndoOptions,
+  type YjsUndoPluginOptions,
+} from './undo-plugin'
 
 export interface YjsOptions {
-  fragment?: Y.XmlFragment | string
+  /**
+   * The Yjs instance handles the state of shared data.
+   */
+  doc: Y.Doc
 
-  ySyncOptions?: YjsSyncOptions
+  /**
+   * The Awareness instance.
+   */
+  awareness: Awareness
 
-  yUndoOptions?: YjsUndoOptions
+  /**
+   * The Yjs XmlFragment to use. If not provided,
+   * `doc.getXmlFragment('prosemirror')` will be used.
+   */
+  fragment?: Y.XmlFragment
 
-  yCursorOptions?: YjsCursorOptions
+  /**
+   * Options for `y-prosemirror`'s `ySyncPlugin`.
+   */
+  sync?: YjsSyncPluginOptions
+
+  /**
+   * Options for the `y-prosemirror`'s `yUndoPlugin`.
+   */
+  undo?: YjsUndoPluginOptions
+
+  /**
+   * Options for `y-prosemirror`'s `yCursorPlugin`.
+   */
+  cursor?: YjsCursorPluginOptions
 }
+
+/**
+ * @internal
+ */
+export type YjsExtension = Union<[YjsCommandsExtension, PlainExtension]>
 
 /**
  * @public
  */
-function defineYjs(doc: Y.Doc, awareness: Awareness, options?: YjsOptions) {
-  const { fragment, ySyncOptions, yUndoOptions, yCursorOptions } = options ?? {}
-
-  const concreteFragment =
-    fragment == null
-      ? doc.getXmlFragment('prosemirror')
-      : typeof fragment === 'string'
-        ? doc.getXmlFragment(fragment)
-        : fragment
+export function defineYjs(options: YjsOptions): YjsExtension {
+  const { doc, awareness, sync, undo, cursor } = options
+  const fragment = options.fragment ?? doc.getXmlFragment('prosemirror')
 
   return withPriority(
     union([
       defineYjsKeymap(),
       defineYjsCommands(),
-      defineYjsCursorPlugin(awareness, yCursorOptions),
-      defineYjsUndoPlugin(yUndoOptions),
-      defineYjsSyncPlugin({ ...ySyncOptions, fragment: concreteFragment }),
+      defineYjsCursorPlugin({ ...cursor, awareness }),
+      defineYjsUndoPlugin({ ...undo }),
+      defineYjsSyncPlugin({ ...sync, fragment }),
     ]),
     Priority.high,
   )
 }
 
 export {
-  defineYjs,
-  defineYjsKeymap,
   defineYjsCommands,
   defineYjsCursorPlugin,
-  defineYjsUndoPlugin,
+  defineYjsKeymap,
   defineYjsSyncPlugin,
+  defineYjsUndoPlugin,
+  type YjsCursorOptions,
+  type YjsCursorPluginOptions,
+  type YjsSyncOptions,
+  type YjsSyncPluginOptions,
+  type YjsUndoOptions,
+  type YjsUndoPluginOptions,
 }

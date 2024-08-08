@@ -21,6 +21,7 @@ export const SaveJson = { args: { story: 'save-json' } }
 export const SaveMarkdown = { args: { story: 'save-markdown' } }
 export const Search = { args: { story: 'search' } }
 export const SlashMenu = { args: { story: 'slash-menu' } }
+export const Table = { args: { story: 'table' } }
 export const Toolbar = { args: { story: 'toolbar' } }
 export const Unmount = { args: { story: 'unmount' } }
 export const UserMenu = { args: { story: 'user-menu' } }

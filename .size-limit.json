@@ -424,6 +424,10 @@
     "path": "packages/prosekit/dist/prosekit-lit-resizable.js"
   },
   {
+    "name": "prosekit/lit/table-handle",
+    "path": "packages/prosekit/dist/prosekit-lit-table-handle.js"
+  },
+  {
     "name": "prosekit/lit/tooltip",
     "path": "packages/prosekit/dist/prosekit-lit-tooltip.js"
   },
@@ -510,6 +514,13 @@
     ]
   },
   {
+    "name": "prosekit/preact/table-handle",
+    "path": "packages/prosekit/dist/prosekit-preact-table-handle.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
     "name": "prosekit/preact/tooltip",
     "path": "packages/prosekit/dist/prosekit-preact-tooltip.js",
     "ignore": [
@@ -559,6 +570,14 @@
   {
     "name": "prosekit/react/resizable",
     "path": "packages/prosekit/dist/prosekit-react-resizable.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
+    "name": "prosekit/react/table-handle",
+    "path": "packages/prosekit/dist/prosekit-react-table-handle.js",
     "ignore": [
       "react",
       "react-dom"
@@ -615,6 +634,13 @@
     ]
   },
   {
+    "name": "prosekit/solid/table-handle",
+    "path": "packages/prosekit/dist/prosekit-solid-table-handle.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
     "name": "prosekit/solid/tooltip",
     "path": "packages/prosekit/dist/prosekit-solid-tooltip.js",
     "ignore": [
@@ -664,6 +690,13 @@
     ]
   },
   {
+    "name": "prosekit/vue/table-handle",
+    "path": "packages/prosekit/dist/prosekit-vue-table-handle.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
     "name": "prosekit/vue/tooltip",
     "path": "packages/prosekit/dist/prosekit-vue-tooltip.js",
     "ignore": [
@@ -693,6 +726,10 @@
   {
     "name": "prosekit/web/resizable",
     "path": "packages/prosekit/dist/prosekit-web-resizable.js"
+  },
+  {
+    "name": "prosekit/web/table-handle",
+    "path": "packages/prosekit/dist/prosekit-web-table-handle.js"
   },
   {
     "name": "prosekit/web/tooltip",

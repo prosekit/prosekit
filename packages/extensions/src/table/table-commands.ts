@@ -4,8 +4,9 @@ import {
   getNodeType,
   insertNode,
   type Extension,
+  type FindParentNodeResult,
 } from '@prosekit/core'
-import type { Schema } from '@prosekit/pm/model'
+import { type ResolvedPos, type Schema } from '@prosekit/pm/model'
 import { TextSelection, type Command } from '@prosekit/pm/state'
 import {
   addColumnAfter,
@@ -18,12 +19,18 @@ import {
   deleteRow,
   deleteTable,
   mergeCells,
+  pointsAtCell,
   splitCell,
   TableMap,
   type TableRole,
 } from 'prosemirror-tables'
 
-import { findCellPos, findCellRange, findTable } from './table-utils'
+import {
+  findCellPos,
+  findCellRange,
+  findTable,
+  isCellSelection,
+} from './table-utils'
 
 function createEmptyTable(
   schema: Schema,
@@ -78,8 +85,9 @@ export interface InsertTableOptions {
  *
  * @public
  */
-export function insertTable({ row, col, header }: InsertTableOptions): Command {
+export function insertTable(options: InsertTableOptions): Command {
   return (state, dispatch, view) => {
+    const { row, col, header } = options
     const table = createEmptyTable(state.schema, row, col, header)
     return insertNode({ node: table })(state, dispatch, view)
   }
@@ -128,6 +136,51 @@ export const exitTable: Command = (state, dispatch) => {
     dispatch(tr.scrollIntoView())
   }
   return true
+}
+
+export function clearTableCellContent(cellPos?: ResolvedPos | number): Command {
+  return (state, dispatch) => {
+    let { tr } = state
+
+    if (cellPos) {
+      const $pos =
+        typeof cellPos === 'number' ? tr.doc.resolve(cellPos) : cellPos
+      if (!pointsAtCell($pos)) return false
+
+      const pos = $pos.pos
+      const node = tr.doc.nodeAt(pos)
+      if (!node) return false
+
+      const copyNode = node.type.createAndFill(node.attrs)
+
+      if (copyNode) {
+        dispatch?.(tr.replaceWith(pos, pos + node.nodeSize, copyNode))
+        return true
+      }
+    }
+
+    const { selection } = state
+    if (isCellSelection(selection)) {
+      selection.forEachCell((cellNode, pos) => {
+        const copyNode = cellNode.type.createAndFill(cellNode.attrs)
+        pos = tr.mapping.map(pos)
+        if (copyNode) {
+          tr = tr.replaceWith(pos, pos + cellNode.nodeSize, copyNode)
+        }
+      })
+      dispatch?.(tr)
+      return true
+    }
+
+    return false
+  }
+}
+
+/**
+ * @public
+ */
+export interface SelectTableOptions {
+  table: Pick<FindParentNodeResult, 'pos' | 'node'>
 }
 
 /**
@@ -299,6 +352,8 @@ export type TableCommandsExtension = Extension<{
 
     mergeTableCells: []
     splitTableCell: []
+
+    clearTableCellContent: [cellPos?: ResolvedPos | number]
   }
 }>
 
@@ -329,5 +384,7 @@ export function defineTableCommands(): TableCommandsExtension {
 
     mergeTableCells: () => mergeCells,
     splitTableCell: () => splitCell,
+
+    clearTableCellContent,
   })
 }

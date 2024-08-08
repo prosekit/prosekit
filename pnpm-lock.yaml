@@ -678,6 +678,9 @@ importers:
       '@aria-ui/listbox':
         specifier: ^0.0.18
         version: 0.0.18
+      '@aria-ui/menu':
+        specifier: ^0.0.12
+        version: 0.0.12
       '@aria-ui/overlay':
         specifier: ^0.0.19
         version: 0.0.19
@@ -708,6 +711,9 @@ importers:
       just-omit:
         specifier: ^2.2.0
         version: 2.2.0
+      prosemirror-tables:
+        specifier: ^1.5.0
+        version: 1.5.0
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -1041,6 +1047,9 @@ packages:
 
   '@aria-ui/listbox@0.0.18':
     resolution: {integrity: sha512-3eUMIvIuJO29c5YJ08ZNk/mYDck6i6KFcmVG4Cz/Lyrwrvk7A/bG/nVxjuwiAppWDDdHVTLIKrdvWR6CHfbN5Q==}
+
+  '@aria-ui/menu@0.0.12':
+    resolution: {integrity: sha512-8TGF3sZzKBJchfVm3eYRrPbJOKA6EATqkRtwcdKyoZG8QboliUCV4/PUyo+PR3O3mQ6wKAE5T6Zu2zn1CqG3kA==}
 
   '@aria-ui/overlay@0.0.19':
     resolution: {integrity: sha512-SLhHqRHRbmfVbpfvQA2otAcJiNdhsoo6Thf2C+T9a6czed7EVA/RJCZzX2OKsxngK0PPjE/KYXJp3WStlME0SA==}
@@ -7379,6 +7388,15 @@ snapshots:
       '@aria-ui/core': 0.0.18
       '@aria-ui/presence': 0.0.14
       immer: 10.1.1
+
+  '@aria-ui/menu@0.0.12':
+    dependencies:
+      '@aria-ui/collection': 0.0.3
+      '@aria-ui/core': 0.0.18
+      '@aria-ui/overlay': 0.0.19
+      '@aria-ui/popover': 0.0.20
+      '@aria-ui/presence': 0.0.14
+      nanoid: 5.0.7
 
   '@aria-ui/overlay@0.0.19':
     dependencies:

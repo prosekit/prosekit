@@ -46,6 +46,10 @@
       "svelte": "./src/components/resizable/index.ts",
       "default": "./src/components/resizable/index.ts"
     },
+    "./table-handle": {
+      "svelte": "./src/components/table-handle/index.ts",
+      "default": "./src/components/table-handle/index.ts"
+    },
     "./tooltip": {
       "svelte": "./src/components/tooltip/index.ts",
       "default": "./src/components/tooltip/index.ts"
@@ -119,6 +123,12 @@
         "import": "./dist/prosekit-svelte-resizable.js",
         "default": "./dist/prosekit-svelte-resizable.js"
       },
+      "./table-handle": {
+        "types": "./dist/prosekit-svelte-table-handle.d.ts",
+        "svelte": "./dist/prosekit-svelte-table-handle.js",
+        "import": "./dist/prosekit-svelte-table-handle.js",
+        "default": "./dist/prosekit-svelte-table-handle.js"
+      },
       "./tooltip": {
         "types": "./dist/prosekit-svelte-tooltip.d.ts",
         "svelte": "./dist/prosekit-svelte-tooltip.js",
@@ -148,6 +158,9 @@
         ],
         "resizable": [
           "./dist/prosekit-svelte-resizable.d.ts"
+        ],
+        "table-handle": [
+          "./dist/prosekit-svelte-table-handle.d.ts"
         ],
         "tooltip": [
           "./dist/prosekit-svelte-tooltip.d.ts"

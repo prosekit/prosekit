@@ -1,4 +1,9 @@
-import { type Keymap, defineKeymap, isApple } from '@prosekit/core'
+import {
+  type Keymap,
+  type PlainExtension,
+  defineKeymap,
+  isApple,
+} from '@prosekit/core'
 
 import { redo, undo } from './undo-plugin'
 
@@ -11,6 +16,6 @@ if (!isApple) {
   keymap['Mod-y'] = redo
 }
 
-export function defineYjsKeymap() {
+export function defineYjsKeymap(): PlainExtension {
   return defineKeymap(keymap)
 }

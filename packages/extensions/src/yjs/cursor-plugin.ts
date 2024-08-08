@@ -1,13 +1,22 @@
-import { definePlugin } from '@prosekit/core'
+import { definePlugin, type PlainExtension } from '@prosekit/core'
 import type { Plugin } from '@prosekit/pm/state'
 import { yCursorPlugin } from 'y-prosemirror'
 import type { Awareness } from 'y-protocols/awareness'
 
-export type YjsCursorOptions = Parameters<typeof yCursorPlugin>[1]
+/**
+ * Options for `y-prosemirror`'s `yCursorPlugin`.
+ */
+export type YjsCursorPluginOptions = NonNullable<
+  Parameters<typeof yCursorPlugin>[1]
+>
+
+export interface YjsCursorOptions extends YjsCursorPluginOptions {
+  awareness: Awareness
+}
 
 export function defineYjsCursorPlugin(
-  awareness: Awareness,
-  options?: YjsCursorOptions,
-) {
-  return definePlugin(yCursorPlugin(awareness, options) as Plugin)
+  options: YjsCursorOptions,
+): PlainExtension {
+  const { awareness, ...rest } = options
+  return definePlugin(yCursorPlugin(awareness, rest) as Plugin)
 }

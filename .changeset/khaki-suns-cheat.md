@@ -3,4 +3,4 @@
 'prosekit': patch
 ---
 
-add `yjs` extension
+Add `defineYjs` to bind [Yjs](https://github.com/yjs/yjs) to ProseKit.

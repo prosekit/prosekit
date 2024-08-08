@@ -65,6 +65,8 @@ var THEMES = {
   DROP_CURSOR: "transition-all bg-blue-500",
   BLOCK_HANDLE:
     "flex items-center box-border justify-center my-[0.5em] h-[1.5em] w-[1.2em] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 transition [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
+  TABLE_CELL_HANDLE:
+    "flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 -translate-x-6 [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
   TOOLTIP_TRIGGER: "block",
   TOOLTIP_CONTENT:
     "z-50 overflow-hidden rounded-md border border-solid bg-zinc-900 dark:bg-zinc-50 px-3 py-1.5 text-xs text-zinc-50 dark:text-zinc-900 shadow-sm [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200 data-[side=bottom]:slide-in-from-top-2 data-[side=bottom]:slide-out-to-top-2 data-[side=left]:slide-in-from-right-2 data-[side=left]:slide-out-to-right-2 data-[side=right]:slide-in-from-left-2 data-[side=right]:slide-out-to-left-2 data-[side=top]:slide-in-from-bottom-2 data-[side=top]:slide-out-to-bottom-2",
@@ -110,6 +112,7 @@ var THEMES = {
   ICON_ARROW_LEFT: "i-lucide-arrow-left h-5 w-5",
   ICON_ARROW_RIGHT: "i-lucide-arrow-right h-5 w-5",
   ICON_CHEVRON_RIGHT: "i-lucide-chevron-right h-5 w-5",
+  ICON_TABLE_CELL_HANDLE: "i-lucide-menu h-5 w-5",
 };
 function replaceThemes(code) {
   return replaceThemesWith(code, THEMES);

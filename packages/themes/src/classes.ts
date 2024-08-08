@@ -185,6 +185,11 @@ export const BLOCK_HANDLE = cn(
   PRESENCE_ANIMATE,
 )
 
+export const TABLE_CELL_HANDLE = cn(
+  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 -translate-x-6',
+  PRESENCE_ANIMATE,
+)
+
 export const TOOLTIP_TRIGGER = cn('block')
 export const TOOLTIP_CONTENT = cn(
   'z-50 overflow-hidden rounded-md border border-solid bg-primary px-3 py-1.5 text-xs text-primary-foreground shadow-sm',
@@ -250,3 +255,4 @@ export const ICON_CLOSE = cn('i-lucide-x h-5 w-5')
 export const ICON_ARROW_LEFT = cn('i-lucide-arrow-left h-5 w-5')
 export const ICON_ARROW_RIGHT = cn('i-lucide-arrow-right h-5 w-5')
 export const ICON_CHEVRON_RIGHT = cn('i-lucide-chevron-right h-5 w-5')
+export const ICON_TABLE_CELL_HANDLE = cn('i-lucide-menu h-5 w-5')

@@ -1,6 +1,7 @@
 import {
   createComputed,
   createSignal,
+  useAttribute,
   type ConnectableElement,
   type ReadonlySignal,
   type SignalState,
@@ -16,23 +17,41 @@ import {
   type ElementHoverHandler,
   defineElementHoverHandler,
 } from './cell-pointer'
-import type { TableCellPopoverProps } from './props'
+import type { TableCellPopoverRootProps } from './props'
+import { usePopoverRoot } from '@aria-ui/popover'
+import { useMenuRoot } from '@aria-ui/menu'
 
-export function useTableCellPopover(
+export function useTableCellPopoverRoot(
   host: ConnectableElement,
-  state: SignalState<TableCellPopoverProps>,
+  state: SignalState<TableCellPopoverRootProps>,
 ) {
   const { editor, ...overlayState } = state
   const reference = createSignal<VirtualElement | null>(null)
+
+  const defaultContentOpen = createSignal<false>(false)
+
+  const contentOpen = createSignal(false)
+
+  const onOpenChange = createSignal((open: boolean) => {
+    console.log('open', open)
+  })
+
   useOverlayPositionerState(host, overlayState, { reference })
 
   useHoverExtension(host, editor, (referenceValue) => {
-    console.log(referenceValue)
     reference.set(referenceValue)
+    contentOpen.set(false)
   })
 
   const presence = createComputed(() => !!reference.get())
+  useAttribute(host, 'data-state', () => (presence.get() ? 'open' : 'closed'))
   usePresence(host, presence)
+
+  useMenuRoot(host, {
+    defaultOpen: defaultContentOpen,
+    onOpenChange,
+    open: contentOpen,
+  })
 }
 
 function useHoverExtension(
@@ -45,7 +64,6 @@ function useHoverExtension(
 
   const extension = defineElementHoverHandler(
     (reference, element, node, pos) => {
-      console.log(prevElement === element && prevPos === pos, reference, node?.textContent)
       if (prevElement === element && prevPos === pos) {
         return
       }

@@ -1,9 +1,16 @@
-import { defineDOMEventHandler, findParentNodeOfType } from 'prosekit/core'
-import { isCellSelection } from 'prosekit/extensions/table'
-import type { EditorView } from 'prosekit/pm/view'
+import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
-import { TableCellPopover } from 'prosekit/react/table-handle'
-import { useEffect } from 'react'
+import {
+  PopoverContent,
+  PopoverRoot,
+  PopoverTrigger,
+} from 'prosekit/react/popover'
+import {
+  TableCellPopoverRoot,
+  TableCellPopoverTrigger,
+  TableCellPopoverContent,
+  TableCellPopoverItem,
+} from 'prosekit/react/table-handle'
 
 export function TableHandle() {
   const editor = useEditor()
@@ -26,9 +33,22 @@ export function TableHandle() {
   //   }, [])
 
   return (
-    <TableCellPopover>
-      <div>v</div>
-    </TableCellPopover>
+    <TableCellPopoverRoot
+      ref={(ref) => {
+        console.log(ref)
+      }}
+      className={Themes.TABLE_CELL_HANDLE}
+    >
+      <TableCellPopoverTrigger>
+        <div className={Themes.ICON_TABLE_CELL_HANDLE}></div>
+      </TableCellPopoverTrigger>
+      <TableCellPopoverContent>
+        <TableCellPopoverItem>
+          <div>change font color</div>
+          <div>change background color</div>
+        </TableCellPopoverItem>
+      </TableCellPopoverContent>
+    </TableCellPopoverRoot>
   )
 }
 

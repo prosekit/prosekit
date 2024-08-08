@@ -5,8 +5,8 @@ import {
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-export interface TableCellPopoverProps
-  extends Omit<OverlayPositionerProps, 'placement' | 'offset'> {
+export interface TableCellPopoverRootProps
+  extends Omit<OverlayPositionerProps, 'placement'> {
   /**
    * The ProseKit editor instance.
    *
@@ -17,21 +17,13 @@ export interface TableCellPopoverProps
   /**
    * The placement of the popover, relative to the hovered table cell.
    *
-   * @default "right-end"
+   * @default "right"
    */
   placement: Placement
-
-  /**
-   * The distance between the popover and the hovered table cell.
-   *
-   * @default 4
-   */
-  offset: number
 }
 
-export const defaultTableCellPopoverProps = Object.freeze({
+export const defaultTableCellPopoverRootProps = Object.freeze({
   ...defaultOverlayPositionerProps,
   editor: null,
-  placement: 'right-end',
-  offset: 4,
-}) satisfies TableCellPopoverProps
+  placement: 'right',
+}) satisfies TableCellPopoverRootProps

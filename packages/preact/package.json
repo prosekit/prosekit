@@ -32,6 +32,7 @@
     "./popover": "./src/components/popover/index.ts",
     "./resizable": "./src/components/resizable/index.ts",
     "./table-handle": "./src/components/table-handle/index.ts",
+    "./table-handle/table-cell-popover": "./src/components/table-handle/table-cell-popover/index.ts",
     "./tooltip": "./src/components/tooltip/index.ts"
   },
   "files": [
@@ -99,6 +100,11 @@
         "import": "./dist/prosekit-preact-table-handle.js",
         "default": "./dist/prosekit-preact-table-handle.js"
       },
+      "./table-handle/table-cell-popover": {
+        "types": "./dist/prosekit-preact-table-handle-table-cell-popover.d.ts",
+        "import": "./dist/prosekit-preact-table-handle-table-cell-popover.js",
+        "default": "./dist/prosekit-preact-table-handle-table-cell-popover.js"
+      },
       "./tooltip": {
         "types": "./dist/prosekit-preact-tooltip.d.ts",
         "import": "./dist/prosekit-preact-tooltip.js",
@@ -130,6 +136,9 @@
         ],
         "table-handle": [
           "./dist/prosekit-preact-table-handle.d.ts"
+        ],
+        "table-handle/table-cell-popover": [
+          "./dist/prosekit-preact-table-handle-table-cell-popover.d.ts"
         ],
         "tooltip": [
           "./dist/prosekit-preact-tooltip.d.ts"

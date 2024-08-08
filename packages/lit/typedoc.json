@@ -10,6 +10,7 @@
     "./src/components/popover/index.ts",
     "./src/components/resizable/index.ts",
     "./src/components/table-handle/index.ts",
+    "./src/components/table-handle/table-cell-popover/index.ts",
     "./src/components/tooltip/index.ts",
     "./src/index.ts"
   ]

@@ -157,6 +157,13 @@ export const referenceItems = [
       },
       {
         "text": "table-handle",
+        "items": [
+          {
+            "text": "table-cell-popover",
+            "link": "/references/lit/table-handle/table-cell-popover"
+          }
+        ],
+        "collapsed": true,
         "link": "/references/lit/table-handle"
       },
       {
@@ -192,6 +199,13 @@ export const referenceItems = [
       },
       {
         "text": "table-handle",
+        "items": [
+          {
+            "text": "table-cell-popover",
+            "link": "/references/preact/table-handle/table-cell-popover"
+          }
+        ],
+        "collapsed": true,
         "link": "/references/preact/table-handle"
       },
       {
@@ -227,6 +241,13 @@ export const referenceItems = [
       },
       {
         "text": "table-handle",
+        "items": [
+          {
+            "text": "table-cell-popover",
+            "link": "/references/react/table-handle/table-cell-popover"
+          }
+        ],
+        "collapsed": true,
         "link": "/references/react/table-handle"
       },
       {
@@ -262,6 +283,13 @@ export const referenceItems = [
       },
       {
         "text": "table-handle",
+        "items": [
+          {
+            "text": "table-cell-popover",
+            "link": "/references/solid/table-handle/table-cell-popover"
+          }
+        ],
+        "collapsed": true,
         "link": "/references/solid/table-handle"
       },
       {
@@ -297,6 +325,13 @@ export const referenceItems = [
       },
       {
         "text": "table-handle",
+        "items": [
+          {
+            "text": "table-cell-popover",
+            "link": "/references/svelte/table-handle/table-cell-popover"
+          }
+        ],
+        "collapsed": true,
         "link": "/references/svelte/table-handle"
       },
       {
@@ -332,6 +367,13 @@ export const referenceItems = [
       },
       {
         "text": "table-handle",
+        "items": [
+          {
+            "text": "table-cell-popover",
+            "link": "/references/vue/table-handle/table-cell-popover"
+          }
+        ],
+        "collapsed": true,
         "link": "/references/vue/table-handle"
       },
       {

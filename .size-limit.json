@@ -184,6 +184,10 @@
     "path": "packages/prosekit/dist/prosekit-lit-table-handle.js"
   },
   {
+    "name": "prosekit/lit/table-handle/table-cell-popover",
+    "path": "packages/prosekit/dist/prosekit-lit-table-handle-table-cell-popover.js"
+  },
+  {
     "name": "prosekit/lit/tooltip",
     "path": "packages/prosekit/dist/prosekit-lit-tooltip.js"
   },
@@ -277,6 +281,13 @@
     ]
   },
   {
+    "name": "prosekit/preact/table-handle/table-cell-popover",
+    "path": "packages/prosekit/dist/prosekit-preact-table-handle-table-cell-popover.js",
+    "ignore": [
+      "preact"
+    ]
+  },
+  {
     "name": "prosekit/preact/tooltip",
     "path": "packages/prosekit/dist/prosekit-preact-tooltip.js",
     "ignore": [
@@ -340,6 +351,14 @@
     ]
   },
   {
+    "name": "prosekit/react/table-handle/table-cell-popover",
+    "path": "packages/prosekit/dist/prosekit-react-table-handle-table-cell-popover.js",
+    "ignore": [
+      "react",
+      "react-dom"
+    ]
+  },
+  {
     "name": "prosekit/react/tooltip",
     "path": "packages/prosekit/dist/prosekit-react-tooltip.js",
     "ignore": [
@@ -397,6 +416,13 @@
     ]
   },
   {
+    "name": "prosekit/solid/table-handle/table-cell-popover",
+    "path": "packages/prosekit/dist/prosekit-solid-table-handle-table-cell-popover.js",
+    "ignore": [
+      "solid-js"
+    ]
+  },
+  {
     "name": "prosekit/solid/tooltip",
     "path": "packages/prosekit/dist/prosekit-solid-tooltip.js",
     "ignore": [
@@ -448,6 +474,13 @@
   {
     "name": "prosekit/vue/table-handle",
     "path": "packages/prosekit/dist/prosekit-vue-table-handle.js",
+    "ignore": [
+      "vue"
+    ]
+  },
+  {
+    "name": "prosekit/vue/table-handle/table-cell-popover",
+    "path": "packages/prosekit/dist/prosekit-vue-table-handle-table-cell-popover.js",
     "ignore": [
       "vue"
     ]

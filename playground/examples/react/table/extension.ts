@@ -6,6 +6,7 @@ import {
   defineText,
   union,
 } from 'prosekit/core'
+import { defineGapCursor } from 'prosekit/extensions/gap-cursor'
 import { defineTable } from 'prosekit/extensions/table'
 
 export function defineExtension() {
@@ -15,7 +16,8 @@ export function defineExtension() {
     defineText(),
     defineParagraph(),
     defineTable(),
-    defineHistory()
+    defineHistory(),
+    defineGapCursor()
   )
 }
 

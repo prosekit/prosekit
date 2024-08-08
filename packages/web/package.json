@@ -45,6 +45,7 @@
     "@aria-ui/collection": "^0.0.3",
     "@aria-ui/core": "^0.0.18",
     "@aria-ui/listbox": "^0.0.18",
+    "@aria-ui/menu": "^0.0.12",
     "@aria-ui/overlay": "^0.0.19",
     "@aria-ui/popover": "^0.0.20",
     "@aria-ui/presence": "^0.0.14",

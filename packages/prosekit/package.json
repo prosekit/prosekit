@@ -72,6 +72,7 @@
     "./lit/popover": "./src/lit/popover.gen.ts",
     "./lit/resizable": "./src/lit/resizable.gen.ts",
     "./lit/table-handle": "./src/lit/table-handle.gen.ts",
+    "./lit/table-handle/table-cell-popover": "./src/lit/table-handle/table-cell-popover.gen.ts",
     "./lit/tooltip": "./src/lit/tooltip.gen.ts",
     "./pm": "./src/pm.gen.ts",
     "./pm/commands": "./src/pm/commands.gen.ts",
@@ -90,6 +91,7 @@
     "./preact/popover": "./src/preact/popover.gen.ts",
     "./preact/resizable": "./src/preact/resizable.gen.ts",
     "./preact/table-handle": "./src/preact/table-handle.gen.ts",
+    "./preact/table-handle/table-cell-popover": "./src/preact/table-handle/table-cell-popover.gen.ts",
     "./preact/tooltip": "./src/preact/tooltip.gen.ts",
     "./react": "./src/react.gen.ts",
     "./react/autocomplete": "./src/react/autocomplete.gen.ts",
@@ -98,6 +100,7 @@
     "./react/popover": "./src/react/popover.gen.ts",
     "./react/resizable": "./src/react/resizable.gen.ts",
     "./react/table-handle": "./src/react/table-handle.gen.ts",
+    "./react/table-handle/table-cell-popover": "./src/react/table-handle/table-cell-popover.gen.ts",
     "./react/tooltip": "./src/react/tooltip.gen.ts",
     "./solid": "./src/solid.gen.ts",
     "./solid/autocomplete": "./src/solid/autocomplete.gen.ts",
@@ -106,6 +109,7 @@
     "./solid/popover": "./src/solid/popover.gen.ts",
     "./solid/resizable": "./src/solid/resizable.gen.ts",
     "./solid/table-handle": "./src/solid/table-handle.gen.ts",
+    "./solid/table-handle/table-cell-popover": "./src/solid/table-handle/table-cell-popover.gen.ts",
     "./solid/tooltip": "./src/solid/tooltip.gen.ts",
     "./svelte": "./src/svelte.gen.ts",
     "./svelte/autocomplete": "./src/svelte/autocomplete.gen.ts",
@@ -114,6 +118,7 @@
     "./svelte/popover": "./src/svelte/popover.gen.ts",
     "./svelte/resizable": "./src/svelte/resizable.gen.ts",
     "./svelte/table-handle": "./src/svelte/table-handle.gen.ts",
+    "./svelte/table-handle/table-cell-popover": "./src/svelte/table-handle/table-cell-popover.gen.ts",
     "./svelte/tooltip": "./src/svelte/tooltip.gen.ts",
     "./vue": "./src/vue.gen.ts",
     "./vue/autocomplete": "./src/vue/autocomplete.gen.ts",
@@ -122,6 +127,7 @@
     "./vue/popover": "./src/vue/popover.gen.ts",
     "./vue/resizable": "./src/vue/resizable.gen.ts",
     "./vue/table-handle": "./src/vue/table-handle.gen.ts",
+    "./vue/table-handle/table-cell-popover": "./src/vue/table-handle/table-cell-popover.gen.ts",
     "./vue/tooltip": "./src/vue/tooltip.gen.ts",
     "./web": "./src/web.gen.ts",
     "./web/autocomplete": "./src/web/autocomplete.gen.ts",
@@ -414,6 +420,11 @@
         "import": "./dist/prosekit-lit-table-handle.js",
         "default": "./dist/prosekit-lit-table-handle.js"
       },
+      "./lit/table-handle/table-cell-popover": {
+        "types": "./dist/prosekit-lit-table-handle-table-cell-popover.d.ts",
+        "import": "./dist/prosekit-lit-table-handle-table-cell-popover.js",
+        "default": "./dist/prosekit-lit-table-handle-table-cell-popover.js"
+      },
       "./lit/tooltip": {
         "types": "./dist/prosekit-lit-tooltip.d.ts",
         "import": "./dist/prosekit-lit-tooltip.js",
@@ -502,6 +513,11 @@
         "import": "./dist/prosekit-preact-table-handle.js",
         "default": "./dist/prosekit-preact-table-handle.js"
       },
+      "./preact/table-handle/table-cell-popover": {
+        "types": "./dist/prosekit-preact-table-handle-table-cell-popover.d.ts",
+        "import": "./dist/prosekit-preact-table-handle-table-cell-popover.js",
+        "default": "./dist/prosekit-preact-table-handle-table-cell-popover.js"
+      },
       "./preact/tooltip": {
         "types": "./dist/prosekit-preact-tooltip.d.ts",
         "import": "./dist/prosekit-preact-tooltip.js",
@@ -541,6 +557,11 @@
         "types": "./dist/prosekit-react-table-handle.d.ts",
         "import": "./dist/prosekit-react-table-handle.js",
         "default": "./dist/prosekit-react-table-handle.js"
+      },
+      "./react/table-handle/table-cell-popover": {
+        "types": "./dist/prosekit-react-table-handle-table-cell-popover.d.ts",
+        "import": "./dist/prosekit-react-table-handle-table-cell-popover.js",
+        "default": "./dist/prosekit-react-table-handle-table-cell-popover.js"
       },
       "./react/tooltip": {
         "types": "./dist/prosekit-react-tooltip.d.ts",
@@ -582,6 +603,11 @@
         "import": "./dist/prosekit-solid-table-handle.js",
         "default": "./dist/prosekit-solid-table-handle.js"
       },
+      "./solid/table-handle/table-cell-popover": {
+        "types": "./dist/prosekit-solid-table-handle-table-cell-popover.d.ts",
+        "import": "./dist/prosekit-solid-table-handle-table-cell-popover.js",
+        "default": "./dist/prosekit-solid-table-handle-table-cell-popover.js"
+      },
       "./solid/tooltip": {
         "types": "./dist/prosekit-solid-tooltip.d.ts",
         "import": "./dist/prosekit-solid-tooltip.js",
@@ -622,6 +648,11 @@
         "import": "./dist/prosekit-svelte-table-handle.js",
         "default": "./dist/prosekit-svelte-table-handle.js"
       },
+      "./svelte/table-handle/table-cell-popover": {
+        "types": "./dist/prosekit-svelte-table-handle-table-cell-popover.d.ts",
+        "import": "./dist/prosekit-svelte-table-handle-table-cell-popover.js",
+        "default": "./dist/prosekit-svelte-table-handle-table-cell-popover.js"
+      },
       "./svelte/tooltip": {
         "types": "./dist/prosekit-svelte-tooltip.d.ts",
         "import": "./dist/prosekit-svelte-tooltip.js",
@@ -661,6 +692,11 @@
         "types": "./dist/prosekit-vue-table-handle.d.ts",
         "import": "./dist/prosekit-vue-table-handle.js",
         "default": "./dist/prosekit-vue-table-handle.js"
+      },
+      "./vue/table-handle/table-cell-popover": {
+        "types": "./dist/prosekit-vue-table-handle-table-cell-popover.d.ts",
+        "import": "./dist/prosekit-vue-table-handle-table-cell-popover.js",
+        "default": "./dist/prosekit-vue-table-handle-table-cell-popover.js"
       },
       "./vue/tooltip": {
         "types": "./dist/prosekit-vue-tooltip.d.ts",
@@ -827,6 +863,9 @@
         "lit/table-handle": [
           "./dist/prosekit-lit-table-handle.d.ts"
         ],
+        "lit/table-handle/table-cell-popover": [
+          "./dist/prosekit-lit-table-handle-table-cell-popover.d.ts"
+        ],
         "lit/tooltip": [
           "./dist/prosekit-lit-tooltip.d.ts"
         ],
@@ -878,6 +917,9 @@
         "preact/table-handle": [
           "./dist/prosekit-preact-table-handle.d.ts"
         ],
+        "preact/table-handle/table-cell-popover": [
+          "./dist/prosekit-preact-table-handle-table-cell-popover.d.ts"
+        ],
         "preact/tooltip": [
           "./dist/prosekit-preact-tooltip.d.ts"
         ],
@@ -901,6 +943,9 @@
         ],
         "react/table-handle": [
           "./dist/prosekit-react-table-handle.d.ts"
+        ],
+        "react/table-handle/table-cell-popover": [
+          "./dist/prosekit-react-table-handle-table-cell-popover.d.ts"
         ],
         "react/tooltip": [
           "./dist/prosekit-react-tooltip.d.ts"
@@ -926,6 +971,9 @@
         "solid/table-handle": [
           "./dist/prosekit-solid-table-handle.d.ts"
         ],
+        "solid/table-handle/table-cell-popover": [
+          "./dist/prosekit-solid-table-handle-table-cell-popover.d.ts"
+        ],
         "solid/tooltip": [
           "./dist/prosekit-solid-tooltip.d.ts"
         ],
@@ -950,6 +998,9 @@
         "svelte/table-handle": [
           "./dist/prosekit-svelte-table-handle.d.ts"
         ],
+        "svelte/table-handle/table-cell-popover": [
+          "./dist/prosekit-svelte-table-handle-table-cell-popover.d.ts"
+        ],
         "svelte/tooltip": [
           "./dist/prosekit-svelte-tooltip.d.ts"
         ],
@@ -973,6 +1024,9 @@
         ],
         "vue/table-handle": [
           "./dist/prosekit-vue-table-handle.d.ts"
+        ],
+        "vue/table-handle/table-cell-popover": [
+          "./dist/prosekit-vue-table-handle-table-cell-popover.d.ts"
         ],
         "vue/tooltip": [
           "./dist/prosekit-vue-tooltip.d.ts"

@@ -1,4 +1,3 @@
-import { defineBasicExtension } from 'prosekit/basic'
 import {
   defineBaseCommands,
   defineBaseKeymap,
@@ -25,31 +24,29 @@ import { defineYjs } from 'prosekit/extensions/yjs'
 import { Awareness } from 'y-protocols/awareness'
 import * as Y from 'yjs'
 
-export function defineExtension(doc?: Y.Doc, awareness?: Awareness) {
-  return doc && awareness
-    ? union([
-        defineDoc(),
-        defineText(),
-        defineHeading(),
-        defineList(),
-        defineBlockquote(),
-        defineBaseKeymap(),
-        defineBaseCommands(),
-        defineItalic(),
-        defineBold(),
-        defineUnderline(),
-        defineStrike(),
-        defineCode(),
-        defineLink(),
-        defineImage(),
-        defineParagraph(),
-        defineDropCursor(),
-        defineVirtualSelection(),
-        defineModClickPrevention(),
-        defineTable(),
-        defineYjs(doc, awareness),
-      ])
-    : union(defineBasicExtension())
+export function defineExtension(doc: Y.Doc, awareness: Awareness) {
+  return union([
+    defineDoc(),
+    defineText(),
+    defineHeading(),
+    defineList(),
+    defineBlockquote(),
+    defineBaseKeymap(),
+    defineBaseCommands(),
+    defineItalic(),
+    defineBold(),
+    defineUnderline(),
+    defineStrike(),
+    defineCode(),
+    defineLink(),
+    defineImage(),
+    defineParagraph(),
+    defineDropCursor(),
+    defineVirtualSelection(),
+    defineModClickPrevention(),
+    defineTable(),
+    defineYjs(doc, awareness),
+  ])
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>

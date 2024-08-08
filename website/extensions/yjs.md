@@ -4,11 +4,23 @@
 
 By integrating yjs and prosekit, it is possible to create a document editor that allows multiple users to collaborate.
 
-> In this online example, in order to have a complete collaborative experience, you will need to apply for `appId` and `token` from [tiptap cloud](https://cloud.tiptap.dev/).
-
 <!-- @include: @/examples/yjs.md -->
 
 ## Usage
+
+it is necessary to install the latest versions of `yjs` and `y-prosemirror` as dependencies.
+
+```shell [npm]
+npm install yjs y-prosemirror
+```
+
+```shell [yarn]
+yarn add yjs y-prosemirror
+```
+
+```shell [pnpm]
+pnpm add yjs y-prosemirror
+```
 
 ```ts twoslash
 import 'prosekit/extensions/yjs/style.css'

@@ -100,7 +100,7 @@
     "type-fest": "^4.23.0",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5",
-    "y-prosemirror": ">= 1.2.9",
+    "y-prosemirror": "^1.2.9",
     "y-protocols": "^1.0.6",
     "yjs": "^13.6.18"
   },

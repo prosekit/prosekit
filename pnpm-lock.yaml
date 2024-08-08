@@ -276,7 +276,7 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5(@types/node@20.14.14)(@vitest/browser@2.0.5)(@vitest/ui@2.0.3)(jsdom@24.1.1)(lightningcss@1.25.1)
       y-prosemirror:
-        specifier: '>= 1.2.9'
+        specifier: ^1.2.9
         version: 1.2.9(prosemirror-model@1.22.2)(prosemirror-state@1.4.3)(prosemirror-view@1.33.9)(y-protocols@1.0.6(yjs@13.6.18))(yjs@13.6.18)
       y-protocols:
         specifier: ^1.0.6
@@ -451,7 +451,7 @@ importers:
         specifier: ^3.4.35
         version: 3.4.35(typescript@5.5.4)
       y-prosemirror:
-        specifier: '>= 1.2.9'
+        specifier: ^1.2.9
         version: 1.2.9(prosemirror-model@1.22.2)(prosemirror-state@1.4.3)(prosemirror-view@1.33.9)(y-protocols@1.0.6(yjs@13.6.18))(yjs@13.6.18)
       yjs:
         specifier: ^13.6.18

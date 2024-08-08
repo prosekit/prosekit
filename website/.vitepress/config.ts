@@ -130,6 +130,7 @@ export default defineConfig({
             { text: 'Gap Cursor', link: '/extensions/gap-cursor' },
             { text: 'Search', link: '/extensions/search' },
             { text: 'Commit', link: '/extensions/commit' },
+            { text: 'Yjs', link: '/extensions/yjs' },
           ],
         },
       ],

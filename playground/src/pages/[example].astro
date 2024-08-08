@@ -23,6 +23,7 @@ import E4115691489 from '../../examples/react/unmount/editor'
 import E105978888 from '../../examples/react/user-menu/editor'
 import E4072355092 from '../../examples/react/user-menu-dynamic/editor'
 import E2611097910 from '../../examples/react/word-counter/editor'
+import E4058547501 from '../../examples/react/yjs/editor'
 import E449861637 from '../../examples/vue/minimal/editor.vue'
 import E1911994445 from '../../examples/vue/bold/editor.vue'
 import E1589439143 from '../../examples/vue/code/editor.vue'
@@ -106,6 +107,7 @@ export const getStaticPaths = () => [
   { params: { example: 'react-user-menu' } },
   { params: { example: 'react-user-menu-dynamic' } },
   { params: { example: 'react-word-counter' } },
+  { params: { example: 'react-yjs' } },
   { params: { example: 'vue-minimal' } },
   { params: { example: 'vue-bold' } },
   { params: { example: 'vue-code' } },
@@ -194,6 +196,7 @@ const { example } = Astro.params
   {example === 'react-user-menu' && <E105978888 client:only="react" />}
   {example === 'react-user-menu-dynamic' && <E4072355092 client:only="react" />}
   {example === 'react-word-counter' && <E2611097910 client:only="react" />}
+  {example === 'react-yjs' && <E4058547501 client:only="react" />}
   {example === 'vue-minimal' && <E449861637 client:only="vue" />}
   {example === 'vue-bold' && <E1911994445 client:only="vue" />}
   {example === 'vue-code' && <E1589439143 client:only="vue" />}

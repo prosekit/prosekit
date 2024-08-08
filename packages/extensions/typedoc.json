@@ -28,6 +28,7 @@
     "./src/table/index.ts",
     "./src/text-align/index.ts",
     "./src/underline/index.ts",
-    "./src/virtual-selection/index.ts"
+    "./src/virtual-selection/index.ts",
+    "./src/yjs/index.ts"
   ]
 }

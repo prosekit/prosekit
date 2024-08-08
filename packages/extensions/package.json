@@ -58,7 +58,9 @@
     "./text-align": "./src/text-align/index.ts",
     "./underline": "./src/underline/index.ts",
     "./virtual-selection": "./src/virtual-selection/index.ts",
-    "./virtual-selection/style.css": "./src/virtual-selection/style.css"
+    "./virtual-selection/style.css": "./src/virtual-selection/style.css",
+    "./yjs": "./src/yjs/index.ts",
+    "./yjs/style.css": "./src/yjs/style.css"
   },
   "files": [
     "dist"
@@ -79,13 +81,28 @@
     "prosemirror-tables": "^1.4.0",
     "shiki": "^1.12.1"
   },
+  "peerDependencies": {
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18"
+  },
+  "peerDependenciesMeta": {
+    "y-prosemirror": {
+      "optional": true
+    },
+    "yjs": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
     "@vitest/browser": "^2.0.5",
     "tsup": "^8.2.4",
     "type-fest": "^4.23.0",
     "typescript": "^5.5.4",
-    "vitest": "^2.0.5"
+    "vitest": "^2.0.5",
+    "y-prosemirror": "^1.2.9",
+    "y-protocols": "^1.0.6",
+    "yjs": "^13.6.18"
   },
   "publishConfig": {
     "exports": {
@@ -244,6 +261,14 @@
       },
       "./virtual-selection/style.css": {
         "default": "./dist/virtual-selection/style.css"
+      },
+      "./yjs": {
+        "types": "./dist/prosekit-extensions-yjs.d.ts",
+        "import": "./dist/prosekit-extensions-yjs.js",
+        "default": "./dist/prosekit-extensions-yjs.js"
+      },
+      "./yjs/style.css": {
+        "default": "./dist/yjs/style.css"
       }
     },
     "main": "./dist/prosekit-extensions.js",
@@ -331,6 +356,9 @@
         ],
         "virtual-selection": [
           "./dist/prosekit-extensions-virtual-selection.d.ts"
+        ],
+        "yjs": [
+          "./dist/prosekit-extensions-yjs.d.ts"
         ]
       }
     }

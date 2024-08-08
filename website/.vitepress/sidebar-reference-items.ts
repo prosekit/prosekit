@@ -127,6 +127,10 @@ export const referenceItems = [
       {
         "text": "virtual-selection",
         "link": "/references/extensions/virtual-selection"
+      },
+      {
+        "text": "yjs",
+        "link": "/references/extensions/yjs"
       }
     ],
     "collapsed": true,

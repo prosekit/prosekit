@@ -65,6 +65,8 @@
     "./extensions/underline": "./src/extensions/underline.gen.ts",
     "./extensions/virtual-selection": "./src/extensions/virtual-selection.gen.ts",
     "./extensions/virtual-selection/style.css": "./src/extensions/virtual-selection/style.css",
+    "./extensions/yjs": "./src/extensions/yjs.gen.ts",
+    "./extensions/yjs/style.css": "./src/extensions/yjs/style.css",
     "./lit": "./src/lit.gen.ts",
     "./lit/autocomplete": "./src/lit/autocomplete.gen.ts",
     "./lit/block-handle": "./src/lit/block-handle.gen.ts",
@@ -151,9 +153,17 @@
     "react-dom": ">= 18.2.0",
     "solid-js": ">= 1.7.0",
     "svelte": ">= 3.0.0",
-    "vue": ">= 3.0.0"
+    "vue": ">= 3.0.0",
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18"
   },
   "peerDependenciesMeta": {
+    "y-prosemirror": {
+      "optional": true
+    },
+    "yjs": {
+      "optional": true
+    },
     "preact": {
       "optional": true
     },
@@ -186,7 +196,9 @@
     "svelte": "^4.2.18",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4",
-    "vue": "^3.4.35"
+    "vue": "^3.4.35",
+    "y-prosemirror": "^1.2.9",
+    "yjs": "^13.6.18"
   },
   "publishConfig": {
     "exports": {
@@ -371,6 +383,14 @@
       },
       "./extensions/virtual-selection/style.css": {
         "default": "./dist/extensions/virtual-selection/style.css"
+      },
+      "./extensions/yjs": {
+        "types": "./dist/prosekit-extensions-yjs.d.ts",
+        "import": "./dist/prosekit-extensions-yjs.js",
+        "default": "./dist/prosekit-extensions-yjs.js"
+      },
+      "./extensions/yjs/style.css": {
+        "default": "./dist/extensions/yjs/style.css"
       },
       "./lit": {
         "types": "./dist/prosekit-lit.d.ts",
@@ -763,6 +783,9 @@
         ],
         "extensions/virtual-selection": [
           "./dist/prosekit-extensions-virtual-selection.d.ts"
+        ],
+        "extensions/yjs": [
+          "./dist/prosekit-extensions-yjs.d.ts"
         ],
         "lit": [
           "./dist/prosekit-lit.d.ts"

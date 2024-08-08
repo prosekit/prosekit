@@ -145,5 +145,9 @@ export const exampleItems = [
   {
     "text": "word-counter",
     "link": "/examples/word-counter"
+  },
+  {
+    "text": "yjs",
+    "link": "/examples/yjs"
   }
 ]

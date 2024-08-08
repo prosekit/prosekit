@@ -31,6 +31,7 @@
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover": "./src/components/popover/index.ts",
     "./resizable": "./src/components/resizable/index.ts",
+    "./table-handle": "./src/components/table-handle/index.ts",
     "./tooltip": "./src/components/tooltip/index.ts"
   },
   "files": [
@@ -92,6 +93,11 @@
         "import": "./dist/prosekit-solid-resizable.js",
         "default": "./dist/prosekit-solid-resizable.js"
       },
+      "./table-handle": {
+        "types": "./dist/prosekit-solid-table-handle.d.ts",
+        "import": "./dist/prosekit-solid-table-handle.js",
+        "default": "./dist/prosekit-solid-table-handle.js"
+      },
       "./tooltip": {
         "types": "./dist/prosekit-solid-tooltip.d.ts",
         "import": "./dist/prosekit-solid-tooltip.js",
@@ -120,6 +126,9 @@
         ],
         "resizable": [
           "./dist/prosekit-solid-resizable.d.ts"
+        ],
+        "table-handle": [
+          "./dist/prosekit-solid-table-handle.d.ts"
         ],
         "tooltip": [
           "./dist/prosekit-solid-tooltip.d.ts"

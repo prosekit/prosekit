@@ -156,6 +156,10 @@ export const referenceItems = [
         "link": "/references/lit/resizable"
       },
       {
+        "text": "table-handle",
+        "link": "/references/lit/table-handle"
+      },
+      {
         "text": "tooltip",
         "link": "/references/lit/tooltip"
       }
@@ -185,6 +189,10 @@ export const referenceItems = [
       {
         "text": "resizable",
         "link": "/references/preact/resizable"
+      },
+      {
+        "text": "table-handle",
+        "link": "/references/preact/table-handle"
       },
       {
         "text": "tooltip",
@@ -218,6 +226,10 @@ export const referenceItems = [
         "link": "/references/react/resizable"
       },
       {
+        "text": "table-handle",
+        "link": "/references/react/table-handle"
+      },
+      {
         "text": "tooltip",
         "link": "/references/react/tooltip"
       }
@@ -247,6 +259,10 @@ export const referenceItems = [
       {
         "text": "resizable",
         "link": "/references/solid/resizable"
+      },
+      {
+        "text": "table-handle",
+        "link": "/references/solid/table-handle"
       },
       {
         "text": "tooltip",
@@ -280,6 +296,10 @@ export const referenceItems = [
         "link": "/references/svelte/resizable"
       },
       {
+        "text": "table-handle",
+        "link": "/references/svelte/table-handle"
+      },
+      {
         "text": "tooltip",
         "link": "/references/svelte/tooltip"
       }
@@ -311,6 +331,10 @@ export const referenceItems = [
         "link": "/references/vue/resizable"
       },
       {
+        "text": "table-handle",
+        "link": "/references/vue/table-handle"
+      },
+      {
         "text": "tooltip",
         "link": "/references/vue/tooltip"
       }
@@ -340,6 +364,10 @@ export const referenceItems = [
       {
         "text": "resizable",
         "link": "/references/web/resizable"
+      },
+      {
+        "text": "table-handle",
+        "link": "/references/web/table-handle"
       },
       {
         "text": "tooltip",

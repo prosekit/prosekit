@@ -6,17 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/table/editor.tsx
-
-:::
-
-</template>
-
-<template v-slot:vue>
-
-::: code-group
-
-<<< @/../playground/examples/vue/table/editor.vue
+<<< @/../playground/examples/react/table/table-handle.tsx
 
 :::
 

@@ -371,6 +371,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-table",
+      "framework": "react",
+      "story": "table",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-toolbar",
       "framework": "react",
       "story": "toolbar",

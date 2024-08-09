@@ -5,11 +5,11 @@ import {
 } from '@aria-ui/core'
 import { useMenuItem } from '@aria-ui/menu'
 
-import type { TableCellPopoverItemProps } from './props'
+import type { TableHandlePopoverItemProps } from './props'
 
-export function useTableCellPopoverItem(
+export function useTableHandlePopoverItem(
   element: ConnectableElement,
-  state: SignalState<TableCellPopoverItemProps>,
+  state: SignalState<TableHandlePopoverItemProps>,
 ) {
   useAttribute(element, 'data-disabled', () =>
     state.disabled?.get() ? 'true' : 'false',

@@ -14,11 +14,11 @@ import {
 
 import { openContext } from '../context'
 
-import type { TableCellPopoverContentProps } from './props'
+import type { TableHandlePopoverContentProps } from './props'
 
-export function useTableCellPopoverContent(
+export function useTableHandlePopoverContent(
   host: ConnectableElement,
-  state: SignalState<TableCellPopoverContentProps>,
+  state: SignalState<TableHandlePopoverContentProps>,
 ) {
   const open = openContext.consume(host)
   const onKeydownHandlerAdd = useKeyboardHandler(host, open)

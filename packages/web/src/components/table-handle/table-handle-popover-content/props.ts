@@ -2,7 +2,7 @@ import { defaultMenuContentProps, type MenuContentProps } from '@aria-ui/menu'
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-export interface TableCellPopoverContentProps
+export interface TableHandlePopoverContentProps
   extends Omit<MenuContentProps, 'placement'> {
   /**
    * @default right
@@ -12,7 +12,7 @@ export interface TableCellPopoverContentProps
   editor: Editor | null
 }
 
-export const defaultTableCellPopoverContentProps = Object.freeze({
+export const defaultTableHandlePopoverContentProps = Object.freeze({
   ...defaultMenuContentProps,
   placement: 'right',
   editor: null

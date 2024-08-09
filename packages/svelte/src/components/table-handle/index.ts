@@ -1,7 +1,7 @@
-export { TableCellPopoverContent } from './table-cell-popover-content.gen'
-
-export { TableCellPopoverItem } from './table-cell-popover-item.gen'
-
 export { TableCellPopoverRoot } from './table-cell-popover-root.gen'
 
 export { TableCellPopoverTrigger } from './table-cell-popover-trigger.gen'
+
+export { TableHandlePopoverContent } from './table-handle-popover-content.gen'
+
+export { TableHandlePopoverItem } from './table-handle-popover-item.gen'

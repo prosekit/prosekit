@@ -3,13 +3,13 @@ import { useEditor } from 'prosekit/react'
 import {
   TableCellPopoverRoot,
   TableCellPopoverTrigger,
-  TableCellPopoverContent,
-  TableCellPopoverItem,
+  TableHandlePopoverContent,
+  TableHandlePopoverItem,
 } from 'prosekit/react/table-handle'
 
 import type { EditorExtension } from './extension'
 
-export function TableHandle() {
+export function TableCellHandle() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
@@ -17,29 +17,29 @@ export function TableHandle() {
       <TableCellPopoverTrigger>
         <div className={Themes.ICON_TABLE_CELL_HANDLE}></div>
       </TableCellPopoverTrigger>
-      <TableCellPopoverContent className={Themes.TABLE_CELL_MENU}>
-        <TableCellPopoverItem
+      <TableHandlePopoverContent className={Themes.TABLE_CELL_MENU}>
+        <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
           onClick={() => editor.commands.clearTableCellContent()}
           disabled={!editor.commands.clearTableCellContent.canApply()}
         >
           <div>clear cell content</div>
-        </TableCellPopoverItem>
-        <TableCellPopoverItem
+        </TableHandlePopoverItem>
+        <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
           onClick={() => editor.commands.mergeTableCells()}
           disabled={!editor.commands.mergeTableCells.canApply()}
         >
           <div>merge cells</div>
-        </TableCellPopoverItem>
-        <TableCellPopoverItem
+        </TableHandlePopoverItem>
+        <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
           onClick={() => editor.commands.splitTableCell()}
           disabled={!editor.commands.splitTableCell.canApply()}
         >
           <div>split cell</div>
-        </TableCellPopoverItem>
-      </TableCellPopoverContent>
+        </TableHandlePopoverItem>
+      </TableHandlePopoverContent>
     </TableCellPopoverRoot>
   )
 }

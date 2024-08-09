@@ -190,6 +190,18 @@ export const TABLE_CELL_HANDLE = cn(
   PRESENCE_ANIMATE,
 )
 
+export const TABLE_CELL_MENU = cn(
+  'relative block max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap p-1',
+  FLOATING_MENU,
+)
+
+export const TABLE_CELL_MENU_ITEM = cn(
+  'relative block min-w-[120px] scroll-my-1 rounded px-3 py-1.5',
+  'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 hover:data-[disabled=true]:opacity-50',
+  FLOATING_MENU_ITEM,
+)
+
+
 export const TOOLTIP_TRIGGER = cn('block')
 export const TOOLTIP_CONTENT = cn(
   'z-50 overflow-hidden rounded-md border border-solid bg-primary px-3 py-1.5 text-xs text-primary-foreground shadow-sm',

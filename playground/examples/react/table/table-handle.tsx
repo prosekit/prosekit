@@ -1,51 +1,43 @@
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 import {
-  PopoverContent,
-  PopoverRoot,
-  PopoverTrigger,
-} from 'prosekit/react/popover'
-import {
   TableCellPopoverRoot,
   TableCellPopoverTrigger,
   TableCellPopoverContent,
   TableCellPopoverItem,
 } from 'prosekit/react/table-handle'
 
+import type { EditorExtension } from './extension'
+
 export function TableHandle() {
-  const editor = useEditor()
-
-  //   useEffect(() => {
-  //     const handlePointerEvent = (view: EditorView, event: PointerEvent) => {
-  //       const { selection } = view.state
-  //       const isCellSel = isCellSelection(selection)
-  //       const { $head } = selection
-  //       const tableCellParent = findParentNodeOfType('tableCell', $head)
-  //       if (!tableCellParent || !isCellSel) return
-  //     //   view.
-  //     }
-
-  //     const extension = defineDOMEventHandler(
-  //       'pointerdown',
-  //       throttle(handlePointerEvent, 200),
-  //     )
-  //     editor.use(extension)
-  //   }, [])
+  const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <TableCellPopoverRoot
-      ref={(ref) => {
-        console.log(ref)
-      }}
-      className={Themes.TABLE_CELL_HANDLE}
-    >
+    <TableCellPopoverRoot className={Themes.TABLE_CELL_HANDLE}>
       <TableCellPopoverTrigger>
         <div className={Themes.ICON_TABLE_CELL_HANDLE}></div>
       </TableCellPopoverTrigger>
-      <TableCellPopoverContent>
-        <TableCellPopoverItem>
-          <div>change font color</div>
-          <div>change background color</div>
+      <TableCellPopoverContent className={Themes.TABLE_CELL_MENU}>
+        <TableCellPopoverItem
+          className={Themes.TABLE_CELL_MENU_ITEM}
+          onClick={() => editor.commands.clearTableCellContent()}
+          disabled={!editor.commands.clearTableCellContent.canApply()}
+        >
+          <div>clear cell content</div>
+        </TableCellPopoverItem>
+        <TableCellPopoverItem
+          className={Themes.TABLE_CELL_MENU_ITEM}
+          onClick={() => editor.commands.mergeTableCells()}
+          disabled={!editor.commands.mergeTableCells.canApply()}
+        >
+          <div>merge cells</div>
+        </TableCellPopoverItem>
+        <TableCellPopoverItem
+          className={Themes.TABLE_CELL_MENU_ITEM}
+          onClick={() => editor.commands.splitTableCell()}
+          disabled={!editor.commands.splitTableCell.canApply()}
+        >
+          <div>split cell</div>
         </TableCellPopoverItem>
       </TableCellPopoverContent>
     </TableCellPopoverRoot>

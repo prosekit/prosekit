@@ -1,10 +1,75 @@
-import type { ConnectableElement, SignalState } from '@aria-ui/core'
-import { useMenuContent } from '@aria-ui/menu'
+import {
+  createSignal,
+  mapSignals,
+  useEffect,
+  type ConnectableElement,
+  type ReadonlySignal,
+  type SignalState,
+} from '@aria-ui/core'
+import {
+  defaultMenuContentProps,
+  useMenuContent,
+  type MenuContentProps,
+} from '@aria-ui/menu'
+
+import { openContext } from '../context'
+
 import type { TableCellPopoverContentProps } from './props'
 
 export function useTableCellPopoverContent(
   host: ConnectableElement,
-  props: SignalState<TableCellPopoverContentProps>,
+  state: SignalState<TableCellPopoverContentProps>,
 ) {
-  useMenuContent(host, props)
+  const open = openContext.consume(host)
+  const onKeydownHandlerAdd = useKeyboardHandler(host, open)
+
+  const menuContentProps: SignalState<MenuContentProps> = {
+    ...mapSignals({
+      ...defaultMenuContentProps,
+      onKeydownHandlerAdd,
+    }),
+    placement: state.placement,
+  }
+
+  useMenuContent(host, menuContentProps)
+}
+
+function useKeyboardHandler(
+  element: ConnectableElement,
+  open: ReadonlySignal<boolean>,
+): MenuContentProps['onKeydownHandlerAdd'] {
+  const keydownHandler = createSignal<((event: KeyboardEvent) => void) | null>(
+    null,
+  )
+
+  let disposeKeydownHandler: VoidFunction | undefined
+
+  useEffect(element, () => {
+    const keydownHandlerValue = keydownHandler.get()
+
+    if (!keydownHandlerValue) {
+      return
+    }
+
+    const handleKeydown = (event: KeyboardEvent) => {
+      if (event.isComposing || event.defaultPrevented || !open.get()) {
+        return false
+      }
+      keydownHandlerValue(event)
+    }
+
+    document.addEventListener('keydown', handleKeydown)
+
+    disposeKeydownHandler = () => {
+      document.removeEventListener('keydown', handleKeydown)
+    }
+  })
+
+  return (keydownHandlerValue) => {
+    keydownHandler.set(keydownHandlerValue)
+    return () => {
+      disposeKeydownHandler?.()
+      disposeKeydownHandler = undefined
+    }
+  }
 }

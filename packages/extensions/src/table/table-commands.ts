@@ -5,9 +5,20 @@ import {
   insertNode,
   type Extension,
 } from '@prosekit/core'
-import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
+import {
+  type ProseMirrorNode,
+  type ResolvedPos,
+  type Schema,
+} from '@prosekit/pm/model'
 import { TextSelection, type Command } from '@prosekit/pm/state'
-import type { TableRole } from 'prosemirror-tables'
+import {
+  mergeCells,
+  pointsAtCell,
+  splitCell,
+  type TableRole,
+} from 'prosemirror-tables'
+
+import { isCellSelection } from './table-utils'
 
 function createEmptyTable(
   schema: Schema,
@@ -108,6 +119,44 @@ export const exitTable: Command = (state, dispatch) => {
   return true
 }
 
+export function clearTableCellContent(cellPos?: ResolvedPos | number): Command {
+  return (state, dispatch) => {
+    let { tr } = state
+
+    if (cellPos) {
+      const $pos =
+        typeof cellPos === 'number' ? tr.doc.resolve(cellPos) : cellPos
+      if (!pointsAtCell($pos)) return false
+
+      const pos = $pos.pos
+      const node = tr.doc.nodeAt(pos)
+      if (!node) return false
+
+      const copyNode = node.type.createAndFill(node.attrs)
+
+      if (copyNode) {
+        dispatch?.(tr.replaceWith(pos, pos + node.nodeSize, copyNode))
+        return true
+      }
+    }
+
+    const { selection } = state
+    if (isCellSelection(selection)) {
+      selection.forEachCell((cellNode, pos) => {
+        const copyNode = cellNode.type.createAndFill(cellNode.attrs)
+        pos = tr.mapping.map(pos)
+        if (copyNode) {
+          tr = tr.replaceWith(pos, pos + cellNode.nodeSize, copyNode)
+        }
+      })
+      dispatch?.(tr)
+      return true
+    }
+
+    return false
+  }
+}
+
 /**
  * @internal
  */
@@ -115,6 +164,9 @@ export type TableCommandsExtension = Extension<{
   Commands: {
     insertTable: [InsertTableOptions]
     exitTable: []
+    clearTableCellContent: [cellPos?: ResolvedPos | number]
+    mergeTableCells: []
+    splitTableCell: []
   }
 }>
 
@@ -127,5 +179,8 @@ export function defineTableCommands(): TableCommandsExtension {
   return defineCommands({
     insertTable,
     exitTable: () => exitTable,
+    clearTableCellContent,
+    mergeTableCells: () => mergeCells,
+    splitTableCell: () => splitCell,
   })
 }

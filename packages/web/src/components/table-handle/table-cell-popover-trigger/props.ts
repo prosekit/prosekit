@@ -1,3 +1,9 @@
-export interface TableCellPopoverTriggerProps {}
+import type { Editor } from '@prosekit/core'
 
-export const defaultTableCellPopoverTriggerProps = Object.freeze({})
+export interface TableCellPopoverTriggerProps {
+  editor: Editor | null
+}
+
+export const defaultTableCellPopoverTriggerProps = Object.freeze({
+  editor: null,
+})

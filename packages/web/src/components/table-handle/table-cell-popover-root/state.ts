@@ -34,8 +34,6 @@ export function useTableCellPopoverRoot(
   const { editor, ...overlayState } = state
   const reference = createSignal<VirtualElement | null>(null)
 
-  const defaultContentOpen = createSignal<false>(false)
-
   const contentOpen = createSignal(false)
 
   const context = createSignal<TableCellPopoverContext>({
@@ -65,7 +63,6 @@ export function useTableCellPopoverRoot(
 
   useMenuRoot(host, {
     ...mapSignals(defaultMenuRootProps),
-    defaultOpen: defaultContentOpen,
     open: contentOpen,
   })
 }

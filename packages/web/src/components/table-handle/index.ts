@@ -6,6 +6,10 @@ export { TableCellPopoverTriggerElement } from './table-cell-popover-trigger/ele
 export { defaultTableCellPopoverTriggerProps } from './table-cell-popover-trigger/props'
 export type { TableCellPopoverTriggerProps } from './table-cell-popover-trigger/props'
 
+export { TableColumnPopoverRootElement } from './table-column-popover-root/element.gen'
+export { defaultTableColumnPopoverRootProps } from './table-column-popover-root/props'
+export type { TableColumnPopoverRootProps } from './table-column-popover-root/props'
+
 export { TableHandlePopoverContentElement } from './table-handle-popover-content/element.gen'
 export { defaultTableHandlePopoverContentProps } from './table-handle-popover-content/props'
 export type { TableHandlePopoverContentProps } from './table-handle-popover-content/props'

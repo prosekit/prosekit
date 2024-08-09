@@ -384,7 +384,11 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "table-handle.tsx",
+          "path": "table-cell-handle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "table-column-handle.tsx",
           "hidden": false
         }
       ]

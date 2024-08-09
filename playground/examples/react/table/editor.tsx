@@ -7,6 +7,7 @@ import { useMemo } from 'react'
 
 import { defineExtension } from './extension'
 import { TableCellHandle } from './table-cell-handle'
+import { TableColumnHandle } from './table-column-handle'
 
 export default function Editor() {
   const editor = useMemo(() => {
@@ -20,6 +21,7 @@ export default function Editor() {
         <div className={Themes.EDITOR_SCROLLING}>
           <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
           <TableCellHandle />
+          <TableColumnHandle />
         </div>
       </div>
     </ProseKit>

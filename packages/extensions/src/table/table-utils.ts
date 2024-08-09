@@ -1,6 +1,16 @@
-import type { ResolvedPos } from '@prosekit/pm/model'
+import { findParentNodeOfType } from '@prosekit/core'
+import type { ResolvedPos, Schema } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 import { cellAround, CellSelection, TableMap } from 'prosemirror-tables'
+
+export interface CellAxis {
+  row: number
+  col: number
+}
+
+export interface CellAxisWithPos extends CellAxis {
+  $cell: ResolvedPos
+}
 
 export function isCellSelection(value: unknown): value is CellSelection {
   return typeof value === 'object' && value instanceof CellSelection
@@ -63,11 +73,14 @@ export function getCellAxisByCoords(
   return { col, row, $cell }
 }
 
-export interface CellAxis {
-  row: number
-  col: number
+export function findTable($pos: ResolvedPos) {
+  return findParentNodeOfType('table', $pos)
 }
 
-export interface CellAxisWithPos extends CellAxis {
-  $cell: ResolvedPos
+export function getCellIndex(
+  map: TableMap,
+  rowIndex: number,
+  colIndex: number,
+): number {
+  return map.width * rowIndex + colIndex
 }

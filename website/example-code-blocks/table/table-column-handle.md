@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/table/table-handle.tsx
+<<< @/../playground/examples/react/table/table-column-handle.tsx
 
 :::
 

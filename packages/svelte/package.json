@@ -46,6 +46,14 @@
       "svelte": "./src/components/resizable/index.ts",
       "default": "./src/components/resizable/index.ts"
     },
+    "./table-handle": {
+      "svelte": "./src/components/table-handle/index.ts",
+      "default": "./src/components/table-handle/index.ts"
+    },
+    "./table-handle/table-cell-popover": {
+      "svelte": "./src/components/table-handle/table-cell-popover/index.ts",
+      "default": "./src/components/table-handle/table-cell-popover/index.ts"
+    },
     "./tooltip": {
       "svelte": "./src/components/tooltip/index.ts",
       "default": "./src/components/tooltip/index.ts"
@@ -119,6 +127,18 @@
         "import": "./dist/prosekit-svelte-resizable.js",
         "default": "./dist/prosekit-svelte-resizable.js"
       },
+      "./table-handle": {
+        "types": "./dist/prosekit-svelte-table-handle.d.ts",
+        "svelte": "./dist/prosekit-svelte-table-handle.js",
+        "import": "./dist/prosekit-svelte-table-handle.js",
+        "default": "./dist/prosekit-svelte-table-handle.js"
+      },
+      "./table-handle/table-cell-popover": {
+        "types": "./dist/prosekit-svelte-table-handle-table-cell-popover.d.ts",
+        "svelte": "./dist/prosekit-svelte-table-handle-table-cell-popover.js",
+        "import": "./dist/prosekit-svelte-table-handle-table-cell-popover.js",
+        "default": "./dist/prosekit-svelte-table-handle-table-cell-popover.js"
+      },
       "./tooltip": {
         "types": "./dist/prosekit-svelte-tooltip.d.ts",
         "svelte": "./dist/prosekit-svelte-tooltip.js",
@@ -148,6 +168,12 @@
         ],
         "resizable": [
           "./dist/prosekit-svelte-resizable.d.ts"
+        ],
+        "table-handle": [
+          "./dist/prosekit-svelte-table-handle.d.ts"
+        ],
+        "table-handle/table-cell-popover": [
+          "./dist/prosekit-svelte-table-handle-table-cell-popover.d.ts"
         ],
         "tooltip": [
           "./dist/prosekit-svelte-tooltip.d.ts"

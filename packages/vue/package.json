@@ -31,6 +31,8 @@
     "./inline-popover": "./src/components/inline-popover/index.ts",
     "./popover": "./src/components/popover/index.ts",
     "./resizable": "./src/components/resizable/index.ts",
+    "./table-handle": "./src/components/table-handle/index.ts",
+    "./table-handle/table-cell-popover": "./src/components/table-handle/table-cell-popover/index.ts",
     "./tooltip": "./src/components/tooltip/index.ts"
   },
   "files": [
@@ -94,6 +96,16 @@
         "import": "./dist/prosekit-vue-resizable.js",
         "default": "./dist/prosekit-vue-resizable.js"
       },
+      "./table-handle": {
+        "types": "./dist/prosekit-vue-table-handle.d.ts",
+        "import": "./dist/prosekit-vue-table-handle.js",
+        "default": "./dist/prosekit-vue-table-handle.js"
+      },
+      "./table-handle/table-cell-popover": {
+        "types": "./dist/prosekit-vue-table-handle-table-cell-popover.d.ts",
+        "import": "./dist/prosekit-vue-table-handle-table-cell-popover.js",
+        "default": "./dist/prosekit-vue-table-handle-table-cell-popover.js"
+      },
       "./tooltip": {
         "types": "./dist/prosekit-vue-tooltip.d.ts",
         "import": "./dist/prosekit-vue-tooltip.js",
@@ -122,6 +134,12 @@
         ],
         "resizable": [
           "./dist/prosekit-vue-resizable.d.ts"
+        ],
+        "table-handle": [
+          "./dist/prosekit-vue-table-handle.d.ts"
+        ],
+        "table-handle/table-cell-popover": [
+          "./dist/prosekit-vue-table-handle-table-cell-popover.d.ts"
         ],
         "tooltip": [
           "./dist/prosekit-vue-tooltip.d.ts"

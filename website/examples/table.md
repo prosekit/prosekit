@@ -7,6 +7,19 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 <ExamplePreview name="table">
 
+<template v-slot:react>
+
+::: code-group
+
+<<< @/../playground/examples/react/table/editor.tsx
+<<< @/../playground/examples/react/table/extension.ts
+<<< @/../playground/examples/react/table/table-cell-handle.tsx
+<<< @/../playground/examples/react/table/table-column-handle.tsx
+
+:::
+
+</template>
+
 <template v-slot:vue>
 
 ::: code-group

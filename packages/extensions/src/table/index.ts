@@ -56,3 +56,6 @@ export {
   type TableRowSpecExtension,
   type TableSpecExtension,
 }
+
+export * from './table-utils'
+export * from 'prosemirror-tables'

@@ -29,5 +29,7 @@
   cursor: col-resize;
 }
 .ProseMirror .selectedCell {
-  background-color: Highlight;
+  --color: 210, 100%, 56%;
+  background-color: hsla(var(--color), 20%);
+  border: 1px double hsl(var(--color));
 }

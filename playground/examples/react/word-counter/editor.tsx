@@ -24,7 +24,6 @@ export default function Editor() {
           <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
           <WordCounter />
         </div>
-        ƒ
       </div>
     </ProseKit>
   )

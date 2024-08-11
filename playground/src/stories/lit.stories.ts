@@ -4,4 +4,4 @@ export default {
   component,
 }
 
-export const Dom = {  }
+export const Dom = {}

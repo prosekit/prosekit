@@ -4,6 +4,7 @@ import solid from '@astrojs/solid-js'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
 import { defineConfig } from 'astro/config'
+import astrobook from 'astrobook'
 import unocss from 'unocss/astro'
 
 // https://astro.build/config
@@ -16,6 +17,7 @@ export default defineConfig({
     vue(),
     solid({ include: ['examples/solid/**/*'] }),
     unocss({ injectReset: true }),
+    astrobook({ directory: 'src/stories' }),
     {
       name: 'astro-integration-dark-mode',
       hooks: {

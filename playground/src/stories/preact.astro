@@ -1,0 +1,12 @@
+---
+import { PreactExample } from '../../examples/preact/example'
+import Container from './container.astro'
+
+interface Props {
+  story: string
+}
+---
+
+<Container>
+  <PreactExample story={Astro.props.story} client:only="preact" />
+</Container>

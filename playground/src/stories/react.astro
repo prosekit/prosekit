@@ -1,0 +1,11 @@
+---
+import { ReactExample } from '../../examples/react/example'
+import Container from './container.astro'
+interface Props {
+  story: string
+}
+---
+
+<Container>
+  <ReactExample story={Astro.props.story} client:only="react" />
+</Container>

@@ -1,7 +1,7 @@
 import { basename } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import stringHash from '@sindresorhus/string-hash'
+import pascalCase from 'just-pascal-case'
 
 import { readExampleMeta, type Example } from './example-meta'
 import { vfs } from './virtual-file-system'
@@ -10,83 +10,120 @@ export async function genPlaygroundPages() {
   const meta = await readExampleMeta()
 
   await vfs.updateText(
-    'playground/src/pages/index.astro',
-    getIndexContent(meta.examples),
+    'playground/examples/preact/loaders.gen.ts',
+    genPreactLoaders(meta.examples),
+  )
+  await vfs.updateText(
+    'playground/examples/react/loaders.gen.ts',
+    genReactLoaders(meta.examples),
+  )
+  await vfs.updateText(
+    'playground/examples/vue/loaders.gen.ts',
+    genVueLoaders(meta.examples),
+  )
+  await vfs.updateText(
+    'playground/examples/solid/loaders.gen.ts',
+    genSolidLoaders(meta.examples),
+  )
+  await vfs.updateText(
+    'playground/examples/svelte/loaders.gen.ts',
+    genSvelteLoaders(meta.examples),
   )
 
-  await vfs.updateText(
-    'playground/src/pages/[example].astro',
-    getExampleContent(meta.examples),
-  )
+  for (const framework of ['preact', 'react', 'vue', 'solid', 'svelte']) {
+    await vfs.updateText(
+      `playground/stories/${framework}.stories.ts`,
+      genStories(framework, meta.examples),
+    )
+  }
 }
 
-function getIndexContent(examples: Example[]): string {
-  const htmlLines: string[] = []
-
-  examples.forEach((example) => {
-    htmlLines.push(`  <p><a href="/_/${example.name}">${example.name}</a></p>`)
-  })
-
+function genPreactLoaders(examples: Example[]): string {
   const lines = [
-    `---`,
     `// This file is generated from ${currentFilename}`,
-    `import BaseLayout from '../layouts/base-layout.astro'`,
-    `---\n`,
-    `<!-- prettier-ignore -->`,
-    `<BaseLayout>`,
-    ...htmlLines,
-    `</BaseLayout>`,
+    `import { lazy } from 'preact/compat'`,
+    ``,
+    `export const loaders = {`,
+    // prettier-ignore
+    ...examples
+      .filter((example) => example.framework === 'preact')
+      .map((example) => `  '${example.story}': lazy(() => import('./${example.story}/editor')),`),
+    '}',
   ]
-
   return lines.join('\n') + '\n'
 }
 
-function getExampleContent(examples: Example[]): string {
-  const importLines: string[] = []
-  const pathLines: string[] = []
-  const htmlLines: string[] = []
-
-  examples.forEach((example) => {
-    const id = stringHash(example.name)
-    const { framework, story, name } = example
-
-    const ext = {
-      react: '',
-      preact: '',
-      solid: '',
-      svelte: '.svelte',
-      vue: '.vue',
-    }[framework]
-
-    if (ext == null) {
-      return
-    }
-
-    importLines.push(
-      `import E${id} from '../../examples/${framework}/${story}/editor${ext}'`,
-    )
-    pathLines.push(`  { params: { example: '${name}' } },`)
-    htmlLines.push(
-      `  {example === '${name}' && <E${id} client:only="${framework}" />}`,
-    )
-  })
-
+function genReactLoaders(examples: Example[]): string {
   const lines = [
-    `---`,
     `// This file is generated from ${currentFilename}`,
-    `import BaseLayout from '../layouts/base-layout.astro'`,
-    ...importLines,
-    `export const getStaticPaths = () => [`,
-    ...pathLines,
-    `]`,
-    `const { example } = Astro.params`,
-    `---\n`,
-    `<!-- prettier-ignore -->`,
-    `<BaseLayout>`,
-    ...htmlLines,
-    `</BaseLayout>`,
+    `import { lazy } from 'react'`,
+    ``,
+    `export const loaders = {`,
+    // prettier-ignore
+    ...examples
+      .filter((example) => example.framework === 'react')
+      .map((example) => `  '${example.story}': lazy(() => import('./${example.story}/editor')),`),
+    '}',
   ]
+  return lines.join('\n') + '\n'
+}
 
+function genVueLoaders(examples: Example[]): string {
+  const lines = [
+    `// This file is generated from ${currentFilename}`,
+    `import { defineAsyncComponent } from 'vue'`,
+    ``,
+    `export const loaders = {`,
+    // prettier-ignore
+    ...examples
+      .filter((example) => example.framework === 'vue')
+      .map((example) => `  '${example.story}': defineAsyncComponent(() => import('./${example.story}/editor.vue')),`),
+    '}',
+  ]
+  return lines.join('\n') + '\n'
+}
+
+function genSolidLoaders(examples: Example[]): string {
+  const lines = [
+    `// This file is generated from ${currentFilename}`,
+    `import { lazy } from 'solid-js'`,
+    ``,
+    `export const loaders = {`,
+    // prettier-ignore
+    ...examples
+      .filter((example) => example.framework === 'solid')
+      .map((example) => `  '${example.story}': lazy(() => import('./${example.story}/editor')),`),
+    '}',
+  ]
+  return lines.join('\n') + '\n'
+}
+
+function genSvelteLoaders(examples: Example[]): string {
+  const lines = [
+    `// This file is generated from ${currentFilename}`,
+    ``,
+    `export const loaders = {`,
+    // prettier-ignore
+    ...examples
+      .filter((example) => example.framework === 'solid')
+      .map((example) => `  '${example.story}': () => import('./${example.story}/editor.svelte'),`),
+    '}',
+  ]
+  return lines.join('\n') + '\n'
+}
+
+function genStories(framework: string, examples: Example[]): string {
+  const lines = [
+    `// This file is generated from ${currentFilename}`,
+    `import component from './${framework}.astro'`,
+    ``,
+    `export default { component }`,
+    ``,
+    // prettier-ignore
+    ...examples
+      .filter((example) => example.framework === framework)
+      .map((example) => `export const ${pascalCase(example.story)} = { args: { story: '${example.story}' } }`),
+  ]
   return lines.join('\n') + '\n'
 }
 

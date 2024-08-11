@@ -67,12 +67,9 @@ function handleHeadingConvert(level) {
 }
 
 function main() {
-  let root = document.querySelector('.editor-root')
+  const root = document.querySelector('.example-vanilla-dom')
   if (!root) {
-    root = document
-      .querySelector('main')
-      .appendChild(document.createElement('div'))
-    root.classList.add('example-root')
+    return
   }
   root.innerHTML = ''
 

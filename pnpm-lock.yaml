@@ -214,6 +214,9 @@ importers:
       just-filter-object:
         specifier: ^3.2.0
         version: 3.2.0
+      just-pascal-case:
+        specifier: ^3.2.0
+        version: 3.2.0
       tsx:
         specifier: ^4.16.5
         version: 4.16.5
@@ -754,6 +757,9 @@ importers:
       astro:
         specifier: ^4.13.1
         version: 4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
+      astrobook:
+        specifier: ^0.3.0
+        version: 0.3.0(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))
       lit:
         specifier: ^3.2.0
         version: 3.2.0
@@ -1027,6 +1033,20 @@ packages:
 
   '@aria-ui/tooltip@0.0.22':
     resolution: {integrity: sha512-0C0ZQ46hzjzOSUJ3i7YNKRq/l1Q2i+IxfKUKKLC5tB+MJrieD66qBtETSlw3HLRtBBuLlcmIugz/IFgfHfAmmg==}
+
+  '@astrobook/core@0.3.0':
+    resolution: {integrity: sha512-+J1nnJuKLc2WzC2evZgx8ck1r9NVSXsST4k6m+vLHFRG/H7+kq6AOwap4hQZ64qYGEekqW7pjain6cmKElREHA==}
+
+  '@astrobook/types@0.3.0':
+    resolution: {integrity: sha512-gyP2fUIYbmCsAs7mBis5tDGyjwBGxeHyHt1gdQf6Y8Ij23LKNqonBiJPF3erEOxtHtojdSaAGMkSQw54fylCqg==}
+
+  '@astrobook/ui@0.3.0':
+    resolution: {integrity: sha512-/sUNuBeevYre2Scv/x/jzKATIIBFu9P0L8Pj8+n70+HYZH3V1+V/6Bt1aSzpNcgxVl7hnuymdhULHocjtOKFDg==}
+    peerDependencies:
+      astro: '>=4.0.0'
+    peerDependenciesMeta:
+      astro:
+        optional: true
 
   '@astrojs/compiler@2.10.1':
     resolution: {integrity: sha512-XmM4j6BjvOVMag2xELq0JuG2yKOW8wgIu6dvb9BsjbGYmnvoStJn/pqEzVqc1EBszf2xYT7onIkftIOUz9AwrQ==}
@@ -3037,6 +3057,14 @@ packages:
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
+  astrobook@0.3.0:
+    resolution: {integrity: sha512-tG8FdctmBVnvjPC0DMsUmGntkre+Y7nOnyToIxG4yNAdYloytBHG41+9h5kuFZKqcr2xTa7dqZwc0CTbiurICA==}
+    peerDependencies:
+      astro: '>=4.0.0'
+    peerDependenciesMeta:
+      astro:
+        optional: true
+
   async-limiter@1.0.1:
     resolution: {integrity: sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==}
 
@@ -3900,6 +3928,14 @@ packages:
   fastq@1.17.1:
     resolution: {integrity: sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w==}
 
+  fdir@6.2.0:
+    resolution: {integrity: sha512-9XaWcDl0riOX5j2kYfy0kKdg7skw3IY6kA4LFT8Tk2yF9UdrADUy8D6AJuBLtf7ISm/MksumwAHE3WVbMRyCLw==}
+    peerDependencies:
+      picomatch: ^3 || ^4
+    peerDependenciesMeta:
+      picomatch:
+        optional: true
+
   fflate@0.8.2:
     resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
 
@@ -4675,6 +4711,9 @@ packages:
 
   just-omit@2.2.0:
     resolution: {integrity: sha512-Js7+HxDOGcB3RhI38Mird/RgyMf3t0DAJFda1QWqqlAKTa36NeSYIufJXxrZUbysFTRcTOFcoMCiFK5FwCoI7Q==}
+
+  just-pascal-case@3.2.0:
+    resolution: {integrity: sha512-B0PW5mgJrsGmXdvDLxC2Kdfyie74m+mRO+iCjJ+Es0Jl5kcQwVfB0qb/qiDOCE3m0XUOo1SdZBWzUlNCO9zreg==}
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -5511,6 +5550,10 @@ packages:
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+
+  picomatch@4.0.2:
+    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
+    engines: {node: '>=12'}
 
   pify@4.0.1:
     resolution: {integrity: sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==}
@@ -7335,6 +7378,24 @@ snapshots:
       '@aria-ui/overlay': 0.0.19
       '@aria-ui/presence': 0.0.14
       nanoid: 5.0.7
+
+  '@astrobook/core@0.3.0':
+    dependencies:
+      '@astrobook/types': 0.3.0
+      acorn: 8.12.1
+      acorn-jsx: 5.3.2(acorn@8.12.1)
+      fdir: 6.2.0(picomatch@4.0.2)
+      picomatch: 4.0.2
+      slash: 5.1.0
+
+  '@astrobook/types@0.3.0': {}
+
+  '@astrobook/ui@0.3.0(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))':
+    dependencies:
+      '@astrobook/core': 0.3.0
+      '@astrobook/types': 0.3.0
+    optionalDependencies:
+      astro: 4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
 
   '@astrojs/compiler@2.10.1': {}
 
@@ -9889,6 +9950,14 @@ snapshots:
       - terser
       - typescript
 
+  astrobook@0.3.0(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)):
+    dependencies:
+      '@astrobook/core': 0.3.0
+      '@astrobook/types': 0.3.0
+      '@astrobook/ui': 0.3.0(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))
+    optionalDependencies:
+      astro: 4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
+
   async-limiter@1.0.1:
     optional: true
 
@@ -10957,6 +11026,10 @@ snapshots:
     dependencies:
       reusify: 1.0.4
 
+  fdir@6.2.0(picomatch@4.0.2):
+    optionalDependencies:
+      picomatch: 4.0.2
+
   fflate@0.8.2: {}
 
   figures@6.1.0:
@@ -11804,6 +11877,8 @@ snapshots:
   just-map-values@3.2.0: {}
 
   just-omit@2.2.0: {}
+
+  just-pascal-case@3.2.0: {}
 
   keyv@4.5.4:
     dependencies:
@@ -12835,6 +12910,8 @@ snapshots:
   picocolors@1.0.1: {}
 
   picomatch@2.3.1: {}
+
+  picomatch@4.0.2: {}
 
   pify@4.0.1: {}
 

@@ -8,9 +8,9 @@ export const IS_APPLE = process.platform === 'darwin'
 export const MOD_KEY = IS_APPLE ? 'Meta' : 'Control'
 
 function getExamples(story: string) {
-  const examples = exampleMeta.examples
-    .filter((example) => example.story === story)
-    .map((example) => example.name)
+  const examples = exampleMeta.examples.filter(
+    (example) => example.story === story,
+  )
 
   if (examples.length === 0) {
     throw new Error(`No examples found for story "${story}"`)
@@ -25,12 +25,11 @@ function testSingleStory(
 ) {
   test.describe('story:' + story, () => {
     for (const example of getExamples(story)) {
-      test.describe('example:' + example, () => {
+      test.describe('example:' + example.name, () => {
         test.beforeEach(async ({ page }) => {
-          await page.goto(example)
+          await page.goto('stories/' + example.framework + '/' + example.story)
         })
-
-        callback({ example })
+        callback({ example: example.name })
       })
     }
   })

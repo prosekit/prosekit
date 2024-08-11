@@ -1,5 +1,7 @@
 export function getExampleUrl(example: string) {
+  const path = `/_/stories/${example.replace(/^([a-z]+)-(.+)$/, '$1/$2')}/index.html`
+
   return import.meta.env.MODE === 'development'
-    ? `http://localhost:4321/_/${example}`
-    : `/_/${example}/index.html`
+    ? `http://localhost:4321${path}`
+    : path
 }

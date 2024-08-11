@@ -1,6 +1,6 @@
 <script lang="ts">
 import { onMount } from 'svelte'
-import { loaders } from './loaders'
+import { loaders } from './loaders.gen'
 
 export let story: string = ''
 

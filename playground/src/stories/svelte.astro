@@ -1,0 +1,12 @@
+---
+import SvelteExample from '../../examples/svelte/example.svelte'
+import Container from './container.astro'
+
+interface Props {
+  story: string
+}
+---
+
+<Container>
+  <SvelteExample story={Astro.props.story} client:only="svelte" />
+</Container>

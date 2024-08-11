@@ -5,5 +5,5 @@
     "outDir": ".temp",
     "jsx": "react-jsx",
   },
-  "include": ["./"],
+  "include": ["./", "../../stories/example.stories.ts"],
 }

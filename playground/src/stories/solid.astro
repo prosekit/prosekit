@@ -1,0 +1,12 @@
+---
+import { SolidExample } from '../../examples/solid/example'
+import Container from './container.astro'
+
+interface Props {
+  story: string
+}
+---
+
+<Container>
+  <SolidExample story={Astro.props.story} client:only="solid-js" />
+</Container>

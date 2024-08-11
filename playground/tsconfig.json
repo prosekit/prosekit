@@ -8,7 +8,9 @@
     "./.astro/**/*",
     "./src/**/*",
     "./tests/**/*",
+    "./stories/**/*",
     "./*.ts",
+    "./shims-astro.d.ts",
     "./*.mjs",
   ],
   "references": [

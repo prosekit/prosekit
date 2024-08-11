@@ -15,4 +15,6 @@ onMount(() => {
   {#await loader() then { default: LazyComponent }}
     <LazyComponent />
   {/await}
+{:else}
+  <div></div>
 {/if}

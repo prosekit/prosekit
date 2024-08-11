@@ -105,7 +105,7 @@ function genSvelteLoaders(examples: Example[]): string {
     `export const loaders = {`,
     // prettier-ignore
     ...examples
-      .filter((example) => example.framework === 'solid')
+      .filter((example) => example.framework === 'svelte')
       .map((example) => `  '${example.story}': () => import('./${example.story}/editor.svelte'),`),
     '}',
   ]

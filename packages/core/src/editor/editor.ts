@@ -1,6 +1,5 @@
 import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
-import type { Plugin, Selection } from '@prosekit/pm/state'
-import { EditorState } from '@prosekit/pm/state'
+import { type Plugin, type Selection, EditorState } from '@prosekit/pm/state'
 import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
@@ -28,8 +27,12 @@ import {
   getEditorSelection,
 } from '../utils/editor-content'
 
-import type { MarkAction, NodeAction } from './action'
-import { createMarkActions, createNodeActions } from './action'
+import {
+  type MarkAction,
+  type NodeAction,
+  createMarkActions,
+  createNodeActions,
+} from './action'
 import { union } from './union'
 
 /**

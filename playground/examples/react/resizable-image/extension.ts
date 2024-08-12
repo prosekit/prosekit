@@ -1,8 +1,10 @@
 import { defineBasicExtension } from 'prosekit/basic'
 import { defineNodeAttr, union } from 'prosekit/core'
 import type { ImageAttrs as BaseImageAttrs } from 'prosekit/extensions/image'
-import type { ReactNodeViewComponent } from 'prosekit/react'
-import { defineReactNodeView } from 'prosekit/react'
+import type {
+  ReactNodeViewComponent,
+  defineReactNodeView,
+} from 'prosekit/react'
 
 import ImageView from './image-view'
 

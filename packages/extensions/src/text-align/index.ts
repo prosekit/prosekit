@@ -1,5 +1,7 @@
-import type { Extension, PlainExtension, Union } from '@prosekit/core'
 import {
+  type Extension,
+  type PlainExtension,
+  type Union,
   defineCommands,
   defineKeymap,
   defineNodeAttr,

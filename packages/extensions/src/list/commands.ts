@@ -1,13 +1,11 @@
 import { defineCommands, insertNode, type Extension } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
-import type {
-  DedentListOptions,
-  IndentListOptions,
-  ListAttributes,
-  ToggleCollapsedOptions,
-  UnwrapListOptions,
-} from 'prosemirror-flat-list'
 import {
+  type DedentListOptions,
+  type IndentListOptions,
+  type ListAttributes,
+  type ToggleCollapsedOptions,
+  type UnwrapListOptions,
   createDedentListCommand as dedentList,
   createIndentListCommand as indentList,
   createMoveListCommand as moveList,

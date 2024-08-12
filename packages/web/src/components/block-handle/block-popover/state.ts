@@ -1,9 +1,7 @@
-import type {
-  ConnectableElement,
-  ReadonlySignal,
-  SignalState,
-} from '@aria-ui/core'
 import {
+  type ConnectableElement,
+  type ReadonlySignal,
+  type SignalState,
   createComputed,
   createSignal,
   useAttribute,
@@ -17,8 +15,10 @@ import type { Editor } from '@prosekit/core'
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { blockPopoverContext, type BlockPopoverContext } from '../context'
 
-import type { ElementHoverHandler } from './pointer-move'
-import { defineElementHoverHandler } from './pointer-move'
+import {
+  type ElementHoverHandler,
+  defineElementHoverHandler,
+} from './pointer-move'
 import type { BlockPopoverProps } from './props'
 
 export function useBlockPopover(

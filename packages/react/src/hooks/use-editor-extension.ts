@@ -1,5 +1,8 @@
-import type { Editor, Extension } from '@prosekit/core'
-import { EditorNotFoundError } from '@prosekit/core'
+import {
+  type Editor,
+  type Extension,
+  EditorNotFoundError,
+} from '@prosekit/core'
 import { useEffect } from 'react'
 
 /**

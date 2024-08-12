@@ -1,4 +1,4 @@
-import { type ResolvedPos } from '@prosekit/pm/model'
+import type { ResolvedPos } from '@prosekit/pm/model'
 import {
   type EditorState,
   PluginKey,

@@ -719,17 +719,17 @@ importers:
         specifier: ^3.5.1
         version: 3.5.1(@babel/core@7.25.2)(preact@10.23.1)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))
       '@astrojs/react':
-        specifier: ^3.6.1
-        version: 3.6.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))
+        specifier: ^3.6.2
+        version: 3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))
       '@astrojs/solid-js':
-        specifier: ^4.4.0
-        version: 4.4.0(solid-js@1.8.19)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))
+        specifier: ^4.4.1
+        version: 4.4.1(solid-js@1.8.19)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))
       '@astrojs/svelte':
         specifier: ^5.7.0
-        version: 5.7.0(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))
+        version: 5.7.0(astro@4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))
       '@astrojs/vue':
         specifier: ^4.5.0
-        version: 4.5.0(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))(rollup@4.19.0)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))
+        version: 4.5.0(astro@4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))(rollup@4.19.0)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))
       '@iconify-json/lucide':
         specifier: ^1.1.205
         version: 1.1.205
@@ -755,11 +755,11 @@ importers:
         specifier: ^0.61.9
         version: 0.61.9
       astro:
-        specifier: ^4.13.1
-        version: 4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
+        specifier: ^4.13.3
+        version: 4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
       astrobook:
-        specifier: ^0.3.2
-        version: 0.3.2(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))
+        specifier: ^0.3.3
+        version: 0.3.3(astro@4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))
       lit:
         specifier: ^3.2.0
         version: 3.2.0
@@ -1034,14 +1034,14 @@ packages:
   '@aria-ui/tooltip@0.0.22':
     resolution: {integrity: sha512-0C0ZQ46hzjzOSUJ3i7YNKRq/l1Q2i+IxfKUKKLC5tB+MJrieD66qBtETSlw3HLRtBBuLlcmIugz/IFgfHfAmmg==}
 
-  '@astrobook/core@0.3.2':
-    resolution: {integrity: sha512-0RF5HtZHOQaCzel/FmQPFM+sv7tI80IhTV9V9K4IvaCbQGKrp2RSJBQheE7xHP/4I60Qil0auV1JkPm0e61vMw==}
+  '@astrobook/core@0.3.3':
+    resolution: {integrity: sha512-oGaiq8VvzhyKrjPJaxMfeZChl1gcN8jRuHHz3GmrhYt2PNKNkYoJl9OVwJlaTzJPWPIp/Ct7ZSmtON0bEJ7gmA==}
 
-  '@astrobook/types@0.3.2':
-    resolution: {integrity: sha512-hszfJKFYIUVa1O3FCLsb8lkukmOVcXkzxbqgOjfDUdeDa8n7Coqs3OAPyNlpku+3WmQaIlXaKsLaC9Pz+3Ltng==}
+  '@astrobook/types@0.3.3':
+    resolution: {integrity: sha512-6SL1it+8gmmnMrgFPjCo/1QfGX6klNg9H09jvCsd4vQ9dA7ecBX3j/+/TOWd9CVdKfOk3+jg3q/xrU6/ukcOaA==}
 
-  '@astrobook/ui@0.3.2':
-    resolution: {integrity: sha512-9imq30/LhD8RjYurKokvChFe4bKslFd+hsSLOVWsHqNoEkQVpBqgdWzKK873Fm/Qc0485soceZk0t0LdfvKlew==}
+  '@astrobook/ui@0.3.3':
+    resolution: {integrity: sha512-g50L8BWouUzanICnbqR/p2+DAFad6enoh4jYIZJT0tDVKNjaPf9J+xgoBjs3ZWWlVb37xMD77VMj0wC8eBNc/A==}
     peerDependencies:
       astro: '>=4.0.0'
     peerDependenciesMeta:
@@ -1067,8 +1067,8 @@ packages:
     resolution: {integrity: sha512-Z9IYjuXSArkAUx3N6xj6+Bnvx8OdUSHA8YoOgyepp3+zJmtVYJIl/I18GozdJVW1p5u/CNpl3Km7/gwTJK85cw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
 
-  '@astrojs/react@3.6.1':
-    resolution: {integrity: sha512-Mpgu+GYTba1TEzLMshojeLxi7y/FqrTNtpGTCvI366bRbnCkqtvznRj/xPQOTybwXnYXSgxsELyUvqD51iFeiw==}
+  '@astrojs/react@3.6.2':
+    resolution: {integrity: sha512-fK29lYI7zK/KG4ZBy956x4dmauZcZ18osFkuyGa8r3gmmCQa2NZ9XNu9WaVYEUm0j89f4Gii4tbxLoyM8nk2MA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       '@types/react': ^17.0.50 || ^18.0.21
@@ -1076,8 +1076,8 @@ packages:
       react: ^17.0.2 || ^18.0.0 || ^19.0.0-beta
       react-dom: ^17.0.2 || ^18.0.0 || ^19.0.0-beta
 
-  '@astrojs/solid-js@4.4.0':
-    resolution: {integrity: sha512-nNX7x9dTcutb69yVGGC7/4vRECsV0dySmkl48AeV4qIAdCYXuH74Yu8KvPwRWRjtF0Z2Xp9ZgXG5KYCVHdBXJw==}
+  '@astrojs/solid-js@4.4.1':
+    resolution: {integrity: sha512-C8t+0sK8myZ9xJyL+GvNo0LjiqL8KTAJReb8Bn+0WjsOfCm+0N8GKQdBt5Gqf9Ig59KVZon3ydGa6GmqrkCojw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0}
     peerDependencies:
       solid-devtools: ^0.30.1
@@ -2788,7 +2788,7 @@ packages:
   '@vue/language-core@2.0.29':
     resolution: {integrity: sha512-o2qz9JPjhdoVj8D2+9bDXbaI4q2uZTHQA/dbyZT4Bj1FR9viZxDJnLcKVHfxdn6wsOzRgpqIzJEEmSSvgMvDTQ==}
     peerDependencies:
-      typescript: 5.5.3
+      typescript: '*'
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -3052,13 +3052,13 @@ packages:
     resolution: {integrity: sha512-es1zHFsnZ4Y4efz412nnrU3KvVAhgqy90a7Yt9Wpi5vQ3l4aYMOX0Qx4FD0elKr5ITEhiUGCSFcgGYf4YTuACg==}
     engines: {node: '>=16.14.0'}
 
-  astro@4.13.1:
-    resolution: {integrity: sha512-VnMjAc+ykFsIVjgbu9Mt/EA1fMIcPMXbU89h3ATwGOzSIKDsQH72bDgfJkWiwk6u0OE90GeP5EPhAT28Twf9oA==}
+  astro@4.13.3:
+    resolution: {integrity: sha512-MyhmM0v5sphiVwxAm5jjKxWeuPZijWPJ8Ajdign9QzEmLWSH8vUYIJWx/dWRQ6vF1I0jXrksoj3wtw5nzXt9nw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
-  astrobook@0.3.2:
-    resolution: {integrity: sha512-HOIFNy+TjVX5aQ0j1mQ1ZxwlszI/caY61L0jcskwBeW+KoPcCWuGDHnR3g0gG7pxABH7sYbPKEYfJjfnfuzOww==}
+  astrobook@0.3.3:
+    resolution: {integrity: sha512-/bZNYbQuMIlJiPlYHzJ+/Y8pWBSy7f5tpHlFosrsIVUMqnGX1bAUQQJTtlUH10zlYzpStSFJ+0O11EaFNX603Q==}
     peerDependencies:
       astro: '>=4.0.0'
     peerDependenciesMeta:
@@ -7379,23 +7379,23 @@ snapshots:
       '@aria-ui/presence': 0.0.14
       nanoid: 5.0.7
 
-  '@astrobook/core@0.3.2':
+  '@astrobook/core@0.3.3':
     dependencies:
-      '@astrobook/types': 0.3.2
+      '@astrobook/types': 0.3.3
       acorn: 8.12.1
       acorn-jsx: 5.3.2(acorn@8.12.1)
       fdir: 6.2.0(picomatch@4.0.2)
       picomatch: 4.0.2
       slash: 5.1.0
 
-  '@astrobook/types@0.3.2': {}
+  '@astrobook/types@0.3.3': {}
 
-  '@astrobook/ui@0.3.2(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))':
+  '@astrobook/ui@0.3.3(astro@4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))':
     dependencies:
-      '@astrobook/core': 0.3.2
-      '@astrobook/types': 0.3.2
+      '@astrobook/core': 0.3.3
+      '@astrobook/types': 0.3.3
     optionalDependencies:
-      astro: 4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
+      astro: 4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
 
   '@astrojs/compiler@2.10.1': {}
 
@@ -7442,7 +7442,7 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/react@3.6.1(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))':
+  '@astrojs/react@3.6.2(@types/react-dom@18.3.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))':
     dependencies:
       '@types/react': 18.3.3
       '@types/react-dom': 18.3.0
@@ -7454,7 +7454,7 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/solid-js@4.4.0(solid-js@1.8.19)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))':
+  '@astrojs/solid-js@4.4.1(solid-js@1.8.19)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))':
     dependencies:
       solid-js: 1.8.19
       vite-plugin-solid: 2.10.2(solid-js@1.8.19)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))
@@ -7463,10 +7463,10 @@ snapshots:
       - supports-color
       - vite
 
-  '@astrojs/svelte@5.7.0(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))':
+  '@astrojs/svelte@5.7.0(astro@4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))(svelte@4.2.18)(typescript@5.5.4)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 3.1.1(svelte@4.2.18)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))
-      astro: 4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
+      astro: 4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
       svelte: 4.2.18
       svelte2tsx: 0.7.13(svelte@4.2.18)(typescript@5.5.4)
       typescript: 5.5.4
@@ -7486,12 +7486,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vue@4.5.0(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))(rollup@4.19.0)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))':
+  '@astrojs/vue@4.5.0(astro@4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))(rollup@4.19.0)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))':
     dependencies:
       '@vitejs/plugin-vue': 5.0.5(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))
       '@vitejs/plugin-vue-jsx': 4.0.0(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))
       '@vue/compiler-sfc': 3.4.35
-      astro: 4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
+      astro: 4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
       vite-plugin-vue-devtools: 7.3.6(rollup@4.19.0)(vite@5.3.5(@types/node@20.14.14)(lightningcss@1.25.1))(vue@3.4.35(typescript@5.5.4))
       vue: 3.4.35(typescript@5.5.4)
     transitivePeerDependencies:
@@ -9874,7 +9874,7 @@ snapshots:
       '@babel/parser': 7.25.3
       pathe: 1.1.2
 
-  astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4):
+  astro@4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.1
       '@astrojs/internal-helpers': 0.4.1
@@ -9950,13 +9950,13 @@ snapshots:
       - terser
       - typescript
 
-  astrobook@0.3.2(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)):
+  astrobook@0.3.3(astro@4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)):
     dependencies:
-      '@astrobook/core': 0.3.2
-      '@astrobook/types': 0.3.2
-      '@astrobook/ui': 0.3.2(astro@4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))
+      '@astrobook/core': 0.3.3
+      '@astrobook/types': 0.3.3
+      '@astrobook/ui': 0.3.3(astro@4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4))
     optionalDependencies:
-      astro: 4.13.1(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
+      astro: 4.13.3(@types/node@20.14.14)(lightningcss@1.25.1)(typescript@5.5.4)
 
   async-limiter@1.0.1:
     optional: true

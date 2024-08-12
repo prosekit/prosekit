@@ -32,7 +32,7 @@ export async function genPlaygroundPages() {
 
   for (const framework of ['preact', 'react', 'vue', 'solid', 'svelte']) {
     await vfs.updateText(
-      `playground/stories/${framework}.stories.ts`,
+      `playground/src/stories/${framework}.stories.ts`,
       genStories(framework, meta.examples),
     )
   }

@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.4.0"
+    "tailwind-merge": "^2.5.1"
   },
   "devDependencies": {
     "dedent": "^1.5.3",

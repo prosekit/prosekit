@@ -192,12 +192,12 @@
     "preact": "^10.23.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "solid-js": "^1.8.19",
+    "solid-js": "^1.8.20",
     "svelte": "^4.2.18",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4",
-    "vue": "^3.4.35",
-    "y-prosemirror": "^1.2.9",
+    "vue": "^3.4.37",
+    "y-prosemirror": "^1.2.12",
     "yjs": "^13.6.18"
   },
   "publishConfig": {

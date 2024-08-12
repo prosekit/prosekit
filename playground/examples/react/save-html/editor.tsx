@@ -2,8 +2,8 @@ import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
-import type {
-  NodeJSON,
+import {
+  type NodeJSON,
   createEditor,
   htmlFromNode,
   jsonFromHTML,

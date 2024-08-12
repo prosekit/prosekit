@@ -1,6 +1,6 @@
 import { 
-  AutocompleteItemElement,
   defaultAutocompleteItemProps,
+  type AutocompleteItemElement,
   type AutocompleteItemProps,
 } from '@prosekit/web/autocomplete'
 

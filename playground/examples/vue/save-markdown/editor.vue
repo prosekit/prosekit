@@ -7,7 +7,7 @@ import {
   createEditor,
   htmlFromNode,
   jsonFromHTML,
-  type NodeJSON,
+  NodeJSON,
 } from 'prosekit/core'
 import { ListDOMSerializer } from 'prosekit/extensions/list'
 import { computed, ref } from 'vue'

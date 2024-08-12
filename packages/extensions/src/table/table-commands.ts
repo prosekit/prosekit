@@ -1,9 +1,9 @@
+import type { Extension } from '@prosekit/core'
 import {
   defaultBlockAt,
   defineCommands,
   getNodeType,
   insertNode,
-  type Extension,
 } from '@prosekit/core'
 import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
 import { TextSelection, type Command } from '@prosekit/pm/state'

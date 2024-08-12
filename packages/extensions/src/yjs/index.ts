@@ -1,12 +1,7 @@
-import {
-  Priority,
-  union,
-  withPriority,
-  type PlainExtension,
-  type Union,
-} from '@prosekit/core'
+import type { PlainExtension, Union } from '@prosekit/core'
+import { Priority, union, withPriority } from '@prosekit/core'
 import type { Awareness } from 'y-protocols/awareness'
-import * as Y from 'yjs'
+import type * as Y from 'yjs'
 
 import { defineYjsCommands, type YjsCommandsExtension } from './commands'
 import {

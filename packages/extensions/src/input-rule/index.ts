@@ -1,3 +1,4 @@
+import type { PlainExtension, PluginPayload } from '@prosekit/core'
 import {
   defineFacet,
   defineFacetPayload,
@@ -6,8 +7,6 @@ import {
   isMarkAbsent,
   maybeRun,
   pluginFacet,
-  type PlainExtension,
-  type PluginPayload,
 } from '@prosekit/core'
 import {
   InputRule,
@@ -15,14 +14,14 @@ import {
   textblockTypeInputRule,
   wrappingInputRule,
 } from '@prosekit/pm/inputrules'
-import {
+import type {
   MarkType,
   NodeType,
   ProseMirrorNode,
   Schema,
-  type Attrs,
+  Attrs,
 } from '@prosekit/pm/model'
-import { Plugin } from '@prosekit/pm/state'
+import type { Plugin } from '@prosekit/pm/state'
 
 /**
  * Defines an input rule extension.

@@ -1,5 +1,6 @@
 <script lang="ts">
 import '@prosekit/web/block-handle'
+
 import { defaultBlockPopoverProps } from '@prosekit/web/block-handle'
 import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'

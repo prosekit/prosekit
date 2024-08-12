@@ -1,9 +1,10 @@
 import type { Extension, ExtensionTyping } from '../types/extension'
-import { Priority } from '../types/priority'
+import type { Priority } from '../types/priority'
 import { assert } from '../utils/assert'
 
 import { BaseExtension } from './base-extension'
-import { FacetNode, unionFacetNode } from './facet-node'
+import type { FacetNode } from './facet-node'
+import { unionFacetNode } from './facet-node'
 
 export class UnionExtensionImpl<T extends ExtensionTyping = ExtensionTyping>
   extends BaseExtension<T>

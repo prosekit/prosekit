@@ -1,4 +1,4 @@
-import { Editor, type Extension } from '@prosekit/core'
+import type { Editor, Extension } from '@prosekit/core'
 import { inject, provide, type InjectionKey } from 'vue'
 
 const symbol = Symbol('prosekit-vue-editor-context') as InjectionKey<Editor>

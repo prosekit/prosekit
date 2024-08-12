@@ -1,9 +1,9 @@
+import type { Extension } from '@prosekit/core'
 import {
   defineCommands,
   insertNode,
   setBlockType,
   toggleNode,
-  type Extension,
 } from '@prosekit/core'
 
 import type { HeadingAttrs } from './types'

@@ -1,3 +1,4 @@
+import type { PlainExtension, PluginPayload } from '@prosekit/core'
 import {
   OBJECT_REPLACEMENT_CHARACTER,
   defineFacet,
@@ -6,18 +7,11 @@ import {
   isTextSelection,
   maybeRun,
   pluginFacet,
-  type PlainExtension,
-  type PluginPayload,
 } from '@prosekit/core'
 import { keydownHandler } from '@prosekit/pm/keymap'
 import type { Attrs, NodeType } from '@prosekit/pm/model'
-import {
-  PluginKey,
-  ProseMirrorPlugin,
-  type Command,
-  type EditorState,
-  type Transaction,
-} from '@prosekit/pm/state'
+import type { Command, EditorState, Transaction } from '@prosekit/pm/state'
+import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 /**

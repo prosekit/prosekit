@@ -1,9 +1,5 @@
-import {
-  createSignal,
-  useEffect,
-  type ConnectableElement,
-  type ReadonlySignal,
-} from '@aria-ui/core'
+import type { ConnectableElement, ReadonlySignal } from '@aria-ui/core'
+import { createSignal, useEffect } from '@aria-ui/core'
 
 export function useFirstRendering(
   host: ConnectableElement,

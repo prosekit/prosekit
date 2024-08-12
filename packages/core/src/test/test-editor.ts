@@ -1,22 +1,16 @@
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import { NodeSelection, Selection, TextSelection } from '@prosekit/pm/state'
+import type { Selection } from '@prosekit/pm/state'
+import { NodeSelection, TextSelection } from '@prosekit/pm/state'
 
 import { createMarkActions, createNodeActions } from '../editor/action'
-import {
-  Editor,
-  EditorInstance,
-  setupEditorExtension,
-  type EditorOptions,
-} from '../editor/editor'
+import type { EditorOptions } from '../editor/editor'
+import { Editor, EditorInstance, setupEditorExtension } from '../editor/editor'
 import type { Extension } from '../types/extension'
 import type { NodeJSON, SelectionJSON } from '../types/model'
 import { isProseMirrorNode } from '../utils/type-assertion'
 
-import {
-  applyMarkForTest,
-  createNodeForTest,
-  type TaggedProseMirrorNode,
-} from './test-builder'
+import type { TaggedProseMirrorNode } from './test-builder'
+import { applyMarkForTest, createNodeForTest } from './test-builder'
 
 function maybeResolve(doc: ProseMirrorNode, pos?: number) {
   if (pos != null) {

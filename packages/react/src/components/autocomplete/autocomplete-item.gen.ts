@@ -1,7 +1,7 @@
 import {
-  AutocompleteItemElement,
   defaultAutocompleteItemProps,
-  type AutocompleteItemProps,
+  type AutocompleteItemElement,
+  type AutocompleteItemProps
 } from '@prosekit/web/autocomplete'
 import type {
   ForwardRefExoticComponent,

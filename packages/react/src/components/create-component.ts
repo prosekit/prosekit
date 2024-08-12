@@ -1,12 +1,9 @@
-import {
-  createElement,
-  forwardRef,
-  useLayoutEffect,
-  useState,
-  type ForwardRefExoticComponent,
-  type HTMLAttributes,
-  type RefAttributes,
+import type {
+  ForwardRefExoticComponent,
+  HTMLAttributes,
+  RefAttributes,
 } from 'react'
+import { createElement, forwardRef, useLayoutEffect, useState } from 'react'
 import { mergeRefs } from 'react-merge-refs'
 
 import { useEditorContext } from '../contexts/editor-context'

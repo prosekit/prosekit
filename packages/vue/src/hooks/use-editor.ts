@@ -1,18 +1,12 @@
+import type { Editor, Extension } from '@prosekit/core'
 import {
-  Editor,
   ProseKitError,
   defineMountHandler,
   defineUpdateHandler,
   union,
-  type Extension,
 } from '@prosekit/core'
-import {
-  onMounted,
-  onUnmounted,
-  shallowRef,
-  triggerRef,
-  type ShallowRef,
-} from 'vue'
+import type { ShallowRef } from 'vue'
+import { onMounted, onUnmounted, shallowRef, triggerRef } from 'vue'
 
 import { useEditorContext } from '../injection/editor-context'
 

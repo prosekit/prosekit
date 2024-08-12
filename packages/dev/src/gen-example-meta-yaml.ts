@@ -1,11 +1,10 @@
 import { groupBy } from 'lodash-es'
 
+import type { Example, ExampleMeta } from './example-meta'
 import {
   findExampleFile,
   readExampleMeta,
   writeExampleMeta,
-  type Example,
-  type ExampleMeta,
   sortExamples,
   sortFiles,
 } from './example-meta'

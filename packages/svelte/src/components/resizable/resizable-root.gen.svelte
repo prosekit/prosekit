@@ -1,5 +1,6 @@
 <script lang="ts">
 import '@prosekit/web/resizable'
+
 import { defaultResizableRootProps } from '@prosekit/web/resizable'
 import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'

@@ -4,10 +4,8 @@ import {
   defineCodeBlock,
   defineCodeBlockShiki,
 } from 'prosekit/extensions/code-block'
-import {
-  defineReactNodeView,
-  type ReactNodeViewComponent,
-} from 'prosekit/react'
+import type { ReactNodeViewComponent } from 'prosekit/react'
+import { defineReactNodeView } from 'prosekit/react'
 
 import CodeBlockView from './code-block-view'
 

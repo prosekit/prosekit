@@ -1,3 +1,9 @@
+import type {
+  Extension,
+  ExtractMarkActions,
+  ExtractNodeActions,
+  NodeChild,
+} from '@prosekit/core'
 import {
   defineBaseCommands,
   defineBaseKeymap,
@@ -7,10 +13,6 @@ import {
   defineText,
   isApple,
   union,
-  type Extension,
-  type ExtractMarkActions,
-  type ExtractNodeActions,
-  type NodeChild,
 } from '@prosekit/core'
 import { createTestEditor, type TestEditor } from '@prosekit/core/test'
 import { userEvent } from '@vitest/browser/context'

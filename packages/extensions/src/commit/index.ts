@@ -1,23 +1,20 @@
+import type { NodeJSON, PlainExtension, StepJSON } from '@prosekit/core'
 import {
   collectChildren,
   defineDefaultState,
   definePlugin,
   jsonFromNode,
   union,
-  type NodeJSON,
-  type PlainExtension,
-  type StepJSON,
 } from '@prosekit/core'
-import {
-  DOMSerializer,
-  Fragment,
-  Slice,
-  type ProseMirrorNode,
-} from '@prosekit/pm/model'
-import { PluginKey, ProseMirrorPlugin, Transaction } from '@prosekit/pm/state'
+import type { ProseMirrorNode } from '@prosekit/pm/model'
+import { DOMSerializer, Fragment, Slice } from '@prosekit/pm/model'
+import type { Transaction } from '@prosekit/pm/state'
+import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import { Step } from '@prosekit/pm/transform'
-import { Decoration, DecorationSet, EditorView } from '@prosekit/pm/view'
-import { Change, ChangeSet } from 'prosemirror-changeset'
+import type { EditorView } from '@prosekit/pm/view'
+import { Decoration, DecorationSet } from '@prosekit/pm/view'
+import type { Change } from 'prosemirror-changeset'
+import { ChangeSet } from 'prosemirror-changeset'
 
 /**
  * A JSON representation of a commit.

@@ -1,11 +1,10 @@
+import type { Extension, Union } from '@prosekit/core'
 import {
   defineCommands,
   defineKeymap,
   defineMarkSpec,
   toggleMark,
   union,
-  type Extension,
-  type Union,
 } from '@prosekit/core'
 import type { Attrs } from '@prosekit/pm/model'
 

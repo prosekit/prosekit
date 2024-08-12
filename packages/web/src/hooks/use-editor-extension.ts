@@ -1,8 +1,5 @@
-import {
-  useEffect,
-  type ConnectableElement,
-  type ReadonlySignal,
-} from '@aria-ui/core'
+import type { ConnectableElement, ReadonlySignal } from '@aria-ui/core'
+import { useEffect } from '@aria-ui/core'
 import type { Editor, Extension } from '@prosekit/core'
 
 export function useEditorExtension(

@@ -1,19 +1,16 @@
-import {
-  createSignal,
-  useEffect,
-  type ConnectableElement,
-  type ReadonlySignal,
-  type SignalState,
+import type {
+  ConnectableElement,
+  ReadonlySignal,
+  SignalState,
 } from '@aria-ui/core'
+import { createSignal, useEffect } from '@aria-ui/core'
 import { getWindow } from '@zag-js/dom-query'
 
+import type { OnResize, OnResizeEnd, OnResizeStart } from '../context'
 import {
   onResizeContext,
   onResizeEndContext,
   onResizeStartContext,
-  type OnResize,
-  type OnResizeEnd,
-  type OnResizeStart,
 } from '../context'
 
 import { calcResize } from './calc-resize'

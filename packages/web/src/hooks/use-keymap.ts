@@ -1,5 +1,6 @@
 import type { ConnectableElement, ReadonlySignal } from '@aria-ui/core'
-import { Editor, defineKeymap, type Keymap } from '@prosekit/core'
+import type { Editor, Keymap } from '@prosekit/core'
+import { defineKeymap } from '@prosekit/core'
 
 import { useEditorExtension } from './use-editor-extension'
 

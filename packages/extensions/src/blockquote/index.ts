@@ -1,9 +1,5 @@
-import {
-  defineNodeSpec,
-  union,
-  type Extension,
-  type Union,
-} from '@prosekit/core'
+import type { Extension, Union } from '@prosekit/core'
+import { defineNodeSpec, union } from '@prosekit/core'
 import type { Attrs } from '@prosekit/pm/model'
 
 import { defineWrappingInputRule } from '../input-rule'

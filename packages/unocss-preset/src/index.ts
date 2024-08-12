@@ -3,12 +3,8 @@ import process from 'node:process'
 
 import { findRootSync } from '@manypkg/find-root'
 import { Colors, Themes } from '@prosekit/themes'
-import {
-  definePreset,
-  presetIcons,
-  presetWind,
-  type PresetFactory,
-} from 'unocss'
+import type { PresetFactory } from 'unocss'
+import { definePreset, presetIcons, presetWind } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
 
 const safeset = new Set(

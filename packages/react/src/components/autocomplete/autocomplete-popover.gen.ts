@@ -1,7 +1,7 @@
 import {
-  AutocompletePopoverElement,
   defaultAutocompletePopoverProps,
-  type AutocompletePopoverProps,
+  type AutocompletePopoverElement,
+  type AutocompletePopoverProps
 } from '@prosekit/web/autocomplete'
 import type {
   ForwardRefExoticComponent,

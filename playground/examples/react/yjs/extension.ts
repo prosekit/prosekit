@@ -21,8 +21,8 @@ import { defineTable } from 'prosekit/extensions/table'
 import { defineUnderline } from 'prosekit/extensions/underline'
 import { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'
 import { defineYjs } from 'prosekit/extensions/yjs'
-import { Awareness } from 'y-protocols/awareness'
-import * as Y from 'yjs'
+import type { Awareness } from 'y-protocols/awareness'
+import type * as Y from 'yjs'
 
 export function defineExtension(doc: Y.Doc, awareness: Awareness) {
   return union([

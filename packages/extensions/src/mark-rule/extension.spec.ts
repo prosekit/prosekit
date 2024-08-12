@@ -1,5 +1,5 @@
+import type { Editor } from '@prosekit/core'
 import {
-  Editor,
   createEditor,
   defineBaseCommands,
   defineDoc,

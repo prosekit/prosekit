@@ -62,7 +62,8 @@ After defining the component, we can register it as a node view using [`defineVu
 
 ```ts twoslash
 // @filename: code-block-view.vue.ts
-import * as m from 'prosekit/vue'
+/* eslint-disable import/no-duplicates */
+import type * as m from 'prosekit/vue'
 
 const Component: m.VueNodeViewComponent = {} as any
 export default Component

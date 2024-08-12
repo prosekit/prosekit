@@ -1,5 +1,5 @@
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import { NodeSelection, Selection, TextSelection } from '@prosekit/pm/state'
+import { NodeSelection, type Selection, TextSelection } from '@prosekit/pm/state'
 
 import { createMarkActions, createNodeActions } from '../editor/action'
 import {

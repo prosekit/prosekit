@@ -1,7 +1,7 @@
 import {
-  PopoverTriggerElement,
   defaultPopoverTriggerProps,
-  type PopoverTriggerProps,
+  type PopoverTriggerElement,
+  type PopoverTriggerProps
 } from '@prosekit/web/popover'
 import type {
   ForwardRefExoticComponent,

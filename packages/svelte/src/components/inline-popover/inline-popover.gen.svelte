@@ -1,5 +1,6 @@
 <script lang="ts">
 import '@prosekit/web/inline-popover'
+
 import { defaultInlinePopoverProps } from '@prosekit/web/inline-popover'
 import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'

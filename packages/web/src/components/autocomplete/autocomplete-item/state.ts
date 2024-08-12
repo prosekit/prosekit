@@ -1,8 +1,5 @@
-import {
-  useEffect,
-  type ConnectableElement,
-  type SignalState,
-} from '@aria-ui/core'
+import type { ConnectableElement, SignalState } from '@aria-ui/core'
+import { useEffect } from '@aria-ui/core'
 import { useListboxItem } from '@aria-ui/listbox'
 
 import { openContext } from '../context'

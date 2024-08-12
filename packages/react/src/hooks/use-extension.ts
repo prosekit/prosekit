@@ -1,4 +1,4 @@
-import { Editor, Priority, type Extension } from '@prosekit/core'
+import type { Editor, Priority, Extension } from '@prosekit/core'
 
 import { useEditorContext } from '../contexts/editor-context'
 

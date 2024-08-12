@@ -1,6 +1,6 @@
 import { 
-  AutocompletePopoverElement,
   defaultAutocompletePopoverProps,
+  type AutocompletePopoverElement,
   type AutocompletePopoverProps,
 } from '@prosekit/web/autocomplete'
 

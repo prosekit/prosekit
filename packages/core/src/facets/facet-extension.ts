@@ -1,8 +1,8 @@
 import type { Extension } from '../types/extension'
-import { Priority } from '../types/priority'
+import type { Priority } from '../types/priority'
 
 import { BaseExtension } from './base-extension'
-import { Facet } from './facet'
+import type { Facet } from './facet'
 import { FacetNode } from './facet-node'
 import type { Tuple5 } from './facet-types'
 

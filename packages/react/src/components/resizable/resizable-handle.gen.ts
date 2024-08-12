@@ -1,7 +1,7 @@
 import {
-  ResizableHandleElement,
   defaultResizableHandleProps,
-  type ResizableHandleProps,
+  type ResizableHandleElement,
+  type ResizableHandleProps
 } from '@prosekit/web/resizable'
 import type {
   ForwardRefExoticComponent,

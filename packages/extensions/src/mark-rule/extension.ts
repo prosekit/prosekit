@@ -1,15 +1,7 @@
-import {
-  defineFacet,
-  defineFacetPayload,
-  pluginFacet,
-  type PluginPayload,
-} from '@prosekit/core'
-import {
-  EditorState,
-  PluginKey,
-  ProseMirrorPlugin,
-  Transaction,
-} from '@prosekit/pm/state'
+import type { PluginPayload } from '@prosekit/core'
+import { defineFacet, defineFacetPayload, pluginFacet } from '@prosekit/core'
+import type { EditorState, Transaction } from '@prosekit/pm/state'
+import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 
 import { applyMarkRules } from './apply'
 import type { MarkRuleOptions } from './types'

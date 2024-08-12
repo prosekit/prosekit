@@ -1,6 +1,6 @@
 import {
-  ResizableHandleElement,
   defaultResizableHandleProps,
+  type ResizableHandleElement,
   type ResizableHandleProps,
 } from '@prosekit/web/resizable'
 import type {

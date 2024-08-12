@@ -1,6 +1,6 @@
 import {
-  PopoverRootElement,
   defaultPopoverRootProps,
+  type PopoverRootElement,
   type PopoverRootProps,
 } from '@prosekit/web/popover'
 import type {

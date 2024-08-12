@@ -1,5 +1,10 @@
-import type { ParseOptions, ProseMirrorNode, Schema } from '@prosekit/pm/model'
-import { DOMParser, DOMSerializer } from '@prosekit/pm/model'
+import {
+  type ParseOptions,
+  type ProseMirrorNode,
+  type Schema,
+  DOMParser,
+  DOMSerializer,
+} from '@prosekit/pm/model'
 import { EditorState } from '@prosekit/pm/state'
 
 import type { DOMNode } from '../types/dom-node'

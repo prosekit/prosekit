@@ -14,10 +14,14 @@ import {
   Slice,
   type ProseMirrorNode,
 } from '@prosekit/pm/model'
-import { PluginKey, ProseMirrorPlugin, Transaction } from '@prosekit/pm/state'
+import {
+  PluginKey,
+  ProseMirrorPlugin,
+  type Transaction,
+} from '@prosekit/pm/state'
 import { Step } from '@prosekit/pm/transform'
-import { Decoration, DecorationSet, EditorView } from '@prosekit/pm/view'
-import { Change, ChangeSet } from 'prosemirror-changeset'
+import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
+import { type Change, ChangeSet } from 'prosemirror-changeset'
 
 /**
  * A JSON representation of a commit.

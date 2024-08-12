@@ -1,7 +1,7 @@
 import { definePlugin, type PlainExtension } from '@prosekit/core'
 import type { Plugin } from '@prosekit/pm/state'
 import { ySyncPlugin } from 'y-prosemirror'
-import * as Y from 'yjs'
+import type * as Y from 'yjs'
 
 /**
  * Options for `y-prosemirror`'s `ySyncPlugin`.

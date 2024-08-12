@@ -1,5 +1,5 @@
 import { OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
-import { EditorState, Plugin, Transaction } from '@prosekit/pm/state'
+import { type EditorState, Plugin, type Transaction } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
 import {

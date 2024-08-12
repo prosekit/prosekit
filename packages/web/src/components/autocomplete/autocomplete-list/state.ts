@@ -12,7 +12,7 @@ import {
   type ListboxProps,
 } from '@aria-ui/listbox'
 import {
-  Editor,
+  type Editor,
   Priority,
   defineDOMEventHandler,
   withPriority,

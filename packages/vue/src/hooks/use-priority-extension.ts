@@ -1,4 +1,4 @@
-import { Priority, withPriority, type Extension } from '@prosekit/core'
+import { type Priority, withPriority, type Extension } from '@prosekit/core'
 import { computed, toValue, type MaybeRefOrGetter } from 'vue'
 
 /**

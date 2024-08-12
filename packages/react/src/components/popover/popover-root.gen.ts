@@ -1,7 +1,7 @@
 import {
-  PopoverRootElement,
   defaultPopoverRootProps,
-  type PopoverRootProps,
+  type PopoverRootElement,
+  type PopoverRootProps
 } from '@prosekit/web/popover'
 import type {
   ForwardRefExoticComponent,

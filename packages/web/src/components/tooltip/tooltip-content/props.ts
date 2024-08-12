@@ -1,5 +1,7 @@
-import type { TooltipContentProps } from '@aria-ui/tooltip'
-import { defaultTooltipContentProps as defaultProps } from '@aria-ui/tooltip'
+import {
+  type TooltipContentProps,
+  defaultTooltipContentProps as defaultProps,
+} from '@aria-ui/tooltip'
 
 export type { TooltipContentProps }
 

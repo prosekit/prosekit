@@ -1,5 +1,5 @@
 import {
-  Editor,
+  type Editor,
   ProseKitError,
   defineMountHandler,
   defineUpdateHandler,

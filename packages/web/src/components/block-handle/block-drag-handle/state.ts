@@ -1,8 +1,8 @@
 import {
-  useEffect,
-  useEventListener,
   type ConnectableElement,
   type SignalState,
+  useEffect,
+  useEventListener,
 } from '@aria-ui/core'
 import { Fragment, Slice } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'

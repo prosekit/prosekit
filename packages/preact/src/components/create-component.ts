@@ -1,9 +1,9 @@
 import { createElement } from 'preact'
 import {
-  forwardRef,
   type ForwardRefExoticComponent,
   type HTMLAttributes,
   type RefAttributes,
+  forwardRef,
 } from 'preact/compat'
 import { useLayoutEffect, useState } from 'preact/hooks'
 import { mergeRefs } from 'react-merge-refs'

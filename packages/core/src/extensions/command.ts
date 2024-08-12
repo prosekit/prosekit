@@ -5,16 +5,16 @@ import { removeMark, type RemoveMarkOptions } from '../commands/remove-mark'
 import { removeNode, type RemoveNodeOptions } from '../commands/remove-node'
 import { selectAll } from '../commands/select-all'
 import {
-  setBlockType,
   type SetBlockTypeOptions,
+  setBlockType,
 } from '../commands/set-block-type'
 import {
-  setNodeAttrs,
   type SetNodeAttrsOptions,
+  setNodeAttrs,
 } from '../commands/set-node-attrs'
 import {
-  unsetBlockType,
   type UnsetBlockTypeOptions,
+  unsetBlockType,
 } from '../commands/unset-block-type'
 import { unsetMark, type UnsetMarkOptions } from '../commands/unset-mark'
 import { wrap, type WrapOptions } from '../commands/wrap'

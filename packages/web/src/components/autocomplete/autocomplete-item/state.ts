@@ -1,7 +1,7 @@
 import {
-  useEffect,
   type ConnectableElement,
   type SignalState,
+  useEffect,
 } from '@aria-ui/core'
 import { useListboxItem } from '@aria-ui/listbox'
 

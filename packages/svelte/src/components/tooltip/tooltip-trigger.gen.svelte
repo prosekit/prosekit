@@ -1,5 +1,6 @@
 <script lang="ts">
 import '@prosekit/web/tooltip'
+
 import { defaultTooltipTriggerProps } from '@prosekit/web/tooltip'
 import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'

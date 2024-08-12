@@ -226,9 +226,9 @@ function formatReactComponentCode(group: string, kebab: string) {
   return (
     `
 import {
-  ${pascal}Element,
   default${pascal}Props,
-  type ${pascal}Props,
+  type ${pascal}Element,
+  type ${pascal}Props
 } from '@prosekit/web/${group}'
 import type {
   ForwardRefExoticComponent,
@@ -277,6 +277,7 @@ function formatSvelteComponentCode(group: string, kebab: string) {
     `
 <script lang="ts">
 import '@prosekit/web/${group}'
+
 import { default${pascal}Props } from '@prosekit/web/${group}'
 import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'
@@ -320,8 +321,8 @@ function formatSolidComponentCode(group: string, kebab: string) {
   return (
     `
 import { 
-  ${pascal}Element,
   default${pascal}Props,
+  type ${pascal}Element,
   type ${pascal}Props,
 } from '@prosekit/web/${group}'
 
@@ -344,8 +345,8 @@ function formatPreactComponentCode(group: string, kebab: string) {
   return (
     `
 import {
-  ${pascal}Element,
   default${pascal}Props,
+  type ${pascal}Element,
   type ${pascal}Props,
 } from '@prosekit/web/${group}'
 import type {

@@ -3,11 +3,11 @@ import { groupBy } from 'lodash-es'
 import {
   findExampleFile,
   readExampleMeta,
+  sortExamples,
+  sortFiles,
   writeExampleMeta,
   type Example,
   type ExampleMeta,
-  sortExamples,
-  sortFiles,
 } from './example-meta'
 import { notEmpty } from './not-empty'
 import { skipGen } from './skip-gen'

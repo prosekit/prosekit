@@ -1,4 +1,3 @@
-import type { Extension, Union } from '@prosekit/core'
 import {
   addMark,
   defineCommands,
@@ -7,6 +6,8 @@ import {
   removeMark,
   toggleMark,
   union,
+  type Extension,
+  type Union,
 } from '@prosekit/core'
 import { InputRule } from '@prosekit/pm/inputrules'
 

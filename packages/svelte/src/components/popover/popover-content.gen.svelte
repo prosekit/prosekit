@@ -1,6 +1,5 @@
 <script lang="ts">
 import '@prosekit/web/popover'
-
 import { defaultPopoverContentProps } from '@prosekit/web/popover'
 import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'

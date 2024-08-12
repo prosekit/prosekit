@@ -33,7 +33,7 @@ export {
   defineHeadingInputRule,
   defineHeadingKeymap,
   defineHeadingSpec,
-  type HeadingAttrs,
   type HeadingCommandsExtension,
   type HeadingSpecExtension,
+  type HeadingAttrs,
 }

@@ -1,10 +1,10 @@
-import type { Extension } from '@prosekit/core'
 import {
   defineCommands,
   insertNode,
   setBlockType,
   setNodeAttrs,
   toggleNode,
+  type Extension,
 } from '@prosekit/core'
 
 import type { CodeBlockAttrs } from './code-block-types'

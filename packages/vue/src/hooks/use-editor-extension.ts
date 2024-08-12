@@ -1,5 +1,4 @@
-import type { Editor, Extension } from '@prosekit/core'
-import { EditorNotFoundError } from '@prosekit/core'
+import { Editor, EditorNotFoundError, type Extension } from '@prosekit/core'
 import { toValue, watchPostEffect, type MaybeRefOrGetter } from 'vue'
 
 import { useEditorContext } from '../injection/editor-context'

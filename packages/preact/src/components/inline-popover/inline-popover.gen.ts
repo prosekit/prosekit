@@ -1,6 +1,6 @@
 import {
+  InlinePopoverElement,
   defaultInlinePopoverProps,
-  type InlinePopoverElement,
   type InlinePopoverProps,
 } from '@prosekit/web/inline-popover'
 import type {

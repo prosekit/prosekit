@@ -1,7 +1,6 @@
 import { definePlugin, isInCodeBlock } from '@prosekit/core'
-import type { ProseMirrorNode } from '@prosekit/pm/model'
-import type { EditorState } from '@prosekit/pm/state'
-import { Plugin, PluginKey } from '@prosekit/pm/state'
+import { ProseMirrorNode } from '@prosekit/pm/model'
+import { EditorState, Plugin, PluginKey } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
 export interface PlaceholderOptions {

@@ -1,4 +1,4 @@
-import type { MarkType, Schema } from '@prosekit/pm/model'
+import { MarkType, Schema } from '@prosekit/pm/model'
 
 import { ProseKitError } from '../error'
 

@@ -1,13 +1,11 @@
-import type {
-  ConnectableElement,
-  ReadonlySignal,
-  SignalState,
-} from '@aria-ui/core'
 import {
   createComputed,
   createSignal,
   useAttribute,
   useEffect,
+  type ConnectableElement,
+  type ReadonlySignal,
+  type SignalState,
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay'
 import { usePresence } from '@aria-ui/presence'

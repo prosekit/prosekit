@@ -1,5 +1,4 @@
-import type { Priority, Extension } from '@prosekit/core'
-import { withPriority } from '@prosekit/core'
+import { Priority, withPriority, type Extension } from '@prosekit/core'
 
 /**
  * @internal

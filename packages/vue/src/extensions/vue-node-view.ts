@@ -1,5 +1,9 @@
-import type { BaseNodeViewOptions, Extension } from '@prosekit/core'
-import { defineNodeViewComponent, defineNodeViewFactory } from '@prosekit/core'
+import {
+  defineNodeViewComponent,
+  defineNodeViewFactory,
+  type BaseNodeViewOptions,
+  type Extension,
+} from '@prosekit/core'
 import type { Attrs, ProseMirrorNode } from '@prosekit/pm/model'
 import type {
   Decoration,
@@ -7,16 +11,20 @@ import type {
   EditorView,
   NodeViewConstructor,
 } from '@prosekit/pm/view'
-import type {
-  NodeViewFactory,
-  VueNodeViewUserOptions,
-} from '@prosemirror-adapter/vue'
 import {
   useNodeViewContext,
   useNodeViewFactory,
+  type NodeViewFactory,
+  type VueNodeViewUserOptions,
 } from '@prosemirror-adapter/vue'
-import type { DefineComponent, ShallowRef, VNodeRef } from 'vue'
-import { computed, defineComponent, h } from 'vue'
+import {
+  computed,
+  defineComponent,
+  h,
+  type DefineComponent,
+  type ShallowRef,
+  type VNodeRef,
+} from 'vue'
 
 import { useExtension } from '../hooks/use-extension'
 

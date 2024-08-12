@@ -1,5 +1,9 @@
-import type { Keymap, PlainExtension } from '@prosekit/core'
-import { defineKeymap, isApple } from '@prosekit/core'
+import {
+  type Keymap,
+  type PlainExtension,
+  defineKeymap,
+  isApple,
+} from '@prosekit/core'
 
 import { redo, undo } from './undo-plugin'
 

@@ -1,4 +1,4 @@
-import type { Editor } from '@prosekit/core'
+import { Editor } from '@prosekit/core'
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/vue'
 import { defineComponent, h, type PropType } from 'vue'
 

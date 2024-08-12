@@ -1,9 +1,10 @@
-import type { Extension, Union } from '@prosekit/core'
 import {
   defineCommands,
   defineNodeSpec,
   insertNode,
   union,
+  type Extension,
+  type Union,
 } from '@prosekit/core'
 
 /**

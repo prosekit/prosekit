@@ -1,13 +1,22 @@
-import type {
-  ConnectableElement,
-  ReadonlySignal,
-  SignalState,
+import {
+  createSignal,
+  mapSignals,
+  useEffect,
+  type ConnectableElement,
+  type ReadonlySignal,
+  type SignalState,
 } from '@aria-ui/core'
-import { createSignal, mapSignals, useEffect } from '@aria-ui/core'
-import type { ListboxProps } from '@aria-ui/listbox'
-import { defaultListboxProps, useListbox } from '@aria-ui/listbox'
-import type { Editor } from '@prosekit/core'
-import { Priority, defineDOMEventHandler, withPriority } from '@prosekit/core'
+import {
+  defaultListboxProps,
+  useListbox,
+  type ListboxProps,
+} from '@aria-ui/listbox'
+import {
+  Editor,
+  Priority,
+  defineDOMEventHandler,
+  withPriority,
+} from '@prosekit/core'
 import omit from 'just-omit'
 
 import { onSubmitContext, openContext, queryContext } from '../context'

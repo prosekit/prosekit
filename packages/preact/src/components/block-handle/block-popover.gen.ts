@@ -1,6 +1,6 @@
 import {
+  BlockPopoverElement,
   defaultBlockPopoverProps,
-  type BlockPopoverElement,
   type BlockPopoverProps,
 } from '@prosekit/web/block-handle'
 import type {

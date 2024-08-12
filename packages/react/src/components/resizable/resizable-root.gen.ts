@@ -1,7 +1,7 @@
 import {
+  ResizableRootElement,
   defaultResizableRootProps,
-  type ResizableRootElement,
-  type ResizableRootProps
+  type ResizableRootProps,
 } from '@prosekit/web/resizable'
 import type {
   ForwardRefExoticComponent,

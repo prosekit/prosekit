@@ -1,14 +1,18 @@
 import { union, type Union } from '@prosekit/core'
 
-import type { CodeBlockCommandsExtension } from './code-block-commands'
-import { defineCodeBlockCommands } from './code-block-commands'
+import {
+  defineCodeBlockCommands,
+  type CodeBlockCommandsExtension,
+} from './code-block-commands'
 import {
   defineCodeBlockEnterRule,
   defineCodeBlockInputRule,
 } from './code-block-input-rule'
 import { defineCodeBlockKeymap } from './code-block-keymap'
-import type { CodeBlockSpecExtension } from './code-block-spec'
-import { defineCodeBlockSpec } from './code-block-spec'
+import {
+  defineCodeBlockSpec,
+  type CodeBlockSpecExtension,
+} from './code-block-spec'
 
 /**
  * @internal

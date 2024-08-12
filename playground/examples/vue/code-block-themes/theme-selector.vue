@@ -3,7 +3,7 @@ import { Themes } from '@prosekit/themes'
 import {
   defineCodeBlockShiki,
   shikiBundledThemesInfo,
-  ShikiBundledTheme,
+  type ShikiBundledTheme,
 } from 'prosekit/extensions/code-block'
 import { useExtension } from 'prosekit/vue'
 import { computed } from 'vue'

@@ -1,24 +1,26 @@
-import type {
-  ConnectableElement,
-  ReadonlySignal,
-  Signal,
-  SignalState,
-} from '@aria-ui/core'
 import {
   createComputed,
   createSignal,
   useAnimationFrame,
   useAttribute,
   useEffect,
+  type ConnectableElement,
+  type ReadonlySignal,
+  type Signal,
+  type SignalState,
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay'
 import { usePresence } from '@aria-ui/presence'
-import type { Editor } from '@prosekit/core'
-import { Priority, defineKeymap, withPriority } from '@prosekit/core'
-import type { MatchHandler } from '@prosekit/extensions/autocomplete'
+import {
+  Priority,
+  defineKeymap,
+  withPriority,
+  type Editor,
+} from '@prosekit/core'
 import {
   AutocompleteRule,
   defineAutocomplete,
+  type MatchHandler,
 } from '@prosekit/extensions/autocomplete'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'

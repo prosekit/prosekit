@@ -1,5 +1,11 @@
-import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
-import { defineComponent, h, onMounted, ref } from 'vue'
+import {
+  defineComponent,
+  h,
+  onMounted,
+  ref,
+  type DefineSetupFnComponent,
+  type HTMLAttributes,
+} from 'vue'
 
 import { useEditorContext } from '../injection/editor-context'
 

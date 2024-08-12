@@ -1,9 +1,10 @@
-import type { Editor, Extension } from '@prosekit/core'
 import {
+  Editor,
   ProseKitError,
   defineMountHandler,
   defineUpdateHandler,
   union,
+  type Extension,
 } from '@prosekit/core'
 import { useEffect, useReducer } from 'preact/hooks'
 

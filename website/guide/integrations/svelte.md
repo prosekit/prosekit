@@ -62,13 +62,15 @@ After defining the component, we can register it as a node view using [`defineSv
 
 ```ts twoslash
 // @filename: code-block-view.svelte.ts
-import type * as m from 'prosekit/svelte'
+import * as m from 'prosekit/svelte'
 
 const Component: m.SvelteNodeViewComponent = {} as any
 export default Component
 // ---cut---
-import type { SvelteNodeViewComponent } from 'prosekit/svelte'
-import { defineSvelteNodeView } from 'prosekit/svelte'
+import {
+  defineSvelteNodeView,
+  type SvelteNodeViewComponent,
+} from 'prosekit/svelte'
 import CodeBlockView from './code-block-view.svelte'
 
 const extension = defineSvelteNodeView({

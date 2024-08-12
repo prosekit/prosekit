@@ -1,5 +1,4 @@
-import type { Editor, Extension } from '@prosekit/core'
-import { EditorNotFoundError } from '@prosekit/core'
+import { Editor, EditorNotFoundError, type Extension } from '@prosekit/core'
 import { onMount } from 'svelte'
 import type { Readable } from 'svelte/store'
 

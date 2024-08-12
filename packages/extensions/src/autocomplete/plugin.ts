@@ -1,10 +1,14 @@
 import { OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
-import type { EditorState, Transaction } from '@prosekit/pm/state'
-import { Plugin } from '@prosekit/pm/state'
+import { EditorState, Plugin, Transaction } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
-import type { PredictionPluginState } from './helpers'
-import { getPluginState, getTrMeta, pluginKey, setTrMeta } from './helpers'
+import {
+  getPluginState,
+  getTrMeta,
+  pluginKey,
+  setTrMeta,
+  type PredictionPluginState,
+} from './helpers'
 import type { AutocompleteRule } from './rule'
 
 export function createAutocompletePlugin({

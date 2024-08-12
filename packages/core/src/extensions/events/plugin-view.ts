@@ -1,5 +1,4 @@
-import type { EditorState } from '@prosekit/pm/state'
-import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
+import { EditorState, PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { defineFacet } from '../../facets/facet'

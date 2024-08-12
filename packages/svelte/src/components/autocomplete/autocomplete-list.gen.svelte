@@ -1,6 +1,5 @@
 <script lang="ts">
 import '@prosekit/web/autocomplete'
-
 import { defaultAutocompleteListProps } from '@prosekit/web/autocomplete'
 import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'

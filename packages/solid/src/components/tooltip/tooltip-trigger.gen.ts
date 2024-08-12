@@ -1,6 +1,6 @@
 import { 
+  TooltipTriggerElement,
   defaultTooltipTriggerProps,
-  type TooltipTriggerElement,
   type TooltipTriggerProps,
 } from '@prosekit/web/tooltip'
 

@@ -1,15 +1,14 @@
-import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
-import type { Plugin, Selection } from '@prosekit/pm/state'
-import { EditorState } from '@prosekit/pm/state'
+import { ProseMirrorNode, Schema } from '@prosekit/pm/model'
+import { EditorState, Plugin, Selection } from '@prosekit/pm/state'
 import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
 import { defineDefaultState } from '../extensions/default-state'
 import type { BaseExtension } from '../facets/base-extension'
 import {
+  FacetNode,
   subtractFacetNode,
   unionFacetNode,
-  type FacetNode,
 } from '../facets/facet-node'
 import type {
   Extension,
@@ -28,8 +27,12 @@ import {
   getEditorSelection,
 } from '../utils/editor-content'
 
-import type { MarkAction, NodeAction } from './action'
-import { createMarkActions, createNodeActions } from './action'
+import {
+  createMarkActions,
+  createNodeActions,
+  type MarkAction,
+  type NodeAction,
+} from './action'
 import { union } from './union'
 
 /**

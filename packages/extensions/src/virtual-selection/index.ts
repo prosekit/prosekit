@@ -1,6 +1,10 @@
 import { definePlugin, type PlainExtension } from '@prosekit/core'
-import type { EditorState, Transaction } from '@prosekit/pm/state'
-import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
+import {
+  EditorState,
+  PluginKey,
+  ProseMirrorPlugin,
+  Transaction,
+} from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
 /**

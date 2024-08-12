@@ -1,5 +1,10 @@
-import type { Extension, PluginPayload } from '@prosekit/core'
-import { defineFacet, defineFacetPayload, pluginFacet } from '@prosekit/core'
+import {
+  defineFacet,
+  defineFacetPayload,
+  pluginFacet,
+  type Extension,
+  type PluginPayload,
+} from '@prosekit/core'
 
 import { createAutocompletePlugin } from './plugin'
 import { AutocompleteRule, type MatchHandler } from './rule'

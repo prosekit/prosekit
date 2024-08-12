@@ -1,5 +1,4 @@
-import type { Editor, Extension } from '@prosekit/core'
-import { EditorNotFoundError } from '@prosekit/core'
+import { Editor, EditorNotFoundError, type Extension } from '@prosekit/core'
 import { createEffect, onCleanup, type Accessor } from 'solid-js'
 
 import { useEditorContext } from '../contexts/editor-context'

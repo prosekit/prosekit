@@ -1,7 +1,7 @@
 import {
+  BlockDragHandleElement,
   defaultBlockDragHandleProps,
-  type BlockDragHandleElement,
-  type BlockDragHandleProps
+  type BlockDragHandleProps,
 } from '@prosekit/web/block-handle'
 import type {
   ForwardRefExoticComponent,

@@ -1,6 +1,6 @@
 import { 
+  ResizableRootElement,
   defaultResizableRootProps,
-  type ResizableRootElement,
   type ResizableRootProps,
 } from '@prosekit/web/resizable'
 

@@ -1,4 +1,3 @@
-import type { Extension, Union } from '@prosekit/core'
 import {
   defineCommands,
   defineKeymap,
@@ -6,6 +5,8 @@ import {
   union,
   toggleMark,
   canUseRegexLookbehind,
+  type Extension,
+  type Union,
 } from '@prosekit/core'
 import type { Attrs } from '@prosekit/pm/model'
 

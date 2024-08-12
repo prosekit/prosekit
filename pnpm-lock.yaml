@@ -26,8 +26,8 @@ importers:
         specifier: ^0.21.4
         version: 0.21.4
       '@ocavue/eslint-config':
-        specifier: ^2.3.0
-        version: 2.3.0(@typescript-eslint/parser@8.0.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.0(jiti@1.21.6)))(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4)
+        specifier: ^2.2.0
+        version: 2.2.0(@typescript-eslint/parser@8.0.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.0(jiti@1.21.6)))(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4)
       '@prosekit/unocss-preset':
         specifier: workspace:*
         version: link:packages/unocss-preset
@@ -1760,10 +1760,6 @@ packages:
     resolution: {integrity: sha512-4Bfj15dVJdoy3RfZmmo86RK1Fwzn6SstsvK9JS+BaVKqC6QQQQyXekNaC+g+LKNgkQ+2VhGAzm6hO40AhMR3zQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/js@9.8.0':
-    resolution: {integrity: sha512-MfluB7EUfxXtv3i/++oh89uzAr4PDI4nn201hsp+qaXqsjAWzinlZEHEfPgAX4doIlKvPG/i0A9dpKxOLII8yA==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
   '@eslint/js@9.9.0':
     resolution: {integrity: sha512-hhetes6ZHP3BlXLxmd8K2SNgkhNSi+UcecbnwWKwpP7kyi/uC75DJ1lOOBO3xrC4jyojtGE3YxKZPHfk4yrgug==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -2026,8 +2022,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@ocavue/eslint-config@2.3.0':
-    resolution: {integrity: sha512-2xjXUFPsyw6IkOEB1b5dOBkUqaECpDwcLIbSpGuShRITBMKMHPD7UKG27itmeVwvMsn5e7wBBZmBBvPY44+BnQ==}
+  '@ocavue/eslint-config@2.2.0':
+    resolution: {integrity: sha512-LuubUg8TN8I/upJ3YD5gTREx3+MVM6mS4HcDsZXM5fq5J2wYpjWNdvmDo4jjvnAjtx1oV6/pspv44aAPkycULQ==}
 
   '@one-ini/wasm@0.1.1':
     resolution: {integrity: sha512-XuySG1E38YScSJoMlqovLru4KTUNSjgVTIjyh7qMX6aNN5HY5Ct5LhRJdxO79JtTzKfzV/bnWpz+zquYrISsvw==}
@@ -8274,8 +8270,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/js@9.8.0': {}
-
   '@eslint/js@9.9.0': {}
 
   '@eslint/object-schema@2.1.4': {}
@@ -8577,11 +8571,11 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@ocavue/eslint-config@2.3.0(@typescript-eslint/parser@8.0.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.0(jiti@1.21.6)))(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4)':
+  '@ocavue/eslint-config@2.2.0(@typescript-eslint/parser@8.0.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(eslint-plugin-import@2.29.1(@typescript-eslint/parser@8.0.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(eslint@9.9.0(jiti@1.21.6)))(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4)':
     dependencies:
       '@eslint-types/unicorn': 52.0.0
       '@eslint/compat': 1.1.1
-      '@eslint/js': 9.8.0
+      '@eslint/js': 9.9.0
       '@types/eslint': 9.6.0
       '@types/eslint-plugin-markdown': 2.0.2
       eslint-config-flat-gitignore: 0.1.8

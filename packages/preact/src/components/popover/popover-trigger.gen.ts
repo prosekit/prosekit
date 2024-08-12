@@ -1,6 +1,6 @@
 import {
+  PopoverTriggerElement,
   defaultPopoverTriggerProps,
-  type PopoverTriggerElement,
   type PopoverTriggerProps,
 } from '@prosekit/web/popover'
 import type {

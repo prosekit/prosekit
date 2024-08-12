@@ -4,8 +4,10 @@ import {
   defineCodeBlock,
   defineCodeBlockShiki,
 } from 'prosekit/extensions/code-block'
-import type { SvelteNodeViewComponent } from 'prosekit/svelte'
-import { defineSvelteNodeView } from 'prosekit/svelte'
+import {
+  defineSvelteNodeView,
+  type SvelteNodeViewComponent,
+} from 'prosekit/svelte'
 
 import CodeBlockView from './code-block-view.svelte'
 

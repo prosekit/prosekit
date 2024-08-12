@@ -1,5 +1,4 @@
-import type { Transaction } from '@prosekit/pm/state'
-import { TextSelection } from '@prosekit/pm/state'
+import { TextSelection, Transaction } from '@prosekit/pm/state'
 
 export function setSelectionAround(tr: Transaction, pos: number) {
   const docSize = tr.doc.content.size

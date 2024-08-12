@@ -3,8 +3,10 @@ import 'prosekit/basic/style.css'
 import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor, union, type NodeJSON } from 'prosekit/core'
-import type { CommitRecorder } from 'prosekit/extensions/commit'
-import { defineCommitRecorder } from 'prosekit/extensions/commit'
+import {
+  CommitRecorder,
+  defineCommitRecorder,
+} from 'prosekit/extensions/commit'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 

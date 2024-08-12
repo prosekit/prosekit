@@ -1,6 +1,6 @@
 import { 
+  TooltipRootElement,
   defaultTooltipRootProps,
-  type TooltipRootElement,
   type TooltipRootProps,
 } from '@prosekit/web/tooltip'
 

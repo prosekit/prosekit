@@ -1,5 +1,5 @@
 import { Fragment, Slice } from '@prosekit/pm/model'
-import type { Transaction, Command } from '@prosekit/pm/state'
+import { Transaction, type Command } from '@prosekit/pm/state'
 import { ReplaceAroundStep } from '@prosekit/pm/transform'
 
 import type { CommandCreator } from '../types/extension-command'

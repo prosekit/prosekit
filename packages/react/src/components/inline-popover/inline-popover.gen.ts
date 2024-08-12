@@ -1,7 +1,7 @@
 import {
+  InlinePopoverElement,
   defaultInlinePopoverProps,
-  type InlinePopoverElement,
-  type InlinePopoverProps
+  type InlinePopoverProps,
 } from '@prosekit/web/inline-popover'
 import type {
   ForwardRefExoticComponent,

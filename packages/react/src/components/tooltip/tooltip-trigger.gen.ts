@@ -1,7 +1,7 @@
 import {
+  TooltipTriggerElement,
   defaultTooltipTriggerProps,
-  type TooltipTriggerElement,
-  type TooltipTriggerProps
+  type TooltipTriggerProps,
 } from '@prosekit/web/tooltip'
 import type {
   ForwardRefExoticComponent,

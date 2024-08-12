@@ -1,4 +1,4 @@
-import type { Fragment, ProseMirrorNode } from '@prosekit/pm/model'
+import { Fragment, ProseMirrorNode } from '@prosekit/pm/model'
 
 /**
  * Collects all children of a node or a fragment, and returns them as an array.

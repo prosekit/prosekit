@@ -2,8 +2,12 @@ import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
-import type { NodeJSON } from 'prosekit/core'
-import { createEditor, htmlFromNode, jsonFromHTML } from 'prosekit/core'
+import {
+  createEditor,
+  htmlFromNode,
+  jsonFromHTML,
+  type NodeJSON,
+} from 'prosekit/core'
 import { ListDOMSerializer } from 'prosekit/extensions/list'
 import { useCallback, useMemo, useState } from 'react'
 

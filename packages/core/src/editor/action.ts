@@ -1,10 +1,10 @@
-import type {
+import {
   Schema,
-  Attrs,
-  Mark,
-  MarkType,
-  NodeType,
-  ProseMirrorNode,
+  type Attrs,
+  type Mark,
+  type MarkType,
+  type NodeType,
+  type ProseMirrorNode,
 } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 import mapValues from 'just-map-values'

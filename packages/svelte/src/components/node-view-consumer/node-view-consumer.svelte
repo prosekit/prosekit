@@ -1,7 +1,7 @@
 <script lang="ts">
 import {
   useNodeViewFactory,
-  NodeViewFactory,
+  type NodeViewFactory,
 } from '@prosemirror-adapter/svelte'
 import { readable } from 'svelte/store'
 import { useExtension } from '../../hooks/use-extension'

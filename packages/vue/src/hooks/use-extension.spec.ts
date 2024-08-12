@@ -1,6 +1,7 @@
-import type { Editor, defineBaseCommands } from '@prosekit/core'
 import {
+  Editor,
   createEditor,
+  type defineBaseCommands,
   defineDoc,
   defineParagraph,
   definePlugin,

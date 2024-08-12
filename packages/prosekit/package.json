@@ -188,7 +188,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "postcss": "^8.4.41",
-    "postcss-nesting": "^12.1.5",
+    "postcss-nesting": "^13.0.0",
     "preact": "^10.23.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

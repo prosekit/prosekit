@@ -14,7 +14,11 @@ import {
   Slice,
   type ProseMirrorNode,
 } from '@prosekit/pm/model'
-import { PluginKey, ProseMirrorPlugin, type Transaction } from '@prosekit/pm/state'
+import {
+  PluginKey,
+  ProseMirrorPlugin,
+  type Transaction,
+} from '@prosekit/pm/state'
 import { Step } from '@prosekit/pm/transform'
 import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
 import { type Change, ChangeSet } from 'prosemirror-changeset'

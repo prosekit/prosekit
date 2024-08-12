@@ -1,5 +1,9 @@
 import { type ResolvedPos } from '@prosekit/pm/model'
-import { type EditorState, PluginKey, type Transaction } from '@prosekit/pm/state'
+import {
+  type EditorState,
+  PluginKey,
+  type Transaction,
+} from '@prosekit/pm/state'
 
 import type { AutocompleteRule } from './rule'
 

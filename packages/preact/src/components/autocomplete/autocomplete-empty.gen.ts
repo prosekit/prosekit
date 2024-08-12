@@ -1,6 +1,6 @@
 import {
-  type AutocompleteEmptyElement,
   defaultAutocompleteEmptyProps,
+  type AutocompleteEmptyElement,
   type AutocompleteEmptyProps,
 } from '@prosekit/web/autocomplete'
 import type {

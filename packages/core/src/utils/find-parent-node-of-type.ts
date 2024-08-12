@@ -10,7 +10,7 @@ import { getNodeType } from './get-node-type'
  */
 export function findParentNodeOfType(
   /**
-   * The type of the node to remove.
+   * The type of the node to find.
    */
   type: NodeType | string,
 

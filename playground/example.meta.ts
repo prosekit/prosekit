@@ -515,6 +515,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "package.json",
+          "hidden": true
+        },
+        {
           "path": "button.tsx",
           "hidden": false
         }

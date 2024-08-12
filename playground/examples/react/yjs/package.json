@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "y-prosemirror": "^1.0.0",
+    "y-protocols": "^1.0.0",
+    "y-websocket": "^2.0.0",
+    "yjs": "^13.6.18"
+  }
+}

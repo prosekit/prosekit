@@ -5,7 +5,7 @@ import {
   type PlainExtension,
   type Union,
 } from '@prosekit/core'
-import { Awareness } from 'y-protocols/awareness'
+import type { Awareness } from 'y-protocols/awareness'
 import * as Y from 'yjs'
 
 import { defineYjsCommands, type YjsCommandsExtension } from './commands'

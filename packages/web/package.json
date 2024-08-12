@@ -48,11 +48,11 @@
     "@aria-ui/popover": "^0.0.20",
     "@aria-ui/presence": "^0.0.14",
     "@aria-ui/tooltip": "^0.0.22",
-    "@floating-ui/dom": "^1.6.9",
+    "@floating-ui/dom": "^1.6.10",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^0.64.0",
+    "@zag-js/dom-query": "^0.65.0",
     "just-omit": "^2.2.0"
   },
   "devDependencies": {

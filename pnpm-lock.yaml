@@ -758,8 +758,8 @@ importers:
         specifier: ^4.13.3
         version: 4.13.3(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4)
       astrobook:
-        specifier: ^0.3.3
-        version: 0.3.3(astro@4.13.3(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))
+        specifier: ^0.4.0
+        version: 0.4.0(astro@4.13.3(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))
       lit:
         specifier: ^3.2.0
         version: 3.2.0
@@ -1034,14 +1034,14 @@ packages:
   '@aria-ui/tooltip@0.0.22':
     resolution: {integrity: sha512-0C0ZQ46hzjzOSUJ3i7YNKRq/l1Q2i+IxfKUKKLC5tB+MJrieD66qBtETSlw3HLRtBBuLlcmIugz/IFgfHfAmmg==}
 
-  '@astrobook/core@0.3.3':
-    resolution: {integrity: sha512-oGaiq8VvzhyKrjPJaxMfeZChl1gcN8jRuHHz3GmrhYt2PNKNkYoJl9OVwJlaTzJPWPIp/Ct7ZSmtON0bEJ7gmA==}
+  '@astrobook/core@0.4.0':
+    resolution: {integrity: sha512-itlnKvGp0xSiaPuAfpLsfY1XNaUyrpZpx525rHEwfqMFajayj9hILVmWCa84JX1G1kgj0rMwNX9EiEYA+9OTvg==}
 
-  '@astrobook/types@0.3.3':
-    resolution: {integrity: sha512-6SL1it+8gmmnMrgFPjCo/1QfGX6klNg9H09jvCsd4vQ9dA7ecBX3j/+/TOWd9CVdKfOk3+jg3q/xrU6/ukcOaA==}
+  '@astrobook/types@0.4.0':
+    resolution: {integrity: sha512-RAqnLzFmUe6Gtbbsibq1XLDLunAhim/L2m/6RvDtUVFJYzvG82EGdQD+7AbWqq2Uokg9xIJUMcvXjwe/u31i3g==}
 
-  '@astrobook/ui@0.3.3':
-    resolution: {integrity: sha512-g50L8BWouUzanICnbqR/p2+DAFad6enoh4jYIZJT0tDVKNjaPf9J+xgoBjs3ZWWlVb37xMD77VMj0wC8eBNc/A==}
+  '@astrobook/ui@0.4.0':
+    resolution: {integrity: sha512-IwFILRBK8aXJlZCMIuxLgalMCgX5qR5Ksv0HEbFn4pA3JvyZSqBqugkUkPJeSnzj9e7Lt+2ZLTXCMDxGpVMidw==}
     peerDependencies:
       astro: '>=4.0.0'
     peerDependenciesMeta:
@@ -2815,7 +2815,7 @@ packages:
   '@vue/language-core@2.0.29':
     resolution: {integrity: sha512-o2qz9JPjhdoVj8D2+9bDXbaI4q2uZTHQA/dbyZT4Bj1FR9viZxDJnLcKVHfxdn6wsOzRgpqIzJEEmSSvgMvDTQ==}
     peerDependencies:
-      typescript: '*'
+      typescript: 5.5.3
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -3084,8 +3084,8 @@ packages:
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
-  astrobook@0.3.3:
-    resolution: {integrity: sha512-/bZNYbQuMIlJiPlYHzJ+/Y8pWBSy7f5tpHlFosrsIVUMqnGX1bAUQQJTtlUH10zlYzpStSFJ+0O11EaFNX603Q==}
+  astrobook@0.4.0:
+    resolution: {integrity: sha512-q18WCX8M8VaKiN8HE5fjajeO2oO5buSKpWsKlaK+YdeANYqq7AN0GW7+nOQIIXwlrwXSNflJpd0WbZ3OMVd+gQ==}
     peerDependencies:
       astro: '>=4.0.0'
     peerDependenciesMeta:
@@ -7435,21 +7435,21 @@ snapshots:
       '@aria-ui/presence': 0.0.14
       nanoid: 5.0.7
 
-  '@astrobook/core@0.3.3':
+  '@astrobook/core@0.4.0':
     dependencies:
-      '@astrobook/types': 0.3.3
+      '@astrobook/types': 0.4.0
       acorn: 8.12.1
       acorn-jsx: 5.3.2(acorn@8.12.1)
       fdir: 6.2.0(picomatch@4.0.2)
       picomatch: 4.0.2
       slash: 5.1.0
 
-  '@astrobook/types@0.3.3': {}
+  '@astrobook/types@0.4.0': {}
 
-  '@astrobook/ui@0.3.3(astro@4.13.3(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))':
+  '@astrobook/ui@0.4.0(astro@4.13.3(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))':
     dependencies:
-      '@astrobook/core': 0.3.3
-      '@astrobook/types': 0.3.3
+      '@astrobook/core': 0.4.0
+      '@astrobook/types': 0.4.0
     optionalDependencies:
       astro: 4.13.3(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4)
 
@@ -10043,11 +10043,11 @@ snapshots:
       - terser
       - typescript
 
-  astrobook@0.3.3(astro@4.13.3(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4)):
+  astrobook@0.4.0(astro@4.13.3(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4)):
     dependencies:
-      '@astrobook/core': 0.3.3
-      '@astrobook/types': 0.3.3
-      '@astrobook/ui': 0.3.3(astro@4.13.3(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))
+      '@astrobook/core': 0.4.0
+      '@astrobook/types': 0.4.0
+      '@astrobook/ui': 0.4.0(astro@4.13.3(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))
     optionalDependencies:
       astro: 4.13.3(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4)
 

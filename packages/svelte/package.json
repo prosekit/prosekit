@@ -73,7 +73,7 @@
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "@sveltejs/package": "^2.3.3",
+    "@sveltejs/package": "^2.3.4",
     "@types/node": "^20.14.15",
     "read-pkg": "^9.0.1",
     "svelte": "^4.2.18",

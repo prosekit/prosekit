@@ -18,14 +18,6 @@ export default defineConfig({
     solid({ include: ['examples/solid/**/*'] }),
     unocss({ injectReset: true }),
     astrobook({ directory: 'src/stories' }),
-    {
-      name: 'astro-integration-dark-mode',
-      hooks: {
-        'astro:config:setup': ({ addDevToolbarApp }) => {
-          addDevToolbarApp('./src/helpers/dark-mode-toolbar.ts')
-        },
-      },
-    },
   ],
   base: '_',
 })

@@ -33,7 +33,7 @@ export const ExampleEmbed = defineComponent<{
 
       if (iframeLoaded.value) {
         iframe?.contentWindow?.postMessage(
-          { type: 'DARK_MODE', value: dark },
+          { type: 'astrobook:set-theme', theme: dark ? 'dark' : 'light' },
           iframe.src,
         )
       }

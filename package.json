@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9.7.0",
+  "packageManager": "pnpm@9.7.1",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
@@ -28,7 +28,7 @@
     "ci:publish:next": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag next"
   },
   "dependencies": {
-    "@antfu/ni": "^0.22.1",
+    "@antfu/ni": "^0.22.4",
     "@changesets/cli": "^2.27.7",
     "@changesets/types": "^6.0.0",
     "@manypkg/cli": "^0.21.4",
@@ -47,7 +47,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.2.6",
     "size-limit": "^11.1.4",
-    "turbo": "^2.0.12",
+    "turbo": "^2.0.13",
     "typescript": "^5.5.4",
     "unocss": "^0.62.1",
     "vitest": "^2.0.5"

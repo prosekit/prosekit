@@ -28,7 +28,7 @@
     "@types/react-dom": "^18.3.0",
     "@unocss/reset": "^0.62.1",
     "astro": "^4.13.4",
-    "astrobook": "^0.4.1",
+    "astrobook": "^0.4.2",
     "lit": "^3.2.0",
     "preact": "^10.23.2",
     "prettier": "^3.3.3",

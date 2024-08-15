@@ -79,7 +79,7 @@
     "prosemirror-highlight": "^0.8.0",
     "prosemirror-search": "^1.0.0",
     "prosemirror-tables": "^1.4.0",
-    "shiki": "^1.12.1"
+    "shiki": "^1.13.0"
   },
   "peerDependencies": {
     "y-prosemirror": ">= 1.2.9",

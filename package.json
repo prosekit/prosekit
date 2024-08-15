@@ -28,7 +28,6 @@
     "ci:publish:next": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag next"
   },
   "dependencies": {
-    "@antfu/ni": "^0.22.4",
     "@changesets/cli": "^2.27.7",
     "@changesets/types": "^6.0.0",
     "@manypkg/cli": "^0.21.4",

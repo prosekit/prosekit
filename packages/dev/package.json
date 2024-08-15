@@ -41,7 +41,7 @@
     "@types/js-yaml": "^4.0.9",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.14.15",
-    "execa": "^9.3.0",
+    "execa": "^9.3.1",
     "globby": "^14.0.2",
     "js-yaml": "^4.1.0",
     "json5": "^2.2.3",

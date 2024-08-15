@@ -13,9 +13,6 @@ importers:
 
   .:
     dependencies:
-      '@antfu/ni':
-        specifier: ^0.22.1
-        version: 0.22.1
       '@changesets/cli':
         specifier: ^2.27.7
         version: 2.27.7
@@ -71,8 +68,8 @@ importers:
         specifier: ^11.1.4
         version: 11.1.4
       turbo:
-        specifier: ^2.0.12
-        version: 2.0.12
+        specifier: ^2.0.13
+        version: 2.0.13
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -200,8 +197,8 @@ importers:
         specifier: ^20.14.15
         version: 20.14.15
       execa:
-        specifier: ^9.3.0
-        version: 9.3.0
+        specifier: ^9.3.1
+        version: 9.3.1
       globby:
         specifier: ^14.0.2
         version: 14.0.2
@@ -249,7 +246,7 @@ importers:
         version: 1.3.2
       prosemirror-highlight:
         specifier: ^0.8.0
-        version: 0.8.0(@types/hast@3.0.4)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.0)(prosemirror-view@1.33.10)(shiki@1.12.1)
+        version: 0.8.0(@types/hast@3.0.4)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.0)(prosemirror-view@1.33.10)(shiki@1.13.0)
       prosemirror-search:
         specifier: ^1.0.0
         version: 1.0.0
@@ -257,8 +254,8 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       shiki:
-        specifier: ^1.12.1
-        version: 1.12.1
+        specifier: ^1.13.0
+        version: 1.13.0
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -758,8 +755,8 @@ importers:
         specifier: ^4.13.4
         version: 4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4)
       astrobook:
-        specifier: ^0.4.1
-        version: 0.4.1(astro@4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))
+        specifier: ^0.4.2
+        version: 0.4.2(astro@4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))
       lit:
         specifier: ^3.2.0
         version: 3.2.0
@@ -845,8 +842,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/unocss-preset
       '@shikijs/vitepress-twoslash':
-        specifier: ^1.12.1
-        version: 1.12.1(typescript@5.5.4)
+        specifier: ^1.13.0
+        version: 1.13.0(typescript@5.5.4)
       '@types/dom-view-transitions':
         specifier: ^1.0.5
         version: 1.0.5
@@ -860,8 +857,8 @@ importers:
         specifier: ^0.62.1
         version: 0.62.1(rollup@4.19.0)
       '@vitejs/plugin-vue-jsx':
-        specifier: ^4.0.0
-        version: 4.0.0(vite@5.4.0(@types/node@20.14.15)(lightningcss@1.26.0))(vue@3.4.37(typescript@5.5.4))
+        specifier: ^4.0.1
+        version: 4.0.1(vite@5.4.0(@types/node@20.14.15)(lightningcss@1.26.0))(vue@3.4.37(typescript@5.5.4))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -1006,10 +1003,6 @@ packages:
   '@antfu/install-pkg@0.1.1':
     resolution: {integrity: sha512-LyB/8+bSfa0DFGC06zpCEfs89/XoWZwws5ygEa5D+Xsm3OfI+aXQ86VgVG7Acyef+rSZ5HE7J8rrxzrQeM3PjQ==}
 
-  '@antfu/ni@0.22.1':
-    resolution: {integrity: sha512-5STu7QHsLYWpt+K/+zRcMOIUnG51lOhnqPInImXGyC6PMHtkrZQjbqZ/R3GW8XdTYOnKiT77+R09Tl4fzuFK5w==}
-    hasBin: true
-
   '@antfu/utils@0.7.10':
     resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
 
@@ -1034,14 +1027,14 @@ packages:
   '@aria-ui/tooltip@0.0.22':
     resolution: {integrity: sha512-0C0ZQ46hzjzOSUJ3i7YNKRq/l1Q2i+IxfKUKKLC5tB+MJrieD66qBtETSlw3HLRtBBuLlcmIugz/IFgfHfAmmg==}
 
-  '@astrobook/core@0.4.1':
-    resolution: {integrity: sha512-A94raMhtNbnZFb1+dlasLPYI3DXmQZBpF3Th9VBM0BrH5oKMN8VMQQ0uvxu21Zdkr0XLy4uNm2aSSGoU+1KRWw==}
+  '@astrobook/core@0.4.2':
+    resolution: {integrity: sha512-J0t7yAn68q1mK3dgbwM4Km2N73gcLNholDrpGPrCOZere4VMYdBqwyDKTufYuvgVyOTUYB+qCAqpbGgFsG4owA==}
 
-  '@astrobook/types@0.4.1':
-    resolution: {integrity: sha512-Zr4HJr8/Vbh26qLryJrgkmEE9SDVhxzB3lripkIrepnxC3t6zYIs1JUZBDKpZWZPSPxXPoP+v6ad9ToY50qxZA==}
+  '@astrobook/types@0.4.2':
+    resolution: {integrity: sha512-rfrRl895EWjY1VXheObed6p3UsQidrIcixGDN+j2fD6hNTioLdE7tf1Q/SeCUt9l3lzqmnsj/5R4d/6ndhWRtg==}
 
-  '@astrobook/ui@0.4.1':
-    resolution: {integrity: sha512-YbnaJnVOeEb0andfX50n4kH1mo7QQZAdD8lhEL3OCljXqUVYfkXLwLYXvGLR9ZObLWNHMyQibDP7/y6VpmwONw==}
+  '@astrobook/ui@0.4.2':
+    resolution: {integrity: sha512-XD8H1rYTLVSewjlV9Fj3eO+8/IxWF2TKM4H7ero66hAQe9BLDKO6INffGKxhjvmGIZ1h8B32zWxO4tW0vo7qWg==}
     peerDependencies:
       astro: '>=4.0.0'
     peerDependenciesMeta:
@@ -2239,17 +2232,17 @@ packages:
   '@shikijs/core@1.10.3':
     resolution: {integrity: sha512-D45PMaBaeDHxww+EkcDQtDAtzv00Gcsp72ukBtaLSmqRvh0WgGMq3Al0rl1QQBZfuneO75NXMIzEZGFitThWbg==}
 
-  '@shikijs/core@1.12.1':
-    resolution: {integrity: sha512-biCz/mnkMktImI6hMfMX3H9kOeqsInxWEyCHbSlL8C/2TR1FqfmGxTLRNwYCKsyCyxWLbB8rEqXRVZuyxuLFmA==}
+  '@shikijs/core@1.13.0':
+    resolution: {integrity: sha512-Mj5NVfbAXcD1GnwOTSPl8hBn/T8UDpfFQTptp+p41n/CbUcJtOq98WaRD7Lz3hCglYotUTHUWtzu3JhK6XlkAA==}
 
   '@shikijs/transformers@1.10.3':
     resolution: {integrity: sha512-MNjsyye2WHVdxfZUSr5frS97sLGe6G1T+1P41QjyBFJehZphMcr4aBlRLmq6OSPBslYe9byQPVvt/LJCOfxw8Q==}
 
-  '@shikijs/twoslash@1.12.1':
-    resolution: {integrity: sha512-k4D6sC9p9GksbHa4RnB1VkQIZtQ+L7nQMqi/YAxEgTKZF5v7IW6dHak0Z7bvZXrfhle36NIqWMJXz5xDexupvw==}
+  '@shikijs/twoslash@1.13.0':
+    resolution: {integrity: sha512-OjtxBFYCGqZOnJYMM1qSuHOiHM0cbH64HQ3/7oWR2sfftbCLLqOIJ1+Sja5KnWRTXtW/hZtf4V22g+oX7KB29g==}
 
-  '@shikijs/vitepress-twoslash@1.12.1':
-    resolution: {integrity: sha512-zFW9im65bkyBUCLFA8wHte3QvOKyQybScqAZqaSuRm442KyKwGxAEpe+5F0Sj8BOPGNjekzMLJPtTDqUURuSYQ==}
+  '@shikijs/vitepress-twoslash@1.13.0':
+    resolution: {integrity: sha512-0VTpYVbHD5d2kr7bYD65H1zM4/DAWsG4iFu/Zuz4Djlr0HUajPaZ4WfpL+SzhuoxoFOlHSI73UouKg0jB5R5PQ==}
 
   '@sindresorhus/fnv1a@3.1.0':
     resolution: {integrity: sha512-KV321z5m/0nuAg83W1dPLy85HpHDk7Sdi4fJbwvacWsEhAh+rZUW4ZfGcXmUIvjZg4ss2bcwNlRhJ7GBEUG08w==}
@@ -2698,8 +2691,8 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
 
-  '@vitejs/plugin-vue-jsx@4.0.0':
-    resolution: {integrity: sha512-A+6wL2AdQhDsLsDnY+2v4rRDI1HLJGIMc97a8FURO9tqKsH5QvjWrzsa5DH3NlZsM742W2wODl2fF+bfcTWtXw==}
+  '@vitejs/plugin-vue-jsx@4.0.1':
+    resolution: {integrity: sha512-7mg9HFGnFHMEwCdB6AY83cVK4A6sCqnrjFYF4WIlebYAQVVJ/sC/CiTruVdrRlhrFoeZ8rlMxY9wYpPTIRhhAg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0
@@ -3087,8 +3080,8 @@ packages:
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
-  astrobook@0.4.1:
-    resolution: {integrity: sha512-SPacun/lJ00gFqJXpbp9njRSSZcYeYkM0rwoG7n8NIGDmay8GagO3LUEhk0CqW/HrpQ7a/1SfndM5EPjB39Y5g==}
+  astrobook@0.4.2:
+    resolution: {integrity: sha512-BmjjyBojgyUkh4bTKk219eSLRukOCXPFRbCFKCrhaiJlVVjsJavKoqhVSB0JCjxPFZpjJc5gWic2ZyXGm4bekA==}
     peerDependencies:
       astro: '>=4.0.0'
     peerDependenciesMeta:
@@ -3936,8 +3929,8 @@ packages:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
 
-  execa@9.3.0:
-    resolution: {integrity: sha512-l6JFbqnHEadBoVAVpN5dl2yCyfX28WoBAGaoQcNmLLSedOxTxcn2Qa83s8I/PA5i56vWru2OHOtrwF7Om2vqlg==}
+  execa@9.3.1:
+    resolution: {integrity: sha512-gdhefCCNy/8tpH/2+ajP9IQc14vXchNdd0weyzSJEFURhRMGncQ+zKFxwjAufIewPEJm9BPOaJnvg2UtlH2gPQ==}
     engines: {node: ^18.19.0 || >=20.5.0}
 
   extend-shallow@2.0.1:
@@ -4339,8 +4332,8 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
 
-  human-signals@7.0.0:
-    resolution: {integrity: sha512-74kytxOUSvNbjrT9KisAbaTZ/eJwD/LrbM/kh5j0IhPuJzwuA19dWvniFGwBzN9rVjg+O/e+F310PjObDXS+9Q==}
+  human-signals@8.0.0:
+    resolution: {integrity: sha512-/1/GPCpDUCCYwlERiYjxoczfP0zfvZMU/OWgQPMya9AbAE24vseigFdhAMObpc8Q4lc/kjutPfUddDYyAmejnA==}
     engines: {node: '>=18.18.0'}
 
   iconv-lite@0.4.24:
@@ -6183,8 +6176,8 @@ packages:
   shiki@1.10.3:
     resolution: {integrity: sha512-eneCLncGuvPdTutJuLyUGS8QNPAVFO5Trvld2wgEq1e002mwctAhJKeMGWtWVXOIEzmlcLRqcgPSorR6AVzOmQ==}
 
-  shiki@1.12.1:
-    resolution: {integrity: sha512-nwmjbHKnOYYAe1aaQyEBHvQymJgfm86ZSS7fT8OaPRr4sbAcBNz7PbfAikMEFSDQ6se2j2zobkXvVKcBOm0ysg==}
+  shiki@1.13.0:
+    resolution: {integrity: sha512-e0dWfnONbEv6xl7FJy3XIhsVHQ/65XHDZl92+6H9+4xWjfdo7pmkqG7Kg47KWtDiEtzM5Z+oEfb4vtRvoZ/X9w==}
 
   side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
@@ -6628,38 +6621,38 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  turbo-darwin-64@2.0.12:
-    resolution: {integrity: sha512-NAgfgbXxX/JScWQmmQnGbPuFZq7LIswHfcMk5JwyBXQM/xmklNOxxac7MnGGIOf19Z2f6S3qHy17VIj0SeGfnA==}
+  turbo-darwin-64@2.0.13:
+    resolution: {integrity: sha512-1qoFGvSE/kG1Njl1a1b35+AlJyCBE/+cb7GcglxuUM0Fh0JNR6FIWGhiubUhFLoIdFkdRbPpTH5smhPpRk757w==}
     cpu: [x64]
     os: [darwin]
 
-  turbo-darwin-arm64@2.0.12:
-    resolution: {integrity: sha512-cP02uer5KSJ+fXL+OfRRk5hnVjV0c60hxDgNcJxrZpfhun7HHoKDDR7w2xhQntiA45aC6ZZEXRqMKpj6GAmKbg==}
+  turbo-darwin-arm64@2.0.13:
+    resolution: {integrity: sha512-3fgbjKeRjvZTKJhn6eOyA6SaFXlRHx/z7qAWYcTbq7iu2zd+n0OHRyah9Voy2ZihiGAI0Bw4QfVWo3d1qTabgA==}
     cpu: [arm64]
     os: [darwin]
 
-  turbo-linux-64@2.0.12:
-    resolution: {integrity: sha512-+mQgGfg1eq5qF+wenK/FKJaNMNAo5DQLC4htQy+8osW+fx6U+8+6UlPQPaycAWDEqwOI7NwuqkeHfkEQLQUTyQ==}
+  turbo-linux-64@2.0.13:
+    resolution: {integrity: sha512-1nMO5NWHWs4jI5SV8SMlGtR3/jBlud1ld/ltayYwOXm6zdznj0/mTNNE9AjfOs/aAei2wZE1HWUHXe46q/nZtw==}
     cpu: [x64]
     os: [linux]
 
-  turbo-linux-arm64@2.0.12:
-    resolution: {integrity: sha512-KFyEZDXfPU1DK4zimxdCcqAcK7IIttX4mfsgB7NsSEOmH0dhHOih/YFYiyEDC1lTRx0C2RlzQ0Kjjdz48AN5Eg==}
+  turbo-linux-arm64@2.0.13:
+    resolution: {integrity: sha512-JkQYAAMbEW3jkzhbtY4hi0Q61tlSd46qLEVBQqnur9VymC4TfD6kllVMpRtbmXv8jdfGPu+rEIeYrzjHpyqMfg==}
     cpu: [arm64]
     os: [linux]
 
-  turbo-windows-64@2.0.12:
-    resolution: {integrity: sha512-kJj4KCkZTkDTDCqsSw1m1dbO4WeoQq1mYUm/thXOH0OkeqYbSMt0EyoTcJOgKUDsrMnzZD2gPfYrlYHtV69lVA==}
+  turbo-windows-64@2.0.13:
+    resolution: {integrity: sha512-QYJfYPnmb3j16CR4mucYicC+tlY1fsFws6fkqZe2b8jBpRyOslxkEk4XJWCsvUizPSYpOdAnTL9baunLH7hWrA==}
     cpu: [x64]
     os: [win32]
 
-  turbo-windows-arm64@2.0.12:
-    resolution: {integrity: sha512-TY3ROxguDilN2olCwcZMaePdW01Xhma0pZU7bNhsQEqca9RGAmsZBuzfGnTMcWPmv4tpnb/PlX1hrt1Hod/44Q==}
+  turbo-windows-arm64@2.0.13:
+    resolution: {integrity: sha512-dnVN19dq7jszcKVBy4+T1IMmMY1ergigJZdl76Bbc99QOwaXsTR7ci4sle89HvJb+F1z/MXSq8ePvRTcy6dKRw==}
     cpu: [arm64]
     os: [win32]
 
-  turbo@2.0.12:
-    resolution: {integrity: sha512-8s2KwqjwQj7z8Z53SUZSKVkQOZ2/Sl4D2F440oaBY/k2lGju60dW6srEpnn8/RIDeICZmQn3pQHF79Jfnc5Skw==}
+  turbo@2.0.13:
+    resolution: {integrity: sha512-xZYCpvy+Q5X05HQLVbup/nUva/EPd8QKX/WLfztz8Yhh7yH+VN9t+P9ACG2U0ThlrqX4uFS0tuE0jaCLvL1Imw==}
     hasBin: true
 
   twoslash-protocol@0.2.9:
@@ -7391,8 +7384,6 @@ snapshots:
       execa: 5.1.1
       find-up: 5.0.0
 
-  '@antfu/ni@0.22.1': {}
-
   '@antfu/utils@0.7.10': {}
 
   '@aria-ui/collection@0.0.3': {}
@@ -7438,21 +7429,21 @@ snapshots:
       '@aria-ui/presence': 0.0.14
       nanoid: 5.0.7
 
-  '@astrobook/core@0.4.1':
+  '@astrobook/core@0.4.2':
     dependencies:
-      '@astrobook/types': 0.4.1
+      '@astrobook/types': 0.4.2
       acorn: 8.12.1
       acorn-jsx: 5.3.2(acorn@8.12.1)
       fdir: 6.2.0(picomatch@4.0.2)
       picomatch: 4.0.2
       slash: 5.1.0
 
-  '@astrobook/types@0.4.1': {}
+  '@astrobook/types@0.4.2': {}
 
-  '@astrobook/ui@0.4.1(astro@4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))':
+  '@astrobook/ui@0.4.2(astro@4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))':
     dependencies:
-      '@astrobook/core': 0.4.1
-      '@astrobook/types': 0.4.1
+      '@astrobook/core': 0.4.2
+      '@astrobook/types': 0.4.2
     optionalDependencies:
       astro: 4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4)
 
@@ -7474,7 +7465,7 @@ snapshots:
       remark-parse: 11.0.0
       remark-rehype: 11.1.0
       remark-smartypants: 3.0.2
-      shiki: 1.12.1
+      shiki: 1.13.0
       unified: 11.0.5
       unist-util-remove-position: 5.0.0
       unist-util-visit: 5.0.0
@@ -7548,7 +7539,7 @@ snapshots:
   '@astrojs/vue@4.5.0(astro@4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))(rollup@4.19.0)(vite@5.4.0(@types/node@20.14.15)(lightningcss@1.26.0))(vue@3.4.37(typescript@5.5.4))':
     dependencies:
       '@vitejs/plugin-vue': 5.0.5(vite@5.4.0(@types/node@20.14.15)(lightningcss@1.26.0))(vue@3.4.37(typescript@5.5.4))
-      '@vitejs/plugin-vue-jsx': 4.0.0(vite@5.4.0(@types/node@20.14.15)(lightningcss@1.26.0))(vue@3.4.37(typescript@5.5.4))
+      '@vitejs/plugin-vue-jsx': 4.0.1(vite@5.4.0(@types/node@20.14.15)(lightningcss@1.26.0))(vue@3.4.37(typescript@5.5.4))
       '@vue/compiler-sfc': 3.4.37
       astro: 4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4)
       vite-plugin-vue-devtools: 7.3.6(rollup@4.19.0)(vite@5.4.0(@types/node@20.14.15)(lightningcss@1.26.0))(vue@3.4.37(typescript@5.5.4))
@@ -8814,7 +8805,7 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
 
-  '@shikijs/core@1.12.1':
+  '@shikijs/core@1.13.0':
     dependencies:
       '@types/hast': 3.0.4
 
@@ -8822,22 +8813,22 @@ snapshots:
     dependencies:
       shiki: 1.10.3
 
-  '@shikijs/twoslash@1.12.1(typescript@5.5.4)':
+  '@shikijs/twoslash@1.13.0(typescript@5.5.4)':
     dependencies:
-      '@shikijs/core': 1.12.1
+      '@shikijs/core': 1.13.0
       twoslash: 0.2.9(typescript@5.5.4)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  '@shikijs/vitepress-twoslash@1.12.1(typescript@5.5.4)':
+  '@shikijs/vitepress-twoslash@1.13.0(typescript@5.5.4)':
     dependencies:
-      '@shikijs/twoslash': 1.12.1(typescript@5.5.4)
+      '@shikijs/twoslash': 1.13.0(typescript@5.5.4)
       floating-vue: 5.2.2(vue@3.4.37(typescript@5.5.4))
       mdast-util-from-markdown: 2.0.1
       mdast-util-gfm: 3.0.0
       mdast-util-to-hast: 13.2.0
-      shiki: 1.12.1
+      shiki: 1.13.0
       twoslash: 0.2.9(typescript@5.5.4)
       twoslash-vue: 0.2.9(typescript@5.5.4)
       vue: 3.4.37(typescript@5.5.4)
@@ -9445,7 +9436,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue-jsx@4.0.0(vite@5.4.0(@types/node@20.14.15)(lightningcss@1.26.0))(vue@3.4.37(typescript@5.5.4))':
+  '@vitejs/plugin-vue-jsx@4.0.1(vite@5.4.0(@types/node@20.14.15)(lightningcss@1.26.0))(vue@3.4.37(typescript@5.5.4))':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/plugin-transform-typescript': 7.24.8(@babel/core@7.25.2)
@@ -10023,7 +10014,7 @@ snapshots:
       prompts: 2.4.2
       rehype: 13.0.1
       semver: 7.6.3
-      shiki: 1.12.1
+      shiki: 1.13.0
       string-width: 7.2.0
       strip-ansi: 7.1.0
       tsconfck: 3.1.1(typescript@5.5.4)
@@ -10049,11 +10040,11 @@ snapshots:
       - terser
       - typescript
 
-  astrobook@0.4.1(astro@4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4)):
+  astrobook@0.4.2(astro@4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4)):
     dependencies:
-      '@astrobook/core': 0.4.1
-      '@astrobook/types': 0.4.1
-      '@astrobook/ui': 0.4.1(astro@4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))
+      '@astrobook/core': 0.4.2
+      '@astrobook/types': 0.4.2
+      '@astrobook/ui': 0.4.2(astro@4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4))
     optionalDependencies:
       astro: 4.13.4(@types/node@20.14.15)(lightningcss@1.26.0)(typescript@5.5.4)
 
@@ -11087,13 +11078,13 @@ snapshots:
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
 
-  execa@9.3.0:
+  execa@9.3.1:
     dependencies:
       '@sindresorhus/merge-streams': 4.0.0
       cross-spawn: 7.0.3
       figures: 6.1.0
       get-stream: 9.0.1
-      human-signals: 7.0.0
+      human-signals: 8.0.0
       is-plain-obj: 4.1.0
       is-stream: 4.0.1
       npm-run-path: 5.3.0
@@ -11595,7 +11586,7 @@ snapshots:
 
   human-signals@5.0.0: {}
 
-  human-signals@7.0.0: {}
+  human-signals@8.0.0: {}
 
   iconv-lite@0.4.24:
     dependencies:
@@ -13174,14 +13165,14 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.33.10
 
-  prosemirror-highlight@0.8.0(@types/hast@3.0.4)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.0)(prosemirror-view@1.33.10)(shiki@1.12.1):
+  prosemirror-highlight@0.8.0(@types/hast@3.0.4)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.0)(prosemirror-view@1.33.10)(shiki@1.13.0):
     optionalDependencies:
       '@types/hast': 3.0.4
       prosemirror-model: 1.22.3
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.10.0
       prosemirror-view: 1.33.10
-      shiki: 1.12.1
+      shiki: 1.13.0
 
   prosemirror-history@1.4.1:
     dependencies:
@@ -13747,9 +13738,9 @@ snapshots:
       '@shikijs/core': 1.10.3
       '@types/hast': 3.0.4
 
-  shiki@1.12.1:
+  shiki@1.13.0:
     dependencies:
-      '@shikijs/core': 1.12.1
+      '@shikijs/core': 1.13.0
       '@types/hast': 3.0.4
 
   side-channel@1.0.6:
@@ -14210,32 +14201,32 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  turbo-darwin-64@2.0.12:
+  turbo-darwin-64@2.0.13:
     optional: true
 
-  turbo-darwin-arm64@2.0.12:
+  turbo-darwin-arm64@2.0.13:
     optional: true
 
-  turbo-linux-64@2.0.12:
+  turbo-linux-64@2.0.13:
     optional: true
 
-  turbo-linux-arm64@2.0.12:
+  turbo-linux-arm64@2.0.13:
     optional: true
 
-  turbo-windows-64@2.0.12:
+  turbo-windows-64@2.0.13:
     optional: true
 
-  turbo-windows-arm64@2.0.12:
+  turbo-windows-arm64@2.0.13:
     optional: true
 
-  turbo@2.0.12:
+  turbo@2.0.13:
     optionalDependencies:
-      turbo-darwin-64: 2.0.12
-      turbo-darwin-arm64: 2.0.12
-      turbo-linux-64: 2.0.12
-      turbo-linux-arm64: 2.0.12
-      turbo-windows-64: 2.0.12
-      turbo-windows-arm64: 2.0.12
+      turbo-darwin-64: 2.0.13
+      turbo-darwin-arm64: 2.0.13
+      turbo-linux-64: 2.0.13
+      turbo-linux-arm64: 2.0.13
+      turbo-windows-64: 2.0.13
+      turbo-windows-arm64: 2.0.13
 
   twoslash-protocol@0.2.9: {}
 
@@ -14319,7 +14310,7 @@ snapshots:
       lunr: 2.3.9
       markdown-it: 14.1.0
       minimatch: 9.0.5
-      shiki: 1.12.1
+      shiki: 1.13.0
       typescript: 5.5.4
       yaml: 2.4.5
 
@@ -14648,7 +14639,7 @@ snapshots:
     dependencies:
       '@docsearch/css': 3.6.1
       '@docsearch/js': 3.6.1(@algolia/client-search@4.24.0)(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.15.0)
-      '@shikijs/core': 1.12.1
+      '@shikijs/core': 1.13.0
       '@shikijs/transformers': 1.10.3
       '@types/markdown-it': 14.1.1
       '@vitejs/plugin-vue': 5.0.5(vite@5.4.0(@types/node@20.14.15)(lightningcss@1.26.0))(vue@3.4.37(typescript@5.5.4))
@@ -14659,7 +14650,7 @@ snapshots:
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 7.0.2
-      shiki: 1.12.1
+      shiki: 1.13.0
       vite: 5.4.0(@types/node@20.14.15)(lightningcss@1.26.0)
       vue: 3.4.37(typescript@5.5.4)
     optionalDependencies:

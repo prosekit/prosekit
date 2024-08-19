@@ -13,7 +13,7 @@ yalc.lock
 *.log
 *.tgz
 coverage
-dist
+**/dist/*
 lib-cov
 logs
 node_modules

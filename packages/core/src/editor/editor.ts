@@ -1,5 +1,11 @@
 import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
-import { type Plugin, type Selection, EditorState } from '@prosekit/pm/state'
+import {
+  EditorState,
+  type Command,
+  type Plugin,
+  type Selection,
+  type Transaction,
+} from '@prosekit/pm/state'
 import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
@@ -28,10 +34,10 @@ import {
 } from '../utils/editor-content'
 
 import {
-  type MarkAction,
-  type NodeAction,
   createMarkActions,
   createNodeActions,
+  type MarkAction,
+  type NodeAction,
 } from './action'
 import { union } from './union'
 
@@ -148,6 +154,14 @@ export class EditorInstance {
       this.view.updateState(state)
     } else {
       this.directEditorProps.state = state
+    }
+  }
+
+  private dispatch = (tr: Transaction): void => {
+    if (this.view) {
+      this.view.dispatch(tr)
+    } else {
+      this.directEditorProps.state = this.directEditorProps.state.apply(tr)
     }
   }
 
@@ -287,26 +301,32 @@ export class EditorInstance {
     view.setProps({ state: newState })
   }
 
+  exec(command: Command): boolean {
+    const state = this.getState()
+    return command(state, this.dispatch, this.view ?? undefined)
+  }
+
+  canExec(command: Command): boolean {
+    const state = this.getState()
+    return command(state, undefined, this.view ?? undefined)
+  }
+
   public defineCommand<Args extends any[] = any[]>(
     name: string,
     commandCreator: CommandCreator<Args>,
   ): void {
     const action: CommandAction<Args> = (...args: Args) => {
-      const view = this.view
-      assert(view, `Cannot call command "${name}" before the editor is mounted`)
       const command = commandCreator(...args)
-      return command(view.state, view.dispatch.bind(view), view)
+      return this.exec(command)
     }
 
-    action.canApply = (...args: Args) => {
-      const view = this.view
-      if (!view) {
-        return false
-      }
-
+    const canExec = (...args: Args) => {
       const command = commandCreator(...args)
-      return command(view.state, undefined, view)
+      return this.canExec(command)
     }
+
+    action.canApply = canExec
+    action.canExec = canExec
 
     this.commands[name] = action as CommandAction
   }
@@ -439,6 +459,22 @@ export class Editor<E extends Extension = any> {
     selection?: SelectionJSON | Selection | 'start' | 'end',
   ): void => {
     return this.instance.setContent(content, selection)
+  }
+
+  /**
+   * Execute the given command. Return `true` if the command was successfully
+   * executed, otherwise `false`.
+   */
+  exec = (command: Command): boolean => {
+    return this.instance.exec(command)
+  }
+
+  /**
+   * Check if the given command can be executed. Return `true` if the command
+   * can be executed, otherwise `false`.
+   */
+  canExec = (command: Command): boolean => {
+    return this.instance.canExec(command)
   }
 
   /**

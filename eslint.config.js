@@ -39,17 +39,6 @@ const configs = [
       'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
     },
   },
-  {
-    ignores: [
-      '**/_/**',
-      '**/.temp',
-      '**/.tsup',
-      '**/playwright-report',
-      '**/config-tsup.d.ts',
-      '**/vite.config.ts.timestamp*',
-      '**/tsup.config.bundled*',
-    ],
-  },
 ]
 
 export default configs

@@ -1,5 +1,15 @@
 # prosekit
 
+## 0.9.16
+
+### Patch Changes
+
+- [`7217c46`](https://github.com/ocavue/prosekit/commit/7217c46621d4003a156a91e290a984512458090b) ![](https://prosekit.dev/b/core)
+
+  Add new `Editor.exec()` and `Editor.canExec()` methods to allow executing ambiguous commands without registering them via `defineCommand()`.
+
+  Rename `CommandAction.canApply()` to `CommandAction.canExec()` to better reflect its purpose.
+
 ## 0.9.15
 
 ### Patch Changes

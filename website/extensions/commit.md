@@ -21,6 +21,7 @@ const extension = defineCommitRecorder(commitRecorder)
 When you want to save the changes, call the `commit` method. This will return a JSON `Commit` object if there are any changes. You can then serialize and save this object to your database.
 
 ```ts twoslash
+/* eslint-disable import/no-duplicates */
 import { CommitRecorder } from 'prosekit/extensions/commit'
 
 const commitRecorder = new CommitRecorder()
@@ -34,6 +35,7 @@ const commit = commitRecorder.commit()
 To display the changes, create another editor instance and call `defineCommitViewer` with the `Commit` object.
 
 ```ts twoslash
+/* eslint-disable import/no-duplicates */
 import { CommitRecorder, type Commit } from 'prosekit/extensions/commit'
 
 const commitRecorder = new CommitRecorder()

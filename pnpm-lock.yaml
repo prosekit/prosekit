@@ -2811,7 +2811,7 @@ packages:
   '@vue/language-core@2.0.29':
     resolution: {integrity: sha512-o2qz9JPjhdoVj8D2+9bDXbaI4q2uZTHQA/dbyZT4Bj1FR9viZxDJnLcKVHfxdn6wsOzRgpqIzJEEmSSvgMvDTQ==}
     peerDependencies:
-      typescript: '*'
+      typescript: 5.5.3
     peerDependenciesMeta:
       typescript:
         optional: true

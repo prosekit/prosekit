@@ -19,5 +19,5 @@ export default defineConfig({
     unocss({ injectReset: true }),
     astrobook({ directory: 'src/stories' }),
   ],
-  base: '_',
+  base: 'astrobook',
 })

@@ -1,6 +1,7 @@
 import { defineProject } from 'vitest/config'
 
-export const config = defineProject({
+/** @type {import('vitest/config').UserProjectConfigExport} */
+const config = defineProject({
   test: {
     browser: {
       enabled: true,
@@ -13,3 +14,5 @@ export const config = defineProject({
     fileParallelism: false,
   },
 })
+
+export { config }

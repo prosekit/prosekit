@@ -4,15 +4,15 @@ export function combineEventHandlers<
   Handler extends (...args: any[]) => boolean | void,
   Args extends Parameters<Handler> = Parameters<Handler>,
 >() {
-  let _handlers: Handler[] = []
+  let handlers: Handler[] = []
 
-  function setHandlers(handlers: Handler[]): void {
+  function setHandlers(eventHandlers: Handler[]): void {
     // The handlers at the end have a higher priority.
-    _handlers = toReversed(handlers)
+    handlers = toReversed(eventHandlers)
   }
 
   function combinedEventHandler(...args: Args): boolean {
-    for (const handler of _handlers) {
+    for (const handler of handlers) {
       if (handler(...args)) {
         return true
       }

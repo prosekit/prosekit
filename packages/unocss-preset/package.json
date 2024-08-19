@@ -36,8 +36,8 @@
     "unocss": "^0.60.4"
   },
   "devDependencies": {
-    "@types/node": "^20.14.15",
+    "@types/node": "^20.16.1",
     "typescript": "^5.5.4",
-    "unocss": "^0.62.1"
+    "unocss": "^0.62.2"
   }
 }

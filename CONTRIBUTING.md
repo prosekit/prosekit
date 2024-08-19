@@ -18,7 +18,7 @@ You can use [StackBlitz Codeflow](https://stackblitz.com/codeflow) to fix bugs o
 To develop locally, run `pnpm run dev` in ProseKit's root folder. This will start two web servers:
 
 1. website (usually http://localhost:5173/): The documentation website.
-2. playground (usually http://localhost:4321/\_/): A collection of examples to showcase and test the features.
+2. playground (usually http://localhost:4321/astrobook/): A collection of examples to showcase and test the features.
 
 Alternatively, you can run `pnpm run website` or `pnpm run playground` to start the website or playground server respectively.
 

@@ -15,7 +15,7 @@
       "default": "./src/config-vitest.js"
     },
     "./config-tsup": {
-      "types": "./src/config-tsup.d.ts",
+      "types": "./src/config-tsup.ts",
       "default": "./dist/config-tsup.js"
     }
   },

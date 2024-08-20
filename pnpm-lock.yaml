@@ -889,6 +889,12 @@ importers:
       lightningcss:
         specifier: ^1.26.0
         version: 1.26.0
+      loro-crdt:
+        specifier: ^0.16.7
+        version: 0.16.7
+      loro-prosemirror:
+        specifier: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91
+        version: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       postcss:
         specifier: ^8.4.41
         version: 8.4.41

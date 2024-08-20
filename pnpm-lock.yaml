@@ -263,6 +263,12 @@ importers:
       '@vitest/browser':
         specifier: ^2.0.5
         version: 2.0.5(playwright@1.46.1)(typescript@5.5.4)(vitest@2.0.5)
+      loro-crdt:
+        specifier: ^0.16.7
+        version: 0.16.7
+      loro-prosemirror:
+        specifier: ^0.0.6
+        version: 0.0.6(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       tsup:
         specifier: ^8.2.4
         version: 8.2.4(@microsoft/api-extractor@7.47.6(@types/node@20.16.1))(jiti@1.21.6)(postcss@8.4.41)(tsx@4.17.0)(typescript@5.5.4)(yaml@2.4.5)
@@ -4956,6 +4962,20 @@ packages:
   loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
+
+  loro-crdt@0.16.7:
+    resolution: {integrity: sha512-jzzCIy2JJiFX7E9tyxd40xNYu4L8ZVdXVIc/rtuI77hyTdmF5Q4XlEo4aI8p2qiuNXyo1S05VoYTb+N1TJLy5g==}
+
+  loro-prosemirror@0.0.6:
+    resolution: {integrity: sha512-f5RCiNvbuiMjDhKdTyHg+dZPupC+znzerCDNlqddo9D64V8cM14H0CFeFzm/wf+g8yh4DlQYbArnkA6pwzyIfw==}
+    peerDependencies:
+      loro-crdt: ^0.16.3
+      prosemirror-model: ^1.18.1
+      prosemirror-state: ^1.4.1
+      prosemirror-view: ^1.28.0
+
+  loro-wasm@0.16.7:
+    resolution: {integrity: sha512-JnobKK0ajCLcYIvL6dMx1aNb7/9YesBSHnYetKFHg9wNdBTznfoBou2sY51+XHwqaCeEgKHaY3zrjbBfQjF8Kg==}
 
   loupe@3.1.1:
     resolution: {integrity: sha512-edNu/8D5MKVfGVFRhFf8aAxiTM6Wumfz5XsaatSxlD3w4R1d/WEKUTydCdPGbl9K7QG/Ca3GnDV2sIKIpXRQcw==}
@@ -12205,6 +12225,20 @@ snapshots:
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
+
+  loro-crdt@0.16.7:
+    dependencies:
+      loro-wasm: 0.16.7
+
+  loro-prosemirror@0.0.6(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10):
+    dependencies:
+      lib0: 0.2.94
+      loro-crdt: 0.16.7
+      prosemirror-model: 1.22.3
+      prosemirror-state: 1.4.3
+      prosemirror-view: 1.33.10
+
+  loro-wasm@0.16.7: {}
 
   loupe@3.1.1:
     dependencies:

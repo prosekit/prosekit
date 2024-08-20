@@ -82,10 +82,18 @@
     "shiki": "^1.14.1"
   },
   "peerDependencies": {
+    "loro-crdt": ">= 0.16.7",
+    "loro-prosemirror": ">= 0.0.6",
     "y-prosemirror": ">= 1.2.9",
     "yjs": ">= 13.6.18"
   },
   "peerDependenciesMeta": {
+    "loro-crdt": {
+      "optional": true
+    },
+    "loro-prosemirror": {
+      "optional": true
+    },
     "y-prosemirror": {
       "optional": true
     },
@@ -96,6 +104,8 @@
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
     "@vitest/browser": "^2.0.5",
+    "loro-crdt": "^0.16.7",
+    "loro-prosemirror": "^0.0.6",
     "tsup": "^8.2.4",
     "type-fest": "^4.25.0",
     "typescript": "^5.5.4",

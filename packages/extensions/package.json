@@ -44,6 +44,7 @@
     "./link": "./src/link/index.ts",
     "./list": "./src/list/index.ts",
     "./list/style.css": "./src/list/style.css",
+    "./loro": "./src/loro/index.ts",
     "./mark-rule": "./src/mark-rule/index.ts",
     "./mention": "./src/mention/index.ts",
     "./mod-click-prevention": "./src/mod-click-prevention/index.ts",
@@ -205,6 +206,11 @@
       "./list/style.css": {
         "default": "./dist/list/style.css"
       },
+      "./loro": {
+        "types": "./dist/prosekit-extensions-loro.d.ts",
+        "import": "./dist/prosekit-extensions-loro.js",
+        "default": "./dist/prosekit-extensions-loro.js"
+      },
       "./mark-rule": {
         "types": "./dist/prosekit-extensions-mark-rule.d.ts",
         "import": "./dist/prosekit-extensions-mark-rule.js",
@@ -333,6 +339,9 @@
         ],
         "list": [
           "./dist/prosekit-extensions-list.d.ts"
+        ],
+        "loro": [
+          "./dist/prosekit-extensions-loro.d.ts"
         ],
         "mark-rule": [
           "./dist/prosekit-extensions-mark-rule.d.ts"

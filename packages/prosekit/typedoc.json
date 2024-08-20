@@ -21,6 +21,7 @@
     "./src/extensions/italic.gen.ts",
     "./src/extensions/link.gen.ts",
     "./src/extensions/list.gen.ts",
+    "./src/extensions/loro.gen.ts",
     "./src/extensions/mark-rule.gen.ts",
     "./src/extensions/mention.gen.ts",
     "./src/extensions/mod-click-prevention.gen.ts",

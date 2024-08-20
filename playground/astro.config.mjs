@@ -6,6 +6,7 @@ import vue from '@astrojs/vue'
 import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
 import unocss from 'unocss/astro'
+import wasm from 'vite-plugin-wasm'
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,4 +21,7 @@ export default defineConfig({
     astrobook({ directory: 'src/stories' }),
   ],
   base: 'astrobook',
+  vite: {
+    plugins: [wasm()],
+  },
 })

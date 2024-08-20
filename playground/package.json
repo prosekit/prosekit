@@ -48,6 +48,7 @@
     "typescript": "^5.5.4",
     "unified": "^11.0.5",
     "unocss": "^0.62.2",
+    "vite-plugin-wasm": "^3.3.0",
     "vue": "^3.4.38",
     "vue-tsc": "^2.0.29",
     "y-protocols": "^1.0.6",

@@ -12,6 +12,7 @@ export const Heading = { args: { story: 'heading' } }
 export const InlineMenu = { args: { story: 'inline-menu' } }
 export const Keymap = { args: { story: 'keymap' } }
 export const List = { args: { story: 'list' } }
+export const Loro = { args: { story: 'loro' } }
 export const MarkRule = { args: { story: 'mark-rule' } }
 export const Readonly = { args: { story: 'readonly' } }
 export const ResizableImage = { args: { story: 'resizable-image' } }

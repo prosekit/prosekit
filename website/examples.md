@@ -34,6 +34,8 @@
 
 - [list](./examples/list)
 
+- [loro](./examples/loro)
+
 - [mark-rule](./examples/mark-rule)
 
 - [minimal](./examples/minimal)

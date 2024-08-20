@@ -426,6 +426,12 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
+      loro-crdt:
+        specifier: ^0.16.7
+        version: 0.16.7
+      loro-prosemirror:
+        specifier: '>= 0.0.6'
+        version: 0.0.6(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       postcss:
         specifier: ^8.4.41
         version: 8.4.41
@@ -766,6 +772,12 @@ importers:
       lit:
         specifier: ^3.2.0
         version: 3.2.0
+      loro-crdt:
+        specifier: ^0.16.7
+        version: 0.16.7
+      loro-prosemirror:
+        specifier: https://pkg.pr.new/ocavue/loro-prosemirror@1
+        version: https://pkg.pr.new/ocavue/loro-prosemirror@1(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       preact:
         specifier: ^10.23.2
         version: 10.23.2
@@ -2814,7 +2826,7 @@ packages:
   '@vue/language-core@2.0.29':
     resolution: {integrity: sha512-o2qz9JPjhdoVj8D2+9bDXbaI4q2uZTHQA/dbyZT4Bj1FR9viZxDJnLcKVHfxdn6wsOzRgpqIzJEEmSSvgMvDTQ==}
     peerDependencies:
-      typescript: 5.5.3
+      typescript: '*'
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -4965,6 +4977,14 @@ packages:
 
   loro-crdt@0.16.7:
     resolution: {integrity: sha512-jzzCIy2JJiFX7E9tyxd40xNYu4L8ZVdXVIc/rtuI77hyTdmF5Q4XlEo4aI8p2qiuNXyo1S05VoYTb+N1TJLy5g==}
+
+  loro-prosemirror@0.0.6:
+    resolution: {integrity: sha512-f5RCiNvbuiMjDhKdTyHg+dZPupC+znzerCDNlqddo9D64V8cM14H0CFeFzm/wf+g8yh4DlQYbArnkA6pwzyIfw==}
+    peerDependencies:
+      loro-crdt: ^0.16.3
+      prosemirror-model: ^1.18.1
+      prosemirror-state: ^1.4.1
+      prosemirror-view: ^1.28.0
 
   loro-prosemirror@https://pkg.pr.new/ocavue/loro-prosemirror@1:
     resolution: {tarball: https://pkg.pr.new/ocavue/loro-prosemirror@1}
@@ -12230,6 +12250,14 @@ snapshots:
   loro-crdt@0.16.7:
     dependencies:
       loro-wasm: 0.16.7
+
+  loro-prosemirror@0.0.6(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10):
+    dependencies:
+      lib0: 0.2.94
+      loro-crdt: 0.16.7
+      prosemirror-model: 1.22.3
+      prosemirror-state: 1.4.3
+      prosemirror-view: 1.33.10
 
   loro-prosemirror@https://pkg.pr.new/ocavue/loro-prosemirror@1(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10):
     dependencies:

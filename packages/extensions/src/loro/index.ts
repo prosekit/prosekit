@@ -18,7 +18,7 @@ import { defineLoroKeymap } from './keymap'
 import { defineLoroSyncPlugin } from './sync-plugin'
 import { defineLoroUndoPlugin } from './undo-plugin'
 
-export interface YjsOptions {
+export interface LoroOptions {
   /**
    * The Loro instance handles the state of shared data.
    */
@@ -53,7 +53,7 @@ export type LoroExtension = Union<[LoroCommandsExtension, PlainExtension]>
 /**
  * @public
  */
-export function defineYjs(options: YjsOptions): LoroExtension {
+export function defineLoro(options: LoroOptions): LoroExtension {
   const { doc, awareness, sync, undo, cursor } = options
 
   return withPriority(

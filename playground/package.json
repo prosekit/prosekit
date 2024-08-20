@@ -31,7 +31,7 @@
     "astrobook": "^0.4.2",
     "lit": "^3.2.0",
     "loro-crdt": "^0.16.7",
-    "loro-prosemirror": "https://pkg.pr.new/ocavue/loro-prosemirror@c391d45",
+    "loro-prosemirror": "https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91",
     "preact": "^10.23.2",
     "prettier": "^3.3.3",
     "prosekit": "workspace:*",

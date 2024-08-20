@@ -15,22 +15,11 @@ export default function Page() {
   )
 }
 
-function createLoro(): LoroDocType {
-  const doc: LoroDocType = new Loro()
-  doc.configTextStyle({
-    em: { expand: 'after' },
-    strong: { expand: 'after' },
-    code: { expand: 'none' },
-    link: { expand: 'none' },
-  })
-  return doc
-}
-
 function useLoroExample() {
-  const loroARef = useRef<LoroDocType>(createLoro())
+  const loroARef = useRef<LoroDocType>(new Loro())
   const idA = loroARef.current.peerIdStr
   const awarenessA = useRef<CursorAwareness>(new CursorAwareness(idA))
-  const loroBRef = useRef<LoroDocType>(createLoro())
+  const loroBRef = useRef<LoroDocType>(new Loro())
   const idB = loroBRef.current.peerIdStr
   const awarenessB = useRef<CursorAwareness>(new CursorAwareness(idB))
   useEffect(() => {

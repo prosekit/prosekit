@@ -107,7 +107,7 @@
     "@prosekit/dev": "workspace:*",
     "@vitest/browser": "^2.0.5",
     "loro-crdt": "^0.16.7",
-    "loro-prosemirror": "https://pkg.pr.new/ocavue/loro-prosemirror@c391d45",
+    "loro-prosemirror": "https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91",
     "tsup": "^8.2.4",
     "type-fest": "^4.25.0",
     "typescript": "^5.5.4",

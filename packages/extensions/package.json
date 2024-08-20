@@ -45,6 +45,7 @@
     "./list": "./src/list/index.ts",
     "./list/style.css": "./src/list/style.css",
     "./loro": "./src/loro/index.ts",
+    "./loro/style.css": "./src/loro/style.css",
     "./mark-rule": "./src/mark-rule/index.ts",
     "./mention": "./src/mention/index.ts",
     "./mod-click-prevention": "./src/mod-click-prevention/index.ts",

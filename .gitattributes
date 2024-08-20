@@ -1,3 +1,3 @@
 **/*.gen.* linguist-generated=true
-website/example-code-blocks linguist-generated=true
-website/examples linguist-generated=true
+website/example-code-blocks/* linguist-generated=true
+website/examples/* linguist-generated=true

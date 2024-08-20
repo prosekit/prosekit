@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  loro-prosemirror: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91
+
 patchedDependencies:
   prosemirror-splittable@0.1.1:
     hash: ltdjze5wh25pjc2y4z24yafn7u
@@ -430,8 +433,8 @@ importers:
         specifier: ^0.16.7
         version: 0.16.7
       loro-prosemirror:
-        specifier: '>= 0.0.6'
-        version: 0.0.6(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
+        specifier: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91
+        version: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       postcss:
         specifier: ^8.4.41
         version: 8.4.41
@@ -4986,14 +4989,6 @@ packages:
 
   loro-crdt@0.16.7:
     resolution: {integrity: sha512-jzzCIy2JJiFX7E9tyxd40xNYu4L8ZVdXVIc/rtuI77hyTdmF5Q4XlEo4aI8p2qiuNXyo1S05VoYTb+N1TJLy5g==}
-
-  loro-prosemirror@0.0.6:
-    resolution: {integrity: sha512-f5RCiNvbuiMjDhKdTyHg+dZPupC+znzerCDNlqddo9D64V8cM14H0CFeFzm/wf+g8yh4DlQYbArnkA6pwzyIfw==}
-    peerDependencies:
-      loro-crdt: ^0.16.3
-      prosemirror-model: ^1.18.1
-      prosemirror-state: ^1.4.1
-      prosemirror-view: ^1.28.0
 
   loro-prosemirror@https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91:
     resolution: {tarball: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91}
@@ -12264,14 +12259,6 @@ snapshots:
   loro-crdt@0.16.7:
     dependencies:
       loro-wasm: 0.16.7
-
-  loro-prosemirror@0.0.6(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10):
-    dependencies:
-      lib0: 0.2.94
-      loro-crdt: 0.16.7
-      prosemirror-model: 1.22.3
-      prosemirror-state: 1.4.3
-      prosemirror-view: 1.33.10
 
   loro-prosemirror@https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10):
     dependencies:

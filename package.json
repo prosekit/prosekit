@@ -52,7 +52,9 @@
     "vitest": "^2.0.5"
   },
   "pnpm": {
-    "overrides": {},
+    "overrides": {
+      "loro-prosemirror": "https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91"
+    },
     "patchedDependencies": {
       "prosemirror-splittable@0.1.1": "patches/prosemirror-splittable@0.1.1.patch"
     }

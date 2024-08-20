@@ -27,7 +27,7 @@
     "dedent": "^1.5.3",
     "lightningcss": "^1.26.0",
     "loro-crdt": "^0.16.7",
-    "loro-prosemirror": "https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91",
+    "loro-prosemirror": "^0.0.6",
     "postcss": "^8.4.41",
     "prettier": "^3.3.3",
     "prosekit": "workspace:*",

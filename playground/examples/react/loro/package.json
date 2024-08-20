@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "loro-crdt": "^0.16.7",
-    "loro-prosemirror": "https://pkg.pr.new/ocavue/loro-prosemirror@1"
+    "loro-prosemirror": "https://pkg.pr.new/ocavue/loro-prosemirror@c391d45"
   }
 }

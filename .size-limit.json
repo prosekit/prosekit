@@ -220,6 +220,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/loro/style.css",
+    "path": "packages/prosekit/dist/extensions/loro/style.css",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/mark-rule",
     "path": "packages/prosekit/dist/prosekit-extensions-mark-rule.js",
     "ignore": [

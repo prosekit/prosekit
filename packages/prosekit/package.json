@@ -51,6 +51,7 @@
     "./extensions/list": "./src/extensions/list.gen.ts",
     "./extensions/list/style.css": "./src/extensions/list/style.css",
     "./extensions/loro": "./src/extensions/loro.gen.ts",
+    "./extensions/loro/style.css": "./src/extensions/loro/style.css",
     "./extensions/mark-rule": "./src/extensions/mark-rule.gen.ts",
     "./extensions/mention": "./src/extensions/mention.gen.ts",
     "./extensions/mod-click-prevention": "./src/extensions/mod-click-prevention.gen.ts",
@@ -136,11 +137,11 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
+    "@prosekit/pm": "workspace:*",
     "@prosekit/basic": "workspace:*",
     "@prosekit/core": "workspace:*",
     "@prosekit/extensions": "workspace:*",
     "@prosekit/lit": "workspace:*",
-    "@prosekit/pm": "workspace:*",
     "@prosekit/preact": "workspace:*",
     "@prosekit/react": "workspace:*",
     "@prosekit/solid": "workspace:*",
@@ -151,14 +152,14 @@
   "peerDependencies": {
     "loro-crdt": ">= 0.16.7",
     "loro-prosemirror": ">= 0.0.6",
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",
     "solid-js": ">= 1.7.0",
     "svelte": ">= 3.0.0",
-    "vue": ">= 3.0.0",
-    "y-prosemirror": ">= 1.2.9",
-    "yjs": ">= 13.6.18"
+    "vue": ">= 3.0.0"
   },
   "peerDependenciesMeta": {
     "loro-crdt": {
@@ -332,6 +333,9 @@
         "types": "./dist/prosekit-extensions-loro.d.ts",
         "import": "./dist/prosekit-extensions-loro.js",
         "default": "./dist/prosekit-extensions-loro.js"
+      },
+      "./extensions/loro/style.css": {
+        "default": "./dist/extensions/loro/style.css"
       },
       "./extensions/mark-rule": {
         "types": "./dist/prosekit-extensions-mark-rule.d.ts",

@@ -212,6 +212,9 @@
         "import": "./dist/prosekit-extensions-loro.js",
         "default": "./dist/prosekit-extensions-loro.js"
       },
+      "./loro/style.css": {
+        "default": "./dist/loro/style.css"
+      },
       "./mark-rule": {
         "types": "./dist/prosekit-extensions-mark-rule.d.ts",
         "import": "./dist/prosekit-extensions-mark-rule.js",

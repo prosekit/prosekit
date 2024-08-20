@@ -50,7 +50,7 @@ const handleSubmit = (event: Event) => {
 <InlinePopover data-testid="inline-menu-main" class={Themes.INLINE_MENU_MAIN}>
   <Button
     pressed={$editor.marks.bold.isActive()}
-    disabled={!$editor.commands.toggleBold.canApply()}
+    disabled={!$editor.commands.toggleBold.canExec()}
     tooltip="Bold"
     onClick={() => $editor.commands.toggleBold()}
   >
@@ -59,7 +59,7 @@ const handleSubmit = (event: Event) => {
 
   <Button
     pressed={$editor.marks.italic.isActive()}
-    disabled={!$editor.commands.toggleItalic.canApply()}
+    disabled={!$editor.commands.toggleItalic.canExec()}
     onClick={() => $editor.commands.toggleItalic()}
     tooltip="Italic"
   >
@@ -68,7 +68,7 @@ const handleSubmit = (event: Event) => {
 
   <Button
     pressed={$editor.marks.underline.isActive()}
-    disabled={!$editor.commands.toggleUnderline.canApply()}
+    disabled={!$editor.commands.toggleUnderline.canExec()}
     onClick={() => $editor.commands.toggleUnderline()}
     tooltip="Underline"
   >
@@ -77,7 +77,7 @@ const handleSubmit = (event: Event) => {
 
   <Button
     pressed={$editor.marks.strike.isActive()}
-    disabled={!$editor.commands.toggleStrike.canApply()}
+    disabled={!$editor.commands.toggleStrike.canExec()}
     onClick={() => $editor.commands.toggleStrike()}
     tooltip="Strike"
   >
@@ -86,14 +86,14 @@ const handleSubmit = (event: Event) => {
 
   <Button
     pressed={$editor.marks.code.isActive()}
-    disabled={!$editor.commands.toggleCode.canApply()}
+    disabled={!$editor.commands.toggleCode.canExec()}
     onClick={() => $editor.commands.toggleCode()}
     tooltip="Code"
   >
     <div class={Themes.ICON_CODE}></div>
   </Button>
 
-  {#if $editor.commands.addLink.canApply({ href: '' })}
+  {#if $editor.commands.addLink.canExec({ href: '' })}
     <Button
       pressed={$editor.marks.link.isActive()}
       onClick={() => {

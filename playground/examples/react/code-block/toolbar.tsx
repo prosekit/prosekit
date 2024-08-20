@@ -11,7 +11,7 @@ export default function Toolbar() {
     <div className={Themes.TOOLBAR}>
       <Button
         pressed={editor.nodes.codeBlock.isActive()}
-        disabled={!editor.commands.setCodeBlock.canApply()}
+        disabled={!editor.commands.setCodeBlock.canExec()}
         onClick={() => editor.commands.setCodeBlock()}
       >
         <div className={Themes.ICON_CODE_BLOCK} />

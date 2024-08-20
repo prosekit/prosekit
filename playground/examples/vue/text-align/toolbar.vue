@@ -19,7 +19,7 @@ function isTextAlignActive(editor: Editor<EditorExtension>, value: string) {
   <div :class="Themes.TOOLBAR">
     <Button
       :pressed="isTextAlignActive(editor, 'left')"
-      :disabled="!editor.commands.setTextAlign.canApply('left')"
+      :disabled="!editor.commands.setTextAlign.canExec('left')"
       @click="() => editor.commands.setTextAlign('left')"
     >
       Left
@@ -27,7 +27,7 @@ function isTextAlignActive(editor: Editor<EditorExtension>, value: string) {
 
     <Button
       :pressed="isTextAlignActive(editor, 'center')"
-      :disabled="!editor.commands.setTextAlign.canApply('center')"
+      :disabled="!editor.commands.setTextAlign.canExec('center')"
       @click="() => editor.commands.setTextAlign('center')"
     >
       Center
@@ -35,7 +35,7 @@ function isTextAlignActive(editor: Editor<EditorExtension>, value: string) {
 
     <Button
       :pressed="isTextAlignActive(editor, 'right')"
-      :disabled="!editor.commands.setTextAlign.canApply('right')"
+      :disabled="!editor.commands.setTextAlign.canExec('right')"
       @click="() => editor.commands.setTextAlign('right')"
     >
       Right
@@ -43,7 +43,7 @@ function isTextAlignActive(editor: Editor<EditorExtension>, value: string) {
 
     <Button
       :pressed="isTextAlignActive(editor, 'justify')"
-      :disabled="!editor.commands.setTextAlign.canApply('justify')"
+      :disabled="!editor.commands.setTextAlign.canExec('justify')"
       @click="() => editor.commands.setTextAlign('justify')"
     >
       Justify

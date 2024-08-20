@@ -12,7 +12,7 @@ const editor = useEditor<EditorExtension>({ update: true })
   <div :class="Themes.TOOLBAR">
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'bullet' })"
-      :disabled="!editor.commands.toggleList.canApply({ kind: 'bullet' })"
+      :disabled="!editor.commands.toggleList.canExec({ kind: 'bullet' })"
       @click="() => editor.commands.toggleList({ kind: 'bullet' })"
     >
       <div :class="Themes.ICON_LIST_BULLET" />
@@ -20,7 +20,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'ordered' })"
-      :disabled="!editor.commands.toggleList.canApply({ kind: 'ordered' })"
+      :disabled="!editor.commands.toggleList.canExec({ kind: 'ordered' })"
       @click="() => editor.commands.toggleList({ kind: 'ordered' })"
     >
       <div :class="Themes.ICON_LIST_ORDERED" />
@@ -28,7 +28,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'task' })"
-      :disabled="!editor.commands.toggleList.canApply({ kind: 'task' })"
+      :disabled="!editor.commands.toggleList.canExec({ kind: 'task' })"
       @click="() => editor.commands.toggleList({ kind: 'task' })"
     >
       <div :class="Themes.ICON_LIST_TASK" />
@@ -36,7 +36,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'toggle' })"
-      :disabled="!editor.commands.toggleList.canApply({ kind: 'toggle' })"
+      :disabled="!editor.commands.toggleList.canExec({ kind: 'toggle' })"
       @click="() => editor.commands.toggleList({ kind: 'toggle' })"
     >
       <div :class="Themes.ICON_LIST_TOGGLE" />

@@ -50,7 +50,7 @@ function handleLinkUpdate(href?: string) {
   >
     <Button
       :pressed="editor.marks.bold.isActive()"
-      :disabled="!editor.commands.toggleBold.canApply()"
+      :disabled="!editor.commands.toggleBold.canExec()"
       tooltip="Bold"
       @click="() => editor.commands.toggleBold()"
     >
@@ -59,7 +59,7 @@ function handleLinkUpdate(href?: string) {
 
     <Button
       :pressed="editor.marks.italic.isActive()"
-      :disabled="!editor.commands.toggleItalic.canApply()"
+      :disabled="!editor.commands.toggleItalic.canExec()"
       tooltip="Italic"
       @click="() => editor.commands.toggleItalic()"
     >
@@ -68,7 +68,7 @@ function handleLinkUpdate(href?: string) {
 
     <Button
       :pressed="editor.marks.underline.isActive()"
-      :disabled="!editor.commands.toggleUnderline.canApply()"
+      :disabled="!editor.commands.toggleUnderline.canExec()"
       tooltip="Underline"
       @click="() => editor.commands.toggleUnderline()"
     >
@@ -77,7 +77,7 @@ function handleLinkUpdate(href?: string) {
 
     <Button
       :pressed="editor.marks.strike.isActive()"
-      :disabled="!editor.commands.toggleStrike.canApply()"
+      :disabled="!editor.commands.toggleStrike.canExec()"
       tooltip="Strike"
       @click="() => editor.commands.toggleStrike()"
     >
@@ -86,7 +86,7 @@ function handleLinkUpdate(href?: string) {
 
     <Button
       :pressed="editor.marks.code.isActive()"
-      :disabled="!editor.commands.toggleCode.canApply()"
+      :disabled="!editor.commands.toggleCode.canExec()"
       tooltip="Code"
       @click="() => editor.commands.toggleCode()"
     >
@@ -94,7 +94,7 @@ function handleLinkUpdate(href?: string) {
     </Button>
 
     <Button
-      v-if="editor.commands.addLink.canApply({ href: '' })"
+      v-if="editor.commands.addLink.canExec({ href: '' })"
       :pressed="editor.marks.link.isActive()"
       tooltip="Link"
       @click="

@@ -10,7 +10,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 <div class={Themes.TOOLBAR}>
   <Button
     pressed={$editor.nodes.codeBlock.isActive()}
-    disabled={!$editor.commands.setCodeBlock.canApply()}
+    disabled={!$editor.commands.setCodeBlock.canExec()}
     onClick={() => $editor.commands.setCodeBlock()}
     tooltip="Heading 1"
   >

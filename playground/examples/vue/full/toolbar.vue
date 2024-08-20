@@ -13,7 +13,7 @@ const editor = useEditor<EditorExtension>({ update: true })
   <div :class="Themes.TOOLBAR">
     <Button
       :pressed="false"
-      :disabled="!editor.commands.undo.canApply()"
+      :disabled="!editor.commands.undo.canExec()"
       tooltip="Undo"
       @click="() => editor.commands.undo()"
     >
@@ -22,7 +22,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="false"
-      :disabled="!editor.commands.redo.canApply()"
+      :disabled="!editor.commands.redo.canExec()"
       tooltip="Redo"
       @click="() => editor.commands.redo()"
     >
@@ -31,7 +31,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.marks.bold.isActive()"
-      :disabled="!editor.commands.toggleBold.canApply()"
+      :disabled="!editor.commands.toggleBold.canExec()"
       tooltip="Bold"
       @click="() => editor.commands.toggleBold()"
     >
@@ -40,7 +40,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.marks.italic.isActive()"
-      :disabled="!editor.commands.toggleItalic.canApply()"
+      :disabled="!editor.commands.toggleItalic.canExec()"
       tooltip="Italic"
       @click="() => editor.commands.toggleItalic()"
     >
@@ -49,7 +49,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.marks.underline.isActive()"
-      :disabled="!editor.commands.toggleUnderline.canApply()"
+      :disabled="!editor.commands.toggleUnderline.canExec()"
       tooltip="Underline"
       @click="() => editor.commands.toggleUnderline()"
     >
@@ -58,7 +58,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.marks.strike.isActive()"
-      :disabled="!editor.commands.toggleStrike.canApply()"
+      :disabled="!editor.commands.toggleStrike.canExec()"
       tooltip="Strike"
       @click="() => editor.commands.toggleStrike()"
     >
@@ -67,7 +67,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.marks.code.isActive()"
-      :disabled="!editor.commands.toggleCode.canApply()"
+      :disabled="!editor.commands.toggleCode.canExec()"
       tooltip="Code"
       @click="() => editor.commands.toggleCode()"
     >
@@ -76,7 +76,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.nodes.heading.isActive({ level: 1 })"
-      :disabled="!editor.commands.toggleHeading.canApply({ level: 1 })"
+      :disabled="!editor.commands.toggleHeading.canExec({ level: 1 })"
       tooltip="Heading 1"
       @click="() => editor.commands.toggleHeading({ level: 1 })"
     >
@@ -85,7 +85,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.nodes.heading.isActive({ level: 2 })"
-      :disabled="!editor.commands.toggleHeading.canApply({ level: 2 })"
+      :disabled="!editor.commands.toggleHeading.canExec({ level: 2 })"
       tooltip="Heading 2"
       @click="() => editor.commands.toggleHeading({ level: 2 })"
     >
@@ -94,7 +94,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.nodes.heading.isActive({ level: 3 })"
-      :disabled="!editor.commands.toggleHeading.canApply({ level: 3 })"
+      :disabled="!editor.commands.toggleHeading.canExec({ level: 3 })"
       tooltip="Heading 3"
       @click="() => editor.commands.toggleHeading({ level: 3 })"
     >
@@ -103,7 +103,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'bullet' })"
-      :disabled="!editor.commands.toggleList.canApply({ kind: 'bullet' })"
+      :disabled="!editor.commands.toggleList.canExec({ kind: 'bullet' })"
       tooltip="Bullet List"
       @click="() => editor.commands.toggleList({ kind: 'bullet' })"
     >
@@ -112,7 +112,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'ordered' })"
-      :disabled="!editor.commands.toggleList.canApply({ kind: 'ordered' })"
+      :disabled="!editor.commands.toggleList.canExec({ kind: 'ordered' })"
       tooltip="Ordered List"
       @click="() => editor.commands.toggleList({ kind: 'ordered' })"
     >
@@ -121,7 +121,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'task' })"
-      :disabled="!editor.commands.toggleList.canApply({ kind: 'task' })"
+      :disabled="!editor.commands.toggleList.canExec({ kind: 'task' })"
       tooltip="Task List"
       @click="() => editor.commands.toggleList({ kind: 'task' })"
     >
@@ -130,7 +130,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'toggle' })"
-      :disabled="!editor.commands.toggleList.canApply({ kind: 'toggle' })"
+      :disabled="!editor.commands.toggleList.canExec({ kind: 'toggle' })"
       tooltip="Toggle List"
       @click="() => editor.commands.toggleList({ kind: 'toggle' })"
     >
@@ -139,7 +139,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="false"
-      :disabled="!editor.commands.indentList.canApply()"
+      :disabled="!editor.commands.indentList.canExec()"
       tooltip="Increase indentation"
       @click="() => editor.commands.indentList()"
     >
@@ -148,7 +148,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 
     <Button
       :pressed="false"
-      :disabled="!editor.commands.dedentList.canApply()"
+      :disabled="!editor.commands.dedentList.canExec()"
       tooltip="Decrease indentation"
       @click="() => editor.commands.dedentList()"
     >
@@ -156,7 +156,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     </Button>
 
     <ImageUploadPopover
-      :disabled="!editor.commands.insertImage.canApply()"
+      :disabled="!editor.commands.insertImage.canExec()"
       tooltip="Insert Image"
     >
       <div :class="Themes.ICON_IMAGE" />

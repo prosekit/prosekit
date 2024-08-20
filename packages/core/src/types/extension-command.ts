@@ -3,7 +3,7 @@ import type { Command } from '@prosekit/pm/state'
 /**
  * A function to apply a command to the editor. It will return `true` if the command was applied, and `false` otherwise.
  *
- * It also has a `canApply` method to check if the command can be applied.
+ * It also has a `canExec` method to check if the command can be applied.
  *
  * @public
  */

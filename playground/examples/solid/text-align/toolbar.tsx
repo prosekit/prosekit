@@ -18,7 +18,7 @@ export default function Toolbar() {
     <div class={Themes.TOOLBAR}>
       <Button
         pressed={() => isTextAlignActive('left')}
-        disabled={() => !editor().commands.setTextAlign.canApply('left')}
+        disabled={() => !editor().commands.setTextAlign.canExec('left')}
         onClick={() => editor().commands.setTextAlign('left')}
       >
         Left
@@ -26,7 +26,7 @@ export default function Toolbar() {
 
       <Button
         pressed={() => isTextAlignActive('center')}
-        disabled={() => !editor().commands.setTextAlign.canApply('center')}
+        disabled={() => !editor().commands.setTextAlign.canExec('center')}
         onClick={() => editor().commands.setTextAlign('center')}
       >
         Center
@@ -34,7 +34,7 @@ export default function Toolbar() {
 
       <Button
         pressed={() => isTextAlignActive('right')}
-        disabled={() => !editor().commands.setTextAlign.canApply('right')}
+        disabled={() => !editor().commands.setTextAlign.canExec('right')}
         onClick={() => editor().commands.setTextAlign('right')}
       >
         Right
@@ -42,7 +42,7 @@ export default function Toolbar() {
 
       <Button
         pressed={() => isTextAlignActive('justify')}
-        disabled={() => !editor().commands.setTextAlign.canApply('justify')}
+        disabled={() => !editor().commands.setTextAlign.canExec('justify')}
         onClick={() => editor().commands.setTextAlign('justify')}
       >
         Justify

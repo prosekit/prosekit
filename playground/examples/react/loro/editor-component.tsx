@@ -1,4 +1,5 @@
 import 'prosekit/basic/style.css'
+import 'prosekit/extensions/loro/style.css'
 
 import { Themes } from '@prosekit/themes'
 import type { CursorAwareness, LoroDocType } from 'loro-prosemirror'

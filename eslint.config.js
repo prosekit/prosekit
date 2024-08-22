@@ -39,6 +39,9 @@ const configs = [
       'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
     },
   },
+  {
+    ignores: ['playground/examples/react/loro/vite.config.ts'],
+  },
 ]
 
 export default configs

@@ -2,5 +2,8 @@
   "dependencies": {
     "loro-crdt": "^0.16.7",
     "loro-prosemirror": "^0.0.7"
+  },
+  "devDependencies": {
+    "vite-plugin-wasm": "^3.3.0"
   }
 }

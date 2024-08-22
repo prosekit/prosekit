@@ -233,7 +233,11 @@ export const exampleMeta = {
         },
         {
           "path": "package.json",
-          "hidden": false
+          "hidden": true
+        },
+        {
+          "path": "vite.config.ts",
+          "hidden": true
         },
         {
           "path": "button.tsx",

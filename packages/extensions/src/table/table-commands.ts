@@ -5,7 +5,7 @@ import {
   insertNode,
   type Extension,
 } from '@prosekit/core'
-import { Slice, type ProseMirrorNode, type Schema } from '@prosekit/pm/model'
+import { Slice, type Schema } from '@prosekit/pm/model'
 import {
   TextSelection,
   type Command,
@@ -41,30 +41,34 @@ function createEmptyTable(
   col: number,
   header: boolean,
 ) {
-  const table = getNodeType(schema, 'table')
-  const tableRow = getNodeType(schema, 'tableRow')
-  const tableCell = getNodeType(schema, 'tableCell')
-  const tableHeaderCell = getNodeType(schema, 'tableHeaderCell')
+  const tableType = getNodeType(schema, 'table')
+  const tableRowType = getNodeType(schema, 'tableRow')
+  const tableCellType = getNodeType(schema, 'tableCell')
+  const tableHeaderCellType = getNodeType(schema, 'tableHeaderCell')
 
-  const createHeaderRow = (): ProseMirrorNode => {
-    return tableRow.createAndFill(
-      null,
-      Array.from({ length: col }, () => tableHeaderCell.createAndFill()!),
-    )!
+  if (header) {
+    const headerCell = tableHeaderCellType.createAndFill()!
+    const headerCells = repeat(headerCell, col)
+    const headerRow = tableRowType.createAndFill(null, headerCells)!
+
+    const bodyCell = tableCellType.createAndFill()!
+    const bodyCells = repeat(bodyCell, col)
+    const bodyRow = tableRowType.createAndFill(null, bodyCells)!
+    const bodyRows = repeat(bodyRow, row - 1)
+
+    return tableType.createAndFill(null, [headerRow, ...bodyRows])!
+  } else {
+    const bodyCell = tableCellType.createAndFill()!
+    const bodyCells = repeat(bodyCell, col)
+    const bodyRow = tableRowType.createAndFill(null, bodyCells)!
+    const bodyRows = repeat(bodyRow, row)
+
+    return tableType.createAndFill(null, bodyRows)!
   }
+}
 
-  const createBodyRow = (): ProseMirrorNode => {
-    return tableRow.createAndFill(
-      null,
-      Array.from({ length: col }, () => tableCell.createAndFill()!),
-    )!
-  }
-
-  const rows = [
-    ...Array.from({ length: header ? 1 : 0 }, createHeaderRow),
-    ...Array.from({ length: header ? row - 1 : row }, createBodyRow),
-  ]
-  return table.createAndFill(null, rows)!
+function repeat<T>(node: T, length: number): T[] {
+  return Array<T>(length).fill(node)
 }
 
 /**
@@ -299,8 +303,8 @@ export function selectTable(options?: SelectTableOptions): Command {
     }
     if (dispatch) {
       let tr = state.tr
-      const firstCellPosInTable = map.map[0]!
-      const lastCellPosInTable = map.map[map.map.length - 1]!
+      const firstCellPosInTable = map.map[0]
+      const lastCellPosInTable = map.map[map.map.length - 1]
       const firstCellPos = table.pos + firstCellPosInTable + 1
       const lastCellPos = table.pos + lastCellPosInTable + 1
       const $firstCellPos = tr.doc.resolve(firstCellPos)

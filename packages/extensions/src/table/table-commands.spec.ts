@@ -195,7 +195,7 @@ describe('selectTableCell', () => {
       [
         "4",
       ]
-    `) 
+    `)
   })
 })
 

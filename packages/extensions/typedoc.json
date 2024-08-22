@@ -18,6 +18,7 @@
     "./src/italic/index.ts",
     "./src/link/index.ts",
     "./src/list/index.ts",
+    "./src/loro/index.ts",
     "./src/mark-rule/index.ts",
     "./src/mention/index.ts",
     "./src/mod-click-prevention/index.ts",

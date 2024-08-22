@@ -85,6 +85,10 @@ export const referenceItems = [
         "link": "/references/extensions/list"
       },
       {
+        "text": "loro",
+        "link": "/references/extensions/loro"
+      },
+      {
         "text": "mark-rule",
         "link": "/references/extensions/mark-rule"
       },

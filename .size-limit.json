@@ -23,6 +23,8 @@
     "name": "prosekit/extensions",
     "path": "packages/prosekit/dist/prosekit-extensions.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -31,6 +33,8 @@
     "name": "prosekit/extensions/autocomplete",
     "path": "packages/prosekit/dist/prosekit-extensions-autocomplete.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -39,6 +43,8 @@
     "name": "prosekit/extensions/blockquote",
     "path": "packages/prosekit/dist/prosekit-extensions-blockquote.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -47,6 +53,8 @@
     "name": "prosekit/extensions/bold",
     "path": "packages/prosekit/dist/prosekit-extensions-bold.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -55,6 +63,8 @@
     "name": "prosekit/extensions/code",
     "path": "packages/prosekit/dist/prosekit-extensions-code.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -63,6 +73,8 @@
     "name": "prosekit/extensions/code-block",
     "path": "packages/prosekit/dist/prosekit-extensions-code-block.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -71,6 +83,8 @@
     "name": "prosekit/extensions/commit",
     "path": "packages/prosekit/dist/prosekit-extensions-commit.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -79,6 +93,8 @@
     "name": "prosekit/extensions/commit/style.css",
     "path": "packages/prosekit/dist/extensions/commit/style.css",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -87,6 +103,8 @@
     "name": "prosekit/extensions/drop-cursor",
     "path": "packages/prosekit/dist/prosekit-extensions-drop-cursor.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -95,6 +113,8 @@
     "name": "prosekit/extensions/enter-rule",
     "path": "packages/prosekit/dist/prosekit-extensions-enter-rule.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -103,6 +123,8 @@
     "name": "prosekit/extensions/gap-cursor",
     "path": "packages/prosekit/dist/prosekit-extensions-gap-cursor.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -111,6 +133,8 @@
     "name": "prosekit/extensions/gap-cursor/style.css",
     "path": "packages/prosekit/dist/extensions/gap-cursor/style.css",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -119,6 +143,8 @@
     "name": "prosekit/extensions/heading",
     "path": "packages/prosekit/dist/prosekit-extensions-heading.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -127,6 +153,8 @@
     "name": "prosekit/extensions/image",
     "path": "packages/prosekit/dist/prosekit-extensions-image.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -135,6 +163,8 @@
     "name": "prosekit/extensions/input-rule",
     "path": "packages/prosekit/dist/prosekit-extensions-input-rule.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -143,6 +173,8 @@
     "name": "prosekit/extensions/italic",
     "path": "packages/prosekit/dist/prosekit-extensions-italic.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -151,6 +183,8 @@
     "name": "prosekit/extensions/link",
     "path": "packages/prosekit/dist/prosekit-extensions-link.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -159,6 +193,8 @@
     "name": "prosekit/extensions/list",
     "path": "packages/prosekit/dist/prosekit-extensions-list.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -167,6 +203,28 @@
     "name": "prosekit/extensions/list/style.css",
     "path": "packages/prosekit/dist/extensions/list/style.css",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
+    "name": "prosekit/extensions/loro",
+    "path": "packages/prosekit/dist/prosekit-extensions-loro.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
+    "name": "prosekit/extensions/loro/style.css",
+    "path": "packages/prosekit/dist/extensions/loro/style.css",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -175,6 +233,8 @@
     "name": "prosekit/extensions/mark-rule",
     "path": "packages/prosekit/dist/prosekit-extensions-mark-rule.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -183,6 +243,8 @@
     "name": "prosekit/extensions/mention",
     "path": "packages/prosekit/dist/prosekit-extensions-mention.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -191,6 +253,8 @@
     "name": "prosekit/extensions/mod-click-prevention",
     "path": "packages/prosekit/dist/prosekit-extensions-mod-click-prevention.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -199,6 +263,8 @@
     "name": "prosekit/extensions/placeholder",
     "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -207,6 +273,8 @@
     "name": "prosekit/extensions/placeholder/style.css",
     "path": "packages/prosekit/dist/extensions/placeholder/style.css",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -215,6 +283,8 @@
     "name": "prosekit/extensions/readonly",
     "path": "packages/prosekit/dist/prosekit-extensions-readonly.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -223,6 +293,8 @@
     "name": "prosekit/extensions/search",
     "path": "packages/prosekit/dist/prosekit-extensions-search.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -231,6 +303,8 @@
     "name": "prosekit/extensions/search/style.css",
     "path": "packages/prosekit/dist/extensions/search/style.css",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -239,6 +313,8 @@
     "name": "prosekit/extensions/strike",
     "path": "packages/prosekit/dist/prosekit-extensions-strike.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -247,6 +323,8 @@
     "name": "prosekit/extensions/table",
     "path": "packages/prosekit/dist/prosekit-extensions-table.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -255,6 +333,8 @@
     "name": "prosekit/extensions/table/style.css",
     "path": "packages/prosekit/dist/extensions/table/style.css",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -263,6 +343,8 @@
     "name": "prosekit/extensions/text-align",
     "path": "packages/prosekit/dist/prosekit-extensions-text-align.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -271,6 +353,8 @@
     "name": "prosekit/extensions/underline",
     "path": "packages/prosekit/dist/prosekit-extensions-underline.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -279,6 +363,8 @@
     "name": "prosekit/extensions/virtual-selection",
     "path": "packages/prosekit/dist/prosekit-extensions-virtual-selection.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -287,6 +373,8 @@
     "name": "prosekit/extensions/virtual-selection/style.css",
     "path": "packages/prosekit/dist/extensions/virtual-selection/style.css",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -295,6 +383,8 @@
     "name": "prosekit/extensions/yjs",
     "path": "packages/prosekit/dist/prosekit-extensions-yjs.js",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]
@@ -303,6 +393,8 @@
     "name": "prosekit/extensions/yjs/style.css",
     "path": "packages/prosekit/dist/extensions/yjs/style.css",
     "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
       "y-prosemirror",
       "yjs"
     ]

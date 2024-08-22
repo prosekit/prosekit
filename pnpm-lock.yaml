@@ -263,6 +263,12 @@ importers:
       '@vitest/browser':
         specifier: ^2.0.5
         version: 2.0.5(playwright@1.46.1)(typescript@5.5.4)(vitest@2.0.5)
+      loro-crdt:
+        specifier: ^0.16.7
+        version: 0.16.7
+      loro-prosemirror:
+        specifier: ^0.0.7
+        version: 0.0.7(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       tsup:
         specifier: ^8.2.4
         version: 8.2.4(@microsoft/api-extractor@7.47.6(@types/node@20.16.1))(jiti@1.21.6)(postcss@8.4.41)(tsx@4.17.0)(typescript@5.5.4)(yaml@2.4.5)
@@ -420,6 +426,12 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
+      loro-crdt:
+        specifier: ^0.16.7
+        version: 0.16.7
+      loro-prosemirror:
+        specifier: ^0.0.7
+        version: 0.0.7(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       postcss:
         specifier: ^8.4.41
         version: 8.4.41
@@ -760,6 +772,12 @@ importers:
       lit:
         specifier: ^3.2.0
         version: 3.2.0
+      loro-crdt:
+        specifier: ^0.16.7
+        version: 0.16.7
+      loro-prosemirror:
+        specifier: ^0.0.7
+        version: 0.0.7(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       preact:
         specifier: ^10.23.2
         version: 10.23.2
@@ -808,6 +826,9 @@ importers:
       unocss:
         specifier: ^0.62.2
         version: 0.62.2(postcss@8.4.41)(rollup@4.19.0)(vite@5.4.1(@types/node@20.16.1)(lightningcss@1.26.0))
+      vite-plugin-wasm:
+        specifier: ^3.3.0
+        version: 3.3.0(vite@5.4.1(@types/node@20.16.1)(lightningcss@1.26.0))
       vue:
         specifier: ^3.4.38
         version: 3.4.38(typescript@5.5.4)
@@ -868,6 +889,12 @@ importers:
       lightningcss:
         specifier: ^1.26.0
         version: 1.26.0
+      loro-crdt:
+        specifier: ^0.16.7
+        version: 0.16.7
+      loro-prosemirror:
+        specifier: ^0.0.7
+        version: 0.0.7(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       postcss:
         specifier: ^8.4.41
         version: 8.4.41
@@ -2808,7 +2835,7 @@ packages:
   '@vue/language-core@2.0.29':
     resolution: {integrity: sha512-o2qz9JPjhdoVj8D2+9bDXbaI4q2uZTHQA/dbyZT4Bj1FR9viZxDJnLcKVHfxdn6wsOzRgpqIzJEEmSSvgMvDTQ==}
     peerDependencies:
-      typescript: 5.5.3
+      typescript: '*'
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -4957,6 +4984,20 @@ packages:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
 
+  loro-crdt@0.16.7:
+    resolution: {integrity: sha512-jzzCIy2JJiFX7E9tyxd40xNYu4L8ZVdXVIc/rtuI77hyTdmF5Q4XlEo4aI8p2qiuNXyo1S05VoYTb+N1TJLy5g==}
+
+  loro-prosemirror@0.0.7:
+    resolution: {integrity: sha512-FeZc2w7fwq9J2t/tzdefFO9fhT3VLF9NTMEnxTHt7s0weYxzNHrZtqGQIfjxfJybzvnD8KzsgUE043ftkl/S8Q==}
+    peerDependencies:
+      loro-crdt: ^0.16.3
+      prosemirror-model: ^1.18.1
+      prosemirror-state: ^1.4.1
+      prosemirror-view: ^1.28.0
+
+  loro-wasm@0.16.7:
+    resolution: {integrity: sha512-JnobKK0ajCLcYIvL6dMx1aNb7/9YesBSHnYetKFHg9wNdBTznfoBou2sY51+XHwqaCeEgKHaY3zrjbBfQjF8Kg==}
+
   loupe@3.1.1:
     resolution: {integrity: sha512-edNu/8D5MKVfGVFRhFf8aAxiTM6Wumfz5XsaatSxlD3w4R1d/WEKUTydCdPGbl9K7QG/Ca3GnDV2sIKIpXRQcw==}
 
@@ -6921,6 +6962,11 @@ packages:
     resolution: {integrity: sha512-M+yH2LlQtVNzJAljQM+61CqDXBvHim8dU5ImGaQuwlo13tMDHue5D7IC20YwDJuWDODiYc/cZBUYspVlyPf2vQ==}
     peerDependencies:
       vite: ^3.0.0-0 || ^4.0.0-0 || ^5.0.0-0
+
+  vite-plugin-wasm@3.3.0:
+    resolution: {integrity: sha512-tVhz6w+W9MVsOCHzxo6SSMSswCeIw4HTrXEi6qL3IRzATl83jl09JVO1djBqPSwfjgnpVHNLYcaMbaDX5WB/pg==}
+    peerDependencies:
+      vite: ^2 || ^3 || ^4 || ^5
 
   vite@5.4.1:
     resolution: {integrity: sha512-1oE6yuNXssjrZdblI9AfBbHCC41nnyoVoEZxQnID6yvQZAFBzxxkqoFLtHUMkYunL8hwOLEjgTuxpkRxvba3kA==}
@@ -12206,6 +12252,20 @@ snapshots:
     dependencies:
       js-tokens: 4.0.0
 
+  loro-crdt@0.16.7:
+    dependencies:
+      loro-wasm: 0.16.7
+
+  loro-prosemirror@0.0.7(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10):
+    dependencies:
+      lib0: 0.2.94
+      loro-crdt: 0.16.7
+      prosemirror-model: 1.22.3
+      prosemirror-state: 1.4.3
+      prosemirror-view: 1.33.10
+
+  loro-wasm@0.16.7: {}
+
   loupe@3.1.1:
     dependencies:
       get-func-name: 2.0.2
@@ -14625,6 +14685,10 @@ snapshots:
       vite: 5.4.1(@types/node@20.16.1)(lightningcss@1.26.0)
     transitivePeerDependencies:
       - supports-color
+
+  vite-plugin-wasm@3.3.0(vite@5.4.1(@types/node@20.16.1)(lightningcss@1.26.0)):
+    dependencies:
+      vite: 5.4.1(@types/node@20.16.1)(lightningcss@1.26.0)
 
   vite@5.4.1(@types/node@20.16.1)(lightningcss@1.26.0):
     dependencies:

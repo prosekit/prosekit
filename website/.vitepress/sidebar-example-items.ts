@@ -67,6 +67,10 @@ export const exampleItems = [
     "link": "/examples/list"
   },
   {
+    "text": "loro",
+    "link": "/examples/loro"
+  },
+  {
     "text": "mark-rule",
     "link": "/examples/mark-rule"
   },

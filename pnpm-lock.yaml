@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  loro-prosemirror: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91
-
 patchedDependencies:
   prosemirror-splittable@0.1.1:
     hash: ltdjze5wh25pjc2y4z24yafn7u
@@ -270,8 +267,8 @@ importers:
         specifier: ^0.16.7
         version: 0.16.7
       loro-prosemirror:
-        specifier: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91
-        version: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
+        specifier: ^0.0.7
+        version: 0.0.7(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       tsup:
         specifier: ^8.2.4
         version: 8.2.4(@microsoft/api-extractor@7.47.6(@types/node@20.16.1))(jiti@1.21.6)(postcss@8.4.41)(tsx@4.17.0)(typescript@5.5.4)(yaml@2.4.5)
@@ -433,8 +430,8 @@ importers:
         specifier: ^0.16.7
         version: 0.16.7
       loro-prosemirror:
-        specifier: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91
-        version: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
+        specifier: ^0.0.7
+        version: 0.0.7(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       postcss:
         specifier: ^8.4.41
         version: 8.4.41
@@ -779,8 +776,8 @@ importers:
         specifier: ^0.16.7
         version: 0.16.7
       loro-prosemirror:
-        specifier: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91
-        version: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
+        specifier: ^0.0.7
+        version: 0.0.7(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       preact:
         specifier: ^10.23.2
         version: 10.23.2
@@ -896,8 +893,8 @@ importers:
         specifier: ^0.16.7
         version: 0.16.7
       loro-prosemirror:
-        specifier: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91
-        version: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
+        specifier: ^0.0.7
+        version: 0.0.7(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10)
       postcss:
         specifier: ^8.4.41
         version: 8.4.41
@@ -4990,9 +4987,8 @@ packages:
   loro-crdt@0.16.7:
     resolution: {integrity: sha512-jzzCIy2JJiFX7E9tyxd40xNYu4L8ZVdXVIc/rtuI77hyTdmF5Q4XlEo4aI8p2qiuNXyo1S05VoYTb+N1TJLy5g==}
 
-  loro-prosemirror@https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91:
-    resolution: {tarball: https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91}
-    version: 0.0.6
+  loro-prosemirror@0.0.7:
+    resolution: {integrity: sha512-FeZc2w7fwq9J2t/tzdefFO9fhT3VLF9NTMEnxTHt7s0weYxzNHrZtqGQIfjxfJybzvnD8KzsgUE043ftkl/S8Q==}
     peerDependencies:
       loro-crdt: ^0.16.3
       prosemirror-model: ^1.18.1
@@ -12260,9 +12256,8 @@ snapshots:
     dependencies:
       loro-wasm: 0.16.7
 
-  loro-prosemirror@https://pkg.pr.new/ocavue/loro-prosemirror@4f68a91(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10):
+  loro-prosemirror@0.0.7(loro-crdt@0.16.7)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.33.10):
     dependencies:
-      just-map-values: 3.2.0
       lib0: 0.2.94
       loro-crdt: 0.16.7
       prosemirror-model: 1.22.3

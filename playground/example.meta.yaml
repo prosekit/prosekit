@@ -120,7 +120,7 @@ examples:
       - path: toolbar.tsx
         hidden: false
       - path: package.json
-        hidden: false
+        hidden: true
       - path: button.tsx
         hidden: false
   - name: react-mark-rule

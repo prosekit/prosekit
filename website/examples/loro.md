@@ -15,7 +15,6 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/react/loro/editor.tsx
 <<< @/../playground/examples/react/loro/extension.ts
 <<< @/../playground/examples/react/loro/toolbar.tsx
-<<< @/../playground/examples/react/loro/package.json
 <<< @/../playground/examples/react/loro/button.tsx
 
 :::

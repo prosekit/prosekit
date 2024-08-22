@@ -1,5 +1,5 @@
 {
-  "name": "@prosekit/basic",
+  "name": "@prosekit/basic", 
   "type": "module",
   "version": "0.3.24",
   "private": false,

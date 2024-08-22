@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.9.17
+
+### Patch Changes
+
+- [`971afb6`](https://github.com/ocavue/prosekit/commit/971afb60017f5e0554ada7d754fa76cab6e4b4af) ![](https://prosekit.dev/b/extensions)
+
+  Add `defineLoro` to bind [Loro](https://github.com/loro-dev/loro) to ProseKit.
+
 ## 0.9.16
 
 ### Patch Changes

@@ -320,20 +320,24 @@ export type TableCommandsExtension = Extension<{
   Commands: {
     insertTable: [InsertTableOptions]
     exitTable: []
-    deleteCellSelection: []
-    mergeTableCells: []
-    splitTableCell: []
+
+    selectTable: [options?: SelectTableOptions]
+    selectTableCell: [options?: SelectTableCellOptions]
     selectTableColumn: [options?: SelectTableColumnOptions]
     selectTableRow: [options?: SelectTableRowOptions]
-    selectTableCell: [options?: SelectTableCellOptions]
-    selectTable: [options?: SelectTableOptions]
-    deleteTableColumn: []
+
     addTableColumnBefore: []
     addTableColumnAfter: []
     addTableRowAbove: []
     addTableRowBelow: []
-    deleteTableRow: []
+
     deleteTable: []
+    deleteTableColumn: []
+    deleteTableRow: []
+    deleteCellSelection: []
+
+    mergeTableCells: []
+    splitTableCell: []
   }
 }>
 
@@ -346,19 +350,23 @@ export function defineTableCommands(): TableCommandsExtension {
   return defineCommands({
     insertTable,
     exitTable: () => exitTable,
-    deleteCellSelection: () => deleteCellSelection,
-    mergeTableCells: () => mergeCells,
-    splitTableCell: () => splitCell,
+
+    selectTable,
+    selectTableCell,
     selectTableColumn,
     selectTableRow,
-    selectTableCell,
-    selectTable,
-    deleteTableColumn: () => deleteColumn,
+
     addTableColumnBefore: () => addColumnBefore,
     addTableColumnAfter: () => addColumnAfter,
     addTableRowAbove: () => addRowBefore,
     addTableRowBelow: () => addRowAfter,
-    deleteTableRow: () => deleteRow,
+
     deleteTable: () => deleteTable,
+    deleteTableColumn: () => deleteColumn,
+    deleteTableRow: () => deleteRow,
+    deleteCellSelection: () => deleteCellSelection,
+
+    mergeTableCells: () => mergeCells,
+    splitTableCell: () => splitCell,
   })
 }

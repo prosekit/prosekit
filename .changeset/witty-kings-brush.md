@@ -5,17 +5,17 @@
 
 Add the following command functions to the table extension:
 
-- `deleteCellSelection`
-- `mergeTableCells`
-- `splitTableCell`
+- `selectTable`
+- `selectTableCell`
 - `selectTableColumn`
 - `selectTableRow`
-- `selectTableCell`
-- `selectTable`
-- `deleteTableColumn`
 - `addTableColumnBefore`
 - `addTableColumnAfter`
 - `addTableRowAbove`
 - `addTableRowBelow`
-- `deleteTableRow`
 - `deleteTable`
+- `deleteTableColumn`
+- `deleteTableRow`
+- `deleteCellSelection`
+- `mergeTableCells`
+- `splitTableCell`

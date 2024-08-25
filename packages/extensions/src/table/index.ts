@@ -3,7 +3,6 @@ export {
   defineTableCommands,
   insertTable,
   exitTable,
-  deleteCellSelection,
   type InsertTableOptions,
   type TableCommandsExtension,
 } from './table-commands'

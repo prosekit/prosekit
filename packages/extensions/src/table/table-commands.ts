@@ -5,35 +5,25 @@ import {
   insertNode,
   type Extension,
 } from '@prosekit/core'
-import { Slice, type Schema } from '@prosekit/pm/model'
-import {
-  TextSelection,
-  type Command,
-  type EditorState,
-  type Transaction,
-} from '@prosekit/pm/state'
+import type { Schema } from '@prosekit/pm/model'
+import { TextSelection, type Command } from '@prosekit/pm/state'
 import {
   addColumnAfter,
   addColumnBefore,
   addRowAfter,
   addRowBefore,
   CellSelection,
+  deleteCellSelection,
   deleteColumn,
   deleteRow,
   deleteTable,
   mergeCells,
   splitCell,
   TableMap,
-  tableNodeTypes,
   type TableRole,
 } from 'prosemirror-tables'
 
-import {
-  findCellPos,
-  findCellRange,
-  findTable,
-  isCellSelection,
-} from './table-utils'
+import { findCellPos, findCellRange, findTable } from './table-utils'
 
 function createEmptyTable(
   schema: Schema,
@@ -136,39 +126,6 @@ export const exitTable: Command = (state, dispatch) => {
     const tr = state.tr.replaceWith(pos, pos, node)
     tr.setSelection(TextSelection.near(tr.doc.resolve(pos), 1))
     dispatch(tr.scrollIntoView())
-  }
-  return true
-}
-
-// TODO: Just export the deleteCellSelection function from prosemirror-tables
-
-/**
- * Remove the content in the selected table cells.
- *
- * @public
- */
-export function deleteCellSelection(
-  state: EditorState,
-  dispatch?: (tr: Transaction) => void,
-): boolean {
-  const sel = state.selection
-  if (!isCellSelection(sel)) return false
-  if (dispatch) {
-    const tr = state.tr
-    const baseCell = tableNodeTypes(state.schema).cell.createAndFill()
-    if (!baseCell) {
-      return false
-    }
-    const baseContent = baseCell.content
-    sel.forEachCell((cell, pos) => {
-      if (!cell.content.eq(baseContent))
-        tr.replace(
-          tr.mapping.map(pos + 1),
-          tr.mapping.map(pos + cell.nodeSize - 1),
-          new Slice(baseContent, 0, 0),
-        )
-    })
-    if (tr.docChanged) dispatch(tr)
   }
   return true
 }

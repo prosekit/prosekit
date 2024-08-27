@@ -26,7 +26,7 @@
   "dependencies": {
     "@manypkg/find-root": "^2.2.3",
     "@manypkg/get-packages": "^2.2.2",
-    "@microsoft/api-extractor": "^7.47.6",
+    "@microsoft/api-extractor": "^7.47.7",
     "@sindresorhus/slugify": "^2.2.1",
     "load-json-file": "^7.0.1",
     "lodash-es": "^4.17.21",
@@ -47,7 +47,7 @@
     "json5": "^2.2.3",
     "just-filter-object": "^3.2.0",
     "just-pascal-case": "^3.2.0",
-    "tsx": "^4.17.0",
+    "tsx": "^4.18.0",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5"
   }

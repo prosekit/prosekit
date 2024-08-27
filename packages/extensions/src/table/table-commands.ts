@@ -5,9 +5,25 @@ import {
   insertNode,
   type Extension,
 } from '@prosekit/core'
-import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
+import type { Schema } from '@prosekit/pm/model'
 import { TextSelection, type Command } from '@prosekit/pm/state'
-import type { TableRole } from 'prosemirror-tables'
+import {
+  addColumnAfter,
+  addColumnBefore,
+  addRowAfter,
+  addRowBefore,
+  CellSelection,
+  deleteCellSelection,
+  deleteColumn,
+  deleteRow,
+  deleteTable,
+  mergeCells,
+  splitCell,
+  TableMap,
+  type TableRole,
+} from 'prosemirror-tables'
+
+import { findCellPos, findCellRange, findTable } from './table-utils'
 
 function createEmptyTable(
   schema: Schema,
@@ -15,30 +31,34 @@ function createEmptyTable(
   col: number,
   header: boolean,
 ) {
-  const table = getNodeType(schema, 'table')
-  const tableRow = getNodeType(schema, 'tableRow')
-  const tableCell = getNodeType(schema, 'tableCell')
-  const tableHeaderCell = getNodeType(schema, 'tableHeaderCell')
+  const tableType = getNodeType(schema, 'table')
+  const tableRowType = getNodeType(schema, 'tableRow')
+  const tableCellType = getNodeType(schema, 'tableCell')
+  const tableHeaderCellType = getNodeType(schema, 'tableHeaderCell')
 
-  const createHeaderRow = (): ProseMirrorNode => {
-    return tableRow.createAndFill(
-      null,
-      Array.from({ length: col }, () => tableHeaderCell.createAndFill()!),
-    )!
+  if (header) {
+    const headerCell = tableHeaderCellType.createAndFill()!
+    const headerCells = repeat(headerCell, col)
+    const headerRow = tableRowType.createAndFill(null, headerCells)!
+
+    const bodyCell = tableCellType.createAndFill()!
+    const bodyCells = repeat(bodyCell, col)
+    const bodyRow = tableRowType.createAndFill(null, bodyCells)!
+    const bodyRows = repeat(bodyRow, row - 1)
+
+    return tableType.createAndFill(null, [headerRow, ...bodyRows])!
+  } else {
+    const bodyCell = tableCellType.createAndFill()!
+    const bodyCells = repeat(bodyCell, col)
+    const bodyRow = tableRowType.createAndFill(null, bodyCells)!
+    const bodyRows = repeat(bodyRow, row)
+
+    return tableType.createAndFill(null, bodyRows)!
   }
+}
 
-  const createBodyRow = (): ProseMirrorNode => {
-    return tableRow.createAndFill(
-      null,
-      Array.from({ length: col }, () => tableCell.createAndFill()!),
-    )!
-  }
-
-  const rows = [
-    ...Array.from({ length: header ? 1 : 0 }, createHeaderRow),
-    ...Array.from({ length: header ? row - 1 : row }, createBodyRow),
-  ]
-  return table.createAndFill(null, rows)!
+function repeat<T>(node: T, length: number): T[] {
+  return Array<T>(length).fill(node)
 }
 
 /**
@@ -53,6 +73,8 @@ export interface InsertTableOptions {
 /**
  * Insert a table node with the given number of rows and columns, and optionally
  * a header row.
+ *
+ * @param options
  *
  * @public
  */
@@ -109,12 +131,174 @@ export const exitTable: Command = (state, dispatch) => {
 }
 
 /**
+ * @public
+ */
+export interface SelectTableColumnOptions {
+  /**
+   * A hit position of the table cell to select from. By default, the selection
+   * anchor will be used.
+   */
+  anchor?: number
+
+  /**
+   * A hit position of the table cell to select to. By default, the selection
+   * head will be used.
+   */
+  head?: number
+}
+
+/**
+ * @public
+ */
+export function selectTableColumn(options?: SelectTableColumnOptions): Command {
+  return (state, dispatch) => {
+    const range = findCellRange(state.selection, options?.anchor, options?.head)
+    if (!range) {
+      return false
+    }
+    if (dispatch) {
+      const [$anchorCell, $headCell] = range
+      const selection = CellSelection.colSelection($anchorCell, $headCell)
+      dispatch(state.tr.setSelection(selection))
+    }
+    return true
+  }
+}
+
+/**
+ * @public
+ */
+export interface SelectTableRowOptions {
+  /**
+   * A hit position of the table cell to select from. By default, the selection
+   * anchor will be used.
+   */
+  anchor?: number
+
+  /**
+   * A hit position of the table cell to select to. By default, the selection
+   * head will be used.
+   */
+  head?: number
+}
+
+/**
+ * @public
+ */
+export function selectTableRow(options?: SelectTableRowOptions): Command {
+  return (state, dispatch) => {
+    const range = findCellRange(state.selection, options?.anchor, options?.head)
+    if (!range) {
+      return false
+    }
+    if (dispatch) {
+      const [$anchorCell, $headCell] = range
+      const selection = CellSelection.rowSelection($anchorCell, $headCell)
+      dispatch(state.tr.setSelection(selection))
+    }
+    return true
+  }
+}
+
+/**
+ * @public
+ */
+export interface SelectTableCellOptions {
+  /**
+   * A hit position of the table cell to select from. By default, the selection
+   * anchor will be used.
+   */
+  pos?: number
+}
+
+/**
+ * @public
+ */
+export function selectTableCell(options?: SelectTableCellOptions): Command {
+  return (state, dispatch) => {
+    const $cellPos = findCellPos(
+      state.doc,
+      options?.pos ?? state.selection.anchor,
+    )
+    if (!$cellPos) {
+      return false
+    }
+    if (dispatch) {
+      const selection = new CellSelection($cellPos)
+      dispatch(state.tr.setSelection(selection))
+    }
+    return true
+  }
+}
+
+/**
+ * @public
+ */
+export interface SelectTableOptions {
+  /**
+   * A hit position of the table to select from. By default, the selection
+   * anchor will be used.
+   */
+  pos?: number
+}
+
+/**
+ * @public
+ */
+export function selectTable(options?: SelectTableOptions): Command {
+  return (state, dispatch) => {
+    const $pos = options?.pos
+      ? state.doc.resolve(options.pos)
+      : state.selection.$anchor
+    const table = findTable($pos)
+    if (!table) {
+      return false
+    }
+    const map = TableMap.get(table.node)
+    if (map.map.length === 0) {
+      return false
+    }
+    if (dispatch) {
+      let tr = state.tr
+      const firstCellPosInTable = map.map[0]
+      const lastCellPosInTable = map.map[map.map.length - 1]
+      const firstCellPos = table.pos + firstCellPosInTable + 1
+      const lastCellPos = table.pos + lastCellPosInTable + 1
+      const $firstCellPos = tr.doc.resolve(firstCellPos)
+      const $lastCellPos = tr.doc.resolve(lastCellPos)
+      const selection = new CellSelection($firstCellPos, $lastCellPos)
+      tr = tr.setSelection(selection)
+      dispatch?.(tr)
+    }
+    return true
+  }
+}
+
+/**
  * @internal
  */
 export type TableCommandsExtension = Extension<{
   Commands: {
     insertTable: [InsertTableOptions]
     exitTable: []
+
+    selectTable: [options?: SelectTableOptions]
+    selectTableCell: [options?: SelectTableCellOptions]
+    selectTableColumn: [options?: SelectTableColumnOptions]
+    selectTableRow: [options?: SelectTableRowOptions]
+
+    addTableColumnBefore: []
+    addTableColumnAfter: []
+    addTableRowAbove: []
+    addTableRowBelow: []
+
+    deleteTable: []
+    deleteTableColumn: []
+    deleteTableRow: []
+    deleteCellSelection: []
+
+    mergeTableCells: []
+    splitTableCell: []
   }
 }>
 
@@ -127,5 +311,23 @@ export function defineTableCommands(): TableCommandsExtension {
   return defineCommands({
     insertTable,
     exitTable: () => exitTable,
+
+    selectTable,
+    selectTableCell,
+    selectTableColumn,
+    selectTableRow,
+
+    addTableColumnBefore: () => addColumnBefore,
+    addTableColumnAfter: () => addColumnAfter,
+    addTableRowAbove: () => addRowBefore,
+    addTableRowBelow: () => addRowAfter,
+
+    deleteTable: () => deleteTable,
+    deleteTableColumn: () => deleteColumn,
+    deleteTableRow: () => deleteRow,
+    deleteCellSelection: () => deleteCellSelection,
+
+    mergeTableCells: () => mergeCells,
+    splitTableCell: () => splitCell,
   })
 }

@@ -146,3 +146,7 @@ export async function pressKey(input: string) {
   }
   return await userEvent.keyboard(seq.join(''))
 }
+
+export async function inputText(input: string) {
+  return await userEvent.keyboard(input)
+}

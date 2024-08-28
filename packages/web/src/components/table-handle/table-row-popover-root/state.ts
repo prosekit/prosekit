@@ -17,7 +17,6 @@ import { type ProseMirrorNode } from '@prosekit/pm/model'
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import {
   openContext,
-  tableHandlePopoverContext,
   tableRowPopoverContext,
   type TableRowPopoverContext,
 } from '../context'
@@ -43,7 +42,6 @@ export function useTableRowPopoverRoot(
   })
 
   tableRowPopoverContext.provide(host, context)
-  tableHandlePopoverContext.provide(host, context)
 
   useOverlayPositionerState(host, overlayState, { reference })
 

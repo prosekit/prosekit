@@ -18,7 +18,6 @@ import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import {
   openContext,
   tableColumnPopoverContext,
-  tableHandlePopoverContext,
   type TableColumnPopoverContext,
 } from '../context'
 
@@ -43,7 +42,6 @@ export function useTableColumnPopoverRoot(
   })
 
   tableColumnPopoverContext.provide(host, context)
-  tableHandlePopoverContext.provide(host, context)
 
   useOverlayPositionerState(host, overlayState, { reference })
 

@@ -10,7 +10,7 @@ import { throttle } from '../../../utils/throttle'
 import type { CellAxisWithPos } from '../context'
 import {
   getCellAxisByMouseEvent,
-  columnFirstCellPos,
+  getColumnFirstCellPos,
   findTable,
 } from '../utils'
 
@@ -26,7 +26,7 @@ export function defineElementHoverHandler(handler: ElementHoverHandler) {
     if (!cellAxis) return handler(null, null, null)
     const table = findTable(cellAxis?.$cell)
     if (!table) return handler(null, null, null)
-    const pos = columnFirstCellPos(table.node, table.pos, cellAxis.col)
+    const pos = getColumnFirstCellPos(table.node, table.pos, cellAxis.col)
     const columnCellDom = view.nodeDOM(pos) as HTMLElement
     if (!columnCellDom) return handler(null, null, null)
 

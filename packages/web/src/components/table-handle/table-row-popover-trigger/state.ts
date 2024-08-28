@@ -22,7 +22,6 @@ export function useTableRowPopoverTrigger(
     if (!editor) return
     const { cellAxis, table } = context.get()
     if (!cellAxis || !table) return
-
     editor.commands.selectTableRow({ head: cellAxis.$cell.pos })
   })
 }

@@ -54,7 +54,7 @@ function getCellAxisByCoords(
   return { col: cellRect.left, row: cellRect.top, $cell: $cellPos }
 }
 
-export function columnFirstCellPos(
+export function getColumnFirstCellPos(
   table: ProseMirrorNode,
   tablePos: number,
   index: number,
@@ -65,7 +65,7 @@ export function columnFirstCellPos(
   return tablePos + posInTable + 1
 }
 
-export function rowFirstCellPos(
+export function getRowFirstCellPos(
   table: ProseMirrorNode,
   tablePos: number,
   index: number,

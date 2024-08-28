@@ -5,61 +5,53 @@ import { cellAround, TableMap } from 'prosemirror-tables'
 
 import type { CellAxisWithPos } from './context'
 
-export function domCellAround(target: EventTarget | null): HTMLElement | null {
-  while (
-    target &&
-    target instanceof HTMLElement &&
-    target.nodeName != 'TD' &&
-    target.nodeName != 'TH'
-  )
-    target = target.classList.contains('ProseMirror') ? null : target.parentNode
-  return target as HTMLElement
+/**
+ * Copied from https://github.com/ProseMirror/prosemirror-tables/blob/v1.5.0/src/columnresizing.ts#L256
+ *
+ * @internal
+ */
+function domCellAround(target: HTMLElement | null): HTMLElement | null {
+  while (target && target.nodeName != 'TD' && target.nodeName != 'TH') {
+    target = target.classList?.contains('ProseMirror')
+      ? null
+      : (target.parentNode as HTMLElement | null)
+  }
+  return target
 }
 
 export function getCellAxisByMouseEvent(
   view: EditorView,
   event: MouseEvent,
-): CellAxisWithPos | null {
-  const domCell = domCellAround(event.target)
+): CellAxisWithPos | undefined {
+  const domCell = domCellAround(event.target as HTMLElement | null)
+  if (!domCell) return
 
-  if (!domCell) {
-    return null
-  }
-
-  const domCellRect = domCell.getBoundingClientRect()
+  const { left, top, width, height } = domCell.getBoundingClientRect()
 
   /**
-   * `+1`  Ensure that the coordinates are within the selected cell,
-   *  otherwise `Prosemirror` may mistakenly identify it as being in the previous cell.
-   * */
+   * Use the center coordinates of the cell to ensure we're within the selected cell.
+   * This prevents potential issues when the mouse is on the border of two cells.
+   */
   return getCellAxisByCoords(view, {
-    left: domCellRect.left + 1,
-    top: domCellRect.top + 1,
+    left: left + width / 2,
+    top: top + height / 2,
   })
 }
 
-export function getCellAxisByCoords(
+function getCellAxisByCoords(
   view: EditorView,
   coords: { left: number; top: number },
-): CellAxisWithPos | null {
-  const cellPos = view.posAtCoords(coords)
+): CellAxisWithPos | undefined {
+  const cellPos = view.posAtCoords(coords)?.pos
+  if (!cellPos) return
 
-  if (!cellPos) {
-    return null
-  }
+  const $cellPos = cellAround(view.state.doc.resolve(cellPos))
+  if (!$cellPos) return
 
-  const $cell = cellAround(view.state.doc.resolve(cellPos.pos))
-
-  if (!$cell) {
-    return null
-  }
-
-  const map = TableMap.get($cell.node(-1))
-  const start = $cell.start(-1)
-  const rect = map.findCell($cell.pos - start)
-  const { left: col, top: row } = rect
-
-  return { col, row, $cell }
+  const map = TableMap.get($cellPos.node(-1))
+  const tableStart = $cellPos.start(-1)
+  const cellRect = map.findCell($cellPos.pos - tableStart)
+  return { col: cellRect.left, row: cellRect.top, $cell: $cellPos }
 }
 
 export function columnFirstCellPos(

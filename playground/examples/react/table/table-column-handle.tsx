@@ -20,43 +20,31 @@ export function TableColumnHandle() {
       <TableHandlePopoverContent className={Themes.TABLE_HANDLE_MENU}>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          command={() => editor.commands.clearTableCellContent()}
-          disabled={!editor.commands.clearTableCellContent.canApply()}
-        >
-          <div>clear column content</div>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          className={Themes.TABLE_CELL_MENU_ITEM}
-          onClick={editor.commands.deleteTableColumn}
-          disabled={!editor.commands.deleteTableColumn.canApply()}
-        >
-          <div>remove column </div>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          className={Themes.TABLE_CELL_MENU_ITEM}
           onClick={editor.commands.addTableColumnBefore}
-          disabled={!editor.commands.addTableColumnBefore.canApply()}
+          disabled={!editor.commands.addTableColumnBefore.canExec()}
         >
-          <div>add column before</div>
+          <div>Insert Left</div>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
           onClick={editor.commands.addTableColumnAfter}
-          disabled={!editor.commands.addTableColumnAfter.canApply()}
+          disabled={!editor.commands.addTableColumnAfter.canExec()}
         >
-          <div>add column after</div>
+          <div>Insert Right</div>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          command={(table) => editor.commands.selectTable({ table })}
+          command={() => editor.commands.deleteCellSelection()}
+          disabled={!editor.commands.deleteCellSelection.canExec()}
         >
-          <div>select entire table</div>
+          <div>Clear Contents</div>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          command={editor.commands.deleteTable}
+          onClick={editor.commands.deleteTableColumn}
+          disabled={!editor.commands.deleteTableColumn.canExec()}
         >
-          <div>remove entire table</div>
+          <div>Delete Column</div>
         </TableHandlePopoverItem>
       </TableHandlePopoverContent>
     </TableColumnPopoverRoot>

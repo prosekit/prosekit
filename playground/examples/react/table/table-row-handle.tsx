@@ -20,45 +20,33 @@ export function TableRowHandle() {
       <TableHandlePopoverContent className={Themes.TABLE_HANDLE_MENU}>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          command={() => {
-            editor.commands.clearTableCellContent()
-          }}
-          disabled={!editor.commands.clearTableCellContent.canApply()}
-        >
-          <div>clear row content</div>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          className={Themes.TABLE_CELL_MENU_ITEM}
-          command={editor.commands.deleteTableRow}
-          disabled={!editor.commands.deleteTableRow.canApply()}
-        >
-          <div>remove row</div>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          className={Themes.TABLE_CELL_MENU_ITEM}
           command={editor.commands.addTableRowAbove}
-          disabled={!editor.commands.addTableRowAbove.canApply()}
+          disabled={!editor.commands.addTableRowAbove.canExec()}
         >
-          <div>add row above</div>
+          <div>Insert Above</div>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
           command={editor.commands.addTableRowBelow}
-          disabled={!editor.commands.addTableRowBelow.canApply()}
+          disabled={!editor.commands.addTableRowBelow.canExec()}
         >
           <div>add row below</div>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          command={(table) => editor.commands.selectTable({ table })}
+          command={() => {
+            editor.commands.deleteCellSelection()
+          }}
+          disabled={!editor.commands.deleteCellSelection.canExec()}
         >
-          <div>select entire table</div>
-        </TableHandlePopoverItem>
+          <div>Clear Contents</div>
+        </TableHandlePopoverItem>{' '}
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          command={editor.commands.deleteTable}
+          command={editor.commands.deleteTableRow}
+          disabled={!editor.commands.deleteTableRow.canExec()}
         >
-          <div>remove entire table</div>
+          <div>Delete Row</div>
         </TableHandlePopoverItem>
       </TableHandlePopoverContent>
     </TableRowPopoverRoot>

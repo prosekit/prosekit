@@ -20,13 +20,6 @@ export function TableCellHandle() {
       <TableHandlePopoverContent className={Themes.TABLE_HANDLE_MENU}>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          command={() => editor.commands.clearTableCellContent()}
-          disabled={!editor.commands.clearTableCellContent.canExec()}
-        >
-          <div>clear cell content</div>
-        </TableHandlePopoverItem>
-        <TableHandlePopoverItem
-          className={Themes.TABLE_CELL_MENU_ITEM}
           command={editor.commands.mergeTableCells}
           disabled={!editor.commands.mergeTableCells.canExec()}
         >

@@ -4,7 +4,6 @@ import {
   getNodeType,
   insertNode,
   type Extension,
-  type FindParentNodeResult,
 } from '@prosekit/core'
 import type { Schema } from '@prosekit/pm/model'
 import { TextSelection, type Command } from '@prosekit/pm/state'
@@ -130,13 +129,6 @@ export const exitTable: Command = (state, dispatch) => {
     dispatch(tr.scrollIntoView())
   }
   return true
-}
-
-/**
- * @public
- */
-export interface SelectTableOptions {
-  table: Pick<FindParentNodeResult, 'pos' | 'node'>
 }
 
 /**

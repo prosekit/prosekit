@@ -232,10 +232,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "package.json",
-          "hidden": true
-        },
-        {
           "path": "button.tsx",
           "hidden": false
         }
@@ -352,10 +348,6 @@ export const exampleMeta = {
         {
           "path": "markdown.ts",
           "hidden": false
-        },
-        {
-          "path": "package.json",
-          "hidden": true
         }
       ]
     },
@@ -544,10 +536,6 @@ export const exampleMeta = {
         {
           "path": "toolbar.tsx",
           "hidden": false
-        },
-        {
-          "path": "package.json",
-          "hidden": true
         },
         {
           "path": "button.tsx",
@@ -1001,10 +989,6 @@ export const exampleMeta = {
         {
           "path": "markdown.ts",
           "hidden": false
-        },
-        {
-          "path": "package.json",
-          "hidden": true
         }
       ]
     },

@@ -119,8 +119,6 @@ examples:
         hidden: false
       - path: toolbar.tsx
         hidden: false
-      - path: package.json
-        hidden: true
       - path: button.tsx
         hidden: false
   - name: react-mark-rule
@@ -183,8 +181,6 @@ examples:
         hidden: false
       - path: markdown.ts
         hidden: false
-      - path: package.json
-        hidden: true
   - name: react-search
     framework: react
     story: search
@@ -283,8 +279,6 @@ examples:
         hidden: false
       - path: toolbar.tsx
         hidden: false
-      - path: package.json
-        hidden: true
       - path: button.tsx
         hidden: false
   - name: vue-minimal
@@ -521,8 +515,6 @@ examples:
         hidden: false
       - path: markdown.ts
         hidden: false
-      - path: package.json
-        hidden: true
   - name: vue-slash-menu
     framework: vue
     story: slash-menu

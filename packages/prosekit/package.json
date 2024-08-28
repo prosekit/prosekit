@@ -75,6 +75,7 @@
     "./lit/inline-popover": "./src/lit/inline-popover.gen.ts",
     "./lit/popover": "./src/lit/popover.gen.ts",
     "./lit/resizable": "./src/lit/resizable.gen.ts",
+    "./lit/table-handle": "./src/lit/table-handle.gen.ts",
     "./lit/tooltip": "./src/lit/tooltip.gen.ts",
     "./pm": "./src/pm.gen.ts",
     "./pm/commands": "./src/pm/commands.gen.ts",
@@ -92,6 +93,7 @@
     "./preact/inline-popover": "./src/preact/inline-popover.gen.ts",
     "./preact/popover": "./src/preact/popover.gen.ts",
     "./preact/resizable": "./src/preact/resizable.gen.ts",
+    "./preact/table-handle": "./src/preact/table-handle.gen.ts",
     "./preact/tooltip": "./src/preact/tooltip.gen.ts",
     "./react": "./src/react.gen.ts",
     "./react/autocomplete": "./src/react/autocomplete.gen.ts",
@@ -99,6 +101,7 @@
     "./react/inline-popover": "./src/react/inline-popover.gen.ts",
     "./react/popover": "./src/react/popover.gen.ts",
     "./react/resizable": "./src/react/resizable.gen.ts",
+    "./react/table-handle": "./src/react/table-handle.gen.ts",
     "./react/tooltip": "./src/react/tooltip.gen.ts",
     "./solid": "./src/solid.gen.ts",
     "./solid/autocomplete": "./src/solid/autocomplete.gen.ts",
@@ -106,6 +109,7 @@
     "./solid/inline-popover": "./src/solid/inline-popover.gen.ts",
     "./solid/popover": "./src/solid/popover.gen.ts",
     "./solid/resizable": "./src/solid/resizable.gen.ts",
+    "./solid/table-handle": "./src/solid/table-handle.gen.ts",
     "./solid/tooltip": "./src/solid/tooltip.gen.ts",
     "./svelte": "./src/svelte.gen.ts",
     "./svelte/autocomplete": "./src/svelte/autocomplete.gen.ts",
@@ -113,6 +117,7 @@
     "./svelte/inline-popover": "./src/svelte/inline-popover.gen.ts",
     "./svelte/popover": "./src/svelte/popover.gen.ts",
     "./svelte/resizable": "./src/svelte/resizable.gen.ts",
+    "./svelte/table-handle": "./src/svelte/table-handle.gen.ts",
     "./svelte/tooltip": "./src/svelte/tooltip.gen.ts",
     "./vue": "./src/vue.gen.ts",
     "./vue/autocomplete": "./src/vue/autocomplete.gen.ts",
@@ -120,6 +125,7 @@
     "./vue/inline-popover": "./src/vue/inline-popover.gen.ts",
     "./vue/popover": "./src/vue/popover.gen.ts",
     "./vue/resizable": "./src/vue/resizable.gen.ts",
+    "./vue/table-handle": "./src/vue/table-handle.gen.ts",
     "./vue/tooltip": "./src/vue/tooltip.gen.ts",
     "./web": "./src/web.gen.ts",
     "./web/autocomplete": "./src/web/autocomplete.gen.ts",
@@ -127,6 +133,7 @@
     "./web/inline-popover": "./src/web/inline-popover.gen.ts",
     "./web/popover": "./src/web/popover.gen.ts",
     "./web/resizable": "./src/web/resizable.gen.ts",
+    "./web/table-handle": "./src/web/table-handle.gen.ts",
     "./web/tooltip": "./src/web/tooltip.gen.ts"
   },
   "files": [
@@ -442,6 +449,11 @@
         "import": "./dist/prosekit-lit-resizable.js",
         "default": "./dist/prosekit-lit-resizable.js"
       },
+      "./lit/table-handle": {
+        "types": "./dist/prosekit-lit-table-handle.d.ts",
+        "import": "./dist/prosekit-lit-table-handle.js",
+        "default": "./dist/prosekit-lit-table-handle.js"
+      },
       "./lit/tooltip": {
         "types": "./dist/prosekit-lit-tooltip.d.ts",
         "import": "./dist/prosekit-lit-tooltip.js",
@@ -525,6 +537,11 @@
         "import": "./dist/prosekit-preact-resizable.js",
         "default": "./dist/prosekit-preact-resizable.js"
       },
+      "./preact/table-handle": {
+        "types": "./dist/prosekit-preact-table-handle.d.ts",
+        "import": "./dist/prosekit-preact-table-handle.js",
+        "default": "./dist/prosekit-preact-table-handle.js"
+      },
       "./preact/tooltip": {
         "types": "./dist/prosekit-preact-tooltip.d.ts",
         "import": "./dist/prosekit-preact-tooltip.js",
@@ -559,6 +576,11 @@
         "types": "./dist/prosekit-react-resizable.d.ts",
         "import": "./dist/prosekit-react-resizable.js",
         "default": "./dist/prosekit-react-resizable.js"
+      },
+      "./react/table-handle": {
+        "types": "./dist/prosekit-react-table-handle.d.ts",
+        "import": "./dist/prosekit-react-table-handle.js",
+        "default": "./dist/prosekit-react-table-handle.js"
       },
       "./react/tooltip": {
         "types": "./dist/prosekit-react-tooltip.d.ts",
@@ -595,6 +617,11 @@
         "import": "./dist/prosekit-solid-resizable.js",
         "default": "./dist/prosekit-solid-resizable.js"
       },
+      "./solid/table-handle": {
+        "types": "./dist/prosekit-solid-table-handle.d.ts",
+        "import": "./dist/prosekit-solid-table-handle.js",
+        "default": "./dist/prosekit-solid-table-handle.js"
+      },
       "./solid/tooltip": {
         "types": "./dist/prosekit-solid-tooltip.d.ts",
         "import": "./dist/prosekit-solid-tooltip.js",
@@ -629,6 +656,11 @@
         "types": "./dist/prosekit-svelte-resizable.d.ts",
         "import": "./dist/prosekit-svelte-resizable.js",
         "default": "./dist/prosekit-svelte-resizable.js"
+      },
+      "./svelte/table-handle": {
+        "types": "./dist/prosekit-svelte-table-handle.d.ts",
+        "import": "./dist/prosekit-svelte-table-handle.js",
+        "default": "./dist/prosekit-svelte-table-handle.js"
       },
       "./svelte/tooltip": {
         "types": "./dist/prosekit-svelte-tooltip.d.ts",
@@ -665,6 +697,11 @@
         "import": "./dist/prosekit-vue-resizable.js",
         "default": "./dist/prosekit-vue-resizable.js"
       },
+      "./vue/table-handle": {
+        "types": "./dist/prosekit-vue-table-handle.d.ts",
+        "import": "./dist/prosekit-vue-table-handle.js",
+        "default": "./dist/prosekit-vue-table-handle.js"
+      },
       "./vue/tooltip": {
         "types": "./dist/prosekit-vue-tooltip.d.ts",
         "import": "./dist/prosekit-vue-tooltip.js",
@@ -699,6 +736,11 @@
         "types": "./dist/prosekit-web-resizable.d.ts",
         "import": "./dist/prosekit-web-resizable.js",
         "default": "./dist/prosekit-web-resizable.js"
+      },
+      "./web/table-handle": {
+        "types": "./dist/prosekit-web-table-handle.d.ts",
+        "import": "./dist/prosekit-web-table-handle.js",
+        "default": "./dist/prosekit-web-table-handle.js"
       },
       "./web/tooltip": {
         "types": "./dist/prosekit-web-tooltip.d.ts",
@@ -828,6 +870,9 @@
         "lit/resizable": [
           "./dist/prosekit-lit-resizable.d.ts"
         ],
+        "lit/table-handle": [
+          "./dist/prosekit-lit-table-handle.d.ts"
+        ],
         "lit/tooltip": [
           "./dist/prosekit-lit-tooltip.d.ts"
         ],
@@ -876,6 +921,9 @@
         "preact/resizable": [
           "./dist/prosekit-preact-resizable.d.ts"
         ],
+        "preact/table-handle": [
+          "./dist/prosekit-preact-table-handle.d.ts"
+        ],
         "preact/tooltip": [
           "./dist/prosekit-preact-tooltip.d.ts"
         ],
@@ -896,6 +944,9 @@
         ],
         "react/resizable": [
           "./dist/prosekit-react-resizable.d.ts"
+        ],
+        "react/table-handle": [
+          "./dist/prosekit-react-table-handle.d.ts"
         ],
         "react/tooltip": [
           "./dist/prosekit-react-tooltip.d.ts"
@@ -918,6 +969,9 @@
         "solid/resizable": [
           "./dist/prosekit-solid-resizable.d.ts"
         ],
+        "solid/table-handle": [
+          "./dist/prosekit-solid-table-handle.d.ts"
+        ],
         "solid/tooltip": [
           "./dist/prosekit-solid-tooltip.d.ts"
         ],
@@ -938,6 +992,9 @@
         ],
         "svelte/resizable": [
           "./dist/prosekit-svelte-resizable.d.ts"
+        ],
+        "svelte/table-handle": [
+          "./dist/prosekit-svelte-table-handle.d.ts"
         ],
         "svelte/tooltip": [
           "./dist/prosekit-svelte-tooltip.d.ts"
@@ -960,6 +1017,9 @@
         "vue/resizable": [
           "./dist/prosekit-vue-resizable.d.ts"
         ],
+        "vue/table-handle": [
+          "./dist/prosekit-vue-table-handle.d.ts"
+        ],
         "vue/tooltip": [
           "./dist/prosekit-vue-tooltip.d.ts"
         ],
@@ -980,6 +1040,9 @@
         ],
         "web/resizable": [
           "./dist/prosekit-web-resizable.d.ts"
+        ],
+        "web/table-handle": [
+          "./dist/prosekit-web-table-handle.d.ts"
         ],
         "web/tooltip": [
           "./dist/prosekit-web-tooltip.d.ts"

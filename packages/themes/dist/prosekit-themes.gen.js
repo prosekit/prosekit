@@ -65,6 +65,18 @@ var THEMES = {
   DROP_CURSOR: "transition-all bg-blue-500",
   BLOCK_HANDLE:
     "flex items-center box-border justify-center my-[0.5em] h-[1.5em] w-[1.2em] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 transition [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
+  TABLE_CELL_HANDLE:
+    "flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 -translate-x-6 [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
+  TABLE_COLUMN_HANDLE:
+    "flex items-center box-border justify-center h-[1.2em] w-[1.5em] bg-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 translate-y-3 border border-zinc-200 dark:border-zinc-800 border-solid [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
+  TABLE_ROW_HANDLE:
+    "flex items-center box-border justify-center h-[1.5em] w-[1.2em] bg-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 translate-x-3 border border-zinc-200 dark:border-zinc-800 border-solid [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
+  TABLE_ROOT_HANDLE:
+    "flex items-center box-border justify-center h-[1.2em] w-[1.2em] bg-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 border translate-x-4 -translate-y-4 border-zinc-200 dark:border-zinc-800 border-solid [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
+  TABLE_HANDLE_MENU:
+    "relative block max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap p-1 z-10 box-border rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-neutral-900 shadow-lg [&:not([data-state])]:hidden",
+  TABLE_CELL_MENU_ITEM:
+    "relative block min-w-[120px] scroll-my-1 rounded px-3 py-1.5 data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 hover:data-[disabled=true]:opacity-50 box-border cursor-default select-none whitespace-nowrap outline-none data-[focused]:bg-zinc-100 dark:data-[focused]:bg-zinc-800",
   TOOLTIP_TRIGGER: "block",
   TOOLTIP_CONTENT:
     "z-50 overflow-hidden rounded-md border border-solid bg-zinc-900 dark:bg-zinc-50 px-3 py-1.5 text-xs text-zinc-50 dark:text-zinc-900 shadow-sm [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200 data-[side=bottom]:slide-in-from-top-2 data-[side=bottom]:slide-out-to-top-2 data-[side=left]:slide-in-from-right-2 data-[side=left]:slide-out-to-right-2 data-[side=right]:slide-in-from-left-2 data-[side=right]:slide-out-to-left-2 data-[side=top]:slide-in-from-bottom-2 data-[side=top]:slide-out-to-bottom-2",
@@ -110,6 +122,9 @@ var THEMES = {
   ICON_ARROW_LEFT: "i-lucide-arrow-left h-5 w-5",
   ICON_ARROW_RIGHT: "i-lucide-arrow-right h-5 w-5",
   ICON_CHEVRON_RIGHT: "i-lucide-chevron-right h-5 w-5",
+  ICON_TABLE_CELL_HANDLE: "i-lucide-menu h-5 w-5",
+  ICON_TABLE_COLUMN_HANDLE: "i-lucide-grip-horizontal h-5 w-5",
+  ICON_TABLE_ROOT_HANDLE: "i-lucide-grip h-3 w-3",
 };
 function replaceThemes(code) {
   return replaceThemesWith(code, THEMES);

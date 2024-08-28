@@ -2,6 +2,16 @@
 
 <FrameworkCodeBlock>
 
+<template v-slot:react>
+
+::: code-group
+
+<<< @/../playground/examples/react/table/extension.ts
+
+:::
+
+</template>
+
 <template v-slot:vue>
 
 ::: code-group

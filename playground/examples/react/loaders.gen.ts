@@ -20,6 +20,7 @@ export const loaders = {
   'save-markdown': lazy(() => import('./save-markdown/editor')),
   'search': lazy(() => import('./search/editor')),
   'slash-menu': lazy(() => import('./slash-menu/editor')),
+  'table': lazy(() => import('./table/editor')),
   'toolbar': lazy(() => import('./toolbar/editor')),
   'unmount': lazy(() => import('./unmount/editor')),
   'user-menu': lazy(() => import('./user-menu/editor')),

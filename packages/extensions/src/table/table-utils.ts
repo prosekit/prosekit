@@ -8,15 +8,6 @@ import {
   inSameTable,
 } from 'prosemirror-tables'
 
-export interface CellAxis {
-  row: number
-  col: number
-}
-
-export interface CellAxisWithPos extends CellAxis {
-  $cell: ResolvedPos
-}
-
 /**
  * Checks if the given object is a `CellSelection` instance.
  *

@@ -1,7 +1,7 @@
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 import {
-  TableColumnPopoverRoot,
+  TableHandleColumnRoot,
   TableColumnPopoverTrigger,
   TableHandlePopoverContent,
   TableHandlePopoverItem,
@@ -17,7 +17,7 @@ export function TableHandle() {
 
   return (
     <TableHandleRoot className="contents">
-      <TableColumnPopoverRoot className={Themes.TABLE_COLUMN_HANDLE}>
+      <TableHandleColumnRoot className={Themes.TABLE_COLUMN_HANDLE}>
         <TableColumnPopoverTrigger>
           <div className={Themes.ICON_TABLE_COLUMN_HANDLE}></div>
         </TableColumnPopoverTrigger>
@@ -51,7 +51,7 @@ export function TableHandle() {
             Delete Column
           </TableHandlePopoverItem>
         </TableHandlePopoverContent>
-      </TableColumnPopoverRoot>
+      </TableHandleColumnRoot>
       <TableHandleRowRoot className={Themes.TABLE_ROW_HANDLE}>
         <TableRowPopoverTrigger>
           <div className={Themes.ICON_DRAG_HANDLE}></div>

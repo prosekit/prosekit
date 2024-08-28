@@ -1,4 +1,4 @@
-export { TableColumnPopoverRoot } from './table-column-popover-root.gen'
+export { TableHandleColumnRoot } from './table-column-popover-root.gen'
 
 export { TableColumnPopoverTrigger } from './table-column-popover-trigger.gen'
 

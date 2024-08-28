@@ -1,6 +1,6 @@
-export { TableColumnPopoverRootElement } from './table-column-popover-root/element.gen'
-export { defaultTableColumnPopoverRootProps } from './table-column-popover-root/props'
-export type { TableColumnPopoverRootProps } from './table-column-popover-root/props'
+export { TableHandleColumnRootElement } from './table-handle-column-root/element.gen'
+export { defaultTableHandleColumnRootProps } from './table-handle-column-root/props'
+export type { TableHandleColumnRootProps } from './table-handle-column-root/props'
 
 export { TableColumnPopoverTriggerElement } from './table-column-popover-trigger/element.gen'
 export { defaultTableColumnPopoverTriggerProps } from './table-column-popover-trigger/props'

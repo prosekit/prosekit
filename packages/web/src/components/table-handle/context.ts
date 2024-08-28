@@ -3,12 +3,9 @@ import type { FindParentNodeResult } from '@prosekit/core'
 import type { ResolvedPos } from '@prosekit/pm/model'
 import type { CellSelection } from 'prosemirror-tables'
 
-export interface CellAxis {
+export interface CellAxisWithPos {
   row: number
   col: number
-}
-
-export interface CellAxisWithPos extends CellAxis {
   $cell: ResolvedPos
 }
 

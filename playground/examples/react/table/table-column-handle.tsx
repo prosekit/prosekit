@@ -20,28 +20,28 @@ export function TableColumnHandle() {
       <TableHandlePopoverContent className={Themes.TABLE_HANDLE_MENU}>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          onClick={editor.commands.addTableColumnBefore}
+          onSelect={editor.commands.addTableColumnBefore}
           disabled={!editor.commands.addTableColumnBefore.canExec()}
         >
           <div>Insert Left</div>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          onClick={editor.commands.addTableColumnAfter}
+          onSelect={editor.commands.addTableColumnAfter}
           disabled={!editor.commands.addTableColumnAfter.canExec()}
         >
           <div>Insert Right</div>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          command={() => editor.commands.deleteCellSelection()}
+          onSelect={ editor.commands.deleteCellSelection }
           disabled={!editor.commands.deleteCellSelection.canExec()}
         >
           <div>Clear Contents</div>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          onClick={editor.commands.deleteTableColumn}
+          onSelect={editor.commands.deleteTableColumn}
           disabled={!editor.commands.deleteTableColumn.canExec()}
         >
           <div>Delete Column</div>

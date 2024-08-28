@@ -1,18 +1,10 @@
-export { TableCellPopoverRootElement } from './table-cell-popover-root/element.gen'
-export { defaultTableCellPopoverRootProps } from './table-cell-popover-root/props'
-export type { TableCellPopoverRootProps } from './table-cell-popover-root/props'
+export { TableHandleColumnRootElement } from './table-handle-column-root/element.gen'
+export { defaultTableHandleColumnRootProps } from './table-handle-column-root/props'
+export type { TableHandleColumnRootProps } from './table-handle-column-root/props'
 
-export { TableCellPopoverTriggerElement } from './table-cell-popover-trigger/element.gen'
-export { defaultTableCellPopoverTriggerProps } from './table-cell-popover-trigger/props'
-export type { TableCellPopoverTriggerProps } from './table-cell-popover-trigger/props'
-
-export { TableColumnPopoverRootElement } from './table-column-popover-root/element.gen'
-export { defaultTableColumnPopoverRootProps } from './table-column-popover-root/props'
-export type { TableColumnPopoverRootProps } from './table-column-popover-root/props'
-
-export { TableColumnPopoverTriggerElement } from './table-column-popover-trigger/element.gen'
-export { defaultTableColumnPopoverTriggerProps } from './table-column-popover-trigger/props'
-export type { TableColumnPopoverTriggerProps } from './table-column-popover-trigger/props'
+export { TableHandleColumnTriggerElement } from './table-handle-column-trigger/element.gen'
+export { defaultTableHandleColumnTriggerProps } from './table-handle-column-trigger/props'
+export type { TableHandleColumnTriggerProps } from './table-handle-column-trigger/props'
 
 export { TableHandlePopoverContentElement } from './table-handle-popover-content/element.gen'
 export { defaultTableHandlePopoverContentProps } from './table-handle-popover-content/props'
@@ -22,10 +14,14 @@ export { TableHandlePopoverItemElement } from './table-handle-popover-item/eleme
 export { defaultTableHandlePopoverItemProps } from './table-handle-popover-item/props'
 export type { TableHandlePopoverItemProps } from './table-handle-popover-item/props'
 
-export { TableRowPopoverRootElement } from './table-row-popover-root/element.gen'
-export { defaultTableRowPopoverRootProps } from './table-row-popover-root/props'
-export type { TableRowPopoverRootProps } from './table-row-popover-root/props'
+export { TableHandleRootElement } from './table-handle-root/element.gen'
+export { defaultTableHandleRootProps } from './table-handle-root/props'
+export type { TableHandleRootProps } from './table-handle-root/props'
 
-export { TableRowPopoverTriggerElement } from './table-row-popover-trigger/element.gen'
-export { defaultTableRowPopoverTriggerProps } from './table-row-popover-trigger/props'
-export type { TableRowPopoverTriggerProps } from './table-row-popover-trigger/props'
+export { TableHandleRowRootElement } from './table-handle-row-root/element.gen'
+export { defaultTableHandleRowRootProps } from './table-handle-row-root/props'
+export type { TableHandleRowRootProps } from './table-handle-row-root/props'
+
+export { TableHandleRowTriggerElement } from './table-handle-row-trigger/element.gen'
+export { defaultTableHandleRowTriggerProps } from './table-handle-row-trigger/props'
+export type { TableHandleRowTriggerProps } from './table-handle-row-trigger/props'

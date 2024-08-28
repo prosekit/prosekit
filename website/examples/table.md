@@ -13,9 +13,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 <<< @/../playground/examples/react/table/editor.tsx
 <<< @/../playground/examples/react/table/extension.ts
-<<< @/../playground/examples/react/table/table-cell-handle.tsx
-<<< @/../playground/examples/react/table/table-column-handle.tsx
-<<< @/../playground/examples/react/table/table-row-handle.tsx
+<<< @/../playground/examples/react/table/table-handle.tsx
 
 :::
 

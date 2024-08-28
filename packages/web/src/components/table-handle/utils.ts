@@ -1,97 +1,93 @@
-import { findParentNode } from '@prosekit/core'
-import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 import { cellAround, TableMap } from 'prosemirror-tables'
 
-import type { CellAxisWithPos } from './context'
-
-export function domCellAround(target: EventTarget | null): HTMLElement | null {
-  while (
-    target &&
-    target instanceof HTMLElement &&
-    target.nodeName != 'TD' &&
-    target.nodeName != 'TH'
-  )
-    target = target.classList.contains('ProseMirror') ? null : target.parentNode
-  return target as HTMLElement
+export interface HoveringCellInfo {
+  rowIndex: number
+  colIndex: number
+  cellPos: number
+  rowFirstCellPos: number
+  colFirstCellPos: number
 }
 
-export function getCellAxisByMouseEvent(
+export function isHoveringCellInfoEqual(
+  a?: HoveringCellInfo | null,
+  b?: HoveringCellInfo | null,
+) {
+  if (!a && !b) return true
+  if (!a || !b) return false
+  return (
+    a.rowIndex === b.rowIndex &&
+    a.colIndex === b.colIndex &&
+    a.cellPos === b.cellPos &&
+    a.rowFirstCellPos === b.rowFirstCellPos &&
+    a.colFirstCellPos === b.colFirstCellPos
+  )
+}
+
+/**
+ * Copied from https://github.com/ProseMirror/prosemirror-tables/blob/v1.5.0/src/columnresizing.ts#L256
+ *
+ * @internal
+ */
+function domCellAround(target: HTMLElement | null): HTMLElement | null {
+  while (target && target.nodeName != 'TD' && target.nodeName != 'TH') {
+    target = target.classList?.contains('ProseMirror')
+      ? null
+      : (target.parentNode as HTMLElement | null)
+  }
+  return target
+}
+
+export function getHoveringCell(
   view: EditorView,
   event: MouseEvent,
-): CellAxisWithPos | null {
-  const domCell = domCellAround(event.target)
+): HoveringCellInfo | undefined {
+  const domCell = domCellAround(event.target as HTMLElement | null)
+  if (!domCell) return
 
-  if (!domCell) {
-    return null
-  }
-
-  const domCellRect = domCell.getBoundingClientRect()
-
-  /**
-   * `+1`  Ensure that the coordinates are within the selected cell,
-   *  otherwise `Prosemirror` may mistakenly identify it as being in the previous cell.
-   * */
-  return getCellAxisByCoords(view, {
-    left: domCellRect.left + 1,
-    top: domCellRect.top + 1,
+  const { left, top, width, height } = domCell.getBoundingClientRect()
+  const eventPos = view.posAtCoords({
+    // Use the center coordinates of the cell to ensure we're within the
+    // selected cell. This prevents potential issues when the mouse is on the
+    // border of two cells.
+    left: left + width / 2,
+    top: top + height / 2,
   })
-}
+  if (!eventPos) return
 
-export function getCellAxisByCoords(
-  view: EditorView,
-  coords: { left: number; top: number },
-): CellAxisWithPos | null {
-  const cellPos = view.posAtCoords(coords)
+  const $cellPos = cellAround(view.state.doc.resolve(eventPos.pos))
+  if (!$cellPos) return
 
-  if (!cellPos) {
-    return null
+  const map = TableMap.get($cellPos.node(-1))
+  const tableStart = $cellPos.start(-1)
+  const cellRect = map.findCell($cellPos.pos - tableStart)
+  const rowIndex = cellRect.top
+  const colIndex = cellRect.left
+
+  return {
+    rowIndex,
+    colIndex,
+    cellPos: $cellPos.pos,
+    rowFirstCellPos: getCellPos(map, tableStart, rowIndex, 0),
+    colFirstCellPos: getCellPos(map, tableStart, 0, colIndex),
   }
-
-  const $cell = cellAround(view.state.doc.resolve(cellPos.pos))
-
-  if (!$cell) {
-    return null
-  }
-
-  const map = TableMap.get($cell.node(-1))
-  const start = $cell.start(-1)
-  const rect = map.findCell($cell.pos - start)
-  const { left: col, top: row } = rect
-
-  return { col, row, $cell }
 }
 
-export function columnFirstCellPos(
-  table: ProseMirrorNode,
-  tablePos: number,
-  index: number,
+function getCellPos(
+  map: TableMap,
+  tableStart: number,
+  rowIndex: number,
+  colIndex: number,
 ) {
-  const map = TableMap.get(table)
-  const cellIndex = getCellIndex(map, 0, index)
+  const cellIndex = getCellIndex(map, rowIndex, colIndex)
   const posInTable = map.map[cellIndex]
-  return tablePos + posInTable + 1
+  return tableStart + posInTable
 }
 
-export function rowFirstCellPos(
-  table: ProseMirrorNode,
-  tablePos: number,
-  index: number,
-) {
-  const map = TableMap.get(table)
-  const cellIndex = getCellIndex(map, index, 0)
-  const posInTable = map.map[cellIndex]
-  return tablePos + posInTable + 1
-}
-
-export function getCellIndex(
+function getCellIndex(
   map: TableMap,
   rowIndex: number,
   colIndex: number,
 ): number {
   return map.width * rowIndex + colIndex
-}
-
-export function findTable($pos: ResolvedPos) {
-  return findParentNode((node) => node.type.spec.tableRole === 'table', $pos)
 }

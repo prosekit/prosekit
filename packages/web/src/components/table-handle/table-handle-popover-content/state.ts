@@ -1,4 +1,5 @@
 import {
+  createComputed,
   createSignal,
   mapSignals,
   useEffect,
@@ -12,7 +13,7 @@ import {
   type MenuContentProps,
 } from '@aria-ui/menu'
 
-import { openContext } from '../context'
+import { tableHandleRootContext } from '../context'
 
 import type { TableHandlePopoverContentProps } from './props'
 
@@ -20,7 +21,8 @@ export function useTableHandlePopoverContent(
   host: ConnectableElement,
   state: SignalState<TableHandlePopoverContentProps>,
 ) {
-  const open = openContext.consume(host)
+  const rootContext = tableHandleRootContext.consume(host)
+  const open = createComputed(() => !!rootContext.get())
   const onKeydownHandlerAdd = useKeyboardHandler(host, open)
 
   const menuContentProps: SignalState<MenuContentProps> = {

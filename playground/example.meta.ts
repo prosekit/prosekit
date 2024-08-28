@@ -407,15 +407,7 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "table-cell-handle.tsx",
-          "hidden": false
-        },
-        {
-          "path": "table-column-handle.tsx",
-          "hidden": false
-        },
-        {
-          "path": "table-row-handle.tsx",
+          "path": "table-handle.tsx",
           "hidden": false
         }
       ]

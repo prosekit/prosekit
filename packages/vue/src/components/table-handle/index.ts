@@ -1,15 +1,13 @@
-export { TableCellPopoverRoot } from './table-cell-popover-root.gen'
+export { TableHandleColumnRoot } from './table-handle-column-root.gen'
 
-export { TableCellPopoverTrigger } from './table-cell-popover-trigger.gen'
-
-export { TableColumnPopoverRoot } from './table-column-popover-root.gen'
-
-export { TableColumnPopoverTrigger } from './table-column-popover-trigger.gen'
+export { TableHandleColumnTrigger } from './table-handle-column-trigger.gen'
 
 export { TableHandlePopoverContent } from './table-handle-popover-content.gen'
 
 export { TableHandlePopoverItem } from './table-handle-popover-item.gen'
 
-export { TableRowPopoverRoot } from './table-row-popover-root.gen'
+export { TableHandleRoot } from './table-handle-root.gen'
 
-export { TableRowPopoverTrigger } from './table-row-popover-trigger.gen'
+export { TableHandleRowRoot } from './table-handle-row-root.gen'
+
+export { TableHandleRowTrigger } from './table-handle-row-trigger.gen'

@@ -1,10 +1,10 @@
-export { TableHandleColumnRootElement } from './table-handle-column-root/element.gen'
-export { defaultTableHandleColumnRootProps } from './table-handle-column-root/props'
-export type { TableHandleColumnRootProps } from './table-handle-column-root/props'
-
 export { TableColumnPopoverTriggerElement } from './table-column-popover-trigger/element.gen'
 export { defaultTableColumnPopoverTriggerProps } from './table-column-popover-trigger/props'
 export type { TableColumnPopoverTriggerProps } from './table-column-popover-trigger/props'
+
+export { TableHandleColumnRootElement } from './table-handle-column-root/element.gen'
+export { defaultTableHandleColumnRootProps } from './table-handle-column-root/props'
+export type { TableHandleColumnRootProps } from './table-handle-column-root/props'
 
 export { TableHandlePopoverContentElement } from './table-handle-popover-content/element.gen'
 export { defaultTableHandlePopoverContentProps } from './table-handle-popover-content/props'

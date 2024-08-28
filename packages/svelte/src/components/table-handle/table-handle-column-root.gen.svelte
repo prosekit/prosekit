@@ -15,7 +15,7 @@ $: {
 </script>
 
 <ClientUpdate>
-  <prosekit-table-column-popover-root {...attributes} bind:this={element}>
+  <prosekit-table-handle-column-root {...attributes} bind:this={element}>
     <slot />
-  </prosekit-table-column-popover-root>
+  </prosekit-table-handle-column-root>
 </ClientUpdate>

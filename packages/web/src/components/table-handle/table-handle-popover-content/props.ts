@@ -18,7 +18,7 @@ export interface TableHandlePopoverContentProps
 
 export const defaultTableHandlePopoverContentProps = Object.freeze({
   ...defaultMenuContentProps,
-  placement: 'bottom-start',
+  placement: 'right-start',
   offset: { mainAxis: -4, crossAxis: 4 },
   editor: null,
 } satisfies TableHandlePopoverContentProps)

@@ -1,4 +1,4 @@
-export { TableColumnPopoverTriggerElement as TableColumnPopoverTrigger } from '@prosekit/web/table-handle'
+export { TableHandleColumnTriggerElement as TableHandleColumnTrigger } from '@prosekit/web/table-handle'
 
 export { TableHandleColumnRootElement as TableHandleColumnRoot } from '@prosekit/web/table-handle'
 

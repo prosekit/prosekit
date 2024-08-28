@@ -5,14 +5,6 @@ import type { HoveringCellInfo } from './utils'
 /**
  * @internal
  */
-export const openContext = createContext<boolean>(
-  'prosekit-table-cell-popover-open-context',
-  false,
-)
-
-/**
- * @internal
- */
 export type TableHandleRootContext = HoveringCellInfo | null
 
 /**

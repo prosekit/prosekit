@@ -11,7 +11,7 @@ import { defaultMenuRootProps, useMenuRoot } from '@aria-ui/menu'
 import { useOverlayPositionerState } from '@aria-ui/overlay'
 import { usePresence } from '@aria-ui/presence'
 
-import { openContext, tableHandleRootContext } from '../context'
+import { tableHandleRootContext } from '../context'
 
 import type { TableHandleColumnRootProps } from './props'
 
@@ -37,6 +37,7 @@ export function useTableHandleColumnRoot(
   const contentOpen = createSignal(false)
 
   // Close the menu when the hovering element is changed
+  // TODO: add a delay
   useEffect(host, () => {
     referenceCell.get()
     contentOpen.set(false)
@@ -49,8 +50,6 @@ export function useTableHandleColumnRoot(
   const presence = createComputed(() => !!referenceCell.get())
   useAttribute(host, 'data-state', () => (presence.get() ? 'open' : 'closed'))
   usePresence(host, presence)
-
-  openContext.provide(host, presence)
 
   useMenuRoot(host, {
     ...mapSignals(defaultMenuRootProps),

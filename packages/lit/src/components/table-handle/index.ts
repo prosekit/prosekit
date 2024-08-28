@@ -6,6 +6,8 @@ export { TableHandlePopoverContentElement as TableHandlePopoverContent } from '@
 
 export { TableHandlePopoverItemElement as TableHandlePopoverItem } from '@prosekit/web/table-handle'
 
+export { TableHandleRootElement as TableHandleRoot } from '@prosekit/web/table-handle'
+
 export { TableRowPopoverRootElement as TableRowPopoverRoot } from '@prosekit/web/table-handle'
 
 export { TableRowPopoverTriggerElement as TableRowPopoverTrigger } from '@prosekit/web/table-handle'

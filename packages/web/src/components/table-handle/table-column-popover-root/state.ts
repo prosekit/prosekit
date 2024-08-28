@@ -7,7 +7,7 @@ import {
   type SignalState,
   useAttribute,
 } from '@aria-ui/core'
-import { useMenuRoot, defaultMenuRootProps } from '@aria-ui/menu'
+import { defaultMenuRootProps, useMenuRoot } from '@aria-ui/menu'
 import { useOverlayPositionerState } from '@aria-ui/overlay'
 import { usePresence } from '@aria-ui/presence'
 import type { VirtualElement } from '@floating-ui/dom'
@@ -22,8 +22,8 @@ import {
 } from '../context'
 
 import {
-  type ElementHoverHandler,
   defineElementHoverHandler,
+  type ElementHoverHandler,
 } from './column-pointer'
 import type { TableColumnPopoverRootProps } from './props'
 

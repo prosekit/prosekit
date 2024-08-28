@@ -68,11 +68,27 @@ export const tableRowPopoverContext = createContext<TableRowPopoverContext>(
   },
 )
 
-
 /**
  * @internal
  */
 export const openContext = createContext<boolean>(
   'prosekit-table-cell-popover-open-context',
   false,
+)
+
+/**
+ * @internal
+ */
+export interface TableHandleRootContext {
+  cellAxis?: CellAxisWithPos | null
+}
+
+/**
+ * @internal
+ */
+export const tableHandleRootContext = createContext<TableHandleRootContext>(
+  'prosekit-table-handle-root-context',
+  {
+    cellAxis: null,
+  },
 )

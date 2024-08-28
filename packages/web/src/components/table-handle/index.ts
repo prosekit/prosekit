@@ -14,6 +14,10 @@ export { TableHandlePopoverItemElement } from './table-handle-popover-item/eleme
 export { defaultTableHandlePopoverItemProps } from './table-handle-popover-item/props'
 export type { TableHandlePopoverItemProps } from './table-handle-popover-item/props'
 
+export { TableHandleRootElement } from './table-handle-root/element.gen'
+export { defaultTableHandleRootProps } from './table-handle-root/props'
+export type { TableHandleRootProps } from './table-handle-root/props'
+
 export { TableRowPopoverRootElement } from './table-row-popover-root/element.gen'
 export { defaultTableRowPopoverRootProps } from './table-row-popover-root/props'
 export type { TableRowPopoverRootProps } from './table-row-popover-root/props'

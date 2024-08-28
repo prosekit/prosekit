@@ -30,7 +30,7 @@ export function useTableColumnPopoverRoot(
     if (!cellAxis || !view) return null
     const table = findTable(cellAxis.$cell)
     if (!table) return null
-    const pos = getColumnFirstCellPos(table.node, table.pos, cellAxis.row)
+    const pos = getColumnFirstCellPos(table.node, table.pos, cellAxis.col)
     return view.nodeDOM(pos) as HTMLElement | null
   })
 

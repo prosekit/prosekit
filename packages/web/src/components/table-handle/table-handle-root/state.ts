@@ -76,7 +76,7 @@ export function defineElementHoverHandler(
   return union(
     // TODO: change to pointerenter
     defineDOMEventHandler('pointermove', throttle(handlePointerEvent, 200)),
-    defineDOMEventHandler('pointerout', handlePointerEvent),
+    defineDOMEventHandler('pointerover', handlePointerEvent),
     defineDOMEventHandler('keypress', () => handler()),
   )
 }

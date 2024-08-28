@@ -39,7 +39,7 @@ export function useTableHandleRowRoot(
   // Close the menu when the hovering element is changed
   // TODO: add a delay
   useEffect(host, () => {
-    referenceCell.get()
+    rowFirstCellPos.get()
     contentOpen.set(false)
   })
 

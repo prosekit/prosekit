@@ -65,8 +65,6 @@ var THEMES = {
   DROP_CURSOR: "transition-all bg-blue-500",
   BLOCK_HANDLE:
     "flex items-center box-border justify-center my-[0.5em] h-[1.5em] w-[1.2em] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 transition [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
-  TABLE_CELL_HANDLE:
-    "flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 -translate-x-6 [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
   TABLE_COLUMN_HANDLE:
     "flex items-center box-border justify-center h-[1.2em] w-[1.5em] bg-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 translate-y-3 border border-zinc-200 dark:border-zinc-800 border-solid [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
   TABLE_ROW_HANDLE:
@@ -122,9 +120,8 @@ var THEMES = {
   ICON_ARROW_LEFT: "i-lucide-arrow-left h-5 w-5",
   ICON_ARROW_RIGHT: "i-lucide-arrow-right h-5 w-5",
   ICON_CHEVRON_RIGHT: "i-lucide-chevron-right h-5 w-5",
-  ICON_TABLE_CELL_HANDLE: "i-lucide-menu h-5 w-5",
   ICON_TABLE_COLUMN_HANDLE: "i-lucide-grip-horizontal h-5 w-5",
-  ICON_TABLE_ROOT_HANDLE: "i-lucide-grip h-3 w-3",
+  ICON_TABLE_ROW_HANDLE: "i-lucide-grip-vertical h-5 w-5",
 };
 function replaceThemes(code) {
   return replaceThemesWith(code, THEMES);

@@ -5,7 +5,7 @@ import {
 } from '@aria-ui/core'
 import { useMenuTrigger } from '@aria-ui/menu'
 
-import { tableRowPopoverContext } from '../context'
+import { tableHandleRootContext } from '../context'
 
 import type { TableRowPopoverTriggerProps } from './props'
 
@@ -15,13 +15,13 @@ export function useTableRowPopoverTrigger(
 ) {
   useMenuTrigger(host)
 
-  const context = tableRowPopoverContext.consume(host)
+  const context = tableHandleRootContext.consume(host)
 
   useEventListener(host, 'pointerdown', () => {
     const editor = state.editor.get()
     if (!editor) return
-    const { cellAxis, table } = context.get()
-    if (!cellAxis || !table) return
+    const { cellAxis } = context.get()
+    if (!cellAxis) return
     editor.commands.selectTableRow({ head: cellAxis.$cell.pos })
   })
 }

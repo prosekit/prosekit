@@ -17,18 +17,6 @@ export interface TableCellPopoverContext {
   cellSelection: CellSelection | null
 }
 
-/**
- * @internal
- */
-export interface TableColumnPopoverContext
-  extends Required<TableHandlePopoverContext> {}
-
-/**
- * @internal
- */
-export interface TableRowPopoverContext
-  extends Required<TableHandlePopoverContext> {}
-
 export interface TableHandlePopoverContext {
   table: FindParentNodeResult | null
   cellAxis?: CellAxisWithPos | null
@@ -42,29 +30,6 @@ export const tableCellPopoverContext = createContext<TableCellPopoverContext>(
   {
     cellAxis: null,
     cellSelection: null,
-  },
-)
-
-/**
- * @internal
- */
-export const tableColumnPopoverContext =
-  createContext<TableColumnPopoverContext>(
-    'prosekit-table-column-popover-context',
-    {
-      cellAxis: null,
-      table: null,
-    },
-  )
-
-/**
- * @internal
- */
-export const tableRowPopoverContext = createContext<TableRowPopoverContext>(
-  'prosekit-table-row-popover-context',
-  {
-    cellAxis: null,
-    table: null,
   },
 )
 

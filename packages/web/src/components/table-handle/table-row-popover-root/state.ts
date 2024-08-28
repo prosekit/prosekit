@@ -11,21 +11,25 @@ import { defaultMenuRootProps, useMenuRoot } from '@aria-ui/menu'
 import { useOverlayPositionerState } from '@aria-ui/overlay'
 import { usePresence } from '@aria-ui/presence'
 import type { VirtualElement } from '@floating-ui/dom'
-import { type Editor } from '@prosekit/core'
+import {
+  defineDOMEventHandler,
+  type Editor,
+  type FindParentNodeResult,
+  union,
+} from '@prosekit/core'
 import { type ProseMirrorNode } from '@prosekit/pm/model'
+import { type EditorView } from '@prosekit/pm/view'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
+import { throttle } from '../../../utils/throttle'
+import { type CellAxisWithPos, openContext } from '../context'
 import {
-  openContext,
-  tableRowPopoverContext,
-  type TableRowPopoverContext,
-} from '../context'
+  findTable,
+  getCellAxisByMouseEvent,
+  getRowFirstCellPos,
+} from '../utils'
 
 import type { TableRowPopoverRootProps } from './props'
-import {
-  defineElementHoverHandler,
-  type ElementHoverHandler,
-} from './row-pointer'
 
 export function useTableRowPopoverRoot(
   host: ConnectableElement,
@@ -36,19 +40,11 @@ export function useTableRowPopoverRoot(
   const reference = createSignal<VirtualElement | null>(null)
   const contentOpen = createSignal(false)
 
-  const context = createSignal<TableRowPopoverContext>({
-    cellAxis: null,
-    table: null,
-  })
-
-  tableRowPopoverContext.provide(host, context)
-
   useOverlayPositionerState(host, overlayState, { reference })
 
-  useHoverExtension(host, editor, (referenceValue, table, cellAxis) => {
+  useHoverExtension(host, editor, (referenceValue) => {
     reference.set(referenceValue)
     contentOpen.set(false)
-    context.set({ table, cellAxis })
   })
 
   const presence = createComputed(() => !!reference.get())
@@ -83,4 +79,30 @@ function useHoverExtension(
   })
 
   useEditorExtension(host, editor, extension)
+}
+
+type ElementHoverHandler = (
+  reference: VirtualElement | null,
+  table: FindParentNodeResult | null,
+  cellAxis: CellAxisWithPos | null,
+) => void
+
+function defineElementHoverHandler(handler: ElementHoverHandler) {
+  const handlePointerEvent = (view: EditorView, event: PointerEvent) => {
+    const cellAxis = getCellAxisByMouseEvent(view, event)
+    if (!cellAxis) return handler(null, null, null)
+    const table = findTable(cellAxis?.$cell)
+    if (!table) return handler(null, null, null)
+    const pos = getRowFirstCellPos(table.node, table.pos, cellAxis.row)
+    const columnCellDom = view.nodeDOM(pos) as HTMLElement
+    if (!columnCellDom) return handler(null, null, null)
+
+    return handler(columnCellDom, table, cellAxis)
+  }
+
+  return union(
+    defineDOMEventHandler('pointermove', throttle(handlePointerEvent, 200)),
+    defineDOMEventHandler('pointerout', handlePointerEvent),
+    defineDOMEventHandler('keypress', () => handler(null, null, null)),
+  )
 }

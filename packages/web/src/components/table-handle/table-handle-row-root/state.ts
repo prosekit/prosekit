@@ -13,11 +13,11 @@ import { usePresence } from '@aria-ui/presence'
 
 import { openContext, tableHandleRootContext } from '../context'
 
-import type { TableRowPopoverRootProps } from './props'
+import type { TableHandleRowRootProps } from './props'
 
-export function useTableRowPopoverRoot(
+export function useTableHandleRowRoot(
   host: ConnectableElement,
-  state: SignalState<TableRowPopoverRootProps>,
+  state: SignalState<TableHandleRowRootProps>,
 ) {
   const { editor, ...overlayState } = state
 

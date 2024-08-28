@@ -5,7 +5,7 @@ import {
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-export interface TableRowPopoverRootProps
+export interface TableHandleRowRootProps
   extends Omit<OverlayPositionerProps, 'placement'> {
   /**
    * The ProseKit editor instance.
@@ -22,8 +22,8 @@ export interface TableRowPopoverRootProps
   placement: Placement
 }
 
-export const defaultTableRowPopoverRootProps = Object.freeze({
+export const defaultTableHandleRowRootProps = Object.freeze({
   ...defaultOverlayPositionerProps,
   editor: null,
   placement: 'left',
-}) satisfies TableRowPopoverRootProps
+}) satisfies TableHandleRowRootProps

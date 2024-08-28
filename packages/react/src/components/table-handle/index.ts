@@ -8,6 +8,6 @@ export { TableHandlePopoverItem } from './table-handle-popover-item.gen'
 
 export { TableHandleRoot } from './table-handle-root.gen'
 
-export { TableRowPopoverRoot } from './table-row-popover-root.gen'
+export { TableHandleRowRoot } from './table-handle-row-root.gen'
 
 export { TableRowPopoverTrigger } from './table-row-popover-trigger.gen'

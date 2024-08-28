@@ -6,7 +6,7 @@ import {
   TableHandlePopoverContent,
   TableHandlePopoverItem,
   TableHandleRoot,
-  TableRowPopoverRoot,
+  TableHandleRowRoot,
   TableRowPopoverTrigger,
 } from 'prosekit/react/table-handle'
 
@@ -52,7 +52,7 @@ export function TableHandle() {
           </TableHandlePopoverItem>
         </TableHandlePopoverContent>
       </TableColumnPopoverRoot>
-      <TableRowPopoverRoot className={Themes.TABLE_ROW_HANDLE}>
+      <TableHandleRowRoot className={Themes.TABLE_ROW_HANDLE}>
         <TableRowPopoverTrigger>
           <div className={Themes.ICON_DRAG_HANDLE}></div>
         </TableRowPopoverTrigger>
@@ -86,7 +86,7 @@ export function TableHandle() {
             Delete Row
           </TableHandlePopoverItem>
         </TableHandlePopoverContent>
-      </TableRowPopoverRoot>
+      </TableHandleRowRoot>
     </TableHandleRoot>
   )
 }

@@ -18,9 +18,9 @@ export { TableHandleRootElement } from './table-handle-root/element.gen'
 export { defaultTableHandleRootProps } from './table-handle-root/props'
 export type { TableHandleRootProps } from './table-handle-root/props'
 
-export { TableRowPopoverRootElement } from './table-row-popover-root/element.gen'
-export { defaultTableRowPopoverRootProps } from './table-row-popover-root/props'
-export type { TableRowPopoverRootProps } from './table-row-popover-root/props'
+export { TableHandleRowRootElement } from './table-handle-row-root/element.gen'
+export { defaultTableHandleRowRootProps } from './table-handle-row-root/props'
+export type { TableHandleRowRootProps } from './table-handle-row-root/props'
 
 export { TableRowPopoverTriggerElement } from './table-row-popover-trigger/element.gen'
 export { defaultTableRowPopoverTriggerProps } from './table-row-popover-trigger/props'

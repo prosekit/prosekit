@@ -10,4 +10,4 @@ export { TableHandleRoot } from './table-handle-root.gen'
 
 export { TableHandleRowRoot } from './table-handle-row-root.gen'
 
-export { TableRowPopoverTrigger } from './table-row-popover-trigger.gen'
+export { TableHandleRowTrigger } from './table-row-popover-trigger.gen'

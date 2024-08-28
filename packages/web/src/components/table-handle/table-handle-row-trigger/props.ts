@@ -3,10 +3,10 @@ import type { defineTableCommands } from '@prosekit/extensions/table'
 
 type TableCommandsExtension = ReturnType<typeof defineTableCommands>
 
-export interface TableRowPopoverTriggerProps {
+export interface TableHandleRowTriggerProps {
   editor: Editor<TableCommandsExtension> | null
 }
 
-export const defaultTableRowPopoverTriggerProps = Object.freeze({
+export const defaultTableHandleRowTriggerProps = Object.freeze({
   editor: null,
 })

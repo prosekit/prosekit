@@ -7,7 +7,7 @@ import {
   TableHandlePopoverItem,
   TableHandleRoot,
   TableHandleRowRoot,
-  TableRowPopoverTrigger,
+  TableHandleRowTrigger,
 } from 'prosekit/react/table-handle'
 
 import type { EditorExtension } from './extension'
@@ -53,9 +53,9 @@ export function TableHandle() {
         </TableHandlePopoverContent>
       </TableHandleColumnRoot>
       <TableHandleRowRoot className={Themes.TABLE_ROW_HANDLE}>
-        <TableRowPopoverTrigger>
+        <TableHandleRowTrigger>
           <div className={Themes.ICON_DRAG_HANDLE}></div>
-        </TableRowPopoverTrigger>
+        </TableHandleRowTrigger>
         <TableHandlePopoverContent className={Themes.TABLE_HANDLE_MENU}>
           <TableHandlePopoverItem
             className={Themes.TABLE_CELL_MENU_ITEM}

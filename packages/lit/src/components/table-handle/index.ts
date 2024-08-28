@@ -10,4 +10,4 @@ export { TableHandleRootElement as TableHandleRoot } from '@prosekit/web/table-h
 
 export { TableHandleRowRootElement as TableHandleRowRoot } from '@prosekit/web/table-handle'
 
-export { TableRowPopoverTriggerElement as TableRowPopoverTrigger } from '@prosekit/web/table-handle'
+export { TableHandleRowTriggerElement as TableHandleRowTrigger } from '@prosekit/web/table-handle'

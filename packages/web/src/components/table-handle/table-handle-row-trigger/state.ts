@@ -8,11 +8,11 @@ import { selectTableRow } from '@prosekit/extensions/table'
 
 import { tableHandleRootContext } from '../context'
 
-import type { TableRowPopoverTriggerProps } from './props'
+import type { TableHandleRowTriggerProps } from './props'
 
-export function useTableRowPopoverTrigger(
+export function useTableHandleRowTrigger(
   host: ConnectableElement,
-  state: SignalState<TableRowPopoverTriggerProps>,
+  state: SignalState<TableHandleRowTriggerProps>,
 ) {
   useMenuTrigger(host)
 

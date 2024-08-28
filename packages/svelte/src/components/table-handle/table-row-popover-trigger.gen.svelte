@@ -1,13 +1,13 @@
 <script lang="ts">
 import '@prosekit/web/table-handle'
 
-import { defaultTableRowPopoverTriggerProps } from '@prosekit/web/table-handle'
+import { defaultTableHandleRowTriggerProps } from '@prosekit/web/table-handle'
 import { ClientUpdate } from '../client-update'
 import { useWebComponent } from '../../utils/use-web-component'
 
 let attributes: Record<string, unknown> = {}
 let element: HTMLElement | undefined = undefined
-const handleChange = useWebComponent(defaultTableRowPopoverTriggerProps)
+const handleChange = useWebComponent(defaultTableHandleRowTriggerProps)
 
 $: {
   attributes = handleChange(element, $$props)

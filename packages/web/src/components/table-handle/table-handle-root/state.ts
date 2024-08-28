@@ -1,14 +1,15 @@
 import {
   createSignal,
+  useEffect,
   type ConnectableElement,
   type ReadonlySignal,
   type SignalState,
 } from '@aria-ui/core'
-import { defineDOMEventHandler, union, type Editor } from '@prosekit/core'
+import { defineDOMEventHandler, type Editor } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
-import { throttle } from '../../../utils/throttle'
+import { useEditorTyping } from '../../../hooks/use-editor-typing'
 import {
   tableHandleRootContext,
   type CellAxisWithPos,
@@ -28,29 +29,37 @@ export function useTableHandleRoot(
     cellAxis: null,
   })
 
-  useHoverExtension(host, editor, (cellAxis) => {
-    context.set({ cellAxis })
+  const hoveringCell = useHoveringCell(host, editor)
+  const typing = useEditorTyping(host, editor)
+
+  useEffect(host, () => {
+    const typingValue = typing.get()
+    const hoveringCellValue = hoveringCell.get()
+    context.set({
+      cellAxis: typingValue ? undefined : hoveringCellValue,
+    })
   })
 
   tableHandleRootContext.provide(host, context)
 }
 
-function useHoverExtension(
+function useHoveringCell(
   host: ConnectableElement,
   editor: ReadonlySignal<Editor | null>,
-  handler: (cellAxis?: CellAxisWithPos | undefined) => void,
 ) {
-  let prevCellAxis: CellAxisWithPos | undefined = undefined
+  const hoveringCell = createSignal<CellAxisWithPos | undefined>(undefined)
 
-  const extension = defineElementHoverHandler(
+  const extension = defineCellHoverHandler(
     (cellAxis: CellAxisWithPos | undefined) => {
-      if (isSameCellAxis(prevCellAxis, cellAxis)) return
-      prevCellAxis = cellAxis
-      handler(cellAxis)
+      if (!isSameCellAxis(hoveringCell.peek(), cellAxis)) {
+        hoveringCell.set(cellAxis)
+      }
     },
   )
 
   useEditorExtension(host, editor, extension)
+
+  return hoveringCell
 }
 
 function isSameCellAxis(
@@ -64,19 +73,12 @@ function isSameCellAxis(
   )
 }
 
-export function defineElementHoverHandler(
+export function defineCellHoverHandler(
   handler: (cellAxis?: CellAxisWithPos | undefined) => void,
 ) {
-  const handlePointerEvent = (view: EditorView, event: PointerEvent) => {
+  const pointerHandler = (view: EditorView, event: PointerEvent) => {
     const cellAxis = getCellAxisByMouseEvent(view, event)
-
     return handler(cellAxis)
   }
-
-  return union(
-    // TODO: change to pointerenter
-    defineDOMEventHandler('pointermove', throttle(handlePointerEvent, 200)),
-    defineDOMEventHandler('pointerover', handlePointerEvent),
-    defineDOMEventHandler('keypress', () => handler()),
-  )
+  return defineDOMEventHandler('pointerover', pointerHandler)
 }

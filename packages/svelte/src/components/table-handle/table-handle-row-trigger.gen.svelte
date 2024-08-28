@@ -15,7 +15,7 @@ $: {
 </script>
 
 <ClientUpdate>
-  <prosekit-table-row-popover-trigger {...attributes} bind:this={element}>
+  <prosekit-table-handle-row-trigger {...attributes} bind:this={element}>
     <slot />
-  </prosekit-table-row-popover-trigger>
+  </prosekit-table-handle-row-trigger>
 </ClientUpdate>

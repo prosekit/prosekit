@@ -27,28 +27,28 @@ export function TableHandle() {
             onSelect={editor.commands.addTableColumnBefore}
             disabled={!editor.commands.addTableColumnBefore.canExec()}
           >
-            <div>Insert Left</div>
+            Insert Left
           </TableHandlePopoverItem>
           <TableHandlePopoverItem
             className={Themes.TABLE_CELL_MENU_ITEM}
             onSelect={editor.commands.addTableColumnAfter}
             disabled={!editor.commands.addTableColumnAfter.canExec()}
           >
-            <div>Insert Right</div>
+            Insert Right
           </TableHandlePopoverItem>
           <TableHandlePopoverItem
             className={Themes.TABLE_CELL_MENU_ITEM}
             onSelect={editor.commands.deleteCellSelection}
             disabled={!editor.commands.deleteCellSelection.canExec()}
           >
-            <div>Clear Contents</div>
+            Clear Contents
           </TableHandlePopoverItem>
           <TableHandlePopoverItem
             className={Themes.TABLE_CELL_MENU_ITEM}
             onSelect={editor.commands.deleteTableColumn}
             disabled={!editor.commands.deleteTableColumn.canExec()}
           >
-            <div>Delete Column</div>
+            Delete Column
           </TableHandlePopoverItem>
         </TableHandlePopoverContent>
       </TableColumnPopoverRoot>
@@ -62,28 +62,28 @@ export function TableHandle() {
             onSelect={editor.commands.addTableRowAbove}
             disabled={!editor.commands.addTableRowAbove.canExec()}
           >
-            <div>Insert Above</div>
+            Insert Above
           </TableHandlePopoverItem>
           <TableHandlePopoverItem
             className={Themes.TABLE_CELL_MENU_ITEM}
             onSelect={editor.commands.addTableRowBelow}
             disabled={!editor.commands.addTableRowBelow.canExec()}
           >
-            <div>add row below</div>
+            add row below
           </TableHandlePopoverItem>
           <TableHandlePopoverItem
             className={Themes.TABLE_CELL_MENU_ITEM}
             onSelect={editor.commands.deleteCellSelection}
             disabled={!editor.commands.deleteCellSelection.canExec()}
           >
-            <div>Clear Contents</div>
-          </TableHandlePopoverItem>{' '}
+            Clear Contents
+          </TableHandlePopoverItem>
           <TableHandlePopoverItem
             className={Themes.TABLE_CELL_MENU_ITEM}
             onSelect={editor.commands.deleteTableRow}
             disabled={!editor.commands.deleteTableRow.canExec()}
           >
-            <div>Delete Row</div>
+            Delete Row
           </TableHandlePopoverItem>
         </TableHandlePopoverContent>
       </TableRowPopoverRoot>

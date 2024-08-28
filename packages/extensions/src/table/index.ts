@@ -1,9 +1,17 @@
 export { defineTable, type TableExtension } from './table'
 export {
   defineTableCommands,
-  insertTable,
   exitTable,
+  insertTable,
+  selectTable,
+  selectTableCell,
+  selectTableColumn,
+  selectTableRow,
   type InsertTableOptions,
+  type SelectTableCellOptions,
+  type SelectTableColumnOptions,
+  type SelectTableOptions,
+  type SelectTableRowOptions,
   type TableCommandsExtension,
 } from './table-commands'
 export { defineTablePlugins } from './table-plugins'

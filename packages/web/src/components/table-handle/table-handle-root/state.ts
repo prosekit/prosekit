@@ -3,6 +3,7 @@ import {
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
+  type Signal,
   type SignalState,
 } from '@aria-ui/core'
 import { defineDOMEventHandler, type Editor } from '@prosekit/core'
@@ -10,12 +11,12 @@ import type { EditorView } from '@prosekit/pm/view'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { useEditorTyping } from '../../../hooks/use-editor-typing'
+import { tableHandleRootContext, type TableHandleRootContext } from '../context'
 import {
-  tableHandleRootContext,
-  type CellAxisWithPos,
-  type TableHandleRootContext,
-} from '../context'
-import { getCellAxisByMouseEvent } from '../utils'
+  getHoveringCell,
+  isHoveringCellInfoEqual,
+  type HoveringCellInfo,
+} from '../utils'
 
 import type { TableHandleRootProps } from './props'
 
@@ -25,9 +26,7 @@ export function useTableHandleRoot(
 ) {
   const { editor } = state
 
-  const context = createSignal<TableHandleRootContext>({
-    cellAxis: null,
-  })
+  const context = createSignal<TableHandleRootContext>(null)
 
   const hoveringCell = useHoveringCell(host, editor)
   const typing = useEditorTyping(host, editor)
@@ -35,9 +34,7 @@ export function useTableHandleRoot(
   useEffect(host, () => {
     const typingValue = typing.get()
     const hoveringCellValue = hoveringCell.get()
-    context.set({
-      cellAxis: typingValue ? undefined : hoveringCellValue,
-    })
+    context.set(typingValue ? null : hoveringCellValue)
   })
 
   tableHandleRootContext.provide(host, context)
@@ -46,39 +43,27 @@ export function useTableHandleRoot(
 function useHoveringCell(
   host: ConnectableElement,
   editor: ReadonlySignal<Editor | null>,
-) {
-  const hoveringCell = createSignal<CellAxisWithPos | undefined>(undefined)
+): Signal<HoveringCellInfo | null> {
+  const hoveringCell = createSignal<HoveringCellInfo | null>(null)
 
-  const extension = defineCellHoverHandler(
-    (cellAxis: CellAxisWithPos | undefined) => {
-      if (!isSameCellAxis(hoveringCell.peek(), cellAxis)) {
-        hoveringCell.set(cellAxis)
-      }
-    },
-  )
+  const extension = defineCellHoverHandler((curr: HoveringCellInfo | null) => {
+    const prev = hoveringCell.peek()
+    if (!isHoveringCellInfoEqual(prev, curr)) {
+      hoveringCell.set(curr)
+    }
+  })
 
   useEditorExtension(host, editor, extension)
 
   return hoveringCell
 }
 
-function isSameCellAxis(
-  prevCellAxis: CellAxisWithPos | undefined,
-  cellAxis: CellAxisWithPos | undefined,
-) {
-  return (
-    prevCellAxis?.row === cellAxis?.row &&
-    prevCellAxis?.col === cellAxis?.col &&
-    prevCellAxis?.$cell.pos === cellAxis?.$cell.pos
-  )
-}
-
 export function defineCellHoverHandler(
-  handler: (cellAxis?: CellAxisWithPos | undefined) => void,
+  handler: (hoveringCell: HoveringCellInfo | null) => void,
 ) {
   const pointerHandler = (view: EditorView, event: PointerEvent) => {
-    const cellAxis = getCellAxisByMouseEvent(view, event)
-    return handler(cellAxis)
+    const hoveringCell = getHoveringCell(view, event)
+    return handler(hoveringCell ?? null)
   }
   return defineDOMEventHandler('pointerover', pointerHandler)
 }

@@ -12,7 +12,6 @@ import { useOverlayPositionerState } from '@aria-ui/overlay'
 import { usePresence } from '@aria-ui/presence'
 
 import { openContext, tableHandleRootContext } from '../context'
-import { findTable, getColumnFirstCellPos } from '../utils'
 
 import type { TableColumnPopoverRootProps } from './props'
 
@@ -24,13 +23,14 @@ export function useTableColumnPopoverRoot(
 
   const rootContext = tableHandleRootContext.consume(host)
 
+  const colFirstCellPos = createComputed<number | undefined>(() => {
+    return rootContext.get()?.colFirstCellPos
+  })
+
   const referenceCell = createComputed<HTMLElement | null>(() => {
-    const { cellAxis } = rootContext.get()
+    const pos = colFirstCellPos.get()
     const view = editor.get()?.view
-    if (!cellAxis || !view) return null
-    const table = findTable(cellAxis.$cell)
-    if (!table) return null
-    const pos = getColumnFirstCellPos(table.node, table.pos, cellAxis.col)
+    if (!pos || !view) return null
     return view.nodeDOM(pos) as HTMLElement | null
   })
 

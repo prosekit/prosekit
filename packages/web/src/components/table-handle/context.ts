@@ -1,11 +1,6 @@
 import { createContext } from '@aria-ui/core'
-import type { ResolvedPos } from '@prosekit/pm/model'
 
-export interface CellAxisWithPos {
-  row: number
-  col: number
-  $cell: ResolvedPos
-}
+import type { HoveringCellInfo } from './utils'
 
 /**
  * @internal
@@ -18,16 +13,12 @@ export const openContext = createContext<boolean>(
 /**
  * @internal
  */
-export interface TableHandleRootContext {
-  cellAxis?: CellAxisWithPos | null
-}
+export type TableHandleRootContext = HoveringCellInfo | null
 
 /**
  * @internal
  */
 export const tableHandleRootContext = createContext<TableHandleRootContext>(
   'prosekit-table-handle-root-context',
-  {
-    cellAxis: null,
-  },
+  null,
 )

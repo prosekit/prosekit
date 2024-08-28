@@ -4,6 +4,7 @@ import {
   type SignalState,
 } from '@aria-ui/core'
 import { useMenuTrigger } from '@aria-ui/menu'
+import { selectTableColumn } from '@prosekit/extensions/table'
 
 import { tableHandleRootContext } from '../context'
 
@@ -18,10 +19,9 @@ export function useTableColumnPopoverTrigger(
   const context = tableHandleRootContext.consume(host)
 
   useEventListener(host, 'pointerdown', () => {
-    const editor = state.editor.get()
-    if (!editor) return
-    const { cellAxis } = context.get()
-    if (!cellAxis) return
-    editor.commands.selectTableColumn({ head: cellAxis.$cell.pos })
+    const editor = state.editor.peek()
+    const cellPos = context.peek()?.cellPos
+    if (!editor || !cellPos) return
+    editor.exec(selectTableColumn({ head: cellPos }))
   })
 }

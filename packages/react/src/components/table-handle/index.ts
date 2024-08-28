@@ -1,6 +1,6 @@
-export { TableHandleColumnTrigger } from './table-column-popover-trigger.gen'
-
 export { TableHandleColumnRoot } from './table-handle-column-root.gen'
+
+export { TableHandleColumnTrigger } from './table-handle-column-trigger.gen'
 
 export { TableHandlePopoverContent } from './table-handle-popover-content.gen'
 

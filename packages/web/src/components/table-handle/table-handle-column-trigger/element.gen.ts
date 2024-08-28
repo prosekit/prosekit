@@ -2,11 +2,11 @@ import { ElementBuilder } from '@aria-ui/core'
 
 import { defineCustomElement } from '../../../utils/define-custom-element'
 
-import { defaultTableColumnPopoverTriggerProps, type TableColumnPopoverTriggerProps } from './props'
-import { useTableColumnPopoverTrigger } from './state'
+import { defaultTableHandleColumnTriggerProps, type TableHandleColumnTriggerProps } from './props'
+import { useTableHandleColumnTrigger } from './state'
 
-class TableColumnPopoverTriggerElement extends ElementBuilder<TableColumnPopoverTriggerProps>(useTableColumnPopoverTrigger, defaultTableColumnPopoverTriggerProps) {}
+class TableHandleColumnTriggerElement extends ElementBuilder<TableHandleColumnTriggerProps>(useTableHandleColumnTrigger, defaultTableHandleColumnTriggerProps) {}
 
-defineCustomElement('prosekit-table-column-popover-trigger', TableColumnPopoverTriggerElement)
+defineCustomElement('prosekit-table-handle-column-trigger', TableHandleColumnTriggerElement)
 
-export { TableColumnPopoverTriggerElement }
+export { TableHandleColumnTriggerElement }

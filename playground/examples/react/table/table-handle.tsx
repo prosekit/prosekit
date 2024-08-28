@@ -69,7 +69,7 @@ export function TableHandle() {
             onSelect={editor.commands.addTableRowBelow}
             disabled={!editor.commands.addTableRowBelow.canExec()}
           >
-            add row below
+            Insert Below
           </TableHandlePopoverItem>
           <TableHandlePopoverItem
             className={Themes.TABLE_CELL_MENU_ITEM}

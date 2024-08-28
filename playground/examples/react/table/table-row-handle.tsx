@@ -20,23 +20,21 @@ export function TableRowHandle() {
       <TableHandlePopoverContent className={Themes.TABLE_HANDLE_MENU}>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          onSelect={ editor.commands.addTableRowAbove}
+          onSelect={editor.commands.addTableRowAbove}
           disabled={!editor.commands.addTableRowAbove.canExec()}
         >
           <div>Insert Above</div>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          onSelect={ editor.commands.addTableRowBelow}
+          onSelect={editor.commands.addTableRowBelow}
           disabled={!editor.commands.addTableRowBelow.canExec()}
         >
           <div>add row below</div>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          onSelect={ 
-            editor.commands.deleteCellSelection
-          }
+          onSelect={editor.commands.deleteCellSelection}
           disabled={!editor.commands.deleteCellSelection.canExec()}
         >
           <div>Clear Contents</div>

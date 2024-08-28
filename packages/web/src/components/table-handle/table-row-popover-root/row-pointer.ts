@@ -8,7 +8,11 @@ import { type EditorView } from '@prosekit/pm/view'
 
 import { throttle } from '../../../utils/throttle'
 import type { CellAxisWithPos } from '../context'
-import { findTable, getCellAxisByMouseEvent, getRowFirstCellPos } from '../utils'
+import {
+  findTable,
+  getCellAxisByMouseEvent,
+  getRowFirstCellPos,
+} from '../utils'
 
 export type ElementHoverHandler = (
   reference: VirtualElement | null,

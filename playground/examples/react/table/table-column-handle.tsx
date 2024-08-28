@@ -34,7 +34,7 @@ export function TableColumnHandle() {
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           className={Themes.TABLE_CELL_MENU_ITEM}
-          onSelect={ editor.commands.deleteCellSelection }
+          onSelect={editor.commands.deleteCellSelection}
           disabled={!editor.commands.deleteCellSelection.canExec()}
         >
           <div>Clear Contents</div>

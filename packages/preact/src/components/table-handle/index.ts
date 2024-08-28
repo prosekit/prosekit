@@ -1,7 +1,3 @@
-export { TableCellPopoverRoot } from './table-cell-popover-root.gen'
-
-export { TableCellPopoverTrigger } from './table-cell-popover-trigger.gen'
-
 export { TableColumnPopoverRoot } from './table-column-popover-root.gen'
 
 export { TableColumnPopoverTrigger } from './table-column-popover-trigger.gen'

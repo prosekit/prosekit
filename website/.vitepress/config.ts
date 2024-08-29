@@ -153,6 +153,7 @@ export default defineConfig({
             { text: 'Inline Menu', link: '/components/inline-menu' },
             { text: 'Slash Menu', link: '/components/slash-menu' },
             { text: 'User Menu', link: '/components/user-menu' },
+            { text: 'Block Handle', link: '/components/block-handle' },
             { text: 'Table Handle', link: '/components/table-handle' },
           ],
         },

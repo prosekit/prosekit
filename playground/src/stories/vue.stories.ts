@@ -4,6 +4,7 @@ import component from './vue.astro'
 export default { component }
 
 export const Minimal = { args: { story: 'minimal' } }
+export const BlockHandle = { args: { story: 'block-handle' } }
 export const Bold = { args: { story: 'bold' } }
 export const Code = { args: { story: 'code' } }
 export const CodeBlock = { args: { story: 'code-block' } }

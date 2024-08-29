@@ -19,6 +19,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-block-handle",
+      "framework": "react",
+      "story": "block-handle",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-change-tracking",
       "framework": "react",
       "story": "change-tracking",
@@ -636,6 +655,25 @@ export const exampleMeta = {
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-block-handle",
+      "framework": "vue",
+      "story": "block-handle",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.vue",
           "hidden": false
         }
       ]

@@ -2,6 +2,8 @@
 
 # Examples
 
+- [block-handle](./examples/block-handle)
+
 - [bold](./examples/bold)
 
 - [change-tracking](./examples/change-tracking)

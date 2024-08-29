@@ -3,6 +3,7 @@ import { lazy } from 'react'
 
 export const loaders = {
   'minimal': lazy(() => import('./minimal/editor')),
+  'block-handle': lazy(() => import('./block-handle/editor')),
   'change-tracking': lazy(() => import('./change-tracking/editor')),
   'code-block': lazy(() => import('./code-block/editor')),
   'code-block-themes': lazy(() => import('./code-block-themes/editor')),

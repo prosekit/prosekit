@@ -3,6 +3,7 @@ import { defineAsyncComponent } from 'vue'
 
 export const loaders = {
   'minimal': defineAsyncComponent(() => import('./minimal/editor.vue')),
+  'block-handle': defineAsyncComponent(() => import('./block-handle/editor.vue')),
   'bold': defineAsyncComponent(() => import('./bold/editor.vue')),
   'code': defineAsyncComponent(() => import('./code/editor.vue')),
   'code-block': defineAsyncComponent(() => import('./code-block/editor.vue')),

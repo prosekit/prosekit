@@ -75,6 +75,20 @@ const editor = useEditor<EditorExtension>({ update: true })
     </Button>
 
     <Button
+      :pressed="editor.nodes.codeBlock.isActive()"
+      :disabled="
+        !editor.commands.toggleCodeBlock.canExec({ language: 'javascript' })
+      "
+      tooltip="Code Block"
+      @click="
+        () =>
+          editor.commands.toggleCodeBlock.canExec({ language: 'javascript' })
+      "
+    >
+      <div :class="Themes.ICON_CODE_BLOCK" />
+    </Button>
+
+    <Button
       :pressed="editor.nodes.heading.isActive({ level: 1 })"
       :disabled="!editor.commands.toggleHeading.canExec({ level: 1 })"
       tooltip="Heading 1"

@@ -7,6 +7,7 @@ export const Minimal = { args: { story: 'minimal' } }
 export const ChangeTracking = { args: { story: 'change-tracking' } }
 export const CodeBlock = { args: { story: 'code-block' } }
 export const CodeBlockThemes = { args: { story: 'code-block-themes' } }
+export const Full = { args: { story: 'full' } }
 export const GapCursor = { args: { story: 'gap-cursor' } }
 export const Heading = { args: { story: 'heading' } }
 export const InlineMenu = { args: { story: 'inline-menu' } }

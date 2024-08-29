@@ -587,6 +587,8 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: table-handle.vue
+        hidden: false
   - name: vue-text-align
     framework: vue
     story: text-align

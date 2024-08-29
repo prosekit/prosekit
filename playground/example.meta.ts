@@ -1128,6 +1128,10 @@ export const exampleMeta = {
         {
           "path": "extension.ts",
           "hidden": false
+        },
+        {
+          "path": "table-handle.vue",
+          "hidden": false
         }
       ]
     },

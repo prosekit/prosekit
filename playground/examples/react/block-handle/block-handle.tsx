@@ -1,4 +1,4 @@
-import { Themes } from "@prosekit/themes";
+import { Themes } from '@prosekit/themes'
 import { BlockDragHandle, BlockPopover } from 'prosekit/react/block-handle'
 
 export default function BlockHandle() {

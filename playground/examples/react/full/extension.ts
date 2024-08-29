@@ -6,7 +6,10 @@ import {
 } from 'prosekit/extensions/code-block'
 import { defineMention } from 'prosekit/extensions/mention'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
-import { defineReactNodeView, type ReactNodeViewComponent } from 'prosekit/react'
+import {
+  defineReactNodeView,
+  type ReactNodeViewComponent,
+} from 'prosekit/react'
 
 import CodeBlockView from './code-block-view'
 

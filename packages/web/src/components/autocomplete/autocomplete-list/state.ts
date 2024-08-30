@@ -103,7 +103,6 @@ function useKeyboardHandler(
     const extension = defineDOMEventHandler(
       'keydown',
       (view, event): boolean => {
-        console.log('keydown', event)
         if (view.composing || event.defaultPrevented || !open.get()) {
           return false
         }
@@ -113,17 +112,9 @@ function useKeyboardHandler(
     )
 
     disposeKeydownHandler?.()
-
-    console.log('Adding extension')
-
-    const disposeExtension = editorValue.use(
+    disposeKeydownHandler = editorValue.use(
       withPriority(extension, Priority.highest),
     )
-
-    disposeKeydownHandler = () => {
-      console.log('Removing extension')
-      disposeExtension?.()
-    }
   })
 
   return (keydownHandlerValue) => {

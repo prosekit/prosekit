@@ -23,5 +23,10 @@ export default defineConfig({
   base: 'astrobook',
   vite: {
     plugins: [wasm()],
+    optimizeDeps: {
+      // Ensures that Vite can detect all dependencies that need to be pre-bundled.
+      // This avoids the need for full-page reloads when opening a page.
+      entries: ['examples/**/*.{ts,tsx,vue,svelte}'],
+    },
   },
 })

@@ -1,5 +1,23 @@
 # prosekit
 
+## 0.9.19
+
+### Patch Changes
+
+- [`f3ff15a`](https://github.com/ocavue/prosekit/commit/f3ff15a4837c676a45759f1b467d42b8628a3129) ![](https://prosekit.dev/b/core)
+
+  Add `insertDefaultBlock` command.
+
+- [`f3ff15a`](https://github.com/ocavue/prosekit/commit/f3ff15a4837c676a45759f1b467d42b8628a3129) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Add new components:
+
+  - `BlockHandlePopover`: A popover that appears on the left side of a block when you hover over it.
+  - `BlockHandleAdd`: A button that lets you insert a new block below the one you're hovering over.
+  - `BlockHandleDraggable`: A draggable component that allows to reorder a block.
+
+  Deprecate `BlockPopover` and `BlockDragHandle`.
+
 ## 0.9.18
 
 ### Patch Changes

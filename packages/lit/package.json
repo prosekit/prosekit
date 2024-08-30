@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/lit",
   "type": "module",
-  "version": "0.3.21",
+  "version": "0.3.22",
   "private": false,
   "author": {
     "name": "ocavue",

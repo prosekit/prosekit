@@ -95,60 +95,6 @@ testStory('full', () => {
     })
   })
 
-  test.describe('slash menu', () => {
-    test('slash menu', async ({ page }) => {
-      const editor = await waitForEditor(page)
-
-      const getPopovers = async () => {
-        const locator = page.locator('prosekit-autocomplete-popover')
-        return await locator.all()
-      }
-
-      const getVisiblePopoverCount = async () => {
-        const locators = await getPopovers()
-        let count = 0
-        for (const locator of locators) {
-          if (await locator.isVisible()) {
-            count += 1
-          }
-        }
-        return count
-      }
-
-      await editor.pressSequentially('Hello ')
-      expect(await getVisiblePopoverCount()).toBe(0)
-
-      await editor.pressSequentially('/')
-      expect(await getVisiblePopoverCount()).toBe(1)
-
-      await editor.press('Escape')
-      expect(await getVisiblePopoverCount()).toBe(0)
-    })
-
-    test('list', async ({ page }) => {
-      const editor = await waitForEditor(page)
-
-      const taskList = editor.locator('div[data-list-kind="task"]')
-      const orderedList = editor.locator('div[data-list-kind="ordered"]')
-
-      await expect(taskList).not.toBeVisible()
-      await expect(orderedList).not.toBeVisible()
-
-      await editor.pressSequentially('/task')
-      await editor.press('Enter')
-      await expect(taskList).toBeVisible()
-
-      await editor.press('Backspace')
-      await editor.press('Backspace')
-      await editor.press('Backspace')
-      await editor.press('Backspace')
-      await editor.pressSequentially('Some text ')
-      await editor.pressSequentially('/order')
-      await editor.press('Enter')
-      await expect(orderedList).toBeVisible()
-    })
-  })
-
   test.describe('mark input rules', () => {
     test('bold', async ({ page }) => {
       const editor = await waitForEditor(page)

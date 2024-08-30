@@ -12,12 +12,25 @@ import type { EditorExtension } from './extension'
 export default function SlashMenu() {
   const editor = useEditor<EditorExtension>()
 
-  const handleHeadingInsert = (level: number) => {
-    editor().commands.insertHeading({ level })
+  function isBlockEmpty() {
+    const selection = editor().view.state.selection
+    return selection.empty && selection.$from.parent.content.size === 0
   }
 
-  const handleHeadingConvert = (level: number) => {
-    editor().commands.setHeading({ level })
+  function handleSelectHeading(level: number) {
+    if (isBlockEmpty()) {
+      editor().commands.setHeading({ level })
+    } else {
+      editor().commands.insertHeading({ level })
+    }
+  }
+
+  function handleSelectList(kind: 'task' | 'bullet' | 'ordered' | 'toggle') {
+    if (isBlockEmpty()) {
+      editor().commands.wrapInList({ kind })
+    } else {
+      editor().commands.insertList({ kind })
+    }
   }
 
   return (
@@ -29,27 +42,43 @@ export default function SlashMenu() {
 
         <AutocompleteItem
           class={Themes.AUTOCOMPLETE_MENU_ITEM}
-          onSelect={() => handleHeadingInsert(1)}
+          onSelect={() => handleSelectHeading(1)}
         >
-          Insert Heading 1
+          Heading 1
         </AutocompleteItem>
         <AutocompleteItem
           class={Themes.AUTOCOMPLETE_MENU_ITEM}
-          onSelect={() => handleHeadingInsert(2)}
+          onSelect={() => handleSelectHeading(2)}
         >
-          Insert Heading 2
+          Heading 2
         </AutocompleteItem>
+
         <AutocompleteItem
           class={Themes.AUTOCOMPLETE_MENU_ITEM}
-          onSelect={() => handleHeadingConvert(1)}
+          onSelect={() => handleSelectList('task')}
         >
-          Turn into Heading 1
+          Task list
         </AutocompleteItem>
+
         <AutocompleteItem
           class={Themes.AUTOCOMPLETE_MENU_ITEM}
-          onSelect={() => handleHeadingConvert(2)}
+          onSelect={() => handleSelectList('bullet')}
         >
-          Turn into Heading 2
+          Bullet list
+        </AutocompleteItem>
+
+        <AutocompleteItem
+          class={Themes.AUTOCOMPLETE_MENU_ITEM}
+          onSelect={() => handleSelectList('ordered')}
+        >
+          Ordered list
+        </AutocompleteItem>
+
+        <AutocompleteItem
+          class={Themes.AUTOCOMPLETE_MENU_ITEM}
+          onSelect={() => handleSelectList('toggle')}
+        >
+          Toggle list
         </AutocompleteItem>
       </AutocompleteList>
     </AutocompletePopover>

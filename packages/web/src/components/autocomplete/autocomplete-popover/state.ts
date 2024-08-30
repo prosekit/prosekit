@@ -105,7 +105,7 @@ function useAutocompleteExtension(
       return
     }
 
-    return addAutocompleteExtension(
+    const rule = createAutocompleteRule(
       editorValue,
       regexValue,
 
@@ -114,10 +114,12 @@ function useAutocompleteExtension(
       onDismiss,
       onSubmit,
     )
+    const extension = defineAutocomplete(rule)
+    return editorValue.use(extension)
   })
 }
 
-function addAutocompleteExtension(
+function createAutocompleteRule(
   editor: Editor,
   regex: RegExp,
 
@@ -125,7 +127,7 @@ function addAutocompleteExtension(
   query: Signal<string>,
   onDismiss: Signal<VoidFunction | null>,
   onSubmit: Signal<VoidFunction | null>,
-): VoidFunction {
+) {
   const handleEnter: MatchHandler = (options) => {
     const span = editor.view.dom.querySelector('.prosemirror-prediction-match')
 
@@ -145,13 +147,11 @@ function addAutocompleteExtension(
     onSubmit.set(null)
   }
 
-  const rule = new AutocompleteRule({
+  return new AutocompleteRule({
     regex,
     onEnter: handleEnter,
     onLeave: handleLeave,
   })
-  const extension = defineAutocomplete(rule)
-  return editor.use(extension)
 }
 
 function createKeymapHandler(

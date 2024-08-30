@@ -3,7 +3,7 @@ import { expect, test, type Page } from '@playwright/test'
 import { emptyEditor, testStory, waitForEditor } from './helper'
 
 testStory(['slash-menu', 'full'], () => {
-  test('item', async ({ page }) => {
+  test('Execute command', async ({ page }) => {
     const { editor, menu, itemH1 } = await setup(page)
 
     await editor.focus()
@@ -17,7 +17,7 @@ testStory(['slash-menu', 'full'], () => {
     await expect(editor.locator('h1')).toHaveCount(1)
   })
 
-  test('filter', async ({ page }) => {
+  test('Filter items', async ({ page }) => {
     const { editor, menu, itemH1, itemH2 } = await setup(page)
 
     await editor.focus()
@@ -32,7 +32,7 @@ testStory(['slash-menu', 'full'], () => {
     await expect(itemH2).toBeVisible()
   })
 
-  test('Escape', async ({ page }) => {
+  test('Press Escape to hide the menu', async ({ page }) => {
     const { editor, menu } = await setup(page)
 
     await editor.focus()
@@ -43,6 +43,29 @@ testStory(['slash-menu', 'full'], () => {
     await expect(menu).toBeHidden()
     await editor.pressSequentially('heading')
     await expect(menu).toBeHidden()
+  })
+
+  test('Insert list', async ({ page }) => {
+    const editor = await waitForEditor(page)
+
+    const taskList = editor.locator('div[data-list-kind="task"]')
+    const orderedList = editor.locator('div[data-list-kind="ordered"]')
+
+    await expect(taskList).not.toBeVisible()
+    await expect(orderedList).not.toBeVisible()
+
+    await editor.pressSequentially('/task')
+    await editor.press('Enter')
+    await expect(taskList).toBeVisible()
+
+    await editor.press('Backspace')
+    await editor.press('Backspace')
+    await editor.press('Backspace')
+    await editor.press('Backspace')
+    await editor.pressSequentially('Some text ')
+    await editor.pressSequentially('/order')
+    await editor.press('Enter')
+    await expect(orderedList).toBeVisible()
   })
 })
 

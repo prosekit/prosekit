@@ -1,16 +1,23 @@
 import {
   type ConnectableElement,
+  createSignal,
+  type ReadonlySignal,
   type SignalState,
+  useAttribute,
   useEffect,
   useEventListener,
 } from '@aria-ui/core'
+import type { Editor } from '@prosekit/core'
 import { Fragment, Slice } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
 
-import { blockPopoverContext } from '../context'
+import { blockPopoverContext, type BlockPopoverContext } from '../context'
 
 import type { BlockDragHandleProps } from './props'
 
+/**
+ * @deprecated Use `useBlockHandleDraggable` instead.
+ */
 export function useBlockDragHandle(
   host: ConnectableElement,
   state: SignalState<BlockDragHandleProps>,
@@ -21,9 +28,19 @@ export function useBlockDragHandle(
     host.draggable = true
   })
 
+  usePointerDownHandler(host, context, state.editor)
+  useDraggingPreview(host, context, state.editor)
+  useDataDraggingAttribute(host)
+}
+
+function usePointerDownHandler(
+  host: ConnectableElement,
+  context: ReadonlySignal<BlockPopoverContext>,
+  editor: ReadonlySignal<Editor | null>,
+) {
   useEventListener(host, 'pointerdown', () => {
     const { pos } = context.get() ?? {}
-    const { view } = state.editor.get() ?? {}
+    const { view } = editor.get() ?? {}
 
     if (pos == null || view == null) {
       return
@@ -40,14 +57,22 @@ export function useBlockDragHandle(
       view.focus()
     })
   })
+}
 
+function useDraggingPreview(
+  host: ConnectableElement,
+  context: ReadonlySignal<BlockPopoverContext>,
+  editor: ReadonlySignal<Editor | null>,
+) {
   useEventListener(host, 'dragstart', (event) => {
-    const { pos, element, node } = context.get() ?? {}
-    const { view } = state.editor.get() ?? {}
+    const hoverState = context.get()
+    const { view } = editor.get() ?? {}
 
-    if (pos == null || !element || !node || !view || !event.dataTransfer) {
+    if (!hoverState || !view || !event.dataTransfer) {
       return
     }
+
+    const { element, node } = hoverState
 
     event.dataTransfer.clearData()
     event.dataTransfer.setData('text/html', element.outerHTML)
@@ -59,4 +84,23 @@ export function useBlockDragHandle(
       move: true,
     }
   })
+}
+
+function useDataDraggingAttribute(host: ConnectableElement): void {
+  const dragging = useDragging(host)
+  useAttribute(host, 'data-dragging', () => (dragging.get() ? '' : undefined))
+}
+
+function useDragging(host: ConnectableElement): ReadonlySignal<boolean> {
+  const dragging = createSignal(false)
+
+  useEventListener(host, 'dragstart', () => {
+    dragging.set(true)
+  })
+
+  useEventListener(host, 'dragend', () => {
+    dragging.set(false)
+  })
+
+  return dragging
 }

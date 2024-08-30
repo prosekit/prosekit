@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
-import { BlockDragHandle, BlockPopover } from 'prosekit/vue/block-handle'
+import {
+  BlockHandleAdd,
+  BlockHandleDraggable,
+  BlockHandlePopover,
+} from 'prosekit/vue/block-handle'
 </script>
 
 <template>
-  <BlockPopover :class="Themes.BLOCK_HANDLE">
-    <BlockDragHandle>
+  <BlockHandlePopover :class="Themes.BLOCK_HANDLE_POPOVER">
+    <BlockHandleAdd :class="Themes.BLOCK_HANDLE_ADD">
+      <div :class="Themes.ICON_PLUS" />
+    </BlockHandleAdd>
+    <BlockHandleDraggable :class="Themes.BLOCK_HANDLE_DRAG">
       <div :class="Themes.ICON_DRAG_HANDLE" />
-    </BlockDragHandle>
-  </BlockPopover>
+    </BlockHandleDraggable>
+  </BlockHandlePopover>
 </template>

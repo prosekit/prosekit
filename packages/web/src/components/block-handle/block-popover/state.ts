@@ -2,7 +2,6 @@ import {
   type ConnectableElement,
   type ReadonlySignal,
   type SignalState,
-  createComputed,
   createSignal,
   useAttribute,
   useEffect,
@@ -13,7 +12,11 @@ import type { VirtualElement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
-import { blockPopoverContext, type BlockPopoverContext } from '../context'
+import {
+  type BlockPopoverContext,
+  type HoverState,
+  blockPopoverContext,
+} from '../context'
 
 import {
   type ElementHoverHandler,
@@ -21,6 +24,9 @@ import {
 } from './pointer-move'
 import type { BlockPopoverProps } from './props'
 
+/**
+ * @deprecated Use `useBlockHandlePopover` instead.
+ */
 export function useBlockPopover(
   host: ConnectableElement,
   state: SignalState<BlockPopoverProps>,
@@ -29,27 +35,22 @@ export function useBlockPopover(
   const reference = createSignal<VirtualElement | null>(null)
   useOverlayPositionerState(host, overlayState, { reference })
 
-  const context = createSignal<BlockPopoverContext>({
-    pos: null,
-    node: null,
-    element: null,
-  })
+  const context = createSignal<BlockPopoverContext>(null)
   blockPopoverContext.provide(host, context)
 
   const open = createSignal(false)
 
   useEffect(host, () => {
-    open.set(!!context.get().element)
+    open.set(!!context.get()?.element)
   })
 
-  useHoverExtension(host, editor, (referenceValue, element, node, pos) => {
+  useHoverExtension(host, editor, (referenceValue, hoverState) => {
     reference.set(referenceValue)
-    context.set({ element, node, pos })
+    context.set(hoverState)
   })
 
-  const presence = createComputed(() => !!reference.get())
-  useAttribute(host, 'data-state', () => (presence.get() ? 'open' : 'closed'))
-  usePresence(host, presence)
+  useAttribute(host, 'data-state', () => (open.get() ? 'open' : 'closed'))
+  usePresence(host, open)
 }
 
 function useHoverExtension(
@@ -57,21 +58,22 @@ function useHoverExtension(
   editor: ReadonlySignal<Editor | null>,
   handler: ElementHoverHandler,
 ) {
-  let prevElement: HTMLElement | null = null
-  let prevPos: number | null = null
+  let prevHoverState: HoverState | null = null
 
-  const extension = defineElementHoverHandler(
-    (reference, element, node, pos) => {
-      if (prevElement === element && prevPos === pos) {
-        return
-      }
+  const extension = defineElementHoverHandler((reference, hoverState) => {
+    if (isHoverStateEqual(prevHoverState, hoverState)) {
+      return
+    }
 
-      prevElement = element
-      prevPos = pos
-
-      handler(reference, element, node, pos)
-    },
-  )
+    prevHoverState = hoverState
+    handler(reference, hoverState)
+  })
 
   useEditorExtension(host, editor, extension)
+}
+
+function isHoverStateEqual(a: HoverState | null, b: HoverState | null) {
+  if (!a && !b) return true
+  if (!a || !b) return false
+  return a.element === b.element && a.pos === b.pos && a.node.eq(b.node)
 }

@@ -1,5 +1,8 @@
 import type { Editor } from '@prosekit/core'
 
+/**
+ * @deprecated Use `BlockHandleDraggableProps` instead.
+ */
 export interface BlockDragHandleProps {
   /**
    * The ProseKit editor instance.

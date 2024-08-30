@@ -95,7 +95,7 @@ export const EDITOR_SCROLLING = cn(
 export const EDITOR_CONTENT = cn(
   // SolidJS will override the class name which removes the ProseMirror class, so we add it back.
   'ProseMirror',
-  'box-border min-h-full px-[max(40px,_calc(50%-330px))] py-[24px] outline-none outline-0',
+  'box-border min-h-full px-[max(4rem,_calc(50%-20rem))] py-8 outline-none outline-0',
   '[&_span[data-mention="user"]]:text-blue-500',
   '[&_span[data-mention="tag"]]:text-violet-500',
   '[&_pre]:text-white [&_pre]:bg-zinc-800',
@@ -180,9 +180,17 @@ export const IMAGE_RESIZEALE_HANDLE = cn(
 
 export const DROP_CURSOR = cn('transition-all bg-blue-500')
 
-export const BLOCK_HANDLE = cn(
-  'flex items-center box-border justify-center my-[0.5em] h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 transition',
+export const BLOCK_HANDLE_POPOVER = cn(
+  'flex items-center flex-row box-border justify-center transition py-2',
   PRESENCE_ANIMATE,
+)
+
+export const BLOCK_HANDLE_ADD = cn(
+  'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-secondary rounded text-muted-foreground/50 cursor-pointer',
+)
+
+export const BLOCK_HANDLE_DRAG = cn(
+  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 cursor-grab',
 )
 
 export const TABLE_COLUMN_HANDLE = cn(
@@ -271,6 +279,7 @@ export const ICON_LIST_DEDENT = cn('i-lucide-indent-decrease h-5 w-5')
 export const ICON_CODE_BLOCK = cn('i-lucide-square-code h-5 w-5')
 export const ICON_CORNER_HANDLE = cn('i-lucide-arrow-down-right h-4 w-4')
 export const ICON_DRAG_HANDLE = cn('i-lucide-grip-vertical h-5 w-5')
+export const ICON_PLUS = cn('i-lucide-plus h-5 w-5')
 export const ICON_SEARCH = cn('i-lucide-search h-5 w-5')
 export const ICON_CLOSE = cn('i-lucide-x h-5 w-5')
 export const ICON_ARROW_LEFT = cn('i-lucide-arrow-left h-5 w-5')

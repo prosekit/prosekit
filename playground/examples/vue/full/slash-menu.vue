@@ -11,27 +11,6 @@ import {
 import type { EditorExtension } from './extension'
 
 const editor = useEditor<EditorExtension>()
-
-function isBlockEmpty() {
-  let selection = editor.value.view.state.selection
-  return selection.empty && selection.$from.parent.content.size === 0
-}
-
-function handleSelectHeading(level: number) {
-  if (isBlockEmpty()) {
-    editor.value.commands.setHeading({ level })
-  } else {
-    editor.value.commands.insertHeading({ level })
-  }
-}
-
-function handleSelectList(kind: 'task' | 'bullet' | 'ordered' | 'toggle') {
-  if (isBlockEmpty()) {
-    editor.value.commands.wrapInList({ kind })
-  } else {
-    editor.value.commands.insertList({ kind })
-  }
-}
 </script>
 
 <template>
@@ -43,41 +22,41 @@ function handleSelectList(kind: 'task' | 'bullet' | 'ordered' | 'toggle') {
 
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :on-select="() => handleSelectHeading(1)"
+        :on-select="() => editor.commands.setHeading({ level: 1 })"
       >
         Heading 1
       </AutocompleteItem>
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :on-select="() => handleSelectHeading(2)"
+        :on-select="() => editor.commands.setHeading({ level: 2 })"
       >
         Heading 2
       </AutocompleteItem>
 
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :on-select="() => handleSelectList('task')"
+        :on-select="() => editor.commands.wrapInList({ kind: 'task' })"
       >
         Task list
       </AutocompleteItem>
 
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :on-select="() => handleSelectList('bullet')"
+        :on-select="() => editor.commands.wrapInList({ kind: 'bullet' })"
       >
         Bullet list
       </AutocompleteItem>
 
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :on-select="() => handleSelectList('ordered')"
+        :on-select="() => editor.commands.wrapInList({ kind: 'ordered' })"
       >
         Ordered list
       </AutocompleteItem>
 
       <AutocompleteItem
         :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        :on-select="() => handleSelectList('toggle')"
+        :on-select="() => editor.commands.wrapInList({ kind: 'toggle' })"
       >
         Toggle list
       </AutocompleteItem>

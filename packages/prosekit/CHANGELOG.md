@@ -1,5 +1,32 @@
 # prosekit
 
+## 0.9.18
+
+### Patch Changes
+
+- [`5101cf5`](https://github.com/ocavue/prosekit/commit/5101cf57850abb61cebf1f7967dba39eebfff537) ![](https://prosekit.dev/b/web)
+
+  Add table handles.
+
+- [`80572dd`](https://github.com/ocavue/prosekit/commit/80572dd788a6019d128200487dafdf50264d573e) ![](https://prosekit.dev/b/extensions)
+
+  Add the following command functions to the table extension:
+
+  - `selectTable`
+  - `selectTableCell`
+  - `selectTableColumn`
+  - `selectTableRow`
+  - `addTableColumnBefore`
+  - `addTableColumnAfter`
+  - `addTableRowAbove`
+  - `addTableRowBelow`
+  - `deleteTable`
+  - `deleteTableColumn`
+  - `deleteTableRow`
+  - `deleteCellSelection`
+  - `mergeTableCells`
+  - `splitTableCell`
+
 ## 0.9.17
 
 ### Patch Changes

@@ -99,27 +99,35 @@ function useKeyboardHandler(
 
   useEffect(element, () => {
     const editorValue = editor.get()
-    const keydownHandlerValue = keydownHandler.get()
 
-    if (!editorValue || !keydownHandlerValue) {
+    if (!editorValue) {
       return
     }
 
     const extension = defineDOMEventHandler(
       'keydown',
       (view, event): boolean => {
+        console.log('keydown', event)
         if (view.composing || event.defaultPrevented || !open.get()) {
           return false
         }
-        keydownHandlerValue(event)
+        keydownHandler.peek()?.(event)
         return event.defaultPrevented
       },
     )
 
     disposeKeydownHandler?.()
-    disposeKeydownHandler = editorValue.use(
+
+    console.log('Adding extension')
+
+    const disposeExtension = editorValue.use(
       withPriority(extension, Priority.highest),
     )
+
+    disposeKeydownHandler = () => {
+      console.log('Removing extension')
+      disposeExtension?.()
+    }
   })
 
   return (keydownHandlerValue) => {

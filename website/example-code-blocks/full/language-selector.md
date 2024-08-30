@@ -2,6 +2,16 @@
 
 <FrameworkCodeBlock>
 
+<template v-slot:react>
+
+::: code-group
+
+<<< @/../playground/examples/react/full/language-selector.tsx
+
+:::
+
+</template>
+
 <template v-slot:vue>
 
 ::: code-group

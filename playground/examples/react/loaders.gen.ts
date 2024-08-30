@@ -3,9 +3,11 @@ import { lazy } from 'react'
 
 export const loaders = {
   'minimal': lazy(() => import('./minimal/editor')),
+  'block-handle': lazy(() => import('./block-handle/editor')),
   'change-tracking': lazy(() => import('./change-tracking/editor')),
   'code-block': lazy(() => import('./code-block/editor')),
   'code-block-themes': lazy(() => import('./code-block-themes/editor')),
+  'full': lazy(() => import('./full/editor')),
   'gap-cursor': lazy(() => import('./gap-cursor/editor')),
   'heading': lazy(() => import('./heading/editor')),
   'inline-menu': lazy(() => import('./inline-menu/editor')),

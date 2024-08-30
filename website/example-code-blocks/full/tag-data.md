@@ -2,6 +2,16 @@
 
 <FrameworkCodeBlock>
 
+<template v-slot:react>
+
+::: code-group
+
+<<< @/../playground/examples/react/full/tag-data.ts
+
+:::
+
+</template>
+
 <template v-slot:vue>
 
 ::: code-group

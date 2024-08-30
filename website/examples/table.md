@@ -25,6 +25,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 <<< @/../playground/examples/vue/table/editor.vue
 <<< @/../playground/examples/vue/table/extension.ts
+<<< @/../playground/examples/vue/table/table-handle.vue
 
 :::
 

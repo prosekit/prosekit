@@ -7,6 +7,29 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 <ExamplePreview name="full">
 
+<template v-slot:react>
+
+::: code-group
+
+<<< @/../playground/examples/react/full/editor.tsx
+<<< @/../playground/examples/react/full/extension.ts
+<<< @/../playground/examples/react/full/toolbar.tsx
+<<< @/../playground/examples/react/full/block-handle.tsx
+<<< @/../playground/examples/react/full/code-block-view.tsx
+<<< @/../playground/examples/react/full/image-upload-popover.tsx
+<<< @/../playground/examples/react/full/inline-menu.tsx
+<<< @/../playground/examples/react/full/language-selector.tsx
+<<< @/../playground/examples/react/full/slash-menu.tsx
+<<< @/../playground/examples/react/full/tag-data.ts
+<<< @/../playground/examples/react/full/tag-menu.tsx
+<<< @/../playground/examples/react/full/user-data.ts
+<<< @/../playground/examples/react/full/user-menu.tsx
+<<< @/../playground/examples/react/full/button.tsx
+
+:::
+
+</template>
+
 <template v-slot:vue>
 
 ::: code-group

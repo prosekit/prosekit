@@ -3,6 +3,10 @@
 // prettier-ignore
 export const exampleItems = [
   {
+    "text": "block-handle",
+    "link": "/examples/block-handle"
+  },
+  {
     "text": "bold",
     "link": "/examples/bold"
   },

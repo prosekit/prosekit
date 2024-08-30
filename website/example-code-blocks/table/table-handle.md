@@ -12,4 +12,14 @@
 
 </template>
 
+<template v-slot:vue>
+
+::: code-group
+
+<<< @/../playground/examples/vue/table/table-handle.vue
+
+:::
+
+</template>
+
 </FrameworkCodeBlock>

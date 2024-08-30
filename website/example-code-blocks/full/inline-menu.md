@@ -2,6 +2,16 @@
 
 <FrameworkCodeBlock>
 
+<template v-slot:react>
+
+::: code-group
+
+<<< @/../playground/examples/react/full/inline-menu.tsx
+
+:::
+
+</template>
+
 <template v-slot:vue>
 
 ::: code-group

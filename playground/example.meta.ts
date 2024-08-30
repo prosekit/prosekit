@@ -19,6 +19,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-block-handle",
+      "framework": "react",
+      "story": "block-handle",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-change-tracking",
       "framework": "react",
       "story": "change-tracking",
@@ -95,6 +114,69 @@ export const exampleMeta = {
         },
         {
           "path": "theme-selector.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-full",
+      "framework": "react",
+      "story": "full",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "code-block-view.tsx",
+          "hidden": false
+        },
+        {
+          "path": "image-upload-popover.tsx",
+          "hidden": false
+        },
+        {
+          "path": "inline-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "language-selector.tsx",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "tag-data.ts",
+          "hidden": false
+        },
+        {
+          "path": "tag-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "user-data.ts",
+          "hidden": false
+        },
+        {
+          "path": "user-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
           "hidden": false
         }
       ]
@@ -573,6 +655,25 @@ export const exampleMeta = {
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-block-handle",
+      "framework": "vue",
+      "story": "block-handle",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.vue",
           "hidden": false
         }
       ]
@@ -1064,6 +1165,10 @@ export const exampleMeta = {
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.vue",
           "hidden": false
         }
       ]

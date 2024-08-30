@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/full/extension.ts
+<<< @/../playground/examples/react/block-handle/editor.tsx
 
 :::
 
@@ -16,17 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/full/extension.ts
-
-:::
-
-</template>
-
-<template v-slot:svelte>
-
-::: code-group
-
-<<< @/../playground/examples/svelte/full/extension.ts
+<<< @/../playground/examples/vue/block-handle/editor.vue
 
 :::
 

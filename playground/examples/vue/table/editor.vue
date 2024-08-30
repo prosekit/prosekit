@@ -7,6 +7,7 @@ import { ProseKit } from 'prosekit/vue'
 import { ref, watchPostEffect } from 'vue'
 
 import { defineExtension } from './extension'
+import TableHandle from './table-handle.vue'
 
 const defaultContent = `
 <table><tbody>
@@ -45,6 +46,7 @@ function addTable() {
       <div :class="Themes.EDITOR_SCROLLING">
         <div ref="editorRef" :class="Themes.EDITOR_CONTENT" />
       </div>
+      <TableHandle />
     </div>
   </ProseKit>
 </template>

@@ -128,13 +128,15 @@ testStory('full', () => {
     test('list', async ({ page }) => {
       const editor = await waitForEditor(page)
 
-      expect(await editor.innerHTML()).not.toContain('data-list-kind="task"')
-      expect(await editor.innerHTML()).not.toContain('data-list-kind="ordered"')
+      const taskList = editor.locator('div[data-list-kind="task"]')
+      const orderedList = editor.locator('div[data-list-kind="ordered"]')
+
+      await expect(taskList).not.toBeVisible()
+      await expect(orderedList).not.toBeVisible()
 
       await editor.pressSequentially('/task')
       await editor.press('Enter')
-
-      expect(await editor.innerHTML()).toContain('data-list-kind="task"')
+      await expect(taskList).toBeVisible()
 
       await editor.press('Backspace')
       await editor.press('Backspace')
@@ -143,8 +145,7 @@ testStory('full', () => {
       await editor.pressSequentially('Some text ')
       await editor.pressSequentially('/order')
       await editor.press('Enter')
-
-      expect(await editor.innerHTML()).toContain('data-list-kind="ordered"')
+      await expect(orderedList).toBeVisible()
     })
   })
 

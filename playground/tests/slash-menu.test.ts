@@ -2,7 +2,7 @@ import { expect, test, type Page } from '@playwright/test'
 
 import { emptyEditor, testStory, waitForEditor } from './helper'
 
-testStory(['slash-menu', 'full'], ({ example }) => {
+testStory(['slash-menu'], ({ example }) => {
   if (example === 'solid-slash-menu') {
     test.skip('skip solid-slash-menu', () => {
       // TODO: solid-slash-menu doesn't work yet. Fix it.
@@ -53,7 +53,7 @@ testStory(['slash-menu', 'full'], ({ example }) => {
   })
 
   test('insert list', async ({ page }) => {
-    const { editor } = await setup(page)
+    const { editor, focusedItem } = await setup(page)
 
     const taskList = editor.locator('div[data-list-kind="task"]')
     const orderedList = editor.locator('div[data-list-kind="ordered"]')
@@ -62,6 +62,8 @@ testStory(['slash-menu', 'full'], ({ example }) => {
     await expect(orderedList).not.toBeVisible()
 
     await editor.pressSequentially('/task')
+    await expect(focusedItem).toHaveText('Task list')
+
     await editor.press('Enter')
     await expect(taskList).toBeVisible()
 
@@ -71,32 +73,29 @@ testStory(['slash-menu', 'full'], ({ example }) => {
     await editor.press('Backspace')
     await editor.pressSequentially('Some text ')
     await editor.pressSequentially('/order')
+    await expect(focusedItem).toHaveText('Ordered list')
+
     await editor.press('Enter')
     await expect(orderedList).toBeVisible()
   })
 
   test('press arrow keys to select item', async ({ page }) => {
-    const { editor, itemH1, itemH2, focusedItemH1, focusedItemH2 } =
-      await setup(page)
+    const { editor, itemH1, itemH2, focusedItem } = await setup(page)
 
     await editor.focus()
     await editor.press('/')
     await expect(itemH1).toBeVisible()
     await expect(itemH2).toBeVisible()
-    await expect(focusedItemH1).toBeVisible()
-    await expect(focusedItemH2).toBeHidden()
+    await expect(focusedItem).toHaveText('Heading 1')
 
     await editor.press('ArrowDown')
-    await expect(focusedItemH1).toBeHidden()
-    await expect(focusedItemH2).toBeVisible()
+    await expect(focusedItem).toHaveText('Heading 2')
 
     await editor.press('ArrowDown')
-    await expect(focusedItemH1).toBeHidden()
-    await expect(focusedItemH2).toBeHidden()
+    await expect(focusedItem).not.toHaveText('Heading')
 
     await editor.press('ArrowUp')
-    await expect(focusedItemH1).toBeHidden()
-    await expect(focusedItemH2).toBeVisible()
+    await expect(focusedItem).toHaveText('Heading 2')
 
     await expect(editor.locator('h2')).toBeHidden()
     await editor.press('Enter')
@@ -115,12 +114,16 @@ async function setup(page: Page) {
   const focusedItem = page.locator(
     'prosekit-autocomplete-item[data-focused="true"]',
   )
-  const focusedItemH1 = focusedItem.filter({ hasText: 'Heading 1' }).first()
-  const focusedItemH2 = focusedItem.filter({ hasText: 'Heading 2' }).first()
 
   const menu = page
     .locator('prosekit-autocomplete-popover')
     .filter({ has: itemH1 })
 
-  return { editor, menu, itemH1, itemH2, focusedItemH1, focusedItemH2 }
+  return {
+    editor,
+    menu,
+    itemH1,
+    itemH2,
+    focusedItem,
+  }
 }

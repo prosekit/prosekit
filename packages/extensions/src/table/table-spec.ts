@@ -38,9 +38,8 @@ const specs = tableNodes({
  * @internal
  */
 export function defineTableSpec(): TableSpecExtension {
-  const spec = specs.table
   return defineNodeSpec({
-    ...spec,
+    ...specs['table'],
     content: 'tableRow+',
     name: 'table',
   })
@@ -59,9 +58,8 @@ export type TableRowSpecExtension = Extension<{
  * @internal
  */
 export function defineTableRowSpec(): TableRowSpecExtension {
-  const spec = specs.table_row
   return defineNodeSpec({
-    ...spec,
+    ...specs['table_row'],
     content: '(tableCell | tableHeaderCell)*',
     name: 'tableRow',
   })
@@ -80,9 +78,8 @@ export type TableCellSpecExtension = Extension<{
  * @internal
  */
 export function defineTableCellSpec(): TableCellSpecExtension {
-  const spec = specs.table_cell
   return defineNodeSpec({
-    ...spec,
+    ...specs['table_cell'],
     name: 'tableCell',
     attrs: cellAttrs,
   })
@@ -98,9 +95,8 @@ export type TableHeaderCellSpecExtension = Extension<{
 }>
 
 export function defineTableHeaderCellSpec(): TableHeaderCellSpecExtension {
-  const spec = specs.table_header
   return defineNodeSpec({
-    ...spec,
+    ...specs['table_header'],
     name: 'tableHeaderCell',
     attrs: cellAttrs,
   })

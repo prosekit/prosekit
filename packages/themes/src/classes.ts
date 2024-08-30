@@ -185,11 +185,6 @@ export const BLOCK_HANDLE = cn(
   PRESENCE_ANIMATE,
 )
 
-export const TABLE_CELL_HANDLE = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 -translate-x-6',
-  PRESENCE_ANIMATE,
-)
-
 export const TABLE_COLUMN_HANDLE = cn(
   'flex items-center box-border justify-center h-[1.2em] w-[1.5em] bg-white hover:bg-secondary rounded text-muted-foreground/50 translate-y-3 border border-border border-solid',
   PRESENCE_ANIMATE,
@@ -281,6 +276,5 @@ export const ICON_CLOSE = cn('i-lucide-x h-5 w-5')
 export const ICON_ARROW_LEFT = cn('i-lucide-arrow-left h-5 w-5')
 export const ICON_ARROW_RIGHT = cn('i-lucide-arrow-right h-5 w-5')
 export const ICON_CHEVRON_RIGHT = cn('i-lucide-chevron-right h-5 w-5')
-export const ICON_TABLE_CELL_HANDLE = cn('i-lucide-menu h-5 w-5')
 export const ICON_TABLE_COLUMN_HANDLE = cn('i-lucide-grip-horizontal h-5 w-5')
-export const ICON_TABLE_ROOT_HANDLE = cn('i-lucide-grip h-3 w-3')
+export const ICON_TABLE_ROW_HANDLE = cn('i-lucide-grip-vertical h-5 w-5')

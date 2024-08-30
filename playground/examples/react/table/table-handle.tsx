@@ -54,7 +54,7 @@ export function TableHandle() {
       </TableHandleColumnRoot>
       <TableHandleRowRoot className={Themes.TABLE_ROW_HANDLE}>
         <TableHandleRowTrigger>
-          <div className={Themes.ICON_DRAG_HANDLE}></div>
+          <div className={Themes.ICON_TABLE_ROW_HANDLE}></div>
         </TableHandleRowTrigger>
         <TableHandlePopoverContent className={Themes.TABLE_HANDLE_MENU}>
           <TableHandlePopoverItem

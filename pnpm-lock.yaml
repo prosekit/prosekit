@@ -263,6 +263,9 @@ importers:
       '@vitest/browser':
         specifier: ^2.0.5
         version: 2.0.5(playwright@1.46.1)(typescript@5.5.4)(vitest@2.0.5)
+      just-pick:
+        specifier: ^4.2.0
+        version: 4.2.0
       loro-crdt:
         specifier: ^0.16.7
         version: 0.16.7
@@ -2791,7 +2794,7 @@ packages:
   '@vue/language-core@2.0.29':
     resolution: {integrity: sha512-o2qz9JPjhdoVj8D2+9bDXbaI4q2uZTHQA/dbyZT4Bj1FR9viZxDJnLcKVHfxdn6wsOzRgpqIzJEEmSSvgMvDTQ==}
     peerDependencies:
-      typescript: '*'
+      typescript: 5.5.3
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -4720,6 +4723,9 @@ packages:
 
   just-pascal-case@3.2.0:
     resolution: {integrity: sha512-B0PW5mgJrsGmXdvDLxC2Kdfyie74m+mRO+iCjJ+Es0Jl5kcQwVfB0qb/qiDOCE3m0XUOo1SdZBWzUlNCO9zreg==}
+
+  just-pick@4.2.0:
+    resolution: {integrity: sha512-m6bi0P/gFq5GEQJGYfHFsdod6fogViNIhsKbPBYavqF9SKFfMKPz7kf6ROL2PblkOdaib9vN/wJ7VXhCJre5Hw==}
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -11904,6 +11910,8 @@ snapshots:
   just-omit@2.2.0: {}
 
   just-pascal-case@3.2.0: {}
+
+  just-pick@4.2.0: {}
 
   keyv@4.5.4:
     dependencies:

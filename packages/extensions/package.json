@@ -106,6 +106,7 @@
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
     "@vitest/browser": "^2.0.5",
+    "just-pick": "^4.2.0",
     "loro-crdt": "^0.16.7",
     "loro-prosemirror": "^0.0.7",
     "tsup": "^8.2.4",

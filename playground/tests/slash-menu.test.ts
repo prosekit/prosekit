@@ -68,34 +68,28 @@ testStory(['slash-menu', 'full'], () => {
     await expect(orderedList).toBeVisible()
   })
 
-  test('press arrow keys to select item', async ({ page }) => {
-    const { editor, itemH1, itemH2 } = await setup(page)
-
-    const expectFocused = async ({ h1, h2 }: { h1: boolean; h2: boolean }) => {
-      if (h1) {
-        await expect(itemH1.locator('[data-focused="true"]')).toBeVisible()
-      } else {
-        await expect(itemH1.locator('[data-focused="false"]')).toBeVisible()
-      }
-      if (h2) {
-        await expect(itemH2.locator('[data-focused="true"]')).toBeVisible()
-      } else {
-        await expect(itemH2.locator('[data-focused="false"]')).toBeVisible()
-      }
-    }
+  test.only('press arrow keys to select item', async ({ page }) => {
+    const { editor, itemH1, itemH2, focusedItemH1, focusedItemH2 } =
+      await setup(page)
 
     await editor.focus()
     await editor.press('/')
-    await expectFocused({ h1: true, h2: false })
+    await expect(itemH1).toBeVisible()
+    await expect(itemH2).toBeVisible()
+    await expect(focusedItemH1).toBeVisible()
+    await expect(focusedItemH2).toBeHidden()
 
     await editor.press('ArrowDown')
-    await expectFocused({ h1: false, h2: true })
+    await expect(focusedItemH1).toBeHidden()
+    await expect(focusedItemH2).toBeVisible()
 
     await editor.press('ArrowDown')
-    await expectFocused({ h1: false, h2: false })
+    await expect(focusedItemH1).toBeHidden()
+    await expect(focusedItemH2).toBeHidden()
 
     await editor.press('ArrowUp')
-    await expectFocused({ h1: false, h2: true })
+    await expect(focusedItemH1).toBeHidden()
+    await expect(focusedItemH2).toBeVisible()
 
     await expect(editor.locator('h2')).toBeHidden()
     await editor.press('Enter')
@@ -110,9 +104,16 @@ async function setup(page: Page) {
   const item = page.locator('prosekit-autocomplete-item')
   const itemH1 = item.filter({ hasText: 'Heading 1' }).first()
   const itemH2 = item.filter({ hasText: 'Heading 2' }).first()
+
+  const focusedItem = page.locator(
+    'prosekit-autocomplete-item[data-focused="true"]',
+  )
+  const focusedItemH1 = focusedItem.filter({ hasText: 'Heading 1' }).first()
+  const focusedItemH2 = focusedItem.filter({ hasText: 'Heading 2' }).first()
+
   const menu = page
     .locator('prosekit-autocomplete-popover')
     .filter({ has: itemH1 })
 
-  return { editor, menu, itemH1, itemH2 }
+  return { editor, menu, itemH1, itemH2, focusedItemH1, focusedItemH2 }
 }

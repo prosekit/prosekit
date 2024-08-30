@@ -1,5 +1,4 @@
 import {
-  createSignal,
   mapSignals,
   useEffect,
   type ConnectableElement,
@@ -12,10 +11,10 @@ import {
   type ListboxProps,
 } from '@aria-ui/listbox'
 import {
-  type Editor,
   Priority,
   defineDOMEventHandler,
   withPriority,
+  type Editor,
 } from '@prosekit/core'
 import omit from 'just-omit'
 
@@ -91,10 +90,7 @@ function useKeyboardHandler(
   open: ReadonlySignal<boolean>,
   editor: ReadonlySignal<Editor | null>,
 ): ListboxProps['onKeydownHandlerAdd'] {
-  const keydownHandler = createSignal<((event: KeyboardEvent) => void) | null>(
-    null,
-  )
-
+  let keydownHandler: ((event: KeyboardEvent) => void) | null = null
   let disposeKeydownHandler: VoidFunction | undefined
 
   useEffect(element, () => {
@@ -111,7 +107,7 @@ function useKeyboardHandler(
         if (view.composing || event.defaultPrevented || !open.get()) {
           return false
         }
-        keydownHandler.peek()?.(event)
+        keydownHandler?.(event)
         return event.defaultPrevented
       },
     )
@@ -131,7 +127,7 @@ function useKeyboardHandler(
   })
 
   return (keydownHandlerValue) => {
-    keydownHandler.set(keydownHandlerValue)
+    keydownHandler = keydownHandlerValue
     return () => {
       disposeKeydownHandler?.()
       disposeKeydownHandler = undefined

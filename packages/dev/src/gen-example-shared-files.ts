@@ -24,6 +24,10 @@ const frameworkSharedFiles = [
   'button.tsx',
   'button.svelte',
 
+  'block-handle.tsx',
+  'block-handle.vue',
+  'block-handle.svelte',
+
   'image-upload-popover.tsx',
   'image-upload-popover.vue',
 

@@ -1,5 +1,6 @@
 import { basic, markdown, react, vue } from '@ocavue/eslint-config'
 import unocss from '@unocss/eslint-config/flat'
+import command from 'eslint-plugin-command/config'
 
 /** @type {import('eslint').Linter.Config[]} */
 const configs = [
@@ -11,6 +12,7 @@ const configs = [
     files: ['**/react/**/*.?([cm])[jt]s?(x)'],
   })),
   ...vue(),
+  command(),
   {
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',

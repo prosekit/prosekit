@@ -1,6 +1,10 @@
 export { addMark, type AddMarkOptions } from './commands/add-mark'
 export { expandMark, type ExpandMarkOptions } from './commands/expand-mark'
 export { insertNode, type InsertNodeOptions } from './commands/insert-node'
+export {
+  insertDefaultBlock,
+  type InsertDefaultBlockOptions,
+} from './commands/insert-default-block'
 export { removeMark, type RemoveMarkOptions } from './commands/remove-mark'
 export { removeNode, type RemoveNodeOptions } from './commands/remove-node'
 export {

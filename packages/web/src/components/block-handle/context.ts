@@ -4,20 +4,21 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 /**
  * @internal
  */
-export interface BlockPopoverContext {
-  pos: number | null
-  node: ProseMirrorNode | null
-  element: HTMLElement | null
+export interface HoverState {
+  element: HTMLElement
+  node: ProseMirrorNode
+  pos: number
 }
+
+/**
+ * @internal
+ */
+export type BlockPopoverContext = HoverState | null
 
 /**
  * @internal
  */
 export const blockPopoverContext = createContext<BlockPopoverContext>(
   'prosekit-block-popover-context',
-  {
-    pos: null,
-    node: null,
-    element: null,
-  },
+  null,
 )

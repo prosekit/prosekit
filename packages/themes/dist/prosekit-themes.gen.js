@@ -32,7 +32,7 @@ var THEMES = {
     "box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700 flex flex-col bg-white dark:bg-neutral-900",
   EDITOR_SCROLLING: "relative w-full flex-1 box-border overflow-y-scroll",
   EDITOR_CONTENT:
-    'ProseMirror box-border min-h-full px-[max(40px,_calc(50%-330px))] py-[24px] outline-none outline-0 [&_span[data-mention="user"]]:text-blue-500 [&_span[data-mention="tag"]]:text-violet-500 [&_pre]:text-white [&_pre]:bg-zinc-800',
+    'ProseMirror box-border min-h-full px-[max(4rem,_calc(50%-20rem))] py-8 outline-none outline-0 [&_span[data-mention="user"]]:text-blue-500 [&_span[data-mention="tag"]]:text-violet-500 [&_pre]:text-white [&_pre]:bg-zinc-800',
   INLINE_MENU_MAIN:
     "z-10 box-border border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-neutral-900 shadow-lg [&:not([data-state])]:hidden relative flex min-w-[120px] space-x-1 overflow-auto whitespace-nowrap rounded-md p-1",
   INLINE_MENU_LINK:
@@ -63,8 +63,12 @@ var THEMES = {
   IMAGE_RESIZEALE_HANDLE:
     "absolute bottom-0 right-0 rounded mb-1.5 mr-1.5 p-0.5 transition bg-gray-900/30 active:bg-gray-800/60 text-white/50 active:text-white/80 active:translate-x-0.5 active:translate-y-0.5 opacity-0 hover:opacity-100 [prosekit-resizable:hover_&]:opacity-100 [prosekit-resizable[data-resizing]_&]:opacity-100",
   DROP_CURSOR: "transition-all bg-blue-500",
-  BLOCK_HANDLE:
-    "flex items-center box-border justify-center my-[0.5em] h-[1.5em] w-[1.2em] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 transition [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
+  BLOCK_HANDLE_POPOVER:
+    "flex items-center flex-row box-border justify-center transition py-2 [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
+  BLOCK_HANDLE_ADD:
+    "flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 cursor-pointer",
+  BLOCK_HANDLE_DRAG:
+    "flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 cursor-grab",
   TABLE_COLUMN_HANDLE:
     "flex items-center box-border justify-center h-[1.2em] w-[1.5em] bg-white hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 translate-y-3 border border-zinc-200 dark:border-zinc-800 border-solid [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
   TABLE_ROW_HANDLE:
@@ -115,6 +119,7 @@ var THEMES = {
   ICON_CODE_BLOCK: "i-lucide-square-code h-5 w-5",
   ICON_CORNER_HANDLE: "i-lucide-arrow-down-right h-4 w-4",
   ICON_DRAG_HANDLE: "i-lucide-grip-vertical h-5 w-5",
+  ICON_PLUS: "i-lucide-plus h-5 w-5",
   ICON_SEARCH: "i-lucide-search h-5 w-5",
   ICON_CLOSE: "i-lucide-x h-5 w-5",
   ICON_ARROW_LEFT: "i-lucide-arrow-left h-5 w-5",

@@ -1,15 +1,13 @@
 import type { VirtualElement } from '@floating-ui/dom'
 import { defineDOMEventHandler, union } from '@prosekit/core'
-import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { throttle } from '../../../utils/throttle'
+import type { HoverState } from '../context'
 
 export type ElementHoverHandler = (
   reference: VirtualElement | null,
-  element: HTMLElement | null,
-  node: ProseMirrorNode | null,
-  pos: number | null,
+  hoverState: HoverState | null,
 ) => void
 
 export function defineElementHoverHandler(handler: ElementHoverHandler) {
@@ -22,7 +20,7 @@ export function defineElementHoverHandler(handler: ElementHoverHandler) {
     })?.inside
 
     if (pos == null || pos < 0) {
-      handler(null, null, null, null)
+      handler(null, null)
       return
     }
 
@@ -37,8 +35,8 @@ export function defineElementHoverHandler(handler: ElementHoverHandler) {
       const node = view.state.doc.nodeAt(ancestorPos)
       const element = view.nodeDOM(ancestorPos) as HTMLElement | null
 
-      if (!element) {
-        handler(null, null, null, null)
+      if (!element || !node) {
+        handler(null, null)
         return
       }
 
@@ -69,16 +67,16 @@ export function defineElementHoverHandler(handler: ElementHoverHandler) {
         },
       }
 
-      handler(reference, element, node, ancestorPos)
+      handler(reference, { element, node, pos: ancestorPos })
       return
     }
 
-    handler(element, element, node, pos)
+    handler(element, element && node && { element, node, pos })
   }
 
   return union(
     defineDOMEventHandler('pointermove', throttle(handlePointerEvent, 200)),
     defineDOMEventHandler('pointerout', handlePointerEvent),
-    defineDOMEventHandler('keypress', () => handler(null, null, null, null)),
+    defineDOMEventHandler('keypress', () => handler(null, null)),
   )
 }

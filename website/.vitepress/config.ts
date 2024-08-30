@@ -100,37 +100,40 @@ export default defineConfig({
       '/extensions': [
         {
           text: 'Nodes',
+          /// keep-sorted  { "keys": ["text"] }
           items: [
+            { text: 'CodeBlock', link: '/extensions/code-block' },
             { text: 'Heading', link: '/extensions/heading' },
             { text: 'List', link: '/extensions/list' },
-            { text: 'CodeBlock', link: '/extensions/code-block' },
             { text: 'Mention', link: '/extensions/mention' },
           ],
         },
 
         {
           text: 'Marks',
+          /// keep-sorted  { "keys": ["text"] }
           items: [
             { text: 'Bold', link: '/extensions/bold' },
             { text: 'Italic', link: '/extensions/italic' },
             { text: 'Link', link: '/extensions/link' },
-            { text: 'Underline', link: '/extensions/underline' },
             { text: 'Strike', link: '/extensions/strike' },
+            { text: 'Underline', link: '/extensions/underline' },
           ],
         },
 
         {
           text: 'Functionality',
+          /// keep-sorted  { "keys": ["text"] }
           items: [
-            { text: 'Placeholder', link: '/extensions/placeholder' },
-            { text: 'Text Align', link: '/extensions/text-align' },
-            { text: 'Readonly', link: '/extensions/readonly' },
-            { text: 'Input Rule', link: '/extensions/input-rule' },
+            { text: 'Commit', link: '/extensions/commit' },
             { text: 'Drop Cursor', link: '/extensions/drop-cursor' },
             { text: 'Gap Cursor', link: '/extensions/gap-cursor' },
-            { text: 'Search', link: '/extensions/search' },
-            { text: 'Commit', link: '/extensions/commit' },
+            { text: 'Input Rule', link: '/extensions/input-rule' },
             { text: 'Loro', link: '/extensions/loro' },
+            { text: 'Placeholder', link: '/extensions/placeholder' },
+            { text: 'Readonly', link: '/extensions/readonly' },
+            { text: 'Search', link: '/extensions/search' },
+            { text: 'Text Align', link: '/extensions/text-align' },
             { text: 'Yjs', link: '/extensions/yjs' },
           ],
         },
@@ -147,14 +150,15 @@ export default defineConfig({
         },
         {
           text: 'Components',
+          /// keep-sorted  { "keys": ["text"] }
           items: [
+            { text: 'Block Handle', link: '/components/block-handle' },
             { text: 'Button', link: '/components/button' },
-            { text: 'Toolbar', link: '/components/toolbar' },
             { text: 'Inline Menu', link: '/components/inline-menu' },
             { text: 'Slash Menu', link: '/components/slash-menu' },
-            { text: 'User Menu', link: '/components/user-menu' },
-            { text: 'Block Handle', link: '/components/block-handle' },
             { text: 'Table Handle', link: '/components/table-handle' },
+            { text: 'Toolbar', link: '/components/toolbar' },
+            { text: 'User Menu', link: '/components/user-menu' },
           ],
         },
       ],

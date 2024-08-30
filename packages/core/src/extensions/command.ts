@@ -1,4 +1,8 @@
 import { addMark, type AddMarkOptions } from '../commands/add-mark'
+import {
+  insertDefaultBlock,
+  type InsertDefaultBlockOptions,
+} from '../commands/insert-default-block'
 import { insertNode, type InsertNodeOptions } from '../commands/insert-node'
 import { insertText, type InsertTextOptions } from '../commands/insert-text'
 import { removeMark, type RemoveMarkOptions } from '../commands/remove-mark'
@@ -46,6 +50,7 @@ export type BaseCommandsExtension = Extension<{
     wrap: [options: WrapOptions]
     setBlockType: [options: SetBlockTypeOptions]
     setNodeAttrs: [options: SetNodeAttrsOptions]
+    insertDefaultBlock: [options?: InsertDefaultBlockOptions]
     selectAll: []
     addMark: [options: AddMarkOptions]
     removeMark: [options: RemoveMarkOptions]
@@ -72,6 +77,8 @@ export function defineBaseCommands(): BaseCommandsExtension {
     setBlockType,
 
     setNodeAttrs,
+
+    insertDefaultBlock,
 
     selectAll,
 

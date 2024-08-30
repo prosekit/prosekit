@@ -14,7 +14,7 @@ export interface InsertDefaultBlockOptions {
 }
 
 /**
- * Returns a command that inserts the given node at the current selection or at
+ * Returns a command that inserts a default block after current selection or at
  * the given position.
  *
  * @public

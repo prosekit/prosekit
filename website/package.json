@@ -7,7 +7,7 @@
     "dev": "vitepress dev",
     "preview": "vitepress preview",
     "build": "pnpm build:typedoc && pnpm build:playground && pnpm build:vitepress",
-    "build:vitepress": "vitepress build",
+    "build:vitepress": "NODE_OPTIONS='--max-old-space-size=8192' vitepress build",
     "build:playground": "bash build-playground.sh",
     "build:typedoc": "bash build-typedoc.sh"
   },

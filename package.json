@@ -23,9 +23,7 @@
     "fix": "manypkg fix && turbo run gen --force && eslint . --fix && prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-astro --write .",
     "change": "changeset",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
-    "ci:version:next": "changeset version --snapshot next && pnpm install --no-frozen-lockfile",
-    "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest",
-    "ci:publish:next": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag next"
+    "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest"
   },
   "dependencies": {
     "@changesets/cli": "^2.27.7",
@@ -41,6 +39,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^9.9.1",
     "eslint-plugin-command": "^0.2.3",
+    "pkg-pr-new": "^0.0.23",
     "playwright": "^1.46.1",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",

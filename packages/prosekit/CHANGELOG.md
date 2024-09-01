@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.9.20
+
+### Patch Changes
+
+- [`ef25b5f`](https://github.com/ocavue/prosekit/commit/ef25b5f2700922803325abcfafd167f96ffaeb63) ![](https://prosekit.dev/b/extensions)
+
+  Use Shiki's JavaScript RegExp Engine as the default engine for highlighting.
+
 ## 0.9.19
 
 ### Patch Changes

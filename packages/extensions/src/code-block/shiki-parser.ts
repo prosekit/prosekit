@@ -3,7 +3,7 @@ import { createParser } from 'prosemirror-highlight/shiki'
 
 import type { ShikiBundledLanguage } from './shiki-bundle'
 import {
-  prepareHighlighter,
+  createOrGetHighlighter,
   type HighlighterOptions,
 } from './shiki-highlighter'
 
@@ -14,13 +14,13 @@ export function createLazyParser(
   highlighterOptions: HighlighterOptions,
 ): Parser {
   let parser: Parser | undefined
-  prepareHighlighter(highlighterOptions)
+  createOrGetHighlighter(highlighterOptions)
 
   return function lazyParser(options) {
     const language = (options.language || '') as ShikiBundledLanguage
-    const { highlighter, promise } = prepareHighlighter({
+    const { highlighter, promise } = createOrGetHighlighter({
+      ...highlighterOptions,
       langs: [language],
-      themes: highlighterOptions.themes,
     })
 
     if (!highlighter) {

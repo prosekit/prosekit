@@ -81,7 +81,7 @@
     "prosemirror-highlight": "^0.8.0",
     "prosemirror-search": "^1.0.0",
     "prosemirror-tables": "^1.5.0",
-    "shiki": "^1.14.1"
+    "shiki": "^1.15.2"
   },
   "peerDependencies": {
     "loro-crdt": ">= 0.16.7",

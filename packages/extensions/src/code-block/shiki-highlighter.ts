@@ -30,9 +30,9 @@ type HighlighterResult =
     }
 
 async function createHighlighter(options: HighlighterOptions): Promise<void> {
-  const { getSingletonHighlighter } = await import('./shiki-import')
   if (!highlighter) {
-    highlighter = await getSingletonHighlighter(options)
+    const { createHighlighter } = await import('./shiki-import')
+    highlighter = await createHighlighter(options)
   }
 }
 

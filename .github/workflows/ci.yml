@@ -89,6 +89,7 @@ jobs:
         run: pnpm run build:package
 
       - name: Publish snapshot packages
+        if: ${{ github.event_name == 'pull_request' }}
         run: >
           ./node_modules/.bin/pkg-pr-new publish --pnpm
           ./packages/basic

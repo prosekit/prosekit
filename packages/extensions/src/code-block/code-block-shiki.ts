@@ -14,7 +14,7 @@ import { createLazyParser } from './shiki-parser'
 export interface CodeBlockShikiOptions
   extends Omit<ShikiHighlighterOptions, 'themes' | 'langs'> {
   /**
-   * A list of shiki themes to pre-load. The first theme in the list will be
+   * A list of Shiki themes to pre-load. The first theme in the list will be
    * used to render the code block.
    *
    * @default ['one-dark-pro']
@@ -22,7 +22,7 @@ export interface CodeBlockShikiOptions
   themes?: ShikiBundledTheme[]
 
   /**
-   * A list of shiki languages to pre-load.
+   * A list of Shiki languages to pre-load.
    *
    * @default ['text']
    */
@@ -30,7 +30,7 @@ export interface CodeBlockShikiOptions
 }
 
 /**
- * Adds syntax highlighting to code blocks using the [shiki](https://github.com/shikijs/shiki) package.
+ * Adds syntax highlighting to code blocks using the [Shiki](https://github.com/shikijs/shiki) package.
  *
  * @param options - The options to configure the Shiki highlighter.
  *

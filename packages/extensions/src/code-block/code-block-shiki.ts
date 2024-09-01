@@ -3,7 +3,7 @@ import type { SpecialLanguage } from 'shiki'
 
 import { defineCodeBlockHighlight } from './code-block-highlight'
 import type { ShikiBundledLanguage, ShikiBundledTheme } from './shiki-bundle'
-import type { ShikiHighlighterOptions } from './shiki-highlighter'
+import type { ShikiHighlighterOptions } from './shiki-highlighter-chunk'
 import { createLazyParser } from './shiki-parser'
 
 /**

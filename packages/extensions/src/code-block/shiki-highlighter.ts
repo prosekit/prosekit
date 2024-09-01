@@ -1,4 +1,5 @@
 import type {
+  BundledHighlighterOptions,
   BundledLanguage,
   BundledTheme,
   Highlighter,
@@ -9,10 +10,13 @@ let highlighter: Highlighter | undefined
 const loadedLangs = new Set<BundledLanguage | SpecialLanguage>()
 const loadedThemes = new Set<BundledTheme>()
 
-export type HighlighterOptions = {
+export interface ShikiHighlighterOptions
+  extends BundledHighlighterOptions<BundledLanguage, BundledTheme> {}
+
+export interface HighlighterOptions
+  extends Omit<ShikiHighlighterOptions, 'themes' | 'langs'> {
   themes: BundledTheme[]
   langs: (BundledLanguage | SpecialLanguage)[]
-  langAlias?: Record<string, BundledLanguage>
 }
 
 type HighlighterResult =

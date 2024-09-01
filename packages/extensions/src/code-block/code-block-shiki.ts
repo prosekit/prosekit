@@ -3,12 +3,16 @@ import type { SpecialLanguage } from 'shiki'
 
 import { defineCodeBlockHighlight } from './code-block-highlight'
 import type { ShikiBundledLanguage, ShikiBundledTheme } from './shiki-bundle'
+import type { ShikiHighlighterOptions } from './shiki-highlighter'
 import { createLazyParser } from './shiki-parser'
 
 /**
+ * The options to configure the Shiki highlighter.
+ *
  * @public
  */
-export interface CodeBlockShikiOptions {
+export interface CodeBlockShikiOptions
+  extends Omit<ShikiHighlighterOptions, 'themes' | 'langs'> {
   /**
    * A list of shiki themes to pre-load. The first theme in the list will be
    * used to render the code block.
@@ -23,27 +27,20 @@ export interface CodeBlockShikiOptions {
    * @default ['text']
    */
   langs?: (ShikiBundledLanguage | SpecialLanguage)[]
-
-  /**
-   * Alias of languages
-   *
-   * @example { 'my-lang': 'javascript' }
-   */
-  langAlias?: Record<string, ShikiBundledLanguage>
 }
 
 /**
  * Adds syntax highlighting to code blocks using the [shiki](https://github.com/shikijs/shiki) package.
  *
- * @param options
+ * @param options - The options to configure the Shiki highlighter.
  *
  * @public
  */
 export function defineCodeBlockShiki({
   themes = ['one-dark-pro'],
   langs = ['text'],
-  langAlias = {},
+  ...rest
 }: CodeBlockShikiOptions = {}): Extension {
-  const parser = createLazyParser({ themes, langs, langAlias })
+  const parser = createLazyParser({ themes, langs, ...rest })
   return defineCodeBlockHighlight({ parser })
 }

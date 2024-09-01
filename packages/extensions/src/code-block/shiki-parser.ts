@@ -14,7 +14,6 @@ export function createLazyParser(
   highlighterOptions: HighlighterOptions,
 ): Parser {
   let parser: Parser | undefined
-  createOrGetHighlighter(highlighterOptions)
 
   return function lazyParser(options) {
     const language = (options.language || '') as ShikiBundledLanguage

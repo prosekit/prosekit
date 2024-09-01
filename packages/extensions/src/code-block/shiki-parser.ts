@@ -19,8 +19,8 @@ export function createLazyParser(
   return function lazyParser(options) {
     const language = (options.language || '') as ShikiBundledLanguage
     const { highlighter, promise } = prepareHighlighter({
+      ...highlighterOptions,
       langs: [language],
-      themes: highlighterOptions.themes,
     })
 
     if (!highlighter) {

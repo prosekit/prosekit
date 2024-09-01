@@ -40,16 +40,16 @@ async function createAndCacheHighlighter({
 async function loadLanguages(langs: (BundledLanguage | SpecialLanguage)[]) {
   for (const lang of langs) {
     if (!highlighter) break
-    loadedLangs.add(lang)
     await highlighter.loadLanguage(lang)
+    loadedLangs.add(lang)
   }
 }
 
 async function loadThemes(themes: BundledTheme[]) {
   for (const theme of themes) {
     if (!highlighter) break
-    loadedThemes.add(theme)
     await highlighter.loadTheme(theme)
+    loadedThemes.add(theme)
   }
 }
 

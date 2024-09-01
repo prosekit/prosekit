@@ -19,16 +19,6 @@ export interface HighlighterOptions
   langs: (BundledLanguage | SpecialLanguage)[]
 }
 
-type HighlighterResult =
-  | {
-      highlighter: Highlighter
-      promise?: undefined
-    }
-  | {
-      highlighter?: undefined
-      promise: Promise<void>
-    }
-
 async function createHighlighter(options: HighlighterOptions): Promise<void> {
   if (!highlighter) {
     const { createHighlighter } = await import('./shiki-import')
@@ -51,6 +41,16 @@ async function loadThemes(themes: BundledTheme[]) {
     loadedThemes.add(theme)
   }
 }
+
+type HighlighterResult =
+  | {
+      highlighter: Highlighter
+      promise?: undefined
+    }
+  | {
+      highlighter?: undefined
+      promise: Promise<void>
+    }
 
 export function prepareHighlighter(
   options: HighlighterOptions,

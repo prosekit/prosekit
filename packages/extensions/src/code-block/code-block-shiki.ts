@@ -12,7 +12,7 @@ import { createLazyParser } from './shiki-parser'
  * @public
  */
 export interface CodeBlockShikiOptions
-  extends Omit<ShikiHighlighterOptions, 'themes' | 'langs'> {
+  extends Omit<ShikiHighlighterOptions, 'themes' | 'langs' | 'engine'> {
   /**
    * A list of Shiki themes to pre-load. The first theme in the list will be
    * used to render the code block.
@@ -27,6 +27,11 @@ export interface CodeBlockShikiOptions
    * @default ['text']
    */
   langs?: (ShikiBundledLanguage | SpecialLanguage)[]
+
+  /**
+   * The RegExp engine to use. By default, the JavaScript engine is used.
+   */
+  engine?: ShikiHighlighterOptions['engine']
 }
 
 /**

@@ -22,6 +22,7 @@ export {
   type UnsetBlockTypeOptions,
 } from './commands/unset-block-type'
 export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark'
+export { toggleWrap, type ToggleWrapOptions } from './commands/toggle-wrap'
 export { wrap, type WrapOptions } from './commands/wrap'
 export type {
   MarkAction,

@@ -4,6 +4,8 @@
 
 - [block-handle](./examples/block-handle)
 
+- [blockquote](./examples/blockquote)
+
 - [bold](./examples/bold)
 
 - [change-tracking](./examples/change-tracking)

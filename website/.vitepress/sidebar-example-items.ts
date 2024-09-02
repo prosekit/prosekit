@@ -7,6 +7,10 @@ export const exampleItems = [
     "link": "/examples/block-handle"
   },
   {
+    "text": "blockquote",
+    "link": "/examples/blockquote"
+  },
+  {
     "text": "bold",
     "link": "/examples/bold"
   },

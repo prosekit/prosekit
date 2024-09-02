@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.9.21
+
+### Patch Changes
+
+- [`2b3528e`](https://github.com/ocavue/prosekit/commit/2b3528ec9ffa814d82d4418df9f802372209ee91) ![](https://prosekit.dev/b/core)
+
+  Add `toggleWrap` command.
+
+- [`2b3528e`](https://github.com/ocavue/prosekit/commit/2b3528ec9ffa814d82d4418df9f802372209ee91) ![](https://prosekit.dev/b/extensions)
+
+  Add commands and keymap for blockquote.
+
 ## 0.9.20
 
 ### Patch Changes

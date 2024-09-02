@@ -3,4 +3,4 @@
 '@prosekit/core': patch
 ---
 
-add `toggleWrap` command
+Add `toggleWrap` command.

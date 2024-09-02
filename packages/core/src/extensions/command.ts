@@ -16,6 +16,7 @@ import {
   type SetNodeAttrsOptions,
   setNodeAttrs,
 } from '../commands/set-node-attrs'
+import { toggleWrap, type ToggleWrapOptions } from '../commands/toggle-wrap'
 import {
   type UnsetBlockTypeOptions,
   unsetBlockType,
@@ -48,6 +49,7 @@ export type BaseCommandsExtension = Extension<{
     insertNode: [options: InsertNodeOptions]
     removeNode: [options: RemoveNodeOptions]
     wrap: [options: WrapOptions]
+    toggleWrap: [options: ToggleWrapOptions]
     setBlockType: [options: SetBlockTypeOptions]
     setNodeAttrs: [options: SetNodeAttrsOptions]
     insertDefaultBlock: [options?: InsertDefaultBlockOptions]
@@ -73,6 +75,8 @@ export function defineBaseCommands(): BaseCommandsExtension {
     removeNode,
 
     wrap,
+
+    toggleWrap,
 
     setBlockType,
 

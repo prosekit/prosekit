@@ -38,6 +38,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-blockquote",
+      "framework": "react",
+      "story": "blockquote",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-change-tracking",
       "framework": "react",
       "story": "change-tracking",
@@ -674,6 +697,29 @@ export const exampleMeta = {
         },
         {
           "path": "block-handle.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-blockquote",
+      "framework": "vue",
+      "story": "blockquote",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.vue",
+          "hidden": false
+        },
+        {
+          "path": "button.vue",
           "hidden": false
         }
       ]

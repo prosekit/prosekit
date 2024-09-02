@@ -1,54 +1,37 @@
+import { union, type Union } from '@prosekit/core'
+
 import {
-  defineNodeSpec,
-  union,
-  type Extension,
-  type Union,
-} from '@prosekit/core'
-import type { Attrs } from '@prosekit/pm/model'
-
-import { defineWrappingInputRule } from '../input-rule'
+  defineBlockquoteCommands,
+  type BlockquoteCommandsExtension,
+} from './commands'
+import { defineBlockquoteInputRule } from './input-rule'
+import { defineBlockquoteKeymap } from './keymap'
+import { defineBlockquoteSpec, type BlockquoteSpecExtension } from './spec'
 
 /**
  * @internal
  */
-export type BlockquoteSpecExtension = Extension<{
-  Nodes: {
-    blockquote: Attrs
-  }
-}>
-
-export function defineBlockquoteSpec(): BlockquoteSpecExtension {
-  return defineNodeSpec({
-    name: 'blockquote',
-    content: 'block+',
-    group: 'block',
-    defining: true,
-    parseDOM: [{ tag: 'blockquote' }],
-    toDOM() {
-      return ['blockquote', 0]
-    },
-  })
-}
-
-/**
- * Wraps the text block in a blockquote when `>` is typed at the start of a new
- * line followed by a space.
- */
-export function defineBlockquoteInputRule() {
-  return defineWrappingInputRule({
-    regex: /^>\s/,
-    type: 'blockquote',
-  })
-}
-
-/**
- * @internal
- */
-export type BlockquoteExtension = Union<[BlockquoteSpecExtension]>
+export type BlockquoteExtension = Union<
+  [BlockquoteSpecExtension, BlockquoteCommandsExtension]
+>
 
 /**
  * @public
  */
 export function defineBlockquote(): BlockquoteExtension {
-  return union(defineBlockquoteSpec(), defineBlockquoteInputRule())
+  return union(
+    defineBlockquoteSpec(),
+    defineBlockquoteInputRule(),
+    defineBlockquoteCommands(),
+    defineBlockquoteKeymap(),
+  )
+}
+
+export {
+  defineBlockquoteSpec,
+  defineBlockquoteInputRule,
+  defineBlockquoteCommands,
+  defineBlockquoteKeymap,
+  type BlockquoteSpecExtension,
+  type BlockquoteCommandsExtension,
 }

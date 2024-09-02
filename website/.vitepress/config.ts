@@ -102,6 +102,7 @@ export default defineConfig({
           text: 'Nodes',
           /// keep-sorted  { "keys": ["text"] }
           items: [
+            { text: 'Blockquote', link: '/extensions/blockquote' },
             { text: 'CodeBlock', link: '/extensions/code-block' },
             { text: 'Heading', link: '/extensions/heading' },
             { text: 'List', link: '/extensions/list' },

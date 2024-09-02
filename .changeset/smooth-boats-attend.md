@@ -3,4 +3,4 @@
 '@prosekit/extensions': patch
 ---
 
-add commands and keymap for blockquote
+Add commands and keymap for blockquote.

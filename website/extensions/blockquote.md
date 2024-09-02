@@ -1,6 +1,6 @@
 # Blockquote
 
-The `Blockquote` node represents a block of quoted text. It can be used to create a block of text that is quoted from another source.
+The `blockquote` node represents a block of quoted text. It can be used to create a block of text that is quoted from another source.
 
 <!-- @include: @/examples/blockquote.md -->
 

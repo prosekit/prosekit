@@ -24,6 +24,7 @@ import {
   defineDropCursor,
   type DropCursorExtension,
 } from '@prosekit/extensions/drop-cursor'
+import { defineGapCursor } from '@prosekit/extensions/gap-cursor'
 import {
   defineHeading,
   type HeadingExtension,
@@ -99,6 +100,7 @@ export function defineBasicExtension(): BasicExtension {
     defineImage(),
     defineParagraph(),
     defineDropCursor(),
+    defineGapCursor(),
     defineVirtualSelection(),
     defineModClickPrevention(),
     defineTable(),

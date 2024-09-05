@@ -44,6 +44,7 @@
     "./extensions/gap-cursor": "./src/extensions/gap-cursor.gen.ts",
     "./extensions/gap-cursor/style.css": "./src/extensions/gap-cursor/style.css",
     "./extensions/heading": "./src/extensions/heading.gen.ts",
+    "./extensions/horizontal-rule": "./src/extensions/horizontal-rule.gen.ts",
     "./extensions/image": "./src/extensions/image.gen.ts",
     "./extensions/input-rule": "./src/extensions/input-rule.gen.ts",
     "./extensions/italic": "./src/extensions/italic.gen.ts",
@@ -307,6 +308,11 @@
         "types": "./dist/prosekit-extensions-heading.d.ts",
         "import": "./dist/prosekit-extensions-heading.js",
         "default": "./dist/prosekit-extensions-heading.js"
+      },
+      "./extensions/horizontal-rule": {
+        "types": "./dist/prosekit-extensions-horizontal-rule.d.ts",
+        "import": "./dist/prosekit-extensions-horizontal-rule.js",
+        "default": "./dist/prosekit-extensions-horizontal-rule.js"
       },
       "./extensions/image": {
         "types": "./dist/prosekit-extensions-image.d.ts",
@@ -797,6 +803,9 @@
         ],
         "extensions/heading": [
           "./dist/prosekit-extensions-heading.d.ts"
+        ],
+        "extensions/horizontal-rule": [
+          "./dist/prosekit-extensions-horizontal-rule.d.ts"
         ],
         "extensions/image": [
           "./dist/prosekit-extensions-image.d.ts"

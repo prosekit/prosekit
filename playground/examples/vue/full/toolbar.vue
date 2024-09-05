@@ -116,6 +116,15 @@ const editor = useEditor<EditorExtension>({ update: true })
     </Button>
 
     <Button
+      :pressed="editor.nodes.horizontalRule.isActive()"
+      :disabled="!editor.commands.insertHorizontalRule.canExec()"
+      tooltip="Divider"
+      @click="() => editor.commands.insertHorizontalRule()"
+    >
+      <div :class="Themes.ICON_MINUS"></div>
+    </Button>
+
+    <Button
       :pressed="editor.nodes.list.isActive({ kind: 'bullet' })"
       :disabled="!editor.commands.toggleList.canExec({ kind: 'bullet' })"
       tooltip="Bullet List"

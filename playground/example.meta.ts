@@ -243,6 +243,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-horizontal-rule",
+      "framework": "react",
+      "story": "horizontal-rule",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-inline-menu",
       "framework": "react",
       "story": "inline-menu",

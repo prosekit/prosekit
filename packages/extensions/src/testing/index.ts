@@ -19,6 +19,7 @@ import { defineBlockquote } from '../blockquote'
 import { defineBold } from '../bold'
 import { defineCode } from '../code'
 import { defineHeading } from '../heading'
+import { defineHorizontalRule } from '../horizontal-rule'
 import { defineImage } from '../image'
 import { defineItalic } from '../italic'
 import { defineLink } from '../link'
@@ -49,6 +50,7 @@ export function defineTestExtension() {
     defineImage(),
     defineParagraph(),
     defineTable(),
+    defineHorizontalRule(),
   )
 }
 

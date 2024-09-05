@@ -65,6 +65,10 @@ export const referenceItems = [
         "link": "/references/extensions/heading"
       },
       {
+        "text": "horizontal-rule",
+        "link": "/references/extensions/horizontal-rule"
+      },
+      {
         "text": "image",
         "link": "/references/extensions/image"
       },

@@ -150,6 +150,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/horizontal-rule",
+    "path": "packages/prosekit/dist/prosekit-extensions-horizontal-rule.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/image",
     "path": "packages/prosekit/dist/prosekit-extensions-image.js",
     "ignore": [

@@ -128,6 +128,7 @@ var THEMES = {
   ICON_TABLE_COLUMN_HANDLE: "i-lucide-grip-horizontal h-5 w-5",
   ICON_TABLE_ROW_HANDLE: "i-lucide-grip-vertical h-5 w-5",
   ICON_BLOCKQUOTE: "i-lucide-text-quote h-5 w-5",
+  ICON_MINUS: "i-lucide-minus h-5 w-5",
 };
 function replaceThemes(code) {
   return replaceThemesWith(code, THEMES);

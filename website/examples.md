@@ -28,6 +28,8 @@
 
 - [heading](./examples/heading)
 
+- [horizontal-rule](./examples/horizontal-rule)
+
 - [inline-menu](./examples/inline-menu)
 
 - [italic](./examples/italic)

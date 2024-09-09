@@ -1,11 +1,11 @@
 import { union, type Union } from '@prosekit/core'
 
-import { defineListCommands, type ListCommandsExtension } from './commands'
-import { defineListInputRules } from './input-rules'
-import { defineListKeymap } from './keymap'
-import { defineListPlugins } from './plugins'
-import { defineListSpec, type ListSpecExtension } from './spec'
-import type { ListAttrs } from './types'
+import { defineListCommands, type ListCommandsExtension } from './list-commands'
+import { defineListInputRules } from './list-input-rules'
+import { defineListKeymap } from './list-keymap'
+import { defineListPlugins } from './list-plugins'
+import { defineListSpec, type ListSpecExtension } from './list-spec'
+import type { ListAttrs } from './list-types'
 
 export { ListDOMSerializer } from 'prosemirror-flat-list'
 export type {

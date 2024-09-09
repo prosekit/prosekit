@@ -1,4 +1,4 @@
-import { defineKeymap, toggleMark } from "@prosekit/core";
+import { defineKeymap, toggleMark } from '@prosekit/core'
 
 /**
  * @internal
@@ -6,5 +6,5 @@ import { defineKeymap, toggleMark } from "@prosekit/core";
 export function defineItalicKeymap() {
   return defineKeymap({
     'Mod-i': toggleMark({ type: 'italic' }),
-  });
+  })
 }

@@ -1,6 +1,6 @@
 import type { EditorState } from '@prosekit/pm/state'
 
-import { defaultCanMatch } from './helpers'
+import { defaultCanMatch } from './autocomplete-helpers'
 
 export type MatchHandler = (options: {
   state: EditorState

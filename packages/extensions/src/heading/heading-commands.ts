@@ -6,7 +6,7 @@ import {
   type Extension,
 } from '@prosekit/core'
 
-import type { HeadingAttrs } from './types'
+import type { HeadingAttrs } from './heading-types'
 
 /**
  * @internal

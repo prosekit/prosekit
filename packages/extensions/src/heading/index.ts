@@ -1,39 +1,9 @@
-import { union, type Union } from '@prosekit/core'
-
-import {
-  defineHeadingCommands,
-  type HeadingCommandsExtension,
-} from './commands'
-import { defineHeadingInputRule } from './input-rule'
-import { defineHeadingKeymap } from './keymap'
-import { defineHeadingSpec, type HeadingSpecExtension } from './spec'
-import type { HeadingAttrs } from './types'
-
-/**
- * @internal
- */
-export type HeadingExtension = Union<
-  [HeadingSpecExtension, HeadingCommandsExtension]
->
-
-/**
- * @public
- */
-export function defineHeading(): HeadingExtension {
-  return union(
-    defineHeadingSpec(),
-    defineHeadingInputRule(),
-    defineHeadingKeymap(),
-    defineHeadingCommands(),
-  )
-}
-
+export { defineHeading, type HeadingExtension } from './heading'
 export {
   defineHeadingCommands,
-  defineHeadingInputRule,
-  defineHeadingKeymap,
-  defineHeadingSpec,
-  type HeadingAttrs,
   type HeadingCommandsExtension,
-  type HeadingSpecExtension,
-}
+} from './heading-commands'
+export { defineHeadingInputRule } from './heading-input-rule'
+export { defineHeadingKeymap } from './heading-keymap'
+export { defineHeadingSpec, type HeadingSpecExtension } from './heading-spec'
+export type { HeadingAttrs } from './heading-types'

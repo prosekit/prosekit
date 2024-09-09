@@ -59,12 +59,12 @@ const editor = createEditor({ extension })
 editor.commands.toggleBlockquote()
 ```
 
-## Keyboard Interaction
-
-Input `>` followed by a space, it will automatically convert to a `blockquote` node.
-
 ## Keyboard Shortcuts
 
 | Non-Apple      | Apple             | Description       |
 | -------------- | ----------------- | ----------------- |
 | `Ctrl-Shift-B` | `Command-Shift-B` | Toggle blockquote |
+
+## Keyboard Interaction
+
+Type `>` and a space at the start of a line. This will create a `blockquote` node.

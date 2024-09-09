@@ -80,15 +80,14 @@ Wraps the selection in a list with the given type and attributes.
 editor.commands.wrapInList({ kind: 'bullet' })
 ```
 
-## Input Rules
+## Keyboard Interaction
 
-Input `1.` followed by a space to convert to an ordered list item.
+To create different types of lists:
 
-Input `-` or `*` followed by a space to convert to an unordered list item.
-
-Input `[x]` or `[]` followed by a space to convert to an task list item.
-
-Input `>>` followed by a space to convert to an toggle list item.
+- Type `1.` and a space to start an ordered list.
+- Type `-` or `*` and a space to start an unordered list.
+- Type `[x]` or `[]` and a space to start a task list.
+- Type `>>` and a space to start a toggle list.
 
 ## API Reference
 

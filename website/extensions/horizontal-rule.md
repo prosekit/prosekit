@@ -20,9 +20,9 @@ const extension = defineHorizontalRule()
 editor.commands.insertHorizontalRule()
 ```
 
-## Input Rules
+## Keyboard Interaction
 
-Input three hyphens (---) on an empty line , and it will automatically convert to a `horizontalRule` node.
+Type three hyphens (`---`) on an empty line. This will automatically create a horizontal rule.
 
 ## API Reference
 

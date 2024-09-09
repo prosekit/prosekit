@@ -530,52 +530,6 @@ can be executed, otherwise `false`.
 
 ***
 
-<a id="DOMDocumentOptions" name="DOMDocumentOptions"></a>
-
-## DOMDocumentOptions
-
-### Properties
-
-<a id="document" name="document"></a>
-
-#### document?
-
-> `optional` **document**: [`Document`](https://developer.mozilla.org/docs/Web/API/Document)
-
-***
-
-<a id="DOMParserOptions" name="DOMParserOptions"></a>
-
-## DOMParserOptions
-
-### Extends
-
-- [`ParseOptions`](https://prosemirror.net/docs/ref/#model.ParseOptions)
-
-### Properties
-
-<a id="DOMParser" name="DOMParser"></a>
-
-#### DOMParser?
-
-> `optional` **DOMParser**: *typeof* [`DOMParser`](https://prosemirror.net/docs/ref/#model.DOMParser)
-
-***
-
-<a id="DOMSerializerOptions" name="DOMSerializerOptions"></a>
-
-## DOMSerializerOptions
-
-### Properties
-
-<a id="DOMSerializer" name="DOMSerializer"></a>
-
-#### DOMSerializer?
-
-> `optional` **DOMSerializer**: *typeof* [`DOMSerializer`](https://prosemirror.net/docs/ref/#model.DOMSerializer)
-
-***
-
 <a id="DefaultStateOptions" name="DefaultStateOptions"></a>
 
 ## DefaultStateOptions
@@ -625,6 +579,52 @@ Use `defaultContent` instead.
 
 A JSON object representing the starting selection to use when creating the
 editor. It's only used when `defaultContent` is also provided.
+
+***
+
+<a id="DOMDocumentOptions" name="DOMDocumentOptions"></a>
+
+## DOMDocumentOptions
+
+### Properties
+
+<a id="document" name="document"></a>
+
+#### document?
+
+> `optional` **document**: [`Document`](https://developer.mozilla.org/docs/Web/API/Document)
+
+***
+
+<a id="DOMParserOptions" name="DOMParserOptions"></a>
+
+## DOMParserOptions
+
+### Extends
+
+- [`ParseOptions`](https://prosemirror.net/docs/ref/#model.ParseOptions)
+
+### Properties
+
+<a id="DOMParser" name="DOMParser"></a>
+
+#### DOMParser?
+
+> `optional` **DOMParser**: *typeof* [`DOMParser`](https://prosemirror.net/docs/ref/#model.DOMParser)
+
+***
+
+<a id="DOMSerializerOptions" name="DOMSerializerOptions"></a>
+
+## DOMSerializerOptions
+
+### Properties
+
+<a id="DOMSerializer" name="DOMSerializer"></a>
+
+#### DOMSerializer?
+
+> `optional` **DOMSerializer**: *typeof* [`DOMSerializer`](https://prosemirror.net/docs/ref/#model.DOMSerializer)
 
 ***
 
@@ -1839,8 +1839,8 @@ An object holding the attributes of a node.
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| `default` | `AttrType` | The default value for this attribute, to use when no explicit value is provided. Attributes that have no default must be provided whenever a node or mark of a type that has them is created. |
-| `validate` | `string` \| (`value`) => `void` | A function or type name used to validate values of this attribute. This will be used when deserializing the attribute from JSON, and when running [`Node.check`](https://prosemirror.net/docs/ref/#model.Node.check). When a function, it should raise an exception if the value isn't of the expected type or shape. When a string, it should be a `|`-separated string of primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and `"undefined"`), and the library will raise an error when the value is not one of those types. |
+| `default`? | `AttrType` | The default value for this attribute, to use when no explicit value is provided. Attributes that have no default must be provided whenever a node or mark of a type that has them is created. |
+| `validate`? | `string` \| (`value`) => `void` | A function or type name used to validate values of this attribute. This will be used when deserializing the attribute from JSON, and when running [`Node.check`](https://prosemirror.net/docs/ref/#model.Node.check). When a function, it should raise an exception if the value isn't of the expected type or shape. When a string, it should be a `|`-separated string of primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and `"undefined"`), and the library will raise an error when the value is not one of those types. |
 
 ***
 
@@ -1890,6 +1890,30 @@ An object holding the attributes of a node.
 
 ***
 
+<a id="DocChangeHandler" name="DocChangeHandler"></a>
+
+## DocChangeHandler()
+
+> **DocChangeHandler**: (`view`, `prevState`) => `void`
+
+A function that is called when the editor document is changed.
+
+### Parameters
+
+• **view**: [`EditorView`](https://prosemirror.net/docs/ref/#view.EditorView)
+
+The editor view.
+
+• **prevState**: [`EditorState`](https://prosemirror.net/docs/ref/#state.EditorState)
+
+The previous editor state.
+
+### Returns
+
+`void`
+
+***
+
 <a id="DOMEventHandlerEvent" name="DOMEventHandlerEvent"></a>
 
 ## DOMEventHandler()\<Event\>
@@ -1914,30 +1938,6 @@ behavior).
 ### Returns
 
 `boolean` \| `void`
-
-***
-
-<a id="DocChangeHandler" name="DocChangeHandler"></a>
-
-## DocChangeHandler()
-
-> **DocChangeHandler**: (`view`, `prevState`) => `void`
-
-A function that is called when the editor document is changed.
-
-### Parameters
-
-• **view**: [`EditorView`](https://prosemirror.net/docs/ref/#view.EditorView)
-
-The editor view.
-
-• **prevState**: [`EditorState`](https://prosemirror.net/docs/ref/#state.EditorState)
-
-The previous editor state.
-
-### Returns
-
-`void`
 
 ***
 
@@ -2577,30 +2577,6 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn](https://p
 
 ***
 
-<a id="defineDOMEventHandler" name="defineDOMEventHandler"></a>
-
-## defineDOMEventHandler()
-
-> **defineDOMEventHandler**\<`Event`\>(`event`, `handler`): [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`any`, `any`, `any`\>\>
-
-Register a new event handler for the given event type.
-
-### Type Parameters
-
-• **Event** *extends* keyof [`DOMEventMap`](https://prosemirror.net/docs/ref/#view.DOMEventMap) = `string`
-
-### Parameters
-
-• **event**: `Event`
-
-• **handler**: [`DOMEventHandler`](core.md#DOMEventHandlerEvent)\<`Event`\>
-
-### Returns
-
-[`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`any`, `any`, `any`\>\>
-
-***
-
 <a id="defineDefaultState" name="defineDefaultState"></a>
 
 ## defineDefaultState()
@@ -2646,6 +2622,30 @@ Registers a event handler that is called when the editor document is changed.
 ### Returns
 
 `PlainExtension`
+
+***
+
+<a id="defineDOMEventHandler" name="defineDOMEventHandler"></a>
+
+## defineDOMEventHandler()
+
+> **defineDOMEventHandler**\<`Event`\>(`event`, `handler`): [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`any`, `any`, `any`\>\>
+
+Register a new event handler for the given event type.
+
+### Type Parameters
+
+• **Event** *extends* keyof [`DOMEventMap`](https://prosemirror.net/docs/ref/#view.DOMEventMap) = `string`
+
+### Parameters
+
+• **event**: `Event`
+
+• **handler**: [`DOMEventHandler`](core.md#DOMEventHandlerEvent)\<`Event`\>
+
+### Returns
+
+[`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`any`, `any`, `any`\>\>
 
 ***
 
@@ -2757,6 +2757,22 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyDown](https://p
 
 ***
 
+<a id="defineKeymap" name="defineKeymap"></a>
+
+## defineKeymap()
+
+> **defineKeymap**(`keymap`): `PlainExtension`
+
+### Parameters
+
+• **keymap**: [`Keymap`](core.md#Keymap)
+
+### Returns
+
+`PlainExtension`
+
+***
+
 <a id="defineKeyPressHandler" name="defineKeyPressHandler"></a>
 
 ## defineKeyPressHandler()
@@ -2772,22 +2788,6 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 ### Returns
 
 [`Extension`](core.md#ExtensionT)\<`ExtensionTyping`\<`any`, `any`, `any`\>\>
-
-***
-
-<a id="defineKeymap" name="defineKeymap"></a>
-
-## defineKeymap()
-
-> **defineKeymap**(`keymap`): `PlainExtension`
-
-### Parameters
-
-• **keymap**: [`Keymap`](core.md#Keymap)
-
-### Returns
-
-`PlainExtension`
 
 ***
 

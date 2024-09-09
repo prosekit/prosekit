@@ -51,7 +51,7 @@ Adds `codeBlock` nodes to the editor. This includes the following extensions:
 - [defineCodeBlockSpec](code-block.md#defineCodeBlockSpec)
 - [defineCodeBlockInputRule](code-block.md#defineCodeBlockInputRule)
 - [defineCodeBlockEnterRule](code-block.md#defineCodeBlockEnterRule)
-- defineCodeBlockKeymap
+- [defineCodeBlockKeymap](code-block.md#defineCodeBlockKeymap)
 - [defineCodeBlockCommands](code-block.md#defineCodeBlockCommands).
 
 ### Returns
@@ -116,6 +116,20 @@ information.
 > **defineCodeBlockInputRule**(): `PlainExtension`
 
 Adds input rules for `codeBlock` nodes.
+
+### Returns
+
+`PlainExtension`
+
+***
+
+<a id="defineCodeBlockKeymap" name="defineCodeBlockKeymap"></a>
+
+## defineCodeBlockKeymap()
+
+> **defineCodeBlockKeymap**(): `PlainExtension`
+
+Defines the keymap for code blocks.
 
 ### Returns
 

@@ -12,6 +12,7 @@ export function defineHorizontalRuleSpec(): HorizontalRuleSpecExtension {
     name: 'horizontalRule',
     group: 'block',
     parseDOM: [{ tag: 'hr' }],
-    toDOM: () => ['hr'],
+    // Wrap the `<hr>` in a `<div>` so that we can make it taller and easier to click.
+    toDOM: () => ['div', { class: 'prosekit-horizontal-rule' }, ['hr']],
   })
 }

@@ -5,7 +5,7 @@ import {
   isApple,
 } from '@prosekit/core'
 
-import { redo, undo } from './undo-plugin'
+import { redo, undo } from './yjs-undo-plugin'
 
 const keymap: Keymap = {
   'Mod-z': undo,

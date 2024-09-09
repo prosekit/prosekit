@@ -8,23 +8,23 @@ import {
 import type { Awareness } from 'y-protocols/awareness'
 import type * as Y from 'yjs'
 
-import { defineYjsCommands, type YjsCommandsExtension } from './commands'
+import { defineYjsCommands, type YjsCommandsExtension } from './yjs-commands'
 import {
   defineYjsCursorPlugin,
   type YjsCursorOptions,
   type YjsCursorPluginOptions,
-} from './cursor-plugin'
-import { defineYjsKeymap } from './keymap'
+} from './yjs-cursor-plugin'
+import { defineYjsKeymap } from './yjs-keymap'
 import {
   defineYjsSyncPlugin,
   type YjsSyncOptions,
   type YjsSyncPluginOptions,
-} from './sync-plugin'
+} from './yjs-sync-plugin'
 import {
   defineYjsUndoPlugin,
   type YjsUndoOptions,
   type YjsUndoPluginOptions,
-} from './undo-plugin'
+} from './yjs-undo-plugin'
 
 export interface YjsOptions {
   /**

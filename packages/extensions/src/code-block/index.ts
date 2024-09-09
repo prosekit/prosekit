@@ -12,6 +12,7 @@ export {
   defineCodeBlockEnterRule,
   defineCodeBlockInputRule,
 } from './code-block-input-rule'
+export { defineCodeBlockKeymap } from './code-block-keymap'
 export { defineCodeBlockShiki } from './code-block-shiki'
 export {
   defineCodeBlockSpec,

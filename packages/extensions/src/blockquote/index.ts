@@ -1,37 +1,11 @@
-import { union, type Union } from '@prosekit/core'
-
-import {
+export { defineBlockquote, type BlockquoteExtension } from './blockquote'
+export {
   defineBlockquoteCommands,
   type BlockquoteCommandsExtension,
-} from './commands'
-import { defineBlockquoteInputRule } from './input-rule'
-import { defineBlockquoteKeymap } from './keymap'
-import { defineBlockquoteSpec, type BlockquoteSpecExtension } from './spec'
-
-/**
- * @internal
- */
-export type BlockquoteExtension = Union<
-  [BlockquoteSpecExtension, BlockquoteCommandsExtension]
->
-
-/**
- * @public
- */
-export function defineBlockquote(): BlockquoteExtension {
-  return union(
-    defineBlockquoteSpec(),
-    defineBlockquoteInputRule(),
-    defineBlockquoteCommands(),
-    defineBlockquoteKeymap(),
-  )
-}
-
+} from './blockquote-commands'
+export { defineBlockquoteInputRule } from './blockquote-input-rule'
+export { defineBlockquoteKeymap } from './blockquote-keymap'
 export {
   defineBlockquoteSpec,
-  defineBlockquoteInputRule,
-  defineBlockquoteCommands,
-  defineBlockquoteKeymap,
   type BlockquoteSpecExtension,
-  type BlockquoteCommandsExtension,
-}
+} from './blockquote-spec'

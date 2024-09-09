@@ -105,6 +105,7 @@ export default defineConfig({
             { text: 'Blockquote', link: '/extensions/blockquote' },
             { text: 'CodeBlock', link: '/extensions/code-block' },
             { text: 'Heading', link: '/extensions/heading' },
+            { text: 'Horizontal Rule', link: '/extensions/horizontal-rule' },
             { text: 'List', link: '/extensions/list' },
             { text: 'Mention', link: '/extensions/mention' },
           ],

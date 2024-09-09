@@ -22,7 +22,7 @@ editor.commands.insertHorizontalRule()
 
 ## Input Rules
 
-Input three hyphens (---), asterisks (\*\*\* followed by a space or a line break), or underscores (\_\_\_ followed by a space or a line break) on an empty line , and it will automatically convert to a `horizontalRule` node.
+Input three hyphens (---) on an empty line , and it will automatically convert to a `horizontalRule` node.
 
 ## API Reference
 

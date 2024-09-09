@@ -1,6 +1,6 @@
 import { defineTextBlockInputRule } from '../input-rule'
 
-import type { HeadingAttrs } from './types'
+import type { HeadingAttrs } from './heading-types'
 
 /**
  * Converts the text block to a heading when `#` is typed at the start of a new

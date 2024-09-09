@@ -107,6 +107,7 @@ export default defineConfig({
             { text: 'Heading', link: '/extensions/heading' },
             { text: 'List', link: '/extensions/list' },
             { text: 'Mention', link: '/extensions/mention' },
+            { text: 'Table', link: '/extensions/table' },
           ],
         },
 

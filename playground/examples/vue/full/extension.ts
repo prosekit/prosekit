@@ -4,6 +4,7 @@ import {
   defineCodeBlock,
   defineCodeBlockShiki,
 } from 'prosekit/extensions/code-block'
+import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
 import { defineMention } from 'prosekit/extensions/mention'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'
@@ -22,6 +23,7 @@ export function defineExtension() {
       contentAs: 'code',
       component: CodeBlockView as VueNodeViewComponent,
     }),
+    defineHorizontalRule(),
   )
 }
 

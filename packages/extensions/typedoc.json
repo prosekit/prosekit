@@ -12,6 +12,7 @@
     "./src/enter-rule/index.ts",
     "./src/gap-cursor/index.ts",
     "./src/heading/index.ts",
+    "./src/horizontal-rule/index.ts",
     "./src/image/index.ts",
     "./src/index.ts",
     "./src/input-rule/index.ts",

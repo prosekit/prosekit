@@ -76,10 +76,10 @@ export default function Toolbar() {
       <Button
         pressed={editor.nodes.codeBlock.isActive()}
         disabled={
-          !editor.commands.toggleCodeBlock.canExec({ language: 'javascript' })
+          !editor.commands.insertCodeBlock.canExec({ language: 'javascript' })
         }
         onClick={() =>
-          editor.commands.toggleCodeBlock({ language: 'javascript' })
+          editor.commands.insertCodeBlock({ language: 'javascript' })
         }
         tooltip="Code Block"
       >
@@ -111,6 +111,15 @@ export default function Toolbar() {
         tooltip="Heading 3"
       >
         <div className={Themes.ICON_H3} />
+      </Button>
+
+      <Button
+        pressed={editor.nodes.horizontalRule.isActive()}
+        disabled={!editor.commands.insertHorizontalRule.canExec()}
+        onClick={() => editor.commands.insertHorizontalRule()}
+        tooltip="Divider"
+      >
+        <div className={Themes.ICON_MINUS}></div>
       </Button>
 
       <Button

@@ -55,6 +55,10 @@ export const exampleItems = [
     "link": "/examples/heading"
   },
   {
+    "text": "horizontal-rule",
+    "link": "/examples/horizontal-rule"
+  },
+  {
     "text": "inline-menu",
     "link": "/examples/inline-menu"
   },

@@ -11,6 +11,7 @@ export const loaders = {
   'full': lazy(() => import('./full/editor')),
   'gap-cursor': lazy(() => import('./gap-cursor/editor')),
   'heading': lazy(() => import('./heading/editor')),
+  'horizontal-rule': lazy(() => import('./horizontal-rule/editor')),
   'inline-menu': lazy(() => import('./inline-menu/editor')),
   'keymap': lazy(() => import('./keymap/editor')),
   'list': lazy(() => import('./list/editor')),

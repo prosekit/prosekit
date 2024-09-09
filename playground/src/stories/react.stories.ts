@@ -12,6 +12,7 @@ export const CodeBlockThemes = { args: { story: 'code-block-themes' } }
 export const Full = { args: { story: 'full' } }
 export const GapCursor = { args: { story: 'gap-cursor' } }
 export const Heading = { args: { story: 'heading' } }
+export const HorizontalRule = { args: { story: 'horizontal-rule' } }
 export const InlineMenu = { args: { story: 'inline-menu' } }
 export const Keymap = { args: { story: 'keymap' } }
 export const List = { args: { story: 'list' } }

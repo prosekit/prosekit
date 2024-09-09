@@ -1,5 +1,6 @@
-import { canUseRegexLookbehind } from "@prosekit/core";
-import { defineMarkInputRule } from "../input-rule";
+import { canUseRegexLookbehind } from '@prosekit/core'
+
+import { defineMarkInputRule } from '../input-rule'
 
 /**
  * @internal
@@ -10,5 +11,5 @@ export function defineBoldInputRule() {
       ? /(?<=\s|^)\*\*([^\s*]|[^\s*][^*]*[^\s*])\*\*$/
       : /\*\*([^\s*]|[^\s*][^*]*[^\s*])\*\*$/,
     type: 'bold',
-  });
+  })
 }

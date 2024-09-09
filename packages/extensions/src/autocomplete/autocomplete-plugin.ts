@@ -8,8 +8,8 @@ import {
   pluginKey,
   setTrMeta,
   type PredictionPluginState,
-} from './helpers'
-import type { AutocompleteRule } from './rule'
+} from './autocomplete-helpers'
+import type { AutocompleteRule } from './autocomplete-rule'
 
 export function createAutocompletePlugin({
   getRules,

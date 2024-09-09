@@ -5,7 +5,7 @@ import {
   type Transaction,
 } from '@prosekit/pm/state'
 
-import type { AutocompleteRule } from './rule'
+import type { AutocompleteRule } from './autocomplete-rule'
 
 export function defaultCanMatch({ state }: { state: EditorState }): boolean {
   return state.selection.empty && !isInsideCode(state.selection.$from)

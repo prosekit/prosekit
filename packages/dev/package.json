@@ -36,11 +36,11 @@
     "tsup": "^8.2.4"
   },
   "devDependencies": {
-    "@changesets/read": "^0.6.0",
+    "@changesets/read": "^0.6.1",
     "@sindresorhus/string-hash": "^2.0.0",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^20.16.2",
+    "@types/node": "^20.16.5",
     "execa": "^9.3.1",
     "globby": "^14.0.2",
     "js-yaml": "^4.1.0",

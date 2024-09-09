@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.9.22
+
+### Patch Changes
+
+- [`3cab827`](https://github.com/ocavue/prosekit/commit/3cab82758b6f2e7fdf5c67c1779d15999266772d) ![](https://prosekit.dev/b/extensions)
+
+  Add new `horizontalRule` node representing a thematic break.
+
+- [`3cab827`](https://github.com/ocavue/prosekit/commit/3cab82758b6f2e7fdf5c67c1779d15999266772d) ![](https://prosekit.dev/b/basic)
+
+  Add gap cursor and horizontal rule to the basic extension.
+
 ## 0.9.21
 
 ### Patch Changes

@@ -24,12 +24,18 @@ import {
   defineDropCursor,
   type DropCursorExtension,
 } from '@prosekit/extensions/drop-cursor'
-import { defineGapCursor } from '@prosekit/extensions/gap-cursor'
+import {
+  defineGapCursor,
+  type GapCursorExtension,
+} from '@prosekit/extensions/gap-cursor'
 import {
   defineHeading,
   type HeadingExtension,
 } from '@prosekit/extensions/heading'
-import { defineHorizontalRule } from '@prosekit/extensions/horizontal-rule'
+import {
+  defineHorizontalRule,
+  type HorizontalRuleExtension,
+} from '@prosekit/extensions/horizontal-rule'
 import { defineImage, type ImageExtension } from '@prosekit/extensions/image'
 import { defineItalic, type ItalicExtension } from '@prosekit/extensions/italic'
 import { defineLink, type LinkExtension } from '@prosekit/extensions/link'
@@ -71,6 +77,8 @@ export type BasicExtension = Union<
     ImageExtension,
     ParagraphExtension,
     DropCursorExtension,
+    GapCursorExtension,
+    HorizontalRuleExtension,
     VirtualSelectionExtension,
     ModClickPreventionExtension,
     TableExtension,

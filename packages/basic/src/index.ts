@@ -29,6 +29,7 @@ import {
   defineHeading,
   type HeadingExtension,
 } from '@prosekit/extensions/heading'
+import { defineHorizontalRule } from '@prosekit/extensions/horizontal-rule'
 import { defineImage, type ImageExtension } from '@prosekit/extensions/image'
 import { defineItalic, type ItalicExtension } from '@prosekit/extensions/italic'
 import { defineLink, type LinkExtension } from '@prosekit/extensions/link'
@@ -101,6 +102,7 @@ export function defineBasicExtension(): BasicExtension {
     defineParagraph(),
     defineDropCursor(),
     defineGapCursor(),
+    defineHorizontalRule(),
     defineVirtualSelection(),
     defineModClickPrevention(),
     defineTable(),

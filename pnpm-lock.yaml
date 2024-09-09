@@ -106,7 +106,7 @@ importers:
         version: 13.0.0(postcss@8.4.42)
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -146,7 +146,7 @@ importers:
         version: 2.0.5(playwright@1.46.1)(typescript@5.5.4)(vitest@2.0.5)
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -185,7 +185,7 @@ importers:
         version: 9.0.1
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
     devDependencies:
       '@changesets/read':
         specifier: ^0.6.0
@@ -280,7 +280,7 @@ importers:
         version: 0.0.7(loro-crdt@0.16.10)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.34.1)
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
       type-fest:
         specifier: ^4.26.0
         version: 4.26.0
@@ -311,7 +311,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -351,7 +351,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -382,7 +382,7 @@ importers:
         version: 10.23.2
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -464,7 +464,7 @@ importers:
         version: 4.2.19
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -513,7 +513,7 @@ importers:
         version: 18.3.1(react@18.3.1)
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -541,7 +541,7 @@ importers:
         version: 1.8.22
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -665,7 +665,7 @@ importers:
         version: 2.4.6
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -729,7 +729,7 @@ importers:
         version: link:../dev
       tsup:
         specifier: ^8.2.4
-        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5)
+        version: 8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1)
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -935,17 +935,17 @@ importers:
         specifier: ^4.26.0
         version: 4.26.0
       typedoc:
-        specifier: ^0.26.6
-        version: 0.26.6(typescript@5.5.4)
+        specifier: ^0.26.7
+        version: 0.26.7(typescript@5.5.4)
       typedoc-plugin-external-package-links:
         specifier: ^0.1.0
         version: 0.1.0
       typedoc-plugin-markdown:
-        specifier: ^4.2.6
-        version: 4.2.6(typedoc@0.26.6(typescript@5.5.4))
+        specifier: ^4.2.7
+        version: 4.2.7(typedoc@0.26.7(typescript@5.5.4))
       typedoc-plugin-mdn-links:
-        specifier: ^3.2.11
-        version: 3.2.11(typedoc@0.26.6(typescript@5.5.4))
+        specifier: ^3.2.12
+        version: 3.2.12(typedoc@0.26.7(typescript@5.5.4))
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
@@ -6150,6 +6150,9 @@ packages:
   shiki@1.15.2:
     resolution: {integrity: sha512-M+7QZQZiZw/cZeizrC/yryG3eeG8pTUhu7ZaHxVyzPNFIRIlN46YBciquoNPCiXiwLnx6JB62f3lSuSYQrus1w==}
 
+  shiki@1.16.2:
+    resolution: {integrity: sha512-gSym0hZf5a1U0iDPsdoOAZbvoi+e0c6c3NKAi03FoSLTm7oG20tum29+gk0wzzivOasn3loxfGUPT+jZXIUbWg==}
+
   side-channel@1.0.6:
     resolution: {integrity: sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==}
     engines: {node: '>= 0.4'}
@@ -6652,23 +6655,23 @@ packages:
   typedoc-plugin-external-package-links@0.1.0:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
 
-  typedoc-plugin-markdown@4.2.6:
-    resolution: {integrity: sha512-k33o2lZSGpL3GjH28eW+RsujzCYFP0L5GNqpK+wa4CBcMOxpj8WV7SydNRLS6eSa2UvaPvNVJTaAZ6Tm+8GXoA==}
+  typedoc-plugin-markdown@4.2.7:
+    resolution: {integrity: sha512-bLsQdweSm48P9j6kGqQ3/4GCH5zu2EnURSkkxqirNc+uVFE9YK825ogDw+WbNkRHIV6eZK/1U43gT7YfglyYOg==}
     engines: {node: '>= 18'}
     peerDependencies:
       typedoc: 0.26.x
 
-  typedoc-plugin-mdn-links@3.2.11:
-    resolution: {integrity: sha512-0VlF21O3S1L373UTkUFleoQDrgkh5quAqjCVusBaa3czLahK6LsUxQj6PRqbT5xN0emUVYnT7UTwe8haU2MFrw==}
+  typedoc-plugin-mdn-links@3.2.12:
+    resolution: {integrity: sha512-UT7JinqYE7IQSrpRPkUkHrXXEJw5qbHIZhVq8igutYDA/4fsrYZhYffVo8Uh70K2iXFdAyvt6foQG5ci1VERAw==}
     peerDependencies:
       typedoc: '>= 0.23.14 || 0.24.x || 0.25.x || 0.26.x'
 
-  typedoc@0.26.6:
-    resolution: {integrity: sha512-SfEU3SH3wHNaxhFPjaZE2kNl/NFtLNW5c1oHsg7mti7GjmUj1Roq6osBQeMd+F4kL0BoRBBr8gQAuqBlfFu8LA==}
+  typedoc@0.26.7:
+    resolution: {integrity: sha512-gUeI/Wk99vjXXMi8kanwzyhmeFEGv1LTdTQsiyIsmSYsBebvFxhbcyAx7Zjo4cMbpLGxM4Uz3jVIjksu/I2v6Q==}
     engines: {node: '>= 18'}
     hasBin: true
     peerDependencies:
-      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x
+      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x
 
   typescript-eslint@8.3.0:
     resolution: {integrity: sha512-EvWjwWLwwKDIJuBjk2I6UkV8KEQcwZ0VM10nR1rIunRDIP67QJTZAHBXTX0HW/oI1H10YESF8yWie8fRQxjvFA==}
@@ -7176,8 +7179,8 @@ packages:
   yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
 
-  yaml@2.4.5:
-    resolution: {integrity: sha512-aBx2bnqDzVOyNKfsysjA2ms5ZlnjSAW2eG3/L5G/CSujfjLJTJsEw1bGw8kCf04KodQWk1pxlGnZ56CRxiawmg==}
+  yaml@2.5.1:
+    resolution: {integrity: sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q==}
     engines: {node: '>= 14'}
     hasBin: true
 
@@ -12896,14 +12899,14 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(yaml@2.4.5):
+  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(yaml@2.5.1):
     dependencies:
       lilconfig: 3.1.2
     optionalDependencies:
       jiti: 1.21.6
       postcss: 8.4.42
       tsx: 4.19.0
-      yaml: 2.4.5
+      yaml: 2.5.1
 
   postcss-nesting@13.0.0(postcss@8.4.42):
     dependencies:
@@ -13568,6 +13571,12 @@ snapshots:
       '@shikijs/core': 1.15.2
       '@types/hast': 3.0.4
 
+  shiki@1.16.2:
+    dependencies:
+      '@shikijs/core': 1.16.2
+      '@shikijs/vscode-textmate': 9.2.0
+      '@types/hast': 3.0.4
+
   side-channel@1.0.6:
     dependencies:
       call-bind: 1.0.7
@@ -13942,7 +13951,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsup@8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.4.5):
+  tsup@8.2.4(@microsoft/api-extractor@7.47.7(@types/node@20.16.2))(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(typescript@5.5.4)(yaml@2.5.1):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.1)
       cac: 6.7.14
@@ -13954,7 +13963,7 @@ snapshots:
       globby: 11.1.0
       joycon: 3.1.1
       picocolors: 1.0.1
-      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(yaml@2.4.5)
+      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.42)(tsx@4.19.0)(yaml@2.5.1)
       resolve-from: 5.0.0
       rollup: 4.21.1
       source-map: 0.8.0-beta.0
@@ -14085,22 +14094,22 @@ snapshots:
 
   typedoc-plugin-external-package-links@0.1.0: {}
 
-  typedoc-plugin-markdown@4.2.6(typedoc@0.26.6(typescript@5.5.4)):
+  typedoc-plugin-markdown@4.2.7(typedoc@0.26.7(typescript@5.5.4)):
     dependencies:
-      typedoc: 0.26.6(typescript@5.5.4)
+      typedoc: 0.26.7(typescript@5.5.4)
 
-  typedoc-plugin-mdn-links@3.2.11(typedoc@0.26.6(typescript@5.5.4)):
+  typedoc-plugin-mdn-links@3.2.12(typedoc@0.26.7(typescript@5.5.4)):
     dependencies:
-      typedoc: 0.26.6(typescript@5.5.4)
+      typedoc: 0.26.7(typescript@5.5.4)
 
-  typedoc@0.26.6(typescript@5.5.4):
+  typedoc@0.26.7(typescript@5.5.4):
     dependencies:
       lunr: 2.3.9
       markdown-it: 14.1.0
       minimatch: 9.0.5
-      shiki: 1.15.2
+      shiki: 1.16.2
       typescript: 5.5.4
-      yaml: 2.4.5
+      yaml: 2.5.1
 
   typescript-eslint@8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4):
     dependencies:
@@ -14725,7 +14734,7 @@ snapshots:
 
   yallist@4.0.0: {}
 
-  yaml@2.4.5: {}
+  yaml@2.5.1: {}
 
   yargs-parser@21.1.1: {}
 

@@ -3,4 +3,4 @@
 '@prosekit/basic': patch
 ---
 
-add gap-cursor to basic extension
+Add gap cursor to the basic extension.

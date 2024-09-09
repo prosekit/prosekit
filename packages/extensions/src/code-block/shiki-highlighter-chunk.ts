@@ -18,7 +18,7 @@ export interface ShikiHighlighterOptions
   extends BundledHighlighterOptions<BundledLanguage, BundledTheme> {}
 
 export interface HighlighterOptions
-  extends Omit<ShikiHighlighterOptions, 'themes' | 'langs'> {
+  extends Omit<ShikiHighlighterOptions, 'langs' | 'themes'> {
   themes: BundledTheme[]
   langs: (BundledLanguage | SpecialLanguage)[]
 }

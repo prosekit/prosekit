@@ -13,7 +13,10 @@ import type {
 } from 'loro-prosemirror'
 
 import { type LoroCommandsExtension, defineLoroCommands } from './loro-commands'
-import { type LoroCursorOptions, defineLoroCursorPlugin } from './loro-cursor-plugin'
+import {
+  type LoroCursorOptions,
+  defineLoroCursorPlugin,
+} from './loro-cursor-plugin'
 import { defineLoroKeymap } from './loro-keymap'
 import { defineLoroSyncPlugin } from './loro-sync-plugin'
 import { defineLoroUndoPlugin } from './loro-undo-plugin'

@@ -108,6 +108,7 @@ export default defineConfig({
             { text: 'Horizontal Rule', link: '/extensions/horizontal-rule' },
             { text: 'List', link: '/extensions/list' },
             { text: 'Mention', link: '/extensions/mention' },
+            { text: 'Table', link: '/extensions/table' },
           ],
         },
 

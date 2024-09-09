@@ -44,9 +44,9 @@ editor.commands.insertHeading({ level: 1 })
 | `Ctrl-6`    | `Command-6` | Set the current block to an H6 node                                         |
 | `Backspace` | `Backspace` | When the text cursor is at the start of a heading node, set it to paragraph |
 
-## Input Rules
+## Keyboard Interaction
 
-Input `#` followed by a space, it will automatically convert to a `heading` node. One `#` corresponds to an H1 node, two `#` correspond to an H2 node, and so on.
+Type `#` and a space to create a `heading`. One `#` makes an H1 heading, two `##` make an H2 heading, and so on.
 
 ## API Reference
 

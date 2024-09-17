@@ -203,22 +203,22 @@
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "@types/react": "^18.3.5",
+    "@types/react": "^18.3.6",
     "@types/react-dom": "^18.3.0",
     "loro-crdt": "^0.16.12",
     "loro-prosemirror": "^0.0.7",
-    "postcss": "^8.4.45",
+    "postcss": "^8.4.47",
     "postcss-nesting": "^13.0.0",
-    "preact": "^10.23.2",
+    "preact": "^10.24.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "solid-js": "^1.8.22",
     "svelte": "^4.2.19",
     "tsup": "^8.2.4",
-    "typescript": "^5.5.4",
-    "vue": "^3.5.3",
+    "typescript": "^5.6.2",
+    "vue": "^3.5.6",
     "y-prosemirror": "^1.2.12",
-    "yjs": "^13.6.18"
+    "yjs": "^13.6.19"
   },
   "publishConfig": {
     "exports": {

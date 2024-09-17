@@ -2,7 +2,7 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "outDir": ".temp",
+ 
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
   },

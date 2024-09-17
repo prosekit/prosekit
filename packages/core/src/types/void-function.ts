@@ -1,3 +1,3 @@
-export function voidFunction() {
+export function voidFunction(): void {
   // Empty
 }

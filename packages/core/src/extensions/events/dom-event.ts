@@ -1,8 +1,9 @@
 import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { DOMEventMap, EditorView } from '@prosekit/pm/view'
 
-import { defineFacet } from '../../facets/facet'
+import { defineFacet, type Facet } from '../../facets/facet'
 import { defineFacetPayload } from '../../facets/facet-extension'
+import type { PlainExtension } from '../../types/extension'
 import type { Setter } from '../../types/setter'
 import { groupEntries } from '../../utils/array-grouping'
 import { combineEventHandlers } from '../../utils/combine-event-handlers'
@@ -22,16 +23,29 @@ export type DOMEventHandler<Event extends keyof DOMEventMap = string> = (
 ) => boolean | void
 
 /**
+ * @internal
+ */
+export function defineDomEventFacetPayload(
+  ...payloads: DOMEventPayload[]
+): PlainExtension {
+  return defineFacetPayload<DOMEventPayload>(
+    domEventFacet,
+    payloads,
+  ) as PlainExtension
+}
+
+/**
  * Register a new event handler for the given event type.
- *
+ *c
  * @public
  */
 export function defineDOMEventHandler<Event extends keyof DOMEventMap = string>(
   event: Event,
   handler: DOMEventHandler<Event>,
-) {
-  return defineFacetPayload(domEventFacet, [
-    [event as string, handler as DOMEventHandler],
+): PlainExtension {
+  return defineDomEventFacetPayload([
+    event as string,
+    handler as DOMEventHandler,
   ])
 }
 
@@ -43,49 +57,51 @@ export type DOMEventPayload = [event: string, handler: DOMEventHandler]
 /**
  * @internal
  */
-export const domEventFacet = defineFacet<DOMEventPayload, PluginPayload>({
-  reduce: () => {
-    const setHandlersMap: Record<string, Setter<DOMEventHandler[]>> = {}
-    const combinedHandlerMap: Record<string, DOMEventHandler> = {}
+export const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
+  {
+    reduce: () => {
+      const setHandlersMap: Record<string, Setter<DOMEventHandler[]>> = {}
+      const combinedHandlerMap: Record<string, DOMEventHandler> = {}
 
-    let plugin: ProseMirrorPlugin | undefined
+      let plugin: ProseMirrorPlugin | undefined
 
-    const update = (payloads: DOMEventPayload[]): void => {
-      let hasNewEvent = false
+      const update = (payloads: DOMEventPayload[]): void => {
+        let hasNewEvent = false
 
-      for (const [event] of payloads) {
-        if (!setHandlersMap[event]) {
-          hasNewEvent = true
-          const [setHandlers, combinedHandler] =
-            combineEventHandlers<DOMEventHandler>()
-          setHandlersMap[event] = setHandlers
-          const e: DOMEventHandler = (view, eventObject) => {
-            return combinedHandler(view, eventObject)
+        for (const [event] of payloads) {
+          if (!setHandlersMap[event]) {
+            hasNewEvent = true
+            const [setHandlers, combinedHandler] =
+              combineEventHandlers<DOMEventHandler>()
+            setHandlersMap[event] = setHandlers
+            const e: DOMEventHandler = (view, eventObject) => {
+              return combinedHandler(view, eventObject)
+            }
+            combinedHandlerMap[event] = e
           }
-          combinedHandlerMap[event] = e
+        }
+
+        const map: Record<string, DOMEventHandler[] | undefined> =
+          groupEntries<DOMEventMap>(payloads)
+        for (const [event, setHandlers] of Object.entries(setHandlersMap)) {
+          const handlers = map[event] ?? []
+          setHandlers(handlers)
+        }
+
+        if (hasNewEvent) {
+          plugin = new ProseMirrorPlugin({
+            key: new PluginKey('prosekit-dom-event-handler'),
+            props: { handleDOMEvents: combinedHandlerMap },
+          })
         }
       }
 
-      const map: Record<string, DOMEventHandler[] | undefined> =
-        groupEntries<DOMEventMap>(payloads)
-      for (const [event, setHandlers] of Object.entries(setHandlersMap)) {
-        const handlers = map[event] ?? []
-        setHandlers(handlers)
+      return function reducer(inputs) {
+        update(inputs)
+        return plugin ?? []
       }
-
-      if (hasNewEvent) {
-        plugin = new ProseMirrorPlugin({
-          key: new PluginKey('prosekit-dom-event-handler'),
-          props: { handleDOMEvents: combinedHandlerMap },
-        })
-      }
-    }
-
-    return function reducer(inputs) {
-      update(inputs)
-      return plugin ?? []
-    }
+    },
+    parent: pluginFacet,
+    singleton: true,
   },
-  parent: pluginFacet,
-  singleton: true,
-})
+)

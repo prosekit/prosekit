@@ -7,7 +7,7 @@ export function containsInlineNode(
   doc: ProseMirrorNode,
   from: number,
   to: number,
-) {
+): boolean {
   let found = false
   doc.nodesBetween(from, to, (node) => {
     if (found) return false

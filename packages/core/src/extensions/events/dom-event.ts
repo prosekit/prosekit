@@ -36,7 +36,7 @@ export function defineDomEventFacetPayload(
 
 /**
  * Register a new event handler for the given event type.
- *c
+ *
  * @public
  */
 export function defineDOMEventHandler<Event extends keyof DOMEventMap = string>(

@@ -2,7 +2,10 @@
   "compilerOptions": {
     "target": "es2018",
     "module": "esnext",
-    "lib": ["esnext", "DOM"],
+    "lib": [
+      "esnext",
+      "DOM"
+    ],
     "composite": true,
     "allowJs": true,
     "moduleResolution": "bundler",
@@ -11,7 +14,7 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "esModuleInterop": true,
-    "outDir": "node_modules/.cache/ts/out",
+    "outDir": "${configDir}/.temp/ts",
     "declaration": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
@@ -24,7 +27,11 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
   },
-  "include": ["./*.js", "./*.ts", ".changeset/*.cjs"],
+  "include": [
+    "./*.js",
+    "./*.ts",
+    ".changeset/*.cjs"
+  ],
   "files": [],
   "references": [
     {

@@ -56,8 +56,5 @@ export function defineBaseKeymap(options?: {
   priority?: Priority
 }): BaseKeymapExtension {
   const priority = options?.priority ?? Priority.low
-  return withPriority(
-    defineKeymap(customBaseKeymap),
-    priority,
-  ) as BaseKeymapExtension
+  return withPriority(defineKeymap(customBaseKeymap), priority)
 }

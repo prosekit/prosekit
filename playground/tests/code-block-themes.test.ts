@@ -5,6 +5,7 @@ import { testStory } from './helper'
 testStory('code-block-themes', () => {
   test('code-block-themes', async ({ page }) => {
     const span = page.locator('span', { hasText: `JavaScript` })
+    await expect(span).toBeVisible()
 
     await page.getByLabel('Theme').selectOption('nord')
     await expect(span).toHaveCSS('color', 'rgb(163, 190, 140)')

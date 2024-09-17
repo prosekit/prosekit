@@ -24,5 +24,5 @@ export function defineFocusChangeHandler(
   return defineDomEventFacetPayload(
     ['focus', handleFocus],
     ['blur', handleBlur],
-  ) as PlainExtension
+  )
 }

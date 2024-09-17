@@ -29,10 +29,10 @@ export function defineMentionSpec() {
     parseDOM: [
       {
         tag: `span[data-mention]`,
-        getAttrs: (dom): MentionAttrs => ({
-          id: (dom as HTMLElement).getAttribute('data-id') || '',
-          kind: (dom as HTMLElement).getAttribute('data-mention') || '',
-          value: (dom as HTMLElement).textContent || '',
+        getAttrs: (dom: HTMLElement): MentionAttrs => ({
+          id: dom.getAttribute('data-id') || '',
+          kind: dom.getAttribute('data-mention') || '',
+          value: dom.textContent || '',
         }),
       },
     ],

@@ -2,10 +2,7 @@
   "compilerOptions": {
     "target": "es2018",
     "module": "esnext",
-    "lib": [
-      "esnext",
-      "DOM"
-    ],
+    "lib": ["esnext", "DOM"],
     "composite": true,
     "allowJs": true,
     "moduleResolution": "bundler",
@@ -27,11 +24,7 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
   },
-  "include": [
-    "./*.js",
-    "./*.ts",
-    ".changeset/*.cjs"
-  ],
+  "include": ["./*.js", "./*.ts", ".changeset/*.cjs"],
   "files": [],
   "references": [
     {

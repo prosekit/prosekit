@@ -4,6 +4,7 @@ import type { EditorView } from '@prosekit/pm/view'
 
 import { defineFacet } from '../../facets/facet'
 import { defineFacetPayload } from '../../facets/facet-extension'
+import type { PlainExtension } from '../../types/extension'
 import type { ObjectEntries } from '../../types/object-entries'
 import { groupEntries } from '../../utils/array-grouping'
 import { combineEventHandlers } from '../../utils/combine-event-handlers'
@@ -75,93 +76,109 @@ export type DropHandler = (
 ) => boolean | void
 export type ScrollToSelectionHandler = (view: EditorView) => boolean
 
+function defineEventFacetPayload(payload: EditorEventEntries): PlainExtension {
+  return defineFacetPayload(editorEventFacet, [payload]) as PlainExtension
+}
+
 /**
  * @public
  *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyDown}
  */
-export function defineKeyDownHandler(handler: KeyDownHandler) {
-  return defineFacetPayload(editorEventFacet, [['keyDown', handler]])
+export function defineKeyDownHandler(handler: KeyDownHandler): PlainExtension {
+  return defineEventFacetPayload(['keyDown', handler])
 }
 /**
  * @public
  *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress}
  */
-export function defineKeyPressHandler(handler: KeyPressHandler) {
-  return defineFacetPayload(editorEventFacet, [['keyPress', handler]])
+export function defineKeyPressHandler(
+  handler: KeyPressHandler,
+): PlainExtension {
+  return defineEventFacetPayload(['keyPress', handler])
 }
 /**
  * @public
  *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTextInput}
  */
-export function defineTextInputHandler(handler: TextInputHandler) {
-  return defineFacetPayload(editorEventFacet, [['textInput', handler]])
+export function defineTextInputHandler(
+  handler: TextInputHandler,
+): PlainExtension {
+  return defineEventFacetPayload(['textInput', handler])
 }
 /**
  * @public
  *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn}
  */
-export function defineClickOnHandler(handler: ClickOnHandler) {
-  return defineFacetPayload(editorEventFacet, [['clickOn', handler]])
+export function defineClickOnHandler(handler: ClickOnHandler): PlainExtension {
+  return defineEventFacetPayload(['clickOn', handler])
 }
 /**
  * @public
  *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleClick}
  */
-export function defineClickHandler(handler: ClickHandler) {
-  return defineFacetPayload(editorEventFacet, [['click', handler]])
+export function defineClickHandler(handler: ClickHandler): PlainExtension {
+  return defineEventFacetPayload(['click', handler])
 }
 /**
  * @public
  *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClickOn}
  */
-export function defineDoubleClickOnHandler(handler: DoubleClickOnHandler) {
-  return defineFacetPayload(editorEventFacet, [['doubleClickOn', handler]])
+export function defineDoubleClickOnHandler(
+  handler: DoubleClickOnHandler,
+): PlainExtension {
+  return defineEventFacetPayload(['doubleClickOn', handler])
 }
 /**
  * @public
  *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClick}
  */
-export function defineDoubleClickHandler(handler: DoubleClickHandler) {
-  return defineFacetPayload(editorEventFacet, [['doubleClick', handler]])
+export function defineDoubleClickHandler(
+  handler: DoubleClickHandler,
+): PlainExtension {
+  return defineEventFacetPayload(['doubleClick', handler])
 }
 /**
  * @public
  *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClickOn}
  */
-export function defineTripleClickOnHandler(handler: TripleClickOnHandler) {
-  return defineFacetPayload(editorEventFacet, [['tripleClickOn', handler]])
+export function defineTripleClickOnHandler(
+  handler: TripleClickOnHandler,
+): PlainExtension {
+  return defineEventFacetPayload(['tripleClickOn', handler])
 }
 /**
  * @public
  *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClick}
  */
-export function defineTripleClickHandler(handler: TripleClickHandler) {
-  return defineFacetPayload(editorEventFacet, [['tripleClick', handler]])
+export function defineTripleClickHandler(
+  handler: TripleClickHandler,
+): PlainExtension {
+  return defineEventFacetPayload(['tripleClick', handler])
 }
 /**
  * @public
  *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handlePaste}
  */
-export function definePasteHandler(handler: PasteHandler) {
-  return defineFacetPayload(editorEventFacet, [['paste', handler]])
+export function definePasteHandler(handler: PasteHandler): PlainExtension {
+  return defineEventFacetPayload(['paste', handler])
 }
 /**
  * @public
  *
  * See {@link https://prosemirror.net/docs/ref/#view.EditorProps.handleDrop}
  */
-export function defineDropHandler(handler: DropHandler) {
-  return defineFacetPayload(editorEventFacet, [['drop', handler]])
+export function defineDropHandler(handler: DropHandler): PlainExtension {
+  return defineEventFacetPayload(['drop', handler])
 }
 /**
  * @public
@@ -170,8 +187,8 @@ export function defineDropHandler(handler: DropHandler) {
  */
 export function defineScrollToSelectionHandler(
   handler: ScrollToSelectionHandler,
-) {
-  return defineFacetPayload(editorEventFacet, [['scrollToSelection', handler]])
+): PlainExtension {
+  return defineEventFacetPayload(['scrollToSelection', handler])
 }
 
 interface EditorEventMap {

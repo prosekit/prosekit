@@ -178,6 +178,6 @@ export function setupTest() {
   }
 }
 
-export async function inputText(input: string) {
+export async function inputText(input: string): Promise<void> {
   return await userEvent.keyboard(input)
 }

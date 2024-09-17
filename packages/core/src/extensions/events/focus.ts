@@ -1,6 +1,6 @@
-import { defineFacetPayload } from '../../facets/facet-extension'
+import type { PlainExtension } from '../../types/extension'
 
-import { domEventFacet } from './dom-event'
+import { defineDomEventFacetPayload } from './dom-event'
 
 /**
  * A function that is called when the editor gains or loses focus.
@@ -16,11 +16,13 @@ export type FocusChangeHandler = (hasFocus: boolean) => void
  *
  * @public
  */
-export function defineFocusChangeHandler(handler: FocusChangeHandler) {
+export function defineFocusChangeHandler(
+  handler: FocusChangeHandler,
+): PlainExtension {
   const handleFocus = () => handler(true)
   const handleBlur = () => handler(false)
-  return defineFacetPayload(domEventFacet, [
+  return defineDomEventFacetPayload(
     ['focus', handleFocus],
     ['blur', handleBlur],
-  ])
+  ) as PlainExtension
 }

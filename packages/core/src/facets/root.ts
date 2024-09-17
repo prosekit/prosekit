@@ -38,8 +38,7 @@ function rootReducer(inputs: RootPayload[]): RootOutput {
   return { schema, state, commands, view }
 }
 
-export const rootFacet = new Facet<RootPayload, RootOutput>(
-  null,
-  true,
-  rootReducer,
-)
+export const rootFacet: Facet<RootPayload, RootOutput> = new Facet<
+  RootPayload,
+  RootOutput
+>(null, true, rootReducer)

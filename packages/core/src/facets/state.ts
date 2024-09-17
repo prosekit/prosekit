@@ -4,12 +4,12 @@ import type { EditorStateConfig } from '@prosekit/pm/state'
 import { uniqPush } from '../utils/array'
 import { assert } from '../utils/assert'
 
-import { defineFacet } from './facet'
+import { defineFacet, type Facet } from './facet'
 import { rootFacet, type RootPayload } from './root'
 
 export type StatePayload = (ctx: { schema: Schema }) => EditorStateConfig
 
-export const stateFacet = defineFacet<StatePayload, RootPayload>({
+export const stateFacet: Facet<StatePayload, RootPayload> = defineFacet({
   reduce: () => {
     let callbacks: StatePayload[] = []
 

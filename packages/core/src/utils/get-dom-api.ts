@@ -28,21 +28,28 @@ export function findBrowserDocument(options?: { document?: Document }) {
   )
 }
 
-export function findBrowserWindow(options?: { document?: Document }) {
+export function findBrowserWindow(options?: {
+  document?: Document
+}): (Window & typeof globalThis) | undefined {
   return (
     options?.document?.defaultView ??
     findGlobalBrowserWindow() ??
-    findBrowserDocument(options)?.defaultView
+    findBrowserDocument(options)?.defaultView ??
+    undefined
   )
 }
 
-export function getBrowserDocument(options?: { document?: Document }) {
+export function getBrowserDocument(options?: {
+  document?: Document
+}): Document {
   const doc = findBrowserDocument(options)
   if (doc) return doc
   throw new DOMDocumentNotFoundError()
 }
 
-export function getBrowserWindow(options?: { document?: Document }) {
+export function getBrowserWindow(options?: {
+  document?: Document
+}): Window & typeof globalThis {
   const win = findBrowserWindow(options)
   if (win) return win
   throw new DOMDocumentNotFoundError()

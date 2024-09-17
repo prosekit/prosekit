@@ -2,7 +2,7 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "outDir": ".temp",
+
     "jsx": "react-jsx",
   },
   "include": ["./", "../../stories/example.stories.ts"],

@@ -2,7 +2,7 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "outDir": ".temp",
+
     // `declarationMap` doesn't work well with `svelte-check`
     "declarationMap": false,
   },

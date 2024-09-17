@@ -11,7 +11,7 @@ export class Facet<Input, Output> {
   /**
    * @internal
    */
-  readonly index = facetCount++
+  readonly index: number = facetCount++
   /**
    * @internal
    */
@@ -33,7 +33,7 @@ export class Facet<Input, Output> {
   constructor(
     parent: Facet<Output, any> | null,
     singleton: boolean,
-    private _reducer?: FacetReducer<Input, Output>,
+    private _reducer?: FacetReducer<Input, Output> | undefined,
     private _reduce?: () => FacetReducer<Input, Output>,
   ) {
     // Only one of _reducer or _reduce can be defined
@@ -74,8 +74,8 @@ export function defineFacet<Input, Output>(options: {
    * store something in the closure.
    */
   reduce?: () => FacetReducer<Input, Output>
-}) {
-  return new Facet<Input, Output>(
+}): Facet<Input, Output> {
+  return new Facet(
     options.parent,
     options.singleton ?? false,
     options.reducer,

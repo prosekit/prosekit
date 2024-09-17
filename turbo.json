@@ -9,7 +9,6 @@
     },
     "build:tsc": {
       "dependsOn": ["^build"],
-      "outputs": ["temp/"],
       "outputLogs": "new-only"
     },
     "build:tsup": {

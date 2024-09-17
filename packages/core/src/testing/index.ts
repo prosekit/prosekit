@@ -69,9 +69,9 @@ function defineLink(): LinkExtension {
     parseDOM: [
       {
         tag: 'a[href]',
-        getAttrs: (dom) => {
+        getAttrs: (dom: HTMLElement) => {
           return {
-            href: (dom as HTMLElement).getAttribute('href'),
+            href: dom.getAttribute('href'),
           }
         },
       },

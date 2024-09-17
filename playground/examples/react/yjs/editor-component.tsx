@@ -21,7 +21,7 @@ export default function EditorComponent() {
       doc,
     )
 
-    const extension = defineExtension(doc, provider.awareness!)
+    const extension = defineExtension(doc, provider.awareness)
     return createEditor({ extension })
   }, [])
 

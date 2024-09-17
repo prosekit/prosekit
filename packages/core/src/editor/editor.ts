@@ -102,7 +102,7 @@ export function createEditor<E extends Extension>(
 ): Editor<E> {
   const extension = setupEditorExtension(options)
   const instance = new EditorInstance(extension)
-  return new Editor(instance) as Editor<E>
+  return new Editor(instance)
 }
 
 /**

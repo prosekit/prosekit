@@ -30,7 +30,7 @@ export function defineCodeBlockSpec(): CodeBlockSpecExtension {
         tag: 'pre',
         preserveWhitespace: 'full',
         getAttrs: (node): CodeBlockAttrs => ({
-          language: (node as HTMLElement).getAttribute('data-language') || '',
+          language: node.getAttribute('data-language') || '',
         }),
       },
     ],

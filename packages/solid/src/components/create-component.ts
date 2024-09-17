@@ -19,7 +19,7 @@ export function createComponent<
 
     for (const key of Object.keys(props)) {
       properties[propertyNames.includes(key) ? 'prop:' + key : key] =
-        (): unknown => props[key] as unknown
+        (): unknown => props[key]
     }
 
     const editor = useEditorContext()

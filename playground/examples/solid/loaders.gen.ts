@@ -3,6 +3,7 @@ import { lazy } from 'solid-js'
 
 export const loaders = {
   'minimal': lazy(() => import('./minimal/editor')),
+  'code-block': lazy(() => import('./code-block/editor')),
   'drop-cursor': lazy(() => import('./drop-cursor/editor')),
   'heading': lazy(() => import('./heading/editor')),
   'keymap': lazy(() => import('./keymap/editor')),

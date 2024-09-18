@@ -32,4 +32,14 @@
 
 </template>
 
+<template v-slot:solid>
+
+::: code-group
+
+<<< @/../playground/examples/solid/code-block/default-doc.ts
+
+:::
+
+</template>
+
 </FrameworkCodeBlock>

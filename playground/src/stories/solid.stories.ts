@@ -4,6 +4,7 @@ import component from './solid.astro'
 export default { component }
 
 export const Minimal = { args: { story: 'minimal' } }
+export const CodeBlock = { args: { story: 'code-block' } }
 export const DropCursor = { args: { story: 'drop-cursor' } }
 export const Heading = { args: { story: 'heading' } }
 export const Keymap = { args: { story: 'keymap' } }

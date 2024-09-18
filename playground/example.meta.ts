@@ -1987,6 +1987,41 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "solid-code-block",
+      "framework": "solid",
+      "story": "code-block",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "code-block-view.tsx",
+          "hidden": false
+        },
+        {
+          "path": "default-doc.ts",
+          "hidden": false
+        },
+        {
+          "path": "language-selector.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "solid-drop-cursor",
       "framework": "solid",
       "story": "drop-cursor",

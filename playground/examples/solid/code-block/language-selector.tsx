@@ -21,11 +21,7 @@ export default function LanguageSelector({
       >
         <option value="">Plain Text</option>
         <For each={shikiBundledLanguagesInfo}>
-          {(info) => (
-            <option value={info.id}>
-              {info.name}
-            </option>
-          )}
+          {(info) => <option value={info.id}>{info.name}</option>}
         </For>
       </select>
     </div>

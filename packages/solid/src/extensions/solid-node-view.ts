@@ -48,7 +48,7 @@ export interface SolidNodeViewProps {
 export type SolidNodeViewComponent = Component<SolidNodeViewProps>
 
 /**
- * Options for {@link defineReactNodeView}.
+ * Options for {@link defineSolidNodeView}.
  *
  * @public
  */
@@ -70,14 +70,14 @@ function withNodeViewProps(
   return function NodeViewPropsWrapper() {
     const props: Accessor<SolidNodeViewProps> = useNodeViewContext()
 
-    return createComponent(component, props()) 
+    return createComponent(component, props())
   }
 }
 
 /**
  * @internal
  */
-export const SolidViewsConsumer: Component = () => {
+export function consumeSolidViews() {
   const nodeViewFactory = useNodeViewFactory()
   const extension = createMemo(
     () => defineSolidNodeViewFactory(nodeViewFactory),
@@ -85,8 +85,6 @@ export const SolidViewsConsumer: Component = () => {
   )
 
   useExtension(extension)
-
-  return null
 }
 
 /**

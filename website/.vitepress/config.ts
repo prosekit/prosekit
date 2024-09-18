@@ -117,6 +117,7 @@ export default defineConfig({
           /// keep-sorted  { "keys": ["text"] }
           items: [
             { text: 'Bold', link: '/extensions/bold' },
+            { text: 'Code', link: '/extensions/code' },
             { text: 'Italic', link: '/extensions/italic' },
             { text: 'Link', link: '/extensions/link' },
             { text: 'Strike', link: '/extensions/strike' },

@@ -532,6 +532,9 @@ importers:
       '@prosekit/web':
         specifier: workspace:^
         version: link:../web
+      '@prosemirror-adapter/solid':
+        specifier: ^0.2.6
+        version: 0.2.6(solid-js@1.8.22)
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -2208,6 +2211,11 @@ packages:
     peerDependencies:
       react: '*'
       react-dom: '*'
+
+  '@prosemirror-adapter/solid@0.2.6':
+    resolution: {integrity: sha512-PuctY5fMoHwVzGrLcL/4Ku7bY6BhPJBqgFDj7OBNoDEGXWjJPcD13xHIyzKF1u5vlCHv2uWuSwXmcA0aiAkrPg==}
+    peerDependencies:
+      solid-js: ^1.8.22
 
   '@prosemirror-adapter/svelte@0.2.6':
     resolution: {integrity: sha512-EQpdYC9Q8smGCqbQ9P7TKjYdxM4edSmgf9BbJBCbEunQaDN2pZi0A/iwTcFNASkVxXDrmn3AJhXkzsPfFyMuaA==}
@@ -8756,6 +8764,13 @@ snapshots:
       nanoid: 4.0.2
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
+      tslib: 2.6.3
+
+  '@prosemirror-adapter/solid@0.2.6(solid-js@1.8.22)':
+    dependencies:
+      '@prosemirror-adapter/core': 0.2.6
+      nanoid: 5.0.7
+      solid-js: 1.8.22
       tslib: 2.6.3
 
   '@prosemirror-adapter/svelte@0.2.6(svelte@4.2.19)':

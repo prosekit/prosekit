@@ -1,7 +1,9 @@
 import type { Editor } from '@prosekit/core'
+import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/solid'
 import { createComponent, type Component, type ParentProps } from 'solid-js'
 
 import { EditorContextProvider } from '../contexts/editor-context'
+import { SolidViewsConsumer } from '../extensions/solid-node-view'
 
 export type ProseKitProps = ParentProps<{
   editor: Editor
@@ -13,12 +15,17 @@ export type ProseKitProps = ParentProps<{
  * @public
  */
 export const ProseKit: Component<ProseKitProps> = (props) => {
-  return createComponent(EditorContextProvider, {
-    get value() {
-      return props.editor
-    },
+  return createComponent(ProsemirrorAdapterProvider, {
     get children() {
-      return props.children
+      return createComponent(EditorContextProvider, {
+        get value() {
+          return props.editor
+        },
+        get children() {
+          SolidViewsConsumer({})
+          return props.children
+        },
+      })
     },
   })
 }

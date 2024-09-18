@@ -8,7 +8,13 @@ The `code` mark is used to represent a short fragment of computer code. It will 
 
 ### `toggleCode`
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineCode } from 'prosekit/extensions/code'
+
+const extension = defineCode()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleCode()
 ```
 
@@ -17,3 +23,7 @@ editor.commands.toggleCode()
 | Non-Apple | Apple       | Description                          |
 | --------- | ----------- | ------------------------------------ |
 | `Ctrl-E`  | `Command-E` | Toggle the current selection to code |
+
+## API Reference
+
+- [prosekit/extensions/code](/references/extensions/code)

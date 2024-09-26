@@ -5,3 +5,9 @@ export { useKeymap } from './hooks/use-keymap'
 export { useStateUpdate } from './hooks/use-state-update'
 export { useDocChange } from './hooks/use-doc-change'
 export type { MaybeAccessor, PropsWithChildren, PropsWithClass } from './types'
+export {
+  defineSolidNodeView,
+  type SolidNodeViewComponent,
+  type SolidNodeViewOptions,
+  type SolidNodeViewProps,
+} from './extensions/solid-node-view'

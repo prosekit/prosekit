@@ -56,4 +56,20 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 </template>
 
+<template v-slot:solid>
+
+::: code-group
+
+<<< @/../playground/examples/solid/code-block/editor.tsx
+<<< @/../playground/examples/solid/code-block/extension.ts
+<<< @/../playground/examples/solid/code-block/toolbar.tsx
+<<< @/../playground/examples/solid/code-block/code-block-view.tsx
+<<< @/../playground/examples/solid/code-block/default-doc.ts
+<<< @/../playground/examples/solid/code-block/language-selector.tsx
+<<< @/../playground/examples/solid/code-block/button.tsx
+
+:::
+
+</template>
+
 </ExamplePreview>

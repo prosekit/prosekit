@@ -1,4 +1,5 @@
 import {
+  createComputed,
   createSignal,
   useEffect,
   type ConnectableElement,
@@ -30,11 +31,14 @@ export function useTableHandleRoot(
 
   const hoveringCell = useHoveringCell(host, editor)
   const typing = useEditorTyping(host, editor)
+  const isInTable = createComputed(() => !!hoveringCell.get())
+  const selecting = useSelecting(host, editor, isInTable)
 
   useEffect(host, () => {
     const typingValue = typing.get()
+    const selectingValue = selecting.get()
     const hoveringCellValue = hoveringCell.get()
-    context.set(typingValue ? null : hoveringCellValue)
+    context.set(typingValue || selectingValue ? null : hoveringCellValue)
   })
 
   tableHandleRootContext.provide(host, context)
@@ -58,7 +62,7 @@ function useHoveringCell(
   return hoveringCell
 }
 
-export function defineCellHoverHandler(
+function defineCellHoverHandler(
   handler: (hoveringCell: HoveringCellInfo | null) => void,
 ) {
   const pointerHandler = (view: EditorView, event: PointerEvent) => {
@@ -66,4 +70,47 @@ export function defineCellHoverHandler(
     return handler(hoveringCell ?? null)
   }
   return defineDOMEventHandler('pointerover', pointerHandler)
+}
+
+/**
+ * Detect if the user is selecting text by dragging.
+ */
+function useSelecting(
+  host: ConnectableElement,
+  editor: ReadonlySignal<Editor | null>,
+  isInTable: ReadonlySignal<boolean>,
+) {
+  const selecting = createSignal(false)
+
+  useEffect(host, () => {
+    if (!isInTable.get()) {
+      return
+    }
+
+    const root = editor.peek()?.view.root
+    if (!root) {
+      return
+    }
+
+    const pointerDownHandler = (event: Event) => {
+      const target = event.target
+      if (!target || host.contains(event.target as Node)) {
+        return
+      }
+      selecting.set(true)
+    }
+    const pointerUpHandler = () => {
+      selecting.set(false)
+    }
+
+    root.addEventListener('pointerdown', pointerDownHandler)
+    root.addEventListener('pointerup', pointerUpHandler)
+
+    return () => {
+      root.removeEventListener('pointerdown', pointerDownHandler)
+      root.removeEventListener('pointerup', pointerUpHandler)
+    }
+  })
+
+  return selecting
 }

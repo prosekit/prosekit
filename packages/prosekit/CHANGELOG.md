@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.9.23
+
+### Patch Changes
+
+- [`020ad81`](https://github.com/ocavue/prosekit/commit/020ad81b7fec0bc3a6c5c14b92700d8042c67f4f) ![](https://prosekit.dev/b/solid)
+
+  You can now use Solid for building node views.
+
+- [`893ba41`](https://github.com/ocavue/prosekit/commit/893ba415afacdd6bf336af7020038f3d9ca60b19) ![](https://prosekit.dev/b/web)
+
+  Hide the table handle when selecting text.
+
 ## 0.9.22
 
 ### Patch Changes

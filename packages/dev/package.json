@@ -48,7 +48,6 @@
     "json5": "^2.2.3",
     "just-filter-object": "^3.2.0",
     "just-pascal-case": "^3.2.0",
-    "ts-morph": "^23.0.0",
     "tsx": "^4.19.1",
     "typescript": "^5.6.2",
     "vitest": "^2.1.1"

@@ -220,9 +220,6 @@ importers:
       just-filter-object:
         specifier: ^3.2.0
         version: 3.2.0
-      just-pascal-case:
-        specifier: ^3.2.0
-        version: 3.2.0
       tsx:
         specifier: ^4.19.1
         version: 4.19.1
@@ -4793,9 +4790,6 @@ packages:
 
   just-omit@2.2.0:
     resolution: {integrity: sha512-Js7+HxDOGcB3RhI38Mird/RgyMf3t0DAJFda1QWqqlAKTa36NeSYIufJXxrZUbysFTRcTOFcoMCiFK5FwCoI7Q==}
-
-  just-pascal-case@3.2.0:
-    resolution: {integrity: sha512-B0PW5mgJrsGmXdvDLxC2Kdfyie74m+mRO+iCjJ+Es0Jl5kcQwVfB0qb/qiDOCE3m0XUOo1SdZBWzUlNCO9zreg==}
 
   just-pick@4.2.0:
     resolution: {integrity: sha512-m6bi0P/gFq5GEQJGYfHFsdod6fogViNIhsKbPBYavqF9SKFfMKPz7kf6ROL2PblkOdaib9vN/wJ7VXhCJre5Hw==}
@@ -11933,8 +11927,6 @@ snapshots:
   just-map-values@3.2.0: {}
 
   just-omit@2.2.0: {}
-
-  just-pascal-case@3.2.0: {}
 
   just-pick@4.2.0: {}
 

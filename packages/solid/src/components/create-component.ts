@@ -1,3 +1,4 @@
+import type { AnyFunction } from '@prosekit/core'
 import type { Component, JSX } from 'solid-js'
 import h from 'solid-js/h'
 
@@ -12,24 +13,48 @@ export function createComponent<
   eventNames: string[],
 ): Component<Partial<Props> & JSX.HTMLAttributes<CustomElement>> {
   const hasEditor = propNames.includes('editor')
-  const lowerCaseEventNames = eventNames.map((name) => name.toLowerCase())
+  const lowerCaseEventNameMap = Object.fromEntries(
+    eventNames.map((name) => [name.toLowerCase(), name]),
+  )
 
   const Component = (props: Record<string, unknown>) => {
     const properties: Record<string, () => unknown> = {}
-    const eventHandlers: Record<string, () => (event: unknown) => void> = {}
+    const eventHandlers: Record<string, AnyFunction> = {}
 
-    for (const key of Object.keys(props)) {
-      if (propNames.includes(key)) {
-        properties['prop:' + key] = () => props[key]
-      } else if (
-        key.startsWith('on') &&
-        lowerCaseEventNames.includes(key.slice(2).toLowerCase())
-      ) {
-        eventHandlers[key.slice(2).toLowerCase()] = () =>
-          props[key] as (event: unknown) => void
-      } else {
-        properties[key] = () => props[key]
+    for (const name of Object.keys(props)) {
+      if (propNames.includes(name)) {
+        properties['prop:' + name] = () => props[name]
+        continue
       }
+
+      if (name.startsWith('on') && name.endsWith('Change')) {
+        const lowerCaseEventName =
+          'update:' + name.slice(2).slice(0, -6).toLowerCase()
+        const eventName = lowerCaseEventNameMap[lowerCaseEventName]
+        if (eventName) {
+          eventHandlers['on:' + eventName] = (event: Event) => {
+            const handler = props[name] as AnyFunction
+            const detail = (event as CustomEvent).detail as unknown
+            handler(detail)
+          }
+          continue
+        }
+      }
+
+      if (name.startsWith('on')) {
+        const lowerCaseEventName = name.slice(2).toLowerCase()
+        const eventName = lowerCaseEventNameMap[lowerCaseEventName]
+        if (eventName) {
+          eventHandlers['on:' + eventName] = (event: Event) => {
+            const handler = props[name] as AnyFunction
+            const detail = (event as CustomEvent).detail as unknown
+            handler?.(detail)
+          }
+          continue
+        }
+      }
+
+      properties[name] = () => props[name]
     }
 
     const editor = useEditorContext()
@@ -38,13 +63,7 @@ export function createComponent<
       properties['prop:editor'] = () => props['editor'] || editor
     }
 
-    for (const eventName of eventNames) {
-      properties['on:' + eventName] = () => (event: Event) => {
-        eventHandlers[eventName.toLowerCase()]?.()?.(event)
-      }
-    }
-
-    return h(tagName, properties)
+    return h(tagName, { ...properties, ...eventHandlers })
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return

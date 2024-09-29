@@ -1,6 +1,7 @@
+import type { AnyFunction } from '@prosekit/core'
+import type { EventHandler } from 'svelte/elements'
 import { useEditorContext } from '../contexts/editor-context'
 
-type EventHandler = (...args: any[]) => any
 
 // For unknown reason, Svelte v4 cannot set properties on a web component
 // when I directly use `{...$$props}`. It seems that Svelte v4 recognizes
@@ -37,7 +38,7 @@ export function useComponent(propNames: string[], eventNames: string[]) {
           'update:' + name.slice(2).slice(0, -6).toLowerCase()
         const eventName = lowerCaseEventNameMap[lowerCaseEventName]
         if (eventName) {
-          eventHandlers[eventName] = value as EventHandler
+          eventHandlers[eventName] = value as AnyFunction
           continue
         }
       }
@@ -46,7 +47,7 @@ export function useComponent(propNames: string[], eventNames: string[]) {
         const lowerCaseEventName = name.slice(2).toLowerCase()
         const eventName = lowerCaseEventNameMap[lowerCaseEventName]
         if (eventName) {
-          eventHandlers[lowerCaseEventName] = value as EventHandler
+          eventHandlers[lowerCaseEventName] = value as AnyFunction
           continue
         }
       }

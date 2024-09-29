@@ -1,3 +1,4 @@
+import type { AnyFunction } from '@prosekit/core'
 import {
   createElement,
   forwardRef,
@@ -15,8 +16,6 @@ import { useEditorContext } from '../contexts/editor-context'
 const _useIsomorphicLayoutEffect =
   typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
-type EventHandler = (...args: any[]) => any
-
 export function createComponent<
   Props extends object,
   CustomElement extends HTMLElement,
@@ -29,16 +28,22 @@ export function createComponent<
   Partial<Props> & RefAttributes<CustomElement> & HTMLAttributes<CustomElement>
 > {
   const hasEditor = propNames.includes('editor')
-  const lowerCaseEventNames = eventNames.map((name) => name.toLowerCase())
+  const lowerCaseEventNameMap = Object.fromEntries(
+    eventNames.map((name) => [name.toLowerCase(), name]),
+  )
 
   const Component = forwardRef<any, any>((props: Props, ref) => {
     const [el, setEl] = useState<HTMLElement | null>(null)
 
     const properties: Record<string, unknown> = {}
     const attributes: Record<string, unknown> = {}
-    const eventHandlers: Record<string, EventHandler> = {}
+    const eventHandlers: Record<string, AnyFunction> = {}
 
     for (const [name, value] of Object.entries(props)) {
+      if (value === undefined) {
+        continue
+      }
+
       if (propNames.includes(name)) {
         properties[name] = value
         continue
@@ -47,19 +52,23 @@ export function createComponent<
       if (name.startsWith('on') && name.endsWith('Change')) {
         const lowerCaseEventName =
           'update:' + name.slice(2).slice(0, -6).toLowerCase()
-        if (lowerCaseEventNames.includes(lowerCaseEventName)) {
-          eventHandlers[lowerCaseEventName] = value as EventHandler
+        const eventName = lowerCaseEventNameMap[lowerCaseEventName]
+        const handler = value as AnyFunction | null
+        if (eventName && handler) {
+          eventHandlers[eventName] = (event: Event) => {
+            const detail = (event as CustomEvent).detail as unknown
+            handler(detail)
+          }
           continue
         }
       }
 
-      if (
-        name.startsWith('on') &&
-        lowerCaseEventNames.includes(name.slice(2).toLowerCase())
-      ) {
+      if (name.startsWith('on')) {
         const lowerCaseEventName = name.slice(2).toLowerCase()
-        if (lowerCaseEventNames.includes(lowerCaseEventName)) {
-          eventHandlers[lowerCaseEventName] = value as EventHandler
+        const eventName = lowerCaseEventNameMap[lowerCaseEventName]
+        const handler = value as AnyFunction | null
+        if (eventName && handler) {
+          eventHandlers[eventName] = handler
           continue
         }
       }
@@ -90,22 +99,10 @@ export function createComponent<
 
     for (const eventName of eventNames) {
       _useIsomorphicLayoutEffect(() => {
-        if (!el) return
-        const handler = eventHandlers[eventName.toLowerCase()]
-        if (!handler) return
-
-        const eventHandler = (event: Event) => {
-          if (eventName.startsWith('update:')) {
-            handler((event as CustomEvent).detail)
-          } else {
-            handler(event)
-          }
-        }
-
-        el.addEventListener(eventName, eventHandler)
-        return () => {
-          el.removeEventListener(eventName, eventHandler)
-        }
+        const handler = eventHandlers[eventName]
+        if (!el || !handler) return
+        el.addEventListener(eventName, handler)
+        return () => el.removeEventListener(eventName, handler)
       }, [el, eventHandlers[eventName]])
     }
 

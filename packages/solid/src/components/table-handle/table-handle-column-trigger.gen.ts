@@ -1,5 +1,6 @@
 import { 
-  defaultTableHandleColumnTriggerProps,
+  tableHandleColumnTriggerProps,
+  tableHandleColumnTriggerEvents,
   type TableHandleColumnTriggerElement,
   type TableHandleColumnTriggerProps,
 } from '@prosekit/web/table-handle'
@@ -11,5 +12,6 @@ export const TableHandleColumnTrigger = createComponent<
   TableHandleColumnTriggerElement
 >(
   'prosekit-table-handle-column-trigger', 
-  defaultTableHandleColumnTriggerProps,
+  Object.keys(tableHandleColumnTriggerProps),
+  Object.keys(tableHandleColumnTriggerEvents),
 )

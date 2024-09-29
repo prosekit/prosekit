@@ -1,7 +1,9 @@
 import {
-  defaultPopoverRootProps,
   type PopoverRootElement,
-  type PopoverRootProps,
+  type PopoverRootProps as Props,
+  type PopoverRootEvents as Events,
+  popoverRootProps,
+  popoverRootEvents,
 } from '@prosekit/web/popover'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,10 @@ import type {
 } from 'preact/compat'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+export type PopoverRootProps = CreateProps<Props, Events>
+ 
 export const PopoverRoot: ForwardRefExoticComponent<
   Partial<PopoverRootProps> &
   RefAttributes<PopoverRootElement> &
@@ -21,5 +26,6 @@ export const PopoverRoot: ForwardRefExoticComponent<
 >(
   'prosekit-popover-root',
   'PopoverRoot',
-  defaultPopoverRootProps,
+  Object.keys(popoverRootProps),
+  Object.keys(popoverRootEvents),
 )

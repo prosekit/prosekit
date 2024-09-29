@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useTooltipRoot } from "./setup"
+import { tooltipRootEvents, tooltipRootProps, type TooltipRootEvents, type TooltipRootProps } from "./types"
 
-import { defaultTooltipRootProps, type TooltipRootProps } from './props'
-import { useTooltipRoot } from './state'
+class TooltipRootElement extends defineCustomElement<
+  TooltipRootProps,
+  TooltipRootEvents
+>({
+  props: tooltipRootProps,
+  events: tooltipRootEvents,
+  setup: useTooltipRoot,
+}) {}
 
-class TooltipRootElement extends ElementBuilder<TooltipRootProps>(useTooltipRoot, defaultTooltipRootProps) {}
-
-defineCustomElement('prosekit-tooltip-root', TooltipRootElement)
-
+registerCustomElement('prosekit-tooltip-root', TooltipRootElement)
+  
 export { TooltipRootElement }

@@ -1,5 +1,6 @@
 import { 
-  defaultAutocompletePopoverProps,
+  autocompletePopoverProps,
+  autocompletePopoverEvents,
   type AutocompletePopoverElement,
   type AutocompletePopoverProps,
 } from '@prosekit/web/autocomplete'
@@ -11,5 +12,6 @@ export const AutocompletePopover = createComponent<
   AutocompletePopoverElement
 >(
   'prosekit-autocomplete-popover', 
-  defaultAutocompletePopoverProps,
+  Object.keys(autocompletePopoverProps),
+  Object.keys(autocompletePopoverEvents),
 )

@@ -1,5 +1,13 @@
-import { defaultPopoverTriggerProps, type PopoverTriggerProps } from '@prosekit/web/popover'
+import { popoverTriggerProps, popoverTriggerEvents, type PopoverTriggerProps, type PopoverTriggerEvents } from '@prosekit/web/popover'
 
 import { createComponent } from '../create-component'
 
-export const PopoverTrigger = createComponent<PopoverTriggerProps>('prosekit-popover-trigger', 'PopoverTrigger', defaultPopoverTriggerProps)
+export const PopoverTrigger = createComponent<
+  PopoverTriggerProps,
+  PopoverTriggerEvents
+>(
+  'prosekit-popover-trigger',
+  'PopoverTrigger',
+  Object.keys(popoverTriggerProps),
+  Object.keys(popoverTriggerEvents),
+)

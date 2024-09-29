@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useResizableRoot } from "./setup"
+import { resizableRootEvents, resizableRootProps, type ResizableRootEvents, type ResizableRootProps } from "./types"
 
-import { defaultResizableRootProps, type ResizableRootProps } from './props'
-import { useResizableRoot } from './state'
+class ResizableRootElement extends defineCustomElement<
+  ResizableRootProps,
+  ResizableRootEvents
+>({
+  props: resizableRootProps,
+  events: resizableRootEvents,
+  setup: useResizableRoot,
+}) {}
 
-class ResizableRootElement extends ElementBuilder<ResizableRootProps>(useResizableRoot, defaultResizableRootProps) {}
-
-defineCustomElement('prosekit-resizable-root', ResizableRootElement)
-
+registerCustomElement('prosekit-resizable-root', ResizableRootElement)
+  
 export { ResizableRootElement }

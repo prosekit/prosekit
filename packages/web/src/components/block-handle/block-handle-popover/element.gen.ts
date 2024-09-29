@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useBlockHandlePopover } from "./setup"
+import { blockHandlePopoverEvents, blockHandlePopoverProps, type BlockHandlePopoverEvents, type BlockHandlePopoverProps } from "./types"
 
-import { defaultBlockHandlePopoverProps, type BlockHandlePopoverProps } from './props'
-import { useBlockHandlePopover } from './state'
+class BlockHandlePopoverElement extends defineCustomElement<
+  BlockHandlePopoverProps,
+  BlockHandlePopoverEvents
+>({
+  props: blockHandlePopoverProps,
+  events: blockHandlePopoverEvents,
+  setup: useBlockHandlePopover,
+}) {}
 
-class BlockHandlePopoverElement extends ElementBuilder<BlockHandlePopoverProps>(useBlockHandlePopover, defaultBlockHandlePopoverProps) {}
-
-defineCustomElement('prosekit-block-handle-popover', BlockHandlePopoverElement)
-
+registerCustomElement('prosekit-block-handle-popover', BlockHandlePopoverElement)
+  
 export { BlockHandlePopoverElement }

@@ -1,5 +1,6 @@
 import { 
-  defaultTableHandleRowRootProps,
+  tableHandleRowRootProps,
+  tableHandleRowRootEvents,
   type TableHandleRowRootElement,
   type TableHandleRowRootProps,
 } from '@prosekit/web/table-handle'
@@ -11,5 +12,6 @@ export const TableHandleRowRoot = createComponent<
   TableHandleRowRootElement
 >(
   'prosekit-table-handle-row-root', 
-  defaultTableHandleRowRootProps,
+  Object.keys(tableHandleRowRootProps),
+  Object.keys(tableHandleRowRootEvents),
 )

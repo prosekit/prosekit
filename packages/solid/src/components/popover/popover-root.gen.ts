@@ -1,5 +1,6 @@
 import { 
-  defaultPopoverRootProps,
+  popoverRootProps,
+  popoverRootEvents,
   type PopoverRootElement,
   type PopoverRootProps,
 } from '@prosekit/web/popover'
@@ -11,5 +12,6 @@ export const PopoverRoot = createComponent<
   PopoverRootElement
 >(
   'prosekit-popover-root', 
-  defaultPopoverRootProps,
+  Object.keys(popoverRootProps),
+  Object.keys(popoverRootEvents),
 )

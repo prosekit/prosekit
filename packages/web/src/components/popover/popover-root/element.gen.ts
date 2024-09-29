@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { usePopoverRoot } from "./setup"
+import { popoverRootEvents, popoverRootProps, type PopoverRootEvents, type PopoverRootProps } from "./types"
 
-import { defaultPopoverRootProps, type PopoverRootProps } from './props'
-import { usePopoverRoot } from './state'
+class PopoverRootElement extends defineCustomElement<
+  PopoverRootProps,
+  PopoverRootEvents
+>({
+  props: popoverRootProps,
+  events: popoverRootEvents,
+  setup: usePopoverRoot,
+}) {}
 
-class PopoverRootElement extends ElementBuilder<PopoverRootProps>(usePopoverRoot, defaultPopoverRootProps) {}
-
-defineCustomElement('prosekit-popover-root', PopoverRootElement)
-
+registerCustomElement('prosekit-popover-root', PopoverRootElement)
+  
 export { PopoverRootElement }

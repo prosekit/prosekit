@@ -1,7 +1,9 @@
 import {
-  defaultAutocompleteItemProps,
   type AutocompleteItemElement,
-  type AutocompleteItemProps
+  type AutocompleteItemProps as Props,
+  type AutocompleteItemEvents as Events,
+  autocompleteItemProps,
+  autocompleteItemEvents,
 } from '@prosekit/web/autocomplete'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,10 @@ import type {
 } from 'react'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+export type AutocompleteItemProps = CreateProps<Props, Events>
+ 
 export const AutocompleteItem: ForwardRefExoticComponent<
   Partial<AutocompleteItemProps> &
   RefAttributes<AutocompleteItemElement> &
@@ -21,5 +26,6 @@ export const AutocompleteItem: ForwardRefExoticComponent<
 >(
   'prosekit-autocomplete-item',
   'AutocompleteItem',
-  defaultAutocompleteItemProps,
+  Object.keys(autocompleteItemProps),
+  Object.keys(autocompleteItemEvents),
 )

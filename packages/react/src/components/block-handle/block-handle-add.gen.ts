@@ -1,7 +1,9 @@
 import {
-  defaultBlockHandleAddProps,
   type BlockHandleAddElement,
-  type BlockHandleAddProps
+  type BlockHandleAddProps as Props,
+  type BlockHandleAddEvents as Events,
+  blockHandleAddProps,
+  blockHandleAddEvents,
 } from '@prosekit/web/block-handle'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,10 @@ import type {
 } from 'react'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+export type BlockHandleAddProps = CreateProps<Props, Events>
+ 
 export const BlockHandleAdd: ForwardRefExoticComponent<
   Partial<BlockHandleAddProps> &
   RefAttributes<BlockHandleAddElement> &
@@ -21,5 +26,6 @@ export const BlockHandleAdd: ForwardRefExoticComponent<
 >(
   'prosekit-block-handle-add',
   'BlockHandleAdd',
-  defaultBlockHandleAddProps,
+  Object.keys(blockHandleAddProps),
+  Object.keys(blockHandleAddEvents),
 )

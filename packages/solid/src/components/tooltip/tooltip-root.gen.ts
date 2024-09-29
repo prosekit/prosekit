@@ -1,5 +1,6 @@
 import { 
-  defaultTooltipRootProps,
+  tooltipRootProps,
+  tooltipRootEvents,
   type TooltipRootElement,
   type TooltipRootProps,
 } from '@prosekit/web/tooltip'
@@ -11,5 +12,6 @@ export const TooltipRoot = createComponent<
   TooltipRootElement
 >(
   'prosekit-tooltip-root', 
-  defaultTooltipRootProps,
+  Object.keys(tooltipRootProps),
+  Object.keys(tooltipRootEvents),
 )

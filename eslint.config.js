@@ -37,6 +37,12 @@ const configs = [
     },
   },
   {
+    files: ['packages/**/*.gen.ts', 'packages/**/*.gen.tsx'],
+    rules: {
+      '@typescript-eslint/no-empty-object-type': 'off',
+    },
+  },
+  {
     rules: {
       'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
     },

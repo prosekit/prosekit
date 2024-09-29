@@ -1,7 +1,9 @@
 import {
-  defaultPopoverTriggerProps,
   type PopoverTriggerElement,
-  type PopoverTriggerProps,
+  type PopoverTriggerProps as Props,
+  type PopoverTriggerEvents as Events,
+  popoverTriggerProps,
+  popoverTriggerEvents,
 } from '@prosekit/web/popover'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,10 @@ import type {
 } from 'preact/compat'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+export type PopoverTriggerProps = CreateProps<Props, Events>
+ 
 export const PopoverTrigger: ForwardRefExoticComponent<
   Partial<PopoverTriggerProps> &
   RefAttributes<PopoverTriggerElement> &
@@ -21,5 +26,6 @@ export const PopoverTrigger: ForwardRefExoticComponent<
 >(
   'prosekit-popover-trigger',
   'PopoverTrigger',
-  defaultPopoverTriggerProps,
+  Object.keys(popoverTriggerProps),
+  Object.keys(popoverTriggerEvents),
 )

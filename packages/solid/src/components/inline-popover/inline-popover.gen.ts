@@ -1,5 +1,6 @@
 import { 
-  defaultInlinePopoverProps,
+  inlinePopoverProps,
+  inlinePopoverEvents,
   type InlinePopoverElement,
   type InlinePopoverProps,
 } from '@prosekit/web/inline-popover'
@@ -11,5 +12,6 @@ export const InlinePopover = createComponent<
   InlinePopoverElement
 >(
   'prosekit-inline-popover', 
-  defaultInlinePopoverProps,
+  Object.keys(inlinePopoverProps),
+  Object.keys(inlinePopoverEvents),
 )

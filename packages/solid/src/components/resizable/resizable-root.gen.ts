@@ -1,5 +1,6 @@
 import { 
-  defaultResizableRootProps,
+  resizableRootProps,
+  resizableRootEvents,
   type ResizableRootElement,
   type ResizableRootProps,
 } from '@prosekit/web/resizable'
@@ -11,5 +12,6 @@ export const ResizableRoot = createComponent<
   ResizableRootElement
 >(
   'prosekit-resizable-root', 
-  defaultResizableRootProps,
+  Object.keys(resizableRootProps),
+  Object.keys(resizableRootEvents),
 )

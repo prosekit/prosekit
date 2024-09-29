@@ -1,7 +1,9 @@
-import type { AutocompleteEmptyElement, AutocompleteEmptyProps } from '@prosekit/web/autocomplete'    
+import type { AutocompleteEmptyElement, AutocompleteEmptyProps, AutocompleteEmptyEvents } from '@prosekit/web/autocomplete'    
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
+import type { CreateProps } from '../create-props'
+
 import Component from './autocomplete-empty.gen.svelte'
 
-export const AutocompleteEmpty = Component as typeof SvelteComponent<Partial<AutocompleteEmptyProps> & HTMLAttributes<AutocompleteEmptyElement>>
+export const AutocompleteEmpty = Component as typeof SvelteComponent<Partial<CreateProps<AutocompleteEmptyProps, AutocompleteEmptyEvents>> & HTMLAttributes<AutocompleteEmptyElement>>

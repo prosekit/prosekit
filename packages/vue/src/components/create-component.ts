@@ -9,17 +9,24 @@ import {
 
 import { useEditorContext } from '../injection/editor-context'
 
-export function createComponent<Props extends object>(
+import type { CreateEmits } from './create-emits'
+
+export function createComponent<
+  Props extends { [PropName in keyof Props]: unknown },
+  Events extends { [EventType in keyof Events]: CustomEvent },
+>(
   tagName: string,
   displayName: string,
-  defaultProps: Props,
-): DefineSetupFnComponent<Partial<Props> & HTMLAttributes> {
-  const propertyNames = Object.keys(defaultProps)
+  propNames: string[],
+  eventNames: string[],
+): DefineSetupFnComponent<
+  Partial<Props> & HTMLAttributes,
+  CreateEmits<Events>
+> {
+  const hasEditor = propNames.includes('editor')
 
-  const hasEditor = Object.hasOwn(defaultProps, 'editor')
-
-  const Component = defineComponent(
-    (props: Record<string, unknown>, { slots }) => {
+  const Component = defineComponent<any, any>(
+    (props: Record<string, unknown>, { slots, emit }) => {
       const editor = useEditorContext()
 
       const mounted = ref(false)
@@ -33,13 +40,27 @@ export function createComponent<Props extends object>(
 
         for (const [key, value] of Object.entries(props)) {
           if (value !== undefined && !key.startsWith('.')) {
-            properties[propertyNames.includes(key) ? '.' + key : key] = value
+            properties[propNames.includes(key) ? '.' + key : key] = value
           }
         }
 
         // Try to add the editor prop if it's missing.
         if (hasEditor && editor && !properties['editor']) {
           properties.editor = editor
+        }
+
+        for (const eventName of eventNames) {
+          if (eventName.startsWith('update:')) {
+            properties['on' + eventName[0].toUpperCase() + eventName.slice(1)] =
+              (event: Event) => {
+                emit(eventName, (event as CustomEvent).detail)
+              }
+          } else {
+            properties['on' + eventName[0].toUpperCase() + eventName.slice(1)] =
+              (event: Event) => {
+                emit(eventName, event)
+              }
+          }
         }
 
         // Ensure web components work after SSR hydration.
@@ -50,7 +71,8 @@ export function createComponent<Props extends object>(
     },
     {
       name: displayName,
-      props: propertyNames,
+      props: propNames,
+      emits: eventNames,
     },
   )
 

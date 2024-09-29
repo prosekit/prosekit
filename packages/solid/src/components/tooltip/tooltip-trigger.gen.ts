@@ -1,5 +1,6 @@
 import { 
-  defaultTooltipTriggerProps,
+  tooltipTriggerProps,
+  tooltipTriggerEvents,
   type TooltipTriggerElement,
   type TooltipTriggerProps,
 } from '@prosekit/web/tooltip'
@@ -11,5 +12,6 @@ export const TooltipTrigger = createComponent<
   TooltipTriggerElement
 >(
   'prosekit-tooltip-trigger', 
-  defaultTooltipTriggerProps,
+  Object.keys(tooltipTriggerProps),
+  Object.keys(tooltipTriggerEvents),
 )

@@ -1,6 +1,7 @@
 import {
   createElement,
   forwardRef,
+  useEffect,
   useLayoutEffect,
   useState,
   type ForwardRefExoticComponent,
@@ -11,31 +12,62 @@ import { mergeRefs } from 'react-merge-refs'
 
 import { useEditorContext } from '../contexts/editor-context'
 
+const _useIsomorphicLayoutEffect =
+  typeof window !== 'undefined' ? useLayoutEffect : useEffect
+
+type EventHandler = (...args: any[]) => any
+
 export function createComponent<
   Props extends object,
   CustomElement extends HTMLElement,
 >(
   tagName: string,
   displayName: string,
-  defaultProps: Props,
+  propNames: string[],
+  eventNames: string[],
 ): ForwardRefExoticComponent<
   Partial<Props> & RefAttributes<CustomElement> & HTMLAttributes<CustomElement>
 > {
-  const propertyNames = Object.keys(defaultProps)
-
-  const hasEditor = Object.hasOwn(defaultProps, 'editor')
+  const hasEditor = propNames.includes('editor')
+  const lowerCaseEventNames = eventNames.map((name) => name.toLowerCase())
 
   const Component = forwardRef<any, any>((props: Props, ref) => {
     const [el, setEl] = useState<HTMLElement | null>(null)
 
     const properties: Record<string, unknown> = {}
     const attributes: Record<string, unknown> = {}
+    const eventHandlers: Record<string, EventHandler> = {}
 
     for (const [name, value] of Object.entries(props)) {
-      if (propertyNames.includes(name)) {
+      if (propNames.includes(name)) {
         properties[name] = value
+        continue
+      }
+
+      if (name.startsWith('on') && name.endsWith('Change')) {
+        const lowerCaseEventName =
+          'update:' + name.slice(2).slice(0, -6).toLowerCase()
+        if (lowerCaseEventNames.includes(lowerCaseEventName)) {
+          eventHandlers[lowerCaseEventName] = value as EventHandler
+          continue
+        }
+      }
+
+      if (
+        name.startsWith('on') &&
+        lowerCaseEventNames.includes(name.slice(2).toLowerCase())
+      ) {
+        const lowerCaseEventName = name.slice(2).toLowerCase()
+        if (lowerCaseEventNames.includes(lowerCaseEventName)) {
+          eventHandlers[lowerCaseEventName] = value as EventHandler
+          continue
+        }
+      }
+
+      if (name === 'className') {
+        attributes['class'] = value
       } else {
-        attributes[name === 'className' ? 'class' : name] = value
+        attributes[name] = value
       }
     }
 
@@ -45,17 +77,37 @@ export function createComponent<
       properties['editor'] = editor
     }
 
-    useLayoutEffect(() => {
-      if (el) {
-        for (const [name, value] of Object.entries(properties)) {
-          if (value !== undefined) {
-            // @ts-expect-error: we know that name is a valid property name
-            el[name] = value
-          }
+    _useIsomorphicLayoutEffect(() => {
+      if (!el) return
+      for (const [name, value] of Object.entries(properties)) {
+        if (value !== undefined) {
+          // @ts-expect-error: we know that name is a valid property name
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          el[name] = value as unknown as any
         }
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [el, ...propertyNames.map((name) => properties[name])])
+    }, [el, ...propNames.map((name) => properties[name])])
+
+    for (const eventName of eventNames) {
+      _useIsomorphicLayoutEffect(() => {
+        if (!el) return
+        const handler = eventHandlers[eventName.toLowerCase()]
+        if (!handler) return
+
+        const eventHandler = (event: Event) => {
+          if (eventName.startsWith('update:')) {
+            handler((event as CustomEvent).detail)
+          } else {
+            handler(event)
+          }
+        }
+
+        el.addEventListener(eventName, eventHandler)
+        return () => {
+          el.removeEventListener(eventName, eventHandler)
+        }
+      }, [el, eventHandlers[eventName]])
+    }
 
     return createElement(tagName, {
       ...attributes,

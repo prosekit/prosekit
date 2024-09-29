@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useResizableHandle } from "./setup"
+import { resizableHandleEvents, resizableHandleProps, type ResizableHandleEvents, type ResizableHandleProps } from "./types"
 
-import { defaultResizableHandleProps, type ResizableHandleProps } from './props'
-import { useResizableHandle } from './state'
+class ResizableHandleElement extends defineCustomElement<
+  ResizableHandleProps,
+  ResizableHandleEvents
+>({
+  props: resizableHandleProps,
+  events: resizableHandleEvents,
+  setup: useResizableHandle,
+}) {}
 
-class ResizableHandleElement extends ElementBuilder<ResizableHandleProps>(useResizableHandle, defaultResizableHandleProps) {}
-
-defineCustomElement('prosekit-resizable-handle', ResizableHandleElement)
-
+registerCustomElement('prosekit-resizable-handle', ResizableHandleElement)
+  
 export { ResizableHandleElement }

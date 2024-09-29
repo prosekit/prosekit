@@ -1,5 +1,6 @@
 import { 
-  defaultBlockHandlePopoverProps,
+  blockHandlePopoverProps,
+  blockHandlePopoverEvents,
   type BlockHandlePopoverElement,
   type BlockHandlePopoverProps,
 } from '@prosekit/web/block-handle'
@@ -11,5 +12,6 @@ export const BlockHandlePopover = createComponent<
   BlockHandlePopoverElement
 >(
   'prosekit-block-handle-popover', 
-  defaultBlockHandlePopoverProps,
+  Object.keys(blockHandlePopoverProps),
+  Object.keys(blockHandlePopoverEvents),
 )

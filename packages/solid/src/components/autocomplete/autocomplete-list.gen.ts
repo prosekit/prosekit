@@ -1,5 +1,6 @@
 import { 
-  defaultAutocompleteListProps,
+  autocompleteListProps,
+  autocompleteListEvents,
   type AutocompleteListElement,
   type AutocompleteListProps,
 } from '@prosekit/web/autocomplete'
@@ -11,5 +12,6 @@ export const AutocompleteList = createComponent<
   AutocompleteListElement
 >(
   'prosekit-autocomplete-list', 
-  defaultAutocompleteListProps,
+  Object.keys(autocompleteListProps),
+  Object.keys(autocompleteListEvents),
 )

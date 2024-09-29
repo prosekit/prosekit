@@ -1,5 +1,6 @@
 import { 
-  defaultPopoverContentProps,
+  popoverContentProps,
+  popoverContentEvents,
   type PopoverContentElement,
   type PopoverContentProps,
 } from '@prosekit/web/popover'
@@ -11,5 +12,6 @@ export const PopoverContent = createComponent<
   PopoverContentElement
 >(
   'prosekit-popover-content', 
-  defaultPopoverContentProps,
+  Object.keys(popoverContentProps),
+  Object.keys(popoverContentEvents),
 )

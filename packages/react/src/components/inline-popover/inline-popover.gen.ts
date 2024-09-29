@@ -1,7 +1,9 @@
 import {
-  defaultInlinePopoverProps,
   type InlinePopoverElement,
-  type InlinePopoverProps
+  type InlinePopoverProps as Props,
+  type InlinePopoverEvents as Events,
+  inlinePopoverProps,
+  inlinePopoverEvents,
 } from '@prosekit/web/inline-popover'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,10 @@ import type {
 } from 'react'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+export type InlinePopoverProps = CreateProps<Props, Events>
+ 
 export const InlinePopover: ForwardRefExoticComponent<
   Partial<InlinePopoverProps> &
   RefAttributes<InlinePopoverElement> &
@@ -21,5 +26,6 @@ export const InlinePopover: ForwardRefExoticComponent<
 >(
   'prosekit-inline-popover',
   'InlinePopover',
-  defaultInlinePopoverProps,
+  Object.keys(inlinePopoverProps),
+  Object.keys(inlinePopoverEvents),
 )

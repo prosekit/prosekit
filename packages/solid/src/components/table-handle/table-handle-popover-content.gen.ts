@@ -1,5 +1,6 @@
 import { 
-  defaultTableHandlePopoverContentProps,
+  tableHandlePopoverContentProps,
+  tableHandlePopoverContentEvents,
   type TableHandlePopoverContentElement,
   type TableHandlePopoverContentProps,
 } from '@prosekit/web/table-handle'
@@ -11,5 +12,6 @@ export const TableHandlePopoverContent = createComponent<
   TableHandlePopoverContentElement
 >(
   'prosekit-table-handle-popover-content', 
-  defaultTableHandlePopoverContentProps,
+  Object.keys(tableHandlePopoverContentProps),
+  Object.keys(tableHandlePopoverContentEvents),
 )

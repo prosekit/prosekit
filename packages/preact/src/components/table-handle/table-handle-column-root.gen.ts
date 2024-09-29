@@ -1,7 +1,9 @@
 import {
-  defaultTableHandleColumnRootProps,
   type TableHandleColumnRootElement,
-  type TableHandleColumnRootProps,
+  type TableHandleColumnRootProps as Props,
+  type TableHandleColumnRootEvents as Events,
+  tableHandleColumnRootProps,
+  tableHandleColumnRootEvents,
 } from '@prosekit/web/table-handle'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,10 @@ import type {
 } from 'preact/compat'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+export type TableHandleColumnRootProps = CreateProps<Props, Events>
+ 
 export const TableHandleColumnRoot: ForwardRefExoticComponent<
   Partial<TableHandleColumnRootProps> &
   RefAttributes<TableHandleColumnRootElement> &
@@ -21,5 +26,6 @@ export const TableHandleColumnRoot: ForwardRefExoticComponent<
 >(
   'prosekit-table-handle-column-root',
   'TableHandleColumnRoot',
-  defaultTableHandleColumnRootProps,
+  Object.keys(tableHandleColumnRootProps),
+  Object.keys(tableHandleColumnRootEvents),
 )

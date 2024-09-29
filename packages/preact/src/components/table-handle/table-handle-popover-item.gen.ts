@@ -1,7 +1,9 @@
 import {
-  defaultTableHandlePopoverItemProps,
   type TableHandlePopoverItemElement,
-  type TableHandlePopoverItemProps,
+  type TableHandlePopoverItemProps as Props,
+  type TableHandlePopoverItemEvents as Events,
+  tableHandlePopoverItemProps,
+  tableHandlePopoverItemEvents,
 } from '@prosekit/web/table-handle'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,10 @@ import type {
 } from 'preact/compat'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+export type TableHandlePopoverItemProps = CreateProps<Props, Events>
+ 
 export const TableHandlePopoverItem: ForwardRefExoticComponent<
   Partial<TableHandlePopoverItemProps> &
   RefAttributes<TableHandlePopoverItemElement> &
@@ -21,5 +26,6 @@ export const TableHandlePopoverItem: ForwardRefExoticComponent<
 >(
   'prosekit-table-handle-popover-item',
   'TableHandlePopoverItem',
-  defaultTableHandlePopoverItemProps,
+  Object.keys(tableHandlePopoverItemProps),
+  Object.keys(tableHandlePopoverItemEvents),
 )

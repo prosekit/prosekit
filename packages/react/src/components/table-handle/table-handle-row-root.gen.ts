@@ -1,7 +1,9 @@
 import {
-  defaultTableHandleRowRootProps,
   type TableHandleRowRootElement,
-  type TableHandleRowRootProps
+  type TableHandleRowRootProps as Props,
+  type TableHandleRowRootEvents as Events,
+  tableHandleRowRootProps,
+  tableHandleRowRootEvents,
 } from '@prosekit/web/table-handle'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,10 @@ import type {
 } from 'react'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+export type TableHandleRowRootProps = CreateProps<Props, Events>
+ 
 export const TableHandleRowRoot: ForwardRefExoticComponent<
   Partial<TableHandleRowRootProps> &
   RefAttributes<TableHandleRowRootElement> &
@@ -21,5 +26,6 @@ export const TableHandleRowRoot: ForwardRefExoticComponent<
 >(
   'prosekit-table-handle-row-root',
   'TableHandleRowRoot',
-  defaultTableHandleRowRootProps,
+  Object.keys(tableHandleRowRootProps),
+  Object.keys(tableHandleRowRootEvents),
 )

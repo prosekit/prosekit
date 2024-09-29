@@ -1,5 +1,6 @@
 import { 
-  defaultBlockHandleDraggableProps,
+  blockHandleDraggableProps,
+  blockHandleDraggableEvents,
   type BlockHandleDraggableElement,
   type BlockHandleDraggableProps,
 } from '@prosekit/web/block-handle'
@@ -11,5 +12,6 @@ export const BlockHandleDraggable = createComponent<
   BlockHandleDraggableElement
 >(
   'prosekit-block-handle-draggable', 
-  defaultBlockHandleDraggableProps,
+  Object.keys(blockHandleDraggableProps),
+  Object.keys(blockHandleDraggableEvents),
 )

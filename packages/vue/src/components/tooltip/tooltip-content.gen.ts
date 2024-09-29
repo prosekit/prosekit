@@ -1,5 +1,13 @@
-import { defaultTooltipContentProps, type TooltipContentProps } from '@prosekit/web/tooltip'
+import { tooltipContentProps, tooltipContentEvents, type TooltipContentProps, type TooltipContentEvents } from '@prosekit/web/tooltip'
 
 import { createComponent } from '../create-component'
 
-export const TooltipContent = createComponent<TooltipContentProps>('prosekit-tooltip-content', 'TooltipContent', defaultTooltipContentProps)
+export const TooltipContent = createComponent<
+  TooltipContentProps,
+  TooltipContentEvents
+>(
+  'prosekit-tooltip-content',
+  'TooltipContent',
+  Object.keys(tooltipContentProps),
+  Object.keys(tooltipContentEvents),
+)

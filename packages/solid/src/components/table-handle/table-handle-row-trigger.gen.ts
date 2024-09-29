@@ -1,5 +1,6 @@
 import { 
-  defaultTableHandleRowTriggerProps,
+  tableHandleRowTriggerProps,
+  tableHandleRowTriggerEvents,
   type TableHandleRowTriggerElement,
   type TableHandleRowTriggerProps,
 } from '@prosekit/web/table-handle'
@@ -11,5 +12,6 @@ export const TableHandleRowTrigger = createComponent<
   TableHandleRowTriggerElement
 >(
   'prosekit-table-handle-row-trigger', 
-  defaultTableHandleRowTriggerProps,
+  Object.keys(tableHandleRowTriggerProps),
+  Object.keys(tableHandleRowTriggerEvents),
 )

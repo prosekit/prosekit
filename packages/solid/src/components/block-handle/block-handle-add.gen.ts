@@ -1,5 +1,6 @@
 import { 
-  defaultBlockHandleAddProps,
+  blockHandleAddProps,
+  blockHandleAddEvents,
   type BlockHandleAddElement,
   type BlockHandleAddProps,
 } from '@prosekit/web/block-handle'
@@ -11,5 +12,6 @@ export const BlockHandleAdd = createComponent<
   BlockHandleAddElement
 >(
   'prosekit-block-handle-add', 
-  defaultBlockHandleAddProps,
+  Object.keys(blockHandleAddProps),
+  Object.keys(blockHandleAddEvents),
 )

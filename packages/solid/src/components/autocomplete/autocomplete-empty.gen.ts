@@ -1,5 +1,6 @@
 import { 
-  defaultAutocompleteEmptyProps,
+  autocompleteEmptyProps,
+  autocompleteEmptyEvents,
   type AutocompleteEmptyElement,
   type AutocompleteEmptyProps,
 } from '@prosekit/web/autocomplete'
@@ -11,5 +12,6 @@ export const AutocompleteEmpty = createComponent<
   AutocompleteEmptyElement
 >(
   'prosekit-autocomplete-empty', 
-  defaultAutocompleteEmptyProps,
+  Object.keys(autocompleteEmptyProps),
+  Object.keys(autocompleteEmptyEvents),
 )

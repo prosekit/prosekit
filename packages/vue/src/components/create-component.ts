@@ -50,16 +50,14 @@ export function createComponent<
         }
 
         for (const eventName of eventNames) {
-          if (eventName.startsWith('update:')) {
-            properties['on' + eventName[0].toUpperCase() + eventName.slice(1)] =
-              (event: Event) => {
-                emit(eventName, (event as CustomEvent).detail)
-              }
-          } else {
-            properties['on' + eventName[0].toUpperCase() + eventName.slice(1)] =
-              (event: Event) => {
-                emit(eventName, event)
-              }
+          const extractDetail = eventName.endsWith('Change')
+          properties['on' + eventName[0].toUpperCase() + eventName.slice(1)] = (
+            event: Event,
+          ) => {
+            emit(
+              eventName,
+              extractDetail ? (event as CustomEvent).detail : event,
+            )
           }
         }
 

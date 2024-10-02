@@ -37,7 +37,11 @@ const configs = [
     },
   },
   {
-    files: ['packages/**/*.gen.ts', 'packages/**/*.gen.tsx'],
+    files: [
+      'packages/**/*.gen.ts',
+      'packages/**/*.gen.tsx',
+      'packages/**/types.ts',
+    ],
     rules: {
       '@typescript-eslint/no-empty-object-type': 'off',
     },

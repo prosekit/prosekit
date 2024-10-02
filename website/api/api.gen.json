@@ -1,0 +1,1258 @@
+{
+  "AutocompleteEmpty": {
+    "props": [],
+    "events": []
+  },
+  "AutocompleteItem": {
+    "props": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "The value of the item, which will be matched against the query.\n\nIf not provided, the value is the item's text content.",
+        "default": "\"\""
+      }
+    ],
+    "events": [
+      {
+        "name": "select",
+        "type": "CustomEvent<void>",
+        "description": "Fired when the item is selected."
+      }
+    ]
+  },
+  "AutocompleteList": {
+    "props": [
+      {
+        "name": "filter",
+        "type": "ItemFilter | null",
+        "description": "The filter function to determine if an item should be shown in the listbox.\nBy default, a simple case-insensitive substring match is used. You can\nprovide a custom filter function to match against a more complex pattern.\nYou can also pass `null` to disable filtering and allow all items to be\nshown.",
+        "default": "defaultItemFilter"
+      }
+    ],
+    "events": [
+      {
+        "name": "update:value",
+        "type": "CustomEvent<string>",
+        "description": ""
+      }
+    ]
+  },
+  "AutocompletePopover": {
+    "props": [
+      {
+        "name": "regex",
+        "type": "RegExp | null",
+        "description": "The regular expression to match the query text to autocomplete.",
+        "default": "null"
+      },
+      {
+        "name": "onQueryChange",
+        "type": "((query: string) => void) | null",
+        "description": "A callback that is called when the query changes."
+      },
+      {
+        "name": "onOpenChange",
+        "type": "((open: boolean) => void) | null",
+        "description": "A callback that is called when the open state changes."
+      },
+      {
+        "name": "placement",
+        "type": "Placement",
+        "description": "The placement of the popover, relative to the text cursor.",
+        "default": "\"bottom-start\""
+      },
+      {
+        "name": "offset",
+        "type": "OffsetOptions | null",
+        "description": "The distance between the popover and the hovered block.",
+        "default": "4"
+      },
+      {
+        "name": "inline",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      },
+      {
+        "name": "hoist",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      },
+      {
+        "name": "fitViewport",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      },
+      {
+        "name": "boundary",
+        "type": "Boundary",
+        "description": "",
+        "default": "\"The body element\""
+      },
+      {
+        "name": "overflowPadding",
+        "type": "number",
+        "description": "",
+        "default": "8"
+      },
+      {
+        "name": "strategy",
+        "type": "\"absolute\" | \"fixed\"",
+        "description": "The strategy to use for positioning",
+        "default": "\"absolute\""
+      },
+      {
+        "name": "autoUpdate",
+        "type": "boolean | AutoUpdateOptions",
+        "description": "Options to activate auto-update listeners",
+        "default": "true"
+      },
+      {
+        "name": "transform",
+        "type": "boolean",
+        "description": "Whether to use `transform: translate3d()` for positioning instead of `top`\nand `left` (layout) to place the floating element.",
+        "default": "false"
+      },
+      {
+        "name": "flip",
+        "type": "boolean | Placement[]",
+        "description": "Whether to flip the `placement` in order to keep it in view when the\npreferred placement(s) will overflow the clipping boundary. You can also\nprovide an array of placements to try sequentially if the preferred\n`placement` does not fit.",
+        "default": "false"
+      },
+      {
+        "name": "shift",
+        "type": "boolean",
+        "description": "Whether the floating element should shift to keep it in view.",
+        "default": "false"
+      },
+      {
+        "name": "overlap",
+        "type": "boolean",
+        "description": "Whether the floating element can overlap the reference element to keep it\nin view.",
+        "default": "false"
+      },
+      {
+        "name": "sameWidth",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "sameHeight",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's height so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "hide",
+        "type": "boolean",
+        "description": "Whether to hide the floating element when the reference element or the\nfloating element is fully clipped.",
+        "default": "false"
+      },
+      {
+        "name": "rootBoundary",
+        "type": "RootBoundary",
+        "description": "",
+        "default": "'viewport'"
+      },
+      {
+        "name": "elementContext",
+        "type": "ElementContext",
+        "description": "",
+        "default": "'floating'"
+      },
+      {
+        "name": "altBoundary",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      }
+    ],
+    "events": []
+  },
+  "BlockHandleAdd": {
+    "props": [],
+    "events": []
+  },
+  "BlockHandleDraggable": {
+    "props": [],
+    "events": []
+  },
+  "BlockHandlePopover": {
+    "props": [
+      {
+        "name": "placement",
+        "type": "Placement",
+        "description": "The placement of the popover, relative to the hovered block.",
+        "default": "\"left-start\""
+      },
+      {
+        "name": "offset",
+        "type": "number",
+        "description": "The distance between the popover and the hovered block.",
+        "default": "4"
+      },
+      {
+        "name": "inline",
+        "type": "boolean",
+        "description": "Whether to improve positioning for inline reference elements that span over\nmultiple lines.",
+        "default": "false"
+      },
+      {
+        "name": "hoist",
+        "type": "boolean",
+        "description": "Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)\nto place the floating element on top of other page content. When enabled,\nthe floating element won't be clipped by an ancestor. This provides a\nsimilar result to React's `<Portals>` or Vue's `<Teleport>`.",
+        "default": "false"
+      },
+      {
+        "name": "fitViewport",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width and height to not exceed\nthe viewport.",
+        "default": "false"
+      },
+      {
+        "name": "boundary",
+        "type": "Boundary",
+        "description": "",
+        "default": "'clippingAncestors'"
+      },
+      {
+        "name": "overflowPadding",
+        "type": "number",
+        "description": "",
+        "default": "0"
+      },
+      {
+        "name": "strategy",
+        "type": "\"absolute\" | \"fixed\"",
+        "description": "The strategy to use for positioning",
+        "default": "\"absolute\""
+      },
+      {
+        "name": "autoUpdate",
+        "type": "boolean | AutoUpdateOptions",
+        "description": "Options to activate auto-update listeners",
+        "default": "true"
+      },
+      {
+        "name": "transform",
+        "type": "boolean",
+        "description": "Whether to use `transform: translate3d()` for positioning instead of `top`\nand `left` (layout) to place the floating element.",
+        "default": "false"
+      },
+      {
+        "name": "flip",
+        "type": "boolean | Placement[]",
+        "description": "Whether to flip the `placement` in order to keep it in view when the\npreferred placement(s) will overflow the clipping boundary. You can also\nprovide an array of placements to try sequentially if the preferred\n`placement` does not fit.",
+        "default": "false"
+      },
+      {
+        "name": "shift",
+        "type": "boolean",
+        "description": "Whether the floating element should shift to keep it in view.",
+        "default": "false"
+      },
+      {
+        "name": "overlap",
+        "type": "boolean",
+        "description": "Whether the floating element can overlap the reference element to keep it\nin view.",
+        "default": "false"
+      },
+      {
+        "name": "sameWidth",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "sameHeight",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's height so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "hide",
+        "type": "boolean",
+        "description": "Whether to hide the floating element when the reference element or the\nfloating element is fully clipped.",
+        "default": "false"
+      },
+      {
+        "name": "rootBoundary",
+        "type": "RootBoundary",
+        "description": "",
+        "default": "'viewport'"
+      },
+      {
+        "name": "elementContext",
+        "type": "ElementContext",
+        "description": "",
+        "default": "'floating'"
+      },
+      {
+        "name": "altBoundary",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      }
+    ],
+    "events": []
+  },
+  "InlinePopover": {
+    "props": [
+      {
+        "name": "defaultOpen",
+        "type": "boolean",
+        "description": "Whether the popover is open by default when some inline content is\nselected.\n\nWhen `defaultOpen` is true, the popover will open or close based on the\ninline selection. When `defaultOpen` is false, the popover will never be\nopened unless the `open` prop is true.",
+        "default": "true"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "description": "Whether the popover is open.\n\nNotice that the popover will be always hidden if the inline selection is\nempty.",
+        "default": "false"
+      },
+      {
+        "name": "onOpenChange",
+        "type": "((open: boolean) => void) | null",
+        "description": "Event handler called when the open state changed caused by user interaction\n(i.e. select or unselect inline content).",
+        "default": "null"
+      },
+      {
+        "name": "dismissOnEscape",
+        "type": "boolean",
+        "description": "Whether the inline popover should be dismissed when the editor receives an\nEscape key press.",
+        "default": "true"
+      },
+      {
+        "name": "placement",
+        "type": "Placement",
+        "description": "The placement of the popover, relative to the selected inline content.",
+        "default": "\"top\""
+      },
+      {
+        "name": "offset",
+        "type": "OffsetOptions | null",
+        "description": "",
+        "default": "12"
+      },
+      {
+        "name": "flip",
+        "type": "boolean | Placement[]",
+        "description": "",
+        "default": "true"
+      },
+      {
+        "name": "hide",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      },
+      {
+        "name": "overlap",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      },
+      {
+        "name": "inline",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      },
+      {
+        "name": "hoist",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      },
+      {
+        "name": "fitViewport",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width and height to not exceed\nthe viewport.",
+        "default": "false"
+      },
+      {
+        "name": "boundary",
+        "type": "Boundary",
+        "description": "",
+        "default": "'clippingAncestors'"
+      },
+      {
+        "name": "overflowPadding",
+        "type": "number",
+        "description": "",
+        "default": "0"
+      },
+      {
+        "name": "strategy",
+        "type": "\"absolute\" | \"fixed\"",
+        "description": "The strategy to use for positioning",
+        "default": "\"absolute\""
+      },
+      {
+        "name": "autoUpdate",
+        "type": "boolean | AutoUpdateOptions",
+        "description": "Options to activate auto-update listeners",
+        "default": "true"
+      },
+      {
+        "name": "transform",
+        "type": "boolean",
+        "description": "Whether to use `transform: translate3d()` for positioning instead of `top`\nand `left` (layout) to place the floating element.",
+        "default": "false"
+      },
+      {
+        "name": "shift",
+        "type": "boolean",
+        "description": "Whether the floating element should shift to keep it in view.",
+        "default": "false"
+      },
+      {
+        "name": "sameWidth",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "sameHeight",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's height so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "rootBoundary",
+        "type": "RootBoundary",
+        "description": "",
+        "default": "'viewport'"
+      },
+      {
+        "name": "elementContext",
+        "type": "ElementContext",
+        "description": "",
+        "default": "'floating'"
+      },
+      {
+        "name": "altBoundary",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      }
+    ],
+    "events": []
+  },
+  "PopoverContent": {
+    "props": [
+      {
+        "name": "hoist",
+        "type": "boolean",
+        "description": "{@inheritDoc",
+        "default": "true"
+      },
+      {
+        "name": "flip",
+        "type": "boolean | Placement[]",
+        "description": "{@inheritDoc",
+        "default": "true"
+      },
+      {
+        "name": "shift",
+        "type": "boolean",
+        "description": "{@inheritDoc",
+        "default": "true"
+      },
+      {
+        "name": "offset",
+        "type": "OffsetOptions | null",
+        "description": "{@inheritDoc",
+        "default": "4"
+      },
+      {
+        "name": "overflowPadding",
+        "type": "number",
+        "description": "{@inheritDoc",
+        "default": "4"
+      },
+      {
+        "name": "placement",
+        "type": "Placement",
+        "description": "The initial placement of the floating element",
+        "default": "\"top\""
+      },
+      {
+        "name": "inline",
+        "type": "boolean",
+        "description": "Whether to improve positioning for inline reference elements that span over\nmultiple lines.",
+        "default": "false"
+      },
+      {
+        "name": "fitViewport",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width and height to not exceed\nthe viewport.",
+        "default": "false"
+      },
+      {
+        "name": "boundary",
+        "type": "Boundary",
+        "description": "",
+        "default": "'clippingAncestors'"
+      },
+      {
+        "name": "strategy",
+        "type": "\"absolute\" | \"fixed\"",
+        "description": "The strategy to use for positioning",
+        "default": "\"absolute\""
+      },
+      {
+        "name": "autoUpdate",
+        "type": "boolean | AutoUpdateOptions",
+        "description": "Options to activate auto-update listeners",
+        "default": "true"
+      },
+      {
+        "name": "transform",
+        "type": "boolean",
+        "description": "Whether to use `transform: translate3d()` for positioning instead of `top`\nand `left` (layout) to place the floating element.",
+        "default": "false"
+      },
+      {
+        "name": "overlap",
+        "type": "boolean",
+        "description": "Whether the floating element can overlap the reference element to keep it\nin view.",
+        "default": "false"
+      },
+      {
+        "name": "sameWidth",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "sameHeight",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's height so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "hide",
+        "type": "boolean",
+        "description": "Whether to hide the floating element when the reference element or the\nfloating element is fully clipped.",
+        "default": "false"
+      },
+      {
+        "name": "rootBoundary",
+        "type": "RootBoundary",
+        "description": "",
+        "default": "'viewport'"
+      },
+      {
+        "name": "elementContext",
+        "type": "ElementContext",
+        "description": "",
+        "default": "'floating'"
+      },
+      {
+        "name": "altBoundary",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      }
+    ],
+    "events": [
+      {
+        "name": "escapeKeyDown",
+        "type": "EscapeKeyDownEvent",
+        "description": "Fired when the escape key is pressed.\n\nBy default, the popover will be closed. It can be prevented by calling\n`preventDefault()`."
+      },
+      {
+        "name": "pointerDownOutside",
+        "type": "PointerDownOutsideEvent",
+        "description": "Fired when the pointer is pressed down outside the element.\n\nBy default, the popover will be closed. It can be prevented by calling\n`preventDefault()`."
+      },
+      {
+        "name": "focusOutside",
+        "type": "FocusOutsideEvent",
+        "description": "Fired when the focus is moved outside the element.\n\nBy default, the popover will be closed. It can be prevented by calling\n`preventDefault()`."
+      },
+      {
+        "name": "interactOutside",
+        "type": "InteractOutsideEvent",
+        "description": "Fired when an interaction (pointer or focus) happens outside the\ncomponent.\n\nBy default, the popover will be closed. It can be prevented by calling\n`preventDefault()`."
+      }
+    ]
+  },
+  "PopoverRoot": {
+    "props": [
+      {
+        "name": "defaultOpen",
+        "type": "boolean",
+        "description": "Whether the popover is open by default.",
+        "default": "false"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "description": "Whether the popover is open.",
+        "default": "false"
+      }
+    ],
+    "events": [
+      {
+        "name": "update:open",
+        "type": "CustomEvent<boolean>",
+        "description": ""
+      }
+    ]
+  },
+  "PopoverTrigger": {
+    "props": [],
+    "events": []
+  },
+  "ResizableHandle": {
+    "props": [
+      {
+        "name": "position",
+        "type": "\"top\" | \"right\" | \"bottom\" | \"left\" | \"top-left\" | \"top-right\" | \"bottom-left\" | \"bottom-right\"",
+        "description": "The position of the handle.",
+        "default": "\"bottom-right\""
+      }
+    ],
+    "events": []
+  },
+  "ResizableRoot": {
+    "props": [
+      {
+        "name": "width",
+        "type": "number | null",
+        "description": ""
+      },
+      {
+        "name": "height",
+        "type": "number | null",
+        "description": ""
+      },
+      {
+        "name": "aspectRatio",
+        "type": "number | null",
+        "description": ""
+      },
+      {
+        "name": "onSizeChangeStart",
+        "type": "((size: { width: number; height: number; }) => void) | null",
+        "description": ""
+      },
+      {
+        "name": "onSizeChange",
+        "type": "((size: { width: number; height: number; }) => void) | null",
+        "description": ""
+      },
+      {
+        "name": "onSizeChangeEnd",
+        "type": "((size: { width: number; height: number; }) => void) | null",
+        "description": ""
+      }
+    ],
+    "events": []
+  },
+  "TableHandleColumnRoot": {
+    "props": [
+      {
+        "name": "placement",
+        "type": "Placement",
+        "description": "The placement of the popover, relative to the hovered table cell.",
+        "default": "\"top\""
+      },
+      {
+        "name": "offset",
+        "type": "OffsetOptions | null",
+        "description": "The distance between the reference and floating element.",
+        "default": "null"
+      },
+      {
+        "name": "inline",
+        "type": "boolean",
+        "description": "Whether to improve positioning for inline reference elements that span over\nmultiple lines.",
+        "default": "false"
+      },
+      {
+        "name": "hoist",
+        "type": "boolean",
+        "description": "Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)\nto place the floating element on top of other page content. When enabled,\nthe floating element won't be clipped by an ancestor. This provides a\nsimilar result to React's `<Portals>` or Vue's `<Teleport>`.",
+        "default": "false"
+      },
+      {
+        "name": "fitViewport",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width and height to not exceed\nthe viewport.",
+        "default": "false"
+      },
+      {
+        "name": "boundary",
+        "type": "Boundary",
+        "description": "",
+        "default": "'clippingAncestors'"
+      },
+      {
+        "name": "overflowPadding",
+        "type": "number",
+        "description": "",
+        "default": "0"
+      },
+      {
+        "name": "strategy",
+        "type": "\"absolute\" | \"fixed\"",
+        "description": "The strategy to use for positioning",
+        "default": "\"absolute\""
+      },
+      {
+        "name": "autoUpdate",
+        "type": "boolean | AutoUpdateOptions",
+        "description": "Options to activate auto-update listeners",
+        "default": "true"
+      },
+      {
+        "name": "transform",
+        "type": "boolean",
+        "description": "Whether to use `transform: translate3d()` for positioning instead of `top`\nand `left` (layout) to place the floating element.",
+        "default": "false"
+      },
+      {
+        "name": "flip",
+        "type": "boolean | Placement[]",
+        "description": "Whether to flip the `placement` in order to keep it in view when the\npreferred placement(s) will overflow the clipping boundary. You can also\nprovide an array of placements to try sequentially if the preferred\n`placement` does not fit.",
+        "default": "false"
+      },
+      {
+        "name": "shift",
+        "type": "boolean",
+        "description": "Whether the floating element should shift to keep it in view.",
+        "default": "false"
+      },
+      {
+        "name": "overlap",
+        "type": "boolean",
+        "description": "Whether the floating element can overlap the reference element to keep it\nin view.",
+        "default": "false"
+      },
+      {
+        "name": "sameWidth",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "sameHeight",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's height so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "hide",
+        "type": "boolean",
+        "description": "Whether to hide the floating element when the reference element or the\nfloating element is fully clipped.",
+        "default": "false"
+      },
+      {
+        "name": "rootBoundary",
+        "type": "RootBoundary",
+        "description": "",
+        "default": "'viewport'"
+      },
+      {
+        "name": "elementContext",
+        "type": "ElementContext",
+        "description": "",
+        "default": "'floating'"
+      },
+      {
+        "name": "altBoundary",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      }
+    ],
+    "events": []
+  },
+  "TableHandleColumnTrigger": {
+    "props": [
+      {
+        "name": "editor",
+        "type": "Editor<TableCommandsExtension> | null",
+        "description": ""
+      }
+    ],
+    "events": []
+  },
+  "TableHandlePopoverContent": {
+    "props": [
+      {
+        "name": "placement",
+        "type": "Placement",
+        "description": "",
+        "default": "'bottom-start'"
+      },
+      {
+        "name": "offset",
+        "type": "OffsetOptions | null",
+        "description": "",
+        "default": "{mainAxis: -4, crossAxis: 4}"
+      },
+      {
+        "name": "editor",
+        "type": "Editor<any> | null",
+        "description": ""
+      },
+      {
+        "name": "inline",
+        "type": "boolean",
+        "description": "Whether to improve positioning for inline reference elements that span over\nmultiple lines.",
+        "default": "false"
+      },
+      {
+        "name": "hoist",
+        "type": "boolean",
+        "description": "{@inheritDoc",
+        "default": "true"
+      },
+      {
+        "name": "fitViewport",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width and height to not exceed\nthe viewport.",
+        "default": "false"
+      },
+      {
+        "name": "boundary",
+        "type": "Boundary",
+        "description": "",
+        "default": "'clippingAncestors'"
+      },
+      {
+        "name": "overflowPadding",
+        "type": "number",
+        "description": "{@inheritDoc",
+        "default": "4"
+      },
+      {
+        "name": "strategy",
+        "type": "\"absolute\" | \"fixed\"",
+        "description": "The strategy to use for positioning",
+        "default": "\"absolute\""
+      },
+      {
+        "name": "autoUpdate",
+        "type": "boolean | AutoUpdateOptions",
+        "description": "Options to activate auto-update listeners",
+        "default": "true"
+      },
+      {
+        "name": "transform",
+        "type": "boolean",
+        "description": "Whether to use `transform: translate3d()` for positioning instead of `top`\nand `left` (layout) to place the floating element.",
+        "default": "false"
+      },
+      {
+        "name": "flip",
+        "type": "boolean | Placement[]",
+        "description": "{@inheritDoc",
+        "default": "true"
+      },
+      {
+        "name": "shift",
+        "type": "boolean",
+        "description": "{@inheritDoc",
+        "default": "true"
+      },
+      {
+        "name": "overlap",
+        "type": "boolean",
+        "description": "Whether the floating element can overlap the reference element to keep it\nin view.",
+        "default": "false"
+      },
+      {
+        "name": "sameWidth",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "sameHeight",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's height so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "hide",
+        "type": "boolean",
+        "description": "Whether to hide the floating element when the reference element or the\nfloating element is fully clipped.",
+        "default": "false"
+      },
+      {
+        "name": "rootBoundary",
+        "type": "RootBoundary",
+        "description": "",
+        "default": "'viewport'"
+      },
+      {
+        "name": "elementContext",
+        "type": "ElementContext",
+        "description": "",
+        "default": "'floating'"
+      },
+      {
+        "name": "altBoundary",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      },
+      {
+        "name": "eventTarget",
+        "type": "HTMLElement | TypedEventTarget<\"keydown\"> | null",
+        "description": "By default, the menu element will listen for keydown events. You can pass a different element to listen for keydown events.",
+        "default": "null"
+      }
+    ],
+    "events": [
+      {
+        "name": "escapeKeyDown",
+        "type": "EscapeKeyDownEvent",
+        "description": "Fired when the escape key is pressed.\n\nBy default, the popover will be closed. It can be prevented by calling\n`preventDefault()`."
+      },
+      {
+        "name": "pointerDownOutside",
+        "type": "PointerDownOutsideEvent",
+        "description": "Fired when the pointer is pressed down outside the element.\n\nBy default, the popover will be closed. It can be prevented by calling\n`preventDefault()`."
+      },
+      {
+        "name": "focusOutside",
+        "type": "FocusOutsideEvent",
+        "description": "Fired when the focus is moved outside the element.\n\nBy default, the popover will be closed. It can be prevented by calling\n`preventDefault()`."
+      },
+      {
+        "name": "interactOutside",
+        "type": "InteractOutsideEvent",
+        "description": "Fired when an interaction (pointer or focus) happens outside the\ncomponent.\n\nBy default, the popover will be closed. It can be prevented by calling\n`preventDefault()`."
+      }
+    ]
+  },
+  "TableHandlePopoverItem": {
+    "props": [
+      {
+        "name": "value",
+        "type": "string",
+        "description": "The value of the item. Every item must have a unique value in the parent\nlist. By default, a random value is generated.",
+        "default": "\"\""
+      },
+      {
+        "name": "query",
+        "type": "string",
+        "description": "The query string to filter the listbox items.",
+        "default": "\"\""
+      },
+      {
+        "name": "filter",
+        "type": "ItemFilter",
+        "description": "The filter function to determine if an item should be shown in the listbox.",
+        "default": "defaultItemFilter"
+      }
+    ],
+    "events": [
+      {
+        "name": "select",
+        "type": "CustomEvent<void>",
+        "description": "Fired when the item is selected."
+      }
+    ]
+  },
+  "TableHandleRoot": {
+    "props": [],
+    "events": []
+  },
+  "TableHandleRowRoot": {
+    "props": [
+      {
+        "name": "placement",
+        "type": "Placement",
+        "description": "The placement of the popover, relative to the hovered table cell.",
+        "default": "\"left\""
+      },
+      {
+        "name": "offset",
+        "type": "OffsetOptions | null",
+        "description": "The distance between the reference and floating element.",
+        "default": "null"
+      },
+      {
+        "name": "inline",
+        "type": "boolean",
+        "description": "Whether to improve positioning for inline reference elements that span over\nmultiple lines.",
+        "default": "false"
+      },
+      {
+        "name": "hoist",
+        "type": "boolean",
+        "description": "Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)\nto place the floating element on top of other page content. When enabled,\nthe floating element won't be clipped by an ancestor. This provides a\nsimilar result to React's `<Portals>` or Vue's `<Teleport>`.",
+        "default": "false"
+      },
+      {
+        "name": "fitViewport",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width and height to not exceed\nthe viewport.",
+        "default": "false"
+      },
+      {
+        "name": "boundary",
+        "type": "Boundary",
+        "description": "",
+        "default": "'clippingAncestors'"
+      },
+      {
+        "name": "overflowPadding",
+        "type": "number",
+        "description": "",
+        "default": "0"
+      },
+      {
+        "name": "strategy",
+        "type": "\"absolute\" | \"fixed\"",
+        "description": "The strategy to use for positioning",
+        "default": "\"absolute\""
+      },
+      {
+        "name": "autoUpdate",
+        "type": "boolean | AutoUpdateOptions",
+        "description": "Options to activate auto-update listeners",
+        "default": "true"
+      },
+      {
+        "name": "transform",
+        "type": "boolean",
+        "description": "Whether to use `transform: translate3d()` for positioning instead of `top`\nand `left` (layout) to place the floating element.",
+        "default": "false"
+      },
+      {
+        "name": "flip",
+        "type": "boolean | Placement[]",
+        "description": "Whether to flip the `placement` in order to keep it in view when the\npreferred placement(s) will overflow the clipping boundary. You can also\nprovide an array of placements to try sequentially if the preferred\n`placement` does not fit.",
+        "default": "false"
+      },
+      {
+        "name": "shift",
+        "type": "boolean",
+        "description": "Whether the floating element should shift to keep it in view.",
+        "default": "false"
+      },
+      {
+        "name": "overlap",
+        "type": "boolean",
+        "description": "Whether the floating element can overlap the reference element to keep it\nin view.",
+        "default": "false"
+      },
+      {
+        "name": "sameWidth",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "sameHeight",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's height so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "hide",
+        "type": "boolean",
+        "description": "Whether to hide the floating element when the reference element or the\nfloating element is fully clipped.",
+        "default": "false"
+      },
+      {
+        "name": "rootBoundary",
+        "type": "RootBoundary",
+        "description": "",
+        "default": "'viewport'"
+      },
+      {
+        "name": "elementContext",
+        "type": "ElementContext",
+        "description": "",
+        "default": "'floating'"
+      },
+      {
+        "name": "altBoundary",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      }
+    ],
+    "events": []
+  },
+  "TableHandleRowTrigger": {
+    "props": [
+      {
+        "name": "editor",
+        "type": "Editor<TableCommandsExtension> | null",
+        "description": ""
+      }
+    ],
+    "events": [
+      {
+        "name": "select",
+        "type": "CustomEvent<void>",
+        "description": ""
+      }
+    ]
+  },
+  "TooltipContent": {
+    "props": [
+      {
+        "name": "hoist",
+        "type": "boolean",
+        "description": "{@inheritDoc",
+        "default": "\"true\""
+      },
+      {
+        "name": "flip",
+        "type": "boolean | Placement[]",
+        "description": "{@inheritDoc",
+        "default": "\"true\""
+      },
+      {
+        "name": "placement",
+        "type": "Placement",
+        "description": "The initial placement of the floating element",
+        "default": "\"top\""
+      },
+      {
+        "name": "offset",
+        "type": "OffsetOptions | null",
+        "description": "The distance between the reference and floating element.",
+        "default": "null"
+      },
+      {
+        "name": "inline",
+        "type": "boolean",
+        "description": "Whether to improve positioning for inline reference elements that span over\nmultiple lines.",
+        "default": "false"
+      },
+      {
+        "name": "fitViewport",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width and height to not exceed\nthe viewport.",
+        "default": "false"
+      },
+      {
+        "name": "boundary",
+        "type": "Boundary",
+        "description": "",
+        "default": "'clippingAncestors'"
+      },
+      {
+        "name": "overflowPadding",
+        "type": "number",
+        "description": "",
+        "default": "0"
+      },
+      {
+        "name": "strategy",
+        "type": "\"absolute\" | \"fixed\"",
+        "description": "The strategy to use for positioning",
+        "default": "\"absolute\""
+      },
+      {
+        "name": "autoUpdate",
+        "type": "boolean | AutoUpdateOptions",
+        "description": "Options to activate auto-update listeners",
+        "default": "true"
+      },
+      {
+        "name": "transform",
+        "type": "boolean",
+        "description": "Whether to use `transform: translate3d()` for positioning instead of `top`\nand `left` (layout) to place the floating element.",
+        "default": "false"
+      },
+      {
+        "name": "shift",
+        "type": "boolean",
+        "description": "Whether the floating element should shift to keep it in view.",
+        "default": "false"
+      },
+      {
+        "name": "overlap",
+        "type": "boolean",
+        "description": "Whether the floating element can overlap the reference element to keep it\nin view.",
+        "default": "false"
+      },
+      {
+        "name": "sameWidth",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's width so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "sameHeight",
+        "type": "boolean",
+        "description": "Whether to constrain the floating element's height so that it matches the\nreference element.",
+        "default": "false"
+      },
+      {
+        "name": "hide",
+        "type": "boolean",
+        "description": "Whether to hide the floating element when the reference element or the\nfloating element is fully clipped.",
+        "default": "false"
+      },
+      {
+        "name": "rootBoundary",
+        "type": "RootBoundary",
+        "description": "",
+        "default": "'viewport'"
+      },
+      {
+        "name": "elementContext",
+        "type": "ElementContext",
+        "description": "",
+        "default": "'floating'"
+      },
+      {
+        "name": "altBoundary",
+        "type": "boolean",
+        "description": "",
+        "default": "true"
+      }
+    ],
+    "events": []
+  },
+  "TooltipRoot": {
+    "props": [
+      {
+        "name": "openDelay",
+        "type": "number",
+        "description": "The delay in milliseconds before the tooltip opens.",
+        "default": "700"
+      },
+      {
+        "name": "closeDelay",
+        "type": "number",
+        "description": "The delay in milliseconds before the tooltip closes.",
+        "default": "300"
+      },
+      {
+        "name": "open",
+        "type": "boolean",
+        "description": "Whether the popover is open.",
+        "default": "false"
+      }
+    ],
+    "events": [
+      {
+        "name": "update:open",
+        "type": "CustomEvent<boolean>",
+        "description": "Fired when the open state changes."
+      }
+    ]
+  },
+  "TooltipTrigger": {
+    "props": [],
+    "events": []
+  }
+}

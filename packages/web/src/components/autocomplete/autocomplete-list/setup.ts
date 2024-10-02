@@ -39,7 +39,7 @@ export function useAutocompleteList(
   )
 
   useEffect(element, () => {
-    element.addEventListener('update:value', () => {
+    element.addEventListener('valueChange', () => {
       if (onSubmit) {
         onSubmit.get()?.()
       }

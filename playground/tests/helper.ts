@@ -51,7 +51,7 @@ export function locateEditor(page: Page) {
 
 export async function waitForEditor(page: Page) {
   const locator = locateEditor(page)
-  await locator.waitFor({ state: 'visible' })
+  await locator.waitFor({ state: 'visible', timeout: 50_000 })
   return locator
 }
 

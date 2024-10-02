@@ -1,8 +1,4 @@
-import type {
-  EmptyObject,
-  EventDeclarations,
-  PropDeclarations,
-} from '@aria-ui/core'
+import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
 import type { Editor } from '@prosekit/core'
 import type { defineTableCommands } from '@prosekit/extensions/table'
 
@@ -17,7 +13,7 @@ export const tableHandleColumnTriggerProps: PropDeclarations<TableHandleColumnTr
     editor: { default: null },
   }
 
-export interface TableHandleColumnTriggerEvents extends EmptyObject {}
+export interface TableHandleColumnTriggerEvents {}
 
 export const tableHandleColumnTriggerEvents: EventDeclarations<TableHandleColumnTriggerEvents> =
   {}

@@ -13,7 +13,7 @@ rm -rf references
 mv temp/typedoc/prosekit references
 rm -rf temp/typedoc
 
-touch references/index.md 
+touch references/index.md
 rm references/index.md
 
 # Find the substring "__namedParameters" and throw an error if found

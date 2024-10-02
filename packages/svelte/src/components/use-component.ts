@@ -33,21 +33,15 @@ export function useComponent(propNames: string[], eventNames: string[]) {
         continue
       }
 
-      if (name.startsWith('on') && name.endsWith('Change')) {
-        const lowerCaseEventName =
-          'update:' + name.slice(2).slice(0, -6).toLowerCase()
-        const eventName = lowerCaseEventNameMap[lowerCaseEventName]
-        if (eventName) {
-          eventHandlers[eventName] = value as AnyFunction
-          continue
-        }
-      }
-
       if (name.startsWith('on')) {
         const lowerCaseEventName = name.slice(2).toLowerCase()
         const eventName = lowerCaseEventNameMap[lowerCaseEventName]
         if (eventName) {
-          eventHandlers[lowerCaseEventName] = value as AnyFunction
+          const extractDetail = eventName.endsWith('Change')
+          eventHandlers[eventName] = (event: Event) => {
+            const handler = value as AnyFunction
+            handler(extractDetail ? (event as CustomEvent).detail : event)
+          }
           continue
         }
       }

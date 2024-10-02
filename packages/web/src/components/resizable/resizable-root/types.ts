@@ -1,8 +1,4 @@
-import type {
-  EmptyObject,
-  EventDeclarations,
-  PropDeclarations,
-} from '@aria-ui/core'
+import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
 
 export interface ResizableRootProps {
   width: number | null
@@ -25,6 +21,6 @@ export const resizableRootProps: PropDeclarations<ResizableRootProps> = {
   onSizeChangeEnd: { default: null },
 }
 
-export interface ResizableRootEvents extends EmptyObject {}
+export interface ResizableRootEvents {}
 
 export const resizableRootEvents: EventDeclarations<ResizableRootEvents> = {}

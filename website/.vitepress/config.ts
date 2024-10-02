@@ -26,7 +26,7 @@ export default defineConfig({
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    outline: 2,
+    outline: [2, 3],
 
     logo: '/assets/logo.svg',
 
@@ -156,10 +156,10 @@ export default defineConfig({
           text: 'Components',
           /// keep-sorted  { "keys": ["text"] }
           items: [
+            { text: 'Autocomplete', link: '/components/autocomplete' },
             { text: 'Block Handle', link: '/components/block-handle' },
             { text: 'Button', link: '/components/button' },
             { text: 'Inline Menu', link: '/components/inline-menu' },
-            { text: 'Slash Menu', link: '/components/slash-menu' },
             { text: 'Table Handle', link: '/components/table-handle' },
             { text: 'Toolbar', link: '/components/toolbar' },
             { text: 'User Menu', link: '/components/user-menu' },

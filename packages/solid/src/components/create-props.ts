@@ -7,7 +7,7 @@ type CreateEventProps<
   Events extends { [EventName in keyof Events]: CustomEvent },
 > = {
   [EventName in keyof Events as `on${Capitalize<string & EventName>}`]: (
-    event: EventName extends `update:${string}`
+    event: EventName extends `${string}Change`
       ? Events[EventName]['detail']
       : Events[EventName],
   ) => void

@@ -220,6 +220,9 @@ importers:
       just-filter-object:
         specifier: ^3.2.0
         version: 3.2.0
+      ts-morph:
+        specifier: ^23.0.0
+        version: 23.0.0
       tsx:
         specifier: ^4.19.1
         version: 4.19.1
@@ -682,29 +685,29 @@ importers:
   packages/web:
     dependencies:
       '@aria-ui/collection':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@439da8f
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@439da8f
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e
       '@aria-ui/core':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@439da8f
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@439da8f
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
       '@aria-ui/listbox':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@439da8f
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@439da8f
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@c0b474e
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@c0b474e
       '@aria-ui/menu':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@439da8f
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@439da8f
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@c0b474e
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@c0b474e
       '@aria-ui/overlay':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@439da8f
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@439da8f
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e
       '@aria-ui/popover':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@439da8f
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@439da8f
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e
       '@aria-ui/presence':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@439da8f
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@439da8f
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
       '@aria-ui/tooltip':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@439da8f
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@439da8f
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@c0b474e
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@c0b474e
       '@floating-ui/dom':
         specifier: ^1.6.10
         version: 1.6.11
@@ -889,6 +892,9 @@ importers:
       '@types/dom-view-transitions':
         specifier: ^1.0.5
         version: 1.0.5
+      '@types/markdown-it':
+        specifier: ^14.1.2
+        version: 14.1.2
       '@types/react':
         specifier: ^18.3.6
         version: 18.3.6
@@ -901,6 +907,9 @@ importers:
       '@vitejs/plugin-vue-jsx':
         specifier: ^4.0.1
         version: 4.0.1(vite@5.4.6(@types/node@20.16.5)(lightningcss@1.27.0))(vue@3.5.6(typescript@5.6.2))
+      change-case:
+        specifier: ^5.4.4
+        version: 5.4.4
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -916,6 +925,9 @@ importers:
       loro-prosemirror:
         specifier: ^0.0.7
         version: 0.0.7(loro-crdt@0.16.12)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.34.2)
+      markdown-it:
+        specifier: ^14.1.0
+        version: 14.1.0
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
@@ -1051,36 +1063,36 @@ packages:
   '@antfu/utils@0.7.10':
     resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
 
-  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@439da8f':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@439da8f}
+  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e}
     version: 0.0.3
 
-  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@439da8f':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@439da8f}
+  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e}
     version: 0.0.18
 
-  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@439da8f':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@439da8f}
+  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@c0b474e':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@c0b474e}
     version: 0.0.18
 
-  '@aria-ui/menu@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@439da8f':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@439da8f}
+  '@aria-ui/menu@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@c0b474e':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@c0b474e}
     version: 0.0.12
 
-  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@439da8f':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@439da8f}
+  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e}
     version: 0.0.19
 
-  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@439da8f':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@439da8f}
+  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e}
     version: 0.0.20
 
-  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@439da8f':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@439da8f}
+  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e}
     version: 0.0.14
 
-  '@aria-ui/tooltip@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@439da8f':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@439da8f}
+  '@aria-ui/tooltip@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@c0b474e':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@c0b474e}
     version: 0.0.22
 
   '@astrobook/core@0.4.4':
@@ -2481,6 +2493,9 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
+  '@ts-morph/common@0.24.0':
+    resolution: {integrity: sha512-c1xMmNHWpNselmpIqursHeOHHBTIsJLbB+NuovbTTRCNiTLEr/U9dbJ8qy0jd/O2x5pc3seWuOUN5R2IoOTp8A==}
+
   '@types/argparse@1.0.38':
     resolution: {integrity: sha512-ebDJ9b0e702Yr7pWgB0jzm+CX4Srzz8RcXtLJDJB+BSccqMa36uyH/zUsSYao5+BD1ytv3k3rPYCq4mAE1hsXA==}
 
@@ -3394,6 +3409,9 @@ packages:
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
+
+  code-block-writer@13.0.2:
+    resolution: {integrity: sha512-XfXzAGiStXSmCIwrkdfvc7FS5Dtj8yelCtyOf2p2skCAfvLd6zu0rGzuS9NSCO3bq1JKpFZ7tbKdKlcd5occQA==}
 
   code-red@1.0.4:
     resolution: {integrity: sha512-7qJWqItLA8/VPVlKJlFXU+NBlo/qyfs39aJcuMT/2ere32ZqvF5OSxgdM5xOfJJ7O429gg2HM47y8v9P+9wrNw==}
@@ -5277,6 +5295,11 @@ packages:
   mitt@3.0.1:
     resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
 
+  mkdirp@3.0.1:
+    resolution: {integrity: sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   mlly@1.7.1:
     resolution: {integrity: sha512-rrVRZRELyQzrIUAVMHxP97kv+G786pHmOKzuFII8zDYahFBS7qnHh2AlYSl1GAHhaMPCz6/oHjVMcfFYgFYHgA==}
 
@@ -6561,6 +6584,9 @@ packages:
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
+  ts-morph@23.0.0:
+    resolution: {integrity: sha512-FcvFx7a9E8TUe6T3ShihXJLiJOiqyafzFKUO4aqIHDUCIvADdGNShcbc2W5PMr3LerXRv7mafvFZ9lRENxJmug==}
+
   tsconfck@3.1.3:
     resolution: {integrity: sha512-ulNZP1SVpRDesxeMLON/LtWM8HIgAJEIVpVVhBM6gsmvQ8+Rh+ZG7FWGvHh7Ah3pRABwVJWklWCr/BTZSv0xnQ==}
     engines: {node: ^18 || >=20}
@@ -7400,9 +7426,9 @@ snapshots:
 
   '@antfu/utils@0.7.10': {}
 
-  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@439da8f': {}
+  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e': {}
 
-  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@439da8f':
+  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e':
     dependencies:
       '@dddstack/ariatype-aria-attributes': 2.0.0
       '@dddstack/ariatype-aria-roles': 2.0.0
@@ -7412,46 +7438,46 @@ snapshots:
       just-map-values: 3.2.0
       server-dom-shim: 1.0.2
 
-  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@439da8f':
+  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@c0b474e':
     dependencies:
-      '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@439da8f
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@439da8f
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@439da8f
+      '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
+      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
       immer: 10.1.1
 
-  '@aria-ui/menu@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@439da8f':
+  '@aria-ui/menu@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@c0b474e':
     dependencies:
-      '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@439da8f
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@439da8f
-      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@439da8f
-      '@aria-ui/popover': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@439da8f
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@439da8f
+      '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
+      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e
+      '@aria-ui/popover': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e
+      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
       nanoid: 5.0.7
 
-  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@439da8f':
+  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@439da8f
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
       '@floating-ui/dom': 1.6.11
       '@zag-js/dom-query': 0.65.1
 
-  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@439da8f':
+  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@439da8f
-      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@439da8f
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@439da8f
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
+      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e
+      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
       '@zag-js/dismissable': 0.65.1
       '@zag-js/tabbable': 0.49.0
 
-  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@439da8f':
+  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@439da8f
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
       '@zag-js/dom-query': 0.65.1
 
-  '@aria-ui/tooltip@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@439da8f':
+  '@aria-ui/tooltip@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@c0b474e':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@439da8f
-      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@439da8f
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@439da8f
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
+      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e
+      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
       nanoid: 5.0.7
 
   '@astrobook/core@0.4.4':
@@ -9067,6 +9093,13 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.0
 
+  '@ts-morph/common@0.24.0':
+    dependencies:
+      fast-glob: 3.3.2
+      minimatch: 9.0.5
+      mkdirp: 3.0.1
+      path-browserify: 1.0.1
+
   '@types/argparse@1.0.38': {}
 
   '@types/aria-query@5.0.4': {}
@@ -10307,6 +10340,8 @@ snapshots:
       wrap-ansi: 7.0.0
 
   clsx@2.1.1: {}
+
+  code-block-writer@13.0.2: {}
 
   code-red@1.0.4:
     dependencies:
@@ -12583,6 +12618,8 @@ snapshots:
 
   mitt@3.0.1: {}
 
+  mkdirp@3.0.1: {}
+
   mlly@1.7.1:
     dependencies:
       acorn: 8.12.1
@@ -14014,6 +14051,11 @@ snapshots:
       typescript: 5.6.2
 
   ts-interface-checker@0.1.13: {}
+
+  ts-morph@23.0.0:
+    dependencies:
+      '@ts-morph/common': 0.24.0
+      code-block-writer: 13.0.2
 
   tsconfck@3.1.3(typescript@5.6.2):
     optionalDependencies:

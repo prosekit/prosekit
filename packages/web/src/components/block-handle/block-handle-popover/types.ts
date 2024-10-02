@@ -1,8 +1,4 @@
-import type {
-  EmptyObject,
-  EventDeclarations,
-  PropDeclarations,
-} from '@aria-ui/core'
+import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
 import {
   type OverlayPositionerProps,
   overlayPositionerProps,
@@ -16,6 +12,7 @@ export interface BlockHandlePopoverProps
    * The ProseKit editor instance.
    *
    * @default null
+   * @hidden
    */
   editor: Editor | null
 
@@ -42,7 +39,7 @@ export const blockHandlePopoverProps: PropDeclarations<BlockHandlePopoverProps> 
     offset: { default: 4 },
   }
 
-export interface BlockHandlePopoverEvents extends EmptyObject {}
+export interface BlockHandlePopoverEvents {}
 
 export const blockHandlePopoverEvents: EventDeclarations<BlockHandlePopoverEvents> =
   {}

@@ -14,6 +14,7 @@ export interface TableHandleColumnRootProps
    * The ProseKit editor instance.
    *
    * @default null
+   * @hidden
    */
   editor: Editor | null
 

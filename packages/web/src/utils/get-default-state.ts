@@ -10,9 +10,9 @@ export function getStateWithDefaults<
   state: Partial<SignalState<Props>>,
   props: PropDeclarations<Props>,
 ): SignalState<Props> {
-  const merged = { ...state } as SignalState<any>
+  const merged = { ...state } as SignalState<Props>
 
-  for (const key of Object.keys(props)) {
+  for (const key of Object.keys(props) as (keyof Props)[]) {
     if (!merged[key]) {
       merged[key] = createSignal(props[key].default)
     }

@@ -1,6 +1,10 @@
 import type { Package } from '@manypkg/get-packages'
 import { camelCase, pascalCase } from 'change-case'
 
+import {
+  readComponents,
+  type GroupedComponents as Components,
+} from './read-components'
 import { vfs } from './virtual-file-system'
 
 export async function genComponents() {
@@ -21,7 +25,7 @@ export async function genComponents() {
   await vfs.cleanGeneratedFilesInPackage(preactPackage)
   await vfs.cleanGeneratedFilesInPackage(litPackage)
 
-  const components = await readWeb(webPackages)
+  const components = await readComponents()
   await writeWebComponents(webPackages, components)
   await writeReactComponents(reactPackage, components)
   await writeVueComponents(vuePackage, components)
@@ -414,30 +418,3 @@ export const ${pascal}: ForwardRefExoticComponent<
 `.trim() + '\n'
   )
 }
-
-/**
- * Returns a list of components names in kebab case
- * e.g. { 'resizable': [ 'resizable-handle', 'resizable-root' ] }
- */
-async function readWeb(pkg: Package): Promise<Components> {
-  const filePaths = await vfs.getFilePathsByPackage(pkg)
-
-  const result: Components = {}
-
-  for (const filePath of filePaths) {
-    const re = /components\/(?<group>.*)\/(?<component>.*)\/setup\.ts$/
-    const match = re.exec(filePath)
-
-    if (!match) {
-      continue
-    }
-
-    const { group, component } = match.groups as Record<string, string>
-    const components = (result[group] ||= [])
-    components.push(component)
-  }
-
-  return result
-}
-
-type Components = { [group: string]: string[] }

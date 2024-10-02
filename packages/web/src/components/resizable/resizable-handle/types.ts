@@ -1,8 +1,4 @@
-import type {
-  EmptyObject,
-  EventDeclarations,
-  PropDeclarations,
-} from '@aria-ui/core'
+import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
 
 export interface ResizableHandleProps {
   /**
@@ -25,7 +21,7 @@ export const resizableHandleProps: PropDeclarations<ResizableHandleProps> = {
   position: { default: 'bottom-right' },
 }
 
-export interface ResizableHandleEvents extends EmptyObject {}
+export interface ResizableHandleEvents {}
 
 export const resizableHandleEvents: EventDeclarations<ResizableHandleEvents> =
   {}

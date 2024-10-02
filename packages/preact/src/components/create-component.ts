@@ -46,26 +46,15 @@ export function createComponent<
         continue
       }
 
-      if (name.startsWith('on') && name.endsWith('Change')) {
-        const lowerCaseEventName =
-          'update:' + name.slice(2).slice(0, -6).toLowerCase()
-        const eventName = lowerCaseEventNameMap[lowerCaseEventName]
-        const handler = value as AnyFunction | null
-        if (eventName && handler) {
-          eventHandlers[eventName] = (event: Event) => {
-            const detail = (event as CustomEvent).detail as unknown
-            handler(detail)
-          }
-          continue
-        }
-      }
-
       if (name.startsWith('on')) {
         const lowerCaseEventName = name.slice(2).toLowerCase()
         const eventName = lowerCaseEventNameMap[lowerCaseEventName]
         const handler = value as AnyFunction | null
         if (eventName && handler) {
-          eventHandlers[eventName] = handler
+          const extractDetail = eventName.endsWith('Change')
+          eventHandlers[eventName] = (event: Event) => {
+            handler(extractDetail ? (event as CustomEvent).detail : event)
+          }
           continue
         }
       }

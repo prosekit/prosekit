@@ -18,7 +18,6 @@
       "types": "./dist/config-tsup.d.ts",
       "default": "./dist/config-tsup.js"
     }
-  
   },
   "scripts": {
     "gen": "tsx src/gen.ts",

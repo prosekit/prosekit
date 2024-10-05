@@ -22,11 +22,9 @@ Add the `SlashMenu` component to your `Editor` component.
 
 <ComponentReference componentName="AutocompletePopover" />
 
-
 ### AutocompleteList
 
 <ComponentReference componentName="AutocompleteList" />
-
 
 ### AutocompleteItem
 

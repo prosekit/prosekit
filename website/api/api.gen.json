@@ -31,7 +31,7 @@
     ],
     "events": [
       {
-        "name": "update:value",
+        "name": "valueChange",
         "type": "CustomEvent<string>",
         "description": ""
       }
@@ -63,7 +63,7 @@
       },
       {
         "name": "offset",
-        "type": "OffsetOptions | null",
+        "type": "OffsetOptions | undefined",
         "description": "The distance between the popover and the hovered block.",
         "default": "4"
       },
@@ -154,19 +154,19 @@
       {
         "name": "rootBoundary",
         "type": "RootBoundary",
-        "description": "",
+        "description": "Describes the root boundary that the element will be checked for overflow relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.",
         "default": "'viewport'"
       },
       {
         "name": "elementContext",
         "type": "ElementContext",
-        "description": "",
+        "description": "The element that will be used to check for overflow. Please see\nhttps://floating-ui.com/docs/detectoverflow#elementcontext for more\ninformation.",
         "default": "'floating'"
       },
       {
         "name": "altBoundary",
         "type": "boolean",
-        "description": "",
+        "description": "Whether to check the alternate elementContext’s boundary. Please see\nhttps://floating-ui.com/docs/detectoverflow#altboundary for more\ninformation.",
         "default": "true"
       }
     ],
@@ -215,13 +215,13 @@
       {
         "name": "boundary",
         "type": "Boundary",
-        "description": "",
+        "description": "Describes the clipping element(s) or area that overflow will be checked relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#boundary for more information.",
         "default": "'clippingAncestors'"
       },
       {
         "name": "overflowPadding",
         "type": "number",
-        "description": "",
+        "description": "Describes the virtual padding around the boundary to check for overflow.\nPlease see https://floating-ui.com/docs/detectoverflow#padding for more information.",
         "default": "0"
       },
       {
@@ -281,19 +281,19 @@
       {
         "name": "rootBoundary",
         "type": "RootBoundary",
-        "description": "",
+        "description": "Describes the root boundary that the element will be checked for overflow relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.",
         "default": "'viewport'"
       },
       {
         "name": "elementContext",
         "type": "ElementContext",
-        "description": "",
+        "description": "The element that will be used to check for overflow. Please see\nhttps://floating-ui.com/docs/detectoverflow#elementcontext for more\ninformation.",
         "default": "'floating'"
       },
       {
         "name": "altBoundary",
         "type": "boolean",
-        "description": "",
+        "description": "Whether to check the alternate elementContext’s boundary. Please see\nhttps://floating-ui.com/docs/detectoverflow#altboundary for more\ninformation.",
         "default": "true"
       }
     ],
@@ -333,7 +333,7 @@
       },
       {
         "name": "offset",
-        "type": "OffsetOptions | null",
+        "type": "OffsetOptions | undefined",
         "description": "",
         "default": "12"
       },
@@ -376,13 +376,13 @@
       {
         "name": "boundary",
         "type": "Boundary",
-        "description": "",
+        "description": "Describes the clipping element(s) or area that overflow will be checked relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#boundary for more information.",
         "default": "'clippingAncestors'"
       },
       {
         "name": "overflowPadding",
         "type": "number",
-        "description": "",
+        "description": "Describes the virtual padding around the boundary to check for overflow.\nPlease see https://floating-ui.com/docs/detectoverflow#padding for more information.",
         "default": "0"
       },
       {
@@ -424,19 +424,19 @@
       {
         "name": "rootBoundary",
         "type": "RootBoundary",
-        "description": "",
+        "description": "Describes the root boundary that the element will be checked for overflow relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.",
         "default": "'viewport'"
       },
       {
         "name": "elementContext",
         "type": "ElementContext",
-        "description": "",
+        "description": "The element that will be used to check for overflow. Please see\nhttps://floating-ui.com/docs/detectoverflow#elementcontext for more\ninformation.",
         "default": "'floating'"
       },
       {
         "name": "altBoundary",
         "type": "boolean",
-        "description": "",
+        "description": "Whether to check the alternate elementContext’s boundary. Please see\nhttps://floating-ui.com/docs/detectoverflow#altboundary for more\ninformation.",
         "default": "true"
       }
     ],
@@ -464,7 +464,7 @@
       },
       {
         "name": "offset",
-        "type": "OffsetOptions | null",
+        "type": "OffsetOptions | undefined",
         "description": "{@inheritDoc",
         "default": "4"
       },
@@ -495,7 +495,7 @@
       {
         "name": "boundary",
         "type": "Boundary",
-        "description": "",
+        "description": "Describes the clipping element(s) or area that overflow will be checked relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#boundary for more information.",
         "default": "'clippingAncestors'"
       },
       {
@@ -543,19 +543,19 @@
       {
         "name": "rootBoundary",
         "type": "RootBoundary",
-        "description": "",
+        "description": "Describes the root boundary that the element will be checked for overflow relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.",
         "default": "'viewport'"
       },
       {
         "name": "elementContext",
         "type": "ElementContext",
-        "description": "",
+        "description": "The element that will be used to check for overflow. Please see\nhttps://floating-ui.com/docs/detectoverflow#elementcontext for more\ninformation.",
         "default": "'floating'"
       },
       {
         "name": "altBoundary",
         "type": "boolean",
-        "description": "",
+        "description": "Whether to check the alternate elementContext’s boundary. Please see\nhttps://floating-ui.com/docs/detectoverflow#altboundary for more\ninformation.",
         "default": "true"
       }
     ],
@@ -599,7 +599,7 @@
     ],
     "events": [
       {
-        "name": "update:open",
+        "name": "openChange",
         "type": "CustomEvent<boolean>",
         "description": ""
       }
@@ -665,9 +665,9 @@
       },
       {
         "name": "offset",
-        "type": "OffsetOptions | null",
+        "type": "OffsetOptions | undefined",
         "description": "The distance between the reference and floating element.",
-        "default": "null"
+        "default": "undefined"
       },
       {
         "name": "inline",
@@ -690,13 +690,13 @@
       {
         "name": "boundary",
         "type": "Boundary",
-        "description": "",
+        "description": "Describes the clipping element(s) or area that overflow will be checked relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#boundary for more information.",
         "default": "'clippingAncestors'"
       },
       {
         "name": "overflowPadding",
         "type": "number",
-        "description": "",
+        "description": "Describes the virtual padding around the boundary to check for overflow.\nPlease see https://floating-ui.com/docs/detectoverflow#padding for more information.",
         "default": "0"
       },
       {
@@ -756,19 +756,19 @@
       {
         "name": "rootBoundary",
         "type": "RootBoundary",
-        "description": "",
+        "description": "Describes the root boundary that the element will be checked for overflow relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.",
         "default": "'viewport'"
       },
       {
         "name": "elementContext",
         "type": "ElementContext",
-        "description": "",
+        "description": "The element that will be used to check for overflow. Please see\nhttps://floating-ui.com/docs/detectoverflow#elementcontext for more\ninformation.",
         "default": "'floating'"
       },
       {
         "name": "altBoundary",
         "type": "boolean",
-        "description": "",
+        "description": "Whether to check the alternate elementContext’s boundary. Please see\nhttps://floating-ui.com/docs/detectoverflow#altboundary for more\ninformation.",
         "default": "true"
       }
     ],
@@ -794,7 +794,7 @@
       },
       {
         "name": "offset",
-        "type": "OffsetOptions | null",
+        "type": "OffsetOptions | undefined",
         "description": "",
         "default": "{mainAxis: -4, crossAxis: 4}"
       },
@@ -824,7 +824,7 @@
       {
         "name": "boundary",
         "type": "Boundary",
-        "description": "",
+        "description": "Describes the clipping element(s) or area that overflow will be checked relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#boundary for more information.",
         "default": "'clippingAncestors'"
       },
       {
@@ -890,26 +890,25 @@
       {
         "name": "rootBoundary",
         "type": "RootBoundary",
-        "description": "",
+        "description": "Describes the root boundary that the element will be checked for overflow relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.",
         "default": "'viewport'"
       },
       {
         "name": "elementContext",
         "type": "ElementContext",
-        "description": "",
+        "description": "The element that will be used to check for overflow. Please see\nhttps://floating-ui.com/docs/detectoverflow#elementcontext for more\ninformation.",
         "default": "'floating'"
       },
       {
         "name": "altBoundary",
         "type": "boolean",
-        "description": "",
+        "description": "Whether to check the alternate elementContext’s boundary. Please see\nhttps://floating-ui.com/docs/detectoverflow#altboundary for more\ninformation.",
         "default": "true"
       },
       {
         "name": "eventTarget",
-        "type": "HTMLElement | TypedEventTarget<\"keydown\"> | null",
-        "description": "By default, the menu element will listen for keydown events. You can pass a different element to listen for keydown events.",
-        "default": "null"
+        "type": "HTMLElement | TypedEventTarget<\"keydown\"> | undefined",
+        "description": "By default, the menu element will listen for keydown events. You can pass a\ndifferent element to listen for keydown events."
       }
     ],
     "events": [
@@ -978,9 +977,9 @@
       },
       {
         "name": "offset",
-        "type": "OffsetOptions | null",
+        "type": "OffsetOptions | undefined",
         "description": "The distance between the reference and floating element.",
-        "default": "null"
+        "default": "undefined"
       },
       {
         "name": "inline",
@@ -1003,13 +1002,13 @@
       {
         "name": "boundary",
         "type": "Boundary",
-        "description": "",
+        "description": "Describes the clipping element(s) or area that overflow will be checked relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#boundary for more information.",
         "default": "'clippingAncestors'"
       },
       {
         "name": "overflowPadding",
         "type": "number",
-        "description": "",
+        "description": "Describes the virtual padding around the boundary to check for overflow.\nPlease see https://floating-ui.com/docs/detectoverflow#padding for more information.",
         "default": "0"
       },
       {
@@ -1069,19 +1068,19 @@
       {
         "name": "rootBoundary",
         "type": "RootBoundary",
-        "description": "",
+        "description": "Describes the root boundary that the element will be checked for overflow relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.",
         "default": "'viewport'"
       },
       {
         "name": "elementContext",
         "type": "ElementContext",
-        "description": "",
+        "description": "The element that will be used to check for overflow. Please see\nhttps://floating-ui.com/docs/detectoverflow#elementcontext for more\ninformation.",
         "default": "'floating'"
       },
       {
         "name": "altBoundary",
         "type": "boolean",
-        "description": "",
+        "description": "Whether to check the alternate elementContext’s boundary. Please see\nhttps://floating-ui.com/docs/detectoverflow#altboundary for more\ninformation.",
         "default": "true"
       }
     ],
@@ -1125,9 +1124,9 @@
       },
       {
         "name": "offset",
-        "type": "OffsetOptions | null",
+        "type": "OffsetOptions | undefined",
         "description": "The distance between the reference and floating element.",
-        "default": "null"
+        "default": "undefined"
       },
       {
         "name": "inline",
@@ -1144,13 +1143,13 @@
       {
         "name": "boundary",
         "type": "Boundary",
-        "description": "",
+        "description": "Describes the clipping element(s) or area that overflow will be checked relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#boundary for more information.",
         "default": "'clippingAncestors'"
       },
       {
         "name": "overflowPadding",
         "type": "number",
-        "description": "",
+        "description": "Describes the virtual padding around the boundary to check for overflow.\nPlease see https://floating-ui.com/docs/detectoverflow#padding for more information.",
         "default": "0"
       },
       {
@@ -1204,19 +1203,19 @@
       {
         "name": "rootBoundary",
         "type": "RootBoundary",
-        "description": "",
+        "description": "Describes the root boundary that the element will be checked for overflow relative to.\nPlease see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.",
         "default": "'viewport'"
       },
       {
         "name": "elementContext",
         "type": "ElementContext",
-        "description": "",
+        "description": "The element that will be used to check for overflow. Please see\nhttps://floating-ui.com/docs/detectoverflow#elementcontext for more\ninformation.",
         "default": "'floating'"
       },
       {
         "name": "altBoundary",
         "type": "boolean",
-        "description": "",
+        "description": "Whether to check the alternate elementContext’s boundary. Please see\nhttps://floating-ui.com/docs/detectoverflow#altboundary for more\ninformation.",
         "default": "true"
       }
     ],
@@ -1245,7 +1244,7 @@
     ],
     "events": [
       {
-        "name": "update:open",
+        "name": "openChange",
         "type": "CustomEvent<boolean>",
         "description": "Fired when the open state changes."
       }

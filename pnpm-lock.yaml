@@ -685,29 +685,29 @@ importers:
   packages/web:
     dependencies:
       '@aria-ui/collection':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@34a74d6
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@34a74d6
       '@aria-ui/core':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@34a74d6
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@34a74d6
       '@aria-ui/listbox':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@c0b474e
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@c0b474e
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@34a74d6
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@34a74d6
       '@aria-ui/menu':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@c0b474e
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@c0b474e
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@34a74d6
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@34a74d6
       '@aria-ui/overlay':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@34a74d6
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@34a74d6
       '@aria-ui/popover':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@34a74d6
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@34a74d6
       '@aria-ui/presence':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@34a74d6
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@34a74d6
       '@aria-ui/tooltip':
-        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@c0b474e
-        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@c0b474e
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@34a74d6
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@34a74d6
       '@floating-ui/dom':
         specifier: ^1.6.10
         version: 1.6.11
@@ -1063,36 +1063,36 @@ packages:
   '@antfu/utils@0.7.10':
     resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
 
-  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e}
+  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@34a74d6':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@34a74d6}
     version: 0.0.3
 
-  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e}
+  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@34a74d6':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@34a74d6}
     version: 0.0.18
 
-  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@c0b474e':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@c0b474e}
+  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@34a74d6':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@34a74d6}
     version: 0.0.18
 
-  '@aria-ui/menu@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@c0b474e':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@c0b474e}
+  '@aria-ui/menu@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@34a74d6':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@34a74d6}
     version: 0.0.12
 
-  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e}
+  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@34a74d6':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@34a74d6}
     version: 0.0.19
 
-  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e}
+  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@34a74d6':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@34a74d6}
     version: 0.0.20
 
-  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e}
+  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@34a74d6':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@34a74d6}
     version: 0.0.14
 
-  '@aria-ui/tooltip@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@c0b474e':
-    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@c0b474e}
+  '@aria-ui/tooltip@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@34a74d6':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@34a74d6}
     version: 0.0.22
 
   '@astrobook/core@0.4.4':
@@ -7425,9 +7425,9 @@ snapshots:
 
   '@antfu/utils@0.7.10': {}
 
-  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e': {}
+  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@34a74d6': {}
 
-  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e':
+  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@34a74d6':
     dependencies:
       '@dddstack/ariatype-aria-attributes': 2.0.0
       '@dddstack/ariatype-aria-roles': 2.0.0
@@ -7437,46 +7437,46 @@ snapshots:
       just-map-values: 3.2.0
       server-dom-shim: 1.0.2
 
-  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@c0b474e':
+  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@34a74d6':
     dependencies:
-      '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
+      '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@34a74d6
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@34a74d6
+      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@34a74d6
       immer: 10.1.1
 
-  '@aria-ui/menu@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@c0b474e':
+  '@aria-ui/menu@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@34a74d6':
     dependencies:
-      '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@c0b474e
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
-      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e
-      '@aria-ui/popover': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
+      '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@34a74d6
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@34a74d6
+      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@34a74d6
+      '@aria-ui/popover': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@34a74d6
+      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@34a74d6
       nanoid: 5.0.7
 
-  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e':
+  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@34a74d6':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@34a74d6
       '@floating-ui/dom': 1.6.11
       '@zag-js/dom-query': 0.65.1
 
-  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@c0b474e':
+  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@34a74d6':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
-      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@34a74d6
+      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@34a74d6
+      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@34a74d6
       '@zag-js/dismissable': 0.65.1
       '@zag-js/tabbable': 0.49.0
 
-  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e':
+  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@34a74d6':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@34a74d6
       '@zag-js/dom-query': 0.65.1
 
-  '@aria-ui/tooltip@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@c0b474e':
+  '@aria-ui/tooltip@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@34a74d6':
     dependencies:
-      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@c0b474e
-      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@c0b474e
-      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@c0b474e
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@34a74d6
+      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@34a74d6
+      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@34a74d6
       nanoid: 5.0.7
 
   '@astrobook/core@0.4.4':

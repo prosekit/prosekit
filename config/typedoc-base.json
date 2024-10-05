@@ -48,16 +48,5 @@
   "treatWarningsAsErrors": true,
   "cleanOutputDir": true,
 
-  // https://www.typedoc-plugin-markdown.org/docs/options
-  "useHTMLAnchors": true,
-  "preserveAnchorCasing": true,
-  "hideBreadcrumbs": true,
-  "hidePageHeader": true,
   "entryFileName": "index.md",
-  "useCodeBlocks": false,
-  "excludeGroups": true,
-  "typeDeclarationFormat": "table",
-  "enumMembersFormat": "table",
-  "propertiesFormat": "list",
-  "outputFileStrategy": "modules"
 }

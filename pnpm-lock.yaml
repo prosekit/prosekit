@@ -958,9 +958,9 @@ importers:
       typedoc-plugin-external-package-links:
         specifier: ^0.1.0
         version: 0.1.0
-      typedoc-plugin-markdown:
-        specifier: ^4.2.7
-        version: 4.2.7(typedoc@0.26.7(typescript@5.6.2))
+      typedoc-plugin-md:
+        specifier: ^0.1.0
+        version: 0.1.0(typedoc@0.26.7(typescript@5.6.2))
       typedoc-plugin-mdn-links:
         specifier: ^3.2.12
         version: 3.2.12(typedoc@0.26.7(typescript@5.6.2))
@@ -6722,11 +6722,10 @@ packages:
   typedoc-plugin-external-package-links@0.1.0:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
 
-  typedoc-plugin-markdown@4.2.7:
-    resolution: {integrity: sha512-bLsQdweSm48P9j6kGqQ3/4GCH5zu2EnURSkkxqirNc+uVFE9YK825ogDw+WbNkRHIV6eZK/1U43gT7YfglyYOg==}
-    engines: {node: '>= 18'}
+  typedoc-plugin-md@0.1.0:
+    resolution: {integrity: sha512-MMZIj0N/iRKvtOF1KmWq9biVxqmVTaKLgHvjztkH7B0/IqSuBlbhWSIkYT98Nl0cbLuw9Ois1lhhmosnpKgwwA==}
     peerDependencies:
-      typedoc: 0.26.x
+      typedoc: ^0.26.7
 
   typedoc-plugin-mdn-links@3.2.12:
     resolution: {integrity: sha512-UT7JinqYE7IQSrpRPkUkHrXXEJw5qbHIZhVq8igutYDA/4fsrYZhYffVo8Uh70K2iXFdAyvt6foQG5ci1VERAw==}
@@ -14196,9 +14195,16 @@ snapshots:
 
   typedoc-plugin-external-package-links@0.1.0: {}
 
-  typedoc-plugin-markdown@4.2.7(typedoc@0.26.7(typescript@5.6.2)):
+  typedoc-plugin-md@0.1.0(typedoc@0.26.7(typescript@5.6.2)):
     dependencies:
+      '@sindresorhus/slugify': 2.2.1
+      change-case: 5.4.4
+      remark-parse: 11.0.0
+      remark-stringify: 11.0.0
       typedoc: 0.26.7(typescript@5.6.2)
+      unified: 11.0.5
+    transitivePeerDependencies:
+      - supports-color
 
   typedoc-plugin-mdn-links@3.2.12(typedoc@0.26.7(typescript@5.6.2)):
     dependencies:

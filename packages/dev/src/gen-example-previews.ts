@@ -29,7 +29,6 @@ function formatPreview(story: string, examples: Example[]) {
 <script setup>
 import { ExamplePreview } from '@/.vitepress/components/example-preview'
 import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block'
-import { ComponentReference } from '@/.vitepress/components/component-reference'
 </script>
 
 <ExamplePreview name="${story}">

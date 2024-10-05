@@ -17,10 +17,8 @@
     "./config-tsup": {
       "types": "./dist/config-tsup.d.ts",
       "default": "./dist/config-tsup.js"
-    },
-    "./gen-api-docs": {
-      "types": "./src/gen-api-docs.ts"
     }
+  
   },
   "scripts": {
     "gen": "tsx src/gen.ts",

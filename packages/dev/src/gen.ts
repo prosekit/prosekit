@@ -1,4 +1,3 @@
-import { genApiDocs } from './gen-api-docs.js'
 import { genChangesetConfigJson } from './gen-changeset-config-json.js'
 import { genChangeset } from './gen-changeset.js'
 import { genComponents } from './gen-components.js'
@@ -39,7 +38,6 @@ async function genAll(): Promise<boolean> {
   await genDocsItems()
   await genExamplePreviews()
   await genExampleCodeBlocks()
-  await genApiDocs()
 
   return await vfs.commit()
 }

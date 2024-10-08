@@ -6,6 +6,7 @@ import {
 } from '@prosekit/web/block-handle'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link BlockHandlePopover} component.
@@ -13,13 +14,16 @@ import { createComponent } from '../create-component'
 export interface BlockHandlePopoverProps extends Partial<Props> {}
 
 /**
- * Events for the {@link BlockHandlePopover} component.
+ * Emits for the {@link BlockHandlePopover} component.
  */
-export interface BlockHandlePopoverEvents extends Partial<Events> {}
+export interface BlockHandlePopoverEmits extends CreateEmits<Events> {}
 
-export const BlockHandlePopover = createComponent<
+export const BlockHandlePopover: DefineSetupFnComponent<
+  BlockHandlePopoverProps & HTMLAttributes,
+  BlockHandlePopoverEmits
+> = createComponent<
   BlockHandlePopoverProps,
-  BlockHandlePopoverEvents
+  BlockHandlePopoverEmits
 >(
   'prosekit-block-handle-popover',
   'BlockHandlePopover',

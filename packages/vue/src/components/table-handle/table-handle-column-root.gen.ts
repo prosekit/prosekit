@@ -6,6 +6,7 @@ import {
 } from '@prosekit/web/table-handle'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link TableHandleColumnRoot} component.
@@ -13,13 +14,16 @@ import { createComponent } from '../create-component'
 export interface TableHandleColumnRootProps extends Partial<Props> {}
 
 /**
- * Events for the {@link TableHandleColumnRoot} component.
+ * Emits for the {@link TableHandleColumnRoot} component.
  */
-export interface TableHandleColumnRootEvents extends Partial<Events> {}
+export interface TableHandleColumnRootEmits extends CreateEmits<Events> {}
 
-export const TableHandleColumnRoot = createComponent<
+export const TableHandleColumnRoot: DefineSetupFnComponent<
+  TableHandleColumnRootProps & HTMLAttributes,
+  TableHandleColumnRootEmits
+> = createComponent<
   TableHandleColumnRootProps,
-  TableHandleColumnRootEvents
+  TableHandleColumnRootEmits
 >(
   'prosekit-table-handle-column-root',
   'TableHandleColumnRoot',

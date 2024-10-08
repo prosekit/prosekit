@@ -6,6 +6,7 @@ import {
 } from '@prosekit/web/table-handle'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link TableHandlePopoverContent} component.
@@ -13,13 +14,16 @@ import { createComponent } from '../create-component'
 export interface TableHandlePopoverContentProps extends Partial<Props> {}
 
 /**
- * Events for the {@link TableHandlePopoverContent} component.
+ * Emits for the {@link TableHandlePopoverContent} component.
  */
-export interface TableHandlePopoverContentEvents extends Partial<Events> {}
+export interface TableHandlePopoverContentEmits extends CreateEmits<Events> {}
 
-export const TableHandlePopoverContent = createComponent<
+export const TableHandlePopoverContent: DefineSetupFnComponent<
+  TableHandlePopoverContentProps & HTMLAttributes,
+  TableHandlePopoverContentEmits
+> = createComponent<
   TableHandlePopoverContentProps,
-  TableHandlePopoverContentEvents
+  TableHandlePopoverContentEmits
 >(
   'prosekit-table-handle-popover-content',
   'TableHandlePopoverContent',

@@ -6,6 +6,7 @@ import {
 } from '@prosekit/web/block-handle'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link BlockHandleDraggable} component.
@@ -13,13 +14,16 @@ import { createComponent } from '../create-component'
 export interface BlockHandleDraggableProps extends Partial<Props> {}
 
 /**
- * Events for the {@link BlockHandleDraggable} component.
+ * Emits for the {@link BlockHandleDraggable} component.
  */
-export interface BlockHandleDraggableEvents extends Partial<Events> {}
+export interface BlockHandleDraggableEmits extends CreateEmits<Events> {}
 
-export const BlockHandleDraggable = createComponent<
+export const BlockHandleDraggable: DefineSetupFnComponent<
+  BlockHandleDraggableProps & HTMLAttributes,
+  BlockHandleDraggableEmits
+> = createComponent<
   BlockHandleDraggableProps,
-  BlockHandleDraggableEvents
+  BlockHandleDraggableEmits
 >(
   'prosekit-block-handle-draggable',
   'BlockHandleDraggable',

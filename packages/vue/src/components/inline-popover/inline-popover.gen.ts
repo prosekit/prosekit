@@ -6,6 +6,7 @@ import {
 } from '@prosekit/web/inline-popover'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link InlinePopover} component.
@@ -13,13 +14,16 @@ import { createComponent } from '../create-component'
 export interface InlinePopoverProps extends Partial<Props> {}
 
 /**
- * Events for the {@link InlinePopover} component.
+ * Emits for the {@link InlinePopover} component.
  */
-export interface InlinePopoverEvents extends Partial<Events> {}
+export interface InlinePopoverEmits extends CreateEmits<Events> {}
 
-export const InlinePopover = createComponent<
+export const InlinePopover: DefineSetupFnComponent<
+  InlinePopoverProps & HTMLAttributes,
+  InlinePopoverEmits
+> = createComponent<
   InlinePopoverProps,
-  InlinePopoverEvents
+  InlinePopoverEmits
 >(
   'prosekit-inline-popover',
   'InlinePopover',

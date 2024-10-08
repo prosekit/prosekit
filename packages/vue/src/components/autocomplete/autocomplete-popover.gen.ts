@@ -6,6 +6,7 @@ import {
 } from '@prosekit/web/autocomplete'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link AutocompletePopover} component.
@@ -13,13 +14,16 @@ import { createComponent } from '../create-component'
 export interface AutocompletePopoverProps extends Partial<Props> {}
 
 /**
- * Events for the {@link AutocompletePopover} component.
+ * Emits for the {@link AutocompletePopover} component.
  */
-export interface AutocompletePopoverEvents extends Partial<Events> {}
+export interface AutocompletePopoverEmits extends CreateEmits<Events> {}
 
-export const AutocompletePopover = createComponent<
+export const AutocompletePopover: DefineSetupFnComponent<
+  AutocompletePopoverProps & HTMLAttributes,
+  AutocompletePopoverEmits
+> = createComponent<
   AutocompletePopoverProps,
-  AutocompletePopoverEvents
+  AutocompletePopoverEmits
 >(
   'prosekit-autocomplete-popover',
   'AutocompletePopover',

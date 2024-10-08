@@ -6,6 +6,7 @@ import {
 } from '@prosekit/web/tooltip'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link TooltipContent} component.
@@ -13,13 +14,16 @@ import { createComponent } from '../create-component'
 export interface TooltipContentProps extends Partial<Props> {}
 
 /**
- * Events for the {@link TooltipContent} component.
+ * Emits for the {@link TooltipContent} component.
  */
-export interface TooltipContentEvents extends Partial<Events> {}
+export interface TooltipContentEmits extends CreateEmits<Events> {}
 
-export const TooltipContent = createComponent<
+export const TooltipContent: DefineSetupFnComponent<
+  TooltipContentProps & HTMLAttributes,
+  TooltipContentEmits
+> = createComponent<
   TooltipContentProps,
-  TooltipContentEvents
+  TooltipContentEmits
 >(
   'prosekit-tooltip-content',
   'TooltipContent',

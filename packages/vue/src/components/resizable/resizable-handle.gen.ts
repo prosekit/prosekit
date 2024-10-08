@@ -6,6 +6,7 @@ import {
 } from '@prosekit/web/resizable'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link ResizableHandle} component.
@@ -13,13 +14,16 @@ import { createComponent } from '../create-component'
 export interface ResizableHandleProps extends Partial<Props> {}
 
 /**
- * Events for the {@link ResizableHandle} component.
+ * Emits for the {@link ResizableHandle} component.
  */
-export interface ResizableHandleEvents extends Partial<Events> {}
+export interface ResizableHandleEmits extends CreateEmits<Events> {}
 
-export const ResizableHandle = createComponent<
+export const ResizableHandle: DefineSetupFnComponent<
+  ResizableHandleProps & HTMLAttributes,
+  ResizableHandleEmits
+> = createComponent<
   ResizableHandleProps,
-  ResizableHandleEvents
+  ResizableHandleEmits
 >(
   'prosekit-resizable-handle',
   'ResizableHandle',

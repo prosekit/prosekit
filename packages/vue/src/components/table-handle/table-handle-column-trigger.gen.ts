@@ -6,6 +6,7 @@ import {
 } from '@prosekit/web/table-handle'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link TableHandleColumnTrigger} component.
@@ -13,13 +14,16 @@ import { createComponent } from '../create-component'
 export interface TableHandleColumnTriggerProps extends Partial<Props> {}
 
 /**
- * Events for the {@link TableHandleColumnTrigger} component.
+ * Emits for the {@link TableHandleColumnTrigger} component.
  */
-export interface TableHandleColumnTriggerEvents extends Partial<Events> {}
+export interface TableHandleColumnTriggerEmits extends CreateEmits<Events> {}
 
-export const TableHandleColumnTrigger = createComponent<
+export const TableHandleColumnTrigger: DefineSetupFnComponent<
+  TableHandleColumnTriggerProps & HTMLAttributes,
+  TableHandleColumnTriggerEmits
+> = createComponent<
   TableHandleColumnTriggerProps,
-  TableHandleColumnTriggerEvents
+  TableHandleColumnTriggerEmits
 >(
   'prosekit-table-handle-column-trigger',
   'TableHandleColumnTrigger',

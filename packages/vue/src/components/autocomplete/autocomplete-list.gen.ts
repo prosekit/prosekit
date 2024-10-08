@@ -6,6 +6,7 @@ import {
 } from '@prosekit/web/autocomplete'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link AutocompleteList} component.
@@ -13,13 +14,16 @@ import { createComponent } from '../create-component'
 export interface AutocompleteListProps extends Partial<Props> {}
 
 /**
- * Events for the {@link AutocompleteList} component.
+ * Emits for the {@link AutocompleteList} component.
  */
-export interface AutocompleteListEvents extends Partial<Events> {}
+export interface AutocompleteListEmits extends CreateEmits<Events> {}
 
-export const AutocompleteList = createComponent<
+export const AutocompleteList: DefineSetupFnComponent<
+  AutocompleteListProps & HTMLAttributes,
+  AutocompleteListEmits
+> = createComponent<
   AutocompleteListProps,
-  AutocompleteListEvents
+  AutocompleteListEmits
 >(
   'prosekit-autocomplete-list',
   'AutocompleteList',

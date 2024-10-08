@@ -331,6 +331,7 @@ import {
   type ${pascal}Props as Props,
   type ${pascal}Events as Events,
 } from '@prosekit/web/${group}'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
 import type { CreateEmits } from '../create-emits'

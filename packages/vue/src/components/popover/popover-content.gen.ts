@@ -6,6 +6,7 @@ import {
 } from '@prosekit/web/popover'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link PopoverContent} component.
@@ -13,13 +14,16 @@ import { createComponent } from '../create-component'
 export interface PopoverContentProps extends Partial<Props> {}
 
 /**
- * Events for the {@link PopoverContent} component.
+ * Emits for the {@link PopoverContent} component.
  */
-export interface PopoverContentEvents extends Partial<Events> {}
+export interface PopoverContentEmits extends CreateEmits<Events> {}
 
-export const PopoverContent = createComponent<
+export const PopoverContent: DefineSetupFnComponent<
+  PopoverContentProps & HTMLAttributes,
+  PopoverContentEmits
+> = createComponent<
   PopoverContentProps,
-  PopoverContentEvents
+  PopoverContentEmits
 >(
   'prosekit-popover-content',
   'PopoverContent',

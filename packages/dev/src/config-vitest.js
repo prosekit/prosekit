@@ -2,6 +2,9 @@ import { defineProject } from 'vitest/config'
 
 /** @type {import('vitest/config').UserProjectConfigExport} */
 const config = defineProject({
+  optimizeDeps: {
+    include: ['@vitest/coverage-v8/browser', '@vue/test-utils'],
+  },
   test: {
     browser: {
       enabled: true,

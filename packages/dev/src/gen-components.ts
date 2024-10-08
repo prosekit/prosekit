@@ -186,9 +186,7 @@ function formatPrimitiveIndexCode(components: string[]) {
     const pascal = pascalCase(kebab)
     const camel = camelCase(kebab)
     return [
-      `// prettier-ignore`,
       `export { ${pascal}Element } from './${kebab}/element.gen'`,
-      `// prettier-ignore`,
       `export { ${camel}Events, ${camel}Props, type ${pascal}Events, type ${pascal}Props } from './${kebab}/types'`,
       '',
     ]
@@ -296,6 +294,9 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
+/**
+ * Props for the {@link ${pascal}} component.
+ */
 export interface ${pascal}Props extends Partial<CreateProps<Props, Events>> {}
  
 export const ${pascal}: ForwardRefExoticComponent<

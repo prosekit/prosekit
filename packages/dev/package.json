@@ -49,6 +49,6 @@
     "just-pascal-case": "^3.2.0",
     "tsx": "^4.19.1",
     "typescript": "^5.6.2",
-    "vitest": "^2.1.1"
+    "vitest": "^2.1.2"
   }
 }

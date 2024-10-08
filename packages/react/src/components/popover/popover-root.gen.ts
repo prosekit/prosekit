@@ -14,10 +14,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type PopoverRootProps = CreateProps<Props, Events>
+export interface PopoverRootProps extends Partial<CreateProps<Props, Events>> {}
  
 export const PopoverRoot: ForwardRefExoticComponent<
-  Partial<PopoverRootProps> &
+  PopoverRootProps &
   RefAttributes<PopoverRootElement> &
   HTMLAttributes<PopoverRootElement>
 > = createComponent<

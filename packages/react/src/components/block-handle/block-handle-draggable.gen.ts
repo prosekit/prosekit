@@ -14,10 +14,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type BlockHandleDraggableProps = CreateProps<Props, Events>
+export interface BlockHandleDraggableProps extends Partial<CreateProps<Props, Events>> {}
  
 export const BlockHandleDraggable: ForwardRefExoticComponent<
-  Partial<BlockHandleDraggableProps> &
+  BlockHandleDraggableProps &
   RefAttributes<BlockHandleDraggableElement> &
   HTMLAttributes<BlockHandleDraggableElement>
 > = createComponent<

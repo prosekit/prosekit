@@ -14,10 +14,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type BlockHandlePopoverProps = CreateProps<Props, Events>
+export interface BlockHandlePopoverProps extends Partial<CreateProps<Props, Events>> {}
  
 export const BlockHandlePopover: ForwardRefExoticComponent<
-  Partial<BlockHandlePopoverProps> &
+  BlockHandlePopoverProps &
   RefAttributes<BlockHandlePopoverElement> &
   HTMLAttributes<BlockHandlePopoverElement>
 > = createComponent<

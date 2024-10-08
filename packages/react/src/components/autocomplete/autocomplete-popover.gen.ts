@@ -14,10 +14,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type AutocompletePopoverProps = CreateProps<Props, Events>
+export interface AutocompletePopoverProps extends Partial<CreateProps<Props, Events>> {}
  
 export const AutocompletePopover: ForwardRefExoticComponent<
-  Partial<AutocompletePopoverProps> &
+  AutocompletePopoverProps &
   RefAttributes<AutocompletePopoverElement> &
   HTMLAttributes<AutocompletePopoverElement>
 > = createComponent<

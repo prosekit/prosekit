@@ -14,10 +14,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type TableHandleRootProps = CreateProps<Props, Events>
+export interface TableHandleRootProps extends Partial<CreateProps<Props, Events>> {}
  
 export const TableHandleRoot: ForwardRefExoticComponent<
-  Partial<TableHandleRootProps> &
+  TableHandleRootProps &
   RefAttributes<TableHandleRootElement> &
   HTMLAttributes<TableHandleRootElement>
 > = createComponent<

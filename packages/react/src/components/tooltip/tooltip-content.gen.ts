@@ -14,10 +14,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type TooltipContentProps = CreateProps<Props, Events>
+export interface TooltipContentProps extends Partial<CreateProps<Props, Events>> {}
  
 export const TooltipContent: ForwardRefExoticComponent<
-  Partial<TooltipContentProps> &
+  TooltipContentProps &
   RefAttributes<TooltipContentElement> &
   HTMLAttributes<TooltipContentElement>
 > = createComponent<

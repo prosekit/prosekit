@@ -14,10 +14,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type TableHandleRowTriggerProps = CreateProps<Props, Events>
+export interface TableHandleRowTriggerProps extends Partial<CreateProps<Props, Events>> {}
  
 export const TableHandleRowTrigger: ForwardRefExoticComponent<
-  Partial<TableHandleRowTriggerProps> &
+  TableHandleRowTriggerProps &
   RefAttributes<TableHandleRowTriggerElement> &
   HTMLAttributes<TableHandleRowTriggerElement>
 > = createComponent<

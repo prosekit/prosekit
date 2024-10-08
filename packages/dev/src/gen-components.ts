@@ -1,5 +1,5 @@
 import type { Package } from '@manypkg/get-packages'
-import { camelCase, pascalCase } from 'change-case'
+import { camelCase, kebabCase, pascalCase } from 'change-case'
 
 import {
   readComponents,
@@ -202,28 +202,36 @@ export { ${pascal}Element }
 }
 
 function formatReactIndexCode(components: string[]) {
-  const lines = components.flatMap((kebab) => {
-    const pascal = pascalCase(kebab)
-    return [`export { ${pascal} } from './${kebab}.gen'`, '']
+  const lines = components.flatMap((name) => {
+    const kebab = kebabCase(name)
+    const pascal = pascalCase(name)
+    return [
+      `export { ${pascal}, type ${pascal}Props } from './${kebab}.gen'`,
+      '',
+    ]
   })
-
   return lines.join('\n')
 }
 
 function formatVueIndexCode(components: string[]) {
-  return formatReactIndexCode(components)
+  const lines = components.flatMap((name) => {
+    const kebab = kebabCase(name)
+    const pascal = pascalCase(name)
+    return [`export { ${pascal} } from './${kebab}.gen'`, '']
+  })
+  return lines.join('\n')
 }
 
 function formatSvelteIndexCode(components: string[]) {
-  return formatReactIndexCode(components)
+  return formatVueIndexCode(components)
 }
 
 function formatSolidIndexCode(components: string[]) {
-  return formatReactIndexCode(components)
+  return formatVueIndexCode(components)
 }
 
 function formatPreactIndexCode(components: string[]) {
-  return formatReactIndexCode(components)
+  return formatVueIndexCode(components)
 }
 
 function formatLitIndexCode(group: string, components: string[]) {
@@ -260,10 +268,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type ${pascal}Props = CreateProps<Props, Events>
+export interface ${pascal}Props extends Partial<CreateProps<Props, Events>> {}
  
 export const ${pascal}: ForwardRefExoticComponent<
-  Partial<${pascal}Props> &
+  ${pascal}Props &
   RefAttributes<${pascal}Element> &
   HTMLAttributes<${pascal}Element>
 > = createComponent<

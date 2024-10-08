@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useBlockHandleDraggable } from "./setup"
+import { blockHandleDraggableEvents, blockHandleDraggableProps, type BlockHandleDraggableEvents, type BlockHandleDraggableProps } from "./types"
 
-import { defaultBlockHandleDraggableProps, type BlockHandleDraggableProps } from './props'
-import { useBlockHandleDraggable } from './state'
+class BlockHandleDraggableElement extends defineCustomElement<
+  BlockHandleDraggableProps,
+  BlockHandleDraggableEvents
+>({
+  props: blockHandleDraggableProps,
+  events: blockHandleDraggableEvents,
+  setup: useBlockHandleDraggable,
+}) {}
 
-class BlockHandleDraggableElement extends ElementBuilder<BlockHandleDraggableProps>(useBlockHandleDraggable, defaultBlockHandleDraggableProps) {}
-
-defineCustomElement('prosekit-block-handle-draggable', BlockHandleDraggableElement)
-
+registerCustomElement('prosekit-block-handle-draggable', BlockHandleDraggableElement)
+  
 export { BlockHandleDraggableElement }

@@ -4,22 +4,25 @@ import {
   onMounted,
   ref,
   type DefineSetupFnComponent,
+  type EmitsOptions,
   type HTMLAttributes,
 } from 'vue'
 
 import { useEditorContext } from '../injection/editor-context'
 
-export function createComponent<Props extends object>(
+export function createComponent<
+  Props extends { [PropName in keyof Props]: unknown },
+  Emits extends EmitsOptions,
+>(
   tagName: string,
   displayName: string,
-  defaultProps: Props,
-): DefineSetupFnComponent<Partial<Props> & HTMLAttributes> {
-  const propertyNames = Object.keys(defaultProps)
+  propNames: string[],
+  eventNames: string[],
+): DefineSetupFnComponent<Partial<Props> & HTMLAttributes, Emits> {
+  const hasEditor = propNames.includes('editor')
 
-  const hasEditor = Object.hasOwn(defaultProps, 'editor')
-
-  const Component = defineComponent(
-    (props: Record<string, unknown>, { slots }) => {
+  const Component = defineComponent<any, any>(
+    (props: Record<string, unknown>, { slots, emit }) => {
       const editor = useEditorContext()
 
       const mounted = ref(false)
@@ -33,13 +36,25 @@ export function createComponent<Props extends object>(
 
         for (const [key, value] of Object.entries(props)) {
           if (value !== undefined && !key.startsWith('.')) {
-            properties[propertyNames.includes(key) ? '.' + key : key] = value
+            properties[propNames.includes(key) ? '.' + key : key] = value
           }
         }
 
         // Try to add the editor prop if it's missing.
         if (hasEditor && editor && !properties['editor']) {
           properties.editor = editor
+        }
+
+        for (const eventName of eventNames) {
+          const extractDetail = eventName.endsWith('Change')
+          properties['on' + eventName[0].toUpperCase() + eventName.slice(1)] = (
+            event: Event,
+          ) => {
+            emit(
+              eventName,
+              extractDetail ? (event as CustomEvent).detail : event,
+            )
+          }
         }
 
         // Ensure web components work after SSR hydration.
@@ -50,7 +65,8 @@ export function createComponent<Props extends object>(
     },
     {
       name: displayName,
-      props: propertyNames,
+      props: propNames,
+      emits: eventNames,
     },
   )
 

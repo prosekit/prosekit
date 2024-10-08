@@ -1,21 +1,23 @@
 <script lang="ts">
 import '@prosekit/web/autocomplete'
 
-import { defaultAutocompleteListProps } from '@prosekit/web/autocomplete'
+import { autocompleteListProps, autocompleteListEvents } from '@prosekit/web/autocomplete'
 import { ClientUpdate } from '../client-update'
-import { useWebComponent } from '../../utils/use-web-component'
+import { useComponent } from '../use-component'
+import { useEventHandlers } from '../use-event-handlers'
 
 let attributes: Record<string, unknown> = {}
+let eventHandlers: Record<string, (...args: any[]) => any> = {}
 let element: HTMLElement | undefined = undefined
-const handleChange = useWebComponent(defaultAutocompleteListProps)
+const handleChange = useComponent(Object.keys(autocompleteListProps), Object.keys(autocompleteListEvents))
 
 $: {
-  attributes = handleChange(element, $$props)
+  [attributes, eventHandlers] = handleChange(element, $$props)
 }
 </script>
 
 <ClientUpdate>
-  <prosekit-autocomplete-list {...attributes} bind:this={element}>
+  <prosekit-autocomplete-list {...attributes} use:useEventHandlers={eventHandlers} bind:this={element}>
     <slot />
   </prosekit-autocomplete-list>
 </ClientUpdate>

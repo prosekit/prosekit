@@ -1,7 +1,9 @@
 import {
-  defaultTooltipRootProps,
   type TooltipRootElement,
-  type TooltipRootProps,
+  type TooltipRootProps as Props,
+  type TooltipRootEvents as Events,
+  tooltipRootProps,
+  tooltipRootEvents,
 } from '@prosekit/web/tooltip'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,13 @@ import type {
 } from 'preact/compat'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+/**
+ * Props for the {@link TooltipRoot} component.
+ */
+export type TooltipRootProps = Partial<CreateProps<Props, Events>>
+ 
 export const TooltipRoot: ForwardRefExoticComponent<
   Partial<TooltipRootProps> &
   RefAttributes<TooltipRootElement> &
@@ -21,5 +29,6 @@ export const TooltipRoot: ForwardRefExoticComponent<
 >(
   'prosekit-tooltip-root',
   'TooltipRoot',
-  defaultTooltipRootProps,
+  Object.keys(tooltipRootProps),
+  Object.keys(tooltipRootEvents),
 )

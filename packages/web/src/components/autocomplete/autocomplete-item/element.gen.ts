@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useAutocompleteItem } from "./setup"
+import { autocompleteItemEvents, autocompleteItemProps, type AutocompleteItemEvents, type AutocompleteItemProps } from "./types"
 
-import { defaultAutocompleteItemProps, type AutocompleteItemProps } from './props'
-import { useAutocompleteItem } from './state'
+class AutocompleteItemElement extends defineCustomElement<
+  AutocompleteItemProps,
+  AutocompleteItemEvents
+>({
+  props: autocompleteItemProps,
+  events: autocompleteItemEvents,
+  setup: useAutocompleteItem,
+}) {}
 
-class AutocompleteItemElement extends ElementBuilder<AutocompleteItemProps>(useAutocompleteItem, defaultAutocompleteItemProps) {}
-
-defineCustomElement('prosekit-autocomplete-item', AutocompleteItemElement)
-
+registerCustomElement('prosekit-autocomplete-item', AutocompleteItemElement)
+  
 export { AutocompleteItemElement }

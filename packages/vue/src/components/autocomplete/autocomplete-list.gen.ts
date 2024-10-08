@@ -1,5 +1,33 @@
-import { defaultAutocompleteListProps, type AutocompleteListProps } from '@prosekit/web/autocomplete'
+import {
+  autocompleteListProps,
+  autocompleteListEvents,
+  type AutocompleteListProps as Props,
+  type AutocompleteListEvents as Events,
+} from '@prosekit/web/autocomplete'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
-export const AutocompleteList = createComponent<AutocompleteListProps>('prosekit-autocomplete-list', 'AutocompleteList', defaultAutocompleteListProps)
+/**
+ * Props for the {@link AutocompleteList} component.
+ */
+export interface AutocompleteListProps extends Partial<Props> {}
+
+/**
+ * Emits for the {@link AutocompleteList} component.
+ */
+export interface AutocompleteListEmits extends CreateEmits<Events> {}
+
+export const AutocompleteList: DefineSetupFnComponent<
+  AutocompleteListProps & HTMLAttributes,
+  AutocompleteListEmits
+> = createComponent<
+  AutocompleteListProps,
+  AutocompleteListEmits
+>(
+  'prosekit-autocomplete-list',
+  'AutocompleteList',
+  Object.keys(autocompleteListProps),
+  Object.keys(autocompleteListEvents),
+)

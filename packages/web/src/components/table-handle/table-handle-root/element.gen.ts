@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useTableHandleRoot } from "./setup"
+import { tableHandleRootEvents, tableHandleRootProps, type TableHandleRootEvents, type TableHandleRootProps } from "./types"
 
-import { defaultTableHandleRootProps, type TableHandleRootProps } from './props'
-import { useTableHandleRoot } from './state'
+class TableHandleRootElement extends defineCustomElement<
+  TableHandleRootProps,
+  TableHandleRootEvents
+>({
+  props: tableHandleRootProps,
+  events: tableHandleRootEvents,
+  setup: useTableHandleRoot,
+}) {}
 
-class TableHandleRootElement extends ElementBuilder<TableHandleRootProps>(useTableHandleRoot, defaultTableHandleRootProps) {}
-
-defineCustomElement('prosekit-table-handle-root', TableHandleRootElement)
-
+registerCustomElement('prosekit-table-handle-root', TableHandleRootElement)
+  
 export { TableHandleRootElement }

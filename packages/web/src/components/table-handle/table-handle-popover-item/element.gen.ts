@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useTableHandlePopoverItem } from "./setup"
+import { tableHandlePopoverItemEvents, tableHandlePopoverItemProps, type TableHandlePopoverItemEvents, type TableHandlePopoverItemProps } from "./types"
 
-import { defaultTableHandlePopoverItemProps, type TableHandlePopoverItemProps } from './props'
-import { useTableHandlePopoverItem } from './state'
+class TableHandlePopoverItemElement extends defineCustomElement<
+  TableHandlePopoverItemProps,
+  TableHandlePopoverItemEvents
+>({
+  props: tableHandlePopoverItemProps,
+  events: tableHandlePopoverItemEvents,
+  setup: useTableHandlePopoverItem,
+}) {}
 
-class TableHandlePopoverItemElement extends ElementBuilder<TableHandlePopoverItemProps>(useTableHandlePopoverItem, defaultTableHandlePopoverItemProps) {}
-
-defineCustomElement('prosekit-table-handle-popover-item', TableHandlePopoverItemElement)
-
+registerCustomElement('prosekit-table-handle-popover-item', TableHandlePopoverItemElement)
+  
 export { TableHandlePopoverItemElement }

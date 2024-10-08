@@ -1,10 +1,10 @@
 export { addMark, type AddMarkOptions } from './commands/add-mark'
 export { expandMark, type ExpandMarkOptions } from './commands/expand-mark'
-export { insertNode, type InsertNodeOptions } from './commands/insert-node'
 export {
   insertDefaultBlock,
   type InsertDefaultBlockOptions,
 } from './commands/insert-default-block'
+export { insertNode, type InsertNodeOptions } from './commands/insert-node'
 export { removeMark, type RemoveMarkOptions } from './commands/remove-mark'
 export { removeNode, type RemoveNodeOptions } from './commands/remove-node'
 export {
@@ -17,12 +17,12 @@ export {
 } from './commands/set-node-attrs'
 export { toggleMark, type ToggleMarkOptions } from './commands/toggle-mark'
 export { toggleNode, type ToggleNodeOptions } from './commands/toggle-node'
+export { toggleWrap, type ToggleWrapOptions } from './commands/toggle-wrap'
 export {
   unsetBlockType,
   type UnsetBlockTypeOptions,
 } from './commands/unset-block-type'
 export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark'
-export { toggleWrap, type ToggleWrapOptions } from './commands/toggle-wrap'
 export { wrap, type WrapOptions } from './commands/wrap'
 export type {
   MarkAction,
@@ -137,6 +137,7 @@ export {
 export { defineText, type TextExtension } from './extensions/text'
 export { defineFacet, type Facet } from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
+export type { AnyFunction } from './types/any-function'
 export type { AnyAttrs, AttrSpec } from './types/attrs'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
 export type {

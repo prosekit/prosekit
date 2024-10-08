@@ -27,32 +27,32 @@
   "exports": {
     ".": "./src/index.ts",
     "./autocomplete": {
-      "svelte": "./src/components/autocomplete/index.ts",
-      "default": "./src/components/autocomplete/index.ts"
+      "svelte": "./src/components/autocomplete/index.gen.ts",
+      "default": "./src/components/autocomplete/index.gen.ts"
     },
     "./block-handle": {
-      "svelte": "./src/components/block-handle/index.ts",
-      "default": "./src/components/block-handle/index.ts"
+      "svelte": "./src/components/block-handle/index.gen.ts",
+      "default": "./src/components/block-handle/index.gen.ts"
     },
     "./inline-popover": {
-      "svelte": "./src/components/inline-popover/index.ts",
-      "default": "./src/components/inline-popover/index.ts"
+      "svelte": "./src/components/inline-popover/index.gen.ts",
+      "default": "./src/components/inline-popover/index.gen.ts"
     },
     "./popover": {
-      "svelte": "./src/components/popover/index.ts",
-      "default": "./src/components/popover/index.ts"
+      "svelte": "./src/components/popover/index.gen.ts",
+      "default": "./src/components/popover/index.gen.ts"
     },
     "./resizable": {
-      "svelte": "./src/components/resizable/index.ts",
-      "default": "./src/components/resizable/index.ts"
+      "svelte": "./src/components/resizable/index.gen.ts",
+      "default": "./src/components/resizable/index.gen.ts"
     },
     "./table-handle": {
-      "svelte": "./src/components/table-handle/index.ts",
-      "default": "./src/components/table-handle/index.ts"
+      "svelte": "./src/components/table-handle/index.gen.ts",
+      "default": "./src/components/table-handle/index.gen.ts"
     },
     "./tooltip": {
-      "svelte": "./src/components/tooltip/index.ts",
-      "default": "./src/components/tooltip/index.ts"
+      "svelte": "./src/components/tooltip/index.gen.ts",
+      "default": "./src/components/tooltip/index.gen.ts"
     }
   },
   "files": [

@@ -1,7 +1,14 @@
-import type { TableHandleRootElement, TableHandleRootProps } from '@prosekit/web/table-handle'    
+import type { TableHandleRootElement, TableHandleRootProps as Props, TableHandleRootEvents as Events } from '@prosekit/web/table-handle'    
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
+import type { CreateProps } from '../create-props'
+
 import Component from './table-handle-root.gen.svelte'
 
-export const TableHandleRoot = Component as typeof SvelteComponent<Partial<TableHandleRootProps> & HTMLAttributes<TableHandleRootElement>>
+/**
+ * Props for the {@link TableHandleRoot} component.
+ */
+export interface TableHandleRootProps extends Partial<CreateProps<Props, Events>> {}
+
+export const TableHandleRoot = Component as typeof SvelteComponent<TableHandleRootProps & HTMLAttributes<TableHandleRootElement>>

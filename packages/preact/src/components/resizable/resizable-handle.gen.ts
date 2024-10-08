@@ -1,7 +1,9 @@
 import {
-  defaultResizableHandleProps,
   type ResizableHandleElement,
-  type ResizableHandleProps,
+  type ResizableHandleProps as Props,
+  type ResizableHandleEvents as Events,
+  resizableHandleProps,
+  resizableHandleEvents,
 } from '@prosekit/web/resizable'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,13 @@ import type {
 } from 'preact/compat'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+/**
+ * Props for the {@link ResizableHandle} component.
+ */
+export type ResizableHandleProps = Partial<CreateProps<Props, Events>>
+ 
 export const ResizableHandle: ForwardRefExoticComponent<
   Partial<ResizableHandleProps> &
   RefAttributes<ResizableHandleElement> &
@@ -21,5 +29,6 @@ export const ResizableHandle: ForwardRefExoticComponent<
 >(
   'prosekit-resizable-handle',
   'ResizableHandle',
-  defaultResizableHandleProps,
+  Object.keys(resizableHandleProps),
+  Object.keys(resizableHandleEvents),
 )

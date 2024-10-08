@@ -1,7 +1,9 @@
 import {
-  defaultResizableRootProps,
   type ResizableRootElement,
-  type ResizableRootProps
+  type ResizableRootProps as Props,
+  type ResizableRootEvents as Events,
+  resizableRootProps,
+  resizableRootEvents,
 } from '@prosekit/web/resizable'
 import type {
   ForwardRefExoticComponent,
@@ -10,9 +12,15 @@ import type {
 } from 'react'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+/**
+ * Props for the {@link ResizableRoot} component.
+ */
+export interface ResizableRootProps extends Partial<CreateProps<Props, Events>> {}
+ 
 export const ResizableRoot: ForwardRefExoticComponent<
-  Partial<ResizableRootProps> &
+  ResizableRootProps &
   RefAttributes<ResizableRootElement> &
   HTMLAttributes<ResizableRootElement>
 > = createComponent<
@@ -21,5 +29,6 @@ export const ResizableRoot: ForwardRefExoticComponent<
 >(
   'prosekit-resizable-root',
   'ResizableRoot',
-  defaultResizableRootProps,
+  Object.keys(resizableRootProps),
+  Object.keys(resizableRootEvents),
 )

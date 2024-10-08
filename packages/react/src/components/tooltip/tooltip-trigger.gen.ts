@@ -1,7 +1,9 @@
 import {
-  defaultTooltipTriggerProps,
   type TooltipTriggerElement,
-  type TooltipTriggerProps
+  type TooltipTriggerProps as Props,
+  type TooltipTriggerEvents as Events,
+  tooltipTriggerProps,
+  tooltipTriggerEvents,
 } from '@prosekit/web/tooltip'
 import type {
   ForwardRefExoticComponent,
@@ -10,9 +12,15 @@ import type {
 } from 'react'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+/**
+ * Props for the {@link TooltipTrigger} component.
+ */
+export interface TooltipTriggerProps extends Partial<CreateProps<Props, Events>> {}
+ 
 export const TooltipTrigger: ForwardRefExoticComponent<
-  Partial<TooltipTriggerProps> &
+  TooltipTriggerProps &
   RefAttributes<TooltipTriggerElement> &
   HTMLAttributes<TooltipTriggerElement>
 > = createComponent<
@@ -21,5 +29,6 @@ export const TooltipTrigger: ForwardRefExoticComponent<
 >(
   'prosekit-tooltip-trigger',
   'TooltipTrigger',
-  defaultTooltipTriggerProps,
+  Object.keys(tooltipTriggerProps),
+  Object.keys(tooltipTriggerEvents),
 )

@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useAutocompletePopover } from "./setup"
+import { autocompletePopoverEvents, autocompletePopoverProps, type AutocompletePopoverEvents, type AutocompletePopoverProps } from "./types"
 
-import { defaultAutocompletePopoverProps, type AutocompletePopoverProps } from './props'
-import { useAutocompletePopover } from './state'
+class AutocompletePopoverElement extends defineCustomElement<
+  AutocompletePopoverProps,
+  AutocompletePopoverEvents
+>({
+  props: autocompletePopoverProps,
+  events: autocompletePopoverEvents,
+  setup: useAutocompletePopover,
+}) {}
 
-class AutocompletePopoverElement extends ElementBuilder<AutocompletePopoverProps>(useAutocompletePopover, defaultAutocompletePopoverProps) {}
-
-defineCustomElement('prosekit-autocomplete-popover', AutocompletePopoverElement)
-
+registerCustomElement('prosekit-autocomplete-popover', AutocompletePopoverElement)
+  
 export { AutocompletePopoverElement }

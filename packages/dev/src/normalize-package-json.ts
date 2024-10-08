@@ -37,6 +37,8 @@ export async function normalizePackageJson(pkg: Package) {
       sourcePath = await vfs.getExistingFileInPackage(pkg, [
         `./src/index.ts`,
         `./src/index.tsx`,
+        `./src/index.gen.ts`,
+        `./src/index.gen.tsx`,
       ])
       distName = slugPackageName
 
@@ -73,12 +75,16 @@ export async function normalizePackageJson(pkg: Package) {
         `./src/${subPath}.gen.tsx`,
         `./src/${subPath}/index.ts`,
         `./src/${subPath}/index.tsx`,
+        `./src/${subPath}/index.gen.ts`,
+        `./src/${subPath}/index.gen.tsx`,
         `./src/components/${subPath}.ts`,
         `./src/components/${subPath}.tsx`,
         `./src/components/${subPath}.gen.ts`,
         `./src/components/${subPath}.gen.tsx`,
         `./src/components/${subPath}/index.ts`,
         `./src/components/${subPath}/index.tsx`,
+        `./src/components/${subPath}/index.gen.ts`,
+        `./src/components/${subPath}/index.gen.tsx`,
       ])
 
       if (!foundFilePath) {

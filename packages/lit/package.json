@@ -26,13 +26,13 @@
   "module": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts",
-    "./autocomplete": "./src/components/autocomplete/index.ts",
-    "./block-handle": "./src/components/block-handle/index.ts",
-    "./inline-popover": "./src/components/inline-popover/index.ts",
-    "./popover": "./src/components/popover/index.ts",
-    "./resizable": "./src/components/resizable/index.ts",
-    "./table-handle": "./src/components/table-handle/index.ts",
-    "./tooltip": "./src/components/tooltip/index.ts"
+    "./autocomplete": "./src/components/autocomplete/index.gen.ts",
+    "./block-handle": "./src/components/block-handle/index.gen.ts",
+    "./inline-popover": "./src/components/inline-popover/index.gen.ts",
+    "./popover": "./src/components/popover/index.gen.ts",
+    "./resizable": "./src/components/resizable/index.gen.ts",
+    "./table-handle": "./src/components/table-handle/index.gen.ts",
+    "./tooltip": "./src/components/tooltip/index.gen.ts"
   },
   "files": [
     "dist"

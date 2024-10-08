@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { usePopoverContent } from "./setup"
+import { popoverContentEvents, popoverContentProps, type PopoverContentEvents, type PopoverContentProps } from "./types"
 
-import { defaultPopoverContentProps, type PopoverContentProps } from './props'
-import { usePopoverContent } from './state'
+class PopoverContentElement extends defineCustomElement<
+  PopoverContentProps,
+  PopoverContentEvents
+>({
+  props: popoverContentProps,
+  events: popoverContentEvents,
+  setup: usePopoverContent,
+}) {}
 
-class PopoverContentElement extends ElementBuilder<PopoverContentProps>(usePopoverContent, defaultPopoverContentProps) {}
-
-defineCustomElement('prosekit-popover-content', PopoverContentElement)
-
+registerCustomElement('prosekit-popover-content', PopoverContentElement)
+  
 export { PopoverContentElement }

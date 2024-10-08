@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useBlockHandleAdd } from "./setup"
+import { blockHandleAddEvents, blockHandleAddProps, type BlockHandleAddEvents, type BlockHandleAddProps } from "./types"
 
-import { defaultBlockHandleAddProps, type BlockHandleAddProps } from './props'
-import { useBlockHandleAdd } from './state'
+class BlockHandleAddElement extends defineCustomElement<
+  BlockHandleAddProps,
+  BlockHandleAddEvents
+>({
+  props: blockHandleAddProps,
+  events: blockHandleAddEvents,
+  setup: useBlockHandleAdd,
+}) {}
 
-class BlockHandleAddElement extends ElementBuilder<BlockHandleAddProps>(useBlockHandleAdd, defaultBlockHandleAddProps) {}
-
-defineCustomElement('prosekit-block-handle-add', BlockHandleAddElement)
-
+registerCustomElement('prosekit-block-handle-add', BlockHandleAddElement)
+  
 export { BlockHandleAddElement }

@@ -244,7 +244,7 @@ function formatVueIndexCode(components: string[]) {
     const kebab = kebabCase(name)
     const pascal = pascalCase(name)
     return [
-      `export { ${pascal}, type ${pascal}Props, type ${pascal}Events } from './${kebab}.gen'`,
+      `export { ${pascal}, type ${pascal}Props, type ${pascal}Emits } from './${kebab}.gen'`,
       '',
     ]
   })
@@ -333,6 +333,7 @@ import {
 } from '@prosekit/web/${group}'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
 /**
  * Props for the {@link ${pascal}} component.
@@ -340,13 +341,16 @@ import { createComponent } from '../create-component'
 export interface ${pascal}Props extends Partial<Props> {}
 
 /**
- * Events for the {@link ${pascal}} component.
+ * Emits for the {@link ${pascal}} component.
  */
-export interface ${pascal}Events extends Partial<Events> {}
+export interface ${pascal}Emits extends CreateEmits<Events> {}
 
-export const ${pascal} = createComponent<
+export const ${pascal}: DefineSetupFnComponent<
+  ${pascal}Props & HTMLAttributes,
+  ${pascal}Emits
+> = createComponent<
   ${pascal}Props,
-  ${pascal}Events
+  ${pascal}Emits
 >(
   'prosekit-${kebab}',
   '${pascal}',

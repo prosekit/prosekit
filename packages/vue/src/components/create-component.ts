@@ -4,25 +4,21 @@ import {
   onMounted,
   ref,
   type DefineSetupFnComponent,
+  type EmitsOptions,
   type HTMLAttributes,
 } from 'vue'
 
 import { useEditorContext } from '../injection/editor-context'
 
-import type { CreateEmits } from './create-emits'
-
 export function createComponent<
   Props extends { [PropName in keyof Props]: unknown },
-  Events extends { [EventType in keyof Events]: CustomEvent },
+  Emits extends EmitsOptions,
 >(
   tagName: string,
   displayName: string,
   propNames: string[],
   eventNames: string[],
-): DefineSetupFnComponent<
-  Partial<Props> & HTMLAttributes,
-  CreateEmits<Events>
-> {
+): DefineSetupFnComponent<Partial<Props> & HTMLAttributes, Emits> {
   const hasEditor = propNames.includes('editor')
 
   const Component = defineComponent<any, any>(

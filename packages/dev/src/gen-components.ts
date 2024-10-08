@@ -243,21 +243,24 @@ function formatVueIndexCode(components: string[]) {
   const lines = components.flatMap((name) => {
     const kebab = kebabCase(name)
     const pascal = pascalCase(name)
-    return [`export { ${pascal} } from './${kebab}.gen'`, '']
+    return [
+      `export { ${pascal}, type ${pascal}Props, type ${pascal}Events } from './${kebab}.gen'`,
+      '',
+    ]
   })
   return lines.join('\n')
 }
 
 function formatSvelteIndexCode(components: string[]) {
-  return formatVueIndexCode(components)
+  return formatReactIndexCode(components)
 }
 
 function formatSolidIndexCode(components: string[]) {
-  return formatVueIndexCode(components)
+  return formatReactIndexCode(components)
 }
 
 function formatPreactIndexCode(components: string[]) {
-  return formatVueIndexCode(components)
+  return formatReactIndexCode(components)
 }
 
 function formatLitIndexCode(group: string, components: string[]) {
@@ -322,9 +325,24 @@ function formatVueComponentCode(group: string, kebab: string) {
   return (
     `
 
-import { ${camel}Props, ${camel}Events, type ${pascal}Props, type ${pascal}Events } from '@prosekit/web/${group}'
+import {
+  ${camel}Props,
+  ${camel}Events,
+  type ${pascal}Props as Props,
+  type ${pascal}Events as Events,
+} from '@prosekit/web/${group}'
 
 import { createComponent } from '../create-component'
+
+/**
+ * Props for the {@link ${pascal}} component.
+ */
+export interface ${pascal}Props extends Partial<Props> {}
+
+/**
+ * Events for the {@link ${pascal}} component.
+ */
+export interface ${pascal}Events extends Partial<Events> {}
 
 export const ${pascal} = createComponent<
   ${pascal}Props,
@@ -375,7 +393,7 @@ function formatSvelteTsCode(group: string, kebab: string) {
   const pascal = pascalCase(kebab)
   return (
     `
-import type { ${pascal}Element, ${pascal}Props, ${pascal}Events } from '@prosekit/web/${group}'    
+import type { ${pascal}Element, ${pascal}Props as Props, ${pascal}Events as Events } from '@prosekit/web/${group}'    
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
@@ -383,7 +401,12 @@ import type { CreateProps } from '../create-props'
 
 import Component from './${kebab}.gen.svelte'
 
-export const ${pascal} = Component as typeof SvelteComponent<Partial<CreateProps<${pascal}Props, ${pascal}Events>> & HTMLAttributes<${pascal}Element>>
+/**
+ * Props for the {@link ${pascal}} component.
+ */
+export interface ${pascal}Props extends Partial<CreateProps<Props, Events>> {}
+
+export const ${pascal} = Component as typeof SvelteComponent<${pascal}Props & HTMLAttributes<${pascal}Element>>
   
 `.trim() + '\n'
   )
@@ -402,6 +425,12 @@ import {
 } from '@prosekit/web/${group}'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
+
+/**
+ * Props for the {@link ${pascal}} component.
+ */
+export interface ${pascal}Props extends Partial<CreateProps<Props, Events>> {}
 
 export const ${pascal} = createComponent<
   ${pascal}Props,
@@ -437,7 +466,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type ${pascal}Props = CreateProps<Props, Events>
+/**
+ * Props for the {@link ${pascal}} component.
+ */
+export type ${pascal}Props = Partial<CreateProps<Props, Events>>
  
 export const ${pascal}: ForwardRefExoticComponent<
   Partial<${pascal}Props> &

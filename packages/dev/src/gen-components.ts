@@ -42,7 +42,11 @@ async function writeWebComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatPrimitiveIndexCode(components)
-    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+    await vfs.updateTextInPackage(
+      pkg,
+      `src/components/${group}/index.gen.ts`,
+      code,
+    )
 
     for (const component of components) {
       const code = formatPrimitiveElementCode(component)
@@ -80,7 +84,11 @@ async function writeVueComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatVueIndexCode(components)
-    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+    await vfs.updateTextInPackage(
+      pkg,
+      `src/components/${group}/index.gen.ts`,
+      code,
+    )
 
     for (const component of components) {
       const code = formatVueComponentCode(group, component)
@@ -97,7 +105,11 @@ async function writeSvelteComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatSvelteIndexCode(components)
-    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+    await vfs.updateTextInPackage(
+      pkg,
+      `src/components/${group}/index.gen.ts`,
+      code,
+    )
 
     for (const component of components) {
       const code = formatSvelteComponentCode(group, component)
@@ -119,7 +131,11 @@ async function writeSolidComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatSolidIndexCode(components)
-    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+    await vfs.updateTextInPackage(
+      pkg,
+      `src/components/${group}/index.gen.ts`,
+      code,
+    )
 
     for (const component of components) {
       const code = formatSolidComponentCode(group, component)
@@ -136,7 +152,11 @@ async function writePreactComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatPreactIndexCode(components)
-    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+    await vfs.updateTextInPackage(
+      pkg,
+      `src/components/${group}/index.gen.ts`,
+      code,
+    )
 
     for (const component of components) {
       const code = formatPreactComponentCode(group, component)
@@ -153,7 +173,11 @@ async function writeLitComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatLitIndexCode(group, components)
-    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+    await vfs.updateTextInPackage(
+      pkg,
+      `src/components/${group}/index.gen.ts`,
+      code,
+    )
   }
 }
 

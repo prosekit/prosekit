@@ -1,20 +1,14 @@
 set -e
 
-cd $(dirname $0)
+cd $(dirname $0)/..
+ROOT=$(pwd)
 
-mkdir -p temp/typedoc
-rm -rf temp/typedoc
-
-mkdir -p references
-rm -rf references
-
+cd $ROOT/packages/prosekit
 ./node_modules/.bin/typedoc
 
-mv temp/typedoc/prosekit references
-rm -rf temp/typedoc
-
-touch references/index.md
-rm references/index.md
+cd $ROOT/website
+rm -rf references 
+mv $ROOT/packages/prosekit/.temp/typedoc/prosekit references
 
 # Find the substring "__namedParameters" and throw an error if found
 if grep -r "__namedParameters" references; then

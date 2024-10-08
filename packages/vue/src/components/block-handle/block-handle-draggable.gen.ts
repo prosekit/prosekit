@@ -4,6 +4,7 @@ import {
   type BlockHandleDraggableProps as Props,
   type BlockHandleDraggableEvents as Events,
 } from '@prosekit/web/block-handle'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
 import type { CreateEmits } from '../create-emits'

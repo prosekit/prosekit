@@ -4,6 +4,7 @@ import {
   type InlinePopoverProps as Props,
   type InlinePopoverEvents as Events,
 } from '@prosekit/web/inline-popover'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
 import type { CreateEmits } from '../create-emits'

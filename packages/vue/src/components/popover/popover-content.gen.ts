@@ -4,6 +4,7 @@ import {
   type PopoverContentProps as Props,
   type PopoverContentEvents as Events,
 } from '@prosekit/web/popover'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
 import type { CreateEmits } from '../create-emits'

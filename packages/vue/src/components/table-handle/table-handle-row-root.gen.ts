@@ -4,6 +4,7 @@ import {
   type TableHandleRowRootProps as Props,
   type TableHandleRowRootEvents as Events,
 } from '@prosekit/web/table-handle'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
 import type { CreateEmits } from '../create-emits'

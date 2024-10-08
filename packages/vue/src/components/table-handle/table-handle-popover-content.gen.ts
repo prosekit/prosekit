@@ -4,6 +4,7 @@ import {
   type TableHandlePopoverContentProps as Props,
   type TableHandlePopoverContentEvents as Events,
 } from '@prosekit/web/table-handle'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
 import type { CreateEmits } from '../create-emits'

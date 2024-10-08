@@ -4,6 +4,7 @@ import {
   type ResizableHandleProps as Props,
   type ResizableHandleEvents as Events,
 } from '@prosekit/web/resizable'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
 import type { CreateEmits } from '../create-emits'

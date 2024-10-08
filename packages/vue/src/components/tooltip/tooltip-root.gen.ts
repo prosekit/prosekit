@@ -4,6 +4,7 @@ import {
   type TooltipRootProps as Props,
   type TooltipRootEvents as Events,
 } from '@prosekit/web/tooltip'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
 import type { CreateEmits } from '../create-emits'

@@ -4,6 +4,7 @@ import {
   type AutocompleteEmptyProps as Props,
   type AutocompleteEmptyEvents as Events,
 } from '@prosekit/web/autocomplete'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
 import type { CreateEmits } from '../create-emits'

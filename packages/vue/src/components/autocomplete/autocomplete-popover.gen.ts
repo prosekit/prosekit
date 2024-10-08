@@ -4,6 +4,7 @@ import {
   type AutocompletePopoverProps as Props,
   type AutocompletePopoverEvents as Events,
 } from '@prosekit/web/autocomplete'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
 import type { CreateEmits } from '../create-emits'

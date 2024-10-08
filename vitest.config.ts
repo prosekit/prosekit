@@ -5,7 +5,7 @@ export default defineConfig({
     coverage: {
       enabled: false,
       all: false,
-      provider: 'istanbul',
+      provider: 'v8',
     },
     browser: {
       enabled: true,

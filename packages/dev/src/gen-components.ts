@@ -59,7 +59,11 @@ async function writeReactComponents(pkg: Package, info: Components) {
     exports[`./${group}`] = ''
 
     const code = formatReactIndexCode(components)
-    await vfs.updateTextInPackage(pkg, `src/components/${group}/index.ts`, code)
+    await vfs.updateTextInPackage(
+      pkg,
+      `src/components/${group}/index.gen.ts`,
+      code,
+    )
 
     for (const component of components) {
       const code = formatReactComponentCode(group, component)

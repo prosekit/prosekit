@@ -1,11 +1,18 @@
 import { 
+  type TableHandlePopoverItemElement,
+  type TableHandlePopoverItemProps as Props,
+  type TableHandlePopoverItemEvents as Events,
   tableHandlePopoverItemProps,
   tableHandlePopoverItemEvents,
-  type TableHandlePopoverItemElement,
-  type TableHandlePopoverItemProps,
 } from '@prosekit/web/table-handle'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
+
+/**
+ * Props for the {@link TableHandlePopoverItem} component.
+ */
+export interface TableHandlePopoverItemProps extends Partial<CreateProps<Props, Events>> {}
 
 export const TableHandlePopoverItem = createComponent<
   TableHandlePopoverItemProps,

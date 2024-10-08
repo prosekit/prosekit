@@ -1,11 +1,18 @@
 import { 
+  type AutocompleteEmptyElement,
+  type AutocompleteEmptyProps as Props,
+  type AutocompleteEmptyEvents as Events,
   autocompleteEmptyProps,
   autocompleteEmptyEvents,
-  type AutocompleteEmptyElement,
-  type AutocompleteEmptyProps,
 } from '@prosekit/web/autocomplete'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
+
+/**
+ * Props for the {@link AutocompleteEmpty} component.
+ */
+export interface AutocompleteEmptyProps extends Partial<CreateProps<Props, Events>> {}
 
 export const AutocompleteEmpty = createComponent<
   AutocompleteEmptyProps,

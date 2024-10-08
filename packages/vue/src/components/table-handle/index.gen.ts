@@ -1,13 +1,13 @@
-export { TableHandleColumnRoot } from './table-handle-column-root.gen'
+export { TableHandleColumnRoot, type TableHandleColumnRootProps, type TableHandleColumnRootEvents } from './table-handle-column-root.gen'
 
-export { TableHandleColumnTrigger } from './table-handle-column-trigger.gen'
+export { TableHandleColumnTrigger, type TableHandleColumnTriggerProps, type TableHandleColumnTriggerEvents } from './table-handle-column-trigger.gen'
 
-export { TableHandlePopoverContent } from './table-handle-popover-content.gen'
+export { TableHandlePopoverContent, type TableHandlePopoverContentProps, type TableHandlePopoverContentEvents } from './table-handle-popover-content.gen'
 
-export { TableHandlePopoverItem } from './table-handle-popover-item.gen'
+export { TableHandlePopoverItem, type TableHandlePopoverItemProps, type TableHandlePopoverItemEvents } from './table-handle-popover-item.gen'
 
-export { TableHandleRoot } from './table-handle-root.gen'
+export { TableHandleRoot, type TableHandleRootProps, type TableHandleRootEvents } from './table-handle-root.gen'
 
-export { TableHandleRowRoot } from './table-handle-row-root.gen'
+export { TableHandleRowRoot, type TableHandleRowRootProps, type TableHandleRowRootEvents } from './table-handle-row-root.gen'
 
-export { TableHandleRowTrigger } from './table-handle-row-trigger.gen'
+export { TableHandleRowTrigger, type TableHandleRowTriggerProps, type TableHandleRowTriggerEvents } from './table-handle-row-trigger.gen'

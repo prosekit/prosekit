@@ -1,11 +1,18 @@
 import { 
+  type AutocompleteListElement,
+  type AutocompleteListProps as Props,
+  type AutocompleteListEvents as Events,
   autocompleteListProps,
   autocompleteListEvents,
-  type AutocompleteListElement,
-  type AutocompleteListProps,
 } from '@prosekit/web/autocomplete'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
+
+/**
+ * Props for the {@link AutocompleteList} component.
+ */
+export interface AutocompleteListProps extends Partial<CreateProps<Props, Events>> {}
 
 export const AutocompleteList = createComponent<
   AutocompleteListProps,

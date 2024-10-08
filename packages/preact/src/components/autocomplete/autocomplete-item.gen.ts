@@ -14,7 +14,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type AutocompleteItemProps = CreateProps<Props, Events>
+/**
+ * Props for the {@link AutocompleteItem} component.
+ */
+export type AutocompleteItemProps = Partial<CreateProps<Props, Events>>
  
 export const AutocompleteItem: ForwardRefExoticComponent<
   Partial<AutocompleteItemProps> &

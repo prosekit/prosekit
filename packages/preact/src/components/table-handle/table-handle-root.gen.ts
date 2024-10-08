@@ -14,7 +14,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type TableHandleRootProps = CreateProps<Props, Events>
+/**
+ * Props for the {@link TableHandleRoot} component.
+ */
+export type TableHandleRootProps = Partial<CreateProps<Props, Events>>
  
 export const TableHandleRoot: ForwardRefExoticComponent<
   Partial<TableHandleRootProps> &

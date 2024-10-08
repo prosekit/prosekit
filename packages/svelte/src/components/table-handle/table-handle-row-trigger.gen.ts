@@ -1,4 +1,4 @@
-import type { TableHandleRowTriggerElement, TableHandleRowTriggerProps, TableHandleRowTriggerEvents } from '@prosekit/web/table-handle'    
+import type { TableHandleRowTriggerElement, TableHandleRowTriggerProps as Props, TableHandleRowTriggerEvents as Events } from '@prosekit/web/table-handle'    
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
@@ -6,4 +6,9 @@ import type { CreateProps } from '../create-props'
 
 import Component from './table-handle-row-trigger.gen.svelte'
 
-export const TableHandleRowTrigger = Component as typeof SvelteComponent<Partial<CreateProps<TableHandleRowTriggerProps, TableHandleRowTriggerEvents>> & HTMLAttributes<TableHandleRowTriggerElement>>
+/**
+ * Props for the {@link TableHandleRowTrigger} component.
+ */
+export interface TableHandleRowTriggerProps extends Partial<CreateProps<Props, Events>> {}
+
+export const TableHandleRowTrigger = Component as typeof SvelteComponent<TableHandleRowTriggerProps & HTMLAttributes<TableHandleRowTriggerElement>>

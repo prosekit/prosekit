@@ -418,10 +418,11 @@ function formatSolidComponentCode(group: string, kebab: string) {
   return (
     `
 import { 
+  type ${pascal}Element,
+  type ${pascal}Props as Props,
+  type ${pascal}Events as Events,
   ${camel}Props,
   ${camel}Events,
-  type ${pascal}Element,
-  type ${pascal}Props,
 } from '@prosekit/web/${group}'
 
 import { createComponent } from '../create-component'

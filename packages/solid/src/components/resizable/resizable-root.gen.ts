@@ -1,11 +1,18 @@
 import { 
+  type ResizableRootElement,
+  type ResizableRootProps as Props,
+  type ResizableRootEvents as Events,
   resizableRootProps,
   resizableRootEvents,
-  type ResizableRootElement,
-  type ResizableRootProps,
 } from '@prosekit/web/resizable'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
+
+/**
+ * Props for the {@link ResizableRoot} component.
+ */
+export interface ResizableRootProps extends Partial<CreateProps<Props, Events>> {}
 
 export const ResizableRoot = createComponent<
   ResizableRootProps,

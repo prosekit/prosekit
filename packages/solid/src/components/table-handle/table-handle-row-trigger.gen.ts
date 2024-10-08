@@ -1,11 +1,18 @@
 import { 
+  type TableHandleRowTriggerElement,
+  type TableHandleRowTriggerProps as Props,
+  type TableHandleRowTriggerEvents as Events,
   tableHandleRowTriggerProps,
   tableHandleRowTriggerEvents,
-  type TableHandleRowTriggerElement,
-  type TableHandleRowTriggerProps,
 } from '@prosekit/web/table-handle'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
+
+/**
+ * Props for the {@link TableHandleRowTrigger} component.
+ */
+export interface TableHandleRowTriggerProps extends Partial<CreateProps<Props, Events>> {}
 
 export const TableHandleRowTrigger = createComponent<
   TableHandleRowTriggerProps,

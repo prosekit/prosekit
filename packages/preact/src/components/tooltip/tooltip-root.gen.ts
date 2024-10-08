@@ -14,7 +14,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type TooltipRootProps = CreateProps<Props, Events>
+/**
+ * Props for the {@link TooltipRoot} component.
+ */
+export type TooltipRootProps = Partial<CreateProps<Props, Events>>
  
 export const TooltipRoot: ForwardRefExoticComponent<
   Partial<TooltipRootProps> &

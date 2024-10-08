@@ -1,13 +1,13 @@
-export { TableHandleColumnRoot } from './table-handle-column-root.gen'
+export { TableHandleColumnRoot, type TableHandleColumnRootProps } from './table-handle-column-root.gen'
 
-export { TableHandleColumnTrigger } from './table-handle-column-trigger.gen'
+export { TableHandleColumnTrigger, type TableHandleColumnTriggerProps } from './table-handle-column-trigger.gen'
 
-export { TableHandlePopoverContent } from './table-handle-popover-content.gen'
+export { TableHandlePopoverContent, type TableHandlePopoverContentProps } from './table-handle-popover-content.gen'
 
-export { TableHandlePopoverItem } from './table-handle-popover-item.gen'
+export { TableHandlePopoverItem, type TableHandlePopoverItemProps } from './table-handle-popover-item.gen'
 
-export { TableHandleRoot } from './table-handle-root.gen'
+export { TableHandleRoot, type TableHandleRootProps } from './table-handle-root.gen'
 
-export { TableHandleRowRoot } from './table-handle-row-root.gen'
+export { TableHandleRowRoot, type TableHandleRowRootProps } from './table-handle-row-root.gen'
 
-export { TableHandleRowTrigger } from './table-handle-row-trigger.gen'
+export { TableHandleRowTrigger, type TableHandleRowTriggerProps } from './table-handle-row-trigger.gen'

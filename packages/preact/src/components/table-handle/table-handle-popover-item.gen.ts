@@ -14,7 +14,10 @@ import type {
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
-export type TableHandlePopoverItemProps = CreateProps<Props, Events>
+/**
+ * Props for the {@link TableHandlePopoverItem} component.
+ */
+export type TableHandlePopoverItemProps = Partial<CreateProps<Props, Events>>
  
 export const TableHandlePopoverItem: ForwardRefExoticComponent<
   Partial<TableHandlePopoverItemProps> &

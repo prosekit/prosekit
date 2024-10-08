@@ -1,11 +1,18 @@
 import { 
+  type PopoverRootElement,
+  type PopoverRootProps as Props,
+  type PopoverRootEvents as Events,
   popoverRootProps,
   popoverRootEvents,
-  type PopoverRootElement,
-  type PopoverRootProps,
 } from '@prosekit/web/popover'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
+
+/**
+ * Props for the {@link PopoverRoot} component.
+ */
+export interface PopoverRootProps extends Partial<CreateProps<Props, Events>> {}
 
 export const PopoverRoot = createComponent<
   PopoverRootProps,

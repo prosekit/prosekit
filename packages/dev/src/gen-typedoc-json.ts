@@ -8,7 +8,6 @@ export async function genTypedocJson() {
   const entryPoints = await normalizePackageJson(pkg)
   const typedocJson = {
     $schema: 'https://typedoc.org/schema.json',
-    extends: ['../../config/typedoc-base.json'],
     entryPoints: Object.values(entryPoints)
       .filter((entryPoint) => !entryPoint.endsWith('.css'))
       .sort(),

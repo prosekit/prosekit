@@ -14,6 +14,6 @@ export async function genTypedocJson() {
       .sort(),
   }
   const typedocJsonPath = path.join(pkg.relativeDir, 'typedoc.gen.json')
-  const typedocJsonFile = await vfs.getFile(typedocJsonPath)
+  const typedocJsonFile = await vfs.ensureFile(typedocJsonPath)
   typedocJsonFile.updateJSON(typedocJson)
 }

@@ -964,18 +964,6 @@ importers:
       type-fest:
         specifier: ^4.26.1
         version: 4.26.1
-      typedoc:
-        specifier: ^0.26.7
-        version: 0.26.7(typescript@5.6.2)
-      typedoc-plugin-external-package-links:
-        specifier: ^0.1.0
-        version: 0.1.0
-      typedoc-plugin-md:
-        specifier: file:/tmp/typedoc-plugin-md-0.0.0-dev.1728374259.tgz
-        version: file:../../../../../tmp/typedoc-plugin-md-0.0.0-dev.1728374259.tgz(typedoc@0.26.7(typescript@5.6.2))
-      typedoc-plugin-mdn-links:
-        specifier: ^3.2.12
-        version: 3.2.12(typedoc@0.26.7(typescript@5.6.2))
       typescript:
         specifier: ^5.6.2
         version: 5.6.2

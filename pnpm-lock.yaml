@@ -468,6 +468,18 @@ importers:
       tsup:
         specifier: ^8.3.0
         version: 8.3.0(@microsoft/api-extractor@7.47.9(@types/node@20.16.5))(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.1)(typescript@5.6.2)(yaml@2.5.1)
+      typedoc:
+        specifier: ^0.26.7
+        version: 0.26.7(typescript@5.6.2)
+      typedoc-plugin-external-package-links:
+        specifier: ^0.1.0
+        version: 0.1.0
+      typedoc-plugin-md:
+        specifier: file:/tmp/typedoc-plugin-md-0.0.0-dev.1728374259.tgz
+        version: file:../../../../../tmp/typedoc-plugin-md-0.0.0-dev.1728374259.tgz(typedoc@0.26.7(typescript@5.6.2))
+      typedoc-plugin-mdn-links:
+        specifier: ^3.2.12
+        version: 3.2.12(typedoc@0.26.7(typescript@5.6.2))
       typescript:
         specifier: ^5.6.2
         version: 5.6.2
@@ -959,8 +971,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       typedoc-plugin-md:
-        specifier: ^0.2.1
-        version: 0.2.1(typedoc@0.26.7(typescript@5.6.2))
+        specifier: file:/tmp/typedoc-plugin-md-0.0.0-dev.1728374259.tgz
+        version: file:../../../../../tmp/typedoc-plugin-md-0.0.0-dev.1728374259.tgz(typedoc@0.26.7(typescript@5.6.2))
       typedoc-plugin-mdn-links:
         specifier: ^3.2.12
         version: 3.2.12(typedoc@0.26.7(typescript@5.6.2))
@@ -6722,8 +6734,9 @@ packages:
   typedoc-plugin-external-package-links@0.1.0:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
 
-  typedoc-plugin-md@0.2.1:
-    resolution: {integrity: sha512-/yCFmUrMIT3H5gSikQfjLsYZuDHm2l8E7CNruxYzeIaumIaoOxpWhwc0sFcTD5iBsqf59Pz0yhHwhsLQO+JCYg==}
+  typedoc-plugin-md@file:../../../../../tmp/typedoc-plugin-md-0.0.0-dev.1728374259.tgz:
+    resolution: {integrity: sha512-etp0HL5sQjuXrwe5fO5AKqW75o2Z8KFIoRfkybe7Vk9jBu1GZfK5PgCkE+YR5pNBrCfSOFcbw2eO0Jyo8YmgOg==, tarball: file:../../../../../tmp/typedoc-plugin-md-0.0.0-dev.1728374259.tgz}
+    version: 0.0.0-dev.1728374259
     peerDependencies:
       typedoc: ^0.26.7
 
@@ -14195,7 +14208,7 @@ snapshots:
 
   typedoc-plugin-external-package-links@0.1.0: {}
 
-  typedoc-plugin-md@0.2.1(typedoc@0.26.7(typescript@5.6.2)):
+  typedoc-plugin-md@file:../../../../../tmp/typedoc-plugin-md-0.0.0-dev.1728374259.tgz(typedoc@0.26.7(typescript@5.6.2)):
     dependencies:
       '@sindresorhus/slugify': 2.2.1
       change-case: 5.4.4

@@ -48,5 +48,6 @@
   "treatWarningsAsErrors": true,
   "cleanOutputDir": true,
 
-  "entryFileName": "index.md"
+  "entryFileName": "index.md",
+  "markdownHeadingId": true
 }

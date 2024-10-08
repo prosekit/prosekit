@@ -1,6 +1,10 @@
 {
+  "out": "temp/typedoc",
+  "json": "temp/typedoc-output.json",
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
   "entryPoints": [
     "./src/basic.gen.ts",
     "./src/core.gen.ts",

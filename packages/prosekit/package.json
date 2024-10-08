@@ -202,6 +202,11 @@
     }
   },
   "devDependencies": {
+    "typedoc": "^0.26.7",
+    "typedoc-plugin-external-package-links": "^0.1.0",
+    "typedoc-plugin-md": "file:/tmp/typedoc-plugin-md-0.0.0-dev.1728374259.tgz",
+    "typedoc-plugin-mdn-links": "^3.2.12",
+    
     "@prosekit/dev": "workspace:*",
     "@types/react": "^18.3.6",
     "@types/react-dom": "^18.3.0",

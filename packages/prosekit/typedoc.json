@@ -1,9 +1,7 @@
 // https://typedoc.org/options/
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": [
-    "./typedoc.gen.json"
-  ],
+  "extends": ["./typedoc.gen.json"],
   "out": ".temp/typedoc",
   "plugin": [
     "typedoc-plugin-md",

@@ -948,7 +948,7 @@
 
   ```js
   import 'prosekit/basic/style.css'
-  import 'prosekit/basic/typograph.css'
+  import 'prosekit/basic/typography.css'
   ```
 
 ### Patch Changes

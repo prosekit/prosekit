@@ -7,7 +7,7 @@ export interface PlaceholderOptions {
   /**
    * The placeholder text to use.
    */
-  placeholder: string
+  placeholder: ((options: { node: ProseMirrorNode }) => string) | string
 
   /**
    * By default, the placeholder text will be shown whenever the current text
@@ -40,7 +40,12 @@ function createPlaceholderPlugin(options: PlaceholderOptions): Plugin {
           return null
         }
 
-        const placeholderText = options.placeholder
+        const placeholderText =
+          typeof options.placeholder === 'function'
+            ? options.placeholder({
+              node: state.selection.$from.node(),
+            })
+            : options.placeholder
         const deco = createPlaceholderDecoration(state, placeholderText)
         if (!deco) {
           return null

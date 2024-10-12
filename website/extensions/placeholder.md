@@ -12,6 +12,20 @@ import { definePlaceholder } from 'prosekit/extensions/placeholder'
 const extension = definePlaceholder({ placeholder: 'Type Something...' })
 ```
 
+Or show dynamic placeholders by node
+```ts twoslash
+import { definePlaceholder } from 'prosekit/extensions/placeholder'
+
+const extension = definePlaceholder({
+  placeholder: ({ node }) => {
+    if (node.type.name === 'heading') {
+      return `Heading ${node.attrs.level}`
+    }
+    return 'Type something...'
+  },
+})
+```
+
 Note that you would need to import the style file for the extension to work.
 
 ## API Reference

@@ -18,6 +18,7 @@ export const Keymap = { args: { story: 'keymap' } }
 export const List = { args: { story: 'list' } }
 export const Loro = { args: { story: 'loro' } }
 export const MarkRule = { args: { story: 'mark-rule' } }
+export const Placeholder = { args: { story: 'placeholder' } }
 export const Readonly = { args: { story: 'readonly' } }
 export const ResizableImage = { args: { story: 'resizable-image' } }
 export const SaveHtml = { args: { story: 'save-html' } }

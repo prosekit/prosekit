@@ -901,9 +901,6 @@ importers:
       '@types/dom-view-transitions':
         specifier: ^1.0.5
         version: 1.0.5
-      '@types/markdown-it':
-        specifier: ^14.1.2
-        version: 14.1.2
       '@types/react':
         specifier: ^18.3.6
         version: 18.3.6
@@ -934,9 +931,6 @@ importers:
       loro-prosemirror:
         specifier: ^0.0.7
         version: 0.0.7(loro-crdt@0.16.12)(prosemirror-model@1.22.3)(prosemirror-state@1.4.3)(prosemirror-view@1.34.2)
-      markdown-it:
-        specifier: ^14.1.0
-        version: 14.1.0
       postcss:
         specifier: ^8.4.47
         version: 8.4.47

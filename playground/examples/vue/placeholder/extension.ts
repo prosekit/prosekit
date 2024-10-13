@@ -5,14 +5,7 @@ import { definePlaceholder } from 'prosekit/extensions/placeholder'
 export function defineExtension() {
   return union(
     defineBasicExtension(),
-    definePlaceholder({
-      placeholder: ({ node }) => {
-        if (node.type.name === 'heading') {
-          return `Heading ${node.attrs.level}`
-        }
-        return 'Type something...'
-      },
-    }),
+    definePlaceholder({ placeholder: 'Type something...' }),
   )
 }
 

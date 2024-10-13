@@ -12,15 +12,20 @@ import { definePlaceholder } from 'prosekit/extensions/placeholder'
 const extension = definePlaceholder({ placeholder: 'Type Something...' })
 ```
 
-Or show dynamic placeholders by node
+You can also show dynamic placeholders based on the current state.
 
 ```ts twoslash
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
+import type { HeadingAttrs } from 'prosekit/extensions/heading'
 
 const extension = definePlaceholder({
-  placeholder: ({ node }) => {
+  placeholder: (state) => {
+    // Get the current node at the text selection
+    const node = state.selection.$from.node()
+    // Show different placeholders based on the node type
     if (node.type.name === 'heading') {
-      return `Heading ${node.attrs.level}`
+      const attrs = node.attrs as HeadingAttrs
+      return `Heading ${attrs.level}`
     }
     return 'Type something...'
   },

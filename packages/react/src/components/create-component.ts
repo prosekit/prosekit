@@ -4,16 +4,18 @@ import {
   forwardRef,
   useEffect,
   useLayoutEffect,
+  useRef,
   useState,
   type ForwardRefExoticComponent,
   type HTMLAttributes,
+  type MutableRefObject as Ref,
   type RefAttributes,
 } from 'react'
 import { mergeRefs } from 'react-merge-refs'
 
 import { useEditorContext } from '../contexts/editor-context'
 
-const _useIsomorphicLayoutEffect =
+const useIsomorphicLayoutEffect =
   typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 export function createComponent<
@@ -37,6 +39,9 @@ export function createComponent<
 
     const properties: Record<string, unknown> = {}
     const attributes: Record<string, unknown> = {}
+    const eventHandlersRef: Ref<Record<string, AnyFunction[]>> = useRef(
+      Object.fromEntries(eventNames.map((eventName) => [eventName, []])),
+    )
     const eventHandlers: Record<string, AnyFunction> = {}
 
     for (const [name, value] of Object.entries(props)) {
@@ -55,10 +60,12 @@ export function createComponent<
         const handler = value as AnyFunction | null
         if (eventName && handler) {
           const extractDetail = eventName.endsWith('Change')
-          eventHandlers[eventName] = (event: Event) => {
-            handler(extractDetail ? (event as CustomEvent).detail : event)
-          }
-          continue
+          const normalizedHandler = extractDetail
+            ? (event: Event) => {
+                handler((event as CustomEvent).detail)
+              }
+            : handler
+          eventHandlers[eventName] = normalizedHandler
         }
       }
 
@@ -75,7 +82,8 @@ export function createComponent<
       properties['editor'] = editor
     }
 
-    _useIsomorphicLayoutEffect(() => {
+    // Set all properties.
+    useIsomorphicLayoutEffect(() => {
       if (!el) return
       for (const [name, value] of Object.entries(properties)) {
         if (value !== undefined) {
@@ -86,14 +94,45 @@ export function createComponent<
       }
     }, [el, ...propNames.map((name) => properties[name])])
 
-    for (const eventName of eventNames) {
-      _useIsomorphicLayoutEffect(() => {
+    // Put all event listeners extracted from `props` into `eventHandlersRef`.
+    useIsomorphicLayoutEffect(() => {
+      for (const [eventName, handerArray] of Object.entries(
+        eventHandlersRef.current,
+      )) {
         const handler = eventHandlers[eventName]
-        if (!el || !handler) return
-        el.addEventListener(eventName, handler)
-        return () => el.removeEventListener(eventName, handler)
-      }, [el, eventHandlers[eventName]])
-    }
+        handerArray.length = 0
+        if (handler) {
+          handerArray.push(handler)
+        }
+      }
+    })
+
+    // Register the event listeners to the element.
+    useIsomorphicLayoutEffect(() => {
+      if (!el) {
+        return
+      }
+
+      const handlers: Record<string, AnyFunction> = {}
+
+      for (const eventName of eventNames) {
+        handlers[eventName] = (event: Event) => {
+          for (const handler of eventHandlersRef.current[eventName]) {
+            handler(event)
+          }
+        }
+      }
+
+      for (const [name, handler] of Object.entries(handlers)) {
+        el.addEventListener(name, handler)
+      }
+
+      return () => {
+        for (const [name, handler] of Object.entries(handlers)) {
+          el.removeEventListener(name, handler)
+        }
+      }
+    }, [el])
 
     return createElement(tagName, {
       ...attributes,

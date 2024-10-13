@@ -1,1 +1,1 @@
-export { InlinePopover } from './inline-popover.gen'
+export { InlinePopover, type InlinePopoverProps } from './inline-popover.gen'

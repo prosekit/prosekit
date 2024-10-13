@@ -19,7 +19,7 @@ import type { ResizableRootEvents, ResizableRootProps } from './types'
 
 export function useResizableRoot(
   host: ConnectableElement,
-  { state }: SetupOptions<ResizableRootProps, ResizableRootEvents>,
+  { state, emit }: SetupOptions<ResizableRootProps, ResizableRootEvents>,
 ): void {
   const onResizeStart: OnResizeStart = () => {
     const { width, height } = host.getBoundingClientRect()
@@ -30,19 +30,19 @@ export function useResizableRoot(
       aspectRatio = 0
     }
 
-    state.onSizeChangeStart.peek()?.({ width, height })
+    emit('resizeStart', { width, height })
     return [width, height, aspectRatio]
   }
 
   const onResize: OnResize = (width, height) => {
-    state.onSizeChange.peek()?.({ width, height })
     state.width.set(width)
     state.height.set(height)
+    emit('resize', { width, height })
   }
 
   const onResizeEnd: OnResizeEnd = () => {
     const { width, height } = host.getBoundingClientRect()
-    state.onSizeChangeEnd.peek()?.({ width, height })
+    emit('resizeEnd', { width, height })
   }
 
   onResizeStartContext.provide(host, createSignal(onResizeStart))

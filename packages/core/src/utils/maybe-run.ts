@@ -2,11 +2,16 @@
  * @internal
  */
 export function maybeRun<
-  T,
-  R = T extends (...args: any[]) => void ? ReturnType<T> : T,
+  MaybeFn,
+  Result = MaybeFn extends (...args: any[]) => void
+    ? ReturnType<MaybeFn>
+    : MaybeFn,
 >(
-  value: T,
-  ...args: T extends (...args: any[]) => void ? Parameters<T> : never
-): R {
-  return (typeof value === 'function' ? value(...args) : value) as R
+  value: MaybeFn,
+  ...args: MaybeFn extends (...args: any[]) => void
+    ? Parameters<MaybeFn>
+    : never
+): Result {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  return (typeof value === 'function' ? value(...args) : value) as Result
 }

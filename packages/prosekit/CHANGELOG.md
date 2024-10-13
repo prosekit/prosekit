@@ -19,12 +19,14 @@
   ```tsx
   // Previous code example
   <ResizableRoot
-    onSizeChangeEnd={(size) => { console.log(size.width, size.height) }}
+    onSizeChangeEnd={(size) => { handle(size.width, size.height) }} 
   />
+  ```
 
+  ```tsx
   // Updated code example
   <ResizableRoot
-    onSizeChangeEnd={(event) => { console.log(event.size.width, event.size.height) }}
+    onResizeEnd={(event) => { handle(event.size.width, event.size.height) }} 
   />
   ```
 

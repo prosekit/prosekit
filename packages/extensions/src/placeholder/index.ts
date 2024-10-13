@@ -1,4 +1,4 @@
-import { definePlugin, isInCodeBlock } from '@prosekit/core'
+import { definePlugin, isInCodeBlock, maybeRun } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { type EditorState, Plugin, PluginKey } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
@@ -44,8 +44,7 @@ function createPlaceholderPlugin({
           return null
         }
 
-        const placeholderText =
-          typeof placeholder === 'function' ? placeholder(state) : placeholder
+        const placeholderText: string = maybeRun(placeholder, state)
         const deco = createPlaceholderDecoration(state, placeholderText)
         if (!deco) {
           return null

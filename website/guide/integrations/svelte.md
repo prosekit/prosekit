@@ -62,7 +62,7 @@ After defining the component, we can register it as a node view using [`defineSv
 
 ```ts twoslash
 // @filename: code-block-view.svelte.ts
-/* eslint-disable import/no-duplicates */
+
 import type * as m from 'prosekit/svelte'
 
 const Component: m.SvelteNodeViewComponent = {} as any

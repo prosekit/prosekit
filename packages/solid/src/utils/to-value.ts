@@ -12,6 +12,6 @@ import type { MaybeAccessor, MaybeAccessorValue } from '../types'
 export function toValue<T extends MaybeAccessor<any>>(
   v: T,
 ): MaybeAccessorValue<T> {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
   return typeof v === 'function' && v.length === 0 ? v() : v
 }

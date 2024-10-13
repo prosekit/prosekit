@@ -10,7 +10,6 @@
     "./vite-env.d.ts",
     "./**/*.ts",
     "./**/*.tsx",
-    "./**/*.json",
     ".vitepress/**/*.vue",
     ".vitepress/**/*.tsx",
     ".vitepress/**/*.ts",

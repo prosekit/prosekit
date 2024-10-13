@@ -13,6 +13,7 @@ const extension = definePlaceholder({ placeholder: 'Type Something...' })
 ```
 
 Or show dynamic placeholders by node
+
 ```ts twoslash
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
 

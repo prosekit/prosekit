@@ -43,8 +43,8 @@ function createPlaceholderPlugin(options: PlaceholderOptions): Plugin {
         const placeholderText =
           typeof options.placeholder === 'function'
             ? options.placeholder({
-              node: state.selection.$from.node(),
-            })
+                node: state.selection.$from.node(),
+              })
             : options.placeholder
         const deco = createPlaceholderDecoration(state, placeholderText)
         if (!deco) {

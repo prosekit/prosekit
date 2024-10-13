@@ -44,7 +44,7 @@
     "remark-stringify": "^11.0.0",
     "solid-js": "^1.8.22",
     "svelte": "^4.2.19",
-    "svelte-check": "^4.0.2",
+    "svelte-check": "^4.0.5",
     "typescript": "^5.6.2",
     "unified": "^11.0.5",
     "unocss": "^0.62.4",

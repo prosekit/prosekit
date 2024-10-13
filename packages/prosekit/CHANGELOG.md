@@ -18,14 +18,14 @@
 
   ```tsx
   // Previous code example
-  <ResizableRoot 
+  <ResizableRoot
     onSizeChangeEnd={(size) => { handle(size.width, size.height) }} 
   />
   ```
 
   ```tsx
   // Updated code example
-  <ResizableRoot 
+  <ResizableRoot
     onResizeEnd={(event) => { handle(event.size.width, event.size.height) }} 
   />
   ```

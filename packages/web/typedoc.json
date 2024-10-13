@@ -1,14 +1,16 @@
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["../../config/typedoc-base.json"],
+  "extends": [
+    "../../config/typedoc-base.json"
+  ],
   "entryPoints": [
-    "./src/components/autocomplete/index.ts",
-    "./src/components/block-handle/index.ts",
-    "./src/components/inline-popover/index.ts",
-    "./src/components/popover/index.ts",
-    "./src/components/resizable/index.ts",
-    "./src/components/table-handle/index.ts",
-    "./src/components/tooltip/index.ts",
+    "./src/components/autocomplete/index.gen.ts",
+    "./src/components/block-handle/index.gen.ts",
+    "./src/components/inline-popover/index.gen.ts",
+    "./src/components/popover/index.gen.ts",
+    "./src/components/resizable/index.gen.ts",
+    "./src/components/table-handle/index.gen.ts",
+    "./src/components/tooltip/index.gen.ts",
     "./src/index.ts"
   ]
 }

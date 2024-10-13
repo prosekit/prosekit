@@ -1,7 +1,9 @@
 import {
-  defaultBlockHandleDraggableProps,
   type BlockHandleDraggableElement,
-  type BlockHandleDraggableProps,
+  type BlockHandleDraggableProps as Props,
+  type BlockHandleDraggableEvents as Events,
+  blockHandleDraggableProps,
+  blockHandleDraggableEvents,
 } from '@prosekit/web/block-handle'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,13 @@ import type {
 } from 'preact/compat'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+/**
+ * Props for the {@link BlockHandleDraggable} component.
+ */
+export type BlockHandleDraggableProps = Partial<CreateProps<Props, Events>>
+ 
 export const BlockHandleDraggable: ForwardRefExoticComponent<
   Partial<BlockHandleDraggableProps> &
   RefAttributes<BlockHandleDraggableElement> &
@@ -21,5 +29,6 @@ export const BlockHandleDraggable: ForwardRefExoticComponent<
 >(
   'prosekit-block-handle-draggable',
   'BlockHandleDraggable',
-  defaultBlockHandleDraggableProps,
+  Object.keys(blockHandleDraggableProps),
+  Object.keys(blockHandleDraggableEvents),
 )

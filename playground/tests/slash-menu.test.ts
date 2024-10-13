@@ -2,14 +2,7 @@ import { expect, test, type Page } from '@playwright/test'
 
 import { emptyEditor, testStory, waitForEditor } from './helper'
 
-testStory(['slash-menu'], ({ example }) => {
-  if (example === 'solid-slash-menu') {
-    test.skip('skip solid-slash-menu', () => {
-      // TODO: solid-slash-menu doesn't work yet. Fix it.
-    })
-    return
-  }
-
+testStory(['slash-menu'], () => {
   test('execute command', async ({ page }) => {
     const { editor, menu, itemH1 } = await setup(page)
 

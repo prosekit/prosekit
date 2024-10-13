@@ -1,7 +1,9 @@
 import {
-  defaultAutocompletePopoverProps,
   type AutocompletePopoverElement,
-  type AutocompletePopoverProps,
+  type AutocompletePopoverProps as Props,
+  type AutocompletePopoverEvents as Events,
+  autocompletePopoverProps,
+  autocompletePopoverEvents,
 } from '@prosekit/web/autocomplete'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,13 @@ import type {
 } from 'preact/compat'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+/**
+ * Props for the {@link AutocompletePopover} component.
+ */
+export type AutocompletePopoverProps = Partial<CreateProps<Props, Events>>
+ 
 export const AutocompletePopover: ForwardRefExoticComponent<
   Partial<AutocompletePopoverProps> &
   RefAttributes<AutocompletePopoverElement> &
@@ -21,5 +29,6 @@ export const AutocompletePopover: ForwardRefExoticComponent<
 >(
   'prosekit-autocomplete-popover',
   'AutocompletePopover',
-  defaultAutocompletePopoverProps,
+  Object.keys(autocompletePopoverProps),
+  Object.keys(autocompletePopoverEvents),
 )

@@ -1,7 +1,9 @@
 import {
-  defaultTooltipContentProps,
   type TooltipContentElement,
-  type TooltipContentProps
+  type TooltipContentProps as Props,
+  type TooltipContentEvents as Events,
+  tooltipContentProps,
+  tooltipContentEvents,
 } from '@prosekit/web/tooltip'
 import type {
   ForwardRefExoticComponent,
@@ -10,9 +12,15 @@ import type {
 } from 'react'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+/**
+ * Props for the {@link TooltipContent} component.
+ */
+export interface TooltipContentProps extends Partial<CreateProps<Props, Events>> {}
+ 
 export const TooltipContent: ForwardRefExoticComponent<
-  Partial<TooltipContentProps> &
+  TooltipContentProps &
   RefAttributes<TooltipContentElement> &
   HTMLAttributes<TooltipContentElement>
 > = createComponent<
@@ -21,5 +29,6 @@ export const TooltipContent: ForwardRefExoticComponent<
 >(
   'prosekit-tooltip-content',
   'TooltipContent',
-  defaultTooltipContentProps,
+  Object.keys(tooltipContentProps),
+  Object.keys(tooltipContentEvents),
 )

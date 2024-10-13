@@ -1,5 +1,33 @@
-import { defaultInlinePopoverProps, type InlinePopoverProps } from '@prosekit/web/inline-popover'
+import {
+  inlinePopoverProps,
+  inlinePopoverEvents,
+  type InlinePopoverProps as Props,
+  type InlinePopoverEvents as Events,
+} from '@prosekit/web/inline-popover'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
-export const InlinePopover = createComponent<InlinePopoverProps>('prosekit-inline-popover', 'InlinePopover', defaultInlinePopoverProps)
+/**
+ * Props for the {@link InlinePopover} component.
+ */
+export interface InlinePopoverProps extends Partial<Props> {}
+
+/**
+ * Emits for the {@link InlinePopover} component.
+ */
+export interface InlinePopoverEmits extends CreateEmits<Events> {}
+
+export const InlinePopover: DefineSetupFnComponent<
+  InlinePopoverProps & HTMLAttributes,
+  InlinePopoverEmits
+> = createComponent<
+  InlinePopoverProps,
+  InlinePopoverEmits
+>(
+  'prosekit-inline-popover',
+  'InlinePopover',
+  Object.keys(inlinePopoverProps),
+  Object.keys(inlinePopoverEvents),
+)

@@ -1,15 +1,24 @@
 import { 
-  defaultAutocompletePopoverProps,
   type AutocompletePopoverElement,
-  type AutocompletePopoverProps,
+  type AutocompletePopoverProps as Props,
+  type AutocompletePopoverEvents as Events,
+  autocompletePopoverProps,
+  autocompletePopoverEvents,
 } from '@prosekit/web/autocomplete'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
+
+/**
+ * Props for the {@link AutocompletePopover} component.
+ */
+export interface AutocompletePopoverProps extends Partial<CreateProps<Props, Events>> {}
 
 export const AutocompletePopover = createComponent<
   AutocompletePopoverProps,
   AutocompletePopoverElement
 >(
   'prosekit-autocomplete-popover', 
-  defaultAutocompletePopoverProps,
+  Object.keys(autocompletePopoverProps),
+  Object.keys(autocompletePopoverEvents),
 )

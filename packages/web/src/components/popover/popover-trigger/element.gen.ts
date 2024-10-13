@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { usePopoverTrigger } from "./setup"
+import { popoverTriggerEvents, popoverTriggerProps, type PopoverTriggerEvents, type PopoverTriggerProps } from "./types"
 
-import { defaultPopoverTriggerProps, type PopoverTriggerProps } from './props'
-import { usePopoverTrigger } from './state'
+class PopoverTriggerElement extends defineCustomElement<
+  PopoverTriggerProps,
+  PopoverTriggerEvents
+>({
+  props: popoverTriggerProps,
+  events: popoverTriggerEvents,
+  setup: usePopoverTrigger,
+}) {}
 
-class PopoverTriggerElement extends ElementBuilder<PopoverTriggerProps>(usePopoverTrigger, defaultPopoverTriggerProps) {}
-
-defineCustomElement('prosekit-popover-trigger', PopoverTriggerElement)
-
+registerCustomElement('prosekit-popover-trigger', PopoverTriggerElement)
+  
 export { PopoverTriggerElement }

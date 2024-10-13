@@ -1,5 +1,33 @@
-import { defaultTableHandlePopoverContentProps, type TableHandlePopoverContentProps } from '@prosekit/web/table-handle'
+import {
+  tableHandlePopoverContentProps,
+  tableHandlePopoverContentEvents,
+  type TableHandlePopoverContentProps as Props,
+  type TableHandlePopoverContentEvents as Events,
+} from '@prosekit/web/table-handle'
+import type { DefineSetupFnComponent, HTMLAttributes } from 'vue'
 
 import { createComponent } from '../create-component'
+import type { CreateEmits } from '../create-emits'
 
-export const TableHandlePopoverContent = createComponent<TableHandlePopoverContentProps>('prosekit-table-handle-popover-content', 'TableHandlePopoverContent', defaultTableHandlePopoverContentProps)
+/**
+ * Props for the {@link TableHandlePopoverContent} component.
+ */
+export interface TableHandlePopoverContentProps extends Partial<Props> {}
+
+/**
+ * Emits for the {@link TableHandlePopoverContent} component.
+ */
+export interface TableHandlePopoverContentEmits extends CreateEmits<Events> {}
+
+export const TableHandlePopoverContent: DefineSetupFnComponent<
+  TableHandlePopoverContentProps & HTMLAttributes,
+  TableHandlePopoverContentEmits
+> = createComponent<
+  TableHandlePopoverContentProps,
+  TableHandlePopoverContentEmits
+>(
+  'prosekit-table-handle-popover-content',
+  'TableHandlePopoverContent',
+  Object.keys(tableHandlePopoverContentProps),
+  Object.keys(tableHandlePopoverContentEvents),
+)

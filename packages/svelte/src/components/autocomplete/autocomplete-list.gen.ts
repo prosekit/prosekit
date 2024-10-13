@@ -1,7 +1,14 @@
-import type { AutocompleteListElement, AutocompleteListProps } from '@prosekit/web/autocomplete'    
+import type { AutocompleteListElement, AutocompleteListProps as Props, AutocompleteListEvents as Events } from '@prosekit/web/autocomplete'    
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
+import type { CreateProps } from '../create-props'
+
 import Component from './autocomplete-list.gen.svelte'
 
-export const AutocompleteList = Component as typeof SvelteComponent<Partial<AutocompleteListProps> & HTMLAttributes<AutocompleteListElement>>
+/**
+ * Props for the {@link AutocompleteList} component.
+ */
+export interface AutocompleteListProps extends Partial<CreateProps<Props, Events>> {}
+
+export const AutocompleteList = Component as typeof SvelteComponent<AutocompleteListProps & HTMLAttributes<AutocompleteListElement>>

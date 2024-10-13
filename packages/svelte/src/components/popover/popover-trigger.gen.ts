@@ -1,7 +1,14 @@
-import type { PopoverTriggerElement, PopoverTriggerProps } from '@prosekit/web/popover'    
+import type { PopoverTriggerElement, PopoverTriggerProps as Props, PopoverTriggerEvents as Events } from '@prosekit/web/popover'    
 import type { SvelteComponent } from 'svelte'
 import type { HTMLAttributes } from 'svelte/elements'
 
+import type { CreateProps } from '../create-props'
+
 import Component from './popover-trigger.gen.svelte'
 
-export const PopoverTrigger = Component as typeof SvelteComponent<Partial<PopoverTriggerProps> & HTMLAttributes<PopoverTriggerElement>>
+/**
+ * Props for the {@link PopoverTrigger} component.
+ */
+export interface PopoverTriggerProps extends Partial<CreateProps<Props, Events>> {}
+
+export const PopoverTrigger = Component as typeof SvelteComponent<PopoverTriggerProps & HTMLAttributes<PopoverTriggerElement>>

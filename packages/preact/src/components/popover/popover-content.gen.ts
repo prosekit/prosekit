@@ -1,7 +1,9 @@
 import {
-  defaultPopoverContentProps,
   type PopoverContentElement,
-  type PopoverContentProps,
+  type PopoverContentProps as Props,
+  type PopoverContentEvents as Events,
+  popoverContentProps,
+  popoverContentEvents,
 } from '@prosekit/web/popover'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,13 @@ import type {
 } from 'preact/compat'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+/**
+ * Props for the {@link PopoverContent} component.
+ */
+export type PopoverContentProps = Partial<CreateProps<Props, Events>>
+ 
 export const PopoverContent: ForwardRefExoticComponent<
   Partial<PopoverContentProps> &
   RefAttributes<PopoverContentElement> &
@@ -21,5 +29,6 @@ export const PopoverContent: ForwardRefExoticComponent<
 >(
   'prosekit-popover-content',
   'PopoverContent',
-  defaultPopoverContentProps,
+  Object.keys(popoverContentProps),
+  Object.keys(popoverContentEvents),
 )

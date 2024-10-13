@@ -1,7 +1,9 @@
 import {
-  defaultTableHandleRowTriggerProps,
   type TableHandleRowTriggerElement,
-  type TableHandleRowTriggerProps
+  type TableHandleRowTriggerProps as Props,
+  type TableHandleRowTriggerEvents as Events,
+  tableHandleRowTriggerProps,
+  tableHandleRowTriggerEvents,
 } from '@prosekit/web/table-handle'
 import type {
   ForwardRefExoticComponent,
@@ -10,9 +12,15 @@ import type {
 } from 'react'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+/**
+ * Props for the {@link TableHandleRowTrigger} component.
+ */
+export interface TableHandleRowTriggerProps extends Partial<CreateProps<Props, Events>> {}
+ 
 export const TableHandleRowTrigger: ForwardRefExoticComponent<
-  Partial<TableHandleRowTriggerProps> &
+  TableHandleRowTriggerProps &
   RefAttributes<TableHandleRowTriggerElement> &
   HTMLAttributes<TableHandleRowTriggerElement>
 > = createComponent<
@@ -21,5 +29,6 @@ export const TableHandleRowTrigger: ForwardRefExoticComponent<
 >(
   'prosekit-table-handle-row-trigger',
   'TableHandleRowTrigger',
-  defaultTableHandleRowTriggerProps,
+  Object.keys(tableHandleRowTriggerProps),
+  Object.keys(tableHandleRowTriggerEvents),
 )

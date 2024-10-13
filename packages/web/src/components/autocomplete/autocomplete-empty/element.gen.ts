@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useAutocompleteEmpty } from "./setup"
+import { autocompleteEmptyEvents, autocompleteEmptyProps, type AutocompleteEmptyEvents, type AutocompleteEmptyProps } from "./types"
 
-import { defaultAutocompleteEmptyProps, type AutocompleteEmptyProps } from './props'
-import { useAutocompleteEmpty } from './state'
+class AutocompleteEmptyElement extends defineCustomElement<
+  AutocompleteEmptyProps,
+  AutocompleteEmptyEvents
+>({
+  props: autocompleteEmptyProps,
+  events: autocompleteEmptyEvents,
+  setup: useAutocompleteEmpty,
+}) {}
 
-class AutocompleteEmptyElement extends ElementBuilder<AutocompleteEmptyProps>(useAutocompleteEmpty, defaultAutocompleteEmptyProps) {}
-
-defineCustomElement('prosekit-autocomplete-empty', AutocompleteEmptyElement)
-
+registerCustomElement('prosekit-autocomplete-empty', AutocompleteEmptyElement)
+  
 export { AutocompleteEmptyElement }

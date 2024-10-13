@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useInlinePopover } from "./setup"
+import { inlinePopoverEvents, inlinePopoverProps, type InlinePopoverEvents, type InlinePopoverProps } from "./types"
 
-import { defaultInlinePopoverProps, type InlinePopoverProps } from './props'
-import { useInlinePopover } from './state'
+class InlinePopoverElement extends defineCustomElement<
+  InlinePopoverProps,
+  InlinePopoverEvents
+>({
+  props: inlinePopoverProps,
+  events: inlinePopoverEvents,
+  setup: useInlinePopover,
+}) {}
 
-class InlinePopoverElement extends ElementBuilder<InlinePopoverProps>(useInlinePopover, defaultInlinePopoverProps) {}
-
-defineCustomElement('prosekit-inline-popover', InlinePopoverElement)
-
+registerCustomElement('prosekit-inline-popover', InlinePopoverElement)
+  
 export { InlinePopoverElement }

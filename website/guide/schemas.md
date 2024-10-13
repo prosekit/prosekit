@@ -16,7 +16,7 @@ You can use [`defineNodeSpec`] to defined a node type. It accepts the node name 
 You can use [`defineMarkspec`] to defined a mark type. It accepts the mark name and a
 [`MarkSpec`] object.
 
-[`defineNodeSpec`]: /references/core#defineNodeSpec
-[`defineMarkSpec`]: /references/core#defineMarkSpec
+[`defineNodeSpec`]: /references/core#define-node-spec
+[`defineMarkSpec`]: /references/core#define-mark-spec
 [`NodeSpec`]: https://prosemirror.net/docs/ref/#model.NodeSpec
 [`MarkSpec`]: https://prosemirror.net/docs/ref/#model.MarkSpec

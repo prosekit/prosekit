@@ -202,6 +202,9 @@ importers:
       '@types/node':
         specifier: ^20.16.5
         version: 20.16.5
+      change-case:
+        specifier: ^5.4.4
+        version: 5.4.4
       execa:
         specifier: ^9.4.0
         version: 9.4.0
@@ -215,9 +218,6 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3
       just-filter-object:
-        specifier: ^3.2.0
-        version: 3.2.0
-      just-pascal-case:
         specifier: ^3.2.0
         version: 3.2.0
       tsx:
@@ -465,6 +465,18 @@ importers:
       tsup:
         specifier: ^8.3.0
         version: 8.3.0(@microsoft/api-extractor@7.47.9(@types/node@20.16.5))(jiti@1.21.6)(postcss@8.4.47)(tsx@4.19.1)(typescript@5.6.2)(yaml@2.5.1)
+      typedoc:
+        specifier: ^0.26.7
+        version: 0.26.7(typescript@5.6.2)
+      typedoc-plugin-external-package-links:
+        specifier: ^0.1.0
+        version: 0.1.0
+      typedoc-plugin-md:
+        specifier: ^0.3.1
+        version: 0.3.1(typedoc@0.26.7(typescript@5.6.2))
+      typedoc-plugin-mdn-links:
+        specifier: ^3.2.12
+        version: 3.2.12(typedoc@0.26.7(typescript@5.6.2))
       typescript:
         specifier: ^5.6.2
         version: 5.6.2
@@ -682,29 +694,29 @@ importers:
   packages/web:
     dependencies:
       '@aria-ui/collection':
-        specifier: ^0.0.3
-        version: 0.0.3
+        specifier: ^0.0.4
+        version: 0.0.4
       '@aria-ui/core':
-        specifier: ^0.0.18
-        version: 0.0.18
-      '@aria-ui/listbox':
-        specifier: ^0.0.18
-        version: 0.0.18
-      '@aria-ui/menu':
-        specifier: ^0.0.12
-        version: 0.0.12
-      '@aria-ui/overlay':
         specifier: ^0.0.19
         version: 0.0.19
-      '@aria-ui/popover':
+      '@aria-ui/listbox':
+        specifier: ^0.0.19
+        version: 0.0.19
+      '@aria-ui/menu':
+        specifier: ^0.0.13
+        version: 0.0.13
+      '@aria-ui/overlay':
         specifier: ^0.0.20
         version: 0.0.20
+      '@aria-ui/popover':
+        specifier: ^0.0.21
+        version: 0.0.21
       '@aria-ui/presence':
-        specifier: ^0.0.14
-        version: 0.0.14
+        specifier: ^0.0.15
+        version: 0.0.15
       '@aria-ui/tooltip':
-        specifier: ^0.0.22
-        version: 0.0.22
+        specifier: ^0.0.23
+        version: 0.0.23
       '@floating-ui/dom':
         specifier: ^1.6.11
         version: 1.6.11
@@ -720,6 +732,9 @@ importers:
       '@zag-js/dom-query':
         specifier: ^0.68.1
         version: 0.68.1
+      just-map-values:
+        specifier: ^3.2.0
+        version: 3.2.0
       just-omit:
         specifier: ^2.2.0
         version: 2.2.0
@@ -898,6 +913,9 @@ importers:
       '@vitejs/plugin-vue-jsx':
         specifier: ^4.0.1
         version: 4.0.1(vite@5.4.6(@types/node@20.16.5)(lightningcss@1.27.0))(vue@3.5.6(typescript@5.6.2))
+      change-case:
+        specifier: ^5.4.4
+        version: 5.4.4
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -937,18 +955,6 @@ importers:
       type-fest:
         specifier: ^4.26.1
         version: 4.26.1
-      typedoc:
-        specifier: ^0.26.7
-        version: 0.26.7(typescript@5.6.2)
-      typedoc-plugin-external-package-links:
-        specifier: ^0.1.0
-        version: 0.1.0
-      typedoc-plugin-markdown:
-        specifier: ^4.2.7
-        version: 4.2.7(typedoc@0.26.7(typescript@5.6.2))
-      typedoc-plugin-mdn-links:
-        specifier: ^3.2.12
-        version: 3.2.12(typedoc@0.26.7(typescript@5.6.2))
       typescript:
         specifier: ^5.6.2
         version: 5.6.2
@@ -960,7 +966,7 @@ importers:
         version: 5.4.6(@types/node@20.16.5)(lightningcss@1.27.0)
       vitepress:
         specifier: 1.3.4
-        version: 1.3.4(@algolia/client-search@4.24.0)(@types/node@20.16.5)(@types/react@18.3.6)(lightningcss@1.27.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.15.0)(typescript@5.6.2)
+        version: 1.3.4(@algolia/client-search@4.24.0)(@types/node@20.16.5)(@types/react@18.3.6)(change-case@5.4.4)(lightningcss@1.27.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.15.0)(typescript@5.6.2)
       vue:
         specifier: ^3.5.6
         version: 3.5.6(typescript@5.6.2)
@@ -1048,29 +1054,71 @@ packages:
   '@antfu/utils@0.7.10':
     resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
 
-  '@aria-ui/collection@0.0.3':
-    resolution: {integrity: sha512-20mUHlpTCYQnv1LTGMkCy1SLCxRK5pxHrvTr2beaaCgBKPjMEB3MlemL0PbIj3WsXbCldsvLBWX1L67FgWowSg==}
+  '@aria-ui/collection@0.0.4':
+    resolution: {integrity: sha512-oEYKE2wyF8HWBvgwBrDjFV6SzL5MCAfq3sahmuM2ShFSXU9BdSKCw7dSCErerbyNIXYPURG44y6B17/HR2BdIw==}
 
-  '@aria-ui/core@0.0.18':
-    resolution: {integrity: sha512-g/kqs9Yg63hb6cMkXPw+4Cy4PaiJpGNNru2j9jJk5QrVE2k08B191gGdFcioaovR7zgFbK+Trrr9YBkczJMbMw==}
+  '@aria-ui/core@0.0.19':
+    resolution: {integrity: sha512-kI45PccSReMJiBKYYj1GR0I8OviwIHPlWdA77tZRUqbn/8SWYASjhm7E94NYX/rGxK9pUlnV8Mje2EqX8nukSg==}
 
-  '@aria-ui/listbox@0.0.18':
-    resolution: {integrity: sha512-3eUMIvIuJO29c5YJ08ZNk/mYDck6i6KFcmVG4Cz/Lyrwrvk7A/bG/nVxjuwiAppWDDdHVTLIKrdvWR6CHfbN5Q==}
+  '@aria-ui/listbox@0.0.19':
+    resolution: {integrity: sha512-pBuuUcssYAbxmnR0rTUKFR2dXUys8E/9AV1LyMZ14zuZmESD6S1xCv5RAcDwJnblOItgAryoB+ed2vkE1719DA==}
 
-  '@aria-ui/menu@0.0.12':
-    resolution: {integrity: sha512-8TGF3sZzKBJchfVm3eYRrPbJOKA6EATqkRtwcdKyoZG8QboliUCV4/PUyo+PR3O3mQ6wKAE5T6Zu2zn1CqG3kA==}
+  '@aria-ui/menu@0.0.13':
+    resolution: {integrity: sha512-vjUQrj3yPptMIB2NQtbfGvIKL9E/XoBCZWIZ6KhGM4/lJabXSnBejXYn0SHfIwBkCkD+mPEXMCwCh94s2HY1aQ==}
 
-  '@aria-ui/overlay@0.0.19':
-    resolution: {integrity: sha512-SLhHqRHRbmfVbpfvQA2otAcJiNdhsoo6Thf2C+T9a6czed7EVA/RJCZzX2OKsxngK0PPjE/KYXJp3WStlME0SA==}
+  '@aria-ui/overlay@0.0.20':
+    resolution: {integrity: sha512-y+qax+YRueWRhkqs5jAd7OaQxILqWXxGP/085ENZexyZlv38BesCxqjMR6rbKfJjKTDp9cZIc3JdzZqzEHdSwA==}
 
-  '@aria-ui/popover@0.0.20':
-    resolution: {integrity: sha512-58fyBA855LjxoozsED9YA9803wIr3Zk+jO17UyJPFurBLvNvksAMRmUFo5PDCpVySaUrPPxGasQf21WnZv7brg==}
+  '@aria-ui/popover@0.0.21':
+    resolution: {integrity: sha512-Gh4pLjjH/3YZ7b1SzOUAJwof/Xw2WZNVLC//fZ9xT8b1ojA8ETYJ59hrw14VbvtYBsIO6GvogYEhJGFm23Nokg==}
 
-  '@aria-ui/presence@0.0.14':
-    resolution: {integrity: sha512-w1vi66ujuDvkvViUR+Igd5hf91raZSZ+6Hyw+ytBcfYLd6V1d5ruX+vNmGimVMh3OjrJxWo/AD6J6Y0AoPYKBQ==}
+  '@aria-ui/presence@0.0.15':
+    resolution: {integrity: sha512-by+KVcjuOGxu1PommpyFLfSTd0i/5Ee9kgvT+caObU8H2HK+sKZA00nCfKHhVNEWMjguKhaHu9g8P7Qa6mkgQw==}
 
-  '@aria-ui/tooltip@0.0.22':
-    resolution: {integrity: sha512-0C0ZQ46hzjzOSUJ3i7YNKRq/l1Q2i+IxfKUKKLC5tB+MJrieD66qBtETSlw3HLRtBBuLlcmIugz/IFgfHfAmmg==}
+  '@aria-ui/tooltip@0.0.23':
+    resolution: {integrity: sha512-+Ide+mzWzp9Zlf5xgSveraZ8jCpkrjD6wzITYvIp4oApfZ87/Z7ZnQKIV94EzwRjp0atTJR0DG+M062i7tMrlA==}
+
+  '@ariatype/aria-attributes-drag-and-drop@1.0.1':
+    resolution: {integrity: sha512-C1cZHJuL2e0dhFv0tgyHNPd+WC5oMlzqRxiKQlluyQakWoOoxRIHJbRNd7EajXdu6rwTKgfxZE9ag8gSKnFiKQ==}
+
+  '@ariatype/aria-attributes-global@1.0.1':
+    resolution: {integrity: sha512-f0lqlhAJdAjC/RswZ1nK39GZyi60U4pBIItLVwiN28n1q0Pi3nGEVCu5iSN3TvwMtasgsWMB8cuQ96jd2GDe+Q==}
+
+  '@ariatype/aria-attributes-live-region@1.0.1':
+    resolution: {integrity: sha512-P7K9EOh/qyh+7p7SZQ/2MiZwwHDWkTStlbql3ZpI6i+4FwS23PvwCXjhPIIiHn6lrw1tNV5zXBTWOzEBWmHgVw==}
+
+  '@ariatype/aria-attributes-relationship@1.0.1':
+    resolution: {integrity: sha512-vg3TgzCFQvhIUJiKV+k086KKa+yJ7g472nJLEYpTTeyh5qp3UY/llxORWAgMVYjBRgHp7RDDtr2KBUS/yNzfqw==}
+
+  '@ariatype/aria-attributes-widget@1.0.1':
+    resolution: {integrity: sha512-ualglvS5d/55Y+tUAcymx2xslSiBMCBJJwkzZ9fq60d7At7Rf2m5lr1KFxBGAdWEo00qj2DgAXXbbKH0927Dzg==}
+
+  '@ariatype/aria-attributes@1.0.1':
+    resolution: {integrity: sha512-pnwf/p4gciKU0SCzAmZWMpL8ZubyKGcKa1ruhzpTVuRXT8VYtqcajtWXrHKAK7071YLS1v0tAKpCHB2tZmVfUg==}
+
+  '@ariatype/aria-roles-composite@1.0.1':
+    resolution: {integrity: sha512-Snhi7xDDoQKDu+57GrN/JC9dWmnBIAPBYzKqFr+1eIJjsieiHTSIL8NyZcTqTIJVAm2J4zNPkT4UvIJPW9lEvw==}
+
+  '@ariatype/aria-roles-document-structure@1.0.1':
+    resolution: {integrity: sha512-+BMQ8DmVINg0erDSwf6RxrV68Ry3ou2IZnnVJba23KZVM+PNw6UwL055N1N68fNgizX2nrd3ectDtsq6DazCzQ==}
+
+  '@ariatype/aria-roles-generic@1.0.1':
+    resolution: {integrity: sha512-797pOcQndj3VSAW4/M+Fb4sh8SjyB9NrWWB/Q2DCBsrFxRzjlPf+jCL78knKOkllp0UJErtKSjWyz8KrDr9edQ==}
+
+  '@ariatype/aria-roles-landmark@1.0.1':
+    resolution: {integrity: sha512-oVlgz1d30aGbkonCe08nyM2xMkaqANsfYO3c8cWM/Gqbow7FCtdejOYjXjhz2q99MGltd7Gla9htAhGYK7vROw==}
+
+  '@ariatype/aria-roles-live-region@1.0.1':
+    resolution: {integrity: sha512-VTIchI0cg2a1HTPB5JcmzboS5YA6MXFNnvEx0K+gRDzLL0AJgwQS2yxHyDcPt6GUyE/N8/Ul1fg4njl+Qp0jiA==}
+
+  '@ariatype/aria-roles-widget@1.0.1':
+    resolution: {integrity: sha512-7TYRjcmRV7m+7XJ4619jGb72qX4GrmCU/AHFN58ro1yYXwSb6THd4xHMc0fDjO2yXTFy0HNIyZ/d3ZpJsoAIpw==}
+
+  '@ariatype/aria-roles-window@1.0.1':
+    resolution: {integrity: sha512-laLPFW9UUcNvCyBiv+dSa+tzIUODZMLOPoNkjFpbCBYSlW65QhvvA8o7sah4TS+L7v6qr7jFrGlVq2LPadBLJQ==}
+
+  '@ariatype/aria-roles@1.0.1':
+    resolution: {integrity: sha512-5XhX1IKcMWIqbQonV20C8lcAzg+pErGLWRK2Itam01F1I6YPxj1zC+52bE5M0seoK9UmJc2qHs6777a8cY9atw==}
 
   '@astrobook/core@0.4.4':
     resolution: {integrity: sha512-Ws0yeDLKwef44hJmyZh4TTEO8/jpykB37beSwldOYDmPie87rEOrpxavr3jmaQoNPpCfTQ5kQNyqtB+Naj4ylw==}
@@ -1413,48 +1461,6 @@ packages:
     engines: {node: '>=18'}
     peerDependencies:
       postcss-selector-parser: ^6.1.0
-
-  '@dddstack/ariatype-aria-attributes-drag-and-drop@2.0.0':
-    resolution: {integrity: sha512-sPtyhpHfnxWhzuK6oIWddX32Sirfi74LOaMdQ2x/LkphQe1STvEe7jnSD+k3SWQ8gv/DzFhacS/OwyMXlc6lnA==}
-
-  '@dddstack/ariatype-aria-attributes-global@2.0.0':
-    resolution: {integrity: sha512-4pNlL89Gj7IgLBnDJAw8EhCTPSefV3zcejXCwikRob6WlDlKI2zQRbKynzmKqK1V3VFkyCX662FBpUWm3p1gEg==}
-
-  '@dddstack/ariatype-aria-attributes-live-region@2.0.0':
-    resolution: {integrity: sha512-sTMnDbgDFcY/WB8sQdqH6vurd2dt+SnoV1rgzqZh8QlOAbaVtzJuPpXV39SnhUBKlBOV2hC23XLelki5jOplWA==}
-
-  '@dddstack/ariatype-aria-attributes-relationship@2.0.0':
-    resolution: {integrity: sha512-4G5EI9iJ6KJnR038kYiyj5veunXx0zDo/6mlZnkZ4lI2qafVTAmoyUEYRuvMQEkaUBGb2CeDRK4UX036DV/Xwg==}
-
-  '@dddstack/ariatype-aria-attributes-widget@2.0.0':
-    resolution: {integrity: sha512-ILeZ94JgQ0nzpaVsc0iyTdGf8bjqF2UAJ0W+So2lRl9iLmtmt2HGnNJMysj+s4YCempun5NN8xvjpyI21lhvoQ==}
-
-  '@dddstack/ariatype-aria-attributes@2.0.0':
-    resolution: {integrity: sha512-LaTn6dfD3wBQB39lbBA7zc7eAX6e10yFPnvH/I0CkX72JqfXaybme/mn6t0vwNwNtGOpWxoD9JISuAwtX/uFhA==}
-
-  '@dddstack/ariatype-aria-roles-composite@2.0.0':
-    resolution: {integrity: sha512-NKb3ZtoZXQvwH7YbpoW/OW0oLNFlynOYiNSd+o4LIfKydBNPy1qHVc6XPerAocSGwWR3gef/NqGg+F1Pb89/Ig==}
-
-  '@dddstack/ariatype-aria-roles-document-structure@2.0.0':
-    resolution: {integrity: sha512-Bcx30ymR40Ry8QvxL1au4OKggDesE2NcQ070teLdFNy44GFrNRjsZEbuLBklRxny8rmusoaDPRdaeX7FvXBUyg==}
-
-  '@dddstack/ariatype-aria-roles-generic@2.0.0':
-    resolution: {integrity: sha512-FmPtcV5bYdYRgQAEMoWDJb7yJVQtt2XxDVPWjEllb3ClEMzo/WTSztFaEBZyU60JxhDDqmdcRAwpV8aZVRBBNQ==}
-
-  '@dddstack/ariatype-aria-roles-landmark@2.0.0':
-    resolution: {integrity: sha512-jMulAkMBoxpkcaax7jp22tUOSLWPX+27fRZ40VlI2J5BM7/su9rVEqaAlZY7A7l+p3qq90Xc1XC3yMusxKmtsQ==}
-
-  '@dddstack/ariatype-aria-roles-live-region@2.0.0':
-    resolution: {integrity: sha512-9lFnJeHu0c+U5Fz7S2qhzp1dvRbRAqQFi+9Gxx3ENvWOGYYAvDOa9zXyyVDMSj5G9MmLFulRCf6Awe90ISy+Jg==}
-
-  '@dddstack/ariatype-aria-roles-widget@2.0.0':
-    resolution: {integrity: sha512-Alxl7cvfOLi1fpfk5PENjzeyY6hbSsr44+xIPpd7+VHdee0qpDI0x92sLiXcCTCsOR5KpGBCkOHQxOqUCUoWIQ==}
-
-  '@dddstack/ariatype-aria-roles-window@2.0.0':
-    resolution: {integrity: sha512-PHyVqw32xnXsxGp4DSHiii0L6HxLblmCkRrnvI/LykzZtQ0EeCYE3VAMzx1XG/BGl/oKQJP/my0K2D6ZknMFpg==}
-
-  '@dddstack/ariatype-aria-roles@2.0.0':
-    resolution: {integrity: sha512-/TOgMxehpTq3+kBoYvnG53iAeJH3y9TWlMO8Aroc19P4zqq8OHYlJzIQxMtKa9LhvdK7Z8Kcr1f4WDhW7Rd4dw==}
 
   '@docsearch/css@3.6.1':
     resolution: {integrity: sha512-VtVb5DS+0hRIprU2CO6ZQjK2Zg4QU5HrDM1+ix6rT0umsYvFvatMAnf97NHZlVWDaaLlx7GRfR/7FikANiM2Fg==}
@@ -2181,8 +2187,8 @@ packages:
       '@babel/core': 7.x
       vite: 2.x || 3.x || 4.x || 5.x
 
-  '@preact/signals-core@1.7.0':
-    resolution: {integrity: sha512-bEZLgmJGSBVP5PUPDowhPW3bVdMmp9Tr5OEl+SQK+8Tv9T7UsIfyN905cfkmmeqw8z4xp8T6zrl4M1uj9+HAfg==}
+  '@preact/signals-core@1.8.0':
+    resolution: {integrity: sha512-OBvUsRZqNmjzCZXWLxkZfhcgT+Fk8DDcT/8vD6a1xhDemodyy87UJRJfASMuSD8FaAIeGgGm85ydXhm7lr4fyA==}
 
   '@preact/signals@1.3.0':
     resolution: {integrity: sha512-EOMeg42SlLS72dhoq6Vjq08havnLseWmPQ8A0YsgIAqMgWgx7V1a39+Pxo6i7SY5NwJtH4849JogFq3M67AzWg==}
@@ -2976,35 +2982,35 @@ packages:
   '@vueuse/shared@11.0.0':
     resolution: {integrity: sha512-i4ZmOrIEjSsL94uAEt3hz88UCz93fMyP/fba9S+vypX90fKg3uYX9cThqvWc9aXxuTzR0UGhOKOTQd//Goh1nQ==}
 
-  '@zag-js/dismissable@0.63.0':
-    resolution: {integrity: sha512-JcFTlLQGh68pSRMhUjCFw2g4OtTijyU79M8Vi2xS4lSJ9chxtJy3W6IV/tFmkDLjFNL3/7JIeCkvxJyUAk+wOA==}
+  '@zag-js/dismissable@0.74.2':
+    resolution: {integrity: sha512-Wl6n1lW1eTKKu5Kg+6jum9nZDXYGA86XL24Rip2aOScrAo2UGCA+nSIgg7GGO5qGs52iawITba38tAe6maZQLw==}
 
-  '@zag-js/dom-event@0.63.0':
-    resolution: {integrity: sha512-6jJBXknWCOajvwHTx7lbIL56sTg9qIo3/aaaAKlhXI2R1oFsyso4AFgIj1Pt01p+dKZjH4tVg1U0a+t6ZPnfzA==}
+  '@zag-js/dom-event@0.74.2':
+    resolution: {integrity: sha512-duuwxowflkY7UUI+1vHr9ttzqn2JtJ+mgAS0cBeNmqtvK6XrNaHSrm0B4u4R/KIJ73Tx8TZGbmgN9Vwj/U2FrA==}
 
   '@zag-js/dom-query@0.49.0':
     resolution: {integrity: sha512-lA+8ZdfU27GcoMZFRUANYfd6FI2ukPNwlecpJp8E9t4BVZK2o5V7xpAaN99m1TePw5JlcZ7gGXe4I82Ej11Yjg==}
 
-  '@zag-js/dom-query@0.63.0':
-    resolution: {integrity: sha512-ChgdEzojNNRv79yR1AXTlRWkQhD0rujIcwljzhceyn2oNKpKLDXNKQj8DP+nYYnmeI66dNlOGY35iUAbDaLV2g==}
-
   '@zag-js/dom-query@0.68.1':
     resolution: {integrity: sha512-Z/XvXQZw79w8FWF+zeeltD8cutZjmvOq5NnbCrFsh5aACZj74eoeJWBX/6bYDD/msk+sxANpgSdvlnguUAnSOw==}
 
-  '@zag-js/interact-outside@0.63.0':
-    resolution: {integrity: sha512-a8sq3D8wWiGnUySdg2UtStwNXfvqqtA84PLoWCYBNi2l/gvsnIIBxikkaEadisVdfQYGyCcRf4hh3BQ6T9FTzw==}
+  '@zag-js/dom-query@0.74.2':
+    resolution: {integrity: sha512-g+7wIdhT1nlY5yhQWoMDzin8uYoBXeQk8TNUj3GZH/1dTX9YC0vs7vz7rotzunLkEA7nEGfLNzdO5CRQBhGp0w==}
+
+  '@zag-js/interact-outside@0.74.2':
+    resolution: {integrity: sha512-58ilkSC2UQw9PsFo4HKBrYcWC1+WRA8M6MqNf9MnxxOvAq+Y8APH0I6ExxAfUhLsk9v+6kPf0txM9MDoB0iNFA==}
 
   '@zag-js/tabbable@0.49.0':
     resolution: {integrity: sha512-GwJAuBWTU7dvj7GVcM1KLt6th1kraIewr+A3q7SKXb3e/SyIZ7MbORQDVnEU/LIyhyUz9cwAoHNrgO+3V0ph9A==}
 
-  '@zag-js/text-selection@0.63.0':
-    resolution: {integrity: sha512-um7GFbRCz8GCVEPOQT146Y4ek35i4DXxnweKc79Qw6BXaIYpZOdoKdKypCsd+bS3VWfRorUxIQ46tQcsb4KouA==}
+  '@zag-js/text-selection@0.74.2':
+    resolution: {integrity: sha512-c7fLss1VyFnQzs5f5HNMD3qyJczH+SNzOgqMwU6apKpgYRLMMI0S4F03I/cyDQrCPZMcy6F/bl6zlQmdqb6WLQ==}
 
-  '@zag-js/types@0.63.0':
-    resolution: {integrity: sha512-WupxwmeEZNz108TWA+3/ZXuebOHtQl694bMaShjle0i1Bpi8ABMngZm46qxHqYZ3vkbcZC+/5ItQsYpQMpTAqQ==}
+  '@zag-js/types@0.74.2':
+    resolution: {integrity: sha512-UYdHh5Jj2LZZwP8Amm9YEoj9f/zYNWuuw+HRGCLZew6moHvKj/HHKJHLooPPjGztFIeRsnicE1mJ9E2bDllBaw==}
 
-  '@zag-js/utils@0.63.0':
-    resolution: {integrity: sha512-MmDJ5ypNQqD2LTFvz+SmR9KzP+sEmJoKDlsP5/MCPF6+EMFa272LLlsEEehDLOb5dZwzQFjSz9SBqGIvnwjt6A==}
+  '@zag-js/utils@0.74.2':
+    resolution: {integrity: sha512-WtIsNyDvnslCjtIIP/bRzx3bJMaT0cIgI3f+TgiFWhtQMlUZMpBkwkKVfvUwI5qcZ+ZOMeoonAWFqFECCb3h3g==}
 
   abbrev@2.0.0:
     resolution: {integrity: sha512-6/mh1E2u2YgEsCHdY0Yx5oW+61gZU+1vXaoiHHrpKeuRNNgFvS+/jrwHiQhB5apAf5oB7UB7E19ol2R2LKH8hQ==}
@@ -3327,6 +3333,9 @@ packages:
   chalk@5.3.0:
     resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+
+  change-case@5.4.4:
+    resolution: {integrity: sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w==}
 
   character-entities-html4@2.1.0:
     resolution: {integrity: sha512-1v7fgQRj6hnSwFpq1Eu0ynr/CDEw0rXo2B61qXrLNdHZmPKgb7fqS1a2JwF0rISo9q77jDI8VMEHoApn8qDoZA==}
@@ -4771,14 +4780,14 @@ packages:
   just-filter-object@3.2.0:
     resolution: {integrity: sha512-OeorYJxmp2zhy/0LxjS1UjbJ7XMY8M4gVa1RRKxnIVheCYmng2E2hE0lEbDGv4aRh/HI7FgNUXtOMnmNxpoXRQ==}
 
+  just-kebab-case@4.2.0:
+    resolution: {integrity: sha512-p2BdO7o4BI+pMun3J+dhaOfYan5JsZrw9wjshRjkWY9+p+u+kKSMhNWYnot2yHDR9CSahZ9iT3dcqJ+V72qHMw==}
+
   just-map-values@3.2.0:
     resolution: {integrity: sha512-TyqCKtK3NxiUgOjRYMIKURvBTHesi3XzomDY0QVPZ3rYzLCF+nNq5rSi0B/L5aOd/WMTZo6ukzA4wih4HUbrDg==}
 
   just-omit@2.2.0:
     resolution: {integrity: sha512-Js7+HxDOGcB3RhI38Mird/RgyMf3t0DAJFda1QWqqlAKTa36NeSYIufJXxrZUbysFTRcTOFcoMCiFK5FwCoI7Q==}
-
-  just-pascal-case@3.2.0:
-    resolution: {integrity: sha512-B0PW5mgJrsGmXdvDLxC2Kdfyie74m+mRO+iCjJ+Es0Jl5kcQwVfB0qb/qiDOCE3m0XUOo1SdZBWzUlNCO9zreg==}
 
   just-pick@4.2.0:
     resolution: {integrity: sha512-m6bi0P/gFq5GEQJGYfHFsdod6fogViNIhsKbPBYavqF9SKFfMKPz7kf6ROL2PblkOdaib9vN/wJ7VXhCJre5Hw==}
@@ -6685,11 +6694,10 @@ packages:
   typedoc-plugin-external-package-links@0.1.0:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
 
-  typedoc-plugin-markdown@4.2.7:
-    resolution: {integrity: sha512-bLsQdweSm48P9j6kGqQ3/4GCH5zu2EnURSkkxqirNc+uVFE9YK825ogDw+WbNkRHIV6eZK/1U43gT7YfglyYOg==}
-    engines: {node: '>= 18'}
+  typedoc-plugin-md@0.3.1:
+    resolution: {integrity: sha512-1CgX9m+EVCPmlunS95xUvZXW1m6gBrGp7CsR7K6xllwrLUMeWHz0k+90awDadoer4MjBb5dJAxJJtQcdLvUJLw==}
     peerDependencies:
-      typedoc: 0.26.x
+      typedoc: ^0.26.7
 
   typedoc-plugin-mdn-links@3.2.12:
     resolution: {integrity: sha512-UT7JinqYE7IQSrpRPkUkHrXXEJw5qbHIZhVq8igutYDA/4fsrYZhYffVo8Uh70K2iXFdAyvt6foQG5ci1VERAw==}
@@ -7394,57 +7402,113 @@ snapshots:
 
   '@antfu/utils@0.7.10': {}
 
-  '@aria-ui/collection@0.0.3': {}
+  '@aria-ui/collection@0.0.4': {}
 
-  '@aria-ui/core@0.0.18':
+  '@aria-ui/core@0.0.19':
     dependencies:
-      '@dddstack/ariatype-aria-attributes': 2.0.0
-      '@dddstack/ariatype-aria-roles': 2.0.0
-      '@preact/signals-core': 1.7.0
-      '@zag-js/dom-query': 0.63.0
+      '@ariatype/aria-attributes': 1.0.1
+      '@ariatype/aria-roles': 1.0.1
+      '@preact/signals-core': 1.8.0
+      '@zag-js/dom-query': 0.74.2
+      just-kebab-case: 4.2.0
+      just-map-values: 3.2.0
       server-dom-shim: 1.0.2
 
-  '@aria-ui/listbox@0.0.18':
+  '@aria-ui/listbox@0.0.19':
     dependencies:
-      '@aria-ui/collection': 0.0.3
-      '@aria-ui/core': 0.0.18
-      '@aria-ui/presence': 0.0.14
+      '@aria-ui/collection': 0.0.4
+      '@aria-ui/core': 0.0.19
+      '@aria-ui/presence': 0.0.15
       immer: 10.1.1
 
-  '@aria-ui/menu@0.0.12':
+  '@aria-ui/menu@0.0.13':
     dependencies:
-      '@aria-ui/collection': 0.0.3
-      '@aria-ui/core': 0.0.18
-      '@aria-ui/overlay': 0.0.19
-      '@aria-ui/popover': 0.0.20
-      '@aria-ui/presence': 0.0.14
+      '@aria-ui/collection': 0.0.4
+      '@aria-ui/core': 0.0.19
+      '@aria-ui/overlay': 0.0.20
+      '@aria-ui/popover': 0.0.21
+      '@aria-ui/presence': 0.0.15
       nanoid: 5.0.7
 
-  '@aria-ui/overlay@0.0.19':
+  '@aria-ui/overlay@0.0.20':
     dependencies:
-      '@aria-ui/core': 0.0.18
+      '@aria-ui/core': 0.0.19
       '@floating-ui/dom': 1.6.11
-      '@zag-js/dom-query': 0.63.0
+      '@zag-js/dom-query': 0.74.2
 
-  '@aria-ui/popover@0.0.20':
+  '@aria-ui/popover@0.0.21':
     dependencies:
-      '@aria-ui/core': 0.0.18
-      '@aria-ui/overlay': 0.0.19
-      '@aria-ui/presence': 0.0.14
-      '@zag-js/dismissable': 0.63.0
+      '@aria-ui/core': 0.0.19
+      '@aria-ui/overlay': 0.0.20
+      '@aria-ui/presence': 0.0.15
+      '@zag-js/dismissable': 0.74.2
       '@zag-js/tabbable': 0.49.0
 
-  '@aria-ui/presence@0.0.14':
+  '@aria-ui/presence@0.0.15':
     dependencies:
-      '@aria-ui/core': 0.0.18
-      '@zag-js/dom-query': 0.63.0
+      '@aria-ui/core': 0.0.19
+      '@zag-js/dom-query': 0.74.2
 
-  '@aria-ui/tooltip@0.0.22':
+  '@aria-ui/tooltip@0.0.23':
     dependencies:
-      '@aria-ui/core': 0.0.18
-      '@aria-ui/overlay': 0.0.19
-      '@aria-ui/presence': 0.0.14
+      '@aria-ui/core': 0.0.19
+      '@aria-ui/overlay': 0.0.20
+      '@aria-ui/presence': 0.0.15
       nanoid: 5.0.7
+
+  '@ariatype/aria-attributes-drag-and-drop@1.0.1': {}
+
+  '@ariatype/aria-attributes-global@1.0.1': {}
+
+  '@ariatype/aria-attributes-live-region@1.0.1': {}
+
+  '@ariatype/aria-attributes-relationship@1.0.1': {}
+
+  '@ariatype/aria-attributes-widget@1.0.1': {}
+
+  '@ariatype/aria-attributes@1.0.1':
+    dependencies:
+      '@ariatype/aria-attributes-drag-and-drop': 1.0.1
+      '@ariatype/aria-attributes-global': 1.0.1
+      '@ariatype/aria-attributes-live-region': 1.0.1
+      '@ariatype/aria-attributes-relationship': 1.0.1
+      '@ariatype/aria-attributes-widget': 1.0.1
+
+  '@ariatype/aria-roles-composite@1.0.1':
+    dependencies:
+      '@ariatype/aria-roles-generic': 1.0.1
+
+  '@ariatype/aria-roles-document-structure@1.0.1':
+    dependencies:
+      '@ariatype/aria-roles-generic': 1.0.1
+
+  '@ariatype/aria-roles-generic@1.0.1': {}
+
+  '@ariatype/aria-roles-landmark@1.0.1':
+    dependencies:
+      '@ariatype/aria-roles-generic': 1.0.1
+
+  '@ariatype/aria-roles-live-region@1.0.1':
+    dependencies:
+      '@ariatype/aria-roles-generic': 1.0.1
+
+  '@ariatype/aria-roles-widget@1.0.1':
+    dependencies:
+      '@ariatype/aria-roles-generic': 1.0.1
+
+  '@ariatype/aria-roles-window@1.0.1':
+    dependencies:
+      '@ariatype/aria-roles-generic': 1.0.1
+
+  '@ariatype/aria-roles@1.0.1':
+    dependencies:
+      '@ariatype/aria-roles-composite': 1.0.1
+      '@ariatype/aria-roles-document-structure': 1.0.1
+      '@ariatype/aria-roles-generic': 1.0.1
+      '@ariatype/aria-roles-landmark': 1.0.1
+      '@ariatype/aria-roles-live-region': 1.0.1
+      '@ariatype/aria-roles-widget': 1.0.1
+      '@ariatype/aria-roles-window': 1.0.1
 
   '@astrobook/core@0.4.4':
     dependencies:
@@ -7991,60 +8055,6 @@ snapshots:
   '@csstools/selector-specificity@4.0.0(postcss-selector-parser@6.1.1)':
     dependencies:
       postcss-selector-parser: 6.1.1
-
-  '@dddstack/ariatype-aria-attributes-drag-and-drop@2.0.0': {}
-
-  '@dddstack/ariatype-aria-attributes-global@2.0.0': {}
-
-  '@dddstack/ariatype-aria-attributes-live-region@2.0.0': {}
-
-  '@dddstack/ariatype-aria-attributes-relationship@2.0.0': {}
-
-  '@dddstack/ariatype-aria-attributes-widget@2.0.0': {}
-
-  '@dddstack/ariatype-aria-attributes@2.0.0':
-    dependencies:
-      '@dddstack/ariatype-aria-attributes-drag-and-drop': 2.0.0
-      '@dddstack/ariatype-aria-attributes-global': 2.0.0
-      '@dddstack/ariatype-aria-attributes-live-region': 2.0.0
-      '@dddstack/ariatype-aria-attributes-relationship': 2.0.0
-      '@dddstack/ariatype-aria-attributes-widget': 2.0.0
-
-  '@dddstack/ariatype-aria-roles-composite@2.0.0':
-    dependencies:
-      '@dddstack/ariatype-aria-roles-generic': 2.0.0
-
-  '@dddstack/ariatype-aria-roles-document-structure@2.0.0':
-    dependencies:
-      '@dddstack/ariatype-aria-roles-generic': 2.0.0
-
-  '@dddstack/ariatype-aria-roles-generic@2.0.0': {}
-
-  '@dddstack/ariatype-aria-roles-landmark@2.0.0':
-    dependencies:
-      '@dddstack/ariatype-aria-roles-generic': 2.0.0
-
-  '@dddstack/ariatype-aria-roles-live-region@2.0.0':
-    dependencies:
-      '@dddstack/ariatype-aria-roles-generic': 2.0.0
-
-  '@dddstack/ariatype-aria-roles-widget@2.0.0':
-    dependencies:
-      '@dddstack/ariatype-aria-roles-generic': 2.0.0
-
-  '@dddstack/ariatype-aria-roles-window@2.0.0':
-    dependencies:
-      '@dddstack/ariatype-aria-roles-generic': 2.0.0
-
-  '@dddstack/ariatype-aria-roles@2.0.0':
-    dependencies:
-      '@dddstack/ariatype-aria-roles-composite': 2.0.0
-      '@dddstack/ariatype-aria-roles-document-structure': 2.0.0
-      '@dddstack/ariatype-aria-roles-generic': 2.0.0
-      '@dddstack/ariatype-aria-roles-landmark': 2.0.0
-      '@dddstack/ariatype-aria-roles-live-region': 2.0.0
-      '@dddstack/ariatype-aria-roles-widget': 2.0.0
-      '@dddstack/ariatype-aria-roles-window': 2.0.0
 
   '@docsearch/css@3.6.1': {}
 
@@ -8737,11 +8747,11 @@ snapshots:
       - preact
       - supports-color
 
-  '@preact/signals-core@1.7.0': {}
+  '@preact/signals-core@1.8.0': {}
 
   '@preact/signals@1.3.0(preact@10.24.0)':
     dependencies:
-      '@preact/signals-core': 1.7.0
+      '@preact/signals-core': 1.8.0
       preact: 10.24.0
 
   '@prefresh/babel-plugin@0.5.1': {}
@@ -9738,12 +9748,13 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@vueuse/integrations@11.0.0(focus-trap@7.5.4)(vue@3.5.6(typescript@5.6.2))':
+  '@vueuse/integrations@11.0.0(change-case@5.4.4)(focus-trap@7.5.4)(vue@3.5.6(typescript@5.6.2))':
     dependencies:
       '@vueuse/core': 11.0.0(vue@3.5.6(typescript@5.6.2))
       '@vueuse/shared': 11.0.0(vue@3.5.6(typescript@5.6.2))
       vue-demi: 0.14.10(vue@3.5.6(typescript@5.6.2))
     optionalDependencies:
+      change-case: 5.4.4
       focus-trap: 7.5.4
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -9767,44 +9778,44 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@zag-js/dismissable@0.63.0':
+  '@zag-js/dismissable@0.74.2':
     dependencies:
-      '@zag-js/dom-event': 0.63.0
-      '@zag-js/dom-query': 0.63.0
-      '@zag-js/interact-outside': 0.63.0
-      '@zag-js/utils': 0.63.0
+      '@zag-js/dom-event': 0.74.2
+      '@zag-js/dom-query': 0.74.2
+      '@zag-js/interact-outside': 0.74.2
+      '@zag-js/utils': 0.74.2
 
-  '@zag-js/dom-event@0.63.0':
+  '@zag-js/dom-event@0.74.2':
     dependencies:
-      '@zag-js/dom-query': 0.63.0
-      '@zag-js/text-selection': 0.63.0
-      '@zag-js/types': 0.63.0
+      '@zag-js/dom-query': 0.74.2
+      '@zag-js/text-selection': 0.74.2
+      '@zag-js/types': 0.74.2
 
   '@zag-js/dom-query@0.49.0': {}
 
-  '@zag-js/dom-query@0.63.0': {}
-
   '@zag-js/dom-query@0.68.1': {}
 
-  '@zag-js/interact-outside@0.63.0':
+  '@zag-js/dom-query@0.74.2': {}
+
+  '@zag-js/interact-outside@0.74.2':
     dependencies:
-      '@zag-js/dom-event': 0.63.0
-      '@zag-js/dom-query': 0.63.0
-      '@zag-js/utils': 0.63.0
+      '@zag-js/dom-event': 0.74.2
+      '@zag-js/dom-query': 0.74.2
+      '@zag-js/utils': 0.74.2
 
   '@zag-js/tabbable@0.49.0':
     dependencies:
       '@zag-js/dom-query': 0.49.0
 
-  '@zag-js/text-selection@0.63.0':
+  '@zag-js/text-selection@0.74.2':
     dependencies:
-      '@zag-js/dom-query': 0.63.0
+      '@zag-js/dom-query': 0.74.2
 
-  '@zag-js/types@0.63.0':
+  '@zag-js/types@0.74.2':
     dependencies:
       csstype: 3.1.3
 
-  '@zag-js/utils@0.63.0': {}
+  '@zag-js/utils@0.74.2': {}
 
   abbrev@2.0.0: {}
 
@@ -10250,6 +10261,8 @@ snapshots:
       supports-color: 7.2.0
 
   chalk@5.3.0: {}
+
+  change-case@5.4.4: {}
 
   character-entities-html4@2.1.0: {}
 
@@ -11907,11 +11920,11 @@ snapshots:
 
   just-filter-object@3.2.0: {}
 
+  just-kebab-case@4.2.0: {}
+
   just-map-values@3.2.0: {}
 
   just-omit@2.2.0: {}
-
-  just-pascal-case@3.2.0: {}
 
   just-pick@4.2.0: {}
 
@@ -14139,9 +14152,16 @@ snapshots:
 
   typedoc-plugin-external-package-links@0.1.0: {}
 
-  typedoc-plugin-markdown@4.2.7(typedoc@0.26.7(typescript@5.6.2)):
+  typedoc-plugin-md@0.3.1(typedoc@0.26.7(typescript@5.6.2)):
     dependencies:
+      '@sindresorhus/slugify': 2.2.1
+      change-case: 5.4.4
+      remark-parse: 11.0.0
+      remark-stringify: 11.0.0
       typedoc: 0.26.7(typescript@5.6.2)
+      unified: 11.0.5
+    transitivePeerDependencies:
+      - supports-color
 
   typedoc-plugin-mdn-links@3.2.12(typedoc@0.26.7(typescript@5.6.2)):
     dependencies:
@@ -14485,7 +14505,7 @@ snapshots:
     optionalDependencies:
       vite: 5.4.6(@types/node@20.16.5)(lightningcss@1.27.0)
 
-  vitepress@1.3.4(@algolia/client-search@4.24.0)(@types/node@20.16.5)(@types/react@18.3.6)(lightningcss@1.27.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.15.0)(typescript@5.6.2):
+  vitepress@1.3.4(@algolia/client-search@4.24.0)(@types/node@20.16.5)(@types/react@18.3.6)(change-case@5.4.4)(lightningcss@1.27.0)(postcss@8.4.47)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.15.0)(typescript@5.6.2):
     dependencies:
       '@docsearch/css': 3.6.1
       '@docsearch/js': 3.6.1(@algolia/client-search@4.24.0)(@types/react@18.3.6)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.15.0)
@@ -14496,7 +14516,7 @@ snapshots:
       '@vue/devtools-api': 7.3.8
       '@vue/shared': 3.5.6
       '@vueuse/core': 11.0.0(vue@3.5.6(typescript@5.6.2))
-      '@vueuse/integrations': 11.0.0(focus-trap@7.5.4)(vue@3.5.6(typescript@5.6.2))
+      '@vueuse/integrations': 11.0.0(change-case@5.4.4)(focus-trap@7.5.4)(vue@3.5.6(typescript@5.6.2))
       focus-trap: 7.5.4
       mark.js: 8.11.1
       minisearch: 7.1.0

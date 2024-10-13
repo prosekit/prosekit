@@ -1,7 +1,9 @@
 import {
-  defaultBlockHandlePopoverProps,
   type BlockHandlePopoverElement,
-  type BlockHandlePopoverProps,
+  type BlockHandlePopoverProps as Props,
+  type BlockHandlePopoverEvents as Events,
+  blockHandlePopoverProps,
+  blockHandlePopoverEvents,
 } from '@prosekit/web/block-handle'
 import type {
   ForwardRefExoticComponent,
@@ -10,7 +12,13 @@ import type {
 } from 'preact/compat'
 
 import { createComponent } from '../create-component'
+import type { CreateProps } from '../create-props'
 
+/**
+ * Props for the {@link BlockHandlePopover} component.
+ */
+export type BlockHandlePopoverProps = Partial<CreateProps<Props, Events>>
+ 
 export const BlockHandlePopover: ForwardRefExoticComponent<
   Partial<BlockHandlePopoverProps> &
   RefAttributes<BlockHandlePopoverElement> &
@@ -21,5 +29,6 @@ export const BlockHandlePopover: ForwardRefExoticComponent<
 >(
   'prosekit-block-handle-popover',
   'BlockHandlePopover',
-  defaultBlockHandlePopoverProps,
+  Object.keys(blockHandlePopoverProps),
+  Object.keys(blockHandlePopoverEvents),
 )

@@ -22,34 +22,38 @@ export function TableHandle() {
           <div className={Themes.ICON_TABLE_COLUMN_HANDLE}></div>
         </TableHandleColumnTrigger>
         <TableHandlePopoverContent className={Themes.TABLE_HANDLE_MENU}>
-          <TableHandlePopoverItem
-            className={Themes.TABLE_CELL_MENU_ITEM}
-            onSelect={editor.commands.addTableColumnBefore}
-            disabled={!editor.commands.addTableColumnBefore.canExec()}
-          >
-            Insert Left
-          </TableHandlePopoverItem>
-          <TableHandlePopoverItem
-            className={Themes.TABLE_CELL_MENU_ITEM}
-            onSelect={editor.commands.addTableColumnAfter}
-            disabled={!editor.commands.addTableColumnAfter.canExec()}
-          >
-            Insert Right
-          </TableHandlePopoverItem>
-          <TableHandlePopoverItem
-            className={Themes.TABLE_CELL_MENU_ITEM}
-            onSelect={editor.commands.deleteCellSelection}
-            disabled={!editor.commands.deleteCellSelection.canExec()}
-          >
-            Clear Contents
-          </TableHandlePopoverItem>
-          <TableHandlePopoverItem
-            className={Themes.TABLE_CELL_MENU_ITEM}
-            onSelect={editor.commands.deleteTableColumn}
-            disabled={!editor.commands.deleteTableColumn.canExec()}
-          >
-            Delete Column
-          </TableHandlePopoverItem>
+          {editor.commands.addTableColumnBefore.canExec() && (
+            <TableHandlePopoverItem
+              className={Themes.TABLE_CELL_MENU_ITEM}
+              onSelect={editor.commands.addTableColumnBefore}
+            >
+              Insert Left
+            </TableHandlePopoverItem>
+          )}
+          {editor.commands.addTableColumnAfter.canExec() && (
+            <TableHandlePopoverItem
+              className={Themes.TABLE_CELL_MENU_ITEM}
+              onSelect={editor.commands.addTableColumnAfter}
+            >
+              Insert Right
+            </TableHandlePopoverItem>
+          )}
+          {editor.commands.deleteCellSelection.canExec() && (
+            <TableHandlePopoverItem
+              className={Themes.TABLE_CELL_MENU_ITEM}
+              onSelect={editor.commands.deleteCellSelection}
+            >
+              Clear Contents
+            </TableHandlePopoverItem>
+          )}
+          {editor.commands.deleteTableColumn.canExec() && (
+            <TableHandlePopoverItem
+              className={Themes.TABLE_CELL_MENU_ITEM}
+              onSelect={editor.commands.deleteTableColumn}
+            >
+              Delete Column
+            </TableHandlePopoverItem>
+          )}
         </TableHandlePopoverContent>
       </TableHandleColumnRoot>
       <TableHandleRowRoot className={Themes.TABLE_ROW_HANDLE}>
@@ -57,34 +61,38 @@ export function TableHandle() {
           <div className={Themes.ICON_TABLE_ROW_HANDLE}></div>
         </TableHandleRowTrigger>
         <TableHandlePopoverContent className={Themes.TABLE_HANDLE_MENU}>
-          <TableHandlePopoverItem
-            className={Themes.TABLE_CELL_MENU_ITEM}
-            onSelect={editor.commands.addTableRowAbove}
-            disabled={!editor.commands.addTableRowAbove.canExec()}
-          >
-            Insert Above
-          </TableHandlePopoverItem>
-          <TableHandlePopoverItem
-            className={Themes.TABLE_CELL_MENU_ITEM}
-            onSelect={editor.commands.addTableRowBelow}
-            disabled={!editor.commands.addTableRowBelow.canExec()}
-          >
-            Insert Below
-          </TableHandlePopoverItem>
-          <TableHandlePopoverItem
-            className={Themes.TABLE_CELL_MENU_ITEM}
-            onSelect={editor.commands.deleteCellSelection}
-            disabled={!editor.commands.deleteCellSelection.canExec()}
-          >
-            Clear Contents
-          </TableHandlePopoverItem>
-          <TableHandlePopoverItem
-            className={Themes.TABLE_CELL_MENU_ITEM}
-            onSelect={editor.commands.deleteTableRow}
-            disabled={!editor.commands.deleteTableRow.canExec()}
-          >
-            Delete Row
-          </TableHandlePopoverItem>
+          {editor.commands.addTableRowAbove.canExec() && (
+            <TableHandlePopoverItem
+              className={Themes.TABLE_CELL_MENU_ITEM}
+              onSelect={editor.commands.addTableRowAbove}
+            >
+              Insert Above
+            </TableHandlePopoverItem>
+          )}
+          {editor.commands.addTableRowBelow.canExec() && (
+            <TableHandlePopoverItem
+              className={Themes.TABLE_CELL_MENU_ITEM}
+              onSelect={editor.commands.addTableRowBelow}
+            >
+              Insert Below
+            </TableHandlePopoverItem>
+          )}
+          {editor.commands.deleteCellSelection.canExec() && (
+            <TableHandlePopoverItem
+              className={Themes.TABLE_CELL_MENU_ITEM}
+              onSelect={editor.commands.deleteCellSelection}
+            >
+              Clear Contents
+            </TableHandlePopoverItem>
+          )}
+          {editor.commands.deleteTableRow.canExec() && (
+            <TableHandlePopoverItem
+              className={Themes.TABLE_CELL_MENU_ITEM}
+              onSelect={editor.commands.deleteTableRow}
+            >
+              Delete Row
+            </TableHandlePopoverItem>
+          )}
         </TableHandlePopoverContent>
       </TableHandleRowRoot>
     </TableHandleRoot>

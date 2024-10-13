@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useTooltipContent } from "./setup"
+import { tooltipContentEvents, tooltipContentProps, type TooltipContentEvents, type TooltipContentProps } from "./types"
 
-import { defaultTooltipContentProps, type TooltipContentProps } from './props'
-import { useTooltipContent } from './state'
+class TooltipContentElement extends defineCustomElement<
+  TooltipContentProps,
+  TooltipContentEvents
+>({
+  props: tooltipContentProps,
+  events: tooltipContentEvents,
+  setup: useTooltipContent,
+}) {}
 
-class TooltipContentElement extends ElementBuilder<TooltipContentProps>(useTooltipContent, defaultTooltipContentProps) {}
-
-defineCustomElement('prosekit-tooltip-content', TooltipContentElement)
-
+registerCustomElement('prosekit-tooltip-content', TooltipContentElement)
+  
 export { TooltipContentElement }

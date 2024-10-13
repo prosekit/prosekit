@@ -1,12 +1,17 @@
-import { ElementBuilder } from '@aria-ui/core'
+import { defineCustomElement, registerCustomElement } from "@aria-ui/core"
 
-import { defineCustomElement } from '../../../utils/define-custom-element'
+import { useTableHandleColumnTrigger } from "./setup"
+import { tableHandleColumnTriggerEvents, tableHandleColumnTriggerProps, type TableHandleColumnTriggerEvents, type TableHandleColumnTriggerProps } from "./types"
 
-import { defaultTableHandleColumnTriggerProps, type TableHandleColumnTriggerProps } from './props'
-import { useTableHandleColumnTrigger } from './state'
+class TableHandleColumnTriggerElement extends defineCustomElement<
+  TableHandleColumnTriggerProps,
+  TableHandleColumnTriggerEvents
+>({
+  props: tableHandleColumnTriggerProps,
+  events: tableHandleColumnTriggerEvents,
+  setup: useTableHandleColumnTrigger,
+}) {}
 
-class TableHandleColumnTriggerElement extends ElementBuilder<TableHandleColumnTriggerProps>(useTableHandleColumnTrigger, defaultTableHandleColumnTriggerProps) {}
-
-defineCustomElement('prosekit-table-handle-column-trigger', TableHandleColumnTriggerElement)
-
+registerCustomElement('prosekit-table-handle-column-trigger', TableHandleColumnTriggerElement)
+  
 export { TableHandleColumnTriggerElement }

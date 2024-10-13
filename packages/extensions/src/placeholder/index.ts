@@ -5,9 +5,10 @@ import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
 export interface PlaceholderOptions {
   /**
-   * The placeholder text to use.
+   * The placeholder to use. It can be a static string or a function that
+   * receives the current editor state and returns a string.
    */
-  placeholder: string
+  placeholder: string | ((state: EditorState) => string)
 
   /**
    * By default, the placeholder text will be shown whenever the current text
@@ -27,12 +28,15 @@ export function definePlaceholder(options: PlaceholderOptions) {
   return definePlugin(createPlaceholderPlugin(options))
 }
 
-function createPlaceholderPlugin(options: PlaceholderOptions): Plugin {
+function createPlaceholderPlugin({
+  placeholder,
+  strategy = 'block',
+}: PlaceholderOptions): Plugin {
   return new Plugin({
     key: new PluginKey('prosekit-placeholder'),
     props: {
       decorations: (state) => {
-        if (options.strategy === 'doc' && !isDocEmpty(state.doc)) {
+        if (strategy === 'doc' && !isDocEmpty(state.doc)) {
           return null
         }
 
@@ -40,7 +44,8 @@ function createPlaceholderPlugin(options: PlaceholderOptions): Plugin {
           return null
         }
 
-        const placeholderText = options.placeholder
+        const placeholderText =
+          typeof placeholder === 'function' ? placeholder(state) : placeholder
         const deco = createPlaceholderDecoration(state, placeholderText)
         if (!deco) {
           return null

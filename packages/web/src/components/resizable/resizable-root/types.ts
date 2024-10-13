@@ -14,12 +14,10 @@ export const resizableRootProps: PropDeclarations<ResizableRootProps> = {
 
 export interface ResizableRootEvents {
   resizeStart: CustomEvent<{ width: number; height: number }>
-  resize: CustomEvent<{ width: number; height: number }>
   resizeEnd: CustomEvent<{ width: number; height: number }>
 }
 
 export const resizableRootEvents: EventDeclarations<ResizableRootEvents> = {
   resizeStart: {},
-  resize: {},
   resizeEnd: {},
 }

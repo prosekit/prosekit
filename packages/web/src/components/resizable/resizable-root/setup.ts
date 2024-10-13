@@ -37,7 +37,6 @@ export function useResizableRoot(
   const onResize: OnResize = (width, height) => {
     state.width.set(width)
     state.height.set(height)
-    emit('resize', { width, height })
   }
 
   const onResizeEnd: OnResizeEnd = () => {

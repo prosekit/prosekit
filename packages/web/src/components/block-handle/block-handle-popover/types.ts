@@ -31,6 +31,7 @@ export interface BlockHandlePopoverProps
   offset: number
 }
 
+/** @internal */
 export const blockHandlePopoverProps: PropDeclarations<BlockHandlePopoverProps> =
   {
     ...overlayPositionerProps,
@@ -39,7 +40,9 @@ export const blockHandlePopoverProps: PropDeclarations<BlockHandlePopoverProps> 
     offset: { default: 4 },
   }
 
+/** @internal */
 export interface BlockHandlePopoverEvents {}
 
+/** @internal */
 export const blockHandlePopoverEvents: EventDeclarations<BlockHandlePopoverEvents> =
   {}

@@ -22,6 +22,7 @@ export interface TableHandlePopoverContentProps
   editor: Editor | null
 }
 
+/** @internal */
 export const tableHandlePopoverContentProps: PropDeclarations<TableHandlePopoverContentProps> =
   Object.freeze({
     ...menuContentProps,
@@ -32,6 +33,7 @@ export const tableHandlePopoverContentProps: PropDeclarations<TableHandlePopover
 
 export interface TableHandlePopoverContentEvents extends MenuContentEvents {}
 
+/** @internal */
 export const tableHandlePopoverContentEvents: EventDeclarations<TableHandlePopoverContentEvents> =
   Object.freeze({
     ...menuContentEvents,

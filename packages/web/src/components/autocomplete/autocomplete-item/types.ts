@@ -12,6 +12,7 @@ export interface AutocompleteItemProps {
   value: string
 }
 
+/** @internal */
 export const autocompleteItemProps: PropDeclarations<AutocompleteItemProps> = {
   value: {
     default: '',
@@ -20,5 +21,6 @@ export const autocompleteItemProps: PropDeclarations<AutocompleteItemProps> = {
 
 export interface AutocompleteItemEvents extends ListboxItemEvents {}
 
+/** @internal */
 export const autocompleteItemEvents: EventDeclarations<AutocompleteItemEvents> =
   listboxItemEvents

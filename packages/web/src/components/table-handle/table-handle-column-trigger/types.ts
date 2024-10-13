@@ -8,12 +8,15 @@ export interface TableHandleColumnTriggerProps {
   editor: Editor<TableCommandsExtension> | null
 }
 
+/** @internal */
 export const tableHandleColumnTriggerProps: PropDeclarations<TableHandleColumnTriggerProps> =
   {
     editor: { default: null },
   }
 
+/** @internal */
 export interface TableHandleColumnTriggerEvents {}
 
+/** @internal */
 export const tableHandleColumnTriggerEvents: EventDeclarations<TableHandleColumnTriggerEvents> =
   {}

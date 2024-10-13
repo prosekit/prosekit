@@ -17,11 +17,14 @@ export interface ResizableHandleProps {
     | 'bottom-right'
 }
 
+/** @internal */
 export const resizableHandleProps: PropDeclarations<ResizableHandleProps> = {
   position: { default: 'bottom-right' },
 }
 
+/** @internal */
 export interface ResizableHandleEvents {}
 
+/** @internal */
 export const resizableHandleEvents: EventDeclarations<ResizableHandleEvents> =
   {}

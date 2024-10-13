@@ -8,6 +8,7 @@ import {
 
 export interface TableHandlePopoverItemProps extends MenuItemProps {}
 
+/** @internal */
 export const tableHandlePopoverItemProps: PropDeclarations<TableHandlePopoverItemProps> =
   {
     ...menuItemProps,
@@ -15,6 +16,7 @@ export const tableHandlePopoverItemProps: PropDeclarations<TableHandlePopoverIte
 
 export interface TableHandlePopoverItemEvents extends MenuItemEvents {}
 
+/** @internal */
 export const tableHandlePopoverItemEvents: EventDeclarations<TableHandlePopoverItemEvents> =
   {
     ...menuItemEvents,

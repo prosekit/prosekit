@@ -11,10 +11,13 @@ export interface BlockHandleAddProps {
   editor: Editor | null
 }
 
+/** @internal */
 export const blockHandleAddProps: PropDeclarations<BlockHandleAddProps> = {
   editor: { default: null },
 }
 
+/** @internal */
 export interface BlockHandleAddEvents {}
 
+/** @internal */
 export const blockHandleAddEvents: EventDeclarations<BlockHandleAddEvents> = {}

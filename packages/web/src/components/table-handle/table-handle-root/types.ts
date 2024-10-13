@@ -11,11 +11,14 @@ export interface TableHandleRootProps {
   editor: Editor | null
 }
 
+/** @internal */
 export const tableHandleRootProps: PropDeclarations<TableHandleRootProps> = {
   editor: { default: null },
 }
 
+/** @internal */
 export interface TableHandleRootEvents {}
 
+/** @internal */
 export const tableHandleRootEvents: EventDeclarations<TableHandleRootEvents> =
   {}

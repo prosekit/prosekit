@@ -8,6 +8,7 @@ export interface TableHandleRowTriggerProps {
   editor: Editor<TableCommandsExtension> | null
 }
 
+/** @internal */
 export const tableHandleRowTriggerProps: PropDeclarations<TableHandleRowTriggerProps> =
   {
     editor: { default: null },
@@ -17,6 +18,7 @@ export interface TableHandleRowTriggerEvents {
   select: CustomEvent<void>
 }
 
+/** @internal */
 export const tableHandleRowTriggerEvents: EventDeclarations<TableHandleRowTriggerEvents> =
   {
     select: {},

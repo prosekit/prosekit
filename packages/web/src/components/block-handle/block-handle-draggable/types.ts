@@ -11,12 +11,15 @@ export interface BlockHandleDraggableProps {
   editor: Editor | null
 }
 
+/** @internal */
 export const blockHandleDraggableProps: PropDeclarations<BlockHandleDraggableProps> =
   {
     editor: { default: null },
   }
 
+/** @internal */
 export interface BlockHandleDraggableEvents {}
 
+/** @internal */
 export const blockHandleDraggableEvents: EventDeclarations<BlockHandleDraggableEvents> =
   {}

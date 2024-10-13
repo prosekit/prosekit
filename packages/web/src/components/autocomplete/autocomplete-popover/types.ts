@@ -76,6 +76,7 @@ export interface AutocompletePopoverProps extends OverlayPositionerProps {
 const body = typeof document !== 'undefined' && document.querySelector('body')
 const defaultBoundary = body || 'clippingAncestors'
 
+/** @internal */
 export const autocompletePopoverProps = {
   ...overlayPositionerProps,
   editor: { default: null },
@@ -93,5 +94,6 @@ export const autocompletePopoverProps = {
 
 export interface AutocompletePopoverEvents extends OverlayPositionerEvents {}
 
+/** @internal */
 export const autocompletePopoverEvents: EventDeclarations<AutocompletePopoverEvents> =
   overlayPositionerEvents

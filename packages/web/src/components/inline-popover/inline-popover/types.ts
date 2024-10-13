@@ -93,6 +93,7 @@ export interface InlinePopoverProps
   hoist: OverlayPositionerProps['hoist']
 }
 
+/** @internal */
 export const inlinePopoverProps: PropDeclarations<InlinePopoverProps> =
   Object.freeze({
     ...overlayPositionerProps,
@@ -115,7 +116,9 @@ export const inlinePopoverProps: PropDeclarations<InlinePopoverProps> =
     boundary: { default: [] },
   })
 
+/** @internal */
 export interface InlinePopoverEvents extends OverlayPositionerEvents {}
 
+/** @internal */
 export const inlinePopoverEvents: EventDeclarations<InlinePopoverEvents> =
   overlayPositionerEvents

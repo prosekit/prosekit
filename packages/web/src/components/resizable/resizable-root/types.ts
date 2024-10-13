@@ -6,6 +6,7 @@ export interface ResizableRootProps {
   aspectRatio: number | null
 }
 
+/** @internal */
 export const resizableRootProps: PropDeclarations<ResizableRootProps> = {
   width: { default: null },
   height: { default: null },
@@ -17,6 +18,7 @@ export interface ResizableRootEvents {
   resizeEnd: CustomEvent<{ width: number; height: number }>
 }
 
+/** @internal */
 export const resizableRootEvents: EventDeclarations<ResizableRootEvents> = {
   resizeStart: {},
   resizeEnd: {},

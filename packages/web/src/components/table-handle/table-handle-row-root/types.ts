@@ -25,6 +25,7 @@ export interface TableHandleRowRootProps
   placement: Placement
 }
 
+/** @internal */
 export const tableHandleRowRootProps: PropDeclarations<TableHandleRowRootProps> =
   {
     ...overlayPositionerProps,
@@ -32,7 +33,9 @@ export const tableHandleRowRootProps: PropDeclarations<TableHandleRowRootProps> 
     placement: { default: 'left' },
   }
 
+/** @internal */
 export interface TableHandleRowRootEvents extends OverlayPositionerEvents {}
 
+/** @internal */
 export const tableHandleRowRootEvents: EventDeclarations<TableHandleRowRootEvents> =
   {}

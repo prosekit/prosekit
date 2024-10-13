@@ -26,6 +26,7 @@ export interface TableHandleColumnRootProps
   placement: Placement
 }
 
+/** @internal */
 export const tableHandleColumnRootProps: PropDeclarations<TableHandleColumnRootProps> =
   Object.freeze({
     ...overlayPositionerProps,
@@ -33,7 +34,9 @@ export const tableHandleColumnRootProps: PropDeclarations<TableHandleColumnRootP
     placement: { default: 'top' },
   })
 
+/** @internal */
 export interface TableHandleColumnRootEvents extends OverlayPositionerEvents {}
 
+/** @internal */
 export const tableHandleColumnRootEvents: EventDeclarations<TableHandleColumnRootEvents> =
   overlayPositionerEvents

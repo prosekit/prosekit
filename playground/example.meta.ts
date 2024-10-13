@@ -385,6 +385,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-placeholder",
+      "framework": "react",
+      "story": "placeholder",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-readonly",
       "framework": "react",
       "story": "readonly",
@@ -1044,6 +1059,14 @@ export const exampleMeta = {
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "inline-menu.vue",
+          "hidden": false
+        },
+        {
+          "path": "button.vue",
           "hidden": false
         }
       ]

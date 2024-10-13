@@ -85,12 +85,12 @@ import 'prosekit/basic/style.css'
 ```
 
 ```ts twoslash
-import 'prosekit/basic/typograph.css'
+import 'prosekit/basic/typography.css'
 ```
 
 The `prosekit/basic/style.css` file provides essential styles to ensure the editor displays correctly.
 
-The `prosekit/basic/typograph.css` file offers basic typographic styles for the editor, like margins, paddings, and font sizes. This is optional, and you can exclude it if you wish to use your own styles.
+The `prosekit/basic/typography.css` file offers basic typography styles for the editor, like margins, paddings, and font sizes. This is optional, and you can exclude it if you wish to use your own styles.
 
 <!-- References -->
 

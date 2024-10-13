@@ -17,6 +17,7 @@ export const loaders = {
   'list': lazy(() => import('./list/editor')),
   'loro': lazy(() => import('./loro/editor')),
   'mark-rule': lazy(() => import('./mark-rule/editor')),
+  'placeholder': lazy(() => import('./placeholder/editor')),
   'readonly': lazy(() => import('./readonly/editor')),
   'resizable-image': lazy(() => import('./resizable-image/editor')),
   'save-html': lazy(() => import('./save-html/editor')),

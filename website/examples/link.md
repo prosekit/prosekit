@@ -13,6 +13,8 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 <<< @/../playground/examples/vue/link/editor.vue
 <<< @/../playground/examples/vue/link/extension.ts
+<<< @/../playground/examples/vue/link/inline-menu.vue
+<<< @/../playground/examples/vue/link/button.vue
 
 :::
 

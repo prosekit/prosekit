@@ -197,6 +197,14 @@ examples:
         hidden: false
       - path: issue-link.ts
         hidden: false
+  - name: react-placeholder
+    framework: react
+    story: placeholder
+    files:
+      - path: editor.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
   - name: react-readonly
     framework: react
     story: readonly
@@ -542,6 +550,10 @@ examples:
       - path: editor.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: inline-menu.vue
+        hidden: false
+      - path: button.vue
         hidden: false
   - name: vue-list
     framework: vue

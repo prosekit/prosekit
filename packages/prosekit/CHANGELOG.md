@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.9.24
+
+### Patch Changes
+
+- [`aa4b63d`](https://github.com/ocavue/prosekit/commit/aa4b63d2d26e17efbeb38924f2d42cee6b12dfc2) ![](https://prosekit.dev/b/extensions)
+
+  `definePlaceholder` now accepts a function that receives the current editor state to output a dynamic placeholder.
+
 ## 0.9.23
 
 ### Patch Changes
@@ -948,7 +956,7 @@
 
   ```js
   import 'prosekit/basic/style.css'
-  import 'prosekit/basic/typograph.css'
+  import 'prosekit/basic/typography.css'
   ```
 
 ### Patch Changes

@@ -4,4 +4,9 @@
     "composite": true,
   },
   "include": ["./**/*.ts", "./**/*.vue", "./shims-vue.d.ts"],
+  "references": [
+    {
+      "path": "../../components/vue"
+    }
+  ]
 }

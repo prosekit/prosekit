@@ -5,9 +5,4 @@
     "jsx": "react-jsx",
   },
   "include": ["./" ],
-  "references": [
-    {
-      "path": "../../components/react"
-    }
-  ]
 }

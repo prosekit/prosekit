@@ -1,7 +1,8 @@
+import { Themes } from '@prosekit/themes'
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
+import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 import type { SolidNodeViewProps } from 'prosekit/solid'
-
-import LanguageSelector from './language-selector'
+import { For } from 'solid-js'
 
 export default function CodeBlockView(props: SolidNodeViewProps) {
   const attrs = props.node.attrs as CodeBlockAttrs
@@ -14,7 +15,18 @@ export default function CodeBlockView(props: SolidNodeViewProps) {
 
   return (
     <>
-      <LanguageSelector language={language} setLanguage={setLanguage} />
+      <div class={Themes.LANGUAGE_WRAPPER} contentEditable={false}>
+        <select
+          class={Themes.LANGUAGE_SELECT}
+          onChange={(event) => setLanguage(event.target.value)}
+          value={language || ''}
+        >
+          <option value="">Plain Text</option>
+          <For each={shikiBundledLanguagesInfo}>
+            {(info) => <option value={info.id}>{info.name}</option>}
+          </For>
+        </select>
+      </div>
       <pre ref={props.contentRef} data-language={language}></pre>
     </>
   )

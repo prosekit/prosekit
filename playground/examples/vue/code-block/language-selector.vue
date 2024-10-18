@@ -1,1 +1,0 @@
-../../../components/vue/language-selector.vue

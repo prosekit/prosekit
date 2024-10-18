@@ -20,8 +20,6 @@ const frameworkSharedFiles = [
   'use-readonly.ts',
   'use-submit-keymap.ts',
 
-  'image-upload-popover.tsx',
-  'image-upload-popover.vue',
 
   'language-selector.tsx',
   'language-selector.vue',

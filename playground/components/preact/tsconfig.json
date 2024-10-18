@@ -8,9 +8,4 @@
   "include": [
     "./"
   ],
-  "references": [
-    {
-      "path": "../../components/preact",
-    },
-  ],
 }

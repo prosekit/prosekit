@@ -9,6 +9,7 @@ import { useState, type FC, type ReactNode } from 'react'
 
 import Button from './button'
 import type { EditorExtension } from './extension'
+ 
 
 export const ImageUploadPopover: FC<{
   tooltip: string

@@ -21,7 +21,6 @@ const frameworkSharedFiles = [
   'use-submit-keymap.ts',
 
   'button.vue',
-  'button.tsx',
   'button.svelte',
 
   'block-handle.tsx',

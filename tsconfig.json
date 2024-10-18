@@ -73,6 +73,9 @@
       "path": "packages/web/tsconfig.json",
     },
     {
+      "path": "playground/components/react/tsconfig.json",
+    },
+    {
       "path": "playground/examples/lit/tsconfig.json",
     },
     {

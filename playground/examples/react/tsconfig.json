@@ -4,10 +4,10 @@
     "composite": true,
     "jsx": "react-jsx",
   },
-  "include": ["./" ],
+  "include": ["./"],
   "references": [
     {
-      "path": "../../components/react"
-    }
-  ]
+      "path": "../../components/react",
+    },
+  ],
 }

@@ -82,6 +82,12 @@
       "path": "playground/components/solid/tsconfig.json",
     },
     {
+      "path": "playground/components/svelte/tsconfig.json",
+    },
+    {
+      "path": "playground/components/vue/tsconfig.json",
+    },
+    {
       "path": "playground/examples/lit/tsconfig.json",
     },
     {

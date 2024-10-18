@@ -5,9 +5,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
   },
-  "include": [
-    "./"
-  ],
+  "include": ["./"],
   "references": [
     {
       "path": "../../components/preact",

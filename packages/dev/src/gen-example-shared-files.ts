@@ -20,7 +20,6 @@ const frameworkSharedFiles = [
   'use-readonly.ts',
   'use-submit-keymap.ts',
 
-  'button.vue',
   'button.svelte',
 
   'block-handle.tsx',

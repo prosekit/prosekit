@@ -20,9 +20,6 @@ const frameworkSharedFiles = [
   'use-readonly.ts',
   'use-submit-keymap.ts',
 
-  'language-selector.tsx',
-  'language-selector.vue',
-
   'code-block-view.tsx',
   'code-block-view.vue',
 

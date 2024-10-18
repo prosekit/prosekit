@@ -5,10 +5,10 @@
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
   },
-  "include": ["./"], 
+  "include": ["./"],
   "references": [
     {
-      "path": "../../components/solid"
-    }
-  ]
+      "path": "../../components/solid",
+    },
+  ],
 }

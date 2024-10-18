@@ -18,7 +18,6 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/react/full/code-block-view.tsx
 <<< @/../playground/examples/react/full/image-upload-popover.tsx
 <<< @/../playground/examples/react/full/inline-menu.tsx
-<<< @/../playground/examples/react/full/language-selector.tsx
 <<< @/../playground/examples/react/full/slash-menu.tsx
 <<< @/../playground/examples/react/full/tag-data.ts
 <<< @/../playground/examples/react/full/tag-menu.tsx
@@ -41,7 +40,6 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/vue/full/code-block-view.vue
 <<< @/../playground/examples/vue/full/image-upload-popover.vue
 <<< @/../playground/examples/vue/full/inline-menu.vue
-<<< @/../playground/examples/vue/full/language-selector.vue
 <<< @/../playground/examples/vue/full/slash-menu.vue
 <<< @/../playground/examples/vue/full/tag-data.ts
 <<< @/../playground/examples/vue/full/tag-menu.vue
@@ -64,7 +62,6 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/svelte/full/code-block-view.svelte
 <<< @/../playground/examples/svelte/full/image-upload-popover.svelte
 <<< @/../playground/examples/svelte/full/inline-menu.svelte
-<<< @/../playground/examples/svelte/full/language-selector.svelte
 <<< @/../playground/examples/svelte/full/slash-menu.svelte
 <<< @/../playground/examples/svelte/full/tag-data.ts
 <<< @/../playground/examples/svelte/full/tag-menu.svelte

@@ -7,4 +7,9 @@
     "declarationMap": false,
   },
   "include": ["./**/*.ts", "./**/*.svelte"],
+  "references": [
+    {
+      "path": "../../components/svelte",
+    },
+  ],
 }

@@ -73,6 +73,21 @@
       "path": "packages/web/tsconfig.json",
     },
     {
+      "path": "playground/components/preact/tsconfig.json",
+    },
+    {
+      "path": "playground/components/react/tsconfig.json",
+    },
+    {
+      "path": "playground/components/solid/tsconfig.json",
+    },
+    {
+      "path": "playground/components/svelte/tsconfig.json",
+    },
+    {
+      "path": "playground/components/vue/tsconfig.json",
+    },
+    {
       "path": "playground/examples/lit/tsconfig.json",
     },
     {

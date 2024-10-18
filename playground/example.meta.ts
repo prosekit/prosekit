@@ -105,10 +105,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "language-selector.tsx",
-          "hidden": false
-        },
-        {
           "path": "button.tsx",
           "hidden": false
         }
@@ -172,10 +168,6 @@ export const exampleMeta = {
         },
         {
           "path": "inline-menu.tsx",
-          "hidden": false
-        },
-        {
-          "path": "language-selector.tsx",
           "hidden": false
         },
         {
@@ -834,10 +826,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "language-selector.vue",
-          "hidden": false
-        },
-        {
           "path": "button.vue",
           "hidden": false
         }
@@ -920,10 +908,6 @@ export const exampleMeta = {
         },
         {
           "path": "inline-menu.vue",
-          "hidden": false
-        },
-        {
-          "path": "language-selector.vue",
           "hidden": false
         },
         {
@@ -1647,10 +1631,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "language-selector.svelte",
-          "hidden": false
-        },
-        {
           "path": "button.svelte",
           "hidden": false
         }
@@ -1752,10 +1732,6 @@ export const exampleMeta = {
         },
         {
           "path": "inline-menu.svelte",
-          "hidden": false
-        },
-        {
-          "path": "language-selector.svelte",
           "hidden": false
         },
         {
@@ -2032,10 +2008,6 @@ export const exampleMeta = {
         },
         {
           "path": "default-doc.ts",
-          "hidden": false
-        },
-        {
-          "path": "language-selector.tsx",
           "hidden": false
         },
         {

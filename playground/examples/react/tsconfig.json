@@ -2,8 +2,12 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-
     "jsx": "react-jsx",
   },
-  "include": ["./", "../../stories/example.stories.ts"],
+  "include": ["./"],
+  "references": [
+    {
+      "path": "../../components/react",
+    },
+  ],
 }

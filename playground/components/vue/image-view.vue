@@ -41,12 +41,14 @@ watchEffect((onCleanup) => {
         }
         error.value = 'Unexpected upload result'
       }
+      UploadTask.delete(uploadTask.objectURL)
     })
     .catch((error) => {
       if (abortController.signal.aborted) {
         return
       }
       error.value = String(error)
+      UploadTask.delete(uploadTask.objectURL)
     })
   const unsubscribe = uploadTask.subscribeProgress(({ loaded, total }) => {
     if (abortController.signal.aborted) {

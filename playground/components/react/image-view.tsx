@@ -39,12 +39,14 @@ export default function ImageView(props: ReactNodeViewProps) {
           }
           setError('Unexpected upload result')
         }
+        UploadTask.delete(uploadTask.objectURL)
       })
       .catch((error) => {
         if (abortController.signal.aborted) {
           return
         }
         setError(String(error))
+        UploadTask.delete(uploadTask.objectURL)
       })
     const unsubscribe = uploadTask.subscribeProgress(({ loaded, total }) => {
       if (abortController.signal.aborted) {

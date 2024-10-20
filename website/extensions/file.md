@@ -1,14 +1,16 @@
 # File
 
-A set of APIs for handling file pasting, dropping and uploading in the editor.
+Handle file pasting, dropping and uploading in the editor.
 
 <!-- @include: @/examples/image-view.md -->
 
 ## Usage
 
-It's common to upload files to a remote server when pasting or dropping files into the editor.
+It's common to upload files to a remote server when pasting or dropping files into the editor. Here are two approaches to implement this functionality:
 
-The easiest way is update the document after uploading the file to a remote server and getting the file URL. Here's an example to handle image files:
+### Basic Approach: Update After Upload
+
+The simplest method is to update the document after uploading the file and receiving the file URL:
 
 ```ts twoslash
 function myUploader(file: File): Promise<string> {
@@ -53,9 +55,11 @@ const imageDropExtension = defineFileDropHandler(({ view, file, pos }) => {
 })
 ```
 
-However, images won't be displayed until the upload is complete, this is especially annoying when the upload is slow. To improve the user experience, you can insert an image right away and update the image URL after uploading is complete. ProseKit provides a `UploadTask` class to make it easier.
+### Advanced Approach: Immediate Display with UploadTask
 
-First, create an `UploadTask` instance when the paste or drop event is triggered:
+To improve user experience, especially with slow uploads, you can insert the node immediately and update it once the upload is complete:
+
+First, create an `UploadTask` instance on paste or drop:
 
 ::: code-group
 
@@ -63,7 +67,7 @@ First, create an `UploadTask` instance when the paste or drop event is triggered
 
 :::
 
-Then, in the node view that renders the image, wait for the `UploadTask` instance to complete and update the image URL:
+Then, use the `UploadTask` in your node view. When the upload is complete, update the node's `attrs` with the new file URL:
 
 <!-- @include: @/example-code-blocks/image-view/image-view.md -->
 

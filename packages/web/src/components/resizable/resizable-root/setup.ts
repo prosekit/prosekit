@@ -1,5 +1,6 @@
 import {
   createSignal,
+  useAttribute,
   useEffect,
   type ConnectableElement,
   type SetupOptions,
@@ -21,6 +22,8 @@ export function useResizableRoot(
   host: ConnectableElement,
   { state, emit }: SetupOptions<ResizableRootProps, ResizableRootEvents>,
 ): void {
+  const resizing = createSignal(false)
+
   const onResizeStart: OnResizeStart = () => {
     const { width, height } = host.getBoundingClientRect()
 
@@ -31,6 +34,7 @@ export function useResizableRoot(
     }
 
     emit('resizeStart', { width, height })
+    resizing.set(true)
     return [width, height, aspectRatio]
   }
 
@@ -42,6 +46,7 @@ export function useResizableRoot(
   const onResizeEnd: OnResizeEnd = () => {
     const { width, height } = host.getBoundingClientRect()
     emit('resizeEnd', { width, height })
+    resizing.set(false)
   }
 
   onResizeStartContext.provide(host, createSignal(onResizeStart))
@@ -56,6 +61,8 @@ export function useResizableRoot(
       state.aspectRatio.get(),
     )
   })
+
+  useAttribute(host, 'data-resizing', () => (resizing.get() ? '' : undefined))
 }
 
 function updateResizableRootStyles(

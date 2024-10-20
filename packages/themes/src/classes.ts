@@ -10,7 +10,7 @@ function cn(...args: Array<string | undefined | null | false>): string {
 }
 
 // For those elements that need to toggle visibility based on the `data-state`
-// attribute, we hide them by default. This ensures that they don't get
+// attribute, we hide them by default. This ensures that they do not get
 // displayed before SSR hydration is complete.
 const DEFAULT_HIDDEN = '[&:not([data-state])]:hidden'
 
@@ -168,14 +168,17 @@ export const IMAGE_UPLOAD_BUTTON = cn(
   'w-full',
 )
 
-export const IMAGE_RESIZEALE = cn('relative block max-h-[600px] max-w-full')
+export const IMAGE_RESIZEALE = cn(
+  'relative block max-h-[600px] max-w-full group box-border',
+  'outline-2 outline-transparent data-[selected]:outline-blue-500 outline-solid',
+)
 
-export const IMAGE_RESIZEALE_IMAGE = cn('h-full w-full object-contain')
+export const IMAGE_RESIZEALE_IMAGE = cn('h-full w-full object-cover')
 
 export const IMAGE_RESIZEALE_HANDLE = cn(
-  'absolute bottom-0 right-0 rounded mb-1.5 mr-1.5 p-0.5 transition bg-gray-900/30 active:bg-gray-800/60 text-white/50 active:text-white/80 active:translate-x-0.5 active:translate-y-0.5',
+  'absolute bottom-0 right-0 rounded m-1.5 p-1 transition bg-gray-900/30 active:bg-gray-800/60 text-white/50 active:text-white/80 active:translate-x-0.5 active:translate-y-0.5',
   // Only visible when hovering the image block
-  'opacity-0 hover:opacity-100 [prosekit-resizable:hover_&]:opacity-100 [prosekit-resizable[data-resizing]_&]:opacity-100',
+  'opacity-0 hover:opacity-100 group-hover:opacity-100 group-[[data-resizing]]:opacity-100',
 )
 
 export const DROP_CURSOR = cn('transition-all bg-blue-500')

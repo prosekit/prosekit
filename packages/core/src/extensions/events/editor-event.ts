@@ -76,7 +76,7 @@ export type DropHandler = (
 ) => boolean | void
 export type ScrollToSelectionHandler = (view: EditorView) => boolean
 
-function defineEventFacetPayload(payload: EditorEventEntries): PlainExtension {
+function defineEventFacetPayload(payload: EditorEventPayload): PlainExtension {
   return defineFacetPayload(editorEventFacet, [payload]) as PlainExtension
 }
 
@@ -206,12 +206,15 @@ interface EditorEventMap {
   scrollToSelection: ScrollToSelectionHandler
 }
 
-type EditorEventEntries = ObjectEntries<EditorEventMap>
+/**
+ * @internal
+ */
+export type EditorEventPayload = ObjectEntries<EditorEventMap>
 
 /**
  * @internal
  */
-const editorEventFacet = defineFacet<EditorEventEntries, PluginPayload>({
+export const editorEventFacet = defineFacet<EditorEventPayload, PluginPayload>({
   reduce: () => {
     const [update, plugin] = setupEditorEventPlugin()
 
@@ -239,7 +242,7 @@ function setupEditorEventPlugin() {
   const [setDropHandlers, handleDrop] = combineEventHandlers<DropHandler>()
   const [setScrollToSelectionHandlers, handleScrollToSelection] = combineEventHandlers<ScrollToSelectionHandler>()
 
-  const update = (entries: EditorEventEntries[]) => {
+  const update = (entries: EditorEventPayload[]) => {
     const map = groupEntries<EditorEventMap>(entries)
 
     setKeyDownHandlers(map.keyDown ?? [])

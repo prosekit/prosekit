@@ -59,10 +59,10 @@ var THEMES = {
   IMAGE_UPLOAD_BUTTON:
     "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-neutral-900 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 dark:focus-visible:ring-zinc-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-zinc-900 dark:bg-zinc-50 text-zinc-50 dark:text-zinc-900 hover:bg-zinc-900/90 dark:hover:bg-zinc-50/90 h-10 px-4 py-2 w-full",
   IMAGE_RESIZEALE:
-    "relative block max-h-[600px] max-w-full min-h-[36px] min-w-[36px] group box-border outline-2 outline-transparent data-[selected]:outline-blue-500 outline-solid",
-  IMAGE_RESIZEALE_IMAGE: "h-full w-full object-cover",
+    "relative flex items-center justify-center max-h-[600px] max-w-full min-h-[64px] min-w-[64px] group box-border overflow-hidden w-full outline-2 outline-transparent data-[selected]:outline-blue-500 outline-solid",
+  IMAGE_RESIZEALE_IMAGE: "h-full w-full max-w-full max-h-full object-contain",
   IMAGE_RESIZEALE_HANDLE:
-    "absolute bottom-0 right-0 rounded m-1.5 p-1 transition bg-gray-900/30 active:bg-gray-800/60 text-white/50 active:text-white/80 active:translate-x-0.5 active:translate-y-0.5 opacity-0 hover:opacity-100 group-hover:opacity-100 group-[[data-resizing]]:opacity-100",
+    "absolute bottom-0 right-0 rounded m-1.5 p-1 transition bg-gray-900/30 active:bg-gray-800/60 hover:bg-gray-800/60 text-white/50 active:text-white/80 active:translate-x-0.5 active:translate-y-0.5 opacity-0 hover:opacity-100 group-hover:opacity-100 group-[[data-resizing]]:opacity-100",
   DROP_CURSOR: "transition-all bg-blue-500",
   BLOCK_HANDLE_POPOVER:
     "flex items-center flex-row box-border justify-center transition py-2 [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",

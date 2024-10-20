@@ -65,13 +65,17 @@ const tmpfilesUploader: Uploader<string> = ({
 export function defineImageFileHandlers() {
   return union(
     defineFilePasteHandler(({ view, file }) => {
+      // Only handle image files
       if (!file.type.startsWith('image/')) {
         return false
       }
+
+      // Upload the image to https://tmpfiles.org/
       const uploadTask = new UploadTask({
         file,
         uploader: tmpfilesUploader,
       })
+
       // Insert the image node at the current text selection position
       const command = insertNode({
         type: 'image',
@@ -80,13 +84,17 @@ export function defineImageFileHandlers() {
       return command(view.state, view.dispatch, view)
     }),
     defineFileDropHandler(({ view, file, pos }) => {
+      // Only handle image files
       if (!file.type.startsWith('image/')) {
         return false
       }
+
+      // Upload the image to https://tmpfiles.org/
       const uploadTask = new UploadTask({
         file,
         uploader: tmpfilesUploader,
       })
+
       // Insert the image node at the drop position
       const command = insertNode({
         type: 'image',

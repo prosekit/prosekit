@@ -132,6 +132,7 @@ export default defineConfig({
           items: [
             { text: 'Commit', link: '/extensions/commit' },
             { text: 'Drop Cursor', link: '/extensions/drop-cursor' },
+            { text: 'File', link: '/extensions/file' },
             { text: 'Gap Cursor', link: '/extensions/gap-cursor' },
             { text: 'Input Rule', link: '/extensions/input-rule' },
             { text: 'Loro', link: '/extensions/loro' },

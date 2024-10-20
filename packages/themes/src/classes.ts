@@ -169,7 +169,7 @@ export const IMAGE_UPLOAD_BUTTON = cn(
 )
 
 export const IMAGE_RESIZEALE = cn(
-  'relative block max-h-[600px] max-w-full group box-border',
+  'relative block max-h-[600px] max-w-full min-h-[36px] min-w-[36px] group box-border',
   'outline-2 outline-transparent data-[selected]:outline-blue-500 outline-solid',
 )
 

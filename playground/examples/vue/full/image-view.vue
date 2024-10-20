@@ -1,0 +1,1 @@
+../../../components/vue/image-view.vue

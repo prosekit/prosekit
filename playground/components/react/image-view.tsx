@@ -1,5 +1,4 @@
 import { Themes } from '@prosekit/themes'
-import { clsx } from 'prosekit/core'
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { ReactNodeViewProps } from 'prosekit/react'

@@ -1,5 +1,25 @@
 # prosekit
 
+## 0.10.1
+
+### Patch Changes
+
+- [`c6bee14`](https://github.com/ocavue/prosekit/commit/c6bee140c0c3582f6941cf489c47271fb28bc4d7) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/core)
+
+  Add `width` and `height` attributes to image node. This makes it easier to render resizable images.
+
+- [`b5c0225`](https://github.com/ocavue/prosekit/commit/b5c022531ea9463e50df90e8a471c8e77a9355e6) ![](https://prosekit.dev/b/extensions)
+
+  Add a new `prosekit/extensions/file` module to handle files in the editor:
+
+  - `defineFilePasteHandler`: Handle files pasted into the editor
+  - `defineFileDropHandler`: Handle files dropped into the editor
+  - `UploadTask`: Manage file uploads
+
+- [`c6bee14`](https://github.com/ocavue/prosekit/commit/c6bee140c0c3582f6941cf489c47271fb28bc4d7) ![](https://prosekit.dev/b/web)
+
+  Improve resizable algorithm.
+
 ## 0.10.0
 
 ### Minor Changes
@@ -19,14 +39,18 @@
   ```tsx
   // Previous code example
   <ResizableRoot
-    onSizeChangeEnd={(size) => { handle(size.width, size.height) }} 
+    onSizeChangeEnd={(size) => {
+      handle(size.width, size.height)
+    }}
   />
   ```
 
   ```tsx
   // Updated code example
   <ResizableRoot
-    onResizeEnd={(event) => { handle(event.size.width, event.size.height) }} 
+    onResizeEnd={(event) => {
+      handle(event.size.width, event.size.height)
+    }}
   />
   ```
 

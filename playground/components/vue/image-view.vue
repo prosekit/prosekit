@@ -15,9 +15,17 @@ const aspectRatio = ref<number | undefined>()
 
 function handleImageLoad(event: Event) {
   const img = event.target as HTMLImageElement
-  const ratio = img.naturalWidth / img.naturalHeight
+  const { naturalWidth, naturalHeight } = img
+  const ratio = naturalWidth / naturalHeight
   if (ratio && Number.isFinite(ratio)) {
     aspectRatio.value = ratio
+  }
+  if (
+    naturalWidth &&
+    naturalHeight &&
+    (!attrs.value.width || !attrs.value.height)
+  ) {
+    setAttrs({ width: naturalWidth, height: naturalHeight })
   }
 }
 </script>
@@ -27,7 +35,7 @@ function handleImageLoad(event: Event) {
     :width="attrs.width ?? undefined"
     :height="attrs.height ?? undefined"
     :aspect-ratio="aspectRatio"
-    :data-selected="props.selected ? '' : undefined"
+    :data-selected="props.selected.value ? '' : undefined"
     :class="Themes.IMAGE_RESIZEALE"
     @resize-end="(event) => setAttrs(event.detail)"
   >

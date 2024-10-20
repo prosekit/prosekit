@@ -56,8 +56,8 @@ export function useResizableRoot(
   useEffect(host, () => {
     updateResizableRootStyles(
       host,
-      state.width.get(),
-      state.height.get(),
+      Math.max(state.width.get() || 0, 1),
+      Math.max(state.height.get() || 0, 1),
       state.aspectRatio.get(),
     )
   })
@@ -67,8 +67,8 @@ export function useResizableRoot(
 
 function updateResizableRootStyles(
   host: ConnectableElement,
-  width: number | null,
-  height: number | null,
+  width: number,
+  height: number,
   aspectRatio: number | null,
 ) {
   host.style.width = isFinitePositiveNumber(width) ? `${width}px` : ''
@@ -81,7 +81,7 @@ function updateResizableRootStyles(
     if (width && width > 0 && aspectRatio >= 1) {
       host.style.height = 'auto'
     } else if (height && height > 0 && aspectRatio <= 1) {
-      host.style.width = 'auto'
+      host.style.width = 'min-content'
     }
   }
 }

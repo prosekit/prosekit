@@ -169,14 +169,19 @@ export const IMAGE_UPLOAD_BUTTON = cn(
 )
 
 export const IMAGE_RESIZEALE = cn(
-  'relative block max-h-[600px] max-w-full min-h-[36px] min-w-[36px] group box-border',
+  'relative flex items-center justify-center max-h-[600px] max-w-full min-h-[64px] min-w-[64px] group box-border overflow-hidden',
+  'w-full',
   'outline-2 outline-transparent data-[selected]:outline-blue-500 outline-solid',
 )
 
-export const IMAGE_RESIZEALE_IMAGE = cn('h-full w-full object-cover')
+export const IMAGE_RESIZEALE_IMAGE = cn(
+  'h-full w-full max-w-full max-h-full object-contain',
+)
 
 export const IMAGE_RESIZEALE_HANDLE = cn(
-  'absolute bottom-0 right-0 rounded m-1.5 p-1 transition bg-gray-900/30 active:bg-gray-800/60 text-white/50 active:text-white/80 active:translate-x-0.5 active:translate-y-0.5',
+  'absolute bottom-0 right-0 rounded m-1.5 p-1 transition',
+  'bg-gray-900/30 active:bg-gray-800/60 hover:bg-gray-800/60 text-white/50 active:text-white/80',
+  'active:translate-x-0.5 active:translate-y-0.5',
   // Only visible when hovering the image block
   'opacity-0 hover:opacity-100 group-hover:opacity-100 group-[[data-resizing]]:opacity-100',
 )

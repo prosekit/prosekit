@@ -87,7 +87,7 @@ div.ProseMirror {
 
   & img,
   & video {
-    margin: 0.4em 0;
+    margin: 0;
     width: min-content;
     max-width: 100%;
   }

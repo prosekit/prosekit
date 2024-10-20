@@ -23,31 +23,33 @@ import {
 } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { Command } from 'prosekit/pm/state'
+import type { EditorView } from 'prosekit/pm/view'
+
+async function handleFile(view: EditorView, file: File, pos?: number) {
+  // Upload the file to a remote server and get the URL
+  const url: string = await myUploader(file)
+
+  // Attributes for the image node
+  const attrs: ImageAttrs = { src: url }
+
+  // For paste, insert the image node at current text cursor position.
+  // For drop, insert the image node at the drop position.
+  const command: Command = pos
+    ? insertNode({ type: 'image', attrs, pos })
+    : insertNode({ type: 'image', attrs })
+  return command(view.state, view.dispatch, view)
+}
 
 const imagePasteExtension = defineFilePasteHandler(({ view, file }) => {
-  // Only handle image files
   if (!file.type.startsWith('image/')) return false
-
-  // Upload the file to a remote server and get the URL
-  const url: string = await myUploader(file)
-
-  // Insert the image into current text cursor position
-  const attrs: ImageAttrs = { src: url }
-  const command: Command = insertNode({ type: 'image', attrs })
-  return command(view.state, view.dispatch, view)
+  void handleFile(view, file)
+  return true
 })
 
-const imageDropExtension = defineFileDropHandler(({ view, files }, pos) => {
-  // Only handle image files
+const imageDropExtension = defineFileDropHandler(({ view, file, pos }) => {
   if (!file.type.startsWith('image/')) return false
-
-  // Upload the file to a remote server and get the URL
-  const url: string = await myUploader(file)
-
-  // Insert the image into drop position
-  const attrs: ImageAttrs = { src: url }
-  const command: Command = insertNode({ type: 'image', attrs }, pos)
-  return command(view.state, view.dispatch, view)
+  void handleFile(view, file, pos)
+  return true
 })
 ```
 

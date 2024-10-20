@@ -141,6 +141,8 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: default-doc.ts
+        hidden: false
       - path: image-view.tsx
         hidden: false
   - name: react-inline-menu
@@ -508,6 +510,8 @@ examples:
       - path: editor.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: default-doc.ts
         hidden: false
       - path: image-view.vue
         hidden: false

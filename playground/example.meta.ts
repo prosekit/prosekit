@@ -275,6 +275,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "default-doc.ts",
+          "hidden": false
+        },
+        {
           "path": "image-view.tsx",
           "hidden": false
         }
@@ -978,6 +982,10 @@ export const exampleMeta = {
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "default-doc.ts",
           "hidden": false
         },
         {

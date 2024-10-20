@@ -13,6 +13,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 <<< @/../playground/examples/react/image-view/editor.tsx
 <<< @/../playground/examples/react/image-view/extension.ts
+<<< @/../playground/examples/react/image-view/default-doc.ts
 <<< @/../playground/examples/react/image-view/image-view.tsx
 
 :::
@@ -25,6 +26,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 <<< @/../playground/examples/vue/image-view/editor.vue
 <<< @/../playground/examples/vue/image-view/extension.ts
+<<< @/../playground/examples/vue/image-view/default-doc.ts
 <<< @/../playground/examples/vue/image-view/image-view.vue
 
 :::

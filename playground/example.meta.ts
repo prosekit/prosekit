@@ -911,6 +911,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "image-view.vue",
+          "hidden": false
+        },
+        {
           "path": "inline-menu.vue",
           "hidden": false
         },

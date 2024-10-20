@@ -3,9 +3,11 @@
 <script setup>
 import { ExamplePreview } from '@/.vitepress/components/example-preview'
 import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block'
+import { useRoute } from 'vitepress'
+const { path } = useRoute()
 </script>
 
-<ExamplePreview name="emoji-rules" defaultShowCode="true">
+<ExamplePreview :defaultShowCode="path.startsWith('/examples/')" name="emoji-rules" >
 
 <template v-slot:svelte>
 

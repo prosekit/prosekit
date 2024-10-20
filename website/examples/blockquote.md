@@ -7,7 +7,7 @@ import { useRoute } from 'vitepress'
 const { path } = useRoute()
 </script>
 
-<ExamplePreview name="blockquote" :defaultShowCode="path.startsWith('/examples/')">
+<ExamplePreview :defaultShowCode="path.startsWith('/examples/')" name="blockquote" >
 
 <template v-slot:react>
 

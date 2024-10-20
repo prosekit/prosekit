@@ -1,0 +1,1 @@
+../../../components/common/upload-file.ts

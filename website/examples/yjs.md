@@ -5,7 +5,7 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview'
 import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block'
 </script>
 
-<ExamplePreview name="yjs">
+<ExamplePreview name="yjs" defaultShowCode="true">
 
 <template v-slot:react>
 

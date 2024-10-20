@@ -5,7 +5,7 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview'
 import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block'
 </script>
 
-<ExamplePreview name="drop-cursor">
+<ExamplePreview name="drop-cursor" defaultShowCode="true">
 
 <template v-slot:vue>
 

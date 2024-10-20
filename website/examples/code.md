@@ -5,7 +5,7 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview'
 import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block'
 </script>
 
-<ExamplePreview name="code">
+<ExamplePreview name="code" defaultShowCode="true">
 
 <template v-slot:vue>
 

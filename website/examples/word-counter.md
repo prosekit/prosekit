@@ -5,7 +5,7 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview'
 import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block'
 </script>
 
-<ExamplePreview name="word-counter">
+<ExamplePreview name="word-counter" defaultShowCode="true">
 
 <template v-slot:react>
 

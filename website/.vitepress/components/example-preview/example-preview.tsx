@@ -1,5 +1,5 @@
 import clsx from 'clsx/lite'
-import { computed, defineComponent, effect, onMounted, ref } from 'vue'
+import { computed, defineComponent, watchEffect, onMounted, ref } from 'vue'
 
 import { FrameworkMenu } from '../framework-menu'
 import { Switch } from '../switch/switch'
@@ -11,15 +11,16 @@ import { ExampleForkMenu } from './example-fork-menu'
 
 export const ExamplePreview = defineComponent<{
   name: string
+  defaultShowCode?: boolean
 }>(
   (props, { slots }) => {
-    const showCode = ref(false)
+    const showCode = ref(props.defaultShowCode ?? false)
     const frameworks = computed(() => Object.keys(slots))
     const divRef = ref<HTMLElement>()
     const { framework, onFrameworkChange } = useFramework(frameworks)
     const isExamplePage = useIsExamplePage()
 
-    effect(() => {
+    watchEffect(() => {
       if (showCode.value && divRef.value && !isExamplePage.value) {
         setTimeout(() => {
           const codeBlock = divRef.value?.querySelector('.vp-code-group')
@@ -73,7 +74,7 @@ export const ExamplePreview = defineComponent<{
     )
   },
   {
-    props: ['name'],
+    props: ['name', 'defaultShowCode'],
   },
 )
 

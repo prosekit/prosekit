@@ -5,7 +5,7 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview'
 import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block'
 </script>
 
-<ExamplePreview name="horizontal-rule">
+<ExamplePreview name="horizontal-rule" defaultShowCode="true">
 
 <template v-slot:react>
 

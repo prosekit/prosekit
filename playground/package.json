@@ -19,20 +19,20 @@
     "@astrojs/solid-js": "^4.4.2",
     "@astrojs/svelte": "^5.7.2",
     "@astrojs/vue": "^4.5.2",
-    "@iconify-json/lucide": "^1.2.8",
-    "@playwright/test": "^1.48.0",
+    "@iconify-json/lucide": "^1.2.10",
+    "@playwright/test": "^1.48.1",
     "@prosekit/dev": "workspace:*",
     "@prosekit/themes": "workspace:*",
     "@prosekit/unocss-preset": "workspace:*",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@unocss/reset": "^0.63.4",
-    "astro": "^4.16.2",
-    "astrobook": "^0.4.4",
+    "astro": "^4.16.6",
+    "astrobook": "^0.5.0",
     "lit": "^3.2.1",
     "loro-crdt": "^0.16.12",
     "loro-prosemirror": "^0.0.7",
-    "preact": "^10.24.2",
+    "preact": "^10.24.3",
     "prettier": "^3.3.3",
     "prosekit": "workspace:*",
     "react": "^18.3.1",
@@ -53,6 +53,6 @@
     "vue-tsc": "^2.1.6",
     "y-protocols": "^1.0.6",
     "y-websocket": "^2.0.4",
-    "yjs": "^13.6.19"
+    "yjs": "^13.6.20"
   }
 }

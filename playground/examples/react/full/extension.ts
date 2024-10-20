@@ -14,6 +14,7 @@ import {
 
 import CodeBlockView from './code-block-view'
 import ImageView from './image-view'
+import { defineImageFileHandlers } from './upload-file'
 
 export function defineExtension() {
   return union(
@@ -32,6 +33,7 @@ export function defineExtension() {
       name: 'image',
       component: ImageView satisfies ReactNodeViewComponent,
     }),
+    defineImageFileHandlers(),
   )
 }
 

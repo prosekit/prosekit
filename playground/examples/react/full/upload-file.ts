@@ -1,0 +1,1 @@
+../../../components/react/upload-file.ts

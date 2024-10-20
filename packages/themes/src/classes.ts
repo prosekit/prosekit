@@ -169,7 +169,7 @@ export const IMAGE_UPLOAD_BUTTON = cn(
 )
 
 export const IMAGE_RESIZEALE = cn(
-  'relative flex items-center justify-center box-border overflow-hidden my-2',
+  'relative flex items-center justify-center box-border overflow-hidden my-2 group',
   'max-h-[600px] max-w-full min-h-[64px] min-w-[64px]',
   'outline-2 outline-transparent data-[selected]:outline-blue-500 outline-solid',
 )
@@ -185,6 +185,16 @@ export const IMAGE_RESIZEALE_HANDLE = cn(
   // Only visible when hovering the image block
   'opacity-0 hover:opacity-100 group-hover:opacity-100 group-[[data-resizing]]:opacity-100',
 )
+
+export const IMAGE_UPLOAD_PROGRESS = cn(
+  'absolute bottom-0 left-0 m-1 flex content-center items-center gap-2 rounded bg-gray-800/60 p-1.5 text-xs text-white/80 transition',
+)
+
+export const IMAGE_UPLOAD_ERROR = cn(
+  'absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center gap-4 bg-gray-200 p-2 text-sm dark:bg-gray-800 @container',
+)
+
+export const IMAGE_UPLOAD_ERROR_MESSAGE = cn('hidden opacity-80 @xs:block')
 
 export const DROP_CURSOR = cn('transition-all bg-blue-500')
 
@@ -286,6 +296,7 @@ export const ICON_LIST_INDENT = cn('i-lucide-indent-increase h-5 w-5')
 export const ICON_LIST_DEDENT = cn('i-lucide-indent-decrease h-5 w-5')
 export const ICON_CODE_BLOCK = cn('i-lucide-square-code h-5 w-5')
 export const ICON_CORNER_HANDLE = cn('i-lucide-arrow-down-right h-4 w-4')
+export const ICON_LOADER = cn('i-lucide-loader-circle h-4 w-4 animate-spin')
 export const ICON_DRAG_HANDLE = cn('i-lucide-grip-vertical h-5 w-5')
 export const ICON_PLUS = cn('i-lucide-plus h-5 w-5')
 export const ICON_SEARCH = cn('i-lucide-search h-5 w-5')
@@ -297,3 +308,4 @@ export const ICON_TABLE_COLUMN_HANDLE = cn('i-lucide-grip-horizontal h-5 w-5')
 export const ICON_TABLE_ROW_HANDLE = cn('i-lucide-grip-vertical h-5 w-5')
 export const ICON_BLOCKQUOTE = cn('i-lucide-text-quote h-5 w-5')
 export const ICON_MINUS = cn('i-lucide-minus h-5 w-5')
+export const ICON_IMAGE_ERROR = cn('i-lucide-image-off h-8 w-8')

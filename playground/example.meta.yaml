@@ -147,6 +147,8 @@ examples:
         hidden: false
       - path: image-view.tsx
         hidden: false
+      - path: upload-file.ts
+        hidden: false
   - name: react-inline-menu
     framework: react
     story: inline-menu
@@ -487,6 +489,8 @@ examples:
         hidden: false
       - path: tag-menu.vue
         hidden: false
+      - path: upload-file.ts
+        hidden: false
       - path: user-data.ts
         hidden: false
       - path: user-menu.vue
@@ -516,6 +520,8 @@ examples:
       - path: default-doc.ts
         hidden: false
       - path: image-view.vue
+        hidden: false
+      - path: upload-file.ts
         hidden: false
   - name: vue-inline-menu
     framework: vue

@@ -30,6 +30,8 @@
 
 - [horizontal-rule](./examples/horizontal-rule)
 
+- [image-view](./examples/image-view)
+
 - [inline-menu](./examples/inline-menu)
 
 - [italic](./examples/italic)
@@ -49,8 +51,6 @@
 - [placeholder](./examples/placeholder)
 
 - [readonly](./examples/readonly)
-
-- [resizable-image](./examples/resizable-image)
 
 - [save-html](./examples/save-html)
 

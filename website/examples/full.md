@@ -40,6 +40,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/vue/full/block-handle.vue
 <<< @/../playground/examples/vue/full/code-block-view.vue
 <<< @/../playground/examples/vue/full/image-upload-popover.vue
+<<< @/../playground/examples/vue/full/image-view.vue
 <<< @/../playground/examples/vue/full/inline-menu.vue
 <<< @/../playground/examples/vue/full/slash-menu.vue
 <<< @/../playground/examples/vue/full/tag-data.ts

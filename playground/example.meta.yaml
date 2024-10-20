@@ -473,6 +473,8 @@ examples:
         hidden: false
       - path: image-upload-popover.vue
         hidden: false
+      - path: image-view.vue
+        hidden: false
       - path: inline-menu.vue
         hidden: false
       - path: slash-menu.vue

@@ -90,3 +90,7 @@ body .Layout .VPLocalNav > .container {
 iframe {
   border-width: 0;
 }
+
+body .Layout .vp-adaptive-theme .shiki {
+  max-height: 640px;
+}

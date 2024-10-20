@@ -29,9 +29,11 @@ function formatPreview(story: string, examples: Example[]) {
 <script setup>
 import { ExamplePreview } from '@/.vitepress/components/example-preview'
 import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block'
+import { useRoute } from 'vitepress'
+const { path } = useRoute()
 </script>
 
-<ExamplePreview name="${story}">
+<ExamplePreview :defaultShowCode="path.startsWith('/examples/')" name="${story}" >
 
 ${examples.map(formatExample).join('\n\n')}
 

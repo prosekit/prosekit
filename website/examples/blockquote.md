@@ -3,9 +3,11 @@
 <script setup>
 import { ExamplePreview } from '@/.vitepress/components/example-preview'
 import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block'
+import { useRoute } from 'vitepress'
+const { path } = useRoute()
 </script>
 
-<ExamplePreview name="blockquote">
+<ExamplePreview :defaultShowCode="path.startsWith('/examples/')" name="blockquote" >
 
 <template v-slot:react>
 

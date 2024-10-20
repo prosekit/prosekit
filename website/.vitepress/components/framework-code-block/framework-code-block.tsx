@@ -16,9 +16,10 @@ export const FrameworkCodeBlock = defineComponent((props, { slots }) => {
         // Remove the top margin from the code block
         `[&_.vp-code-group]:mt-0 `,
 
-        'my-8 flex w-full flex-col rounded-md bg-[--vp-code-tab-bg] sm:overflow-hidden',
+        // Remove the bottom margin from the code block
+        `[&_.vp-adaptive-theme]:mb-0!`,
 
-        '[&_.shiki]:max-h-[500px]',
+        'my-8 flex w-full flex-col rounded-md bg-[--vp-code-tab-bg] sm:overflow-hidden',
       )}
     >
       <div class="absolute top-0 z-10 mx-[-24px] flex justify-start bg-[--vp-code-tab-bg] px-2 pb-1 pt-2 sm:mx-0 space-x-2">

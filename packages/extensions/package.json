@@ -35,6 +35,7 @@
     "./commit/style.css": "./src/commit/style.css",
     "./drop-cursor": "./src/drop-cursor/index.ts",
     "./enter-rule": "./src/enter-rule/index.ts",
+    "./file": "./src/file/index.ts",
     "./gap-cursor": "./src/gap-cursor/index.ts",
     "./gap-cursor/style.css": "./src/gap-cursor/style.css",
     "./heading": "./src/heading/index.ts",
@@ -167,6 +168,11 @@
         "types": "./dist/prosekit-extensions-enter-rule.d.ts",
         "import": "./dist/prosekit-extensions-enter-rule.js",
         "default": "./dist/prosekit-extensions-enter-rule.js"
+      },
+      "./file": {
+        "types": "./dist/prosekit-extensions-file.d.ts",
+        "import": "./dist/prosekit-extensions-file.js",
+        "default": "./dist/prosekit-extensions-file.js"
       },
       "./gap-cursor": {
         "types": "./dist/prosekit-extensions-gap-cursor.d.ts",
@@ -329,6 +335,9 @@
         ],
         "enter-rule": [
           "./dist/prosekit-extensions-enter-rule.d.ts"
+        ],
+        "file": [
+          "./dist/prosekit-extensions-file.d.ts"
         ],
         "gap-cursor": [
           "./dist/prosekit-extensions-gap-cursor.d.ts"

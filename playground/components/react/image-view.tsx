@@ -1,15 +1,65 @@
 import { Themes } from '@prosekit/themes'
+import { clsx } from 'prosekit/core'
+import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { ReactNodeViewProps } from 'prosekit/react'
 import { ResizableHandle, ResizableRoot } from 'prosekit/react/resizable'
-import { useState, type SyntheticEvent } from 'react'
+import { useEffect, useState, type SyntheticEvent } from 'react'
 
 export default function ImageView(props: ReactNodeViewProps) {
   const { setAttrs, node } = props
   const attrs = node.attrs as ImageAttrs
   const url = attrs.src || ''
+  const uploading = url.startsWith('blob:')
 
   const [aspectRatio, setAspectRatio] = useState<number | undefined>()
+  const [error, setError] = useState<string | undefined>()
+  const [progress, setProgress] = useState(0)
+
+  useEffect(() => {
+    if (!url.startsWith('blob:')) {
+      return
+    }
+
+    const uploadTask = UploadTask.get<string>(url)
+    if (!uploadTask) {
+      return
+    }
+
+    const abortController = new AbortController()
+    void uploadTask.finished
+      .then((resultUrl) => {
+        if (resultUrl && typeof resultUrl === 'string') {
+          if (abortController.signal.aborted) {
+            return
+          }
+          setAttrs({ src: resultUrl })
+        } else {
+          if (abortController.signal.aborted) {
+            return
+          }
+          setError('Unexpected upload result')
+        }
+      })
+      .catch((error) => {
+        if (abortController.signal.aborted) {
+          return
+        }
+        setError(String(error))
+      })
+    const unsubscribe = uploadTask.subscribeProgress(({ loaded, total }) => {
+      if (abortController.signal.aborted) {
+        return
+      }
+      if (total > 0) {
+        setProgress(loaded / total)
+      }
+    })
+    return () => {
+      unsubscribe()
+      abortController.abort()
+    }
+  }, [url, setAttrs])
 
   const handleImageLoad = (event: SyntheticEvent) => {
     const img = event.target as HTMLImageElement
@@ -32,12 +82,27 @@ export default function ImageView(props: ReactNodeViewProps) {
       data-selected={props.selected ? '' : undefined}
       className={Themes.IMAGE_RESIZEALE}
     >
-      <img
-        src={url}
-        onLoad={handleImageLoad}
-        className={Themes.IMAGE_RESIZEALE_IMAGE}
-      />
-
+      {url && !error && (
+        <img
+          src={url}
+          onLoad={handleImageLoad}
+          className={Themes.IMAGE_RESIZEALE_IMAGE}
+        />
+      )}
+      {uploading && !error && (
+        <div className={Themes.IMAGE_UPLOAD_PROGRESS}>
+          <div className={Themes.ICON_LOADER}></div>
+          <div>{Math.round(progress * 100)}%</div>
+        </div>
+      )}
+      {error && (
+        <div className={Themes.IMAGE_UPLOAD_ERROR}>
+          <div className={Themes.ICON_IMAGE_ERROR}></div>
+          <div className={Themes.IMAGE_UPLOAD_ERROR_MESSAGE}>
+            Failed to upload image
+          </div>
+        </div>
+      )}
       <ResizableHandle
         className={Themes.IMAGE_RESIZEALE_HANDLE}
         position="bottom-right"

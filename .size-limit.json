@@ -120,6 +120,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/file",
+    "path": "packages/prosekit/dist/prosekit-extensions-file.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/gap-cursor",
     "path": "packages/prosekit/dist/prosekit-extensions-gap-cursor.js",
     "ignore": [

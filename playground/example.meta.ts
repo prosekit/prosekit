@@ -187,6 +187,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "upload-file.ts",
+          "hidden": false
+        },
+        {
           "path": "user-data.ts",
           "hidden": false
         },

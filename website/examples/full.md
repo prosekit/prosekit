@@ -22,6 +22,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/react/full/slash-menu.tsx
 <<< @/../playground/examples/react/full/tag-data.ts
 <<< @/../playground/examples/react/full/tag-menu.tsx
+<<< @/../playground/examples/react/full/upload-file.ts
 <<< @/../playground/examples/react/full/user-data.ts
 <<< @/../playground/examples/react/full/user-menu.tsx
 <<< @/../playground/examples/react/full/button.tsx

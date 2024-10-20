@@ -95,6 +95,8 @@ examples:
         hidden: false
       - path: tag-menu.tsx
         hidden: false
+      - path: upload-file.ts
+        hidden: false
       - path: user-data.ts
         hidden: false
       - path: user-menu.tsx

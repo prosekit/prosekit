@@ -46,6 +46,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/vue/full/slash-menu.vue
 <<< @/../playground/examples/vue/full/tag-data.ts
 <<< @/../playground/examples/vue/full/tag-menu.vue
+<<< @/../playground/examples/vue/full/upload-file.ts
 <<< @/../playground/examples/vue/full/user-data.ts
 <<< @/../playground/examples/vue/full/user-menu.vue
 <<< @/../playground/examples/vue/full/button.vue

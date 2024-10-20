@@ -285,6 +285,10 @@ export const exampleMeta = {
         {
           "path": "image-view.tsx",
           "hidden": false
+        },
+        {
+          "path": "upload-file.ts",
+          "hidden": false
         }
       ]
     },
@@ -939,6 +943,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "upload-file.ts",
+          "hidden": false
+        },
+        {
           "path": "user-data.ts",
           "hidden": false
         },
@@ -994,6 +1002,10 @@ export const exampleMeta = {
         },
         {
           "path": "image-view.vue",
+          "hidden": false
+        },
+        {
+          "path": "upload-file.ts",
           "hidden": false
         }
       ]

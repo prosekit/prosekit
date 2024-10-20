@@ -1,10 +1,11 @@
 import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
-import { createEditor, type NodeJSON } from 'prosekit/core'
+import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { defaultContent } from './default-doc'
 import { defineExtension } from './extension'
 
 export default function Editor() {
@@ -22,26 +23,4 @@ export default function Editor() {
       </div>
     </ProseKit>
   )
-}
-
-const defaultContent: NodeJSON = {
-  type: 'doc',
-  content: [
-    {
-      type: 'image',
-      attrs: {
-        src: 'https://placehold.co/150x150/8bd450/ffffff/png',
-        width: 150,
-        height: 150,
-      },
-    },
-    {
-      type: 'image',
-      attrs: {
-        src: 'https://placehold.co/200x80/965fd4/ffffff/png',
-        width: 200,
-        height: 80,
-      },
-    },
-  ],
 }

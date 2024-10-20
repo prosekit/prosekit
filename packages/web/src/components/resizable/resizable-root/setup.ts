@@ -1,5 +1,6 @@
 import {
   createSignal,
+  useAttribute,
   useEffect,
   type ConnectableElement,
   type SetupOptions,
@@ -21,6 +22,8 @@ export function useResizableRoot(
   host: ConnectableElement,
   { state, emit }: SetupOptions<ResizableRootProps, ResizableRootEvents>,
 ): void {
+  const resizing = createSignal(false)
+
   const onResizeStart: OnResizeStart = () => {
     const { width, height } = host.getBoundingClientRect()
 
@@ -31,6 +34,7 @@ export function useResizableRoot(
     }
 
     emit('resizeStart', { width, height })
+    resizing.set(true)
     return [width, height, aspectRatio]
   }
 
@@ -42,6 +46,7 @@ export function useResizableRoot(
   const onResizeEnd: OnResizeEnd = () => {
     const { width, height } = host.getBoundingClientRect()
     emit('resizeEnd', { width, height })
+    resizing.set(false)
   }
 
   onResizeStartContext.provide(host, createSignal(onResizeStart))
@@ -51,17 +56,19 @@ export function useResizableRoot(
   useEffect(host, () => {
     updateResizableRootStyles(
       host,
-      state.width.get(),
-      state.height.get(),
+      Math.max(state.width.get() || 0, 1),
+      Math.max(state.height.get() || 0, 1),
       state.aspectRatio.get(),
     )
   })
+
+  useAttribute(host, 'data-resizing', () => (resizing.get() ? '' : undefined))
 }
 
 function updateResizableRootStyles(
   host: ConnectableElement,
-  width: number | null,
-  height: number | null,
+  width: number,
+  height: number,
   aspectRatio: number | null,
 ) {
   host.style.width = isFinitePositiveNumber(width) ? `${width}px` : ''
@@ -74,7 +81,7 @@ function updateResizableRootStyles(
     if (width && width > 0 && aspectRatio >= 1) {
       host.style.height = 'auto'
     } else if (height && height > 0 && aspectRatio <= 1) {
-      host.style.width = 'auto'
+      host.style.width = 'min-content'
     }
   }
 }

@@ -78,6 +78,8 @@ export {
   type TextInputHandler,
   type TripleClickHandler,
   type TripleClickOnHandler,
+  editorEventFacet,
+  type EditorEventPayload,
 } from './extensions/events/editor-event'
 export {
   defineFocusChangeHandler,

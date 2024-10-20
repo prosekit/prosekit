@@ -13,6 +13,7 @@ import {
 } from 'prosekit/react'
 
 import CodeBlockView from './code-block-view'
+import ImageView from './image-view'
 
 export function defineExtension() {
   return union(
@@ -21,12 +22,16 @@ export function defineExtension() {
     defineMention(),
     defineCodeBlock(),
     defineCodeBlockShiki(),
+    defineHorizontalRule(),
     defineReactNodeView({
       name: 'codeBlock',
       contentAs: 'code',
-      component: CodeBlockView as ReactNodeViewComponent,
+      component: CodeBlockView satisfies ReactNodeViewComponent,
     }),
-    defineHorizontalRule(),
+    defineReactNodeView({
+      name: 'image',
+      component: ImageView satisfies ReactNodeViewComponent,
+    }),
   )
 }
 

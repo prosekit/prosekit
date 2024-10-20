@@ -85,6 +85,8 @@ examples:
         hidden: false
       - path: image-upload-popover.tsx
         hidden: false
+      - path: image-view.tsx
+        hidden: false
       - path: inline-menu.tsx
         hidden: false
       - path: slash-menu.tsx
@@ -130,6 +132,18 @@ examples:
       - path: toolbar.tsx
         hidden: false
       - path: button.tsx
+        hidden: false
+  - name: react-image-view
+    framework: react
+    story: image-view
+    files:
+      - path: editor.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: default-doc.ts
+        hidden: false
+      - path: image-view.tsx
         hidden: false
   - name: react-inline-menu
     framework: react
@@ -214,16 +228,6 @@ examples:
       - path: use-readonly.ts
         hidden: false
       - path: button.tsx
-        hidden: false
-  - name: react-resizable-image
-    framework: react
-    story: resizable-image
-    files:
-      - path: editor.tsx
-        hidden: false
-      - path: extension.ts
-        hidden: false
-      - path: image-view.tsx
         hidden: false
   - name: react-save-html
     framework: react
@@ -471,6 +475,8 @@ examples:
         hidden: false
       - path: image-upload-popover.vue
         hidden: false
+      - path: image-view.vue
+        hidden: false
       - path: inline-menu.vue
         hidden: false
       - path: slash-menu.vue
@@ -496,6 +502,18 @@ examples:
       - path: toolbar.vue
         hidden: false
       - path: button.vue
+        hidden: false
+  - name: vue-image-view
+    framework: vue
+    story: image-view
+    files:
+      - path: editor.vue
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: default-doc.ts
+        hidden: false
+      - path: image-view.vue
         hidden: false
   - name: vue-inline-menu
     framework: vue

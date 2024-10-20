@@ -59,6 +59,10 @@ export const exampleItems = [
     "link": "/examples/horizontal-rule"
   },
   {
+    "text": "image-view",
+    "link": "/examples/image-view"
+  },
+  {
     "text": "inline-menu",
     "link": "/examples/inline-menu"
   },
@@ -97,10 +101,6 @@ export const exampleItems = [
   {
     "text": "readonly",
     "link": "/examples/readonly"
-  },
-  {
-    "text": "resizable-image",
-    "link": "/examples/resizable-image"
   },
   {
     "text": "save-html",

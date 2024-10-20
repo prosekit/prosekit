@@ -17,6 +17,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/react/full/block-handle.tsx
 <<< @/../playground/examples/react/full/code-block-view.tsx
 <<< @/../playground/examples/react/full/image-upload-popover.tsx
+<<< @/../playground/examples/react/full/image-view.tsx
 <<< @/../playground/examples/react/full/inline-menu.tsx
 <<< @/../playground/examples/react/full/slash-menu.tsx
 <<< @/../playground/examples/react/full/tag-data.ts
@@ -39,6 +40,7 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 <<< @/../playground/examples/vue/full/block-handle.vue
 <<< @/../playground/examples/vue/full/code-block-view.vue
 <<< @/../playground/examples/vue/full/image-upload-popover.vue
+<<< @/../playground/examples/vue/full/image-view.vue
 <<< @/../playground/examples/vue/full/inline-menu.vue
 <<< @/../playground/examples/vue/full/slash-menu.vue
 <<< @/../playground/examples/vue/full/tag-data.ts

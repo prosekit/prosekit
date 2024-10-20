@@ -5,6 +5,8 @@ import { type Extension, defineNodeSpec } from '@prosekit/core'
  */
 export interface ImageAttrs {
   src?: string | null
+  width?: number | null
+  height?: number | null
 }
 
 /**
@@ -24,6 +26,8 @@ export function defineImageSpec(): ImageSpecExtension {
     name: 'image',
     attrs: {
       src: { default: null },
+      width: { default: null },
+      height: { default: null },
     },
     group: 'block',
     defining: true,
@@ -37,7 +41,23 @@ export function defineImageSpec(): ImageSpecExtension {
           }
 
           const src = element.getAttribute('src') || null
-          return { src }
+
+          let width: number | null = null
+          let height: number | null = null
+
+          const rect = element.getBoundingClientRect()
+          if (rect.width > 0 && rect.height > 0) {
+            width = rect.width
+            height = rect.height
+          } else if (
+            element instanceof HTMLImageElement &&
+            element.naturalWidth > 0 &&
+            element.naturalHeight > 0
+          ) {
+            width = element.naturalWidth
+            height = element.naturalHeight
+          }
+          return { src, width, height }
         },
       },
     ],

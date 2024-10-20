@@ -6,7 +6,17 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/resizable-image/editor.tsx
+<<< @/../playground/examples/react/full/image-view.tsx
+
+:::
+
+</template>
+
+<template v-slot:vue>
+
+::: code-group
+
+<<< @/../playground/examples/vue/full/image-view.vue
 
 :::
 

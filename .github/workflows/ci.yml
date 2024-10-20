@@ -119,7 +119,7 @@ jobs:
           PROSEKIT_NO_CLEAN_URLS: 'yes'
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v2.0.1
+        uses: lycheeverse/lychee-action@v2.0.2
         with:
           args: --base ./website/dist --no-progress './website/dist/**/*.html' --include-fragments
           fail: true

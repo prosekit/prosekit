@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@iconify-json/logos": "^1.2.3",
-    "@iconify-json/lucide": "^1.2.8",
+    "@iconify-json/lucide": "^1.2.10",
     "@prosekit/dev": "workspace:*",
     "@prosekit/themes": "workspace:*",
     "@prosekit/unocss-preset": "workspace:*",
@@ -39,10 +39,10 @@
     "type-fest": "^4.26.1",
     "typescript": "^5.6.3",
     "unocss": "^0.63.4",
-    "vite": "^5.4.8",
+    "vite": "^5.4.9",
     "vitepress": "1.4.1",
     "vue": "^3.5.12",
     "y-websocket": "^2.0.4",
-    "yjs": "^13.6.19"
+    "yjs": "^13.6.20"
   }
 }

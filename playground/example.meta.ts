@@ -968,6 +968,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "vue-image-view",
+      "framework": "vue",
+      "story": "image-view",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "image-view.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-inline-menu",
       "framework": "vue",
       "story": "inline-menu",

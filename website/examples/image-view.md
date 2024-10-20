@@ -19,4 +19,16 @@ import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block
 
 </template>
 
+<template v-slot:vue>
+
+::: code-group
+
+<<< @/../playground/examples/vue/image-view/editor.vue
+<<< @/../playground/examples/vue/image-view/extension.ts
+<<< @/../playground/examples/vue/image-view/image-view.vue
+
+:::
+
+</template>
+
 </ExamplePreview>

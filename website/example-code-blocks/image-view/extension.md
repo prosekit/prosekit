@@ -12,4 +12,14 @@
 
 </template>
 
+<template v-slot:vue>
+
+::: code-group
+
+<<< @/../playground/examples/vue/image-view/extension.ts
+
+:::
+
+</template>
+
 </FrameworkCodeBlock>

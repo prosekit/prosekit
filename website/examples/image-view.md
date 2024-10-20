@@ -5,15 +5,15 @@ import { ExamplePreview } from '@/.vitepress/components/example-preview'
 import { FrameworkCodeBlock } from '@/.vitepress/components/framework-code-block'
 </script>
 
-<ExamplePreview name="resizable-image">
+<ExamplePreview name="image-view">
 
 <template v-slot:react>
 
 ::: code-group
 
-<<< @/../playground/examples/react/resizable-image/editor.tsx
-<<< @/../playground/examples/react/resizable-image/extension.ts
-<<< @/../playground/examples/react/resizable-image/image-view.tsx
+<<< @/../playground/examples/react/image-view/editor.tsx
+<<< @/../playground/examples/react/image-view/extension.ts
+<<< @/../playground/examples/react/image-view/image-view.tsx
 
 :::
 

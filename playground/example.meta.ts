@@ -167,6 +167,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "image-view.tsx",
+          "hidden": false
+        },
+        {
           "path": "inline-menu.tsx",
           "hidden": false
         },
@@ -253,6 +257,25 @@ export const exampleMeta = {
         },
         {
           "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-image-view",
+      "framework": "react",
+      "story": "image-view",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "image-view.tsx",
           "hidden": false
         }
       ]
@@ -414,25 +437,6 @@ export const exampleMeta = {
         },
         {
           "path": "button.tsx",
-          "hidden": false
-        }
-      ]
-    },
-    {
-      "name": "react-resizable-image",
-      "framework": "react",
-      "story": "resizable-image",
-      "files": [
-        {
-          "path": "editor.tsx",
-          "hidden": false
-        },
-        {
-          "path": "extension.ts",
-          "hidden": false
-        },
-        {
-          "path": "image-view.tsx",
           "hidden": false
         }
       ]

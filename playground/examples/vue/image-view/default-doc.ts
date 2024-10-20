@@ -4,6 +4,15 @@ export const defaultContent: NodeJSON = {
   type: 'doc',
   content: [
     {
+      type: 'paragraph',
+      content: [
+        {
+          type: 'text',
+          text: 'Paste or drop an image to upload it.',
+        },
+      ],
+    },
+    {
       type: 'image',
       attrs: {
         src: 'https://placehold.co/150x150/8bd450/ffffff/png',

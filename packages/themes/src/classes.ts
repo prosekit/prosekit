@@ -169,7 +169,7 @@ export const IMAGE_UPLOAD_BUTTON = cn(
 )
 
 export const IMAGE_RESIZEALE = cn(
-  'relative flex items-center justify-center box-border overflow-hidden my-2',
+  'relative flex items-center justify-center box-border overflow-hidden my-2 group',
   'max-h-[600px] max-w-full min-h-[64px] min-w-[64px]',
   'outline-2 outline-transparent data-[selected]:outline-blue-500 outline-solid',
 )

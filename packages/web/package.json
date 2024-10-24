@@ -57,7 +57,7 @@
     "@zag-js/dom-query": "^0.75.0",
     "just-map-values": "^3.2.0",
     "just-omit": "^2.2.0",
-    "prosemirror-tables": "^1.5.0"
+    "prosemirror-tables": "^1.5.1"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",

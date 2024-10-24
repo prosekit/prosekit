@@ -44,7 +44,7 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "prosemirror-commands": "^1.6.1",
+    "prosemirror-commands": "^1.6.2",
     "prosemirror-history": "^1.4.1",
     "prosemirror-inputrules": "^1.4.0",
     "prosemirror-keymap": "^1.2.2",

@@ -273,11 +273,11 @@ importers:
         specifier: ^4.2.0
         version: 4.2.0
       loro-crdt:
-        specifier: ^0.16.12
-        version: 0.16.12
+        specifier: ^1.0.7
+        version: 1.0.7
       loro-prosemirror:
         specifier: ^0.0.7
-        version: 0.0.7(loro-crdt@0.16.12)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.34.3)
+        version: 0.0.7(loro-crdt@1.0.7)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.34.3)
       tsup:
         specifier: ^8.3.0
         version: 8.3.0(@microsoft/api-extractor@7.47.11(@types/node@20.17.0))(jiti@2.3.3)(postcss@8.4.47)(tsx@4.19.1)(typescript@5.6.3)(yaml@2.5.1)
@@ -436,11 +436,11 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1
       loro-crdt:
-        specifier: ^0.16.12
-        version: 0.16.12
+        specifier: ^1.0.7
+        version: 1.0.7
       loro-prosemirror:
         specifier: ^0.0.7
-        version: 0.0.7(loro-crdt@0.16.12)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.34.3)
+        version: 0.0.7(loro-crdt@1.0.7)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.34.3)
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
@@ -806,11 +806,11 @@ importers:
         specifier: ^3.2.1
         version: 3.2.1
       loro-crdt:
-        specifier: ^0.16.12
-        version: 0.16.12
+        specifier: ^1.0.7
+        version: 1.0.7
       loro-prosemirror:
         specifier: ^0.0.7
-        version: 0.0.7(loro-crdt@0.16.12)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.34.3)
+        version: 0.0.7(loro-crdt@1.0.7)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.34.3)
       preact:
         specifier: ^10.24.3
         version: 10.24.3
@@ -926,11 +926,11 @@ importers:
         specifier: ^1.27.0
         version: 1.27.0
       loro-crdt:
-        specifier: ^0.16.12
-        version: 0.16.12
+        specifier: ^1.0.7
+        version: 1.0.7
       loro-prosemirror:
         specifier: ^0.0.7
-        version: 0.0.7(loro-crdt@0.16.12)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.34.3)
+        version: 0.0.7(loro-crdt@1.0.7)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.34.3)
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
@@ -5094,8 +5094,8 @@ packages:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
 
-  loro-crdt@0.16.12:
-    resolution: {integrity: sha512-wJWTj2xSTW/YKR34AD9ly8ynHoEBE3zlAUIcSkuzTKDfo99q5sMLB/42FUHPqpH9Zb68QMcHtu6EFmpiWhXC5A==}
+  loro-crdt@1.0.7:
+    resolution: {integrity: sha512-BD9qx3dQdqhEegOTEYdYo2GvRoYAeZFAfwcJLDtNRKo20y/1dUsRmzAvtLzZI/cdcRg+DkpBBLr+wcL4jRYUNw==}
 
   loro-prosemirror@0.0.7:
     resolution: {integrity: sha512-FeZc2w7fwq9J2t/tzdefFO9fhT3VLF9NTMEnxTHt7s0weYxzNHrZtqGQIfjxfJybzvnD8KzsgUE043ftkl/S8Q==}
@@ -5105,8 +5105,8 @@ packages:
       prosemirror-state: ^1.4.1
       prosemirror-view: ^1.28.0
 
-  loro-wasm@0.16.12:
-    resolution: {integrity: sha512-ZKfc+En/LDZKO+4FG3nDRQzxecNEEDOTYjR7cwhSAZAP/TvzSHfcZwfCmatcvqQM57J+lO+/XtDI7wFPYqPnow==}
+  loro-wasm@1.0.7:
+    resolution: {integrity: sha512-WFIpGGzc6I7zRMDoRGxa3AHhno7gVnOgwqcrTfmpKWOtktZQ7BvhIV4kYgsdyuIBcMSrQEJTfOY/80xQSjUKTw==}
 
   loupe@3.1.1:
     resolution: {integrity: sha512-edNu/8D5MKVfGVFRhFf8aAxiTM6Wumfz5XsaatSxlD3w4R1d/WEKUTydCdPGbl9K7QG/Ca3GnDV2sIKIpXRQcw==}
@@ -12222,19 +12222,19 @@ snapshots:
     dependencies:
       js-tokens: 4.0.0
 
-  loro-crdt@0.16.12:
+  loro-crdt@1.0.7:
     dependencies:
-      loro-wasm: 0.16.12
+      loro-wasm: 1.0.7
 
-  loro-prosemirror@0.0.7(loro-crdt@0.16.12)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.34.3):
+  loro-prosemirror@0.0.7(loro-crdt@1.0.7)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.34.3):
     dependencies:
       lib0: 0.2.98
-      loro-crdt: 0.16.12
+      loro-crdt: 1.0.7
       prosemirror-model: 1.23.0
       prosemirror-state: 1.4.3
       prosemirror-view: 1.34.3
 
-  loro-wasm@0.16.12: {}
+  loro-wasm@1.0.7: {}
 
   loupe@3.1.1:
     dependencies:

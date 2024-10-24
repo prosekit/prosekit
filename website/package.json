@@ -27,7 +27,7 @@
     "clsx": "^2.1.1",
     "dedent": "^1.5.3",
     "lightningcss": "^1.27.0",
-    "loro-crdt": "^0.16.12",
+    "loro-crdt": "^1.0.7",
     "loro-prosemirror": "^0.0.7",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",

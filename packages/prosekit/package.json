@@ -206,7 +206,7 @@
     "@prosekit/dev": "workspace:*",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "loro-crdt": "^0.16.12",
+    "loro-crdt": "^1.0.7",
     "loro-prosemirror": "^0.0.7",
     "postcss": "^8.4.47",
     "postcss-nesting": "^13.0.1",

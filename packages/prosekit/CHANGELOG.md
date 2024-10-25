@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.10.2
+
+### Patch Changes
+
+- [`a116c4f`](https://github.com/ocavue/prosekit/commit/a116c4f33d8955221a10ad00b911f8197509b722) ![](https://prosekit.dev/b/extensions)
+
+  Support loro-crdt v1.
+
 ## 0.10.1
 
 ### Patch Changes

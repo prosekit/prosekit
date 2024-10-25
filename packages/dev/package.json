@@ -33,7 +33,7 @@
     "path-exists": "^5.0.0",
     "read-package-up": "^11.0.0",
     "read-pkg": "^9.0.1",
-    "tsup": "^8.3.0"
+    "tsup": "^8.3.4"
   },
   "devDependencies": {
     "@changesets/read": "^0.6.1",

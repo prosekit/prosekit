@@ -26,11 +26,11 @@ pnpm add loro-crdt loro-prosemirror
 
 ```ts twoslash
 import 'prosekit/extensions/loro/style.css'
-import { Loro } from 'loro-crdt'
+import { LoroDoc } from 'loro-crdt'
 import { CursorAwareness, type LoroDocType } from 'loro-prosemirror'
 import { defineLoro } from 'prosekit/extensions/loro'
 
-const doc: LoroDocType = new Loro()
+const doc: LoroDocType = new LoroDoc()
 const awareness = new CursorAwareness(doc.peerIdStr)
 const extension = defineLoro({ doc, awareness })
 ```

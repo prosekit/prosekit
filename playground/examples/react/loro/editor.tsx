@@ -1,4 +1,4 @@
-import { Loro } from 'loro-crdt'
+import { LoroDoc } from 'loro-crdt'
 import { CursorAwareness, type LoroDocType } from 'loro-prosemirror'
 import { useRef, useEffect } from 'react'
 
@@ -16,10 +16,10 @@ export default function Page() {
 }
 
 function useLoroExample() {
-  const loroARef = useRef<LoroDocType>(new Loro())
+  const loroARef = useRef<LoroDocType>(new LoroDoc())
   const idA = loroARef.current.peerIdStr
   const awarenessA = useRef<CursorAwareness>(new CursorAwareness(idA))
-  const loroBRef = useRef<LoroDocType>(new Loro())
+  const loroBRef = useRef<LoroDocType>(new LoroDoc())
   const idB = loroBRef.current.peerIdStr
   const awarenessB = useRef<CursorAwareness>(new CursorAwareness(idB))
   useEffect(() => {

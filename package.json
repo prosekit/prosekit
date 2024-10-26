@@ -40,7 +40,7 @@
     "eslint": "^9.13.0",
     "eslint-plugin-command": "^0.2.6",
     "pkg-pr-new": "^0.0.29",
-    "playwright": "^1.48.1",
+    "playwright": "^1.48.2",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.2.7",

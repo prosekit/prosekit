@@ -42,14 +42,14 @@
     "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@aria-ui/collection": "^0.0.4",
-    "@aria-ui/core": "^0.0.19",
-    "@aria-ui/listbox": "^0.0.19",
-    "@aria-ui/menu": "^0.0.13",
-    "@aria-ui/overlay": "^0.0.20",
-    "@aria-ui/popover": "^0.0.21",
-    "@aria-ui/presence": "^0.0.15",
-    "@aria-ui/tooltip": "^0.0.23",
+    "@aria-ui/collection": "https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@0a8a6e8",
+    "@aria-ui/core": "https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@0a8a6e8",
+    "@aria-ui/listbox": "https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@0a8a6e8",
+    "@aria-ui/menu": "https://pkg.pr.new/ocavue/aria-ui/@aria-ui/menu@0a8a6e8",
+    "@aria-ui/overlay": "https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@0a8a6e8",
+    "@aria-ui/popover": "https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@0a8a6e8",
+    "@aria-ui/presence": "https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@0a8a6e8",
+    "@aria-ui/tooltip": "https://pkg.pr.new/ocavue/aria-ui/@aria-ui/tooltip@0a8a6e8",
     "@floating-ui/dom": "^1.6.11",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
@@ -63,7 +63,7 @@
     "@prosekit/dev": "workspace:*",
     "tsup": "^8.3.5",
     "typescript": "^5.6.3",
-    "vitest": "^2.1.3"
+    "vitest": "^2.1.4"
   },
   "publishConfig": {
     "exports": {

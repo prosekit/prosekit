@@ -50,7 +50,7 @@
     "unocss": "^0.63.6",
     "vite-plugin-wasm": "^3.3.0",
     "vue": "^3.5.12",
-    "vue-tsc": "^2.1.6",
+    "vue-tsc": "^2.1.8",
     "y-protocols": "^1.0.6",
     "y-websocket": "^2.0.4",
     "yjs": "^13.6.20"

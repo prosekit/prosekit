@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9.12.2",
+  "packageManager": "pnpm@9.12.3",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
@@ -39,7 +39,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^9.13.0",
     "eslint-plugin-command": "^0.2.6",
-    "pkg-pr-new": "^0.0.29",
+    "pkg-pr-new": "^0.0.30",
     "playwright": "^1.48.2",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",

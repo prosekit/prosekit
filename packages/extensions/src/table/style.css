@@ -13,6 +13,8 @@
   box-sizing: border-box;
   position: relative;
   border-width: 1px;
+  padding-left: .75rem;
+  padding-right: .75rem;
 }
 .ProseMirror .column-resize-handle {
   position: absolute;
@@ -32,8 +34,4 @@
   --color: 210, 100%, 56%;
   background-color: hsla(var(--color), 20%);
   border: 1px double hsl(var(--color));
-}
-.ProseMirror th > p,
-.ProseMirror td > p {
-  padding: .5rem .75rem;
 }

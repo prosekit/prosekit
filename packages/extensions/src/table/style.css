@@ -13,8 +13,8 @@
   box-sizing: border-box;
   position: relative;
   border-width: 1px;
-  padding-left: .75rem;
-  padding-right: .75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 .ProseMirror .column-resize-handle {
   position: absolute;

@@ -1,5 +1,6 @@
 ---
-"@prosekit/extensions": patch
+'prosekit': patch
+'@prosekit/extensions': patch
 ---
 
 Add padding for table cell.

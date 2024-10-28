@@ -33,3 +33,7 @@
   background-color: hsla(var(--color), 20%);
   border: 1px double hsl(var(--color));
 }
+.ProseMirror th > p,
+.ProseMirror td > p {
+  padding: .5rem .75rem;
+}

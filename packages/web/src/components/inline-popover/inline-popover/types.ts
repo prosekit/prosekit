@@ -8,7 +8,10 @@ import {
 import type { Editor } from '@prosekit/core'
 
 export interface InlinePopoverProps
-  extends Omit<OverlayPositionerProps, 'placement' | 'offset'> {
+  extends Omit<
+    OverlayPositionerProps,
+    'placement' | 'offset' | 'hide' | 'overlap' | 'inline' | 'overflowPadding'
+  > {
   /**
    * The ProseKit editor instance.
    *
@@ -56,8 +59,6 @@ export interface InlinePopoverProps
   dismissOnEscape: boolean
 
   /**
-   * The placement of the popover, relative to the selected inline content.
-   *
    * @default "top"
    */
   placement: OverlayPositionerProps['placement']
@@ -66,11 +67,6 @@ export interface InlinePopoverProps
    * @default 12
    */
   offset: OverlayPositionerProps['offset']
-
-  /**
-   * @default true
-   */
-  flip: OverlayPositionerProps['flip']
 
   /**
    * @default true
@@ -88,9 +84,9 @@ export interface InlinePopoverProps
   inline: OverlayPositionerProps['inline']
 
   /**
-   * @default true
+   * @default 8
    */
-  hoist: OverlayPositionerProps['hoist']
+  overflowPadding: OverlayPositionerProps['overflowPadding']
 }
 
 /** @internal */
@@ -105,15 +101,10 @@ export const inlinePopoverProps: PropDeclarations<InlinePopoverProps> =
 
     placement: { default: 'top' },
     offset: { default: 12 },
-    shift: { default: true },
-    flip: { default: true },
     hide: { default: true },
     overlap: { default: true },
     inline: { default: true },
     overflowPadding: { default: 8 },
-    // Don't need boundary when hoist is true.
-    hoist: { default: true },
-    boundary: { default: [] },
   })
 
 /** @internal */

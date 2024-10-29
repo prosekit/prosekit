@@ -234,6 +234,7 @@ export const TABLE_HANDLE_MENU = cn(
 export const TABLE_CELL_MENU_ITEM = cn(
   'relative block min-w-[120px] scroll-my-1 rounded px-3 py-1.5',
   'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 hover:data-[disabled=true]:opacity-50',
+  'flex items-center justify-between gap-2',
   FLOATING_MENU_ITEM,
 )
 
@@ -272,6 +273,8 @@ export const SEARCH_CONTROLLER = cn('flex items-center justify-between gap-1')
 export const KEYMAP_FIELDSET = cn(
   'mt-4 box-border flex max-w-full w-full overflow-x-auto border p-4 rounded-md shadow min-w-0',
 )
+
+export const POPOVER_SHORTCUT = cn('ml-4 text-xs tracking-widest opacity-60')
 
 export const ICON_ITALIC = cn('i-lucide-italic h-5 w-5')
 export const ICON_BOLD = cn('i-lucide-bold h-5 w-5')

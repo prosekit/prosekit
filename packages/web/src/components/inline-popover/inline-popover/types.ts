@@ -43,14 +43,6 @@ export interface InlinePopoverProps
   open: boolean
 
   /**
-   * Event handler called when the open state changed caused by user interaction
-   * (i.e. select or unselect inline content).
-   *
-   * @default null
-   */
-  onOpenChange: ((open: boolean) => void) | null
-
-  /**
    * Whether the inline popover should be dismissed when the editor receives an
    * Escape key press.
    *
@@ -108,8 +100,15 @@ export const inlinePopoverProps: PropDeclarations<InlinePopoverProps> =
   })
 
 /** @internal */
-export interface InlinePopoverEvents extends OverlayPositionerEvents {}
+export interface InlinePopoverEvents extends OverlayPositionerEvents {
+  /**
+   * Emitted when the inline popover is opened or closed.
+   */
+  openChange: CustomEvent<boolean>
+}
 
 /** @internal */
-export const inlinePopoverEvents: EventDeclarations<InlinePopoverEvents> =
-  overlayPositionerEvents
+export const inlinePopoverEvents: EventDeclarations<InlinePopoverEvents> = {
+  ...overlayPositionerEvents,
+  openChange: {},
+}

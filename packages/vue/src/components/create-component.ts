@@ -3,6 +3,7 @@ import {
   h,
   onMounted,
   ref,
+  watchEffect,
   type DefineSetupFnComponent,
   type EmitsOptions,
   type HTMLAttributes,
@@ -31,6 +32,34 @@ export function createComponent<
         mounted.value = true
       })
 
+      const elementRef = ref<HTMLElement | null>(null)
+
+      watchEffect((onCleanup) => {
+        const element = elementRef.value
+        if (!element) return
+
+        const eventHandlers: Record<string, (event: Event) => void> = {}
+        for (const eventName of eventNames) {
+          const extractDetail = eventName.endsWith('Change')
+          eventHandlers[eventName] = (event: Event) => {
+            emit(
+              eventName,
+              extractDetail ? (event as CustomEvent).detail : event,
+            )
+          }
+        }
+
+        for (const [eventName, handler] of Object.entries(eventHandlers)) {
+          element.addEventListener(eventName, handler)
+        }
+
+        onCleanup(() => {
+          for (const [eventName, handler] of Object.entries(eventHandlers)) {
+            element.removeEventListener(eventName, handler)
+          }
+        })
+      })
+
       return () => {
         const properties: Record<string, unknown> = {}
 
@@ -45,20 +74,10 @@ export function createComponent<
           properties.editor = editor
         }
 
-        for (const eventName of eventNames) {
-          const extractDetail = eventName.endsWith('Change')
-          properties['on' + eventName[0].toUpperCase() + eventName.slice(1)] = (
-            event: Event,
-          ) => {
-            emit(
-              eventName,
-              extractDetail ? (event as CustomEvent).detail : event,
-            )
-          }
-        }
-
         // Ensure web components work after SSR hydration.
         properties.key = mounted.value ? 1 : 0
+
+        properties.ref = elementRef
 
         return h(tagName, properties, slots.default?.())
       }

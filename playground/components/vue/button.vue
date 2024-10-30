@@ -31,7 +31,7 @@ const emit = defineEmits<{
         <span v-if="tooltip" class="sr-only">{{ tooltip }}</span>
       </button>
     </TooltipTrigger>
-    <TooltipContent :class="Themes.TOOLTIP_CONTENT">
+    <TooltipContent v-if="tooltip" :class="Themes.TOOLTIP_CONTENT">
       {{ tooltip }}
     </TooltipContent>
   </TooltipRoot>

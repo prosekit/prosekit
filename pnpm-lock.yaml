@@ -700,23 +700,23 @@ importers:
         specifier: ^0.0.19
         version: 0.0.19
       '@aria-ui/listbox':
-        specifier: ^0.0.19
-        version: 0.0.19
+        specifier: ^0.0.20
+        version: 0.0.20
       '@aria-ui/menu':
-        specifier: ^0.0.14
-        version: 0.0.14
+        specifier: ^0.0.15
+        version: 0.0.15
       '@aria-ui/overlay':
         specifier: ^0.0.21
         version: 0.0.21
       '@aria-ui/popover':
-        specifier: ^0.0.22
-        version: 0.0.22
+        specifier: ^0.0.23
+        version: 0.0.23
       '@aria-ui/presence':
-        specifier: ^0.0.15
-        version: 0.0.15
+        specifier: ^0.0.16
+        version: 0.0.16
       '@aria-ui/tooltip':
-        specifier: ^0.0.24
-        version: 0.0.24
+        specifier: ^0.0.25
+        version: 0.0.25
       '@floating-ui/dom':
         specifier: ^1.6.11
         version: 1.6.12
@@ -1060,23 +1060,23 @@ packages:
   '@aria-ui/core@0.0.19':
     resolution: {integrity: sha512-kI45PccSReMJiBKYYj1GR0I8OviwIHPlWdA77tZRUqbn/8SWYASjhm7E94NYX/rGxK9pUlnV8Mje2EqX8nukSg==}
 
-  '@aria-ui/listbox@0.0.19':
-    resolution: {integrity: sha512-pBuuUcssYAbxmnR0rTUKFR2dXUys8E/9AV1LyMZ14zuZmESD6S1xCv5RAcDwJnblOItgAryoB+ed2vkE1719DA==}
+  '@aria-ui/listbox@0.0.20':
+    resolution: {integrity: sha512-zJdGB8Sij5qReNHXFTL99SrYuEGBlkzm2sjkSz618SSodUve+QIH5tPLME60No2W4IEbWJOqqK3tzmX0n1NnGw==}
 
-  '@aria-ui/menu@0.0.14':
-    resolution: {integrity: sha512-IjrAkX3HVH3nF+VrhaJvRTy9MUyAPxI1WbPN9WeDig6/XoI+py2s18P/mgDpotraeYBOHHaz6ZMxIrgR7jLHpg==}
+  '@aria-ui/menu@0.0.15':
+    resolution: {integrity: sha512-ueKQt0aW82iMUQaQUzPfUreyrQOVWYf3h+qvokFlhPeGkpwzAotBHMbDqYoukCFvEOBvaqnzJq+aHASwLx7O/A==}
 
   '@aria-ui/overlay@0.0.21':
     resolution: {integrity: sha512-jpKjj1XYBBFK/cZabC7S6EbyAzIkkWY0++IzWDpehiEdkMPq/t2k8yI5djn98j2zqVzBRI2nIXlEYYmVd7K7rw==}
 
-  '@aria-ui/popover@0.0.22':
-    resolution: {integrity: sha512-aftcyLgdgv+DDXlJfbSvkWnnGcVcSjXFdBHKDz1HIFDQc4CfKMCfhmVtmk0easCZ9Ir9biarxxK28KN4KlteVQ==}
+  '@aria-ui/popover@0.0.23':
+    resolution: {integrity: sha512-yX1NJiHtvQMOtQWH9eDTzML1VFrl0mBAi5tAqRY9G8+twiLlZFx0TnOEXFhmSQN1bTFm1sBZliIxm4qOjaPJ4w==}
 
-  '@aria-ui/presence@0.0.15':
-    resolution: {integrity: sha512-by+KVcjuOGxu1PommpyFLfSTd0i/5Ee9kgvT+caObU8H2HK+sKZA00nCfKHhVNEWMjguKhaHu9g8P7Qa6mkgQw==}
+  '@aria-ui/presence@0.0.16':
+    resolution: {integrity: sha512-6AGTDRRCvTU4hKgKLs0nqT5Uu0eCFPVWrRqvqAUTjLjAtgHw8AC1pH/bEy9qePAWRfi+M2GHHfRaYFfPYFK/2A==}
 
-  '@aria-ui/tooltip@0.0.24':
-    resolution: {integrity: sha512-xQqN4tvTPwM87PAs19VmsUF40fgG124yooVFvdClk2loyDY4J+Tm2T7SmOai1zg3XJcMwG7cWIco3Cc3THzn1w==}
+  '@aria-ui/tooltip@0.0.25':
+    resolution: {integrity: sha512-hhjGLwlkcmYmNhyTCDcyeZO+Mno8TZLep9oRwqCpvJpwTcvqlQr5UoQPP/Mp3Qs7IkpLv1fqUjQasJEXiITE8A==}
 
   '@ariatype/aria-attributes-drag-and-drop@1.0.1':
     resolution: {integrity: sha512-C1cZHJuL2e0dhFv0tgyHNPd+WC5oMlzqRxiKQlluyQakWoOoxRIHJbRNd7EajXdu6rwTKgfxZE9ag8gSKnFiKQ==}
@@ -7313,20 +7313,20 @@ snapshots:
       just-map-values: 3.2.0
       server-dom-shim: 1.0.2
 
-  '@aria-ui/listbox@0.0.19':
+  '@aria-ui/listbox@0.0.20':
     dependencies:
       '@aria-ui/collection': 0.0.4
       '@aria-ui/core': 0.0.19
-      '@aria-ui/presence': 0.0.15
+      '@aria-ui/presence': 0.0.16
       immer: 10.1.1
 
-  '@aria-ui/menu@0.0.14':
+  '@aria-ui/menu@0.0.15':
     dependencies:
       '@aria-ui/collection': 0.0.4
       '@aria-ui/core': 0.0.19
       '@aria-ui/overlay': 0.0.21
-      '@aria-ui/popover': 0.0.22
-      '@aria-ui/presence': 0.0.15
+      '@aria-ui/popover': 0.0.23
+      '@aria-ui/presence': 0.0.16
       nanoid: 5.0.8
 
   '@aria-ui/overlay@0.0.21':
@@ -7335,24 +7335,24 @@ snapshots:
       '@floating-ui/dom': 1.6.12
       '@zag-js/dom-query': 0.77.0
 
-  '@aria-ui/popover@0.0.22':
+  '@aria-ui/popover@0.0.23':
     dependencies:
       '@aria-ui/core': 0.0.19
       '@aria-ui/overlay': 0.0.21
-      '@aria-ui/presence': 0.0.15
+      '@aria-ui/presence': 0.0.16
       '@zag-js/dismissable': 0.77.0
       '@zag-js/tabbable': 0.49.0
 
-  '@aria-ui/presence@0.0.15':
+  '@aria-ui/presence@0.0.16':
     dependencies:
       '@aria-ui/core': 0.0.19
-      '@zag-js/dom-query': 0.74.2
+      '@zag-js/dom-query': 0.77.0
 
-  '@aria-ui/tooltip@0.0.24':
+  '@aria-ui/tooltip@0.0.25':
     dependencies:
       '@aria-ui/core': 0.0.19
       '@aria-ui/overlay': 0.0.21
-      '@aria-ui/presence': 0.0.15
+      '@aria-ui/presence': 0.0.16
       nanoid: 5.0.8
 
   '@ariatype/aria-attributes-drag-and-drop@1.0.1': {}

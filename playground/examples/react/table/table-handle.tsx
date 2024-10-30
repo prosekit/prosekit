@@ -44,7 +44,7 @@ export function TableHandle() {
               onSelect={editor.commands.deleteCellSelection}
             >
               <span>Clear Contents</span>
-              <span className={Themes.POPOVER_SHORTCUT}>Del</span>
+              <span className={Themes.TABLE_CELL_MENU_ITEM_SHORTCUT}>Del</span>
             </TableHandlePopoverItem>
           )}
           {editor.commands.deleteTableColumn.canExec() && (
@@ -84,7 +84,7 @@ export function TableHandle() {
               onSelect={editor.commands.deleteCellSelection}
             >
               <span>Clear Contents</span>
-              <span className={Themes.POPOVER_SHORTCUT}>Del</span>
+              <span className={Themes.TABLE_CELL_MENU_ITEM_SHORTCUT}>Del</span>
             </TableHandlePopoverItem>
           )}
           {editor.commands.deleteTableRow.canExec() && (

@@ -43,8 +43,8 @@ const editor = useEditor<EditorExtension>({ update: true })
           @select="editor.commands.deleteCellSelection"
         >
           <span>Clear Contents</span>
-          <span :class="Themes.POPOVER_SHORTCUT">Del</span>        
-          </TableHandlePopoverItem>
+          <span :class="Themes.TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
+        </TableHandlePopoverItem>
         <TableHandlePopoverItem
           v-if="editor.commands.deleteTableColumn.canExec()"
           :class="Themes.TABLE_CELL_MENU_ITEM"
@@ -79,7 +79,7 @@ const editor = useEditor<EditorExtension>({ update: true })
           @select="editor.commands.deleteCellSelection"
         >
           <span>Clear Contents</span>
-          <span :class="Themes.POPOVER_SHORTCUT">Del</span>
+          <span :class="Themes.TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           v-if="editor.commands.deleteTableRow.canExec()"

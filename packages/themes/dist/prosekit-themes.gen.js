@@ -70,7 +70,7 @@ var THEMES = {
   IMAGE_UPLOAD_ERROR_MESSAGE: "hidden opacity-80 @xs:block",
   DROP_CURSOR: "transition-all bg-blue-500",
   BLOCK_HANDLE_POPOVER:
-    "flex items-center flex-row box-border justify-center transition py-2 [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
+    "flex items-center flex-row box-border justify-center transition border-0 py-2 [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
   BLOCK_HANDLE_ADD:
     "flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 cursor-pointer",
   BLOCK_HANDLE_DRAG:

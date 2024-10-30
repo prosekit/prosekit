@@ -1,4 +1,4 @@
-import type { EventDeclarations } from '@aria-ui/core'
+import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
 import {
   overlayPositionerEvents,
   overlayPositionerProps,
@@ -67,20 +67,19 @@ const body = typeof document !== 'undefined' && document.querySelector('body')
 const defaultBoundary = body || 'clippingAncestors'
 
 /** @internal */
-export const autocompletePopoverProps = {
-  ...overlayPositionerProps,
-  editor: { default: null },
-  regex: { default: null },
-  onQueryChange: { default: null },
-  onOpenChange: { default: null },
-  placement: { default: 'bottom-start' },
-  offset: { default: 4 },
-  inline: { default: true },
-  hoist: { default: true },
-  fitViewport: { default: true },
-  boundary: { default: defaultBoundary },
-  overflowPadding: { default: 8 },
-} as const
+export const autocompletePopoverProps: PropDeclarations<AutocompletePopoverProps> =
+  {
+    ...overlayPositionerProps,
+    editor: { default: null },
+    regex: { default: null },
+    placement: { default: 'bottom-start' },
+    offset: { default: 4 },
+    inline: { default: true },
+    hoist: { default: true },
+    fitViewport: { default: true },
+    boundary: { default: defaultBoundary },
+    overflowPadding: { default: 8 },
+  }
 
 export interface AutocompletePopoverEvents extends OverlayPositionerEvents {
   /**

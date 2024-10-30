@@ -27,7 +27,9 @@ export let onClick: VoidFunction | undefined = undefined
       {/if}
     </button>
   </TooltipTrigger>
-  <TooltipContent class={Themes.TOOLTIP_CONTENT}>
-    {tooltip}
-  </TooltipContent>
+  {#if tooltip}
+    <TooltipContent class={Themes.TOOLTIP_CONTENT}>
+      {tooltip}
+    </TooltipContent>
+  {/if}
 </TooltipRoot>

@@ -232,7 +232,7 @@ export const TABLE_HANDLE_MENU = cn(
 )
 
 export const TABLE_CELL_MENU_ITEM = cn(
-  'relative block min-w-[120px] scroll-my-1 rounded px-3 py-1.5',
+  'relative min-w-[120px] scroll-my-1 rounded px-3 py-1.5',
   'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 hover:data-[disabled=true]:opacity-50',
   'flex items-center justify-between gap-2',
   FLOATING_MENU_ITEM,

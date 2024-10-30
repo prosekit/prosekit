@@ -1,0 +1,5 @@
+---
+'@prosekit/web': patch
+---
+
+Fix an issue where tooltips sometimes don't hide when they have animation with zero duration.

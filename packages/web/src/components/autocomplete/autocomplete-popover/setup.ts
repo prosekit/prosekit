@@ -6,8 +6,8 @@ import {
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
+  type SetupOptions,
   type Signal,
-  type SignalState,
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
@@ -28,11 +28,17 @@ import { useFirstRendering } from '../../../hooks/use-first-rendering'
 import { onSubmitContext, openContext, queryContext } from '../context'
 
 import { defaultQueryBuilder } from './helpers'
-import type { AutocompletePopoverProps } from './types'
+import type {
+  AutocompletePopoverEvents,
+  AutocompletePopoverProps,
+} from './types'
 
 export function useAutocompletePopover(
   host: ConnectableElement,
-  { state }: { state: SignalState<AutocompletePopoverProps> },
+  {
+    state,
+    emit,
+  }: SetupOptions<AutocompletePopoverProps, AutocompletePopoverEvents>,
 ): void {
   const { editor, regex, ...overlayState } = state
 
@@ -69,19 +75,14 @@ export function useAutocompletePopover(
     const queryValue = query.get()
 
     if (!firstRendering.peek()) {
-      state.onQueryChange.peek()?.(queryValue)
+      emit('queryChange', queryValue)
     }
   })
 
   useAnimationFrame(host, () => {
     const presenceValue = presence.get()
-    const onOpenChangeValue = state.onOpenChange.peek()
-
-    if (!onOpenChangeValue) {
-      return
-    }
     return () => {
-      onOpenChangeValue(presenceValue)
+      emit('openChange', presenceValue)
     }
   })
 }

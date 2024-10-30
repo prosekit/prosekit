@@ -24,16 +24,6 @@ export interface AutocompletePopoverProps extends OverlayPositionerProps {
   regex: RegExp | null
 
   /**
-   * A callback that is called when the query changes.
-   */
-  onQueryChange: ((query: string) => void) | null
-
-  /**
-   * A callback that is called when the open state changes.
-   */
-  onOpenChange: ((open: boolean) => void) | null
-
-  /**
    * The placement of the popover, relative to the text cursor.
    *
    * @default "bottom-start"
@@ -92,8 +82,22 @@ export const autocompletePopoverProps = {
   overflowPadding: { default: 8 },
 } as const
 
-export interface AutocompletePopoverEvents extends OverlayPositionerEvents {}
+export interface AutocompletePopoverEvents extends OverlayPositionerEvents {
+  /**
+   * Fired when the open state changes.
+   */
+  openChange: CustomEvent<boolean>
+
+  /**
+   * Fired when the query changes.
+   */
+  queryChange: CustomEvent<string>
+}
 
 /** @internal */
 export const autocompletePopoverEvents: EventDeclarations<AutocompletePopoverEvents> =
-  overlayPositionerEvents
+  {
+    ...overlayPositionerEvents,
+    openChange: {},
+    queryChange: {},
+  }

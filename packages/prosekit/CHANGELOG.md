@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.10.3
+
+### Patch Changes
+
+- [`aed977f`](https://github.com/ocavue/prosekit/commit/aed977f6db773297eef8a016b116824d61e68e73) ![](https://prosekit.dev/b/extensions)
+
+  Add padding for table cell.
+
 ## 0.10.2
 
 ### Patch Changes

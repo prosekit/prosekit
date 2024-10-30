@@ -1,5 +1,25 @@
 # prosekit
 
+## 0.10.4
+
+### Patch Changes
+
+- [`fabe364`](https://github.com/ocavue/prosekit/commit/fabe364af5d6192ca6b6541e8067fa344d3f211b) ![](https://prosekit.dev/b/web)
+
+  Replace the `onOpenChange` callback property with an `openChange` event in the `prosekit-inline-popover` element.
+
+  Replace the `onOpenChange` callback property with an `openChange` event in the `prosekit-autocomplete-popover` element.
+
+  Replace the `onQueryChange` callback property with a `queryChange` event in the `prosekit-autocomplete-popover` element.
+
+- [`fabe364`](https://github.com/ocavue/prosekit/commit/fabe364af5d6192ca6b6541e8067fa344d3f211b) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/vue)
+
+  Refactor the event handler binding logic.
+
+- [`ee12b0e`](https://github.com/ocavue/prosekit/commit/ee12b0e00156ec0de80f77b955431062a4c07acd) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where tooltips sometimes don't hide when they have animation with zero duration.
+
 ## 0.10.3
 
 ### Patch Changes

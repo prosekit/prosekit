@@ -5,7 +5,7 @@ import {
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
-  type SetupOptions,
+  type SignalState,
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
@@ -16,25 +16,26 @@ import { useEditorFocusChangeEvent } from '../../../hooks/use-editor-focus-event
 import { useEditorUpdateEvent } from '../../../hooks/use-editor-update-event'
 import { useKeymap } from '../../../hooks/use-keymap'
 
-import type { InlinePopoverEvents, InlinePopoverProps } from './types'
+import type { InlinePopoverProps } from './types'
 import { getVirtualSelectionElement } from './virtual-selection-element'
 
 export function useInlinePopover(
   host: ConnectableElement,
-  { state, emit }: SetupOptions<InlinePopoverProps, InlinePopoverEvents>,
+  { state }: { state: SignalState<InlinePopoverProps> },
 ): void {
-  const { editor, defaultOpen, open, ...overlayState } = state
+  const { editor, defaultOpen, open, onOpenChange, ...overlayState } = state
 
   const reference = useInlinePopoverReference(host, editor)
   const hasReference = createComputed(() => !!reference.get())
 
   useEffect(host, () => {
     const hasReferenceValue = hasReference.get()
+    const onOpenChangeValue = onOpenChange.peek()
     const defaultOpenValue = defaultOpen.peek()
     const openValue = open.peek()
 
-    if (defaultOpenValue || openValue) {
-      emit('openChange', hasReferenceValue)
+    if (onOpenChangeValue && (defaultOpenValue || openValue)) {
+      onOpenChangeValue(hasReferenceValue)
     }
   })
 
@@ -55,7 +56,7 @@ export function useInlinePopover(
         return false
       }
       open.set(false)
-      emit('openChange', false)
+      onOpenChange.peek()?.(false)
       return true
     },
   })

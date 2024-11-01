@@ -1,6 +1,6 @@
 # Introduction
 
-ProseKit is a toolkit that help you build powerful rich text editors with ease.
+ProseKit is a versatile toolkit that simplifies building rich text editors, offering seamless composability and extensibility across vanilla JavaScript and multiple frameworks like React, Vue, Preact, Svelte, and Solid.
 
 ProseKit mainly consists of the following modules:
 
@@ -8,7 +8,7 @@ ProseKit mainly consists of the following modules:
 
 > `prosekit/core`
 
-A collection of convenient and user-friendly APIs based on ProseMirror.
+A collection of convenient and user-friendly APIs based on [ProseMirror](https://prosemirror.net/).
 
 ## Extensions
 

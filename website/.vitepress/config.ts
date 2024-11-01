@@ -16,9 +16,9 @@ export default defineConfig({
 
   // prettier-ignore
   head: [
-    ['link', { rel: "icon", type: "image/svg+xml", href: "/assets/logo.svg"}],
-    ['link', { rel: "mask-icon", href: "/assets/logo.svg", color: "#ffffff"}],
-    ['meta', { name: "theme-color", content: "#ffffff"}],
+    ['link', { rel: "icon", type: "image/svg+xml", href: "/assets/logo.svg" }],
+    ['link', { rel: "mask-icon", href: "/assets/logo.svg", color: "#ffffff" }],
+    ['meta', { name: "theme-color", content: "#ffffff" }],
     ['meta', { property: "twitter:card", content: "summary_large_image" }],
     ['meta', { property: "twitter:image", content: "https://prosekit.dev/assets/cover.png" }],
     ['meta', { property: "og:image", content: "https://prosekit.dev/assets/cover.png" }],
@@ -37,15 +37,16 @@ export default defineConfig({
         link: '/guide/introduction',
       },
       {
-        text: 'Extensions',
+        text: 'Playground',
         activeMatch: '/extensions',
-        link: '/extensions/heading',
+        link: '/extensions',
       },
-      {
-        text: 'Components',
-        activeMatch: '/components',
-        link: '/components/introduction',
-      },
+      // disable to interate to extensions
+      // {
+      //   text: 'Components',
+      //   activeMatch: '/components',
+      //   link: '/components/introduction',
+      // },
       {
         text: 'Examples',
         activeMatch: '/examples',
@@ -65,6 +66,8 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/guide/introduction' },
             { text: 'Get Started', link: '/guide/get-started' },
+            { text: 'Compose editor', link: '/guide/compose-editor' },
+            { text: 'Styling', link: '/guide/styling' },
           ],
         },
 

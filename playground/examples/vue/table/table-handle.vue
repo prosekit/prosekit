@@ -28,28 +28,29 @@ const editor = useEditor<EditorExtension>({ update: true })
           :class="Themes.TABLE_CELL_MENU_ITEM"
           @select="editor.commands.addTableColumnBefore"
         >
-          Insert Left
+          <span>Insert Left</span>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           v-if="editor.commands.addTableColumnAfter.canExec()"
           :class="Themes.TABLE_CELL_MENU_ITEM"
           @select="editor.commands.addTableColumnAfter"
         >
-          Insert Right
+          <span>Insert Right</span>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           v-if="editor.commands.deleteCellSelection.canExec()"
           :class="Themes.TABLE_CELL_MENU_ITEM"
           @select="editor.commands.deleteCellSelection"
         >
-          Clear Contents
+          <span>Clear Contents</span>
+          <span :class="Themes.TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           v-if="editor.commands.deleteTableColumn.canExec()"
           :class="Themes.TABLE_CELL_MENU_ITEM"
           @select="editor.commands.deleteTableColumn"
         >
-          Delete Column
+          <span>Delete Column</span>
         </TableHandlePopoverItem>
       </TableHandlePopoverContent>
     </TableHandleColumnRoot>
@@ -63,28 +64,29 @@ const editor = useEditor<EditorExtension>({ update: true })
           :class="Themes.TABLE_CELL_MENU_ITEM"
           @select="editor.commands.addTableRowAbove"
         >
-          Insert Above
+          <span>Insert Above</span>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           v-if="editor.commands.addTableRowBelow.canExec()"
           :class="Themes.TABLE_CELL_MENU_ITEM"
           @select="editor.commands.addTableRowBelow"
         >
-          Insert Below
+          <span>Insert Below</span>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           v-if="editor.commands.deleteCellSelection.canExec()"
           :class="Themes.TABLE_CELL_MENU_ITEM"
           @select="editor.commands.deleteCellSelection"
         >
-          Clear Contents
+          <span>Clear Contents</span>
+          <span :class="Themes.TABLE_CELL_MENU_ITEM_SHORTCUT">Del</span>
         </TableHandlePopoverItem>
         <TableHandlePopoverItem
           v-if="editor.commands.deleteTableRow.canExec()"
           :class="Themes.TABLE_CELL_MENU_ITEM"
           @select="editor.commands.deleteTableRow"
         >
-          Delete Row
+          <span>Delete Row</span>
         </TableHandlePopoverItem>
       </TableHandlePopoverContent>
     </TableHandleRowRoot>

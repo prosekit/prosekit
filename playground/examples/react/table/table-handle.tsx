@@ -27,7 +27,7 @@ export function TableHandle() {
               className={Themes.TABLE_CELL_MENU_ITEM}
               onSelect={editor.commands.addTableColumnBefore}
             >
-              Insert Left
+              <span>Insert Left</span>
             </TableHandlePopoverItem>
           )}
           {editor.commands.addTableColumnAfter.canExec() && (
@@ -35,7 +35,7 @@ export function TableHandle() {
               className={Themes.TABLE_CELL_MENU_ITEM}
               onSelect={editor.commands.addTableColumnAfter}
             >
-              Insert Right
+              <span>Insert Right</span>
             </TableHandlePopoverItem>
           )}
           {editor.commands.deleteCellSelection.canExec() && (
@@ -43,7 +43,8 @@ export function TableHandle() {
               className={Themes.TABLE_CELL_MENU_ITEM}
               onSelect={editor.commands.deleteCellSelection}
             >
-              Clear Contents
+              <span>Clear Contents</span>
+              <span className={Themes.TABLE_CELL_MENU_ITEM_SHORTCUT}>Del</span>
             </TableHandlePopoverItem>
           )}
           {editor.commands.deleteTableColumn.canExec() && (
@@ -51,7 +52,7 @@ export function TableHandle() {
               className={Themes.TABLE_CELL_MENU_ITEM}
               onSelect={editor.commands.deleteTableColumn}
             >
-              Delete Column
+              <span>Delete Column</span>
             </TableHandlePopoverItem>
           )}
         </TableHandlePopoverContent>
@@ -66,7 +67,7 @@ export function TableHandle() {
               className={Themes.TABLE_CELL_MENU_ITEM}
               onSelect={editor.commands.addTableRowAbove}
             >
-              Insert Above
+              <span>Insert Above</span>
             </TableHandlePopoverItem>
           )}
           {editor.commands.addTableRowBelow.canExec() && (
@@ -74,7 +75,7 @@ export function TableHandle() {
               className={Themes.TABLE_CELL_MENU_ITEM}
               onSelect={editor.commands.addTableRowBelow}
             >
-              Insert Below
+              <span>Insert Below</span>
             </TableHandlePopoverItem>
           )}
           {editor.commands.deleteCellSelection.canExec() && (
@@ -82,7 +83,8 @@ export function TableHandle() {
               className={Themes.TABLE_CELL_MENU_ITEM}
               onSelect={editor.commands.deleteCellSelection}
             >
-              Clear Contents
+              <span>Clear Contents</span>
+              <span className={Themes.TABLE_CELL_MENU_ITEM_SHORTCUT}>Del</span>
             </TableHandlePopoverItem>
           )}
           {editor.commands.deleteTableRow.canExec() && (
@@ -90,7 +92,7 @@ export function TableHandle() {
               className={Themes.TABLE_CELL_MENU_ITEM}
               onSelect={editor.commands.deleteTableRow}
             >
-              Delete Row
+              <span>Delete Row</span>
             </TableHandlePopoverItem>
           )}
         </TableHandlePopoverContent>

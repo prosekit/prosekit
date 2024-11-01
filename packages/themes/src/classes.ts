@@ -103,7 +103,7 @@ export const EDITOR_CONTENT = cn(
 
 export const INLINE_MENU_MAIN = cn(
   FLOATING_MENU,
-  'relative flex min-w-[120px] space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
+  'relative flex min-w-[8rem] space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
 )
 
 export const INLINE_MENU_LINK = cn(
@@ -120,12 +120,12 @@ export const INLINE_MENU_LINK_REMOVE_BUTTON = cn(
 )
 
 export const AUTOCOMPLETE_MENU = cn(
-  'relative block max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap p-1',
+  'relative block max-h-[25rem] min-w-[8rem] select-none overflow-auto whitespace-nowrap p-1',
   FLOATING_MENU,
 )
 
 export const AUTOCOMPLETE_MENU_ITEM = cn(
-  'relative block min-w-[120px] scroll-my-1 rounded px-3 py-1.5',
+  'relative block min-w-[8rem] scroll-my-1 rounded px-3 py-1.5',
   FLOATING_MENU_ITEM,
 )
 
@@ -199,7 +199,7 @@ export const IMAGE_UPLOAD_ERROR_MESSAGE = cn('hidden opacity-80 @xs:block')
 export const DROP_CURSOR = cn('transition-all bg-blue-500')
 
 export const BLOCK_HANDLE_POPOVER = cn(
-  'flex items-center flex-row box-border justify-center transition py-2',
+  'flex items-center flex-row box-border justify-center transition border-0 py-2',
   PRESENCE_ANIMATE,
 )
 
@@ -227,14 +227,18 @@ export const TABLE_ROOT_HANDLE = cn(
 )
 
 export const TABLE_HANDLE_MENU = cn(
-  'relative block max-h-[400px] min-w-[120px] select-none overflow-auto whitespace-nowrap p-1',
+  'relative block max-h-[25rem] min-w-[8rem] select-none overflow-auto whitespace-nowrap p-1',
   FLOATING_MENU,
 )
 
 export const TABLE_CELL_MENU_ITEM = cn(
-  'relative block min-w-[120px] scroll-my-1 rounded px-3 py-1.5',
+  'relative min-w-[8rem] scroll-my-1 rounded px-3 py-1.5 flex items-center justify-between gap-8 cursor-default',
   'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 hover:data-[disabled=true]:opacity-50',
   FLOATING_MENU_ITEM,
+)
+
+export const TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
+  'text-xs tracking-widest text-muted-foreground',
 )
 
 export const TOOLTIP_TRIGGER = cn('block')

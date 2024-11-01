@@ -39,9 +39,7 @@ export function createComponent<
 
     const properties: Record<string, unknown> = {}
     const attributes: Record<string, unknown> = {}
-    const eventHandlersRef: Ref<Record<string, AnyFunction[]>> = useRef(
-      Object.fromEntries(eventNames.map((eventName) => [eventName, []])),
-    )
+    const eventHandlersRef: Ref<Record<string, AnyFunction>> = useRef({})
     const eventHandlers: Record<string, AnyFunction> = {}
 
     for (const [name, value] of Object.entries(props)) {
@@ -96,15 +94,7 @@ export function createComponent<
 
     // Put all event listeners extracted from `props` into `eventHandlersRef`.
     useIsomorphicLayoutEffect(() => {
-      for (const [eventName, handerArray] of Object.entries(
-        eventHandlersRef.current,
-      )) {
-        const handler = eventHandlers[eventName]
-        handerArray.length = 0
-        if (handler) {
-          handerArray.push(handler)
-        }
-      }
+      eventHandlersRef.current = eventHandlers
     })
 
     // Register the event listeners to the element.
@@ -113,22 +103,20 @@ export function createComponent<
         return
       }
 
-      const handlers: Record<string, AnyFunction> = {}
+      const fixedEventHandlers: Record<string, AnyFunction> = {}
 
       for (const eventName of eventNames) {
-        handlers[eventName] = (event: Event) => {
-          for (const handler of eventHandlersRef.current[eventName]) {
-            handler(event)
-          }
+        fixedEventHandlers[eventName] = (event: Event) => {
+          eventHandlersRef.current[eventName]?.(event)
         }
       }
 
-      for (const [name, handler] of Object.entries(handlers)) {
+      for (const [name, handler] of Object.entries(fixedEventHandlers)) {
         el.addEventListener(name, handler)
       }
 
       return () => {
-        for (const [name, handler] of Object.entries(handlers)) {
+        for (const [name, handler] of Object.entries(fixedEventHandlers)) {
           el.removeEventListener(name, handler)
         }
       }

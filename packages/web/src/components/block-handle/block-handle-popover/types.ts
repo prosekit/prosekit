@@ -7,7 +7,7 @@ import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
 export interface BlockHandlePopoverProps
-  extends Omit<OverlayPositionerProps, 'placement' | 'offset'> {
+  extends Omit<OverlayPositionerProps, 'placement'> {
   /**
    * The ProseKit editor instance.
    *
@@ -22,13 +22,6 @@ export interface BlockHandlePopoverProps
    * @default "left-start"
    */
   placement: Placement
-
-  /**
-   * The distance between the popover and the hovered block.
-   *
-   * @default 4
-   */
-  offset: number
 }
 
 /** @internal */
@@ -37,7 +30,6 @@ export const blockHandlePopoverProps: PropDeclarations<BlockHandlePopoverProps> 
     ...overlayPositionerProps,
     editor: { default: null },
     placement: { default: 'left-start' },
-    offset: { default: 4 },
   }
 
 /** @internal */

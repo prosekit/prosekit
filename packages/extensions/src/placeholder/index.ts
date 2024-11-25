@@ -1,4 +1,9 @@
-import { definePlugin, isInCodeBlock, maybeRun } from '@prosekit/core'
+import {
+  definePlugin,
+  findParentNode,
+  isInCodeBlock,
+  maybeRun,
+} from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { type EditorState, Plugin, PluginKey } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
@@ -70,6 +75,9 @@ function createPlaceholderDecoration(
   const $pos = selection.$anchor
   const node = $pos.parent
   if (node.content.size > 0) return null
+
+  const inTable = findParentNode((node) => node.type.name === 'table', $pos)
+  if (inTable) return null
 
   const before = $pos.before()
 

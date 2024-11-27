@@ -1,4 +1,4 @@
-import { findParentNode } from '@prosekit/core'
+import { findParentNode, type FindParentNodeResult } from '@prosekit/core'
 import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
 import type { Selection } from '@prosekit/pm/state'
 import {
@@ -17,7 +17,12 @@ export function isCellSelection(value: unknown): value is CellSelection {
   return value instanceof CellSelection
 }
 
-export function findTable($pos: ResolvedPos) {
+/**
+ * Find the closest table node.
+ *
+ * @internal
+ */
+export function findTable($pos: ResolvedPos): FindParentNodeResult | undefined {
   return findParentNode((node) => node.type.spec.tableRole === 'table', $pos)
 }
 

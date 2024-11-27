@@ -3,6 +3,8 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import { type EditorState, Plugin, PluginKey } from '@prosekit/pm/state'
 import { Decoration, DecorationSet } from '@prosekit/pm/view'
 
+import { findTable } from '../table'
+
 export interface PlaceholderOptions {
   /**
    * The placeholder to use. It can be a static string or a function that
@@ -12,12 +14,19 @@ export interface PlaceholderOptions {
 
   /**
    * By default, the placeholder text will be shown whenever the current text
-   * cursor is in an empty text node. If you only want to show the placeholder
-   * when the whole doc is empty, you can set this option to 'doc'.
+   * cursor is in an empty text node and it's not inside a code block or a
+   * table node.
+   *
+   * If you only want to show the placeholder when the whole doc is empty, you
+   * can set this option to 'doc'.
+   *
+   * You can also pass a function that receives the current editor state and
+   * returns a boolean value to determine whether the placeholder should be
+   * shown.
    *
    * @default 'block'
    */
-  strategy?: 'doc' | 'block'
+  strategy?: 'doc' | 'block' | ((state: EditorState) => boolean)
 }
 
 /**
@@ -36,11 +45,14 @@ function createPlaceholderPlugin({
     key: new PluginKey('prosekit-placeholder'),
     props: {
       decorations: (state) => {
-        if (strategy === 'doc' && !isDocEmpty(state.doc)) {
-          return null
-        }
+        const strategyFn =
+          typeof strategy === 'function'
+            ? strategy
+            : strategy === 'doc'
+              ? docStrategy
+              : defaultStrategy
 
-        if (isInCodeBlock(state.selection)) {
+        if (!strategyFn(state)) {
           return null
         }
 
@@ -56,6 +68,14 @@ function createPlaceholderPlugin({
   })
 }
 
+function defaultStrategy(state: EditorState): boolean {
+  return !isInCodeBlock(state.selection) && !findTable(state.selection.$from)
+}
+
+function docStrategy(state: EditorState): boolean {
+  return isDocEmpty(state.doc) && defaultStrategy(state)
+}
+
 function isDocEmpty(doc: ProseMirrorNode) {
   return doc.childCount <= 1 && !doc.firstChild?.content.size
 }
@@ -64,6 +84,8 @@ function createPlaceholderDecoration(
   state: EditorState,
   placeholderText: string,
 ): Decoration | null {
+  if (!placeholderText) return null
+
   const { selection } = state
   if (!selection.empty) return null
 

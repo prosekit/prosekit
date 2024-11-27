@@ -25,4 +25,4 @@ export {
   type TableRowSpecExtension,
   type TableSpecExtension,
 } from './table-spec'
-export { isCellSelection } from './table-utils'
+export { isCellSelection, findTable } from './table-utils'

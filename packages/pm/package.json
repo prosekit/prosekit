@@ -48,10 +48,10 @@
     "prosemirror-history": "^1.4.1",
     "prosemirror-inputrules": "^1.4.0",
     "prosemirror-keymap": "^1.2.2",
-    "prosemirror-model": "^1.23.0",
+    "prosemirror-model": "^1.24.0",
     "prosemirror-state": "^1.4.3",
     "prosemirror-transform": "^1.10.2",
-    "prosemirror-view": "^1.35.0"
+    "prosemirror-view": "^1.37.0"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",

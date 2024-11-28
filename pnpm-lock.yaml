@@ -133,7 +133,7 @@ importers:
         version: 2.1.1
       prosemirror-splittable:
         specifier: ^0.1.1
-        version: 0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)
+        version: 0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)
       type-fest:
         specifier: ^4.26.1
         version: 4.26.1
@@ -252,7 +252,7 @@ importers:
         version: 1.3.2
       prosemirror-highlight:
         specifier: ^0.9.0
-        version: 0.9.0(@types/hast@3.0.4)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.35.0)(shiki@1.23.1)
+        version: 0.9.0(@types/hast@3.0.4)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.0)(shiki@1.23.1)
       prosemirror-search:
         specifier: ^1.0.0
         version: 1.0.0
@@ -277,7 +277,7 @@ importers:
         version: 1.0.8
       loro-prosemirror:
         specifier: ^0.2.0
-        version: 0.2.0(loro-crdt@1.0.8)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.35.0)
+        version: 0.2.0(loro-crdt@1.0.8)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-view@1.37.0)
       tsup:
         specifier: ^8.3.5
         version: 8.3.5(@microsoft/api-extractor@7.47.11(@types/node@20.17.5))(jiti@2.3.3)(postcss@8.4.47)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.0)
@@ -291,8 +291,8 @@ importers:
         specifier: ^2.1.6
         version: 2.1.6(@types/node@20.17.5)(@vitest/browser@2.1.6)(lightningcss@1.27.0)(msw@2.6.6(@types/node@20.17.5)(typescript@5.6.3))
       y-prosemirror:
-        specifier: ^1.2.12
-        version: 1.2.12(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.35.0)(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
+        specifier: ^1.2.13
+        version: 1.2.13(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-view@1.37.0)(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
       y-protocols:
         specifier: ^1.0.6
         version: 1.0.6(yjs@13.6.20)
@@ -334,8 +334,8 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2
       prosemirror-model:
-        specifier: ^1.23.0
-        version: 1.23.0
+        specifier: ^1.24.0
+        version: 1.24.0
       prosemirror-state:
         specifier: ^1.4.3
         version: 1.4.3
@@ -343,8 +343,8 @@ importers:
         specifier: ^1.10.2
         version: 1.10.2
       prosemirror-view:
-        specifier: ^1.35.0
-        version: 1.35.0
+        specifier: ^1.37.0
+        version: 1.37.0
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -440,7 +440,7 @@ importers:
         version: 1.0.8
       loro-prosemirror:
         specifier: ^0.2.0
-        version: 0.2.0(loro-crdt@1.0.8)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.35.0)
+        version: 0.2.0(loro-crdt@1.0.8)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-view@1.37.0)
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
@@ -484,8 +484,8 @@ importers:
         specifier: ^3.5.12
         version: 3.5.12(typescript@5.6.3)
       y-prosemirror:
-        specifier: ^1.2.12
-        version: 1.2.12(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.35.0)(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
+        specifier: ^1.2.13
+        version: 1.2.13(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-view@1.37.0)(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
       yjs:
         specifier: ^13.6.20
         version: 13.6.20
@@ -810,7 +810,7 @@ importers:
         version: 1.0.8
       loro-prosemirror:
         specifier: ^0.2.0
-        version: 0.2.0(loro-crdt@1.0.8)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.35.0)
+        version: 0.2.0(loro-crdt@1.0.8)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-view@1.37.0)
       preact:
         specifier: ^10.24.3
         version: 10.24.3
@@ -930,7 +930,7 @@ importers:
         version: 1.0.8
       loro-prosemirror:
         specifier: ^0.2.0
-        version: 0.2.0(loro-crdt@1.0.8)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.35.0)
+        version: 0.2.0(loro-crdt@1.0.8)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-view@1.37.0)
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
@@ -5781,6 +5781,9 @@ packages:
   prosemirror-model@1.23.0:
     resolution: {integrity: sha512-Q/fgsgl/dlOAW9ILu4OOhYWQbc7TQd4BwKH/RwmUjyVf8682Be4zj3rOYdLnYEcGzyg8LL9Q5IWYKD8tdToreQ==}
 
+  prosemirror-model@1.24.0:
+    resolution: {integrity: sha512-Ft7epNnycoQSM+2ObF35SBbBX+5WY39v8amVlrtlAcpglhlHs2tCTnWl7RX5tbp/PsMKcRcWV9cXPuoBWq0AIQ==}
+
   prosemirror-safari-ime-span@1.0.2:
     resolution: {integrity: sha512-QJqD8s1zE/CuK56kDsUhndh5hiHh/gFnAuPOA9ytva2s85/ZEt2tNWeALTJN48DtWghSKOmiBsvVn2OlnJ5H2w==}
 
@@ -5812,6 +5815,9 @@ packages:
 
   prosemirror-view@1.35.0:
     resolution: {integrity: sha512-Umtbh22fmUlpZpRTiOVXA0PpdRZeYEeXQsLp51VfnMhjkJrqJ0n8APinIZrRAD5Jr3UxH8FnOaUqRylSuMsqHA==}
+
+  prosemirror-view@1.37.0:
+    resolution: {integrity: sha512-z2nkKI1sJzyi7T47Ji/ewBPuIma1RNvQCCYVdV+MqWBV7o4Sa1n94UJCJJ1aQRF/xRkFfyqLGlGFWitIcCOtbg==}
 
   proto-list@1.2.4:
     resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}
@@ -7088,8 +7094,8 @@ packages:
     peerDependencies:
       yjs: ^13.0.0
 
-  y-prosemirror@1.2.12:
-    resolution: {integrity: sha512-UMnUIR5ppVn30n2kzeeBQEaesWGe4fsbnlch1HnNa3/snJMoOn7M7dieuS+o1OQwKs1dqx2eT3gFfGF2aOaQdw==}
+  y-prosemirror@1.2.13:
+    resolution: {integrity: sha512-eW5/rJcYhqlrqyPLTaGIaPSt7YS6f2wwbV5wXlUkY8rERY0tSJPoumsPD7UWwtXk9C5TdTsvwaIrdOoD1QLbYA==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
     peerDependencies:
       prosemirror-model: ^1.7.1
@@ -11955,13 +11961,13 @@ snapshots:
 
   loro-crdt@1.0.8: {}
 
-  loro-prosemirror@0.2.0(loro-crdt@1.0.8)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.35.0):
+  loro-prosemirror@0.2.0(loro-crdt@1.0.8)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-view@1.37.0):
     dependencies:
       lib0: 0.2.98
       loro-crdt: 1.0.8
-      prosemirror-model: 1.23.0
+      prosemirror-model: 1.24.0
       prosemirror-state: 1.4.3
-      prosemirror-view: 1.35.0
+      prosemirror-view: 1.37.0
 
   loupe@3.1.2: {}
 
@@ -12857,7 +12863,7 @@ snapshots:
 
   prosemirror-commands@1.6.2:
     dependencies:
-      prosemirror-model: 1.23.0
+      prosemirror-model: 1.24.0
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.10.2
 
@@ -12884,20 +12890,20 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.35.0
 
-  prosemirror-highlight@0.9.0(@types/hast@3.0.4)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.35.0)(shiki@1.23.1):
+  prosemirror-highlight@0.9.0(@types/hast@3.0.4)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.0)(shiki@1.23.1):
     optionalDependencies:
       '@types/hast': 3.0.4
-      prosemirror-model: 1.23.0
+      prosemirror-model: 1.24.0
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.10.2
-      prosemirror-view: 1.35.0
+      prosemirror-view: 1.37.0
       shiki: 1.23.1
 
   prosemirror-history@1.4.1:
     dependencies:
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.10.2
-      prosemirror-view: 1.35.0
+      prosemirror-view: 1.37.0
       rope-sequence: 1.3.4
 
   prosemirror-inputrules@1.4.0:
@@ -12914,10 +12920,14 @@ snapshots:
     dependencies:
       orderedmap: 2.1.1
 
+  prosemirror-model@1.24.0:
+    dependencies:
+      orderedmap: 2.1.1
+
   prosemirror-safari-ime-span@1.0.2:
     dependencies:
       prosemirror-state: 1.4.3
-      prosemirror-view: 1.35.0
+      prosemirror-view: 1.37.0
 
   prosemirror-search@1.0.0:
     dependencies:
@@ -12925,17 +12935,17 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.35.0
 
-  prosemirror-splittable@0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2):
+  prosemirror-splittable@0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2):
     optionalDependencies:
-      prosemirror-model: 1.23.0
+      prosemirror-model: 1.24.0
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.10.2
 
   prosemirror-state@1.4.3:
     dependencies:
-      prosemirror-model: 1.23.0
+      prosemirror-model: 1.24.0
       prosemirror-transform: 1.10.2
-      prosemirror-view: 1.35.0
+      prosemirror-view: 1.37.0
 
   prosemirror-tables@1.6.1:
     dependencies:
@@ -12947,11 +12957,17 @@ snapshots:
 
   prosemirror-transform@1.10.2:
     dependencies:
-      prosemirror-model: 1.23.0
+      prosemirror-model: 1.24.0
 
   prosemirror-view@1.35.0:
     dependencies:
-      prosemirror-model: 1.23.0
+      prosemirror-model: 1.24.0
+      prosemirror-state: 1.4.3
+      prosemirror-transform: 1.10.2
+
+  prosemirror-view@1.37.0:
+    dependencies:
+      prosemirror-model: 1.24.0
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.10.2
 
@@ -14505,12 +14521,12 @@ snapshots:
       yjs: 13.6.20
     optional: true
 
-  y-prosemirror@1.2.12(prosemirror-model@1.23.0)(prosemirror-state@1.4.3)(prosemirror-view@1.35.0)(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20):
+  y-prosemirror@1.2.13(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-view@1.37.0)(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20):
     dependencies:
       lib0: 0.2.98
-      prosemirror-model: 1.23.0
+      prosemirror-model: 1.24.0
       prosemirror-state: 1.4.3
-      prosemirror-view: 1.35.0
+      prosemirror-view: 1.37.0
       y-protocols: 1.0.6(yjs@13.6.20)
       yjs: 13.6.20
 

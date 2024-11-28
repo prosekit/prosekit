@@ -1,21 +1,5 @@
 # prosekit/web/autocomplete
 
-## AutocompleteEmptyElement {#autocomplete-empty-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: AutocompleteEmptyElement) -->
-
-## AutocompleteItemElement {#autocomplete-item-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: AutocompleteItemElement) -->
-
-## AutocompleteListElement {#autocomplete-list-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: AutocompleteListElement) -->
-
-## AutocompletePopoverElement {#autocomplete-popover-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: AutocompletePopoverElement) -->
-
 ## AutocompleteItemEvents {#autocomplete-item-events}
 
 ## AutocompleteItemProps {#autocomplete-item-props-5}
@@ -211,3 +195,19 @@ The regular expression to match the query text to autocomplete.
 ## autocompleteListProps {#autocomplete-list-props-6}
 
 **Type**: `{ editor: { default: null }; filter: PropDeclaration<null | ItemFilter> }`
+
+## AutocompleteEmptyElement {#autocomplete-empty-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: AutocompleteEmptyElement) -->
+
+## AutocompleteItemElement {#autocomplete-item-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: AutocompleteItemElement) -->
+
+## AutocompleteListElement {#autocomplete-list-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: AutocompleteListElement) -->
+
+## AutocompletePopoverElement {#autocomplete-popover-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: AutocompletePopoverElement) -->

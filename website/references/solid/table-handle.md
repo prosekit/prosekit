@@ -84,7 +84,7 @@ Props for the [TableHandlePopoverContent](table-handle.md#table-handle-popover-c
 
 <dd>
 
-**Type**: `undefined | ((event: EscapeKeyDownEvent) => void)`
+**Type**: `(event: EscapeKeyDownEvent) => void`
 
 </dd>
 
@@ -96,7 +96,7 @@ Props for the [TableHandlePopoverContent](table-handle.md#table-handle-popover-c
 
 <dd>
 
-**Type**: `undefined | ((event: FocusOutsideEvent) => void)`
+**Type**: `(event: FocusOutsideEvent) => void`
 
 </dd>
 
@@ -108,7 +108,7 @@ Props for the [TableHandlePopoverContent](table-handle.md#table-handle-popover-c
 
 <dd>
 
-**Type**: `undefined | ((event: InteractOutsideEvent) => void)`
+**Type**: `(event: InteractOutsideEvent) => void`
 
 </dd>
 
@@ -120,7 +120,7 @@ Props for the [TableHandlePopoverContent](table-handle.md#table-handle-popover-c
 
 <dd>
 
-**Type**: `undefined | ((event: PointerDownOutsideEvent) => void)`
+**Type**: `(event: PointerDownOutsideEvent) => void`
 
 </dd>
 
@@ -154,7 +154,7 @@ Props for the [TableHandlePopoverItem](table-handle.md#table-handle-popover-item
 
 <dd>
 
-**Type**: `undefined | ((event: CustomEvent<void>) => void)`
+**Type**: `(event: CustomEvent<void>) => void`
 
 </dd>
 
@@ -214,7 +214,7 @@ Props for the [TableHandleRowTrigger](table-handle.md#table-handle-row-trigger-3
 
 <dd>
 
-**Type**: `undefined | ((event: CustomEvent<void>) => void)`
+**Type**: `(event: CustomEvent<void>) => void`
 
 </dd>
 

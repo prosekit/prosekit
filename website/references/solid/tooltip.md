@@ -18,7 +18,7 @@ Props for the [TooltipRoot](tooltip.md#tooltip-root-3) component.
 
 <dd>
 
-**Type**: `undefined | ((event: boolean) => void)`
+**Type**: `(event: boolean) => void`
 
 </dd>
 

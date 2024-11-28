@@ -1,9 +1,5 @@
 # prosekit/web/inline-popover
 
-## InlinePopoverElement {#inline-popover-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: InlinePopoverElement) -->
-
 ## InlinePopoverEvents {#inline-popover-events}
 
 <dl>
@@ -170,3 +166,7 @@ empty.
 </dd>
 
 </dl>
+
+## InlinePopoverElement {#inline-popover-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: InlinePopoverElement) -->

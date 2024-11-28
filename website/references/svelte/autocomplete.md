@@ -18,7 +18,7 @@ Props for the [AutocompleteItem](autocomplete.md#autocomplete-item-4) component.
 
 <dd>
 
-**Type**: `undefined | ((event: CustomEvent<void>) => void)`
+**Type**: `(event: CustomEvent<void>) => void`
 
 </dd>
 
@@ -56,7 +56,7 @@ Props for the [AutocompleteList](autocomplete.md#autocomplete-list-4) component.
 
 <dd>
 
-**Type**: `undefined | ((event: string) => void)`
+**Type**: `(event: string) => void`
 
 </dd>
 
@@ -148,7 +148,7 @@ The distance between the popover and the hovered block.
 
 <dd>
 
-**Type**: `undefined | ((event: boolean) => void)`
+**Type**: `(event: boolean) => void`
 
 </dd>
 
@@ -160,7 +160,7 @@ The distance between the popover and the hovered block.
 
 <dd>
 
-**Type**: `undefined | ((event: string) => void)`
+**Type**: `(event: string) => void`
 
 </dd>
 

@@ -1,33 +1,5 @@
 # prosekit/web/table-handle
 
-## TableHandleColumnRootElement {#table-handle-column-root-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: TableHandleColumnRootElement) -->
-
-## TableHandleColumnTriggerElement {#table-handle-column-trigger-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: TableHandleColumnTriggerElement) -->
-
-## TableHandlePopoverContentElement {#table-handle-popover-content-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: TableHandlePopoverContentElement) -->
-
-## TableHandlePopoverItemElement {#table-handle-popover-item-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: TableHandlePopoverItemElement) -->
-
-## TableHandleRootElement {#table-handle-root-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: TableHandleRootElement) -->
-
-## TableHandleRowRootElement {#table-handle-row-root-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: TableHandleRowRootElement) -->
-
-## TableHandleRowTriggerElement {#table-handle-row-trigger-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: TableHandleRowTriggerElement) -->
-
 ## TableHandleColumnRootProps {#table-handle-column-root-props-5}
 
 <dl>
@@ -179,3 +151,31 @@ The placement of the popover, relative to the hovered table cell.
 </dd>
 
 </dl>
+
+## TableHandleColumnRootElement {#table-handle-column-root-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: TableHandleColumnRootElement) -->
+
+## TableHandleColumnTriggerElement {#table-handle-column-trigger-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: TableHandleColumnTriggerElement) -->
+
+## TableHandlePopoverContentElement {#table-handle-popover-content-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: TableHandlePopoverContentElement) -->
+
+## TableHandlePopoverItemElement {#table-handle-popover-item-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: TableHandlePopoverItemElement) -->
+
+## TableHandleRootElement {#table-handle-root-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: TableHandleRootElement) -->
+
+## TableHandleRowRootElement {#table-handle-row-root-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: TableHandleRowRootElement) -->
+
+## TableHandleRowTriggerElement {#table-handle-row-trigger-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: TableHandleRowTriggerElement) -->

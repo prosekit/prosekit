@@ -14,7 +14,7 @@ Props for the [PopoverContent](popover.md#popover-content-2) component.
 
 <dd>
 
-**Type**: `undefined | ((event: EscapeKeyDownEvent) => void)`
+**Type**: `(event: EscapeKeyDownEvent) => void`
 
 </dd>
 
@@ -26,7 +26,7 @@ Props for the [PopoverContent](popover.md#popover-content-2) component.
 
 <dd>
 
-**Type**: `undefined | ((event: FocusOutsideEvent) => void)`
+**Type**: `(event: FocusOutsideEvent) => void`
 
 </dd>
 
@@ -38,7 +38,7 @@ Props for the [PopoverContent](popover.md#popover-content-2) component.
 
 <dd>
 
-**Type**: `undefined | ((event: InteractOutsideEvent) => void)`
+**Type**: `(event: InteractOutsideEvent) => void`
 
 </dd>
 
@@ -50,7 +50,7 @@ Props for the [PopoverContent](popover.md#popover-content-2) component.
 
 <dd>
 
-**Type**: `undefined | ((event: PointerDownOutsideEvent) => void)`
+**Type**: `(event: PointerDownOutsideEvent) => void`
 
 </dd>
 
@@ -70,7 +70,7 @@ Props for the [PopoverRoot](popover.md#popover-root-2) component.
 
 <dd>
 
-**Type**: `undefined | ((event: boolean) => void)`
+**Type**: `(event: boolean) => void`
 
 </dd>
 

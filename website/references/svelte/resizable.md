@@ -62,7 +62,7 @@ Props for the [ResizableRoot](resizable.md#resizable-root-4) component.
 
 <dd>
 
-**Type**: `undefined | ((event: CustomEvent<{ height: number; width: number }>) => void)`
+**Type**: `(event: CustomEvent<{ height: number; width: number }>) => void`
 
 </dd>
 
@@ -74,7 +74,7 @@ Props for the [ResizableRoot](resizable.md#resizable-root-4) component.
 
 <dd>
 
-**Type**: `undefined | ((event: CustomEvent<{ height: number; width: number }>) => void)`
+**Type**: `(event: CustomEvent<{ height: number; width: number }>) => void`
 
 </dd>
 

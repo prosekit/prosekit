@@ -2798,6 +2798,35 @@ function defineFancyNodes() {
 function union<const E extends readonly Extension<ExtensionTyping<any, any, any>>[]>(exts: E): Union<E>
 ```
 
+Merges multiple extensions into one. You can pass multiple extensions as
+arguments or a single array containing multiple extensions.
+
+**Throws**
+
+If no extensions are provided.
+
+**Example**
+
+```ts
+function defineFancyNodes() {
+  return union(
+    defineFancyParagraph(),
+    defineFancyHeading(),
+  )
+}
+```
+
+**Example**
+
+```ts
+function defineFancyNodes() {
+  return union([
+    defineFancyParagraph(),
+    defineFancyHeading(),
+  ])
+}
+```
+
 ## unsetBlockType {#unset-block-type}
 
 ```ts

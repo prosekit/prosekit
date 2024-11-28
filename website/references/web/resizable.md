@@ -1,13 +1,5 @@
 # prosekit/web/resizable
 
-## ResizableHandleElement {#resizable-handle-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: ResizableHandleElement) -->
-
-## ResizableRootElement {#resizable-root-element}
-
-<!-- Declaration kind 4194304 is not implemented (name: ResizableRootElement) -->
-
 ## ResizableHandleProps {#resizable-handle-props-5}
 
 <dl>
@@ -101,3 +93,11 @@ The position of the handle.
 </dd>
 
 </dl>
+
+## ResizableHandleElement {#resizable-handle-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: ResizableHandleElement) -->
+
+## ResizableRootElement {#resizable-root-element}
+
+<!-- Declaration kind 4194304 is not implemented (name: ResizableRootElement) -->

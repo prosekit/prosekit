@@ -94,7 +94,7 @@ Escape key press.
 
 <dd>
 
-**Type**: `undefined | ((event: boolean) => void)`
+**Type**: `(event: boolean) => void`
 
 </dd>
 

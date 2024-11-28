@@ -12,7 +12,7 @@ patchedDependencies:
 importers:
 
   .:
-    dependencies:
+    devDependencies:
       '@changesets/cli':
         specifier: ^2.27.9
         version: 2.27.9

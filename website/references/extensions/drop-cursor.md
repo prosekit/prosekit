@@ -1,0 +1,63 @@
+# prosekit/extensions/drop-cursor
+
+## DropCursorOptions {#drop-cursor-options}
+
+<dl>
+
+<dt>
+
+`class`
+
+</dt>
+
+<dd>
+
+A CSS class name to add to the cursor element.
+
+**Type**: `string`
+
+</dd>
+
+<dt>
+
+`color`
+
+</dt>
+
+<dd>
+
+The color of the cursor.  Use `false` to apply no color and rely only on class.
+
+**Type**: `string | false`
+
+**Default**: `'black'`
+
+</dd>
+
+<dt>
+
+`width`
+
+</dt>
+
+<dd>
+
+The precise width of the cursor in pixels.
+
+**Type**: `number`
+
+**Default**: `1`
+
+</dd>
+
+</dl>
+
+## defineDropCursor {#define-drop-cursor}
+
+```ts
+function defineDropCursor(options?: DropCursorOptions): DropCursorExtension
+```
+
+Show up a decoration at the drop position when something is dragged over the editor.
+
+See [prosemirror-dropcursor](https://github.com/ProseMirror/prosemirror-dropcursor) for more information.

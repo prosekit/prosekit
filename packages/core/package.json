@@ -46,10 +46,10 @@
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "@vitest/browser": "^2.1.4",
+    "@vitest/browser": "^2.1.6",
     "tsup": "^8.3.5",
     "typescript": "^5.6.3",
-    "vitest": "^2.1.4"
+    "vitest": "^2.1.6"
   },
   "publishConfig": {
     "exports": {

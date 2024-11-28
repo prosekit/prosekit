@@ -33,7 +33,7 @@
     "loro-crdt": "^1.0.8",
     "loro-prosemirror": "^0.2.0",
     "preact": "^10.24.3",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "prosekit": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

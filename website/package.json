@@ -30,7 +30,7 @@
     "loro-crdt": "^1.0.8",
     "loro-prosemirror": "^0.2.0",
     "postcss": "^8.4.47",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.1",
     "prosekit": "workspace:*",
     "prosekit-playground": "workspace:*",
     "radix-vue": "^1.9.8",

@@ -25,35 +25,35 @@
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
     "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest"
   },
-  "dependencies": {
-    "@changesets/cli": "^2.27.9",
-    "@changesets/types": "^6.0.0",
-    "@manypkg/cli": "^0.22.0",
-    "@ocavue/eslint-config": "^2.10.4",
-    "@prosekit/unocss-preset": "workspace:*",
-    "@size-limit/esbuild-why": "^11.1.6",
-    "@size-limit/preset-small-lib": "^11.1.6",
-    "@unocss/eslint-config": "^0.63.6",
-    "@vitest/browser": "^2.1.4",
-    "@vitest/coverage-v8": "^2.1.4",
-    "cross-env": "^7.0.3",
-    "eslint": "^9.14.0",
-    "eslint-plugin-command": "^0.2.6",
-    "pkg-pr-new": "^0.0.30",
-    "playwright": "^1.48.2",
-    "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-svelte": "^3.2.7",
-    "size-limit": "^11.1.6",
-    "turbo": "^2.2.3",
-    "typescript": "^5.6.3",
-    "unocss": "^0.63.6",
-    "vitest": "^2.1.4"
-  },
   "pnpm": {
     "overrides": {},
     "patchedDependencies": {
       "prosemirror-splittable@0.1.1": "patches/prosemirror-splittable@0.1.1.patch"
     }
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.10",
+    "@changesets/types": "^6.0.0",
+    "@manypkg/cli": "^0.23.0",
+    "@ocavue/eslint-config": "^2.10.5",
+    "@prosekit/unocss-preset": "workspace:*",
+    "@size-limit/esbuild-why": "^11.1.6",
+    "@size-limit/preset-small-lib": "^11.1.6",
+    "@unocss/eslint-config": "^0.63.6",
+    "@vitest/browser": "^2.1.6",
+    "@vitest/coverage-v8": "^2.1.6",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.15.0",
+    "eslint-plugin-command": "^0.2.6",
+    "pkg-pr-new": "^0.0.30",
+    "playwright": "^1.48.2",
+    "prettier": "^3.4.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-svelte": "^3.3.2",
+    "size-limit": "^11.1.6",
+    "turbo": "^2.2.3",
+    "typescript": "^5.6.3",
+    "unocss": "^0.63.6",
+    "vitest": "^2.1.6"
   }
 }

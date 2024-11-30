@@ -1,5 +1,5 @@
 {
-  "lineWidth": 200,
+  "lineWidth": 80,
   "typescript": {
     "quoteStyle": "preferSingle",
     "semiColons": "asi",
@@ -7,8 +7,8 @@
     "singleBodyPosition": "sameLine",
     "constructorType.spaceAfterNewKeyword": true,
     "constructSignature.spaceAfterNewKeyword": true,
-    "exportDeclaration.forceMultiLine": "whenMultiple",
-    "importDeclaration.forceMultiLine": "whenMultiple",
+    // "exportDeclaration.forceMultiLine": "whenMultiple",
+    // "importDeclaration.forceMultiLine": "whenMultiple",
     "exportDeclaration.sortTypeOnlyExports": "last",
     "importDeclaration.sortTypeOnlyImports": "last",
   },

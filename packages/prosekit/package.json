@@ -216,7 +216,7 @@
     "solid-js": "^1.9.3",
     "svelte": "^4.2.19",
     "tsup": "^8.3.5",
-    "typedoc": "^0.27.1",
+    "typedoc": "^0.27.2",
     "typedoc-plugin-external-package-links": "^0.1.0",
     "typedoc-plugin-md": "^0.4.2",
     "typedoc-plugin-mdn-links": "^4.0.2",

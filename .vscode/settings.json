@@ -9,5 +9,9 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never",
   },
+  "editor.defaultFormatter": "dprint.dprint",
+  "editor.formatOnSave": true,
+  "dprint.path": "./node_modules/.bin/dprint",
+  "dprint.experimentalLsp": true,
   "typescript.tsdk": "node_modules/typescript/lib",
 }

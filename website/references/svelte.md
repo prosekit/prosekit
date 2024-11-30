@@ -6,13 +6,11 @@
 
 <dt>
 
-`editor`
+`editor: Editor<any>`
 
 </dt>
 
 <dd>
-
-**Type**: `Editor<any>`
 
 </dd>
 
@@ -26,7 +24,7 @@ Options for [defineSvelteNodeView](svelte.md#define-svelte-node-view).
 
 <dt>
 
-`as`
+`as?: string | HTMLElement | ((node: Node) => HTMLElement)`
 
 </dt>
 
@@ -34,13 +32,11 @@ Options for [defineSvelteNodeView](svelte.md#define-svelte-node-view).
 
 The wrapping DOM element for the node view. Defaults to `div` for block nodes and `span` for inline nodes.
 
-**Type**: `string | HTMLElement | ((node: Node) => HTMLElement)`
-
 </dd>
 
 <dt>
 
-`component`
+`component: SvelteNodeViewComponent`
 
 </dt>
 
@@ -48,13 +44,11 @@ The wrapping DOM element for the node view. Defaults to `div` for block nodes an
 
 The Svelte component to render the node.
 
-**Type**: `SvelteNodeViewComponent`
-
 </dd>
 
 <dt>
 
-`contentAs`
+`contentAs?: string | HTMLElement | ((node: Node) => HTMLElement)`
 
 </dt>
 
@@ -62,49 +56,41 @@ The Svelte component to render the node.
 
 The wrapping DOM element for the node view's content. Defaults to `div` for block nodes and `span` for inline nodes.
 
-**Type**: `string | HTMLElement | ((node: Node) => HTMLElement)`
-
 </dd>
 
 <dt>
 
-`deselectNode`
+`deselectNode?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`destroy`
+`destroy?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`ignoreMutation`
+`ignoreMutation?: (mutation: ViewMutationRecord) => boolean`
 
 </dt>
 
 <dd>
 
-**Type**: `(mutation: ViewMutationRecord) => boolean`
-
 </dd>
 
 <dt>
 
-`name`
+`name: string`
 
 </dt>
 
@@ -112,67 +98,55 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 The name of the node type.
 
-**Type**: `string`
-
 </dd>
 
 <dt>
 
-`onUpdate`
+`onUpdate?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`selectNode`
+`selectNode?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`setSelection`
+`setSelection?: (anchor: number, head: number, root: Document | ShadowRoot) => void`
 
 </dt>
 
 <dd>
 
-**Type**: `(anchor: number, head: number, root: Document | ShadowRoot) => void`
-
 </dd>
 
 <dt>
 
-`stopEvent`
+`stopEvent?: (event: Event) => boolean`
 
 </dt>
 
 <dd>
 
-**Type**: `(event: Event) => boolean`
-
 </dd>
 
 <dt>
 
-`update`
+`update?: (node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `(node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean`
 
 </dd>
 
@@ -184,97 +158,81 @@ The name of the node type.
 
 <dt>
 
-`contentRef`
+`contentRef: (node: null | HTMLElement) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(node: null | HTMLElement) => void`
 
 </dd>
 
 <dt>
 
-`decorations`
+`decorations: Writable<readonly Decoration[]>`
 
 </dt>
 
 <dd>
-
-**Type**: `Writable<readonly Decoration[]>`
 
 </dd>
 
 <dt>
 
-`getPos`
+`getPos: () => undefined | number`
 
 </dt>
 
 <dd>
-
-**Type**: `() => undefined | number`
 
 </dd>
 
 <dt>
 
-`innerDecorations`
+`innerDecorations: Writable<DecorationSource>`
 
 </dt>
 
 <dd>
-
-**Type**: `Writable<DecorationSource>`
 
 </dd>
 
 <dt>
 
-`node`
+`node: Writable<Node>`
 
 </dt>
 
 <dd>
-
-**Type**: `Writable<Node>`
 
 </dd>
 
 <dt>
 
-`selected`
+`selected: Writable<boolean>`
 
 </dt>
 
 <dd>
-
-**Type**: `Writable<boolean>`
 
 </dd>
 
 <dt>
 
-`setAttrs`
+`setAttrs: (attrs: Attrs) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(attrs: Attrs) => void`
 
 </dd>
 
 <dt>
 
-`view`
+`view: EditorView`
 
 </dt>
 
 <dd>
-
-**Type**: `EditorView`
 
 </dd>
 
@@ -286,7 +244,7 @@ The name of the node type.
 
 <dt>
 
-`editor`
+`editor?: Editor<any>`
 
 </dt>
 
@@ -295,21 +253,17 @@ The name of the node type.
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
 
-**Type**: `Editor<any>`
-
 </dd>
 
 <dt>
 
-`priority`
+`priority?: Priority`
 
 </dt>
 
 <dd>
 
 Optional priority to add the extension with.
-
-**Type**: `Priority`
 
 </dd>
 

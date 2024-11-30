@@ -8,13 +8,11 @@ Options for `y-prosemirror`'s `yCursorPlugin`.
 
 <dt>
 
-`awareness`
+`awareness: Awareness`
 
 </dt>
 
 <dd>
-
-**Type**: `Awareness`
 
 </dd>
 
@@ -26,7 +24,7 @@ Options for `y-prosemirror`'s `yCursorPlugin`.
 
 <dt>
 
-`awareness`
+`awareness: Awareness`
 
 </dt>
 
@@ -34,13 +32,11 @@ Options for `y-prosemirror`'s `yCursorPlugin`.
 
 The Awareness instance.
 
-**Type**: `Awareness`
-
 </dd>
 
 <dt>
 
-`cursor`
+`cursor?: {}`
 
 </dt>
 
@@ -48,13 +44,11 @@ The Awareness instance.
 
 Options for `y-prosemirror`'s `yCursorPlugin`.
 
-**Type**: `{}`
-
 </dd>
 
 <dt>
 
-`doc`
+`doc: Doc`
 
 </dt>
 
@@ -62,13 +56,11 @@ Options for `y-prosemirror`'s `yCursorPlugin`.
 
 The Yjs instance handles the state of shared data.
 
-**Type**: `Doc`
-
 </dd>
 
 <dt>
 
-`fragment`
+`fragment?: YXmlFragment`
 
 </dt>
 
@@ -77,13 +69,11 @@ The Yjs instance handles the state of shared data.
 The Yjs XmlFragment to use. If not provided,
 `doc.getXmlFragment('prosemirror')` will be used.
 
-**Type**: `YXmlFragment`
-
 </dd>
 
 <dt>
 
-`sync`
+`sync?: YSyncOpts`
 
 </dt>
 
@@ -91,21 +81,17 @@ The Yjs XmlFragment to use. If not provided,
 
 Options for `y-prosemirror`'s `ySyncPlugin`.
 
-**Type**: `YSyncOpts`
-
 </dd>
 
 <dt>
 
-`undo`
+`undo?: {}`
 
 </dt>
 
 <dd>
 
 Options for the `y-prosemirror`'s `yUndoPlugin`.
-
-**Type**: `{}`
 
 </dd>
 
@@ -119,13 +105,11 @@ Options for `y-prosemirror`'s `ySyncPlugin`.
 
 <dt>
 
-`fragment`
+`fragment: YXmlFragment`
 
 </dt>
 
 <dd>
-
-**Type**: `YXmlFragment`
 
 </dd>
 

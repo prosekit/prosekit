@@ -6,13 +6,11 @@
 
 <dt>
 
-`href`
+`href: string`
 
 </dt>
 
 <dd>
-
-**Type**: `string`
 
 </dd>
 

@@ -6,25 +6,21 @@
 
 <dt>
 
-`children`
+`children?: ComponentChildren`
 
 </dt>
 
 <dd>
-
-**Type**: `ComponentChildren`
 
 </dd>
 
 <dt>
 
-`editor`
+`editor: Editor<any>`
 
 </dt>
 
 <dd>
-
-**Type**: `Editor<any>`
 
 </dd>
 
@@ -36,7 +32,7 @@
 
 <dt>
 
-`editor`
+`editor?: Editor<any>`
 
 </dt>
 
@@ -45,21 +41,17 @@
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
 
-**Type**: `Editor<any>`
-
 </dd>
 
 <dt>
 
-`priority`
+`priority?: Priority`
 
 </dt>
 
 <dd>
 
 Optional priority to add the extension with.
-
-**Type**: `Priority`
 
 </dd>
 

@@ -20,7 +20,7 @@ Props for the [AutocompleteItem](autocomplete.md#autocomplete-item-5) component.
 
 <dt>
 
-`value`
+`value?: string`
 
 </dt>
 
@@ -29,8 +29,6 @@ Props for the [AutocompleteItem](autocomplete.md#autocomplete-item-5) component.
 The value of the item, which will be matched against the query.
 
 If not provided, the value is the item's text content.
-
-**Type**: `string`
 
 **Default**: `""`
 
@@ -54,7 +52,7 @@ Emits for the [AutocompletePopover](autocomplete.md#autocomplete-popover-5) comp
 
 <dt>
 
-`openChange`
+`openChange: (event: boolean) => void`
 
 </dt>
 
@@ -62,21 +60,17 @@ Emits for the [AutocompletePopover](autocomplete.md#autocomplete-popover-5) comp
 
 Fired when the open state changes.
 
-**Type**: `(event: boolean) => void`
-
 </dd>
 
 <dt>
 
-`queryChange`
+`queryChange: (event: string) => void`
 
 </dt>
 
 <dd>
 
 Fired when the query changes.
-
-**Type**: `(event: string) => void`
 
 </dd>
 
@@ -90,13 +84,11 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-5) comp
 
 <dt>
 
-`boundary`
+`boundary?: Boundary`
 
 </dt>
 
 <dd>
-
-**Type**: `Boundary`
 
 **Default**: `"The body element"`
 
@@ -104,13 +96,11 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-5) comp
 
 <dt>
 
-`fitViewport`
+`fitViewport?: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -118,13 +108,11 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-5) comp
 
 <dt>
 
-`hoist`
+`hoist?: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -132,13 +120,11 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-5) comp
 
 <dt>
 
-`inline`
+`inline?: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -146,7 +132,7 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-5) comp
 
 <dt>
 
-`offset`
+`offset?: OffsetOptions`
 
 </dt>
 
@@ -154,21 +140,17 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-5) comp
 
 The distance between the popover and the hovered block.
 
-**Type**: `OffsetOptions`
-
 **Default**: `4`
 
 </dd>
 
 <dt>
 
-`overflowPadding`
+`overflowPadding?: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 **Default**: `8`
 
@@ -176,7 +158,7 @@ The distance between the popover and the hovered block.
 
 <dt>
 
-`placement`
+`placement?: Placement`
 
 </dt>
 
@@ -184,23 +166,19 @@ The distance between the popover and the hovered block.
 
 The placement of the popover, relative to the text cursor.
 
-**Type**: `Placement`
-
 **Default**: `"bottom-start"`
 
 </dd>
 
 <dt>
 
-`regex`
+`regex?: null | RegExp`
 
 </dt>
 
 <dd>
 
 The regular expression to match the query text to autocomplete.
-
-**Type**: `null | RegExp`
 
 **Default**: `null`
 

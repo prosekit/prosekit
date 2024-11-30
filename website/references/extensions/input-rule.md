@@ -8,7 +8,7 @@ Options for [defineMarkInputRule](input-rule.md#define-mark-input-rule).
 
 <dt>
 
-`attrs`
+`attrs?: null | Attrs | ((match: RegExpMatchArray) => null | Attrs)`
 
 </dt>
 
@@ -16,13 +16,11 @@ Options for [defineMarkInputRule](input-rule.md#define-mark-input-rule).
 
 Attributes to set on the mark.
 
-**Type**: `null | Attrs | ((match: RegExpMatchArray) => null | Attrs)`
-
 </dd>
 
 <dt>
 
-`regex`
+`regex: RegExp`
 
 </dt>
 
@@ -32,21 +30,17 @@ The regular expression to match against, which should end with `$` and has
 exactly one capture group. All other matched text outside the capture group
 will be deleted.
 
-**Type**: `RegExp`
-
 </dd>
 
 <dt>
 
-`type`
+`type: string | MarkType`
 
 </dt>
 
 <dd>
 
 The type of mark to set.
-
-**Type**: `string | MarkType`
 
 </dd>
 

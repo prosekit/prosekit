@@ -20,49 +20,41 @@ new AutocompleteRule(options: { canMatch?: (options: { state: EditorState }) => 
 
 <dt>
 
-`canMatch`
+`canMatch: (options: { state: EditorState }) => boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `(options: { state: EditorState }) => boolean`
 
 </dd>
 
 <dt>
 
-`onLeave`
+`onLeave?: VoidFunction`
 
 </dt>
 
 <dd>
-
-**Type**: `VoidFunction`
 
 </dd>
 
 <dt>
 
-`onMatch`
+`onMatch: MatchHandler`
 
 </dt>
 
 <dd>
-
-**Type**: `MatchHandler`
 
 </dd>
 
 <dt>
 
-`regex`
+`regex: RegExp`
 
 </dt>
 
 <dd>
-
-**Type**: `RegExp`
 
 </dd>
 

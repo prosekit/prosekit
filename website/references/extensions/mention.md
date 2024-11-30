@@ -6,37 +6,31 @@
 
 <dt>
 
-`id`
+`id: string`
 
 </dt>
 
 <dd>
-
-**Type**: `string`
 
 </dd>
 
 <dt>
 
-`kind`
+`kind: string`
 
 </dt>
 
 <dd>
-
-**Type**: `string`
 
 </dd>
 
 <dt>
 
-`value`
+`value: string`
 
 </dt>
 
 <dd>
-
-**Type**: `string`
 
 </dd>
 

@@ -6,15 +6,13 @@
 
 <dt>
 
-`placement`
+`placement: Placement`
 
 </dt>
 
 <dd>
 
 The placement of the popover, relative to the hovered table cell.
-
-**Type**: `Placement`
 
 **Default**: `"top"`
 
@@ -28,13 +26,11 @@ The placement of the popover, relative to the hovered table cell.
 
 <dt>
 
-`editor`
+`editor: null | Editor<TableCommandsExtension>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<TableCommandsExtension>`
 
 </dd>
 
@@ -48,25 +44,21 @@ The placement of the popover, relative to the hovered table cell.
 
 <dt>
 
-`editor`
+`editor: null | Editor<any>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<any>`
 
 </dd>
 
 <dt>
 
-`offset`
+`offset: undefined | OffsetOptions`
 
 </dt>
 
 <dd>
-
-**Type**: `undefined | OffsetOptions`
 
 **Default**: `{mainAxis: -4, crossAxis: 4}`
 
@@ -74,13 +66,11 @@ The placement of the popover, relative to the hovered table cell.
 
 <dt>
 
-`placement`
+`placement: Placement`
 
 </dt>
 
 <dd>
-
-**Type**: `Placement`
 
 **Default**: `'bottom-start'`
 
@@ -100,15 +90,13 @@ The placement of the popover, relative to the hovered table cell.
 
 <dt>
 
-`placement`
+`placement: Placement`
 
 </dt>
 
 <dd>
 
 The placement of the popover, relative to the hovered table cell.
-
-**Type**: `Placement`
 
 **Default**: `"left"`
 
@@ -122,13 +110,11 @@ The placement of the popover, relative to the hovered table cell.
 
 <dt>
 
-`select`
+`select: CustomEvent<void>`
 
 </dt>
 
 <dd>
-
-**Type**: `CustomEvent<void>`
 
 </dd>
 
@@ -140,13 +126,11 @@ The placement of the popover, relative to the hovered table cell.
 
 <dt>
 
-`editor`
+`editor: null | Editor<TableCommandsExtension>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<TableCommandsExtension>`
 
 </dd>
 

@@ -8,7 +8,7 @@ Options for [defineSearchQuery](search.md#define-search-query)
 
 <dt>
 
-`caseSensitive`
+`caseSensitive?: boolean`
 
 </dt>
 
@@ -16,15 +16,13 @@ Options for [defineSearchQuery](search.md#define-search-query)
 
 Indicates whether the search is case-sensitive
 
-**Type**: `boolean`
-
 **Default**: `false`
 
 </dd>
 
 <dt>
 
-`literal`
+`literal?: boolean`
 
 </dt>
 
@@ -34,15 +32,13 @@ By default, string search will replace `\n`, `\r`, and `\t` in the query
 with newline, return, and tab characters. When this is set to true, that
 behavior is disabled.
 
-**Type**: `boolean`
-
 **Default**: `false`
 
 </dd>
 
 <dt>
 
-`regexp`
+`regexp?: boolean`
 
 </dt>
 
@@ -50,15 +46,13 @@ behavior is disabled.
 
 When true, the search string is interpreted as a regular expression.
 
-**Type**: `boolean`
-
 **Default**: `false`
 
 </dd>
 
 <dt>
 
-`replace`
+`replace?: string`
 
 </dt>
 
@@ -66,13 +60,11 @@ When true, the search string is interpreted as a regular expression.
 
 The replace text.
 
-**Type**: `string`
-
 </dd>
 
 <dt>
 
-`search`
+`search: string`
 
 </dt>
 
@@ -80,21 +72,17 @@ The replace text.
 
 The search string (or regular expression).
 
-**Type**: `string`
-
 </dd>
 
 <dt>
 
-`wholeWord`
+`wholeWord?: boolean`
 
 </dt>
 
 <dd>
 
 Enable whole-word matching.
-
-**Type**: `boolean`
 
 **Default**: `false`
 

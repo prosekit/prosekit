@@ -8,49 +8,41 @@ Props for the [PopoverContent](popover.md#popover-content-2) component.
 
 <dt>
 
-`onEscapeKeyDown`
+`onEscapeKeyDown?: (event: EscapeKeyDownEvent) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: EscapeKeyDownEvent) => void`
 
 </dd>
 
 <dt>
 
-`onFocusOutside`
+`onFocusOutside?: (event: FocusOutsideEvent) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: FocusOutsideEvent) => void`
 
 </dd>
 
 <dt>
 
-`onInteractOutside`
+`onInteractOutside?: (event: InteractOutsideEvent) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: InteractOutsideEvent) => void`
 
 </dd>
 
 <dt>
 
-`onPointerDownOutside`
+`onPointerDownOutside?: (event: PointerDownOutsideEvent) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: PointerDownOutsideEvent) => void`
 
 </dd>
 
@@ -64,13 +56,11 @@ Props for the [PopoverRoot](popover.md#popover-root-2) component.
 
 <dt>
 
-`onOpenChange`
+`onOpenChange?: (event: boolean) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: boolean) => void`
 
 </dd>
 

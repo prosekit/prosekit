@@ -6,37 +6,31 @@
 
 <dt>
 
-`col`
+`col: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 </dd>
 
 <dt>
 
-`header`
+`header: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 </dd>
 
 <dt>
 
-`row`
+`row: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 </dd>
 
@@ -48,7 +42,7 @@
 
 <dt>
 
-`pos`
+`pos?: number`
 
 </dt>
 
@@ -56,8 +50,6 @@
 
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
-
-**Type**: `number`
 
 </dd>
 
@@ -69,7 +61,7 @@ anchor will be used.
 
 <dt>
 
-`anchor`
+`anchor?: number`
 
 </dt>
 
@@ -78,13 +70,11 @@ anchor will be used.
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`head`
+`head?: number`
 
 </dt>
 
@@ -92,8 +82,6 @@ anchor will be used.
 
 A hit position of the table cell to select to. By default, the selection
 head will be used.
-
-**Type**: `number`
 
 </dd>
 
@@ -105,7 +93,7 @@ head will be used.
 
 <dt>
 
-`pos`
+`pos?: number`
 
 </dt>
 
@@ -113,8 +101,6 @@ head will be used.
 
 A hit position of the table to select from. By default, the selection
 anchor will be used.
-
-**Type**: `number`
 
 </dd>
 
@@ -126,7 +112,7 @@ anchor will be used.
 
 <dt>
 
-`anchor`
+`anchor?: number`
 
 </dt>
 
@@ -135,13 +121,11 @@ anchor will be used.
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`head`
+`head?: number`
 
 </dt>
 
@@ -149,8 +133,6 @@ anchor will be used.
 
 A hit position of the table cell to select to. By default, the selection
 head will be used.
-
-**Type**: `number`
 
 </dd>
 

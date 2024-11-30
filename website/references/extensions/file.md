@@ -22,7 +22,7 @@ new UploadTask<Result>(options: { file: File; uploader: Uploader<Result> }): Upl
 
 <dt>
 
-`done`
+`done: boolean`
 
 </dt>
 
@@ -30,13 +30,11 @@ new UploadTask<Result>(options: { file: File; uploader: Uploader<Result> }): Upl
 
 A boolean indicating whether the upload is complete (either successfully or with an error).
 
-**Type**: `boolean`
-
 </dd>
 
 <dt>
 
-`finished`
+`finished: Promise<Result>`
 
 </dt>
 
@@ -44,13 +42,11 @@ A boolean indicating whether the upload is complete (either successfully or with
 
 A promise that fulfills once the upload is complete, or rejects if an error occurs.
 
-**Type**: `Promise<Result>`
-
 </dd>
 
 <dt>
 
-`objectURL`
+`objectURL: string`
 
 </dt>
 
@@ -59,8 +55,6 @@ A promise that fulfills once the upload is complete, or rejects if an error occu
 An [object URL](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL)
 representing the file to be uploaded. This URL will be revoked once the
 upload is complete successfully.
-
-**Type**: `string`
 
 </dd>
 
@@ -114,7 +108,7 @@ const get: <Result>(objectURL: string) => undefined | UploadTask<Result>
 
 <dt>
 
-`event`
+`event: DragEvent`
 
 </dt>
 
@@ -122,13 +116,11 @@ const get: <Result>(objectURL: string) => undefined | UploadTask<Result>
 
 The event that triggered the drop.
 
-**Type**: `DragEvent`
-
 </dd>
 
 <dt>
 
-`file`
+`file: File`
 
 </dt>
 
@@ -136,13 +128,11 @@ The event that triggered the drop.
 
 The file that was dropped.
 
-**Type**: `File`
-
 </dd>
 
 <dt>
 
-`pos`
+`pos: number`
 
 </dt>
 
@@ -150,21 +140,17 @@ The file that was dropped.
 
 The position of the document where the file was dropped.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`view`
+`view: EditorView`
 
 </dt>
 
 <dd>
 
 The editor view.
-
-**Type**: `EditorView`
 
 </dd>
 
@@ -176,7 +162,7 @@ The editor view.
 
 <dt>
 
-`event`
+`event: ClipboardEvent`
 
 </dt>
 
@@ -184,13 +170,11 @@ The editor view.
 
 The event that triggered the paste.
 
-**Type**: `ClipboardEvent`
-
 </dd>
 
 <dt>
 
-`file`
+`file: File`
 
 </dt>
 
@@ -198,21 +182,17 @@ The event that triggered the paste.
 
 The file that was pasted.
 
-**Type**: `File`
-
 </dd>
 
 <dt>
 
-`view`
+`view: EditorView`
 
 </dt>
 
 <dd>
 
 The editor view.
-
-**Type**: `EditorView`
 
 </dd>
 
@@ -224,7 +204,7 @@ The editor view.
 
 <dt>
 
-`file`
+`file: File`
 
 </dt>
 
@@ -232,21 +212,17 @@ The editor view.
 
 The file to be uploaded.
 
-**Type**: `File`
-
 </dd>
 
 <dt>
 
-`onProgress`
+`onProgress: (progress: UploadProgress) => void`
 
 </dt>
 
 <dd>
 
 A callback function that should be called with the upload progress updates.
-
-**Type**: `(progress: UploadProgress) => void`
 
 </dd>
 
@@ -260,25 +236,21 @@ An interface representing the upload progress.
 
 <dt>
 
-`loaded`
+`loaded: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 </dd>
 
 <dt>
 
-`total`
+`total: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 </dd>
 

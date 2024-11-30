@@ -12,13 +12,11 @@ Props for the [TooltipRoot](tooltip.md#tooltip-root-3) component.
 
 <dt>
 
-`onOpenChange`
+`onOpenChange?: (event: boolean) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: boolean) => void`
 
 </dd>
 

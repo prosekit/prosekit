@@ -6,49 +6,41 @@
 
 <dt>
 
-`awareness`
+`awareness: CursorAwareness`
 
 </dt>
 
 <dd>
-
-**Type**: `CursorAwareness`
 
 </dd>
 
 <dt>
 
-`createCursor`
+``createCursor?: (user: `${number}`) => Element``
 
 </dt>
 
 <dd>
-
-**Type**: ``(user: `${number}`) => Element``
 
 </dd>
 
 <dt>
 
-`createSelection`
+``createSelection?: (user: `${number}`) => DecorationAttrs``
 
 </dt>
 
 <dd>
-
-**Type**: ``(user: `${number}`) => DecorationAttrs``
 
 </dd>
 
 <dt>
 
-`getSelection`
+`getSelection?: (state: EditorState) => Selection`
 
 </dt>
 
 <dd>
-
-**Type**: `(state: EditorState) => Selection`
 
 </dd>
 
@@ -60,7 +52,7 @@
 
 <dt>
 
-`awareness`
+`awareness: CursorAwareness`
 
 </dt>
 
@@ -68,13 +60,11 @@
 
 The Awareness instance.
 
-**Type**: `CursorAwareness`
-
 </dd>
 
 <dt>
 
-`cursor`
+`cursor?: Omit<LoroCursorOptions, "awareness">`
 
 </dt>
 
@@ -82,13 +72,11 @@ The Awareness instance.
 
 Extra options for `LoroCursorPlugin`.
 
-**Type**: `Omit<LoroCursorOptions, "awareness">`
-
 </dd>
 
 <dt>
 
-`doc`
+`doc: LoroDocType`
 
 </dt>
 
@@ -96,13 +84,11 @@ Extra options for `LoroCursorPlugin`.
 
 The Loro instance handles the state of shared data.
 
-**Type**: `LoroDocType`
-
 </dd>
 
 <dt>
 
-`sync`
+`sync?: Omit<LoroSyncPluginProps, "doc">`
 
 </dt>
 
@@ -110,21 +96,17 @@ The Loro instance handles the state of shared data.
 
 Extra options for `LoroSyncPlugin`.
 
-**Type**: `Omit<LoroSyncPluginProps, "doc">`
-
 </dd>
 
 <dt>
 
-`undo`
+`undo?: Omit<LoroUndoPluginProps, "doc">`
 
 </dt>
 
 <dd>
 
 Extra options for the `LoroUndoPlugin`.
-
-**Type**: `Omit<LoroUndoPluginProps, "doc">`
 
 </dd>
 

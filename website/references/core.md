@@ -292,7 +292,7 @@ const use: (extension: Extension<ExtensionTyping<any, any, any>>) => VoidFunctio
 
 <dt>
 
-`attrs`
+`attrs?: null | Attrs`
 
 </dt>
 
@@ -300,13 +300,11 @@ const use: (extension: Extension<ExtensionTyping<any, any, any>>) => VoidFunctio
 
 The attributes of the mark to add.
 
-**Type**: `null | Attrs`
-
 </dd>
 
 <dt>
 
-`from`
+`from?: number`
 
 </dt>
 
@@ -314,13 +312,11 @@ The attributes of the mark to add.
 
 The start position of the document. By default it will be the start position of current selection.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`to`
+`to?: number`
 
 </dt>
 
@@ -328,21 +324,17 @@ The start position of the document. By default it will be the start position of 
 
 The end position of the document. By default it will be the end position of current selection.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`type`
+`type: string | MarkType`
 
 </dt>
 
 <dd>
 
 The type of the mark to add.
-
-**Type**: `string | MarkType`
 
 </dd>
 
@@ -356,7 +348,7 @@ Some basic props for custom node views.
 
 <dt>
 
-`as`
+`as?: string | HTMLElement | ((node: Node) => HTMLElement)`
 
 </dt>
 
@@ -364,13 +356,11 @@ Some basic props for custom node views.
 
 The wrapping DOM element for the node view. Defaults to `div` for block nodes and `span` for inline nodes.
 
-**Type**: `string | HTMLElement | ((node: Node) => HTMLElement)`
-
 </dd>
 
 <dt>
 
-`contentAs`
+`contentAs?: string | HTMLElement | ((node: Node) => HTMLElement)`
 
 </dt>
 
@@ -378,103 +368,85 @@ The wrapping DOM element for the node view. Defaults to `div` for block nodes an
 
 The wrapping DOM element for the node view's content. Defaults to `div` for block nodes and `span` for inline nodes.
 
-**Type**: `string | HTMLElement | ((node: Node) => HTMLElement)`
-
 </dd>
 
 <dt>
 
-`deselectNode`
+`deselectNode?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`destroy`
+`destroy?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`ignoreMutation`
+`ignoreMutation?: (mutation: ViewMutationRecord) => boolean`
 
 </dt>
 
 <dd>
 
-**Type**: `(mutation: ViewMutationRecord) => boolean`
-
 </dd>
 
 <dt>
 
-`onUpdate`
+`onUpdate?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`selectNode`
+`selectNode?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`setSelection`
+`setSelection?: (anchor: number, head: number, root: Document | ShadowRoot) => void`
 
 </dt>
 
 <dd>
 
-**Type**: `(anchor: number, head: number, root: Document | ShadowRoot) => void`
-
 </dd>
 
 <dt>
 
-`stopEvent`
+`stopEvent?: (event: Event) => boolean`
 
 </dt>
 
 <dd>
 
-**Type**: `(event: Event) => boolean`
-
 </dd>
 
 <dt>
 
-`update`
+`update?: (node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `(node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean`
 
 </dd>
 
@@ -524,7 +496,7 @@ const canExec: (...args: Args) => boolean
 
 <dt>
 
-`defaultContent`
+`defaultContent?: string | NodeJSON | HTMLElement`
 
 </dt>
 
@@ -533,13 +505,11 @@ const canExec: (...args: Args) => boolean
 The starting document to use when creating the editor. It can be a
 ProseMirror node JSON object, a HTML string, or a HTML element instance.
 
-**Type**: `string | NodeJSON | HTMLElement`
-
 </dd>
 
 <dt>
 
-`defaultDoc`
+`defaultDoc?: NodeJSON`
 
 </dt>
 
@@ -548,8 +518,6 @@ ProseMirror node JSON object, a HTML string, or a HTML element instance.
 A JSON object representing the starting document to use when creating the
 editor.
 
-**Type**: `NodeJSON`
-
 **Deprecated**
 
 Use `defaultContent` instead.
@@ -558,7 +526,7 @@ Use `defaultContent` instead.
 
 <dt>
 
-`defaultHTML`
+`defaultHTML?: string | HTMLElement`
 
 </dt>
 
@@ -567,8 +535,6 @@ Use `defaultContent` instead.
 A HTML element or a HTML string representing the starting document to use
 when creating the editor.
 
-**Type**: `string | HTMLElement`
-
 **Deprecated**
 
 Use `defaultContent` instead.
@@ -577,7 +543,7 @@ Use `defaultContent` instead.
 
 <dt>
 
-`defaultSelection`
+`defaultSelection?: SelectionJSON`
 
 </dt>
 
@@ -585,8 +551,6 @@ Use `defaultContent` instead.
 
 A JSON object representing the starting selection to use when creating the
 editor. It's only used when `defaultContent` is also provided.
-
-**Type**: `SelectionJSON`
 
 </dd>
 
@@ -598,13 +562,11 @@ editor. It's only used when `defaultContent` is also provided.
 
 <dt>
 
-`document`
+`document?: Document`
 
 </dt>
 
 <dd>
-
-**Type**: `Document`
 
 </dd>
 
@@ -616,13 +578,11 @@ editor. It's only used when `defaultContent` is also provided.
 
 <dt>
 
-`DOMParser`
+`DOMParser?: typeof DOMParser`
 
 </dt>
 
 <dd>
-
-**Type**: `typeof DOMParser`
 
 </dd>
 
@@ -634,13 +594,11 @@ editor. It's only used when `defaultContent` is also provided.
 
 <dt>
 
-`DOMSerializer`
+`DOMSerializer?: typeof DOMSerializer`
 
 </dt>
 
 <dd>
-
-**Type**: `typeof DOMSerializer`
 
 </dd>
 
@@ -652,7 +610,7 @@ editor. It's only used when `defaultContent` is also provided.
 
 <dt>
 
-`defaultContent`
+`defaultContent?: string | NodeJSON | HTMLElement`
 
 </dt>
 
@@ -661,13 +619,11 @@ editor. It's only used when `defaultContent` is also provided.
 The starting document to use when creating the editor. It can be a
 ProseMirror node JSON object, a HTML string, or a HTML element instance.
 
-**Type**: `string | NodeJSON | HTMLElement`
-
 </dd>
 
 <dt>
 
-`defaultDoc`
+`defaultDoc?: NodeJSON`
 
 </dt>
 
@@ -676,8 +632,6 @@ ProseMirror node JSON object, a HTML string, or a HTML element instance.
 A JSON object representing the starting document to use when creating the
 editor.
 
-**Type**: `NodeJSON`
-
 **Deprecated**
 
 Use `defaultContent` instead.
@@ -686,7 +640,7 @@ Use `defaultContent` instead.
 
 <dt>
 
-`defaultHTML`
+`defaultHTML?: string | HTMLElement`
 
 </dt>
 
@@ -695,8 +649,6 @@ Use `defaultContent` instead.
 A HTML element or a HTML string representing the starting document to use
 when creating the editor.
 
-**Type**: `string | HTMLElement`
-
 **Deprecated**
 
 Use `defaultContent` instead.
@@ -705,7 +657,7 @@ Use `defaultContent` instead.
 
 <dt>
 
-`defaultSelection`
+`defaultSelection?: SelectionJSON`
 
 </dt>
 
@@ -714,21 +666,17 @@ Use `defaultContent` instead.
 A JSON object representing the starting selection to use when creating the
 editor. It's only used when `defaultContent` is also provided.
 
-**Type**: `SelectionJSON`
-
 </dd>
 
 <dt>
 
-`extension`
+`extension: E`
 
 </dt>
 
 <dd>
 
 The extension to use when creating the editor.
-
-**Type**: `E`
 
 </dd>
 
@@ -740,15 +688,13 @@ The extension to use when creating the editor.
 
 <dt>
 
-`type`
+`type: string | MarkType`
 
 </dt>
 
 <dd>
 
 The type of the mark to expand.
-
-**Type**: `string | MarkType`
 
 </dd>
 
@@ -760,51 +706,43 @@ The type of the mark to expand.
 
 <dt>
 
-`_type`
+`_type?: T`
 
 </dt>
 
 <dd>
 
-**Type**: `T`
-
 </dd>
 
 <dt>
 
-`extension`
+`extension: Extension<ExtensionTyping<any, any, any>> | Extension<ExtensionTyping<any, any, any>>[]`
 
 </dt>
 
 <dd>
 
-**Type**: `Extension<ExtensionTyping<any, any, any>> | Extension<ExtensionTyping<any, any, any>>[]`
-
 </dd>
 
 <dt>
 
-`priority`
+`priority?: Priority`
 
 </dt>
 
 <dd>
 
-**Type**: `Priority`
-
 </dd>
 
 <dt>
 
-`schema`
+`schema: null | Schema<any, any>`
 
 </dt>
 
 <dd>
 
 The schema that this extension represents.
-
-**Type**: `null | Schema<any, any>`
 
 </dd>
 
@@ -816,7 +754,7 @@ The schema that this extension represents.
 
 <dt>
 
-`depth`
+`depth: number`
 
 </dt>
 
@@ -824,13 +762,11 @@ The schema that this extension represents.
 
 The depth of the node.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`node`
+`node: Node`
 
 </dt>
 
@@ -838,13 +774,11 @@ The depth of the node.
 
 The closest parent node that satisfies the predicate.
 
-**Type**: `Node`
-
 </dd>
 
 <dt>
 
-`pos`
+`pos: number`
 
 </dt>
 
@@ -852,21 +786,17 @@ The closest parent node that satisfies the predicate.
 
 The position directly before the node.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`start`
+`start: number`
 
 </dt>
 
 <dd>
 
 The position at the start of the node.
-
-**Type**: `number`
 
 </dd>
 
@@ -880,7 +810,7 @@ Options for [defineHistory](core.md#define-history).
 
 <dt>
 
-`depth`
+`depth?: number`
 
 </dt>
 
@@ -889,15 +819,13 @@ Options for [defineHistory](core.md#define-history).
 The amount of history events that are collected before the oldest events
 are discarded.
 
-**Type**: `number`
-
 **Default**: `200`
 
 </dd>
 
 <dt>
 
-`newGroupDelay`
+`newGroupDelay?: number`
 
 </dt>
 
@@ -905,8 +833,6 @@ are discarded.
 
 The delay in milliseconds between changes after which a new group should be
 started.
-
-**Type**: `number`
 
 **Default**: `250`
 
@@ -920,7 +846,7 @@ started.
 
 <dt>
 
-`pos`
+`pos?: number`
 
 </dt>
 
@@ -928,8 +854,6 @@ started.
 
 The position to insert the node at. By default it will insert after the
 current selection.
-
-**Type**: `number`
 
 </dd>
 
@@ -941,7 +865,7 @@ current selection.
 
 <dt>
 
-`attrs`
+`attrs?: Attrs`
 
 </dt>
 
@@ -949,13 +873,11 @@ current selection.
 
 When `type` is provided, the attributes of the node to insert.
 
-**Type**: `Attrs`
-
 </dd>
 
 <dt>
 
-`node`
+`node?: Node`
 
 </dt>
 
@@ -963,13 +885,11 @@ When `type` is provided, the attributes of the node to insert.
 
 The node to insert. Either this or `type` must be provided.
 
-**Type**: `Node`
-
 </dd>
 
 <dt>
 
-`pos`
+`pos?: number`
 
 </dt>
 
@@ -978,21 +898,17 @@ The node to insert. Either this or `type` must be provided.
 The position to insert the node at. By default it will be the anchor
 position of current selection.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`type`
+`type?: string | NodeType`
 
 </dt>
 
 <dd>
 
 The type of the node to insert. Either this or `node` must be provided.
-
-**Type**: `string | NodeType`
 
 </dd>
 
@@ -1004,13 +920,11 @@ The type of the node to insert. Either this or `node` must be provided.
 
 <dt>
 
-`schema`
+`schema: Schema<any, any>`
 
 </dt>
 
 <dd>
-
-**Type**: `Schema<any, any>`
 
 </dd>
 
@@ -1030,7 +944,7 @@ current editor selection.
 
 <dt>
 
-`isActive`
+`isActive: (attrs?: Attrs) => boolean`
 
 </dt>
 
@@ -1039,8 +953,6 @@ current editor selection.
 Checks if the mark is active in the current editor selection. If the
 optional `attrs` parameter is provided, it will check if the mark is active
 with the given attributes.
-
-**Type**: `(attrs?: Attrs) => boolean`
 
 </dd>
 
@@ -1052,7 +964,7 @@ with the given attributes.
 
 <dt>
 
-`attr`
+`attr: AttrName`
 
 </dt>
 
@@ -1060,13 +972,11 @@ with the given attributes.
 
 The name of the attribute.
 
-**Type**: `AttrName`
-
 </dd>
 
 <dt>
 
-`default`
+`default?: AttrType`
 
 </dt>
 
@@ -1076,13 +986,11 @@ The default value for this attribute, to use when no explicit value is
 provided. Attributes that have no default must be provided whenever a node
 or mark of a type that has them is created.
 
-**Type**: `AttrType`
-
 </dd>
 
 <dt>
 
-`parseDOM`
+`parseDOM?: (node: HTMLElement) => AttrType`
 
 </dt>
 
@@ -1090,13 +998,11 @@ or mark of a type that has them is created.
 
 Parses the attribute value from the DOM.
 
-**Type**: `(node: HTMLElement) => AttrType`
-
 </dd>
 
 <dt>
 
-`toDOM`
+`toDOM?: (value: AttrType) => undefined | null | [key: string, value: string]`
 
 </dt>
 
@@ -1107,13 +1013,11 @@ Returns the attribute key and value to be set on the HTML element.
 If the returned `key` is `"style"`, the value is a string of CSS properties and will
 be prepended to the existing `style` attribute on the DOM node.
 
-**Type**: `(value: AttrType) => undefined | null | [key: string, value: string]`
-
 </dd>
 
 <dt>
 
-`type`
+`type: MarkName`
 
 </dt>
 
@@ -1121,13 +1025,11 @@ be prepended to the existing `style` attribute on the DOM node.
 
 The name of the mark type.
 
-**Type**: `MarkName`
-
 </dd>
 
 <dt>
 
-`validate`
+`validate?: string | ((value: unknown) => void)`
 
 </dt>
 
@@ -1142,8 +1044,6 @@ primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
 `"undefined"`), and the library will raise an error when the value is not
 one of those types.
 
-**Type**: `string | ((value: unknown) => void)`
-
 </dd>
 
 </dl>
@@ -1154,7 +1054,7 @@ one of those types.
 
 <dt>
 
-`attrs`
+`attrs?: {[K in string | number | symbol]: AttrSpec<Attrs[K]>}`
 
 </dt>
 
@@ -1162,21 +1062,17 @@ one of those types.
 
 The attributes that marks of this type get.
 
-**Type**: `{[K in string | number | symbol]: AttrSpec<Attrs[K]>}`
-
 </dd>
 
 <dt>
 
-`name`
+`name: MarkName`
 
 </dt>
 
 <dd>
 
 The name of the mark type.
-
-**Type**: `MarkName`
 
 </dd>
 
@@ -1194,7 +1090,7 @@ current editor selection.
 
 <dt>
 
-`isActive`
+`isActive: (attrs?: Attrs) => boolean`
 
 </dt>
 
@@ -1203,8 +1099,6 @@ current editor selection.
 Checks if the node is active in the current editor selection. If the
 optional `attrs` parameter is provided, it will check if the node is active
 with the given attributes.
-
-**Type**: `(attrs?: Attrs) => boolean`
 
 </dd>
 
@@ -1216,7 +1110,7 @@ with the given attributes.
 
 <dt>
 
-`attr`
+`attr: AttrName`
 
 </dt>
 
@@ -1224,13 +1118,11 @@ with the given attributes.
 
 The name of the attribute.
 
-**Type**: `AttrName`
-
 </dd>
 
 <dt>
 
-`default`
+`default?: AttrType`
 
 </dt>
 
@@ -1240,13 +1132,11 @@ The default value for this attribute, to use when no explicit value is
 provided. Attributes that have no default must be provided whenever a node
 or mark of a type that has them is created.
 
-**Type**: `AttrType`
-
 </dd>
 
 <dt>
 
-`parseDOM`
+`parseDOM?: (node: HTMLElement) => AttrType`
 
 </dt>
 
@@ -1254,13 +1144,11 @@ or mark of a type that has them is created.
 
 Parses the attribute value from the DOM.
 
-**Type**: `(node: HTMLElement) => AttrType`
-
 </dd>
 
 <dt>
 
-`splittable`
+`splittable?: boolean`
 
 </dt>
 
@@ -1270,15 +1158,13 @@ Whether the attribute should be kept when the node is split. Set it to
 `true` if you want to inherit the attribute from the previous node when
 splitting the node by pressing `Enter`.
 
-**Type**: `boolean`
-
 **Default**: `undefined`
 
 </dd>
 
 <dt>
 
-`toDOM`
+`toDOM?: (value: AttrType) => undefined | null | [key: string, value: string]`
 
 </dt>
 
@@ -1289,13 +1175,11 @@ Returns the attribute key and value to be set on the HTML element.
 If the returned `key` is `"style"`, the value is a string of CSS properties and will
 be prepended to the existing `style` attribute on the DOM node.
 
-**Type**: `(value: AttrType) => undefined | null | [key: string, value: string]`
-
 </dd>
 
 <dt>
 
-`type`
+`type: NodeName`
 
 </dt>
 
@@ -1303,13 +1187,11 @@ be prepended to the existing `style` attribute on the DOM node.
 
 The name of the node type.
 
-**Type**: `NodeName`
-
 </dd>
 
 <dt>
 
-`validate`
+`validate?: string | ((value: unknown) => void)`
 
 </dt>
 
@@ -1324,8 +1206,6 @@ primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
 `"undefined"`), and the library will raise an error when the value is not
 one of those types.
 
-**Type**: `string | ((value: unknown) => void)`
-
 </dd>
 
 </dl>
@@ -1338,61 +1218,51 @@ A JSON representation of the prosemirror node.
 
 <dt>
 
-`attrs`
+`attrs?: Record<string, any>`
 
 </dt>
 
 <dd>
-
-**Type**: `Record<string, any>`
 
 </dd>
 
 <dt>
 
-`content`
+`content?: NodeJSON[]`
 
 </dt>
 
 <dd>
-
-**Type**: `NodeJSON[]`
 
 </dd>
 
 <dt>
 
-`marks`
+`marks?: { attrs?: Record<string, any>; type: string }[]`
 
 </dt>
 
 <dd>
-
-**Type**: `{ attrs?: Record<string, any>; type: string }[]`
 
 </dd>
 
 <dt>
 
-`text`
+`text?: string`
 
 </dt>
 
 <dd>
-
-**Type**: `string`
 
 </dd>
 
 <dt>
 
-`type`
+`type: string`
 
 </dt>
 
 <dd>
-
-**Type**: `string`
 
 </dd>
 
@@ -1404,7 +1274,7 @@ A JSON representation of the prosemirror node.
 
 <dt>
 
-`attrs`
+`attrs?: {[key in string | number | symbol]: AttrSpec<Attrs[key]>}`
 
 </dt>
 
@@ -1412,13 +1282,11 @@ A JSON representation of the prosemirror node.
 
 The attributes that nodes of this type get.
 
-**Type**: `{[key in string | number | symbol]: AttrSpec<Attrs[key]>}`
-
 </dd>
 
 <dt>
 
-`name`
+`name: NodeName`
 
 </dt>
 
@@ -1426,13 +1294,11 @@ The attributes that nodes of this type get.
 
 The name of the node type.
 
-**Type**: `NodeName`
-
 </dd>
 
 <dt>
 
-`topNode`
+`topNode?: boolean`
 
 </dt>
 
@@ -1440,8 +1306,6 @@ The name of the node type.
 
 Whether this is the top-level node type. Only one node type can be the
 top-level node type in a schema.
-
-**Type**: `boolean`
 
 </dd>
 
@@ -1453,25 +1317,21 @@ top-level node type in a schema.
 
 <dt>
 
-`constructor`
+`constructor: NodeViewConstructor`
 
 </dt>
 
 <dd>
-
-**Type**: `NodeViewConstructor`
 
 </dd>
 
 <dt>
 
-`name`
+`name: string`
 
 </dt>
 
 <dd>
-
-**Type**: `string`
 
 </dd>
 
@@ -1483,7 +1343,7 @@ top-level node type in a schema.
 
 <dt>
 
-`attrs`
+`attrs?: null | Attrs`
 
 </dt>
 
@@ -1491,13 +1351,11 @@ top-level node type in a schema.
 
 If attrs is given, remove precisely the mark with the given attrs. Otherwise, remove all marks of the given type.
 
-**Type**: `null | Attrs`
-
 </dd>
 
 <dt>
 
-`from`
+`from?: number`
 
 </dt>
 
@@ -1505,13 +1363,11 @@ If attrs is given, remove precisely the mark with the given attrs. Otherwise, re
 
 The start position of the document. By default it will be the start position of current selection.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`to`
+`to?: number`
 
 </dt>
 
@@ -1519,21 +1375,17 @@ The start position of the document. By default it will be the start position of 
 
 The end position of the document. By default it will be the end position of current selection.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`type`
+`type: string | MarkType`
 
 </dt>
 
 <dd>
 
 The type of the mark to remove.
-
-**Type**: `string | MarkType`
 
 </dd>
 
@@ -1545,7 +1397,7 @@ The type of the mark to remove.
 
 <dt>
 
-`pos`
+`pos?: number`
 
 </dt>
 
@@ -1554,21 +1406,17 @@ The type of the mark to remove.
 The document position to start searching node. By default it will be the
 anchor position of current selection.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`type`
+`type: string | NodeType`
 
 </dt>
 
 <dd>
 
 The type of the node to remove.
-
-**Type**: `string | NodeType`
 
 </dd>
 
@@ -1582,37 +1430,31 @@ A JSON representation of the prosemirror selection.
 
 <dt>
 
-`anchor`
+`anchor: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 </dd>
 
 <dt>
 
-`head`
+`head: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 </dd>
 
 <dt>
 
-`type`
+`type: string`
 
 </dt>
 
 <dd>
-
-**Type**: `string`
 
 </dd>
 
@@ -1624,49 +1466,41 @@ A JSON representation of the prosemirror selection.
 
 <dt>
 
-`attrs`
+`attrs?: null | Attrs`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Attrs`
 
 </dd>
 
 <dt>
 
-`from`
+`from?: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 </dd>
 
 <dt>
 
-`to`
+`to?: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 </dd>
 
 <dt>
 
-`type`
+`type: string | NodeType`
 
 </dt>
 
 <dd>
-
-**Type**: `string | NodeType`
 
 </dd>
 
@@ -1678,7 +1512,7 @@ A JSON representation of the prosemirror selection.
 
 <dt>
 
-`attrs`
+`attrs: Attrs`
 
 </dt>
 
@@ -1686,13 +1520,11 @@ A JSON representation of the prosemirror selection.
 
 The attributes to set.
 
-**Type**: `Attrs`
-
 </dd>
 
 <dt>
 
-`pos`
+`pos?: number`
 
 </dt>
 
@@ -1701,13 +1533,11 @@ The attributes to set.
 The position of the node. Defaults to the position of the wrapping node
 containing the current selection.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`type`
+`type: string | NodeType | string[] | NodeType[]`
 
 </dt>
 
@@ -1716,8 +1546,6 @@ containing the current selection.
 The type of node to set the attributes of.
 
 If current node is not of this type, the command will do nothing.
-
-**Type**: `string | NodeType | string[] | NodeType[]`
 
 </dd>
 
@@ -1731,7 +1559,7 @@ A JSON representation of the prosemirror state.
 
 <dt>
 
-`doc`
+`doc: NodeJSON`
 
 </dt>
 
@@ -1739,21 +1567,17 @@ A JSON representation of the prosemirror state.
 
 The main `ProseMirror` doc.
 
-**Type**: `NodeJSON`
-
 </dd>
 
 <dt>
 
-`selection`
+`selection: SelectionJSON`
 
 </dt>
 
 <dd>
 
 The current selection.
-
-**Type**: `SelectionJSON`
 
 </dd>
 
@@ -1767,15 +1591,13 @@ A JSON representation of the prosemirror step.
 
 <dt>
 
-`stepType`
+`stepType: string`
 
 </dt>
 
 <dd>
 
 The type of the step.
-
-**Type**: `string`
 
 </dd>
 
@@ -1787,7 +1609,7 @@ The type of the step.
 
 <dt>
 
-`attrs`
+`attrs?: null | Attrs`
 
 </dt>
 
@@ -1795,13 +1617,11 @@ The type of the step.
 
 The optional attributes to set on the mark.
 
-**Type**: `null | Attrs`
-
 </dd>
 
 <dt>
 
-`enterInlineAtoms`
+`enterInlineAtoms?: boolean`
 
 </dt>
 
@@ -1811,15 +1631,13 @@ Whether the command should act on the content of inline nodes marked as
 [atoms](https://prosemirror.net/docs/ref/#model.NodeSpec.atom) that are
 completely covered by a selection range.
 
-**Type**: `boolean`
-
 **Default**: `true`
 
 </dd>
 
 <dt>
 
-`removeWhenPresent`
+`removeWhenPresent?: boolean`
 
 </dt>
 
@@ -1829,23 +1647,19 @@ Controls whether, when part of the selected range has the mark
 already and part doesn't, the mark is removed (`true`) or added
 (`false`).
 
-**Type**: `boolean`
-
 **Default**: `false`
 
 </dd>
 
 <dt>
 
-`type`
+`type: string | MarkType`
 
 </dt>
 
 <dd>
 
 The mark type to toggle.
-
-**Type**: `string | MarkType`
 
 </dd>
 
@@ -1857,7 +1671,7 @@ The mark type to toggle.
 
 <dt>
 
-`attrs`
+`attrs?: null | Attrs`
 
 </dt>
 
@@ -1865,21 +1679,17 @@ The mark type to toggle.
 
 The attributes of the node to toggle.
 
-**Type**: `null | Attrs`
-
 </dd>
 
 <dt>
 
-`type`
+`type: string | NodeType`
 
 </dt>
 
 <dd>
 
 The type of the node to toggle.
-
-**Type**: `string | NodeType`
 
 </dd>
 
@@ -1891,7 +1701,7 @@ The type of the node to toggle.
 
 <dt>
 
-`attrs`
+`attrs?: null | Attrs`
 
 </dt>
 
@@ -1899,21 +1709,17 @@ The type of the node to toggle.
 
 The attributes of the node to toggle.
 
-**Type**: `null | Attrs`
-
 </dd>
 
 <dt>
 
-`type`
+`type: string | NodeType`
 
 </dt>
 
 <dd>
 
 The type of the node to toggle.
-
-**Type**: `string | NodeType`
 
 </dd>
 
@@ -1925,7 +1731,7 @@ The type of the node to toggle.
 
 <dt>
 
-`from`
+`from?: number`
 
 </dt>
 
@@ -1933,21 +1739,17 @@ The type of the node to toggle.
 
 The start position of the document. By default it will be the start position of current selection.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`to`
+`to?: number`
 
 </dt>
 
 <dd>
 
 The end position of the document. By default it will be the end position of current selection.
-
-**Type**: `number`
 
 </dd>
 
@@ -1959,7 +1761,7 @@ The end position of the document. By default it will be the end position of curr
 
 <dt>
 
-`from`
+`from?: number`
 
 </dt>
 
@@ -1967,21 +1769,17 @@ The end position of the document. By default it will be the end position of curr
 
 The start position of the document. By default it will be the start position of current selection.
 
-**Type**: `number`
-
 </dd>
 
 <dt>
 
-`to`
+`to?: number`
 
 </dt>
 
 <dd>
 
 The end position of the document. By default it will be the end position of current selection.
-
-**Type**: `number`
 
 </dd>
 
@@ -1993,7 +1791,7 @@ The end position of the document. By default it will be the end position of curr
 
 <dt>
 
-`attrs`
+`attrs?: null | Attrs`
 
 </dt>
 
@@ -2001,19 +1799,15 @@ The end position of the document. By default it will be the end position of curr
 
 Optional attributes to apply to the node.
 
-**Type**: `null | Attrs`
-
 </dd>
 
 <dt>
 
-`nodeType`
+`nodeType?: NodeType`
 
 </dt>
 
 <dd>
-
-**Type**: `NodeType`
 
 **Deprecated**
 
@@ -2023,15 +1817,13 @@ Use `nodeSpec` instead.
 
 <dt>
 
-`type`
+`type: string | NodeType`
 
 </dt>
 
 <dd>
 
 The node type to wrap the selected textblock with.
-
-**Type**: `string | NodeType`
 
 </dd>
 

@@ -20,15 +20,13 @@ new TableHandleColumnRoot(): TableHandleColumnRoot
 
 <dt>
 
-`placement`
+`placement: Placement`
 
 </dt>
 
 <dd>
 
 The placement of the popover, relative to the hovered table cell.
-
-**Type**: `Placement`
 
 **Default**: `"top"`
 
@@ -56,13 +54,11 @@ new TableHandleColumnTrigger(): TableHandleColumnTrigger
 
 <dt>
 
-`editor`
+`editor: null | Editor<TableCommandsExtension>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<TableCommandsExtension>`
 
 </dd>
 
@@ -88,25 +84,21 @@ new TableHandlePopoverContent(): TableHandlePopoverContent
 
 <dt>
 
-`editor`
+`editor: null | Editor<any>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<any>`
 
 </dd>
 
 <dt>
 
-`offset`
+`offset: undefined | OffsetOptions`
 
 </dt>
 
 <dd>
-
-**Type**: `undefined | OffsetOptions`
 
 **Default**: `{mainAxis: -4, crossAxis: 4}`
 
@@ -114,13 +106,11 @@ new TableHandlePopoverContent(): TableHandlePopoverContent
 
 <dt>
 
-`placement`
+`placement: Placement`
 
 </dt>
 
 <dd>
-
-**Type**: `Placement`
 
 **Default**: `'bottom-start'`
 
@@ -188,15 +178,13 @@ new TableHandleRowRoot(): TableHandleRowRoot
 
 <dt>
 
-`placement`
+`placement: Placement`
 
 </dt>
 
 <dd>
 
 The placement of the popover, relative to the hovered table cell.
-
-**Type**: `Placement`
 
 **Default**: `"left"`
 
@@ -224,13 +212,11 @@ new TableHandleRowTrigger(): TableHandleRowTrigger
 
 <dt>
 
-`editor`
+`editor: null | Editor<TableCommandsExtension>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<TableCommandsExtension>`
 
 </dd>
 

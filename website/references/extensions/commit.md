@@ -42,7 +42,7 @@ A JSON representation of a commit.
 
 <dt>
 
-`doc`
+`doc: NodeJSON`
 
 </dt>
 
@@ -50,13 +50,11 @@ A JSON representation of a commit.
 
 The current doc node in the JSON format
 
-**Type**: `NodeJSON`
-
 </dd>
 
 <dt>
 
-`parent`
+`parent: NodeJSON`
 
 </dt>
 
@@ -64,13 +62,11 @@ The current doc node in the JSON format
 
 The parent node in the JSON format
 
-**Type**: `NodeJSON`
-
 </dd>
 
 <dt>
 
-`steps`
+`steps: StepJSON[]`
 
 </dt>
 
@@ -78,8 +74,6 @@ The parent node in the JSON format
 
 An array of steps in the JSON format that transform the parent node to the
 current doc node.
-
-**Type**: `StepJSON[]`
 
 </dd>
 

@@ -12,15 +12,13 @@ Props for the [TableHandleColumnRoot](table-handle.md#table-handle-column-root-5
 
 <dt>
 
-`placement`
+`placement?: Placement`
 
 </dt>
 
 <dd>
 
 The placement of the popover, relative to the hovered table cell.
-
-**Type**: `Placement`
 
 **Default**: `"top"`
 
@@ -40,13 +38,11 @@ Props for the [TableHandleColumnTrigger](table-handle.md#table-handle-column-tri
 
 <dt>
 
-`editor`
+`editor?: null | Editor<TableCommandsExtension>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<TableCommandsExtension>`
 
 </dd>
 
@@ -64,25 +60,21 @@ Props for the [TableHandlePopoverContent](table-handle.md#table-handle-popover-c
 
 <dt>
 
-`editor`
+`editor?: null | Editor<any>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<any>`
 
 </dd>
 
 <dt>
 
-`offset`
+`offset?: OffsetOptions`
 
 </dt>
 
 <dd>
-
-**Type**: `OffsetOptions`
 
 **Default**: `{mainAxis: -4, crossAxis: 4}`
 
@@ -90,13 +82,11 @@ Props for the [TableHandlePopoverContent](table-handle.md#table-handle-popover-c
 
 <dt>
 
-`placement`
+`placement?: Placement`
 
 </dt>
 
 <dd>
-
-**Type**: `Placement`
 
 **Default**: `'bottom-start'`
 
@@ -132,15 +122,13 @@ Props for the [TableHandleRowRoot](table-handle.md#table-handle-row-root-5) comp
 
 <dt>
 
-`placement`
+`placement?: Placement`
 
 </dt>
 
 <dd>
 
 The placement of the popover, relative to the hovered table cell.
-
-**Type**: `Placement`
 
 **Default**: `"left"`
 
@@ -156,13 +144,11 @@ Emits for the [TableHandleRowTrigger](table-handle.md#table-handle-row-trigger-5
 
 <dt>
 
-`select`
+`select: (event: CustomEvent<void>) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: CustomEvent<void>) => void`
 
 </dd>
 
@@ -176,13 +162,11 @@ Props for the [TableHandleRowTrigger](table-handle.md#table-handle-row-trigger-5
 
 <dt>
 
-`editor`
+`editor?: null | Editor<TableCommandsExtension>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<TableCommandsExtension>`
 
 </dd>
 

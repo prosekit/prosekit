@@ -8,7 +8,7 @@
 
 <dt>
 
-`value`
+`value: string`
 
 </dt>
 
@@ -17,8 +17,6 @@
 The value of the item, which will be matched against the query.
 
 If not provided, the value is the item's text content.
-
-**Type**: `string`
 
 **Default**: `""`
 
@@ -36,7 +34,7 @@ If not provided, the value is the item's text content.
 
 <dt>
 
-`openChange`
+`openChange: CustomEvent<boolean>`
 
 </dt>
 
@@ -44,21 +42,17 @@ If not provided, the value is the item's text content.
 
 Fired when the open state changes.
 
-**Type**: `CustomEvent<boolean>`
-
 </dd>
 
 <dt>
 
-`queryChange`
+`queryChange: CustomEvent<string>`
 
 </dt>
 
 <dd>
 
 Fired when the query changes.
-
-**Type**: `CustomEvent<string>`
 
 </dd>
 
@@ -70,13 +64,11 @@ Fired when the query changes.
 
 <dt>
 
-`boundary`
+`boundary: Boundary`
 
 </dt>
 
 <dd>
-
-**Type**: `Boundary`
 
 **Default**: `"The body element"`
 
@@ -84,13 +76,11 @@ Fired when the query changes.
 
 <dt>
 
-`fitViewport`
+`fitViewport: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -98,13 +88,11 @@ Fired when the query changes.
 
 <dt>
 
-`hoist`
+`hoist: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -112,13 +100,11 @@ Fired when the query changes.
 
 <dt>
 
-`inline`
+`inline: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -126,7 +112,7 @@ Fired when the query changes.
 
 <dt>
 
-`offset`
+`offset: undefined | OffsetOptions`
 
 </dt>
 
@@ -134,21 +120,17 @@ Fired when the query changes.
 
 The distance between the popover and the hovered block.
 
-**Type**: `undefined | OffsetOptions`
-
 **Default**: `4`
 
 </dd>
 
 <dt>
 
-`overflowPadding`
+`overflowPadding: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 **Default**: `8`
 
@@ -156,7 +138,7 @@ The distance between the popover and the hovered block.
 
 <dt>
 
-`placement`
+`placement: Placement`
 
 </dt>
 
@@ -164,23 +146,19 @@ The distance between the popover and the hovered block.
 
 The placement of the popover, relative to the text cursor.
 
-**Type**: `Placement`
-
 **Default**: `"bottom-start"`
 
 </dd>
 
 <dt>
 
-`regex`
+`regex: null | RegExp`
 
 </dt>
 
 <dd>
 
 The regular expression to match the query text to autocomplete.
-
-**Type**: `null | RegExp`
 
 **Default**: `null`
 

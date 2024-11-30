@@ -6,13 +6,11 @@
 
 <dt>
 
-`level`
+`level: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 </dd>
 

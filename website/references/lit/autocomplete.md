@@ -40,7 +40,7 @@ new AutocompleteItem(): AutocompleteItem
 
 <dt>
 
-`value`
+`value: string`
 
 </dt>
 
@@ -49,8 +49,6 @@ new AutocompleteItem(): AutocompleteItem
 The value of the item, which will be matched against the query.
 
 If not provided, the value is the item's text content.
-
-**Type**: `string`
 
 **Default**: `""`
 
@@ -98,13 +96,11 @@ new AutocompletePopover(): AutocompletePopover
 
 <dt>
 
-`boundary`
+`boundary: Boundary`
 
 </dt>
 
 <dd>
-
-**Type**: `Boundary`
 
 **Default**: `"The body element"`
 
@@ -112,13 +108,11 @@ new AutocompletePopover(): AutocompletePopover
 
 <dt>
 
-`fitViewport`
+`fitViewport: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -126,13 +120,11 @@ new AutocompletePopover(): AutocompletePopover
 
 <dt>
 
-`hoist`
+`hoist: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -140,13 +132,11 @@ new AutocompletePopover(): AutocompletePopover
 
 <dt>
 
-`inline`
+`inline: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -154,7 +144,7 @@ new AutocompletePopover(): AutocompletePopover
 
 <dt>
 
-`offset`
+`offset: undefined | OffsetOptions`
 
 </dt>
 
@@ -162,21 +152,17 @@ new AutocompletePopover(): AutocompletePopover
 
 The distance between the popover and the hovered block.
 
-**Type**: `undefined | OffsetOptions`
-
 **Default**: `4`
 
 </dd>
 
 <dt>
 
-`overflowPadding`
+`overflowPadding: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 **Default**: `8`
 
@@ -184,7 +170,7 @@ The distance between the popover and the hovered block.
 
 <dt>
 
-`placement`
+`placement: Placement`
 
 </dt>
 
@@ -192,23 +178,19 @@ The distance between the popover and the hovered block.
 
 The placement of the popover, relative to the text cursor.
 
-**Type**: `Placement`
-
 **Default**: `"bottom-start"`
 
 </dd>
 
 <dt>
 
-`regex`
+`regex: null | RegExp`
 
 </dt>
 
 <dd>
 
 The regular expression to match the query text to autocomplete.
-
-**Type**: `null | RegExp`
 
 **Default**: `null`
 

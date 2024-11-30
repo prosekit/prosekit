@@ -6,37 +6,31 @@
 
 <dt>
 
-`height`
+`height?: null | number`
 
 </dt>
 
 <dd>
-
-**Type**: `null | number`
 
 </dd>
 
 <dt>
 
-`src`
+`src?: null | string`
 
 </dt>
 
 <dd>
-
-**Type**: `null | string`
 
 </dd>
 
 <dt>
 
-`width`
+`width?: null | number`
 
 </dt>
 
 <dd>
-
-**Type**: `null | number`
 
 </dd>
 

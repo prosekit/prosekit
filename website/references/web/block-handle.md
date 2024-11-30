@@ -10,15 +10,13 @@
 
 <dt>
 
-`placement`
+`placement: Placement`
 
 </dt>
 
 <dd>
 
 The placement of the popover, relative to the hovered block.
-
-**Type**: `Placement`
 
 **Default**: `"left-start"`
 

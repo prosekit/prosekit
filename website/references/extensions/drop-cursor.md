@@ -6,7 +6,7 @@
 
 <dt>
 
-`class`
+`class?: string`
 
 </dt>
 
@@ -14,13 +14,11 @@
 
 A CSS class name to add to the cursor element.
 
-**Type**: `string`
-
 </dd>
 
 <dt>
 
-`color`
+`color?: string | false`
 
 </dt>
 
@@ -28,23 +26,19 @@ A CSS class name to add to the cursor element.
 
 The color of the cursor.  Use `false` to apply no color and rely only on class.
 
-**Type**: `string | false`
-
 **Default**: `'black'`
 
 </dd>
 
 <dt>
 
-`width`
+`width?: number`
 
 </dt>
 
 <dd>
 
 The precise width of the cursor in pixels.
-
-**Type**: `number`
 
 **Default**: `1`
 

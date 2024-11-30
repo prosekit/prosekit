@@ -6,7 +6,7 @@
 
 <dt>
 
-`placeholder`
+`placeholder: string | ((state: EditorState) => string)`
 
 </dt>
 
@@ -15,13 +15,11 @@
 The placeholder to use. It can be a static string or a function that
 receives the current editor state and returns a string.
 
-**Type**: `string | ((state: EditorState) => string)`
-
 </dd>
 
 <dt>
 
-`strategy`
+`strategy?: "doc" | "block"`
 
 </dt>
 
@@ -30,8 +28,6 @@ receives the current editor state and returns a string.
 By default, the placeholder text will be shown whenever the current text
 cursor is in an empty text node. If you only want to show the placeholder
 when the whole doc is empty, you can set this option to 'doc'.
-
-**Type**: `"doc" | "block"`
 
 **Default**: `'block'`
 

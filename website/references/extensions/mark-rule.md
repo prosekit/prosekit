@@ -8,7 +8,7 @@ The options for [defineMarkRule](mark-rule.md#define-mark-rule).
 
 <dt>
 
-`attrs`
+`attrs?: null | Attrs | ((match: RegExpMatchArray) => null | Attrs)`
 
 </dt>
 
@@ -17,15 +17,13 @@ The options for [defineMarkRule](mark-rule.md#define-mark-rule).
 Attributes to set on the mark. If a function is provided, it will be called
 with the matched result from the regular expression.
 
-**Type**: `null | Attrs | ((match: RegExpMatchArray) => null | Attrs)`
-
 **Default**: `null`
 
 </dd>
 
 <dt>
 
-`regex`
+`regex: RegExp`
 
 </dt>
 
@@ -34,21 +32,17 @@ with the matched result from the regular expression.
 The regular expression to match against. It must has a `g` flag to match
 all instances of the mark.
 
-**Type**: `RegExp`
-
 </dd>
 
 <dt>
 
-`type`
+`type: string | MarkType`
 
 </dt>
 
 <dd>
 
 The mark type to apply to the matched text.
-
-**Type**: `string | MarkType`
 
 </dd>
 

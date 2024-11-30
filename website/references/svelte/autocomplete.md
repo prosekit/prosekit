@@ -12,19 +12,17 @@ Props for the [AutocompleteItem](autocomplete.md#autocomplete-item-4) component.
 
 <dt>
 
-`onSelect`
+`onSelect?: (event: CustomEvent<void>) => void`
 
 </dt>
 
 <dd>
 
-**Type**: `(event: CustomEvent<void>) => void`
-
 </dd>
 
 <dt>
 
-`value`
+`value?: string`
 
 </dt>
 
@@ -33,8 +31,6 @@ Props for the [AutocompleteItem](autocomplete.md#autocomplete-item-4) component.
 The value of the item, which will be matched against the query.
 
 If not provided, the value is the item's text content.
-
-**Type**: `string`
 
 **Default**: `""`
 
@@ -50,13 +46,11 @@ Props for the [AutocompleteList](autocomplete.md#autocomplete-list-4) component.
 
 <dt>
 
-`onValueChange`
+`onValueChange?: (event: string) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: string) => void`
 
 </dd>
 
@@ -70,13 +64,11 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-4) comp
 
 <dt>
 
-`boundary`
+`boundary?: Boundary`
 
 </dt>
 
 <dd>
-
-**Type**: `Boundary`
 
 **Default**: `"The body element"`
 
@@ -84,13 +76,11 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-4) comp
 
 <dt>
 
-`fitViewport`
+`fitViewport?: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -98,13 +88,11 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-4) comp
 
 <dt>
 
-`hoist`
+`hoist?: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -112,13 +100,11 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-4) comp
 
 <dt>
 
-`inline`
+`inline?: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -126,7 +112,7 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-4) comp
 
 <dt>
 
-`offset`
+`offset?: OffsetOptions`
 
 </dt>
 
@@ -134,45 +120,37 @@ Props for the [AutocompletePopover](autocomplete.md#autocomplete-popover-4) comp
 
 The distance between the popover and the hovered block.
 
-**Type**: `OffsetOptions`
-
 **Default**: `4`
 
 </dd>
 
 <dt>
 
-`onOpenChange`
+`onOpenChange?: (event: boolean) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: boolean) => void`
 
 </dd>
 
 <dt>
 
-`onQueryChange`
+`onQueryChange?: (event: string) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: string) => void`
 
 </dd>
 
 <dt>
 
-`overflowPadding`
+`overflowPadding?: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 **Default**: `8`
 
@@ -180,7 +158,7 @@ The distance between the popover and the hovered block.
 
 <dt>
 
-`placement`
+`placement?: Placement`
 
 </dt>
 
@@ -188,23 +166,19 @@ The distance between the popover and the hovered block.
 
 The placement of the popover, relative to the text cursor.
 
-**Type**: `Placement`
-
 **Default**: `"bottom-start"`
 
 </dd>
 
 <dt>
 
-`regex`
+`regex?: null | RegExp`
 
 </dt>
 
 <dd>
 
 The regular expression to match the query text to autocomplete.
-
-**Type**: `null | RegExp`
 
 **Default**: `null`
 

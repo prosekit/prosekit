@@ -6,15 +6,13 @@
 
 <dt>
 
-`position`
+`position: "left" | "right" | "top" | "bottom" | "top-left" | "top-right" | "bottom-left" | "bottom-right"`
 
 </dt>
 
 <dd>
 
 The position of the handle.
-
-**Type**: `"left" | "right" | "top" | "bottom" | "top-left" | "top-right" | "bottom-left" | "bottom-right"`
 
 **Default**: `"bottom-right"`
 
@@ -28,25 +26,21 @@ The position of the handle.
 
 <dt>
 
-`resizeEnd`
+`resizeEnd: CustomEvent<{ height: number; width: number }>`
 
 </dt>
 
 <dd>
-
-**Type**: `CustomEvent<{ height: number; width: number }>`
 
 </dd>
 
 <dt>
 
-`resizeStart`
+`resizeStart: CustomEvent<{ height: number; width: number }>`
 
 </dt>
 
 <dd>
-
-**Type**: `CustomEvent<{ height: number; width: number }>`
 
 </dd>
 
@@ -58,37 +52,31 @@ The position of the handle.
 
 <dt>
 
-`aspectRatio`
+`aspectRatio: null | number`
 
 </dt>
 
 <dd>
-
-**Type**: `null | number`
 
 </dd>
 
 <dt>
 
-`height`
+`height: null | number`
 
 </dt>
 
 <dd>
-
-**Type**: `null | number`
 
 </dd>
 
 <dt>
 
-`width`
+`width: null | number`
 
 </dt>
 
 <dd>
-
-**Type**: `null | number`
 
 </dd>
 

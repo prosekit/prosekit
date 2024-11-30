@@ -8,7 +8,7 @@ The attributes of a list node.
 
 <dt>
 
-`checked`
+`checked?: boolean`
 
 </dt>
 
@@ -16,13 +16,11 @@ The attributes of a list node.
 
 Whether the list node is checked if its `kind` is `"task"`.
 
-**Type**: `boolean`
-
 </dd>
 
 <dt>
 
-`collapsed`
+`collapsed?: boolean`
 
 </dt>
 
@@ -30,13 +28,11 @@ Whether the list node is checked if its `kind` is `"task"`.
 
 Whether the list node is collapsed if its `kind` is `"toggle"`.
 
-**Type**: `boolean`
-
 </dd>
 
 <dt>
 
-`kind`
+`kind?: "toggle" | "bullet" | "ordered" | "task"`
 
 </dt>
 
@@ -44,21 +40,17 @@ Whether the list node is collapsed if its `kind` is `"toggle"`.
 
 The kind of list node.
 
-**Type**: `"toggle" | "bullet" | "ordered" | "task"`
-
 </dd>
 
 <dt>
 
-`order`
+`order?: null | number`
 
 </dt>
 
 <dd>
 
 The optional order of the list node.
-
-**Type**: `null | number`
 
 </dd>
 

@@ -8,15 +8,13 @@ Emits for the [InlinePopover](inline-popover.md#inline-popover-5) component.
 
 <dt>
 
-`openChange`
+`openChange: (event: boolean) => void`
 
 </dt>
 
 <dd>
 
 Fired when the open state changes.
-
-**Type**: `(event: boolean) => void`
 
 </dd>
 
@@ -30,7 +28,7 @@ Props for the [InlinePopover](inline-popover.md#inline-popover-5) component.
 
 <dt>
 
-`defaultOpen`
+`defaultOpen?: boolean`
 
 </dt>
 
@@ -43,15 +41,13 @@ When `defaultOpen` is true, the popover will open or close based on the
 inline selection. When `defaultOpen` is false, the popover will never be
 opened unless the `open` prop is true.
 
-**Type**: `boolean`
-
 **Default**: `true`
 
 </dd>
 
 <dt>
 
-`dismissOnEscape`
+`dismissOnEscape?: boolean`
 
 </dt>
 
@@ -60,7 +56,17 @@ opened unless the `open` prop is true.
 Whether the inline popover should be dismissed when the editor receives an
 Escape key press.
 
-**Type**: `boolean`
+**Default**: `true`
+
+</dd>
+
+<dt>
+
+`hide?: boolean`
+
+</dt>
+
+<dd>
 
 **Default**: `true`
 
@@ -68,13 +74,11 @@ Escape key press.
 
 <dt>
 
-`hide`
+`inline?: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -82,27 +86,11 @@ Escape key press.
 
 <dt>
 
-`inline`
+`offset?: OffsetOptions`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
-
-**Default**: `true`
-
-</dd>
-
-<dt>
-
-`offset`
-
-</dt>
-
-<dd>
-
-**Type**: `OffsetOptions`
 
 **Default**: `12`
 
@@ -110,7 +98,7 @@ Escape key press.
 
 <dt>
 
-`open`
+`open?: boolean`
 
 </dt>
 
@@ -121,21 +109,17 @@ Whether the popover is open.
 Notice that the popover will be always hidden if the inline selection is
 empty.
 
-**Type**: `boolean`
-
 **Default**: `false`
 
 </dd>
 
 <dt>
 
-`overflowPadding`
+`overflowPadding?: number`
 
 </dt>
 
 <dd>
-
-**Type**: `number`
 
 **Default**: `8`
 
@@ -143,13 +127,11 @@ empty.
 
 <dt>
 
-`overlap`
+`overlap?: boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `boolean`
 
 **Default**: `true`
 
@@ -157,13 +139,11 @@ empty.
 
 <dt>
 
-`placement`
+`placement?: Placement`
 
 </dt>
 
 <dd>
-
-**Type**: `Placement`
 
 **Default**: `"top"`
 

@@ -12,15 +12,13 @@ Props for the [ResizableHandle](resizable.md#resizable-handle-5) component.
 
 <dt>
 
-`position`
+`position?: "left" | "right" | "top" | "bottom" | "top-left" | "top-right" | "bottom-left" | "bottom-right"`
 
 </dt>
 
 <dd>
 
 The position of the handle.
-
-**Type**: `"left" | "right" | "top" | "bottom" | "top-left" | "top-right" | "bottom-left" | "bottom-right"`
 
 **Default**: `"bottom-right"`
 
@@ -36,25 +34,21 @@ Emits for the [ResizableRoot](resizable.md#resizable-root-5) component.
 
 <dt>
 
-`resizeEnd`
+`resizeEnd: (event: CustomEvent<{ height: number; width: number }>) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: CustomEvent<{ height: number; width: number }>) => void`
 
 </dd>
 
 <dt>
 
-`resizeStart`
+`resizeStart: (event: CustomEvent<{ height: number; width: number }>) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: CustomEvent<{ height: number; width: number }>) => void`
 
 </dd>
 
@@ -68,37 +62,31 @@ Props for the [ResizableRoot](resizable.md#resizable-root-5) component.
 
 <dt>
 
-`aspectRatio`
+`aspectRatio?: null | number`
 
 </dt>
 
 <dd>
-
-**Type**: `null | number`
 
 </dd>
 
 <dt>
 
-`height`
+`height?: null | number`
 
 </dt>
 
 <dd>
-
-**Type**: `null | number`
 
 </dd>
 
 <dt>
 
-`width`
+`width?: null | number`
 
 </dt>
 
 <dd>
-
-**Type**: `null | number`
 
 </dd>
 

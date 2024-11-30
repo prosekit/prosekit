@@ -8,15 +8,13 @@ Props for the [TableHandleColumnRoot](table-handle.md#table-handle-column-root-4
 
 <dt>
 
-`placement`
+`placement?: Placement`
 
 </dt>
 
 <dd>
 
 The placement of the popover, relative to the hovered table cell.
-
-**Type**: `Placement`
 
 **Default**: `"top"`
 
@@ -32,13 +30,11 @@ Props for the [TableHandleColumnTrigger](table-handle.md#table-handle-column-tri
 
 <dt>
 
-`editor`
+`editor?: null | Editor<TableCommandsExtension>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<TableCommandsExtension>`
 
 </dd>
 
@@ -52,25 +48,21 @@ Props for the [TableHandlePopoverContent](table-handle.md#table-handle-popover-c
 
 <dt>
 
-`editor`
+`editor?: null | Editor<any>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<any>`
 
 </dd>
 
 <dt>
 
-`offset`
+`offset?: OffsetOptions`
 
 </dt>
 
 <dd>
-
-**Type**: `OffsetOptions`
 
 **Default**: `{mainAxis: -4, crossAxis: 4}`
 
@@ -78,61 +70,51 @@ Props for the [TableHandlePopoverContent](table-handle.md#table-handle-popover-c
 
 <dt>
 
-`onEscapeKeyDown`
+`onEscapeKeyDown?: (event: EscapeKeyDownEvent) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: EscapeKeyDownEvent) => void`
 
 </dd>
 
 <dt>
 
-`onFocusOutside`
+`onFocusOutside?: (event: FocusOutsideEvent) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: FocusOutsideEvent) => void`
 
 </dd>
 
 <dt>
 
-`onInteractOutside`
+`onInteractOutside?: (event: InteractOutsideEvent) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: InteractOutsideEvent) => void`
 
 </dd>
 
 <dt>
 
-`onPointerDownOutside`
+`onPointerDownOutside?: (event: PointerDownOutsideEvent) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: PointerDownOutsideEvent) => void`
 
 </dd>
 
 <dt>
 
-`placement`
+`placement?: Placement`
 
 </dt>
 
 <dd>
-
-**Type**: `Placement`
 
 **Default**: `'bottom-start'`
 
@@ -148,13 +130,11 @@ Props for the [TableHandlePopoverItem](table-handle.md#table-handle-popover-item
 
 <dt>
 
-`onSelect`
+`onSelect?: (event: CustomEvent<void>) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: CustomEvent<void>) => void`
 
 </dd>
 
@@ -172,15 +152,13 @@ Props for the [TableHandleRowRoot](table-handle.md#table-handle-row-root-4) comp
 
 <dt>
 
-`placement`
+`placement?: Placement`
 
 </dt>
 
 <dd>
 
 The placement of the popover, relative to the hovered table cell.
-
-**Type**: `Placement`
 
 **Default**: `"left"`
 
@@ -196,25 +174,21 @@ Props for the [TableHandleRowTrigger](table-handle.md#table-handle-row-trigger-4
 
 <dt>
 
-`editor`
+`editor?: null | Editor<TableCommandsExtension>`
 
 </dt>
 
 <dd>
-
-**Type**: `null | Editor<TableCommandsExtension>`
 
 </dd>
 
 <dt>
 
-`onSelect`
+`onSelect?: (event: CustomEvent<void>) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(event: CustomEvent<void>) => void`
 
 </dd>
 

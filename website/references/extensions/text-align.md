@@ -6,7 +6,7 @@
 
 <dt>
 
-`default`
+`default?: string`
 
 </dt>
 
@@ -14,23 +14,19 @@
 
 The default value for the attribute.
 
-**Type**: `string`
-
 **Default**: `"left"`
 
 </dd>
 
 <dt>
 
-`types`
+`types: NodeName[]`
 
 </dt>
 
 <dd>
 
 The names of node to add the attribute to.
-
-**Type**: `NodeName[]`
 
 **Example**
 

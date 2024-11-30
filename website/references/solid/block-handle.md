@@ -16,15 +16,13 @@ Props for the [BlockHandlePopover](block-handle.md#block-handle-popover-3) compo
 
 <dt>
 
-`placement`
+`placement?: Placement`
 
 </dt>
 
 <dd>
 
 The placement of the popover, relative to the hovered block.
-
-**Type**: `Placement`
 
 **Default**: `"left-start"`
 

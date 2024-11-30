@@ -20,15 +20,13 @@ new ResizableHandle(): ResizableHandle
 
 <dt>
 
-`position`
+`position: "left" | "right" | "top" | "bottom" | "top-left" | "top-right" | "bottom-left" | "bottom-right"`
 
 </dt>
 
 <dd>
 
 The position of the handle.
-
-**Type**: `"left" | "right" | "top" | "bottom" | "top-left" | "top-right" | "bottom-left" | "bottom-right"`
 
 **Default**: `"bottom-right"`
 
@@ -56,37 +54,31 @@ new ResizableRoot(): ResizableRoot
 
 <dt>
 
-`aspectRatio`
+`aspectRatio: null | number`
 
 </dt>
 
 <dd>
-
-**Type**: `null | number`
 
 </dd>
 
 <dt>
 
-`height`
+`height: null | number`
 
 </dt>
 
 <dd>
-
-**Type**: `null | number`
 
 </dd>
 
 <dt>
 
-`width`
+`width: null | number`
 
 </dt>
 
 <dd>
-
-**Type**: `null | number`
 
 </dd>
 

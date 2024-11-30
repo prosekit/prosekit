@@ -6,13 +6,11 @@
 
 <dt>
 
-`editor`
+`editor: Editor<any>`
 
 </dt>
 
 <dd>
-
-**Type**: `Editor<any>`
 
 </dd>
 
@@ -24,7 +22,7 @@
 
 <dt>
 
-`editor`
+`editor?: MaybeRefOrGetter<Editor<any>>`
 
 </dt>
 
@@ -33,21 +31,17 @@
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
 
-**Type**: `MaybeRefOrGetter<Editor<any>>`
-
 </dd>
 
 <dt>
 
-`priority`
+`priority?: Priority`
 
 </dt>
 
 <dd>
 
 Optional priority to add the extension with.
-
-**Type**: `Priority`
 
 </dd>
 
@@ -61,7 +55,7 @@ Options for [defineVueNodeView](vue.md#define-vue-node-view).
 
 <dt>
 
-`as`
+`as?: string | HTMLElement | ((node: Node) => HTMLElement)`
 
 </dt>
 
@@ -69,13 +63,11 @@ Options for [defineVueNodeView](vue.md#define-vue-node-view).
 
 The wrapping DOM element for the node view. Defaults to `div` for block nodes and `span` for inline nodes.
 
-**Type**: `string | HTMLElement | ((node: Node) => HTMLElement)`
-
 </dd>
 
 <dt>
 
-`component`
+`component: VueNodeViewComponent`
 
 </dt>
 
@@ -83,13 +75,11 @@ The wrapping DOM element for the node view. Defaults to `div` for block nodes an
 
 The Vue component to render the node.
 
-**Type**: `VueNodeViewComponent`
-
 </dd>
 
 <dt>
 
-`contentAs`
+`contentAs?: string | HTMLElement | ((node: Node) => HTMLElement)`
 
 </dt>
 
@@ -97,49 +87,41 @@ The Vue component to render the node.
 
 The wrapping DOM element for the node view's content. Defaults to `div` for block nodes and `span` for inline nodes.
 
-**Type**: `string | HTMLElement | ((node: Node) => HTMLElement)`
-
 </dd>
 
 <dt>
 
-`deselectNode`
+`deselectNode?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`destroy`
+`destroy?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`ignoreMutation`
+`ignoreMutation?: (mutation: ViewMutationRecord) => boolean`
 
 </dt>
 
 <dd>
 
-**Type**: `(mutation: ViewMutationRecord) => boolean`
-
 </dd>
 
 <dt>
 
-`name`
+`name: string`
 
 </dt>
 
@@ -147,67 +129,55 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 The name of the node type.
 
-**Type**: `string`
-
 </dd>
 
 <dt>
 
-`onUpdate`
+`onUpdate?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`selectNode`
+`selectNode?: () => void`
 
 </dt>
 
 <dd>
 
-**Type**: `() => void`
-
 </dd>
 
 <dt>
 
-`setSelection`
+`setSelection?: (anchor: number, head: number, root: Document | ShadowRoot) => void`
 
 </dt>
 
 <dd>
 
-**Type**: `(anchor: number, head: number, root: Document | ShadowRoot) => void`
-
 </dd>
 
 <dt>
 
-`stopEvent`
+`stopEvent?: (event: Event) => boolean`
 
 </dt>
 
 <dd>
 
-**Type**: `(event: Event) => boolean`
-
 </dd>
 
 <dt>
 
-`update`
+`update?: (node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean`
 
 </dt>
 
 <dd>
-
-**Type**: `(node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean`
 
 </dd>
 
@@ -219,97 +189,81 @@ The name of the node type.
 
 <dt>
 
-`contentRef`
+`contentRef: VNodeRef`
 
 </dt>
 
 <dd>
-
-**Type**: `VNodeRef`
 
 </dd>
 
 <dt>
 
-`decorations`
+`decorations: ShallowRef<readonly Decoration[]>`
 
 </dt>
 
 <dd>
-
-**Type**: `ShallowRef<readonly Decoration[]>`
 
 </dd>
 
 <dt>
 
-`getPos`
+`getPos: () => undefined | number`
 
 </dt>
 
 <dd>
-
-**Type**: `() => undefined | number`
 
 </dd>
 
 <dt>
 
-`innerDecorations`
+`innerDecorations: ShallowRef<DecorationSource>`
 
 </dt>
 
 <dd>
-
-**Type**: `ShallowRef<DecorationSource>`
 
 </dd>
 
 <dt>
 
-`node`
+`node: ShallowRef<Node>`
 
 </dt>
 
 <dd>
-
-**Type**: `ShallowRef<Node>`
 
 </dd>
 
 <dt>
 
-`selected`
+`selected: ShallowRef<boolean>`
 
 </dt>
 
 <dd>
-
-**Type**: `ShallowRef<boolean>`
 
 </dd>
 
 <dt>
 
-`setAttrs`
+`setAttrs: (attrs: Attrs) => void`
 
 </dt>
 
 <dd>
-
-**Type**: `(attrs: Attrs) => void`
 
 </dd>
 
 <dt>
 
-`view`
+`view: EditorView`
 
 </dt>
 
 <dd>
-
-**Type**: `EditorView`
 
 </dd>
 

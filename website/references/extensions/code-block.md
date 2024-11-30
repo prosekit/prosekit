@@ -8,13 +8,11 @@ The attributes for the `codeBlock` node.
 
 <dt>
 
-`language`
+`language: string`
 
 </dt>
 
 <dd>
-
-**Type**: `string`
 
 </dd>
 

@@ -5,11 +5,23 @@ import {
   TooltipRoot,
   TooltipTrigger,
 } from 'prosekit/svelte/tooltip'
+import type { Snippet } from 'svelte'
 
-export let pressed: boolean = false
-export let disabled: boolean = false
-export let tooltip: string = ''
-export let onClick: VoidFunction | undefined = undefined
+interface Props {
+  pressed?: boolean
+  disabled?: boolean
+  tooltip?: string
+  onClick?: VoidFunction
+  children?: Snippet
+}
+
+let {
+  pressed = false,
+  disabled = false,
+  tooltip = '',
+  onClick = undefined,
+  children,
+}: Props = $props()
 </script>
 
 <TooltipRoot>
@@ -17,11 +29,11 @@ export let onClick: VoidFunction | undefined = undefined
     <button
       data-state={pressed ? 'on' : 'off'}
       {disabled}
-      on:click={() => onClick?.()}
-      on:mousedown={(event) => event.preventDefault()}
+      onclick={() => onClick?.()}
+      onmousedown={(event) => event.preventDefault()}
       class={Themes.TOGGLE_BUTTON}
     >
-      <slot />
+      {@render children?.()}
       {#if tooltip}
         <span class="sr-only">{tooltip}</span>
       {/if}

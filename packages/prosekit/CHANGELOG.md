@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.11.0
+
+### Minor Changes
+
+- [`9ad699c`](https://github.com/ocavue/prosekit/commit/9ad699c835174d000f46db2dce32d45ee32887db) ![](https://prosekit.dev/b/svelte)
+
+  `prosekit/svelte` now requires Svelte 5.
+
 ## 0.10.5
 
 ### Patch Changes

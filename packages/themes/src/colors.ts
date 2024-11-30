@@ -20,7 +20,7 @@ const COLORS = [
 
 const GROUPS = ['text', 'bg', 'border', 'ring', 'ring-offset'] as const
 
-// prettier-ignore
+// dprint-ignore
 const COLOR_REGEX = new RegExp(
     (
         `^` +

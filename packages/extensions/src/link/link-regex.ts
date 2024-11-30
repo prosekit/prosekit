@@ -12,7 +12,7 @@ const STOP_CHAR_PATTERN = '[' + PUNCTUATION_CHAR_PATTERN + ']'
 
 const END_CHAR_PATTERN = '[^' + '\\s' + PUNCTUATION_CHAR_PATTERN + ']'
 
-// prettier-ignore
+// dprint-ignore
 const LINK_RE_BASE_PATTERN = (
     // start of the link group
     '(' + 
@@ -67,11 +67,11 @@ const LINK_RE_BASE_PATTERN = (
     ')'
 )
 
-// prettier-ignore
+// dprint-ignore
 const LINK_ENTER_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?' + '$'
-// prettier-ignore
+// dprint-ignore
 const LINK_INPUT_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?' + '\\s$'
-// prettier-ignore
+// dprint-ignore
 const LINK_MARK_PATTERN = LINK_RE_BASE_PATTERN + '(?=' + STOP_CHAR_PATTERN + '|\\s|$)'
 
 export const LINK_ENTER_RE = new RegExp(LINK_ENTER_PATTERN, 'gi')

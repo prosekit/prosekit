@@ -74,7 +74,7 @@ async function genReferenceItems() {
 
   const content =
     `// This file is generated from ${currentFilename}\n\n` +
-    `// prettier-ignore\n` +
+    `// dprint-ignore\n` +
     `export const referenceItems = ` +
     JSON.stringify(items, null, 2) +
     `\n`
@@ -101,7 +101,7 @@ async function genExampleItems() {
 
   const content =
     `// This file is generated from ${currentFilename}\n\n` +
-    `// prettier-ignore\n` +
+    `// dprint-ignore\n` +
     `export const exampleItems = ` +
     JSON.stringify(items, null, 2) +
     `\n`

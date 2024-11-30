@@ -227,7 +227,7 @@ export const editorEventFacet = defineFacet<EditorEventPayload, PluginPayload>({
   singleton: true,
 })
 
-// prettier-ignore
+// dprint-ignore
 function setupEditorEventPlugin() {
   const [setKeyDownHandlers, handleKeyDown] = combineEventHandlers<KeyDownHandler>()
   const [setKeyPressHandlers, handleKeyPress] = combineEventHandlers<KeyPressHandler>()

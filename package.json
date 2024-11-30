@@ -39,11 +39,11 @@
     "@prosekit/unocss-preset": "workspace:*",
     "@size-limit/esbuild-why": "^11.1.6",
     "@size-limit/preset-small-lib": "^11.1.6",
-    "@unocss/eslint-config": "^0.63.6",
+    "@unocss/eslint-config": "^0.64.0",
     "@vitest/browser": "^2.1.6",
     "@vitest/coverage-v8": "^2.1.6",
     "cross-env": "^7.0.3",
-    "eslint": "^9.15.0",
+    "eslint": "^9.16.0",
     "eslint-plugin-command": "^0.2.6",
     "pkg-pr-new": "^0.0.30",
     "playwright": "^1.48.2",
@@ -53,7 +53,7 @@
     "size-limit": "^11.1.6",
     "turbo": "^2.2.3",
     "typescript": "^5.6.3",
-    "unocss": "^0.63.6",
+    "unocss": "^0.64.0",
     "vitest": "^2.1.6"
   }
 }

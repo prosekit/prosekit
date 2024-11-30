@@ -26,7 +26,7 @@
     "change-case": "^5.4.4",
     "clsx": "^2.1.1",
     "dedent": "^1.5.3",
-    "lightningcss": "^1.27.0",
+    "lightningcss": "^1.28.2",
     "loro-crdt": "^1.0.8",
     "loro-prosemirror": "^0.2.0",
     "postcss": "^8.4.47",

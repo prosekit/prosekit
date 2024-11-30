@@ -1,6 +1,9 @@
 import type { BaseExtension } from '../facets/base-extension'
 import { UnionExtensionImpl } from '../facets/union-extension'
-import type { Extension, Union } from '../types/extension'
+import type {
+  Extension,
+  Union,
+} from '../types/extension'
 import { assert } from '../utils/assert'
 
 /**

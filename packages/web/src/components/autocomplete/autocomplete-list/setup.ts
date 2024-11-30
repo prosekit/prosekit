@@ -12,16 +12,23 @@ import {
   type ListboxProps,
 } from '@aria-ui/listbox/elements'
 import {
-  Priority,
   defineDOMEventHandler,
+  Priority,
   withPriority,
   type Editor,
 } from '@prosekit/core'
 
 import { getStateWithDefaults } from '../../../utils/get-default-state'
-import { onSubmitContext, openContext, queryContext } from '../context'
+import {
+  onSubmitContext,
+  openContext,
+  queryContext,
+} from '../context'
 
-import type { AutocompleteListEvents, AutocompleteListProps } from './types'
+import type {
+  AutocompleteListEvents,
+  AutocompleteListProps,
+} from './types'
 
 export function useAutocompleteList(
   element: ConnectableElement,

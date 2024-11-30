@@ -18,8 +18,14 @@ import {
   defineBlockquote,
   type BlockquoteExtension,
 } from '@prosekit/extensions/blockquote'
-import { defineBold, type BoldExtension } from '@prosekit/extensions/bold'
-import { defineCode, type CodeExtension } from '@prosekit/extensions/code'
+import {
+  defineBold,
+  type BoldExtension,
+} from '@prosekit/extensions/bold'
+import {
+  defineCode,
+  type CodeExtension,
+} from '@prosekit/extensions/code'
 import {
   defineDropCursor,
   type DropCursorExtension,
@@ -36,16 +42,34 @@ import {
   defineHorizontalRule,
   type HorizontalRuleExtension,
 } from '@prosekit/extensions/horizontal-rule'
-import { defineImage, type ImageExtension } from '@prosekit/extensions/image'
-import { defineItalic, type ItalicExtension } from '@prosekit/extensions/italic'
-import { defineLink, type LinkExtension } from '@prosekit/extensions/link'
-import { defineList, type ListExtension } from '@prosekit/extensions/list'
+import {
+  defineImage,
+  type ImageExtension,
+} from '@prosekit/extensions/image'
+import {
+  defineItalic,
+  type ItalicExtension,
+} from '@prosekit/extensions/italic'
+import {
+  defineLink,
+  type LinkExtension,
+} from '@prosekit/extensions/link'
+import {
+  defineList,
+  type ListExtension,
+} from '@prosekit/extensions/list'
 import {
   defineModClickPrevention,
   type ModClickPreventionExtension,
 } from '@prosekit/extensions/mod-click-prevention'
-import { defineStrike, type StrikeExtension } from '@prosekit/extensions/strike'
-import { defineTable, type TableExtension } from '@prosekit/extensions/table'
+import {
+  defineStrike,
+  type StrikeExtension,
+} from '@prosekit/extensions/strike'
+import {
+  defineTable,
+  type TableExtension,
+} from '@prosekit/extensions/table'
 import {
   defineUnderline,
   type UnderlineExtension,

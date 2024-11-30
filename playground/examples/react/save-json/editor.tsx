@@ -2,8 +2,16 @@ import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
-import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
-import { useCallback, useMemo, useState } from 'react'
+import {
+  createEditor,
+  jsonFromNode,
+  type NodeJSON,
+} from 'prosekit/core'
+import {
+  useCallback,
+  useMemo,
+  useState,
+} from 'react'
 
 import EditorComponent from './editor-component'
 

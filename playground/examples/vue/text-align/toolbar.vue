@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
-import type { Editor, NodeAction } from 'prosekit/core'
+import type {
+  Editor,
+  NodeAction,
+} from 'prosekit/core'
 import { useEditor } from 'prosekit/vue'
 
 import Button from './button.vue'

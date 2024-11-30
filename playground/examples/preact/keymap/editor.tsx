@@ -1,8 +1,15 @@
 import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
-import { useCallback, useMemo, useState } from 'preact/hooks'
-import { createEditor, jsonFromNode } from 'prosekit/core'
+import {
+  useCallback,
+  useMemo,
+  useState,
+} from 'preact/hooks'
+import {
+  createEditor,
+  jsonFromNode,
+} from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
 import { defineExtension } from './extension'

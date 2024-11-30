@@ -99,10 +99,9 @@ function setObjectAttributes(
   obj = { ...obj }
   for (const [key, value] of attrs) {
     const oldValue = obj[key]
-    const newValue =
-      key === 'style'
-        ? joinStyles(value, typeof oldValue === 'string' ? oldValue : '')
-        : value
+    const newValue = key === 'style'
+      ? joinStyles(value, typeof oldValue === 'string' ? oldValue : '')
+      : value
     obj[key] = newValue
   }
   return obj
@@ -115,10 +114,9 @@ function setElementAttributes(
   element = element.cloneNode(true) as Element
   for (const [key, value] of attrs) {
     const oldValue = element.getAttribute(key)
-    const newValue =
-      key === 'style'
-        ? joinStyles(value, typeof oldValue === 'string' ? oldValue : '')
-        : value
+    const newValue = key === 'style'
+      ? joinStyles(value, typeof oldValue === 'string' ? oldValue : '')
+      : value
     element.setAttribute(key, newValue)
   }
   return element

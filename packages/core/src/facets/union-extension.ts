@@ -1,14 +1,17 @@
-import type { Extension, ExtensionTyping } from '../types/extension'
+import type {
+  Extension,
+  ExtensionTyping,
+} from '../types/extension'
 import type { Priority } from '../types/priority'
 import { assert } from '../utils/assert'
 
 import { BaseExtension } from './base-extension'
-import { type FacetNode, unionFacetNode } from './facet-node'
+import {
+  unionFacetNode,
+  type FacetNode,
+} from './facet-node'
 
-export class UnionExtensionImpl<T extends ExtensionTyping = ExtensionTyping>
-  extends BaseExtension<T>
-  implements Extension<T>
-{
+export class UnionExtensionImpl<T extends ExtensionTyping = ExtensionTyping> extends BaseExtension<T> implements Extension<T> {
   /**
    * @internal
    */

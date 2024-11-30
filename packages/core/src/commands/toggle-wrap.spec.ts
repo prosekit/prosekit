@@ -1,4 +1,8 @@
-import { describe, expect, it } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
 import { union } from '../editor/union'
 import { defineBaseCommands } from '../extensions/command'

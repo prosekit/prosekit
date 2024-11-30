@@ -1,9 +1,9 @@
 import {
-  type Editor,
-  ProseKitError,
   defineMountHandler,
   defineUpdateHandler,
+  ProseKitError,
   union,
+  type Editor,
   type Extension,
 } from '@prosekit/core'
 import {

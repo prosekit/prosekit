@@ -4,15 +4,17 @@ import 'prosekit/basic/style.css'
 import { Themes } from '@prosekit/themes'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import { watchPostEffect, ref } from 'vue'
+import {
+  ref,
+  watchPostEffect,
+} from 'vue'
 
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
 
 const editor = createEditor({
   extension: defineExtension(),
-  defaultContent:
-    'The content is readonly. Press the buttons above to toggle the readonly mode.',
+  defaultContent: 'The content is readonly. Press the buttons above to toggle the readonly mode.',
 })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {

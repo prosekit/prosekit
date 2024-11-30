@@ -27,9 +27,9 @@ You can use [`union`] to merge multiple extensions into one.
 
 ```ts twoslash
 import {
-  defineHeadingSpec as defineFancyHeadingSpec,
-  defineHeadingKeymap as defineFancyHeadingKeymap,
   defineHeadingCommands as defineFancyHeadingCommands,
+  defineHeadingKeymap as defineFancyHeadingKeymap,
+  defineHeadingSpec as defineFancyHeadingSpec,
 } from 'prosekit/extensions/heading'
 
 // ---cut---

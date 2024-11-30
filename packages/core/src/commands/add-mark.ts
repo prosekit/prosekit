@@ -1,4 +1,7 @@
-import type { MarkType, Attrs } from '@prosekit/pm/model'
+import type {
+  Attrs,
+  MarkType,
+} from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
 import type { CommandCreator } from '../types/extension-command'

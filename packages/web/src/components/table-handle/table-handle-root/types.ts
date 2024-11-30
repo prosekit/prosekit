@@ -1,4 +1,7 @@
-import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import type {
+  EventDeclarations,
+  PropDeclarations,
+} from '@aria-ui/core'
 import type { Editor } from '@prosekit/core'
 
 export interface TableHandleRootProps {
@@ -20,5 +23,4 @@ export const tableHandleRootProps: PropDeclarations<TableHandleRootProps> = {
 export interface TableHandleRootEvents {}
 
 /** @internal */
-export const tableHandleRootEvents: EventDeclarations<TableHandleRootEvents> =
-  {}
+export const tableHandleRootEvents: EventDeclarations<TableHandleRootEvents> = {}

@@ -27,10 +27,9 @@ export interface RemoveNodeOptions {
  */
 export function removeNode(options: RemoveNodeOptions): Command {
   return (state, dispatch) => {
-    const $pos =
-      typeof options.pos === 'number'
-        ? state.doc.resolve(options.pos)
-        : state.selection.$anchor
+    const $pos = typeof options.pos === 'number'
+      ? state.doc.resolve(options.pos)
+      : state.selection.$anchor
 
     const found = findParentNodeOfType(options.type, $pos)
     if (!found) return false

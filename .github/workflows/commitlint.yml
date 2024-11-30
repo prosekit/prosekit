@@ -1,4 +1,4 @@
-name: 'commitlint'
+name: "commitlint"
 
 on:
   pull_request_target:

@@ -1,6 +1,6 @@
 import {
-  type Editor,
   EditorNotFoundError,
+  type Editor,
   type Extension,
 } from '@prosekit/core'
 import { onMount } from 'svelte'

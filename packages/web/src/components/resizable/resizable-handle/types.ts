@@ -1,4 +1,7 @@
-import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import type {
+  EventDeclarations,
+  PropDeclarations,
+} from '@aria-ui/core'
 
 export interface ResizableHandleProps {
   /**
@@ -26,5 +29,4 @@ export const resizableHandleProps: PropDeclarations<ResizableHandleProps> = {
 export interface ResizableHandleEvents {}
 
 /** @internal */
-export const resizableHandleEvents: EventDeclarations<ResizableHandleEvents> =
-  {}
+export const resizableHandleEvents: EventDeclarations<ResizableHandleEvents> = {}

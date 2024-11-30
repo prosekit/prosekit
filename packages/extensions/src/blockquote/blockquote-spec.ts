@@ -1,4 +1,7 @@
-import { defineNodeSpec, type Extension } from '@prosekit/core'
+import {
+  defineNodeSpec,
+  type Extension,
+} from '@prosekit/core'
 import type { Attrs } from '@prosekit/pm/model'
 
 export type BlockquoteSpecExtension = Extension<{

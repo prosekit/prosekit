@@ -24,9 +24,7 @@ export const FrameworkMenu = defineComponent<{
             <DropdownMenuItem onClick={() => props.onChange(framework)}>
               <span class="flex items-center justify-center gap-1">
                 <span class="h-full w-6 inline-flex items-center justify-start">
-                  {props.framework === framework ? (
-                    <span class="i-lucide-check size-4 opacity-70"></span>
-                  ) : null}
+                  {props.framework === framework ? <span class="i-lucide-check size-4 opacity-70"></span> : null}
                 </span>
                 <FrameworkItem framework={framework} />
               </span>

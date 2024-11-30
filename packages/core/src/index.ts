@@ -1,12 +1,27 @@
-export { addMark, type AddMarkOptions } from './commands/add-mark'
-export { expandMark, type ExpandMarkOptions } from './commands/expand-mark'
+export {
+  addMark,
+  type AddMarkOptions,
+} from './commands/add-mark'
+export {
+  expandMark,
+  type ExpandMarkOptions,
+} from './commands/expand-mark'
 export {
   insertDefaultBlock,
   type InsertDefaultBlockOptions,
 } from './commands/insert-default-block'
-export { insertNode, type InsertNodeOptions } from './commands/insert-node'
-export { removeMark, type RemoveMarkOptions } from './commands/remove-mark'
-export { removeNode, type RemoveNodeOptions } from './commands/remove-node'
+export {
+  insertNode,
+  type InsertNodeOptions,
+} from './commands/insert-node'
+export {
+  removeMark,
+  type RemoveMarkOptions,
+} from './commands/remove-mark'
+export {
+  removeNode,
+  type RemoveNodeOptions,
+} from './commands/remove-node'
 export {
   setBlockType,
   type SetBlockTypeOptions,
@@ -15,15 +30,30 @@ export {
   setNodeAttrs,
   type SetNodeAttrsOptions,
 } from './commands/set-node-attrs'
-export { toggleMark, type ToggleMarkOptions } from './commands/toggle-mark'
-export { toggleNode, type ToggleNodeOptions } from './commands/toggle-node'
-export { toggleWrap, type ToggleWrapOptions } from './commands/toggle-wrap'
+export {
+  toggleMark,
+  type ToggleMarkOptions,
+} from './commands/toggle-mark'
+export {
+  toggleNode,
+  type ToggleNodeOptions,
+} from './commands/toggle-node'
+export {
+  toggleWrap,
+  type ToggleWrapOptions,
+} from './commands/toggle-wrap'
 export {
   unsetBlockType,
   type UnsetBlockTypeOptions,
 } from './commands/unset-block-type'
-export { unsetMark, type UnsetMarkOptions } from './commands/unset-mark'
-export { wrap, type WrapOptions } from './commands/wrap'
+export {
+  unsetMark,
+  type UnsetMarkOptions,
+} from './commands/unset-mark'
+export {
+  wrap,
+  type WrapOptions,
+} from './commands/wrap'
 export type {
   MarkAction,
   MarkBuilder,
@@ -31,10 +61,17 @@ export type {
   NodeBuilder,
   NodeChild,
 } from './editor/action'
-export { Editor, createEditor, type EditorOptions } from './editor/editor'
+export {
+  createEditor,
+  Editor,
+  type EditorOptions,
+} from './editor/editor'
 export { union } from './editor/union'
 export { withPriority } from './editor/with-priority'
-export { EditorNotFoundError, ProseKitError } from './error'
+export {
+  EditorNotFoundError,
+  ProseKitError,
+} from './error'
 export {
   defineBaseCommands,
   defineCommands,
@@ -44,7 +81,10 @@ export {
   defineDefaultState,
   type DefaultStateOptions,
 } from './extensions/default-state'
-export { defineDoc, type DocExtension } from './extensions/doc'
+export {
+  defineDoc,
+  type DocExtension,
+} from './extensions/doc'
 export {
   defineDocChangeHandler,
   type DocChangeHandler,
@@ -66,11 +106,13 @@ export {
   defineTextInputHandler,
   defineTripleClickHandler,
   defineTripleClickOnHandler,
+  editorEventFacet,
   type ClickHandler,
   type ClickOnHandler,
   type DoubleClickHandler,
   type DoubleClickOnHandler,
   type DropHandler,
+  type EditorEventPayload,
   type KeyDownHandler,
   type KeyPressHandler,
   type PasteHandler,
@@ -78,8 +120,6 @@ export {
   type TextInputHandler,
   type TripleClickHandler,
   type TripleClickOnHandler,
-  editorEventFacet,
-  type EditorEventPayload,
 } from './extensions/events/editor-event'
 export {
   defineFocusChangeHandler,
@@ -120,7 +160,10 @@ export {
   type NodeAttrOptions,
   type NodeSpecOptions,
 } from './extensions/node-spec'
-export { defineNodeView, type NodeViewOptions } from './extensions/node-view'
+export {
+  defineNodeView,
+  type NodeViewOptions,
+} from './extensions/node-view'
 export {
   defineNodeViewComponent,
   defineNodeViewFactory,
@@ -136,11 +179,20 @@ export {
   pluginFacet,
   type PluginPayload,
 } from './extensions/plugin'
-export { defineText, type TextExtension } from './extensions/text'
-export { defineFacet, type Facet } from './facets/facet'
+export {
+  defineText,
+  type TextExtension,
+} from './extensions/text'
+export {
+  defineFacet,
+  type Facet,
+} from './facets/facet'
 export { defineFacetPayload } from './facets/facet-extension'
 export type { AnyFunction } from './types/any-function'
-export type { AnyAttrs, AttrSpec } from './types/attrs'
+export type {
+  AnyAttrs,
+  AttrSpec,
+} from './types/attrs'
 export type { BaseNodeViewOptions } from './types/base-node-view-options'
 export type {
   Extension,
@@ -156,9 +208,18 @@ export type {
   Union,
   UnionExtension,
 } from './types/extension'
-export type { CommandAction, CommandTyping } from './types/extension-command'
-export type { MarkTyping, ToMarkAction } from './types/extension-mark'
-export type { NodeTyping, ToNodeAction } from './types/extension-node'
+export type {
+  CommandAction,
+  CommandTyping,
+} from './types/extension-command'
+export type {
+  MarkTyping,
+  ToMarkAction,
+} from './types/extension-mark'
+export type {
+  NodeTyping,
+  ToNodeAction,
+} from './types/extension-node'
 export type {
   NodeJSON,
   SelectionJSON,
@@ -173,7 +234,10 @@ export { assert } from './utils/assert'
 export { canUseRegexLookbehind } from './utils/can-use-regex-lookbehind'
 export { clsx } from './utils/clsx'
 export { collectChildren } from './utils/collect-children'
-export { collectNodes, type NodeContent } from './utils/collect-nodes'
+export {
+  collectNodes,
+  type NodeContent,
+} from './utils/collect-nodes'
 export { containsInlineNode } from './utils/contains-inline-node'
 export { defaultBlockAt } from './utils/default-block-at'
 export { isApple } from './utils/env'

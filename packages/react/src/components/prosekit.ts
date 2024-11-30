@@ -1,6 +1,10 @@
 import type { Editor } from '@prosekit/core'
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/react'
-import { createElement, type ComponentType, type ReactNode } from 'react'
+import {
+  createElement,
+  type ComponentType,
+  type ReactNode,
+} from 'react'
 
 import { EditorContextProvider } from '../contexts/editor-context'
 import { ReactViewsConsumer } from '../extensions/react-node-view'

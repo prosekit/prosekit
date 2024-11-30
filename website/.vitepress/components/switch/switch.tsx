@@ -1,4 +1,7 @@
-import { SwitchRoot, SwitchThumb } from 'radix-vue'
+import {
+  SwitchRoot,
+  SwitchThumb,
+} from 'radix-vue'
 import { defineComponent } from 'vue'
 
 export const Switch = defineComponent<{

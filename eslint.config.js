@@ -1,4 +1,9 @@
-import { basic, markdown, react, vue } from '@ocavue/eslint-config'
+import {
+  basic,
+  markdown,
+  react,
+  vue,
+} from '@ocavue/eslint-config'
 import unocss from '@unocss/eslint-config/flat'
 import command from 'eslint-plugin-command/config'
 

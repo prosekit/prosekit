@@ -1,6 +1,14 @@
-import { expect, test, type Page } from '@playwright/test'
+import {
+  expect,
+  test,
+  type Page,
+} from '@playwright/test'
 
-import { emptyEditor, locateEditor, testStory } from './helper'
+import {
+  emptyEditor,
+  locateEditor,
+  testStory,
+} from './helper'
 
 testStory('code-block', () => {
   test('input rule', async ({ page }) => {

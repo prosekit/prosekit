@@ -1,4 +1,7 @@
-import type { Simplify, UnionToIntersection } from 'type-fest'
+import type {
+  Simplify,
+  UnionToIntersection,
+} from 'type-fest'
 
 /**
  * @internal

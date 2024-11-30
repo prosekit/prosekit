@@ -1,4 +1,7 @@
-import { ProseMirrorFragment, ProseMirrorNode } from '@prosekit/pm/model'
+import {
+  ProseMirrorFragment,
+  ProseMirrorNode,
+} from '@prosekit/pm/model'
 
 import { ProseKitError } from '../error'
 

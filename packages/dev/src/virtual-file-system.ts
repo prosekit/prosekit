@@ -3,13 +3,19 @@
 import fs from 'node:fs/promises'
 import path, { normalize } from 'node:path'
 
-import { getPackages, type Package } from '@manypkg/get-packages'
+import {
+  getPackages,
+  type Package,
+} from '@manypkg/get-packages'
 import Yaml from 'js-yaml'
 import JSON5 from 'json5'
 import { sortBy } from 'lodash-es'
 
 import { findRootDir } from './find-root-dir.js'
-import { isPrivatePackage, isPublicPackage } from './is-public-package.js'
+import {
+  isPrivatePackage,
+  isPublicPackage,
+} from './is-public-package.js'
 import { isSubDirectory } from './is-sub-directory.js'
 import { listGitFiles } from './list-git-files.js'
 import { normalizePackageJson } from './normalize-package-json.js'

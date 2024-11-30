@@ -1,7 +1,7 @@
 import type { ResolvedPos } from '@prosekit/pm/model'
 import {
-  type EditorState,
   PluginKey,
+  type EditorState,
   type Transaction,
 } from '@prosekit/pm/state'
 

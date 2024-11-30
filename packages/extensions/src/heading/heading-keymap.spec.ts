@@ -1,6 +1,13 @@
-import { describe, expect, it } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
-import { pressKey, setupTest } from '../testing'
+import {
+  pressKey,
+  setupTest,
+} from '../testing'
 
 describe('defineHeadingKeymap', () => {
   it('should toggle heading', async () => {

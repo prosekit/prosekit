@@ -10,8 +10,7 @@ import Toolbar from './toolbar.svelte'
 
 const editor = createEditor({
   extension: defineExtension(),
-  defaultContent:
-    'The content is readonly. Press the buttons above to toggle the readonly mode.',
+  defaultContent: 'The content is readonly. Press the buttons above to toggle the readonly mode.',
 })
 
 const mount = (element: HTMLElement) => {

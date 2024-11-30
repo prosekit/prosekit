@@ -1,11 +1,15 @@
 import {
+  createEditor,
   defineDoc,
   defineParagraph,
   defineText,
-  createEditor,
   union,
 } from '@prosekit/core'
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
 import { defineList } from './index'
 

@@ -7,7 +7,10 @@ import {
   defineText,
   union,
 } from 'prosekit/core'
-import { defineLinkMarkRule, defineLinkSpec } from 'prosekit/extensions/link'
+import {
+  defineLinkMarkRule,
+  defineLinkSpec,
+} from 'prosekit/extensions/link'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'
 

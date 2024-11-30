@@ -1,4 +1,7 @@
-import type { MarkSpec, NodeSpec } from '@prosekit/pm/model'
+import type {
+  MarkSpec,
+  NodeSpec,
+} from '@prosekit/pm/model'
 
 import { mergeObjects } from './merge-objects'
 

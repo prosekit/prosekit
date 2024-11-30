@@ -1,4 +1,9 @@
-import { type Ref, ref, onMounted, computed } from 'vue'
+import {
+  computed,
+  onMounted,
+  ref,
+  type Ref,
+} from 'vue'
 
 export function useFramework(frameworks: Ref<string[]>) {
   const selected = ref('')

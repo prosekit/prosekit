@@ -1,0 +1,37 @@
+{
+  "lineWidth": 200,
+  "typescript": {
+    "quoteStyle": "preferSingle",
+    "jsx.quoteStyle": "preferDouble",
+    "semiColons": "asi",
+    "quoteProps": "consistent",
+    "singleBodyPosition": "sameLine",
+    "constructorType.spaceAfterNewKeyword": true,
+    "constructSignature.spaceAfterNewKeyword": true,
+    "exportDeclaration.forceMultiLine": "whenMultiple",
+    "importDeclaration.forceMultiLine": "whenMultiple",
+    "exportDeclaration.sortTypeOnlyExports": "last",
+    "importDeclaration.sortTypeOnlyImports": "last",
+  },
+  "json": {
+    "jsonTrailingCommaFiles": ["tsconfig.json", ".vscode/settings.json"],
+  },
+  "markdown": {},
+  "markup": {
+    "astro.styleIndent": true,
+  },
+  "yaml": {},
+  "excludes": [
+    "**/node_modules",
+    "**/*-lock.json",
+    "**/*-lock.yaml",
+    "**/*.gen.*",
+  ],
+  "plugins": [
+    "https://plugins.dprint.dev/typescript-0.93.1.wasm",
+    "https://plugins.dprint.dev/json-0.19.4.wasm",
+    "https://plugins.dprint.dev/markdown-0.17.8.wasm",
+    "https://plugins.dprint.dev/g-plane/markup_fmt-v0.17.0.wasm",
+    "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.5.0.wasm",
+  ],
+}

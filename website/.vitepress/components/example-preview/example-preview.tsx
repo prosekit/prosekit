@@ -1,5 +1,11 @@
 import clsx from 'clsx/lite'
-import { computed, defineComponent, watchEffect, onMounted, ref } from 'vue'
+import {
+  computed,
+  defineComponent,
+  onMounted,
+  ref,
+  watchEffect,
+} from 'vue'
 
 import { FrameworkMenu } from '../framework-menu'
 import { Switch } from '../switch/switch'
@@ -34,13 +40,10 @@ export const ExamplePreview = defineComponent<{
         ref={divRef}
         class={clsx(
           'my-8 flex w-full flex-col rounded-md bg-[--vp-code-tab-bg] sm:overflow-hidden',
-
           // Reduce the gap between the preview embed and the code block
           `[&_.vp-code-group]:-mt-2 `,
-
           // Remove the bottom margin on the active code block
           `[&_div.vp-adaptive-theme.active]:mb-0`,
-
           // Don't limit height on example page
           isExamplePage.value ? '' : '[&_.shiki]:max-h-[calc(100vh-200px)]',
         )}
@@ -82,9 +85,8 @@ function useIsExamplePage() {
   const isExamplePage = ref(false)
 
   onMounted(() => {
-    isExamplePage.value =
-      typeof window !== 'undefined' &&
-      window.location.pathname.includes('/examples/')
+    isExamplePage.value = typeof window !== 'undefined'
+      && window.location.pathname.includes('/examples/')
   })
 
   return isExamplePage

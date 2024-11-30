@@ -8,7 +8,10 @@ import {
 import type { Awareness } from 'y-protocols/awareness'
 import type * as Y from 'yjs'
 
-import { defineYjsCommands, type YjsCommandsExtension } from './yjs-commands'
+import {
+  defineYjsCommands,
+  type YjsCommandsExtension,
+} from './yjs-commands'
 import {
   defineYjsCursorPlugin,
   type YjsCursorPluginOptions,

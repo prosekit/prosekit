@@ -1,5 +1,11 @@
-import { defaultBlockAt, defineKeymap } from '@prosekit/core'
-import { TextSelection, type Command } from '@prosekit/pm/state'
+import {
+  defaultBlockAt,
+  defineKeymap,
+} from '@prosekit/core'
+import {
+  TextSelection,
+  type Command,
+} from '@prosekit/pm/state'
 
 /**
  * Defines the keymap for code blocks.
@@ -22,10 +28,10 @@ const existCodeBlock: Command = (state, dispatch) => {
   const { $head } = state.selection
   const parent = $head.parent
   if (
-    parent.isTextblock &&
-    parent.type.spec.code &&
-    $head.parentOffset === parent.content.size &&
-    parent.textContent.endsWith('\n\n')
+    parent.isTextblock
+    && parent.type.spec.code
+    && $head.parentOffset === parent.content.size
+    && parent.textContent.endsWith('\n\n')
   ) {
     const grandParent = $head.node(-1)
     const insertIndex = $head.indexAfter(-1)

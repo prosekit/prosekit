@@ -1,5 +1,12 @@
-import { configDeps, preset } from '@prosekit/unocss-preset'
-import { defineConfig, transformerDirectives, type UserConfig } from 'unocss'
+import {
+  configDeps,
+  preset,
+} from '@prosekit/unocss-preset'
+import {
+  defineConfig,
+  transformerDirectives,
+  type UserConfig,
+} from 'unocss'
 
 const config: UserConfig = defineConfig({
   presets: [preset()],

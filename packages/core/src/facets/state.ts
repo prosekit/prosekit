@@ -4,8 +4,14 @@ import type { EditorStateConfig } from '@prosekit/pm/state'
 import { uniqPush } from '../utils/array'
 import { assert } from '../utils/assert'
 
-import { defineFacet, type Facet } from './facet'
-import { rootFacet, type RootPayload } from './root'
+import {
+  defineFacet,
+  type Facet,
+} from './facet'
+import {
+  rootFacet,
+  type RootPayload,
+} from './root'
 
 export type StatePayload = (ctx: { schema: Schema }) => EditorStateConfig
 

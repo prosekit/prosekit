@@ -21,12 +21,12 @@ jobs:
 
       - name: Lint vue examples
         run: |
-          cd playground 
+          cd playground
           pnpm run lint:vue
 
       - name: Lint svelte examples
         run: |
-          cd playground 
+          cd playground
           pnpm run lint:svelte
 
   typecheck:
@@ -116,7 +116,7 @@ jobs:
       - name: Build without clean URLs
         run: pnpm run build:website
         env:
-          PROSEKIT_NO_CLEAN_URLS: 'yes'
+          PROSEKIT_NO_CLEAN_URLS: "yes"
 
       - name: Check links
         uses: lycheeverse/lychee-action@v2.0.2

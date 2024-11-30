@@ -1,6 +1,6 @@
 import {
-  DropdownMenuPortal,
   DropdownMenuContent as RadixDropdownMenuContent,
+  DropdownMenuPortal,
 } from 'radix-vue'
 import { defineComponent } from 'vue'
 

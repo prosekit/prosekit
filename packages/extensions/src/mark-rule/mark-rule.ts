@@ -1,14 +1,14 @@
 import {
-  type PluginPayload,
   defineFacet,
   defineFacetPayload,
   pluginFacet,
+  type PluginPayload,
 } from '@prosekit/core'
 import {
-  type EditorState,
-  type Transaction,
   PluginKey,
   ProseMirrorPlugin,
+  type EditorState,
+  type Transaction,
 } from '@prosekit/pm/state'
 
 import { applyMarkRules } from './apply'

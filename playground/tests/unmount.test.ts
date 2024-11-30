@@ -1,16 +1,20 @@
-import { expect, test } from '@playwright/test'
+import {
+  expect,
+  test,
+} from '@playwright/test'
 
-import { testStory, waitForEditor } from './helper'
+import {
+  testStory,
+  waitForEditor,
+} from './helper'
 
 testStory('unmount', () => {
   test('unmount', async ({ page }) => {
     const editor = page.locator('.ProseMirror')
     const button = page.locator('button')
     const buttonAdd = button.filter({ hasText: 'Add editor' })
-    const buttonRemove = (no: number) =>
-      button.filter({ hasText: `Unmount No.${no}` })
-    const placeholder = (text: string) =>
-      editor.locator(`p[data-placeholder='${text}']`)
+    const buttonRemove = (no: number) => button.filter({ hasText: `Unmount No.${no}` })
+    const placeholder = (text: string) => editor.locator(`p[data-placeholder='${text}']`)
 
     await waitForEditor(page)
 

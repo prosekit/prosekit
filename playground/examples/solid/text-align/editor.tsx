@@ -10,11 +10,10 @@ import Toolbar from './toolbar'
 export default function Editor() {
   const editor = createEditor({
     extension: defineExtension(),
-    defaultContent:
-      '<h1 style="text-align:center;">Heading</h1>' +
-      '<p style="text-align:left;">First paragraph</p>' +
-      '<p style="text-align:center;">Second paragraph</p>' +
-      '<p style="text-align:right;">Third paragraph</p>',
+    defaultContent: '<h1 style="text-align:center;">Heading</h1>'
+      + '<p style="text-align:left;">First paragraph</p>'
+      + '<p style="text-align:center;">Second paragraph</p>'
+      + '<p style="text-align:right;">Third paragraph</p>',
   })
 
   return (

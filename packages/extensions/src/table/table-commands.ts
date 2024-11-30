@@ -6,7 +6,10 @@ import {
   type Extension,
 } from '@prosekit/core'
 import type { Schema } from '@prosekit/pm/model'
-import { TextSelection, type Command } from '@prosekit/pm/state'
+import {
+  TextSelection,
+  type Command,
+} from '@prosekit/pm/state'
 import {
   addColumnAfter,
   addColumnBefore,
@@ -23,7 +26,11 @@ import {
   type TableRole,
 } from 'prosemirror-tables'
 
-import { findCellPos, findCellRange, findTable } from './table-utils'
+import {
+  findCellPos,
+  findCellRange,
+  findTable,
+} from './table-utils'
 
 function createEmptyTable(
   schema: Schema,

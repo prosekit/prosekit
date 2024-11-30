@@ -1,8 +1,18 @@
-import type { Command, Selection } from '@prosekit/pm/state'
+import type {
+  Command,
+  Selection,
+} from '@prosekit/pm/state'
 import { CellSelection } from 'prosemirror-tables'
-import { describe, expect, it } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
-import { inputText, setupTest } from '../testing'
+import {
+  inputText,
+  setupTest,
+} from '../testing'
 
 import { isCellSelection } from './table-utils'
 
@@ -98,7 +108,7 @@ describe('deleteCellSelection', () => {
     const { editor, n, c, r, setCellSelection } = setup()
     const doc1 = n.doc(
       n.table(
-        r(/*2*/ c('1') /*7*/, c('2') /*12*/),
+        r(/*2*/ c('1'), /*7*/ c('2') /*12*/),
         /*13*/
         r(/*14*/ c('3'), /*19*/ c('4') /*24*/),
         /*25*/

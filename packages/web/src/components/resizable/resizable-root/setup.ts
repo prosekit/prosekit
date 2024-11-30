@@ -16,7 +16,10 @@ import {
   type OnResizeStart,
 } from '../context'
 
-import type { ResizableRootEvents, ResizableRootProps } from './types'
+import type {
+  ResizableRootEvents,
+  ResizableRootProps,
+} from './types'
 
 export function useResizableRoot(
   host: ConnectableElement,

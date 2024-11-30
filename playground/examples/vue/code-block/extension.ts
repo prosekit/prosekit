@@ -4,7 +4,10 @@ import {
   defineCodeBlock,
   defineCodeBlockShiki,
 } from 'prosekit/extensions/code-block'
-import { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'
+import {
+  defineVueNodeView,
+  type VueNodeViewComponent,
+} from 'prosekit/vue'
 
 import CodeBlockView from './code-block-view.vue'
 

@@ -1,5 +1,11 @@
-import { definePlugin, type PlainExtension } from '@prosekit/core'
-import { tableEditing, columnResizing } from 'prosemirror-tables'
+import {
+  definePlugin,
+  type PlainExtension,
+} from '@prosekit/core'
+import {
+  columnResizing,
+  tableEditing,
+} from 'prosemirror-tables'
 
 /**
  * @public

@@ -2,12 +2,16 @@
   "search.exclude": {
     "**/*.gen.ts": true,
     "website/examples/*.md": true,
-    "website/components/vue-*": true
+    "website/components/vue-*": true,
   },
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
     "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+    "source.organizeImports": "never",
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "editor.defaultFormatter": "dprint.dprint",
+  "editor.formatOnSave": true,
+  "dprint.path": "./node_modules/.bin/dprint",
+  "dprint.experimentalLsp": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
 }

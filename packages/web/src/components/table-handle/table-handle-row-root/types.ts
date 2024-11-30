@@ -1,4 +1,7 @@
-import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import type {
+  EventDeclarations,
+  PropDeclarations,
+} from '@aria-ui/core'
 import {
   overlayPositionerProps,
   type OverlayPositionerEvents,
@@ -7,8 +10,7 @@ import {
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-export interface TableHandleRowRootProps
-  extends Omit<OverlayPositionerProps, 'placement'> {
+export interface TableHandleRowRootProps extends Omit<OverlayPositionerProps, 'placement'> {
   /**
    * The ProseKit editor instance.
    *
@@ -26,16 +28,14 @@ export interface TableHandleRowRootProps
 }
 
 /** @internal */
-export const tableHandleRowRootProps: PropDeclarations<TableHandleRowRootProps> =
-  {
-    ...overlayPositionerProps,
-    editor: { default: null },
-    placement: { default: 'left' },
-  }
+export const tableHandleRowRootProps: PropDeclarations<TableHandleRowRootProps> = {
+  ...overlayPositionerProps,
+  editor: { default: null },
+  placement: { default: 'left' },
+}
 
 /** @internal */
 export interface TableHandleRowRootEvents extends OverlayPositionerEvents {}
 
 /** @internal */
-export const tableHandleRowRootEvents: EventDeclarations<TableHandleRowRootEvents> =
-  {}
+export const tableHandleRowRootEvents: EventDeclarations<TableHandleRowRootEvents> = {}

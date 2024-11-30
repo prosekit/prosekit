@@ -1,10 +1,10 @@
 import {
-  type ConnectableElement,
   createComputed,
   createSignal,
-  type SignalState,
   useAttribute,
   useEffect,
+  type ConnectableElement,
+  type SignalState,
 } from '@aria-ui/core'
 import {
   menuRootProps,

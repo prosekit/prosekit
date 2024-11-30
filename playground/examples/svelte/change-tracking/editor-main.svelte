@@ -3,7 +3,11 @@ import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
-import { createEditor, union, type NodeJSON } from 'prosekit/core'
+import {
+  createEditor,
+  union,
+  type NodeJSON,
+} from 'prosekit/core'
 import {
   CommitRecorder,
   defineCommitRecorder,

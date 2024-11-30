@@ -1,4 +1,7 @@
-import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import type {
+  EventDeclarations,
+  PropDeclarations,
+} from '@aria-ui/core'
 import type { Editor } from '@prosekit/core'
 import type { defineTableCommands } from '@prosekit/extensions/table'
 
@@ -9,14 +12,12 @@ export interface TableHandleColumnTriggerProps {
 }
 
 /** @internal */
-export const tableHandleColumnTriggerProps: PropDeclarations<TableHandleColumnTriggerProps> =
-  {
-    editor: { default: null },
-  }
+export const tableHandleColumnTriggerProps: PropDeclarations<TableHandleColumnTriggerProps> = {
+  editor: { default: null },
+}
 
 /** @internal */
 export interface TableHandleColumnTriggerEvents {}
 
 /** @internal */
-export const tableHandleColumnTriggerEvents: EventDeclarations<TableHandleColumnTriggerEvents> =
-  {}
+export const tableHandleColumnTriggerEvents: EventDeclarations<TableHandleColumnTriggerEvents> = {}

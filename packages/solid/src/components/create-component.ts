@@ -1,5 +1,8 @@
 import type { AnyFunction } from '@prosekit/core'
-import type { Component, JSX } from 'solid-js'
+import type {
+  Component,
+  JSX,
+} from 'solid-js'
 import h from 'solid-js/h'
 
 import { useEditorContext } from '../contexts/editor-context'

@@ -1,17 +1,21 @@
-import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import type {
+  EventDeclarations,
+  PropDeclarations,
+} from '@aria-ui/core'
 import {
-  type OverlayPositionerEvents,
   overlayPositionerEvents,
-  type OverlayPositionerProps,
   overlayPositionerProps,
+  type OverlayPositionerEvents,
+  type OverlayPositionerProps,
 } from '@aria-ui/overlay'
 import type { Editor } from '@prosekit/core'
 
-export interface InlinePopoverProps
-  extends Omit<
+export interface InlinePopoverProps extends
+  Omit<
     OverlayPositionerProps,
     'placement' | 'offset' | 'hide' | 'overlap' | 'inline' | 'overflowPadding'
-  > {
+  >
+{
   /**
    * The ProseKit editor instance.
    *
@@ -82,21 +86,20 @@ export interface InlinePopoverProps
 }
 
 /** @internal */
-export const inlinePopoverProps: PropDeclarations<InlinePopoverProps> =
-  Object.freeze({
-    ...overlayPositionerProps,
-    editor: { default: null },
-    defaultOpen: { default: true },
-    open: { default: false },
-    dismissOnEscape: { default: true },
+export const inlinePopoverProps: PropDeclarations<InlinePopoverProps> = Object.freeze({
+  ...overlayPositionerProps,
+  editor: { default: null },
+  defaultOpen: { default: true },
+  open: { default: false },
+  dismissOnEscape: { default: true },
 
-    placement: { default: 'top' },
-    offset: { default: 12 },
-    hide: { default: true },
-    overlap: { default: true },
-    inline: { default: true },
-    overflowPadding: { default: 8 },
-  })
+  placement: { default: 'top' },
+  offset: { default: 12 },
+  hide: { default: true },
+  overlap: { default: true },
+  inline: { default: true },
+  overflowPadding: { default: 8 },
+})
 
 export interface InlinePopoverEvents extends OverlayPositionerEvents {
   /**

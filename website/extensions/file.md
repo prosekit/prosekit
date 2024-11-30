@@ -20,8 +20,8 @@ function myUploader(file: File): Promise<string> {
 // ---cut---
 import { insertNode } from 'prosekit/core'
 import {
-  defineFilePasteHandler,
   defineFileDropHandler,
+  defineFilePasteHandler,
 } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { Command } from 'prosekit/pm/state'

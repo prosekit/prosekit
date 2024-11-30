@@ -13,8 +13,7 @@ export async function genSizeLimitJson() {
 }
 
 async function* iterateExports(pkg: Package) {
-  const exports: Record<string, string | Record<string, string>> =
-    (pkg.packageJson as any)?.publishConfig?.exports ?? {}
+  const exports: Record<string, string | Record<string, string>> = (pkg.packageJson as any)?.publishConfig?.exports ?? {}
 
   for (const [entryName, entry] of Object.entries(exports)) {
     // size-limit cannot handle .svelte files

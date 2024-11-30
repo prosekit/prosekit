@@ -1,4 +1,7 @@
-import { test, expect } from 'vitest'
+import {
+  expect,
+  test,
+} from 'vitest'
 
 import { removeUndefinedValues } from './remove-undefined-values'
 

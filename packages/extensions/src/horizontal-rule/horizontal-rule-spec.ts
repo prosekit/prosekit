@@ -1,4 +1,7 @@
-import { type Extension, defineNodeSpec } from '@prosekit/core'
+import {
+  defineNodeSpec,
+  type Extension,
+} from '@prosekit/core'
 import type { Attrs } from '@prosekit/pm/model'
 
 export type HorizontalRuleSpecExtension = Extension<{

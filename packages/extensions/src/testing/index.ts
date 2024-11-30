@@ -12,7 +12,10 @@ import {
   type ExtractNodeActions,
   type NodeChild,
 } from '@prosekit/core'
-import { createTestEditor, type TestEditor } from '@prosekit/core/test'
+import {
+  createTestEditor,
+  type TestEditor,
+} from '@prosekit/core/test'
 import { userEvent } from '@vitest/browser/context'
 
 import { defineBlockquote } from '../blockquote'
@@ -23,7 +26,10 @@ import { defineHorizontalRule } from '../horizontal-rule'
 import { defineImage } from '../image'
 import { defineItalic } from '../italic'
 import { defineLink } from '../link'
-import { defineList, type ListAttrs } from '../list'
+import {
+  defineList,
+  type ListAttrs,
+} from '../list'
 import { defineStrike } from '../strike'
 import { defineTable } from '../table'
 import { defineUnderline } from '../underline'

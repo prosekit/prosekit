@@ -1,15 +1,25 @@
 import { chainCommands } from '@prosekit/pm/commands'
 import { keydownHandler } from '@prosekit/pm/keymap'
-import { Plugin, PluginKey, type Command } from '@prosekit/pm/state'
+import {
+  Plugin,
+  PluginKey,
+  type Command,
+} from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 import mapValues from 'just-map-values'
 
-import { defineFacet, type Facet } from '../facets/facet'
+import {
+  defineFacet,
+  type Facet,
+} from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import type { PlainExtension } from '../types/extension'
 import { toReversed } from '../utils/array'
 
-import { pluginFacet, type PluginPayload } from './plugin'
+import {
+  pluginFacet,
+  type PluginPayload,
+} from './plugin'
 
 /**
  * @public

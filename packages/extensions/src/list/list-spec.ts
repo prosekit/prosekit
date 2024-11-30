@@ -1,4 +1,7 @@
-import { defineNodeSpec, type Extension } from '@prosekit/core'
+import {
+  defineNodeSpec,
+  type Extension,
+} from '@prosekit/core'
 import { createListSpec } from 'prosemirror-flat-list'
 
 import type { ListAttrs } from './list-types'

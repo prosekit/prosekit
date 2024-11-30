@@ -1,4 +1,7 @@
-import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import type {
+  EventDeclarations,
+  PropDeclarations,
+} from '@aria-ui/core'
 import type { Editor } from '@prosekit/core'
 
 export interface BlockHandleDraggableProps {
@@ -12,14 +15,12 @@ export interface BlockHandleDraggableProps {
 }
 
 /** @internal */
-export const blockHandleDraggableProps: PropDeclarations<BlockHandleDraggableProps> =
-  {
-    editor: { default: null },
-  }
+export const blockHandleDraggableProps: PropDeclarations<BlockHandleDraggableProps> = {
+  editor: { default: null },
+}
 
 /** @internal */
 export interface BlockHandleDraggableEvents {}
 
 /** @internal */
-export const blockHandleDraggableEvents: EventDeclarations<BlockHandleDraggableEvents> =
-  {}
+export const blockHandleDraggableEvents: EventDeclarations<BlockHandleDraggableEvents> = {}

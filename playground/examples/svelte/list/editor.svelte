@@ -3,7 +3,10 @@ import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
 
-import { createEditor, type NodeJSON } from 'prosekit/core'
+import {
+  createEditor,
+  type NodeJSON,
+} from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import { defineExtension } from './extension'
 

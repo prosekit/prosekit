@@ -5,7 +5,11 @@ import {
   PopoverRoot,
   PopoverTrigger,
 } from 'prosekit/react/popover'
-import { useState, type FC, type ReactNode } from 'react'
+import {
+  useState,
+  type FC,
+  type ReactNode,
+} from 'react'
 
 import Button from './button'
 import type { EditorExtension } from './extension'
@@ -102,11 +106,13 @@ export const ImageUploadPopover: FC<{
           </>
         )}
 
-        {url ? (
-          <button className={Themes.IMAGE_UPLOAD_BUTTON} onClick={handleSubmit}>
-            Insert Image
-          </button>
-        ) : null}
+        {url
+          ? (
+            <button className={Themes.IMAGE_UPLOAD_BUTTON} onClick={handleSubmit}>
+              Insert Image
+            </button>
+          )
+          : null}
       </PopoverContent>
     </PopoverRoot>
   )

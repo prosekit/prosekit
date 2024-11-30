@@ -1,4 +1,8 @@
-import type { Editor, Priority, Extension } from '@prosekit/core'
+import type {
+  Editor,
+  Extension,
+  Priority,
+} from '@prosekit/core'
 import type { Readable } from 'svelte/store'
 
 import { useEditorExtension } from './use-editor-extension'

@@ -1,5 +1,13 @@
-import { ProseKitError, type Editor, type Extension } from '@prosekit/core'
-import { getContext, hasContext, setContext } from 'svelte'
+import {
+  ProseKitError,
+  type Editor,
+  type Extension,
+} from '@prosekit/core'
+import {
+  getContext,
+  hasContext,
+  setContext,
+} from 'svelte'
 
 const key = 'prosekit-svelte-editor-context'
 

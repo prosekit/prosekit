@@ -1,4 +1,8 @@
-import { type Extension, defineCommands, insertNode } from '@prosekit/core'
+import {
+  defineCommands,
+  insertNode,
+  type Extension,
+} from '@prosekit/core'
 
 import type { ImageAttrs } from './image-spec'
 

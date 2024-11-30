@@ -1,5 +1,12 @@
-import { type Priority, type Extension, withPriority } from '@prosekit/core'
-import { derived, type Readable } from 'svelte/store'
+import {
+  withPriority,
+  type Extension,
+  type Priority,
+} from '@prosekit/core'
+import {
+  derived,
+  type Readable,
+} from 'svelte/store'
 
 /**
  * @internal

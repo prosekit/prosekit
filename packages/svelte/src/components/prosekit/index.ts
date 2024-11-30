@@ -12,5 +12,4 @@ export interface ProseKitProps {
  *
  * @public
  */
-export const ProseKit =
-  Comp as typeof SvelteComponent<any> as typeof SvelteComponent<ProseKitProps>
+export const ProseKit = Comp as typeof SvelteComponent<any> as typeof SvelteComponent<ProseKitProps>

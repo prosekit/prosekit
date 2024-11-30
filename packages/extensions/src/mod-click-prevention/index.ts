@@ -1,5 +1,12 @@
-import { definePlugin, isApple, type PlainExtension } from '@prosekit/core'
-import { Plugin, PluginKey } from '@prosekit/pm/state'
+import {
+  definePlugin,
+  isApple,
+  type PlainExtension,
+} from '@prosekit/core'
+import {
+  Plugin,
+  PluginKey,
+} from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 /**

@@ -1,4 +1,7 @@
-export { defineBlockquote, type BlockquoteExtension } from './blockquote'
+export {
+  defineBlockquote,
+  type BlockquoteExtension,
+} from './blockquote'
 export {
   defineBlockquoteCommands,
   type BlockquoteCommandsExtension,

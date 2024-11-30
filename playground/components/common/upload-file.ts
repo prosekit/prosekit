@@ -1,4 +1,7 @@
-import { union, insertNode } from 'prosekit/core'
+import {
+  insertNode,
+  union,
+} from 'prosekit/core'
 import {
   defineFileDropHandler,
   defineFilePasteHandler,

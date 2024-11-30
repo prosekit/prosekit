@@ -14,7 +14,7 @@ export default defineConfig({
   cleanUrls: !process.env.PROSEKIT_NO_CLEAN_URLS,
   outDir: 'dist',
 
-  // prettier-ignore
+  // dprint-ignore
   head: [
     ['link', { rel: "icon", type: "image/svg+xml", href: "/assets/logo.svg"}],
     ['link', { rel: "mask-icon", href: "/assets/logo.svg", color: "#ffffff"}],

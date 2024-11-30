@@ -1,4 +1,9 @@
-import { Fragment, Mark, ProseMirrorNode, Slice } from '@prosekit/pm/model'
+import {
+  Fragment,
+  Mark,
+  ProseMirrorNode,
+  Slice,
+} from '@prosekit/pm/model'
 import {
   AllSelection,
   NodeSelection,

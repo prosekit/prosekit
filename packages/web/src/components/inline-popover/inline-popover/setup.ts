@@ -16,7 +16,10 @@ import { useEditorFocusChangeEvent } from '../../../hooks/use-editor-focus-event
 import { useEditorUpdateEvent } from '../../../hooks/use-editor-update-event'
 import { useKeymap } from '../../../hooks/use-keymap'
 
-import type { InlinePopoverEvents, InlinePopoverProps } from './types'
+import type {
+  InlinePopoverEvents,
+  InlinePopoverProps,
+} from './types'
 import { getVirtualSelectionElement } from './virtual-selection-element'
 
 export function useInlinePopover(
@@ -78,8 +81,7 @@ function useInlinePopoverReference(
   })
 
   useEditorUpdateEvent(host, editor, (view) => {
-    const isPopoverFocused =
-      !editorFocused && host.contains(host.ownerDocument.activeElement)
+    const isPopoverFocused = !editorFocused && host.contains(host.ownerDocument.activeElement)
 
     if (isPopoverFocused) {
       return

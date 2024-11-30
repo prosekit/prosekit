@@ -1,4 +1,8 @@
-import { defineKeymap, isAtBlockStart, toggleWrap } from '@prosekit/core'
+import {
+  defineKeymap,
+  isAtBlockStart,
+  toggleWrap,
+} from '@prosekit/core'
 import { joinBackward } from '@prosekit/pm/commands'
 import type { Command } from '@prosekit/pm/state'
 
@@ -21,6 +25,6 @@ function backspaceUnsetBlockquote(): Command {
 export function defineBlockquoteKeymap() {
   return defineKeymap({
     'mod-shift-b': toggleBlockquoteKeybinding(),
-    Backspace: backspaceUnsetBlockquote(),
+    'Backspace': backspaceUnsetBlockquote(),
   })
 }

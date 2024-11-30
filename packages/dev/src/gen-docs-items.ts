@@ -72,12 +72,11 @@ async function genReferenceItems() {
 
   normalizeItems(items)
 
-  const content =
-    `// This file is generated from ${currentFilename}\n\n` +
-    `// prettier-ignore\n` +
-    `export const referenceItems = ` +
-    JSON.stringify(items, null, 2) +
-    `\n`
+  const content = `// This file is generated from ${currentFilename}\n\n`
+    + `// dprint-ignore\n`
+    + `export const referenceItems = `
+    + JSON.stringify(items, null, 2)
+    + `\n`
   await writeFile(sidebarFilePath, content)
 }
 
@@ -99,12 +98,11 @@ async function genExampleItems() {
 
   normalizeItems(items)
 
-  const content =
-    `// This file is generated from ${currentFilename}\n\n` +
-    `// prettier-ignore\n` +
-    `export const exampleItems = ` +
-    JSON.stringify(items, null, 2) +
-    `\n`
+  const content = `// This file is generated from ${currentFilename}\n\n`
+    + `// dprint-ignore\n`
+    + `export const exampleItems = `
+    + JSON.stringify(items, null, 2)
+    + `\n`
   await writeFile(sidebarFilePath, content)
 }
 

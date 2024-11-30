@@ -16,10 +16,10 @@ export function getVirtualSelectionElement(
   const selection = view.state.selection
 
   if (
-    !selection.empty &&
-    !isInCodeBlock(selection) &&
-    isTextSelection(selection) &&
-    containsInlineNode(view.state.doc, selection.from, selection.to)
+    !selection.empty
+    && !isInCodeBlock(selection)
+    && isTextSelection(selection)
+    && containsInlineNode(view.state.doc, selection.from, selection.to)
   ) {
     return getDomDecoration(view) || getInlineDecoration(view)
   }
@@ -45,10 +45,9 @@ function getDomRange(view: EditorView): Range | undefined {
     return
   }
 
-  const range =
-    typeof selection.rangeCount === 'number' &&
-    selection.rangeCount > 0 &&
-    selection.getRangeAt(0)
+  const range = typeof selection.rangeCount === 'number'
+    && selection.rangeCount > 0
+    && selection.getRangeAt(0)
 
   if (!range) {
     return

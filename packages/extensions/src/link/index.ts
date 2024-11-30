@@ -15,7 +15,11 @@ import { defineEnterRule } from '../enter-rule'
 import { defineInputRule } from '../input-rule'
 import { defineMarkRule } from '../mark-rule'
 
-import { LINK_ENTER_RE, LINK_INPUT_RE, LINK_MARK_RE } from './link-regex'
+import {
+  LINK_ENTER_RE,
+  LINK_INPUT_RE,
+  LINK_MARK_RE,
+} from './link-regex'
 
 /**
  * @public

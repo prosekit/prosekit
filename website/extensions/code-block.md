@@ -76,7 +76,7 @@ editor.commands.setCodeBlockAttrs({ language: 'javascript' })
 
 ## Keyboard Interaction
 
-Input ` ``` ` followed by an optional language name and press `Enter` or `Space` to create a new `codeBlock` node.
+Input `` ``` `` followed by an optional language name and press `Enter` or `Space` to create a new `codeBlock` node.
 
 Press `Enter` three times at the end of or press `Shift-Enter` to exit the current `codeBlock` node.
 

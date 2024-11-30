@@ -1,8 +1,10 @@
-import { defineCommands, definePlugin } from '@prosekit/core'
+import {
+  defineCommands,
+  definePlugin,
+} from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 import {
-  SearchQuery,
   findNext,
   findNextNoWrap,
   findPrev,
@@ -12,6 +14,7 @@ import {
   replaceNext,
   replaceNextNoWrap,
   search,
+  SearchQuery,
 } from 'prosemirror-search'
 
 /**

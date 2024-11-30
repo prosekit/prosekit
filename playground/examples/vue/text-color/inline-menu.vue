@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { Themes } from '@prosekit/themes'
-import { useEditor, useKeymap } from 'prosekit/vue'
+import {
+  useEditor,
+  useKeymap,
+} from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
 import { ref } from 'vue'
 

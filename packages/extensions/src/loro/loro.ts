@@ -1,9 +1,9 @@
 import {
-  type PlainExtension,
-  type Union,
   Priority,
   union,
   withPriority,
+  type PlainExtension,
+  type Union,
 } from '@prosekit/core'
 import type {
   CursorAwareness,
@@ -12,10 +12,13 @@ import type {
   LoroUndoPluginProps,
 } from 'loro-prosemirror'
 
-import { type LoroCommandsExtension, defineLoroCommands } from './loro-commands'
 import {
-  type LoroCursorOptions,
+  defineLoroCommands,
+  type LoroCommandsExtension,
+} from './loro-commands'
+import {
   defineLoroCursorPlugin,
+  type LoroCursorOptions,
 } from './loro-cursor-plugin'
 import { defineLoroKeymap } from './loro-keymap'
 import { defineLoroSyncPlugin } from './loro-sync-plugin'

@@ -1,4 +1,8 @@
-import { describe, expect, test } from 'vitest'
+import {
+  describe,
+  expect,
+  test,
+} from 'vitest'
 
 import { createEditor } from '../editor/editor'
 import { union } from '../editor/union'

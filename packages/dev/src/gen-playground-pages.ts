@@ -3,7 +3,10 @@ import { fileURLToPath } from 'node:url'
 
 import { pascalCase } from 'change-case'
 
-import { readExampleMeta, type Example } from './example-meta'
+import {
+  readExampleMeta,
+  type Example,
+} from './example-meta'
 import { vfs } from './virtual-file-system'
 
 export async function genPlaygroundPages() {
@@ -44,7 +47,7 @@ function genPreactLoaders(examples: Example[]): string {
     `import { lazy } from 'preact/compat'`,
     ``,
     `export const loaders = {`,
-    // prettier-ignore
+    // dprint-ignore
     ...examples
       .filter((example) => example.framework === 'preact')
       .map((example) => `  '${example.story}': lazy(() => import('./${example.story}/editor')),`),
@@ -59,7 +62,7 @@ function genReactLoaders(examples: Example[]): string {
     `import { lazy } from 'react'`,
     ``,
     `export const loaders = {`,
-    // prettier-ignore
+    // dprint-ignore
     ...examples
       .filter((example) => example.framework === 'react')
       .map((example) => `  '${example.story}': lazy(() => import('./${example.story}/editor')),`),
@@ -74,7 +77,7 @@ function genVueLoaders(examples: Example[]): string {
     `import { defineAsyncComponent } from 'vue'`,
     ``,
     `export const loaders = {`,
-    // prettier-ignore
+    // dprint-ignore
     ...examples
       .filter((example) => example.framework === 'vue')
       .map((example) => `  '${example.story}': defineAsyncComponent(() => import('./${example.story}/editor.vue')),`),
@@ -89,7 +92,7 @@ function genSolidLoaders(examples: Example[]): string {
     `import { lazy } from 'solid-js'`,
     ``,
     `export const loaders = {`,
-    // prettier-ignore
+    // dprint-ignore
     ...examples
       .filter((example) => example.framework === 'solid')
       .map((example) => `  '${example.story}': lazy(() => import('./${example.story}/editor')),`),
@@ -103,7 +106,7 @@ function genSvelteLoaders(examples: Example[]): string {
     `// This file is generated from ${currentFilename}`,
     ``,
     `export const loaders = {`,
-    // prettier-ignore
+    // dprint-ignore
     ...examples
       .filter((example) => example.framework === 'svelte')
       .map((example) => `  '${example.story}': () => import('./${example.story}/editor.svelte'),`),
@@ -119,7 +122,7 @@ function genStories(framework: string, examples: Example[]): string {
     ``,
     `export default { component }`,
     ``,
-    // prettier-ignore
+    // dprint-ignore
     ...examples
       .filter((example) => example.framework === framework)
       .map((example) => `export const ${pascalCase(example.story)} = { args: { story: '${example.story}' } }`),

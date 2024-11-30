@@ -1,6 +1,12 @@
-import { expect, test } from '@playwright/test'
+import {
+  expect,
+  test,
+} from '@playwright/test'
 
-import { testStory, waitForEditor } from './helper'
+import {
+  testStory,
+  waitForEditor,
+} from './helper'
 
 testStory('code-block-themes', () => {
   test('code-block-themes', async ({ page }) => {

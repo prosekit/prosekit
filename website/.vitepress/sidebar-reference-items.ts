@@ -1,6 +1,6 @@
 // This file is generated from gen-docs-items.ts
 
-// prettier-ignore
+// dprint-ignore
 export const referenceItems = [
   {
     "text": "pm",

@@ -1,16 +1,24 @@
 import {
-  type Editor,
   createEditor,
-  type defineBaseCommands,
   defineDoc,
   defineParagraph,
   definePlugin,
   defineText,
   union,
+  type defineBaseCommands,
+  type Editor,
 } from '@prosekit/core'
-import { Plugin, PluginKey } from '@prosekit/pm/state'
+import {
+  Plugin,
+  PluginKey,
+} from '@prosekit/pm/state'
 import { mount } from '@vue/test-utils'
-import { describe, expect, it, vi } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest'
 import { defineComponent } from 'vue'
 
 import { useExtension } from './use-extension'

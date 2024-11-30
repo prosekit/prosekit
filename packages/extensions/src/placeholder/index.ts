@@ -1,7 +1,18 @@
-import { definePlugin, isInCodeBlock, maybeRun } from '@prosekit/core'
+import {
+  definePlugin,
+  isInCodeBlock,
+  maybeRun,
+} from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import { type EditorState, Plugin, PluginKey } from '@prosekit/pm/state'
-import { Decoration, DecorationSet } from '@prosekit/pm/view'
+import {
+  Plugin,
+  PluginKey,
+  type EditorState,
+} from '@prosekit/pm/state'
+import {
+  Decoration,
+  DecorationSet,
+} from '@prosekit/pm/view'
 
 import { findTable } from '../table'
 
@@ -45,12 +56,11 @@ function createPlaceholderPlugin({
     key: new PluginKey('prosekit-placeholder'),
     props: {
       decorations: (state) => {
-        const strategyFn =
-          typeof strategy === 'function'
-            ? strategy
-            : strategy === 'doc'
-              ? docStrategy
-              : defaultStrategy
+        const strategyFn = typeof strategy === 'function'
+          ? strategy
+          : strategy === 'doc'
+          ? docStrategy
+          : defaultStrategy
 
         if (!strategyFn(state)) {
           return null
@@ -96,7 +106,7 @@ function createPlaceholderDecoration(
   const before = $pos.before()
 
   return Decoration.node(before, before + node.nodeSize, {
-    class: 'prosekit-placeholder',
+    'class': 'prosekit-placeholder',
     'data-placeholder': placeholderText,
   })
 }

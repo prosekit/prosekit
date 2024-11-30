@@ -1,4 +1,7 @@
-import { defineNodeView, setNodeAttrs } from 'prosekit/core'
+import {
+  defineNodeView,
+  setNodeAttrs,
+} from 'prosekit/core'
 
 import { createElement } from './create-element'
 import { createLanguageSelector } from './language-selector'

@@ -1,5 +1,4 @@
 import {
-  type Editor,
   createEditor,
   defineBaseCommands,
   defineDoc,
@@ -8,9 +7,14 @@ import {
   defineText,
   elementFromNode,
   union,
+  type Editor,
 } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import { describe, expect, it } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
 import { defineMarkRule } from './index'
 
@@ -21,7 +25,6 @@ describe('defineMarkRule', () => {
       defineText(),
       defineParagraph(),
       defineBaseCommands(),
-
       defineMarkSpec({
         name: 'tag' as const,
         toDOM: () => {
@@ -32,7 +35,6 @@ describe('defineMarkRule', () => {
         regex: /#\d+/g,
         type: 'tag',
       }),
-
       defineMarkSpec({
         name: 'link' as const,
         toDOM: () => {
@@ -43,7 +45,6 @@ describe('defineMarkRule', () => {
         regex: /example\.com(#\d+)?/g,
         type: 'link',
       }),
-
       defineMarkSpec({
         name: 'email' as const,
         toDOM: () => {

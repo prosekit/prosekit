@@ -20,7 +20,7 @@
     "test:install": "playwright install chromium",
     "typecheck": "tsc --build tsconfig.json",
     "lint": "eslint .",
-    "fix": "manypkg fix && turbo run gen --force && eslint . --fix && prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-astro --write .",
+    "fix": "manypkg fix && turbo run gen --force && eslint . --fix && dprint fmt",
     "change": "changeset",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
     "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest"
@@ -43,6 +43,7 @@
     "@vitest/browser": "^2.1.6",
     "@vitest/coverage-v8": "^2.1.6",
     "cross-env": "^7.0.3",
+    "dprint": "^0.47.5",
     "eslint": "^9.16.0",
     "eslint-plugin-command": "^0.2.6",
     "pkg-pr-new": "^0.0.35",

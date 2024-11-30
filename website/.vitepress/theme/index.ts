@@ -5,7 +5,10 @@ import 'virtual:uno.css'
 import './style.css'
 
 import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
-import type { EnhanceAppContext, Theme } from 'vitepress'
+import type {
+  EnhanceAppContext,
+  Theme,
+} from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 
 export default {

@@ -1,6 +1,12 @@
-import { expect, test } from '@playwright/test'
+import {
+  expect,
+  test,
+} from '@playwright/test'
 
-import { locateEditor, testStory } from './helper'
+import {
+  locateEditor,
+  testStory,
+} from './helper'
 
 testStory('keymap', () => {
   test('keymap', async ({ page }) => {

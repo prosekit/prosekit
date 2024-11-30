@@ -3,7 +3,10 @@ import { fileURLToPath } from 'node:url'
 
 import { uniq } from 'lodash-es'
 
-import { readExampleMeta, type ExampleMeta } from './example-meta.js'
+import {
+  readExampleMeta,
+  type ExampleMeta,
+} from './example-meta.js'
 import { vfs } from './virtual-file-system.js'
 
 export async function genExampleIndex() {

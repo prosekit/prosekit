@@ -1,6 +1,9 @@
 import { groupBy } from 'lodash-es'
 
-import { readExampleMeta, type Example } from './example-meta'
+import {
+  readExampleMeta,
+  type Example,
+} from './example-meta'
 import { vfs } from './virtual-file-system'
 
 export async function genExampleCodeBlocks() {
@@ -36,10 +39,12 @@ function formatFiles(examples: Example[], fileName: string) {
 
 <FrameworkCodeBlock>
 
-${examples
-  .map((example) => formatFile(example, fileName))
-  .filter(Boolean)
-  .join('\n\n')}
+${
+      examples
+        .map((example) => formatFile(example, fileName))
+        .filter(Boolean)
+        .join('\n\n')
+    }
 
 </FrameworkCodeBlock>
  

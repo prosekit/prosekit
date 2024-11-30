@@ -10,10 +10,16 @@ import {
   type NodeJSON,
 } from 'prosekit/core'
 import { ListDOMSerializer } from 'prosekit/extensions/list'
-import { computed, ref } from 'vue'
+import {
+  computed,
+  ref,
+} from 'vue'
 
 import EditorComponent from './editor-component.vue'
-import { htmlFromMarkdown, markdownFromHTML } from './markdown'
+import {
+  htmlFromMarkdown,
+  markdownFromHTML,
+} from './markdown'
 
 const defaultContent = ref<NodeJSON | undefined>()
 const records = ref<string[]>([])

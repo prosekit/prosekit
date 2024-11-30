@@ -1,5 +1,11 @@
-import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
-import { listboxItemEvents, type ListboxItemEvents } from '@aria-ui/listbox'
+import type {
+  EventDeclarations,
+  PropDeclarations,
+} from '@aria-ui/core'
+import {
+  listboxItemEvents,
+  type ListboxItemEvents,
+} from '@aria-ui/listbox'
 
 export interface AutocompleteItemProps {
   /**
@@ -22,5 +28,4 @@ export const autocompleteItemProps: PropDeclarations<AutocompleteItemProps> = {
 export interface AutocompleteItemEvents extends ListboxItemEvents {}
 
 /** @internal */
-export const autocompleteItemEvents: EventDeclarations<AutocompleteItemEvents> =
-  listboxItemEvents
+export const autocompleteItemEvents: EventDeclarations<AutocompleteItemEvents> = listboxItemEvents

@@ -1,11 +1,14 @@
 import { definePlugin } from '@prosekit/core'
-import type { Command, ProseMirrorPlugin } from '@prosekit/pm/state'
+import type {
+  Command,
+  ProseMirrorPlugin,
+} from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 import {
-  yUndoPluginKey,
-  yUndoPlugin as originalYUndoPlugin,
-  undo as yUndo,
   redo as yRedo,
+  undo as yUndo,
+  yUndoPlugin as originalYUndoPlugin,
+  yUndoPluginKey,
 } from 'y-prosemirror'
 import type { UndoManager as YjsUndoManager } from 'yjs'
 

@@ -1,5 +1,8 @@
 import { lift } from '@prosekit/pm/commands'
-import type { NodeType, Attrs } from '@prosekit/pm/model'
+import type {
+  Attrs,
+  NodeType,
+} from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
 import { isNodeActive } from '../utils/is-node-active'

@@ -1,4 +1,8 @@
-import type { Attrs, NodeType, ProseMirrorNode } from '@prosekit/pm/model'
+import type {
+  Attrs,
+  NodeType,
+  ProseMirrorNode,
+} from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 import { insertPoint } from '@prosekit/pm/transform'
 
@@ -43,8 +47,8 @@ function insertNode(options: InsertNodeOptions): Command {
     const node = options.node
       ? options.node
       : options.type
-        ? getNodeType(state.schema, options.type).createAndFill(options.attrs)
-        : null
+      ? getNodeType(state.schema, options.type).createAndFill(options.attrs)
+      : null
 
     assert(node, 'You must provide either a node or a type')
 

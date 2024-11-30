@@ -1,10 +1,13 @@
 import {
-  type Keymap,
-  type PlainExtension,
   defineKeymap,
   isApple,
+  type Keymap,
+  type PlainExtension,
 } from '@prosekit/core'
-import { redo, undo } from 'loro-prosemirror'
+import {
+  redo,
+  undo,
+} from 'loro-prosemirror'
 
 const keymap: Keymap = {
   'Mod-z': undo,

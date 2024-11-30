@@ -34,7 +34,10 @@ const commit = commitRecorder.commit()
 To display the changes, create another editor instance and call `defineCommitViewer` with the `Commit` object.
 
 ```ts twoslash
-import { CommitRecorder, type Commit } from 'prosekit/extensions/commit'
+import {
+  CommitRecorder,
+  type Commit,
+} from 'prosekit/extensions/commit'
 
 const commitRecorder = new CommitRecorder()
 const commit: Commit = commitRecorder.commit()!

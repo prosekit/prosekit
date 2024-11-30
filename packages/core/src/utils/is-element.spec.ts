@@ -1,4 +1,7 @@
-import { test, expect } from 'vitest'
+import {
+  expect,
+  test,
+} from 'vitest'
 
 import { isElement } from './is-element'
 

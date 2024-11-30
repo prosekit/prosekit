@@ -1,6 +1,9 @@
 import type { Keymap } from 'prosekit/core'
 import { useKeymap } from 'prosekit/svelte'
-import { derived, type Readable } from 'svelte/store'
+import {
+  derived,
+  type Readable,
+} from 'svelte/store'
 
 export function useSubmitKeymap(
   hotkey: Readable<'Shift-Enter' | 'Enter'>,

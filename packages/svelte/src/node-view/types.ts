@@ -1,11 +1,17 @@
 import type { BaseNodeViewOptions } from '@prosekit/core'
-import type { Attrs, ProseMirrorNode } from '@prosekit/pm/model'
+import type {
+  Attrs,
+  ProseMirrorNode,
+} from '@prosekit/pm/model'
 import type {
   Decoration,
   DecorationSource,
   EditorView,
 } from '@prosekit/pm/view'
-import type { ComponentType, SvelteComponent } from 'svelte'
+import type {
+  ComponentType,
+  SvelteComponent,
+} from 'svelte'
 import type { Writable } from 'svelte/store'
 
 /**

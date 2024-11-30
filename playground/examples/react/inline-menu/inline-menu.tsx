@@ -129,7 +129,8 @@ export default function InlineMenu() {
               placeholder="Paste the link..."
               defaultValue={getCurrentLink(editor.state)}
               className={Themes.INLINE_MENU_LINK_INPUT}
-            ></input>
+            >
+            </input>
           </form>
         )}
         {editor.marks.link.isActive() && (

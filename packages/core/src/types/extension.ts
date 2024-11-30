@@ -5,8 +5,14 @@ import type {
   ToCommandAction,
   ToCommandCreators,
 } from './extension-command'
-import type { MarkTyping, ToMarkAction } from './extension-mark'
-import type { NodeTyping, ToNodeAction } from './extension-node'
+import type {
+  MarkTyping,
+  ToMarkAction,
+} from './extension-mark'
+import type {
+  NodeTyping,
+  ToNodeAction,
+} from './extension-node'
 import type { PickStringLiteral } from './pick-string-literal'
 import type { PickSubType } from './pick-sub-type'
 import type { Priority } from './priority'
@@ -47,14 +53,12 @@ export interface Extension<
 /**
  * @internal
  */
-export type ExtractTyping<E extends Extension> =
-  E extends Extension<ExtensionTyping<infer N, infer M, infer C>>
-    ? ExtensionTyping<
-        PickSubType<N, NodeTyping>,
-        PickSubType<M, MarkTyping>,
-        PickSubType<C, CommandTyping>
-      >
-    : never
+export type ExtractTyping<E extends Extension> = E extends Extension<ExtensionTyping<infer N, infer M, infer C>> ? ExtensionTyping<
+    PickSubType<N, NodeTyping>,
+    PickSubType<M, MarkTyping>,
+    PickSubType<C, CommandTyping>
+  >
+  : never
 
 /**
  * An extension that does not define any nodes, marks, or commands.
@@ -139,8 +143,7 @@ export type ExtractMarkActions<E extends Extension> = ToMarkAction<
 /**
  * @deprecated Use `ExtractCommandActions` instead.
  */
-export type ExtractCommandAppliers<E extends Extension> =
-  ExtractCommandActions<E>
+export type ExtractCommandAppliers<E extends Extension> = ExtractCommandActions<E>
 
 /**
  * @internal
@@ -155,11 +158,9 @@ export type Union<E extends readonly Extension[]> = Extension<{
  * @deprecated Use `Union` instead.
  * @internal
  */
-export type UnionExtension<E extends Extension | readonly Extension[]> =
-  E extends readonly Extension[]
-    ? Extension<{
-        Nodes: ExtractNodes<E[number]>
-        Marks: ExtractMarks<E[number]>
-        Commands: ExtractCommands<E[number]>
-      }>
-    : E
+export type UnionExtension<E extends Extension | readonly Extension[]> = E extends readonly Extension[] ? Extension<{
+    Nodes: ExtractNodes<E[number]>
+    Marks: ExtractMarks<E[number]>
+    Commands: ExtractCommands<E[number]>
+  }>
+  : E

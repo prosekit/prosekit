@@ -1,17 +1,23 @@
 import {
-  type ConnectableElement,
   createSignal,
-  type ReadonlySignal,
-  type SignalState,
   useAttribute,
   useEffect,
   useEventListener,
+  type ConnectableElement,
+  type ReadonlySignal,
+  type SignalState,
 } from '@aria-ui/core'
 import type { Editor } from '@prosekit/core'
-import { Fragment, Slice } from '@prosekit/pm/model'
+import {
+  Fragment,
+  Slice,
+} from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
 
-import { blockPopoverContext, type BlockPopoverContext } from '../context'
+import {
+  blockPopoverContext,
+  type BlockPopoverContext,
+} from '../context'
 
 import type { BlockHandleDraggableProps } from './types'
 

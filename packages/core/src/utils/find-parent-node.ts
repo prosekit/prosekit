@@ -1,4 +1,7 @@
-import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
+import type {
+  ProseMirrorNode,
+  ResolvedPos,
+} from '@prosekit/pm/model'
 
 /**
  * @public
@@ -35,7 +38,6 @@ export function findParentNode(
    * The predicate to test the parent node.
    */
   predicate: (node: ProseMirrorNode) => boolean,
-
   /**
    * The position to start searching from.
    */

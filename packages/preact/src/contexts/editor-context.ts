@@ -1,4 +1,7 @@
-import type { Editor, Extension } from '@prosekit/core'
+import type {
+  Editor,
+  Extension,
+} from '@prosekit/core'
 import { createContext } from 'preact'
 import { useContext } from 'preact/hooks'
 

@@ -1,7 +1,10 @@
 import { defineDocChangeHandler } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 
-import { useExtension, type UseExtensionOptions } from './use-extension'
+import {
+  useExtension,
+  type UseExtensionOptions,
+} from './use-extension'
 
 /**
  * Calls the given handler whenever the editor document changes.

@@ -12,8 +12,8 @@ import {
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
 import {
-  Priority,
   defineKeymap,
+  Priority,
   withPriority,
   type Editor,
 } from '@prosekit/core'
@@ -25,7 +25,11 @@ import {
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { useFirstRendering } from '../../../hooks/use-first-rendering'
-import { onSubmitContext, openContext, queryContext } from '../context'
+import {
+  onSubmitContext,
+  openContext,
+  queryContext,
+} from '../context'
 
 import { defaultQueryBuilder } from './helpers'
 import type {
@@ -89,10 +93,8 @@ export function useAutocompletePopover(
 
 function useAutocompleteExtension(
   host: ConnectableElement,
-
   editor: ReadonlySignal<Editor | null>,
   regex: ReadonlySignal<RegExp | null>,
-
   reference: Signal<Element | null>,
   query: Signal<string>,
   onDismiss: Signal<VoidFunction | null>,
@@ -109,7 +111,6 @@ function useAutocompleteExtension(
     const rule = createAutocompleteRule(
       editorValue,
       regexValue,
-
       reference,
       query,
       onDismiss,
@@ -123,7 +124,6 @@ function useAutocompleteExtension(
 function createAutocompleteRule(
   editor: Editor,
   regex: RegExp,
-
   reference: Signal<Element | null>,
   query: Signal<string>,
   onDismiss: Signal<VoidFunction | null>,

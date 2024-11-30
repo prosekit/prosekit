@@ -1,4 +1,7 @@
-export { defineImage, type ImageExtension } from './image'
+export {
+  defineImage,
+  type ImageExtension,
+} from './image'
 export {
   defineImageCommands,
   type ImageCommandsExtension,

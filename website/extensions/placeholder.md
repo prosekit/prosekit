@@ -15,8 +15,8 @@ const extension = definePlaceholder({ placeholder: 'Type Something...' })
 You can also show dynamic placeholders based on the current state.
 
 ```ts twoslash
-import { definePlaceholder } from 'prosekit/extensions/placeholder'
 import type { HeadingAttrs } from 'prosekit/extensions/heading'
+import { definePlaceholder } from 'prosekit/extensions/placeholder'
 
 const extension = definePlaceholder({
   placeholder: (state) => {

@@ -1,7 +1,7 @@
 import {
-  type Extension,
   defineNodeViewComponent,
   definePlugin,
+  type Extension,
 } from '@prosekit/core'
 import type { SvelteNodeViewUserOptions } from '@prosemirror-adapter/svelte'
 import type {
@@ -12,7 +12,10 @@ import type {
 
 import { NodeViewWrapper } from '../components/node-view-wrapper'
 
-import type { SvelteNodeViewComponent, SvelteNodeViewOptions } from './types'
+import type {
+  SvelteNodeViewComponent,
+  SvelteNodeViewOptions,
+} from './types'
 
 const isServer = typeof window === 'undefined'
 

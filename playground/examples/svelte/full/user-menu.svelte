@@ -25,9 +25,7 @@ const handleUserInsert = (id: number, username: string) => {
 
 <AutocompletePopover regex={/@\w*$/} class={Themes.AUTOCOMPLETE_MENU}>
   <AutocompleteList>
-    <AutocompleteEmpty class={Themes.AUTOCOMPLETE_MENU_ITEM}
-      >No results</AutocompleteEmpty
-    >
+    <AutocompleteEmpty class={Themes.AUTOCOMPLETE_MENU_ITEM}>No results</AutocompleteEmpty>
     {#each users as user}
       <AutocompleteItem
         class={Themes.AUTOCOMPLETE_MENU_ITEM}

@@ -1,5 +1,11 @@
-import type { Node, Slice } from '@prosekit/pm/model'
-import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
+import type {
+  Node,
+  Slice,
+} from '@prosekit/pm/model'
+import {
+  PluginKey,
+  ProseMirrorPlugin,
+} from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { defineFacet } from '../../facets/facet'
@@ -8,7 +14,10 @@ import type { PlainExtension } from '../../types/extension'
 import type { ObjectEntries } from '../../types/object-entries'
 import { groupEntries } from '../../utils/array-grouping'
 import { combineEventHandlers } from '../../utils/combine-event-handlers'
-import { pluginFacet, type PluginPayload } from '../plugin'
+import {
+  pluginFacet,
+  type PluginPayload,
+} from '../plugin'
 
 export type KeyDownHandler = (
   view: EditorView,
@@ -227,7 +236,7 @@ export const editorEventFacet = defineFacet<EditorEventPayload, PluginPayload>({
   singleton: true,
 })
 
-// prettier-ignore
+// dprint-ignore
 function setupEditorEventPlugin() {
   const [setKeyDownHandlers, handleKeyDown] = combineEventHandlers<KeyDownHandler>()
   const [setKeyPressHandlers, handleKeyPress] = combineEventHandlers<KeyPressHandler>()

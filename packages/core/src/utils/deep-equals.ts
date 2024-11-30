@@ -21,8 +21,8 @@ export function deepEquals<T>(a: T, b: T): boolean {
     const aKeys = Object.keys(a)
     const bKeys = Object.keys(b)
     return (
-      aKeys.length === bKeys.length &&
-      aKeys.every((key) => deepEquals(a[key as keyof T], b[key as keyof T]))
+      aKeys.length === bKeys.length
+      && aKeys.every((key) => deepEquals(a[key as keyof T], b[key as keyof T]))
     )
   }
   return false

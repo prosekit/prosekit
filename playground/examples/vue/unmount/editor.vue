@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
+import {
+  ref,
+  watchEffect,
+} from 'vue'
 
 import EditorComponent from './editor-component.vue'
 
@@ -38,9 +41,7 @@ watchEffect(() => {
     </div>
 
     <div v-for="key in editorKeys" :key="key" className="h-32">
-      <EditorComponent
-        :placeholder="`Editor No.${key} of ${editorKeys.length}`"
-      />
+      <EditorComponent :placeholder="`Editor No.${key} of ${editorKeys.length}`" />
     </div>
   </div>
 </template>

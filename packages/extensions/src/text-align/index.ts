@@ -1,12 +1,12 @@
 import {
-  type Extension,
-  type PlainExtension,
-  type Union,
   defineCommands,
   defineKeymap,
   defineNodeAttr,
   setNodeAttrs,
   union,
+  type Extension,
+  type PlainExtension,
+  type Union,
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 

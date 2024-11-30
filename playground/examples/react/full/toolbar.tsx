@@ -75,12 +75,8 @@ export default function Toolbar() {
 
       <Button
         pressed={editor.nodes.codeBlock.isActive()}
-        disabled={
-          !editor.commands.insertCodeBlock.canExec({ language: 'javascript' })
-        }
-        onClick={() =>
-          editor.commands.insertCodeBlock({ language: 'javascript' })
-        }
+        disabled={!editor.commands.insertCodeBlock.canExec({ language: 'javascript' })}
+        onClick={() => editor.commands.insertCodeBlock({ language: 'javascript' })}
         tooltip="Code Block"
       >
         <div className={Themes.ICON_CODE_BLOCK} />

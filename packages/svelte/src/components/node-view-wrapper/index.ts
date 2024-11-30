@@ -1,9 +1,6 @@
-import type { SvelteComponent } from 'svelte'
-
-import type { SvelteNodeViewComponent } from '../../node-view/types'
+import type { Component } from 'svelte'
 
 import Comp from './node-view-wrapper.svelte'
+import type { NodeViewWrapperProps } from './props'
 
-export const NodeViewWrapper = Comp as unknown as typeof SvelteComponent as typeof SvelteComponent<{
-  component: SvelteNodeViewComponent
-}>
+export const NodeViewWrapper = Comp as Component<NodeViewWrapperProps>

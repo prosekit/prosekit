@@ -4,12 +4,7 @@ import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 import type { SvelteNodeViewProps } from 'prosekit/svelte'
 
-export let node: SvelteNodeViewProps['node']
-export let setAttrs: SvelteNodeViewProps['setAttrs']
-export let contentRef: SvelteNodeViewProps['contentRef']
-
-// Ignore "<Component> was created with unknown prop" warnings in Svelte v4
-$$restProps
+const { node, setAttrs, contentRef }: SvelteNodeViewProps = $props()
 
 const attrs = $node.attrs as CodeBlockAttrs
 const language = attrs.language
@@ -27,7 +22,7 @@ const handleLanguageChange = (event: Event) => {
 <div class={Themes.LANGUAGE_WRAPPER} contentEditable={false}>
   <select
     class={Themes.LANGUAGE_SELECT}
-    on:change={handleLanguageChange}
+    onchange={handleLanguageChange}
     value={language || ''}
   >
     <option value="">Plain Text</option>

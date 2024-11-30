@@ -4,11 +4,7 @@ import {
   type Extension,
 } from '@prosekit/core'
 import type { SvelteNodeViewUserOptions } from '@prosemirror-adapter/svelte'
-import type {
-  ComponentConstructorOptions,
-  ComponentType,
-  SvelteComponent,
-} from 'svelte'
+import type { Component } from 'svelte'
 
 import { NodeViewWrapper } from '../components/node-view-wrapper'
 
@@ -48,16 +44,15 @@ export function defineSvelteNodeView(
 
 function wrapComponent(
   component: SvelteNodeViewComponent,
-): ComponentType<SvelteComponent> {
+): Component<any, any> {
   // `NodeViewWrapper` is an object during SSR
   if (!NodeViewWrapper || typeof NodeViewWrapper !== 'function') {
     return component
   }
 
-  class NodeViewPropsWrapper extends NodeViewWrapper {
-    constructor(options: ComponentConstructorOptions) {
-      super({ ...options, props: { ...options.props, component } })
-    }
+  const NodeViewPropsWrapper: Component = (internals, props) => {
+    return NodeViewWrapper(internals, { ...props, component })
   }
+
   return NodeViewPropsWrapper
 }

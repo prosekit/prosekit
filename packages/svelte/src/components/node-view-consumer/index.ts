@@ -1,10 +1,8 @@
-import type { SvelteComponent } from 'svelte'
+import type { Component } from 'svelte'
 
 import Comp from './node-view-consumer.svelte'
 
 /**
  * @internal
  */
-export const NodeViewConsumer = Comp as typeof SvelteComponent<
-  Record<string, never>
->
+export const NodeViewConsumer = Comp as Component<Record<string, never>>

@@ -65,10 +65,10 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/svelte": "^0.2.6"
+    "@prosemirror-adapter/svelte": "^0.3.0"
   },
   "peerDependencies": {
-    "svelte": ">= 3.0.0"
+    "svelte": ">= 5.0.0"
   },
   "peerDependenciesMeta": {
     "svelte": {
@@ -80,8 +80,8 @@
     "@sveltejs/package": "^2.3.7",
     "@types/node": "^20.17.5",
     "read-pkg": "^9.0.1",
-    "svelte": "^4.2.19",
-    "svelte-check": "^4.0.5",
+    "svelte": "^5.2.11",
+    "svelte-check": "^4.1.0",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",
     "vitest": "^2.1.6"

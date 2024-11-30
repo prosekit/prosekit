@@ -218,7 +218,7 @@
     "tsup": "^8.3.5",
     "typedoc": "^0.27.1",
     "typedoc-plugin-external-package-links": "^0.1.0",
-    "typedoc-plugin-md": "https://pkg.pr.new/ocavue/tsdocs/typedoc-plugin-md@27",
+    "typedoc-plugin-md": "^0.4.2",
     "typedoc-plugin-mdn-links": "^4.0.2",
     "typescript": "^5.6.3",
     "vue": "^3.5.12",

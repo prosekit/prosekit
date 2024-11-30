@@ -43,6 +43,7 @@
     "@vitest/browser": "^2.1.6",
     "@vitest/coverage-v8": "^2.1.6",
     "cross-env": "^7.0.3",
+    "dprint": "^0.47.5",
     "eslint": "^9.16.0",
     "eslint-plugin-command": "^0.2.6",
     "pkg-pr-new": "^0.0.35",

@@ -12,7 +12,11 @@ import {
 import { defineReadonly } from 'prosekit/extensions/readonly'
 import { ProseKit } from 'prosekit/svelte'
 
-export let commit: Commit
+interface Props {
+  commit: Commit
+}
+
+const { commit }: Props = $props()
 
 const extension = union([
   defineBasicExtension(),

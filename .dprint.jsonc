@@ -17,7 +17,9 @@
     "jsonTrailingCommaFiles": ["tsconfig.json", ".vscode/settings.json"],
   },
   "markdown": {},
-  "markup": {},
+  "markup": {
+    "astro.styleIndent": true,
+  },
   "yaml": {},
   "excludes": [
     "**/node_modules",

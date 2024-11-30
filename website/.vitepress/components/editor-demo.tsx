@@ -2,7 +2,13 @@
 
 import { Themes } from '@prosekit/themes'
 import clsx from 'clsx'
-import { defineComponent, onMounted, ref, shallowRef, Transition } from 'vue'
+import {
+  defineComponent,
+  onMounted,
+  ref,
+  shallowRef,
+  Transition,
+} from 'vue'
 
 import { useDarkMode } from './use-dark-mode'
 

@@ -1,4 +1,8 @@
-import { defineComponent, effect, ref } from 'vue'
+import {
+  defineComponent,
+  effect,
+  ref,
+} from 'vue'
 
 import { useDarkMode } from '../use-dark-mode'
 

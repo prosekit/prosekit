@@ -7,8 +7,8 @@ Execute some action when a certain pattern is typed. This is based on the [prose
 You can directly pass an `InputRule` instance to `defineInputRule`.
 
 ```ts twoslash
-import { InputRule } from 'prosekit/pm/inputrules'
 import { defineInputRule } from 'prosekit/extensions/input-rule'
+import { InputRule } from 'prosekit/pm/inputrules'
 
 /**
  * Converts three dots to an ellipsis character.

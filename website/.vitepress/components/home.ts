@@ -1,4 +1,7 @@
-import { defineComponent, h } from 'vue'
+import {
+  defineComponent,
+  h,
+} from 'vue'
 
 export const Home = defineComponent(() => {
   return () =>
@@ -45,7 +48,7 @@ export const HeroFrameworks = defineComponent(() => {
             }),
             h('div', framework.name),
           ],
-        ),
+        )
       ),
     ),
   ]

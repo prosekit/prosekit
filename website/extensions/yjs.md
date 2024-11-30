@@ -26,9 +26,9 @@ pnpm add yjs y-prosemirror
 
 ```ts twoslash
 import 'prosekit/extensions/yjs/style.css'
-import * as Y from 'yjs'
 import { defineYjs } from 'prosekit/extensions/yjs'
 import { WebsocketProvider } from 'y-websocket'
+import * as Y from 'yjs'
 
 const doc = new Y.Doc()
 const provider = new WebsocketProvider(

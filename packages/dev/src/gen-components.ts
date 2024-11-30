@@ -1,5 +1,9 @@
 import type { Package } from '@manypkg/get-packages'
-import { camelCase, kebabCase, pascalCase } from 'change-case'
+import {
+  camelCase,
+  kebabCase,
+  pascalCase,
+} from 'change-case'
 
 import {
   readComponents,

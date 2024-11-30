@@ -1,4 +1,7 @@
-import { type Extension, defineNodeSpec } from '@prosekit/core'
+import {
+  defineNodeSpec,
+  type Extension,
+} from '@prosekit/core'
 
 /**
  * @public
@@ -50,9 +53,9 @@ export function defineImageSpec(): ImageSpecExtension {
             width = rect.width
             height = rect.height
           } else if (
-            element instanceof HTMLImageElement &&
-            element.naturalWidth > 0 &&
-            element.naturalHeight > 0
+            element instanceof HTMLImageElement
+            && element.naturalWidth > 0
+            && element.naturalHeight > 0
           ) {
             width = element.naturalWidth
             height = element.naturalHeight

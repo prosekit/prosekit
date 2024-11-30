@@ -1,6 +1,12 @@
-import { defineCommands, type Extension } from '@prosekit/core'
+import {
+  defineCommands,
+  type Extension,
+} from '@prosekit/core'
 
-import { redo, undo } from './yjs-undo-plugin'
+import {
+  redo,
+  undo,
+} from './yjs-undo-plugin'
 
 const commands = {
   undo: () => undo,

@@ -1,11 +1,11 @@
 import {
-  type ConnectableElement,
   createComputed,
   createSignal,
   defineEmit,
-  type SetupOptions,
   useAttribute,
   useEffect,
+  type ConnectableElement,
+  type SetupOptions,
 } from '@aria-ui/core'
 import {
   menuRootEvents,
@@ -18,7 +18,10 @@ import { usePresence } from '@aria-ui/presence'
 import { getStateWithDefaults } from '../../../utils/get-default-state'
 import { tableHandleRootContext } from '../context'
 
-import type { TableHandleRowRootEvents, TableHandleRowRootProps } from './types'
+import type {
+  TableHandleRowRootEvents,
+  TableHandleRowRootProps,
+} from './types'
 
 export function useTableHandleRowRoot(
   host: ConnectableElement,

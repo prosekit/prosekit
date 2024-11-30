@@ -1,4 +1,7 @@
-import type { ProseMirrorNode, Schema } from '@prosekit/pm/model'
+import type {
+  ProseMirrorNode,
+  Schema,
+} from '@prosekit/pm/model'
 import {
   EditorState,
   type Command,
@@ -6,7 +9,10 @@ import {
   type Selection,
   type Transaction,
 } from '@prosekit/pm/state'
-import { EditorView, type DirectEditorProps } from '@prosekit/pm/view'
+import {
+  EditorView,
+  type DirectEditorProps,
+} from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
 import { defineDefaultState } from '../extensions/default-state'
@@ -24,8 +30,14 @@ import type {
   ExtractNodeActions,
   ExtractNodeNames,
 } from '../types/extension'
-import type { CommandAction, CommandCreator } from '../types/extension-command'
-import type { NodeJSON, SelectionJSON } from '../types/model'
+import type {
+  CommandAction,
+  CommandCreator,
+} from '../types/extension-command'
+import type {
+  NodeJSON,
+  SelectionJSON,
+} from '../types/model'
 import { assert } from '../utils/assert'
 import { deepEquals } from '../utils/deep-equals'
 import {
@@ -221,8 +233,8 @@ export class EditorInstance {
     }
 
     if (
-      newPayload?.commands &&
-      !deepEquals(oldPayload?.commands, newPayload?.commands)
+      newPayload?.commands
+      && !deepEquals(oldPayload?.commands, newPayload?.commands)
     ) {
       const commands = newPayload.commands
       const names = Object.keys(commands)

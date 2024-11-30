@@ -14,15 +14,14 @@ export default function Editor() {
     const extension = defineExtension()
     return createEditor({
       extension,
-      defaultContent:
-        '<p>Baa, baa, black sheep,</p>' +
-        '<p>Have you any wool?</p>' +
-        '<p>Yes, sir, yes, sir,</p>' +
-        '<p>Three bags full;</p>' +
-        '<p>One for the master,</p>' +
-        '<p>And one for the dame,</p>' +
-        '<p>And one for the little boy</p>' +
-        '<p>Who lives down the lane.</p>',
+      defaultContent: '<p>Baa, baa, black sheep,</p>'
+        + '<p>Have you any wool?</p>'
+        + '<p>Yes, sir, yes, sir,</p>'
+        + '<p>Three bags full;</p>'
+        + '<p>One for the master,</p>'
+        + '<p>And one for the dame,</p>'
+        + '<p>And one for the little boy</p>'
+        + '<p>Who lives down the lane.</p>',
     })
   }, [])
 

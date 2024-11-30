@@ -21,8 +21,8 @@ jobs:
         uses: changesets/action@v1
         with:
           version: pnpm ci:version
-          commit: 'chore: version packages'
-          title: 'chore: version packages'
+          commit: "chore: version packages"
+          title: "chore: version packages"
           createGithubReleases: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,7 +53,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           commit: master
-          tag: '${{ env.PROSEKIT_RELEASE_TAG }}'
-          body: 'Please refer to [CHANGELOG.md](https://github.com/ocavue/prosekit/blob/${{ env.PROSEKIT_RELEASE_TAG }}/packages/prosekit/CHANGELOG.md) for details.'
+          tag: "${{ env.PROSEKIT_RELEASE_TAG }}"
+          body: "Please refer to [CHANGELOG.md](https://github.com/ocavue/prosekit/blob/${{ env.PROSEKIT_RELEASE_TAG }}/packages/prosekit/CHANGELOG.md) for details."
           token: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true

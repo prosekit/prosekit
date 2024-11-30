@@ -1,4 +1,8 @@
-import { describe, it, expect } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
 import { insertText } from '../commands/insert-text'
 import { wrap } from '../commands/wrap'

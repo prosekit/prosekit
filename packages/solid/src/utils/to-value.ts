@@ -1,4 +1,7 @@
-import type { MaybeAccessor, MaybeAccessorValue } from '../types'
+import type {
+  MaybeAccessor,
+  MaybeAccessorValue,
+} from '../types'
 
 /**
  * Accesses the value of a MaybeAccessor

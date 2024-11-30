@@ -2,11 +2,11 @@
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import {
-  TableHandleRoot,
   TableHandleColumnRoot,
   TableHandleColumnTrigger,
   TableHandlePopoverContent,
   TableHandlePopoverItem,
+  TableHandleRoot,
   TableHandleRowRoot,
   TableHandleRowTrigger,
 } from 'prosekit/vue/table-handle'

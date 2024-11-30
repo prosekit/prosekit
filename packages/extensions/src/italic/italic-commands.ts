@@ -1,4 +1,8 @@
-import { defineCommands, toggleMark, type Extension } from '@prosekit/core'
+import {
+  defineCommands,
+  toggleMark,
+  type Extension,
+} from '@prosekit/core'
 
 /**
  * @internal

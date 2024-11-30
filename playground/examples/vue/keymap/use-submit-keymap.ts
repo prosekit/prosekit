@@ -1,6 +1,9 @@
 import type { Keymap } from 'prosekit/core'
 import { useKeymap } from 'prosekit/vue'
-import { computed, type Ref } from 'vue'
+import {
+  computed,
+  type Ref,
+} from 'vue'
 
 export function useSubmitKeymap(
   hotkey: Ref<'Shift-Enter' | 'Enter'>,

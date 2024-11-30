@@ -62,9 +62,8 @@ async function ensureEntry({
   const packageSubName = packageName.split('/')[1]
 
   const reExportEntry = './' + path.normalize(path.join(packageSubName, entry))
-  let reExportFilePath =
-    './' +
-    path.normalize(
+  let reExportFilePath = './'
+    + path.normalize(
       path.join(
         'src',
         ensureFileExtension(

@@ -7,4 +7,7 @@ function replaceThemes(code: string) {
   return replaceThemesWith(code, THEMES)
 }
 
-export { replaceThemes, THEMES as Themes }
+export {
+  replaceThemes,
+  THEMES as Themes,
+}

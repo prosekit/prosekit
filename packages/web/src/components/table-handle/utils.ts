@@ -1,5 +1,8 @@
 import type { EditorView } from '@prosekit/pm/view'
-import { cellAround, TableMap } from 'prosemirror-tables'
+import {
+  cellAround,
+  TableMap,
+} from 'prosemirror-tables'
 
 export interface HoveringCellInfo {
   rowIndex: number
@@ -16,11 +19,11 @@ export function isHoveringCellInfoEqual(
   if (!a && !b) return true
   if (!a || !b) return false
   return (
-    a.rowIndex === b.rowIndex &&
-    a.colIndex === b.colIndex &&
-    a.cellPos === b.cellPos &&
-    a.rowFirstCellPos === b.rowFirstCellPos &&
-    a.colFirstCellPos === b.colFirstCellPos
+    a.rowIndex === b.rowIndex
+    && a.colIndex === b.colIndex
+    && a.cellPos === b.cellPos
+    && a.rowFirstCellPos === b.rowFirstCellPos
+    && a.colFirstCellPos === b.colFirstCellPos
   )
 }
 

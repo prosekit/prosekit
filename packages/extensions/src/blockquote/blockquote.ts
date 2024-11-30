@@ -1,4 +1,7 @@
-import { union, type Union } from '@prosekit/core'
+import {
+  union,
+  type Union,
+} from '@prosekit/core'
 
 import {
   defineBlockquoteCommands,

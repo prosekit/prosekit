@@ -1,10 +1,10 @@
 import {
+  canUseRegexLookbehind,
   defineCommands,
   defineKeymap,
   defineMarkSpec,
-  union,
   toggleMark,
-  canUseRegexLookbehind,
+  union,
   type Extension,
   type Union,
 } from '@prosekit/core'

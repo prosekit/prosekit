@@ -1,7 +1,7 @@
 import {
+  createSignal,
   type PropDeclarations,
   type SignalState,
-  createSignal,
 } from '@aria-ui/core'
 
 export function getStateWithDefaults<

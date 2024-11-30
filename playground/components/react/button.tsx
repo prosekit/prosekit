@@ -33,11 +33,13 @@ export default function Button({
           {tooltip ? <span className="sr-only">{tooltip}</span> : null}
         </button>
       </TooltipTrigger>
-      {tooltip ? (
-        <TooltipContent className={Themes.TOOLTIP_CONTENT}>
-          {tooltip}
-        </TooltipContent>
-      ) : null}
+      {tooltip
+        ? (
+          <TooltipContent className={Themes.TOOLTIP_CONTENT}>
+            {tooltip}
+          </TooltipContent>
+        )
+        : null}
     </TooltipRoot>
   )
 }

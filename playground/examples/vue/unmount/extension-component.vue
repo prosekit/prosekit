@@ -5,9 +5,7 @@ import { computed } from 'vue'
 
 const props = defineProps<{ placeholder: string }>()
 
-const extension = computed(() =>
-  definePlaceholder({ placeholder: props.placeholder }),
-)
+const extension = computed(() => definePlaceholder({ placeholder: props.placeholder }))
 
 useExtension(extension)
 </script>

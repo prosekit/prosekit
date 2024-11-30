@@ -1,6 +1,13 @@
-import { expect, test } from '@playwright/test'
+import {
+  expect,
+  test,
+} from '@playwright/test'
 
-import { locateEditor, testStory, waitForEditor } from './helper'
+import {
+  locateEditor,
+  testStory,
+  waitForEditor,
+} from './helper'
 
 testStory('full', () => {
   test.describe('link', () => {
@@ -30,9 +37,7 @@ testStory('full', () => {
       await expect(a).toHaveText('https://www.example.com?query=query#fragment')
     })
 
-    test('press Space to insert a link ends with a period', async ({
-      page,
-    }) => {
+    test('press Space to insert a link ends with a period', async ({ page }) => {
       const editor = locateEditor(page)
       const a = editor.locator('a')
 
@@ -75,9 +80,7 @@ testStory('full', () => {
       await expect(a).toHaveText('https://www.example.com?query=query#fragment')
     })
 
-    test('press Enter to insert a link ends with a period', async ({
-      page,
-    }) => {
+    test('press Enter to insert a link ends with a period', async ({ page }) => {
       const editor = locateEditor(page)
       const a = editor.locator('a')
 

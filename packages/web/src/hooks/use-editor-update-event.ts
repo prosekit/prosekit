@@ -1,8 +1,11 @@
-import type { ConnectableElement, ReadonlySignal } from '@aria-ui/core'
+import type {
+  ConnectableElement,
+  ReadonlySignal,
+} from '@aria-ui/core'
 import {
+  defineUpdateHandler,
   type Editor,
   type UpdateHandler,
-  defineUpdateHandler,
 } from '@prosekit/core'
 
 import { useEditorExtension } from './use-editor-extension'

@@ -2,12 +2,30 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
 import { Themes } from '@prosekit/themes'
-import { LitElement, html } from 'lit'
-import { customElement, property, state } from 'lit/decorators.js'
-import { createRef, ref, type Ref } from 'lit/directives/ref.js'
-import { createEditor, type Editor, type NodeJSON } from 'prosekit/core'
+import {
+  html,
+  LitElement,
+} from 'lit'
+import {
+  customElement,
+  property,
+  state,
+} from 'lit/decorators.js'
+import {
+  createRef,
+  ref,
+  type Ref,
+} from 'lit/directives/ref.js'
+import {
+  createEditor,
+  type Editor,
+  type NodeJSON,
+} from 'prosekit/core'
 
-import { defineExtension, type EditorExtension } from './extension'
+import {
+  defineExtension,
+  type EditorExtension,
+} from './extension'
 
 @customElement('example-lit-dom')
 export class MyEditor extends LitElement {

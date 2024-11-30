@@ -1,6 +1,13 @@
 import { OBJECT_REPLACEMENT_CHARACTER } from '@prosekit/core'
-import { type EditorState, Plugin, type Transaction } from '@prosekit/pm/state'
-import { Decoration, DecorationSet } from '@prosekit/pm/view'
+import {
+  Plugin,
+  type EditorState,
+  type Transaction,
+} from '@prosekit/pm/state'
+import {
+  Decoration,
+  DecorationSet,
+} from '@prosekit/pm/view'
 
 import {
   getPluginState,
@@ -32,9 +39,9 @@ export function createAutocompletePlugin({
         const meta = getTrMeta(tr)
 
         if (
-          !tr.docChanged &&
-          oldState.selection.eq(newState.selection) &&
-          !meta
+          !tr.docChanged
+          && oldState.selection.eq(newState.selection)
+          && !meta
         ) {
           return prevValue
         }
@@ -45,9 +52,9 @@ export function createAutocompletePlugin({
 
         const nextValue = calcPluginState(newState, getRules())
         if (
-          nextValue.active &&
-          prevValue.ignore != null &&
-          nextValue.matching?.from === prevValue.ignore
+          nextValue.active
+          && prevValue.ignore != null
+          && nextValue.matching?.from === prevValue.ignore
         ) {
           return prevValue
         }
@@ -61,18 +68,18 @@ export function createAutocompletePlugin({
         const currValue = getPluginState(view.state)
 
         if (
-          prevValue?.active &&
-          prevValue.matching &&
-          prevValue.matching.rule !== currValue?.matching?.rule
+          prevValue?.active
+          && prevValue.matching
+          && prevValue.matching.rule !== currValue?.matching?.rule
         ) {
           // Deactivate the previous rule
           prevValue.matching.rule.onLeave?.()
         }
 
         if (
-          currValue?.active &&
-          currValue.matching &&
-          currValue.matching.from !== currValue.ignore
+          currValue?.active
+          && currValue.matching
+          && currValue.matching.from !== currValue.ignore
         ) {
           // Activate the current rule
 

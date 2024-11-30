@@ -1,10 +1,19 @@
 import type { Schema } from '@prosekit/pm/model'
-import { type ProseMirrorPlugin, Plugin } from '@prosekit/pm/state'
+import {
+  Plugin,
+  type ProseMirrorPlugin,
+} from '@prosekit/pm/state'
 
 import { ProseKitError } from '../error'
-import { type Facet, defineFacet } from '../facets/facet'
+import {
+  defineFacet,
+  type Facet,
+} from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
-import { stateFacet, type StatePayload } from '../facets/state'
+import {
+  stateFacet,
+  type StatePayload,
+} from '../facets/state'
 import type { PlainExtension } from '../types/extension'
 
 /**
@@ -22,8 +31,8 @@ export function definePlugin(
     | ((context: { schema: Schema }) => Plugin | Plugin[]),
 ): PlainExtension {
   if (
-    plugin instanceof Plugin ||
-    (Array.isArray(plugin) && plugin.every((p) => p instanceof Plugin))
+    plugin instanceof Plugin
+    || (Array.isArray(plugin) && plugin.every((p) => p instanceof Plugin))
   ) {
     return definePluginPayload(() => plugin)
   }
@@ -59,8 +68,8 @@ export const pluginFacet: Facet<PluginPayload, StatePayload> = defineFacet({
         if (payload instanceof Plugin) {
           plugins.push(payload)
         } else if (
-          Array.isArray(payload) &&
-          payload.every((p) => p instanceof Plugin)
+          Array.isArray(payload)
+          && payload.every((p) => p instanceof Plugin)
         ) {
           plugins.push(...payload)
         } else if (typeof payload === 'function') {

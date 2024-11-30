@@ -34,6 +34,6 @@ export function defineHeadingKeymap() {
     'mod-4': toggleHeadingKeybinding(4),
     'mod-5': toggleHeadingKeybinding(5),
     'mod-6': toggleHeadingKeybinding(6),
-    Backspace: backspaceUnsetHeading,
+    'Backspace': backspaceUnsetHeading,
   })
 }

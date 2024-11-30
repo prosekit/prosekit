@@ -1,6 +1,14 @@
-import { expect, test, type Locator } from '@playwright/test'
+import {
+  expect,
+  test,
+  type Locator,
+} from '@playwright/test'
 
-import { emptyEditor, testStory, waitForEditor } from './helper'
+import {
+  emptyEditor,
+  testStory,
+  waitForEditor,
+} from './helper'
 
 testStory(['full'], () => {
   test('show block handle on hover', async ({ page }) => {

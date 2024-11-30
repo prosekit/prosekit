@@ -1,4 +1,7 @@
-import { type Attrs, type MarkType } from '@prosekit/pm/model'
+import {
+  type Attrs,
+  type MarkType,
+} from '@prosekit/pm/model'
 
 /**
  * The options for {@link defineMarkRule}.

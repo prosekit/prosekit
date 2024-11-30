@@ -1,4 +1,7 @@
-import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import type {
+  EventDeclarations,
+  PropDeclarations,
+} from '@aria-ui/core'
 
 export interface ResizableRootProps {
   width: number | null

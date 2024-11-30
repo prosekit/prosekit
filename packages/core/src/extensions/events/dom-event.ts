@@ -1,13 +1,25 @@
-import { PluginKey, ProseMirrorPlugin } from '@prosekit/pm/state'
-import type { DOMEventMap, EditorView } from '@prosekit/pm/view'
+import {
+  PluginKey,
+  ProseMirrorPlugin,
+} from '@prosekit/pm/state'
+import type {
+  DOMEventMap,
+  EditorView,
+} from '@prosekit/pm/view'
 
-import { defineFacet, type Facet } from '../../facets/facet'
+import {
+  defineFacet,
+  type Facet,
+} from '../../facets/facet'
 import { defineFacetPayload } from '../../facets/facet-extension'
 import type { PlainExtension } from '../../types/extension'
 import type { Setter } from '../../types/setter'
 import { groupEntries } from '../../utils/array-grouping'
 import { combineEventHandlers } from '../../utils/combine-event-handlers'
-import { pluginFacet, type PluginPayload } from '../plugin'
+import {
+  pluginFacet,
+  type PluginPayload,
+} from '../plugin'
 
 /**
  * A function to handle the events fired on the editable DOM element. Returns
@@ -71,8 +83,7 @@ export const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
         for (const [event] of payloads) {
           if (!setHandlersMap[event]) {
             hasNewEvent = true
-            const [setHandlers, combinedHandler] =
-              combineEventHandlers<DOMEventHandler>()
+            const [setHandlers, combinedHandler] = combineEventHandlers<DOMEventHandler>()
             setHandlersMap[event] = setHandlers
             const e: DOMEventHandler = (view, eventObject) => {
               return combinedHandler(view, eventObject)
@@ -81,8 +92,7 @@ export const domEventFacet: Facet<DOMEventPayload, PluginPayload> = defineFacet(
           }
         }
 
-        const map: Record<string, DOMEventHandler[] | undefined> =
-          groupEntries<DOMEventMap>(payloads)
+        const map: Record<string, DOMEventHandler[] | undefined> = groupEntries<DOMEventMap>(payloads)
         for (const [event, setHandlers] of Object.entries(setHandlersMap)) {
           const handlers = map[event] ?? []
           setHandlers(handlers)

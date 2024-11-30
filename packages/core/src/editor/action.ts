@@ -1,10 +1,10 @@
 import type {
-  Schema,
   Attrs,
   Mark,
   MarkType,
   NodeType,
   ProseMirrorNode,
+  Schema,
 } from '@prosekit/pm/model'
 import type { EditorState } from '@prosekit/pm/state'
 import mapValues from 'just-map-values'
@@ -83,9 +83,7 @@ export function createNodeActions(
   getState: GetStateFunction,
   createNode: CreateNodeFunction = defaultCreateNode,
 ): Record<string, NodeAction> {
-  return mapValues(schema.nodes, (type) =>
-    createNodeAction(type, getState, createNode),
-  )
+  return mapValues(schema.nodes, (type) => createNodeAction(type, getState, createNode))
 }
 
 function createNodeAction(
@@ -111,9 +109,7 @@ export function createMarkActions(
   getState: GetStateFunction,
   applyMark: ApplyMarkFunction = defaultApplyMark,
 ): Record<string, MarkAction> {
-  return mapValues(schema.marks, (type) =>
-    createMarkAction(type, getState, applyMark),
-  )
+  return mapValues(schema.marks, (type) => createMarkAction(type, getState, applyMark))
 }
 
 function createMarkAction(
@@ -231,8 +227,8 @@ function isNodeChild(
   }
 
   return (
-    typeof value === 'string' ||
-    Array.isArray(value) ||
-    isProseMirrorNode(value)
+    typeof value === 'string'
+    || Array.isArray(value)
+    || isProseMirrorNode(value)
   )
 }

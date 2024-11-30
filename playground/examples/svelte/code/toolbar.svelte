@@ -1,8 +1,8 @@
 <script lang="ts">
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/svelte'
-import type { EditorExtension } from './extension'
 import Button from './button.svelte'
+import type { EditorExtension } from './extension'
 
 const editor = useEditor<EditorExtension>({ update: true })
 </script>

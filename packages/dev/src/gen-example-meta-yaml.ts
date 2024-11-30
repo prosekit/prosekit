@@ -33,9 +33,9 @@ export async function genExampleMetaYaml() {
       const [playgroundDir, examplesDir, framework, story, fileName] = parts
 
       if (
-        playgroundDir !== 'playground' ||
-        examplesDir !== 'examples' ||
-        fileName.endsWith('.astro')
+        playgroundDir !== 'playground'
+        || examplesDir !== 'examples'
+        || fileName.endsWith('.astro')
       ) {
         return null
       }
@@ -54,10 +54,9 @@ export async function genExampleMetaYaml() {
 
     const files = exampleFiles.map(({ fileName }) => ({
       path: fileName,
-      hidden:
-        fileName === 'tsconfig.json'
-          ? true
-          : (findExampleFile(oldMeta, exampleName, fileName)?.hidden ?? false),
+      hidden: fileName === 'tsconfig.json'
+        ? true
+        : (findExampleFile(oldMeta, exampleName, fileName)?.hidden ?? false),
     }))
 
     const newExample: Example = {

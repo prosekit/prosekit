@@ -1,4 +1,7 @@
-import { TextSelection, type Command } from '@prosekit/pm/state'
+import {
+  TextSelection,
+  type Command,
+} from '@prosekit/pm/state'
 
 import { defaultBlockAt } from '../utils/default-block-at'
 
@@ -23,10 +26,9 @@ export function insertDefaultBlock(
   options?: InsertDefaultBlockOptions,
 ): Command {
   return (state, dispatch) => {
-    const $pos =
-      options?.pos == null
-        ? state.selection.$to
-        : state.doc.resolve(options.pos)
+    const $pos = options?.pos == null
+      ? state.selection.$to
+      : state.doc.resolve(options.pos)
     const depth = $pos.parent.isTextblock ? $pos.depth - 1 : $pos.depth
     const parent = $pos.node(depth)
     const index = $pos.indexAfter(depth)

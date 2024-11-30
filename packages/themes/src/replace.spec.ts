@@ -1,5 +1,9 @@
 import dedent from 'dedent'
-import { describe, expect, it } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
 import { replaceThemesWith } from './replace'
 import { Themes } from './themes'

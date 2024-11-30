@@ -7,12 +7,18 @@ import {
   type Signal,
   type SignalState,
 } from '@aria-ui/core'
-import { defineDOMEventHandler, type Editor } from '@prosekit/core'
+import {
+  defineDOMEventHandler,
+  type Editor,
+} from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { useEditorTyping } from '../../../hooks/use-editor-typing'
-import { tableHandleRootContext, type TableHandleRootContext } from '../context'
+import {
+  tableHandleRootContext,
+  type TableHandleRootContext,
+} from '../context'
 import {
   getHoveringCell,
   isHoveringCellInfoEqual,

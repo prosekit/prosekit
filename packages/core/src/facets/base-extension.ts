@@ -1,6 +1,9 @@
 import type { Schema } from '@prosekit/pm/model'
 
-import type { Extension, ExtensionTyping } from '../types/extension'
+import type {
+  Extension,
+  ExtensionTyping,
+} from '../types/extension'
 import { Priority } from '../types/priority'
 
 import type { Facet } from './facet'
@@ -11,9 +14,7 @@ import { schemaFacet } from './schema'
 /**
  * @internal
  */
-export abstract class BaseExtension<T extends ExtensionTyping = ExtensionTyping>
-  implements Extension<T>
-{
+export abstract class BaseExtension<T extends ExtensionTyping = ExtensionTyping> implements Extension<T> {
   extension: Extension | Extension[] = []
   priority?: Priority
   _type?: T

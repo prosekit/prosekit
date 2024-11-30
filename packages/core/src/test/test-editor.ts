@@ -1,11 +1,14 @@
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import {
   NodeSelection,
-  type Selection,
   TextSelection,
+  type Selection,
 } from '@prosekit/pm/state'
 
-import { createMarkActions, createNodeActions } from '../editor/action'
+import {
+  createMarkActions,
+  createNodeActions,
+} from '../editor/action'
 import {
   Editor,
   EditorInstance,
@@ -13,7 +16,10 @@ import {
   type EditorOptions,
 } from '../editor/editor'
 import type { Extension } from '../types/extension'
-import type { NodeJSON, SelectionJSON } from '../types/model'
+import type {
+  NodeJSON,
+  SelectionJSON,
+} from '../types/model'
 import { isProseMirrorNode } from '../utils/type-assertion'
 
 import {
@@ -47,9 +53,7 @@ function getSelection(doc: TaggedProseMirrorNode): Selection {
 class TestEditorInstance extends EditorInstance {
   constructor(extension: Extension) {
     super(extension)
-    // dprint-ignore
     this.nodes = createNodeActions(this.schema, this.getState, createNodeForTest)
-    // dprint-ignore
     this.marks = createMarkActions(this.schema, this.getState, applyMarkForTest)
   }
 

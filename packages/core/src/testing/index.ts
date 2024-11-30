@@ -10,7 +10,10 @@ import { defineMarkSpec } from '../extensions/mark-spec'
 import { defineNodeSpec } from '../extensions/node-spec'
 import { defineParagraph } from '../extensions/paragraph'
 import { defineText } from '../extensions/text'
-import { createTestEditor, type TestEditor } from '../test'
+import {
+  createTestEditor,
+  type TestEditor,
+} from '../test'
 import type {
   Extension,
   ExtractMarkActions,

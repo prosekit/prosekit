@@ -1,4 +1,7 @@
-import type { Attrs, NodeType } from '@prosekit/pm/model'
+import type {
+  Attrs,
+  NodeType,
+} from '@prosekit/pm/model'
 import type { Command } from '@prosekit/pm/state'
 
 import { getCustomSelection } from '../utils/get-custom-selection'

@@ -20,8 +20,15 @@ import {
   type Transaction,
 } from '@prosekit/pm/state'
 import { Step } from '@prosekit/pm/transform'
-import { Decoration, DecorationSet, type EditorView } from '@prosekit/pm/view'
-import { type Change, ChangeSet } from 'prosemirror-changeset'
+import {
+  Decoration,
+  DecorationSet,
+  type EditorView,
+} from '@prosekit/pm/view'
+import {
+  ChangeSet,
+  type Change,
+} from 'prosemirror-changeset'
 
 /**
  * A JSON representation of a commit.
@@ -176,7 +183,7 @@ function decorateDeletion(
       side: -20 - count + index,
       // Ensure the text in the decoration is able to be selected.
       ignoreSelection: true,
-    }),
+    })
   )
 }
 
@@ -209,9 +216,7 @@ function decorateCommit(
   steps: Step[],
 ): DecorationSet {
   const changes = getChanges(doc, parent, steps)
-  const decorations = changes.flatMap((change) =>
-    decorateChange(parent, change),
-  )
+  const decorations = changes.flatMap((change) => decorateChange(parent, change))
   return DecorationSet.create(doc, decorations)
 }
 
@@ -262,10 +267,10 @@ class CommitRecorder {
    */
   commit(): Commit | null {
     if (
-      !this.parent ||
-      !this.doc ||
-      this.steps.length === 0 ||
-      this.parent.eq(this.doc)
+      !this.parent
+      || !this.doc
+      || this.steps.length === 0
+      || this.parent.eq(this.doc)
     ) {
       return null
     }
@@ -318,4 +323,9 @@ function defineCommitRecorder(commitRecorder: CommitRecorder) {
   )
 }
 
-export { CommitRecorder, defineCommitRecorder, defineCommitViewer, type Commit }
+export {
+  CommitRecorder,
+  defineCommitRecorder,
+  defineCommitViewer,
+  type Commit,
+}

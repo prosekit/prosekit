@@ -1,4 +1,7 @@
-import type { Accessor, JSXElement } from 'solid-js'
+import type {
+  Accessor,
+  JSXElement,
+} from 'solid-js'
 
 /**
  * @internal
@@ -33,5 +36,4 @@ export type MaybeAccessor<T> = T | Accessor<T>
  * // => string | void
  * ```
  */
-export type MaybeAccessorValue<T extends MaybeAccessor<any>> =
-  T extends () => any ? ReturnType<T> : T
+export type MaybeAccessorValue<T extends MaybeAccessor<any>> = T extends () => any ? ReturnType<T> : T

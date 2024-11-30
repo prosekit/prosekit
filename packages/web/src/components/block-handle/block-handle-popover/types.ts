@@ -1,13 +1,15 @@
-import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import type {
+  EventDeclarations,
+  PropDeclarations,
+} from '@aria-ui/core'
 import {
-  type OverlayPositionerProps,
   overlayPositionerProps,
+  type OverlayPositionerProps,
 } from '@aria-ui/overlay/elements'
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-export interface BlockHandlePopoverProps
-  extends Omit<OverlayPositionerProps, 'placement'> {
+export interface BlockHandlePopoverProps extends Omit<OverlayPositionerProps, 'placement'> {
   /**
    * The ProseKit editor instance.
    *
@@ -25,16 +27,14 @@ export interface BlockHandlePopoverProps
 }
 
 /** @internal */
-export const blockHandlePopoverProps: PropDeclarations<BlockHandlePopoverProps> =
-  {
-    ...overlayPositionerProps,
-    editor: { default: null },
-    placement: { default: 'left-start' },
-  }
+export const blockHandlePopoverProps: PropDeclarations<BlockHandlePopoverProps> = {
+  ...overlayPositionerProps,
+  editor: { default: null },
+  placement: { default: 'left-start' },
+}
 
 /** @internal */
 export interface BlockHandlePopoverEvents {}
 
 /** @internal */
-export const blockHandlePopoverEvents: EventDeclarations<BlockHandlePopoverEvents> =
-  {}
+export const blockHandlePopoverEvents: EventDeclarations<BlockHandlePopoverEvents> = {}

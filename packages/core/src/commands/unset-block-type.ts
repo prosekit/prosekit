@@ -1,5 +1,11 @@
-import { Fragment, Slice } from '@prosekit/pm/model'
-import type { Transaction, Command } from '@prosekit/pm/state'
+import {
+  Fragment,
+  Slice,
+} from '@prosekit/pm/model'
+import type {
+  Command,
+  Transaction,
+} from '@prosekit/pm/state'
 import { ReplaceAroundStep } from '@prosekit/pm/transform'
 
 import type { CommandCreator } from '../types/extension-command'
@@ -51,10 +57,10 @@ function unsetTextBlockType(
 
     const defaultType = parent.contentMatchAt(index).defaultType
     if (
-      defaultType &&
-      defaultType.isTextblock &&
-      node.type !== defaultType &&
-      defaultType.validContent(node.content)
+      defaultType
+      && defaultType.isTextblock
+      && node.type !== defaultType
+      && defaultType.validContent(node.content)
     ) {
       const mapping = tr.mapping.slice(mapFrom)
       const start = mapping.map(pos, 1)

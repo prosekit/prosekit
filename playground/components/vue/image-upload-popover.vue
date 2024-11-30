@@ -6,7 +6,10 @@ import {
   PopoverRoot,
   PopoverTrigger,
 } from 'prosekit/vue/popover'
-import { computed, ref } from 'vue'
+import {
+  computed,
+  ref,
+} from 'vue'
 
 import Button from './button.vue'
 import type { EditorExtension } from './extension'

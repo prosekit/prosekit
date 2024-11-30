@@ -1,4 +1,8 @@
-import { ref, watchEffect, type Ref } from 'vue'
+import {
+  ref,
+  watchEffect,
+  type Ref,
+} from 'vue'
 
 import { users as allUsers } from './user-data'
 

@@ -2,7 +2,10 @@ import type { Extension } from '@prosekit/core'
 import type { SpecialLanguage } from 'shiki'
 
 import { defineCodeBlockHighlight } from './code-block-highlight'
-import type { ShikiBundledLanguage, ShikiBundledTheme } from './shiki-bundle'
+import type {
+  ShikiBundledLanguage,
+  ShikiBundledTheme,
+} from './shiki-bundle'
 import type { ShikiHighlighterOptions } from './shiki-highlighter-chunk'
 import { createLazyParser } from './shiki-parser'
 
@@ -11,8 +14,7 @@ import { createLazyParser } from './shiki-parser'
  *
  * @public
  */
-export interface CodeBlockShikiOptions
-  extends Omit<ShikiHighlighterOptions, 'themes' | 'langs' | 'engine'> {
+export interface CodeBlockShikiOptions extends Omit<ShikiHighlighterOptions, 'themes' | 'langs' | 'engine'> {
   /**
    * A list of Shiki themes to pre-load. The first theme in the list will be
    * used to render the code block.

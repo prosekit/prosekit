@@ -22,9 +22,9 @@ function findGlobalBrowserWindow() {
 
 export function findBrowserDocument(options?: { document?: Document }) {
   return (
-    options?.document ??
-    findGlobalBrowserDocument() ??
-    findGlobalBrowserWindow()?.document
+    options?.document
+      ?? findGlobalBrowserDocument()
+      ?? findGlobalBrowserWindow()?.document
   )
 }
 
@@ -32,10 +32,10 @@ export function findBrowserWindow(options?: {
   document?: Document
 }): (Window & typeof globalThis) | undefined {
   return (
-    options?.document?.defaultView ??
-    findGlobalBrowserWindow() ??
-    findBrowserDocument(options)?.defaultView ??
-    undefined
+    options?.document?.defaultView
+      ?? findGlobalBrowserWindow()
+      ?? findBrowserDocument(options)?.defaultView
+      ?? undefined
   )
 }
 

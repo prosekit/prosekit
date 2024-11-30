@@ -4,7 +4,10 @@ import {
   type BaseNodeViewOptions,
   type Extension,
 } from '@prosekit/core'
-import type { Attrs, ProseMirrorNode } from '@prosekit/pm/model'
+import type {
+  Attrs,
+  ProseMirrorNode,
+} from '@prosekit/pm/model'
 import type {
   Decoration,
   DecorationSource,
@@ -16,7 +19,12 @@ import {
   useNodeViewFactory,
   type ReactNodeViewUserOptions,
 } from '@prosemirror-adapter/react'
-import { createElement, useMemo, type ComponentType, type FC } from 'react'
+import {
+  createElement,
+  useMemo,
+  type ComponentType,
+  type FC,
+} from 'react'
 
 import { useExtension } from '../hooks/use-extension'
 

@@ -4,11 +4,14 @@ import {
   type BaseNodeViewOptions,
   type Extension,
 } from '@prosekit/core'
-import type { Attrs, ProseMirrorNode } from '@prosekit/pm/model'
 import type {
-  EditorView,
+  Attrs,
+  ProseMirrorNode,
+} from '@prosekit/pm/model'
+import type {
   Decoration,
   DecorationSource,
+  EditorView,
   NodeViewConstructor,
 } from '@prosekit/pm/view'
 import {

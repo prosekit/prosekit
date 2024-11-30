@@ -1,5 +1,8 @@
 import type { VirtualElement } from '@floating-ui/dom'
-import { defineDOMEventHandler, union } from '@prosekit/core'
+import {
+  defineDOMEventHandler,
+  union,
+} from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { throttle } from '../../../utils/throttle'

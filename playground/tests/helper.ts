@@ -1,4 +1,8 @@
-import { type Page, expect, test } from '@playwright/test'
+import {
+  expect,
+  test,
+  type Page,
+} from '@playwright/test'
 import prettier from 'prettier'
 
 import { exampleMeta } from '../example.meta'

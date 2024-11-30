@@ -4,13 +4,7 @@ import { assertTypeEqual } from './assert-type-equal'
 import type { SimplifyUnion } from './simplify-union'
 
 test('SimplifyUnion', () => {
-  type T1 =
-    | {
-        a: string
-      }
-    | {
-        b: string
-      }
+  type T1 = { a: string } | { b: string }
 
   interface T2 {
     a: string

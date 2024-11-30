@@ -1,4 +1,8 @@
-import type { Attrs, MarkType, ProseMirrorNode } from '@prosekit/pm/model'
+import type {
+  Attrs,
+  MarkType,
+  ProseMirrorNode,
+} from '@prosekit/pm/model'
 
 import { includesMark } from './includes-mark'
 
@@ -24,9 +28,8 @@ export function isMarkAbsent(
       return false
     }
 
-    const allowed =
-      parent?.type.allowsMarkType(markType) &&
-      !node.marks.some((m) => m.type !== markType && m.type.excludes(markType))
+    const allowed = parent?.type.allowsMarkType(markType)
+      && !node.marks.some((m) => m.type !== markType && m.type.excludes(markType))
 
     if (allowed) {
       available = true

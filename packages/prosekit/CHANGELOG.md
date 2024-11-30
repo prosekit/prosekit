@@ -845,7 +845,7 @@
 
 - [`d7f74c6`](https://github.com/ocavue/prosekit/commit/d7f74c646e9a64505758b0474811c2a79cb99684) ![](https://prosekit.dev/b/extensions)
 
-  Add blockquote input rule. Now you can type `> ` to create a blockquote.
+  Add blockquote input rule. Now you can type `>` to create a blockquote.
 
 - [`5582e98`](https://github.com/ocavue/prosekit/commit/5582e98f7f7d76e6c14d3da9e3dd7ca844d139d9) ![](https://prosekit.dev/b/extensions)
 

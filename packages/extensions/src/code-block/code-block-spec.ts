@@ -1,4 +1,7 @@
-import { defineNodeSpec, type Extension } from '@prosekit/core'
+import {
+  defineNodeSpec,
+  type Extension,
+} from '@prosekit/core'
 
 import type { CodeBlockAttrs } from './code-block-types'
 

@@ -1,9 +1,13 @@
-import { expect, test, type Page } from '@playwright/test'
+import {
+  expect,
+  test,
+  type Page,
+} from '@playwright/test'
 
 import {
-  MOD_KEY,
   emptyEditor,
   getEditorHTML,
+  MOD_KEY,
   testStory,
   waitForEditor,
 } from './helper'

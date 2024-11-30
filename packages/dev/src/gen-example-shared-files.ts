@@ -1,9 +1,15 @@
 import path from 'node:path'
 
-import { sortBy, uniq } from 'lodash-es'
+import {
+  sortBy,
+  uniq,
+} from 'lodash-es'
 
 import { readExampleMeta } from './example-meta.js'
-import { vfs, type VirtualFile } from './virtual-file-system.js'
+import {
+  vfs,
+  type VirtualFile,
+} from './virtual-file-system.js'
 
 /**
  * A list of shared files that are used by multiple examples.

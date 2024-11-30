@@ -1,5 +1,9 @@
 import type { ProseMirrorNode } from '@prosekit/pm/model'
-import { Selection, type Command, type Transaction } from '@prosekit/pm/state'
+import {
+  Selection,
+  type Command,
+  type Transaction,
+} from '@prosekit/pm/state'
 import { insertPoint } from '@prosekit/pm/transform'
 import type { EditorView } from '@prosekit/pm/view'
 

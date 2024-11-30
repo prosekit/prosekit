@@ -1,6 +1,6 @@
 import type {
-  TooltipTriggerProps as Props,
   TooltipTriggerEvents as Events,
+  TooltipTriggerProps as Props,
 } from '@aria-ui/tooltip/elements'
 
 export {

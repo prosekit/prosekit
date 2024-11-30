@@ -3,8 +3,15 @@ import { Themes } from '@prosekit/themes'
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { VueNodeViewProps } from 'prosekit/vue'
-import { ResizableHandle, ResizableRoot } from 'prosekit/vue/resizable'
-import { computed, ref, watchEffect } from 'vue'
+import {
+  ResizableHandle,
+  ResizableRoot,
+} from 'prosekit/vue/resizable'
+import {
+  computed,
+  ref,
+  watchEffect,
+} from 'vue'
 
 const props = defineProps<VueNodeViewProps>()
 
@@ -72,9 +79,9 @@ function handleImageLoad(event: Event) {
     aspectRatio.value = ratio
   }
   if (
-    naturalWidth &&
-    naturalHeight &&
-    (!attrs.value.width || !attrs.value.height)
+    naturalWidth
+    && naturalHeight
+    && (!attrs.value.width || !attrs.value.height)
   ) {
     setAttrs({ width: naturalWidth, height: naturalHeight })
   }

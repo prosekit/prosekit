@@ -5,7 +5,10 @@ import {
   type ShikiBundledTheme,
 } from 'prosekit/extensions/code-block'
 import { useExtension } from 'prosekit/react'
-import { useMemo, useState } from 'react'
+import {
+  useMemo,
+  useState,
+} from 'react'
 
 export function ThemeSelector() {
   const [theme, setTheme] = useState('github-dark')

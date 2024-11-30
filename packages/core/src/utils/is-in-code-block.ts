@@ -12,7 +12,7 @@ function isCodeBlockType(type: NodeType): boolean {
  */
 export function isInCodeBlock(selection: Selection): boolean {
   return (
-    isCodeBlockType(selection.$from.parent.type) ||
-    isCodeBlockType(selection.$to.parent.type)
+    isCodeBlockType(selection.$from.parent.type)
+    || isCodeBlockType(selection.$to.parent.type)
   )
 }

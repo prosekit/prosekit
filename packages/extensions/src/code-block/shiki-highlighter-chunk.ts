@@ -14,11 +14,9 @@ let highlighter: Highlighter | undefined
 const loadedLangs = new Set<BundledLanguage | SpecialLanguage>()
 const loadedThemes = new Set<BundledTheme>()
 
-export interface ShikiHighlighterOptions
-  extends BundledHighlighterOptions<BundledLanguage, BundledTheme> {}
+export interface ShikiHighlighterOptions extends BundledHighlighterOptions<BundledLanguage, BundledTheme> {}
 
-export interface HighlighterOptions
-  extends Omit<ShikiHighlighterOptions, 'langs' | 'themes'> {
+export interface HighlighterOptions extends Omit<ShikiHighlighterOptions, 'langs' | 'themes'> {
   themes: BundledTheme[]
   langs: (BundledLanguage | SpecialLanguage)[]
 }
@@ -55,13 +53,13 @@ async function loadThemes(themes: BundledTheme[]) {
 
 export type HighlighterResult =
   | {
-      highlighter: Highlighter
-      promise?: undefined
-    }
+    highlighter: Highlighter
+    promise?: undefined
+  }
   | {
-      highlighter?: undefined
-      promise: Promise<void>
-    }
+    highlighter?: undefined
+    promise: Promise<void>
+  }
 
 export function createOrGetHighlighter(
   options: HighlighterOptions,

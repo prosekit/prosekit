@@ -1,5 +1,11 @@
-import { findParentNode, type FindParentNodeResult } from '@prosekit/core'
-import type { ProseMirrorNode, ResolvedPos } from '@prosekit/pm/model'
+import {
+  findParentNode,
+  type FindParentNodeResult,
+} from '@prosekit/core'
+import type {
+  ProseMirrorNode,
+  ResolvedPos,
+} from '@prosekit/pm/model'
 import type { Selection } from '@prosekit/pm/state'
 import {
   cellAround,

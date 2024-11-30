@@ -1,6 +1,9 @@
 import { groupBy } from 'lodash-es'
 
-import { readExampleMeta, type Example } from './example-meta'
+import {
+  readExampleMeta,
+  type Example,
+} from './example-meta'
 import { vfs } from './virtual-file-system'
 
 export async function genExamplePreviews() {

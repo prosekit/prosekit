@@ -1,16 +1,19 @@
 import {
-  OBJECT_REPLACEMENT_CHARACTER,
   defineFacet,
   defineFacetPayload,
   getNodeType,
   isTextSelection,
   maybeRun,
+  OBJECT_REPLACEMENT_CHARACTER,
   pluginFacet,
   type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
 import { keydownHandler } from '@prosekit/pm/keymap'
-import type { Attrs, NodeType } from '@prosekit/pm/model'
+import type {
+  Attrs,
+  NodeType,
+} from '@prosekit/pm/model'
 import {
   PluginKey,
   ProseMirrorPlugin,
@@ -211,9 +214,8 @@ function execRules(
   for (const rule of rules) {
     rule.regex.lastIndex = 0
     const match = rule.regex.exec(textBefore)
-    const tr =
-      match &&
-      rule.handler({
+    const tr = match
+      && rule.handler({
         state,
         from: $cursor.pos - match[0].length,
         to: $cursor.pos,

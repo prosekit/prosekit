@@ -1,7 +1,13 @@
 import type { DirectEditorProps } from '@prosekit/pm/view'
 
-import { defineFacet, type Facet } from './facet'
-import { rootFacet, type RootPayload } from './root'
+import {
+  defineFacet,
+  type Facet,
+} from './facet'
+import {
+  rootFacet,
+  type RootPayload,
+} from './root'
 
 export type ViewPayload = Omit<DirectEditorProps, 'state'>
 

@@ -1,6 +1,12 @@
 import { LoroDoc } from 'loro-crdt'
-import { CursorAwareness, type LoroDocType } from 'loro-prosemirror'
-import { useRef, useEffect } from 'react'
+import {
+  CursorAwareness,
+  type LoroDocType,
+} from 'loro-prosemirror'
+import {
+  useEffect,
+  useRef,
+} from 'react'
 
 import EditorComponent from './editor-component'
 

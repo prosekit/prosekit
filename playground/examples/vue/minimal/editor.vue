@@ -2,9 +2,19 @@
 import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
-import { createEditor, jsonFromNode, type NodeJSON } from 'prosekit/core'
-import { ProseKit, useDocChange } from 'prosekit/vue'
-import { ref, watchPostEffect } from 'vue'
+import {
+  createEditor,
+  jsonFromNode,
+  type NodeJSON,
+} from 'prosekit/core'
+import {
+  ProseKit,
+  useDocChange,
+} from 'prosekit/vue'
+import {
+  ref,
+  watchPostEffect,
+} from 'vue'
 
 import { defineExtension } from './extension'
 

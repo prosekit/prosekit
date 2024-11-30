@@ -1,12 +1,18 @@
-import { type Union, union } from '@prosekit/core'
+import {
+  union,
+  type Union,
+} from '@prosekit/core'
 
 import {
-  type ItalicCommandsExtension,
   defineItalicCommands,
+  type ItalicCommandsExtension,
 } from './italic-commands'
 import { defineItalicInputRule } from './italic-input-rule'
 import { defineItalicKeymap } from './italic-keymap'
-import { type ItalicSpecExtension, defineItalicSpec } from './italic-spec'
+import {
+  defineItalicSpec,
+  type ItalicSpecExtension,
+} from './italic-spec'
 
 /**
  * @internal

@@ -3,8 +3,11 @@ import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
 
-import { useDocChange, ProseKit } from 'prosekit/svelte'
 import type { Editor } from 'prosekit/core'
+import {
+  ProseKit,
+  useDocChange,
+} from 'prosekit/svelte'
 
 export let editor: Editor
 export let onDocChange: () => void

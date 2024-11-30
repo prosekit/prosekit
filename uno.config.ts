@@ -1,4 +1,7 @@
-import { defineConfig, type UserConfig } from 'unocss'
+import {
+  defineConfig,
+  type UserConfig,
+} from 'unocss'
 
 import { preset } from '@prosekit/unocss-preset'
 

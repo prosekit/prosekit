@@ -1,1 +1,4 @@
-export { createTestEditor, type TestEditor } from './test-editor'
+export {
+  createTestEditor,
+  type TestEditor,
+} from './test-editor'

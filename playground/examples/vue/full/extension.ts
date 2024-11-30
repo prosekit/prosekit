@@ -7,7 +7,10 @@ import {
 import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
 import { defineMention } from 'prosekit/extensions/mention'
 import { definePlaceholder } from 'prosekit/extensions/placeholder'
-import { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'
+import {
+  defineVueNodeView,
+  type VueNodeViewComponent,
+} from 'prosekit/vue'
 
 import CodeBlockView from './code-block-view.vue'
 import ImageView from './image-view.vue'

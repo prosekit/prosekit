@@ -15,8 +15,7 @@ import { mergeRefs } from 'react-merge-refs'
 
 import { useEditorContext } from '../contexts/editor-context'
 
-const useIsomorphicLayoutEffect =
-  typeof window !== 'undefined' ? useLayoutEffect : useEffect
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
 export function createComponent<
   Props extends object,
@@ -60,8 +59,8 @@ export function createComponent<
           const extractDetail = eventName.endsWith('Change')
           const normalizedHandler = extractDetail
             ? (event: Event) => {
-                handler((event as CustomEvent).detail)
-              }
+              handler((event as CustomEvent).detail)
+            }
             : handler
           eventHandlers[eventName] = normalizedHandler
         }

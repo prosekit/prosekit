@@ -1,5 +1,5 @@
 export {
-  type DropCursorOptions,
-  type DropCursorExtension,
   defineDropCursor,
+  type DropCursorExtension,
+  type DropCursorOptions,
 } from './drop-cursor'

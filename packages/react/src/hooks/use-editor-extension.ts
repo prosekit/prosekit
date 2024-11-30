@@ -1,7 +1,7 @@
 import {
+  EditorNotFoundError,
   type Editor,
   type Extension,
-  EditorNotFoundError,
 } from '@prosekit/core'
 import { useEffect } from 'react'
 

@@ -1,13 +1,16 @@
 import {
+  useEffect,
   type ConnectableElement,
   type SetupOptions,
-  useEffect,
 } from '@aria-ui/core'
 import { useListboxItem } from '@aria-ui/listbox/elements'
 
 import { openContext } from '../context'
 
-import type { AutocompleteItemEvents, AutocompleteItemProps } from './types'
+import type {
+  AutocompleteItemEvents,
+  AutocompleteItemProps,
+} from './types'
 
 export function useAutocompleteItem(
   element: ConnectableElement,

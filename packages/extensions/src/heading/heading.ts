@@ -1,4 +1,7 @@
-import { union, type Union } from '@prosekit/core'
+import {
+  union,
+  type Union,
+} from '@prosekit/core'
 
 import {
   defineHeadingCommands,
@@ -6,7 +9,10 @@ import {
 } from './heading-commands'
 import { defineHeadingInputRule } from './heading-input-rule'
 import { defineHeadingKeymap } from './heading-keymap'
-import { defineHeadingSpec, type HeadingSpecExtension } from './heading-spec'
+import {
+  defineHeadingSpec,
+  type HeadingSpecExtension,
+} from './heading-spec'
 
 /**
  * @internal

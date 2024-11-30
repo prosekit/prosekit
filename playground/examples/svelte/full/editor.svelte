@@ -1,6 +1,7 @@
 <script lang="ts">
 import 'prosekit/basic/style.css'
 
+import { Themes } from '@prosekit/themes'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import BlockHandle from './block-handle.svelte'
@@ -10,7 +11,6 @@ import SlashMenu from './slash-menu.svelte'
 import TagMenu from './tag-menu.svelte'
 import Toolbar from './toolbar.svelte'
 import UserMenu from './user-menu.svelte'
-import { Themes } from '@prosekit/themes'
 
 const editor = createEditor({ extension: defineExtension() })
 

@@ -1,4 +1,7 @@
-import { defineMarkSpec, type Extension } from '@prosekit/core'
+import {
+  defineMarkSpec,
+  type Extension,
+} from '@prosekit/core'
 import type { Attrs } from '@prosekit/pm/model'
 
 /**
@@ -25,9 +28,9 @@ export function defineBoldSpec(): BoldSpecExtension {
         tag: 'b',
         getAttrs: (node: string | HTMLElement): null | false => {
           return (
-            typeof node !== 'string' &&
-            node.style.fontWeight !== 'normal' &&
-            null
+            typeof node !== 'string'
+            && node.style.fontWeight !== 'normal'
+            && null
           )
         },
       },
@@ -36,9 +39,9 @@ export function defineBoldSpec(): BoldSpecExtension {
         style: 'font-weight',
         getAttrs: (value: string | HTMLElement): null | false => {
           return (
-            typeof value === 'string' &&
-            /^(bold(er)?|[5-9]\d{2,})$/.test(value) &&
-            null
+            typeof value === 'string'
+            && /^(bold(er)?|[5-9]\d{2,})$/.test(value)
+            && null
           )
         },
       },

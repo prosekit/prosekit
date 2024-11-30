@@ -1,8 +1,17 @@
-import { definePlugin, type PlainExtension } from '@prosekit/core'
-import type { EditorState, Selection } from '@prosekit/pm/state'
+import {
+  definePlugin,
+  type PlainExtension,
+} from '@prosekit/core'
+import type {
+  EditorState,
+  Selection,
+} from '@prosekit/pm/state'
 import type { DecorationAttrs } from '@prosekit/pm/view'
 import type { PeerID } from 'loro-crdt'
-import { type CursorAwareness, LoroCursorPlugin } from 'loro-prosemirror'
+import {
+  LoroCursorPlugin,
+  type CursorAwareness,
+} from 'loro-prosemirror'
 
 export interface LoroCursorOptions {
   awareness: CursorAwareness

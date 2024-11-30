@@ -1,4 +1,7 @@
-export { defineTable, type TableExtension } from './table'
+export {
+  defineTable,
+  type TableExtension,
+} from './table'
 export {
   defineTableCommands,
   exitTable,
@@ -25,4 +28,7 @@ export {
   type TableRowSpecExtension,
   type TableSpecExtension,
 } from './table-spec'
-export { isCellSelection, findTable } from './table-utils'
+export {
+  findTable,
+  isCellSelection,
+} from './table-utils'

@@ -1,5 +1,11 @@
-import type { Editor, Extension } from '@prosekit/core'
-import { createContext, useContext } from 'solid-js'
+import type {
+  Editor,
+  Extension,
+} from '@prosekit/core'
+import {
+  createContext,
+  useContext,
+} from 'solid-js'
 
 const editorContext = createContext<Editor | null>(null)
 

@@ -1,14 +1,28 @@
-import type { DOMOutputSpec, Schema, TagParseRule } from '@prosekit/pm/model'
-import { describe, expect, it } from 'vitest'
+import type {
+  DOMOutputSpec,
+  Schema,
+  TagParseRule,
+} from '@prosekit/pm/model'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
 import { union } from '../editor/union'
 import { setupTestFromExtension } from '../testing'
-import { htmlFromNode, jsonFromNode } from '../utils/parse'
+import {
+  htmlFromNode,
+  jsonFromNode,
+} from '../utils/parse'
 
 import { defineDoc } from './doc'
 import { defineHistory } from './history'
 import { defineBaseKeymap } from './keymap-base'
-import { defineNodeAttr, defineNodeSpec } from './node-spec'
+import {
+  defineNodeAttr,
+  defineNodeSpec,
+} from './node-spec'
 import { defineParagraph } from './paragraph'
 import { defineText } from './text'
 

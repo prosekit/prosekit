@@ -74,8 +74,7 @@ for (const [alias, color, darkColor] of COLORS) {
   for (const group of GROUPS) {
     for (let opacity = 0; opacity <= 100; opacity += 5) {
       const suffix = opacity === 0 ? '' : `/${opacity}`
-      Colors[`${group}-${alias}${suffix}`] =
-        `${group}-${color}${suffix} dark:${group}-${darkColor}${suffix}`
+      Colors[`${group}-${alias}${suffix}`] = `${group}-${color}${suffix} dark:${group}-${darkColor}${suffix}`
     }
   }
 }

@@ -1,10 +1,10 @@
 import {
-  type ConnectableElement,
-  type ReadonlySignal,
-  type SignalState,
   createSignal,
   useAttribute,
   useEffect,
+  type ConnectableElement,
+  type ReadonlySignal,
+  type SignalState,
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
@@ -13,14 +13,14 @@ import type { Editor } from '@prosekit/core'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import {
+  blockPopoverContext,
   type BlockPopoverContext,
   type HoverState,
-  blockPopoverContext,
 } from '../context'
 
 import {
-  type ElementHoverHandler,
   defineElementHoverHandler,
+  type ElementHoverHandler,
 } from './pointer-move'
 import type { BlockHandlePopoverProps } from './types'
 

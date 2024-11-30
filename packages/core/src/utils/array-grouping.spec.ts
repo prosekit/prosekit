@@ -1,6 +1,12 @@
-import { expect, test } from 'vitest'
+import {
+  expect,
+  test,
+} from 'vitest'
 
-import { groupBy, groupEntries } from './array-grouping'
+import {
+  groupBy,
+  groupEntries,
+} from './array-grouping'
 
 test('groupEntries', () => {
   expect(

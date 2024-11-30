@@ -1,11 +1,14 @@
 import {
-  type Keymap,
-  type PlainExtension,
   defineKeymap,
   isApple,
+  type Keymap,
+  type PlainExtension,
 } from '@prosekit/core'
 
-import { redo, undo } from './yjs-undo-plugin'
+import {
+  redo,
+  undo,
+} from './yjs-undo-plugin'
 
 const keymap: Keymap = {
   'Mod-z': undo,

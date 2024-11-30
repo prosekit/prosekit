@@ -1,11 +1,19 @@
 import type { Command } from '@prosekit/pm/state'
-import { describe, expect, it, vi } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest'
 
 import { createEditor } from '../editor/editor'
 import { union } from '../editor/union'
 
 import { defineDoc } from './doc'
-import { defineKeymap, type Keymap } from './keymap'
+import {
+  defineKeymap,
+  type Keymap,
+} from './keymap'
 import { defineParagraph } from './paragraph'
 import { defineText } from './text'
 

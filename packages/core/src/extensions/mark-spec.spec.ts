@@ -1,12 +1,25 @@
-import type { DOMOutputSpec, TagParseRule } from '@prosekit/pm/model'
-import { describe, expect, it } from 'vitest'
+import type {
+  DOMOutputSpec,
+  TagParseRule,
+} from '@prosekit/pm/model'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
 import { union } from '../editor/union'
 import { setupTestFromExtension } from '../testing'
-import { htmlFromNode, jsonFromNode } from '../utils/parse'
+import {
+  htmlFromNode,
+  jsonFromNode,
+} from '../utils/parse'
 
 import { defineDoc } from './doc'
-import { defineMarkAttr, defineMarkSpec } from './mark-spec'
+import {
+  defineMarkAttr,
+  defineMarkSpec,
+} from './mark-spec'
 import { defineParagraph } from './paragraph'
 import { defineText } from './text'
 

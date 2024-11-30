@@ -1,6 +1,13 @@
-import { describe, expect, it } from 'vitest'
+import {
+  describe,
+  expect,
+  it,
+} from 'vitest'
 
-import { inputText, setupTest } from '../testing'
+import {
+  inputText,
+  setupTest,
+} from '../testing'
 
 describe('defineHorizontalRuleInputRule', () => {
   const { editor, n } = setupTest()

@@ -1,5 +1,8 @@
 import { defineKeymap } from '@prosekit/core'
-import { chainCommands, deleteSelection } from '@prosekit/pm/commands'
+import {
+  chainCommands,
+  deleteSelection,
+} from '@prosekit/pm/commands'
 import {
   createDedentListCommand,
   createIndentListCommand,
@@ -23,12 +26,12 @@ const dedentListCommand = createDedentListCommand()
 const indentListCommand = createIndentListCommand()
 
 const listKeymap = {
-  Enter: enterCommand,
-  Backspace: backspaceCommand,
-  Delete: deleteCommand,
+  'Enter': enterCommand,
+  'Backspace': backspaceCommand,
+  'Delete': deleteCommand,
   'Mod-]': indentListCommand,
   'Mod-[': dedentListCommand,
-  Tab: indentListCommand,
+  'Tab': indentListCommand,
   'Shift-Tab': dedentListCommand,
 }
 

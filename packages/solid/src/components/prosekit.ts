@@ -1,6 +1,10 @@
 import type { Editor } from '@prosekit/core'
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/solid'
-import { createComponent, type Component, type ParentProps } from 'solid-js'
+import {
+  createComponent,
+  type Component,
+  type ParentProps,
+} from 'solid-js'
 
 import { EditorContextProvider } from '../contexts/editor-context'
 import { consumeSolidViews } from '../extensions/solid-node-view'

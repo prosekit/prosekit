@@ -1,4 +1,8 @@
-export { defineYjs, type YjsExtension, type YjsOptions } from './yjs'
+export {
+  defineYjs,
+  type YjsExtension,
+  type YjsOptions,
+} from './yjs'
 export { defineYjsCommands } from './yjs-commands'
 export {
   defineYjsCursorPlugin,

@@ -1,11 +1,18 @@
-import type { MarkSpec, ParseRule, SchemaSpec } from '@prosekit/pm/model'
+import type {
+  MarkSpec,
+  ParseRule,
+  SchemaSpec,
+} from '@prosekit/pm/model'
 import clone from 'just-clone'
 import OrderedMap from 'orderedmap'
 
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import { schemaSpecFacet } from '../facets/schema-spec'
-import type { AnyAttrs, AttrSpec } from '../types/attrs'
+import type {
+  AnyAttrs,
+  AttrSpec,
+} from '../types/attrs'
 import type { Extension } from '../types/extension'
 import { groupBy } from '../utils/array-grouping'
 import { assert } from '../utils/assert'
@@ -151,9 +158,7 @@ const markSpecFacet = defineFacet<MarkSpecPayload, SchemaSpec>({
       }
 
       if (spec.parseDOM) {
-        spec.parseDOM = spec.parseDOM.map((rule) =>
-          wrapParseRuleAttrs(rule, attrs),
-        )
+        spec.parseDOM = spec.parseDOM.map((rule) => wrapParseRuleAttrs(rule, attrs))
       }
 
       specs = specs.update(type, spec)

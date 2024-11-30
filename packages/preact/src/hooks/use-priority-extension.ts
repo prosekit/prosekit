@@ -1,4 +1,8 @@
-import { withPriority, type Extension, type Priority } from '@prosekit/core'
+import {
+  withPriority,
+  type Extension,
+  type Priority,
+} from '@prosekit/core'
 import { useMemo } from 'preact/hooks'
 
 /**

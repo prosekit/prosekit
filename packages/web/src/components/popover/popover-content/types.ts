@@ -1,6 +1,6 @@
 import type {
-  PopoverContentProps as Props,
   PopoverContentEvents as Events,
+  PopoverContentProps as Props,
 } from '@aria-ui/popover/elements'
 
 export {

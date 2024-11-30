@@ -16,11 +16,11 @@ import {
   wrappingInputRule,
 } from '@prosekit/pm/inputrules'
 import type {
+  Attrs,
   MarkType,
   NodeType,
   ProseMirrorNode,
   Schema,
-  Attrs,
 } from '@prosekit/pm/model'
 import { type Plugin } from '@prosekit/pm/state'
 

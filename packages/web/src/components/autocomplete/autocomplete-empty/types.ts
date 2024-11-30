@@ -1,15 +1,16 @@
-import type { EventDeclarations, PropDeclarations } from '@aria-ui/core'
+import type {
+  EventDeclarations,
+  PropDeclarations,
+} from '@aria-ui/core'
 
 /** @internal */
 export interface AutocompleteEmptyProps {}
 
 /** @internal */
-export const autocompleteEmptyProps: PropDeclarations<AutocompleteEmptyProps> =
-  {}
+export const autocompleteEmptyProps: PropDeclarations<AutocompleteEmptyProps> = {}
 
 /** @internal */
 export interface AutocompleteEmptyEvents {}
 
 /** @internal */
-export const autocompleteEmptyEvents: EventDeclarations<AutocompleteEmptyEvents> =
-  {}
+export const autocompleteEmptyEvents: EventDeclarations<AutocompleteEmptyEvents> = {}

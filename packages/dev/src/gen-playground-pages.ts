@@ -3,7 +3,10 @@ import { fileURLToPath } from 'node:url'
 
 import { pascalCase } from 'change-case'
 
-import { readExampleMeta, type Example } from './example-meta'
+import {
+  readExampleMeta,
+  type Example,
+} from './example-meta'
 import { vfs } from './virtual-file-system'
 
 export async function genPlaygroundPages() {

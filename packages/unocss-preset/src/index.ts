@@ -2,7 +2,10 @@ import path from 'node:path'
 import process from 'node:process'
 
 import { findRootSync } from '@manypkg/find-root'
-import { Colors, Themes } from '@prosekit/themes'
+import {
+  Colors,
+  Themes,
+} from '@prosekit/themes'
 import {
   definePreset,
   presetIcons,

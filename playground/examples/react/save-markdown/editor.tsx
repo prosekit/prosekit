@@ -9,10 +9,17 @@ import {
   type NodeJSON,
 } from 'prosekit/core'
 import { ListDOMSerializer } from 'prosekit/extensions/list'
-import { useCallback, useMemo, useState } from 'react'
+import {
+  useCallback,
+  useMemo,
+  useState,
+} from 'react'
 
 import EditorComponent from './editor-component'
-import { htmlFromMarkdown, markdownFromHTML } from './markdown'
+import {
+  htmlFromMarkdown,
+  markdownFromHTML,
+} from './markdown'
 
 export default function Editor() {
   const [defaultContent, setDefaultContent] = useState<NodeJSON | undefined>()

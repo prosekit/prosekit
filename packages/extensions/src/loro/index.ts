@@ -1,10 +1,17 @@
-export type { LoroSyncPluginProps, LoroUndoPluginProps } from 'loro-prosemirror'
+export type {
+  LoroSyncPluginProps,
+  LoroUndoPluginProps,
+} from 'loro-prosemirror'
+export {
+  defineLoro,
+  type LoroExtension,
+  type LoroOptions,
+} from './loro'
 export { defineLoroCommands } from './loro-commands'
 export {
-  type LoroCursorOptions,
   defineLoroCursorPlugin,
+  type LoroCursorOptions,
 } from './loro-cursor-plugin'
 export { defineLoroKeymap } from './loro-keymap'
 export { defineLoroSyncPlugin } from './loro-sync-plugin'
 export { defineLoroUndoPlugin } from './loro-undo-plugin'
-export { defineLoro, type LoroExtension, type LoroOptions } from './loro'

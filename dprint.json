@@ -1,4 +1,5 @@
 {
+  "lineWidth": 80,
   "typescript": {
     "quoteStyle": "preferSingle",
     "semiColons": "asi"

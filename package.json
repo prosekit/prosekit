@@ -45,7 +45,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^9.16.0",
     "eslint-plugin-command": "^0.2.6",
-    "pkg-pr-new": "^0.0.30",
+    "pkg-pr-new": "^0.0.35",
     "playwright": "^1.48.2",
     "prettier": "^3.4.1",
     "prettier-plugin-astro": "^0.14.1",

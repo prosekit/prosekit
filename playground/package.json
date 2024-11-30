@@ -30,7 +30,7 @@
     "astro": "^4.16.16",
     "astrobook": "^0.5.1",
     "lit": "^3.2.1",
-    "loro-crdt": "^1.0.8",
+    "loro-crdt": "^1.1.4",
     "loro-prosemirror": "^0.2.0",
     "preact": "^10.24.3",
     "prettier": "^3.4.1",

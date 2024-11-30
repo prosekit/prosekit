@@ -1,14 +1,15 @@
 {
-  "lineWidth": 80,
+  "lineWidth": 200,
   "typescript": {
     "quoteStyle": "preferSingle",
+    "jsx.quoteStyle": "preferDouble",
     "semiColons": "asi",
     "quoteProps": "consistent",
     "singleBodyPosition": "sameLine",
     "constructorType.spaceAfterNewKeyword": true,
     "constructSignature.spaceAfterNewKeyword": true,
-    // "exportDeclaration.forceMultiLine": "whenMultiple",
-    // "importDeclaration.forceMultiLine": "whenMultiple",
+    "exportDeclaration.forceMultiLine": "whenMultiple",
+    "importDeclaration.forceMultiLine": "whenMultiple",
     "exportDeclaration.sortTypeOnlyExports": "last",
     "importDeclaration.sortTypeOnlyImports": "last",
   },

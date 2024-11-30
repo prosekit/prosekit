@@ -1,5 +1,19 @@
 # prosekit
 
+## 0.10.5
+
+### Patch Changes
+
+- [`e639355`](https://github.com/ocavue/prosekit/commit/e6393552c80c40a7aa35f0d9a738d1ff68d6e9fb) ![](https://prosekit.dev/b/pm)
+
+  Update `prosemirror-model` and `prosemirror-view`.
+
+- [`ed003b6`](https://github.com/ocavue/prosekit/commit/ed003b6c74dddeae99ff0fc6440a98337db65752) ![](https://prosekit.dev/b/extensions)
+
+  `definePlaceholder()` now accepts a strategy function that gives more control over when the placeholder should be shown.
+
+  Don't show the placeholder when the text cursor is in a table node by default.
+
 ## 0.10.4
 
 ### Patch Changes

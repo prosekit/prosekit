@@ -1,17 +1,21 @@
 {
-  "lineWidth": 80,
+  "lineWidth": 1200,
   "typescript": {
     "quoteStyle": "preferSingle",
-    "semiColons": "asi"
+    "semiColons": "asi",
+    "quoteProps": "consistent",
+    "singleBodyPosition": "sameLine",
+    "constructorType.spaceAfterNewKeyword": true,
+    "constructSignature.spaceAfterNewKeyword": true,
+    "exportDeclaration.forceMultiLine": "whenMultiple",
+    "importDeclaration.forceMultiLine": "whenMultiple",
+    "exportDeclaration.sortTypeOnlyExports": "last",
+    "importDeclaration.sortTypeOnlyImports": "last"
   },
-  "json": {
-  },
-  "markdown": {
-  },
-  "markup": {
-  },
-  "yaml": {
-  },
+  "json": {},
+  "markdown": {},
+  "markup": {},
+  "yaml": {},
   "excludes": [
     "**/node_modules",
     "**/*-lock.json",

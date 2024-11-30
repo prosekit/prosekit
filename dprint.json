@@ -1,5 +1,5 @@
 {
-  "lineWidth": 1200,
+  "lineWidth": 200,
   "typescript": {
     "quoteStyle": "preferSingle",
     "semiColons": "asi",
@@ -12,7 +12,9 @@
     "exportDeclaration.sortTypeOnlyExports": "last",
     "importDeclaration.sortTypeOnlyImports": "last"
   },
-  "json": {},
+  "json": {
+    "jsonTrailingCommaFiles": ["tsconfig.json", ".vscode/settings.json"]
+  },
   "markdown": {},
   "markup": {},
   "yaml": {},
@@ -23,7 +25,7 @@
     "**/*.gen.*"
   ],
   "plugins": [
-    "https://plugins.dprint.dev/typescript-0.93.2.wasm",
+    "https://plugins.dprint.dev/typescript-0.93.1.wasm",
     "https://plugins.dprint.dev/json-0.19.4.wasm",
     "https://plugins.dprint.dev/markdown-0.17.8.wasm",
     "https://plugins.dprint.dev/g-plane/markup_fmt-v0.17.0.wasm",

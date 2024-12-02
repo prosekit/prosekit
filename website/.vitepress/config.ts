@@ -11,7 +11,7 @@ export default defineConfig({
   title: 'ProseKit',
   description: 'Ultimate Rich Text Editor',
 
-  cleanUrls: !process.env.PROSEKIT_NO_CLEAN_URLS,
+  cleanUrls: true,
   outDir: 'dist',
 
   // dprint-ignore

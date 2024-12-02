@@ -1,10 +1,15 @@
 {
-  "extends": ["//"],
+  "extends": [
+    "//"
+  ],
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "env": ["PROSEKIT_NO_CLEAN_URLS"],
-      "outputs": ["dist/"],
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/"
+      ],
       "outputLogs": "new-only"
     }
   }

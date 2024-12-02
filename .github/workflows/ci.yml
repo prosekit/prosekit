@@ -115,13 +115,11 @@ jobs:
 
       - name: Build without clean URLs
         run: pnpm run build:website
-        env:
-          PROSEKIT_NO_CLEAN_URLS: "yes"
 
       - name: Check links
         uses: lycheeverse/lychee-action@v2.0.2
         with:
-          args: --base ./website/dist --no-progress './website/dist/**/*.html' --include-fragments
+          args: --base ./website/dist --no-progress './website/dist/**/*.html' --include-fragments --fallback-extensions html
           fail: true
 
   deploy:

@@ -42,14 +42,14 @@
     "just-map-values": "^3.2.0",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^0.1.1",
-    "type-fest": "^4.26.1"
+    "type-fest": "^4.29.1"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "@vitest/browser": "^2.1.6",
+    "@vitest/browser": "^2.1.7",
     "tsup": "^8.3.5",
     "typescript": "^5.6.3",
-    "vitest": "^2.1.6"
+    "vitest": "^2.1.7"
   },
   "publishConfig": {
     "exports": {

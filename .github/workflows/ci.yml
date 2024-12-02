@@ -113,7 +113,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - name: Build without clean URLs
+      - name: Build
         run: pnpm run build:website
 
       - name: Check links

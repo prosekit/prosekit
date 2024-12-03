@@ -60,7 +60,7 @@
     "preact": "^10.25.1",
     "tsup": "^8.3.5",
     "typescript": "^5.6.3",
-    "vitest": "^2.1.7"
+    "vitest": "^2.1.8"
   },
   "publishConfig": {
     "exports": {

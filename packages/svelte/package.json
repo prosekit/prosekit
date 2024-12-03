@@ -80,11 +80,11 @@
     "@sveltejs/package": "^2.3.7",
     "@types/node": "^20.17.9",
     "read-pkg": "^9.0.1",
-    "svelte": "^5.3.1",
+    "svelte": "^5.4.0",
     "svelte-check": "^4.1.0",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",
-    "vitest": "^2.1.7"
+    "vitest": "^2.1.8"
   },
   "publishConfig": {
     "exports": {

@@ -107,14 +107,14 @@
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "@vitest/browser": "^2.1.7",
+    "@vitest/browser": "^2.1.8",
     "just-pick": "^4.2.0",
     "loro-crdt": "^1.1.4",
     "loro-prosemirror": "^0.2.0",
     "tsup": "^8.3.5",
-    "type-fest": "^4.29.1",
+    "type-fest": "^4.30.0",
     "typescript": "^5.6.3",
-    "vitest": "^2.1.7",
+    "vitest": "^2.1.8",
     "y-prosemirror": "^1.2.13",
     "y-protocols": "^1.0.6",
     "yjs": "^13.6.20"

@@ -39,7 +39,7 @@ importers:
         version: 0.64.1(eslint@9.16.0(jiti@2.3.3))(typescript@5.6.3)
       '@vitest/browser':
         specifier: ^2.1.8
-        version: 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vitest@2.1.8)
+        version: 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.28.2))(vitest@2.1.8)
       '@vitest/coverage-v8':
         specifier: ^2.1.8
         version: 2.1.8(@vitest/browser@2.1.8)(vitest@2.1.8)
@@ -81,7 +81,7 @@ importers:
         version: 5.6.3
       unocss:
         specifier: ^0.64.0
-        version: 0.64.1(postcss@8.4.49)(rollup@4.24.2)(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.6.3))
+        version: 0.64.1(postcss@8.4.49)(rollup@4.24.2)(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.28.2))(vue@3.5.13(typescript@5.6.3))
       vitest:
         specifier: ^2.1.8
         version: 2.1.8(@types/node@20.17.9)(@vitest/browser@2.1.8)(lightningcss@1.28.2)(msw@2.6.6(@types/node@20.17.9)(typescript@5.6.3))
@@ -454,11 +454,11 @@ importers:
         specifier: ^10.25.1
         version: 10.25.1
       react:
-        specifier: ^18.3.1
-        version: 18.3.1
+        specifier: ^19.0.0
+        version: 19.0.0
       react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
+        specifier: ^19.0.0
+        version: 19.0.0(react@19.0.0)
       solid-js:
         specifier: ^1.9.3
         version: 1.9.3
@@ -506,7 +506,7 @@ importers:
         version: link:../web
       '@prosemirror-adapter/react':
         specifier: ^0.2.6
-        version: 0.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 0.2.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-merge-refs:
         specifier: ^2.1.1
         version: 2.1.1
@@ -521,11 +521,11 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1
       react:
-        specifier: ^18.3.1
-        version: 18.3.1
+        specifier: ^19.0.0
+        version: 19.0.0
       react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
+        specifier: ^19.0.0
+        version: 19.0.0(react@19.0.0)
       tsup:
         specifier: ^8.3.5
         version: 8.3.5(@microsoft/api-extractor@7.48.0(@types/node@20.17.9))(jiti@2.3.3)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1)
@@ -765,7 +765,7 @@ importers:
         version: 3.5.4(@babel/core@7.26.0)(@types/node@20.17.9)(lightningcss@1.28.2)(preact@10.25.1)
       '@astrojs/react':
         specifier: ^3.6.3
-        version: 3.6.3(@types/node@20.17.9)(@types/react-dom@18.3.1)(@types/react@18.3.12)(lightningcss@1.28.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        version: 3.6.3(@types/node@20.17.9)(@types/react-dom@18.3.1)(@types/react@18.3.12)(lightningcss@1.28.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@astrojs/solid-js':
         specifier: ^4.4.4
         version: 4.4.4(@types/node@20.17.9)(lightningcss@1.28.2)(solid-js@1.9.3)
@@ -824,11 +824,11 @@ importers:
         specifier: workspace:*
         version: link:../packages/prosekit
       react:
-        specifier: ^18.3.1
-        version: 18.3.1
+        specifier: ^19.0.0
+        version: 19.0.0
       react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
+        specifier: ^19.0.0
+        version: 19.0.0(react@19.0.0)
       rehype-parse:
         specifier: ^9.0.1
         version: 9.0.1
@@ -950,11 +950,11 @@ importers:
         specifier: ^1.9.10
         version: 1.9.10(vue@3.5.13(typescript@5.6.3))
       react:
-        specifier: ^18.3.1
-        version: 18.3.1
+        specifier: ^19.0.0
+        version: 19.0.0
       react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
+        specifier: ^19.0.0
+        version: 19.0.0(react@19.0.0)
       type-fest:
         specifier: ^4.30.0
         version: 4.30.0
@@ -969,7 +969,7 @@ importers:
         version: 5.4.11(@types/node@20.17.9)(lightningcss@1.28.2)
       vitepress:
         specifier: 1.5.0
-        version: 1.5.0(@algolia/client-search@4.24.0)(@types/node@20.17.9)(@types/react@18.3.12)(change-case@5.4.4)(lightningcss@1.28.2)(postcss@8.4.49)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.17.2)(typescript@5.6.3)
+        version: 1.5.0(@algolia/client-search@4.24.0)(@types/node@20.17.9)(@types/react@18.3.12)(change-case@5.4.4)(lightningcss@1.28.2)(postcss@8.4.49)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(search-insights@2.17.2)(typescript@5.6.3)
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.6.3)
@@ -5919,10 +5919,10 @@ packages:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
 
-  react-dom@18.3.1:
-    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+  react-dom@19.0.0:
+    resolution: {integrity: sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==}
     peerDependencies:
-      react: ^18.3.1
+      react: ^19.0.0
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -5937,8 +5937,8 @@ packages:
     resolution: {integrity: sha512-jCvmsr+1IUSMUyzOkRcvnVbX3ZYC6g9TDrDbFuFmRDq7PD4yaGbLKNQL6k2jnArV8hjYxh7hVhAZB6s9HDGpZA==}
     engines: {node: '>=0.10.0'}
 
-  react@18.3.1:
-    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
+  react@19.0.0:
+    resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
     engines: {node: '>=0.10.0'}
 
   read-package-up@11.0.0:
@@ -6141,8 +6141,8 @@ packages:
   sass-formatter@0.7.9:
     resolution: {integrity: sha512-CWZ8XiSim+fJVG0cFLStwDvft1VI7uvXdCNJYXhDvowiv+DsbD1nXLiQ4zrE5UBvj5DWZJ93cwN0NX5PMsr1Pw==}
 
-  scheduler@0.23.2:
-    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
+  scheduler@0.25.0:
+    resolution: {integrity: sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==}
 
   search-insights@2.17.2:
     resolution: {integrity: sha512-zFNpOpUO+tY2D85KrxJ+aqwnIfdEGi06UH2+xEb+Bp9Mwznmauqc9djbnBibJO5mpfUPPa8st6Sx65+vbeO45g==}
@@ -7570,13 +7570,13 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/react@3.6.3(@types/node@20.17.9)(@types/react-dom@18.3.1)(@types/react@18.3.12)(lightningcss@1.28.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@astrojs/react@3.6.3(@types/node@20.17.9)(@types/react-dom@18.3.1)(@types/react@18.3.12)(lightningcss@1.28.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@types/react': 18.3.12
       '@types/react-dom': 18.3.1
       '@vitejs/plugin-react': 4.3.3(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.28.2))
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
       ultrahtml: 1.5.3
       vite: 5.4.11(@types/node@20.17.9)(lightningcss@1.28.2)
     transitivePeerDependencies:
@@ -8052,9 +8052,9 @@ snapshots:
 
   '@docsearch/css@3.6.2': {}
 
-  '@docsearch/js@3.6.2(@algolia/client-search@4.24.0)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.17.2)':
+  '@docsearch/js@3.6.2(@algolia/client-search@4.24.0)(@types/react@18.3.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(search-insights@2.17.2)':
     dependencies:
-      '@docsearch/react': 3.6.2(@algolia/client-search@4.24.0)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.17.2)
+      '@docsearch/react': 3.6.2(@algolia/client-search@4.24.0)(@types/react@18.3.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(search-insights@2.17.2)
       preact: 10.25.1
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -8063,7 +8063,7 @@ snapshots:
       - react-dom
       - search-insights
 
-  '@docsearch/react@3.6.2(@algolia/client-search@4.24.0)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.17.2)':
+  '@docsearch/react@3.6.2(@algolia/client-search@4.24.0)(@types/react@18.3.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(search-insights@2.17.2)':
     dependencies:
       '@algolia/autocomplete-core': 1.9.3(@algolia/client-search@4.24.0)(algoliasearch@4.24.0)(search-insights@2.17.2)
       '@algolia/autocomplete-preset-algolia': 1.9.3(@algolia/client-search@4.24.0)(algoliasearch@4.24.0)
@@ -8071,8 +8071,8 @@ snapshots:
       algoliasearch: 4.24.0
     optionalDependencies:
       '@types/react': 18.3.12
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
       search-insights: 2.17.2
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -8891,12 +8891,12 @@ snapshots:
     dependencies:
       tslib: 2.8.0
 
-  '@prosemirror-adapter/react@0.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@prosemirror-adapter/react@0.2.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@prosemirror-adapter/core': 0.2.6
       nanoid: 4.0.2
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
       tslib: 2.8.0
 
   '@prosemirror-adapter/solid@0.2.6(solid-js@1.9.3)':
@@ -9638,27 +9638,6 @@ snapshots:
       - utf-8-validate
       - vite
 
-  '@vitest/browser@2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vitest@2.1.8)':
-    dependencies:
-      '@testing-library/dom': 10.4.0
-      '@testing-library/user-event': 14.5.2(@testing-library/dom@10.4.0)
-      '@vitest/mocker': 2.1.8(msw@2.6.6(@types/node@20.17.9)(typescript@5.6.3))(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))
-      '@vitest/utils': 2.1.8
-      magic-string: 0.30.14
-      msw: 2.6.6(@types/node@20.17.9)(typescript@5.6.3)
-      sirv: 3.0.0
-      tinyrainbow: 1.2.0
-      vitest: 2.1.8(@types/node@20.17.9)(@vitest/browser@2.1.8)(lightningcss@1.28.2)(msw@2.6.6(@types/node@20.17.9)(typescript@5.6.3))
-      ws: 8.18.0
-    optionalDependencies:
-      playwright: 1.49.0
-    transitivePeerDependencies:
-      - '@types/node'
-      - bufferutil
-      - typescript
-      - utf-8-validate
-      - vite
-
   '@vitest/coverage-v8@2.1.8(@vitest/browser@2.1.8)(vitest@2.1.8)':
     dependencies:
       '@ampproject/remapping': 2.3.0
@@ -9675,7 +9654,7 @@ snapshots:
       tinyrainbow: 1.2.0
       vitest: 2.1.8(@types/node@20.17.9)(@vitest/browser@2.1.8)(lightningcss@1.28.2)(msw@2.6.6(@types/node@20.17.9)(typescript@5.6.3))
     optionalDependencies:
-      '@vitest/browser': 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vitest@2.1.8)
+      '@vitest/browser': 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.28.2))(vitest@2.1.8)
     transitivePeerDependencies:
       - supports-color
 
@@ -9694,15 +9673,6 @@ snapshots:
     optionalDependencies:
       msw: 2.6.6(@types/node@20.17.9)(typescript@5.6.3)
       vite: 5.4.11(@types/node@20.17.9)(lightningcss@1.28.2)
-
-  '@vitest/mocker@2.1.8(msw@2.6.6(@types/node@20.17.9)(typescript@5.6.3))(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))':
-    dependencies:
-      '@vitest/spy': 2.1.8
-      estree-walker: 3.0.3
-      magic-string: 0.30.14
-    optionalDependencies:
-      msw: 2.6.6(@types/node@20.17.9)(typescript@5.6.3)
-      vite: 6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1)
 
   '@vitest/pretty-format@2.1.8':
     dependencies:
@@ -13210,11 +13180,10 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-dom@18.3.1(react@18.3.1):
+  react-dom@19.0.0(react@19.0.0):
     dependencies:
-      loose-envify: 1.4.0
-      react: 18.3.1
-      scheduler: 0.23.2
+      react: 19.0.0
+      scheduler: 0.25.0
 
   react-is@16.13.1: {}
 
@@ -13224,9 +13193,7 @@ snapshots:
 
   react-refresh@0.14.2: {}
 
-  react@18.3.1:
-    dependencies:
-      loose-envify: 1.4.0
+  react@19.0.0: {}
 
   read-package-up@11.0.0:
     dependencies:
@@ -13525,9 +13492,7 @@ snapshots:
     dependencies:
       suf-log: 2.5.3
 
-  scheduler@0.23.2:
-    dependencies:
-      loose-envify: 1.4.0
+  scheduler@0.25.0: {}
 
   search-insights@2.17.2: {}
 
@@ -14488,10 +14453,10 @@ snapshots:
     optionalDependencies:
       vite: 5.4.11(@types/node@20.17.9)(lightningcss@1.28.2)
 
-  vitepress@1.5.0(@algolia/client-search@4.24.0)(@types/node@20.17.9)(@types/react@18.3.12)(change-case@5.4.4)(lightningcss@1.28.2)(postcss@8.4.49)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.17.2)(typescript@5.6.3):
+  vitepress@1.5.0(@algolia/client-search@4.24.0)(@types/node@20.17.9)(@types/react@18.3.12)(change-case@5.4.4)(lightningcss@1.28.2)(postcss@8.4.49)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(search-insights@2.17.2)(typescript@5.6.3):
     dependencies:
       '@docsearch/css': 3.6.2
-      '@docsearch/js': 3.6.2(@algolia/client-search@4.24.0)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.17.2)
+      '@docsearch/js': 3.6.2(@algolia/client-search@4.24.0)(@types/react@18.3.12)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(search-insights@2.17.2)
       '@iconify-json/simple-icons': 1.2.13
       '@shikijs/core': 1.24.0
       '@shikijs/transformers': 1.22.2

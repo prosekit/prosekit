@@ -23,8 +23,8 @@ importers:
         specifier: ^0.23.0
         version: 0.23.0
       '@ocavue/eslint-config':
-        specifier: ^2.11.1
-        version: 2.11.1(@typescript-eslint/parser@8.16.0(eslint@9.16.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.16.0(jiti@2.3.3))(typescript@5.6.3)
+        specifier: ^2.11.2
+        version: 2.11.2(@typescript-eslint/parser@8.16.0(eslint@9.16.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.16.0(jiti@2.3.3))(typescript@5.6.3)
       '@prosekit/unocss-preset':
         specifier: workspace:*
         version: link:packages/unocss-preset
@@ -2268,8 +2268,8 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@ocavue/eslint-config@2.11.1':
-    resolution: {integrity: sha512-HKBqSV6AbbF0EmLGRdHdcgmNZl1DcF6V56KXFJ8U9cbnNoNN7Zfb7DKrIryaF8aojpJitmtCCqzWOZ5UhXedkg==}
+  '@ocavue/eslint-config@2.11.2':
+    resolution: {integrity: sha512-6BJdBBoot24PtL9dnVhR6jCii43sPT8ExtP8BUV8JhzNHI5zD6NipFu3r/38/2acdHPwSTlBjvbn5olTXnBxyQ==}
 
   '@octokit/action@6.1.0':
     resolution: {integrity: sha512-lo+nHx8kAV86bxvOVOI3vFjX3gXPd/L7guAUbvs3pUvnR2KC+R7yjBkA1uACt4gYhs4LcWP3AXSGQzsbeN2XXw==}
@@ -8704,7 +8704,7 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@ocavue/eslint-config@2.11.1(@typescript-eslint/parser@8.16.0(eslint@9.16.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.16.0(jiti@2.3.3))(typescript@5.6.3)':
+  '@ocavue/eslint-config@2.11.2(@typescript-eslint/parser@8.16.0(eslint@9.16.0(jiti@2.3.3))(typescript@5.6.3))(eslint@9.16.0(jiti@2.3.3))(typescript@5.6.3)':
     dependencies:
       '@eslint-types/unicorn': 52.0.0
       '@eslint/js': 9.16.0

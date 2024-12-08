@@ -35,11 +35,11 @@
     "@changesets/cli": "^2.27.10",
     "@changesets/types": "^6.0.0",
     "@manypkg/cli": "^0.23.0",
-    "@ocavue/eslint-config": "^2.11.1",
+    "@ocavue/eslint-config": "^2.11.2",
     "@prosekit/unocss-preset": "workspace:*",
     "@size-limit/esbuild-why": "^11.1.6",
     "@size-limit/preset-small-lib": "^11.1.6",
-    "@unocss/eslint-config": "^0.64.0",
+    "@unocss/eslint-config": "^0.65.1",
     "@vitest/browser": "^2.1.8",
     "@vitest/coverage-v8": "^2.1.8",
     "cross-env": "^7.0.3",
@@ -53,8 +53,8 @@
     "prettier-plugin-svelte": "^3.3.2",
     "size-limit": "^11.1.6",
     "turbo": "^2.3.3",
-    "typescript": "^5.6.3",
-    "unocss": "^0.64.0",
+    "typescript": "~5.6.3",
+    "unocss": "^0.65.1",
     "vitest": "^2.1.8"
   }
 }

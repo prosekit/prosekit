@@ -113,7 +113,7 @@
     "loro-prosemirror": "^0.2.0",
     "tsup": "^8.3.5",
     "type-fest": "^4.30.0",
-    "typescript": "^5.6.3",
+    "typescript": "~5.6.3",
     "vitest": "^2.1.8",
     "y-prosemirror": "^1.2.13",
     "y-protocols": "^1.0.6",

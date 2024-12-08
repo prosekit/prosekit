@@ -803,8 +803,8 @@ importers:
         specifier: ^5.0.3
         version: 5.0.3(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(rollup@4.24.2)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1)
       astrobook:
-        specifier: ^0.5.1
-        version: 0.5.1(astro@5.0.3(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(rollup@4.24.2)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1))
+        specifier: https://pkg.pr.new/ocavue/astrobook@75
+        version: https://pkg.pr.new/ocavue/astrobook@75(astro@5.0.3(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(rollup@4.24.2)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1))
       lit:
         specifier: ^3.2.1
         version: 3.2.1
@@ -1123,14 +1123,17 @@ packages:
   '@ariatype/aria-roles@1.0.1':
     resolution: {integrity: sha512-5XhX1IKcMWIqbQonV20C8lcAzg+pErGLWRK2Itam01F1I6YPxj1zC+52bE5M0seoK9UmJc2qHs6777a8cY9atw==}
 
-  '@astrobook/core@0.5.1':
-    resolution: {integrity: sha512-3+CAyoQDL06iGN3QrUxzGzxjOMlR7einZZ33WpXxA6MIlAMCp1mJhCFLlf4sjQ1rdanXqopiYwjaCcAaUCK4IQ==}
+  '@astrobook/core@https://pkg.pr.new/ocavue/astrobook/@astrobook/core@27c7d6c3f35bb71203355581e7de5617e5079748':
+    resolution: {tarball: https://pkg.pr.new/ocavue/astrobook/@astrobook/core@27c7d6c3f35bb71203355581e7de5617e5079748}
+    version: 0.5.1
 
-  '@astrobook/types@0.5.1':
-    resolution: {integrity: sha512-Bb4wDNQOrT2XtwIKDtICxlbXQaXS1hD9Jm90qBQNQXuVMhWISfWznJ3ZTMti1lh9rcNaTN7l9nOnWhFF6OhG2g==}
+  '@astrobook/types@https://pkg.pr.new/ocavue/astrobook/@astrobook/types@27c7d6c3f35bb71203355581e7de5617e5079748':
+    resolution: {tarball: https://pkg.pr.new/ocavue/astrobook/@astrobook/types@27c7d6c3f35bb71203355581e7de5617e5079748}
+    version: 0.5.1
 
-  '@astrobook/ui@0.5.1':
-    resolution: {integrity: sha512-qnrAeQjzgmrYj3kGUpkS6FD5M6YgUBks3J5z9Iqcm5n4G4HL6rTyPoJoKHp52sVk1iuUmtIGYFUyXyUi3LGbUQ==}
+  '@astrobook/ui@https://pkg.pr.new/ocavue/astrobook/@astrobook/ui@27c7d6c3f35bb71203355581e7de5617e5079748':
+    resolution: {tarball: https://pkg.pr.new/ocavue/astrobook/@astrobook/ui@27c7d6c3f35bb71203355581e7de5617e5079748}
+    version: 0.5.1
     peerDependencies:
       astro: '>=4.0.0'
     peerDependenciesMeta:
@@ -3384,8 +3387,9 @@ packages:
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
-  astrobook@0.5.1:
-    resolution: {integrity: sha512-8rfgXfG2VKMoO+7YXcGpPCwg6XMrt4Y1uio9HxpG+ChajFYMI604d1xz+Cz0Y3ccXXyCuOcgGg0LSKZTOGw4aQ==}
+  astrobook@https://pkg.pr.new/ocavue/astrobook@75:
+    resolution: {tarball: https://pkg.pr.new/ocavue/astrobook@75}
+    version: 0.5.1
     peerDependencies:
       astro: '>=4.0.0'
     peerDependenciesMeta:
@@ -7507,21 +7511,21 @@ snapshots:
       '@ariatype/aria-roles-widget': 1.0.1
       '@ariatype/aria-roles-window': 1.0.1
 
-  '@astrobook/core@0.5.1':
+  '@astrobook/core@https://pkg.pr.new/ocavue/astrobook/@astrobook/core@27c7d6c3f35bb71203355581e7de5617e5079748':
     dependencies:
-      '@astrobook/types': 0.5.1
+      '@astrobook/types': https://pkg.pr.new/ocavue/astrobook/@astrobook/types@27c7d6c3f35bb71203355581e7de5617e5079748
       acorn: 8.14.0
       acorn-jsx: 5.3.2(acorn@8.14.0)
       fdir: 6.4.2(picomatch@4.0.2)
       picomatch: 4.0.2
       slash: 5.1.0
 
-  '@astrobook/types@0.5.1': {}
+  '@astrobook/types@https://pkg.pr.new/ocavue/astrobook/@astrobook/types@27c7d6c3f35bb71203355581e7de5617e5079748': {}
 
-  '@astrobook/ui@0.5.1(astro@5.0.3(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(rollup@4.24.2)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1))':
+  '@astrobook/ui@https://pkg.pr.new/ocavue/astrobook/@astrobook/ui@27c7d6c3f35bb71203355581e7de5617e5079748(astro@5.0.3(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(rollup@4.24.2)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1))':
     dependencies:
-      '@astrobook/core': 0.5.1
-      '@astrobook/types': 0.5.1
+      '@astrobook/core': https://pkg.pr.new/ocavue/astrobook/@astrobook/core@27c7d6c3f35bb71203355581e7de5617e5079748
+      '@astrobook/types': https://pkg.pr.new/ocavue/astrobook/@astrobook/types@27c7d6c3f35bb71203355581e7de5617e5079748
       astro-theme-toggle: 0.3.5
       just-group-by: 2.2.0
     optionalDependencies:
@@ -10280,11 +10284,11 @@ snapshots:
       - typescript
       - yaml
 
-  astrobook@0.5.1(astro@5.0.3(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(rollup@4.24.2)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1)):
+  astrobook@https://pkg.pr.new/ocavue/astrobook@75(astro@5.0.3(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(rollup@4.24.2)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1)):
     dependencies:
-      '@astrobook/core': 0.5.1
-      '@astrobook/types': 0.5.1
-      '@astrobook/ui': 0.5.1(astro@5.0.3(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(rollup@4.24.2)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1))
+      '@astrobook/core': https://pkg.pr.new/ocavue/astrobook/@astrobook/core@27c7d6c3f35bb71203355581e7de5617e5079748
+      '@astrobook/types': https://pkg.pr.new/ocavue/astrobook/@astrobook/types@27c7d6c3f35bb71203355581e7de5617e5079748
+      '@astrobook/ui': https://pkg.pr.new/ocavue/astrobook/@astrobook/ui@27c7d6c3f35bb71203355581e7de5617e5079748(astro@5.0.3(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(rollup@4.24.2)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1))
     optionalDependencies:
       astro: 5.0.3(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(rollup@4.24.2)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1)
 

@@ -6,6 +6,7 @@ CHANGELOG.md
 .tsup
 .yalc
 yalc.lock
+.astro
 
 .cache
 .DS_Store

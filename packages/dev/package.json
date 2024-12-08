@@ -42,7 +42,7 @@
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.17.9",
     "change-case": "^5.4.4",
-    "execa": "^9.5.1",
+    "execa": "^9.5.2",
     "globby": "^14.0.2",
     "js-yaml": "^4.1.0",
     "json5": "^2.2.3",

@@ -39,7 +39,7 @@ importers:
         version: 0.65.1(eslint@9.16.0(jiti@2.4.1))(typescript@5.6.3)
       '@vitest/browser':
         specifier: ^2.1.8
-        version: 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.28.2))(vitest@2.1.8)
+        version: 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@6.0.3(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vitest@2.1.8)
       '@vitest/coverage-v8':
         specifier: ^2.1.8
         version: 2.1.8(@vitest/browser@2.1.8)(vitest@2.1.8)
@@ -62,7 +62,7 @@ importers:
         specifier: ^1.49.0
         version: 1.49.0
       prettier:
-        specifier: ^3.4.1
+        specifier: ^3.4.2
         version: 3.4.2
       prettier-plugin-astro:
         specifier: ^0.14.1
@@ -81,7 +81,7 @@ importers:
         version: 5.6.3
       unocss:
         specifier: ^0.65.1
-        version: 0.65.1(postcss@8.4.49)(rollup@4.28.1)(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.28.2))(vue@3.5.13(typescript@5.6.3))
+        version: 0.65.1(postcss@8.4.49)(rollup@4.28.1)(vite@6.0.3(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.6.3))
       vitest:
         specifier: ^2.1.8
         version: 2.1.8(@types/node@20.17.9)(@vitest/browser@2.1.8)(lightningcss@1.28.2)(msw@2.6.8(@types/node@20.17.9)(typescript@5.6.3))
@@ -209,7 +209,7 @@ importers:
         specifier: ^5.4.4
         version: 5.4.4
       execa:
-        specifier: ^9.5.1
+        specifier: ^9.5.2
         version: 9.5.2
       globby:
         specifier: ^14.0.2
@@ -294,7 +294,7 @@ importers:
         specifier: ^2.1.8
         version: 2.1.8(@types/node@20.17.9)(@vitest/browser@2.1.8)(lightningcss@1.28.2)(msw@2.6.8(@types/node@20.17.9)(typescript@5.6.3))
       y-prosemirror:
-        specifier: ^1.2.13
+        specifier: ^1.2.15
         version: 1.2.15(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-view@1.37.0)(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
       y-protocols:
         specifier: ^1.0.6
@@ -433,10 +433,10 @@ importers:
         specifier: workspace:*
         version: link:../dev
       '@types/react':
-        specifier: ^18.3.12
+        specifier: ^18.3.14
         version: 18.3.14
       '@types/react-dom':
-        specifier: ^18.3.1
+        specifier: ^18.3.2
         version: 18.3.2
       loro-crdt:
         specifier: ^1.1.4
@@ -463,13 +463,13 @@ importers:
         specifier: ^1.9.3
         version: 1.9.3
       svelte:
-        specifier: ^5.4.0
+        specifier: ^5.8.1
         version: 5.8.1
       tsup:
         specifier: ^8.3.5
         version: 8.3.5(@microsoft/api-extractor@7.48.0(@types/node@20.17.9))(jiti@2.4.1)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.6.3)(yaml@2.6.1)
       typedoc:
-        specifier: ^0.27.2
+        specifier: ^0.27.3
         version: 0.27.3(typescript@5.6.3)
       typedoc-plugin-external-package-links:
         specifier: ^0.1.0
@@ -478,7 +478,7 @@ importers:
         specifier: ^0.4.2
         version: 0.4.2(typedoc@0.27.3(typescript@5.6.3))
       typedoc-plugin-mdn-links:
-        specifier: ^4.0.3
+        specifier: ^4.0.4
         version: 4.0.4(typedoc@0.27.3(typescript@5.6.3))
       typescript:
         specifier: ~5.6.3
@@ -487,7 +487,7 @@ importers:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.6.3)
       y-prosemirror:
-        specifier: ^1.2.13
+        specifier: ^1.2.15
         version: 1.2.15(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-view@1.37.0)(y-protocols@1.0.6(yjs@13.6.20))(yjs@13.6.20)
       yjs:
         specifier: ^13.6.20
@@ -515,10 +515,10 @@ importers:
         specifier: workspace:*
         version: link:../dev
       '@types/react':
-        specifier: ^18.3.12
+        specifier: ^18.3.14
         version: 18.3.14
       '@types/react-dom':
-        specifier: ^18.3.1
+        specifier: ^18.3.2
         version: 18.3.2
       react:
         specifier: ^18.3.1
@@ -595,10 +595,10 @@ importers:
         specifier: ^9.0.1
         version: 9.0.1
       svelte:
-        specifier: ^5.4.0
+        specifier: ^5.8.1
         version: 5.8.1
       svelte-check:
-        specifier: ^4.1.0
+        specifier: ^4.1.1
         version: 4.1.1(picomatch@4.0.2)(svelte@5.8.1)(typescript@5.6.3)
       tsx:
         specifier: ^4.19.2
@@ -626,7 +626,7 @@ importers:
         specifier: ^0.24.0
         version: 0.24.0
       prettier:
-        specifier: ^3.4.1
+        specifier: ^3.4.2
         version: 3.4.2
       typescript:
         specifier: ~5.6.3
@@ -733,7 +733,7 @@ importers:
         specifier: workspace:^
         version: link:../pm
       '@zag-js/dom-query':
-        specifier: ^0.78.0
+        specifier: ^0.78.2
         version: 0.78.2
       just-map-values:
         specifier: ^3.2.0
@@ -776,7 +776,7 @@ importers:
         specifier: ^4.5.3
         version: 4.5.3(@types/node@20.17.9)(astro@4.16.17(@types/node@20.17.9)(lightningcss@1.28.2)(rollup@4.28.1)(typescript@5.6.3))(lightningcss@1.28.2)(rollup@4.28.1)(vue@3.5.13(typescript@5.6.3))
       '@iconify-json/lucide':
-        specifier: ^1.2.17
+        specifier: ^1.2.18
         version: 1.2.18
       '@playwright/test':
         specifier: ^1.49.0
@@ -791,16 +791,16 @@ importers:
         specifier: workspace:*
         version: link:../packages/unocss-preset
       '@types/react':
-        specifier: ^18.3.12
+        specifier: ^18.3.14
         version: 18.3.14
       '@types/react-dom':
-        specifier: ^18.3.1
+        specifier: ^18.3.2
         version: 18.3.2
       '@unocss/reset':
         specifier: ^0.65.1
         version: 0.65.1
       astro:
-        specifier: ^4.16.16
+        specifier: ^4.16.17
         version: 4.16.17(@types/node@20.17.9)(lightningcss@1.28.2)(rollup@4.28.1)(typescript@5.6.3)
       astrobook:
         specifier: ^0.5.1
@@ -818,7 +818,7 @@ importers:
         specifier: ^10.25.1
         version: 10.25.1
       prettier:
-        specifier: ^3.4.1
+        specifier: ^3.4.2
         version: 3.4.2
       prosekit:
         specifier: workspace:*
@@ -848,10 +848,10 @@ importers:
         specifier: ^1.9.3
         version: 1.9.3
       svelte:
-        specifier: ^5.4.0
+        specifier: ^5.8.1
         version: 5.8.1
       svelte-check:
-        specifier: ^4.1.0
+        specifier: ^4.1.1
         version: 4.1.1(picomatch@4.0.2)(svelte@5.8.1)(typescript@5.6.3)
       typescript:
         specifier: ~5.6.3
@@ -887,7 +887,7 @@ importers:
         specifier: ^1.2.3
         version: 1.2.3
       '@iconify-json/lucide':
-        specifier: ^1.2.17
+        specifier: ^1.2.18
         version: 1.2.18
       '@prosekit/dev':
         specifier: workspace:*
@@ -905,10 +905,10 @@ importers:
         specifier: ^1.0.5
         version: 1.0.5
       '@types/react':
-        specifier: ^18.3.12
+        specifier: ^18.3.14
         version: 18.3.14
       '@types/react-dom':
-        specifier: ^18.3.1
+        specifier: ^18.3.2
         version: 18.3.2
       '@unocss/cli':
         specifier: ^0.65.1
@@ -938,7 +938,7 @@ importers:
         specifier: ^8.4.49
         version: 8.4.49
       prettier:
-        specifier: ^3.4.1
+        specifier: ^3.4.2
         version: 3.4.2
       prosekit:
         specifier: workspace:*
@@ -947,7 +947,7 @@ importers:
         specifier: workspace:*
         version: link:../playground
       radix-vue:
-        specifier: ^1.9.10
+        specifier: ^1.9.11
         version: 1.9.11(vue@3.5.13(typescript@5.6.3))
       react:
         specifier: ^18.3.1
@@ -9567,6 +9567,27 @@ snapshots:
       - utf-8-validate
       - vite
 
+  '@vitest/browser@2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@6.0.3(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vitest@2.1.8)':
+    dependencies:
+      '@testing-library/dom': 10.4.0
+      '@testing-library/user-event': 14.5.2(@testing-library/dom@10.4.0)
+      '@vitest/mocker': 2.1.8(msw@2.6.8(@types/node@20.17.9)(typescript@5.6.3))(vite@6.0.3(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))
+      '@vitest/utils': 2.1.8
+      magic-string: 0.30.14
+      msw: 2.6.8(@types/node@20.17.9)(typescript@5.6.3)
+      sirv: 3.0.0
+      tinyrainbow: 1.2.0
+      vitest: 2.1.8(@types/node@20.17.9)(@vitest/browser@2.1.8)(lightningcss@1.28.2)(msw@2.6.8(@types/node@20.17.9)(typescript@5.6.3))
+      ws: 8.18.0
+    optionalDependencies:
+      playwright: 1.49.0
+    transitivePeerDependencies:
+      - '@types/node'
+      - bufferutil
+      - typescript
+      - utf-8-validate
+      - vite
+
   '@vitest/coverage-v8@2.1.8(@vitest/browser@2.1.8)(vitest@2.1.8)':
     dependencies:
       '@ampproject/remapping': 2.3.0
@@ -9583,7 +9604,7 @@ snapshots:
       tinyrainbow: 1.2.0
       vitest: 2.1.8(@types/node@20.17.9)(@vitest/browser@2.1.8)(lightningcss@1.28.2)(msw@2.6.8(@types/node@20.17.9)(typescript@5.6.3))
     optionalDependencies:
-      '@vitest/browser': 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.28.2))(vitest@2.1.8)
+      '@vitest/browser': 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@6.0.3(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vitest@2.1.8)
     transitivePeerDependencies:
       - supports-color
 
@@ -9602,6 +9623,15 @@ snapshots:
     optionalDependencies:
       msw: 2.6.8(@types/node@20.17.9)(typescript@5.6.3)
       vite: 5.4.11(@types/node@20.17.9)(lightningcss@1.28.2)
+
+  '@vitest/mocker@2.1.8(msw@2.6.8(@types/node@20.17.9)(typescript@5.6.3))(vite@6.0.3(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))':
+    dependencies:
+      '@vitest/spy': 2.1.8
+      estree-walker: 3.0.3
+      magic-string: 0.30.14
+    optionalDependencies:
+      msw: 2.6.8(@types/node@20.17.9)(typescript@5.6.3)
+      vite: 6.0.3(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1)
 
   '@vitest/pretty-format@2.1.8':
     dependencies:

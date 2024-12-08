@@ -33,7 +33,7 @@
     "unocss-preset-animations": "^1.1.0"
   },
   "peerDependencies": {
-    "unocss": "^0.60.4"
+    "unocss": "*"
   },
   "devDependencies": {
     "@types/node": "^20.17.9",

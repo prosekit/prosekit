@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts">
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/svelte'
 import Button from './button.svelte'
@@ -14,6 +14,6 @@ const editor = useEditor<EditorExtension>({ update: true })
     onClick={() => $editor.commands.setCodeBlock()}
     tooltip="Heading 1"
   >
-    <div class={Themes.ICON_CODE_BLOCK} />
+    <div class={Themes.ICON_CODE_BLOCK}></div>
   </Button>
 </div>

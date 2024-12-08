@@ -15,7 +15,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     onClick={() => $editor.commands.undo()}
     tooltip="Undo"
   >
-    <div class={Themes.ICON_UNDO} />
+    <div class={Themes.ICON_UNDO}></div>
   </Button>
 
   <Button
@@ -24,7 +24,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     onClick={() => $editor.commands.redo()}
     tooltip="Redo"
   >
-    <div class={Themes.ICON_REDO} />
+    <div class={Themes.ICON_REDO}></div>
   </Button>
 
   <Button

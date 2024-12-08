@@ -39,7 +39,7 @@ importers:
         version: 0.64.1(eslint@9.16.0(jiti@2.3.3))(typescript@5.6.3)
       '@vitest/browser':
         specifier: ^2.1.8
-        version: 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vitest@2.1.8)
+        version: 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.28.2))(vitest@2.1.8)
       '@vitest/coverage-v8':
         specifier: ^2.1.8
         version: 2.1.8(@vitest/browser@2.1.8)(vitest@2.1.8)
@@ -81,7 +81,7 @@ importers:
         version: 5.6.3
       unocss:
         specifier: ^0.64.0
-        version: 0.64.1(postcss@8.4.49)(rollup@4.24.2)(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.6.3))
+        version: 0.64.1(postcss@8.4.49)(rollup@4.24.2)(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.28.2))(vue@3.5.13(typescript@5.6.3))
       vitest:
         specifier: ^2.1.8
         version: 2.1.8(@types/node@20.17.9)(@vitest/browser@2.1.8)(lightningcss@1.28.2)(msw@2.6.6(@types/node@20.17.9)(typescript@5.6.3))
@@ -254,8 +254,8 @@ importers:
         specifier: ^1.3.2
         version: 1.3.2
       prosemirror-highlight:
-        specifier: ^0.9.0
-        version: 0.9.0(@types/hast@3.0.4)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.0)(shiki@1.24.0)
+        specifier: ^0.11.0
+        version: 0.11.0(@types/hast@3.0.4)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.0)(shiki@1.24.0)
       prosemirror-search:
         specifier: ^1.0.0
         version: 1.0.0
@@ -5796,8 +5796,8 @@ packages:
   prosemirror-gapcursor@1.3.2:
     resolution: {integrity: sha512-wtjswVBd2vaQRrnYZaBCbyDqr232Ed4p2QPtRIUK5FuqHYKGWkEwl08oQM4Tw7DOR0FsasARV5uJFvMZWxdNxQ==}
 
-  prosemirror-highlight@0.9.0:
-    resolution: {integrity: sha512-ujJ1M4JgHop8xZ1uyjFDDg8DkOfXC87tJMQAVDTgR9dQOsIv9MoSA6jGcP7xM84P0ecbu1bqVVe9fqbY2zJDSQ==}
+  prosemirror-highlight@0.11.0:
+    resolution: {integrity: sha512-DHgRa9HYLi+8tLLPLYKrKgUeUbNz7g43yNYb5M+8CH7/P9SOzrXnBj4EwKDmF87wUmb2E41/fYErveplH3TREw==}
     peerDependencies:
       '@types/hast': ^3.0.0
       highlight.js: ^11.9.0
@@ -9638,27 +9638,6 @@ snapshots:
       - utf-8-validate
       - vite
 
-  '@vitest/browser@2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vitest@2.1.8)':
-    dependencies:
-      '@testing-library/dom': 10.4.0
-      '@testing-library/user-event': 14.5.2(@testing-library/dom@10.4.0)
-      '@vitest/mocker': 2.1.8(msw@2.6.6(@types/node@20.17.9)(typescript@5.6.3))(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))
-      '@vitest/utils': 2.1.8
-      magic-string: 0.30.14
-      msw: 2.6.6(@types/node@20.17.9)(typescript@5.6.3)
-      sirv: 3.0.0
-      tinyrainbow: 1.2.0
-      vitest: 2.1.8(@types/node@20.17.9)(@vitest/browser@2.1.8)(lightningcss@1.28.2)(msw@2.6.6(@types/node@20.17.9)(typescript@5.6.3))
-      ws: 8.18.0
-    optionalDependencies:
-      playwright: 1.49.0
-    transitivePeerDependencies:
-      - '@types/node'
-      - bufferutil
-      - typescript
-      - utf-8-validate
-      - vite
-
   '@vitest/coverage-v8@2.1.8(@vitest/browser@2.1.8)(vitest@2.1.8)':
     dependencies:
       '@ampproject/remapping': 2.3.0
@@ -9675,7 +9654,7 @@ snapshots:
       tinyrainbow: 1.2.0
       vitest: 2.1.8(@types/node@20.17.9)(@vitest/browser@2.1.8)(lightningcss@1.28.2)(msw@2.6.6(@types/node@20.17.9)(typescript@5.6.3))
     optionalDependencies:
-      '@vitest/browser': 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))(vitest@2.1.8)
+      '@vitest/browser': 2.1.8(@types/node@20.17.9)(playwright@1.49.0)(typescript@5.6.3)(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.28.2))(vitest@2.1.8)
     transitivePeerDependencies:
       - supports-color
 
@@ -9694,15 +9673,6 @@ snapshots:
     optionalDependencies:
       msw: 2.6.6(@types/node@20.17.9)(typescript@5.6.3)
       vite: 5.4.11(@types/node@20.17.9)(lightningcss@1.28.2)
-
-  '@vitest/mocker@2.1.8(msw@2.6.6(@types/node@20.17.9)(typescript@5.6.3))(vite@6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))':
-    dependencies:
-      '@vitest/spy': 2.1.8
-      estree-walker: 3.0.3
-      magic-string: 0.30.14
-    optionalDependencies:
-      msw: 2.6.6(@types/node@20.17.9)(typescript@5.6.3)
-      vite: 6.0.1(@types/node@20.17.9)(jiti@2.3.3)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1)
 
   '@vitest/pretty-format@2.1.8':
     dependencies:
@@ -13083,7 +13053,7 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.37.0
 
-  prosemirror-highlight@0.9.0(@types/hast@3.0.4)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.0)(shiki@1.24.0):
+  prosemirror-highlight@0.11.0(@types/hast@3.0.4)(prosemirror-model@1.24.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.0)(shiki@1.24.0):
     optionalDependencies:
       '@types/hast': 3.0.4
       prosemirror-model: 1.24.0

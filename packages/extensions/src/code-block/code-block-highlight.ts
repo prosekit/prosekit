@@ -35,6 +35,6 @@ export function defineCodeBlockHighlight({
   parser,
 }: CodeBlockHighlightOptions): Extension {
   return definePlugin(
-    createHighlightPlugin({ parser, nodeTypes: ['codeBlock'] }),
+    createHighlightPlugin({ parser }),
   )
 }

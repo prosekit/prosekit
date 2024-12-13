@@ -166,6 +166,8 @@ The editor view.
 
 <dd>
 
+Blur the editor.
+
 ```ts
 const blur: () => void
 ```
@@ -179,6 +181,9 @@ const blur: () => void
 </dt>
 
 <dd>
+
+Check if the given command can be executed. Return `true` if the command
+can be executed, otherwise `false`.
 
 ```ts
 const canExec: (command: Command) => boolean
@@ -194,6 +199,9 @@ const canExec: (command: Command) => boolean
 
 <dd>
 
+Execute the given command. Return `true` if the command was successfully
+executed, otherwise `false`.
+
 ```ts
 const exec: (command: Command) => boolean
 ```
@@ -207,6 +215,8 @@ const exec: (command: Command) => boolean
 </dt>
 
 <dd>
+
+Focus the editor.
 
 ```ts
 const focus: () => void
@@ -222,6 +232,9 @@ const focus: () => void
 
 <dd>
 
+Mount the editor to the given HTML element.
+Pass `null` or `undefined` to unmount the editor.
+
 ```ts
 const mount: (place: undefined | null | HTMLElement) => void
 ```
@@ -235,6 +248,8 @@ const mount: (place: undefined | null | HTMLElement) => void
 </dt>
 
 <dd>
+
+Update the editor's document and selection.
 
 ```ts
 const setContent: (content: string | Node | NodeJSON | HTMLElement, selection?: Selection | "start" | SelectionJSON | "end") => void
@@ -250,6 +265,8 @@ const setContent: (content: string | Node | NodeJSON | HTMLElement, selection?: 
 
 <dd>
 
+Unmount the editor. This is equivalent to `mount(null)`.
+
 ```ts
 const unmount: () => void
 ```
@@ -264,6 +281,13 @@ const unmount: () => void
 
 <dd>
 
+Update the editor's state.
+
+**Remarks**
+
+This is an advanced method. Use it only if you have a specific reason to
+directly manipulate the editor's state.
+
 ```ts
 const updateState: (state: EditorState) => void
 ```
@@ -277,6 +301,9 @@ const updateState: (state: EditorState) => void
 </dt>
 
 <dd>
+
+Register an extension to the editor. Return a function to unregister the
+extension.
 
 ```ts
 const use: (extension: Extension<ExtensionTyping<any, any, any>>) => VoidFunction
@@ -468,6 +495,12 @@ It also has a `canExec` method to check if the command can be applied.
 
 <dd>
 
+An alias for `canExec`.
+
+**Deprecated**
+
+Use `canExec` instead.
+
 ```ts
 const canApply: (...args: Args) => boolean
 ```
@@ -481,6 +514,9 @@ const canApply: (...args: Args) => boolean
 </dt>
 
 <dd>
+
+Check if the current command can be executed. Return `true` if the command
+can be executed, otherwise `false`.
 
 ```ts
 const canExec: (...args: Args) => boolean

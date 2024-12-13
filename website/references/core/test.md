@@ -124,6 +124,8 @@ The editor view.
 
 <dd>
 
+Blur the editor.
+
 ```ts
 const blur: () => void
 ```
@@ -137,6 +139,9 @@ const blur: () => void
 </dt>
 
 <dd>
+
+Check if the given command can be executed. Return `true` if the command
+can be executed, otherwise `false`.
 
 ```ts
 const canExec: (command: Command) => boolean
@@ -166,6 +171,9 @@ const dispatchEvent: (event: Event) => void
 
 <dd>
 
+Execute the given command. Return `true` if the command was successfully
+executed, otherwise `false`.
+
 ```ts
 const exec: (command: Command) => boolean
 ```
@@ -179,6 +187,8 @@ const exec: (command: Command) => boolean
 </dt>
 
 <dd>
+
+Focus the editor.
 
 ```ts
 const focus: () => void
@@ -194,6 +204,9 @@ const focus: () => void
 
 <dd>
 
+Mount the editor to the given HTML element.
+Pass `null` or `undefined` to unmount the editor.
+
 ```ts
 const mount: (place: undefined | null | HTMLElement) => void
 ```
@@ -207,6 +220,18 @@ const mount: (place: undefined | null | HTMLElement) => void
 </dt>
 
 <dd>
+
+Set the editor state to the given document. You can use special tokens
+`<a>` and `<b>` to set the anchor and head positions of the selection.
+
+**Example**
+
+```ts
+const editor = createTestEditor({ extension })
+const n = editor.nodes
+const doc = n.doc(n.paragraph('<a>Hello<b> world!'))
+editor.set(doc) // "Hello" is selected.
+```
 
 ```ts
 const set: (doc: Node) => void
@@ -222,6 +247,8 @@ const set: (doc: Node) => void
 
 <dd>
 
+Update the editor's document and selection.
+
 ```ts
 const setContent: (content: string | Node | NodeJSON | HTMLElement, selection?: Selection | "start" | SelectionJSON | "end") => void
 ```
@@ -235,6 +262,8 @@ const setContent: (content: string | Node | NodeJSON | HTMLElement, selection?: 
 </dt>
 
 <dd>
+
+Unmount the editor. This is equivalent to `mount(null)`.
 
 ```ts
 const unmount: () => void
@@ -250,6 +279,13 @@ const unmount: () => void
 
 <dd>
 
+Update the editor's state.
+
+**Remarks**
+
+This is an advanced method. Use it only if you have a specific reason to
+directly manipulate the editor's state.
+
 ```ts
 const updateState: (state: EditorState) => void
 ```
@@ -263,6 +299,9 @@ const updateState: (state: EditorState) => void
 </dt>
 
 <dd>
+
+Register an extension to the editor. Return a function to unregister the
+extension.
 
 ```ts
 const use: (extension: Extension<ExtensionTyping<any, any, any>>) => VoidFunction

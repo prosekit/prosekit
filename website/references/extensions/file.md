@@ -66,6 +66,8 @@ upload is complete successfully.
 
 <dd>
 
+Subscribes to progress updates. Returns a function to unsubscribe.
+
 ```ts
 const subscribeProgress: (callback: (progress: UploadProgress) => void) => VoidFunction
 ```
@@ -80,6 +82,8 @@ const subscribeProgress: (callback: (progress: UploadProgress) => void) => VoidF
 
 <dd>
 
+Deletes an upload task by its object URL.
+
 ```ts
 const delete: (objectURL: string) => void
 ```
@@ -93,6 +97,8 @@ const delete: (objectURL: string) => void
 </dt>
 
 <dd>
+
+Finds an upload task by its object URL.
 
 ```ts
 const get: <Result>(objectURL: string) => undefined | UploadTask<Result>

@@ -26,6 +26,9 @@ new CommitRecorder(): CommitRecorder
 
 <dd>
 
+Return a commit object including all changes since the last commit. `null`
+will be returned if there is no change.
+
 ```ts
 const commit: () => null | Commit
 ```

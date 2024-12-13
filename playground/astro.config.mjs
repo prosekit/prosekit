@@ -18,7 +18,7 @@ export default defineConfig({
     vue(),
     solid({ include: ['*/solid/**/*'] }),
     unocss({ injectReset: true }),
-    astrobook({ directory: 'src/stories' }),
+    astrobook({ directory: 'src/stories', title: 'ProseKit' }),
   ],
   base: 'astrobook',
   vite: {

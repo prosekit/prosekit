@@ -28,7 +28,7 @@
     "@types/react-dom": "^18.3.5",
     "@unocss/reset": "^0.65.1",
     "astro": "^4.16.17",
-    "astrobook": "^0.5.1",
+    "astrobook": "^0.7.0",
     "lit": "^3.2.1",
     "loro-crdt": "^1.2.1",
     "loro-prosemirror": "^0.2.0",

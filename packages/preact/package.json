@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "preact": "^10.25.1",
+    "preact": "^10.25.2",
     "tsup": "^8.3.5",
     "typescript": "~5.6.3",
     "vitest": "^2.1.8"

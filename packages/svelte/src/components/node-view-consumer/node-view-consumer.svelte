@@ -4,8 +4,8 @@ import {
   type NodeViewFactory,
 } from '@prosemirror-adapter/svelte'
 import { readable } from 'svelte/store'
+import { defineSvelteNodeViewFactory } from '../../extensions/svelte-node-view'
 import { useExtension } from '../../hooks/use-extension'
-import { defineSvelteNodeViewFactory } from '../../node-view/define-svelte-node-view-factory'
 
 const nodeViewFactory: NodeViewFactory = useNodeViewFactory()
 const extension = defineSvelteNodeViewFactory(nodeViewFactory)

@@ -6,7 +6,7 @@ import type { NodeView } from '@prosekit/pm/view'
 /**
  * Some basic props for custom node views.
  *
- * @public
+ * @deprecated - This is no longer needed. Use `CoreNodeViewUserOptions` from `@prosemirror-adapter/core` instead.
  */
 export interface BaseNodeViewOptions {
   /**

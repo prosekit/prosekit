@@ -45,6 +45,7 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
+    "@prosemirror-adapter/core": "^0.2.6",
     "@prosemirror-adapter/vue": "^0.2.6"
   },
   "peerDependencies": {

@@ -1,22 +1,14 @@
 import {
   defineNodeViewComponent,
   defineNodeViewFactory,
-  type BaseNodeViewOptions,
   type Extension,
 } from '@prosekit/core'
-import type {
-  Attrs,
-  ProseMirrorNode,
-} from '@prosekit/pm/model'
-import type {
-  Decoration,
-  DecorationSource,
-  EditorView,
-  NodeViewConstructor,
-} from '@prosekit/pm/view'
+import type { NodeViewConstructor } from '@prosekit/pm/view'
+import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
 import {
   useNodeViewContext,
   useNodeViewFactory,
+  type NodeViewContext,
   type NodeViewFactory,
   type VueNodeViewUserOptions,
 } from '@prosemirror-adapter/vue'
@@ -25,8 +17,6 @@ import {
   defineComponent,
   h,
   type DefineComponent,
-  type ShallowRef,
-  type VNodeRef,
 } from 'vue'
 
 import { useExtension } from '../hooks/use-extension'
@@ -34,19 +24,7 @@ import { useExtension } from '../hooks/use-extension'
 /**
  * @public
  */
-export interface VueNodeViewProps {
-  // won't change
-  contentRef: VNodeRef
-  view: EditorView
-  getPos: () => number | undefined
-  setAttrs: (attrs: Attrs) => void
-
-  // changes between updates
-  node: ShallowRef<ProseMirrorNode>
-  selected: ShallowRef<boolean>
-  decorations: ShallowRef<readonly Decoration[]>
-  innerDecorations: ShallowRef<DecorationSource>
-}
+export interface VueNodeViewProps extends NodeViewContext {}
 
 /**
  * @public
@@ -58,16 +36,11 @@ export type VueNodeViewComponent = DefineComponent<VueNodeViewProps, any, any>
  *
  * @public
  */
-export interface VueNodeViewOptions extends BaseNodeViewOptions {
+export interface VueNodeViewOptions extends CoreNodeViewUserOptions<VueNodeViewComponent> {
   /**
    * The name of the node type.
    */
   name: string
-
-  /**
-   * The Vue component to render the node.
-   */
-  component: VueNodeViewComponent
 }
 
 function withNodeViewProps(component: VueNodeViewComponent) {

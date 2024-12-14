@@ -2,6 +2,16 @@
 
 <FrameworkCodeBlock>
 
+<template v-slot:react>
+
+::: code-group
+
+<<< @/../playground/examples/react/link/editor.tsx
+
+:::
+
+</template>
+
 <template v-slot:vue>
 
 ::: code-group

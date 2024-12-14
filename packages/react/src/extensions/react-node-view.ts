@@ -52,7 +52,7 @@ function withNodeViewProps(component: ReactNodeViewComponent) {
 /**
  * @internal
  */
-export const ReactViewsConsumer: FC = () => {
+export const ReactNodeViewConsumer: FC = () => {
   const nodeViewFactory = useNodeViewFactory()
   const extension = useMemo(
     () => defineReactNodeViewFactory(nodeViewFactory),

@@ -9,6 +9,20 @@ const { path } = useRoute()
 
 <ExamplePreview :defaultShowCode="path.startsWith('/examples/')" name="link" >
 
+<template v-slot:react>
+
+::: code-group
+
+<<< @/../playground/examples/react/link/editor.tsx
+<<< @/../playground/examples/react/link/extension.ts
+<<< @/../playground/examples/react/link/inline-menu.tsx
+<<< @/../playground/examples/react/link/link-view.tsx
+<<< @/../playground/examples/react/link/button.tsx
+
+:::
+
+</template>
+
 <template v-slot:vue>
 
 ::: code-group

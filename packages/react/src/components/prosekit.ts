@@ -7,7 +7,8 @@ import {
 } from 'react'
 
 import { EditorContextProvider } from '../contexts/editor-context'
-import { ReactViewsConsumer } from '../extensions/react-node-view'
+import { ReactMarkViewConsumer } from '../extensions/react-mark-view'
+import { ReactNodeViewConsumer } from '../extensions/react-node-view'
 
 export interface ProseKitProps {
   editor: Editor
@@ -28,7 +29,8 @@ export const ProseKit: ComponentType<ProseKitProps> = (props) => {
     createElement(
       EditorContextProvider,
       { value: editor },
-      createElement(ReactViewsConsumer),
+      createElement(ReactNodeViewConsumer),
+      createElement(ReactMarkViewConsumer),
       children,
     ),
   )

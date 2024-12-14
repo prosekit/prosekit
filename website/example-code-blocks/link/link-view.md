@@ -6,17 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/link/button.tsx
-
-:::
-
-</template>
-
-<template v-slot:vue>
-
-::: code-group
-
-<<< @/../playground/examples/vue/link/button.vue
+<<< @/../playground/examples/react/link/link-view.tsx
 
 :::
 

@@ -155,6 +155,16 @@ export {
   type MarkSpecOptions,
 } from './extensions/mark-spec'
 export {
+  defineMarkView,
+  type MarkViewOptions,
+} from './extensions/mark-view'
+export {
+  defineMarkViewComponent,
+  defineMarkViewFactory,
+  type MarkViewComponentOptions,
+  type MarkViewFactoryOptions,
+} from './extensions/mark-view-effect'
+export {
   defineNodeAttr,
   defineNodeSpec,
   type NodeAttrOptions,

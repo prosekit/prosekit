@@ -343,6 +343,33 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-link",
+      "framework": "react",
+      "story": "link",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "inline-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "link-view.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-list",
       "framework": "react",
       "story": "list",

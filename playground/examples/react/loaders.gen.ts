@@ -15,6 +15,7 @@ export const loaders = {
   'image-view': lazy(() => import('./image-view/editor')),
   'inline-menu': lazy(() => import('./inline-menu/editor')),
   'keymap': lazy(() => import('./keymap/editor')),
+  'link': lazy(() => import('./link/editor')),
   'list': lazy(() => import('./list/editor')),
   'loro': lazy(() => import('./loro/editor')),
   'mark-rule': lazy(() => import('./mark-rule/editor')),

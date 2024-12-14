@@ -1,18 +1,46 @@
-import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { ReactMarkViewProps } from 'prosekit/react'
+import { useEffect, useState } from 'react'
 
-export default function LinkView(props: ReactMarkViewProps) {
-  const attrs = props.mark.attrs as LinkAttrs
-  const href = attrs.href
+const colors = [
+  '#f06292',
+  '#ba68c8',
+  '#9575cd',
+  '#7986cb',
+  '#64b5f6',
+  '#4fc3f7',
+  '#4dd0e1',
+  '#4db6ac',
+  '#81c784',
+  '#aed581',
+  '#ffb74d',
+  '#ffa726',
+  '#ff8a65',
+  '#d4e157',
+  '#ffd54f',
+  '#ffecb3',
+]
+
+function pickRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)]
+}
+
+export function Link(props: ReactMarkViewProps) {
+  const [color, setColor] = useState(colors[0])
+  const { mark, contentRef } = props
+  const href = mark.attrs.href as string
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setColor(pickRandomColor())
+    }, 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
-    <span className="border border-red-500 p-2">
-      <a href={href} className="border border-blue-500 p-1">
-        <span
-          className="border border-yellow-500 p-0"
-          ref={props.contentRef}
-        ></span>
-      </a>
-    </span>
+    <a
+      href={href}
+      ref={contentRef}
+      style={{ color, transition: 'color 1s ease-in-out' }}
+    ></a>
   )
 }

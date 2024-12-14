@@ -1,8 +1,5 @@
 import type { ReactMarkViewProps } from 'prosekit/react'
-import {
-  useEffect,
-  useState,
-} from 'react'
+import { useEffect, useState } from 'react'
 
 const colors = [
   '#f06292',
@@ -27,7 +24,7 @@ function pickRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)]
 }
 
-export function Link(props: ReactMarkViewProps) {
+export default function Link(props: ReactMarkViewProps) {
   const [color, setColor] = useState(colors[0])
   const { mark, contentRef } = props
   const href = mark.attrs.href as string
@@ -44,7 +41,6 @@ export function Link(props: ReactMarkViewProps) {
       href={href}
       ref={contentRef}
       style={{ color, transition: 'color 1s ease-in-out' }}
-    >
-    </a>
+    ></a>
   )
 }

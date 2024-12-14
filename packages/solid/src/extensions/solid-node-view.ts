@@ -1,22 +1,14 @@
 import {
   defineNodeViewComponent,
   defineNodeViewFactory,
-  type BaseNodeViewOptions,
   type Extension,
 } from '@prosekit/core'
-import type {
-  Attrs,
-  ProseMirrorNode,
-} from '@prosekit/pm/model'
-import type {
-  Decoration,
-  DecorationSource,
-  EditorView,
-  NodeViewConstructor,
-} from '@prosekit/pm/view'
+import type { NodeViewConstructor } from '@prosekit/pm/view'
+import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
 import {
   useNodeViewContext,
   useNodeViewFactory,
+  type NodeViewContextProps,
   type SolidNodeViewUserOptions,
 } from '@prosemirror-adapter/solid'
 import {
@@ -31,19 +23,7 @@ import { useExtension } from '../hooks/use-extension'
 /**
  * @public
  */
-export interface SolidNodeViewProps {
-  // won't change
-  contentRef: (node: HTMLElement | null) => void
-  view: EditorView
-  getPos: () => number | undefined
-  setAttrs: (attrs: Attrs) => void
-
-  // changes between updates
-  node: ProseMirrorNode
-  selected: boolean
-  decorations: readonly Decoration[]
-  innerDecorations: DecorationSource
-}
+export interface SolidNodeViewProps extends NodeViewContextProps {}
 
 /**
  * @public
@@ -55,16 +35,11 @@ export type SolidNodeViewComponent = Component<SolidNodeViewProps>
  *
  * @public
  */
-export interface SolidNodeViewOptions extends BaseNodeViewOptions {
+export interface SolidNodeViewOptions extends CoreNodeViewUserOptions<SolidNodeViewComponent> {
   /**
    * The name of the node type.
    */
   name: string
-
-  /**
-   * The Solid component to render the node.
-   */
-  component: SolidNodeViewComponent
 }
 
 function withNodeViewProps(

@@ -1,17 +1,40 @@
 import {
   defineNodeViewComponent,
+  defineNodeViewFactory,
   definePlugin,
   type Extension,
 } from '@prosekit/core'
-import type { SvelteNodeViewUserOptions } from '@prosemirror-adapter/svelte'
+import type { NodeViewConstructor } from '@prosekit/pm/view'
+import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
+import type {
+  NodeViewContext,
+  SvelteNodeViewUserOptions,
+} from '@prosemirror-adapter/svelte'
 import type { Component } from 'svelte'
 
 import { NodeViewWrapper } from '../components/node-view-wrapper'
 
-import type {
-  SvelteNodeViewComponent,
-  SvelteNodeViewOptions,
-} from './types'
+/**
+ * @public
+ */
+export interface SvelteNodeViewProps extends NodeViewContext {}
+
+/**
+ * @public
+ */
+export type SvelteNodeViewComponent = Component<SvelteNodeViewProps>
+
+/**
+ * Options for {@link defineSvelteNodeView}.
+ *
+ * @public
+ */
+export interface SvelteNodeViewOptions extends CoreNodeViewUserOptions<SvelteNodeViewComponent> {
+  /**
+   * The name of the node type.
+   */
+  name: string
+}
 
 const isServer = typeof window === 'undefined'
 
@@ -55,4 +78,13 @@ function wrapComponent(
   }
 
   return NodeViewPropsWrapper
+}
+
+export function defineSvelteNodeViewFactory(
+  factory: (options: SvelteNodeViewUserOptions) => NodeViewConstructor,
+) {
+  return defineNodeViewFactory<SvelteNodeViewUserOptions>({
+    group: 'svelte',
+    factory,
+  })
 }

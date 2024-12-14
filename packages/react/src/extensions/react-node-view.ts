@@ -1,22 +1,14 @@
 import {
   defineNodeViewComponent,
   defineNodeViewFactory,
-  type BaseNodeViewOptions,
   type Extension,
 } from '@prosekit/core'
-import type {
-  Attrs,
-  ProseMirrorNode,
-} from '@prosekit/pm/model'
-import type {
-  Decoration,
-  DecorationSource,
-  EditorView,
-  NodeViewConstructor,
-} from '@prosekit/pm/view'
+import type { NodeViewConstructor } from '@prosekit/pm/view'
+import type { CoreNodeViewUserOptions } from '@prosemirror-adapter/core'
 import {
   useNodeViewContext,
   useNodeViewFactory,
+  type NodeViewContext,
   type ReactNodeViewUserOptions,
 } from '@prosemirror-adapter/react'
 import {
@@ -31,19 +23,7 @@ import { useExtension } from '../hooks/use-extension'
 /**
  * @public
  */
-export interface ReactNodeViewProps {
-  // won't change
-  contentRef: (node: HTMLElement | null) => void
-  view: EditorView
-  getPos: () => number | undefined
-  setAttrs: (attrs: Attrs) => void
-
-  // changes between updates
-  node: ProseMirrorNode
-  selected: boolean
-  decorations: readonly Decoration[]
-  innerDecorations: DecorationSource
-}
+export interface ReactNodeViewProps extends NodeViewContext {}
 
 /**
  * @public
@@ -55,16 +35,11 @@ export type ReactNodeViewComponent = ComponentType<ReactNodeViewProps>
  *
  * @public
  */
-export interface ReactNodeViewOptions extends BaseNodeViewOptions {
+export interface ReactNodeViewOptions extends CoreNodeViewUserOptions<ReactNodeViewComponent> {
   /**
    * The name of the node type.
    */
   name: string
-
-  /**
-   * The React component to render the node.
-   */
-  component: ReactNodeViewComponent
 }
 
 function withNodeViewProps(component: ReactNodeViewComponent) {

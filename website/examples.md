@@ -40,6 +40,8 @@
 
 - [link](./examples/link)
 
+- [link-mark-view](./examples/link-mark-view)
+
 - [list](./examples/list)
 
 - [loro](./examples/loro)

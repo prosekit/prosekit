@@ -17,6 +17,7 @@ export const ImageView = { args: { story: 'image-view' } }
 export const InlineMenu = { args: { story: 'inline-menu' } }
 export const Keymap = { args: { story: 'keymap' } }
 export const Link = { args: { story: 'link' } }
+export const LinkMarkView = { args: { story: 'link-mark-view' } }
 export const List = { args: { story: 'list' } }
 export const Loro = { args: { story: 'loro' } }
 export const MarkRule = { args: { story: 'mark-rule' } }

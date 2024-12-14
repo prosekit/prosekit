@@ -360,11 +360,26 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "link-view.tsx",
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-link-mark-view",
+      "framework": "react",
+      "story": "link-mark-view",
+      "files": [
+        {
+          "path": "editor.tsx",
           "hidden": false
         },
         {
-          "path": "button.tsx",
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "link-view.tsx",
           "hidden": false
         }
       ]

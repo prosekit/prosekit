@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/link/link-view.tsx
+<<< @/../playground/examples/react/link-mark-view/editor.tsx
 
 :::
 

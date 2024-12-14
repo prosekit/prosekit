@@ -6,9 +6,6 @@ import {
   union,
 } from 'prosekit/core'
 import { defineLink } from 'prosekit/extensions/link'
-import { defineReactMarkView } from 'prosekit/react'
-
-import LinkView from './link-view'
 
 export function defineExtension() {
   return union(
@@ -17,12 +14,6 @@ export function defineExtension() {
     defineText(),
     defineParagraph(),
     defineLink(),
-    defineReactMarkView({
-      name: 'link',
-      component: LinkView,
-      as: 'span',
-      contentAs: 'span',
-    }),
   )
 }
 

@@ -1,7 +1,9 @@
 // https://typedoc.org/options/
 {
   "$schema": "https://typedoc.org/schema.json",
-  "extends": ["./typedoc.gen.json"],
+  "extends": [
+    "./typedoc.gen.json"
+  ],
   "out": ".temp/typedoc",
   "plugin": [
     "typedoc-plugin-md",
@@ -21,7 +23,21 @@
     }
   },
   "readme": "none",
-  "excludeExternals": true,
+  "exclude": [
+    "**/node_modules/prosemirror-commands/**",
+    "**/node_modules/prosemirror-history/**",
+    "**/node_modules/prosemirror-inputrules/**",
+    "**/node_modules/prosemirror-keymap/**",
+    "**/node_modules/prosemirror-model/**",
+    "**/node_modules/prosemirror-state/**",
+    "**/node_modules/prosemirror-transform/**",
+    "**/node_modules/prosemirror-view/**",
+    "**/node_modules/prosemirror-flat-list/**",
+    "**/node_modules/typescript/**",
+    "**/node_modules/loro-prosemirror/**",
+    "**/node_modules/y-prosemirror/**"
+  ],
+  "excludeExternals": false,
   "excludeInternal": true,
   "excludePrivate": true,
   "validation": {

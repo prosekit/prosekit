@@ -24,13 +24,11 @@ Options for [defineSvelteNodeView](svelte.md#define-svelte-node-view).
 
 <dt>
 
-`as?: string | HTMLElement | ((node: Node) => HTMLElement)`
+`as?: NodeViewDOMSpec`
 
 </dt>
 
 <dd>
-
-The wrapping DOM element for the node view. Defaults to `div` for block nodes and `span` for inline nodes.
 
 </dd>
 
@@ -42,19 +40,15 @@ The wrapping DOM element for the node view. Defaults to `div` for block nodes an
 
 <dd>
 
-The Svelte component to render the node.
-
 </dd>
 
 <dt>
 
-`contentAs?: string | HTMLElement | ((node: Node) => HTMLElement)`
+`contentAs?: NodeViewDOMSpec`
 
 </dt>
 
 <dd>
-
-The wrapping DOM element for the node view's content. Defaults to `div` for block nodes and `span` for inline nodes.
 
 </dd>
 
@@ -80,7 +74,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 <dt>
 
-`ignoreMutation?: (mutation: ViewMutationRecord) => boolean`
+`ignoreMutation?: (mutation: ViewMutationRecord) => boolean | void`
 
 </dt>
 
@@ -142,7 +136,7 @@ The name of the node type.
 
 <dt>
 
-`update?: (node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean`
+`update?: (node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean | void`
 
 </dt>
 

@@ -371,6 +371,10 @@ The type of the mark to add.
 
 Some basic props for custom node views.
 
+### Deprecated
+
+* This is no longer needed. Use `CoreNodeViewUserOptions` from `@prosemirror-adapter/core` instead.
+
 <dl>
 
 <dt>

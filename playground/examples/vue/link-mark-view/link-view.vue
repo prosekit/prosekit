@@ -1,6 +1,11 @@
 <script lang="ts" setup>
 import type { VueMarkViewProps } from 'prosekit/vue'
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import {
+  computed,
+  onMounted,
+  onUnmounted,
+  ref,
+} from 'vue'
 
 const colors = [
   '#f06292',

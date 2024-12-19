@@ -67,10 +67,7 @@ import type * as m from 'prosekit/vue'
 const Component: m.VueNodeViewComponent = {} as any
 export default Component
 // ---cut---
-import {
-  defineVueNodeView,
-  type VueNodeViewComponent,
-} from 'prosekit/vue'
+import { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'
 import CodeBlockView from './code-block-view.vue'
 
 const extension = defineVueNodeView({
@@ -80,10 +77,18 @@ const extension = defineVueNodeView({
 })
 ```
 
-Check out [code-block] for a complete implementation.
+Check out [code-block] for a complete example.
+
+## `defineVueMarkView`
+
+Similar to [`defineVueNodeView`], [`defineVueMarkView`] renders a mark using a Vue component.
+
+Check out [link-mark-view] for a complete example.
 
 [keymap]: /examples/keymap
 [code-block]: /examples/code-block
+[link-mark-view]: /examples/link-mark-view
 [word-counter]: /examples/word-counter
 [`VueNodeViewProps`]: /references/vue#vue-node-view-props
 [`defineVueNodeView`]: /references/vue#define-vue-node-view
+[`defineVueMarkView`]: /references/vue#define-vue-mark-view

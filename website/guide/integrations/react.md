@@ -81,10 +81,18 @@ const extension = defineReactNodeView({
 })
 ```
 
-Check out [code-block] for a complete implementation.
+Check out [code-block] for a complete example.
+
+## `defineReactMarkView`
+
+Similar to [`defineReactNodeView`], [`defineReactMarkView`] renders a mark using a React component.
+
+Check out [link-mark-view] for a complete example.
 
 [keymap]: /examples/keymap
 [code-block]: /examples/code-block
+[link-mark-view]: /examples/link-mark-view
 [word-counter]: /examples/word-counter
 [`ReactNodeViewProps`]: /references/react#react-node-view-props
 [`defineReactNodeView`]: /references/react#define-react-node-view
+[`defineReactMarkView`]: /references/react#define-react-mark-view

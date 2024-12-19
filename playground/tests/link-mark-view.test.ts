@@ -1,6 +1,12 @@
-import { expect, test } from '@playwright/test'
+import {
+  expect,
+  test,
+} from '@playwright/test'
 
-import { testStory, waitForEditor } from './helper'
+import {
+  testStory,
+  waitForEditor,
+} from './helper'
 
 testStory('link-mark-view', () => {
   test('link-mark-view', async ({ page }) => {

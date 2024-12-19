@@ -45,8 +45,8 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "@prosemirror-adapter/core": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103",
-    "@prosemirror-adapter/react": "https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/react@103",
+    "@prosemirror-adapter/core": "^0.4.0",
+    "@prosemirror-adapter/react": "^0.4.0",
     "react-merge-refs": "^2.1.1"
   },
   "peerDependencies": {

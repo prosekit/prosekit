@@ -505,11 +505,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103
+        specifier: ^0.4.0
+        version: 0.4.0
       '@prosemirror-adapter/react':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/react@103
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/react@103(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^0.4.0
+        version: 0.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-merge-refs:
         specifier: ^2.1.1
         version: 2.1.1
@@ -551,11 +551,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103
+        specifier: ^0.4.0
+        version: 0.4.0
       '@prosemirror-adapter/solid':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@103
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@103(solid-js@1.9.3)
+        specifier: ^0.4.0
+        version: 0.4.0(solid-js@1.9.3)
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -585,11 +585,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103
+        specifier: ^0.4.0
+        version: 0.4.0
       '@prosemirror-adapter/svelte':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@103
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@103(svelte@5.12.0)
+        specifier: ^0.4.0
+        version: 0.4.0(svelte@5.12.0)
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -681,11 +681,11 @@ importers:
         specifier: workspace:^
         version: link:../web
       '@prosemirror-adapter/core':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103
+        specifier: ^0.4.0
+        version: 0.4.0
       '@prosemirror-adapter/vue':
-        specifier: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@103
-        version: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@103(vue@3.5.13(typescript@5.6.3))
+        specifier: ^0.4.0
+        version: 0.4.0(vue@3.5.13(typescript@5.6.3))
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -2420,36 +2420,27 @@ packages:
       preact: ^10.4.0
       vite: '>=2.0.0'
 
-  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@06ded44b2c5ee2430ad6349c112ed9a1b58e5201':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@06ded44b2c5ee2430ad6349c112ed9a1b58e5201}
-    version: 0.2.6
+  '@prosemirror-adapter/core@0.4.0':
+    resolution: {integrity: sha512-feLFTIvbpQDnWspZv+rjTPmqpeJ8++VM/gDnBaDNLsAEvrwmO1IHc0oyrRBl/9x3Er3tU/WXc86TlOidsN1aEg==}
 
-  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103}
-    version: 0.2.6
-
-  '@prosemirror-adapter/react@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/react@103':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/react@103}
-    version: 0.2.6
+  '@prosemirror-adapter/react@0.4.0':
+    resolution: {integrity: sha512-SfybFk7VwjlslkDEvxkw4tQphDq7vN3UhUiLJ1sUyT+YVQM23lfugfwX3S/2lZC+eVdGHHa8rEuXQAQ6JRDdDw==}
     peerDependencies:
       react: '*'
       react-dom: '*'
 
-  '@prosemirror-adapter/solid@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@103':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@103}
-    version: 0.2.6
+  '@prosemirror-adapter/solid@0.4.0':
+    resolution: {integrity: sha512-9FCMJOJLM2K7wx2zrqt4jBXbwFhfLHZA2qckZBW4a7lx7+OJLDwvQQptGlRfc8jvaHXyOrDPR4oEMc9bDQT9ZQ==}
     peerDependencies:
       solid-js: ^1.8.22
 
-  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@103':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@103}
-    version: 0.3.0
+  '@prosemirror-adapter/svelte@0.4.0':
+    resolution: {integrity: sha512-7WsayY8j4FXZHWN+Okr8zn0dYTvUexWmX7LbL9FKAMY4sAQ4uvARRlaEBnh35NUpHO9WF6nwZiUJn4ee/6chow==}
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0
 
-  '@prosemirror-adapter/vue@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@103':
-    resolution: {tarball: https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@103}
-    version: 0.2.6
+  '@prosemirror-adapter/vue@0.4.0':
+    resolution: {integrity: sha512-Q3nqUstyc1OU6ZNAExVpzpISwYVS4eW3SOz8H+Z4KMY/6ngXndjkQWi3+SuZEujOn/SeP8NdJh4/5yg4IvAMvw==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -8817,39 +8808,35 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@06ded44b2c5ee2430ad6349c112ed9a1b58e5201':
+  '@prosemirror-adapter/core@0.4.0':
     dependencies:
       tslib: 2.8.1
 
-  '@prosemirror-adapter/core@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@103':
+  '@prosemirror-adapter/react@0.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      tslib: 2.8.1
-
-  '@prosemirror-adapter/react@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/react@103(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@06ded44b2c5ee2430ad6349c112ed9a1b58e5201
+      '@prosemirror-adapter/core': 0.4.0
       nanoid: 5.0.9
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tslib: 2.8.1
 
-  '@prosemirror-adapter/solid@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/solid@103(solid-js@1.9.3)':
+  '@prosemirror-adapter/solid@0.4.0(solid-js@1.9.3)':
     dependencies:
-      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@06ded44b2c5ee2430ad6349c112ed9a1b58e5201
+      '@prosemirror-adapter/core': 0.4.0
       nanoid: 5.0.9
       solid-js: 1.9.3
       tslib: 2.8.1
 
-  '@prosemirror-adapter/svelte@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/svelte@103(svelte@5.12.0)':
+  '@prosemirror-adapter/svelte@0.4.0(svelte@5.12.0)':
     dependencies:
-      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@06ded44b2c5ee2430ad6349c112ed9a1b58e5201
+      '@prosemirror-adapter/core': 0.4.0
       nanoid: 5.0.9
       svelte: 5.12.0
       tslib: 2.8.1
 
-  '@prosemirror-adapter/vue@https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/vue@103(vue@3.5.13(typescript@5.6.3))':
+  '@prosemirror-adapter/vue@0.4.0(vue@3.5.13(typescript@5.6.3))':
     dependencies:
-      '@prosemirror-adapter/core': https://pkg.pr.new/prosekit/prosemirror-adapter/@prosemirror-adapter/core@06ded44b2c5ee2430ad6349c112ed9a1b58e5201
+      '@prosemirror-adapter/core': 0.4.0
       nanoid: 5.0.9
       tslib: 2.8.1
       vue: 3.5.13(typescript@5.6.3)

@@ -4,10 +4,6 @@
 
 ### Patch Changes
 
-- [`c99a4c3`](https://github.com/ocavue/prosekit/commit/c99a4c33c95e4cf353b68b1296d632cba3123a4f) ![](https://prosekit.dev/b/vue)
-
-  Add `defineMarkView()` to define [mark views](https://prosemirror.net/docs/ref/#view.MarkView) to the editor.
-
 - [`c99a4c3`](https://github.com/ocavue/prosekit/commit/c99a4c33c95e4cf353b68b1296d632cba3123a4f) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue)
 
   Support using components to render [mark views](https://prosemirror.net/docs/ref/#view.MarkView).

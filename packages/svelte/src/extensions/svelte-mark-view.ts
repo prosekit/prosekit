@@ -29,8 +29,7 @@ export type SvelteMarkViewComponent = Component<SvelteMarkViewProps>
  *
  * @public
  */
-export interface SvelteMarkViewOptions
-  extends CoreMarkViewUserOptions<SvelteMarkViewComponent> {
+export interface SvelteMarkViewOptions extends CoreMarkViewUserOptions<SvelteMarkViewComponent> {
   /**
    * The name of the mark type.
    */

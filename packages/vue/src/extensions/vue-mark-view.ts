@@ -12,7 +12,12 @@ import {
   type MarkViewFactory,
   type VueMarkViewUserOptions,
 } from '@prosemirror-adapter/vue'
-import { computed, defineComponent, h, type DefineComponent } from 'vue'
+import {
+  computed,
+  defineComponent,
+  h,
+  type DefineComponent,
+} from 'vue'
 
 import { useExtension } from '../hooks/use-extension'
 
@@ -31,8 +36,7 @@ export type VueMarkViewComponent = DefineComponent<VueMarkViewProps, any, any>
  *
  * @public
  */
-export interface VueMarkViewOptions
-  extends CoreMarkViewUserOptions<VueMarkViewComponent> {
+export interface VueMarkViewOptions extends CoreMarkViewUserOptions<VueMarkViewComponent> {
   /**
    * The name of the mark type.
    */

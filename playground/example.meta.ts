@@ -2179,6 +2179,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "solid-link-mark-view",
+      "framework": "solid",
+      "story": "link-mark-view",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "link-view.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "solid-readonly",
       "framework": "solid",
       "story": "readonly",

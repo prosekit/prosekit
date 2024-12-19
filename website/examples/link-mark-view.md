@@ -21,4 +21,16 @@ const { path } = useRoute()
 
 </template>
 
+<template v-slot:solid>
+
+::: code-group
+
+<<< @/../playground/examples/solid/link-mark-view/editor.tsx
+<<< @/../playground/examples/solid/link-mark-view/extension.ts
+<<< @/../playground/examples/solid/link-mark-view/link-view.tsx
+
+:::
+
+</template>
+
 </ExamplePreview>

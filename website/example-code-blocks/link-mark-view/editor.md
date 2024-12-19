@@ -12,4 +12,14 @@
 
 </template>
 
+<template v-slot:solid>
+
+::: code-group
+
+<<< @/../playground/examples/solid/link-mark-view/editor.tsx
+
+:::
+
+</template>
+
 </FrameworkCodeBlock>

@@ -32,11 +32,7 @@ $effect(() => {
   const interval = setInterval(() => {
     color = pickRandomColor()
   }, 1000)
-  console.log('setting interval', interval)
-  return () => {
-    console.log('clearing interval', interval)
-    clearInterval(interval)
-  }
+  return () => clearInterval(interval)
 })
 </script>
 

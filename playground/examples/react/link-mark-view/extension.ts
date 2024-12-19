@@ -10,8 +10,6 @@ export function defineExtension() {
     defineReactMarkView({
       name: 'link',
       component: LinkView,
-      as: 'span',
-      contentAs: 'span',
     }),
   )
 }

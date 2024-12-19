@@ -56,7 +56,7 @@ function withMarkViewProps(
 /**
  * @internal
  */
-export function consumeSolidViews() {
+export function consumeSolidMarkViews() {
   const markViewFactory = useMarkViewFactory()
   const extension = createMemo(
     () => defineSolidMarkViewFactory(markViewFactory),

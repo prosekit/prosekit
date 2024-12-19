@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.11.2
+
+### Patch Changes
+
+- [`8000cab`](https://github.com/ocavue/prosekit/commit/8000cab8e1e113767926a434a8c3ed9843ac3006) ![](https://prosekit.dev/b/core)
+
+  Add `defineMarkView()` to define [mark views](https://prosemirror.net/docs/ref/#view.MarkView) to the editor.
+
 ## 0.11.1
 
 ### Patch Changes

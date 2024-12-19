@@ -21,6 +21,18 @@ const { path } = useRoute()
 
 </template>
 
+<template v-slot:vue>
+
+::: code-group
+
+<<< @/../playground/examples/vue/link-mark-view/editor.vue
+<<< @/../playground/examples/vue/link-mark-view/extension.ts
+<<< @/../playground/examples/vue/link-mark-view/link-view.vue
+
+:::
+
+</template>
+
 <template v-slot:svelte>
 
 ::: code-group

@@ -12,6 +12,16 @@
 
 </template>
 
+<template v-slot:vue>
+
+::: code-group
+
+<<< @/../playground/examples/vue/link-mark-view/editor.vue
+
+:::
+
+</template>
+
 <template v-slot:svelte>
 
 ::: code-group

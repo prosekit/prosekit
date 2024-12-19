@@ -1149,6 +1149,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "vue-link-mark-view",
+      "framework": "vue",
+      "story": "link-mark-view",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "link-view.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-list",
       "framework": "vue",
       "story": "list",

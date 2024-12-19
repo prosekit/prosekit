@@ -12,12 +12,7 @@ import {
   type NodeViewFactory,
   type VueNodeViewUserOptions,
 } from '@prosemirror-adapter/vue'
-import {
-  computed,
-  defineComponent,
-  h,
-  type DefineComponent,
-} from 'vue'
+import { computed, defineComponent, h, type DefineComponent } from 'vue'
 
 import { useExtension } from '../hooks/use-extension'
 
@@ -36,7 +31,8 @@ export type VueNodeViewComponent = DefineComponent<VueNodeViewProps, any, any>
  *
  * @public
  */
-export interface VueNodeViewOptions extends CoreNodeViewUserOptions<VueNodeViewComponent> {
+export interface VueNodeViewOptions
+  extends CoreNodeViewUserOptions<VueNodeViewComponent> {
   /**
    * The name of the node type.
    */
@@ -56,8 +52,8 @@ function withNodeViewProps(component: VueNodeViewComponent) {
 /**
  * @internal
  */
-export const VueViewsConsumer = /* @__PURE__ */ defineComponent({
-  name: 'VueViewsConsumer',
+export const VueNodeViewsConsumer = /* @__PURE__ */ defineComponent({
+  name: 'VueNodeViewsConsumer',
   setup: () => {
     const nodeViewFactory: NodeViewFactory = useNodeViewFactory()
     const extension = computed(() => {

@@ -1,5 +1,9 @@
 import type { SolidMarkViewProps } from 'prosekit/solid'
-import { createSignal, onCleanup, onMount } from 'solid-js'
+import {
+  createSignal,
+  onCleanup,
+  onMount,
+} from 'solid-js'
 
 const colors = [
   '#f06292',
@@ -41,6 +45,7 @@ export default function Link(props: SolidMarkViewProps) {
       href={href}
       ref={contentRef}
       style={{ color: color(), transition: 'color 1s ease-in-out' }}
-    ></a>
+    >
+    </a>
   )
 }

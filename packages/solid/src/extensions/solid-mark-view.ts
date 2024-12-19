@@ -35,8 +35,7 @@ export type SolidMarkViewComponent = Component<SolidMarkViewProps>
  *
  * @public
  */
-export interface SolidMarkViewOptions
-  extends CoreMarkViewUserOptions<SolidMarkViewComponent> {
+export interface SolidMarkViewOptions extends CoreMarkViewUserOptions<SolidMarkViewComponent> {
   /**
    * The name of the mark type.
    */

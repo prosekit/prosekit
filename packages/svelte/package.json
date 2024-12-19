@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/svelte",
   "type": "module",
-  "version": "0.6.1",
+  "version": "0.6.1", 
   "private": false,
   "author": {
     "name": "ocavue",

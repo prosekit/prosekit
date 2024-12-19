@@ -17,6 +17,7 @@ export const loaders = {
   'italic': defineAsyncComponent(() => import('./italic/editor.vue')),
   'keymap': defineAsyncComponent(() => import('./keymap/editor.vue')),
   'link': defineAsyncComponent(() => import('./link/editor.vue')),
+  'link-mark-view': defineAsyncComponent(() => import('./link-mark-view/editor.vue')),
   'list': defineAsyncComponent(() => import('./list/editor.vue')),
   'mark-rule': defineAsyncComponent(() => import('./mark-rule/editor.vue')),
   'placeholder': defineAsyncComponent(() => import('./placeholder/editor.vue')),

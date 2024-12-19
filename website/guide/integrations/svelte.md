@@ -79,10 +79,18 @@ const extension = defineSvelteNodeView({
 })
 ```
 
-Check out [code-block] for a complete implementation.
+Check out [code-block] for a complete example.
+
+## `defineSvelteMarkView`
+
+Similar to [`defineSvelteNodeView`], [`defineSvelteMarkView`] renders a mark using a Svelte component.
+
+Check out [link-mark-view] for a complete example.
 
 [keymap]: /examples/keymap
 [code-block]: /examples/code-block
+[link-mark-view]: /examples/link-mark-view
 [word-counter]: /examples/word-counter
 [`SvelteNodeViewProps`]: /references/svelte#svelte-node-view-props
 [`defineSvelteNodeView`]: /references/svelte#define-svelte-node-view
+[`defineSvelteMarkView`]: /references/svelte#define-svelte-mark-view

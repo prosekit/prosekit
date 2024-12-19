@@ -79,6 +79,10 @@ export const exampleItems = [
     "link": "/examples/link"
   },
   {
+    "text": "link-mark-view",
+    "link": "/examples/link-mark-view"
+  },
+  {
     "text": "list",
     "link": "/examples/list"
   },

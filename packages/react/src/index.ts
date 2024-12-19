@@ -3,6 +3,12 @@ export {
   type ProseKitProps,
 } from './components/prosekit'
 export {
+  defineReactMarkView,
+  type ReactMarkViewComponent,
+  type ReactMarkViewOptions,
+  type ReactMarkViewProps,
+} from './extensions/react-mark-view'
+export {
   defineReactNodeView,
   type ReactNodeViewComponent,
   type ReactNodeViewOptions,

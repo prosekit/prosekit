@@ -7,7 +7,8 @@ import {
 } from 'solid-js'
 
 import { EditorContextProvider } from '../contexts/editor-context'
-import { consumeSolidViews } from '../extensions/solid-node-view'
+import { consumeSolidMarkViews } from '../extensions/solid-mark-view'
+import { consumeSolidNodeViews } from '../extensions/solid-node-view'
 
 export type ProseKitProps = ParentProps<{
   editor: Editor
@@ -26,7 +27,8 @@ export const ProseKit: Component<ProseKitProps> = (props) => {
           return props.editor
         },
         get children() {
-          consumeSolidViews()
+          consumeSolidNodeViews()
+          consumeSolidMarkViews()
           return props.children
         },
       })

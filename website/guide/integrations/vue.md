@@ -80,10 +80,18 @@ const extension = defineVueNodeView({
 })
 ```
 
-Check out [code-block] for a complete implementation.
+Check out [code-block] for a complete example.
+
+## `defineVueMarkView`
+
+Similar to [`defineVueNodeView`], [`defineVueMarkView`] renders a mark using a Vue component.
+
+Check out [link-mark-view] for a complete example.
 
 [keymap]: /examples/keymap
 [code-block]: /examples/code-block
+[link-mark-view]: /examples/link-mark-view
 [word-counter]: /examples/word-counter
 [`VueNodeViewProps`]: /references/vue#vue-node-view-props
 [`defineVueNodeView`]: /references/vue#define-vue-node-view
+[`defineVueMarkView`]: /references/vue#define-vue-mark-view

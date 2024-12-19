@@ -3,6 +3,12 @@ export {
   type ProseKitProps,
 } from './components/prosekit'
 export {
+  defineSolidMarkView,
+  type SolidMarkViewComponent,
+  type SolidMarkViewOptions,
+  type SolidMarkViewProps,
+} from './extensions/solid-mark-view'
+export {
   defineSolidNodeView,
   type SolidNodeViewComponent,
   type SolidNodeViewOptions,

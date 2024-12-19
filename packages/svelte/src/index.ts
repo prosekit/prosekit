@@ -2,11 +2,17 @@ export {
   ProseKit,
   type ProseKitProps,
 } from './components/prosekit'
-export { defineSvelteNodeView } from './extensions/svelte-node-view'
-export type {
-  SvelteNodeViewComponent,
-  SvelteNodeViewOptions,
-  SvelteNodeViewProps,
+export {
+  defineSvelteMarkView,
+  type SvelteMarkViewComponent,
+  type SvelteMarkViewOptions,
+  type SvelteMarkViewProps,
+} from './extensions/svelte-mark-view'
+export {
+  defineSvelteNodeView,
+  type SvelteNodeViewComponent,
+  type SvelteNodeViewOptions,
+  type SvelteNodeViewProps,
 } from './extensions/svelte-node-view'
 export { useDocChange } from './hooks/use-doc-change'
 export { useEditor } from './hooks/use-editor'

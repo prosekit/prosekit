@@ -343,6 +343,48 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-link",
+      "framework": "react",
+      "story": "link",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "inline-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-link-mark-view",
+      "framework": "react",
+      "story": "link-mark-view",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "link-view.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-list",
       "framework": "react",
       "story": "list",
@@ -1102,6 +1144,25 @@ export const exampleMeta = {
         },
         {
           "path": "button.vue",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "vue-link-mark-view",
+      "framework": "vue",
+      "story": "link-mark-view",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "link-view.vue",
           "hidden": false
         }
       ]
@@ -1885,6 +1946,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-link-mark-view",
+      "framework": "svelte",
+      "story": "link-mark-view",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "link-view.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-list",
       "framework": "svelte",
       "story": "list",
@@ -2132,6 +2212,25 @@ export const exampleMeta = {
         },
         {
           "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-link-mark-view",
+      "framework": "solid",
+      "story": "link-mark-view",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "link-view.tsx",
           "hidden": false
         }
       ]

@@ -6,7 +6,8 @@ import {
   type PropType,
 } from 'vue'
 
-import { VueViewsConsumer } from '../extensions/vue-node-view'
+import { VueMarkViewsConsumer } from '../extensions/vue-mark-view'
+import { VueNodeViewsConsumer } from '../extensions/vue-node-view'
 import { provideEditor } from '../injection/editor-context'
 
 export interface ProseKitProps {
@@ -23,7 +24,8 @@ export const ProseKit = defineComponent<ProseKitProps>(
     provideEditor(props.editor)
     return () => {
       return h(ProsemirrorAdapterProvider, null, () => [
-        h(VueViewsConsumer),
+        h(VueNodeViewsConsumer),
+        h(VueMarkViewsConsumer),
         slots.default?.(),
       ])
     }

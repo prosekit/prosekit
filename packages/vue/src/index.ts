@@ -3,6 +3,12 @@ export {
   type ProseKitProps,
 } from './components/prosekit'
 export {
+  defineVueMarkView,
+  type VueMarkViewComponent,
+  type VueMarkViewOptions,
+  type VueMarkViewProps,
+} from './extensions/vue-mark-view'
+export {
   defineVueNodeView,
   type VueNodeViewComponent,
   type VueNodeViewOptions,

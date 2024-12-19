@@ -1,0 +1,5 @@
+---
+'@prosekit/core': patch
+---
+
+Add `defineMarkView()` to define [mark views](https://prosemirror.net/docs/ref/#view.MarkView) to the editor.

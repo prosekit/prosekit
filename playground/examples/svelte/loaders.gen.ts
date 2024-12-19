@@ -13,6 +13,7 @@ export const loaders = {
   'heading': () => import('./heading/editor.svelte'),
   'italic': () => import('./italic/editor.svelte'),
   'keymap': () => import('./keymap/editor.svelte'),
+  'link-mark-view': () => import('./link-mark-view/editor.svelte'),
   'list': () => import('./list/editor.svelte'),
   'readonly': () => import('./readonly/editor.svelte'),
   'save-json': () => import('./save-json/editor.svelte'),

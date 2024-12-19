@@ -15,6 +15,7 @@ export const Full = { args: { story: 'full' } }
 export const Heading = { args: { story: 'heading' } }
 export const Italic = { args: { story: 'italic' } }
 export const Keymap = { args: { story: 'keymap' } }
+export const LinkMarkView = { args: { story: 'link-mark-view' } }
 export const List = { args: { story: 'list' } }
 export const Readonly = { args: { story: 'readonly' } }
 export const SaveJson = { args: { story: 'save-json' } }

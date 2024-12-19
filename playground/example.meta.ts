@@ -1927,6 +1927,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-link-mark-view",
+      "framework": "svelte",
+      "story": "link-mark-view",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "link-view.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-list",
       "framework": "svelte",
       "story": "list",

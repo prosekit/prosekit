@@ -12,6 +12,16 @@
 
 </template>
 
+<template v-slot:svelte>
+
+::: code-group
+
+<<< @/../playground/examples/svelte/link-mark-view/editor.svelte
+
+:::
+
+</template>
+
 <template v-slot:solid>
 
 ::: code-group

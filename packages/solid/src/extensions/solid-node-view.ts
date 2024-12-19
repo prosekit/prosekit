@@ -35,8 +35,7 @@ export type SolidNodeViewComponent = Component<SolidNodeViewProps>
  *
  * @public
  */
-export interface SolidNodeViewOptions
-  extends CoreNodeViewUserOptions<SolidNodeViewComponent> {
+export interface SolidNodeViewOptions extends CoreNodeViewUserOptions<SolidNodeViewComponent> {
   /**
    * The name of the node type.
    */

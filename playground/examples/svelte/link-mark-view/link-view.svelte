@@ -24,25 +24,17 @@ function pickRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)]
 }
 
-let color = colors[0]
-let interval: ReturnType<typeof setInterval>
+let { mark, contentRef }: SvelteMarkViewProps = $props()
+const href = $derived($mark.attrs.href as string)
+let color = $state(colors[0])
 
-export let mark: SvelteMarkViewProps['mark']
-export let contentRef: SvelteMarkViewProps['contentRef']
-
-const href = mark.attrs.href as string
-
-$: {
-  if (interval) {
-    clearInterval(interval)
-  }
-  interval = setInterval(() => {
+$effect(() => {
+  const interval = setInterval(() => {
     color = pickRandomColor()
   }, 1000)
-}
-
-onDestroy(() => {
-  if (interval) {
+  console.log('setting interval', interval)
+  return () => {
+    console.log('clearing interval', interval)
     clearInterval(interval)
   }
 })
@@ -50,6 +42,6 @@ onDestroy(() => {
 
 <a
   {href}
-  bind:this={contentRef}
+  use:contentRef
   style="color: {color}; transition: color 1s ease-in-out"
 ></a>

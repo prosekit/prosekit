@@ -3,8 +3,8 @@ import { groupBy } from 'lodash-es'
 import {
   readExampleMeta,
   type Example,
-} from './example-meta'
-import { vfs } from './virtual-file-system'
+} from './example-meta.js'
+import { vfs } from './virtual-file-system.js'
 
 export async function genExamplePreviews() {
   const meta = await readExampleMeta()

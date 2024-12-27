@@ -8,8 +8,8 @@ import {
 import {
   readComponents,
   type GroupedComponents as Components,
-} from './read-components'
-import { vfs } from './virtual-file-system'
+} from './read-components.js'
+import { vfs } from './virtual-file-system.js'
 
 export async function genComponents() {
   const webPackages = await vfs.getPackageByName('@prosekit/web')

@@ -15,7 +15,7 @@ import { schemaFacet } from './schema'
  * @internal
  */
 export abstract class BaseExtension<T extends ExtensionTyping = ExtensionTyping> implements Extension<T> {
-  extension: Extension | Extension[] = []
+  abstract extension: Extension | Extension[]
   priority?: Priority
   _type?: T
 

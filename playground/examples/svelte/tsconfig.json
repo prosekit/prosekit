@@ -1,11 +1,5 @@
 {
-  "extends": "../../../tsconfig.json",
-  "compilerOptions": {
-    "composite": true,
-
-    // `declarationMap` doesn't work well with `svelte-check`
-    "declarationMap": false,
-  },
+  "extends": "@ocavue/tsconfig/dom/app",
   "include": ["./**/*.ts", "./**/*.svelte"],
   "references": [
     {

@@ -1,7 +1,4 @@
 {
-  "extends": "../../../tsconfig.json",
-  "compilerOptions": {
-    "composite": true,
-  },
+  "extends": "@ocavue/tsconfig/dom/app",
   "include": ["./"],
 }

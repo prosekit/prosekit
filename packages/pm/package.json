@@ -40,8 +40,8 @@
     "dist"
   ],
   "scripts": {
-    "build:tsup": "ls node_modules/@prosekit/dev/dist/ && tsup",
-    "build:tsc": "ls node_modules/@prosekit/dev/dist/ && tsc -b tsconfig.json"
+    "build:tsup": "tsup",
+    "build:tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
     "prosemirror-commands": "^1.6.2",

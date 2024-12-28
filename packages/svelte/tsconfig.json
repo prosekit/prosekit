@@ -1,7 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "composite": true,
-  },
-  "include": ["./src", "./*.js", "./*.ts", "./scripts"],
+  "extends": "@ocavue/tsconfig/es/root",
+  "include": ["./*.js", "./*.ts", "./scripts"],
 }

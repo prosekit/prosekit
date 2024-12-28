@@ -113,6 +113,9 @@
       "path": "packages/vue/tsconfig.json",
     },
     {
+      "path": "packages/web/tsconfig.build.json",
+    },
+    {
       "path": "packages/web/tsconfig.json",
     },
     {

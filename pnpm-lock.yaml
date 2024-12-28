@@ -26,8 +26,8 @@ importers:
         specifier: ^2.11.2
         version: 2.11.2(eslint@9.16.0(jiti@2.4.1))(typescript@5.7.2)
       '@ocavue/tsconfig':
-        specifier: github:ocavue/tsconfig#b8e79926cb144cfc1e136604e15dce6b8667d4e1
-        version: git+https://git@github.com:ocavue/tsconfig.git#b8e79926cb144cfc1e136604e15dce6b8667d4e1
+        specifier: github:ocavue/tsconfig#f9b6d1e97f491bfceb7b52e6e3713f1cbeb5a9d3
+        version: git+https://git@github.com:ocavue/tsconfig.git#f9b6d1e97f491bfceb7b52e6e3713f1cbeb5a9d3
       '@prosekit/unocss-preset':
         specifier: workspace:*
         version: link:packages/unocss-preset
@@ -2443,8 +2443,8 @@ packages:
   '@ocavue/eslint-config@2.11.2':
     resolution: {integrity: sha512-6BJdBBoot24PtL9dnVhR6jCii43sPT8ExtP8BUV8JhzNHI5zD6NipFu3r/38/2acdHPwSTlBjvbn5olTXnBxyQ==}
 
-  '@ocavue/tsconfig@git+https://git@github.com:ocavue/tsconfig.git#b8e79926cb144cfc1e136604e15dce6b8667d4e1':
-    resolution: {commit: b8e79926cb144cfc1e136604e15dce6b8667d4e1, repo: git@github.com:ocavue/tsconfig.git, type: git}
+  '@ocavue/tsconfig@git+https://git@github.com:ocavue/tsconfig.git#f9b6d1e97f491bfceb7b52e6e3713f1cbeb5a9d3':
+    resolution: {commit: f9b6d1e97f491bfceb7b52e6e3713f1cbeb5a9d3, repo: git@github.com:ocavue/tsconfig.git, type: git}
     version: 0.0.0
 
   '@octokit/action@6.1.0':
@@ -9163,7 +9163,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@ocavue/tsconfig@git+https://git@github.com:ocavue/tsconfig.git#b8e79926cb144cfc1e136604e15dce6b8667d4e1': {}
+  '@ocavue/tsconfig@git+https://git@github.com:ocavue/tsconfig.git#f9b6d1e97f491bfceb7b52e6e3713f1cbeb5a9d3': {}
 
   '@octokit/action@6.1.0':
     dependencies:

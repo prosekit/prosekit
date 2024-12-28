@@ -6,8 +6,8 @@ import { pascalCase } from 'change-case'
 import {
   readExampleMeta,
   type Example,
-} from './example-meta'
-import { vfs } from './virtual-file-system'
+} from './example-meta.js'
+import { vfs } from './virtual-file-system.js'
 
 export async function genPlaygroundPages() {
   const meta = await readExampleMeta()

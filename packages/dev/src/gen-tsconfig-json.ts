@@ -8,7 +8,7 @@ export async function genTsconfigJson() {
   const tsconfig = await tsconfigFile.readJSON()
 
   const tsconfigPaths = (await vfs.getFilePathsByDir('.'))
-    .filter((p) => p.endsWith('tsconfig.json') && p !== 'tsconfig.json')
+    .filter((p) => p.match(/[.-\w]*tsconfig[.-\w]*\.json$/) && p !== 'tsconfig.json')
     .sort()
 
   tsconfig.references = tsconfigPaths.map((path) => ({ path }))

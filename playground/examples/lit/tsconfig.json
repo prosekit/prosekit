@@ -1,9 +1,8 @@
 {
-  "extends": "../../../tsconfig.json",
+  "extends": "@ocavue/tsconfig/dom/app",
   "compilerOptions": {
     "experimentalDecorators": true,
     "target": "ESNext",
     "composite": true,
   },
-  "include": ["./"],
 }

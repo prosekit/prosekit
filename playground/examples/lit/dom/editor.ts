@@ -29,7 +29,7 @@ import {
 
 @customElement('example-lit-dom')
 export class MyEditor extends LitElement {
-  createRenderRoot() {
+  override createRenderRoot() {
     return this
   }
 
@@ -41,7 +41,7 @@ export class MyEditor extends LitElement {
 
   private editorRef: Ref<HTMLDivElement> = createRef()
 
-  protected firstUpdated(): void {
+  protected override firstUpdated(): void {
     if (!this.editor) {
       const extension = defineExtension()
       this.editor = createEditor({
@@ -53,7 +53,7 @@ export class MyEditor extends LitElement {
     this.editor.mount(this.editorRef.value)
   }
 
-  render() {
+  override render() {
     return html`
       <div class=${Themes.EDITOR_VIEWPORT}>
         <div class=${Themes.EDITOR_SCROLLING}>

@@ -57,7 +57,7 @@ class TestEditorInstance extends EditorInstance {
     this.marks = createMarkActions(this.schema, this.getState, applyMarkForTest)
   }
 
-  setContent(
+  override setContent(
     content: ProseMirrorNode | NodeJSON | string | HTMLElement,
     selection?: SelectionJSON | Selection | 'start' | 'end',
   ): void {

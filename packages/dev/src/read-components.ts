@@ -1,4 +1,4 @@
-import { vfs } from './virtual-file-system'
+import { vfs } from './virtual-file-system.js'
 
 /**
  * Returns a list of components names in kebab case

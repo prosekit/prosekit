@@ -1,64 +1,80 @@
 {
-  "compilerOptions": {
-    "target": "es2018",
-    "module": "esnext",
-    "lib": ["esnext", "DOM"],
-    "composite": true,
-    "allowJs": true,
-    "moduleResolution": "bundler",
-    "useDefineForClassFields": false,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true,
-    "esModuleInterop": true,
-    "outDir": "${configDir}/.temp/ts",
-    "declaration": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "strict": true,
-    "strictNullChecks": true,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
-  },
-  "include": ["./*.js", "./*.ts", ".changeset/*.cjs"],
+  "extends": "@ocavue/tsconfig/es/root",
+  "include": [
+    "./*.js",
+    "./*.ts",
+    ".changeset/*.cjs",
+  ],
   "files": [],
   "references": [
     {
+      "path": "packages/basic/tsconfig.build.json",
+    },
+    {
       "path": "packages/basic/tsconfig.json",
+    },
+    {
+      "path": "packages/core/tsconfig.build.json",
     },
     {
       "path": "packages/core/tsconfig.json",
     },
     {
+      "path": "packages/dev/tsconfig.build.json",
+    },
+    {
       "path": "packages/dev/tsconfig.json",
+    },
+    {
+      "path": "packages/extensions/tsconfig.build.json",
     },
     {
       "path": "packages/extensions/tsconfig.json",
     },
     {
+      "path": "packages/lit/tsconfig.build.json",
+    },
+    {
       "path": "packages/lit/tsconfig.json",
+    },
+    {
+      "path": "packages/pm/tsconfig.build.json",
     },
     {
       "path": "packages/pm/tsconfig.json",
     },
     {
+      "path": "packages/preact/tsconfig.build.json",
+    },
+    {
       "path": "packages/preact/tsconfig.json",
+    },
+    {
+      "path": "packages/prosekit/tsconfig.build.json",
     },
     {
       "path": "packages/prosekit/tsconfig.json",
     },
     {
+      "path": "packages/react/tsconfig.build.json",
+    },
+    {
       "path": "packages/react/tsconfig.json",
+    },
+    {
+      "path": "packages/solid/tsconfig.build.json",
     },
     {
       "path": "packages/solid/tsconfig.json",
     },
     {
+      "path": "packages/svelte/tsconfig.build.json",
+    },
+    {
       "path": "packages/svelte/tsconfig.json",
+    },
+    {
+      "path": "packages/themes/tsconfig.build.json",
     },
     {
       "path": "packages/themes/tsconfig.json",
@@ -67,7 +83,13 @@
       "path": "packages/unocss-preset/tsconfig.json",
     },
     {
+      "path": "packages/vue/tsconfig.build.json",
+    },
+    {
       "path": "packages/vue/tsconfig.json",
+    },
+    {
+      "path": "packages/web/tsconfig.build.json",
     },
     {
       "path": "packages/web/tsconfig.json",

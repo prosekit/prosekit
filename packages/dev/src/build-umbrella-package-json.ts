@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import { vfs } from './virtual-file-system'
+import { vfs } from './virtual-file-system.js'
 
 export async function buildUmbrellaPackageJson() {
   const umbrellaPackage = await vfs.getPackageByName('prosekit')

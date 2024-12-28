@@ -14,4 +14,22 @@
   "dprint.path": "./node_modules/.bin/dprint",
   "dprint.experimentalLsp": true,
   "typescript.tsdk": "node_modules/typescript/lib",
+  "[typescript]": {
+    "editor.defaultFormatter": "dprint.dprint",
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dprint.dprint",
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dprint.dprint",
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "dprint.dprint",
+  },
+  "[json]": {
+    "editor.defaultFormatter": "dprint.dprint",
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "dprint.dprint",
+  },
 }

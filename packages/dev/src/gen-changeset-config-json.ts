@@ -1,4 +1,4 @@
-import { vfs } from './virtual-file-system'
+import { vfs } from './virtual-file-system.js'
 
 export async function genChangesetConfigJson() {
   const packages = await vfs.getPrivatePackages()

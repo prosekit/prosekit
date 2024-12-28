@@ -47,6 +47,9 @@
       "path": "packages/core/tsconfig.json",
     },
     {
+      "path": "packages/dev/tsconfig.build.json",
+    },
+    {
       "path": "packages/dev/tsconfig.json",
     },
     {

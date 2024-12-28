@@ -1,6 +1,7 @@
 import path from 'node:path'
 
 import filterObject from 'just-filter-object'
+import { pathExists } from 'path-exists'
 import { readPackage } from 'read-pkg'
 import type { Options } from 'tsup'
 
@@ -21,6 +22,9 @@ async function getConfig(options?: Options): Promise<Options> {
     relativeDir: path.relative(rootDir, packageDir),
   })
 
+  const tsconfigBuildPath = path.resolve(packageDir, 'tsconfig.build.json')
+  const tsconfigPath = path.resolve(packageDir, 'tsconfig.json')
+
   const defaultOptions: Options = {
     format: ['esm'],
     entry: entryPoints,
@@ -28,6 +32,7 @@ async function getConfig(options?: Options): Promise<Options> {
     sourcemap: false,
     clean: false,
     noExternal: [/\.css$/i],
+    tsconfig: (await pathExists(tsconfigBuildPath)) ? tsconfigBuildPath : tsconfigPath,
     experimentalDts: {
       entry: removeCssEntryPoints(entryPoints),
     },

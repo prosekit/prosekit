@@ -36,6 +36,7 @@
     "tsup": "^8.3.5"
   },
   "devDependencies": {
+    "@ocavue/tsconfig": "^0.1.2",
     "@changesets/read": "^0.6.2",
     "@sindresorhus/string-hash": "^2.0.0",
     "@types/js-yaml": "^4.0.9",

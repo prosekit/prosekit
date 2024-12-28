@@ -65,7 +65,7 @@ importers:
         specifier: ^1.49.1
         version: 1.49.1
       prettier:
-        specifier: ^3.4.1
+        specifier: ^3.4.2
         version: 3.4.2
       prettier-plugin-astro:
         specifier: ^0.14.1
@@ -190,12 +190,15 @@ importers:
         specifier: ^9.0.1
         version: 9.0.1
       tsup:
-        specifier: ^8.3.4
+        specifier: ^8.3.5
         version: 8.3.5(@microsoft/api-extractor@7.48.1(@types/node@20.17.9))(jiti@2.4.1)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1)
     devDependencies:
       '@changesets/read':
         specifier: ^0.6.2
         version: 0.6.2
+      '@ocavue/tsconfig':
+        specifier: ^0.1.2
+        version: 0.1.2
       '@sindresorhus/string-hash':
         specifier: ^2.0.0
         version: 2.0.0

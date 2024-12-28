@@ -26,4 +26,10 @@
   "[astro]": {
     "editor.defaultFormatter": "dprint.dprint",
   },
+  "[json]": {
+    "editor.defaultFormatter": "dprint.dprint",
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "dprint.dprint",
+  },
 }

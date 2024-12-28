@@ -108,6 +108,10 @@ jobs:
   linkcheck:
     runs-on: ubuntu-latest
 
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
     steps:
       - uses: actions/checkout@v4
 
@@ -117,9 +121,9 @@ jobs:
         run: pnpm run build:website
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v2.0.2
+        uses: lycheeverse/lychee-action@v2.2.0
         with:
-          args: --base ./website/dist --no-progress './website/dist/**/*.html' --include-fragments --fallback-extensions html
+          args: --root-dir "$PWD/website/dist" --no-progress './website/dist/**/*.html' --include-fragments --fallback-extensions html
           fail: true
 
   deploy:

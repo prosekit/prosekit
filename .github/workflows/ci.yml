@@ -117,9 +117,9 @@ jobs:
         run: pnpm run build:website
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v2.0.2
+        uses: lycheeverse/lychee-action@v2.2.0
         with:
-          args: --base ./website/dist --no-progress './website/dist/**/*.html' --include-fragments --fallback-extensions html
+          args: --root-dir ./website/dist --no-progress './website/dist/**/*.html' --include-fragments --fallback-extensions html
           fail: true
 
   deploy:

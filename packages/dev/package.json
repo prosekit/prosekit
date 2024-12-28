@@ -21,7 +21,7 @@
   },
   "scripts": {
     "gen": "tsx src/gen.ts",
-    "build": "tsc -b tsconfig.json"
+    "build": "tsc -b tsconfig.json && pwd && ls ./dist/"
   },
   "dependencies": {
     "@manypkg/find-root": "^2.2.3",

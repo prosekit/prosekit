@@ -52,6 +52,9 @@
       "path": "packages/prosekit/tsconfig.json",
     },
     {
+      "path": "packages/react/tsconfig.build.json",
+    },
+    {
       "path": "packages/react/tsconfig.json",
     },
     {

@@ -26,8 +26,8 @@ importers:
         specifier: ^2.11.2
         version: 2.11.2(eslint@9.16.0(jiti@2.4.1))(typescript@5.7.2)
       '@ocavue/tsconfig':
-        specifier: ^0.1.2
-        version: 0.1.2
+        specifier: ^0.1.3
+        version: 0.1.3
       '@prosekit/unocss-preset':
         specifier: workspace:*
         version: link:packages/unocss-preset
@@ -196,9 +196,6 @@ importers:
       '@changesets/read':
         specifier: ^0.6.2
         version: 0.6.2
-      '@ocavue/tsconfig':
-        specifier: ^0.1.2
-        version: 0.1.2
       '@sindresorhus/string-hash':
         specifier: ^2.0.0
         version: 2.0.0
@@ -2446,8 +2443,8 @@ packages:
   '@ocavue/eslint-config@2.11.2':
     resolution: {integrity: sha512-6BJdBBoot24PtL9dnVhR6jCii43sPT8ExtP8BUV8JhzNHI5zD6NipFu3r/38/2acdHPwSTlBjvbn5olTXnBxyQ==}
 
-  '@ocavue/tsconfig@0.1.2':
-    resolution: {integrity: sha512-b7dL7sz9znClM2u46+W0WOcqtyKECLQSXgprdCzo+yzXIJcOpHC7UjKstF+sTgLMZ/iXLj5foSUGm6E2nY2uRg==}
+  '@ocavue/tsconfig@0.1.3':
+    resolution: {integrity: sha512-eIArjbx5B1cIvU/BcfZDlr4kQREgJlJLhXnZacjhxzPRd+xAqo1KDAiX+9peArFMDC/HWfsAaq6ZHG2JPc6bYg==}
 
   '@octokit/action@6.1.0':
     resolution: {integrity: sha512-lo+nHx8kAV86bxvOVOI3vFjX3gXPd/L7guAUbvs3pUvnR2KC+R7yjBkA1uACt4gYhs4LcWP3AXSGQzsbeN2XXw==}
@@ -9165,7 +9162,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@ocavue/tsconfig@0.1.2': {}
+  '@ocavue/tsconfig@0.1.3': {}
 
   '@octokit/action@6.1.0':
     dependencies:

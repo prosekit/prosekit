@@ -37,7 +37,6 @@
   },
   "devDependencies": {
     "@changesets/read": "^0.6.2",
-    "@ocavue/tsconfig": "^0.1.2",
     "@sindresorhus/string-hash": "^2.0.0",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash-es": "^4.17.12",

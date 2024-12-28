@@ -4,6 +4,7 @@
   "extends": [
     "./typedoc.gen.json"
   ],
+  "tsconfig": "./tsconfig.build.json",
   "out": ".temp/typedoc",
   "plugin": [
     "typedoc-plugin-md",

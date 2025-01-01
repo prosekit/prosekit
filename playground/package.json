@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "lint:vue": "vue-tsc --noEmit --emitDeclarationOnly false --project examples/vue/tsconfig.json",
-    "lint:svelte": "svelte-check --no-tsconfig",
     "astro": "astro",
+    "build": "astro build",
+    "dev": "astro dev",
+    "lint:svelte": "svelte-check --no-tsconfig",
+    "lint:vue": "vue-tsc --noEmit --emitDeclarationOnly false --project examples/vue/tsconfig.json",
+    "preview": "astro preview",
+    "start": "astro dev",
     "test": "playwright test"
   },
   "devDependencies": {

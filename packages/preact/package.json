@@ -38,8 +38,8 @@
     "dist"
   ],
   "scripts": {
-    "build:tsup": "tsup",
-    "build:tsc": "tsc -b tsconfig.json"
+    "build:tsc": "tsc -b tsconfig.json",
+    "build:tsup": "tsup"
   },
   "dependencies": {
     "@prosekit/core": "workspace:^",

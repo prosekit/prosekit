@@ -6,22 +6,22 @@
   "description": "Internal development tools for ProseKit",
   "sideEffects": false,
   "exports": {
-    "./example-meta": {
-      "types": "./src/example-meta.ts",
-      "default": "./dist/example-meta.js"
+    "./config-tsup": {
+      "types": "./dist/config-tsup.d.ts",
+      "default": "./dist/config-tsup.js"
     },
     "./config-vitest": {
       "types": "./dist/config-vitest.d.ts",
       "default": "./src/config-vitest.js"
     },
-    "./config-tsup": {
-      "types": "./dist/config-tsup.d.ts",
-      "default": "./dist/config-tsup.js"
+    "./example-meta": {
+      "types": "./src/example-meta.ts",
+      "default": "./dist/example-meta.js"
     }
   },
   "scripts": {
-    "gen": "tsx src/gen.ts",
-    "build": "tsc -b tsconfig.json"
+    "build": "tsc -b tsconfig.json",
+    "gen": "tsx src/gen.ts"
   },
   "dependencies": {
     "@manypkg/find-root": "^2.2.3",

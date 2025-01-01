@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vitepress dev",
-    "preview": "vitepress preview",
     "build": "pnpm build:typedoc && pnpm build:playground && pnpm build:vitepress",
-    "build:vitepress": "NODE_OPTIONS='--max-old-space-size=8192' vitepress build",
     "build:playground": "bash build-playground.sh",
-    "build:typedoc": "bash build-typedoc.sh"
+    "build:typedoc": "bash build-typedoc.sh",
+    "build:vitepress": "NODE_OPTIONS='--max-old-space-size=8192' vitepress build",
+    "dev": "vitepress dev",
+    "preview": "vitepress preview"
   },
   "devDependencies": {
     "@iconify-json/logos": "^1.2.4",

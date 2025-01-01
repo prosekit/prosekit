@@ -9,33 +9,27 @@
     "build:force": "turbo build --force",
     "build:package": "turbo build --filter='./packages/*' --concurrency=1",
     "build:website": "turbo build --filter='./website'",
+    "change": "changeset",
+    "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest",
+    "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
     "dev": "pnpm --parallel --filter='./website' --filter='./playground' run dev",
-    "website": "pnpm --filter='./website' run dev",
+    "fix": "manypkg fix && turbo run gen --force && eslint . --fix && dprint fmt",
+    "gen": "turbo run gen --force && pnpm install --prefer-offline --no-frozen-lockfile",
+    "lint": "eslint .",
     "playground": "pnpm --filter='./playground' run dev",
     "preview:playground": "pnpm --filter='./playground' run build && pnpm --filter='./playground' run preview",
-    "gen": "turbo run gen --force && pnpm install --prefer-offline --no-frozen-lockfile",
     "test": "vitest",
     "test:coverage": "vitest run --coverage.enabled",
     "test:e2e": "pnpm --filter='./playground' run test",
     "test:install": "playwright install chromium",
     "typecheck": "tsc --build tsconfig.json",
-    "lint": "eslint .",
-    "fix": "manypkg fix && turbo run gen --force && eslint . --fix && dprint fmt",
-    "change": "changeset",
-    "ci:version": "changeset version && pnpm install --no-frozen-lockfile",
-    "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest"
-  },
-  "pnpm": {
-    "overrides": {},
-    "patchedDependencies": {
-      "prosemirror-splittable@0.1.1": "patches/prosemirror-splittable@0.1.1.patch"
-    }
+    "website": "pnpm --filter='./website' run dev"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",
     "@changesets/types": "^6.0.0",
     "@manypkg/cli": "^0.23.0",
-    "@ocavue/eslint-config": "^2.11.3",
+    "@ocavue/eslint-config": "^2.12.1",
     "@ocavue/tsconfig": "^0.1.3",
     "@prosekit/unocss-preset": "workspace:*",
     "@size-limit/esbuild-why": "^11.1.6",
@@ -57,5 +51,11 @@
     "typescript": "~5.7.2",
     "unocss": "^0.65.1",
     "vitest": "^2.1.8"
+  },
+  "pnpm": {
+    "overrides": {},
+    "patchedDependencies": {
+      "prosemirror-splittable@0.1.1": "patches/prosemirror-splittable@0.1.1.patch"
+    }
   }
 }

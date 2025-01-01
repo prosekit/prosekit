@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.11.3
+
+### Patch Changes
+
+- [`ec34074`](https://github.com/ocavue/prosekit/commit/ec3407409f8c3ee5dbfe55caab445ec97949c65b) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the block handle popover would move to the wrong position when the hovered block changes its type.
+
 ## 0.11.2
 
 ### Patch Changes

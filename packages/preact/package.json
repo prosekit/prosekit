@@ -1,6 +1,6 @@
 {
   "name": "@prosekit/preact",
-  "type": "module",
+  "type": "module", 
   "version": "0.4.7",
   "private": false,
   "author": {

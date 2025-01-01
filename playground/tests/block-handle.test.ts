@@ -81,11 +81,10 @@ testStory(['full'], () => {
     expect(box1).toBeTruthy()
     expect(box2).toBeTruthy()
 
-    expect(
-      Math.abs(box1.x - box2.x) + Math.abs(box1.y - box2.y),
-      `The block handle should not move when changing the hover node type. `
-        + `First position: (${Math.round(box1.x)}, ${Math.round(box1.y)}). `
-        + `Second position: (${Math.round(box2.x)}, ${Math.round(box2.y)}).`,
-    ).toBeLessThan(10)
+    const message = `The block handle should not move when changing the hover node type. `
+      + `First position: (${Math.round(box1.x)}, ${Math.round(box1.y)}). `
+      + `Second position: (${Math.round(box2.x)}, ${Math.round(box2.y)}).`
+    expect(Math.abs(box1.x - box2.x), message).toBeLessThan(10)
+    expect(Math.abs(box1.y - box2.y), message).toBeLessThan(10)
   })
 })

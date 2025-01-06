@@ -19,13 +19,17 @@ export type ElementHoverHandler = (
 ) => void
 
 export function defineElementHoverHandler(handler: ElementHoverHandler) {
-  const handleElement = (element: HTMLElement, node: ProseMirrorNode, pos: number, getRect: () => Rect | undefined) => {
+  const handleElement = (
+    element: HTMLElement,
+    node: ProseMirrorNode,
+    pos: number,
+    parentElement?: Node | null,
+  ) => {
     const reference: VirtualElement = {
       contextElement: element,
 
-      // Create a virtual element that represents the first line of the tex
       getBoundingClientRect: () => {
-        const rect = getRect()
+        const rect = findFirstLineRect(parentElement, element)
         return rect ? fulfillRect(rect) : fallbackRect
       },
     }
@@ -58,10 +62,7 @@ export function defineElementHoverHandler(handler: ElementHoverHandler) {
       parentElement = view.nodeDOM(parentPos)
     }
 
-    handleElement(element, node, pos, () => {
-      const rect = findFirstLineRect(parentElement, element)
-      return rect ? fulfillRect(rect) : undefined
-    })
+    handleElement(element, node, pos, parentElement)
   }
 
   return union(

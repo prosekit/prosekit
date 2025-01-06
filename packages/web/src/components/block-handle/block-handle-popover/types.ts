@@ -21,7 +21,7 @@ export interface BlockHandlePopoverProps extends Omit<OverlayPositionerProps, 'p
   /**
    * The placement of the popover, relative to the hovered block.
    *
-   * @default "left-start"
+   * @default "left"
    */
   placement: Placement
 }
@@ -30,7 +30,7 @@ export interface BlockHandlePopoverProps extends Omit<OverlayPositionerProps, 'p
 export const blockHandlePopoverProps: PropDeclarations<BlockHandlePopoverProps> = {
   ...overlayPositionerProps,
   editor: { default: null },
-  placement: { default: 'left-start' },
+  placement: { default: 'left' },
 }
 
 /** @internal */

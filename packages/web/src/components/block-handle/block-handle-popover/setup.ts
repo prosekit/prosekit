@@ -62,6 +62,8 @@ function useHoverExtension(
       return
     }
 
+    console.log('reference.contextElement', reference?.contextElement)
+
     prevHoverState = hoverState
     handler(reference, hoverState)
   })

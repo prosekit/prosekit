@@ -196,7 +196,10 @@ export const IMAGE_UPLOAD_ERROR_MESSAGE = cn('hidden opacity-80 @xs:block')
 export const DROP_CURSOR = cn('transition-all bg-blue-500')
 
 export const BLOCK_HANDLE_POPOVER = cn(
-  'flex items-center flex-row box-border justify-center transition border-0 py-2',
+  'border-1! border-solid! border-red-400!',
+  'shadow!',
+  'h-[100px]!',
+  'flex items-center flex-row box-border justify-center transition y-0',
   PRESENCE_ANIMATE,
 )
 

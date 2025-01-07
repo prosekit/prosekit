@@ -1,5 +1,5 @@
 /**
- * Similar to `getBoundingClientRect`, but handles `display: contents` elements.
+ * Similar to `element.getBoundingClientRect`, but handles `display: contents` elements.
  */
 export function getClientRect(element: Element): {
   top: number

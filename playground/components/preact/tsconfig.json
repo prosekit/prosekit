@@ -4,5 +4,4 @@
     "jsx": "react-jsx",
     "jsxImportSource": "preact",
   },
-  "include": ["./"],
 }

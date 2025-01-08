@@ -1,4 +1,4 @@
 {
-  "extends": "@ocavue/tsconfig/dom/app",
+  "extends": "@ocavue/tsconfig/dom/app.json",
   "include": ["./"],
 }

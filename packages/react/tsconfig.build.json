@@ -1,4 +1,3 @@
 {
-  "extends": "@ocavue/tsconfig/dom/build-bundler",
-  "include": ["src"]
+  "extends": "@ocavue/tsconfig/dom/build-bundler"
 }

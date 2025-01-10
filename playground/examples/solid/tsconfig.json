@@ -1,10 +1,9 @@
 {
-  "extends": "@ocavue/tsconfig/dom/app",
+  "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
   },
-  "include": ["./"],
   "references": [
     {
       "path": "../../components/solid",

@@ -1,9 +1,8 @@
 {
-  "extends": "@ocavue/tsconfig/dom/app",
+  "extends": "@ocavue/tsconfig/dom/app.json",
   "compilerOptions": {
     "jsx": "react-jsx",
   },
-  "include": ["./"],
   "references": [
     {
       "path": "../../components/react",

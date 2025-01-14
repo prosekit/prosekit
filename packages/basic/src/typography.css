@@ -131,6 +131,10 @@ div.ProseMirror {
     padding: 1em 0;
     margin: 1em 0;
 
+    /* Set a small line-height so that the block handle can align to the middle
+    of the horizontal rule */
+    line-height: 1px;
+
     & hr {
       margin: 0;
     }

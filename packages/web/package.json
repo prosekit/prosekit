@@ -50,11 +50,11 @@
     "@aria-ui/popover": "^0.0.26",
     "@aria-ui/presence": "^0.0.18",
     "@aria-ui/tooltip": "^0.0.28",
-    "@floating-ui/dom": "^1.6.12",
+    "@floating-ui/dom": "^1.6.13",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^0.80.0",
+    "@zag-js/dom-query": "^0.81.2",
     "just-map-values": "^3.2.0",
     "just-omit": "^2.2.0",
     "prosemirror-tables": "^1.6.2"

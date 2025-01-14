@@ -40,7 +40,7 @@
     "esbuild": "^0.24.2",
     "prettier": "^3.4.2",
     "typescript": "~5.7.2",
-    "unplugin-macros": "^0.13.6",
+    "unplugin-macros": "^0.14.0",
     "vitest": "^2.1.8"
   }
 }

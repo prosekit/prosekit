@@ -7,6 +7,7 @@ import {
 import {
   emptyEditor,
   testStory,
+  waitForAnimationEnd,
   waitForEditor,
 } from './helper'
 
@@ -16,6 +17,7 @@ testStory(['full'], () => {
     await emptyEditor(page)
 
     const blockHandle = page.locator('prosekit-block-handle-popover')
+    const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
 
     // Hover over a block and measure the position of the block handle
     const measure = async (block: Locator) => {
@@ -25,10 +27,14 @@ testStory(['full'], () => {
       await block.hover({ timeout: 4000 })
       await expect(blockHandle).toHaveAttribute('data-state', 'open')
 
-      const box = await getBoundingBox(blockHandle)
+      await waitForAnimationEnd(blockHandleDraggable)
+
+      const box = await getBoundingBox(blockHandleDraggable)
 
       await editor.hover({ position: { x: 0, y: 0 }, timeout: 4000 })
       await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+
+      await waitForAnimationEnd(blockHandleDraggable)
 
       return box
     }
@@ -50,25 +56,35 @@ testStory(['full'], () => {
     await editor.press('Enter')
 
     // Measure the position of the block handle
-    const boxP1 = await measure(editor.locator('p', { hasText: 'Paragraph 1' }))
-    const boxP2 = await measure(editor.locator('p', { hasText: 'Paragraph 2' }))
-    const boxP3 = await measure(editor.locator('p', { hasText: 'Paragraph 3' }))
-    const boxPre = await measure(editor.locator('pre', { hasText: 'code block' }))
+    const p1 = editor.locator('p', { hasText: 'Paragraph 1' })
+    const p2 = editor.locator('p', { hasText: 'Paragraph 2' })
+    const p3 = editor.locator('p', { hasText: 'Paragraph 3' })
+    const pre = editor.locator('pre', { hasText: 'code block' })
+
+    const boxHandleP1 = await measure(p1)
+    const boxHandleP2 = await measure(p2)
+    const boxHandleP3 = await measure(p3)
+    const boxHandlePre = await measure(pre)
     const boxEditor = await getBoundingBox(editor)
+    const boxPre = await getBoundingBox(pre)
 
     // Expect the block handle to be inside the editor
-    expect(boxEditor.x).toBeLessThan(boxP1.x)
-    expect(boxEditor.y).toBeLessThan(boxP1.y)
-    expect(boxEditor.x).toBeLessThan(boxP2.x)
-    expect(boxEditor.y).toBeLessThan(boxP2.y)
-    expect(boxEditor.x).toBeLessThan(boxP3.x)
-    expect(boxEditor.y).toBeLessThan(boxP3.y)
-    expect(boxEditor.x).toBeLessThan(boxPre.x)
-    expect(boxEditor.y).toBeLessThan(boxPre.y)
+    expect(boxEditor.x).toBeLessThan(boxHandleP1.x)
+    expect(boxEditor.y).toBeLessThan(boxHandleP1.y)
+    expect(boxEditor.x).toBeLessThan(boxHandleP2.x)
+    expect(boxEditor.y).toBeLessThan(boxHandleP2.y)
+    expect(boxEditor.x).toBeLessThan(boxHandleP3.x)
+    expect(boxEditor.y).toBeLessThan(boxHandleP3.y)
+    expect(boxEditor.x).toBeLessThan(boxHandlePre.x)
+    expect(boxEditor.y).toBeLessThan(boxHandlePre.y)
 
     // Expect the block handle moves
-    expect(boxP1.y).toBeLessThan(boxP2.y)
-    expect(boxP1.x).toBeCloseTo(boxP2.x, 0)
+    expect(boxHandleP1.y).toBeLessThan(boxHandleP2.y)
+    expect(boxHandleP1.x).toBeCloseTo(boxHandleP2.x, 0)
+
+    // Expect the block handle aligns with the code block
+    expect(boxPre.y).toBeCloseTo(boxHandlePre.y, 0)
+    expect(boxPre.x).toBeGreaterThan(boxHandlePre.x)
   })
 
   test(`position the block handle correctly when changing the hover node type`, async ({ page }) => {

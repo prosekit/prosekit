@@ -4,6 +4,7 @@ import {
 } from '@playwright/test'
 
 import {
+  emptyEditor,
   locateEditor,
   testStory,
   waitForEditor,
@@ -175,6 +176,37 @@ testStory('full', () => {
           '<p>~~no~strike~~</p>',
         ].join(''),
       )
+    })
+  })
+
+  test.describe('toolbar', () => {
+    test('press Space to insert an image', async ({ page }) => {
+      await emptyEditor(page)
+      const editor = locateEditor(page)
+      await editor.focus()
+
+      await editor.pressSequentially('Foo')
+      await expect(editor.locator('p', { hasText: 'Foo' })).toBeVisible()
+
+      // Press H1 button
+      const h1Button = page.locator('button', { hasText: 'Heading 1' })
+      await h1Button.click()
+      await expect(editor.locator('h1', { hasText: 'Foo' })).toBeVisible()
+      await expect(editor.locator('p', { hasText: 'Foo' })).toBeHidden()
+
+      // Press H2 button
+      const h2Button = page.locator('button', { hasText: 'Heading 2' })
+      await h2Button.click()
+      await expect(editor.locator('h2', { hasText: 'Foo' })).toBeVisible()
+      await expect(editor.locator('h1', { hasText: 'Foo' })).toBeHidden()
+      await expect(editor.locator('p', { hasText: 'Foo' })).toBeHidden()
+
+      // Press bullet list button
+      const bulletButton = page.locator('button', { hasText: 'Bullet List' })
+      const bulletList = editor.locator('.prosemirror-flat-list', { hasText: 'Foo' })
+      await expect(bulletList).toBeHidden()
+      await bulletButton.click()
+      await expect(bulletList).toBeVisible()
     })
   })
 })

@@ -45,7 +45,8 @@ var THEMES = {
     "relative block max-h-[25rem] min-w-[8rem] select-none overflow-auto whitespace-nowrap p-1 z-10 box-border rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-neutral-900 shadow-lg [&:not([data-state])]:hidden",
   AUTOCOMPLETE_MENU_ITEM:
     "relative block min-w-[8rem] scroll-my-1 rounded px-3 py-1.5 box-border cursor-default select-none whitespace-nowrap outline-none data-[focused]:bg-zinc-100 dark:data-[focused]:bg-zinc-800",
-  LANGUAGE_WRAPPER: "relative left-2 top-3 h-0 select-none overflow-visible",
+  LANGUAGE_WRAPPER:
+    "relative mx-2 top-3 h-0 select-none overflow-visible text-xs",
   LANGUAGE_SELECT:
     "outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded border-none bg-transparent px-2 py-1 text-xs transition text-white opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 [div[data-node-view-root]:hover_&]:hover:opacity-80",
   TOOLBAR:

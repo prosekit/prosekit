@@ -195,16 +195,12 @@ function findOuterRect(node: Node): Rect | undefined {
   return { top: rect.top, bottom: rect.bottom, left, right }
 }
 
-function findFirstLineRectInNode(node: Node, maxDepth = 10): Rect | undefined {
-  if (maxDepth === 0) {
-    return
-  }
-
+function findFirstLineRectInNode(node: Node): Rect | undefined {
   switch (node.nodeType) {
     case TEXT_NODE:
       return findFirstLineRectInTextNode(node as Text)
     case ELEMENT_NODE:
-      return findFirstLineRectInElement(node as HTMLElement, maxDepth)
+      return findFirstLineRectInElement(node as HTMLElement)
   }
 }
 
@@ -220,7 +216,7 @@ function findFirstLineRectInTextNode(node: Text): Rect | undefined {
   return rects[0]
 }
 
-function findFirstLineRectInElement(element: HTMLElement, maxDepth: number): Rect | undefined {
+function findFirstLineRectInElement(element: HTMLElement): Rect | undefined {
   if (element.nodeName === 'BR') {
     return element.getBoundingClientRect()
   }

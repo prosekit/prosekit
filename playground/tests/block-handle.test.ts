@@ -33,12 +33,15 @@ testStory(['full'], () => {
       return box
     }
 
+    // Insert paragraphs
     await editor.pressSequentially('Paragraph 1')
     await editor.press('Enter')
     await editor.pressSequentially('Paragraph 2')
     await editor.press('Enter')
     await editor.pressSequentially('Paragraph 3')
     await editor.press('Enter')
+
+    // Insert a code block
     await editor.pressSequentially('```javascript')
     await editor.press('Enter')
     await editor.pressSequentially('code block')
@@ -46,6 +49,7 @@ testStory(['full'], () => {
     await editor.press('Enter')
     await editor.press('Enter')
 
+    // Measure the position of the block handle
     const boxP1 = await measure(editor.locator('p', { hasText: 'Paragraph 1' }))
     const boxP2 = await measure(editor.locator('p', { hasText: 'Paragraph 2' }))
     const boxP3 = await measure(editor.locator('p', { hasText: 'Paragraph 3' }))

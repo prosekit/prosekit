@@ -17,37 +17,54 @@ testStory(['full'], () => {
 
     const blockHandle = page.locator('prosekit-block-handle-popover')
 
+    // Hover over a block and measure the position of the block handle
+    const measure = async (block: Locator) => {
+      await expect(block).toBeVisible()
+      await expect(blockHandle).toBeAttached()
+
+      await block.hover({ timeout: 4000 })
+      await expect(blockHandle).toHaveAttribute('data-state', 'open')
+
+      const box = await getBoundingBox(blockHandle)
+
+      await editor.hover({ position: { x: 0, y: 0 }, timeout: 4000 })
+      await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+
+      return box
+    }
+
     await editor.pressSequentially('Paragraph 1')
     await editor.press('Enter')
     await editor.pressSequentially('Paragraph 2')
     await editor.press('Enter')
     await editor.pressSequentially('Paragraph 3')
+    await editor.press('Enter')
+    await editor.pressSequentially('```javascript')
+    await editor.press('Enter')
+    await editor.pressSequentially('code block')
+    await editor.press('Enter')
+    await editor.press('Enter')
+    await editor.press('Enter')
 
-    const boxes: { x: number; y: number }[] = []
+    const boxP1 = await measure(editor.locator('p', { hasText: 'Paragraph 1' }))
+    const boxP2 = await measure(editor.locator('p', { hasText: 'Paragraph 2' }))
+    const boxP3 = await measure(editor.locator('p', { hasText: 'Paragraph 3' }))
+    const boxPre = await measure(editor.locator('pre', { hasText: 'code block' }))
+    const boxEditor = await getBoundingBox(editor)
 
-    const measure = async (p: Locator) => {
-      await expect(p).toBeVisible()
-      await expect(blockHandle).toBeAttached()
+    // Expect the block handle to be inside the editor
+    expect(boxEditor.x).toBeLessThan(boxP1.x)
+    expect(boxEditor.y).toBeLessThan(boxP1.y)
+    expect(boxEditor.x).toBeLessThan(boxP2.x)
+    expect(boxEditor.y).toBeLessThan(boxP2.y)
+    expect(boxEditor.x).toBeLessThan(boxP3.x)
+    expect(boxEditor.y).toBeLessThan(boxP3.y)
+    expect(boxEditor.x).toBeLessThan(boxPre.x)
+    expect(boxEditor.y).toBeLessThan(boxPre.y)
 
-      await p.hover({ timeout: 4000 })
-      await expect(blockHandle).toHaveAttribute('data-state', 'open')
-
-      const box = await blockHandle.boundingBox()
-      boxes.push(box || { x: 0, y: 0, width: 0, height: 0 })
-
-      await editor.hover({ position: { x: 0, y: 0 }, timeout: 4000 })
-      await expect(blockHandle).toHaveAttribute('data-state', 'closed')
-    }
-
-    await measure(editor.locator('p', { hasText: 'Paragraph 1' }))
-    await measure(editor.locator('p', { hasText: 'Paragraph 2' }))
-    await measure(editor.locator('p', { hasText: 'Paragraph 3' }))
-
-    const editorBox = (await editor.boundingBox()) || { x: 0, y: 0 }
-    expect(editorBox.y).toBeLessThan(boxes[0].y)
-    expect(editorBox.x).toBeLessThan(boxes[0].x)
-    expect(boxes[0].y).toBeLessThan(boxes[1].y)
-    expect(boxes[1].y).toBeLessThan(boxes[2].y)
+    // Expect the block handle moves
+    expect(boxP1.y).toBeLessThan(boxP2.y)
+    expect(boxP1.x).toBeCloseTo(boxP2.x, 0)
   })
 
   test(`position the block handle correctly when changing the hover node type`, async ({ page }) => {
@@ -88,3 +105,7 @@ testStory(['full'], () => {
     expect(Math.abs(box1.y - box2.y), message).toBeLessThan(10)
   })
 })
+
+async function getBoundingBox(locator: Locator) {
+  return (await locator.boundingBox()) || { x: 0, y: 0, width: 0, height: 0 }
+}

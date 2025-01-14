@@ -232,14 +232,6 @@ function findFirstLineRectInElement(element: HTMLElement, maxDepth: number): Rec
   const left = rect.left - marginLeft
   const right = rect.right + marginRight
 
-  for (const child of element.children) {
-    const childRect = findFirstLineRectInNode(child, maxDepth - 1)
-    if (childRect) {
-      const { top, bottom } = childRect
-      return { top, bottom, left, right }
-    }
-  }
-
   const lineHeight = style && Number.parseInt(style.lineHeight, 10) || 24
   const paddingTop = style && Number.parseInt(style.paddingTop, 10) || 0
   const borderTop = style && Number.parseInt(style.borderTopWidth, 10) || 0

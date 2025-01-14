@@ -128,7 +128,7 @@ export const AUTOCOMPLETE_MENU_ITEM = cn(
 )
 
 export const LANGUAGE_WRAPPER = cn(
-  'relative left-2 top-3 h-0 select-none overflow-visible',
+  'relative mx-2 top-3 h-0 select-none overflow-visible text-xs',
 )
 
 export const LANGUAGE_SELECT = cn(

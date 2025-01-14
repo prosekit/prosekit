@@ -5,6 +5,11 @@ div.ProseMirror {
     flex-direction: column;
   }
 
+  & {
+    /* Set the default line height as same as block handle's height */
+    line-height: 1.5;
+  }
+
   & p:first-child,
   & h1:first-child,
   & h2:first-child,

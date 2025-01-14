@@ -9,7 +9,7 @@ import {
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-export interface BlockHandlePopoverProps extends Omit<OverlayPositionerProps, 'placement'> {
+export interface BlockHandlePopoverProps extends Omit<OverlayPositionerProps, 'placement' | 'hoist'> {
   /**
    * The ProseKit editor instance.
    *
@@ -24,6 +24,14 @@ export interface BlockHandlePopoverProps extends Omit<OverlayPositionerProps, 'p
    * @default "left"
    */
   placement: Placement
+
+  /**
+   * Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
+   * to place the floating element on top of other page content.
+   *
+   * @default false
+   */
+  hoist: boolean
 }
 
 /** @internal */
@@ -31,6 +39,10 @@ export const blockHandlePopoverProps: PropDeclarations<BlockHandlePopoverProps> 
   ...overlayPositionerProps,
   editor: { default: null },
   placement: { default: 'left' },
+
+  // Enabling `hoist` will cause the block handle to have a small delay when
+  // scrolling the page.
+  hoist: { default: false },
 }
 
 /** @internal */

@@ -6,6 +6,7 @@ import {
 
 import {
   emptyEditor,
+  getBoundingBox,
   testStory,
   waitForAnimationEnd,
   waitForEditor,
@@ -125,7 +126,3 @@ testStory(['full'], () => {
     expect(Math.abs(box1.y - box2.y), message).toBeLessThan(10)
   })
 })
-
-async function getBoundingBox(locator: Locator) {
-  return (await locator.boundingBox()) || { x: 0, y: 0, width: 0, height: 0 }
-}

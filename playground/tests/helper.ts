@@ -108,3 +108,7 @@ export async function waitForAnimationEnd(locator: Locator) {
   await handle?.waitForElementState('stable')
   await handle?.dispose()
 }
+
+export async function getBoundingBox(locator: Locator) {
+  return (await locator.boundingBox()) || { x: 0, y: 0, width: 0, height: 0 }
+}

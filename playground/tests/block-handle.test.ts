@@ -6,7 +6,9 @@ import {
 
 import {
   emptyEditor,
+  getBoundingBox,
   testStory,
+  waitForAnimationEnd,
   waitForEditor,
 } from './helper'
 
@@ -16,38 +18,74 @@ testStory(['full'], () => {
     await emptyEditor(page)
 
     const blockHandle = page.locator('prosekit-block-handle-popover')
+    const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
 
+    // Hover over a block and measure the position of the block handle
+    const measure = async (block: Locator) => {
+      await expect(block).toBeVisible()
+      await expect(blockHandle).toBeAttached()
+
+      await block.hover({ timeout: 4000 })
+      await expect(blockHandle).toHaveAttribute('data-state', 'open')
+
+      await waitForAnimationEnd(blockHandleDraggable)
+
+      const box = await getBoundingBox(blockHandleDraggable)
+
+      await editor.hover({ position: { x: 0, y: 0 }, timeout: 4000 })
+      await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+
+      await waitForAnimationEnd(blockHandleDraggable)
+
+      return box
+    }
+
+    // Insert paragraphs
     await editor.pressSequentially('Paragraph 1')
     await editor.press('Enter')
     await editor.pressSequentially('Paragraph 2')
     await editor.press('Enter')
     await editor.pressSequentially('Paragraph 3')
+    await editor.press('Enter')
 
-    const boxes: { x: number; y: number }[] = []
+    // Insert a code block
+    await editor.pressSequentially('```javascript')
+    await editor.press('Enter')
+    await editor.pressSequentially('code block')
+    await editor.press('Enter')
+    await editor.press('Enter')
+    await editor.press('Enter')
 
-    const measure = async (p: Locator) => {
-      await expect(p).toBeVisible()
-      await expect(blockHandle).toBeAttached()
+    // Measure the position of the block handle
+    const p1 = editor.locator('p', { hasText: 'Paragraph 1' })
+    const p2 = editor.locator('p', { hasText: 'Paragraph 2' })
+    const p3 = editor.locator('p', { hasText: 'Paragraph 3' })
+    const pre = editor.locator('pre', { hasText: 'code block' })
 
-      await p.hover({ timeout: 4000 })
-      await expect(blockHandle).toHaveAttribute('data-state', 'open')
+    const boxHandleP1 = await measure(p1)
+    const boxHandleP2 = await measure(p2)
+    const boxHandleP3 = await measure(p3)
+    const boxHandlePre = await measure(pre)
+    const boxEditor = await getBoundingBox(editor)
+    const boxPre = await getBoundingBox(pre)
 
-      const box = await blockHandle.boundingBox()
-      boxes.push(box || { x: 0, y: 0, width: 0, height: 0 })
+    // Expect the block handle to be inside the editor
+    expect(boxEditor.x).toBeLessThan(boxHandleP1.x)
+    expect(boxEditor.y).toBeLessThan(boxHandleP1.y)
+    expect(boxEditor.x).toBeLessThan(boxHandleP2.x)
+    expect(boxEditor.y).toBeLessThan(boxHandleP2.y)
+    expect(boxEditor.x).toBeLessThan(boxHandleP3.x)
+    expect(boxEditor.y).toBeLessThan(boxHandleP3.y)
+    expect(boxEditor.x).toBeLessThan(boxHandlePre.x)
+    expect(boxEditor.y).toBeLessThan(boxHandlePre.y)
 
-      await editor.hover({ position: { x: 0, y: 0 }, timeout: 4000 })
-      await expect(blockHandle).toHaveAttribute('data-state', 'closed')
-    }
+    // Expect the block handle moves
+    expect(boxHandleP1.y).toBeLessThan(boxHandleP2.y)
+    expect(boxHandleP1.x).toBeCloseTo(boxHandleP2.x, 0)
 
-    await measure(editor.locator('p', { hasText: 'Paragraph 1' }))
-    await measure(editor.locator('p', { hasText: 'Paragraph 2' }))
-    await measure(editor.locator('p', { hasText: 'Paragraph 3' }))
-
-    const editorBox = (await editor.boundingBox()) || { x: 0, y: 0 }
-    expect(editorBox.y).toBeLessThan(boxes[0].y)
-    expect(editorBox.x).toBeLessThan(boxes[0].x)
-    expect(boxes[0].y).toBeLessThan(boxes[1].y)
-    expect(boxes[1].y).toBeLessThan(boxes[2].y)
+    // Expect the block handle aligns with the code block
+    expect(boxPre.y).toBeCloseTo(boxHandlePre.y, 0)
+    expect(boxPre.x).toBeGreaterThan(boxHandlePre.x)
   })
 
   test(`position the block handle correctly when changing the hover node type`, async ({ page }) => {

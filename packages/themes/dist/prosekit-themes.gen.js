@@ -45,7 +45,8 @@ var THEMES = {
     "relative block max-h-[25rem] min-w-[8rem] select-none overflow-auto whitespace-nowrap p-1 z-10 box-border rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-neutral-900 shadow-lg [&:not([data-state])]:hidden",
   AUTOCOMPLETE_MENU_ITEM:
     "relative block min-w-[8rem] scroll-my-1 rounded px-3 py-1.5 box-border cursor-default select-none whitespace-nowrap outline-none data-[focused]:bg-zinc-100 dark:data-[focused]:bg-zinc-800",
-  LANGUAGE_WRAPPER: "relative left-2 top-3 h-0 select-none overflow-visible",
+  LANGUAGE_WRAPPER:
+    "relative mx-2 top-3 h-0 select-none overflow-visible text-xs",
   LANGUAGE_SELECT:
     "outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded border-none bg-transparent px-2 py-1 text-xs transition text-white opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 [div[data-node-view-root]:hover_&]:hover:opacity-80",
   TOOLBAR:
@@ -70,7 +71,7 @@ var THEMES = {
   IMAGE_UPLOAD_ERROR_MESSAGE: "hidden opacity-80 @xs:block",
   DROP_CURSOR: "transition-all bg-blue-500",
   BLOCK_HANDLE_POPOVER:
-    "flex items-center flex-row box-border justify-center transition border-0 py-2 [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
+    "flex items-center flex-row box-border justify-center transition border-0 [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
   BLOCK_HANDLE_ADD:
     "flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded text-zinc-500/50 dark:text-zinc-500/50 cursor-pointer",
   BLOCK_HANDLE_DRAG:

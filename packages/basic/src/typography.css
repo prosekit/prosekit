@@ -5,6 +5,11 @@ div.ProseMirror {
     flex-direction: column;
   }
 
+  & {
+    /* Set the default line height as same as block handle's height */
+    line-height: 1.5;
+  }
+
   & p:first-child,
   & h1:first-child,
   & h2:first-child,
@@ -125,6 +130,10 @@ div.ProseMirror {
   & .prosekit-horizontal-rule {
     padding: 1em 0;
     margin: 1em 0;
+
+    /* Set a small line-height so that the block handle can align to the middle
+    of the horizontal rule */
+    line-height: 1px;
 
     & hr {
       margin: 0;

@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.11.4
+
+### Patch Changes
+
+- [`399c9ee`](https://github.com/ocavue/prosekit/commit/399c9eebadd4236dfa024cd8225e7e9ed7c0283e) ![](https://prosekit.dev/b/web)
+
+  Improve block handle positioning logic.
+
+- [`399c9ee`](https://github.com/ocavue/prosekit/commit/399c9eebadd4236dfa024cd8225e7e9ed7c0283e) ![](https://prosekit.dev/b/basic)
+
+  Update `typography.css` to improve the block handle positioning for horizontal rule, images and code blocks.
+
 ## 0.11.3
 
 ### Patch Changes

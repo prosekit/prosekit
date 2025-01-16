@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/strike/button.vue
+<<< @/../playground/src/examples/vue/strike/button.vue
 
 :::
 

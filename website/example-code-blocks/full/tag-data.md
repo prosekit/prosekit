@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/full/tag-data.ts
+<<< @/../playground/src/examples/react/full/tag-data.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/full/tag-data.ts
+<<< @/../playground/src/examples/vue/full/tag-data.ts
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/full/tag-data.ts
+<<< @/../playground/src/examples/svelte/full/tag-data.ts
 
 :::
 

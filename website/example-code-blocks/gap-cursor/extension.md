@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/gap-cursor/extension.ts
+<<< @/../playground/src/examples/react/gap-cursor/extension.ts
 
 :::
 

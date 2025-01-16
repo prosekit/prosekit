@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/keymap/toolbar.tsx
+<<< @/../playground/src/examples/react/keymap/toolbar.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/keymap/toolbar.vue
+<<< @/../playground/src/examples/vue/keymap/toolbar.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/preact/keymap/toolbar.tsx
+<<< @/../playground/src/examples/preact/keymap/toolbar.tsx
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/keymap/toolbar.svelte
+<<< @/../playground/src/examples/svelte/keymap/toolbar.svelte
 
 :::
 
@@ -46,7 +46,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid/keymap/toolbar.tsx
+<<< @/../playground/src/examples/solid/keymap/toolbar.tsx
 
 :::
 

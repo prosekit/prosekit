@@ -71,7 +71,7 @@ function formatFile(example: Example, fileName: string) {
 
 ::: code-group
 
-<<< @/../playground/examples/${example.framework}/${example.story}/${filePath}
+<<< @/../playground/src/examples/${example.framework}/${example.story}/${filePath}
 
 :::
 

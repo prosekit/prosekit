@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/blockquote/extension.ts
+<<< @/../playground/src/examples/react/blockquote/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/blockquote/extension.ts
+<<< @/../playground/src/examples/vue/blockquote/extension.ts
 
 :::
 

@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/text-align/button.vue
+<<< @/../playground/src/examples/vue/text-align/button.vue
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/text-align/button.svelte
+<<< @/../playground/src/examples/svelte/text-align/button.svelte
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid/text-align/button.tsx
+<<< @/../playground/src/examples/solid/text-align/button.tsx
 
 :::
 

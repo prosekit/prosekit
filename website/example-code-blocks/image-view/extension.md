@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/image-view/extension.ts
+<<< @/../playground/src/examples/react/image-view/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/image-view/extension.ts
+<<< @/../playground/src/examples/vue/image-view/extension.ts
 
 :::
 

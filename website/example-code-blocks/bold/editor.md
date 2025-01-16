@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/bold/editor.vue
+<<< @/../playground/src/examples/vue/bold/editor.vue
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/bold/editor.svelte
+<<< @/../playground/src/examples/svelte/bold/editor.svelte
 
 :::
 

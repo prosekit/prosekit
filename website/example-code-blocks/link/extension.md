@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/link/extension.ts
+<<< @/../playground/src/examples/react/link/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/link/extension.ts
+<<< @/../playground/src/examples/vue/link/extension.ts
 
 :::
 

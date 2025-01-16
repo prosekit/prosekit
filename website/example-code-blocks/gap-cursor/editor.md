@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/gap-cursor/editor.tsx
+<<< @/../playground/src/examples/react/gap-cursor/editor.tsx
 
 :::
 

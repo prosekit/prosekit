@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/change-tracking/editor-main.tsx
+<<< @/../playground/src/examples/react/change-tracking/editor-main.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/change-tracking/editor-main.svelte
+<<< @/../playground/src/examples/svelte/change-tracking/editor-main.svelte
 
 :::
 

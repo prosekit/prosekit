@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/code-block/emoji.ts
+<<< @/../playground/src/examples/svelte/code-block/emoji.ts
 
 :::
 

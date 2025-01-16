@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/full/user-menu.tsx
+<<< @/../playground/src/examples/react/full/user-menu.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/full/user-menu.vue
+<<< @/../playground/src/examples/vue/full/user-menu.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/full/user-menu.svelte
+<<< @/../playground/src/examples/svelte/full/user-menu.svelte
 
 :::
 

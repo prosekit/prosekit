@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/blockquote/toolbar.tsx
+<<< @/../playground/src/examples/react/blockquote/toolbar.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/blockquote/toolbar.vue
+<<< @/../playground/src/examples/vue/blockquote/toolbar.vue
 
 :::
 

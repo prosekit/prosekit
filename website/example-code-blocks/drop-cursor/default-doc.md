@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/drop-cursor/default-doc.ts
+<<< @/../playground/src/examples/vue/drop-cursor/default-doc.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/drop-cursor/default-doc.ts
+<<< @/../playground/src/examples/svelte/drop-cursor/default-doc.ts
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid/drop-cursor/default-doc.ts
+<<< @/../playground/src/examples/solid/drop-cursor/default-doc.ts
 
 :::
 

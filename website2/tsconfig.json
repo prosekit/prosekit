@@ -1,5 +1,4 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "include": ["*.mjs", ".astro/types.d.ts", "src/**/*"],
 }

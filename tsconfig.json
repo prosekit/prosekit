@@ -139,5 +139,8 @@
     {
       "path": "website/tsconfig.json",
     },
+    {
+      "path": "website2/tsconfig.json",
+    },
   ],
 }

@@ -4,14 +4,14 @@
     "*.ts",
     ".astro/types.d.ts",
     "src/*.ts",
-    "src/components/ui/**/*"
+    "src/components/**/*",
   ],
   "compilerOptions": {
-    "jsx": "preserve"
+    "jsx": "preserve",
   },
   "references": [
     {
-      "path": "./src/examples/react/tsconfig.json"
-    }
-  ]
+      "path": "./src/examples/react/tsconfig.json",
+    },
+  ],
 }

@@ -12,10 +12,10 @@ import Default from '@astrojs/starlight/components/Search.astro'
       & dialog,
       & dialog::backdrop {
         transition:
-          display 150ms allow-discrete,
-          overlay 150ms allow-discrete;
+          display 100ms allow-discrete,
+          overlay 100ms allow-discrete;
 
-        animation-duration: 150ms;
+        animation-duration: 100ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
       }
@@ -45,14 +45,14 @@ import Default from '@astrojs/starlight/components/Search.astro'
     }
 
     to {
-      backdrop-filter: blur(0.3rem);
+      backdrop-filter: blur(0.25rem);
       background-color: var(--sl-color-backdrop-overlay);
     }
   }
 
   @keyframes sl-ocavue-search-backdrop-fade-out {
     from {
-      backdrop-filter: blur(0.3rem);
+      backdrop-filter: blur(0.25rem);
       background-color: var(--sl-color-backdrop-overlay);
     }
 

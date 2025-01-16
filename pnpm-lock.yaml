@@ -1006,6 +1006,10 @@ importers:
       sharp:
         specifier: ^0.32.5
         version: 0.32.6
+    devDependencies:
+      unocss:
+        specifier: ^0.65.1
+        version: 0.65.1(postcss@8.4.49)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))
 
 packages:
 
@@ -10378,6 +10382,17 @@ snapshots:
     transitivePeerDependencies:
       - vue
 
+  '@unocss/postcss@0.65.1(postcss@8.4.49)':
+    dependencies:
+      '@unocss/config': 0.65.1
+      '@unocss/core': 0.65.1
+      '@unocss/rule-utils': 0.65.1
+      css-tree: 3.1.0
+      postcss: 8.4.49
+      tinyglobby: 0.2.10
+    transitivePeerDependencies:
+      - supports-color
+
   '@unocss/postcss@0.65.1(postcss@8.5.0)':
     dependencies:
       '@unocss/config': 0.65.1
@@ -15819,6 +15834,33 @@ snapshots:
     dependencies:
       '@unocss/preset-wind': 0.65.1
       unocss: 0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))
+
+  unocss@0.65.1(postcss@8.4.49)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2)):
+    dependencies:
+      '@unocss/astro': 0.65.1(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))
+      '@unocss/cli': 0.65.1(rollup@4.28.1)
+      '@unocss/core': 0.65.1
+      '@unocss/postcss': 0.65.1(postcss@8.4.49)
+      '@unocss/preset-attributify': 0.65.1
+      '@unocss/preset-icons': 0.65.1
+      '@unocss/preset-mini': 0.65.1
+      '@unocss/preset-tagify': 0.65.1
+      '@unocss/preset-typography': 0.65.1
+      '@unocss/preset-uno': 0.65.1
+      '@unocss/preset-web-fonts': 0.65.1
+      '@unocss/preset-wind': 0.65.1
+      '@unocss/transformer-attributify-jsx': 0.65.1
+      '@unocss/transformer-compile-class': 0.65.1
+      '@unocss/transformer-directives': 0.65.1
+      '@unocss/transformer-variant-group': 0.65.1
+      '@unocss/vite': 0.65.1(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))
+    optionalDependencies:
+      vite: 6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1)
+    transitivePeerDependencies:
+      - postcss
+      - rollup
+      - supports-color
+      - vue
 
   unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.29.1))(vue@3.5.13(typescript@5.7.2)):
     dependencies:

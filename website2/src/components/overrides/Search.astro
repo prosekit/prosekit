@@ -62,10 +62,23 @@ import Default from '@astrojs/starlight/components/Search.astro'
     }
   }
 
+  :root {
+    --sl-ocavue-search-dialog-zoom-scale: 1;
+    --sl-ocavue-search-dialog-zoom-translate-y: 0;
+  }
+
+  @media (min-width: 72rem) {
+    :root {
+      --sl-ocavue-search-dialog-zoom-scale: 0.95;
+      --sl-ocavue-search-dialog-zoom-translate-y: -1rem;
+    }
+  }
+
   @keyframes sl-ocavue-search-dialog-zoom-in {
     from {
       opacity: 0;
-      transform: scale(0.95) translateY(-1rem);
+      transform: scale(var(--sl-ocavue-search-dialog-zoom-scale))
+        translateY(var(--sl-ocavue-search-dialog-zoom-translate-y));
     }
 
     to {
@@ -82,7 +95,8 @@ import Default from '@astrojs/starlight/components/Search.astro'
 
     to {
       opacity: 0;
-      transform: scale(0.95) translateY(-1rem);
+      transform: scale(var(--sl-ocavue-search-dialog-zoom-scale))
+        translateY(var(--sl-ocavue-search-dialog-zoom-translate-y));
     }
   }
 </style>

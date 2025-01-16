@@ -28,6 +28,9 @@ export default defineConfig({
         // Relative path to your custom CSS file
         './src/styles/custom.css',
       ],
+      components: {
+        Search: './src/components/overrides/Search.astro',
+      },
     }),
     UnoCSS(),
   ],

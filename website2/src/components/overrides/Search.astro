@@ -1,0 +1,88 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+
+import Default from '@astrojs/starlight/components/Search.astro'
+---
+
+<Default {...Astro.props} />
+
+<style is:global>
+  @media (prefers-reduced-motion: no-preference) {
+    site-search {
+      & dialog,
+      & dialog::backdrop {
+        transition:
+          display 150ms allow-discrete,
+          overlay 150ms allow-discrete;
+
+        animation-duration: 150ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+      }
+
+      & dialog {
+        animation-name: sl-ocavue-search-dialog-zoom-out;
+      }
+
+      & dialog[open] {
+        animation-name: sl-ocavue-search-dialog-zoom-in;
+      }
+
+      & dialog::backdrop {
+        animation-name: sl-ocavue-search-backdrop-fade-out;
+      }
+
+      & dialog[open]::backdrop {
+        animation-name: sl-ocavue-search-backdrop-fade-in;
+      }
+    }
+  }
+
+  @keyframes sl-ocavue-search-backdrop-fade-in {
+    from {
+      backdrop-filter: initial;
+      background-color: transparent;
+    }
+
+    to {
+      backdrop-filter: blur(0.25rem);
+      background-color: var(--sl-color-backdrop-overlay);
+    }
+  }
+
+  @keyframes sl-ocavue-search-backdrop-fade-out {
+    from {
+      backdrop-filter: blur(0.25rem);
+      background-color: var(--sl-color-backdrop-overlay);
+    }
+
+    to {
+      backdrop-filter: initial;
+      background-color: transparent;
+    }
+  }
+
+  @keyframes sl-ocavue-search-dialog-zoom-in {
+    from {
+      opacity: 0;
+      transform: scale(0.85) translateY(-2rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes sl-ocavue-search-dialog-zoom-out {
+    from {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    to {
+      opacity: 0;
+      transform: scale(0.85) translateY(-2rem);
+    }
+  }
+</style>

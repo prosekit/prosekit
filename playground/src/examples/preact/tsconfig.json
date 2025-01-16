@@ -6,7 +6,7 @@
   },
   "references": [
     {
-      "path": "../../components/preact",
+      "path": "../../shared/preact",
     },
   ],
 }

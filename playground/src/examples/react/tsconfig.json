@@ -5,7 +5,7 @@
   },
   "references": [
     {
-      "path": "../../components/react",
+      "path": "../../shared/react",
     },
   ],
 }

@@ -6,7 +6,7 @@
   },
   "references": [
     {
-      "path": "../../components/solid",
+      "path": "../../shared/solid",
     },
   ],
 }

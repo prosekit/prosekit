@@ -67,7 +67,10 @@ import type * as m from 'prosekit/vue'
 const Component: m.VueNodeViewComponent = {} as any
 export default Component
 // ---cut---
-import { defineVueNodeView, type VueNodeViewComponent } from 'prosekit/vue'
+import {
+  defineVueNodeView,
+  type VueNodeViewComponent,
+} from 'prosekit/vue'
 import CodeBlockView from './code-block-view.vue'
 
 const extension = defineVueNodeView({

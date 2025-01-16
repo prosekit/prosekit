@@ -9,11 +9,6 @@ import SiteTitle from '@astrojs/starlight/components/SiteTitle.astro'
 import SocialIcons from '@astrojs/starlight/components/SocialIcons.astro'
 import ThemeSelect from '@astrojs/starlight/components/ThemeSelect.astro'
 
-/**
- * Render the `Search` component if Pagefind is enabled or the default search component has been overridden.
- */
-const shouldRenderSearch =
-	config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
 ---
 
 <div class="header sl-flex">
@@ -21,7 +16,7 @@ const shouldRenderSearch =
 		<SiteTitle {...Astro.props} />
 	</div>
 	<div class="sl-flex print:hidden">
-		{shouldRenderSearch && <Search {...Astro.props} />}
+	 <Search {...Astro.props} />
 	</div>
 	<div class="sl-hidden md:sl-flex print:hidden right-group">
 		<div class="sl-flex social-icons">

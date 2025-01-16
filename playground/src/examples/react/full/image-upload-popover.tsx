@@ -1,1 +1,1 @@
-../../../components/react/image-upload-popover.tsx
+../../../shared/react/image-upload-popover.tsx

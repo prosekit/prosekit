@@ -1,1 +1,1 @@
-../../../components/vue/image-view.vue
+../../../shared/vue/image-view.vue

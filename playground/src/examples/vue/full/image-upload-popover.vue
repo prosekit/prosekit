@@ -1,1 +1,1 @@
-../../../components/vue/image-upload-popover.vue
+../../../shared/vue/image-upload-popover.vue

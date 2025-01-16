@@ -1,1 +1,1 @@
-../../../components/solid/code-block-view.tsx
+../../../shared/solid/code-block-view.tsx

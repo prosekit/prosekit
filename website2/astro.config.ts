@@ -38,6 +38,7 @@ export default defineConfig({
         SiteTitle: './src/components/overrides/SiteTitle.astro',
         PageFrame: './src/components/overrides/PageFrame.astro',
         MobileMenuToggle: './src/components/overrides/MobileMenuToggle.astro',
+        Hero: './src/components/overrides/Hero.astro',
       },
     }),
     UnoCSS(),

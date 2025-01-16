@@ -1,1 +1,1 @@
-../../../components/react/code-block-view.tsx
+../../../shared/react/code-block-view.tsx

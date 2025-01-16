@@ -1,1 +1,1 @@
-../../../components/svelte/code-block-view.svelte
+../../../shared/svelte/code-block-view.svelte

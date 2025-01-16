@@ -1,1 +1,1 @@
-../../../components/react/image-view.tsx
+../../../shared/react/image-view.tsx

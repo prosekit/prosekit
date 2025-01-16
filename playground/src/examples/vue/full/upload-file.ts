@@ -1,1 +1,1 @@
-../../../components/common/upload-file.ts
+../../../shared/common/upload-file.ts

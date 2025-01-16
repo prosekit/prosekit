@@ -1,1 +1,1 @@
-../../../components/vue/code-block-view.vue
+../../../shared/vue/code-block-view.vue

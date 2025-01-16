@@ -1,1 +1,1 @@
-../../../components/react/block-handle.tsx
+../../../shared/react/block-handle.tsx

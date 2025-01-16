@@ -1,1 +1,1 @@
-../../../components/solid/button.tsx
+../../../shared/solid/button.tsx

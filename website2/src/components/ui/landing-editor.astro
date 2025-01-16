@@ -1,0 +1,12 @@
+---
+import Editor from '../../examples/vue/full/editor.vue'
+import LandingEditorLoading from './landing-editor-loading.astro'
+---
+
+<div class="h-[400px]">
+  <Editor client:only="vue">
+    <Fragment slot="fallback">
+      <LandingEditorLoading />
+    </Fragment>
+  </Editor>
+</div>

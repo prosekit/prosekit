@@ -13,10 +13,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/heading/editor.tsx
-<<< @/../playground/examples/react/heading/extension.ts
-<<< @/../playground/examples/react/heading/toolbar.tsx
-<<< @/../playground/examples/react/heading/button.tsx
+<<< @/../playground/src/examples/react/heading/editor.tsx
+<<< @/../playground/src/examples/react/heading/extension.ts
+<<< @/../playground/src/examples/react/heading/toolbar.tsx
+<<< @/../playground/src/examples/react/heading/button.tsx
 
 :::
 
@@ -26,10 +26,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/heading/editor.vue
-<<< @/../playground/examples/vue/heading/extension.ts
-<<< @/../playground/examples/vue/heading/toolbar.vue
-<<< @/../playground/examples/vue/heading/button.vue
+<<< @/../playground/src/examples/vue/heading/editor.vue
+<<< @/../playground/src/examples/vue/heading/extension.ts
+<<< @/../playground/src/examples/vue/heading/toolbar.vue
+<<< @/../playground/src/examples/vue/heading/button.vue
 
 :::
 
@@ -39,10 +39,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/heading/editor.svelte
-<<< @/../playground/examples/svelte/heading/extension.ts
-<<< @/../playground/examples/svelte/heading/toolbar.svelte
-<<< @/../playground/examples/svelte/heading/button.svelte
+<<< @/../playground/src/examples/svelte/heading/editor.svelte
+<<< @/../playground/src/examples/svelte/heading/extension.ts
+<<< @/../playground/src/examples/svelte/heading/toolbar.svelte
+<<< @/../playground/src/examples/svelte/heading/button.svelte
 
 :::
 
@@ -52,10 +52,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/solid/heading/editor.tsx
-<<< @/../playground/examples/solid/heading/extension.ts
-<<< @/../playground/examples/solid/heading/toolbar.tsx
-<<< @/../playground/examples/solid/heading/button.tsx
+<<< @/../playground/src/examples/solid/heading/editor.tsx
+<<< @/../playground/src/examples/solid/heading/extension.ts
+<<< @/../playground/src/examples/solid/heading/toolbar.tsx
+<<< @/../playground/src/examples/solid/heading/button.tsx
 
 :::
 

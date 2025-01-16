@@ -13,10 +13,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/list/editor.tsx
-<<< @/../playground/examples/react/list/extension.ts
-<<< @/../playground/examples/react/list/toolbar.tsx
-<<< @/../playground/examples/react/list/button.tsx
+<<< @/../playground/src/examples/react/list/editor.tsx
+<<< @/../playground/src/examples/react/list/extension.ts
+<<< @/../playground/src/examples/react/list/toolbar.tsx
+<<< @/../playground/src/examples/react/list/button.tsx
 
 :::
 
@@ -26,10 +26,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/list/editor.vue
-<<< @/../playground/examples/vue/list/extension.ts
-<<< @/../playground/examples/vue/list/toolbar.vue
-<<< @/../playground/examples/vue/list/button.vue
+<<< @/../playground/src/examples/vue/list/editor.vue
+<<< @/../playground/src/examples/vue/list/extension.ts
+<<< @/../playground/src/examples/vue/list/toolbar.vue
+<<< @/../playground/src/examples/vue/list/button.vue
 
 :::
 
@@ -39,8 +39,8 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/list/editor.svelte
-<<< @/../playground/examples/svelte/list/extension.ts
+<<< @/../playground/src/examples/svelte/list/editor.svelte
+<<< @/../playground/src/examples/svelte/list/extension.ts
 
 :::
 

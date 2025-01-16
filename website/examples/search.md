@@ -13,10 +13,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/search/editor.tsx
-<<< @/../playground/examples/react/search/extension.ts
-<<< @/../playground/examples/react/search/search.tsx
-<<< @/../playground/examples/react/search/button.tsx
+<<< @/../playground/src/examples/react/search/editor.tsx
+<<< @/../playground/src/examples/react/search/extension.ts
+<<< @/../playground/src/examples/react/search/search.tsx
+<<< @/../playground/src/examples/react/search/button.tsx
 
 :::
 

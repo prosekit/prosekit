@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/slash-menu/extension.ts
+<<< @/../playground/src/examples/react/slash-menu/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/slash-menu/extension.ts
+<<< @/../playground/src/examples/vue/slash-menu/extension.ts
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/slash-menu/extension.ts
+<<< @/../playground/src/examples/svelte/slash-menu/extension.ts
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid/slash-menu/extension.ts
+<<< @/../playground/src/examples/solid/slash-menu/extension.ts
 
 :::
 

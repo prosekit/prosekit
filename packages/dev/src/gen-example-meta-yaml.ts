@@ -26,14 +26,15 @@ export async function genExampleMetaYaml() {
   const exampleFiles = files
     .map((file) => {
       const parts = file.split('/')
-      if (parts.length !== 5) {
+      if (parts.length !== 6) {
         return null
       }
 
-      const [playgroundDir, examplesDir, framework, story, fileName] = parts
+      const [playgroundDir, srcDir, examplesDir, framework, story, fileName] = parts
 
       if (
         playgroundDir !== 'playground'
+        || srcDir !== 'src'
         || examplesDir !== 'examples'
         || fileName.endsWith('.astro')
       ) {

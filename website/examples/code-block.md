@@ -13,12 +13,12 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/code-block/editor.tsx
-<<< @/../playground/examples/react/code-block/extension.ts
-<<< @/../playground/examples/react/code-block/toolbar.tsx
-<<< @/../playground/examples/react/code-block/code-block-view.tsx
-<<< @/../playground/examples/react/code-block/default-doc.ts
-<<< @/../playground/examples/react/code-block/button.tsx
+<<< @/../playground/src/examples/react/code-block/editor.tsx
+<<< @/../playground/src/examples/react/code-block/extension.ts
+<<< @/../playground/src/examples/react/code-block/toolbar.tsx
+<<< @/../playground/src/examples/react/code-block/code-block-view.tsx
+<<< @/../playground/src/examples/react/code-block/default-doc.ts
+<<< @/../playground/src/examples/react/code-block/button.tsx
 
 :::
 
@@ -28,12 +28,12 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/code-block/editor.vue
-<<< @/../playground/examples/vue/code-block/extension.ts
-<<< @/../playground/examples/vue/code-block/toolbar.vue
-<<< @/../playground/examples/vue/code-block/code-block-view.vue
-<<< @/../playground/examples/vue/code-block/default-doc.ts
-<<< @/../playground/examples/vue/code-block/button.vue
+<<< @/../playground/src/examples/vue/code-block/editor.vue
+<<< @/../playground/src/examples/vue/code-block/extension.ts
+<<< @/../playground/src/examples/vue/code-block/toolbar.vue
+<<< @/../playground/src/examples/vue/code-block/code-block-view.vue
+<<< @/../playground/src/examples/vue/code-block/default-doc.ts
+<<< @/../playground/src/examples/vue/code-block/button.vue
 
 :::
 
@@ -43,13 +43,13 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/code-block/editor.svelte
-<<< @/../playground/examples/svelte/code-block/extension.ts
-<<< @/../playground/examples/svelte/code-block/toolbar.svelte
-<<< @/../playground/examples/svelte/code-block/code-block-view.svelte
-<<< @/../playground/examples/svelte/code-block/default-doc.ts
-<<< @/../playground/examples/svelte/code-block/emoji.ts
-<<< @/../playground/examples/svelte/code-block/button.svelte
+<<< @/../playground/src/examples/svelte/code-block/editor.svelte
+<<< @/../playground/src/examples/svelte/code-block/extension.ts
+<<< @/../playground/src/examples/svelte/code-block/toolbar.svelte
+<<< @/../playground/src/examples/svelte/code-block/code-block-view.svelte
+<<< @/../playground/src/examples/svelte/code-block/default-doc.ts
+<<< @/../playground/src/examples/svelte/code-block/emoji.ts
+<<< @/../playground/src/examples/svelte/code-block/button.svelte
 
 :::
 
@@ -59,12 +59,12 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/solid/code-block/editor.tsx
-<<< @/../playground/examples/solid/code-block/extension.ts
-<<< @/../playground/examples/solid/code-block/toolbar.tsx
-<<< @/../playground/examples/solid/code-block/code-block-view.tsx
-<<< @/../playground/examples/solid/code-block/default-doc.ts
-<<< @/../playground/examples/solid/code-block/button.tsx
+<<< @/../playground/src/examples/solid/code-block/editor.tsx
+<<< @/../playground/src/examples/solid/code-block/extension.ts
+<<< @/../playground/src/examples/solid/code-block/toolbar.tsx
+<<< @/../playground/src/examples/solid/code-block/code-block-view.tsx
+<<< @/../playground/src/examples/solid/code-block/default-doc.ts
+<<< @/../playground/src/examples/solid/code-block/button.tsx
 
 :::
 

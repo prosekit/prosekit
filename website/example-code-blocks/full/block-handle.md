@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/full/block-handle.tsx
+<<< @/../playground/src/examples/react/full/block-handle.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/full/block-handle.vue
+<<< @/../playground/src/examples/vue/full/block-handle.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/full/block-handle.svelte
+<<< @/../playground/src/examples/svelte/full/block-handle.svelte
 
 :::
 

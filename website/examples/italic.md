@@ -13,10 +13,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/italic/editor.vue
-<<< @/../playground/examples/vue/italic/extension.ts
-<<< @/../playground/examples/vue/italic/toolbar.vue
-<<< @/../playground/examples/vue/italic/button.vue
+<<< @/../playground/src/examples/vue/italic/editor.vue
+<<< @/../playground/src/examples/vue/italic/extension.ts
+<<< @/../playground/src/examples/vue/italic/toolbar.vue
+<<< @/../playground/src/examples/vue/italic/button.vue
 
 :::
 
@@ -26,10 +26,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/italic/editor.svelte
-<<< @/../playground/examples/svelte/italic/extension.ts
-<<< @/../playground/examples/svelte/italic/toolbar.svelte
-<<< @/../playground/examples/svelte/italic/button.svelte
+<<< @/../playground/src/examples/svelte/italic/editor.svelte
+<<< @/../playground/src/examples/svelte/italic/extension.ts
+<<< @/../playground/src/examples/svelte/italic/toolbar.svelte
+<<< @/../playground/src/examples/svelte/italic/button.svelte
 
 :::
 

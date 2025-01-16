@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/image-view/editor.tsx
+<<< @/../playground/src/examples/react/image-view/editor.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/image-view/editor.vue
+<<< @/../playground/src/examples/vue/image-view/editor.vue
 
 :::
 

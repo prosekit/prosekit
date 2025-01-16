@@ -22,7 +22,7 @@ To develop locally, run `pnpm run dev` in ProseKit's root folder. This will star
 
 Alternatively, you can run `pnpm run website` or `pnpm run playground` to start the website or playground server respectively.
 
-You need to run `pnpm run gen` to generate some files if you add new examples under `playground/examples/`.
+You need to run `pnpm run gen` to generate some files if you add new examples under `playground/src/examples/`.
 
 ## Test
 

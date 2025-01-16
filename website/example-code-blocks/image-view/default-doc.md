@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/image-view/default-doc.ts
+<<< @/../playground/src/examples/react/image-view/default-doc.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/image-view/default-doc.ts
+<<< @/../playground/src/examples/vue/image-view/default-doc.ts
 
 :::
 

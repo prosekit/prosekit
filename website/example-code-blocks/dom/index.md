@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vanilla/dom/index.js
+<<< @/../playground/src/examples/vanilla/dom/index.js
 
 :::
 

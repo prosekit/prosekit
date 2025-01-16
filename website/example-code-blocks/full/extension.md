@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/full/extension.ts
+<<< @/../playground/src/examples/react/full/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/full/extension.ts
+<<< @/../playground/src/examples/vue/full/extension.ts
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/full/extension.ts
+<<< @/../playground/src/examples/svelte/full/extension.ts
 
 :::
 

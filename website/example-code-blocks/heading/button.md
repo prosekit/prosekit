@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/heading/button.tsx
+<<< @/../playground/src/examples/react/heading/button.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/heading/button.vue
+<<< @/../playground/src/examples/vue/heading/button.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/heading/button.svelte
+<<< @/../playground/src/examples/svelte/heading/button.svelte
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid/heading/button.tsx
+<<< @/../playground/src/examples/solid/heading/button.tsx
 
 :::
 

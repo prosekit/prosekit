@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/link/inline-menu.tsx
+<<< @/../playground/src/examples/react/link/inline-menu.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/link/inline-menu.vue
+<<< @/../playground/src/examples/vue/link/inline-menu.vue
 
 :::
 

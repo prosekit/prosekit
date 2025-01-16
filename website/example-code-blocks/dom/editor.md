@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/lit/dom/editor.ts
+<<< @/../playground/src/examples/lit/dom/editor.ts
 
 :::
 

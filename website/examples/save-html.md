@@ -13,8 +13,8 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/save-html/editor-component.tsx
-<<< @/../playground/examples/react/save-html/editor.tsx
+<<< @/../playground/src/examples/react/save-html/editor-component.tsx
+<<< @/../playground/src/examples/react/save-html/editor.tsx
 
 :::
 
@@ -24,8 +24,8 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/save-html/editor-component.vue
-<<< @/../playground/examples/vue/save-html/editor.vue
+<<< @/../playground/src/examples/vue/save-html/editor-component.vue
+<<< @/../playground/src/examples/vue/save-html/editor.vue
 
 :::
 

@@ -3,7 +3,7 @@
 ProseKit is designed to work seamlessly with Vue.
 
 ::: code-group
-<<< @/../playground/examples/vue/minimal/editor.vue
+<<< @/../playground/src/examples/vue/minimal/editor.vue
 :::
 
 ## `useEditor`
@@ -38,7 +38,7 @@ useExtension(extension)
 Adds key bindings to the editor.
 
 ::: code-group
-<<< @/../playground/examples/vue/keymap/use-submit-keymap.ts
+<<< @/../playground/src/examples/vue/keymap/use-submit-keymap.ts
 :::
 
 Check out [keymap] for a complete implementation.
@@ -52,7 +52,7 @@ In some cases, Vue might be a more convenient tool for implementing certain inte
 We begin by creating a `CodeBlockView` component to render the node. This component receives [`VueNodeViewProps`] as props, which include the node and other useful details.
 
 ::: code-group
-<<< @/../playground/examples/vue/code-block/code-block-view.vue [code-block-view.vue]
+<<< @/../playground/src/examples/vue/code-block/code-block-view.vue [code-block-view.vue]
 :::
 
 `CodeBlockView` renders a `LanguageSelector` component (the button in the top left corner) and a `<pre>` element to hold the code. We bind the `contentRef` to the `<pre>` element, which allows the editor to manage its content.

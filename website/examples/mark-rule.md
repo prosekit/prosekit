@@ -13,9 +13,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/mark-rule/editor.tsx
-<<< @/../playground/examples/react/mark-rule/extension.ts
-<<< @/../playground/examples/react/mark-rule/issue-link.ts
+<<< @/../playground/src/examples/react/mark-rule/editor.tsx
+<<< @/../playground/src/examples/react/mark-rule/extension.ts
+<<< @/../playground/src/examples/react/mark-rule/issue-link.ts
 
 :::
 
@@ -25,9 +25,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/mark-rule/editor.vue
-<<< @/../playground/examples/vue/mark-rule/extension.ts
-<<< @/../playground/examples/vue/mark-rule/issue-link.ts
+<<< @/../playground/src/examples/vue/mark-rule/editor.vue
+<<< @/../playground/src/examples/vue/mark-rule/extension.ts
+<<< @/../playground/src/examples/vue/mark-rule/issue-link.ts
 
 :::
 

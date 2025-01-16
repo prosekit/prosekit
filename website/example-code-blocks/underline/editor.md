@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/underline/editor.vue
+<<< @/../playground/src/examples/vue/underline/editor.vue
 
 :::
 

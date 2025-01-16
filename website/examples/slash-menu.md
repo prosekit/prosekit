@@ -13,9 +13,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/slash-menu/editor.tsx
-<<< @/../playground/examples/react/slash-menu/extension.ts
-<<< @/../playground/examples/react/slash-menu/slash-menu.tsx
+<<< @/../playground/src/examples/react/slash-menu/editor.tsx
+<<< @/../playground/src/examples/react/slash-menu/extension.ts
+<<< @/../playground/src/examples/react/slash-menu/slash-menu.tsx
 
 :::
 
@@ -25,9 +25,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/slash-menu/editor.vue
-<<< @/../playground/examples/vue/slash-menu/extension.ts
-<<< @/../playground/examples/vue/slash-menu/slash-menu.vue
+<<< @/../playground/src/examples/vue/slash-menu/editor.vue
+<<< @/../playground/src/examples/vue/slash-menu/extension.ts
+<<< @/../playground/src/examples/vue/slash-menu/slash-menu.vue
 
 :::
 
@@ -37,8 +37,8 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/preact/slash-menu/editor.tsx
-<<< @/../playground/examples/preact/slash-menu/slash-menu.tsx
+<<< @/../playground/src/examples/preact/slash-menu/editor.tsx
+<<< @/../playground/src/examples/preact/slash-menu/slash-menu.tsx
 
 :::
 
@@ -48,9 +48,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/slash-menu/editor.svelte
-<<< @/../playground/examples/svelte/slash-menu/extension.ts
-<<< @/../playground/examples/svelte/slash-menu/slash-menu.svelte
+<<< @/../playground/src/examples/svelte/slash-menu/editor.svelte
+<<< @/../playground/src/examples/svelte/slash-menu/extension.ts
+<<< @/../playground/src/examples/svelte/slash-menu/slash-menu.svelte
 
 :::
 
@@ -60,9 +60,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/solid/slash-menu/editor.tsx
-<<< @/../playground/examples/solid/slash-menu/extension.ts
-<<< @/../playground/examples/solid/slash-menu/slash-menu.tsx
+<<< @/../playground/src/examples/solid/slash-menu/editor.tsx
+<<< @/../playground/src/examples/solid/slash-menu/extension.ts
+<<< @/../playground/src/examples/solid/slash-menu/slash-menu.tsx
 
 :::
 

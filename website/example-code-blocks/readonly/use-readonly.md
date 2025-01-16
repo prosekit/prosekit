@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/readonly/use-readonly.ts
+<<< @/../playground/src/examples/react/readonly/use-readonly.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/readonly/use-readonly.ts
+<<< @/../playground/src/examples/vue/readonly/use-readonly.ts
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/preact/readonly/use-readonly.ts
+<<< @/../playground/src/examples/preact/readonly/use-readonly.ts
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/readonly/use-readonly.ts
+<<< @/../playground/src/examples/svelte/readonly/use-readonly.ts
 
 :::
 
@@ -46,7 +46,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid/readonly/use-readonly.ts
+<<< @/../playground/src/examples/solid/readonly/use-readonly.ts
 
 :::
 

@@ -26,15 +26,15 @@ ProseKit is compatible with various JavaScript frameworks and vanilla JavaScript
 
 ::: code-group
 
-<<< @/../playground/examples/react/minimal/editor.tsx [React]
+<<< @/../playground/src/examples/react/minimal/editor.tsx [React]
 
-<<< @/../playground/examples/vue/minimal/editor.vue [Vue]
+<<< @/../playground/src/examples/vue/minimal/editor.vue [Vue]
 
-<<< @/../playground/examples/preact/minimal/editor.tsx [Preact]
+<<< @/../playground/src/examples/preact/minimal/editor.tsx [Preact]
 
-<<< @/../playground/examples/svelte/minimal/editor.svelte [Svelte]
+<<< @/../playground/src/examples/svelte/minimal/editor.svelte [Svelte]
 
-<<< @/../playground/examples/solid/minimal/editor.tsx [Solid]
+<<< @/../playground/src/examples/solid/minimal/editor.tsx [Solid]
 
 :::
 

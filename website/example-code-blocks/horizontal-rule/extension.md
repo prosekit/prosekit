@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/horizontal-rule/extension.ts
+<<< @/../playground/src/examples/react/horizontal-rule/extension.ts
 
 :::
 

@@ -13,11 +13,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/text-color/editor.vue
-<<< @/../playground/examples/vue/text-color/extension.ts
-<<< @/../playground/examples/vue/text-color/inline-menu.vue
-<<< @/../playground/examples/vue/text-color/text-color.ts
-<<< @/../playground/examples/vue/text-color/button.vue
+<<< @/../playground/src/examples/vue/text-color/editor.vue
+<<< @/../playground/src/examples/vue/text-color/extension.ts
+<<< @/../playground/src/examples/vue/text-color/inline-menu.vue
+<<< @/../playground/src/examples/vue/text-color/text-color.ts
+<<< @/../playground/src/examples/vue/text-color/button.vue
 
 :::
 

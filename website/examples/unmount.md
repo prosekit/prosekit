@@ -13,9 +13,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/unmount/editor-component.tsx
-<<< @/../playground/examples/react/unmount/editor.tsx
-<<< @/../playground/examples/react/unmount/extension-component.tsx
+<<< @/../playground/src/examples/react/unmount/editor-component.tsx
+<<< @/../playground/src/examples/react/unmount/editor.tsx
+<<< @/../playground/src/examples/react/unmount/extension-component.tsx
 
 :::
 
@@ -25,9 +25,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/unmount/editor-component.vue
-<<< @/../playground/examples/vue/unmount/editor.vue
-<<< @/../playground/examples/vue/unmount/extension-component.vue
+<<< @/../playground/src/examples/vue/unmount/editor-component.vue
+<<< @/../playground/src/examples/vue/unmount/editor.vue
+<<< @/../playground/src/examples/vue/unmount/extension-component.vue
 
 :::
 

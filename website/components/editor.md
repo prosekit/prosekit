@@ -12,7 +12,7 @@ To begin, you need to define the editor extensions by creating an `extension.ts`
 
 ::: code-group
 
-<<< @/../playground/examples/react/minimal/extension.ts
+<<< @/../playground/src/examples/react/minimal/extension.ts
 
 :::
 

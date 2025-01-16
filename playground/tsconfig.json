@@ -3,10 +3,8 @@
   "include": [
     "./.astro/**/*",
     "./tests/**/*",
-    "./stories/**/*",
     "./*.ts",
     "./*.mjs",
-    "./shims-astro.d.ts",
   ],
   "references": [
     {

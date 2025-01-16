@@ -13,8 +13,7 @@ const config: UserConfig = defineConfig({
   configDeps: configDeps(),
   content: {
     filesystem: [
-      './examples/**/*.{vue,tsx,jsx,ts,js,svelte}',
-      './layouts/**/*.{astro,ts}',
+      './src/**/*.{vue,tsx,jsx,ts,js,svelte,astro,ts}',
     ],
     pipeline: {
       include: /\.(vue|svelte|[jt]sx?|mdx?|astro|html)($|\?)/,

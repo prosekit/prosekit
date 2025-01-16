@@ -5,12 +5,20 @@ import {
 import {
   defineConfig,
   transformerDirectives,
-  type UserConfig,
 } from 'unocss'
 
 export default defineConfig({
   presets: [preset()],
   configDeps: configDeps(),
+  content: {
+    filesystem: [
+      './src/**/*.{vue,tsx,jsx,ts,js,svelte,astro,ts}',
+    ],
+    pipeline: {
+      include: /\.(vue|svelte|[jt]sx?|mdx?|astro|html)($|\?)/,
+    },
+  },
+  transformers: [transformerDirectives()],
   theme: {
     breakpoints: {
       // Match Starlight breakpoints

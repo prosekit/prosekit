@@ -32,7 +32,7 @@ export default defineConfig({
       ],
       customCss: [
         // Relative path to your custom CSS file
-        './src/styles/custom.css',
+        './src/styles/index.css',
       ],
       components: {
         Header: './src/components/overrides/Header.astro',

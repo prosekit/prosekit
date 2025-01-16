@@ -2,7 +2,6 @@
   "extends": "@ocavue/tsconfig/dom/app.json",
   "include": [
     "./.astro/**/*",
-    "./src/**/*",
     "./tests/**/*",
     "./stories/**/*",
     "./*.ts",
@@ -10,6 +9,9 @@
     "./shims-astro.d.ts",
   ],
   "references": [
+    {
+      "path": "./src/stories/tsconfig.json",
+    },
     {
       "path": "./examples/lit/tsconfig.json",
     },

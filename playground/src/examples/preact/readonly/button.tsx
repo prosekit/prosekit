@@ -1,1 +1,1 @@
-../../../components/preact/button.tsx
+../../../shared/preact/button.tsx

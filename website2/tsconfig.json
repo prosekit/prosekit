@@ -1,4 +1,13 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
-  "include": ["*.ts", ".astro/types.d.ts", "src/**/*", "astro.config.ts"],
+  "include": [
+    "*.ts",
+    ".astro/types.d.ts",
+    "src/*.ts"
+  ],
+  "references": [
+    {
+      "path": "./src/components/ui/tsconfig.json"
+    }
+  ]
 }

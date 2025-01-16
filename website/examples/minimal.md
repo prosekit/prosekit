@@ -13,8 +13,8 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/minimal/editor.tsx
-<<< @/../playground/examples/react/minimal/extension.ts
+<<< @/../playground/src/examples/react/minimal/editor.tsx
+<<< @/../playground/src/examples/react/minimal/extension.ts
 
 :::
 
@@ -24,8 +24,8 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/minimal/editor.vue
-<<< @/../playground/examples/vue/minimal/extension.ts
+<<< @/../playground/src/examples/vue/minimal/editor.vue
+<<< @/../playground/src/examples/vue/minimal/extension.ts
 
 :::
 
@@ -35,7 +35,7 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/preact/minimal/editor.tsx
+<<< @/../playground/src/examples/preact/minimal/editor.tsx
 
 :::
 
@@ -45,7 +45,7 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/minimal/editor.svelte
+<<< @/../playground/src/examples/svelte/minimal/editor.svelte
 
 :::
 
@@ -55,7 +55,7 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/solid/minimal/editor.tsx
+<<< @/../playground/src/examples/solid/minimal/editor.tsx
 
 :::
 

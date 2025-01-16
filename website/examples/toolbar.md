@@ -13,11 +13,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/toolbar/editor.tsx
-<<< @/../playground/examples/react/toolbar/extension.ts
-<<< @/../playground/examples/react/toolbar/toolbar.tsx
-<<< @/../playground/examples/react/toolbar/image-upload-popover.tsx
-<<< @/../playground/examples/react/toolbar/button.tsx
+<<< @/../playground/src/examples/react/toolbar/editor.tsx
+<<< @/../playground/src/examples/react/toolbar/extension.ts
+<<< @/../playground/src/examples/react/toolbar/toolbar.tsx
+<<< @/../playground/src/examples/react/toolbar/image-upload-popover.tsx
+<<< @/../playground/src/examples/react/toolbar/button.tsx
 
 :::
 
@@ -27,10 +27,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/toolbar/editor.vue
-<<< @/../playground/examples/vue/toolbar/extension.ts
-<<< @/../playground/examples/vue/toolbar/toolbar.vue
-<<< @/../playground/examples/vue/toolbar/button.vue
+<<< @/../playground/src/examples/vue/toolbar/editor.vue
+<<< @/../playground/src/examples/vue/toolbar/extension.ts
+<<< @/../playground/src/examples/vue/toolbar/toolbar.vue
+<<< @/../playground/src/examples/vue/toolbar/button.vue
 
 :::
 
@@ -40,10 +40,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/toolbar/editor.svelte
-<<< @/../playground/examples/svelte/toolbar/extension.ts
-<<< @/../playground/examples/svelte/toolbar/toolbar.svelte
-<<< @/../playground/examples/svelte/toolbar/button.svelte
+<<< @/../playground/src/examples/svelte/toolbar/editor.svelte
+<<< @/../playground/src/examples/svelte/toolbar/extension.ts
+<<< @/../playground/src/examples/svelte/toolbar/toolbar.svelte
+<<< @/../playground/src/examples/svelte/toolbar/button.svelte
 
 :::
 

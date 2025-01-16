@@ -13,9 +13,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/change-tracking/editor-diff.tsx
-<<< @/../playground/examples/react/change-tracking/editor-main.tsx
-<<< @/../playground/examples/react/change-tracking/editor.tsx
+<<< @/../playground/src/examples/react/change-tracking/editor-diff.tsx
+<<< @/../playground/src/examples/react/change-tracking/editor-main.tsx
+<<< @/../playground/src/examples/react/change-tracking/editor.tsx
 
 :::
 
@@ -25,9 +25,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/change-tracking/editor-diff.svelte
-<<< @/../playground/examples/svelte/change-tracking/editor-main.svelte
-<<< @/../playground/examples/svelte/change-tracking/editor.svelte
+<<< @/../playground/src/examples/svelte/change-tracking/editor-diff.svelte
+<<< @/../playground/src/examples/svelte/change-tracking/editor-main.svelte
+<<< @/../playground/src/examples/svelte/change-tracking/editor.svelte
 
 :::
 

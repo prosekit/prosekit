@@ -13,10 +13,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/blockquote/editor.tsx
-<<< @/../playground/examples/react/blockquote/extension.ts
-<<< @/../playground/examples/react/blockquote/toolbar.tsx
-<<< @/../playground/examples/react/blockquote/button.tsx
+<<< @/../playground/src/examples/react/blockquote/editor.tsx
+<<< @/../playground/src/examples/react/blockquote/extension.ts
+<<< @/../playground/src/examples/react/blockquote/toolbar.tsx
+<<< @/../playground/src/examples/react/blockquote/button.tsx
 
 :::
 
@@ -26,10 +26,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/blockquote/editor.vue
-<<< @/../playground/examples/vue/blockquote/extension.ts
-<<< @/../playground/examples/vue/blockquote/toolbar.vue
-<<< @/../playground/examples/vue/blockquote/button.vue
+<<< @/../playground/src/examples/vue/blockquote/editor.vue
+<<< @/../playground/src/examples/vue/blockquote/extension.ts
+<<< @/../playground/src/examples/vue/blockquote/toolbar.vue
+<<< @/../playground/src/examples/vue/blockquote/button.vue
 
 :::
 

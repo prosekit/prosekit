@@ -13,9 +13,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/link-mark-view/editor.tsx
-<<< @/../playground/examples/react/link-mark-view/extension.ts
-<<< @/../playground/examples/react/link-mark-view/link-view.tsx
+<<< @/../playground/src/examples/react/link-mark-view/editor.tsx
+<<< @/../playground/src/examples/react/link-mark-view/extension.ts
+<<< @/../playground/src/examples/react/link-mark-view/link-view.tsx
 
 :::
 
@@ -25,9 +25,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/link-mark-view/editor.vue
-<<< @/../playground/examples/vue/link-mark-view/extension.ts
-<<< @/../playground/examples/vue/link-mark-view/link-view.vue
+<<< @/../playground/src/examples/vue/link-mark-view/editor.vue
+<<< @/../playground/src/examples/vue/link-mark-view/extension.ts
+<<< @/../playground/src/examples/vue/link-mark-view/link-view.vue
 
 :::
 
@@ -37,9 +37,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/link-mark-view/editor.svelte
-<<< @/../playground/examples/svelte/link-mark-view/extension.ts
-<<< @/../playground/examples/svelte/link-mark-view/link-view.svelte
+<<< @/../playground/src/examples/svelte/link-mark-view/editor.svelte
+<<< @/../playground/src/examples/svelte/link-mark-view/extension.ts
+<<< @/../playground/src/examples/svelte/link-mark-view/link-view.svelte
 
 :::
 
@@ -49,9 +49,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/solid/link-mark-view/editor.tsx
-<<< @/../playground/examples/solid/link-mark-view/extension.ts
-<<< @/../playground/examples/solid/link-mark-view/link-view.tsx
+<<< @/../playground/src/examples/solid/link-mark-view/editor.tsx
+<<< @/../playground/src/examples/solid/link-mark-view/extension.ts
+<<< @/../playground/src/examples/solid/link-mark-view/link-view.tsx
 
 :::
 

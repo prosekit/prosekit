@@ -13,11 +13,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/loro/editor-component.tsx
-<<< @/../playground/examples/react/loro/editor.tsx
-<<< @/../playground/examples/react/loro/extension.ts
-<<< @/../playground/examples/react/loro/toolbar.tsx
-<<< @/../playground/examples/react/loro/button.tsx
+<<< @/../playground/src/examples/react/loro/editor-component.tsx
+<<< @/../playground/src/examples/react/loro/editor.tsx
+<<< @/../playground/src/examples/react/loro/extension.ts
+<<< @/../playground/src/examples/react/loro/toolbar.tsx
+<<< @/../playground/src/examples/react/loro/button.tsx
 
 :::
 

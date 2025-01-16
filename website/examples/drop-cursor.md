@@ -13,9 +13,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/drop-cursor/editor.vue
-<<< @/../playground/examples/vue/drop-cursor/extension.ts
-<<< @/../playground/examples/vue/drop-cursor/default-doc.ts
+<<< @/../playground/src/examples/vue/drop-cursor/editor.vue
+<<< @/../playground/src/examples/vue/drop-cursor/extension.ts
+<<< @/../playground/src/examples/vue/drop-cursor/default-doc.ts
 
 :::
 
@@ -25,9 +25,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/drop-cursor/editor.svelte
-<<< @/../playground/examples/svelte/drop-cursor/extension.ts
-<<< @/../playground/examples/svelte/drop-cursor/default-doc.ts
+<<< @/../playground/src/examples/svelte/drop-cursor/editor.svelte
+<<< @/../playground/src/examples/svelte/drop-cursor/extension.ts
+<<< @/../playground/src/examples/svelte/drop-cursor/default-doc.ts
 
 :::
 
@@ -37,9 +37,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/solid/drop-cursor/editor.tsx
-<<< @/../playground/examples/solid/drop-cursor/extension.ts
-<<< @/../playground/examples/solid/drop-cursor/default-doc.ts
+<<< @/../playground/src/examples/solid/drop-cursor/editor.tsx
+<<< @/../playground/src/examples/solid/drop-cursor/extension.ts
+<<< @/../playground/src/examples/solid/drop-cursor/default-doc.ts
 
 :::
 

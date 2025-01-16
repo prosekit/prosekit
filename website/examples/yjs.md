@@ -13,11 +13,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/yjs/editor-component.tsx
-<<< @/../playground/examples/react/yjs/editor.tsx
-<<< @/../playground/examples/react/yjs/extension.ts
-<<< @/../playground/examples/react/yjs/toolbar.tsx
-<<< @/../playground/examples/react/yjs/button.tsx
+<<< @/../playground/src/examples/react/yjs/editor-component.tsx
+<<< @/../playground/src/examples/react/yjs/editor.tsx
+<<< @/../playground/src/examples/react/yjs/extension.ts
+<<< @/../playground/src/examples/react/yjs/toolbar.tsx
+<<< @/../playground/src/examples/react/yjs/button.tsx
 
 :::
 

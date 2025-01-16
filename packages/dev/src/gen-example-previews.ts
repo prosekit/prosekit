@@ -51,7 +51,7 @@ function formatExample(example: Example) {
       if (file.hidden) {
         return ''
       }
-      return `<<< @/../playground/examples/${example.framework}/${example.story}/${file.path}`
+      return `<<< @/../playground/src/examples/${example.framework}/${example.story}/${file.path}`
     })
     .filter(Boolean)
     .join('\n')

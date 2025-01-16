@@ -13,9 +13,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/word-counter/editor.tsx
-<<< @/../playground/examples/react/word-counter/extension.ts
-<<< @/../playground/examples/react/word-counter/word-counter.tsx
+<<< @/../playground/src/examples/react/word-counter/editor.tsx
+<<< @/../playground/src/examples/react/word-counter/extension.ts
+<<< @/../playground/src/examples/react/word-counter/word-counter.tsx
 
 :::
 
@@ -25,9 +25,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/word-counter/editor.vue
-<<< @/../playground/examples/vue/word-counter/extension.ts
-<<< @/../playground/examples/vue/word-counter/word-counter.vue
+<<< @/../playground/src/examples/vue/word-counter/editor.vue
+<<< @/../playground/src/examples/vue/word-counter/extension.ts
+<<< @/../playground/src/examples/vue/word-counter/word-counter.vue
 
 :::
 
@@ -37,9 +37,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/word-counter/editor.svelte
-<<< @/../playground/examples/svelte/word-counter/extension.ts
-<<< @/../playground/examples/svelte/word-counter/word-counter.svelte
+<<< @/../playground/src/examples/svelte/word-counter/editor.svelte
+<<< @/../playground/src/examples/svelte/word-counter/extension.ts
+<<< @/../playground/src/examples/svelte/word-counter/word-counter.svelte
 
 :::
 

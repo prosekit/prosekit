@@ -13,8 +13,8 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/gap-cursor/editor.tsx
-<<< @/../playground/examples/react/gap-cursor/extension.ts
+<<< @/../playground/src/examples/react/gap-cursor/editor.tsx
+<<< @/../playground/src/examples/react/gap-cursor/extension.ts
 
 :::
 

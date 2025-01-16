@@ -134,6 +134,9 @@
       "path": "playground/examples/vue/tsconfig.json",
     },
     {
+      "path": "playground/src/stories/tsconfig.json",
+    },
+    {
       "path": "playground/tsconfig.json",
     },
     {

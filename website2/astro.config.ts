@@ -36,6 +36,8 @@ export default defineConfig({
         ThemeSelect: './src/components/overrides/ThemeSelect.astro',
         SocialIcons: './src/components/overrides/SocialIcons.astro',
         SiteTitle: './src/components/overrides/SiteTitle.astro',
+        PageFrame: './src/components/overrides/PageFrame.astro',
+        MobileMenuToggle: './src/components/overrides/MobileMenuToggle.astro',
       },
     }),
     UnoCSS(),

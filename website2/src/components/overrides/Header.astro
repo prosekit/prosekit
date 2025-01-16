@@ -8,7 +8,7 @@ import SocialIcons from './SocialIcons.astro'
 import ThemeSelect from './ThemeSelect.astro'
 ---
 
-<div class="flex items-center gap-4 h-full">
+<div class="flex items-center gap-5 h-full">
   <div
     class:list={[
       /* Prevent long titles overflowing and covering the search and menu buttons on narrow viewports. */
@@ -28,7 +28,7 @@ import ThemeSelect from './ThemeSelect.astro'
   <div class="hidden md:flex print:hidden items-center gap-4">
     <span class="h-6 w-px bg-gray-500/30 -mr-2"></span>
     <ThemeSelect {...Astro.props} />
-  <span class="h-6 w-px bg-gray-500/30 -m-2"></span>
+    <span class="h-6 w-px bg-gray-500/30 -m-2"></span>
     <SocialIcons {...Astro.props} />
     <LanguageSelect {...Astro.props} />
   </div>

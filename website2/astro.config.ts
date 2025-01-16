@@ -1,7 +1,13 @@
-// @ts-check
+import preact from '@astrojs/preact'
+import react from '@astrojs/react'
+import solid from '@astrojs/solid-js'
 import starlight from '@astrojs/starlight'
+import svelte from '@astrojs/svelte'
+import vue from '@astrojs/vue'
 import { defineConfig } from 'astro/config'
+import astrobook from 'astrobook'
 import UnoCSS from 'unocss/astro'
+import wasm from 'vite-plugin-wasm'
 
 // https://astro.build/config
 export default defineConfig({
@@ -42,5 +48,19 @@ export default defineConfig({
       },
     }),
     UnoCSS(),
+    preact({ include: ['*/preact/**/*'] }),
+    react({ include: ['*/react/**/*'] }),
+    svelte(),
+    vue(),
+    solid({ include: ['*/solid/**/*'] }),
+    astrobook({ directory: 'src/stories', title: 'ProseKit' }),
   ],
+  vite: {
+    plugins: [wasm()],
+    optimizeDeps: {
+      // Ensures that Vite can detect all dependencies that need to be pre-bundled.
+      // This avoids the need for full-page reloads when opening a page.
+      entries: ['examples/**/*.{ts,tsx,vue,svelte}'],
+    },
+  },
 })

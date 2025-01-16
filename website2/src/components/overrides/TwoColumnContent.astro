@@ -1,0 +1,22 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+---
+
+<div class="lg:sl-flex w-full max-w-full">
+  {
+    Astro.props.toc && (
+      <aside class="print:hidden order-2 relative w-[var(--sl-sidebar-width)]!">
+        <div class="fixed top-[var(--sl-nav-height)] right-0 w-[var(--sl-sidebar-width)]! h-100vh overflow-auto scrollbar-width-none border-l-1 border-0 border-color-[var(--sl-color-hairline)] border-solid">
+          <slot name="right-sidebar" />
+        </div>
+      </aside>
+    )
+  }
+  <div class="order-1 flex-1 isolate"><slot /></div>
+</div>
+
+<style>
+  .scrollbar-width-none {
+    scrollbar-width: none;
+  }
+</style>

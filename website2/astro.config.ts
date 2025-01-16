@@ -30,6 +30,7 @@ export default defineConfig({
       ],
       components: {
         Search: './src/components/overrides/Search.astro',
+        TwoColumnContent: './src/components/overrides/TwoColumnContent.astro',
       },
     }),
     UnoCSS(),

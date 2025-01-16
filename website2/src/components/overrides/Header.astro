@@ -15,11 +15,10 @@ import ThemeSelect from './ThemeSelect.astro'
   <div class="sl-flex print:hidden">
     <Search {...Astro.props} />
   </div>
-  <div class="sl-hidden md:sl-flex print:hidden right-group">
-    <div class="sl-flex social-icons">
-      <SocialIcons {...Astro.props} />
-    </div>
+  <div class="hidden md:flex print:hidden items-center gap-4">
     <ThemeSelect {...Astro.props} />
+    <span class="h-6 w-px bg-gray-500/30 -m-1"></span>
+    <SocialIcons {...Astro.props} />
     <LanguageSelect {...Astro.props} />
   </div>
 </div>
@@ -39,17 +38,6 @@ import ThemeSelect from './ThemeSelect.astro'
     padding: 0.25rem;
     margin: -0.25rem;
     min-width: 0;
-  }
-
-  .right-group,
-  .social-icons {
-    gap: 1rem;
-    align-items: center;
-  }
-  .social-icons::after {
-    content: '';
-    height: 2rem;
-    border-inline-end: 1px solid var(--sl-color-gray-5);
   }
 
   @media (min-width: 50rem) {

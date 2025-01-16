@@ -13,23 +13,23 @@ export async function genPlaygroundPages() {
   const meta = await readExampleMeta()
 
   await vfs.updateText(
-    'playground/examples/preact/loaders.gen.ts',
+    'playground/src/examples/preact/loaders.gen.ts',
     genPreactLoaders(meta.examples),
   )
   await vfs.updateText(
-    'playground/examples/react/loaders.gen.ts',
+    'playground/src/examples/react/loaders.gen.ts',
     genReactLoaders(meta.examples),
   )
   await vfs.updateText(
-    'playground/examples/vue/loaders.gen.ts',
+    'playground/src/examples/vue/loaders.gen.ts',
     genVueLoaders(meta.examples),
   )
   await vfs.updateText(
-    'playground/examples/solid/loaders.gen.ts',
+    'playground/src/examples/solid/loaders.gen.ts',
     genSolidLoaders(meta.examples),
   )
   await vfs.updateText(
-    'playground/examples/svelte/loaders.gen.ts',
+    'playground/src/examples/svelte/loaders.gen.ts',
     genSvelteLoaders(meta.examples),
   )
 

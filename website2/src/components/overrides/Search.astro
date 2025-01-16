@@ -7,11 +7,6 @@ import Default from '@astrojs/starlight/components/Search.astro'
 <Default {...Astro.props} />
 
 <style is:global>
-  site-search dialog,
-  site-search dialog::backdrop {
-    will-change: transform, opacity, backdrop-filter;
-  }
-
   @media (prefers-reduced-motion: no-preference) {
     site-search {
       & dialog,
@@ -21,6 +16,7 @@ import Default from '@astrojs/starlight/components/Search.astro'
           overlay 300ms allow-discrete;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
+        will-change: transform, opacity, backdrop-filter;
       }
 
       & dialog {

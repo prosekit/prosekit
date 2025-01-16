@@ -1,1 +1,1 @@
-../../../components/react/button.tsx
+../../../shared/react/button.tsx

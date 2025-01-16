@@ -63,7 +63,7 @@ First, create an `UploadTask` instance on paste or drop:
 
 ::: code-group
 
-<<< @/../playground/src/components/common/upload-file.ts
+<<< @/../playground/src/shared/common/upload-file.ts
 
 :::
 

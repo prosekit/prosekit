@@ -1,1 +1,1 @@
-../../../components/vue/button.vue
+../../../shared/vue/button.vue

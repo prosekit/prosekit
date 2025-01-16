@@ -1,1 +1,1 @@
-../../../components/vue/block-handle.vue
+../../../shared/vue/block-handle.vue

@@ -3,150 +3,99 @@
   "include": [
     "./*.js",
     "./*.ts",
-    ".changeset/*.cjs"
+    ".changeset/*.cjs",
   ],
   "files": [],
   "references": [
     {
-      "path": "packages/basic/tsconfig.build.json"
+      "path": "packages/basic/tsconfig.build.json",
     },
     {
-      "path": "packages/basic/tsconfig.json"
+      "path": "packages/basic/tsconfig.json",
     },
     {
-      "path": "packages/core/tsconfig.build.json"
+      "path": "packages/core/tsconfig.build.json",
     },
     {
-      "path": "packages/core/tsconfig.json"
+      "path": "packages/core/tsconfig.json",
     },
     {
-      "path": "packages/dev/tsconfig.build.json"
+      "path": "packages/dev/tsconfig.build.json",
     },
     {
-      "path": "packages/dev/tsconfig.json"
+      "path": "packages/dev/tsconfig.json",
     },
     {
-      "path": "packages/extensions/tsconfig.build.json"
+      "path": "packages/extensions/tsconfig.build.json",
     },
     {
-      "path": "packages/extensions/tsconfig.json"
+      "path": "packages/extensions/tsconfig.json",
     },
     {
-      "path": "packages/lit/tsconfig.build.json"
+      "path": "packages/lit/tsconfig.build.json",
     },
     {
-      "path": "packages/lit/tsconfig.json"
+      "path": "packages/lit/tsconfig.json",
     },
     {
-      "path": "packages/pm/tsconfig.build.json"
+      "path": "packages/pm/tsconfig.build.json",
     },
     {
-      "path": "packages/pm/tsconfig.json"
+      "path": "packages/pm/tsconfig.json",
     },
     {
-      "path": "packages/preact/tsconfig.build.json"
+      "path": "packages/preact/tsconfig.build.json",
     },
     {
-      "path": "packages/preact/tsconfig.json"
+      "path": "packages/preact/tsconfig.json",
     },
     {
-      "path": "packages/prosekit/tsconfig.build.json"
+      "path": "packages/prosekit/tsconfig.build.json",
     },
     {
-      "path": "packages/prosekit/tsconfig.json"
+      "path": "packages/prosekit/tsconfig.json",
     },
     {
-      "path": "packages/react/tsconfig.build.json"
+      "path": "packages/react/tsconfig.build.json",
     },
     {
-      "path": "packages/react/tsconfig.json"
+      "path": "packages/react/tsconfig.json",
     },
     {
-      "path": "packages/solid/tsconfig.build.json"
+      "path": "packages/solid/tsconfig.build.json",
     },
     {
-      "path": "packages/solid/tsconfig.json"
+      "path": "packages/solid/tsconfig.json",
     },
     {
-      "path": "packages/svelte/tsconfig.build.json"
+      "path": "packages/svelte/tsconfig.build.json",
     },
     {
-      "path": "packages/svelte/tsconfig.json"
+      "path": "packages/svelte/tsconfig.json",
     },
     {
-      "path": "packages/themes/tsconfig.build.json"
+      "path": "packages/themes/tsconfig.build.json",
     },
     {
-      "path": "packages/themes/tsconfig.json"
+      "path": "packages/themes/tsconfig.json",
     },
     {
-      "path": "packages/unocss-preset/tsconfig.json"
+      "path": "packages/unocss-preset/tsconfig.json",
     },
     {
-      "path": "packages/vue/tsconfig.build.json"
+      "path": "packages/vue/tsconfig.build.json",
     },
     {
-      "path": "packages/vue/tsconfig.json"
+      "path": "packages/vue/tsconfig.json",
     },
     {
-      "path": "packages/web/tsconfig.build.json"
+      "path": "website/tsconfig.json",
     },
     {
-      "path": "packages/web/tsconfig.json"
+      "path": "website2/src/components/ui/tsconfig.json",
     },
     {
-      "path": "playground/src/components/common/tsconfig.json"
+      "path": "website2/tsconfig.json",
     },
-    {
-      "path": "playground/src/components/preact/tsconfig.json"
-    },
-    {
-      "path": "playground/src/components/react/tsconfig.json"
-    },
-    {
-      "path": "playground/src/components/solid/tsconfig.json"
-    },
-    {
-      "path": "playground/src/components/svelte/tsconfig.json"
-    },
-    {
-      "path": "playground/src/components/vue/tsconfig.json"
-    },
-    {
-      "path": "playground/src/examples/lit/tsconfig.json"
-    },
-    {
-      "path": "playground/src/examples/preact/tsconfig.json"
-    },
-    {
-      "path": "playground/src/examples/react/tsconfig.json"
-    },
-    {
-      "path": "playground/src/examples/solid/tsconfig.json"
-    },
-    {
-      "path": "playground/src/examples/svelte/tsconfig.json"
-    },
-    {
-      "path": "playground/src/examples/vanilla/tsconfig.json"
-    },
-    {
-      "path": "playground/src/examples/vue/tsconfig.json"
-    },
-    {
-      "path": "playground/src/stories/tsconfig.json"
-    },
-    {
-      "path": "playground/tsconfig.json"
-    },
-    {
-      "path": "website/tsconfig.json"
-    },
-    {
-      "path": "website2/src/components/ui/tsconfig.json"
-    },
-    {
-      "path": "website2/tsconfig.json"
-    }
-  ]
+  ],
 }

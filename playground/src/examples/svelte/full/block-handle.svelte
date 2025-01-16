@@ -1,1 +1,1 @@
-../../../components/svelte/block-handle.svelte
+../../../shared/svelte/block-handle.svelte

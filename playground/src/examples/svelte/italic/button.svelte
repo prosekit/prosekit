@@ -1,1 +1,1 @@
-../../../components/svelte/button.svelte
+../../../shared/svelte/button.svelte

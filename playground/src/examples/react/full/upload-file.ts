@@ -1,1 +1,1 @@
-../../../components/react/upload-file.ts
+../../../shared/react/upload-file.ts

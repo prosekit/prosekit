@@ -3,7 +3,7 @@
   "include": ["./**/*.ts", "./**/*.svelte"],
   "references": [
     {
-      "path": "../../components/svelte",
+      "path": "../../shared/svelte",
     },
   ],
 }

@@ -12,11 +12,11 @@ import wasm from 'vite-plugin-wasm'
 export default defineConfig({
   // Enable many frameworks to support all different kinds of components.
   integrations: [
-    preact({ include: ['*/preact/**/*'] }),
-    react({ include: ['*/react/**/*'] }),
+    preact({ include: ['src/*/preact/**/*'] }),
+    react({ include: ['src/*/react/**/*'] }),
     svelte(),
     vue(),
-    solid({ include: ['*/solid/**/*'] }),
+    solid({ include: ['src/*/solid/**/*'] }),
     unocss({ injectReset: true }),
     astrobook({ directory: 'src/stories', title: 'ProseKit' }),
   ],

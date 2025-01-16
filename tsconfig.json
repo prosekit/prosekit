@@ -95,24 +95,6 @@
       "path": "packages/web/tsconfig.json",
     },
     {
-      "path": "playground/src/components/common/tsconfig.json",
-    },
-    {
-      "path": "playground/src/components/preact/tsconfig.json",
-    },
-    {
-      "path": "playground/src/components/react/tsconfig.json",
-    },
-    {
-      "path": "playground/src/components/solid/tsconfig.json",
-    },
-    {
-      "path": "playground/src/components/svelte/tsconfig.json",
-    },
-    {
-      "path": "playground/src/components/vue/tsconfig.json",
-    },
-    {
       "path": "playground/src/examples/lit/tsconfig.json",
     },
     {
@@ -132,6 +114,24 @@
     },
     {
       "path": "playground/src/examples/vue/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/common/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/preact/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/react/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/solid/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/svelte/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/vue/tsconfig.json",
     },
     {
       "path": "playground/src/stories/tsconfig.json",

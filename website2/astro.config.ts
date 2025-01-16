@@ -34,6 +34,7 @@ export default defineConfig({
         TwoColumnContent: './src/components/overrides/TwoColumnContent.astro',
         ThemeProvider: './src/components/overrides/ThemeProvider.astro',
         ThemeSelect: './src/components/overrides/ThemeSelect.astro',
+        SocialIcons: './src/components/overrides/SocialIcons.astro',
       },
     }),
     UnoCSS(),

@@ -53,7 +53,7 @@ export default defineConfig({
     svelte(),
     vue(),
     solid({ include: ['*/solid/**/*'] }),
-    astrobook({ directory: 'src/stories', title: 'ProseKit', subpath: 'astrobook' }),
+    astrobook({ directory: 'src/stories', title: 'ProseKit', subpath: 'astrobook', head: './src/components/astrobook/head.astro' }),
   ],
   vite: {
     plugins: [wasm()],

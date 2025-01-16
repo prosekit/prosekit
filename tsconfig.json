@@ -89,10 +89,58 @@
       "path": "packages/vue/tsconfig.json",
     },
     {
-      "path": "website/tsconfig.json",
+      "path": "packages/web/tsconfig.build.json",
     },
     {
-      "path": "website2/src/components/ui/tsconfig.json",
+      "path": "packages/web/tsconfig.json",
+    },
+    {
+      "path": "playground/src/examples/lit/tsconfig.json",
+    },
+    {
+      "path": "playground/src/examples/preact/tsconfig.json",
+    },
+    {
+      "path": "playground/src/examples/react/tsconfig.json",
+    },
+    {
+      "path": "playground/src/examples/solid/tsconfig.json",
+    },
+    {
+      "path": "playground/src/examples/svelte/tsconfig.json",
+    },
+    {
+      "path": "playground/src/examples/vanilla/tsconfig.json",
+    },
+    {
+      "path": "playground/src/examples/vue/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/common/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/preact/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/react/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/solid/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/svelte/tsconfig.json",
+    },
+    {
+      "path": "playground/src/shared/vue/tsconfig.json",
+    },
+    {
+      "path": "playground/src/stories/tsconfig.json",
+    },
+    {
+      "path": "playground/tsconfig.json",
+    },
+    {
+      "path": "website/tsconfig.json",
     },
     {
       "path": "website2/tsconfig.json",

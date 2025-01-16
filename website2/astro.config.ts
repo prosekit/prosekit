@@ -29,6 +29,7 @@ export default defineConfig({
         './src/styles/custom.css',
       ],
       components: {
+        Header: './src/components/overrides/Header.astro',
         Search: './src/components/overrides/Search.astro',
         TwoColumnContent: './src/components/overrides/TwoColumnContent.astro',
       },

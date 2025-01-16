@@ -7,32 +7,40 @@ import Default from '@astrojs/starlight/components/Search.astro'
 <Default {...Astro.props} />
 
 <style is:global>
+  site-search dialog,
+  site-search dialog::backdrop {
+    will-change: transform, opacity, backdrop-filter;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     site-search {
       & dialog,
       & dialog::backdrop {
         transition:
-          display 100ms allow-discrete,
-          overlay 100ms allow-discrete;
-
-        animation-duration: 100ms;
+          display 300ms allow-discrete,
+          overlay 300ms allow-discrete;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
       }
 
       & dialog {
         animation-name: sl-ocavue-search-dialog-zoom-out;
+        animation-duration: 150ms;
+        transform: translateZ(0);
       }
 
       & dialog[open] {
+        animation-duration: 50ms;
         animation-name: sl-ocavue-search-dialog-zoom-in;
       }
 
       & dialog::backdrop {
+        animation-duration: 150ms;
         animation-name: sl-ocavue-search-backdrop-fade-out;
       }
 
       & dialog[open]::backdrop {
+        animation-duration: 150ms;
         animation-name: sl-ocavue-search-backdrop-fade-in;
       }
     }
@@ -43,7 +51,6 @@ import Default from '@astrojs/starlight/components/Search.astro'
       backdrop-filter: initial;
       background-color: transparent;
     }
-
     to {
       backdrop-filter: blur(0.25rem);
       background-color: var(--sl-color-backdrop-overlay);
@@ -55,7 +62,6 @@ import Default from '@astrojs/starlight/components/Search.astro'
       backdrop-filter: blur(0.25rem);
       background-color: var(--sl-color-backdrop-overlay);
     }
-
     to {
       backdrop-filter: initial;
       background-color: transparent;
@@ -80,7 +86,6 @@ import Default from '@astrojs/starlight/components/Search.astro'
       transform: scale(var(--sl-ocavue-search-dialog-zoom-scale))
         translateY(var(--sl-ocavue-search-dialog-zoom-translate-y));
     }
-
     to {
       opacity: 1;
       transform: scale(1) translateY(0);
@@ -92,7 +97,6 @@ import Default from '@astrojs/starlight/components/Search.astro'
       opacity: 1;
       transform: scale(1) translateY(0);
     }
-
     to {
       opacity: 0;
       transform: scale(var(--sl-ocavue-search-dialog-zoom-scale))

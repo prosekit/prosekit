@@ -32,6 +32,8 @@ export default defineConfig({
         Header: './src/components/overrides/Header.astro',
         Search: './src/components/overrides/Search.astro',
         TwoColumnContent: './src/components/overrides/TwoColumnContent.astro',
+        ThemeProvider: './src/components/overrides/ThemeProvider.astro',
+        ThemeSelect: './src/components/overrides/ThemeSelect.astro',
       },
     }),
     UnoCSS(),

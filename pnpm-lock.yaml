@@ -1007,6 +1007,9 @@ importers:
         specifier: ^0.32.5
         version: 0.32.6
     devDependencies:
+      astro-theme-toggle:
+        specifier: ^0.5.0
+        version: 0.5.0
       unocss:
         specifier: ^0.65.1
         version: 0.65.1(postcss@8.4.49)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))
@@ -3585,6 +3588,9 @@ packages:
 
   astro-theme-toggle@0.3.5:
     resolution: {integrity: sha512-ef5Cend7n4iel4u6mJRoilgYRxRkllWiK4DonssSesm6RPS+/RmXFOyMEOna3sB/Vmav0BXGEN18otdxPPwPeQ==}
+
+  astro-theme-toggle@0.5.0:
+    resolution: {integrity: sha512-AwON99k6kLAEkW0gbdpIjB/vpoZvibi9I/wE/bCTKicnNJwP3RR6gsh80QdfH22JRvJC2DHQF/ErtKZyfv9ycA==}
 
   astro@5.1.6:
     resolution: {integrity: sha512-LpTazCIW6syxFePi65gg2ptqqC2kR+PDRym3V23hEQj5yCf+T0t5v9qtp3fW0/+6G+JvP0EprCfCRTt7h/hexg==}
@@ -11072,6 +11078,8 @@ snapshots:
       rehype-expressive-code: 0.40.0
 
   astro-theme-toggle@0.3.5: {}
+
+  astro-theme-toggle@0.5.0: {}
 
   astro@5.1.6(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1):
     dependencies:

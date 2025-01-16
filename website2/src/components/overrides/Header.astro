@@ -9,10 +9,19 @@ import ThemeSelect from './ThemeSelect.astro'
 ---
 
 <div class="header sl-flex">
-  <div class="title-wrapper sl-flex">
+  <div
+    class:list={[
+      /* Prevent long titles overflowing and covering the search and menu buttons on narrow viewports. */
+      'overflow-clip',
+      /* Avoid clipping focus ring around link inside title wrapper. */
+      'p-1 -m-1',
+      'min-w-0',
+      'flex',
+    ]}
+  >
     <SiteTitle {...Astro.props} />
   </div>
-  <div class="sl-flex print:hidden">
+  <div class:list={['flex', 'print:hidden']}>
     <Search {...Astro.props} />
   </div>
   <div class="hidden md:flex print:hidden items-center gap-4">
@@ -29,15 +38,6 @@ import ThemeSelect from './ThemeSelect.astro'
     justify-content: space-between;
     align-items: center;
     height: 100%;
-  }
-
-  .title-wrapper {
-    /* Prevent long titles overflowing and covering the search and menu buttons on narrow viewports. */
-    overflow: clip;
-    /* Avoid clipping focus ring around link inside title wrapper. */
-    padding: 0.25rem;
-    margin: -0.25rem;
-    min-width: 0;
   }
 
   @media (min-width: 50rem) {

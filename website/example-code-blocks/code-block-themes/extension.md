@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/code-block-themes/extension.ts
+<<< @/../playground/src/examples/react/code-block-themes/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/code-block-themes/extension.ts
+<<< @/../playground/src/examples/vue/code-block-themes/extension.ts
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/code-block-themes/extension.ts
+<<< @/../playground/src/examples/svelte/code-block-themes/extension.ts
 
 :::
 

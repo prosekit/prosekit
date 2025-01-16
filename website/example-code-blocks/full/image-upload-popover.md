@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/full/image-upload-popover.tsx
+<<< @/../playground/src/examples/react/full/image-upload-popover.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/full/image-upload-popover.vue
+<<< @/../playground/src/examples/vue/full/image-upload-popover.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/full/image-upload-popover.svelte
+<<< @/../playground/src/examples/svelte/full/image-upload-popover.svelte
 
 :::
 

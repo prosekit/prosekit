@@ -13,9 +13,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/emoji-rules/editor.svelte
-<<< @/../playground/examples/svelte/emoji-rules/extension.ts
-<<< @/../playground/examples/svelte/emoji-rules/emoji.ts
+<<< @/../playground/src/examples/svelte/emoji-rules/editor.svelte
+<<< @/../playground/src/examples/svelte/emoji-rules/extension.ts
+<<< @/../playground/src/examples/svelte/emoji-rules/emoji.ts
 
 :::
 

@@ -3,7 +3,7 @@
 ProseKit is designed to work seamlessly with Svelte.
 
 ::: code-group
-<<< @/../playground/examples/svelte/minimal/editor.svelte
+<<< @/../playground/src/examples/svelte/minimal/editor.svelte
 :::
 
 ## `useEditor`
@@ -39,7 +39,7 @@ useExtension(extension)
 Adds key bindings to the editor.
 
 ::: code-group
-<<< @/../playground/examples/svelte/keymap/use-submit-keymap.ts
+<<< @/../playground/src/examples/svelte/keymap/use-submit-keymap.ts
 :::
 
 Check out [keymap] for a complete implementation.
@@ -53,7 +53,7 @@ In some cases, Svelte might be a more convenient tool for implementing certain i
 We begin by creating a `CodeBlockView` component to render the node. This component receives [`SvelteNodeViewProps`] as props, which include the node and other useful details.
 
 ::: code-group
-<<< @/../playground/examples/svelte/code-block/code-block-view.svelte [code-block-view.svelte]
+<<< @/../playground/src/examples/svelte/code-block/code-block-view.svelte [code-block-view.svelte]
 :::
 
 `CodeBlockView` renders a `LanguageSelector` component (the button in the top left corner) and a `<pre>` element to hold the code. We bind the `contentRef` to the `<pre>` element, which allows the editor to manage its content.

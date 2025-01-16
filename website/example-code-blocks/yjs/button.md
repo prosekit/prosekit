@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/yjs/button.tsx
+<<< @/../playground/src/examples/react/yjs/button.tsx
 
 :::
 

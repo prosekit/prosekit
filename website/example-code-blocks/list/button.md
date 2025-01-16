@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/list/button.tsx
+<<< @/../playground/src/examples/react/list/button.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/list/button.vue
+<<< @/../playground/src/examples/vue/list/button.vue
 
 :::
 

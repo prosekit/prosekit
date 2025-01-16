@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/italic/extension.ts
+<<< @/../playground/src/examples/vue/italic/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/italic/extension.ts
+<<< @/../playground/src/examples/svelte/italic/extension.ts
 
 :::
 

@@ -13,11 +13,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/image-view/editor.tsx
-<<< @/../playground/examples/react/image-view/extension.ts
-<<< @/../playground/examples/react/image-view/default-doc.ts
-<<< @/../playground/examples/react/image-view/image-view.tsx
-<<< @/../playground/examples/react/image-view/upload-file.ts
+<<< @/../playground/src/examples/react/image-view/editor.tsx
+<<< @/../playground/src/examples/react/image-view/extension.ts
+<<< @/../playground/src/examples/react/image-view/default-doc.ts
+<<< @/../playground/src/examples/react/image-view/image-view.tsx
+<<< @/../playground/src/examples/react/image-view/upload-file.ts
 
 :::
 
@@ -27,11 +27,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/image-view/editor.vue
-<<< @/../playground/examples/vue/image-view/extension.ts
-<<< @/../playground/examples/vue/image-view/default-doc.ts
-<<< @/../playground/examples/vue/image-view/image-view.vue
-<<< @/../playground/examples/vue/image-view/upload-file.ts
+<<< @/../playground/src/examples/vue/image-view/editor.vue
+<<< @/../playground/src/examples/vue/image-view/extension.ts
+<<< @/../playground/src/examples/vue/image-view/default-doc.ts
+<<< @/../playground/src/examples/vue/image-view/image-view.vue
+<<< @/../playground/src/examples/vue/image-view/upload-file.ts
 
 :::
 

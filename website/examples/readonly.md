@@ -13,11 +13,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/readonly/editor.tsx
-<<< @/../playground/examples/react/readonly/extension.ts
-<<< @/../playground/examples/react/readonly/toolbar.tsx
-<<< @/../playground/examples/react/readonly/use-readonly.ts
-<<< @/../playground/examples/react/readonly/button.tsx
+<<< @/../playground/src/examples/react/readonly/editor.tsx
+<<< @/../playground/src/examples/react/readonly/extension.ts
+<<< @/../playground/src/examples/react/readonly/toolbar.tsx
+<<< @/../playground/src/examples/react/readonly/use-readonly.ts
+<<< @/../playground/src/examples/react/readonly/button.tsx
 
 :::
 
@@ -27,11 +27,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/readonly/editor.vue
-<<< @/../playground/examples/vue/readonly/extension.ts
-<<< @/../playground/examples/vue/readonly/toolbar.vue
-<<< @/../playground/examples/vue/readonly/use-readonly.ts
-<<< @/../playground/examples/vue/readonly/button.vue
+<<< @/../playground/src/examples/vue/readonly/editor.vue
+<<< @/../playground/src/examples/vue/readonly/extension.ts
+<<< @/../playground/src/examples/vue/readonly/toolbar.vue
+<<< @/../playground/src/examples/vue/readonly/use-readonly.ts
+<<< @/../playground/src/examples/vue/readonly/button.vue
 
 :::
 
@@ -41,11 +41,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/preact/readonly/editor.tsx
-<<< @/../playground/examples/preact/readonly/extension.ts
-<<< @/../playground/examples/preact/readonly/toolbar.tsx
-<<< @/../playground/examples/preact/readonly/use-readonly.ts
-<<< @/../playground/examples/preact/readonly/button.tsx
+<<< @/../playground/src/examples/preact/readonly/editor.tsx
+<<< @/../playground/src/examples/preact/readonly/extension.ts
+<<< @/../playground/src/examples/preact/readonly/toolbar.tsx
+<<< @/../playground/src/examples/preact/readonly/use-readonly.ts
+<<< @/../playground/src/examples/preact/readonly/button.tsx
 
 :::
 
@@ -55,11 +55,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/readonly/editor.svelte
-<<< @/../playground/examples/svelte/readonly/extension.ts
-<<< @/../playground/examples/svelte/readonly/toolbar.svelte
-<<< @/../playground/examples/svelte/readonly/use-readonly.ts
-<<< @/../playground/examples/svelte/readonly/button.svelte
+<<< @/../playground/src/examples/svelte/readonly/editor.svelte
+<<< @/../playground/src/examples/svelte/readonly/extension.ts
+<<< @/../playground/src/examples/svelte/readonly/toolbar.svelte
+<<< @/../playground/src/examples/svelte/readonly/use-readonly.ts
+<<< @/../playground/src/examples/svelte/readonly/button.svelte
 
 :::
 
@@ -69,11 +69,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/solid/readonly/editor.tsx
-<<< @/../playground/examples/solid/readonly/extension.ts
-<<< @/../playground/examples/solid/readonly/toolbar.tsx
-<<< @/../playground/examples/solid/readonly/use-readonly.ts
-<<< @/../playground/examples/solid/readonly/button.tsx
+<<< @/../playground/src/examples/solid/readonly/editor.tsx
+<<< @/../playground/src/examples/solid/readonly/extension.ts
+<<< @/../playground/src/examples/solid/readonly/toolbar.tsx
+<<< @/../playground/src/examples/solid/readonly/use-readonly.ts
+<<< @/../playground/src/examples/solid/readonly/button.tsx
 
 :::
 

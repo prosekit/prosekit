@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/placeholder/editor.tsx
+<<< @/../playground/src/examples/react/placeholder/editor.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/placeholder/editor.vue
+<<< @/../playground/src/examples/vue/placeholder/editor.vue
 
 :::
 

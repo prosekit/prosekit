@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/full/upload-file.ts
+<<< @/../playground/src/examples/react/full/upload-file.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/full/upload-file.ts
+<<< @/../playground/src/examples/vue/full/upload-file.ts
 
 :::
 

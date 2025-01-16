@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/text-color/inline-menu.vue
+<<< @/../playground/src/examples/vue/text-color/inline-menu.vue
 
 :::
 

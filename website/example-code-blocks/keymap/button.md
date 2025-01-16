@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/keymap/button.tsx
+<<< @/../playground/src/examples/react/keymap/button.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/keymap/button.vue
+<<< @/../playground/src/examples/vue/keymap/button.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/preact/keymap/button.tsx
+<<< @/../playground/src/examples/preact/keymap/button.tsx
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/keymap/button.svelte
+<<< @/../playground/src/examples/svelte/keymap/button.svelte
 
 :::
 
@@ -46,7 +46,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid/keymap/button.tsx
+<<< @/../playground/src/examples/solid/keymap/button.tsx
 
 :::
 

@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/italic/toolbar.vue
+<<< @/../playground/src/examples/vue/italic/toolbar.vue
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/italic/toolbar.svelte
+<<< @/../playground/src/examples/svelte/italic/toolbar.svelte
 
 :::
 

@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/mark-rule/issue-link.ts
+<<< @/../playground/src/examples/react/mark-rule/issue-link.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/mark-rule/issue-link.ts
+<<< @/../playground/src/examples/vue/mark-rule/issue-link.ts
 
 :::
 

@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/yjs/toolbar.tsx
+<<< @/../playground/src/examples/react/yjs/toolbar.tsx
 
 :::
 

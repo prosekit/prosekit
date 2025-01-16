@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/full/user-data.ts
+<<< @/../playground/src/examples/react/full/user-data.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/full/user-data.ts
+<<< @/../playground/src/examples/vue/full/user-data.ts
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/full/user-data.ts
+<<< @/../playground/src/examples/svelte/full/user-data.ts
 
 :::
 

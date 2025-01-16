@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/yjs/editor.tsx
+<<< @/../playground/src/examples/react/yjs/editor.tsx
 
 :::
 

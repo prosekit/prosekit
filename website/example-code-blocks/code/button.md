@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/code/button.vue
+<<< @/../playground/src/examples/vue/code/button.vue
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/code/button.svelte
+<<< @/../playground/src/examples/svelte/code/button.svelte
 
 :::
 

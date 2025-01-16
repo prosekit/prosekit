@@ -13,10 +13,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/link/editor.tsx
-<<< @/../playground/examples/react/link/extension.ts
-<<< @/../playground/examples/react/link/inline-menu.tsx
-<<< @/../playground/examples/react/link/button.tsx
+<<< @/../playground/src/examples/react/link/editor.tsx
+<<< @/../playground/src/examples/react/link/extension.ts
+<<< @/../playground/src/examples/react/link/inline-menu.tsx
+<<< @/../playground/src/examples/react/link/button.tsx
 
 :::
 
@@ -26,10 +26,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/link/editor.vue
-<<< @/../playground/examples/vue/link/extension.ts
-<<< @/../playground/examples/vue/link/inline-menu.vue
-<<< @/../playground/examples/vue/link/button.vue
+<<< @/../playground/src/examples/vue/link/editor.vue
+<<< @/../playground/src/examples/vue/link/extension.ts
+<<< @/../playground/src/examples/vue/link/inline-menu.vue
+<<< @/../playground/src/examples/vue/link/button.vue
 
 :::
 

@@ -13,21 +13,21 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/full/editor.tsx
-<<< @/../playground/examples/react/full/extension.ts
-<<< @/../playground/examples/react/full/toolbar.tsx
-<<< @/../playground/examples/react/full/block-handle.tsx
-<<< @/../playground/examples/react/full/code-block-view.tsx
-<<< @/../playground/examples/react/full/image-upload-popover.tsx
-<<< @/../playground/examples/react/full/image-view.tsx
-<<< @/../playground/examples/react/full/inline-menu.tsx
-<<< @/../playground/examples/react/full/slash-menu.tsx
-<<< @/../playground/examples/react/full/tag-data.ts
-<<< @/../playground/examples/react/full/tag-menu.tsx
-<<< @/../playground/examples/react/full/upload-file.ts
-<<< @/../playground/examples/react/full/user-data.ts
-<<< @/../playground/examples/react/full/user-menu.tsx
-<<< @/../playground/examples/react/full/button.tsx
+<<< @/../playground/src/examples/react/full/editor.tsx
+<<< @/../playground/src/examples/react/full/extension.ts
+<<< @/../playground/src/examples/react/full/toolbar.tsx
+<<< @/../playground/src/examples/react/full/block-handle.tsx
+<<< @/../playground/src/examples/react/full/code-block-view.tsx
+<<< @/../playground/src/examples/react/full/image-upload-popover.tsx
+<<< @/../playground/src/examples/react/full/image-view.tsx
+<<< @/../playground/src/examples/react/full/inline-menu.tsx
+<<< @/../playground/src/examples/react/full/slash-menu.tsx
+<<< @/../playground/src/examples/react/full/tag-data.ts
+<<< @/../playground/src/examples/react/full/tag-menu.tsx
+<<< @/../playground/src/examples/react/full/upload-file.ts
+<<< @/../playground/src/examples/react/full/user-data.ts
+<<< @/../playground/src/examples/react/full/user-menu.tsx
+<<< @/../playground/src/examples/react/full/button.tsx
 
 :::
 
@@ -37,21 +37,21 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/full/editor.vue
-<<< @/../playground/examples/vue/full/extension.ts
-<<< @/../playground/examples/vue/full/toolbar.vue
-<<< @/../playground/examples/vue/full/block-handle.vue
-<<< @/../playground/examples/vue/full/code-block-view.vue
-<<< @/../playground/examples/vue/full/image-upload-popover.vue
-<<< @/../playground/examples/vue/full/image-view.vue
-<<< @/../playground/examples/vue/full/inline-menu.vue
-<<< @/../playground/examples/vue/full/slash-menu.vue
-<<< @/../playground/examples/vue/full/tag-data.ts
-<<< @/../playground/examples/vue/full/tag-menu.vue
-<<< @/../playground/examples/vue/full/upload-file.ts
-<<< @/../playground/examples/vue/full/user-data.ts
-<<< @/../playground/examples/vue/full/user-menu.vue
-<<< @/../playground/examples/vue/full/button.vue
+<<< @/../playground/src/examples/vue/full/editor.vue
+<<< @/../playground/src/examples/vue/full/extension.ts
+<<< @/../playground/src/examples/vue/full/toolbar.vue
+<<< @/../playground/src/examples/vue/full/block-handle.vue
+<<< @/../playground/src/examples/vue/full/code-block-view.vue
+<<< @/../playground/src/examples/vue/full/image-upload-popover.vue
+<<< @/../playground/src/examples/vue/full/image-view.vue
+<<< @/../playground/src/examples/vue/full/inline-menu.vue
+<<< @/../playground/src/examples/vue/full/slash-menu.vue
+<<< @/../playground/src/examples/vue/full/tag-data.ts
+<<< @/../playground/src/examples/vue/full/tag-menu.vue
+<<< @/../playground/src/examples/vue/full/upload-file.ts
+<<< @/../playground/src/examples/vue/full/user-data.ts
+<<< @/../playground/src/examples/vue/full/user-menu.vue
+<<< @/../playground/src/examples/vue/full/button.vue
 
 :::
 
@@ -61,19 +61,19 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/full/editor.svelte
-<<< @/../playground/examples/svelte/full/extension.ts
-<<< @/../playground/examples/svelte/full/toolbar.svelte
-<<< @/../playground/examples/svelte/full/block-handle.svelte
-<<< @/../playground/examples/svelte/full/code-block-view.svelte
-<<< @/../playground/examples/svelte/full/image-upload-popover.svelte
-<<< @/../playground/examples/svelte/full/inline-menu.svelte
-<<< @/../playground/examples/svelte/full/slash-menu.svelte
-<<< @/../playground/examples/svelte/full/tag-data.ts
-<<< @/../playground/examples/svelte/full/tag-menu.svelte
-<<< @/../playground/examples/svelte/full/user-data.ts
-<<< @/../playground/examples/svelte/full/user-menu.svelte
-<<< @/../playground/examples/svelte/full/button.svelte
+<<< @/../playground/src/examples/svelte/full/editor.svelte
+<<< @/../playground/src/examples/svelte/full/extension.ts
+<<< @/../playground/src/examples/svelte/full/toolbar.svelte
+<<< @/../playground/src/examples/svelte/full/block-handle.svelte
+<<< @/../playground/src/examples/svelte/full/code-block-view.svelte
+<<< @/../playground/src/examples/svelte/full/image-upload-popover.svelte
+<<< @/../playground/src/examples/svelte/full/inline-menu.svelte
+<<< @/../playground/src/examples/svelte/full/slash-menu.svelte
+<<< @/../playground/src/examples/svelte/full/tag-data.ts
+<<< @/../playground/src/examples/svelte/full/tag-menu.svelte
+<<< @/../playground/src/examples/svelte/full/user-data.ts
+<<< @/../playground/src/examples/svelte/full/user-menu.svelte
+<<< @/../playground/src/examples/svelte/full/button.svelte
 
 :::
 

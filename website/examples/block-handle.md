@@ -13,9 +13,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/block-handle/editor.tsx
-<<< @/../playground/examples/react/block-handle/extension.ts
-<<< @/../playground/examples/react/block-handle/block-handle.tsx
+<<< @/../playground/src/examples/react/block-handle/editor.tsx
+<<< @/../playground/src/examples/react/block-handle/extension.ts
+<<< @/../playground/src/examples/react/block-handle/block-handle.tsx
 
 :::
 
@@ -25,9 +25,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/block-handle/editor.vue
-<<< @/../playground/examples/vue/block-handle/extension.ts
-<<< @/../playground/examples/vue/block-handle/block-handle.vue
+<<< @/../playground/src/examples/vue/block-handle/editor.vue
+<<< @/../playground/src/examples/vue/block-handle/extension.ts
+<<< @/../playground/src/examples/vue/block-handle/block-handle.vue
 
 :::
 

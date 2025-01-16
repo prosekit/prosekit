@@ -13,9 +13,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/table/editor.tsx
-<<< @/../playground/examples/react/table/extension.ts
-<<< @/../playground/examples/react/table/table-handle.tsx
+<<< @/../playground/src/examples/react/table/editor.tsx
+<<< @/../playground/src/examples/react/table/extension.ts
+<<< @/../playground/src/examples/react/table/table-handle.tsx
 
 :::
 
@@ -25,9 +25,9 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/table/editor.vue
-<<< @/../playground/examples/vue/table/extension.ts
-<<< @/../playground/examples/vue/table/table-handle.vue
+<<< @/../playground/src/examples/vue/table/editor.vue
+<<< @/../playground/src/examples/vue/table/extension.ts
+<<< @/../playground/src/examples/vue/table/table-handle.vue
 
 :::
 

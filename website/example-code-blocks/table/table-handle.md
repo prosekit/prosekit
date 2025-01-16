@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/table/table-handle.tsx
+<<< @/../playground/src/examples/react/table/table-handle.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/table/table-handle.vue
+<<< @/../playground/src/examples/vue/table/table-handle.vue
 
 :::
 

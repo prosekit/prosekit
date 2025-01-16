@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/lit/dom/extension.ts
+<<< @/../playground/src/examples/lit/dom/extension.ts
 
 :::
 

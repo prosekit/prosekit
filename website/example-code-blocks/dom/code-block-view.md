@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/lit/dom/code-block-view.ts
+<<< @/../playground/src/examples/lit/dom/code-block-view.ts
 
 :::
 

@@ -13,10 +13,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/strike/editor.vue
-<<< @/../playground/examples/vue/strike/extension.ts
-<<< @/../playground/examples/vue/strike/toolbar.vue
-<<< @/../playground/examples/vue/strike/button.vue
+<<< @/../playground/src/examples/vue/strike/editor.vue
+<<< @/../playground/src/examples/vue/strike/extension.ts
+<<< @/../playground/src/examples/vue/strike/toolbar.vue
+<<< @/../playground/src/examples/vue/strike/button.vue
 
 :::
 

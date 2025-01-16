@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/table/extension.ts
+<<< @/../playground/src/examples/react/table/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/table/extension.ts
+<<< @/../playground/src/examples/vue/table/extension.ts
 
 :::
 

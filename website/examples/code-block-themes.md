@@ -13,11 +13,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/code-block-themes/editor.tsx
-<<< @/../playground/examples/react/code-block-themes/extension.ts
-<<< @/../playground/examples/react/code-block-themes/toolbar.tsx
-<<< @/../playground/examples/react/code-block-themes/default-doc.ts
-<<< @/../playground/examples/react/code-block-themes/theme-selector.tsx
+<<< @/../playground/src/examples/react/code-block-themes/editor.tsx
+<<< @/../playground/src/examples/react/code-block-themes/extension.ts
+<<< @/../playground/src/examples/react/code-block-themes/toolbar.tsx
+<<< @/../playground/src/examples/react/code-block-themes/default-doc.ts
+<<< @/../playground/src/examples/react/code-block-themes/theme-selector.tsx
 
 :::
 
@@ -27,11 +27,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/code-block-themes/editor.vue
-<<< @/../playground/examples/vue/code-block-themes/extension.ts
-<<< @/../playground/examples/vue/code-block-themes/toolbar.vue
-<<< @/../playground/examples/vue/code-block-themes/default-doc.ts
-<<< @/../playground/examples/vue/code-block-themes/theme-selector.vue
+<<< @/../playground/src/examples/vue/code-block-themes/editor.vue
+<<< @/../playground/src/examples/vue/code-block-themes/extension.ts
+<<< @/../playground/src/examples/vue/code-block-themes/toolbar.vue
+<<< @/../playground/src/examples/vue/code-block-themes/default-doc.ts
+<<< @/../playground/src/examples/vue/code-block-themes/theme-selector.vue
 
 :::
 
@@ -41,11 +41,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/code-block-themes/editor.svelte
-<<< @/../playground/examples/svelte/code-block-themes/extension.ts
-<<< @/../playground/examples/svelte/code-block-themes/toolbar.svelte
-<<< @/../playground/examples/svelte/code-block-themes/default-doc.ts
-<<< @/../playground/examples/svelte/code-block-themes/theme-selector.svelte
+<<< @/../playground/src/examples/svelte/code-block-themes/editor.svelte
+<<< @/../playground/src/examples/svelte/code-block-themes/extension.ts
+<<< @/../playground/src/examples/svelte/code-block-themes/toolbar.svelte
+<<< @/../playground/src/examples/svelte/code-block-themes/default-doc.ts
+<<< @/../playground/src/examples/svelte/code-block-themes/theme-selector.svelte
 
 :::
 

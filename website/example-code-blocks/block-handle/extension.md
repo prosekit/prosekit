@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/block-handle/extension.ts
+<<< @/../playground/src/examples/react/block-handle/extension.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/block-handle/extension.ts
+<<< @/../playground/src/examples/vue/block-handle/extension.ts
 
 :::
 

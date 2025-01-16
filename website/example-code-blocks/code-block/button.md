@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/code-block/button.tsx
+<<< @/../playground/src/examples/react/code-block/button.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/code-block/button.vue
+<<< @/../playground/src/examples/vue/code-block/button.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/code-block/button.svelte
+<<< @/../playground/src/examples/svelte/code-block/button.svelte
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid/code-block/button.tsx
+<<< @/../playground/src/examples/solid/code-block/button.tsx
 
 :::
 

@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/lit/dom/language-selector.ts
+<<< @/../playground/src/examples/lit/dom/language-selector.ts
 
 :::
 

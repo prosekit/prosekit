@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/user-menu/user-data.ts
+<<< @/../playground/src/examples/react/user-menu/user-data.ts
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/user-menu/user-data.ts
+<<< @/../playground/src/examples/vue/user-menu/user-data.ts
 
 :::
 

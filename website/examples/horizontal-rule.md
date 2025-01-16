@@ -13,10 +13,10 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/horizontal-rule/editor.tsx
-<<< @/../playground/examples/react/horizontal-rule/extension.ts
-<<< @/../playground/examples/react/horizontal-rule/toolbar.tsx
-<<< @/../playground/examples/react/horizontal-rule/button.tsx
+<<< @/../playground/src/examples/react/horizontal-rule/editor.tsx
+<<< @/../playground/src/examples/react/horizontal-rule/extension.ts
+<<< @/../playground/src/examples/react/horizontal-rule/toolbar.tsx
+<<< @/../playground/src/examples/react/horizontal-rule/button.tsx
 
 :::
 

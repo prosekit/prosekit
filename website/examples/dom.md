@@ -13,12 +13,12 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/lit/dom/editor.ts
-<<< @/../playground/examples/lit/dom/extension.ts
-<<< @/../playground/examples/lit/dom/code-block-view.ts
-<<< @/../playground/examples/lit/dom/create-element.ts
-<<< @/../playground/examples/lit/dom/get-id.ts
-<<< @/../playground/examples/lit/dom/language-selector.ts
+<<< @/../playground/src/examples/lit/dom/editor.ts
+<<< @/../playground/src/examples/lit/dom/extension.ts
+<<< @/../playground/src/examples/lit/dom/code-block-view.ts
+<<< @/../playground/src/examples/lit/dom/create-element.ts
+<<< @/../playground/src/examples/lit/dom/get-id.ts
+<<< @/../playground/src/examples/lit/dom/language-selector.ts
 
 :::
 
@@ -28,7 +28,7 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vanilla/dom/index.js
+<<< @/../playground/src/examples/vanilla/dom/index.js
 
 :::
 

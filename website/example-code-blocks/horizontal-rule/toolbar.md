@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/horizontal-rule/toolbar.tsx
+<<< @/../playground/src/examples/react/horizontal-rule/toolbar.tsx
 
 :::
 

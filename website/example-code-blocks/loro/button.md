@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/loro/button.tsx
+<<< @/../playground/src/examples/react/loro/button.tsx
 
 :::
 

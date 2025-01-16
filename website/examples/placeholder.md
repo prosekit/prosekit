@@ -13,8 +13,8 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/placeholder/editor.tsx
-<<< @/../playground/examples/react/placeholder/extension.ts
+<<< @/../playground/src/examples/react/placeholder/editor.tsx
+<<< @/../playground/src/examples/react/placeholder/extension.ts
 
 :::
 
@@ -24,8 +24,8 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/placeholder/editor.vue
-<<< @/../playground/examples/vue/placeholder/extension.ts
+<<< @/../playground/src/examples/vue/placeholder/editor.vue
+<<< @/../playground/src/examples/vue/placeholder/extension.ts
 
 :::
 

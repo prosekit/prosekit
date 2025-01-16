@@ -13,11 +13,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/react/user-menu-dynamic/editor.tsx
-<<< @/../playground/examples/react/user-menu-dynamic/extension.ts
-<<< @/../playground/examples/react/user-menu-dynamic/use-user-query.ts
-<<< @/../playground/examples/react/user-menu-dynamic/user-data.ts
-<<< @/../playground/examples/react/user-menu-dynamic/user-menu-dynamic.tsx
+<<< @/../playground/src/examples/react/user-menu-dynamic/editor.tsx
+<<< @/../playground/src/examples/react/user-menu-dynamic/extension.ts
+<<< @/../playground/src/examples/react/user-menu-dynamic/use-user-query.ts
+<<< @/../playground/src/examples/react/user-menu-dynamic/user-data.ts
+<<< @/../playground/src/examples/react/user-menu-dynamic/user-menu-dynamic.tsx
 
 :::
 
@@ -27,11 +27,11 @@ const { path } = useRoute()
 
 ::: code-group
 
-<<< @/../playground/examples/vue/user-menu-dynamic/editor.vue
-<<< @/../playground/examples/vue/user-menu-dynamic/extension.ts
-<<< @/../playground/examples/vue/user-menu-dynamic/use-user-query.ts
-<<< @/../playground/examples/vue/user-menu-dynamic/user-data.ts
-<<< @/../playground/examples/vue/user-menu-dynamic/user-menu-dynamic.vue
+<<< @/../playground/src/examples/vue/user-menu-dynamic/editor.vue
+<<< @/../playground/src/examples/vue/user-menu-dynamic/extension.ts
+<<< @/../playground/src/examples/vue/user-menu-dynamic/use-user-query.ts
+<<< @/../playground/src/examples/vue/user-menu-dynamic/user-data.ts
+<<< @/../playground/src/examples/vue/user-menu-dynamic/user-menu-dynamic.vue
 
 :::
 

@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/heading/toolbar.tsx
+<<< @/../playground/src/examples/react/heading/toolbar.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/heading/toolbar.vue
+<<< @/../playground/src/examples/vue/heading/toolbar.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/heading/toolbar.svelte
+<<< @/../playground/src/examples/svelte/heading/toolbar.svelte
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid/heading/toolbar.tsx
+<<< @/../playground/src/examples/solid/heading/toolbar.tsx
 
 :::
 

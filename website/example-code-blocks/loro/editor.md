@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/loro/editor.tsx
+<<< @/../playground/src/examples/react/loro/editor.tsx
 
 :::
 

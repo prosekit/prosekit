@@ -6,7 +6,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/react/link-mark-view/link-view.tsx
+<<< @/../playground/src/examples/react/link-mark-view/link-view.tsx
 
 :::
 
@@ -16,7 +16,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/vue/link-mark-view/link-view.vue
+<<< @/../playground/src/examples/vue/link-mark-view/link-view.vue
 
 :::
 
@@ -26,7 +26,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/svelte/link-mark-view/link-view.svelte
+<<< @/../playground/src/examples/svelte/link-mark-view/link-view.svelte
 
 :::
 
@@ -36,7 +36,7 @@
 
 ::: code-group
 
-<<< @/../playground/examples/solid/link-mark-view/link-view.tsx
+<<< @/../playground/src/examples/solid/link-mark-view/link-view.tsx
 
 :::
 

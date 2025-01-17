@@ -143,6 +143,48 @@
       "path": "website/tsconfig.json",
     },
     {
+      "path": "website2/src/examples/lit/tsconfig.json",
+    },
+    {
+      "path": "website2/src/examples/preact/tsconfig.json",
+    },
+    {
+      "path": "website2/src/examples/react/tsconfig.json",
+    },
+    {
+      "path": "website2/src/examples/solid/tsconfig.json",
+    },
+    {
+      "path": "website2/src/examples/svelte/tsconfig.json",
+    },
+    {
+      "path": "website2/src/examples/vanilla/tsconfig.json",
+    },
+    {
+      "path": "website2/src/examples/vue/tsconfig.json",
+    },
+    {
+      "path": "website2/src/shared/common/tsconfig.json",
+    },
+    {
+      "path": "website2/src/shared/preact/tsconfig.json",
+    },
+    {
+      "path": "website2/src/shared/react/tsconfig.json",
+    },
+    {
+      "path": "website2/src/shared/solid/tsconfig.json",
+    },
+    {
+      "path": "website2/src/shared/svelte/tsconfig.json",
+    },
+    {
+      "path": "website2/src/shared/vue/tsconfig.json",
+    },
+    {
+      "path": "website2/src/stories/tsconfig.json",
+    },
+    {
       "path": "website2/tsconfig.json",
     },
   ],

@@ -2,7 +2,7 @@
 import type { Props } from '@astrojs/starlight/props'
 ---
 
-<div class="lg:sl-flex">
+<div class="lg:flex">
   {
     Astro.props.toc && (
       <aside class="right-sidebar-container print:hidden">
@@ -18,6 +18,7 @@ import type { Props } from '@astrojs/starlight/props'
 <style>
   .main-pane {
     isolation: isolate;
+    overflow-x: hidden;
   }
 
   @media (min-width: 72rem) {

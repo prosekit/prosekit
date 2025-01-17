@@ -1,0 +1,9 @@
+{
+  "extends": "@ocavue/tsconfig/dom/app.json",
+  "include": ["./**/*.ts", "./**/*.vue", "./shims-vue.d.ts"],
+  "references": [
+    {
+      "path": "../../shared/vue",
+    },
+  ],
+}

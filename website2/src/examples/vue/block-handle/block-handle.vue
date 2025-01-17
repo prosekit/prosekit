@@ -1,0 +1,1 @@
+../../../shared/vue/block-handle.vue

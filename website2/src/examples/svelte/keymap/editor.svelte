@@ -1,0 +1,53 @@
+<script lang="ts">
+import 'prosekit/basic/style.css'
+
+import { Themes } from '@prosekit/themes'
+
+import {
+  createEditor,
+  jsonFromNode,
+} from 'prosekit/core'
+import { ProseKit } from 'prosekit/svelte'
+import { writable } from 'svelte/store'
+import { defineExtension } from './extension'
+import Toolbar from './toolbar.svelte'
+
+const extension = defineExtension()
+const editor = createEditor({ extension })
+
+const mount = (element: HTMLElement) => {
+  editor.mount(element)
+  return { destroy: () => editor.unmount() }
+}
+
+const submitions = writable<string[]>([])
+
+const pushSubmition = (hotkey: string) => {
+  const doc = editor.view.state.doc
+  const docString = JSON.stringify(jsonFromNode(doc))
+  const submition = `${new Date().toISOString()}\t${hotkey}\n${docString}`
+  submitions.update((submitions) => [...submitions, submition])
+}
+</script>
+
+<ProseKit {editor}>
+  <div class={Themes.EDITOR_VIEWPORT}>
+    <Toolbar onSubmit={pushSubmition} />
+    <div class={Themes.EDITOR_SCROLLING}>
+      <div use:mount class={Themes.EDITOR_CONTENT}></div>
+    </div>
+  </div>
+  <fieldset class={Themes.KEYMAP_FIELDSET}>
+    <legend>Submit Records</legend>
+    <ol>
+      {#each $submitions as submition, index (index)}
+        <li>
+          <pre>{submition}</pre>
+        </li>
+      {/each}
+      {#if $submitions.length === 0}
+        <div>No submitions yet</div>
+      {/if}
+    </ol>
+  </fieldset>
+</ProseKit>

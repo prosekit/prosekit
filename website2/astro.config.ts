@@ -13,9 +13,9 @@ import wasm from 'vite-plugin-wasm'
 export default defineConfig({
   integrations: [
     starlight({
-      title: 'My Docs',
+      title: 'ProseKit',
       social: {
-        github: 'https://github.com/withastro/starlight',
+        github: 'https://github.com/prosekit/prosekit',
       },
       sidebar: [
         {

@@ -30,10 +30,6 @@ export default defineConfig({
           autogenerate: { directory: 'reference' },
         },
       ],
-      customCss: [
-        // Relative path to your custom CSS file
-        './src/styles/index.css',
-      ],
       components: {
         Header: './src/components/overrides/Header.astro',
         Search: './src/components/overrides/Search.astro',
@@ -57,7 +53,6 @@ export default defineConfig({
       directory: 'src/stories',
       title: 'ProseKit',
       subpath: 'astrobook',
-      head: './src/components/astrobook/head.astro',
     }),
   ],
   vite: {

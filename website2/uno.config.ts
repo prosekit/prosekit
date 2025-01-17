@@ -1,5 +1,5 @@
 import { configDeps, preset } from '@prosekit/unocss-preset'
-import { defineConfig, transformerDirectives, type Preflight } from 'unocss'
+import { defineConfig, transformerDirectives } from 'unocss'
 import { colors } from 'unocss/preset-mini'
 
 const css = String.raw

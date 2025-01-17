@@ -10,7 +10,7 @@ import ThemeSelect from './ThemeSelect.astro'
 Astro.props.entry.data.title
 ---
 
-<div class="flex items-center gap-5 h-full">
+<div class="flex items-center gap-2 h-full">
   <div
     class:list={[
       /* Prevent long titles overflowing and covering the search and menu buttons on narrow viewports. */
@@ -30,11 +30,9 @@ Astro.props.entry.data.title
   <div class:list={['flex', 'print:hidden md:flex-1 md:max-w-60']}>
     <Search {...Astro.props} />
   </div>
-  <div class="hidden md:flex print:hidden items-center gap-4">
-    <span class="h-6 w-px bg-gray-500/30 -mr-2"></span>
-    <ThemeSelect {...Astro.props} />
-    <span class="h-6 w-px bg-gray-500/30 -m-2"></span>
+  <div class="hidden md:flex print:hidden items-center gap-2">
     <SocialIcons {...Astro.props} />
     <LanguageSelect {...Astro.props} />
+    <ThemeSelect {...Astro.props} />
   </div>
 </div>

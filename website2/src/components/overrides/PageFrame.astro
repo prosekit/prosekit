@@ -6,7 +6,9 @@ const { hasSidebar } = Astro.props
 ---
 
 <div class="page sl-flex">
-  <header class:list={['header', 'w-full fixed backdrop-blur bg-white/90 dark:bg-slate-900/75 border-border border-b', 'h-[var(--sl-nav-height)]', 'z-[var(--sl-z-index-navbar)]']}><slot name="header" /></header>
+  <header class:list={['header', 'w-full fixed backdrop-blur bg-white/90 dark:bg-slate-900/75 border-border border-b', 'h-[var(--sl-nav-height)]', 'z-[var(--sl-z-index-navbar)]']}>
+    <slot name="header" />
+  </header>
   {
     hasSidebar && (
       <nav class="sidebar print:hidden" aria-label={Astro.locals.t('sidebarNav.accessibleLabel')}>

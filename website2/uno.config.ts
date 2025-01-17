@@ -30,11 +30,6 @@ const preflight = css`
     --sl-content-width: 50rem;
   }
 
- 
-
-
-  
-
   :root[data-theme='light']:root {
     /* Light mode Starlight theme variables */
     --sl-color-white: ${colors.gray[900]};

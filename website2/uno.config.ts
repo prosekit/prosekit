@@ -26,11 +26,32 @@ const preflight = css`
     border-color: var(--un-default-border-color, #e5e7eb); /* 2 */
   }
 
-  :root {
+  :root:root {
     --sl-content-width: 50rem;
   }
 
-  :root {
+ 
+
+
+  
+
+  :root[data-theme='light']:root {
+    /* Light mode Starlight theme variables */
+    --sl-color-white: ${colors.gray[900]};
+    --sl-color-gray-1: ${colors.gray[800]};
+    --sl-color-gray-2: ${colors.gray[700]};
+    --sl-color-gray-3: ${colors.gray[500]};
+    --sl-color-gray-4: ${colors.gray[400]};
+    --sl-color-gray-5: ${colors.gray[300]};
+    --sl-color-gray-6: ${colors.gray[200]};
+    --sl-color-gray-7: ${colors.gray[100]};
+    --sl-color-black: white;
+    --sl-color-accent-low: ${colors.gray[200]};
+    --sl-color-accent: ${colors.gray[600]};
+    --sl-color-accent-high: ${colors.gray[900]};
+  }
+
+  :root[data-theme='dark']:root {
     /* Dark mode Starlight theme variables. */
     --sl-color-white: white;
     --sl-color-gray-1: ${colors.gray[200]};
@@ -43,22 +64,6 @@ const preflight = css`
     --sl-color-accent-low: ${colors.gray[950]};
     --sl-color-accent: ${colors.gray[600]};
     --sl-color-accent-high: ${colors.gray[200]};
-  }
-
-  :root[data-theme='light'] {
-    /* Light mode Starlight theme variables */
-    --sl-color-white: ${colors.gray[900]};
-    --sl-color-gray-1: ${colors.gray[800]};
-    --sl-color-gray-2: ${colors.gray[700]};
-    --sl-color-gray-3: ${colors.gray[500]};
-    --sl-color-gray-4: ${colors.gray[400]};
-    --sl-color-gray-5: ${colors.gray[300]};
-    --sl-color-gray-6: ${colors.gray[200]};
-    --sl-color-gray-7: ${colors.gray[100]};
-    --sl-color-black: ${colors.gray[900]};
-    --sl-color-accent-low: ${colors.gray[200]};
-    --sl-color-accent: ${colors.gray[600]};
-    --sl-color-accent-high: ${colors.gray[900]};
   }
 `
 

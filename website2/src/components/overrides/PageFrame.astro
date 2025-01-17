@@ -6,12 +6,12 @@ const { hasSidebar } = Astro.props
 ---
 
 <div class="page sl-flex">
-  <header class:list={['header', 'w-full fixed backdrop-blur bg-white/90 dark:bg-slate-900/75', 'h-[var(--sl-nav-height)]']}><slot name="header" /></header>
+  <header class:list={['header', 'w-full fixed backdrop-blur bg-white/90 dark:bg-slate-900/75 border-border border-b', 'h-[var(--sl-nav-height)]', 'z-[var(--sl-z-index-navbar)]']}><slot name="header" /></header>
   {
     hasSidebar && (
       <nav class="sidebar print:hidden" aria-label={Astro.locals.t('sidebarNav.accessibleLabel')}>
         <MobileMenuToggle {...Astro.props} />
-        <div id="starlight__sidebar" class="sidebar-pane">
+        <div id="starlight__sidebar" class:list={['sidebar-pane', 'md:border-r border-border']}>
           <div class="sidebar-content sl-flex">
             <slot name="sidebar" />
           </div>
@@ -29,10 +29,8 @@ const { hasSidebar } = Astro.props
   }
 
   .header {
-  	z-index: var(--sl-z-index-navbar);
   	inset-inline-start: 0;
   	inset-block-start: 0;
-  	border-bottom: 1px solid var(--sl-color-hairline-shade);
   	padding: var(--sl-nav-pad-y) var(--sl-nav-pad-x);
   	padding-inline-end: var(--sl-nav-pad-x);
   }
@@ -83,8 +81,6 @@ const { hasSidebar } = Astro.props
   	.sidebar-pane {
   		--sl-sidebar-visibility: visible;
   		width: var(--sl-sidebar-width);
-  		background-color: var(--sl-color-bg-sidebar);
-  		border-inline-end: 1px solid var(--sl-color-hairline-shade);
   	}
   }
 </style>

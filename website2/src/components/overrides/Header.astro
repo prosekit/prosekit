@@ -6,6 +6,8 @@ import Search from './Search.astro'
 import SiteTitle from './SiteTitle.astro'
 import SocialIcons from './SocialIcons.astro'
 import ThemeSelect from './ThemeSelect.astro'
+
+Astro.props.entry.data.title
 ---
 
 <div class="flex items-center gap-5 h-full">
@@ -20,6 +22,9 @@ import ThemeSelect from './ThemeSelect.astro'
     ]}
   >
     <SiteTitle {...Astro.props} />
+  </div>
+  <div>
+    <a href="/guides/example">Docs</a>
   </div>
   <div class="flex-1"></div>
   <div class:list={['flex', 'print:hidden md:flex-1 md:max-w-60']}>

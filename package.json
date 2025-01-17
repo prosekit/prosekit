@@ -8,7 +8,7 @@
     "build": "turbo build",
     "build:force": "turbo build --force",
     "build:package": "turbo build --filter='./packages/*' --concurrency=1",
-    "build:website": "turbo build --filter='./website'",
+    "build:website": "turbo build --filter='./website2'",
     "change": "changeset",
     "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",

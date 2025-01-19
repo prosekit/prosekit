@@ -21,6 +21,7 @@
     "@iconify-json/lucide": "^1.2.22",
     "@playwright/test": "^1.49.1",
     "@prosekit/dev": "workspace:*",
+    "@prosekit/starlight-theme": "workspace:*",
     "@prosekit/themes": "workspace:*",
     "@prosekit/unocss-preset": "workspace:*",
     "@types/react": "^18.3.18",

@@ -1,0 +1,19 @@
+{
+  "name": "@prosekit/starlight-theme",
+  "private": true,
+  "sideEffects": true,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./components/*": "./src/components/*"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@astrojs/starlight": "^0.31.0",
+    "astro": "^5.1.6"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2"
+  }
+}

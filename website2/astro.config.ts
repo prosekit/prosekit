@@ -33,7 +33,7 @@ export default defineConfig({
       components: {
         Header: './src/components/overrides/Header.astro',
         Search: './src/components/overrides/Search.astro',
-        TwoColumnContent: './src/components/overrides/TwoColumnContent.astro',
+        TwoColumnContent: '@prosekit/starlight-theme/components/TwoColumnContent.astro',
         ThemeProvider: './src/components/overrides/ThemeProvider.astro',
         ThemeSelect: './src/components/overrides/ThemeSelect.astro',
         SocialIcons: './src/components/overrides/SocialIcons.astro',

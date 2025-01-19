@@ -53,8 +53,8 @@ export default defineConfig({
           gutterBorderColor: 'transparent',
           frames: {
             frameBoxShadowCssValue: 'none',
-          }
-        }
+          },
+        },
       },
     }),
     UnoCSS(),

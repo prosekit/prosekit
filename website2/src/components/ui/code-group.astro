@@ -22,12 +22,13 @@ if (new Set(titles).size !== titles.length) {
   throw new Error('Code block titles must be unique')
 }
 
-import { Tabs, TabItem } from '@astrojs/starlight/components'
+import {
+  TabItem,
+  Tabs,
+} from '@astrojs/starlight/components'
 ---
 
-<div
-  class="code-group-container shadow-md rounded-lg border-border border-solid border-1 overflow-hidden"
->
+<div class="code-group-container shadow-md rounded-lg border-border border-solid border-1 overflow-hidden">
   <slot />
   <Tabs>
     {

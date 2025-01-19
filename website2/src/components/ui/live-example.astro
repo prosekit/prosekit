@@ -1,0 +1,100 @@
+---
+import CodeGroup from './code-group.astro'
+interface Props {}
+---
+
+<div>
+  <slot />
+
+  <CodeGroup
+    codes={[
+      {
+        code: "console.log('Hello world 001')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_001.js',
+      },
+      {
+        code: "console.log('Hello world 002')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_002.js',
+      },
+      {
+        code: "console.log('Hello world 003')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_003.js',
+      },
+      {
+        code: "console.log('Hello world 004')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_004.js',
+      },
+      {
+        code: "console.log('Hello world 005')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_005.js',
+      },
+      {
+        code: "console.log('Hello world 006')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_006.js',
+      },
+      {
+        code: "console.log('Hello world 007')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_007.js',
+      },
+      {
+        code: "console.log('Hello world 008')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_008.js',
+      },
+    ]}
+  />
+
+  <CodeGroup
+    codes={[
+      {
+        code: "console.log('Hello world 001')\n\n".repeat(100),
+        lang: 'js',
+        title: 'foo_foo_foo_foo_001.js',
+      },
+      {
+        code: "console.log('Hello world 002')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_002.js',
+      },
+      {
+        code: "console.log('Hello world 003')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_003.js',
+      },
+      {
+        code: "console.log('Hello world 004')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_004.js',
+      },
+      {
+        code: "console.log('Hello world 005')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_005.js',
+      },
+      {
+        code: "console.log('Hello world 006')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_006.js',
+      },
+      {
+        code: "console.log('Hello world 007')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_007.js',
+      },
+      {
+        code: "console.log('Hello world 008')",
+        lang: 'js',
+        title: 'foo_foo_foo_foo_008.js',
+      },
+    ]}
+  >
+<div>IFRAME</div>
+</CodeGroup>
+</div>

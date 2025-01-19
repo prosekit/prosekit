@@ -42,6 +42,20 @@ export default defineConfig({
         MobileMenuToggle: './src/components/overrides/MobileMenuToggle.astro',
         Hero: './src/components/overrides/Hero.astro',
       },
+      expressiveCode: {
+        // Replace the default themes with a custom set of bundled themes:
+        // "dracula" (a dark theme) and "solarized-light"
+        themes: ['one-dark-pro', 'one-light'],
+        styleOverrides: {
+          borderRadius: '0',
+          borderWidth: '0',
+          borderColor: 'transparent',
+          gutterBorderColor: 'transparent',
+          frames: {
+            frameBoxShadowCssValue: 'none',
+          }
+        }
+      },
     }),
     UnoCSS(),
     preact({ include: ['src/*/preact/**/*'] }),

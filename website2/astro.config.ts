@@ -1,9 +1,9 @@
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
-import starlight from '@astrojs/starlight'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
+import starlight from '@prosekit/starlight-theme'
 import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
 import UnoCSS from 'unocss/astro'
@@ -31,30 +31,7 @@ export default defineConfig({
         },
       ],
       components: {
-        Header: './src/components/overrides/Header.astro',
-        Search: './src/components/overrides/Search.astro',
-        TwoColumnContent: '@prosekit/starlight-theme/components/TwoColumnContent.astro',
-        ThemeProvider: './src/components/overrides/ThemeProvider.astro',
-        ThemeSelect: './src/components/overrides/ThemeSelect.astro',
-        SocialIcons: './src/components/overrides/SocialIcons.astro',
-        SiteTitle: './src/components/overrides/SiteTitle.astro',
-        PageFrame: './src/components/overrides/PageFrame.astro',
-        MobileMenuToggle: './src/components/overrides/MobileMenuToggle.astro',
         Hero: './src/components/overrides/Hero.astro',
-      },
-      expressiveCode: {
-        // Replace the default themes with a custom set of bundled themes:
-        // "dracula" (a dark theme) and "solarized-light"
-        themes: ['one-dark-pro', 'one-light'],
-        styleOverrides: {
-          borderRadius: '0',
-          borderWidth: '0',
-          borderColor: 'transparent',
-          gutterBorderColor: 'transparent',
-          frames: {
-            frameBoxShadowCssValue: 'none',
-          },
-        },
       },
     }),
     UnoCSS(),

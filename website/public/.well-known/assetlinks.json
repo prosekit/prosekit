@@ -1,0 +1,4 @@
+[
+  { "relation": ["lookalikes/allowlist"], "target": { "namespace": "web", "site": "https://prosekit.dev" } },
+  { "relation": ["lookalikes/allowlist"], "target": { "namespace": "web", "site": "https://prosekit-dev.pages.dev" } }
+]

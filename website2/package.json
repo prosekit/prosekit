@@ -18,7 +18,6 @@
     "@astrojs/starlight": "^0.31.0",
     "@astrojs/svelte": "^7.0.3",
     "@astrojs/vue": "^5.0.4",
-    "@iconify-json/line-md": "^1.0.0",
     "@iconify-json/lucide": "^1.2.22",
     "@playwright/test": "^1.49.1",
     "@prosekit/dev": "workspace:*",

@@ -11,8 +11,8 @@
       "default": "./dist/config-tsup.js"
     },
     "./config-vitest": {
-      "types": "./dist/config-vitest-types.d.ts",
-      "default": "./dist/config-vitest.js"
+      "types": "./src/config-vitest-types.d.ts",
+      "default": "./src/config-vitest.js"
     },
     "./example-meta": {
       "types": "./src/example-meta.ts",

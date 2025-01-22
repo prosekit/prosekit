@@ -11,11 +11,15 @@ const config = defineProject({
     browser: {
       enabled: true,
       provider: 'playwright',
-      name: 'chromium',
       headless: true,
       ui: false,
       fileParallelism: false,
       screenshotFailures: false,
+      instances: [
+        {
+          browser: 'chromium',
+        },
+      ],
     },
   },
 })

@@ -1,9 +1,7 @@
 // @ts-check
 
-import { defineProject } from 'vitest/config'
-
-/** @type {import('vitest/config').UserProjectConfigExport} */
-const config = defineProject({
+/** @type {import('vitest/config').UserWorkspaceConfig} */
+const config = {
   optimizeDeps: {
     include: ['@vitest/coverage-v8/browser'],
   },
@@ -22,6 +20,6 @@ const config = defineProject({
       ],
     },
   },
-})
+}
 
 export { config }

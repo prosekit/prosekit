@@ -1,0 +1,14 @@
+{
+  "name": "@prosekit/config-vitest",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./index.js",
+  "types": "./types.d.ts",
+  "peerDependencies": {
+    "vitest": "*"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

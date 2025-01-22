@@ -14,6 +14,7 @@ const config = defineProject({
       name: 'chromium',
       headless: true,
       ui: false,
+      fileParallelism: false,
       screenshotFailures: false,
     },
   },

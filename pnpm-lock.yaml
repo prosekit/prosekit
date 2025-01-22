@@ -1034,6 +1034,9 @@ importers:
       '@astrojs/vue':
         specifier: ^5.0.4
         version: 5.0.4(@types/node@20.17.9)(astro@5.1.6(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(vue@3.5.13(typescript@5.7.2))(yaml@2.6.1)
+      '@iconify-json/line-md':
+        specifier: ^1.0.0
+        version: 1.2.5
       '@iconify-json/lucide':
         specifier: ^1.2.22
         version: 1.2.22
@@ -2248,6 +2251,9 @@ packages:
   '@humanwhocodes/retry@0.4.1':
     resolution: {integrity: sha512-c7hNEllBlenFTHBky65mhq8WD2kbN9Q6gk0bTk8lSBvc554jpXSkST1iePudpt7+A/AQvuHs9EMqjHDXMY1lrA==}
     engines: {node: '>=18.18'}
+
+  '@iconify-json/line-md@1.2.5':
+    resolution: {integrity: sha512-6zFKhs6g++kFJLLi+ye5nPoHgjYh44yVLjua0tmbxH1HdImMQZ6rkRsPnBgxADY4bQWiapXBzfoiz7+UBXgtWg==}
 
   '@iconify-json/logos@1.2.4':
     resolution: {integrity: sha512-XC4If5D/hbaZvUkTV8iaZuGlQCyG6CNOlaAaJaGa13V5QMYwYjgtKk3vPP8wz3wtTVNVEVk3LRx1fOJz+YnSMw==}
@@ -9333,6 +9339,10 @@ snapshots:
   '@humanwhocodes/retry@0.3.1': {}
 
   '@humanwhocodes/retry@0.4.1': {}
+
+  '@iconify-json/line-md@1.2.5':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/logos@1.2.4':
     dependencies:

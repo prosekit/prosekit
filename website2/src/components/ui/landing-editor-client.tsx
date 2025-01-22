@@ -4,7 +4,7 @@ import Editor from '../../examples/react/full/editor'
 
 export const LandingEditorClient: React.FC = () => {
   return (
-    <div className="size-full [&>*>*]:animate-in [&>*>*]:fade-in">
+    <div className="size-full animate-in fade-in zoom-in-95">
       <Editor />
     </div>
   )

@@ -47,10 +47,10 @@
   "devDependencies": {
     "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
-    "@vitest/browser": "^2.1.8",
+    "@vitest/browser": "^3.0.3",
     "tsup": "^8.3.5",
     "typescript": "~5.7.2",
-    "vitest": "^2.1.8"
+    "vitest": "^3.0.3"
   },
   "publishConfig": {
     "exports": {

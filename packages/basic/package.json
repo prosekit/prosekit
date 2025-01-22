@@ -42,6 +42,7 @@
     "@prosekit/pm": "workspace:^"
   },
   "devDependencies": {
+    "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "postcss": "^8.5.0",
     "postcss-nesting": "^13.0.1",

@@ -57,6 +57,7 @@
     }
   },
   "devDependencies": {
+    "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "solid-js": "^1.9.4",
     "tsup": "^8.3.5",

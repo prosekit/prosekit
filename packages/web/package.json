@@ -60,6 +60,7 @@
     "prosemirror-tables": "^1.6.2"
   },
   "devDependencies": {
+    "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "tsup": "^8.3.5",
     "typescript": "~5.7.2",

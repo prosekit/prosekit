@@ -56,6 +56,7 @@
     }
   },
   "devDependencies": {
+    "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "preact": "^10.25.4",
     "tsup": "^8.3.5",

@@ -45,6 +45,7 @@
     "type-fest": "^4.32.0"
   },
   "devDependencies": {
+    "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "@vitest/browser": "^2.1.8",
     "tsup": "^8.3.5",

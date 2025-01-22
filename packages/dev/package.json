@@ -10,6 +10,10 @@
       "types": "./dist/config-tsup.d.ts",
       "default": "./dist/config-tsup.js"
     },
+    "./config-vitest": {
+      "types": "./dist/config-vitest-types.d.ts",
+      "default": "./dist/config-vitest.js"
+    },
     "./example-meta": {
       "types": "./src/example-meta.ts",
       "default": "./dist/example-meta.js"

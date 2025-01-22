@@ -101,9 +101,6 @@ importers:
         specifier: workspace:^
         version: link:../pm
     devDependencies:
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -116,15 +113,6 @@ importers:
       tsup:
         specifier: ^8.3.5
         version: 8.3.5(@microsoft/api-extractor@7.49.1(@types/node@20.17.9))(jiti@2.4.1)(postcss@8.5.0)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1)
-      typescript:
-        specifier: ~5.7.2
-        version: 5.7.2
-      vitest:
-        specifier: ^3.0.3
-        version: 3.0.3(@types/node@20.17.9)(@vitest/browser@3.0.3)(jiti@2.4.1)(lightningcss@1.29.1)(msw@2.7.0(@types/node@20.17.9)(typescript@5.7.2))(tsx@4.19.2)(yaml@2.6.1)
-
-  packages/config-vitest:
-    devDependencies:
       typescript:
         specifier: ~5.7.2
         version: 5.7.2
@@ -156,9 +144,6 @@ importers:
         specifier: ^4.32.0
         version: 4.32.0
     devDependencies:
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -281,9 +266,6 @@ importers:
         specifier: ^1.26.2
         version: 1.26.2
     devDependencies:
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -327,9 +309,6 @@ importers:
         specifier: workspace:^
         version: link:../web
     devDependencies:
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -370,9 +349,6 @@ importers:
         specifier: ^1.37.1
         version: 1.37.1
     devDependencies:
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -401,9 +377,6 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
     devDependencies:
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -541,9 +514,6 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
     devDependencies:
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -587,9 +557,6 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0(solid-js@1.9.4)
     devDependencies:
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -624,9 +591,6 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0(svelte@5.17.4)
     devDependencies:
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -723,9 +687,6 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0(vue@3.5.13(typescript@5.7.2))
     devDependencies:
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -799,9 +760,6 @@ importers:
         specifier: ^1.6.2
         version: 1.6.2
     devDependencies:
-      '@prosekit/config-vitest':
-        specifier: workspace:*
-        version: link:../config-vitest
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev

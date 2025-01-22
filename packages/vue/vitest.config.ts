@@ -1,7 +1,4 @@
-import { config } from '@prosekit/config-vitest'
+import { config } from '@prosekit/dev/config-vitest'
 import vue from '@vitejs/plugin-vue'
-import { mergeConfig } from 'vitest/config'
 
-export default mergeConfig(config, {
-  plugins: [vue()],
-})
+export default config({ plugins: [vue()] })

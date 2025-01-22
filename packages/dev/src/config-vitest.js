@@ -1,7 +1,9 @@
-import { defineProject } from 'vitest/config'
+// @ts-check
 
-/** @type {import('vitest/config').UserProjectConfigExport} */
-const config = defineProject({
+import { merge } from 'lodash-es'
+
+/** @type {import('vitest/config').UserWorkspaceConfig} */
+const defaultConfig = {
   optimizeDeps: {
     include: ['@vitest/coverage-v8/browser'],
   },
@@ -9,13 +11,32 @@ const config = defineProject({
     browser: {
       enabled: true,
       provider: 'playwright',
-      name: 'chromium',
       headless: true,
       ui: false,
+      fileParallelism: false,
       screenshotFailures: false,
+      instances: [
+        {
+          browser: 'chromium',
+        },
+      ],
     },
-    fileParallelism: false,
   },
-})
+}
 
-export { config }
+/**
+ * @param {import('vitest/config').UserWorkspaceConfig | undefined} options
+ * @returns {import('vitest/config').UserWorkspaceConfig}
+ */
+export function config(options = undefined) {
+  if (!options) {
+    return defaultConfig
+  }
+
+  /**
+   * @type {import('vitest/config').UserWorkspaceConfig}
+   */
+  const merged = merge({}, defaultConfig, options)
+
+  return merged
+}

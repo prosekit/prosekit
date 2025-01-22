@@ -1,3 +1,5 @@
+import '@prosekit/pm/view/style/prosemirror.css'
+
 import {
   defineBaseCommands,
   defineBaseKeymap,

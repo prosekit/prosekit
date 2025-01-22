@@ -1,3 +1,5 @@
+import '@prosekit/pm/view/style/prosemirror.css'
+
 import type { Attrs } from '@prosekit/pm/model'
 import { userEvent } from '@vitest/browser/context'
 

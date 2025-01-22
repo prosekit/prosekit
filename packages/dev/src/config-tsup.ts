@@ -1,6 +1,7 @@
 import path from 'node:path'
 
 import filterObject from 'just-filter-object'
+import { merge } from 'lodash-es'
 import { pathExists } from 'path-exists'
 import { readPackage } from 'read-pkg'
 import type { Options } from 'tsup'
@@ -52,29 +53,5 @@ function removeCssEntryPoints(
 }
 
 function deepMergeOptions(a: Options, b?: Options): Options {
-  return deepMerge(a, b) as Options
-}
-
-function deepMerge(a: any, b: any): any {
-  if (a === b) {
-    return a
-  }
-  if (a === undefined) {
-    return b
-  }
-  if (b === undefined) {
-    return a
-  }
-  if ((a && b && Array.isArray(a)) || Array.isArray(b)) {
-    return [...a, ...b]
-  }
-  if (a && b && typeof a === 'object' && typeof b === 'object') {
-    const result: any = {}
-    const keys = new Set([...Object.keys(a), ...Object.keys(b)])
-    for (const key of keys) {
-      result[key] = deepMerge(a[key], b[key])
-    }
-    return result
-  }
-  throw new Error(`Cannot merge ${a} and ${b}`)
+  return merge({}, a, b)
 }

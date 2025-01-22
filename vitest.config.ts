@@ -14,5 +14,6 @@ export default defineConfig({
       headless: true,
     },
     fileParallelism: false,
+    workspace: ['packages/*'],
   },
 })

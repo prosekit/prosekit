@@ -61,7 +61,7 @@
     "solid-js": "^1.9.4",
     "tsup": "^8.3.5",
     "typescript": "~5.7.2",
-    "vitest": "^2.1.8"
+    "vitest": "^3.0.3"
   },
   "publishConfig": {
     "exports": {

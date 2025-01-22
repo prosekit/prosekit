@@ -1,10 +1,14 @@
 ---
+import { Code } from '@astrojs/starlight/components'
 import CodeGroup from './code-group.astro'
+
 interface Props {}
 ---
 
 <div>
   <slot />
+
+  <Code code="console.log('Hello world 002')" lang="js" />
 
   <CodeGroup
     codes={[

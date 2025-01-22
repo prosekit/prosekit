@@ -22,11 +22,12 @@ const defaultConfig: StarlightUserConfig = {
     // "dracula" (a dark theme) and "solarized-light"
     themes: ['one-dark-pro', 'one-light'],
     styleOverrides: {
-      borderRadius: '0',
-      borderWidth: '0',
+      borderRadius: '0px',
+      borderWidth: '0px',
       borderColor: 'transparent',
       gutterBorderColor: 'transparent',
       frames: {
+        tooltipSuccessBackground: '#222222',
         frameBoxShadowCssValue: 'none',
       },
     },

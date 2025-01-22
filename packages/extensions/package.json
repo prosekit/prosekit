@@ -106,7 +106,6 @@
     }
   },
   "devDependencies": {
-    "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "@vitest/browser": "^3.0.3",
     "just-pick": "^4.2.0",

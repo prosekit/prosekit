@@ -77,7 +77,6 @@
     }
   },
   "devDependencies": {
-    "@prosekit/config-vitest": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "@sveltejs/package": "^2.3.7",
     "@types/node": "^20.17.9",

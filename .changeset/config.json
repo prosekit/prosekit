@@ -8,7 +8,6 @@
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
   "ignore": [
-    "@prosekit/config-vitest",
     "@prosekit/themes",
     "@prosekit/unocss-preset",
     "prosekit-playground",

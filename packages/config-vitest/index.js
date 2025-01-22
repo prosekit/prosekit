@@ -1,3 +1,5 @@
+// @ts-check
+
 import { defineProject } from 'vitest/config'
 
 /** @type {import('vitest/config').UserProjectConfigExport} */
@@ -14,7 +16,6 @@ const config = defineProject({
       ui: false,
       screenshotFailures: false,
     },
-    fileParallelism: false,
   },
 })
 

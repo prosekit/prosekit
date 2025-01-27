@@ -676,7 +676,7 @@ importers:
         version: link:../themes
       unocss-preset-animations:
         specifier: ^1.1.0
-        version: 1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2)))
+        version: 1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1)))
     devDependencies:
       '@types/node':
         specifier: ^20.17.9
@@ -793,6 +793,10 @@ importers:
         version: 3.0.3(@types/node@20.17.9)(@vitest/browser@3.0.3)(jiti@2.4.1)(lightningcss@1.29.1)(msw@2.7.0(@types/node@20.17.9)(typescript@5.7.2))(tsx@4.19.2)(yaml@2.6.1)
 
   playground:
+    dependencies:
+      astro-minify-html-swc:
+        specifier: ^0.1.5
+        version: 0.1.5
     devDependencies:
       '@astrojs/preact':
         specifier: ^4.0.1
@@ -2899,8 +2903,75 @@ packages:
       svelte: ^5.0.0
       vite: ^6.0.0
 
+  '@swc/counter@0.1.3':
+    resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
+
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
+
+  '@swc/html-darwin-arm64@1.10.11':
+    resolution: {integrity: sha512-ifRcjQEXzyKeo+jKLfpAjZ2RTZzcroLDkHwCH/VUhQhhJiirF0wom+ZsxdSC3XWK7crdz3k7Ge0xMkcRA4j/hg==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@swc/html-darwin-x64@1.10.11':
+    resolution: {integrity: sha512-vT6kL3CS5fn8YRfB4eMEblMSHFCMog5Xg2xeF6il3quktMZ/C7McvgKrNexnRmX0EjoyXlO2xKxX+jqKgkX/QA==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@swc/html-linux-arm-gnueabihf@1.10.11':
+    resolution: {integrity: sha512-q/h1w6kAxbQtPyeeJeyBTXPmc2QPMMipn9JBDuZgeKNscP1OwFWdo2ocQ5qlwxmipti88ss8dYzRn+ZTuYz5+Q==}
+    engines: {node: '>=10'}
+    cpu: [arm]
+    os: [linux]
+
+  '@swc/html-linux-arm64-gnu@1.10.11':
+    resolution: {integrity: sha512-oO+FNNBiS7v86dLiEsarm5f6UXEIAzSOZyEc91bzvBS825OvB7Dk2ENEd6XKDqfRbtdLgW3FEoY8yGjPtT3uDg==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@swc/html-linux-arm64-musl@1.10.11':
+    resolution: {integrity: sha512-CblnT+oTyHRXZhlUhZYbxEx9XDsTq0xSyuWxxkd9mSi7xl5SVhl5S3s62t+tnyl1mt/noWluxGzJWCAAEyaK2A==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@swc/html-linux-x64-gnu@1.10.11':
+    resolution: {integrity: sha512-iniu0fwWG8CQwyAVwKHZ3ErS5PFNisgwutKMwSkA9W+npMmbYhwlsD7XyLqmtEkg1AKkjkSabCl0VWDyWR1CCA==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [linux]
+
+  '@swc/html-linux-x64-musl@1.10.11':
+    resolution: {integrity: sha512-DWosb1UmiCCv9K9k4c2ny3hYqIV460KgxkWsEVQm9QXF/FEqiaJNhsZ439gPu+v363w3aSs9gdezTgb0/w7iEg==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [linux]
+
+  '@swc/html-win32-arm64-msvc@1.10.11':
+    resolution: {integrity: sha512-yn92xHgPkP+AAy7vjUMOi1qt2Sk8U9TDloKNXkUG7PrdcvjQLJHuiFaynDfz6hQoyx5SpSGiH96ry5ohCnlvXA==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@swc/html-win32-ia32-msvc@1.10.11':
+    resolution: {integrity: sha512-wD19i93lgxTKcCuAMN9Hj0NZUnMXr0xwGZTIVa+azEpauEA+GJq/v3WI5ANDbC4weyHy0YajbDHVqyGgj+Qy+g==}
+    engines: {node: '>=10'}
+    cpu: [ia32]
+    os: [win32]
+
+  '@swc/html-win32-x64-msvc@1.10.11':
+    resolution: {integrity: sha512-jLyrsDepDGeCe5pr9G2qTX9xXqR8a8x0M2z6R0IN3Qz2olFoAiiArCnrztnGKuG3fsjfTb3hJK/HbeMgl9DMNQ==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [win32]
+
+  '@swc/html@1.10.11':
+    resolution: {integrity: sha512-EnXMC+2yy5U0lMCILB0/lGiHKCzMFg+a//USyshnQwrT4Bw53DaMOJoG20LWHIkYThIHTQ4VXMs/zILjuCwY5Q==}
+    engines: {node: '>=14'}
 
   '@tanstack/virtual-core@3.10.9':
     resolution: {integrity: sha512-kBknKOKzmeR7lN+vSadaKWXaLS0SZZG+oqpQ/k80Q6g9REn6zRHS/ZYdrIzHnpHgy/eWs00SujveUN/GJT2qTw==}
@@ -3607,6 +3678,9 @@ packages:
     resolution: {integrity: sha512-dsnUTXAOwiRLnIjqTcb4dhpsa7BDNImaXlkN0fFrJx2CumZe0tW+pgwTWqxv3haejo9KKih2j6UTMVRq1cTpig==}
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0
+
+  astro-minify-html-swc@0.1.5:
+    resolution: {integrity: sha512-4C3ouhBkU3nWTJTnN3QTGXTGyfWKTz+vljkBVW9Fa8eLl9wAEqbO4dL4eOH03LRMlqldP7ul6FgRMhKcPp3Iyw==}
 
   astro-theme-toggle@0.3.5:
     resolution: {integrity: sha512-ef5Cend7n4iel4u6mJRoilgYRxRkllWiK4DonssSesm6RPS+/RmXFOyMEOna3sB/Vmav0BXGEN18otdxPPwPeQ==}
@@ -4509,6 +4583,10 @@ packages:
 
   fast-glob@3.3.2:
     resolution: {integrity: sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow==}
+    engines: {node: '>=8.6.0'}
+
+  fast-glob@3.3.3:
+    resolution: {integrity: sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==}
     engines: {node: '>=8.6.0'}
 
   fast-json-stable-stringify@2.1.0:
@@ -10110,9 +10188,56 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@swc/counter@0.1.3': {}
+
   '@swc/helpers@0.5.15':
     dependencies:
       tslib: 2.8.1
+
+  '@swc/html-darwin-arm64@1.10.11':
+    optional: true
+
+  '@swc/html-darwin-x64@1.10.11':
+    optional: true
+
+  '@swc/html-linux-arm-gnueabihf@1.10.11':
+    optional: true
+
+  '@swc/html-linux-arm64-gnu@1.10.11':
+    optional: true
+
+  '@swc/html-linux-arm64-musl@1.10.11':
+    optional: true
+
+  '@swc/html-linux-x64-gnu@1.10.11':
+    optional: true
+
+  '@swc/html-linux-x64-musl@1.10.11':
+    optional: true
+
+  '@swc/html-win32-arm64-msvc@1.10.11':
+    optional: true
+
+  '@swc/html-win32-ia32-msvc@1.10.11':
+    optional: true
+
+  '@swc/html-win32-x64-msvc@1.10.11':
+    optional: true
+
+  '@swc/html@1.10.11':
+    dependencies:
+      '@swc/counter': 0.1.3
+    optionalDependencies:
+      '@swc/html-darwin-arm64': 1.10.11
+      '@swc/html-darwin-x64': 1.10.11
+      '@swc/html-linux-arm-gnueabihf': 1.10.11
+      '@swc/html-linux-arm64-gnu': 1.10.11
+      '@swc/html-linux-arm64-musl': 1.10.11
+      '@swc/html-linux-x64-gnu': 1.10.11
+      '@swc/html-linux-x64-musl': 1.10.11
+      '@swc/html-win32-arm64-msvc': 1.10.11
+      '@swc/html-win32-ia32-msvc': 1.10.11
+      '@swc/html-win32-x64-msvc': 1.10.11
 
   '@tanstack/virtual-core@3.10.9': {}
 
@@ -11074,6 +11199,11 @@ snapshots:
     dependencies:
       astro: 5.1.6(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1)
       rehype-expressive-code: 0.40.0
+
+  astro-minify-html-swc@0.1.5:
+    dependencies:
+      '@swc/html': 1.10.11
+      fast-glob: 3.3.3
 
   astro-theme-toggle@0.3.5: {}
 
@@ -12270,6 +12400,14 @@ snapshots:
   fast-fifo@1.3.2: {}
 
   fast-glob@3.3.2:
+    dependencies:
+      '@nodelib/fs.stat': 2.0.5
+      '@nodelib/fs.walk': 1.2.8
+      glob-parent: 5.1.2
+      merge2: 1.4.1
+      micromatch: 4.0.8
+
+  fast-glob@3.3.3:
     dependencies:
       '@nodelib/fs.stat': 2.0.5
       '@nodelib/fs.walk': 1.2.8
@@ -15836,7 +15974,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))):
+  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))):
     dependencies:
       '@unocss/preset-wind': 0.65.1
       unocss: 0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))

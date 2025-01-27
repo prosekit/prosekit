@@ -5,6 +5,7 @@ import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
 import starlight from '@prosekit/starlight-theme'
+import minifyHTML from 'astro-minify-html-swc'
 import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
 import UnoCSS from 'unocss/astro'
@@ -47,6 +48,7 @@ export default defineConfig({
       title: 'ProseKit',
       subpath: 'astrobook',
     }),
+    minifyHTML(),
   ],
   vite: {
     plugins: [wasm()],

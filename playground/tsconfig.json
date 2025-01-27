@@ -1,11 +1,20 @@
 {
   "extends": "@ocavue/tsconfig/dom/app.json",
   "include": [
-    "./.astro/**/*",
-    "./tests/**/*",
     "./*.ts",
     "./*.mjs",
+    "./.astro/**/*",
+    "./tests/**/*",
+    "src/*.ts",
+    "src/components/**/*",
   ],
+  "compilerOptions": {
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+    },
+  },
   "references": [
     {
       "path": "./src/stories/tsconfig.json",

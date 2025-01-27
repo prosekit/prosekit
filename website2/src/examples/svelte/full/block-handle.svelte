@@ -1,1 +1,0 @@
-../../../shared/svelte/block-handle.svelte

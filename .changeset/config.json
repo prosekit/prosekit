@@ -12,7 +12,6 @@
     "@prosekit/themes",
     "@prosekit/unocss-preset",
     "prosekit-playground",
-    "prosekit-website",
-    "prosekit-website2"
+    "prosekit-website"
   ]
 }

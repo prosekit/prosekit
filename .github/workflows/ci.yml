@@ -123,7 +123,7 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v2.2.0
         with:
-          args: --root-dir "$PWD/website2/dist" --no-progress './website2/dist/**/*.html' --include-fragments --fallback-extensions html
+          args: --root-dir "$PWD/playground/dist" --no-progress './playground/dist/**/*.html' --include-fragments --fallback-extensions html
           fail: true
 
   deploy:
@@ -154,5 +154,5 @@ jobs:
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
           projectName: prosekit-dev
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          directory: website2/dist
+          directory: playground/dist
         timeout-minutes: 5

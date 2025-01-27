@@ -1,6 +1,5 @@
 packages:
   - website
-  - website2
   - playground
   - examples/*
   - packages/*

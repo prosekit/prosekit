@@ -676,7 +676,7 @@ importers:
         version: link:../themes
       unocss-preset-animations:
         specifier: ^1.1.0
-        version: 1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1)))
+        version: 1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2)))
     devDependencies:
       '@types/node':
         specifier: ^20.17.9
@@ -793,10 +793,6 @@ importers:
         version: 3.0.3(@types/node@20.17.9)(@vitest/browser@3.0.3)(jiti@2.4.1)(lightningcss@1.29.1)(msw@2.7.0(@types/node@20.17.9)(typescript@5.7.2))(tsx@4.19.2)(yaml@2.6.1)
 
   playground:
-    dependencies:
-      astro-minify-html-swc:
-        specifier: ^0.1.5
-        version: 0.1.5
     devDependencies:
       '@astrojs/preact':
         specifier: ^4.0.1
@@ -846,6 +842,9 @@ importers:
       astro:
         specifier: ^5.1.6
         version: 5.1.6(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1)
+      astro-minify-html-swc:
+        specifier: ^0.1.5
+        version: 0.1.5
       astrobook:
         specifier: ^0.7.0
         version: 0.7.0(astro@5.1.6(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))
@@ -15974,7 +15973,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))):
+  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))):
     dependencies:
       '@unocss/preset-wind': 0.65.1
       unocss: 0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.2))

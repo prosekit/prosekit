@@ -1,6 +1,7 @@
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
+import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
 import starlight from '@prosekit/starlight-theme'
@@ -8,6 +9,19 @@ import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
 import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
+
+type Sidebar = StarlightUserConfig['sidebar']
+
+const sidebar: Sidebar = [
+  {
+    label: 'Getting Started',
+    autogenerate: { directory: 'getting-started' },
+  },
+  {
+    label: 'Reference',
+    autogenerate: { directory: 'reference' },
+  },
+]
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,19 +31,7 @@ export default defineConfig({
       social: {
         github: 'https://github.com/prosekit/prosekit',
       },
-      sidebar: [
-        {
-          label: 'Guides',
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: 'Example Guide', slug: 'guides/example' },
-          ],
-        },
-        {
-          label: 'Reference',
-          autogenerate: { directory: 'reference' },
-        },
-      ],
+      sidebar: sidebar,
       components: {
         Hero: './src/components/overrides/Hero.astro',
       },

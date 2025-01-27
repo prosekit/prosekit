@@ -26,6 +26,7 @@
     "**/*-lock.json",
     "**/*-lock.yaml",
     "**/*.gen.*",
+    "**/.astro/**/*",
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.93.3.wasm",

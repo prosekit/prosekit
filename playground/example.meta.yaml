@@ -5,8 +5,6 @@ examples:
     files:
       - path: editor.tsx
         hidden: false
-      - path: extension.ts
-        hidden: false
   - name: react-block-handle
     framework: react
     story: block-handle
@@ -396,8 +394,6 @@ examples:
     story: minimal
     files:
       - path: editor.vue
-        hidden: false
-      - path: extension.ts
         hidden: false
   - name: vue-block-handle
     framework: vue

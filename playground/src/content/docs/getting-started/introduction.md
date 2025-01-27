@@ -20,6 +20,6 @@ ProseKit provides:
 
 ## Start now
 
-Ready to dive in? The next section, [Quick Start](./quick-start.md), will guide you through the process of setting up your first ProseKit editor.
+Ready to dive in? The next section, [Quick Start](./quick-start), will guide you through the process of setting up your first ProseKit editor.
 
 We're excited to see what you'll build with ProseKit!

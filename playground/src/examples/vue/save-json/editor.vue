@@ -3,15 +3,8 @@ import 'prosekit/basic/style.css'
 
 import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  jsonFromNode,
-  type NodeJSON,
-} from 'prosekit/core'
-import {
-  computed,
-  ref,
-} from 'vue'
+import { createEditor, type NodeJSON } from 'prosekit/core'
+import { computed, ref } from 'vue'
 
 import EditorComponent from './editor-component.vue'
 
@@ -31,7 +24,7 @@ const handleDocChange = () => (hasUnsavedChange.value = true)
 
 // Save the current document as a JSON string
 function handleSave() {
-  const record = JSON.stringify(jsonFromNode(editor.value.view.state.doc))
+  const record = JSON.stringify(editor.value.getContentJSON())
   records.value.push(record)
   hasUnsavedChange.value = false
 }

@@ -6,10 +6,7 @@ import {
   useMemo,
   useState,
 } from 'preact/hooks'
-import {
-  createEditor,
-  jsonFromNode,
-} from 'prosekit/core'
+import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/preact'
 
 import { defineExtension } from './extension'
@@ -24,8 +21,7 @@ export default function Editor() {
 
   const pushSubmition = useCallback(
     (hotkey: string) => {
-      const doc = editor.view.state.doc
-      const docString = JSON.stringify(jsonFromNode(doc))
+      const docString = JSON.stringify(editor.getContentJSON())
       const submition = `${new Date().toISOString()}\t${hotkey}\n${docString}`
       setSubmitions((submitions) => [...submitions, submition])
     },

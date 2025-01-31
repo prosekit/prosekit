@@ -36,7 +36,7 @@ export default function Editor() {
 
   // Save the current document as a Markdown string
   const handleSave = useCallback(() => {
-    const html = editor.getContentHTML()
+    const html = editor.getDocHTML()
     const record = markdownFromHTML(html)
     setRecords((records) => [...records, record])
     setHasUnsavedChange(false)

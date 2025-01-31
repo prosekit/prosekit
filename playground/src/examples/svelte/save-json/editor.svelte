@@ -25,7 +25,7 @@ function handleDocChange() {
 
 // Save the current document as a JSON string
 function handleSave() {
-  const record = JSON.stringify(editor.getContentJSON())
+  const record = JSON.stringify(editor.getDocJSON())
   records = [...records, record]
   hasUnsavedChange = false
 }

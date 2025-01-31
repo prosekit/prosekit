@@ -32,7 +32,7 @@ export default function Editor() {
 
   // Save the current document as a HTML string
   const handleSave = useCallback(() => {
-    const record = editor.getContentHTML()
+    const record = editor.getDocHTML()
     setRecords((records) => [...records, record])
     setHasUnsavedChange(false)
   }, [editor])

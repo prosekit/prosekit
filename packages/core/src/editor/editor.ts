@@ -100,7 +100,7 @@ export interface EditorOptions<E extends Extension> {
 /**
  * @public
  */
-export interface GetContentHTMLOptions extends DOMDocumentOptions {}
+export interface getDocHTMLOptions extends DOMDocumentOptions {}
 
 /**
  * @internal
@@ -220,7 +220,7 @@ export class EditorInstance {
   /**
    * Return a JSON object representing the editor's current document.
    */
-  public getContentJSON = (): NodeJSON => {
+  public getDocJSON = (): NodeJSON => {
     const state = this.getState()
     return jsonFromNode(state.doc)
   }
@@ -228,7 +228,7 @@ export class EditorInstance {
   /**
    * Return a HTML string representing the editor's current document.
    */
-  public getContentHTML = (options?: GetContentHTMLOptions): string => {
+  public getDocHTML = (options?: getDocHTMLOptions): string => {
     const serializer = this.someProp('clipboardSerializer')
     const DOMSerializer = serializer ? { fromSchema: () => serializer } : undefined
     const doc = this.getDoc()
@@ -513,15 +513,15 @@ export class Editor<E extends Extension = any> {
   /**
    * Return a JSON object representing the editor's current document.
    */
-  public getContentJSON = (): NodeJSON => {
-    return this.instance.getContentJSON()
+  public getDocJSON = (): NodeJSON => {
+    return this.instance.getDocJSON()
   }
 
   /**
    * Return a HTML string representing the editor's current document.
    */
-  public getContentHTML = (options?: GetContentHTMLOptions): string => {
-    return this.instance.getContentHTML(options)
+  public getDocHTML = (options?: getDocHTMLOptions): string => {
+    return this.instance.getDocHTML(options)
   }
 
   /**

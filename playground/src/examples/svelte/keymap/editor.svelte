@@ -20,7 +20,7 @@ const mount = (element: HTMLElement) => {
 const submitions = writable<string[]>([])
 
 const pushSubmition = (hotkey: string) => {
-  const docString = JSON.stringify(editor.getContentJSON())
+  const docString = JSON.stringify(editor.getDocJSON())
   const submition = `${new Date().toISOString()}\t${hotkey}\n${docString}`
   submitions.update((submitions) => [...submitions, submition])
 }

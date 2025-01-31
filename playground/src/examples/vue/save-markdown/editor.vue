@@ -25,7 +25,7 @@ const handleDocChange = () => (hasUnsavedChange.value = true)
 
 // Save the current document as a Markdown string
 function handleSave() {
-  const html = editor.value.getContentHTML()
+  const html = editor.value.getDocHTML()
   const record = markdownFromHTML(html)
   records.value.push(record)
   hasUnsavedChange.value = false

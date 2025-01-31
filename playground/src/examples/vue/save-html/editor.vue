@@ -24,7 +24,7 @@ const handleDocChange = () => (hasUnsavedChange.value = true)
 
 // Save the current document as a HTML string
 function handleSave() {
-  const record = editor.value.getContentHTML()
+  const record = editor.value.getDocHTML()
   records.value.push(record)
   hasUnsavedChange.value = false
 }

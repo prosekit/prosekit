@@ -21,7 +21,7 @@ export default function Editor() {
 
   const pushSubmition = useCallback(
     (hotkey: string) => {
-      const docString = JSON.stringify(editor.getContentJSON())
+      const docString = JSON.stringify(editor.getDocJSON())
       const submition = `${new Date().toISOString()}\t${hotkey}\n${docString}`
       setSubmitions((submitions) => [...submitions, submition])
     },

@@ -73,6 +73,10 @@ export {
   ProseKitError,
 } from './error'
 export {
+  defineClipboardSerializer,
+  type ClipboardSerializerOptions,
+} from './extensions/clipboard-serializer'
+export {
   defineBaseCommands,
   defineCommands,
   type BaseCommandsExtension,

@@ -30,11 +30,19 @@ export interface DOMSerializerOptions {
 
 /** @public */
 export interface DOMDocumentOptions {
+  /**
+   * The Document object to use for DOM operations. If not provided, defaults to
+   * the current browser's document object. Useful for server-side rendering or
+   * testing environments.
+   */
   document?: Document
 }
 
 /** @public */
 export interface JSONParserOptions {
+  /**
+   * The editor schema to use.
+   */
   schema: Schema
 }
 

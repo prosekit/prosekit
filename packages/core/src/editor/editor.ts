@@ -12,6 +12,7 @@ import {
 import {
   EditorView,
   type DirectEditorProps,
+  type EditorProps,
 } from '@prosekit/pm/view'
 
 import { ProseKitError } from '../error'
@@ -44,6 +45,11 @@ import {
   getEditorContentDoc,
   getEditorSelection,
 } from '../utils/editor-content'
+import {
+  htmlFromNode,
+  jsonFromNode,
+  type DOMDocumentOptions,
+} from '../utils/parse'
 
 import {
   createMarkActions,
@@ -90,6 +96,11 @@ export interface EditorOptions<E extends Extension> {
    */
   defaultSelection?: SelectionJSON
 }
+
+/**
+ * @public
+ */
+export interface GetContentHTMLOptions extends DOMDocumentOptions {}
 
 /**
  * @internal
@@ -161,6 +172,14 @@ export class EditorInstance {
     return this.view?.state || this.directEditorProps.state
   }
 
+  private getDoc(): ProseMirrorNode {
+    return this.getState().doc
+  }
+
+  private someProp<PropName extends keyof EditorProps>(propName: PropName): EditorProps[PropName] | undefined {
+    return this.view?.someProp(propName) ?? this.directEditorProps[propName]
+  }
+
   public updateState(state: EditorState): void {
     if (this.view) {
       this.view.updateState(state)
@@ -196,6 +215,24 @@ export class EditorInstance {
       plugins: oldState.plugins,
     })
     this.updateState(newState)
+  }
+
+  /**
+   * Return a JSON object representing the editor's current document.
+   */
+  public getContentJSON = (): NodeJSON => {
+    const state = this.getState()
+    return jsonFromNode(state.doc)
+  }
+
+  /**
+   * Return a HTML string representing the editor's current document.
+   */
+  public getContentHTML = (options?: GetContentHTMLOptions): string => {
+    const serializer = this.someProp('clipboardSerializer')
+    const DOMSerializer = serializer ? { fromSchema: () => serializer } : undefined
+    const doc = this.getDoc()
+    return htmlFromNode(doc, { ...options, DOMSerializer })
   }
 
   private updateExtension(extension: Extension, add: boolean): void {
@@ -471,6 +508,20 @@ export class Editor<E extends Extension = any> {
     selection?: SelectionJSON | Selection | 'start' | 'end',
   ): void => {
     return this.instance.setContent(content, selection)
+  }
+
+  /**
+   * Return a JSON object representing the editor's current document.
+   */
+  public getContentJSON = (): NodeJSON => {
+    return this.instance.getContentJSON()
+  }
+
+  /**
+   * Return a HTML string representing the editor's current document.
+   */
+  public getContentHTML = (options?: GetContentHTMLOptions): string => {
+    return this.instance.getContentHTML(options)
   }
 
   /**

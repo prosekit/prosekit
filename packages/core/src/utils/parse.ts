@@ -25,7 +25,7 @@ export interface DOMParserOptions extends ParseOptions {
 
 /** @public */
 export interface DOMSerializerOptions {
-  DOMSerializer?: typeof DOMSerializer
+  DOMSerializer?: { fromSchema: typeof DOMSerializer.fromSchema }
 }
 
 /** @public */

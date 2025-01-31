@@ -14,7 +14,7 @@ ProseKit provides:
 - **Cross-Framework Support:** Use with React, Vue, Svelte, Solid, Preact, or vanilla JavaScript.
 - **Modular & Extensible:** Easily add or modify features.
 - **TypeScript Power:** Build robust editors on a type-safe foundation.
-- **ProseMirror Core:** Built on the reliable [ProseMirror](https://prosemirror.net/) library.
+- **ProseMirror Core:** Based on the reliable [ProseMirror](https://prosemirror.net/) library.
 - **Headless:** Full control over the editor's appearance.
 - **Tailwind CSS Components:** Quickly build beautiful editors with copy-paste components in your app.
 

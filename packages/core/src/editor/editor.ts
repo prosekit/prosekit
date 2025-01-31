@@ -176,7 +176,7 @@ export class EditorInstance {
     return this.getState().doc
   }
 
-  private someProp<PropName extends keyof EditorProps>(propName: PropName): EditorProps[PropName] | undefined {
+  private getProp<PropName extends keyof EditorProps>(propName: PropName): EditorProps[PropName] | undefined {
     return this.view?.someProp(propName) ?? this.directEditorProps[propName]
   }
 
@@ -229,7 +229,7 @@ export class EditorInstance {
    * Return a HTML string representing the editor's current document.
    */
   public getDocHTML = (options?: getDocHTMLOptions): string => {
-    const serializer = this.someProp('clipboardSerializer')
+    const serializer = this.getProp('clipboardSerializer')
     const DOMSerializer = serializer ? { fromSchema: () => serializer } : undefined
     const doc = this.getDoc()
     return htmlFromNode(doc, { ...options, DOMSerializer })

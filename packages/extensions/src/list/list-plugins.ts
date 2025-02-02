@@ -1,9 +1,32 @@
 import { definePlugin } from '@prosekit/core'
-import { createListPlugins } from 'prosemirror-flat-list'
+import { Plugin } from '@prosekit/pm/state'
+import {
+  createListEventPlugin,
+  createListRenderingPlugin,
+  createSafariInputMethodWorkaroundPlugin,
+  unwrapListSlice,
+} from 'prosemirror-flat-list'
+
+function createListClipboardPlugin(): Plugin {
+  return new Plugin({
+    props: {
+      transformCopied: unwrapListSlice,
+    },
+  })
+}
+
+function createListPlugins(): Plugin[] {
+  return [
+    createListEventPlugin(),
+    createListRenderingPlugin(),
+    createListClipboardPlugin(),
+    createSafariInputMethodWorkaroundPlugin(),
+  ]
+}
 
 /**
  * @internal
  */
 export function defineListPlugins() {
-  return definePlugin(({ schema }) => createListPlugins({ schema }))
+  return definePlugin(createListPlugins)
 }

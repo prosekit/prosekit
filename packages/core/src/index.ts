@@ -73,6 +73,10 @@ export {
   ProseKitError,
 } from './error'
 export {
+  defineClipboardSerializer,
+  type ClipboardSerializerOptions,
+} from './extensions/clipboard-serializer'
+export {
   defineBaseCommands,
   defineCommands,
   type BaseCommandsExtension,
@@ -260,6 +264,7 @@ export { getId as _getId } from './utils/get-id'
 export { getMarkType } from './utils/get-mark-type'
 export { getNodeType } from './utils/get-node-type'
 export { isAtBlockStart } from './utils/is-at-block-start'
+export { isElement } from './utils/is-element'
 export { isInCodeBlock } from './utils/is-in-code-block'
 export { isMarkAbsent } from './utils/is-mark-absent'
 export { isMarkActive } from './utils/is-mark-active'

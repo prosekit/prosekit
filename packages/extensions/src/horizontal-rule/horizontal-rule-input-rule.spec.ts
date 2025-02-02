@@ -4,10 +4,8 @@ import {
   it,
 } from 'vitest'
 
-import {
-  inputText,
-  setupTest,
-} from '../testing'
+import { setupTest } from '../testing'
+import { inputText } from '../testing/keyboard'
 
 describe('defineHorizontalRuleInputRule', () => {
   const { editor, n } = setupTest()

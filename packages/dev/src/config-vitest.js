@@ -29,14 +29,8 @@ const defaultConfig = {
  * @returns {import('vitest/config').UserWorkspaceConfig}
  */
 export function config(options = undefined) {
-  if (!options) {
-    return defaultConfig
-  }
-
   /**
    * @type {import('vitest/config').UserWorkspaceConfig}
    */
-  const merged = merge({}, defaultConfig, options)
-
-  return merged
+  return merge({}, defaultConfig, options || {})
 }

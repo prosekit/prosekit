@@ -10,6 +10,7 @@ import {
 import { defineListInputRules } from './list-input-rules'
 import { defineListKeymap } from './list-keymap'
 import { defineListPlugins } from './list-plugins'
+import { defineListSerializer } from './list-serializer'
 import {
   defineListSpec,
   type ListSpecExtension,
@@ -40,6 +41,7 @@ export function defineList(): ListExtension {
     defineListKeymap(),
     defineListInputRules(),
     defineListCommands(),
+    defineListSerializer(),
   )
 }
 

@@ -10,10 +10,6 @@ import {
 
 import { union } from '../editor/union'
 import { setupTestFromExtension } from '../testing'
-import {
-  htmlFromNode,
-  jsonFromNode,
-} from '../utils/parse'
 
 import { defineDoc } from './doc'
 import {
@@ -129,7 +125,8 @@ describe('defineMarkAttr', () => {
       '<p><strong data-mark-id="123" style="background-color:blue;color:red;">Hello</strong></p>',
     )
 
-    const json1 = jsonFromNode(editor.state.doc)
+    const json1 = editor.getDocJSON()
+    const html1 = editor.getDocHTML()
     expect(json1).toMatchInlineSnapshot(`
       {
         "content": [
@@ -156,11 +153,11 @@ describe('defineMarkAttr', () => {
         "type": "doc",
       }
     `)
-    expect(htmlFromNode(editor.state.doc)).toMatchInlineSnapshot(
+    expect(html1).toMatchInlineSnapshot(
       `"<div><p><strong style="background-color: blue; color: red" data-mark-id="123">Hello</strong></p></div>"`,
     )
-    editor.setContent(htmlFromNode(editor.state.doc))
-    const json2 = jsonFromNode(editor.state.doc)
+    editor.setContent(html1)
+    const json2 = editor.getDocJSON()
     expect(json2).toEqual(json1)
   })
 })

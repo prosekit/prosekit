@@ -4,10 +4,8 @@ import {
   it,
 } from 'vitest'
 
-import {
-  pressKey,
-  setupTest,
-} from '../testing'
+import { setupTest } from '../testing'
+import { pressKey } from '../testing/keyboard'
 
 describe('keymap', () => {
   const { editor, n } = setupTest()

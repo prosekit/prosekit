@@ -9,10 +9,8 @@ import {
   it,
 } from 'vitest'
 
-import {
-  inputText,
-  setupTest,
-} from '../testing'
+import { setupTest } from '../testing'
+import { inputText } from '../testing/keyboard'
 
 import { isCellSelection } from './table-utils'
 

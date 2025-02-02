@@ -17,6 +17,7 @@ export {
 export { defineListInputRules } from './list-input-rules'
 export { defineListKeymap } from './list-keymap'
 export { defineListPlugins } from './list-plugins'
+export { defineListSerializer } from './list-serializer'
 export {
   defineListSpec,
   type ListSpecExtension,

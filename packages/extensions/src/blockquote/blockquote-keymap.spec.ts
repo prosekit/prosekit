@@ -4,10 +4,8 @@ import {
   it,
 } from 'vitest'
 
-import {
-  pressKey,
-  setupTest,
-} from '../testing'
+import { setupTest } from '../testing'
+import { pressKey } from '../testing/keyboard'
 
 describe('blockquote keymap', () => {
   it('should wrap paragraph into blockquote with shortcut', async () => {

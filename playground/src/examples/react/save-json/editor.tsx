@@ -4,7 +4,6 @@ import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import {
   createEditor,
-  jsonFromNode,
   type NodeJSON,
 } from 'prosekit/core'
 import {
@@ -32,7 +31,7 @@ export default function Editor() {
 
   // Save the current document as a JSON string
   const handleSave = useCallback(() => {
-    const record = JSON.stringify(jsonFromNode(editor.view.state.doc))
+    const record = JSON.stringify(editor.getDocJSON())
     setRecords((records) => [...records, record])
     setHasUnsavedChange(false)
   }, [editor])

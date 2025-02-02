@@ -11,10 +11,6 @@ import {
 
 import { union } from '../editor/union'
 import { setupTestFromExtension } from '../testing'
-import {
-  htmlFromNode,
-  jsonFromNode,
-} from '../utils/parse'
 
 import { defineDoc } from './doc'
 import { defineHistory } from './history'
@@ -171,7 +167,8 @@ describe('defineNodeAttr', () => {
       '<p data-node-id="123" style="background-color:blue;color:red;">Hello</p>',
     )
 
-    const json1 = jsonFromNode(editor.state.doc)
+    const json1 = editor.getDocJSON()
+    const html1 = editor.getDocHTML()
     expect(json1).toEqual({
       type: 'doc',
       content: [
@@ -182,11 +179,11 @@ describe('defineNodeAttr', () => {
         },
       ],
     })
-    expect(htmlFromNode(editor.state.doc)).toMatchInlineSnapshot(
+    expect(html1).toMatchInlineSnapshot(
       `"<div><p style="background-color: blue; color: red" data-node-id="123">Hello</p></div>"`,
     )
-    editor.setContent(htmlFromNode(editor.state.doc))
-    const json2 = jsonFromNode(editor.state.doc)
+    editor.setContent(html1)
+    const json2 = editor.getDocJSON()
     expect(json2).toEqual(json1)
   })
 })

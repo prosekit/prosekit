@@ -1,11 +1,14 @@
 // @ts-check
 
+/// <reference types="@vitest/browser/providers/playwright" />
+
 import { merge } from 'lodash-es'
 
 /** @type {import('vitest/config').UserWorkspaceConfig} */
 const defaultConfig = {
   optimizeDeps: {
     include: ['@vitest/coverage-v8/browser'],
+    // exclude: ['prettier', 'prettier/parser-html'],
   },
   test: {
     browser: {
@@ -18,6 +21,10 @@ const defaultConfig = {
       instances: [
         {
           browser: 'chromium',
+          context: {
+            hasTouch: true,
+            permissions: ['clipboard-read', 'clipboard-write'],
+          },
         },
       ],
     },

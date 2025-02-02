@@ -80,7 +80,7 @@
     "prosemirror-dropcursor": "^1.8.1",
     "prosemirror-flat-list": "^0.5.4",
     "prosemirror-gapcursor": "^1.3.2",
-    "prosemirror-highlight": "^0.11.0",
+    "prosemirror-highlight": "^0.12.0",
     "prosemirror-search": "^1.0.0",
     "prosemirror-tables": "^1.6.2",
     "shiki": "^2.2.0"

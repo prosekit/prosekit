@@ -254,8 +254,8 @@ importers:
         specifier: ^1.3.2
         version: 1.3.2
       prosemirror-highlight:
-        specifier: ^0.11.0
-        version: 0.11.0(@types/hast@3.0.4)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.1)(shiki@2.2.0)
+        specifier: ^0.12.0
+        version: 0.12.0(@types/hast@3.0.4)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.1)(shiki@2.2.0)
       prosemirror-search:
         specifier: ^1.0.0
         version: 1.0.0
@@ -5979,8 +5979,8 @@ packages:
   prosemirror-gapcursor@1.3.2:
     resolution: {integrity: sha512-wtjswVBd2vaQRrnYZaBCbyDqr232Ed4p2QPtRIUK5FuqHYKGWkEwl08oQM4Tw7DOR0FsasARV5uJFvMZWxdNxQ==}
 
-  prosemirror-highlight@0.11.0:
-    resolution: {integrity: sha512-DHgRa9HYLi+8tLLPLYKrKgUeUbNz7g43yNYb5M+8CH7/P9SOzrXnBj4EwKDmF87wUmb2E41/fYErveplH3TREw==}
+  prosemirror-highlight@0.12.0:
+    resolution: {integrity: sha512-H/Uj9daLkveHVLRVfnpS/LL3na1ryDeZ/E4IvRDJJUmhoE53+SWW531TQXpKYAnnRnZdRMXbXqoVhgg+R5waPg==}
     peerDependencies:
       '@types/hast': ^3.0.0
       highlight.js: ^11.9.0
@@ -5990,8 +5990,8 @@ packages:
       prosemirror-transform: ^1.8.0
       prosemirror-view: ^1.32.4
       refractor: ^4.8.1
-      shiki: ^1.9.0
-      sugar-high: ^0.6.1
+      shiki: ^1.9.0 || ^2.0.0
+      sugar-high: ^0.6.1 || ^0.7.0 || ^0.8.0
     peerDependenciesMeta:
       '@types/hast':
         optional: true
@@ -13556,7 +13556,7 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.37.1
 
-  prosemirror-highlight@0.11.0(@types/hast@3.0.4)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.1)(shiki@2.2.0):
+  prosemirror-highlight@0.12.0(@types/hast@3.0.4)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.1)(shiki@2.2.0):
     optionalDependencies:
       '@types/hast': 3.0.4
       prosemirror-model: 1.24.1

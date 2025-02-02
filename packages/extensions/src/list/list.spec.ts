@@ -13,8 +13,6 @@ import {
 } from 'vitest'
 
 import { setupTest } from '../testing'
-import { readHtmlTextFromClipboard } from '../testing/clipboard'
-import { pressKey } from '../testing/keyboard'
 
 import { defineList } from './index'
 
@@ -33,21 +31,17 @@ describe('defineList', () => {
   })
 
   it('can copy lists as native HTML <li> elements', async () => {
-    const { editor, n } = setupTest()
+    const { editor, n, copy } = setupTest()
 
-    const copy = async (doc: ProseMirrorNode) => {
+    const copyAndGetHTML = async (doc: ProseMirrorNode) => {
       editor.set(doc)
-
-      // Select all and copy
       editor.commands.selectAll()
-      editor.view.dom.focus()
-      await pressKey('mod-C')
-
-      return await readHtmlTextFromClipboard()
+      const { html } = await copy()
+      return html
     }
 
     expect(
-      await copy(
+      await copyAndGetHTML(
         n.doc(
           n.bullet(n.paragraph('Bullet 1')),
           n.bullet(n.paragraph('Bullet 2')),
@@ -62,7 +56,7 @@ describe('defineList', () => {
     `)
 
     expect(
-      await copy(
+      await copyAndGetHTML(
         n.doc(
           n.ordered(n.paragraph('Ordered 1')),
           n.ordered(n.paragraph('Ordered 2')),
@@ -77,7 +71,7 @@ describe('defineList', () => {
     `)
 
     expect(
-      await copy(
+      await copyAndGetHTML(
         n.doc(
           n.checked(n.paragraph('Checked 1')),
           n.unchecked(n.paragraph('Unchecked 2')),

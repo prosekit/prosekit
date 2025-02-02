@@ -34,6 +34,12 @@ import { defineStrike } from '../strike'
 import { defineTable } from '../table'
 import { defineUnderline } from '../underline'
 
+import {
+  readHtmlTextFromClipboard,
+  readPlainTextFromClipboard,
+} from './clipboard'
+import { pressKey } from './keyboard'
+
 /**
  * @internal
  */
@@ -101,6 +107,14 @@ export function setupTest() {
     }
   }
 
+  const copy = async () => {
+    editor.view.dom.focus()
+    await pressKey('mod-C')
+    const html = await readHtmlTextFromClipboard()
+    const plain = await readPlainTextFromClipboard()
+    return { html, plain }
+  }
+
   return {
     editor,
     m,
@@ -123,5 +137,6 @@ export function setupTest() {
       collapsed: listWithAttrs({ kind: 'toggle', collapsed: true }),
       expanded: listWithAttrs({ kind: 'toggle', collapsed: false }),
     },
+    copy,
   }
 }

@@ -7,12 +7,6 @@ export default defineConfig({
       all: false,
       provider: 'v8',
     },
-    browser: {
-      enabled: true,
-      provider: 'playwright',
-      name: 'chromium',
-      headless: true,
-    },
     fileParallelism: false,
     workspace: ['packages/*'],
   },

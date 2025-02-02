@@ -12,11 +12,9 @@ import {
   it,
 } from 'vitest'
 
-import {
-  pressKey,
-  setupTest,
-} from '../testing'
+import { setupTest } from '../testing'
 import { readHtmlTextFromClipboard } from '../testing/clipboard'
+import { pressKey } from '../testing/keyboard'
 
 import { defineList } from './index'
 

@@ -32,7 +32,7 @@ var THEMES = {
     "box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700 flex flex-col bg-white dark:bg-neutral-900",
   EDITOR_SCROLLING: "relative w-full flex-1 box-border overflow-y-scroll",
   EDITOR_CONTENT:
-    'ProseMirror box-border min-h-full px-[max(4rem,_calc(50%-20rem))] py-8 outline-none outline-0 [&_span[data-mention="user"]]:text-blue-500 [&_span[data-mention="tag"]]:text-violet-500 [&_pre]:text-white [&_pre]:bg-zinc-800',
+    'ProseMirror box-border min-h-full px-[max(4rem,_calc(50%-20rem))] py-8 outline-none outline-0 [&_span[data-mention="user"]]:text-blue-500 [&_span[data-mention="tag"]]:text-violet-500 [&_pre]:border-zinc-200 dark:[&_pre]:border-zinc-800 [&_pre]:border-1 [&_pre]:border-solid [&_pre]:text-[var(--prosemirror-highlight)] [&_pre]:bg-[var(--prosemirror-highlight-bg)]',
   INLINE_MENU_MAIN:
     "z-10 box-border border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-neutral-900 shadow-lg [&:not([data-state])]:hidden relative flex min-w-[8rem] space-x-1 overflow-auto whitespace-nowrap rounded-md p-1",
   INLINE_MENU_LINK:
@@ -48,7 +48,7 @@ var THEMES = {
   LANGUAGE_WRAPPER:
     "relative mx-2 top-3 h-0 select-none overflow-visible text-xs",
   LANGUAGE_SELECT:
-    "outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded border-none bg-transparent px-2 py-1 text-xs transition text-white opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 [div[data-node-view-root]:hover_&]:hover:opacity-80",
+    "outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded border-none bg-transparent px-2 py-1 text-xs transition text-[var(--prosemirror-highlight)] opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 [div[data-node-view-root]:hover_&]:hover:opacity-80",
   TOOLBAR:
     "z-2 box-border border-zinc-200 dark:border-zinc-800 border-solid border-l-0 border-r-0 border-t-0 border-b flex flex-wrap gap-1 p-2 items-center",
   TOGGLE_BUTTON:

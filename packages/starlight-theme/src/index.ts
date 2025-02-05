@@ -25,6 +25,7 @@ const defaultConfig: StarlightUserConfig = {
     styleOverrides: {
       borderRadius: '0.5rem',
       borderWidth: '1px',
+      borderColor: 'var(--sl-color-gray-5)',
       frames: {
         tooltipSuccessBackground: '#222222',
         frameBoxShadowCssValue: 'none',

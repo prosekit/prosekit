@@ -28,7 +28,7 @@ import {
 } from '@astrojs/starlight/components'
 ---
 
-<div class="code-group rounded-lg border-border border-solid border-1 overflow-hidden">
+<div class="code-group">
   <slot />
   <Tabs>
     {
@@ -43,6 +43,12 @@ import {
 
 <style is:global>
   .code-group {
+    border-color: var(--sl-color-gray-5);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
     .tablist-wrapper {
       scrollbar-width: none;
 
@@ -70,6 +76,10 @@ import {
 
     div[role='tabpanel'] pre {
       border-color: transparent;
+    }
+
+    .expressive-code pre {
+      border-radius: 0;
     }
   }
 </style>

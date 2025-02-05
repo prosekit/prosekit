@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.11.5
+
+### Patch Changes
+
+- [`6ba599c`](https://github.com/ocavue/prosekit/commit/6ba599c6321916ca9d19b6c87d2f2154e2ab60fc) ![](https://prosekit.dev/b/core)
+
+  Add `editor.getDocHTML()` and `editor.getDocJSON()` methods.
+
 ## 0.11.4
 
 ### Patch Changes

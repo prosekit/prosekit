@@ -16,13 +16,8 @@ runs:
         echo "FORCE_COLOR=1" >> "${GITHUB_ENV}"
         echo "DO_NOT_TRACK=1" >> "${GITHUB_ENV}"
 
-    - name: Enable corepack
-      run: corepack enable
-      shell: bash
-
     - name: Install pnpm
-      run: pnpm --version
-      shell: bash
+      uses: pnpm/action-setup@v4
 
     - name: Setup node
       uses: actions/setup-node@v4

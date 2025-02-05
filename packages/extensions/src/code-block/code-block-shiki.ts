@@ -39,6 +39,11 @@ export interface CodeBlockShikiOptions extends Omit<ShikiHighlighterOptions, 'th
 /**
  * Adds syntax highlighting to code blocks using the [Shiki](https://github.com/shikijs/shiki) package.
  *
+ * It will set two CSS variables on the code block elements:
+ *
+ * - `--prosemirror-highlight`: sets text color
+ * - `--prosemirror-highlight-bg`: sets background color
+ *
  * @param options - The options to configure the Shiki highlighter.
  *
  * @public

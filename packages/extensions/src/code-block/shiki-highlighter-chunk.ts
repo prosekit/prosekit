@@ -5,10 +5,8 @@ import type {
   Highlighter,
   SpecialLanguage,
 } from 'shiki'
-import {
-  createHighlighter,
-  createJavaScriptRegexEngine,
-} from 'shiki/bundle/full'
+import { createHighlighter } from 'shiki/bundle/full'
+import { createJavaScriptRegexEngine } from 'shiki/engine/javascript'
 
 let highlighter: Highlighter | undefined
 const loadedLangs = new Set<BundledLanguage | SpecialLanguage>()
@@ -28,7 +26,7 @@ async function createAndCacheHighlighter({
     // If no engine is provided, use the JavaScript engine, which is
     // smaller than the WASM engine.
     if (!options.engine) {
-      const engine = createJavaScriptRegexEngine()
+      const engine = createJavaScriptRegexEngine({ forgiving: true })
       options.engine = engine
     }
     highlighter = await createHighlighter(options)

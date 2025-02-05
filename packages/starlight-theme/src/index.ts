@@ -27,8 +27,10 @@ const defaultConfig: StarlightUserConfig = {
       borderWidth: '1px',
       borderColor: 'var(--sl-color-gray-5)',
       frames: {
-        tooltipSuccessBackground: '#222222',
+        tooltipSuccessBackground: 'var(--sl-color-gray-1)',
+        tooltipSuccessForeground: 'var(--sl-color-black)',
         frameBoxShadowCssValue: 'none',
+        terminalTitlebarBorderBottomColor: 'var(--sl-color-gray-5)',
       },
     },
   },

@@ -59,7 +59,7 @@ div.ProseMirror {
 
   & blockquote {
     padding-left: 1em;
-    border-left: 0.25em solid hsla(0, 0%, 60%, 0.4);
+    border-left: 0.25em solid hsl(0 0% 60% / 0.4);
   }
 
   & h1 {
@@ -107,6 +107,10 @@ div.ProseMirror {
     padding: 2rem 2rem;
     overflow-x: auto;
     border-radius: 0.375rem;
+    border: 1px solid hsl(0 0% 50% / 0.2);
+    /* CSS variables `prosemirror-highlight` and `prosemirror-highlight-bg` are set by package `prosemirror-highlight` */
+    color: var(--prosemirror-highlight, inherit);
+    background-color: var(--prosemirror-highlight-bg, inherit);
   }
 
   & pre,

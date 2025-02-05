@@ -96,7 +96,6 @@ export const EDITOR_CONTENT = cn(
   'box-border min-h-full px-[max(4rem,_calc(50%-20rem))] py-8 outline-none outline-0',
   '[&_span[data-mention="user"]]:text-blue-500',
   '[&_span[data-mention="tag"]]:text-violet-500',
-  '[&_pre]:text-white [&_pre]:bg-zinc-800',
 )
 
 export const INLINE_MENU_MAIN = cn(
@@ -132,7 +131,7 @@ export const LANGUAGE_WRAPPER = cn(
 )
 
 export const LANGUAGE_SELECT = cn(
-  'outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded border-none bg-transparent px-2 py-1 text-xs transition text-white',
+  'outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded border-none bg-transparent px-2 py-1 text-xs transition text-[var(--prosemirror-highlight)]',
   // Only visible when hovering the code block
   'opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 [div[data-node-view-root]:hover_&]:hover:opacity-80',
 )

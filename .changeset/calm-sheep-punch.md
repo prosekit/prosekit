@@ -1,4 +1,5 @@
 ---
+'prosekit': patch
 '@prosekit/basic': patch
 '@prosekit/extensions': patch
 ---

@@ -1,12 +1,25 @@
 ---
 import { Code } from '@astrojs/starlight/components'
 import CodeGroup from './code-group.astro'
+import ExampleGroup from './example-group.astro'
+import Select from './select.svelte'
 
 interface Props {}
 ---
 
 <div>
   <slot />
+
+  <Select client:load="svelte" />
+
+  <ExampleGroup name="example-group">
+    <Fragment slot="react">
+      <div>React content</div>
+    </Fragment>
+    <Fragment slot="vue">
+      <div>Vue content</div>
+    </Fragment>
+  </ExampleGroup>
 
   <Code code="console.log('Hello world 002')" lang="js" />
 

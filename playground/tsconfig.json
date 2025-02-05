@@ -3,6 +3,7 @@
   "include": [
     "./*.ts",
     "./*.mjs",
+    "./*.js",
     "./.astro/**/*",
     "./tests/**/*",
     "src/*.ts",

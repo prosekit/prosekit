@@ -21,11 +21,10 @@ const defaultConfig: StarlightUserConfig = {
     // Replace the default themes with a custom set of bundled themes:
     // "dracula" (a dark theme) and "solarized-light"
     themes: ['one-dark-pro', 'one-light'],
+    useStarlightUiThemeColors: false,
     styleOverrides: {
-      borderRadius: '0px',
-      borderWidth: '0px',
-      borderColor: 'transparent',
-      gutterBorderColor: 'transparent',
+      borderRadius: '0.5rem',
+      borderWidth: '1px',
       frames: {
         tooltipSuccessBackground: '#222222',
         frameBoxShadowCssValue: 'none',

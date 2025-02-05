@@ -28,7 +28,7 @@ import {
 } from '@astrojs/starlight/components'
 ---
 
-<div class="code-group-container shadow-md rounded-lg border-border border-solid border-1 overflow-hidden">
+<div class="code-group rounded-lg border-border border-solid border-1 overflow-hidden">
   <slot />
   <Tabs>
     {
@@ -42,31 +42,29 @@ import {
 </div>
 
 <style is:global>
-  .code-group-container {
-    & .tablist-wrapper {
+  .code-group {
+    .tablist-wrapper {
       scrollbar-width: none;
 
-      & [role='tab'] {
-        @apply font-mono text-sm pt-2 pb-1;
+      [role='tablist'] {
+        @apply border-b-transparent;
+      }
+
+      [role='tab'] {
+        @apply font-mono text-sm pt-2 pb-1 px-3;
 
         &:not([aria-selected='true']) {
           @apply border-b-transparent;
         }
       }
     }
-  }
 
-  .code-group-container [role='tablist'] {
-    border-bottom-color: transparent !important;
-  }
+    div[role='tabpanel'] {
+      margin: 0;
+    }
 
-  .code-group-container div[role='tabpanel'] {
-    padding: 0 !important;
-    margin: 0 !important;
-    border-top-color: transparent !important;
-  }
-
-  .code-group-container div[role='tabpanel'] pre {
-    border-color: transparent !important;
+    div[role='tabpanel'] pre {
+      border-color: transparent;
+    }
   }
 </style>

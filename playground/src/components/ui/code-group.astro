@@ -47,14 +47,19 @@ import {
       scrollbar-width: none;
 
       [role='tablist'] {
-        @apply border-b-transparent;
+        border-bottom-color: transparent;
       }
 
       [role='tab'] {
-        @apply font-mono text-sm pt-2 pb-1 px-3;
+        font-family: var(--sl-font-system-mono);
+        padding-top: 0.5rem;
+        padding-bottom: 0.25rem; 
+        padding-left: 0.75rem;  
+        padding-right: 0.75rem; 
+        font-size: 0.875rem; 
 
         &:not([aria-selected='true']) {
-          @apply border-b-transparent;
+          border-bottom-color: transparent;
         }
       }
     }

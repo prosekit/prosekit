@@ -3,6 +3,7 @@ import {
   SelectContent,
   SelectItem,
   SelectList,
+  SelectTrigger,
 } from './select'
 
 interface Props {
@@ -29,13 +30,10 @@ import '@aria-ui/select'
 <div>
   <h1>EXAMPLE GROUP</h1>
   <div>
-    <aria-ui-select-root class="not-content" select="react">
-      <aria-ui-select-trigger
-        className="flex h-9 w-30 items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1"
-        ,
-      >
+    <aria-ui-select-root class="not-content">
+      <SelectTrigger>
         <aria-ui-select-value placeholder="Select a Framework...">React</aria-ui-select-value>
-      </aria-ui-select-trigger>
+      </SelectTrigger>
       <SelectContent>
         <SelectList value="react">
           <SelectItem value="react">React</SelectItem>

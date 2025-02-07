@@ -798,8 +798,8 @@ importers:
   playground:
     devDependencies:
       '@aria-ui/select':
-        specifier: ^0.0.29
-        version: 0.0.29
+        specifier: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/select@182
+        version: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/select@182
       '@astrojs/preact':
         specifier: ^4.0.1
         version: 4.0.1(@babel/core@7.26.0)(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(preact@10.25.4)(tsx@4.19.2)(yaml@2.6.1)
@@ -1128,11 +1128,23 @@ packages:
   '@aria-ui/collection@0.0.4':
     resolution: {integrity: sha512-oEYKE2wyF8HWBvgwBrDjFV6SzL5MCAfq3sahmuM2ShFSXU9BdSKCw7dSCErerbyNIXYPURG44y6B17/HR2BdIw==}
 
+  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@41c1834143c488f8e662a7aef165eff07fefa9b2':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@41c1834143c488f8e662a7aef165eff07fefa9b2}
+    version: 0.0.4
+
   '@aria-ui/core@0.0.20':
     resolution: {integrity: sha512-yZNB4zi5OgDpb6jiQbHjLiYCU0w/hviMDMzdYcdDtbth5jj/9uiQGhommakpHDkhBfGX13ODh6S/y8as5qcoog==}
 
+  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@41c1834143c488f8e662a7aef165eff07fefa9b2':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@41c1834143c488f8e662a7aef165eff07fefa9b2}
+    version: 0.0.20
+
   '@aria-ui/listbox@0.0.23':
     resolution: {integrity: sha512-/0aqYxJTIOMKxwtOgngecxBWxhUIcUg7xcq/60vq3x54z/SM07KrWQ8wmlaAlseuPa/FMVpK8bXoPuCi7xIdSA==}
+
+  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@41c1834143c488f8e662a7aef165eff07fefa9b2':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@41c1834143c488f8e662a7aef165eff07fefa9b2}
+    version: 0.0.23
 
   '@aria-ui/menu@0.0.18':
     resolution: {integrity: sha512-pHLjj2kdQIRPcOKIGqTE8OJ/utFg1AUkN/RKlS5oz07/CZ622NDIVei2OVKYLRDWhE296Ya2K8eoMEbD2j8cUA==}
@@ -1140,14 +1152,27 @@ packages:
   '@aria-ui/overlay@0.0.23':
     resolution: {integrity: sha512-NgJi95mJYZSLOaxjOHLJ46UgFoPdKkHZ7gl4L2L6AiztVPJhlZSzeibZGk1gfckG2qoN3QVCOR7SOk1qbBvhFA==}
 
+  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@41c1834143c488f8e662a7aef165eff07fefa9b2':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@41c1834143c488f8e662a7aef165eff07fefa9b2}
+    version: 0.0.23
+
   '@aria-ui/popover@0.0.26':
     resolution: {integrity: sha512-x4H3T2N2GOUEBYxlFg8xXWsCgmoBenW0f1xa+5RjTh6H7slw+OAdXtpQuJu3xraF7d0f1u7DEH9u/1DD5pl+Cw==}
+
+  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@41c1834143c488f8e662a7aef165eff07fefa9b2':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@41c1834143c488f8e662a7aef165eff07fefa9b2}
+    version: 0.0.26
 
   '@aria-ui/presence@0.0.18':
     resolution: {integrity: sha512-k2D00F2TG/3BFpOMoNgEVZpjyrUtM8Q5V7KfO73XqbRuFNWMduSvljeR8WGftiDSctvRmjwUDelnnx9tJaat0Q==}
 
-  '@aria-ui/select@0.0.29':
-    resolution: {integrity: sha512-WwodHgRxd5i6yg9bt52ai5X9naShxtRkP1R2TOX0TmURm1Z85Zh+lh/2LlZ2Iti4Zdm1tmD6rvYLtBKXN5YT2A==}
+  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@41c1834143c488f8e662a7aef165eff07fefa9b2':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@41c1834143c488f8e662a7aef165eff07fefa9b2}
+    version: 0.0.18
+
+  '@aria-ui/select@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/select@182':
+    resolution: {tarball: https://pkg.pr.new/ocavue/aria-ui/@aria-ui/select@182}
+    version: 0.0.29
 
   '@aria-ui/tooltip@0.0.28':
     resolution: {integrity: sha512-yezYDg8qv22v2A542M9GYlcgfaivZC3jNn/aDBlBSi4fPZDBOBt5ngl9k7EvpcqNXMIFzpGxtlfrLBmKitG1bw==}
@@ -8188,6 +8213,8 @@ snapshots:
 
   '@aria-ui/collection@0.0.4': {}
 
+  '@aria-ui/collection@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@41c1834143c488f8e662a7aef165eff07fefa9b2': {}
+
   '@aria-ui/core@0.0.20':
     dependencies:
       '@ariatype/aria-attributes': 1.0.1
@@ -8198,11 +8225,28 @@ snapshots:
       just-map-values: 3.2.0
       server-dom-shim: 1.0.2
 
+  '@aria-ui/core@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@41c1834143c488f8e662a7aef165eff07fefa9b2':
+    dependencies:
+      '@ariatype/aria-attributes': 1.0.1
+      '@ariatype/aria-roles': 1.0.1
+      '@preact/signals-core': 1.8.0
+      '@zag-js/dom-query': 0.80.0
+      just-kebab-case: 4.2.0
+      just-map-values: 3.2.0
+      server-dom-shim: 1.0.2
+
   '@aria-ui/listbox@0.0.23':
     dependencies:
       '@aria-ui/collection': 0.0.4
       '@aria-ui/core': 0.0.20
       '@aria-ui/presence': 0.0.18
+      immer: 10.1.1
+
+  '@aria-ui/listbox@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@41c1834143c488f8e662a7aef165eff07fefa9b2':
+    dependencies:
+      '@aria-ui/collection': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/collection@41c1834143c488f8e662a7aef165eff07fefa9b2
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@41c1834143c488f8e662a7aef165eff07fefa9b2
+      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@41c1834143c488f8e662a7aef165eff07fefa9b2
       immer: 10.1.1
 
   '@aria-ui/menu@0.0.18':
@@ -8221,6 +8265,13 @@ snapshots:
       '@floating-ui/utils': 0.2.9
       '@zag-js/dom-query': 0.79.3
 
+  '@aria-ui/overlay@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@41c1834143c488f8e662a7aef165eff07fefa9b2':
+    dependencies:
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@41c1834143c488f8e662a7aef165eff07fefa9b2
+      '@floating-ui/dom': 1.6.13
+      '@floating-ui/utils': 0.2.9
+      '@zag-js/dom-query': 0.80.0
+
   '@aria-ui/popover@0.0.26':
     dependencies:
       '@aria-ui/core': 0.0.20
@@ -8229,16 +8280,29 @@ snapshots:
       '@zag-js/dismissable': 0.80.0
       '@zag-js/dom-query': 0.80.0
 
+  '@aria-ui/popover@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@41c1834143c488f8e662a7aef165eff07fefa9b2':
+    dependencies:
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@41c1834143c488f8e662a7aef165eff07fefa9b2
+      '@aria-ui/overlay': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/overlay@41c1834143c488f8e662a7aef165eff07fefa9b2
+      '@aria-ui/presence': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@41c1834143c488f8e662a7aef165eff07fefa9b2
+      '@zag-js/dismissable': 0.80.0
+      '@zag-js/dom-query': 0.80.0
+
   '@aria-ui/presence@0.0.18':
     dependencies:
       '@aria-ui/core': 0.0.20
       '@zag-js/dom-query': 0.80.0
 
-  '@aria-ui/select@0.0.29':
+  '@aria-ui/presence@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/presence@41c1834143c488f8e662a7aef165eff07fefa9b2':
     dependencies:
-      '@aria-ui/core': 0.0.20
-      '@aria-ui/listbox': 0.0.23
-      '@aria-ui/popover': 0.0.26
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@41c1834143c488f8e662a7aef165eff07fefa9b2
+      '@zag-js/dom-query': 0.80.0
+
+  '@aria-ui/select@https://pkg.pr.new/ocavue/aria-ui/@aria-ui/select@182':
+    dependencies:
+      '@aria-ui/core': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/core@41c1834143c488f8e662a7aef165eff07fefa9b2
+      '@aria-ui/listbox': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/listbox@41c1834143c488f8e662a7aef165eff07fefa9b2
+      '@aria-ui/popover': https://pkg.pr.new/ocavue/aria-ui/@aria-ui/popover@41c1834143c488f8e662a7aef165eff07fefa9b2
       just-omit: 2.2.0
 
   '@aria-ui/tooltip@0.0.28':

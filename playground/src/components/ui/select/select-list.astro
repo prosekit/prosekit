@@ -1,0 +1,9 @@
+---
+import type { SelectListProps } from '@aria-ui/select'
+
+interface Props extends Partial<SelectListProps> {}
+---
+
+<aria-ui-select-list class="outline-none flex flex-col gap-.5" {...Astro.props}>
+  <slot />
+</aria-ui-select-list>

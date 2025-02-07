@@ -14,7 +14,7 @@
     "test": "playwright test"
   },
   "devDependencies": {
-    "@aria-ui/select": "^0.0.29",
+    "@aria-ui/select": "https://pkg.pr.new/ocavue/aria-ui/@aria-ui/select@182",
     "@astrojs/preact": "^4.0.1",
     "@astrojs/react": "^4.1.4",
     "@astrojs/solid-js": "^5.0.2",

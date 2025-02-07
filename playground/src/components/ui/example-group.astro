@@ -1,5 +1,9 @@
 ---
-import SelectItem from './select-item.astro'
+import {
+  SelectContent,
+  SelectItem,
+  SelectList,
+} from './select'
 
 interface Props {
   name: string
@@ -25,26 +29,22 @@ import '@aria-ui/select'
 <div>
   <h1>EXAMPLE GROUP</h1>
   <div>
-    <aria-ui-select-root>
+    <aria-ui-select-root class="not-content" select="react">
       <aria-ui-select-trigger
-        className="flex h-9 w-full items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1"
+        className="flex h-9 w-30 items-center justify-between whitespace-nowrap rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1"
         ,
       >
-        <aria-ui-select-value placeholder="Select an option..."></aria-ui-select-value>
+        <aria-ui-select-value placeholder="Select a Framework...">React</aria-ui-select-value>
       </aria-ui-select-trigger>
-      <aria-ui-select-content
-        className="relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2"
-        ,
-      >
-        <aria-ui-select-list>
-          <SelectItem value="option1">aa Option 1</SelectItem>
-          <SelectItem value="option2">Option 2</SelectItem>
-          <SelectItem value="option3">Option 3</SelectItem>
-          <SelectItem value="option11">Option 11</SelectItem>
-          <SelectItem value="option12">Option 12</SelectItem>
-          <SelectItem value="option13">Option 13</SelectItem>
-        </aria-ui-select-list>
-      </aria-ui-select-content>
+      <SelectContent>
+        <SelectList value="react">
+          <SelectItem value="react">React</SelectItem>
+          <SelectItem value="vue">Vue</SelectItem>
+          <SelectItem value="solid">Solid</SelectItem>
+          <SelectItem value="preact">Preact</SelectItem>
+          <SelectItem value="svelte">Svelte</SelectItem>
+        </SelectList>
+      </SelectContent>
     </aria-ui-select-root>
   </div>
   {

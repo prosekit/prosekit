@@ -29,8 +29,6 @@ interface Props {
 
 const props: Props = $props()
 
-console.log('props', props)
-
 const { frameworks, story } = props
 
 let framework = $state(frameworks[0])

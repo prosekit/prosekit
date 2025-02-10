@@ -57,10 +57,6 @@ jobs:
   test-e2e:
     runs-on: ubuntu-latest
 
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-
     strategy:
       fail-fast: false
       matrix:
@@ -73,9 +69,6 @@ jobs:
 
       - name: Install Playwright
         run: pnpm run test:install
-
-      - name: Build website
-        run: pnpm run build:website
 
       - name: Run e2e tests
         run: pnpm run test:e2e --shard="${{ matrix.shard }}/3"

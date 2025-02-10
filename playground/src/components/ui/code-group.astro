@@ -6,9 +6,10 @@ type CodeProps = ComponentProps<typeof Code>
 
 interface Props {
   codes: CodeProps[]
+  border?: boolean
 }
 
-const { codes } = Astro.props
+const { codes, border = true } = Astro.props
 
 const titles: string[] = codes.map((code): string => {
   let title = code.title
@@ -28,7 +29,7 @@ import {
 } from '@astrojs/starlight/components'
 ---
 
-<div class="code-group">
+<div class:list={['code-group', border ? 'code-group-border' : undefined]}>
   <slot />
   <Tabs>
     {
@@ -43,11 +44,14 @@ import {
 
 <style is:global>
   .code-group {
-    border-color: var(--sl-color-gray-5);
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 0.5rem;
     overflow: hidden;
+
+    &.code-group-border {
+      border-color: var(--sl-color-gray-5);
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 0.5rem;
+    }
 
     .tablist-wrapper {
       scrollbar-width: none;
@@ -59,14 +63,16 @@ import {
       [role='tab'] {
         font-family: var(--sl-font-system-mono);
         padding-top: 0.5rem;
-        padding-bottom: 0.25rem; 
-        padding-left: 0.75rem;  
-        padding-right: 0.75rem; 
-        font-size: 0.875rem; 
+        padding-bottom: 0.25rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        font-size: 0.875rem;
 
         &:not([aria-selected='true']) {
           border-bottom-color: transparent;
         }
+
+        white-space: nowrap;
       }
     }
 

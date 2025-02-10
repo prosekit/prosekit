@@ -1,16 +1,16 @@
----
+<script lang="ts">
+import '@aria-ui/select'
+
 import type { SelectItemProps } from '@aria-ui/select'
 
 interface Props extends SelectItemProps {}
----
 
-<script>
-import '@aria-ui/select'
+const props: Props = $props()
 </script>
 
 <aria-ui-select-item
   class="relative flex w-full cursor-default select-none items-center rounded py-1.5 px-2 text-sm outline-none! data-[focused]:bg-accent data-[focused]:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 border-0 group"
-  {...Astro.props}
+  {...props}
 >
   <span><slot /></span>
   <span class="group-data-[selected]:block hidden ml-auto i-lucide-check size-4"> </span>

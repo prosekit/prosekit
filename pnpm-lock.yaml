@@ -818,6 +818,9 @@ importers:
       '@astrojs/vue':
         specifier: ^5.0.4
         version: 5.0.4(@types/node@20.17.9)(astro@5.1.6(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.6.1))(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(vue@3.5.13(typescript@5.7.3))(yaml@2.6.1)
+      '@iconify-json/logos':
+        specifier: ^1.2.4
+        version: 1.2.4
       '@iconify-json/lucide':
         specifier: ^1.2.22
         version: 1.2.22
@@ -855,8 +858,8 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0(astro@5.1.6(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.6.1))
       bits-ui:
-        specifier: ^1.0.0-next.86
-        version: 1.0.0-next.86(svelte@5.19.7)
+        specifier: ^1.0.0-next.91
+        version: 1.0.0-next.91(svelte@5.19.7)
       lit:
         specifier: ^3.2.1
         version: 3.2.1
@@ -906,13 +909,13 @@ importers:
         specifier: ^1.9.4
         version: 1.9.4
       svelte:
-        specifier: ^5.19.7
+        specifier: ^5.17.4
         version: 5.19.7
       svelte-check:
         specifier: ^4.1.4
         version: 4.1.4(picomatch@4.0.2)(svelte@5.19.7)(typescript@5.7.3)
       typescript:
-        specifier: ~5.7.3
+        specifier: ~5.7.2
         version: 5.7.3
       unified:
         specifier: ^11.0.5
@@ -3844,8 +3847,8 @@ packages:
   birpc@0.2.19:
     resolution: {integrity: sha512-5WeXXAvTmitV1RqJFppT5QtUiz2p1mRSYU000Jkft5ZUCLJIk4uQriYNO50HknxKwM6jd8utNc66K1qGIwwWBQ==}
 
-  bits-ui@1.0.0-next.86:
-    resolution: {integrity: sha512-C2sTO3sasGoRhoMG2CUUsGfOhAoRL5Jc4pVB6AxoKQ+FBmX/uG9K1tW44eT/801iMoH+QeaH6fNCnoshpZtS8A==}
+  bits-ui@1.0.0-next.91:
+    resolution: {integrity: sha512-TEsucylfPkWS2yoj7g4JbqJ9+TcqdICv11MvqysN+pAGimNcbDnG3Fu6d+AQbsKZaNUkf/nx2A+6WYTNctlAdg==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
     peerDependencies:
       svelte: ^5.11.0
@@ -11566,7 +11569,7 @@ snapshots:
 
   birpc@0.2.19: {}
 
-  bits-ui@1.0.0-next.86(svelte@5.19.7):
+  bits-ui@1.0.0-next.91(svelte@5.19.7):
     dependencies:
       '@floating-ui/core': 1.6.8
       '@floating-ui/dom': 1.6.13
@@ -11575,6 +11578,7 @@ snapshots:
       runed: 0.23.2(svelte@5.19.7)
       svelte: 5.19.7
       svelte-toolbelt: 0.7.1(svelte@5.19.7)
+      tabbable: 6.2.0
 
   bl@4.1.0:
     dependencies:

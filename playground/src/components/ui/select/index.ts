@@ -1,7 +1,7 @@
-import SelectContent from './select-content.astro'
-import SelectItem from './select-item.astro'
-import SelectList from './select-list.astro'
-import SelectTrigger from './select-trigger.astro'
+import SelectContent from './select-content.svelte'
+import SelectItem from './select-item.svelte'
+import SelectList from './select-list.svelte'
+import SelectTrigger from './select-trigger.svelte'
 
 export {
   SelectContent,

@@ -57,6 +57,10 @@ jobs:
   test-e2e:
     runs-on: ubuntu-latest
 
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+
     strategy:
       fail-fast: false
       matrix:

@@ -3,6 +3,7 @@ import type { Snippet } from 'svelte'
 import DropdownMenu from './dropdown-menu.svelte'
 import FrameworkSelect from './framework-select.svelte'
 import ShowCodeSwitch from './toggle-code-button.svelte'
+import { useFramework } from './use-framework.svelte'
 
 interface Props {
   'showCode'?: boolean
@@ -30,8 +31,9 @@ interface Props {
 const props: Props = $props()
 
 const { frameworks, story } = props
+const frameworkRef = useFramework(frameworks)
+const framework = $derived(frameworkRef.current)
 
-let framework = $state(frameworks[0])
 let showCode = $state(props.showCode ?? true)
 </script>
 
@@ -46,7 +48,7 @@ let showCode = $state(props.showCode ?? true)
       <FrameworkSelect
         {frameworks}
         {framework}
-        onFrameworkChange={(f) => (framework = f)}
+        onFrameworkChange={f => frameworkRef.current = f}
       />
       <span class="flex-1"></span>
       <ShowCodeSwitch

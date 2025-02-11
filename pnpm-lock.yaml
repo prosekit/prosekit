@@ -679,7 +679,7 @@ importers:
         version: link:../themes
       unocss-preset-animations:
         specifier: ^1.1.0
-        version: 1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.11(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.3)))
+        version: 1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.11(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1)))
     devDependencies:
       '@types/node':
         specifier: ^20.17.9
@@ -902,6 +902,9 @@ importers:
       remark-stringify:
         specifier: ^11.0.0
         version: 11.0.0
+      runed:
+        specifier: ^0.23.3
+        version: 0.23.3(svelte@5.19.7)
       sharp:
         specifier: ^0.32.5
         version: 0.32.6
@@ -6794,8 +6797,8 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
-  runed@0.23.2:
-    resolution: {integrity: sha512-AhHCb5/B+YQW6ar1pzhGQOQy+byfjCH63ofuhrexSWwQKhC0EbQ60Z/wMYwETLo3ZubhwlNryxBt0seOMOrVFQ==}
+  runed@0.23.3:
+    resolution: {integrity: sha512-qmL6JOvI9fg2XrSI9eP8bVIaAyk1ztVZsoj37hTs4BSuOOyeLkrIPI16mwarXFYbxSfyJGCwAWgfpSq+ehQmgg==}
     peerDependencies:
       svelte: ^5.7.0
 
@@ -11575,7 +11578,7 @@ snapshots:
       '@floating-ui/dom': 1.6.13
       '@internationalized/date': 3.6.0
       esm-env: 1.2.1
-      runed: 0.23.2(svelte@5.19.7)
+      runed: 0.23.3(svelte@5.19.7)
       svelte: 5.19.7
       svelte-toolbelt: 0.7.1(svelte@5.19.7)
       tabbable: 6.2.0
@@ -15288,7 +15291,7 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  runed@0.23.2(svelte@5.19.7):
+  runed@0.23.3(svelte@5.19.7):
     dependencies:
       esm-env: 1.2.1
       svelte: 5.19.7
@@ -15754,7 +15757,7 @@ snapshots:
   svelte-toolbelt@0.7.1(svelte@5.19.7):
     dependencies:
       clsx: 2.1.1
-      runed: 0.23.2(svelte@5.19.7)
+      runed: 0.23.3(svelte@5.19.7)
       style-to-object: 1.0.8
       svelte: 5.19.7
 
@@ -16182,7 +16185,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.11(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.3))):
+  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.11(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))):
     dependencies:
       '@unocss/preset-wind': 0.65.1
       unocss: 0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.11(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.3))

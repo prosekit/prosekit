@@ -23,6 +23,7 @@ temp
 .temp
 website/.vitepress/cache
 website/references
+playground/src/content/docs/references
 tsup.config.bundled*
 vite.config.ts.timestamp*
 .svelte-kit

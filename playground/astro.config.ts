@@ -19,8 +19,8 @@ const sidebar: Sidebar = [
     autogenerate: { directory: 'getting-started' },
   },
   {
-    label: 'Reference',
-    autogenerate: { directory: 'reference' },
+    label: 'References',
+    autogenerate: { directory: 'references' },
   },
 ]
 

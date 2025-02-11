@@ -1,0 +1,67 @@
+set -e
+
+cd "$(dirname $0)"
+WEBSITE_DIR=$(pwd)
+
+cd "$WEBSITE_DIR/.."
+ROOT=$(pwd)
+
+cd "$ROOT/packages/prosekit"
+./node_modules/.bin/typedoc
+
+cd "$WEBSITE_DIR"
+cd src/content/docs
+
+rm -rf references 
+mv "$ROOT/packages/prosekit/.temp/typedoc/prosekit" references
+
+# Find the substring "__namedParameters" and throw an error if found
+if grep -r "__namedParameters" references; then
+  echo 'Found "__namedParameters" in generated markdown files. You probably forgot to add "@param" JSDoc to the function.'
+  exit 1
+fi
+
+# For each .md file in references/
+find references -name "*.md" | while read file; do
+  # Replace the first h1 line with a frontmatter block. For example:
+  # 
+  # Before:
+  #
+  # ```md
+  # # foo/bar/baz
+  #
+  # content
+  # ```
+  #
+  # After:
+  #
+  # ```md
+  # ---
+  # title: foo/bar/baz
+  # sidebar:
+  #   label: baz
+  # ---
+  #
+  # content
+  # ```
+
+  # Get the title from the first h1 line
+  title=$(head -n 1 "$file" | sed 's/^# //')
+  # Get the label from the title
+  label=$(echo "$title" | sed 's/\//\n/g' | tail -n 1)
+
+  # Create temporary file
+  temp_file=$(mktemp)
+  
+  # Write frontmatter and content to temp file
+  echo "---" > "$temp_file"
+  echo "title: $title" >> "$temp_file"
+  echo "sidebar:" >> "$temp_file"
+  echo "  label: $label" >> "$temp_file"
+  echo "---" >> "$temp_file"
+  echo >> "$temp_file"
+  tail -n +2 "$file" >> "$temp_file"
+  
+  # Replace original file with temp file
+  mv "$temp_file" "$file"
+done

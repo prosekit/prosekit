@@ -8,6 +8,7 @@ import starlight from '@prosekit/starlight-theme'
 import minifyHTML from 'astro-minify-html-swc'
 import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
+import rehypeSlugCustomId from 'rehype-slug-custom-id'
 import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
 
@@ -57,5 +58,10 @@ export default defineConfig({
       // This avoids the need for full-page reloads when opening a page.
       entries: ['src/**/*.{ts,tsx,vue,svelte}'],
     },
+  },
+  markdown: {
+    rehypePlugins: [
+      [rehypeSlugCustomId, { enableCustomId: true }],
+    ],
   },
 })

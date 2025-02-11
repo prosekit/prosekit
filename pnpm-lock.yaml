@@ -679,7 +679,7 @@ importers:
         version: link:../themes
       unocss-preset-animations:
         specifier: ^1.1.0
-        version: 1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.11(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1)))
+        version: 1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.11(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.3)))
     devDependencies:
       '@types/node':
         specifier: ^20.17.9
@@ -893,6 +893,9 @@ importers:
       rehype-remark:
         specifier: ^10.0.0
         version: 10.0.0
+      rehype-slug-custom-id:
+        specifier: ^2.0.0
+        version: 2.0.0
       remark-html:
         specifier: ^16.0.1
         version: 16.0.1
@@ -4919,6 +4922,9 @@ packages:
   hast-util-has-property@3.0.0:
     resolution: {integrity: sha512-MNilsvEKLFpV604hwfhVStK0usFY/QmM5zX16bo7EjnAEGofr5YyI37kzopBlZJkHD4t887i+q/C8/tr5Q94cA==}
 
+  hast-util-heading-rank@3.0.0:
+    resolution: {integrity: sha512-EJKb8oMUXVHcWZTDepnr+WNbfnXKFNf9duMesmr4S8SXTJBJ9M4Yok08pu9vxdJwdlGRhVumk9mEhkEvKGifwA==}
+
   hast-util-is-body-ok-link@3.0.1:
     resolution: {integrity: sha512-0qpnzOBLztXHbHQenVB8uNuxTnm/QBFUOmdOSsEn7GnBtyY07+ENTWVFBAnXd/zEgd9/SUG3lRY7hSIBWRgGpQ==}
 
@@ -6701,6 +6707,9 @@ packages:
 
   rehype-remark@10.0.0:
     resolution: {integrity: sha512-+aDXY/icqMFOafJQomVjxe3BAP7aR3lIsQ3GV6VIwpbCD2nvNFOXjGvotMe5p0Ny+Gt6L13DhEf/FjOOpTuUbQ==}
+
+  rehype-slug-custom-id@2.0.0:
+    resolution: {integrity: sha512-3ED9HjExIZrC6WiC6V/9SnSuvGMdDb3dYM0WqSpIrLZDdEuSYlkr3iPp43urbgl7xz0Qy/7ZVj64sZbCr046bw==}
 
   rehype-stringify@10.0.1:
     resolution: {integrity: sha512-k9ecfXHmIPuFVI61B9DeLPN0qFHfawM6RsuX48hoqlaKSF61RskNjSm1lI8PhBEM0MRdLxVVm4WmTqJQccH9mA==}
@@ -12887,6 +12896,10 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
 
+  hast-util-heading-rank@3.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+
   hast-util-is-body-ok-link@3.0.1:
     dependencies:
       '@types/hast': 3.0.4
@@ -15127,6 +15140,17 @@ snapshots:
       unified: 11.0.5
       vfile: 6.0.3
 
+  rehype-slug-custom-id@2.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+      github-slugger: 2.0.0
+      hast-util-has-property: 3.0.0
+      hast-util-heading-rank: 3.0.0
+      hast-util-to-string: 3.0.1
+      lodash: 4.17.21
+      unified: 11.0.5
+      unist-util-visit: 5.0.0
+
   rehype-stringify@10.0.1:
     dependencies:
       '@types/hast': 3.0.4
@@ -16185,7 +16209,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.11(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))):
+  unocss-preset-animations@1.1.0(@unocss/preset-wind@0.65.1)(unocss@0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.11(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.3))):
     dependencies:
       '@unocss/preset-wind': 0.65.1
       unocss: 0.65.1(postcss@8.5.0)(rollup@4.28.1)(vite@6.0.11(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))(vue@3.5.13(typescript@5.7.3))

@@ -60,6 +60,16 @@ const preflight = css`
     --sl-color-accent: ${colors.gray[600]};
     --sl-color-accent-high: ${colors.gray[200]};
   }
+
+  /* Style the Markdown heading links. */
+  .sl-markdown-content :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) > a {
+    color: var(--sl-color-white);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `
 
 export default defineConfig({

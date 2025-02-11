@@ -35,6 +35,7 @@
     "@unocss/reset": "^0.65.1",
     "astro": "^5.1.6",
     "astro-minify-html-swc": "^0.1.5",
+    "astro-rehype-relative-markdown-links": "^0.18.1",
     "astrobook": "^0.7.0",
     "bits-ui": "^1.0.0-next.91",
     "lit": "^3.2.1",

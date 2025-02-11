@@ -6,6 +6,7 @@ import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
 import starlight from '@prosekit/starlight-theme'
 import minifyHTML from 'astro-minify-html-swc'
+import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -64,6 +65,7 @@ export default defineConfig({
     rehypePlugins: [
       [rehypeSlugCustomId, { enableCustomId: true }],
       [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+      [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
     ],
   },
 })

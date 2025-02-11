@@ -854,6 +854,9 @@ importers:
       astro-minify-html-swc:
         specifier: ^0.1.5
         version: 0.1.5
+      astro-rehype-relative-markdown-links:
+        specifier: ^0.18.1
+        version: 0.18.1(astro@5.1.6(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.6.1))
       astrobook:
         specifier: ^0.7.0
         version: 0.7.0(astro@5.1.6(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.6.1))
@@ -3751,6 +3754,11 @@ packages:
   astro-minify-html-swc@0.1.5:
     resolution: {integrity: sha512-4C3ouhBkU3nWTJTnN3QTGXTGyfWKTz+vljkBVW9Fa8eLl9wAEqbO4dL4eOH03LRMlqldP7ul6FgRMhKcPp3Iyw==}
 
+  astro-rehype-relative-markdown-links@0.18.1:
+    resolution: {integrity: sha512-PA2oLXs8+8CX+/cDEeHo4UJfMPKXazIJM8BgnQloR/vGXRnW3KjbLI3nqSoNVmq91YaFv2UHfHKoetEcfwieUw==}
+    peerDependencies:
+      astro: '>=2 <6'
+
   astro-theme-toggle@0.3.5:
     resolution: {integrity: sha512-ef5Cend7n4iel4u6mJRoilgYRxRkllWiK4DonssSesm6RPS+/RmXFOyMEOna3sB/Vmav0BXGEN18otdxPPwPeQ==}
 
@@ -3937,6 +3945,9 @@ packages:
 
   caniuse-lite@1.0.30001687:
     resolution: {integrity: sha512-0S/FDhf4ZiqrTUiQ39dKeUjYRjkv7lOZU1Dgif2rIqrTzX/1wV2hfKu9TOm1IHkdSijfLswxTFzl/cvir+SLSQ==}
+
+  catch-unknown@2.0.0:
+    resolution: {integrity: sha512-4ELowf+Fp6Qwv77ZvRDto9oJMsOalEk8IYvS5KsmIhRZQWbfArlIhIOONJtmCzOeeqpip6JzYqAYaNR9sIyLVQ==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -4640,6 +4651,10 @@ packages:
   expressive-code@0.40.0:
     resolution: {integrity: sha512-yBauWlZ6/G4S7WMfQdENbxpwr0qKHabu5w/uFLoTb3xvg2eo4ttk0aAy0IJTm/0+v12YaCG+Gt5Va0AEnTEXng==}
 
+  extend-shallow@2.0.1:
+    resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
+    engines: {node: '>=0.10.0'}
+
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
 
@@ -4877,6 +4892,10 @@ packages:
     resolution: {integrity: sha512-GGTKBX4SD7Wdb8mqeDLni2oaRGYQWjWHGKPQ24ZMnUtKfcsVoiv4uX8+LJr1K6U5VW2Lu1BwJnj7uiori0YtRw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
+  gray-matter@4.0.3:
+    resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==}
+    engines: {node: '>=6.0'}
+
   gzip-size@6.0.0:
     resolution: {integrity: sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==}
     engines: {node: '>=10'}
@@ -5095,6 +5114,10 @@ packages:
   iron-webcrypto@1.2.1:
     resolution: {integrity: sha512-feOM6FaSr6rEABp/eDfVseKyTMDt+KGpeB35SkVn9Tyn0CqvVsY3EwI0v5i8nMHyJnzCIQf7nsy3p41TPkJZhg==}
 
+  is-absolute-url@4.0.1:
+    resolution: {integrity: sha512-/51/TKE88Lmm7Gc4/8btclNXWS+g50wXhYJq8HWIBAGUBnoAdRu1aXeh364t/O7wXDAcTJDP8PNuNKWUDWie+A==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+
   is-alphabetical@2.0.1:
     resolution: {integrity: sha512-FWyyY60MeTNyeSRpkM2Iry0G9hpr7/9kD40mD/cGQEuilcZYS4okz8SN2Q6rLCJ8gbCt6fN+rC+6tMGS99LaxQ==}
 
@@ -5162,6 +5185,10 @@ packages:
     resolution: {integrity: sha512-eljcgEDlEns/7AXFosB5K/2nCM4P7FQPkGc/DWLy5rmFEWvZayGrik1d9/QIY5nJ4f9YsVvBkA6kJpHn9rISdQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
+
+  is-extendable@0.1.1:
+    resolution: {integrity: sha512-5BMULNob1vgFX6EjQw5izWDxrecWK9AM72rugNr0TFldMOi0fj6Jk+zeKIt0xGj4cEfQIJth4w3OKWOJ4f+AFw==}
+    engines: {node: '>=0.10.0'}
 
   is-extglob@2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
@@ -5430,6 +5457,10 @@ packages:
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
+
+  kind-of@6.0.3:
+    resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
+    engines: {node: '>=0.10.0'}
 
   kleur@3.0.3:
     resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
@@ -6850,6 +6881,10 @@ packages:
   search-insights@2.17.3:
     resolution: {integrity: sha512-RQPdCYTa8A68uM2jwxoY842xDhvx3E5LFL1LxvxCNMev4o5mLuokczhzjAgGwUZBAmOKZknArSxLKmXtIi2AxQ==}
 
+  section-matter@1.0.0:
+    resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
+    engines: {node: '>=4'}
+
   sembear@0.7.0:
     resolution: {integrity: sha512-XyLTEich2D02FODCkfdto3mB9DetWPLuTzr4tvoofe9SvyM27h4nQSbV3+iVcYQz94AFyKtqBv5pcZbj3k2hdA==}
 
@@ -7112,6 +7147,10 @@ packages:
   strip-ansi@7.1.0:
     resolution: {integrity: sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ==}
     engines: {node: '>=12'}
+
+  strip-bom-string@1.0.0:
+    resolution: {integrity: sha512-uCC2VHvQRYu+lMh4My/sFNmF2klFymLX1wHJeXnbEJERpV/ZsVuonzerjfrGpIGF7LBVa1O7i9kjiWvJiFck8g==}
+    engines: {node: '>=0.10.0'}
 
   strip-bom@3.0.0:
     resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==}
@@ -11395,6 +11434,20 @@ snapshots:
       '@swc/html': 1.10.11
       fast-glob: 3.3.3
 
+  astro-rehype-relative-markdown-links@0.18.1(astro@5.1.6(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.6.1)):
+    dependencies:
+      astro: 5.1.6(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.28.1)(tsx@4.19.2)(typescript@5.7.3)(yaml@2.6.1)
+      catch-unknown: 2.0.0
+      debug: 4.4.0
+      github-slugger: 2.0.0
+      gray-matter: 4.0.3
+      is-absolute-url: 4.0.1
+      unified: 11.0.5
+      unist-util-visit: 5.0.0
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - supports-color
+
   astro-theme-toggle@0.3.5: {}
 
   astro-theme-toggle@0.5.0: {}
@@ -11686,6 +11739,8 @@ snapshots:
   camelcase@8.0.0: {}
 
   caniuse-lite@1.0.30001687: {}
+
+  catch-unknown@2.0.0: {}
 
   ccount@2.0.1: {}
 
@@ -12586,6 +12641,10 @@ snapshots:
       '@expressive-code/plugin-shiki': 0.40.0
       '@expressive-code/plugin-text-markers': 0.40.0
 
+  extend-shallow@2.0.1:
+    dependencies:
+      is-extendable: 0.1.1
+
   extend@3.0.2: {}
 
   extendable-error@0.1.7: {}
@@ -12823,6 +12882,13 @@ snapshots:
   graphemer@1.4.0: {}
 
   graphql@16.9.0: {}
+
+  gray-matter@4.0.3:
+    dependencies:
+      js-yaml: 3.14.1
+      kind-of: 6.0.3
+      section-matter: 1.0.0
+      strip-bom-string: 1.0.0
 
   gzip-size@6.0.0:
     dependencies:
@@ -13171,6 +13237,8 @@ snapshots:
 
   iron-webcrypto@1.2.1: {}
 
+  is-absolute-url@4.0.1: {}
+
   is-alphabetical@2.0.1: {}
 
   is-alphanumerical@2.0.1:
@@ -13235,6 +13303,8 @@ snapshots:
   is-docker@2.2.1: {}
 
   is-docker@3.0.0: {}
+
+  is-extendable@0.1.1: {}
 
   is-extglob@2.1.1: {}
 
@@ -13474,6 +13544,8 @@ snapshots:
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
+
+  kind-of@6.0.3: {}
 
   kleur@3.0.3: {}
 
@@ -15371,6 +15443,11 @@ snapshots:
 
   search-insights@2.17.3: {}
 
+  section-matter@1.0.0:
+    dependencies:
+      extend-shallow: 2.0.1
+      kind-of: 6.0.3
+
   sembear@0.7.0:
     dependencies:
       semver: 7.6.3
@@ -15734,6 +15811,8 @@ snapshots:
   strip-ansi@7.1.0:
     dependencies:
       ansi-regex: 6.1.0
+
+  strip-bom-string@1.0.0: {}
 
   strip-bom@3.0.0: {}
 

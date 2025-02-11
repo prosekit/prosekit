@@ -29,7 +29,6 @@ const sidebar: Sidebar = [
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://prosekit.dev',
   integrations: [
     starlight({
       title: 'ProseKit',

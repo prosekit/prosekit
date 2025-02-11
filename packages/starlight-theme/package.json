@@ -10,8 +10,8 @@
   },
   "scripts": {},
   "dependencies": {
-    "@astrojs/starlight": "^0.31.0",
-    "astro": "^5.1.6",
+    "@astrojs/starlight": "^0.31.1",
+    "astro": "^5.2.5",
     "astro-theme-toggle": "^0.5.0",
     "deepmerge-ts": "^7.1.3"
   },

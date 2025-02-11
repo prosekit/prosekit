@@ -20,7 +20,8 @@ const defaultConfig: StarlightUserConfig = {
   expressiveCode: {
     // Replace the default themes with a custom set of bundled themes:
     // "dracula" (a dark theme) and "solarized-light"
-    themes: ['one-dark-pro', 'one-light', 'github-dark', 'github-light', 'github-dark-dimmed'],
+    themes: ['one-dark-pro', 'one-light'],
+    removeUnusedThemes: false,
     useStarlightUiThemeColors: false,
     styleOverrides: {
       borderRadius: '0.5rem',

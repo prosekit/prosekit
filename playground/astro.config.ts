@@ -8,6 +8,7 @@ import starlight from '@prosekit/starlight-theme'
 import minifyHTML from 'astro-minify-html-swc'
 import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlugCustomId from 'rehype-slug-custom-id'
 import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
@@ -62,6 +63,7 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [
       [rehypeSlugCustomId, { enableCustomId: true }],
+      [rehypeAutolinkHeadings, { behavior: 'wrap' }],
     ],
   },
 })

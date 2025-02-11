@@ -46,6 +46,7 @@
     "prosekit": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "rehype-autolink-headings": "^7.1.0",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.0",
     "rehype-slug-custom-id": "^2.0.0",

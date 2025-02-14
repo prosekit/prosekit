@@ -17,7 +17,7 @@ import type { CreateProps } from '../create-props'
 /**
  * Props for the {@link BlockHandleAdd} component.
  */
-export type BlockHandleAddProps = Partial<CreateProps<Props, Events>>
+export interface BlockHandleAddProps extends Partial<CreateProps<Props, Events>> {}
  
 export const BlockHandleAdd: ForwardRefExoticComponent<
   Partial<BlockHandleAddProps> &

@@ -17,7 +17,7 @@ import type { CreateProps } from '../create-props'
 /**
  * Props for the {@link AutocompleteEmpty} component.
  */
-export type AutocompleteEmptyProps = Partial<CreateProps<Props, Events>>
+export interface AutocompleteEmptyProps extends Partial<CreateProps<Props, Events>> {}
  
 export const AutocompleteEmpty: ForwardRefExoticComponent<
   Partial<AutocompleteEmptyProps> &

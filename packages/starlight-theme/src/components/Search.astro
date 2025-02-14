@@ -7,6 +7,14 @@ import Default from '@astrojs/starlight/components/Search.astro'
 <Default {...Astro.props} />
 
 <style is:global>
+  ::backdrop {
+    --sl-color-backdrop-overlay: hsl(0 0 0% / 0.9);
+  }
+
+  [data-theme='light'] ::backdrop {
+    --sl-color-backdrop-overlay: hsl(0 0 100% / 0.9);
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     site-search {
       & dialog,
@@ -16,7 +24,7 @@ import Default from '@astrojs/starlight/components/Search.astro'
           overlay 300ms allow-discrete;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        will-change: transform, opacity, backdrop-filter;
+        will-change: transform, opacity, backdrop-filter, background-color;
       }
 
       & dialog {
@@ -31,12 +39,15 @@ import Default from '@astrojs/starlight/components/Search.astro'
       }
 
       & dialog::backdrop {
-        animation-duration: 300ms;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+
+        animation-duration: 150ms;
         animation-name: sl-ocavue-search-backdrop-fade-out;
       }
 
       & dialog[open]::backdrop {
-        animation-duration: 300ms;
+        animation-duration: 50ms;
         animation-name: sl-ocavue-search-backdrop-fade-in;
       }
     }
@@ -44,22 +55,18 @@ import Default from '@astrojs/starlight/components/Search.astro'
 
   @keyframes sl-ocavue-search-backdrop-fade-in {
     from {
-      backdrop-filter: initial;
       background-color: transparent;
     }
     to {
-      backdrop-filter: blur(0.25rem);
       background-color: var(--sl-color-backdrop-overlay);
     }
   }
 
   @keyframes sl-ocavue-search-backdrop-fade-out {
     from {
-      backdrop-filter: blur(0.25rem);
       background-color: var(--sl-color-backdrop-overlay);
     }
     to {
-      backdrop-filter: initial;
       background-color: transparent;
     }
   }

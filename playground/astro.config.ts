@@ -23,7 +23,7 @@ const sidebar: Sidebar = [
   },
   {
     label: 'References',
-    autogenerate: { directory: 'references' },
+    autogenerate: { directory: 'references', collapsed: true },
   },
 ]
 

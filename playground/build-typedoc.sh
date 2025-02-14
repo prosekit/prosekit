@@ -13,7 +13,7 @@ cd "$WEBSITE_DIR"
 cd src/content/docs
 
 rm -rf references 
-mv "$ROOT/packages/prosekit/.temp/typedoc/prosekit" references
+cp -r "$ROOT/packages/prosekit/.temp/typedoc/prosekit" references
 
 # Find the substring "__namedParameters" and throw an error if found
 if grep -r "__namedParameters" references; then
@@ -45,6 +45,12 @@ find references -name "*.md" | while read file; do
   # content
   # ```
 
+  # If the file only contains one line, remove this file.
+  if [ $(cat "$file" | egrep '\S+' | wc -l) -le 1 ]; then
+    rm "$file"
+    continue
+  fi
+
   # Get the title from the first h1 line
   title=$(head -n 1 "$file" | sed 's/^# //')
   # Get the label from the title
@@ -65,3 +71,12 @@ find references -name "*.md" | while read file; do
   # Replace original file with temp file
   mv "$temp_file" "$file"
 done
+
+
+cd "$WEBSITE_DIR"
+cd src/content
+
+# Copy all files in references/ to docs/references/
+mkdir -p docs/references
+rsync -av references/* docs/references/
+

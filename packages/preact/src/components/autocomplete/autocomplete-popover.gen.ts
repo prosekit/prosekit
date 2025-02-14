@@ -17,7 +17,7 @@ import type { CreateProps } from '../create-props'
 /**
  * Props for the {@link AutocompletePopover} component.
  */
-export type AutocompletePopoverProps = Partial<CreateProps<Props, Events>>
+export interface AutocompletePopoverProps extends Partial<CreateProps<Props, Events>> {}
  
 export const AutocompletePopover: ForwardRefExoticComponent<
   Partial<AutocompletePopoverProps> &

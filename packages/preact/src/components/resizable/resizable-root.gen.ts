@@ -17,7 +17,7 @@ import type { CreateProps } from '../create-props'
 /**
  * Props for the {@link ResizableRoot} component.
  */
-export type ResizableRootProps = Partial<CreateProps<Props, Events>>
+export interface ResizableRootProps extends Partial<CreateProps<Props, Events>> {}
  
 export const ResizableRoot: ForwardRefExoticComponent<
   Partial<ResizableRootProps> &

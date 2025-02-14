@@ -29,7 +29,6 @@
     "**/node_modules/prosemirror-history/**",
     "**/node_modules/prosemirror-inputrules/**",
     "**/node_modules/prosemirror-transform/**",
-    "**/node_modules/prosemirror-view/**",
     "**/node_modules/prosemirror-flat-list/**",
     "**/node_modules/typescript/**",
     "**/node_modules/loro-prosemirror/**",

@@ -1501,7 +1501,7 @@ causes some commands to behave differently.
 <dd>
 
 The content expression for this node, as described in the [schema
-guide](/docs/guide/#schema.content_expressions). When not given,
+guide](https://prosemirror.net/docs/guide/#schema.content_expressions). When not given,
 the node does not allow any content.
 
 </dd>

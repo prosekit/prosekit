@@ -14,7 +14,6 @@ const { path } = useRoute()
 ::: code-group
 
 <<< @/../playground/src/examples/react/minimal/editor.tsx
-<<< @/../playground/src/examples/react/minimal/extension.ts
 
 :::
 
@@ -25,7 +24,6 @@ const { path } = useRoute()
 ::: code-group
 
 <<< @/../playground/src/examples/vue/minimal/editor.vue
-<<< @/../playground/src/examples/vue/minimal/extension.ts
 
 :::
 

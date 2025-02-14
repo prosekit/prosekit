@@ -1,0 +1,13 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index 90f41e88564db33529332770d94dfc89ce6eb08e..7efdc71599b5cdc6ad0edc3d78ab445208635a07 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -101,7 +101,7 @@ A mapping represents a pipeline of zero or more [step
+ maps](https://prosemirror.net/docs/ref/#transform.StepMap). It has special provisions for losslessly
+ handling mapping positions through a series of steps in which some
+ steps are inverted versions of earlier steps. (This comes up when
+-‘[rebasing](/docs/guide/#transform.rebasing)’ steps for
++‘[rebasing](https://prosemirror.net/docs/guide/#transform.rebasing)’ steps for
+ collaboration or history management.)
+ */
+ declare class Mapping implements Mappable {

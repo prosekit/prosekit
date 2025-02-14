@@ -1,0 +1,14 @@
+---
+import Default from '@astrojs/starlight/components/Hero.astro'
+import type { Props } from '@astrojs/starlight/props'
+import Landing from '../ui/landing.astro'
+
+const slug = Astro.props.entry.slug
+const isLanding = slug === ''
+---
+
+{
+  isLanding
+    ? <Landing />
+    : <Default {...Astro.props}><slot /></Default>
+}

@@ -78,6 +78,9 @@ export default defineConfig({
     command: 'pnpm -w run preview:playground',
     url: 'http://localhost:4321/astrobook/',
     reuseExistingServer: !process.env.CI,
+    stdout: 'pipe',
+    stderr: 'pipe',
+    timeout: 300_000,
   },
 
   snapshotPathTemplate: '{snapshotDir}/{testFileDir}/{testFileName}.snapshots/{arg}{ext}',

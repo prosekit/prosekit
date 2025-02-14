@@ -1,0 +1,12 @@
+---
+import { LandingEditorClient } from './landing-editor-client'
+import LandingEditorServer from './landing-editor-server.astro'
+---
+
+<div class="h-[400px]">
+  <LandingEditorClient client:only="react">
+    <Fragment slot="fallback">
+      <LandingEditorServer />
+    </Fragment>
+  </LandingEditorClient>
+</div>

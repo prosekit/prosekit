@@ -1,0 +1,21 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro'
+
+import Demo from '../../components/ui/demo/demo.astro'
+import {
+  exampleSidebar,
+  stories,
+} from '../../example-data'
+
+export function getStaticPaths() {
+  return stories.map((story) => ({
+    params: { story },
+  }))
+}
+
+const story = Astro.params.story
+---
+
+<StarlightPage frontmatter={{ title: 'Example: ' + story, tableOfContents: false, pagefind: false }} sidebar={exampleSidebar}>
+  <Demo story={story} />
+</StarlightPage>

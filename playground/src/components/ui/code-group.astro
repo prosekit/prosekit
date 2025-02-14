@@ -1,0 +1,91 @@
+---
+import { Code } from '@astrojs/starlight/components'
+import type { ComponentProps } from 'astro/types'
+
+type CodeProps = ComponentProps<typeof Code>
+
+interface Props {
+  codes: CodeProps[]
+  border?: boolean
+}
+
+const { codes, border = true } = Astro.props
+
+const titles: string[] = codes.map((code): string => {
+  let title = code.title
+  if (!title) {
+    throw new Error('Code block title is required')
+  }
+  return title
+})
+
+if (new Set(titles).size !== titles.length) {
+  throw new Error('Code block titles must be unique')
+}
+
+import {
+  TabItem,
+  Tabs,
+} from '@astrojs/starlight/components'
+---
+
+<div class:list={['code-group', border ? 'code-group-border' : undefined]}>
+  <slot />
+  <Tabs>
+    {
+      codes.map((code) => (
+        <TabItem label={code.title || ''}>
+          <Code {...{ ...code, title: undefined }} />
+        </TabItem>
+      ))
+    }
+  </Tabs>
+</div>
+
+<style is:global>
+  .code-group {
+    overflow: hidden;
+
+    &.code-group-border {
+      border-color: var(--sl-color-gray-5);
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 0.5rem;
+    }
+
+    .tablist-wrapper {
+      scrollbar-width: none;
+
+      [role='tablist'] {
+        border-bottom-color: transparent;
+      }
+
+      [role='tab'] {
+        font-family: var(--sl-font-system-mono);
+        padding-top: 0.5rem;
+        padding-bottom: 0.25rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        font-size: 0.875rem;
+
+        &:not([aria-selected='true']) {
+          border-bottom-color: transparent;
+        }
+
+        white-space: nowrap;
+      }
+    }
+
+    div[role='tabpanel'] {
+      margin: 0;
+    }
+
+    div[role='tabpanel'] pre {
+      border-color: transparent;
+    }
+
+    .expressive-code pre {
+      border-radius: 0;
+    }
+  }
+</style>

@@ -1,0 +1,36 @@
+---
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import CodeGroup from '../code-group.astro'
+
+interface Props {
+  example: {
+    story: string
+    framework: string
+    files: {
+      path: string
+      hidden: boolean
+    }[]
+  }
+}
+
+const { example }: Props = Astro.props
+
+const codes: Array<{
+  code: string
+  title: string
+  lang: string
+}> = []
+
+for (const file of example.files) {
+  const filePath = path.join(process.cwd(), 'src', 'examples', example.framework, example.story, file.path)
+  const fileContent = await fs.readFile(filePath, 'utf-8')
+  codes.push({
+    title: file.path,
+    code: fileContent,
+    lang: file.path.split('.').pop() || '',
+  })
+}
+---
+
+<CodeGroup codes={codes} border={false} />

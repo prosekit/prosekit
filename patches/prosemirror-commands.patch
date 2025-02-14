@@ -1,0 +1,20 @@
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index 0bab2a5c4024346bc7246d7a8357bcba1be335a7..3e41f245e7c3c4feb64eccca1ec71842c5c7790b 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -16,13 +16,13 @@ into a parent of the previous block. Will use the view for accurate
+ */
+ declare const joinBackward: Command;
+ /**
+-A more limited form of [`joinBackward`]($commands.joinBackward)
++A more limited form of `joinBackward`
+ that only tries to join the current textblock to the one before
+ it, if the cursor is at the start of a textblock.
+ */
+ declare const joinTextblockBackward: Command;
+ /**
+-A more limited form of [`joinForward`]($commands.joinForward)
++A more limited form of `joinForward`
+ that only tries to join the current textblock to the one after
+ it, if the cursor is at the end of a textblock.
+ */

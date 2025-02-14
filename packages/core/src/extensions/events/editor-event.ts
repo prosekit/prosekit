@@ -8,7 +8,10 @@ import {
 } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { defineFacet } from '../../facets/facet'
+import {
+  defineFacet,
+  type Facet,
+} from '../../facets/facet'
 import { defineFacetPayload } from '../../facets/facet-extension'
 import type { PlainExtension } from '../../types/extension'
 import type { ObjectEntries } from '../../types/object-entries'
@@ -223,7 +226,7 @@ export type EditorEventPayload = ObjectEntries<EditorEventMap>
 /**
  * @internal
  */
-export const editorEventFacet = defineFacet<EditorEventPayload, PluginPayload>({
+export const editorEventFacet: Facet<EditorEventPayload, PluginPayload> = defineFacet<EditorEventPayload, PluginPayload>({
   reduce: () => {
     const [update, plugin] = setupEditorEventPlugin()
 

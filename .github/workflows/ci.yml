@@ -70,6 +70,9 @@ jobs:
       - name: Install Playwright
         run: pnpm run test:install
 
+      - name: Build
+        run: pnpm run build:website
+
       - name: Run e2e tests
         run: pnpm run test:e2e --shard="${{ matrix.shard }}/3"
 
@@ -123,7 +126,7 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v2.2.0
         with:
-          args: --root-dir "$PWD/website/dist" --no-progress './website/dist/**/*.html' --include-fragments --fallback-extensions html
+          args: --root-dir "$PWD/playground/dist" --no-progress './playground/dist/**/*.html' --include-fragments --fallback-extensions html
           fail: true
 
   deploy:
@@ -154,5 +157,5 @@ jobs:
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
           projectName: prosekit-dev
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          directory: website/dist
+          directory: playground/dist
         timeout-minutes: 5

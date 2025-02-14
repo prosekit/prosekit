@@ -28,9 +28,7 @@ const configs = [
   {
     files: [
       'packages/dev/**/*.ts',
-      'playground/**/*.ts',
-      'playground/**/*.tsx',
-      'playground/**/*.vue',
+      'playground/**/*.{ts,tsx,vue}',
     ],
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',

@@ -72,6 +72,13 @@ async function ensureEntry({
       ),
     )
 
+  // If `packages/prosekit/src/pm/view.ts` already exists, we don't want to
+  // generate `packages/prosekit/src/pm/view.gen.ts`
+  if (await vfs.pathExists(path.join(cwd, reExportFilePath))) {
+    exports[reExportEntry] = reExportFilePath
+    return
+  }
+
   reExportFilePath = reExportFilePath.replace(/(.tsx?$)/, '.gen$1')
 
   exports[reExportEntry] = reExportFilePath

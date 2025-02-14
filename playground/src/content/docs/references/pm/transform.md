@@ -9,6 +9,8 @@ Re-exported from [prosemirror-transform](https://github.com/ProseMirror/prosemir
 
 ## AddMarkStep {#add-mark-step}
 
+**Extends** `Step`
+
 Add a mark to all inline content between two positions.
 
 <dl>
@@ -78,24 +80,6 @@ transformed document.
 
 ```ts
 const apply: (doc: ProseMirrorNode) => StepResult
-```
-
-</dd>
-
-<dt>
-
-`getMap`
-
-</dt>
-
-<dd>
-
-Get the step map that represents the changes made by this step,
-and which can be used to transform between positions in the old
-and the new document.
-
-```ts
-const getMap: () => StepMap
 ```
 
 </dd>
@@ -172,45 +156,11 @@ const toJSON: () => any
 
 </dd>
 
-<dt>
-
-`fromJSON`
-
-</dt>
-
-<dd>
-
-Deserialize a step from its JSON representation. Will call
-through to the step class' own implementation of this method.
-
-```ts
-const fromJSON: (schema: Schema, json: any) => Step
-```
-
-</dd>
-
-<dt>
-
-`jsonID`
-
-</dt>
-
-<dd>
-
-To be able to serialize steps to JSON, each step needs a string
-ID to attach to its JSON representation. Use this method to
-register an ID for your step classes. Try to pick something
-that's unlikely to clash with steps from other modules.
-
-```ts
-const jsonID: (id: string, stepClass: { fromJSON: any }) => { fromJSON: any }
-```
-
-</dd>
-
 </dl>
 
 ## AddNodeMarkStep {#add-node-mark-step}
+
+**Extends** `Step`
 
 Add a mark to a specific node.
 
@@ -275,24 +225,6 @@ const apply: (doc: ProseMirrorNode) => StepResult
 
 <dt>
 
-`getMap`
-
-</dt>
-
-<dd>
-
-Get the step map that represents the changes made by this step,
-and which can be used to transform between positions in the old
-and the new document.
-
-```ts
-const getMap: () => StepMap
-```
-
-</dd>
-
-<dt>
-
 `invert`
 
 </dt>
@@ -328,24 +260,6 @@ const map: (mapping: Mappable) => null | Step
 
 <dt>
 
-`merge`
-
-</dt>
-
-<dd>
-
-Try to merge this step with another one, to be applied directly
-after it. Returns the merged step when possible, null if the
-steps can't be merged.
-
-```ts
-const merge: (other: Step) => null | Step
-```
-
-</dd>
-
-<dt>
-
 `toJSON`
 
 </dt>
@@ -363,45 +277,11 @@ const toJSON: () => any
 
 </dd>
 
-<dt>
-
-`fromJSON`
-
-</dt>
-
-<dd>
-
-Deserialize a step from its JSON representation. Will call
-through to the step class' own implementation of this method.
-
-```ts
-const fromJSON: (schema: Schema, json: any) => Step
-```
-
-</dd>
-
-<dt>
-
-`jsonID`
-
-</dt>
-
-<dd>
-
-To be able to serialize steps to JSON, each step needs a string
-ID to attach to its JSON representation. Use this method to
-register an ID for your step classes. Try to pick something
-that's unlikely to clash with steps from other modules.
-
-```ts
-const jsonID: (id: string, stepClass: { fromJSON: any }) => { fromJSON: any }
-```
-
-</dd>
-
 </dl>
 
 ## AttrStep {#attr-step}
+
+**Extends** `Step`
 
 Update an attribute in a specific node.
 
@@ -529,24 +409,6 @@ const map: (mapping: Mappable) => null | AttrStep
 
 <dt>
 
-`merge`
-
-</dt>
-
-<dd>
-
-Try to merge this step with another one, to be applied directly
-after it. Returns the merged step when possible, null if the
-steps can't be merged.
-
-```ts
-const merge: (other: Step) => null | Step
-```
-
-</dd>
-
-<dt>
-
 `toJSON`
 
 </dt>
@@ -581,28 +443,11 @@ const fromJSON: (schema: Schema, json: any) => AttrStep
 
 </dd>
 
-<dt>
-
-`jsonID`
-
-</dt>
-
-<dd>
-
-To be able to serialize steps to JSON, each step needs a string
-ID to attach to its JSON representation. Use this method to
-register an ID for your step classes. Try to pick something
-that's unlikely to clash with steps from other modules.
-
-```ts
-const jsonID: (id: string, stepClass: { fromJSON: any }) => { fromJSON: any }
-```
-
-</dd>
-
 </dl>
 
 ## DocAttrStep {#doc-attr-step}
+
+**Extends** `Step`
 
 Update an attribute in the doc node.
 
@@ -718,24 +563,6 @@ const map: (mapping: Mappable) => this
 
 <dt>
 
-`merge`
-
-</dt>
-
-<dd>
-
-Try to merge this step with another one, to be applied directly
-after it. Returns the merged step when possible, null if the
-steps can't be merged.
-
-```ts
-const merge: (other: Step) => null | Step
-```
-
-</dd>
-
-<dt>
-
 `toJSON`
 
 </dt>
@@ -766,25 +593,6 @@ through to the step class' own implementation of this method.
 
 ```ts
 const fromJSON: (schema: Schema, json: any) => DocAttrStep
-```
-
-</dd>
-
-<dt>
-
-`jsonID`
-
-</dt>
-
-<dd>
-
-To be able to serialize steps to JSON, each step needs a string
-ID to attach to its JSON representation. Use this method to
-register an ID for your step classes. Try to pick something
-that's unlikely to clash with steps from other modules.
-
-```ts
-const jsonID: (id: string, stepClass: { fromJSON: any }) => { fromJSON: any }
 ```
 
 </dd>
@@ -1078,6 +886,8 @@ Tells you whether the token before the mapped position was deleted.
 
 ## RemoveMarkStep {#remove-mark-step}
 
+**Extends** `Step`
+
 Remove a mark from all inline content between two positions.
 
 <dl>
@@ -1147,24 +957,6 @@ transformed document.
 
 ```ts
 const apply: (doc: ProseMirrorNode) => StepResult
-```
-
-</dd>
-
-<dt>
-
-`getMap`
-
-</dt>
-
-<dd>
-
-Get the step map that represents the changes made by this step,
-and which can be used to transform between positions in the old
-and the new document.
-
-```ts
-const getMap: () => StepMap
 ```
 
 </dd>
@@ -1241,45 +1033,11 @@ const toJSON: () => any
 
 </dd>
 
-<dt>
-
-`fromJSON`
-
-</dt>
-
-<dd>
-
-Deserialize a step from its JSON representation. Will call
-through to the step class' own implementation of this method.
-
-```ts
-const fromJSON: (schema: Schema, json: any) => Step
-```
-
-</dd>
-
-<dt>
-
-`jsonID`
-
-</dt>
-
-<dd>
-
-To be able to serialize steps to JSON, each step needs a string
-ID to attach to its JSON representation. Use this method to
-register an ID for your step classes. Try to pick something
-that's unlikely to clash with steps from other modules.
-
-```ts
-const jsonID: (id: string, stepClass: { fromJSON: any }) => { fromJSON: any }
-```
-
-</dd>
-
 </dl>
 
 ## RemoveNodeMarkStep {#remove-node-mark-step}
+
+**Extends** `Step`
 
 Remove a mark from a specific node.
 
@@ -1344,24 +1102,6 @@ const apply: (doc: ProseMirrorNode) => StepResult
 
 <dt>
 
-`getMap`
-
-</dt>
-
-<dd>
-
-Get the step map that represents the changes made by this step,
-and which can be used to transform between positions in the old
-and the new document.
-
-```ts
-const getMap: () => StepMap
-```
-
-</dd>
-
-<dt>
-
 `invert`
 
 </dt>
@@ -1397,24 +1137,6 @@ const map: (mapping: Mappable) => null | Step
 
 <dt>
 
-`merge`
-
-</dt>
-
-<dd>
-
-Try to merge this step with another one, to be applied directly
-after it. Returns the merged step when possible, null if the
-steps can't be merged.
-
-```ts
-const merge: (other: Step) => null | Step
-```
-
-</dd>
-
-<dt>
-
 `toJSON`
 
 </dt>
@@ -1432,45 +1154,11 @@ const toJSON: () => any
 
 </dd>
 
-<dt>
-
-`fromJSON`
-
-</dt>
-
-<dd>
-
-Deserialize a step from its JSON representation. Will call
-through to the step class' own implementation of this method.
-
-```ts
-const fromJSON: (schema: Schema, json: any) => Step
-```
-
-</dd>
-
-<dt>
-
-`jsonID`
-
-</dt>
-
-<dd>
-
-To be able to serialize steps to JSON, each step needs a string
-ID to attach to its JSON representation. Use this method to
-register an ID for your step classes. Try to pick something
-that's unlikely to clash with steps from other modules.
-
-```ts
-const jsonID: (id: string, stepClass: { fromJSON: any }) => { fromJSON: any }
-```
-
-</dd>
-
 </dl>
 
 ## ReplaceAroundStep {#replace-around-step}
+
+**Extends** `Step`
 
 Replace a part of the document with a slice of content, but
 preserve a range of the replaced content by moving it into the
@@ -1639,24 +1327,6 @@ const map: (mapping: Mappable) => null | ReplaceAroundStep
 
 <dt>
 
-`merge`
-
-</dt>
-
-<dd>
-
-Try to merge this step with another one, to be applied directly
-after it. Returns the merged step when possible, null if the
-steps can't be merged.
-
-```ts
-const merge: (other: Step) => null | Step
-```
-
-</dd>
-
-<dt>
-
 `toJSON`
 
 </dt>
@@ -1674,45 +1344,11 @@ const toJSON: () => any
 
 </dd>
 
-<dt>
-
-`fromJSON`
-
-</dt>
-
-<dd>
-
-Deserialize a step from its JSON representation. Will call
-through to the step class' own implementation of this method.
-
-```ts
-const fromJSON: (schema: Schema, json: any) => Step
-```
-
-</dd>
-
-<dt>
-
-`jsonID`
-
-</dt>
-
-<dd>
-
-To be able to serialize steps to JSON, each step needs a string
-ID to attach to its JSON representation. Use this method to
-register an ID for your step classes. Try to pick something
-that's unlikely to clash with steps from other modules.
-
-```ts
-const jsonID: (id: string, stepClass: { fromJSON: any }) => { fromJSON: any }
-```
-
-</dd>
-
 </dl>
 
 ## ReplaceStep {#replace-step}
+
+**Extends** `Step`
 
 Replace a part of the document with a slice of new content.
 
@@ -1873,42 +1509,6 @@ the `stepType` property.
 
 ```ts
 const toJSON: () => any
-```
-
-</dd>
-
-<dt>
-
-`fromJSON`
-
-</dt>
-
-<dd>
-
-Deserialize a step from its JSON representation. Will call
-through to the step class' own implementation of this method.
-
-```ts
-const fromJSON: (schema: Schema, json: any) => Step
-```
-
-</dd>
-
-<dt>
-
-`jsonID`
-
-</dt>
-
-<dd>
-
-To be able to serialize steps to JSON, each step needs a string
-ID to attach to its JSON representation. Use this method to
-register an ID for your step classes. Try to pick something
-that's unlikely to clash with steps from other modules.
-
-```ts
-const jsonID: (id: string, stepClass: { fromJSON: any }) => { fromJSON: any }
 ```
 
 </dd>

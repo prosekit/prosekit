@@ -2393,25 +2393,12 @@ const fromJSON: (schema: Schema, json: any) => ProseMirrorNode
 
 ## ReplaceError {#replace-error}
 
+**Extends** `Error`
+
 Error type raised by [`Node.replace`](https://prosemirror.net/docs/ref/#model.Node.replace) when
 given an invalid replacement.
 
 <dl>
-
-<dt>
-
-`constructor`
-
-</dt>
-
-<dd>
-
-```
-new ReplaceError(message?: string): ReplaceError
-new ReplaceError(message?: string, options?: ErrorOptions): ReplaceError
-```
-
-</dd>
 
 </dl>
 

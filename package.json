@@ -56,7 +56,8 @@
     "overrides": {},
     "patchedDependencies": {
       "prosemirror-splittable@0.1.1": "patches/prosemirror-splittable@0.1.1.patch",
-      "prosemirror-view": "patches/prosemirror-view.patch"
+      "prosemirror-view": "patches/prosemirror-view.patch",
+      "prosemirror-transform": "patches/prosemirror-transform.patch"
     }
   }
 }

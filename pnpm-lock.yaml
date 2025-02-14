@@ -8,6 +8,9 @@ patchedDependencies:
   prosemirror-splittable@0.1.1:
     hash: ltdjze5wh25pjc2y4z24yafn7u
     path: patches/prosemirror-splittable@0.1.1.patch
+  prosemirror-transform:
+    hash: 5co2hpr3glv5wwzljgiihaucva
+    path: patches/prosemirror-transform.patch
   prosemirror-view:
     hash: csvlqvzdiwllkaxmccwkb7q4w4
     path: patches/prosemirror-view.patch
@@ -142,7 +145,7 @@ importers:
         version: 2.1.1
       prosemirror-splittable:
         specifier: ^0.1.1
-        version: 0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)
+        version: 0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva))
       type-fest:
         specifier: ^4.32.0
         version: 4.32.0
@@ -258,7 +261,7 @@ importers:
         version: 1.3.2
       prosemirror-highlight:
         specifier: ^0.12.1
-        version: 0.12.1(@types/hast@3.0.4)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))(shiki@2.2.0)
+        version: 0.12.1(@types/hast@3.0.4)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva))(prosemirror-view@1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))(shiki@2.2.0)
       prosemirror-search:
         specifier: ^1.0.0
         version: 1.0.0
@@ -350,7 +353,7 @@ importers:
         version: 1.4.3
       prosemirror-transform:
         specifier: ^1.10.2
-        version: 1.10.2
+        version: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
       prosemirror-view:
         specifier: ^1.38.0
         version: 1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
@@ -14515,18 +14518,18 @@ snapshots:
 
   prosemirror-changeset@2.2.1:
     dependencies:
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
 
   prosemirror-commands@1.6.2:
     dependencies:
       prosemirror-model: 1.24.1
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
 
   prosemirror-dropcursor@1.8.1:
     dependencies:
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
       prosemirror-view: 1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
   prosemirror-flat-list@0.5.4:
@@ -14536,7 +14539,7 @@ snapshots:
       prosemirror-model: 1.24.1
       prosemirror-safari-ime-span: 1.0.2
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
       prosemirror-view: 1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
   prosemirror-gapcursor@1.3.2:
@@ -14546,26 +14549,26 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
-  prosemirror-highlight@0.12.1(@types/hast@3.0.4)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))(shiki@2.2.0):
+  prosemirror-highlight@0.12.1(@types/hast@3.0.4)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva))(prosemirror-view@1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))(shiki@2.2.0):
     optionalDependencies:
       '@types/hast': 3.0.4
       prosemirror-model: 1.24.1
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
       prosemirror-view: 1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
       shiki: 2.2.0
 
   prosemirror-history@1.4.1:
     dependencies:
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
       prosemirror-view: 1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
       rope-sequence: 1.3.4
 
   prosemirror-inputrules@1.4.0:
     dependencies:
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
 
   prosemirror-keymap@1.2.2:
     dependencies:
@@ -14587,16 +14590,16 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
-  prosemirror-splittable@0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2):
+  prosemirror-splittable@0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)):
     optionalDependencies:
       prosemirror-model: 1.24.1
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
 
   prosemirror-state@1.4.3:
     dependencies:
       prosemirror-model: 1.24.1
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
       prosemirror-view: 1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
   prosemirror-tables@1.6.2:
@@ -14604,10 +14607,10 @@ snapshots:
       prosemirror-keymap: 1.2.2
       prosemirror-model: 1.24.1
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
       prosemirror-view: 1.38.0(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
-  prosemirror-transform@1.10.2:
+  prosemirror-transform@1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva):
     dependencies:
       prosemirror-model: 1.24.1
 
@@ -14615,7 +14618,7 @@ snapshots:
     dependencies:
       prosemirror-model: 1.24.1
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
 
   proto-list@1.2.4: {}
 

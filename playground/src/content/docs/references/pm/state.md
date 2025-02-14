@@ -5,6 +5,8 @@ sidebar:
 ---
 
 
+Re-exported from [prosemirror-state](https://www.npmjs.com/package/prosemirror-state).
+
 ## AllSelection {#all-selection}
 
 A selection type that represents selecting the whole document

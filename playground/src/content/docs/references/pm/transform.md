@@ -5,6 +5,8 @@ sidebar:
 ---
 
 
+Re-exported from [prosemirror-transform](https://www.npmjs.com/package/prosemirror-transform).
+
 ## AddMarkStep {#add-mark-step}
 
 Add a mark to all inline content between two positions.

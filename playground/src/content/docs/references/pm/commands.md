@@ -5,6 +5,8 @@ sidebar:
 ---
 
 
+Re-exported from [prosemirror-commands](https://www.npmjs.com/package/prosemirror-commands)
+
 ## baseKeymap {#base-keymap}
 
 Depending on the detected platform, this will hold

@@ -5,6 +5,8 @@ sidebar:
 ---
 
 
+Re-exported from [prosemirror-model](https://www.npmjs.com/package/prosemirror-model).
+
 ## ContentMatch {#content-match}
 
 Instances of this class represent a match state of a node type's

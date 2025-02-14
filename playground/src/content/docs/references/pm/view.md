@@ -5,6 +5,8 @@ sidebar:
 ---
 
 
+Re-exported from [prosemirror-view](https://www.npmjs.com/package/prosemirror-view).
+
 ## Decoration {#decoration}
 
 Decoration objects can be provided to the view through the

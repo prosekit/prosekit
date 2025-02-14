@@ -16,35 +16,35 @@ rm -rf references
 cp -r "$ROOT/packages/prosekit/.temp/typedoc/prosekit" references
 
 # Find the substring "__namedParameters" and throw an error if found
+cd "$WEBSITE_DIR/src/content/docs"
 if grep -r "__namedParameters" references; then
   echo 'Found "__namedParameters" in generated markdown files. You probably forgot to add "@param" JSDoc to the function.'
   exit 1
 fi
 
-# For each .md file in references/
+# Replace the first h1 line with a frontmatter block. For example:
+# 
+# Before:
+#
+# ```md
+# # foo/bar/baz
+#
+# content
+# ```
+#
+# After:
+#
+# ```md
+# ---
+# title: foo/bar/baz
+# sidebar:
+#   label: baz
+# ---
+#
+# content
+# ```
+cd "$WEBSITE_DIR/src/content/docs"
 find references -name "*.md" | while read file; do
-  # Replace the first h1 line with a frontmatter block. For example:
-  # 
-  # Before:
-  #
-  # ```md
-  # # foo/bar/baz
-  #
-  # content
-  # ```
-  #
-  # After:
-  #
-  # ```md
-  # ---
-  # title: foo/bar/baz
-  # sidebar:
-  #   label: baz
-  # ---
-  #
-  # content
-  # ```
-
   # If the file only contains one line, remove this file.
   if [ $(cat "$file" | egrep '\S+' | wc -l) -le 1 ]; then
     rm "$file"
@@ -73,9 +73,7 @@ find references -name "*.md" | while read file; do
 done
 
 
-cd "$WEBSITE_DIR"
-cd src/content
-
 # Copy all files in references/ to docs/references/
+cd "$WEBSITE_DIR/src/content"
 mkdir -p docs/references
 rsync -av references/* docs/references/

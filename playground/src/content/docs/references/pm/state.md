@@ -5,7 +5,7 @@ sidebar:
 ---
 
 
-Re-exported from [prosemirror-state](https://www.npmjs.com/package/prosemirror-state).
+Re-exported from [prosemirror-state](https://github.com/ProseMirror/prosemirror-state).
 
 ## AllSelection {#all-selection}
 

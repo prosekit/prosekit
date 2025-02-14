@@ -5,7 +5,7 @@ sidebar:
 ---
 
 
-Re-exported from [prosemirror-history](https://www.npmjs.com/package/prosemirror-history).
+Re-exported from [prosemirror-history](https://github.com/ProseMirror/prosemirror-history).
 
 ## closeHistory {#close-history}
 

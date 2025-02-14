@@ -1,5 +1,5 @@
 /**
- * Re-exported from [prosemirror-view](https://www.npmjs.com/package/prosemirror-view).
+ * Re-exported from [prosemirror-view](https://github.com/ProseMirror/prosemirror-view).
  *
  * @module prosekit/pm/view
  */

@@ -5,7 +5,7 @@ sidebar:
 ---
 
 
-Re-exported from [prosemirror-model](https://www.npmjs.com/package/prosemirror-model).
+Re-exported from [prosemirror-model](https://github.com/ProseMirror/prosemirror-model).
 
 ## ContentMatch {#content-match}
 

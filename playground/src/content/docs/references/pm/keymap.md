@@ -5,7 +5,7 @@ sidebar:
 ---
 
 
-Re-exported from [prosemirror-keymap](https://www.npmjs.com/package/prosemirror-keymap).
+Re-exported from [prosemirror-keymap](https://github.com/ProseMirror/prosemirror-keymap).
 
 ## keydownHandler {#keydown-handler}
 

@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
+  prosemirror-commands:
+    hash: s7eajtpofjyevgorwwc7jjb354
+    path: patches/prosemirror-commands.patch
   prosemirror-model:
     hash: xelbcagl6lcnzppq7gij542ige
     path: patches/prosemirror-model.patch
@@ -338,7 +341,7 @@ importers:
     dependencies:
       prosemirror-commands:
         specifier: ^1.6.2
-        version: 1.6.2
+        version: 1.6.2(patch_hash=s7eajtpofjyevgorwwc7jjb354)
       prosemirror-history:
         specifier: ^1.4.1
         version: 1.4.1
@@ -14523,7 +14526,7 @@ snapshots:
     dependencies:
       prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
 
-  prosemirror-commands@1.6.2:
+  prosemirror-commands@1.6.2(patch_hash=s7eajtpofjyevgorwwc7jjb354):
     dependencies:
       prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-state: 1.4.3
@@ -14537,7 +14540,7 @@ snapshots:
 
   prosemirror-flat-list@0.5.4:
     dependencies:
-      prosemirror-commands: 1.6.2
+      prosemirror-commands: 1.6.2(patch_hash=s7eajtpofjyevgorwwc7jjb354)
       prosemirror-inputrules: 1.4.0
       prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-safari-ime-span: 1.0.2

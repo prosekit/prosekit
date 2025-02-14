@@ -2805,7 +2805,7 @@ See <https://prosemirror.net/docs/ref/#view.EditorProps.handlePaste>
 ## definePlugin {#define-plugin}
 
 ```ts
-function definePlugin(plugin: Plugin | Plugin[] | ((context: { schema: Schema }) => Plugin | Plugin[])): PlainExtension
+function definePlugin(plugin: ProseMirrorPlugin | ProseMirrorPlugin[] | ((context: { schema: Schema }) => ProseMirrorPlugin | ProseMirrorPlugin[])): PlainExtension
 ```
 
 Adds a ProseMirror plugin to the editor.

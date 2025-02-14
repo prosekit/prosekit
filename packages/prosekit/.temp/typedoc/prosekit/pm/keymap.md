@@ -13,7 +13,7 @@ handler](https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyDown) that 
 ## keymap {#keymap-1}
 
 ```ts
-function keymap(bindings: { [key]: Command }): Plugin
+function keymap(bindings: { [key]: Command }): ProseMirrorPlugin
 ```
 
 Create a keymap plugin for the given set of bindings.

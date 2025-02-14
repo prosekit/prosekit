@@ -1,0 +1,15 @@
+---
+import type { Props } from '@astrojs/starlight/props'
+
+import Default from '@astrojs/starlight/components/MarkdownContent.astro'
+---
+
+<Default {...Astro.props}>
+  <slot />
+</Default>
+
+<style is:global>
+  :root .sl-markdown-content dd:not(:where(.not-content *)) {
+  	padding-inline-start: 2rem;
+  }
+</style>

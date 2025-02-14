@@ -15,6 +15,7 @@ const defaultConfig: StarlightUserConfig = {
     PageFrame: '@prosekit/starlight-theme/components/PageFrame.astro',
     MobileMenuToggle: '@prosekit/starlight-theme/components/MobileMenuToggle.astro',
     TwoColumnContent: '@prosekit/starlight-theme/components/TwoColumnContent.astro',
+    MarkdownContent: '@prosekit/starlight-theme/components/MarkdownContent.astro',
   },
 
   expressiveCode: {

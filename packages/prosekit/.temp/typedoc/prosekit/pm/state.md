@@ -2097,6 +2097,55 @@ new Transaction(doc: ProseMirrorNode): Transaction
 
 <dt>
 
+`doc: ProseMirrorNode`
+
+</dt>
+
+<dd>
+
+The current document (the result of applying the steps in the
+transform).
+
+</dd>
+
+<dt>
+
+`docs: ProseMirrorNode[]`
+
+</dt>
+
+<dd>
+
+The documents before each of the steps.
+
+</dd>
+
+<dt>
+
+`mapping: Mapping`
+
+</dt>
+
+<dd>
+
+A mapping with the maps for each of the steps in this transform.
+
+</dd>
+
+<dt>
+
+`steps: Step[]`
+
+</dt>
+
+<dd>
+
+The steps in this transform.
+
+</dd>
+
+<dt>
+
 `storedMarks: null | readonly Mark[]`
 
 </dt>
@@ -2117,6 +2166,31 @@ The stored marks set by this transaction, if any.
 
 The timestamp associated with this transaction, in the same
 format as `Date.now()`.
+
+</dd>
+
+<dt>
+
+`get before(): ProseMirrorNode`
+
+</dt>
+
+<dd>
+
+The starting document.
+
+</dd>
+
+<dt>
+
+`get docChanged(): boolean`
+
+</dt>
+
+<dd>
+
+True when the document has been changed (when there are any
+steps).
 
 </dd>
 
@@ -2186,6 +2260,38 @@ Whether the stored marks were explicitly set for this transaction.
 
 <dt>
 
+`addMark`
+
+</dt>
+
+<dd>
+
+Add the given mark to the inline content between `from` and `to`.
+
+```ts
+const addMark: (from: number, to: number, mark: Mark) => this
+```
+
+</dd>
+
+<dt>
+
+`addNodeMark`
+
+</dt>
+
+<dd>
+
+Add a mark to the node at position `pos`.
+
+```ts
+const addNodeMark: (pos: number, mark: Mark) => this
+```
+
+</dd>
+
+<dt>
+
 `addStoredMark`
 
 </dt>
@@ -2196,6 +2302,58 @@ Add a mark to the set of stored marks.
 
 ```ts
 const addStoredMark: (mark: Mark) => this
+```
+
+</dd>
+
+<dt>
+
+`clearIncompatible`
+
+</dt>
+
+<dd>
+
+Removes all marks and nodes from the content of the node at
+`pos` that don't match the given new parent node type. Accepts
+an optional starting [content match](https://prosemirror.net/docs/ref/#model.ContentMatch) as
+third argument.
+
+```ts
+const clearIncompatible: (pos: number, parentType: NodeType, match?: ContentMatch) => this
+```
+
+</dd>
+
+<dt>
+
+`delete`
+
+</dt>
+
+<dd>
+
+Delete the content between the given positions.
+
+```ts
+const delete: (from: number, to: number) => this
+```
+
+</dd>
+
+<dt>
+
+`deleteRange`
+
+</dt>
+
+<dd>
+
+Delete the given range, expanding it to cover fully covered
+parent nodes until a valid replace is found.
+
+```ts
+const deleteRange: (from: number, to: number) => this
 ```
 
 </dd>
@@ -2252,6 +2410,22 @@ const getMeta: (key: string | ProseMirrorPlugin | PluginKey) => any
 
 <dt>
 
+`insert`
+
+</dt>
+
+<dd>
+
+Insert the given content at the given position.
+
+```ts
+const insert: (pos: number, content: ProseMirrorNode | ProseMirrorFragment | readonly ProseMirrorNode[]) => this
+```
+
+</dd>
+
+<dt>
+
 `insertText`
 
 </dt>
@@ -2269,6 +2443,96 @@ const insertText: (text: string, from?: number, to?: number) => this
 
 <dt>
 
+`join`
+
+</dt>
+
+<dd>
+
+Join the blocks around the given position. If depth is 2, their
+last and first siblings are also joined, and so on.
+
+```ts
+const join: (pos: number, depth?: number) => this
+```
+
+</dd>
+
+<dt>
+
+`lift`
+
+</dt>
+
+<dd>
+
+Split the content in the given range off from its parent, if there
+is sibling content before or after it, and move it up the tree to
+the depth specified by `target`. You'll probably want to use
+[`liftTarget`](https://prosemirror.net/docs/ref/#transform.liftTarget) to compute `target`, to make
+sure the lift is valid.
+
+```ts
+const lift: (range: NodeRange, target: number) => this
+```
+
+</dd>
+
+<dt>
+
+`maybeStep`
+
+</dt>
+
+<dd>
+
+Try to apply a step in this transformation, ignoring it if it
+fails. Returns the step result.
+
+```ts
+const maybeStep: (step: Step) => StepResult
+```
+
+</dd>
+
+<dt>
+
+`removeMark`
+
+</dt>
+
+<dd>
+
+Remove marks from inline nodes between `from` and `to`. When
+`mark` is a single mark, remove precisely that mark. When it is
+a mark type, remove all marks of that type. When it is null,
+remove all marks of any type.
+
+```ts
+const removeMark: (from: number, to: number, mark?: null | MarkType | Mark) => this
+```
+
+</dd>
+
+<dt>
+
+`removeNodeMark`
+
+</dt>
+
+<dd>
+
+Remove a mark (or a mark of the given type) from the node at
+position `pos`.
+
+```ts
+const removeNodeMark: (pos: number, mark: MarkType | Mark) => this
+```
+
+</dd>
+
+<dt>
+
 `removeStoredMark`
 
 </dt>
@@ -2279,6 +2543,77 @@ Remove a mark or mark type from the set of stored marks.
 
 ```ts
 const removeStoredMark: (mark: MarkType | Mark) => this
+```
+
+</dd>
+
+<dt>
+
+`replace`
+
+</dt>
+
+<dd>
+
+Replace the part of the document between `from` and `to` with the
+given `slice`.
+
+```ts
+const replace: (from: number, to?: number, slice?: Slice) => this
+```
+
+</dd>
+
+<dt>
+
+`replaceRange`
+
+</dt>
+
+<dd>
+
+Replace a range of the document with a given slice, using
+`from`, `to`, and the slice's
+[`openStart`](https://prosemirror.net/docs/ref/#model.Slice.openStart) property as hints, rather
+than fixed start and end points. This method may grow the
+replaced area or close open nodes in the slice in order to get a
+fit that is more in line with WYSIWYG expectations, by dropping
+fully covered parent nodes of the replaced region when they are
+marked [non-defining as
+context](https://prosemirror.net/docs/ref/#model.NodeSpec.definingAsContext), or including an
+open parent node from the slice that *is* marked as [defining
+its content](https://prosemirror.net/docs/ref/#model.NodeSpec.definingForContent).
+
+This is the method, for example, to handle paste. The similar
+[`replace`](https://prosemirror.net/docs/ref/#transform.Transform.replace) method is a more
+primitive tool which will *not* move the start and end of its given
+range, and is useful in situations where you need more precise
+control over what happens.
+
+```ts
+const replaceRange: (from: number, to: number, slice: Slice) => this
+```
+
+</dd>
+
+<dt>
+
+`replaceRangeWith`
+
+</dt>
+
+<dd>
+
+Replace the given range with a node, but use `from` and `to` as
+hints, rather than precise positions. When from and to are the same
+and are at the start or end of a parent node in which the given
+node doesn't fit, this method may *move* them out towards a parent
+that does allow the given node to be placed. When the given range
+completely covers a parent node, this method may completely replace
+that parent node.
+
+```ts
+const replaceRangeWith: (from: number, to: number, node: ProseMirrorNode) => this
 ```
 
 </dd>
@@ -2319,6 +2654,23 @@ const replaceSelectionWith: (node: ProseMirrorNode, inheritMarks?: boolean) => t
 
 <dt>
 
+`replaceWith`
+
+</dt>
+
+<dd>
+
+Replace the given range with the given content, which may be a
+fragment, node, or array of nodes.
+
+```ts
+const replaceWith: (from: number, to: number, content: ProseMirrorNode | ProseMirrorFragment | readonly ProseMirrorNode[]) => this
+```
+
+</dd>
+
+<dt>
+
 `scrollIntoView`
 
 </dt>
@@ -2336,6 +2688,39 @@ const scrollIntoView: () => this
 
 <dt>
 
+`setBlockType`
+
+</dt>
+
+<dd>
+
+Set the type of all textblocks (partly) between `from` and `to` to
+the given node type with the given attributes.
+
+```ts
+const setBlockType: (from: number, to: undefined | number, type: NodeType, attrs?: null | Attrs | ((oldNode: ProseMirrorNode) => Attrs)) => this
+```
+
+</dd>
+
+<dt>
+
+`setDocAttribute`
+
+</dt>
+
+<dd>
+
+Set a single attribute on the document to a new value.
+
+```ts
+const setDocAttribute: (attr: string, value: any) => this
+```
+
+</dd>
+
+<dt>
+
 `setMeta`
 
 </dt>
@@ -2347,6 +2732,41 @@ name or by plugin.
 
 ```ts
 const setMeta: (key: string | ProseMirrorPlugin | PluginKey, value: any) => this
+```
+
+</dd>
+
+<dt>
+
+`setNodeAttribute`
+
+</dt>
+
+<dd>
+
+Set a single attribute on a given node to a new value.
+The `pos` addresses the document content. Use `setDocAttribute`
+to set attributes on the document itself.
+
+```ts
+const setNodeAttribute: (pos: number, attr: string, value: any) => this
+```
+
+</dd>
+
+<dt>
+
+`setNodeMarkup`
+
+</dt>
+
+<dd>
+
+Change the type, attributes, and/or marks of the node at `pos`.
+When `type` isn't given, the existing node type is preserved,
+
+```ts
+const setNodeMarkup: (pos: number, type?: null | NodeType, attrs?: null | Attrs, marks?: readonly Mark[]) => this
 ```
 
 </dd>
@@ -2396,6 +2816,61 @@ Update the timestamp for the transaction.
 
 ```ts
 const setTime: (time: number) => this
+```
+
+</dd>
+
+<dt>
+
+`split`
+
+</dt>
+
+<dd>
+
+Split the node at the given position, and optionally, if `depth` is
+greater than one, any number of nodes above that. By default, the
+parts split off will inherit the node type of the original node.
+This can be changed by passing an array of types and attributes to
+use after the split.
+
+```ts
+const split: (pos: number, depth?: number, typesAfter?: (null | ({ attrs?: null | Attrs; type: NodeType }))[]) => this
+```
+
+</dd>
+
+<dt>
+
+`step`
+
+</dt>
+
+<dd>
+
+Apply a new step in this transform, saving the result. Throws an
+error when the step fails.
+
+```ts
+const step: (step: Step) => this
+```
+
+</dd>
+
+<dt>
+
+`wrap`
+
+</dt>
+
+<dd>
+
+Wrap the given [range](https://prosemirror.net/docs/ref/#model.NodeRange) in the given set of wrappers.
+The wrappers are assumed to be valid in this position, and should
+probably be computed with [`findWrapping`](https://prosemirror.net/docs/ref/#transform.findWrapping).
+
+```ts
+const wrap: (range: NodeRange, wrappers: readonly { attrs?: null | Attrs; type: NodeType }[]) => this
 ```
 
 </dd>

@@ -77,7 +77,7 @@ See also [textblockTypeInputRule](https://prosemirror.net/docs/ref/#inputrules.t
 ## defineWrappingInputRule {#define-wrapping-input-rule}
 
 ```ts
-function defineWrappingInputRule(options: { attrs?: null | Attrs | ((match: RegExpMatchArray) => null | Attrs); join?: (match: RegExpMatchArray, node: Node) => boolean; regex: RegExp; type: string | NodeType }): PlainExtension
+function defineWrappingInputRule(options: { attrs?: null | Attrs | ((match: RegExpMatchArray) => null | Attrs); join?: (match: RegExpMatchArray, node: ProseMirrorNode) => boolean; regex: RegExp; type: string | NodeType }): PlainExtension
 ```
 
 Defines an input rule for automatically wrapping a textblock when a given

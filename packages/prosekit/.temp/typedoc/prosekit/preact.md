@@ -66,7 +66,7 @@ The root component for a ProseKit editor.
 ## useDocChange {#use-doc-change}
 
 ```ts
-function useDocChange(handler: (doc: Node) => void, options?: UseExtensionOptions): void
+function useDocChange(handler: (doc: ProseMirrorNode) => void, options?: UseExtensionOptions): void
 ```
 
 Calls the given handler whenever the editor document changes.

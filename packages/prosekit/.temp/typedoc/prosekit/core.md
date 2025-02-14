@@ -284,7 +284,7 @@ const mount: (place: undefined | null | HTMLElement) => void
 Update the editor's document and selection.
 
 ```ts
-const setContent: (content: string | Node | NodeJSON | HTMLElement, selection?: Selection | "start" | SelectionJSON | "end") => void
+const setContent: (content: string | ProseMirrorNode | NodeJSON | HTMLElement, selection?: Selection | "start" | SelectionJSON | "end") => void
 ```
 
 </dd>
@@ -411,7 +411,7 @@ Some basic props for custom node views.
 
 <dt>
 
-`as?: string | HTMLElement | ((node: Node) => HTMLElement)`
+`as?: string | HTMLElement | ((node: ProseMirrorNode) => HTMLElement)`
 
 </dt>
 
@@ -423,7 +423,7 @@ The wrapping DOM element for the node view. Defaults to `div` for block nodes an
 
 <dt>
 
-`contentAs?: string | HTMLElement | ((node: Node) => HTMLElement)`
+`contentAs?: string | HTMLElement | ((node: ProseMirrorNode) => HTMLElement)`
 
 </dt>
 
@@ -505,7 +505,7 @@ The wrapping DOM element for the node view's content. Defaults to `div` for bloc
 
 <dt>
 
-`update?: (node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean`
+`update?: (node: ProseMirrorNode, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean`
 
 </dt>
 
@@ -654,11 +654,107 @@ testing environments.
 
 <dt>
 
+`context?: ResolvedPos`
+
+</dt>
+
+<dd>
+
+A set of additional nodes to count as
+[context](https://prosemirror.net/docs/ref/#model.ParseRule.context) when parsing, above the
+given [top node](https://prosemirror.net/docs/ref/#model.ParseOptions.topNode).
+
+</dd>
+
+<dt>
+
 `DOMParser?: typeof DOMParser`
 
 </dt>
 
 <dd>
+
+</dd>
+
+<dt>
+
+`findPositions?: { node: Node; offset: number; pos?: number }[]`
+
+</dt>
+
+<dd>
+
+When given, the parser will, beside parsing the content,
+record the document positions of the given DOM positions. It
+will do so by writing to the objects, adding a `pos` property
+that holds the document position. DOM positions that are not
+in the parsed content will not be written to.
+
+</dd>
+
+<dt>
+
+`from?: number`
+
+</dt>
+
+<dd>
+
+The child node index to start parsing from.
+
+</dd>
+
+<dt>
+
+`preserveWhitespace?: boolean | "full"`
+
+</dt>
+
+<dd>
+
+By default, whitespace is collapsed as per HTML's rules. Pass
+`true` to preserve whitespace, but normalize newlines to
+spaces, and `"full"` to preserve whitespace entirely.
+
+</dd>
+
+<dt>
+
+`to?: number`
+
+</dt>
+
+<dd>
+
+The child node index to stop parsing at.
+
+</dd>
+
+<dt>
+
+`topMatch?: ContentMatch`
+
+</dt>
+
+<dd>
+
+Provide the starting content match that content parsed into the
+top node is matched against.
+
+</dd>
+
+<dt>
+
+`topNode?: ProseMirrorNode`
+
+</dt>
+
+<dd>
+
+By default, the content is parsed into the schema's default
+[top node type](https://prosemirror.net/docs/ref/#model.Schema.topNodeType). You can pass this
+option to use the type and attributes from a different node
+as the top container.
 
 </dd>
 
@@ -842,7 +938,7 @@ The depth of the node.
 
 <dt>
 
-`node: Node`
+`node: ProseMirrorNode`
 
 </dt>
 
@@ -953,7 +1049,7 @@ When `type` is provided, the attributes of the node to insert.
 
 <dt>
 
-`node?: Node`
+`node?: ProseMirrorNode`
 
 </dt>
 
@@ -1144,6 +1240,56 @@ The attributes that marks of this type get.
 
 <dt>
 
+`excludes?: string`
+
+</dt>
+
+<dd>
+
+Determines which other marks this mark can coexist with. Should
+be a space-separated strings naming other marks or groups of marks.
+When a mark is [added](https://prosemirror.net/docs/ref/#model.Mark.addToSet) to a set, all marks
+that it excludes are removed in the process. If the set contains
+any mark that excludes the new mark but is not, itself, excluded
+by the new mark, the mark can not be added an the set. You can
+use the value `"_"` to indicate that the mark excludes all
+marks in the schema.
+
+Defaults to only being exclusive with marks of the same type. You
+can set it to an empty string (or any string not containing the
+mark's own name) to allow multiple marks of a given type to
+coexist (as long as they have different attributes).
+
+</dd>
+
+<dt>
+
+`group?: string`
+
+</dt>
+
+<dd>
+
+The group or space-separated groups to which this mark belongs.
+
+</dd>
+
+<dt>
+
+`inclusive?: boolean`
+
+</dt>
+
+<dd>
+
+Whether this mark should be active when the cursor is positioned
+at its end (or at its start when that is also the start of the
+parent node). Defaults to true.
+
+</dd>
+
+<dt>
+
 `name: MarkName`
 
 </dt>
@@ -1151,6 +1297,48 @@ The attributes that marks of this type get.
 <dd>
 
 The name of the mark type.
+
+</dd>
+
+<dt>
+
+`parseDOM?: readonly ParseRule[]`
+
+</dt>
+
+<dd>
+
+Associates DOM parser information with this mark (see the
+corresponding [node spec field](https://prosemirror.net/docs/ref/#model.NodeSpec.parseDOM)). The
+`mark` field in the rules is implied.
+
+</dd>
+
+<dt>
+
+`spanning?: boolean`
+
+</dt>
+
+<dd>
+
+Determines whether marks of this type can span multiple adjacent
+nodes when serialized to DOM/HTML. Defaults to true.
+
+</dd>
+
+<dt>
+
+`toDOM?: (mark: Mark, inline: boolean) => DOMOutputSpec`
+
+</dt>
+
+<dd>
+
+Defines the default way marks of this type should be serialized
+to DOM/HTML. When the resulting spec contains a hole, that is
+where the marked content is placed. Otherwise, it is appended to
+the top node.
 
 </dd>
 
@@ -1378,6 +1566,20 @@ A JSON representation of the prosemirror node.
 
 <dt>
 
+`atom?: boolean`
+
+</dt>
+
+<dd>
+
+Can be set to true to indicate that, though this isn't a [leaf
+node](https://prosemirror.net/docs/ref/#model.NodeType.isLeaf), it doesn't have directly editable
+content and should be treated as a single unit in the view.
+
+</dd>
+
+<dt>
+
 `attrs?: {[key in string | number | symbol]: AttrSpec<Attrs[key]>}`
 
 </dt>
@@ -1385,6 +1587,179 @@ A JSON representation of the prosemirror node.
 <dd>
 
 The attributes that nodes of this type get.
+
+</dd>
+
+<dt>
+
+`code?: boolean`
+
+</dt>
+
+<dd>
+
+Can be used to indicate that this node contains code, which
+causes some commands to behave differently.
+
+</dd>
+
+<dt>
+
+`content?: string`
+
+</dt>
+
+<dd>
+
+The content expression for this node, as described in the [schema
+guide](/docs/guide/#schema.content_expressions). When not given,
+the node does not allow any content.
+
+</dd>
+
+<dt>
+
+`defining?: boolean`
+
+</dt>
+
+<dd>
+
+When enabled, enables both
+[`definingAsContext`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingAsContext) and
+[`definingForContent`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingForContent).
+
+</dd>
+
+<dt>
+
+`definingAsContext?: boolean`
+
+</dt>
+
+<dd>
+
+Determines whether this node is considered an important parent
+node during replace operations (such as paste). Non-defining (the
+default) nodes get dropped when their entire content is replaced,
+whereas defining nodes persist and wrap the inserted content.
+
+</dd>
+
+<dt>
+
+`definingForContent?: boolean`
+
+</dt>
+
+<dd>
+
+In inserted content the defining parents of the content are
+preserved when possible. Typically, non-default-paragraph
+textblock types, and possibly list items, are marked as defining.
+
+</dd>
+
+<dt>
+
+`draggable?: boolean`
+
+</dt>
+
+<dd>
+
+Determines whether nodes of this type can be dragged without
+being selected. Defaults to false.
+
+</dd>
+
+<dt>
+
+`group?: string`
+
+</dt>
+
+<dd>
+
+The group or space-separated groups to which this node belongs,
+which can be referred to in the content expressions for the
+schema.
+
+</dd>
+
+<dt>
+
+`inline?: boolean`
+
+</dt>
+
+<dd>
+
+Should be set to true for inline nodes. (Implied for text nodes.)
+
+</dd>
+
+<dt>
+
+`isolating?: boolean`
+
+</dt>
+
+<dd>
+
+When enabled (default is false), the sides of nodes of this type
+count as boundaries that regular editing operations, like
+backspacing or lifting, won't cross. An example of a node that
+should probably have this enabled is a table cell.
+
+</dd>
+
+<dt>
+
+`leafText?: (node: ProseMirrorNode) => string`
+
+</dt>
+
+<dd>
+
+Defines the default way a [leaf node](https://prosemirror.net/docs/ref/#model.NodeType.isLeaf) of
+this type should be serialized to a string (as used by
+[`Node.textBetween`](https://prosemirror.net/docs/ref/#model.Node^textBetween) and
+[`Node.textContent`](https://prosemirror.net/docs/ref/#model.Node^textContent)).
+
+</dd>
+
+<dt>
+
+`linebreakReplacement?: boolean`
+
+</dt>
+
+<dd>
+
+A single inline node in a schema can be set to be a linebreak
+equivalent. When converting between block types that support the
+node and block types that don't but have
+[`whitespace`](https://prosemirror.net/docs/ref/#model.NodeSpec.whitespace) set to `"pre"`,
+[`setBlockType`](https://prosemirror.net/docs/ref/#transform.Transform.setBlockType) will convert
+between newline characters to or from linebreak nodes as
+appropriate.
+
+</dd>
+
+<dt>
+
+`marks?: string`
+
+</dt>
+
+<dd>
+
+The marks that are allowed inside of this node. May be a
+space-separated string referring to mark names or groups, `"_"`
+to explicitly allow all marks, or `""` to disallow marks. When
+not given, nodes with inline content default to allowing all
+marks, other nodes default to not allowing marks.
 
 </dd>
 
@@ -1402,6 +1777,73 @@ The name of the node type.
 
 <dt>
 
+`parseDOM?: readonly TagParseRule[]`
+
+</dt>
+
+<dd>
+
+Associates DOM parser information with this node, which can be
+used by [`DOMParser.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMParser^fromSchema) to
+automatically derive a parser. The `node` field in the rules is
+implied (the name of this node will be filled in automatically).
+If you supply your own parser, you do not need to also specify
+parsing rules in your schema.
+
+</dd>
+
+<dt>
+
+`selectable?: boolean`
+
+</dt>
+
+<dd>
+
+Controls whether nodes of this type can be selected as a [node
+selection](https://prosemirror.net/docs/ref/#state.NodeSelection). Defaults to true for non-text
+nodes.
+
+</dd>
+
+<dt>
+
+`toDebugString?: (node: ProseMirrorNode) => string`
+
+</dt>
+
+<dd>
+
+Defines the default way a node of this type should be serialized
+to a string representation for debugging (e.g. in error messages).
+
+</dd>
+
+<dt>
+
+`toDOM?: (node: ProseMirrorNode) => DOMOutputSpec`
+
+</dt>
+
+<dd>
+
+Defines the default way a node of this type should be serialized
+to DOM/HTML (as used by
+[`DOMSerializer.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMSerializer^fromSchema)).
+Should return a DOM node or an [array
+structure](https://prosemirror.net/docs/ref/#model.DOMOutputSpec) that describes one, with an
+optional number zero (“hole”) in it to indicate where the node's
+content should be inserted.
+
+For text nodes, the default is to create a text DOM node. Though
+it is possible to create a serializer where text is rendered
+differently, this is not supported inside the editor, so you
+shouldn't override that in your text node spec.
+
+</dd>
+
+<dt>
+
 `topNode?: boolean`
 
 </dt>
@@ -1410,6 +1852,26 @@ The name of the node type.
 
 Whether this is the top-level node type. Only one node type can be the
 top-level node type in a schema.
+
+</dd>
+
+<dt>
+
+`whitespace?: "pre" | "normal"`
+
+</dt>
+
+<dd>
+
+Controls way whitespace in this a node is parsed. The default is
+`"normal"`, which causes the [DOM parser](https://prosemirror.net/docs/ref/#model.DOMParser) to
+collapse whitespace in normal mode, and normalize it (replacing
+newlines and such with spaces) otherwise. `"pre"` causes the
+parser to preserve spaces inside the node. When this option isn't
+given, but [`code`](https://prosemirror.net/docs/ref/#model.NodeSpec.code) is true, `whitespace`
+will default to `"pre"`. Note that this option doesn't influence
+the way the node is rendered—that should be handled by `toDOM`
+and/or styling.
 
 </dd>
 
@@ -1949,7 +2411,7 @@ An object holding the attributes of a node.
 
 ## ClickOnHandler {#click-on-handler}
 
-**Type**: `(view: EditorView, pos: number, node: Node, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void`
+**Type**: `(view: EditorView, pos: number, node: ProseMirrorNode, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void`
 
 ## DocChangeHandler {#doc-change-handler}
 
@@ -1972,7 +2434,7 @@ behavior).
 
 ## DoubleClickOnHandler {#double-click-on-handler}
 
-**Type**: `(view: EditorView, pos: number, node: Node, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void`
+**Type**: `(view: EditorView, pos: number, node: ProseMirrorNode, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void`
 
 ## DropHandler {#drop-handler}
 
@@ -2082,7 +2544,7 @@ Available children parameters for [NodeAction](core.md#node-action) and [MarkAct
 
 ## TripleClickOnHandler {#triple-click-on-handler}
 
-**Type**: `(view: EditorView, pos: number, node: Node, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void`
+**Type**: `(view: EditorView, pos: number, node: ProseMirrorNode, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void`
 
 ## UnmountHandler {#unmount-handler}
 
@@ -2123,7 +2585,7 @@ function clsx(...args: (undefined | null | string | boolean)[]): string
 ## collectChildren {#collect-children}
 
 ```ts
-function collectChildren(parent: Node | Fragment): ProseMirrorNode[]
+function collectChildren(parent: ProseMirrorNode | ProseMirrorFragment): ProseMirrorNode[]
 ```
 
 Collects all children of a node or a fragment, and returns them as an array.
@@ -2413,7 +2875,7 @@ Parse a ProseMirror document JSON object to a HTML element.
 ## elementFromNode {#element-from-node}
 
 ```ts
-function elementFromNode(node: Node, options?: DOMSerializerOptions & DOMDocumentOptions): HTMLElement
+function elementFromNode(node: ProseMirrorNode, options?: DOMSerializerOptions & DOMDocumentOptions): HTMLElement
 ```
 
 Serialize a ProseMirror node to a HTML element.
@@ -2429,7 +2891,7 @@ Expands the selection to include the entire mark at the current position.
 ## findParentNode {#find-parent-node}
 
 ```ts
-function findParentNode(predicate: (node: Node) => boolean, $pos: ResolvedPos): FindParentNodeResult | undefined
+function findParentNode(predicate: (node: ProseMirrorNode) => boolean, $pos: ResolvedPos): FindParentNodeResult | undefined
 ```
 
 Find the closest parent node that satisfies the predicate.
@@ -2453,7 +2915,7 @@ Parse a ProseMirror document JSON object to a HTML string.
 ## htmlFromNode {#html-from-node}
 
 ```ts
-function htmlFromNode(node: Node, options?: DOMSerializerOptions & DOMDocumentOptions): string
+function htmlFromNode(node: ProseMirrorNode, options?: DOMSerializerOptions & DOMDocumentOptions): string
 ```
 
 Serialize a ProseMirror node to a HTML string
@@ -2487,7 +2949,7 @@ Checks if the given object is a `AllSelection` instance.
 ## isFragment {#is-fragment}
 
 ```ts
-function isFragment(fragment: unknown): fragment is Fragment
+function isFragment(fragment: unknown): fragment is ProseMirrorFragment
 ```
 
 Checks if the given object is a `Fragment` instance.
@@ -2511,7 +2973,7 @@ Checks if the given object is a `NodeSelection` instance.
 ## isProseMirrorNode {#is-prose-mirror-node}
 
 ```ts
-function isProseMirrorNode(node: unknown): node is Node
+function isProseMirrorNode(node: unknown): node is ProseMirrorNode
 ```
 
 Checks if the given object is a `ProseMirrorNode` instance.
@@ -2551,7 +3013,7 @@ Parse a HTML string to a ProseMirror document JSON object.
 ## jsonFromNode {#json-from-node}
 
 ```ts
-function jsonFromNode(node: Node): NodeJSON
+function jsonFromNode(node: ProseMirrorNode): NodeJSON
 ```
 
 Return a JSON object representing this node.

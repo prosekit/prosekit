@@ -273,7 +273,7 @@ The name of the node type.
 
 <dt>
 
-`update?: (node: Node, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean | void`
+`update?: (node: ProseMirrorNode, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean | void`
 
 </dt>
 
@@ -329,7 +329,7 @@ The name of the node type.
 
 <dt>
 
-`node: ShallowRef<Node>`
+`node: ShallowRef<ProseMirrorNode>`
 
 </dt>
 
@@ -402,7 +402,7 @@ Defines a node view using a Vue component.
 ## useDocChange {#use-doc-change-4}
 
 ```ts
-function useDocChange(handler: (doc: Node) => void, options?: UseExtensionOptions): void
+function useDocChange(handler: (doc: ProseMirrorNode) => void, options?: UseExtensionOptions): void
 ```
 
 Calls the given handler whenever the editor document changes.

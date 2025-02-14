@@ -29,7 +29,6 @@
     "**/node_modules/prosemirror-history/**",
     "**/node_modules/prosemirror-inputrules/**",
     "**/node_modules/prosemirror-keymap/**",
-    "**/node_modules/prosemirror-model/**",
     "**/node_modules/prosemirror-state/**",
     "**/node_modules/prosemirror-transform/**",
     "**/node_modules/prosemirror-view/**",

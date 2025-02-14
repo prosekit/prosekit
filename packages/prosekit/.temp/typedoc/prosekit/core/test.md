@@ -266,7 +266,7 @@ editor.set(doc) // "Hello" is selected.
 ```
 
 ```ts
-const set: (doc: Node) => void
+const set: (doc: ProseMirrorNode) => void
 ```
 
 </dd>
@@ -282,7 +282,7 @@ const set: (doc: Node) => void
 Update the editor's document and selection.
 
 ```ts
-const setContent: (content: string | Node | NodeJSON | HTMLElement, selection?: Selection | "start" | SelectionJSON | "end") => void
+const setContent: (content: string | ProseMirrorNode | NodeJSON | HTMLElement, selection?: Selection | "start" | SelectionJSON | "end") => void
 ```
 
 </dd>

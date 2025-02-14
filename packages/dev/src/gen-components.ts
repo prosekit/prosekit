@@ -479,7 +479,7 @@ import type { CreateProps } from '../create-props'
 /**
  * Props for the {@link ${pascal}} component.
  */
-export type ${pascal}Props = Partial<CreateProps<Props, Events>>
+export interface ${pascal}Props extends Partial<CreateProps<Props, Events>> {}
  
 export const ${pascal}: ForwardRefExoticComponent<
   Partial<${pascal}Props> &

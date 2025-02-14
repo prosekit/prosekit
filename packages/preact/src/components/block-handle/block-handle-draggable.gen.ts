@@ -17,7 +17,7 @@ import type { CreateProps } from '../create-props'
 /**
  * Props for the {@link BlockHandleDraggable} component.
  */
-export type BlockHandleDraggableProps = Partial<CreateProps<Props, Events>>
+export interface BlockHandleDraggableProps extends Partial<CreateProps<Props, Events>> {}
  
 export const BlockHandleDraggable: ForwardRefExoticComponent<
   Partial<BlockHandleDraggableProps> &

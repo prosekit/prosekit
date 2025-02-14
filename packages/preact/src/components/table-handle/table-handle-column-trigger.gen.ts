@@ -17,7 +17,7 @@ import type { CreateProps } from '../create-props'
 /**
  * Props for the {@link TableHandleColumnTrigger} component.
  */
-export type TableHandleColumnTriggerProps = Partial<CreateProps<Props, Events>>
+export interface TableHandleColumnTriggerProps extends Partial<CreateProps<Props, Events>> {}
  
 export const TableHandleColumnTrigger: ForwardRefExoticComponent<
   Partial<TableHandleColumnTriggerProps> &

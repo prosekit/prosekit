@@ -17,7 +17,7 @@ import type { CreateProps } from '../create-props'
 /**
  * Props for the {@link TableHandlePopoverContent} component.
  */
-export type TableHandlePopoverContentProps = Partial<CreateProps<Props, Events>>
+export interface TableHandlePopoverContentProps extends Partial<CreateProps<Props, Events>> {}
  
 export const TableHandlePopoverContent: ForwardRefExoticComponent<
   Partial<TableHandlePopoverContentProps> &

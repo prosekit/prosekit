@@ -17,7 +17,7 @@ import type { CreateProps } from '../create-props'
 /**
  * Props for the {@link ResizableHandle} component.
  */
-export type ResizableHandleProps = Partial<CreateProps<Props, Events>>
+export interface ResizableHandleProps extends Partial<CreateProps<Props, Events>> {}
  
 export const ResizableHandle: ForwardRefExoticComponent<
   Partial<ResizableHandleProps> &

@@ -17,7 +17,7 @@ import type { CreateProps } from '../create-props'
 /**
  * Props for the {@link BlockHandlePopover} component.
  */
-export type BlockHandlePopoverProps = Partial<CreateProps<Props, Events>>
+export interface BlockHandlePopoverProps extends Partial<CreateProps<Props, Events>> {}
  
 export const BlockHandlePopover: ForwardRefExoticComponent<
   Partial<BlockHandlePopoverProps> &

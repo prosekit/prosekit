@@ -79,10 +79,3 @@ cd src/content
 # Copy all files in references/ to docs/references/
 mkdir -p docs/references
 rsync -av references/* docs/references/
-
-# Fix ProseMirror guide links to point to their website
-cd "$WEBSITE_DIR"
-cd src/content/docs
-find references/pm -name "*.md" | while read file; do
-  perl -pi -e 's|\]\(/docs/guide/#|\]\(https://prosemirror.net/docs/guide/#|g' "$file"
-done

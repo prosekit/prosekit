@@ -663,6 +663,27 @@ const posAtDOM: (node: Node, offset: number, bias?: number) => number
 
 <dt>
 
+`serializeForClipboard`
+
+</dt>
+
+<dd>
+
+Serialize the given slice as it would be if it was copied from
+this editor. Returns a DOM element that contains a
+representation of the slice as its children, a textual
+representation, and the transformed slice (which can be
+different from the given input due to hooks like
+[`transformCopied`](https://prosemirror.net/docs/ref/#view.EditorProps.transformCopied)).
+
+```ts
+const serializeForClipboard: (slice: Slice) => { dom: HTMLElement; slice: Slice; text: string }
+```
+
+</dd>
+
+<dt>
+
 `setProps`
 
 </dt>

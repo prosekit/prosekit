@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/vue",
   "type": "module",
-  "version": "0.4.10",
+  "version": "0.4.11",
   "private": false,
   "author": {
     "name": "ocavue",

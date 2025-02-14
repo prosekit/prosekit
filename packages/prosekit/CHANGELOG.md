@@ -1,5 +1,25 @@
 # prosekit
 
+## 0.12.0
+
+### Minor Changes
+
+- [`c980cc3`](https://github.com/ocavue/prosekit/commit/c980cc308a1c5f18ac0eb9bc7d9fa8935a8894e3) ![](https://prosekit.dev/b/basic) ![](https://prosekit.dev/b/extensions)
+
+  `defineCodeBlockShiki()` now sets two CSS variables `--prosemirror-highlight`
+  and `--prosemirror-highlight-bg` on the code block elements, representing the
+  text color and background color of the code block respectively. These colors are
+  based on the Shiki theme you pass to `defineCodeBlockShiki()`.
+
+  `prosekit/basic/typography.css` is also updated to use these CSS variables to
+  set the text color and background color of code blocks.
+
+### Patch Changes
+
+- [`c980cc3`](https://github.com/ocavue/prosekit/commit/c980cc308a1c5f18ac0eb9bc7d9fa8935a8894e3) ![](https://prosekit.dev/b/extensions)
+
+  Update dependency `shiki` to v2.
+
 ## 0.11.5
 
 ### Patch Changes

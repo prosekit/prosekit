@@ -795,7 +795,7 @@ A mapping represents a pipeline of zero or more [step
 maps](https://prosemirror.net/docs/ref/#transform.StepMap). It has special provisions for losslessly
 handling mapping positions through a series of steps in which some
 steps are inverted versions of earlier steps. (This comes up when
-‘[rebasing](/docs/guide/#transform.rebasing)’ steps for
+‘[rebasing](https://prosemirror.net/docs/guide/#transform.rebasing)’ steps for
 collaboration or history management.)
 
 <dl>

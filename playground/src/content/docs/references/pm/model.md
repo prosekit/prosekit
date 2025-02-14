@@ -1663,7 +1663,7 @@ structure between the old and new data as much as possible, which a
 tree shape like this (without back pointers) makes easy.
 
 **Do not** directly mutate the properties of a `Node` object. See
-[the guide](/docs/guide/#doc) for more information.
+[the guide](https://prosemirror.net/docs/guide/#doc) for more information.
 
 <dl>
 
@@ -1893,7 +1893,7 @@ children.
 <dd>
 
 The size of this node, as defined by the integer-based [indexing
-scheme](/docs/guide/#doc.indexing). For text nodes, this is the
+scheme](https://prosemirror.net/docs/guide/#doc.indexing). For text nodes, this is the
 amount of characters. For other leaf nodes, it is one. For
 non-leaf nodes, it is the size of the content plus two (the
 start and end token).
@@ -3491,7 +3491,7 @@ causes some commands to behave differently.
 <dd>
 
 The content expression for this node, as described in the [schema
-guide](/docs/guide/#schema.content_expressions). When not given,
+guide](https://prosemirror.net/docs/guide/#schema.content_expressions). When not given,
 the node does not allow any content.
 
 </dd>

@@ -44,20 +44,20 @@
     "build:tsup": "tsup"
   },
   "dependencies": {
-    "prosemirror-commands": "^1.6.2",
+    "prosemirror-commands": "^1.7.0",
     "prosemirror-history": "^1.4.1",
     "prosemirror-inputrules": "^1.4.0",
     "prosemirror-keymap": "^1.2.2",
     "prosemirror-model": "^1.24.1",
     "prosemirror-state": "^1.4.3",
-    "prosemirror-transform": "^1.10.2",
-    "prosemirror-view": "^1.38.0"
+    "prosemirror-transform": "^1.10.3",
+    "prosemirror-view": "^1.38.1"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
     "tsup": "^8.3.5",
     "typescript": "~5.7.2",
-    "vitest": "^3.0.4"
+    "vitest": "^3.0.7"
   },
   "publishConfig": {
     "exports": {

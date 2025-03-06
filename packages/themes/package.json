@@ -41,6 +41,6 @@
     "prettier": "^3.4.2",
     "typescript": "~5.7.2",
     "unplugin-macros": "^0.14.0",
-    "vitest": "^3.0.4"
+    "vitest": "^3.0.7"
   }
 }

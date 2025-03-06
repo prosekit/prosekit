@@ -1,0 +1,11 @@
+---
+interface Props {
+  href: string
+}
+
+const href = Astro.props.href
+const internal = href.startsWith('/')
+const attrs = internal ? { href } : { href, rel: 'noreferrer', target: '_blank' }
+---
+
+<a {...attrs} class="no-underline color-current hover:underline"><slot /></a>

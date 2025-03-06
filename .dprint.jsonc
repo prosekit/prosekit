@@ -16,7 +16,12 @@
   "json": {
     "jsonTrailingCommaFiles": ["tsconfig.json", ".vscode/settings.json"],
   },
-  "markdown": {},
+  "markdown": {
+    "associations": [
+      // format files that match this pattern
+      "**/*.mdx",
+    ],
+  },
   "markup": {
     "astro.styleIndent": true,
   },
@@ -26,6 +31,7 @@
     "**/*-lock.json",
     "**/*-lock.yaml",
     "**/*.gen.*",
+    "**/.astro/**/*",
   ],
   "plugins": [
     "https://plugins.dprint.dev/typescript-0.93.3.wasm",

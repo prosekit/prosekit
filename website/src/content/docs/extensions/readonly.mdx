@@ -1,0 +1,23 @@
+---
+title: Readonly
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+Disable editing of the editor.
+
+<Demo story="readonly" />
+
+## Usage
+
+```ts twoslash
+import { defineReadonly } from 'prosekit/extensions/readonly'
+
+const extension = defineReadonly()
+```
+
+You can use `useExtension()` to enable or disable this extension dynamically in your application.
+
+## API Reference
+
+- [prosekit/extensions/readonly](/references/extensions/readonly)

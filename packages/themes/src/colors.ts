@@ -1,21 +1,21 @@
 // @unocss-include
 
 const COLORS = [
-  ['background', 'white', 'neutral-900'],
-  ['foreground', 'neutral-900', 'zinc-50'],
-  ['primary', 'zinc-900', 'zinc-50'],
-  ['primary-foreground', 'zinc-50', 'zinc-900'],
-  ['secondary', 'zinc-100', 'zinc-800'],
-  ['secondary-foreground', 'zinc-900', 'zinc-50'],
-  ['muted', 'zinc-100', 'zinc-800'],
-  ['muted-foreground', 'zinc-500', 'zinc-500'],
+  ['background', 'white', 'gray-950'],
+  ['foreground', 'gray-900', 'gray-50'],
+  ['primary', 'gray-900', 'gray-50'],
+  ['primary-foreground', 'gray-50', 'gray-900'],
+  ['secondary', 'gray-100', 'gray-800'],
+  ['secondary-foreground', 'gray-900', 'gray-50'],
+  ['muted', 'gray-100', 'gray-800'],
+  ['muted-foreground', 'gray-500', 'gray-500'],
   ['accent', 'gray-200', 'gray-700'],
-  ['accent-foreground', 'zinc-900', 'zinc-50'],
+  ['accent-foreground', 'gray-900', 'gray-50'],
   ['destructive', 'red-500', 'red-900'],
-  ['destructive-foreground', 'zinc-50', 'zinc-50'],
-  ['border', 'zinc-200', 'zinc-800'],
-  ['input', 'zinc-200', 'zinc-800'],
-  ['ring', 'zinc-900', 'zinc-300'],
+  ['destructive-foreground', 'gray-50', 'gray-50'],
+  ['border', 'gray-200', 'gray-800'],
+  ['input', 'gray-200', 'gray-800'],
+  ['ring', 'gray-900', 'gray-300'],
 ] as const
 
 const GROUPS = ['text', 'bg', 'border', 'ring', 'ring-offset'] as const

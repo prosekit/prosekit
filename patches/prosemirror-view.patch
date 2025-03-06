@@ -1,0 +1,24 @@
+diff --git a/dist/index.d.cts b/dist/index.d.cts
+index c56f8baba1c1270c77c32c16943341d08a6aa9dd..2a9282c978d122c61cd19ec172a14f5bfae2c8b4 100644
+--- a/dist/index.d.cts
++++ b/dist/index.d.cts
+@@ -234,6 +234,7 @@ declare class DecorationGroup implements DecorationSource {
+ 
+ declare global {
+     interface Node {
++        /** @internal https://github.com/ProseMirror/prosemirror-view/pull/178 */
+         pmViewDesc?: ViewDesc;
+     }
+ }
+diff --git a/dist/index.d.ts b/dist/index.d.ts
+index c56f8baba1c1270c77c32c16943341d08a6aa9dd..2a9282c978d122c61cd19ec172a14f5bfae2c8b4 100644
+--- a/dist/index.d.ts
++++ b/dist/index.d.ts
+@@ -234,6 +234,7 @@ declare class DecorationGroup implements DecorationSource {
+ 
+ declare global {
+     interface Node {
++        /** @internal https://github.com/ProseMirror/prosemirror-view/pull/178 */
+         pmViewDesc?: ViewDesc;
+     }
+ }

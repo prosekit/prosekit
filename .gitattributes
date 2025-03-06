@@ -1,4 +1,2 @@
 **/*.gen.* linguist-generated=true
 .size-limit.json linguist-generated=true
-website/example-code-blocks/** linguist-generated=true
-website/examples/** linguist-generated=true

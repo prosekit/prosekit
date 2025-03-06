@@ -5,9 +5,21 @@ settings:
   excludeLinksFromLockfile: false
 
 patchedDependencies:
+  prosemirror-commands:
+    hash: tldkc6iqft3oonh5tmtd5dta3e
+    path: patches/prosemirror-commands.patch
+  prosemirror-model:
+    hash: xelbcagl6lcnzppq7gij542ige
+    path: patches/prosemirror-model.patch
   prosemirror-splittable@0.1.1:
     hash: ltdjze5wh25pjc2y4z24yafn7u
     path: patches/prosemirror-splittable@0.1.1.patch
+  prosemirror-transform:
+    hash: 5co2hpr3glv5wwzljgiihaucva
+    path: patches/prosemirror-transform.patch
+  prosemirror-view:
+    hash: csvlqvzdiwllkaxmccwkb7q4w4
+    path: patches/prosemirror-view.patch
 
 importers:
 
@@ -139,7 +151,7 @@ importers:
         version: 2.1.1
       prosemirror-splittable:
         specifier: ^0.1.1
-        version: 0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)
+        version: 0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva))
       type-fest:
         specifier: ^4.32.0
         version: 4.32.0
@@ -255,7 +267,7 @@ importers:
         version: 1.3.2
       prosemirror-highlight:
         specifier: ^0.12.1
-        version: 0.12.1(@types/hast@3.0.4)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.1)(shiki@2.2.0)
+        version: 0.12.1(@types/hast@3.0.4)(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva))(prosemirror-view@1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))(shiki@2.2.0)
       prosemirror-search:
         specifier: ^1.0.0
         version: 1.0.0
@@ -280,7 +292,7 @@ importers:
         version: 1.3.0
       loro-prosemirror:
         specifier: ^0.2.1
-        version: 0.2.1(loro-crdt@1.3.0)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-view@1.37.1)
+        version: 0.2.1(loro-crdt@1.3.0)(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-view@1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
@@ -298,7 +310,7 @@ importers:
         version: 3.0.4(@types/debug@4.1.12)(@types/node@20.17.9)(@vitest/browser@3.0.4)(jiti@2.4.1)(lightningcss@1.29.1)(msw@2.7.0(@types/node@20.17.9)(typescript@5.7.2))(tsx@4.19.2)(yaml@2.6.1)
       y-prosemirror:
         specifier: ^1.2.15
-        version: 1.2.15(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-view@1.37.1)(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)
+        version: 1.2.15(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-view@1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)
       y-protocols:
         specifier: ^1.0.6
         version: 1.0.6(yjs@13.6.22)
@@ -329,7 +341,7 @@ importers:
     dependencies:
       prosemirror-commands:
         specifier: ^1.6.2
-        version: 1.6.2
+        version: 1.6.2(patch_hash=tldkc6iqft3oonh5tmtd5dta3e)
       prosemirror-history:
         specifier: ^1.4.1
         version: 1.4.1
@@ -341,16 +353,16 @@ importers:
         version: 1.2.2
       prosemirror-model:
         specifier: ^1.24.1
-        version: 1.24.1
+        version: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-state:
         specifier: ^1.4.3
         version: 1.4.3
       prosemirror-transform:
         specifier: ^1.10.2
-        version: 1.10.2
+        version: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
       prosemirror-view:
-        specifier: ^1.37.1
-        version: 1.37.1
+        specifier: ^1.38.0
+        version: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -446,7 +458,7 @@ importers:
         version: 1.3.0
       loro-prosemirror:
         specifier: ^0.2.1
-        version: 0.2.1(loro-crdt@1.3.0)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-view@1.37.1)
+        version: 0.2.1(loro-crdt@1.3.0)(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-view@1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))
       postcss:
         specifier: ^8.5.0
         version: 8.5.0
@@ -478,8 +490,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.0
       typedoc-plugin-md:
-        specifier: ^0.5.0
-        version: 0.5.0(typedoc@0.27.6(typescript@5.7.2))
+        specifier: ^0.6.0
+        version: 0.6.0(typedoc@0.27.6(typescript@5.7.2))
       typedoc-plugin-mdn-links:
         specifier: ^4.0.8
         version: 4.0.8(typedoc@0.27.6(typescript@5.7.2))
@@ -491,7 +503,7 @@ importers:
         version: 3.5.13(typescript@5.7.2)
       y-prosemirror:
         specifier: ^1.2.15
-        version: 1.2.15(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-view@1.37.1)(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)
+        version: 1.2.15(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-view@1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22)
       yjs:
         specifier: ^13.6.22
         version: 13.6.22
@@ -831,7 +843,7 @@ importers:
         version: 1.3.0
       loro-prosemirror:
         specifier: ^0.2.1
-        version: 0.2.1(loro-crdt@1.3.0)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-view@1.37.1)
+        version: 0.2.1(loro-crdt@1.3.0)(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-view@1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))
       preact:
         specifier: ^10.25.4
         version: 10.25.4
@@ -951,7 +963,7 @@ importers:
         version: 1.3.0
       loro-prosemirror:
         specifier: ^0.2.1
-        version: 0.2.1(loro-crdt@1.3.0)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-view@1.37.1)
+        version: 0.2.1(loro-crdt@1.3.0)(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-view@1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))
       postcss:
         specifier: ^8.5.0
         version: 8.5.0
@@ -4078,9 +4090,6 @@ packages:
     resolution: {integrity: sha512-uDn+FE1yrDzyC0pCo961B2IHbdM8y/ACZsKD4dG6WqrjV53BADjwa7D+1aom2rsNVfLyDgU/eigvlJGJ08OQ4w==}
     engines: {node: '>= 0.4'}
 
-  es-module-lexer@1.5.4:
-    resolution: {integrity: sha512-MVNK56NiMrOwitFB7cqDwq0CQutbw+0BvLshJSse0MUNU+y1FC3bUS/AQg7oUng+/wKrrki7JfmwtVHkVfPLlw==}
-
   es-module-lexer@1.6.0:
     resolution: {integrity: sha512-qqnD1yMU6tk/jnaMosogGySTZP8YtUgAffA9nMN+E/rjxcfRQ6IEk7IiozUjgxKoFHBGjTLnrHB/YC45r/59EQ==}
 
@@ -5653,9 +5662,6 @@ packages:
   oniguruma-to-es@1.0.0:
     resolution: {integrity: sha512-kihvp0O4lFwf5tZMkfanwQLIZ9ORe9OeOFgZonH0BQeThgwfJiaZFeOfvvJVnJIM9TiVmx0RDD35hUJDR0++rQ==}
 
-  oniguruma-to-es@2.1.0:
-    resolution: {integrity: sha512-Iq/949c5IueVC5gQR7OYXs0uHsDIePcgZFlVRIVGfQcWwbKG+nsyWfthswdytShlRdkZADY+bWSi+BRyUL81gA==}
-
   oniguruma-to-es@2.3.0:
     resolution: {integrity: sha512-bwALDxriqfKGfUufKGGepCzu9x7nJQuoRoAFp4AnwehhC2crqrDIAP/uN2qdlsAvSMpeRC3+Yzhqc7hLmle5+g==}
 
@@ -5808,9 +5814,6 @@ packages:
 
   pathe@1.1.2:
     resolution: {integrity: sha512-whLdWMYL2TwI08hn8/ZqAbrVemu0LNaNNJZX73O6qaIdCTfXutsLhMkjdENX0qhsQ9uIimo4/aQOmXkoon2nDQ==}
-
-  pathe@2.0.1:
-    resolution: {integrity: sha512-6jpjMpOth5S9ITVu5clZ7NOgHNsv5vRQdheL9ztp2vZmM6fRbLvyua1tiBIL4lk8SAe3ARzeXEly6siXCjDHDw==}
 
   pathe@2.0.2:
     resolution: {integrity: sha512-15Ztpk+nov8DR524R4BF7uEuzESgzUEAV4Ah7CUMNGXdE5ELuvxElxGXndBl32vMSsWa1jpNf22Z+Er3sKwq+w==}
@@ -6055,8 +6058,8 @@ packages:
   prosemirror-transform@1.10.2:
     resolution: {integrity: sha512-2iUq0wv2iRoJO/zj5mv8uDUriOHWzXRnOTVgCzSXnktS/2iQRa3UUQwVlkBlYZFtygw6Nh1+X4mGqoYBINn5KQ==}
 
-  prosemirror-view@1.37.1:
-    resolution: {integrity: sha512-MEAnjOdXU1InxEmhjgmEzQAikaS6lF3hD64MveTPpjOGNTl87iRLA1HupC/DEV6YuK7m4Q9DHFNTjwIVtqz5NA==}
+  prosemirror-view@1.38.1:
+    resolution: {integrity: sha512-4FH/uM1A4PNyrxXbD+RAbAsf0d/mM0D/wAKSVVWK7o0A9Q/oOXJBrw786mBf2Vnrs/Edly6dH6Z2gsb7zWwaUw==}
 
   proto-list@1.2.4:
     resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}
@@ -6676,9 +6679,6 @@ packages:
   tinybench@2.9.0:
     resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
 
-  tinyexec@0.3.1:
-    resolution: {integrity: sha512-WiCJLEECkO18gwqIp6+hJg0//p23HXp4S+gGtAKu3mI2F2/sXC4FvHvXvB0zJVVaTPhx1/tOwdbRsa1sOBIKqQ==}
-
   tinyexec@0.3.2:
     resolution: {integrity: sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==}
 
@@ -6870,8 +6870,8 @@ packages:
   typedoc-plugin-external-package-links@0.1.0:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
 
-  typedoc-plugin-md@0.5.0:
-    resolution: {integrity: sha512-/9R60Fl9/JWPk7mwywOhbFEdzxf8REyliIxMLzsEsawaQbe2AYOLExoPf3DaPM9O2Uo5txnAOLNoShNZw09wOQ==}
+  typedoc-plugin-md@0.6.0:
+    resolution: {integrity: sha512-wMb5vdcobPknFWuUjMdh2r9mGQ5kxX4uQ5GlB+nqhMOcKa2SSimqHrWV6q5bcmFMuKvpO9i3kWfUGmthf+KCwA==}
     peerDependencies:
       typedoc: ^0.27.1
 
@@ -7119,11 +7119,6 @@ packages:
     resolution: {integrity: sha512-a1nzURqO7DDmnXqabFOliz908FRmIppkBKsJthS8rbe8hBEXwEwe4C3Pp33Z1JoFCYfVL4kTOMLKk0ZZxREIeA==}
     peerDependencies:
       vite: ^2.6.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0 || ^6.0.0-0
-
-  vite-node@3.0.0-beta.4:
-    resolution: {integrity: sha512-dzWen17ftEjmJWCsY7iMZ3lz4npzDsMYKEqkCnIiyABHiQCp9usrFnyzqNJJDIVZYZsG+UXgizOwjrV2cl2QYw==}
-    engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
-    hasBin: true
 
   vite-node@3.0.4:
     resolution: {integrity: sha512-7JZKEzcYV2Nx3u6rlvN8qdo3QV7Fxyt6hx+CCKz9fbWxdX5IvUOmTWEAxMrWxaiSf7CKGLJQ5rFu8prb/jBjOA==}
@@ -8704,8 +8699,8 @@ snapshots:
 
   '@gerrit0/mini-shiki@1.24.1':
     dependencies:
-      '@shikijs/engine-oniguruma': 1.26.2
-      '@shikijs/types': 1.26.2
+      '@shikijs/engine-oniguruma': 1.27.2
+      '@shikijs/types': 1.27.2
       '@shikijs/vscode-textmate': 9.3.1
 
   '@humanfs/core@0.19.1': {}
@@ -8909,7 +8904,7 @@ snapshots:
       picocolors: 1.1.1
       sembear: 0.7.0
       semver: 7.6.3
-      tinyexec: 0.3.1
+      tinyexec: 0.3.2
       validate-npm-package-name: 5.0.1
 
   '@manypkg/find-root@1.1.0':
@@ -9438,7 +9433,7 @@ snapshots:
     dependencies:
       '@shikijs/types': 1.27.2
       '@shikijs/vscode-textmate': 10.0.1
-      oniguruma-to-es: 2.1.0
+      oniguruma-to-es: 2.3.0
 
   '@shikijs/engine-javascript@2.2.0':
     dependencies:
@@ -10573,7 +10568,7 @@ snapshots:
       diff: 5.2.0
       dlv: 1.1.3
       dset: 3.1.4
-      es-module-lexer: 1.5.4
+      es-module-lexer: 1.6.0
       esbuild: 0.21.5
       estree-walker: 3.0.3
       fast-glob: 3.3.2
@@ -10595,7 +10590,7 @@ snapshots:
       rehype: 13.0.2
       semver: 7.6.3
       shiki: 1.26.2
-      tinyexec: 0.3.1
+      tinyexec: 0.3.2
       tsconfck: 3.1.4(typescript@5.7.2)
       ultrahtml: 1.5.3
       unist-util-visit: 5.0.0
@@ -11234,8 +11229,6 @@ snapshots:
       internal-slot: 1.1.0
       iterator.prototype: 1.1.4
       safe-array-concat: 1.1.3
-
-  es-module-lexer@1.5.4: {}
 
   es-module-lexer@1.6.0: {}
 
@@ -12622,13 +12615,13 @@ snapshots:
 
   loro-crdt@1.3.0: {}
 
-  loro-prosemirror@0.2.1(loro-crdt@1.3.0)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-view@1.37.1):
+  loro-prosemirror@0.2.1(loro-crdt@1.3.0)(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-view@1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)):
     dependencies:
       lib0: 0.2.99
       loro-crdt: 1.3.0
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-state: 1.4.3
-      prosemirror-view: 1.37.1
+      prosemirror-view: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
   loupe@3.1.2: {}
 
@@ -13231,12 +13224,6 @@ snapshots:
       regex: 5.1.1
       regex-recursion: 5.1.1
 
-  oniguruma-to-es@2.1.0:
-    dependencies:
-      emoji-regex-xs: 1.0.0
-      regex: 5.1.1
-      regex-recursion: 5.1.1
-
   oniguruma-to-es@2.3.0:
     dependencies:
       emoji-regex-xs: 1.0.0
@@ -13387,8 +13374,6 @@ snapshots:
 
   pathe@1.1.2: {}
 
-  pathe@2.0.1: {}
-
   pathe@2.0.2: {}
 
   pathval@2.0.0: {}
@@ -13525,107 +13510,107 @@ snapshots:
 
   prosemirror-changeset@2.2.1:
     dependencies:
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
 
-  prosemirror-commands@1.6.2:
+  prosemirror-commands@1.6.2(patch_hash=tldkc6iqft3oonh5tmtd5dta3e):
     dependencies:
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
 
   prosemirror-dropcursor@1.8.1:
     dependencies:
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
-      prosemirror-view: 1.37.1
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
+      prosemirror-view: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
   prosemirror-flat-list@0.5.4:
     dependencies:
-      prosemirror-commands: 1.6.2
+      prosemirror-commands: 1.6.2(patch_hash=tldkc6iqft3oonh5tmtd5dta3e)
       prosemirror-inputrules: 1.4.0
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-safari-ime-span: 1.0.2
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
-      prosemirror-view: 1.37.1
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
+      prosemirror-view: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
   prosemirror-gapcursor@1.3.2:
     dependencies:
       prosemirror-keymap: 1.2.2
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-state: 1.4.3
-      prosemirror-view: 1.37.1
+      prosemirror-view: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
-  prosemirror-highlight@0.12.1(@types/hast@3.0.4)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2)(prosemirror-view@1.37.1)(shiki@2.2.0):
+  prosemirror-highlight@0.12.1(@types/hast@3.0.4)(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva))(prosemirror-view@1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))(shiki@2.2.0):
     optionalDependencies:
       '@types/hast': 3.0.4
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
-      prosemirror-view: 1.37.1
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
+      prosemirror-view: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
       shiki: 2.2.0
 
   prosemirror-history@1.4.1:
     dependencies:
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
-      prosemirror-view: 1.37.1
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
+      prosemirror-view: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
       rope-sequence: 1.3.4
 
   prosemirror-inputrules@1.4.0:
     dependencies:
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
 
   prosemirror-keymap@1.2.2:
     dependencies:
       prosemirror-state: 1.4.3
       w3c-keyname: 2.2.8
 
-  prosemirror-model@1.24.1:
+  prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige):
     dependencies:
       orderedmap: 2.1.1
 
   prosemirror-safari-ime-span@1.0.2:
     dependencies:
       prosemirror-state: 1.4.3
-      prosemirror-view: 1.37.1
+      prosemirror-view: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
   prosemirror-search@1.0.0:
     dependencies:
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-state: 1.4.3
-      prosemirror-view: 1.37.1
+      prosemirror-view: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
-  prosemirror-splittable@0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2):
+  prosemirror-splittable@0.1.1(patch_hash=ltdjze5wh25pjc2y4z24yafn7u)(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-transform@1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)):
     optionalDependencies:
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
 
   prosemirror-state@1.4.3:
     dependencies:
-      prosemirror-model: 1.24.1
-      prosemirror-transform: 1.10.2
-      prosemirror-view: 1.37.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
+      prosemirror-view: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
   prosemirror-tables@1.6.2:
     dependencies:
       prosemirror-keymap: 1.2.2
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
-      prosemirror-view: 1.37.1
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
+      prosemirror-view: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
 
-  prosemirror-transform@1.10.2:
+  prosemirror-transform@1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva):
     dependencies:
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
 
-  prosemirror-view@1.37.1:
+  prosemirror-view@1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4):
     dependencies:
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-state: 1.4.3
-      prosemirror-transform: 1.10.2
+      prosemirror-transform: 1.10.2(patch_hash=5co2hpr3glv5wwzljgiihaucva)
 
   proto-list@1.2.4: {}
 
@@ -14448,8 +14433,6 @@ snapshots:
 
   tinybench@2.9.0: {}
 
-  tinyexec@0.3.1: {}
-
   tinyexec@0.3.2: {}
 
   tinyglobby@0.2.10:
@@ -14519,7 +14502,7 @@ snapshots:
       rollup: 4.28.1
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
-      tinyexec: 0.3.1
+      tinyexec: 0.3.2
       tinyglobby: 0.2.10
       tree-kill: 1.2.2
     optionalDependencies:
@@ -14636,7 +14619,7 @@ snapshots:
 
   typedoc-plugin-external-package-links@0.1.0: {}
 
-  typedoc-plugin-md@0.5.0(typedoc@0.27.6(typescript@5.7.2)):
+  typedoc-plugin-md@0.6.0(typedoc@0.27.6(typescript@5.7.2)):
     dependencies:
       '@sindresorhus/slugify': 2.2.1
       change-case: 5.4.4
@@ -14811,7 +14794,7 @@ snapshots:
       magic-string-ast: 0.7.0
       unplugin: 2.1.2
       vite: 6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1)
-      vite-node: 3.0.0-beta.4(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1)
+      vite-node: 3.0.4(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1)
     transitivePeerDependencies:
       - '@types/node'
       - jiti
@@ -14901,27 +14884,6 @@ snapshots:
   vite-hot-client@0.2.4(vite@6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1)):
     dependencies:
       vite: 6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1)
-
-  vite-node@3.0.0-beta.4(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1):
-    dependencies:
-      cac: 6.7.14
-      debug: 4.4.0
-      es-module-lexer: 1.5.4
-      pathe: 2.0.1
-      vite: 6.0.7(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1)
-    transitivePeerDependencies:
-      - '@types/node'
-      - jiti
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - tsx
-      - yaml
 
   vite-node@3.0.4(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1):
     dependencies:
@@ -15040,9 +15002,9 @@ snapshots:
       '@docsearch/css': 3.8.0
       '@docsearch/js': 3.8.0(@algolia/client-search@5.15.0)(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(search-insights@2.17.3)
       '@iconify-json/simple-icons': 1.2.14
-      '@shikijs/core': 1.26.2
+      '@shikijs/core': 1.27.2
       '@shikijs/transformers': 1.24.0
-      '@shikijs/types': 1.26.2
+      '@shikijs/types': 1.27.2
       '@types/markdown-it': 14.1.2
       '@vitejs/plugin-vue': 5.2.1(vite@5.4.11(@types/node@20.17.9)(lightningcss@1.29.1))(vue@3.5.13(typescript@5.7.2))
       '@vue/devtools-api': 7.6.7
@@ -15292,12 +15254,12 @@ snapshots:
       yjs: 13.6.22
     optional: true
 
-  y-prosemirror@1.2.15(prosemirror-model@1.24.1)(prosemirror-state@1.4.3)(prosemirror-view@1.37.1)(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22):
+  y-prosemirror@1.2.15(prosemirror-model@1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige))(prosemirror-state@1.4.3)(prosemirror-view@1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4))(y-protocols@1.0.6(yjs@13.6.22))(yjs@13.6.22):
     dependencies:
       lib0: 0.2.99
-      prosemirror-model: 1.24.1
+      prosemirror-model: 1.24.1(patch_hash=xelbcagl6lcnzppq7gij542ige)
       prosemirror-state: 1.4.3
-      prosemirror-view: 1.37.1
+      prosemirror-view: 1.38.1(patch_hash=csvlqvzdiwllkaxmccwkb7q4w4)
       y-protocols: 1.0.6(yjs@13.6.22)
       yjs: 13.6.22
 

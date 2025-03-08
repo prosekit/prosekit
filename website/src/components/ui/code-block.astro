@@ -1,0 +1,11 @@
+---
+import type { ComponentProps } from 'astro/types'
+import { Code } from 'astro:components'
+import { shikiConfig } from '../../shiki-config'
+
+type CodeProps = ComponentProps<typeof Code>
+type Props = Omit<CodeProps, 'lang'> & { lang?: string | undefined }
+const props = Astro.props as CodeProps
+---
+
+<Code {...props} {...shikiConfig} />

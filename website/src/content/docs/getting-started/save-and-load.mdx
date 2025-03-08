@@ -1,0 +1,46 @@
+---
+title: Save and Load
+order: 40
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+# Saving and Loading
+
+As an editor, loading and saving documents is the most basic functionality. With ProseKit, you can save your content in different formats. ProseKit supports using JSON and HTML formats. You can also build upon this to save your content in other ways (you can find an example using Markdown).
+
+## JSON
+
+Generally, JSON is the recommended storage format because JSON can precisely express your document content. Sometimes, HTML format may also be necessary, such as when importing documents from other sources, where you will likely need to convert the document to HTML format first and then import it into ProseKit.
+
+### Saving JSON
+
+Call `editor.getDocJSON()` to output an object in JSON format. This can be used to store your content.
+
+`useDocChange()` provides a way to notify you when the document changes.
+
+Note: Each call to `editor.getDocJSON()` is accompanied by document serialization. If your document is large enough, or if you have high performance requirements, do not call `editor.getDocJSON()` after every input.
+
+### Loading JSON
+
+When initializing the editor, you can set your JSON document in the `defaultContent` option in `createEditor()`.
+
+### JSON Example
+
+Here is an example of storing and loading JSON.
+
+<Demo story="save-json" />
+
+## HTML
+
+Although JSON is the recommended format, but
+
+- Call `editor.getDocHTML()` to output an HTML string containing your document content.
+
+## Save
+
+Call `editor.getDocHTML()` to output a string in HTML format.
+
+## Load
+
+`createEditor()` accepts a `defaultContent` option to use as content when initializing the document. You can pass in a JSON format object or an HTML string.

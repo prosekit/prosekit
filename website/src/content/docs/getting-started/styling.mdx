@@ -1,0 +1,65 @@
+---
+title: Styling your editor
+order: 30
+---
+
+import { Steps } from '@astrojs/starlight/components'
+import CodeGroupInstallation from '@/components/ui/code-group-installation.astro'
+
+ProseKit is an unstyled editor that allows you to fully customize its appearance. However, ProseKit does provide several out-of-the-box styling options. Specifically, ProseKit offers styles at three different levels:
+
+## Use `style.css`
+
+`prosekit/basic/style.css` is the basic and most important stylesheet. Make sure you load this file so that ProseKit can work properly.
+
+```ts {2}
+// index.ts
+import 'prosekit/basic/style.css'
+```
+
+## Use `typography.css`
+
+`prosekit/basic/typography.css` provides a beautiful set of typographic styles. This stylesheet gives you attractive text formatting, such as font sizes and margins for `<p>`, `<h1>` elements.
+
+You can import `prosekit/basic/typography.css` as a quick start:
+
+```ts {3}
+// index.ts
+import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
+```
+
+Alternatively, you can copy all the content of this file (which can be found [here](https://unpkg.com/prosekit/dist/basic/typography.css)) and customize it according to your needs.
+
+## Setting Up Tailwind CSS
+
+ProseKit offers a library of styleless components. You can view all components [here(TODO)](HTTPS://example.com/THIS_WEBSITE_LINK_IS_NOT_READY_YET/PLEASE_FILL_ME_LATER). For each component, we provide examples based on TailwindCSS. You can directly copy our examples into your project that has TailwindCSS configured. Check [this page(TODO)](https://example.com/THIS_WEBSITE_LINK_IS_NOT_READY_YET/PLEASE_FILL_ME_LATER) to learn how to configure TailwindCSS.
+
+<Steps>
+
+1. **Install and configure Tailwind CSS**
+
+   Please refer to the official documentation: https://v3.tailwindcss.com/docs/installation
+
+2. **Install dependencies**
+
+   <CodeGroupInstallation packages="tailwindcss-animate @egoist/tailwindcss-icons @iconify-json/lucide" />
+
+3. **Modify the configuration file**
+
+   ```js {2-3,7}
+   // tailwind.config.js
+   import { iconsPlugin } from '@egoist/tailwindcss-icons'
+   import animatePlugin from 'tailwindcss-animate'
+
+   export default {
+     content: ['./src/**/*.{html,js,jsx,ts,tsx,vue,svelte}'],
+     plugins: [iconsPlugin(), animatePlugin],
+   }
+   ```
+
+4. **That's it**
+
+   You can now start adding components to your project.
+
+</Steps>

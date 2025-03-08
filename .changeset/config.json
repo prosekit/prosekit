@@ -8,9 +8,9 @@
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
   "ignore": [
+    "@prosekit/starlight-theme",
     "@prosekit/themes",
     "@prosekit/unocss-preset",
-    "prosekit-playground",
     "prosekit-website"
   ]
 }

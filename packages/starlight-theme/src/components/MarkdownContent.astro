@@ -1,0 +1,16 @@
+---
+import Default from '@astrojs/starlight/components/MarkdownContent.astro'
+import CodeCopy from './CodeCopy.astro'
+---
+
+<Default>
+  <slot />
+</Default>
+
+<style is:global>
+  :root .sl-markdown-content dd:not(:where(.not-content *)) {
+  	padding-inline-start: 2rem;
+  }
+</style>
+
+<CodeCopy />

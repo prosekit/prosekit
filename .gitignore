@@ -1,12 +1,11 @@
 CHANGELOG.md
 !packages/prosekit/CHANGELOG.md
 **/vite.*.timestamp-*.mjs
-**/.astro/settings.json
+**/.astro/**/*
 **/public/astrobook
 .tsup
 .yalc
 yalc.lock
-.astro
 
 .cache
 .DS_Store
@@ -22,8 +21,7 @@ temp
 *.tsbuildinfo
 .turbo
 .temp
-website/.vitepress/cache
-website/references
+website/src/content/docs/references
 tsup.config.bundled*
 vite.config.ts.timestamp*
 .svelte-kit

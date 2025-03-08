@@ -1,0 +1,36 @@
+---
+import CodeGroup from './code-group.astro'
+
+interface Props {
+  dev?: boolean
+  packages: string
+}
+
+const props: Props = Astro.props
+
+const packageManagers = ['pnpm', 'npm', 'yarn', 'bun'] as const
+
+type PackageManager = typeof packageManagers[number]
+
+function getCode(packageManager: PackageManager) {
+  const parts: string[] = [
+    {
+      pnpm: 'pnpm add',
+      npm: 'npm install',
+      yarn: 'yarn add',
+      bun: 'bun add',
+    }[packageManager],
+
+    props.dev ? '-D' : '',
+
+    props.packages,
+  ]
+
+  return parts.filter(Boolean).join(' ')
+}
+---
+
+<CodeGroup
+  syncKey="code-group-installation"
+  codes={packageManagers.map(pkg => ({ title: pkg, code: getCode(pkg), lang: 'shell' }))}
+/>

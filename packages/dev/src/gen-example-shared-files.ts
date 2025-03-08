@@ -83,7 +83,7 @@ async function cloneSharedFileInFramwork(
       for (const f of example.files) {
         if (f.path === sharedFile) {
           const filePath = path.join(
-            'playground',
+            'website',
             'src',
             'examples',
             example.framework,

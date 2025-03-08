@@ -1,0 +1,33 @@
+---
+title: Link
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+The `link` mark is used to represent links. It will be rendered as `<a>` element in HTML.
+
+<Demo story="link" />
+
+## Commands
+
+### `addLink`
+
+```ts
+editor.commands.addLink({ href: 'https://www.example.com' })
+```
+
+### `removeLink`
+
+```ts
+editor.commands.removeLink()
+```
+
+### `toggleLink`
+
+```ts
+editor.commands.toggleLink({ href: 'https://www.example.com' })
+```
+
+## API Reference
+
+- [prosekit/extensions/link](/references/extensions/link)

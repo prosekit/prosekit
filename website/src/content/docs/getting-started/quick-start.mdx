@@ -1,0 +1,39 @@
+---
+title: Quick Start
+order: 20
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import CodeGroupInstallation from '@/components/ui/code-group-installation.astro';
+
+import { Code, TabItem, Tabs } from '@astrojs/starlight/components';
+
+This guide will walk you through the process of setting up your first ProseKit editor. We'll create a basic editor with some common formatting options.
+
+## Installation
+
+First, you'll need to install the `prosekit` package. You can use your preferred package manager:
+
+<CodeGroupInstallation packages="prosekit" />
+
+## A minimal editor
+
+Now, let's create a basic editor component. Open your project and add a component file, then replace its content with the following code based on your UI framework:
+
+<Demo story="minimal" />
+
+This code does the following:
+
+1. Creates `extension` by calling `defineBasicExtension()`. This extension provides basic text editing features like paragraphs, headings, bold, italic, etc.
+2. Creates `editor` by calling `createEditor()`. The extension created in the previous step is passed to the editor.
+3. Creates a `<ProseKit>` component. This component acts as a provider for the children and doesn't render anything to the DOM directly.
+4. Creates a `<div>` element that mounts the editor. The `editor.mount()` method is used to attach the editor to this `<div>` element.
+
+## What's next?
+
+Congratulations! You've successfully created your first ProseKit editor. Now you can explore the following topics:
+
+- **Styling your editor:** Learn how to customize the appearance of your editor using CSS.
+- **Saving and loading content:** Discover how to save and load the editor's content.
+- **Using extensions:** Explore the various extensions available in ProseKit and how to use them.
+- **Using components:** Learn how to use the built-in UI components to create a more interactive editor.

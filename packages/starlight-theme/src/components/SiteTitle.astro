@@ -1,0 +1,12 @@
+---
+import Default from '@astrojs/starlight/components/SiteTitle.astro'
+---
+
+<span class="site-title-wrapper"><Default /></span>
+
+<style>
+  .site-title-wrapper :global(.site-title) {
+    color: var(--sl-color-text);
+    font-size: var(--sl-text-h5);
+  }
+</style>

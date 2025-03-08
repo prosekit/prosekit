@@ -1,0 +1,107 @@
+---
+import Default from '@astrojs/starlight/components/Search.astro'
+---
+
+<Default />
+
+<style is:global>
+  ::backdrop {
+    --sl-color-backdrop-overlay: hsl(0 0 0% / 0.9);
+  }
+
+  [data-theme='light'] ::backdrop {
+    --sl-color-backdrop-overlay: hsl(0 0 100% / 0.9);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    site-search {
+      & dialog,
+      & dialog::backdrop {
+        transition:
+          display 300ms allow-discrete,
+          overlay 300ms allow-discrete;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        will-change: transform, opacity, backdrop-filter, background-color;
+      }
+
+      & dialog {
+        animation-name: sl-ocavue-search-dialog-zoom-out;
+        animation-duration: 150ms;
+        transform: translateZ(0);
+      }
+
+      & dialog[open] {
+        animation-duration: 50ms;
+        animation-name: sl-ocavue-search-dialog-zoom-in;
+      }
+
+      & dialog::backdrop {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+
+        animation-duration: 150ms;
+        animation-name: sl-ocavue-search-backdrop-fade-out;
+      }
+
+      & dialog[open]::backdrop {
+        animation-duration: 50ms;
+        animation-name: sl-ocavue-search-backdrop-fade-in;
+      }
+    }
+  }
+
+  @keyframes sl-ocavue-search-backdrop-fade-in {
+    from {
+      background-color: transparent;
+    }
+    to {
+      background-color: var(--sl-color-backdrop-overlay);
+    }
+  }
+
+  @keyframes sl-ocavue-search-backdrop-fade-out {
+    from {
+      background-color: var(--sl-color-backdrop-overlay);
+    }
+    to {
+      background-color: transparent;
+    }
+  }
+
+  :root {
+    --sl-ocavue-search-dialog-zoom-scale: 1;
+    --sl-ocavue-search-dialog-zoom-translate-y: 0;
+  }
+
+  @media (min-width: 72rem) {
+    :root {
+      --sl-ocavue-search-dialog-zoom-scale: 0.95;
+      --sl-ocavue-search-dialog-zoom-translate-y: -1rem;
+    }
+  }
+
+  @keyframes sl-ocavue-search-dialog-zoom-in {
+    from {
+      opacity: 0;
+      transform: scale(var(--sl-ocavue-search-dialog-zoom-scale))
+        translateY(var(--sl-ocavue-search-dialog-zoom-translate-y));
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes sl-ocavue-search-dialog-zoom-out {
+    from {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(var(--sl-ocavue-search-dialog-zoom-scale))
+        translateY(var(--sl-ocavue-search-dialog-zoom-translate-y));
+    }
+  }
+</style>

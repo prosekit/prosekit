@@ -140,8 +140,14 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - name: Build
-        run: pnpm run build:website
+      - name: Build packages
+        run: pnpm run build:package
+
+      - name: Build playground
+        run: pnpm --filter='./playground' run build
+
+      - name: Build website
+        run: pnpm --filter='./website' run build
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1

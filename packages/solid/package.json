@@ -58,10 +58,10 @@
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "solid-js": "^1.9.4",
-    "tsup": "^8.3.5",
-    "typescript": "~5.7.2",
-    "vitest": "^3.0.7"
+    "solid-js": "^1.9.5",
+    "tsup": "^8.4.0",
+    "typescript": "~5.7.3",
+    "vitest": "^3.0.8"
   },
   "publishConfig": {
     "exports": {

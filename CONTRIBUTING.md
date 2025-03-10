@@ -8,21 +8,14 @@ You can use [StackBlitz Codeflow](https://stackblitz.com/codeflow) to fix bugs o
 
 ## Setup
 
-1. Ensure you have Node.js 18 or later installed.
+1. Ensure you have [Node.js](https://nodejs.org/) v18 or later installed.
 2. Run `corepack enable` to enable [Node.js Corepack](https://github.com/nodejs/corepack).
 3. Clone the ProseKit repository.
-4. Run `pnpm install` in ProseKit's root folder.
+4. Run `pnpm install` in ProseKit's root directory.
 
 ## Development
 
-To develop locally, run `pnpm run dev` in ProseKit's root folder. This will start two web servers:
-
-1. website (usually http://localhost:5173/): The documentation website.
-2. playground (usually http://localhost:4321/astrobook/): A collection of examples to showcase and test the features.
-
-Alternatively, you can run `pnpm run website` or `pnpm run playground` to start the website or playground server respectively.
-
-You need to run `pnpm run gen` to generate some files if you add new examples under `playground/src/examples/`.
+To develop locally, run `pnpm run dev` in ProseKit's root directory. This will open a web server that serves the website (https://localhost:4321) and playground (https://localhost:4321/astrobook).
 
 ## Test
 

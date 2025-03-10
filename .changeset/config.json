@@ -10,7 +10,6 @@
   "ignore": [
     "@prosekit/themes",
     "@prosekit/unocss-preset",
-    "prosekit-playground",
     "prosekit-website"
   ]
 }

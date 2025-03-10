@@ -60,7 +60,7 @@
     "runed": "^0.23.3",
     "sharp": "^0.32.5",
     "solid-js": "^1.9.4",
-    "starlight-theme-nova": "https://pkg.pr.new/ocavue/starlight-theme-nova@7f2ec87",
+    "starlight-theme-nova": "https://pkg.pr.new/ocavue/starlight-theme-nova@f43248c",
     "svelte": "^5.17.4",
     "svelte-check": "^4.1.4",
     "typescript": "~5.7.2",

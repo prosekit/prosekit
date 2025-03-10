@@ -1,6 +1,8 @@
 ---
 import fs from 'node:fs/promises'
-import CodeGroup from './code-group.astro'
+import { basename } from 'node:path'
+import CodeTabItem from 'starlight-theme-nova/components/CodeTabItem.astro'
+import CodeTabs from 'starlight-theme-nova/components/CodeTabs.astro'
 
 interface Props {
   path: string
@@ -16,8 +18,10 @@ try {
   throw new Error(`Failed to read file ${path}`, { cause: error })
 }
 
-let fileName = path.split('/').pop() || ''
-let lang = fileName.split('.').pop()
+let fileName = basename(path)
+let lang = (fileName.split('.').pop() || 'plaintext') as 'plaintext'
 ---
 
-<CodeGroup codes={[{ lang, title: fileName, code }]} />
+<CodeTabs>
+  <CodeTabItem label={fileName} lang={lang} code={code} />
+</CodeTabs>

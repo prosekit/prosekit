@@ -5,20 +5,19 @@ import { fileURLToPath } from 'node:url'
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
+import starlight from '@astrojs/starlight'
 import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
-import starlight from '@prosekit/starlight-theme'
 import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlugCustomId from 'rehype-slug-custom-id'
+import starlightThemeNova from 'starlight-theme-nova'
 import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
-
-import { shikiConfig } from './src/shiki-config'
 
 // Get the directory of the current file
 const __filename = fileURLToPath(import.meta.url)
@@ -140,7 +139,9 @@ export default defineConfig({
       components: {
         Hero: './src/components/overrides/Hero.astro',
       },
-      customCss: ['./src/styles/index.css'],
+      plugins: [
+        starlightThemeNova(),
+      ],
     }),
     UnoCSS(),
     preact({ include: ['src/*/preact/**/*'] }),
@@ -169,6 +170,5 @@ export default defineConfig({
       [rehypeAutolinkHeadings, { behavior: 'wrap' }],
       [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
     ],
-    shikiConfig,
   },
 })

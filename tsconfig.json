@@ -68,9 +68,6 @@
       "path": "packages/solid/tsconfig.json",
     },
     {
-      "path": "packages/starlight-theme/tsconfig.json",
-    },
-    {
       "path": "packages/svelte/tsconfig.build.json",
     },
     {

@@ -579,25 +579,6 @@ importers:
         specifier: ^3.0.7
         version: 3.0.7(@types/debug@4.1.12)(@types/node@20.17.9)(@vitest/browser@3.0.7)(jiti@2.4.1)(lightningcss@1.29.1)(msw@2.7.3(@types/node@20.17.9)(typescript@5.7.2))(tsx@4.19.2)(yaml@2.6.1)
 
-  packages/starlight-theme:
-    dependencies:
-      '@astrojs/starlight':
-        specifier: ^0.32.2
-        version: 0.32.2(astro@5.4.2(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.34.9)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1))
-      astro:
-        specifier: ^5.4.2
-        version: 5.4.2(@types/node@20.17.9)(jiti@2.4.1)(lightningcss@1.29.1)(rollup@4.34.9)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1)
-      astro-theme-toggle:
-        specifier: ^0.5.1
-        version: 0.5.1
-      deepmerge-ts:
-        specifier: ^7.1.3
-        version: 7.1.5
-    devDependencies:
-      typescript:
-        specifier: ~5.7.2
-        version: 5.7.2
-
   packages/svelte:
     dependencies:
       '@prosekit/core':
@@ -836,9 +817,6 @@ importers:
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../packages/dev
-      '@prosekit/starlight-theme':
-        specifier: workspace:*
-        version: link:../packages/starlight-theme
       '@prosekit/themes':
         specifier: workspace:*
         version: link:../packages/themes
@@ -932,6 +910,9 @@ importers:
       solid-js:
         specifier: ^1.9.4
         version: 1.9.4
+      starlight-theme-nova:
+        specifier: https://pkg.pr.new/ocavue/starlight-theme-nova@7f2ec87
+        version: https://pkg.pr.new/ocavue/starlight-theme-nova@7f2ec87
       svelte:
         specifier: ^5.17.4
         version: 5.17.4
@@ -3758,10 +3739,6 @@ packages:
   deep-is@0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
 
-  deepmerge-ts@7.1.5:
-    resolution: {integrity: sha512-HOJkrhaYsweh+W+e74Yn7YStZOilkoPb6fycpwNLKzSPtruFs48nYis0zy5yJz1+ktUhHxoRDJ27RQAWLIJVJw==}
-    engines: {node: '>=16.0.0'}
-
   deepmerge@4.3.1:
     resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
     engines: {node: '>=0.10.0'}
@@ -6552,6 +6529,10 @@ packages:
 
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
+
+  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@7f2ec87:
+    resolution: {tarball: https://pkg.pr.new/ocavue/starlight-theme-nova@7f2ec87}
+    version: 0.0.1
 
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
@@ -10860,8 +10841,6 @@ snapshots:
 
   deep-is@0.1.4: {}
 
-  deepmerge-ts@7.1.5: {}
-
   deepmerge@4.3.1: {}
 
   default-browser-id@5.0.0: {}
@@ -14500,6 +14479,12 @@ snapshots:
   stack-trace@1.0.0-pre2: {}
 
   stackback@0.0.2: {}
+
+  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@7f2ec87:
+    dependencies:
+      '@shikijs/transformers': 1.29.2
+      astro-theme-toggle: 0.5.1
+      hast-util-is-element: 3.0.0
 
   statuses@2.0.1: {}
 

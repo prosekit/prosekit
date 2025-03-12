@@ -144,10 +144,10 @@ jobs:
         run: pnpm run build:package
 
       - name: Build playground
-        run: pnpm --filter='./playground' run build
+        run: pnpm run build:playground
 
       - name: Build website
-        run: pnpm --filter='./website' run build
+        run: pnpm run build:website
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1

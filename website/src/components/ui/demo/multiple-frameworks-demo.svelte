@@ -44,7 +44,7 @@ let showCode = $state(props.showCode ?? true)
   ]}
 >
   <div>
-    <div class="flex items-center justify-between p-4 gap-2">
+    <div class="flex items-center justify-between pt-4 px-4 pb-1 gap-2">
       <FrameworkSelect
         {frameworks}
         {framework}
@@ -61,7 +61,7 @@ let showCode = $state(props.showCode ?? true)
       />
     </div>
 
-    <div class="[&_[data-prosekit-story-container-inner]]:pt-0 min-h-50 h-150 max-h-dvh overflow-y-hidden">
+    <div class="min-h-50 h-100 max-h-dvh overflow-y-hidden">
       {#if framework === 'lit'}
         {@render props['slot-story-lit']?.()}
       {/if}

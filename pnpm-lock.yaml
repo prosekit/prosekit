@@ -754,8 +754,8 @@ importers:
         specifier: workspace:^
         version: link:../pm
       '@zag-js/dom-query':
-        specifier: ^0.82.2
-        version: 0.82.2
+        specifier: ^1.3.3
+        version: 1.3.3
       just-map-values:
         specifier: ^3.2.0
         version: 3.2.0
@@ -2990,8 +2990,8 @@ packages:
   '@zag-js/dom-query@0.80.0':
     resolution: {integrity: sha512-wDIMR/KnDmUOswCnsvtN0V67quFnIE31x6LqeaQS9g0ZqMC+AkbGo6zRlIzzvxIHa5uc6ee/FFn/TBZ5Cfd1KQ==}
 
-  '@zag-js/dom-query@0.82.2':
-    resolution: {integrity: sha512-4gI1A7Rh9/vZhOuuWzUldP3+2PIiOyR91TBDA0an1VICzHRKBelntlkBR6cZMtjH9gGxhSVxeKN2b060kJ8VQw==}
+  '@zag-js/dom-query@1.3.3':
+    resolution: {integrity: sha512-xPSTRlE9ZnNjHQMmZ3j1J/BFrlNX4T3OHkHGnvrB6LswJLTpraNxSAKENJ5pFf09UQjcwGltWHqwQivT6+pwfA==}
 
   '@zag-js/interact-outside@0.80.0':
     resolution: {integrity: sha512-v2FpIkx3SqrXvkaKdIVrsCpE5y8U9QU0WOdyAKp2iPMM7YeqB+dbHuA7ceOaJr2e9DqW0PQI/qllbhmkTCcQlg==}
@@ -3002,8 +3002,8 @@ packages:
   '@zag-js/types@0.80.0':
     resolution: {integrity: sha512-SpaV+uU2FV5qhtaJxfaPWuEBijzPMiElE7X3R5D9hDP0q7iHSuG0h/C0TDLGXLReV+y/YNlYVUUnZSHOv8ZNXQ==}
 
-  '@zag-js/types@0.82.2':
-    resolution: {integrity: sha512-OUN4QropdK3XZcjtm4n5JVMhbgp78F3pavLDvWCcwW0QwtckJljX6E17N9ViajVti8itKKXCuNRHCMhqLT8jwQ==}
+  '@zag-js/types@1.3.3':
+    resolution: {integrity: sha512-dwsPUjPX9fwyp5VywLzWC7GinFqYONdMNmEtMi7QxZPubUoMK3ror9rgUS3AZhkKfKx2IXUl707BXbcNqZGDFQ==}
 
   '@zag-js/utils@0.80.0':
     resolution: {integrity: sha512-+GXVHO0pfCENjcYz6CKI+YbMHNnSGCLsRIXrpbvU1tYeTk0L1tniAKzQ87vkZMkdYbbkg96MFvjexbq0foGwAQ==}
@@ -9841,9 +9841,9 @@ snapshots:
 
   '@zag-js/dom-query@0.80.0': {}
 
-  '@zag-js/dom-query@0.82.2':
+  '@zag-js/dom-query@1.3.3':
     dependencies:
-      '@zag-js/types': 0.82.2
+      '@zag-js/types': 1.3.3
 
   '@zag-js/interact-outside@0.80.0':
     dependencies:
@@ -9859,7 +9859,7 @@ snapshots:
     dependencies:
       csstype: 3.1.3
 
-  '@zag-js/types@0.82.2':
+  '@zag-js/types@1.3.3':
     dependencies:
       csstype: 3.1.3
 

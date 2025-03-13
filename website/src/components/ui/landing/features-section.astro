@@ -1,40 +1,26 @@
 ---
 import LinkButton from 'starlight-theme-nova/components/LinkButton.astro'
 import HiddenLink from './hidden-link.astro'
+import FeatureCard from './feature-card.astro'
 ---
 
 <section class="py-24 md:py-24 px-4 relative overflow-hidden">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Headless Card -->
-      <div
-        class="p-7 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col relative group"
-      >
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Headless by Design</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          Giving you complete control over styling and appearance, with zero assumptions about your design choices.
-        </p>
-      </div>
+      <FeatureCard title="Headless by Design">
+        Giving you complete control over styling and appearance, with zero assumptions about your design choices.
+      </FeatureCard>
 
       <!-- Components Card -->
-      <div
-        class="p-7 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col relative group"
-      >
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Copy-Paste Components</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          <HiddenLink href="https://tailwindcss.com/">TailwindCSS</HiddenLink>-powered components you can copy directly into your project and customize freely.
-        </p>
-      </div>
+      <FeatureCard title="Copy-Paste Components">
+        <HiddenLink href="https://tailwindcss.com/">TailwindCSS</HiddenLink>-powered components you can copy directly into your project and customize freely.
+      </FeatureCard>
 
       <!-- Framework Card -->
-      <div
-        class="p-7 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col relative group"
-      >
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Framework Flexibility</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          The same core with specialized adapters for React, Vue, Svelte, Preact, and Solid.
-        </p>
-        <div class="mt-auto pt-4">
+      <FeatureCard title="Framework Flexibility">
+        The same core with specialized adapters for React, Vue, Svelte, Preact, and Solid.
+        <div slot="footer" class="mt-auto pt-4">
           <div class="flex flex-wrap gap-3">
             <div class="i-logos-react w-7 h-7 opacity-80 hover:opacity-100 hover:scale-110 transition-all"></div>
             <div class="i-logos-vue w-7 h-7 opacity-80 hover:opacity-100 hover:scale-110 transition-all"></div>
@@ -43,37 +29,22 @@ import HiddenLink from './hidden-link.astro'
             <div class="i-logos-solidjs-icon w-7 h-7 opacity-80 hover:opacity-100 hover:scale-110 transition-all"></div>
           </div>
         </div>
-      </div>
+      </FeatureCard>
 
       <!-- API Card -->
-      <div
-        class="p-7 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col relative group"
-      >
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Flexible API Design</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          Carefully crafted API that makes extending and customizing your editor intuitive and powerful.
-        </p>
-      </div>
+      <FeatureCard title="Flexible API Design">
+        Carefully crafted API that makes extending and customizing your editor intuitive and powerful.
+      </FeatureCard>
 
       <!-- Collaboration Card -->
-      <div
-        class="p-7 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col relative group"
-      >
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Collaborative Editing</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          Seamless integration with <HiddenLink href="https://yjs.dev">Yjs</HiddenLink> or <HiddenLink href="https://loro.dev">Loro</HiddenLink> for real-time collaboration.
-        </p>
-      </div>
+      <FeatureCard title="Collaborative Editing">
+        Seamless integration with <HiddenLink href="https://yjs.dev">Yjs</HiddenLink> or <HiddenLink href="https://loro.dev">Loro</HiddenLink> for real-time collaboration.
+      </FeatureCard>
 
       <!-- ProseMirror Card -->
-      <div
-        class="p-7 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col relative group"
-      >
-        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Built on ProseMirror</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4">
-          Leverages the battle-tested ProseMirror foundation used by The New York Times and Atlassian.
-        </p>
-      </div>
+      <FeatureCard title="Built on ProseMirror">
+        Leverages the battle-tested ProseMirror foundation used by The New York Times and Atlassian.
+      </FeatureCard>
     </div>
 
     <!-- Call to Action Section -->

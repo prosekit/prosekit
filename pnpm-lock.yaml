@@ -911,8 +911,8 @@ importers:
         specifier: ^1.9.4
         version: 1.9.4
       starlight-theme-nova:
-        specifier: https://pkg.pr.new/ocavue/starlight-theme-nova@a271130
-        version: https://pkg.pr.new/ocavue/starlight-theme-nova@a271130
+        specifier: https://pkg.pr.new/ocavue/starlight-theme-nova@29c0225d86
+        version: https://pkg.pr.new/ocavue/starlight-theme-nova@29c0225d86
       svelte:
         specifier: ^5.17.4
         version: 5.17.4
@@ -6530,8 +6530,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@a271130:
-    resolution: {tarball: https://pkg.pr.new/ocavue/starlight-theme-nova@a271130}
+  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@29c0225d86:
+    resolution: {tarball: https://pkg.pr.new/ocavue/starlight-theme-nova@29c0225d86}
     version: 0.0.1
 
   statuses@2.0.1:
@@ -14480,7 +14480,7 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@a271130:
+  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@29c0225d86:
     dependencies:
       '@shikijs/transformers': 1.29.2
       astro-theme-toggle: 0.5.1

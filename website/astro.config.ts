@@ -140,7 +140,18 @@ export default defineConfig({
         Hero: './src/components/overrides/Hero.astro',
       },
       plugins: [
-        starlightThemeNova(),
+        starlightThemeNova({
+          nav: [
+            {
+              label: 'Docs',
+              href: '/getting-started/introduction',
+            },
+            {
+              label: 'Examples',
+              href: '/examples',
+            },
+          ],
+        }),
       ],
     }),
     UnoCSS(),

@@ -1,5 +1,5 @@
 ---
-import LinkCard from '../link-card.astro'
+import LinkButton from 'starlight-theme-nova/components/LinkButton.astro'
 import HiddenLink from './hidden-link.astro'
 ---
 
@@ -92,8 +92,12 @@ import HiddenLink from './hidden-link.astro'
               Ready to Build Your Editor?
             </h2>
             <div class="flex flex-wrap gap-4 mt-8">
-              <LinkCard href="/getting-started/quick-start" label="Get Started" type="primary" />
-              <LinkCard href="/examples" label="Explore Examples" type="secondary" />
+              <LinkButton href="/getting-started/quick-start" variant="primary">
+                Get Started
+              </LinkButton>
+              <LinkButton href="/examples" variant="secondary">
+                Explore Examples
+              </LinkButton>
             </div>
           </div>
         </div>

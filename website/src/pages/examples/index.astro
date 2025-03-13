@@ -10,6 +10,6 @@ import {
 
 <StarlightPage frontmatter={{ title: 'Examples', tableOfContents: false, pagefind: false }} sidebar={exampleSidebar}>
   <CardGrid>
-    {exampleSidebarItems.map((item) => <LinkCard label={item.label} href={item.link} />)}
+    {exampleSidebarItems.map((item) => <LinkCard title={item.label} href={item.link} />)}
   </CardGrid>
 </StarlightPage>

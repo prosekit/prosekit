@@ -1,14 +1,12 @@
 ---
 interface Props {
-  title: string;
+  title: string
 }
 
-const { title } = Astro.props;
+const { title } = Astro.props
 ---
 
-<div
-  class="p-7 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col relative group"
->
+<div class="p-7 rounded-2xl bg-white dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700 shadow-sm transition-all duration-300 flex flex-col relative">
   <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
   <p class="text-gray-600 dark:text-gray-300 mb-4">
     <slot />

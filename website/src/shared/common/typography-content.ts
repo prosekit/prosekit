@@ -1,54 +1,76 @@
 export const typographyContent = `
-<h1>Typography Example</h1>
+<h1>ProseKit Typography</h1>
 
-<p>This editor demonstrates ProseKit's typography styles. You'll see how different elements are styled with the default <code>typography.css</code>.</p>
+<p>This example shows the typography styles provided by <code>prosekit/basic/typography.css</code>.</p>
 
-<h2>Text Formatting</h2>
+<h2>Inline marks</h2>
 
-<p>ProseKit supports various text formatting options like <strong>bold</strong>, <em>italic</em>, and <a href="https://prosekit.dev">links</a>. You can also use <code>inline code</code> for technical terms.</p>
+<p>Text can be formatted in different ways: <strong>bold text</strong>, <em>italic text</em>, <u>underlined text</u>, <s>strikethrough text</s>, <code>inline code</code> and <a href="https://example.com">links</a>.</p>
 
-<h3>Lists and Structure</h3>
+<h2>Lists</h2>
 
-<p>Organize your content with lists:</p>
+<p>Here are different types of lists:</p>
 
 <ul>
 <li>Unordered list item 1</li>
 <li>Unordered list item 2
-    <ul>
-    <li>Nested list item</li>
-    <li>Another nested item</li>
-    </ul>
+  <ul>
+    <li>Nested item A</li>
+    <li>Nested item B</li>
+  </ul>
 </li>
-<li>Unordered list item 3</li>
 </ul>
 
-<p>Or use ordered lists for sequential content:</p>
-
 <ol>
-<li>First step in the process</li>
-<li>Second step in the process</li>
-<li>Final step in the process</li>
+<li>First ordered item</li>
+<li>Second ordered item</li>
 </ol>
 
-<h4>Blockquotes</h4>
+<ul>
+<li><input type="checkbox" checked />Completed task</li>
+<li><input type="checkbox" />Pending task</li>
+</ul>
+
+<h2>Blockquotes</h2>
 
 <blockquote>
-<p>This is a blockquote that can be used to highlight important information or quotations from other sources.</p>
+<p>This is a blockquote demonstrating how quoted content appears in the editor. It can span multiple lines and maintains proper formatting.</p>
 </blockquote>
 
-<h5>Code Blocks</h5>
+<h2>Code Blocks</h2>
 
-<pre><code>// Example code
-function greet() {
-console.log("Hello, ProseKit!");
-}
-</code></pre>
+<pre><code>function example() {
+  const greeting = 'Hello ProseKit!';
+  console.log(greeting);
+  return greeting;
+}</code></pre>
 
-<h6>The Smallest Heading</h6>
-
-<p>Even the smallest heading is styled appropriately for hierarchical content.</p>
+<h2>Horizontal Rule</h2>
 
 <hr />
 
-<p>Finally, horizontal rules like the one above can be used to separate sections of content.</p>
+<h2>Images</h2>
+
+<img src="https://picsum.photos/600/300" alt="Sample image" />
+
+<h2>Tables</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cell 1</td>
+      <td>Cell 2</td>
+    </tr>
+  <tr>
+    <td>Cell 3</td>
+      <td>Cell 4</td>
+    </tr>
+  </tbody>
+</table>
 `

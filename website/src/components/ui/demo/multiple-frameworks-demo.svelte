@@ -61,7 +61,7 @@ let showCode = $state(props.showCode ?? true)
       />
     </div>
 
-    <div class="[&_[data-prosekit-story-container-inner]]:pt-0 min-h-[220px]">
+    <div class="[&_[data-prosekit-story-container-inner]]:pt-0 min-h-50 h-150 max-h-dvh overflow-y-hidden">
       {#if framework === 'lit'}
         {@render props['slot-story-lit']?.()}
       {/if}

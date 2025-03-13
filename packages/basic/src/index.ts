@@ -27,6 +27,10 @@ import {
   type CodeExtension,
 } from '@prosekit/extensions/code'
 import {
+  defineCodeBlock,
+  type CodeBlockExtension,
+} from '@prosekit/extensions/code-block'
+import {
   defineDropCursor,
   type DropCursorExtension,
 } from '@prosekit/extensions/drop-cursor'
@@ -106,6 +110,7 @@ export type BasicExtension = Union<
     VirtualSelectionExtension,
     ModClickPreventionExtension,
     TableExtension,
+    CodeBlockExtension,
   ]
 >
 
@@ -137,6 +142,7 @@ export type BasicExtension = Union<
  * - {@link defineVirtualSelection}
  * - {@link defineModClickPrevention}
  * - {@link defineTable}
+ * - {@link defineCodeBlock}
  *
  * @public
  */
@@ -164,5 +170,6 @@ export function defineBasicExtension(): BasicExtension {
     defineVirtualSelection(),
     defineModClickPrevention(),
     defineTable(),
+    defineCodeBlock(),
   )
 }

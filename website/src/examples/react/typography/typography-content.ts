@@ -1,4 +1,4 @@
-export const defaultTypographyContent = `
+export const typographyContent = `
 <h1>Typography Example</h1>
 
 <p>This editor demonstrates ProseKit's typography styles. You'll see how different elements are styled with the default <code>typography.css</code>.</p>

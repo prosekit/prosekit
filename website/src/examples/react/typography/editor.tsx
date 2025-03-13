@@ -7,11 +7,11 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
-import { defaultTypographyContent } from './default-typography-content'
+import { typographyContent } from './typography-content'
 
 export default function Editor() {
   const editor = useMemo(() => {
-    return createEditor({ extension: defineBasicExtension(), defaultContent: defaultTypographyContent })
+    return createEditor({ extension: defineBasicExtension(), defaultContent: typographyContent })
   }, [])
 
   return (

@@ -1,9 +1,9 @@
 <script lang="ts">
 import type { Snippet } from 'svelte'
+import { useFramework } from '../use-framework.svelte'
 import DropdownMenu from './dropdown-menu.svelte'
 import FrameworkSelect from './framework-select.svelte'
 import ShowCodeSwitch from './toggle-code-button.svelte'
-import { useFramework } from './use-framework.svelte'
 
 interface Props {
   'showCode'?: boolean

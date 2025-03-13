@@ -41,7 +41,7 @@ Here's what the default typography looks like:
 
 ## Styling with Tailwind CSS
 
-ProseKit works seamlessly with [Tailwind CSS](https://tailwindcss.com), allowing you to create beautiful, responsive editors with minimal effort.
+ProseKit provides a set of components that you can copy and paste into your project. These components are styled with [Tailwind CSS](https://tailwindcss.com), allowing you to create beautiful, responsive editors with minimal effort.
 
 <Steps>
 
@@ -59,9 +59,9 @@ ProseKit works seamlessly with [Tailwind CSS](https://tailwindcss.com), allowing
 
    <CodeGroupInstallation packages="tailwindcss-animate @egoist/tailwindcss-icons @iconify-json/lucide" />
 
-3. **Configure Tailwind**
+3. **Configure Tailwind CSS**
 
-   Update your Tailwind configuration:
+   Update your Tailwind CSS configuration:
 
    ```js
    // tailwind.config.js
@@ -74,27 +74,8 @@ ProseKit works seamlessly with [Tailwind CSS](https://tailwindcss.com), allowing
    }
    ```
 
-4. **Apply Tailwind classes to your editor**
+4. **That's it**
 
-   You can now apply Tailwind classes directly to your editor container:
-
-   ```vue
-   <ProseKit :editor="editor">
-     <div class="box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700 flex flex-col bg-white dark:bg-gray-950">
-       <Toolbar />
-       <div class="relative w-full flex-1 box-border overflow-y-scroll">
-         <div
-           ref="editorRef"
-           class="ProseMirror box-border min-h-full px-[max(4rem,_calc(50%-20rem))] py-8 outline-none outline-0 [&_span[data-mention=&quot;user&quot;]]:text-blue-500 [&_span[data-mention=&quot;tag&quot;]]:text-violet-500"
-         />
-         <InlineMenu />
-         <SlashMenu />
-         <UserMenu />
-         <TagMenu />
-         <BlockHandle />
-       </div>
-     </div>
-   </ProseKit>
-   ```
+   You can now start adding [components](/components/toolbar) to your project.
 
 </Steps>

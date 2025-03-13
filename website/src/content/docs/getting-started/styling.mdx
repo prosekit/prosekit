@@ -41,41 +41,4 @@ Here's what the default typography looks like:
 
 ## Styling with Tailwind CSS
 
-ProseKit provides a set of components that you can copy and paste into your project. These components are styled with [Tailwind CSS](https://tailwindcss.com), allowing you to create beautiful, responsive editors with minimal effort.
-
-<Steps>
-
-1. **Install Tailwind CSS**
-
-   If you haven't already, set up Tailwind CSS in your project:
-
-   <CodeGroupInstallation packages="tailwindcss postcss autoprefixer" />
-
-   For detailed installation instructions, see the [Tailwind CSS documentation](https://v3.tailwindcss.com/docs/installation).
-
-2. **Install recommended plugins**
-
-   For the best experience with ProseKit components, install these Tailwind CSS plugins:
-
-   <CodeGroupInstallation packages="tailwindcss-animate @egoist/tailwindcss-icons @iconify-json/lucide" />
-
-3. **Configure Tailwind CSS**
-
-   Update your Tailwind CSS configuration:
-
-   ```js
-   // tailwind.config.js
-   import { iconsPlugin } from '@egoist/tailwindcss-icons'
-   import animatePlugin from 'tailwindcss-animate'
-
-   export default {
-     content: ['./src/**/*.{html,js,jsx,ts,tsx,vue,svelte}'],
-     plugins: [iconsPlugin(), animatePlugin],
-   }
-   ```
-
-4. **That's it**
-
-   You can now start adding [components](/components/toolbar) to your project.
-
-</Steps>
+ProseKit works well with [Tailwind CSS](https://tailwindcss.com) for styling your editor. For pre-built editor components that use Tailwind CSS, see the [Components](/components/) documentation.

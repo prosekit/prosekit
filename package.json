@@ -38,7 +38,7 @@
     "cross-env": "^7.0.3",
     "dprint": "^0.49.0",
     "eslint": "^9.20.0",
-    "eslint-plugin-command": "^0.2.7",
+    "eslint-plugin-command": "^3.0.0",
     "pkg-pr-new": "^0.0.41",
     "playwright": "^1.51.0",
     "prettier": "^3.5.3",

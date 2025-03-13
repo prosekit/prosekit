@@ -31,6 +31,7 @@ export const loaders = {
   'text-align': defineAsyncComponent(() => import('./text-align/editor.vue')),
   'text-color': defineAsyncComponent(() => import('./text-color/editor.vue')),
   'toolbar': defineAsyncComponent(() => import('./toolbar/editor.vue')),
+  'typography': defineAsyncComponent(() => import('./typography/editor.vue')),
   'underline': defineAsyncComponent(() => import('./underline/editor.vue')),
   'unmount': defineAsyncComponent(() => import('./unmount/editor.vue')),
   'user-menu': defineAsyncComponent(() => import('./user-menu/editor.vue')),

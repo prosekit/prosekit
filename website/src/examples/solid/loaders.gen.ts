@@ -11,4 +11,5 @@ export const loaders = {
   'readonly': lazy(() => import('./readonly/editor')),
   'slash-menu': lazy(() => import('./slash-menu/editor')),
   'text-align': lazy(() => import('./text-align/editor')),
+  'typography': lazy(() => import('./typography/editor')),
 }

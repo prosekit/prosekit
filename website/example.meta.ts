@@ -638,7 +638,7 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "default-typography-content.ts",
+          "path": "typography-content.ts",
           "hidden": false
         }
       ]
@@ -1442,6 +1442,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "vue-typography",
+      "framework": "vue",
+      "story": "typography",
+      "files": [
+        {
+          "path": "editor.vue",
+          "hidden": false
+        },
+        {
+          "path": "typography-content.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "vue-underline",
       "framework": "vue",
       "story": "underline",
@@ -1640,6 +1655,21 @@ export const exampleMeta = {
         },
         {
           "path": "slash-menu.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "preact-typography",
+      "framework": "preact",
+      "story": "typography",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "typography-content.ts",
           "hidden": false
         }
       ]
@@ -2094,6 +2124,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-typography",
+      "framework": "svelte",
+      "story": "typography",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "typography-content.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-word-counter",
       "framework": "svelte",
       "story": "word-counter",
@@ -2307,6 +2352,21 @@ export const exampleMeta = {
         },
         {
           "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-typography",
+      "framework": "solid",
+      "story": "typography",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "typography-content.ts",
           "hidden": false
         }
       ]

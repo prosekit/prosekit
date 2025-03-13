@@ -22,4 +22,5 @@ export const SaveJson = { args: { story: 'save-json' } }
 export const SlashMenu = { args: { story: 'slash-menu' } }
 export const TextAlign = { args: { story: 'text-align' } }
 export const Toolbar = { args: { story: 'toolbar' } }
+export const Typography = { args: { story: 'typography' } }
 export const WordCounter = { args: { story: 'word-counter' } }

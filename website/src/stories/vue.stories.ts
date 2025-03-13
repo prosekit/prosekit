@@ -32,6 +32,7 @@ export const Table = { args: { story: 'table' } }
 export const TextAlign = { args: { story: 'text-align' } }
 export const TextColor = { args: { story: 'text-color' } }
 export const Toolbar = { args: { story: 'toolbar' } }
+export const Typography = { args: { story: 'typography' } }
 export const Underline = { args: { story: 'underline' } }
 export const Unmount = { args: { story: 'unmount' } }
 export const UserMenu = { args: { story: 'user-menu' } }

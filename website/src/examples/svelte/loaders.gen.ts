@@ -20,5 +20,6 @@ export const loaders = {
   'slash-menu': () => import('./slash-menu/editor.svelte'),
   'text-align': () => import('./text-align/editor.svelte'),
   'toolbar': () => import('./toolbar/editor.svelte'),
+  'typography': () => import('./typography/editor.svelte'),
   'word-counter': () => import('./word-counter/editor.svelte'),
 }

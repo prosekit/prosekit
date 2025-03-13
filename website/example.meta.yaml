@@ -331,7 +331,7 @@ examples:
     files:
       - path: editor.tsx
         hidden: false
-      - path: default-typography-content.ts
+      - path: typography-content.ts
         hidden: false
   - name: react-unmount
     framework: react
@@ -749,6 +749,14 @@ examples:
         hidden: false
       - path: button.vue
         hidden: false
+  - name: vue-typography
+    framework: vue
+    story: typography
+    files:
+      - path: editor.vue
+        hidden: false
+      - path: typography-content.ts
+        hidden: false
   - name: vue-underline
     framework: vue
     story: underline
@@ -854,6 +862,14 @@ examples:
       - path: extension.ts
         hidden: true
       - path: slash-menu.tsx
+        hidden: false
+  - name: preact-typography
+    framework: preact
+    story: typography
+    files:
+      - path: editor.tsx
+        hidden: false
+      - path: typography-content.ts
         hidden: false
   - name: svelte-minimal
     framework: svelte
@@ -1089,6 +1105,14 @@ examples:
         hidden: false
       - path: button.svelte
         hidden: false
+  - name: svelte-typography
+    framework: svelte
+    story: typography
+    files:
+      - path: editor.svelte
+        hidden: false
+      - path: typography-content.ts
+        hidden: false
   - name: svelte-word-counter
     framework: svelte
     story: word-counter
@@ -1202,6 +1226,14 @@ examples:
       - path: toolbar.tsx
         hidden: false
       - path: button.tsx
+        hidden: false
+  - name: solid-typography
+    framework: solid
+    story: typography
+    files:
+      - path: editor.tsx
+        hidden: false
+      - path: typography-content.ts
         hidden: false
   - name: lit-dom
     framework: lit

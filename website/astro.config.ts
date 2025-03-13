@@ -182,4 +182,7 @@ export default defineConfig({
       [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
     ],
   },
+  experimental: {
+    headingIdCompat: true,
+  },
 })

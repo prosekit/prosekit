@@ -629,6 +629,21 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-typography",
+      "framework": "react",
+      "story": "typography",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "default-typography-content.ts",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-unmount",
       "framework": "react",
       "story": "unmount",

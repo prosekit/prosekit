@@ -30,6 +30,7 @@ export const Search = { args: { story: 'search' } }
 export const SlashMenu = { args: { story: 'slash-menu' } }
 export const Table = { args: { story: 'table' } }
 export const Toolbar = { args: { story: 'toolbar' } }
+export const Typography = { args: { story: 'typography' } }
 export const Unmount = { args: { story: 'unmount' } }
 export const UserMenu = { args: { story: 'user-menu' } }
 export const UserMenuDynamic = { args: { story: 'user-menu-dynamic' } }

@@ -1,6 +1,7 @@
 ---
 title: Introduction
-order: 10
+sidebar:
+  order: 10
 ---
 
 ProseKit is a flexible framework for building rich text editors on the web. It provides the tools and architecture to create tailored editing experiences.

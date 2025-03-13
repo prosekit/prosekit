@@ -112,6 +112,32 @@ export type BasicExtension = Union<
 /**
  * Define a basic extension that includes some common functionality. You can
  * copy this function and customize it to your needs.
+ *
+ * It's a combination of the following extension functions:
+ *
+ * - {@link defineDoc}
+ * - {@link defineText}
+ * - {@link defineHeading}
+ * - {@link defineHistory}
+ * - {@link defineList}
+ * - {@link defineBlockquote}
+ * - {@link defineBaseKeymap}
+ * - {@link defineBaseCommands}
+ * - {@link defineItalic}
+ * - {@link defineBold}
+ * - {@link defineUnderline}
+ * - {@link defineStrike}
+ * - {@link defineCode}
+ * - {@link defineLink}
+ * - {@link defineImage}
+ * - {@link defineParagraph}
+ * - {@link defineDropCursor}
+ * - {@link defineGapCursor}
+ * - {@link defineHorizontalRule}
+ * - {@link defineVirtualSelection}
+ * - {@link defineModClickPrevention}
+ * - {@link defineTable}
+ *
  * @public
  */
 export function defineBasicExtension(): BasicExtension {

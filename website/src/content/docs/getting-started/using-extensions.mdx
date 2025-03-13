@@ -46,15 +46,15 @@ To customize your editor with exactly the features you need, you can combine ind
 
 ```ts
 import {
+  createEditor,
   defineBaseCommands,
   defineBaseKeymap,
   defineDoc,
+  defineExtension,
   defineHistory,
   defineParagraph,
   defineText,
   union,
-  createEditor,
-  defineExtension,
 } from 'prosekit/core'
 import { defineBold } from 'prosekit/extensions/bold'
 import { defineHeading } from 'prosekit/extensions/heading'

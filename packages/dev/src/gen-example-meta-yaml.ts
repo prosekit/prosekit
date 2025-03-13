@@ -19,7 +19,7 @@ export async function genExampleMetaYaml() {
   const oldMeta: ExampleMeta = await readExampleMeta()
   const newMeta: ExampleMeta = { examples: [] }
 
-  const pkg = await vfs.getPackageByName('prosekit-playground')
+  const pkg = await vfs.getPackageByName('prosekit-website')
 
   const files = await vfs.getFilePathsByPackage(pkg)
 
@@ -30,10 +30,10 @@ export async function genExampleMetaYaml() {
         return null
       }
 
-      const [playgroundDir, srcDir, examplesDir, framework, story, fileName] = parts
+      const [websiteDir, srcDir, examplesDir, framework, story, fileName] = parts
 
       if (
-        playgroundDir !== 'playground'
+        websiteDir !== 'website'
         || srcDir !== 'src'
         || examplesDir !== 'examples'
         || fileName.endsWith('.astro')

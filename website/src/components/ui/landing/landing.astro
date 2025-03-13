@@ -1,0 +1,19 @@
+---
+import EditorShowcase from './editor-showcase.astro'
+import FeaturesSection from './features-section.astro'
+import Footer from './footer.astro'
+import HeroSection from './hero-section.astro'
+---
+
+<div class="mx-auto max-w-screen-xl" data-landing>
+  <HeroSection />
+  <EditorShowcase />
+  <FeaturesSection />
+</div>
+<Footer />
+
+<style is:global>
+  .sl-container:has(> div[data-landing]) {
+    min-width: 100%;
+  }
+</style>

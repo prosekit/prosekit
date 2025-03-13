@@ -129,6 +129,7 @@ div.ProseMirror {
 
   & hr {
     margin: 2em 0;
+    border-width: 1px;
   }
 
   & .prosekit-horizontal-rule {

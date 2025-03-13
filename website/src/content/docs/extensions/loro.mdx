@@ -1,0 +1,34 @@
+---
+title: Loro
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import CodeGroupInstallation from '@/components/ui/code-group-installation.astro';
+
+Make the editor collaborative by integrating [Loro](https://loro.dev/) with ProseKit.
+
+<Demo story="loro" />
+
+## Usage
+
+You need to install `loro-crdt` and `loro-prosemirror` to use this extension.
+
+<CodeGroupInstallation packages={'loro-crdt loro-prosemirror'} />
+
+```ts twoslash
+import 'prosekit/extensions/loro/style.css'
+import { LoroDoc } from 'loro-crdt'
+import {
+  CursorAwareness,
+  type LoroDocType,
+} from 'loro-prosemirror'
+import { defineLoro } from 'prosekit/extensions/loro'
+
+const doc: LoroDocType = new LoroDoc()
+const awareness = new CursorAwareness(doc.peerIdStr)
+const extension = defineLoro({ doc, awareness })
+```
+
+## API Reference
+
+- [prosekit/extensions/loro](/references/extensions/loro)

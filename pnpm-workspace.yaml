@@ -1,5 +1,4 @@
 packages:
   - website
-  - playground
   - examples/*
   - packages/*

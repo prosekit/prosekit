@@ -13,7 +13,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     disabled={!$editor.commands.undo.canExec()}
     onClick={() => $editor.commands.undo()}
   >
-    <div class={Themes.ICON_UNDO} />
+    <div class={Themes.ICON_UNDO}></div>
   </Button>
 
   <Button
@@ -21,7 +21,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     disabled={!$editor.commands.redo.canExec()}
     onClick={() => $editor.commands.redo()}
   >
-    <div class={Themes.ICON_REDO} />
+    <div class={Themes.ICON_REDO}></div>
   </Button>
 
   <Button

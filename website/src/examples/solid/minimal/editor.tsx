@@ -10,7 +10,7 @@ export default function Editor() {
 
   return (
     <ProseKit editor={editor}>
-      <div ref={editor.mount} style={{ outline: 'solid', padding: '1rem' }}></div>
+      <div ref={editor.mount} style={{ outline: 'auto', padding: '1rem' }}></div>
     </ProseKit>
   )
 }

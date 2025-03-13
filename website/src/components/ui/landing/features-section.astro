@@ -1,23 +1,20 @@
 ---
 import LinkButton from 'starlight-theme-nova/components/LinkButton.astro'
-import HiddenLink from './hidden-link.astro'
 import FeatureCard from './feature-card.astro'
+import HiddenLink from './hidden-link.astro'
 ---
 
 <section class="py-24 md:py-24 px-4 relative overflow-hidden">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Headless Card -->
       <FeatureCard title="Headless by Design">
         Giving you complete control over styling and appearance, with zero assumptions about your design choices.
       </FeatureCard>
 
-      <!-- Components Card -->
       <FeatureCard title="Copy-Paste Components">
         <HiddenLink href="https://tailwindcss.com/">TailwindCSS</HiddenLink>-powered components you can copy directly into your project and customize freely.
       </FeatureCard>
 
-      <!-- Framework Card -->
       <FeatureCard title="Framework Flexibility">
         The same core with specialized adapters for React, Vue, Svelte, Preact, and Solid.
         <div slot="footer" class="mt-auto pt-4">
@@ -31,25 +28,21 @@ import FeatureCard from './feature-card.astro'
         </div>
       </FeatureCard>
 
-      <!-- API Card -->
       <FeatureCard title="Flexible API Design">
         Carefully crafted API that makes extending and customizing your editor intuitive and powerful.
       </FeatureCard>
 
-      <!-- Collaboration Card -->
       <FeatureCard title="Collaborative Editing">
         Seamless integration with <HiddenLink href="https://yjs.dev">Yjs</HiddenLink> or <HiddenLink href="https://loro.dev">Loro</HiddenLink> for real-time collaboration.
       </FeatureCard>
 
-      <!-- ProseMirror Card -->
       <FeatureCard title="Built on ProseMirror">
         Leverages the battle-tested ProseMirror foundation used by The New York Times and Atlassian.
       </FeatureCard>
     </div>
 
-    <!-- Call to Action Section -->
     <div class="mt-20 md:mt-24 relative">
-      <!-- Background element -->
+      {/* Background element */}
       <div class="absolute inset-0 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 rounded-3xl overflow-hidden -z-10">
         <div class="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5"></div>
       </div>

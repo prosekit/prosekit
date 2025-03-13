@@ -54,16 +54,16 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^0.81.2",
+    "@zag-js/dom-query": "^0.82.2",
     "just-map-values": "^3.2.0",
     "just-omit": "^2.2.0",
     "prosemirror-tables": "^1.6.4"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "tsup": "^8.3.5",
-    "typescript": "~5.7.2",
-    "vitest": "^3.0.7"
+    "tsup": "^8.4.0",
+    "typescript": "~5.7.3",
+    "vitest": "^3.0.8"
   },
   "publishConfig": {
     "exports": {

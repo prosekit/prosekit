@@ -43,11 +43,11 @@
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "postcss": "^8.5.0",
+    "postcss": "^8.5.3",
     "postcss-nesting": "^13.0.1",
-    "tsup": "^8.3.5",
-    "typescript": "~5.7.2",
-    "vitest": "^3.0.7"
+    "tsup": "^8.4.0",
+    "typescript": "~5.7.3",
+    "vitest": "^3.0.8"
   },
   "publishConfig": {
     "exports": {

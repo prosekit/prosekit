@@ -38,9 +38,9 @@
   "devDependencies": {
     "dedent": "^1.5.3",
     "esbuild": "^0.24.2",
-    "prettier": "^3.4.2",
-    "typescript": "~5.7.2",
-    "unplugin-macros": "^0.14.0",
-    "vitest": "^3.0.7"
+    "prettier": "^3.5.3",
+    "typescript": "~5.7.3",
+    "unplugin-macros": "^0.16.2",
+    "vitest": "^3.0.8"
   }
 }

@@ -1,0 +1,26 @@
+import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
+
+import { Themes } from '@prosekit/themes'
+import { useMemo } from 'preact/hooks'
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+import { ProseKit } from 'prosekit/preact'
+
+import { typographyContent } from './typography-content'
+
+export default function Editor() {
+  const editor = useMemo(() => {
+    return createEditor({ extension: defineBasicExtension(), defaultContent: typographyContent })
+  }, [])
+
+  return (
+    <ProseKit editor={editor}>
+      <div className={Themes.EDITOR_VIEWPORT}>
+        <div className={Themes.EDITOR_SCROLLING}>
+          <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
+        </div>
+      </div>
+    </ProseKit>
+  )
+}

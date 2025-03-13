@@ -1,0 +1,71 @@
+---
+import LinkButton from 'starlight-theme-nova/components/LinkButton.astro'
+import FeatureCard from './feature-card.astro'
+import HiddenLink from './hidden-link.astro'
+---
+
+<section class="py-24 md:py-24 px-4 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <FeatureCard title="Headless by Design">
+        Giving you complete control over styling and appearance, with zero assumptions about your design choices.
+      </FeatureCard>
+
+      <FeatureCard title="Copy-Paste Components">
+        <HiddenLink href="https://tailwindcss.com/">TailwindCSS</HiddenLink>-powered components you can copy directly into your project and customize freely.
+      </FeatureCard>
+
+      <FeatureCard title="Framework Flexibility">
+        The same core with specialized adapters for React, Vue, Svelte, Preact, and Solid.
+        <div slot="footer" class="mt-auto pt-4">
+          <div class="flex flex-wrap gap-3">
+            <div class="i-logos-react w-7 h-7 opacity-80 hover:opacity-100 hover:scale-110 transition-all"></div>
+            <div class="i-logos-vue w-7 h-7 opacity-80 hover:opacity-100 hover:scale-110 transition-all"></div>
+            <div class="i-logos-svelte-icon w-7 h-7 opacity-80 hover:opacity-100 hover:scale-110 transition-all"></div>
+            <div class="i-logos-preact w-7 h-7 opacity-80 hover:opacity-100 hover:scale-110 transition-all"></div>
+            <div class="i-logos-solidjs-icon w-7 h-7 opacity-80 hover:opacity-100 hover:scale-110 transition-all"></div>
+          </div>
+        </div>
+      </FeatureCard>
+
+      <FeatureCard title="Flexible API Design">
+        Carefully crafted API that makes extending and customizing your editor intuitive and powerful.
+      </FeatureCard>
+
+      <FeatureCard title="Collaborative Editing">
+        Seamless integration with <HiddenLink href="https://yjs.dev">Yjs</HiddenLink> or <HiddenLink href="https://loro.dev">Loro</HiddenLink> for real-time collaboration.
+      </FeatureCard>
+
+      <FeatureCard title="Built on ProseMirror">
+        Leverages the battle-tested ProseMirror foundation used by The New York Times and Atlassian.
+      </FeatureCard>
+    </div>
+
+    <div class="mt-20 md:mt-24 relative">
+      {/* Background element */}
+      <div class="absolute inset-0 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/30 dark:to-purple-950/30 rounded-3xl overflow-hidden -z-10">
+        <div class="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-5"></div>
+      </div>
+
+      <div
+        class="py-12 px-8 md:py-16 md:px-16 rounded-3xl bg-gradient-to-br from-white/80 to-white/60 dark:from-gray-800/80 dark:to-gray-900/60 border border-gray-200 dark:border-gray-700 shadow-lg backdrop-blur-sm"
+      >
+        <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+          <div class="max-w-xl">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+              Ready to Build Your Editor?
+            </h2>
+            <div class="flex flex-wrap gap-4 mt-8">
+              <LinkButton href="/getting-started/quick-start" variant="primary">
+                Get Started
+              </LinkButton>
+              <LinkButton href="/examples" variant="secondary">
+                Explore Examples
+              </LinkButton>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

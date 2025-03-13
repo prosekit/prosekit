@@ -1,0 +1,76 @@
+---
+title: Using Extensions
+sidebar:
+  order: 50
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import { Aside, CardGrid } from '@astrojs/starlight/components';
+import LinkCard from 'starlight-theme-nova/components/LinkCard.astro';
+
+Extensions are at the heart of ProseKit's flexibility and power. They allow you to add functionality to your editor in a modular way, making it easy to build exactly the editing experience you need.
+
+## What are extensions?
+
+Extensions in ProseKit are modular pieces of functionality that you can add to your editor. They can provide:
+
+- **Nodes** (paragraphs, headings, lists, code blocks, etc.)
+- **Marks** (bold, italic, underline, etc.)
+- **Commands** (functions that modify the document)
+- **Keyboard shortcuts**
+- **Input rules** (automatic transformations as you type)
+- **Custom behaviors** and much more
+
+## Basic extension usage
+
+ProseKit provides a `defineBasicExtension()` function that includes common editing features like paragraphs, headings, and basic text formatting:
+
+```ts
+import {
+  createEditor,
+  defineBasicExtension,
+} from 'prosekit/core'
+
+// Create a basic extension with default features
+const extension = defineBasicExtension()
+
+// Create an editor with the extension
+const editor = createEditor({ extension })
+```
+
+The basic extension includes the most commonly used extensions. Please refer to the [API reference](/references/basic/#define-basic-extension) for a complete list of included extensions.
+
+## Adding specific extensions
+
+To customize your editor with exactly the features you need, you can combine individual extensions:
+
+```ts
+import {
+  createEditor,
+  defineBaseCommands,
+  defineBaseKeymap,
+  defineDoc,
+  defineExtension,
+  defineHistory,
+  defineParagraph,
+  defineText,
+  union,
+} from 'prosekit/core'
+import { defineBold } from 'prosekit/extensions/bold'
+import { defineHeading } from 'prosekit/extensions/heading'
+
+function defineMyExtension() {
+  return union([
+    defineDoc(),
+    defineHistory(),
+    defineParagraph(),
+    defineText(),
+    defineBold(),
+    defineHeading(),
+  ])
+}
+
+const extension = defineMyExtension()
+
+const editor = createEditor({ extension })
+```

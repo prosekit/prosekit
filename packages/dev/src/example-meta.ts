@@ -97,5 +97,5 @@ export function findExampleFile(
   return collection?.files?.find((f) => f.path === filePath)
 }
 
-const metaYamlPath = path.join('playground', 'example.meta.yaml')
-const metaTsPath = path.join('playground', 'example.meta.ts')
+const metaYamlPath = path.join('website', 'example.meta.yaml')
+const metaTsPath = path.join('website', 'example.meta.ts')

@@ -1,0 +1,44 @@
+---
+title: Styling Your Editor
+sidebar:
+  order: 30
+---
+
+import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+import CodeGroupInstallation from '@/components/ui/code-group-installation.astro';
+import Demo from '@/components/ui/demo/demo.astro';
+
+ProseKit provides a headless editor framework that gives you complete control over your editor's appearance. This guide will walk you through the various ways to style your ProseKit editor.
+
+## Basic Styles
+
+ProseKit requires some basic styles to function properly. Import the `prosekit/basic/style.css` file in your project.
+
+```ts
+// Import the basic styles (required)
+import 'prosekit/basic/style.css'
+```
+
+<Aside type="caution">
+  Always include the core styles from `prosekit/basic/style.css` in your project. Without these styles, your editor may not behave correctly.
+</Aside>
+
+## Typography Styles
+
+ProseKit provides an optional set of typography styles that make your editor content look polished with minimal effort.
+
+The `typography.css` file provides a beautiful set of default styles for headings, paragraphs, lists, and other elements:
+
+```ts
+// Import both basic and typography styles
+import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
+```
+
+Here's what the default typography looks like:
+
+<Demo story="typography" showCode={false} />
+
+## Styling with Tailwind CSS
+
+ProseKit works well with [Tailwind CSS](https://tailwindcss.com) for styling your editor. For pre-built editor components that use Tailwind CSS, see the [Components](/components/) documentation.

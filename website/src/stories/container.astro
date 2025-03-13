@@ -1,0 +1,35 @@
+---
+import 'prosekit/basic/typography.css'
+---
+
+<div data-prosekit-story-container class="w-full h-full min-w-0 min-h-0 max-h-full">
+  <div
+    data-prosekit-story-container-inner
+    class="w-full h-full min-w-0 min-h-0 max-h-full flex flex-col max-w-[900px] ml-auto mr-auto box-border"
+  >
+    <slot />
+  </div>
+</div>
+
+<style>
+  [data-prosekit-story-container] {
+    container-name: prosekit-story-container;
+    container-type: inline-size;
+  }
+
+  [data-prosekit-story-container-inner] {
+    padding: 0.5rem;
+  }
+
+  @container prosekit-story-container (width >= 30rem) and (width < 50rem) {
+    [data-prosekit-story-container-inner] {
+      padding: 1rem;
+    }
+  }
+
+  @container prosekit-story-container (width >= 900px) {
+    [data-prosekit-story-container-inner] {
+      padding: 4rem;
+    }
+  }
+</style>

@@ -1,0 +1,183 @@
+---
+title: Saving and Loading Content
+sidebar:
+  order: 40
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+Saving and loading content is a fundamental requirement for any editor. ProseKit provides flexible options for persisting your content in different formats, primarily JSON and HTML. This guide will show you how to implement content persistence in your ProseKit editor.
+
+## Supported Formats
+
+ProseKit supports multiple content formats:
+
+| Format   | Description                           | Best For                                     |
+| -------- | ------------------------------------- | -------------------------------------------- |
+| **JSON** | Native ProseMirror document structure | Long-term storage, preserving all features   |
+| **HTML** | Standard HTML markup                  | Interoperability with other systems, display |
+
+## Working with JSON
+
+JSON is the recommended format for storing ProseKit documents because it preserves the exact structure and all attributes of your content.
+
+### Saving Content as JSON
+
+To get your document as JSON, use the `getDocJSON()` method:
+
+```ts
+// Get the current document as a JSON object
+const json = editor.getDocJSON()
+```
+
+### Loading Content from JSON
+
+To load content from JSON when creating an editor:
+
+```ts
+// Create editor with the loaded content
+const editor = createEditor({
+  extension,
+  defaultContent: json, // Pass the JSON object directly
+})
+```
+
+### Detecting Document Changes
+
+To save content when the document changes, use the `useDocChange` hook:
+
+<Tabs syncKey="ui-framework">
+
+<TabItem label="React">
+
+```ts
+import { useDocChange } from 'prosekit/react'
+
+useDocChange(() => {
+  // This runs whenever the document changes
+  const json = editor.getDocJSON()
+  localStorage.setItem('my-document', JSON.stringify(json))
+}, { editor })
+```
+
+</TabItem>
+
+<TabItem label="Vue">
+
+```ts
+import { useDocChange } from 'prosekit/vue'
+
+useDocChange(() => {
+  // This runs whenever the document changes
+  const json = editor.getDocJSON()
+  localStorage.setItem('my-document', JSON.stringify(json))
+}, { editor })
+```
+
+</TabItem>
+
+<TabItem label="Svelte">
+
+```ts
+import { useDocChange } from 'prosekit/svelte'
+
+useDocChange(() => {
+  // This runs whenever the document changes
+  const json = editor.getDocJSON()
+  localStorage.setItem('my-document', JSON.stringify(json))
+}, { editor })
+```
+
+</TabItem>
+
+<TabItem label="Preact">
+
+```ts
+import { useDocChange } from 'prosekit/preact'
+
+useDocChange(() => {
+  // This runs whenever the document changes
+  const json = editor.getDocJSON()
+  localStorage.setItem('my-document', JSON.stringify(json))
+}, { editor })
+```
+
+</TabItem>
+
+<TabItem label="Solid">
+
+```ts
+import { useDocChange } from 'prosekit/solid'
+
+useDocChange(() => {
+  // This runs whenever the document changes
+  const json = editor.getDocJSON()
+  localStorage.setItem('my-document', JSON.stringify(json))
+}, { editor })
+```
+
+</TabItem>
+
+</Tabs>
+
+<Aside type="caution">
+  For performance reasons, avoid saving after every single change if your document is large. Consider debouncing the save operation to reduce the number of writes.
+</Aside>
+
+### JSON Example
+
+Here's a complete example of saving and loading content using JSON:
+
+<Demo story="save-json" />
+
+## Working with HTML
+
+HTML is useful when you need to display your content outside the editor or integrate with systems that understand HTML.
+
+### Saving Content as HTML
+
+To convert your document to HTML:
+
+```ts
+// Get the current document as an HTML string
+const html = editor.getDocHTML()
+
+// Store the HTML
+localStorage.setItem('my-document-html', html)
+```
+
+### Loading Content from HTML
+
+To load content from HTML:
+
+```ts
+// Retrieve stored HTML
+const html = localStorage.getItem('my-document-html')
+
+// Create editor with the loaded HTML
+const editor = createEditor({
+  extension,
+  defaultContent: html, // Pass the HTML string
+})
+```
+
+<Aside>
+  ProseKit automatically detects if the content is HTML or JSON based on the type. If you pass a string, it's treated as HTML. If you pass an object, it's treated as JSON.
+</Aside>
+
+### HTML Example
+
+Here's an example of saving and loading content using HTML:
+
+<Demo story="save-html" />
+
+## Working with Markdown
+
+While ProseKit doesn't directly support Markdown as a storage format, you can add Markdown support using additional libraries.
+
+### Markdown Example
+
+Here's an example of using Markdown for saving and loading. It uses the [remark](https://github.com/remarkjs/remark) and [rehype](https://github.com/rehypejs/rehype) libraries to convert between Markdown and HTML.
+
+<Demo story="save-markdown" />

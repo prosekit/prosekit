@@ -1,4 +1,5 @@
 import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
 import 'prosekit/extensions/yjs/style.css'
 
 import { Themes } from '@prosekit/themes'

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
 
 import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'

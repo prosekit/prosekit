@@ -18,53 +18,6 @@ import wasm from 'vite-plugin-wasm'
 
 type Sidebar = StarlightUserConfig['sidebar']
 
-const sidebarExtensionItems = [
-  {
-    label: 'Nodes',
-    /// keep-sorted
-    items: [
-      'extensions/blockquote',
-      'extensions/code-block',
-      'extensions/heading',
-      'extensions/horizontal-rule',
-      'extensions/image',
-      'extensions/list',
-      'extensions/mention',
-      'extensions/table',
-    ],
-  },
-  {
-    label: 'Marks',
-    /// keep-sorted
-    items: [
-      'extensions/bold',
-      'extensions/code',
-      'extensions/italic',
-      'extensions/link',
-      'extensions/strike',
-      'extensions/underline',
-    ],
-  },
-  {
-    label: 'Others',
-    /// keep-sorted
-    items: [
-      'extensions/commit',
-      'extensions/drop-cursor',
-      'extensions/enter-rule',
-      'extensions/file',
-      'extensions/gap-cursor',
-      'extensions/input-rule',
-      'extensions/loro',
-      'extensions/placeholder',
-      'extensions/readonly',
-      'extensions/search',
-      'extensions/text-align',
-      'extensions/yjs',
-    ],
-  },
-]
-
 function generateReferenceSidebarItems(): { slug: string }[] {
   // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
   const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/references').sync().sort()
@@ -74,45 +27,15 @@ function generateReferenceSidebarItems(): { slug: string }[] {
 }
 
 function generateExtensionsSidebarItems() {
-  /// keep-sorted
-  const nodeNames = [
-    'blockquote',
-    'code-block',
-    'heading',
-    'horizontal-rule',
-    'image',
-    'list',
-    'mention',
-    'table',
-  ]
-  /// keep-sorted
-  const markNames = [
-    'bold',
-    'code',
-    'italic',
-    'link',
-    'strike',
-    'underline',
-  ]
-  /// keep-sorted
-  const otherNames = [
-    'commit',
-    'drop-cursor',
-    'enter-rule',
-    'file',
-    'gap-cursor',
-    'input-rule',
-    'loro',
-    'placeholder',
-    'readonly',
-    'search',
-    'text-align',
-    'yjs',
-  ]
+  const classification = {
+    node: ['blockquote', 'code-block', 'heading', 'horizontal-rule', 'image', 'list', 'mention', 'table'],
+    mark: ['bold', 'code', 'italic', 'link', 'strike'],
+    other: ['commit', 'drop-cursor', 'enter-rule', 'file', 'gap-cursor', 'input-rule', 'loro', 'placeholder', 'readonly', 'search', 'text-align', 'yjs'],
+  }
 
   const nodeItems: string[] = []
   const markItems: string[] = []
-  const othersItems: string[] = []
+  const otherItems: string[] = []
 
   // filePaths is an array like ['bold.mdx', 'code.mdx']
   const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/extensions').sync().sort()
@@ -120,12 +43,12 @@ function generateExtensionsSidebarItems() {
 
   for (const name of names) {
     const item = `extensions/${name}`
-    if (nodeNames.includes(name)) {
+    if (classification.node.includes(name)) {
       nodeItems.push(item)
-    } else if (markNames.includes(name)) {
+    } else if (classification.mark.includes(name)) {
       markItems.push(item)
-    } else if (otherNames.includes(name)) {
-      otherNames.push(item)
+    } else if (classification.other.includes(name)) {
+      otherItems.push(item)
     } else {
       throw new Error(`Unable to classify ${item}. Please update astro.config.ts to fix it`)
     }
@@ -134,26 +57,8 @@ function generateExtensionsSidebarItems() {
   return [
     { label: 'Nodes', items: nodeItems },
     { label: 'Marks', items: markItems },
-    { label: 'Others', items: othersItems },
+    { label: 'Others', items: otherItems },
   ]
-}
-
-/**
- * Validates that all extension files in the given directory are included in the sidebar configuration
- */
-function validateExtensionFiles() {
-  // filePaths is an array like ['bold.mdx', 'code.mdx']
-  const filePaths: string[] = (new fdir()).withRelativePaths().crawl('src/content/docs/extensions').sync()
-
-  const expectedItems = filePaths.map(filePath => filePath.replace(/\.mdx?/, '')).map(item => `extensions/${item}`)
-  const actualItems = sidebarExtensionItems.flatMap(group => group.items)
-  const missingItems = expectedItems.filter(item => !actualItems.includes(item))
-
-  if (missingItems.length > 0) {
-    console.error('Error: The following extension files are not included in the sidebar configuration:')
-    missingItems.forEach(file => console.error(`  - ${file}`))
-    throw new Error('Missing extension files in sidebar configuration')
-  }
 }
 
 const sidebar: Sidebar = [
@@ -180,9 +85,6 @@ const sidebar: Sidebar = [
 ]
 
 // https://astro.build/config
-// Validate extension files before building
-validateExtensionFiles()
-
 const config: AstroUserConfig = {
   integrations: [
     starlight({

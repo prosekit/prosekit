@@ -52,6 +52,13 @@ export interface JSONParserOptions {
  * Return a JSON object representing this state.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const state = editor.state
+ * const json = jsonFromState(state)
+ * ```
  */
 export function jsonFromState(state: EditorState): StateJSON {
   return state.toJSON() as StateJSON
@@ -61,6 +68,13 @@ export function jsonFromState(state: EditorState): StateJSON {
  * Parse a JSON object to a ProseMirror state.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const json = { state: { type: 'doc', content: [{ type: 'paragraph' }], selection: { type: 'text', from: 1, to: 1 } } }
+ * const state = stateFromJSON(json, { schema: editor.schema })
+ * ```
  */
 export function stateFromJSON(
   json: StateJSON,
@@ -75,6 +89,13 @@ export function stateFromJSON(
  * Return a JSON object representing this node.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const node = editor.state.doc
+ * const json = jsonFromNode(node)
+ * ```
  */
 export function jsonFromNode(node: ProseMirrorNode): NodeJSON {
   return node.toJSON() as NodeJSON
@@ -84,6 +105,13 @@ export function jsonFromNode(node: ProseMirrorNode): NodeJSON {
  * Parse a JSON object to a ProseMirror node.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const json = { type: 'doc', content: [{ type: 'paragraph' }] }
+ * const node = nodeFromJSON(json, { schema: editor.schema })
+ * ```
  */
 export function nodeFromJSON(
   json: NodeJSON,
@@ -98,6 +126,12 @@ export function nodeFromJSON(
  * Parse a HTML element to a ProseMirror node.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const element = document.getElementById('content')
+ * const node = nodeFromElement(element, { schema: editor.schema })
  */
 export function nodeFromElement(
   element: DOMNode,
@@ -113,6 +147,13 @@ export function nodeFromElement(
  * Serialize a ProseMirror node to a HTML element.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const node = editor.state.doc
+ * const element = elementFromNode(node)
+ * ```
  */
 export function elementFromNode(
   node: ProseMirrorNode,
@@ -164,6 +205,12 @@ export function htmlFromElement(element: HTMLElement): string {
  * Parse a HTML string to a ProseMirror node.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const html = '<p>Hello, world!</p>'
+ * const node = nodeFromHTML(html, { schema: editor.schema })
  */
 export function nodeFromHTML(
   html: string,
@@ -176,6 +223,13 @@ export function nodeFromHTML(
  * Serialize a ProseMirror node to a HTML string
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const node = document.getElementById('content')
+ * const html = htmlFromNode(node)
+ * ```
  */
 export function htmlFromNode(
   node: ProseMirrorNode,
@@ -190,6 +244,13 @@ export function htmlFromNode(
  * Serialize a HTML element to a ProseMirror document JSON object.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const element = document.getElementById('content')
+ * const json = jsonFromElement(element, { schema: editor.schema })
+ * ```
  */
 export function jsonFromElement(
   element: DOMNode,
@@ -202,6 +263,13 @@ export function jsonFromElement(
  * Parse a ProseMirror document JSON object to a HTML element.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const json = { type: 'doc', content: [{ type: 'paragraph' }] }
+ * const element = elementFromJSON(json, { schema: editor.schema })
+ * ```
  */
 export function elementFromJSON(
   json: NodeJSON,
@@ -216,6 +284,13 @@ export function elementFromJSON(
  * Parse a HTML string to a ProseMirror document JSON object.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const html = '<p>Hello, world!</p>'
+ * const json = jsonFromHTML(html, { schema: editor.schema })
+ * ```
  */
 export function jsonFromHTML(
   html: string,
@@ -228,6 +303,13 @@ export function jsonFromHTML(
  * Parse a ProseMirror document JSON object to a HTML string.
  *
  * @public
+ *
+ * @example
+ *
+ * ```ts
+ * const json = { type: 'doc', content: [{ type: 'paragraph' }] }
+ * const html = htmlFromJSON(json, { schema: editor.schema })
+ * ```
  */
 export function htmlFromJSON(
   json: NodeJSON,

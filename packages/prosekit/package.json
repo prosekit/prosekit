@@ -82,7 +82,7 @@
     "./pm": "./src/pm.ts",
     "./pm/commands": "./src/pm/commands.ts",
     "./pm/history": "./src/pm/history.ts",
-    "./pm/inputrules": "./src/pm/inputrules.gen.ts",
+    "./pm/inputrules": "./src/pm/inputrules.ts",
     "./pm/keymap": "./src/pm/keymap.ts",
     "./pm/model": "./src/pm/model.ts",
     "./pm/state": "./src/pm/state.ts",

@@ -47,7 +47,7 @@
     "./src/pm.ts",
     "./src/pm/commands.ts",
     "./src/pm/history.ts",
-    "./src/pm/inputrules.gen.ts",
+    "./src/pm/inputrules.ts",
     "./src/pm/keymap.ts",
     "./src/pm/model.ts",
     "./src/pm/state.ts",

@@ -1,5 +1,5 @@
 /**
- * Re-exported from [prosemirror-model](https://github.com/ProseMirror/prosemirror-model).
+ * Re-exports from [prosemirror-model](https://github.com/ProseMirror/prosemirror-model).
  *
  * @module prosekit/pm/model
  */

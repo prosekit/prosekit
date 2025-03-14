@@ -1,5 +1,5 @@
 /**
- * Re-exported from [prosemirror-commands](https://github.com/ProseMirror/prosemirror-commands)
+ * Re-exports from [prosemirror-commands](https://github.com/ProseMirror/prosemirror-commands)
  *
  * @module prosekit/pm/commands
  */

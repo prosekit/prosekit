@@ -10,6 +10,8 @@ export async function genTypedocJson() {
     $schema: 'https://typedoc.org/schema.json',
     entryPoints: Object.values(entryPoints)
       .filter((entryPoint) => !entryPoint.endsWith('.css'))
+      // Remove lit modules because they are just simple re-exports from the web modules
+      .filter((entryPoint) => !/^[^a-z]*src\/lit/.test(entryPoint))
       .sort(),
   }
   const typedocJsonPath = path.join(pkg.relativeDir, 'typedoc.gen.json')

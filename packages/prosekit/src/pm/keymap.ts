@@ -1,5 +1,5 @@
 /**
- * Re-exported from [prosemirror-keymap](https://github.com/ProseMirror/prosemirror-keymap).
+ * Re-exports from [prosemirror-keymap](https://github.com/ProseMirror/prosemirror-keymap).
  *
  * @module prosekit/pm/keymap
  */

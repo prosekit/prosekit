@@ -1,7 +1,3 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
@@ -9,96 +5,63 @@ import starlight from '@astrojs/starlight'
 import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
+import type { AstroUserConfig } from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
-import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
+import { fdir } from 'fdir'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlugCustomId from 'rehype-slug-custom-id'
 import starlightThemeNova from 'starlight-theme-nova'
 import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
 
-// Get the directory of the current file
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
 type Sidebar = StarlightUserConfig['sidebar']
 
-const sidebarExtensionItems = [
-  {
-    label: 'Nodes',
-    /// keep-sorted
-    items: [
-      'extensions/blockquote',
-      'extensions/code-block',
-      'extensions/heading',
-      'extensions/horizontal-rule',
-      'extensions/image',
-      'extensions/list',
-      'extensions/mention',
-      'extensions/table',
-    ],
-  },
-  {
-    label: 'Marks',
-    /// keep-sorted
-    items: [
-      'extensions/bold',
-      'extensions/code',
-      'extensions/italic',
-      'extensions/link',
-      'extensions/strike',
-      'extensions/underline',
-    ],
-  },
-  {
-    label: 'Functionality',
-    /// keep-sorted
-    items: [
-      'extensions/commit',
-      'extensions/drop-cursor',
-      'extensions/enter-rule',
-      'extensions/file',
-      'extensions/gap-cursor',
-      'extensions/input-rule',
-      'extensions/loro',
-      'extensions/placeholder',
-      'extensions/readonly',
-      'extensions/search',
-      'extensions/text-align',
-      'extensions/yjs',
-    ],
-  },
-]
-
-/**
- * Validates that all extension files in the given directory are included in the sidebar configuration
- */
-function validateExtensionFiles() {
-  const extensionsDir = path.join(__dirname, 'src/content/docs/extensions')
-  const expectedItems: string[] = fs.readdirSync(extensionsDir)
-    .filter(file => file.endsWith('.mdx'))
-    .map(file => file.replace('.mdx', ''))
-
-  // Extract all sidebar items with "extensions/" prefix
-  const allSidebarItems: string[] = []
-  sidebarExtensionItems.forEach(category => {
-    category.items.forEach(item => {
-      if (typeof item === 'string' && item.startsWith('extensions/')) {
-        allSidebarItems.push(item.replace('extensions/', ''))
-      }
-    })
+function generateReferenceSidebarItems() {
+  // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
+  const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/references').sync().sort()
+  const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
+  return names.map(name => {
+    const isLeaf = name.split('/').length === 1
+    const style = isLeaf ? 'font-weight: 600;' : 'padding-inline-start: 1.5rem;'
+    return { slug: `references/${name}`, attrs: { style } }
   })
+}
 
-  // Find files that are not included in the sidebar
-  const missingItems = expectedItems.filter(file => !allSidebarItems.includes(file))
-
-  if (missingItems.length > 0) {
-    console.error('Error: The following extension files are not included in the sidebar configuration:')
-    missingItems.forEach(file => console.error(`  - ${file}`))
-    throw new Error('Missing extension files in sidebar configuration')
+function generateExtensionsSidebarItems() {
+  const classification = {
+    node: ['blockquote', 'code-block', 'heading', 'horizontal-rule', 'image', 'list', 'mention', 'table'],
+    mark: ['bold', 'code', 'italic', 'link', 'strike', 'underline'],
+    other: ['commit', 'drop-cursor', 'enter-rule', 'file', 'gap-cursor', 'input-rule', 'loro', 'placeholder', 'readonly', 'search', 'text-align', 'yjs'],
   }
+
+  const nodeItems: string[] = []
+  const markItems: string[] = []
+  const otherItems: string[] = []
+
+  // filePaths is an array like ['bold.mdx', 'code.mdx']
+  const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/extensions').sync().sort()
+  const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
+
+  for (const name of names) {
+    const item = `extensions/${name}`
+    if (classification.node.includes(name)) {
+      nodeItems.push(item)
+    } else if (classification.mark.includes(name)) {
+      markItems.push(item)
+    } else if (classification.other.includes(name)) {
+      otherItems.push(item)
+    } else {
+      throw new Error(`Unable to classify extension ${name}. Please update astro.config.ts to fix it`)
+    }
+  }
+
+  return [
+    { label: 'Nodes', items: nodeItems },
+    { label: 'Marks', items: markItems },
+    { label: 'Others', items: otherItems },
+  ]
 }
 
 const sidebar: Sidebar = [
@@ -110,7 +73,7 @@ const sidebar: Sidebar = [
   {
     label: 'Extensions',
     collapsed: true,
-    items: sidebarExtensionItems,
+    items: generateExtensionsSidebarItems(),
   },
   {
     label: 'Components',
@@ -120,15 +83,12 @@ const sidebar: Sidebar = [
   {
     label: 'References',
     collapsed: true,
-    autogenerate: { directory: 'references', collapsed: true },
+    items: generateReferenceSidebarItems(),
   },
 ]
 
 // https://astro.build/config
-// Validate extension files before building
-validateExtensionFiles()
-
-export default defineConfig({
+const config: AstroUserConfig = {
   integrations: [
     starlight({
       title: 'ProseKit',
@@ -185,4 +145,6 @@ export default defineConfig({
   experimental: {
     headingIdCompat: true,
   },
-})
+}
+
+export default config

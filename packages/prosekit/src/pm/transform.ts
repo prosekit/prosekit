@@ -1,5 +1,5 @@
 /**
- * Re-exported from [prosemirror-transform](https://github.com/ProseMirror/prosemirror-transform).
+ * Re-exports from [prosemirror-transform](https://github.com/ProseMirror/prosemirror-transform).
  *
  * @module prosekit/pm/transform
  */

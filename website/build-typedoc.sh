@@ -47,6 +47,7 @@ cd "$WEBSITE_DIR/src/content/docs"
 find references -name "*.md" | while read file; do
   # If the file only contains one line, remove this file.
   if [ $(cat "$file" | egrep '\S+' | wc -l) -le 1 ]; then
+    echo "Removing $file because it only contains one line"
     rm "$file"
     continue
   fi
@@ -54,7 +55,7 @@ find references -name "*.md" | while read file; do
   # Get the title from the first h1 line
   title=$(head -n 1 "$file" | sed 's/^# //')
   # Get the label from the title
-  label=$(echo "$title" | sed 's/\//\n/g' | tail -n 1)
+  label=$(echo "$title" | tail -n 1 | sed 's/^prosekit\///g')
 
   # Create temporary file
   temp_file=$(mktemp)

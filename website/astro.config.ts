@@ -24,7 +24,7 @@ function generateReferenceSidebarItems() {
   const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
   return names.map(name => {
     const isLeaf = name.split('/').length === 1
-    const style = isLeaf ? 'font-weight: 600;' : 'padding-inline-start: 1.5rem;'
+    const style = isLeaf ? 'font-weight: 600;' : 'margin-inline-start: 1rem;'
     return { slug: `references/${name}`, attrs: { style } }
   })
 }

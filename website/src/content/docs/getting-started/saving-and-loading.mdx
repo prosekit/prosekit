@@ -181,3 +181,22 @@ While ProseKit doesn't directly support Markdown as a storage format, you can ad
 Here's an example of using Markdown for saving and loading. It uses the [remark](https://github.com/remarkjs/remark) and [rehype](https://github.com/rehypejs/rehype) libraries to convert between Markdown and HTML.
 
 <Demo story="save-markdown" />
+
+## Conversion Utilities
+
+ProseKit provides utility functions for converting between plain JSON object, HTML string, and ProseMirror [Node](https://prosekit.dev/references/pm/model/#prose-mirror-node).
+
+|             | to `JSON`        | to `HTML`        | to `Node`        |
+| ----------- | ---------------- | ---------------- | ---------------- |
+| from `JSON` |                  | [`htmlFromJSON`] | [`nodeFromJSON`] |
+| from `HTML` | [`jsonFromHTML`] |                  | [`nodeFromHTML`] |
+| from `Node` | [`jsonFromNode`] | [`htmlFromNode`] |                  |
+
+{/* Link references */}
+
+[`jsonFromHTML`]: /references/core/#json-from-html
+[`htmlFromJSON`]: /references/core/#html-from-json
+[`nodeFromJSON`]: /references/core/#node-from-json
+[`nodeFromHTML`]: /references/core/#node-from-html
+[`htmlFromNode`]: /references/core/#html-from-node
+[`jsonFromNode`]: /references/core/#json-from-node

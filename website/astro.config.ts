@@ -1,7 +1,3 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
-
 import preact from '@astrojs/preact'
 import react from '@astrojs/react'
 import solid from '@astrojs/solid-js'
@@ -9,9 +5,9 @@ import starlight from '@astrojs/starlight'
 import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
+import type { AstroUserConfig } from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
-import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -19,10 +15,6 @@ import rehypeSlugCustomId from 'rehype-slug-custom-id'
 import starlightThemeNova from 'starlight-theme-nova'
 import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
-
-// Get the directory of the current file
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
 
 type Sidebar = StarlightUserConfig['sidebar']
 
@@ -54,7 +46,7 @@ const sidebarExtensionItems = [
     ],
   },
   {
-    label: 'Functionality',
+    label: 'Others',
     /// keep-sorted
     items: [
       'extensions/commit',
@@ -73,21 +65,78 @@ const sidebarExtensionItems = [
   },
 ]
 
-/**
- * Generate sidebar reference items by scanning markdown files in the references directory
- * Uses fast-glob for much better performance
- */
-function generateSidebarReferenceItems(): { slug: string }[] {
+function generateReferenceSidebarItems(): { slug: string }[] {
   // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
-  const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/references').sync()
-
-  const items = filePaths.sort().map(filePath => filePath.replace(/\.mdx?/, '')).map(item => ({ slug: `references/${item}` }))
+  const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/references').sync().sort()
+  const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
+  const items = names.map(name => ({ slug: `references/${name}` }))
   return items
 }
 
-const sidebarReferenceItems = generateSidebarReferenceItems()
+function generateExtensionsSidebarItems() {
+  /// keep-sorted
+  const nodeNames = [
+    'blockquote',
+    'code-block',
+    'heading',
+    'horizontal-rule',
+    'image',
+    'list',
+    'mention',
+    'table',
+  ]
+  /// keep-sorted
+  const markNames = [
+    'bold',
+    'code',
+    'italic',
+    'link',
+    'strike',
+    'underline',
+  ]
+  /// keep-sorted
+  const otherNames = [
+    'commit',
+    'drop-cursor',
+    'enter-rule',
+    'file',
+    'gap-cursor',
+    'input-rule',
+    'loro',
+    'placeholder',
+    'readonly',
+    'search',
+    'text-align',
+    'yjs',
+  ]
 
-console.log('sidebarReferenceItems', sidebarReferenceItems)
+  const nodeItems: string[] = []
+  const markItems: string[] = []
+  const othersItems: string[] = []
+
+  // filePaths is an array like ['bold.mdx', 'code.mdx']
+  const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/extensions').sync().sort()
+  const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
+
+  for (const name of names) {
+    const item = `extensions/${name}`
+    if (nodeNames.includes(name)) {
+      nodeItems.push(item)
+    } else if (markNames.includes(name)) {
+      markItems.push(item)
+    } else if (otherNames.includes(name)) {
+      otherNames.push(item)
+    } else {
+      throw new Error(`Unable to classify ${item}. Please update astro.config.ts to fix it`)
+    }
+  }
+
+  return [
+    { label: 'Nodes', items: nodeItems },
+    { label: 'Marks', items: markItems },
+    { label: 'Others', items: othersItems },
+  ]
+}
 
 /**
  * Validates that all extension files in the given directory are included in the sidebar configuration
@@ -116,7 +165,7 @@ const sidebar: Sidebar = [
   {
     label: 'Extensions',
     collapsed: true,
-    items: sidebarExtensionItems,
+    items: generateExtensionsSidebarItems(),
   },
   {
     label: 'Components',
@@ -126,7 +175,7 @@ const sidebar: Sidebar = [
   {
     label: 'References',
     collapsed: true,
-    items: generateSidebarReferenceItems(),
+    items: generateReferenceSidebarItems(),
   },
 ]
 
@@ -134,7 +183,7 @@ const sidebar: Sidebar = [
 // Validate extension files before building
 validateExtensionFiles()
 
-export default defineConfig({
+const config: AstroUserConfig = {
   integrations: [
     starlight({
       title: 'ProseKit',
@@ -191,4 +240,6 @@ export default defineConfig({
   experimental: {
     headingIdCompat: true,
   },
-})
+}
+
+export default config

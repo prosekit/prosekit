@@ -13,6 +13,7 @@ import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import { defineConfig } from 'astro/config'
 import astrobook from 'astrobook'
+import { fdir } from 'fdir'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlugCustomId from 'rehype-slug-custom-id'
 import starlightThemeNova from 'starlight-theme-nova'
@@ -72,40 +73,32 @@ const sidebarExtensionItems = [
   },
 ]
 
-const sidebarReferenceItems = [
-  { slug: 'references/web/autocomplete' },
-  { slug: 'references/web/inline-popover' },
-  { slug: 'references/vue/table-handle' },
-  { slug: 'references/svelte/block-handle' },
-  { slug: 'references/svelte' },
-  { slug: 'references/extensions/heading' },
-  { slug: 'references/basic' },
-  { slug: 'references/core' },
-  { slug: 'references/core/test' },
-  { slug: 'references/basic/typography-css' },
-]
+/**
+ * Generate sidebar reference items by scanning markdown files in the references directory
+ * Uses fast-glob for much better performance
+ */
+function generateSidebarReferenceItems(): { slug: string }[] {
+  // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
+  const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/references').sync()
+
+  const items = filePaths.sort().map(filePath => filePath.replace(/\.mdx?/, '')).map(item => ({ slug: `references/${item}` }))
+  return items
+}
+
+const sidebarReferenceItems = generateSidebarReferenceItems()
+
+console.log('sidebarReferenceItems', sidebarReferenceItems)
 
 /**
  * Validates that all extension files in the given directory are included in the sidebar configuration
  */
 function validateExtensionFiles() {
-  const extensionsDir = path.join(__dirname, 'src/content/docs/extensions')
-  const expectedItems: string[] = fs.readdirSync(extensionsDir)
-    .filter(file => file.endsWith('.mdx'))
-    .map(file => file.replace('.mdx', ''))
+  // filePaths is an array like ['bold.mdx', 'code.mdx']
+  const filePaths: string[] = (new fdir()).withRelativePaths().crawl('src/content/docs/extensions').sync()
 
-  // Extract all sidebar items with "extensions/" prefix
-  const allSidebarItems: string[] = []
-  sidebarExtensionItems.forEach(category => {
-    category.items.forEach(item => {
-      if (typeof item === 'string' && item.startsWith('extensions/')) {
-        allSidebarItems.push(item.replace('extensions/', ''))
-      }
-    })
-  })
-
-  // Find files that are not included in the sidebar
-  const missingItems = expectedItems.filter(file => !allSidebarItems.includes(file))
+  const expectedItems = filePaths.map(filePath => filePath.replace(/\.mdx?/, '')).map(item => `extensions/${item}`)
+  const actualItems = sidebarExtensionItems.flatMap(group => group.items)
+  const missingItems = expectedItems.filter(item => !actualItems.includes(item))
 
   if (missingItems.length > 0) {
     console.error('Error: The following extension files are not included in the sidebar configuration:')
@@ -133,7 +126,7 @@ const sidebar: Sidebar = [
   {
     label: 'References',
     collapsed: true,
-    items: sidebarReferenceItems,
+    items: generateSidebarReferenceItems(),
   },
 ]
 

@@ -39,6 +39,7 @@
     "astro-rehype-relative-markdown-links": "^0.18.1",
     "astrobook": "^0.7.0",
     "bits-ui": "^1.3.11",
+    "fdir": "^6.4.3",
     "hast-util-is-element": "^3.0.0",
     "lit": "^3.2.1",
     "loro-crdt": "^1.4.6",

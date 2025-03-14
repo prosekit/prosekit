@@ -54,7 +54,7 @@ find references -name "*.md" | while read file; do
   # Get the title from the first h1 line
   title=$(head -n 1 "$file" | sed 's/^# //')
   # Get the label from the title
-  label=$(echo "$title" | sed 's/\//\n/g' | tail -n 1)
+  label=$(echo "$title" | tail -n 1 | sed 's/^prosekit\///g')
 
   # Create temporary file
   temp_file=$(mktemp)

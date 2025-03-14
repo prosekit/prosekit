@@ -72,6 +72,19 @@ const sidebarExtensionItems = [
   },
 ]
 
+const sidebarReferenceItems = [
+  { slug: 'references/web/autocomplete' },
+  { slug: 'references/web/inline-popover' },
+  { slug: 'references/vue/table-handle' },
+  { slug: 'references/svelte/block-handle' },
+  { slug: 'references/svelte' },
+  { slug: 'references/extensions/heading' },
+  { slug: 'references/basic' },
+  { slug: 'references/core' },
+  { slug: 'references/core/test' },
+  { slug: 'references/basic/typography-css' },
+]
+
 /**
  * Validates that all extension files in the given directory are included in the sidebar configuration
  */
@@ -120,7 +133,7 @@ const sidebar: Sidebar = [
   {
     label: 'References',
     collapsed: true,
-    autogenerate: { directory: 'references', collapsed: true },
+    items: sidebarReferenceItems,
   },
 ]
 

@@ -1,23 +1,14 @@
 <script setup lang="ts">
 import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
 
 import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  jsonFromHTML,
-  type NodeJSON,
-} from 'prosekit/core'
-import {
-  computed,
-  ref,
-} from 'vue'
+import { createEditor, jsonFromHTML, type NodeJSON } from 'prosekit/core'
+import { computed, ref } from 'vue'
 
 import EditorComponent from './editor-component.vue'
-import {
-  htmlFromMarkdown,
-  markdownFromHTML,
-} from './markdown'
+import { htmlFromMarkdown, markdownFromHTML } from './markdown'
 
 const defaultContent = ref<NodeJSON | undefined>()
 const records = ref<string[]>([])

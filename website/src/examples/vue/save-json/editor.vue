@@ -1,16 +1,11 @@
 <script setup lang="ts">
 import 'prosekit/basic/style.css'
+import 'prosekit/basic/typography.css'
 
 import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
-import {
-  createEditor,
-  type NodeJSON,
-} from 'prosekit/core'
-import {
-  computed,
-  ref,
-} from 'vue'
+import { createEditor, type NodeJSON } from 'prosekit/core'
+import { computed, ref } from 'vue'
 
 import EditorComponent from './editor-component.vue'
 

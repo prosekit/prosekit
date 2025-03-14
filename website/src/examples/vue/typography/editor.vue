@@ -6,10 +6,7 @@ import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import {
-  ref,
-  watchPostEffect,
-} from 'vue'
+import { ref, watchPostEffect } from 'vue'
 
 import { typographyContent } from './typography-content'
 

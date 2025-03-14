@@ -18,12 +18,15 @@ import wasm from 'vite-plugin-wasm'
 
 type Sidebar = StarlightUserConfig['sidebar']
 
-function generateReferenceSidebarItems(): { slug: string }[] {
+function generateReferenceSidebarItems() {
   // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
   const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/references').sync().sort()
   const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
-  const items = names.map(name => ({ slug: `references/${name}` }))
-  return items
+  return names.map(name => {
+    const isLeaf = name.split('/').length === 1
+    const style = isLeaf ? 'font-weight: 600;' : 'padding-inline-start: 1.5rem;'
+    return { slug: `references/${name}`, attrs: { style } }
+  })
 }
 
 function generateExtensionsSidebarItems() {

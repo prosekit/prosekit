@@ -5,7 +5,10 @@ import 'prosekit/basic/typography.css'
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
-import { ref, watchPostEffect } from 'vue'
+import {
+  ref,
+  watchPostEffect,
+} from 'vue'
 
 const extension = defineBasicExtension()
 const editor = createEditor({ extension })

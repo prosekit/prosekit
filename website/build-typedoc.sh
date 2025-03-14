@@ -47,6 +47,7 @@ cd "$WEBSITE_DIR/src/content/docs"
 find references -name "*.md" | while read file; do
   # If the file only contains one line, remove this file.
   if [ $(cat "$file" | egrep '\S+' | wc -l) -le 1 ]; then
+    echo "Removing $file because it only contains one line"
     rm "$file"
     continue
   fi

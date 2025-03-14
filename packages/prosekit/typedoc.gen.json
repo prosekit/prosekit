@@ -44,7 +44,7 @@
     "./src/lit/resizable.gen.ts",
     "./src/lit/table-handle.gen.ts",
     "./src/lit/tooltip.gen.ts",
-    "./src/pm.gen.ts",
+    "./src/pm.ts",
     "./src/pm/commands.ts",
     "./src/pm/history.ts",
     "./src/pm/inputrules.gen.ts",

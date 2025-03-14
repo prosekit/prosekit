@@ -184,16 +184,17 @@ Here's an example of using Markdown for saving and loading. It uses the [remark]
 
 ## Conversion Utilities
 
-ProseKit provides utility functions for converting between plain JSON object, HTML string, and ProseMirror [Node](https://prosekit.dev/references/pm/model/#prose-mirror-node).
+ProseKit provides utility functions for converting between plain JSON object, HTML string, and [`ProseMirrorNode`].
 
-|             | to `JSON`        | to `HTML`        | to `Node`        |
-| ----------- | ---------------- | ---------------- | ---------------- |
-| from `JSON` |                  | [`htmlFromJSON`] | [`nodeFromJSON`] |
-| from `HTML` | [`jsonFromHTML`] |                  | [`nodeFromHTML`] |
-| from `Node` | [`jsonFromNode`] | [`htmlFromNode`] |                  |
+|                        | to JSON          | to HTML          | to `ProseMirrorNode` |
+| ---------------------- | ---------------- | ---------------- | -------------------- |
+| from JSON              |                  | [`htmlFromJSON`] | [`nodeFromJSON`]     |
+| from HTML              | [`jsonFromHTML`] |                  | [`nodeFromHTML`]     |
+| from `ProseMirrorNode` | [`jsonFromNode`] | [`htmlFromNode`] |                      |
 
 {/* Link references */}
 
+[`Node`]: /references/pm/model/#prose-mirror-node
 [`jsonFromHTML`]: /references/core/#json-from-html
 [`htmlFromJSON`]: /references/core/#html-from-json
 [`nodeFromJSON`]: /references/core/#node-from-json

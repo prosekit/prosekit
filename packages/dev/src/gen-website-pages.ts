@@ -9,6 +9,16 @@ import {
 } from './example-meta.js'
 import { vfs } from './virtual-file-system.js'
 
+// NPM download stats on 2025 March
+// react:          32,063,940
+// vue:             6,427,934
+// preact:          5,449,834
+// @angular/core:   3,961,622
+// lit:             2,306,263
+// svelte:          2,147,140
+// solid-js:          295,213
+const frameworks = ['react', 'vue', 'preact', 'svelte', 'solid']
+
 export async function genWebsitePages() {
   const meta = await readExampleMeta()
 
@@ -33,7 +43,7 @@ export async function genWebsitePages() {
     genSvelteLoaders(meta.examples),
   )
 
-  for (const framework of ['preact', 'react', 'vue', 'solid', 'svelte']) {
+  for (const framework of frameworks) {
     await vfs.updateText(
       `website/src/stories/${framework}.stories.ts`,
       genStories(framework, meta.examples),

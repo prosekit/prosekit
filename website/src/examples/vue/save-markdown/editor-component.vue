@@ -4,8 +4,14 @@ import 'prosekit/basic/typography.css'
 
 import { Themes } from '@prosekit/themes'
 import type { Editor } from 'prosekit/core'
-import { ProseKit, useDocChange } from 'prosekit/vue'
-import { ref, watchPostEffect } from 'vue'
+import {
+  ProseKit,
+  useDocChange,
+} from 'prosekit/vue'
+import {
+  ref,
+  watchPostEffect,
+} from 'vue'
 
 const props = defineProps<{
   editor: Editor

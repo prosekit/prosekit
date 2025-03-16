@@ -1,32 +1,75 @@
-# Contributing Guide
+# Contributing to ProseKit
 
-Hi! We're really excited that you're interested in contributing to ProseKit! Before submitting your contribution, please read through the following guide.
-
-You can use [StackBlitz Codeflow](https://stackblitz.com/codeflow) to fix bugs or implement features. If you'd like to learn more, check out the [Codeflow docs](https://developer.stackblitz.com/codeflow/what-is-codeflow).
-
-[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://pr.new/prosekit/prosekit)
+Thanks for your interest in contributing to ProseKit! This guide will help you get started.
 
 ## Setup
 
-1. Ensure you have [Node.js](https://nodejs.org/) v18 or later installed.
-2. Run `corepack enable` to enable [Node.js Corepack](https://github.com/nodejs/corepack).
-3. Clone the ProseKit repository.
-4. Run `pnpm install` in ProseKit's root directory.
+1. Install [Node.js](https://nodejs.org/) v18 or later
+2. Install [pnpm](https://pnpm.io/)
+3. Clone the ProseKit repository
+4. Run `pnpm install` in the repository root directory
+
+## Project Structure
+
+ProseKit is a monorepo using pnpm workspaces:
+
+- `packages/` - All packages published to npm:
+  - `core/` - Core editor functionality
+  - `extensions/` - Editor features (bold, italic, tables, etc.)
+  - `web/` - Web components
+  - `react/`, `vue/`, `preact/`, `svelte/`, `solid/` - Framework integrations
+  - `basic/` - Simple starter kit
+  - `prosekit/` - Main umbrella package that re-exports functionality
+- `website/` - Documentation and examples
+  - `src/content/` - Documentation markdown
+  - `src/examples/` - Live demos.
+  - `tests/` - Integration tests
 
 ## Development
 
-To develop locally, run `pnpm run dev` in ProseKit's root directory. This will open a web server that serves the website (https://localhost:4321) and playground (https://localhost:4321/astrobook).
+Run `pnpm run dev` to start the development server:
 
-## Test
+- Website: https://localhost:4321
+- Playground: https://localhost:4321/astrobook
 
-ProseKit includes unit tests and integration tests. To run the tests, you can use the following commands:
+## Common Commands
 
-- `pnpm run test:install` to install Playwright, which is required for running unit and integration tests.
-- `pnpm run test` to run all unit tests.
-- `pnpm run test:e2e` to run all integration tests.
+- Build: `pnpm run build` (all) or `pnpm run build:package` (packages only)
+- Lint: `pnpm run lint`
+- Fix issues: `pnpm run fix` (runs code generation, linting, and formatting)
+- Type check: `pnpm run typecheck`
+
+## Code Style
+
+- TypeScript: No semicolons, single quotes (double in JSX)
+- Naming: PascalCase for types/classes, camelCase for variables/functions
+- Line width: 200 characters
+- No console statements (except warn, error, assert)
+
+## Testing
+
+ProseKit has unit and integration tests.
+
+Before running the tests, you need to install Playwright with the following command:
+
+```bash
+pnpm run test:install
+```
+
+### Unit Tests
+
+- Run all: `pnpm run test`
+- Run specific test: `pnpm run test [test-file-path]`
+- Files: Located in `packages/` with `.spec.ts` suffix
+
+### Integration Tests
+
+- Run all: `pnpm run test:e2e`
+- Run specific test: `pnpm run test:e2e [test-file-name]`
+- Files: Located in `website/tests/` with `.test.ts` suffix
 
 ## Pull Requests
 
-Please title your GitHub pull requests using the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) style.
-
-For managing our project's versions and changelogs, we use a tool called [Changesets](https://github.com/changesets/changesets). After making your changes, run `pnpm run change` in the ProseKit root folder. This command will guide you to create a small file that describes your changes.
+1. Use [Conventional Commits](https://www.conventionalcommits.org/) style for PR titles
+2. After making changes, run `pnpm run change` to create a changeset
+3. Make sure all tests pass before submitting

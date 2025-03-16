@@ -1,8 +1,6 @@
 {
   "search.exclude": {
     "**/*.gen.ts": true,
-    "website/examples/*.md": true,
-    "website/components/vue-*": true,
   },
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",

@@ -23,54 +23,125 @@ Extensions in ProseKit are modular pieces of functionality that you can add to y
 
 ## Basic extension usage
 
-ProseKit provides a `defineBasicExtension()` function that includes common editing features like paragraphs, headings, and basic text formatting:
+ProseKit provides a `defineBasicExtension()` function that includes the most common features:
 
 ```ts
-import {
-  createEditor,
-  defineBasicExtension,
-} from 'prosekit/core'
-
-// Create a basic extension with default features
-const extension = defineBasicExtension()
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
 
 // Create an editor with the extension
-const editor = createEditor({ extension })
+const editor = createEditor({ extension: defineBasicExtension() })
 ```
 
-The basic extension includes the most commonly used extensions. Please refer to the [API reference](/references/basic/#define-basic-extension) for a complete list of included extensions.
+## Composing extensions with `union`
 
-## Adding specific extensions
+A key concept in ProseKit is that all extensions are composed of other extensions using the `union` function. This composability lets you create complex functionality by combining simpler building blocks.
 
-To customize your editor with exactly the features you need, you can combine individual extensions:
+For example, `defineBasicExtension` is simply a composition of many smaller extensions:
 
 ```ts
 import {
-  createEditor,
   defineBaseCommands,
   defineBaseKeymap,
   defineDoc,
-  defineExtension,
   defineHistory,
   defineParagraph,
   defineText,
   union,
 } from 'prosekit/core'
+import { defineBlockquote } from 'prosekit/extensions/blockquote'
 import { defineBold } from 'prosekit/extensions/bold'
+import { defineCode } from 'prosekit/extensions/code'
+import { defineDropCursor } from 'prosekit/extensions/drop-cursor'
+import { defineGapCursor } from 'prosekit/extensions/gap-cursor'
 import { defineHeading } from 'prosekit/extensions/heading'
+import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
+import { defineImage } from 'prosekit/extensions/image'
+import { defineItalic } from 'prosekit/extensions/italic'
+import { defineLink } from 'prosekit/extensions/link'
+import { defineList } from 'prosekit/extensions/list'
+import { defineModClickPrevention } from 'prosekit/extensions/mod-click-prevention'
+import { defineStrike } from 'prosekit/extensions/strike'
+import { defineTable } from 'prosekit/extensions/table'
+import { defineUnderline } from 'prosekit/extensions/underline'
+import { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'
+
+function defineBasicExtension() {
+  return union(
+    defineDoc(),
+    defineText(),
+    defineHeading(),
+    defineHistory(),
+    defineList(),
+    defineBlockquote(),
+    defineBaseKeymap(),
+    defineBaseCommands(),
+    defineItalic(),
+    defineBold(),
+    defineUnderline(),
+    defineStrike(),
+    defineCode(),
+    defineLink(),
+    defineImage(),
+    defineParagraph(),
+    defineDropCursor(),
+    defineGapCursor(),
+    defineHorizontalRule(),
+    defineVirtualSelection(),
+    defineModClickPrevention(),
+    defineTable(),
+  )
+}
+```
+
+This compositional pattern allows you to build on existing extensions and add exactly the features you need. For example, if you want all the functionality of the basic extension plus syntax highlighting for code blocks, you can simply combine them:
+
+```ts
+import { defineBasicExtension } from 'prosekit/basic'
+import { union } from 'prosekit/core'
+import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
 
 function defineMyExtension() {
-  return union([
-    defineDoc(),
-    defineHistory(),
-    defineParagraph(),
-    defineText(),
-    defineBold(),
-    defineHeading(),
-  ])
+  return union(
+    defineBasicExtension(),
+    defineCodeBlockShiki(),
+  )
 }
 
-const extension = defineMyExtension()
-
-const editor = createEditor({ extension })
+const editor = createEditor({ extension: defineMyExtension() })
 ```
+
+## Customizing extensions
+
+Since each extension is composed of smaller parts, you can easily customize functionality by picking exactly which components you want. For example, the `defineCode()` extension defines a mark spec, commands, keyboard shortcut, and input rule.
+
+If you want to keep everything except the keyboard shortcut, you can inspect the source code of the `defineCode()` extension, and create a custom version:
+
+```ts
+import { union } from 'prosekit/core'
+import {
+  defineCodeCommands,
+  defineCodeInputRule,
+  defineCodeSpec,
+  // Omitting defineCodeKeymap
+} from 'prosekit/extensions/code'
+
+function defineMyCode() {
+  return union(
+    defineCodeSpec(),
+    defineCodeCommands(),
+    defineCodeInputRule(),
+    // No keyboard shortcut
+  )
+}
+```
+
+<Aside>
+
+`defineCodeCommands`, `defineCodeInputRule`, and `defineCodeSpec` are exported from the `prosekit/extensions/code` module, but they are marked as `@internal` APIs thus they are not visible in the [reference documentation](/references/extensions/code).
+
+</Aside>
+
+{/* Link References */}
+
+[Shiki]: https://github.com/shikijs/shiki

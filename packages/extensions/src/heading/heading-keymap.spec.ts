@@ -17,13 +17,13 @@ describe('defineHeadingKeymap', () => {
 
     editor.set(doc)
     expect(editor.state.doc.toJSON()).toEqual(doc.toJSON())
-    await pressKey('mod-1')
+    await pressKey('mod-alt-1')
     expect(editor.state.doc.toJSON()).toEqual(docH1.toJSON())
-    await pressKey('mod-1')
+    await pressKey('mod-alt-1')
     expect(editor.state.doc.toJSON()).toEqual(doc.toJSON())
-    await pressKey('mod-3')
+    await pressKey('mod-alt-3')
     expect(editor.state.doc.toJSON()).toEqual(docH3.toJSON())
-    await pressKey('mod-1')
+    await pressKey('mod-alt-1')
     expect(editor.state.doc.toJSON()).toEqual(docH1.toJSON())
   })
 

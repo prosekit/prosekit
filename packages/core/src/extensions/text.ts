@@ -23,6 +23,10 @@ export type TextExtension = Extension<{
  * ```
  */
 export function defineText(): TextExtension {
+  console.warn(
+    '[prosekit] The `defineText` function from `prosekit/core` is deprecated. Use the following import instead: `import { defineText } from "prosekit/extensions/text"`.',
+  )
+
   return defineNodeSpec({
     name: 'text',
     group: 'inline',

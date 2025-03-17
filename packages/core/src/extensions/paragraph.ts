@@ -49,5 +49,9 @@ export type ParagraphExtension = ParagraphSpecExtension
  * ```
  */
 export function defineParagraph(): ParagraphExtension {
+  console.warn(
+    '[prosekit] The `defineParagraph` function from `prosekit/core` is deprecated. Use the following import instead: `import { defineParagraph } from "prosekit/extensions/paragraph"`.',
+  )
+
   return withPriority(defineParagraphSpec(), Priority.highest)
 }

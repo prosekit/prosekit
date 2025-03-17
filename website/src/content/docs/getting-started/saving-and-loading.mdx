@@ -95,7 +95,11 @@ useDocChange(() => {
 
 <TabItem label="Svelte">
 
-```ts
+```ts twoslash
+// @noErrors
+import { useDocChange } from 'prosekit/svelte'
+const editor = { getDocJSON: () => ({}) } // placeholder for example
+// ---cut---
 import { useDocChange } from 'prosekit/svelte'
 
 useDocChange(() => {

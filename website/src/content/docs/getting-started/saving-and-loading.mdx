@@ -26,7 +26,10 @@ JSON is the recommended format for storing ProseKit documents because it preserv
 
 To get your document as JSON, use the `getDocJSON()` method:
 
-```ts
+```ts twoslash
+// @noErrors
+const editor = { getDocJSON: () => ({}) } // placeholder for example
+// ---cut---
 // Get the current document as a JSON object
 const json = editor.getDocJSON()
 ```

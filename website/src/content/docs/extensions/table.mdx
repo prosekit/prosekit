@@ -172,7 +172,14 @@ editor.commands.addTableRowBelow()
 
 Delete the selected table.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.deleteTable()
 ```
 
@@ -180,7 +187,14 @@ editor.commands.deleteTable()
 
 Delete the selected column or specific position.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.deleteTableColumn()
 ```
 
@@ -188,7 +202,14 @@ editor.commands.deleteTableColumn()
 
 Delete the selected row or specific position.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.deleteTableRow()
 ```
 
@@ -196,7 +217,14 @@ editor.commands.deleteTableRow()
 
 Delete the cell selection.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.deleteCellSelection()
 ```
 
@@ -204,7 +232,14 @@ editor.commands.deleteCellSelection()
 
 Merge the selected cells.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.mergeTableCells()
 ```
 
@@ -212,7 +247,14 @@ editor.commands.mergeTableCells()
 
 Split the selected cell.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.splitTableCell()
 ```
 

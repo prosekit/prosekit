@@ -52,7 +52,7 @@ const editor = useEditor<EditorExtension>()
       />
 
       <SlashMenuItem
-        label="To-do list"
+        label="Task list"
         kbd="[]"
         @select="() => editor.commands.wrapInList({ kind: 'task' })"
       />

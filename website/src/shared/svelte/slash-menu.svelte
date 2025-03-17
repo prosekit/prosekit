@@ -50,7 +50,7 @@ const editor = useEditor<EditorExtension>()
     />
 
     <SlashMenuItem
-      label="To-do list"
+      label="Task list"
       kbd="[]"
       onSelect={() => $editor.commands.wrapInList({ kind: 'task' })}
     />

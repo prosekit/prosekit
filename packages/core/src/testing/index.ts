@@ -171,6 +171,25 @@ function defineCodeBlock(): CodeBlockExtension {
   })
 }
 
+export type BlockquoteExtension = Extension<{
+  Nodes: {
+    blockquote: Attrs
+  }
+}>
+
+function defineBlockquote(): BlockquoteExtension {
+  return defineNodeSpec({
+    name: 'blockquote',
+    content: 'block+',
+    group: 'block',
+    defining: true,
+    parseDOM: [{ tag: 'blockquote' }],
+    toDOM() {
+      return ['blockquote', 0]
+    },
+  })
+}
+
 /**
  * @internal
  */
@@ -187,6 +206,7 @@ export function defineTestExtension() {
     defineLink(),
     defineHeading(),
     defineCodeBlock(),
+    defineBlockquote(),
   )
 }
 

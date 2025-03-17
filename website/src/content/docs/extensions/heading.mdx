@@ -10,7 +10,7 @@ The `heading` node is used to represent blocks of heading in the document.
 
 ## Usage
 
-```ts
+```ts twoslash
 import { defineHeading } from 'prosekit/extensions/heading'
 
 const extension = defineHeading()
@@ -20,19 +20,37 @@ const extension = defineHeading()
 
 ### `setHeading`
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineHeading } from 'prosekit/extensions/heading'
+
+const extension = defineHeading()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.setHeading({ level: 1 })
 ```
 
 ### `toggleHeading`
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineHeading } from 'prosekit/extensions/heading'
+
+const extension = defineHeading()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleHeading({ level: 1 })
 ```
 
 ### `insertHeading`
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineHeading } from 'prosekit/extensions/heading'
+
+const extension = defineHeading()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.insertHeading({ level: 1 })
 ```
 

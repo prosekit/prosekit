@@ -22,15 +22,27 @@ const extension = defineTable()
 
 Insert a new table.
 
-```ts
-editor.commands.insertTable({ rows: 3, cols: 3 })
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
+editor.commands.insertTable({ row: 3, col: 3, header: true })
 ```
 
 ### `exitTable`
 
 Exit the table.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.exitTable()
 ```
 
@@ -38,7 +50,13 @@ editor.commands.exitTable()
 
 Select the table.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.selectTable()
 ```
 
@@ -46,7 +64,13 @@ editor.commands.selectTable()
 
 Select the table cell.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.selectTableCell()
 ```
 
@@ -54,7 +78,13 @@ editor.commands.selectTableCell()
 
 Select the table column.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.selectTableColumn()
 ```
 
@@ -62,7 +92,13 @@ editor.commands.selectTableColumn()
 
 Select the table row.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.selectTableRow()
 ```
 
@@ -70,7 +106,13 @@ editor.commands.selectTableRow()
 
 Add a new column before the selected column.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.addTableColumnBefore()
 ```
 
@@ -78,7 +120,13 @@ editor.commands.addTableColumnBefore()
 
 Add a new column after the selected column.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.addTableColumnAfter()
 ```
 
@@ -86,7 +134,13 @@ editor.commands.addTableColumnAfter()
 
 Add a new row above the selected row or specific position.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.addTableRowAbove()
 ```
 
@@ -94,7 +148,13 @@ editor.commands.addTableRowAbove()
 
 Add a new row below the selected row or specific position.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.addTableRowBelow()
 ```
 
@@ -102,7 +162,13 @@ editor.commands.addTableRowBelow()
 
 Delete the selected table.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.deleteTable()
 ```
 
@@ -110,7 +176,13 @@ editor.commands.deleteTable()
 
 Delete the selected column or specific position.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.deleteTableColumn()
 ```
 
@@ -118,7 +190,13 @@ editor.commands.deleteTableColumn()
 
 Delete the selected row or specific position.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.deleteTableRow()
 ```
 
@@ -126,7 +204,13 @@ editor.commands.deleteTableRow()
 
 Delete the cell selection.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.deleteCellSelection()
 ```
 
@@ -134,7 +218,13 @@ editor.commands.deleteCellSelection()
 
 Merge the selected cells.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.mergeTableCells()
 ```
 
@@ -142,7 +232,13 @@ editor.commands.mergeTableCells()
 
 Split the selected cell.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.splitTableCell()
 ```
 

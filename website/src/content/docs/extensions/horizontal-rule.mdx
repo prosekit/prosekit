@@ -8,7 +8,7 @@ The `horizontalRule` node is used to represent a thematic break in the document,
 
 ## Usage
 
-```ts
+```ts twoslash
 import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
 
 const extension = defineHorizontalRule()
@@ -18,7 +18,13 @@ const extension = defineHorizontalRule()
 
 ### insertHorizontalRule
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
+
+const extension = defineHorizontalRule()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.insertHorizontalRule()
 ```
 

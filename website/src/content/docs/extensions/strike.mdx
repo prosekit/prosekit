@@ -12,7 +12,13 @@ The `strike` mark is used to represent text with a strikethrough. It will be ren
 
 ### `toggleStrike`
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineStrike } from 'prosekit/extensions/strike'
+
+const extension = defineStrike()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleStrike()
 ```
 

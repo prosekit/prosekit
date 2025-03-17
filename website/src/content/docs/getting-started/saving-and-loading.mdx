@@ -5,7 +5,7 @@ sidebar:
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
-import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Aside, TabItem, Tabs } from '@astrojs/starlight/components';
 
 Saving and loading content is a fundamental requirement for any editor. ProseKit provides flexible options for persisting your content in different formats, primarily JSON and HTML. This guide will show you how to implement content persistence in your ProseKit editor.
 
@@ -26,7 +26,12 @@ JSON is the recommended format for storing ProseKit documents because it preserv
 
 To get your document as JSON, use the `getDocJSON()` method:
 
-```ts
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+// ---cut---
 // Get the current document as a JSON object
 const json = editor.getDocJSON()
 ```
@@ -35,7 +40,15 @@ const json = editor.getDocJSON()
 
 To load content from JSON when creating an editor:
 
-```ts
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import {
+  createEditor,
+  type NodeJSON,
+} from 'prosekit/core'
+const extension = defineBasicExtension()
+const json: NodeJSON = { type: 'doc', content: [] }
+// ---cut---
 // Create editor with the loaded content
 const editor = createEditor({
   extension,
@@ -51,7 +64,12 @@ To save content when the document changes, use the `useDocChange` hook:
 
 <TabItem label="React">
 
-```ts
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+// ---cut---
 import { useDocChange } from 'prosekit/react'
 
 useDocChange(() => {
@@ -65,7 +83,12 @@ useDocChange(() => {
 
 <TabItem label="Vue">
 
-```ts
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+// ---cut---
 import { useDocChange } from 'prosekit/vue'
 
 useDocChange(() => {
@@ -79,7 +102,12 @@ useDocChange(() => {
 
 <TabItem label="Svelte">
 
-```ts
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+// ---cut---
 import { useDocChange } from 'prosekit/svelte'
 
 useDocChange(() => {
@@ -93,7 +121,12 @@ useDocChange(() => {
 
 <TabItem label="Preact">
 
-```ts
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+// ---cut---
 import { useDocChange } from 'prosekit/preact'
 
 useDocChange(() => {
@@ -107,7 +140,12 @@ useDocChange(() => {
 
 <TabItem label="Solid">
 
-```ts
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+// ---cut---
 import { useDocChange } from 'prosekit/solid'
 
 useDocChange(() => {
@@ -139,7 +177,12 @@ HTML is useful when you need to display your content outside the editor or integ
 
 To convert your document to HTML:
 
-```ts
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+// ---cut---
 // Get the current document as an HTML string
 const html = editor.getDocHTML()
 
@@ -151,9 +194,13 @@ localStorage.setItem('my-document-html', html)
 
 To load content from HTML:
 
-```ts
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+const extension = defineBasicExtension()
+// ---cut---
 // Retrieve stored HTML
-const html = localStorage.getItem('my-document-html')
+const html = localStorage.getItem('my-document-html') || ''
 
 // Create editor with the loaded HTML
 const editor = createEditor({

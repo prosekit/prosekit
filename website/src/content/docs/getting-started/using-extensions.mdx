@@ -25,7 +25,7 @@ Extensions in ProseKit are modular pieces of functionality that you can add to y
 
 ProseKit provides a `defineBasicExtension()` function that includes the most common features:
 
-```ts
+```ts twoslash
 import { defineBasicExtension } from 'prosekit/basic'
 import { createEditor } from 'prosekit/core'
 
@@ -39,7 +39,7 @@ A key concept in ProseKit is that all extensions are composed of other extension
 
 For example, `defineBasicExtension` is simply a composition of many smaller extensions:
 
-```ts
+```ts twoslash
 import {
   defineBaseCommands,
   defineBaseKeymap,
@@ -101,9 +101,12 @@ function defineBasicExtension() {
 
 This compositional pattern allows you to build on existing extensions and add exactly the features you need. For example, if you want all the functionality of the basic extension plus syntax highlighting for code blocks, you can simply combine them:
 
-```ts
+```ts twoslash
 import { defineBasicExtension } from 'prosekit/basic'
-import { union } from 'prosekit/core'
+import {
+  createEditor,
+  union,
+} from 'prosekit/core'
 import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
 
 function defineMyExtension() {
@@ -122,7 +125,7 @@ Since each extension is composed of smaller parts, you can easily customize func
 
 If you want to keep everything except the keyboard shortcut, you can inspect the source code of the `defineCode()` extension, and create a custom version:
 
-```ts
+```ts twoslash
 import { union } from 'prosekit/core'
 import {
   defineCodeCommands,

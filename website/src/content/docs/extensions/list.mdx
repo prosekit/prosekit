@@ -10,7 +10,7 @@ The `list` node is used to represent a list item. It is built on top of [prosemi
 
 ## Usage
 
-```ts
+```ts twoslash
 import 'prosekit/extensions/list/style.css'
 
 import { defineList } from 'prosekit/extensions/list'
@@ -24,7 +24,13 @@ const extension = defineList()
 
 Decreases the indentation of selected list nodes.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.dedentList()
 ```
 
@@ -32,7 +38,13 @@ editor.commands.dedentList()
 
 Increases the indentation of selected list.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.indentList()
 ```
 
@@ -40,7 +52,13 @@ editor.commands.indentList()
 
 Moves up or down selected list nodes.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.moveList('down')
 ```
 
@@ -48,7 +66,13 @@ editor.commands.moveList('down')
 
 Split the current list node.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.splitList()
 ```
 
@@ -56,7 +80,13 @@ editor.commands.splitList()
 
 Toggle the `collapsed` attribute of the list node.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleCollapsed()
 ```
 
@@ -64,7 +94,13 @@ editor.commands.toggleCollapsed()
 
 Wraps the selection in a list with the given type and attributes, or change the list kind if the selection is already in another kind of list, or unwrap the selected list if otherwise.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleList({ kind: 'task', checked: true })
 ```
 
@@ -72,7 +108,13 @@ editor.commands.toggleList({ kind: 'task', checked: true })
 
 Unwraps the list around the selection.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.unwrapList()
 ```
 
@@ -80,7 +122,13 @@ editor.commands.unwrapList()
 
 Wraps the selection in a list with the given type and attributes.
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.wrapInList({ kind: 'bullet' })
 ```
 

@@ -12,19 +12,37 @@ The `link` mark is used to represent links. It will be rendered as `<a>` element
 
 ### `addLink`
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineLink } from 'prosekit/extensions/link'
+
+const extension = defineLink()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.addLink({ href: 'https://www.example.com' })
 ```
 
 ### `removeLink`
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineLink } from 'prosekit/extensions/link'
+
+const extension = defineLink()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.removeLink()
 ```
 
 ### `toggleLink`
 
-```ts
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineLink } from 'prosekit/extensions/link'
+
+const extension = defineLink()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleLink({ href: 'https://www.example.com' })
 ```
 

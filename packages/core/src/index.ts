@@ -186,12 +186,7 @@ export {
 } from './extensions/node-view-effect'
 export {
   defineParagraph,
-  defineParagraphCommands,
-  defineParagraphKeymap,
-  defineParagraphSpec,
-  type ParagraphCommandsExtension,
   type ParagraphExtension,
-  type ParagraphSpecExtension,
 } from './extensions/paragraph'
 export {
   definePlugin,

@@ -81,26 +81,33 @@ testStory(['slash-menu'], () => {
   })
 
   test('press arrow keys to select item', async ({ page }) => {
-    const { editor, itemH1, itemH2, focusedItem } = await setup(page)
+    const { editor, itemText, itemH1, itemH2, focusedItem } = await setup(page)
 
     await editor.focus()
     await editor.press('/')
+    await expect(itemText).toBeVisible()
     await expect(itemH1).toBeVisible()
     await expect(itemH2).toBeVisible()
+    await expect(itemText).toHaveText('Text')
+
+    await editor.press('ArrowDown')
     await expect(focusedItem).toHaveText('Heading 1')
 
     await editor.press('ArrowDown')
     await expect(focusedItem).toHaveText('Heading 2')
 
     await editor.press('ArrowDown')
-    await expect(focusedItem).not.toHaveText('Heading')
+    await expect(focusedItem).toHaveText('Heading 3')
+
+    await editor.press('ArrowDown')
+    await expect(focusedItem).not.toContainText('Heading')
 
     await editor.press('ArrowUp')
-    await expect(focusedItem).toHaveText('Heading 2')
+    await expect(focusedItem).toHaveText('Heading 3')
 
-    await expect(editor.locator('h2')).toBeHidden()
+    await expect(editor.locator('h3')).toBeHidden()
     await editor.press('Enter')
-    await expect(editor.locator('h2')).toBeVisible()
+    await expect(editor.locator('h3')).toBeVisible()
   })
 })
 
@@ -109,11 +116,13 @@ async function setup(page: Page) {
   await emptyEditor(page)
 
   const item = page.locator('prosekit-autocomplete-item')
+
+  const itemText = item.filter({ hasText: 'Text' }).first()
   const itemH1 = item.filter({ hasText: 'Heading 1' }).first()
   const itemH2 = item.filter({ hasText: 'Heading 2' }).first()
 
   const focusedItem = page.locator(
-    'prosekit-autocomplete-item[data-focused="true"]',
+    'prosekit-autocomplete-item[data-focused="true"] > span',
   )
 
   const menu = page
@@ -123,6 +132,7 @@ async function setup(page: Page) {
   return {
     editor,
     menu,
+    itemText,
     itemH1,
     itemH2,
     focusedItem,

@@ -1,0 +1,30 @@
+---
+title: Paragraph
+---
+
+A plain paragraph textblock. Represented in the DOM as a `<p>` element.
+
+## Commands
+
+### `setParagraph`
+
+```ts twoslash
+import { defineBasicExtension } from 'prosekit/basic'
+import { createEditor } from 'prosekit/core'
+
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+
+// ---cut---
+editor.commands.setParagraph()
+```
+
+## Keyboard Shortcuts
+
+| Non-Apple    | Apple              | Description                              |
+| ------------ | ------------------ | ---------------------------------------- |
+| `Ctrl-Alt-0` | `Command-Option-0` | Set the current textblock to a paragraph |
+
+## API Reference
+
+- [prosekit/extensions/paragraph](/references/extensions/paragraph)

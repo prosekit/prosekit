@@ -26,10 +26,6 @@ const frameworkSharedFiles = [
   'use-readonly.ts',
   'use-submit-keymap.ts',
 
-  'slash-menu.tsx',
-  'slash-menu.vue',
-  'slash-menu.svelte',
-
   'user-menu.tsx',
   'user-menu.vue',
 

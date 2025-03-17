@@ -1,9 +1,8 @@
 import { defineBasicExtension } from 'prosekit/basic'
 import { union } from 'prosekit/core'
-import { defineCodeBlock } from 'prosekit/extensions/code-block'
 
 export function defineExtension() {
-  return union(defineBasicExtension(), defineCodeBlock())
+  return union(defineBasicExtension())
 }
 
 export type EditorExtension = ReturnType<typeof defineExtension>

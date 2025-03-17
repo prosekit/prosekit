@@ -4,8 +4,8 @@ sidebar:
   order: 1
 ---
 
-import { Steps, Aside, Tabs, TabItem } from '@astrojs/starlight/components';
-import CodeGroupInstallation from '@/components/ui/code-group-installation.astro';
+import { Aside, Steps, TabItem, Tabs } from '@astrojs/starlight/components';
+import { CodePackageManagers } from 'starlight-theme-nova/components';
 
 ProseKit provides a set of components that you can copy and paste into your project. These components are styled with [Tailwind CSS](https://tailwindcss.com), allowing you to create beautiful, responsive editors with minimal effort.
 
@@ -17,7 +17,7 @@ ProseKit provides a set of components that you can copy and paste into your proj
 
    If you haven't already, set up Tailwind CSS in your project:
 
-   <CodeGroupInstallation packages="tailwindcss postcss autoprefixer" />
+   <CodePackageManagers packages="tailwindcss postcss autoprefixer" />
 
    For detailed installation instructions, see the [Tailwind CSS documentation](https://v3.tailwindcss.com/docs/installation).
 
@@ -25,7 +25,7 @@ ProseKit provides a set of components that you can copy and paste into your proj
 
    For the best experience with ProseKit components, install these Tailwind CSS plugins:
 
-   <CodeGroupInstallation packages="tailwindcss-animate @egoist/tailwindcss-icons @iconify-json/lucide" />
+   <CodePackageManagers packages="tailwindcss-animate @egoist/tailwindcss-icons @iconify-json/lucide" />
 
 3. **Configure Tailwind CSS**
 

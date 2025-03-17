@@ -5,10 +5,10 @@ sidebar:
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
-import CodeGroupInstallation from '@/components/ui/code-group-installation.astro';
-import LinkCard from 'starlight-theme-nova/components/LinkCard.astro'
+import { CodePackageManagers } from 'starlight-theme-nova/components';
+import LinkCard from 'starlight-theme-nova/components/LinkCard.astro';
 
-import { Code, TabItem, Tabs, CardGrid } from '@astrojs/starlight/components';
+import { CardGrid, Code, TabItem, Tabs } from '@astrojs/starlight/components';
 
 This guide will walk you through the process of setting up your first ProseKit editor. We'll create a basic editor with some common formatting options.
 
@@ -16,7 +16,7 @@ This guide will walk you through the process of setting up your first ProseKit e
 
 First, you'll need to install the `prosekit` package. You can use your preferred package manager:
 
-<CodeGroupInstallation packages="prosekit" />
+<CodePackageManagers packages="prosekit" />
 
 ## A minimal editor
 

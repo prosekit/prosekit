@@ -50,6 +50,12 @@ rm src/examples/vue/full/tag-data.ts
 rm src/examples/vue/user-menu/tag-data.ts
 
 # Create symlinks
+echo "Creating symlinks for user-data.ts and tag-data.ts..."
+for framework in react vue preact solid svelte; do
+  ln -sf ../../../shared/common/user-data.ts src/shared/$framework/user-data.ts
+  ln -sf ../../../shared/common/tag-data.ts src/shared/$framework/tag-data.ts
+done
+
 ln -sf ../../../shared/common/tag-data.ts src/examples/react/full/tag-data.ts
 ln -sf ../../../shared/common/tag-data.ts src/examples/react/user-menu/tag-data.ts
 ln -sf ../../../shared/common/tag-data.ts src/examples/svelte/full/tag-data.ts

@@ -1,9 +1,10 @@
 import path from 'node:path'
+
 import fs from 'fs-extra'
 
 /**
  * Finds all symlinks in the given directory.
- * 
+ *
  * @param absDir Absolute path to the directory to search
  * @returns Array of absolute paths to symlinks found
  * @throws Error if the path is not absolute or not a directory
@@ -19,7 +20,7 @@ export async function findSymlinks(absDir: string): Promise<string[]> {
   if (!stats.isDirectory()) {
     throw new Error(`Not a directory: ${absDir}`)
   }
-  
+
   // Get and return absolute paths to all symlinks
   const symlinks: string[] = []
   await findSymlinksImpl(absDir, symlinks)
@@ -29,10 +30,10 @@ export async function findSymlinks(absDir: string): Promise<string[]> {
 // Internal recursive implementation
 async function findSymlinksImpl(dir: string, result: string[]): Promise<void> {
   const entries = await fs.readdir(dir, { withFileTypes: true })
-  
+
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name)
-    
+
     if (entry.isSymbolicLink()) {
       result.push(fullPath)
     } else if (entry.isDirectory()) {

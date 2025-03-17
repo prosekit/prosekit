@@ -3,14 +3,12 @@ import '@prosekit/pm/view/style/prosemirror.css'
 import type { Attrs } from '@prosekit/pm/model'
 
 import { union } from '../editor/union'
+import { withPriority } from '../editor/with-priority'
 import { defineBaseCommands } from '../extensions/command'
-import { defineDoc } from '../extensions/doc'
 import { defineHistory } from '../extensions/history'
 import { defineBaseKeymap } from '../extensions/keymap-base'
 import { defineMarkSpec } from '../extensions/mark-spec'
 import { defineNodeSpec } from '../extensions/node-spec'
-import { defineParagraph } from '../extensions/paragraph'
-import { defineText } from '../extensions/text'
 import {
   createTestEditor,
   type TestEditor,
@@ -20,6 +18,52 @@ import type {
   ExtractMarkActions,
   ExtractNodeActions,
 } from '../types/extension'
+import { Priority } from '../types/priority'
+
+type DocExtension = Extension<{ Nodes: { doc: Attrs } }>
+
+function defineDoc(): DocExtension {
+  return defineNodeSpec({
+    name: 'doc',
+    content: 'block+',
+    topNode: true,
+  })
+}
+
+type ParagraphExtension = Extension<{
+  Nodes: {
+    paragraph: Attrs
+  }
+}>
+
+function defineParagraphSpec(): ParagraphExtension {
+  return defineNodeSpec({
+    name: 'paragraph',
+    content: 'inline*',
+    group: 'block',
+    parseDOM: [{ tag: 'p' }],
+    toDOM() {
+      return ['p', 0]
+    },
+  })
+}
+
+function defineParagraph(): ParagraphExtension {
+  return withPriority(defineParagraphSpec(), Priority.highest)
+}
+
+type TextExtension = Extension<{
+  Nodes: {
+    text: Attrs
+  }
+}>
+
+function defineText(): TextExtension {
+  return defineNodeSpec({
+    name: 'text',
+    group: 'inline',
+  })
+}
 
 type BoldExtension = Extension<{
   Marks: {

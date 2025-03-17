@@ -163,6 +163,11 @@
       "./commit/style.css": {
         "default": "./dist/commit/style.css"
       },
+      "./doc": {
+        "types": "./dist/prosekit-extensions-doc.d.ts",
+        "import": "./dist/prosekit-extensions-doc.js",
+        "default": "./dist/prosekit-extensions-doc.js"
+      },
       "./drop-cursor": {
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
         "import": "./dist/prosekit-extensions-drop-cursor.js",
@@ -247,6 +252,11 @@
         "import": "./dist/prosekit-extensions-mod-click-prevention.js",
         "default": "./dist/prosekit-extensions-mod-click-prevention.js"
       },
+      "./paragraph": {
+        "types": "./dist/prosekit-extensions-paragraph.d.ts",
+        "import": "./dist/prosekit-extensions-paragraph.js",
+        "default": "./dist/prosekit-extensions-paragraph.js"
+      },
       "./placeholder": {
         "types": "./dist/prosekit-extensions-placeholder.d.ts",
         "import": "./dist/prosekit-extensions-placeholder.js",
@@ -280,6 +290,11 @@
       },
       "./table/style.css": {
         "default": "./dist/table/style.css"
+      },
+      "./text": {
+        "types": "./dist/prosekit-extensions-text.d.ts",
+        "import": "./dist/prosekit-extensions-text.js",
+        "default": "./dist/prosekit-extensions-text.js"
       },
       "./text-align": {
         "types": "./dist/prosekit-extensions-text-align.d.ts",
@@ -334,6 +349,9 @@
         "commit": [
           "./dist/prosekit-extensions-commit.d.ts"
         ],
+        "doc": [
+          "./dist/prosekit-extensions-doc.d.ts"
+        ],
         "drop-cursor": [
           "./dist/prosekit-extensions-drop-cursor.d.ts"
         ],
@@ -379,6 +397,9 @@
         "mod-click-prevention": [
           "./dist/prosekit-extensions-mod-click-prevention.d.ts"
         ],
+        "paragraph": [
+          "./dist/prosekit-extensions-paragraph.d.ts"
+        ],
         "placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"
         ],
@@ -393,6 +414,9 @@
         ],
         "table": [
           "./dist/prosekit-extensions-table.d.ts"
+        ],
+        "text": [
+          "./dist/prosekit-extensions-text.d.ts"
         ],
         "text-align": [
           "./dist/prosekit-extensions-text-align.d.ts"

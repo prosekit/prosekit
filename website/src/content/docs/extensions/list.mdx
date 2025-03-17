@@ -25,7 +25,6 @@ const extension = defineList()
 Decreases the indentation of selected list nodes.
 
 ```ts twoslash
-// @noErrors
 import { createEditor } from 'prosekit/core'
 import { defineList } from 'prosekit/extensions/list'
 
@@ -40,7 +39,6 @@ editor.commands.dedentList()
 Increases the indentation of selected list.
 
 ```ts twoslash
-// @noErrors
 import { createEditor } from 'prosekit/core'
 import { defineList } from 'prosekit/extensions/list'
 
@@ -55,7 +53,6 @@ editor.commands.indentList()
 Moves up or down selected list nodes.
 
 ```ts twoslash
-// @noErrors
 import { createEditor } from 'prosekit/core'
 import { defineList } from 'prosekit/extensions/list'
 
@@ -70,7 +67,6 @@ editor.commands.moveList('down')
 Split the current list node.
 
 ```ts twoslash
-// @noErrors
 import { createEditor } from 'prosekit/core'
 import { defineList } from 'prosekit/extensions/list'
 
@@ -85,7 +81,6 @@ editor.commands.splitList()
 Toggle the `collapsed` attribute of the list node.
 
 ```ts twoslash
-// @noErrors
 import { createEditor } from 'prosekit/core'
 import { defineList } from 'prosekit/extensions/list'
 
@@ -100,7 +95,6 @@ editor.commands.toggleCollapsed()
 Wraps the selection in a list with the given type and attributes, or change the list kind if the selection is already in another kind of list, or unwrap the selected list if otherwise.
 
 ```ts twoslash
-// @noErrors
 import { createEditor } from 'prosekit/core'
 import { defineList } from 'prosekit/extensions/list'
 
@@ -115,7 +109,6 @@ editor.commands.toggleList({ kind: 'task', checked: true })
 Unwraps the list around the selection.
 
 ```ts twoslash
-// @noErrors
 import { createEditor } from 'prosekit/core'
 import { defineList } from 'prosekit/extensions/list'
 
@@ -130,7 +123,6 @@ editor.commands.unwrapList()
 Wraps the selection in a list with the given type and attributes.
 
 ```ts twoslash
-// @noErrors
 import { createEditor } from 'prosekit/core'
 import { defineList } from 'prosekit/extensions/list'
 

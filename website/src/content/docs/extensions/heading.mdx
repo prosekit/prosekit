@@ -33,7 +33,14 @@ editor.commands.setHeading({ level: 1 })
 
 ### `toggleHeading`
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineHeading } from 'prosekit/extensions/heading'
+
+const extension = defineHeading()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleHeading({ level: 1 })
 ```
 

@@ -77,7 +77,11 @@ useDocChange(() => {
 
 <TabItem label="Vue">
 
-```ts
+```ts twoslash
+// @noErrors
+import { useDocChange } from 'prosekit/vue'
+const editor = { getDocJSON: () => ({}) } // placeholder for example
+// ---cut---
 import { useDocChange } from 'prosekit/vue'
 
 useDocChange(() => {

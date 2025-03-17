@@ -5,10 +5,7 @@ import {
 } from 'vitest'
 
 import { createEditor } from '../editor/editor'
-import { union } from '../editor/union'
-import { defineDoc } from '../extensions/doc'
-import { defineParagraph } from '../extensions/paragraph'
-import { defineText } from '../extensions/text'
+import { defineTestExtension } from '../testing'
 
 import {
   elementFromHTML,
@@ -18,7 +15,7 @@ import {
 } from './parse'
 
 describe('parse', () => {
-  const extension = union(defineParagraph(), defineText(), defineDoc())
+  const extension = defineTestExtension()
   const editor = createEditor({ extension })
   const schema = editor.schema
   const n = editor.nodes

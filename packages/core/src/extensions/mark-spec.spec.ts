@@ -9,15 +9,17 @@ import {
 } from 'vitest'
 
 import { union } from '../editor/union'
-import { setupTestFromExtension } from '../testing'
+import {
+  defineDoc,
+  defineParagraph,
+  defineText,
+  setupTestFromExtension,
+} from '../testing'
 
-import { defineDoc } from './doc'
 import {
   defineMarkAttr,
   defineMarkSpec,
 } from './mark-spec'
-import { defineParagraph } from './paragraph'
-import { defineText } from './text'
 
 describe('defineMarkSpec', () => {
   it('can merge mark specs', () => {

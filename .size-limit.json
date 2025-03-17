@@ -100,6 +100,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/doc",
+    "path": "packages/prosekit/dist/prosekit-extensions-doc.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/drop-cursor",
     "path": "packages/prosekit/dist/prosekit-extensions-drop-cursor.js",
     "ignore": [
@@ -280,6 +290,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/paragraph",
+    "path": "packages/prosekit/dist/prosekit-extensions-paragraph.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/placeholder",
     "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js",
     "ignore": [
@@ -352,6 +372,16 @@
   {
     "name": "prosekit/extensions/table/style.css",
     "path": "packages/prosekit/dist/extensions/table/style.css",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
+    "name": "prosekit/extensions/text",
+    "path": "packages/prosekit/dist/prosekit-extensions-text.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",

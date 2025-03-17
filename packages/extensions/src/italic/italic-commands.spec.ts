@@ -1,9 +1,6 @@
 import {
   createEditor,
   defineBaseCommands,
-  defineDoc,
-  defineParagraph,
-  defineText,
   union,
 } from '@prosekit/core'
 import {
@@ -11,6 +8,10 @@ import {
   expect,
   it,
 } from 'vitest'
+
+import { defineDoc } from '../doc'
+import { defineParagraph } from '../paragraph'
+import { defineText } from '../text'
 
 import { defineItalic } from './index'
 

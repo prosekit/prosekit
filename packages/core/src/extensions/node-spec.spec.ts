@@ -10,17 +10,19 @@ import {
 } from 'vitest'
 
 import { union } from '../editor/union'
-import { setupTestFromExtension } from '../testing'
+import {
+  defineDoc,
+  defineParagraph,
+  defineText,
+  setupTestFromExtension,
+} from '../testing'
 
-import { defineDoc } from './doc'
 import { defineHistory } from './history'
 import { defineBaseKeymap } from './keymap-base'
 import {
   defineNodeAttr,
   defineNodeSpec,
 } from './node-spec'
-import { defineParagraph } from './paragraph'
-import { defineText } from './text'
 
 describe('defineNodeSpec', () => {
   it('can merge node specs', () => {

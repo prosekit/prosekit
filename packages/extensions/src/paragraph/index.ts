@@ -1,10 +1,10 @@
+import {
+  defineNodeSpec,
+  Priority,
+  withPriority,
+  type Extension,
+} from '@prosekit/core'
 import type { Attrs } from '@prosekit/pm/model'
-
-import { withPriority } from '../editor/with-priority'
-import type { Extension } from '../types/extension'
-import { Priority } from '../types/priority'
-
-import { defineNodeSpec } from './node-spec'
 
 /**
  * @internal
@@ -16,9 +16,11 @@ type ParagraphSpecExtension = Extension<{
 }>
 
 /**
+ * @internal
+ *
  * Defines a paragraph node spec.
  */
-function defineParagraphSpec(): ParagraphSpecExtension {
+export function defineParagraphSpec(): ParagraphSpecExtension {
   return defineNodeSpec({
     name: 'paragraph',
     content: 'inline*',
@@ -39,17 +41,7 @@ export type ParagraphExtension = ParagraphSpecExtension
  * @public
  *
  * Defines a paragraph node spec as the highest priority, because it should be the default block node for most cases.
- *
- * @deprecated Use the following import instead:
- *
- * ```ts
- * import { defineParagraph } from 'prosekit/extensions/paragraph'
- * ```
  */
 export function defineParagraph(): ParagraphExtension {
-  console.warn(
-    '[prosekit] The `defineParagraph` function from `prosekit/core` is deprecated. Use the following import instead: `import { defineParagraph } from "prosekit/extensions/paragraph"`.',
-  )
-
   return withPriority(defineParagraphSpec(), Priority.highest)
 }

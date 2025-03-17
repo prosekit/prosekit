@@ -3,10 +3,7 @@ import '@prosekit/pm/view/style/prosemirror.css'
 import {
   defineBaseCommands,
   defineBaseKeymap,
-  defineDoc,
   defineHistory,
-  defineParagraph,
-  defineText,
   union,
   type Extension,
   type ExtractMarkActions,
@@ -21,6 +18,7 @@ import {
 import { defineBlockquote } from '../blockquote'
 import { defineBold } from '../bold'
 import { defineCode } from '../code'
+import { defineDoc } from '../doc'
 import { defineHeading } from '../heading'
 import { defineHorizontalRule } from '../horizontal-rule'
 import { defineImage } from '../image'
@@ -30,8 +28,10 @@ import {
   defineList,
   type ListAttrs,
 } from '../list'
+import { defineParagraph } from '../paragraph'
 import { defineStrike } from '../strike'
 import { defineTable } from '../table'
+import { defineText } from '../text'
 import { defineUnderline } from '../underline'
 
 import {

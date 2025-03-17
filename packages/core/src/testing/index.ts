@@ -3,14 +3,12 @@ import '@prosekit/pm/view/style/prosemirror.css'
 import type { Attrs } from '@prosekit/pm/model'
 
 import { union } from '../editor/union'
+import { withPriority } from '../editor/with-priority'
 import { defineBaseCommands } from '../extensions/command'
-import { defineDoc } from '../extensions/doc'
 import { defineHistory } from '../extensions/history'
 import { defineBaseKeymap } from '../extensions/keymap-base'
 import { defineMarkSpec } from '../extensions/mark-spec'
 import { defineNodeSpec } from '../extensions/node-spec'
-import { defineParagraph } from '../extensions/paragraph'
-import { defineText } from '../extensions/text'
 import {
   createTestEditor,
   type TestEditor,
@@ -20,6 +18,64 @@ import type {
   ExtractMarkActions,
   ExtractNodeActions,
 } from '../types/extension'
+import { Priority } from '../types/priority'
+
+type DocExtension = Extension<{ Nodes: { doc: Attrs } }>
+
+/**
+ * @internal
+ */
+export function defineDoc(): DocExtension {
+  return defineNodeSpec({
+    name: 'doc',
+    content: 'block+',
+    topNode: true,
+  })
+}
+
+type ParagraphExtension = Extension<{
+  Nodes: {
+    paragraph: Attrs
+  }
+}>
+
+/**
+ * @internal
+ */
+function defineParagraphSpec(): ParagraphExtension {
+  return defineNodeSpec({
+    name: 'paragraph',
+    content: 'inline*',
+    group: 'block',
+    parseDOM: [{ tag: 'p' }],
+    toDOM() {
+      return ['p', 0]
+    },
+  })
+}
+
+/**
+ * @internal
+ */
+export function defineParagraph(): ParagraphExtension {
+  return withPriority(defineParagraphSpec(), Priority.highest)
+}
+
+type TextExtension = Extension<{
+  Nodes: {
+    text: Attrs
+  }
+}>
+
+/**
+ * @internal
+ */
+export function defineText(): TextExtension {
+  return defineNodeSpec({
+    name: 'text',
+    group: 'inline',
+  })
+}
 
 type BoldExtension = Extension<{
   Marks: {
@@ -27,6 +83,9 @@ type BoldExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineBold(): BoldExtension {
   return defineMarkSpec({
     name: 'bold',
@@ -43,6 +102,9 @@ type ItalicExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineItalic(): ItalicExtension {
   return defineMarkSpec({
     name: 'italic',
@@ -63,6 +125,9 @@ type LinkExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineLink(): LinkExtension {
   return defineMarkSpec<'link', LinkAttrs>({
     name: 'link',
@@ -93,6 +158,9 @@ type HeadingExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineHeading(): HeadingExtension {
   return defineNodeSpec({
     name: 'heading',
@@ -112,6 +180,9 @@ type CodeBlockExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineCodeBlock(): CodeBlockExtension {
   return defineNodeSpec({
     name: 'codeBlock',
@@ -123,6 +194,28 @@ function defineCodeBlock(): CodeBlockExtension {
     attrs: { language: { default: '' } },
     toDOM() {
       return ['pre', ['code', 0]]
+    },
+  })
+}
+
+export type BlockquoteExtension = Extension<{
+  Nodes: {
+    blockquote: Attrs
+  }
+}>
+
+/**
+ * @internal
+ */
+function defineBlockquote(): BlockquoteExtension {
+  return defineNodeSpec({
+    name: 'blockquote',
+    content: 'block+',
+    group: 'block',
+    defining: true,
+    parseDOM: [{ tag: 'blockquote' }],
+    toDOM() {
+      return ['blockquote', 0]
     },
   })
 }
@@ -143,6 +236,7 @@ export function defineTestExtension() {
     defineLink(),
     defineHeading(),
     defineCodeBlock(),
+    defineBlockquote(),
   )
 }
 

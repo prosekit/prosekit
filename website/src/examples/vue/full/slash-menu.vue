@@ -2,13 +2,13 @@
 import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import {
-  AutocompleteEmpty,
-  AutocompleteItem,
   AutocompleteList,
   AutocompletePopover,
 } from 'prosekit/vue/autocomplete'
 
 import type { EditorExtension } from './extension'
+import SlashMenuEmpty from './slash-menu-empty.vue'
+import SlashMenuItem from './slash-menu-item.vue'
 
 const editor = useEditor<EditorExtension>()
 </script>
@@ -16,50 +16,77 @@ const editor = useEditor<EditorExtension>()
 <template>
   <AutocompletePopover :regex="/\/.*$/iu" :class="Themes.AUTOCOMPLETE_MENU">
     <AutocompleteList>
-      <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
-        No results
-      </AutocompleteEmpty>
+      <SlashMenuItem
+        label="Text"
+        @select="() => editor.commands.setParagraph()"
+      />
 
-      <AutocompleteItem
-        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
+      <SlashMenuItem
+        label="Heading 1"
+        kbd="#"
         @select="() => editor.commands.setHeading({ level: 1 })"
-      >
-        Heading 1
-      </AutocompleteItem>
-      <AutocompleteItem
-        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
+      />
+
+      <SlashMenuItem
+        label="Heading 2"
+        kbd="##"
         @select="() => editor.commands.setHeading({ level: 2 })"
-      >
-        Heading 2
-      </AutocompleteItem>
+      />
 
-      <AutocompleteItem
-        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
-        @select="() => editor.commands.wrapInList({ kind: 'task' })"
-      >
-        Task list
-      </AutocompleteItem>
+      <SlashMenuItem
+        label="Heading 3"
+        kbd="###"
+        @select="() => editor.commands.setHeading({ level: 3 })"
+      />
 
-      <AutocompleteItem
-        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
+      <SlashMenuItem
+        label="Bullet list"
+        kbd="-"
         @select="() => editor.commands.wrapInList({ kind: 'bullet' })"
-      >
-        Bullet list
-      </AutocompleteItem>
+      />
 
-      <AutocompleteItem
-        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
+      <SlashMenuItem
+        label="Ordered list"
+        kbd="1."
         @select="() => editor.commands.wrapInList({ kind: 'ordered' })"
-      >
-        Ordered list
-      </AutocompleteItem>
+      />
 
-      <AutocompleteItem
-        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
+      <SlashMenuItem
+        label="To-do list"
+        kbd="[]"
+        @select="() => editor.commands.wrapInList({ kind: 'task' })"
+      />
+
+      <SlashMenuItem
+        label="Toggle list"
+        kbd=">>"
         @select="() => editor.commands.wrapInList({ kind: 'toggle' })"
-      >
-        Toggle list
-      </AutocompleteItem>
+      />
+
+      <SlashMenuItem
+        label="Quote"
+        kbd=">"
+        @select="() => editor.commands.setBlockquote()"
+      />
+
+      <SlashMenuItem
+        label="Table"
+        @select="() => editor.commands.insertTable({ row: 3, col: 3 })"
+      />
+
+      <SlashMenuItem
+        label="Divider"
+        kbd="---"
+        @select="() => editor.commands.insertHorizontalRule()"
+      />
+
+      <SlashMenuItem
+        label="Code"
+        kbd="```"
+        @select="() => editor.commands.setCodeBlock()"
+      />
+
+      <SlashMenuEmpty />
     </AutocompleteList>
   </AutocompletePopover>
 </template>

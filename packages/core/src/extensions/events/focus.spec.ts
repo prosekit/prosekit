@@ -7,9 +7,7 @@ import {
 
 import { createEditor } from '../../editor/editor'
 import { union } from '../../editor/union'
-import { defineDoc } from '../doc'
-import { defineParagraph } from '../paragraph'
-import { defineText } from '../text'
+import { defineTestExtension } from '../../testing'
 
 import { defineFocusChangeHandler } from './focus'
 
@@ -19,9 +17,7 @@ describe('defineFocusChangeHandler', () => {
     const handleFocusChange = vi.fn()
 
     const extension = union(
-      defineDoc(),
-      defineText(),
-      defineParagraph(),
+      defineTestExtension(),
       defineFocusChangeHandler(handleFocusChange),
     )
     const editor = createEditor({ extension })

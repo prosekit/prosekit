@@ -38,7 +38,14 @@ editor.commands.removeLink()
 
 ### `toggleLink`
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineLink } from 'prosekit/extensions/link'
+
+const extension = defineLink()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleLink({ href: 'https://www.example.com' })
 ```
 

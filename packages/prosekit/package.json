@@ -39,6 +39,7 @@
     "./extensions/code-block": "./src/extensions/code-block.gen.ts",
     "./extensions/commit": "./src/extensions/commit.gen.ts",
     "./extensions/commit/style.css": "./src/extensions/commit/style.css",
+    "./extensions/doc": "./src/extensions/doc.gen.ts",
     "./extensions/drop-cursor": "./src/extensions/drop-cursor.gen.ts",
     "./extensions/enter-rule": "./src/extensions/enter-rule.gen.ts",
     "./extensions/file": "./src/extensions/file.gen.ts",
@@ -57,6 +58,7 @@
     "./extensions/mark-rule": "./src/extensions/mark-rule.gen.ts",
     "./extensions/mention": "./src/extensions/mention.gen.ts",
     "./extensions/mod-click-prevention": "./src/extensions/mod-click-prevention.gen.ts",
+    "./extensions/paragraph": "./src/extensions/paragraph.gen.ts",
     "./extensions/placeholder": "./src/extensions/placeholder.gen.ts",
     "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
     "./extensions/readonly": "./src/extensions/readonly.gen.ts",
@@ -65,6 +67,7 @@
     "./extensions/strike": "./src/extensions/strike.gen.ts",
     "./extensions/table": "./src/extensions/table.gen.ts",
     "./extensions/table/style.css": "./src/extensions/table/style.css",
+    "./extensions/text": "./src/extensions/text.gen.ts",
     "./extensions/text-align": "./src/extensions/text-align.gen.ts",
     "./extensions/underline": "./src/extensions/underline.gen.ts",
     "./extensions/virtual-selection": "./src/extensions/virtual-selection.gen.ts",
@@ -291,6 +294,11 @@
       "./extensions/commit/style.css": {
         "default": "./dist/extensions/commit/style.css"
       },
+      "./extensions/doc": {
+        "types": "./dist/prosekit-extensions-doc.d.ts",
+        "import": "./dist/prosekit-extensions-doc.js",
+        "default": "./dist/prosekit-extensions-doc.js"
+      },
       "./extensions/drop-cursor": {
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
         "import": "./dist/prosekit-extensions-drop-cursor.js",
@@ -375,6 +383,11 @@
         "import": "./dist/prosekit-extensions-mod-click-prevention.js",
         "default": "./dist/prosekit-extensions-mod-click-prevention.js"
       },
+      "./extensions/paragraph": {
+        "types": "./dist/prosekit-extensions-paragraph.d.ts",
+        "import": "./dist/prosekit-extensions-paragraph.js",
+        "default": "./dist/prosekit-extensions-paragraph.js"
+      },
       "./extensions/placeholder": {
         "types": "./dist/prosekit-extensions-placeholder.d.ts",
         "import": "./dist/prosekit-extensions-placeholder.js",
@@ -408,6 +421,11 @@
       },
       "./extensions/table/style.css": {
         "default": "./dist/extensions/table/style.css"
+      },
+      "./extensions/text": {
+        "types": "./dist/prosekit-extensions-text.d.ts",
+        "import": "./dist/prosekit-extensions-text.js",
+        "default": "./dist/prosekit-extensions-text.js"
       },
       "./extensions/text-align": {
         "types": "./dist/prosekit-extensions-text-align.d.ts",
@@ -802,6 +820,9 @@
         "extensions/commit": [
           "./dist/prosekit-extensions-commit.d.ts"
         ],
+        "extensions/doc": [
+          "./dist/prosekit-extensions-doc.d.ts"
+        ],
         "extensions/drop-cursor": [
           "./dist/prosekit-extensions-drop-cursor.d.ts"
         ],
@@ -847,6 +868,9 @@
         "extensions/mod-click-prevention": [
           "./dist/prosekit-extensions-mod-click-prevention.d.ts"
         ],
+        "extensions/paragraph": [
+          "./dist/prosekit-extensions-paragraph.d.ts"
+        ],
         "extensions/placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"
         ],
@@ -861,6 +885,9 @@
         ],
         "extensions/table": [
           "./dist/prosekit-extensions-table.d.ts"
+        ],
+        "extensions/text": [
+          "./dist/prosekit-extensions-text.d.ts"
         ],
         "extensions/text-align": [
           "./dist/prosekit-extensions-text-align.d.ts"

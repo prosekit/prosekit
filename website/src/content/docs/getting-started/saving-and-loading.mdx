@@ -38,7 +38,12 @@ const json = editor.getDocJSON()
 
 To load content from JSON when creating an editor:
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+const extension = {}
+const json = {}
+// ---cut---
 // Create editor with the loaded content
 const editor = createEditor({
   extension,

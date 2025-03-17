@@ -22,7 +22,14 @@ const extension = defineTable()
 
 Insert a new table.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.insertTable({ rows: 3, cols: 3 })
 ```
 
@@ -30,7 +37,14 @@ editor.commands.insertTable({ rows: 3, cols: 3 })
 
 Exit the table.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.exitTable()
 ```
 
@@ -38,7 +52,14 @@ editor.commands.exitTable()
 
 Select the table.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.selectTable()
 ```
 
@@ -46,7 +67,14 @@ editor.commands.selectTable()
 
 Select the table cell.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.selectTableCell()
 ```
 

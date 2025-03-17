@@ -54,7 +54,14 @@ editor.commands.indentList()
 
 Moves up or down selected list nodes.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.moveList('down')
 ```
 
@@ -62,7 +69,14 @@ editor.commands.moveList('down')
 
 Split the current list node.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.splitList()
 ```
 
@@ -70,7 +84,14 @@ editor.commands.splitList()
 
 Toggle the `collapsed` attribute of the list node.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleCollapsed()
 ```
 

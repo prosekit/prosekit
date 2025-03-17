@@ -167,7 +167,10 @@ HTML is useful when you need to display your content outside the editor or integ
 
 To convert your document to HTML:
 
-```ts
+```ts twoslash
+// @noErrors
+const editor = { getDocHTML: () => '' } // placeholder for example
+// ---cut---
 // Get the current document as an HTML string
 const html = editor.getDocHTML()
 

@@ -877,6 +877,10 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: true
+      - path: slash-menu-empty.tsx
+        hidden: false
+      - path: slash-menu-item.tsx
+        hidden: false
       - path: slash-menu.tsx
         hidden: false
   - name: preact-typography
@@ -1236,6 +1240,10 @@ examples:
       - path: editor.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: slash-menu-empty.tsx
+        hidden: false
+      - path: slash-menu-item.tsx
         hidden: false
       - path: slash-menu.tsx
         hidden: false

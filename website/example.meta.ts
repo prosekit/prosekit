@@ -1686,6 +1686,14 @@ export const exampleMeta = {
           "hidden": true
         },
         {
+          "path": "slash-menu-empty.tsx",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu-item.tsx",
+          "hidden": false
+        },
+        {
           "path": "slash-menu.tsx",
           "hidden": false
         }
@@ -2373,6 +2381,14 @@ export const exampleMeta = {
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu-empty.tsx",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu-item.tsx",
           "hidden": false
         },
         {

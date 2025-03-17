@@ -15,6 +15,12 @@ export type TextExtension = Extension<{
 
 /**
  * @public
+ *
+ * @deprecated Use the following import instead:
+ *
+ * ```ts
+ * import { defineText } from 'prosekit/extensions/text'
+ * ```
  */
 export function defineText(): TextExtension {
   return defineNodeSpec({

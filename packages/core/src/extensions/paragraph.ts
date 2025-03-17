@@ -41,6 +41,12 @@ export type ParagraphExtension = ParagraphSpecExtension
  * @public
  *
  * Defines a paragraph node spec as the highest priority, because it should be the default block node for most cases.
+ *
+ * @deprecated Use the following import instead:
+ *
+ * ```ts
+ * import { defineParagraph } from 'prosekit/extensions/paragraph'
+ * ```
  */
 export function defineParagraph(): ParagraphExtension {
   return withPriority(defineParagraphSpec(), Priority.highest)

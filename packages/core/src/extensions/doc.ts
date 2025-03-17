@@ -11,6 +11,12 @@ export type DocExtension = Extension<{ Nodes: { doc: Attrs } }>
 
 /**
  * @public
+ *
+ * @deprecated Use the following import instead:
+ *
+ * ```ts
+ * import { defineDoc } from 'prosekit/extensions/doc'
+ * ```
  */
 export function defineDoc(): DocExtension {
   return defineNodeSpec({

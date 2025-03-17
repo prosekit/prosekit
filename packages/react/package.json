@@ -46,7 +46,7 @@
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
     "@prosemirror-adapter/core": "^0.4.0",
-    "@prosemirror-adapter/react": "^0.4.0",
+    "@prosemirror-adapter/react": "^0.4.1",
     "react-merge-refs": "^2.1.1"
   },
   "peerDependencies": {

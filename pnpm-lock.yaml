@@ -520,8 +520,8 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0
       '@prosemirror-adapter/react':
-        specifier: ^0.4.0
-        version: 0.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: ^0.4.1
+        version: 0.4.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react-merge-refs:
         specifier: ^2.1.1
         version: 2.1.1
@@ -566,8 +566,8 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0
       '@prosemirror-adapter/solid':
-        specifier: ^0.4.0
-        version: 0.4.0(solid-js@1.9.5)
+        specifier: ^0.4.1
+        version: 0.4.1(solid-js@1.9.5)
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -600,8 +600,8 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0
       '@prosemirror-adapter/svelte':
-        specifier: ^0.4.0
-        version: 0.4.0(svelte@5.23.1)
+        specifier: ^0.4.1
+        version: 0.4.1(svelte@5.23.1)
     devDependencies:
       '@prosekit/dev':
         specifier: workspace:*
@@ -2097,21 +2097,32 @@ packages:
   '@prosemirror-adapter/core@0.4.0':
     resolution: {integrity: sha512-feLFTIvbpQDnWspZv+rjTPmqpeJ8++VM/gDnBaDNLsAEvrwmO1IHc0oyrRBl/9x3Er3tU/WXc86TlOidsN1aEg==}
 
-  '@prosemirror-adapter/react@0.4.0':
-    resolution: {integrity: sha512-SfybFk7VwjlslkDEvxkw4tQphDq7vN3UhUiLJ1sUyT+YVQM23lfugfwX3S/2lZC+eVdGHHa8rEuXQAQ6JRDdDw==}
+  '@prosemirror-adapter/react@0.4.1':
+    resolution: {integrity: sha512-m2OdJoAGqXYHFi2vfy0DICTdOqUP2zDYfHe1cKQMM6Ri2M4n07c8812xBUkFBasLlfYm+d82N6ebTA6+B/0qEg==}
     peerDependencies:
       react: '*'
       react-dom: '*'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
-  '@prosemirror-adapter/solid@0.4.0':
-    resolution: {integrity: sha512-9FCMJOJLM2K7wx2zrqt4jBXbwFhfLHZA2qckZBW4a7lx7+OJLDwvQQptGlRfc8jvaHXyOrDPR4oEMc9bDQT9ZQ==}
+  '@prosemirror-adapter/solid@0.4.1':
+    resolution: {integrity: sha512-GGRLOG1/Dc+3wMWiC3dZtgXfc2oVGk1HabpWxSEG0uLjGsAVQRFLg0Nr/sKHBiVjqetqm1C9RIXaCkXNSRcOTw==}
     peerDependencies:
       solid-js: ^1.8.22
+    peerDependenciesMeta:
+      solid-js:
+        optional: true
 
-  '@prosemirror-adapter/svelte@0.4.0':
-    resolution: {integrity: sha512-7WsayY8j4FXZHWN+Okr8zn0dYTvUexWmX7LbL9FKAMY4sAQ4uvARRlaEBnh35NUpHO9WF6nwZiUJn4ee/6chow==}
+  '@prosemirror-adapter/svelte@0.4.1':
+    resolution: {integrity: sha512-a14HTQfoo0aOKXF1E/fGbvIJ26PaqharDHc5dszpmKcFbO1WeKiZxKln2nXRSMqi3jHdhA3mSs8hsfnLwLf/aw==}
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0
+    peerDependenciesMeta:
+      svelte:
+        optional: true
 
   '@prosemirror-adapter/vue@0.4.1':
     resolution: {integrity: sha512-zva577Bn0MLhCTYVZaUTZvOggpNMBA6n2ldmPxzYN9MJih59KYTBWmaBcZTXsGNHe9K8Wwr92WtJGG6e3Iy30w==}
@@ -8586,27 +8597,30 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@prosemirror-adapter/react@0.4.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@prosemirror-adapter/react@0.4.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
     dependencies:
       '@prosemirror-adapter/core': 0.4.0
       nanoid: 5.1.3
+      tslib: 2.8.1
+    optionalDependencies:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
-      tslib: 2.8.1
 
-  '@prosemirror-adapter/solid@0.4.0(solid-js@1.9.5)':
+  '@prosemirror-adapter/solid@0.4.1(solid-js@1.9.5)':
     dependencies:
       '@prosemirror-adapter/core': 0.4.0
       nanoid: 5.1.3
+      tslib: 2.8.1
+    optionalDependencies:
       solid-js: 1.9.5
-      tslib: 2.8.1
 
-  '@prosemirror-adapter/svelte@0.4.0(svelte@5.23.1)':
+  '@prosemirror-adapter/svelte@0.4.1(svelte@5.23.1)':
     dependencies:
       '@prosemirror-adapter/core': 0.4.0
       nanoid: 5.1.3
-      svelte: 5.23.1
       tslib: 2.8.1
+    optionalDependencies:
+      svelte: 5.23.1
 
   '@prosemirror-adapter/vue@0.4.1(vue@3.5.13(typescript@5.7.3))':
     dependencies:

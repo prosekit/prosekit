@@ -3,7 +3,7 @@ title: Yjs
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
-import CodeGroupInstallation from '@/components/ui/code-group-installation.astro';
+import { CodePackageManagers } from 'starlight-theme-nova/components';
 
 Make the editor collaborative by integrating [Yjs](https://github.com/yjs/yjs) with ProseKit.
 
@@ -13,7 +13,7 @@ Make the editor collaborative by integrating [Yjs](https://github.com/yjs/yjs) w
 
 You need to install `yjs` and `y-prosemirror` to use this extension.
 
-<CodeGroupInstallation packages="yjs y-prosemirror" />
+<CodePackageManagers packages="yjs y-prosemirror" />
 
 ```ts twoslash
 import 'prosekit/extensions/yjs/style.css'

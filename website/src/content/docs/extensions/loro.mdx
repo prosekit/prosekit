@@ -3,7 +3,7 @@ title: Loro
 ---
 
 import Demo from '@/components/ui/demo/demo.astro';
-import CodeGroupInstallation from '@/components/ui/code-group-installation.astro';
+import { CodePackageManagers } from 'starlight-theme-nova/components';
 
 Make the editor collaborative by integrating [Loro](https://loro.dev/) with ProseKit.
 
@@ -13,7 +13,7 @@ Make the editor collaborative by integrating [Loro](https://loro.dev/) with Pros
 
 You need to install `loro-crdt` and `loro-prosemirror` to use this extension.
 
-<CodeGroupInstallation packages={'loro-crdt loro-prosemirror'} />
+<CodePackageManagers packages={'loro-crdt loro-prosemirror'} />
 
 ```ts twoslash
 import 'prosekit/extensions/loro/style.css'

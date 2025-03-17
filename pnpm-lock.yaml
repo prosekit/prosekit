@@ -911,8 +911,8 @@ importers:
         specifier: ^1.9.5
         version: 1.9.5
       starlight-theme-nova:
-        specifier: ^0.0.2
-        version: 0.0.2
+        specifier: ^0.0.3
+        version: 0.0.3
       svelte:
         specifier: ^5.23.0
         version: 5.23.0
@@ -6118,8 +6118,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@0.0.2:
-    resolution: {integrity: sha512-1ZUuYaTMppgsweGVY+cP8A6b7Kgg9Vn8kuOKAakRVmwAaiMeVQxMsgKYa7jAjDVZ0BZ5HqK6hvuy0Jd8DEZA6Q==}
+  starlight-theme-nova@0.0.3:
+    resolution: {integrity: sha512-1vPvq9ogVtiVwq93bmpPMO11obS6cUWU9GUY2VDkqUWPaDl9IUp0ChChHzIQ8AVXdkgPR/cSBp+HWujXBBgYCA==}
 
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
@@ -13726,7 +13726,7 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@0.0.2:
+  starlight-theme-nova@0.0.3:
     dependencies:
       '@shikijs/transformers': 1.29.2
       astro-theme-toggle: 0.5.1

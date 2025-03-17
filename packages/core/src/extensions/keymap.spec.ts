@@ -7,22 +7,18 @@ import {
 } from 'vitest'
 
 import { createEditor } from '../editor/editor'
-import { union } from '../editor/union'
+import { defineTestExtension } from '../testing'
 
-import { defineDoc } from './doc'
 import {
   defineKeymap,
   type Keymap,
 } from './keymap'
-import { defineParagraph } from './paragraph'
-import { defineText } from './text'
 
 describe('keymap', () => {
   it('can register and unregister keymap', () => {
     const div = document.body.appendChild(document.createElement('div'))
-    const editor = createEditor({
-      extension: union(defineDoc(), defineText(), defineParagraph()),
-    })
+    const extension = defineTestExtension()
+    const editor = createEditor({ extension })
     editor.mount(div)
 
     const command1: Command = vi.fn(() => false)
@@ -61,9 +57,8 @@ describe('keymap', () => {
 
   it('can skip unnecessary plugin update', () => {
     const div = document.body.appendChild(document.createElement('div'))
-    const editor = createEditor({
-      extension: union(defineDoc(), defineText(), defineParagraph()),
-    })
+    const extension = defineTestExtension()
+    const editor = createEditor({ extension })
     editor.mount(div)
 
     const command1: Command = vi.fn(() => false)

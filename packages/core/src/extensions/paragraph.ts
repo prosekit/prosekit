@@ -1,6 +1,5 @@
 import type { Attrs } from '@prosekit/pm/model'
 
-import { union } from '../editor/union'
 import { withPriority } from '../editor/with-priority'
 import type { Extension } from '../types/extension'
 import { Priority } from '../types/priority'
@@ -10,15 +9,13 @@ import { defineNodeSpec } from './node-spec'
 /**
  * @internal
  */
-export type ParagraphSpecExtension = Extension<{
+type ParagraphSpecExtension = Extension<{
   Nodes: {
     paragraph: Attrs
   }
 }>
 
 /**
- * @internal
- *
  * Defines a paragraph node spec.
  */
 function defineParagraphSpec(): ParagraphSpecExtension {
@@ -60,7 +57,5 @@ export function defineParagraph(): ParagraphExtension {
     '[prosekit] The `defineParagraph` function from `prosekit/core` is deprecated. Use the following import instead: `import { defineParagraph } from "prosekit/extensions/paragraph"`.',
   )
 
-  return union(
-    withPriority(defineParagraphSpec(), Priority.highest),
-  )
+  return withPriority(defineParagraphSpec(), Priority.highest)
 }

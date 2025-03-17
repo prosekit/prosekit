@@ -10,7 +10,7 @@ The `list` node is used to represent a list item. It is built on top of [prosemi
 
 ## Usage
 
-```ts
+```ts twoslash
 import 'prosekit/extensions/list/style.css'
 
 import { defineList } from 'prosekit/extensions/list'
@@ -24,7 +24,14 @@ const extension = defineList()
 
 Decreases the indentation of selected list nodes.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.dedentList()
 ```
 
@@ -32,7 +39,14 @@ editor.commands.dedentList()
 
 Increases the indentation of selected list.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.indentList()
 ```
 

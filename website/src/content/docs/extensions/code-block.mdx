@@ -60,7 +60,7 @@ const extension = defineCodeBlock()
 const editor = createEditor({ extension })
 
 // ---cut---
-editor.commands.insertCodeBlock()
+editor.commands.toggleCodeBlock()
 ```
 
 ### `setCodeBlockAttrs`
@@ -97,6 +97,14 @@ const extension = defineCodeBlockShiki({ themes: ['github-light'] })
 If you want to use a different syntax highlighter or have more control over the syntax highlighting, you can use the `defineCodeBlockHighlight` function to create an extension. This function accepts a `parser` object, defined by the [prosemirror-highlight] library. For more details on how to use the other syntax highlighters, refer to the [prosemirror-highlight] documentation.
 
 ```ts twoslash
+// @filename: my-prosemirror-highlight-parser.ts
+import type { Parser } from 'prosemirror-highlight'
+
+export const parser: Parser = () => {
+  return []
+}
+// @filename: demo.ts
+// ---cut---
 import { defineCodeBlockHighlight } from 'prosekit/extensions/code-block'
 import { parser } from './my-prosemirror-highlight-parser'
 

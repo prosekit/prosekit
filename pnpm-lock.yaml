@@ -911,8 +911,8 @@ importers:
         specifier: ^1.9.5
         version: 1.9.5
       starlight-theme-nova:
-        specifier: ^0.0.4
-        version: 0.0.4(typescript@5.7.3)
+        specifier: https://pkg.pr.new/ocavue/starlight-theme-nova@3
+        version: https://pkg.pr.new/ocavue/starlight-theme-nova@3(typescript@5.7.3)
       svelte:
         specifier: ^5.23.0
         version: 5.23.0
@@ -2275,11 +2275,13 @@ packages:
   '@shikijs/themes@3.2.1':
     resolution: {integrity: sha512-k5DKJUT8IldBvAm8WcrDT5+7GA7se6lLksR+2E3SvyqGTyFMzU2F9Gb7rmD+t+Pga1MKrYFxDIeyWjMZWM6uBQ==}
 
-  '@shikijs/transformers@1.29.2':
-    resolution: {integrity: sha512-NHQuA+gM7zGuxGWP9/Ub4vpbwrYCrho9nQCLcCPfOe3Yc7LOYwmSuhElI688oiqIXk9dlZwDiyAG9vPBTuPJMA==}
+  '@shikijs/transformers@3.2.1':
+    resolution: {integrity: sha512-oIT40p8LOPV/6XLnUrVPeRtJtbu0Mpl+BjGFuMXw870eX9zTSQlidg7CsksFDVyUiSAOC/CH1RQm+ldZp0/6eQ==}
 
-  '@shikijs/twoslash@1.29.2':
-    resolution: {integrity: sha512-2S04ppAEa477tiaLfGEn1QJWbZUmbk8UoPbAEw4PifsrxkBXtAtOflIZJNtuCwz8ptc/TPxy7CO7gW4Uoi6o/g==}
+  '@shikijs/twoslash@3.2.1':
+    resolution: {integrity: sha512-2ZiL9xXY8JRXHG5BdJXE9KoIeSsyH9/yK+YTN90/SUIKkq7Nf5dWqXp5wJ6+4SL0FQO8mq2HUutwqU+gamOgOA==}
+    peerDependencies:
+      typescript: '>=5.5.0'
 
   '@shikijs/types@1.29.2':
     resolution: {integrity: sha512-VJjK0eIijTZf0QSTODEXCqinjBn0joAHQ+aPSBzrv4O2d/QSbsMw+ZeSRx03kV34Hy7NzUvV/7NqfYGRLrASmw==}
@@ -6120,8 +6122,9 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@0.0.4:
-    resolution: {integrity: sha512-HJeCZUkdxyQwdq759jg/Zj+G0O6o/y02P8t6zXhG+Sw4UARKqS7olNBe/OaJhPcqGC6BR/cDsHUsPDwuzEmCyQ==}
+  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@3:
+    resolution: {tarball: https://pkg.pr.new/ocavue/starlight-theme-nova@3}
+    version: 0.0.4
 
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
@@ -6426,13 +6429,13 @@ packages:
     resolution: {integrity: sha512-N9FDOVaY3yz0YCOhYIgOGYad7+m2ptvinXygw27WPLQvcZDl3+0Sa77KGVlLSiuPDChOUEnTKE9VJwLSi9BPGQ==}
     hasBin: true
 
-  twoslash-protocol@0.2.12:
-    resolution: {integrity: sha512-5qZLXVYfZ9ABdjqbvPc4RWMr7PrpPaaDSeaYY55vl/w1j6H6kzsWK/urAEIXlzYlyrFmyz1UbwIt+AA0ck+wbg==}
+  twoslash-protocol@0.3.1:
+    resolution: {integrity: sha512-BMePTL9OkuNISSyyMclBBhV2s9++DiOCyhhCoV5Kaht6eaWLwVjCCUJHY33eZJPsyKeZYS8Wzz0h+XI01VohVw==}
 
-  twoslash@0.2.12:
-    resolution: {integrity: sha512-tEHPASMqi7kqwfJbkk7hc/4EhlrKCSLcur+TcvYki3vhIfaRMXnXjaYFgXpoZRbT6GdprD4tGuVBEmTpUgLBsw==}
+  twoslash@0.3.1:
+    resolution: {integrity: sha512-OGqMTGvqXTcb92YQdwGfEdK0nZJA64Aj/ChLOelbl3TfYch2IoBST0Yx4C0LQ7Lzyqm9RpgcpgDxeXQIz4p2Kg==}
     peerDependencies:
-      typescript: '*'
+      typescript: ^5.5.0
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -8778,19 +8781,19 @@ snapshots:
     dependencies:
       '@shikijs/types': 3.2.1
 
-  '@shikijs/transformers@1.29.2':
+  '@shikijs/transformers@3.2.1':
     dependencies:
-      '@shikijs/core': 1.29.2
-      '@shikijs/types': 1.29.2
+      '@shikijs/core': 3.2.1
+      '@shikijs/types': 3.2.1
 
-  '@shikijs/twoslash@1.29.2(typescript@5.7.3)':
+  '@shikijs/twoslash@3.2.1(typescript@5.7.3)':
     dependencies:
-      '@shikijs/core': 1.29.2
-      '@shikijs/types': 1.29.2
-      twoslash: 0.2.12(typescript@5.7.3)
+      '@shikijs/core': 3.2.1
+      '@shikijs/types': 3.2.1
+      twoslash: 0.3.1(typescript@5.7.3)
+      typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
-      - typescript
 
   '@shikijs/types@1.29.2':
     dependencies:
@@ -13752,10 +13755,10 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@0.0.4(typescript@5.7.3):
+  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@3(typescript@5.7.3):
     dependencies:
-      '@shikijs/transformers': 1.29.2
-      '@shikijs/twoslash': 1.29.2(typescript@5.7.3)
+      '@shikijs/transformers': 3.2.1
+      '@shikijs/twoslash': 3.2.1(typescript@5.7.3)
       astro-theme-toggle: 0.5.1
       hast-util-is-element: 3.0.0
     transitivePeerDependencies:
@@ -14090,12 +14093,12 @@ snapshots:
       turbo-windows-64: 2.4.4
       turbo-windows-arm64: 2.4.4
 
-  twoslash-protocol@0.2.12: {}
+  twoslash-protocol@0.3.1: {}
 
-  twoslash@0.2.12(typescript@5.7.3):
+  twoslash@0.3.1(typescript@5.7.3):
     dependencies:
       '@typescript/vfs': 1.6.1(typescript@5.7.3)
-      twoslash-protocol: 0.2.12
+      twoslash-protocol: 0.3.1
       typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color

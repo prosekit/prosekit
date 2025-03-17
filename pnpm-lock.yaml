@@ -914,8 +914,8 @@ importers:
         specifier: ^1.9.5
         version: 1.9.5
       starlight-theme-nova:
-        specifier: https://pkg.pr.new/ocavue/starlight-theme-nova@371a339
-        version: https://pkg.pr.new/ocavue/starlight-theme-nova@371a339(typescript@5.7.3)
+        specifier: ^0.0.5
+        version: 0.0.5(typescript@5.7.3)
       svelte:
         specifier: ^5.23.0
         version: 5.23.0
@@ -6125,9 +6125,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@371a339:
-    resolution: {tarball: https://pkg.pr.new/ocavue/starlight-theme-nova@371a339}
-    version: 0.0.4
+  starlight-theme-nova@0.0.5:
+    resolution: {integrity: sha512-5JlYK00jQsaa3WcpQYuqCsBdmd4uRHn5lbqx038rYEyx4koWBPTfzIOnmmGNuPYpW1oBQomeC92vKDpqgFql4w==}
 
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
@@ -13758,7 +13757,7 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@371a339(typescript@5.7.3):
+  starlight-theme-nova@0.0.5(typescript@5.7.3):
     dependencies:
       '@shikijs/transformers': 3.2.1
       '@shikijs/twoslash': 3.2.1(typescript@5.7.3)

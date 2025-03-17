@@ -101,9 +101,9 @@ function defineBasicExtension() {
 
 This compositional pattern allows you to build on existing extensions and add exactly the features you need. For example, if you want all the functionality of the basic extension plus syntax highlighting for code blocks, you can simply combine them:
 
-```ts
+```ts twoslash
 import { defineBasicExtension } from 'prosekit/basic'
-import { union } from 'prosekit/core'
+import { union, createEditor } from 'prosekit/core'
 import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
 
 function defineMyExtension() {

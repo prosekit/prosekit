@@ -131,7 +131,11 @@ useDocChange(() => {
 
 <TabItem label="Solid">
 
-```ts
+```ts twoslash
+// @noErrors
+import { useDocChange } from 'prosekit/solid'
+const editor = { getDocJSON: () => ({}) } // placeholder for example
+// ---cut---
 import { useDocChange } from 'prosekit/solid'
 
 useDocChange(() => {

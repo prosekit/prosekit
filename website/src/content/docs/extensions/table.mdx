@@ -82,7 +82,14 @@ editor.commands.selectTableCell()
 
 Select the table column.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.selectTableColumn()
 ```
 
@@ -90,7 +97,14 @@ editor.commands.selectTableColumn()
 
 Select the table row.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.selectTableRow()
 ```
 
@@ -98,7 +112,14 @@ editor.commands.selectTableRow()
 
 Add a new column before the selected column.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.addTableColumnBefore()
 ```
 
@@ -106,7 +127,14 @@ editor.commands.addTableColumnBefore()
 
 Add a new column after the selected column.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.addTableColumnAfter()
 ```
 
@@ -114,7 +142,14 @@ editor.commands.addTableColumnAfter()
 
 Add a new row above the selected row or specific position.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.addTableRowAbove()
 ```
 
@@ -122,7 +157,14 @@ editor.commands.addTableRowAbove()
 
 Add a new row below the selected row or specific position.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.addTableRowBelow()
 ```
 

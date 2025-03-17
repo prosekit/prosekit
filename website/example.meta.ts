@@ -585,6 +585,14 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "slash-menu-empty.tsx",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu-item.tsx",
+          "hidden": false
+        },
+        {
           "path": "slash-menu.tsx",
           "hidden": false
         }
@@ -1334,6 +1342,14 @@ export const exampleMeta = {
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu-empty.vue",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu-item.vue",
           "hidden": false
         },
         {
@@ -2093,6 +2109,14 @@ export const exampleMeta = {
         },
         {
           "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu-empty.svelte",
+          "hidden": false
+        },
+        {
+          "path": "slash-menu-item.svelte",
           "hidden": false
         },
         {

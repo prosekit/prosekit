@@ -303,6 +303,10 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: slash-menu-empty.tsx
+        hidden: false
+      - path: slash-menu-item.tsx
+        hidden: false
       - path: slash-menu.tsx
         hidden: false
   - name: react-table
@@ -694,6 +698,10 @@ examples:
       - path: editor.vue
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: slash-menu-empty.vue
+        hidden: false
+      - path: slash-menu-item.vue
         hidden: false
       - path: slash-menu.vue
         hidden: false
@@ -1090,6 +1098,10 @@ examples:
       - path: editor.svelte
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: slash-menu-empty.svelte
+        hidden: false
+      - path: slash-menu-item.svelte
         hidden: false
       - path: slash-menu.svelte
         hidden: false

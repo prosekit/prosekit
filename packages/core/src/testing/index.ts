@@ -22,7 +22,10 @@ import { Priority } from '../types/priority'
 
 type DocExtension = Extension<{ Nodes: { doc: Attrs } }>
 
-function defineDoc(): DocExtension {
+/**
+ * @internal
+ */
+export function defineDoc(): DocExtension {
   return defineNodeSpec({
     name: 'doc',
     content: 'block+',
@@ -36,6 +39,9 @@ type ParagraphExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineParagraphSpec(): ParagraphExtension {
   return defineNodeSpec({
     name: 'paragraph',
@@ -48,7 +54,10 @@ function defineParagraphSpec(): ParagraphExtension {
   })
 }
 
-function defineParagraph(): ParagraphExtension {
+/**
+ * @internal
+ */
+export function defineParagraph(): ParagraphExtension {
   return withPriority(defineParagraphSpec(), Priority.highest)
 }
 
@@ -58,7 +67,10 @@ type TextExtension = Extension<{
   }
 }>
 
-function defineText(): TextExtension {
+/**
+ * @internal
+ */
+export function defineText(): TextExtension {
   return defineNodeSpec({
     name: 'text',
     group: 'inline',
@@ -71,6 +83,9 @@ type BoldExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineBold(): BoldExtension {
   return defineMarkSpec({
     name: 'bold',
@@ -87,6 +102,9 @@ type ItalicExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineItalic(): ItalicExtension {
   return defineMarkSpec({
     name: 'italic',
@@ -107,6 +125,9 @@ type LinkExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineLink(): LinkExtension {
   return defineMarkSpec<'link', LinkAttrs>({
     name: 'link',
@@ -137,6 +158,9 @@ type HeadingExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineHeading(): HeadingExtension {
   return defineNodeSpec({
     name: 'heading',
@@ -156,6 +180,9 @@ type CodeBlockExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineCodeBlock(): CodeBlockExtension {
   return defineNodeSpec({
     name: 'codeBlock',
@@ -177,6 +204,9 @@ export type BlockquoteExtension = Extension<{
   }
 }>
 
+/**
+ * @internal
+ */
 function defineBlockquote(): BlockquoteExtension {
   return defineNodeSpec({
     name: 'blockquote',

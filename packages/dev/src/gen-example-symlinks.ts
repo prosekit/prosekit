@@ -23,6 +23,7 @@ const mapping: Record<string, string[]> = {
     'examples/svelte/full/tag-data.ts',
     'examples/vue/full/tag-data.ts',
     'examples/vue/user-menu/tag-data.ts',
+    'shared/react/tag-data.ts',
   ],
   'shared/common/typography-content.ts': [
     /// keep-sorted
@@ -48,6 +49,7 @@ const mapping: Record<string, string[]> = {
     'examples/vue/full/user-data.ts',
     'examples/vue/user-menu-dynamic/user-data.ts',
     'examples/vue/user-menu/user-data.ts',
+    'shared/react/user-data.ts',
   ],
   'shared/preact/button.tsx': [
     /// keep-sorted

@@ -182,7 +182,11 @@ localStorage.setItem('my-document-html', html)
 
 To load content from HTML:
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+const extension = {}
+// ---cut---
 // Retrieve stored HTML
 const html = localStorage.getItem('my-document-html')
 

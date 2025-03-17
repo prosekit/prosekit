@@ -3,9 +3,9 @@ import { Themes } from '@prosekit/themes'
 import { AutocompleteItem } from 'prosekit/vue/autocomplete'
 
 defineProps<{
-  onSelect: () => void
   label: string
   kbd?: string
+  onSelect: () => void
 }>()
 </script>
 

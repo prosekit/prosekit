@@ -1,7 +1,11 @@
 import { Themes } from '@prosekit/themes'
 import { AutocompleteItem } from 'prosekit/solid/autocomplete'
 
-export default function SlashMenuItem(props: { onSelect: () => void; label: string; kbd?: string }) {
+export default function SlashMenuItem(props: {
+  label: string
+  kbd?: string
+  onSelect: () => void
+}) {
   return (
     <AutocompleteItem onSelect={props.onSelect} class={Themes.AUTOCOMPLETE_MENU_ITEM}>
       <span>{props.label}</span>

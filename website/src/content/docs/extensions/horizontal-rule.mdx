@@ -18,7 +18,14 @@ const extension = defineHorizontalRule()
 
 ### insertHorizontalRule
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
+
+const extension = defineHorizontalRule()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.insertHorizontalRule()
 ```
 

@@ -52,6 +52,7 @@ const mapping: Record<string, string[]> = {
     'examples/vue/user-menu-dynamic/',
     'examples/vue/user-menu/',
     'shared/react/',
+    'shared/vue/',
   ],
   'shared/preact/button.tsx': [
     /// keep-sorted

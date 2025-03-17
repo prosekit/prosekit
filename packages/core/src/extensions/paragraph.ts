@@ -16,11 +16,9 @@ type ParagraphSpecExtension = Extension<{
 }>
 
 /**
- * @public
- *
  * Defines a paragraph node spec.
  */
-export function defineParagraphSpec(): ParagraphSpecExtension {
+function defineParagraphSpec(): ParagraphSpecExtension {
   return defineNodeSpec({
     name: 'paragraph',
     content: 'inline*',

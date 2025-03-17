@@ -2,6 +2,7 @@ import { genChangesetConfigJson } from './gen-changeset-config-json.js'
 import { genChangeset } from './gen-changeset.js'
 import { genComponents } from './gen-components.js'
 import { genExampleMetaYaml } from './gen-example-meta-yaml.js'
+import { genExampleSymlinks } from './gen-example-symlinks.js'
 import { genPackageJson } from './gen-package-json.js'
 import { genSizeLimitJson } from './gen-size-limit-json.js'
 import { genTsconfigJson } from './gen-tsconfig-json.js'
@@ -9,7 +10,6 @@ import { genTypedocJson } from './gen-typedoc-json.js'
 import { genWebsitePages } from './gen-website-pages.js'
 import { skipGen } from './skip-gen.js'
 import { sleep } from './sleep.js'
-import { timer } from './timer.js'
 import { vfs } from './virtual-file-system.js'
 
 async function genAll(): Promise<boolean> {
@@ -27,6 +27,7 @@ async function genAll(): Promise<boolean> {
 
   // Example for website
   await genExampleMetaYaml()
+  await genExampleSymlinks()
   await genWebsitePages()
 
   return await vfs.commit()
@@ -35,7 +36,7 @@ async function genAll(): Promise<boolean> {
 async function main() {
   for (let i = 1; i <= 10; i++) {
     if (i === 10) {
-      console.warn("[warning] gen.ts: genAll() didn't finish in 10 seconds")
+      console.warn('[warning] gen.ts: genAll() cannot update all files within 10 attempts')
     }
 
     const updated = await genAll()
@@ -46,4 +47,4 @@ async function main() {
   }
 }
 
-await timer(main)()
+await main()

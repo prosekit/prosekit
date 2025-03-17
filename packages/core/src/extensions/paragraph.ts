@@ -32,6 +32,12 @@ function defineParagraphSpec(): ParagraphSpecExtension {
 
 /**
  * @internal
+ *
+ * @deprecated Use the following import instead:
+ *
+ * ```ts
+ * import type { ParagraphExtension } from 'prosekit/extensions/paragraph'
+ * ```
  */
 export type ParagraphExtension = ParagraphSpecExtension
 

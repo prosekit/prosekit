@@ -1,9 +1,7 @@
 import {
   createEditor,
-  defineDoc,
-  defineParagraph,
+  defineNodeSpec,
   definePlugin,
-  defineText,
   union,
   type defineBaseCommands,
   type Editor,
@@ -23,10 +21,14 @@ import { defineComponent } from 'vue'
 
 import { useExtension } from './use-extension'
 
+function defineText() {
+  return defineNodeSpec({ name: 'text', topNode: true })
+}
+
 describe('useExtension', () => {
   it('should register and dispose an extension', async () => {
     const editor = createEditor({
-      extension: union(defineDoc(), defineParagraph(), defineText()),
+      extension: union(defineText()),
     }) as Editor<ReturnType<typeof defineBaseCommands>>
 
     editor.mount(document.createElement('div'))
@@ -55,7 +57,7 @@ describe('useExtension', () => {
 
   it('should not print warning if the editor context is not available', () => {
     const editor = createEditor({
-      extension: union(defineDoc(), defineParagraph(), defineText()),
+      extension: union(defineText()),
     }) as Editor<ReturnType<typeof defineBaseCommands>>
     editor.mount(document.createElement('div'))
 

@@ -6,19 +6,18 @@ import {
 
 import { insertText } from '../commands/insert-text'
 import { wrap } from '../commands/wrap'
-import { defineDoc } from '../extensions/doc'
-import { defineParagraph } from '../extensions/paragraph'
-import { defineText } from '../extensions/text'
-import { setupTest } from '../testing'
+import {
+  defineTestExtension,
+  setupTest,
+} from '../testing'
 import type { NodeJSON } from '../types/model'
 
 import { createEditor } from './editor'
-import { union } from './union'
 
 describe('createEditor', () => {
   it('can mount the editor', () => {
     const div = document.body.appendChild(document.createElement('div'))
-    const extension = union(defineDoc(), defineText(), defineParagraph())
+    const extension = defineTestExtension()
     const editor = createEditor({ extension })
     editor.mount(div)
     expect(div.outerHTML).toMatchInlineSnapshot(
@@ -27,7 +26,7 @@ describe('createEditor', () => {
   })
 
   it('can get and update state', () => {
-    const extension = union(defineDoc(), defineText(), defineParagraph())
+    const extension = defineTestExtension()
     const editor = createEditor({ extension })
 
     const update = (text: string) => {
@@ -91,7 +90,7 @@ describe('createEditor', () => {
   })
 
   it('can update document and selection', () => {
-    const extension = union(defineDoc(), defineText(), defineParagraph())
+    const extension = defineTestExtension()
     const editor = createEditor({ extension })
 
     expect(editor.state.doc.textContent).toMatchInlineSnapshot(`""`)
@@ -159,7 +158,7 @@ describe('createEditor', () => {
   })
 
   it('can refuse invalid document', () => {
-    const extension = union(defineDoc(), defineText(), defineParagraph())
+    const extension = defineTestExtension()
     const editor = createEditor({ extension })
 
     const invalidDoc: NodeJSON = {

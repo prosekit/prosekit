@@ -6,10 +6,7 @@ import {
 } from 'vitest'
 
 import { createEditor } from '../../editor/editor'
-import { union } from '../../editor/union'
-import { defineDoc } from '../doc'
-import { defineParagraph } from '../paragraph'
-import { defineText } from '../text'
+import { defineTestExtension } from '../../testing'
 
 import { defineDOMEventHandler } from './dom-event'
 
@@ -19,7 +16,7 @@ describe('defineDOMEventHandler', () => {
     const handleFocus = vi.fn()
     const handleBlur = vi.fn()
 
-    const extension = union(defineDoc(), defineText(), defineParagraph())
+    const extension = defineTestExtension()
     const editor = createEditor({ extension })
     editor.mount(div)
 

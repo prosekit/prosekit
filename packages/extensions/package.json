@@ -33,6 +33,7 @@
     "./code-block": "./src/code-block/index.ts",
     "./commit": "./src/commit/index.ts",
     "./commit/style.css": "./src/commit/style.css",
+    "./doc": "./src/doc/index.ts",
     "./drop-cursor": "./src/drop-cursor/index.ts",
     "./enter-rule": "./src/enter-rule/index.ts",
     "./file": "./src/file/index.ts",
@@ -51,6 +52,7 @@
     "./mark-rule": "./src/mark-rule/index.ts",
     "./mention": "./src/mention/index.ts",
     "./mod-click-prevention": "./src/mod-click-prevention/index.ts",
+    "./paragraph": "./src/paragraph/index.ts",
     "./placeholder": "./src/placeholder/index.ts",
     "./placeholder/style.css": "./src/placeholder/style.css",
     "./readonly": "./src/readonly/index.ts",
@@ -59,6 +61,7 @@
     "./strike": "./src/strike/index.ts",
     "./table": "./src/table/index.ts",
     "./table/style.css": "./src/table/style.css",
+    "./text": "./src/text/index.ts",
     "./text-align": "./src/text-align/index.ts",
     "./underline": "./src/underline/index.ts",
     "./virtual-selection": "./src/virtual-selection/index.ts",
@@ -160,6 +163,11 @@
       "./commit/style.css": {
         "default": "./dist/commit/style.css"
       },
+      "./doc": {
+        "types": "./dist/prosekit-extensions-doc.d.ts",
+        "import": "./dist/prosekit-extensions-doc.js",
+        "default": "./dist/prosekit-extensions-doc.js"
+      },
       "./drop-cursor": {
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
         "import": "./dist/prosekit-extensions-drop-cursor.js",
@@ -244,6 +252,11 @@
         "import": "./dist/prosekit-extensions-mod-click-prevention.js",
         "default": "./dist/prosekit-extensions-mod-click-prevention.js"
       },
+      "./paragraph": {
+        "types": "./dist/prosekit-extensions-paragraph.d.ts",
+        "import": "./dist/prosekit-extensions-paragraph.js",
+        "default": "./dist/prosekit-extensions-paragraph.js"
+      },
       "./placeholder": {
         "types": "./dist/prosekit-extensions-placeholder.d.ts",
         "import": "./dist/prosekit-extensions-placeholder.js",
@@ -277,6 +290,11 @@
       },
       "./table/style.css": {
         "default": "./dist/table/style.css"
+      },
+      "./text": {
+        "types": "./dist/prosekit-extensions-text.d.ts",
+        "import": "./dist/prosekit-extensions-text.js",
+        "default": "./dist/prosekit-extensions-text.js"
       },
       "./text-align": {
         "types": "./dist/prosekit-extensions-text-align.d.ts",
@@ -331,6 +349,9 @@
         "commit": [
           "./dist/prosekit-extensions-commit.d.ts"
         ],
+        "doc": [
+          "./dist/prosekit-extensions-doc.d.ts"
+        ],
         "drop-cursor": [
           "./dist/prosekit-extensions-drop-cursor.d.ts"
         ],
@@ -376,6 +397,9 @@
         "mod-click-prevention": [
           "./dist/prosekit-extensions-mod-click-prevention.d.ts"
         ],
+        "paragraph": [
+          "./dist/prosekit-extensions-paragraph.d.ts"
+        ],
         "placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"
         ],
@@ -390,6 +414,9 @@
         ],
         "table": [
           "./dist/prosekit-extensions-table.d.ts"
+        ],
+        "text": [
+          "./dist/prosekit-extensions-text.d.ts"
         ],
         "text-align": [
           "./dist/prosekit-extensions-text-align.d.ts"

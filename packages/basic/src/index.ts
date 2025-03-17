@@ -1,17 +1,11 @@
 import {
   defineBaseCommands,
   defineBaseKeymap,
-  defineDoc,
   defineHistory,
-  defineParagraph,
-  defineText,
   union,
   type BaseCommandsExtension,
   type BaseKeymapExtension,
-  type DocExtension,
   type HistoryExtension,
-  type ParagraphExtension,
-  type TextExtension,
   type Union,
 } from '@prosekit/core'
 import {
@@ -30,6 +24,10 @@ import {
   defineCodeBlock,
   type CodeBlockExtension,
 } from '@prosekit/extensions/code-block'
+import {
+  defineDoc,
+  type DocExtension,
+} from '@prosekit/extensions/doc'
 import {
   defineDropCursor,
   type DropCursorExtension,
@@ -67,6 +65,10 @@ import {
   type ModClickPreventionExtension,
 } from '@prosekit/extensions/mod-click-prevention'
 import {
+  defineParagraph,
+  type ParagraphExtension,
+} from '@prosekit/extensions/paragraph'
+import {
   defineStrike,
   type StrikeExtension,
 } from '@prosekit/extensions/strike'
@@ -74,6 +76,10 @@ import {
   defineTable,
   type TableExtension,
 } from '@prosekit/extensions/table'
+import {
+  defineText,
+  type TextExtension,
+} from '@prosekit/extensions/text'
 import {
   defineUnderline,
   type UnderlineExtension,
@@ -88,29 +94,32 @@ import {
  */
 export type BasicExtension = Union<
   [
+    // Nodes
     DocExtension,
     TextExtension,
+    ParagraphExtension,
     HeadingExtension,
-    HistoryExtension,
     ListExtension,
     BlockquoteExtension,
-    BaseKeymapExtension,
-    BaseCommandsExtension,
+    ImageExtension,
+    HorizontalRuleExtension,
+    TableExtension,
+    CodeBlockExtension,
+    // Marks
     ItalicExtension,
     BoldExtension,
     UnderlineExtension,
     StrikeExtension,
     CodeExtension,
     LinkExtension,
-    ImageExtension,
-    ParagraphExtension,
+    // Others
+    BaseKeymapExtension,
+    BaseCommandsExtension,
+    HistoryExtension,
     DropCursorExtension,
     GapCursorExtension,
-    HorizontalRuleExtension,
     VirtualSelectionExtension,
     ModClickPreventionExtension,
-    TableExtension,
-    CodeBlockExtension,
   ]
 >
 
@@ -122,54 +131,57 @@ export type BasicExtension = Union<
  *
  * - {@link defineDoc}
  * - {@link defineText}
+ * - {@link defineParagraph}
  * - {@link defineHeading}
- * - {@link defineHistory}
  * - {@link defineList}
  * - {@link defineBlockquote}
- * - {@link defineBaseKeymap}
- * - {@link defineBaseCommands}
+ * - {@link defineImage}
+ * - {@link defineHorizontalRule}
+ * - {@link defineTable}
+ * - {@link defineCodeBlock}
  * - {@link defineItalic}
  * - {@link defineBold}
  * - {@link defineUnderline}
  * - {@link defineStrike}
  * - {@link defineCode}
  * - {@link defineLink}
- * - {@link defineImage}
- * - {@link defineParagraph}
+ * - {@link defineBaseKeymap}
+ * - {@link defineBaseCommands}
+ * - {@link defineHistory}
  * - {@link defineDropCursor}
  * - {@link defineGapCursor}
- * - {@link defineHorizontalRule}
  * - {@link defineVirtualSelection}
  * - {@link defineModClickPrevention}
- * - {@link defineTable}
- * - {@link defineCodeBlock}
  *
  * @public
  */
 export function defineBasicExtension(): BasicExtension {
   return union(
+    // Nodes
     defineDoc(),
     defineText(),
+    defineParagraph(),
     defineHeading(),
-    defineHistory(),
     defineList(),
     defineBlockquote(),
-    defineBaseKeymap(),
-    defineBaseCommands(),
+    defineImage(),
+    defineHorizontalRule(),
+    defineTable(),
+    defineCodeBlock(),
+    // Marks
     defineItalic(),
     defineBold(),
     defineUnderline(),
     defineStrike(),
     defineCode(),
     defineLink(),
-    defineImage(),
-    defineParagraph(),
+    // Others
+    defineBaseKeymap(),
+    defineBaseCommands(),
+    defineHistory(),
     defineDropCursor(),
     defineGapCursor(),
-    defineHorizontalRule(),
     defineVirtualSelection(),
     defineModClickPrevention(),
-    defineTable(),
-    defineCodeBlock(),
   )
 }

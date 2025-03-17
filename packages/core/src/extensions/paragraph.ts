@@ -29,7 +29,7 @@ export type ParagraphSpecExtension = Extension<{
  *
  * Defines a paragraph node spec.
  */
-export function defineParagraphSpec(): ParagraphSpecExtension {
+function defineParagraphSpec(): ParagraphSpecExtension {
   return defineNodeSpec({
     name: 'paragraph',
     content: 'inline*',
@@ -80,12 +80,19 @@ export type ParagraphExtension = Union<
 /**
  * @public
  *
- * Defines a paragraph node.
+ * Defines a paragraph node spec as the highest priority, because it should be the default block node for most cases.
  *
- * The `paragraph` node spec is defined as the highest priority, because it
- * should be the default block node for most cases.
+ * @deprecated Use the following import instead:
+ *
+ * ```ts
+ * import { defineParagraph } from 'prosekit/extensions/paragraph'
+ * ```
  */
 export function defineParagraph(): ParagraphExtension {
+  console.warn(
+    '[prosekit] The `defineParagraph` function from `prosekit/core` is deprecated. Use the following import instead: `import { defineParagraph } from "prosekit/extensions/paragraph"`.',
+  )
+
   return union(
     defineParagraphCommands(),
     defineParagraphKeymap(),

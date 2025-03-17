@@ -12,7 +12,14 @@ The `italic` mark is used to represent text that is using an italicized type. It
 
 ### `toggleItalic`
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineItalic } from 'prosekit/extensions/italic'
+
+const extension = defineItalic()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleItalic()
 ```
 

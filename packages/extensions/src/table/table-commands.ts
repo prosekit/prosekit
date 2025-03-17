@@ -72,9 +72,22 @@ function repeat<T>(node: T, length: number): T[] {
  * @public
  */
 export interface InsertTableOptions {
+  /**
+   * The number of rows in the table.
+   */
   row: number
+
+  /**
+   * The number of columns in the table.
+   */
   col: number
-  header: boolean
+
+  /**
+   * Whether the table has a header row.
+   *
+   * @default false
+   */
+  header?: boolean
 }
 
 /**
@@ -87,7 +100,7 @@ export interface InsertTableOptions {
  */
 export function insertTable(options: InsertTableOptions): Command {
   return (state, dispatch, view) => {
-    const { row, col, header } = options
+    const { row, col, header = false } = options
     const table = createEmptyTable(state.schema, row, col, header)
     return insertNode({ node: table })(state, dispatch, view)
   }

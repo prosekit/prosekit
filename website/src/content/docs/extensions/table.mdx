@@ -29,7 +29,7 @@ import { defineTable } from 'prosekit/extensions/table'
 const extension = defineTable()
 const editor = createEditor({ extension })
 // ---cut---
-editor.commands.insertTable({ rows: 3, cols: 3 })
+editor.commands.insertTable({ row: 3, col: 3, header: true })
 ```
 
 ### `exitTable`

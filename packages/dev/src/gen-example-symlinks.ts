@@ -318,8 +318,10 @@ export async function genExampleSymlinks() {
       const relativeSourcePath = path.relative(targetDir, sourcePath)
 
       // Remove any existing symlink or file at the target path
-      if (await fs.pathExists(targetPath)) {
+      try {
         await fs.remove(targetPath)
+      } catch {
+        // ignore
       }
 
       // Create the symlink

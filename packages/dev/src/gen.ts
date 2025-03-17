@@ -10,7 +10,6 @@ import { genTypedocJson } from './gen-typedoc-json.js'
 import { genWebsitePages } from './gen-website-pages.js'
 import { skipGen } from './skip-gen.js'
 import { sleep } from './sleep.js'
-import { timer } from './timer.js'
 import { vfs } from './virtual-file-system.js'
 
 async function genAll(): Promise<boolean> {
@@ -48,4 +47,4 @@ async function main() {
   }
 }
 
-await timer(main)()
+await main()

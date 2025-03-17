@@ -21,7 +21,7 @@
   },
   "scripts": {
     "build": "tsc -b tsconfig.json",
-    "gen": "tsx src/gen.ts"
+    "gen": "time tsx src/gen.ts"
   },
   "dependencies": {
     "@manypkg/find-root": "^2.2.3",

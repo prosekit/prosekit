@@ -1,10 +1,7 @@
 import {
   createEditor,
   defineBaseCommands,
-  defineDoc,
   defineMarkSpec,
-  defineParagraph,
-  defineText,
   elementFromNode,
   union,
   type Editor,
@@ -15,6 +12,10 @@ import {
   expect,
   it,
 } from 'vitest'
+
+import { defineDoc } from '../doc'
+import { defineParagraph } from '../paragraph'
+import { defineText } from '../text'
 
 import { defineMarkRule } from './index'
 

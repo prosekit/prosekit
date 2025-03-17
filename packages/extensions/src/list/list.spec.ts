@@ -1,8 +1,5 @@
 import {
   createEditor,
-  defineDoc,
-  defineParagraph,
-  defineText,
   union,
 } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
@@ -12,7 +9,10 @@ import {
   it,
 } from 'vitest'
 
+import { defineDoc } from '../doc'
+import { defineParagraph } from '../paragraph'
 import { setupTest } from '../testing'
+import { defineText } from '../text'
 
 import { defineList } from './index'
 

@@ -2,6 +2,7 @@ import { genChangesetConfigJson } from './gen-changeset-config-json.js'
 import { genChangeset } from './gen-changeset.js'
 import { genComponents } from './gen-components.js'
 import { genExampleMetaYaml } from './gen-example-meta-yaml.js'
+import { genExampleSymlinks } from './gen-example-symlinks.js'
 import { genPackageJson } from './gen-package-json.js'
 import { genSizeLimitJson } from './gen-size-limit-json.js'
 import { genTsconfigJson } from './gen-tsconfig-json.js'
@@ -27,6 +28,7 @@ async function genAll(): Promise<boolean> {
 
   // Example for website
   await genExampleMetaYaml()
+  await genExampleSymlinks()
   await genWebsitePages()
 
   return await vfs.commit()

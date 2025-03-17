@@ -59,7 +59,11 @@ To save content when the document changes, use the `useDocChange` hook:
 
 <TabItem label="React">
 
-```ts
+```ts twoslash
+// @noErrors
+import { useDocChange } from 'prosekit/react'
+const editor = { getDocJSON: () => ({}) } // placeholder for example
+// ---cut---
 import { useDocChange } from 'prosekit/react'
 
 useDocChange(() => {

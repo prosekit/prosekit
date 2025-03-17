@@ -1,10 +1,5 @@
 {
   "extends": "@ocavue/tsconfig/dom/root.json",
-  "include": [
-    "./*",
-    "**/*.test.*",
-    "**/*.spec.*",
-    "**/testing/**/*",
-  ],
+  "include": ["./*", "**/*.spec.*", "**/testing/**/*"],
   "references": [{ "path": "./tsconfig.build.json" }],
 }

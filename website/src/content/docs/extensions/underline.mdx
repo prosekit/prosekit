@@ -12,7 +12,14 @@ The `underline` mark is used to represent text with a underline. It will be rend
 
 ### `toggleUnderline`
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineUnderline } from 'prosekit/extensions/underline'
+
+const extension = defineUnderline()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleUnderline()
 ```
 

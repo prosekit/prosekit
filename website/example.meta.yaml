@@ -87,6 +87,10 @@ examples:
         hidden: false
       - path: inline-menu.tsx
         hidden: false
+      - path: slash-menu-empty.tsx
+        hidden: false
+      - path: slash-menu-item.tsx
+        hidden: false
       - path: slash-menu.tsx
         hidden: false
       - path: tag-data.ts
@@ -299,6 +303,10 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: slash-menu-empty.tsx
+        hidden: false
+      - path: slash-menu-item.tsx
+        hidden: false
       - path: slash-menu.tsx
         hidden: false
   - name: react-table
@@ -509,6 +517,10 @@ examples:
         hidden: false
       - path: inline-menu.vue
         hidden: false
+      - path: slash-menu-empty.vue
+        hidden: false
+      - path: slash-menu-item.vue
+        hidden: false
       - path: slash-menu.vue
         hidden: false
       - path: tag-data.ts
@@ -687,6 +699,10 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: false
+      - path: slash-menu-empty.vue
+        hidden: false
+      - path: slash-menu-item.vue
+        hidden: false
       - path: slash-menu.vue
         hidden: false
   - name: vue-strike
@@ -861,6 +877,10 @@ examples:
         hidden: false
       - path: extension.ts
         hidden: true
+      - path: slash-menu-empty.tsx
+        hidden: false
+      - path: slash-menu-item.tsx
+        hidden: false
       - path: slash-menu.tsx
         hidden: false
   - name: preact-typography
@@ -981,6 +1001,10 @@ examples:
         hidden: false
       - path: inline-menu.svelte
         hidden: false
+      - path: slash-menu-empty.svelte
+        hidden: false
+      - path: slash-menu-item.svelte
+        hidden: false
       - path: slash-menu.svelte
         hidden: false
       - path: tag-data.ts
@@ -1078,6 +1102,10 @@ examples:
       - path: editor.svelte
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: slash-menu-empty.svelte
+        hidden: false
+      - path: slash-menu-item.svelte
         hidden: false
       - path: slash-menu.svelte
         hidden: false
@@ -1212,6 +1240,10 @@ examples:
       - path: editor.tsx
         hidden: false
       - path: extension.ts
+        hidden: false
+      - path: slash-menu-empty.tsx
+        hidden: false
+      - path: slash-menu-item.tsx
         hidden: false
       - path: slash-menu.tsx
         hidden: false

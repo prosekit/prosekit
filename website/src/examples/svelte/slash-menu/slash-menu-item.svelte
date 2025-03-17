@@ -1,0 +1,1 @@
+../../../shared/svelte/slash-menu-item.svelte

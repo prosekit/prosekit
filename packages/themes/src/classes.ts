@@ -117,13 +117,17 @@ export const INLINE_MENU_LINK_REMOVE_BUTTON = cn(
 )
 
 export const AUTOCOMPLETE_MENU = cn(
-  'relative block max-h-[25rem] min-w-[8rem] select-none overflow-auto whitespace-nowrap p-1',
+  'relative block max-h-[25rem] min-w-[15rem] select-none overflow-auto whitespace-nowrap p-1',
   FLOATING_MENU,
 )
 
 export const AUTOCOMPLETE_MENU_ITEM = cn(
-  'relative block min-w-[8rem] scroll-my-1 rounded px-3 py-1.5',
+  'relative flex items-center justify-between min-w-[8rem] scroll-my-1 rounded px-3 py-1.5',
   FLOATING_MENU_ITEM,
+)
+
+export const AUTOCOMPLETE_MENU_KEYBOARD = cn(
+  'text-xs font-mono text-gray-400 dark:text-gray-500',
 )
 
 export const LANGUAGE_WRAPPER = cn(

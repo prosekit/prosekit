@@ -1,0 +1,1 @@
+../../../shared/vue/slash-menu-empty.vue

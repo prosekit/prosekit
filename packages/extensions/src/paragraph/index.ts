@@ -16,7 +16,7 @@ type ParagraphSpecExtension = Extension<{
 }>
 
 /**
- * @public
+ * @internal
  *
  * Defines a paragraph node spec.
  */

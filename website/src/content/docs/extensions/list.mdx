@@ -99,7 +99,14 @@ editor.commands.toggleCollapsed()
 
 Wraps the selection in a list with the given type and attributes, or change the list kind if the selection is already in another kind of list, or unwrap the selected list if otherwise.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.toggleList({ kind: 'task', checked: true })
 ```
 
@@ -107,7 +114,14 @@ editor.commands.toggleList({ kind: 'task', checked: true })
 
 Unwraps the list around the selection.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.unwrapList()
 ```
 
@@ -115,7 +129,14 @@ editor.commands.unwrapList()
 
 Wraps the selection in a list with the given type and attributes.
 
-```ts
+```ts twoslash
+// @noErrors
+import { createEditor } from 'prosekit/core'
+import { defineList } from 'prosekit/extensions/list'
+
+const extension = defineList()
+const editor = createEditor({ extension })
+// ---cut---
 editor.commands.wrapInList({ kind: 'bullet' })
 ```
 

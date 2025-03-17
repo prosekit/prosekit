@@ -277,7 +277,6 @@ const mapping: Record<string, string[]> = {
 export async function genExampleSymlinks() {
   if (skipGen()) return
 
-  // The root directory of the website
   const rootDir = await vfs.getRootDir()
   const websiteSrcDir = path.join(rootDir, 'website', 'src')
 

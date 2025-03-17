@@ -113,7 +113,11 @@ useDocChange(() => {
 
 <TabItem label="Preact">
 
-```ts
+```ts twoslash
+// @noErrors
+import { useDocChange } from 'prosekit/preact'
+const editor = { getDocJSON: () => ({}) } // placeholder for example
+// ---cut---
 import { useDocChange } from 'prosekit/preact'
 
 useDocChange(() => {

@@ -23,7 +23,10 @@ export type ParagraphExtension = Union<[ParagraphSpecExtension, ParagraphCommand
 /**
  * @public
  *
- * Defines a paragraph node spec as the highest priority, because it should be the default block node for most cases.
+ * Defines a paragraph node.
+ *
+ * The paragraph node spec has the highest priority, because it should be the
+ * default block node for most cases.
  */
 export function defineParagraph(): ParagraphExtension {
   return union(

@@ -103,7 +103,10 @@ This compositional pattern allows you to build on existing extensions and add ex
 
 ```ts twoslash
 import { defineBasicExtension } from 'prosekit/basic'
-import { union, createEditor } from 'prosekit/core'
+import {
+  createEditor,
+  union,
+} from 'prosekit/core'
 import { defineCodeBlockShiki } from 'prosekit/extensions/code-block'
 
 function defineMyExtension() {

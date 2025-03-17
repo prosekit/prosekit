@@ -34,7 +34,7 @@ describe('findParentNode', () => {
     `)
   })
 
-  it('can handle the top level node', () => {
+  it('can handle the top-level node', () => {
     const { editor, n } = setupTest()
     editor.set(n.doc(n.p('foo<a>')))
 

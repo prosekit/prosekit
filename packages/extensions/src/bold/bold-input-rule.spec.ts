@@ -39,7 +39,7 @@ describe('defineBoldInputRule', () => {
     )
   })
 
-  it.fails('should not add bold marks when typing "**" inside a code mark', async () => {
+  it('should not add bold marks when typing "**" inside a code mark', async () => {
     const doc = n.doc(n.p(m.code('code <a>')))
     editor.set(doc)
 

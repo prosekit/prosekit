@@ -217,7 +217,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "solid-js": "^1.9.5",
-    "svelte": "^5.23.1",
+    "svelte": "^5.23.2",
     "tsup": "^8.4.0",
     "typedoc": "^0.27.9",
     "typedoc-plugin-external-package-links": "^0.1.0",

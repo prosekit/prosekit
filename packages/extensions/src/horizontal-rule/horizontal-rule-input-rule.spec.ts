@@ -48,4 +48,14 @@ describe('defineHorizontalRuleInputRule', () => {
       n.doc(n.p('123---')).toJSON(),
     )
   })
+
+  it('should not insert a horizontal rule inside a code block', async () => {
+    const doc = n.doc(n.codeBlock('<a>'))
+    editor.set(doc)
+
+    await inputText('---')
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.codeBlock('---')).toJSON(),
+    )
+  })
 })

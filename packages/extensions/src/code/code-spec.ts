@@ -20,6 +20,7 @@ export function defineCodeSpec(): CodeSpecExtension {
   return defineMarkSpec({
     name: 'code',
     parseDOM: [{ tag: 'code' }],
+    code: true,
     toDOM() {
       return ['code', 0]
     },

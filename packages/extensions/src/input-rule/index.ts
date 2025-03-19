@@ -57,6 +57,13 @@ export interface MarkInputRuleOptions {
    * Attributes to set on the mark.
    */
   attrs?: Attrs | null | ((match: RegExpMatchArray) => Attrs | null)
+
+  /**
+   * Whether this rule should fire inside marks marked as [code](https://prosemirror.net/docs/ref/#model.MarkSpec.code).
+   *
+   * @default `false`
+   */
+  inCodeMark?: boolean
 }
 
 /**
@@ -66,6 +73,7 @@ export function createMarkInputRule({
   regex,
   type,
   attrs = null,
+  inCodeMark = false,
 }: MarkInputRuleOptions): InputRule {
   const rule = new InputRule(regex, (state, match, start, end) => {
     const { tr, schema } = state
@@ -108,7 +116,7 @@ export function createMarkInputRule({
     tr.setStoredMarks(initialStoredMarks)
 
     return tr
-  })
+  }, { inCodeMark })
 
   return rule
 }

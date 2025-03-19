@@ -8,7 +8,7 @@ import { setupTest } from '../testing'
 import { inputText } from '../testing/keyboard'
 
 describe('defineBoldInputRule', () => {
-  const { editor, n, m  } = setupTest()
+  const { editor, n, m } = setupTest()
   it('should add bold marks when typing "**"', async () => {
     const doc = n.doc(n.p('<a>'))
     editor.set(doc)
@@ -17,8 +17,6 @@ describe('defineBoldInputRule', () => {
     expect(editor.view.state.doc.toJSON()).toEqual(
       n.doc(n.p('**word')).toJSON(),
     )
-
-    
 
     await inputText('*')
     expect(editor.view.state.doc.toJSON()).toEqual(

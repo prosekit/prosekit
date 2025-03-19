@@ -18,6 +18,7 @@ import {
 import { defineBlockquote } from '../blockquote'
 import { defineBold } from '../bold'
 import { defineCode } from '../code'
+import { defineCodeBlock } from '../code-block'
 import { defineDoc } from '../doc'
 import { defineHeading } from '../heading'
 import { defineHorizontalRule } from '../horizontal-rule'
@@ -63,6 +64,7 @@ export function defineTestExtension() {
     defineParagraph(),
     defineTable(),
     defineHorizontalRule(),
+    defineCodeBlock(),
   )
 }
 

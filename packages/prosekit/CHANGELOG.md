@@ -1,5 +1,57 @@
 # prosekit
 
+## 0.12.0
+
+### Minor Changes
+
+- [`4b085db`](https://github.com/ocavue/prosekit/commit/4b085dbf47d90da929d975ba6843906e0a1da33c) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/core)
+
+  **Breaking change**: Moved `defineDoc`, `defineText`, and `defineParagraph` from `prosekit/core` to `prosekit/extensions`. This makes the core package lighter and more focused.
+
+  Old imports are deprecated but still available. They will print a warning when used.
+
+  _Before_:
+
+  ```ts
+  import { defineDoc, defineText, defineParagraph } from 'prosekit/core'
+  ```
+
+  _After_:
+
+  ```ts
+  import { defineDoc } from 'prosekit/extensions/doc'
+  import { defineText } from 'prosekit/extensions/text'
+  import { defineParagraph } from 'prosekit/extensions/paragraph'
+  ```
+
+- [`581ed6f`](https://github.com/ocavue/prosekit/commit/581ed6f8e36b29d805e4b81e1b452e71454350f1) ![](https://prosekit.dev/b/extensions)
+
+  Changed heading shortcuts from `mod-1`, `mod-2` to `mod-alt-1`, `mod-alt-2`, etc. This matches popular text editors like Google Docs, Microsoft Word, and Notion.
+
+- [`e73bc55`](https://github.com/ocavue/prosekit/commit/e73bc5559e43cdd4a01c81e8174f6c9707d9ea2c) ![](https://prosekit.dev/b/extensions)
+
+  Added new keyboard shortcut `mod-alt-0` and command `setParagraph` to set the current selected textblock into a paragraph node.
+
+- [`c980cc3`](https://github.com/ocavue/prosekit/commit/c980cc308a1c5f18ac0eb9bc7d9fa8935a8894e3) ![](https://prosekit.dev/b/basic) ![](https://prosekit.dev/b/extensions)
+
+  `defineCodeBlockShiki()` now sets two CSS variables `--prosemirror-highlight`
+  and `--prosemirror-highlight-bg` on the code block elements, representing the
+  text color and background color of the code block respectively. These colors are
+  based on the Shiki theme you pass to `defineCodeBlockShiki()`.
+
+  `prosekit/basic/typography.css` is also updated to use these CSS variables to
+  set the text color and background color of code blocks.
+
+### Patch Changes
+
+- [`665ad43`](https://github.com/ocavue/prosekit/commit/665ad4303bf4f870932425223c6f0631092c8782) ![](https://prosekit.dev/b/extensions)
+
+  Mark input rules won't fire inside `code` marks anymore by default. `defineMarkInputRule` now has an `inCodeMark` option to control this behavior.
+
+- [`af5d7f8`](https://github.com/ocavue/prosekit/commit/af5d7f8a4f21e0ca6784d3b98a3c7df795afa945) ![](https://prosekit.dev/b/basic)
+
+  `defineBasicExtension()` now includes `defineCodeBlock()`.
+
 ## 0.11.5
 
 ### Patch Changes

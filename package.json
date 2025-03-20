@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.6.3",
+  "packageManager": "pnpm@10.6.5",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
@@ -27,7 +27,7 @@
     "@changesets/cli": "^2.28.1",
     "@changesets/types": "^6.1.0",
     "@manypkg/cli": "^0.23.0",
-    "@ocavue/eslint-config": "^2.13.0",
+    "@ocavue/eslint-config": "^2.13.1",
     "@ocavue/tsconfig": "^0.2.0",
     "@prosekit/unocss-preset": "workspace:*",
     "@size-limit/esbuild-why": "^11.2.0",

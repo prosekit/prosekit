@@ -1,13 +1,18 @@
 import { PersistedState } from 'runed'
 
-export function useFramework(frameworks: string[]) {
-  const preferredFramework = new PersistedState('prosekit-docs-framework', 'react')
-  return {
-    get current() {
-      return frameworks.includes(preferredFramework.current) ? preferredFramework.current : frameworks[0]
-    },
-    set current(value: string) {
-      preferredFramework.current = value
-    },
-  }
+export function useFramework(frameworks: string[]): {
+  get current(): string
+  set current(value: string)
+} {
+  return typeof window === 'undefined'
+    ? useFrameworkServer(frameworks)
+    : useFrameworkClient(frameworks)
+}
+
+function useFrameworkServer(frameworks: string[]) {
+  return { current: frameworks[0] }
+}
+
+function useFrameworkClient(frameworks: string[]) {
+  return new PersistedState('prosekit-docs-framework', frameworks[0])
 }

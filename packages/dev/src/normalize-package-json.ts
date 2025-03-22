@@ -107,7 +107,6 @@ export async function normalizePackageJson(pkg: Package) {
       publishExports[path] = {
         types: `./dist/${distName}.d.ts`,
         svelte: isSvelte ? `./dist/${distName}.js` : undefined,
-        import: `./dist/${distName}.js`,
         default: `./dist/${distName}.js`,
       }
     }

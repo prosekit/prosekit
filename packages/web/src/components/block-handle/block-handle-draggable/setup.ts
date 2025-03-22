@@ -75,17 +75,22 @@ function useDraggingPreview(
       return
     }
 
-    const { element, node } = hoverState
+    const { element, node, pos } = hoverState
 
     event.dataTransfer.clearData()
     event.dataTransfer.setData('text/html', element.outerHTML)
     event.dataTransfer.effectAllowed = 'copyMove'
     event.dataTransfer.setDragImage(element, 0, 0)
 
-    view.dragging = {
+    // An object matching the internal ProseMirror API shape.
+    // See https://github.com/ProseMirror/prosemirror-view/blob/1.38.1/src/input.ts#L657
+    const dragging = {
       slice: new Slice(Fragment.from(node), 0, 0),
       move: true,
+      node: NodeSelection.create(view.state.doc, pos),
     }
+
+    view.dragging = dragging
   })
 }
 

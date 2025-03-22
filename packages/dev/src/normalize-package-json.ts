@@ -55,7 +55,6 @@ export async function normalizePackageJson(pkg: Package) {
       exports[path] = sourcePath
       publishExports[path] = {
         types: `./dist/${distName}.d.ts`,
-        import: `./dist/${distName}.js`,
         default: `./dist/${distName}.js`,
       }
     } else if (path.endsWith('.css')) {

@@ -69,9 +69,9 @@ export function defineLinkSpec(): LinkSpecExtension {
  */
 export type LinkCommandsExtension = Extension<{
   Commands: {
-    addLink: [LinkAttrs]
+    addLink: [attrs: LinkAttrs]
     removeLink: []
-    toggleLink: [LinkAttrs]
+    toggleLink: [attrs: LinkAttrs]
     expandLink: []
   }
 }>

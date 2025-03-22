@@ -300,7 +300,7 @@ export function selectTable(options?: SelectTableOptions): Command {
  */
 export type TableCommandsExtension = Extension<{
   Commands: {
-    insertTable: [InsertTableOptions]
+    insertTable: [options: InsertTableOptions]
     exitTable: []
 
     selectTable: [options?: SelectTableOptions]

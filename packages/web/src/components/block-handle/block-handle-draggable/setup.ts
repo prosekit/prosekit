@@ -75,17 +75,18 @@ function useDraggingPreview(
       return
     }
 
-    const { element, node } = hoverState
+    const { element, node, pos } = hoverState
 
     event.dataTransfer.clearData()
     event.dataTransfer.setData('text/html', element.outerHTML)
     event.dataTransfer.effectAllowed = 'copyMove'
     event.dataTransfer.setDragImage(element, 0, 0)
 
-    view.dragging = {
-      slice: new Slice(Fragment.from(node), 0, 0),
-      move: true,
-    }
+    view.dragging = new Dragging(
+      new Slice(Fragment.from(node), 0, 0),
+      true,
+      NodeSelection.create(view.state.doc, pos),
+    )
   })
 }
 
@@ -106,4 +107,13 @@ function useDragging(host: ConnectableElement): ReadonlySignal<boolean> {
   })
 
   return dragging
+}
+
+/**
+ * Copied from internal ProseMirror API. See also https://github.com/prosemirror/prosemirror-view/commit/9d0eb67f
+ *
+ * @internal
+ */
+class Dragging {
+  constructor(readonly slice: Slice, readonly move: boolean, readonly node?: NodeSelection) {}
 }

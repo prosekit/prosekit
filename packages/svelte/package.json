@@ -91,49 +91,41 @@
     "exports": {
       ".": {
         "types": "./dist/prosekit-svelte.d.ts",
-        "import": "./dist/prosekit-svelte.js",
         "default": "./dist/prosekit-svelte.js"
       },
       "./autocomplete": {
         "types": "./dist/prosekit-svelte-autocomplete.d.ts",
         "svelte": "./dist/prosekit-svelte-autocomplete.js",
-        "import": "./dist/prosekit-svelte-autocomplete.js",
         "default": "./dist/prosekit-svelte-autocomplete.js"
       },
       "./block-handle": {
         "types": "./dist/prosekit-svelte-block-handle.d.ts",
         "svelte": "./dist/prosekit-svelte-block-handle.js",
-        "import": "./dist/prosekit-svelte-block-handle.js",
         "default": "./dist/prosekit-svelte-block-handle.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-svelte-inline-popover.d.ts",
         "svelte": "./dist/prosekit-svelte-inline-popover.js",
-        "import": "./dist/prosekit-svelte-inline-popover.js",
         "default": "./dist/prosekit-svelte-inline-popover.js"
       },
       "./popover": {
         "types": "./dist/prosekit-svelte-popover.d.ts",
         "svelte": "./dist/prosekit-svelte-popover.js",
-        "import": "./dist/prosekit-svelte-popover.js",
         "default": "./dist/prosekit-svelte-popover.js"
       },
       "./resizable": {
         "types": "./dist/prosekit-svelte-resizable.d.ts",
         "svelte": "./dist/prosekit-svelte-resizable.js",
-        "import": "./dist/prosekit-svelte-resizable.js",
         "default": "./dist/prosekit-svelte-resizable.js"
       },
       "./table-handle": {
         "types": "./dist/prosekit-svelte-table-handle.d.ts",
         "svelte": "./dist/prosekit-svelte-table-handle.js",
-        "import": "./dist/prosekit-svelte-table-handle.js",
         "default": "./dist/prosekit-svelte-table-handle.js"
       },
       "./tooltip": {
         "types": "./dist/prosekit-svelte-tooltip.d.ts",
         "svelte": "./dist/prosekit-svelte-tooltip.js",
-        "import": "./dist/prosekit-svelte-tooltip.js",
         "default": "./dist/prosekit-svelte-tooltip.js"
       }
     },

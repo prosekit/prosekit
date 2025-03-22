@@ -32,7 +32,7 @@
     "@prosekit/unocss-preset": "workspace:*",
     "@size-limit/esbuild-why": "^11.2.0",
     "@size-limit/preset-small-lib": "^11.2.0",
-    "@unocss/eslint-config": "^0.65.4",
+    "@unocss/eslint-config": "^66.0.0",
     "@vitest/browser": "^3.0.9",
     "@vitest/coverage-v8": "^3.0.9",
     "cross-env": "^7.0.3",
@@ -47,7 +47,7 @@
     "size-limit": "^11.2.0",
     "turbo": "^2.4.4",
     "typescript": "~5.7.3",
-    "unocss": "^0.65.4",
+    "unocss": "^66.0.0",
     "vitest": "^3.0.9"
   },
   "pnpm": {

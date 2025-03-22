@@ -145,6 +145,11 @@ div.ProseMirror {
     }
   }
 
+  & .tableWrapper {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+
   & .prosemirror-flat-list {
     /* Use the same line-height as <p> */
     line-height: 1.5;

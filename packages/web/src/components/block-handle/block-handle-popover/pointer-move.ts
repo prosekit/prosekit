@@ -90,7 +90,7 @@ function findBlockByCoordinate(view: EditorView, x: number, y: number): { node: 
   let pos = -1
 
   while (parent) {
-    if (parent.isBlock && (parent.isTextblock || parent.isAtom)) {
+    if (parent.isBlock && (parent.isTextblock || parent.isAtom || parent.type.spec.isolating)) {
       return { node: parent, pos }
     }
 

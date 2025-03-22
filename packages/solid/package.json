@@ -67,42 +67,34 @@
     "exports": {
       ".": {
         "types": "./dist/prosekit-solid.d.ts",
-        "import": "./dist/prosekit-solid.js",
         "default": "./dist/prosekit-solid.js"
       },
       "./autocomplete": {
         "types": "./dist/prosekit-solid-autocomplete.d.ts",
-        "import": "./dist/prosekit-solid-autocomplete.js",
         "default": "./dist/prosekit-solid-autocomplete.js"
       },
       "./block-handle": {
         "types": "./dist/prosekit-solid-block-handle.d.ts",
-        "import": "./dist/prosekit-solid-block-handle.js",
         "default": "./dist/prosekit-solid-block-handle.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-solid-inline-popover.d.ts",
-        "import": "./dist/prosekit-solid-inline-popover.js",
         "default": "./dist/prosekit-solid-inline-popover.js"
       },
       "./popover": {
         "types": "./dist/prosekit-solid-popover.d.ts",
-        "import": "./dist/prosekit-solid-popover.js",
         "default": "./dist/prosekit-solid-popover.js"
       },
       "./resizable": {
         "types": "./dist/prosekit-solid-resizable.d.ts",
-        "import": "./dist/prosekit-solid-resizable.js",
         "default": "./dist/prosekit-solid-resizable.js"
       },
       "./table-handle": {
         "types": "./dist/prosekit-solid-table-handle.d.ts",
-        "import": "./dist/prosekit-solid-table-handle.js",
         "default": "./dist/prosekit-solid-table-handle.js"
       },
       "./tooltip": {
         "types": "./dist/prosekit-solid-tooltip.d.ts",
-        "import": "./dist/prosekit-solid-tooltip.js",
         "default": "./dist/prosekit-solid-tooltip.js"
       }
     },

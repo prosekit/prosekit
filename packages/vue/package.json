@@ -69,42 +69,34 @@
     "exports": {
       ".": {
         "types": "./dist/prosekit-vue.d.ts",
-        "import": "./dist/prosekit-vue.js",
         "default": "./dist/prosekit-vue.js"
       },
       "./autocomplete": {
         "types": "./dist/prosekit-vue-autocomplete.d.ts",
-        "import": "./dist/prosekit-vue-autocomplete.js",
         "default": "./dist/prosekit-vue-autocomplete.js"
       },
       "./block-handle": {
         "types": "./dist/prosekit-vue-block-handle.d.ts",
-        "import": "./dist/prosekit-vue-block-handle.js",
         "default": "./dist/prosekit-vue-block-handle.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-vue-inline-popover.d.ts",
-        "import": "./dist/prosekit-vue-inline-popover.js",
         "default": "./dist/prosekit-vue-inline-popover.js"
       },
       "./popover": {
         "types": "./dist/prosekit-vue-popover.d.ts",
-        "import": "./dist/prosekit-vue-popover.js",
         "default": "./dist/prosekit-vue-popover.js"
       },
       "./resizable": {
         "types": "./dist/prosekit-vue-resizable.d.ts",
-        "import": "./dist/prosekit-vue-resizable.js",
         "default": "./dist/prosekit-vue-resizable.js"
       },
       "./table-handle": {
         "types": "./dist/prosekit-vue-table-handle.d.ts",
-        "import": "./dist/prosekit-vue-table-handle.js",
         "default": "./dist/prosekit-vue-table-handle.js"
       },
       "./tooltip": {
         "types": "./dist/prosekit-vue-tooltip.d.ts",
-        "import": "./dist/prosekit-vue-tooltip.js",
         "default": "./dist/prosekit-vue-tooltip.js"
       }
     },

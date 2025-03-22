@@ -66,42 +66,34 @@
     "exports": {
       ".": {
         "types": "./dist/prosekit-preact.d.ts",
-        "import": "./dist/prosekit-preact.js",
         "default": "./dist/prosekit-preact.js"
       },
       "./autocomplete": {
         "types": "./dist/prosekit-preact-autocomplete.d.ts",
-        "import": "./dist/prosekit-preact-autocomplete.js",
         "default": "./dist/prosekit-preact-autocomplete.js"
       },
       "./block-handle": {
         "types": "./dist/prosekit-preact-block-handle.d.ts",
-        "import": "./dist/prosekit-preact-block-handle.js",
         "default": "./dist/prosekit-preact-block-handle.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-preact-inline-popover.d.ts",
-        "import": "./dist/prosekit-preact-inline-popover.js",
         "default": "./dist/prosekit-preact-inline-popover.js"
       },
       "./popover": {
         "types": "./dist/prosekit-preact-popover.d.ts",
-        "import": "./dist/prosekit-preact-popover.js",
         "default": "./dist/prosekit-preact-popover.js"
       },
       "./resizable": {
         "types": "./dist/prosekit-preact-resizable.d.ts",
-        "import": "./dist/prosekit-preact-resizable.js",
         "default": "./dist/prosekit-preact-resizable.js"
       },
       "./table-handle": {
         "types": "./dist/prosekit-preact-table-handle.d.ts",
-        "import": "./dist/prosekit-preact-table-handle.js",
         "default": "./dist/prosekit-preact-table-handle.js"
       },
       "./tooltip": {
         "types": "./dist/prosekit-preact-tooltip.d.ts",
-        "import": "./dist/prosekit-preact-tooltip.js",
         "default": "./dist/prosekit-preact-tooltip.js"
       }
     },

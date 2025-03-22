@@ -127,37 +127,30 @@
     "exports": {
       ".": {
         "types": "./dist/prosekit-extensions.d.ts",
-        "import": "./dist/prosekit-extensions.js",
         "default": "./dist/prosekit-extensions.js"
       },
       "./autocomplete": {
         "types": "./dist/prosekit-extensions-autocomplete.d.ts",
-        "import": "./dist/prosekit-extensions-autocomplete.js",
         "default": "./dist/prosekit-extensions-autocomplete.js"
       },
       "./blockquote": {
         "types": "./dist/prosekit-extensions-blockquote.d.ts",
-        "import": "./dist/prosekit-extensions-blockquote.js",
         "default": "./dist/prosekit-extensions-blockquote.js"
       },
       "./bold": {
         "types": "./dist/prosekit-extensions-bold.d.ts",
-        "import": "./dist/prosekit-extensions-bold.js",
         "default": "./dist/prosekit-extensions-bold.js"
       },
       "./code": {
         "types": "./dist/prosekit-extensions-code.d.ts",
-        "import": "./dist/prosekit-extensions-code.js",
         "default": "./dist/prosekit-extensions-code.js"
       },
       "./code-block": {
         "types": "./dist/prosekit-extensions-code-block.d.ts",
-        "import": "./dist/prosekit-extensions-code-block.js",
         "default": "./dist/prosekit-extensions-code-block.js"
       },
       "./commit": {
         "types": "./dist/prosekit-extensions-commit.d.ts",
-        "import": "./dist/prosekit-extensions-commit.js",
         "default": "./dist/prosekit-extensions-commit.js"
       },
       "./commit/style.css": {
@@ -165,27 +158,22 @@
       },
       "./doc": {
         "types": "./dist/prosekit-extensions-doc.d.ts",
-        "import": "./dist/prosekit-extensions-doc.js",
         "default": "./dist/prosekit-extensions-doc.js"
       },
       "./drop-cursor": {
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
-        "import": "./dist/prosekit-extensions-drop-cursor.js",
         "default": "./dist/prosekit-extensions-drop-cursor.js"
       },
       "./enter-rule": {
         "types": "./dist/prosekit-extensions-enter-rule.d.ts",
-        "import": "./dist/prosekit-extensions-enter-rule.js",
         "default": "./dist/prosekit-extensions-enter-rule.js"
       },
       "./file": {
         "types": "./dist/prosekit-extensions-file.d.ts",
-        "import": "./dist/prosekit-extensions-file.js",
         "default": "./dist/prosekit-extensions-file.js"
       },
       "./gap-cursor": {
         "types": "./dist/prosekit-extensions-gap-cursor.d.ts",
-        "import": "./dist/prosekit-extensions-gap-cursor.js",
         "default": "./dist/prosekit-extensions-gap-cursor.js"
       },
       "./gap-cursor/style.css": {
@@ -193,37 +181,30 @@
       },
       "./heading": {
         "types": "./dist/prosekit-extensions-heading.d.ts",
-        "import": "./dist/prosekit-extensions-heading.js",
         "default": "./dist/prosekit-extensions-heading.js"
       },
       "./horizontal-rule": {
         "types": "./dist/prosekit-extensions-horizontal-rule.d.ts",
-        "import": "./dist/prosekit-extensions-horizontal-rule.js",
         "default": "./dist/prosekit-extensions-horizontal-rule.js"
       },
       "./image": {
         "types": "./dist/prosekit-extensions-image.d.ts",
-        "import": "./dist/prosekit-extensions-image.js",
         "default": "./dist/prosekit-extensions-image.js"
       },
       "./input-rule": {
         "types": "./dist/prosekit-extensions-input-rule.d.ts",
-        "import": "./dist/prosekit-extensions-input-rule.js",
         "default": "./dist/prosekit-extensions-input-rule.js"
       },
       "./italic": {
         "types": "./dist/prosekit-extensions-italic.d.ts",
-        "import": "./dist/prosekit-extensions-italic.js",
         "default": "./dist/prosekit-extensions-italic.js"
       },
       "./link": {
         "types": "./dist/prosekit-extensions-link.d.ts",
-        "import": "./dist/prosekit-extensions-link.js",
         "default": "./dist/prosekit-extensions-link.js"
       },
       "./list": {
         "types": "./dist/prosekit-extensions-list.d.ts",
-        "import": "./dist/prosekit-extensions-list.js",
         "default": "./dist/prosekit-extensions-list.js"
       },
       "./list/style.css": {
@@ -231,7 +212,6 @@
       },
       "./loro": {
         "types": "./dist/prosekit-extensions-loro.d.ts",
-        "import": "./dist/prosekit-extensions-loro.js",
         "default": "./dist/prosekit-extensions-loro.js"
       },
       "./loro/style.css": {
@@ -239,27 +219,22 @@
       },
       "./mark-rule": {
         "types": "./dist/prosekit-extensions-mark-rule.d.ts",
-        "import": "./dist/prosekit-extensions-mark-rule.js",
         "default": "./dist/prosekit-extensions-mark-rule.js"
       },
       "./mention": {
         "types": "./dist/prosekit-extensions-mention.d.ts",
-        "import": "./dist/prosekit-extensions-mention.js",
         "default": "./dist/prosekit-extensions-mention.js"
       },
       "./mod-click-prevention": {
         "types": "./dist/prosekit-extensions-mod-click-prevention.d.ts",
-        "import": "./dist/prosekit-extensions-mod-click-prevention.js",
         "default": "./dist/prosekit-extensions-mod-click-prevention.js"
       },
       "./paragraph": {
         "types": "./dist/prosekit-extensions-paragraph.d.ts",
-        "import": "./dist/prosekit-extensions-paragraph.js",
         "default": "./dist/prosekit-extensions-paragraph.js"
       },
       "./placeholder": {
         "types": "./dist/prosekit-extensions-placeholder.d.ts",
-        "import": "./dist/prosekit-extensions-placeholder.js",
         "default": "./dist/prosekit-extensions-placeholder.js"
       },
       "./placeholder/style.css": {
@@ -267,12 +242,10 @@
       },
       "./readonly": {
         "types": "./dist/prosekit-extensions-readonly.d.ts",
-        "import": "./dist/prosekit-extensions-readonly.js",
         "default": "./dist/prosekit-extensions-readonly.js"
       },
       "./search": {
         "types": "./dist/prosekit-extensions-search.d.ts",
-        "import": "./dist/prosekit-extensions-search.js",
         "default": "./dist/prosekit-extensions-search.js"
       },
       "./search/style.css": {
@@ -280,12 +253,10 @@
       },
       "./strike": {
         "types": "./dist/prosekit-extensions-strike.d.ts",
-        "import": "./dist/prosekit-extensions-strike.js",
         "default": "./dist/prosekit-extensions-strike.js"
       },
       "./table": {
         "types": "./dist/prosekit-extensions-table.d.ts",
-        "import": "./dist/prosekit-extensions-table.js",
         "default": "./dist/prosekit-extensions-table.js"
       },
       "./table/style.css": {
@@ -293,22 +264,18 @@
       },
       "./text": {
         "types": "./dist/prosekit-extensions-text.d.ts",
-        "import": "./dist/prosekit-extensions-text.js",
         "default": "./dist/prosekit-extensions-text.js"
       },
       "./text-align": {
         "types": "./dist/prosekit-extensions-text-align.d.ts",
-        "import": "./dist/prosekit-extensions-text-align.js",
         "default": "./dist/prosekit-extensions-text-align.js"
       },
       "./underline": {
         "types": "./dist/prosekit-extensions-underline.d.ts",
-        "import": "./dist/prosekit-extensions-underline.js",
         "default": "./dist/prosekit-extensions-underline.js"
       },
       "./virtual-selection": {
         "types": "./dist/prosekit-extensions-virtual-selection.d.ts",
-        "import": "./dist/prosekit-extensions-virtual-selection.js",
         "default": "./dist/prosekit-extensions-virtual-selection.js"
       },
       "./virtual-selection/style.css": {
@@ -316,7 +283,6 @@
       },
       "./yjs": {
         "types": "./dist/prosekit-extensions-yjs.d.ts",
-        "import": "./dist/prosekit-extensions-yjs.js",
         "default": "./dist/prosekit-extensions-yjs.js"
       },
       "./yjs/style.css": {

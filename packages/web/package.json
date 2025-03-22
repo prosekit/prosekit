@@ -69,42 +69,34 @@
     "exports": {
       ".": {
         "types": "./dist/prosekit-web.d.ts",
-        "import": "./dist/prosekit-web.js",
         "default": "./dist/prosekit-web.js"
       },
       "./autocomplete": {
         "types": "./dist/prosekit-web-autocomplete.d.ts",
-        "import": "./dist/prosekit-web-autocomplete.js",
         "default": "./dist/prosekit-web-autocomplete.js"
       },
       "./block-handle": {
         "types": "./dist/prosekit-web-block-handle.d.ts",
-        "import": "./dist/prosekit-web-block-handle.js",
         "default": "./dist/prosekit-web-block-handle.js"
       },
       "./inline-popover": {
         "types": "./dist/prosekit-web-inline-popover.d.ts",
-        "import": "./dist/prosekit-web-inline-popover.js",
         "default": "./dist/prosekit-web-inline-popover.js"
       },
       "./popover": {
         "types": "./dist/prosekit-web-popover.d.ts",
-        "import": "./dist/prosekit-web-popover.js",
         "default": "./dist/prosekit-web-popover.js"
       },
       "./resizable": {
         "types": "./dist/prosekit-web-resizable.d.ts",
-        "import": "./dist/prosekit-web-resizable.js",
         "default": "./dist/prosekit-web-resizable.js"
       },
       "./table-handle": {
         "types": "./dist/prosekit-web-table-handle.d.ts",
-        "import": "./dist/prosekit-web-table-handle.js",
         "default": "./dist/prosekit-web-table-handle.js"
       },
       "./tooltip": {
         "types": "./dist/prosekit-web-tooltip.d.ts",
-        "import": "./dist/prosekit-web-tooltip.js",
         "default": "./dist/prosekit-web-tooltip.js"
       }
     },

@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.12.1
+
+### Patch Changes
+
+- [`e5bac67`](https://github.com/ocavue/prosekit/commit/e5bac67f577eee91fda6db7b72501686157052c4) ![](https://prosekit.dev/b/basic)
+
+  Add margin to tables for improved spacing in `prosekit/basic/typography.css`.
+
+- [`e5bac67`](https://github.com/ocavue/prosekit/commit/e5bac67f577eee91fda6db7b72501686157052c4) ![](https://prosekit.dev/b/web)
+
+  Fix a bug where the block handle was placed inside tables.
+
+- [`445d59e`](https://github.com/ocavue/prosekit/commit/445d59e16b004329403aa3e70ed2171b2d627306) ![](https://prosekit.dev/b/web)
+
+  Fix a bug where an empty table was left over after dragging a table.
+
 ## 0.12.0
 
 ### Minor Changes

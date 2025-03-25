@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.4.12",
   "private": false,
-  "author": { 
+  "author": {
     "name": "ocavue",
     "email": "ocavue@gmail.com"
   },

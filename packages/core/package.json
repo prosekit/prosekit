@@ -36,6 +36,7 @@
     "build:tsup": "tsup"
   },
   "dependencies": {
+    "@ocavue/utils": "^0.3.0",
     "@prosekit/pm": "workspace:^",
     "clsx": "^2.1.1",
     "just-clone": "^6.2.0",

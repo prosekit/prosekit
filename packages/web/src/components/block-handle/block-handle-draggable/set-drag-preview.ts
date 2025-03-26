@@ -21,14 +21,6 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
   const { clientX, clientY } = event
 
   const document = element.ownerDocument
-  const port = document.createElement('div')
-
-  assignStyles(port, {
-    position: 'fixed',
-    top: '0',
-    left: '0',
-    zIndex: maxZIndex,
-  })
 
   const container = document.createElement('div')
 
@@ -37,15 +29,21 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
   // If outsideY is positive, the point is above the element.
   const outsideY = Math.round(elementY - clientY)
 
-  // Only reliable cross browser technique found to push a drag preview away
-  // from the cursor is to use transparent borders on the container.
-  // https://github.com/atlassian/pragmatic-drag-and-drop/blob/56276552/packages/core/src/public-utils/element/custom-native-drag-preview/pointer-outside-of-preview.ts#L13-L18
   const borderX = Math.max(outsideX, 0)
   const borderY = Math.max(outsideY, 0)
   assignStyles(container, {
-    boxSizing: 'border-box',
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    zIndex: maxZIndex,
+
+    // Only reliable cross browser technique found to push a drag preview away
+    // from the cursor is to use transparent borders on the container.
+    // https://github.com/atlassian/pragmatic-drag-and-drop/blob/56276552/packages/core/src/public-utils/element/custom-native-drag-preview/pointer-outside-of-preview.ts#L13-L18
     borderLeft: `${borderX}px solid transparent`,
     borderTop: `${borderY}px solid transparent`,
+
+    boxSizing: 'border-box',
     width: `${width + borderX}px`,
     height: `${height + borderY}px`,
   })
@@ -56,13 +54,12 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
     opacity: '0.5',
   })
 
-  document.body.appendChild(port)
-  port.appendChild(container)
+  document.body.appendChild(container)
   container.appendChild(clonedElement)
 
-  event.dataTransfer?.setDragImage(port, Math.max(-outsideX, 0), Math.max(-outsideY, 0))
+  event.dataTransfer?.setDragImage(container, Math.max(-outsideX, 0), Math.max(-outsideY, 0))
 
   requestAnimationFrame(() => {
-    port.remove()
+    container.remove()
   })
 }

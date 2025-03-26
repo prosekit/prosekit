@@ -14,11 +14,13 @@ import {
 } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
 
+import { getElementAtPos } from '../../../utils/get-element-at-pos'
 import {
   blockPopoverContext,
   type BlockPopoverContext,
 } from '../context'
 
+import { setDragPreview } from './set-drag-preview'
 import type { BlockHandleDraggableProps } from './types'
 
 export function useBlockHandleDraggable(
@@ -75,12 +77,17 @@ function useDraggingPreview(
       return
     }
 
-    const { element, node, pos } = hoverState
+    const { node, pos } = hoverState
+
+    const element = getElementAtPos(view, pos)
+    if (!element) {
+      return
+    }
 
     event.dataTransfer.clearData()
     event.dataTransfer.setData('text/html', element.outerHTML)
     event.dataTransfer.effectAllowed = 'copyMove'
-    event.dataTransfer.setDragImage(element, 0, 0)
+    setDragPreview(event, element)
 
     // An object matching the internal ProseMirror API shape.
     // See https://github.com/ProseMirror/prosemirror-view/blob/1.38.1/src/input.ts#L657

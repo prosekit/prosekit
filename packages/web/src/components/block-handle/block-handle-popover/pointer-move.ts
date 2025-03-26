@@ -7,6 +7,7 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { getClientRect } from '../../../utils/get-client-rect'
+import { getElementAtPos } from '../../../utils/get-element-at-pos'
 import { throttle } from '../../../utils/throttle'
 import type { HoverState } from '../context'
 
@@ -34,7 +35,7 @@ export function defineElementHoverHandler(handler: ElementHoverHandler) {
       },
     }
 
-    handler(reference, { element, node, pos })
+    handler(reference, { node, pos })
   }
 
   const handlePointerEvent = (view: EditorView, event: PointerEvent) => {
@@ -70,13 +71,6 @@ export function defineElementHoverHandler(handler: ElementHoverHandler) {
     defineDOMEventHandler('pointerout', handlePointerEvent),
     defineDOMEventHandler('keypress', () => handler(null, null)),
   )
-}
-
-function getElementAtPos(view: EditorView, pos: number): HTMLElement | undefined {
-  const node = view.nodeDOM(pos)
-  if (node && node.nodeType === ELEMENT_NODE) {
-    return node as HTMLElement
-  }
 }
 
 function findBlockByCoordinate(view: EditorView, x: number, y: number): { node: ProseMirrorNode; pos: number } | undefined {

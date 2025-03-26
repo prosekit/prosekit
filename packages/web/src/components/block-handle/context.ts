@@ -5,7 +5,6 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
  * @internal
  */
 export interface HoverState {
-  element: HTMLElement
   node: ProseMirrorNode
   pos: number
 }

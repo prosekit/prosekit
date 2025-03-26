@@ -60,7 +60,7 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
   port.appendChild(container)
   container.appendChild(clonedElement)
 
-  event.dataTransfer?.setDragImage(container, Math.max(-outsideX, 0), Math.max(-outsideY, 0))
+  event.dataTransfer?.setDragImage(port, Math.max(-outsideX, 0), Math.max(-outsideY, 0))
 
   requestAnimationFrame(() => {
     port.remove()

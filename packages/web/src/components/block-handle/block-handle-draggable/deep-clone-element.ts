@@ -1,9 +1,9 @@
 /**
- * Creates a deep clone of an HTMLElement, including all computed styles so that
+ * Creates a deep clone of an Element, including all computed styles so that
  * it looks the same as the original element.
  */
-export function deepCloneElement(element: HTMLElement): HTMLElement {
-  const clonedElement = element.cloneNode(true) as HTMLElement
+export function deepCloneElement<T extends Element>(element: T): T {
+  const clonedElement = element.cloneNode(true) as T
   deepCopyStyles(element, clonedElement)
   return clonedElement
 }

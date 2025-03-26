@@ -1,5 +1,10 @@
 import type { VirtualElement } from '@floating-ui/dom'
 import {
+  isElement,
+  isHTMLElement,
+  isTextNode,
+} from '@ocavue/utils'
+import {
   defineDOMEventHandler,
   union,
 } from '@prosekit/core'
@@ -7,8 +12,6 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { getClientRect } from '../../../utils/get-client-rect'
-import { getElementAtPos } from '../../../utils/get-element-at-pos'
-import { NodeType } from '../../../utils/node-types'
 import { throttle } from '../../../utils/throttle'
 import type { HoverState } from '../context'
 
@@ -45,8 +48,8 @@ export function defineElementHoverHandler(handler: ElementHoverHandler) {
     }
 
     const { node, pos } = block
-    const element = getElementAtPos(view, pos)
-    if (!element) {
+    const element = view.nodeDOM(pos)
+    if (!element || !isHTMLElement(element)) {
       handler(null, null)
       return
     }
@@ -125,14 +128,9 @@ function findBlockByCoordinate(view: EditorView, x: number, y: number): { node: 
 }
 
 function getNodeRect(node: Node | null | undefined): Rect | undefined {
-  if (!node || node.nodeType !== NodeType.ELEMENT_NODE) {
-    return
+  if (node && isElement(node) && node.isConnected) {
+    return getClientRect(node)
   }
-  const element = node as HTMLElement
-  if (!element.isConnected) {
-    return
-  }
-  return getClientRect(element)
 }
 
 function isWithinRect(rect: Rect, x: number, y: number) {
@@ -172,13 +170,12 @@ function findFirstLineRect(outer?: Node | null, inner?: Node | null): Rect | und
 }
 
 function findOuterRect(node: Node): Rect | undefined {
-  if (node.nodeType !== NodeType.ELEMENT_NODE) {
+  if (!isElement(node)) {
     return
   }
 
-  const element = node as HTMLElement
-  const rect = getClientRect(element)
-  const style = element.ownerDocument.defaultView?.getComputedStyle(element)
+  const rect = getClientRect(node)
+  const style = node.ownerDocument.defaultView?.getComputedStyle(node)
   const marginLeft = style && Number.parseInt(style.marginLeft, 10) || 0
   const marginRight = style && Number.parseInt(style.marginRight, 10) || 0
   const left = rect.left - marginLeft
@@ -188,11 +185,10 @@ function findOuterRect(node: Node): Rect | undefined {
 }
 
 function findFirstLineRectInNode(node: Node): Rect | undefined {
-  switch (node.nodeType) {
-    case NodeType.TEXT_NODE:
-      return findFirstLineRectInTextNode(node as Text)
-    case NodeType.ELEMENT_NODE:
-      return findFirstLineRectInElement(node as HTMLElement)
+  if (isElement(node)) {
+    return findFirstLineRectInElement(node)
+  } else if (isTextNode(node)) {
+    return findFirstLineRectInTextNode(node)
   }
 }
 
@@ -208,7 +204,7 @@ function findFirstLineRectInTextNode(node: Text): Rect | undefined {
   return rects[0]
 }
 
-function findFirstLineRectInElement(element: HTMLElement): Rect | undefined {
+function findFirstLineRectInElement(element: Element): Rect | undefined {
   if (element.nodeName === 'BR') {
     return element.getBoundingClientRect()
   }

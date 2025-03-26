@@ -7,6 +7,7 @@ import {
   type ReadonlySignal,
   type SignalState,
 } from '@aria-ui/core'
+import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import {
   Fragment,
@@ -14,7 +15,6 @@ import {
 } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
 
-import { getElementAtPos } from '../../../utils/get-element-at-pos'
 import {
   blockPopoverContext,
   type BlockPopoverContext,
@@ -79,8 +79,8 @@ function useDraggingPreview(
 
     const { node, pos } = hoverState
 
-    const element = getElementAtPos(view, pos)
-    if (!element) {
+    const element = view.nodeDOM(pos)
+    if (!element || !isHTMLElement(element)) {
       return
     }
 

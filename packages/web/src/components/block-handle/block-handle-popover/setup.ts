@@ -38,7 +38,7 @@ export function useBlockHandlePopover(
   const open = createSignal(false)
 
   useEffect(host, () => {
-    open.set(!!context.get()?.element)
+    open.set(!!context.get())
   })
 
   useHoverExtension(host, editor, (referenceValue, hoverState) => {
@@ -72,5 +72,5 @@ function useHoverExtension(
 function isHoverStateEqual(a: HoverState | null, b: HoverState | null) {
   if (!a && !b) return true
   if (!a || !b) return false
-  return a.element === b.element && a.pos === b.pos && a.node.eq(b.node)
+  return a.pos === b.pos && a.node.eq(b.node)
 }

@@ -747,6 +747,9 @@ importers:
       '@floating-ui/dom':
         specifier: ^1.6.13
         version: 1.6.13
+      '@ocavue/utils':
+        specifier: ^0.2.0
+        version: 0.2.0
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -1944,6 +1947,9 @@ packages:
 
   '@ocavue/tsconfig@0.2.0':
     resolution: {integrity: sha512-J5bo/9hxAU3j+CPEHhTrqvFMIIerpaTvxO7ZaoYZbvE0R/usQLA6jiLAZpstX/Ln+toD9hkqOGGQhZk0HJWfqg==}
+
+  '@ocavue/utils@0.2.0':
+    resolution: {integrity: sha512-DV52Q7h+Gsn/ozBs4GsgKI80gYmuHK76LsmNy0CnI9yfpQMLO3zt1r/fY8HP4Fb9VP29F1LjCF0PQ5DLzQMo4w==}
 
   '@octokit/action@6.1.0':
     resolution: {integrity: sha512-lo+nHx8kAV86bxvOVOI3vFjX3gXPd/L7guAUbvs3pUvnR2KC+R7yjBkA1uACt4gYhs4LcWP3AXSGQzsbeN2XXw==}
@@ -8550,6 +8556,8 @@ snapshots:
       - typescript
 
   '@ocavue/tsconfig@0.2.0': {}
+
+  '@ocavue/utils@0.2.0': {}
 
   '@octokit/action@6.1.0':
     dependencies:

@@ -7,6 +7,7 @@ import {
   type ReadonlySignal,
   type SignalState,
 } from '@aria-ui/core'
+import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import {
   Fragment,
@@ -19,6 +20,7 @@ import {
   type BlockPopoverContext,
 } from '../context'
 
+import { setDragPreview } from './set-drag-preview'
 import type { BlockHandleDraggableProps } from './types'
 
 export function useBlockHandleDraggable(
@@ -75,12 +77,17 @@ function useDraggingPreview(
       return
     }
 
-    const { element, node, pos } = hoverState
+    const { node, pos } = hoverState
+
+    const element = view.nodeDOM(pos)
+    if (!element || !isHTMLElement(element)) {
+      return
+    }
 
     event.dataTransfer.clearData()
     event.dataTransfer.setData('text/html', element.outerHTML)
     event.dataTransfer.effectAllowed = 'copyMove'
-    event.dataTransfer.setDragImage(element, 0, 0)
+    setDragPreview(event, element)
 
     // An object matching the internal ProseMirror API shape.
     // See https://github.com/ProseMirror/prosemirror-view/blob/1.38.1/src/input.ts#L657

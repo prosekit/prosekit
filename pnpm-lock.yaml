@@ -244,6 +244,9 @@ importers:
 
   packages/extensions:
     dependencies:
+      '@ocavue/utils':
+        specifier: ^0.3.0
+        version: 0.3.0
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core

@@ -1,3 +1,4 @@
+import { isElementLike } from '@ocavue/utils'
 import type {
   DOMOutputSpec,
   Mark,
@@ -5,7 +6,6 @@ import type {
   TagParseRule,
 } from '@prosekit/pm/model'
 
-import { isElement } from './is-element'
 import { isNotNullish } from './type-assertion'
 
 interface AttrOptions {
@@ -42,7 +42,7 @@ export function wrapTagParseRuleAttrs(
     getAttrs: (dom) => {
       const baseAttrs = existingGetAttrs?.(dom) ?? existingAttrs ?? {}
 
-      if (baseAttrs === false || !dom || !isElement(dom)) {
+      if (baseAttrs === false || !dom || !isElementLike(dom)) {
         return baseAttrs ?? null
       }
 
@@ -81,11 +81,11 @@ export function insertOutputSpecAttrs(
     return [dom[0], newAttrs, ...rest]
   }
 
-  if (isElement(dom)) {
+  if (isElementLike(dom)) {
     return setElementAttributes(dom, attrs)
   }
 
-  if (typeof dom === 'object' && 'dom' in dom && isElement(dom.dom)) {
+  if (typeof dom === 'object' && 'dom' in dom && isElementLike(dom.dom)) {
     return { ...dom, dom: setElementAttributes(dom.dom, attrs) }
   }
 

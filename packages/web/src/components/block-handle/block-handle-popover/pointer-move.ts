@@ -8,7 +8,7 @@ import type { EditorView } from '@prosekit/pm/view'
 
 import { getClientRect } from '../../../utils/get-client-rect'
 import { getElementAtPos } from '../../../utils/get-element-at-pos'
-import { NodeTypes } from '../../../utils/node-types'
+import { NodeType } from '../../../utils/node-types'
 import { throttle } from '../../../utils/throttle'
 import type { HoverState } from '../context'
 
@@ -125,7 +125,7 @@ function findBlockByCoordinate(view: EditorView, x: number, y: number): { node: 
 }
 
 function getNodeRect(node: Node | null | undefined): Rect | undefined {
-  if (!node || node.nodeType !== NodeTypes.ELEMENT_NODE) {
+  if (!node || node.nodeType !== NodeType.ELEMENT_NODE) {
     return
   }
   const element = node as HTMLElement
@@ -172,7 +172,7 @@ function findFirstLineRect(outer?: Node | null, inner?: Node | null): Rect | und
 }
 
 function findOuterRect(node: Node): Rect | undefined {
-  if (node.nodeType !== NodeTypes.ELEMENT_NODE) {
+  if (node.nodeType !== NodeType.ELEMENT_NODE) {
     return
   }
 
@@ -189,9 +189,9 @@ function findOuterRect(node: Node): Rect | undefined {
 
 function findFirstLineRectInNode(node: Node): Rect | undefined {
   switch (node.nodeType) {
-    case NodeTypes.TEXT_NODE:
+    case NodeType.TEXT_NODE:
       return findFirstLineRectInTextNode(node as Text)
-    case NodeTypes.ELEMENT_NODE:
+    case NodeType.ELEMENT_NODE:
       return findFirstLineRectInElement(node as HTMLElement)
   }
 }

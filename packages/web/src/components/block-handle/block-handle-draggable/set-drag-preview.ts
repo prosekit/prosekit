@@ -32,6 +32,11 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
   const borderX = Math.max(outsideX, 0)
   const borderY = Math.max(outsideY, 0)
   assignStyles(container, {
+    // Ensuring we don't cause reflow when adding the element to the page using
+    // `position:fixed` rather than `position:absolute` so we are positioned on
+    // the current viewport. `position:fixed` also creates a new stacking
+    // context, so we don't need to do that here.
+    // https://github.com/atlassian/pragmatic-drag-and-drop/blob/56276552/packages/core/src/public-utils/element/custom-native-drag-preview/set-custom-native-drag-preview.ts#L60
     position: 'fixed',
     top: '0',
     left: '0',

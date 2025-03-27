@@ -1,3 +1,4 @@
+import { isElementLike } from '@ocavue/utils'
 import type {
   ProseMirrorNode,
   Schema,
@@ -10,7 +11,6 @@ import type {
 } from '../types/model'
 
 import { assert } from './assert'
-import { isElement } from './is-element'
 import {
   jsonFromElement,
   jsonFromHTML,
@@ -26,7 +26,7 @@ export function getEditorContentJSON(
 ): NodeJSON {
   if (typeof content === 'string') {
     return jsonFromHTML(content, { schema })
-  } else if (isElement(content)) {
+  } else if (isElementLike(content)) {
     return jsonFromElement(content, { schema })
   } else {
     return content

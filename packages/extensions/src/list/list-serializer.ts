@@ -1,7 +1,5 @@
-import {
-  defineClipboardSerializer,
-  isElement,
-} from '@prosekit/core'
+import { isElementLike } from '@ocavue/utils'
+import { defineClipboardSerializer } from '@prosekit/core'
 import {
   joinListElements,
   listToDOM,
@@ -21,7 +19,7 @@ export function defineListSerializer() {
     serializeNodeWrapper: (fn) => {
       return (...args) => {
         const dom = fn(...args)
-        return isElement(dom) ? joinListElements(dom) : dom
+        return isElementLike(dom) ? joinListElements(dom) : dom
       }
     },
     nodesFromSchemaWrapper: (fn) => {

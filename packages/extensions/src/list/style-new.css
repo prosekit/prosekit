@@ -19,7 +19,6 @@
     padding: 0;
     margin: 0;
     position: relative;
-    display: list-item;
     list-style: none;
   }
 
@@ -35,7 +34,7 @@
 
     & > .list-content {
       margin-left: 1.5em;
-      margin-right: 1lh;
+      margin-left: 1lh;
     }
   }
 
@@ -66,11 +65,40 @@
   }
 
   &[data-list-kind='task'] {
+    display: flex;
+
     /* TODO: WHY */
-    &::marker {
-      content: ' ';
-      position: absolute;
+    &::before {
+      content: '12345';
+      /* height: 24px; */
+      /* position: absolute; */
+      width: 2px;
+      overflow: hidden;
+      display: inline-block;
       left: 0;
+      background-color: lightblue;
+      display: block;
+      justify-self: stretch;
+      align-self: stretch;
+    }
+
+    /* TODO: WHY */
+    &::after {
+      content: '1234';
+      /* height: 24px; */
+      /* position: absolute; */
+      width: 2px;
+      overflow: hidden;
+      display: inline-block;
+      left: 0;
+      background-color: lightyellow;
+      display: block;
+      justify-self: stretch;
+      align-self: stretch;
+    }
+
+    & > .list-content {
+      flex: 1;
     }
   }
 

@@ -22,9 +22,9 @@ export type ElementHoverHandler = (
 
 export function defineElementHoverHandler(handler: ElementHoverHandler) {
   const handleElement = (
-    element: HTMLElement,
     node: ProseMirrorNode,
     pos: number,
+    element: HTMLElement,
     parentElement?: Node | null,
   ) => {
     const reference: VirtualElement = {
@@ -58,13 +58,14 @@ export function defineElementHoverHandler(handler: ElementHoverHandler) {
     // list node or a blockquote node, we want to put the block handle agains
     // the parent node.
     const $pos = view.state.doc.resolve(pos)
-    let parentElement: Node | undefined | null
     if ($pos.depth > 0 && $pos.index($pos.depth) === 0) {
       const parentPos = $pos.before($pos.depth)
-      parentElement = view.nodeDOM(parentPos)
+      const parentNode = $pos.parent
+      const parentElement = view.nodeDOM(parentPos)
+      handleElement(parentNode, parentPos, element, parentElement)
+    } else {
+      handleElement(node, pos, element)
     }
-
-    handleElement(element, node, pos, parentElement)
   }
 
   return union(

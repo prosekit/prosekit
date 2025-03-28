@@ -131,6 +131,7 @@ testStory(['full'], () => {
     const editor = await waitForEditor(page)
     await emptyEditor(page)
     const blockHandle = page.locator('prosekit-block-handle-popover')
+    const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
 
     // Insert a list node with two paragraphs
     await editor.pressSequentially('- First paragraph')
@@ -163,9 +164,23 @@ testStory(['full'], () => {
     // box1 should be more left than box2
     expect(box1.x).toBeLessThan(box2.x)
 
-    // Hover over the first paragraph
+    // Hover over the first paragraph and click on it
     await p1.hover({ timeout: 4000 })
     await expectBlockHandleToOpen(page)
+    await blockHandleDraggable.click()
+
+    // Expect the list node to be selected
+    // FIXME: list node should be selected
+    await expect(p1).toHaveClass('ProseMirror-selectednode')
+    await expect(listNode).toHaveClass('ProseMirror-selectednode')
+
+    // Hover over the second paragraph and click on it
+    await p2.hover({ timeout: 4000 })
+    await expectBlockHandleToOpen(page)
+    await blockHandleDraggable.click()
+
+    // Expect the second paragraph to be selected
+    await expect(p2).toHaveClass('ProseMirror-selectednode')
   })
 })
 

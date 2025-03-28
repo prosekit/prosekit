@@ -2,6 +2,7 @@ import {
   expect,
   test,
   type Locator,
+  type Page,
 } from '@playwright/test'
 
 import {
@@ -26,14 +27,14 @@ testStory(['full'], () => {
       await expect(blockHandle).toBeAttached()
 
       await block.hover({ timeout: 4000 })
-      await expect(blockHandle).toHaveAttribute('data-state', 'open')
+      await expectBlockHandleToOpen(page)
 
       await waitForAnimationEnd(blockHandleDraggable)
 
       const box = await getBoundingBox(blockHandleDraggable)
 
       await editor.hover({ position: { x: 0, y: 0 }, timeout: 4000 })
-      await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+      await expectBlockHandleToClose(page)
 
       await waitForAnimationEnd(blockHandleDraggable)
 
@@ -103,7 +104,7 @@ testStory(['full'], () => {
     await expect(p).not.toBeVisible()
 
     await h1.hover({ timeout: 4000 })
-    await expect(blockHandle).toHaveAttribute('data-state', 'open')
+    await expectBlockHandleToOpen(page)
     const box1 = (await blockHandle.boundingBox())!
 
     // Turn the heading into a paragraph
@@ -129,6 +130,7 @@ testStory(['full'], () => {
   test.only(`position the block handle when hovering over a list node with multiple paragraphs`, async ({ page }) => {
     const editor = await waitForEditor(page)
     await emptyEditor(page)
+    const blockHandle = page.locator('prosekit-block-handle-popover')
 
     // Insert a list node with two paragraphs
     await editor.pressSequentially('- First paragraph')
@@ -144,5 +146,35 @@ testStory(['full'], () => {
     const p2 = listNode.locator('p', { hasText: 'Second paragraph' })
     await expect(p1).toHaveCount(1)
     await expect(p2).toHaveCount(1)
+
+    // Hover over the first paragraph
+    await p1.hover({ timeout: 4000 })
+    await expectBlockHandleToOpen(page)
+    const box1 = (await blockHandle.boundingBox())!
+
+    // Hover over the second paragraph
+    await p2.hover({ timeout: 4000 })
+    await expectBlockHandleToOpen(page)
+    const box2 = (await blockHandle.boundingBox())!
+
+    // box1 should be above box2
+    expect(box1.y).toBeLessThan(box2.y)
+
+    // box1 should be more left than box2
+    expect(box1.x).toBeLessThan(box2.x)
+
+    // Hover over the first paragraph
+    await p1.hover({ timeout: 4000 })
+    await expectBlockHandleToOpen(page)
   })
 })
+
+async function expectBlockHandleToOpen(page: Page) {
+  const blockHandle = page.locator('prosekit-block-handle-popover')
+  await expect(blockHandle).toHaveAttribute('data-state', 'open')
+}
+
+async function expectBlockHandleToClose(page: Page) {
+  const blockHandle = page.locator('prosekit-block-handle-popover')
+  await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+}

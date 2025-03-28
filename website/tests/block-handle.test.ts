@@ -2,6 +2,7 @@ import {
   expect,
   test,
   type Locator,
+  type Page,
 } from '@playwright/test'
 
 import {
@@ -26,14 +27,14 @@ testStory(['full'], () => {
       await expect(blockHandle).toBeAttached()
 
       await block.hover({ timeout: 4000 })
-      await expect(blockHandle).toHaveAttribute('data-state', 'open')
+      await expectBlockHandleToOpen(page)
 
       await waitForAnimationEnd(blockHandleDraggable)
 
       const box = await getBoundingBox(blockHandleDraggable)
 
       await editor.hover({ position: { x: 0, y: 0 }, timeout: 4000 })
-      await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+      await expectBlockHandleToClose(page)
 
       await waitForAnimationEnd(blockHandleDraggable)
 
@@ -103,7 +104,7 @@ testStory(['full'], () => {
     await expect(p).not.toBeVisible()
 
     await h1.hover({ timeout: 4000 })
-    await expect(blockHandle).toHaveAttribute('data-state', 'open')
+    await expectBlockHandleToOpen(page)
     const box1 = (await blockHandle.boundingBox())!
 
     // Turn the heading into a paragraph
@@ -125,4 +126,72 @@ testStory(['full'], () => {
     expect(Math.abs(box1.x - box2.x), message).toBeLessThan(10)
     expect(Math.abs(box1.y - box2.y), message).toBeLessThan(10)
   })
+
+  test(`position the block handle when hovering over a list node with multiple paragraphs`, async ({ page }) => {
+    const editor = await waitForEditor(page)
+    await emptyEditor(page)
+    const blockHandle = page.locator('prosekit-block-handle-popover')
+    const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
+
+    // Insert a list node with two paragraphs
+    await editor.pressSequentially('- First paragraph')
+    await editor.press('Enter')
+    await editor.press('Tab')
+    await editor.press('Backspace')
+    await editor.pressSequentially('Second paragraph')
+
+    // Check the DOM structure
+    const listNode = editor.locator('.prosemirror-flat-list')
+    await expect(listNode).toHaveCount(1)
+    const p1 = listNode.locator('p', { hasText: 'First paragraph' })
+    const p2 = listNode.locator('p', { hasText: 'Second paragraph' })
+    await expect(p1).toHaveCount(1)
+    await expect(p2).toHaveCount(1)
+
+    // Hover over the first paragraph
+    await p1.hover({ timeout: 4000 })
+    await expectBlockHandleToOpen(page)
+    const box1 = (await blockHandle.boundingBox())!
+
+    // Hover over the second paragraph
+    await p2.hover({ timeout: 4000 })
+    await expectBlockHandleToOpen(page)
+    const box2 = (await blockHandle.boundingBox())!
+
+    // box1 should be above box2
+    expect(box1.y).toBeLessThan(box2.y)
+
+    // box1 should be more left than box2
+    expect(box1.x).toBeLessThan(box2.x)
+
+    // Hover over the first paragraph and click on it
+    await p1.hover({ timeout: 4000 })
+    await expectBlockHandleToOpen(page)
+    await blockHandleDraggable.click()
+
+    // Expect the list node to be selected
+    await expect(listNode).toHaveClass(/ProseMirror-selectednode/)
+    await expect(p1).not.toHaveClass(/ProseMirror-selectednode/)
+    await expect(p2).not.toHaveClass(/ProseMirror-selectednode/)
+
+    // Hover over the second paragraph and click on it
+    await p2.hover({ timeout: 4000 })
+    await expectBlockHandleToOpen(page)
+    await blockHandleDraggable.click()
+
+    // Expect the second paragraph to be selected
+    await expect(listNode).not.toHaveClass(/ProseMirror-selectednode/)
+    await expect(p1).not.toHaveClass(/ProseMirror-selectednode/)
+    await expect(p2).toHaveClass(/ProseMirror-selectednode/)
+  })
 })
+
+async function expectBlockHandleToOpen(page: Page) {
+  const blockHandle = page.locator('prosekit-block-handle-popover')
+  await expect(blockHandle).toHaveAttribute('data-state', 'open')
+}
+
+async function expectBlockHandleToClose(page: Page) {
+  const blockHandle = page.locator('prosekit-block-handle-popover')
+  await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+}

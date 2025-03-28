@@ -5,7 +5,7 @@ import {
   type ReadonlySignal,
   type SignalState,
 } from '@aria-ui/core'
-import { getWindow } from '@zag-js/dom-query'
+import { getWindow } from '@ocavue/utils'
 
 import {
   onResizeContext,

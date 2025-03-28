@@ -51,13 +51,10 @@
     "@aria-ui/presence": "^0.0.19",
     "@aria-ui/tooltip": "^0.0.29",
     "@floating-ui/dom": "^1.6.13",
-    "@ocavue/utils": "^0.3.0",
+    "@ocavue/utils": "^0.4.0",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "@zag-js/dom-query": "^1.5.0",
-    "just-map-values": "^3.2.0",
-    "just-omit": "^2.2.0",
     "prosemirror-tables": "^1.6.4"
   },
   "devDependencies": {

@@ -55,6 +55,18 @@ export default function Editor() {
     return () => clearTimeout(id)
   }, [editor])
 
+  useEffect(() => {
+    const eventListener = (e: MouseEvent) => {
+      const pos = editor.view.posAtCoords({ left: e.clientX, top: e.clientY })
+      console.log('[DEBUG] pos', `x: ${e.clientX}, y: ${e.clientY} => ${JSON.stringify(pos)}`)
+    }
+
+    document.addEventListener('mousemove', eventListener)
+    return () => {
+      document.removeEventListener('mousemove', eventListener)
+    }
+  }, [editor])
+
   return (
     <ProseKit editor={editor}>
       <div className={Themes.EDITOR_VIEWPORT}>

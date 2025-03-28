@@ -173,6 +173,7 @@ testStory(['full'], () => {
     // FIXME: list node should be selected
     await expect(p1).toHaveClass('ProseMirror-selectednode')
     // await expect(listNode).toHaveClass('ProseMirror-selectednode')
+    // await expect(p1).not.toHaveClass('ProseMirror-selectednode')
 
     // Hover over the second paragraph and click on it
     await p2.hover({ timeout: 4000 })

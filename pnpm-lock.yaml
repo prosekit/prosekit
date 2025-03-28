@@ -46,9 +46,6 @@ importers:
       '@vitest/coverage-v8':
         specifier: ^3.0.9
         version: 3.0.9(@vitest/browser@3.0.9)(vitest@3.0.9)
-      cross-env:
-        specifier: ^7.0.3
-        version: 7.0.3
       dprint:
         specifier: ^0.49.1
         version: 0.49.1
@@ -765,12 +762,6 @@ importers:
       '@prosekit/pm':
         specifier: workspace:^
         version: link:../pm
-      just-map-values:
-        specifier: ^3.2.0
-        version: 3.2.0
-      just-omit:
-        specifier: ^2.2.0
-        version: 2.2.0
       prosemirror-tables:
         specifier: ^1.6.4
         version: 1.6.4
@@ -3470,11 +3461,6 @@ packages:
   core-js-compat@3.41.0:
     resolution: {integrity: sha512-RFsU9LySVue9RTwdDVX/T0e2Y6jRYWXERKElIjpuEOEnxaXffI0X7RUwVzfYLfzuLXSNJDYoRYUAmRUcyln20A==}
 
-  cross-env@7.0.3:
-    resolution: {integrity: sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==}
-    engines: {node: '>=10.14', npm: '>=6', yarn: '>=1'}
-    hasBin: true
-
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
@@ -4733,9 +4719,6 @@ packages:
 
   just-map-values@3.2.0:
     resolution: {integrity: sha512-TyqCKtK3NxiUgOjRYMIKURvBTHesi3XzomDY0QVPZ3rYzLCF+nNq5rSi0B/L5aOd/WMTZo6ukzA4wih4HUbrDg==}
-
-  just-omit@2.2.0:
-    resolution: {integrity: sha512-Js7+HxDOGcB3RhI38Mird/RgyMf3t0DAJFda1QWqqlAKTa36NeSYIufJXxrZUbysFTRcTOFcoMCiFK5FwCoI7Q==}
 
   just-pick@4.2.0:
     resolution: {integrity: sha512-m6bi0P/gFq5GEQJGYfHFsdod6fogViNIhsKbPBYavqF9SKFfMKPz7kf6ROL2PblkOdaib9vN/wJ7VXhCJre5Hw==}
@@ -10394,10 +10377,6 @@ snapshots:
     dependencies:
       browserslist: 4.24.4
 
-  cross-env@7.0.3:
-    dependencies:
-      cross-spawn: 7.0.6
-
   cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
@@ -11935,8 +11914,6 @@ snapshots:
   just-kebab-case@4.2.0: {}
 
   just-map-values@3.2.0: {}
-
-  just-omit@2.2.0: {}
 
   just-pick@4.2.0: {}
 

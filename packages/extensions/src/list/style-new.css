@@ -69,7 +69,8 @@
 
     /* TODO: WHY */
     &::before {
-      content: '12345';
+      content: ' ';
+      order: 2;
       /* height: 24px; */
       /* position: absolute; */
       width: 2px;
@@ -84,7 +85,8 @@
 
     /* TODO: WHY */
     &::after {
-      content: '1234';
+      order: 9;
+      content: '';
       /* height: 24px; */
       /* position: absolute; */
       width: 2px;
@@ -98,7 +100,22 @@
     }
 
     & > .list-content {
+      order: 3;
       flex: 1;
+      margin-left: 0px;
+    }
+
+    & > .list-marker {
+      order: 1;
+    }
+
+    & > .list-marker {
+      position: relative;
+      left: 0;
+      text-align: center;
+      width: 1.5rem;
+      height: 1.5em;
+      height: 1lh;
     }
   }
 

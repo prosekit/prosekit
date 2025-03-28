@@ -1,1 +1,5 @@
-@import './style-new.css';
+@import './style-old.css';
+
+blockquote {
+  padding-bottom: 10px;
+}

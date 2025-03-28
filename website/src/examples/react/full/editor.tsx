@@ -56,6 +56,12 @@ export default function Editor() {
   }, [editor])
 
   useEffect(() => {
+    setTimeout(() => {
+      window.view = editor.view
+    }, 100)
+  }, [editor])
+
+  useEffect(() => {
     const eventListener = (e: MouseEvent) => {
       const pos = editor.view.posAtCoords({ left: e.clientX, top: e.clientY })
       log(`[DEBUG] editor.tsx pos x: ${e.clientX}, y: ${e.clientY} => ${JSON.stringify(pos)}`)

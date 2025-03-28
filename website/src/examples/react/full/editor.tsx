@@ -58,12 +58,14 @@ export default function Editor() {
   useEffect(() => {
     const eventListener = (e: MouseEvent) => {
       const pos = editor.view.posAtCoords({ left: e.clientX, top: e.clientY })
-      console.log('[DEBUG] pos', `x: ${e.clientX}, y: ${e.clientY} => ${JSON.stringify(pos)}`)
+      log(`[DEBUG] editor.tsx pos x: ${e.clientX}, y: ${e.clientY} => ${JSON.stringify(pos)}`)
     }
 
     document.addEventListener('mousemove', eventListener)
+    document.addEventListener('dragover', eventListener)
     return () => {
       document.removeEventListener('mousemove', eventListener)
+      document.removeEventListener('dragover', eventListener)
     }
   }, [editor])
 
@@ -82,4 +84,13 @@ export default function Editor() {
       </div>
     </ProseKit>
   )
+}
+
+let cachedMessage = ''
+
+function log(message: string) {
+  if (cachedMessage !== message) {
+    console.log(message)
+    cachedMessage = message
+  }
 }

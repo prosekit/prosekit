@@ -77,7 +77,15 @@
   }
 
   &[data-list-kind='task'] {
+    &::before {
+      content: ' ';
+    }
+
     & > .list-marker {
+      &::before {
+        content: ' ';
+      }
+
       position: absolute;
       right: 100%;
       text-align: center;

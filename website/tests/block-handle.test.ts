@@ -125,4 +125,23 @@ testStory(['full'], () => {
     expect(Math.abs(box1.x - box2.x), message).toBeLessThan(10)
     expect(Math.abs(box1.y - box2.y), message).toBeLessThan(10)
   })
+
+  test.only(`position the block handle when hovering over a list node with multiple paragraphs`, async ({ page }) => {
+    const editor = await waitForEditor(page)
+    await emptyEditor(page)
+
+    // Insert a nested list
+    await editor.pressSequentially('- First paragraph')
+    await editor.press('Enter')
+    await editor.press('Delete')
+    await editor.pressSequentially('Second paragraph')
+
+    // Check the structure of the list node
+    const listNode = editor.locator('.prosemirror-flat-list')
+    await expect(listNode).toHaveCount(1)
+    const p1 = listNode.locator('p', { hasText: 'First paragraph' })
+    const p2 = listNode.locator('p', { hasText: 'Second paragraph' })
+    await expect(p1).toHaveCount(1)
+    await expect(p2).toHaveCount(1)
+  })
 })

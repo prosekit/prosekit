@@ -55,7 +55,6 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "just-map-values": "^3.2.0",
     "prosemirror-tables": "^1.6.4"
   },
   "devDependencies": {

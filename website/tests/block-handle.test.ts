@@ -130,13 +130,14 @@ testStory(['full'], () => {
     const editor = await waitForEditor(page)
     await emptyEditor(page)
 
-    // Insert a nested list
+    // Insert a list node with two paragraphs
     await editor.pressSequentially('- First paragraph')
     await editor.press('Enter')
-    await editor.press('Delete')
+    await editor.press('Tab')
+    await editor.press('Backspace')
     await editor.pressSequentially('Second paragraph')
 
-    // Check the structure of the list node
+    // Check the DOM structure
     const listNode = editor.locator('.prosemirror-flat-list')
     await expect(listNode).toHaveCount(1)
     const p1 = listNode.locator('p', { hasText: 'First paragraph' })

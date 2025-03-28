@@ -23,19 +23,19 @@ const defaultContent = `
     <input type="checkbox" />
     <span>A</span>
   </li>
-  <li data-list-kind="task">
-    <input type="checkbox" />
+  <li data-list-kind="task" >
+    <input type="checkbox" checked />
     <span>B</span>
   </li> 
   <li data-list-kind="task">
     <input type="checkbox" />
     <span>C</span>
   </li>
-  <li data-list-kind="task">
-    <input type="checkbox" />
+  <li data-list-kind="task" data-list-checked>
+    <input type="checkbox" checked />
     <span>D</span>
   </li>
-  <li data-list-kind="task">
+  <li data-list-kind="task" data-list-checked>
     <input type="checkbox" />
     <span>E</span>
   </li>

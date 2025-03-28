@@ -69,6 +69,8 @@
     /* TODO: WHY */
     &::marker {
       content: ' ';
+      position: absolute;
+      left: 0;
     }
   }
 

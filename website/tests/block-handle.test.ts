@@ -170,10 +170,9 @@ testStory(['full'], () => {
     await blockHandleDraggable.click()
 
     // Expect the list node to be selected
-    // FIXME: list node should be selected
-    await expect(p1).toHaveClass('ProseMirror-selectednode')
-    // await expect(listNode).toHaveClass('ProseMirror-selectednode')
-    // await expect(p1).not.toHaveClass('ProseMirror-selectednode')
+    await expect(listNode).toHaveClass(/ProseMirror-selectednode/)
+    await expect(p1).not.toHaveClass(/ProseMirror-selectednode/)
+    await expect(p2).not.toHaveClass(/ProseMirror-selectednode/)
 
     // Hover over the second paragraph and click on it
     await p2.hover({ timeout: 4000 })
@@ -181,7 +180,9 @@ testStory(['full'], () => {
     await blockHandleDraggable.click()
 
     // Expect the second paragraph to be selected
-    await expect(p2).toHaveClass('ProseMirror-selectednode')
+    await expect(listNode).not.toHaveClass(/ProseMirror-selectednode/)
+    await expect(p1).not.toHaveClass(/ProseMirror-selectednode/)
+    await expect(p2).toHaveClass(/ProseMirror-selectednode/)
   })
 })
 

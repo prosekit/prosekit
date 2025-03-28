@@ -65,6 +65,13 @@
     }
   }
 
+  &[data-list-kind='task'] {
+    /* TODO: WHY */
+    &::marker {
+      content: ' ';
+    }
+  }
+
   &[data-list-kind='toggle'] {
     & > .list-marker {
       background-image: var(--prosekit-list-toggle-open-image);

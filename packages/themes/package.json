@@ -37,10 +37,10 @@
   },
   "devDependencies": {
     "dedent": "^1.5.3",
-    "esbuild": "^0.25.1",
+    "esbuild": "^0.25.2",
     "prettier": "^3.5.3",
     "typescript": "~5.8.2",
     "unplugin-macros": "^0.16.2",
-    "vitest": "^3.0.9"
+    "vitest": "^3.1.1"
   }
 }

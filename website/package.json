@@ -11,7 +11,7 @@
     "build:if-not-exists": "if [ ! -d dist ]; then pnpm run build; fi",
     "dev": "astro dev",
     "lint:svelte": "svelte-check --no-tsconfig",
-    "lint:vue": "vue-tsc --noEmit --emitDeclarationOnly false --project src/examples/vue/tsconfig.json",
+    "lint:vue": "vue-tsc --build --noEmit --emitDeclarationOnly false src/examples/vue/tsconfig.json",
     "preview": "pnpm run build:if-not-exists && astro preview",
     "start": "astro dev",
     "test": "playwright test"

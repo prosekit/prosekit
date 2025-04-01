@@ -3,6 +3,6 @@
   "include": ["./**/*.ts", "./**/*.vue", "./shims-vue.d.ts"],
   "references": [
     { "path": "../../shared/vue" },
-    { "path": "../../../../packages/prosekit/tsconfig.json" },
+    { "path": "../../../../packages/prosekit" },
   ],
 }

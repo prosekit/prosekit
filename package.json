@@ -15,7 +15,7 @@
     "dev": "pnpm --filter='./website' run dev",
     "fix": "manypkg fix && turbo run gen --force && eslint . --fix && dprint fmt",
     "gen": "turbo run gen --force && pnpm install --prefer-offline --no-frozen-lockfile",
-    "lint": "eslint . && pnpm -r run lint",
+    "lint": "eslint . && pnpm -r --sequential run lint",
     "preview": "pnpm --filter='./website' run preview",
     "test": "vitest",
     "test:coverage": "vitest run --coverage.enabled",

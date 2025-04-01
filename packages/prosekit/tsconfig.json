@@ -1,4 +1,17 @@
 {
   "extends": "@ocavue/tsconfig/es/root.json",
-  "references": [{ "path": "./tsconfig.build.json" }],
+  "references": [
+    { "path": "./tsconfig.build.json" },
+    { "path": "../basic" },
+    { "path": "../core" },
+    { "path": "../extensions" },
+    { "path": "../lit" },
+    { "path": "../pm" },
+    { "path": "../preact" },
+    { "path": "../react" },
+    { "path": "../solid" },
+    { "path": "../svelte" },
+    { "path": "../vue" },
+    { "path": "../web" },
+  ],
 }

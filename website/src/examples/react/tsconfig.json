@@ -5,6 +5,6 @@
   },
   "references": [
     { "path": "../../shared/react" },
-    { "path": "../../../../packages/prosekit/tsconfig.json" },
+    { "path": "../../../../packages/prosekit" },
   ],
 }

@@ -4,8 +4,7 @@
     "jsx": "react-jsx",
   },
   "references": [
-    {
-      "path": "../../shared/react",
-    },
+    { "path": "../../shared/react" },
+    { "path": "../../../../packages/prosekit/tsconfig.json" },
   ],
 }

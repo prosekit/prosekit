@@ -5,8 +5,7 @@
     "jsxImportSource": "solid-js",
   },
   "references": [
-    {
-      "path": "../../shared/solid",
-    },
+    { "path": "../../shared/solid" },
+    { "path": "../../../../packages/prosekit/tsconfig.json" },
   ],
 }

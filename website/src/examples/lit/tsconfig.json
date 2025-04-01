@@ -5,4 +5,7 @@
     "target": "ESNext",
     "composite": true,
   },
+  "references": [
+    { "path": "../../../../packages/prosekit/tsconfig.json" },
+  ],
 }

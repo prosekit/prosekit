@@ -7,7 +7,10 @@ cd "$WEBSITE_DIR/.."
 ROOT=$(pwd)
 
 cd "$ROOT/packages/prosekit"
-./node_modules/.bin/typedoc
+# Ensure that tsc has built all packages and their dependencies
+pnpm run build:tsc
+# Build the typedoc
+pnpm run build:typedoc
 
 cd "$WEBSITE_DIR"
 cd src/content/docs

@@ -2,8 +2,7 @@
   "extends": "@ocavue/tsconfig/dom/app.json",
   "include": ["./**/*.ts", "./**/*.svelte"],
   "references": [
-    {
-      "path": "../../shared/svelte",
-    },
+    { "path": "../../shared/svelte" },
+    { "path": "../../../../packages/prosekit/tsconfig.json" },
   ],
 }

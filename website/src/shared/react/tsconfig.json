@@ -4,4 +4,7 @@
     "composite": true,
     "jsx": "react-jsx",
   },
+  "references": [
+    { "path": "../../../../packages/prosekit/tsconfig.json" },
+  ],
 }

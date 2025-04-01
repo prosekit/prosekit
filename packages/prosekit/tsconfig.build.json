@@ -1,3 +1,18 @@
 {
-  "extends": "@ocavue/tsconfig/dom/build-bundler.json"
+  "extends": "@ocavue/tsconfig/dom/build-bundler.json",
+  "references": [
+    // For unknown reasons, adding ../basic/tsconfig.json will break TypeDoc.
+    // Further investigation can be done in the future.
+    // { "path": "../basic/tsconfig.json" },
+    { "path": "../core/tsconfig.json" },
+    { "path": "../extensions/tsconfig.json" },
+    { "path": "../lit/tsconfig.json" },
+    { "path": "../pm/tsconfig.json" },
+    { "path": "../preact/tsconfig.json" },
+    { "path": "../react/tsconfig.json" },
+    { "path": "../solid/tsconfig.json" },
+    { "path": "../svelte/tsconfig.json" },
+    { "path": "../vue/tsconfig.json" },
+    { "path": "../web/tsconfig.json" }
+  ]
 }

@@ -1,7 +1,8 @@
 {
   "extends": "@ocavue/tsconfig/dom/build-bundler.json",
   "references": [
-    { "path": "../basic/tsconfig.json" },
+    // For unknown reasons, adding ../basic/tsconfig.json will break TypeDoc
+    // { "path": "../basic/tsconfig.json" },
     { "path": "../core/tsconfig.json" },
     { "path": "../extensions/tsconfig.json" },
     { "path": "../lit/tsconfig.json" },

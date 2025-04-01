@@ -6,6 +6,6 @@
   },
   "references": [
     { "path": "../../shared/solid" },
-    { "path": "../../../../packages/prosekit/tsconfig.json" },
+    { "path": "../../../../packages/prosekit" },
   ],
 }

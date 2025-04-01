@@ -6,6 +6,6 @@
     "composite": true,
   },
   "references": [
-    { "path": "../../../../packages/prosekit/tsconfig.json" },
+    { "path": "../../../../packages/prosekit" },
   ],
 }

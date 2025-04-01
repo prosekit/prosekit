@@ -6,6 +6,6 @@
   },
   "references": [
     { "path": "../../shared/preact" },
-    { "path": "../../../../packages/prosekit/tsconfig.json" },
+    { "path": "../../../../packages/prosekit" },
   ],
 }

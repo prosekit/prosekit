@@ -42,7 +42,7 @@
     "@sindresorhus/string-hash": "^2.0.0",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^20.17.24",
+    "@types/node": "^20.17.29",
     "change-case": "^5.4.4",
     "execa": "^9.5.2",
     "globby": "^14.1.0",

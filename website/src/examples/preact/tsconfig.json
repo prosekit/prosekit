@@ -5,8 +5,7 @@
     "jsxImportSource": "preact",
   },
   "references": [
-    {
-      "path": "../../shared/preact",
-    },
+    { "path": "../../shared/preact" },
+    { "path": "../../../../packages/prosekit/tsconfig.json" },
   ],
 }

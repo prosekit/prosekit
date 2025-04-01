@@ -146,7 +146,8 @@
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
-    "build:tsup": "tsup"
+    "build:tsup": "tsup",
+    "build:typedoc": "typedoc"
   },
   "dependencies": {
     "@prosekit/basic": "workspace:*",

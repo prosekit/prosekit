@@ -72,7 +72,7 @@
     "vue": "^3.5.13",
     "vue-tsc": "^2.2.8",
     "y-protocols": "^1.0.6",
-    "y-websocket": "^2.1.0",
+    "y-websocket": "^3.0.0",
     "yjs": "^13.6.24"
   }
 }

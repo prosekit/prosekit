@@ -26,7 +26,7 @@
   "dependencies": {
     "@manypkg/find-root": "^2.2.3",
     "@manypkg/get-packages": "^2.2.2",
-    "@microsoft/api-extractor": "^7.52.2",
+    "@microsoft/api-extractor": "^7.52.3",
     "@sindresorhus/slugify": "^2.2.1",
     "@types/fs-extra": "^11.0.4",
     "fs-extra": "^11.3.0",

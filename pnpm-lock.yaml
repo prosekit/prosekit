@@ -914,8 +914,8 @@ importers:
         specifier: ^1.9.5
         version: 1.9.5
       starlight-theme-nova:
-        specifier: ^0.1.1
-        version: 0.1.1(typescript@5.8.2)
+        specifier: ^0.2.0
+        version: 0.2.0(typescript@5.8.2)
       svelte:
         specifier: ^5.25.6
         version: 5.25.6
@@ -6113,8 +6113,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@0.1.1:
-    resolution: {integrity: sha512-idnhZ18jxtphxAGA+OHcACedKfIpAn1qEU3q0SXxA5LPozBd6Sw9xvrQKRgWATI5nejr8Gd4snSUEy/9ATUI2g==}
+  starlight-theme-nova@0.2.0:
+    resolution: {integrity: sha512-ri/xRQlCGmaVmq+QNzlVGk98U9kCjCLzuoAzT8ElZPrHO+oP+mMS31nZ9tyurkd7hcenjt2ctFpwq4+4tydcIA==}
 
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
@@ -13689,7 +13689,7 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@0.1.1(typescript@5.8.2):
+  starlight-theme-nova@0.2.0(typescript@5.8.2):
     dependencies:
       '@shikijs/transformers': 3.2.1
       '@shikijs/twoslash': 3.2.1(typescript@5.8.2)

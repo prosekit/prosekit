@@ -62,7 +62,7 @@
     "runed": "^0.25.0",
     "sharp": "^0.33.5",
     "solid-js": "^1.9.5",
-    "starlight-theme-nova": "^0.1.1",
+    "starlight-theme-nova": "^0.2.0",
     "svelte": "^5.25.6",
     "svelte-check": "^4.1.5",
     "typescript": "~5.8.2",

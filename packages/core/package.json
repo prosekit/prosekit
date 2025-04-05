@@ -43,7 +43,7 @@
     "just-map-values": "^3.2.0",
     "orderedmap": "^2.1.1",
     "prosemirror-splittable": "^0.1.1",
-    "type-fest": "^4.39.0"
+    "type-fest": "^4.39.1"
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",

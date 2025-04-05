@@ -208,9 +208,9 @@
   },
   "devDependencies": {
     "@prosekit/dev": "workspace:*",
-    "@types/react": "^19.0.12",
-    "@types/react-dom": "^19.0.4",
-    "loro-crdt": "^1.4.6",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
+    "loro-crdt": "^1.5.0",
     "loro-prosemirror": "^0.2.1",
     "postcss": "^8.5.3",
     "postcss-nesting": "^13.0.1",

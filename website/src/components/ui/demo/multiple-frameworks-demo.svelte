@@ -87,26 +87,28 @@ let showCode = $state(props.showCode ?? true)
   </div>
 
   <div class={['border-border', showCode ? 'block' : 'hidden']}>
-    {#if framework === 'lit'}
+    <!-- Because of https://github.com/withastro/astro/issues/13445, we need to
+    render all slots and use CSS to hide the ones that are not needed -->
+    <div class={framework === 'lit' ? 'block' : 'hidden'}>
       {@render props['slot-code-lit']?.()}
-    {/if}
-    {#if framework === 'preact'}
+    </div>
+    <div class={framework === 'preact' ? 'block' : 'hidden'}>
       {@render props['slot-code-preact']?.()}
-    {/if}
-    {#if framework === 'react'}
+    </div>
+    <div class={framework === 'react' ? 'block' : 'hidden'}>
       {@render props['slot-code-react']?.()}
-    {/if}
-    {#if framework === 'solid'}
+    </div>
+    <div class={framework === 'solid' ? 'block' : 'hidden'}>
       {@render props['slot-code-solid']?.()}
-    {/if}
-    {#if framework === 'svelte'}
+    </div>
+    <div class={framework === 'svelte' ? 'block' : 'hidden'}>
       {@render props['slot-code-svelte']?.()}
-    {/if}
-    {#if framework === 'vanilla'}
+    </div>
+    <div class={framework === 'vanilla' ? 'block' : 'hidden'}>
       {@render props['slot-code-vanilla']?.()}
-    {/if}
-    {#if framework === 'vue'}
+    </div>
+    <div class={framework === 'vue' ? 'block' : 'hidden'}>
       {@render props['slot-code-vue']?.()}
-    {/if}
+    </div>
   </div>
 </div>

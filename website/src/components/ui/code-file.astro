@@ -1,8 +1,7 @@
 ---
 import fs from 'node:fs/promises'
 import { basename } from 'node:path'
-import CodeTabItem from 'starlight-theme-nova/components/CodeTabItem.astro'
-import CodeTabs from 'starlight-theme-nova/components/CodeTabs.astro'
+import { Code } from 'starlight-theme-nova/components'
 
 interface Props {
   path: string
@@ -22,6 +21,4 @@ let fileName = basename(path)
 let lang = (fileName.split('.').pop() || 'plaintext') as 'plaintext'
 ---
 
-<CodeTabs>
-  <CodeTabItem label={fileName} lang={lang} code={code} />
-</CodeTabs>
+<Code lang={lang} code={code} meta={`title="${fileName}"`} />

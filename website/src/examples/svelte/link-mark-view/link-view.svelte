@@ -39,5 +39,6 @@ $effect(() => {
 <a
   {href}
   use:contentRef
-  style="color: {color}; transition: color 1s ease-in-out"
+  style:color={color}
+  style:transition="color 1s ease-in-out"
 ></a>

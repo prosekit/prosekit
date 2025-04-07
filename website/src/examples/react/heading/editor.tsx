@@ -11,7 +11,7 @@ import Toolbar from './toolbar'
 
 export default function Editor() {
   const editor = useMemo(() => {
-    return createEditor({ extension: defineExtension() })
+    return createEditor({ extension: defineExtension(), defaultContent: '<h1>H1</h1>' })
   }, [])
 
   return (

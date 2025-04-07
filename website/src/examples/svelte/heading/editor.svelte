@@ -9,7 +9,7 @@ import { ProseKit } from 'prosekit/svelte'
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.svelte'
 
-const editor = createEditor({ extension: defineExtension() })
+const editor = createEditor({ extension: defineExtension(), defaultContent: '<h1>H1</h1>' })
 
 const mount = (element: HTMLElement) => {
   editor.mount(element)

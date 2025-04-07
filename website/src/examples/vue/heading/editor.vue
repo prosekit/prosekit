@@ -13,7 +13,7 @@ import {
 import { defineExtension } from './extension'
 import Toolbar from './toolbar.vue'
 
-const editor = createEditor({ extension: defineExtension() })
+const editor = createEditor({ extension: defineExtension(), defaultContent: '<h1>H1</h1>' })
 const editorRef = ref<HTMLDivElement | null>(null)
 watchPostEffect((onCleanup) => {
   editor.mount(editorRef.value)

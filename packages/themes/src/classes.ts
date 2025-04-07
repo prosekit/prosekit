@@ -81,7 +81,7 @@ const INPUT = cn(
 
 // The outermost container of the editor. It limits the height of the editor.
 export const EDITOR_VIEWPORT = cn(
-  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 shadow dark:border-zinc-700 flex flex-col bg-background',
+  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow flex flex-col bg-background color-black dark:color-white',
 )
 
 // A scrolling container for the editor content and floating menus.

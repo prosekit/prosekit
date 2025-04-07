@@ -92,9 +92,13 @@ const config: AstroUserConfig = {
   integrations: [
     starlight({
       title: 'ProseKit',
-      social: {
-        github: 'https://github.com/prosekit/prosekit',
-      },
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/prosekit/prosekit',
+        },
+      ],
       sidebar: sidebar,
       components: {
         Hero: './src/components/overrides/Hero.astro',

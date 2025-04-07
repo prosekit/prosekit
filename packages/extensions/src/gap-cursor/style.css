@@ -5,7 +5,7 @@
 }
 
 .ProseMirror-gapcursor:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: -2px;

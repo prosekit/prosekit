@@ -1,7 +1,7 @@
-@import '@prosekit/pm/view/style/prosemirror.css';
-@import '@prosekit/extensions/list/style.css';
-@import '@prosekit/extensions/table/style.css';
-@import '@prosekit/extensions/placeholder/style.css';
-@import '@prosekit/extensions/virtual-selection/style.css';
-@import '@prosekit/extensions/commit/style.css';
-@import '@prosekit/extensions/gap-cursor/style.css';
+@import "@prosekit/pm/view/style/prosemirror.css";
+@import "@prosekit/extensions/list/style.css";
+@import "@prosekit/extensions/table/style.css";
+@import "@prosekit/extensions/placeholder/style.css";
+@import "@prosekit/extensions/virtual-selection/style.css";
+@import "@prosekit/extensions/commit/style.css";
+@import "@prosekit/extensions/gap-cursor/style.css";

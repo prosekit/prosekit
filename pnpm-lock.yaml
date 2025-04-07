@@ -791,8 +791,8 @@ importers:
         specifier: ^5.0.7
         version: 5.0.7(@types/node@20.17.29)(jiti@2.4.2)(solid-js@1.9.5)(tsx@4.19.3)(yaml@2.7.0)
       '@astrojs/starlight':
-        specifier: ^0.32.5
-        version: 0.32.5(astro@5.6.1(@types/node@20.17.29)(jiti@2.4.2)(rollup@4.35.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))
+        specifier: ^0.33.0
+        version: 0.33.0(astro@5.6.1(@types/node@20.17.29)(jiti@2.4.2)(rollup@4.35.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))
       '@astrojs/svelte':
         specifier: ^7.0.9
         version: 7.0.9(@types/node@20.17.29)(astro@5.6.1(@types/node@20.17.29)(jiti@2.4.2)(rollup@4.35.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))(jiti@2.4.2)(svelte@5.25.6)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -914,8 +914,8 @@ importers:
         specifier: ^1.9.5
         version: 1.9.5
       starlight-theme-nova:
-        specifier: ^0.4.0
-        version: 0.4.0(typescript@5.8.2)
+        specifier: ^0.5.0
+        version: 0.5.0(typescript@5.8.2)
       svelte:
         specifier: ^5.25.6
         version: 5.25.6
@@ -1098,8 +1098,8 @@ packages:
       solid-devtools:
         optional: true
 
-  '@astrojs/starlight@0.32.5':
-    resolution: {integrity: sha512-KYZsYbA5eEAsCO3XNc6DWDPml1JCD6GVusuB15fYq5dbxyB7RtC6kgwbtiEmr84maIjcQUmDtFJCz3sN4CdaSg==}
+  '@astrojs/starlight@0.33.0':
+    resolution: {integrity: sha512-BAdz3TJ5f7e0iDwu7ZNy6i6Rlca2sgi416K8pGPN3VMIlgJmj9NCqSUGZh+OQhk5FNzmnssi8w+xQQeNpe5hDw==}
     peerDependencies:
       astro: ^5.1.5
 
@@ -6227,8 +6227,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@0.4.0:
-    resolution: {integrity: sha512-wLggODnB2fPk6k7RJphWcjbz4dlfes8qS4ySXTCZcXCTw0NbZJ5qNAmdfrplpmHK8wf2naJ3lT7X7b5PBqgdEg==}
+  starlight-theme-nova@0.5.0:
+    resolution: {integrity: sha512-tHWWKnn2YMRH7gjTb+uorqk1QBfHBrIPjABuiABXFOtZYcZHUEfAhINTSMqZjxS+THPYKA6yuSqlrr8WuNNEGw==}
 
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
@@ -7455,7 +7455,7 @@ snapshots:
       - tsx
       - yaml
 
-  '@astrojs/starlight@0.32.5(astro@5.6.1(@types/node@20.17.29)(jiti@2.4.2)(rollup@4.35.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))':
+  '@astrojs/starlight@0.33.0(astro@5.6.1(@types/node@20.17.29)(jiti@2.4.2)(rollup@4.35.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))':
     dependencies:
       '@astrojs/mdx': 4.2.0(astro@5.6.1(@types/node@20.17.29)(jiti@2.4.2)(rollup@4.35.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))
       '@astrojs/sitemap': 3.2.1
@@ -13909,7 +13909,7 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@0.4.0(typescript@5.8.2):
+  starlight-theme-nova@0.5.0(typescript@5.8.2):
     dependencies:
       '@shikijs/transformers': 3.2.1
       '@shikijs/twoslash': 3.2.1(typescript@5.8.2)

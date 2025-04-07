@@ -4,14 +4,26 @@ import {
 } from '@playwright/test'
 
 import {
+  emptyEditor,
   locateEditor,
   testStory,
 } from './helper'
 
 testStory('heading', () => {
-  test('input rule', async ({ page }) => {
+  test('default content', async ({ page }) => {
     const editor = locateEditor(page)
 
+    await expect(editor.locator('h1')).toBeVisible()
+    await expect(editor.locator('h2')).not.toBeVisible()
+    await expect(editor.locator('h3')).not.toBeVisible()
+    await expect(editor.locator('h4')).not.toBeVisible()
+    await expect(editor.locator('h5')).not.toBeVisible()
+    await expect(editor.locator('h6')).not.toBeVisible()
+  })
+
+  test('input rule', async ({ page }) => {
+    const editor = locateEditor(page)
+    await emptyEditor(page)
     await editor.click()
 
     await expect(editor.locator('h1')).not.toBeVisible()

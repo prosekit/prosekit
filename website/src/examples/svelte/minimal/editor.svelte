@@ -16,5 +16,5 @@ const mount = (element: HTMLElement) => {
 </script>
 
 <ProseKit {editor}>
-  <div use:mount style="outline: auto; padding: 1rem;"></div>
+  <div use:mount style="outline: auto; padding: 1rem"></div>
 </ProseKit>

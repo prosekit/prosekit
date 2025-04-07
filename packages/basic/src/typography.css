@@ -36,16 +36,16 @@ div.ProseMirror {
   & h4,
   & h5,
   & h6 {
-    font-weight: 600;
-    line-height: 1.25;
     padding-top: 0;
     padding-bottom: 0;
     border-style: none;
+    font-weight: 600;
+    line-height: 1.25;
   }
 
   & a {
-    text-decoration: underline;
     font-weight: 500;
+    text-decoration: underline;
   }
 
   & p,
@@ -92,35 +92,35 @@ div.ProseMirror {
 
   & img,
   & video {
-    margin: 0;
     width: min-content;
     max-width: 100%;
+    margin: 0;
   }
 
   & code {
-    font-size: 0.875em;
     font-weight: 600;
+    font-size: 0.875em;
   }
 
   & pre {
     margin: 0.5rem 0;
     padding: 2rem 2rem;
     overflow-x: auto;
-    border-radius: 0.375rem;
     border: 1px solid hsl(0 0% 50% / 0.2);
+    border-radius: 0.375rem;
     /* CSS variables `prosemirror-highlight` and `prosemirror-highlight-bg` are set by package `prosemirror-highlight` */
-    color: var(--prosemirror-highlight, inherit);
     background-color: var(--prosemirror-highlight-bg, inherit);
+    color: var(--prosemirror-highlight, inherit);
   }
 
   & pre,
   & code {
     white-space: pre;
-    word-spacing: normal;
     word-break: normal;
+    word-spacing: normal;
     word-wrap: normal;
-    tab-size: 4;
     hyphens: none;
+    tab-size: 4;
   }
 
   & pre code {
@@ -133,9 +133,8 @@ div.ProseMirror {
   }
 
   & .prosekit-horizontal-rule {
-    padding: 1em 0;
     margin: 1em 0;
-
+    padding: 1em 0;
     /* Set a small line-height so that the block handle can align to the middle
     of the horizontal rule */
     line-height: 1px;
@@ -216,7 +215,7 @@ div.ProseMirror {
    Don't generate box for node view wrapper. This make it easier to style
    the node views.
    */
-  div[data-node-view-root='true'] {
+  div[data-node-view-root="true"] {
     display: contents;
   }
 }

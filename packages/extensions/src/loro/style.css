@@ -2,13 +2,13 @@
   margin-top: 16px;
 }
 
-/* This gives the remote user caret. The colors are automatically overwritten*/
+/* This gives the remote user caret. The colors are automatically overwritten */
 .ProseMirror-loro-cursor {
   position: relative;
-  margin-left: -1px;
   margin-right: -1px;
-  border-left: 1px solid black;
+  margin-left: -1px;
   border-right: 1px solid black;
+  border-left: 1px solid black;
   border-color: orange;
   word-break: normal;
   pointer-events: none;
@@ -19,15 +19,15 @@
   position: absolute;
   top: -1.05em;
   left: -1px;
-  font-size: 13px;
+  padding-right: 2px;
+  padding-left: 2px;
   background-color: rgb(250, 129, 0);
-  font-family: serif;
+  color: white;
   font-style: normal;
   font-weight: normal;
+  font-size: 13px;
   line-height: normal;
-  user-select: none;
-  color: white;
-  padding-left: 2px;
-  padding-right: 2px;
+  font-family: serif;
   white-space: nowrap;
+  user-select: none;
 }

@@ -9,7 +9,7 @@ import { defineExtension } from './extension'
 import Toolbar from './toolbar'
 
 export default function Editor() {
-  const editor = createEditor({ extension: defineExtension() })
+  const editor = createEditor({ extension: defineExtension(), defaultContent: '<h1>H1</h1>' })
 
   return (
     <ProseKit editor={editor}>

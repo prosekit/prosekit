@@ -3,10 +3,24 @@ import { EditorShowcaseClient } from './editor-showcase.client'
 import EditorShowcaseServer from './editor-showcase.server.astro'
 ---
 
-<div class="py-4 md:py-8 h-[600px] w-full max-w-6xl mx-auto">
+<div class="py-4 md:py-8 h-[600px] w-full max-w-6xl mx-auto" data-reset>
   <EditorShowcaseClient client:only="react">
     <Fragment slot="fallback">
       <EditorShowcaseServer />
     </Fragment>
   </EditorShowcaseClient>
 </div>
+
+<style>
+  [data-reset] {
+    /* 
+    Reset some default styles from starlight
+
+    https://github.com/withastro/starlight/blob/bdb05e704a6cf06a029367f99b6bf2f575e5a5f3/packages/starlight/style/reset.css#L11-L26 
+    */
+    accent-color: initial;
+    line-height: initial;
+    color: initial;
+    background-color: initial;
+  }
+</style>

@@ -1,13 +1,13 @@
 .ProseMirror-search-match {
+  border-radius: 2px;
   background-color: #ffff0054;
   box-shadow: 0 0 0 2px #ffff0054;
-  border-radius: 2px;
 }
 
 .ProseMirror.ProseMirror-focused .ProseMirror-active-search-match::selection,
 .ProseMirror:not(.ProseMirror-focused) .ProseMirror-active-search-match {
+  border-radius: 2px;
   background-color: #ff6a0054;
   box-shadow: 0 0 0 2px #ff6a0054;
-  border-radius: 2px;
   scroll-margin: 8px;
 }

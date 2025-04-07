@@ -914,8 +914,8 @@ importers:
         specifier: ^1.9.5
         version: 1.9.5
       starlight-theme-nova:
-        specifier: https://pkg.pr.new/ocavue/starlight-theme-nova@32
-        version: https://pkg.pr.new/ocavue/starlight-theme-nova@32(typescript@5.8.2)
+        specifier: ^0.4.0
+        version: 0.4.0(typescript@5.8.2)
       svelte:
         specifier: ^5.25.6
         version: 5.25.6
@@ -6090,9 +6090,8 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shiki-twoslash-renderer@https://pkg.pr.new/ocavue/starlight-theme-nova/shiki-twoslash-renderer@405ae794b1bc8e6742ef203b86f8edee8ee1322e:
-    resolution: {tarball: https://pkg.pr.new/ocavue/starlight-theme-nova/shiki-twoslash-renderer@405ae794b1bc8e6742ef203b86f8edee8ee1322e}
-    version: 0.0.2
+  shiki-twoslash-renderer@0.0.2:
+    resolution: {integrity: sha512-PX5/1EdGGe4pyVPkqbdufX/8a0civ3XitpeEPoc8gBYjehNS7BaS3UlAKpvc5951gN7+NGaS7xkQ9K3jCjJ3Pg==}
 
   shiki@1.29.2:
     resolution: {integrity: sha512-njXuliz/cP+67jU2hukkxCNuH1yUi4QfdZZY+sMr5PPrIyXSu5iTb/qYC4BiWWB0vZ+7TbdvYUCeL23zpwCfbg==}
@@ -6228,9 +6227,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@32:
-    resolution: {tarball: https://pkg.pr.new/ocavue/starlight-theme-nova@32}
-    version: 0.3.0
+  starlight-theme-nova@0.4.0:
+    resolution: {integrity: sha512-wLggODnB2fPk6k7RJphWcjbz4dlfes8qS4ySXTCZcXCTw0NbZJ5qNAmdfrplpmHK8wf2naJ3lT7X7b5PBqgdEg==}
 
   statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
@@ -13736,7 +13734,7 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shiki-twoslash-renderer@https://pkg.pr.new/ocavue/starlight-theme-nova/shiki-twoslash-renderer@405ae794b1bc8e6742ef203b86f8edee8ee1322e(typescript@5.8.2):
+  shiki-twoslash-renderer@0.0.2(typescript@5.8.2):
     dependencies:
       '@aria-ui/core': 0.0.21
       '@aria-ui/tooltip': 0.0.29
@@ -13911,7 +13909,7 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@https://pkg.pr.new/ocavue/starlight-theme-nova@32(typescript@5.8.2):
+  starlight-theme-nova@0.4.0(typescript@5.8.2):
     dependencies:
       '@shikijs/transformers': 3.2.1
       '@shikijs/twoslash': 3.2.1(typescript@5.8.2)
@@ -13920,7 +13918,7 @@ snapshots:
       astro-theme-toggle: 0.6.0
       hast-util-is-element: 3.0.0
       rehype: 13.0.2
-      shiki-twoslash-renderer: https://pkg.pr.new/ocavue/starlight-theme-nova/shiki-twoslash-renderer@405ae794b1bc8e6742ef203b86f8edee8ee1322e(typescript@5.8.2)
+      shiki-twoslash-renderer: 0.0.2(typescript@5.8.2)
     transitivePeerDependencies:
       - supports-color
       - typescript

@@ -2,7 +2,7 @@
   margin-top: 16px;
 }
 
-/* This gives the remote user caret. The colors are automatically overwritten*/
+/* This gives the remote user caret. The colors are automatically overwritten */
 .ProseMirror-loro-cursor {
   position: relative;
   margin-left: -1px;

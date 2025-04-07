@@ -27,6 +27,7 @@
   },
   "malva": {
     "quotes": "preferSingle",
+    "formatComments": true,
   },
   "yaml": {},
   "excludes": [

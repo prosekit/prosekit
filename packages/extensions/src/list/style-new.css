@@ -1,0 +1,205 @@
+:root {
+  --prosekit-list-bullet-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12.1' cy='12.1' r='1'/%3E%3C/svg%3E");
+  /* mdi:checkbox-marked */
+  --prosekit-list-checkbox-checked-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3C!-- Icon from Material Design Icons by Pictogrammers - https://github.com/Templarian/MaterialDesign/blob/master/LICENSE --%3E%3Cpath fill='currentColor' d='m10 17l-5-5l1.41-1.42L10 14.17l7.59-7.59L19 8m0-5H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2'/%3E%3C/svg%3E");
+  /* mdi:checkbox-blank-outline */
+  --prosekit-list-checkbox-unchecked-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3C!-- Icon from Material Design Icons by Pictogrammers - https://github.com/Templarian/MaterialDesign/blob/master/LICENSE --%3E%3Cpath fill='currentColor' d='M19 3H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m0 2v14H5V5z'/%3E%3C/svg%3E");
+  /* mdi:chevron-down */
+  --prosekit-list-toggle-open-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3C!-- Icon from Material Design Icons by Pictogrammers - https://github.com/Templarian/MaterialDesign/blob/master/LICENSE --%3E%3Cpath fill='currentColor' d='M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6z'/%3E%3C/svg%3E");
+  /* mdi:chevron-right */
+  --prosekit-list-toggle-closed-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3C!-- Icon from Material Design Icons by Pictogrammers - https://github.com/Templarian/MaterialDesign/blob/master/LICENSE --%3E%3Cpath fill='currentColor' d='M8.59 16.58L13.17 12L8.59 7.41L10 6l6 6l-6 6z'/%3E%3C/svg%3E");
+}
+
+.prosemirror-flat-list {
+  & {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  & {
+    & > .list-marker {
+      position: absolute;
+      left: 0;
+      width: 1.5rem;
+      height: 1.5em;
+      height: 1lh;
+      text-align: center;
+    }
+
+    & > .list-content {
+      margin-left: 1.5em;
+      margin-left: 1lh;
+    }
+  }
+
+  &[data-list-kind="bullet"],
+  &[data-list-kind="toggle"],
+  &[data-list-kind="task"] {
+    & > .list-marker {
+      background-position: center;
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &[data-list-kind="bullet"] {
+    & > .list-marker {
+      background-image: var(--prosekit-list-bullet-image);
+    }
+  }
+
+  &[data-list-kind="task"] {
+    & > .list-marker {
+      background-image: var(--prosekit-list-checkbox-unchecked-image);
+    }
+
+    &[data-list-checked] > .list-marker {
+      background-image: var(--prosekit-list-checkbox-checked-image);
+    }
+  }
+
+  &[data-list-kind="task"] {
+    display: flex;
+
+    /* TODO: WHY */
+    &::before {
+      display: inline-block;
+      display: block;
+      left: 0;
+      align-self: stretch;
+      justify-self: stretch;
+      order: 2;
+      /* height: 24px; */
+      /* position: absolute; */
+      width: 2px;
+      overflow: hidden;
+      background-color: lightblue;
+      content: " ";
+    }
+
+    /* TODO: WHY */
+    &::after {
+      display: inline-block;
+      display: block;
+      left: 0;
+      align-self: stretch;
+      justify-self: stretch;
+      order: 9;
+      /* height: 24px; */
+      /* position: absolute; */
+      width: 2px;
+      overflow: hidden;
+      background-color: lightyellow;
+      content: "";
+    }
+
+    & > .list-content {
+      flex: 1;
+      order: 3;
+      margin-left: 0px;
+    }
+
+    & > .list-marker {
+      order: 1;
+    }
+
+    & > .list-marker {
+      position: relative;
+      left: 0;
+      width: 1.5rem;
+      height: 1.5em;
+      height: 1lh;
+      text-align: center;
+    }
+  }
+
+  &[data-list-kind="toggle"] {
+    & > .list-marker {
+      background-image: var(--prosekit-list-toggle-open-image);
+    }
+
+    &[data-list-collapsable][data-list-collapsed] > .list-marker {
+      background-image: var(--prosekit-list-toggle-closed-image);
+    }
+  }
+
+  &[data-list-kind="ordered"] {
+    /*
+      Ensure that the counters in children don't escape, so that the sub lists
+      won't affect the counter of the parent list.
+  
+      See also https://github.com/ocavue/prosemirror-flat-list/issues/23
+      */
+    & > * {
+      contain: style;
+    }
+
+    & > .list-marker::after {
+      position: absolute;
+      right: 0;
+      content: counter(prosemirror-flat-list-counter, decimal) ". ";
+      font-variant-numeric: tabular-nums;
+    }
+    counter-increment: prosemirror-flat-list-counter;
+
+    /* 
+      Reset the counter for the first list node in the sequence.
+      */
+    &:first-child,
+    :not(&) + & {
+      counter-reset: prosemirror-flat-list-counter;
+
+      /* 
+        If the first list node has a custom order number, set the counter to that value.
+        */
+      &[data-list-order] {
+        @supports (counter-set: prosemirror-flat-list-counter 1) {
+          counter-set: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
+        }
+
+        /* 
+          Safari older than version 17.2 doesn't support `counter-set` 
+          */
+        @supports not (counter-set: prosemirror-flat-list-counter 1) {
+          counter-increment: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
+        }
+      }
+    }
+  }
+
+  &[data-list-kind="task"] {
+    & > .list-marker {
+      &,
+      & * {
+        cursor: pointer;
+      }
+    }
+
+    & > .list-marker input {
+      display: none;
+    }
+  }
+
+  &[data-list-kind="toggle"] {
+    &[data-list-collapsable] > .list-marker {
+      cursor: pointer;
+    }
+    &:not([data-list-collapsable]) > .list-marker {
+      opacity: 40%;
+      pointer-events: none;
+    }
+
+    /* If collapsed, hide the second and futher children */
+    &[data-list-collapsable][data-list-collapsed] > .list-content > *:nth-child(n+2) {
+      display: none;
+    }
+  }
+}
+
+.list-marker {
+  min-width: 2px;
+  background-color: transparent;
+  background-color: pink;
+}

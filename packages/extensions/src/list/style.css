@@ -1,1 +1,5 @@
-@import "prosemirror-flat-list/style.css";
+@import "./style-old.css";
+
+blockquote {
+  padding-bottom: 10px;
+}

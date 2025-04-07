@@ -28,6 +28,7 @@
   "malva": {
     "quotes": "preferDouble",
     "formatComments": true,
+    "declarationOrder": "smacss",
   },
   "yaml": {},
   "excludes": [

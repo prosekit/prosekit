@@ -8,7 +8,6 @@ import { merge } from 'lodash-es'
 const defaultConfig = {
   optimizeDeps: {
     include: ['@vitest/coverage-v8/browser'],
-    // exclude: ['prettier', 'prettier/parser-html'],
   },
   test: {
     browser: {

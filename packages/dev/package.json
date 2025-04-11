@@ -7,7 +7,7 @@
   "sideEffects": false,
   "exports": {
     "./config-tsup": {
-      "types": "./src/config-tsup.ts",
+      "types": "./src/config-tsup-types.d.ts",
       "default": "./dist/config-tsup.js"
     },
     "./config-vitest": {

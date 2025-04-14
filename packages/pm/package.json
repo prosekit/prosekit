@@ -44,7 +44,7 @@
     "build:tsup": "tsup"
   },
   "dependencies": {
-    "prosemirror-commands": "^1.7.0",
+    "prosemirror-commands": "^1.7.1",
     "prosemirror-history": "^1.4.1",
     "prosemirror-inputrules": "^1.5.0",
     "prosemirror-keymap": "^1.2.2",

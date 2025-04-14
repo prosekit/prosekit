@@ -133,7 +133,7 @@ function defineLink(): LinkExtension {
     name: 'link',
     inclusive: false,
     attrs: {
-      href: {},
+      href: { validate: 'string|null' },
     },
     parseDOM: [
       {
@@ -191,7 +191,7 @@ function defineCodeBlock(): CodeBlockExtension {
     code: true,
     defining: true,
     marks: '',
-    attrs: { language: { default: '' } },
+    attrs: { language: { default: '', validate: 'string|null' } },
     toDOM() {
       return ['pre', ['code', 0]]
     },

@@ -20,9 +20,9 @@ export function defineMentionSpec() {
     atom: true,
     group: 'inline',
     attrs: {
-      id: {},
-      value: {},
-      kind: { default: '' },
+      id: { validate: 'string' },
+      value: { validate: 'string' },
+      kind: { default: '', validate: 'string' },
     },
     inline: true,
     leafText: (node) => (node.attrs as MentionAttrs).value.toString(),

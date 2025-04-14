@@ -20,7 +20,7 @@ export type HeadingSpecExtension = Extension<{
 export function defineHeadingSpec(): HeadingSpecExtension {
   return defineNodeSpec({
     name: 'heading',
-    attrs: { level: { default: 1 } },
+    attrs: { level: { default: 1, validate: 'number' } },
     content: 'inline*',
     group: 'block',
     defining: true,

@@ -133,14 +133,14 @@ function defineLink(): LinkExtension {
     name: 'link',
     inclusive: false,
     attrs: {
-      href: { validate: 'string|null' },
+      href: { validate: 'string' },
     },
     parseDOM: [
       {
         tag: 'a[href]',
         getAttrs: (dom: HTMLElement) => {
           return {
-            href: dom.getAttribute('href'),
+            href: dom.getAttribute('href') || '',
           }
         },
       },
@@ -191,7 +191,7 @@ function defineCodeBlock(): CodeBlockExtension {
     code: true,
     defining: true,
     marks: '',
-    attrs: { language: { default: '', validate: 'string|null' } },
+    attrs: { language: { default: '', validate: 'string' } },
     toDOM() {
       return ['pre', ['code', 0]]
     },

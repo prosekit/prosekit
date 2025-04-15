@@ -45,7 +45,7 @@ export function defineLinkSpec(): LinkSpecExtension {
     name: 'link',
     inclusive: false,
     attrs: {
-      href: { validate: 'string|null' },
+      href: { validate: 'string' },
     },
     parseDOM: [
       {

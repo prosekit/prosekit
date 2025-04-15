@@ -27,7 +27,7 @@ export function defineCodeBlockSpec(): CodeBlockSpecExtension {
     code: true,
     defining: true,
     marks: '',
-    attrs: { language: { default: '' } },
+    attrs: { language: { default: '', validate: 'string' } },
     parseDOM: [
       {
         tag: 'pre',

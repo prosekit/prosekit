@@ -28,9 +28,9 @@ export function defineImageSpec(): ImageSpecExtension {
   return defineNodeSpec({
     name: 'image',
     attrs: {
-      src: { default: null },
-      width: { default: null },
-      height: { default: null },
+      src: { default: null, validate: 'string|null' },
+      width: { default: null, validate: 'number|null' },
+      height: { default: null, validate: 'number|null' },
     },
     group: 'block',
     defining: true,

@@ -45,14 +45,14 @@ export function defineLinkSpec(): LinkSpecExtension {
     name: 'link',
     inclusive: false,
     attrs: {
-      href: {},
+      href: { validate: 'string' },
     },
     parseDOM: [
       {
         tag: 'a[href]',
         getAttrs: (dom: HTMLElement) => {
           return {
-            href: dom.getAttribute('href'),
+            href: dom.getAttribute('href') || '',
           }
         },
       },

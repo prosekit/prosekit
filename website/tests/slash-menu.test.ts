@@ -100,6 +100,15 @@ testStory(['slash-menu'], () => {
 
     // Verify the content in the editor
     expect((await getEditorHTML(page)).replaceAll(/\s/g, '')).toEqual(`<p>/heading</p><p>/heading</p>`)
+
+    // Create the third paragraph
+    await editor.press('Enter')
+
+    // Ensure the menu is working again
+    await expect(menu).toBeHidden()
+    await editor.press('/')
+    await editor.pressSequentially('head')
+    await expect(menu).toBeVisible()
   })
 
   test('insert list', async ({ page }) => {

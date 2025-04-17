@@ -12,8 +12,11 @@ import SlashMenuItem from './slash-menu-item'
 export default function SlashMenu() {
   const editor = useEditor<EditorExtension>()
 
+  // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
+  const regex = /\/(|\S.*)$/iu
+
   return (
-    <AutocompletePopover regex={/\/.*$/iu} className={Themes.AUTOCOMPLETE_MENU}>
+    <AutocompletePopover regex={regex} className={Themes.AUTOCOMPLETE_MENU}>
       <AutocompleteList>
         <SlashMenuItem
           label="Text"

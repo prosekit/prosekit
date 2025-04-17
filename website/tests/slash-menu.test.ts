@@ -41,6 +41,17 @@ testStory(['slash-menu'], () => {
     await expect(itemH2).toBeVisible()
   })
 
+  test('ignore slash followed by a space', async ({ page }) => {
+    const { editor, menu } = await setup(page)
+
+    await editor.focus()
+    await expect(menu).toBeHidden()
+    await editor.press('/')
+    await expect(menu).toBeVisible()
+    await editor.press(' ')
+    await expect(menu).toBeHidden()
+  })
+
   test('press Escape to hide the menu', async ({ page }) => {
     const { editor, menu } = await setup(page)
 

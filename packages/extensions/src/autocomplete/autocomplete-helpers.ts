@@ -60,8 +60,8 @@ export function getPluginState(state: EditorState) {
   return pluginKey.getState(state)
 }
 
-export function getTrMeta(tr: Transaction): PredictionTransactionMeta {
-  return tr.getMeta(pluginKey) as PredictionTransactionMeta
+export function getTrMeta(tr: Transaction): PredictionTransactionMeta | undefined {
+  return tr.getMeta(pluginKey) as PredictionTransactionMeta | undefined
 }
 
 export function setTrMeta(

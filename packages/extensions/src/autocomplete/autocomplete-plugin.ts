@@ -14,6 +14,7 @@ import {
   getTrMeta,
   pluginKey,
   setTrMeta,
+  type PredictionPluginMatching,
   type PredictionPluginState,
 } from './autocomplete-helpers'
 import type { AutocompleteRule } from './autocomplete-rule'
@@ -28,7 +29,7 @@ export function createAutocompletePlugin({
 
     state: {
       init: (): PredictionPluginState => {
-        return { active: false, ignore: null, matching: null }
+        return { ignores: [], matching: null }
       },
       apply: (
         tr: Transaction,
@@ -38,6 +39,7 @@ export function createAutocompletePlugin({
       ): PredictionPluginState => {
         const meta = getTrMeta(tr)
 
+        // No changes
         if (
           !tr.docChanged
           && oldState.selection.eq(newState.selection)
@@ -46,19 +48,28 @@ export function createAutocompletePlugin({
           return prevValue
         }
 
+        // Receiving a meta means that we are ignoring a match
         if (meta) {
-          return meta
+          let ignores = prevValue.ignores
+          if (!ignores.includes(meta.ignore)) {
+            ignores = [...ignores, meta.ignore]
+          }
+          return { matching: null, ignores }
         }
 
-        const nextValue = calcPluginState(newState, getRules())
-        if (
-          nextValue.active
-          && prevValue.ignore != null
-          && nextValue.matching?.from === prevValue.ignore
-        ) {
-          return prevValue
+        // Calculate the new ignores
+        const ignoreSet = new Set(prevValue.ignores.map(pos => tr.mapping.map(pos)))
+
+        // Calculate the new matching
+        let matching = calcPluginStateMatching(newState, getRules())
+
+        // Check if the matching should be ignored
+        if (matching && ignoreSet.has(matching.from)) {
+          matching = null
         }
-        return nextValue
+
+        // Return the new matching and ignores
+        return { matching, ignores: Array.from(ignoreSet) }
       },
     },
 
@@ -68,8 +79,7 @@ export function createAutocompletePlugin({
         const currValue = getPluginState(view.state)
 
         if (
-          prevValue?.active
-          && prevValue.matching
+          prevValue?.matching
           && prevValue.matching.rule !== currValue?.matching?.rule
         ) {
           // Deactivate the previous rule
@@ -77,9 +87,8 @@ export function createAutocompletePlugin({
         }
 
         if (
-          currValue?.active
-          && currValue.matching
-          && currValue.matching.from !== currValue.ignore
+          currValue?.matching
+          && !currValue.ignores.includes(currValue.matching.from)
         ) {
           // Activate the current rule
 
@@ -107,11 +116,7 @@ export function createAutocompletePlugin({
 
           const ignoreMatch = () => {
             view.dispatch(
-              setTrMeta(view.state.tr, {
-                active: false,
-                ignore: from,
-                matching: null,
-              }),
+              setTrMeta(view.state.tr, { ignore: from }),
             )
           }
 
@@ -130,7 +135,7 @@ export function createAutocompletePlugin({
     props: {
       decorations: (state: EditorState) => {
         const pluginState = getPluginState(state)
-        if (pluginState?.active && pluginState.matching) {
+        if (pluginState?.matching) {
           const { from, to } = pluginState.matching
           const deco = Decoration.inline(from, to, {
             class: 'prosemirror-prediction-match',
@@ -145,10 +150,10 @@ export function createAutocompletePlugin({
 
 const MAX_MATCH = 200
 
-function calcPluginState(
+function calcPluginStateMatching(
   state: EditorState,
   rules: AutocompleteRule[],
-): PredictionPluginState {
+): PredictionPluginMatching | null {
   const $pos = state.selection.$from
 
   const parentOffset: number = $pos.parentOffset
@@ -171,19 +176,11 @@ function calcPluginState(
       continue
     }
 
-    const from = $pos.pos - textBefore.length + match.index
+    const to = $pos.pos
+    const from = to - textBefore.length + match.index
 
-    return {
-      active: true,
-      ignore: null,
-      matching: {
-        rule,
-        match,
-        from,
-        to: $pos.pos,
-      },
-    }
+    return { rule, match, from, to }
   }
 
-  return { active: false, ignore: null, matching: null }
+  return null
 }

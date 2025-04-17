@@ -6,6 +6,7 @@ import {
 
 import {
   emptyEditor,
+  getEditorHTML,
   testStory,
   waitForEditor,
 } from './helper'
@@ -51,6 +52,63 @@ testStory(['slash-menu'], () => {
     await expect(menu).toBeHidden()
     await editor.pressSequentially('heading')
     await expect(menu).toBeHidden()
+  })
+
+  test('remember hidden positions', async ({ page }) => {
+    const { editor, menu } = await setup(page)
+    await editor.focus()
+
+    // Enter /head in the first paragraph, and dismiss the menu
+    await expect(menu).toBeHidden()
+    await editor.press('/')
+    await expect(menu).toBeVisible()
+    await editor.press('Escape')
+    await expect(menu).toBeHidden()
+    await editor.pressSequentially('head')
+    await expect(menu).toBeHidden()
+
+    // Create a new paragraph
+    await editor.press('Enter')
+
+    // Enter /head in the second paragraph, and dismiss the menu
+    await expect(menu).toBeHidden()
+    await editor.press('/')
+    await expect(menu).toBeVisible()
+    await editor.press('Escape')
+    await expect(menu).toBeHidden()
+    await editor.pressSequentially('head')
+    await expect(menu).toBeHidden()
+
+    // Verify the content in the editor
+    expect((await getEditorHTML(page)).replaceAll(/\s/g, '')).toEqual(`<p>/head</p><p>/head</p>`)
+
+    // Move the cursor back to the first paragraph
+    await editor.press('ArrowUp')
+
+    // Enter text and the menu should still be hidden
+    await expect(menu).toBeHidden()
+    await editor.pressSequentially('ing')
+    await expect(menu).toBeHidden()
+
+    // Move the cursor back to the second paragraph
+    await editor.press('ArrowDown')
+
+    // Enter text and the menu should still be hidden
+    await expect(menu).toBeHidden()
+    await editor.pressSequentially('ing')
+    await expect(menu).toBeHidden()
+
+    // Verify the content in the editor
+    expect((await getEditorHTML(page)).replaceAll(/\s/g, '')).toEqual(`<p>/heading</p><p>/heading</p>`)
+
+    // Create the third paragraph
+    await editor.press('Enter')
+
+    // Ensure the menu is working again
+    await expect(menu).toBeHidden()
+    await editor.press('/')
+    await editor.pressSequentially('head')
+    await expect(menu).toBeVisible()
   })
 
   test('insert list', async ({ page }) => {

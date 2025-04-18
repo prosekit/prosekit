@@ -26,8 +26,8 @@ importers:
         specifier: ^2.13.1
         version: 2.13.1(@types/estree@1.0.6)(eslint@9.22.0(jiti@2.4.2))(jsonc-eslint-parser@2.4.0)(typescript@5.8.2)
       '@ocavue/tsconfig':
-        specifier: ^0.3.3
-        version: 0.3.3
+        specifier: ^0.3.6
+        version: 0.3.6
       '@prosekit/unocss-preset':
         specifier: workspace:*
         version: link:packages/unocss-preset
@@ -2086,8 +2086,8 @@ packages:
   '@ocavue/eslint-config@2.13.1':
     resolution: {integrity: sha512-6vWd45jKYMpMuZG4aylBKwRKwj+LaJvK3rJZ7cojLOE/yIRpjZBd5n42ZPW9H0sdy7CtHwi0+UogK4G0nqxbAw==}
 
-  '@ocavue/tsconfig@0.3.3':
-    resolution: {integrity: sha512-Ty1ERuFNz2ECDCiAh7H5+M/WnVh/1/zqvSybLrN/Gw0PELR96MWa2gWo0Nn1ahF8p2eWjBuz3e7GkICcT7dcGQ==}
+  '@ocavue/tsconfig@0.3.6':
+    resolution: {integrity: sha512-ezTiVnY6STOyvbpJy6OYkP5jjT2lWEMJEmvn1Fv3JNjqDcJKMK/+poGTm3vzIWdGValAiN98Qmrt363bd2nDzg==}
 
   '@ocavue/utils@0.4.0':
     resolution: {integrity: sha512-iswQsORaxHtkjN/XDg20td01ulMzEgUEvqgWA3mvrfTeYUPHOgMBNRRfzTozhLh1NQ0zCHCBgMegi4r+nRElXw==}
@@ -8624,7 +8624,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@ocavue/tsconfig@0.3.3': {}
+  '@ocavue/tsconfig@0.3.6': {}
 
   '@ocavue/utils@0.4.0': {}
 

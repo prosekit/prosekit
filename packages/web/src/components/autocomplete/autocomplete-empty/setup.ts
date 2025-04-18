@@ -1,3 +1,1 @@
-import { useListboxEmpty } from '@aria-ui/listbox/elements'
-
-export const useAutocompleteEmpty = useListboxEmpty
+export { useListboxEmpty as useAutocompleteEmpty } from '@aria-ui/listbox/elements'

@@ -15,7 +15,7 @@ export interface HoveringCellInfo {
 export function isHoveringCellInfoEqual(
   a?: HoveringCellInfo | null,
   b?: HoveringCellInfo | null,
-) {
+): boolean {
   if (!a && !b) return true
   if (!a || !b) return false
   return (

@@ -15,7 +15,7 @@ export function calcResize(
   dx: number,
   dy: number,
   aspectRatio: number | null | undefined,
-) {
+): [w: number, h: number] {
   aspectRatio = aspectRatio ? aspectRatio : w / h
   aspectRatio = isFinitePositiveNumber(aspectRatio) ? aspectRatio : 1
 

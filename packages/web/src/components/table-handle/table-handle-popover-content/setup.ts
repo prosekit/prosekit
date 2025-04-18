@@ -31,7 +31,7 @@ export function useTableHandlePopoverContent(
     TableHandlePopoverContentProps,
     TableHandlePopoverContentEvents
   >,
-) {
+): void {
   const rootContext = tableHandleRootContext.consume(host)
   const open = createComputed(() => !!rootContext.get())
   const keyDownTarget = useKeyDownTarget(host, open)

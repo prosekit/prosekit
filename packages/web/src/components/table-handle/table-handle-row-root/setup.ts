@@ -26,7 +26,7 @@ import type {
 export function useTableHandleRowRoot(
   host: ConnectableElement,
   { state }: SetupOptions<TableHandleRowRootProps, TableHandleRowRootEvents>,
-) {
+): void {
   const { editor, ...overlayState } = state
 
   const rootContext = tableHandleRootContext.consume(host)

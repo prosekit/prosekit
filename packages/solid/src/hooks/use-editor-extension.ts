@@ -19,7 +19,7 @@ import { toValue } from '../utils/to-value'
 export function useEditorExtension(
   editorAccessor: MaybeAccessor<Editor> | undefined | null,
   extensionAccessor: Accessor<Extension | null>,
-) {
+): void {
   const editorContext = useEditorContext()
 
   createEffect(() => {

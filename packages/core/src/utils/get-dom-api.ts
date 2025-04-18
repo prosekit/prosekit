@@ -20,7 +20,7 @@ function findGlobalBrowserWindow() {
   }
 }
 
-export function findBrowserDocument(options?: { document?: Document }) {
+export function findBrowserDocument(options?: { document?: Document }): Document | undefined {
   return (
     options?.document
       ?? findGlobalBrowserDocument()

@@ -1,4 +1,7 @@
-import { createContext } from '@aria-ui/core'
+import {
+  createContext,
+  type Context,
+} from '@aria-ui/core'
 
 import type { HoveringCellInfo } from './utils'
 
@@ -10,7 +13,7 @@ export type TableHandleRootContext = HoveringCellInfo | null
 /**
  * @internal
  */
-export const tableHandleRootContext = createContext<TableHandleRootContext>(
+export const tableHandleRootContext: Context<TableHandleRootContext> = createContext(
   'prosekit-table-handle-root-context',
   null,
 )

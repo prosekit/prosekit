@@ -11,7 +11,7 @@ import { useEffect } from 'preact/hooks'
 export function useEditorExtension(
   editor: Editor | null | undefined,
   extension: Extension | null,
-) {
+): void {
   if (!editor) {
     throw new EditorNotFoundError()
   }

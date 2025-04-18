@@ -14,7 +14,7 @@ export function useKeymap(
   host: ConnectableElement,
   editor: ReadonlySignal<Editor | null>,
   keymap: Keymap,
-) {
+): void {
   const extension = defineKeymap(keymap)
-  return useEditorExtension(host, editor, extension)
+  useEditorExtension(host, editor, extension)
 }

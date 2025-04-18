@@ -1,4 +1,7 @@
-import { createContext } from '@aria-ui/core'
+import {
+  createContext,
+  type Context,
+} from '@aria-ui/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 
 /**
@@ -17,7 +20,7 @@ export type BlockPopoverContext = HoverState | null
 /**
  * @internal
  */
-export const blockPopoverContext = createContext<BlockPopoverContext>(
+export const blockPopoverContext: Context<BlockPopoverContext> = createContext(
   'prosekit-block-popover-context',
   null,
 )

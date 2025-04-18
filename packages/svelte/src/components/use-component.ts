@@ -7,7 +7,10 @@ import { useEditorContext } from '../contexts/editor-context'
 // when I directly use `{...$$props}`. It seems that Svelte v4 recognizes
 // the properties as attributes. Here is a workaround to set the properties
 // on the element manually and only let Svelte set the attributes.
-export function useComponent(propNames: string[], eventNames: string[]) {
+export function useComponent(
+  propNames: string[],
+  eventNames: string[],
+): (element: HTMLElement | undefined, $$props: Record<string, unknown>) => [Record<string, unknown>, Record<string, EventHandler>] {
   const hasEditor = propNames.includes('editor')
   const lowerCaseEventNameMap = Object.fromEntries(
     eventNames.map((name) => [name.toLowerCase(), name]),
@@ -18,7 +21,7 @@ export function useComponent(propNames: string[], eventNames: string[]) {
   function handleChange(
     element: HTMLElement | undefined,
     $$props: Record<string, unknown>,
-  ) {
+  ): [Record<string, unknown>, Record<string, EventHandler>] {
     const properties: Record<string, unknown> = {}
     const attributes: Record<string, unknown> = {}
     const eventHandlers: Record<string, EventHandler> = {}
@@ -59,7 +62,7 @@ export function useComponent(propNames: string[], eventNames: string[]) {
       }
     }
 
-    return [attributes, eventHandlers] as const
+    return [attributes, eventHandlers]
   }
 
   return handleChange

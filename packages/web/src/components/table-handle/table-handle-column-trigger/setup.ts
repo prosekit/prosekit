@@ -13,7 +13,7 @@ import type { TableHandleColumnTriggerProps } from './types'
 export function useTableHandleColumnTrigger(
   host: ConnectableElement,
   { state }: { state: SignalState<TableHandleColumnTriggerProps> },
-) {
+): void {
   useMenuTrigger(host)
 
   const context = tableHandleRootContext.consume(host)

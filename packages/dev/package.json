@@ -22,14 +22,11 @@
   "dependencies": {
     "@manypkg/find-root": "^2.2.3",
     "@manypkg/get-packages": "^2.2.2",
-    "@microsoft/api-extractor": "^7.52.3",
     "@sindresorhus/slugify": "^2.2.1",
     "@types/fs-extra": "^11.0.4",
     "fs-extra": "^11.3.0",
-    "load-json-file": "^7.0.1",
     "lodash-es": "^4.17.21",
-    "path-exists": "^5.0.0",
-    "tsup": "^8.4.0"
+    "path-exists": "^5.0.0"
   },
   "devDependencies": {
     "@changesets/read": "^0.6.3",

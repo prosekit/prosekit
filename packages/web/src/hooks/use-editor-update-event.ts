@@ -17,7 +17,7 @@ export function useEditorUpdateEvent(
   host: ConnectableElement,
   editor: ReadonlySignal<Editor | null>,
   handler: UpdateHandler,
-) {
+): void {
   const extension = defineUpdateHandler(handler)
   useEditorExtension(host, editor, extension)
 }

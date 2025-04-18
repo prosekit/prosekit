@@ -55,7 +55,7 @@ function withNodeViewProps(
 /**
  * @internal
  */
-export function consumeSolidNodeViews() {
+export function consumeSolidNodeViews(): void {
   const nodeViewFactory = useNodeViewFactory()
   const extension = createMemo(
     () => defineSolidNodeViewFactory(nodeViewFactory),

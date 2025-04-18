@@ -82,7 +82,7 @@ function wrapComponent(
 
 export function defineSvelteNodeViewFactory(
   factory: (options: SvelteNodeViewUserOptions) => NodeViewConstructor,
-) {
+): Extension {
   return defineNodeViewFactory<SvelteNodeViewUserOptions>({
     group: 'svelte',
     factory,

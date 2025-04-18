@@ -56,7 +56,7 @@ function withMarkViewProps(component: VueMarkViewComponent) {
 /**
  * @internal
  */
-export const VueMarkViewsConsumer = /* @__PURE__ */ defineComponent({
+export const VueMarkViewsConsumer: DefineComponent = /* @__PURE__ */ defineComponent({
   name: 'VueMarkViewsConsumer',
   setup: () => {
     const markViewFactory: MarkViewFactory = useMarkViewFactory()
@@ -64,7 +64,7 @@ export const VueMarkViewsConsumer = /* @__PURE__ */ defineComponent({
       return defineVueMarkViewFactory(markViewFactory)
     })
     useExtension(extension)
-    return () => null
+    return (): null => null
   },
 })
 

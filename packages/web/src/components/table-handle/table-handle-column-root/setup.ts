@@ -22,7 +22,7 @@ import type { TableHandleColumnRootProps } from './types'
 export function useTableHandleColumnRoot(
   host: ConnectableElement,
   { state }: { state: SignalState<TableHandleColumnRootProps> },
-) {
+): void {
   const { editor, ...overlayState } = state
 
   const rootContext = tableHandleRootContext.consume(host)

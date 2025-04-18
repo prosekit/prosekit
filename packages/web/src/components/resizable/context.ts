@@ -1,9 +1,12 @@
-import { createContext } from '@aria-ui/core'
+import {
+  createContext,
+  type Context,
+} from '@aria-ui/core'
 
 /**
  * @internal
  */
-export const onResizeContext = createContext<OnResize>(
+export const onResizeContext: Context<OnResize> = createContext(
   'prosekit/resizable/onResize',
   null,
 )
@@ -11,7 +14,7 @@ export const onResizeContext = createContext<OnResize>(
 /**
  * @internal
  */
-export const onResizeStartContext = createContext<OnResizeStart>(
+export const onResizeStartContext: Context<OnResizeStart> = createContext(
   'prosekit/resizable/onResizeStart',
   null,
 )
@@ -19,7 +22,7 @@ export const onResizeStartContext = createContext<OnResizeStart>(
 /**
  * @internal
  */
-export const onResizeEndContext = createContext<OnResizeEnd>(
+export const onResizeEndContext: Context<OnResizeEnd> = createContext(
   'prosekit/resizable/onResizeEnd',
   null,
 )

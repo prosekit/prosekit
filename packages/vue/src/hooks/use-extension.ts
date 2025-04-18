@@ -33,7 +33,7 @@ export function useExtension(
    */
   extension: MaybeRefOrGetter<Extension | null>,
   options?: UseExtensionOptions,
-) {
+): void {
   useEditorExtension(
     options?.editor,
     usePriorityExtension(extension, options?.priority),

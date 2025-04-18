@@ -9,7 +9,7 @@ import {
   type UseExtensionOptions,
 } from './use-extension'
 
-export function useKeymap(keymap: Keymap, options?: UseExtensionOptions) {
+export function useKeymap(keymap: Keymap, options?: UseExtensionOptions): void {
   const extension = useMemo(() => defineKeymap(keymap), [keymap])
-  return useExtension(extension, options)
+  useExtension(extension, options)
 }

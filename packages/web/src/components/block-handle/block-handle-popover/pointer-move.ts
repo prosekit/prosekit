@@ -7,6 +7,7 @@ import {
 import {
   defineDOMEventHandler,
   union,
+  type PlainExtension,
 } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
@@ -20,7 +21,7 @@ export type ElementHoverHandler = (
   hoverState: HoverState | null,
 ) => void
 
-export function defineElementHoverHandler(handler: ElementHoverHandler) {
+export function defineElementHoverHandler(handler: ElementHoverHandler): PlainExtension {
   const handleElement = (
     node: ProseMirrorNode,
     pos: number,

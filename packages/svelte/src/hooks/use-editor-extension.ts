@@ -14,7 +14,7 @@ import { useEditorContext } from '../contexts/editor-context'
 export function useEditorExtension(
   maybeEditor: Editor | null | undefined,
   extensionStore: Readable<Extension | null>,
-) {
+): void {
   const editorContext = useEditorContext()
 
   onMount(() => {

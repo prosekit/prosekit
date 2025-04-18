@@ -14,7 +14,7 @@ import {
 export function useStateUpdate(
   handler: (state: EditorState) => void,
   options?: UseExtensionOptions,
-) {
+): void {
   const extension = defineUpdateHandler((view) => handler(view.state))
-  return useExtension(extension, options)
+  useExtension(extension, options)
 }

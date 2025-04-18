@@ -82,7 +82,7 @@ function wrapComponent(
 
 export function defineSvelteMarkViewFactory(
   factory: (options: SvelteMarkViewUserOptions) => MarkViewConstructor,
-) {
+): Extension {
   return defineMarkViewFactory<SvelteMarkViewUserOptions>({
     group: 'svelte',
     factory,

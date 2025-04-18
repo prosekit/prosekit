@@ -18,7 +18,7 @@ export function useTableHandleRowTrigger(
   {
     state,
   }: SetupOptions<TableHandleRowTriggerProps, TableHandleRowTriggerEvents>,
-) {
+): void {
   useMenuTrigger(host)
 
   const context = tableHandleRootContext.consume(host)

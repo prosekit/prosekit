@@ -30,7 +30,7 @@ import type { TableHandleRootProps } from './types'
 export function useTableHandleRoot(
   host: ConnectableElement,
   { state }: { state: SignalState<TableHandleRootProps> },
-) {
+): void {
   const { editor } = state
 
   const context = createSignal<TableHandleRootContext>(null)

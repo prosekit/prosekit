@@ -15,6 +15,6 @@ export function useTableHandlePopoverItem(
     state,
     emit,
   }: SetupOptions<TableHandlePopoverItemProps, TableHandlePopoverItemEvents>,
-) {
+): void {
   useMenuItem(element, { state, emit })
 }

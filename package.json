@@ -51,7 +51,7 @@
   },
   "pnpm": {
     "overrides": {
-      "tsdown": "https://pkg.pr.new/tsdown@6c954c5"
+      "tsdown": "https://pkg.pr.new/tsdown@42e63aa"
     },
     "patchedDependencies": {
       "prosemirror-splittable@0.1.1": "patches/prosemirror-splittable@0.1.1.patch"

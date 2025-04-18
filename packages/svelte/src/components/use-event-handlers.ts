@@ -16,10 +16,10 @@ export function useEventHandlers(
   update(eventHandlers)
 
   return {
-    update(eventHandlers: Record<string, (...args: any[]) => any>) {
+    update(eventHandlers: Record<string, (...args: any[]) => any>): void {
       update(eventHandlers)
     },
-    destroy() {
+    destroy(): void {
       update({})
     },
   }

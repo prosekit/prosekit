@@ -117,6 +117,25 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(@types/debug@4.1.12)(@types/node@20.17.29)(@vitest/browser@3.1.1)(jiti@2.4.2)(msw@2.7.3(@types/node@20.17.29)(typescript@5.8.2))(tsx@4.19.3)(yaml@2.7.0)
 
+  packages/config-tsup:
+    dependencies:
+      read-package-up:
+        specifier: ^11.0.0
+        version: 11.0.0
+    devDependencies:
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      tsup:
+        specifier: ^8.4.0
+        version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.2
+
   packages/core:
     dependencies:
       '@ocavue/utils':

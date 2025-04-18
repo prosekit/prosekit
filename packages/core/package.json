@@ -33,7 +33,7 @@
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
-    "build:tsup": "tsup"
+    "build:tsdown": "tsdown"
   },
   "dependencies": {
     "@ocavue/utils": "^0.4.0",

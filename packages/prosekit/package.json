@@ -146,7 +146,7 @@
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
-    "build:tsup": "tsup",
+    "build:tsdown": "tsdown",
     "build:typedoc": "typedoc"
   },
   "dependencies": {

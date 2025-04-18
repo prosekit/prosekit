@@ -41,7 +41,7 @@
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
-    "build:tsup": "tsup"
+    "build:tsdown": "tsdown"
   },
   "dependencies": {
     "prosemirror-commands": "^1.7.1",

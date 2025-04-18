@@ -39,7 +39,7 @@
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
-    "build:tsup": "tsup"
+    "build:tsdown": "tsdown"
   },
   "dependencies": {
     "@aria-ui/collection": "^0.0.5",

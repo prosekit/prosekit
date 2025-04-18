@@ -57,12 +57,12 @@
     }
   },
   "devDependencies": {
-    "@prosekit/config-tsup": "workspace:*",
     "@prosekit/config-tsdown": "workspace:*",
-    "tsdown": "https://pkg.pr.new/tsdown@20c9afb",
+    "@prosekit/config-tsup": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/test-utils": "^2.4.6",
+    "tsdown": "https://pkg.pr.new/tsdown@20c9afb",
     "tsup": "^8.4.0",
     "typescript": "~5.8.2",
     "vitest": "^3.1.1",

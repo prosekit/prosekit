@@ -1,4 +1,7 @@
-import { definePlugin } from '@prosekit/core'
+import {
+  definePlugin,
+  type PlainExtension,
+} from '@prosekit/core'
 import type {
   Command,
   ProseMirrorPlugin,
@@ -116,6 +119,9 @@ export const redo: Command = (state, dispatch) => {
   return yRedo(state)
 }
 
-export function defineYjsUndoPlugin(options: YjsUndoOptions) {
+/**
+ * @internal
+ */
+export function defineYjsUndoPlugin(options: YjsUndoOptions): PlainExtension {
   return definePlugin(yUndoPlugin(options))
 }

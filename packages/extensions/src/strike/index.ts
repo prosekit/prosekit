@@ -6,6 +6,7 @@ import {
   toggleMark,
   union,
   type Extension,
+  type PlainExtension,
   type Union,
 } from '@prosekit/core'
 import type { Attrs } from '@prosekit/pm/model'
@@ -61,7 +62,7 @@ export function defineStrikeCommands(): StrikeCommandsExtension {
 /**
  * @internal
  */
-export function defineStrikeKeymap() {
+export function defineStrikeKeymap(): PlainExtension {
   return defineKeymap({
     'Mod-shift-s': toggleMark({ type: 'strike' }),
     'Mod-shift-x': toggleMark({ type: 'strike' }),
@@ -71,7 +72,7 @@ export function defineStrikeKeymap() {
 /**
  * @internal
  */
-export function defineStrikeInputRule() {
+export function defineStrikeInputRule(): PlainExtension {
   return defineMarkInputRule({
     regex: canUseRegexLookbehind()
       ? /(?<=\s|^)~~([^\s~]|[^\s~][^~]*[^\s~])~~$/

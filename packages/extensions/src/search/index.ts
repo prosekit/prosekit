@@ -1,6 +1,7 @@
 import {
   defineCommands,
   definePlugin,
+  type PlainExtension,
 } from '@prosekit/core'
 import type { Command } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
@@ -69,7 +70,7 @@ export interface SearchQueryOptions {
  *
  * @public
  */
-export function defineSearchQuery(options: SearchQueryOptions) {
+export function defineSearchQuery(options: SearchQueryOptions): PlainExtension {
   const query = new SearchQuery(options)
   return definePlugin(search({ initialQuery: query }))
 }

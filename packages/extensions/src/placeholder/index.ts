@@ -2,6 +2,7 @@ import {
   definePlugin,
   isInCodeBlock,
   maybeRun,
+  type PlainExtension,
 } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import {
@@ -44,7 +45,7 @@ export interface PlaceholderOptions {
  * Add a placeholder text to the editor when the current block or document is
  * empty.
  */
-export function definePlaceholder(options: PlaceholderOptions) {
+export function definePlaceholder(options: PlaceholderOptions): PlainExtension {
   return definePlugin(createPlaceholderPlugin(options))
 }
 

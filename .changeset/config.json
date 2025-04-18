@@ -1,5 +1,5 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config@2.3.1/schema.json",
+  "$schema": "https://unpkg.com/@changesets/config@3.1.1/schema.json",
   "changelog": "./changelog-config.cjs",
   "commit": false,
   "fixed": [],
@@ -8,8 +8,7 @@
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
   "ignore": [
-    "@prosekit/config-tsup",
-    "@prosekit/config-vitest",
+    "@prosekit/dev",
     "@prosekit/themes",
     "@prosekit/unocss-preset",
     "prosekit-website"

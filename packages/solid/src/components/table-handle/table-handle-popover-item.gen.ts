@@ -5,7 +5,9 @@ import {
   tableHandlePopoverItemProps,
   tableHandlePopoverItemEvents,
 } from '@prosekit/web/table-handle'
+import type { Component } from 'solid-js'
 
+import type { PropsWithElement } from '../../types'
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
@@ -14,7 +16,10 @@ import type { CreateProps } from '../create-props'
  */
 export interface TableHandlePopoverItemProps extends Partial<CreateProps<Props, Events>> {}
 
-export const TableHandlePopoverItem = createComponent<
+export const TableHandlePopoverItem: Component<PropsWithElement<
+  TableHandlePopoverItemProps,
+  TableHandlePopoverItemElement
+>> = createComponent<
   TableHandlePopoverItemProps,
   TableHandlePopoverItemElement
 >(

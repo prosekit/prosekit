@@ -5,7 +5,9 @@ import {
   blockHandlePopoverProps,
   blockHandlePopoverEvents,
 } from '@prosekit/web/block-handle'
+import type { Component } from 'solid-js'
 
+import type { PropsWithElement } from '../../types'
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
@@ -14,7 +16,10 @@ import type { CreateProps } from '../create-props'
  */
 export interface BlockHandlePopoverProps extends Partial<CreateProps<Props, Events>> {}
 
-export const BlockHandlePopover = createComponent<
+export const BlockHandlePopover: Component<PropsWithElement<
+  BlockHandlePopoverProps,
+  BlockHandlePopoverElement
+>> = createComponent<
   BlockHandlePopoverProps,
   BlockHandlePopoverElement
 >(

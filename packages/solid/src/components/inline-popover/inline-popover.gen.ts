@@ -5,7 +5,9 @@ import {
   inlinePopoverProps,
   inlinePopoverEvents,
 } from '@prosekit/web/inline-popover'
+import type { Component } from 'solid-js'
 
+import type { PropsWithElement } from '../../types'
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
@@ -14,7 +16,10 @@ import type { CreateProps } from '../create-props'
  */
 export interface InlinePopoverProps extends Partial<CreateProps<Props, Events>> {}
 
-export const InlinePopover = createComponent<
+export const InlinePopover: Component<PropsWithElement<
+  InlinePopoverProps,
+  InlinePopoverElement
+>> = createComponent<
   InlinePopoverProps,
   InlinePopoverElement
 >(

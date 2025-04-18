@@ -1,11 +1,9 @@
 import type { AnyFunction } from '@prosekit/core'
-import type {
-  Component,
-  JSX,
-} from 'solid-js'
+import type { Component } from 'solid-js'
 import h from 'solid-js/h'
 
 import { useEditorContext } from '../contexts/editor-context'
+import type { PropsWithElement } from '../types'
 
 export function createComponent<
   Props extends object,
@@ -14,7 +12,7 @@ export function createComponent<
   tagName: string,
   propNames: string[],
   eventNames: string[],
-): Component<Partial<Props> & JSX.HTMLAttributes<CustomElement>> {
+): Component<PropsWithElement<Props, CustomElement>> {
   const hasEditor = propNames.includes('editor')
   const lowerCaseEventNameMap = Object.fromEntries(
     eventNames.map((name) => [name.toLowerCase(), name]),

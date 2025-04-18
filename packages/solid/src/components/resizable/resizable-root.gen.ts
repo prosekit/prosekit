@@ -5,7 +5,9 @@ import {
   resizableRootProps,
   resizableRootEvents,
 } from '@prosekit/web/resizable'
+import type { Component } from 'solid-js'
 
+import type { PropsWithElement } from '../../types'
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
@@ -14,7 +16,10 @@ import type { CreateProps } from '../create-props'
  */
 export interface ResizableRootProps extends Partial<CreateProps<Props, Events>> {}
 
-export const ResizableRoot = createComponent<
+export const ResizableRoot: Component<PropsWithElement<
+  ResizableRootProps,
+  ResizableRootElement
+>> = createComponent<
   ResizableRootProps,
   ResizableRootElement
 >(

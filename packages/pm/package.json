@@ -54,6 +54,7 @@
     "prosemirror-view": "^1.39.1"
   },
   "devDependencies": {
+    "@prosekit/config-tsup": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "tsup": "^8.4.0",
     "typescript": "~5.8.2",
@@ -101,6 +102,7 @@
         "default": "./dist/view/style/prosemirror.css"
       }
     },
+    "dev": {},
     "main": "./dist/prosekit-pm.js",
     "module": "./dist/prosekit-pm.js",
     "types": "./dist/prosekit-pm.d.ts",
@@ -134,6 +136,20 @@
           "./dist/prosekit-pm-view.d.ts"
         ]
       }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-pm": "./src/index.ts",
+      "prosekit-pm-commands": "./src/commands.ts",
+      "prosekit-pm-history": "./src/history.ts",
+      "prosekit-pm-inputrules": "./src/inputrules.ts",
+      "prosekit-pm-keymap": "./src/keymap.ts",
+      "prosekit-pm-model": "./src/model.ts",
+      "prosekit-pm-state": "./src/state.ts",
+      "prosekit-pm-transform": "./src/transform.ts",
+      "prosekit-pm-view": "./src/view.ts",
+      "view/style/prosemirror": "./src/view/style/prosemirror.css"
     }
   }
 }

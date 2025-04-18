@@ -57,6 +57,7 @@
     }
   },
   "devDependencies": {
+    "@prosekit/config-tsup": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/test-utils": "^2.4.6",
@@ -100,6 +101,7 @@
         "default": "./dist/prosekit-vue-tooltip.js"
       }
     },
+    "dev": {},
     "main": "./dist/prosekit-vue.js",
     "module": "./dist/prosekit-vue.js",
     "types": "./dist/prosekit-vue.d.ts",
@@ -130,6 +132,18 @@
           "./dist/prosekit-vue-tooltip.d.ts"
         ]
       }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-vue": "./src/index.ts",
+      "prosekit-vue-autocomplete": "./src/components/autocomplete/index.gen.ts",
+      "prosekit-vue-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-vue-inline-popover": "./src/components/inline-popover/index.gen.ts",
+      "prosekit-vue-popover": "./src/components/popover/index.gen.ts",
+      "prosekit-vue-resizable": "./src/components/resizable/index.gen.ts",
+      "prosekit-vue-table-handle": "./src/components/table-handle/index.gen.ts",
+      "prosekit-vue-tooltip": "./src/components/tooltip/index.gen.ts"
     }
   }
 }

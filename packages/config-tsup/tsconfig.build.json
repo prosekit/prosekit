@@ -1,0 +1,3 @@
+{
+  "extends": "@ocavue/tsconfig/es/build-tsc.json"
+}

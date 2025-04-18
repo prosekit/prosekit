@@ -77,6 +77,7 @@
     }
   },
   "devDependencies": {
+    "@prosekit/config-tsup": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "@sveltejs/package": "^2.3.10",
     "@types/node": "^20.17.29",
@@ -129,6 +130,7 @@
         "default": "./dist/prosekit-svelte-tooltip.js"
       }
     },
+    "dev": {},
     "main": "./dist/prosekit-svelte.js",
     "module": "./dist/prosekit-svelte.js",
     "types": "./dist/prosekit-svelte.d.ts",
@@ -159,6 +161,18 @@
           "./dist/prosekit-svelte-tooltip.d.ts"
         ]
       }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-svelte": "./src/index.ts",
+      "prosekit-svelte-autocomplete": "./src/components/autocomplete/index.gen.ts",
+      "prosekit-svelte-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-svelte-inline-popover": "./src/components/inline-popover/index.gen.ts",
+      "prosekit-svelte-popover": "./src/components/popover/index.gen.ts",
+      "prosekit-svelte-resizable": "./src/components/resizable/index.gen.ts",
+      "prosekit-svelte-table-handle": "./src/components/table-handle/index.gen.ts",
+      "prosekit-svelte-tooltip": "./src/components/tooltip/index.gen.ts"
     }
   }
 }

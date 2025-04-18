@@ -98,6 +98,9 @@ importers:
         specifier: workspace:^
         version: link:../pm
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -169,6 +172,9 @@ importers:
         specifier: ^4.39.1
         version: 4.39.1
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -300,6 +306,9 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -346,6 +355,9 @@ importers:
         specifier: workspace:^
         version: link:../web
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -386,6 +398,9 @@ importers:
         specifier: ^1.39.1
         version: 1.39.1
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -414,6 +429,9 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -466,6 +484,9 @@ importers:
         specifier: workspace:*
         version: link:../web
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -551,6 +572,9 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -594,6 +618,9 @@ importers:
         specifier: ^0.4.1
         version: 0.4.1(solid-js@1.9.5)
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -628,6 +655,9 @@ importers:
         specifier: ^0.4.1
         version: 0.4.1(svelte@5.26.2)
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -724,6 +754,9 @@ importers:
         specifier: ^0.4.1
         version: 0.4.1(vue@3.5.13(typescript@5.8.2))
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -791,6 +824,9 @@ importers:
         specifier: ^1.7.0
         version: 1.7.0
     devDependencies:
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../dev
@@ -839,6 +875,9 @@ importers:
       '@playwright/test':
         specifier: ^1.51.1
         version: 1.51.1
+      '@prosekit/config-tsup':
+        specifier: workspace:*
+        version: link:../packages/config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../packages/dev

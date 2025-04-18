@@ -57,6 +57,7 @@
     }
   },
   "devDependencies": {
+    "@prosekit/config-tsup": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "solid-js": "^1.9.5",
     "tsup": "^8.4.0",
@@ -98,6 +99,7 @@
         "default": "./dist/prosekit-solid-tooltip.js"
       }
     },
+    "dev": {},
     "main": "./dist/prosekit-solid.js",
     "module": "./dist/prosekit-solid.js",
     "types": "./dist/prosekit-solid.d.ts",
@@ -128,6 +130,18 @@
           "./dist/prosekit-solid-tooltip.d.ts"
         ]
       }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-solid": "./src/index.ts",
+      "prosekit-solid-autocomplete": "./src/components/autocomplete/index.gen.ts",
+      "prosekit-solid-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-solid-inline-popover": "./src/components/inline-popover/index.gen.ts",
+      "prosekit-solid-popover": "./src/components/popover/index.gen.ts",
+      "prosekit-solid-resizable": "./src/components/resizable/index.gen.ts",
+      "prosekit-solid-table-handle": "./src/components/table-handle/index.gen.ts",
+      "prosekit-solid-tooltip": "./src/components/tooltip/index.gen.ts"
     }
   }
 }

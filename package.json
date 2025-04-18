@@ -50,7 +50,9 @@
     "vitest": "^3.1.1"
   },
   "pnpm": {
-    "overrides": {},
+    "overrides": {
+      "tsdown": "https://pkg.pr.new/tsdown@6c954c5"
+    },
     "patchedDependencies": {
       "prosemirror-splittable@0.1.1": "patches/prosemirror-splittable@0.1.1.patch"
     }

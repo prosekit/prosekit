@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  tsdown: https://pkg.pr.new/tsdown@6c954c5
+
 patchedDependencies:
   prosemirror-splittable@0.1.1:
     hash: cdd5fd4c908e289cdae9bd783acb607d9ccd6c1ddb7476ac848dfb405ca592bd
@@ -114,8 +117,8 @@ importers:
         specifier: ^13.0.1
         version: 13.0.1(postcss@8.5.3)
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -139,8 +142,8 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       typescript:
         specifier: ~5.8.2
         version: 5.8.2
@@ -221,8 +224,8 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(msw@2.7.3(@types/node@20.17.29)(typescript@5.8.2))(playwright@1.52.0)(vite@6.2.6(@types/node@20.17.29)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.0))(vitest@3.1.1)
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -349,8 +352,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -389,8 +392,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -438,8 +441,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -478,8 +481,8 @@ importers:
         specifier: ^10.26.5
         version: 10.26.5
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -569,8 +572,8 @@ importers:
         specifier: ^5.27.3
         version: 5.28.1
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -642,8 +645,8 @@ importers:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -685,8 +688,8 @@ importers:
         specifier: ^1.9.5
         version: 1.9.5
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -740,8 +743,8 @@ importers:
         specifier: ^4.1.6
         version: 4.1.6(picomatch@4.0.2)(svelte@5.28.1)(typescript@5.8.2)
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
@@ -836,8 +839,8 @@ importers:
         specifier: ^2.4.6
         version: 2.4.6
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -906,8 +909,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: https://pkg.pr.new/tsdown@20c9afb
-        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
+        specifier: https://pkg.pr.new/tsdown@6c954c5
+        version: https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -1558,17 +1561,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@emnapi/core@1.3.1':
-    resolution: {integrity: sha512-pVGjBIt1Y6gg3EJN8jTcfpP/+uuRksIo055oE/OBkDNcjZqVbfkWCksG1Jp4yZnj3iKWyWX8fdG/j6UDYPbFog==}
-
   '@emnapi/core@1.4.3':
     resolution: {integrity: sha512-4m62DuCE07lw01soJwPiBGC0nAww0Q+RY70VZ+n49yDIO13yyinhbWCeNnaob0lakDtWQzSdtNWzJeOJt2ma+g==}
 
   '@emnapi/runtime@1.4.0':
     resolution: {integrity: sha512-64WYIf4UYcdLnbKn/umDlNjQDSS8AgZrI/R9+x5ilkUVFxXcA1Ebl+gQLc/6mERA4407Xof0R7wEyEuj091CVw==}
-
-  '@emnapi/wasi-threads@1.0.1':
-    resolution: {integrity: sha512-iIBu7mwkq4UQGeMEM8bLwNK962nXdhodeScX4slfQnRhEMMzvYivHhutCIk8uojvmASXXPC2WNEjwxFWk72Oqw==}
 
   '@emnapi/wasi-threads@1.0.2':
     resolution: {integrity: sha512-5n3nTJblwRi8LlXkJ9eBzu+kZR8Yxcc7ubakyQTFzPMtIhFpUBRbsnc2Dv88IZDIbCDlBiWrknhB4Lsz7mg6BA==}
@@ -2175,9 +2172,6 @@ packages:
   '@mswjs/interceptors@0.37.6':
     resolution: {integrity: sha512-wK+5pLK5XFmgtH3aQ2YVvA3HohS3xqV/OxuVOdNx9Wpnz7VE/fnC+e1A7ln6LFYeck7gOJ/dsZV6OLplOtAJ2w==}
     engines: {node: '>=18'}
-
-  '@napi-rs/wasm-runtime@0.2.7':
-    resolution: {integrity: sha512-5yximcFK5FNompXfJFoWanu5l8v1hNGqNHh9du1xETp9HWk/B/PzvchX55WYOPaIeNglG8++68AAiauBAtbnzw==}
 
   '@napi-rs/wasm-runtime@0.2.9':
     resolution: {integrity: sha512-OKRBiajrrxB9ATokgEQoG87Z25c67pCpYcCwmXYX8PBftC9pBfN18gnm/fh1wurSLEKIAt+QRFLFCQISrb66Jg==}
@@ -6943,8 +6937,8 @@ packages:
       typescript:
         optional: true
 
-  tsdown@https://pkg.pr.new/tsdown@20c9afb:
-    resolution: {tarball: https://pkg.pr.new/tsdown@20c9afb}
+  tsdown@https://pkg.pr.new/tsdown@6c954c5:
+    resolution: {tarball: https://pkg.pr.new/tsdown@6c954c5}
     version: 0.8.0
     engines: {node: '>=18.0.0'}
     hasBin: true
@@ -8468,12 +8462,6 @@ snapshots:
   '@dprint/win32-x64@0.49.1':
     optional: true
 
-  '@emnapi/core@1.3.1':
-    dependencies:
-      '@emnapi/wasi-threads': 1.0.1
-      tslib: 2.8.1
-    optional: true
-
   '@emnapi/core@1.4.3':
     dependencies:
       '@emnapi/wasi-threads': 1.0.2
@@ -8481,11 +8469,6 @@ snapshots:
     optional: true
 
   '@emnapi/runtime@1.4.0':
-    dependencies:
-      tslib: 2.8.1
-    optional: true
-
-  '@emnapi/wasi-threads@1.0.1':
     dependencies:
       tslib: 2.8.1
     optional: true
@@ -9081,13 +9064,6 @@ snapshots:
       strict-event-emitter: 0.5.1
     optional: true
 
-  '@napi-rs/wasm-runtime@0.2.7':
-    dependencies:
-      '@emnapi/core': 1.3.1
-      '@emnapi/runtime': 1.4.0
-      '@tybys/wasm-util': 0.9.0
-    optional: true
-
   '@napi-rs/wasm-runtime@0.2.9':
     dependencies:
       '@emnapi/core': 1.4.3
@@ -9486,7 +9462,7 @@ snapshots:
 
   '@rolldown/binding-wasm32-wasi@1.0.0-beta.7':
     dependencies:
-      '@napi-rs/wasm-runtime': 0.2.7
+      '@napi-rs/wasm-runtime': 0.2.9
     optional: true
 
   '@rolldown/binding-win32-arm64-msvc@1.0.0-beta.7':
@@ -12707,7 +12683,7 @@ snapshots:
     dependencies:
       mlly: 1.7.4
       pkg-types: 2.1.0
-      quansync: 0.2.8
+      quansync: 0.2.10
 
   locate-character@3.0.0: {}
 
@@ -14954,7 +14930,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.2
 
-  tsdown@https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2):
+  tsdown@https://pkg.pr.new/tsdown@6c954c5(typescript@5.8.2):
     dependencies:
       ansis: 3.17.0
       cac: 6.7.14
@@ -15154,7 +15130,7 @@ snapshots:
       '@quansync/fs': 0.1.2
       defu: 6.1.4
       jiti: 2.4.2
-      quansync: 0.2.8
+      quansync: 0.2.10
 
   uncrypto@0.1.3: {}
 

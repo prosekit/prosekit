@@ -118,7 +118,7 @@
     "loro-crdt": "^1.5.3",
     "loro-prosemirror": "^0.2.1",
     "prettier": "^3.5.3",
-    "tsdown": "https://pkg.pr.new/tsdown@20c9afb",
+    "tsdown": "^0.8.0",
     "tsup": "^8.4.0",
     "type-fest": "^4.40.0",
     "typescript": "~5.8.2",

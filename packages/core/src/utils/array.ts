@@ -9,7 +9,7 @@ export function uniqPush<T>(prev: readonly T[], next: readonly T[]): T[] {
   return result
 }
 
-export function uniqRemove<T>(prev: T[], next: T[]) {
+export function uniqRemove<T>(prev: T[], next: T[]): T[] {
   const result = [...prev]
 
   for (const item of next) {
@@ -24,7 +24,7 @@ export function uniqRemove<T>(prev: T[], next: T[]) {
 /**
  * @internal
  */
-export function arrayRemove<T>(array: T[], item: T) {
+export function arrayRemove<T>(array: T[], item: T): void {
   const index = array.indexOf(item)
   if (index !== -1) {
     array.splice(index, 1)

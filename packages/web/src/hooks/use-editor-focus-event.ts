@@ -17,7 +17,7 @@ export function useEditorFocusChangeEvent(
   host: ConnectableElement,
   editor: ReadonlySignal<Editor | null>,
   handler: FocusChangeHandler,
-) {
+): void {
   const extension = defineFocusChangeHandler(handler)
   useEditorExtension(host, editor, extension)
 }

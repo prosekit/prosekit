@@ -12,7 +12,7 @@ export function useEditorExtension(
   host: ConnectableElement,
   editor: ReadonlySignal<Editor | null>,
   extension: Extension,
-) {
+): void {
   useEffect(host, () => {
     return editor.get()?.use(extension)
   })

@@ -1,16 +1,19 @@
-import { createContext } from '@aria-ui/core'
+import {
+  createContext,
+  type Context,
+} from '@aria-ui/core'
 
-export const queryContext = createContext<string>(
+export const queryContext: Context<string> = createContext(
   'prosekit/autocomplete-popover/query',
   '',
 )
 
-export const onSubmitContext = createContext<VoidFunction | null>(
+export const onSubmitContext: Context<VoidFunction | null> = createContext(
   'prosekit/autocomplete-popover/onSubmit',
   null,
 )
 
-export const openContext = createContext<boolean>(
+export const openContext: Context<boolean> = createContext(
   'prosekit/autocomplete-popover/open',
   false,
 )

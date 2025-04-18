@@ -1,3 +1,7 @@
+import type {
+  EventDeclarations,
+  PropDeclarations,
+} from '@aria-ui/core'
 import {
   listboxEvents,
   listboxProps,
@@ -16,11 +20,11 @@ export interface AutocompleteListProps extends Pick<ListboxProps, 'filter'> {
   editor: Editor | null
 }
 
-export const autocompleteListProps = {
+export const autocompleteListProps: PropDeclarations<AutocompleteListProps> = {
   filter: listboxProps.filter,
   editor: { default: null },
 }
 
 export interface AutocompleteListEvents extends ListboxEvents {}
 
-export const autocompleteListEvents = listboxEvents
+export const autocompleteListEvents: EventDeclarations<AutocompleteListEvents> = { ...listboxEvents }

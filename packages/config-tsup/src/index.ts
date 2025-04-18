@@ -1,5 +1,3 @@
-import path from 'node:path'
-
 import { merge } from 'lodash-es'
 import { pathExistsSync } from 'path-exists'
 import { readPackageUpSync } from 'read-package-up'
@@ -10,10 +8,6 @@ export function config(options?: Options): Options {
   if (!pkg) {
     throw new Error('No package.json found')
   }
-
-  const packageDir = path.resolve(pkg.path, '..')
-  const tsconfigBuildPath = path.resolve(packageDir, 'tsconfig.build.json')
-  const tsconfigPath = path.resolve(packageDir, 'tsconfig.json')
 
   const packageJson = pkg.packageJson as {
     dev?: {
@@ -34,7 +28,7 @@ export function config(options?: Options): Options {
     sourcemap: false,
     clean: false,
     noExternal: [/\.css$/i],
-    tsconfig: (pathExistsSync(tsconfigBuildPath)) ? tsconfigBuildPath : tsconfigPath,
+    tsconfig: getTsconfigPath(pkg.path),
     experimentalDts: {
       entry: removeCssEntryPoints(entryPoints),
     },
@@ -53,4 +47,23 @@ function removeCssEntryPoints(
 
 function deepMergeOptions(a: Options, b?: Options): Options {
   return merge({}, a, b)
+}
+
+function getTsconfigPath(packageJsonPath: string): string {
+  if (!packageJsonPath.endsWith('package.json')) {
+    throw new Error('Unexpected package.json path')
+  }
+
+  const tsconfigBuildPath = packageJsonPath.replace(/package.json$/, 'tsconfig.build.json')
+  const tsconfigPath = packageJsonPath.replace(/package.json$/, 'tsconfig.json')
+
+  if (pathExistsSync(tsconfigBuildPath)) {
+    return tsconfigBuildPath
+  }
+
+  if (pathExistsSync(tsconfigPath)) {
+    return tsconfigPath
+  }
+
+  throw new Error(`Unable to find ${tsconfigBuildPath} or ${tsconfigPath}`)
 }

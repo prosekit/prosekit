@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@prosekit/config-tsup": "workspace:*",
-    "@prosekit/dev": "workspace:*",
+    "@prosekit/config-vitest": "workspace:*",
     "postcss": "^8.5.3",
     "postcss-nesting": "^13.0.1",
     "tsup": "^8.4.0",

@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@prosekit/config-tsup": "workspace:*",
-    "@prosekit/dev": "workspace:*",
+    "@prosekit/config-vitest": "workspace:*",
     "@sveltejs/package": "^2.3.10",
     "@types/node": "^20.17.29",
     "read-pkg": "^9.0.1",

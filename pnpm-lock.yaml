@@ -101,9 +101,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       postcss:
         specifier: ^8.5.3
         version: 8.5.3
@@ -183,9 +183,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       '@vitest/browser':
         specifier: ^3.1.1
         version: 3.1.1(msw@2.7.3(@types/node@20.17.29)(typescript@5.8.2))(playwright@1.51.1)(vite@6.2.6(@types/node@20.17.29)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.0))(vitest@3.1.1)
@@ -293,9 +293,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       '@vitest/browser':
         specifier: ^3.1.1
         version: 3.1.1(msw@2.7.3(@types/node@20.17.29)(typescript@5.8.2))(playwright@1.51.1)(vite@6.2.6(@types/node@20.17.29)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.0))(vitest@3.1.1)
@@ -342,9 +342,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -385,9 +385,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -416,9 +416,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       preact:
         specifier: ^10.26.5
         version: 10.26.5
@@ -471,9 +471,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       '@types/react':
         specifier: ^19.1.1
         version: 19.1.1
@@ -559,9 +559,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       '@types/react':
         specifier: ^19.1.1
         version: 19.1.1
@@ -605,9 +605,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       solid-js:
         specifier: ^1.9.5
         version: 1.9.5
@@ -642,9 +642,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       '@sveltejs/package':
         specifier: ^2.3.10
         version: 2.3.10(svelte@5.26.2)(typescript@5.8.2)
@@ -741,9 +741,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       '@vitejs/plugin-vue':
         specifier: ^5.2.3
         version: 5.2.3(vite@6.2.6(@types/node@20.17.29)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.8.2))
@@ -811,9 +811,9 @@ importers:
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../dev
+        version: link:../config-vitest
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -859,9 +859,9 @@ importers:
       '@playwright/test':
         specifier: ^1.51.1
         version: 1.51.1
-      '@prosekit/dev':
+      '@prosekit/config-vitest':
         specifier: workspace:*
-        version: link:../packages/dev
+        version: link:../packages/config-vitest
       '@prosekit/themes':
         specifier: workspace:*
         version: link:../packages/themes

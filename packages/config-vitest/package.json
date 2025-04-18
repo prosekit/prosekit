@@ -1,0 +1,19 @@
+{
+  "name": "@prosekit/config-vitest",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Internal package for ProseKit",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./src/config-vitest.d.ts",
+      "default": "./src/config-vitest.js"
+    }
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "lodash-es": "^4.17.21",
+    "typescript": "~5.8.2"
+  }
+}

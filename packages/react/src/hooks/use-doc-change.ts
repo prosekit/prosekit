@@ -15,7 +15,7 @@ import {
 export function useDocChange(
   handler: (doc: ProseMirrorNode) => void,
   options?: UseExtensionOptions,
-) {
+): void {
   const extension = useMemo(
     () => defineDocChangeHandler((view) => handler(view.state.doc)),
     [handler],

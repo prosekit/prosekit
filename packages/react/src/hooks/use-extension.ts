@@ -32,7 +32,7 @@ export function useExtension(
    */
   extension: Extension | null,
   options?: UseExtensionOptions,
-) {
+): void {
   const editorContext = useEditorContext()
   useEditorExtension(
     options?.editor || editorContext,

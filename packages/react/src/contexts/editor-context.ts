@@ -5,6 +5,7 @@ import type {
 import {
   createContext,
   useContext,
+  type Provider,
 } from 'react'
 
 const editorContext = createContext<Editor | null>(null)
@@ -19,4 +20,4 @@ export function useEditorContext<E extends Extension>(): Editor<E> | null {
 /**
  * @internal
  */
-export const EditorContextProvider = editorContext.Provider
+export const EditorContextProvider: Provider<Editor | null> = editorContext.Provider

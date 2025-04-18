@@ -305,7 +305,7 @@ class CommitRecorder {
 /**
  * Define an extension that can record the changes in the editor.
  */
-function defineCommitRecorder(commitRecorder: CommitRecorder) {
+function defineCommitRecorder(commitRecorder: CommitRecorder): PlainExtension {
   const key = new PluginKey<DecorationSet>('prosekit-commit-recorder')
 
   return definePlugin(

@@ -27,7 +27,7 @@ export function handleEvent<E extends Event>(
   event: E,
   handlers: FileHandler<E>[],
   getFiles: (event: E) => File[],
-) {
+): boolean {
   const files = getFiles(event)
   let handled = false
   for (const file of files) {

@@ -1,3 +1,5 @@
+import type { PlainExtension } from '@prosekit/core'
+
 import { defineTextBlockInputRule } from '../input-rule'
 
 import type { HeadingAttrs } from './heading-types'
@@ -8,7 +10,7 @@ import type { HeadingAttrs } from './heading-types'
  *
  * @internal
  */
-export function defineHeadingInputRule() {
+export function defineHeadingInputRule(): PlainExtension {
   return defineTextBlockInputRule({
     regex: /^(#{1,6})\s$/,
     type: 'heading',

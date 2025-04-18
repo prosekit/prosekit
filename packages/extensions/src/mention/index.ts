@@ -3,6 +3,8 @@ import {
   defineNodeSpec,
   insertNode,
   union,
+  type Extension,
+  type Union,
 } from '@prosekit/core'
 
 export interface MentionAttrs {
@@ -12,9 +14,18 @@ export interface MentionAttrs {
 }
 
 /**
+ * @internal
+ */
+export type MentionSpecExtension = Extension<{
+  Nodes: {
+    mention: MentionAttrs
+  }
+}>
+
+/**
  * @public
  */
-export function defineMentionSpec() {
+export function defineMentionSpec(): MentionSpecExtension {
   return defineNodeSpec<'mention', MentionAttrs>({
     name: 'mention',
     atom: true,
@@ -49,7 +60,16 @@ export function defineMentionSpec() {
   })
 }
 
-export function defineMentionCommands() {
+/**
+ * @internal
+ */
+export type MentionCommandsExtension = Extension<{
+  Commands: {
+    insertMention: [attrs: MentionAttrs]
+  }
+}>
+
+export function defineMentionCommands(): MentionCommandsExtension {
   return defineCommands({
     insertMention: (attrs: MentionAttrs) => {
       return insertNode({ type: 'mention', attrs })
@@ -58,8 +78,13 @@ export function defineMentionCommands() {
 }
 
 /**
+ * @internal
+ */
+export type MentionExtension = Union<[MentionSpecExtension, MentionCommandsExtension]>
+
+/**
  * @public
  */
-export function defineMention() {
+export function defineMention(): MentionExtension {
   return union(defineMentionSpec(), defineMentionCommands())
 }

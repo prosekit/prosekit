@@ -5,7 +5,9 @@ import {
   autocompleteItemProps,
   autocompleteItemEvents,
 } from '@prosekit/web/autocomplete'
+import type { Component } from 'solid-js'
 
+import type { PropsWithElement } from '../../types'
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
@@ -14,7 +16,10 @@ import type { CreateProps } from '../create-props'
  */
 export interface AutocompleteItemProps extends Partial<CreateProps<Props, Events>> {}
 
-export const AutocompleteItem = createComponent<
+export const AutocompleteItem: Component<PropsWithElement<
+  AutocompleteItemProps,
+  AutocompleteItemElement
+>> = createComponent<
   AutocompleteItemProps,
   AutocompleteItemElement
 >(

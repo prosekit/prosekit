@@ -5,7 +5,9 @@ import {
   blockHandleAddProps,
   blockHandleAddEvents,
 } from '@prosekit/web/block-handle'
+import type { Component } from 'solid-js'
 
+import type { PropsWithElement } from '../../types'
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
@@ -14,7 +16,10 @@ import type { CreateProps } from '../create-props'
  */
 export interface BlockHandleAddProps extends Partial<CreateProps<Props, Events>> {}
 
-export const BlockHandleAdd = createComponent<
+export const BlockHandleAdd: Component<PropsWithElement<
+  BlockHandleAddProps,
+  BlockHandleAddElement
+>> = createComponent<
   BlockHandleAddProps,
   BlockHandleAddElement
 >(

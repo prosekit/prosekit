@@ -433,7 +433,9 @@ import {
   ${camel}Props,
   ${camel}Events,
 } from '@prosekit/web/${group}'
+import type { Component } from 'solid-js'
 
+import type { PropsWithElement } from '../../types'
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
@@ -442,7 +444,10 @@ import type { CreateProps } from '../create-props'
  */
 export interface ${pascal}Props extends Partial<CreateProps<Props, Events>> {}
 
-export const ${pascal} = createComponent<
+export const ${pascal}: Component<PropsWithElement<
+  ${pascal}Props,
+  ${pascal}Element
+>> = createComponent<
   ${pascal}Props,
   ${pascal}Element
 >(

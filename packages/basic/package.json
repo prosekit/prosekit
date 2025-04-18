@@ -42,6 +42,7 @@
     "@prosekit/pm": "workspace:^"
   },
   "devDependencies": {
+    "@prosekit/config-tsup": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "postcss": "^8.5.3",
     "postcss-nesting": "^13.0.1",
@@ -62,6 +63,7 @@
         "default": "./dist/typography.css"
       }
     },
+    "dev": {},
     "main": "./dist/prosekit-basic.js",
     "module": "./dist/prosekit-basic.js",
     "types": "./dist/prosekit-basic.d.ts",
@@ -71,6 +73,13 @@
           "./dist/prosekit-basic.d.ts"
         ]
       }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-basic": "./src/index.ts",
+      "style": "./src/style.css",
+      "typography": "./src/typography.css"
     }
   }
 }

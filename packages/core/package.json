@@ -46,6 +46,7 @@
     "type-fest": "^4.39.1"
   },
   "devDependencies": {
+    "@prosekit/config-tsup": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "@vitest/browser": "^3.1.1",
     "tsup": "^8.4.0",
@@ -63,6 +64,7 @@
         "default": "./dist/prosekit-core-test.js"
       }
     },
+    "dev": {},
     "main": "./dist/prosekit-core.js",
     "module": "./dist/prosekit-core.js",
     "types": "./dist/prosekit-core.d.ts",
@@ -75,6 +77,12 @@
           "./dist/prosekit-core-test.d.ts"
         ]
       }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-core": "./src/index.ts",
+      "prosekit-core-test": "./src/test/index.ts"
     }
   }
 }

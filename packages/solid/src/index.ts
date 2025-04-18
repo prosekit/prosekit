@@ -26,4 +26,5 @@ export type {
   MaybeAccessor,
   PropsWithChildren,
   PropsWithClass,
+  PropsWithElement,
 } from './types'

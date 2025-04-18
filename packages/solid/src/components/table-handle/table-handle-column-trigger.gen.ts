@@ -5,7 +5,9 @@ import {
   tableHandleColumnTriggerProps,
   tableHandleColumnTriggerEvents,
 } from '@prosekit/web/table-handle'
+import type { Component } from 'solid-js'
 
+import type { PropsWithElement } from '../../types'
 import { createComponent } from '../create-component'
 import type { CreateProps } from '../create-props'
 
@@ -14,7 +16,10 @@ import type { CreateProps } from '../create-props'
  */
 export interface TableHandleColumnTriggerProps extends Partial<CreateProps<Props, Events>> {}
 
-export const TableHandleColumnTrigger = createComponent<
+export const TableHandleColumnTrigger: Component<PropsWithElement<
+  TableHandleColumnTriggerProps,
+  TableHandleColumnTriggerElement
+>> = createComponent<
   TableHandleColumnTriggerProps,
   TableHandleColumnTriggerElement
 >(

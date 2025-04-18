@@ -56,6 +56,7 @@
     }
   },
   "devDependencies": {
+    "@prosekit/config-tsup": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "preact": "^10.26.5",
     "tsup": "^8.4.0",
@@ -97,6 +98,7 @@
         "default": "./dist/prosekit-preact-tooltip.js"
       }
     },
+    "dev": {},
     "main": "./dist/prosekit-preact.js",
     "module": "./dist/prosekit-preact.js",
     "types": "./dist/prosekit-preact.d.ts",
@@ -127,6 +129,18 @@
           "./dist/prosekit-preact-tooltip.d.ts"
         ]
       }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-preact": "./src/index.ts",
+      "prosekit-preact-autocomplete": "./src/components/autocomplete/index.gen.ts",
+      "prosekit-preact-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-preact-inline-popover": "./src/components/inline-popover/index.gen.ts",
+      "prosekit-preact-popover": "./src/components/popover/index.gen.ts",
+      "prosekit-preact-resizable": "./src/components/resizable/index.gen.ts",
+      "prosekit-preact-table-handle": "./src/components/table-handle/index.gen.ts",
+      "prosekit-preact-tooltip": "./src/components/tooltip/index.gen.ts"
     }
   }
 }

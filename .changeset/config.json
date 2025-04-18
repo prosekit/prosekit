@@ -8,6 +8,7 @@
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
   "ignore": [
+    "@prosekit/config-tsup",
     "@prosekit/themes",
     "@prosekit/unocss-preset",
     "prosekit-website"

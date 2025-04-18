@@ -17,13 +17,14 @@ export async function normalizePackageJson(pkg: Package) {
   const slugPackageName = slugify(pkg.packageJson.name)
 
   const publishExports: Record<string, any> = {}
-  const publishConfig: Record<string, any> = { exports: publishExports }
+  const publishConfig: Record<string, any> = { exports: publishExports, dev: {} }
   packageJson.publishConfig = publishConfig
 
   const exports: Record<string, any> = packageJson.exports || {}
   packageJson.exports = exports
 
   const entryPoints: Record<string, string> = {}
+  packageJson.dev = { entry: entryPoints }
 
   for (const path of Object.keys(exports)) {
     let sourcePath: string

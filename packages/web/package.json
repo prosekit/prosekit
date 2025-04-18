@@ -58,6 +58,7 @@
     "prosemirror-tables": "^1.7.0"
   },
   "devDependencies": {
+    "@prosekit/config-tsup": "workspace:*",
     "@prosekit/dev": "workspace:*",
     "tsup": "^8.4.0",
     "typescript": "~5.8.2",
@@ -98,6 +99,7 @@
         "default": "./dist/prosekit-web-tooltip.js"
       }
     },
+    "dev": {},
     "main": "./dist/prosekit-web.js",
     "module": "./dist/prosekit-web.js",
     "types": "./dist/prosekit-web.d.ts",
@@ -128,6 +130,18 @@
           "./dist/prosekit-web-tooltip.d.ts"
         ]
       }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-web": "./src/index.ts",
+      "prosekit-web-autocomplete": "./src/components/autocomplete/index.gen.ts",
+      "prosekit-web-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-web-inline-popover": "./src/components/inline-popover/index.gen.ts",
+      "prosekit-web-popover": "./src/components/popover/index.gen.ts",
+      "prosekit-web-resizable": "./src/components/resizable/index.gen.ts",
+      "prosekit-web-table-handle": "./src/components/table-handle/index.gen.ts",
+      "prosekit-web-tooltip": "./src/components/tooltip/index.gen.ts"
     }
   }
 }

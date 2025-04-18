@@ -74,6 +74,6 @@ const LINK_INPUT_PATTERN = LINK_RE_BASE_PATTERN + STOP_CHAR_PATTERN + '?' + '\\s
 // dprint-ignore
 const LINK_MARK_PATTERN = LINK_RE_BASE_PATTERN + '(?=' + STOP_CHAR_PATTERN + '|\\s|$)'
 
-export const LINK_ENTER_RE = new RegExp(LINK_ENTER_PATTERN, 'gi')
-export const LINK_INPUT_RE = new RegExp(LINK_INPUT_PATTERN, 'gi')
-export const LINK_MARK_RE = new RegExp(LINK_MARK_PATTERN, 'gi')
+export const LINK_ENTER_RE: RegExp = new RegExp(LINK_ENTER_PATTERN, 'gi')
+export const LINK_INPUT_RE: RegExp = new RegExp(LINK_INPUT_PATTERN, 'gi')
+export const LINK_MARK_RE: RegExp = new RegExp(LINK_MARK_PATTERN, 'gi')

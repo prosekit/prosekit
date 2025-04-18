@@ -13,7 +13,7 @@ import {
 import { defineFacet } from '../facets/facet'
 import { defineFacetPayload } from '../facets/facet-extension'
 import type { AnyFunction } from '../types/any-function'
-import type { Extension } from '../types/extension'
+import type { PlainExtension } from '../types/extension'
 import { isNotNullish } from '../utils/type-assertion'
 
 import {
@@ -102,6 +102,6 @@ const clipboardSerializerFacet = defineFacet<ClipboardSerializerOptions, PluginP
 /**
  * @internal
  */
-export function defineClipboardSerializer(options: ClipboardSerializerOptions): Extension {
-  return defineFacetPayload(clipboardSerializerFacet, [options])
+export function defineClipboardSerializer(options: ClipboardSerializerOptions): PlainExtension {
+  return defineFacetPayload(clipboardSerializerFacet, [options]) as PlainExtension
 }

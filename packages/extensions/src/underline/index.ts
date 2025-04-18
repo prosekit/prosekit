@@ -5,6 +5,7 @@ import {
   toggleMark,
   union,
   type Extension,
+  type PlainExtension,
   type Union,
 } from '@prosekit/core'
 import type { Attrs } from '@prosekit/pm/model'
@@ -57,7 +58,7 @@ export function defineUnderlineCommands(): UnderlineCommandsExtension {
 /**
  * @internal
  */
-export function defineUnderlineKeymap() {
+export function defineUnderlineKeymap(): PlainExtension {
   return defineKeymap({
     'Mod-u': toggleMark({ type: 'underline' }),
   })

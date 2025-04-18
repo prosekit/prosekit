@@ -1,4 +1,7 @@
-import { defineKeymap } from '@prosekit/core'
+import {
+  defineKeymap,
+  type PlainExtension,
+} from '@prosekit/core'
 import {
   chainCommands,
   deleteSelection,
@@ -40,6 +43,6 @@ const listKeymap = {
  *
  * @internal
  */
-export function defineListKeymap() {
+export function defineListKeymap(): PlainExtension {
   return defineKeymap(listKeymap)
 }

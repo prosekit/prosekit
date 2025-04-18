@@ -1,4 +1,7 @@
-import { definePlugin } from '@prosekit/core'
+import {
+  definePlugin,
+  type PlainExtension,
+} from '@prosekit/core'
 import { Plugin } from '@prosekit/pm/state'
 import {
   createListEventPlugin,
@@ -27,6 +30,6 @@ function createListPlugins(): Plugin[] {
 /**
  * @internal
  */
-export function defineListPlugins() {
+export function defineListPlugins(): PlainExtension {
   return definePlugin(createListPlugins)
 }

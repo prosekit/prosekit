@@ -1,5 +1,8 @@
 import { isElementLike } from '@ocavue/utils'
-import { defineClipboardSerializer } from '@prosekit/core'
+import {
+  defineClipboardSerializer,
+  type PlainExtension,
+} from '@prosekit/core'
 import {
   joinListElements,
   listToDOM,
@@ -8,7 +11,7 @@ import {
 /**
  * @internal
  */
-export function defineListSerializer() {
+export function defineListSerializer(): PlainExtension {
   return defineClipboardSerializer({
     serializeFragmentWrapper: (fn) => {
       return (...args) => {

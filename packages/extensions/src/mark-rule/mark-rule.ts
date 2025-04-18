@@ -2,6 +2,7 @@ import {
   defineFacet,
   defineFacetPayload,
   pluginFacet,
+  type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
 import {
@@ -18,8 +19,8 @@ import type { MarkRuleOptions } from './types'
  * A mark rule is something that can automatically apply marks to text if it
  * matches a certain pattern, and remove them if it doesn't match anymore.
  */
-export function defineMarkRule(options: MarkRuleOptions) {
-  return defineFacetPayload(markRuleFacet, [options])
+export function defineMarkRule(options: MarkRuleOptions): PlainExtension {
+  return defineFacetPayload(markRuleFacet, [options]) as PlainExtension
 }
 
 const markRuleFacet = defineFacet<MarkRuleOptions, PluginPayload>({

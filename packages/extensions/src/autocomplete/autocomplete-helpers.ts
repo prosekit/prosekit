@@ -56,7 +56,7 @@ export interface PredictionTransactionMeta {
   ignore: number
 }
 
-export function getPluginState(state: EditorState) {
+export function getPluginState(state: EditorState): PredictionPluginState | undefined {
   return pluginKey.getState(state)
 }
 
@@ -71,6 +71,4 @@ export function setTrMeta(
   return tr.setMeta(pluginKey, meta)
 }
 
-export const pluginKey = new PluginKey<PredictionPluginState>(
-  'prosekit-autocomplete',
-)
+export const pluginKey: PluginKey<PredictionPluginState> = new PluginKey<PredictionPluginState>('prosekit-autocomplete')

@@ -5,14 +5,7 @@
   "private": true,
   "description": "Internal development tools for ProseKit",
   "sideEffects": false,
-  "exports": {
-    "./example-meta": {
-      "types": "./src/example-meta.ts",
-      "default": "./dist/example-meta.js"
-    }
-  },
   "scripts": {
-    "build": "tsc -b tsconfig.json",
     "gen": "time tsx src/gen.ts"
   },
   "dependencies": {

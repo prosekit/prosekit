@@ -1,6 +1,7 @@
 import {
   defaultBlockAt,
   defineKeymap,
+  type PlainExtension,
 } from '@prosekit/core'
 import {
   TextSelection,
@@ -10,7 +11,7 @@ import {
 /**
  * Defines the keymap for code blocks.
  */
-export function defineCodeBlockKeymap() {
+export function defineCodeBlockKeymap(): PlainExtension {
   return defineKeymap({
     Enter: existCodeBlock,
   })

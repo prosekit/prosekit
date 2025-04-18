@@ -7,6 +7,7 @@ import {
   toggleMark,
   union,
   type Extension,
+  type PlainExtension,
   type Union,
 } from '@prosekit/core'
 import { InputRule } from '@prosekit/pm/inputrules'
@@ -90,7 +91,7 @@ export function defineLinkCommands(): LinkCommandsExtension {
  *
  * @internal
  */
-export function defineLinkInputRule() {
+export function defineLinkInputRule(): PlainExtension {
   return defineInputRule(
     new InputRule(LINK_INPUT_RE, (state, match, from) => {
       const href = match[1]
@@ -107,7 +108,7 @@ export function defineLinkInputRule() {
  *
  * @internal
  */
-export function defineLinkEnterRule() {
+export function defineLinkEnterRule(): PlainExtension {
   return defineEnterRule({
     regex: LINK_ENTER_RE,
     handler: ({ state, from, match }) => {
@@ -126,7 +127,7 @@ export function defineLinkEnterRule() {
  *
  * @internal
  */
-export function defineLinkMarkRule() {
+export function defineLinkMarkRule(): PlainExtension {
   return defineMarkRule({
     regex: LINK_MARK_RE,
     type: 'link',

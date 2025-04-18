@@ -2,6 +2,7 @@ import {
   defineKeymap,
   isAtBlockStart,
   toggleWrap,
+  type PlainExtension,
 } from '@prosekit/core'
 import { joinBackward } from '@prosekit/pm/commands'
 import type { Command } from '@prosekit/pm/state'
@@ -22,7 +23,7 @@ function backspaceUnsetBlockquote(): Command {
 /**
  * @internal
  */
-export function defineBlockquoteKeymap() {
+export function defineBlockquoteKeymap(): PlainExtension {
   return defineKeymap({
     'mod-shift-b': toggleBlockquoteKeybinding(),
     'Backspace': backspaceUnsetBlockquote(),

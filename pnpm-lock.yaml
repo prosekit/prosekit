@@ -847,9 +847,6 @@ importers:
       '@playwright/test':
         specifier: ^1.51.1
         version: 1.51.1
-      '@prosekit/config-tsup':
-        specifier: workspace:*
-        version: link:../packages/config-tsup
       '@prosekit/dev':
         specifier: workspace:*
         version: link:../packages/dev

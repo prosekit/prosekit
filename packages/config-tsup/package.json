@@ -15,6 +15,7 @@
     "build": "tsc -b tsconfig.json"
   },
   "devDependencies": {
+    "@prosekit/dev": "workspace:*",
     "@types/lodash-es": "^4.17.12",
     "lodash-es": "^4.17.21",
     "path-exists": "^5.0.0",

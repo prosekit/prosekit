@@ -122,6 +122,9 @@ importers:
 
   packages/config-tsup:
     devDependencies:
+      '@prosekit/dev':
+        specifier: workspace:*
+        version: link:../dev
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12

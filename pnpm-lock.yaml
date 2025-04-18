@@ -98,6 +98,9 @@ importers:
         specifier: workspace:^
         version: link:../pm
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
@@ -110,6 +113,9 @@ importers:
       postcss-nesting:
         specifier: ^13.0.1
         version: 13.0.1(postcss@8.5.3)
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -202,6 +208,9 @@ importers:
         specifier: ^4.39.1
         version: 4.39.1
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
@@ -211,6 +220,9 @@ importers:
       '@vitest/browser':
         specifier: ^3.1.1
         version: 3.1.1(msw@2.7.3(@types/node@20.17.29)(typescript@5.8.2))(playwright@1.51.1)(vite@6.2.6(@types/node@20.17.29)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.0))(vitest@3.1.1)
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -312,6 +324,9 @@ importers:
         specifier: ^3.2.2
         version: 3.2.2
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
@@ -333,6 +348,9 @@ importers:
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -361,12 +379,18 @@ importers:
         specifier: workspace:^
         version: link:../web
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -404,12 +428,18 @@ importers:
         specifier: ^1.39.1
         version: 1.39.1
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -435,6 +465,9 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
@@ -444,6 +477,9 @@ importers:
       preact:
         specifier: ^10.26.5
         version: 10.26.5
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -490,6 +526,9 @@ importers:
         specifier: workspace:*
         version: link:../web
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
@@ -529,6 +568,9 @@ importers:
       svelte:
         specifier: ^5.26.2
         version: 5.26.2
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -578,6 +620,9 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
@@ -596,6 +641,9 @@ importers:
       react-dom:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -624,6 +672,9 @@ importers:
         specifier: ^0.4.1
         version: 0.4.1(solid-js@1.9.5)
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
@@ -633,6 +684,9 @@ importers:
       solid-js:
         specifier: ^1.9.5
         version: 1.9.5
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -661,6 +715,9 @@ importers:
         specifier: ^0.4.1
         version: 0.4.1(svelte@5.26.2)
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
@@ -682,6 +739,9 @@ importers:
       svelte-check:
         specifier: ^4.1.6
         version: 4.1.6(picomatch@4.0.2)(svelte@5.26.2)(typescript@5.8.2)
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
@@ -760,6 +820,9 @@ importers:
         specifier: ^0.4.1
         version: 0.4.1(vue@3.5.13(typescript@5.8.2))
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
@@ -772,6 +835,9 @@ importers:
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
@@ -830,12 +896,18 @@ importers:
         specifier: ^1.7.0
         version: 1.7.0
     devDependencies:
+      '@prosekit/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@prosekit/config-tsup':
         specifier: workspace:*
         version: link:../config-tsup
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
+      tsdown:
+        specifier: https://pkg.pr.new/tsdown@20c9afb
+        version: https://pkg.pr.new/tsdown@20c9afb(typescript@5.8.2)
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(@microsoft/api-extractor@7.52.3(@types/node@20.17.29))(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)

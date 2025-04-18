@@ -11,5 +11,5 @@ import {
 
 export function useKeymap(keymap: Keymap, options?: UseExtensionOptions): void {
   const extension = useMemo(() => defineKeymap(keymap), [keymap])
-  return useExtension(extension, options)
+  useExtension(extension, options)
 }

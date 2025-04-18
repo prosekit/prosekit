@@ -10,5 +10,5 @@ import {
 
 export function useKeymap(keymap: () => Keymap, options?: UseExtensionOptions): void {
   const extension = () => defineKeymap(keymap())
-  return useExtension(extension, options)
+  useExtension(extension, options)
 }

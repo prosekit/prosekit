@@ -18,5 +18,5 @@ export function useKeymap(
   options?: UseExtensionOptions,
 ): void {
   const extension = computed(() => defineKeymap(toValue(keymap)))
-  return useExtension(extension, options)
+  useExtension(extension, options)
 }

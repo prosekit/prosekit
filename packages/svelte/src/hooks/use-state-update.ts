@@ -17,5 +17,5 @@ export function useStateUpdate(
   options?: UseExtensionOptions,
 ): void {
   const extension = defineUpdateHandler((view) => handler(view.state))
-  return useExtension(readable(extension), options)
+  useExtension(readable(extension), options)
 }

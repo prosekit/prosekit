@@ -17,5 +17,5 @@ export function useKeymap(
   options?: UseExtensionOptions,
 ): void {
   const extension = derived(keymapStore, (keymap) => defineKeymap(keymap))
-  return useExtension(extension, options)
+  useExtension(extension, options)
 }

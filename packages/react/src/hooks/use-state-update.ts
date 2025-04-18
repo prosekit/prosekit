@@ -20,5 +20,5 @@ export function useStateUpdate(
     () => defineUpdateHandler((view) => handler(view.state)),
     [handler],
   )
-  return useExtension(extension, options)
+  useExtension(extension, options)
 }

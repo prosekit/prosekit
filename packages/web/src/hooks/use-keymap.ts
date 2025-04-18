@@ -16,5 +16,5 @@ export function useKeymap(
   keymap: Keymap,
 ): void {
   const extension = defineKeymap(keymap)
-  return useEditorExtension(host, editor, extension)
+  useEditorExtension(host, editor, extension)
 }

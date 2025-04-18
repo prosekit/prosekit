@@ -157,7 +157,7 @@ function createKeymapHandler(
   handler: ReadonlySignal<VoidFunction | null>,
   enabled: ReadonlySignal<boolean>,
 ) {
-  return () => {
+  return (): boolean => {
     if (!enabled.get()) {
       return false
     }
@@ -173,8 +173,8 @@ function useEscapeKeydown(
   host: ConnectableElement,
   editor: ReadonlySignal<Editor | null>,
   handler: () => boolean,
-) {
+): void {
   const keymap = { Escape: handler }
   const extension = withPriority(defineKeymap(keymap), Priority.highest)
-  return useEditorExtension(host, editor, extension)
+  useEditorExtension(host, editor, extension)
 }

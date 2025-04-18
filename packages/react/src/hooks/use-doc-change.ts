@@ -20,5 +20,5 @@ export function useDocChange(
     () => defineDocChangeHandler((view) => handler(view.state.doc)),
     [handler],
   )
-  return useExtension(extension, options)
+  useExtension(extension, options)
 }

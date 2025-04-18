@@ -141,6 +141,18 @@ importers:
         specifier: ~5.8.2
         version: 5.8.2
 
+  packages/config-vitest:
+    devDependencies:
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
+      lodash-es:
+        specifier: ^4.17.21
+        version: 4.17.21
+      typescript:
+        specifier: ~5.8.2
+        version: 5.8.2
+
   packages/core:
     dependencies:
       '@ocavue/utils':

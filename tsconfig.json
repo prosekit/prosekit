@@ -20,6 +20,9 @@
       "path": "packages/config-tsup/tsconfig.json",
     },
     {
+      "path": "packages/config-vitest/tsconfig.json",
+    },
+    {
       "path": "packages/core/tsconfig.build.json",
     },
     {

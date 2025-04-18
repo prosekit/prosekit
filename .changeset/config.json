@@ -9,6 +9,7 @@
   "updateInternalDependencies": "patch",
   "ignore": [
     "@prosekit/config-tsup",
+    "@prosekit/config-vitest",
     "@prosekit/themes",
     "@prosekit/unocss-preset",
     "prosekit-website"

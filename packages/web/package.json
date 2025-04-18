@@ -59,6 +59,8 @@
   },
   "devDependencies": {
     "@prosekit/config-tsup": "workspace:*",
+    "@prosekit/config-tsdown": "workspace:*",
+    "tsdown": "https://pkg.pr.new/tsdown@20c9afb",
     "@prosekit/config-vitest": "workspace:*",
     "tsup": "^8.4.0",
     "typescript": "~5.8.2",

@@ -3,6 +3,7 @@ import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/vue'
 import {
   defineComponent,
   h,
+  type DefineSetupFnComponent,
   type PropType,
 } from 'vue'
 
@@ -19,8 +20,10 @@ export interface ProseKitProps {
  *
  * @public
  */
-export const ProseKit = defineComponent<ProseKitProps>(
-  (props, { slots }) => {
+export const ProseKit: DefineSetupFnComponent<ProseKitProps> = defineComponent<ProseKitProps>({
+  name: 'ProseKit',
+  props: { editor: { type: Object as PropType<Editor>, required: true } },
+  setup: (props, { slots }) => {
     provideEditor(props.editor)
     return () => {
       return h(ProsemirrorAdapterProvider, null, () => [
@@ -30,5 +33,4 @@ export const ProseKit = defineComponent<ProseKitProps>(
       ])
     }
   },
-  { props: { editor: { type: Object as PropType<Editor>, required: true } } },
-)
+})

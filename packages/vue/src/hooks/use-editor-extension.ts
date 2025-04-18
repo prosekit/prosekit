@@ -17,7 +17,7 @@ import { useEditorContext } from '../injection/editor-context'
 export function useEditorExtension(
   editorRef: MaybeRefOrGetter<Editor> | null | undefined,
   extensionRef: MaybeRefOrGetter<Extension | null> | null,
-) {
+): void {
   const editorContext = useEditorContext()
 
   watchPostEffect((onCleanup) => {

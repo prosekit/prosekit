@@ -56,7 +56,7 @@ function withNodeViewProps(component: VueNodeViewComponent) {
 /**
  * @internal
  */
-export const VueNodeViewsConsumer = /* @__PURE__ */ defineComponent({
+export const VueNodeViewsConsumer: DefineComponent = /* @__PURE__ */ defineComponent({
   name: 'VueNodeViewsConsumer',
   setup: () => {
     const nodeViewFactory: NodeViewFactory = useNodeViewFactory()
@@ -64,7 +64,7 @@ export const VueNodeViewsConsumer = /* @__PURE__ */ defineComponent({
       return defineVueNodeViewFactory(nodeViewFactory)
     })
     useExtension(extension)
-    return () => null
+    return (): null => null
   },
 })
 

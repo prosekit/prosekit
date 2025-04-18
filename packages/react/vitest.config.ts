@@ -1,3 +1,3 @@
-import { config } from '@prosekit/dev/config-vitest'
+import { config } from '@prosekit/config-vitest'
 
 export default config()

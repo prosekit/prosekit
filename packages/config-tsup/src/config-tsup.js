@@ -1,27 +1,29 @@
+// @ts-check
+
 import { merge } from 'lodash-es'
 import { pathExistsSync } from 'path-exists'
 import { readPackageUpSync } from 'read-package-up'
-import type { Options } from 'tsup'
 
-export function config(options?: Options): Options {
+/**
+ * @param {import('tsup').Options | undefined} options
+ * @returns {import('tsup').Options}
+ */
+export function config(options = undefined) {
   const pkg = readPackageUpSync()
   if (!pkg) {
     throw new Error('No package.json found')
   }
 
-  const packageJson = pkg.packageJson as {
-    dev?: {
-      entry: Record<string, string>
-    }
-  }
-
-  const entryPoints = packageJson?.dev?.entry
+  /** @type {Record<string, string> | undefined} */
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+  const entryPoints = pkg.packageJson?.dev?.entry
 
   if (!entryPoints) {
     throw new Error(`Unable to find the field "dev.entry" in ${pkg.path}`)
   }
 
-  const defaultOptions: Options = {
+  /** @type {import('tsup').Options} */
+  const defaultOptions = {
     format: ['esm'],
     entry: entryPoints,
     splitting: true,
@@ -34,22 +36,24 @@ export function config(options?: Options): Options {
     },
   }
 
-  return deepMergeOptions(defaultOptions, options)
+  return merge({}, defaultOptions, options)
 }
 
-function removeCssEntryPoints(
-  entryPoints: Record<string, string>,
-): Record<string, string> {
+/**
+ * @param {Record<string, string>} entryPoints
+ * @returns {Record<string, string>}
+ */
+function removeCssEntryPoints(entryPoints) {
   return Object.fromEntries(
     Object.entries(entryPoints).filter(([_, filePath]) => !filePath.endsWith('.css')),
   )
 }
 
-function deepMergeOptions(a: Options, b?: Options): Options {
-  return merge({}, a, b)
-}
-
-function getTsconfigPath(packageJsonPath: string): string {
+/**
+ * @param {string} packageJsonPath
+ * @returns {string}
+ */
+function getTsconfigPath(packageJsonPath) {
   if (!packageJsonPath.endsWith('package.json')) {
     throw new Error('Unexpected package.json path')
   }

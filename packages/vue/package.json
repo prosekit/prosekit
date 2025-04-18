@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "@prosekit/config-tsup": "workspace:*",
-    "@prosekit/dev": "workspace:*",
+    "@prosekit/config-vitest": "workspace:*",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/test-utils": "^2.4.6",
     "tsup": "^8.4.0",

@@ -29,7 +29,7 @@
     "@iconify-json/lucide": "^1.2.35",
     "@iconify-json/tabler": "^1.2.17",
     "@playwright/test": "^1.51.1",
-    "@prosekit/dev": "workspace:*",
+    "@prosekit/config-vitest": "workspace:*",
     "@prosekit/themes": "workspace:*",
     "@prosekit/unocss-preset": "workspace:*",
     "@types/react": "^19.1.1",

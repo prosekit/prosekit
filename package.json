@@ -28,7 +28,7 @@
     "@changesets/types": "^6.1.0",
     "@manypkg/cli": "^0.23.0",
     "@ocavue/eslint-config": "^2.13.1",
-    "@ocavue/tsconfig": "^0.3.6",
+    "@ocavue/tsconfig": "^0.3.7",
     "@prosekit/unocss-preset": "workspace:*",
     "@size-limit/esbuild-why": "^11.2.0",
     "@size-limit/preset-small-lib": "^11.2.0",

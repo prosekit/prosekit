@@ -14,13 +14,11 @@
   "scripts": {
     "build": "tsc -b tsconfig.json"
   },
-  "dependencies": {
-    "read-package-up": "^11.0.0"
-  },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
     "lodash-es": "^4.17.21",
     "path-exists": "^5.0.0",
+    "read-package-up": "^11.0.0",
     "tsup": "^8.4.0",
     "typescript": "~5.8.2"
   }

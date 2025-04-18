@@ -55,7 +55,7 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",
-    "prosemirror-tables": "^1.7.0"
+    "prosemirror-tables": "^1.7.1"
   },
   "devDependencies": {
     "@prosekit/config-tsup": "workspace:*",

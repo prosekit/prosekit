@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.8.0",
+  "packageManager": "pnpm@10.8.1",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
@@ -24,10 +24,10 @@
     "typecheck": "tsc --build tsconfig.json"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.28.1",
+    "@changesets/cli": "^2.29.2",
     "@changesets/types": "^6.1.0",
     "@manypkg/cli": "^0.23.0",
-    "@ocavue/eslint-config": "^2.13.1",
+    "@ocavue/eslint-config": "^2.14.2",
     "@ocavue/tsconfig": "^0.3.7",
     "@prosekit/unocss-preset": "workspace:*",
     "@size-limit/esbuild-why": "^11.2.0",
@@ -39,7 +39,7 @@
     "eslint": "^9.22.0",
     "eslint-plugin-command": "^3.2.0",
     "pkg-pr-new": "^0.0.42",
-    "playwright": "^1.51.1",
+    "playwright": "^1.52.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.3.3",

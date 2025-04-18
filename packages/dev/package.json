@@ -18,7 +18,7 @@
     "path-exists": "^5.0.0"
   },
   "devDependencies": {
-    "@changesets/read": "^0.6.3",
+    "@changesets/read": "^0.6.5",
     "@types/js-yaml": "^4.0.9",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.17.29",

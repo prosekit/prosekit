@@ -39,7 +39,7 @@
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
-    "build:tsup": "tsup"
+    "build:tsdown": "tsdown"
   },
   "dependencies": {
     "@aria-ui/collection": "^0.0.5",
@@ -58,9 +58,9 @@
     "prosemirror-tables": "^1.7.1"
   },
   "devDependencies": {
-    "@prosekit/config-tsup": "workspace:*",
+    "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsup": "^8.4.0",
+    "tsdown": "^0.8.1",
     "typescript": "~5.8.2",
     "vitest": "^3.1.1"
   },

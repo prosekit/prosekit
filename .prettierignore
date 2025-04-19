@@ -4,6 +4,5 @@ CHANGELOG.md
 *.gen.tsx
 *.gen.css
 *.gen.svelte
-.tsup
 .temp
 .size-limit.json

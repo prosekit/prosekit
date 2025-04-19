@@ -3,7 +3,7 @@
   "globalDependencies": ["tsconfig.json"],
   "tasks": {
     "build": {
-      "dependsOn": ["gen", "^build", "build:tsc", "build:tsup"],
+      "dependsOn": ["gen", "^build", "build:tsc", "build:tsdown"],
       "outputs": ["dist/"],
       "outputLogs": "new-only"
     },
@@ -11,7 +11,7 @@
       "dependsOn": ["^build"],
       "outputLogs": "new-only"
     },
-    "build:tsup": {
+    "build:tsdown": {
       "dependsOn": ["^build", "build:tsc"],
       "outputs": ["dist/"],
       "outputLogs": "new-only"

@@ -146,7 +146,7 @@
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
-    "build:tsup": "tsup",
+    "build:tsdown": "tsdown",
     "build:typedoc": "typedoc"
   },
   "dependencies": {
@@ -207,7 +207,7 @@
     }
   },
   "devDependencies": {
-    "@prosekit/config-tsup": "workspace:*",
+    "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
@@ -220,7 +220,7 @@
     "react-dom": "^19.1.0",
     "solid-js": "^1.9.5",
     "svelte": "^5.27.3",
-    "tsup": "^8.4.0",
+    "tsdown": "^0.8.1",
     "typedoc": "^0.27.9",
     "typedoc-plugin-external-package-links": "^0.1.0",
     "typedoc-plugin-md": "^0.6.0",

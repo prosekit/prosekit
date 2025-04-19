@@ -50,7 +50,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [1, 2, 3]
+        shard: [1, 2, 3, 4, 5]
 
     steps:
       - uses: actions/checkout@v4
@@ -64,7 +64,7 @@ jobs:
         run: pnpm run build:website
 
       - name: Run e2e tests
-        run: pnpm run test:e2e --shard="${{ matrix.shard }}/3"
+        run: pnpm run test:e2e --shard="${{ matrix.shard }}/5"
 
   build:
     runs-on: ubuntu-latest

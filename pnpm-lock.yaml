@@ -122,9 +122,6 @@ importers:
 
   packages/config-tsdown:
     devDependencies:
-      '@prosekit/dev':
-        specifier: workspace:*
-        version: link:../dev
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -639,9 +636,6 @@ importers:
         specifier: ^0.4.1
         version: 0.4.1(svelte@5.28.1)
     devDependencies:
-      '@prosekit/config-tsdown':
-        specifier: workspace:*
-        version: link:../config-tsdown
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
@@ -660,9 +654,6 @@ importers:
       svelte-check:
         specifier: ^4.1.6
         version: 4.1.6(picomatch@4.0.2)(svelte@5.28.1)(typescript@5.8.2)
-      tsdown:
-        specifier: ^0.8.1
-        version: 0.8.1(typescript@5.8.2)
       tsx:
         specifier: ^4.19.3
         version: 4.19.3

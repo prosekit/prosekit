@@ -208,7 +208,7 @@
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
-    "@prosekit/config-tsup": "workspace:*",
+
     "@prosekit/config-vitest": "workspace:*",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
@@ -222,7 +222,7 @@
     "solid-js": "^1.9.5",
     "svelte": "^5.27.3",
     "tsdown": "^0.8.1",
-    "tsup": "^8.4.0",
+
     "typedoc": "^0.27.9",
     "typedoc-plugin-external-package-links": "^0.1.0",
     "typedoc-plugin-md": "^0.6.0",

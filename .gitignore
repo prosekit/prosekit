@@ -4,7 +4,6 @@ CHANGELOG.md
 **/vite.*.timestamp-*.mjs
 **/.astro/**/*
 **/public/astrobook
-.tsup
 .yalc
 yalc.lock
 
@@ -23,7 +22,6 @@ temp
 .turbo
 .temp
 website/src/content/docs/references
-tsup.config.bundled*
 vite.config.ts.timestamp*
 .svelte-kit
 test-results

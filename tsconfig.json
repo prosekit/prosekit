@@ -17,9 +17,6 @@
       "path": "packages/config-tsdown/tsconfig.json",
     },
     {
-      "path": "packages/config-tsup/tsconfig.json",
-    },
-    {
       "path": "packages/config-vitest/tsconfig.json",
     },
     {

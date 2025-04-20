@@ -1,5 +1,17 @@
 # prosekit
 
+## 0.12.2
+
+### Patch Changes
+
+- [`ae7c367`](https://github.com/ocavue/prosekit/commit/ae7c367581dceeabf3554a811e8aa688420b0971) ![](https://prosekit.dev/b/extensions)
+
+  Remember multiple ignore positions when dismissing the autocomplete menu. Previously, only the last ignore position was remembered.
+
+- [`a30ef40`](https://github.com/ocavue/prosekit/commit/a30ef40a70af3e1bfe0fa1c21ed347501ebaac43) ![](https://prosekit.dev/b/extensions)
+
+  Add validate fields to node and mark attributes.
+
 ## 0.12.1
 
 ### Patch Changes

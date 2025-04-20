@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  prosemirror-splittable@0.1.1:
-    hash: cdd5fd4c908e289cdae9bd783acb607d9ccd6c1ddb7476ac848dfb405ca592bd
-    path: patches/prosemirror-splittable@0.1.1.patch
-
 importers:
 
   .:
@@ -172,7 +167,7 @@ importers:
         version: 2.1.1
       prosemirror-splittable:
         specifier: ^0.1.1
-        version: 0.1.1(patch_hash=cdd5fd4c908e289cdae9bd783acb607d9ccd6c1ddb7476ac848dfb405ca592bd)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)
+        version: 0.1.1(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3)
       type-fest:
         specifier: ^4.40.0
         version: 4.40.0
@@ -13342,7 +13337,7 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.39.1
 
-  prosemirror-splittable@0.1.1(patch_hash=cdd5fd4c908e289cdae9bd783acb607d9ccd6c1ddb7476ac848dfb405ca592bd)(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3):
+  prosemirror-splittable@0.1.1(prosemirror-model@1.25.0)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.3):
     optionalDependencies:
       prosemirror-model: 1.25.0
       prosemirror-state: 1.4.3

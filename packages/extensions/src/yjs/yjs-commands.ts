@@ -2,15 +2,14 @@ import {
   defineCommands,
   type Extension,
 } from '@prosekit/core'
-
 import {
-  redo,
-  undo,
-} from './yjs-undo-plugin'
+  redoCommand,
+  undoCommand,
+} from 'y-prosemirror'
 
 const commands = {
-  undo: () => undo,
-  redo: () => redo,
+  undo: () => undoCommand,
+  redo: () => redoCommand,
 } as const
 
 /**

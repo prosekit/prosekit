@@ -2,14 +2,9 @@ import {
   definePlugin,
   type PlainExtension,
 } from '@prosekit/core'
-import type {
-  Command,
-  ProseMirrorPlugin,
-} from '@prosekit/pm/state'
+import type { ProseMirrorPlugin } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 import {
-  redo as yRedo,
-  undo as yUndo,
   yUndoPlugin as originalYUndoPlugin,
   yUndoPluginKey,
 } from 'y-prosemirror'
@@ -23,9 +18,12 @@ type UndoManager = YjsUndoManager & { restore: () => void }
 function fixYUndoPlugin(yUndoPluginInstance: ProseMirrorPlugin) {
   const originalUndoPluginView = yUndoPluginInstance.spec.view
   yUndoPluginInstance.spec.view = (view: EditorView) => {
-    const { undoManager } = yUndoPluginKey.getState(view.state) as {
-      undoManager: UndoManager
+    const pluginState = yUndoPluginKey.getState(view.state)
+    if (!pluginState) {
+      return {}
     }
+
+    const undoManager = pluginState.undoManager as UndoManager
 
     if (undoManager.restore) {
       undoManager.restore()
@@ -80,43 +78,6 @@ function yUndoPlugin(options?: YjsUndoOptions) {
   const yUndoPluginInstance = originalYUndoPlugin(options)
   fixYUndoPlugin(yUndoPluginInstance)
   return yUndoPluginInstance
-}
-
-/**
- * @internal
- */
-export const undo: Command = (state, dispatch) => {
-  const { undoManager } = yUndoPluginKey.getState(state) as {
-    undoManager: UndoManager
-  }
-  if (undoManager.undoStack.length === 0) {
-    return false
-  }
-
-  if (!dispatch) {
-    return true
-  }
-
-  return yUndo(state)
-}
-
-/**
- * @internal
- */
-export const redo: Command = (state, dispatch) => {
-  const { undoManager } = yUndoPluginKey.getState(state) as {
-    undoManager: UndoManager
-  }
-
-  if (undoManager.redoStack.length === 0) {
-    return false
-  }
-
-  if (!dispatch) {
-    return true
-  }
-
-  return yRedo(state)
 }
 
 /**

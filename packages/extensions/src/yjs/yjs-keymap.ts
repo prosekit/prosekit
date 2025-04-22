@@ -4,19 +4,18 @@ import {
   type Keymap,
   type PlainExtension,
 } from '@prosekit/core'
-
 import {
-  redo,
-  undo,
-} from './yjs-undo-plugin'
+  redoCommand,
+  undoCommand,
+} from 'y-prosemirror'
 
 const keymap: Keymap = {
-  'Mod-z': undo,
-  'Shift-Mod-z': redo,
+  'Mod-z': undoCommand,
+  'Shift-Mod-z': redoCommand,
 }
 
 if (!isApple) {
-  keymap['Mod-y'] = redo
+  keymap['Mod-y'] = redoCommand
 }
 
 export function defineYjsKeymap(): PlainExtension {

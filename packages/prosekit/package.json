@@ -41,6 +41,7 @@
     "./extensions/commit/style.css": "./src/extensions/commit/style.css",
     "./extensions/doc": "./src/extensions/doc.gen.ts",
     "./extensions/drop-cursor": "./src/extensions/drop-cursor.gen.ts",
+    "./extensions/drop-cursor-v2": "./src/extensions/drop-cursor-v2.gen.ts",
     "./extensions/enter-rule": "./src/extensions/enter-rule.gen.ts",
     "./extensions/file": "./src/extensions/file.gen.ts",
     "./extensions/gap-cursor": "./src/extensions/gap-cursor.gen.ts",
@@ -150,11 +151,11 @@
     "build:typedoc": "typedoc"
   },
   "dependencies": {
+    "@prosekit/pm": "workspace:*",
     "@prosekit/basic": "workspace:*",
     "@prosekit/core": "workspace:*",
     "@prosekit/extensions": "workspace:*",
     "@prosekit/lit": "workspace:*",
-    "@prosekit/pm": "workspace:*",
     "@prosekit/preact": "workspace:*",
     "@prosekit/react": "workspace:*",
     "@prosekit/solid": "workspace:*",
@@ -165,14 +166,14 @@
   "peerDependencies": {
     "loro-crdt": ">= 0.16.7",
     "loro-prosemirror": ">= 0.0.7",
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18",
     "preact": ">= 10.11.0",
     "react": ">= 18.2.0",
     "react-dom": ">= 18.2.0",
     "solid-js": ">= 1.7.0",
     "svelte": ">= 5.0.0",
-    "vue": ">= 3.0.0",
-    "y-prosemirror": ">= 1.2.9",
-    "yjs": ">= 13.6.18"
+    "vue": ">= 3.0.0"
   },
   "peerDependenciesMeta": {
     "loro-crdt": {
@@ -292,6 +293,10 @@
       "./extensions/drop-cursor": {
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
         "default": "./dist/prosekit-extensions-drop-cursor.js"
+      },
+      "./extensions/drop-cursor-v2": {
+        "types": "./dist/prosekit-extensions-drop-cursor-v2.d.ts",
+        "default": "./dist/prosekit-extensions-drop-cursor-v2.js"
       },
       "./extensions/enter-rule": {
         "types": "./dist/prosekit-extensions-enter-rule.d.ts",
@@ -726,6 +731,9 @@
         "extensions/drop-cursor": [
           "./dist/prosekit-extensions-drop-cursor.d.ts"
         ],
+        "extensions/drop-cursor-v2": [
+          "./dist/prosekit-extensions-drop-cursor-v2.d.ts"
+        ],
         "extensions/enter-rule": [
           "./dist/prosekit-extensions-enter-rule.d.ts"
         ],
@@ -1017,6 +1025,7 @@
       "extensions/commit/style": "./src/extensions/commit/style.css",
       "prosekit-extensions-doc": "./src/extensions/doc.gen.ts",
       "prosekit-extensions-drop-cursor": "./src/extensions/drop-cursor.gen.ts",
+      "prosekit-extensions-drop-cursor-v2": "./src/extensions/drop-cursor-v2.gen.ts",
       "prosekit-extensions-enter-rule": "./src/extensions/enter-rule.gen.ts",
       "prosekit-extensions-file": "./src/extensions/file.gen.ts",
       "prosekit-extensions-gap-cursor": "./src/extensions/gap-cursor.gen.ts",

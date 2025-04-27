@@ -12,6 +12,7 @@
     "./src/extensions/code.gen.ts",
     "./src/extensions/commit.gen.ts",
     "./src/extensions/doc.gen.ts",
+    "./src/extensions/drop-cursor-v2.gen.ts",
     "./src/extensions/drop-cursor.gen.ts",
     "./src/extensions/enter-rule.gen.ts",
     "./src/extensions/file.gen.ts",

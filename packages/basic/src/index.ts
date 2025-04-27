@@ -31,7 +31,7 @@ import {
 import {
   defineDropCursor,
   type DropCursorExtension,
-} from '@prosekit/extensions/drop-cursor'
+} from '@prosekit/extensions/drop-cursor-v2'
 import {
   defineGapCursor,
   type GapCursorExtension,

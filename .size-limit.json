@@ -120,6 +120,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/drop-cursor-v2",
+    "path": "packages/prosekit/dist/prosekit-extensions-drop-cursor-v2.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/enter-rule",
     "path": "packages/prosekit/dist/prosekit-extensions-enter-rule.js",
     "ignore": [

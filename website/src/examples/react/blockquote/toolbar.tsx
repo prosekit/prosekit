@@ -15,7 +15,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.setBlockquote()}
         tooltip="Blockquote"
       >
-        <div className={Themes.ICON_BLOCKQUOTE} />
+        <div className={Themes.CSS_ICON_BLOCKQUOTE} />
       </Button>
     </div>
   )

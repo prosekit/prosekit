@@ -116,7 +116,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Divider"
       @click="() => editor.commands.insertHorizontalRule()"
     >
-      <div :class="Themes.ICON_MINUS"></div>
+      <div :class="Themes.CSS_ICON_MINUS"></div>
     </Button>
 
     <Button

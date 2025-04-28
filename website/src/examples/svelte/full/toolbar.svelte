@@ -105,7 +105,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     onClick={() => $editor.commands.insertHorizontalRule()}
     tooltip="Divider"
   >
-    <div class={Themes.ICON_MINUS}></div>
+    <div class={Themes.CSS_ICON_MINUS}></div>
   </Button>
 
   <Button

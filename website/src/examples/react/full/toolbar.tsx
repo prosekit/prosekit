@@ -115,7 +115,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.insertHorizontalRule()}
         tooltip="Divider"
       >
-        <div className={Themes.ICON_MINUS}></div>
+        <div className={Themes.CSS_ICON_MINUS}></div>
       </Button>
 
       <Button

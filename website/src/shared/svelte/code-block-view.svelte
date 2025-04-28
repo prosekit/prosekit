@@ -21,7 +21,7 @@ const handleLanguageChange = (event: Event) => {
 
 <div class={Themes.LANGUAGE_WRAPPER} contentEditable={false}>
   <select
-    class={Themes.LANGUAGE_SELECT}
+    class={Themes.CSS_LANGUAGE_SELECT}
     onchange={handleLanguageChange}
     value={language || ''}
   >

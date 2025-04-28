@@ -10,6 +10,6 @@ export let kbd: string | undefined = undefined
 <AutocompleteItem {onSelect} class={Themes.AUTOCOMPLETE_MENU_ITEM}>
   <span>{label}</span>
   {#if kbd}
-    <kbd class={Themes.AUTOCOMPLETE_MENU_KEYBOARD}>{kbd}</kbd>
+    <kbd class={Themes.CSS_AUTOCOMPLETE_MENU_KEYBOARD}>{kbd}</kbd>
   {/if}
 </AutocompleteItem>

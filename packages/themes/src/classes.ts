@@ -126,15 +126,15 @@ export const CSS_AUTOCOMPLETE_MENU_ITEM = cn(
   CSS_FLOATING_MENU_ITEM,
 )
 
-export const AUTOCOMPLETE_MENU_KEYBOARD = cn(
+export const CSS_AUTOCOMPLETE_MENU_KEYBOARD = cn(
   'text-xs font-mono text-gray-400 dark:text-gray-500',
 )
 
-export const LANGUAGE_WRAPPER = cn(
+export const CSS_LANGUAGE_WRAPPER = cn(
   'relative mx-2 top-3 h-0 select-none overflow-visible text-xs',
 )
 
-export const LANGUAGE_SELECT = cn(
+export const CSS_LANGUAGE_SELECT = cn(
   'outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded border-none bg-transparent px-2 py-1 text-xs transition text-[var(--prosemirror-highlight)]',
   // Only visible when hovering the code block
   'opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 [div[data-node-view-root]:hover_&]:hover:opacity-80',

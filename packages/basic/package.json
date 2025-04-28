@@ -44,9 +44,7 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "postcss": "^8.5.3",
-    "postcss-nesting": "^13.0.1",
-    "tsdown": "^0.9.6",
+    "tsdown": "^0.9.9",
     "typescript": "~5.8.2",
     "vitest": "^3.1.2"
   },

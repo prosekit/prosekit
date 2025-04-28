@@ -25,10 +25,10 @@ const mount = (element: HTMLElement) => {
 </script>
 
 <ProseKit {editor}>
-  <div class={Themes.EDITOR_VIEWPORT}>
+  <div class={Themes.CSS_EDITOR_VIEWPORT}>
     <Toolbar />
-    <div class={Themes.EDITOR_SCROLLING}>
-      <div use:mount class={Themes.EDITOR_CONTENT}></div>
+    <div class={Themes.CSS_EDITOR_SCROLLING}>
+      <div use:mount class={Themes.CSS_EDITOR_CONTENT}></div>
     </div>
   </div>
 </ProseKit>

@@ -16,7 +16,7 @@ export default function SlashMenu() {
   const regex = /\/(|\S.*)$/iu
 
   return (
-    <AutocompletePopover regex={regex} className={Themes.AUTOCOMPLETE_MENU}>
+    <AutocompletePopover regex={regex} className={Themes.CSS_AUTOCOMPLETE_MENU}>
       <AutocompleteList>
         <SlashMenuItem
           label="Text"

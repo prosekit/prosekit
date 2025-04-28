@@ -46,7 +46,7 @@ function handleLinkUpdate(href?: string) {
 <template>
   <InlinePopover
     data-testid="inline-menu-main"
-    :class="Themes.INLINE_MENU_MAIN"
+    :class="Themes.CSS_INLINE_MENU_MAIN"
   >
     <Button
       v-if="editor.commands.addLink.canExec({ href: '' })"
@@ -68,7 +68,7 @@ function handleLinkUpdate(href?: string) {
     :default-open="false"
     :open="linkMenuOpen"
     data-testid="inline-menu-link"
-    :class="Themes.INLINE_MENU_LINK"
+    :class="Themes.CSS_INLINE_MENU_LINK"
     @open-change="setLinkMenuOpen"
   >
     <form
@@ -84,12 +84,12 @@ function handleLinkUpdate(href?: string) {
       <input
         placeholder="Paste the link..."
         :defaultValue="getCurrentLink(editor.state)"
-        :class="Themes.INLINE_MENU_LINK_INPUT"
+        :class="Themes.CSS_INLINE_MENU_LINK_INPUT"
       />
     </form>
     <button
       v-if="editor.marks.link.isActive()"
-      :class="Themes.INLINE_MENU_LINK_REMOVE_BUTTON"
+      :class="Themes.CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
       @click="handleLinkUpdate()"
       @mousedown.prevent
     >

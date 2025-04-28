@@ -24,7 +24,7 @@ function handleTagInsert(id: number, label: string) {
 </script>
 
 <template>
-  <AutocompletePopover :regex="/#[\da-z]*$/i" :class="Themes.AUTOCOMPLETE_MENU">
+  <AutocompletePopover :regex="/#[\da-z]*$/i" :class="Themes.CSS_AUTOCOMPLETE_MENU">
     <AutocompleteList>
       <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
         No results

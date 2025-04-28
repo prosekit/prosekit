@@ -80,17 +80,17 @@ const CSS_INPUT = cn(
 )
 
 // The outermost container of the editor. It limits the height of the editor.
-export const EDITOR_VIEWPORT = cn(
+export const CSS_EDITOR_VIEWPORT = cn(
   'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow flex flex-col bg-background color-black dark:color-white',
 )
 
 // A scrolling container for the editor content and floating menus.
-export const EDITOR_SCROLLING = cn(
+export const CSS_EDITOR_SCROLLING = cn(
   'relative w-full flex-1 box-border overflow-y-scroll',
 )
 
 // Use this class for the contenteditable element.
-export const EDITOR_CONTENT = cn(
+export const CSS_EDITOR_CONTENT = cn(
   // SolidJS will override the class name which removes the ProseMirror class, so we add it back.
   'ProseMirror',
   'box-border min-h-full px-[max(4rem,_calc(50%-20rem))] py-8 outline-none outline-0',
@@ -98,30 +98,30 @@ export const EDITOR_CONTENT = cn(
   '[&_span[data-mention=tag]]:text-violet-500',
 )
 
-export const INLINE_MENU_MAIN = cn(
+export const CSS_INLINE_MENU_MAIN = cn(
   CSS_FLOATING_MENU,
   'relative flex min-w-[8rem] space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
 )
 
-export const INLINE_MENU_LINK = cn(
+export const CSS_INLINE_MENU_LINK = cn(
   CSS_FLOATING_MENU,
   'relative flex flex-col w-xs rounded-lg p-4 gap-y-2 items-stretch',
 )
 
-export const INLINE_MENU_LINK_INPUT = cn(CSS_INPUT)
+export const CSS_INLINE_MENU_LINK_INPUT = cn(CSS_INPUT)
 
-export const INLINE_MENU_LINK_REMOVE_BUTTON = cn(
+export const CSS_INLINE_MENU_LINK_REMOVE_BUTTON = cn(
   CSS_BUTTON_BASE,
   CSS_BUTTON_VARIANT_PRIMARY,
   CSS_BUTTON_SIZE_SM,
 )
 
-export const AUTOCOMPLETE_MENU = cn(
+export const CSS_AUTOCOMPLETE_MENU = cn(
   'relative block max-h-[25rem] min-w-[15rem] select-none overflow-auto whitespace-nowrap p-1',
   CSS_FLOATING_MENU,
 )
 
-export const AUTOCOMPLETE_MENU_ITEM = cn(
+export const CSS_AUTOCOMPLETE_MENU_ITEM = cn(
   'relative flex items-center justify-between min-w-[8rem] scroll-my-1 rounded px-3 py-1.5',
   CSS_FLOATING_MENU_ITEM,
 )

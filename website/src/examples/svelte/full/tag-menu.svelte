@@ -23,7 +23,7 @@ const handleTagInsert = (id: number, label: string) => {
 }
 </script>
 
-<AutocompletePopover regex={/#[\da-z]*$/i} class={Themes.AUTOCOMPLETE_MENU}>
+<AutocompletePopover regex={/#[\da-z]*$/i} class={Themes.CSS_AUTOCOMPLETE_MENU}>
   <AutocompleteList>
     <AutocompleteEmpty class={Themes.AUTOCOMPLETE_MENU_ITEM}>No results</AutocompleteEmpty>
     {#each tags as tag}

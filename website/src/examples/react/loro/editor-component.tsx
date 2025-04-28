@@ -25,10 +25,10 @@ export default function EditorComponent(props: {
 
   return (
     <ProseKit editor={editor}>
-      <div className={Themes.EDITOR_VIEWPORT}>
+      <div className={Themes.CSS_EDITOR_VIEWPORT}>
         <Toolbar />
-        <div className={Themes.EDITOR_SCROLLING}>
-          <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
+        <div className={Themes.CSS_EDITOR_SCROLLING}>
+          <div ref={editor.mount} className={Themes.CSS_EDITOR_CONTENT}></div>
         </div>
       </div>
     </ProseKit>

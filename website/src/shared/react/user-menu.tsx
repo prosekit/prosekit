@@ -23,7 +23,7 @@ export default function UserMenu() {
   }
 
   return (
-    <AutocompletePopover regex={/@\w*$/} className={Themes.AUTOCOMPLETE_MENU}>
+    <AutocompletePopover regex={/@\w*$/} className={Themes.CSS_AUTOCOMPLETE_MENU}>
       <AutocompleteList>
         <AutocompleteEmpty className={Themes.AUTOCOMPLETE_MENU_ITEM}>
           No results

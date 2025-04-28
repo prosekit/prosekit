@@ -23,7 +23,7 @@ const handleUserInsert = (id: number, username: string) => {
 }
 </script>
 
-<AutocompletePopover regex={/@\w*$/} class={Themes.AUTOCOMPLETE_MENU}>
+<AutocompletePopover regex={/@\w*$/} class={Themes.CSS_AUTOCOMPLETE_MENU}>
   <AutocompleteList>
     <AutocompleteEmpty class={Themes.AUTOCOMPLETE_MENU_ITEM}>No results</AutocompleteEmpty>
     {#each users as user}

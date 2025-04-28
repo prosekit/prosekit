@@ -35,10 +35,10 @@ function pushSubmition(hotkey: string) {
 
 <template>
   <ProseKit :editor="editor">
-    <div :class="Themes.EDITOR_VIEWPORT">
+    <div :class="Themes.CSS_EDITOR_VIEWPORT">
       <Toolbar @submit="pushSubmition" />
-      <div :class="Themes.EDITOR_SCROLLING">
-        <div ref="editorRef" :class="Themes.EDITOR_CONTENT" />
+      <div :class="Themes.CSS_EDITOR_SCROLLING">
+        <div ref="editorRef" :class="Themes.CSS_EDITOR_CONTENT" />
       </div>
     </div>
     <fieldset :class="Themes.CSS_KEYMAP_FIELDSET">

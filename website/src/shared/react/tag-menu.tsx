@@ -25,7 +25,7 @@ export default function TagMenu() {
   return (
     <AutocompletePopover
       regex={/#[\da-z]*$/i}
-      className={Themes.AUTOCOMPLETE_MENU}
+      className={Themes.CSS_AUTOCOMPLETE_MENU}
     >
       <AutocompleteList>
         <AutocompleteEmpty className={Themes.AUTOCOMPLETE_MENU_ITEM}>

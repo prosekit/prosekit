@@ -47,7 +47,7 @@ const handleSubmit = (event: Event) => {
 }
 </script>
 
-<InlinePopover data-testid="inline-menu-main" class={Themes.INLINE_MENU_MAIN}>
+<InlinePopover data-testid="inline-menu-main" class={Themes.CSS_INLINE_MENU_MAIN}>
   <Button
     pressed={$editor.marks.bold.isActive()}
     disabled={!$editor.commands.toggleBold.canExec()}
@@ -113,14 +113,14 @@ const handleSubmit = (event: Event) => {
   open={linkMenuOpen}
   onOpenChange={setLinkMenuOpen}
   data-testid="inline-menu-link"
-  class={Themes.INLINE_MENU_LINK}
+  class={Themes.CSS_INLINE_MENU_LINK}
 >
   {#if linkMenuOpen}
     <form on:submit|preventDefault={handleSubmit}>
       <input
         placeholder="Paste the link..."
         value={getCurrentLink($editor.state) || ''}
-        class={Themes.INLINE_MENU_LINK_INPUT}
+        class={Themes.CSS_INLINE_MENU_LINK_INPUT}
       />
     </form>
   {/if}
@@ -129,7 +129,7 @@ const handleSubmit = (event: Event) => {
     <button
       on:click={() => handleLinkUpdate()}
       on:mousedown|preventDefault
-      class={Themes.INLINE_MENU_LINK_REMOVE_BUTTON}
+      class={Themes.CSS_INLINE_MENU_LINK_REMOVE_BUTTON}
     >
       Remove link
     </button>

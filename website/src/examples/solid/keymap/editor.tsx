@@ -26,10 +26,10 @@ export default function Editor() {
 
   return (
     <ProseKit editor={editor}>
-      <div class={Themes.EDITOR_VIEWPORT}>
+      <div class={Themes.CSS_EDITOR_VIEWPORT}>
         <Toolbar onSubmit={pushSubmition} />
-        <div class={Themes.EDITOR_SCROLLING}>
-          <div ref={editor.mount} class={Themes.EDITOR_CONTENT}></div>
+        <div class={Themes.CSS_EDITOR_SCROLLING}>
+          <div ref={editor.mount} class={Themes.CSS_EDITOR_CONTENT}></div>
         </div>
       </div>
       <fieldset class={Themes.CSS_KEYMAP_FIELDSET}>

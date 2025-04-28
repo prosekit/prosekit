@@ -39,7 +39,7 @@ function handleLoad(record: string) {
 }
 </script>
 
-<div class={Themes.EDITOR_VIEWPORT}>
+<div class={Themes.CSS_EDITOR_VIEWPORT}>
   <button
     on:click={handleSave}
     disabled={!hasUnsavedChange}

@@ -15,7 +15,7 @@ const editor = useEditor<EditorExtension>()
 const regex = /\/(|\S.*)$/iu
 </script>
 
-<AutocompletePopover regex={regex} class={Themes.AUTOCOMPLETE_MENU}>
+<AutocompletePopover regex={regex} class={Themes.CSS_AUTOCOMPLETE_MENU}>
   <AutocompleteList>
     <SlashMenuItem
       label="Text"

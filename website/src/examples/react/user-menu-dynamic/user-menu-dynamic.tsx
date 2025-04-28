@@ -32,7 +32,7 @@ export default function UserMenuDynamic() {
       regex={/@\w*$/}
       onQueryChange={setQuery}
       onOpenChange={setOpen}
-      className={Themes.AUTOCOMPLETE_MENU}
+      className={Themes.CSS_AUTOCOMPLETE_MENU}
     >
       <AutocompleteList filter={null}>
         <AutocompleteEmpty className={Themes.AUTOCOMPLETE_MENU_ITEM}>

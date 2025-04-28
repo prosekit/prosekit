@@ -33,7 +33,7 @@ const { users, loading } = useUserQuery(query, open)
 <template>
   <AutocompletePopover
     :regex="/@\w*$/"
-    :class="Themes.AUTOCOMPLETE_MENU"
+    :class="Themes.CSS_AUTOCOMPLETE_MENU"
     @query-change="handleQueryChange"
     @open-change="handleOpenChange"
   >

@@ -52,7 +52,7 @@ useKeymap({ Escape: onEscape })
 
 <template>
   <InlinePopover
-    :class="Themes.INLINE_MENU_MAIN"
+    :class="Themes.CSS_INLINE_MENU_MAIN"
     :open="open"
     @open-change="onOpenChange"
   >

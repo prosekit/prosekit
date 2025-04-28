@@ -45,7 +45,7 @@ function handleLoad(record: string) {
 </script>
 
 <template>
-  <div :class="Themes.EDITOR_VIEWPORT">
+  <div :class="Themes.CSS_EDITOR_VIEWPORT">
     <button
       :disabled="!hasUnsavedChange"
       class="m-1 border border-solid bg-white px-2 py-1 text-sm text-black disabled:cursor-not-allowed disabled:text-gray-500"

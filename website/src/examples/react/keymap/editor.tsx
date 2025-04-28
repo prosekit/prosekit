@@ -37,7 +37,7 @@ export default function Editor() {
           <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
         </div>
       </div>
-      <fieldset className={Themes.KEYMAP_FIELDSET}>
+      <fieldset className={Themes.CSS_KEYMAP_FIELDSET}>
         <legend>Submit Records</legend>
         <ol>
           {submitions.map((submition, index) => (

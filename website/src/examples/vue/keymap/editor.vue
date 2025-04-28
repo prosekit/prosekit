@@ -41,7 +41,7 @@ function pushSubmition(hotkey: string) {
         <div ref="editorRef" :class="Themes.EDITOR_CONTENT" />
       </div>
     </div>
-    <fieldset :class="Themes.KEYMAP_FIELDSET">
+    <fieldset :class="Themes.CSS_KEYMAP_FIELDSET">
       <legend>Submit Records</legend>
       <ol>
         <li v-for="(submition, index) in submitions" :key="index">

@@ -34,7 +34,7 @@ const pushSubmition = (hotkey: string) => {
       <div use:mount class={Themes.EDITOR_CONTENT}></div>
     </div>
   </div>
-  <fieldset class={Themes.KEYMAP_FIELDSET}>
+  <fieldset class={Themes.CSS_KEYMAP_FIELDSET}>
     <legend>Submit Records</legend>
     <ol>
       {#each $submitions as submition, index (index)}

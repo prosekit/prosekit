@@ -14,12 +14,12 @@ function cn(...args: Array<string | undefined | null | false>): string {
 // displayed before SSR hydration is complete.
 const CSS_DEFAULT_HIDDEN = '[&:not([data-state])]:hidden'
 
-const FLOATING_MENU = cn(
+const CSS_FLOATING_MENU = cn(
   'z-10 box-border rounded-lg border border-border bg-background shadow-lg',
   CSS_DEFAULT_HIDDEN,
 )
 
-const PRESENCE_ANIMATE = cn(
+const CSS_PRESENCE_ANIMATE = cn(
   CSS_DEFAULT_HIDDEN,
   'will-change-transform',
   'data-[state=open]:animate-in',
@@ -32,8 +32,8 @@ const PRESENCE_ANIMATE = cn(
   'data-[state=closed]:animate-duration-200',
 )
 
-const POPOVER_ANIMATE = cn(
-  PRESENCE_ANIMATE,
+const CSS_POPOVER_ANIMATE = cn(
+  CSS_PRESENCE_ANIMATE,
   'data-[side=bottom]:slide-in-from-top-2',
   'data-[side=bottom]:slide-out-to-top-2',
   'data-[side=left]:slide-in-from-right-2',
@@ -99,12 +99,12 @@ export const EDITOR_CONTENT = cn(
 )
 
 export const INLINE_MENU_MAIN = cn(
-  FLOATING_MENU,
+  CSS_FLOATING_MENU,
   'relative flex min-w-[8rem] space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
 )
 
 export const INLINE_MENU_LINK = cn(
-  FLOATING_MENU,
+  CSS_FLOATING_MENU,
   'relative flex flex-col w-xs rounded-lg p-4 gap-y-2 items-stretch',
 )
 
@@ -118,7 +118,7 @@ export const INLINE_MENU_LINK_REMOVE_BUTTON = cn(
 
 export const AUTOCOMPLETE_MENU = cn(
   'relative block max-h-[25rem] min-w-[15rem] select-none overflow-auto whitespace-nowrap p-1',
-  FLOATING_MENU,
+  CSS_FLOATING_MENU,
 )
 
 export const AUTOCOMPLETE_MENU_ITEM = cn(
@@ -155,8 +155,8 @@ export const TOGGLE_BUTTON = cn(
 
 export const IMAGE_UPLOAD_CARD = cn(
   'flex flex-col gap-y-4 p-6 text-sm w-sm',
-  FLOATING_MENU,
-  POPOVER_ANIMATE,
+  CSS_FLOATING_MENU,
+  CSS_POPOVER_ANIMATE,
 )
 
 export const IMAGE_UPLOAD_INPUT = cn(INPUT)
@@ -200,7 +200,7 @@ export const DROP_CURSOR = cn('transition-all bg-blue-500')
 
 export const BLOCK_HANDLE_POPOVER = cn(
   'flex items-center flex-row box-border justify-center transition border-0',
-  PRESENCE_ANIMATE,
+  CSS_PRESENCE_ANIMATE,
 )
 
 export const BLOCK_HANDLE_ADD = cn(
@@ -213,22 +213,22 @@ export const BLOCK_HANDLE_DRAG = cn(
 
 export const TABLE_COLUMN_HANDLE = cn(
   'flex items-center box-border justify-center h-[1.2em] w-[1.5em] bg-white hover:bg-secondary rounded text-muted-foreground/50 translate-y-3 border border-border border-solid',
-  PRESENCE_ANIMATE,
+  CSS_PRESENCE_ANIMATE,
 )
 
 export const TABLE_ROW_HANDLE = cn(
   'flex items-center box-border justify-center h-[1.5em] w-[1.2em] bg-white hover:bg-secondary rounded text-muted-foreground/50 translate-x-3 border border-border border-solid',
-  PRESENCE_ANIMATE,
+  CSS_PRESENCE_ANIMATE,
 )
 
 export const TABLE_ROOT_HANDLE = cn(
   'flex items-center box-border justify-center h-[1.2em] w-[1.2em] bg-white hover:bg-secondary rounded text-muted-foreground/50 border translate-x-4 -translate-y-4 border-border border-solid',
-  PRESENCE_ANIMATE,
+  CSS_PRESENCE_ANIMATE,
 )
 
 export const TABLE_HANDLE_MENU = cn(
   'relative block max-h-[25rem] min-w-[8rem] select-none overflow-auto whitespace-nowrap p-1',
-  FLOATING_MENU,
+  CSS_FLOATING_MENU,
 )
 
 export const TABLE_CELL_MENU_ITEM = cn(
@@ -244,72 +244,72 @@ export const TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
 export const TOOLTIP_TRIGGER = cn('block')
 export const TOOLTIP_CONTENT = cn(
   'z-50 overflow-hidden rounded-md border border-solid bg-primary px-3 py-1.5 text-xs text-primary-foreground shadow-sm',
-  POPOVER_ANIMATE,
+  CSS_POPOVER_ANIMATE,
 )
 
-export const SEARCH = cn(
+export const CSS_SEARCH = cn(
   TOP_BAR,
   'grid grid-cols-[min-content_1fr_min-content] gap-2 p-2',
 )
 
-export const SEARCH_ICON_BUTTON = cn(
+export const CSS_SEARCH_ICON_BUTTON = cn(
   BUTTON_BASE,
   BUTTON_VARIANT_SECONDARY,
   BUTTON_SIZE_ICON,
 )
 
-export const SEARCH_TEXT_BUTTON = cn(
+export const CSS_SEARCH_TEXT_BUTTON = cn(
   BUTTON_BASE,
   BUTTON_VARIANT_SECONDARY,
   BUTTON_SIZE_DEFAULT,
 )
 
-export const BUTTON_PRIMARY = cn(
+export const CSS_BUTTON_PRIMARY = cn(
   BUTTON_BASE,
   BUTTON_VARIANT_PRIMARY,
   BUTTON_SIZE_DEFAULT,
 )
 
-export const SEARCH_INPUT = cn(INPUT, 'col-start-2')
-export const SEARCH_CONTROLLER = cn('flex items-center justify-between gap-1')
+export const CSS_SEARCH_INPUT = cn(INPUT, 'col-start-2')
+export const CSS_SEARCH_CONTROLLER = cn('flex items-center justify-between gap-1')
 
-export const KEYMAP_FIELDSET = cn(
+export const CSS_KEYMAP_FIELDSET = cn(
   'mt-4 box-border flex max-w-full w-full overflow-x-auto border p-4 rounded-md shadow min-w-0',
 )
 
-export const ICON_ITALIC = cn('i-lucide-italic h-5 w-5')
-export const ICON_BOLD = cn('i-lucide-bold h-5 w-5')
-export const ICON_UNDERLINE = cn('i-lucide-underline h-5 w-5')
-export const ICON_STRIKE = cn('i-lucide-strikethrough h-5 w-5')
-export const ICON_CODE = cn('i-lucide-code h-5 w-5')
-export const ICON_H1 = cn('i-lucide-heading-1 h-5 w-5')
-export const ICON_H2 = cn('i-lucide-heading-2 h-5 w-5')
-export const ICON_H3 = cn('i-lucide-heading-3 h-5 w-5')
-export const ICON_H4 = cn('i-lucide-heading-4 h-5 w-5')
-export const ICON_H5 = cn('i-lucide-heading-5 h-5 w-5')
-export const ICON_H6 = cn('i-lucide-heading-6 h-5 w-5')
-export const ICON_UNDO = cn('i-lucide-undo-2 h-5 w-5')
-export const ICON_REDO = cn('i-lucide-redo-2 h-5 w-5')
-export const ICON_IMAGE = cn('i-lucide-image h-5 w-5')
-export const ICON_LINK = cn('i-lucide-link h-5 w-5')
-export const ICON_LIST_BULLET = cn('i-lucide-list h-5 w-5')
-export const ICON_LIST_ORDERED = cn('i-lucide-list-ordered h-5 w-5')
-export const ICON_LIST_TASK = cn('i-lucide-list-checks h-5 w-5')
-export const ICON_LIST_TOGGLE = cn('i-lucide-list-collapse h-5 w-5')
-export const ICON_LIST_INDENT = cn('i-lucide-indent-increase h-5 w-5')
-export const ICON_LIST_DEDENT = cn('i-lucide-indent-decrease h-5 w-5')
-export const ICON_CODE_BLOCK = cn('i-lucide-square-code h-5 w-5')
-export const ICON_CORNER_HANDLE = cn('i-lucide-arrow-down-right h-4 w-4')
-export const ICON_LOADER = cn('i-lucide-loader-circle h-4 w-4 animate-spin')
-export const ICON_DRAG_HANDLE = cn('i-lucide-grip-vertical h-5 w-5')
-export const ICON_PLUS = cn('i-lucide-plus h-5 w-5')
-export const ICON_SEARCH = cn('i-lucide-search h-5 w-5')
-export const ICON_CLOSE = cn('i-lucide-x h-5 w-5')
-export const ICON_ARROW_LEFT = cn('i-lucide-arrow-left h-5 w-5')
-export const ICON_ARROW_RIGHT = cn('i-lucide-arrow-right h-5 w-5')
-export const ICON_CHEVRON_RIGHT = cn('i-lucide-chevron-right h-5 w-5')
-export const ICON_TABLE_COLUMN_HANDLE = cn('i-lucide-grip-horizontal h-5 w-5')
-export const ICON_TABLE_ROW_HANDLE = cn('i-lucide-grip-vertical h-5 w-5')
+export const CSS_ICON_ITALIC = cn('i-lucide-italic h-5 w-5')
+export const CSS_ICON_BOLD = cn('i-lucide-bold h-5 w-5')
+export const CSS_ICON_UNDERLINE = cn('i-lucide-underline h-5 w-5')
+export const CSS_ICON_STRIKE = cn('i-lucide-strikethrough h-5 w-5')
+export const CSS_ICON_CODE = cn('i-lucide-code h-5 w-5')
+export const CSS_ICON_H1 = cn('i-lucide-heading-1 h-5 w-5')
+export const CSS_ICON_H2 = cn('i-lucide-heading-2 h-5 w-5')
+export const CSS_ICON_H3 = cn('i-lucide-heading-3 h-5 w-5')
+export const CSS_ICON_H4 = cn('i-lucide-heading-4 h-5 w-5')
+export const CSS_ICON_H5 = cn('i-lucide-heading-5 h-5 w-5')
+export const CSS_ICON_H6 = cn('i-lucide-heading-6 h-5 w-5')
+export const CSS_ICON_UNDO = cn('i-lucide-undo-2 h-5 w-5')
+export const CSS_ICON_REDO = cn('i-lucide-redo-2 h-5 w-5')
+export const CSS_ICON_IMAGE = cn('i-lucide-image h-5 w-5')
+export const CSS_ICON_LINK = cn('i-lucide-link h-5 w-5')
+export const CSS_ICON_LIST_BULLET = cn('i-lucide-list h-5 w-5')
+export const CSS_ICON_LIST_ORDERED = cn('i-lucide-list-ordered h-5 w-5')
+export const CSS_ICON_LIST_TASK = cn('i-lucide-list-checks h-5 w-5')
+export const CSS_ICON_LIST_TOGGLE = cn('i-lucide-list-collapse h-5 w-5')
+export const CSS_ICON_LIST_INDENT = cn('i-lucide-indent-increase h-5 w-5')
+export const CSS_ICON_LIST_DEDENT = cn('i-lucide-indent-decrease h-5 w-5')
+export const CSS_ICON_CODE_BLOCK = cn('i-lucide-square-code h-5 w-5')
+export const CSS_ICON_CORNER_HANDLE = cn('i-lucide-arrow-down-right h-4 w-4')
+export const CSS_ICON_LOADER = cn('i-lucide-loader-circle h-4 w-4 animate-spin')
+export const CSS_ICON_DRAG_HANDLE = cn('i-lucide-grip-vertical h-5 w-5')
+export const CSS_ICON_PLUS = cn('i-lucide-plus h-5 w-5')
+export const CSS_ICON_SEARCH = cn('i-lucide-search h-5 w-5')
+export const CSS_ICON_CLOSE = cn('i-lucide-x h-5 w-5')
+export const CSS_ICON_ARROW_LEFT = cn('i-lucide-arrow-left h-5 w-5')
+export const CSS_ICON_ARROW_RIGHT = cn('i-lucide-arrow-right h-5 w-5')
+export const CSS_ICON_CHEVRON_RIGHT = cn('i-lucide-chevron-right h-5 w-5')
+export const CSS_ICON_TABLE_COLUMN_HANDLE = cn('i-lucide-grip-horizontal h-5 w-5')
+export const CSS_ICON_TABLE_ROW_HANDLE = cn('i-lucide-grip-vertical h-5 w-5')
 export const CSS_ICON_BLOCKQUOTE = cn('i-lucide-text-quote h-5 w-5')
 export const CSS_ICON_MINUS = cn('i-lucide-minus h-5 w-5')
 export const CSS_ICON_IMAGE_ERROR = cn('i-lucide-image-off h-8 w-8')

@@ -74,7 +74,7 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
   }
 
   return (
-    <div className={Themes.SEARCH}>
+    <div className={Themes.CSS_SEARCH}>
       <Button tooltip="Toggle Replace" onClick={toggleReplace}>
         <span
           className={clsx(
@@ -91,7 +91,7 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
         value={searchText}
         onChange={(event) => setSearchText(event.target.value)}
         onKeyDown={handleSearchKeyDown}
-        className={Themes.SEARCH_INPUT}
+        className={Themes.CSS_SEARCH_INPUT}
       />
       <div className={Themes.SEARCH_CONTROLLER}>
         <Button
@@ -114,7 +114,7 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
           value={replaceText}
           onChange={(event) => setReplaceText(event.target.value)}
           onKeyDown={handleReplaceKeyDown}
-          className={Themes.SEARCH_INPUT}
+          className={Themes.CSS_SEARCH_INPUT}
         />
       )}
       {showReplace && (

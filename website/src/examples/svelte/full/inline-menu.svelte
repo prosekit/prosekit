@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/svelte'
 import { InlinePopover } from 'prosekit/svelte/inline-popover'

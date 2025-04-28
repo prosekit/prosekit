@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import type {
   Editor,
   NodeAction,

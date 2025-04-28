@@ -3,7 +3,6 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 import 'prosekit/extensions/list/style.css'
 
-import { Themes } from '@prosekit/themes'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/vue'
 import {

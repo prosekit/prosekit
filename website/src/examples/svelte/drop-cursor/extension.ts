@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import {
   defineBaseKeymap,
   defineDoc,

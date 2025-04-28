@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import {
   defineCodeBlockShiki,
   shikiBundledThemesInfo,

@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/svelte'
 import {
   AutocompleteList,

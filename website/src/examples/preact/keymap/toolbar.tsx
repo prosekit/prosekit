@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { useState } from 'preact/hooks'
 
 import Button from './button'

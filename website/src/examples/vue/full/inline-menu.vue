@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'

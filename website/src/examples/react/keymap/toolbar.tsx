@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { useState } from 'react'
 
 import Button from './button'

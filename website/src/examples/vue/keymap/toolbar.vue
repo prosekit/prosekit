@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import { ref } from 'vue'
 
 import Button from './button.vue'

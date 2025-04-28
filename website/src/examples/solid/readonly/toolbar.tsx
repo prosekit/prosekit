@@ -1,5 +1,3 @@
-import { Themes } from '@prosekit/themes'
-
 import Button from './button'
 import { useReadonly } from './use-readonly'
 

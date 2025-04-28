@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { AutocompleteItem } from 'prosekit/react/autocomplete'
 
 export default function SlashMenuItem(props: {

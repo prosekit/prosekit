@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { createSignal } from 'solid-js'
 
 import Button from './button'

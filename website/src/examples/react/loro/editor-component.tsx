@@ -2,7 +2,6 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 import 'prosekit/extensions/loro/style.css'
 
-import { Themes } from '@prosekit/themes'
 import type {
   CursorAwareness,
   LoroDocType,

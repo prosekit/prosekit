@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { AutocompleteEmpty } from 'prosekit/preact/autocomplete'
 
 export default function SlashMenuEmpty() {

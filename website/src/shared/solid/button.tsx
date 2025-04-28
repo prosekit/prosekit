@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import type { ParentProps } from 'solid-js'
 
 export default function Button({

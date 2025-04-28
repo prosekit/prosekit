@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import type { NodeAction } from 'prosekit/core'
 import { useEditor } from 'prosekit/solid'
 

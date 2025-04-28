@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { VueNodeViewProps } from 'prosekit/vue'

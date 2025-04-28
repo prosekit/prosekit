@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 
 import Button from './button'

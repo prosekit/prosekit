@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 import type { SolidNodeViewProps } from 'prosekit/solid'

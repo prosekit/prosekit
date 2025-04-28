@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import {
   createEditor,

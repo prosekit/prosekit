@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/react'

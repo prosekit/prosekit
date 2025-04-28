@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
-
 import Button from './button.vue'
 import { useReadonly } from './use-readonly'
 

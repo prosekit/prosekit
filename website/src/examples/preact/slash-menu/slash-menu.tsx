@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/preact'
 import {
   AutocompleteList,

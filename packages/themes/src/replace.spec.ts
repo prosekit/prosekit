@@ -11,8 +11,7 @@ import { Themes } from './themes'
 describe('replaceThemesWith', () => {
   it('can replace class names', () => {
     const code = dedent`
-      import { Themes } from '@prosekit/themes'
-
+      
       const App = () => (
         <div class="CSS_EDITOR_CONTENT">
           <div class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"></div>

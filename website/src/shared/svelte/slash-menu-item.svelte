@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import { AutocompleteItem } from 'prosekit/svelte/autocomplete'
 
 export let onSelect: () => void

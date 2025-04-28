@@ -23,9 +23,9 @@ importers:
       '@ocavue/tsconfig':
         specifier: ^0.3.7
         version: 0.3.7
-      '@prosekit/unocss-preset':
+      '@prosekit/config-unocss':
         specifier: workspace:*
-        version: link:packages/unocss-preset
+        version: link:packages/config-unocss
       '@size-limit/esbuild-why':
         specifier: ^11.2.0
         version: 11.2.0(size-limit@11.2.0)
@@ -684,56 +684,6 @@ importers:
         specifier: ^3.1.2
         version: 3.1.2(@types/debug@4.1.12)(@types/node@20.17.31)(@vitest/browser@3.1.2)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.3)(yaml@2.7.1)
 
-  packages/themes:
-    dependencies:
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      tailwind-merge:
-        specifier: ^2.6.0
-        version: 2.6.0
-    devDependencies:
-      dedent:
-        specifier: ^1.5.3
-        version: 1.5.3
-      esbuild:
-        specifier: ^0.25.3
-        version: 0.25.3
-      prettier:
-        specifier: ^3.5.3
-        version: 3.5.3
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-      unplugin-macros:
-        specifier: ^0.16.3
-        version: 0.16.3(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.3)(yaml@2.7.1)
-      vitest:
-        specifier: ^3.1.2
-        version: 3.1.2(@types/debug@4.1.12)(@types/node@20.17.31)(@vitest/browser@3.1.2)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.3)(yaml@2.7.1)
-
-  packages/unocss-preset:
-    dependencies:
-      '@manypkg/find-root':
-        specifier: ^2.2.3
-        version: 2.2.3
-      '@prosekit/themes':
-        specifier: workspace:*
-        version: link:../themes
-      unocss-preset-animations:
-        specifier: ^1.2.1
-        version: 1.2.1(@unocss/preset-wind3@66.0.0)(unocss@66.0.0(postcss@8.5.3)(vite@6.3.3(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3)))
-    devDependencies:
-      '@types/node':
-        specifier: ^20.17.29
-        version: 20.17.31
-      typescript:
-        specifier: ~5.8.2
-        version: 5.8.3
-      unocss:
-        specifier: ^66.0.0
-        version: 66.0.0(postcss@8.5.3)(vite@6.3.3(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.3)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
-
   packages/vue:
     dependencies:
       '@prosekit/core':
@@ -870,18 +820,15 @@ importers:
       '@iconify-json/tabler':
         specifier: ^1.2.17
         version: 1.2.17
+      '@manypkg/find-root':
+        specifier: ^2.2.3
+        version: 2.2.3
       '@playwright/test':
         specifier: ^1.52.0
         version: 1.52.0
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../packages/config-vitest
-      '@prosekit/themes':
-        specifier: workspace:*
-        version: link:../packages/themes
-      '@prosekit/unocss-preset':
-        specifier: workspace:*
-        version: link:../packages/unocss-preset
       '@types/react':
         specifier: ^19.1.2
         version: 19.1.2
@@ -3715,14 +3662,6 @@ packages:
 
   dedent-js@1.0.1:
     resolution: {integrity: sha512-OUepMozQULMLUmhxS95Vudo0jb0UchLimi3+pQ2plj61Fcy8axbP9hbiD4Sz6DPqn6XG3kfmziVfQ1rSys5AJQ==}
-
-  dedent@1.5.3:
-    resolution: {integrity: sha512-NHQtfOOW68WD8lgypbLA5oT+Bt0xXJhiYvoR6SmmNXZfpzOGXwdKWmcwG8N7PwVVWV3eF/68nmD9BaJSsTBhyQ==}
-    peerDependencies:
-      babel-plugin-macros: ^3.1.0
-    peerDependenciesMeta:
-      babel-plugin-macros:
-        optional: true
 
   deep-eql@5.0.2:
     resolution: {integrity: sha512-h5k/5U50IJJFpzfL6nO9jaaumfjO/f2NjK/oYB2Djzm4p9L+3T9qWpZqZ2hAbLPuuYq9wrU08WQyBTL5GbPk5Q==}
@@ -10405,8 +10344,6 @@ snapshots:
   decode-uri-component@0.4.1: {}
 
   dedent-js@1.0.1: {}
-
-  dedent@1.5.3: {}
 
   deep-eql@5.0.2: {}
 

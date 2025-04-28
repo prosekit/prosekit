@@ -9,8 +9,6 @@
   "updateInternalDependencies": "patch",
   "ignore": [
     "@prosekit/dev",
-    "@prosekit/themes",
-    "@prosekit/unocss-preset",
     "prosekit-website"
   ]
 }

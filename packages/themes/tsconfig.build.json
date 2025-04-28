@@ -1,3 +1,0 @@
-{
-  "extends": "@ocavue/tsconfig/dom/build-bundler.json"
-}

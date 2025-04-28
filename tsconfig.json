@@ -86,9 +86,6 @@
       "path": "packages/themes/tsconfig.json",
     },
     {
-      "path": "packages/unocss-preset/tsconfig.json",
-    },
-    {
       "path": "packages/vue/tsconfig.build.json",
     },
     {

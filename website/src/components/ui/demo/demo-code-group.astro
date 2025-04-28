@@ -2,9 +2,9 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-import { replaceThemes } from '@prosekit/themes'
 import CodeTabItem from 'starlight-theme-nova/components/CodeTabItem.astro'
 import CodeTabs from 'starlight-theme-nova/components/CodeTabs.astro'
+import { replaceClassNames } from './replace-class-names'
 
 interface Props {
   example: {
@@ -31,5 +31,5 @@ const codes = await Promise.all(example.files.map(async file => {
 ---
 
 <CodeTabs border={false}>
-  {codes.map(code => <CodeTabItem label={code.title} lang={code.lang} code={replaceThemes(code.code)} />)}
+  {codes.map(code => <CodeTabItem label={code.title} lang={code.lang} code={replaceClassNames(code.code)} />)}
 </CodeTabs>

@@ -10,6 +10,9 @@
   "exports": {
     ".": "./src/index.ts"
   },
+  "scripts": {
+    "build": "tsx build.ts"
+  },
   "dependencies": {
     "unocss-preset-animations": "^1.2.1"
   },
@@ -20,8 +23,12 @@
     "@manypkg/find-root": "^2.2.3",
     "@types/node": "^20.17.29",
     "clsx": "^2.1.1",
+    "esbuild": "^0.25.3",
+    "prettier": "^3.5.3",
     "tailwind-merge": "^2.6.0",
+    "tsx": "^4.19.3",
     "typescript": "~5.8.2",
-    "unocss": "^66.0.0"
+    "unocss": "^66.0.0",
+    "unplugin-macros": "^0.16.3"
   }
 }

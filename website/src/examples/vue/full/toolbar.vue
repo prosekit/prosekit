@@ -89,7 +89,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Heading 1"
       @click="() => editor.commands.toggleHeading({ level: 1 })"
     >
-      <div :class="Themes.CSS_ICON_H1" />
+      <div class="CSS_ICON_H1" />
     </Button>
 
     <Button
@@ -98,7 +98,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Heading 2"
       @click="() => editor.commands.toggleHeading({ level: 2 })"
     >
-      <div :class="Themes.CSS_ICON_H2" />
+      <div class="CSS_ICON_H2" />
     </Button>
 
     <Button
@@ -107,7 +107,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Heading 3"
       @click="() => editor.commands.toggleHeading({ level: 3 })"
     >
-      <div :class="Themes.CSS_ICON_H3" />
+      <div class="CSS_ICON_H3" />
     </Button>
 
     <Button

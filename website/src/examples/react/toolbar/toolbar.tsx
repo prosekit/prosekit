@@ -52,7 +52,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 1 })}
         tooltip="Heading 1"
       >
-        <div className={Themes.CSS_ICON_H1} />
+        <div className="CSS_ICON_H1" />
       </Button>
 
       <Button
@@ -61,7 +61,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 2 })}
         tooltip="Heading 2"
       >
-        <div className={Themes.CSS_ICON_H2} />
+        <div className="CSS_ICON_H2" />
       </Button>
 
       <Button
@@ -70,7 +70,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 3 })}
         tooltip="Heading 3"
       >
-        <div className={Themes.CSS_ICON_H3} />
+        <div className="CSS_ICON_H3" />
       </Button>
 
       <ImageUploadPopover

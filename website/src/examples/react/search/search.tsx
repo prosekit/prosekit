@@ -93,7 +93,7 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
         onKeyDown={handleSearchKeyDown}
         className={Themes.CSS_SEARCH_INPUT}
       />
-      <div className={Themes.SEARCH_CONTROLLER}>
+      <div className={Themes.CSS_SEARCH_CONTROLLER}>
         <Button
           tooltip="Previous (Shift Enter)"
           onClick={editor.commands.findPrev}
@@ -118,7 +118,7 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
         />
       )}
       {showReplace && (
-        <div className={Themes.SEARCH_CONTROLLER}>
+        <div className={Themes.CSS_SEARCH_CONTROLLER}>
           <Button
             tooltip="Replace (Enter)"
             onClick={editor.commands.replaceNext}

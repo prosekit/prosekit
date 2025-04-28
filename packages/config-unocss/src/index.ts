@@ -3,10 +3,6 @@ import process from 'node:process'
 
 import { findRootSync } from '@manypkg/find-root'
 import {
-  Colors,
-  Themes,
-} from '@prosekit/themes'
-import {
   definePreset,
   presetIcons,
   presetWind,
@@ -14,29 +10,27 @@ import {
 } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
 
-const safeset = new Set(
-  Object.entries(Themes)
-    .flat()
-    .flatMap((value) => value.split(' ')),
-)
-const safelist = Array.from(safeset).sort()
+import * as Classes from './classes'
+import { Colors } from './colors'
 
 export const preset: PresetFactory = definePreset(() => ({
   name: 'prosekit',
   presets: [presetWind(), presetIcons(), presetAnimations()],
-  safelist,
-  // Add colors as shortcuts so that the vscode extension can highlight them.
-  shortcuts: Themes,
+  shortcuts: { ...Colors, ...Classes },
 }))
 
 export function configDeps(): string[] {
   try {
     const root = findRootSync(process.cwd()).rootDir
-    // Colors are calculated on the fly, so we need to reload UnoCSS when the
-    // color source file changes.
-    return [path.join(root, 'packages/themes/src/colors.ts')]
+    return [
+      'index.ts',
+      'colors.ts',
+      'classes.ts',
+    ].map(
+      file => path.join(root, 'packages/config-unocss/src', file),
+    )
   } catch (error) {
-    console.warn('[@prosekit/unocss-preset] Unable to get configDeps', error)
+    console.warn('[@prosekit/config-unocss] Unable to get configDeps:', error)
     return []
   }
 }

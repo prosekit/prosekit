@@ -17,7 +17,7 @@ export default function Button({
       disabled={disabled?.()}
       onClick={() => onClick()}
       onMouseDown={(event) => event.preventDefault()}
-      class={Themes.CSS_TOGGLE_BUTTON}
+      class="CSS_TOGGLE_BUTTON"
     >
       {children}
     </button>

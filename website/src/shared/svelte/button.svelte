@@ -25,13 +25,13 @@ let {
 </script>
 
 <TooltipRoot>
-  <TooltipTrigger class={Themes.CSS_TOOLTIP_TRIGGER}>
+  <TooltipTrigger class="CSS_TOOLTIP_TRIGGER">
     <button
       data-state={pressed ? 'on' : 'off'}
       {disabled}
       onclick={() => onClick?.()}
       onmousedown={(event) => event.preventDefault()}
-      class={Themes.CSS_TOGGLE_BUTTON}
+      class="CSS_TOGGLE_BUTTON"
     >
       {@render children?.()}
       {#if tooltip}
@@ -40,7 +40,7 @@ let {
     </button>
   </TooltipTrigger>
   {#if tooltip}
-    <TooltipContent class={Themes.CSS_TOOLTIP_CONTENT}>
+    <TooltipContent class="CSS_TOOLTIP_CONTENT">
       {tooltip}
     </TooltipContent>
   {/if}

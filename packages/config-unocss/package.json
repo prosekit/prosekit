@@ -18,6 +18,8 @@
   },
   "devDependencies": {
     "@types/node": "^20.17.29",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.6.0",
     "typescript": "~5.8.2",
     "unocss": "^66.0.0"
   }

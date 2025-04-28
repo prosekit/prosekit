@@ -10,10 +10,10 @@ import {
 <template>
   <BlockHandlePopover :class="Themes.BLOCK_HANDLE_POPOVER">
     <BlockHandleAdd :class="Themes.BLOCK_HANDLE_ADD">
-      <div :class="Themes.ICON_PLUS" />
+      <div :class="Themes.CSS_ICON_PLUS" />
     </BlockHandleAdd>
     <BlockHandleDraggable :class="Themes.BLOCK_HANDLE_DRAG">
-      <div :class="Themes.ICON_DRAG_HANDLE" />
+      <div :class="Themes.CSS_ICON_DRAG_HANDLE" />
     </BlockHandleDraggable>
   </BlockHandlePopover>
 </template>

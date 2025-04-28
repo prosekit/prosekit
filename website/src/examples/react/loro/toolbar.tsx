@@ -15,7 +15,7 @@ export default function Toolbar() {
         onClick={editor.commands.undo}
         tooltip="Undo"
       >
-        <div className={Themes.ICON_UNDO} />
+        <div className={Themes.CSS_ICON_UNDO} />
       </Button>
 
       <Button
@@ -24,7 +24,7 @@ export default function Toolbar() {
         onClick={editor.commands.redo}
         tooltip="Redo"
       >
-        <div className={Themes.ICON_REDO} />
+        <div className={Themes.CSS_ICON_REDO} />
       </Button>
 
       <Button
@@ -33,7 +33,7 @@ export default function Toolbar() {
         onClick={editor.commands.toggleBold}
         tooltip="Bold"
       >
-        <div className={Themes.ICON_BOLD} />
+        <div className={Themes.CSS_ICON_BOLD} />
       </Button>
 
       <Button
@@ -42,7 +42,7 @@ export default function Toolbar() {
         onClick={editor.commands.toggleItalic}
         tooltip="Italic"
       >
-        <div className={Themes.ICON_ITALIC} />
+        <div className={Themes.CSS_ICON_ITALIC} />
       </Button>
 
       <Button
@@ -51,7 +51,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 1 })}
         tooltip="Heading 1"
       >
-        <div className={Themes.ICON_H1} />
+        <div className={Themes.CSS_ICON_H1} />
       </Button>
 
       <Button
@@ -60,7 +60,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 2 })}
         tooltip="Heading 2"
       >
-        <div className={Themes.ICON_H2} />
+        <div className={Themes.CSS_ICON_H2} />
       </Button>
 
       <Button
@@ -69,7 +69,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 3 })}
         tooltip="Heading 3"
       >
-        <div className={Themes.ICON_H3} />
+        <div className={Themes.CSS_ICON_H3} />
       </Button>
     </div>
   )

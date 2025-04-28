@@ -16,7 +16,7 @@ export default function Toolbar() {
         onClick={editor.commands.undo}
         tooltip="Undo"
       >
-        <div className={Themes.ICON_UNDO} />
+        <div className={Themes.CSS_ICON_UNDO} />
       </Button>
 
       <Button
@@ -25,7 +25,7 @@ export default function Toolbar() {
         onClick={editor.commands.redo}
         tooltip="Redo"
       >
-        <div className={Themes.ICON_REDO} />
+        <div className={Themes.CSS_ICON_REDO} />
       </Button>
 
       <Button
@@ -34,7 +34,7 @@ export default function Toolbar() {
         onClick={editor.commands.toggleBold}
         tooltip="Bold"
       >
-        <div className={Themes.ICON_BOLD} />
+        <div className={Themes.CSS_ICON_BOLD} />
       </Button>
 
       <Button
@@ -43,7 +43,7 @@ export default function Toolbar() {
         onClick={editor.commands.toggleItalic}
         tooltip="Italic"
       >
-        <div className={Themes.ICON_ITALIC} />
+        <div className={Themes.CSS_ICON_ITALIC} />
       </Button>
 
       <Button
@@ -52,7 +52,7 @@ export default function Toolbar() {
         onClick={editor.commands.toggleUnderline}
         tooltip="Underline"
       >
-        <div className={Themes.ICON_UNDERLINE} />
+        <div className={Themes.CSS_ICON_UNDERLINE} />
       </Button>
 
       <Button
@@ -61,7 +61,7 @@ export default function Toolbar() {
         onClick={editor.commands.toggleStrike}
         tooltip="Strike"
       >
-        <div className={Themes.ICON_STRIKE} />
+        <div className={Themes.CSS_ICON_STRIKE} />
       </Button>
 
       <Button
@@ -70,7 +70,7 @@ export default function Toolbar() {
         onClick={editor.commands.toggleCode}
         tooltip="Code"
       >
-        <div className={Themes.ICON_CODE} />
+        <div className={Themes.CSS_ICON_CODE} />
       </Button>
 
       <Button
@@ -79,7 +79,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.insertCodeBlock({ language: 'javascript' })}
         tooltip="Code Block"
       >
-        <div className={Themes.ICON_CODE_BLOCK} />
+        <div className={Themes.CSS_ICON_CODE_BLOCK} />
       </Button>
 
       <Button
@@ -88,7 +88,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 1 })}
         tooltip="Heading 1"
       >
-        <div className={Themes.ICON_H1} />
+        <div className={Themes.CSS_ICON_H1} />
       </Button>
 
       <Button
@@ -97,7 +97,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 2 })}
         tooltip="Heading 2"
       >
-        <div className={Themes.ICON_H2} />
+        <div className={Themes.CSS_ICON_H2} />
       </Button>
 
       <Button
@@ -106,7 +106,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 3 })}
         tooltip="Heading 3"
       >
-        <div className={Themes.ICON_H3} />
+        <div className={Themes.CSS_ICON_H3} />
       </Button>
 
       <Button
@@ -124,7 +124,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleList({ kind: 'bullet' })}
         tooltip="Bullet List"
       >
-        <div className={Themes.ICON_LIST_BULLET} />
+        <div className={Themes.CSS_ICON_LIST_BULLET} />
       </Button>
 
       <Button
@@ -133,7 +133,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleList({ kind: 'ordered' })}
         tooltip="Ordered List"
       >
-        <div className={Themes.ICON_LIST_ORDERED} />
+        <div className={Themes.CSS_ICON_LIST_ORDERED} />
       </Button>
 
       <Button
@@ -142,7 +142,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleList({ kind: 'task' })}
         tooltip="Task List"
       >
-        <div className={Themes.ICON_LIST_TASK} />
+        <div className={Themes.CSS_ICON_LIST_TASK} />
       </Button>
 
       <Button
@@ -151,7 +151,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleList({ kind: 'toggle' })}
         tooltip="Toggle List"
       >
-        <div className={Themes.ICON_LIST_TOGGLE} />
+        <div className={Themes.CSS_ICON_LIST_TOGGLE} />
       </Button>
 
       <Button
@@ -160,7 +160,7 @@ export default function Toolbar() {
         tooltip="Increase indentation"
         onClick={() => editor.commands.indentList()}
       >
-        <div className={Themes.ICON_LIST_INDENT} />
+        <div className={Themes.CSS_ICON_LIST_INDENT} />
       </Button>
 
       <Button
@@ -169,14 +169,14 @@ export default function Toolbar() {
         tooltip="Decrease indentation"
         onClick={() => editor.commands.dedentList()}
       >
-        <div className={Themes.ICON_LIST_DEDENT} />
+        <div className={Themes.CSS_ICON_LIST_DEDENT} />
       </Button>
 
       <ImageUploadPopover
         disabled={!editor.commands.insertImage.canExec()}
         tooltip="Insert Image"
       >
-        <div className={Themes.ICON_IMAGE} />
+        <div className={Themes.CSS_ICON_IMAGE} />
       </ImageUploadPopover>
     </div>
   )

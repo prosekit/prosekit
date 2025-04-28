@@ -78,7 +78,7 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
       <Button tooltip="Toggle Replace" onClick={toggleReplace}>
         <span
           className={clsx(
-            Themes.ICON_CHEVRON_RIGHT,
+            Themes.CSS_ICON_CHEVRON_RIGHT,
             showReplace
               ? 'rotate-90 transition-transform'
               : 'transition-transform',
@@ -98,13 +98,13 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
           tooltip="Previous (Shift Enter)"
           onClick={editor.commands.findPrev}
         >
-          <span className={Themes.ICON_ARROW_LEFT} />
+          <span className={Themes.CSS_ICON_ARROW_LEFT} />
         </Button>
         <Button tooltip="Next (Enter)" onClick={editor.commands.findNext}>
-          <span className={Themes.ICON_ARROW_RIGHT} />
+          <span className={Themes.CSS_ICON_ARROW_RIGHT} />
         </Button>
         <Button tooltip="Close" onClick={onClose}>
-          <span className={Themes.ICON_CLOSE} />
+          <span className={Themes.CSS_ICON_CLOSE} />
         </Button>
       </div>
       {showReplace && (

@@ -19,7 +19,7 @@ export function TableHandle() {
     <TableHandleRoot className="contents">
       <TableHandleColumnRoot className={Themes.TABLE_COLUMN_HANDLE}>
         <TableHandleColumnTrigger>
-          <div className={Themes.ICON_TABLE_COLUMN_HANDLE}></div>
+          <div className={Themes.CSS_ICON_TABLE_COLUMN_HANDLE}></div>
         </TableHandleColumnTrigger>
         <TableHandlePopoverContent className={Themes.TABLE_HANDLE_MENU}>
           {editor.commands.addTableColumnBefore.canExec() && (

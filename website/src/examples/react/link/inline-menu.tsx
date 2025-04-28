@@ -58,7 +58,7 @@ export default function InlineMenu() {
             }}
             tooltip="Link"
           >
-            <div className={Themes.ICON_LINK}></div>
+            <div className={Themes.CSS_ICON_LINK}></div>
           </Button>
         )}
       </InlinePopover>

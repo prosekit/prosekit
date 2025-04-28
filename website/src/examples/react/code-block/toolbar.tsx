@@ -14,7 +14,7 @@ export default function Toolbar() {
         disabled={!editor.commands.setCodeBlock.canExec()}
         onClick={() => editor.commands.setCodeBlock()}
       >
-        <div className={Themes.ICON_CODE_BLOCK} />
+        <div className={Themes.CSS_ICON_CODE_BLOCK} />
       </Button>
     </div>
   )

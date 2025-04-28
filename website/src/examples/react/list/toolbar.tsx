@@ -14,7 +14,7 @@ export default function Toolbar() {
         disabled={!editor.commands.toggleList.canExec({ kind: 'bullet' })}
         onClick={() => editor.commands.toggleList({ kind: 'bullet' })}
       >
-        <div className={Themes.ICON_LIST_BULLET} />
+        <div className={Themes.CSS_ICON_LIST_BULLET} />
       </Button>
 
       <Button
@@ -22,7 +22,7 @@ export default function Toolbar() {
         disabled={!editor.commands.toggleList.canExec({ kind: 'ordered' })}
         onClick={() => editor.commands.toggleList({ kind: 'ordered' })}
       >
-        <div className={Themes.ICON_LIST_ORDERED} />
+        <div className={Themes.CSS_ICON_LIST_ORDERED} />
       </Button>
 
       <Button
@@ -30,7 +30,7 @@ export default function Toolbar() {
         disabled={!editor.commands.toggleList.canExec({ kind: 'task' })}
         onClick={() => editor.commands.toggleList({ kind: 'task' })}
       >
-        <div className={Themes.ICON_LIST_TASK} />
+        <div className={Themes.CSS_ICON_LIST_TASK} />
       </Button>
 
       <Button
@@ -38,7 +38,7 @@ export default function Toolbar() {
         disabled={!editor.commands.toggleList.canExec({ kind: 'toggle' })}
         onClick={() => editor.commands.toggleList({ kind: 'toggle' })}
       >
-        <div className={Themes.ICON_LIST_TOGGLE} />
+        <div className={Themes.CSS_ICON_LIST_TOGGLE} />
       </Button>
     </div>
   )

@@ -59,7 +59,7 @@ function handleLinkUpdate(href?: string) {
         }
       "
     >
-      <div :class="Themes.ICON_LINK" />
+      <div :class="Themes.CSS_ICON_LINK" />
     </Button>
   </InlinePopover>
 

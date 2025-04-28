@@ -99,7 +99,7 @@ export default function ImageView(props: ReactNodeViewProps) {
       )}
       {uploading && !error && (
         <div className={Themes.IMAGE_UPLOAD_PROGRESS}>
-          <div className={Themes.ICON_LOADER}></div>
+          <div className={Themes.CSS_ICON_LOADER}></div>
           <div>{Math.round(progress * 100)}%</div>
         </div>
       )}
@@ -115,7 +115,7 @@ export default function ImageView(props: ReactNodeViewProps) {
         className={Themes.IMAGE_RESIZEALE_HANDLE}
         position="bottom-right"
       >
-        <div className={Themes.ICON_CORNER_HANDLE}></div>
+        <div className={Themes.CSS_ICON_CORNER_HANDLE}></div>
       </ResizableHandle>
     </ResizableRoot>
   )

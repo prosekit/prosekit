@@ -105,7 +105,7 @@ function handleImageLoad(event: Event) {
     />
 
     <div v-if="uploading && !error" :class="Themes.IMAGE_UPLOAD_PROGRESS">
-      <div :class="Themes.ICON_LOADER"></div>
+      <div :class="Themes.CSS_ICON_LOADER"></div>
       <div>{{ Math.round(progress * 100) }}%</div>
     </div>
     <div v-if="error" :class="Themes.IMAGE_UPLOAD_ERROR">
@@ -119,7 +119,7 @@ function handleImageLoad(event: Event) {
       :class="Themes.IMAGE_RESIZEALE_HANDLE"
       position="bottom-right"
     >
-      <div :class="Themes.ICON_CORNER_HANDLE"></div>
+      <div :class="Themes.CSS_ICON_CORNER_HANDLE"></div>
     </ResizableHandle>
   </ResizableRoot>
 </template>

@@ -14,6 +14,6 @@ const editor = useEditor<EditorExtension>({ update: true })
     onClick={() => $editor.commands.setCodeBlock()}
     tooltip="Heading 1"
   >
-    <div class={Themes.ICON_CODE_BLOCK}></div>
+    <div class={Themes.CSS_ICON_CODE_BLOCK}></div>
   </Button>
 </div>

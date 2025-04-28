@@ -54,7 +54,7 @@ function handleLinkUpdate(href?: string) {
       tooltip="Bold"
       @click="() => editor.commands.toggleBold()"
     >
-      <div :class="Themes.ICON_BOLD" />
+      <div :class="Themes.CSS_ICON_BOLD" />
     </Button>
 
     <Button
@@ -63,7 +63,7 @@ function handleLinkUpdate(href?: string) {
       tooltip="Italic"
       @click="() => editor.commands.toggleItalic()"
     >
-      <div :class="Themes.ICON_ITALIC" />
+      <div :class="Themes.CSS_ICON_ITALIC" />
     </Button>
 
     <Button
@@ -72,7 +72,7 @@ function handleLinkUpdate(href?: string) {
       tooltip="Underline"
       @click="() => editor.commands.toggleUnderline()"
     >
-      <div :class="Themes.ICON_UNDERLINE" />
+      <div :class="Themes.CSS_ICON_UNDERLINE" />
     </Button>
 
     <Button
@@ -81,7 +81,7 @@ function handleLinkUpdate(href?: string) {
       tooltip="Strike"
       @click="() => editor.commands.toggleStrike()"
     >
-      <div :class="Themes.ICON_STRIKE" />
+      <div :class="Themes.CSS_ICON_STRIKE" />
     </Button>
 
     <Button
@@ -90,7 +90,7 @@ function handleLinkUpdate(href?: string) {
       tooltip="Code"
       @click="() => editor.commands.toggleCode()"
     >
-      <div :class="Themes.ICON_CODE" />
+      <div :class="Themes.CSS_ICON_CODE" />
     </Button>
 
     <Button
@@ -104,7 +104,7 @@ function handleLinkUpdate(href?: string) {
         }
       "
     >
-      <div :class="Themes.ICON_LINK" />
+      <div :class="Themes.CSS_ICON_LINK" />
     </Button>
   </InlinePopover>
 

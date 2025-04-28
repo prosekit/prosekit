@@ -15,7 +15,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.setCodeBlock.canExec()"
       @click="() => editor.commands.setCodeBlock()"
     >
-      <div :class="Themes.ICON_CODE_BLOCK" />
+      <div :class="Themes.CSS_ICON_CODE_BLOCK" />
     </Button>
   </div>
 </template>

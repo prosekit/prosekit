@@ -61,7 +61,7 @@
     "@prosekit/config-vitest": "workspace:*",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/test-utils": "^2.4.6",
-    "tsdown": "^0.9.6",
+    "tsdown": "^0.9.9",
     "typescript": "~5.8.2",
     "vitest": "^3.1.2",
     "vue": "^3.5.13"

@@ -80,11 +80,11 @@ function handleOpenChange(openValue: boolean) {
       </Button>
     </PopoverTrigger>
 
-    <PopoverContent :class="Themes.CSS_IMAGE_UPLOAD_CARD">
+    <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
       <template v-if="!objectUrl">
         <label>Embed Link</label>
         <input
-          :class="Themes.CSS_IMAGE_UPLOAD_INPUT"
+          class="CSS_IMAGE_UPLOAD_INPUT"
           placeholder="Paste the image link..."
           type="url"
           :value="webUrl"
@@ -94,7 +94,7 @@ function handleOpenChange(openValue: boolean) {
       <template v-if="!webUrl">
         <label>Upload</label>
         <input
-          :class="Themes.CSS_IMAGE_UPLOAD_INPUT"
+          class="CSS_IMAGE_UPLOAD_INPUT"
           accept="image/*"
           type="file"
           @input="handleFileChange"
@@ -102,7 +102,7 @@ function handleOpenChange(openValue: boolean) {
       </template>
       <button
         v-if="url"
-        :class="Themes.CSS_IMAGE_UPLOAD_BUTTON"
+        class="CSS_IMAGE_UPLOAD_BUTTON"
         @click="handleSubmit"
       >
         Insert Image

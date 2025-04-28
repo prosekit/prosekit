@@ -9,13 +9,13 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div :class="Themes.CSS_TOOLBAR">
+  <div class="CSS_TOOLBAR">
     <Button
       :pressed="false"
       :disabled="!editor.commands.undo.canExec()"
       @click="() => editor.commands.undo()"
     >
-      <div :class="Themes.CSS_ICON_UNDO" />
+      <div class="CSS_ICON_UNDO" />
     </Button>
 
     <Button
@@ -23,7 +23,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.redo.canExec()"
       @click="() => editor.commands.redo()"
     >
-      <div :class="Themes.CSS_ICON_REDO" />
+      <div class="CSS_ICON_REDO" />
     </Button>
 
     <Button
@@ -31,7 +31,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleBold.canExec()"
       @click="() => editor.commands.toggleBold()"
     >
-      <div :class="Themes.CSS_ICON_BOLD" />
+      <div class="CSS_ICON_BOLD" />
     </Button>
 
     <Button
@@ -39,7 +39,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleItalic.canExec()"
       @click="() => editor.commands.toggleItalic()"
     >
-      <div :class="Themes.CSS_ICON_ITALIC" />
+      <div class="CSS_ICON_ITALIC" />
     </Button>
 
     <Button

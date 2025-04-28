@@ -8,7 +8,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div :class="Themes.CSS_TOOLBAR">
+  <div class="CSS_TOOLBAR">
     <Button
       :pressed="editor.marks.strike.isActive()"
       @click="() => editor.commands.toggleStrike()"

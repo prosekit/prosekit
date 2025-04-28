@@ -33,18 +33,18 @@ const { users, loading } = useUserQuery(query, open)
 <template>
   <AutocompletePopover
     :regex="/@\w*$/"
-    :class="Themes.CSS_AUTOCOMPLETE_MENU"
+    class="CSS_AUTOCOMPLETE_MENU"
     @query-change="handleQueryChange"
     @open-change="handleOpenChange"
   >
     <AutocompleteList :filter="null">
-      <AutocompleteEmpty :class="Themes.CSS_AUTOCOMPLETE_MENU_ITEM">
+      <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
         {{ loading ? 'Loading...' : 'No results' }}
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="user in users"
         :key="user.id"
-        :class="Themes.CSS_AUTOCOMPLETE_MENU_ITEM"
+        class="CSS_AUTOCOMPLETE_MENU_ITEM"
         @select="() => handleUserInsert(user.id, user.name)"
       >
         <span :class="loading && 'opacity-50'">

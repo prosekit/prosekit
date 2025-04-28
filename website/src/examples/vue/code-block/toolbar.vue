@@ -9,13 +9,13 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div :class="Themes.CSS_TOOLBAR">
+  <div class="CSS_TOOLBAR">
     <Button
       :pressed="editor.nodes.codeBlock.isActive()"
       :disabled="!editor.commands.setCodeBlock.canExec()"
       @click="() => editor.commands.setCodeBlock()"
     >
-      <div :class="Themes.CSS_ICON_CODE_BLOCK" />
+      <div class="CSS_ICON_CODE_BLOCK" />
     </Button>
   </div>
 </template>

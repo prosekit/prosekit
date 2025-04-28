@@ -19,7 +19,7 @@ function isTextAlignActive(editor: Editor<EditorExtension>, value: string) {
 </script>
 
 <template>
-  <div :class="Themes.CSS_TOOLBAR">
+  <div class="CSS_TOOLBAR">
     <Button
       :pressed="isTextAlignActive(editor, 'left')"
       :disabled="!editor.commands.setTextAlign.canExec('left')"

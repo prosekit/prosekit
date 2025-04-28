@@ -14,7 +14,7 @@ useSubmitKeymap(hotkey, (hotkey) => emit('submit', hotkey))
 </script>
 
 <template>
-  <div :class="Themes.CSS_TOOLBAR">
+  <div class="CSS_TOOLBAR">
     <Button
       :pressed="hotkey === 'Shift-Enter'"
       @click="() => (hotkey = 'Shift-Enter')"

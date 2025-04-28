@@ -35,13 +35,13 @@ function pushSubmition(hotkey: string) {
 
 <template>
   <ProseKit :editor="editor">
-    <div :class="Themes.CSS_EDITOR_VIEWPORT">
+    <div class="CSS_EDITOR_VIEWPORT">
       <Toolbar @submit="pushSubmition" />
-      <div :class="Themes.CSS_EDITOR_SCROLLING">
-        <div ref="editorRef" :class="Themes.CSS_EDITOR_CONTENT" />
+      <div class="CSS_EDITOR_SCROLLING">
+        <div ref="editorRef" class="CSS_EDITOR_CONTENT" />
       </div>
     </div>
-    <fieldset :class="Themes.CSS_KEYMAP_FIELDSET">
+    <fieldset class="CSS_KEYMAP_FIELDSET">
       <legend>Submit Records</legend>
       <ol>
         <li v-for="(submition, index) in submitions" :key="index">

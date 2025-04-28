@@ -9,14 +9,14 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div :class="Themes.CSS_TOOLBAR">
+  <div class="CSS_TOOLBAR">
     <Button
       :pressed="editor.nodes.blockquote.isActive()"
       :disabled="!editor.commands.toggleBlockquote.canExec()"
       tooltip="Blockquote"
       @click="() => editor.commands.toggleBlockquote()"
     >
-      <div :class="Themes.CSS_ICON_BLOCKQUOTE" />
+      <div class="CSS_ICON_BLOCKQUOTE" />
     </Button>
   </div>
 </template>

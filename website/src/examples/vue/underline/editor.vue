@@ -29,10 +29,10 @@ watchPostEffect((onCleanup) => {
 
 <template>
   <ProseKit :editor="editor">
-    <div :class="Themes.CSS_EDITOR_VIEWPORT">
+    <div class="CSS_EDITOR_VIEWPORT">
       <Toolbar />
-      <div :class="Themes.CSS_EDITOR_SCROLLING">
-        <div ref="editorRef" :class="Themes.CSS_EDITOR_CONTENT" />
+      <div class="CSS_EDITOR_SCROLLING">
+        <div ref="editorRef" class="CSS_EDITOR_CONTENT" />
       </div>
     </div>
   </ProseKit>

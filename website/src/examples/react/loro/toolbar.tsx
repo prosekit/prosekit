@@ -8,14 +8,14 @@ export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <div className={Themes.CSS_TOOLBAR}>
+    <div className="CSS_TOOLBAR">
       <Button
         pressed={false}
         disabled={!editor.commands.undo.canExec()}
         onClick={editor.commands.undo}
         tooltip="Undo"
       >
-        <div className={Themes.CSS_ICON_UNDO} />
+        <div className="CSS_ICON_UNDO" />
       </Button>
 
       <Button
@@ -24,7 +24,7 @@ export default function Toolbar() {
         onClick={editor.commands.redo}
         tooltip="Redo"
       >
-        <div className={Themes.CSS_ICON_REDO} />
+        <div className="CSS_ICON_REDO" />
       </Button>
 
       <Button
@@ -33,7 +33,7 @@ export default function Toolbar() {
         onClick={editor.commands.toggleBold}
         tooltip="Bold"
       >
-        <div className={Themes.CSS_ICON_BOLD} />
+        <div className="CSS_ICON_BOLD" />
       </Button>
 
       <Button
@@ -42,7 +42,7 @@ export default function Toolbar() {
         onClick={editor.commands.toggleItalic}
         tooltip="Italic"
       >
-        <div className={Themes.CSS_ICON_ITALIC} />
+        <div className="CSS_ICON_ITALIC" />
       </Button>
 
       <Button

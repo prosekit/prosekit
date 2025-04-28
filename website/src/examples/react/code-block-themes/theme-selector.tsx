@@ -24,7 +24,7 @@ export function ThemeSelector() {
         id="code-block-theme-selector"
         value={theme}
         onChange={(event) => setTheme(event.target.value)}
-        className={Themes.CSS_TOGGLE_BUTTON}
+        className="CSS_TOGGLE_BUTTON"
       >
         {shikiBundledThemesInfo.map((info) => (
           <option key={info.id} value={info.id}>

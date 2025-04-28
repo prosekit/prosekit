@@ -8,13 +8,13 @@ export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <div className={Themes.CSS_TOOLBAR}>
+    <div className="CSS_TOOLBAR">
       <Button
         pressed={editor.nodes.codeBlock.isActive()}
         disabled={!editor.commands.setCodeBlock.canExec()}
         onClick={() => editor.commands.setCodeBlock()}
       >
-        <div className={Themes.CSS_ICON_CODE_BLOCK} />
+        <div className="CSS_ICON_CODE_BLOCK" />
       </Button>
     </div>
   )

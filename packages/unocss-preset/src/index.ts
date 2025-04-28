@@ -26,7 +26,7 @@ export const preset: PresetFactory = definePreset(() => ({
   presets: [presetWind(), presetIcons(), presetAnimations()],
   safelist,
   // Add colors as shortcuts so that the vscode extension can highlight them.
-  shortcuts: Colors,
+  shortcuts: Themes,
 }))
 
 export function configDeps(): string[] {

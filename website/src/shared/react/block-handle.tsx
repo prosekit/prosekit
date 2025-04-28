@@ -7,12 +7,12 @@ import {
 
 export default function BlockHandle() {
   return (
-    <BlockHandlePopover className={Themes.CSS_BLOCK_HANDLE_POPOVER}>
-      <BlockHandleAdd className={Themes.CSS_BLOCK_HANDLE_ADD}>
-        <div className={Themes.CSS_ICON_PLUS} />
+    <BlockHandlePopover className="CSS_BLOCK_HANDLE_POPOVER">
+      <BlockHandleAdd className="CSS_BLOCK_HANDLE_ADD">
+        <div className="CSS_ICON_PLUS" />
       </BlockHandleAdd>
-      <BlockHandleDraggable className={Themes.CSS_BLOCK_HANDLE_DRAG}>
-        <div className={Themes.CSS_ICON_DRAG_HANDLE} />
+      <BlockHandleDraggable className="CSS_BLOCK_HANDLE_DRAG">
+        <div className="CSS_ICON_DRAG_HANDLE" />
       </BlockHandleDraggable>
     </BlockHandlePopover>
   )

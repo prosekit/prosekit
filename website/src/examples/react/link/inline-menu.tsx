@@ -42,7 +42,7 @@ export default function InlineMenu() {
     <>
       <InlinePopover
         data-testid="inline-menu-main"
-        className={Themes.CSS_INLINE_MENU_MAIN}
+        className="CSS_INLINE_MENU_MAIN"
         onOpenChange={(open) => {
           if (!open) {
             setLinkMenuOpen(false)
@@ -58,7 +58,7 @@ export default function InlineMenu() {
             }}
             tooltip="Link"
           >
-            <div className={Themes.CSS_ICON_LINK}></div>
+            <div className="CSS_ICON_LINK"></div>
           </Button>
         )}
       </InlinePopover>
@@ -69,7 +69,7 @@ export default function InlineMenu() {
         open={linkMenuOpen}
         onOpenChange={setLinkMenuOpen}
         data-testid="inline-menu-link"
-        className={Themes.CSS_INLINE_MENU_LINK}
+        className="CSS_INLINE_MENU_LINK"
       >
         {linkMenuOpen && (
           <form
@@ -83,7 +83,7 @@ export default function InlineMenu() {
             <input
               placeholder="Paste the link..."
               defaultValue={getCurrentLink(editor.state)}
-              className={Themes.CSS_INLINE_MENU_LINK_INPUT}
+              className="CSS_INLINE_MENU_LINK_INPUT"
             >
             </input>
           </form>
@@ -92,7 +92,7 @@ export default function InlineMenu() {
           <button
             onClick={() => handleLinkUpdate()}
             onMouseDown={(event) => event.preventDefault()}
-            className={Themes.CSS_INLINE_MENU_LINK_REMOVE_BUTTON}
+            className="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
           >
             Remove link
           </button>

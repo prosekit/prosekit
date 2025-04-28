@@ -74,7 +74,7 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
   }
 
   return (
-    <div className={Themes.CSS_SEARCH}>
+    <div className="CSS_SEARCH">
       <Button tooltip="Toggle Replace" onClick={toggleReplace}>
         <span
           className={clsx(
@@ -91,20 +91,20 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
         value={searchText}
         onChange={(event) => setSearchText(event.target.value)}
         onKeyDown={handleSearchKeyDown}
-        className={Themes.CSS_SEARCH_INPUT}
+        className="CSS_SEARCH_INPUT"
       />
-      <div className={Themes.CSS_SEARCH_CONTROLLER}>
+      <div className="CSS_SEARCH_CONTROLLER">
         <Button
           tooltip="Previous (Shift Enter)"
           onClick={editor.commands.findPrev}
         >
-          <span className={Themes.CSS_ICON_ARROW_LEFT} />
+          <span className="CSS_ICON_ARROW_LEFT" />
         </Button>
         <Button tooltip="Next (Enter)" onClick={editor.commands.findNext}>
-          <span className={Themes.CSS_ICON_ARROW_RIGHT} />
+          <span className="CSS_ICON_ARROW_RIGHT" />
         </Button>
         <Button tooltip="Close" onClick={onClose}>
-          <span className={Themes.CSS_ICON_CLOSE} />
+          <span className="CSS_ICON_CLOSE" />
         </Button>
       </div>
       {showReplace && (
@@ -114,11 +114,11 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
           value={replaceText}
           onChange={(event) => setReplaceText(event.target.value)}
           onKeyDown={handleReplaceKeyDown}
-          className={Themes.CSS_SEARCH_INPUT}
+          className="CSS_SEARCH_INPUT"
         />
       )}
       {showReplace && (
-        <div className={Themes.CSS_SEARCH_CONTROLLER}>
+        <div className="CSS_SEARCH_CONTROLLER">
           <Button
             tooltip="Replace (Enter)"
             onClick={editor.commands.replaceNext}

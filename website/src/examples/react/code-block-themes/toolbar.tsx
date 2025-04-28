@@ -4,7 +4,7 @@ import { ThemeSelector } from './theme-selector'
 
 export default function Toolbar() {
   return (
-    <div className={Themes.CSS_TOOLBAR}>
+    <div className="CSS_TOOLBAR">
       <ThemeSelector />
     </div>
   )

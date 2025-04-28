@@ -55,7 +55,7 @@ export default function Editor() {
   )
 
   return (
-    <div className={Themes.CSS_EDITOR_VIEWPORT}>
+    <div className="CSS_EDITOR_VIEWPORT">
       <button
         onClick={handleSave}
         disabled={!hasUnsavedChange}

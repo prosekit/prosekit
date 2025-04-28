@@ -28,10 +28,10 @@ export default function Editor() {
 
   return (
     <ProseKit editor={editor}>
-      <div className={Themes.CSS_EDITOR_VIEWPORT}>
-        <div className={Themes.CSS_EDITOR_SCROLLING}>
+      <div className="CSS_EDITOR_VIEWPORT">
+        <div className="CSS_EDITOR_SCROLLING">
           <Search />
-          <div ref={editor.mount} className={Themes.CSS_EDITOR_CONTENT}></div>
+          <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
         </div>
       </div>
     </ProseKit>

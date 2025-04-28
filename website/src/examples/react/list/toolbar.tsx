@@ -8,13 +8,13 @@ export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <div className={Themes.CSS_TOOLBAR}>
+    <div className="CSS_TOOLBAR">
       <Button
         pressed={editor.nodes.list.isActive({ kind: 'bullet' })}
         disabled={!editor.commands.toggleList.canExec({ kind: 'bullet' })}
         onClick={() => editor.commands.toggleList({ kind: 'bullet' })}
       >
-        <div className={Themes.CSS_ICON_LIST_BULLET} />
+        <div className="CSS_ICON_LIST_BULLET" />
       </Button>
 
       <Button
@@ -22,7 +22,7 @@ export default function Toolbar() {
         disabled={!editor.commands.toggleList.canExec({ kind: 'ordered' })}
         onClick={() => editor.commands.toggleList({ kind: 'ordered' })}
       >
-        <div className={Themes.CSS_ICON_LIST_ORDERED} />
+        <div className="CSS_ICON_LIST_ORDERED" />
       </Button>
 
       <Button
@@ -30,7 +30,7 @@ export default function Toolbar() {
         disabled={!editor.commands.toggleList.canExec({ kind: 'task' })}
         onClick={() => editor.commands.toggleList({ kind: 'task' })}
       >
-        <div className={Themes.CSS_ICON_LIST_TASK} />
+        <div className="CSS_ICON_LIST_TASK" />
       </Button>
 
       <Button
@@ -38,7 +38,7 @@ export default function Toolbar() {
         disabled={!editor.commands.toggleList.canExec({ kind: 'toggle' })}
         onClick={() => editor.commands.toggleList({ kind: 'toggle' })}
       >
-        <div className={Themes.CSS_ICON_LIST_TOGGLE} />
+        <div className="CSS_ICON_LIST_TOGGLE" />
       </Button>
     </div>
   )

@@ -53,7 +53,7 @@ export default function Editor() {
             commitRecorder={commitRecorder}
           />
         </div>
-        <button onClick={handleCommit} className={Themes.CSS_BUTTON_PRIMARY}>
+        <button onClick={handleCommit} className="CSS_BUTTON_PRIMARY">
           Save
         </button>
       </div>

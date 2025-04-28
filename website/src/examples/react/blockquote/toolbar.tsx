@@ -8,14 +8,14 @@ export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <div className={Themes.CSS_TOOLBAR}>
+    <div className="CSS_TOOLBAR">
       <Button
         pressed={editor.nodes.blockquote.isActive()}
         disabled={!editor.commands.toggleBlockquote.canExec()}
         onClick={() => editor.commands.setBlockquote()}
         tooltip="Blockquote"
       >
-        <div className={Themes.CSS_ICON_BLOCKQUOTE} />
+        <div className="CSS_ICON_BLOCKQUOTE" />
       </Button>
     </div>
   )

@@ -7,13 +7,13 @@ import type { EditorExtension } from './extension'
 const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
-<div class={Themes.CSS_TOOLBAR}>
+<div class="CSS_TOOLBAR">
   <Button
     pressed={$editor.nodes.codeBlock.isActive()}
     disabled={!$editor.commands.setCodeBlock.canExec()}
     onClick={() => $editor.commands.setCodeBlock()}
     tooltip="Heading 1"
   >
-    <div class={Themes.CSS_ICON_CODE_BLOCK}></div>
+    <div class="CSS_ICON_CODE_BLOCK"></div>
   </Button>
 </div>

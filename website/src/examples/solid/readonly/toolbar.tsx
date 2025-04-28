@@ -7,7 +7,7 @@ export default function Toolbar() {
   const { getReadonly, setReadonly } = useReadonly()
 
   return (
-    <div class={Themes.CSS_TOOLBAR}>
+    <div class="CSS_TOOLBAR">
       <Button
         pressed={getReadonly}
         disabled={() => !true}

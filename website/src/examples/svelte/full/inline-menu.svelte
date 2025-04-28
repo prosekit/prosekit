@@ -47,14 +47,14 @@ const handleSubmit = (event: Event) => {
 }
 </script>
 
-<InlinePopover data-testid="inline-menu-main" class={Themes.CSS_INLINE_MENU_MAIN}>
+<InlinePopover data-testid="inline-menu-main" class="CSS_INLINE_MENU_MAIN">
   <Button
     pressed={$editor.marks.bold.isActive()}
     disabled={!$editor.commands.toggleBold.canExec()}
     tooltip="Bold"
     onClick={() => $editor.commands.toggleBold()}
   >
-    <div class={Themes.CSS_ICON_BOLD}></div>
+    <div class="CSS_ICON_BOLD"></div>
   </Button>
 
   <Button
@@ -63,7 +63,7 @@ const handleSubmit = (event: Event) => {
     onClick={() => $editor.commands.toggleItalic()}
     tooltip="Italic"
   >
-    <div class={Themes.CSS_ICON_ITALIC}></div>
+    <div class="CSS_ICON_ITALIC"></div>
   </Button>
 
   <Button
@@ -72,7 +72,7 @@ const handleSubmit = (event: Event) => {
     onClick={() => $editor.commands.toggleUnderline()}
     tooltip="Underline"
   >
-    <div class={Themes.CSS_ICON_UNDERLINE}></div>
+    <div class="CSS_ICON_UNDERLINE"></div>
   </Button>
 
   <Button
@@ -81,7 +81,7 @@ const handleSubmit = (event: Event) => {
     onClick={() => $editor.commands.toggleStrike()}
     tooltip="Strike"
   >
-    <div class={Themes.CSS_ICON_STRIKE}></div>
+    <div class="CSS_ICON_STRIKE"></div>
   </Button>
 
   <Button
@@ -90,7 +90,7 @@ const handleSubmit = (event: Event) => {
     onClick={() => $editor.commands.toggleCode()}
     tooltip="Code"
   >
-    <div class={Themes.CSS_ICON_CODE}></div>
+    <div class="CSS_ICON_CODE"></div>
   </Button>
 
   {#if $editor.commands.addLink.canExec({ href: '' })}
@@ -102,7 +102,7 @@ const handleSubmit = (event: Event) => {
       }}
       tooltip="Link"
     >
-      <div class={Themes.CSS_ICON_LINK}></div>
+      <div class="CSS_ICON_LINK"></div>
     </Button>
   {/if}
 </InlinePopover>
@@ -113,14 +113,14 @@ const handleSubmit = (event: Event) => {
   open={linkMenuOpen}
   onOpenChange={setLinkMenuOpen}
   data-testid="inline-menu-link"
-  class={Themes.CSS_INLINE_MENU_LINK}
+  class="CSS_INLINE_MENU_LINK"
 >
   {#if linkMenuOpen}
     <form on:submit|preventDefault={handleSubmit}>
       <input
         placeholder="Paste the link..."
         value={getCurrentLink($editor.state) || ''}
-        class={Themes.CSS_INLINE_MENU_LINK_INPUT}
+        class="CSS_INLINE_MENU_LINK_INPUT"
       />
     </form>
   {/if}
@@ -129,7 +129,7 @@ const handleSubmit = (event: Event) => {
     <button
       on:click={() => handleLinkUpdate()}
       on:mousedown|preventDefault
-      class={Themes.CSS_INLINE_MENU_LINK_REMOVE_BUTTON}
+      class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
     >
       Remove link
     </button>

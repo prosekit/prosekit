@@ -7,7 +7,7 @@ import type { EditorExtension } from './extension'
 const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
-<div class={Themes.CSS_TOOLBAR}>
+<div class="CSS_TOOLBAR">
   <Button
     pressed={$editor.nodes.heading.isActive({ level: 1 })}
     disabled={!$editor.commands.toggleHeading.canExec({ level: 1 })}

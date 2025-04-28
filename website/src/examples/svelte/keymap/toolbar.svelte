@@ -10,7 +10,7 @@ const hotkey = writable<'Shift-Enter' | 'Enter'>('Shift-Enter')
 useSubmitKeymap(hotkey, onSubmit)
 </script>
 
-<div class={Themes.CSS_TOOLBAR}>
+<div class="CSS_TOOLBAR">
   <Button
     pressed={$hotkey === 'Shift-Enter'}
     onClick={() => ($hotkey = 'Shift-Enter')}

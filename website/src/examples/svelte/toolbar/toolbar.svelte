@@ -7,13 +7,13 @@ import type { EditorExtension } from './extension'
 const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
-<div class={Themes.CSS_TOOLBAR}>
+<div class="CSS_TOOLBAR">
   <Button
     pressed={false}
     disabled={!$editor.commands.undo.canExec()}
     onClick={() => $editor.commands.undo()}
   >
-    <div class={Themes.CSS_ICON_UNDO}></div>
+    <div class="CSS_ICON_UNDO"></div>
   </Button>
 
   <Button
@@ -21,7 +21,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     disabled={!$editor.commands.redo.canExec()}
     onClick={() => $editor.commands.redo()}
   >
-    <div class={Themes.CSS_ICON_REDO}></div>
+    <div class="CSS_ICON_REDO"></div>
   </Button>
 
   <Button
@@ -29,7 +29,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     disabled={!$editor.commands.toggleBold.canExec()}
     onClick={() => $editor.commands.toggleBold()}
   >
-    <div class={Themes.CSS_ICON_BOLD}></div>
+    <div class="CSS_ICON_BOLD"></div>
   </Button>
 
   <Button
@@ -37,7 +37,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     disabled={!$editor.commands.toggleItalic.canExec()}
     onClick={() => $editor.commands.toggleItalic()}
   >
-    <div class={Themes.CSS_ICON_ITALIC}></div>
+    <div class="CSS_ICON_ITALIC"></div>
   </Button>
 
   <Button
@@ -45,7 +45,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     disabled={!$editor.commands.toggleHeading.canExec({ level: 1 })}
     onClick={() => $editor.commands.toggleHeading({ level: 1 })}
   >
-    <div class={Themes.CSS_ICON_H1}></div>
+    <div class="CSS_ICON_H1"></div>
   </Button>
 
   <Button
@@ -53,7 +53,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     disabled={!$editor.commands.toggleHeading.canExec({ level: 2 })}
     onClick={() => $editor.commands.toggleHeading({ level: 2 })}
   >
-    <div class={Themes.CSS_ICON_H2}></div>
+    <div class="CSS_ICON_H2"></div>
   </Button>
 
   <Button
@@ -61,6 +61,6 @@ const editor = useEditor<EditorExtension>({ update: true })
     disabled={!$editor.commands.toggleHeading.canExec({ level: 3 })}
     onClick={() => $editor.commands.toggleHeading({ level: 3 })}
   >
-    <div class={Themes.CSS_ICON_H3}></div>
+    <div class="CSS_ICON_H3"></div>
   </Button>
 </div>

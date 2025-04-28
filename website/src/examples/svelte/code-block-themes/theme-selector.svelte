@@ -35,7 +35,7 @@ function change_theme(event: Event) {
   id="code-block-theme-selector"
   value={theme}
   on:change={change_theme}
-  class={Themes.CSS_TOGGLE_BUTTON}
+  class="CSS_TOGGLE_BUTTON"
 >
   {#each shikiBundledThemesInfo as info}
     <option value={info.id}>

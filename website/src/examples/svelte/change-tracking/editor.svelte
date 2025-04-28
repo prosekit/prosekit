@@ -39,7 +39,7 @@ function handleRestore(id: string) {
         <EditorMain {defaultContent} {commitRecorder} />
       {/key}
     </div>
-    <button on:click={handleCommit} class={Themes.CSS_BUTTON_PRIMARY}>
+    <button on:click={handleCommit} class="CSS_BUTTON_PRIMARY">
       Save
     </button>
   </div>

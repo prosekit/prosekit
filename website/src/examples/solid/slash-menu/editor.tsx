@@ -13,9 +13,9 @@ export default function Editor() {
 
   return (
     <ProseKit editor={editor}>
-      <div class={Themes.CSS_EDITOR_VIEWPORT}>
-        <div class={Themes.CSS_EDITOR_SCROLLING}>
-          <div ref={editor.mount} class={Themes.CSS_EDITOR_CONTENT}></div>
+      <div class="CSS_EDITOR_VIEWPORT">
+        <div class="CSS_EDITOR_SCROLLING">
+          <div ref={editor.mount} class="CSS_EDITOR_CONTENT"></div>
           <SlashMenu />
         </div>
       </div>

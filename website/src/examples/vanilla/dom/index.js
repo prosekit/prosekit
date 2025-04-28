@@ -40,7 +40,7 @@ function createList() {
     createItem('Turn into Heading 1', () => handleHeadingConvert(1)),
     createItem('Turn into Heading 2', () => handleHeadingConvert(2)),
   )
-  list.className = Themes.CSS_AUTOCOMPLETE_MENU
+  list.className = 'CSS_AUTOCOMPLETE_MENU'
   return list
 }
 
@@ -52,7 +52,7 @@ function createItem(text, callback) {
   const item = new AutocompleteItem()
   item.append(text)
   item.onSelect = callback
-  item.className = Themes.CSS_AUTOCOMPLETE_MENU_ITEM
+  item.className = 'CSS_AUTOCOMPLETE_MENU_ITEM'
   return item
 }
 
@@ -78,13 +78,13 @@ function main() {
   root.innerHTML = ''
 
   const viewport = root.appendChild(document.createElement('div'))
-  viewport.className = Themes.CSS_EDITOR_VIEWPORT
+  viewport.className = 'CSS_EDITOR_VIEWPORT'
 
   const scrolling = viewport.appendChild(document.createElement('div'))
-  scrolling.className = Themes.CSS_EDITOR_SCROLLING
+  scrolling.className = 'CSS_EDITOR_SCROLLING'
 
   const content = scrolling.appendChild(document.createElement('div'))
-  content.className = Themes.CSS_EDITOR_CONTENT
+  content.className = 'CSS_EDITOR_CONTENT'
 
   editor.mount(content)
 

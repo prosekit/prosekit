@@ -105,7 +105,7 @@ export default function ImageView(props: ReactNodeViewProps) {
       )}
       {error && (
         <div className={Themes.IMAGE_UPLOAD_ERROR}>
-          <div className={Themes.ICON_IMAGE_ERROR}></div>
+          <div className={Themes.CSS_ICON_IMAGE_ERROR}></div>
           <div className={Themes.IMAGE_UPLOAD_ERROR_MESSAGE}>
             Failed to upload image
           </div>

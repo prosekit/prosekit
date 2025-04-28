@@ -109,7 +109,7 @@ function handleImageLoad(event: Event) {
       <div>{{ Math.round(progress * 100) }}%</div>
     </div>
     <div v-if="error" :class="Themes.IMAGE_UPLOAD_ERROR">
-      <div :class="Themes.ICON_IMAGE_ERROR"></div>
+      <div :class="Themes.CSS_ICON_IMAGE_ERROR"></div>
       <div :class="Themes.IMAGE_UPLOAD_ERROR_MESSAGE">
         Failed to upload image
       </div>

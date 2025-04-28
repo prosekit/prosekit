@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import { AutocompleteItem } from 'prosekit/vue/autocomplete'
 
 defineProps<{
@@ -10,8 +9,8 @@ defineProps<{
 </script>
 
 <template>
-  <AutocompleteItem :class="Themes.AUTOCOMPLETE_MENU_ITEM" @select="onSelect">
+  <AutocompleteItem class="CSS_AUTOCOMPLETE_MENU_ITEM" @select="onSelect">
     <span>{{ label }}</span>
-    <kbd v-if="kbd" :class="Themes.AUTOCOMPLETE_MENU_KEYBOARD">{{ kbd }}</kbd>
+    <kbd v-if="kbd" class="CSS_AUTOCOMPLETE_MENU_KEYBOARD">{{ kbd }}</kbd>
   </AutocompleteItem>
 </template>

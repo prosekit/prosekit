@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import {
   TooltipContent,
   TooltipRoot,
@@ -21,13 +20,13 @@ export default function Button({
 }) {
   return (
     <TooltipRoot>
-      <TooltipTrigger className={Themes.TOOLTIP_TRIGGER}>
+      <TooltipTrigger className="CSS_TOOLTIP_TRIGGER">
         <button
           data-state={pressed ? 'on' : 'off'}
           disabled={disabled}
           onClick={() => onClick?.()}
           onMouseDown={(event) => event.preventDefault()}
-          className={Themes.TOGGLE_BUTTON}
+          className="CSS_TOGGLE_BUTTON"
         >
           {children}
           {tooltip ? <span className="sr-only">{tooltip}</span> : null}
@@ -35,7 +34,7 @@ export default function Button({
       </TooltipTrigger>
       {tooltip
         ? (
-          <TooltipContent className={Themes.TOOLTIP_CONTENT}>
+          <TooltipContent className="CSS_TOOLTIP_CONTENT">
             {tooltip}
           </TooltipContent>
         )

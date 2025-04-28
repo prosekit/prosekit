@@ -2,7 +2,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { Themes } from '@prosekit/themes'
 import {
   createEditor,
   jsonFromNode,
@@ -35,13 +34,13 @@ function pushSubmition(hotkey: string) {
 
 <template>
   <ProseKit :editor="editor">
-    <div :class="Themes.EDITOR_VIEWPORT">
+    <div class="CSS_EDITOR_VIEWPORT">
       <Toolbar @submit="pushSubmition" />
-      <div :class="Themes.EDITOR_SCROLLING">
-        <div ref="editorRef" :class="Themes.EDITOR_CONTENT" />
+      <div class="CSS_EDITOR_SCROLLING">
+        <div ref="editorRef" class="CSS_EDITOR_CONTENT" />
       </div>
     </div>
-    <fieldset :class="Themes.KEYMAP_FIELDSET">
+    <fieldset class="CSS_KEYMAP_FIELDSET">
       <legend>Submit Records</legend>
       <ol>
         <li v-for="(submition, index) in submitions" :key="index">

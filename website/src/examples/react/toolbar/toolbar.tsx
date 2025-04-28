@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 
 import Button from './button'
@@ -9,14 +8,14 @@ export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <div className={Themes.TOOLBAR}>
+    <div className="CSS_TOOLBAR">
       <Button
         pressed={false}
         disabled={!editor.commands.undo.canExec()}
         onClick={editor.commands.undo}
         tooltip="Undo"
       >
-        <div className={Themes.ICON_UNDO} />
+        <div className="CSS_ICON_UNDO" />
       </Button>
 
       <Button
@@ -25,7 +24,7 @@ export default function Toolbar() {
         onClick={editor.commands.redo}
         tooltip="Redo"
       >
-        <div className={Themes.ICON_REDO} />
+        <div className="CSS_ICON_REDO" />
       </Button>
 
       <Button
@@ -34,7 +33,7 @@ export default function Toolbar() {
         onClick={editor.commands.toggleBold}
         tooltip="Bold"
       >
-        <div className={Themes.ICON_BOLD} />
+        <div className="CSS_ICON_BOLD" />
       </Button>
 
       <Button
@@ -43,7 +42,7 @@ export default function Toolbar() {
         onClick={editor.commands.toggleItalic}
         tooltip="Italic"
       >
-        <div className={Themes.ICON_ITALIC} />
+        <div className="CSS_ICON_ITALIC" />
       </Button>
 
       <Button
@@ -52,7 +51,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 1 })}
         tooltip="Heading 1"
       >
-        <div className={Themes.ICON_H1} />
+        <div className="CSS_ICON_H1" />
       </Button>
 
       <Button
@@ -61,7 +60,7 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 2 })}
         tooltip="Heading 2"
       >
-        <div className={Themes.ICON_H2} />
+        <div className="CSS_ICON_H2" />
       </Button>
 
       <Button
@@ -70,14 +69,14 @@ export default function Toolbar() {
         onClick={() => editor.commands.toggleHeading({ level: 3 })}
         tooltip="Heading 3"
       >
-        <div className={Themes.ICON_H3} />
+        <div className="CSS_ICON_H3" />
       </Button>
 
       <ImageUploadPopover
         disabled={!editor.commands.insertImage.canExec()}
         tooltip="Insert Image"
       >
-        <div className={Themes.ICON_IMAGE} />
+        <div className="CSS_ICON_IMAGE" />
       </ImageUploadPopover>
     </div>
   )

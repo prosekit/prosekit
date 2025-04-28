@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 
 import Button from './button.vue'
@@ -9,13 +8,13 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div :class="Themes.TOOLBAR">
+  <div class="CSS_TOOLBAR">
     <Button
       :pressed="editor.nodes.codeBlock.isActive()"
       :disabled="!editor.commands.setCodeBlock.canExec()"
       @click="() => editor.commands.setCodeBlock()"
     >
-      <div :class="Themes.ICON_CODE_BLOCK" />
+      <div class="CSS_ICON_CODE_BLOCK" />
     </Button>
   </div>
 </template>

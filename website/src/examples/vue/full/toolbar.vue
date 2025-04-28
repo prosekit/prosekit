@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 
 import Button from './button.vue'
@@ -10,14 +9,14 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div :class="Themes.TOOLBAR">
+  <div class="CSS_TOOLBAR">
     <Button
       :pressed="false"
       :disabled="!editor.commands.undo.canExec()"
       tooltip="Undo"
       @click="() => editor.commands.undo()"
     >
-      <div :class="Themes.ICON_UNDO" />
+      <div class="CSS_ICON_UNDO" />
     </Button>
 
     <Button
@@ -26,7 +25,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Redo"
       @click="() => editor.commands.redo()"
     >
-      <div :class="Themes.ICON_REDO" />
+      <div class="CSS_ICON_REDO" />
     </Button>
 
     <Button
@@ -35,7 +34,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Bold"
       @click="() => editor.commands.toggleBold()"
     >
-      <div :class="Themes.ICON_BOLD" />
+      <div class="CSS_ICON_BOLD" />
     </Button>
 
     <Button
@@ -44,7 +43,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Italic"
       @click="() => editor.commands.toggleItalic()"
     >
-      <div :class="Themes.ICON_ITALIC" />
+      <div class="CSS_ICON_ITALIC" />
     </Button>
 
     <Button
@@ -53,7 +52,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Underline"
       @click="() => editor.commands.toggleUnderline()"
     >
-      <div :class="Themes.ICON_UNDERLINE" />
+      <div class="CSS_ICON_UNDERLINE" />
     </Button>
 
     <Button
@@ -62,7 +61,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Strike"
       @click="() => editor.commands.toggleStrike()"
     >
-      <div :class="Themes.ICON_STRIKE" />
+      <div class="CSS_ICON_STRIKE" />
     </Button>
 
     <Button
@@ -71,7 +70,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Code"
       @click="() => editor.commands.toggleCode()"
     >
-      <div :class="Themes.ICON_CODE" />
+      <div class="CSS_ICON_CODE" />
     </Button>
 
     <Button
@@ -80,7 +79,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Code Block"
       @click="() => editor.commands.toggleCodeBlock.canExec({ language: 'javascript' })"
     >
-      <div :class="Themes.ICON_CODE_BLOCK" />
+      <div class="CSS_ICON_CODE_BLOCK" />
     </Button>
 
     <Button
@@ -89,7 +88,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Heading 1"
       @click="() => editor.commands.toggleHeading({ level: 1 })"
     >
-      <div :class="Themes.ICON_H1" />
+      <div class="CSS_ICON_H1" />
     </Button>
 
     <Button
@@ -98,7 +97,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Heading 2"
       @click="() => editor.commands.toggleHeading({ level: 2 })"
     >
-      <div :class="Themes.ICON_H2" />
+      <div class="CSS_ICON_H2" />
     </Button>
 
     <Button
@@ -107,7 +106,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Heading 3"
       @click="() => editor.commands.toggleHeading({ level: 3 })"
     >
-      <div :class="Themes.ICON_H3" />
+      <div class="CSS_ICON_H3" />
     </Button>
 
     <Button
@@ -116,7 +115,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Divider"
       @click="() => editor.commands.insertHorizontalRule()"
     >
-      <div :class="Themes.ICON_MINUS"></div>
+      <div class="CSS_ICON_MINUS"></div>
     </Button>
 
     <Button
@@ -125,7 +124,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Bullet List"
       @click="() => editor.commands.toggleList({ kind: 'bullet' })"
     >
-      <div :class="Themes.ICON_LIST_BULLET" />
+      <div class="CSS_ICON_LIST_BULLET" />
     </Button>
 
     <Button
@@ -134,7 +133,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Ordered List"
       @click="() => editor.commands.toggleList({ kind: 'ordered' })"
     >
-      <div :class="Themes.ICON_LIST_ORDERED" />
+      <div class="CSS_ICON_LIST_ORDERED" />
     </Button>
 
     <Button
@@ -143,7 +142,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Task List"
       @click="() => editor.commands.toggleList({ kind: 'task' })"
     >
-      <div :class="Themes.ICON_LIST_TASK" />
+      <div class="CSS_ICON_LIST_TASK" />
     </Button>
 
     <Button
@@ -152,7 +151,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Toggle List"
       @click="() => editor.commands.toggleList({ kind: 'toggle' })"
     >
-      <div :class="Themes.ICON_LIST_TOGGLE" />
+      <div class="CSS_ICON_LIST_TOGGLE" />
     </Button>
 
     <Button
@@ -161,7 +160,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Increase indentation"
       @click="() => editor.commands.indentList()"
     >
-      <div :class="Themes.ICON_LIST_INDENT" />
+      <div class="CSS_ICON_LIST_INDENT" />
     </Button>
 
     <Button
@@ -170,14 +169,14 @@ const editor = useEditor<EditorExtension>({ update: true })
       tooltip="Decrease indentation"
       @click="() => editor.commands.dedentList()"
     >
-      <div :class="Themes.ICON_LIST_DEDENT" />
+      <div class="CSS_ICON_LIST_DEDENT" />
     </Button>
 
     <ImageUploadPopover
       :disabled="!editor.commands.insertImage.canExec()"
       tooltip="Insert Image"
     >
-      <div :class="Themes.ICON_IMAGE" />
+      <div class="CSS_ICON_IMAGE" />
     </ImageUploadPopover>
   </div>
 </template>

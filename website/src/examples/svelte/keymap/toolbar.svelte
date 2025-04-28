@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import { writable } from 'svelte/store'
 import Button from './button.svelte'
 import { useSubmitKeymap } from './use-submit-keymap'
@@ -10,7 +9,7 @@ const hotkey = writable<'Shift-Enter' | 'Enter'>('Shift-Enter')
 useSubmitKeymap(hotkey, onSubmit)
 </script>
 
-<div class={Themes.TOOLBAR}>
+<div class="CSS_TOOLBAR">
   <Button
     pressed={$hotkey === 'Shift-Enter'}
     onClick={() => ($hotkey = 'Shift-Enter')}

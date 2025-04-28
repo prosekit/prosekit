@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 import {
   AutocompleteEmpty,
@@ -25,17 +24,17 @@ export default function TagMenu() {
   return (
     <AutocompletePopover
       regex={/#[\da-z]*$/i}
-      className={Themes.AUTOCOMPLETE_MENU}
+      className="CSS_AUTOCOMPLETE_MENU"
     >
       <AutocompleteList>
-        <AutocompleteEmpty className={Themes.AUTOCOMPLETE_MENU_ITEM}>
+        <AutocompleteEmpty className="CSS_AUTOCOMPLETE_MENU_ITEM">
           No results
         </AutocompleteEmpty>
 
         {tags.map((tag) => (
           <AutocompleteItem
             key={tag.id}
-            className={Themes.AUTOCOMPLETE_MENU_ITEM}
+            className="CSS_AUTOCOMPLETE_MENU_ITEM"
             onSelect={() => handleTagInsert(tag.id, tag.label)}
           >
             #{tag.label}

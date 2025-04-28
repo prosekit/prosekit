@@ -2,8 +2,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { Themes } from '@prosekit/themes'
-
 import type { Editor } from 'prosekit/core'
 import {
   ProseKit,
@@ -27,7 +25,7 @@ const mount = (element: HTMLElement) => {
 </script>
 
 <ProseKit {editor}>
-  <div class={Themes.EDITOR_SCROLLING}>
-    <div use:mount class={Themes.EDITOR_CONTENT}></div>
+  <div class="CSS_EDITOR_SCROLLING">
+    <div use:mount class="CSS_EDITOR_CONTENT"></div>
   </div>
 </ProseKit>

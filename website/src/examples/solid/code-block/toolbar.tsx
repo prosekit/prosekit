@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/solid'
 
 import Button from './button'
@@ -8,13 +7,13 @@ export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <div class={Themes.TOOLBAR}>
+    <div class="CSS_TOOLBAR">
       <Button
         pressed={editor().nodes.codeBlock.isActive}
         disabled={() => !editor().commands.setCodeBlock.canExec()}
         onClick={editor().commands.setCodeBlock}
       >
-        <div class={Themes.ICON_CODE_BLOCK} />
+        <div class="CSS_ICON_CODE_BLOCK" />
       </Button>
     </div>
   )

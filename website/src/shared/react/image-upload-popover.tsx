@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 import {
   PopoverContent,
@@ -80,12 +79,12 @@ export const ImageUploadPopover: FC<{
         </Button>
       </PopoverTrigger>
 
-      <PopoverContent className={Themes.IMAGE_UPLOAD_CARD}>
+      <PopoverContent className="CSS_IMAGE_UPLOAD_CARD">
         {objectUrl ? null : (
           <>
             <label>Embed Link</label>
             <input
-              className={Themes.IMAGE_UPLOAD_INPUT}
+              className="CSS_IMAGE_UPLOAD_INPUT"
               placeholder="Paste the image link..."
               type="url"
               value={webUrl}
@@ -98,7 +97,7 @@ export const ImageUploadPopover: FC<{
           <>
             <label>Upload</label>
             <input
-              className={Themes.IMAGE_UPLOAD_INPUT}
+              className="CSS_IMAGE_UPLOAD_INPUT"
               accept="image/*"
               type="file"
               onChange={handleFileChange}
@@ -108,7 +107,7 @@ export const ImageUploadPopover: FC<{
 
         {url
           ? (
-            <button className={Themes.IMAGE_UPLOAD_BUTTON} onClick={handleSubmit}>
+            <button className="CSS_IMAGE_UPLOAD_BUTTON" onClick={handleSubmit}>
               Insert Image
             </button>
           )

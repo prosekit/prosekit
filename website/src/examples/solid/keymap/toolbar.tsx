@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { createSignal } from 'solid-js'
 
 import Button from './button'
@@ -15,7 +14,7 @@ export default function Toolbar({
   useSubmitKeymap(hotkey, onSubmit)
 
   return (
-    <div class={Themes.TOOLBAR}>
+    <div class="CSS_TOOLBAR">
       <Button
         pressed={() => hotkey() === 'Shift-Enter'}
         onClick={() => setHotkey('Shift-Enter')}

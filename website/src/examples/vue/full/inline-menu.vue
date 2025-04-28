@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
@@ -46,7 +45,7 @@ function handleLinkUpdate(href?: string) {
 <template>
   <InlinePopover
     data-testid="inline-menu-main"
-    :class="Themes.INLINE_MENU_MAIN"
+    class="CSS_INLINE_MENU_MAIN"
   >
     <Button
       :pressed="editor.marks.bold.isActive()"
@@ -54,7 +53,7 @@ function handleLinkUpdate(href?: string) {
       tooltip="Bold"
       @click="() => editor.commands.toggleBold()"
     >
-      <div :class="Themes.ICON_BOLD" />
+      <div class="CSS_ICON_BOLD" />
     </Button>
 
     <Button
@@ -63,7 +62,7 @@ function handleLinkUpdate(href?: string) {
       tooltip="Italic"
       @click="() => editor.commands.toggleItalic()"
     >
-      <div :class="Themes.ICON_ITALIC" />
+      <div class="CSS_ICON_ITALIC" />
     </Button>
 
     <Button
@@ -72,7 +71,7 @@ function handleLinkUpdate(href?: string) {
       tooltip="Underline"
       @click="() => editor.commands.toggleUnderline()"
     >
-      <div :class="Themes.ICON_UNDERLINE" />
+      <div class="CSS_ICON_UNDERLINE" />
     </Button>
 
     <Button
@@ -81,7 +80,7 @@ function handleLinkUpdate(href?: string) {
       tooltip="Strike"
       @click="() => editor.commands.toggleStrike()"
     >
-      <div :class="Themes.ICON_STRIKE" />
+      <div class="CSS_ICON_STRIKE" />
     </Button>
 
     <Button
@@ -90,7 +89,7 @@ function handleLinkUpdate(href?: string) {
       tooltip="Code"
       @click="() => editor.commands.toggleCode()"
     >
-      <div :class="Themes.ICON_CODE" />
+      <div class="CSS_ICON_CODE" />
     </Button>
 
     <Button
@@ -104,7 +103,7 @@ function handleLinkUpdate(href?: string) {
         }
       "
     >
-      <div :class="Themes.ICON_LINK" />
+      <div class="CSS_ICON_LINK" />
     </Button>
   </InlinePopover>
 
@@ -113,7 +112,7 @@ function handleLinkUpdate(href?: string) {
     :default-open="false"
     :open="linkMenuOpen"
     data-testid="inline-menu-link"
-    :class="Themes.INLINE_MENU_LINK"
+    class="CSS_INLINE_MENU_LINK"
     @open-change="setLinkMenuOpen"
   >
     <form
@@ -129,12 +128,12 @@ function handleLinkUpdate(href?: string) {
       <input
         placeholder="Paste the link..."
         :defaultValue="getCurrentLink(editor.state)"
-        :class="Themes.INLINE_MENU_LINK_INPUT"
+        class="CSS_INLINE_MENU_LINK_INPUT"
       />
     </form>
     <button
       v-if="editor.marks.link.isActive()"
-      :class="Themes.INLINE_MENU_LINK_REMOVE_BUTTON"
+      class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
       @click="handleLinkUpdate()"
       @mousedown.prevent
     >

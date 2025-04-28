@@ -3,7 +3,7 @@ import {
   type UserConfig,
 } from 'unocss'
 
-import { preset } from '@prosekit/unocss-preset'
+import { preset } from '@prosekit/config-unocss'
 
 const config: UserConfig = defineConfig({
   presets: [preset()],

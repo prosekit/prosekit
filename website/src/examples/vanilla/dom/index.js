@@ -1,7 +1,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import {
   createEditor,
@@ -40,7 +39,7 @@ function createList() {
     createItem('Turn into Heading 1', () => handleHeadingConvert(1)),
     createItem('Turn into Heading 2', () => handleHeadingConvert(2)),
   )
-  list.className = Themes.AUTOCOMPLETE_MENU
+  list.className = 'CSS_AUTOCOMPLETE_MENU'
   return list
 }
 
@@ -52,7 +51,7 @@ function createItem(text, callback) {
   const item = new AutocompleteItem()
   item.append(text)
   item.onSelect = callback
-  item.className = Themes.AUTOCOMPLETE_MENU_ITEM
+  item.className = 'CSS_AUTOCOMPLETE_MENU_ITEM'
   return item
 }
 
@@ -78,13 +77,13 @@ function main() {
   root.innerHTML = ''
 
   const viewport = root.appendChild(document.createElement('div'))
-  viewport.className = Themes.EDITOR_VIEWPORT
+  viewport.className = 'CSS_EDITOR_VIEWPORT'
 
   const scrolling = viewport.appendChild(document.createElement('div'))
-  scrolling.className = Themes.EDITOR_SCROLLING
+  scrolling.className = 'CSS_EDITOR_SCROLLING'
 
   const content = scrolling.appendChild(document.createElement('div'))
-  content.className = Themes.EDITOR_CONTENT
+  content.className = 'CSS_EDITOR_CONTENT'
 
   editor.mount(content)
 

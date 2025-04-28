@@ -1,7 +1,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { Themes } from '@prosekit/themes'
 import {
   useCallback,
   useMemo,
@@ -31,13 +30,13 @@ export default function Editor() {
 
   return (
     <ProseKit editor={editor}>
-      <div className={Themes.EDITOR_VIEWPORT}>
+      <div className="CSS_EDITOR_VIEWPORT">
         <Toolbar onSubmit={pushSubmition} />
-        <div className={Themes.EDITOR_SCROLLING}>
-          <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
+        <div className="CSS_EDITOR_SCROLLING">
+          <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
         </div>
       </div>
-      <fieldset className={Themes.KEYMAP_FIELDSET}>
+      <fieldset className="CSS_KEYMAP_FIELDSET">
         <legend>Submit Records</legend>
         <ol>
           {submitions.map((submition, index) => (

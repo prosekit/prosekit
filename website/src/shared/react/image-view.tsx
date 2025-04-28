@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { ReactNodeViewProps } from 'prosekit/react'
@@ -88,34 +87,34 @@ export default function ImageView(props: ReactNodeViewProps) {
       aspectRatio={aspectRatio}
       onResizeEnd={(event) => setAttrs(event.detail)}
       data-selected={props.selected ? '' : undefined}
-      className={Themes.IMAGE_RESIZEALE}
+      className="CSS_IMAGE_RESIZEALE"
     >
       {url && !error && (
         <img
           src={url}
           onLoad={handleImageLoad}
-          className={Themes.IMAGE_RESIZEALE_IMAGE}
+          className="CSS_IMAGE_RESIZEALE_IMAGE"
         />
       )}
       {uploading && !error && (
-        <div className={Themes.IMAGE_UPLOAD_PROGRESS}>
-          <div className={Themes.ICON_LOADER}></div>
+        <div className="CSS_IMAGE_UPLOAD_PROGRESS">
+          <div className="CSS_ICON_LOADER"></div>
           <div>{Math.round(progress * 100)}%</div>
         </div>
       )}
       {error && (
-        <div className={Themes.IMAGE_UPLOAD_ERROR}>
-          <div className={Themes.ICON_IMAGE_ERROR}></div>
-          <div className={Themes.IMAGE_UPLOAD_ERROR_MESSAGE}>
+        <div className="CSS_IMAGE_UPLOAD_ERROR">
+          <div className="CSS_ICON_IMAGE_ERROR"></div>
+          <div className="CSS_IMAGE_UPLOAD_ERROR_MESSAGE">
             Failed to upload image
           </div>
         </div>
       )}
       <ResizableHandle
-        className={Themes.IMAGE_RESIZEALE_HANDLE}
+        className="CSS_IMAGE_RESIZEALE_HANDLE"
         position="bottom-right"
       >
-        <div className={Themes.ICON_CORNER_HANDLE}></div>
+        <div className="CSS_ICON_CORNER_HANDLE"></div>
       </ResizableHandle>
     </ResizableRoot>
   )

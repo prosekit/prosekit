@@ -1,7 +1,7 @@
 import {
   configDeps,
   preset,
-} from '@prosekit/unocss-preset'
+} from '@prosekit/config-unocss'
 import {
   defineConfig,
   transformerDirectives,

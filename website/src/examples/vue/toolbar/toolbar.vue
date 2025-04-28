@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 
 import Button from './button.vue'
@@ -9,13 +8,13 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div :class="Themes.TOOLBAR">
+  <div class="CSS_TOOLBAR">
     <Button
       :pressed="false"
       :disabled="!editor.commands.undo.canExec()"
       @click="() => editor.commands.undo()"
     >
-      <div :class="Themes.ICON_UNDO" />
+      <div class="CSS_ICON_UNDO" />
     </Button>
 
     <Button
@@ -23,7 +22,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.redo.canExec()"
       @click="() => editor.commands.redo()"
     >
-      <div :class="Themes.ICON_REDO" />
+      <div class="CSS_ICON_REDO" />
     </Button>
 
     <Button
@@ -31,7 +30,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleBold.canExec()"
       @click="() => editor.commands.toggleBold()"
     >
-      <div :class="Themes.ICON_BOLD" />
+      <div class="CSS_ICON_BOLD" />
     </Button>
 
     <Button
@@ -39,7 +38,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleItalic.canExec()"
       @click="() => editor.commands.toggleItalic()"
     >
-      <div :class="Themes.ICON_ITALIC" />
+      <div class="CSS_ICON_ITALIC" />
     </Button>
 
     <Button
@@ -47,7 +46,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleHeading.canExec({ level: 1 })"
       @click="() => editor.commands.toggleHeading({ level: 1 })"
     >
-      <div :class="Themes.ICON_H1" />
+      <div class="CSS_ICON_H1" />
     </Button>
 
     <Button
@@ -55,7 +54,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleHeading.canExec({ level: 2 })"
       @click="() => editor.commands.toggleHeading({ level: 2 })"
     >
-      <div :class="Themes.ICON_H2" />
+      <div class="CSS_ICON_H2" />
     </Button>
 
     <Button
@@ -63,7 +62,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       :disabled="!editor.commands.toggleHeading.canExec({ level: 3 })"
       @click="() => editor.commands.toggleHeading({ level: 3 })"
     >
-      <div :class="Themes.ICON_H3" />
+      <div class="CSS_ICON_H3" />
     </Button>
   </div>
 </template>

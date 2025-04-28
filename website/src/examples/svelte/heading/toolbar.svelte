@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/svelte'
 import Button from './button.svelte'
 import type { EditorExtension } from './extension'
@@ -7,7 +6,7 @@ import type { EditorExtension } from './extension'
 const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
-<div class={Themes.TOOLBAR}>
+<div class="CSS_TOOLBAR">
   <Button
     pressed={$editor.nodes.heading.isActive({ level: 1 })}
     disabled={!$editor.commands.toggleHeading.canExec({ level: 1 })}

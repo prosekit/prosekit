@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import {
   AutocompleteList,
@@ -17,7 +16,7 @@ const regex = /\/(|\S.*)$/iu
 </script>
 
 <template>
-  <AutocompletePopover :regex="regex" :class="Themes.AUTOCOMPLETE_MENU">
+  <AutocompletePopover :regex="regex" class="CSS_AUTOCOMPLETE_MENU">
     <AutocompleteList>
       <SlashMenuItem
         label="Text"

@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/react'
 import {
   AutocompleteEmpty,
@@ -32,17 +31,17 @@ export default function UserMenuDynamic() {
       regex={/@\w*$/}
       onQueryChange={setQuery}
       onOpenChange={setOpen}
-      className={Themes.AUTOCOMPLETE_MENU}
+      className="CSS_AUTOCOMPLETE_MENU"
     >
       <AutocompleteList filter={null}>
-        <AutocompleteEmpty className={Themes.AUTOCOMPLETE_MENU_ITEM}>
+        <AutocompleteEmpty className="CSS_AUTOCOMPLETE_MENU_ITEM">
           {loading ? 'Loading...' : 'No results'}
         </AutocompleteEmpty>
 
         {users.map((user) => (
           <AutocompleteItem
             key={user.id}
-            className={Themes.AUTOCOMPLETE_MENU_ITEM}
+            className="CSS_AUTOCOMPLETE_MENU_ITEM"
             onSelect={() => handleUserInsert(user.id, user.name)}
           >
             <span className={loading ? 'opacity-50' : undefined}>

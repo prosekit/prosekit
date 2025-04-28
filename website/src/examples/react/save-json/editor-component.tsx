@@ -1,7 +1,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { Themes } from '@prosekit/themes'
 import type { Editor } from 'prosekit/core'
 import {
   ProseKit,
@@ -19,8 +18,8 @@ export default function EditorComponent({
 
   return (
     <ProseKit editor={editor}>
-      <div className={Themes.EDITOR_SCROLLING}>
-        <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
+      <div className="CSS_EDITOR_SCROLLING">
+        <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
       </div>
     </ProseKit>
   )

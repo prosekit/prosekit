@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/svelte'
 import {
   PopoverContent,
@@ -68,11 +67,11 @@ const handleOpenChange = (openValue: boolean) => {
     </Button>
   </PopoverTrigger>
 
-  <PopoverContent class={Themes.IMAGE_UPLOAD_CARD}>
+  <PopoverContent class="CSS_IMAGE_UPLOAD_CARD">
     {#if !objectUrl}
       <label for="embed-link-input">Embed Link</label>
       <input
-        class={Themes.IMAGE_UPLOAD_INPUT}
+        class="CSS_IMAGE_UPLOAD_INPUT"
         placeholder="Paste the image link..."
         type="url"
         value={webUrl}
@@ -83,14 +82,14 @@ const handleOpenChange = (openValue: boolean) => {
     {#if !webUrl}
       <label for="upload-input">Upload</label>
       <input
-        class={Themes.IMAGE_UPLOAD_INPUT}
+        class="CSS_IMAGE_UPLOAD_INPUT"
         accept="image/*"
         type="file"
         on:input={handleFileChange}
       />
     {/if}
     {#if url}
-      <button class={Themes.IMAGE_UPLOAD_BUTTON} on:click={handleSubmit}>
+      <button class="CSS_IMAGE_UPLOAD_BUTTON" on:click={handleSubmit}>
         Insert Image
       </button>
     {/if}

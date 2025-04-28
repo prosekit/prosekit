@@ -4,7 +4,6 @@ import 'prosekit/basic/typography.css'
 
 import EditorComponent from './editor-component.svelte'
 
-import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import {
   createEditor,
@@ -39,7 +38,7 @@ function handleLoad(record: string) {
 }
 </script>
 
-<div class={Themes.EDITOR_VIEWPORT}>
+<div class="CSS_EDITOR_VIEWPORT">
   <button
     on:click={handleSave}
     disabled={!hasUnsavedChange}

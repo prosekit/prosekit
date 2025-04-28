@@ -2,7 +2,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { Themes } from '@prosekit/themes'
 import type { NodeJSON } from 'prosekit/core'
 import {
   CommitRecorder,
@@ -39,7 +38,7 @@ function handleRestore(id: string) {
         <EditorMain {defaultContent} {commitRecorder} />
       {/key}
     </div>
-    <button on:click={handleCommit} class={Themes.BUTTON_PRIMARY}>
+    <button on:click={handleCommit} class="CSS_BUTTON_PRIMARY">
       Save
     </button>
   </div>

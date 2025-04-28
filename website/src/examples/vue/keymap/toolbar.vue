@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import { ref } from 'vue'
 
 import Button from './button.vue'
@@ -14,7 +13,7 @@ useSubmitKeymap(hotkey, (hotkey) => emit('submit', hotkey))
 </script>
 
 <template>
-  <div :class="Themes.TOOLBAR">
+  <div class="CSS_TOOLBAR">
     <Button
       :pressed="hotkey === 'Shift-Enter'"
       @click="() => (hotkey = 'Shift-Enter')"

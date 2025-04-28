@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import {
   useEditor,
   useKeymap,
@@ -52,7 +51,7 @@ useKeymap({ Escape: onEscape })
 
 <template>
   <InlinePopover
-    :class="Themes.INLINE_MENU_MAIN"
+    class="CSS_INLINE_MENU_MAIN"
     :open="open"
     @open-change="onOpenChange"
   >

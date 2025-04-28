@@ -2,8 +2,6 @@
   "dependencyDashboard": true,
   "ignoreDeps": [
     "@prosekit/dev",
-    "@prosekit/themes",
-    "@prosekit/unocss-preset",
     "prosekit-website"
   ],
   "extends": ["github>ocavue/config-renovate"]

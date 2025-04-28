@@ -2,7 +2,6 @@ import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 import 'prosekit/extensions/loro/style.css'
 
-import { Themes } from '@prosekit/themes'
 import type {
   CursorAwareness,
   LoroDocType,
@@ -25,10 +24,10 @@ export default function EditorComponent(props: {
 
   return (
     <ProseKit editor={editor}>
-      <div className={Themes.EDITOR_VIEWPORT}>
+      <div className="CSS_EDITOR_VIEWPORT">
         <Toolbar />
-        <div className={Themes.EDITOR_SCROLLING}>
-          <div ref={editor.mount} className={Themes.EDITOR_CONTENT}></div>
+        <div className="CSS_EDITOR_SCROLLING">
+          <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
         </div>
       </div>
     </ProseKit>

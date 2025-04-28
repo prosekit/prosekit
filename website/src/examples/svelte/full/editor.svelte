@@ -2,7 +2,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { Themes } from '@prosekit/themes'
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
 import BlockHandle from './block-handle.svelte'
@@ -22,10 +21,10 @@ const mount = (element: HTMLElement) => {
 </script>
 
 <ProseKit {editor}>
-  <div class={Themes.EDITOR_VIEWPORT}>
+  <div class="CSS_EDITOR_VIEWPORT">
     <Toolbar />
-    <div class={Themes.EDITOR_SCROLLING}>
-      <div use:mount class={Themes.EDITOR_CONTENT}></div>
+    <div class="CSS_EDITOR_SCROLLING">
+      <div use:mount class="CSS_EDITOR_CONTENT"></div>
       <InlineMenu />
       <SlashMenu />
       <UserMenu />

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import { UploadTask } from 'prosekit/extensions/file'
 import type { ImageAttrs } from 'prosekit/extensions/image'
 import type { VueNodeViewProps } from 'prosekit/vue'
@@ -94,32 +93,32 @@ function handleImageLoad(event: Event) {
     :height="attrs.height ?? undefined"
     :aspect-ratio="aspectRatio"
     :data-selected="props.selected.value ? '' : undefined"
-    :class="Themes.IMAGE_RESIZEALE"
+    class="CSS_IMAGE_RESIZEALE"
     @resize-end="(event) => setAttrs(event.detail)"
   >
     <img
       v-if="url && !error"
       :src="url"
-      :class="Themes.IMAGE_RESIZEALE_IMAGE"
+      class="CSS_IMAGE_RESIZEALE_IMAGE"
       @load="handleImageLoad"
     />
 
-    <div v-if="uploading && !error" :class="Themes.IMAGE_UPLOAD_PROGRESS">
-      <div :class="Themes.ICON_LOADER"></div>
+    <div v-if="uploading && !error" class="CSS_IMAGE_UPLOAD_PROGRESS">
+      <div class="CSS_ICON_LOADER"></div>
       <div>{{ Math.round(progress * 100) }}%</div>
     </div>
-    <div v-if="error" :class="Themes.IMAGE_UPLOAD_ERROR">
-      <div :class="Themes.ICON_IMAGE_ERROR"></div>
-      <div :class="Themes.IMAGE_UPLOAD_ERROR_MESSAGE">
+    <div v-if="error" class="CSS_IMAGE_UPLOAD_ERROR">
+      <div class="CSS_ICON_IMAGE_ERROR"></div>
+      <div class="CSS_IMAGE_UPLOAD_ERROR_MESSAGE">
         Failed to upload image
       </div>
     </div>
 
     <ResizableHandle
-      :class="Themes.IMAGE_RESIZEALE_HANDLE"
+      class="CSS_IMAGE_RESIZEALE_HANDLE"
       position="bottom-right"
     >
-      <div :class="Themes.ICON_CORNER_HANDLE"></div>
+      <div class="CSS_ICON_CORNER_HANDLE"></div>
     </ResizableHandle>
   </ResizableRoot>
 </template>

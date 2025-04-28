@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { AutocompleteItem } from 'prosekit/preact/autocomplete'
 
 export default function SlashMenuItem(props: {
@@ -7,9 +6,9 @@ export default function SlashMenuItem(props: {
   onSelect: () => void
 }) {
   return (
-    <AutocompleteItem onSelect={props.onSelect} className={Themes.AUTOCOMPLETE_MENU_ITEM}>
+    <AutocompleteItem onSelect={props.onSelect} className="CSS_AUTOCOMPLETE_MENU_ITEM">
       <span>{props.label}</span>
-      {props.kbd && <kbd className={Themes.AUTOCOMPLETE_MENU_KEYBOARD}>{props.kbd}</kbd>}
+      {props.kbd && <kbd className="CSS_AUTOCOMPLETE_MENU_KEYBOARD">{props.kbd}</kbd>}
     </AutocompleteItem>
   )
 }

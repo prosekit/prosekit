@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import {
   BlockHandleAdd,
   BlockHandleDraggable,
@@ -7,12 +6,12 @@ import {
 
 export default function BlockHandle() {
   return (
-    <BlockHandlePopover className={Themes.BLOCK_HANDLE_POPOVER}>
-      <BlockHandleAdd className={Themes.BLOCK_HANDLE_ADD}>
-        <div className={Themes.ICON_PLUS} />
+    <BlockHandlePopover className="CSS_BLOCK_HANDLE_POPOVER">
+      <BlockHandleAdd className="CSS_BLOCK_HANDLE_ADD">
+        <div className="CSS_ICON_PLUS" />
       </BlockHandleAdd>
-      <BlockHandleDraggable className={Themes.BLOCK_HANDLE_DRAG}>
-        <div className={Themes.ICON_DRAG_HANDLE} />
+      <BlockHandleDraggable className="CSS_BLOCK_HANDLE_DRAG">
+        <div className="CSS_ICON_DRAG_HANDLE" />
       </BlockHandleDraggable>
     </BlockHandlePopover>
   )

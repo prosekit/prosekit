@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 import type { ReactNodeViewProps } from 'prosekit/react'
@@ -14,9 +13,9 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
 
   return (
     <>
-      <div className={Themes.LANGUAGE_WRAPPER} contentEditable={false}>
+      <div className="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
         <select
-          className={Themes.LANGUAGE_SELECT}
+          className="CSS_LANGUAGE_SELECT"
           onChange={(event) => setLanguage(event.target.value)}
           value={language || ''}
         >

@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/react'
@@ -42,7 +41,7 @@ export default function InlineMenu() {
     <>
       <InlinePopover
         data-testid="inline-menu-main"
-        className={Themes.INLINE_MENU_MAIN}
+        className="CSS_INLINE_MENU_MAIN"
         onOpenChange={(open) => {
           if (!open) {
             setLinkMenuOpen(false)
@@ -55,7 +54,7 @@ export default function InlineMenu() {
           onClick={() => editor.commands.toggleBold()}
           tooltip="Bold"
         >
-          <div className={Themes.ICON_BOLD}></div>
+          <div className="CSS_ICON_BOLD"></div>
         </Button>
 
         <Button
@@ -64,7 +63,7 @@ export default function InlineMenu() {
           onClick={() => editor.commands.toggleItalic()}
           tooltip="Italic"
         >
-          <div className={Themes.ICON_ITALIC}></div>
+          <div className="CSS_ICON_ITALIC"></div>
         </Button>
 
         <Button
@@ -73,7 +72,7 @@ export default function InlineMenu() {
           onClick={() => editor.commands.toggleUnderline()}
           tooltip="Underline"
         >
-          <div className={Themes.ICON_UNDERLINE}></div>
+          <div className="CSS_ICON_UNDERLINE"></div>
         </Button>
 
         <Button
@@ -82,7 +81,7 @@ export default function InlineMenu() {
           onClick={() => editor.commands.toggleStrike()}
           tooltip="Strikethrough"
         >
-          <div className={Themes.ICON_STRIKE}></div>
+          <div className="CSS_ICON_STRIKE"></div>
         </Button>
 
         <Button
@@ -91,7 +90,7 @@ export default function InlineMenu() {
           onClick={() => editor.commands.toggleCode()}
           tooltip="Code"
         >
-          <div className={Themes.ICON_CODE}></div>
+          <div className="CSS_ICON_CODE"></div>
         </Button>
 
         {editor.commands.addLink.canExec({ href: '' }) && (
@@ -103,7 +102,7 @@ export default function InlineMenu() {
             }}
             tooltip="Link"
           >
-            <div className={Themes.ICON_LINK}></div>
+            <div className="CSS_ICON_LINK"></div>
           </Button>
         )}
       </InlinePopover>
@@ -114,7 +113,7 @@ export default function InlineMenu() {
         open={linkMenuOpen}
         onOpenChange={setLinkMenuOpen}
         data-testid="inline-menu-link"
-        className={Themes.INLINE_MENU_LINK}
+        className="CSS_INLINE_MENU_LINK"
       >
         {linkMenuOpen && (
           <form
@@ -128,7 +127,7 @@ export default function InlineMenu() {
             <input
               placeholder="Paste the link..."
               defaultValue={getCurrentLink(editor.state)}
-              className={Themes.INLINE_MENU_LINK_INPUT}
+              className="CSS_INLINE_MENU_LINK_INPUT"
             >
             </input>
           </form>
@@ -137,7 +136,7 @@ export default function InlineMenu() {
           <button
             onClick={() => handleLinkUpdate()}
             onMouseDown={(event) => event.preventDefault()}
-            className={Themes.INLINE_MENU_LINK_REMOVE_BUTTON}
+            className="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
           >
             Remove link
           </button>

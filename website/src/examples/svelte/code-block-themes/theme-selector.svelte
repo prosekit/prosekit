@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import {
   defineCodeBlockShiki,
   shikiBundledThemesInfo,
@@ -35,7 +34,7 @@ function change_theme(event: Event) {
   id="code-block-theme-selector"
   value={theme}
   on:change={change_theme}
-  class={Themes.TOGGLE_BUTTON}
+  class="CSS_TOGGLE_BUTTON"
 >
   {#each shikiBundledThemesInfo as info}
     <option value={info.id}>

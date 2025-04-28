@@ -2,7 +2,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { Themes } from '@prosekit/themes'
 import type { Editor } from 'prosekit/core'
 import {
   ProseKit,
@@ -38,8 +37,8 @@ watchPostEffect((onCleanup) => {
 
 <template>
   <ProseKit :editor="editor">
-    <div :class="Themes.EDITOR_SCROLLING">
-      <div ref="editorRef" :class="Themes.EDITOR_CONTENT" />
+    <div class="CSS_EDITOR_SCROLLING">
+      <div ref="editorRef" class="CSS_EDITOR_CONTENT" />
     </div>
   </ProseKit>
 </template>

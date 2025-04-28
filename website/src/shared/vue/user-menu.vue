@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 import {
   AutocompleteEmpty,
@@ -24,15 +23,15 @@ function handleUserInsert(id: number, username: string) {
 </script>
 
 <template>
-  <AutocompletePopover :regex="/@\w*$/" :class="Themes.AUTOCOMPLETE_MENU">
+  <AutocompletePopover :regex="/@\w*$/" class="CSS_AUTOCOMPLETE_MENU">
     <AutocompleteList>
-      <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
+      <AutocompleteEmpty class="CSS_AUTOCOMPLETE_MENU_ITEM">
         No results
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="user in users"
         :key="user.id"
-        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
+        class="CSS_AUTOCOMPLETE_MENU_ITEM"
         @select="() => handleUserInsert(user.id, user.name)"
       >
         {{ user.name }}

@@ -1,7 +1,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { Themes } from '@prosekit/themes'
 import {
   html,
   LitElement,
@@ -55,9 +54,9 @@ export class MyEditor extends LitElement {
 
   override render() {
     return html`
-      <div class=${Themes.EDITOR_VIEWPORT}>
-        <div class=${Themes.EDITOR_SCROLLING}>
-          <div class=${Themes.EDITOR_CONTENT} ${ref(this.editorRef)}></div>
+      <div class="CSS_EDITOR_VIEWPORT">
+        <div class="CSS_EDITOR_SCROLLING">
+          <div class="CSS_EDITOR_CONTENT" ${ref(this.editorRef)}></div>
         </div>
       </div>
     `

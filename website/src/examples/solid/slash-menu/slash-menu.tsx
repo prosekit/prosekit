@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/solid'
 import {
   AutocompleteList,
@@ -16,7 +15,7 @@ export default function SlashMenu() {
   const regex = /\/(|\S.*)$/iu
 
   return (
-    <AutocompletePopover regex={regex} class={Themes.AUTOCOMPLETE_MENU}>
+    <AutocompletePopover regex={regex} class="CSS_AUTOCOMPLETE_MENU">
       <AutocompleteList>
         <SlashMenuItem
           label="Text"

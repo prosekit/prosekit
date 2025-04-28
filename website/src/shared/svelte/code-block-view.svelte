@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import type { CodeBlockAttrs } from 'prosekit/extensions/code-block'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 import type { SvelteNodeViewProps } from 'prosekit/svelte'
@@ -19,9 +18,9 @@ const handleLanguageChange = (event: Event) => {
 }
 </script>
 
-<div class={Themes.LANGUAGE_WRAPPER} contentEditable={false}>
+<div class="CSS_LANGUAGE_WRAPPER" contentEditable={false}>
   <select
-    class={Themes.LANGUAGE_SELECT}
+    class="CSS_LANGUAGE_SELECT"
     onchange={handleLanguageChange}
     value={language || ''}
   >

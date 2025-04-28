@@ -30,8 +30,6 @@
     "@iconify-json/tabler": "^1.2.17",
     "@playwright/test": "^1.52.0",
     "@prosekit/config-vitest": "workspace:*",
-    "@prosekit/themes": "workspace:*",
-    "@prosekit/unocss-preset": "workspace:*",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@unocss/reset": "^66.0.0",

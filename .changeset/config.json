@@ -8,9 +8,8 @@
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
   "ignore": [
+    "@prosekit/config-unocss",
     "@prosekit/dev",
-    "@prosekit/themes",
-    "@prosekit/unocss-preset",
     "prosekit-website"
   ]
 }

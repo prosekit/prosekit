@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import type {
   Editor,
   NodeAction,
@@ -17,7 +16,7 @@ const isTextAlignActive = (editor: Editor<EditorExtension>, value: string) => {
 }
 </script>
 
-<div class={Themes.TOOLBAR}>
+<div class="CSS_TOOLBAR">
   <Button
     pressed={isTextAlignActive($editor, 'left')}
     disabled={!$editor.commands.setTextAlign.canExec('left')}

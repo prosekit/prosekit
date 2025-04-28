@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import { shikiBundledLanguagesInfo } from 'prosekit/extensions/code-block'
 
 import { createElement } from './create-element'
@@ -12,7 +11,7 @@ export function createLanguageSelector({
 }) {
   const select = createElement(
     'select',
-    { class: Themes.LANGUAGE_SELECT },
+    { class: 'CSS_LANGUAGE_SELECT' },
     createElement('option', { value: '' }, 'Plain Text'),
     ...shikiBundledLanguagesInfo.map((info) => {
       return createElement('option', { value: info.id }, info.name)
@@ -26,7 +25,7 @@ export function createLanguageSelector({
 
   return createElement(
     'div',
-    { class: Themes.LANGUAGE_WRAPPER, contenteditable: 'false' },
+    { class: 'CSS_LANGUAGE_WRAPPER', contenteditable: 'false' },
     select,
   )
 }

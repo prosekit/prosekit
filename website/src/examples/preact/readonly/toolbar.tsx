@@ -1,5 +1,3 @@
-import { Themes } from '@prosekit/themes'
-
 import Button from './button'
 import { useReadonly } from './use-readonly'
 
@@ -7,7 +5,7 @@ export default function Toolbar() {
   const { readonly, setReadonly } = useReadonly()
 
   return (
-    <div class={Themes.TOOLBAR}>
+    <div class="CSS_TOOLBAR">
       <Button pressed={readonly} onClick={() => setReadonly(true)}>
         Readonly
       </Button>

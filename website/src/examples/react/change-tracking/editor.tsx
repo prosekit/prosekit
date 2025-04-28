@@ -1,7 +1,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { Themes } from '@prosekit/themes'
 import type { NodeJSON } from 'prosekit/core'
 import {
   CommitRecorder,
@@ -53,7 +52,7 @@ export default function Editor() {
             commitRecorder={commitRecorder}
           />
         </div>
-        <button onClick={handleCommit} className={Themes.BUTTON_PRIMARY}>
+        <button onClick={handleCommit} className="CSS_BUTTON_PRIMARY">
           Save
         </button>
       </div>

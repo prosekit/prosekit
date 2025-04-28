@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import { useEditor } from 'prosekit/vue'
 
 import Button from './button.vue'
@@ -9,7 +8,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div :class="Themes.TOOLBAR">
+  <div class="CSS_TOOLBAR">
     <Button
       :pressed="editor.nodes.heading.isActive({ level: 1 })"
       :disabled="!editor.commands.toggleHeading.canExec({ level: 1 })"

@@ -1,4 +1,3 @@
-import { Themes } from '@prosekit/themes'
 import type { NodeAction } from 'prosekit/core'
 import { useEditor } from 'prosekit/solid'
 
@@ -15,7 +14,7 @@ export default function Toolbar() {
   }
 
   return (
-    <div class={Themes.TOOLBAR}>
+    <div class="CSS_TOOLBAR">
       <Button
         pressed={() => isTextAlignActive('left')}
         disabled={() => !editor().commands.setTextAlign.canExec('left')}

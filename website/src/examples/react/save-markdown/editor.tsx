@@ -1,7 +1,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import {
   createEditor,
@@ -55,7 +54,7 @@ export default function Editor() {
   )
 
   return (
-    <div className={Themes.EDITOR_VIEWPORT}>
+    <div className="CSS_EDITOR_VIEWPORT">
       <button
         onClick={handleSave}
         disabled={!hasUnsavedChange}

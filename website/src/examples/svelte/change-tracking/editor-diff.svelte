@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Themes } from '@prosekit/themes'
 import { defineBasicExtension } from 'prosekit/basic'
 import {
   createEditor,
@@ -33,9 +32,9 @@ const mount = (element: HTMLElement) => {
 </script>
 
 <ProseKit {editor}>
-  <div class={Themes.EDITOR_VIEWPORT}>
-    <div class={Themes.EDITOR_SCROLLING}>
-      <div use:mount class={Themes.EDITOR_CONTENT}></div>
+  <div class="CSS_EDITOR_VIEWPORT">
+    <div class="CSS_EDITOR_SCROLLING">
+      <div use:mount class="CSS_EDITOR_CONTENT"></div>
     </div>
   </div>
 </ProseKit>

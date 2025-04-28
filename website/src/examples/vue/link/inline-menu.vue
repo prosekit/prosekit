@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Themes } from '@prosekit/themes'
 import type { EditorState } from 'prosekit/pm/state'
 import { useEditor } from 'prosekit/vue'
 import { InlinePopover } from 'prosekit/vue/inline-popover'
@@ -46,7 +45,7 @@ function handleLinkUpdate(href?: string) {
 <template>
   <InlinePopover
     data-testid="inline-menu-main"
-    :class="Themes.INLINE_MENU_MAIN"
+    class="CSS_INLINE_MENU_MAIN"
   >
     <Button
       v-if="editor.commands.addLink.canExec({ href: '' })"
@@ -59,7 +58,7 @@ function handleLinkUpdate(href?: string) {
         }
       "
     >
-      <div :class="Themes.ICON_LINK" />
+      <div class="CSS_ICON_LINK" />
     </Button>
   </InlinePopover>
 
@@ -68,7 +67,7 @@ function handleLinkUpdate(href?: string) {
     :default-open="false"
     :open="linkMenuOpen"
     data-testid="inline-menu-link"
-    :class="Themes.INLINE_MENU_LINK"
+    class="CSS_INLINE_MENU_LINK"
     @open-change="setLinkMenuOpen"
   >
     <form
@@ -84,12 +83,12 @@ function handleLinkUpdate(href?: string) {
       <input
         placeholder="Paste the link..."
         :defaultValue="getCurrentLink(editor.state)"
-        :class="Themes.INLINE_MENU_LINK_INPUT"
+        class="CSS_INLINE_MENU_LINK_INPUT"
       />
     </form>
     <button
       v-if="editor.marks.link.isActive()"
-      :class="Themes.INLINE_MENU_LINK_REMOVE_BUTTON"
+      class="CSS_INLINE_MENU_LINK_REMOVE_BUTTON"
       @click="handleLinkUpdate()"
       @mousedown.prevent
     >

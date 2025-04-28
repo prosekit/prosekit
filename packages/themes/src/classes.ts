@@ -44,28 +44,28 @@ const CSS_POPOVER_ANIMATE = cn(
   'data-[side=top]:slide-out-to-bottom-2',
 )
 
-const FLOATING_MENU_ITEM = cn(
+const CSS_FLOATING_MENU_ITEM = cn(
   'box-border cursor-default select-none whitespace-nowrap outline-none data-[focused]:bg-secondary',
 )
 
-const BUTTON_BASE = cn(
+const CSS_BUTTON_BASE = cn(
   'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
 )
 
-const BUTTON_VARIANT_PRIMARY = cn(
+const CSS_BUTTON_VARIANT_PRIMARY = cn(
   'bg-primary text-primary-foreground hover:bg-primary/90',
 )
 
-const BUTTON_VARIANT_SECONDARY = cn(
+const CSS_BUTTON_VARIANT_SECONDARY = cn(
   'bg-secondary text-secondary-foreground hover:bg-secondary/80',
 )
 
-const BUTTON_SIZE_DEFAULT = 'h-10 px-4 py-2'
-const BUTTON_SIZE_SM = 'h-9 px-3'
-// const BUTTON_SIZE_LG = 'h-1 px-8'
-const BUTTON_SIZE_ICON = 'h-10 w-10'
+const CSS_BUTTON_SIZE_DEFAULT = 'h-10 px-4 py-2'
+const CSS_BUTTON_SIZE_SM = 'h-9 px-3'
+// const CSS_BUTTON_SIZE_LG = 'h-1 px-8'
+const CSS_BUTTON_SIZE_ICON = 'h-10 w-10'
 
-const INPUT = cn(
+const CSS_INPUT = cn(
   'flex h-9 rounded-md w-full bg-background px-3 py-2 text-sm placeholder:text-muted-foreground transition',
   // border
   'border box-border border-border border-solid',
@@ -108,12 +108,12 @@ export const INLINE_MENU_LINK = cn(
   'relative flex flex-col w-xs rounded-lg p-4 gap-y-2 items-stretch',
 )
 
-export const INLINE_MENU_LINK_INPUT = cn(INPUT)
+export const INLINE_MENU_LINK_INPUT = cn(CSS_INPUT)
 
 export const INLINE_MENU_LINK_REMOVE_BUTTON = cn(
-  BUTTON_BASE,
-  BUTTON_VARIANT_PRIMARY,
-  BUTTON_SIZE_SM,
+  CSS_BUTTON_BASE,
+  CSS_BUTTON_VARIANT_PRIMARY,
+  CSS_BUTTON_SIZE_SM,
 )
 
 export const AUTOCOMPLETE_MENU = cn(
@@ -123,7 +123,7 @@ export const AUTOCOMPLETE_MENU = cn(
 
 export const AUTOCOMPLETE_MENU_ITEM = cn(
   'relative flex items-center justify-between min-w-[8rem] scroll-my-1 rounded px-3 py-1.5',
-  FLOATING_MENU_ITEM,
+  CSS_FLOATING_MENU_ITEM,
 )
 
 export const AUTOCOMPLETE_MENU_KEYBOARD = cn(
@@ -159,12 +159,12 @@ export const IMAGE_UPLOAD_CARD = cn(
   CSS_POPOVER_ANIMATE,
 )
 
-export const IMAGE_UPLOAD_INPUT = cn(INPUT)
+export const IMAGE_UPLOAD_INPUT = cn(CSS_INPUT)
 
 export const IMAGE_UPLOAD_BUTTON = cn(
-  BUTTON_BASE,
-  BUTTON_VARIANT_PRIMARY,
-  BUTTON_SIZE_DEFAULT,
+  CSS_BUTTON_BASE,
+  CSS_BUTTON_VARIANT_PRIMARY,
+  CSS_BUTTON_SIZE_DEFAULT,
   'w-full',
 )
 
@@ -234,7 +234,7 @@ export const TABLE_HANDLE_MENU = cn(
 export const TABLE_CELL_MENU_ITEM = cn(
   'relative min-w-[8rem] scroll-my-1 rounded px-3 py-1.5 flex items-center justify-between gap-8 cursor-default',
   'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 hover:data-[disabled=true]:opacity-50',
-  FLOATING_MENU_ITEM,
+  CSS_FLOATING_MENU_ITEM,
 )
 
 export const TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
@@ -253,24 +253,24 @@ export const CSS_SEARCH = cn(
 )
 
 export const CSS_SEARCH_ICON_BUTTON = cn(
-  BUTTON_BASE,
-  BUTTON_VARIANT_SECONDARY,
-  BUTTON_SIZE_ICON,
+  CSS_BUTTON_BASE,
+  CSS_BUTTON_VARIANT_SECONDARY,
+  CSS_BUTTON_SIZE_ICON,
 )
 
 export const CSS_SEARCH_TEXT_BUTTON = cn(
-  BUTTON_BASE,
-  BUTTON_VARIANT_SECONDARY,
-  BUTTON_SIZE_DEFAULT,
+  CSS_BUTTON_BASE,
+  CSS_BUTTON_VARIANT_SECONDARY,
+  CSS_BUTTON_SIZE_DEFAULT,
 )
 
 export const CSS_BUTTON_PRIMARY = cn(
-  BUTTON_BASE,
-  BUTTON_VARIANT_PRIMARY,
-  BUTTON_SIZE_DEFAULT,
+  CSS_BUTTON_BASE,
+  CSS_BUTTON_VARIANT_PRIMARY,
+  CSS_BUTTON_SIZE_DEFAULT,
 )
 
-export const CSS_SEARCH_INPUT = cn(INPUT, 'col-start-2')
+export const CSS_SEARCH_INPUT = cn(CSS_INPUT, 'col-start-2')
 export const CSS_SEARCH_CONTROLLER = cn('flex items-center justify-between gap-1')
 
 export const CSS_KEYMAP_FIELDSET = cn(

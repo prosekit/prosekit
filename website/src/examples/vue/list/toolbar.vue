@@ -9,7 +9,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div :class="Themes.TOOLBAR">
+  <div :class="Themes.CSS_TOOLBAR">
     <Button
       :pressed="editor.nodes.list.isActive({ kind: 'bullet' })"
       :disabled="!editor.commands.toggleList.canExec({ kind: 'bullet' })"

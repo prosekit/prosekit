@@ -15,7 +15,7 @@ export default function Toolbar() {
   }
 
   return (
-    <div class={Themes.TOOLBAR}>
+    <div class={Themes.CSS_TOOLBAR}>
       <Button
         pressed={() => isTextAlignActive('left')}
         disabled={() => !editor().commands.setTextAlign.canExec('left')}

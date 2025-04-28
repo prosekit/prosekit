@@ -13,7 +13,7 @@ export default function Toolbar({
   useSubmitKeymap(hotkey, onSubmit)
 
   return (
-    <div className={Themes.TOOLBAR}>
+    <div className={Themes.CSS_TOOLBAR}>
       <Button
         pressed={hotkey === 'Shift-Enter'}
         onClick={() => setHotkey('Shift-Enter')}

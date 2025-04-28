@@ -8,7 +8,7 @@ import ImageUploadPopover from './image-upload-popover.svelte'
 const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
-<div class={Themes.TOOLBAR}>
+<div class={Themes.CSS_TOOLBAR}>
   <Button
     pressed={false}
     disabled={!$editor.commands.undo.canExec()}

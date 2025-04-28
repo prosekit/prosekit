@@ -7,7 +7,7 @@ import type { EditorExtension } from './extension'
 const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
-<div class={Themes.TOOLBAR}>
+<div class={Themes.CSS_TOOLBAR}>
   <Button
     pressed={$editor.marks.bold.isActive()}
     onClick={() => $editor.commands.toggleBold()}

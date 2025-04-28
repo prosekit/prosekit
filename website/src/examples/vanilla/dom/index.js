@@ -78,13 +78,13 @@ function main() {
   root.innerHTML = ''
 
   const viewport = root.appendChild(document.createElement('div'))
-  viewport.className = Themes.EDITOR_VIEWPORT
+  viewport.className = Themes.CSS_EDITOR_VIEWPORT
 
   const scrolling = viewport.appendChild(document.createElement('div'))
-  scrolling.className = Themes.EDITOR_SCROLLING
+  scrolling.className = Themes.CSS_EDITOR_SCROLLING
 
   const content = scrolling.appendChild(document.createElement('div'))
-  content.className = Themes.EDITOR_CONTENT
+  content.className = Themes.CSS_EDITOR_CONTENT
 
   editor.mount(content)
 

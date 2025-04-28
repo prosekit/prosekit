@@ -9,7 +9,7 @@ const editor = useEditor<EditorExtension>({ update: true })
 </script>
 
 <template>
-  <div :class="Themes.TOOLBAR">
+  <div :class="Themes.CSS_TOOLBAR">
     <Button
       :pressed="editor.marks.underline.isActive()"
       @click="() => editor.commands.toggleUnderline()"

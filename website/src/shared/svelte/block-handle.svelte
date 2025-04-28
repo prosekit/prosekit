@@ -7,11 +7,11 @@ import {
 } from 'prosekit/svelte/block-handle'
 </script>
 
-<BlockHandlePopover class={Themes.BLOCK_HANDLE_POPOVER}>
-  <BlockHandleAdd class={Themes.BLOCK_HANDLE_ADD}>
+<BlockHandlePopover class={Themes.CSS_BLOCK_HANDLE_POPOVER}>
+  <BlockHandleAdd class={Themes.CSS_BLOCK_HANDLE_ADD}>
     <div class={Themes.CSS_ICON_PLUS}></div>
   </BlockHandleAdd>
-  <BlockHandleDraggable class={Themes.BLOCK_HANDLE_DRAG}>
+  <BlockHandleDraggable class={Themes.CSS_BLOCK_HANDLE_DRAG}>
     <div class={Themes.CSS_ICON_DRAG_HANDLE}></div>
   </BlockHandleDraggable>
 </BlockHandlePopover>

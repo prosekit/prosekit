@@ -17,7 +17,7 @@ const isTextAlignActive = (editor: Editor<EditorExtension>, value: string) => {
 }
 </script>
 
-<div class={Themes.TOOLBAR}>
+<div class={Themes.CSS_TOOLBAR}>
   <Button
     pressed={isTextAlignActive($editor, 'left')}
     disabled={!$editor.commands.setTextAlign.canExec('left')}

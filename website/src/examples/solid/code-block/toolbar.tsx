@@ -8,7 +8,7 @@ export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <div class={Themes.TOOLBAR}>
+    <div class={Themes.CSS_TOOLBAR}>
       <Button
         pressed={editor().nodes.codeBlock.isActive}
         disabled={() => !editor().commands.setCodeBlock.canExec()}

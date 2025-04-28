@@ -55,9 +55,9 @@ export class MyEditor extends LitElement {
 
   override render() {
     return html`
-      <div class=${Themes.EDITOR_VIEWPORT}>
-        <div class=${Themes.EDITOR_SCROLLING}>
-          <div class=${Themes.EDITOR_CONTENT} ${ref(this.editorRef)}></div>
+      <div class=${Themes.CSS_EDITOR_VIEWPORT}>
+        <div class=${Themes.CSS_EDITOR_SCROLLING}>
+          <div class=${Themes.CSS_EDITOR_CONTENT} ${ref(this.editorRef)}></div>
         </div>
       </div>
     `

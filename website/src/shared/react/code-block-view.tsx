@@ -14,7 +14,7 @@ export default function CodeBlockView(props: ReactNodeViewProps) {
 
   return (
     <>
-      <div className={Themes.LANGUAGE_WRAPPER} contentEditable={false}>
+      <div className={Themes.CSS_LANGUAGE_WRAPPER} contentEditable={false}>
         <select
           className={Themes.CSS_LANGUAGE_SELECT}
           onChange={(event) => setLanguage(event.target.value)}

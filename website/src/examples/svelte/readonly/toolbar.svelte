@@ -7,7 +7,7 @@ import { useReadonly } from './use-readonly'
 const { readonly } = useReadonly()
 </script>
 
-<div class={Themes.TOOLBAR}>
+<div class={Themes.CSS_TOOLBAR}>
   <Button pressed={$readonly} onClick={() => ($readonly = true)}>
     Readonly
   </Button>

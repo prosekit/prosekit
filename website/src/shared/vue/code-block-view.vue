@@ -20,7 +20,7 @@ const language = computed({
 </script>
 
 <template>
-  <div :class="Themes.LANGUAGE_WRAPPER" contenteditable="false">
+  <div :class="Themes.CSS_LANGUAGE_WRAPPER" contenteditable="false">
     <select v-model="language" :class="Themes.CSS_LANGUAGE_SELECT">
       <option value="">Plain Text</option>
       <option

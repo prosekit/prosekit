@@ -20,7 +20,7 @@ useExtension(extension)
   <select
     id="code-block-theme-selector"
     v-model="theme"
-    :class="Themes.TOGGLE_BUTTON"
+    :class="Themes.CSS_TOGGLE_BUTTON"
   >
     <option
       v-for="info of shikiBundledThemesInfo"

@@ -15,7 +15,7 @@ export default function CodeBlockView(props: SolidNodeViewProps) {
 
   return (
     <>
-      <div class={Themes.LANGUAGE_WRAPPER} contentEditable={false}>
+      <div class={Themes.CSS_LANGUAGE_WRAPPER} contentEditable={false}>
         <select
           class={Themes.CSS_LANGUAGE_SELECT}
           onChange={(event) => setLanguage(event.target.value)}

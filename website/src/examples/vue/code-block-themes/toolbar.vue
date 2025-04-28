@@ -5,7 +5,7 @@ import ThemeSelector from './theme-selector.vue'
 </script>
 
 <template>
-  <div :class="Themes.TOOLBAR">
+  <div :class="Themes.CSS_TOOLBAR">
     <ThemeSelector />
   </div>
 </template>

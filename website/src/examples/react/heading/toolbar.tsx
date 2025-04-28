@@ -8,7 +8,7 @@ export default function Toolbar() {
   const editor = useEditor<EditorExtension>({ update: true })
 
   return (
-    <div className={Themes.TOOLBAR}>
+    <div className={Themes.CSS_TOOLBAR}>
       <Button
         pressed={editor.nodes.heading.isActive({ level: 1 })}
         disabled={!editor.commands.toggleHeading.canExec({ level: 1 })}

@@ -14,8 +14,8 @@ describe('replaceThemesWith', () => {
       import { Themes } from '@prosekit/themes'
 
       const App = () => (
-        <div class={Themes.EDITOR_CONTENT}>
-          <div class={Themes.INLINE_MENU_LINK_REMOVE_BUTTON}></div>
+        <div class={Themes.CSS_EDITOR_CONTENT}>
+          <div class={Themes.CSS_INLINE_MENU_LINK_REMOVE_BUTTON}></div>
         </div>
       );
       `

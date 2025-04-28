@@ -19,7 +19,7 @@ const handleLanguageChange = (event: Event) => {
 }
 </script>
 
-<div class={Themes.LANGUAGE_WRAPPER} contentEditable={false}>
+<div class={Themes.CSS_LANGUAGE_WRAPPER} contentEditable={false}>
   <select
     class={Themes.CSS_LANGUAGE_SELECT}
     onchange={handleLanguageChange}

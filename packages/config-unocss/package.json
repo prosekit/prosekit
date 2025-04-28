@@ -8,7 +8,8 @@
   "main": "./src/index.ts",
   "module": "./src/index.ts",
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./lib/classes.gen.json": "./lib/classes.gen.json"
   },
   "scripts": {
     "build": "tsx build.ts"

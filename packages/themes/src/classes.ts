@@ -140,45 +140,45 @@ export const CSS_LANGUAGE_SELECT = cn(
   'opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 [div[data-node-view-root]:hover_&]:hover:opacity-80',
 )
 
-const TOP_BAR = cn(
+const CSS_TOP_BAR = cn(
   'z-2 box-border',
   'border-border border-solid border-l-0 border-r-0 border-t-0 border-b',
 )
 
-export const TOOLBAR = cn(TOP_BAR, 'flex flex-wrap gap-1 p-2 items-center')
+export const CSS_TOOLBAR = cn(CSS_TOP_BAR, 'flex flex-wrap gap-1 p-2 items-center')
 
-export const TOGGLE_BUTTON = cn(
+export const CSS_TOGGLE_BUTTON = cn(
   'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-ring disabled:pointer-events-none min-w-9 min-h-9',
   'disabled:opacity-50 hover:disabled:opacity-50',
   'bg-transparent hover:bg-secondary data-[state=on]:bg-accent',
 )
 
-export const IMAGE_UPLOAD_CARD = cn(
+export const CSS_IMAGE_UPLOAD_CARD = cn(
   'flex flex-col gap-y-4 p-6 text-sm w-sm',
   CSS_FLOATING_MENU,
   CSS_POPOVER_ANIMATE,
 )
 
-export const IMAGE_UPLOAD_INPUT = cn(CSS_INPUT)
+export const CSS_IMAGE_UPLOAD_INPUT = cn(CSS_INPUT)
 
-export const IMAGE_UPLOAD_BUTTON = cn(
+export const CSS_IMAGE_UPLOAD_BUTTON = cn(
   CSS_BUTTON_BASE,
   CSS_BUTTON_VARIANT_PRIMARY,
   CSS_BUTTON_SIZE_DEFAULT,
   'w-full',
 )
 
-export const IMAGE_RESIZEALE = cn(
+export const CSS_IMAGE_RESIZEALE = cn(
   'relative flex items-center justify-center box-border overflow-hidden my-2 group',
   'max-h-[600px] max-w-full min-h-[64px] min-w-[64px]',
   'outline-2 outline-transparent data-[selected]:outline-blue-500 outline-solid',
 )
 
-export const IMAGE_RESIZEALE_IMAGE = cn(
+export const CSS_IMAGE_RESIZEALE_IMAGE = cn(
   'h-full w-full max-w-full max-h-full object-contain',
 )
 
-export const IMAGE_RESIZEALE_HANDLE = cn(
+export const CSS_IMAGE_RESIZEALE_HANDLE = cn(
   'absolute bottom-0 right-0 rounded m-1.5 p-1 transition',
   'bg-gray-900/30 active:bg-gray-800/60 hover:bg-gray-800/60 text-white/50 active:text-white/80',
   'active:translate-x-0.5 active:translate-y-0.5',
@@ -186,69 +186,69 @@ export const IMAGE_RESIZEALE_HANDLE = cn(
   'opacity-0 hover:opacity-100 group-hover:opacity-100 group-[[data-resizing]]:opacity-100',
 )
 
-export const IMAGE_UPLOAD_PROGRESS = cn(
+export const CSS_IMAGE_UPLOAD_PROGRESS = cn(
   'absolute bottom-0 left-0 m-1 flex content-center items-center gap-2 rounded bg-gray-800/60 p-1.5 text-xs text-white/80 transition',
 )
 
-export const IMAGE_UPLOAD_ERROR = cn(
+export const CSS_IMAGE_UPLOAD_ERROR = cn(
   'absolute bottom-0 left-0 right-0 top-0 flex flex-col items-center justify-center gap-4 bg-gray-200 p-2 text-sm dark:bg-gray-800 @container',
 )
 
-export const IMAGE_UPLOAD_ERROR_MESSAGE = cn('hidden opacity-80 @xs:block')
+export const CSS_IMAGE_UPLOAD_ERROR_MESSAGE = cn('hidden opacity-80 @xs:block')
 
-export const DROP_CURSOR = cn('transition-all bg-blue-500')
+export const CSS_DROP_CURSOR = cn('transition-all bg-blue-500')
 
-export const BLOCK_HANDLE_POPOVER = cn(
+export const CSS_BLOCK_HANDLE_POPOVER = cn(
   'flex items-center flex-row box-border justify-center transition border-0',
   CSS_PRESENCE_ANIMATE,
 )
 
-export const BLOCK_HANDLE_ADD = cn(
+export const CSS_BLOCK_HANDLE_ADD = cn(
   'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-secondary rounded text-muted-foreground/50 cursor-pointer',
 )
 
-export const BLOCK_HANDLE_DRAG = cn(
+export const CSS_BLOCK_HANDLE_DRAG = cn(
   'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 cursor-grab',
 )
 
-export const TABLE_COLUMN_HANDLE = cn(
+export const CSS_TABLE_COLUMN_HANDLE = cn(
   'flex items-center box-border justify-center h-[1.2em] w-[1.5em] bg-white hover:bg-secondary rounded text-muted-foreground/50 translate-y-3 border border-border border-solid',
   CSS_PRESENCE_ANIMATE,
 )
 
-export const TABLE_ROW_HANDLE = cn(
+export const CSS_TABLE_ROW_HANDLE = cn(
   'flex items-center box-border justify-center h-[1.5em] w-[1.2em] bg-white hover:bg-secondary rounded text-muted-foreground/50 translate-x-3 border border-border border-solid',
   CSS_PRESENCE_ANIMATE,
 )
 
-export const TABLE_ROOT_HANDLE = cn(
+export const CSS_TABLE_ROOT_HANDLE = cn(
   'flex items-center box-border justify-center h-[1.2em] w-[1.2em] bg-white hover:bg-secondary rounded text-muted-foreground/50 border translate-x-4 -translate-y-4 border-border border-solid',
   CSS_PRESENCE_ANIMATE,
 )
 
-export const TABLE_HANDLE_MENU = cn(
+export const CSS_TABLE_HANDLE_MENU = cn(
   'relative block max-h-[25rem] min-w-[8rem] select-none overflow-auto whitespace-nowrap p-1',
   CSS_FLOATING_MENU,
 )
 
-export const TABLE_CELL_MENU_ITEM = cn(
+export const CSS_TABLE_CELL_MENU_ITEM = cn(
   'relative min-w-[8rem] scroll-my-1 rounded px-3 py-1.5 flex items-center justify-between gap-8 cursor-default',
   'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 hover:data-[disabled=true]:opacity-50',
   CSS_FLOATING_MENU_ITEM,
 )
 
-export const TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
+export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
   'text-xs tracking-widest text-muted-foreground',
 )
 
-export const TOOLTIP_TRIGGER = cn('block')
-export const TOOLTIP_CONTENT = cn(
+export const CSS_TOOLTIP_TRIGGER = cn('block')
+export const CSS_TOOLTIP_CONTENT = cn(
   'z-50 overflow-hidden rounded-md border border-solid bg-primary px-3 py-1.5 text-xs text-primary-foreground shadow-sm',
   CSS_POPOVER_ANIMATE,
 )
 
 export const CSS_SEARCH = cn(
-  TOP_BAR,
+  CSS_TOP_BAR,
   'grid grid-cols-[min-content_1fr_min-content] gap-2 p-2',
 )
 

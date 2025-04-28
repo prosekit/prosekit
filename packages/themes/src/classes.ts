@@ -277,6 +277,8 @@ export const CSS_KEYMAP_FIELDSET = cn(
   'mt-4 box-border flex max-w-full w-full overflow-x-auto border p-4 rounded-md shadow min-w-0',
 )
 
+export const CSS_TOGGLE_ROTATE = 'transition-transform data-[rotate]:rotate-90'
+
 export const CSS_ICON_ITALIC = cn('i-lucide-italic h-5 w-5')
 export const CSS_ICON_BOLD = cn('i-lucide-bold h-5 w-5')
 export const CSS_ICON_UNDERLINE = cn('i-lucide-underline h-5 w-5')

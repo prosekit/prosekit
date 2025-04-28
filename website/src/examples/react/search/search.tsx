@@ -1,5 +1,3 @@
-import { Themes } from '@prosekit/themes'
-import { clsx } from 'prosekit/core'
 import { defineSearchQuery } from 'prosekit/extensions/search'
 import {
   useEditor,
@@ -77,12 +75,8 @@ export default function Search({ onClose }: { onClose?: VoidFunction }) {
     <div className="CSS_SEARCH">
       <Button tooltip="Toggle Replace" onClick={toggleReplace}>
         <span
-          className={clsx(
-            Themes.CSS_ICON_CHEVRON_RIGHT,
-            showReplace
-              ? 'rotate-90 transition-transform'
-              : 'transition-transform',
-          )}
+          data-rotate={showReplace ? '' : undefined}
+          className="CSS_ICON_CHEVRON_RIGHT CSS_TOGGLE_ROTATE"
         />
       </Button>
       <input

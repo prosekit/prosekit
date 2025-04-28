@@ -7,7 +7,7 @@ export let label: string
 export let kbd: string | undefined = undefined
 </script>
 
-<AutocompleteItem {onSelect} class={Themes.AUTOCOMPLETE_MENU_ITEM}>
+<AutocompleteItem {onSelect} class={Themes.CSS_AUTOCOMPLETE_MENU_ITEM}>
   <span>{label}</span>
   {#if kbd}
     <kbd class={Themes.CSS_AUTOCOMPLETE_MENU_KEYBOARD}>{kbd}</kbd>

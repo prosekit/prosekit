@@ -38,13 +38,13 @@ const { users, loading } = useUserQuery(query, open)
     @open-change="handleOpenChange"
   >
     <AutocompleteList :filter="null">
-      <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
+      <AutocompleteEmpty :class="Themes.CSS_AUTOCOMPLETE_MENU_ITEM">
         {{ loading ? 'Loading...' : 'No results' }}
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="user in users"
         :key="user.id"
-        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
+        :class="Themes.CSS_AUTOCOMPLETE_MENU_ITEM"
         @select="() => handleUserInsert(user.id, user.name)"
       >
         <span :class="loading && 'opacity-50'">

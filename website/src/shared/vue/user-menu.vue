@@ -26,13 +26,13 @@ function handleUserInsert(id: number, username: string) {
 <template>
   <AutocompletePopover :regex="/@\w*$/" :class="Themes.CSS_AUTOCOMPLETE_MENU">
     <AutocompleteList>
-      <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
+      <AutocompleteEmpty :class="Themes.CSS_AUTOCOMPLETE_MENU_ITEM">
         No results
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="user in users"
         :key="user.id"
-        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
+        :class="Themes.CSS_AUTOCOMPLETE_MENU_ITEM"
         @select="() => handleUserInsert(user.id, user.name)"
       >
         {{ user.name }}

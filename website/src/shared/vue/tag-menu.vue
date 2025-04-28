@@ -26,13 +26,13 @@ function handleTagInsert(id: number, label: string) {
 <template>
   <AutocompletePopover :regex="/#[\da-z]*$/i" :class="Themes.CSS_AUTOCOMPLETE_MENU">
     <AutocompleteList>
-      <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
+      <AutocompleteEmpty :class="Themes.CSS_AUTOCOMPLETE_MENU_ITEM">
         No results
       </AutocompleteEmpty>
       <AutocompleteItem
         v-for="tag in tags"
         :key="tag.id"
-        :class="Themes.AUTOCOMPLETE_MENU_ITEM"
+        :class="Themes.CSS_AUTOCOMPLETE_MENU_ITEM"
         @select="() => handleTagInsert(tag.id, tag.label)"
       >
         {{ tag.label }}

@@ -28,14 +28,14 @@ export default function TagMenu() {
       className={Themes.CSS_AUTOCOMPLETE_MENU}
     >
       <AutocompleteList>
-        <AutocompleteEmpty className={Themes.AUTOCOMPLETE_MENU_ITEM}>
+        <AutocompleteEmpty className={Themes.CSS_AUTOCOMPLETE_MENU_ITEM}>
           No results
         </AutocompleteEmpty>
 
         {tags.map((tag) => (
           <AutocompleteItem
             key={tag.id}
-            className={Themes.AUTOCOMPLETE_MENU_ITEM}
+            className={Themes.CSS_AUTOCOMPLETE_MENU_ITEM}
             onSelect={() => handleTagInsert(tag.id, tag.label)}
           >
             #{tag.label}

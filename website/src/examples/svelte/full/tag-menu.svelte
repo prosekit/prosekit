@@ -25,10 +25,10 @@ const handleTagInsert = (id: number, label: string) => {
 
 <AutocompletePopover regex={/#[\da-z]*$/i} class={Themes.CSS_AUTOCOMPLETE_MENU}>
   <AutocompleteList>
-    <AutocompleteEmpty class={Themes.AUTOCOMPLETE_MENU_ITEM}>No results</AutocompleteEmpty>
+    <AutocompleteEmpty class={Themes.CSS_AUTOCOMPLETE_MENU_ITEM}>No results</AutocompleteEmpty>
     {#each tags as tag}
       <AutocompleteItem
-        class={Themes.AUTOCOMPLETE_MENU_ITEM}
+        class={Themes.CSS_AUTOCOMPLETE_MENU_ITEM}
         onSelect={() => handleTagInsert(tag.id, tag.label)}
       >
         {tag.label}

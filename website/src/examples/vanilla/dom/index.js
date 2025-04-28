@@ -40,7 +40,7 @@ function createList() {
     createItem('Turn into Heading 1', () => handleHeadingConvert(1)),
     createItem('Turn into Heading 2', () => handleHeadingConvert(2)),
   )
-  list.className = Themes.AUTOCOMPLETE_MENU
+  list.className = Themes.CSS_AUTOCOMPLETE_MENU
   return list
 }
 
@@ -52,7 +52,7 @@ function createItem(text, callback) {
   const item = new AutocompleteItem()
   item.append(text)
   item.onSelect = callback
-  item.className = Themes.AUTOCOMPLETE_MENU_ITEM
+  item.className = Themes.CSS_AUTOCOMPLETE_MENU_ITEM
   return item
 }
 

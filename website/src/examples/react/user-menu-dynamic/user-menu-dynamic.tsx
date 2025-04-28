@@ -35,14 +35,14 @@ export default function UserMenuDynamic() {
       className={Themes.CSS_AUTOCOMPLETE_MENU}
     >
       <AutocompleteList filter={null}>
-        <AutocompleteEmpty className={Themes.AUTOCOMPLETE_MENU_ITEM}>
+        <AutocompleteEmpty className={Themes.CSS_AUTOCOMPLETE_MENU_ITEM}>
           {loading ? 'Loading...' : 'No results'}
         </AutocompleteEmpty>
 
         {users.map((user) => (
           <AutocompleteItem
             key={user.id}
-            className={Themes.AUTOCOMPLETE_MENU_ITEM}
+            className={Themes.CSS_AUTOCOMPLETE_MENU_ITEM}
             onSelect={() => handleUserInsert(user.id, user.name)}
           >
             <span className={loading ? 'opacity-50' : undefined}>

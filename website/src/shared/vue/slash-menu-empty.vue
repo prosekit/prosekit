@@ -4,7 +4,7 @@ import { AutocompleteEmpty } from 'prosekit/vue/autocomplete'
 </script>
 
 <template>
-  <AutocompleteEmpty :class="Themes.AUTOCOMPLETE_MENU_ITEM">
+  <AutocompleteEmpty :class="Themes.CSS_AUTOCOMPLETE_MENU_ITEM">
     <span>No results</span>
   </AutocompleteEmpty>
 </template>

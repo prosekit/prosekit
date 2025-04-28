@@ -7,7 +7,7 @@ export default function SlashMenuItem(props: {
   onSelect: () => void
 }) {
   return (
-    <AutocompleteItem onSelect={props.onSelect} class={Themes.AUTOCOMPLETE_MENU_ITEM}>
+    <AutocompleteItem onSelect={props.onSelect} class={Themes.CSS_AUTOCOMPLETE_MENU_ITEM}>
       <span>{props.label}</span>
       {props.kbd && <kbd class={Themes.CSS_AUTOCOMPLETE_MENU_KEYBOARD}>{props.kbd}</kbd>}
     </AutocompleteItem>

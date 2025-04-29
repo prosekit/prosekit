@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.9.0",
+  "packageManager": "pnpm@10.10.0",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",
@@ -44,7 +44,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.3.3",
     "size-limit": "^11.2.0",
-    "turbo": "^2.5.1",
+    "turbo": "^2.5.2",
     "typescript": "~5.8.2",
     "unocss": "^66.0.0",
     "vitest": "^3.1.2"

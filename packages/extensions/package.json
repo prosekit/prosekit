@@ -117,7 +117,7 @@
     "loro-crdt": "^1.5.4",
     "loro-prosemirror": "^0.2.1",
     "prettier": "^3.5.3",
-    "tsdown": "^0.10.0",
+    "tsdown": "^0.10.2",
     "type-fest": "^4.40.1",
     "typescript": "~5.8.2",
     "vitest": "^3.1.2",

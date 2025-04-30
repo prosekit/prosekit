@@ -45,7 +45,7 @@
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "@prosekit/web": "workspace:^",
-    "react-merge-refs": "^2.1.1"
+    "react-merge-refs": "^3.0.1"
   },
   "peerDependencies": {
     "preact": ">= 10.11.0"

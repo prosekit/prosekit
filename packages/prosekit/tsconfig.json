@@ -1,17 +1,47 @@
 {
   "extends": "@ocavue/tsconfig/es/root.json",
   "references": [
-    { "path": "./tsconfig.build.json" },
-    { "path": "../basic" },
-    { "path": "../core" },
-    { "path": "../extensions" },
-    { "path": "../lit" },
-    { "path": "../pm" },
-    { "path": "../preact" },
-    { "path": "../react" },
-    { "path": "../solid" },
-    { "path": "../svelte" },
-    { "path": "../vue" },
-    { "path": "../web" },
+    {
+      "path": "../basic/tsconfig.json",
+    },
+    {
+      "path": "../config-tsdown/tsconfig.json",
+    },
+    {
+      "path": "../config-vitest/tsconfig.json",
+    },
+    {
+      "path": "../core/tsconfig.json",
+    },
+    {
+      "path": "../extensions/tsconfig.json",
+    },
+    {
+      "path": "../lit/tsconfig.json",
+    },
+    {
+      "path": "../pm/tsconfig.json",
+    },
+    {
+      "path": "../preact/tsconfig.json",
+    },
+    {
+      "path": "../react/tsconfig.json",
+    },
+    {
+      "path": "../solid/tsconfig.json",
+    },
+    {
+      "path": "../svelte/tsconfig.json",
+    },
+    {
+      "path": "../vue/tsconfig.json",
+    },
+    {
+      "path": "../web/tsconfig.json",
+    },
+    {
+      "path": "./tsconfig.build.json",
+    },
   ],
 }

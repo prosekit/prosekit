@@ -27,7 +27,7 @@
     "esbuild": "^0.25.3",
     "prettier": "^3.5.3",
     "tailwind-merge": "^2.6.0",
-    "tsx": "^4.19.3",
+    "tsx": "^4.19.4",
     "typescript": "~5.8.2",
     "unocss": "^66.0.0",
     "unplugin-macros": "^0.16.3"

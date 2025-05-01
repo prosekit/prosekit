@@ -1,6 +1,6 @@
-import {
-  type ConnectableElement,
-  type SetupOptions,
+import type {
+  ConnectableElement,
+  SetupOptions,
 } from '@aria-ui/core'
 import { useMenuItem } from '@aria-ui/menu/elements'
 

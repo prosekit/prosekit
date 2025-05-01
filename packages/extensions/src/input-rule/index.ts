@@ -22,7 +22,7 @@ import type {
   ProseMirrorNode,
   Schema,
 } from '@prosekit/pm/model'
-import { type Plugin } from '@prosekit/pm/state'
+import type { Plugin } from '@prosekit/pm/state'
 
 /**
  * Defines an input rule extension.

@@ -1,6 +1,6 @@
-import {
-  type Attrs,
-  type MarkType,
+import type {
+  Attrs,
+  MarkType,
 } from '@prosekit/pm/model'
 
 /**

@@ -137,8 +137,8 @@ importers:
         version: 1.2.1(@unocss/preset-wind3@66.0.0)(unocss@66.0.0(postcss@8.5.3)(vite@6.3.4(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3)))
     devDependencies:
       '@manypkg/find-root':
-        specifier: ^2.2.3
-        version: 2.2.3
+        specifier: ^3.0.0
+        version: 3.0.0
       '@types/node':
         specifier: ^20.17.29
         version: 20.17.31
@@ -228,8 +228,8 @@ importers:
   packages/dev:
     dependencies:
       '@manypkg/find-root':
-        specifier: ^2.2.3
-        version: 2.2.3
+        specifier: ^3.0.0
+        version: 3.0.0
       '@manypkg/get-packages':
         specifier: ^2.2.2
         version: 2.2.2

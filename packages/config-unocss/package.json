@@ -21,7 +21,7 @@
     "unocss": "*"
   },
   "devDependencies": {
-    "@manypkg/find-root": "^2.2.3",
+    "@manypkg/find-root": "^3.0.0",
     "@types/node": "^20.17.29",
     "clsx": "^2.1.1",
     "esbuild": "^0.25.3",

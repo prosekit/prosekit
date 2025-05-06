@@ -9,7 +9,7 @@
     "gen": "time tsx src/gen.ts"
   },
   "dependencies": {
-    "@manypkg/find-root": "^2.2.3",
+    "@manypkg/find-root": "^3.0.0",
     "@manypkg/get-packages": "^2.2.2",
     "@sindresorhus/slugify": "^2.2.1",
     "@types/fs-extra": "^11.0.4",

@@ -231,8 +231,8 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3
       '@manypkg/get-packages':
-        specifier: ^2.2.2
-        version: 2.2.2
+        specifier: ^3.0.0
+        version: 3.0.0
       '@sindresorhus/slugify':
         specifier: ^2.2.1
         version: 2.2.1

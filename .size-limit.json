@@ -160,6 +160,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/hard-break",
+    "path": "packages/prosekit/dist/prosekit-extensions-hard-break.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/heading",
     "path": "packages/prosekit/dist/prosekit-extensions-heading.js",
     "ignore": [

@@ -2275,6 +2275,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "solid-hard-break",
+      "framework": "solid",
+      "story": "hard-break",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "solid-heading",
       "framework": "solid",
       "story": "heading",

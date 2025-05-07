@@ -37,6 +37,10 @@ import {
   type GapCursorExtension,
 } from '@prosekit/extensions/gap-cursor'
 import {
+  defineHardBreak,
+  type HardBreakExtension,
+} from '@prosekit/extensions/hard-break'
+import {
   defineHeading,
   type HeadingExtension,
 } from '@prosekit/extensions/heading'
@@ -103,6 +107,7 @@ export type BasicExtension = Union<
     BlockquoteExtension,
     ImageExtension,
     HorizontalRuleExtension,
+    HardBreakExtension,
     TableExtension,
     CodeBlockExtension,
     // Marks
@@ -137,6 +142,7 @@ export type BasicExtension = Union<
  * - {@link defineBlockquote}
  * - {@link defineImage}
  * - {@link defineHorizontalRule}
+ * - {@link defineHardBreak}
  * - {@link defineTable}
  * - {@link defineCodeBlock}
  * - {@link defineItalic}
@@ -166,6 +172,7 @@ export function defineBasicExtension(): BasicExtension {
     defineBlockquote(),
     defineImage(),
     defineHorizontalRule(),
+    defineHardBreak(),
     defineTable(),
     defineCodeBlock(),
     // Marks

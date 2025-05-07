@@ -16,6 +16,7 @@
     "./src/extensions/enter-rule.gen.ts",
     "./src/extensions/file.gen.ts",
     "./src/extensions/gap-cursor.gen.ts",
+    "./src/extensions/hard-break.gen.ts",
     "./src/extensions/heading.gen.ts",
     "./src/extensions/horizontal-rule.gen.ts",
     "./src/extensions/image.gen.ts",

@@ -1,0 +1,42 @@
+---
+title: Hard Break
+---
+
+import Demo from '@/components/ui/demo/demo.astro';
+
+The `hardBreak` node is used to represent a line break `<br>` in the document.
+
+<Demo story="hard-break" />
+
+## Usage
+
+```ts twoslash
+import { defineHardBreak } from 'prosekit/extensions/hard-break'
+
+const extension = defineHardBreak()
+```
+
+## Commands
+
+### `insertHardBreak`
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineHardBreak } from 'prosekit/extensions/hard-break'
+
+const extension = defineHardBreak()
+const editor = createEditor({ extension })
+// ---cut---
+editor.commands.insertHardBreak()
+```
+
+## Keyboard Shortcuts
+
+| Non-Apple     | Apple           | Description                                                  |
+| ------------- | --------------- | ------------------------------------------------------------ |
+| `Ctrl-Enter`  | `Command-Enter` | Insert a hard break node at the current text cursor position |
+| `Shift-Enter` | `Shift-Enter`   | Insert a hard break node at the current text cursor position |
+
+## API Reference
+
+- [prosekit/extensions/hard-break](/references/extensions/hard-break)

@@ -31,7 +31,7 @@ function generateReferenceSidebarItems() {
 
 function generateExtensionsSidebarItems() {
   const classification = {
-    node: ['blockquote', 'code-block', 'heading', 'horizontal-rule', 'image', 'list', 'mention', 'table', 'doc', 'paragraph', 'text'],
+    node: ['blockquote', 'code-block', 'heading', 'horizontal-rule', 'image', 'list', 'mention', 'table', 'doc', 'paragraph', 'text', 'hard-break'],
     mark: ['bold', 'code', 'italic', 'link', 'strike', 'underline'],
     other: ['commit', 'drop-cursor', 'enter-rule', 'file', 'gap-cursor', 'input-rule', 'loro', 'placeholder', 'readonly', 'search', 'text-align', 'yjs'],
   }

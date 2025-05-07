@@ -20,6 +20,7 @@ import { defineBold } from '../bold'
 import { defineCode } from '../code'
 import { defineCodeBlock } from '../code-block'
 import { defineDoc } from '../doc'
+import { defineHardBreak } from '../hard-break'
 import { defineHeading } from '../heading'
 import { defineHorizontalRule } from '../horizontal-rule'
 import { defineImage } from '../image'
@@ -64,6 +65,7 @@ export function defineTestExtension() {
     defineParagraph(),
     defineTable(),
     defineHorizontalRule(),
+    defineHardBreak(),
     defineCodeBlock(),
   )
 }

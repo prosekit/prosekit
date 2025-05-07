@@ -4,7 +4,7 @@
   "tasks": {
     "build": {
       "dependsOn": ["gen", "^build", "build:tsc", "build:tsdown"],
-      "outputs": ["dist/"],
+      "outputs": ["dist/", "lib/"],
       "outputLogs": "new-only"
     },
     "build:tsc": {

@@ -1193,6 +1193,8 @@ examples:
         hidden: false
       - path: toolbar.tsx
         hidden: false
+      - path: button.tsx
+        hidden: false
   - name: solid-heading
     framework: solid
     story: heading

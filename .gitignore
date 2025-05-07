@@ -6,6 +6,7 @@ CHANGELOG.md
 **/public/astrobook
 .yalc
 yalc.lock
+dist
 
 .cache
 .DS_Store
@@ -13,7 +14,6 @@ yalc.lock
 *.log
 *.tgz
 coverage
-**/dist/*
 lib-cov
 logs
 node_modules

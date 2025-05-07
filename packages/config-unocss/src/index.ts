@@ -5,7 +5,7 @@ import { findRootSync } from '@manypkg/find-root'
 import {
   definePreset,
   presetIcons,
-  presetWind,
+  presetWind3,
   type PresetFactory,
 } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
@@ -15,7 +15,7 @@ import { Colors } from './colors'
 
 export const preset: PresetFactory = definePreset(() => ({
   name: 'prosekit',
-  presets: [presetWind(), presetIcons(), presetAnimations()],
+  presets: [presetWind3(), presetIcons(), presetAnimations()],
   shortcuts: { ...Colors, ...Classes },
 }))
 

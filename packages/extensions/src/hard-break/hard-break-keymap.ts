@@ -10,7 +10,7 @@ import { insertHardBreak } from './hard-break-commands'
  */
 export function defineHardBreakKeymap(): PlainExtension {
   return defineKeymap({
-    'mod-enter': insertHardBreak(),
-    'shift-enter': insertHardBreak(),
+    'Mod-Enter': insertHardBreak(),
+    'Shift-Enter': insertHardBreak(),
   })
 }

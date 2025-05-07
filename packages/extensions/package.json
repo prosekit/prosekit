@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.8.0",
   "private": false,
+  "description": "A collection of common extensions for ProseKit",
   "author": {
     "name": "ocavue",
     "email": "ocavue@gmail.com"

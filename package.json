@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "packageManager": "pnpm@10.10.0",
+  "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
     "build:force": "turbo build --force",

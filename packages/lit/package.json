@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.4.11",
   "private": false,
+  "description": "Lit components and utilities for ProseKit",
   "author": {
     "name": "ocavue",
     "email": "ocavue@gmail.com"

@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.1.9",
   "private": false,
+  "description": "A re-export of ProseMirror packages",
   "author": {
     "name": "ocavue",
     "email": "ocavue@gmail.com"

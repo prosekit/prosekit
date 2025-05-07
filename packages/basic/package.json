@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.4.1",
   "private": false,
+  "description": "A quick starter for ProseKit",
   "author": {
     "name": "ocavue",
     "email": "ocavue@gmail.com"

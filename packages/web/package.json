@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.5.7",
   "private": false,
+  "description": "A collection of web components for ProseKit",
   "author": {
     "name": "ocavue",
     "email": "ocavue@gmail.com"

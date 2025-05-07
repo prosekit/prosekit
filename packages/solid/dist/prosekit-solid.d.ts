@@ -1,4 +1,4 @@
-import { MaybeAccessor, PropsWithChildren, PropsWithClass, PropsWithElement } from "./types.d-BCb-LSbS.js";
+import { MaybeAccessor, PropsWithChildren, PropsWithClass, PropsWithElement } from "./types-CC9kxezm.js";
 import { MarkViewContextProps, NodeViewContextProps } from "@prosemirror-adapter/solid";
 import { Accessor, Component, ParentProps } from "solid-js";
 import { Editor, Extension, Keymap, Priority } from "@prosekit/core";

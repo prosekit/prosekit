@@ -1,4 +1,4 @@
-import { CreateProps } from "./create-props.d-C_YR_C7I.js";
+import { CreateProps } from "./create-props-B_K0wKYy.js";
 import { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "preact/compat";
 import { TooltipContentElement, TooltipContentEvents, TooltipContentProps as TooltipContentProps$1, TooltipRootElement, TooltipRootEvents, TooltipRootProps as TooltipRootProps$1, TooltipTriggerElement, TooltipTriggerEvents, TooltipTriggerProps as TooltipTriggerProps$1 } from "@prosekit/web/tooltip";
 

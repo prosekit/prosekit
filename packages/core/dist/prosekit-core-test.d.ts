@@ -1,4 +1,4 @@
-import { Editor$1 as Editor, EditorInstance$1 as EditorInstance, EditorOptions, Extension } from "./editor.d-DTf_So7A.js";
+import { Editor$1 as Editor, EditorInstance$1 as EditorInstance, EditorOptions, Extension } from "./editor-BP9kgR6R.js";
 import { ProseMirrorNode } from "@prosekit/pm/model";
 
 //#region src/test/test-editor.d.ts

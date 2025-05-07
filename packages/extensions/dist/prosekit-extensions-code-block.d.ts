@@ -1,4 +1,4 @@
-import { ShikiHighlighterOptions } from "./shiki-highlighter-chunk.d-CLfm5-2c.js";
+import { ShikiHighlighterOptions } from "./shiki-highlighter-chunk-Cd3WeOKL.js";
 import { Extension, PlainExtension, Union } from "@prosekit/core";
 import { Parser } from "prosemirror-highlight";
 import { BundledLanguage as ShikiBundledLanguage, BundledLanguageInfo as ShikiBundledLanguageInfo, BundledTheme as ShikiBundledTheme, BundledThemeInfo as ShikiBundledThemeInfo, SpecialLanguage, bundledLanguagesInfo as shikiBundledLanguagesInfo, bundledThemesInfo as shikiBundledThemesInfo } from "shiki";

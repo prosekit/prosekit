@@ -1,4 +1,4 @@
-import { CreateProps } from "./create-props.d-C_YR_C7I.js";
+import { CreateProps } from "./create-props-B_K0wKYy.js";
 import { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "preact/compat";
 import { BlockHandleAddElement, BlockHandleAddEvents, BlockHandleAddProps as BlockHandleAddProps$1, BlockHandleDraggableElement, BlockHandleDraggableEvents, BlockHandleDraggableProps as BlockHandleDraggableProps$1, BlockHandlePopoverElement, BlockHandlePopoverEvents, BlockHandlePopoverProps as BlockHandlePopoverProps$1 } from "@prosekit/web/block-handle";
 

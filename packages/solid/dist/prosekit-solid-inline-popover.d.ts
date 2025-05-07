@@ -1,5 +1,5 @@
-import { PropsWithElement } from "./types.d-BCb-LSbS.js";
-import { CreateProps } from "./create-props.d-Cg5AzcmF.js";
+import { PropsWithElement } from "./types-CC9kxezm.js";
+import { CreateProps } from "./create-props-YzgBVL0x.js";
 import { Component } from "solid-js";
 import { InlinePopoverElement, InlinePopoverEvents, InlinePopoverProps as InlinePopoverProps$1 } from "@prosekit/web/inline-popover";
 

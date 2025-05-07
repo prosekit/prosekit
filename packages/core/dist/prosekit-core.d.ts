@@ -1,4 +1,4 @@
-import { AnyAttrs, AttrSpec, CommandAction, CommandCreator, CommandTyping, DOMDocumentOptions, DOMParserOptions, DOMSerializerOptions, Editor$1 as Editor, EditorOptions, Extension, ExtensionTyping, ExtractCommandActions, ExtractCommandAppliers, ExtractCommandCreators, ExtractMarkActions, ExtractMarks, ExtractNodeActions, ExtractNodes, JSONParserOptions, MarkAction, MarkBuilder, MarkTyping, NodeAction, NodeBuilder, NodeChild, NodeJSON, NodeTyping, PickSubType, PlainExtension, Priority$1 as Priority, SelectionJSON, SimplifyDeeper, SimplifyUnion, StateJSON, StepJSON, ToMarkAction, ToNodeAction, Union, UnionExtension, createEditor$1 as createEditor, elementFromJSON$1 as elementFromJSON, elementFromNode$1 as elementFromNode, htmlFromJSON$1 as htmlFromJSON, htmlFromNode$1 as htmlFromNode, jsonFromHTML$1 as jsonFromHTML, jsonFromNode$1 as jsonFromNode, jsonFromState$1 as jsonFromState, nodeFromElement$1 as nodeFromElement, nodeFromHTML$1 as nodeFromHTML, nodeFromJSON$1 as nodeFromJSON, stateFromJSON$1 as stateFromJSON } from "./editor.d-DTf_So7A.js";
+import { AnyAttrs, AttrSpec, CommandAction, CommandCreator, CommandTyping, DOMDocumentOptions, DOMParserOptions, DOMSerializerOptions, Editor$1 as Editor, EditorOptions, Extension, ExtensionTyping, ExtractCommandActions, ExtractCommandAppliers, ExtractCommandCreators, ExtractMarkActions, ExtractMarks, ExtractNodeActions, ExtractNodes, JSONParserOptions, MarkAction, MarkBuilder, MarkTyping, NodeAction, NodeBuilder, NodeChild, NodeJSON, NodeTyping, PickSubType, PlainExtension, Priority$1 as Priority, SelectionJSON, SimplifyDeeper, SimplifyUnion, StateJSON, StepJSON, ToMarkAction, ToNodeAction, Union, UnionExtension, createEditor$1 as createEditor, elementFromJSON$1 as elementFromJSON, elementFromNode$1 as elementFromNode, htmlFromJSON$1 as htmlFromJSON, htmlFromNode$1 as htmlFromNode, jsonFromHTML$1 as jsonFromHTML, jsonFromNode$1 as jsonFromNode, jsonFromState$1 as jsonFromState, nodeFromElement$1 as nodeFromElement, nodeFromHTML$1 as nodeFromHTML, nodeFromJSON$1 as nodeFromJSON, stateFromJSON$1 as stateFromJSON } from "./editor-BP9kgR6R.js";
 import { AllSelection, Command, EditorState, EditorStateConfig, NodeSelection, Plugin, Selection, TextSelection, Transaction } from "@prosekit/pm/state";
 import { Attrs as Attrs$1, ContentMatch, DOMSerializer, Fragment, Mark as Mark$1, MarkSpec, MarkType as MarkType$1, Node as Node$1, NodeSpec, NodeType as NodeType$1, ProseMirrorFragment, ProseMirrorNode, ResolvedPos, Schema, Slice } from "@prosekit/pm/model";
 import { DOMEventMap, EditorView, MarkViewConstructor, NodeView, NodeViewConstructor } from "@prosekit/pm/view";
@@ -404,8 +404,8 @@ declare function wrap(options: WrapOptions): Command;
 *
 * @public
 */
-declare function union<E extends readonly Extension[]>(...exts: E): Union<E>;
-declare function union<E extends readonly Extension[]>(exts: E): Union<E>;
+declare function union<const E extends readonly Extension[]>(...exts: E): Union<E>;
+declare function union<const E extends readonly Extension[]>(exts: E): Union<E>;
 
 //#endregion
 //#region src/editor/with-priority.d.ts

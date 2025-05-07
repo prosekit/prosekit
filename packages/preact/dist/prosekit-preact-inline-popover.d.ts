@@ -1,4 +1,4 @@
-import { CreateProps } from "./create-props.d-C_YR_C7I.js";
+import { CreateProps } from "./create-props-B_K0wKYy.js";
 import { ForwardRefExoticComponent, HTMLAttributes, RefAttributes } from "preact/compat";
 import { InlinePopoverElement, InlinePopoverEvents, InlinePopoverProps as InlinePopoverProps$1 } from "@prosekit/web/inline-popover";
 

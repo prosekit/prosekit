@@ -1,4 +1,4 @@
-import { CreateEmits } from "./create-emits.d-BVj2S3yh.js";
+import { CreateEmits } from "./create-emits-fip0zdCA.js";
 import { DefineSetupFnComponent, HTMLAttributes } from "vue";
 import { TableHandleColumnRootEvents, TableHandleColumnRootProps as TableHandleColumnRootProps$1, TableHandleColumnTriggerEvents, TableHandleColumnTriggerProps as TableHandleColumnTriggerProps$1, TableHandlePopoverContentEvents, TableHandlePopoverContentProps as TableHandlePopoverContentProps$1, TableHandlePopoverItemEvents, TableHandlePopoverItemProps as TableHandlePopoverItemProps$1, TableHandleRootEvents, TableHandleRootProps as TableHandleRootProps$1, TableHandleRowRootEvents, TableHandleRowRootProps as TableHandleRowRootProps$1, TableHandleRowTriggerEvents, TableHandleRowTriggerProps as TableHandleRowTriggerProps$1 } from "@prosekit/web/table-handle";
 

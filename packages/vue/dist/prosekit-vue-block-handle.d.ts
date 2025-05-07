@@ -1,4 +1,4 @@
-import { CreateEmits } from "./create-emits.d-BVj2S3yh.js";
+import { CreateEmits } from "./create-emits-fip0zdCA.js";
 import { DefineSetupFnComponent, HTMLAttributes } from "vue";
 import { BlockHandleAddEvents, BlockHandleAddProps as BlockHandleAddProps$1, BlockHandleDraggableEvents, BlockHandleDraggableProps as BlockHandleDraggableProps$1, BlockHandlePopoverEvents, BlockHandlePopoverProps as BlockHandlePopoverProps$1 } from "@prosekit/web/block-handle";
 

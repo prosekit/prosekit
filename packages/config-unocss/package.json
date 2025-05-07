@@ -21,14 +21,14 @@
     "unocss": "*"
   },
   "devDependencies": {
-    "@manypkg/find-root": "^2.2.3",
+    "@manypkg/find-root": "^3.0.0",
     "@types/node": "^20.17.29",
     "clsx": "^2.1.1",
-    "esbuild": "^0.25.3",
+    "esbuild": "^0.25.4",
     "prettier": "^3.5.3",
     "tailwind-merge": "^2.6.0",
     "tsx": "^4.19.4",
-    "typescript": "~5.8.2",
+    "typescript": "~5.8.3",
     "unocss": "^66.0.0",
     "unplugin-macros": "^0.16.3"
   }

@@ -1,14 +1,9 @@
 import { defineBaseKeymap } from 'prosekit/core'
-
-import {
-  defineDoc,
-  defineDoc,
-} from 'prosekit/extensions/doc'
+import { union } from 'prosekit/core'
+import { defineDoc } from 'prosekit/extensions/doc'
+import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
 import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineText } from 'prosekit/extensions/text'
-
-import { union } from 'prosekit/core'
-import { defineHorizontalRule } from 'prosekit/extensions/horizontal-rule'
 
 export function defineExtension() {
   return union(

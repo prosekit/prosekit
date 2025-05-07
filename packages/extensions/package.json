@@ -40,6 +40,7 @@
     "./file": "./src/file/index.ts",
     "./gap-cursor": "./src/gap-cursor/index.ts",
     "./gap-cursor/style.css": "./src/gap-cursor/style.css",
+    "./hard-break": "./src/hard-break/index.ts",
     "./heading": "./src/heading/index.ts",
     "./horizontal-rule": "./src/horizontal-rule/index.ts",
     "./image": "./src/image/index.ts",

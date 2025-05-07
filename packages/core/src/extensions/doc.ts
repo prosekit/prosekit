@@ -18,7 +18,7 @@ export type DocExtension = Extension<{ Nodes: { doc: Attrs } }>
  * import { defineDoc } from 'prosekit/extensions/doc'
  * ```
  */
-export function defineDoc(): DocExtension {
+export function defineDoc_DEBUG(): DocExtension {
   console.warn(
     '[prosekit] The `defineDoc` function from `prosekit/core` is deprecated. Use the following import instead: `import { defineDoc } from "prosekit/extensions/doc"`.',
   )

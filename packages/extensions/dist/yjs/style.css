@@ -1,0 +1,29 @@
+.ProseMirror .ProseMirror-yjs-cursor {
+  word-break: normal;
+  pointer-events: none;
+  border-color: orange;
+  border-left-style: solid;
+  border-left-width: 2px;
+  height: 1em;
+  position: absolute;
+}
+
+.ProseMirror .ProseMirror-yjs-cursor > div {
+  color: #fff;
+  user-select: none;
+  background-color: #fa8100;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-family: serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  position: relative;
+  top: -1.05em;
+}
+
+.ProseMirror > .ProseMirror-yjs-cursor:first-child {
+  margin-top: 16px;
+}
+

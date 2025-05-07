@@ -1,0 +1,3 @@
+import { PopoverContentElement as PopoverContent, PopoverRootElement as PopoverRoot, PopoverTriggerElement as PopoverTrigger } from "@prosekit/web/popover";
+
+export { PopoverContent, PopoverRoot, PopoverTrigger };

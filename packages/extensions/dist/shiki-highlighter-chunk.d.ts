@@ -1,0 +1,2 @@
+import { HighlighterOptions, HighlighterResult, ShikiHighlighterOptions, createOrGetHighlighter } from "./shiki-highlighter-chunk.d-CLfm5-2c.js";
+export { HighlighterOptions, HighlighterResult, ShikiHighlighterOptions, createOrGetHighlighter };

@@ -1,0 +1,3 @@
+import { BlockHandleAddElement as BlockHandleAdd, BlockHandleDraggableElement as BlockHandleDraggable, BlockHandlePopoverElement as BlockHandlePopover } from "@prosekit/web/block-handle";
+
+export { BlockHandleAdd, BlockHandleDraggable, BlockHandlePopover };

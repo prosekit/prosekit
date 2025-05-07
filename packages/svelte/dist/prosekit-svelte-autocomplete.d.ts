@@ -1,0 +1,1 @@
+export * from './build/components/autocomplete/index.gen'

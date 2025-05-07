@@ -220,7 +220,7 @@
     "react-dom": "^19.1.0",
     "solid-js": "^1.9.6",
     "svelte": "^5.28.2",
-    "tsdown": "^0.10.2",
+    "tsdown": "^0.11.1",
     "typedoc": "^0.27.9",
     "typedoc-plugin-external-package-links": "^0.1.0",
     "typedoc-plugin-md": "^0.6.0",

@@ -1,0 +1,21 @@
+{
+  "extends": "@ocavue/tsconfig/es/root.json",
+  "include": ["./*.js", "./*.ts", "./scripts"],
+  "references": [
+    {
+      "path": "../config-vitest/tsconfig.json",
+    },
+    {
+      "path": "../core/tsconfig.json",
+    },
+    {
+      "path": "../pm/tsconfig.json",
+    },
+    {
+      "path": "../web/tsconfig.json",
+    },
+    {
+      "path": "./tsconfig.build.json",
+    },
+  ],
+}

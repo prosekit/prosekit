@@ -1,0 +1,148 @@
+{
+  "name": "@prosekit/solid",
+  "type": "module",
+  "version": "0.4.12",
+  "private": false,
+  "description": "Solid components and utilities for ProseKit",
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/solid"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./autocomplete": "./src/components/autocomplete/index.gen.ts",
+    "./block-handle": "./src/components/block-handle/index.gen.ts",
+    "./inline-popover": "./src/components/inline-popover/index.gen.ts",
+    "./popover": "./src/components/popover/index.gen.ts",
+    "./resizable": "./src/components/resizable/index.gen.ts",
+    "./table-handle": "./src/components/table-handle/index.gen.ts",
+    "./tooltip": "./src/components/tooltip/index.gen.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsc": "tsc -b tsconfig.json",
+    "build:tsdown": "tsdown"
+  },
+  "dependencies": {
+    "@prosekit/core": "workspace:^",
+    "@prosekit/pm": "workspace:^",
+    "@prosekit/web": "workspace:^",
+    "@prosemirror-adapter/core": "^0.4.0",
+    "@prosemirror-adapter/solid": "^0.4.1"
+  },
+  "peerDependencies": {
+    "solid-js": ">= 1.7.0"
+  },
+  "peerDependenciesMeta": {
+    "solid-js": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@prosekit/config-tsdown": "workspace:*",
+    "@prosekit/config-vitest": "workspace:*",
+    "solid-js": "^1.9.6",
+    "tsdown": "^0.11.1",
+    "typescript": "~5.8.3",
+    "vitest": "^3.1.3"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-solid.d.ts",
+        "default": "./dist/prosekit-solid.js"
+      },
+      "./autocomplete": {
+        "types": "./dist/prosekit-solid-autocomplete.d.ts",
+        "default": "./dist/prosekit-solid-autocomplete.js"
+      },
+      "./block-handle": {
+        "types": "./dist/prosekit-solid-block-handle.d.ts",
+        "default": "./dist/prosekit-solid-block-handle.js"
+      },
+      "./inline-popover": {
+        "types": "./dist/prosekit-solid-inline-popover.d.ts",
+        "default": "./dist/prosekit-solid-inline-popover.js"
+      },
+      "./popover": {
+        "types": "./dist/prosekit-solid-popover.d.ts",
+        "default": "./dist/prosekit-solid-popover.js"
+      },
+      "./resizable": {
+        "types": "./dist/prosekit-solid-resizable.d.ts",
+        "default": "./dist/prosekit-solid-resizable.js"
+      },
+      "./table-handle": {
+        "types": "./dist/prosekit-solid-table-handle.d.ts",
+        "default": "./dist/prosekit-solid-table-handle.js"
+      },
+      "./tooltip": {
+        "types": "./dist/prosekit-solid-tooltip.d.ts",
+        "default": "./dist/prosekit-solid-tooltip.js"
+      }
+    },
+    "dev": {},
+    "main": "./dist/prosekit-solid.js",
+    "module": "./dist/prosekit-solid.js",
+    "types": "./dist/prosekit-solid.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-solid.d.ts"
+        ],
+        "autocomplete": [
+          "./dist/prosekit-solid-autocomplete.d.ts"
+        ],
+        "block-handle": [
+          "./dist/prosekit-solid-block-handle.d.ts"
+        ],
+        "inline-popover": [
+          "./dist/prosekit-solid-inline-popover.d.ts"
+        ],
+        "popover": [
+          "./dist/prosekit-solid-popover.d.ts"
+        ],
+        "resizable": [
+          "./dist/prosekit-solid-resizable.d.ts"
+        ],
+        "table-handle": [
+          "./dist/prosekit-solid-table-handle.d.ts"
+        ],
+        "tooltip": [
+          "./dist/prosekit-solid-tooltip.d.ts"
+        ]
+      }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-solid": "./src/index.ts",
+      "prosekit-solid-autocomplete": "./src/components/autocomplete/index.gen.ts",
+      "prosekit-solid-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-solid-inline-popover": "./src/components/inline-popover/index.gen.ts",
+      "prosekit-solid-popover": "./src/components/popover/index.gen.ts",
+      "prosekit-solid-resizable": "./src/components/resizable/index.gen.ts",
+      "prosekit-solid-table-handle": "./src/components/table-handle/index.gen.ts",
+      "prosekit-solid-tooltip": "./src/components/tooltip/index.gen.ts"
+    }
+  }
+}

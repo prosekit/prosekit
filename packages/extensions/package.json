@@ -1,0 +1,462 @@
+{
+  "name": "@prosekit/extensions",
+  "type": "module",
+  "version": "0.8.0",
+  "private": false,
+  "description": "A collection of common extensions for ProseKit",
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/extensions"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./autocomplete": "./src/autocomplete/index.ts",
+    "./blockquote": "./src/blockquote/index.ts",
+    "./bold": "./src/bold/index.ts",
+    "./code": "./src/code/index.ts",
+    "./code-block": "./src/code-block/index.ts",
+    "./commit": "./src/commit/index.ts",
+    "./commit/style.css": "./src/commit/style.css",
+    "./doc": "./src/doc/index.ts",
+    "./drop-cursor": "./src/drop-cursor/index.ts",
+    "./enter-rule": "./src/enter-rule/index.ts",
+    "./file": "./src/file/index.ts",
+    "./gap-cursor": "./src/gap-cursor/index.ts",
+    "./gap-cursor/style.css": "./src/gap-cursor/style.css",
+    "./hard-break": "./src/hard-break/index.ts",
+    "./heading": "./src/heading/index.ts",
+    "./horizontal-rule": "./src/horizontal-rule/index.ts",
+    "./image": "./src/image/index.ts",
+    "./input-rule": "./src/input-rule/index.ts",
+    "./italic": "./src/italic/index.ts",
+    "./link": "./src/link/index.ts",
+    "./list": "./src/list/index.ts",
+    "./list/style.css": "./src/list/style.css",
+    "./loro": "./src/loro/index.ts",
+    "./loro/style.css": "./src/loro/style.css",
+    "./mark-rule": "./src/mark-rule/index.ts",
+    "./mention": "./src/mention/index.ts",
+    "./mod-click-prevention": "./src/mod-click-prevention/index.ts",
+    "./paragraph": "./src/paragraph/index.ts",
+    "./placeholder": "./src/placeholder/index.ts",
+    "./placeholder/style.css": "./src/placeholder/style.css",
+    "./readonly": "./src/readonly/index.ts",
+    "./search": "./src/search/index.ts",
+    "./search/style.css": "./src/search/style.css",
+    "./strike": "./src/strike/index.ts",
+    "./table": "./src/table/index.ts",
+    "./table/style.css": "./src/table/style.css",
+    "./text": "./src/text/index.ts",
+    "./text-align": "./src/text-align/index.ts",
+    "./underline": "./src/underline/index.ts",
+    "./virtual-selection": "./src/virtual-selection/index.ts",
+    "./virtual-selection/style.css": "./src/virtual-selection/style.css",
+    "./yjs": "./src/yjs/index.ts",
+    "./yjs/style.css": "./src/yjs/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsc": "tsc -b tsconfig.json",
+    "build:tsdown": "tsdown"
+  },
+  "dependencies": {
+    "@ocavue/utils": "^0.4.0",
+    "@prosekit/core": "workspace:^",
+    "@prosekit/pm": "workspace:^",
+    "prosemirror-changeset": "^2.3.0",
+    "prosemirror-dropcursor": "^1.8.2",
+    "prosemirror-flat-list": "^0.5.5",
+    "prosemirror-gapcursor": "^1.3.2",
+    "prosemirror-highlight": "^0.13.0",
+    "prosemirror-search": "^1.1.0",
+    "prosemirror-tables": "^1.7.1",
+    "shiki": "^3.4.0"
+  },
+  "peerDependencies": {
+    "loro-crdt": ">= 0.16.7",
+    "loro-prosemirror": ">= 0.0.7",
+    "y-prosemirror": ">= 1.2.9",
+    "yjs": ">= 13.6.18"
+  },
+  "peerDependenciesMeta": {
+    "loro-crdt": {
+      "optional": true
+    },
+    "loro-prosemirror": {
+      "optional": true
+    },
+    "y-prosemirror": {
+      "optional": true
+    },
+    "yjs": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@prosekit/config-tsdown": "workspace:*",
+    "@prosekit/config-vitest": "workspace:*",
+    "@vitest/browser": "^3.1.3",
+    "just-pick": "^4.2.0",
+    "loro-crdt": "^1.5.4",
+    "loro-prosemirror": "^0.2.1",
+    "prettier": "^3.5.3",
+    "tsdown": "^0.11.1",
+    "type-fest": "^4.41.0",
+    "typescript": "~5.8.3",
+    "vitest": "^3.1.3",
+    "y-prosemirror": "^1.3.4",
+    "y-protocols": "^1.0.6",
+    "yjs": "^13.6.26"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-extensions.d.ts",
+        "default": "./dist/prosekit-extensions.js"
+      },
+      "./autocomplete": {
+        "types": "./dist/prosekit-extensions-autocomplete.d.ts",
+        "default": "./dist/prosekit-extensions-autocomplete.js"
+      },
+      "./blockquote": {
+        "types": "./dist/prosekit-extensions-blockquote.d.ts",
+        "default": "./dist/prosekit-extensions-blockquote.js"
+      },
+      "./bold": {
+        "types": "./dist/prosekit-extensions-bold.d.ts",
+        "default": "./dist/prosekit-extensions-bold.js"
+      },
+      "./code": {
+        "types": "./dist/prosekit-extensions-code.d.ts",
+        "default": "./dist/prosekit-extensions-code.js"
+      },
+      "./code-block": {
+        "types": "./dist/prosekit-extensions-code-block.d.ts",
+        "default": "./dist/prosekit-extensions-code-block.js"
+      },
+      "./commit": {
+        "types": "./dist/prosekit-extensions-commit.d.ts",
+        "default": "./dist/prosekit-extensions-commit.js"
+      },
+      "./commit/style.css": {
+        "default": "./dist/commit/style.css"
+      },
+      "./doc": {
+        "types": "./dist/prosekit-extensions-doc.d.ts",
+        "default": "./dist/prosekit-extensions-doc.js"
+      },
+      "./drop-cursor": {
+        "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
+        "default": "./dist/prosekit-extensions-drop-cursor.js"
+      },
+      "./enter-rule": {
+        "types": "./dist/prosekit-extensions-enter-rule.d.ts",
+        "default": "./dist/prosekit-extensions-enter-rule.js"
+      },
+      "./file": {
+        "types": "./dist/prosekit-extensions-file.d.ts",
+        "default": "./dist/prosekit-extensions-file.js"
+      },
+      "./gap-cursor": {
+        "types": "./dist/prosekit-extensions-gap-cursor.d.ts",
+        "default": "./dist/prosekit-extensions-gap-cursor.js"
+      },
+      "./gap-cursor/style.css": {
+        "default": "./dist/gap-cursor/style.css"
+      },
+      "./hard-break": {
+        "types": "./dist/prosekit-extensions-hard-break.d.ts",
+        "default": "./dist/prosekit-extensions-hard-break.js"
+      },
+      "./heading": {
+        "types": "./dist/prosekit-extensions-heading.d.ts",
+        "default": "./dist/prosekit-extensions-heading.js"
+      },
+      "./horizontal-rule": {
+        "types": "./dist/prosekit-extensions-horizontal-rule.d.ts",
+        "default": "./dist/prosekit-extensions-horizontal-rule.js"
+      },
+      "./image": {
+        "types": "./dist/prosekit-extensions-image.d.ts",
+        "default": "./dist/prosekit-extensions-image.js"
+      },
+      "./input-rule": {
+        "types": "./dist/prosekit-extensions-input-rule.d.ts",
+        "default": "./dist/prosekit-extensions-input-rule.js"
+      },
+      "./italic": {
+        "types": "./dist/prosekit-extensions-italic.d.ts",
+        "default": "./dist/prosekit-extensions-italic.js"
+      },
+      "./link": {
+        "types": "./dist/prosekit-extensions-link.d.ts",
+        "default": "./dist/prosekit-extensions-link.js"
+      },
+      "./list": {
+        "types": "./dist/prosekit-extensions-list.d.ts",
+        "default": "./dist/prosekit-extensions-list.js"
+      },
+      "./list/style.css": {
+        "default": "./dist/list/style.css"
+      },
+      "./loro": {
+        "types": "./dist/prosekit-extensions-loro.d.ts",
+        "default": "./dist/prosekit-extensions-loro.js"
+      },
+      "./loro/style.css": {
+        "default": "./dist/loro/style.css"
+      },
+      "./mark-rule": {
+        "types": "./dist/prosekit-extensions-mark-rule.d.ts",
+        "default": "./dist/prosekit-extensions-mark-rule.js"
+      },
+      "./mention": {
+        "types": "./dist/prosekit-extensions-mention.d.ts",
+        "default": "./dist/prosekit-extensions-mention.js"
+      },
+      "./mod-click-prevention": {
+        "types": "./dist/prosekit-extensions-mod-click-prevention.d.ts",
+        "default": "./dist/prosekit-extensions-mod-click-prevention.js"
+      },
+      "./paragraph": {
+        "types": "./dist/prosekit-extensions-paragraph.d.ts",
+        "default": "./dist/prosekit-extensions-paragraph.js"
+      },
+      "./placeholder": {
+        "types": "./dist/prosekit-extensions-placeholder.d.ts",
+        "default": "./dist/prosekit-extensions-placeholder.js"
+      },
+      "./placeholder/style.css": {
+        "default": "./dist/placeholder/style.css"
+      },
+      "./readonly": {
+        "types": "./dist/prosekit-extensions-readonly.d.ts",
+        "default": "./dist/prosekit-extensions-readonly.js"
+      },
+      "./search": {
+        "types": "./dist/prosekit-extensions-search.d.ts",
+        "default": "./dist/prosekit-extensions-search.js"
+      },
+      "./search/style.css": {
+        "default": "./dist/search/style.css"
+      },
+      "./strike": {
+        "types": "./dist/prosekit-extensions-strike.d.ts",
+        "default": "./dist/prosekit-extensions-strike.js"
+      },
+      "./table": {
+        "types": "./dist/prosekit-extensions-table.d.ts",
+        "default": "./dist/prosekit-extensions-table.js"
+      },
+      "./table/style.css": {
+        "default": "./dist/table/style.css"
+      },
+      "./text": {
+        "types": "./dist/prosekit-extensions-text.d.ts",
+        "default": "./dist/prosekit-extensions-text.js"
+      },
+      "./text-align": {
+        "types": "./dist/prosekit-extensions-text-align.d.ts",
+        "default": "./dist/prosekit-extensions-text-align.js"
+      },
+      "./underline": {
+        "types": "./dist/prosekit-extensions-underline.d.ts",
+        "default": "./dist/prosekit-extensions-underline.js"
+      },
+      "./virtual-selection": {
+        "types": "./dist/prosekit-extensions-virtual-selection.d.ts",
+        "default": "./dist/prosekit-extensions-virtual-selection.js"
+      },
+      "./virtual-selection/style.css": {
+        "default": "./dist/virtual-selection/style.css"
+      },
+      "./yjs": {
+        "types": "./dist/prosekit-extensions-yjs.d.ts",
+        "default": "./dist/prosekit-extensions-yjs.js"
+      },
+      "./yjs/style.css": {
+        "default": "./dist/yjs/style.css"
+      }
+    },
+    "dev": {},
+    "main": "./dist/prosekit-extensions.js",
+    "module": "./dist/prosekit-extensions.js",
+    "types": "./dist/prosekit-extensions.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-extensions.d.ts"
+        ],
+        "autocomplete": [
+          "./dist/prosekit-extensions-autocomplete.d.ts"
+        ],
+        "blockquote": [
+          "./dist/prosekit-extensions-blockquote.d.ts"
+        ],
+        "bold": [
+          "./dist/prosekit-extensions-bold.d.ts"
+        ],
+        "code": [
+          "./dist/prosekit-extensions-code.d.ts"
+        ],
+        "code-block": [
+          "./dist/prosekit-extensions-code-block.d.ts"
+        ],
+        "commit": [
+          "./dist/prosekit-extensions-commit.d.ts"
+        ],
+        "doc": [
+          "./dist/prosekit-extensions-doc.d.ts"
+        ],
+        "drop-cursor": [
+          "./dist/prosekit-extensions-drop-cursor.d.ts"
+        ],
+        "enter-rule": [
+          "./dist/prosekit-extensions-enter-rule.d.ts"
+        ],
+        "file": [
+          "./dist/prosekit-extensions-file.d.ts"
+        ],
+        "gap-cursor": [
+          "./dist/prosekit-extensions-gap-cursor.d.ts"
+        ],
+        "hard-break": [
+          "./dist/prosekit-extensions-hard-break.d.ts"
+        ],
+        "heading": [
+          "./dist/prosekit-extensions-heading.d.ts"
+        ],
+        "horizontal-rule": [
+          "./dist/prosekit-extensions-horizontal-rule.d.ts"
+        ],
+        "image": [
+          "./dist/prosekit-extensions-image.d.ts"
+        ],
+        "input-rule": [
+          "./dist/prosekit-extensions-input-rule.d.ts"
+        ],
+        "italic": [
+          "./dist/prosekit-extensions-italic.d.ts"
+        ],
+        "link": [
+          "./dist/prosekit-extensions-link.d.ts"
+        ],
+        "list": [
+          "./dist/prosekit-extensions-list.d.ts"
+        ],
+        "loro": [
+          "./dist/prosekit-extensions-loro.d.ts"
+        ],
+        "mark-rule": [
+          "./dist/prosekit-extensions-mark-rule.d.ts"
+        ],
+        "mention": [
+          "./dist/prosekit-extensions-mention.d.ts"
+        ],
+        "mod-click-prevention": [
+          "./dist/prosekit-extensions-mod-click-prevention.d.ts"
+        ],
+        "paragraph": [
+          "./dist/prosekit-extensions-paragraph.d.ts"
+        ],
+        "placeholder": [
+          "./dist/prosekit-extensions-placeholder.d.ts"
+        ],
+        "readonly": [
+          "./dist/prosekit-extensions-readonly.d.ts"
+        ],
+        "search": [
+          "./dist/prosekit-extensions-search.d.ts"
+        ],
+        "strike": [
+          "./dist/prosekit-extensions-strike.d.ts"
+        ],
+        "table": [
+          "./dist/prosekit-extensions-table.d.ts"
+        ],
+        "text": [
+          "./dist/prosekit-extensions-text.d.ts"
+        ],
+        "text-align": [
+          "./dist/prosekit-extensions-text-align.d.ts"
+        ],
+        "underline": [
+          "./dist/prosekit-extensions-underline.d.ts"
+        ],
+        "virtual-selection": [
+          "./dist/prosekit-extensions-virtual-selection.d.ts"
+        ],
+        "yjs": [
+          "./dist/prosekit-extensions-yjs.d.ts"
+        ]
+      }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-extensions": "./src/index.ts",
+      "prosekit-extensions-autocomplete": "./src/autocomplete/index.ts",
+      "prosekit-extensions-blockquote": "./src/blockquote/index.ts",
+      "prosekit-extensions-bold": "./src/bold/index.ts",
+      "prosekit-extensions-code": "./src/code/index.ts",
+      "prosekit-extensions-code-block": "./src/code-block/index.ts",
+      "prosekit-extensions-commit": "./src/commit/index.ts",
+      "commit/style": "./src/commit/style.css",
+      "prosekit-extensions-doc": "./src/doc/index.ts",
+      "prosekit-extensions-drop-cursor": "./src/drop-cursor/index.ts",
+      "prosekit-extensions-enter-rule": "./src/enter-rule/index.ts",
+      "prosekit-extensions-file": "./src/file/index.ts",
+      "prosekit-extensions-gap-cursor": "./src/gap-cursor/index.ts",
+      "gap-cursor/style": "./src/gap-cursor/style.css",
+      "prosekit-extensions-hard-break": "./src/hard-break/index.ts",
+      "prosekit-extensions-heading": "./src/heading/index.ts",
+      "prosekit-extensions-horizontal-rule": "./src/horizontal-rule/index.ts",
+      "prosekit-extensions-image": "./src/image/index.ts",
+      "prosekit-extensions-input-rule": "./src/input-rule/index.ts",
+      "prosekit-extensions-italic": "./src/italic/index.ts",
+      "prosekit-extensions-link": "./src/link/index.ts",
+      "prosekit-extensions-list": "./src/list/index.ts",
+      "list/style": "./src/list/style.css",
+      "prosekit-extensions-loro": "./src/loro/index.ts",
+      "loro/style": "./src/loro/style.css",
+      "prosekit-extensions-mark-rule": "./src/mark-rule/index.ts",
+      "prosekit-extensions-mention": "./src/mention/index.ts",
+      "prosekit-extensions-mod-click-prevention": "./src/mod-click-prevention/index.ts",
+      "prosekit-extensions-paragraph": "./src/paragraph/index.ts",
+      "prosekit-extensions-placeholder": "./src/placeholder/index.ts",
+      "placeholder/style": "./src/placeholder/style.css",
+      "prosekit-extensions-readonly": "./src/readonly/index.ts",
+      "prosekit-extensions-search": "./src/search/index.ts",
+      "search/style": "./src/search/style.css",
+      "prosekit-extensions-strike": "./src/strike/index.ts",
+      "prosekit-extensions-table": "./src/table/index.ts",
+      "table/style": "./src/table/style.css",
+      "prosekit-extensions-text": "./src/text/index.ts",
+      "prosekit-extensions-text-align": "./src/text-align/index.ts",
+      "prosekit-extensions-underline": "./src/underline/index.ts",
+      "prosekit-extensions-virtual-selection": "./src/virtual-selection/index.ts",
+      "virtual-selection/style": "./src/virtual-selection/style.css",
+      "prosekit-extensions-yjs": "./src/yjs/index.ts",
+      "yjs/style": "./src/yjs/style.css"
+    }
+  }
+}

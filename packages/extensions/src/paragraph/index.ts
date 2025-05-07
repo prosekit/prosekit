@@ -1,0 +1,7 @@
+export { defineParagraph } from './paragraph'
+export type { ParagraphExtension } from './paragraph'
+export { defineParagraphCommands } from './paragraph-commands'
+export type { ParagraphCommandsExtension } from './paragraph-commands'
+export { defineParagraphKeymap } from './paragraph-keymap'
+export { defineParagraphSpec } from './paragraph-spec'
+export type { ParagraphSpecExtension } from './paragraph-spec'

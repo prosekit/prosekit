@@ -1,0 +1,135 @@
+{
+  "name": "@prosekit/lit",
+  "type": "module",
+  "version": "0.4.11",
+  "private": false,
+  "description": "Lit components and utilities for ProseKit",
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/lit"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": true,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./autocomplete": "./src/components/autocomplete/index.gen.ts",
+    "./block-handle": "./src/components/block-handle/index.gen.ts",
+    "./inline-popover": "./src/components/inline-popover/index.gen.ts",
+    "./popover": "./src/components/popover/index.gen.ts",
+    "./resizable": "./src/components/resizable/index.gen.ts",
+    "./table-handle": "./src/components/table-handle/index.gen.ts",
+    "./tooltip": "./src/components/tooltip/index.gen.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsc": "tsc -b tsconfig.json",
+    "build:tsdown": "tsdown"
+  },
+  "dependencies": {
+    "@prosekit/web": "workspace:^"
+  },
+  "devDependencies": {
+    "@prosekit/config-tsdown": "workspace:*",
+    "@prosekit/config-vitest": "workspace:*",
+    "tsdown": "^0.11.1",
+    "typescript": "~5.8.3",
+    "vitest": "^3.1.3"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-lit.d.ts",
+        "default": "./dist/prosekit-lit.js"
+      },
+      "./autocomplete": {
+        "types": "./dist/prosekit-lit-autocomplete.d.ts",
+        "default": "./dist/prosekit-lit-autocomplete.js"
+      },
+      "./block-handle": {
+        "types": "./dist/prosekit-lit-block-handle.d.ts",
+        "default": "./dist/prosekit-lit-block-handle.js"
+      },
+      "./inline-popover": {
+        "types": "./dist/prosekit-lit-inline-popover.d.ts",
+        "default": "./dist/prosekit-lit-inline-popover.js"
+      },
+      "./popover": {
+        "types": "./dist/prosekit-lit-popover.d.ts",
+        "default": "./dist/prosekit-lit-popover.js"
+      },
+      "./resizable": {
+        "types": "./dist/prosekit-lit-resizable.d.ts",
+        "default": "./dist/prosekit-lit-resizable.js"
+      },
+      "./table-handle": {
+        "types": "./dist/prosekit-lit-table-handle.d.ts",
+        "default": "./dist/prosekit-lit-table-handle.js"
+      },
+      "./tooltip": {
+        "types": "./dist/prosekit-lit-tooltip.d.ts",
+        "default": "./dist/prosekit-lit-tooltip.js"
+      }
+    },
+    "dev": {},
+    "main": "./dist/prosekit-lit.js",
+    "module": "./dist/prosekit-lit.js",
+    "types": "./dist/prosekit-lit.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-lit.d.ts"
+        ],
+        "autocomplete": [
+          "./dist/prosekit-lit-autocomplete.d.ts"
+        ],
+        "block-handle": [
+          "./dist/prosekit-lit-block-handle.d.ts"
+        ],
+        "inline-popover": [
+          "./dist/prosekit-lit-inline-popover.d.ts"
+        ],
+        "popover": [
+          "./dist/prosekit-lit-popover.d.ts"
+        ],
+        "resizable": [
+          "./dist/prosekit-lit-resizable.d.ts"
+        ],
+        "table-handle": [
+          "./dist/prosekit-lit-table-handle.d.ts"
+        ],
+        "tooltip": [
+          "./dist/prosekit-lit-tooltip.d.ts"
+        ]
+      }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-lit": "./src/index.ts",
+      "prosekit-lit-autocomplete": "./src/components/autocomplete/index.gen.ts",
+      "prosekit-lit-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-lit-inline-popover": "./src/components/inline-popover/index.gen.ts",
+      "prosekit-lit-popover": "./src/components/popover/index.gen.ts",
+      "prosekit-lit-resizable": "./src/components/resizable/index.gen.ts",
+      "prosekit-lit-table-handle": "./src/components/table-handle/index.gen.ts",
+      "prosekit-lit-tooltip": "./src/components/tooltip/index.gen.ts"
+    }
+  }
+}

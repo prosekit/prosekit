@@ -1,0 +1,178 @@
+{
+  "name": "@prosekit/svelte",
+  "type": "module",
+  "version": "0.6.7",
+  "private": false,
+  "description": "Svelte components and utilities for ProseKit",
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/svelte"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./autocomplete": {
+      "svelte": "./src/components/autocomplete/index.gen.ts",
+      "default": "./src/components/autocomplete/index.gen.ts"
+    },
+    "./block-handle": {
+      "svelte": "./src/components/block-handle/index.gen.ts",
+      "default": "./src/components/block-handle/index.gen.ts"
+    },
+    "./inline-popover": {
+      "svelte": "./src/components/inline-popover/index.gen.ts",
+      "default": "./src/components/inline-popover/index.gen.ts"
+    },
+    "./popover": {
+      "svelte": "./src/components/popover/index.gen.ts",
+      "default": "./src/components/popover/index.gen.ts"
+    },
+    "./resizable": {
+      "svelte": "./src/components/resizable/index.gen.ts",
+      "default": "./src/components/resizable/index.gen.ts"
+    },
+    "./table-handle": {
+      "svelte": "./src/components/table-handle/index.gen.ts",
+      "default": "./src/components/table-handle/index.gen.ts"
+    },
+    "./tooltip": {
+      "svelte": "./src/components/tooltip/index.gen.ts",
+      "default": "./src/components/tooltip/index.gen.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "svelte-package -i src -o dist/build && tsx scripts/re-export.ts"
+  },
+  "dependencies": {
+    "@prosekit/core": "workspace:^",
+    "@prosekit/pm": "workspace:^",
+    "@prosekit/web": "workspace:^",
+    "@prosemirror-adapter/core": "^0.4.0",
+    "@prosemirror-adapter/svelte": "^0.4.1"
+  },
+  "peerDependencies": {
+    "svelte": ">= 5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "svelte": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@prosekit/config-vitest": "workspace:*",
+    "@sveltejs/package": "^2.3.11",
+    "@types/node": "^20.17.29",
+    "read-pkg": "^9.0.1",
+    "svelte": "^5.28.2",
+    "svelte-check": "^4.1.7",
+    "tsx": "^4.19.4",
+    "typescript": "~5.8.3",
+    "vitest": "^3.1.3"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-svelte.d.ts",
+        "default": "./dist/prosekit-svelte.js"
+      },
+      "./autocomplete": {
+        "types": "./dist/prosekit-svelte-autocomplete.d.ts",
+        "svelte": "./dist/prosekit-svelte-autocomplete.js",
+        "default": "./dist/prosekit-svelte-autocomplete.js"
+      },
+      "./block-handle": {
+        "types": "./dist/prosekit-svelte-block-handle.d.ts",
+        "svelte": "./dist/prosekit-svelte-block-handle.js",
+        "default": "./dist/prosekit-svelte-block-handle.js"
+      },
+      "./inline-popover": {
+        "types": "./dist/prosekit-svelte-inline-popover.d.ts",
+        "svelte": "./dist/prosekit-svelte-inline-popover.js",
+        "default": "./dist/prosekit-svelte-inline-popover.js"
+      },
+      "./popover": {
+        "types": "./dist/prosekit-svelte-popover.d.ts",
+        "svelte": "./dist/prosekit-svelte-popover.js",
+        "default": "./dist/prosekit-svelte-popover.js"
+      },
+      "./resizable": {
+        "types": "./dist/prosekit-svelte-resizable.d.ts",
+        "svelte": "./dist/prosekit-svelte-resizable.js",
+        "default": "./dist/prosekit-svelte-resizable.js"
+      },
+      "./table-handle": {
+        "types": "./dist/prosekit-svelte-table-handle.d.ts",
+        "svelte": "./dist/prosekit-svelte-table-handle.js",
+        "default": "./dist/prosekit-svelte-table-handle.js"
+      },
+      "./tooltip": {
+        "types": "./dist/prosekit-svelte-tooltip.d.ts",
+        "svelte": "./dist/prosekit-svelte-tooltip.js",
+        "default": "./dist/prosekit-svelte-tooltip.js"
+      }
+    },
+    "dev": {},
+    "main": "./dist/prosekit-svelte.js",
+    "module": "./dist/prosekit-svelte.js",
+    "types": "./dist/prosekit-svelte.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-svelte.d.ts"
+        ],
+        "autocomplete": [
+          "./dist/prosekit-svelte-autocomplete.d.ts"
+        ],
+        "block-handle": [
+          "./dist/prosekit-svelte-block-handle.d.ts"
+        ],
+        "inline-popover": [
+          "./dist/prosekit-svelte-inline-popover.d.ts"
+        ],
+        "popover": [
+          "./dist/prosekit-svelte-popover.d.ts"
+        ],
+        "resizable": [
+          "./dist/prosekit-svelte-resizable.d.ts"
+        ],
+        "table-handle": [
+          "./dist/prosekit-svelte-table-handle.d.ts"
+        ],
+        "tooltip": [
+          "./dist/prosekit-svelte-tooltip.d.ts"
+        ]
+      }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-svelte": "./src/index.ts",
+      "prosekit-svelte-autocomplete": "./src/components/autocomplete/index.gen.ts",
+      "prosekit-svelte-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-svelte-inline-popover": "./src/components/inline-popover/index.gen.ts",
+      "prosekit-svelte-popover": "./src/components/popover/index.gen.ts",
+      "prosekit-svelte-resizable": "./src/components/resizable/index.gen.ts",
+      "prosekit-svelte-table-handle": "./src/components/table-handle/index.gen.ts",
+      "prosekit-svelte-tooltip": "./src/components/tooltip/index.gen.ts"
+    }
+  }
+}

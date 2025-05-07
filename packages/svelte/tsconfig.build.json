@@ -1,0 +1,7 @@
+{
+  "extends": "@ocavue/tsconfig/dom/build-bundler.json",
+  "compilerOptions": {
+    "isolatedDeclarations": true,
+    "allowJs": false
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "name": "@prosekit/basic",
+  "type": "module",
+  "version": "0.4.1",
+  "private": false,
+  "description": "A quick starter for ProseKit",
+  "author": {
+    "name": "ocavue",
+    "email": "ocavue@gmail.com"
+  },
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ocavue/prosekit.git",
+    "directory": "packages/basic"
+  },
+  "bugs": {
+    "url": "https://github.com/ocavue/prosekit/issues"
+  },
+  "keywords": [
+    "ProseMirror"
+  ],
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./style.css": "./src/style.css",
+    "./typography.css": "./src/typography.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:tsc": "tsc -b tsconfig.json",
+    "build:tsdown": "tsdown"
+  },
+  "dependencies": {
+    "@prosekit/core": "workspace:^",
+    "@prosekit/extensions": "workspace:^",
+    "@prosekit/pm": "workspace:^"
+  },
+  "devDependencies": {
+    "@prosekit/config-tsdown": "workspace:*",
+    "@prosekit/config-vitest": "workspace:*",
+    "tsdown": "^0.11.1",
+    "typescript": "~5.8.3",
+    "vitest": "^3.1.3"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/prosekit-basic.d.ts",
+        "default": "./dist/prosekit-basic.js"
+      },
+      "./style.css": {
+        "default": "./dist/style.css"
+      },
+      "./typography.css": {
+        "default": "./dist/typography.css"
+      }
+    },
+    "dev": {},
+    "main": "./dist/prosekit-basic.js",
+    "module": "./dist/prosekit-basic.js",
+    "types": "./dist/prosekit-basic.d.ts",
+    "typesVersions": {
+      "*": {
+        ".": [
+          "./dist/prosekit-basic.d.ts"
+        ]
+      }
+    }
+  },
+  "dev": {
+    "entry": {
+      "prosekit-basic": "./src/index.ts",
+      "style": "./src/style.css",
+      "typography": "./src/typography.css"
+    }
+  }
+}

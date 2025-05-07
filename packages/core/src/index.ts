@@ -86,7 +86,7 @@ export {
   type DefaultStateOptions,
 } from './extensions/default-state'
 export {
-  defineDoc_DEBUG as defineDoc_DEBUG2,
+  defineDoc,
   type DocExtension,
 } from './extensions/doc'
 export {

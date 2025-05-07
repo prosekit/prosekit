@@ -183,6 +183,10 @@
       "./gap-cursor/style.css": {
         "default": "./dist/gap-cursor/style.css"
       },
+      "./hard-break": {
+        "types": "./dist/prosekit-extensions-hard-break.d.ts",
+        "default": "./dist/prosekit-extensions-hard-break.js"
+      },
       "./heading": {
         "types": "./dist/prosekit-extensions-heading.d.ts",
         "default": "./dist/prosekit-extensions-heading.js"
@@ -335,6 +339,9 @@
         "gap-cursor": [
           "./dist/prosekit-extensions-gap-cursor.d.ts"
         ],
+        "hard-break": [
+          "./dist/prosekit-extensions-hard-break.d.ts"
+        ],
         "heading": [
           "./dist/prosekit-extensions-heading.d.ts"
         ],
@@ -420,6 +427,7 @@
       "prosekit-extensions-file": "./src/file/index.ts",
       "prosekit-extensions-gap-cursor": "./src/gap-cursor/index.ts",
       "gap-cursor/style": "./src/gap-cursor/style.css",
+      "prosekit-extensions-hard-break": "./src/hard-break/index.ts",
       "prosekit-extensions-heading": "./src/heading/index.ts",
       "prosekit-extensions-horizontal-rule": "./src/horizontal-rule/index.ts",
       "prosekit-extensions-image": "./src/image/index.ts",

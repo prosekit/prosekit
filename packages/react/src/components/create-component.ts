@@ -4,16 +4,17 @@ import {
   forwardRef,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
   type ForwardRefExoticComponent,
   type HTMLAttributes,
-  type MutableRefObject as Ref,
   type RefAttributes,
 } from 'react'
-import { mergeRefs } from 'react-merge-refs'
 
 import { useEditorContext } from '../contexts/editor-context'
+
+import { mergeRefs } from './merge-refs'
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect
 
@@ -38,7 +39,7 @@ export function createComponent<
 
     const properties: Record<string, unknown> = {}
     const attributes: Record<string, unknown> = {}
-    const eventHandlersRef: Ref<Record<string, AnyFunction>> = useRef({})
+    const eventHandlersRef = useRef<Record<string, AnyFunction>>({})
     const eventHandlers: Record<string, AnyFunction> = {}
 
     for (const [name, value] of Object.entries(props)) {
@@ -121,10 +122,9 @@ export function createComponent<
       }
     }, [el])
 
-    return createElement(tagName, {
-      ...attributes,
-      ref: mergeRefs([ref, setEl]),
-    })
+    const mergedRef = useMemo(() => mergeRefs([ref, setEl]), [ref])
+
+    return createElement(tagName, { ...attributes, ref: mergedRef })
   })
 
   Component.displayName = displayName

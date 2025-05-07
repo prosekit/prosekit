@@ -920,8 +920,8 @@ importers:
         specifier: ^1.9.6
         version: 1.9.6
       starlight-theme-nova:
-        specifier: ^0.7.0
-        version: 0.7.0(@astrojs/starlight@0.34.2(astro@5.7.11(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(rollup@4.40.1)(tsx@4.19.4)(typescript@5.8.3)(yaml@2.7.1)))(typescript@5.8.3)
+        specifier: ^0.7.1
+        version: 0.7.1(@astrojs/starlight@0.34.2(astro@5.7.11(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(rollup@4.40.1)(tsx@4.19.4)(typescript@5.8.3)(yaml@2.7.1)))(typescript@5.8.3)
       svelte:
         specifier: ^5.28.2
         version: 5.28.2
@@ -6181,8 +6181,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@0.7.0:
-    resolution: {integrity: sha512-aXheRmQ58F3G8sUEpF3UAkZJqZi+ow0IyeaiZLShgdd9a2Cpu6WMSdCv5B9MC6JGBSSH3dKQ33vNWLqJs5VKAw==}
+  starlight-theme-nova@0.7.1:
+    resolution: {integrity: sha512-Lzopz4ouXdg6uvoAZISEnZtV3p4JgGV5x2THqf2pAdbMLPB5o8E+aqDeNyiAKYv9omncDA4s9R50oAhbayS8Cg==}
     peerDependencies:
       '@astrojs/starlight': '*'
     peerDependenciesMeta:
@@ -13643,7 +13643,7 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@0.7.0(@astrojs/starlight@0.34.2(astro@5.7.11(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(rollup@4.40.1)(tsx@4.19.4)(typescript@5.8.3)(yaml@2.7.1)))(typescript@5.8.3):
+  starlight-theme-nova@0.7.1(@astrojs/starlight@0.34.2(astro@5.7.11(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(rollup@4.40.1)(tsx@4.19.4)(typescript@5.8.3)(yaml@2.7.1)))(typescript@5.8.3):
     dependencies:
       '@shikijs/transformers': 3.4.0
       '@shikijs/twoslash': 3.4.0(typescript@5.8.3)

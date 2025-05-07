@@ -14,8 +14,6 @@ const preflight = css`
   @layer base {
     *, ::after, ::before, ::backdrop, ::file-selector-button {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
       border: 0 solid;
     }
   }

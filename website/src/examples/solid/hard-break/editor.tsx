@@ -15,7 +15,7 @@ Hearest thou<br />
 Hardly a breath;<br />
 The birds are asleep in the trees:<br />
 Wait, soon like these<br />
-Thou too shalt rest.
+Thou too shalt rest.<br />
 </p>
 `
 

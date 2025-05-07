@@ -6,7 +6,7 @@ CHANGELOG.md
 **/public/astrobook
 .yalc
 yalc.lock
-website/dist
+dist
 
 .cache
 .DS_Store

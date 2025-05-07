@@ -2290,6 +2290,10 @@ export const exampleMeta = {
         {
           "path": "toolbar.tsx",
           "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
         }
       ]
     },

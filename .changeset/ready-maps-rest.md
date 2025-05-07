@@ -1,5 +1,6 @@
 ---
 '@prosekit/extensions': minor
+'@prosekit/basic': minor
 'prosekit': minor
 ---
 

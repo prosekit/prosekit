@@ -10,7 +10,7 @@ import { defineTable } from 'prosekit/extensions/table'
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
-    defineDoc_DEBUG2(),
+    defineDoc(),
     defineText(),
     defineParagraph(),
     defineTable(),

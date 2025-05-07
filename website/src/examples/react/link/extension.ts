@@ -1,6 +1,9 @@
 import { defineBaseKeymap } from 'prosekit/core'
 
-import { defineDoc } from 'prosekit/extensions/doc'
+import {
+  defineDoc,
+  defineDoc,
+} from 'prosekit/extensions/doc'
 import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineText } from 'prosekit/extensions/text'
 
@@ -10,7 +13,7 @@ import { defineLink } from 'prosekit/extensions/link'
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
-    defineDoc_DEBUG2(),
+    defineDoc(),
     defineText(),
     defineParagraph(),
     defineLink(),

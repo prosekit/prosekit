@@ -7,7 +7,10 @@ import {
   defineBaseKeymap,
 } from 'prosekit/core'
 
-import { defineDoc } from 'prosekit/extensions/doc'
+import {
+  defineDoc,
+  defineDoc,
+} from 'prosekit/extensions/doc'
 import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineText } from 'prosekit/extensions/text'
 
@@ -30,7 +33,7 @@ import { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'
 
 export function defineExtension(doc: LoroDocType, awareness: CursorAwareness) {
   return union([
-    defineDoc_DEBUG2(),
+    defineDoc(),
     defineText(),
     defineHeading(),
     defineList(),

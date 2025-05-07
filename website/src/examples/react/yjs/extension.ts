@@ -3,7 +3,10 @@ import {
   defineBaseKeymap,
 } from 'prosekit/core'
 
-import { defineDoc } from 'prosekit/extensions/doc'
+import {
+  defineDoc,
+  defineDoc,
+} from 'prosekit/extensions/doc'
 import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineText } from 'prosekit/extensions/text'
 
@@ -28,7 +31,7 @@ import type * as Y from 'yjs'
 
 export function defineExtension(doc: Y.Doc, awareness: Awareness) {
   return union([
-    defineDoc_DEBUG2(),
+    defineDoc(),
     defineText(),
     defineHeading(),
     defineList(),

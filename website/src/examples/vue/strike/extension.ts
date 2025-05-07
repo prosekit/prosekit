@@ -10,7 +10,7 @@ import { defineStrike } from 'prosekit/extensions/strike'
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
-    defineDoc_DEBUG2(),
+    defineDoc(),
     defineText(),
     defineParagraph(),
     defineStrike(),

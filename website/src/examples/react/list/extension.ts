@@ -10,7 +10,7 @@ import { defineList } from 'prosekit/extensions/list'
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
-    defineDoc_DEBUG2(),
+    defineDoc(),
     defineText(),
     defineParagraph(),
     defineList(),

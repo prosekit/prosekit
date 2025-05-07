@@ -10,7 +10,7 @@ import { defineItalic } from 'prosekit/extensions/italic'
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
-    defineDoc_DEBUG2(),
+    defineDoc(),
     defineText(),
     defineParagraph(),
     defineItalic(),

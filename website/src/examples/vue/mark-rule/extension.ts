@@ -18,7 +18,7 @@ import { defineIssueLink } from './issue-link'
 
 export function defineExtension() {
   return union(
-    defineDoc_DEBUG2(),
+    defineDoc(),
     defineText(),
     defineParagraph(),
     defineHistory(),

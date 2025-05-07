@@ -11,7 +11,7 @@ import { defineImage } from 'prosekit/extensions/image'
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
-    defineDoc_DEBUG2(),
+    defineDoc(),
     defineText(),
     defineParagraph(),
     defineImage(),

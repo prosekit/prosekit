@@ -10,7 +10,7 @@ import { defineHeading } from 'prosekit/extensions/heading'
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
-    defineDoc_DEBUG2(),
+    defineDoc(),
     defineText(),
     defineParagraph(),
     defineHeading(),

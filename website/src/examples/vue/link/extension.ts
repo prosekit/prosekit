@@ -10,7 +10,7 @@ import { defineLink } from 'prosekit/extensions/link'
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
-    defineDoc_DEBUG2(),
+    defineDoc(),
     defineText(),
     defineParagraph(),
     defineLink(),

@@ -1,3 +1,0 @@
-import { defineTable, defineTableCellSpec, defineTableCommands, defineTableHeaderCellSpec, defineTablePlugins, defineTableRowSpec, defineTableSpec, exitTable, findTable, insertTable, isCellSelection, selectTable, selectTableCell, selectTableColumn, selectTableRow } from "./table-DnVliJ6E.js";
-
-export { defineTable, defineTableCellSpec, defineTableCommands, defineTableHeaderCellSpec, defineTablePlugins, defineTableRowSpec, defineTableSpec, exitTable, findTable, insertTable, isCellSelection, selectTable, selectTableCell, selectTableColumn, selectTableRow };

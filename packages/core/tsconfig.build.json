@@ -1,8 +1,0 @@
-{
-  "extends": "@ocavue/tsconfig/dom/build-bundler.json",
-  "exclude": ["node_modules", "dist", "**/*.spec.*", "**/testing/**/*"],
-  "compilerOptions": {
-    "isolatedDeclarations": true,
-    "allowJs": false
-  }
-}

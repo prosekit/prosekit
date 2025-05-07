@@ -1,8 +1,0 @@
-.prosekit-placeholder:before {
-  content: attr(data-placeholder);
-  opacity: .3;
-  pointer-events: none;
-  height: 0;
-  position: absolute;
-}
-

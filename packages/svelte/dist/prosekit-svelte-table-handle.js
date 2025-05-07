@@ -1,1 +1,0 @@
-export * from './build/components/table-handle/index.gen'

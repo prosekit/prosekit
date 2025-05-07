@@ -1,2 +1,0 @@
-import { HighlighterOptions, HighlighterResult, ShikiHighlighterOptions, createOrGetHighlighter } from "./shiki-highlighter-chunk-Cd3WeOKL.js";
-export { HighlighterOptions, HighlighterResult, ShikiHighlighterOptions, createOrGetHighlighter };

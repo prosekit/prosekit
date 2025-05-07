@@ -1,1 +1,0 @@
-export * from './build/components/block-handle/index.gen'

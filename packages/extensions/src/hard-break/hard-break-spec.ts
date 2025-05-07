@@ -25,7 +25,7 @@ export function defineHardBreakSpec(): HardBreakSpecExtension {
     group: 'inline',
     parseDOM: [{ tag: 'br' }],
     toDOM() {
-      return ['br', 0]
+      return ['br']
     },
   })
 }

@@ -1,6 +1,6 @@
 import {
   defineBaseKeymap,
-  defineDoc,
+  defineDoc_DEBUG2,
   defineParagraph,
   defineText,
   union,
@@ -10,7 +10,7 @@ import { defineUnderline } from 'prosekit/extensions/underline'
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
-    defineDoc(),
+    defineDoc_DEBUG2(),
     defineText(),
     defineParagraph(),
     defineUnderline(),

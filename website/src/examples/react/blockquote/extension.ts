@@ -1,6 +1,6 @@
 import {
   defineBaseKeymap,
-  defineDoc,
+  defineDoc_DEBUG2,
   defineParagraph,
   defineText,
   union,
@@ -10,7 +10,7 @@ import { defineBlockquote } from 'prosekit/extensions/blockquote'
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
-    defineDoc(),
+    defineDoc_DEBUG2(),
     defineText(),
     defineParagraph(),
     defineBlockquote(),

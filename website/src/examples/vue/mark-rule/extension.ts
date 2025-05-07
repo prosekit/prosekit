@@ -1,7 +1,7 @@
 import {
   defineBaseCommands,
   defineBaseKeymap,
-  defineDoc,
+  defineDoc_DEBUG2,
   defineHistory,
   defineParagraph,
   defineText,
@@ -18,7 +18,7 @@ import { defineIssueLink } from './issue-link'
 
 export function defineExtension() {
   return union(
-    defineDoc(),
+    defineDoc_DEBUG2(),
     defineText(),
     defineParagraph(),
     defineHistory(),

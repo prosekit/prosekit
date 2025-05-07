@@ -1,6 +1,6 @@
 import {
   defineBaseKeymap,
-  defineDoc,
+  defineDoc_DEBUG2,
   defineHistory,
   defineParagraph,
   defineText,
@@ -12,7 +12,7 @@ import { defineTable } from 'prosekit/extensions/table'
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
-    defineDoc(),
+    defineDoc_DEBUG2(),
     defineText(),
     defineParagraph(),
     defineTable(),

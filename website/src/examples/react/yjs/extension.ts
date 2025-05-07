@@ -1,7 +1,7 @@
 import {
   defineBaseCommands,
   defineBaseKeymap,
-  defineDoc,
+  defineDoc_DEBUG2,
   defineParagraph,
   defineText,
   union,
@@ -26,7 +26,7 @@ import type * as Y from 'yjs'
 
 export function defineExtension(doc: Y.Doc, awareness: Awareness) {
   return union([
-    defineDoc(),
+    defineDoc_DEBUG2(),
     defineText(),
     defineHeading(),
     defineList(),

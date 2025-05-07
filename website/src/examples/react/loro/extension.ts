@@ -5,7 +5,7 @@ import type {
 import {
   defineBaseCommands,
   defineBaseKeymap,
-  defineDoc,
+  defineDoc_DEBUG2,
   defineParagraph,
   defineText,
   union,
@@ -28,7 +28,7 @@ import { defineVirtualSelection } from 'prosekit/extensions/virtual-selection'
 
 export function defineExtension(doc: LoroDocType, awareness: CursorAwareness) {
   return union([
-    defineDoc(),
+    defineDoc_DEBUG2(),
     defineText(),
     defineHeading(),
     defineList(),

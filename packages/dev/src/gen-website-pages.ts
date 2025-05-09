@@ -1,5 +1,4 @@
 import { basename } from 'node:path'
-import { fileURLToPath } from 'node:url'
 
 import { pascalCase } from 'change-case'
 
@@ -140,4 +139,4 @@ function genStories(framework: string, examples: Example[]): string {
   return lines.join('\n') + '\n'
 }
 
-const currentFilename = basename(fileURLToPath(import.meta.url))
+const currentFilename = basename(import.meta.filename)

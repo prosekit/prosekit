@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.13.1
+
+### Patch Changes
+
+- [`4ff5d1f`](https://github.com/ocavue/prosekit/commit/4ff5d1f62144db07d45257b2314ad57ae090533b) ![](https://prosekit.dev/b/preact)
+
+  Remove incorrect dependency on `react` for `prosekit/preact`.
+
 ## 0.13.0
 
 ### Minor Changes

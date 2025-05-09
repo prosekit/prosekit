@@ -30,6 +30,6 @@
     "tsx": "^4.19.4",
     "typescript": "~5.8.3",
     "unocss": "^66.0.0",
-    "unplugin-macros": "^0.16.3"
+    "unplugin-macros": "^0.17.0"
   }
 }

@@ -163,9 +163,6 @@ importers:
       unocss:
         specifier: ^66.0.0
         version: 66.0.0(postcss@8.5.3)(vite@6.3.4(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
-      unplugin-macros:
-        specifier: ^0.17.0
-        version: 0.17.0(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1)
 
   packages/config-vitest:
     devDependencies:
@@ -3218,10 +3215,6 @@ packages:
     resolution: {integrity: sha512-MdJqjpodkS5J149zN0Po+HPshkTdUyrvF7CKTafUgv69vBSPtncrj+3IiUgqdd7ElIEkbeXCsEouBUwLrw9Ilg==}
     engines: {node: '>=16.14.0'}
 
-  ast-kit@2.0.0:
-    resolution: {integrity: sha512-P63jzlYNz96MF9mCcprU+a7I5/ZQ5QAn3y+mZcPWEcGV3CHF/GWnkFPj3oCrWLUjL47+PD9PNiCUdXxw0cWdsg==}
-    engines: {node: '>=20.18.0'}
-
   astring@1.9.0:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
     hasBin: true
@@ -4939,10 +4932,6 @@ packages:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
     hasBin: true
 
-  magic-string-ast@0.9.1:
-    resolution: {integrity: sha512-18dv2ZlSSgJ/jDWlZGKfnDJx56ilNlYq9F7NnwuWTErsmYmqJ2TWE4l1o2zlUHBYUGBy3tIhPCC1gxq8M5HkMA==}
-    engines: {node: '>=20.18.0'}
-
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
@@ -6639,10 +6628,6 @@ packages:
   unplugin-lightningcss@0.3.3:
     resolution: {integrity: sha512-mMNRCNIcxc/3410w7sJdXcPxn0IGZdEpq42OBDyckdGkhOeWYZCG9RkHs72TFyBsS82a4agFDOFU8VrFKF2ZvA==}
     engines: {node: '>=18.12.0'}
-
-  unplugin-macros@0.17.0:
-    resolution: {integrity: sha512-MMfCAl/wDYio8fZ5bTmHmQF1REBx8ht0ajSjpE/qrO2Bcrs5F9DRZmZRhxXJ+kxlYeMnu6RqbrzlhdH6ZQGL5Q==}
-    engines: {node: '>=20.18.0'}
 
   unplugin-utils@0.2.4:
     resolution: {integrity: sha512-8U/MtpkPkkk3Atewj1+RcKIjb5WBimZ/WSLhhR3w6SsIj8XJuKTacSP8g+2JhfSGw0Cb125Y+2zA/IzJZDVbhA==}
@@ -9790,11 +9775,6 @@ snapshots:
       '@babel/parser': 7.27.2
       pathe: 2.0.3
 
-  ast-kit@2.0.0:
-    dependencies:
-      '@babel/parser': 7.27.2
-      pathe: 2.0.3
-
   astring@1.9.0: {}
 
   astro-expressive-code@0.41.2(astro@5.7.12(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(rollup@4.40.1)(tsx@4.19.4)(typescript@5.8.3)(yaml@2.7.1)):
@@ -11852,10 +11832,6 @@ snapshots:
   lunr@2.3.9: {}
 
   lz-string@1.5.0: {}
-
-  magic-string-ast@0.9.1:
-    dependencies:
-      magic-string: 0.30.17
 
   magic-string@0.30.17:
     dependencies:
@@ -14198,27 +14174,6 @@ snapshots:
       unplugin: 2.3.2
     optional: true
 
-  unplugin-macros@0.17.0(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1):
-    dependencies:
-      ast-kit: 2.0.0
-      magic-string-ast: 0.9.1
-      unplugin: 2.3.2
-      vite: 6.3.4(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1)
-      vite-node: 3.1.3(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1)
-    transitivePeerDependencies:
-      - '@types/node'
-      - jiti
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - tsx
-      - yaml
-
   unplugin-utils@0.2.4:
     dependencies:
       pathe: 2.0.3
@@ -14229,6 +14184,7 @@ snapshots:
       acorn: 8.14.1
       picomatch: 4.0.2
       webpack-virtual-modules: 0.6.2
+    optional: true
 
   unrs-resolver@1.7.2:
     dependencies:
@@ -14506,7 +14462,8 @@ snapshots:
 
   webidl-conversions@3.0.1: {}
 
-  webpack-virtual-modules@0.6.2: {}
+  webpack-virtual-modules@0.6.2:
+    optional: true
 
   whatwg-url@5.0.0:
     dependencies:

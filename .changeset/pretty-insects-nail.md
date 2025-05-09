@@ -3,4 +3,4 @@
 '@prosekit/preact': patch
 ---
 
-Remove incorrect dependency on react.
+Remove incorrect dependency on `react` for `prosekit/preact`.

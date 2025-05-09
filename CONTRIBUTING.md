@@ -4,7 +4,7 @@ Thanks for your interest in contributing to ProseKit! This guide will help you g
 
 ## Setup
 
-1. Install [Node.js](https://nodejs.org/) v20 or later
+1. Install [Node.js](https://nodejs.org/) v20.11.0 or later
 2. Install [pnpm](https://pnpm.io/)
 3. Clone the ProseKit repository
 4. Run `pnpm install` in the repository root directory

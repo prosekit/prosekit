@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.13.2
+
+### Patch Changes
+
+- [`187c1f1`](https://github.com/ocavue/prosekit/commit/187c1f106b76b0488c8596d760d1105fab32bf63) ![](https://prosekit.dev/b/prosekit)
+
+  Fix a bundling issue where some CSS files in the `prosekit` package are empty.
+
 ## 0.13.1
 
 ### Patch Changes

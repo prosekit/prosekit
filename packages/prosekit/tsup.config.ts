@@ -21,4 +21,5 @@ export default defineConfig({
   sourcemap: false,
   clean: false,
   noExternal: [/\.css$/i],
+  target: 'chrome80',
 })

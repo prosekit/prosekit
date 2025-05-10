@@ -103,8 +103,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -124,8 +124,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -213,8 +213,8 @@ importers:
         specifier: ^3.1.3
         version: 3.1.3(playwright@1.52.0)(vite@6.3.4(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1))(vitest@3.1.3)
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -335,8 +335,8 @@ importers:
         specifier: ^3.5.3
         version: 3.5.3
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       type-fest:
         specifier: ^4.41.0
         version: 4.41.0
@@ -369,8 +369,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -412,8 +412,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -443,8 +443,8 @@ importers:
         specifier: ^10.26.6
         version: 10.26.6
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -528,8 +528,8 @@ importers:
         specifier: ^5.28.2
         version: 5.28.2
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       tsup:
         specifier: ^8.4.0
         version: 8.4.0(jiti@2.4.2)(postcss@8.5.3)(tsx@4.19.4)(typescript@5.8.3)(yaml@2.7.1)
@@ -595,8 +595,8 @@ importers:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -632,8 +632,8 @@ importers:
         specifier: ^1.9.6
         version: 1.9.6
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -712,14 +712,14 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       '@vitejs/plugin-vue':
-        specifier: ^5.2.3
-        version: 5.2.3(vite@6.3.4(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
+        specifier: ^5.2.4
+        version: 5.2.4(vite@6.3.4(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))
       '@vue/test-utils':
         specifier: ^2.4.6
         version: 2.4.6
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -782,8 +782,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.11.1
-        version: 0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3)
+        specifier: ^0.11.2
+        version: 0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -2057,68 +2057,68 @@ packages:
   '@oxc-project/types@0.68.1':
     resolution: {integrity: sha512-Q/H52+HXPPxuIHwQnVkEM8GebLnNcokkI4zQQdbxLIZdfxMGhAm9+gEqsMku3t95trN/1titHUmCM9NxbKaE2g==}
 
-  '@oxc-resolver/binding-darwin-arm64@7.0.1':
-    resolution: {integrity: sha512-LpqmYjzY+f4AThJ9oy1DjRfkWoQcwGJtpU1UWRlR5Zm5Q/H86hFqkf8D97aqku1lLjzewi7qFWyo2gR1Fwkhhw==}
+  '@oxc-resolver/binding-darwin-arm64@9.0.0':
+    resolution: {integrity: sha512-KKxxOa7DUxZy8IdJIm6nlLvptr+TkwV+Gytez75wi+C5+GRy+qnO7z1wIL5eNogVKQaOk8RxCYmHcZ9aa8tBsg==}
     cpu: [arm64]
     os: [darwin]
 
-  '@oxc-resolver/binding-darwin-x64@7.0.1':
-    resolution: {integrity: sha512-MmVmhkIKD7pd4ChdkYtiTXi5HpK2+tRFMH/G692cYKs3T6SqRciFm6uXFWNreZsavhqfnolJFvGDFAkvpEN6xQ==}
+  '@oxc-resolver/binding-darwin-x64@9.0.0':
+    resolution: {integrity: sha512-x0QQt0IvPSi1wfHZ8f+ahKKOdGnUYj0DsxUf0Fpw/CoJYOapeNbOTgpy1FAPJU5FSED0gTrSt++fhrcqMAzD0Q==}
     cpu: [x64]
     os: [darwin]
 
-  '@oxc-resolver/binding-freebsd-x64@7.0.1':
-    resolution: {integrity: sha512-2+8DMR56iXxj7eZLJteXFM/lmEz1mQI0btCyddREWI8MMgpLY4ORNXZZbBZB/ucaHS3WeBp68PDN6oFyKm1YiA==}
+  '@oxc-resolver/binding-freebsd-x64@9.0.0':
+    resolution: {integrity: sha512-UQR0iWwZB/djSiuyMZR8SihcE8pb13mTjGSBkhE43rV7wQUtFmvCJry3Pw0FwHw3wmJMNdIyoPDWuL7L5ZsoAw==}
     cpu: [x64]
     os: [freebsd]
 
-  '@oxc-resolver/binding-linux-arm-gnueabihf@7.0.1':
-    resolution: {integrity: sha512-EXdtmtbmKVm9H+qhJswUsKC0/AVdm1fIB69DBhzpMUFn6Bf+s6anZmMYUJY70cyAYsOvC0DhYiFw2vHZSl6htQ==}
+  '@oxc-resolver/binding-linux-arm-gnueabihf@9.0.0':
+    resolution: {integrity: sha512-pVwdflMCXpJTPWIXm1Zhn7WZSq9VBXYnFyRaBAsqRQrMtBr85ewJIleXk7c1ptOKD3j1q/+9h7ZdfBOSeojaig==}
     cpu: [arm]
     os: [linux]
 
-  '@oxc-resolver/binding-linux-arm64-gnu@7.0.1':
-    resolution: {integrity: sha512-mU+3n1K9qYpgZQtcwrYqaaM/y5I1j7YX4KdvKONgQLNMM8lHysXuidn35j0MX7grGKh7I1iKC1JxHQHTDzDRSg==}
+  '@oxc-resolver/binding-linux-arm64-gnu@9.0.0':
+    resolution: {integrity: sha512-JnGX6+mbi21nu3qeQp6D58H3EqIhZzIfjZIJEtiD6/cGRn/1QnI9RnC/KvqIXQTXEhqlgiXP/4ZmMrOZmbQzqg==}
     cpu: [arm64]
     os: [linux]
 
-  '@oxc-resolver/binding-linux-arm64-musl@7.0.1':
-    resolution: {integrity: sha512-6gqY+pcvAAwKpC1F9adtL8DyrYq7GBcbkTzokeR2M++zB1CSp30SK1WAm50w0lqcUNU0eIlClM1LQUTqLJ5U6g==}
+  '@oxc-resolver/binding-linux-arm64-musl@9.0.0':
+    resolution: {integrity: sha512-sfahvJ59VwsovtUPq3kfNhDJ9lLC+xfgUyMf1qN5Ni8/hPk3z4bxrwxWdK9Vj3azASewqLGCNcDd4s2seWmjcA==}
     cpu: [arm64]
     os: [linux]
 
-  '@oxc-resolver/binding-linux-riscv64-gnu@7.0.1':
-    resolution: {integrity: sha512-zCWDS84aFhPMiZsAkBvNl4MmNCF6V9usPiCnFwRSqAMfbNd9QC6jF96v3frYJZKHUswsBWMveBaZsTa6R2z5bA==}
+  '@oxc-resolver/binding-linux-riscv64-gnu@9.0.0':
+    resolution: {integrity: sha512-DFhjQbv1/pL5GpecPtPRdhwVOChizocJt80VpcTSUTyJ3KDYawy4ppp29nc3xhLVq3iTFF4a5zGlz6T2PYIktQ==}
     cpu: [riscv64]
     os: [linux]
 
-  '@oxc-resolver/binding-linux-s390x-gnu@7.0.1':
-    resolution: {integrity: sha512-mP3IN+UPz4KQTUJXsl15l87JcOlex+wCNaL5lUXuwdllC4hTcpcs+t/3zEKRh5qw0ltYKIgGbyol/QDnlZdieg==}
+  '@oxc-resolver/binding-linux-s390x-gnu@9.0.0':
+    resolution: {integrity: sha512-m/vqUfDINlzMEzqRIGnz1pRj0Z8Iq3hypnEl0Q02WsLwY9NPPherDHg82OEl8HMEnxUf587F60BLprw515l2Nw==}
     cpu: [s390x]
     os: [linux]
 
-  '@oxc-resolver/binding-linux-x64-gnu@7.0.1':
-    resolution: {integrity: sha512-y5Jxb/IihMMkczQ5+R68cdug0ojVNLsNCJxF0NhTBxhy0e7XtpJVmFXlFDxXcN3rjnB+Esub13CSetZ1tirYYg==}
+  '@oxc-resolver/binding-linux-x64-gnu@9.0.0':
+    resolution: {integrity: sha512-zfyYtF/cyYv1CMefMawRfNEy9jnKTEroseS2S0++c6PcJWINHAwzIvgc3WkZGRPBIa/QGkZZV93UBFdtFYOdlw==}
     cpu: [x64]
     os: [linux]
 
-  '@oxc-resolver/binding-linux-x64-musl@7.0.1':
-    resolution: {integrity: sha512-rgtOKJFdFULwPfc2o8b1EmObykBu4V9SpyJjMI717DPbd3zwfUCLBsO0sCDfZiFiH7CHpZDsiStdLrmgjwD5NA==}
+  '@oxc-resolver/binding-linux-x64-musl@9.0.0':
+    resolution: {integrity: sha512-tvPNhEcjpdKNNWJEdIOaVsFfuZAZhjE/aWEGbqTMGYhJbtCbAt1uzuJC4XfFY/VBhkgF24pxJs9f7XkhHRHVnQ==}
     cpu: [x64]
     os: [linux]
 
-  '@oxc-resolver/binding-wasm32-wasi@7.0.1':
-    resolution: {integrity: sha512-lFAGp9yu96S3/hyrCY9Wg6oX/tfCa3NCV40eZFTHJj6YU+cbpNVBeYI0RPIG1EPp4Idw54L1xVjVfQuBBtbcDw==}
+  '@oxc-resolver/binding-wasm32-wasi@9.0.0':
+    resolution: {integrity: sha512-orbudwE33S1PbcmFUA5l93HHI11lDhBfEjsnCoH5Osqs97/9/Kysruaf1s7Bja4K65I2SPpnISQ+F8b64QhjoQ==}
     engines: {node: '>=14.0.0'}
     cpu: [wasm32]
 
-  '@oxc-resolver/binding-win32-arm64-msvc@7.0.1':
-    resolution: {integrity: sha512-M2nyfCrIwwEzyJNSBYMCztTzVj7DZPV/IAzBqgZxOPzxKDt6mP/uuKjQYSO/A1SRouPWkbCQZe5sFR4cpCYwDA==}
+  '@oxc-resolver/binding-win32-arm64-msvc@9.0.0':
+    resolution: {integrity: sha512-SOIQYHHi5XqgOLWKvyafQKy+Rcjtuo9sdm+g49xW0FOl6cSTR7QGTHxIyRATYXkeEnGT+ZT/h3k7WS//lk5ZwA==}
     cpu: [arm64]
     os: [win32]
 
-  '@oxc-resolver/binding-win32-x64-msvc@7.0.1':
-    resolution: {integrity: sha512-CTfcJ9Rp3Lb6YU0smoSEdChHtSY/LriZkuikwHTDVkfl1rtUXhZMt3SwHQq37Mgf/BezUZJh7cSgy5rgM0ARLw==}
+  '@oxc-resolver/binding-win32-x64-msvc@9.0.0':
+    resolution: {integrity: sha512-/5LwrJwk9fT9Qzd3V57zrCI7343NwSUStFhm1i4Llno8oNOBaLbpZ0MEXoDEkPRQTSgN9MvHeIx6iBfy0PpsWQ==}
     cpu: [x64]
     os: [win32]
 
@@ -2956,8 +2956,8 @@ packages:
       vite: ^5.0.0 || ^6.0.0
       vue: ^3.2.25
 
-  '@vitejs/plugin-vue@5.2.3':
-    resolution: {integrity: sha512-IYSLEQj4LgZZuoVpdSUCw3dIynTWQgPlaRP6iAvMle4My0HdYwr5g5wQAfwOeHQBmYwEkqF70nRpSilr6PoUDg==}
+  '@vitejs/plugin-vue@5.2.4':
+    resolution: {integrity: sha512-7Yx/SXSOcQq5HiiV3orevHUFn+pmMB4cgbEkDYgnkUWb0WfeQ/wa2yFv6D5ICiCQOVpjA7vYDXrC7AGO8yjDHA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0
@@ -3161,6 +3161,10 @@ packages:
     resolution: {integrity: sha512-0qWUglt9JEqLFr3w1I1pbrChn1grhaiAR2ocX1PP/flRmxgtwTzPFFFnfIlD6aMOLQZgSuCRlidD70lvx8yhzg==}
     engines: {node: '>=14'}
 
+  ansis@4.0.0:
+    resolution: {integrity: sha512-P8nrHI1EyW9OfBt1X7hMSwGN2vwRuqHSKJAT1gbLWZRzDa24oHjYwGHvEgHeBepupzk878yS/HBZ0NMPYtbolw==}
+    engines: {node: '>=14'}
+
   any-promise@1.3.0:
     resolution: {integrity: sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A==}
 
@@ -3223,9 +3227,9 @@ packages:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
     engines: {node: '>=12'}
 
-  ast-kit@1.4.3:
-    resolution: {integrity: sha512-MdJqjpodkS5J149zN0Po+HPshkTdUyrvF7CKTafUgv69vBSPtncrj+3IiUgqdd7ElIEkbeXCsEouBUwLrw9Ilg==}
-    engines: {node: '>=16.14.0'}
+  ast-kit@2.0.0:
+    resolution: {integrity: sha512-P63jzlYNz96MF9mCcprU+a7I5/ZQ5QAn3y+mZcPWEcGV3CHF/GWnkFPj3oCrWLUjL47+PD9PNiCUdXxw0cWdsg==}
+    engines: {node: '>=20.18.0'}
 
   astring@1.9.0:
     resolution: {integrity: sha512-LElXdjswlqjWrPpJFg1Fx4wpkOCxj1TDHlSV4PlaRxHGWko024xICaa97ZkMfs6DRKlCguiAI+rbXv5GWwXIkg==}
@@ -3754,8 +3758,8 @@ packages:
     resolution: {integrity: sha512-2QF/g9/zTaPDc3BjNcVTGoBbXBgYfMTTceLaYcFJ/W9kggFUkhxD/hMEeuLKbugyef9SqAx8cpgwlIP/jinUTA==}
     engines: {node: '>=4'}
 
-  dts-resolver@1.1.1:
-    resolution: {integrity: sha512-slMqHdR+fZFxL2Iud9rZSw7T/YKEX0LkeP907JRglcpRlB3dF9okHuVnxwAV6v0knJot5PA5cn0shKbEAKZaTQ==}
+  dts-resolver@1.2.0:
+    resolution: {integrity: sha512-+xNF7raXYI1E3IFB+f3JqvoKYFI8R+1Mh9mpI75yNm3F5XuiC6ErEXe2Lqh9ach+4MQ1tOefzjxulhWGVclYbg==}
     engines: {node: '>=20.18.0'}
 
   dunder-proto@1.0.1:
@@ -5373,8 +5377,8 @@ packages:
     resolution: {integrity: sha512-qFOyK5PjiWZd+QQIh+1jhdb9LpxTF0qs7Pm8o5QHYZ0M3vKqSqzsZaEB6oWlxZ+q2sJBMI/Ktgd2N5ZwQoRHfg==}
     engines: {node: '>= 0.4'}
 
-  oxc-resolver@7.0.1:
-    resolution: {integrity: sha512-9TrxkeIdlszOtIXZaPPM3ARs2dEVeANL5tmayrAWWowBYJh4ZEBrO1PqFN3wFHiOpx1+50GI4zvqLKpXa7tdfQ==}
+  oxc-resolver@9.0.0:
+    resolution: {integrity: sha512-KV20QuwUfhGOuVpWubqhL7gmXDPw0vgsR7rNZd/+huSyGRq80QIRS7UQvRZ4A+C5OoCNCi0Lg48pFLW6hQdKQA==}
 
   p-filter@2.1.0:
     resolution: {integrity: sha512-ZBxxZ5sL2HghephhpGAQdoskxplTwr7ICaehZwLIlfL6acuVgZPm8yBNuRAFBGEqtD/hmUeq9eqLg2ys9Xr/yw==}
@@ -5992,14 +5996,17 @@ packages:
   rfdc@1.4.1:
     resolution: {integrity: sha512-q1b3N5QkRUWUl7iyylaaj3kOpIT0N2i9MqIEQXP73GVsN9cw3fdx8X63cEmWhJGi2PPCF23Ijp7ktmd39rawIA==}
 
-  rolldown-plugin-dts@0.11.1:
-    resolution: {integrity: sha512-X+ahuj/s8rxXg0pDNhBllxCSUyJOW1fL4QcyfhMkcgRy/21DO6W3jQgA5TXE4dyREwJTVjFiFC3XUIZkTLcRBw==}
+  rolldown-plugin-dts@0.11.4:
+    resolution: {integrity: sha512-nPPrcdIcvFk/k7FbKsjG67s0MBKZBaEVE3rt68RoqX35nFZ4N2VuuZnH35CDPZ0zOkRdAMxPrNvJ1v2v7/7uaA==}
     engines: {node: '>=20.18.0'}
     peerDependencies:
       rolldown: ^1.0.0-beta.8-commit.534fde3
       typescript: ^5.0.0
+      vue-tsc: ~2.2.0
     peerDependenciesMeta:
       typescript:
+        optional: true
+      vue-tsc:
         optional: true
 
   rolldown@1.0.0-beta.8-commit.534fde3:
@@ -6491,14 +6498,14 @@ packages:
       typescript:
         optional: true
 
-  tsdown@0.11.1:
-    resolution: {integrity: sha512-VtooVG/dMeIddux3AG5fYatl9WEAS42A+pQVuHWrE3doGo1ZW9A57gT477x/hL7jxkq52srv3zKyrp2hyFdDng==}
+  tsdown@0.11.2:
+    resolution: {integrity: sha512-WMWZVvwuR8jiSDJkhYZHY+DzwQkk324mF04DPdQ5wCKroFLgpAYlVYMJIaTgHJigrh6GFH5DuNSWwaXlwZuDtg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
     peerDependencies:
       publint: ^0.3.0
-      unplugin-lightningcss: ^0.3.3
-      unplugin-unused: ^0.4.0
+      unplugin-lightningcss: ^0.4.0
+      unplugin-unused: ^0.5.0
     peerDependenciesMeta:
       publint:
         optional: true
@@ -6747,16 +6754,8 @@ packages:
       vite:
         optional: true
 
-  unplugin-lightningcss@0.3.3:
-    resolution: {integrity: sha512-mMNRCNIcxc/3410w7sJdXcPxn0IGZdEpq42OBDyckdGkhOeWYZCG9RkHs72TFyBsS82a4agFDOFU8VrFKF2ZvA==}
-    engines: {node: '>=18.12.0'}
-
   unplugin-utils@0.2.4:
     resolution: {integrity: sha512-8U/MtpkPkkk3Atewj1+RcKIjb5WBimZ/WSLhhR3w6SsIj8XJuKTacSP8g+2JhfSGw0Cb125Y+2zA/IzJZDVbhA==}
-    engines: {node: '>=18.12.0'}
-
-  unplugin@2.3.2:
-    resolution: {integrity: sha512-3n7YA46rROb3zSj8fFxtxC/PqoyvYQ0llwz9wtUPUutr9ig09C8gGo5CWCwHrUzlqC1LLR43kxp5vEIyH1ac1w==}
     engines: {node: '>=18.12.0'}
 
   unrs-resolver@1.7.2:
@@ -7029,9 +7028,6 @@ packages:
 
   webidl-conversions@4.0.2:
     resolution: {integrity: sha512-YQ+BmxuTgd6UXZW3+ICGfyqRyHXVlD5GtQr5+qjiNW7bF0cqrzX500HVXPBOvgXb5YnzDd+h0zqyv61KUD7+Sg==}
-
-  webpack-virtual-modules@0.6.2:
-    resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
 
   whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
@@ -8618,45 +8614,45 @@ snapshots:
 
   '@oxc-project/types@0.68.1': {}
 
-  '@oxc-resolver/binding-darwin-arm64@7.0.1':
+  '@oxc-resolver/binding-darwin-arm64@9.0.0':
     optional: true
 
-  '@oxc-resolver/binding-darwin-x64@7.0.1':
+  '@oxc-resolver/binding-darwin-x64@9.0.0':
     optional: true
 
-  '@oxc-resolver/binding-freebsd-x64@7.0.1':
+  '@oxc-resolver/binding-freebsd-x64@9.0.0':
     optional: true
 
-  '@oxc-resolver/binding-linux-arm-gnueabihf@7.0.1':
+  '@oxc-resolver/binding-linux-arm-gnueabihf@9.0.0':
     optional: true
 
-  '@oxc-resolver/binding-linux-arm64-gnu@7.0.1':
+  '@oxc-resolver/binding-linux-arm64-gnu@9.0.0':
     optional: true
 
-  '@oxc-resolver/binding-linux-arm64-musl@7.0.1':
+  '@oxc-resolver/binding-linux-arm64-musl@9.0.0':
     optional: true
 
-  '@oxc-resolver/binding-linux-riscv64-gnu@7.0.1':
+  '@oxc-resolver/binding-linux-riscv64-gnu@9.0.0':
     optional: true
 
-  '@oxc-resolver/binding-linux-s390x-gnu@7.0.1':
+  '@oxc-resolver/binding-linux-s390x-gnu@9.0.0':
     optional: true
 
-  '@oxc-resolver/binding-linux-x64-gnu@7.0.1':
+  '@oxc-resolver/binding-linux-x64-gnu@9.0.0':
     optional: true
 
-  '@oxc-resolver/binding-linux-x64-musl@7.0.1':
+  '@oxc-resolver/binding-linux-x64-musl@9.0.0':
     optional: true
 
-  '@oxc-resolver/binding-wasm32-wasi@7.0.1':
+  '@oxc-resolver/binding-wasm32-wasi@9.0.0':
     dependencies:
       '@napi-rs/wasm-runtime': 0.2.9
     optional: true
 
-  '@oxc-resolver/binding-win32-arm64-msvc@7.0.1':
+  '@oxc-resolver/binding-win32-arm64-msvc@9.0.0':
     optional: true
 
-  '@oxc-resolver/binding-win32-x64-msvc@7.0.1':
+  '@oxc-resolver/binding-win32-x64-msvc@9.0.0':
     optional: true
 
   '@pagefind/darwin-arm64@1.3.0':
@@ -9532,7 +9528,7 @@ snapshots:
       vite: 6.3.4(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1)
       vue: 3.5.13(typescript@5.8.3)
 
-  '@vitejs/plugin-vue@5.2.3(vite@6.3.4(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))':
+  '@vitejs/plugin-vue@5.2.4(vite@6.3.4(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1))(vue@3.5.13(typescript@5.8.3))':
     dependencies:
       vite: 6.3.4(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1)
       vue: 3.5.13(typescript@5.8.3)
@@ -9818,6 +9814,8 @@ snapshots:
 
   ansis@3.17.0: {}
 
+  ansis@4.0.0: {}
+
   any-promise@1.3.0: {}
 
   anymatch@3.1.3:
@@ -9900,7 +9898,7 @@ snapshots:
 
   assertion-error@2.0.1: {}
 
-  ast-kit@1.4.3:
+  ast-kit@2.0.0:
     dependencies:
       '@babel/parser': 7.27.2
       pathe: 2.0.3
@@ -10493,9 +10491,9 @@ snapshots:
 
   dset@3.1.4: {}
 
-  dts-resolver@1.1.1:
+  dts-resolver@1.2.0:
     dependencies:
-      oxc-resolver: 7.0.1
+      oxc-resolver: 9.0.0
       pathe: 2.0.3
 
   dunder-proto@1.0.1:
@@ -12701,21 +12699,21 @@ snapshots:
       object-keys: 1.1.1
       safe-push-apply: 1.0.0
 
-  oxc-resolver@7.0.1:
+  oxc-resolver@9.0.0:
     optionalDependencies:
-      '@oxc-resolver/binding-darwin-arm64': 7.0.1
-      '@oxc-resolver/binding-darwin-x64': 7.0.1
-      '@oxc-resolver/binding-freebsd-x64': 7.0.1
-      '@oxc-resolver/binding-linux-arm-gnueabihf': 7.0.1
-      '@oxc-resolver/binding-linux-arm64-gnu': 7.0.1
-      '@oxc-resolver/binding-linux-arm64-musl': 7.0.1
-      '@oxc-resolver/binding-linux-riscv64-gnu': 7.0.1
-      '@oxc-resolver/binding-linux-s390x-gnu': 7.0.1
-      '@oxc-resolver/binding-linux-x64-gnu': 7.0.1
-      '@oxc-resolver/binding-linux-x64-musl': 7.0.1
-      '@oxc-resolver/binding-wasm32-wasi': 7.0.1
-      '@oxc-resolver/binding-win32-arm64-msvc': 7.0.1
-      '@oxc-resolver/binding-win32-x64-msvc': 7.0.1
+      '@oxc-resolver/binding-darwin-arm64': 9.0.0
+      '@oxc-resolver/binding-darwin-x64': 9.0.0
+      '@oxc-resolver/binding-freebsd-x64': 9.0.0
+      '@oxc-resolver/binding-linux-arm-gnueabihf': 9.0.0
+      '@oxc-resolver/binding-linux-arm64-gnu': 9.0.0
+      '@oxc-resolver/binding-linux-arm64-musl': 9.0.0
+      '@oxc-resolver/binding-linux-riscv64-gnu': 9.0.0
+      '@oxc-resolver/binding-linux-s390x-gnu': 9.0.0
+      '@oxc-resolver/binding-linux-x64-gnu': 9.0.0
+      '@oxc-resolver/binding-linux-x64-musl': 9.0.0
+      '@oxc-resolver/binding-wasm32-wasi': 9.0.0
+      '@oxc-resolver/binding-win32-arm64-msvc': 9.0.0
+      '@oxc-resolver/binding-win32-x64-msvc': 9.0.0
 
   p-filter@2.1.0:
     dependencies:
@@ -13437,18 +13435,19 @@ snapshots:
 
   rfdc@1.4.1: {}
 
-  rolldown-plugin-dts@0.11.1(rolldown@1.0.0-beta.8-commit.534fde3)(typescript@5.8.3):
+  rolldown-plugin-dts@0.11.4(rolldown@1.0.0-beta.8-commit.534fde3)(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3)):
     dependencies:
       '@babel/generator': 7.27.1
       '@babel/parser': 7.27.2
       '@babel/types': 7.27.1
-      ast-kit: 1.4.3
+      ast-kit: 2.0.0
       debug: 4.4.0
-      dts-resolver: 1.1.1
+      dts-resolver: 1.2.0
       get-tsconfig: 4.10.0
       rolldown: 1.0.0-beta.8-commit.534fde3
     optionalDependencies:
       typescript: 5.8.3
+      vue-tsc: 2.2.10(typescript@5.8.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -14080,9 +14079,9 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.3
 
-  tsdown@0.11.1(typescript@5.8.3)(unplugin-lightningcss@0.3.3):
+  tsdown@0.11.2(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3)):
     dependencies:
-      ansis: 3.17.0
+      ansis: 4.0.0
       cac: 6.7.14
       chokidar: 4.0.3
       debug: 4.4.0
@@ -14090,17 +14089,16 @@ snapshots:
       empathic: 1.1.0
       hookable: 5.5.3
       rolldown: 1.0.0-beta.8-commit.534fde3
-      rolldown-plugin-dts: 0.11.1(rolldown@1.0.0-beta.8-commit.534fde3)(typescript@5.8.3)
+      rolldown-plugin-dts: 0.11.4(rolldown@1.0.0-beta.8-commit.534fde3)(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
       semver: 7.7.1
       tinyexec: 1.0.1
       tinyglobby: 0.2.13
       unconfig: 7.3.2
-    optionalDependencies:
-      unplugin-lightningcss: 0.3.3
     transitivePeerDependencies:
       - '@oxc-project/runtime'
       - supports-color
       - typescript
+      - vue-tsc
 
   tslib@2.8.1: {}
 
@@ -14401,24 +14399,10 @@ snapshots:
       - supports-color
       - vue
 
-  unplugin-lightningcss@0.3.3:
-    dependencies:
-      lightningcss: 1.29.3
-      magic-string: 0.30.17
-      unplugin: 2.3.2
-    optional: true
-
   unplugin-utils@0.2.4:
     dependencies:
       pathe: 2.0.3
       picomatch: 4.0.2
-
-  unplugin@2.3.2:
-    dependencies:
-      acorn: 8.14.1
-      picomatch: 4.0.2
-      webpack-virtual-modules: 0.6.2
-    optional: true
 
   unrs-resolver@1.7.2:
     dependencies:
@@ -14697,9 +14681,6 @@ snapshots:
   webidl-conversions@3.0.1: {}
 
   webidl-conversions@4.0.2: {}
-
-  webpack-virtual-modules@0.6.2:
-    optional: true
 
   whatwg-url@5.0.0:
     dependencies:

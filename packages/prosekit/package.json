@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/ocavue/prosekit/issues"
   },
-  "keywords": [
+  "keywords": [ 
     "ProseMirror"
   ],
   "sideEffects": false,

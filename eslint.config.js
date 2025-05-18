@@ -1,22 +1,17 @@
-import {
-  basic,
-  markdown,
-  react,
-  vue,
-} from '@ocavue/eslint-config'
+import { defineESLintConfig } from '@ocavue/eslint-config'
 import unocss from '@unocss/eslint-config/flat'
 import command from 'eslint-plugin-command/config'
 
 /** @type {import('eslint').Linter.Config[]} */
 const configs = [
   unocss,
-  ...basic(),
-  ...markdown(),
-  ...react().map((config) => ({
-    ...config,
-    files: ['**/react/**/*.?([cm])[jt]s?(x)'],
-  })),
-  ...vue(),
+  ...defineESLintConfig({
+    react: {
+      files: ['**/react/**/*.?([cm])[jt]s?(x)'],
+    },
+    vue: true,
+    markdown: true,
+  }),
   command(),
   {
     rules: {
@@ -31,12 +26,7 @@ const configs = [
       'website/**/*.{ts,tsx,vue}',
     ],
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unsafe-argument': 'off',
-      '@typescript-eslint/no-unsafe-member-access': 'off',
-      '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/unbound-method': 'off',
-      'import/no-extraneous-dependencies': 'off',
     },
   },
   {

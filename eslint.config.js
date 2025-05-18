@@ -16,8 +16,6 @@ const configs = [
   {
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unsafe-declaration-merging': 'off',
-      '@typescript-eslint/no-empty-interface': 'off',
     },
   },
   {

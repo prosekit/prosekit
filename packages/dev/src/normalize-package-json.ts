@@ -1,3 +1,4 @@
+import assert from 'node:assert'
 import path from 'node:path'
 
 import type { Package } from '@manypkg/get-packages'
@@ -120,7 +121,7 @@ export async function normalizePackageJson(pkg: Package) {
   packageJson.publishConfig.exports = maybeUndefined(sortObject(publishConfig))
 
   normalizePackageJsonDocumentFields(pkg)
-  normalizeTypesVersions(pkg.packageJson)
+  normalizeTypesVersions(packageJson)
 
   return entryPoints
 }
@@ -151,12 +152,16 @@ function normalizePackageJsonDocumentFields(pkg: Package) {
   })
 }
 
-function normalizeTypesVersions(packageJson: any) {
+function normalizeTypesVersions(packageJson: PackageJson) {
+  assert(packageJson.publishConfig)
   packageJson.publishConfig['typesVersions'] = undefined
   const typesVersions: Record<string, string[]> = {}
 
-  for (const key of Object.keys(packageJson.publishConfig.exports)) {
-    const types = packageJson.publishConfig.exports[key]?.['types']
+  const exports = packageJson.publishConfig.exports as Record<string, Record<string, string>>
+  assert(exports)
+
+  for (const key of Object.keys(exports)) {
+    const types = exports[key]?.['types']
     if (types) {
       typesVersions[key.replace(/^\.\//, '')] = [types]
     }

@@ -1,18 +1,15 @@
 import { defineESLintConfig } from '@ocavue/eslint-config'
-import unocss from '@unocss/eslint-config/flat'
-import command from 'eslint-plugin-command/config'
 
-/** @type {import('eslint').Linter.Config[]} */
-const configs = [
-  unocss,
-  ...defineESLintConfig({
+export default defineESLintConfig(
+  {
     react: {
       files: ['**/react/**/*.?([cm])[jt]s?(x)'],
     },
     vue: true,
     markdown: true,
-  }),
-  command(),
+    unocss: true,
+    command: true,
+  },
   {
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
@@ -42,6 +39,4 @@ const configs = [
       'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
     },
   },
-]
-
-export default configs
+)

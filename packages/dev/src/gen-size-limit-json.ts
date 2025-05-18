@@ -15,7 +15,6 @@ export async function genSizeLimitJson() {
 
 async function* iterateExports(pkg: Package) {
   const packageJson = pkg.packageJson as PackageJson
-
   const exports = (packageJson?.publishConfig?.exports ?? {}) as Record<string, string | Record<string, string>>
 
   for (const [entryName, entry] of Object.entries(exports)) {

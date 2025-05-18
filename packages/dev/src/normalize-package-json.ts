@@ -2,7 +2,9 @@ import path from 'node:path'
 
 import type { Package } from '@manypkg/get-packages'
 import slugify from '@sindresorhus/slugify'
+import type { PackageJson } from 'type-fest'
 
+import { getPackageJsonExport } from './get-package-json-export.js'
 import { isPrivatePackage } from './is-public-package.js'
 import { maybeUndefined } from './maybe-undefined.js'
 import { sortObject } from './sort-object.js'
@@ -13,14 +15,14 @@ export async function normalizePackageJson(pkg: Package) {
     return {}
   }
 
-  const packageJson = pkg.packageJson as any
+  const packageJson = pkg.packageJson as PackageJson
   const slugPackageName = slugify(pkg.packageJson.name)
 
   const publishExports: Record<string, any> = {}
   const publishConfig: Record<string, any> = { exports: publishExports, dev: {} }
   packageJson.publishConfig = publishConfig
 
-  const exports: Record<string, any> = packageJson.exports || {}
+  const exports = getPackageJsonExport(pkg)
   packageJson.exports = exports
 
   const entryPoints: Record<string, string> = {}
@@ -88,8 +90,8 @@ export async function normalizePackageJson(pkg: Package) {
       ])
 
       if (!foundFilePath) {
-        exports[path] = undefined
-        publishExports[path] = undefined
+        delete exports[path]
+        delete publishExports[path]
         continue
       }
 
@@ -114,10 +116,8 @@ export async function normalizePackageJson(pkg: Package) {
     entryPoints[distName] = sourcePath
   }
 
-  packageJson.exports = maybeUndefined(sortObject(packageJson.exports))
-  packageJson.publishConfig.exports = maybeUndefined(
-    sortObject(packageJson.publishConfig.exports),
-  )
+  packageJson.exports = maybeUndefined(exports)
+  packageJson.publishConfig.exports = maybeUndefined(sortObject(publishConfig))
 
   normalizePackageJsonDocumentFields(pkg)
   normalizeTypesVersions(pkg.packageJson)

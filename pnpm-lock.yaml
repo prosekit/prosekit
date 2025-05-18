@@ -829,6 +829,9 @@ importers:
       '@playwright/test':
         specifier: ^1.52.0
         version: 1.52.0
+      '@prosekit/config-unocss':
+        specifier: workspace:*
+        version: link:../packages/config-unocss
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../packages/config-vitest

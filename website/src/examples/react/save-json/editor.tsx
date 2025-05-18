@@ -38,7 +38,7 @@ export default function Editor() {
 
   // Load a document from a JSON string
   const handleLoad = useCallback((record: string) => {
-    setDefaultContent(JSON.parse(record))
+    setDefaultContent(JSON.parse(record) as NodeJSON)
     setHasUnsavedChange(false)
     setKey((key) => key + 1)
   }, [])

@@ -3,7 +3,7 @@ import path from 'node:path'
 
 import type { PackageJson } from 'type-fest'
 
-import { getPackageJsonExports } from './get-package-json-export.js'
+import { getPackageJsonExports } from './get-package-json-exports.js'
 import { vfs } from './virtual-file-system.js'
 
 export async function buildUmbrellaPackageJson() {

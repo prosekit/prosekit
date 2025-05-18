@@ -5,6 +5,7 @@ import { sortedUniq } from 'lodash-es'
 import type { PackageJson } from 'type-fest'
 
 import { asyncFrom } from './async-from.js'
+import { getPackageJsonPublishExports } from './get-package-json-exports.js'
 import { vfs } from './virtual-file-system.js'
 
 export async function genSizeLimitJson() {
@@ -14,8 +15,7 @@ export async function genSizeLimitJson() {
 }
 
 async function* iterateExports(pkg: Package) {
-  const packageJson = pkg.packageJson as PackageJson
-  const exports = (packageJson?.publishConfig?.exports ?? {}) as Record<string, string | Record<string, string>>
+  const exports = getPackageJsonPublishExports(pkg) ?? {}
 
   for (const [entryName, entry] of Object.entries(exports)) {
     // size-limit cannot handle .svelte files

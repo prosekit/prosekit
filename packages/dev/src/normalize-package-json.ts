@@ -5,7 +5,10 @@ import type { Package } from '@manypkg/get-packages'
 import slugify from '@sindresorhus/slugify'
 import type { PackageJson } from 'type-fest'
 
-import { getPackageJsonExports } from './get-package-json-export.js'
+import {
+  getPackageJsonExports,
+  getPackageJsonPublishExports,
+} from './get-package-json-exports.js'
 import { isPrivatePackage } from './is-public-package.js'
 import { maybeUndefined } from './maybe-undefined.js'
 import { sortObject } from './sort-object.js'
@@ -23,7 +26,7 @@ export async function normalizePackageJson(pkg: Package) {
   const publishConfig: Record<string, any> = { exports: publishExports, dev: {} }
   packageJson.publishConfig = publishConfig
 
-  const exports = getPackageJsonExports(pkg)
+  const exports = getPackageJsonExports(pkg) || {}
   packageJson.exports = exports
 
   const entryPoints: Record<string, string> = {}
@@ -152,12 +155,13 @@ function normalizePackageJsonDocumentFields(pkg: Package) {
   })
 }
 
-function normalizeTypesVersions(packageJson: PackageJson) {
+function normalizeTypesVersions(pkg: Package) {
+  const packageJson = pkg.packageJson as PackageJson
   assert(packageJson.publishConfig)
   packageJson.publishConfig['typesVersions'] = undefined
   const typesVersions: Record<string, string[]> = {}
 
-  const exports = packageJson.publishConfig.exports as Record<string, Record<string, string>>
+  const exports = getPackageJsonPublishExports(pkg) as Record<string, Record<string, string>>
   assert(exports)
 
   for (const key of Object.keys(exports)) {

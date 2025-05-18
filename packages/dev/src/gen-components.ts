@@ -5,7 +5,7 @@ import {
   pascalCase,
 } from 'change-case'
 
-import { getPackageJsonExports } from './get-package-json-export.js'
+import { getPackageJsonExports } from './get-package-json-exports.js'
 import {
   readComponents,
   type GroupedComponents as Components,

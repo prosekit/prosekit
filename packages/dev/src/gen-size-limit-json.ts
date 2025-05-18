@@ -1,3 +1,4 @@
+import assert from 'node:assert'
 import path from 'node:path'
 
 import type { Package } from '@manypkg/get-packages'
@@ -41,6 +42,7 @@ async function* iterateExports(pkg: Package) {
     ])
 
     const entryPath = typeof entry === 'string' ? entry : entry.default
+    assert(entryPath, `Unexpected entry: ${JSON.stringify(entry)}. entryName: ${entryName}. package name: ${pkg.packageJson.name}.`)
 
     yield {
       name: path.normalize(path.join('prosekit', entryName)),

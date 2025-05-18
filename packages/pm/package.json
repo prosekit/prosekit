@@ -52,12 +52,12 @@
     "prosemirror-model": "^1.25.1",
     "prosemirror-state": "^1.4.3",
     "prosemirror-transform": "^1.10.4",
-    "prosemirror-view": "^1.39.2"
+    "prosemirror-view": "^1.39.3"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.11.2",
+    "tsdown": "^0.11.11",
     "typescript": "~5.8.3",
     "vitest": "^3.1.3"
   },

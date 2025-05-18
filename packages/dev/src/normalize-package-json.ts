@@ -5,7 +5,7 @@ import type { Package } from '@manypkg/get-packages'
 import slugify from '@sindresorhus/slugify'
 import type { PackageJson } from 'type-fest'
 
-import { getPackageJsonExport } from './get-package-json-export.js'
+import { getPackageJsonExports } from './get-package-json-export.js'
 import { isPrivatePackage } from './is-public-package.js'
 import { maybeUndefined } from './maybe-undefined.js'
 import { sortObject } from './sort-object.js'
@@ -23,7 +23,7 @@ export async function normalizePackageJson(pkg: Package) {
   const publishConfig: Record<string, any> = { exports: publishExports, dev: {} }
   packageJson.publishConfig = publishConfig
 
-  const exports = getPackageJsonExport(pkg)
+  const exports = getPackageJsonExports(pkg)
   packageJson.exports = exports
 
   const entryPoints: Record<string, string> = {}

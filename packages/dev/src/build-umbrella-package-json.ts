@@ -3,6 +3,7 @@ import path from 'node:path'
 
 import type { PackageJson } from 'type-fest'
 
+import { getPackageJsonExports } from './get-package-json-export.js'
 import { vfs } from './virtual-file-system.js'
 
 export async function buildUmbrellaPackageJson() {
@@ -25,10 +26,9 @@ export async function buildUmbrellaPackageJson() {
 
   for (const pkg of scopedPackages) {
     const packageJson = pkg.packageJson as PackageJson
-    const packageName = packageJson.name
-    assert(packageName)
+    const packageName = pkg.packageJson.name
 
-    const entries = Object.keys(packageJson.exports ?? {})
+    const entries = Object.keys(getPackageJsonExports(pkg) ?? {})
 
     pkgDependencies[packageName] = 'workspace:*'
 

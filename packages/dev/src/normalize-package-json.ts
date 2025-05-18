@@ -120,11 +120,11 @@ export async function normalizePackageJson(pkg: Package) {
     entryPoints[distName] = sourcePath
   }
 
-  packageJson.exports = maybeUndefined(exports)
-  packageJson.publishConfig.exports = maybeUndefined(sortObject(publishConfig))
+  packageJson.exports = maybeUndefined(sortObject(getPackageJsonExports(pkg) ?? {}))
+  packageJson.publishConfig.exports = maybeUndefined(sortObject(getPackageJsonPublishExports(pkg) ?? {}))
 
   normalizePackageJsonDocumentFields(pkg)
-  normalizeTypesVersions(packageJson)
+  normalizeTypesVersions(pkg)
 
   return entryPoints
 }

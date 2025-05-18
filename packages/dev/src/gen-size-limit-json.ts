@@ -3,7 +3,6 @@ import path from 'node:path'
 
 import type { Package } from '@manypkg/get-packages'
 import { sortedUniq } from 'lodash-es'
-import type { PackageJson } from 'type-fest'
 
 import { asyncFrom } from './async-from.js'
 import { getPackageJsonPublishExports } from './get-package-json-exports.js'

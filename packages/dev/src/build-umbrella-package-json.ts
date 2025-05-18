@@ -1,4 +1,3 @@
-import assert from 'node:assert'
 import path from 'node:path'
 
 import type { PackageJson } from 'type-fest'

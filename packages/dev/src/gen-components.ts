@@ -41,7 +41,7 @@ export async function genComponents() {
 }
 
 async function writeWebComponents(pkg: Package, info: Components) {
-  const exports = getPackageJsonExports(pkg)
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -62,7 +62,7 @@ async function writeWebComponents(pkg: Package, info: Components) {
 }
 
 async function writeReactComponents(pkg: Package, info: Components) {
-  const exports = getPackageJsonExports(pkg)
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -83,7 +83,7 @@ async function writeReactComponents(pkg: Package, info: Components) {
 }
 
 async function writeVueComponents(pkg: Package, info: Components) {
-  const exports = getPackageJsonExports(pkg)
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -104,7 +104,7 @@ async function writeVueComponents(pkg: Package, info: Components) {
 }
 
 async function writeSvelteComponents(pkg: Package, info: Components) {
-  const exports = getPackageJsonExports(pkg)
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -130,7 +130,7 @@ async function writeSvelteComponents(pkg: Package, info: Components) {
 }
 
 async function writeSolidComponents(pkg: Package, info: Components) {
-  const exports = getPackageJsonExports(pkg)
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -151,7 +151,7 @@ async function writeSolidComponents(pkg: Package, info: Components) {
 }
 
 async function writePreactComponents(pkg: Package, info: Components) {
-  const exports = getPackageJsonExports(pkg)
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -172,7 +172,7 @@ async function writePreactComponents(pkg: Package, info: Components) {
 }
 
 async function writeLitComponents(pkg: Package, info: Components) {
-  const exports = getPackageJsonExports(pkg)
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''

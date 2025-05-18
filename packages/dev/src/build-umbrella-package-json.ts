@@ -1,5 +1,8 @@
 import path from 'node:path'
 
+import type { PackageJson } from 'type-fest'
+
+import { getPackageJsonExports } from './get-package-json-exports.js'
 import { vfs } from './virtual-file-system.js'
 
 export async function buildUmbrellaPackageJson() {
@@ -21,20 +24,21 @@ export async function buildUmbrellaPackageJson() {
   const scopedPackages = await vfs.getScopedPublicPackages()
 
   for (const pkg of scopedPackages) {
-    const fullPackageName = pkg.packageJson.name
-    const entries = Object.keys((pkg.packageJson as any).exports ?? {})
+    const packageJson = pkg.packageJson as PackageJson
+    const packageName = pkg.packageJson.name
 
-    pkgDependencies[fullPackageName] = 'workspace:*'
+    const entries = Object.keys(getPackageJsonExports(pkg) ?? {})
 
-    Object.assign(pkgPeerDependencies, pkg.packageJson.peerDependencies)
-    // @ts-expect-error: peerDependenciesMeta is not in the type
-    Object.assign(pkgPeerDependenciesMeta, pkg.packageJson.peerDependenciesMeta)
+    pkgDependencies[packageName] = 'workspace:*'
+
+    Object.assign(pkgPeerDependencies, packageJson.peerDependencies)
+    Object.assign(pkgPeerDependenciesMeta, packageJson.peerDependenciesMeta)
 
     for (const entry of entries) {
       await ensureEntry({
         cwd: umbrellaPackage.relativeDir,
         entry,
-        packageName: pkg.packageJson.name,
+        packageName,
         exports: pkgExports,
       })
     }

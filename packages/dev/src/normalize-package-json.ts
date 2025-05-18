@@ -1,8 +1,14 @@
+import assert from 'node:assert'
 import path from 'node:path'
 
 import type { Package } from '@manypkg/get-packages'
 import slugify from '@sindresorhus/slugify'
+import type { PackageJson } from 'type-fest'
 
+import {
+  getPackageJsonExports,
+  getPackageJsonPublishExports,
+} from './get-package-json-exports.js'
 import { isPrivatePackage } from './is-public-package.js'
 import { maybeUndefined } from './maybe-undefined.js'
 import { sortObject } from './sort-object.js'
@@ -13,14 +19,14 @@ export async function normalizePackageJson(pkg: Package) {
     return {}
   }
 
-  const packageJson = pkg.packageJson as any
+  const packageJson = pkg.packageJson as PackageJson
   const slugPackageName = slugify(pkg.packageJson.name)
 
   const publishExports: Record<string, any> = {}
   const publishConfig: Record<string, any> = { exports: publishExports, dev: {} }
   packageJson.publishConfig = publishConfig
 
-  const exports: Record<string, any> = packageJson.exports || {}
+  const exports = getPackageJsonExports(pkg) || {}
   packageJson.exports = exports
 
   const entryPoints: Record<string, string> = {}
@@ -88,8 +94,8 @@ export async function normalizePackageJson(pkg: Package) {
       ])
 
       if (!foundFilePath) {
-        exports[path] = undefined
-        publishExports[path] = undefined
+        delete exports[path]
+        delete publishExports[path]
         continue
       }
 
@@ -114,13 +120,11 @@ export async function normalizePackageJson(pkg: Package) {
     entryPoints[distName] = sourcePath
   }
 
-  packageJson.exports = maybeUndefined(sortObject(packageJson.exports))
-  packageJson.publishConfig.exports = maybeUndefined(
-    sortObject(packageJson.publishConfig.exports),
-  )
+  packageJson.exports = maybeUndefined(sortObject(getPackageJsonExports(pkg) ?? {}))
+  packageJson.publishConfig.exports = maybeUndefined(sortObject(getPackageJsonPublishExports(pkg) ?? {}))
 
   normalizePackageJsonDocumentFields(pkg)
-  normalizeTypesVersions(pkg.packageJson)
+  normalizeTypesVersions(pkg)
 
   return entryPoints
 }
@@ -151,12 +155,17 @@ function normalizePackageJsonDocumentFields(pkg: Package) {
   })
 }
 
-function normalizeTypesVersions(packageJson: any) {
+function normalizeTypesVersions(pkg: Package) {
+  const packageJson = pkg.packageJson as PackageJson
+  assert(packageJson.publishConfig)
   packageJson.publishConfig['typesVersions'] = undefined
   const typesVersions: Record<string, string[]> = {}
 
-  for (const key of Object.keys(packageJson.publishConfig.exports)) {
-    const types = packageJson.publishConfig.exports[key]?.['types']
+  const exports = getPackageJsonPublishExports(pkg) as Record<string, Record<string, string>>
+  assert(exports)
+
+  for (const key of Object.keys(exports)) {
+    const types = exports[key]?.['types']
     if (types) {
       typesVersions[key.replace(/^\.\//, '')] = [types]
     }

@@ -36,6 +36,7 @@ $effect(() => {
 })
 </script>
 
+<!-- svelte-ignore a11y_consider_explicit_label -->
 <a
   {href}
   use:contentRef

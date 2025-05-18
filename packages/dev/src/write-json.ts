@@ -2,13 +2,13 @@ import { isJsonEqual } from './is-json-equal.js'
 import { readJson } from './read-json.js'
 import { writeText } from './write-text.js'
 
-export async function writeJson(
+export async function writeJson<T = any>(
   filePath: string,
-  content: any,
+  content: T,
 ): Promise<boolean> {
-  let original: any = null
+  let original: T | null = null
   try {
-    original = await readJson(filePath)
+    original = await readJson(filePath) as T
   } catch {
     // ignore
   }

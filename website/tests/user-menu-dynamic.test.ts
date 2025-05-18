@@ -178,8 +178,14 @@ testStory('user-menu-dynamic', () => {
 
 async function setTestBlocking(page: Page, value: boolean) {
   if (value) {
-    await page.evaluate(() => ((window as any)._PROSEKIT_TEST_BLOCKING = true))
+    await page.evaluate(() => (window._PROSEKIT_TEST_BLOCKING = true))
   } else {
-    await page.evaluate(() => ((window as any)._PROSEKIT_TEST_BLOCKING = false))
+    await page.evaluate(() => (window._PROSEKIT_TEST_BLOCKING = false))
+  }
+}
+
+declare global {
+  interface Window {
+    _PROSEKIT_TEST_BLOCKING: boolean | undefined
   }
 }

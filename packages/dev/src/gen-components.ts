@@ -5,6 +5,7 @@ import {
   pascalCase,
 } from 'change-case'
 
+import { getPackageJsonExports } from './get-package-json-exports.js'
 import {
   readComponents,
   type GroupedComponents as Components,
@@ -40,7 +41,7 @@ export async function genComponents() {
 }
 
 async function writeWebComponents(pkg: Package, info: Components) {
-  const exports = (pkg.packageJson as any).exports
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -61,7 +62,7 @@ async function writeWebComponents(pkg: Package, info: Components) {
 }
 
 async function writeReactComponents(pkg: Package, info: Components) {
-  const exports = (pkg.packageJson as any).exports
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -82,7 +83,7 @@ async function writeReactComponents(pkg: Package, info: Components) {
 }
 
 async function writeVueComponents(pkg: Package, info: Components) {
-  const exports = (pkg.packageJson as any).exports
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -103,7 +104,7 @@ async function writeVueComponents(pkg: Package, info: Components) {
 }
 
 async function writeSvelteComponents(pkg: Package, info: Components) {
-  const exports = (pkg.packageJson as any).exports
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -129,7 +130,7 @@ async function writeSvelteComponents(pkg: Package, info: Components) {
 }
 
 async function writeSolidComponents(pkg: Package, info: Components) {
-  const exports = (pkg.packageJson as any).exports
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -150,7 +151,7 @@ async function writeSolidComponents(pkg: Package, info: Components) {
 }
 
 async function writePreactComponents(pkg: Package, info: Components) {
-  const exports = (pkg.packageJson as any).exports
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''
@@ -171,7 +172,7 @@ async function writePreactComponents(pkg: Package, info: Components) {
 }
 
 async function writeLitComponents(pkg: Package, info: Components) {
-  const exports = (pkg.packageJson as any).exports
+  const exports = getPackageJsonExports(pkg)!
 
   for (const [group, components] of Object.entries(info)) {
     exports[`./${group}`] = ''

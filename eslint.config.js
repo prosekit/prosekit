@@ -1,28 +1,18 @@
-import {
-  basic,
-  markdown,
-  react,
-  vue,
-} from '@ocavue/eslint-config'
-import unocss from '@unocss/eslint-config/flat'
-import command from 'eslint-plugin-command/config'
+import { defineESLintConfig } from '@ocavue/eslint-config'
 
-/** @type {import('eslint').Linter.Config[]} */
-const configs = [
-  unocss,
-  ...basic(),
-  ...markdown(),
-  ...react().map((config) => ({
-    ...config,
-    files: ['**/react/**/*.?([cm])[jt]s?(x)'],
-  })),
-  ...vue(),
-  command(),
+export default defineESLintConfig(
+  {
+    react: {
+      files: ['**/react/**/*.?([cm])[jt]s?(x)'],
+    },
+    vue: true,
+    markdown: true,
+    unocss: true,
+    command: true,
+  },
   {
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unsafe-declaration-merging': 'off',
-      '@typescript-eslint/no-empty-interface': 'off',
     },
   },
   {
@@ -31,12 +21,7 @@ const configs = [
       'website/**/*.{ts,tsx,vue}',
     ],
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unsafe-argument': 'off',
-      '@typescript-eslint/no-unsafe-member-access': 'off',
-      '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/unbound-method': 'off',
-      'import/no-extraneous-dependencies': 'off',
     },
   },
   {
@@ -54,6 +39,4 @@ const configs = [
       'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
     },
   },
-]
-
-export default configs
+)

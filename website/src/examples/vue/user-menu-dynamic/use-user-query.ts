@@ -47,11 +47,17 @@ export function useUserQuery(query: Ref<string>, enabled: Ref<boolean>) {
 async function waitForTestBlocking() {
   return await new Promise((resolve) => {
     const id = setInterval(() => {
-      const hasTestBlocking = !!(window as any)._PROSEKIT_TEST_BLOCKING
+      const hasTestBlocking = !!window._PROSEKIT_TEST_BLOCKING
       if (!hasTestBlocking) {
         clearInterval(id)
         resolve(true)
       }
     }, 100)
   })
+}
+
+declare global {
+  interface Window {
+    _PROSEKIT_TEST_BLOCKING: boolean | undefined
+  }
 }

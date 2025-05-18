@@ -1,9 +1,11 @@
+import assert from 'node:assert'
 import path from 'node:path'
 
 import type { Package } from '@manypkg/get-packages'
 import { sortedUniq } from 'lodash-es'
 
 import { asyncFrom } from './async-from.js'
+import { getPackageJsonPublishExports } from './get-package-json-exports.js'
 import { vfs } from './virtual-file-system.js'
 
 export async function genSizeLimitJson() {
@@ -13,7 +15,7 @@ export async function genSizeLimitJson() {
 }
 
 async function* iterateExports(pkg: Package) {
-  const exports: Record<string, string | Record<string, string>> = (pkg.packageJson as any)?.publishConfig?.exports ?? {}
+  const exports = getPackageJsonPublishExports(pkg) ?? {}
 
   for (const [entryName, entry] of Object.entries(exports)) {
     // size-limit cannot handle .svelte files
@@ -39,6 +41,7 @@ async function* iterateExports(pkg: Package) {
     ])
 
     const entryPath = typeof entry === 'string' ? entry : entry.default
+    assert(entryPath, `Unexpected entry: ${JSON.stringify(entry)}. entryName: ${entryName}. package name: ${pkg.packageJson.name}.`)
 
     yield {
       name: path.normalize(path.join('prosekit', entryName)),

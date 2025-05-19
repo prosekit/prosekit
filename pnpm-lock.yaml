@@ -18,8 +18,8 @@ importers:
         specifier: ^0.24.0
         version: 0.24.0
       '@ocavue/eslint-config':
-        specifier: ^3.0.0
-        version: 3.0.0(@types/estree@1.0.7)(eslint@9.27.0(jiti@2.4.2))(jsonc-eslint-parser@2.4.0)(typescript@5.8.3)
+        specifier: https://pkg.pr.new/ocavue/eslint-config/@ocavue/eslint-config@236
+        version: https://pkg.pr.new/ocavue/eslint-config/@ocavue/eslint-config@236(@types/estree@1.0.7)(eslint@9.27.0(jiti@2.4.2))(jsonc-eslint-parser@2.4.0)(typescript@5.8.3)
       '@ocavue/tsconfig':
         specifier: ^0.3.7
         version: 0.3.7
@@ -1987,8 +1987,9 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@ocavue/eslint-config@3.0.0':
-    resolution: {integrity: sha512-tezw1D+Oq1njTsIkjNSvrS/M/AI/qPbJWUXvGrvjEykgK3EU9yUJDWsXnDRUZCiV+RtocMcK6/tKdLO4r/Mfmw==}
+  '@ocavue/eslint-config@https://pkg.pr.new/ocavue/eslint-config/@ocavue/eslint-config@236':
+    resolution: {tarball: https://pkg.pr.new/ocavue/eslint-config/@ocavue/eslint-config@236}
+    version: 3.0.0
 
   '@ocavue/tsconfig@0.3.7':
     resolution: {integrity: sha512-eHvgeLxI4jxoTpp63uM5+Vt44ioQRUxb2wwEQcdBFnd/KGNvf4dRmDfGtghhFmTuwpXbAD12wMSIuTlwauExww==}
@@ -8480,7 +8481,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.19.1
 
-  '@ocavue/eslint-config@3.0.0(@types/estree@1.0.7)(eslint@9.27.0(jiti@2.4.2))(jsonc-eslint-parser@2.4.0)(typescript@5.8.3)':
+  '@ocavue/eslint-config@https://pkg.pr.new/ocavue/eslint-config/@ocavue/eslint-config@236(@types/estree@1.0.7)(eslint@9.27.0(jiti@2.4.2))(jsonc-eslint-parser@2.4.0)(typescript@5.8.3)':
     dependencies:
       '@eslint/js': 9.27.0
       '@eslint/markdown': 6.4.0

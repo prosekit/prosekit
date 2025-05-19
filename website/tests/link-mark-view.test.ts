@@ -14,7 +14,7 @@ testStory('link-mark-view', () => {
     const link = editor.locator('[data-mark-view-root="true"] a')
 
     const getLinkColor = async (): Promise<string> => {
-      return link.evaluate((el) => {
+      return await link.evaluate((el) => {
         return window.getComputedStyle(el).getPropertyValue('color')
       })
     }

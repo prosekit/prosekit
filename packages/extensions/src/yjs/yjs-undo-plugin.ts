@@ -27,10 +27,6 @@ function fixYUndoPlugin(yUndoPluginInstance: ProseMirrorPlugin) {
 
     if (undoManager.restore) {
       undoManager.restore()
-<<<<<<< HEAD
-=======
-
->>>>>>> 629d803a5349dbbc55a936b94e24a053b7581e52
       undoManager.restore = () => {}
     }
 

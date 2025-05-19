@@ -23,9 +23,9 @@ import type { SimplifyUnion } from './simplify-union'
  * @internal
  */
 export interface ExtensionTyping<
-  N extends NodeTyping | never = never,
-  M extends MarkTyping | never = never,
-  C extends CommandTyping | never = never,
+  N extends NodeTyping = never,
+  M extends MarkTyping = never,
+  C extends CommandTyping = never,
 > {
   Nodes?: N
   Marks?: M

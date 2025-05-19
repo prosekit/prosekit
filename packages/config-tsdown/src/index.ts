@@ -14,7 +14,7 @@ export function config(input?: Options): Options {
     }
   }
 
-  const entry = packageJson?.dev?.entry
+  const entry = packageJson.dev?.entry
 
   if (!entry) {
     throw new Error(`Unable to find the field "dev.entry" in ${pkg.path}`)

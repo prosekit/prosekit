@@ -202,7 +202,7 @@ class VirtualFileSystem {
   }
 
   async getFilePathsByPackage(pkg: Package) {
-    return this.getFilePathsByDir(pkg.relativeDir)
+    return await this.getFilePathsByDir(pkg.relativeDir)
   }
 
   async ensureFile(filePath: string) {
@@ -223,7 +223,7 @@ class VirtualFileSystem {
   }
 
   async updateTextInPackage(pkg: Package, filePath: string, content: string) {
-    return this.updateText(path.join(pkg.relativeDir, filePath), content)
+    return await this.updateText(path.join(pkg.relativeDir, filePath), content)
   }
 
   async updateJSON(filePath: string, json: any) {

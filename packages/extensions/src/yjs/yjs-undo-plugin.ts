@@ -27,7 +27,7 @@ function fixYUndoPlugin(yUndoPluginInstance: ProseMirrorPlugin) {
 
     if (undoManager.restore) {
       undoManager.restore()
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
+
       undoManager.restore = () => {}
     }
 

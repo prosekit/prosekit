@@ -42,6 +42,7 @@
     "./extensions/commit/style.css": "./src/extensions/commit/style.css",
     "./extensions/doc": "./src/extensions/doc.gen.ts",
     "./extensions/drop-cursor": "./src/extensions/drop-cursor.gen.ts",
+    "./extensions/drop-cursor-v2": "./src/extensions/drop-cursor-v2.gen.ts",
     "./extensions/enter-rule": "./src/extensions/enter-rule.gen.ts",
     "./extensions/file": "./src/extensions/file.gen.ts",
     "./extensions/gap-cursor": "./src/extensions/gap-cursor.gen.ts",
@@ -295,6 +296,10 @@
       "./extensions/drop-cursor": {
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
         "default": "./dist/prosekit-extensions-drop-cursor.js"
+      },
+      "./extensions/drop-cursor-v2": {
+        "types": "./dist/prosekit-extensions-drop-cursor-v2.d.ts",
+        "default": "./dist/prosekit-extensions-drop-cursor-v2.js"
       },
       "./extensions/enter-rule": {
         "types": "./dist/prosekit-extensions-enter-rule.d.ts",
@@ -733,6 +738,9 @@
         "extensions/drop-cursor": [
           "./dist/prosekit-extensions-drop-cursor.d.ts"
         ],
+        "extensions/drop-cursor-v2": [
+          "./dist/prosekit-extensions-drop-cursor-v2.d.ts"
+        ],
         "extensions/enter-rule": [
           "./dist/prosekit-extensions-enter-rule.d.ts"
         ],
@@ -1027,6 +1035,7 @@
       "extensions/commit/style": "./src/extensions/commit/style.css",
       "prosekit-extensions-doc": "./src/extensions/doc.gen.ts",
       "prosekit-extensions-drop-cursor": "./src/extensions/drop-cursor.gen.ts",
+      "prosekit-extensions-drop-cursor-v2": "./src/extensions/drop-cursor-v2.gen.ts",
       "prosekit-extensions-enter-rule": "./src/extensions/enter-rule.gen.ts",
       "prosekit-extensions-file": "./src/extensions/file.gen.ts",
       "prosekit-extensions-gap-cursor": "./src/extensions/gap-cursor.gen.ts",

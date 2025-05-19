@@ -13,7 +13,7 @@ export function getClientRect(element: Element): {
     // which case `element.getClientRects()` will return an empty array.
     if (element.getClientRects().length === 0) {
       const children = Array.from(element.children)
-      const rects = children.map(child => getClientRect(child)).filter(x => !!x)
+      const rects = children.map(child => getClientRect(child))
       if (rects.length === 0) {
         return rect
       }

@@ -54,6 +54,10 @@ export function locateEditor(page: Page) {
   return page.locator('.ProseMirror')
 }
 
+export function locateFocusedEditor(page: Page) {
+  return page.locator('.ProseMirror.ProseMirror-focused')
+}
+
 export async function waitForEditor(page: Page) {
   const locator = locateEditor(page)
   await locator.waitFor({ state: 'visible', timeout: 60_000 })
@@ -111,4 +115,14 @@ export async function waitForAnimationEnd(locator: Locator) {
 
 export async function getBoundingBox(locator: Locator) {
   return (await locator.boundingBox()) || { x: 0, y: 0, width: 0, height: 0 }
+}
+
+export async function expectEditorToBeFocused(page: Page) {
+  await waitForEditor(page)
+  await expect(locateFocusedEditor(page)).toBeVisible()
+}
+
+export async function expectEditorToBeBlurred(page: Page) {
+  await waitForEditor(page)
+  await expect(locateFocusedEditor(page)).toBeHidden()
 }

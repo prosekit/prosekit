@@ -6,6 +6,7 @@ import {
 
 import {
   emptyEditor,
+  expectEditorToBeFocused,
   getEditorHTML,
   testStory,
   waitForEditor,
@@ -120,6 +121,50 @@ testStory(['slash-menu'], () => {
     await editor.press('/')
     await editor.pressSequentially('head')
     await expect(menu).toBeVisible()
+  })
+
+  test('prevent focus loss when clicking menu items', async ({ page }) => {
+    const { editor, focusedItem } = await setup(page)
+    const blockquote = editor.locator('blockquote')
+
+    // Show the menu
+    await expect(focusedItem).toBeHidden()
+    await editor.focus()
+    await page.keyboard.press('/')
+    await page.keyboard.type('quote')
+    await expect(focusedItem).toBeVisible()
+    await expect(focusedItem).toHaveText('Quote')
+
+    // Click the menu item to insert a blockquote
+    await expect(blockquote).toHaveCount(0)
+    await focusedItem.click()
+    await expect(focusedItem).toBeHidden()
+    await expect(blockquote).toHaveCount(1)
+
+    // Ensure that the editor is still focused
+    await expectEditorToBeFocused(page)
+  })
+
+  test('prevent focus loss when pressing Enter', async ({ page }) => {
+    const { editor, focusedItem } = await setup(page)
+    const blockquote = editor.locator('blockquote')
+
+    // Show the menu
+    await expect(focusedItem).toBeHidden()
+    await editor.focus()
+    await page.keyboard.press('/')
+    await page.keyboard.type('quote')
+    await expect(focusedItem).toBeVisible()
+    await expect(focusedItem).toHaveText('Quote')
+
+    // Press Enter to insert a blockquote
+    await expect(blockquote).toHaveCount(0)
+    await editor.press('Enter')
+    await expect(focusedItem).toBeHidden()
+    await expect(blockquote).toHaveCount(1)
+
+    // Ensure that the editor is still focused
+    await expectEditorToBeFocused(page)
   })
 
   test('insert list', async ({ page }) => {

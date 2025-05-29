@@ -122,6 +122,20 @@ testStory(['slash-menu'], () => {
     await expect(menu).toBeVisible()
   })
 
+  test.only('prevent focus loss when clicking menu items', async ({ page }) => {
+    const { editor, focusedItem } = await setup(page)
+    const blockquote = editor.locator('blockquote')
+
+    await expect(focusedItem).toBeHidden()
+    await editor.pressSequentially('/quote')
+    await expect(focusedItem).toBeVisible()
+    await expect(focusedItem).toHaveText('Quote')
+
+    await expect(blockquote).toHaveCount(0)
+    await focusedItem.click()
+    await expect(blockquote).toHaveCount(1)
+  })
+
   test('insert list', async ({ page }) => {
     const { editor, focusedItem } = await setup(page)
 

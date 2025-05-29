@@ -59,6 +59,18 @@ const mapping: Record<string, string[]> = {
     'examples/preact/keymap/',
     'examples/preact/readonly/',
   ],
+  'shared/preact/slash-menu-empty.tsx': [
+    /// keep-sorted
+    'examples/preact/slash-menu/',
+  ],
+  'shared/preact/slash-menu-item.tsx': [
+    /// keep-sorted
+    'examples/preact/slash-menu/',
+  ],
+  'shared/preact/slash-menu.tsx': [
+    /// keep-sorted
+    'examples/preact/slash-menu/',
+  ],
   'shared/preact/use-readonly.ts': [
     /// keep-sorted
     'examples/preact/readonly/',

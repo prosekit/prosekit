@@ -36,22 +36,17 @@ export function useEditor<E extends Extension = any>(options?: {
     )
   }
 
-  const forceUpdate = useForceUpdate()
+  const [clonedEditor, cloneEditor] = useReducer((editor: Editor<E>) => editor.clone(), editor)
 
   useEffect(() => {
     if (update) {
       const extension = union(
-        defineMountHandler(forceUpdate),
-        defineUpdateHandler(forceUpdate),
+        defineMountHandler(cloneEditor),
+        defineUpdateHandler(cloneEditor),
       )
       return editor.use(extension)
     }
-  }, [editor, update, forceUpdate])
+  }, [editor, update, cloneEditor])
 
-  return editor
-}
-
-function useForceUpdate() {
-  const [, dispatch] = useReducer((x: number) => x + 1, 0)
-  return dispatch
+  return clonedEditor
 }

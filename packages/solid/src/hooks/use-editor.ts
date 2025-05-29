@@ -36,24 +36,18 @@ export function useEditor<E extends Extension = any>(options?: {
     )
   }
 
-  const [depend, forceUpdate] = useForceUpdate()
+  const [getEditor, setEditor] = createSignal(editor)
+  const cloneEditor = () => setEditor(editor => editor.clone())
 
   createEffect(() => {
     if (update) {
       const extension = union(
-        defineMountHandler(forceUpdate),
-        defineUpdateHandler(forceUpdate),
+        defineMountHandler(cloneEditor),
+        defineUpdateHandler(cloneEditor),
       )
       return editor.use(extension)
     }
-  }, [editor, update, forceUpdate])
+  }, [editor, update, cloneEditor])
 
-  return () => {
-    depend()
-    return editor
-  }
-}
-
-function useForceUpdate() {
-  return createSignal(undefined, { equals: false })
+  return getEditor
 }

@@ -149,6 +149,20 @@ testStory(['slash-menu'], () => {
     await expect(orderedList).toBeVisible()
   })
 
+  test('insert blockquote', async ({ page }) => {
+    const { editor, focusedItem } = await setup(page)
+
+    const blockquote = editor.locator('blockquote')
+
+    await expect(blockquote).toHaveCount(0)
+
+    await editor.pressSequentially('/quote')
+    await expect(focusedItem).toHaveText('Quote')
+
+    await editor.press('Enter')
+    await expect(blockquote).toHaveCount(1)
+  })
+
   test('press arrow keys to select item', async ({ page }) => {
     const { editor, itemText, itemH1, itemH2, focusedItem } = await setup(page)
 

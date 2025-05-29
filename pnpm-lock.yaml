@@ -286,8 +286,8 @@ importers:
         specifier: workspace:^
         version: link:../pm
       prosemirror-changeset:
-        specifier: ^2.3.0
-        version: 2.3.0
+        specifier: ^2.3.1
+        version: 2.3.1
       prosemirror-dropcursor:
         specifier: ^1.8.2
         version: 1.8.2
@@ -326,8 +326,8 @@ importers:
         specifier: ^1.5.5
         version: 1.5.5
       loro-prosemirror:
-        specifier: ^0.2.1
-        version: 0.2.1(loro-crdt@1.5.5)(prosemirror-model@1.25.1)(prosemirror-state@1.4.3)(prosemirror-view@1.39.3)
+        specifier: ^0.2.3
+        version: 0.2.3(loro-crdt@1.5.5)(prosemirror-model@1.25.1)(prosemirror-state@1.4.3)(prosemirror-view@1.39.3)
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
@@ -501,8 +501,8 @@ importers:
         specifier: ^1.5.5
         version: 1.5.5
       loro-prosemirror:
-        specifier: ^0.2.1
-        version: 0.2.1(loro-crdt@1.5.5)(prosemirror-model@1.25.1)(prosemirror-state@1.4.3)(prosemirror-view@1.39.3)
+        specifier: ^0.2.3
+        version: 0.2.3(loro-crdt@1.5.5)(prosemirror-model@1.25.1)(prosemirror-state@1.4.3)(prosemirror-view@1.39.3)
       postcss:
         specifier: ^8.5.3
         version: 8.5.3
@@ -866,8 +866,8 @@ importers:
         specifier: ^1.5.5
         version: 1.5.5
       loro-prosemirror:
-        specifier: ^0.2.1
-        version: 0.2.1(loro-crdt@1.5.5)(prosemirror-model@1.25.1)(prosemirror-state@1.4.3)(prosemirror-view@1.39.3)
+        specifier: ^0.2.3
+        version: 0.2.3(loro-crdt@1.5.5)(prosemirror-model@1.25.1)(prosemirror-state@1.4.3)(prosemirror-view@1.39.3)
       phosphor-svelte:
         specifier: ^3.0.1
         version: 3.0.1(svelte@5.30.2)(vite@6.3.4(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(tsx@4.19.4)(yaml@2.7.1))
@@ -4912,10 +4912,10 @@ packages:
   loro-crdt@1.5.5:
     resolution: {integrity: sha512-XflGSRTgbFFEpYOc5J2WTVFg5mkEK7Cap+tNFTcIvSAxXQfsLGI8ai+y2PeYPVVbmHSV8NtLwId0QB2aR1kEWQ==}
 
-  loro-prosemirror@0.2.1:
-    resolution: {integrity: sha512-K9bPERXI0MkyFGRnIuNR70RiV+q0+i75AHmy1vh/124G26HY1yUWtvug1fybeCbqL2SktZoq7xrlo2eKzVNpZA==}
+  loro-prosemirror@0.2.3:
+    resolution: {integrity: sha512-H2i0aTdAJHl5FpwIM9wM+OXt7WdriYiJMFTTLMck/2+tm5MSGvtFt9Hd8X7mh7JVvuhQc7acfWl+AZnjHdWvxg==}
     peerDependencies:
-      loro-crdt: ^1.0.7
+      loro-crdt: ^1.4.0
       prosemirror-model: ^1.18.1
       prosemirror-state: ^1.4.1
       prosemirror-view: ^1.28.0
@@ -5636,8 +5636,8 @@ packages:
   property-information@7.0.0:
     resolution: {integrity: sha512-7D/qOz/+Y4X/rzSB6jKxKUsQnphO046ei8qxG59mtM3RG3DHgTK81HrxrmoDVINJb8NKT5ZsRbwHvQ6B68Iyhg==}
 
-  prosemirror-changeset@2.3.0:
-    resolution: {integrity: sha512-8wRKhlEwEJ4I13Ju54q2NZR1pVKGTgJ/8XsQ8L5A5uUsQ/YQScQJuEAuh8Bn8i6IwAMjjLRABd9lVli+DlIiVw==}
+  prosemirror-changeset@2.3.1:
+    resolution: {integrity: sha512-j0kORIBm8ayJNl3zQvD1TTPHJX3g042et6y/KQhZhnPrruO8exkTgG8X+NRpj7kIyMMEx74Xb3DyMIBtO0IKkQ==}
 
   prosemirror-commands@1.7.1:
     resolution: {integrity: sha512-rT7qZnQtx5c0/y/KlYaGvtG411S97UaL6gdp6RIZ23DLHanMYLyfGBV5DtSnZdthQql7W+lEVbpSfwtO8T+L2w==}
@@ -11916,7 +11916,7 @@ snapshots:
 
   loro-crdt@1.5.5: {}
 
-  loro-prosemirror@0.2.1(loro-crdt@1.5.5)(prosemirror-model@1.25.1)(prosemirror-state@1.4.3)(prosemirror-view@1.39.3):
+  loro-prosemirror@0.2.3(loro-crdt@1.5.5)(prosemirror-model@1.25.1)(prosemirror-state@1.4.3)(prosemirror-view@1.39.3):
     dependencies:
       lib0: 0.2.104
       loro-crdt: 1.5.5
@@ -12932,7 +12932,7 @@ snapshots:
 
   property-information@7.0.0: {}
 
-  prosemirror-changeset@2.3.0:
+  prosemirror-changeset@2.3.1:
     dependencies:
       prosemirror-transform: 1.10.4
 

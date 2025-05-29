@@ -6,7 +6,7 @@
   "description": "Preact components and utilities for ProseKit",
   "author": {
     "name": "ocavue",
-    "email": "ocavue@gmail.com"
+    "email": "ocavue@gmail.com" 
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",

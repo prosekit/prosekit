@@ -304,7 +304,12 @@ export class EditorInstance {
     return () => this.updateExtension(extension, false)
   }
 
-  public mount(place: HTMLElement): void {
+  public mount(place: HTMLElement | null | undefined): void {
+    if (!place) {
+      this.unmount()
+      return
+    }
+
     if (this.view) {
       throw new ProseKitError('Editor is already mounted')
     }
@@ -402,6 +407,15 @@ export class Editor<E extends Extension = any> {
   }
 
   /**
+   * Return a new editor instance with the same internal state.
+   *
+   * @internal
+   */
+  clone = (): Editor<E> => {
+    return new Editor(this.instance)
+  }
+
+  /**
    * Whether the editor is mounted.
    */
   get mounted(): boolean {
@@ -441,11 +455,7 @@ export class Editor<E extends Extension = any> {
    * Pass `null` or `undefined` to unmount the editor.
    */
   mount = (place: HTMLElement | null | undefined): void => {
-    if (place) {
-      this.instance.mount(place)
-    } else {
-      this.instance.unmount()
-    }
+    this.instance.mount(place)
   }
 
   /**
@@ -513,14 +523,14 @@ export class Editor<E extends Extension = any> {
   /**
    * Return a JSON object representing the editor's current document.
    */
-  public getDocJSON = (): NodeJSON => {
+  getDocJSON = (): NodeJSON => {
     return this.instance.getDocJSON()
   }
 
   /**
    * Return a HTML string representing the editor's current document.
    */
-  public getDocHTML = (options?: getDocHTMLOptions): string => {
+  getDocHTML = (options?: getDocHTMLOptions): string => {
     return this.instance.getDocHTML(options)
   }
 
@@ -538,15 +548,6 @@ export class Editor<E extends Extension = any> {
    */
   canExec = (command: Command): boolean => {
     return this.instance.canExec(command)
-  }
-
-  /**
-   * Return a new editor instance with the same internal state.
-   *
-   * @internal
-   */
-  clone = (): Editor<E> => {
-    return new Editor(this.instance)
   }
 
   /**

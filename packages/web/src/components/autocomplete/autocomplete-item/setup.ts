@@ -1,5 +1,6 @@
 import {
   useEffect,
+  useEventListener,
   type ConnectableElement,
   type SetupOptions,
 } from '@aria-ui/core'
@@ -25,5 +26,10 @@ export function useAutocompleteItem(
     if (!state.value.peek() && open.get()) {
       state.value.set(element.textContent ?? '')
     }
+  })
+
+  useEventListener(element, 'pointerdown', (event) => {
+    // Prevent the editor from losing focus
+    event.preventDefault()
   })
 }

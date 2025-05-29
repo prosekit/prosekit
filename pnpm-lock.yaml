@@ -851,8 +851,8 @@ importers:
         specifier: ^0.8.1
         version: 0.8.1(astro@5.8.0(@types/node@20.17.31)(jiti@2.4.2)(lightningcss@1.29.3)(rollup@4.40.1)(tsx@4.19.4)(typescript@5.8.3)(yaml@2.7.1))
       bits-ui:
-        specifier: ^1.8.0
-        version: 1.8.0(svelte@5.33.6)
+        specifier: ^2.3.0
+        version: 2.3.0(@internationalized/date@3.8.0)(svelte@5.33.6)
       fdir:
         specifier: ^6.4.5
         version: 6.4.5(picomatch@4.0.2)
@@ -3295,11 +3295,12 @@ packages:
   birpc@2.3.0:
     resolution: {integrity: sha512-ijbtkn/F3Pvzb6jHypHRyve2QApOCZDR25D/VnkY2G/lBNcXCTsnsCxgY4k4PkVB7zfwzYbY3O9Lcqe3xufS5g==}
 
-  bits-ui@1.8.0:
-    resolution: {integrity: sha512-CXD6Orp7l8QevNDcRPLXc/b8iMVgxDWT2LyTwsdLzJKh9CxesOmPuNePSPqAxKoT59FIdU4aFPS1k7eBdbaCxg==}
-    engines: {node: '>=18', pnpm: '>=8.7.0'}
+  bits-ui@2.3.0:
+    resolution: {integrity: sha512-PgDcs49PdHGRC7T1tTNqWhMrTHgOVE0q/q03K7n64V5MxeB2aMrbAqoW9Wg+43P4u2vMzUn8ifhLBPSfZDNceg==}
+    engines: {node: '>=20', pnpm: '>=8.7.0'}
     peerDependencies:
-      svelte: ^5.11.0
+      '@internationalized/date': ^3.8.1
+      svelte: ^5.33.0
 
   blob-to-buffer@1.2.9:
     resolution: {integrity: sha512-BF033y5fN6OCofD3vgHmNtwZWRcq9NLyyxyILx9hfMy1sXYy4ojFl765hJ2lP0YaN2fuxPaLO2Vzzoxy0FLFFA==}
@@ -6012,11 +6013,6 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
-  runed@0.23.4:
-    resolution: {integrity: sha512-9q8oUiBYeXIDLWNK5DfCWlkL0EW3oGbk845VdKlPeia28l751VpfesaB/+7pI6rnbx1I6rqoZ2fZxptOJLxILA==}
-    peerDependencies:
-      svelte: ^5.7.0
-
   runed@0.28.0:
     resolution: {integrity: sha512-k2xx7RuO9hWcdd9f+8JoBeqWtYrm5CALfgpkg2YDB80ds/QE4w0qqu34A7fqiAwiBBSBQOid7TLxwxVC27ymWQ==}
     peerDependencies:
@@ -6358,11 +6354,11 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
 
-  svelte-toolbelt@0.7.1:
-    resolution: {integrity: sha512-HcBOcR17Vx9bjaOceUvxkY3nGmbBmCBBbuWLLEWO6jtmWH8f/QoWmbyUfQZrpDINH39en1b8mptfPQT9VKQ1xQ==}
+  svelte-toolbelt@0.9.1:
+    resolution: {integrity: sha512-wBX6MtYw/kpht80j5zLpxJyR9soLizXPIAIWEVd9llAi17SR44ZdG291bldjB7r/K5duC0opDFcuhk2cA1hb8g==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
     peerDependencies:
-      svelte: ^5.0.0
+      svelte: ^5.30.2
 
   svelte2tsx@0.7.39:
     resolution: {integrity: sha512-NX8a7eSqF1hr6WKArvXr7TV7DeE+y0kDFD7L5JP7TWqlwFidzGKaG415p992MHREiiEWOv2xIWXJ+mlONofs0A==}
@@ -10102,16 +10098,16 @@ snapshots:
 
   birpc@2.3.0: {}
 
-  bits-ui@1.8.0(svelte@5.33.6):
+  bits-ui@2.3.0(@internationalized/date@3.8.0)(svelte@5.33.6):
     dependencies:
       '@floating-ui/core': 1.7.0
       '@floating-ui/dom': 1.7.0
       '@internationalized/date': 3.8.0
       css.escape: 1.5.1
       esm-env: 1.2.2
-      runed: 0.23.4(svelte@5.33.6)
+      runed: 0.28.0(svelte@5.33.6)
       svelte: 5.33.6
-      svelte-toolbelt: 0.7.1(svelte@5.33.6)
+      svelte-toolbelt: 0.9.1(svelte@5.33.6)
       tabbable: 6.2.0
 
   blob-to-buffer@1.2.9: {}
@@ -13510,11 +13506,6 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  runed@0.23.4(svelte@5.33.6):
-    dependencies:
-      esm-env: 1.2.2
-      svelte: 5.33.6
-
   runed@0.28.0(svelte@5.33.6):
     dependencies:
       esm-env: 1.2.2
@@ -13978,10 +13969,10 @@ snapshots:
     transitivePeerDependencies:
       - picomatch
 
-  svelte-toolbelt@0.7.1(svelte@5.33.6):
+  svelte-toolbelt@0.9.1(svelte@5.33.6):
     dependencies:
       clsx: 2.1.1
-      runed: 0.23.4(svelte@5.33.6)
+      runed: 0.28.0(svelte@5.33.6)
       style-to-object: 1.0.8
       svelte: 5.33.6
 

@@ -12,7 +12,7 @@ export function useComponent(
   eventNames: string[],
 ): (element: HTMLElement | undefined, $$props: Record<string, unknown>) => [Record<string, unknown>, Record<string, EventHandler>] {
   const hasEditor = propNames.includes('editor')
-  const lowerCaseEventNameMap = Object.fromEntries(
+  const lowerCaseEventNameMap = new Map(
     eventNames.map((name) => [name.toLowerCase(), name]),
   )
 
@@ -38,12 +38,14 @@ export function useComponent(
 
       if (name.startsWith('on')) {
         const lowerCaseEventName = name.slice(2).toLowerCase()
-        const eventName = lowerCaseEventNameMap[lowerCaseEventName]
+        const eventName = lowerCaseEventNameMap.get(lowerCaseEventName)
         if (eventName) {
           const extractDetail = eventName.endsWith('Change')
           eventHandlers[eventName] = (event: Event) => {
-            const handler = value as AnyFunction
-            handler(extractDetail ? (event as CustomEvent).detail : event)
+            const handler = value as AnyFunction | null
+            if (typeof handler === 'function') {
+              handler(extractDetail ? (event as CustomEvent).detail : event)
+            }
           }
           continue
         }

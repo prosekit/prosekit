@@ -304,12 +304,7 @@ export class EditorInstance {
     return () => this.updateExtension(extension, false)
   }
 
-  public mount(place: HTMLElement | null | undefined): void {
-    if (!place) {
-      this.unmount()
-      return
-    }
-
+  public mount(place: HTMLElement): void {
     if (this.view) {
       throw new ProseKitError('Editor is already mounted')
     }
@@ -455,7 +450,11 @@ export class Editor<E extends Extension = any> {
    * Pass `null` or `undefined` to unmount the editor.
    */
   mount = (place: HTMLElement | null | undefined): void => {
-    this.instance.mount(place)
+    if (place) {
+      this.instance.mount(place)
+    } else {
+      this.instance.unmount()
+    }
   }
 
   /**

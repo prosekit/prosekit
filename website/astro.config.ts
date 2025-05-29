@@ -120,7 +120,14 @@ const config: AstroUserConfig = {
     }),
     UnoCSS(),
     preact({ include: ['src/*/preact/**/*'] }),
-    react({ include: ['src/*/react/**/*'] }),
+    react({
+      include: ['src/*/react/**/*'],
+      babel: {
+        plugins: [
+          ['babel-plugin-react-compiler'],
+        ],
+      },
+    }),
     svelte(),
     vue(),
     solid({ include: ['src/*/solid/**/*'] }),

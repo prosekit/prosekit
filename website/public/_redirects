@@ -1,0 +1,15 @@
+# Redirects configuration for Cloudflare Pages
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+/b/prosekit          https://img.shields.io/badge/prosekit-444444?style=flat-square&logoColor=ffffff
+/b/pm                https://img.shields.io/badge/prosekit%2Fpm-444444?style=flat-square&logoColor=ffffff
+/b/core              https://img.shields.io/badge/prosekit%2Fcore-444444?style=flat-square&logoColor=ffffff
+/b/basic             https://img.shields.io/badge/prosekit%2Fbasic-444444?style=flat-square&logoColor=ffffff
+/b/extensions        https://img.shields.io/badge/prosekit%2Fextensions-444444?style=flat-square&logoColor=ffffff
+/b/lit               https://img.shields.io/badge/prosekit%2Flit-444444?style=flat-square&logoColor=ffffff&logo=lit
+/b/vue               https://img.shields.io/badge/prosekit%2Fvue-444444?style=flat-square&logoColor=ffffff&logo=vuedotjs
+/b/solid             https://img.shields.io/badge/prosekit%2Fsolid-444444?style=flat-square&logoColor=ffffff&logo=solid
+/b/react             https://img.shields.io/badge/prosekit%2Freact-444444?style=flat-square&logoColor=ffffff&logo=react
+/b/preact            https://img.shields.io/badge/prosekit%2Fpreact-444444?style=flat-square&logoColor=ffffff&logo=preact
+/b/svelte            https://img.shields.io/badge/prosekit%2Fsvelte-444444?style=flat-square&logoColor=ffffff&logo=svelte
+/b/web               https://img.shields.io/badge/prosekit%2Fweb-444444?style=flat-square&logoColor=ffffff

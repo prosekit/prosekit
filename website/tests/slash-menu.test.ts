@@ -123,7 +123,7 @@ testStory(['slash-menu'], () => {
     await expect(menu).toBeVisible()
   })
 
-  test.only('prevent focus loss when clicking menu items', async ({ page }) => {
+  test('prevent focus loss when clicking menu items', async ({ page }) => {
     const { editor, focusedItem } = await setup(page)
     const blockquote = editor.locator('blockquote')
 
@@ -145,7 +145,7 @@ testStory(['slash-menu'], () => {
     await expectEditorToBeFocused(page)
   })
 
-  test.only('prevent focus loss when pressing Enter', async ({ page }) => {
+  test('prevent focus loss when pressing Enter', async ({ page }) => {
     const { editor, focusedItem } = await setup(page)
     const blockquote = editor.locator('blockquote')
 

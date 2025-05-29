@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.13.3
+
+### Patch Changes
+
+- [`c7e32db`](https://github.com/ocavue/prosekit/commit/c7e32db5ceb8584c3102b4f6806d3dca29d5b402) ![](https://prosekit.dev/b/web) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/vue)
+
+  Prevent the editor from losing focus when clicking autocomplete menu items.
+
+- [`539ef97`](https://github.com/ocavue/prosekit/commit/539ef97b135f5d4e7e49e04b9b990a07bceee970) ![](https://prosekit.dev/b/preact)
+
+  Fix a bug where event handlers passed to components can be called twice.
+
+- [`0737c47`](https://github.com/ocavue/prosekit/commit/0737c471a8664851e4ff1317dbb8e6c2b4068150) ![](https://prosekit.dev/b/extensions)
+
+  Update dependencies.
+
 ## 0.13.2
 
 ### Patch Changes

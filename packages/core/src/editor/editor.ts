@@ -541,6 +541,15 @@ export class Editor<E extends Extension = any> {
   }
 
   /**
+   * Return a new editor instance with the same internal state.
+   *
+   * @internal
+   */
+  clone = (): Editor<E> => {
+    return new Editor(this.instance)
+  }
+
+  /**
    * All {@link CommandAction}s defined by the editor.
    */
   get commands(): ExtractCommandActions<E> {

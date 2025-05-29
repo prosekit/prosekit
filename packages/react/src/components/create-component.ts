@@ -30,7 +30,7 @@ export function createComponent<
   Partial<Props> & RefAttributes<CustomElement> & HTMLAttributes<CustomElement>
 > {
   const hasEditor = propNames.includes('editor')
-  const lowerCaseEventNameMap = Object.fromEntries(
+  const lowerCaseEventNameMap = new Map(
     eventNames.map((name) => [name.toLowerCase(), name]),
   )
 
@@ -54,16 +54,16 @@ export function createComponent<
 
       if (name.startsWith('on')) {
         const lowerCaseEventName = name.slice(2).toLowerCase()
-        const eventName = lowerCaseEventNameMap[lowerCaseEventName]
-        const handler = value as AnyFunction | null
-        if (eventName && handler) {
+        const eventName = lowerCaseEventNameMap.get(lowerCaseEventName)
+        if (eventName) {
           const extractDetail = eventName.endsWith('Change')
-          const normalizedHandler = extractDetail
-            ? (event: Event) => {
-              handler((event as CustomEvent).detail)
+          eventHandlers[eventName] = (event: Event) => {
+            const handler = value as AnyFunction | null
+            if (typeof handler === 'function') {
+              handler(extractDetail ? (event as CustomEvent).detail : event)
             }
-            : handler
-          eventHandlers[eventName] = normalizedHandler
+          }
+          continue
         }
       }
 

@@ -9,7 +9,8 @@ export default function SlashMenuItem(props: {
     <AutocompleteItem
       onSelect={props.onSelect}
       className="CSS_AUTOCOMPLETE_MENU_ITEM"
-      onMouseDown={(e) => e.preventDefault()}>
+      onMouseDown={(e) => e.preventDefault()}
+    >
       <span>{props.label}</span>
       {props.kbd && <kbd className="CSS_AUTOCOMPLETE_MENU_KEYBOARD">{props.kbd}</kbd>}
     </AutocompleteItem>

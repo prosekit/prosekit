@@ -12,7 +12,7 @@
   "funding": "https://github.com/sponsors/ocavue",
   "homepage": "https://github.com/ocavue/prosekit#readme",
   "repository": {
-    "type": "git", 
+    "type": "git",
     "url": "git+https://github.com/ocavue/prosekit.git",
     "directory": "packages/prosekit"
   },

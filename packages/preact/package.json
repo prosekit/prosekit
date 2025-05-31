@@ -58,8 +58,8 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "preact": "^10.26.7",
-    "tsdown": "^0.12.4",
+    "preact": "^10.26.8",
+    "tsdown": "^0.12.5",
     "typescript": "~5.8.3",
     "vitest": "^3.1.4"
   },

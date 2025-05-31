@@ -42,29 +42,30 @@ function getInlineMenuItems(editor: Editor<EditorExtension>) {
       isActive: editor.marks.link.isActive(),
       canExec: editor.commands.addLink.canExec({ href: '' }),
       command: () => editor.commands.expandLink(),
+      currentLink: getCurrentLink(editor.state),
     },
   }
 }
 
+function getCurrentLink(state: EditorState): string | undefined {
+  const { $from } = state.selection
+  const marks = $from.marksAcross($from)
+  if (!marks) {
+    return
+  }
+  for (const mark of marks) {
+    if (mark.type.name === 'link') {
+      return (mark.attrs as LinkAttrs).href
+    }
+  }
+}
+
 export default function InlineMenu() {
-  const editor = useEditor<EditorExtension>({ update: true })
+  const editor = useEditor<EditorExtension>()
   const items = useDerivedValue(getInlineMenuItems)
 
   const [linkMenuOpen, setLinkMenuOpen] = useState(false)
   const toggleLinkMenuOpen = () => setLinkMenuOpen((open) => !open)
-
-  const getCurrentLink = (state: EditorState): string | undefined => {
-    const { $from } = state.selection
-    const marks = $from.marksAcross($from)
-    if (!marks) {
-      return
-    }
-    for (const mark of marks) {
-      if (mark.type.name === 'link') {
-        return (mark.attrs as LinkAttrs).href
-      }
-    }
-  }
 
   const handleLinkUpdate = (href?: string) => {
     if (href) {
@@ -166,7 +167,7 @@ export default function InlineMenu() {
           >
             <input
               placeholder="Paste the link..."
-              defaultValue={getCurrentLink(editor.state)}
+              defaultValue={items.link.currentLink}
               className="CSS_INLINE_MENU_LINK_INPUT"
             >
             </input>

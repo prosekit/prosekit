@@ -1,30 +1,71 @@
+import type { Editor } from 'prosekit/core'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
-import { useEditor } from 'prosekit/react'
+import {
+  useEditor,
+  useEditorDerivedValue,
+} from 'prosekit/react'
 import { InlinePopover } from 'prosekit/react/inline-popover'
 import { useState } from 'react'
 
 import Button from './button'
 import type { EditorExtension } from './extension'
 
+function getInlineMenuItems(editor: Editor<EditorExtension>) {
+  return {
+    bold: {
+      isActive: editor.marks.bold.isActive(),
+      canExec: editor.commands.toggleBold.canExec(),
+      command: () => editor.commands.toggleBold(),
+    },
+    italic: {
+      isActive: editor.marks.italic.isActive(),
+      canExec: editor.commands.toggleItalic.canExec(),
+      command: () => editor.commands.toggleItalic(),
+    },
+    underline: {
+      isActive: editor.marks.underline.isActive(),
+      canExec: editor.commands.toggleUnderline.canExec(),
+      command: () => editor.commands.toggleUnderline(),
+    },
+    strike: {
+      isActive: editor.marks.strike.isActive(),
+      canExec: editor.commands.toggleStrike.canExec(),
+      command: () => editor.commands.toggleStrike(),
+    },
+    code: {
+      isActive: editor.marks.code.isActive(),
+      canExec: editor.commands.toggleCode.canExec(),
+      command: () => editor.commands.toggleCode(),
+    },
+    link: {
+      isActive: editor.marks.link.isActive(),
+      canExec: editor.commands.addLink.canExec({ href: '' }),
+      command: () => editor.commands.expandLink(),
+      currentLink: getCurrentLink(editor.state),
+    },
+  }
+}
+
+function getCurrentLink(state: EditorState): string | undefined {
+  const { $from } = state.selection
+  const marks = $from.marksAcross($from)
+  if (!marks) {
+    return
+  }
+  for (const mark of marks) {
+    if (mark.type.name === 'link') {
+      return (mark.attrs as LinkAttrs).href
+    }
+  }
+}
+
 export default function InlineMenu() {
-  const editor = useEditor<EditorExtension>({ update: true })
+  const editor = useEditor<EditorExtension>()
+  const items = useEditorDerivedValue(getInlineMenuItems)
 
   const [linkMenuOpen, setLinkMenuOpen] = useState(false)
   const toggleLinkMenuOpen = () => setLinkMenuOpen((open) => !open)
-
-  const getCurrentLink = (state: EditorState): string | undefined => {
-    const { $from } = state.selection
-    const marks = $from.marksAcross($from)
-    if (!marks) {
-      return
-    }
-    for (const mark of marks) {
-      if (mark.type.name === 'link') {
-        return (mark.attrs as LinkAttrs).href
-      }
-    }
-  }
 
   const handleLinkUpdate = (href?: string) => {
     if (href) {
@@ -49,55 +90,55 @@ export default function InlineMenu() {
         }}
       >
         <Button
-          pressed={editor.marks.bold.isActive()}
-          disabled={!editor.commands.toggleBold.canExec()}
-          onClick={() => editor.commands.toggleBold()}
+          pressed={items.bold.isActive}
+          disabled={!items.bold.canExec}
+          onClick={items.bold.command}
           tooltip="Bold"
         >
           <div className="CSS_ICON_BOLD"></div>
         </Button>
 
         <Button
-          pressed={editor.marks.italic.isActive()}
-          disabled={!editor.commands.toggleItalic.canExec()}
-          onClick={() => editor.commands.toggleItalic()}
+          pressed={items.italic.isActive}
+          disabled={!items.italic.canExec}
+          onClick={items.italic.command}
           tooltip="Italic"
         >
           <div className="CSS_ICON_ITALIC"></div>
         </Button>
 
         <Button
-          pressed={editor.marks.underline.isActive()}
-          disabled={!editor.commands.toggleUnderline.canExec()}
-          onClick={() => editor.commands.toggleUnderline()}
+          pressed={items.underline.isActive}
+          disabled={!items.underline.canExec}
+          onClick={items.underline.command}
           tooltip="Underline"
         >
           <div className="CSS_ICON_UNDERLINE"></div>
         </Button>
 
         <Button
-          pressed={editor.marks.strike.isActive()}
-          disabled={!editor.commands.toggleStrike.canExec()}
-          onClick={() => editor.commands.toggleStrike()}
+          pressed={items.strike.isActive}
+          disabled={!items.strike.canExec}
+          onClick={items.strike.command}
           tooltip="Strikethrough"
         >
           <div className="CSS_ICON_STRIKE"></div>
         </Button>
 
         <Button
-          pressed={editor.marks.code.isActive()}
-          disabled={!editor.commands.toggleCode.canExec()}
-          onClick={() => editor.commands.toggleCode()}
+          pressed={items.code.isActive}
+          disabled={!items.code.canExec}
+          onClick={items.code.command}
           tooltip="Code"
         >
           <div className="CSS_ICON_CODE"></div>
         </Button>
 
-        {editor.commands.addLink.canExec({ href: '' }) && (
+        {items.link.canExec && (
           <Button
-            pressed={editor.marks.link.isActive()}
+            pressed={items.link.isActive}
             onClick={() => {
-              editor.commands.expandLink()
+              items.link.command()
               toggleLinkMenuOpen()
             }}
             tooltip="Link"
@@ -126,13 +167,13 @@ export default function InlineMenu() {
           >
             <input
               placeholder="Paste the link..."
-              defaultValue={getCurrentLink(editor.state)}
+              defaultValue={items.link.currentLink}
               className="CSS_INLINE_MENU_LINK_INPUT"
             >
             </input>
           </form>
         )}
-        {editor.marks.link.isActive() && (
+        {items.link.isActive && (
           <button
             onClick={() => handleLinkUpdate()}
             onMouseDown={(event) => event.preventDefault()}

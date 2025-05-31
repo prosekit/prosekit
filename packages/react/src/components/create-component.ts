@@ -86,7 +86,7 @@ export function createComponent<
       for (const [name, value] of Object.entries(properties)) {
         if (value !== undefined) {
           // @ts-expect-error: we know that name is a valid property name
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, react-compiler/react-compiler
           el[name] = value as unknown as any
         }
       }

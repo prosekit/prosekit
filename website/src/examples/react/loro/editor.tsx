@@ -5,62 +5,64 @@ import {
 } from 'loro-prosemirror'
 import {
   useEffect,
-  useRef,
+  useState,
 } from 'react'
 
 import EditorComponent from './editor-component'
 
 export default function Page() {
-  const { loroARef, awarenessA, loroBRef, awarenessB } = useLoroExample()
+  const { loroA, awarenessA, loroB, awarenessB } = useLoroDocs()
 
   return (
     <div className="h-full flex flex-col gap-2">
-      <EditorComponent loro={loroARef.current} awareness={awarenessA.current} />
-      <EditorComponent loro={loroBRef.current} awareness={awarenessB.current} />
+      <EditorComponent loro={loroA} awareness={awarenessA} />
+      <EditorComponent loro={loroB} awareness={awarenessB} />
     </div>
   )
 }
 
-function useLoroExample() {
-  const loroARef = useRef<LoroDocType>(new LoroDoc())
-  const idA = loroARef.current.peerIdStr
-  const awarenessA = useRef<CursorAwareness>(new CursorAwareness(idA))
-  const loroBRef = useRef<LoroDocType>(new LoroDoc())
-  const idB = loroBRef.current.peerIdStr
-  const awarenessB = useRef<CursorAwareness>(new CursorAwareness(idB))
+function useLoroDocs() {
+  const [loroState] = useState(() => {
+    const loroA: LoroDocType = new LoroDoc()
+    const loroB: LoroDocType = new LoroDoc()
+
+    const idA = loroA.peerIdStr
+    const idB = loroB.peerIdStr
+
+    const awarenessA = new CursorAwareness(idA)
+    const awarenessB = new CursorAwareness(idB)
+
+    return { loroA, loroB, idA, idB, awarenessA, awarenessB }
+  })
+
   useEffect(() => {
-    loroARef.current.subscribe((event) => {
+    let { loroA, loroB, idA, idB, awarenessA, awarenessB } = loroState
+
+    loroA.subscribe((event) => {
       if (event.by === 'local') {
-        loroBRef.current.import(
-          loroARef.current.exportFrom(loroBRef.current.oplogVersion()),
+        loroB.import(
+          loroA.exportFrom(loroB.oplogVersion()),
         )
       }
     })
-    loroBRef.current.subscribe((event) => {
+    loroB.subscribe((event) => {
       if (event.by === 'local') {
-        loroARef.current.import(
-          loroBRef.current.exportFrom(loroARef.current.oplogVersion()),
+        loroA.import(
+          loroB.exportFrom(loroA.oplogVersion()),
         )
       }
     })
-    awarenessA.current.addListener((_state, origin) => {
+    awarenessA.addListener((_state, origin) => {
       if (origin === 'local') {
-        awarenessB.current.apply(awarenessA.current.encode([idA]))
+        awarenessB.apply(awarenessA.encode([idA]))
       }
     })
-    awarenessB.current.addListener((_state, origin) => {
+    awarenessB.addListener((_state, origin) => {
       if (origin === 'local') {
-        awarenessA.current.apply(awarenessB.current.encode([idB]))
+        awarenessA.apply(awarenessB.encode([idB]))
       }
     })
+  }, [loroState])
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  return {
-    loroARef,
-    awarenessA,
-    loroBRef,
-    awarenessB,
-  }
+  return loroState
 }

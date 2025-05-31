@@ -26,7 +26,7 @@ export function useEditor<E extends Extension = any>(options?: {
    * Note this this option doesn't work with [React
    * compiler](https://react.dev/learn/react-compiler) because the returned
    * editor will be the same instance after state updates. If you're using React
-   * compiler, you should use {@link useDerivedValue} instead.
+   * compiler, you should use {@link useEditorDerivedValue} instead.
    *
    * @default false
    */

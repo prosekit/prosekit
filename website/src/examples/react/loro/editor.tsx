@@ -1,4 +1,7 @@
-import { LoroDoc } from 'loro-crdt'
+import {
+  LoroDoc,
+  type AwarenessListener,
+} from 'loro-crdt'
 import {
   CursorAwareness,
   type LoroDocType,
@@ -36,32 +39,31 @@ function useLoroDocs() {
   })
 
   useEffect(() => {
-    let { loroA, loroB, idA, idB, awarenessA, awarenessB } = loroState
-
-    loroA.subscribe((event) => {
-      if (event.by === 'local') {
-        loroB.import(
-          loroA.exportFrom(loroB.oplogVersion()),
-        )
-      }
+    const { loroA, loroB, idA, idB, awarenessA, awarenessB } = loroState
+    const unsubscribeA = loroA.subscribeLocalUpdates((updates) => {
+      loroB.import(updates)
     })
-    loroB.subscribe((event) => {
-      if (event.by === 'local') {
-        loroA.import(
-          loroB.exportFrom(loroA.oplogVersion()),
-        )
-      }
+    const unsubscribeB = loroB.subscribeLocalUpdates((updates) => {
+      loroA.import(updates)
     })
-    awarenessA.addListener((_state, origin) => {
+    const awarenessAListener: AwarenessListener = (state, origin) => {
       if (origin === 'local') {
         awarenessB.apply(awarenessA.encode([idA]))
       }
-    })
-    awarenessB.addListener((_state, origin) => {
+    }
+    const awarenessBListener: AwarenessListener = (state, origin) => {
       if (origin === 'local') {
         awarenessA.apply(awarenessB.encode([idB]))
       }
-    })
+    }
+    awarenessA.addListener(awarenessAListener)
+    awarenessB.addListener(awarenessBListener)
+    return () => {
+      awarenessA.removeListener(awarenessAListener)
+      awarenessB.removeListener(awarenessBListener)
+      unsubscribeA()
+      unsubscribeB()
+    }
   }, [loroState])
 
   return loroState

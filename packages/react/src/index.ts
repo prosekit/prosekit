@@ -14,9 +14,9 @@ export {
   type ReactNodeViewOptions,
   type ReactNodeViewProps,
 } from './extensions/react-node-view'
-export { useDerivedValue } from './hooks/use-derived-value'
 export { useDocChange } from './hooks/use-doc-change'
 export { useEditor } from './hooks/use-editor'
+export { useEditorDerivedValue } from './hooks/use-editor-derived-value'
 export {
   useExtension,
   type UseExtensionOptions,

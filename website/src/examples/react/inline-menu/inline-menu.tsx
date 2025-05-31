@@ -2,8 +2,8 @@ import type { Editor } from 'prosekit/core'
 import type { LinkAttrs } from 'prosekit/extensions/link'
 import type { EditorState } from 'prosekit/pm/state'
 import {
-  useDerivedValue,
   useEditor,
+  useEditorDerivedValue,
 } from 'prosekit/react'
 import { InlinePopover } from 'prosekit/react/inline-popover'
 import { useState } from 'react'
@@ -48,7 +48,7 @@ function getInlineMenuItems(editor: Editor<EditorExtension>) {
 
 export default function InlineMenu() {
   const editor = useEditor<EditorExtension>({ update: true })
-  const items = useDerivedValue(getInlineMenuItems)
+  const items = useEditorDerivedValue(getInlineMenuItems)
 
   const [linkMenuOpen, setLinkMenuOpen] = useState(false)
   const toggleLinkMenuOpen = () => setLinkMenuOpen((open) => !open)

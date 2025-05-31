@@ -1,12 +1,12 @@
 import type { Editor } from 'prosekit/core'
-import { useDerivedValue } from 'prosekit/react'
+import { useEditorDerivedValue } from 'prosekit/react'
 import { useCallback } from 'react'
 
 import Button from './button'
 import type { EditorExtension } from './extension'
 
 export default function Toolbar() {
-  const item = useDerivedValue(useCallback((editor: Editor<EditorExtension>) => {
+  const item = useEditorDerivedValue(useCallback((editor: Editor<EditorExtension>) => {
     return {
       isActive: editor.nodes.codeBlock.isActive(),
       canExec: editor.commands.setCodeBlock.canExec(),

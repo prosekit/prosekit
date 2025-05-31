@@ -1,5 +1,5 @@
 import type { Editor } from 'prosekit/core'
-import { useDerivedValue } from 'prosekit/react'
+import { useEditorDerivedValue } from 'prosekit/react'
 
 import type { EditorExtension } from './extension'
 
@@ -12,7 +12,7 @@ function getWordCount(editor: Editor<EditorExtension>) {
 }
 
 export default function WordCounter() {
-  const { wordCount, characterCount } = useDerivedValue(getWordCount)
+  const { wordCount, characterCount } = useEditorDerivedValue(getWordCount)
 
   return (
     <div className="p-4 text-center italic tabular-nums">

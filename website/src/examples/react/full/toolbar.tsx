@@ -1,5 +1,5 @@
 import type { Editor } from 'prosekit/core'
-import { useDerivedValue } from 'prosekit/react'
+import { useEditorDerivedValue } from 'prosekit/react'
 
 import Button from './button'
 import type { EditorExtension } from './extension'
@@ -105,7 +105,7 @@ function getToolbarItems(editor: Editor<EditorExtension>) {
 }
 
 export default function Toolbar() {
-  const items = useDerivedValue(getToolbarItems)
+  const items = useEditorDerivedValue(getToolbarItems)
 
   return (
     <div className="CSS_TOOLBAR">

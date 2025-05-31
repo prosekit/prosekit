@@ -30,7 +30,7 @@ export interface UseEditorDerivedOptions<E extends Extension = any> {
  *
  * @public
  */
-export function useDerivedValue<E extends Extension, Derived>(
+export function useEditorDerivedValue<E extends Extension, Derived>(
   /**
    * A function that receives the editor instance and returns a derived value.
    *

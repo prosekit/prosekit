@@ -124,7 +124,7 @@ const config: AstroUserConfig = {
       include: ['src/*/react/**/*'],
       babel: {
         plugins: [
-          ['babel-plugin-react-compiler'],
+          // ['babel-plugin-react-compiler'],
         ],
       },
     }),

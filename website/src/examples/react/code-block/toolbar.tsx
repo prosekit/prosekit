@@ -1,17 +1,25 @@
-import { useEditor } from 'prosekit/react'
+import type { Editor } from 'prosekit/core'
+import { useDerivedValue } from 'prosekit/react'
+import { useCallback } from 'react'
 
 import Button from './button'
 import type { EditorExtension } from './extension'
 
 export default function Toolbar() {
-  const editor = useEditor<EditorExtension>({ update: true })
+  const item = useDerivedValue(useCallback((editor: Editor<EditorExtension>) => {
+    return {
+      isActive: editor.nodes.codeBlock.isActive(),
+      canExec: editor.commands.setCodeBlock.canExec(),
+      command: () => editor.commands.setCodeBlock(),
+    }
+  }, []))
 
   return (
     <div className="CSS_TOOLBAR">
       <Button
-        pressed={editor.nodes.codeBlock.isActive()}
-        disabled={!editor.commands.setCodeBlock.canExec()}
-        onClick={() => editor.commands.setCodeBlock()}
+        pressed={item.isActive}
+        disabled={!item.canExec}
+        onClick={item.command}
       >
         <div className="CSS_ICON_CODE_BLOCK" />
       </Button>

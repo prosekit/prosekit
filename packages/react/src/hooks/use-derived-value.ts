@@ -1,7 +1,5 @@
 import {
-  defineFocusChangeHandler,
   defineMountHandler,
-  defineUnmountHandler,
   defineUpdateHandler,
   EditorNotFoundError,
   union,
@@ -24,14 +22,20 @@ export interface UseEditorDerivedOptions<E extends Extension = any> {
 }
 
 /**
+ * A hook that runs a function to derive a value from the editor instance after
+ * editor state changes.
+ *
+ * This is useful when you need to render something based on the editor state,
+ * for example, whether the selected text is wrapped in an italic mark.
+ *
  * @public
  */
-export function useDerivedValue<Derived, E extends Extension = any>(
+export function useDerivedValue<E extends Extension, Derived>(
   /**
    * A function that receives the editor instance and returns a derived value.
    *
-   * It will be called whenever the editor's state changes, or when it mounts,
-   * unmounts, gains focus, or loses focus.
+   * It will be called whenever the editor's document state changes, or when it
+   * mounts.
    *
    * This function should be memoized.
    */
@@ -63,8 +67,6 @@ function createEditorStore<Derived, E extends Extension = any>(editor: Editor<E>
     const extension = union(
       defineUpdateHandler(handleChange),
       defineMountHandler(handleChange),
-      defineUnmountHandler(handleChange),
-      defineFocusChangeHandler(handleChange),
     )
     return editor.use(extension)
   }

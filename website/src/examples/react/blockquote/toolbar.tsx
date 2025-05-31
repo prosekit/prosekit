@@ -1,18 +1,19 @@
 import type { Editor } from 'prosekit/core'
 import { useEditorDerivedValue } from 'prosekit/react'
-import { useCallback } from 'react'
 
 import Button from './button'
 import type { EditorExtension } from './extension'
 
+function getToolbarItem(editor: Editor<EditorExtension>) {
+  return {
+    isActive: editor.nodes.blockquote.isActive(),
+    canExec: editor.commands.toggleBlockquote.canExec(),
+    command: () => editor.commands.setBlockquote(),
+  }
+}
+
 export default function Toolbar() {
-  const item = useEditorDerivedValue(useCallback((editor: Editor<EditorExtension>) => {
-    return {
-      isActive: editor.nodes.blockquote.isActive(),
-      canExec: editor.commands.toggleBlockquote.canExec(),
-      command: () => editor.commands.setBlockquote(),
-    }
-  }, []))
+  const item = useEditorDerivedValue(getToolbarItem)
 
   return (
     <div className="CSS_TOOLBAR">

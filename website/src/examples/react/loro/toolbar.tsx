@@ -1,71 +1,112 @@
-import { useEditor } from 'prosekit/react'
+import type { Editor } from 'prosekit/core'
+import { useEditorDerivedValue } from 'prosekit/react'
 
 import Button from './button'
 import type { EditorExtension } from './extension'
 
+function getToolbarItems(editor: Editor<EditorExtension>) {
+  return {
+    undo: {
+      isActive: false,
+      canExec: editor.commands.undo.canExec(),
+      command: editor.commands.undo,
+    },
+    redo: {
+      isActive: false,
+      canExec: editor.commands.redo.canExec(),
+      command: editor.commands.redo,
+    },
+    bold: {
+      isActive: editor.marks.bold.isActive(),
+      canExec: editor.commands.toggleBold.canExec(),
+      command: editor.commands.toggleBold,
+    },
+    italic: {
+      isActive: editor.marks.italic.isActive(),
+      canExec: editor.commands.toggleItalic.canExec(),
+      command: editor.commands.toggleItalic,
+    },
+    heading1: {
+      isActive: editor.nodes.heading.isActive({ level: 1 }),
+      canExec: editor.commands.toggleHeading.canExec({ level: 1 }),
+      command: () => editor.commands.toggleHeading({ level: 1 }),
+    },
+    heading2: {
+      isActive: editor.nodes.heading.isActive({ level: 2 }),
+      canExec: editor.commands.toggleHeading.canExec({ level: 2 }),
+      command: () => editor.commands.toggleHeading({ level: 2 }),
+    },
+    heading3: {
+      isActive: editor.nodes.heading.isActive({ level: 3 }),
+      canExec: editor.commands.toggleHeading.canExec({ level: 3 }),
+      command: () => editor.commands.toggleHeading({ level: 3 }),
+    },
+  }
+}
+
 export default function Toolbar() {
-  const editor = useEditor<EditorExtension>({ update: true })
+  const items = useEditorDerivedValue(getToolbarItems)
 
   return (
     <div className="CSS_TOOLBAR">
       <Button
-        pressed={false}
-        disabled={!editor.commands.undo.canExec()}
-        onClick={editor.commands.undo}
+        pressed={items.undo.isActive}
+        disabled={!items.undo.canExec}
+        onClick={items.undo.command}
         tooltip="Undo"
       >
         <div className="CSS_ICON_UNDO" />
       </Button>
 
       <Button
-        pressed={false}
-        disabled={!editor.commands.redo.canExec()}
-        onClick={editor.commands.redo}
+        pressed={items.redo.isActive}
+        disabled={!items.redo.canExec}
+        onClick={items.redo.command}
         tooltip="Redo"
       >
         <div className="CSS_ICON_REDO" />
       </Button>
 
       <Button
-        pressed={editor.marks.bold.isActive()}
-        disabled={!editor.commands.toggleBold.canExec()}
-        onClick={editor.commands.toggleBold}
+        pressed={items.bold.isActive}
+        disabled={!items.bold.canExec}
+        onClick={items.bold.command}
         tooltip="Bold"
       >
         <div className="CSS_ICON_BOLD" />
       </Button>
 
       <Button
-        pressed={editor.marks.italic.isActive()}
-        disabled={!editor.commands.toggleItalic.canExec()}
-        onClick={editor.commands.toggleItalic}
+        pressed={items.italic.isActive}
+        disabled={!items.italic.canExec}
+        onClick={items.italic.command}
         tooltip="Italic"
       >
         <div className="CSS_ICON_ITALIC" />
       </Button>
 
       <Button
-        pressed={editor.nodes.heading.isActive({ level: 1 })}
-        disabled={!editor.commands.toggleHeading.canExec({ level: 1 })}
-        onClick={() => editor.commands.toggleHeading({ level: 1 })}
+        pressed={items.heading1.isActive}
+        disabled={!items.heading1.canExec}
+        onClick={items.heading1.command}
         tooltip="Heading 1"
       >
         <div className="CSS_ICON_H1" />
       </Button>
 
       <Button
-        pressed={editor.nodes.heading.isActive({ level: 2 })}
-        disabled={!editor.commands.toggleHeading.canExec({ level: 2 })}
-        onClick={() => editor.commands.toggleHeading({ level: 2 })}
+        pressed={items.heading2.isActive}
+        disabled={!items.heading2.canExec}
+        onClick={items.heading2.command}
         tooltip="Heading 2"
       >
         <div className="CSS_ICON_H2" />
       </Button>
 
       <Button
-        pressed={editor.nodes.heading.isActive({ level: 3 })}
-        disabled={!editor.commands.toggleHeading.canExec({ level: 3 })}
-        onClick={() => editor.commands.toggleHeading({ level: 3 })}
+        pressed={items.heading3.isActive}
+        disabled={!items.heading3.canExec}
+        onClick={items.heading3.command}
         tooltip="Heading 3"
       >
         <div className="CSS_ICON_H3" />

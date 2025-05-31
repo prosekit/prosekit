@@ -4,23 +4,25 @@ import { useEditorDerivedValue } from 'prosekit/react'
 import Button from './button'
 import type { EditorExtension } from './extension'
 
-function getToolbarItem(editor: Editor<EditorExtension>) {
+function getToolbarItems(editor: Editor<EditorExtension>) {
   return {
-    isActive: editor.nodes.horizontalRule.isActive(),
-    canExec: editor.commands.insertHorizontalRule.canExec(),
-    command: () => editor.commands.insertHorizontalRule(),
+    horizontalRule: {
+      isActive: editor.nodes.horizontalRule.isActive(),
+      canExec: editor.commands.insertHorizontalRule.canExec(),
+      command: () => editor.commands.insertHorizontalRule(),
+    },
   }
 }
 
 export default function Toolbar() {
-  const item = useEditorDerivedValue(getToolbarItem)
+  const items = useEditorDerivedValue(getToolbarItems)
 
   return (
     <div className="CSS_TOOLBAR">
       <Button
-        pressed={item.isActive}
-        disabled={!item.canExec}
-        onClick={item.command}
+        pressed={items.horizontalRule.isActive}
+        disabled={!items.horizontalRule.canExec}
+        onClick={items.horizontalRule.command}
         tooltip="Divider"
       >
         <div className="CSS_ICON_MINUS"></div>

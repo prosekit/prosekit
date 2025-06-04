@@ -19,39 +19,31 @@ export function calcResize(
   aspectRatio = aspectRatio ? aspectRatio : w / h
   aspectRatio = isFinitePositiveNumber(aspectRatio) ? aspectRatio : 1
 
-  let result: [number, number]
+  const clamp = ([nw, nh]: [number, number]): [number, number] => [
+    Math.max(nw, 1),
+    Math.max(nh, 1),
+  ]
 
   switch (position) {
     case 'bottom-right':
-      result = calcBottomRightResize(w, h, dx, dy, aspectRatio)
-      break
+      return clamp(calcBottomRightResize(w, h, dx, dy, aspectRatio))
     case 'bottom-left':
-      result = calcBottomLeftResize(w, h, dx, dy, aspectRatio)
-      break
+      return clamp(calcBottomLeftResize(w, h, dx, dy, aspectRatio))
     case 'top-right':
-      result = calcTopRightResize(w, h, dx, dy, aspectRatio)
-      break
+      return clamp(calcTopRightResize(w, h, dx, dy, aspectRatio))
     case 'top-left':
-      result = calcTopLeftResize(w, h, dx, dy, aspectRatio)
-      break
+      return clamp(calcTopLeftResize(w, h, dx, dy, aspectRatio))
     case 'top':
-      result = calcTopResize(w, h, dx, dy, aspectRatio)
-      break
+      return clamp(calcTopResize(w, h, dx, dy, aspectRatio))
     case 'right':
-      result = calcRightResize(w, h, dx, dy, aspectRatio)
-      break
+      return clamp(calcRightResize(w, h, dx, dy, aspectRatio))
     case 'bottom':
-      result = calcBottomResize(w, h, dx, dy, aspectRatio)
-      break
+      return clamp(calcBottomResize(w, h, dx, dy, aspectRatio))
     case 'left':
-      result = calcLeftResize(w, h, dx, dy, aspectRatio)
-      break
+      return clamp(calcLeftResize(w, h, dx, dy, aspectRatio))
     default:
       throw new RangeError(`Invalid position: ${position}`)
   }
-
-  const [nw, nh] = result
-  return [Math.max(nw, 1), Math.max(nh, 1)]
 }
 
 type CalcResize = (

@@ -13,6 +13,8 @@ test('executes function argument', () => {
 })
 
 test('returns value when not a function', () => {
+  // @ts-expect-error non-function values are unsupported by type signature
   expect(maybeRun(5)).toBe(5)
+  // @ts-expect-error non-function values are unsupported by type signature
   expect(maybeRun(undefined)).toBeUndefined()
 })

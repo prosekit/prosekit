@@ -89,7 +89,7 @@
     "prosemirror-highlight": "^0.13.0",
     "prosemirror-search": "^1.1.0",
     "prosemirror-tables": "^1.7.1",
-    "shiki": "^3.4.2"
+    "shiki": "^3.5.0"
   },
   "peerDependencies": {
     "loro-crdt": ">= 0.16.7",
@@ -116,10 +116,10 @@
     "@prosekit/config-vitest": "workspace:*",
     "@vitest/browser": "^3.2.1",
     "just-pick": "^4.2.0",
-    "loro-crdt": "^1.5.7",
+    "loro-crdt": "^1.5.8",
     "loro-prosemirror": "^0.2.3",
     "prettier": "^3.5.3",
-    "tsdown": "^0.12.5",
+    "tsdown": "^0.12.6",
     "type-fest": "^4.41.0",
     "typescript": "~5.8.3",
     "vitest": "^3.2.1",

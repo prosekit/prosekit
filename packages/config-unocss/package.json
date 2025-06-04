@@ -29,6 +29,6 @@
     "tailwind-merge": "^2.6.0",
     "tsx": "^4.19.4",
     "typescript": "~5.8.3",
-    "unocss": "^66.0.0"
+    "unocss": "^66.1.0"
   }
 }

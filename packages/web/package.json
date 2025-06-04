@@ -51,7 +51,7 @@
     "@aria-ui/popover": "^0.0.27",
     "@aria-ui/presence": "^0.0.19",
     "@aria-ui/tooltip": "^0.0.29",
-    "@floating-ui/dom": "^1.7.0",
+    "@floating-ui/dom": "^1.7.1",
     "@ocavue/utils": "^0.4.0",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
@@ -61,7 +61,7 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.12.5",
+    "tsdown": "^0.12.6",
     "typescript": "~5.8.3",
     "vitest": "^3.2.1"
   },

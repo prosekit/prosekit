@@ -86,7 +86,7 @@
     "svelte-check": "^4.2.1",
     "tsx": "^4.19.4",
     "typescript": "~5.8.3",
-    "vitest": "^3.1.4"
+    "vitest": "^3.2.1"
   },
   "publishConfig": {
     "exports": {

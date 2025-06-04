@@ -39,13 +39,6 @@ Run `pnpm run dev` to start the development server:
 - Fix issues: `pnpm run fix` (runs code generation, linting, and formatting)
 - Type check: `pnpm run typecheck`
 
-## Code Style
-
-- TypeScript: No semicolons, single quotes (double in JSX)
-- Naming: PascalCase for types/classes, camelCase for variables/functions
-- Line width: 200 characters
-- No console statements (except warn, error, assert)
-
 ## Testing
 
 ProseKit has unit and integration tests.
@@ -64,6 +57,7 @@ ProseKit has unit and integration tests.
 
 ## Pull Requests
 
-1. Use [Conventional Commits](https://www.conventionalcommits.org/) style for PR titles
-2. After making changes, run `pnpm run change` to create a changeset
-3. Make sure all tests pass before submitting
+1. Use [Conventional Commits](https://www.conventionalcommits.org/) style for PR titles and Git commit messages.
+2. If your changes need to be published, run `pnpm run change` to start an interactive session to create a changeset. Alternatively, you can manually create a changeset file in the `.changeset/` directory.
+3. Run `pnpm run fix` to fix linting and formatting issues.
+4. Make sure all tests pass before submitting a PR.

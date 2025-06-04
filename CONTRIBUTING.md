@@ -47,7 +47,9 @@ ProseKit has unit and integration tests.
 
 - Run all: `pnpm run test`
 - Run specific test: `pnpm run test [test-file-path]`
+- Run with coverage report: `pnpm run test:coverage`
 - Files: Located in `packages/` with `.spec.ts` suffix
+- Coverage report: `coverage/` directory
 
 ### Integration Tests
 

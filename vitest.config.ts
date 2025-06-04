@@ -4,7 +4,8 @@ export default defineConfig({
   test: {
     coverage: {
       enabled: false,
-      all: false,
+      all: true,
+      reporter: ['text-summary', 'html', 'json', 'json-summary'],
       provider: 'v8',
     },
     fileParallelism: false,

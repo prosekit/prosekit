@@ -16,3 +16,11 @@ test('returns value when not a function', () => {
   expect(maybeRun(5)).toBe(5)
   expect(maybeRun(undefined)).toBeUndefined()
 })
+
+test('provides precise inference', () => {
+  const fn: () => number = () => 1
+  const num = 2
+  const input: number | (() => number) = Math.random() > 0.5 ? fn : num
+  const result: number = maybeRun(input)
+  expect(result).toBeTypeOf('number')
+})

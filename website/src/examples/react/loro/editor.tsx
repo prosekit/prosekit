@@ -46,12 +46,12 @@ function useLoroDocs() {
     const unsubscribeB = loroB.subscribeLocalUpdates((updates) => {
       loroA.import(updates)
     })
-    const awarenessAListener: AwarenessListener = (state, origin) => {
+    const awarenessAListener: AwarenessListener = (_, origin) => {
       if (origin === 'local') {
         awarenessB.apply(awarenessA.encode([idA]))
       }
     }
-    const awarenessBListener: AwarenessListener = (state, origin) => {
+    const awarenessBListener: AwarenessListener = (_, origin) => {
       if (origin === 'local') {
         awarenessA.apply(awarenessB.encode([idB]))
       }

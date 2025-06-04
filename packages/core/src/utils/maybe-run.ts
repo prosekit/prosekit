@@ -1,13 +1,13 @@
+import type { AnyFunction } from '../types/any-function'
+
 /**
  * @internal
  */
-export function maybeRun<
-  MaybeFn,
-  Result = MaybeFn extends (...args: any[]) => void ? ReturnType<MaybeFn> : MaybeFn,
->(
-  value: MaybeFn,
-  ...args: MaybeFn extends (...args: any[]) => void ? Parameters<MaybeFn> : never
-): Result {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  return (typeof value === 'function' ? value(...args) : value) as Result
+function maybeRun<Fn extends AnyFunction>(fn: Fn, ...args: Parameters<Fn>): ReturnType<Fn>
+function maybeRun<T>(value: T): T
+function maybeRun(value: any, ...args: any[]): any {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-call
+  return typeof value === 'function' ? value(...args) : value
 }
+
+export { maybeRun }

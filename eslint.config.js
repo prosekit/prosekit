@@ -12,20 +12,6 @@ export default defineESLintConfig(
     command: true,
   },
   {
-    rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-    },
-  },
-  {
-    files: [
-      'packages/dev/**/*.ts',
-      'website/**/*.{ts,tsx,vue}',
-    ],
-    rules: {
-      '@typescript-eslint/unbound-method': 'off',
-    },
-  },
-  {
     files: [
       'packages/**/*.gen.ts',
       'packages/**/*.gen.tsx',

@@ -52,7 +52,7 @@
     "prosemirror-model": "^1.25.1",
     "prosemirror-state": "^1.4.3",
     "prosemirror-transform": "^1.10.4",
-    "prosemirror-view": "^1.39.3"
+    "prosemirror-view": "^1.40.0"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",

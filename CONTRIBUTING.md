@@ -62,4 +62,5 @@ ProseKit has unit and integration tests.
 1. Use [Conventional Commits](https://www.conventionalcommits.org/) style for PR titles and Git commit messages.
 2. If your changes need to be published, run `pnpm run change` to start an interactive session to create a changeset. Alternatively, you can manually create a changeset file in the `.changeset/` directory.
 3. Run `pnpm run fix` to fix linting and formatting issues.
-4. Make sure all tests pass before submitting a PR.
+4. Run `pnpm run typecheck` to check for type errors.
+5. Make sure all tests pass before submitting a PR.

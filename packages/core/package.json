@@ -50,7 +50,7 @@
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
     "@vitest/browser": "^3.2.1",
-    "tsdown": "^0.12.5",
+    "tsdown": "^0.12.6",
     "typescript": "~5.8.3",
     "vitest": "^3.2.1"
   },

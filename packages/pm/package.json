@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/pm",
   "type": "module",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "description": "A re-export of ProseMirror packages",
   "author": {

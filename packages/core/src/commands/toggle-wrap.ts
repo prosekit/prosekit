@@ -23,7 +23,7 @@ export interface ToggleWrapOptions {
 
 /**
  * Toggle between wrapping an inactive node with the provided node type, and
- * lifting it up into it's parent.
+ * lifting it up into its parent.
  *
  * @param options
  *

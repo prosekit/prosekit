@@ -24,3 +24,16 @@ test('provides precise inference', () => {
   const result: number = maybeRun(input)
   expect(result).toBeTypeOf('number')
 })
+
+test('can prevent unexpected arguments', () => {
+  const fn: (num: number) => number = (num) => num + 1
+
+  // @ts-expect-error: unexpected string argument
+  maybeRun(fn, 'string')
+
+  // @ts-expect-error: unexpected argument count
+  maybeRun(fn)
+
+  // @ts-expect-error: unexpected argument count
+  maybeRun(fn, 1, 2)
+})

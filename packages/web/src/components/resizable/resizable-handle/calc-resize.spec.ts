@@ -189,6 +189,13 @@ test('calcRightResize', () => {
   testUnchanged(0, -10)
 })
 
+test('sizes are clamped to positive values', () => {
+  const [w1, h1] = [100, 200]
+  const [w2, h2] = calcResize('right', w1, h1, -500, 0, null)
+  expect(w2).toBeGreaterThan(0)
+  expect(h2).toBeGreaterThan(0)
+})
+
 test('calcBottomResize', () => {
   const testIncrease = (dx: number, dy: number) => {
     const [w1, h1] = [100, 200]

@@ -50,12 +50,6 @@ Run `pnpm run dev` to start the development server:
 
 ProseKit has unit and integration tests.
 
-Before running the tests, you need to install Playwright with the following command:
-
-```bash
-pnpm run test:install
-```
-
 ### Unit Tests
 
 - Run all: `pnpm run test`

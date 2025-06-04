@@ -22,6 +22,8 @@
     "gen": "turbo run gen --force",
     "lint": "eslint . && pnpm -r --sequential run lint",
     "preview": "pnpm --filter='./website' run preview",
+    "pretest": "pnpm run test:install",
+    "pretest:e2e": "pnpm run test:install",
     "test": "vitest",
     "test:coverage": "vitest run --coverage.enabled",
     "test:e2e": "pnpm --filter='./website' run test",

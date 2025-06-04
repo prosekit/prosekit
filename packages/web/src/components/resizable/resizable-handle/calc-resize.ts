@@ -19,26 +19,39 @@ export function calcResize(
   aspectRatio = aspectRatio ? aspectRatio : w / h
   aspectRatio = isFinitePositiveNumber(aspectRatio) ? aspectRatio : 1
 
+  let result: [number, number]
+
   switch (position) {
     case 'bottom-right':
-      return calcBottomRightResize(w, h, dx, dy, aspectRatio)
+      result = calcBottomRightResize(w, h, dx, dy, aspectRatio)
+      break
     case 'bottom-left':
-      return calcBottomLeftResize(w, h, dx, dy, aspectRatio)
+      result = calcBottomLeftResize(w, h, dx, dy, aspectRatio)
+      break
     case 'top-right':
-      return calcTopRightResize(w, h, dx, dy, aspectRatio)
+      result = calcTopRightResize(w, h, dx, dy, aspectRatio)
+      break
     case 'top-left':
-      return calcTopLeftResize(w, h, dx, dy, aspectRatio)
+      result = calcTopLeftResize(w, h, dx, dy, aspectRatio)
+      break
     case 'top':
-      return calcTopResize(w, h, dx, dy, aspectRatio)
+      result = calcTopResize(w, h, dx, dy, aspectRatio)
+      break
     case 'right':
-      return calcRightResize(w, h, dx, dy, aspectRatio)
+      result = calcRightResize(w, h, dx, dy, aspectRatio)
+      break
     case 'bottom':
-      return calcBottomResize(w, h, dx, dy, aspectRatio)
+      result = calcBottomResize(w, h, dx, dy, aspectRatio)
+      break
     case 'left':
-      return calcLeftResize(w, h, dx, dy, aspectRatio)
+      result = calcLeftResize(w, h, dx, dy, aspectRatio)
+      break
     default:
       throw new RangeError(`Invalid position: ${position}`)
   }
+
+  const [nw, nh] = result
+  return [Math.max(nw, 1), Math.max(nh, 1)]
 }
 
 type CalcResize = (

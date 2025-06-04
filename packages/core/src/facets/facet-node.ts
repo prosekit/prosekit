@@ -1,6 +1,6 @@
 import { Priority } from '../types/priority'
 import {
-  arraySubstract,
+  arraySubtract,
   uniqPush,
 } from '../utils/array'
 import { assert } from '../utils/assert'
@@ -35,7 +35,7 @@ function unionInput<T>(a: T[] | null, b: T[] | null): T[] | null {
 function subtractInput<T>(a: T[] | null, b: T[] | null): T[] | null {
   if (!a) return null
   if (!b) return [...a]
-  return arraySubstract(a, b)
+  return arraySubtract(a, b)
 }
 
 function unionChildren(

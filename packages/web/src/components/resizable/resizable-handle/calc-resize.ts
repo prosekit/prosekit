@@ -19,11 +19,6 @@ export function calcResize(
   aspectRatio = aspectRatio ? aspectRatio : w / h
   aspectRatio = isFinitePositiveNumber(aspectRatio) ? aspectRatio : 1
 
-  const clamp = ([nw, nh]: [number, number]): [number, number] => [
-    Math.max(nw, 1),
-    Math.max(nh, 1),
-  ]
-
   switch (position) {
     case 'bottom-right':
       return clamp(calcBottomRightResize(w, h, dx, dy, aspectRatio))
@@ -116,4 +111,11 @@ const calcLeftResize: CalcResize = (w, h, dx, dy, r) => {
   w -= dx
   h = w / r
   return [w, h]
+}
+
+function clamp([w, h]: [number, number]): [number, number] {
+  return [
+    Math.max(w, 1),
+    Math.max(h, 1),
+  ]
 }

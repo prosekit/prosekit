@@ -37,8 +37,8 @@
     "@prosekit/config-unocss": "workspace:*",
     "@size-limit/esbuild-why": "^11.2.0",
     "@size-limit/preset-small-lib": "^11.2.0",
-    "@vitest/browser": "^3.1.4",
-    "@vitest/coverage-v8": "^3.1.4",
+    "@vitest/browser": "^3.2.1",
+    "@vitest/coverage-v8": "^3.2.1",
     "dprint": "^0.50.0",
     "eslint": "^9.27.0",
     "monorepo-typescript-references": "^1.1.0",
@@ -51,7 +51,7 @@
     "turbo": "^2.5.4",
     "typescript": "~5.8.3",
     "unocss": "^66.0.0",
-    "vitest": "^3.1.4"
+    "vitest": "^3.2.1"
   },
   "pnpm": {
     "overrides": {},

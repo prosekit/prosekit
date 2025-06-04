@@ -50,7 +50,7 @@
     "@prosekit/config-vitest": "workspace:*",
     "tsdown": "^0.12.5",
     "typescript": "~5.8.3",
-    "vitest": "^3.1.4"
+    "vitest": "^3.2.1"
   },
   "publishConfig": {
     "exports": {

@@ -8,6 +8,6 @@ export default defineConfig({
       provider: 'v8',
     },
     fileParallelism: false,
-    workspace: ['packages/*'],
+    projects: ['packages/*'],
   },
 })

@@ -24,6 +24,9 @@ import {
 } from './pointer-move'
 import type { BlockHandlePopoverProps } from './types'
 
+/**
+ * @internal
+ */
 export function useBlockHandlePopover(
   host: ConnectableElement,
   { state }: { state: SignalState<BlockHandlePopoverProps> },

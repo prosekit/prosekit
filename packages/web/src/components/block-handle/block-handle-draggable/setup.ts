@@ -23,6 +23,9 @@ import {
 import { setDragPreview } from './set-drag-preview'
 import type { BlockHandleDraggableProps } from './types'
 
+/**
+ * @internal
+ */
 export function useBlockHandleDraggable(
   host: ConnectableElement,
   { state }: { state: SignalState<BlockHandleDraggableProps> },

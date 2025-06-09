@@ -82,11 +82,11 @@
     "@sveltejs/package": "^2.3.11",
     "@types/node": "^20.17.29",
     "read-pkg": "^9.0.1",
-    "svelte": "^5.33.14",
+    "svelte": "^5.33.18",
     "svelte-check": "^4.2.1",
     "tsx": "^4.19.4",
     "typescript": "~5.8.3",
-    "vitest": "^3.2.1"
+    "vitest": "^3.2.3"
   },
   "publishConfig": {
     "exports": {

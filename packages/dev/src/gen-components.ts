@@ -193,6 +193,7 @@ function formatPrimitiveIndexCode(components: string[]) {
     return [
       `export { ${pascal}Element } from './${kebab}/element.gen'`,
       `export { ${camel}Events, ${camel}Props, type ${pascal}Events, type ${pascal}Props } from './${kebab}/types'`,
+      `export { use${pascal} } from './${kebab}/setup'`,
       '',
     ]
   })

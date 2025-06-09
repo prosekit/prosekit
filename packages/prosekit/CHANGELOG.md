@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.13.5
+
+### Patch Changes
+
+- [`cd32a2e`](https://github.com/ocavue/prosekit/commit/cd32a2e12bf5eb9104d5f67f4e29162f27ad50e5) ![](https://prosekit.dev/b/pm)
+
+  Update dependencies.
+
 ## 0.13.4
 
 ### Patch Changes

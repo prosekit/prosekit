@@ -1,6 +1,6 @@
-import { useTooltipContent as setup } from '@aria-ui/tooltip/elements'
+import { useTooltipContent as useElement } from '@aria-ui/tooltip/elements'
 
 /**
  * @internal
  */
-export const useTooltipContent: typeof setup = setup
+export const useTooltipContent: typeof useElement = useElement

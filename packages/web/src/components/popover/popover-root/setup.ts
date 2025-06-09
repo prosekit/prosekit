@@ -1,6 +1,6 @@
-import { usePopoverRoot as setup } from '@aria-ui/popover/elements'
+import { usePopoverRoot as useElement } from '@aria-ui/popover/elements'
 
 /**
  * @internal
  */
-export const usePopoverRoot: typeof setup = setup
+export const usePopoverRoot: typeof useElement = useElement

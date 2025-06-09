@@ -1,6 +1,6 @@
-import { usePopoverTrigger as setup } from '@aria-ui/popover/elements'
+import { usePopoverTrigger as useElement } from '@aria-ui/popover/elements'
 
 /**
  * @internal
  */
-export const usePopoverTrigger: typeof setup = setup
+export const usePopoverTrigger: typeof useElement = useElement

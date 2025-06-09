@@ -28,7 +28,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./autocomplete": "./src/components/autocomplete/index.gen.ts",
-    "./block-handle": "./src/components/block-handle/index.ts",
+    "./block-handle": "./src/components/block-handle/index.gen.ts",
     "./inline-popover": "./src/components/inline-popover/index.gen.ts",
     "./popover": "./src/components/popover/index.gen.ts",
     "./resizable": "./src/components/resizable/index.gen.ts",
@@ -137,7 +137,7 @@
     "entry": {
       "prosekit-web": "./src/index.ts",
       "prosekit-web-autocomplete": "./src/components/autocomplete/index.gen.ts",
-      "prosekit-web-block-handle": "./src/components/block-handle/index.ts",
+      "prosekit-web-block-handle": "./src/components/block-handle/index.gen.ts",
       "prosekit-web-inline-popover": "./src/components/inline-popover/index.gen.ts",
       "prosekit-web-popover": "./src/components/popover/index.gen.ts",
       "prosekit-web-resizable": "./src/components/resizable/index.gen.ts",

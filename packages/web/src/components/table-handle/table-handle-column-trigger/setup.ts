@@ -10,6 +10,9 @@ import { tableHandleRootContext } from '../context'
 
 import type { TableHandleColumnTriggerProps } from './types'
 
+/**
+ * @internal
+ */
 export function useTableHandleColumnTrigger(
   host: ConnectableElement,
   { state }: { state: SignalState<TableHandleColumnTriggerProps> },

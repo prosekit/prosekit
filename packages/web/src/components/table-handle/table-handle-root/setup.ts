@@ -27,6 +27,9 @@ import {
 
 import type { TableHandleRootProps } from './types'
 
+/**
+ * @internal
+ */
 export function useTableHandleRoot(
   host: ConnectableElement,
   { state }: { state: SignalState<TableHandleRootProps> },

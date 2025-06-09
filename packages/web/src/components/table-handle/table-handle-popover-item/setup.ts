@@ -9,6 +9,9 @@ import type {
   TableHandlePopoverItemProps,
 } from './types'
 
+/**
+ * @internal
+ */
 export function useTableHandlePopoverItem(
   element: ConnectableElement,
   {

@@ -19,6 +19,9 @@ import { tableHandleRootContext } from '../context'
 
 import type { TableHandleColumnRootProps } from './types'
 
+/**
+ * @internal
+ */
 export function useTableHandleColumnRoot(
   host: ConnectableElement,
   { state }: { state: SignalState<TableHandleColumnRootProps> },

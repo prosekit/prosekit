@@ -2,9 +2,12 @@
 
 export { BlockHandleAddElement } from './block-handle-add/element.gen'
 export { blockHandleAddEvents, blockHandleAddProps, type BlockHandleAddEvents, type BlockHandleAddProps } from './block-handle-add/types'
+export { useBlockHandleAdd } from './block-handle-add/setup'
 
 export { BlockHandleDraggableElement } from './block-handle-draggable/element.gen'
 export { blockHandleDraggableEvents, blockHandleDraggableProps, type BlockHandleDraggableEvents, type BlockHandleDraggableProps } from './block-handle-draggable/types'
+export { useBlockHandleDraggable } from './block-handle-draggable/setup'
 
 export { BlockHandlePopoverElement } from './block-handle-popover/element.gen'
 export { blockHandlePopoverEvents, blockHandlePopoverProps, type BlockHandlePopoverEvents, type BlockHandlePopoverProps } from './block-handle-popover/types'
+export { useBlockHandlePopover } from './block-handle-popover/setup'

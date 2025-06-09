@@ -2,12 +2,16 @@
 
 export { AutocompleteEmptyElement } from './autocomplete-empty/element.gen'
 export { autocompleteEmptyEvents, autocompleteEmptyProps, type AutocompleteEmptyEvents, type AutocompleteEmptyProps } from './autocomplete-empty/types'
+export { useAutocompleteEmpty } from './autocomplete-empty/setup'
 
 export { AutocompleteItemElement } from './autocomplete-item/element.gen'
 export { autocompleteItemEvents, autocompleteItemProps, type AutocompleteItemEvents, type AutocompleteItemProps } from './autocomplete-item/types'
+export { useAutocompleteItem } from './autocomplete-item/setup'
 
 export { AutocompleteListElement } from './autocomplete-list/element.gen'
 export { autocompleteListEvents, autocompleteListProps, type AutocompleteListEvents, type AutocompleteListProps } from './autocomplete-list/types'
+export { useAutocompleteList } from './autocomplete-list/setup'
 
 export { AutocompletePopoverElement } from './autocomplete-popover/element.gen'
 export { autocompletePopoverEvents, autocompletePopoverProps, type AutocompletePopoverEvents, type AutocompletePopoverProps } from './autocomplete-popover/types'
+export { useAutocompletePopover } from './autocomplete-popover/setup'

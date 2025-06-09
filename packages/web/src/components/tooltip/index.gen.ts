@@ -2,9 +2,12 @@
 
 export { TooltipContentElement } from './tooltip-content/element.gen'
 export { tooltipContentEvents, tooltipContentProps, type TooltipContentEvents, type TooltipContentProps } from './tooltip-content/types'
+export { useTooltipContent } from './tooltip-content/setup'
 
 export { TooltipRootElement } from './tooltip-root/element.gen'
 export { tooltipRootEvents, tooltipRootProps, type TooltipRootEvents, type TooltipRootProps } from './tooltip-root/types'
+export { useTooltipRoot } from './tooltip-root/setup'
 
 export { TooltipTriggerElement } from './tooltip-trigger/element.gen'
 export { tooltipTriggerEvents, tooltipTriggerProps, type TooltipTriggerEvents, type TooltipTriggerProps } from './tooltip-trigger/types'
+export { useTooltipTrigger } from './tooltip-trigger/setup'

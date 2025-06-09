@@ -9,6 +9,9 @@ import { blockPopoverContext } from '../context'
 
 import type { BlockHandleAddProps } from './types'
 
+/**
+ * @internal
+ */
 export function useBlockHandleAdd(
   host: ConnectableElement,
   { state }: { state: SignalState<BlockHandleAddProps> },

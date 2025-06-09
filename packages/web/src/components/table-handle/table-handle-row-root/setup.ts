@@ -23,6 +23,9 @@ import type {
   TableHandleRowRootProps,
 } from './types'
 
+/**
+ * @internal
+ */
 export function useTableHandleRowRoot(
   host: ConnectableElement,
   { state }: SetupOptions<TableHandleRowRootProps, TableHandleRowRootEvents>,

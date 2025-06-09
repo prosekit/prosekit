@@ -2,6 +2,8 @@
 
 export { ResizableHandleElement } from './resizable-handle/element.gen'
 export { resizableHandleEvents, resizableHandleProps, type ResizableHandleEvents, type ResizableHandleProps } from './resizable-handle/types'
+export { useResizableHandle } from './resizable-handle/setup'
 
 export { ResizableRootElement } from './resizable-root/element.gen'
 export { resizableRootEvents, resizableRootProps, type ResizableRootEvents, type ResizableRootProps } from './resizable-root/types'
+export { useResizableRoot } from './resizable-root/setup'

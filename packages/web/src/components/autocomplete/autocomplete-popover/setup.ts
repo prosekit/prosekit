@@ -37,6 +37,9 @@ import type {
   AutocompletePopoverProps,
 } from './types'
 
+/**
+ * @internal
+ */
 export function useAutocompletePopover(
   host: ConnectableElement,
   {

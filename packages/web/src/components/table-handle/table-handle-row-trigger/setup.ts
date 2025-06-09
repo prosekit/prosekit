@@ -13,6 +13,9 @@ import type {
   TableHandleRowTriggerProps,
 } from './types'
 
+/**
+ * @internal
+ */
 export function useTableHandleRowTrigger(
   host: ConnectableElement,
   {

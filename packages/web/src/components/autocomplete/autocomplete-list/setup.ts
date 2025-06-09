@@ -30,6 +30,9 @@ import type {
   AutocompleteListProps,
 } from './types'
 
+/**
+ * @internal
+ */
 export function useAutocompleteList(
   element: ConnectableElement,
   { state, emit }: SetupOptions<AutocompleteListProps, AutocompleteListEvents>,

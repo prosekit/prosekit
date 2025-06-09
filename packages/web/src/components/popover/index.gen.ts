@@ -2,9 +2,12 @@
 
 export { PopoverContentElement } from './popover-content/element.gen'
 export { popoverContentEvents, popoverContentProps, type PopoverContentEvents, type PopoverContentProps } from './popover-content/types'
+export { usePopoverContent } from './popover-content/setup'
 
 export { PopoverRootElement } from './popover-root/element.gen'
 export { popoverRootEvents, popoverRootProps, type PopoverRootEvents, type PopoverRootProps } from './popover-root/types'
+export { usePopoverRoot } from './popover-root/setup'
 
 export { PopoverTriggerElement } from './popover-trigger/element.gen'
 export { popoverTriggerEvents, popoverTriggerProps, type PopoverTriggerEvents, type PopoverTriggerProps } from './popover-trigger/types'
+export { usePopoverTrigger } from './popover-trigger/setup'

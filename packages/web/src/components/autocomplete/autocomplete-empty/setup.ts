@@ -1,1 +1,6 @@
-export { useListboxEmpty as useAutocompleteEmpty } from '@aria-ui/listbox/elements'
+import { useListboxEmpty } from '@aria-ui/listbox/elements'
+
+/**
+ * @internal
+ */
+export const useAutocompleteEmpty: typeof useListboxEmpty = useListboxEmpty

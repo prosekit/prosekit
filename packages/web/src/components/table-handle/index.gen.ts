@@ -2,21 +2,28 @@
 
 export { TableHandleColumnRootElement } from './table-handle-column-root/element.gen'
 export { tableHandleColumnRootEvents, tableHandleColumnRootProps, type TableHandleColumnRootEvents, type TableHandleColumnRootProps } from './table-handle-column-root/types'
+export { useTableHandleColumnRoot } from './table-handle-column-root/setup'
 
 export { TableHandleColumnTriggerElement } from './table-handle-column-trigger/element.gen'
 export { tableHandleColumnTriggerEvents, tableHandleColumnTriggerProps, type TableHandleColumnTriggerEvents, type TableHandleColumnTriggerProps } from './table-handle-column-trigger/types'
+export { useTableHandleColumnTrigger } from './table-handle-column-trigger/setup'
 
 export { TableHandlePopoverContentElement } from './table-handle-popover-content/element.gen'
 export { tableHandlePopoverContentEvents, tableHandlePopoverContentProps, type TableHandlePopoverContentEvents, type TableHandlePopoverContentProps } from './table-handle-popover-content/types'
+export { useTableHandlePopoverContent } from './table-handle-popover-content/setup'
 
 export { TableHandlePopoverItemElement } from './table-handle-popover-item/element.gen'
 export { tableHandlePopoverItemEvents, tableHandlePopoverItemProps, type TableHandlePopoverItemEvents, type TableHandlePopoverItemProps } from './table-handle-popover-item/types'
+export { useTableHandlePopoverItem } from './table-handle-popover-item/setup'
 
 export { TableHandleRootElement } from './table-handle-root/element.gen'
 export { tableHandleRootEvents, tableHandleRootProps, type TableHandleRootEvents, type TableHandleRootProps } from './table-handle-root/types'
+export { useTableHandleRoot } from './table-handle-root/setup'
 
 export { TableHandleRowRootElement } from './table-handle-row-root/element.gen'
 export { tableHandleRowRootEvents, tableHandleRowRootProps, type TableHandleRowRootEvents, type TableHandleRowRootProps } from './table-handle-row-root/types'
+export { useTableHandleRowRoot } from './table-handle-row-root/setup'
 
 export { TableHandleRowTriggerElement } from './table-handle-row-trigger/element.gen'
 export { tableHandleRowTriggerEvents, tableHandleRowTriggerProps, type TableHandleRowTriggerEvents, type TableHandleRowTriggerProps } from './table-handle-row-trigger/types'
+export { useTableHandleRowTrigger } from './table-handle-row-trigger/setup'

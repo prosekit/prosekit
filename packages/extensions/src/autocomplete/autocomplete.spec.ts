@@ -25,8 +25,10 @@ import {
 function setupSlashMenu() {
   const regex = /\/(|\S.*)$/u
 
-  const onEnter = vi.fn<MatchHandler>()
-  const onLeave = vi.fn<VoidFunction>()
+  let matching: MatchHandlerOptions | null = null
+
+  const onEnter = vi.fn<MatchHandler>((options) => matching = options)
+  const onLeave = vi.fn<VoidFunction>(() => matching = null)
 
   const rule = new AutocompleteRule({ regex, onEnter, onLeave })
   const extension = union(defineTestExtension(), defineAutocomplete(rule))
@@ -35,16 +37,22 @@ function setupSlashMenu() {
   const doc = n.doc(n.paragraph('<a>'))
   editor.set(doc)
 
-  const getOnEnterOptions = (): MatchHandlerOptions => {
-    const parameters = onEnter.mock.calls.at(-1)
-    const options = parameters?.[0]
-    if (!options) {
-      throw new Error('No onEnter options found')
-    }
-    return options
+  const isMatching = (): boolean => {
+    return !!matching
   }
 
-  return { editor, n, m, onEnter, onLeave, getOnEnterOptions }
+  const getMatching = (): MatchHandlerOptions => {
+    if (!matching) {
+      throw new Error('No matching found')
+    }
+    return matching
+  }
+
+  const getMatchingText = (): string => {
+    return getMatching().match[0]
+  }
+
+  return { editor, n, m, onEnter, onLeave, getMatching, isMatching, getMatchingText }
 }
 
 describe('defineAutocomplete', () => {
@@ -85,21 +93,21 @@ describe('defineAutocomplete', () => {
   })
 
   it('can delete the matched text', async () => {
-    const { editor, onEnter, getOnEnterOptions } = setupSlashMenu()
+    const { editor, onEnter, getMatching } = setupSlashMenu()
 
     expect(onEnter).not.toHaveBeenCalled()
 
     await inputText('/')
     expect(onEnter).toHaveBeenCalledTimes(1)
 
-    const options = getOnEnterOptions()
+    const options = getMatching()
     expect(editor.state.doc.textContent).toBe('/')
     options.deleteMatch()
     expect(editor.state.doc.textContent).toBe('')
   })
 
-  it('can ignore the match', async () => {
-    const { editor, onEnter, onLeave, getOnEnterOptions } = setupSlashMenu()
+  it('can ignore the match by calling `ignoreMatch`', async () => {
+    const { editor, onEnter, onLeave, getMatching } = setupSlashMenu()
 
     expect(onEnter).not.toHaveBeenCalled()
 
@@ -115,7 +123,7 @@ describe('defineAutocomplete', () => {
     expect(editor.state.doc.textContent).toBe('/a')
 
     // Call `ignoreMatch` to dismiss the match
-    const options = getOnEnterOptions()
+    const options = getMatching()
     options.ignoreMatch()
     expect(onEnter).toHaveBeenCalledTimes(2)
     expect(onLeave).toHaveBeenCalledTimes(1)
@@ -125,5 +133,38 @@ describe('defineAutocomplete', () => {
     expect(onEnter).toHaveBeenCalledTimes(2)
     expect(onLeave).toHaveBeenCalledTimes(1)
     expect(editor.state.doc.textContent).toBe('/aa')
+  })
+
+  it('can ignore the match by moving the text cursor outside of the match', async () => {
+    const { onEnter, isMatching, getMatchingText } = setupSlashMenu()
+
+    expect(onEnter).not.toHaveBeenCalled()
+
+    await inputText('a')
+    // a<text_cursor>
+    expect(isMatching()).toBe(false)
+
+    await inputText('/')
+    // a/<text_cursor>
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/')
+
+    await inputText('b')
+    // a/b<text_cursor>
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/b')
+
+    await pressKey('ArrowLeft')
+    // a/<text_cursor>b
+    expect(isMatching()).toBe(true)
+    expect(getMatchingText()).toBe('/')
+
+    await pressKey('ArrowLeft')
+    // a<text_cursor>/b
+    expect(isMatching()).toBe(false)
+
+    await pressKey('ArrowRight')
+    // a/<text_cursor>b
+    expect(isMatching()).toBe(false)
   })
 })

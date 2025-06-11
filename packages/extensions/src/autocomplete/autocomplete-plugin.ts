@@ -60,13 +60,27 @@ export function createAutocompletePlugin({
         // Calculate the new ignores
         const ignores = new Set(prevValue.ignores.map(pos => tr.mapping.map(pos)))
 
-        // Calculate the new matching
-        let matching = calcPluginStateMatching(newState, getRules())
+        // If there was a matching before, but the text cursor moves outside of
+        // it now, we ignore that match.
+        if (prevValue.matching) {
+          let { from: prevMatchingFrom, to: prevMatchingTo } = prevValue.matching
 
-        // Check if the matching should be ignored
-        if (matching && ignores.has(matching.from)) {
-          matching = null
+          prevMatchingFrom = tr.mapping.map(prevMatchingFrom)
+          prevMatchingTo = tr.mapping.map(prevMatchingTo)
+
+          // If the previous matching is not empty
+          if (prevMatchingFrom < prevMatchingTo) {
+            let { from: selectionFrom, to: selectionTo } = newState.selection
+
+            // If the text selection is before the matching or after the matching
+            if (selectionTo <= prevMatchingFrom || selectionFrom >= prevMatchingTo + 1) {
+              ignores.add(prevMatchingFrom)
+            }
+          }
         }
+
+        // Calculate the new matching
+        let matching = calcPluginStateMatching(newState, getRules(), ignores)
 
         // Return the new matching and ignores
         return { matching, ignores: Array.from(ignores) }
@@ -153,6 +167,7 @@ const MAX_MATCH = 200
 function calcPluginStateMatching(
   state: EditorState,
   rules: AutocompleteRule[],
+  ignores: Set<number>,
 ): PredictionPluginMatching | null {
   const $pos = state.selection.$from
 
@@ -178,6 +193,11 @@ function calcPluginStateMatching(
 
     const to = $pos.pos
     const from = to - textBefore.length + match.index
+
+    // Check if the matching should be ignored
+    if (ignores.has(from)) {
+      continue
+    }
 
     return { rule, match, from, to }
   }

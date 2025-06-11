@@ -23,7 +23,7 @@ import {
 } from './autocomplete-rule'
 
 function setupSlashMenu() {
-  const regex = /\/(|\S.*)$/iu
+  const regex = /\/(|\S.*)$/u
 
   const onEnter = vi.fn<MatchHandler>()
   const onLeave = vi.fn<VoidFunction>()

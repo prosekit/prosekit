@@ -19,13 +19,14 @@ import { defineAutocomplete } from './autocomplete'
 import {
   AutocompleteRule,
   type MatchHandler,
+  type MatchHandlerOptions,
 } from './autocomplete-rule'
 
 function setupSlashMenu() {
   const regex = /\/(|\S.*)$/iu
 
-  const onEnter: MatchHandler = vi.fn()
-  const onLeave: VoidFunction = vi.fn()
+  const onEnter = vi.fn<MatchHandler>()
+  const onLeave = vi.fn<VoidFunction>()
 
   const rule = new AutocompleteRule({ regex, onEnter, onLeave })
   const extension = union(defineTestExtension(), defineAutocomplete(rule))
@@ -34,7 +35,16 @@ function setupSlashMenu() {
   const doc = n.doc(n.paragraph('<a>'))
   editor.set(doc)
 
-  return { editor, n, m, onEnter, onLeave }
+  const getOnEnterOptions = (): MatchHandlerOptions => {
+    const parameters = onEnter.mock.calls.at(-1)
+    const options = parameters?.[0]
+    if (!options) {
+      throw new Error('No onEnter options found')
+    }
+    return options
+  }
+
+  return { editor, n, m, onEnter, onLeave, getOnEnterOptions }
 }
 
 describe('defineAutocomplete', () => {
@@ -74,22 +84,46 @@ describe('defineAutocomplete', () => {
     expect(onLeave).toHaveBeenCalledTimes(1)
   })
 
-  it('can dismiss', async () => {
-    const { onEnter, onLeave } = setupSlashMenu()
+  it('can delete the matched text', async () => {
+    const { editor, onEnter, getOnEnterOptions } = setupSlashMenu()
 
     expect(onEnter).not.toHaveBeenCalled()
-    expect(onLeave).not.toHaveBeenCalled()
 
     await inputText('/')
     expect(onEnter).toHaveBeenCalledTimes(1)
 
-    await inputText('order')
-    expect(onEnter).toHaveBeenCalledTimes(6)
+    const options = getOnEnterOptions()
+    expect(editor.state.doc.textContent).toBe('/')
+    options.deleteMatch()
+    expect(editor.state.doc.textContent).toBe('')
+  })
 
-    await inputText(' ')
-    expect(onEnter).toHaveBeenCalledTimes(7)
+  it('can ignore the match', async () => {
+    const { editor, onEnter, onLeave, getOnEnterOptions } = setupSlashMenu()
 
-    await inputText('list')
-    expect(onEnter).toHaveBeenCalledTimes(11)
+    expect(onEnter).not.toHaveBeenCalled()
+
+    await inputText('/')
+    expect(onEnter).toHaveBeenCalledTimes(1)
+    expect(onLeave).toHaveBeenCalledTimes(0)
+    expect(editor.state.doc.textContent).toBe('/')
+
+    // Typing should trigger autocomplete
+    await inputText('a')
+    expect(onEnter).toHaveBeenCalledTimes(2)
+    expect(onLeave).toHaveBeenCalledTimes(0)
+    expect(editor.state.doc.textContent).toBe('/a')
+
+    // Call `ignoreMatch` to dismiss the match
+    const options = getOnEnterOptions()
+    options.ignoreMatch()
+    expect(onEnter).toHaveBeenCalledTimes(2)
+    expect(onLeave).toHaveBeenCalledTimes(1)
+
+    // Typing should not trigger autocomplete anymore
+    await inputText('a')
+    expect(onEnter).toHaveBeenCalledTimes(2)
+    expect(onLeave).toHaveBeenCalledTimes(1)
+    expect(editor.state.doc.textContent).toBe('/aa')
   })
 })

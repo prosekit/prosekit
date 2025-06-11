@@ -58,18 +58,18 @@ export function createAutocompletePlugin({
         }
 
         // Calculate the new ignores
-        const ignoreSet = new Set(prevValue.ignores.map(pos => tr.mapping.map(pos)))
+        const ignores = new Set(prevValue.ignores.map(pos => tr.mapping.map(pos)))
 
         // Calculate the new matching
         let matching = calcPluginStateMatching(newState, getRules())
 
         // Check if the matching should be ignored
-        if (matching && ignoreSet.has(matching.from)) {
+        if (matching && ignores.has(matching.from)) {
           matching = null
         }
 
         // Return the new matching and ignores
-        return { matching, ignores: Array.from(ignoreSet) }
+        return { matching, ignores: Array.from(ignores) }
       },
     },
 

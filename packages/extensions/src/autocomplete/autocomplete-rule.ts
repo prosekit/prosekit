@@ -84,9 +84,13 @@ export interface AutocompleteRuleOptions {
  * @public
  */
 export class AutocompleteRule {
+  /** @internal */
   readonly regex: RegExp
+  /** @internal */
   readonly onMatch: MatchHandler
+  /** @internal */
   readonly onLeave?: VoidFunction
+  /** @internal */
   readonly canMatch: (options: { state: EditorState }) => boolean
 
   constructor(options: AutocompleteRuleOptions) {

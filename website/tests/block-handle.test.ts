@@ -94,27 +94,34 @@ testStory(['full'], () => {
     await emptyEditor(page)
 
     const blockHandle = page.locator('prosekit-block-handle-popover')
-    const h1 = editor.locator('h1', { hasText: 'Foo' })
-    const p = editor.locator('p', { hasText: 'Foo' })
+    const h1 = editor.locator('h1')
+    const p = editor.locator('p')
+
+    const check = async (options: { h1: boolean; p: boolean; text: string }) => {
+      await expect(editor).toHaveText(options.text)
+      await expect(h1).toBeVisible({ visible: options.h1 })
+      await expect(p).toBeVisible({ visible: options.p })
+    }
 
     // Insert a heading
     await editor.pressSequentially('# Foo')
-
-    await expect(h1).toBeVisible()
-    await expect(p).not.toBeVisible()
+    await check({ h1: true, p: false, text: 'Foo' })
 
     await h1.hover({ timeout: 4000 })
     await expectBlockHandleToOpen(page)
     const box1 = (await blockHandle.boundingBox())!
 
     // Turn the heading into a paragraph
-    await editor.press('ArrowLeft')
-    await editor.press('ArrowLeft')
-    await editor.press('ArrowLeft')
+    await check({ h1: true, p: false, text: 'Foo' })
     await editor.press('Backspace')
+    await check({ h1: true, p: false, text: 'Fo' })
+    await editor.press('Backspace')
+    await check({ h1: true, p: false, text: 'F' })
+    await editor.press('Backspace')
+    await check({ h1: true, p: false, text: '' })
+    await editor.press('Backspace')
+    await check({ h1: false, p: true, text: '' })
 
-    await expect(h1).not.toBeVisible()
-    await expect(p).toBeVisible()
     const box2 = (await blockHandle.boundingBox())!
 
     expect(box1).toBeTruthy()

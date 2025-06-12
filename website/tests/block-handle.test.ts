@@ -8,6 +8,7 @@ import {
 import {
   emptyEditor,
   getBoundingBox,
+  hover,
   testStory,
   waitForAnimationEnd,
   waitForEditor,
@@ -26,7 +27,7 @@ testStory(['full'], () => {
       await expect(block).toBeVisible()
       await expect(blockHandle).toBeAttached()
 
-      await block.hover({ timeout: 4000 })
+      await hover(block)
       await expectBlockHandleToOpen(page)
 
       const box = await getBoundingBox(blockHandleDraggable)
@@ -103,7 +104,7 @@ testStory(['full'], () => {
     await editor.pressSequentially('# Foo')
     await check({ h1: true, p: false, text: 'Foo' })
 
-    await h1.hover({ timeout: 4000 })
+    await hover(h1)
     await expectBlockHandleToOpen(page)
     const box1 = (await blockHandle.boundingBox())!
 
@@ -156,7 +157,7 @@ testStory(['full'], () => {
     })
 
     const box1 = await test.step('hover over the first paragraph', async () => {
-      await p1.hover({ timeout: 4000 })
+      await hover(p1)
       await expectBlockHandleToOpen(page)
       const box1 = await blockHandle.boundingBox()
       expect(box1).toBeTruthy()
@@ -165,7 +166,7 @@ testStory(['full'], () => {
 
     // Hover over the second paragraph
     const box2 = await test.step('hover over the second paragraph', async () => {
-      await p2.hover({ timeout: 4000 })
+      await hover(p2)
       await expectBlockHandleToOpen(page)
       const box2 = await blockHandle.boundingBox()
       expect(box2).toBeTruthy()
@@ -178,7 +179,7 @@ testStory(['full'], () => {
     expect(box1.x).toBeLessThan(box2.x)
 
     await test.step('hover over the first paragraph', async () => {
-      await p1.hover({ timeout: 4000 })
+      await hover(p1)
       await expectBlockHandleToOpen(page)
       await blockHandleDraggable.click()
     })
@@ -195,7 +196,7 @@ testStory(['full'], () => {
     })
 
     await test.step('hover over the second paragraph', async () => {
-      await p2.hover({ timeout: 4000 })
+      await hover(p2)
       await expectBlockHandleToOpen(page)
       await blockHandleDraggable.click()
     })

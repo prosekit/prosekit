@@ -99,6 +99,36 @@ async function formatHTML(html: string) {
   })
 }
 
+/**
+ * Hover over a locator.
+ *
+ * This is a more reliable implementation than `locator.hover()` because it
+ * sends multiple mouse move events.
+ */
+export async function hover(locator: Locator, options?: {
+  /**
+   * A point to use relative to the top-left corner of element padding box. If
+   * not specified, points to the center of the element.
+   */
+  position?: { x: number; y: number }
+
+  /**
+   * How many mouse move events to send.
+   */
+  steps?: number
+}) {
+  await expect(locator).toBeVisible()
+  const box = await getBoundingBox(locator)
+
+  // Coordinates relative to the top-left corner of the element.
+  const x = options?.position?.x ?? Math.floor(box.width / 2)
+  const y = options?.position?.y ?? Math.floor(box.height / 2)
+
+  const page = locator.page()
+  const steps = options?.steps ?? 10
+  await page.mouse.move(x + box.x, y + box.y, { steps })
+}
+
 export async function emptyEditor(page: Page) {
   const editor = await waitForEditor(page)
   await editor.press(IS_APPLE ? 'Meta+a' : 'Control+a')
@@ -114,7 +144,8 @@ export async function waitForAnimationEnd(locator: Locator) {
 }
 
 export async function getBoundingBox(locator: Locator) {
-  return (await locator.boundingBox()) || { x: 0, y: 0, width: 0, height: 0 }
+  const box = await locator.boundingBox({ timeout: 3000 })
+  return box || { x: 0, y: 0, width: 0, height: 0 }
 }
 
 export async function expectEditorToBeFocused(page: Page) {

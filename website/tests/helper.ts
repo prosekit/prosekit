@@ -100,10 +100,10 @@ async function formatHTML(html: string) {
 }
 
 /**
- * Hover over a locator.
+ * Hover over an element.
  *
- * This is a more reliable implementation than `locator.hover()` because it
- * sends multiple mouse move events.
+ * This could be more reliable than `locator.hover()` because it sends multiple
+ * mouse move events.
  */
 export async function hover(locator: Locator, options?: {
   /**

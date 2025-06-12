@@ -29,14 +29,10 @@ testStory(['full'], () => {
       await block.hover({ timeout: 4000 })
       await expectBlockHandleToOpen(page)
 
-      await waitForAnimationEnd(blockHandleDraggable)
-
       const box = await getBoundingBox(blockHandleDraggable)
 
       await editor.hover({ position: { x: 0, y: 0 }, timeout: 4000 })
       await expectBlockHandleToClose(page)
-
-      await waitForAnimationEnd(blockHandleDraggable)
 
       return box
     }
@@ -185,6 +181,7 @@ testStory(['full'], () => {
     await p2.hover({ timeout: 4000 })
     await expectBlockHandleToOpen(page)
     await blockHandleDraggable.click()
+    await expectBlockHandleToOpen(page)
 
     // Expect the second paragraph to be selected
     await expect(listNode).not.toHaveClass(/ProseMirror-selectednode/)
@@ -195,10 +192,18 @@ testStory(['full'], () => {
 
 async function expectBlockHandleToOpen(page: Page) {
   const blockHandle = page.locator('prosekit-block-handle-popover')
+  const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
+
   await expect(blockHandle).toHaveAttribute('data-state', 'open')
+  await waitForAnimationEnd(blockHandle)
+  await waitForAnimationEnd(blockHandleDraggable)
 }
 
 async function expectBlockHandleToClose(page: Page) {
   const blockHandle = page.locator('prosekit-block-handle-popover')
+  const blockHandleDraggable = page.locator('prosekit-block-handle-draggable')
+
   await expect(blockHandle).toHaveAttribute('data-state', 'closed')
+  await waitForAnimationEnd(blockHandle)
+  await waitForAnimationEnd(blockHandleDraggable)
 }

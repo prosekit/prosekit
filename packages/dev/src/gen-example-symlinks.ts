@@ -310,10 +310,16 @@ export async function genExampleSymlinks() {
     }
   }
 
-  // 1. Remove symlinks that are not in the expected mapping
+  // 1. Ensure that there are no unexpected symlinks
   for (const symlink of existingSymlinks) {
     if (!expectedTargetPaths.has(symlink)) {
-      await fs.remove(symlink)
+      const relativeSymlink = path.relative(rootDir, symlink)
+      const message = [
+        `Unexpected symlink found: ${relativeSymlink}`,
+        `This symlink is not defined in the mapping in '${currentFilePath}'.`,
+        'Please remove it manually or add it to the mapping.',
+      ].join('\n')
+      throw new Error(message)
     }
   }
 
@@ -355,3 +361,5 @@ export async function genExampleSymlinks() {
     }
   }
 }
+
+const currentFilePath = import.meta.filename

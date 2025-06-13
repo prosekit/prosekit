@@ -1,4 +1,4 @@
-import './custom-list-css.css'
+import './custom-list.css'
 
 import { defineNodeSpec } from 'prosekit/core'
 import type {

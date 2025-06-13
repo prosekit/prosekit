@@ -5,6 +5,8 @@ import { defineList } from 'prosekit/extensions/list'
 import { defineParagraph } from 'prosekit/extensions/paragraph'
 import { defineText } from 'prosekit/extensions/text'
 
+import { defineCustomList } from './custom-list'
+
 export function defineExtension() {
   return union(
     defineBaseKeymap(),
@@ -12,6 +14,7 @@ export function defineExtension() {
     defineText(),
     defineParagraph(),
     defineList(),
+    defineCustomList(),
   )
 }
 

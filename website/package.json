@@ -50,6 +50,7 @@
     "preact": "^10.26.9",
     "prettier": "^3.5.3",
     "prosekit": "workspace:*",
+    "prosemirror-flat-list": "^0.5.5",
     "prosemirror-highlight": "^0.13.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

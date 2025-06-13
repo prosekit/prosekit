@@ -27,7 +27,7 @@
     "esbuild": "^0.25.5",
     "prettier": "^3.5.3",
     "tailwind-merge": "^2.6.0",
-    "tsx": "^4.19.4",
+    "tsx": "^4.20.2",
     "typescript": "~5.8.3",
     "unocss": "^66.1.1"
   }

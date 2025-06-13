@@ -29,23 +29,23 @@ export function getTaskMarkers(node: ProseMirrorNode): DOMOutputSpec[] {
       [
         'label',
         {
-          class: 'flex items-center cursor-pointer relative box-border -left-1',
+          class: 'flex items-center cursor-pointer relative box-border -bottom-0.5 hover:scale-110 transition',
         },
         [
           'input',
           {
             type: 'checkbox',
             checked: checked ? '' : undefined,
-            class: 'size-4.5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-red-600 checked:border-red-600 box-border',
+            class: 'size-5 cursor-pointer transition-all appearance-none rounded-md shadow hover:shadow-md border border-slate-300 checked:bg-red-600 checked:border-red-600 box-border m-0',
           },
         ],
         [
           'span',
           {
             'data-checked': checked ? 'true' : 'false',
-            'class': 'absolute text-white opacity-0 data-[checked=true]:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2',
+            'class': 'absolute text-white opacity-0 data-[checked=true]:opacity-100  transform-all ',
           },
-          ['div', { class: 'i-lucide-check size-4.5 text-white' }],
+          ['div', { class: 'i-lucide-check size-5' }],
         ],
       ],
     ],

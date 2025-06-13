@@ -94,6 +94,7 @@ const mapping: Record<string, string[]> = {
     'examples/react/inline-menu/',
     'examples/react/keymap/',
     'examples/react/link/',
+    'examples/react/list-custom-checkbox/',
     'examples/react/list/',
     'examples/react/loro/',
     'examples/react/readonly/',

@@ -412,6 +412,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "react-list-custom-checkbox",
+      "framework": "react",
+      "story": "list-custom-checkbox",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "react-loro",
       "framework": "react",
       "story": "loro",

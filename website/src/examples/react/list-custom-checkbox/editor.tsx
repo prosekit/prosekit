@@ -27,48 +27,25 @@ export default function Editor() {
     </ProseKit>
   )
 }
-
 const defaultContent: NodeJSON = {
   type: 'doc',
   content: [
     {
-      type: 'list',
-      attrs: { kind: 'bullet' },
-      content: [
-        { type: 'paragraph', content: [{ type: 'text', text: 'Bullet List' }] },
-      ],
+      type: 'paragraph',
+      content: [{ type: 'text', text: 'This example demonstrates customizing the list checkbox design and adding strikethrough for completed tasks.' }],
     },
     {
       type: 'list',
-      attrs: { kind: 'ordered' },
+      attrs: { kind: 'task', checked: true },
       content: [
-        {
-          type: 'paragraph',
-          content: [{ type: 'text', text: 'Ordered List' }],
-        },
+        { type: 'paragraph', content: [{ type: 'text', text: 'Completed Task' }] },
       ],
     },
     {
       type: 'list',
       attrs: { kind: 'task', checked: false },
       content: [
-        { type: 'paragraph', content: [{ type: 'text', text: 'Task List ' }] },
-      ],
-    },
-    {
-      type: 'list',
-      attrs: { kind: 'toggle', collapsed: true },
-      content: [
-        { type: 'paragraph', content: [{ type: 'text', text: 'Toggle List' }] },
-        {
-          type: 'list',
-          attrs: {
-            kind: 'bullet',
-          },
-          content: [
-            { type: 'paragraph', content: [{ type: 'text', text: 'Hidden' }] },
-          ],
-        },
+        { type: 'paragraph', content: [{ type: 'text', text: 'Incomplete Task' }] },
       ],
     },
   ],

@@ -119,9 +119,9 @@ const config: AstroUserConfig = {
       ],
     }),
     UnoCSS(),
-    preact({ include: ['src/*/preact/**/*'] }),
+    preact({ include: ['src/*/preact/**/*.tsx'] }),
     react({
-      include: ['src/*/react/**/*'],
+      include: ['src/*/react/**/*.tsx'],
       babel: {
         plugins: [
           ['babel-plugin-react-compiler'],
@@ -130,7 +130,7 @@ const config: AstroUserConfig = {
     }),
     svelte(),
     vue(),
-    solid({ include: ['src/*/solid/**/*'] }),
+    solid({ include: ['src/*/solid/**/*.tsx'] }),
     astrobook({
       directory: 'src/stories',
       title: 'ProseKit',

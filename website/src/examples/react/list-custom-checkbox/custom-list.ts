@@ -1,3 +1,5 @@
+import './custom-list-css.css'
+
 import { defineNodeSpec } from 'prosekit/core'
 import type {
   DOMOutputSpec,

@@ -429,6 +429,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "custom-list.ts",
+          "hidden": false
+        },
+        {
           "path": "button.tsx",
           "hidden": false
         }

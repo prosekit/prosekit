@@ -429,6 +429,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "custom-list.css",
+          "hidden": false
+        },
+        {
           "path": "custom-list.ts",
           "hidden": false
         },

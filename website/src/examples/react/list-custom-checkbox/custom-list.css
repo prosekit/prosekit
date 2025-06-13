@@ -1,3 +1,3 @@
-.ProseMirror .prosemirror-flat-list[data-list-kind='task'][data-list-checked] {
+.ProseMirror .prosemirror-flat-list[data-list-kind="task"][data-list-checked] {
   text-decoration: line-through;
 }

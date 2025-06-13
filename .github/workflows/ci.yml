@@ -137,7 +137,7 @@ jobs:
         run: pnpm run build:website
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         # Only run this step if the CLOUDFLARE_PAGES_API_TOKEN is set (i.e. it's
         # not from a fork). Notice that secrets cannot be directly referenced in
         # `if:` conditionals.
@@ -145,7 +145,7 @@ jobs:
         with:
           apiToken: ${{ env.CLOUDFLARE_PAGES_API_TOKEN }}
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: prosekit-dev
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          directory: website/dist
+          workingDirectory: website/dist
+          command: pages deploy . --project-name=prosekit-dev
         timeout-minutes: 5

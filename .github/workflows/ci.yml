@@ -136,6 +136,11 @@ jobs:
       - name: Build
         run: pnpm run build:website
 
+      # A workaround to avoid the issue that cloudflare/wrangler-action cannot
+      # work well inside a PNPM monorepo.
+      - name: Move dist to tmp
+        run: mv website/dist /tmp/website-dist
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         # Only run this step if the CLOUDFLARE_PAGES_API_TOKEN is set (i.e. it's
@@ -146,6 +151,6 @@ jobs:
           apiToken: ${{ env.CLOUDFLARE_PAGES_API_TOKEN }}
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          workingDirectory: website/dist
+          workingDirectory: /tmp/website-dist
           command: pages deploy . --project-name=prosekit-dev
         timeout-minutes: 5

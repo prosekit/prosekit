@@ -1,3 +1,5 @@
 .ProseMirror .prosemirror-flat-list[data-list-kind="task"][data-list-checked] {
+  color: rgb(150, 150, 150);
   text-decoration: line-through;
+  text-decoration-color: rgb(150, 150, 150, 0.5);
 }

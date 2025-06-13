@@ -31,7 +31,7 @@ export function getTaskMarkers(node: ProseMirrorNode): DOMOutputSpec[] {
       [
         'label',
         {
-          class: 'flex items-center cursor-pointer relative box-border -bottom-0.5 hover:scale-110 transition',
+          class: 'flex items-center cursor-pointer relative box-border -bottom-0.5 -left-1 hover:scale-110 transition',
         },
         [
           'input',

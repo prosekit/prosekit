@@ -32,7 +32,7 @@ const defaultContent: NodeJSON = {
   content: [
     {
       type: 'paragraph',
-      content: [{ type: 'text', text: 'This example demonstrates customizing the list checkbox design and adding strikethrough for completed tasks.' }],
+      content: [{ type: 'text', text: 'Custom list checkbox design and strikethrough for completed tasks.' }],
     },
     {
       type: 'list',

@@ -42,7 +42,7 @@ export function defineElementHoverHandler(handler: ElementHoverHandler): PlainEx
 
   const handlePointerEvent = (view: EditorView, event: PointerEvent) => {
     const { x, y } = event
-    const block = findBlockByCoordinate(view, x, y)
+    const block = findBlockByCoords(view, x, y)
     if (!block) {
       handler(null, null)
       return
@@ -76,9 +76,8 @@ export function defineElementHoverHandler(handler: ElementHoverHandler): PlainEx
   )
 }
 
-function findBlockByCoordinate(view: EditorView, x: number, y: number): { node: ProseMirrorNode; pos: number } | undefined {
-  const dom = view.dom
-  const rect = getClientRect(dom)
+function findBlockByCoords(view: EditorView, x: number, y: number): { node: ProseMirrorNode; pos: number } | undefined {
+  const rect = getClientRect(view.dom)
   if (!isWithinRect(rect, x, y)) {
     return
   }
@@ -107,7 +106,7 @@ function findBlockByCoordinate(view: EditorView, x: number, y: number): { node: 
       const childDOM = view.nodeDOM(positions[i])
       const childRect = getNodeRect(childDOM)
       if (!childRect) {
-        console.warn('[prosekit] Unable to get rect at position', positions[i])
+        console.warn(`[prosekit] Unable to get rect at position: ${positions[i]}`)
         return
       }
       if (childRect.top > y) {

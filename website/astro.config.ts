@@ -10,7 +10,6 @@ import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
-import { remarkHeadingId } from 'remark-custom-heading-id'
 import starlightThemeNova from 'starlight-theme-nova'
 import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
@@ -149,9 +148,7 @@ const config: AstroUserConfig = {
     rehypePlugins: [
       [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
     ],
-    remarkPlugins: [
-      remarkHeadingId,
-    ],
+    remarkPlugins: [],
   },
   experimental: {
     headingIdCompat: true,

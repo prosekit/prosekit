@@ -929,9 +929,6 @@ importers:
       rehype-remark:
         specifier: ^10.0.1
         version: 10.0.1
-      remark-custom-heading-id:
-        specifier: ^2.0.0
-        version: 2.0.0
       remark-html:
         specifier: ^16.0.1
         version: 16.0.1
@@ -951,8 +948,8 @@ importers:
         specifier: ^1.9.7
         version: 1.9.7
       starlight-theme-nova:
-        specifier: ^0.8.1
-        version: 0.8.1(@astrojs/starlight@0.34.3(astro@5.9.2(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.2)(typescript@5.8.3)(yaml@2.8.0)))(typescript@5.8.3)
+        specifier: ^0.9.0
+        version: 0.9.0(@astrojs/starlight@0.34.3(astro@5.9.2(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.2)(typescript@5.8.3)(yaml@2.8.0)))(typescript@5.8.3)
       svelte:
         specifier: ^5.34.1
         version: 5.34.1
@@ -2420,9 +2417,6 @@ packages:
   '@sec-ant/readable-stream@0.4.1':
     resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
 
-  '@shikijs/core@3.5.0':
-    resolution: {integrity: sha512-iycvvnVG7MWZHRNuoqpYkV3Qc8DNLU74Lxh/roDwUqJJoXRnCTbbVJGfSWAdBslUgJMsjSHwFL42i55voavDDg==}
-
   '@shikijs/core@3.6.0':
     resolution: {integrity: sha512-9By7Xb3olEX0o6UeJyPLI1PE1scC4d3wcVepvtv2xbuN9/IThYN4Wcwh24rcFeASzPam11MCq8yQpwwzCgSBRw==}
 
@@ -2438,16 +2432,13 @@ packages:
   '@shikijs/themes@3.6.0':
     resolution: {integrity: sha512-Fq2j4nWr1DF4drvmhqKq8x5vVQ27VncF8XZMBuHuQMZvUSS3NBgpqfwz/FoGe36+W6PvniZ1yDlg2d4kmYDU6w==}
 
-  '@shikijs/transformers@3.5.0':
-    resolution: {integrity: sha512-wK7Jm12n9R1INd7N8FD1xCU6AaJm597PTDAQkbbUDa32G03sv0W4jNBbUWl6gZte0DwVmJHxc/yPtAhqCyfplg==}
+  '@shikijs/transformers@3.6.0':
+    resolution: {integrity: sha512-PYkU54lYV0RCaUG8n2FNTF+YWiU3uPhcjLGq2x/C8lIrUX9GVnRb3bK+R5xtdFHbuctntATKm7ondp/H/dux9Q==}
 
-  '@shikijs/twoslash@3.5.0':
-    resolution: {integrity: sha512-Lsbp8blX1j1AX7vR6/4h1g7W8mVtjTbjvk6n7PBvHDXcezax1pFPOuNu33V8CQLQ0UZgd2X61bH28yzY5aMy7g==}
+  '@shikijs/twoslash@3.6.0':
+    resolution: {integrity: sha512-AxRxLWtmrVftwxN/2hSL6Hym+bannS+zuUEXpbNuo6BpG4jHTM0KEkICEH3B3Gm5ZNzGdI74NdDiAqAZ6WPJuQ==}
     peerDependencies:
       typescript: '>=5.5.0'
-
-  '@shikijs/types@3.5.0':
-    resolution: {integrity: sha512-VvqGHhS8BWClF7eVnEJLe0nAhQw/1L+xC5mp6uj+tVr3tjD2ASx2Mx9M9l7tZQO++1qwZeIIusvSRhz4aKODFQ==}
 
   '@shikijs/types@3.6.0':
     resolution: {integrity: sha512-cLWFiToxYu0aAzJqhXTQsFiJRTFDAGl93IrMSBNaGSzs7ixkLfdG6pH11HipuWFGW5vyx4X47W8HDQ7eSrmBUg==}
@@ -4979,9 +4970,6 @@ packages:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
     engines: {node: '>= 0.4'}
 
-  mdast-heading-id@2.0.0:
-    resolution: {integrity: sha512-JVh0xKqsI3INPzJEqqCiuq3BGde5x6AlBTQAetLQQr9qTiDjX4dCvFhIiGmyPt1rftiHELQPI5obGphIOTXeWQ==}
-
   mdast-util-definitions@6.0.0:
     resolution: {integrity: sha512-scTllyX6pnYNZH/AIp/0ePz6s4cZtARxImwoPJ7kS42n+MnVsI4XbnG6d4ibehRIldYMWM2LD7ImQblVhUejVQ==}
 
@@ -5115,9 +5103,6 @@ packages:
 
   micromark-factory-whitespace@2.0.1:
     resolution: {integrity: sha512-Ob0nuZ3PKt/n0hORHyvoD9uZhr+Za8sFoP+OnMcnWK5lngSzALgQYKMr9RJVOWLqQYuyn6ulqGWSXdwf6F80lQ==}
-
-  micromark-heading-id@2.0.0:
-    resolution: {integrity: sha512-TdR5WCmwuCroK8QrfX0/4w9bjj3ayN0GzatxGV/lWQKmM75kNKVZEmdvKZS4MOskARxWXu1WHdIJjMSVMBegow==}
 
   micromark-util-character@2.1.1:
     resolution: {integrity: sha512-wv8tdUTJ3thSFFFJKtpYKOYiGP2+v96Hvk4Tu8KpCAsTMs6yi+nVmGh1syvSCsaxz45J6Jbw+9DD6g97+NV67Q==}
@@ -5901,8 +5886,9 @@ packages:
   rehype@13.0.2:
     resolution: {integrity: sha512-j31mdaRFrwFRUIlxGeuPXXKWQxet52RBQRvCmzl5eCefn/KGbomK5GMHNMsOJf55fgo3qw5tST5neDuarDYR2A==}
 
-  remark-custom-heading-id@2.0.0:
-    resolution: {integrity: sha512-LpR+c4pmuBGG/zhNbebecDnpKyXU4B7bdNu6tXW83T3QWlkwUpHYyUR8uXQ/BERK9HlI5pXGLu7DjkIS07/iVQ==}
+  remark-custom-header-id@1.0.0:
+    resolution: {integrity: sha512-xs1MAgCg1HoiIfqSVV5BPydB4/sc1tT8OHDoqt8Lnf1JHPMUDVumY2Szm/P9MIxIzOT9+tu4IYJTql0vCzldoA==}
+    engines: {node: '>=18'}
 
   remark-directive@3.0.1:
     resolution: {integrity: sha512-gwglrEQEZcZYgVyG1tQuA+h58EZfq5CSULw7J90AFuCTyib1thgHPoqQ+h9iFvU6R+vnZ5oNFQR5QKgGpk741A==}
@@ -6233,8 +6219,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@0.8.1:
-    resolution: {integrity: sha512-6VeQfL4369i8yoGxCTuu4EycyydnU0hTzxcwAQ6pnULJLk59mr4IjUQrepR5w8iTeM/aBCOh2zcp86w416MjKA==}
+  starlight-theme-nova@0.9.0:
+    resolution: {integrity: sha512-Hk85+61KXx1xq4JV0jortgaztIra5jxpKvTcqnrI/RXPx/vYdyHeIg6vk3Ij5ZO0VfogNANUeQs+B2oj7lP3kw==}
     peerDependencies:
       '@astrojs/starlight': '*'
     peerDependenciesMeta:
@@ -8878,13 +8864,6 @@ snapshots:
 
   '@sec-ant/readable-stream@0.4.1': {}
 
-  '@shikijs/core@3.5.0':
-    dependencies:
-      '@shikijs/types': 3.5.0
-      '@shikijs/vscode-textmate': 10.0.2
-      '@types/hast': 3.0.4
-      hast-util-to-html: 9.0.5
-
   '@shikijs/core@3.6.0':
     dependencies:
       '@shikijs/types': 3.6.0
@@ -8911,24 +8890,19 @@ snapshots:
     dependencies:
       '@shikijs/types': 3.6.0
 
-  '@shikijs/transformers@3.5.0':
+  '@shikijs/transformers@3.6.0':
     dependencies:
-      '@shikijs/core': 3.5.0
-      '@shikijs/types': 3.5.0
+      '@shikijs/core': 3.6.0
+      '@shikijs/types': 3.6.0
 
-  '@shikijs/twoslash@3.5.0(typescript@5.8.3)':
+  '@shikijs/twoslash@3.6.0(typescript@5.8.3)':
     dependencies:
-      '@shikijs/core': 3.5.0
-      '@shikijs/types': 3.5.0
+      '@shikijs/core': 3.6.0
+      '@shikijs/types': 3.6.0
       twoslash: 0.3.1(typescript@5.8.3)
       typescript: 5.8.3
     transitivePeerDependencies:
       - supports-color
-
-  '@shikijs/types@3.5.0':
-    dependencies:
-      '@shikijs/vscode-textmate': 10.0.2
-      '@types/hast': 3.0.4
 
   '@shikijs/types@3.6.0':
     dependencies:
@@ -12008,8 +11982,6 @@ snapshots:
 
   math-intrinsics@1.1.0: {}
 
-  mdast-heading-id@2.0.0: {}
-
   mdast-util-definitions@6.0.0:
     dependencies:
       '@types/mdast': 4.0.4
@@ -12402,10 +12374,6 @@ snapshots:
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.2
-
-  micromark-heading-id@2.0.0:
-    dependencies:
-      micromark-util-symbol: 2.0.1
 
   micromark-util-character@2.1.1:
     dependencies:
@@ -13290,10 +13258,9 @@ snapshots:
       rehype-stringify: 10.0.1
       unified: 11.0.5
 
-  remark-custom-heading-id@2.0.0:
+  remark-custom-header-id@1.0.0:
     dependencies:
-      mdast-heading-id: 2.0.0
-      micromark-heading-id: 2.0.0
+      '@types/unist': 3.0.3
       unist-util-visit: 5.0.0
 
   remark-directive@3.0.1:
@@ -13634,7 +13601,7 @@ snapshots:
     dependencies:
       '@aria-ui/core': 0.0.21
       '@aria-ui/tooltip': 0.0.29
-      '@shikijs/twoslash': 3.5.0(typescript@5.8.3)
+      '@shikijs/twoslash': 3.6.0(typescript@5.8.3)
       '@shikijs/types': 3.6.0
       '@types/hast': 3.0.4
     transitivePeerDependencies:
@@ -13791,17 +13758,18 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@0.8.1(@astrojs/starlight@0.34.3(astro@5.9.2(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.2)(typescript@5.8.3)(yaml@2.8.0)))(typescript@5.8.3):
+  starlight-theme-nova@0.9.0(@astrojs/starlight@0.34.3(astro@5.9.2(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.2)(typescript@5.8.3)(yaml@2.8.0)))(typescript@5.8.3):
     dependencies:
       '@aria-ui/core': 0.0.21
       '@pagefind/default-ui': 1.3.0
-      '@shikijs/transformers': 3.5.0
-      '@shikijs/twoslash': 3.5.0(typescript@5.8.3)
+      '@shikijs/transformers': 3.6.0
+      '@shikijs/twoslash': 3.6.0(typescript@5.8.3)
       '@shikijs/types': 3.6.0
       '@types/hast': 3.0.4
       astro-theme-toggle: 0.6.1
       hast-util-is-element: 3.0.0
       rehype: 13.0.2
+      remark-custom-header-id: 1.0.0
       shiki-twoslash-renderer: 0.0.4(typescript@5.8.3)
     optionalDependencies:
       '@astrojs/starlight': 0.34.3(astro@5.9.2(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.2)(typescript@5.8.3)(yaml@2.8.0))

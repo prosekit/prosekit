@@ -14,9 +14,7 @@ export function load(app: MarkdownApplication) {
     /** @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page */
     (page) => {
       /**
-       * Update page.frontmatter object using information from the page model
-       *
-       * Here if the page is a class, we set the title to the class name
+       * Update page.frontmatter object to match the requirements of Astro Starlight.
        */
       const name = page.model.name
 

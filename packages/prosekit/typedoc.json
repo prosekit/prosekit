@@ -67,7 +67,10 @@
   "entryFileName": "index.md",
   "hidePageHeader": true,
   "hideBreadcrumbs": true,
-  "hidePageTitle": true
+  "hidePageTitle": true,
+  "useCodeBlocks": true,
+  "expandParameters": true,
+  "parametersFormat": "htmlTable"
   // "inheritNone": true
   // "markdownHeadingId": true
 }

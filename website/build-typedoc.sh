@@ -6,18 +6,19 @@ WEBSITE_DIR=$(pwd)
 cd "$WEBSITE_DIR/.."
 ROOT=$(pwd)
 
+# Build the typedoc plugin
 cd "$ROOT/packages/typedoc-plugin"
 pnpm run build
 
+# Build markdown files
 cd "$ROOT/packages/prosekit"
 # Ensure that tsc has built all packages and their dependencies
 pnpm run build:tsc
 # Build the typedoc
 pnpm run build:typedoc
 
-cd "$WEBSITE_DIR"
-cd src/content/docs
-
+# Copy the generated markdown files to the website directory
+cd "$WEBSITE_DIR/src/content/docs"
 rm -rf references 
 cp -r "$ROOT/packages/prosekit/.temp/typedoc/prosekit" references
 
@@ -27,16 +28,6 @@ if grep -r "__namedParameters" references; then
   echo 'Found "__namedParameters" in generated markdown files. You probably forgot to add "@param" JSDoc to the function.'
   exit 1
 fi
-
-cd "$WEBSITE_DIR/src/content/docs"
-find references -name "*.md" | while read file; do
-  # If the file only contains one line, remove this file.
-  if [ $(cat "$file" | egrep '\S+' | wc -l) -le 1 ]; then
-    echo "Removing $file because it only contains one line"
-    rm "$file"
-    continue
-  fi
-done
 
 # Copy all files in references/ to docs/references/
 cd "$WEBSITE_DIR/src/content"

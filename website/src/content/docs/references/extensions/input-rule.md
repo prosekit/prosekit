@@ -49,7 +49,7 @@ Options for [defineMarkInputRule](#definemarkinputrule).
 </td>
 <td>
 
- \| `null` \| [`Attrs`](../pm/model.md#attrs-5) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-5)
+ \| `null` \| [`Attrs`](../pm/model.md#attrs-7) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-7)
 
 </td>
 <td>
@@ -237,7 +237,7 @@ See also [textblockTypeInputRule](https://prosemirror.net/docs/ref/#inputrules.t
 </td>
 <td>
 
-\{ `attrs?`: \| `null` \| [`Attrs`](../pm/model.md#attrs-5) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-5); `regex`: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp); `type`: `string` \| [`NodeType`](../pm/model.md#nodetype); \}
+\{ `attrs?`: \| `null` \| [`Attrs`](../pm/model.md#attrs-7) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-7); `regex`: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp); `type`: `string` \| [`NodeType`](../pm/model.md#nodetype); \}
 
 </td>
 <td>
@@ -252,7 +252,7 @@ See also [textblockTypeInputRule](https://prosemirror.net/docs/ref/#inputrules.t
 </td>
 <td>
 
- \| `null` \| [`Attrs`](../pm/model.md#attrs-5) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-5)
+ \| `null` \| [`Attrs`](../pm/model.md#attrs-7) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-7)
 
 </td>
 <td>
@@ -336,7 +336,7 @@ See also [wrappingInputRule](https://prosemirror.net/docs/ref/#inputrules.wrappi
 </td>
 <td>
 
-\{ `attrs?`: \| `null` \| [`Attrs`](../pm/model.md#attrs-5) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-5); `join?`: (`match`: `RegExpMatchArray`, `node`: [`ProseMirrorNode`](../pm/model.md#prosemirrornode)) => `boolean`; `regex`: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp); `type`: `string` \| [`NodeType`](../pm/model.md#nodetype); \}
+\{ `attrs?`: \| `null` \| [`Attrs`](../pm/model.md#attrs-7) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-7); `join?`: (`match`: `RegExpMatchArray`, `node`: [`ProseMirrorNode`](../pm/model.md#prosemirrornode)) => `boolean`; `regex`: [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp); `type`: `string` \| [`NodeType`](../pm/model.md#nodetype); \}
 
 </td>
 <td>
@@ -351,7 +351,7 @@ See also [wrappingInputRule](https://prosemirror.net/docs/ref/#inputrules.wrappi
 </td>
 <td>
 
- \| `null` \| [`Attrs`](../pm/model.md#attrs-5) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-5)
+ \| `null` \| [`Attrs`](../pm/model.md#attrs-7) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-7)
 
 </td>
 <td>

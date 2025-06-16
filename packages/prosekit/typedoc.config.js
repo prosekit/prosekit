@@ -89,7 +89,7 @@ const typedocPluginMarkdownConfig = {
  * https://github.com/jonchardy/typedoc-plugin-no-inherit
  */
 const typedocPluginNoInheritConfig = {
-  inheritNone: true,
+  inheritNone: false,
 }
 
 /**

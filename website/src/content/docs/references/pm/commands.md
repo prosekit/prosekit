@@ -454,7 +454,7 @@ given node type with the given attributes.
 </td>
 <td>
 
-`null` \| [`Attrs`](model.md#attrs-5)
+`null` \| [`Attrs`](model.md#attrs-7)
 
 </td>
 </tr>
@@ -499,7 +499,7 @@ a custom function to determine the type of the newly split off block.
 </td>
 <td>
 
-(`node`: [`ProseMirrorNode`](model.md#prosemirrornode), `atEnd`: `boolean`, `$from`: [`ResolvedPos`](model.md#resolvedpos)) => \| `null` \| \{ `attrs?`: [`Attrs`](model.md#attrs-5); `type`: [`NodeType`](model.md#nodetype); \}
+(`node`: [`ProseMirrorNode`](model.md#prosemirrornode), `atEnd`: `boolean`, `$from`: [`ResolvedPos`](model.md#resolvedpos)) => \| `null` \| \{ `attrs?`: [`Attrs`](model.md#attrs-7); `type`: [`NodeType`](model.md#nodetype); \}
 
 </td>
 </tr>
@@ -565,7 +565,7 @@ document.
 </td>
 <td>
 
-`null` \| [`Attrs`](model.md#attrs-5)
+`null` \| [`Attrs`](model.md#attrs-7)
 
 </td>
 <td>
@@ -696,7 +696,7 @@ attributes.
 </td>
 <td>
 
-`null` \| [`Attrs`](model.md#attrs-5)
+`null` \| [`Attrs`](model.md#attrs-7)
 
 </td>
 </tr>

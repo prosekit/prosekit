@@ -56,6 +56,51 @@ Props for the [ResizableHandle](#resizablehandle) component.
 
 <!-- DEBUG memberWithGroups 9 -->
 
+#### Properties
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+<th>Inherited from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<a id="position"></a> `position?`
+
+</td>
+<td>
+
+ \| `"left"` \| `"right"` \| `"top"` \| `"bottom"` \| `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"`
+
+</td>
+<td>
+
+The position of the handle.
+
+**Default**
+
+```ts
+"bottom-right"
+```
+
+</td>
+<td>
+
+```ts
+Partial.position
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -78,6 +123,58 @@ Emits for the [ResizableRoot](#resizableroot) component.
 
 <!-- DEBUG memberWithGroups 9 -->
 
+#### Properties
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Inherited from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<a id="resizeend"></a> `resizeEnd`
+
+</td>
+<td>
+
+(`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>) => `void`
+
+</td>
+<td>
+
+```ts
+CreateEmits.resizeEnd
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="resizestart"></a> `resizeStart`
+
+</td>
+<td>
+
+(`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>) => `void`
+
+</td>
+<td>
+
+```ts
+CreateEmits.resizeStart
+```
+
+</td>
+</tr>
+</tbody>
+</table>
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -99,6 +196,77 @@ Props for the [ResizableRoot](#resizableroot) component.
 <!-- DEBUG memberWithGroups 8 -->
 
 <!-- DEBUG memberWithGroups 9 -->
+
+#### Properties
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Inherited from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<a id="aspectratio"></a> `aspectRatio?`
+
+</td>
+<td>
+
+`null` \| `number`
+
+</td>
+<td>
+
+```ts
+Partial.aspectRatio
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="height"></a> `height?`
+
+</td>
+<td>
+
+`null` \| `number`
+
+</td>
+<td>
+
+```ts
+Partial.height
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="width"></a> `width?`
+
+</td>
+<td>
+
+`null` \| `number`
+
+</td>
+<td>
+
+```ts
+Partial.width
+```
+
+</td>
+</tr>
+</tbody>
+</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

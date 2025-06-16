@@ -657,7 +657,7 @@ extension.
 </td>
 <td>
 
-`null` \| [`Attrs`](pm/model.md#attrs-5)
+`null` \| [`Attrs`](pm/model.md#attrs-7)
 
 </td>
 <td>
@@ -1069,9 +1069,35 @@ testing environments.
 <tr>
 <th>Property</th>
 <th>Type</th>
+<th>Description</th>
+<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+
+<a id="context"></a> `context?`
+
+</td>
+<td>
+
+[`ResolvedPos`](pm/model.md#resolvedpos)
+
+</td>
+<td>
+
+A set of additional nodes to count as
+[context](https://prosemirror.net/docs/ref/#model.ParseRule.context) when parsing, above the
+given [top node](https://prosemirror.net/docs/ref/#model.ParseOptions.topNode).
+
+</td>
+<td>
+
+[`ParseOptions`](pm/model.md#parseoptions).[`context`](pm/model.md#parseoptions#context-1)
+
+</td>
+</tr>
 <tr>
 <td>
 
@@ -1081,6 +1107,158 @@ testing environments.
 <td>
 
 *typeof* [`DOMParser`](pm/model.md#domparser)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="findpositions"></a> `findPositions?`
+
+</td>
+<td>
+
+`object`[]
+
+</td>
+<td>
+
+When given, the parser will, beside parsing the content,
+record the document positions of the given DOM positions. It
+will do so by writing to the objects, adding a `pos` property
+that holds the document position. DOM positions that are not
+in the parsed content will not be written to.
+
+</td>
+<td>
+
+[`ParseOptions`](pm/model.md#parseoptions).[`findPositions`](pm/model.md#parseoptions#findpositions)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="from-1"></a> `from?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The child node index to start parsing from.
+
+</td>
+<td>
+
+[`ParseOptions`](pm/model.md#parseoptions).[`from`](pm/model.md#parseoptions#from-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="preservewhitespace"></a> `preserveWhitespace?`
+
+</td>
+<td>
+
+`boolean` \| `"full"`
+
+</td>
+<td>
+
+By default, whitespace is collapsed as per HTML's rules. Pass
+`true` to preserve whitespace, but normalize newlines to
+spaces, and `"full"` to preserve whitespace entirely.
+
+</td>
+<td>
+
+[`ParseOptions`](pm/model.md#parseoptions).[`preserveWhitespace`](pm/model.md#parseoptions#preservewhitespace)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="to-1"></a> `to?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The child node index to stop parsing at.
+
+</td>
+<td>
+
+[`ParseOptions`](pm/model.md#parseoptions).[`to`](pm/model.md#parseoptions#to-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="topmatch"></a> `topMatch?`
+
+</td>
+<td>
+
+[`ContentMatch`](pm/model.md#contentmatch)
+
+</td>
+<td>
+
+Provide the starting content match that content parsed into the
+top node is matched against.
+
+</td>
+<td>
+
+[`ParseOptions`](pm/model.md#parseoptions).[`topMatch`](pm/model.md#parseoptions#topmatch)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="topnode"></a> `topNode?`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](pm/model.md#prosemirrornode)
+
+</td>
+<td>
+
+By default, the content is parsed into the schema's default
+[top node type](https://prosemirror.net/docs/ref/#model.Schema.topNodeType). You can pass this
+option to use the type and attributes from a different node
+as the top container.
+
+</td>
+<td>
+
+[`ParseOptions`](pm/model.md#parseoptions).[`topNode`](pm/model.md#parseoptions#topnode)
 
 </td>
 </tr>
@@ -1738,7 +1916,7 @@ current selection.
 </td>
 <td>
 
-[`Attrs`](pm/model.md#attrs-5)
+[`Attrs`](pm/model.md#attrs-7)
 
 </td>
 <td>
@@ -2122,6 +2300,7 @@ with the given attributes.
 <th>Property</th>
 <th>Type</th>
 <th>Description</th>
+<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
@@ -2141,6 +2320,35 @@ with the given attributes.
 The name of the attribute.
 
 </td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="default-1"></a> `default?`
+
+</td>
+<td>
+
+`AttrType`
+
+</td>
+<td>
+
+The default value for this attribute, to use when no explicit value is
+provided. Attributes that have no default must be provided whenever a node
+or mark of a type that has them is created.
+
+</td>
+<td>
+
+[`AttrSpec`](#attrspec).[`default`](#default-3)
+
+</td>
 </tr>
 <tr>
 <td>
@@ -2156,6 +2364,11 @@ The name of the attribute.
 <td>
 
 Parses the attribute value from the DOM.
+
+</td>
+<td>
+
+&hyphen;
 
 </td>
 </tr>
@@ -2178,6 +2391,11 @@ If the returned `key` is `"style"`, the value is a string of CSS properties and 
 be prepended to the existing `style` attribute on the DOM node.
 
 </td>
+<td>
+
+&hyphen;
+
+</td>
 </tr>
 <tr>
 <td>
@@ -2193,6 +2411,40 @@ be prepended to the existing `style` attribute on the DOM node.
 <td>
 
 The name of the mark type.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="validate"></a> `validate?`
+
+</td>
+<td>
+
+`string` \| (`value`: `unknown`) => `void`
+
+</td>
+<td>
+
+A function or type name used to validate values of this attribute. This
+will be used when deserializing the attribute from JSON, and when running
+[`Node.check`](https://prosemirror.net/docs/ref/#model.Node.check). When a
+function, it should raise an exception if the value isn't of the expected
+type or shape. When a string, it should be a `|`-separated string of
+primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
+`"undefined"`), and the library will raise an error when the value is not
+one of those types.
+
+</td>
+<td>
+
+[`AttrSpec`](#attrspec).[`validate`](#validate-2)
 
 </td>
 </tr>
@@ -2275,6 +2527,7 @@ working with the mark.
 <th>Type</th>
 <th>Description</th>
 <th>Overrides</th>
+<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
@@ -2299,6 +2552,134 @@ The attributes that marks of this type get.
 [`MarkSpec`](pm/model.md#markspec).[`attrs`](pm/model.md#markspec#attrs-3)
 
 </td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="code"></a> `code?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Marks the content of this span as being code, which causes some
+commands and extensions to treat it differently.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`MarkSpec`](pm/model.md#markspec).[`code`](pm/model.md#markspec#code)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="excludes"></a> `excludes?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+Determines which other marks this mark can coexist with. Should
+be a space-separated strings naming other marks or groups of marks.
+When a mark is [added](https://prosemirror.net/docs/ref/#model.Mark.addToSet) to a set, all marks
+that it excludes are removed in the process. If the set contains
+any mark that excludes the new mark but is not, itself, excluded
+by the new mark, the mark can not be added an the set. You can
+use the value `"_"` to indicate that the mark excludes all
+marks in the schema.
+
+Defaults to only being exclusive with marks of the same type. You
+can set it to an empty string (or any string not containing the
+mark's own name) to allow multiple marks of a given type to
+coexist (as long as they have different attributes).
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`MarkSpec`](pm/model.md#markspec).[`excludes`](pm/model.md#markspec#excludes-2)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="group"></a> `group?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The group or space-separated groups to which this mark belongs.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`MarkSpec`](pm/model.md#markspec).[`group`](pm/model.md#markspec#group)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="inclusive"></a> `inclusive?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Whether this mark should be active when the cursor is positioned
+at its end (or at its start when that is also the start of the
+parent node). Defaults to true.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`MarkSpec`](pm/model.md#markspec).[`inclusive`](pm/model.md#markspec#inclusive)
+
+</td>
 </tr>
 <tr>
 <td>
@@ -2319,6 +2700,98 @@ The name of the mark type.
 <td>
 
 &hyphen;
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="parsedom-1"></a> `parseDOM?`
+
+</td>
+<td>
+
+readonly [`ParseRule`](pm/model.md#parserule)[]
+
+</td>
+<td>
+
+Associates DOM parser information with this mark (see the
+corresponding [node spec field](https://prosemirror.net/docs/ref/#model.NodeSpec.parseDOM)). The
+`mark` field in the rules is implied.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`MarkSpec`](pm/model.md#markspec).[`parseDOM`](pm/model.md#markspec#parsedom)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="spanning"></a> `spanning?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Determines whether marks of this type can span multiple adjacent
+nodes when serialized to DOM/HTML. Defaults to true.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`MarkSpec`](pm/model.md#markspec).[`spanning`](pm/model.md#markspec#spanning)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="todom-1"></a> `toDOM?`
+
+</td>
+<td>
+
+(`mark`: [`Mark`](pm/model.md#mark), `inline`: `boolean`) => [`DOMOutputSpec`](pm/model.md#domoutputspec)
+
+</td>
+<td>
+
+Defines the default way marks of this type should be serialized
+to DOM/HTML. When the resulting spec contains a hole, that is
+where the marked content is placed. Otherwise, it is appended to
+the top node.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`MarkSpec`](pm/model.md#markspec).[`toDOM`](pm/model.md#markspec#todom)
 
 </td>
 </tr>
@@ -2629,6 +3102,7 @@ with the given attributes.
 <th>Property</th>
 <th>Type</th>
 <th>Description</th>
+<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
@@ -2648,11 +3122,40 @@ with the given attributes.
 The name of the attribute.
 
 </td>
+<td>
+
+&hyphen;
+
+</td>
 </tr>
 <tr>
 <td>
 
-<a id="parsedom-1"></a> `parseDOM?`
+<a id="default-2"></a> `default?`
+
+</td>
+<td>
+
+`AttrType`
+
+</td>
+<td>
+
+The default value for this attribute, to use when no explicit value is
+provided. Attributes that have no default must be provided whenever a node
+or mark of a type that has them is created.
+
+</td>
+<td>
+
+[`AttrSpec`](#attrspec).[`default`](#default-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="parsedom-2"></a> `parseDOM?`
 
 </td>
 <td>
@@ -2663,6 +3166,11 @@ The name of the attribute.
 <td>
 
 Parses the attribute value from the DOM.
+
+</td>
+<td>
+
+&hyphen;
 
 </td>
 </tr>
@@ -2690,11 +3198,16 @@ undefined
 ```
 
 </td>
+<td>
+
+&hyphen;
+
+</td>
 </tr>
 <tr>
 <td>
 
-<a id="todom-1"></a> `toDOM?`
+<a id="todom-2"></a> `toDOM?`
 
 </td>
 <td>
@@ -2708,6 +3221,11 @@ Returns the attribute key and value to be set on the HTML element.
 
 If the returned `key` is `"style"`, the value is a string of CSS properties and will
 be prepended to the existing `style` attribute on the DOM node.
+
+</td>
+<td>
+
+&hyphen;
 
 </td>
 </tr>
@@ -2725,6 +3243,40 @@ be prepended to the existing `style` attribute on the DOM node.
 <td>
 
 The name of the node type.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="validate-1"></a> `validate?`
+
+</td>
+<td>
+
+`string` \| (`value`: `unknown`) => `void`
+
+</td>
+<td>
+
+A function or type name used to validate values of this attribute. This
+will be used when deserializing the attribute from JSON, and when running
+[`Node.check`](https://prosemirror.net/docs/ref/#model.Node.check). When a
+function, it should raise an exception if the value isn't of the expected
+type or shape. When a string, it should be a `|`-separated string of
+primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
+`"undefined"`), and the library will raise an error when the value is not
+one of those types.
+
+</td>
+<td>
+
+[`AttrSpec`](#attrspec).[`validate`](#validate-2)
 
 </td>
 </tr>
@@ -2897,9 +3449,39 @@ other code via [`NodeType.spec`](https://prosemirror.net/docs/ref/#model.NodeTyp
 <th>Type</th>
 <th>Description</th>
 <th>Overrides</th>
+<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+
+<a id="atom"></a> `atom?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Can be set to true to indicate that, though this isn't a [leaf
+node](https://prosemirror.net/docs/ref/#model.NodeType.isLeaf), it doesn't have directly editable
+content and should be treated as a single unit in the view.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`atom`](pm/model.md#nodespec#atom)
+
+</td>
+</tr>
 <tr>
 <td>
 
@@ -2919,6 +3501,391 @@ The attributes that nodes of this type get.
 <td>
 
 [`NodeSpec`](pm/model.md#nodespec).[`attrs`](pm/model.md#nodespec#attrs-4)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="code-1"></a> `code?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Can be used to indicate that this node contains code, which
+causes some commands to behave differently.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`code`](pm/model.md#nodespec#code-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="content-1"></a> `content?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The content expression for this node, as described in the [schema
+guide](https://prosemirror.net/docs/guide/#schema.content_expressions). When not given,
+the node does not allow any content.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`content`](pm/model.md#nodespec#content-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="defining"></a> `defining?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+When enabled, enables both
+[`definingAsContext`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingAsContext) and
+[`definingForContent`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingForContent).
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`defining`](pm/model.md#nodespec#defining)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="definingascontext"></a> `definingAsContext?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Determines whether this node is considered an important parent
+node during replace operations (such as paste). Non-defining (the
+default) nodes get dropped when their entire content is replaced,
+whereas defining nodes persist and wrap the inserted content.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`definingAsContext`](pm/model.md#nodespec#definingascontext)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="definingforcontent"></a> `definingForContent?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+In inserted content the defining parents of the content are
+preserved when possible. Typically, non-default-paragraph
+textblock types, and possibly list items, are marked as defining.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`definingForContent`](pm/model.md#nodespec#definingforcontent)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="disabledropcursor"></a> `disableDropCursor?`
+
+</td>
+<td>
+
+ \| `boolean` \| (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `object`, `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`disableDropCursor`](pm/model.md#nodespec#disabledropcursor)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="draggable"></a> `draggable?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Determines whether nodes of this type can be dragged without
+being selected. Defaults to false.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`draggable`](pm/model.md#nodespec#draggable)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="group-1"></a> `group?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The group or space-separated groups to which this node belongs,
+which can be referred to in the content expressions for the
+schema.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`group`](pm/model.md#nodespec#group-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="inline"></a> `inline?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Should be set to true for inline nodes. (Implied for text nodes.)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`inline`](pm/model.md#nodespec#inline)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="isolating"></a> `isolating?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+When enabled (default is false), the sides of nodes of this type
+count as boundaries that regular editing operations, like
+backspacing or lifting, won't cross. An example of a node that
+should probably have this enabled is a table cell.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`isolating`](pm/model.md#nodespec#isolating)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="leaftext"></a> `leafText?`
+
+</td>
+<td>
+
+(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `string`
+
+</td>
+<td>
+
+Defines the default way a [leaf node](https://prosemirror.net/docs/ref/#model.NodeType.isLeaf) of
+this type should be serialized to a string (as used by
+[`Node.textBetween`](https://prosemirror.net/docs/ref/#model.Node^textBetween) and
+[`Node.textContent`](https://prosemirror.net/docs/ref/#model.Node^textContent)).
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`leafText`](pm/model.md#nodespec#leaftext)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="linebreakreplacement"></a> `linebreakReplacement?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+A single inline node in a schema can be set to be a linebreak
+equivalent. When converting between block types that support the
+node and block types that don't but have
+[`whitespace`](https://prosemirror.net/docs/ref/#model.NodeSpec.whitespace) set to `"pre"`,
+[`setBlockType`](https://prosemirror.net/docs/ref/#transform.Transform.setBlockType) will convert
+between newline characters to or from linebreak nodes as
+appropriate.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`linebreakReplacement`](pm/model.md#nodespec#linebreakreplacement-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="marks-2"></a> `marks?`
+
+</td>
+<td>
+
+`string`
+
+</td>
+<td>
+
+The marks that are allowed inside of this node. May be a
+space-separated string referring to mark names or groups, `"_"`
+to explicitly allow all marks, or `""` to disallow marks. When
+not given, nodes with inline content default to allowing all
+marks, other nodes default to not allowing marks.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`marks`](pm/model.md#nodespec#marks-6)
 
 </td>
 </tr>
@@ -2943,11 +3910,143 @@ The name of the node type.
 &hyphen;
 
 </td>
+<td>
+
+&hyphen;
+
+</td>
 </tr>
 <tr>
 <td>
 
-<a id="topnode"></a> `topNode?`
+<a id="parsedom-3"></a> `parseDOM?`
+
+</td>
+<td>
+
+readonly [`TagParseRule`](pm/model.md#tagparserule)[]
+
+</td>
+<td>
+
+Associates DOM parser information with this node, which can be
+used by [`DOMParser.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMParser^fromSchema) to
+automatically derive a parser. The `node` field in the rules is
+implied (the name of this node will be filled in automatically).
+If you supply your own parser, you do not need to also specify
+parsing rules in your schema.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`parseDOM`](pm/model.md#nodespec#parsedom-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="selectable"></a> `selectable?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+<td>
+
+Controls whether nodes of this type can be selected as a [node
+selection](https://prosemirror.net/docs/ref/#state.NodeSelection). Defaults to true for non-text
+nodes.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`selectable`](pm/model.md#nodespec#selectable)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="todebugstring"></a> `toDebugString?`
+
+</td>
+<td>
+
+(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `string`
+
+</td>
+<td>
+
+Defines the default way a node of this type should be serialized
+to a string representation for debugging (e.g. in error messages).
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`toDebugString`](pm/model.md#nodespec#todebugstring)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="todom-3"></a> `toDOM?`
+
+</td>
+<td>
+
+(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => [`DOMOutputSpec`](pm/model.md#domoutputspec)
+
+</td>
+<td>
+
+Defines the default way a node of this type should be serialized
+to DOM/HTML (as used by
+[`DOMSerializer.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMSerializer^fromSchema)).
+Should return a DOM node or an [array
+structure](https://prosemirror.net/docs/ref/#model.DOMOutputSpec) that describes one, with an
+optional number zero (“hole”) in it to indicate where the node's
+content should be inserted.
+
+For text nodes, the default is to create a text DOM node. Though
+it is possible to create a serializer where text is rendered
+differently, this is not supported inside the editor, so you
+shouldn't override that in your text node spec.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`toDOM`](pm/model.md#nodespec#todom-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="topnode-1"></a> `topNode?`
 
 </td>
 <td>
@@ -2964,6 +4063,46 @@ top-level node type in a schema.
 <td>
 
 &hyphen;
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="whitespace"></a> `whitespace?`
+
+</td>
+<td>
+
+`"pre"` \| `"normal"`
+
+</td>
+<td>
+
+Controls way whitespace in this a node is parsed. The default is
+`"normal"`, which causes the [DOM parser](https://prosemirror.net/docs/ref/#model.DOMParser) to
+collapse whitespace in normal mode, and normalize it (replacing
+newlines and such with spaces) otherwise. `"pre"` causes the
+parser to preserve spaces inside the node. When this option isn't
+given, but [`code`](https://prosemirror.net/docs/ref/#model.NodeSpec.code) is true, `whitespace`
+will default to `"pre"`. Note that this option doesn't influence
+the way the node is rendered—that should be handled by `toDOM`
+and/or styling.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+[`NodeSpec`](pm/model.md#nodespec).[`whitespace`](pm/model.md#nodespec#whitespace-1)
 
 </td>
 </tr>
@@ -3058,7 +4197,7 @@ top-level node type in a schema.
 </td>
 <td>
 
-`null` \| [`Attrs`](pm/model.md#attrs-5)
+`null` \| [`Attrs`](pm/model.md#attrs-7)
 
 </td>
 <td>
@@ -3070,7 +4209,7 @@ If attrs is given, remove precisely the mark with the given attrs. Otherwise, re
 <tr>
 <td>
 
-<a id="from-1"></a> `from?`
+<a id="from-2"></a> `from?`
 
 </td>
 <td>
@@ -3087,7 +4226,7 @@ The start position of the document. By default it will be the start position of 
 <tr>
 <td>
 
-<a id="to-1"></a> `to?`
+<a id="to-2"></a> `to?`
 
 </td>
 <td>
@@ -3287,14 +4426,14 @@ A JSON representation of the prosemirror selection.
 </td>
 <td>
 
-`null` \| [`Attrs`](pm/model.md#attrs-5)
+`null` \| [`Attrs`](pm/model.md#attrs-7)
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="from-2"></a> `from?`
+<a id="from-3"></a> `from?`
 
 </td>
 <td>
@@ -3306,7 +4445,7 @@ A JSON representation of the prosemirror selection.
 <tr>
 <td>
 
-<a id="to-2"></a> `to?`
+<a id="to-3"></a> `to?`
 
 </td>
 <td>
@@ -3365,7 +4504,7 @@ A JSON representation of the prosemirror selection.
 </td>
 <td>
 
-[`Attrs`](pm/model.md#attrs-5)
+[`Attrs`](pm/model.md#attrs-7)
 
 </td>
 <td>
@@ -3570,7 +4709,7 @@ The type of the step.
 </td>
 <td>
 
-`null` \| [`Attrs`](pm/model.md#attrs-5)
+`null` \| [`Attrs`](pm/model.md#attrs-7)
 
 </td>
 <td>
@@ -3684,7 +4823,7 @@ The mark type to toggle.
 </td>
 <td>
 
-`null` \| [`Attrs`](pm/model.md#attrs-5)
+`null` \| [`Attrs`](pm/model.md#attrs-7)
 
 </td>
 <td>
@@ -3748,7 +4887,7 @@ The type of the node to toggle.
 </td>
 <td>
 
-`null` \| [`Attrs`](pm/model.md#attrs-5)
+`null` \| [`Attrs`](pm/model.md#attrs-7)
 
 </td>
 <td>
@@ -3782,70 +4921,6 @@ The type of the node to toggle.
 ***
 
 ### UnsetBlockTypeOptions {#unsetblocktypeoptions}
-
-<!-- DEBUG memberWithGroups 1 -->
-
-<!-- DEBUG memberWithGroups 4 -->
-
-<!-- DEBUG memberWithGroups 7 -->
-
-<!-- DEBUG memberWithGroups 8 -->
-
-<!-- DEBUG memberWithGroups 9 -->
-
-#### Properties
-
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-<a id="from-3"></a> `from?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-The start position of the document. By default it will be the start position of current selection.
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="to-3"></a> `to?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-The end position of the document. By default it will be the end position of current selection.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-<!-- DEBUG memberWithGroups 10 -->
-
-***
-
-### UnsetMarkOptions {#unsetmarkoptions}
 
 <!-- DEBUG memberWithGroups 1 -->
 
@@ -3909,6 +4984,70 @@ The end position of the document. By default it will be the end position of curr
 
 ***
 
+### UnsetMarkOptions {#unsetmarkoptions}
+
+<!-- DEBUG memberWithGroups 1 -->
+
+<!-- DEBUG memberWithGroups 4 -->
+
+<!-- DEBUG memberWithGroups 7 -->
+
+<!-- DEBUG memberWithGroups 8 -->
+
+<!-- DEBUG memberWithGroups 9 -->
+
+#### Properties
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<a id="from-5"></a> `from?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The start position of the document. By default it will be the start position of current selection.
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="to-5"></a> `to?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+<td>
+
+The end position of the document. By default it will be the end position of current selection.
+
+</td>
+</tr>
+</tbody>
+</table>
+
+<!-- DEBUG memberWithGroups 10 -->
+
+***
+
 ### WrapOptions {#wrapoptions}
 
 <!-- DEBUG memberWithGroups 1 -->
@@ -3940,7 +5079,7 @@ The end position of the document. By default it will be the end position of curr
 </td>
 <td>
 
-`null` \| [`Attrs`](pm/model.md#attrs-5)
+`null` \| [`Attrs`](pm/model.md#attrs-7)
 
 </td>
 <td>
@@ -4050,7 +5189,7 @@ type AttrSpec<AttrType> = object;
 
 #### Properties
 
-##### default? {#default-1}
+##### default? {#default-3}
 
 ```ts
 optional default: AttrType;
@@ -4060,7 +5199,7 @@ The default value for this attribute, to use when no explicit value is
 provided. Attributes that have no default must be provided whenever a node
 or mark of a type that has them is created.
 
-##### validate? {#validate}
+##### validate? {#validate-2}
 
 ```ts
 optional validate: string | (value: unknown) => void;
@@ -6524,12 +7663,12 @@ function defineMarkSpec<Mark, Attrs>(options: MarkSpecOptions<Mark, Attrs>): Ext
 <tr>
 <td>
 
-`Attrs` *extends* [`Attrs`](pm/model.md#attrs-5)
+`Attrs` *extends* [`Attrs`](pm/model.md#attrs-7)
 
 </td>
 <td>
 
-[`Attrs`](pm/model.md#attrs-5)
+[`Attrs`](pm/model.md#attrs-7)
 
 </td>
 </tr>
@@ -6772,12 +7911,12 @@ Defines a node type.
 <tr>
 <td>
 
-`Attrs` *extends* [`Attrs`](pm/model.md#attrs-5)
+`Attrs` *extends* [`Attrs`](pm/model.md#attrs-7)
 
 </td>
 <td>
 
-[`Attrs`](pm/model.md#attrs-5)
+[`Attrs`](pm/model.md#attrs-7)
 
 </td>
 </tr>

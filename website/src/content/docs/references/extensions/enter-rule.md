@@ -149,7 +149,7 @@ Options for [defineTextBlockEnterRule](#definetextblockenterrule).
 </td>
 <td>
 
- \| `null` \| [`Attrs`](../pm/model.md#attrs-5) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-5)
+ \| `null` \| [`Attrs`](../pm/model.md#attrs-7) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-7)
 
 </td>
 <td>

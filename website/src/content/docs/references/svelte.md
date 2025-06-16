@@ -83,9 +83,130 @@ Options for [defineSvelteMarkView](#definesveltemarkview).
 <th>Property</th>
 <th>Type</th>
 <th>Description</th>
+<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+
+<a id="as"></a> `as?`
+
+</td>
+<td>
+
+`MarkViewDOMSpec`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreMarkViewUserOptions.as
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="component"></a> `component`
+
+</td>
+<td>
+
+[`SvelteMarkViewComponent`](#sveltemarkviewcomponent)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreMarkViewUserOptions.component
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="contentas"></a> `contentAs?`
+
+</td>
+<td>
+
+`MarkViewDOMSpec`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreMarkViewUserOptions.contentAs
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="destroy"></a> `destroy?`
+
+</td>
+<td>
+
+() => `void`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreMarkViewUserOptions.destroy
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="ignoremutation"></a> `ignoreMutation?`
+
+</td>
+<td>
+
+(`mutation`: [`ViewMutationRecord`](pm/view.md#viewmutationrecord)) => `boolean` \| `void`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreMarkViewUserOptions.ignoreMutation
+```
+
+</td>
+</tr>
 <tr>
 <td>
 
@@ -100,6 +221,11 @@ Options for [defineSvelteMarkView](#definesveltemarkview).
 <td>
 
 The name of the mark type.
+
+</td>
+<td>
+
+&hyphen;
 
 </td>
 </tr>
@@ -125,6 +251,77 @@ The name of the mark type.
 <!-- DEBUG memberWithGroups 8 -->
 
 <!-- DEBUG memberWithGroups 9 -->
+
+#### Properties
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Inherited from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<a id="contentref"></a> `contentRef`
+
+</td>
+<td>
+
+(`element`: \| `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `void`
+
+</td>
+<td>
+
+```ts
+MarkViewContext.contentRef
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="mark"></a> `mark`
+
+</td>
+<td>
+
+`Writable`\<[`Mark`](pm/model.md#mark)\>
+
+</td>
+<td>
+
+```ts
+MarkViewContext.mark
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="view"></a> `view`
+
+</td>
+<td>
+
+[`EditorView`](pm/view.md#editorview)
+
+</td>
+<td>
+
+```ts
+MarkViewContext.view
+```
+
+</td>
+</tr>
+</tbody>
+</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -156,9 +353,154 @@ Options for [defineSvelteNodeView](#definesveltenodeview).
 <th>Property</th>
 <th>Type</th>
 <th>Description</th>
+<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+
+<a id="as-1"></a> `as?`
+
+</td>
+<td>
+
+`NodeViewDOMSpec`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreNodeViewUserOptions.as
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="component-1"></a> `component`
+
+</td>
+<td>
+
+[`SvelteNodeViewComponent`](#sveltenodeviewcomponent)
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreNodeViewUserOptions.component
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="contentas-1"></a> `contentAs?`
+
+</td>
+<td>
+
+`NodeViewDOMSpec`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreNodeViewUserOptions.contentAs
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="deselectnode"></a> `deselectNode?`
+
+</td>
+<td>
+
+() => `void`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreNodeViewUserOptions.deselectNode
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="destroy-1"></a> `destroy?`
+
+</td>
+<td>
+
+() => `void`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreNodeViewUserOptions.destroy
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="ignoremutation-1"></a> `ignoreMutation?`
+
+</td>
+<td>
+
+(`mutation`: [`ViewMutationRecord`](pm/view.md#viewmutationrecord)) => `boolean` \| `void`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreNodeViewUserOptions.ignoreMutation
+```
+
+</td>
+</tr>
 <tr>
 <td>
 
@@ -173,6 +515,131 @@ Options for [defineSvelteNodeView](#definesveltenodeview).
 <td>
 
 The name of the node type.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="onupdate"></a> `onUpdate?`
+
+</td>
+<td>
+
+() => `void`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreNodeViewUserOptions.onUpdate
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="selectnode"></a> `selectNode?`
+
+</td>
+<td>
+
+() => `void`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreNodeViewUserOptions.selectNode
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="setselection"></a> `setSelection?`
+
+</td>
+<td>
+
+(`anchor`: `number`, `head`: `number`, `root`: \| [`Document`](https://developer.mozilla.org/docs/Web/API/Document) \| [`ShadowRoot`](https://developer.mozilla.org/docs/Web/API/ShadowRoot)) => `void`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreNodeViewUserOptions.setSelection
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="stopevent"></a> `stopEvent?`
+
+</td>
+<td>
+
+(`event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)) => `boolean`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreNodeViewUserOptions.stopEvent
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="update"></a> `update?`
+
+</td>
+<td>
+
+(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `decorations`: readonly [`Decoration`](pm/view.md#decoration)[], `innerDecorations`: [`DecorationSource`](pm/view.md#decorationsource)) => `boolean` \| `void`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+```ts
+CoreNodeViewUserOptions.update
+```
 
 </td>
 </tr>
@@ -198,6 +665,172 @@ The name of the node type.
 <!-- DEBUG memberWithGroups 8 -->
 
 <!-- DEBUG memberWithGroups 9 -->
+
+#### Properties
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Inherited from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<a id="contentref-1"></a> `contentRef`
+
+</td>
+<td>
+
+(`element`: \| `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `void`
+
+</td>
+<td>
+
+```ts
+NodeViewContext.contentRef
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="decorations"></a> `decorations`
+
+</td>
+<td>
+
+`Writable`\<readonly [`Decoration`](pm/view.md#decoration)[]\>
+
+</td>
+<td>
+
+```ts
+NodeViewContext.decorations
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="getpos"></a> `getPos`
+
+</td>
+<td>
+
+() => `undefined` \| `number`
+
+</td>
+<td>
+
+```ts
+NodeViewContext.getPos
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="innerdecorations"></a> `innerDecorations`
+
+</td>
+<td>
+
+`Writable`\<[`DecorationSource`](pm/view.md#decorationsource)\>
+
+</td>
+<td>
+
+```ts
+NodeViewContext.innerDecorations
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="node"></a> `node`
+
+</td>
+<td>
+
+`Writable`\<[`ProseMirrorNode`](pm/model.md#prosemirrornode)\>
+
+</td>
+<td>
+
+```ts
+NodeViewContext.node
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="selected"></a> `selected`
+
+</td>
+<td>
+
+`Writable`\<`boolean`\>
+
+</td>
+<td>
+
+```ts
+NodeViewContext.selected
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="setattrs"></a> `setAttrs`
+
+</td>
+<td>
+
+(`attrs`: [`Attrs`](pm/model.md#attrs-7)) => `void`
+
+</td>
+<td>
+
+```ts
+NodeViewContext.setAttrs
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="view-1"></a> `view`
+
+</td>
+<td>
+
+[`EditorView`](pm/view.md#editorview)
+
+</td>
+<td>
+
+```ts
+NodeViewContext.view
+```
+
+</td>
+</tr>
+</tbody>
+</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

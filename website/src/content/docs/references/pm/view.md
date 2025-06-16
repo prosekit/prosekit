@@ -2308,9 +2308,190 @@ fields that can't be used in plugins:
 <th>Property</th>
 <th>Type</th>
 <th>Description</th>
+<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+
+<a id="attributes"></a> `attributes?`
+
+</td>
+<td>
+
+ \| \{ [`name`: `string`]: `string`; \} \| (`state`: [`EditorState`](state.md#editorstate)) => `object`
+
+</td>
+<td>
+
+Control the DOM attributes of the editable element. May be either
+an object or a function going from an editor state to an object.
+By default, the element will get a class `"ProseMirror"`, and
+will have its `contentEditable` attribute determined by the
+[`editable` prop](https://prosemirror.net/docs/ref/#view.EditorProps.editable). Additional classes
+provided here will be added to the class. For other attributes,
+the value provided first (as in
+[`someProp`](https://prosemirror.net/docs/ref/#view.EditorView.someProp)) will be used.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`attributes`](#attributes-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="clipboardparser"></a> `clipboardParser?`
+
+</td>
+<td>
+
+[`DOMParser`](model.md#domparser)
+
+</td>
+<td>
+
+The [parser](https://prosemirror.net/docs/ref/#model.DOMParser) to use when reading content from
+the clipboard. When not given, the value of the
+[`domParser`](https://prosemirror.net/docs/ref/#view.EditorProps.domParser) prop is used.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`clipboardParser`](#clipboardparser-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="clipboardserializer"></a> `clipboardSerializer?`
+
+</td>
+<td>
+
+[`DOMSerializer`](model.md#domserializer)
+
+</td>
+<td>
+
+The DOM serializer to use when putting content onto the
+clipboard. If not given, the result of
+[`DOMSerializer.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMSerializer^fromSchema)
+will be used. This object will only have its
+[`serializeFragment`](https://prosemirror.net/docs/ref/#model.DOMSerializer.serializeFragment)
+method called, and you may provide an alternative object type
+implementing a compatible method.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`clipboardSerializer`](#clipboardserializer-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="clipboardtextparser"></a> `clipboardTextParser?`
+
+</td>
+<td>
+
+(`this`: `any`, `text`: `string`, `$context`: [`ResolvedPos`](model.md#resolvedpos), `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice-2)
+
+</td>
+<td>
+
+A function to parse text from the clipboard into a document
+slice. Called after
+[`transformPastedText`](https://prosemirror.net/docs/ref/#view.EditorProps.transformPastedText).
+The default behavior is to split the text into lines, wrap them
+in `<p>` tags, and call
+[`clipboardParser`](https://prosemirror.net/docs/ref/#view.EditorProps.clipboardParser) on it.
+The `plain` flag will be true when the text is pasted as plain text.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`clipboardTextParser`](#clipboardtextparser-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="clipboardtextserializer"></a> `clipboardTextSerializer?`
+
+</td>
+<td>
+
+(`this`: `any`, `content`: [`Slice`](model.md#slice-2), `view`: [`EditorView`](#editorview)) => `string`
+
+</td>
+<td>
+
+A function that will be called to get the text for the current
+selection when copying text to the clipboard. By default, the
+editor will use [`textBetween`](https://prosemirror.net/docs/ref/#model.Node.textBetween) on the
+selected range.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`clipboardTextSerializer`](#clipboardtextserializer-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="createselectionbetween"></a> `createSelectionBetween?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `anchor`: [`ResolvedPos`](model.md#resolvedpos), `head`: [`ResolvedPos`](model.md#resolvedpos)) => `null` \| [`Selection`](state.md#selection-1)
+
+</td>
+<td>
+
+Can be used to override the way a selection is created when
+reading a DOM selection between the given anchor and head.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`createSelectionBetween`](#createselectionbetween-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="decorations"></a> `decorations?`
+
+</td>
+<td>
+
+(`this`: `any`, `state`: [`EditorState`](state.md#editorstate)) => `undefined` \| `null` \| [`DecorationSource`](#decorationsource)
+
+</td>
+<td>
+
+A set of [document decorations](https://prosemirror.net/docs/ref/#view.Decoration) to show in the
+view.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`decorations`](#decorations-1)
+
+</td>
+</tr>
 <tr>
 <td>
 
@@ -2331,6 +2512,502 @@ make sure this ends up calling the view's
 state that has the transaction
 [applied](https://prosemirror.net/docs/ref/#state.EditorState.apply). The callback will be bound to have
 the view instance as its `this` binding.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="domparser"></a> `domParser?`
+
+</td>
+<td>
+
+[`DOMParser`](model.md#domparser)
+
+</td>
+<td>
+
+The [parser](https://prosemirror.net/docs/ref/#model.DOMParser) to use when reading editor changes
+from the DOM. Defaults to calling
+[`DOMParser.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMParser^fromSchema) on the
+editor's schema.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`domParser`](#domparser-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="dragcopies"></a> `dragCopies?`
+
+</td>
+<td>
+
+(`event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`
+
+</td>
+<td>
+
+Determines whether an in-editor drag event should copy or move
+the selection. When not given, the event's `altKey` property is
+used on macOS, `ctrlKey` on other platforms.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`dragCopies`](#dragcopies-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="editable-1"></a> `editable?`
+
+</td>
+<td>
+
+(`this`: `any`, `state`: [`EditorState`](state.md#editorstate)) => `boolean`
+
+</td>
+<td>
+
+When this returns false, the content of the view is not directly
+editable.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`editable`](#editable-2)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handleclick"></a> `handleClick?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`
+
+</td>
+<td>
+
+Called when the editor is clicked, after `handleClickOn` handlers
+have been called.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleClick`](#handleclick-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handleclickon"></a> `handleClickOn?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`
+
+</td>
+<td>
+
+Called for each node around a click, from the inside out. The
+`direct` flag will be true for the inner node.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleClickOn`](#handleclickon-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handledomevents"></a> `handleDOMEvents?`
+
+</td>
+<td>
+
+`object`
+
+</td>
+<td>
+
+Can be an object mapping DOM event type names to functions that
+handle them. Such functions will be called before any handling
+ProseMirror does of events fired on the editable DOM element.
+Contrary to the other event handling props, when returning true
+from such a function, you are responsible for calling
+`preventDefault` yourself (or not, if you want to allow the
+default behavior).
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleDOMEvents`](#handledomevents-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`handleDOMEvents.aria-ui/context-provider?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: `ContextProviderEvent`) => `boolean` \| `void`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+`handleDOMEvents.aria-ui/context-request?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: `ContextRequestEvent`\<`unknown`\>) => `boolean` \| `void`
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handledoubleclick"></a> `handleDoubleClick?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`
+
+</td>
+<td>
+
+Called when the editor is double-clicked, after `handleDoubleClickOn`.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleDoubleClick`](#handledoubleclick-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handledoubleclickon"></a> `handleDoubleClickOn?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`
+
+</td>
+<td>
+
+Called for each node around a double click.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleDoubleClickOn`](#handledoubleclickon-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handledrop"></a> `handleDrop?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent), `slice`: [`Slice`](model.md#slice-2), `moved`: `boolean`) => `boolean` \| `void`
+
+</td>
+<td>
+
+Called when something is dropped on the editor. `moved` will be
+true if this drop moves from the current selection (which should
+thus be deleted).
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleDrop`](#handledrop-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handlekeydown"></a> `handleKeyDown?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`
+
+</td>
+<td>
+
+Called when the editor receives a `keydown` event.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleKeyDown`](#handlekeydown-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handlekeypress"></a> `handleKeyPress?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`
+
+</td>
+<td>
+
+Handler for `keypress` events.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleKeyPress`](#handlekeypress-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handlepaste"></a> `handlePaste?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent), `slice`: [`Slice`](model.md#slice-2)) => `boolean` \| `void`
+
+</td>
+<td>
+
+Can be used to override the behavior of pasting. `slice` is the
+pasted content parsed by the editor, but you can directly access
+the event to get at the raw content.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handlePaste`](#handlepaste-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handlescrolltoselection"></a> `handleScrollToSelection?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview)) => `boolean`
+
+</td>
+<td>
+
+Called when the view, after updating its state, tries to scroll
+the selection into view. A handler function may return false to
+indicate that it did not handle the scrolling and further
+handlers or the default behavior should be tried.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleScrollToSelection`](#handlescrolltoselection-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handletextinput"></a> `handleTextInput?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `from`: `number`, `to`: `number`, `text`: `string`, `deflt`: () => [`Transaction`](state.md#transaction)) => `boolean` \| `void`
+
+</td>
+<td>
+
+Whenever the user directly input text, this handler is called
+before the input is applied. If it returns `true`, the default
+behavior of actually inserting the text is suppressed.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleTextInput`](#handletextinput-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handletripleclick"></a> `handleTripleClick?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`
+
+</td>
+<td>
+
+Called when the editor is triple-clicked, after `handleTripleClickOn`.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleTripleClick`](#handletripleclick-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="handletripleclickon"></a> `handleTripleClickOn?`
+
+</td>
+<td>
+
+(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`
+
+</td>
+<td>
+
+Called for each node around a triple click.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`handleTripleClickOn`](#handletripleclickon-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="markviews"></a> `markViews?`
+
+</td>
+<td>
+
+`object`
+
+</td>
+<td>
+
+Pass custom mark rendering functions. Note that these cannot
+provide the kind of dynamic behavior that [node
+views](https://prosemirror.net/docs/ref/#view.NodeView) can—they just provide custom rendering
+logic. The third argument indicates whether the mark's content
+is inline.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`markViews`](#markviews-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="nodeviews"></a> `nodeViews?`
+
+</td>
+<td>
+
+`object`
+
+</td>
+<td>
+
+Allows you to pass custom rendering and behavior logic for
+nodes. Should map node names to constructor functions that
+produce a [`NodeView`](https://prosemirror.net/docs/ref/#view.NodeView) object implementing the
+node's display behavior. The third argument `getPos` is a
+function that can be called to get the node's current position,
+which can be useful when creating transactions to update it.
+Note that if the node is not in the document, the position
+returned by this function will be `undefined`.
+
+`decorations` is an array of node or inline decorations that are
+active around the node. They are automatically drawn in the
+normal way, and you will usually just want to ignore this, but
+they can also be used as a way to provide context information to
+the node view without adding it to the document itself.
+
+`innerDecorations` holds the decorations for the node's content.
+You can safely ignore this if your view has no content or a
+`contentDOM` property, since the editor will draw the decorations
+on the content. But if you, for example, want to create a nested
+editor with the content, it may make sense to provide it with the
+inner decorations.
+
+(For backwards compatibility reasons, [mark
+views](https://prosemirror.net/docs/ref/#view.EditorProps.markViews) can also be included in this
+object.)
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`nodeViews`](#nodeviews-1)
 
 </td>
 </tr>
@@ -2356,6 +3033,58 @@ appender) will result in an error, since such plugins must be
 present in the state to work.
 
 </td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="scrollmargin"></a> `scrollMargin?`
+
+</td>
+<td>
+
+ \| `number` \| \{ `bottom`: `number`; `left`: `number`; `right`: `number`; `top`: `number`; \}
+
+</td>
+<td>
+
+Determines the extra space (in pixels) that is left above or
+below the cursor when it is scrolled into view. Defaults to 5.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`scrollMargin`](#scrollmargin-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="scrollthreshold"></a> `scrollThreshold?`
+
+</td>
+<td>
+
+ \| `number` \| \{ `bottom`: `number`; `left`: `number`; `right`: `number`; `top`: `number`; \}
+
+</td>
+<td>
+
+Determines the distance (in pixels) between the cursor and the
+end of the visible viewport at which point, when scrolling the
+cursor into view, scrolling takes place. Defaults to 0.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`scrollThreshold`](#scrollthreshold-1)
+
+</td>
 </tr>
 <tr>
 <td>
@@ -2371,6 +3100,103 @@ present in the state to work.
 <td>
 
 The current state of the editor.
+
+</td>
+<td>
+
+&hyphen;
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="transformcopied"></a> `transformCopied?`
+
+</td>
+<td>
+
+(`this`: `any`, `slice`: [`Slice`](model.md#slice-2), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice-2)
+
+</td>
+<td>
+
+Can be used to transform copied or cut content before it is
+serialized to the clipboard.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`transformCopied`](#transformcopied-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="transformpasted"></a> `transformPasted?`
+
+</td>
+<td>
+
+(`this`: `any`, `slice`: [`Slice`](model.md#slice-2), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice-2)
+
+</td>
+<td>
+
+Can be used to transform pasted or dragged-and-dropped content
+before it is applied to the document.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`transformPasted`](#transformpasted-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="transformpastedhtml"></a> `transformPastedHTML?`
+
+</td>
+<td>
+
+(`this`: `any`, `html`: `string`, `view`: [`EditorView`](#editorview)) => `string`
+
+</td>
+<td>
+
+Can be used to transform pasted HTML text, _before_ it is parsed,
+for example to clean it up.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`transformPastedHTML`](#transformpastedhtml-1)
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="transformpastedtext"></a> `transformPastedText?`
+
+</td>
+<td>
+
+(`this`: `any`, `text`: `string`, `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => `string`
+
+</td>
+<td>
+
+Transform pasted plain text. The `plain` flag will be true when
+the text is pasted as plain text.
+
+</td>
+<td>
+
+[`EditorProps`](#editorprops).[`transformPastedText`](#transformpastedtext-1)
 
 </td>
 </tr>
@@ -2406,6 +3232,58 @@ about.
 ```
 
 <!-- DEBUG memberWithGroups 9 -->
+
+#### Properties
+
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Inherited from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<a id="aria-uicontext-provider"></a> `aria-ui/context-provider`
+
+</td>
+<td>
+
+`ContextProviderEvent`
+
+</td>
+<td>
+
+```ts
+HTMLElementEventMap.aria-ui/context-provider
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+<a id="aria-uicontext-request"></a> `aria-ui/context-request`
+
+</td>
+<td>
+
+`ContextRequestEvent`\<`unknown`\>
+
+</td>
+<td>
+
+```ts
+HTMLElementEventMap.aria-ui/context-request
+```
+
+</td>
+</tr>
+</tbody>
+</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2484,7 +3362,7 @@ functions, and is used to pass in the plugin type when defining a
 <tr>
 <td>
 
-<a id="attributes"></a> `attributes?`
+<a id="attributes-1"></a> `attributes?`
 
 </td>
 <td>
@@ -2508,7 +3386,7 @@ the value provided first (as in
 <tr>
 <td>
 
-<a id="clipboardparser"></a> `clipboardParser?`
+<a id="clipboardparser-1"></a> `clipboardParser?`
 
 </td>
 <td>
@@ -2527,7 +3405,7 @@ the clipboard. When not given, the value of the
 <tr>
 <td>
 
-<a id="clipboardserializer"></a> `clipboardSerializer?`
+<a id="clipboardserializer-1"></a> `clipboardSerializer?`
 
 </td>
 <td>
@@ -2550,7 +3428,7 @@ implementing a compatible method.
 <tr>
 <td>
 
-<a id="clipboardtextparser"></a> `clipboardTextParser?`
+<a id="clipboardtextparser-1"></a> `clipboardTextParser?`
 
 </td>
 <td>
@@ -2573,7 +3451,7 @@ The `plain` flag will be true when the text is pasted as plain text.
 <tr>
 <td>
 
-<a id="clipboardtextserializer"></a> `clipboardTextSerializer?`
+<a id="clipboardtextserializer-1"></a> `clipboardTextSerializer?`
 
 </td>
 <td>
@@ -2593,7 +3471,7 @@ selected range.
 <tr>
 <td>
 
-<a id="createselectionbetween"></a> `createSelectionBetween?`
+<a id="createselectionbetween-1"></a> `createSelectionBetween?`
 
 </td>
 <td>
@@ -2611,7 +3489,7 @@ reading a DOM selection between the given anchor and head.
 <tr>
 <td>
 
-<a id="decorations"></a> `decorations?`
+<a id="decorations-1"></a> `decorations?`
 
 </td>
 <td>
@@ -2629,7 +3507,7 @@ view.
 <tr>
 <td>
 
-<a id="domparser"></a> `domParser?`
+<a id="domparser-1"></a> `domParser?`
 
 </td>
 <td>
@@ -2649,7 +3527,7 @@ editor's schema.
 <tr>
 <td>
 
-<a id="dragcopies"></a> `dragCopies?`
+<a id="dragcopies-1"></a> `dragCopies?`
 
 </td>
 <td>
@@ -2668,7 +3546,7 @@ used on macOS, `ctrlKey` on other platforms.
 <tr>
 <td>
 
-<a id="editable-1"></a> `editable?`
+<a id="editable-2"></a> `editable?`
 
 </td>
 <td>
@@ -2686,7 +3564,7 @@ editable.
 <tr>
 <td>
 
-<a id="handleclick"></a> `handleClick?`
+<a id="handleclick-1"></a> `handleClick?`
 
 </td>
 <td>
@@ -2704,7 +3582,7 @@ have been called.
 <tr>
 <td>
 
-<a id="handleclickon"></a> `handleClickOn?`
+<a id="handleclickon-1"></a> `handleClickOn?`
 
 </td>
 <td>
@@ -2722,7 +3600,7 @@ Called for each node around a click, from the inside out. The
 <tr>
 <td>
 
-<a id="handledomevents"></a> `handleDOMEvents?`
+<a id="handledomevents-1"></a> `handleDOMEvents?`
 
 </td>
 <td>
@@ -2779,7 +3657,7 @@ default behavior).
 <tr>
 <td>
 
-<a id="handledoubleclick"></a> `handleDoubleClick?`
+<a id="handledoubleclick-1"></a> `handleDoubleClick?`
 
 </td>
 <td>
@@ -2796,7 +3674,7 @@ Called when the editor is double-clicked, after `handleDoubleClickOn`.
 <tr>
 <td>
 
-<a id="handledoubleclickon"></a> `handleDoubleClickOn?`
+<a id="handledoubleclickon-1"></a> `handleDoubleClickOn?`
 
 </td>
 <td>
@@ -2813,7 +3691,7 @@ Called for each node around a double click.
 <tr>
 <td>
 
-<a id="handledrop"></a> `handleDrop?`
+<a id="handledrop-1"></a> `handleDrop?`
 
 </td>
 <td>
@@ -2832,7 +3710,7 @@ thus be deleted).
 <tr>
 <td>
 
-<a id="handlekeydown"></a> `handleKeyDown?`
+<a id="handlekeydown-1"></a> `handleKeyDown?`
 
 </td>
 <td>
@@ -2849,7 +3727,7 @@ Called when the editor receives a `keydown` event.
 <tr>
 <td>
 
-<a id="handlekeypress"></a> `handleKeyPress?`
+<a id="handlekeypress-1"></a> `handleKeyPress?`
 
 </td>
 <td>
@@ -2866,7 +3744,7 @@ Handler for `keypress` events.
 <tr>
 <td>
 
-<a id="handlepaste"></a> `handlePaste?`
+<a id="handlepaste-1"></a> `handlePaste?`
 
 </td>
 <td>
@@ -2885,7 +3763,7 @@ the event to get at the raw content.
 <tr>
 <td>
 
-<a id="handlescrolltoselection"></a> `handleScrollToSelection?`
+<a id="handlescrolltoselection-1"></a> `handleScrollToSelection?`
 
 </td>
 <td>
@@ -2905,7 +3783,7 @@ handlers or the default behavior should be tried.
 <tr>
 <td>
 
-<a id="handletextinput"></a> `handleTextInput?`
+<a id="handletextinput-1"></a> `handleTextInput?`
 
 </td>
 <td>
@@ -2924,7 +3802,7 @@ behavior of actually inserting the text is suppressed.
 <tr>
 <td>
 
-<a id="handletripleclick"></a> `handleTripleClick?`
+<a id="handletripleclick-1"></a> `handleTripleClick?`
 
 </td>
 <td>
@@ -2941,7 +3819,7 @@ Called when the editor is triple-clicked, after `handleTripleClickOn`.
 <tr>
 <td>
 
-<a id="handletripleclickon"></a> `handleTripleClickOn?`
+<a id="handletripleclickon-1"></a> `handleTripleClickOn?`
 
 </td>
 <td>
@@ -2958,7 +3836,7 @@ Called for each node around a triple click.
 <tr>
 <td>
 
-<a id="markviews"></a> `markViews?`
+<a id="markviews-1"></a> `markViews?`
 
 </td>
 <td>
@@ -2979,7 +3857,7 @@ is inline.
 <tr>
 <td>
 
-<a id="nodeviews"></a> `nodeViews?`
+<a id="nodeviews-1"></a> `nodeViews?`
 
 </td>
 <td>
@@ -3020,7 +3898,7 @@ object.)
 <tr>
 <td>
 
-<a id="scrollmargin"></a> `scrollMargin?`
+<a id="scrollmargin-1"></a> `scrollMargin?`
 
 </td>
 <td>
@@ -3038,7 +3916,7 @@ below the cursor when it is scrolled into view. Defaults to 5.
 <tr>
 <td>
 
-<a id="scrollthreshold"></a> `scrollThreshold?`
+<a id="scrollthreshold-1"></a> `scrollThreshold?`
 
 </td>
 <td>
@@ -3057,7 +3935,7 @@ cursor into view, scrolling takes place. Defaults to 0.
 <tr>
 <td>
 
-<a id="transformcopied"></a> `transformCopied?`
+<a id="transformcopied-1"></a> `transformCopied?`
 
 </td>
 <td>
@@ -3075,7 +3953,7 @@ serialized to the clipboard.
 <tr>
 <td>
 
-<a id="transformpasted"></a> `transformPasted?`
+<a id="transformpasted-1"></a> `transformPasted?`
 
 </td>
 <td>
@@ -3093,7 +3971,7 @@ before it is applied to the document.
 <tr>
 <td>
 
-<a id="transformpastedhtml"></a> `transformPastedHTML?`
+<a id="transformpastedhtml-1"></a> `transformPastedHTML?`
 
 </td>
 <td>
@@ -3111,7 +3989,7 @@ for example to clean it up.
 <tr>
 <td>
 
-<a id="transformpastedtext"></a> `transformPastedText?`
+<a id="transformpastedtext-1"></a> `transformPastedText?`
 
 </td>
 <td>

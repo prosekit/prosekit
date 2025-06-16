@@ -82,7 +82,205 @@ Create an all-selection over the given document.
 
 [`Selection`](#selection-1).[`constructor`](#constructor-5)
 
+#### Properties
+
+##### $anchor {#anchor}
+
+```ts
+readonly $anchor: ResolvedPos;
+```
+
+The resolved anchor of the selection (the side that stays in
+place when the selection is modified).
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$anchor`](#anchor-4)
+
+##### $head {#head}
+
+```ts
+readonly $head: ResolvedPos;
+```
+
+The resolved head of the selection (the side that moves when
+the selection is modified).
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$head`](#head-4)
+
+##### ranges {#ranges}
+
+```ts
+ranges: readonly SelectionRange[];
+```
+
+The ranges covered by the selection.
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`ranges`](#ranges-2)
+
+##### visible {#visible}
+
+```ts
+visible: boolean;
+```
+
+Controls whether, when a selection of this type is active in the
+browser, the selected range should be visible to the user.
+Defaults to `true`.
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`visible`](#visible-2)
+
+#### Accessors
+
+##### $from {#from}
+
+###### Get Signature
+
+```ts
+get $from(): ResolvedPos;
+```
+
+The resolved lower  bound of the selection's main range.
+
+###### Returns
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$from`](#from-4)
+
+##### $to {#to}
+
+###### Get Signature
+
+```ts
+get $to(): ResolvedPos;
+```
+
+The resolved upper bound of the selection's main range.
+
+###### Returns
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$to`](#to-4)
+
+##### anchor {#anchor-1}
+
+###### Get Signature
+
+```ts
+get anchor(): number;
+```
+
+The selection's anchor, as an unresolved position.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`anchor`](#anchor-5)
+
+##### empty {#empty}
+
+###### Get Signature
+
+```ts
+get empty(): boolean;
+```
+
+Indicates whether the selection contains any content.
+
+###### Returns
+
+`boolean`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`empty`](#empty-2)
+
+##### from {#from-1}
+
+###### Get Signature
+
+```ts
+get from(): number;
+```
+
+The lower bound of the selection's main range.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`from`](#from-5)
+
+##### head {#head-1}
+
+###### Get Signature
+
+```ts
+get head(): number;
+```
+
+The selection's head.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`head`](#head-5)
+
+##### to {#to-1}
+
+###### Get Signature
+
+```ts
+get to(): number;
+```
+
+The upper bound of the selection's main range.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`to`](#to-5)
+
 #### Methods
+
+##### content() {#content}
+
+```ts
+content(): Slice;
+```
+
+Get the content of this selection as a slice.
+
+###### Returns
+
+[`Slice`](model.md#slice-2)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`content`](#content-4)
 
 ##### eq() {#eq}
 
@@ -286,7 +484,61 @@ delete the selection. Will append to the given transaction.
 
 ###### Overrides
 
-[`Selection`](#selection-1).[`replace`](#replace-2)
+[`Selection`](#selection-1).[`replace`](#replace-4)
+
+##### replaceWith() {#replacewith}
+
+```ts
+replaceWith(tr: Transaction, node: ProseMirrorNode): void;
+```
+
+Replace the selection with the given node, appending the changes
+to the given transaction.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`tr`
+
+</td>
+<td>
+
+[`Transaction`](#transaction)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`replaceWith`](#replacewith-4)
 
 ##### toJSON() {#tojson}
 
@@ -306,6 +558,388 @@ this for a custom selection class, make sure to give the object a
 ###### Overrides
 
 [`Selection`](#selection-1).[`toJSON`](#tojson-6)
+
+##### atEnd() {#atend}
+
+```ts
+static atEnd(doc: ProseMirrorNode): Selection;
+```
+
+Find the cursor or leaf node selection closest to the end of the
+given document.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`atEnd`](#atend-4)
+
+##### atStart() {#atstart}
+
+```ts
+static atStart(doc: ProseMirrorNode): Selection;
+```
+
+Find the cursor or leaf node selection closest to the start of
+the given document. Will return an
+[`AllSelection`](https://prosemirror.net/docs/ref/#state.AllSelection) if no valid position
+exists.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`atStart`](#atstart-4)
+
+##### findFrom() {#findfrom}
+
+```ts
+static findFrom(
+   $pos: ResolvedPos, 
+   dir: number, 
+   textOnly?: boolean): null | Selection;
+```
+
+Find a valid cursor or leaf node selection starting at the given
+position and searching back if `dir` is negative, and forward if
+positive. When `textOnly` is true, only consider cursor
+selections. Will return null when no valid selection position is
+found.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`$pos`
+
+</td>
+<td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`dir`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`textOnly?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| [`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`findFrom`](#findfrom-4)
+
+##### fromJSON() {#fromjson}
+
+```ts
+static fromJSON(doc: ProseMirrorNode, json: any): Selection;
+```
+
+Deserialize the JSON representation of a selection. Must be
+implemented for custom classes (as a static class method).
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`fromJSON`](#fromjson-6)
+
+##### jsonID() {#jsonid}
+
+```ts
+static jsonID(id: string, selectionClass: object): object;
+```
+
+To be able to deserialize selections from JSON, custom selection
+classes must register themselves with an ID string, so that they
+can be disambiguated. Try to pick something that's unlikely to
+clash with classes from other modules.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`selectionClass`
+
+</td>
+<td>
+
+\{ `fromJSON`: (`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `json`: `any`) => [`Selection`](#selection-1); \}
+
+</td>
+</tr>
+<tr>
+<td>
+
+`selectionClass.fromJSON`
+
+</td>
+<td>
+
+(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `json`: `any`) => [`Selection`](#selection-1)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`object`
+
+###### fromJSON()
+
+```ts
+fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`jsonID`](#jsonid-4)
+
+##### near() {#near}
+
+```ts
+static near($pos: ResolvedPos, bias?: number): Selection;
+```
+
+Find a valid cursor or leaf node selection near the given
+position. Searches forward first by default, but if `bias` is
+negative, it will search backwards first.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`$pos`
+
+</td>
+<td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`bias?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`near`](#near-4)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -649,7 +1283,7 @@ Create a new state.
 
 [`EditorState`](#editorstate)
 
-##### fromJSON() {#fromjson}
+##### fromJSON() {#fromjson-2}
 
 ```ts
 static fromJSON(
@@ -839,6 +1473,32 @@ argument.
 
 #### Properties
 
+##### $anchor {#anchor-2}
+
+```ts
+readonly $anchor: ResolvedPos;
+```
+
+The resolved anchor of the selection (the side that stays in
+place when the selection is modified).
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$anchor`](#anchor-4)
+
+##### $head {#head-2}
+
+```ts
+readonly $head: ResolvedPos;
+```
+
+The resolved head of the selection (the side that moves when
+the selection is modified).
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$head`](#head-4)
+
 ##### node {#node}
 
 ```ts
@@ -847,9 +1507,163 @@ node: ProseMirrorNode;
 
 The selected node.
 
+##### ranges {#ranges-1}
+
+```ts
+ranges: readonly SelectionRange[];
+```
+
+The ranges covered by the selection.
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`ranges`](#ranges-2)
+
+##### visible {#visible-1}
+
+```ts
+visible: boolean;
+```
+
+Controls whether, when a selection of this type is active in the
+browser, the selected range should be visible to the user.
+Defaults to `true`.
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`visible`](#visible-2)
+
+#### Accessors
+
+##### $from {#from-2}
+
+###### Get Signature
+
+```ts
+get $from(): ResolvedPos;
+```
+
+The resolved lower  bound of the selection's main range.
+
+###### Returns
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$from`](#from-4)
+
+##### $to {#to-2}
+
+###### Get Signature
+
+```ts
+get $to(): ResolvedPos;
+```
+
+The resolved upper bound of the selection's main range.
+
+###### Returns
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$to`](#to-4)
+
+##### anchor {#anchor-3}
+
+###### Get Signature
+
+```ts
+get anchor(): number;
+```
+
+The selection's anchor, as an unresolved position.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`anchor`](#anchor-5)
+
+##### empty {#empty-1}
+
+###### Get Signature
+
+```ts
+get empty(): boolean;
+```
+
+Indicates whether the selection contains any content.
+
+###### Returns
+
+`boolean`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`empty`](#empty-2)
+
+##### from {#from-3}
+
+###### Get Signature
+
+```ts
+get from(): number;
+```
+
+The lower bound of the selection's main range.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`from`](#from-5)
+
+##### head {#head-3}
+
+###### Get Signature
+
+```ts
+get head(): number;
+```
+
+The selection's head.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`head`](#head-5)
+
+##### to {#to-3}
+
+###### Get Signature
+
+```ts
+get to(): number;
+```
+
+The upper bound of the selection's main range.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`to`](#to-5)
+
 #### Methods
 
-##### content() {#content}
+##### content() {#content-2}
 
 ```ts
 content(): Slice;
@@ -863,7 +1677,7 @@ Get the content of this selection as a slice.
 
 ###### Overrides
 
-[`Selection`](#selection-1).[`content`](#content-2)
+[`Selection`](#selection-1).[`content`](#content-4)
 
 ##### eq() {#eq-2}
 
@@ -982,6 +1796,114 @@ thing. `doc` should be the new document to which we are mapping.
 
 [`Selection`](#selection-1).[`map`](#map-4)
 
+##### replace() {#replace-2}
+
+```ts
+replace(tr: Transaction, content?: Slice): void;
+```
+
+Replace the selection with a slice or, if no slice is given,
+delete the selection. Will append to the given transaction.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`tr`
+
+</td>
+<td>
+
+[`Transaction`](#transaction)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`content?`
+
+</td>
+<td>
+
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`replace`](#replace-4)
+
+##### replaceWith() {#replacewith-2}
+
+```ts
+replaceWith(tr: Transaction, node: ProseMirrorNode): void;
+```
+
+Replace the selection with the given node, appending the changes
+to the given transaction.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`tr`
+
+</td>
+<td>
+
+[`Transaction`](#transaction)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`replaceWith`](#replacewith-4)
+
 ##### toJSON() {#tojson-4}
 
 ```ts
@@ -1000,6 +1922,92 @@ this for a custom selection class, make sure to give the object a
 ###### Overrides
 
 [`Selection`](#selection-1).[`toJSON`](#tojson-6)
+
+##### atEnd() {#atend-2}
+
+```ts
+static atEnd(doc: ProseMirrorNode): Selection;
+```
+
+Find the cursor or leaf node selection closest to the end of the
+given document.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`atEnd`](#atend-4)
+
+##### atStart() {#atstart-2}
+
+```ts
+static atStart(doc: ProseMirrorNode): Selection;
+```
+
+Find the cursor or leaf node selection closest to the start of
+the given document. Will return an
+[`AllSelection`](https://prosemirror.net/docs/ref/#state.AllSelection) if no valid position
+exists.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`atStart`](#atstart-4)
 
 ##### create() {#create-2}
 
@@ -1050,6 +2058,132 @@ Create a node selection from non-resolved positions.
 
 [`NodeSelection`](#nodeselection)
 
+##### findFrom() {#findfrom-2}
+
+```ts
+static findFrom(
+   $pos: ResolvedPos, 
+   dir: number, 
+   textOnly?: boolean): null | Selection;
+```
+
+Find a valid cursor or leaf node selection starting at the given
+position and searching back if `dir` is negative, and forward if
+positive. When `textOnly` is true, only consider cursor
+selections. Will return null when no valid selection position is
+found.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`$pos`
+
+</td>
+<td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`dir`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`textOnly?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| [`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`findFrom`](#findfrom-4)
+
+##### fromJSON() {#fromjson-4}
+
+```ts
+static fromJSON(doc: ProseMirrorNode, json: any): Selection;
+```
+
+Deserialize the JSON representation of a selection. Must be
+implemented for custom classes (as a static class method).
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`fromJSON`](#fromjson-6)
+
 ##### isSelectable() {#isselectable}
 
 ```ts
@@ -1087,6 +2221,176 @@ selection.
 ###### Returns
 
 `boolean`
+
+##### jsonID() {#jsonid-2}
+
+```ts
+static jsonID(id: string, selectionClass: object): object;
+```
+
+To be able to deserialize selections from JSON, custom selection
+classes must register themselves with an ID string, so that they
+can be disambiguated. Try to pick something that's unlikely to
+clash with classes from other modules.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`selectionClass`
+
+</td>
+<td>
+
+\{ `fromJSON`: (`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `json`: `any`) => [`Selection`](#selection-1); \}
+
+</td>
+</tr>
+<tr>
+<td>
+
+`selectionClass.fromJSON`
+
+</td>
+<td>
+
+(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `json`: `any`) => [`Selection`](#selection-1)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`object`
+
+###### fromJSON()
+
+```ts
+fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`jsonID`](#jsonid-4)
+
+##### near() {#near-2}
+
+```ts
+static near($pos: ResolvedPos, bias?: number): Selection;
+```
+
+Find a valid cursor or leaf node selection near the given
+position. Searches forward first by default, but if `bias` is
+negative, it will search backwards first.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`$pos`
+
+</td>
+<td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`bias?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`near`](#near-4)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1510,7 +2814,7 @@ readonly [`SelectionRange`](#selectionrange)[]
 
 #### Properties
 
-##### $anchor {#anchor}
+##### $anchor {#anchor-4}
 
 ```ts
 readonly $anchor: ResolvedPos;
@@ -1519,7 +2823,7 @@ readonly $anchor: ResolvedPos;
 The resolved anchor of the selection (the side that stays in
 place when the selection is modified).
 
-##### $head {#head}
+##### $head {#head-4}
 
 ```ts
 readonly $head: ResolvedPos;
@@ -1528,7 +2832,7 @@ readonly $head: ResolvedPos;
 The resolved head of the selection (the side that moves when
 the selection is modified).
 
-##### ranges {#ranges}
+##### ranges {#ranges-2}
 
 ```ts
 ranges: readonly SelectionRange[];
@@ -1536,7 +2840,7 @@ ranges: readonly SelectionRange[];
 
 The ranges covered by the selection.
 
-##### visible {#visible}
+##### visible {#visible-2}
 
 ```ts
 visible: boolean;
@@ -1548,7 +2852,7 @@ Defaults to `true`.
 
 #### Accessors
 
-##### $from {#from}
+##### $from {#from-4}
 
 ###### Get Signature
 
@@ -1562,7 +2866,7 @@ The resolved lower  bound of the selection's main range.
 
 [`ResolvedPos`](model.md#resolvedpos)
 
-##### $to {#to}
+##### $to {#to-4}
 
 ###### Get Signature
 
@@ -1576,7 +2880,7 @@ The resolved upper bound of the selection's main range.
 
 [`ResolvedPos`](model.md#resolvedpos)
 
-##### anchor {#anchor-1}
+##### anchor {#anchor-5}
 
 ###### Get Signature
 
@@ -1590,7 +2894,7 @@ The selection's anchor, as an unresolved position.
 
 `number`
 
-##### empty {#empty}
+##### empty {#empty-2}
 
 ###### Get Signature
 
@@ -1604,7 +2908,7 @@ Indicates whether the selection contains any content.
 
 `boolean`
 
-##### from {#from-1}
+##### from {#from-5}
 
 ###### Get Signature
 
@@ -1618,7 +2922,7 @@ The lower bound of the selection's main range.
 
 `number`
 
-##### head {#head-1}
+##### head {#head-5}
 
 ###### Get Signature
 
@@ -1632,7 +2936,7 @@ The selection's head.
 
 `number`
 
-##### to {#to-1}
+##### to {#to-5}
 
 ###### Get Signature
 
@@ -1648,7 +2952,7 @@ The upper bound of the selection's main range.
 
 #### Methods
 
-##### content() {#content-2}
+##### content() {#content-4}
 
 ```ts
 content(): Slice;
@@ -1765,7 +3069,7 @@ thing. `doc` should be the new document to which we are mapping.
 
 [`Selection`](#selection-1)
 
-##### replace() {#replace-2}
+##### replace() {#replace-4}
 
 ```ts
 replace(tr: Transaction, content?: Slice): void;
@@ -1815,7 +3119,7 @@ delete the selection. Will append to the given transaction.
 
 `void`
 
-##### replaceWith() {#replacewith}
+##### replaceWith() {#replacewith-4}
 
 ```ts
 replaceWith(tr: Transaction, node: ProseMirrorNode): void;
@@ -1880,7 +3184,7 @@ this for a custom selection class, make sure to give the object a
 
 `any`
 
-##### atEnd() {#atend}
+##### atEnd() {#atend-4}
 
 ```ts
 static atEnd(doc: ProseMirrorNode): Selection;
@@ -1918,7 +3222,7 @@ given document.
 
 [`Selection`](#selection-1)
 
-##### atStart() {#atstart}
+##### atStart() {#atstart-4}
 
 ```ts
 static atStart(doc: ProseMirrorNode): Selection;
@@ -1958,7 +3262,7 @@ exists.
 
 [`Selection`](#selection-1)
 
-##### findFrom() {#findfrom}
+##### findFrom() {#findfrom-4}
 
 ```ts
 static findFrom(
@@ -2026,7 +3330,7 @@ found.
 
 `null` \| [`Selection`](#selection-1)
 
-##### fromJSON() {#fromjson-2}
+##### fromJSON() {#fromjson-6}
 
 ```ts
 static fromJSON(doc: ProseMirrorNode, json: any): Selection;
@@ -2076,7 +3380,7 @@ implemented for custom classes (as a static class method).
 
 [`Selection`](#selection-1)
 
-##### jsonID() {#jsonid}
+##### jsonID() {#jsonid-4}
 
 ```ts
 static jsonID(id: string, selectionClass: object): object;
@@ -2187,7 +3491,7 @@ fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
 
 [`Selection`](#selection-1)
 
-##### near() {#near}
+##### near() {#near-4}
 
 ```ts
 static near($pos: ResolvedPos, bias?: number): Selection;
@@ -2320,7 +3624,7 @@ The upper bound of the range.
 
 #### Properties
 
-##### $from {#from-2}
+##### $from {#from-6}
 
 ```ts
 readonly $from: ResolvedPos;
@@ -2328,7 +3632,7 @@ readonly $from: ResolvedPos;
 
 The lower bound of the range.
 
-##### $to {#to-2}
+##### $to {#to-6}
 
 ```ts
 readonly $to: ResolvedPos;
@@ -2416,6 +3720,60 @@ Construct a text selection between the given points.
 
 [`Selection`](#selection-1).[`constructor`](#constructor-5)
 
+#### Properties
+
+##### $anchor {#anchor-6}
+
+```ts
+readonly $anchor: ResolvedPos;
+```
+
+The resolved anchor of the selection (the side that stays in
+place when the selection is modified).
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$anchor`](#anchor-4)
+
+##### $head {#head-6}
+
+```ts
+readonly $head: ResolvedPos;
+```
+
+The resolved head of the selection (the side that moves when
+the selection is modified).
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$head`](#head-4)
+
+##### ranges {#ranges-3}
+
+```ts
+ranges: readonly SelectionRange[];
+```
+
+The ranges covered by the selection.
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`ranges`](#ranges-2)
+
+##### visible {#visible-3}
+
+```ts
+visible: boolean;
+```
+
+Controls whether, when a selection of this type is active in the
+browser, the selected range should be visible to the user.
+Defaults to `true`.
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`visible`](#visible-2)
+
 #### Accessors
 
 ##### $cursor {#cursor}
@@ -2433,7 +3791,149 @@ empty text selection), and null otherwise.
 
 `null` \| [`ResolvedPos`](model.md#resolvedpos)
 
+##### $from {#from-7}
+
+###### Get Signature
+
+```ts
+get $from(): ResolvedPos;
+```
+
+The resolved lower  bound of the selection's main range.
+
+###### Returns
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$from`](#from-4)
+
+##### $to {#to-7}
+
+###### Get Signature
+
+```ts
+get $to(): ResolvedPos;
+```
+
+The resolved upper bound of the selection's main range.
+
+###### Returns
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`$to`](#to-4)
+
+##### anchor {#anchor-7}
+
+###### Get Signature
+
+```ts
+get anchor(): number;
+```
+
+The selection's anchor, as an unresolved position.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`anchor`](#anchor-5)
+
+##### empty {#empty-3}
+
+###### Get Signature
+
+```ts
+get empty(): boolean;
+```
+
+Indicates whether the selection contains any content.
+
+###### Returns
+
+`boolean`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`empty`](#empty-2)
+
+##### from {#from-8}
+
+###### Get Signature
+
+```ts
+get from(): number;
+```
+
+The lower bound of the selection's main range.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`from`](#from-5)
+
+##### head {#head-7}
+
+###### Get Signature
+
+```ts
+get head(): number;
+```
+
+The selection's head.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`head`](#head-5)
+
+##### to {#to-8}
+
+###### Get Signature
+
+```ts
+get to(): number;
+```
+
+The upper bound of the selection's main range.
+
+###### Returns
+
+`number`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`to`](#to-5)
+
 #### Methods
+
+##### content() {#content-6}
+
+```ts
+content(): Slice;
+```
+
+Get the content of this selection as a slice.
+
+###### Returns
+
+[`Slice`](model.md#slice-2)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`content`](#content-4)
 
 ##### eq() {#eq-6}
 
@@ -2552,7 +4052,7 @@ thing. `doc` should be the new document to which we are mapping.
 
 [`Selection`](#selection-1).[`map`](#map-4)
 
-##### replace() {#replace-4}
+##### replace() {#replace-6}
 
 ```ts
 replace(tr: Transaction, content?: Slice): void;
@@ -2604,7 +4104,61 @@ delete the selection. Will append to the given transaction.
 
 ###### Overrides
 
-[`Selection`](#selection-1).[`replace`](#replace-2)
+[`Selection`](#selection-1).[`replace`](#replace-4)
+
+##### replaceWith() {#replacewith-6}
+
+```ts
+replaceWith(tr: Transaction, node: ProseMirrorNode): void;
+```
+
+Replace the selection with the given node, appending the changes
+to the given transaction.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`tr`
+
+</td>
+<td>
+
+[`Transaction`](#transaction)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`replaceWith`](#replacewith-4)
 
 ##### toJSON() {#tojson-8}
 
@@ -2624,6 +4178,92 @@ this for a custom selection class, make sure to give the object a
 ###### Overrides
 
 [`Selection`](#selection-1).[`toJSON`](#tojson-6)
+
+##### atEnd() {#atend-6}
+
+```ts
+static atEnd(doc: ProseMirrorNode): Selection;
+```
+
+Find the cursor or leaf node selection closest to the end of the
+given document.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`atEnd`](#atend-4)
+
+##### atStart() {#atstart-6}
+
+```ts
+static atStart(doc: ProseMirrorNode): Selection;
+```
+
+Find the cursor or leaf node selection closest to the start of
+the given document. Will return an
+[`AllSelection`](https://prosemirror.net/docs/ref/#state.AllSelection) if no valid position
+exists.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`atStart`](#atstart-4)
 
 ##### between() {#between}
 
@@ -2758,6 +4398,302 @@ Create a text selection from non-resolved positions.
 
 [`TextSelection`](#textselection)
 
+##### findFrom() {#findfrom-6}
+
+```ts
+static findFrom(
+   $pos: ResolvedPos, 
+   dir: number, 
+   textOnly?: boolean): null | Selection;
+```
+
+Find a valid cursor or leaf node selection starting at the given
+position and searching back if `dir` is negative, and forward if
+positive. When `textOnly` is true, only consider cursor
+selections. Will return null when no valid selection position is
+found.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`$pos`
+
+</td>
+<td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`dir`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`textOnly?`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| [`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`findFrom`](#findfrom-4)
+
+##### fromJSON() {#fromjson-8}
+
+```ts
+static fromJSON(doc: ProseMirrorNode, json: any): Selection;
+```
+
+Deserialize the JSON representation of a selection. Must be
+implemented for custom classes (as a static class method).
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`fromJSON`](#fromjson-6)
+
+##### jsonID() {#jsonid-6}
+
+```ts
+static jsonID(id: string, selectionClass: object): object;
+```
+
+To be able to deserialize selections from JSON, custom selection
+classes must register themselves with an ID string, so that they
+can be disambiguated. Try to pick something that's unlikely to
+clash with classes from other modules.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`selectionClass`
+
+</td>
+<td>
+
+\{ `fromJSON`: (`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `json`: `any`) => [`Selection`](#selection-1); \}
+
+</td>
+</tr>
+<tr>
+<td>
+
+`selectionClass.fromJSON`
+
+</td>
+<td>
+
+(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode), `json`: `any`) => [`Selection`](#selection-1)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`object`
+
+###### fromJSON()
+
+```ts
+fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`jsonID`](#jsonid-4)
+
+##### near() {#near-6}
+
+```ts
+static near($pos: ResolvedPos, bias?: number): Selection;
+```
+
+Find a valid cursor or leaf node selection near the given
+position. Searches forward first by default, but if `bias` is
+negative, it will search backwards first.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`$pos`
+
+</td>
+<td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`bias?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Selection`](#selection-1)
+
+###### Inherited from
+
+[`Selection`](#selection-1).[`near`](#near-4)
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -2799,7 +4735,106 @@ input, and a `"uiEvent"` property of that may be `"paste"`,
 
 <!-- DEBUG memberWithGroups 9 -->
 
+#### Constructors
+
+##### Constructor
+
+```ts
+new Transaction(doc: ProseMirrorNode): Transaction;
+```
+
+Create a transform that starts with the given document.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+<td>
+
+The current document (the result of applying the steps in the
+transform).
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Transaction`](#transaction)
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`constructor`](transform.md#transform#constructor-13)
+
 #### Properties
+
+##### doc {#doc-1}
+
+```ts
+doc: ProseMirrorNode;
+```
+
+The current document (the result of applying the steps in the
+transform).
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`doc`](transform.md#transform#doc-1)
+
+##### docs {#docs}
+
+```ts
+readonly docs: ProseMirrorNode[];
+```
+
+The documents before each of the steps.
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`docs`](transform.md#transform#docs)
+
+##### mapping {#mapping}
+
+```ts
+readonly mapping: Mapping;
+```
+
+A mapping with the maps for each of the steps in this transform.
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`mapping`](transform.md#transform#mapping-1)
+
+##### steps {#steps}
+
+```ts
+readonly steps: Step[];
+```
+
+The steps in this transform.
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`steps`](transform.md#transform#steps)
 
 ##### storedMarks {#storedmarks-1}
 
@@ -2819,6 +4854,43 @@ The timestamp associated with this transaction, in the same
 format as `Date.now()`.
 
 #### Accessors
+
+##### before {#before}
+
+###### Get Signature
+
+```ts
+get before(): ProseMirrorNode;
+```
+
+The starting document.
+
+###### Returns
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`before`](transform.md#transform#before)
+
+##### docChanged {#docchanged}
+
+###### Get Signature
+
+```ts
+get docChanged(): boolean;
+```
+
+True when the document has been changed (when there are any
+steps).
+
+###### Returns
+
+`boolean`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`docChanged`](transform.md#transform#docchanged)
 
 ##### isGeneric {#isgeneric}
 
@@ -2896,6 +4968,127 @@ Whether the stored marks were explicitly set for this transaction.
 
 #### Methods
 
+##### addMark() {#addmark}
+
+```ts
+addMark(
+   from: number, 
+   to: number, 
+   mark: Mark): this;
+```
+
+Add the given mark to the inline content between `from` and `to`.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`from`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`to`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`mark`
+
+</td>
+<td>
+
+[`Mark`](model.md#mark)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`addMark`](transform.md#transform#addmark)
+
+##### addNodeMark() {#addnodemark}
+
+```ts
+addNodeMark(pos: number, mark: Mark): this;
+```
+
+Add a mark to the node at position `pos`.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`mark`
+
+</td>
+<td>
+
+[`Mark`](model.md#mark)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`addNodeMark`](transform.md#transform#addnodemark)
+
 ##### addStoredMark() {#addstoredmark}
 
 ```ts
@@ -2932,6 +5125,184 @@ Add a mark to the set of stored marks.
 ###### Returns
 
 `this`
+
+##### clearIncompatible() {#clearincompatible}
+
+```ts
+clearIncompatible(
+   pos: number, 
+   parentType: NodeType, 
+   match?: ContentMatch): this;
+```
+
+Removes all marks and nodes from the content of the node at
+`pos` that don't match the given new parent node type. Accepts
+an optional starting [content match](https://prosemirror.net/docs/ref/#model.ContentMatch) as
+third argument.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`parentType`
+
+</td>
+<td>
+
+[`NodeType`](model.md#nodetype)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`match?`
+
+</td>
+<td>
+
+[`ContentMatch`](model.md#contentmatch)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`clearIncompatible`](transform.md#transform#clearincompatible)
+
+##### delete() {#delete}
+
+```ts
+delete(from: number, to: number): this;
+```
+
+Delete the content between the given positions.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`from`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`to`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`delete`](transform.md#transform#delete)
+
+##### deleteRange() {#deleterange}
+
+```ts
+deleteRange(from: number, to: number): this;
+```
+
+Delete the given range, expanding it to cover fully covered
+parent nodes until a valid replace is found.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`from`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`to`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`deleteRange`](transform.md#transform#deleterange)
 
 ##### deleteSelection() {#deleteselection}
 
@@ -3024,6 +5395,62 @@ Retrieve a metadata property for a given name or plugin.
 
 `any`
 
+##### insert() {#insert}
+
+```ts
+insert(pos: number, content: 
+  | ProseMirrorNode
+  | ProseMirrorFragment
+  | readonly ProseMirrorNode[]): this;
+```
+
+Insert the given content at the given position.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`content`
+
+</td>
+<td>
+
+ \| [`ProseMirrorNode`](model.md#prosemirrornode) \| [`ProseMirrorFragment`](model.md#prosemirrorfragment) \| readonly [`ProseMirrorNode`](model.md#prosemirrornode)[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`insert`](transform.md#transform#insert-1)
+
 ##### insertText() {#inserttext}
 
 ```ts
@@ -3089,6 +5516,284 @@ with a text node containing the given string.
 
 `this`
 
+##### join() {#join}
+
+```ts
+join(pos: number, depth?: number): this;
+```
+
+Join the blocks around the given position. If depth is 2, their
+last and first siblings are also joined, and so on.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`depth?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`join`](transform.md#transform#join)
+
+##### lift() {#lift}
+
+```ts
+lift(range: NodeRange, target: number): this;
+```
+
+Split the content in the given range off from its parent, if there
+is sibling content before or after it, and move it up the tree to
+the depth specified by `target`. You'll probably want to use
+[`liftTarget`](https://prosemirror.net/docs/ref/#transform.liftTarget) to compute `target`, to make
+sure the lift is valid.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`range`
+
+</td>
+<td>
+
+[`NodeRange`](model.md#noderange)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`target`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`lift`](transform.md#transform#lift)
+
+##### maybeStep() {#maybestep}
+
+```ts
+maybeStep(step: Step): StepResult;
+```
+
+Try to apply a step in this transformation, ignoring it if it
+fails. Returns the step result.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`step`
+
+</td>
+<td>
+
+[`Step`](transform.md#step)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`StepResult`](transform.md#stepresult)
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`maybeStep`](transform.md#transform#maybestep)
+
+##### removeMark() {#removemark}
+
+```ts
+removeMark(
+   from: number, 
+   to: number, 
+   mark?: null | MarkType | Mark): this;
+```
+
+Remove marks from inline nodes between `from` and `to`. When
+`mark` is a single mark, remove precisely that mark. When it is
+a mark type, remove all marks of that type. When it is null,
+remove all marks of any type.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`from`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`to`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`mark?`
+
+</td>
+<td>
+
+`null` \| [`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`removeMark`](transform.md#transform#removemark)
+
+##### removeNodeMark() {#removenodemark}
+
+```ts
+removeNodeMark(pos: number, mark: MarkType | Mark): this;
+```
+
+Remove a mark (or all marks of the given type) from the node at
+position `pos`.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`mark`
+
+</td>
+<td>
+
+[`MarkType`](model.md#marktype-1) \| [`Mark`](model.md#mark)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`removeNodeMark`](transform.md#transform#removenodemark)
+
 ##### removeStoredMark() {#removestoredmark}
 
 ```ts
@@ -3125,6 +5830,233 @@ Remove a mark or mark type from the set of stored marks.
 ###### Returns
 
 `this`
+
+##### replace() {#replace-8}
+
+```ts
+replace(
+   from: number, 
+   to?: number, 
+   slice?: Slice): this;
+```
+
+Replace the part of the document between `from` and `to` with the
+given `slice`.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`from`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`to?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slice?`
+
+</td>
+<td>
+
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`replace`](transform.md#transform#replace)
+
+##### replaceRange() {#replacerange}
+
+```ts
+replaceRange(
+   from: number, 
+   to: number, 
+   slice: Slice): this;
+```
+
+Replace a range of the document with a given slice, using
+`from`, `to`, and the slice's
+[`openStart`](https://prosemirror.net/docs/ref/#model.Slice.openStart) property as hints, rather
+than fixed start and end points. This method may grow the
+replaced area or close open nodes in the slice in order to get a
+fit that is more in line with WYSIWYG expectations, by dropping
+fully covered parent nodes of the replaced region when they are
+marked [non-defining as
+context](https://prosemirror.net/docs/ref/#model.NodeSpec.definingAsContext), or including an
+open parent node from the slice that _is_ marked as [defining
+its content](https://prosemirror.net/docs/ref/#model.NodeSpec.definingForContent).
+
+This is the method, for example, to handle paste. The similar
+[`replace`](https://prosemirror.net/docs/ref/#transform.Transform.replace) method is a more
+primitive tool which will _not_ move the start and end of its given
+range, and is useful in situations where you need more precise
+control over what happens.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`from`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`to`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slice`
+
+</td>
+<td>
+
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`replaceRange`](transform.md#transform#replacerange)
+
+##### replaceRangeWith() {#replacerangewith}
+
+```ts
+replaceRangeWith(
+   from: number, 
+   to: number, 
+   node: ProseMirrorNode): this;
+```
+
+Replace the given range with a node, but use `from` and `to` as
+hints, rather than precise positions. When from and to are the same
+and are at the start or end of a parent node in which the given
+node doesn't fit, this method may _move_ them out towards a parent
+that does allow the given node to be placed. When the given range
+completely covers a parent node, this method may completely replace
+that parent node.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`from`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`to`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`replaceRangeWith`](transform.md#transform#replacerangewith)
 
 ##### replaceSelection() {#replaceselection}
 
@@ -3214,6 +6146,78 @@ place where it is inserted.
 
 `this`
 
+##### replaceWith() {#replacewith-8}
+
+```ts
+replaceWith(
+   from: number, 
+   to: number, 
+   content: 
+  | ProseMirrorNode
+  | ProseMirrorFragment
+  | readonly ProseMirrorNode[]): this;
+```
+
+Replace the given range with the given content, which may be a
+fragment, node, or array of nodes.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`from`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`to`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`content`
+
+</td>
+<td>
+
+ \| [`ProseMirrorNode`](model.md#prosemirrornode) \| [`ProseMirrorFragment`](model.md#prosemirrorfragment) \| readonly [`ProseMirrorNode`](model.md#prosemirrornode)[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`replaceWith`](transform.md#transform#replacewith)
+
 ##### scrollIntoView() {#scrollintoview}
 
 ```ts
@@ -3226,6 +6230,144 @@ when updated to the state produced by this transaction.
 ###### Returns
 
 `this`
+
+##### setBlockType() {#setblocktype}
+
+```ts
+setBlockType(
+   from: number, 
+   to: undefined | number, 
+   type: NodeType, 
+   attrs?: 
+  | null
+  | Attrs
+  | (oldNode: ProseMirrorNode) => Attrs): this;
+```
+
+Set the type of all textblocks (partly) between `from` and `to` to
+the given node type with the given attributes.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`from`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`to`
+
+</td>
+<td>
+
+`undefined` \| `number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`type`
+
+</td>
+<td>
+
+[`NodeType`](model.md#nodetype)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`attrs?`
+
+</td>
+<td>
+
+ \| `null` \| [`Attrs`](model.md#attrs-7) \| (`oldNode`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`Attrs`](model.md#attrs-7)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`setBlockType`](transform.md#transform#setblocktype)
+
+##### setDocAttribute() {#setdocattribute}
+
+```ts
+setDocAttribute(attr: string, value: any): this;
+```
+
+Set a single attribute on the document to a new value.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`attr`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`value`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`setDocAttribute`](transform.md#transform#setdocattribute)
 
 ##### setMeta() {#setmeta}
 
@@ -3279,6 +6421,158 @@ name or by plugin.
 ###### Returns
 
 `this`
+
+##### setNodeAttribute() {#setnodeattribute}
+
+```ts
+setNodeAttribute(
+   pos: number, 
+   attr: string, 
+   value: any): this;
+```
+
+Set a single attribute on a given node to a new value.
+The `pos` addresses the document content. Use `setDocAttribute`
+to set attributes on the document itself.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`attr`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`value`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`setNodeAttribute`](transform.md#transform#setnodeattribute)
+
+##### setNodeMarkup() {#setnodemarkup}
+
+```ts
+setNodeMarkup(
+   pos: number, 
+   type?: null | NodeType, 
+   attrs?: null | Attrs, 
+   marks?: readonly Mark[]): this;
+```
+
+Change the type, attributes, and/or marks of the node at `pos`.
+When `type` isn't given, the existing node type is preserved,
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`type?`
+
+</td>
+<td>
+
+`null` \| [`NodeType`](model.md#nodetype)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`attrs?`
+
+</td>
+<td>
+
+`null` \| [`Attrs`](model.md#attrs-7)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`marks?`
+
+</td>
+<td>
+
+readonly [`Mark`](model.md#mark)[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`setNodeMarkup`](transform.md#transform#setnodemarkup)
 
 ##### setSelection() {#setselection}
 
@@ -3392,6 +6686,180 @@ Update the timestamp for the transaction.
 
 `this`
 
+##### split() {#split}
+
+```ts
+split(
+   pos: number, 
+   depth?: number, 
+   typesAfter?: (
+  | null
+  | {
+  attrs?: null | Attrs;
+  type: NodeType;
+})[]): this;
+```
+
+Split the node at the given position, and optionally, if `depth` is
+greater than one, any number of nodes above that. By default, the
+parts split off will inherit the node type of the original node.
+This can be changed by passing an array of types and attributes to
+use after the split (with the outermost nodes coming first).
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`depth?`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`typesAfter?`
+
+</td>
+<td>
+
+( \| `null` \| \{ `attrs?`: `null` \| [`Attrs`](model.md#attrs-7); `type`: [`NodeType`](model.md#nodetype); \})[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`split`](transform.md#transform#split)
+
+##### step() {#step}
+
+```ts
+step(step: Step): this;
+```
+
+Apply a new step in this transform, saving the result. Throws an
+error when the step fails.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`step`
+
+</td>
+<td>
+
+[`Step`](transform.md#step)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`step`](transform.md#transform#step-1)
+
+##### wrap() {#wrap}
+
+```ts
+wrap(range: NodeRange, wrappers: readonly object[]): this;
+```
+
+Wrap the given [range](https://prosemirror.net/docs/ref/#model.NodeRange) in the given set of wrappers.
+The wrappers are assumed to be valid in this position, and should
+probably be computed with [`findWrapping`](https://prosemirror.net/docs/ref/#transform.findWrapping).
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`range`
+
+</td>
+<td>
+
+[`NodeRange`](model.md#noderange)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`wrappers`
+
+</td>
+<td>
+
+readonly `object`[]
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`this`
+
+###### Inherited from
+
+[`Transform`](transform.md#transform).[`wrap`](transform.md#transform#wrap)
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Interfaces
@@ -3425,7 +6893,7 @@ The type of object passed to
 <tr>
 <td>
 
-<a id="doc-1"></a> `doc?`
+<a id="doc-2"></a> `doc?`
 
 </td>
 <td>
@@ -3835,7 +7303,7 @@ coming after this one.
 <tr>
 <td>
 
-<a id="fromjson-4"></a> `fromJSON?`
+<a id="fromjson-10"></a> `fromJSON?`
 
 </td>
 <td>

@@ -194,6 +194,24 @@ transformed document.
 
 [`Step`](#step).[`apply`](#apply-16)
 
+##### getMap() {#getmap}
+
+```ts
+getMap(): StepMap;
+```
+
+Get the step map that represents the changes made by this step,
+and which can be used to transform between positions in the old
+and the new document.
+
+###### Returns
+
+[`StepMap`](#stepmap-2)
+
+###### Inherited from
+
+[`Step`](#step).[`getMap`](#getmap-16)
+
 ##### invert() {#invert}
 
 ```ts
@@ -295,7 +313,7 @@ steps can't be merged.
 
 ###### Overrides
 
-[`Step`](#step).[`merge`](#merge-6)
+[`Step`](#step).[`merge`](#merge-16)
 
 ##### toJSON() {#tojson}
 
@@ -315,6 +333,170 @@ the `stepType` property.
 ###### Overrides
 
 [`Step`](#step).[`toJSON`](#tojson-16)
+
+##### fromJSON() {#fromjson}
+
+```ts
+static fromJSON(schema: Schema, json: any): Step;
+```
+
+Deserialize a step from its JSON representation. Will call
+through to the step class' own implementation of this method.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`fromJSON`](#fromjson-16)
+
+##### jsonID() {#jsonid}
+
+```ts
+static jsonID(id: string, stepClass: object): object;
+```
+
+To be able to serialize steps to JSON, each step needs a string
+ID to attach to its JSON representation. Use this method to
+register an ID for your step classes. Try to pick something
+that's unlikely to clash with steps from other modules.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass`
+
+</td>
+<td>
+
+\{ `fromJSON`: [`Step`](#step); \}
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass.fromJSON`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`object`
+
+###### fromJSON()
+
+```ts
+fromJSON(schema: Schema, json: any): Step;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`jsonID`](#jsonid-16)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -468,6 +650,24 @@ transformed document.
 
 [`Step`](#step).[`apply`](#apply-16)
 
+##### getMap() {#getmap-2}
+
+```ts
+getMap(): StepMap;
+```
+
+Get the step map that represents the changes made by this step,
+and which can be used to transform between positions in the old
+and the new document.
+
+###### Returns
+
+[`StepMap`](#stepmap-2)
+
+###### Inherited from
+
+[`Step`](#step).[`getMap`](#getmap-16)
+
 ##### invert() {#invert-2}
 
 ```ts
@@ -553,6 +753,49 @@ the step was entirely deleted by the mapping.
 
 [`Step`](#step).[`map`](#map-18)
 
+##### merge() {#merge-2}
+
+```ts
+merge(other: Step): null | Step;
+```
+
+Try to merge this step with another one, to be applied directly
+after it. Returns the merged step when possible, null if the
+steps can't be merged.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`other`
+
+</td>
+<td>
+
+[`Step`](#step)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| [`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`merge`](#merge-16)
+
 ##### toJSON() {#tojson-2}
 
 ```ts
@@ -571,6 +814,170 @@ the `stepType` property.
 ###### Overrides
 
 [`Step`](#step).[`toJSON`](#tojson-16)
+
+##### fromJSON() {#fromjson-2}
+
+```ts
+static fromJSON(schema: Schema, json: any): Step;
+```
+
+Deserialize a step from its JSON representation. Will call
+through to the step class' own implementation of this method.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`fromJSON`](#fromjson-16)
+
+##### jsonID() {#jsonid-2}
+
+```ts
+static jsonID(id: string, stepClass: object): object;
+```
+
+To be able to serialize steps to JSON, each step needs a string
+ID to attach to its JSON representation. Use this method to
+register an ID for your step classes. Try to pick something
+that's unlikely to clash with steps from other modules.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass`
+
+</td>
+<td>
+
+\{ `fromJSON`: [`Step`](#step); \}
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass.fromJSON`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`object`
+
+###### fromJSON()
+
+```ts
+fromJSON(schema: Schema, json: any): Step;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`jsonID`](#jsonid-16)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -750,7 +1157,7 @@ transformed document.
 
 [`Step`](#step).[`apply`](#apply-16)
 
-##### getMap() {#getmap}
+##### getMap() {#getmap-4}
 
 ```ts
 getMap(): StepMap;
@@ -766,7 +1173,7 @@ and the new document.
 
 ###### Overrides
 
-[`Step`](#step).[`getMap`](#getmap-8)
+[`Step`](#step).[`getMap`](#getmap-16)
 
 ##### invert() {#invert-4}
 
@@ -853,6 +1260,49 @@ the step was entirely deleted by the mapping.
 
 [`Step`](#step).[`map`](#map-18)
 
+##### merge() {#merge-4}
+
+```ts
+merge(other: Step): null | Step;
+```
+
+Try to merge this step with another one, to be applied directly
+after it. Returns the merged step when possible, null if the
+steps can't be merged.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`other`
+
+</td>
+<td>
+
+[`Step`](#step)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| [`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`merge`](#merge-16)
+
 ##### toJSON() {#tojson-4}
 
 ```ts
@@ -872,7 +1322,7 @@ the `stepType` property.
 
 [`Step`](#step).[`toJSON`](#tojson-16)
 
-##### fromJSON() {#fromjson}
+##### fromJSON() {#fromjson-4}
 
 ```ts
 static fromJSON(schema: Schema, json: any): AttrStep;
@@ -924,7 +1374,117 @@ through to the step class' own implementation of this method.
 
 ###### Overrides
 
-[`Step`](#step).[`fromJSON`](#fromjson-4)
+[`Step`](#step).[`fromJSON`](#fromjson-16)
+
+##### jsonID() {#jsonid-4}
+
+```ts
+static jsonID(id: string, stepClass: object): object;
+```
+
+To be able to serialize steps to JSON, each step needs a string
+ID to attach to its JSON representation. Use this method to
+register an ID for your step classes. Try to pick something
+that's unlikely to clash with steps from other modules.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass`
+
+</td>
+<td>
+
+\{ `fromJSON`: [`Step`](#step); \}
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass.fromJSON`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`object`
+
+###### fromJSON()
+
+```ts
+fromJSON(schema: Schema, json: any): Step;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`jsonID`](#jsonid-16)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1076,7 +1636,7 @@ transformed document.
 
 [`Step`](#step).[`apply`](#apply-16)
 
-##### getMap() {#getmap-2}
+##### getMap() {#getmap-6}
 
 ```ts
 getMap(): StepMap;
@@ -1092,7 +1652,7 @@ and the new document.
 
 ###### Overrides
 
-[`Step`](#step).[`getMap`](#getmap-8)
+[`Step`](#step).[`getMap`](#getmap-16)
 
 ##### invert() {#invert-6}
 
@@ -1179,6 +1739,49 @@ the step was entirely deleted by the mapping.
 
 [`Step`](#step).[`map`](#map-18)
 
+##### merge() {#merge-6}
+
+```ts
+merge(other: Step): null | Step;
+```
+
+Try to merge this step with another one, to be applied directly
+after it. Returns the merged step when possible, null if the
+steps can't be merged.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`other`
+
+</td>
+<td>
+
+[`Step`](#step)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| [`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`merge`](#merge-16)
+
 ##### toJSON() {#tojson-6}
 
 ```ts
@@ -1198,7 +1801,7 @@ the `stepType` property.
 
 [`Step`](#step).[`toJSON`](#tojson-16)
 
-##### fromJSON() {#fromjson-2}
+##### fromJSON() {#fromjson-6}
 
 ```ts
 static fromJSON(schema: Schema, json: any): DocAttrStep;
@@ -1250,7 +1853,117 @@ through to the step class' own implementation of this method.
 
 ###### Overrides
 
-[`Step`](#step).[`fromJSON`](#fromjson-4)
+[`Step`](#step).[`fromJSON`](#fromjson-16)
+
+##### jsonID() {#jsonid-6}
+
+```ts
+static jsonID(id: string, stepClass: object): object;
+```
+
+To be able to serialize steps to JSON, each step needs a string
+ID to attach to its JSON representation. Use this method to
+register an ID for your step classes. Try to pick something
+that's unlikely to clash with steps from other modules.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass`
+
+</td>
+<td>
+
+\{ `fromJSON`: [`Step`](#step); \}
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass.fromJSON`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`object`
+
+###### fromJSON()
+
+```ts
+fromJSON(schema: Schema, json: any): Step;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`jsonID`](#jsonid-16)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2022,6 +2735,24 @@ transformed document.
 
 [`Step`](#step).[`apply`](#apply-16)
 
+##### getMap() {#getmap-8}
+
+```ts
+getMap(): StepMap;
+```
+
+Get the step map that represents the changes made by this step,
+and which can be used to transform between positions in the old
+and the new document.
+
+###### Returns
+
+[`StepMap`](#stepmap-2)
+
+###### Inherited from
+
+[`Step`](#step).[`getMap`](#getmap-16)
+
 ##### invert() {#invert-10}
 
 ```ts
@@ -2082,7 +2813,7 @@ the step was entirely deleted by the mapping.
 
 [`Step`](#step).[`map`](#map-18)
 
-##### merge() {#merge-2}
+##### merge() {#merge-8}
 
 ```ts
 merge(other: Step): null | Step;
@@ -2123,7 +2854,7 @@ steps can't be merged.
 
 ###### Overrides
 
-[`Step`](#step).[`merge`](#merge-6)
+[`Step`](#step).[`merge`](#merge-16)
 
 ##### toJSON() {#tojson-8}
 
@@ -2143,6 +2874,170 @@ the `stepType` property.
 ###### Overrides
 
 [`Step`](#step).[`toJSON`](#tojson-16)
+
+##### fromJSON() {#fromjson-8}
+
+```ts
+static fromJSON(schema: Schema, json: any): Step;
+```
+
+Deserialize a step from its JSON representation. Will call
+through to the step class' own implementation of this method.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`fromJSON`](#fromjson-16)
+
+##### jsonID() {#jsonid-8}
+
+```ts
+static jsonID(id: string, stepClass: object): object;
+```
+
+To be able to serialize steps to JSON, each step needs a string
+ID to attach to its JSON representation. Use this method to
+register an ID for your step classes. Try to pick something
+that's unlikely to clash with steps from other modules.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass`
+
+</td>
+<td>
+
+\{ `fromJSON`: [`Step`](#step); \}
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass.fromJSON`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`object`
+
+###### fromJSON()
+
+```ts
+fromJSON(schema: Schema, json: any): Step;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`jsonID`](#jsonid-16)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2296,6 +3191,24 @@ transformed document.
 
 [`Step`](#step).[`apply`](#apply-16)
 
+##### getMap() {#getmap-10}
+
+```ts
+getMap(): StepMap;
+```
+
+Get the step map that represents the changes made by this step,
+and which can be used to transform between positions in the old
+and the new document.
+
+###### Returns
+
+[`StepMap`](#stepmap-2)
+
+###### Inherited from
+
+[`Step`](#step).[`getMap`](#getmap-16)
+
 ##### invert() {#invert-12}
 
 ```ts
@@ -2381,6 +3294,49 @@ the step was entirely deleted by the mapping.
 
 [`Step`](#step).[`map`](#map-18)
 
+##### merge() {#merge-10}
+
+```ts
+merge(other: Step): null | Step;
+```
+
+Try to merge this step with another one, to be applied directly
+after it. Returns the merged step when possible, null if the
+steps can't be merged.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`other`
+
+</td>
+<td>
+
+[`Step`](#step)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| [`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`merge`](#merge-16)
+
 ##### toJSON() {#tojson-10}
 
 ```ts
@@ -2399,6 +3355,170 @@ the `stepType` property.
 ###### Overrides
 
 [`Step`](#step).[`toJSON`](#tojson-16)
+
+##### fromJSON() {#fromjson-10}
+
+```ts
+static fromJSON(schema: Schema, json: any): Step;
+```
+
+Deserialize a step from its JSON representation. Will call
+through to the step class' own implementation of this method.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`fromJSON`](#fromjson-16)
+
+##### jsonID() {#jsonid-10}
+
+```ts
+static jsonID(id: string, stepClass: object): object;
+```
+
+To be able to serialize steps to JSON, each step needs a string
+ID to attach to its JSON representation. Use this method to
+register an ID for your step classes. Try to pick something
+that's unlikely to clash with steps from other modules.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass`
+
+</td>
+<td>
+
+\{ `fromJSON`: [`Step`](#step); \}
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass.fromJSON`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`object`
+
+###### fromJSON()
+
+```ts
+fromJSON(schema: Schema, json: any): Step;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`jsonID`](#jsonid-16)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2665,7 +3785,7 @@ transformed document.
 
 [`Step`](#step).[`apply`](#apply-16)
 
-##### getMap() {#getmap-4}
+##### getMap() {#getmap-12}
 
 ```ts
 getMap(): StepMap;
@@ -2681,7 +3801,7 @@ and the new document.
 
 ###### Overrides
 
-[`Step`](#step).[`getMap`](#getmap-8)
+[`Step`](#step).[`getMap`](#getmap-16)
 
 ##### invert() {#invert-14}
 
@@ -2768,6 +3888,49 @@ the step was entirely deleted by the mapping.
 
 [`Step`](#step).[`map`](#map-18)
 
+##### merge() {#merge-12}
+
+```ts
+merge(other: Step): null | Step;
+```
+
+Try to merge this step with another one, to be applied directly
+after it. Returns the merged step when possible, null if the
+steps can't be merged.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`other`
+
+</td>
+<td>
+
+[`Step`](#step)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| [`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`merge`](#merge-16)
+
 ##### toJSON() {#tojson-12}
 
 ```ts
@@ -2786,6 +3949,170 @@ the `stepType` property.
 ###### Overrides
 
 [`Step`](#step).[`toJSON`](#tojson-16)
+
+##### fromJSON() {#fromjson-12}
+
+```ts
+static fromJSON(schema: Schema, json: any): Step;
+```
+
+Deserialize a step from its JSON representation. Will call
+through to the step class' own implementation of this method.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`fromJSON`](#fromjson-16)
+
+##### jsonID() {#jsonid-12}
+
+```ts
+static jsonID(id: string, stepClass: object): object;
+```
+
+To be able to serialize steps to JSON, each step needs a string
+ID to attach to its JSON representation. Use this method to
+register an ID for your step classes. Try to pick something
+that's unlikely to clash with steps from other modules.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass`
+
+</td>
+<td>
+
+\{ `fromJSON`: [`Step`](#step); \}
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass.fromJSON`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`object`
+
+###### fromJSON()
+
+```ts
+fromJSON(schema: Schema, json: any): Step;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`jsonID`](#jsonid-16)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2973,7 +4300,7 @@ transformed document.
 
 [`Step`](#step).[`apply`](#apply-16)
 
-##### getMap() {#getmap-6}
+##### getMap() {#getmap-14}
 
 ```ts
 getMap(): StepMap;
@@ -2989,7 +4316,7 @@ and the new document.
 
 ###### Overrides
 
-[`Step`](#step).[`getMap`](#getmap-8)
+[`Step`](#step).[`getMap`](#getmap-16)
 
 ##### invert() {#invert-16}
 
@@ -3076,7 +4403,7 @@ the step was entirely deleted by the mapping.
 
 [`Step`](#step).[`map`](#map-18)
 
-##### merge() {#merge-4}
+##### merge() {#merge-14}
 
 ```ts
 merge(other: Step): null | ReplaceStep;
@@ -3117,7 +4444,7 @@ steps can't be merged.
 
 ###### Overrides
 
-[`Step`](#step).[`merge`](#merge-6)
+[`Step`](#step).[`merge`](#merge-16)
 
 ##### toJSON() {#tojson-14}
 
@@ -3137,6 +4464,170 @@ the `stepType` property.
 ###### Overrides
 
 [`Step`](#step).[`toJSON`](#tojson-16)
+
+##### fromJSON() {#fromjson-14}
+
+```ts
+static fromJSON(schema: Schema, json: any): Step;
+```
+
+Deserialize a step from its JSON representation. Will call
+through to the step class' own implementation of this method.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`fromJSON`](#fromjson-16)
+
+##### jsonID() {#jsonid-14}
+
+```ts
+static jsonID(id: string, stepClass: object): object;
+```
+
+To be able to serialize steps to JSON, each step needs a string
+ID to attach to its JSON representation. Use this method to
+register an ID for your step classes. Try to pick something
+that's unlikely to clash with steps from other modules.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`id`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass`
+
+</td>
+<td>
+
+\{ `fromJSON`: [`Step`](#step); \}
+
+</td>
+</tr>
+<tr>
+<td>
+
+`stepClass.fromJSON`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`object`
+
+###### fromJSON()
+
+```ts
+fromJSON(schema: Schema, json: any): Step;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`schema`
+
+</td>
+<td>
+
+[`Schema`](model.md#schema-3)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`json`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Step`](#step)
+
+###### Inherited from
+
+[`Step`](#step).[`jsonID`](#jsonid-16)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3229,7 +4720,7 @@ transformed document.
 
 [`StepResult`](#stepresult)
 
-##### getMap() {#getmap-8}
+##### getMap() {#getmap-16}
 
 ```ts
 getMap(): StepMap;
@@ -3320,7 +4811,7 @@ the step was entirely deleted by the mapping.
 
 `null` \| [`Step`](#step)
 
-##### merge() {#merge-6}
+##### merge() {#merge-16}
 
 ```ts
 merge(other: Step): null | Step;
@@ -3374,7 +4865,7 @@ the `stepType` property.
 
 `any`
 
-##### fromJSON() {#fromjson-4}
+##### fromJSON() {#fromjson-16}
 
 ```ts
 static fromJSON(schema: Schema, json: any): Step;
@@ -3424,7 +4915,7 @@ through to the step class' own implementation of this method.
 
 [`Step`](#step)
 
-##### jsonID() {#jsonid}
+##### jsonID() {#jsonid-16}
 
 ```ts
 static jsonID(id: string, stepClass: object): object;
@@ -5073,7 +6564,7 @@ the given node type with the given attributes.
 </td>
 <td>
 
- \| `null` \| [`Attrs`](model.md#attrs-5) \| (`oldNode`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`Attrs`](model.md#attrs-5)
+ \| `null` \| [`Attrs`](model.md#attrs-7) \| (`oldNode`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`Attrs`](model.md#attrs-7)
 
 </td>
 </tr>
@@ -5254,7 +6745,7 @@ When `type` isn't given, the existing node type is preserved,
 </td>
 <td>
 
-`null` \| [`Attrs`](model.md#attrs-5)
+`null` \| [`Attrs`](model.md#attrs-7)
 
 </td>
 </tr>
@@ -5339,7 +6830,7 @@ use after the split (with the outermost nodes coming first).
 </td>
 <td>
 
-( \| `null` \| \{ `attrs?`: `null` \| [`Attrs`](model.md#attrs-5); `type`: [`NodeType`](model.md#nodetype); \})[]
+( \| `null` \| \{ `attrs?`: `null` \| [`Attrs`](model.md#attrs-7); `type`: [`NodeType`](model.md#nodetype); \})[]
 
 </td>
 </tr>
@@ -5641,7 +7132,7 @@ Check whether splitting at the given position is allowed.
 </td>
 <td>
 
-( \| `null` \| \{ `attrs?`: `null` \| [`Attrs`](model.md#attrs-5); `type`: [`NodeType`](model.md#nodetype); \})[]
+( \| `null` \| \{ `attrs?`: `null` \| [`Attrs`](model.md#attrs-7); `type`: [`NodeType`](model.md#nodetype); \})[]
 
 </td>
 </tr>
@@ -5782,7 +7273,7 @@ content of `range`.
 </td>
 <td>
 
-`null` \| [`Attrs`](model.md#attrs-5)
+`null` \| [`Attrs`](model.md#attrs-7)
 
 </td>
 </tr>

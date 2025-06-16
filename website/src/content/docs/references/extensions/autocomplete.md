@@ -67,7 +67,7 @@ new AutocompleteRule(options: AutocompleteRuleOptions): AutocompleteRule;
 
 [`AutocompleteRule`](#autocompleterule)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=16384 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -140,9 +140,7 @@ selections that are not inside a code block or code mark.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### onEnter {#onenter}
 
@@ -153,8 +151,6 @@ onEnter: MatchHandler;
 A callback that is called when the rule starts to match, and also on
 subsequent updates while the rule continues to match.
 
-<!-- DEBUG inheritance start -->
-
 ##### onLeave? {#onleave}
 
 ```ts
@@ -162,8 +158,6 @@ optional onLeave: VoidFunction;
 ```
 
 A callback that is called when the rule stops matching.
-
-<!-- DEBUG inheritance start -->
 
 ##### regex {#regex}
 
@@ -176,8 +170,6 @@ last match before the cursor is used.
 
 For a slash menu, you might use `//(|\S.*)$/u`.
 For a mention, you might use `/@\w*$/`
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -213,9 +205,7 @@ else when the user presses the `Enter` key.
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### from {#from}
 
@@ -224,8 +214,6 @@ from: number;
 ```
 
 The start position of the matched text.
-
-<!-- DEBUG inheritance start -->
 
 ##### ignoreMatch() {#ignorematch}
 
@@ -240,9 +228,7 @@ function when the user presses the `Escape` key.
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### match {#match}
 
@@ -252,8 +238,6 @@ match: RegExpExecArray;
 
 The result of `RegExp.exec`.
 
-<!-- DEBUG inheritance start -->
-
 ##### state {#state}
 
 ```ts
@@ -262,8 +246,6 @@ state: EditorState;
 
 The editor state.
 
-<!-- DEBUG inheritance start -->
-
 ##### to {#to}
 
 ```ts
@@ -271,8 +253,6 @@ to: number;
 ```
 
 The end position of the matched text.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -316,9 +296,9 @@ subsequent updates while the rule continues to match.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ## Functions
 
@@ -357,6 +337,6 @@ function defineAutocomplete(rule: AutocompleteRule): Extension;
 
 [`Extension`](../core.md#extension-1)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

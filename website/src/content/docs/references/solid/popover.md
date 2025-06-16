@@ -52,14 +52,6 @@ information.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.altBoundary
-```
-
 ##### autoUpdate? {#autoupdate}
 
 ```ts
@@ -80,14 +72,6 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.autoUpdate
-```
-
 ##### boundary? {#boundary}
 
 ```ts
@@ -101,14 +85,6 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 
 ```ts
 'clippingAncestors'
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.boundary
 ```
 
 ##### elementContext? {#elementcontext}
@@ -127,14 +103,6 @@ information.
 'floating'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.elementContext
-```
-
 ##### fitViewport? {#fitviewport}
 
 ```ts
@@ -148,14 +116,6 @@ the viewport.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.fitViewport
 ```
 
 ##### flip? {#flip}
@@ -175,14 +135,6 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.flip
-```
-
 ##### hide? {#hide}
 
 ```ts
@@ -196,14 +148,6 @@ floating element is fully clipped.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.hide
 ```
 
 ##### hoist? {#hoist}
@@ -223,14 +167,6 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.hoist
-```
-
 ##### inline? {#inline}
 
 ```ts
@@ -246,14 +182,6 @@ multiple lines.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.inline
-```
-
 ##### offset? {#offset}
 
 ```ts
@@ -266,14 +194,6 @@ The distance between the reference and floating element.
 
 ```ts
 6
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.offset
 ```
 
 ##### onEscapeKeyDown()? {#onescapekeydown}
@@ -311,15 +231,7 @@ optional onEscapeKeyDown: (event: EscapeKeyDownEvent) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.onEscapeKeyDown
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### onFocusOutside()? {#onfocusoutside}
 
@@ -356,15 +268,7 @@ optional onFocusOutside: (event: FocusOutsideEvent) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.onFocusOutside
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### onInteractOutside()? {#oninteractoutside}
 
@@ -401,15 +305,7 @@ optional onInteractOutside: (event: InteractOutsideEvent) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.onInteractOutside
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### onPointerDownOutside()? {#onpointerdownoutside}
 
@@ -446,15 +342,7 @@ optional onPointerDownOutside: (event: PointerDownOutsideEvent) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.onPointerDownOutside
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### overflowPadding? {#overflowpadding}
 
@@ -469,14 +357,6 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 
 ```ts
 4
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.overflowPadding
 ```
 
 ##### overlap? {#overlap}
@@ -494,14 +374,6 @@ in view.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.overlap
-```
-
 ##### placement? {#placement}
 
 ```ts
@@ -514,14 +386,6 @@ The initial placement of the floating element
 
 ```ts
 "top"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.placement
 ```
 
 ##### rootBoundary? {#rootboundary}
@@ -539,14 +403,6 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.rootBoundary
-```
-
 ##### sameHeight? {#sameheight}
 
 ```ts
@@ -560,14 +416,6 @@ reference element.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.sameHeight
 ```
 
 ##### sameWidth? {#samewidth}
@@ -585,14 +433,6 @@ reference element.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.sameWidth
-```
-
 ##### shift? {#shift}
 
 ```ts
@@ -605,14 +445,6 @@ Whether the floating element should shift to keep it in view.
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.shift
 ```
 
 ##### strategy? {#strategy}
@@ -629,14 +461,6 @@ The strategy to use for positioning
 "absolute"
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.strategy
-```
-
 ##### transform? {#transform}
 
 ```ts
@@ -651,14 +475,6 @@ performant, but can cause conflicts with transform animations.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.transform
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -699,14 +515,6 @@ Whether the popover is open by default.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.defaultOpen
-```
-
 ##### onOpenChange()? {#onopenchange}
 
 ```ts
@@ -742,15 +550,7 @@ optional onOpenChange: (event: boolean) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.onOpenChange
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### open? {#open}
 
@@ -764,14 +564,6 @@ Whether the popover is open.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.open
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -806,7 +598,7 @@ Props for the [PopoverTrigger](#popovertrigger) component.
 const PopoverContent: Component<PropsWithElement<PopoverContentProps, PopoverContentElement>>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -816,7 +608,7 @@ const PopoverContent: Component<PropsWithElement<PopoverContentProps, PopoverCon
 const PopoverRoot: Component<PropsWithElement<PopoverRootProps, PopoverRootElement>>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -826,6 +618,6 @@ const PopoverRoot: Component<PropsWithElement<PopoverRootProps, PopoverRootEleme
 const PopoverTrigger: Component<PropsWithElement<PopoverTriggerProps, PopoverTriggerElement>>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 <!-- DEBUG memberWithGroups 10 -->

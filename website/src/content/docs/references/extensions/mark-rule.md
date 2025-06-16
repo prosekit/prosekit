@@ -50,8 +50,6 @@ with the matched result from the regular expression.
 null
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### regex {#regex}
 
 ```ts
@@ -61,8 +59,6 @@ regex: RegExp;
 The regular expression to match against. It must has a `g` flag to match
 all instances of the mark.
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type}
 
 ```ts
@@ -70,8 +66,6 @@ type: string | MarkType;
 ```
 
 The mark type to apply to the matched text.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -115,6 +109,6 @@ matches a certain pattern, and remove them if it doesn't match anymore.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

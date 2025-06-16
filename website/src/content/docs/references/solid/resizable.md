@@ -58,14 +58,6 @@ The position of the handle.
 "bottom-right"
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.position
-```
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -96,26 +88,10 @@ Props for the [ResizableRoot](#resizableroot) component.
 optional aspectRatio: null | number;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.aspectRatio
-```
-
 ##### height? {#height}
 
 ```ts
 optional height: null | number;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.height
 ```
 
 ##### onResizeEnd()? {#onresizeend}
@@ -156,15 +132,7 @@ optional onResizeEnd: (event: CustomEvent<{
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.onResizeEnd
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### onResizeStart()? {#onresizestart}
 
@@ -204,28 +172,12 @@ optional onResizeStart: (event: CustomEvent<{
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.onResizeStart
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### width? {#width}
 
 ```ts
 optional width: null | number;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.width
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -238,7 +190,7 @@ Partial.width
 const ResizableHandle: Component<PropsWithElement<ResizableHandleProps, ResizableHandleElement>>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -248,6 +200,6 @@ const ResizableHandle: Component<PropsWithElement<ResizableHandleProps, Resizabl
 const ResizableRoot: Component<PropsWithElement<ResizableRootProps, ResizableRootElement>>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 <!-- DEBUG memberWithGroups 10 -->

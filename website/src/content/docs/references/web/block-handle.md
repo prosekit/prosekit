@@ -44,7 +44,7 @@ new BlockHandleAddElement(): BlockHandleAddElement;
 
 [`BlockHandleAddElement`](#blockhandleaddelement)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=16384 -->
 
 ###### Inherited from
 
@@ -84,7 +84,7 @@ new BlockHandleDraggableElement(): BlockHandleDraggableElement;
 
 [`BlockHandleDraggableElement`](#blockhandledraggableelement)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=16384 -->
 
 ###### Inherited from
 
@@ -124,7 +124,7 @@ new BlockHandlePopoverElement(): BlockHandlePopoverElement;
 
 [`BlockHandlePopoverElement`](#blockhandlepopoverelement)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=16384 -->
 
 ###### Inherited from
 
@@ -150,14 +150,6 @@ information.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.altBoundary
-```
-
 ##### autoUpdate {#autoupdate}
 
 ```ts
@@ -178,14 +170,6 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.autoUpdate
-```
-
 ##### boundary {#boundary}
 
 ```ts
@@ -199,14 +183,6 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 
 ```ts
 'clippingAncestors'
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.boundary
 ```
 
 ##### elementContext {#elementcontext}
@@ -225,14 +201,6 @@ information.
 'floating'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.elementContext
-```
-
 ##### fitViewport {#fitviewport}
 
 ```ts
@@ -246,14 +214,6 @@ the viewport.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.fitViewport
 ```
 
 ##### flip {#flip}
@@ -273,14 +233,6 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.flip
-```
-
 ##### hide {#hide}
 
 ```ts
@@ -294,14 +246,6 @@ floating element is fully clipped.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.hide
 ```
 
 ##### hoist {#hoist}
@@ -319,14 +263,6 @@ to place the floating element on top of other page content.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.hoist
-```
-
 ##### inline {#inline}
 
 ```ts
@@ -342,14 +278,6 @@ multiple lines.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.inline
-```
-
 ##### offset? {#offset}
 
 ```ts
@@ -362,14 +290,6 @@ The distance between the reference and floating element.
 
 ```ts
 6
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.offset
 ```
 
 ##### overflowPadding {#overflowpadding}
@@ -387,14 +307,6 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 4
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.overflowPadding
-```
-
 ##### overlap {#overlap}
 
 ```ts
@@ -410,14 +322,6 @@ in view.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.overlap
-```
-
 ##### placement {#placement}
 
 ```ts
@@ -430,14 +334,6 @@ The placement of the popover, relative to the hovered block.
 
 ```ts
 "left"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.placement
 ```
 
 ##### rootBoundary {#rootboundary}
@@ -455,14 +351,6 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.rootBoundary
-```
-
 ##### sameHeight {#sameheight}
 
 ```ts
@@ -476,14 +364,6 @@ reference element.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.sameHeight
 ```
 
 ##### sameWidth {#samewidth}
@@ -501,14 +381,6 @@ reference element.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.sameWidth
-```
-
 ##### shift {#shift}
 
 ```ts
@@ -521,14 +393,6 @@ Whether the floating element should shift to keep it in view.
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.shift
 ```
 
 ##### strategy {#strategy}
@@ -545,14 +409,6 @@ The strategy to use for positioning
 "absolute"
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.strategy
-```
-
 ##### transform {#transform}
 
 ```ts
@@ -567,14 +423,6 @@ performant, but can cause conflicts with transform animations.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-BlockHandlePopoverElementBase.transform
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -647,14 +495,6 @@ information.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.altBoundary
-```
-
 ##### autoUpdate {#autoupdate-1}
 
 ```ts
@@ -675,14 +515,6 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.autoUpdate
-```
-
 ##### boundary {#boundary-1}
 
 ```ts
@@ -696,14 +528,6 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 
 ```ts
 'clippingAncestors'
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.boundary
 ```
 
 ##### elementContext {#elementcontext-1}
@@ -722,14 +546,6 @@ information.
 'floating'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.elementContext
-```
-
 ##### fitViewport {#fitviewport-1}
 
 ```ts
@@ -743,14 +559,6 @@ the viewport.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.fitViewport
 ```
 
 ##### flip {#flip-1}
@@ -770,14 +578,6 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.flip
-```
-
 ##### hide {#hide-1}
 
 ```ts
@@ -791,14 +591,6 @@ floating element is fully clipped.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.hide
 ```
 
 ##### hoist {#hoist-1}
@@ -816,8 +608,6 @@ to place the floating element on top of other page content.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### inline {#inline-1}
 
 ```ts
@@ -833,14 +623,6 @@ multiple lines.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.inline
-```
-
 ##### offset? {#offset-1}
 
 ```ts
@@ -853,14 +635,6 @@ The distance between the reference and floating element.
 
 ```ts
 6
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.offset
 ```
 
 ##### overflowPadding {#overflowpadding-1}
@@ -878,14 +652,6 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 4
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.overflowPadding
-```
-
 ##### overlap {#overlap-1}
 
 ```ts
@@ -899,14 +665,6 @@ in view.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.overlap
 ```
 
 ##### placement {#placement-1}
@@ -923,8 +681,6 @@ The placement of the popover, relative to the hovered block.
 "left"
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### rootBoundary {#rootboundary-1}
 
 ```ts
@@ -938,14 +694,6 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 ```ts
 'viewport'
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.rootBoundary
 ```
 
 ##### sameHeight {#sameheight-1}
@@ -963,14 +711,6 @@ reference element.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.sameHeight
-```
-
 ##### sameWidth {#samewidth-1}
 
 ```ts
@@ -984,14 +724,6 @@ reference element.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.sameWidth
 ```
 
 ##### shift {#shift-1}
@@ -1008,14 +740,6 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.shift
-```
-
 ##### strategy {#strategy-1}
 
 ```ts
@@ -1028,14 +752,6 @@ The strategy to use for positioning
 
 ```ts
 "absolute"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.strategy
 ```
 
 ##### transform {#transform-1}
@@ -1052,14 +768,6 @@ performant, but can cause conflicts with transform animations.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Omit.transform
 ```
 
 <!-- DEBUG memberWithGroups 10 -->

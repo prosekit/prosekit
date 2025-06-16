@@ -117,15 +117,7 @@ Fired when the item is selected.
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CreateEmits.select
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -165,14 +157,6 @@ If not provided, the value is the item's text content.
 
 ```ts
 ""
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.value
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -234,15 +218,7 @@ valueChange: (event: string) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CreateEmits.valueChange
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -284,14 +260,6 @@ shown.
 
 ```ts
 defaultItemFilter
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.filter
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -355,15 +323,7 @@ Fired when the open state changes.
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CreateEmits.openChange
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### queryChange() {#querychange}
 
@@ -402,15 +362,7 @@ Fired when the query changes.
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CreateEmits.queryChange
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -452,14 +404,6 @@ information.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.altBoundary
-```
-
 ##### autoUpdate? {#autoupdate}
 
 ```ts
@@ -480,14 +424,6 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.autoUpdate
-```
-
 ##### boundary? {#boundary}
 
 ```ts
@@ -498,14 +434,6 @@ optional boundary: Boundary;
 
 ```ts
 "The body element"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.boundary
 ```
 
 ##### elementContext? {#elementcontext}
@@ -524,14 +452,6 @@ information.
 'floating'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.elementContext
-```
-
 ##### fitViewport? {#fitviewport}
 
 ```ts
@@ -542,14 +462,6 @@ optional fitViewport: boolean;
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.fitViewport
 ```
 
 ##### flip? {#flip}
@@ -569,14 +481,6 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.flip
-```
-
 ##### hide? {#hide}
 
 ```ts
@@ -592,14 +496,6 @@ floating element is fully clipped.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.hide
-```
-
 ##### hoist? {#hoist}
 
 ```ts
@@ -612,14 +508,6 @@ optional hoist: boolean;
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.hoist
-```
-
 ##### inline? {#inline}
 
 ```ts
@@ -630,14 +518,6 @@ optional inline: boolean;
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.inline
 ```
 
 ##### offset? {#offset}
@@ -654,14 +534,6 @@ The distance between the popover and the hovered block.
 4
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.offset
-```
-
 ##### overflowPadding? {#overflowpadding}
 
 ```ts
@@ -672,14 +544,6 @@ optional overflowPadding: number;
 
 ```ts
 8
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.overflowPadding
 ```
 
 ##### overlap? {#overlap}
@@ -697,14 +561,6 @@ in view.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.overlap
-```
-
 ##### placement? {#placement}
 
 ```ts
@@ -717,14 +573,6 @@ The placement of the popover, relative to the text cursor.
 
 ```ts
 "bottom-start"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.placement
 ```
 
 ##### regex? {#regex}
@@ -743,14 +591,6 @@ The regular expression to match the query text to autocomplete.
 null
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.regex
-```
-
 ##### rootBoundary? {#rootboundary}
 
 ```ts
@@ -764,14 +604,6 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 ```ts
 'viewport'
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.rootBoundary
 ```
 
 ##### sameHeight? {#sameheight}
@@ -789,14 +621,6 @@ reference element.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.sameHeight
-```
-
 ##### sameWidth? {#samewidth}
 
 ```ts
@@ -810,14 +634,6 @@ reference element.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.sameWidth
 ```
 
 ##### shift? {#shift}
@@ -834,14 +650,6 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.shift
-```
-
 ##### strategy? {#strategy}
 
 ```ts
@@ -854,14 +662,6 @@ The strategy to use for positioning
 
 ```ts
 "absolute"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.strategy
 ```
 
 ##### transform? {#transform}
@@ -880,14 +680,6 @@ performant, but can cause conflicts with transform animations.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.transform
-```
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Variables
@@ -898,7 +690,7 @@ Partial.transform
 const AutocompleteEmpty: DefineSetupFnComponent<AutocompleteEmptyProps & HTMLAttributes, AutocompleteEmptyEmits>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -908,7 +700,7 @@ const AutocompleteEmpty: DefineSetupFnComponent<AutocompleteEmptyProps & HTMLAtt
 const AutocompleteItem: DefineSetupFnComponent<AutocompleteItemProps & HTMLAttributes, AutocompleteItemEmits>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -918,7 +710,7 @@ const AutocompleteItem: DefineSetupFnComponent<AutocompleteItemProps & HTMLAttri
 const AutocompleteList: DefineSetupFnComponent<AutocompleteListProps & HTMLAttributes, AutocompleteListEmits>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -928,6 +720,6 @@ const AutocompleteList: DefineSetupFnComponent<AutocompleteListProps & HTMLAttri
 const AutocompletePopover: DefineSetupFnComponent<AutocompletePopoverProps & HTMLAttributes, AutocompletePopoverEmits>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 <!-- DEBUG memberWithGroups 10 -->

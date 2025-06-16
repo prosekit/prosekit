@@ -74,14 +74,6 @@ information.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.altBoundary
-```
-
 ##### autoUpdate? {#autoupdate}
 
 ```ts
@@ -102,14 +94,6 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.autoUpdate
-```
-
 ##### boundary? {#boundary}
 
 ```ts
@@ -123,14 +107,6 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 
 ```ts
 'clippingAncestors'
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.boundary
 ```
 
 ##### elementContext? {#elementcontext}
@@ -149,14 +125,6 @@ information.
 'floating'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.elementContext
-```
-
 ##### fitViewport? {#fitviewport}
 
 ```ts
@@ -170,14 +138,6 @@ the viewport.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.fitViewport
 ```
 
 ##### flip? {#flip}
@@ -197,14 +157,6 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.flip
-```
-
 ##### hide? {#hide}
 
 ```ts
@@ -218,14 +170,6 @@ floating element is fully clipped.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.hide
 ```
 
 ##### hoist? {#hoist}
@@ -245,14 +189,6 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.hoist
-```
-
 ##### inline? {#inline}
 
 ```ts
@@ -268,14 +204,6 @@ multiple lines.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.inline
-```
-
 ##### offset? {#offset}
 
 ```ts
@@ -288,14 +216,6 @@ The distance between the reference and floating element.
 
 ```ts
 6
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.offset
 ```
 
 ##### overflowPadding? {#overflowpadding}
@@ -313,14 +233,6 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 4
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.overflowPadding
-```
-
 ##### overlap? {#overlap}
 
 ```ts
@@ -336,14 +248,6 @@ in view.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.overlap
-```
-
 ##### placement? {#placement}
 
 ```ts
@@ -356,14 +260,6 @@ The initial placement of the floating element
 
 ```ts
 "top"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.placement
 ```
 
 ##### rootBoundary? {#rootboundary}
@@ -381,14 +277,6 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.rootBoundary
-```
-
 ##### sameHeight? {#sameheight}
 
 ```ts
@@ -402,14 +290,6 @@ reference element.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.sameHeight
 ```
 
 ##### sameWidth? {#samewidth}
@@ -427,14 +307,6 @@ reference element.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.sameWidth
-```
-
 ##### shift? {#shift}
 
 ```ts
@@ -447,14 +319,6 @@ Whether the floating element should shift to keep it in view.
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.shift
 ```
 
 ##### strategy? {#strategy}
@@ -471,14 +335,6 @@ The strategy to use for positioning
 "absolute"
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.strategy
-```
-
 ##### transform? {#transform}
 
 ```ts
@@ -493,14 +349,6 @@ performant, but can cause conflicts with transform animations.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.transform
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -564,15 +412,7 @@ Fired when the open state changes.
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CreateEmits.openChange
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -612,14 +452,6 @@ The delay in milliseconds before the tooltip closes.
 300
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.closeDelay
-```
-
 ##### open? {#open}
 
 ```ts
@@ -634,14 +466,6 @@ Whether the popover is open.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.open
-```
-
 ##### openDelay? {#opendelay}
 
 ```ts
@@ -654,14 +478,6 @@ The delay in milliseconds before the tooltip opens.
 
 ```ts
 700
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.openDelay
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -718,7 +534,7 @@ Props for the [TooltipTrigger](#tooltiptrigger) component.
 const TooltipContent: DefineSetupFnComponent<TooltipContentProps & HTMLAttributes, TooltipContentEmits>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -728,7 +544,7 @@ const TooltipContent: DefineSetupFnComponent<TooltipContentProps & HTMLAttribute
 const TooltipRoot: DefineSetupFnComponent<TooltipRootProps & HTMLAttributes, TooltipRootEmits>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -738,6 +554,6 @@ const TooltipRoot: DefineSetupFnComponent<TooltipRootProps & HTMLAttributes, Too
 const TooltipTrigger: DefineSetupFnComponent<TooltipTriggerProps & HTMLAttributes, TooltipTriggerEmits>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 <!-- DEBUG memberWithGroups 10 -->

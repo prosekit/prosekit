@@ -96,7 +96,7 @@ new TestEditor<E>(instance: EditorInstance): TestEditor<E>;
 
 [`TestEditor`](#testeditor)\<`E`\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=16384 -->
 
 ###### Overrides
 
@@ -120,7 +120,7 @@ All [CommandAction](../core.md#commandaction)s defined by the editor.
 
 [`ExtractCommandActions`](../core.md#extractcommandactions)\<`E`\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ###### Inherited from
 
@@ -140,7 +140,7 @@ Whether the editor is focused.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ###### Inherited from
 
@@ -160,7 +160,7 @@ All [MarkAction](../core.md#markaction)s defined by the editor.
 
 [`ExtractMarkActions`](../core.md#extractmarkactions)\<`E`\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ###### Inherited from
 
@@ -180,7 +180,7 @@ Whether the editor is mounted.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ###### Inherited from
 
@@ -200,7 +200,7 @@ All [NodeAction](../core.md#nodeaction)s defined by the editor.
 
 [`ExtractNodeActions`](../core.md#extractnodeactions)\<`E`\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ###### Inherited from
 
@@ -220,7 +220,7 @@ The editor schema.
 
 [`Schema`](../pm/model.md#schema-3)\<`ExtractNodeNames`\<`E`\>, `ExtractMarkNames`\<`E`\>\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ###### Inherited from
 
@@ -240,7 +240,7 @@ The editor's current state.
 
 [`EditorState`](../pm/state.md#editorstate)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ###### Inherited from
 
@@ -260,7 +260,7 @@ The editor view.
 
 [`EditorView`](../pm/view.md#editorview)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ###### Inherited from
 
@@ -280,7 +280,7 @@ Blur the editor.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
 
@@ -324,7 +324,7 @@ can be executed, otherwise `false`.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
 
@@ -365,7 +365,7 @@ dispatchEvent(event: Event): void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### exec() {#exec}
 
@@ -405,7 +405,7 @@ executed, otherwise `false`.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
 
@@ -423,7 +423,7 @@ Focus the editor.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
 
@@ -466,7 +466,7 @@ Return a HTML string representing the editor's current document.
 
 `string`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
 
@@ -484,7 +484,7 @@ Return a JSON object representing the editor's current document.
 
 [`NodeJSON`](../core.md#nodejson)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
 
@@ -531,7 +531,7 @@ Pass `null` or `undefined` to unmount the editor.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
 
@@ -584,7 +584,7 @@ const doc = n.doc(n.paragraph('<a>Hello<b> world!'))
 editor.set(doc) // "Hello" is selected.
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### setContent() {#setcontent}
 
@@ -662,7 +662,7 @@ Optional. Specifies the new selection. It can be one of the following:
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
 
@@ -680,7 +680,7 @@ Unmount the editor. This is equivalent to `mount(null)`.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
 
@@ -728,7 +728,7 @@ Update the editor's state.
 This is an advanced method. Use it only if you have a specific reason to
 directly manipulate the editor's state.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
 
@@ -772,7 +772,7 @@ extension.
 
 `VoidFunction`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
 
@@ -836,6 +836,6 @@ function createTestEditor<E>(options: EditorOptions<E>): TestEditor<E>;
 
 [`TestEditor`](#testeditor)\<`E`\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

@@ -42,40 +42,16 @@ Options for [defineSolidMarkView](#definesolidmarkview).
 optional as: MarkViewDOMSpec;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreMarkViewUserOptions.as
-```
-
 ##### component {#component}
 
 ```ts
 component: SolidMarkViewComponent;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreMarkViewUserOptions.component
-```
-
 ##### contentAs? {#contentas}
 
 ```ts
 optional contentAs: MarkViewDOMSpec;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreMarkViewUserOptions.contentAs
 ```
 
 ##### destroy()? {#destroy}
@@ -88,15 +64,7 @@ optional destroy: () => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreMarkViewUserOptions.destroy
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### ignoreMutation()? {#ignoremutation}
 
@@ -133,15 +101,7 @@ optional ignoreMutation: (mutation: ViewMutationRecord) => boolean | void;
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreMarkViewUserOptions.ignoreMutation
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### name {#name}
 
@@ -150,8 +110,6 @@ name: string;
 ```
 
 The name of the mark type.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -181,40 +139,16 @@ The name of the mark type.
 contentRef: MarkViewContentRef;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-MarkViewContextProps.contentRef
-```
-
 ##### mark {#mark}
 
 ```ts
 mark: Mark;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-MarkViewContextProps.mark
-```
-
 ##### view {#view}
 
 ```ts
 view: EditorView;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-MarkViewContextProps.view
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -247,40 +181,16 @@ Options for [defineSolidNodeView](#definesolidnodeview).
 optional as: NodeViewDOMSpec;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.as
-```
-
 ##### component {#component-1}
 
 ```ts
 component: SolidNodeViewComponent;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.component
-```
-
 ##### contentAs? {#contentas-1}
 
 ```ts
 optional contentAs: NodeViewDOMSpec;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.contentAs
 ```
 
 ##### deselectNode()? {#deselectnode}
@@ -293,15 +203,7 @@ optional deselectNode: () => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.deselectNode
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### destroy()? {#destroy-1}
 
@@ -313,15 +215,7 @@ optional destroy: () => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.destroy
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### ignoreMutation()? {#ignoremutation-1}
 
@@ -358,15 +252,7 @@ optional ignoreMutation: (mutation: ViewMutationRecord) => boolean | void;
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.ignoreMutation
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### name {#name-1}
 
@@ -375,8 +261,6 @@ name: string;
 ```
 
 The name of the node type.
-
-<!-- DEBUG inheritance start -->
 
 ##### onUpdate()? {#onupdate}
 
@@ -388,15 +272,7 @@ optional onUpdate: () => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.onUpdate
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### selectNode()? {#selectnode}
 
@@ -408,15 +284,7 @@ optional selectNode: () => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.selectNode
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### setSelection()? {#setselection}
 
@@ -479,15 +347,7 @@ optional setSelection: (anchor: number, head: number, root:
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.setSelection
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### stopEvent()? {#stopevent}
 
@@ -524,15 +384,7 @@ optional stopEvent: (event: Event) => boolean;
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.stopEvent
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### update()? {#update}
 
@@ -593,15 +445,7 @@ readonly [`Decoration`](pm/view.md#decoration)[]
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.update
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -631,26 +475,10 @@ CoreNodeViewUserOptions.update
 contentRef: NodeViewContentRef;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContextProps.contentRef
-```
-
 ##### decorations {#decorations}
 
 ```ts
 decorations: readonly Decoration[];
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContextProps.decorations
 ```
 
 ##### getPos() {#getpos}
@@ -663,28 +491,12 @@ getPos: () => undefined | number;
 
 `undefined` \| `number`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContextProps.getPos
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### innerDecorations {#innerdecorations}
 
 ```ts
 innerDecorations: DecorationSource;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContextProps.innerDecorations
 ```
 
 ##### node {#node}
@@ -693,26 +505,10 @@ NodeViewContextProps.innerDecorations
 node: ProseMirrorNode;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContextProps.node
-```
-
 ##### selected {#selected}
 
 ```ts
 selected: boolean;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContextProps.selected
 ```
 
 ##### setAttrs() {#setattrs}
@@ -750,28 +546,12 @@ setAttrs: (attrs: Attrs) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContextProps.setAttrs
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### view {#view-1}
 
 ```ts
 view: EditorView;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContextProps.view
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -801,8 +581,6 @@ optional editor: MaybeAccessor<Editor<any>>;
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
 
-<!-- DEBUG inheritance start -->
-
 ##### priority? {#priority}
 
 ```ts
@@ -810,8 +588,6 @@ optional priority: Priority;
 ```
 
 Optional priority to add the extension with.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -844,7 +620,7 @@ T or a reactive/non-reactive function returning T
 </tbody>
 </table>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -856,7 +632,7 @@ type ProseKitProps = ParentProps<{
 }>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -866,7 +642,7 @@ type ProseKitProps = ParentProps<{
 type SolidMarkViewComponent = Component<SolidMarkViewProps>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -876,7 +652,7 @@ type SolidMarkViewComponent = Component<SolidMarkViewProps>;
 type SolidNodeViewComponent = Component<SolidNodeViewProps>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ## Variables
 
@@ -888,7 +664,7 @@ const ProseKit: Component<ProseKitProps>;
 
 The root component for a ProseKit editor.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ## Functions
 
@@ -929,7 +705,7 @@ Defines a mark view using a Solid component.
 
 [`Extension`](core.md#extension-1)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -970,7 +746,7 @@ Defines a node view using a Solid component.
 
 [`Extension`](core.md#extension-1)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -1023,7 +799,7 @@ Calls the given handler whenever the editor document changes.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -1125,9 +901,9 @@ false
 
 [`Editor`](core.md#editor)\<`E`\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -1194,7 +970,7 @@ extension will be removed and the new one (if not null) will be added.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -1245,7 +1021,7 @@ function useKeymap(keymap: () => Keymap, options?: UseExtensionOptions): void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -1298,6 +1074,6 @@ Calls the given handler whenever the editor state changes.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

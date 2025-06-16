@@ -26,6 +26,6 @@ function defineBold(): BoldExtension;
 
 `BoldExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

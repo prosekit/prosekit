@@ -73,15 +73,7 @@ Fired when the open state changes.
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CreateEmits.openChange
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -123,14 +115,6 @@ information.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.altBoundary
-```
-
 ##### autoUpdate? {#autoupdate}
 
 ```ts
@@ -151,14 +135,6 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.autoUpdate
-```
-
 ##### boundary? {#boundary}
 
 ```ts
@@ -172,14 +148,6 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 
 ```ts
 'clippingAncestors'
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.boundary
 ```
 
 ##### defaultOpen? {#defaultopen}
@@ -201,14 +169,6 @@ opened unless the `open` prop is true.
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.defaultOpen
-```
-
 ##### dismissOnEscape? {#dismissonescape}
 
 ```ts
@@ -222,14 +182,6 @@ Escape key press.
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.dismissOnEscape
 ```
 
 ##### elementContext? {#elementcontext}
@@ -248,14 +200,6 @@ information.
 'floating'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.elementContext
-```
-
 ##### fitViewport? {#fitviewport}
 
 ```ts
@@ -269,14 +213,6 @@ the viewport.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.fitViewport
 ```
 
 ##### flip? {#flip}
@@ -296,14 +232,6 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.flip
-```
-
 ##### hide? {#hide}
 
 ```ts
@@ -314,14 +242,6 @@ optional hide: boolean;
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.hide
 ```
 
 ##### hoist? {#hoist}
@@ -341,14 +261,6 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.hoist
-```
-
 ##### inline? {#inline}
 
 ```ts
@@ -361,14 +273,6 @@ optional inline: boolean;
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.inline
-```
-
 ##### offset? {#offset}
 
 ```ts
@@ -379,14 +283,6 @@ optional offset: OffsetOptions;
 
 ```ts
 12
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.offset
 ```
 
 ##### open? {#open}
@@ -406,14 +302,6 @@ empty.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.open
-```
-
 ##### overflowPadding? {#overflowpadding}
 
 ```ts
@@ -424,14 +312,6 @@ optional overflowPadding: number;
 
 ```ts
 8
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.overflowPadding
 ```
 
 ##### overlap? {#overlap}
@@ -446,14 +326,6 @@ optional overlap: boolean;
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.overlap
-```
-
 ##### placement? {#placement}
 
 ```ts
@@ -464,14 +336,6 @@ optional placement: Placement;
 
 ```ts
 "top"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.placement
 ```
 
 ##### rootBoundary? {#rootboundary}
@@ -489,14 +353,6 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.rootBoundary
-```
-
 ##### sameHeight? {#sameheight}
 
 ```ts
@@ -510,14 +366,6 @@ reference element.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.sameHeight
 ```
 
 ##### sameWidth? {#samewidth}
@@ -535,14 +383,6 @@ reference element.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.sameWidth
-```
-
 ##### shift? {#shift}
 
 ```ts
@@ -557,14 +397,6 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.shift
-```
-
 ##### strategy? {#strategy}
 
 ```ts
@@ -577,14 +409,6 @@ The strategy to use for positioning
 
 ```ts
 "absolute"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.strategy
 ```
 
 ##### transform? {#transform}
@@ -603,14 +427,6 @@ performant, but can cause conflicts with transform animations.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.transform
-```
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Variables
@@ -621,6 +437,6 @@ Partial.transform
 const InlinePopover: DefineSetupFnComponent<InlinePopoverProps & HTMLAttributes, InlinePopoverEmits>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 <!-- DEBUG memberWithGroups 10 -->

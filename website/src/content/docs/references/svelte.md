@@ -36,8 +36,6 @@ sidebar:
 editor: Editor;
 ```
 
-<!-- DEBUG inheritance start -->
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -68,40 +66,16 @@ Options for [defineSvelteMarkView](#definesveltemarkview).
 optional as: MarkViewDOMSpec;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreMarkViewUserOptions.as
-```
-
 ##### component {#component}
 
 ```ts
 component: SvelteMarkViewComponent;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreMarkViewUserOptions.component
-```
-
 ##### contentAs? {#contentas}
 
 ```ts
 optional contentAs: MarkViewDOMSpec;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreMarkViewUserOptions.contentAs
 ```
 
 ##### destroy()? {#destroy}
@@ -114,15 +88,7 @@ optional destroy: () => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreMarkViewUserOptions.destroy
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### ignoreMutation()? {#ignoremutation}
 
@@ -159,15 +125,7 @@ optional ignoreMutation: (mutation: ViewMutationRecord) => boolean | void;
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreMarkViewUserOptions.ignoreMutation
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### name {#name}
 
@@ -176,8 +134,6 @@ name: string;
 ```
 
 The name of the mark type.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -238,15 +194,7 @@ contentRef: (element:
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-MarkViewContext.contentRef
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### mark {#mark}
 
@@ -254,26 +202,10 @@ MarkViewContext.contentRef
 mark: Writable<Mark>;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-MarkViewContext.mark
-```
-
 ##### view {#view}
 
 ```ts
 view: EditorView;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-MarkViewContext.view
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -306,40 +238,16 @@ Options for [defineSvelteNodeView](#definesveltenodeview).
 optional as: NodeViewDOMSpec;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.as
-```
-
 ##### component {#component-1}
 
 ```ts
 component: SvelteNodeViewComponent;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.component
-```
-
 ##### contentAs? {#contentas-1}
 
 ```ts
 optional contentAs: NodeViewDOMSpec;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.contentAs
 ```
 
 ##### deselectNode()? {#deselectnode}
@@ -352,15 +260,7 @@ optional deselectNode: () => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.deselectNode
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### destroy()? {#destroy-1}
 
@@ -372,15 +272,7 @@ optional destroy: () => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.destroy
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### ignoreMutation()? {#ignoremutation-1}
 
@@ -417,15 +309,7 @@ optional ignoreMutation: (mutation: ViewMutationRecord) => boolean | void;
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.ignoreMutation
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### name {#name-1}
 
@@ -434,8 +318,6 @@ name: string;
 ```
 
 The name of the node type.
-
-<!-- DEBUG inheritance start -->
 
 ##### onUpdate()? {#onupdate}
 
@@ -447,15 +329,7 @@ optional onUpdate: () => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.onUpdate
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### selectNode()? {#selectnode}
 
@@ -467,15 +341,7 @@ optional selectNode: () => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.selectNode
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### setSelection()? {#setselection}
 
@@ -538,15 +404,7 @@ optional setSelection: (anchor: number, head: number, root:
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.setSelection
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### stopEvent()? {#stopevent}
 
@@ -583,15 +441,7 @@ optional stopEvent: (event: Event) => boolean;
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.stopEvent
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### update()? {#update}
 
@@ -652,15 +502,7 @@ readonly [`Decoration`](pm/view.md#decoration)[]
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-CoreNodeViewUserOptions.update
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -721,28 +563,12 @@ contentRef: (element:
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContext.contentRef
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### decorations {#decorations}
 
 ```ts
 decorations: Writable<readonly Decoration[]>;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContext.decorations
 ```
 
 ##### getPos() {#getpos}
@@ -755,28 +581,12 @@ getPos: () => undefined | number;
 
 `undefined` \| `number`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContext.getPos
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### innerDecorations {#innerdecorations}
 
 ```ts
 innerDecorations: Writable<DecorationSource>;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContext.innerDecorations
 ```
 
 ##### node {#node}
@@ -785,26 +595,10 @@ NodeViewContext.innerDecorations
 node: Writable<ProseMirrorNode>;
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContext.node
-```
-
 ##### selected {#selected}
 
 ```ts
 selected: Writable<boolean>;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContext.selected
 ```
 
 ##### setAttrs() {#setattrs}
@@ -842,28 +636,12 @@ setAttrs: (attrs: Attrs) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContext.setAttrs
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### view {#view-1}
 
 ```ts
 view: EditorView;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-NodeViewContext.view
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -893,8 +671,6 @@ optional editor: Editor<any>;
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
 
-<!-- DEBUG inheritance start -->
-
 ##### priority? {#priority}
 
 ```ts
@@ -902,8 +678,6 @@ optional priority: Priority;
 ```
 
 Optional priority to add the extension with.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -915,7 +689,7 @@ Optional priority to add the extension with.
 type SvelteMarkViewComponent = Component<SvelteMarkViewProps>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -925,7 +699,7 @@ type SvelteMarkViewComponent = Component<SvelteMarkViewProps>;
 type SvelteNodeViewComponent = Component<SvelteNodeViewProps>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ## Variables
 
@@ -937,7 +711,7 @@ const ProseKit: typeof SvelteComponent;
 
 The root component for a ProseKit editor.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ## Functions
 
@@ -978,7 +752,7 @@ Defines a mark view using a Svelte component.
 
 [`Extension`](core.md#extension-1)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -1019,7 +793,7 @@ Defines a node view using a Svelte component.
 
 [`Extension`](core.md#extension-1)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -1072,7 +846,7 @@ Calls the given handler whenever the editor document changes.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -1168,7 +942,7 @@ false
 
 `Readable`\<[`Editor`](core.md#editor)\<`E`\>\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -1258,7 +1032,7 @@ extension will be removed and the new one (if not null) will be added.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -1309,7 +1083,7 @@ function useKeymap(keymapStore: Readable<Keymap>, options?: UseExtensionOptions)
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -1362,6 +1136,6 @@ Calls the given handler whenever the editor state changes.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

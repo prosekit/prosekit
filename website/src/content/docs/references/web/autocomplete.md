@@ -44,7 +44,7 @@ new AutocompleteEmptyElement(): AutocompleteEmptyElement;
 
 [`AutocompleteEmptyElement`](#autocompleteemptyelement)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=16384 -->
 
 ###### Inherited from
 
@@ -84,7 +84,7 @@ new AutocompleteItemElement(): AutocompleteItemElement;
 
 [`AutocompleteItemElement`](#autocompleteitemelement)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=16384 -->
 
 ###### Inherited from
 
@@ -108,14 +108,6 @@ If not provided, the value is the item's text content.
 
 ```ts
 ""
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompleteItemElementBase.value
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -150,7 +142,7 @@ new AutocompleteListElement(): AutocompleteListElement;
 
 [`AutocompleteListElement`](#autocompletelistelement)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=16384 -->
 
 ###### Inherited from
 
@@ -176,14 +168,6 @@ shown.
 
 ```ts
 defaultItemFilter
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompleteListElementBase.filter
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -218,7 +202,7 @@ new AutocompletePopoverElement(): AutocompletePopoverElement;
 
 [`AutocompletePopoverElement`](#autocompletepopoverelement)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=16384 -->
 
 ###### Inherited from
 
@@ -244,14 +228,6 @@ information.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.altBoundary
-```
-
 ##### autoUpdate {#autoupdate}
 
 ```ts
@@ -272,14 +248,6 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.autoUpdate
-```
-
 ##### boundary {#boundary}
 
 ```ts
@@ -290,14 +258,6 @@ boundary: Boundary;
 
 ```ts
 "The body element"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.boundary
 ```
 
 ##### elementContext {#elementcontext}
@@ -316,14 +276,6 @@ information.
 'floating'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.elementContext
-```
-
 ##### fitViewport {#fitviewport}
 
 ```ts
@@ -334,14 +286,6 @@ fitViewport: boolean;
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.fitViewport
 ```
 
 ##### flip {#flip}
@@ -361,14 +305,6 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.flip
-```
-
 ##### hide {#hide}
 
 ```ts
@@ -384,14 +320,6 @@ floating element is fully clipped.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.hide
-```
-
 ##### hoist {#hoist}
 
 ```ts
@@ -404,14 +332,6 @@ hoist: boolean;
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.hoist
-```
-
 ##### inline {#inline}
 
 ```ts
@@ -422,14 +342,6 @@ inline: boolean;
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.inline
 ```
 
 ##### offset {#offset}
@@ -446,14 +358,6 @@ The distance between the popover and the hovered block.
 4
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.offset
-```
-
 ##### overflowPadding {#overflowpadding}
 
 ```ts
@@ -464,14 +368,6 @@ overflowPadding: number;
 
 ```ts
 8
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.overflowPadding
 ```
 
 ##### overlap {#overlap}
@@ -489,14 +385,6 @@ in view.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.overlap
-```
-
 ##### placement {#placement}
 
 ```ts
@@ -509,14 +397,6 @@ The placement of the popover, relative to the text cursor.
 
 ```ts
 "bottom-start"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.placement
 ```
 
 ##### regex {#regex}
@@ -535,14 +415,6 @@ The regular expression to match the query text to autocomplete.
 null
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.regex
-```
-
 ##### rootBoundary {#rootboundary}
 
 ```ts
@@ -556,14 +428,6 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 ```ts
 'viewport'
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.rootBoundary
 ```
 
 ##### sameHeight {#sameheight}
@@ -581,14 +445,6 @@ reference element.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.sameHeight
-```
-
 ##### sameWidth {#samewidth}
 
 ```ts
@@ -602,14 +458,6 @@ reference element.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.sameWidth
 ```
 
 ##### shift {#shift}
@@ -626,14 +474,6 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.shift
-```
-
 ##### strategy {#strategy}
 
 ```ts
@@ -646,14 +486,6 @@ The strategy to use for positioning
 
 ```ts
 "absolute"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.strategy
 ```
 
 ##### transform {#transform}
@@ -670,14 +502,6 @@ performant, but can cause conflicts with transform animations.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-AutocompletePopoverElementBase.transform
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -709,14 +533,6 @@ select: CustomEvent<void>;
 ```
 
 Fired when the item is selected.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-ListboxItemEvents.select
-```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -752,8 +568,6 @@ If not provided, the value is the item's text content.
 ""
 ```
 
-<!-- DEBUG inheritance start -->
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -780,14 +594,6 @@ If not provided, the value is the item's text content.
 
 ```ts
 valueChange: CustomEvent<string>;
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-ListboxEvents.valueChange
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -830,14 +636,6 @@ shown.
 defaultItemFilter
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Pick.filter
-```
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -868,8 +666,6 @@ openChange: CustomEvent<boolean>;
 
 Fired when the open state changes.
 
-<!-- DEBUG inheritance start -->
-
 ##### queryChange {#querychange}
 
 ```ts
@@ -877,8 +673,6 @@ queryChange: CustomEvent<string>;
 ```
 
 Fired when the query changes.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -918,14 +712,6 @@ information.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.altBoundary
-```
-
 ##### autoUpdate {#autoupdate-1}
 
 ```ts
@@ -946,14 +732,6 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.autoUpdate
-```
-
 ##### boundary {#boundary-1}
 
 ```ts
@@ -964,14 +742,6 @@ boundary: Boundary;
 
 ```ts
 "The body element"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Overrides
-
-```ts
-OverlayPositionerProps.boundary
 ```
 
 ##### elementContext {#elementcontext-1}
@@ -990,14 +760,6 @@ information.
 'floating'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.elementContext
-```
-
 ##### fitViewport {#fitviewport-1}
 
 ```ts
@@ -1008,14 +770,6 @@ fitViewport: boolean;
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Overrides
-
-```ts
-OverlayPositionerProps.fitViewport
 ```
 
 ##### flip {#flip-1}
@@ -1035,14 +789,6 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.flip
-```
-
 ##### hide {#hide-1}
 
 ```ts
@@ -1058,14 +804,6 @@ floating element is fully clipped.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.hide
-```
-
 ##### hoist {#hoist-1}
 
 ```ts
@@ -1078,14 +816,6 @@ hoist: boolean;
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Overrides
-
-```ts
-OverlayPositionerProps.hoist
-```
-
 ##### inline {#inline-1}
 
 ```ts
@@ -1096,14 +826,6 @@ inline: boolean;
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Overrides
-
-```ts
-OverlayPositionerProps.inline
 ```
 
 ##### offset {#offset-1}
@@ -1120,14 +842,6 @@ The distance between the popover and the hovered block.
 4
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Overrides
-
-```ts
-OverlayPositionerProps.offset
-```
-
 ##### overflowPadding {#overflowpadding-1}
 
 ```ts
@@ -1138,14 +852,6 @@ overflowPadding: number;
 
 ```ts
 8
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Overrides
-
-```ts
-OverlayPositionerProps.overflowPadding
 ```
 
 ##### overlap {#overlap-1}
@@ -1163,14 +869,6 @@ in view.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.overlap
-```
-
 ##### placement {#placement-1}
 
 ```ts
@@ -1183,14 +881,6 @@ The placement of the popover, relative to the text cursor.
 
 ```ts
 "bottom-start"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Overrides
-
-```ts
-OverlayPositionerProps.placement
 ```
 
 ##### regex {#regex-1}
@@ -1209,8 +899,6 @@ The regular expression to match the query text to autocomplete.
 null
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### rootBoundary {#rootboundary-1}
 
 ```ts
@@ -1224,14 +912,6 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 ```ts
 'viewport'
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.rootBoundary
 ```
 
 ##### sameHeight {#sameheight-1}
@@ -1249,14 +929,6 @@ reference element.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.sameHeight
-```
-
 ##### sameWidth {#samewidth-1}
 
 ```ts
@@ -1270,14 +942,6 @@ reference element.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.sameWidth
 ```
 
 ##### shift {#shift-1}
@@ -1294,14 +958,6 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.shift
-```
-
 ##### strategy {#strategy-1}
 
 ```ts
@@ -1314,14 +970,6 @@ The strategy to use for positioning
 
 ```ts
 "absolute"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.strategy
 ```
 
 ##### transform {#transform-1}
@@ -1340,14 +988,6 @@ performant, but can cause conflicts with transform animations.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-OverlayPositionerProps.transform
-```
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Variables
@@ -1358,7 +998,7 @@ OverlayPositionerProps.transform
 const autocompleteListEvents: EventDeclarations<AutocompleteListEvents>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -1368,6 +1008,6 @@ const autocompleteListEvents: EventDeclarations<AutocompleteListEvents>;
 const autocompleteListProps: PropDeclarations<AutocompleteListProps>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 <!-- DEBUG memberWithGroups 10 -->

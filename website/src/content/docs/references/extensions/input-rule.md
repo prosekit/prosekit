@@ -43,8 +43,6 @@ optional attrs:
 
 Attributes to set on the mark.
 
-<!-- DEBUG inheritance start -->
-
 ##### inCodeMark? {#incodemark}
 
 ```ts
@@ -57,8 +55,6 @@ Whether this rule should fire inside marks marked as [code](https://prosemirror.
 
 `false`
 
-<!-- DEBUG inheritance start -->
-
 ##### regex {#regex}
 
 ```ts
@@ -69,8 +65,6 @@ The regular expression to match against, which should end with `$` and has
 exactly one capture group. All other matched text outside the capture group
 will be deleted.
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type}
 
 ```ts
@@ -78,8 +72,6 @@ type: string | MarkType;
 ```
 
 The type of mark to set.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -128,7 +120,7 @@ The ProseMirror input rule to add.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -170,7 +162,7 @@ pattern is typed.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -271,7 +263,7 @@ The node type to replace the matched text with.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -394,6 +386,6 @@ The type of node to wrap in.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

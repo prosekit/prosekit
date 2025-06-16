@@ -38,8 +38,6 @@ The attributes for the `codeBlock` node.
 language: string;
 ```
 
-<!-- DEBUG inheritance start -->
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -64,15 +62,11 @@ language: string;
 optional aliases: string[];
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### id {#id}
 
 ```ts
 id: string;
 ```
-
-<!-- DEBUG inheritance start -->
 
 ##### import {#import}
 
@@ -80,15 +74,11 @@ id: string;
 import: DynamicImportLanguageRegistration;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### name {#name}
 
 ```ts
 name: string;
 ```
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -114,15 +104,11 @@ name: string;
 displayName: string;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### id {#id-1}
 
 ```ts
 id: string;
 ```
-
-<!-- DEBUG inheritance start -->
 
 ##### import {#import-1}
 
@@ -130,15 +116,11 @@ id: string;
 import: DynamicImportThemeRegistration;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type}
 
 ```ts
 type: "light" | "dark";
 ```
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -168,8 +150,6 @@ type CodeBlockHighlightOptions = object;
 parser: HighlightParser;
 ```
 
-<!-- DEBUG inheritance start -->
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -182,7 +162,7 @@ type HighlightParser = Parser;
 
 An alias for the `Parser` type from the `prosemirror-highlight` package.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -497,7 +477,7 @@ type ShikiBundledLanguage =
   | "文言";
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -567,7 +547,7 @@ type ShikiBundledTheme =
   | "vitesse-light";
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ## Variables
 
@@ -577,7 +557,7 @@ type ShikiBundledTheme =
 const shikiBundledLanguagesInfo: ShikiBundledLanguageInfo[];
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -587,7 +567,7 @@ const shikiBundledLanguagesInfo: ShikiBundledLanguageInfo[];
 const shikiBundledThemesInfo: ShikiBundledThemeInfo[];
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ## Functions
 
@@ -609,7 +589,7 @@ Adds `codeBlock` nodes to the editor. This includes the following extensions:
 
 `CodeBlockExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -625,7 +605,7 @@ Adds commands for working with `codeBlock` nodes.
 
 `CodeBlockCommandsExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -641,7 +621,7 @@ Adds enter rules for `codeBlock` nodes.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -689,7 +669,7 @@ information.
 
 [`Extension`](../core.md#extension-1)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -705,7 +685,7 @@ Adds input rules for `codeBlock` nodes.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -721,7 +701,7 @@ Defines the keymap for code blocks.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -773,7 +753,7 @@ The options to configure the Shiki highlighter.
 
 [`Extension`](../core.md#extension-1)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -789,6 +769,6 @@ Defines the `codeBlock` node spec.
 
 `CodeBlockSpecExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

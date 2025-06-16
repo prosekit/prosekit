@@ -28,7 +28,7 @@ type BlockquoteCommandsExtension = Extension<{
 }>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -42,7 +42,7 @@ type BlockquoteSpecExtension = Extension<{
 }>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ## Functions
 
@@ -56,7 +56,7 @@ function defineBlockquote(): BlockquoteExtension;
 
 `BlockquoteExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -73,7 +73,7 @@ line followed by a space.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -87,6 +87,6 @@ function defineBlockquoteSpec(): BlockquoteSpecExtension;
 
 [`BlockquoteSpecExtension`](#blockquotespecextension)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

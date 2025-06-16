@@ -40,8 +40,6 @@ optional checked: boolean;
 
 Whether the list node is checked if its `kind` is `"task"`.
 
-<!-- DEBUG inheritance start -->
-
 ##### collapsed? {#collapsed}
 
 ```ts
@@ -49,8 +47,6 @@ optional collapsed: boolean;
 ```
 
 Whether the list node is collapsed if its `kind` is `"toggle"`.
-
-<!-- DEBUG inheritance start -->
 
 ##### kind? {#kind}
 
@@ -60,8 +56,6 @@ optional kind: "toggle" | "bullet" | "ordered" | "task";
 
 The kind of list node.
 
-<!-- DEBUG inheritance start -->
-
 ##### order? {#order}
 
 ```ts
@@ -69,8 +63,6 @@ optional order: null | number;
 ```
 
 The optional order of the list node.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -86,6 +78,6 @@ function defineList(): ListExtension;
 
 `ListExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

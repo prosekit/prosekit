@@ -69,8 +69,6 @@ The default value for the attribute.
 "left"
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### types {#types}
 
 ```ts
@@ -84,8 +82,6 @@ The names of node to add the attribute to.
 ```ts
 ["paragraph", "heading"]
 ```
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -154,6 +150,6 @@ a CSS `text-align` style.
 
 `TextAlignExtension`\<`NodeName`\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

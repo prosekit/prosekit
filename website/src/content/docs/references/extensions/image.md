@@ -36,23 +36,17 @@ sidebar:
 optional height: null | number;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### src? {#src}
 
 ```ts
 optional src: null | string;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### width? {#width}
 
 ```ts
 optional width: null | number;
 ```
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -68,6 +62,6 @@ function defineImage(): ImageExtension;
 
 `ImageExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

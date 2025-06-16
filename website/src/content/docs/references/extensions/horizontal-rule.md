@@ -26,7 +26,7 @@ type HorizontalRuleCommandsExtension = Extension<{
 }>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -36,7 +36,7 @@ type HorizontalRuleCommandsExtension = Extension<{
 type HorizontalRuleExtension = Union<[HorizontalRuleSpecExtension, HorizontalRuleCommandsExtension]>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -50,7 +50,7 @@ type HorizontalRuleSpecExtension = Extension<{
 }>;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ## Functions
 
@@ -64,7 +64,7 @@ function defineHorizontalRule(): HorizontalRuleExtension;
 
 [`HorizontalRuleExtension`](#horizontalruleextension)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -78,7 +78,7 @@ function defineHorizontalRuleCommands(): HorizontalRuleCommandsExtension;
 
 [`HorizontalRuleCommandsExtension`](#horizontalrulecommandsextension)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -92,7 +92,7 @@ function defineHorizontalRuleInputRule(): PlainExtension;
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -106,7 +106,7 @@ function defineHorizontalRuleSpec(): HorizontalRuleSpecExtension;
 
 [`HorizontalRuleSpecExtension`](#horizontalrulespecextension)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -122,6 +122,6 @@ Returns a command that inserts a horizontal rule at the current selection.
 
 [`Command`](../pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

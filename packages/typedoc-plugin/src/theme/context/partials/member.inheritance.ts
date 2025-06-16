@@ -2,7 +2,10 @@ import type {
   DeclarationReflection,
   SignatureReflection,
 } from 'typedoc'
-import { i18n } from 'typedoc'
+import {
+  i18n,
+  ReflectionKind,
+} from 'typedoc'
 import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
 import { heading } from '../../../libs/markdown/heading'
@@ -13,8 +16,12 @@ export function inheritance(
   options: { headingLevel: number },
 ): string {
   const md: string[] = [
-    '<!-- DEBUG inheritance start -->',
+    `<!-- DEBUG inheritance start kind=${model.kind} -->`,
   ]
+
+  if (model.kind === ReflectionKind.Property) {
+    return ''
+  }
 
   if (model.implementationOf) {
     if (options.headingLevel !== -1) {

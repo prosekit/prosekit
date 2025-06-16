@@ -26,6 +26,6 @@ function defineItalic(): ItalicExtension;
 
 `ItalicExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

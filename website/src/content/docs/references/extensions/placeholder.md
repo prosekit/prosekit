@@ -41,8 +41,6 @@ placeholder:
 The placeholder to use. It can be a static string or a function that
 receives the current editor state and returns a string.
 
-<!-- DEBUG inheritance start -->
-
 ##### strategy? {#strategy}
 
 ```ts
@@ -68,8 +66,6 @@ shown.
 ```ts
 'block'
 ```
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -113,6 +109,6 @@ empty.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

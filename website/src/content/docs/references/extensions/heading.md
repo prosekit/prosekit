@@ -36,8 +36,6 @@ sidebar:
 level: number;
 ```
 
-<!-- DEBUG inheritance start -->
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Functions
@@ -52,6 +50,6 @@ function defineHeading(): HeadingExtension;
 
 `HeadingExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

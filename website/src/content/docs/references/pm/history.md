@@ -26,7 +26,7 @@ const redo: Command;
 
 A command function that redoes the last undone change, if any.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -39,7 +39,7 @@ const redoNoScroll: Command;
 A command function that redoes the last undone change. Don't
 scroll the selection into view.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -51,7 +51,7 @@ const undo: Command;
 
 A command function that undoes the last change, if any.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -64,7 +64,7 @@ const undoNoScroll: Command;
 A command function that undoes the last change. Don't scroll the
 selection into view.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ## Functions
 
@@ -107,7 +107,7 @@ require a separate undo command to undo).
 
 [`Transaction`](state.md#transaction)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -154,7 +154,7 @@ to prevent it from being rolled back by undo.
 
 [`ProseMirrorPlugin`](state.md#prosemirrorplugin)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -195,7 +195,7 @@ The amount of redoable events available in a given editor state.
 
 `any`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -236,6 +236,6 @@ The amount of undoable events available in a given state.
 
 `any`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

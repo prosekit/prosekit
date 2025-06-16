@@ -164,7 +164,7 @@ All [CommandAction](#commandaction)s defined by the editor.
 
 [`ExtractCommandActions`](#extractcommandactions)\<`E`\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ##### focused {#focused}
 
@@ -180,7 +180,7 @@ Whether the editor is focused.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ##### marks {#marks}
 
@@ -196,7 +196,7 @@ All [MarkAction](#markaction)s defined by the editor.
 
 [`ExtractMarkActions`](#extractmarkactions)\<`E`\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ##### mounted {#mounted}
 
@@ -212,7 +212,7 @@ Whether the editor is mounted.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ##### nodes {#nodes}
 
@@ -228,7 +228,7 @@ All [NodeAction](#nodeaction)s defined by the editor.
 
 [`ExtractNodeActions`](#extractnodeactions)\<`E`\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ##### schema {#schema}
 
@@ -244,7 +244,7 @@ The editor schema.
 
 [`Schema`](pm/model.md#schema-3)\<`ExtractNodeNames`\<`E`\>, `ExtractMarkNames`\<`E`\>\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ##### state {#state}
 
@@ -260,7 +260,7 @@ The editor's current state.
 
 [`EditorState`](pm/state.md#editorstate)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 ##### view {#view}
 
@@ -276,7 +276,7 @@ The editor view.
 
 [`EditorView`](pm/view.md#editorview)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=262144 -->
 
 #### Methods
 
@@ -292,7 +292,7 @@ Blur the editor.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### canExec() {#canexec}
 
@@ -332,7 +332,7 @@ can be executed, otherwise `false`.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### exec() {#exec}
 
@@ -372,7 +372,7 @@ executed, otherwise `false`.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### focus() {#focus}
 
@@ -386,7 +386,7 @@ Focus the editor.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### getDocHTML() {#getdochtml}
 
@@ -425,7 +425,7 @@ Return a HTML string representing the editor's current document.
 
 `string`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### getDocJSON() {#getdocjson}
 
@@ -439,7 +439,7 @@ Return a JSON object representing the editor's current document.
 
 [`NodeJSON`](#nodejson)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### mount() {#mount}
 
@@ -482,7 +482,7 @@ Pass `null` or `undefined` to unmount the editor.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### setContent() {#setcontent}
 
@@ -560,7 +560,7 @@ Optional. Specifies the new selection. It can be one of the following:
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### unmount() {#unmount}
 
@@ -574,7 +574,7 @@ Unmount the editor. This is equivalent to `mount(null)`.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### updateState() {#updatestate}
 
@@ -618,7 +618,7 @@ Update the editor's state.
 This is an advanced method. Use it only if you have a specific reason to
 directly manipulate the editor's state.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### use() {#use}
 
@@ -658,7 +658,7 @@ extension.
 
 `VoidFunction`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -686,8 +686,6 @@ optional attrs: null | Attrs;
 
 The attributes of the mark to add.
 
-<!-- DEBUG inheritance start -->
-
 ##### from? {#from}
 
 ```ts
@@ -695,8 +693,6 @@ optional from: number;
 ```
 
 The start position of the document. By default it will be the start position of current selection.
-
-<!-- DEBUG inheritance start -->
 
 ##### to? {#to}
 
@@ -706,8 +702,6 @@ optional to: number;
 
 The end position of the document. By default it will be the end position of current selection.
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type}
 
 ```ts
@@ -715,8 +709,6 @@ type: string | MarkType;
 ```
 
 The type of the mark to add.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -796,7 +788,7 @@ It also has a `canExec` method to check if the command can be applied.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 8 -->
 
@@ -845,7 +837,7 @@ An alias for `canExec`.
 
 Use `canExec` instead.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### canExec() {#canexec-2}
 
@@ -885,7 +877,7 @@ can be executed, otherwise `false`.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -917,8 +909,6 @@ optional defaultContent:
 The starting document to use when creating the editor. It can be a
 ProseMirror node JSON object, a HTML string, or a HTML element instance.
 
-<!-- DEBUG inheritance start -->
-
 ##### ~~defaultDoc?~~ {#defaultdoc}
 
 ```ts
@@ -931,8 +921,6 @@ editor.
 ###### Deprecated
 
 Use `defaultContent` instead.
-
-<!-- DEBUG inheritance start -->
 
 ##### ~~defaultHTML?~~ {#defaulthtml}
 
@@ -949,8 +937,6 @@ when creating the editor.
 
 Use `defaultContent` instead.
 
-<!-- DEBUG inheritance start -->
-
 ##### defaultSelection? {#defaultselection}
 
 ```ts
@@ -959,8 +945,6 @@ optional defaultSelection: SelectionJSON;
 
 A JSON object representing the starting selection to use when creating the
 editor. It's only used when `defaultContent` is also provided.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -989,8 +973,6 @@ optional document: Document;
 The Document object to use for DOM operations. If not provided, defaults to
 the current browser's document object. Useful for server-side rendering or
 testing environments.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1024,19 +1006,11 @@ A set of additional nodes to count as
 [context](https://prosemirror.net/docs/ref/#model.ParseRule.context) when parsing, above the
 given [top node](https://prosemirror.net/docs/ref/#model.ParseOptions.topNode).
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`ParseOptions`](pm/model.md#parseoptions).[`context`](pm/model.md#parseoptions#context-1)
-
 ##### DOMParser? {#domparser}
 
 ```ts
 optional DOMParser: typeof DOMParser;
 ```
-
-<!-- DEBUG inheritance start -->
 
 ##### findPositions? {#findpositions}
 
@@ -1056,29 +1030,17 @@ in the parsed content will not be written to.
 node: Node;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ###### offset
 
 ```ts
 offset: number;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ###### pos?
 
 ```ts
 optional pos: number;
 ```
-
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`ParseOptions`](pm/model.md#parseoptions).[`findPositions`](pm/model.md#parseoptions#findpositions)
 
 ##### from? {#from-1}
 
@@ -1087,12 +1049,6 @@ optional from: number;
 ```
 
 The child node index to start parsing from.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`ParseOptions`](pm/model.md#parseoptions).[`from`](pm/model.md#parseoptions#from-3)
 
 ##### preserveWhitespace? {#preservewhitespace}
 
@@ -1104,12 +1060,6 @@ By default, whitespace is collapsed as per HTML's rules. Pass
 `true` to preserve whitespace, but normalize newlines to
 spaces, and `"full"` to preserve whitespace entirely.
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`ParseOptions`](pm/model.md#parseoptions).[`preserveWhitespace`](pm/model.md#parseoptions#preservewhitespace)
-
 ##### to? {#to-1}
 
 ```ts
@@ -1117,12 +1067,6 @@ optional to: number;
 ```
 
 The child node index to stop parsing at.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`ParseOptions`](pm/model.md#parseoptions).[`to`](pm/model.md#parseoptions#to-1)
 
 ##### topMatch? {#topmatch}
 
@@ -1132,12 +1076,6 @@ optional topMatch: ContentMatch;
 
 Provide the starting content match that content parsed into the
 top node is matched against.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`ParseOptions`](pm/model.md#parseoptions).[`topMatch`](pm/model.md#parseoptions#topmatch)
 
 ##### topNode? {#topnode}
 
@@ -1149,12 +1087,6 @@ By default, the content is parsed into the schema's default
 [top node type](https://prosemirror.net/docs/ref/#model.Schema.topNodeType). You can pass this
 option to use the type and attributes from a different node
 as the top container.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`ParseOptions`](pm/model.md#parseoptions).[`topNode`](pm/model.md#parseoptions#topnode)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1218,11 +1150,7 @@ properties in a schema's node and mark specs.
 
 [`DOMSerializer`](pm/model.md#domserializer)
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1273,8 +1201,6 @@ optional defaultContent:
 The starting document to use when creating the editor. It can be a
 ProseMirror node JSON object, a HTML string, or a HTML element instance.
 
-<!-- DEBUG inheritance start -->
-
 ##### ~~defaultDoc?~~ {#defaultdoc-1}
 
 ```ts
@@ -1287,8 +1213,6 @@ editor.
 ###### Deprecated
 
 Use `defaultContent` instead.
-
-<!-- DEBUG inheritance start -->
 
 ##### ~~defaultHTML?~~ {#defaulthtml-1}
 
@@ -1305,8 +1229,6 @@ when creating the editor.
 
 Use `defaultContent` instead.
 
-<!-- DEBUG inheritance start -->
-
 ##### defaultSelection? {#defaultselection-1}
 
 ```ts
@@ -1316,8 +1238,6 @@ optional defaultSelection: SelectionJSON;
 A JSON object representing the starting selection to use when creating the
 editor. It's only used when `defaultContent` is also provided.
 
-<!-- DEBUG inheritance start -->
-
 ##### extension {#extension}
 
 ```ts
@@ -1325,8 +1245,6 @@ extension: E;
 ```
 
 The extension to use when creating the editor.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1353,8 +1271,6 @@ type: string | MarkType;
 ```
 
 The type of the mark to expand.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1405,8 +1321,6 @@ The type of the mark to expand.
 optional _type: T;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### extension {#extension-2}
 
 ```ts
@@ -1415,15 +1329,11 @@ extension:
   | Extension<ExtensionTyping<any, any, any>>[];
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### priority? {#priority-1}
 
 ```ts
 optional priority: Priority;
 ```
-
-<!-- DEBUG inheritance start -->
 
 ##### schema {#schema-1}
 
@@ -1432,8 +1342,6 @@ schema: null | Schema<any, any>;
 ```
 
 The schema that this extension represents.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1461,8 +1369,6 @@ depth: number;
 
 The depth of the node.
 
-<!-- DEBUG inheritance start -->
-
 ##### node {#node}
 
 ```ts
@@ -1470,8 +1376,6 @@ node: ProseMirrorNode;
 ```
 
 The closest parent node that satisfies the predicate.
-
-<!-- DEBUG inheritance start -->
 
 ##### pos {#pos}
 
@@ -1481,8 +1385,6 @@ pos: number;
 
 The position directly before the node.
 
-<!-- DEBUG inheritance start -->
-
 ##### start {#start}
 
 ```ts
@@ -1490,8 +1392,6 @@ start: number;
 ```
 
 The position at the start of the node.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1528,8 +1428,6 @@ are discarded.
 200
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### newGroupDelay? {#newgroupdelay}
 
 ```ts
@@ -1544,8 +1442,6 @@ started.
 ```ts
 250
 ```
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1574,8 +1470,6 @@ optional pos: number;
 The position to insert the node at. By default it will insert after the
 current selection.
 
-<!-- DEBUG inheritance start -->
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -1602,8 +1496,6 @@ optional attrs: Attrs;
 
 When `type` is provided, the attributes of the node to insert.
 
-<!-- DEBUG inheritance start -->
-
 ##### node? {#node-1}
 
 ```ts
@@ -1611,8 +1503,6 @@ optional node: ProseMirrorNode;
 ```
 
 The node to insert. Either this or `type` must be provided.
-
-<!-- DEBUG inheritance start -->
 
 ##### pos? {#pos-2}
 
@@ -1623,8 +1513,6 @@ optional pos: number;
 The position to insert the node at. By default it will be the anchor
 position of current selection.
 
-<!-- DEBUG inheritance start -->
-
 ##### type? {#type-2}
 
 ```ts
@@ -1632,8 +1520,6 @@ optional type: string | NodeType;
 ```
 
 The type of the node to insert. Either this or `node` must be provided.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1660,8 +1546,6 @@ schema: Schema;
 ```
 
 The editor schema to use.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1781,7 +1665,7 @@ current editor selection.
 
 [`ProseMirrorNode`](pm/model.md#prosemirrornode)[]
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 #### Call Signature
 
@@ -1824,7 +1708,7 @@ current editor selection.
 
 [`ProseMirrorNode`](pm/model.md#prosemirrornode)[]
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 8 -->
 
@@ -1871,9 +1755,7 @@ with the given attributes.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1954,8 +1836,6 @@ attr: AttrName;
 
 The name of the attribute.
 
-<!-- DEBUG inheritance start -->
-
 ##### default? {#default-1}
 
 ```ts
@@ -1965,12 +1845,6 @@ optional default: AttrType;
 The default value for this attribute, to use when no explicit value is
 provided. Attributes that have no default must be provided whenever a node
 or mark of a type that has them is created.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`AttrSpec`](#attrspec).[`default`](#default-3)
 
 ##### parseDOM()? {#parsedom}
 
@@ -2009,9 +1883,7 @@ Parses the attribute value from the DOM.
 
 `AttrType`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### toDOM()? {#todom}
 
@@ -2059,9 +1931,7 @@ The value of the attribute of current ProseMirror node.
 
 `undefined` \| `null` \| \[`string`, `string`\]
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### type {#type-3}
 
@@ -2070,8 +1940,6 @@ type: MarkName;
 ```
 
 The name of the mark type.
-
-<!-- DEBUG inheritance start -->
 
 ##### validate? {#validate}
 
@@ -2087,12 +1955,6 @@ type or shape. When a string, it should be a `|`-separated string of
 primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
 `"undefined"`), and the library will raise an error when the value is not
 one of those types.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`AttrSpec`](#attrspec).[`validate`](#validate-2)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2171,12 +2033,6 @@ optional attrs: { [K in string | number | symbol]: AttrSpec<Attrs[K]> };
 
 The attributes that marks of this type get.
 
-<!-- DEBUG inheritance start -->
-
-###### Overrides
-
-[`MarkSpec`](pm/model.md#markspec).[`attrs`](pm/model.md#markspec#attrs-3)
-
 ##### code? {#code}
 
 ```ts
@@ -2185,12 +2041,6 @@ optional code: boolean;
 
 Marks the content of this span as being code, which causes some
 commands and extensions to treat it differently.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`MarkSpec`](pm/model.md#markspec).[`code`](pm/model.md#markspec#code)
 
 ##### excludes? {#excludes}
 
@@ -2212,12 +2062,6 @@ can set it to an empty string (or any string not containing the
 mark's own name) to allow multiple marks of a given type to
 coexist (as long as they have different attributes).
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`MarkSpec`](pm/model.md#markspec).[`excludes`](pm/model.md#markspec#excludes-2)
-
 ##### group? {#group}
 
 ```ts
@@ -2225,12 +2069,6 @@ optional group: string;
 ```
 
 The group or space-separated groups to which this mark belongs.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`MarkSpec`](pm/model.md#markspec).[`group`](pm/model.md#markspec#group)
 
 ##### inclusive? {#inclusive}
 
@@ -2242,12 +2080,6 @@ Whether this mark should be active when the cursor is positioned
 at its end (or at its start when that is also the start of the
 parent node). Defaults to true.
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`MarkSpec`](pm/model.md#markspec).[`inclusive`](pm/model.md#markspec#inclusive)
-
 ##### name {#name}
 
 ```ts
@@ -2255,8 +2087,6 @@ name: MarkName;
 ```
 
 The name of the mark type.
-
-<!-- DEBUG inheritance start -->
 
 ##### parseDOM? {#parsedom-1}
 
@@ -2268,12 +2098,6 @@ Associates DOM parser information with this mark (see the
 corresponding [node spec field](https://prosemirror.net/docs/ref/#model.NodeSpec.parseDOM)). The
 `mark` field in the rules is implied.
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`MarkSpec`](pm/model.md#markspec).[`parseDOM`](pm/model.md#markspec#parsedom)
-
 ##### spanning? {#spanning}
 
 ```ts
@@ -2282,12 +2106,6 @@ optional spanning: boolean;
 
 Determines whether marks of this type can span multiple adjacent
 nodes when serialized to DOM/HTML. Defaults to true.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`MarkSpec`](pm/model.md#markspec).[`spanning`](pm/model.md#markspec#spanning)
 
 ##### toDOM()? {#todom-1}
 
@@ -2341,13 +2159,7 @@ the top node.
 
 [`DOMOutputSpec`](pm/model.md#domoutputspec)
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`MarkSpec`](pm/model.md#markspec).[`toDOM`](pm/model.md#markspec#todom)
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2373,15 +2185,11 @@ the top node.
 constructor: MarkViewConstructor;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### name {#name-1}
 
 ```ts
 name: string;
 ```
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2479,7 +2287,7 @@ current editor selection.
 
 [`ProseMirrorNode`](pm/model.md#prosemirrornode)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 #### Call Signature
 
@@ -2522,7 +2330,7 @@ current editor selection.
 
 [`ProseMirrorNode`](pm/model.md#prosemirrornode)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 8 -->
 
@@ -2569,9 +2377,7 @@ with the given attributes.
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2652,8 +2458,6 @@ attr: AttrName;
 
 The name of the attribute.
 
-<!-- DEBUG inheritance start -->
-
 ##### default? {#default-2}
 
 ```ts
@@ -2663,12 +2467,6 @@ optional default: AttrType;
 The default value for this attribute, to use when no explicit value is
 provided. Attributes that have no default must be provided whenever a node
 or mark of a type that has them is created.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`AttrSpec`](#attrspec).[`default`](#default-3)
 
 ##### parseDOM()? {#parsedom-2}
 
@@ -2707,9 +2505,7 @@ Parses the attribute value from the DOM.
 
 `AttrType`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### splittable? {#splittable}
 
@@ -2726,8 +2522,6 @@ splitting the node by pressing `Enter`.
 ```ts
 undefined
 ```
-
-<!-- DEBUG inheritance start -->
 
 ##### toDOM()? {#todom-2}
 
@@ -2775,9 +2569,7 @@ The value of the attribute of current ProseMirror node.
 
 `undefined` \| `null` \| \[`string`, `string`\]
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### type {#type-4}
 
@@ -2786,8 +2578,6 @@ type: NodeName;
 ```
 
 The name of the node type.
-
-<!-- DEBUG inheritance start -->
 
 ##### validate? {#validate-1}
 
@@ -2803,12 +2593,6 @@ type or shape. When a string, it should be a `|`-separated string of
 primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
 `"undefined"`), and the library will raise an error when the value is not
 one of those types.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`AttrSpec`](#attrspec).[`validate`](#validate-2)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2836,15 +2620,11 @@ A JSON representation of the prosemirror node.
 optional attrs: Record<string, any>;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### content? {#content}
 
 ```ts
 optional content: NodeJSON[];
 ```
-
-<!-- DEBUG inheritance start -->
 
 ##### marks? {#marks-1}
 
@@ -2858,17 +2638,11 @@ optional marks: object[];
 optional attrs: Record<string, any>;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ###### type
 
 ```ts
 type: string;
 ```
-
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
 
 ##### text? {#text}
 
@@ -2876,15 +2650,11 @@ type: string;
 optional text: string;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type-5}
 
 ```ts
 type: string;
 ```
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2964,12 +2734,6 @@ Can be set to true to indicate that, though this isn't a [leaf
 node](https://prosemirror.net/docs/ref/#model.NodeType.isLeaf), it doesn't have directly editable
 content and should be treated as a single unit in the view.
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`atom`](pm/model.md#nodespec#atom)
-
 ##### attrs? {#attrs-8}
 
 ```ts
@@ -2977,12 +2741,6 @@ optional attrs: { [key in string | number | symbol]: AttrSpec<Attrs[key]> };
 ```
 
 The attributes that nodes of this type get.
-
-<!-- DEBUG inheritance start -->
-
-###### Overrides
-
-[`NodeSpec`](pm/model.md#nodespec).[`attrs`](pm/model.md#nodespec#attrs-4)
 
 ##### code? {#code-1}
 
@@ -2992,12 +2750,6 @@ optional code: boolean;
 
 Can be used to indicate that this node contains code, which
 causes some commands to behave differently.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`code`](pm/model.md#nodespec#code-1)
 
 ##### content? {#content-1}
 
@@ -3009,12 +2761,6 @@ The content expression for this node, as described in the [schema
 guide](https://prosemirror.net/docs/guide/#schema.content_expressions). When not given,
 the node does not allow any content.
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`content`](pm/model.md#nodespec#content-3)
-
 ##### defining? {#defining}
 
 ```ts
@@ -3024,12 +2770,6 @@ optional defining: boolean;
 When enabled, enables both
 [`definingAsContext`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingAsContext) and
 [`definingForContent`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingForContent).
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`defining`](pm/model.md#nodespec#defining)
 
 ##### definingAsContext? {#definingascontext}
 
@@ -3042,12 +2782,6 @@ node during replace operations (such as paste). Non-defining (the
 default) nodes get dropped when their entire content is replaced,
 whereas defining nodes persist and wrap the inserted content.
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`definingAsContext`](pm/model.md#nodespec#definingascontext)
-
 ##### definingForContent? {#definingforcontent}
 
 ```ts
@@ -3058,12 +2792,6 @@ In inserted content the defining parents of the content are
 preserved when possible. Typically, non-default-paragraph
 textblock types, and possibly list items, are marked as defining.
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`definingForContent`](pm/model.md#nodespec#definingforcontent)
-
 ##### disableDropCursor? {#disabledropcursor}
 
 ```ts
@@ -3071,12 +2799,6 @@ optional disableDropCursor:
   | boolean
   | (view: EditorView, pos: object, event: DragEvent) => boolean;
 ```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`disableDropCursor`](pm/model.md#nodespec#disabledropcursor)
 
 ##### draggable? {#draggable}
 
@@ -3086,12 +2808,6 @@ optional draggable: boolean;
 
 Determines whether nodes of this type can be dragged without
 being selected. Defaults to false.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`draggable`](pm/model.md#nodespec#draggable)
 
 ##### group? {#group-1}
 
@@ -3103,12 +2819,6 @@ The group or space-separated groups to which this node belongs,
 which can be referred to in the content expressions for the
 schema.
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`group`](pm/model.md#nodespec#group-1)
-
 ##### inline? {#inline}
 
 ```ts
@@ -3116,12 +2826,6 @@ optional inline: boolean;
 ```
 
 Should be set to true for inline nodes. (Implied for text nodes.)
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`inline`](pm/model.md#nodespec#inline)
 
 ##### isolating? {#isolating}
 
@@ -3133,12 +2837,6 @@ When enabled (default is false), the sides of nodes of this type
 count as boundaries that regular editing operations, like
 backspacing or lifting, won't cross. An example of a node that
 should probably have this enabled is a table cell.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`isolating`](pm/model.md#nodespec#isolating)
 
 ##### leafText()? {#leaftext}
 
@@ -3180,13 +2878,7 @@ this type should be serialized to a string (as used by
 
 `string`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`leafText`](pm/model.md#nodespec#leaftext)
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### linebreakReplacement? {#linebreakreplacement}
 
@@ -3202,12 +2894,6 @@ node and block types that don't but have
 between newline characters to or from linebreak nodes as
 appropriate.
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`linebreakReplacement`](pm/model.md#nodespec#linebreakreplacement-1)
-
 ##### marks? {#marks-2}
 
 ```ts
@@ -3220,12 +2906,6 @@ to explicitly allow all marks, or `""` to disallow marks. When
 not given, nodes with inline content default to allowing all
 marks, other nodes default to not allowing marks.
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`marks`](pm/model.md#nodespec#marks-6)
-
 ##### name {#name-2}
 
 ```ts
@@ -3233,8 +2913,6 @@ name: NodeName;
 ```
 
 The name of the node type.
-
-<!-- DEBUG inheritance start -->
 
 ##### parseDOM? {#parsedom-3}
 
@@ -3249,12 +2927,6 @@ implied (the name of this node will be filled in automatically).
 If you supply your own parser, you do not need to also specify
 parsing rules in your schema.
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`parseDOM`](pm/model.md#nodespec#parsedom-1)
-
 ##### selectable? {#selectable}
 
 ```ts
@@ -3264,12 +2936,6 @@ optional selectable: boolean;
 Controls whether nodes of this type can be selected as a [node
 selection](https://prosemirror.net/docs/ref/#state.NodeSelection). Defaults to true for non-text
 nodes.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`selectable`](pm/model.md#nodespec#selectable)
 
 ##### toDebugString()? {#todebugstring}
 
@@ -3309,13 +2975,7 @@ to a string representation for debugging (e.g. in error messages).
 
 `string`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`toDebugString`](pm/model.md#nodespec#todebugstring)
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### toDOM()? {#todom-3}
 
@@ -3365,13 +3025,7 @@ shouldn't override that in your text node spec.
 
 [`DOMOutputSpec`](pm/model.md#domoutputspec)
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`toDOM`](pm/model.md#nodespec#todom-1)
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### topNode? {#topnode-1}
 
@@ -3381,8 +3035,6 @@ optional topNode: boolean;
 
 Whether this is the top-level node type. Only one node type can be the
 top-level node type in a schema.
-
-<!-- DEBUG inheritance start -->
 
 ##### whitespace? {#whitespace}
 
@@ -3399,12 +3051,6 @@ given, but [`code`](https://prosemirror.net/docs/ref/#model.NodeSpec.code) is tr
 will default to `"pre"`. Note that this option doesn't influence
 the way the node is rendered—that should be handled by `toDOM`
 and/or styling.
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-[`NodeSpec`](pm/model.md#nodespec).[`whitespace`](pm/model.md#nodespec#whitespace-1)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3430,15 +3076,11 @@ and/or styling.
 constructor: NodeViewConstructor;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### name {#name-3}
 
 ```ts
 name: string;
 ```
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3466,8 +3108,6 @@ optional attrs: null | Attrs;
 
 If attrs is given, remove precisely the mark with the given attrs. Otherwise, remove all marks of the given type.
 
-<!-- DEBUG inheritance start -->
-
 ##### from? {#from-2}
 
 ```ts
@@ -3475,8 +3115,6 @@ optional from: number;
 ```
 
 The start position of the document. By default it will be the start position of current selection.
-
-<!-- DEBUG inheritance start -->
 
 ##### to? {#to-2}
 
@@ -3486,8 +3124,6 @@ optional to: number;
 
 The end position of the document. By default it will be the end position of current selection.
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type-6}
 
 ```ts
@@ -3495,8 +3131,6 @@ type: string | MarkType;
 ```
 
 The type of the mark to remove.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3525,8 +3159,6 @@ optional pos: number;
 The document position to start searching node. By default it will be the
 anchor position of current selection.
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type-7}
 
 ```ts
@@ -3534,8 +3166,6 @@ type: string | NodeType;
 ```
 
 The type of the node to remove.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3563,23 +3193,17 @@ A JSON representation of the prosemirror selection.
 anchor: number;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### head {#head}
 
 ```ts
 head: number;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type-8}
 
 ```ts
 type: string;
 ```
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3605,15 +3229,11 @@ type: string;
 optional attrs: null | Attrs;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### from? {#from-3}
 
 ```ts
 optional from: number;
 ```
-
-<!-- DEBUG inheritance start -->
 
 ##### to? {#to-3}
 
@@ -3621,15 +3241,11 @@ optional from: number;
 optional to: number;
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type-9}
 
 ```ts
 type: string | NodeType;
 ```
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3657,8 +3273,6 @@ attrs: Attrs;
 
 The attributes to set.
 
-<!-- DEBUG inheritance start -->
-
 ##### pos? {#pos-4}
 
 ```ts
@@ -3667,8 +3281,6 @@ optional pos: number;
 
 The position of the node. Defaults to the position of the wrapping node
 containing the current selection.
-
-<!-- DEBUG inheritance start -->
 
 ##### type {#type-10}
 
@@ -3683,8 +3295,6 @@ type:
 The type of node to set the attributes of.
 
 If current node is not of this type, the command will do nothing.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3714,8 +3324,6 @@ doc: NodeJSON;
 
 The main `ProseMirror` doc.
 
-<!-- DEBUG inheritance start -->
-
 ##### selection {#selection}
 
 ```ts
@@ -3723,8 +3331,6 @@ selection: SelectionJSON;
 ```
 
 The current selection.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3760,8 +3366,6 @@ stepType: string;
 
 The type of the step.
 
-<!-- DEBUG inheritance start -->
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -3788,8 +3392,6 @@ optional attrs: null | Attrs;
 
 The optional attributes to set on the mark.
 
-<!-- DEBUG inheritance start -->
-
 ##### enterInlineAtoms? {#enterinlineatoms}
 
 ```ts
@@ -3805,8 +3407,6 @@ completely covered by a selection range.
 ```ts
 true
 ```
-
-<!-- DEBUG inheritance start -->
 
 ##### removeWhenPresent? {#removewhenpresent}
 
@@ -3824,8 +3424,6 @@ already and part doesn't, the mark is removed (`true`) or added
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type-11}
 
 ```ts
@@ -3833,8 +3431,6 @@ type: string | MarkType;
 ```
 
 The mark type to toggle.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3862,8 +3458,6 @@ optional attrs: null | Attrs;
 
 The attributes of the node to toggle.
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type-12}
 
 ```ts
@@ -3871,8 +3465,6 @@ type: string | NodeType;
 ```
 
 The type of the node to toggle.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3900,8 +3492,6 @@ optional attrs: null | Attrs;
 
 The attributes of the node to toggle.
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type-13}
 
 ```ts
@@ -3909,8 +3499,6 @@ type: string | NodeType;
 ```
 
 The type of the node to toggle.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3938,8 +3526,6 @@ optional from: number;
 
 The start position of the document. By default it will be the start position of current selection.
 
-<!-- DEBUG inheritance start -->
-
 ##### to? {#to-4}
 
 ```ts
@@ -3947,8 +3533,6 @@ optional to: number;
 ```
 
 The end position of the document. By default it will be the end position of current selection.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3976,8 +3560,6 @@ optional from: number;
 
 The start position of the document. By default it will be the start position of current selection.
 
-<!-- DEBUG inheritance start -->
-
 ##### to? {#to-5}
 
 ```ts
@@ -3985,8 +3567,6 @@ optional to: number;
 ```
 
 The end position of the document. By default it will be the end position of current selection.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4014,8 +3594,6 @@ optional attrs: null | Attrs;
 
 Optional attributes to apply to the node.
 
-<!-- DEBUG inheritance start -->
-
 ##### ~~nodeType?~~ {#nodetype}
 
 ```ts
@@ -4026,8 +3604,6 @@ optional nodeType: NodeType;
 
 Use `nodeSpec` instead.
 
-<!-- DEBUG inheritance start -->
-
 ##### type {#type-14}
 
 ```ts
@@ -4035,8 +3611,6 @@ type: string | NodeType;
 ```
 
 The node type to wrap the selected textblock with.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4050,7 +3624,7 @@ type AnyAttrs = Attrs;
 
 An object holding the attributes of a node.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4112,8 +3686,6 @@ The default value for this attribute, to use when no explicit value is
 provided. Attributes that have no default must be provided whenever a node
 or mark of a type that has them is created.
 
-<!-- DEBUG inheritance start -->
-
 ##### validate? {#validate-2}
 
 ```ts
@@ -4128,8 +3700,6 @@ type or shape. When a string, it should be a `|`-separated string of
 primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
 `"undefined"`), and the library will raise an error when the value is not
 one of those types.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4194,9 +3764,9 @@ type ClickHandler = (view: EditorView, pos: number, event: MouseEvent) => boolea
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4295,9 +3865,9 @@ type ClickOnHandler = (view: EditorView, pos: number, node: ProseMirrorNode, nod
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4361,9 +3931,9 @@ The previous editor state.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4444,9 +4014,9 @@ behavior).
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4509,9 +4079,9 @@ type DoubleClickHandler = (view: EditorView, pos: number, event: MouseEvent) => 
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4610,9 +4180,9 @@ type DoubleClickOnHandler = (view: EditorView, pos: number, node: ProseMirrorNod
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4687,9 +4257,9 @@ type DropHandler = (view: EditorView, event: DragEvent, slice: Slice, moved: boo
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4720,7 +4290,7 @@ Extracts the [CommandAction](#commandaction)s from an extension type.
 </tbody>
 </table>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4753,7 +4323,7 @@ type ExtractCommandAppliers<E> = ExtractCommandActions<E>;
 
 Use `ExtractCommandActions` instead.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4782,7 +4352,7 @@ type ExtractCommandCreators<E> = ToCommandCreators<ExtractCommands<E>>;
 </tbody>
 </table>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4813,7 +4383,7 @@ Extracts the [MarkAction](#markaction)s from an extension type.
 </tbody>
 </table>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4842,7 +4412,7 @@ type ExtractMarks<E> = SimplifyDeeper<SimplifyUnion<ExtractTyping<E>["Marks"]>>;
 </tbody>
 </table>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4873,7 +4443,7 @@ Extracts the [NodeAction](#nodeaction)s from an extension type.
 </tbody>
 </table>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4902,7 +4472,7 @@ type ExtractNodes<E> = SimplifyDeeper<SimplifyUnion<ExtractTyping<E>["Nodes"]>>;
 </tbody>
 </table>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -4949,9 +4519,9 @@ Whether the editor has focus.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5002,9 +4572,9 @@ type KeyDownHandler = (view: EditorView, event: KeyboardEvent) => boolean | void
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5055,9 +4625,9 @@ type KeyPressHandler = (view: EditorView, event: KeyboardEvent) => boolean | voi
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5071,7 +4641,7 @@ type MarkBuilder = MarkAction;
 
 Use type [MarkAction](#markaction) instead.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5118,9 +4688,9 @@ The editor view.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5134,7 +4704,7 @@ type NodeBuilder = NodeAction;
 
 Use type [NodeAction](#nodeaction) instead.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5149,7 +4719,7 @@ type NodeChild =
 
 Available children parameters for [NodeAction](#nodeaction) and [MarkAction](#markaction).
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5164,7 +4734,7 @@ type NodeContent =
 
 #### Deprecated
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5227,9 +4797,9 @@ type PasteHandler = (view: EditorView, event: ClipboardEvent, slice: Slice) => b
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5268,9 +4838,9 @@ type ScrollToSelectionHandler = (view: EditorView) => boolean;
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5345,9 +4915,9 @@ type TextInputHandler = (view: EditorView, from: number, to: number, text: strin
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5410,9 +4980,9 @@ type TripleClickHandler = (view: EditorView, pos: number, event: MouseEvent) => 
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5511,9 +5081,9 @@ type TripleClickOnHandler = (view: EditorView, pos: number, node: ProseMirrorNod
 
 `boolean` \| `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5529,9 +5099,9 @@ A function that is called when the editor view is unmounted.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ***
 
@@ -5595,9 +5165,9 @@ The previous editor state.
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=2097152 -->
 
 ## Variables
 
@@ -5611,9 +5181,9 @@ const canUseRegexLookbehind: () => boolean;
 
 `boolean`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -5656,9 +5226,9 @@ It is a re-export of [clsx/lite](https://www.npmjs.com/package/clsx) with strict
 
 `string`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ## Functions
 
@@ -5699,7 +5269,7 @@ Returns a command that adds the given mark with the given attributes.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -5742,7 +5312,7 @@ Collects all children of a node or a fragment, and returns them as an array.
 
 [`ProseMirrorNode`](pm/model.md#prosemirrornode)[]
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -5787,7 +5357,7 @@ Collects all nodes from a given content.
 
 Use `collectChildren` instead.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -5845,7 +5415,7 @@ function createEditor<E>(options: EditorOptions<E>): Editor<E>;
 
 [`Editor`](#editor)\<`E`\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -5861,7 +5431,7 @@ Add some base commands
 
 `BaseCommandsExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -5931,7 +5501,7 @@ Priority.low
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -5972,7 +5542,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClick](https://pro
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6013,7 +5583,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn](https://p
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6081,7 +5651,7 @@ function defineCommands<T>(commands: T): Extension<{
   `Commands`: \{ \[K in string \| number \| symbol\]: Parameters\<T\[K\]\> \};
 \}\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6126,7 +5696,7 @@ Define a default state for the editor.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6148,7 +5718,7 @@ Use the following import instead:
 import { defineDoc } from 'prosekit/extensions/doc'
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6189,7 +5759,7 @@ Registers a event handler that is called when the editor document is changed.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6267,7 +5837,7 @@ Register a new event handler for the given event type.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6308,7 +5878,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClick](https
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6349,7 +5919,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClickOn](htt
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6390,7 +5960,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleDrop](https://pros
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6431,7 +6001,7 @@ Registers a event handler that is called when the editor gains or loses focus.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6476,7 +6046,7 @@ Add undo/redo history to the editor.
 
 `HistoryExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6517,7 +6087,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyDown](https://p
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6556,7 +6126,7 @@ function defineKeymap(keymap: Keymap): PlainExtension;
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6597,7 +6167,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6689,7 +6259,7 @@ function defineMarkAttr<MarkType, AttrName, AttrType>(options: MarkAttrOptions<M
   `Marks`: `{ [K in string]: AttrType }`;
 \}\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6769,7 +6339,7 @@ function defineMarkSpec<Mark, Attrs>(options: MarkSpecOptions<Mark, Attrs>): Ext
   `Marks`: `{ [K in string]: Attrs }`;
 \}\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6808,7 +6378,7 @@ function defineMarkView(options: MarkViewOptions): Extension;
 
 [`Extension`](#extension-1)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6849,7 +6419,7 @@ Registers a event handler that is called when the editor view is mounted.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -6943,7 +6513,7 @@ Defines an attribute for a node type.
   `Nodes`: `{ [K in string]: { [K in string]: AttrType } }`;
 \}\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7025,7 +6595,7 @@ Defines a node type.
   `Nodes`: `{ [K in string]: Attrs }`;
 \}\>
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7064,7 +6634,7 @@ function defineNodeView(options: NodeViewOptions): Extension;
 
 [`Extension`](#extension-1)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7088,7 +6658,7 @@ Use the following import instead:
 import { defineParagraph } from 'prosekit/extensions/paragraph'
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7129,7 +6699,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handlePaste](https://pro
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7182,7 +6752,7 @@ function that returns one or multiple plugins.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7223,7 +6793,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleScrollToSelection]
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7245,7 +6815,7 @@ Use the following import instead:
 import { defineText } from 'prosekit/extensions/text'
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7286,7 +6856,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleTextInput](https:/
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7327,7 +6897,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClick](https
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7368,7 +6938,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClickOn](htt
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7409,7 +6979,7 @@ Registers a event handler that is called when the editor view is unmounted.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7450,7 +7020,7 @@ Registers a event handler that is called when the editor state is updated.
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7510,7 +7080,7 @@ const json = { type: 'doc', content: [{ type: 'paragraph' }] }
 const element = elementFromJSON(json, { schema: editor.schema })
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7570,7 +7140,7 @@ const node = editor.state.doc
 const element = elementFromNode(node)
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7611,7 +7181,7 @@ Expands the selection to include the entire mark at the current position.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7675,7 +7245,7 @@ The position to start searching from.
 
 `undefined` \| [`FindParentNodeResult`](#findparentnoderesult)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7739,7 +7309,7 @@ The position to start searching from.
 
 `undefined` \| [`FindParentNodeResult`](#findparentnoderesult)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7799,7 +7369,7 @@ const json = { type: 'doc', content: [{ type: 'paragraph' }] }
 const html = htmlFromJSON(json, { schema: editor.schema })
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7859,7 +7429,7 @@ const node = document.getElementById('content')
 const html = htmlFromNode(node)
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7901,7 +7471,7 @@ the given position.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7943,7 +7513,7 @@ the given position.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -7984,7 +7554,7 @@ Checks if the given object is a `AllSelection` instance.
 
 `sel is AllSelection`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8025,7 +7595,7 @@ Checks if the given object is a `Fragment` instance.
 
 `fragment is ProseMirrorFragment`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8066,7 +7636,7 @@ Checks if the given object is a `Mark` instance.
 
 `mark is Mark`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8107,7 +7677,7 @@ Checks if the given object is a `NodeSelection` instance.
 
 `sel is NodeSelection`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8148,7 +7718,7 @@ Checks if the given object is a `ProseMirrorNode` instance.
 
 `node is ProseMirrorNode`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8189,7 +7759,7 @@ Checks if the given object is a `Selection` instance.
 
 `sel is Selection`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8230,7 +7800,7 @@ Checks if the given object is a `Slice` instance.
 
 `slice is Slice`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8271,7 +7841,7 @@ Checks if the given object is a `TextSelection` instance.
 
 `sel is TextSelection`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8331,7 +7901,7 @@ const html = '<p>Hello, world!</p>'
 const json = jsonFromHTML(html, { schema: editor.schema })
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8379,7 +7949,7 @@ const node = editor.state.doc
 const json = jsonFromNode(node)
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8427,7 +7997,7 @@ const state = editor.state
 const json = jsonFromState(state)
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8486,7 +8056,7 @@ Parse a HTML element to a ProseMirror node.
 const element = document.getElementById('content')
 const node = nodeFromElement(element, { schema: editor.schema })
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8545,7 +8115,7 @@ Parse a HTML string to a ProseMirror node.
 const html = '<p>Hello, world!</p>'
 const node = nodeFromHTML(html, { schema: editor.schema })
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8605,7 +8175,7 @@ const json = { type: 'doc', content: [{ type: 'paragraph' }] }
 const node = nodeFromJSON(json, { schema: editor.schema })
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8646,7 +8216,7 @@ Returns a command that removes the given mark.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8687,7 +8257,7 @@ Returns a command to remove the nearest ancestor node of a specific type from th
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8729,7 +8299,7 @@ type with the given attributes.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8770,7 +8340,7 @@ Returns a command that set the attributes of the current node.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8821,7 +8391,7 @@ function setSelectionAround(tr: Transaction, pos: number): void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8881,7 +8451,7 @@ const json = { state: { type: 'doc', content: [{ type: 'paragraph' }], selection
 const state = stateFromJSON(json, { schema: editor.schema })
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8926,7 +8496,7 @@ Returns a command that toggles the given mark with the given attributes.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -8972,7 +8542,7 @@ with the given attributes.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -9018,7 +8588,7 @@ lifting it up into its parent.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -9105,7 +8675,7 @@ function defineFancyNodes() {
 }
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 #### Call Signature
 
@@ -9188,7 +8758,7 @@ function defineFancyNodes() {
 }
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -9230,7 +8800,7 @@ to the default type (usually `paragraph`).
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -9271,7 +8841,7 @@ Returns a command that removes all marks.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -9351,7 +8921,7 @@ import { Priority, withPriority } from 'prosekit/core'
 const extension = withPriority(defineMyExtension(), Priority.high)
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -9396,6 +8966,6 @@ Returns a command that wraps the selected textblock with the given node type.
 
 [`Command`](pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

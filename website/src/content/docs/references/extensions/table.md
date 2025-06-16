@@ -38,8 +38,6 @@ col: number;
 
 The number of columns in the table.
 
-<!-- DEBUG inheritance start -->
-
 ##### header? {#header}
 
 ```ts
@@ -54,8 +52,6 @@ Whether the table has a header row.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
 ##### row {#row}
 
 ```ts
@@ -63,8 +59,6 @@ row: number;
 ```
 
 The number of rows in the table.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -93,8 +87,6 @@ optional pos: number;
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
 
-<!-- DEBUG inheritance start -->
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -122,8 +114,6 @@ optional anchor: number;
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
 
-<!-- DEBUG inheritance start -->
-
 ##### head? {#head}
 
 ```ts
@@ -132,8 +122,6 @@ optional head: number;
 
 A hit position of the table cell to select to. By default, the selection
 head will be used.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -162,8 +150,6 @@ optional pos: number;
 A hit position of the table to select from. By default, the selection
 anchor will be used.
 
-<!-- DEBUG inheritance start -->
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -191,8 +177,6 @@ optional anchor: number;
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
 
-<!-- DEBUG inheritance start -->
-
 ##### head? {#head-1}
 
 ```ts
@@ -201,8 +185,6 @@ optional head: number;
 
 A hit position of the table cell to select to. By default, the selection
 head will be used.
-
-<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -217,7 +199,7 @@ const exitTable: Command;
 When the selection is in a table node, create a default block after the table
 table, and move the cursor there.
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ## Functions
 
@@ -231,7 +213,7 @@ function defineTable(): TableExtension;
 
 `TableExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -247,7 +229,7 @@ Adds commands for working with `table` nodes.
 
 `TableCommandsExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -261,7 +243,7 @@ function defineTableHeaderCellSpec(): TableHeaderCellSpecExtension;
 
 `TableHeaderCellSpecExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -275,7 +257,7 @@ function defineTablePlugins(): PlainExtension;
 
 `PlainExtension`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -321,7 +303,7 @@ a header row.
 
 [`Command`](../pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -362,7 +344,7 @@ Checks if the given object is a `CellSelection` instance.
 
 `value is CellSelection`
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -401,7 +383,7 @@ function selectTable(options?: SelectTableOptions): Command;
 
 [`Command`](../pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -440,7 +422,7 @@ function selectTableCell(options?: SelectTableCellOptions): Command;
 
 [`Command`](../pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -479,7 +461,7 @@ function selectTableColumn(options?: SelectTableColumnOptions): Command;
 
 [`Command`](../pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 ***
 
@@ -518,6 +500,6 @@ function selectTableRow(options?: SelectTableRowOptions): Command;
 
 [`Command`](../pm/state.md#command)
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->

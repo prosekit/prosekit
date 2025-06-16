@@ -93,15 +93,7 @@ optional onSelect: (event: CustomEvent<void>) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.onSelect
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### value? {#value}
 
@@ -117,14 +109,6 @@ If not provided, the value is the item's text content.
 
 ```ts
 ""
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.value
 ```
 
 <!-- DEBUG memberWithGroups 10 -->
@@ -169,14 +153,6 @@ shown.
 defaultItemFilter
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.filter
-```
-
 ##### onValueChange()? {#onvaluechange}
 
 ```ts
@@ -212,15 +188,7 @@ optional onValueChange: (event: string) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.onValueChange
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -262,14 +230,6 @@ information.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.altBoundary
-```
-
 ##### autoUpdate? {#autoupdate}
 
 ```ts
@@ -290,14 +250,6 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.autoUpdate
-```
-
 ##### boundary? {#boundary}
 
 ```ts
@@ -308,14 +260,6 @@ optional boundary: Boundary;
 
 ```ts
 "The body element"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.boundary
 ```
 
 ##### elementContext? {#elementcontext}
@@ -334,14 +278,6 @@ information.
 'floating'
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.elementContext
-```
-
 ##### fitViewport? {#fitviewport}
 
 ```ts
@@ -352,14 +288,6 @@ optional fitViewport: boolean;
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.fitViewport
 ```
 
 ##### flip? {#flip}
@@ -379,14 +307,6 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.flip
-```
-
 ##### hide? {#hide}
 
 ```ts
@@ -402,14 +322,6 @@ floating element is fully clipped.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.hide
-```
-
 ##### hoist? {#hoist}
 
 ```ts
@@ -420,14 +332,6 @@ optional hoist: boolean;
 
 ```ts
 true
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.hoist
 ```
 
 ##### inline? {#inline}
@@ -442,14 +346,6 @@ optional inline: boolean;
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.inline
-```
-
 ##### offset? {#offset}
 
 ```ts
@@ -462,14 +358,6 @@ The distance between the popover and the hovered block.
 
 ```ts
 4
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.offset
 ```
 
 ##### onOpenChange()? {#onopenchange}
@@ -507,15 +395,7 @@ optional onOpenChange: (event: boolean) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.onOpenChange
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### onQueryChange()? {#onquerychange}
 
@@ -552,15 +432,7 @@ optional onQueryChange: (event: string) => void;
 
 `void`
 
-<!-- DEBUG inheritance start -->
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.onQueryChange
-```
+<!-- DEBUG inheritance start kind=4096 -->
 
 ##### overflowPadding? {#overflowpadding}
 
@@ -572,14 +444,6 @@ optional overflowPadding: number;
 
 ```ts
 8
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.overflowPadding
 ```
 
 ##### overlap? {#overlap}
@@ -597,14 +461,6 @@ in view.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.overlap
-```
-
 ##### placement? {#placement}
 
 ```ts
@@ -617,14 +473,6 @@ The placement of the popover, relative to the text cursor.
 
 ```ts
 "bottom-start"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.placement
 ```
 
 ##### regex? {#regex}
@@ -643,14 +491,6 @@ The regular expression to match the query text to autocomplete.
 null
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.regex
-```
-
 ##### rootBoundary? {#rootboundary}
 
 ```ts
@@ -664,14 +504,6 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 
 ```ts
 'viewport'
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.rootBoundary
 ```
 
 ##### sameHeight? {#sameheight}
@@ -689,14 +521,6 @@ reference element.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.sameHeight
-```
-
 ##### sameWidth? {#samewidth}
 
 ```ts
@@ -710,14 +534,6 @@ reference element.
 
 ```ts
 false
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.sameWidth
 ```
 
 ##### shift? {#shift}
@@ -734,14 +550,6 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.shift
-```
-
 ##### strategy? {#strategy}
 
 ```ts
@@ -754,14 +562,6 @@ The strategy to use for positioning
 
 ```ts
 "absolute"
-```
-
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.strategy
 ```
 
 ##### transform? {#transform}
@@ -780,14 +580,6 @@ performant, but can cause conflicts with transform animations.
 false
 ```
 
-<!-- DEBUG inheritance start -->
-
-###### Inherited from
-
-```ts
-Partial.transform
-```
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Variables
@@ -798,7 +590,7 @@ Partial.transform
 const AutocompleteEmpty: typeof SvelteComponent;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -808,7 +600,7 @@ const AutocompleteEmpty: typeof SvelteComponent;
 const AutocompleteItem: typeof SvelteComponent;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -818,7 +610,7 @@ const AutocompleteItem: typeof SvelteComponent;
 const AutocompleteList: typeof SvelteComponent;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 ***
 
@@ -828,6 +620,6 @@ const AutocompleteList: typeof SvelteComponent;
 const AutocompletePopover: typeof SvelteComponent;
 ```
 
-<!-- DEBUG inheritance start -->
+<!-- DEBUG inheritance start kind=32 -->
 
 <!-- DEBUG memberWithGroups 10 -->

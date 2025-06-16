@@ -36,11 +36,15 @@ sidebar:
 optional children: ComponentChildren;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### editor {#editor}
 
 ```ts
 editor: Editor;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -69,6 +73,8 @@ optional editor: Editor<any>;
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### priority? {#priority}
 
 ```ts
@@ -76,6 +82,8 @@ optional priority: Priority;
 ```
 
 Optional priority to add the extension with.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

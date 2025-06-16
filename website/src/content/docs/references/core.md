@@ -686,6 +686,8 @@ optional attrs: null | Attrs;
 
 The attributes of the mark to add.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### from? {#from}
 
 ```ts
@@ -693,6 +695,8 @@ optional from: number;
 ```
 
 The start position of the document. By default it will be the start position of current selection.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### to? {#to}
 
@@ -702,6 +706,8 @@ optional to: number;
 
 The end position of the document. By default it will be the end position of current selection.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type}
 
 ```ts
@@ -709,6 +715,8 @@ type: string | MarkType;
 ```
 
 The type of the mark to add.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -909,6 +917,8 @@ optional defaultContent:
 The starting document to use when creating the editor. It can be a
 ProseMirror node JSON object, a HTML string, or a HTML element instance.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### ~~defaultDoc?~~ {#defaultdoc}
 
 ```ts
@@ -921,6 +931,8 @@ editor.
 ###### Deprecated
 
 Use `defaultContent` instead.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### ~~defaultHTML?~~ {#defaulthtml}
 
@@ -937,6 +949,8 @@ when creating the editor.
 
 Use `defaultContent` instead.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### defaultSelection? {#defaultselection}
 
 ```ts
@@ -945,6 +959,8 @@ optional defaultSelection: SelectionJSON;
 
 A JSON object representing the starting selection to use when creating the
 editor. It's only used when `defaultContent` is also provided.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -973,6 +989,8 @@ optional document: Document;
 The Document object to use for DOM operations. If not provided, defaults to
 the current browser's document object. Useful for server-side rendering or
 testing environments.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1006,11 +1024,15 @@ A set of additional nodes to count as
 [context](https://prosemirror.net/docs/ref/#model.ParseRule.context) when parsing, above the
 given [top node](https://prosemirror.net/docs/ref/#model.ParseOptions.topNode).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### DOMParser? {#domparser}
 
 ```ts
 optional DOMParser: typeof DOMParser;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### findPositions? {#findpositions}
 
@@ -1030,17 +1052,25 @@ in the parsed content will not be written to.
 node: Node;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ###### offset
 
 ```ts
 offset: number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ###### pos?
 
 ```ts
 optional pos: number;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### from? {#from-1}
 
@@ -1049,6 +1079,8 @@ optional from: number;
 ```
 
 The child node index to start parsing from.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### preserveWhitespace? {#preservewhitespace}
 
@@ -1060,6 +1092,8 @@ By default, whitespace is collapsed as per HTML's rules. Pass
 `true` to preserve whitespace, but normalize newlines to
 spaces, and `"full"` to preserve whitespace entirely.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### to? {#to-1}
 
 ```ts
@@ -1067,6 +1101,8 @@ optional to: number;
 ```
 
 The child node index to stop parsing at.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### topMatch? {#topmatch}
 
@@ -1076,6 +1112,8 @@ optional topMatch: ContentMatch;
 
 Provide the starting content match that content parsed into the
 top node is matched against.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### topNode? {#topnode}
 
@@ -1087,6 +1125,8 @@ By default, the content is parsed into the schema's default
 [top node type](https://prosemirror.net/docs/ref/#model.Schema.topNodeType). You can pass this
 option to use the type and attributes from a different node
 as the top container.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1152,6 +1192,10 @@ properties in a schema's node and mark specs.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -1201,6 +1245,8 @@ optional defaultContent:
 The starting document to use when creating the editor. It can be a
 ProseMirror node JSON object, a HTML string, or a HTML element instance.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### ~~defaultDoc?~~ {#defaultdoc-1}
 
 ```ts
@@ -1213,6 +1259,8 @@ editor.
 ###### Deprecated
 
 Use `defaultContent` instead.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### ~~defaultHTML?~~ {#defaulthtml-1}
 
@@ -1229,6 +1277,8 @@ when creating the editor.
 
 Use `defaultContent` instead.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### defaultSelection? {#defaultselection-1}
 
 ```ts
@@ -1238,6 +1288,8 @@ optional defaultSelection: SelectionJSON;
 A JSON object representing the starting selection to use when creating the
 editor. It's only used when `defaultContent` is also provided.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### extension {#extension}
 
 ```ts
@@ -1245,6 +1297,8 @@ extension: E;
 ```
 
 The extension to use when creating the editor.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1271,6 +1325,8 @@ type: string | MarkType;
 ```
 
 The type of the mark to expand.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1321,6 +1377,8 @@ The type of the mark to expand.
 optional _type: T;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### extension {#extension-2}
 
 ```ts
@@ -1329,11 +1387,15 @@ extension:
   | Extension<ExtensionTyping<any, any, any>>[];
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### priority? {#priority-1}
 
 ```ts
 optional priority: Priority;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### schema {#schema-1}
 
@@ -1342,6 +1404,8 @@ schema: null | Schema<any, any>;
 ```
 
 The schema that this extension represents.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1369,6 +1433,8 @@ depth: number;
 
 The depth of the node.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### node {#node}
 
 ```ts
@@ -1376,6 +1442,8 @@ node: ProseMirrorNode;
 ```
 
 The closest parent node that satisfies the predicate.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### pos {#pos}
 
@@ -1385,6 +1453,8 @@ pos: number;
 
 The position directly before the node.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### start {#start}
 
 ```ts
@@ -1392,6 +1462,8 @@ start: number;
 ```
 
 The position at the start of the node.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1428,6 +1500,8 @@ are discarded.
 200
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### newGroupDelay? {#newgroupdelay}
 
 ```ts
@@ -1442,6 +1516,8 @@ started.
 ```ts
 250
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1470,6 +1546,8 @@ optional pos: number;
 The position to insert the node at. By default it will insert after the
 current selection.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -1496,6 +1574,8 @@ optional attrs: Attrs;
 
 When `type` is provided, the attributes of the node to insert.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### node? {#node-1}
 
 ```ts
@@ -1503,6 +1583,8 @@ optional node: ProseMirrorNode;
 ```
 
 The node to insert. Either this or `type` must be provided.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### pos? {#pos-2}
 
@@ -1513,6 +1595,8 @@ optional pos: number;
 The position to insert the node at. By default it will be the anchor
 position of current selection.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type? {#type-2}
 
 ```ts
@@ -1520,6 +1604,8 @@ optional type: string | NodeType;
 ```
 
 The type of the node to insert. Either this or `node` must be provided.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1546,6 +1632,8 @@ schema: Schema;
 ```
 
 The editor schema to use.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1757,6 +1845,8 @@ with the given attributes.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -1836,6 +1926,8 @@ attr: AttrName;
 
 The name of the attribute.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### default? {#default-1}
 
 ```ts
@@ -1845,6 +1937,8 @@ optional default: AttrType;
 The default value for this attribute, to use when no explicit value is
 provided. Attributes that have no default must be provided whenever a node
 or mark of a type that has them is created.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### parseDOM()? {#parsedom}
 
@@ -1884,6 +1978,8 @@ Parses the attribute value from the DOM.
 `AttrType`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### toDOM()? {#todom}
 
@@ -1933,6 +2029,8 @@ The value of the attribute of current ProseMirror node.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type-3}
 
 ```ts
@@ -1940,6 +2038,8 @@ type: MarkName;
 ```
 
 The name of the mark type.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### validate? {#validate}
 
@@ -1955,6 +2055,8 @@ type or shape. When a string, it should be a `|`-separated string of
 primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
 `"undefined"`), and the library will raise an error when the value is not
 one of those types.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2033,6 +2135,8 @@ optional attrs: { [K in string | number | symbol]: AttrSpec<Attrs[K]> };
 
 The attributes that marks of this type get.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### code? {#code}
 
 ```ts
@@ -2041,6 +2145,8 @@ optional code: boolean;
 
 Marks the content of this span as being code, which causes some
 commands and extensions to treat it differently.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### excludes? {#excludes}
 
@@ -2062,6 +2168,8 @@ can set it to an empty string (or any string not containing the
 mark's own name) to allow multiple marks of a given type to
 coexist (as long as they have different attributes).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### group? {#group}
 
 ```ts
@@ -2069,6 +2177,8 @@ optional group: string;
 ```
 
 The group or space-separated groups to which this mark belongs.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### inclusive? {#inclusive}
 
@@ -2080,6 +2190,8 @@ Whether this mark should be active when the cursor is positioned
 at its end (or at its start when that is also the start of the
 parent node). Defaults to true.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### name {#name}
 
 ```ts
@@ -2087,6 +2199,8 @@ name: MarkName;
 ```
 
 The name of the mark type.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### parseDOM? {#parsedom-1}
 
@@ -2098,6 +2212,8 @@ Associates DOM parser information with this mark (see the
 corresponding [node spec field](https://prosemirror.net/docs/ref/#model.NodeSpec.parseDOM)). The
 `mark` field in the rules is implied.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### spanning? {#spanning}
 
 ```ts
@@ -2106,6 +2222,8 @@ optional spanning: boolean;
 
 Determines whether marks of this type can span multiple adjacent
 nodes when serialized to DOM/HTML. Defaults to true.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### toDOM()? {#todom-1}
 
@@ -2161,6 +2279,8 @@ the top node.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -2185,11 +2305,15 @@ the top node.
 constructor: MarkViewConstructor;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### name {#name-1}
 
 ```ts
 name: string;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2379,6 +2503,8 @@ with the given attributes.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -2458,6 +2584,8 @@ attr: AttrName;
 
 The name of the attribute.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### default? {#default-2}
 
 ```ts
@@ -2467,6 +2595,8 @@ optional default: AttrType;
 The default value for this attribute, to use when no explicit value is
 provided. Attributes that have no default must be provided whenever a node
 or mark of a type that has them is created.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### parseDOM()? {#parsedom-2}
 
@@ -2507,6 +2637,8 @@ Parses the attribute value from the DOM.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### splittable? {#splittable}
 
 ```ts
@@ -2522,6 +2654,8 @@ splitting the node by pressing `Enter`.
 ```ts
 undefined
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### toDOM()? {#todom-2}
 
@@ -2571,6 +2705,8 @@ The value of the attribute of current ProseMirror node.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type-4}
 
 ```ts
@@ -2578,6 +2714,8 @@ type: NodeName;
 ```
 
 The name of the node type.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### validate? {#validate-1}
 
@@ -2593,6 +2731,8 @@ type or shape. When a string, it should be a `|`-separated string of
 primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
 `"undefined"`), and the library will raise an error when the value is not
 one of those types.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2620,11 +2760,15 @@ A JSON representation of the prosemirror node.
 optional attrs: Record<string, any>;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### content? {#content}
 
 ```ts
 optional content: NodeJSON[];
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### marks? {#marks-1}
 
@@ -2638,11 +2782,17 @@ optional marks: object[];
 optional attrs: Record<string, any>;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ###### type
 
 ```ts
 type: string;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### text? {#text}
 
@@ -2650,11 +2800,15 @@ type: string;
 optional text: string;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type-5}
 
 ```ts
 type: string;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2734,6 +2888,8 @@ Can be set to true to indicate that, though this isn't a [leaf
 node](https://prosemirror.net/docs/ref/#model.NodeType.isLeaf), it doesn't have directly editable
 content and should be treated as a single unit in the view.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### attrs? {#attrs-8}
 
 ```ts
@@ -2741,6 +2897,8 @@ optional attrs: { [key in string | number | symbol]: AttrSpec<Attrs[key]> };
 ```
 
 The attributes that nodes of this type get.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### code? {#code-1}
 
@@ -2750,6 +2908,8 @@ optional code: boolean;
 
 Can be used to indicate that this node contains code, which
 causes some commands to behave differently.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### content? {#content-1}
 
@@ -2761,6 +2921,8 @@ The content expression for this node, as described in the [schema
 guide](https://prosemirror.net/docs/guide/#schema.content_expressions). When not given,
 the node does not allow any content.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### defining? {#defining}
 
 ```ts
@@ -2770,6 +2932,8 @@ optional defining: boolean;
 When enabled, enables both
 [`definingAsContext`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingAsContext) and
 [`definingForContent`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingForContent).
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### definingAsContext? {#definingascontext}
 
@@ -2782,6 +2946,8 @@ node during replace operations (such as paste). Non-defining (the
 default) nodes get dropped when their entire content is replaced,
 whereas defining nodes persist and wrap the inserted content.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### definingForContent? {#definingforcontent}
 
 ```ts
@@ -2792,6 +2958,8 @@ In inserted content the defining parents of the content are
 preserved when possible. Typically, non-default-paragraph
 textblock types, and possibly list items, are marked as defining.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### disableDropCursor? {#disabledropcursor}
 
 ```ts
@@ -2799,6 +2967,8 @@ optional disableDropCursor:
   | boolean
   | (view: EditorView, pos: object, event: DragEvent) => boolean;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### draggable? {#draggable}
 
@@ -2808,6 +2978,8 @@ optional draggable: boolean;
 
 Determines whether nodes of this type can be dragged without
 being selected. Defaults to false.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### group? {#group-1}
 
@@ -2819,6 +2991,8 @@ The group or space-separated groups to which this node belongs,
 which can be referred to in the content expressions for the
 schema.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### inline? {#inline}
 
 ```ts
@@ -2826,6 +3000,8 @@ optional inline: boolean;
 ```
 
 Should be set to true for inline nodes. (Implied for text nodes.)
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### isolating? {#isolating}
 
@@ -2837,6 +3013,8 @@ When enabled (default is false), the sides of nodes of this type
 count as boundaries that regular editing operations, like
 backspacing or lifting, won't cross. An example of a node that
 should probably have this enabled is a table cell.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### leafText()? {#leaftext}
 
@@ -2880,6 +3058,8 @@ this type should be serialized to a string (as used by
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### linebreakReplacement? {#linebreakreplacement}
 
 ```ts
@@ -2894,6 +3074,8 @@ node and block types that don't but have
 between newline characters to or from linebreak nodes as
 appropriate.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### marks? {#marks-2}
 
 ```ts
@@ -2906,6 +3088,8 @@ to explicitly allow all marks, or `""` to disallow marks. When
 not given, nodes with inline content default to allowing all
 marks, other nodes default to not allowing marks.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### name {#name-2}
 
 ```ts
@@ -2913,6 +3097,8 @@ name: NodeName;
 ```
 
 The name of the node type.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### parseDOM? {#parsedom-3}
 
@@ -2927,6 +3113,8 @@ implied (the name of this node will be filled in automatically).
 If you supply your own parser, you do not need to also specify
 parsing rules in your schema.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### selectable? {#selectable}
 
 ```ts
@@ -2936,6 +3124,8 @@ optional selectable: boolean;
 Controls whether nodes of this type can be selected as a [node
 selection](https://prosemirror.net/docs/ref/#state.NodeSelection). Defaults to true for non-text
 nodes.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### toDebugString()? {#todebugstring}
 
@@ -2976,6 +3166,8 @@ to a string representation for debugging (e.g. in error messages).
 `string`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### toDOM()? {#todom-3}
 
@@ -3027,6 +3219,8 @@ shouldn't override that in your text node spec.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### topNode? {#topnode-1}
 
 ```ts
@@ -3035,6 +3229,8 @@ optional topNode: boolean;
 
 Whether this is the top-level node type. Only one node type can be the
 top-level node type in a schema.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### whitespace? {#whitespace}
 
@@ -3051,6 +3247,8 @@ given, but [`code`](https://prosemirror.net/docs/ref/#model.NodeSpec.code) is tr
 will default to `"pre"`. Note that this option doesn't influence
 the way the node is rendered—that should be handled by `toDOM`
 and/or styling.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3076,11 +3274,15 @@ and/or styling.
 constructor: NodeViewConstructor;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### name {#name-3}
 
 ```ts
 name: string;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3108,6 +3310,8 @@ optional attrs: null | Attrs;
 
 If attrs is given, remove precisely the mark with the given attrs. Otherwise, remove all marks of the given type.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### from? {#from-2}
 
 ```ts
@@ -3115,6 +3319,8 @@ optional from: number;
 ```
 
 The start position of the document. By default it will be the start position of current selection.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### to? {#to-2}
 
@@ -3124,6 +3330,8 @@ optional to: number;
 
 The end position of the document. By default it will be the end position of current selection.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type-6}
 
 ```ts
@@ -3131,6 +3339,8 @@ type: string | MarkType;
 ```
 
 The type of the mark to remove.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3159,6 +3369,8 @@ optional pos: number;
 The document position to start searching node. By default it will be the
 anchor position of current selection.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type-7}
 
 ```ts
@@ -3166,6 +3378,8 @@ type: string | NodeType;
 ```
 
 The type of the node to remove.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3193,17 +3407,23 @@ A JSON representation of the prosemirror selection.
 anchor: number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### head {#head}
 
 ```ts
 head: number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type-8}
 
 ```ts
 type: string;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3229,11 +3449,15 @@ type: string;
 optional attrs: null | Attrs;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### from? {#from-3}
 
 ```ts
 optional from: number;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### to? {#to-3}
 
@@ -3241,11 +3465,15 @@ optional from: number;
 optional to: number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type-9}
 
 ```ts
 type: string | NodeType;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3273,6 +3501,8 @@ attrs: Attrs;
 
 The attributes to set.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### pos? {#pos-4}
 
 ```ts
@@ -3281,6 +3511,8 @@ optional pos: number;
 
 The position of the node. Defaults to the position of the wrapping node
 containing the current selection.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### type {#type-10}
 
@@ -3295,6 +3527,8 @@ type:
 The type of node to set the attributes of.
 
 If current node is not of this type, the command will do nothing.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3324,6 +3558,8 @@ doc: NodeJSON;
 
 The main `ProseMirror` doc.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### selection {#selection}
 
 ```ts
@@ -3331,6 +3567,8 @@ selection: SelectionJSON;
 ```
 
 The current selection.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3366,6 +3604,8 @@ stepType: string;
 
 The type of the step.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -3392,6 +3632,8 @@ optional attrs: null | Attrs;
 
 The optional attributes to set on the mark.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### enterInlineAtoms? {#enterinlineatoms}
 
 ```ts
@@ -3407,6 +3649,8 @@ completely covered by a selection range.
 ```ts
 true
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### removeWhenPresent? {#removewhenpresent}
 
@@ -3424,6 +3668,8 @@ already and part doesn't, the mark is removed (`true`) or added
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type-11}
 
 ```ts
@@ -3431,6 +3677,8 @@ type: string | MarkType;
 ```
 
 The mark type to toggle.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3458,6 +3706,8 @@ optional attrs: null | Attrs;
 
 The attributes of the node to toggle.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type-12}
 
 ```ts
@@ -3465,6 +3715,8 @@ type: string | NodeType;
 ```
 
 The type of the node to toggle.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3492,6 +3744,8 @@ optional attrs: null | Attrs;
 
 The attributes of the node to toggle.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type-13}
 
 ```ts
@@ -3499,6 +3753,8 @@ type: string | NodeType;
 ```
 
 The type of the node to toggle.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3526,6 +3782,8 @@ optional from: number;
 
 The start position of the document. By default it will be the start position of current selection.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### to? {#to-4}
 
 ```ts
@@ -3533,6 +3791,8 @@ optional to: number;
 ```
 
 The end position of the document. By default it will be the end position of current selection.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3560,6 +3820,8 @@ optional from: number;
 
 The start position of the document. By default it will be the start position of current selection.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### to? {#to-5}
 
 ```ts
@@ -3567,6 +3829,8 @@ optional to: number;
 ```
 
 The end position of the document. By default it will be the end position of current selection.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3594,6 +3858,8 @@ optional attrs: null | Attrs;
 
 Optional attributes to apply to the node.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### ~~nodeType?~~ {#nodetype}
 
 ```ts
@@ -3604,6 +3870,8 @@ optional nodeType: NodeType;
 
 Use `nodeSpec` instead.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type-14}
 
 ```ts
@@ -3611,6 +3879,8 @@ type: string | NodeType;
 ```
 
 The node type to wrap the selected textblock with.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3686,6 +3956,8 @@ The default value for this attribute, to use when no explicit value is
 provided. Attributes that have no default must be provided whenever a node
 or mark of a type that has them is created.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### validate? {#validate-2}
 
 ```ts
@@ -3700,6 +3972,8 @@ type or shape. When a string, it should be a `|`-separated string of
 primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
 `"undefined"`), and the library will raise an error when the value is not
 one of those types.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

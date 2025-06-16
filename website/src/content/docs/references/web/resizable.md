@@ -76,6 +76,8 @@ The position of the handle.
 "bottom-right"
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -124,17 +126,23 @@ ResizableRootElementBase.constructor
 aspectRatio: null | number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### height {#height}
 
 ```ts
 height: null | number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### width {#width}
 
 ```ts
 width: null | number;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -176,6 +184,8 @@ The position of the handle.
 "bottom-right"
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -203,6 +213,8 @@ resizeEnd: CustomEvent<{
 }>;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### resizeStart {#resizestart}
 
 ```ts
@@ -211,6 +223,8 @@ resizeStart: CustomEvent<{
   width: number;
 }>;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -236,17 +250,23 @@ resizeStart: CustomEvent<{
 aspectRatio: null | number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### height {#height-1}
 
 ```ts
 height: null | number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### width {#width-1}
 
 ```ts
 width: null | number;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

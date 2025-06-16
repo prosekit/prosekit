@@ -141,6 +141,8 @@ protected done: boolean = false;
 
 A boolean indicating whether the upload is complete (either successfully or with an error).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### finished {#finished}
 
 ```ts
@@ -148,6 +150,8 @@ readonly finished: Promise<Result>;
 ```
 
 A promise that fulfills once the upload is complete, or rejects if an error occurs.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### objectURL {#objecturl}
 
@@ -158,6 +162,8 @@ readonly objectURL: string;
 An [object URL](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL)
 representing the file to be uploaded. This URL will be revoked once the
 upload is complete successfully.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -329,6 +335,8 @@ event: DragEvent;
 
 The event that triggered the drop.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### file {#file}
 
 ```ts
@@ -336,6 +344,8 @@ file: File;
 ```
 
 The file that was dropped.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### pos {#pos}
 
@@ -345,6 +355,8 @@ pos: number;
 
 The position of the document where the file was dropped.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### view {#view}
 
 ```ts
@@ -352,6 +364,8 @@ view: EditorView;
 ```
 
 The editor view.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -379,6 +393,8 @@ event: ClipboardEvent;
 
 The event that triggered the paste.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### file {#file-1}
 
 ```ts
@@ -387,6 +403,8 @@ file: File;
 
 The file that was pasted.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### view {#view-1}
 
 ```ts
@@ -394,6 +412,8 @@ view: EditorView;
 ```
 
 The editor view.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -420,6 +440,8 @@ file: File;
 ```
 
 The file to be uploaded.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### onProgress() {#onprogress}
 
@@ -460,6 +482,8 @@ A callback function that should be called with the upload progress updates.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -486,11 +510,15 @@ An interface representing the upload progress.
 loaded: number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### total {#total}
 
 ```ts
 total: number;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

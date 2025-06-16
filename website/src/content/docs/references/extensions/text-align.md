@@ -69,6 +69,8 @@ The default value for the attribute.
 "left"
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### types {#types}
 
 ```ts
@@ -82,6 +84,8 @@ The names of node to add the attribute to.
 ```ts
 ["paragraph", "heading"]
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

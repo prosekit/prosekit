@@ -52,6 +52,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### autoUpdate? {#autoupdate}
 
 ```ts
@@ -72,6 +74,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### boundary? {#boundary}
 
 ```ts
@@ -86,6 +90,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 ```ts
 'clippingAncestors'
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### elementContext? {#elementcontext}
 
@@ -103,6 +109,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### fitViewport? {#fitviewport}
 
 ```ts
@@ -117,6 +125,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### flip? {#flip}
 
@@ -135,6 +145,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### hide? {#hide}
 
 ```ts
@@ -149,6 +161,8 @@ floating element is fully clipped.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### hoist? {#hoist}
 
@@ -167,6 +181,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### inline? {#inline}
 
 ```ts
@@ -182,6 +198,8 @@ multiple lines.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### offset? {#offset}
 
 ```ts
@@ -195,6 +213,8 @@ The distance between the reference and floating element.
 ```ts
 6
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### overflowPadding? {#overflowpadding}
 
@@ -211,6 +231,8 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 4
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### overlap? {#overlap}
 
 ```ts
@@ -226,6 +248,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### placement? {#placement}
 
 ```ts
@@ -239,6 +263,8 @@ The placement of the popover, relative to the hovered table cell.
 ```ts
 "top"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### rootBoundary? {#rootboundary}
 
@@ -255,6 +281,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### sameHeight? {#sameheight}
 
 ```ts
@@ -269,6 +297,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### sameWidth? {#samewidth}
 
@@ -285,6 +315,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### shift? {#shift}
 
 ```ts
@@ -299,6 +331,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### strategy? {#strategy}
 
 ```ts
@@ -312,6 +346,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### transform? {#transform}
 
@@ -328,6 +364,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -358,6 +396,8 @@ Props for the [TableHandleColumnTrigger](#tablehandlecolumntrigger) component.
 ```ts
 optional editor: null | Editor<TableCommandsExtension>;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -399,6 +439,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### autoUpdate? {#autoupdate-1}
 
 ```ts
@@ -419,6 +461,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### boundary? {#boundary-1}
 
 ```ts
@@ -434,11 +478,15 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 'clippingAncestors'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### editor? {#editor-1}
 
 ```ts
 optional editor: null | Editor<any>;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### elementContext? {#elementcontext-1}
 
@@ -456,6 +504,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### eventTarget? {#eventtarget}
 
 ```ts
@@ -466,6 +516,8 @@ optional eventTarget:
 
 By default, the menu element will listen for keydown events. You can pass a
 different element to listen for keydown events.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### fitViewport? {#fitviewport-1}
 
@@ -481,6 +533,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### flip? {#flip-1}
 
@@ -499,6 +553,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### hide? {#hide-1}
 
 ```ts
@@ -513,6 +569,8 @@ floating element is fully clipped.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### hoist? {#hoist-1}
 
@@ -531,6 +589,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### inline? {#inline-1}
 
 ```ts
@@ -546,6 +606,8 @@ multiple lines.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### offset? {#offset-1}
 
 ```ts
@@ -557,6 +619,8 @@ optional offset: OffsetOptions;
 ```ts
 {mainAxis: -4, crossAxis: 4}
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### onEscapeKeyDown()? {#onescapekeydown}
 
@@ -595,6 +659,8 @@ optional onEscapeKeyDown: (event: EscapeKeyDownEvent) => void;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### onFocusOutside()? {#onfocusoutside}
 
 ```ts
@@ -631,6 +697,8 @@ optional onFocusOutside: (event: FocusOutsideEvent) => void;
 `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### onInteractOutside()? {#oninteractoutside}
 
@@ -669,6 +737,8 @@ optional onInteractOutside: (event: InteractOutsideEvent) => void;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### onPointerDownOutside()? {#onpointerdownoutside}
 
 ```ts
@@ -706,6 +776,8 @@ optional onPointerDownOutside: (event: PointerDownOutsideEvent) => void;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### overflowPadding? {#overflowpadding-1}
 
 ```ts
@@ -720,6 +792,8 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 ```ts
 4
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### overlap? {#overlap-1}
 
@@ -736,6 +810,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### placement? {#placement-1}
 
 ```ts
@@ -747,6 +823,8 @@ optional placement: Placement;
 ```ts
 'bottom-start'
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### rootBoundary? {#rootboundary-1}
 
@@ -763,6 +841,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### sameHeight? {#sameheight-1}
 
 ```ts
@@ -777,6 +857,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### sameWidth? {#samewidth-1}
 
@@ -793,6 +875,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### shift? {#shift-1}
 
 ```ts
@@ -807,6 +891,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### strategy? {#strategy-1}
 
 ```ts
@@ -820,6 +906,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### transform? {#transform-1}
 
@@ -836,6 +924,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -875,6 +965,8 @@ The filter function to determine if an item should be shown in the listbox.
 defaultItemFilter
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### onSelect()? {#onselect}
 
 ```ts
@@ -912,6 +1004,8 @@ optional onSelect: (event: CustomEvent<void>) => void;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### query? {#query}
 
 ```ts
@@ -925,6 +1019,8 @@ The query string to filter the listbox items.
 ```ts
 ""
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### value? {#value}
 
@@ -940,6 +1036,8 @@ list. By default, a random value is generated.
 ```ts
 ""
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1003,6 +1101,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### autoUpdate? {#autoupdate-2}
 
 ```ts
@@ -1023,6 +1123,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### boundary? {#boundary-2}
 
 ```ts
@@ -1037,6 +1139,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 ```ts
 'clippingAncestors'
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### elementContext? {#elementcontext-2}
 
@@ -1054,6 +1158,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### fitViewport? {#fitviewport-2}
 
 ```ts
@@ -1068,6 +1174,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### flip? {#flip-2}
 
@@ -1086,6 +1194,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### hide? {#hide-2}
 
 ```ts
@@ -1100,6 +1210,8 @@ floating element is fully clipped.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### hoist? {#hoist-2}
 
@@ -1118,6 +1230,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### inline? {#inline-2}
 
 ```ts
@@ -1133,6 +1247,8 @@ multiple lines.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### offset? {#offset-2}
 
 ```ts
@@ -1146,6 +1262,8 @@ The distance between the reference and floating element.
 ```ts
 6
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### overflowPadding? {#overflowpadding-2}
 
@@ -1162,6 +1280,8 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 4
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### overlap? {#overlap-2}
 
 ```ts
@@ -1177,6 +1297,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### placement? {#placement-2}
 
 ```ts
@@ -1190,6 +1312,8 @@ The placement of the popover, relative to the hovered table cell.
 ```ts
 "left"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### rootBoundary? {#rootboundary-2}
 
@@ -1206,6 +1330,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### sameHeight? {#sameheight-2}
 
 ```ts
@@ -1220,6 +1346,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### sameWidth? {#samewidth-2}
 
@@ -1236,6 +1364,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### shift? {#shift-2}
 
 ```ts
@@ -1250,6 +1380,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### strategy? {#strategy-2}
 
 ```ts
@@ -1263,6 +1395,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### transform? {#transform-2}
 
@@ -1279,6 +1413,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1309,6 +1445,8 @@ Props for the [TableHandleRowTrigger](#tablehandlerowtrigger) component.
 ```ts
 optional editor: null | Editor<TableCommandsExtension>;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### onSelect()? {#onselect-1}
 
@@ -1346,6 +1484,8 @@ optional onSelect: (event: CustomEvent<void>) => void;
 `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

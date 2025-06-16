@@ -142,6 +142,8 @@ selections that are not inside a code block or code mark.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### onEnter {#onenter}
 
 ```ts
@@ -151,6 +153,8 @@ onEnter: MatchHandler;
 A callback that is called when the rule starts to match, and also on
 subsequent updates while the rule continues to match.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### onLeave? {#onleave}
 
 ```ts
@@ -158,6 +162,8 @@ optional onLeave: VoidFunction;
 ```
 
 A callback that is called when the rule stops matching.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### regex {#regex}
 
@@ -170,6 +176,8 @@ last match before the cursor is used.
 
 For a slash menu, you might use `//(|\S.*)$/u`.
 For a mention, you might use `/@\w*$/`
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -207,6 +215,8 @@ else when the user presses the `Enter` key.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### from {#from}
 
 ```ts
@@ -214,6 +224,8 @@ from: number;
 ```
 
 The start position of the matched text.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### ignoreMatch() {#ignorematch}
 
@@ -230,6 +242,8 @@ function when the user presses the `Escape` key.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### match {#match}
 
 ```ts
@@ -237,6 +251,8 @@ match: RegExpExecArray;
 ```
 
 The result of `RegExp.exec`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### state {#state}
 
@@ -246,6 +262,8 @@ state: EditorState;
 
 The editor state.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### to {#to}
 
 ```ts
@@ -253,6 +271,8 @@ to: number;
 ```
 
 The end position of the matched text.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

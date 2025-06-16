@@ -46,6 +46,8 @@ Indicates whether the search is case-sensitive
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### literal? {#literal}
 
 ```ts
@@ -62,6 +64,8 @@ behavior is disabled.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### regexp? {#regexp}
 
 ```ts
@@ -76,6 +80,8 @@ When true, the search string is interpreted as a regular expression.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### replace? {#replace}
 
 ```ts
@@ -84,6 +90,8 @@ optional replace: string;
 
 The replace text.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### search {#search}
 
 ```ts
@@ -91,6 +99,8 @@ search: string;
 ```
 
 The search string (or regular expression).
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### wholeWord? {#wholeword}
 
@@ -105,6 +115,8 @@ Enable whole-word matching.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

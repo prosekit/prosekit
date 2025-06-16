@@ -119,6 +119,8 @@ Fired when the item is selected.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -158,6 +160,8 @@ If not provided, the value is the item's text content.
 ```ts
 ""
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -220,6 +224,8 @@ valueChange: (event: string) => void;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -261,6 +267,8 @@ shown.
 ```ts
 defaultItemFilter
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -325,6 +333,8 @@ Fired when the open state changes.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### queryChange() {#querychange}
 
 ```ts
@@ -363,6 +373,8 @@ Fired when the query changes.
 `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -404,6 +416,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### autoUpdate? {#autoupdate}
 
 ```ts
@@ -424,6 +438,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### boundary? {#boundary}
 
 ```ts
@@ -435,6 +451,8 @@ optional boundary: Boundary;
 ```ts
 "The body element"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### elementContext? {#elementcontext}
 
@@ -452,6 +470,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### fitViewport? {#fitviewport}
 
 ```ts
@@ -463,6 +483,8 @@ optional fitViewport: boolean;
 ```ts
 true
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### flip? {#flip}
 
@@ -481,6 +503,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### hide? {#hide}
 
 ```ts
@@ -496,6 +520,8 @@ floating element is fully clipped.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### hoist? {#hoist}
 
 ```ts
@@ -508,6 +534,8 @@ optional hoist: boolean;
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### inline? {#inline}
 
 ```ts
@@ -519,6 +547,8 @@ optional inline: boolean;
 ```ts
 true
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### offset? {#offset}
 
@@ -534,6 +564,8 @@ The distance between the popover and the hovered block.
 4
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### overflowPadding? {#overflowpadding}
 
 ```ts
@@ -545,6 +577,8 @@ optional overflowPadding: number;
 ```ts
 8
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### overlap? {#overlap}
 
@@ -561,6 +595,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### placement? {#placement}
 
 ```ts
@@ -574,6 +610,8 @@ The placement of the popover, relative to the text cursor.
 ```ts
 "bottom-start"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### regex? {#regex}
 
@@ -591,6 +629,8 @@ The regular expression to match the query text to autocomplete.
 null
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### rootBoundary? {#rootboundary}
 
 ```ts
@@ -605,6 +645,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 ```ts
 'viewport'
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### sameHeight? {#sameheight}
 
@@ -621,6 +663,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### sameWidth? {#samewidth}
 
 ```ts
@@ -636,6 +680,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### shift? {#shift}
 
 ```ts
@@ -650,6 +696,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### strategy? {#strategy}
 
 ```ts
@@ -663,6 +711,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### transform? {#transform}
 
@@ -679,6 +729,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

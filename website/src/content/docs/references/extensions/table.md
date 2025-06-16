@@ -38,6 +38,8 @@ col: number;
 
 The number of columns in the table.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### header? {#header}
 
 ```ts
@@ -52,6 +54,8 @@ Whether the table has a header row.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### row {#row}
 
 ```ts
@@ -59,6 +63,8 @@ row: number;
 ```
 
 The number of rows in the table.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -87,6 +93,8 @@ optional pos: number;
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -114,6 +122,8 @@ optional anchor: number;
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### head? {#head}
 
 ```ts
@@ -122,6 +132,8 @@ optional head: number;
 
 A hit position of the table cell to select to. By default, the selection
 head will be used.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -150,6 +162,8 @@ optional pos: number;
 A hit position of the table to select from. By default, the selection
 anchor will be used.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -177,6 +191,8 @@ optional anchor: number;
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### head? {#head-1}
 
 ```ts
@@ -185,6 +201,8 @@ optional head: number;
 
 A hit position of the table cell to select to. By default, the selection
 head will be used.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

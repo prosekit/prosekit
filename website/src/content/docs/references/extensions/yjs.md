@@ -42,6 +42,8 @@ Options for `y-prosemirror`'s `yCursorPlugin`.
 awareness: Awareness;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -68,6 +70,8 @@ awareness: Awareness;
 
 The Awareness instance.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### cursor? {#cursor}
 
 ```ts
@@ -76,6 +80,8 @@ optional cursor: object;
 
 Options for `y-prosemirror`'s `yCursorPlugin`.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### doc {#doc}
 
 ```ts
@@ -83,6 +89,8 @@ doc: Doc;
 ```
 
 The Yjs instance handles the state of shared data.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### fragment? {#fragment}
 
@@ -93,6 +101,8 @@ optional fragment: YXmlFragment;
 The Yjs XmlFragment to use. If not provided,
 `doc.getXmlFragment('prosemirror')` will be used.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### sync? {#sync}
 
 ```ts
@@ -101,6 +111,8 @@ optional sync: YSyncOpts;
 
 Options for `y-prosemirror`'s `ySyncPlugin`.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### undo? {#undo}
 
 ```ts
@@ -108,6 +120,8 @@ optional undo: object;
 ```
 
 Options for the `y-prosemirror`'s `yUndoPlugin`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -138,6 +152,8 @@ Options for `y-prosemirror`'s `ySyncPlugin`.
 ```ts
 fragment: YXmlFragment;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

@@ -40,6 +40,8 @@ from: number;
 
 The start position of the matched text.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### match {#match}
 
 ```ts
@@ -47,6 +49,8 @@ match: RegExpExecArray;
 ```
 
 The matched result from the regular expression.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### state {#state}
 
@@ -56,6 +60,8 @@ state: EditorState;
 
 The current editor state.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### to {#to}
 
 ```ts
@@ -63,6 +69,8 @@ to: number;
 ```
 
 The end position of the matched text.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -96,6 +104,8 @@ optional attrs:
 Attributes to set on the node. If a function is provided, it will be called
 with the matched result from the regular expression.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### regex {#regex}
 
 ```ts
@@ -103,6 +113,8 @@ regex: RegExp;
 ```
 
 The regular expression to match against. It should end with `$`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### stop? {#stop}
 
@@ -118,6 +130,8 @@ Whether to stop further handlers from being called if this rule is triggered.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type}
 
 ```ts
@@ -125,6 +139,8 @@ type: string | NodeType;
 ```
 
 The node type to replace the matched text with.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -199,6 +215,8 @@ handler: EnterRuleHandler;
 
 A function to be called when an enter rule is triggered.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### regex {#regex-1}
 
 ```ts
@@ -206,6 +224,8 @@ regex: RegExp;
 ```
 
 The regular expression to match against. It should end with `$`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### stop? {#stop-1}
 
@@ -220,6 +240,8 @@ Whether to stop further handlers from being called if this rule is triggered.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

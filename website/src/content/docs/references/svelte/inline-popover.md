@@ -52,6 +52,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### autoUpdate? {#autoupdate}
 
 ```ts
@@ -72,6 +74,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### boundary? {#boundary}
 
 ```ts
@@ -86,6 +90,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 ```ts
 'clippingAncestors'
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### defaultOpen? {#defaultopen}
 
@@ -106,6 +112,8 @@ opened unless the `open` prop is true.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### dismissOnEscape? {#dismissonescape}
 
 ```ts
@@ -120,6 +128,8 @@ Escape key press.
 ```ts
 true
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### elementContext? {#elementcontext}
 
@@ -137,6 +147,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### fitViewport? {#fitviewport}
 
 ```ts
@@ -151,6 +163,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### flip? {#flip}
 
@@ -169,6 +183,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### hide? {#hide}
 
 ```ts
@@ -180,6 +196,8 @@ optional hide: boolean;
 ```ts
 true
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### hoist? {#hoist}
 
@@ -198,6 +216,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### inline? {#inline}
 
 ```ts
@@ -210,6 +230,8 @@ optional inline: boolean;
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### offset? {#offset}
 
 ```ts
@@ -221,6 +243,8 @@ optional offset: OffsetOptions;
 ```ts
 12
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### onOpenChange()? {#onopenchange}
 
@@ -259,6 +283,8 @@ optional onOpenChange: (event: boolean) => void;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### open? {#open}
 
 ```ts
@@ -276,6 +302,8 @@ empty.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### overflowPadding? {#overflowpadding}
 
 ```ts
@@ -287,6 +315,8 @@ optional overflowPadding: number;
 ```ts
 8
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### overlap? {#overlap}
 
@@ -300,6 +330,8 @@ optional overlap: boolean;
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### placement? {#placement}
 
 ```ts
@@ -311,6 +343,8 @@ optional placement: Placement;
 ```ts
 "top"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### rootBoundary? {#rootboundary}
 
@@ -327,6 +361,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### sameHeight? {#sameheight}
 
 ```ts
@@ -341,6 +377,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### sameWidth? {#samewidth}
 
@@ -357,6 +395,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### shift? {#shift}
 
 ```ts
@@ -371,6 +411,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### strategy? {#strategy}
 
 ```ts
@@ -384,6 +426,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### transform? {#transform}
 
@@ -400,6 +444,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

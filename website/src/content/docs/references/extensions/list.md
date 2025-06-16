@@ -40,6 +40,8 @@ optional checked: boolean;
 
 Whether the list node is checked if its `kind` is `"task"`.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### collapsed? {#collapsed}
 
 ```ts
@@ -47,6 +49,8 @@ optional collapsed: boolean;
 ```
 
 Whether the list node is collapsed if its `kind` is `"toggle"`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### kind? {#kind}
 
@@ -56,6 +60,8 @@ optional kind: "toggle" | "bullet" | "ordered" | "task";
 
 The kind of list node.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### order? {#order}
 
 ```ts
@@ -63,6 +69,8 @@ optional order: null | number;
 ```
 
 The optional order of the list node.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

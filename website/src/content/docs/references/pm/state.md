@@ -95,6 +95,8 @@ readonly $anchor: ResolvedPos;
 The resolved anchor of the selection (the side that stays in
 place when the selection is modified).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### $head {#head}
 
 ```ts
@@ -104,6 +106,8 @@ readonly $head: ResolvedPos;
 The resolved head of the selection (the side that moves when
 the selection is modified).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### ranges {#ranges}
 
 ```ts
@@ -111,6 +115,8 @@ ranges: readonly SelectionRange[];
 ```
 
 The ranges covered by the selection.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### visible {#visible}
 
@@ -121,6 +127,8 @@ visible: boolean;
 Controls whether, when a selection of this type is active in the
 browser, the selected range should be visible to the user.
 Defaults to `true`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Accessors
 
@@ -910,6 +918,8 @@ fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
@@ -1021,6 +1031,8 @@ doc: ProseMirrorNode;
 
 The current document.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### selection {#selection}
 
 ```ts
@@ -1028,6 +1040,8 @@ selection: Selection;
 ```
 
 The selection.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### storedMarks {#storedmarks}
 
@@ -1037,6 +1051,8 @@ storedMarks: null | readonly Mark[];
 
 A set of marks to apply to the next input. Will be null when
 no explicit marks have been set.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Accessors
 
@@ -1176,11 +1192,15 @@ plugins) along with the new state.
 state: EditorState;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ###### transactions
 
 ```ts
 transactions: readonly Transaction[];
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG inheritance start kind=4096 -->
 
@@ -1536,6 +1556,8 @@ readonly $anchor: ResolvedPos;
 The resolved anchor of the selection (the side that stays in
 place when the selection is modified).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### $head {#head-2}
 
 ```ts
@@ -1545,6 +1567,8 @@ readonly $head: ResolvedPos;
 The resolved head of the selection (the side that moves when
 the selection is modified).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### node {#node}
 
 ```ts
@@ -1553,6 +1577,8 @@ node: ProseMirrorNode;
 
 The selected node.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### ranges {#ranges-1}
 
 ```ts
@@ -1560,6 +1586,8 @@ ranges: readonly SelectionRange[];
 ```
 
 The ranges covered by the selection.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### visible {#visible-1}
 
@@ -1570,6 +1598,8 @@ visible: boolean;
 Controls whether, when a selection of this type is active in the
 browser, the selected range should be visible to the user.
 Defaults to `true`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Accessors
 
@@ -2413,6 +2443,8 @@ fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
@@ -2746,6 +2778,8 @@ readonly props: EditorProps<ProseMirrorPlugin<PluginState>>;
 
 The [props](https://prosemirror.net/docs/ref/#view.EditorProps) exported by this plugin.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### spec {#spec}
 
 ```ts
@@ -2753,6 +2787,8 @@ readonly spec: PluginSpec<PluginState>;
 ```
 
 The plugin's [spec object](https://prosemirror.net/docs/ref/#state.PluginSpec).
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -2919,6 +2955,8 @@ readonly $anchor: ResolvedPos;
 The resolved anchor of the selection (the side that stays in
 place when the selection is modified).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### $head {#head-4}
 
 ```ts
@@ -2928,6 +2966,8 @@ readonly $head: ResolvedPos;
 The resolved head of the selection (the side that moves when
 the selection is modified).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### ranges {#ranges-2}
 
 ```ts
@@ -2935,6 +2975,8 @@ ranges: readonly SelectionRange[];
 ```
 
 The ranges covered by the selection.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### visible {#visible-2}
 
@@ -2945,6 +2987,8 @@ visible: boolean;
 Controls whether, when a selection of this type is active in the
 browser, the selected range should be visible to the user.
 Defaults to `true`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Accessors
 
@@ -3625,6 +3669,8 @@ fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG inheritance start kind=4096 -->
 
 ##### near() {#near-4}
@@ -3772,6 +3818,8 @@ readonly $from: ResolvedPos;
 
 The lower bound of the range.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### $to {#to-6}
 
 ```ts
@@ -3779,6 +3827,8 @@ readonly $to: ResolvedPos;
 ```
 
 The upper bound of the range.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3873,6 +3923,8 @@ readonly $anchor: ResolvedPos;
 The resolved anchor of the selection (the side that stays in
 place when the selection is modified).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### $head {#head-6}
 
 ```ts
@@ -3882,6 +3934,8 @@ readonly $head: ResolvedPos;
 The resolved head of the selection (the side that moves when
 the selection is modified).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### ranges {#ranges-3}
 
 ```ts
@@ -3889,6 +3943,8 @@ ranges: readonly SelectionRange[];
 ```
 
 The ranges covered by the selection.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### visible {#visible-3}
 
@@ -3899,6 +3955,8 @@ visible: boolean;
 Controls whether, when a selection of this type is active in the
 browser, the selected range should be visible to the user.
 Defaults to `true`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Accessors
 
@@ -4805,6 +4863,8 @@ fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG inheritance start kind=4096 -->
 
 ###### Inherited from
@@ -4972,6 +5032,8 @@ doc: ProseMirrorNode;
 The current document (the result of applying the steps in the
 transform).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### docs {#docs}
 
 ```ts
@@ -4979,6 +5041,8 @@ readonly docs: ProseMirrorNode[];
 ```
 
 The documents before each of the steps.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### mapping {#mapping}
 
@@ -4988,6 +5052,8 @@ readonly mapping: Mapping;
 
 A mapping with the maps for each of the steps in this transform.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### steps {#steps}
 
 ```ts
@@ -4995,6 +5061,8 @@ readonly steps: Step[];
 ```
 
 The steps in this transform.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### storedMarks {#storedmarks-1}
 
@@ -5004,6 +5072,8 @@ storedMarks: null | readonly Mark[];
 
 The stored marks set by this transaction, if any.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### time {#time}
 
 ```ts
@@ -5012,6 +5082,8 @@ time: number;
 
 The timestamp associated with this transaction, in the same
 format as `Date.now()`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Accessors
 
@@ -7134,6 +7206,8 @@ optional doc: ProseMirrorNode;
 The starting document. Either this or `schema` _must_ be
 provided.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### plugins? {#plugins-1}
 
 ```ts
@@ -7141,6 +7215,8 @@ optional plugins: readonly ProseMirrorPlugin<any>[];
 ```
 
 The plugins that should be active in this state.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### schema? {#schema-1}
 
@@ -7150,6 +7226,8 @@ optional schema: Schema<any, any>;
 
 The schema to use (only relevant if no `doc` is specified).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### selection? {#selection-3}
 
 ```ts
@@ -7158,6 +7236,8 @@ optional selection: Selection;
 
 A valid selection in the document.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### storedMarks? {#storedmarks-2}
 
 ```ts
@@ -7165,6 +7245,8 @@ optional storedMarks: null | readonly Mark[];
 ```
 
 The initial set of [stored marks](https://prosemirror.net/docs/ref/#state.EditorState.storedMarks).
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7283,6 +7365,8 @@ readonly [`Transaction`](#transaction)[]
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### filterTransaction()? {#filtertransaction}
 
 ```ts
@@ -7336,6 +7420,8 @@ returning false).
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### key? {#key}
 
 ```ts
@@ -7347,6 +7433,8 @@ plugin with a given key in a given state, but it is possible to
 access the plugin's configuration and state through the key,
 without having access to the plugin instance object.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### props? {#props-1}
 
 ```ts
@@ -7357,6 +7445,8 @@ The [view props](https://prosemirror.net/docs/ref/#view.EditorProps) added by th
 that are functions will be bound to have the plugin instance as
 their `this` binding.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### state? {#state}
 
 ```ts
@@ -7365,6 +7455,8 @@ optional state: StateField<PluginState>;
 
 Allows a plugin to define a [state field](https://prosemirror.net/docs/ref/#state.StateField), an
 extra slot in the state object in which it can keep its own data.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### view()? {#view}
 
@@ -7407,6 +7499,8 @@ editor view.
 [`PluginView`](#pluginview)
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7469,6 +7563,8 @@ Map the bookmark through a set of changes.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### resolve() {#resolve}
 
 ```ts
@@ -7510,6 +7606,8 @@ mapping made the bookmark invalid.
 [`Selection`](#selection-1)
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7631,6 +7729,8 @@ coming after this one.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### fromJSON()? {#fromjson-10}
 
 ```ts
@@ -7695,6 +7795,8 @@ Deserialize the JSON representation of this field. Note that the
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### init() {#init}
 
 ```ts
@@ -7749,6 +7851,8 @@ not have values for plugin fields initialized after this one.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### toJSON()? {#tojson-10}
 
 ```ts
@@ -7788,6 +7892,8 @@ JSON serialization for the field.
 `any`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7905,6 +8011,8 @@ with different plugins.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### update()? {#update}
 
 ```ts
@@ -7955,6 +8063,8 @@ Called whenever the view's state is updated.
 `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

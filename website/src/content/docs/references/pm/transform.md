@@ -134,6 +134,8 @@ readonly from: number;
 
 The start of the marked range.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### mark {#mark}
 
 ```ts
@@ -142,6 +144,8 @@ readonly mark: Mark;
 
 The mark to add.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### to {#to}
 
 ```ts
@@ -149,6 +153,8 @@ readonly to: number;
 ```
 
 The end of the marked range.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -618,6 +624,8 @@ readonly mark: Mark;
 
 The mark to add.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### pos {#pos}
 
 ```ts
@@ -625,6 +633,8 @@ readonly pos: number;
 ```
 
 The position of the target node.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -1139,6 +1149,8 @@ readonly attr: string;
 
 The attribute to set.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### pos {#pos-1}
 
 ```ts
@@ -1147,11 +1159,15 @@ readonly pos: number;
 
 The position of the target node.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### value {#value}
 
 ```ts
 readonly value: any;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -1646,11 +1662,15 @@ readonly attr: string;
 
 The attribute to set.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### value {#value-1}
 
 ```ts
 readonly value: any;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -2168,6 +2188,8 @@ from: number;
 The starting position in the `maps` array, used when `map` or
 `mapResult` is called.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### to {#to-1}
 
 ```ts
@@ -2175,6 +2197,8 @@ to: number;
 ```
 
 The end position in the `maps` array.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Accessors
 
@@ -2595,6 +2619,8 @@ readonly pos: number;
 
 The mapped version of the position.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 #### Accessors
 
 ##### deleted {#deleted}
@@ -2785,6 +2811,8 @@ readonly from: number;
 
 The start of the unmarked range.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### mark {#mark-2}
 
 ```ts
@@ -2793,6 +2821,8 @@ readonly mark: Mark;
 
 The mark to remove.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### to {#to-2}
 
 ```ts
@@ -2800,6 +2830,8 @@ readonly to: number;
 ```
 
 The end of the unmarked range.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -3269,6 +3301,8 @@ readonly mark: Mark;
 
 The mark to remove.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### pos {#pos-3}
 
 ```ts
@@ -3276,6 +3310,8 @@ readonly pos: number;
 ```
 
 The position of the target node.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -3850,6 +3886,8 @@ readonly from: number;
 
 The start position of the replaced range.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### gapFrom {#gapfrom}
 
 ```ts
@@ -3858,6 +3896,8 @@ readonly gapFrom: number;
 
 The start of preserved range.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### gapTo {#gapto}
 
 ```ts
@@ -3865,6 +3905,8 @@ readonly gapTo: number;
 ```
 
 The end of preserved range.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### insert {#insert}
 
@@ -3875,6 +3917,8 @@ readonly insert: number;
 The position in the slice where the preserved range should be
 inserted.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### slice {#slice-2}
 
 ```ts
@@ -3883,6 +3927,8 @@ readonly slice: Slice;
 
 The slice to insert.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### to {#to-3}
 
 ```ts
@@ -3890,6 +3936,8 @@ readonly to: number;
 ```
 
 The end position of the replaced range.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -4410,6 +4458,8 @@ readonly from: number;
 
 The start position of the replaced range.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### slice {#slice-3}
 
 ```ts
@@ -4418,6 +4468,8 @@ readonly slice: Slice;
 
 The slice to insert.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### to {#to-4}
 
 ```ts
@@ -4425,6 +4477,8 @@ readonly to: number;
 ```
 
 The end position of the replaced range.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -5284,6 +5338,8 @@ static empty: StepMap;
 
 A StepMap that contains no changed ranges.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 #### Methods
 
 ##### forEach() {#foreach}
@@ -5543,6 +5599,8 @@ readonly doc: null | ProseMirrorNode;
 
 The transformed document, if successful.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### failed {#failed}
 
 ```ts
@@ -5550,6 +5608,8 @@ readonly failed: null | string;
 ```
 
 The failure message, if unsuccessful.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -5797,6 +5857,8 @@ doc: ProseMirrorNode;
 The current document (the result of applying the steps in the
 transform).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### docs {#docs}
 
 ```ts
@@ -5804,6 +5866,8 @@ readonly docs: ProseMirrorNode[];
 ```
 
 The documents before each of the steps.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### mapping {#mapping-1}
 
@@ -5813,6 +5877,8 @@ readonly mapping: Mapping;
 
 A mapping with the maps for each of the steps in this transform.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### steps {#steps}
 
 ```ts
@@ -5820,6 +5886,8 @@ readonly steps: Step[];
 ```
 
 The steps in this transform.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Accessors
 
@@ -7285,6 +7353,8 @@ move when a chunk of content is inserted at the mapped position.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### mapResult() {#mapresult-5}
 
 ```ts
@@ -7340,6 +7410,8 @@ is deleted, the position itself is only considered deleted when
 [`MapResult`](#mapresult-2)
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

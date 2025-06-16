@@ -36,6 +36,8 @@ sidebar:
 editor: Editor;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -63,6 +65,8 @@ optional editor: MaybeRefOrGetter<Editor<any>>;
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### priority? {#priority}
 
 ```ts
@@ -70,6 +74,8 @@ optional priority: Priority;
 ```
 
 Optional priority to add the extension with.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -101,17 +107,23 @@ Options for [defineVueMarkView](#definevuemarkview).
 optional as: MarkViewDOMSpec;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### component {#component}
 
 ```ts
 component: VueMarkViewComponent;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### contentAs? {#contentas}
 
 ```ts
 optional contentAs: MarkViewDOMSpec;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### destroy()? {#destroy}
 
@@ -124,6 +136,8 @@ optional destroy: () => void;
 `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### ignoreMutation()? {#ignoremutation}
 
@@ -162,6 +176,8 @@ optional ignoreMutation: (mutation: ViewMutationRecord) => boolean | void;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### name {#name}
 
 ```ts
@@ -169,6 +185,8 @@ name: string;
 ```
 
 The name of the mark type.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -198,17 +216,23 @@ The name of the mark type.
 contentRef: VNodeRef;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### mark {#mark}
 
 ```ts
 mark: ShallowRef<Mark>;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### view {#view}
 
 ```ts
 view: EditorView;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -240,17 +264,23 @@ Options for [defineVueNodeView](#definevuenodeview).
 optional as: NodeViewDOMSpec;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### component {#component-1}
 
 ```ts
 component: VueNodeViewComponent;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### contentAs? {#contentas-1}
 
 ```ts
 optional contentAs: NodeViewDOMSpec;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### deselectNode()? {#deselectnode}
 
@@ -264,6 +294,8 @@ optional deselectNode: () => void;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### destroy()? {#destroy-1}
 
 ```ts
@@ -275,6 +307,8 @@ optional destroy: () => void;
 `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### ignoreMutation()? {#ignoremutation-1}
 
@@ -313,6 +347,8 @@ optional ignoreMutation: (mutation: ViewMutationRecord) => boolean | void;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### name {#name-1}
 
 ```ts
@@ -320,6 +356,8 @@ name: string;
 ```
 
 The name of the node type.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### onUpdate()? {#onupdate}
 
@@ -333,6 +371,8 @@ optional onUpdate: () => void;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### selectNode()? {#selectnode}
 
 ```ts
@@ -344,6 +384,8 @@ optional selectNode: () => void;
 `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### setSelection()? {#setselection}
 
@@ -408,6 +450,8 @@ optional setSelection: (anchor: number, head: number, root:
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### stopEvent()? {#stopevent}
 
 ```ts
@@ -444,6 +488,8 @@ optional stopEvent: (event: Event) => boolean;
 `boolean`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### update()? {#update}
 
@@ -506,6 +552,8 @@ readonly [`Decoration`](pm/view.md#decoration)[]
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -534,11 +582,15 @@ readonly [`Decoration`](pm/view.md#decoration)[]
 contentRef: VNodeRef;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### decorations {#decorations}
 
 ```ts
 decorations: ShallowRef<readonly Decoration[]>;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### getPos() {#getpos}
 
@@ -552,11 +604,15 @@ getPos: () => undefined | number;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### innerDecorations {#innerdecorations}
 
 ```ts
 innerDecorations: ShallowRef<DecorationSource>;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### node {#node}
 
@@ -564,11 +620,15 @@ innerDecorations: ShallowRef<DecorationSource>;
 node: ShallowRef<ProseMirrorNode>;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### selected {#selected}
 
 ```ts
 selected: ShallowRef<boolean>;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### setAttrs() {#setattrs}
 
@@ -607,11 +667,15 @@ setAttrs: (attrs: Attrs) => void;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### view {#view-1}
 
 ```ts
 view: EditorView;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

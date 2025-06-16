@@ -43,6 +43,8 @@ optional attrs:
 
 Attributes to set on the mark.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### inCodeMark? {#incodemark}
 
 ```ts
@@ -55,6 +57,8 @@ Whether this rule should fire inside marks marked as [code](https://prosemirror.
 
 `false`
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### regex {#regex}
 
 ```ts
@@ -65,6 +69,8 @@ The regular expression to match against, which should end with `$` and has
 exactly one capture group. All other matched text outside the capture group
 will be deleted.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type}
 
 ```ts
@@ -72,6 +78,8 @@ type: string | MarkType;
 ```
 
 The type of mark to set.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

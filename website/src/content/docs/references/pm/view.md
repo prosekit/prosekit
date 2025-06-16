@@ -58,6 +58,8 @@ readonly from: number;
 
 The start position of the decoration.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### to {#to}
 
 ```ts
@@ -66,6 +68,8 @@ readonly to: number;
 
 The end position. Will be the same as `from` for [widget
 decorations](https://prosemirror.net/docs/ref/#view.Decoration^widget).
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Accessors
 
@@ -600,6 +604,8 @@ static empty: DecorationSet;
 ```
 
 The empty set of decorations.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Methods
 
@@ -1158,6 +1164,8 @@ easily passed around.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### dom {#dom}
 
 ```ts
@@ -1166,6 +1174,8 @@ readonly dom: HTMLElement;
 
 An editable DOM node containing the document. (You probably
 should not directly interfere with its content.)
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### dragging {#dragging}
 
@@ -1182,6 +1192,8 @@ When editor content is being dragged, this object contains
 information about the dragged slice and whether it is being
 copied or moved. At any other time, it is null.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### editable {#editable}
 
 ```ts
@@ -1190,6 +1202,8 @@ editable: boolean;
 
 Indicates whether the editor is currently [editable](https://prosemirror.net/docs/ref/#view.EditorProps.editable).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### state {#state}
 
 ```ts
@@ -1197,6 +1211,8 @@ state: EditorState;
 ```
 
 The view's current [state](https://prosemirror.net/docs/ref/#state.EditorState).
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 #### Accessors
 
@@ -1336,11 +1352,15 @@ otherwise the element after.
 bottom: number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ###### left
 
 ```ts
 left: number;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ###### right
 
@@ -1348,11 +1368,15 @@ left: number;
 right: number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ###### top
 
 ```ts
 top: number;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG inheritance start kind=4096 -->
 
@@ -1472,11 +1496,15 @@ only inspect it (and even that is usually not necessary).
 node: Node;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ###### offset
 
 ```ts
 offset: number;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG inheritance start kind=4096 -->
 
@@ -1913,17 +1941,23 @@ different from the given input due to hooks like
 dom: HTMLElement;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ###### slice
 
 ```ts
 slice: Slice;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ###### text
 
 ```ts
 text: string;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG inheritance start kind=4096 -->
 
@@ -2287,6 +2321,8 @@ document.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 #### Methods
 
 ##### forChild() {#forchild-2}
@@ -2423,6 +2459,8 @@ provided here will be added to the class. For other attributes,
 the value provided first (as in
 [`someProp`](https://prosemirror.net/docs/ref/#view.EditorView.someProp)) will be used.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### clipboardParser? {#clipboardparser}
 
 ```ts
@@ -2432,6 +2470,8 @@ optional clipboardParser: DOMParser;
 The [parser](https://prosemirror.net/docs/ref/#model.DOMParser) to use when reading content from
 the clipboard. When not given, the value of the
 [`domParser`](https://prosemirror.net/docs/ref/#view.EditorProps.domParser) prop is used.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### clipboardSerializer? {#clipboardserializer}
 
@@ -2446,6 +2486,8 @@ will be used. This object will only have its
 [`serializeFragment`](https://prosemirror.net/docs/ref/#model.DOMSerializer.serializeFragment)
 method called, and you may provide an alternative object type
 implementing a compatible method.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### clipboardTextParser()? {#clipboardtextparser}
 
@@ -2540,6 +2582,8 @@ The `plain` flag will be true when the text is pasted as plain text.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### clipboardTextSerializer()? {#clipboardtextserializer}
 
 ```ts
@@ -2605,6 +2649,8 @@ selected range.
 `string`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### createSelectionBetween()? {#createselectionbetween}
 
@@ -2682,6 +2728,8 @@ reading a DOM selection between the given anchor and head.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### decorations()? {#decorations}
 
 ```ts
@@ -2734,6 +2782,8 @@ view.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### dispatchTransaction()? {#dispatchtransaction}
 
 ```ts
@@ -2779,6 +2829,8 @@ the view instance as its `this` binding.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### domParser? {#domparser}
 
 ```ts
@@ -2789,6 +2841,8 @@ The [parser](https://prosemirror.net/docs/ref/#model.DOMParser) to use when read
 from the DOM. Defaults to calling
 [`DOMParser.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMParser^fromSchema) on the
 editor's schema.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### dragCopies()? {#dragcopies}
 
@@ -2830,6 +2884,8 @@ used on macOS, `ctrlKey` on other platforms.
 `boolean`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### editable()? {#editable-1}
 
@@ -2882,6 +2938,8 @@ editable.
 `boolean`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleClick()? {#handleclick}
 
@@ -2958,6 +3016,8 @@ have been called.
 `boolean` \| `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleClickOn()? {#handleclickon}
 
@@ -3071,6 +3131,8 @@ Called for each node around a click, from the inside out. The
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleDOMEvents? {#handledomevents}
 
 ```ts
@@ -3154,6 +3216,8 @@ optional aria-ui/context-provider: (this: any, view: EditorView, event: ContextP
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ###### aria-ui/context-request()?
 
 ```ts
@@ -3214,6 +3278,10 @@ optional aria-ui/context-request: (this: any, view: EditorView, event: ContextRe
 `boolean` \| `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleDoubleClick()? {#handledoubleclick}
 
@@ -3289,6 +3357,8 @@ Called when the editor is double-clicked, after `handleDoubleClickOn`.
 `boolean` \| `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleDoubleClickOn()? {#handledoubleclickon}
 
@@ -3401,6 +3471,8 @@ Called for each node around a double click.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleDrop()? {#handledrop}
 
 ```ts
@@ -3490,6 +3562,8 @@ thus be deleted).
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleKeyDown()? {#handlekeydown}
 
 ```ts
@@ -3553,6 +3627,8 @@ Called when the editor receives a `keydown` event.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleKeyPress()? {#handlekeypress}
 
 ```ts
@@ -3615,6 +3691,8 @@ Handler for `keypress` events.
 `boolean` \| `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handlePaste()? {#handlepaste}
 
@@ -3693,6 +3771,8 @@ the event to get at the raw content.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleScrollToSelection()? {#handlescrolltoselection}
 
 ```ts
@@ -3746,6 +3826,8 @@ handlers or the default behavior should be tried.
 `boolean`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleTextInput()? {#handletextinput}
 
@@ -3848,6 +3930,8 @@ behavior of actually inserting the text is suppressed.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleTripleClick()? {#handletripleclick}
 
 ```ts
@@ -3922,6 +4006,8 @@ Called when the editor is triple-clicked, after `handleTripleClickOn`.
 `boolean` \| `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleTripleClickOn()? {#handletripleclickon}
 
@@ -4034,6 +4120,8 @@ Called for each node around a triple click.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### markViews? {#markviews}
 
 ```ts
@@ -4051,6 +4139,8 @@ is inline.
 ```ts
 [mark: string]: MarkViewConstructor
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### nodeViews? {#nodeviews}
 
@@ -4090,6 +4180,8 @@ object.)
 [node: string]: NodeViewConstructor
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### plugins? {#plugins}
 
 ```ts
@@ -4103,6 +4195,8 @@ component (a [state field](https://prosemirror.net/docs/ref/#state.PluginSpec.st
 [transaction](https://prosemirror.net/docs/ref/#state.PluginSpec.filterTransaction) filter or
 appender) will result in an error, since such plugins must be
 present in the state to work.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### scrollMargin? {#scrollmargin}
 
@@ -4119,6 +4213,8 @@ optional scrollMargin:
 
 Determines the extra space (in pixels) that is left above or
 below the cursor when it is scrolled into view. Defaults to 5.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### scrollThreshold? {#scrollthreshold}
 
@@ -4137,6 +4233,8 @@ Determines the distance (in pixels) between the cursor and the
 end of the visible viewport at which point, when scrolling the
 cursor into view, scrolling takes place. Defaults to 0.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### state {#state-1}
 
 ```ts
@@ -4144,6 +4242,8 @@ state: EditorState;
 ```
 
 The current state of the editor.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### transformCopied()? {#transformcopied}
 
@@ -4209,6 +4309,8 @@ serialized to the clipboard.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### transformPasted()? {#transformpasted}
 
 ```ts
@@ -4273,6 +4375,8 @@ before it is applied to the document.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### transformPastedHTML()? {#transformpastedhtml}
 
 ```ts
@@ -4336,6 +4440,8 @@ for example to clean it up.
 `string`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### transformPastedText()? {#transformpastedtext}
 
@@ -4413,6 +4519,8 @@ the text is pasted as plain text.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -4451,11 +4559,15 @@ about.
 aria-ui/context-provider: ContextProviderEvent;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### aria-ui/context-request {#aria-uicontext-request}
 
 ```ts
 aria-ui/context-request: ContextRequestEvent<unknown>;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4541,6 +4653,8 @@ provided here will be added to the class. For other attributes,
 the value provided first (as in
 [`someProp`](https://prosemirror.net/docs/ref/#view.EditorView.someProp)) will be used.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### clipboardParser? {#clipboardparser-1}
 
 ```ts
@@ -4550,6 +4664,8 @@ optional clipboardParser: DOMParser;
 The [parser](https://prosemirror.net/docs/ref/#model.DOMParser) to use when reading content from
 the clipboard. When not given, the value of the
 [`domParser`](https://prosemirror.net/docs/ref/#view.EditorProps.domParser) prop is used.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### clipboardSerializer? {#clipboardserializer-1}
 
@@ -4564,6 +4680,8 @@ will be used. This object will only have its
 [`serializeFragment`](https://prosemirror.net/docs/ref/#model.DOMSerializer.serializeFragment)
 method called, and you may provide an alternative object type
 implementing a compatible method.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### clipboardTextParser()? {#clipboardtextparser-1}
 
@@ -4658,6 +4776,8 @@ The `plain` flag will be true when the text is pasted as plain text.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### clipboardTextSerializer()? {#clipboardtextserializer-1}
 
 ```ts
@@ -4723,6 +4843,8 @@ selected range.
 `string`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### createSelectionBetween()? {#createselectionbetween-1}
 
@@ -4800,6 +4922,8 @@ reading a DOM selection between the given anchor and head.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### decorations()? {#decorations-1}
 
 ```ts
@@ -4852,6 +4976,8 @@ view.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### domParser? {#domparser-1}
 
 ```ts
@@ -4862,6 +4988,8 @@ The [parser](https://prosemirror.net/docs/ref/#model.DOMParser) to use when read
 from the DOM. Defaults to calling
 [`DOMParser.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMParser^fromSchema) on the
 editor's schema.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### dragCopies()? {#dragcopies-1}
 
@@ -4903,6 +5031,8 @@ used on macOS, `ctrlKey` on other platforms.
 `boolean`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### editable()? {#editable-2}
 
@@ -4955,6 +5085,8 @@ editable.
 `boolean`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleClick()? {#handleclick-1}
 
@@ -5031,6 +5163,8 @@ have been called.
 `boolean` \| `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleClickOn()? {#handleclickon-1}
 
@@ -5144,6 +5278,8 @@ Called for each node around a click, from the inside out. The
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleDOMEvents? {#handledomevents-1}
 
 ```ts
@@ -5227,6 +5363,8 @@ optional aria-ui/context-provider: (this: P, view: EditorView, event: ContextPro
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ###### aria-ui/context-request()?
 
 ```ts
@@ -5287,6 +5425,10 @@ optional aria-ui/context-request: (this: P, view: EditorView, event: ContextRequ
 `boolean` \| `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleDoubleClick()? {#handledoubleclick-1}
 
@@ -5362,6 +5504,8 @@ Called when the editor is double-clicked, after `handleDoubleClickOn`.
 `boolean` \| `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleDoubleClickOn()? {#handledoubleclickon-1}
 
@@ -5474,6 +5618,8 @@ Called for each node around a double click.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleDrop()? {#handledrop-1}
 
 ```ts
@@ -5563,6 +5709,8 @@ thus be deleted).
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleKeyDown()? {#handlekeydown-1}
 
 ```ts
@@ -5626,6 +5774,8 @@ Called when the editor receives a `keydown` event.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleKeyPress()? {#handlekeypress-1}
 
 ```ts
@@ -5688,6 +5838,8 @@ Handler for `keypress` events.
 `boolean` \| `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handlePaste()? {#handlepaste-1}
 
@@ -5766,6 +5918,8 @@ the event to get at the raw content.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleScrollToSelection()? {#handlescrolltoselection-1}
 
 ```ts
@@ -5819,6 +5973,8 @@ handlers or the default behavior should be tried.
 `boolean`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleTextInput()? {#handletextinput-1}
 
@@ -5921,6 +6077,8 @@ behavior of actually inserting the text is suppressed.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### handleTripleClick()? {#handletripleclick-1}
 
 ```ts
@@ -5995,6 +6153,8 @@ Called when the editor is triple-clicked, after `handleTripleClickOn`.
 `boolean` \| `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### handleTripleClickOn()? {#handletripleclickon-1}
 
@@ -6107,6 +6267,8 @@ Called for each node around a triple click.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### markViews? {#markviews-1}
 
 ```ts
@@ -6124,6 +6286,8 @@ is inline.
 ```ts
 [mark: string]: MarkViewConstructor
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### nodeViews? {#nodeviews-1}
 
@@ -6163,6 +6327,8 @@ object.)
 [node: string]: NodeViewConstructor
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### scrollMargin? {#scrollmargin-1}
 
 ```ts
@@ -6178,6 +6344,8 @@ optional scrollMargin:
 
 Determines the extra space (in pixels) that is left above or
 below the cursor when it is scrolled into view. Defaults to 5.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### scrollThreshold? {#scrollthreshold-1}
 
@@ -6195,6 +6363,8 @@ optional scrollThreshold:
 Determines the distance (in pixels) between the cursor and the
 end of the visible viewport at which point, when scrolling the
 cursor into view, scrolling takes place. Defaults to 0.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### transformCopied()? {#transformcopied-1}
 
@@ -6260,6 +6430,8 @@ serialized to the clipboard.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### transformPasted()? {#transformpasted-1}
 
 ```ts
@@ -6324,6 +6496,8 @@ before it is applied to the document.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### transformPastedHTML()? {#transformpastedhtml-1}
 
 ```ts
@@ -6387,6 +6561,8 @@ for example to clean it up.
 `string`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### transformPastedText()? {#transformpastedtext-1}
 
@@ -6464,6 +6640,8 @@ the text is pasted as plain text.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -6501,6 +6679,8 @@ optional contentDOM:
 The DOM node that should hold the mark's content. When this is not
 present, the `dom` property is used as the content DOM.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### destroy()? {#destroy-2}
 
 ```ts
@@ -6516,6 +6696,8 @@ editor is destroyed.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### dom {#dom-1}
 
 ```ts
@@ -6523,6 +6705,8 @@ dom: Node;
 ```
 
 The outer DOM node that represents the document node.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### ignoreMutation()? {#ignoremutation}
 
@@ -6564,6 +6748,8 @@ the range around the mutation, true if it can safely be ignored.
 `boolean`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -6607,6 +6793,8 @@ will take care of rendering the node's children into it. When it
 is not present, the node view itself is responsible for rendering
 (or deciding not to render) its child nodes.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### deselectNode()? {#deselectnode}
 
 ```ts
@@ -6621,6 +6809,8 @@ When defining a `selectNode` method, you should also provide a
 `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### destroy()? {#destroy-3}
 
@@ -6637,6 +6827,8 @@ editor is destroyed.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### dom {#dom-2}
 
 ```ts
@@ -6644,6 +6836,8 @@ dom: Node;
 ```
 
 The outer DOM node that represents the document node.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### ignoreMutation()? {#ignoremutation-1}
 
@@ -6686,6 +6880,8 @@ the range around the mutation, true if it can safely be ignored.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### multiType? {#multitype}
 
 ```ts
@@ -6698,6 +6894,8 @@ true, it will be called for any node, making it possible to have
 a node view that representsmultiple types of nodes. You will
 need to check the type of the nodes you get in `update` and
 return `false` for types you cannot handle.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### selectNode()? {#selectnode}
 
@@ -6713,6 +6911,8 @@ node selection) is displayed.
 `void`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### setSelection()? {#setselection}
 
@@ -6783,6 +6983,8 @@ override it you can do something else.
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### stopEvent()? {#stopevent}
 
 ```ts
@@ -6823,6 +7025,8 @@ which this returns true are not handled by the editor.
 `boolean`
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### update()? {#update-2}
 
@@ -6896,6 +7100,8 @@ readonly [`Decoration`](#decoration)[]
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Type Aliases
@@ -6939,6 +7145,8 @@ optional class: string;
 A CSS class name or a space-separated set of class names to be
 _added_ to the classes that the node already had.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### nodeName? {#nodename}
 
 ```ts
@@ -6948,6 +7156,8 @@ optional nodeName: string;
 When non-null, the target node is wrapped in a DOM element of
 this type (and the other attributes are applied to this element).
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### style? {#style}
 
 ```ts
@@ -6955,6 +7165,8 @@ optional style: string;
 ```
 
 A string of CSS to be _added_ to the node's existing `style` property.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

@@ -38,6 +38,8 @@ The attributes for the `codeBlock` node.
 language: string;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -62,11 +64,15 @@ language: string;
 optional aliases: string[];
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### id {#id}
 
 ```ts
 id: string;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### import {#import}
 
@@ -74,11 +80,15 @@ id: string;
 import: DynamicImportLanguageRegistration;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### name {#name}
 
 ```ts
 name: string;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -104,11 +114,15 @@ name: string;
 displayName: string;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### id {#id-1}
 
 ```ts
 id: string;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### import {#import-1}
 
@@ -116,11 +130,15 @@ id: string;
 import: DynamicImportThemeRegistration;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### type {#type}
 
 ```ts
 type: "light" | "dark";
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -149,6 +167,8 @@ type CodeBlockHighlightOptions = object;
 ```ts
 parser: HighlightParser;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

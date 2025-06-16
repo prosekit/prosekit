@@ -20,7 +20,7 @@ export function inheritance(
   ]
 
   if (model.kind === ReflectionKind.Property) {
-    return ''
+    return md.join('\n\n')
   }
 
   if (model.implementationOf) {

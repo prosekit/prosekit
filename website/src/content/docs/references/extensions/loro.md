@@ -36,6 +36,8 @@ sidebar:
 awareness: CursorAwareness;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### createCursor()? {#createcursor}
 
 ```ts
@@ -72,6 +74,8 @@ optional createCursor: (user: `${number}`) => Element;
 [`Element`](https://developer.mozilla.org/docs/Web/API/Element)
 
 <!-- DEBUG inheritance start kind=4096 -->
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### createSelection()? {#createselection}
 
@@ -110,6 +114,8 @@ optional createSelection: (user: `${number}`) => DecorationAttrs;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### getSelection()? {#getselection}
 
 ```ts
@@ -147,6 +153,8 @@ optional getSelection: (state: EditorState) => Selection;
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -173,6 +181,8 @@ awareness: CursorAwareness;
 
 The Awareness instance.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### cursor? {#cursor}
 
 ```ts
@@ -180,6 +190,8 @@ optional cursor: Omit<LoroCursorOptions, "awareness">;
 ```
 
 Extra options for `LoroCursorPlugin`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### doc {#doc}
 
@@ -189,6 +201,8 @@ doc: LoroDocType;
 
 The Loro instance handles the state of shared data.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### sync? {#sync}
 
 ```ts
@@ -197,6 +211,8 @@ optional sync: Omit<LoroSyncPluginProps, "doc">;
 
 Extra options for `LoroSyncPlugin`.
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### undo? {#undo}
 
 ```ts
@@ -204,6 +220,8 @@ optional undo: Omit<LoroUndoPluginProps, "doc">;
 ```
 
 Extra options for the `LoroUndoPlugin`.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

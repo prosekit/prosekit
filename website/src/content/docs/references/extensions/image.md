@@ -36,17 +36,23 @@ sidebar:
 optional height: null | number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### src? {#src}
 
 ```ts
 optional src: null | string;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### width? {#width}
 
 ```ts
 optional width: null | number;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

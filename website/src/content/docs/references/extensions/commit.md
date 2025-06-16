@@ -87,6 +87,8 @@ doc: NodeJSON;
 
 The current doc node in the JSON format
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### parent {#parent}
 
 ```ts
@@ -94,6 +96,8 @@ parent: NodeJSON;
 ```
 
 The parent node in the JSON format
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### steps {#steps}
 
@@ -103,6 +107,8 @@ steps: StepJSON[];
 
 An array of steps in the JSON format that transform the parent node to the
 current doc node.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

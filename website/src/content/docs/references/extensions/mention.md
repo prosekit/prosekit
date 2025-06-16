@@ -36,17 +36,23 @@ sidebar:
 id: string;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### kind {#kind}
 
 ```ts
 kind: string;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### value {#value}
 
 ```ts
 value: string;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

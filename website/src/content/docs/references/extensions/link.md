@@ -36,6 +36,8 @@ sidebar:
 href: string;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Functions

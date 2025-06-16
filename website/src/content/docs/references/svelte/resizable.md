@@ -58,6 +58,8 @@ The position of the handle.
 "bottom-right"
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -88,11 +90,15 @@ Props for the [ResizableRoot](#resizableroot) component.
 optional aspectRatio: null | number;
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### height? {#height}
 
 ```ts
 optional height: null | number;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### onResizeEnd()? {#onresizeend}
 
@@ -134,6 +140,8 @@ optional onResizeEnd: (event: CustomEvent<{
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### onResizeStart()? {#onresizestart}
 
 ```ts
@@ -174,11 +182,15 @@ optional onResizeStart: (event: CustomEvent<{
 
 <!-- DEBUG inheritance start kind=4096 -->
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### width? {#width}
 
 ```ts
 optional width: null | number;
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

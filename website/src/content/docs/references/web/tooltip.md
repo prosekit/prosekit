@@ -70,6 +70,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### autoUpdate {#autoupdate}
 
 ```ts
@@ -90,6 +92,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### boundary {#boundary}
 
 ```ts
@@ -104,6 +108,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 ```ts
 'clippingAncestors'
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### elementContext {#elementcontext}
 
@@ -121,6 +127,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### fitViewport {#fitviewport}
 
 ```ts
@@ -135,6 +143,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### flip {#flip}
 
@@ -153,6 +163,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### hide {#hide}
 
 ```ts
@@ -167,6 +179,8 @@ floating element is fully clipped.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### hoist {#hoist}
 
@@ -185,6 +199,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### inline {#inline}
 
 ```ts
@@ -200,6 +216,8 @@ multiple lines.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### offset? {#offset}
 
 ```ts
@@ -213,6 +231,8 @@ The distance between the reference and floating element.
 ```ts
 6
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### overflowPadding {#overflowpadding}
 
@@ -229,6 +249,8 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 4
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### overlap {#overlap}
 
 ```ts
@@ -244,6 +266,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### placement {#placement}
 
 ```ts
@@ -257,6 +281,8 @@ The initial placement of the floating element
 ```ts
 "top"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### rootBoundary {#rootboundary}
 
@@ -273,6 +299,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### sameHeight {#sameheight}
 
 ```ts
@@ -287,6 +315,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### sameWidth {#samewidth}
 
@@ -303,6 +333,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### shift {#shift}
 
 ```ts
@@ -317,6 +349,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### strategy {#strategy}
 
 ```ts
@@ -330,6 +364,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### transform {#transform}
 
@@ -346,6 +382,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -403,6 +441,8 @@ The delay in milliseconds before the tooltip closes.
 300
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### open {#open}
 
 ```ts
@@ -417,6 +457,8 @@ Whether the popover is open.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### openDelay {#opendelay}
 
 ```ts
@@ -430,6 +472,8 @@ The delay in milliseconds before the tooltip opens.
 ```ts
 700
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -529,6 +573,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### autoUpdate {#autoupdate-1}
 
 ```ts
@@ -549,6 +595,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### boundary {#boundary-1}
 
 ```ts
@@ -563,6 +611,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 ```ts
 'clippingAncestors'
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### elementContext {#elementcontext-1}
 
@@ -580,6 +630,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### fitViewport {#fitviewport-1}
 
 ```ts
@@ -594,6 +646,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### flip {#flip-1}
 
@@ -612,6 +666,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### hide {#hide-1}
 
 ```ts
@@ -626,6 +682,8 @@ floating element is fully clipped.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### hoist {#hoist-1}
 
@@ -644,6 +702,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### inline {#inline-1}
 
 ```ts
@@ -659,6 +719,8 @@ multiple lines.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### offset? {#offset-1}
 
 ```ts
@@ -672,6 +734,8 @@ The distance between the reference and floating element.
 ```ts
 6
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### overflowPadding {#overflowpadding-1}
 
@@ -688,6 +752,8 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 4
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### overlap {#overlap-1}
 
 ```ts
@@ -703,6 +769,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### placement {#placement-1}
 
 ```ts
@@ -716,6 +784,8 @@ The initial placement of the floating element
 ```ts
 "top"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### rootBoundary {#rootboundary-1}
 
@@ -732,6 +802,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### sameHeight {#sameheight-1}
 
 ```ts
@@ -746,6 +818,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### sameWidth {#samewidth-1}
 
@@ -762,6 +836,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### shift {#shift-1}
 
 ```ts
@@ -776,6 +852,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### strategy {#strategy-1}
 
 ```ts
@@ -789,6 +867,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 ##### transform {#transform-1}
 
@@ -805,6 +885,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -835,6 +917,8 @@ openChange: CustomEvent<boolean>;
 ```
 
 Fired when the open state changes.
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -872,6 +956,8 @@ The delay in milliseconds before the tooltip closes.
 300
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### open {#open-1}
 
 ```ts
@@ -886,6 +972,8 @@ Whether the popover is open.
 false
 ```
 
+<!-- DEBUG inheritance start kind=1024 -->
+
 ##### openDelay {#opendelay-1}
 
 ```ts
@@ -899,6 +987,8 @@ The delay in milliseconds before the tooltip opens.
 ```ts
 700
 ```
+
+<!-- DEBUG inheritance start kind=1024 -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

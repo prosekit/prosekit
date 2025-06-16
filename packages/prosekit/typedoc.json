@@ -66,8 +66,8 @@
   "cleanOutputDir": true,
   "entryFileName": "index.md",
   "hidePageHeader": true,
-  "hideBreadcrumbs": true
+  "hideBreadcrumbs": true,
+  "hidePageTitle": true
   // "inheritNone": true
-  // "hidePageTitle": true
   // "markdownHeadingId": true
 }

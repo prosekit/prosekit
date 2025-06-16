@@ -11,11 +11,9 @@ export class MyMarkdownThemeContext extends MarkdownThemeContext {
       return (
         `<!-- DEBUG_signatureTitle_start -->`
         + '\n\n'
-        + '<pre>'
         + '\n\n'
         + result
         + '\n\n'
-        + '</pre>'
         + '\n\n'
         + `<!-- DEBUG_signatureTitle_end -->`
       )

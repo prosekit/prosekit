@@ -1,13 +1,25 @@
 // @ts-check
 
-import genConfig from './typedoc.gen.js'
+import packageJson from './package.json' assert { type: 'json' }
+
+/**
+ * @type {string[]}
+ */
+const entryPoints = Object.values(packageJson.exports)
+  // Filter out CSS files
+  .filter((entryPoint) => !entryPoint.endsWith('.css'))
+  // Remove lit modules because they are just simple re-exports from the web modules
+  .filter((entryPoint) => !entryPoint.startsWith('./src/lit'))
+  // Remove the empty main entry point
+  .filter((entryPoint) => entryPoint !== './src/index.ts')
+  .sort()
 
 /**
  * @type {import("typedoc").TypeDocOptions}
  * https://typedoc.org/options/
  */
 const typedocConfig = {
-  ...genConfig,
+  entryPoints,
   tsconfig: './tsconfig.build.json',
   out: '.temp/typedoc',
   router: 'module',

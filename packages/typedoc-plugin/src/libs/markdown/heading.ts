@@ -5,5 +5,5 @@
  */
 export function heading(level: number, text: string) {
   level = level > 6 ? 6 : level
-  return `${[...Array(level)].map(() => '#').join('')} ${text}`
+  return '#'.repeat(level) + ' ' + text
 }

@@ -30,52 +30,23 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### height? {#height}
 
-<a id="height"></a> `height?`
+```ts
+optional height: null | number;
+```
 
-</td>
-<td>
+##### src? {#src}
 
-`null` \| `number`
+```ts
+optional src: null | string;
+```
 
-</td>
-</tr>
-<tr>
-<td>
+##### width? {#width}
 
-<a id="src"></a> `src?`
-
-</td>
-<td>
-
-`null` \| `string`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="width"></a> `width?`
-
-</td>
-<td>
-
-`null` \| `number`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+optional width: null | number;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

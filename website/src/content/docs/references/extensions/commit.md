@@ -75,69 +75,30 @@ A JSON representation of a commit.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### doc {#doc}
 
-<a id="doc"></a> `doc`
-
-</td>
-<td>
-
-[`NodeJSON`](../core.md#nodejson)
-
-</td>
-<td>
+```ts
+doc: NodeJSON;
+```
 
 The current doc node in the JSON format
 
-</td>
-</tr>
-<tr>
-<td>
+##### parent {#parent}
 
-<a id="parent"></a> `parent`
-
-</td>
-<td>
-
-[`NodeJSON`](../core.md#nodejson)
-
-</td>
-<td>
+```ts
+parent: NodeJSON;
+```
 
 The parent node in the JSON format
 
-</td>
-</tr>
-<tr>
-<td>
+##### steps {#steps}
 
-<a id="steps"></a> `steps`
-
-</td>
-<td>
-
-[`StepJSON`](../core.md#stepjson)[]
-
-</td>
-<td>
+```ts
+steps: StepJSON[];
+```
 
 An array of steps in the JSON format that transform the parent node to the
 current doc node.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

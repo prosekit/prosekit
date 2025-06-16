@@ -32,28 +32,11 @@ The attributes for the `codeBlock` node.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### language {#language}
 
-<a id="language"></a> `language`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+language: string;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -73,64 +56,29 @@ The attributes for the `codeBlock` node.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### aliases? {#aliases}
 
-<a id="aliases"></a> `aliases?`
+```ts
+optional aliases: string[];
+```
 
-</td>
-<td>
+##### id {#id}
 
-`string`[]
+```ts
+id: string;
+```
 
-</td>
-</tr>
-<tr>
-<td>
+##### import {#import}
 
-<a id="id"></a> `id`
+```ts
+import: DynamicImportLanguageRegistration;
+```
 
-</td>
-<td>
+##### name {#name}
 
-`string`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="import"></a> `import`
-
-</td>
-<td>
-
-`DynamicImportLanguageRegistration`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="name"></a> `name`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+name: string;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -150,64 +98,29 @@ The attributes for the `codeBlock` node.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### displayName {#displayname}
 
-<a id="displayname"></a> `displayName`
+```ts
+displayName: string;
+```
 
-</td>
-<td>
+##### id {#id-1}
 
-`string`
+```ts
+id: string;
+```
 
-</td>
-</tr>
-<tr>
-<td>
+##### import {#import-1}
 
-<a id="id-1"></a> `id`
+```ts
+import: DynamicImportThemeRegistration;
+```
 
-</td>
-<td>
+##### type {#type}
 
-`string`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="import-1"></a> `import`
-
-</td>
-<td>
-
-`DynamicImportThemeRegistration`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="type"></a> `type`
-
-</td>
-<td>
-
-`"light"` \| `"dark"`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+type: "light" | "dark";
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

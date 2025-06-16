@@ -2159,35 +2159,55 @@ and passed to [node views](https://prosemirror.net/docs/ref/#view.EditorProps.no
 
 #### Properties
 
+##### map() {#map-2}
+
+```ts
+map: (mapping: Mapping, node: ProseMirrorNode) => DecorationSource;
+```
+
+Map the set of decorations in response to a change in the
+document.
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="map-2"></a> `map`
+`mapping`
 
 </td>
 <td>
 
-(`mapping`: [`Mapping`](transform.md#mapping), `node`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`DecorationSource`](#decorationsource)
+[`Mapping`](transform.md#mapping)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`node`
 
 </td>
 <td>
 
-Map the set of decorations in response to a change in the
-document.
+[`ProseMirrorNode`](model.md#prosemirrornode)
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+[`DecorationSource`](#decorationsource)
 
 #### Methods
 
@@ -2302,28 +2322,15 @@ fields that can't be used in plugins:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attributes? {#attributes}
 
-<a id="attributes"></a> `attributes?`
-
-</td>
-<td>
-
- \| \{ [`name`: `string`]: `string`; \} \| (`state`: [`EditorState`](state.md#editorstate)) => `object`
-
-</td>
-<td>
+```ts
+optional attributes: 
+  | {
+[name: string]: string;
+}
+  | (state: EditorState) => object;
+```
 
 Control the DOM attributes of the editable element. May be either
 an object or a function going from an editor state to an object.
@@ -2334,49 +2341,29 @@ provided here will be added to the class. For other attributes,
 the value provided first (as in
 [`someProp`](https://prosemirror.net/docs/ref/#view.EditorView.someProp)) will be used.
 
-</td>
-<td>
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`attributes`](#attributes-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### clipboardParser? {#clipboardparser}
 
-<a id="clipboardparser"></a> `clipboardParser?`
-
-</td>
-<td>
-
-[`DOMParser`](model.md#domparser)
-
-</td>
-<td>
+```ts
+optional clipboardParser: DOMParser;
+```
 
 The [parser](https://prosemirror.net/docs/ref/#model.DOMParser) to use when reading content from
 the clipboard. When not given, the value of the
 [`domParser`](https://prosemirror.net/docs/ref/#view.EditorProps.domParser) prop is used.
 
-</td>
-<td>
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`clipboardParser`](#clipboardparser-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### clipboardSerializer? {#clipboardserializer}
 
-<a id="clipboardserializer"></a> `clipboardSerializer?`
-
-</td>
-<td>
-
-[`DOMSerializer`](model.md#domserializer)
-
-</td>
-<td>
+```ts
+optional clipboardSerializer: DOMSerializer;
+```
 
 The DOM serializer to use when putting content onto the
 clipboard. If not given, the result of
@@ -2386,25 +2373,15 @@ will be used. This object will only have its
 method called, and you may provide an alternative object type
 implementing a compatible method.
 
-</td>
-<td>
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`clipboardSerializer`](#clipboardserializer-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### clipboardTextParser()? {#clipboardtextparser}
 
-<a id="clipboardtextparser"></a> `clipboardTextParser?`
-
-</td>
-<td>
-
-(`this`: `any`, `text`: `string`, `$context`: [`ResolvedPos`](model.md#resolvedpos), `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice-2)
-
-</td>
-<td>
+```ts
+optional clipboardTextParser: (this: any, text: string, $context: ResolvedPos, plain: boolean, view: EditorView) => Slice;
+```
 
 A function to parse text from the clipboard into a document
 slice. Called after
@@ -2414,96 +2391,292 @@ in `<p>` tags, and call
 [`clipboardParser`](https://prosemirror.net/docs/ref/#view.EditorProps.clipboardParser) on it.
 The `plain` flag will be true when the text is pasted as plain text.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`clipboardTextParser`](#clipboardtextparser-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="clipboardtextserializer"></a> `clipboardTextSerializer?`
+`text`
 
 </td>
 <td>
 
-(`this`: `any`, `content`: [`Slice`](model.md#slice-2), `view`: [`EditorView`](#editorview)) => `string`
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`$context`
 
 </td>
 <td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`plain`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Slice`](model.md#slice-2)
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`clipboardTextParser`](#clipboardtextparser-1)
+
+##### clipboardTextSerializer()? {#clipboardtextserializer}
+
+```ts
+optional clipboardTextSerializer: (this: any, content: Slice, view: EditorView) => string;
+```
 
 A function that will be called to get the text for the current
 selection when copying text to the clipboard. By default, the
 editor will use [`textBetween`](https://prosemirror.net/docs/ref/#model.Node.textBetween) on the
 selected range.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`clipboardTextSerializer`](#clipboardtextserializer-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="createselectionbetween"></a> `createSelectionBetween?`
+`content`
 
 </td>
 <td>
 
-(`this`: `any`, `view`: [`EditorView`](#editorview), `anchor`: [`ResolvedPos`](model.md#resolvedpos), `head`: [`ResolvedPos`](model.md#resolvedpos)) => `null` \| [`Selection`](state.md#selection-1)
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
 
 </td>
 <td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`string`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`clipboardTextSerializer`](#clipboardtextserializer-1)
+
+##### createSelectionBetween()? {#createselectionbetween}
+
+```ts
+optional createSelectionBetween: (this: any, view: EditorView, anchor: ResolvedPos, head: ResolvedPos) => null | Selection;
+```
 
 Can be used to override the way a selection is created when
 reading a DOM selection between the given anchor and head.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`createSelectionBetween`](#createselectionbetween-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="decorations"></a> `decorations?`
+`view`
 
 </td>
 <td>
 
-(`this`: `any`, `state`: [`EditorState`](state.md#editorstate)) => `undefined` \| `null` \| [`DecorationSource`](#decorationsource)
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`anchor`
 
 </td>
 <td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`head`
+
+</td>
+<td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| [`Selection`](state.md#selection-1)
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`createSelectionBetween`](#createselectionbetween-1)
+
+##### decorations()? {#decorations}
+
+```ts
+optional decorations: (this: any, state: EditorState) => undefined | null | DecorationSource;
+```
 
 A set of [document decorations](https://prosemirror.net/docs/ref/#view.Decoration) to show in the
 view.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`decorations`](#decorations-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="dispatchtransaction"></a> `dispatchTransaction?`
+`state`
 
 </td>
 <td>
 
-(`tr`: [`Transaction`](state.md#transaction)) => `void`
+[`EditorState`](state.md#editorstate)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`undefined` \| `null` \| [`DecorationSource`](#decorationsource)
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`decorations`](#decorations-1)
+
+##### dispatchTransaction()? {#dispatchtransaction}
+
+```ts
+optional dispatchTransaction: (tr: Transaction) => void;
+```
 
 The callback over which to send transactions (state updates)
 produced by the view. If you specify this, you probably want to
@@ -2513,143 +2686,344 @@ state that has the transaction
 [applied](https://prosemirror.net/docs/ref/#state.EditorState.apply). The callback will be bound to have
 the view instance as its `this` binding.
 
-</td>
-<td>
+###### Parameters
 
-&hyphen;
-
-</td>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="domparser"></a> `domParser?`
+`tr`
 
 </td>
 <td>
 
-[`DOMParser`](model.md#domparser)
+[`Transaction`](state.md#transaction)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+##### domParser? {#domparser}
+
+```ts
+optional domParser: DOMParser;
+```
 
 The [parser](https://prosemirror.net/docs/ref/#model.DOMParser) to use when reading editor changes
 from the DOM. Defaults to calling
 [`DOMParser.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMParser^fromSchema) on the
 editor's schema.
 
-</td>
-<td>
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`domParser`](#domparser-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### dragCopies()? {#dragcopies}
 
-<a id="dragcopies"></a> `dragCopies?`
-
-</td>
-<td>
-
-(`event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`
-
-</td>
-<td>
+```ts
+optional dragCopies: (event: DragEvent) => boolean;
+```
 
 Determines whether an in-editor drag event should copy or move
 the selection. When not given, the event's `altKey` property is
 used on macOS, `ctrlKey` on other platforms.
 
-</td>
-<td>
+###### Parameters
 
-[`EditorProps`](#editorprops).[`dragCopies`](#dragcopies-1)
-
-</td>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="editable-1"></a> `editable?`
+`event`
 
 </td>
 <td>
 
-(`this`: `any`, `state`: [`EditorState`](state.md#editorstate)) => `boolean`
+[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`dragCopies`](#dragcopies-1)
+
+##### editable()? {#editable-1}
+
+```ts
+optional editable: (this: any, state: EditorState) => boolean;
+```
 
 When this returns false, the content of the view is not directly
 editable.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`editable`](#editable-2)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handleclick"></a> `handleClick?`
+`state`
 
 </td>
 <td>
 
-(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`
+[`EditorState`](state.md#editorstate)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`editable`](#editable-2)
+
+##### handleClick()? {#handleclick}
+
+```ts
+optional handleClick: (this: any, view: EditorView, pos: number, event: MouseEvent) => boolean | void;
+```
 
 Called when the editor is clicked, after `handleClickOn` handlers
 have been called.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`handleClick`](#handleclick-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handleclickon"></a> `handleClickOn?`
+`view`
 
 </td>
 <td>
 
-(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
 
 </td>
 <td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`handleClick`](#handleclick-1)
+
+##### handleClickOn()? {#handleclickon}
+
+```ts
+optional handleClickOn: (this: any, view: EditorView, pos: number, node: ProseMirrorNode, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void;
+```
 
 Called for each node around a click, from the inside out. The
 `direct` flag will be true for the inner node.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`handleClickOn`](#handleclickon-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handledomevents"></a> `handleDOMEvents?`
+`view`
 
 </td>
 <td>
 
-`object`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
 
 </td>
 <td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`nodePos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`direct`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`handleClickOn`](#handleclickon-1)
+
+##### handleDOMEvents? {#handledomevents}
+
+```ts
+optional handleDOMEvents: object;
+```
 
 Can be an object mapping DOM event type names to functions that
 handle them. Such functions will be called before any handling
@@ -2659,298 +3033,980 @@ from such a function, you are responsible for calling
 `preventDefault` yourself (or not, if you want to allow the
 default behavior).
 
+###### Index Signature
+
+```ts
+[key: string]: 
+  | undefined
+  | (this: any, view: EditorView, event: any) => boolean | void
+```
+
+###### aria-ui/context-provider()?
+
+```ts
+optional aria-ui/context-provider: (this: any, view: EditorView, event: ContextProviderEvent) => boolean | void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+`ContextProviderEvent`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### aria-ui/context-request()?
+
+```ts
+optional aria-ui/context-request: (this: any, view: EditorView, event: ContextRequestEvent<unknown>) => boolean | void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+`ContextRequestEvent`\<`unknown`\>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`handleDOMEvents`](#handledomevents-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### handleDoubleClick()? {#handledoubleclick}
 
-`handleDOMEvents.aria-ui/context-provider?`
-
-</td>
-<td>
-
-(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: `ContextProviderEvent`) => `boolean` \| `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-`handleDOMEvents.aria-ui/context-request?`
-
-</td>
-<td>
-
-(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: `ContextRequestEvent`\<`unknown`\>) => `boolean` \| `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="handledoubleclick"></a> `handleDoubleClick?`
-
-</td>
-<td>
-
-(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`
-
-</td>
-<td>
+```ts
+optional handleDoubleClick: (this: any, view: EditorView, pos: number, event: MouseEvent) => boolean | void;
+```
 
 Called when the editor is double-clicked, after `handleDoubleClickOn`.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`handleDoubleClick`](#handledoubleclick-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### handleDoubleClickOn()? {#handledoubleclickon}
 
-<a id="handledoubleclickon"></a> `handleDoubleClickOn?`
-
-</td>
-<td>
-
-(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`
-
-</td>
-<td>
+```ts
+optional handleDoubleClickOn: (this: any, view: EditorView, pos: number, node: ProseMirrorNode, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void;
+```
 
 Called for each node around a double click.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`handleDoubleClickOn`](#handledoubleclickon-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handledrop"></a> `handleDrop?`
+`view`
 
 </td>
 <td>
 
-(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent), `slice`: [`Slice`](model.md#slice-2), `moved`: `boolean`) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
 
 </td>
 <td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`nodePos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`direct`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`handleDoubleClickOn`](#handledoubleclickon-1)
+
+##### handleDrop()? {#handledrop}
+
+```ts
+optional handleDrop: (this: any, view: EditorView, event: DragEvent, slice: Slice, moved: boolean) => boolean | void;
+```
 
 Called when something is dropped on the editor. `moved` will be
 true if this drop moves from the current selection (which should
 thus be deleted).
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slice`
+
+</td>
+<td>
+
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`moved`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`handleDrop`](#handledrop-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### handleKeyDown()? {#handlekeydown}
 
-<a id="handlekeydown"></a> `handleKeyDown?`
-
-</td>
-<td>
-
-(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`
-
-</td>
-<td>
+```ts
+optional handleKeyDown: (this: any, view: EditorView, event: KeyboardEvent) => boolean | void;
+```
 
 Called when the editor receives a `keydown` event.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`handleKeyDown`](#handlekeydown-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### handleKeyPress()? {#handlekeypress}
 
-<a id="handlekeypress"></a> `handleKeyPress?`
-
-</td>
-<td>
-
-(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`
-
-</td>
-<td>
+```ts
+optional handleKeyPress: (this: any, view: EditorView, event: KeyboardEvent) => boolean | void;
+```
 
 Handler for `keypress` events.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`handleKeyPress`](#handlekeypress-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handlepaste"></a> `handlePaste?`
+`view`
 
 </td>
 <td>
 
-(`this`: `any`, `view`: [`EditorView`](#editorview), `event`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent), `slice`: [`Slice`](model.md#slice-2)) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
 
 </td>
 <td>
+
+[`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`handleKeyPress`](#handlekeypress-1)
+
+##### handlePaste()? {#handlepaste}
+
+```ts
+optional handlePaste: (this: any, view: EditorView, event: ClipboardEvent, slice: Slice) => boolean | void;
+```
 
 Can be used to override the behavior of pasting. `slice` is the
 pasted content parsed by the editor, but you can directly access
 the event to get at the raw content.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`handlePaste`](#handlepaste-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handlescrolltoselection"></a> `handleScrollToSelection?`
+`view`
 
 </td>
 <td>
 
-(`this`: `any`, `view`: [`EditorView`](#editorview)) => `boolean`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
 
 </td>
 <td>
+
+[`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slice`
+
+</td>
+<td>
+
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`handlePaste`](#handlepaste-1)
+
+##### handleScrollToSelection()? {#handlescrolltoselection}
+
+```ts
+optional handleScrollToSelection: (this: any, view: EditorView) => boolean;
+```
 
 Called when the view, after updating its state, tries to scroll
 the selection into view. A handler function may return false to
 indicate that it did not handle the scrolling and further
 handlers or the default behavior should be tried.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`handleScrollToSelection`](#handlescrolltoselection-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handletextinput"></a> `handleTextInput?`
+`view`
 
 </td>
 <td>
 
-(`this`: `any`, `view`: [`EditorView`](#editorview), `from`: `number`, `to`: `number`, `text`: `string`, `deflt`: () => [`Transaction`](state.md#transaction)) => `boolean` \| `void`
+[`EditorView`](#editorview)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`handleScrollToSelection`](#handlescrolltoselection-1)
+
+##### handleTextInput()? {#handletextinput}
+
+```ts
+optional handleTextInput: (this: any, view: EditorView, from: number, to: number, text: string, deflt: () => Transaction) => boolean | void;
+```
 
 Whenever the user directly input text, this handler is called
 before the input is applied. If it returns `true`, the default
 behavior of actually inserting the text is suppressed.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`from`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`to`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`text`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`deflt`
+
+</td>
+<td>
+
+() => [`Transaction`](state.md#transaction)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`handleTextInput`](#handletextinput-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### handleTripleClick()? {#handletripleclick}
 
-<a id="handletripleclick"></a> `handleTripleClick?`
-
-</td>
-<td>
-
-(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`
-
-</td>
-<td>
+```ts
+optional handleTripleClick: (this: any, view: EditorView, pos: number, event: MouseEvent) => boolean | void;
+```
 
 Called when the editor is triple-clicked, after `handleTripleClickOn`.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`handleTripleClick`](#handletripleclick-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### handleTripleClickOn()? {#handletripleclickon}
 
-<a id="handletripleclickon"></a> `handleTripleClickOn?`
-
-</td>
-<td>
-
-(`this`: `any`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`
-
-</td>
-<td>
+```ts
+optional handleTripleClickOn: (this: any, view: EditorView, pos: number, node: ProseMirrorNode, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void;
+```
 
 Called for each node around a triple click.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`handleTripleClickOn`](#handletripleclickon-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="markviews"></a> `markViews?`
+`view`
 
 </td>
 <td>
 
-`object`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
 
 </td>
 <td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`nodePos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`direct`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`handleTripleClickOn`](#handletripleclickon-1)
+
+##### markViews? {#markviews}
+
+```ts
+optional markViews: object;
+```
 
 Pass custom mark rendering functions. Note that these cannot
 provide the kind of dynamic behavior that [node
@@ -2958,25 +4014,21 @@ views](https://prosemirror.net/docs/ref/#view.NodeView) can—they just provide 
 logic. The third argument indicates whether the mark's content
 is inline.
 
-</td>
-<td>
+###### Index Signature
+
+```ts
+[mark: string]: MarkViewConstructor
+```
+
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`markViews`](#markviews-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### nodeViews? {#nodeviews}
 
-<a id="nodeviews"></a> `nodeViews?`
-
-</td>
-<td>
-
-`object`
-
-</td>
-<td>
+```ts
+optional nodeViews: object;
+```
 
 Allows you to pass custom rendering and behavior logic for
 nodes. Should map node names to constructor functions that
@@ -3004,25 +4056,21 @@ inner decorations.
 views](https://prosemirror.net/docs/ref/#view.EditorProps.markViews) can also be included in this
 object.)
 
-</td>
-<td>
+###### Index Signature
+
+```ts
+[node: string]: NodeViewConstructor
+```
+
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`nodeViews`](#nodeviews-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### plugins? {#plugins}
 
-<a id="plugins"></a> `plugins?`
-
-</td>
-<td>
-
-readonly [`ProseMirrorPlugin`](state.md#prosemirrorplugin)\<`any`\>[]
-
-</td>
-<td>
+```ts
+optional plugins: readonly ProseMirrorPlugin<any>[];
+```
 
 A set of plugins to use in the view, applying their [plugin
 view](https://prosemirror.net/docs/ref/#state.PluginSpec.view) and
@@ -3032,176 +4080,330 @@ component (a [state field](https://prosemirror.net/docs/ref/#state.PluginSpec.st
 appender) will result in an error, since such plugins must be
 present in the state to work.
 
-</td>
-<td>
+##### scrollMargin? {#scrollmargin}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="scrollmargin"></a> `scrollMargin?`
-
-</td>
-<td>
-
- \| `number` \| \{ `bottom`: `number`; `left`: `number`; `right`: `number`; `top`: `number`; \}
-
-</td>
-<td>
+```ts
+optional scrollMargin: 
+  | number
+  | {
+  bottom: number;
+  left: number;
+  right: number;
+  top: number;
+};
+```
 
 Determines the extra space (in pixels) that is left above or
 below the cursor when it is scrolled into view. Defaults to 5.
 
-</td>
-<td>
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`scrollMargin`](#scrollmargin-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### scrollThreshold? {#scrollthreshold}
 
-<a id="scrollthreshold"></a> `scrollThreshold?`
-
-</td>
-<td>
-
- \| `number` \| \{ `bottom`: `number`; `left`: `number`; `right`: `number`; `top`: `number`; \}
-
-</td>
-<td>
+```ts
+optional scrollThreshold: 
+  | number
+  | {
+  bottom: number;
+  left: number;
+  right: number;
+  top: number;
+};
+```
 
 Determines the distance (in pixels) between the cursor and the
 end of the visible viewport at which point, when scrolling the
 cursor into view, scrolling takes place. Defaults to 0.
 
-</td>
-<td>
+###### Inherited from
 
 [`EditorProps`](#editorprops).[`scrollThreshold`](#scrollthreshold-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### state {#state-1}
 
-<a id="state-1"></a> `state`
-
-</td>
-<td>
-
-[`EditorState`](state.md#editorstate)
-
-</td>
-<td>
+```ts
+state: EditorState;
+```
 
 The current state of the editor.
 
-</td>
-<td>
+##### transformCopied()? {#transformcopied}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="transformcopied"></a> `transformCopied?`
-
-</td>
-<td>
-
-(`this`: `any`, `slice`: [`Slice`](model.md#slice-2), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice-2)
-
-</td>
-<td>
+```ts
+optional transformCopied: (this: any, slice: Slice, view: EditorView) => Slice;
+```
 
 Can be used to transform copied or cut content before it is
 serialized to the clipboard.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
 </td>
 <td>
 
-[`EditorProps`](#editorprops).[`transformCopied`](#transformcopied-1)
+`any`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="transformpasted"></a> `transformPasted?`
+`slice`
 
 </td>
 <td>
 
-(`this`: `any`, `slice`: [`Slice`](model.md#slice-2), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice-2)
-
-</td>
-<td>
-
-Can be used to transform pasted or dragged-and-dropped content
-before it is applied to the document.
-
-</td>
-<td>
-
-[`EditorProps`](#editorprops).[`transformPasted`](#transformpasted-1)
+[`Slice`](model.md#slice-2)
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="transformpastedhtml"></a> `transformPastedHTML?`
+`view`
 
 </td>
 <td>
 
-(`this`: `any`, `html`: `string`, `view`: [`EditorView`](#editorview)) => `string`
-
-</td>
-<td>
-
-Can be used to transform pasted HTML text, _before_ it is parsed,
-for example to clean it up.
-
-</td>
-<td>
-
-[`EditorProps`](#editorprops).[`transformPastedHTML`](#transformpastedhtml-1)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="transformpastedtext"></a> `transformPastedText?`
-
-</td>
-<td>
-
-(`this`: `any`, `text`: `string`, `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => `string`
-
-</td>
-<td>
-
-Transform pasted plain text. The `plain` flag will be true when
-the text is pasted as plain text.
-
-</td>
-<td>
-
-[`EditorProps`](#editorprops).[`transformPastedText`](#transformpastedtext-1)
+[`EditorView`](#editorview)
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+[`Slice`](model.md#slice-2)
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`transformCopied`](#transformcopied-1)
+
+##### transformPasted()? {#transformpasted}
+
+```ts
+optional transformPasted: (this: any, slice: Slice, view: EditorView) => Slice;
+```
+
+Can be used to transform pasted or dragged-and-dropped content
+before it is applied to the document.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slice`
+
+</td>
+<td>
+
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Slice`](model.md#slice-2)
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`transformPasted`](#transformpasted-1)
+
+##### transformPastedHTML()? {#transformpastedhtml}
+
+```ts
+optional transformPastedHTML: (this: any, html: string, view: EditorView) => string;
+```
+
+Can be used to transform pasted HTML text, _before_ it is parsed,
+for example to clean it up.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`html`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`string`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`transformPastedHTML`](#transformpastedhtml-1)
+
+##### transformPastedText()? {#transformpastedtext}
+
+```ts
+optional transformPastedText: (this: any, text: string, plain: boolean, view: EditorView) => string;
+```
+
+Transform pasted plain text. The `plain` flag will be true when
+the text is pasted as plain text.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`text`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`plain`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`string`
+
+###### Inherited from
+
+[`EditorProps`](#editorprops).[`transformPastedText`](#transformpastedtext-1)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3235,55 +4437,29 @@ about.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### aria-ui/context-provider {#aria-uicontext-provider}
 
-<a id="aria-uicontext-provider"></a> `aria-ui/context-provider`
+```ts
+aria-ui/context-provider: ContextProviderEvent;
+```
 
-</td>
-<td>
-
-`ContextProviderEvent`
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 HTMLElementEventMap.aria-ui/context-provider
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### aria-ui/context-request {#aria-uicontext-request}
 
-<a id="aria-uicontext-request"></a> `aria-ui/context-request`
+```ts
+aria-ui/context-request: ContextRequestEvent<unknown>;
+```
 
-</td>
-<td>
-
-`ContextRequestEvent`\<`unknown`\>
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 HTMLElementEventMap.aria-ui/context-request
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3350,27 +4526,15 @@ functions, and is used to pass in the plugin type when defining a
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attributes? {#attributes-1}
 
-<a id="attributes-1"></a> `attributes?`
-
-</td>
-<td>
-
- \| \{ [`name`: `string`]: `string`; \} \| (`state`: [`EditorState`](state.md#editorstate)) => `object`
-
-</td>
-<td>
+```ts
+optional attributes: 
+  | {
+[name: string]: string;
+}
+  | (state: EditorState) => object;
+```
 
 Control the DOM attributes of the editable element. May be either
 an object or a function going from an editor state to an object.
@@ -3381,39 +4545,21 @@ provided here will be added to the class. For other attributes,
 the value provided first (as in
 [`someProp`](https://prosemirror.net/docs/ref/#view.EditorView.someProp)) will be used.
 
-</td>
-</tr>
-<tr>
-<td>
+##### clipboardParser? {#clipboardparser-1}
 
-<a id="clipboardparser-1"></a> `clipboardParser?`
-
-</td>
-<td>
-
-[`DOMParser`](model.md#domparser)
-
-</td>
-<td>
+```ts
+optional clipboardParser: DOMParser;
+```
 
 The [parser](https://prosemirror.net/docs/ref/#model.DOMParser) to use when reading content from
 the clipboard. When not given, the value of the
 [`domParser`](https://prosemirror.net/docs/ref/#view.EditorProps.domParser) prop is used.
 
-</td>
-</tr>
-<tr>
-<td>
+##### clipboardSerializer? {#clipboardserializer-1}
 
-<a id="clipboardserializer-1"></a> `clipboardSerializer?`
-
-</td>
-<td>
-
-[`DOMSerializer`](model.md#domserializer)
-
-</td>
-<td>
+```ts
+optional clipboardSerializer: DOMSerializer;
+```
 
 The DOM serializer to use when putting content onto the
 clipboard. If not given, the result of
@@ -3423,20 +4569,11 @@ will be used. This object will only have its
 method called, and you may provide an alternative object type
 implementing a compatible method.
 
-</td>
-</tr>
-<tr>
-<td>
+##### clipboardTextParser()? {#clipboardtextparser-1}
 
-<a id="clipboardtextparser-1"></a> `clipboardTextParser?`
-
-</td>
-<td>
-
-(`this`: `P`, `text`: `string`, `$context`: [`ResolvedPos`](model.md#resolvedpos), `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice-2)
-
-</td>
-<td>
+```ts
+optional clipboardTextParser: (this: P, text: string, $context: ResolvedPos, plain: boolean, view: EditorView) => Slice;
+```
 
 A function to parse text from the clipboard into a document
 slice. Called after
@@ -3446,169 +4583,560 @@ in `<p>` tags, and call
 [`clipboardParser`](https://prosemirror.net/docs/ref/#view.EditorProps.clipboardParser) on it.
 The `plain` flag will be true when the text is pasted as plain text.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="clipboardtextserializer-1"></a> `clipboardTextSerializer?`
+`text`
 
 </td>
 <td>
 
-(`this`: `P`, `content`: [`Slice`](model.md#slice-2), `view`: [`EditorView`](#editorview)) => `string`
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`$context`
 
 </td>
 <td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`plain`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Slice`](model.md#slice-2)
+
+##### clipboardTextSerializer()? {#clipboardtextserializer-1}
+
+```ts
+optional clipboardTextSerializer: (this: P, content: Slice, view: EditorView) => string;
+```
 
 A function that will be called to get the text for the current
 selection when copying text to the clipboard. By default, the
 editor will use [`textBetween`](https://prosemirror.net/docs/ref/#model.Node.textBetween) on the
 selected range.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="createselectionbetween-1"></a> `createSelectionBetween?`
+`content`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `anchor`: [`ResolvedPos`](model.md#resolvedpos), `head`: [`ResolvedPos`](model.md#resolvedpos)) => `null` \| [`Selection`](state.md#selection-1)
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
 
 </td>
 <td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`string`
+
+##### createSelectionBetween()? {#createselectionbetween-1}
+
+```ts
+optional createSelectionBetween: (this: P, view: EditorView, anchor: ResolvedPos, head: ResolvedPos) => null | Selection;
+```
 
 Can be used to override the way a selection is created when
 reading a DOM selection between the given anchor and head.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="decorations-1"></a> `decorations?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `state`: [`EditorState`](state.md#editorstate)) => `undefined` \| `null` \| [`DecorationSource`](#decorationsource)
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`anchor`
 
 </td>
 <td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`head`
+
+</td>
+<td>
+
+[`ResolvedPos`](model.md#resolvedpos)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| [`Selection`](state.md#selection-1)
+
+##### decorations()? {#decorations-1}
+
+```ts
+optional decorations: (this: P, state: EditorState) => undefined | null | DecorationSource;
+```
 
 A set of [document decorations](https://prosemirror.net/docs/ref/#view.Decoration) to show in the
 view.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="domparser-1"></a> `domParser?`
+`state`
 
 </td>
 <td>
 
-[`DOMParser`](model.md#domparser)
+[`EditorState`](state.md#editorstate)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`undefined` \| `null` \| [`DecorationSource`](#decorationsource)
+
+##### domParser? {#domparser-1}
+
+```ts
+optional domParser: DOMParser;
+```
 
 The [parser](https://prosemirror.net/docs/ref/#model.DOMParser) to use when reading editor changes
 from the DOM. Defaults to calling
 [`DOMParser.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMParser^fromSchema) on the
 editor's schema.
 
-</td>
-</tr>
-<tr>
-<td>
+##### dragCopies()? {#dragcopies-1}
 
-<a id="dragcopies-1"></a> `dragCopies?`
-
-</td>
-<td>
-
-(`event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`
-
-</td>
-<td>
+```ts
+optional dragCopies: (event: DragEvent) => boolean;
+```
 
 Determines whether an in-editor drag event should copy or move
 the selection. When not given, the event's `altKey` property is
 used on macOS, `ctrlKey` on other platforms.
 
-</td>
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="editable-2"></a> `editable?`
+`event`
 
 </td>
 <td>
 
-(`this`: `P`, `state`: [`EditorState`](state.md#editorstate)) => `boolean`
+[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean`
+
+##### editable()? {#editable-2}
+
+```ts
+optional editable: (this: P, state: EditorState) => boolean;
+```
 
 When this returns false, the content of the view is not directly
 editable.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handleclick-1"></a> `handleClick?`
+`state`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`
+[`EditorState`](state.md#editorstate)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean`
+
+##### handleClick()? {#handleclick-1}
+
+```ts
+optional handleClick: (this: P, view: EditorView, pos: number, event: MouseEvent) => boolean | void;
+```
 
 Called when the editor is clicked, after `handleClickOn` handlers
 have been called.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handleclickon-1"></a> `handleClickOn?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
 
 </td>
 <td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### handleClickOn()? {#handleclickon-1}
+
+```ts
+optional handleClickOn: (this: P, view: EditorView, pos: number, node: ProseMirrorNode, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void;
+```
 
 Called for each node around a click, from the inside out. The
 `direct` flag will be true for the inner node.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handledomevents-1"></a> `handleDOMEvents?`
+`view`
 
 </td>
 <td>
 
-`object`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
 
 </td>
 <td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`nodePos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`direct`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### handleDOMEvents? {#handledomevents-1}
+
+```ts
+optional handleDOMEvents: object;
+```
 
 Can be an object mapping DOM event type names to functions that
 handle them. Such functions will be called before any handling
@@ -3618,233 +5146,936 @@ from such a function, you are responsible for calling
 `preventDefault` yourself (or not, if you want to allow the
 default behavior).
 
+###### Index Signature
+
+```ts
+[key: string]: 
+  | undefined
+  | (this: P, view: EditorView, event: any) => boolean | void
+```
+
+###### aria-ui/context-provider()?
+
+```ts
+optional aria-ui/context-provider: (this: P, view: EditorView, event: ContextProviderEvent) => boolean | void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-`handleDOMEvents.aria-ui/context-provider?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `event`: `ContextProviderEvent`) => `boolean` \| `void`
-
-</td>
-<td>
-
-&hyphen;
+[`EditorView`](#editorview)
 
 </td>
 </tr>
 <tr>
 <td>
 
-`handleDOMEvents.aria-ui/context-request?`
+`event`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `event`: `ContextRequestEvent`\<`unknown`\>) => `boolean` \| `void`
+`ContextProviderEvent`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### aria-ui/context-request()?
+
+```ts
+optional aria-ui/context-request: (this: P, view: EditorView, event: ContextRequestEvent<unknown>) => boolean | void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
 
 </td>
 <td>
 
-&hyphen;
+`P`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handledoubleclick-1"></a> `handleDoubleClick?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
 
 </td>
 <td>
+
+`ContextRequestEvent`\<`unknown`\>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### handleDoubleClick()? {#handledoubleclick-1}
+
+```ts
+optional handleDoubleClick: (this: P, view: EditorView, pos: number, event: MouseEvent) => boolean | void;
+```
 
 Called when the editor is double-clicked, after `handleDoubleClickOn`.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handledoubleclickon-1"></a> `handleDoubleClickOn?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
 
 </td>
 <td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### handleDoubleClickOn()? {#handledoubleclickon-1}
+
+```ts
+optional handleDoubleClickOn: (this: P, view: EditorView, pos: number, node: ProseMirrorNode, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void;
+```
 
 Called for each node around a double click.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handledrop-1"></a> `handleDrop?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent), `slice`: [`Slice`](model.md#slice-2), `moved`: `boolean`) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
 
 </td>
 <td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`nodePos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`direct`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### handleDrop()? {#handledrop-1}
+
+```ts
+optional handleDrop: (this: P, view: EditorView, event: DragEvent, slice: Slice, moved: boolean) => boolean | void;
+```
 
 Called when something is dropped on the editor. `moved` will be
 true if this drop moves from the current selection (which should
 thus be deleted).
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handlekeydown-1"></a> `handleKeyDown?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
 
 </td>
 <td>
+
+[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slice`
+
+</td>
+<td>
+
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`moved`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### handleKeyDown()? {#handlekeydown-1}
+
+```ts
+optional handleKeyDown: (this: P, view: EditorView, event: KeyboardEvent) => boolean | void;
+```
 
 Called when the editor receives a `keydown` event.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handlekeypress-1"></a> `handleKeyPress?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
 
 </td>
 <td>
+
+[`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### handleKeyPress()? {#handlekeypress-1}
+
+```ts
+optional handleKeyPress: (this: P, view: EditorView, event: KeyboardEvent) => boolean | void;
+```
 
 Handler for `keypress` events.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handlepaste-1"></a> `handlePaste?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `event`: [`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent), `slice`: [`Slice`](model.md#slice-2)) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
 
 </td>
 <td>
+
+[`KeyboardEvent`](https://developer.mozilla.org/docs/Web/API/KeyboardEvent)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### handlePaste()? {#handlepaste-1}
+
+```ts
+optional handlePaste: (this: P, view: EditorView, event: ClipboardEvent, slice: Slice) => boolean | void;
+```
 
 Can be used to override the behavior of pasting. `slice` is the
 pasted content parsed by the editor, but you can directly access
 the event to get at the raw content.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handlescrolltoselection-1"></a> `handleScrollToSelection?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview)) => `boolean`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
 
 </td>
 <td>
+
+[`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slice`
+
+</td>
+<td>
+
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### handleScrollToSelection()? {#handlescrolltoselection-1}
+
+```ts
+optional handleScrollToSelection: (this: P, view: EditorView) => boolean;
+```
 
 Called when the view, after updating its state, tries to scroll
 the selection into view. A handler function may return false to
 indicate that it did not handle the scrolling and further
 handlers or the default behavior should be tried.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handletextinput-1"></a> `handleTextInput?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `from`: `number`, `to`: `number`, `text`: `string`, `deflt`: () => [`Transaction`](state.md#transaction)) => `boolean` \| `void`
+[`EditorView`](#editorview)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean`
+
+##### handleTextInput()? {#handletextinput-1}
+
+```ts
+optional handleTextInput: (this: P, view: EditorView, from: number, to: number, text: string, deflt: () => Transaction) => boolean | void;
+```
 
 Whenever the user directly input text, this handler is called
 before the input is applied. If it returns `true`, the default
 behavior of actually inserting the text is suppressed.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handletripleclick-1"></a> `handleTripleClick?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`from`
 
 </td>
 <td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`to`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`text`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`deflt`
+
+</td>
+<td>
+
+() => [`Transaction`](state.md#transaction)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### handleTripleClick()? {#handletripleclick-1}
+
+```ts
+optional handleTripleClick: (this: P, view: EditorView, pos: number, event: MouseEvent) => boolean | void;
+```
 
 Called when the editor is triple-clicked, after `handleTripleClickOn`.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="handletripleclickon-1"></a> `handleTripleClickOn?`
+`view`
 
 </td>
 <td>
 
-(`this`: `P`, `view`: [`EditorView`](#editorview), `pos`: `number`, `node`: [`ProseMirrorNode`](model.md#prosemirrornode), `nodePos`: `number`, `event`: [`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent), `direct`: `boolean`) => `boolean` \| `void`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
 
 </td>
 <td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### handleTripleClickOn()? {#handletripleclickon-1}
+
+```ts
+optional handleTripleClickOn: (this: P, view: EditorView, pos: number, node: ProseMirrorNode, nodePos: number, event: MouseEvent, direct: boolean) => boolean | void;
+```
 
 Called for each node around a triple click.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="markviews-1"></a> `markViews?`
+`view`
 
 </td>
 <td>
 
-`object`
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`pos`
 
 </td>
 <td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`nodePos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`MouseEvent`](https://developer.mozilla.org/docs/Web/API/MouseEvent)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`direct`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+##### markViews? {#markviews-1}
+
+```ts
+optional markViews: object;
+```
 
 Pass custom mark rendering functions. Note that these cannot
 provide the kind of dynamic behavior that [node
@@ -3852,20 +6083,17 @@ views](https://prosemirror.net/docs/ref/#view.NodeView) can—they just provide 
 logic. The third argument indicates whether the mark's content
 is inline.
 
-</td>
-</tr>
-<tr>
-<td>
+###### Index Signature
 
-<a id="nodeviews-1"></a> `nodeViews?`
+```ts
+[mark: string]: MarkViewConstructor
+```
 
-</td>
-<td>
+##### nodeViews? {#nodeviews-1}
 
-`object`
-
-</td>
-<td>
+```ts
+optional nodeViews: object;
+```
 
 Allows you to pass custom rendering and behavior logic for
 nodes. Should map node names to constructor functions that
@@ -3893,119 +6121,304 @@ inner decorations.
 views](https://prosemirror.net/docs/ref/#view.EditorProps.markViews) can also be included in this
 object.)
 
-</td>
-</tr>
-<tr>
-<td>
+###### Index Signature
 
-<a id="scrollmargin-1"></a> `scrollMargin?`
+```ts
+[node: string]: NodeViewConstructor
+```
 
-</td>
-<td>
+##### scrollMargin? {#scrollmargin-1}
 
- \| `number` \| \{ `bottom`: `number`; `left`: `number`; `right`: `number`; `top`: `number`; \}
-
-</td>
-<td>
+```ts
+optional scrollMargin: 
+  | number
+  | {
+  bottom: number;
+  left: number;
+  right: number;
+  top: number;
+};
+```
 
 Determines the extra space (in pixels) that is left above or
 below the cursor when it is scrolled into view. Defaults to 5.
 
-</td>
-</tr>
-<tr>
-<td>
+##### scrollThreshold? {#scrollthreshold-1}
 
-<a id="scrollthreshold-1"></a> `scrollThreshold?`
-
-</td>
-<td>
-
- \| `number` \| \{ `bottom`: `number`; `left`: `number`; `right`: `number`; `top`: `number`; \}
-
-</td>
-<td>
+```ts
+optional scrollThreshold: 
+  | number
+  | {
+  bottom: number;
+  left: number;
+  right: number;
+  top: number;
+};
+```
 
 Determines the distance (in pixels) between the cursor and the
 end of the visible viewport at which point, when scrolling the
 cursor into view, scrolling takes place. Defaults to 0.
 
-</td>
-</tr>
-<tr>
-<td>
+##### transformCopied()? {#transformcopied-1}
 
-<a id="transformcopied-1"></a> `transformCopied?`
-
-</td>
-<td>
-
-(`this`: `P`, `slice`: [`Slice`](model.md#slice-2), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice-2)
-
-</td>
-<td>
+```ts
+optional transformCopied: (this: P, slice: Slice, view: EditorView) => Slice;
+```
 
 Can be used to transform copied or cut content before it is
 serialized to the clipboard.
 
-</td>
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="transformpasted-1"></a> `transformPasted?`
+`this`
 
 </td>
 <td>
 
-(`this`: `P`, `slice`: [`Slice`](model.md#slice-2), `view`: [`EditorView`](#editorview)) => [`Slice`](model.md#slice-2)
-
-</td>
-<td>
-
-Can be used to transform pasted or dragged-and-dropped content
-before it is applied to the document.
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="transformpastedhtml-1"></a> `transformPastedHTML?`
-
-</td>
-<td>
-
-(`this`: `P`, `html`: `string`, `view`: [`EditorView`](#editorview)) => `string`
-
-</td>
-<td>
-
-Can be used to transform pasted HTML text, _before_ it is parsed,
-for example to clean it up.
+`P`
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="transformpastedtext-1"></a> `transformPastedText?`
+`slice`
 
 </td>
 <td>
 
-(`this`: `P`, `text`: `string`, `plain`: `boolean`, `view`: [`EditorView`](#editorview)) => `string`
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
 
 </td>
 <td>
 
-Transform pasted plain text. The `plain` flag will be true when
-the text is pasted as plain text.
+[`EditorView`](#editorview)
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+[`Slice`](model.md#slice-2)
+
+##### transformPasted()? {#transformpasted-1}
+
+```ts
+optional transformPasted: (this: P, slice: Slice, view: EditorView) => Slice;
+```
+
+Can be used to transform pasted or dragged-and-dropped content
+before it is applied to the document.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`slice`
+
+</td>
+<td>
+
+[`Slice`](model.md#slice-2)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`Slice`](model.md#slice-2)
+
+##### transformPastedHTML()? {#transformpastedhtml-1}
+
+```ts
+optional transformPastedHTML: (this: P, html: string, view: EditorView) => string;
+```
+
+Can be used to transform pasted HTML text, _before_ it is parsed,
+for example to clean it up.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`html`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`string`
+
+##### transformPastedText()? {#transformpastedtext-1}
+
+```ts
+optional transformPastedText: (this: P, text: string, plain: boolean, view: EditorView) => string;
+```
+
+Transform pasted plain text. The `plain` flag will be true when
+the text is pasted as plain text.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`this`
+
+</td>
+<td>
+
+`P`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`text`
+
+</td>
+<td>
+
+`string`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`plain`
+
+</td>
+<td>
+
+`boolean`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](#editorview)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`string`
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4033,89 +6446,76 @@ Objects returned as mark views must conform to this interface.
 
 #### Properties
 
+##### contentDOM? {#contentdom}
+
+```ts
+optional contentDOM: 
+  | null
+  | HTMLElement;
+```
+
+The DOM node that should hold the mark's content. When this is not
+present, the `dom` property is used as the content DOM.
+
+##### destroy()? {#destroy-2}
+
+```ts
+optional destroy: () => void;
+```
+
+Called when the mark view is removed from the editor or the whole
+editor is destroyed.
+
+###### Returns
+
+`void`
+
+##### dom {#dom-1}
+
+```ts
+dom: Node;
+```
+
+The outer DOM node that represents the document node.
+
+##### ignoreMutation()? {#ignoremutation}
+
+```ts
+optional ignoreMutation: (mutation: ViewMutationRecord) => boolean;
+```
+
+Called when a [mutation](https://prosemirror.net/docs/ref/#view.ViewMutationRecord) happens within the
+view. Return false if the editor should re-read the selection or re-parse
+the range around the mutation, true if it can safely be ignored.
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="contentdom"></a> `contentDOM?`
+`mutation`
 
 </td>
 <td>
 
- \| `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
-
-</td>
-<td>
-
-The DOM node that should hold the mark's content. When this is not
-present, the `dom` property is used as the content DOM.
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="destroy-2"></a> `destroy?`
-
-</td>
-<td>
-
-() => `void`
-
-</td>
-<td>
-
-Called when the mark view is removed from the editor or the whole
-editor is destroyed.
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="dom-1"></a> `dom`
-
-</td>
-<td>
-
-[`Node`](https://developer.mozilla.org/docs/Web/API/Node)
-
-</td>
-<td>
-
-The outer DOM node that represents the document node.
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="ignoremutation"></a> `ignoreMutation?`
-
-</td>
-<td>
-
-(`mutation`: [`ViewMutationRecord`](#viewmutationrecord)) => `boolean`
-
-</td>
-<td>
-
-Called when a [mutation](https://prosemirror.net/docs/ref/#view.ViewMutationRecord) happens within the
-view. Return false if the editor should re-read the selection or re-parse
-the range around the mutation, true if it can safely be ignored.
+[`ViewMutationRecord`](#viewmutationrecord)
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`boolean`
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4144,27 +6544,13 @@ Objects returned as node views must conform to this interface.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### contentDOM? {#contentdom-1}
 
-<a id="contentdom-1"></a> `contentDOM?`
-
-</td>
-<td>
-
- \| `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
-
-</td>
-<td>
+```ts
+optional contentDOM: 
+  | null
+  | HTMLElement;
+```
 
 The DOM node that should hold the node's content. Only meaningful
 if the node view also defines a `dom` property and if its node
@@ -4173,92 +6559,84 @@ will take care of rendering the node's children into it. When it
 is not present, the node view itself is responsible for rendering
 (or deciding not to render) its child nodes.
 
-</td>
-</tr>
-<tr>
-<td>
+##### deselectNode()? {#deselectnode}
 
-<a id="deselectnode"></a> `deselectNode?`
-
-</td>
-<td>
-
-() => `void`
-
-</td>
-<td>
+```ts
+optional deselectNode: () => void;
+```
 
 When defining a `selectNode` method, you should also provide a
 `deselectNode` method to remove the effect again.
 
-</td>
-</tr>
-<tr>
-<td>
+###### Returns
 
-<a id="destroy-3"></a> `destroy?`
+`void`
 
-</td>
-<td>
+##### destroy()? {#destroy-3}
 
-() => `void`
-
-</td>
-<td>
+```ts
+optional destroy: () => void;
+```
 
 Called when the node view is removed from the editor or the whole
 editor is destroyed.
 
-</td>
-</tr>
-<tr>
-<td>
+###### Returns
 
-<a id="dom-2"></a> `dom`
+`void`
 
-</td>
-<td>
+##### dom {#dom-2}
 
-[`Node`](https://developer.mozilla.org/docs/Web/API/Node)
-
-</td>
-<td>
+```ts
+dom: Node;
+```
 
 The outer DOM node that represents the document node.
 
-</td>
-</tr>
-<tr>
-<td>
+##### ignoreMutation()? {#ignoremutation-1}
 
-<a id="ignoremutation-1"></a> `ignoreMutation?`
-
-</td>
-<td>
-
-(`mutation`: [`ViewMutationRecord`](#viewmutationrecord)) => `boolean`
-
-</td>
-<td>
+```ts
+optional ignoreMutation: (mutation: ViewMutationRecord) => boolean;
+```
 
 Called when a [mutation](https://prosemirror.net/docs/ref/#view.ViewMutationRecord) happens within the
 view. Return false if the editor should re-read the selection or re-parse
 the range around the mutation, true if it can safely be ignored.
 
-</td>
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="multitype"></a> `multiType?`
+`mutation`
 
 </td>
 <td>
+
+[`ViewMutationRecord`](#viewmutationrecord)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
 
 `boolean`
 
-</td>
-<td>
+##### multiType? {#multitype}
+
+```ts
+optional multiType: boolean;
+```
 
 By default, `update` will only be called when a node of the same
 node type appears in this view's position. When you set this to
@@ -4267,38 +6645,26 @@ a node view that representsmultiple types of nodes. You will
 need to check the type of the nodes you get in `update` and
 return `false` for types you cannot handle.
 
-</td>
-</tr>
-<tr>
-<td>
+##### selectNode()? {#selectnode}
 
-<a id="selectnode"></a> `selectNode?`
-
-</td>
-<td>
-
-() => `void`
-
-</td>
-<td>
+```ts
+optional selectNode: () => void;
+```
 
 Can be used to override the way the node's selected status (as a
 node selection) is displayed.
 
-</td>
-</tr>
-<tr>
-<td>
+###### Returns
 
-<a id="setselection"></a> `setSelection?`
+`void`
 
-</td>
-<td>
+##### setSelection()? {#setselection}
 
-(`anchor`: `number`, `head`: `number`, `root`: \| [`Document`](https://developer.mozilla.org/docs/Web/API/Document) \| [`ShadowRoot`](https://developer.mozilla.org/docs/Web/API/ShadowRoot)) => `void`
-
-</td>
-<td>
+```ts
+optional setSelection: (anchor: number, head: number, root: 
+  | Document
+  | ShadowRoot) => void;
+```
 
 This will be called to handle setting the selection inside the
 node. The `anchor` and `head` positions are relative to the start
@@ -4306,39 +6672,103 @@ of the node. By default, a DOM selection will be created between
 the DOM positions corresponding to those positions, but if you
 override it you can do something else.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`anchor`
+
+</td>
+<td>
+
+`number`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="stopevent"></a> `stopEvent?`
+`head`
 
 </td>
 <td>
 
-(`event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)) => `boolean`
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`root`
 
 </td>
 <td>
+
+ \| [`Document`](https://developer.mozilla.org/docs/Web/API/Document) \| [`ShadowRoot`](https://developer.mozilla.org/docs/Web/API/ShadowRoot)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+##### stopEvent()? {#stopevent}
+
+```ts
+optional stopEvent: (event: Event) => boolean;
+```
 
 Can be used to prevent the editor view from trying to handle some
 or all DOM events that bubble up from the node view. Events for
 which this returns true are not handled by the editor.
 
-</td>
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="update-2"></a> `update?`
+`event`
 
 </td>
 <td>
 
-(`node`: [`ProseMirrorNode`](model.md#prosemirrornode), `decorations`: readonly [`Decoration`](#decoration)[], `innerDecorations`: [`DecorationSource`](#decorationsource)) => `boolean`
+[`Event`](https://developer.mozilla.org/docs/Web/API/Event)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean`
+
+##### update()? {#update-2}
+
+```ts
+optional update: (node: ProseMirrorNode, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean;
+```
 
 When given, this will be called when the view is updating
 itself. It will be given a node, an array of active decorations
@@ -4351,10 +6781,58 @@ to that node, and false otherwise. If the node view has a
 `contentDOM` property (or no `dom` property), updating its child
 nodes will be handled by ProseMirror.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`decorations`
+
+</td>
+<td>
+
+readonly [`Decoration`](#decoration)[]
+
+</td>
+</tr>
+<tr>
+<td>
+
+`innerDecorations`
+
+</td>
+<td>
+
+[`DecorationSource`](#decorationsource)
+
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`boolean`
 
 <!-- DEBUG memberWithGroups 10 -->
 

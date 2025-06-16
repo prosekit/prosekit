@@ -640,85 +640,37 @@ extension.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs}
 
-<a id="attrs"></a> `attrs?`
-
-</td>
-<td>
-
-`null` \| [`Attrs`](pm/model.md#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: null | Attrs;
+```
 
 The attributes of the mark to add.
 
-</td>
-</tr>
-<tr>
-<td>
+##### from? {#from}
 
-<a id="from"></a> `from?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional from: number;
+```
 
 The start position of the document. By default it will be the start position of current selection.
 
-</td>
-</tr>
-<tr>
-<td>
+##### to? {#to}
 
-<a id="to"></a> `to?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional to: number;
+```
 
 The end position of the document. By default it will be the end position of current selection.
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type}
 
-<a id="type"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`MarkType`](pm/model.md#marktype-1)
-
-</td>
-<td>
+```ts
+type: string | MarkType;
+```
 
 The type of the mark to add.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -901,97 +853,54 @@ can be executed, otherwise `false`.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### defaultContent? {#defaultcontent}
 
-<a id="defaultcontent"></a> `defaultContent?`
-
-</td>
-<td>
-
- \| `string` \| [`NodeJSON`](#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
-
-</td>
-<td>
+```ts
+optional defaultContent: 
+  | string
+  | NodeJSON
+  | HTMLElement;
+```
 
 The starting document to use when creating the editor. It can be a
 ProseMirror node JSON object, a HTML string, or a HTML element instance.
 
-</td>
-</tr>
-<tr>
-<td>
+##### ~~defaultDoc?~~ {#defaultdoc}
 
-<a id="defaultdoc"></a> ~~`defaultDoc?`~~
-
-</td>
-<td>
-
-[`NodeJSON`](#nodejson)
-
-</td>
-<td>
+```ts
+optional defaultDoc: NodeJSON;
+```
 
 A JSON object representing the starting document to use when creating the
 editor.
 
-**Deprecated**
+###### Deprecated
 
 Use `defaultContent` instead.
 
-</td>
-</tr>
-<tr>
-<td>
+##### ~~defaultHTML?~~ {#defaulthtml}
 
-<a id="defaulthtml"></a> ~~`defaultHTML?`~~
-
-</td>
-<td>
-
- \| `string` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
-
-</td>
-<td>
+```ts
+optional defaultHTML: 
+  | string
+  | HTMLElement;
+```
 
 A HTML element or a HTML string representing the starting document to use
 when creating the editor.
 
-**Deprecated**
+###### Deprecated
 
 Use `defaultContent` instead.
 
-</td>
-</tr>
-<tr>
-<td>
+##### defaultSelection? {#defaultselection}
 
-<a id="defaultselection"></a> `defaultSelection?`
-
-</td>
-<td>
-
-[`SelectionJSON`](#selectionjson)
-
-</td>
-<td>
+```ts
+optional defaultSelection: SelectionJSON;
+```
 
 A JSON object representing the starting selection to use when creating the
 editor. It's only used when `defaultContent` is also provided.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1011,36 +920,15 @@ editor. It's only used when `defaultContent` is also provided.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### document? {#document}
 
-<a id="document"></a> `document?`
-
-</td>
-<td>
-
-[`Document`](https://developer.mozilla.org/docs/Web/API/Document)
-
-</td>
-<td>
+```ts
+optional document: Document;
+```
 
 The Document object to use for DOM operations. If not provided, defaults to
 the current browser's document object. Useful for server-side rendering or
 testing environments.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1064,74 +952,31 @@ testing environments.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### context? {#context}
 
-<a id="context"></a> `context?`
-
-</td>
-<td>
-
-[`ResolvedPos`](pm/model.md#resolvedpos)
-
-</td>
-<td>
+```ts
+optional context: ResolvedPos;
+```
 
 A set of additional nodes to count as
 [context](https://prosemirror.net/docs/ref/#model.ParseRule.context) when parsing, above the
 given [top node](https://prosemirror.net/docs/ref/#model.ParseOptions.topNode).
 
-</td>
-<td>
+###### Inherited from
 
 [`ParseOptions`](pm/model.md#parseoptions).[`context`](pm/model.md#parseoptions#context-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### DOMParser? {#domparser}
 
-<a id="domparser"></a> `DOMParser?`
+```ts
+optional DOMParser: typeof DOMParser;
+```
 
-</td>
-<td>
+##### findPositions? {#findpositions}
 
-*typeof* [`DOMParser`](pm/model.md#domparser)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="findpositions"></a> `findPositions?`
-
-</td>
-<td>
-
-`object`[]
-
-</td>
-<td>
+```ts
+optional findPositions: object[];
+```
 
 When given, the parser will, beside parsing the content,
 record the document positions of the given DOM positions. It
@@ -1139,131 +984,93 @@ will do so by writing to the objects, adding a `pos` property
 that holds the document position. DOM positions that are not
 in the parsed content will not be written to.
 
-</td>
-<td>
+###### node
+
+```ts
+node: Node;
+```
+
+###### offset
+
+```ts
+offset: number;
+```
+
+###### pos?
+
+```ts
+optional pos: number;
+```
+
+###### Inherited from
 
 [`ParseOptions`](pm/model.md#parseoptions).[`findPositions`](pm/model.md#parseoptions#findpositions)
 
-</td>
-</tr>
-<tr>
-<td>
+##### from? {#from-1}
 
-<a id="from-1"></a> `from?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional from: number;
+```
 
 The child node index to start parsing from.
 
-</td>
-<td>
+###### Inherited from
 
 [`ParseOptions`](pm/model.md#parseoptions).[`from`](pm/model.md#parseoptions#from-3)
 
-</td>
-</tr>
-<tr>
-<td>
+##### preserveWhitespace? {#preservewhitespace}
 
-<a id="preservewhitespace"></a> `preserveWhitespace?`
-
-</td>
-<td>
-
-`boolean` \| `"full"`
-
-</td>
-<td>
+```ts
+optional preserveWhitespace: boolean | "full";
+```
 
 By default, whitespace is collapsed as per HTML's rules. Pass
 `true` to preserve whitespace, but normalize newlines to
 spaces, and `"full"` to preserve whitespace entirely.
 
-</td>
-<td>
+###### Inherited from
 
 [`ParseOptions`](pm/model.md#parseoptions).[`preserveWhitespace`](pm/model.md#parseoptions#preservewhitespace)
 
-</td>
-</tr>
-<tr>
-<td>
+##### to? {#to-1}
 
-<a id="to-1"></a> `to?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional to: number;
+```
 
 The child node index to stop parsing at.
 
-</td>
-<td>
+###### Inherited from
 
 [`ParseOptions`](pm/model.md#parseoptions).[`to`](pm/model.md#parseoptions#to-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### topMatch? {#topmatch}
 
-<a id="topmatch"></a> `topMatch?`
-
-</td>
-<td>
-
-[`ContentMatch`](pm/model.md#contentmatch)
-
-</td>
-<td>
+```ts
+optional topMatch: ContentMatch;
+```
 
 Provide the starting content match that content parsed into the
 top node is matched against.
 
-</td>
-<td>
+###### Inherited from
 
 [`ParseOptions`](pm/model.md#parseoptions).[`topMatch`](pm/model.md#parseoptions#topmatch)
 
-</td>
-</tr>
-<tr>
-<td>
+##### topNode? {#topnode}
 
-<a id="topnode"></a> `topNode?`
-
-</td>
-<td>
-
-[`ProseMirrorNode`](pm/model.md#prosemirrornode)
-
-</td>
-<td>
+```ts
+optional topNode: ProseMirrorNode;
+```
 
 By default, the content is parsed into the schema's default
 [top node type](https://prosemirror.net/docs/ref/#model.Schema.topNodeType). You can pass this
 option to use the type and attributes from a different node
 as the top container.
 
-</td>
-<td>
+###### Inherited from
 
 [`ParseOptions`](pm/model.md#parseoptions).[`topNode`](pm/model.md#parseoptions#topnode)
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1283,10 +1090,27 @@ as the top container.
 
 #### Properties
 
+##### DOMSerializer? {#domserializer}
+
+```ts
+optional DOMSerializer: object;
+```
+
+###### fromSchema()
+
+```ts
+fromSchema: (schema: Schema) => DOMSerializer;
+```
+
+Build a serializer using the [`toDOM`](https://prosemirror.net/docs/ref/#model.NodeSpec.toDOM)
+properties in a schema's node and mark specs.
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
 </tr>
 </thead>
@@ -1294,29 +1118,21 @@ as the top container.
 <tr>
 <td>
 
-<a id="domserializer"></a> `DOMSerializer?`
+`schema`
 
 </td>
 <td>
 
-`object`
-
-</td>
-</tr>
-<tr>
-<td>
-
-`DOMSerializer.fromSchema`
-
-</td>
-<td>
-
-(`schema`: [`Schema`](pm/model.md#schema-3)) => [`DOMSerializer`](pm/model.md#domserializer)
+[`Schema`](pm/model.md#schema-3)
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+[`DOMSerializer`](pm/model.md#domserializer)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1355,114 +1171,62 @@ as the top container.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### defaultContent? {#defaultcontent-1}
 
-<a id="defaultcontent-1"></a> `defaultContent?`
-
-</td>
-<td>
-
- \| `string` \| [`NodeJSON`](#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
-
-</td>
-<td>
+```ts
+optional defaultContent: 
+  | string
+  | NodeJSON
+  | HTMLElement;
+```
 
 The starting document to use when creating the editor. It can be a
 ProseMirror node JSON object, a HTML string, or a HTML element instance.
 
-</td>
-</tr>
-<tr>
-<td>
+##### ~~defaultDoc?~~ {#defaultdoc-1}
 
-<a id="defaultdoc-1"></a> ~~`defaultDoc?`~~
-
-</td>
-<td>
-
-[`NodeJSON`](#nodejson)
-
-</td>
-<td>
+```ts
+optional defaultDoc: NodeJSON;
+```
 
 A JSON object representing the starting document to use when creating the
 editor.
 
-**Deprecated**
+###### Deprecated
 
 Use `defaultContent` instead.
 
-</td>
-</tr>
-<tr>
-<td>
+##### ~~defaultHTML?~~ {#defaulthtml-1}
 
-<a id="defaulthtml-1"></a> ~~`defaultHTML?`~~
-
-</td>
-<td>
-
- \| `string` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
-
-</td>
-<td>
+```ts
+optional defaultHTML: 
+  | string
+  | HTMLElement;
+```
 
 A HTML element or a HTML string representing the starting document to use
 when creating the editor.
 
-**Deprecated**
+###### Deprecated
 
 Use `defaultContent` instead.
 
-</td>
-</tr>
-<tr>
-<td>
+##### defaultSelection? {#defaultselection-1}
 
-<a id="defaultselection-1"></a> `defaultSelection?`
-
-</td>
-<td>
-
-[`SelectionJSON`](#selectionjson)
-
-</td>
-<td>
+```ts
+optional defaultSelection: SelectionJSON;
+```
 
 A JSON object representing the starting selection to use when creating the
 editor. It's only used when `defaultContent` is also provided.
 
-</td>
-</tr>
-<tr>
-<td>
+##### extension {#extension}
 
-<a id="extension"></a> `extension`
-
-</td>
-<td>
-
-`E`
-
-</td>
-<td>
+```ts
+extension: E;
+```
 
 The extension to use when creating the editor.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1482,34 +1246,13 @@ The extension to use when creating the editor.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### type {#type-1}
 
-<a id="type-1"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`MarkType`](pm/model.md#marktype-1)
-
-</td>
-<td>
+```ts
+type: string | MarkType;
+```
 
 The type of the mark to expand.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1554,106 +1297,33 @@ The type of the mark to expand.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Modifier</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### \_type? {#_type}
 
-<a id="_type"></a> `_type?`
+```ts
+optional _type: T;
+```
 
-</td>
-<td>
+##### extension {#extension-2}
 
-`public`
+```ts
+extension: 
+  | Extension<ExtensionTyping<any, any, any>>
+  | Extension<ExtensionTyping<any, any, any>>[];
+```
 
-</td>
-<td>
+##### priority? {#priority-1}
 
-`T`
+```ts
+optional priority: Priority;
+```
 
-</td>
-<td>
+##### schema {#schema-1}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="extension-2"></a> `extension`
-
-</td>
-<td>
-
-`public`
-
-</td>
-<td>
-
- \| [`Extension`](#extension-1)\<`ExtensionTyping`\<`any`, `any`, `any`\>\> \| [`Extension`](#extension-1)\<`ExtensionTyping`\<`any`, `any`, `any`\>\>[]
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="priority-1"></a> `priority?`
-
-</td>
-<td>
-
-`public`
-
-</td>
-<td>
-
-[`Priority`](#priority)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="schema-1"></a> `schema`
-
-</td>
-<td>
-
-`public`
-
-</td>
-<td>
-
-`null` \| [`Schema`](pm/model.md#schema-3)\<`any`, `any`\>
-
-</td>
-<td>
+```ts
+schema: null | Schema<any, any>;
+```
 
 The schema that this extension represents.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1673,85 +1343,37 @@ The schema that this extension represents.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### depth {#depth}
 
-<a id="depth"></a> `depth`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+depth: number;
+```
 
 The depth of the node.
 
-</td>
-</tr>
-<tr>
-<td>
+##### node {#node}
 
-<a id="node"></a> `node`
-
-</td>
-<td>
-
-[`ProseMirrorNode`](pm/model.md#prosemirrornode)
-
-</td>
-<td>
+```ts
+node: ProseMirrorNode;
+```
 
 The closest parent node that satisfies the predicate.
 
-</td>
-</tr>
-<tr>
-<td>
+##### pos {#pos}
 
-<a id="pos"></a> `pos`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+pos: number;
+```
 
 The position directly before the node.
 
-</td>
-</tr>
-<tr>
-<td>
+##### start {#start}
 
-<a id="start"></a> `start`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+start: number;
+```
 
 The position at the start of the node.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1773,65 +1395,35 @@ Options for [defineHistory](#definehistory).
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### depth? {#depth-1}
 
-<a id="depth-1"></a> `depth?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional depth: number;
+```
 
 The amount of history events that are collected before the oldest events
 are discarded.
 
-**Default**
+###### Default
 
 ```ts
 200
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### newGroupDelay? {#newgroupdelay}
 
-<a id="newgroupdelay"></a> `newGroupDelay?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional newGroupDelay: number;
+```
 
 The delay in milliseconds between changes after which a new group should be
 started.
 
-**Default**
+###### Default
 
 ```ts
 250
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1851,35 +1443,14 @@ started.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### pos? {#pos-1}
 
-<a id="pos-1"></a> `pos?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional pos: number;
+```
 
 The position to insert the node at. By default it will insert after the
 current selection.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1899,86 +1470,38 @@ current selection.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-1}
 
-<a id="attrs-1"></a> `attrs?`
-
-</td>
-<td>
-
-[`Attrs`](pm/model.md#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: Attrs;
+```
 
 When `type` is provided, the attributes of the node to insert.
 
-</td>
-</tr>
-<tr>
-<td>
+##### node? {#node-1}
 
-<a id="node-1"></a> `node?`
-
-</td>
-<td>
-
-[`ProseMirrorNode`](pm/model.md#prosemirrornode)
-
-</td>
-<td>
+```ts
+optional node: ProseMirrorNode;
+```
 
 The node to insert. Either this or `type` must be provided.
 
-</td>
-</tr>
-<tr>
-<td>
+##### pos? {#pos-2}
 
-<a id="pos-2"></a> `pos?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional pos: number;
+```
 
 The position to insert the node at. By default it will be the anchor
 position of current selection.
 
-</td>
-</tr>
-<tr>
-<td>
+##### type? {#type-2}
 
-<a id="type-2"></a> `type?`
-
-</td>
-<td>
-
-`string` \| [`NodeType`](pm/model.md#nodetype)
-
-</td>
-<td>
+```ts
+optional type: string | NodeType;
+```
 
 The type of the node to insert. Either this or `node` must be provided.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1998,34 +1521,13 @@ The type of the node to insert. Either this or `node` must be provided.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### schema {#schema-2}
 
-<a id="schema-2"></a> `schema`
-
-</td>
-<td>
-
-[`Schema`](pm/model.md#schema-3)
-
-</td>
-<td>
+```ts
+schema: Schema;
+```
 
 The editor schema to use.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2192,36 +1694,44 @@ current editor selection.
 
 #### Properties
 
+##### isActive() {#isactive}
+
+```ts
+isActive: (attrs?: Attrs) => boolean;
+```
+
+Checks if the mark is active in the current editor selection. If the
+optional `attrs` parameter is provided, it will check if the mark is active
+with the given attributes.
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="isactive"></a> `isActive`
+`attrs?`
 
 </td>
 <td>
 
-(`attrs?`: `Attrs`) => `boolean`
-
-</td>
-<td>
-
-Checks if the mark is active in the current editor selection. If the
-optional `attrs` parameter is provided, it will check if the mark is active
-with the given attributes.
+`Attrs`
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`boolean`
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2294,42 +1804,91 @@ with the given attributes.
 
 #### Properties
 
+##### attr {#attr}
+
+```ts
+attr: AttrName;
+```
+
+The name of the attribute.
+
+##### default? {#default-1}
+
+```ts
+optional default: AttrType;
+```
+
+The default value for this attribute, to use when no explicit value is
+provided. Attributes that have no default must be provided whenever a node
+or mark of a type that has them is created.
+
+###### Inherited from
+
+[`AttrSpec`](#attrspec).[`default`](#default-3)
+
+##### parseDOM()? {#parsedom}
+
+```ts
+optional parseDOM: (node: HTMLElement) => AttrType;
+```
+
+Parses the attribute value from the DOM.
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="attr"></a> `attr`
+`node`
 
 </td>
 <td>
 
-`AttrName`
-
-</td>
-<td>
-
-The name of the attribute.
-
-</td>
-<td>
-
-&hyphen;
+[`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
 
 </td>
 </tr>
+</tbody>
+</table>
+
+###### Returns
+
+`AttrType`
+
+##### toDOM()? {#todom}
+
+```ts
+optional toDOM: (value: AttrType) => undefined | null | [string, string];
+```
+
+Returns the attribute key and value to be set on the HTML element.
+
+If the returned `key` is `"style"`, the value is a string of CSS properties and will
+be prepended to the existing `style` attribute on the DOM node.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="default-1"></a> `default?`
+`value`
 
 </td>
 <td>
@@ -2339,98 +1898,30 @@ The name of the attribute.
 </td>
 <td>
 
-The default value for this attribute, to use when no explicit value is
-provided. Attributes that have no default must be provided whenever a node
-or mark of a type that has them is created.
-
-</td>
-<td>
-
-[`AttrSpec`](#attrspec).[`default`](#default-3)
+The value of the attribute of current ProseMirror node.
 
 </td>
 </tr>
-<tr>
-<td>
+</tbody>
+</table>
 
-<a id="parsedom"></a> `parseDOM?`
+###### Returns
 
-</td>
-<td>
+`undefined` \| `null` \| \[`string`, `string`\]
 
-(`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `AttrType`
+##### type {#type-3}
 
-</td>
-<td>
-
-Parses the attribute value from the DOM.
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="todom"></a> `toDOM?`
-
-</td>
-<td>
-
-(`value`: `AttrType`) => `undefined` \| `null` \| \[`string`, `string`\]
-
-</td>
-<td>
-
-Returns the attribute key and value to be set on the HTML element.
-
-If the returned `key` is `"style"`, the value is a string of CSS properties and will
-be prepended to the existing `style` attribute on the DOM node.
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="type-3"></a> `type`
-
-</td>
-<td>
-
-`MarkName`
-
-</td>
-<td>
+```ts
+type: MarkName;
+```
 
 The name of the mark type.
 
-</td>
-<td>
+##### validate? {#validate}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="validate"></a> `validate?`
-
-</td>
-<td>
-
-`string` \| (`value`: `unknown`) => `void`
-
-</td>
-<td>
+```ts
+optional validate: string | (value: unknown) => void;
+```
 
 A function or type name used to validate values of this attribute. This
 will be used when deserializing the attribute from JSON, and when running
@@ -2441,15 +1932,9 @@ primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
 `"undefined"`), and the library will raise an error when the value is not
 one of those types.
 
-</td>
-<td>
+###### Inherited from
 
 [`AttrSpec`](#attrspec).[`validate`](#validate-2)
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2520,84 +2005,36 @@ working with the mark.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Overrides</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-4}
 
-<a id="attrs-4"></a> `attrs?`
-
-</td>
-<td>
-
-\{ \[K in string \| number \| symbol\]: AttrSpec\<Attrs\[K\]\> \}
-
-</td>
-<td>
+```ts
+optional attrs: { [K in string | number | symbol]: AttrSpec<Attrs[K]> };
+```
 
 The attributes that marks of this type get.
 
-</td>
-<td>
+###### Overrides
 
 [`MarkSpec`](pm/model.md#markspec).[`attrs`](pm/model.md#markspec#attrs-3)
 
-</td>
-<td>
+##### code? {#code}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="code"></a> `code?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional code: boolean;
+```
 
 Marks the content of this span as being code, which causes some
 commands and extensions to treat it differently.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`MarkSpec`](pm/model.md#markspec).[`code`](pm/model.md#markspec#code)
 
-</td>
-</tr>
-<tr>
-<td>
+##### excludes? {#excludes}
 
-<a id="excludes"></a> `excludes?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional excludes: string;
+```
 
 Determines which other marks this mark can coexist with. Should
 be a space-separated strings naming other marks or groups of marks.
@@ -2613,190 +2050,126 @@ can set it to an empty string (or any string not containing the
 mark's own name) to allow multiple marks of a given type to
 coexist (as long as they have different attributes).
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`MarkSpec`](pm/model.md#markspec).[`excludes`](pm/model.md#markspec#excludes-2)
 
-</td>
-</tr>
-<tr>
-<td>
+##### group? {#group}
 
-<a id="group"></a> `group?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional group: string;
+```
 
 The group or space-separated groups to which this mark belongs.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`MarkSpec`](pm/model.md#markspec).[`group`](pm/model.md#markspec#group)
 
-</td>
-</tr>
-<tr>
-<td>
+##### inclusive? {#inclusive}
 
-<a id="inclusive"></a> `inclusive?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional inclusive: boolean;
+```
 
 Whether this mark should be active when the cursor is positioned
 at its end (or at its start when that is also the start of the
 parent node). Defaults to true.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`MarkSpec`](pm/model.md#markspec).[`inclusive`](pm/model.md#markspec#inclusive)
 
-</td>
-</tr>
-<tr>
-<td>
+##### name {#name}
 
-<a id="name"></a> `name`
-
-</td>
-<td>
-
-`MarkName`
-
-</td>
-<td>
+```ts
+name: MarkName;
+```
 
 The name of the mark type.
 
-</td>
-<td>
+##### parseDOM? {#parsedom-1}
 
-&hyphen;
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="parsedom-1"></a> `parseDOM?`
-
-</td>
-<td>
-
-readonly [`ParseRule`](pm/model.md#parserule)[]
-
-</td>
-<td>
+```ts
+optional parseDOM: readonly ParseRule[];
+```
 
 Associates DOM parser information with this mark (see the
 corresponding [node spec field](https://prosemirror.net/docs/ref/#model.NodeSpec.parseDOM)). The
 `mark` field in the rules is implied.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`MarkSpec`](pm/model.md#markspec).[`parseDOM`](pm/model.md#markspec#parsedom)
 
-</td>
-</tr>
-<tr>
-<td>
+##### spanning? {#spanning}
 
-<a id="spanning"></a> `spanning?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional spanning: boolean;
+```
 
 Determines whether marks of this type can span multiple adjacent
 nodes when serialized to DOM/HTML. Defaults to true.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`MarkSpec`](pm/model.md#markspec).[`spanning`](pm/model.md#markspec#spanning)
 
-</td>
-</tr>
-<tr>
-<td>
+##### toDOM()? {#todom-1}
 
-<a id="todom-1"></a> `toDOM?`
-
-</td>
-<td>
-
-(`mark`: [`Mark`](pm/model.md#mark), `inline`: `boolean`) => [`DOMOutputSpec`](pm/model.md#domoutputspec)
-
-</td>
-<td>
+```ts
+optional toDOM: (mark: Mark, inline: boolean) => DOMOutputSpec;
+```
 
 Defines the default way marks of this type should be serialized
 to DOM/HTML. When the resulting spec contains a hole, that is
 where the marked content is placed. Otherwise, it is appended to
 the top node.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`mark`
+
 </td>
 <td>
 
-&hyphen;
+[`Mark`](pm/model.md#mark)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`inline`
 
 </td>
 <td>
 
-[`MarkSpec`](pm/model.md#markspec).[`toDOM`](pm/model.md#markspec#todom)
+`boolean`
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+[`DOMOutputSpec`](pm/model.md#domoutputspec)
+
+###### Inherited from
+
+[`MarkSpec`](pm/model.md#markspec).[`toDOM`](pm/model.md#markspec#todom)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2816,40 +2189,17 @@ the top node.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### constructor {#constructor}
 
-<a id="constructor"></a> `constructor`
+```ts
+constructor: MarkViewConstructor;
+```
 
-</td>
-<td>
+##### name {#name-1}
 
-[`MarkViewConstructor`](pm/view.md#markviewconstructor)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="name-1"></a> `name`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+name: string;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2994,36 +2344,44 @@ current editor selection.
 
 #### Properties
 
+##### isActive() {#isactive-1}
+
+```ts
+isActive: (attrs?: Attrs) => boolean;
+```
+
+Checks if the node is active in the current editor selection. If the
+optional `attrs` parameter is provided, it will check if the node is active
+with the given attributes.
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="isactive-1"></a> `isActive`
+`attrs?`
 
 </td>
 <td>
 
-(`attrs?`: `Attrs`) => `boolean`
-
-</td>
-<td>
-
-Checks if the node is active in the current editor selection. If the
-optional `attrs` parameter is provided, it will check if the node is active
-with the given attributes.
+`Attrs`
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`boolean`
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3096,42 +2454,107 @@ with the given attributes.
 
 #### Properties
 
+##### attr {#attr-1}
+
+```ts
+attr: AttrName;
+```
+
+The name of the attribute.
+
+##### default? {#default-2}
+
+```ts
+optional default: AttrType;
+```
+
+The default value for this attribute, to use when no explicit value is
+provided. Attributes that have no default must be provided whenever a node
+or mark of a type that has them is created.
+
+###### Inherited from
+
+[`AttrSpec`](#attrspec).[`default`](#default-3)
+
+##### parseDOM()? {#parsedom-2}
+
+```ts
+optional parseDOM: (node: HTMLElement) => AttrType;
+```
+
+Parses the attribute value from the DOM.
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="attr-1"></a> `attr`
+`node`
 
 </td>
 <td>
 
-`AttrName`
-
-</td>
-<td>
-
-The name of the attribute.
-
-</td>
-<td>
-
-&hyphen;
+[`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
 
 </td>
 </tr>
+</tbody>
+</table>
+
+###### Returns
+
+`AttrType`
+
+##### splittable? {#splittable}
+
+```ts
+optional splittable: boolean;
+```
+
+Whether the attribute should be kept when the node is split. Set it to
+`true` if you want to inherit the attribute from the previous node when
+splitting the node by pressing `Enter`.
+
+###### Default
+
+```ts
+undefined
+```
+
+##### toDOM()? {#todom-2}
+
+```ts
+optional toDOM: (value: AttrType) => undefined | null | [string, string];
+```
+
+Returns the attribute key and value to be set on the HTML element.
+
+If the returned `key` is `"style"`, the value is a string of CSS properties and will
+be prepended to the existing `style` attribute on the DOM node.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="default-2"></a> `default?`
+`value`
 
 </td>
 <td>
@@ -3141,128 +2564,30 @@ The name of the attribute.
 </td>
 <td>
 
-The default value for this attribute, to use when no explicit value is
-provided. Attributes that have no default must be provided whenever a node
-or mark of a type that has them is created.
-
-</td>
-<td>
-
-[`AttrSpec`](#attrspec).[`default`](#default-3)
+The value of the attribute of current ProseMirror node.
 
 </td>
 </tr>
-<tr>
-<td>
+</tbody>
+</table>
 
-<a id="parsedom-2"></a> `parseDOM?`
+###### Returns
 
-</td>
-<td>
+`undefined` \| `null` \| \[`string`, `string`\]
 
-(`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `AttrType`
-
-</td>
-<td>
-
-Parses the attribute value from the DOM.
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="splittable"></a> `splittable?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-Whether the attribute should be kept when the node is split. Set it to
-`true` if you want to inherit the attribute from the previous node when
-splitting the node by pressing `Enter`.
-
-**Default**
+##### type {#type-4}
 
 ```ts
-undefined
+type: NodeName;
 ```
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="todom-2"></a> `toDOM?`
-
-</td>
-<td>
-
-(`value`: `AttrType`) => `undefined` \| `null` \| \[`string`, `string`\]
-
-</td>
-<td>
-
-Returns the attribute key and value to be set on the HTML element.
-
-If the returned `key` is `"style"`, the value is a string of CSS properties and will
-be prepended to the existing `style` attribute on the DOM node.
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="type-4"></a> `type`
-
-</td>
-<td>
-
-`NodeName`
-
-</td>
-<td>
 
 The name of the node type.
 
-</td>
-<td>
+##### validate? {#validate-1}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="validate-1"></a> `validate?`
-
-</td>
-<td>
-
-`string` \| (`value`: `unknown`) => `void`
-
-</td>
-<td>
+```ts
+optional validate: string | (value: unknown) => void;
+```
 
 A function or type name used to validate values of this attribute. This
 will be used when deserializing the attribute from JSON, and when running
@@ -3273,15 +2598,9 @@ primitive types (`"number"`, `"string"`, `"boolean"`, `"null"`, and
 `"undefined"`), and the library will raise an error when the value is not
 one of those types.
 
-</td>
-<td>
+###### Inherited from
 
 [`AttrSpec`](#attrspec).[`validate`](#validate-2)
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3303,76 +2622,47 @@ A JSON representation of the prosemirror node.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-6}
 
-<a id="attrs-6"></a> `attrs?`
+```ts
+optional attrs: Record<string, any>;
+```
 
-</td>
-<td>
+##### content? {#content}
 
-[`Record`](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)\<`string`, `any`\>
+```ts
+optional content: NodeJSON[];
+```
 
-</td>
-</tr>
-<tr>
-<td>
+##### marks? {#marks-1}
 
-<a id="content"></a> `content?`
+```ts
+optional marks: object[];
+```
 
-</td>
-<td>
+###### attrs?
 
-[`NodeJSON`](#nodejson)[]
+```ts
+optional attrs: Record<string, any>;
+```
 
-</td>
-</tr>
-<tr>
-<td>
+###### type
 
-<a id="marks-1"></a> `marks?`
+```ts
+type: string;
+```
 
-</td>
-<td>
+##### text? {#text}
 
-`object`[]
+```ts
+optional text: string;
+```
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type-5}
 
-<a id="text"></a> `text?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="type-5"></a> `type`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+type: string;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3442,401 +2732,217 @@ other code via [`NodeType.spec`](https://prosemirror.net/docs/ref/#model.NodeTyp
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Overrides</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### atom? {#atom}
 
-<a id="atom"></a> `atom?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional atom: boolean;
+```
 
 Can be set to true to indicate that, though this isn't a [leaf
 node](https://prosemirror.net/docs/ref/#model.NodeType.isLeaf), it doesn't have directly editable
 content and should be treated as a single unit in the view.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`atom`](pm/model.md#nodespec#atom)
 
-</td>
-</tr>
-<tr>
-<td>
+##### attrs? {#attrs-8}
 
-<a id="attrs-8"></a> `attrs?`
-
-</td>
-<td>
-
-\{ \[key in string \| number \| symbol\]: AttrSpec\<Attrs\[key\]\> \}
-
-</td>
-<td>
+```ts
+optional attrs: { [key in string | number | symbol]: AttrSpec<Attrs[key]> };
+```
 
 The attributes that nodes of this type get.
 
-</td>
-<td>
+###### Overrides
 
 [`NodeSpec`](pm/model.md#nodespec).[`attrs`](pm/model.md#nodespec#attrs-4)
 
-</td>
-<td>
+##### code? {#code-1}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="code-1"></a> `code?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional code: boolean;
+```
 
 Can be used to indicate that this node contains code, which
 causes some commands to behave differently.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`code`](pm/model.md#nodespec#code-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### content? {#content-1}
 
-<a id="content-1"></a> `content?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional content: string;
+```
 
 The content expression for this node, as described in the [schema
 guide](https://prosemirror.net/docs/guide/#schema.content_expressions). When not given,
 the node does not allow any content.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`content`](pm/model.md#nodespec#content-3)
 
-</td>
-</tr>
-<tr>
-<td>
+##### defining? {#defining}
 
-<a id="defining"></a> `defining?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional defining: boolean;
+```
 
 When enabled, enables both
 [`definingAsContext`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingAsContext) and
 [`definingForContent`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingForContent).
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`defining`](pm/model.md#nodespec#defining)
 
-</td>
-</tr>
-<tr>
-<td>
+##### definingAsContext? {#definingascontext}
 
-<a id="definingascontext"></a> `definingAsContext?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional definingAsContext: boolean;
+```
 
 Determines whether this node is considered an important parent
 node during replace operations (such as paste). Non-defining (the
 default) nodes get dropped when their entire content is replaced,
 whereas defining nodes persist and wrap the inserted content.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`definingAsContext`](pm/model.md#nodespec#definingascontext)
 
-</td>
-</tr>
-<tr>
-<td>
+##### definingForContent? {#definingforcontent}
 
-<a id="definingforcontent"></a> `definingForContent?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional definingForContent: boolean;
+```
 
 In inserted content the defining parents of the content are
 preserved when possible. Typically, non-default-paragraph
 textblock types, and possibly list items, are marked as defining.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`definingForContent`](pm/model.md#nodespec#definingforcontent)
 
-</td>
-</tr>
-<tr>
-<td>
+##### disableDropCursor? {#disabledropcursor}
 
-<a id="disabledropcursor"></a> `disableDropCursor?`
+```ts
+optional disableDropCursor: 
+  | boolean
+  | (view: EditorView, pos: object, event: DragEvent) => boolean;
+```
 
-</td>
-<td>
-
- \| `boolean` \| (`view`: [`EditorView`](pm/view.md#editorview), `pos`: `object`, `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`disableDropCursor`](pm/model.md#nodespec#disabledropcursor)
 
-</td>
-</tr>
-<tr>
-<td>
+##### draggable? {#draggable}
 
-<a id="draggable"></a> `draggable?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional draggable: boolean;
+```
 
 Determines whether nodes of this type can be dragged without
 being selected. Defaults to false.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`draggable`](pm/model.md#nodespec#draggable)
 
-</td>
-</tr>
-<tr>
-<td>
+##### group? {#group-1}
 
-<a id="group-1"></a> `group?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional group: string;
+```
 
 The group or space-separated groups to which this node belongs,
 which can be referred to in the content expressions for the
 schema.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`group`](pm/model.md#nodespec#group-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### inline? {#inline}
 
-<a id="inline"></a> `inline?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional inline: boolean;
+```
 
 Should be set to true for inline nodes. (Implied for text nodes.)
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`inline`](pm/model.md#nodespec#inline)
 
-</td>
-</tr>
-<tr>
-<td>
+##### isolating? {#isolating}
 
-<a id="isolating"></a> `isolating?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional isolating: boolean;
+```
 
 When enabled (default is false), the sides of nodes of this type
 count as boundaries that regular editing operations, like
 backspacing or lifting, won't cross. An example of a node that
 should probably have this enabled is a table cell.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`isolating`](pm/model.md#nodespec#isolating)
 
-</td>
-</tr>
-<tr>
-<td>
+##### leafText()? {#leaftext}
 
-<a id="leaftext"></a> `leafText?`
-
-</td>
-<td>
-
-(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `string`
-
-</td>
-<td>
+```ts
+optional leafText: (node: ProseMirrorNode) => string;
+```
 
 Defines the default way a [leaf node](https://prosemirror.net/docs/ref/#model.NodeType.isLeaf) of
 this type should be serialized to a string (as used by
 [`Node.textBetween`](https://prosemirror.net/docs/ref/#model.Node^textBetween) and
 [`Node.textContent`](https://prosemirror.net/docs/ref/#model.Node^textContent)).
 
-</td>
-<td>
+###### Parameters
 
-&hyphen;
-
-</td>
-<td>
-
-[`NodeSpec`](pm/model.md#nodespec).[`leafText`](pm/model.md#nodespec#leaftext)
-
-</td>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="linebreakreplacement"></a> `linebreakReplacement?`
+`node`
 
 </td>
 <td>
 
-`boolean`
+[`ProseMirrorNode`](pm/model.md#prosemirrornode)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`string`
+
+###### Inherited from
+
+[`NodeSpec`](pm/model.md#nodespec).[`leafText`](pm/model.md#nodespec#leaftext)
+
+##### linebreakReplacement? {#linebreakreplacement}
+
+```ts
+optional linebreakReplacement: boolean;
+```
 
 A single inline node in a schema can be set to be a linebreak
 equivalent. When converting between block types that support the
@@ -3846,30 +2952,15 @@ node and block types that don't but have
 between newline characters to or from linebreak nodes as
 appropriate.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`linebreakReplacement`](pm/model.md#nodespec#linebreakreplacement-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### marks? {#marks-2}
 
-<a id="marks-2"></a> `marks?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional marks: string;
+```
 
 The marks that are allowed inside of this node. May be a
 space-separated string referring to mark names or groups, `"_"`
@@ -3877,57 +2968,23 @@ to explicitly allow all marks, or `""` to disallow marks. When
 not given, nodes with inline content default to allowing all
 marks, other nodes default to not allowing marks.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`marks`](pm/model.md#nodespec#marks-6)
 
-</td>
-</tr>
-<tr>
-<td>
+##### name {#name-2}
 
-<a id="name-2"></a> `name`
-
-</td>
-<td>
-
-`NodeName`
-
-</td>
-<td>
+```ts
+name: NodeName;
+```
 
 The name of the node type.
 
-</td>
-<td>
+##### parseDOM? {#parsedom-3}
 
-&hyphen;
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="parsedom-3"></a> `parseDOM?`
-
-</td>
-<td>
-
-readonly [`TagParseRule`](pm/model.md#tagparserule)[]
-
-</td>
-<td>
+```ts
+optional parseDOM: readonly TagParseRule[];
+```
 
 Associates DOM parser information with this node, which can be
 used by [`DOMParser.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMParser^fromSchema) to
@@ -3936,87 +2993,71 @@ implied (the name of this node will be filled in automatically).
 If you supply your own parser, you do not need to also specify
 parsing rules in your schema.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`parseDOM`](pm/model.md#nodespec#parsedom-1)
 
-</td>
-</tr>
-<tr>
-<td>
+##### selectable? {#selectable}
 
-<a id="selectable"></a> `selectable?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional selectable: boolean;
+```
 
 Controls whether nodes of this type can be selected as a [node
 selection](https://prosemirror.net/docs/ref/#state.NodeSelection). Defaults to true for non-text
 nodes.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`selectable`](pm/model.md#nodespec#selectable)
 
-</td>
-</tr>
-<tr>
-<td>
+##### toDebugString()? {#todebugstring}
 
-<a id="todebugstring"></a> `toDebugString?`
-
-</td>
-<td>
-
-(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `string`
-
-</td>
-<td>
+```ts
+optional toDebugString: (node: ProseMirrorNode) => string;
+```
 
 Defines the default way a node of this type should be serialized
 to a string representation for debugging (e.g. in error messages).
 
-</td>
-<td>
+###### Parameters
 
-&hyphen;
-
-</td>
-<td>
-
-[`NodeSpec`](pm/model.md#nodespec).[`toDebugString`](pm/model.md#nodespec#todebugstring)
-
-</td>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="todom-3"></a> `toDOM?`
+`node`
 
 </td>
 <td>
 
-(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => [`DOMOutputSpec`](pm/model.md#domoutputspec)
+[`ProseMirrorNode`](pm/model.md#prosemirrornode)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`string`
+
+###### Inherited from
+
+[`NodeSpec`](pm/model.md#nodespec).[`toDebugString`](pm/model.md#nodespec#todebugstring)
+
+##### toDOM()? {#todom-3}
+
+```ts
+optional toDOM: (node: ProseMirrorNode) => DOMOutputSpec;
+```
 
 Defines the default way a node of this type should be serialized
 to DOM/HTML (as used by
@@ -4031,58 +3072,53 @@ it is possible to create a serializer where text is rendered
 differently, this is not supported inside the editor, so you
 shouldn't override that in your text node spec.
 
-</td>
-<td>
+###### Parameters
 
-&hyphen;
-
-</td>
-<td>
-
-[`NodeSpec`](pm/model.md#nodespec).[`toDOM`](pm/model.md#nodespec#todom-1)
-
-</td>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="topnode-1"></a> `topNode?`
+`node`
 
 </td>
 <td>
 
-`boolean`
+[`ProseMirrorNode`](pm/model.md#prosemirrornode)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`DOMOutputSpec`](pm/model.md#domoutputspec)
+
+###### Inherited from
+
+[`NodeSpec`](pm/model.md#nodespec).[`toDOM`](pm/model.md#nodespec#todom-1)
+
+##### topNode? {#topnode-1}
+
+```ts
+optional topNode: boolean;
+```
 
 Whether this is the top-level node type. Only one node type can be the
 top-level node type in a schema.
 
-</td>
-<td>
+##### whitespace? {#whitespace}
 
-&hyphen;
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="whitespace"></a> `whitespace?`
-
-</td>
-<td>
-
-`"pre"` \| `"normal"`
-
-</td>
-<td>
+```ts
+optional whitespace: "pre" | "normal";
+```
 
 Controls way whitespace in this a node is parsed. The default is
 `"normal"`, which causes the [DOM parser](https://prosemirror.net/docs/ref/#model.DOMParser) to
@@ -4094,20 +3130,9 @@ will default to `"pre"`. Note that this option doesn't influence
 the way the node is rendered—that should be handled by `toDOM`
 and/or styling.
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 [`NodeSpec`](pm/model.md#nodespec).[`whitespace`](pm/model.md#nodespec#whitespace-1)
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4127,40 +3152,17 @@ and/or styling.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### constructor {#constructor-1}
 
-<a id="constructor-1"></a> `constructor`
+```ts
+constructor: NodeViewConstructor;
+```
 
-</td>
-<td>
+##### name {#name-3}
 
-[`NodeViewConstructor`](pm/view.md#nodeviewconstructor)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="name-3"></a> `name`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+name: string;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4180,85 +3182,37 @@ and/or styling.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-9}
 
-<a id="attrs-9"></a> `attrs?`
-
-</td>
-<td>
-
-`null` \| [`Attrs`](pm/model.md#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: null | Attrs;
+```
 
 If attrs is given, remove precisely the mark with the given attrs. Otherwise, remove all marks of the given type.
 
-</td>
-</tr>
-<tr>
-<td>
+##### from? {#from-2}
 
-<a id="from-2"></a> `from?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional from: number;
+```
 
 The start position of the document. By default it will be the start position of current selection.
 
-</td>
-</tr>
-<tr>
-<td>
+##### to? {#to-2}
 
-<a id="to-2"></a> `to?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional to: number;
+```
 
 The end position of the document. By default it will be the end position of current selection.
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type-6}
 
-<a id="type-6"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`MarkType`](pm/model.md#marktype-1)
-
-</td>
-<td>
+```ts
+type: string | MarkType;
+```
 
 The type of the mark to remove.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4278,52 +3232,22 @@ The type of the mark to remove.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### pos? {#pos-3}
 
-<a id="pos-3"></a> `pos?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional pos: number;
+```
 
 The document position to start searching node. By default it will be the
 anchor position of current selection.
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type-7}
 
-<a id="type-7"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`NodeType`](pm/model.md#nodetype)
-
-</td>
-<td>
+```ts
+type: string | NodeType;
+```
 
 The type of the node to remove.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4345,52 +3269,23 @@ A JSON representation of the prosemirror selection.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### anchor {#anchor}
 
-<a id="anchor"></a> `anchor`
+```ts
+anchor: number;
+```
 
-</td>
-<td>
+##### head {#head}
 
-`number`
+```ts
+head: number;
+```
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type-8}
 
-<a id="head"></a> `head`
-
-</td>
-<td>
-
-`number`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="type-8"></a> `type`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+type: string;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4410,64 +3305,29 @@ A JSON representation of the prosemirror selection.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-10}
 
-<a id="attrs-10"></a> `attrs?`
+```ts
+optional attrs: null | Attrs;
+```
 
-</td>
-<td>
+##### from? {#from-3}
 
-`null` \| [`Attrs`](pm/model.md#attrs-7)
+```ts
+optional from: number;
+```
 
-</td>
-</tr>
-<tr>
-<td>
+##### to? {#to-3}
 
-<a id="from-3"></a> `from?`
+```ts
+optional to: number;
+```
 
-</td>
-<td>
+##### type {#type-9}
 
-`number`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="to-3"></a> `to?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="type-9"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`NodeType`](pm/model.md#nodetype)
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+type: string | NodeType;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4487,71 +3347,36 @@ A JSON representation of the prosemirror selection.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs {#attrs-11}
 
-<a id="attrs-11"></a> `attrs`
-
-</td>
-<td>
-
-[`Attrs`](pm/model.md#attrs-7)
-
-</td>
-<td>
+```ts
+attrs: Attrs;
+```
 
 The attributes to set.
 
-</td>
-</tr>
-<tr>
-<td>
+##### pos? {#pos-4}
 
-<a id="pos-4"></a> `pos?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional pos: number;
+```
 
 The position of the node. Defaults to the position of the wrapping node
 containing the current selection.
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type-10}
 
-<a id="type-10"></a> `type`
-
-</td>
-<td>
-
- \| `string` \| [`NodeType`](pm/model.md#nodetype) \| `string`[] \| [`NodeType`](pm/model.md#nodetype)[]
-
-</td>
-<td>
+```ts
+type: 
+  | string
+  | NodeType
+  | string[]
+  | NodeType[];
+```
 
 The type of node to set the attributes of.
 
 If current node is not of this type, the command will do nothing.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4573,51 +3398,21 @@ A JSON representation of the prosemirror state.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### doc {#doc}
 
-<a id="doc"></a> `doc`
-
-</td>
-<td>
-
-[`NodeJSON`](#nodejson)
-
-</td>
-<td>
+```ts
+doc: NodeJSON;
+```
 
 The main `ProseMirror` doc.
 
-</td>
-</tr>
-<tr>
-<td>
+##### selection {#selection}
 
-<a id="selection"></a> `selection`
-
-</td>
-<td>
-
-[`SelectionJSON`](#selectionjson)
-
-</td>
-<td>
+```ts
+selection: SelectionJSON;
+```
 
 The current selection.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4645,34 +3440,13 @@ A JSON representation of the prosemirror step.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### stepType {#steptype}
 
-<a id="steptype"></a> `stepType`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+stepType: string;
+```
 
 The type of the step.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4692,101 +3466,53 @@ The type of the step.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-12}
 
-<a id="attrs-12"></a> `attrs?`
-
-</td>
-<td>
-
-`null` \| [`Attrs`](pm/model.md#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: null | Attrs;
+```
 
 The optional attributes to set on the mark.
 
-</td>
-</tr>
-<tr>
-<td>
+##### enterInlineAtoms? {#enterinlineatoms}
 
-<a id="enterinlineatoms"></a> `enterInlineAtoms?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional enterInlineAtoms: boolean;
+```
 
 Whether the command should act on the content of inline nodes marked as
 [atoms](https://prosemirror.net/docs/ref/#model.NodeSpec.atom) that are
 completely covered by a selection range.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### removeWhenPresent? {#removewhenpresent}
 
-<a id="removewhenpresent"></a> `removeWhenPresent?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional removeWhenPresent: boolean;
+```
 
 Controls whether, when part of the selected range has the mark
 already and part doesn't, the mark is removed (`true`) or added
 (`false`).
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type-11}
 
-<a id="type-11"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`MarkType`](pm/model.md#marktype-1)
-
-</td>
-<td>
+```ts
+type: string | MarkType;
+```
 
 The mark type to toggle.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4806,51 +3532,21 @@ The mark type to toggle.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-13}
 
-<a id="attrs-13"></a> `attrs?`
-
-</td>
-<td>
-
-`null` \| [`Attrs`](pm/model.md#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: null | Attrs;
+```
 
 The attributes of the node to toggle.
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type-12}
 
-<a id="type-12"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`NodeType`](pm/model.md#nodetype)
-
-</td>
-<td>
+```ts
+type: string | NodeType;
+```
 
 The type of the node to toggle.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4870,51 +3566,21 @@ The type of the node to toggle.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-14}
 
-<a id="attrs-14"></a> `attrs?`
-
-</td>
-<td>
-
-`null` \| [`Attrs`](pm/model.md#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: null | Attrs;
+```
 
 The attributes of the node to toggle.
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type-13}
 
-<a id="type-13"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`NodeType`](pm/model.md#nodetype)
-
-</td>
-<td>
+```ts
+type: string | NodeType;
+```
 
 The type of the node to toggle.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4934,51 +3600,21 @@ The type of the node to toggle.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### from? {#from-4}
 
-<a id="from-4"></a> `from?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional from: number;
+```
 
 The start position of the document. By default it will be the start position of current selection.
 
-</td>
-</tr>
-<tr>
-<td>
+##### to? {#to-4}
 
-<a id="to-4"></a> `to?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional to: number;
+```
 
 The end position of the document. By default it will be the end position of current selection.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -4998,51 +3634,21 @@ The end position of the document. By default it will be the end position of curr
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### from? {#from-5}
 
-<a id="from-5"></a> `from?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional from: number;
+```
 
 The start position of the document. By default it will be the start position of current selection.
 
-</td>
-</tr>
-<tr>
-<td>
+##### to? {#to-5}
 
-<a id="to-5"></a> `to?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional to: number;
+```
 
 The end position of the document. By default it will be the end position of current selection.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -5062,70 +3668,31 @@ The end position of the document. By default it will be the end position of curr
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-15}
 
-<a id="attrs-15"></a> `attrs?`
-
-</td>
-<td>
-
-`null` \| [`Attrs`](pm/model.md#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: null | Attrs;
+```
 
 Optional attributes to apply to the node.
 
-</td>
-</tr>
-<tr>
-<td>
+##### ~~nodeType?~~ {#nodetype}
 
-<a id="nodetype"></a> ~~`nodeType?`~~
+```ts
+optional nodeType: NodeType;
+```
 
-</td>
-<td>
-
-[`NodeType`](pm/model.md#nodetype)
-
-</td>
-<td>
-
-**Deprecated**
+###### Deprecated
 
 Use `nodeSpec` instead.
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type-14}
 
-<a id="type-14"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`NodeType`](pm/model.md#nodetype)
-
-</td>
-<td>
+```ts
+type: string | NodeType;
+```
 
 The node type to wrap the selected textblock with.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

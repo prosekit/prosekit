@@ -87,92 +87,85 @@ Options for creating an [AutocompleteRule](#autocompleterule)
 
 #### Properties
 
+##### canMatch()? {#canmatch}
+
+```ts
+optional canMatch: (options: object) => boolean;
+```
+
+A predicate to determine if the rule can be applied in the current editor
+state. If not provided, it defaults to only allowing matches in empty
+selections that are not inside a code block or code mark.
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="canmatch"></a> `canMatch?`
+`options`
 
 </td>
 <td>
 
-(`options`: `object`) => `boolean`
-
-</td>
-<td>
-
-A predicate to determine if the rule can be applied in the current editor
-state. If not provided, it defaults to only allowing matches in empty
-selections that are not inside a code block or code mark.
+\{ `state`: [`EditorState`](../pm/state.md#editorstate); \}
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="onenter"></a> `onEnter`
+`options.state`
 
 </td>
 <td>
 
-[`MatchHandler`](#matchhandler)
+[`EditorState`](../pm/state.md#editorstate)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean`
+
+##### onEnter {#onenter}
+
+```ts
+onEnter: MatchHandler;
+```
 
 A callback that is called when the rule starts to match, and also on
 subsequent updates while the rule continues to match.
 
-</td>
-</tr>
-<tr>
-<td>
+##### onLeave? {#onleave}
 
-<a id="onleave"></a> `onLeave?`
-
-</td>
-<td>
-
-`VoidFunction`
-
-</td>
-<td>
+```ts
+optional onLeave: VoidFunction;
+```
 
 A callback that is called when the rule stops matching.
 
-</td>
-</tr>
-<tr>
-<td>
+##### regex {#regex}
 
-<a id="regex"></a> `regex`
-
-</td>
-<td>
-
-[`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-
-</td>
-<td>
+```ts
+regex: RegExp;
+```
 
 The regular expression to match against the text before the cursor. The
 last match before the cursor is used.
 
 For a slash menu, you might use `//(|\S.*)$/u`.
 For a mention, you might use `/@\w*$/`
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -194,122 +187,64 @@ Options for the [MatchHandler](#matchhandler) callback.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### deleteMatch() {#deletematch}
 
-<a id="deletematch"></a> `deleteMatch`
-
-</td>
-<td>
-
-() => `void`
-
-</td>
-<td>
+```ts
+deleteMatch: () => void;
+```
 
 Call this function to delete the matched text. For example, in a slash
 menu, you might want to delete the matched text first then do something
 else when the user presses the `Enter` key.
 
-</td>
-</tr>
-<tr>
-<td>
+###### Returns
 
-<a id="from"></a> `from`
+`void`
 
-</td>
-<td>
+##### from {#from}
 
-`number`
-
-</td>
-<td>
+```ts
+from: number;
+```
 
 The start position of the matched text.
 
-</td>
-</tr>
-<tr>
-<td>
+##### ignoreMatch() {#ignorematch}
 
-<a id="ignorematch"></a> `ignoreMatch`
-
-</td>
-<td>
-
-() => `void`
-
-</td>
-<td>
+```ts
+ignoreMatch: () => void;
+```
 
 Call this function to ignore the match. You probably want to call this
 function when the user presses the `Escape` key.
 
-</td>
-</tr>
-<tr>
-<td>
+###### Returns
 
-<a id="match"></a> `match`
+`void`
 
-</td>
-<td>
+##### match {#match}
 
-`RegExpExecArray`
-
-</td>
-<td>
+```ts
+match: RegExpExecArray;
+```
 
 The result of `RegExp.exec`.
 
-</td>
-</tr>
-<tr>
-<td>
+##### state {#state}
 
-<a id="state"></a> `state`
-
-</td>
-<td>
-
-[`EditorState`](../pm/state.md#editorstate)
-
-</td>
-<td>
+```ts
+state: EditorState;
+```
 
 The editor state.
 
-</td>
-</tr>
-<tr>
-<td>
+##### to {#to}
 
-<a id="to"></a> `to`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+to: number;
+```
 
 The end position of the matched text.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

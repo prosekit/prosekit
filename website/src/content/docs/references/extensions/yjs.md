@@ -36,28 +36,11 @@ Options for `y-prosemirror`'s `yCursorPlugin`.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### awareness {#awareness}
 
-<a id="awareness"></a> `awareness`
-
-</td>
-<td>
-
-`Awareness`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+awareness: Awareness;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -77,120 +60,54 @@ Options for `y-prosemirror`'s `yCursorPlugin`.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### awareness {#awareness-1}
 
-<a id="awareness-1"></a> `awareness`
-
-</td>
-<td>
-
-`Awareness`
-
-</td>
-<td>
+```ts
+awareness: Awareness;
+```
 
 The Awareness instance.
 
-</td>
-</tr>
-<tr>
-<td>
+##### cursor? {#cursor}
 
-<a id="cursor"></a> `cursor?`
-
-</td>
-<td>
-
-`object`
-
-</td>
-<td>
+```ts
+optional cursor: object;
+```
 
 Options for `y-prosemirror`'s `yCursorPlugin`.
 
-</td>
-</tr>
-<tr>
-<td>
+##### doc {#doc}
 
-<a id="doc"></a> `doc`
-
-</td>
-<td>
-
-`Doc`
-
-</td>
-<td>
+```ts
+doc: Doc;
+```
 
 The Yjs instance handles the state of shared data.
 
-</td>
-</tr>
-<tr>
-<td>
+##### fragment? {#fragment}
 
-<a id="fragment"></a> `fragment?`
-
-</td>
-<td>
-
-`YXmlFragment`
-
-</td>
-<td>
+```ts
+optional fragment: YXmlFragment;
+```
 
 The Yjs XmlFragment to use. If not provided,
 `doc.getXmlFragment('prosemirror')` will be used.
 
-</td>
-</tr>
-<tr>
-<td>
+##### sync? {#sync}
 
-<a id="sync"></a> `sync?`
-
-</td>
-<td>
-
-`YSyncOpts`
-
-</td>
-<td>
+```ts
+optional sync: YSyncOpts;
+```
 
 Options for `y-prosemirror`'s `ySyncPlugin`.
 
-</td>
-</tr>
-<tr>
-<td>
+##### undo? {#undo}
 
-<a id="undo"></a> `undo?`
-
-</td>
-<td>
-
-`object`
-
-</td>
-<td>
+```ts
+optional undo: object;
+```
 
 Options for the `y-prosemirror`'s `yUndoPlugin`.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -216,28 +133,11 @@ Options for `y-prosemirror`'s `ySyncPlugin`.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### fragment {#fragment-1}
 
-<a id="fragment-1"></a> `fragment`
-
-</td>
-<td>
-
-`YXmlFragment`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+fragment: YXmlFragment;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

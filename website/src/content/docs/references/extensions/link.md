@@ -30,28 +30,11 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### href {#href}
 
-<a id="href"></a> `href`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+href: string;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

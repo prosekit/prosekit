@@ -6881,103 +6881,46 @@ The type of object passed to
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### doc? {#doc-2}
 
-<a id="doc-2"></a> `doc?`
-
-</td>
-<td>
-
-[`ProseMirrorNode`](model.md#prosemirrornode)
-
-</td>
-<td>
+```ts
+optional doc: ProseMirrorNode;
+```
 
 The starting document. Either this or `schema` _must_ be
 provided.
 
-</td>
-</tr>
-<tr>
-<td>
+##### plugins? {#plugins-1}
 
-<a id="plugins-1"></a> `plugins?`
-
-</td>
-<td>
-
-readonly [`ProseMirrorPlugin`](#prosemirrorplugin)\<`any`\>[]
-
-</td>
-<td>
+```ts
+optional plugins: readonly ProseMirrorPlugin<any>[];
+```
 
 The plugins that should be active in this state.
 
-</td>
-</tr>
-<tr>
-<td>
+##### schema? {#schema-1}
 
-<a id="schema-1"></a> `schema?`
-
-</td>
-<td>
-
-[`Schema`](model.md#schema-3)\<`any`, `any`\>
-
-</td>
-<td>
+```ts
+optional schema: Schema<any, any>;
+```
 
 The schema to use (only relevant if no `doc` is specified).
 
-</td>
-</tr>
-<tr>
-<td>
+##### selection? {#selection-3}
 
-<a id="selection-3"></a> `selection?`
-
-</td>
-<td>
-
-[`Selection`](#selection-1)
-
-</td>
-<td>
+```ts
+optional selection: Selection;
+```
 
 A valid selection in the document.
 
-</td>
-</tr>
-<tr>
-<td>
+##### storedMarks? {#storedmarks-2}
 
-<a id="storedmarks-2"></a> `storedMarks?`
-
-</td>
-<td>
-
-`null` \| readonly [`Mark`](model.md#mark)[]
-
-</td>
-<td>
+```ts
+optional storedMarks: null | readonly Mark[];
+```
 
 The initial set of [stored marks](https://prosemirror.net/docs/ref/#state.EditorState.storedMarks).
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7028,27 +6971,11 @@ read via [`Plugin.spec`](https://prosemirror.net/docs/ref/#state.Plugin.spec).
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### appendTransaction()? {#appendtransaction}
 
-<a id="appendtransaction"></a> `appendTransaction?`
-
-</td>
-<td>
-
-(`transactions`: readonly [`Transaction`](#transaction)[], `oldState`: [`EditorState`](#editorstate), `newState`: [`EditorState`](#editorstate)) => `undefined` \| `null` \| [`Transaction`](#transaction)
-
-</td>
-<td>
+```ts
+optional appendTransaction: (transactions: readonly Transaction[], oldState: EditorState, newState: EditorState) => undefined | null | Transaction;
+```
 
 Allows the plugin to append another transaction to be applied
 after the given array of transactions. When another plugin
@@ -7057,106 +6984,179 @@ with the new state and new transactions—but only the new
 transactions, i.e. it won't be passed transactions that it
 already saw.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`transactions`
+
+</td>
+<td>
+
+readonly [`Transaction`](#transaction)[]
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="filtertransaction"></a> `filterTransaction?`
+`oldState`
 
 </td>
 <td>
 
-(`tr`: [`Transaction`](#transaction), `state`: [`EditorState`](#editorstate)) => `boolean`
+[`EditorState`](#editorstate)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`newState`
 
 </td>
 <td>
+
+[`EditorState`](#editorstate)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`undefined` \| `null` \| [`Transaction`](#transaction)
+
+##### filterTransaction()? {#filtertransaction}
+
+```ts
+optional filterTransaction: (tr: Transaction, state: EditorState) => boolean;
+```
 
 When present, this will be called before a transaction is
 applied by the state, allowing the plugin to cancel it (by
 returning false).
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`tr`
+
+</td>
+<td>
+
+[`Transaction`](#transaction)
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="key"></a> `key?`
+`state`
 
 </td>
 <td>
 
-[`PluginKey`](#pluginkey)\<`any`\>
+[`EditorState`](#editorstate)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean`
+
+##### key? {#key}
+
+```ts
+optional key: PluginKey<any>;
+```
 
 Can be used to make this a keyed plugin. You can have only one
 plugin with a given key in a given state, but it is possible to
 access the plugin's configuration and state through the key,
 without having access to the plugin instance object.
 
-</td>
-</tr>
-<tr>
-<td>
+##### props? {#props-1}
 
-<a id="props-1"></a> `props?`
-
-</td>
-<td>
-
-[`EditorProps`](view.md#editorprops)\<[`ProseMirrorPlugin`](#prosemirrorplugin)\<`PluginState`\>\>
-
-</td>
-<td>
+```ts
+optional props: EditorProps<ProseMirrorPlugin<PluginState>>;
+```
 
 The [view props](https://prosemirror.net/docs/ref/#view.EditorProps) added by this plugin. Props
 that are functions will be bound to have the plugin instance as
 their `this` binding.
 
-</td>
-</tr>
-<tr>
-<td>
+##### state? {#state}
 
-<a id="state"></a> `state?`
-
-</td>
-<td>
-
-[`StateField`](#statefield)\<`PluginState`\>
-
-</td>
-<td>
+```ts
+optional state: StateField<PluginState>;
+```
 
 Allows a plugin to define a [state field](https://prosemirror.net/docs/ref/#state.StateField), an
 extra slot in the state object in which it can keep its own data.
 
-</td>
-</tr>
-<tr>
-<td>
+##### view()? {#view}
 
-<a id="view"></a> `view?`
-
-</td>
-<td>
-
-(`view`: [`EditorView`](view.md#editorview)) => [`PluginView`](#pluginview)
-
-</td>
-<td>
+```ts
+optional view: (view: EditorView) => PluginView;
+```
 
 When the plugin needs to interact with the editor view, or
 set something up in the DOM, use this field. The function
 will be called when the plugin's state is associated with an
 editor view.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`view`
+
+</td>
+<td>
+
+[`EditorView`](view.md#editorview)
+
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+[`PluginView`](#pluginview)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7180,54 +7180,82 @@ to make the history handle it well.
 
 #### Properties
 
+##### map() {#map-8}
+
+```ts
+map: (mapping: Mappable) => SelectionBookmark;
+```
+
+Map the bookmark through a set of changes.
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="map-8"></a> `map`
+`mapping`
 
 </td>
 <td>
 
-(`mapping`: [`Mappable`](transform.md#mappable)) => [`SelectionBookmark`](#selectionbookmark)
-
-</td>
-<td>
-
-Map the bookmark through a set of changes.
+[`Mappable`](transform.md#mappable)
 
 </td>
 </tr>
-<tr>
-<td>
+</tbody>
+</table>
 
-<a id="resolve"></a> `resolve`
+###### Returns
 
-</td>
-<td>
+[`SelectionBookmark`](#selectionbookmark)
 
-(`doc`: [`ProseMirrorNode`](model.md#prosemirrornode)) => [`Selection`](#selection-1)
+##### resolve() {#resolve}
 
-</td>
-<td>
+```ts
+resolve: (doc: ProseMirrorNode) => Selection;
+```
 
 Resolve the bookmark to a real selection again. This may need to
 do some error checking and may fall back to a default (usually
 [`TextSelection.between`](https://prosemirror.net/docs/ref/#state.TextSelection^between)) if
 mapping made the bookmark invalid.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`doc`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](model.md#prosemirrornode)
+
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+[`Selection`](#selection-1)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7271,93 +7299,233 @@ always called with the plugin instance as their `this` binding.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### apply() {#apply-2}
 
-<a id="apply-2"></a> `apply`
-
-</td>
-<td>
-
-(`tr`: [`Transaction`](#transaction), `value`: `T`, `oldState`: [`EditorState`](#editorstate), `newState`: [`EditorState`](#editorstate)) => `T`
-
-</td>
-<td>
+```ts
+apply: (tr: Transaction, value: T, oldState: EditorState, newState: EditorState) => T;
+```
 
 Apply the given transaction to this state field, producing a new
 field value. Note that the `newState` argument is again a partially
 constructed state does not yet contain the state from plugins
 coming after this one.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`tr`
+
+</td>
+<td>
+
+[`Transaction`](#transaction)
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="fromjson-10"></a> `fromJSON?`
+`value`
 
 </td>
 <td>
 
-(`config`: [`EditorStateConfig`](#editorstateconfig), `value`: `any`, `state`: [`EditorState`](#editorstate)) => `T`
+`T`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`oldState`
 
 </td>
 <td>
+
+[`EditorState`](#editorstate)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`newState`
+
+</td>
+<td>
+
+[`EditorState`](#editorstate)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`T`
+
+##### fromJSON()? {#fromjson-10}
+
+```ts
+optional fromJSON: (config: EditorStateConfig, value: any, state: EditorState) => T;
+```
 
 Deserialize the JSON representation of this field. Note that the
 `state` argument is again a half-initialized state.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`config`
+
+</td>
+<td>
+
+[`EditorStateConfig`](#editorstateconfig)
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="init"></a> `init`
+`value`
 
 </td>
 <td>
 
-(`config`: [`EditorStateConfig`](#editorstateconfig), `instance`: [`EditorState`](#editorstate)) => `T`
+`any`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`state`
 
 </td>
 <td>
+
+[`EditorState`](#editorstate)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`T`
+
+##### init() {#init}
+
+```ts
+init: (config: EditorStateConfig, instance: EditorState) => T;
+```
 
 Initialize the value of the field. `config` will be the object
 passed to [`EditorState.create`](https://prosemirror.net/docs/ref/#state.EditorState^create). Note
 that `instance` is a half-initialized state instance, and will
 not have values for plugin fields initialized after this one.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`config`
+
+</td>
+<td>
+
+[`EditorStateConfig`](#editorstateconfig)
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="tojson-10"></a> `toJSON?`
+`instance`
 
 </td>
 <td>
 
-(`value`: `T`) => `any`
-
-</td>
-<td>
-
-Convert this field to JSON. Optional, can be left off to disable
-JSON serialization for the field.
+[`EditorState`](#editorstate)
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`T`
+
+##### toJSON()? {#tojson-10}
+
+```ts
+optional toJSON: (value: T) => any;
+```
+
+Convert this field to JSON. Optional, can be left off to disable
+JSON serialization for the field.
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`value`
+
+</td>
+<td>
+
+`T`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`any`
 
 <!-- DEBUG memberWithGroups 10 -->
 

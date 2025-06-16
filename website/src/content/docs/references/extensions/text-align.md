@@ -55,63 +55,33 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### default? {#default}
 
-<a id="default"></a> `default?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional default: string;
+```
 
 The default value for the attribute.
 
-**Default**
+###### Default
 
 ```ts
 "left"
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### types {#types}
 
-<a id="types"></a> `types`
-
-</td>
-<td>
-
-`NodeName`[]
-
-</td>
-<td>
+```ts
+types: NodeName[];
+```
 
 The names of node to add the attribute to.
 
-**Example**
+###### Example
 
 ```ts
 ["paragraph", "heading"]
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

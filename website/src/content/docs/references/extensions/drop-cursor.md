@@ -30,80 +30,41 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### class? {#class}
 
-<a id="class"></a> `class?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional class: string;
+```
 
 A CSS class name to add to the cursor element.
 
-</td>
-</tr>
-<tr>
-<td>
+##### color? {#color}
 
-<a id="color"></a> `color?`
-
-</td>
-<td>
-
-`string` \| `false`
-
-</td>
-<td>
+```ts
+optional color: string | false;
+```
 
 The color of the cursor.  Use `false` to apply no color and rely only on class.
 
-**Default**
+###### Default
 
 ```ts
 'black'
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### width? {#width}
 
-<a id="width"></a> `width?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional width: number;
+```
 
 The precise width of the cursor in pixels.
 
-**Default**
+###### Default
 
 ```ts
 1
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

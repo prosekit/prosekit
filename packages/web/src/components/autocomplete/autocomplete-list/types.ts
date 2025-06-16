@@ -10,6 +10,9 @@ import {
 } from '@aria-ui/listbox'
 import type { Editor } from '@prosekit/core'
 
+/**
+ * @interface
+ */
 export interface AutocompleteListProps extends Pick<ListboxProps, 'filter'> {
   /**
    * The ProseKit editor instance.

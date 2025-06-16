@@ -6643,47 +6643,22 @@ marks.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### default? {#default}
 
-<a id="default"></a> `default?`
-
-</td>
-<td>
-
-`any`
-
-</td>
-<td>
+```ts
+optional default: any;
+```
 
 The default value for this attribute, to use when no explicit
 value is provided. Attributes that have no default must be
 provided whenever a node or mark of a type that has them is
 created.
 
-</td>
-</tr>
-<tr>
-<td>
+##### splittable? {#splittable}
 
-<a id="splittable"></a> `splittable?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional splittable: boolean;
+```
 
 Indicates if the block can be split using the `splitBlockAs` command.
 
@@ -6695,20 +6670,11 @@ If multiple block types in the schema share the same `splittable` attribute,
 ensure they are compatible in type and definition. This compatibility allows
 the attribute value to be correctly inherited across different block types.
 
-</td>
-</tr>
-<tr>
-<td>
+##### validate? {#validate}
 
-<a id="validate"></a> `validate?`
-
-</td>
-<td>
-
-`string` \| (`value`: `any`) => `void`
-
-</td>
-<td>
+```ts
+optional validate: string | (value: any) => void;
+```
 
 A function or type name used to validate values of this
 attribute. This will be used when deserializing the attribute
@@ -6718,11 +6684,6 @@ of the expected type or shape. When a string, it should be a
 `|`-separated string of primitive types (`"number"`, `"string"`,
 `"boolean"`, `"null"`, and `"undefined"`), and the library will
 raise an error when the value is not one of those types.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -6750,83 +6711,40 @@ Fields that may be present in both [tag](https://prosemirror.net/docs/ref/#model
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-2}
 
-<a id="attrs-2"></a> `attrs?`
-
-</td>
-<td>
-
-[`Attrs`](#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: Attrs;
+```
 
 Attributes for the node or mark created by this rule. When
 `getAttrs` is provided, it takes precedence.
 
-</td>
-</tr>
-<tr>
-<td>
+##### closeParent? {#closeparent}
 
-<a id="closeparent"></a> `closeParent?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional closeParent: boolean;
+```
 
 When true, finding an element that matches this rule will close
 the current node.
 
-</td>
-</tr>
-<tr>
-<td>
+##### consuming? {#consuming}
 
-<a id="consuming"></a> `consuming?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional consuming: boolean;
+```
 
 By default, when a rule matches an element or style, no further
 rules get a chance to match it. By setting this to `false`, you
 indicate that even when this rule matches, other rules that come
 after it should also run.
 
-</td>
-</tr>
-<tr>
-<td>
+##### context? {#context}
 
-<a id="context"></a> `context?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional context: string;
+```
 
 When given, restricts this rule to only match when the current
 context—the parent nodes into which the content is being
@@ -6840,54 +6758,27 @@ slash matches any sequence of ancestor nodes. To allow multiple
 different contexts, they can be separated by a pipe (`|`)
 character, as in `"blockquote/|list_item/"`.
 
-</td>
-</tr>
-<tr>
-<td>
+##### ignore? {#ignore}
 
-<a id="ignore"></a> `ignore?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional ignore: boolean;
+```
 
 When true, ignore content that matches this rule.
 
-</td>
-</tr>
-<tr>
-<td>
+##### mark? {#mark-5}
 
-<a id="mark-5"></a> `mark?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional mark: string;
+```
 
 The name of the mark type to wrap the matched content in.
 
-</td>
-</tr>
-<tr>
-<td>
+##### priority? {#priority}
 
-<a id="priority"></a> `priority?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional priority: number;
+```
 
 Can be used to change the order in which the parse rules in a
 schema are tried. Those with higher priority come first. Rules
@@ -6895,28 +6786,14 @@ without a priority are counted as having priority 50. This
 property is only meaningful in a schema—when directly
 constructing a parser, the order of the rule array is used.
 
-</td>
-</tr>
-<tr>
-<td>
+##### skip? {#skip}
 
-<a id="skip"></a> `skip?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional skip: boolean;
+```
 
 When true, ignore the node that matches this rule, but do parse
 its content.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -6952,62 +6829,34 @@ working with the mark.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-3}
 
-<a id="attrs-3"></a> `attrs?`
-
-</td>
-<td>
-
-`object`
-
-</td>
-<td>
+```ts
+optional attrs: object;
+```
 
 The attributes that marks of this type get.
 
-</td>
-</tr>
-<tr>
-<td>
+###### Index Signature
 
-<a id="code"></a> `code?`
+```ts
+[name: string]: AttributeSpec
+```
 
-</td>
-<td>
+##### code? {#code}
 
-`boolean`
-
-</td>
-<td>
+```ts
+optional code: boolean;
+```
 
 Marks the content of this span as being code, which causes some
 commands and extensions to treat it differently.
 
-</td>
-</tr>
-<tr>
-<td>
+##### excludes? {#excludes-2}
 
-<a id="excludes-2"></a> `excludes?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional excludes: string;
+```
 
 Determines which other marks this mark can coexist with. Should
 be a space-separated strings naming other marks or groups of marks.
@@ -7023,103 +6872,94 @@ can set it to an empty string (or any string not containing the
 mark's own name) to allow multiple marks of a given type to
 coexist (as long as they have different attributes).
 
-</td>
-</tr>
-<tr>
-<td>
+##### group? {#group}
 
-<a id="group"></a> `group?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional group: string;
+```
 
 The group or space-separated groups to which this mark belongs.
 
-</td>
-</tr>
-<tr>
-<td>
+##### inclusive? {#inclusive}
 
-<a id="inclusive"></a> `inclusive?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional inclusive: boolean;
+```
 
 Whether this mark should be active when the cursor is positioned
 at its end (or at its start when that is also the start of the
 parent node). Defaults to true.
 
-</td>
-</tr>
-<tr>
-<td>
+##### parseDOM? {#parsedom}
 
-<a id="parsedom"></a> `parseDOM?`
-
-</td>
-<td>
-
-readonly [`ParseRule`](#parserule)[]
-
-</td>
-<td>
+```ts
+optional parseDOM: readonly ParseRule[];
+```
 
 Associates DOM parser information with this mark (see the
 corresponding [node spec field](https://prosemirror.net/docs/ref/#model.NodeSpec.parseDOM)). The
 `mark` field in the rules is implied.
 
-</td>
-</tr>
-<tr>
-<td>
+##### spanning? {#spanning}
 
-<a id="spanning"></a> `spanning?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional spanning: boolean;
+```
 
 Determines whether marks of this type can span multiple adjacent
 nodes when serialized to DOM/HTML. Defaults to true.
 
-</td>
-</tr>
-<tr>
-<td>
+##### toDOM()? {#todom}
 
-<a id="todom"></a> `toDOM?`
-
-</td>
-<td>
-
-(`mark`: [`Mark`](#mark), `inline`: `boolean`) => [`DOMOutputSpec`](#domoutputspec)
-
-</td>
-<td>
+```ts
+optional toDOM: (mark: Mark, inline: boolean) => DOMOutputSpec;
+```
 
 Defines the default way marks of this type should be serialized
 to DOM/HTML. When the resulting spec contains a hole, that is
 where the marked content is placed. Otherwise, it is appended to
 the top node.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`mark`
+
+</td>
+<td>
+
+[`Mark`](#mark)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`inline`
+
+</td>
+<td>
+
+`boolean`
+
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+[`DOMOutputSpec`](#domoutputspec)
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7154,269 +6994,171 @@ other code via [`NodeType.spec`](https://prosemirror.net/docs/ref/#model.NodeTyp
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### atom? {#atom}
 
-<a id="atom"></a> `atom?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional atom: boolean;
+```
 
 Can be set to true to indicate that, though this isn't a [leaf
 node](https://prosemirror.net/docs/ref/#model.NodeType.isLeaf), it doesn't have directly editable
 content and should be treated as a single unit in the view.
 
-</td>
-</tr>
-<tr>
-<td>
+##### attrs? {#attrs-4}
 
-<a id="attrs-4"></a> `attrs?`
-
-</td>
-<td>
-
-`object`
-
-</td>
-<td>
+```ts
+optional attrs: object;
+```
 
 The attributes that nodes of this type get.
 
-</td>
-</tr>
-<tr>
-<td>
+###### Index Signature
 
-<a id="code-1"></a> `code?`
+```ts
+[name: string]: AttributeSpec
+```
 
-</td>
-<td>
+##### code? {#code-1}
 
-`boolean`
-
-</td>
-<td>
+```ts
+optional code: boolean;
+```
 
 Can be used to indicate that this node contains code, which
 causes some commands to behave differently.
 
-</td>
-</tr>
-<tr>
-<td>
+##### content? {#content-3}
 
-<a id="content-3"></a> `content?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional content: string;
+```
 
 The content expression for this node, as described in the [schema
 guide](https://prosemirror.net/docs/guide/#schema.content_expressions). When not given,
 the node does not allow any content.
 
-</td>
-</tr>
-<tr>
-<td>
+##### defining? {#defining}
 
-<a id="defining"></a> `defining?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional defining: boolean;
+```
 
 When enabled, enables both
 [`definingAsContext`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingAsContext) and
 [`definingForContent`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingForContent).
 
-</td>
-</tr>
-<tr>
-<td>
+##### definingAsContext? {#definingascontext}
 
-<a id="definingascontext"></a> `definingAsContext?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional definingAsContext: boolean;
+```
 
 Determines whether this node is considered an important parent
 node during replace operations (such as paste). Non-defining (the
 default) nodes get dropped when their entire content is replaced,
 whereas defining nodes persist and wrap the inserted content.
 
-</td>
-</tr>
-<tr>
-<td>
+##### definingForContent? {#definingforcontent}
 
-<a id="definingforcontent"></a> `definingForContent?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional definingForContent: boolean;
+```
 
 In inserted content the defining parents of the content are
 preserved when possible. Typically, non-default-paragraph
 textblock types, and possibly list items, are marked as defining.
 
-</td>
-</tr>
-<tr>
-<td>
+##### disableDropCursor? {#disabledropcursor}
 
-<a id="disabledropcursor"></a> `disableDropCursor?`
+```ts
+optional disableDropCursor: 
+  | boolean
+  | (view: EditorView, pos: object, event: DragEvent) => boolean;
+```
 
-</td>
-<td>
+##### draggable? {#draggable}
 
- \| `boolean` \| (`view`: [`EditorView`](view.md#editorview), `pos`: `object`, `event`: [`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)) => `boolean`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="draggable"></a> `draggable?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional draggable: boolean;
+```
 
 Determines whether nodes of this type can be dragged without
 being selected. Defaults to false.
 
-</td>
-</tr>
-<tr>
-<td>
+##### group? {#group-1}
 
-<a id="group-1"></a> `group?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional group: string;
+```
 
 The group or space-separated groups to which this node belongs,
 which can be referred to in the content expressions for the
 schema.
 
-</td>
-</tr>
-<tr>
-<td>
+##### inline? {#inline}
 
-<a id="inline"></a> `inline?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional inline: boolean;
+```
 
 Should be set to true for inline nodes. (Implied for text nodes.)
 
-</td>
-</tr>
-<tr>
-<td>
+##### isolating? {#isolating}
 
-<a id="isolating"></a> `isolating?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional isolating: boolean;
+```
 
 When enabled (default is false), the sides of nodes of this type
 count as boundaries that regular editing operations, like
 backspacing or lifting, won't cross. An example of a node that
 should probably have this enabled is a table cell.
 
-</td>
-</tr>
-<tr>
-<td>
+##### leafText()? {#leaftext}
 
-<a id="leaftext"></a> `leafText?`
-
-</td>
-<td>
-
-(`node`: [`ProseMirrorNode`](#prosemirrornode)) => `string`
-
-</td>
-<td>
+```ts
+optional leafText: (node: ProseMirrorNode) => string;
+```
 
 Defines the default way a [leaf node](https://prosemirror.net/docs/ref/#model.NodeType.isLeaf) of
 this type should be serialized to a string (as used by
 [`Node.textBetween`](https://prosemirror.net/docs/ref/#model.Node^textBetween) and
 [`Node.textContent`](https://prosemirror.net/docs/ref/#model.Node^textContent)).
 
-</td>
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="linebreakreplacement-1"></a> `linebreakReplacement?`
+`node`
 
 </td>
 <td>
 
-`boolean`
+[`ProseMirrorNode`](#prosemirrornode)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`string`
+
+##### linebreakReplacement? {#linebreakreplacement-1}
+
+```ts
+optional linebreakReplacement: boolean;
+```
 
 A single inline node in a schema can be set to be a linebreak
 equivalent. When converting between block types that support the
@@ -7426,20 +7168,11 @@ node and block types that don't but have
 between newline characters to or from linebreak nodes as
 appropriate.
 
-</td>
-</tr>
-<tr>
-<td>
+##### marks? {#marks-6}
 
-<a id="marks-6"></a> `marks?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional marks: string;
+```
 
 The marks that are allowed inside of this node. May be a
 space-separated string referring to mark names or groups, `"_"`
@@ -7447,20 +7180,11 @@ to explicitly allow all marks, or `""` to disallow marks. When
 not given, nodes with inline content default to allowing all
 marks, other nodes default to not allowing marks.
 
-</td>
-</tr>
-<tr>
-<td>
+##### parseDOM? {#parsedom-1}
 
-<a id="parsedom-1"></a> `parseDOM?`
-
-</td>
-<td>
-
-readonly [`TagParseRule`](#tagparserule)[]
-
-</td>
-<td>
+```ts
+optional parseDOM: readonly TagParseRule[];
+```
 
 Associates DOM parser information with this node, which can be
 used by [`DOMParser.fromSchema`](https://prosemirror.net/docs/ref/#model.DOMParser^fromSchema) to
@@ -7469,57 +7193,59 @@ implied (the name of this node will be filled in automatically).
 If you supply your own parser, you do not need to also specify
 parsing rules in your schema.
 
-</td>
-</tr>
-<tr>
-<td>
+##### selectable? {#selectable}
 
-<a id="selectable"></a> `selectable?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional selectable: boolean;
+```
 
 Controls whether nodes of this type can be selected as a [node
 selection](https://prosemirror.net/docs/ref/#state.NodeSelection). Defaults to true for non-text
 nodes.
 
-</td>
-</tr>
-<tr>
-<td>
+##### toDebugString()? {#todebugstring}
 
-<a id="todebugstring"></a> `toDebugString?`
-
-</td>
-<td>
-
-(`node`: [`ProseMirrorNode`](#prosemirrornode)) => `string`
-
-</td>
-<td>
+```ts
+optional toDebugString: (node: ProseMirrorNode) => string;
+```
 
 Defines the default way a node of this type should be serialized
 to a string representation for debugging (e.g. in error messages).
 
-</td>
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="todom-1"></a> `toDOM?`
+`node`
 
 </td>
 <td>
 
-(`node`: [`ProseMirrorNode`](#prosemirrornode)) => [`DOMOutputSpec`](#domoutputspec)
+[`ProseMirrorNode`](#prosemirrornode)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`string`
+
+##### toDOM()? {#todom-1}
+
+```ts
+optional toDOM: (node: ProseMirrorNode) => DOMOutputSpec;
+```
 
 Defines the default way a node of this type should be serialized
 to DOM/HTML (as used by
@@ -7534,20 +7260,40 @@ it is possible to create a serializer where text is rendered
 differently, this is not supported inside the editor, so you
 shouldn't override that in your text node spec.
 
-</td>
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="whitespace-1"></a> `whitespace?`
+`node`
 
 </td>
 <td>
 
-`"pre"` \| `"normal"`
+[`ProseMirrorNode`](#prosemirrornode)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`DOMOutputSpec`](#domoutputspec)
+
+##### whitespace? {#whitespace-1}
+
+```ts
+optional whitespace: "pre" | "normal";
+```
 
 Controls way whitespace in this a node is parsed. The default is
 `"normal"`, which causes the [DOM parser](https://prosemirror.net/docs/ref/#model.DOMParser) to
@@ -7558,11 +7304,6 @@ given, but [`code`](https://prosemirror.net/docs/ref/#model.NodeSpec.code) is tr
 will default to `"pre"`. Note that this option doesn't influence
 the way the node is rendered—that should be handled by `toDOM`
 and/or styling.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7590,46 +7331,21 @@ These are the options recognized by the
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### context? {#context-1}
 
-<a id="context-1"></a> `context?`
-
-</td>
-<td>
-
-[`ResolvedPos`](#resolvedpos)
-
-</td>
-<td>
+```ts
+optional context: ResolvedPos;
+```
 
 A set of additional nodes to count as
 [context](https://prosemirror.net/docs/ref/#model.ParseRule.context) when parsing, above the
 given [top node](https://prosemirror.net/docs/ref/#model.ParseOptions.topNode).
 
-</td>
-</tr>
-<tr>
-<td>
+##### findPositions? {#findpositions}
 
-<a id="findpositions"></a> `findPositions?`
-
-</td>
-<td>
-
-`object`[]
-
-</td>
-<td>
+```ts
+optional findPositions: object[];
+```
 
 When given, the parser will, beside parsing the content,
 record the document positions of the given DOM positions. It
@@ -7637,101 +7353,69 @@ will do so by writing to the objects, adding a `pos` property
 that holds the document position. DOM positions that are not
 in the parsed content will not be written to.
 
-</td>
-</tr>
-<tr>
-<td>
+###### node
 
-<a id="from-3"></a> `from?`
+```ts
+node: Node;
+```
 
-</td>
-<td>
+###### offset
 
-`number`
+```ts
+offset: number;
+```
 
-</td>
-<td>
+###### pos?
+
+```ts
+optional pos: number;
+```
+
+##### from? {#from-3}
+
+```ts
+optional from: number;
+```
 
 The child node index to start parsing from.
 
-</td>
-</tr>
-<tr>
-<td>
+##### preserveWhitespace? {#preservewhitespace}
 
-<a id="preservewhitespace"></a> `preserveWhitespace?`
-
-</td>
-<td>
-
-`boolean` \| `"full"`
-
-</td>
-<td>
+```ts
+optional preserveWhitespace: boolean | "full";
+```
 
 By default, whitespace is collapsed as per HTML's rules. Pass
 `true` to preserve whitespace, but normalize newlines to
 spaces, and `"full"` to preserve whitespace entirely.
 
-</td>
-</tr>
-<tr>
-<td>
+##### to? {#to-1}
 
-<a id="to-1"></a> `to?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional to: number;
+```
 
 The child node index to stop parsing at.
 
-</td>
-</tr>
-<tr>
-<td>
+##### topMatch? {#topmatch}
 
-<a id="topmatch"></a> `topMatch?`
-
-</td>
-<td>
-
-[`ContentMatch`](#contentmatch)
-
-</td>
-<td>
+```ts
+optional topMatch: ContentMatch;
+```
 
 Provide the starting content match that content parsed into the
 top node is matched against.
 
-</td>
-</tr>
-<tr>
-<td>
+##### topNode? {#topnode}
 
-<a id="topnode"></a> `topNode?`
-
-</td>
-<td>
-
-[`ProseMirrorNode`](#prosemirrornode)
-
-</td>
-<td>
+```ts
+optional topNode: ProseMirrorNode;
+```
 
 By default, the content is parsed into the schema's default
 [top node type](https://prosemirror.net/docs/ref/#model.Schema.topNodeType). You can pass this
 option to use the type and attributes from a different node
 as the top container.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7791,47 +7475,26 @@ constructor.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### marks? {#marks-8}
 
-<a id="marks-8"></a> `marks?`
-
-</td>
-<td>
-
- \| `{ [name in string]: MarkSpec }` \| `OrderedMap`\<[`MarkSpec`](#markspec)\>
-
-</td>
-<td>
+```ts
+optional marks: 
+  | { [name in string]: MarkSpec }
+| OrderedMap<MarkSpec>;
+```
 
 The mark types that exist in this schema. The order in which they
 are provided determines the order in which [mark
 sets](https://prosemirror.net/docs/ref/#model.Mark.addToSet) are sorted and in which [parse
 rules](https://prosemirror.net/docs/ref/#model.MarkSpec.parseDOM) are tried.
 
-</td>
-</tr>
-<tr>
-<td>
+##### nodes {#nodes-4}
 
-<a id="nodes-4"></a> `nodes`
-
-</td>
-<td>
-
- \| `{ [name in string]: NodeSpec }` \| `OrderedMap`\<[`NodeSpec`](#nodespec)\>
-
-</td>
-<td>
+```ts
+nodes: 
+  | { [name in string]: NodeSpec }
+| OrderedMap<NodeSpec>;
+```
 
 The node types in this schema. Maps names to
 [`NodeSpec`](https://prosemirror.net/docs/ref/#model.NodeSpec) objects that describe the node type
@@ -7840,28 +7503,14 @@ determines which [parse rules](https://prosemirror.net/docs/ref/#model.NodeSpec.
 precedence by default, and which nodes come first in a given
 [group](https://prosemirror.net/docs/ref/#model.NodeSpec.group).
 
-</td>
-</tr>
-<tr>
-<td>
+##### topNode? {#topnode-1}
 
-<a id="topnode-1"></a> `topNode?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional topNode: string;
+```
 
 The name of the default top-level node for the schema. Defaults
 to `"doc"`.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7887,121 +7536,89 @@ A parse rule targeting a style property.
 
 #### Properties
 
+##### attrs? {#attrs-5}
+
+```ts
+optional attrs: Attrs;
+```
+
+Attributes for the node or mark created by this rule. When
+`getAttrs` is provided, it takes precedence.
+
+###### Inherited from
+
+[`GenericParseRule`](#genericparserule).[`attrs`](#attrs-2)
+
+##### clearMark()? {#clearmark}
+
+```ts
+optional clearMark: (mark: Mark) => boolean;
+```
+
+Style rules can remove marks from the set of active marks.
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="attrs-5"></a> `attrs?`
+`mark`
 
 </td>
 <td>
 
-[`Attrs`](#attrs-7)
-
-</td>
-<td>
-
-Attributes for the node or mark created by this rule. When
-`getAttrs` is provided, it takes precedence.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`attrs`](#attrs-2)
+[`Mark`](#mark)
 
 </td>
 </tr>
-<tr>
-<td>
+</tbody>
+</table>
 
-<a id="clearmark"></a> `clearMark?`
-
-</td>
-<td>
-
-(`mark`: [`Mark`](#mark)) => `boolean`
-
-</td>
-<td>
-
-Style rules can remove marks from the set of active marks.
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="closeparent-1"></a> `closeParent?`
-
-</td>
-<td>
+###### Returns
 
 `boolean`
 
-</td>
-<td>
+##### closeParent? {#closeparent-1}
+
+```ts
+optional closeParent: boolean;
+```
 
 When true, finding an element that matches this rule will close
 the current node.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`closeParent`](#closeparent)
 
-</td>
-</tr>
-<tr>
-<td>
+##### consuming? {#consuming-1}
 
-<a id="consuming-1"></a> `consuming?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional consuming: boolean;
+```
 
 By default, when a rule matches an element or style, no further
 rules get a chance to match it. By setting this to `false`, you
 indicate that even when this rule matches, other rules that come
 after it should also run.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`consuming`](#consuming)
 
-</td>
-</tr>
-<tr>
-<td>
+##### context? {#context-2}
 
-<a id="context-2"></a> `context?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional context: string;
+```
 
 When given, restricts this rule to only match when the current
 context—the parent nodes into which the content is being
@@ -8015,62 +7632,33 @@ slash matches any sequence of ancestor nodes. To allow multiple
 different contexts, they can be separated by a pipe (`|`)
 character, as in `"blockquote/|list_item/"`.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`context`](#context)
 
-</td>
-</tr>
-<tr>
-<td>
+##### getAttrs()? {#getattrs}
 
-<a id="getattrs"></a> `getAttrs?`
-
-</td>
-<td>
-
-(`node`: `string`) => `null` \| `false` \| [`Attrs`](#attrs-7)
-
-</td>
-<td>
+```ts
+optional getAttrs: (node: string) => null | false | Attrs;
+```
 
 A function used to compute the attributes for the node or mark
 created by this rule. Called with the style's value.
 
-</td>
-<td>
+###### Parameters
 
-&hyphen;
-
-</td>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="ignore-1"></a> `ignore?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-When true, ignore content that matches this rule.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`ignore`](#ignore)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="mark-6"></a> `mark?`
+`node`
 
 </td>
 <td>
@@ -8078,29 +7666,43 @@ When true, ignore content that matches this rule.
 `string`
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| `false` \| [`Attrs`](#attrs-7)
+
+##### ignore? {#ignore-1}
+
+```ts
+optional ignore: boolean;
+```
+
+When true, ignore content that matches this rule.
+
+###### Inherited from
+
+[`GenericParseRule`](#genericparserule).[`ignore`](#ignore)
+
+##### mark? {#mark-6}
+
+```ts
+optional mark: string;
+```
 
 The name of the mark type to wrap the matched content in.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`mark`](#mark-5)
 
-</td>
-</tr>
-<tr>
-<td>
+##### priority? {#priority-1}
 
-<a id="priority-1"></a> `priority?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional priority: number;
+```
 
 Can be used to change the order in which the parse rules in a
 schema are tried. Those with higher priority come first. Rules
@@ -8108,48 +7710,28 @@ without a priority are counted as having priority 50. This
 property is only meaningful in a schema—when directly
 constructing a parser, the order of the rule array is used.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`priority`](#priority)
 
-</td>
-</tr>
-<tr>
-<td>
+##### skip? {#skip-1}
 
-<a id="skip-1"></a> `skip?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional skip: boolean;
+```
 
 When true, ignore the node that matches this rule, but do parse
 its content.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`skip`](#skip)
 
-</td>
-</tr>
-<tr>
-<td>
+##### style {#style}
 
-<a id="style"></a> `style`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+style: string;
+```
 
 A CSS property name to match. This rule will match inline styles
 that list that property. May also have the form
@@ -8160,39 +7742,15 @@ and return false to indicate that the match failed.) Rules
 matching styles may only produce [marks](https://prosemirror.net/docs/ref/#model.ParseRule.mark),
 not nodes.
 
-</td>
-<td>
+##### tag? {#tag}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="tag"></a> `tag?`
-
-</td>
-<td>
-
-`undefined`
-
-</td>
-<td>
+```ts
+optional tag: undefined;
+```
 
 Given to make TS see ParseRule as a tagged union
 
-**Hide**
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-</tbody>
-</table>
+###### Hide
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -8218,99 +7776,55 @@ Parse rule targeting a DOM element.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs-6}
 
-<a id="attrs-6"></a> `attrs?`
-
-</td>
-<td>
-
-[`Attrs`](#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: Attrs;
+```
 
 Attributes for the node or mark created by this rule. When
 `getAttrs` is provided, it takes precedence.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`attrs`](#attrs-2)
 
-</td>
-</tr>
-<tr>
-<td>
+##### closeParent? {#closeparent-2}
 
-<a id="closeparent-2"></a> `closeParent?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional closeParent: boolean;
+```
 
 When true, finding an element that matches this rule will close
 the current node.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`closeParent`](#closeparent)
 
-</td>
-</tr>
-<tr>
-<td>
+##### consuming? {#consuming-2}
 
-<a id="consuming-2"></a> `consuming?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional consuming: boolean;
+```
 
 By default, when a rule matches an element or style, no further
 rules get a chance to match it. By setting this to `false`, you
 indicate that even when this rule matches, other rules that come
 after it should also run.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`consuming`](#consuming)
 
-</td>
-</tr>
-<tr>
-<td>
+##### contentElement? {#contentelement}
 
-<a id="contentelement"></a> `contentElement?`
-
-</td>
-<td>
-
- \| `string` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| (`node`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node)) => [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
-
-</td>
-<td>
+```ts
+optional contentElement: 
+  | string
+  | HTMLElement
+  | (node: Node) => HTMLElement;
+```
 
 For rules that produce non-leaf nodes, by default the content of
 the DOM element is parsed as content of the node. If the child
@@ -8319,25 +7833,11 @@ string that the parser must use to find the actual content
 element, or a function that returns the actual content element
 to the parser.
 
-</td>
-<td>
+##### context? {#context-3}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="context-3"></a> `context?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional context: string;
+```
 
 When given, restricts this rule to only match when the current
 context—the parent nodes into which the content is being
@@ -8351,25 +7851,15 @@ slash matches any sequence of ancestor nodes. To allow multiple
 different contexts, they can be separated by a pipe (`|`)
 character, as in `"blockquote/|list_item/"`.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`context`](#context)
 
-</td>
-</tr>
-<tr>
-<td>
+##### getAttrs()? {#getattrs-1}
 
-<a id="getattrs-1"></a> `getAttrs?`
-
-</td>
-<td>
-
-(`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `null` \| `false` \| [`Attrs`](#attrs-7)
-
-</td>
-<td>
+```ts
+optional getAttrs: (node: HTMLElement) => null | false | Attrs;
+```
 
 A function used to compute the attributes for the node or mark
 created by this rule. Can also be used to describe further
@@ -8377,116 +7867,124 @@ conditions the DOM element or style must match. When it returns
 `false`, the rule won't match. When it returns null or undefined,
 that is interpreted as an empty/default set of attributes.
 
-</td>
-<td>
+###### Parameters
 
-&hyphen;
-
-</td>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="getcontent"></a> `getContent?`
+`node`
 
 </td>
 <td>
 
-(`node`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `schema`: [`Schema`](#schema-3)) => [`ProseMirrorFragment`](#prosemirrorfragment)
+[`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`null` \| `false` \| [`Attrs`](#attrs-7)
+
+##### getContent()? {#getcontent}
+
+```ts
+optional getContent: (node: Node, schema: Schema) => ProseMirrorFragment;
+```
 
 Can be used to override the content of a matched node. When
 present, instead of parsing the node's child nodes, the result of
 this function is used.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`node`
+
 </td>
 <td>
 
-&hyphen;
+[`Node`](https://developer.mozilla.org/docs/Web/API/Node)
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="ignore-2"></a> `ignore?`
+`schema`
 
 </td>
 <td>
 
-`boolean`
+[`Schema`](#schema-3)
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+[`ProseMirrorFragment`](#prosemirrorfragment)
+
+##### ignore? {#ignore-2}
+
+```ts
+optional ignore: boolean;
+```
 
 When true, ignore content that matches this rule.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`ignore`](#ignore)
 
-</td>
-</tr>
-<tr>
-<td>
+##### mark? {#mark-7}
 
-<a id="mark-7"></a> `mark?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional mark: string;
+```
 
 The name of the mark type to wrap the matched content in.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`mark`](#mark-5)
 
-</td>
-</tr>
-<tr>
-<td>
+##### namespace? {#namespace}
 
-<a id="namespace"></a> `namespace?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional namespace: string;
+```
 
 The namespace to match. Nodes are only matched when the
 namespace matches or this property is null.
 
-</td>
-<td>
+##### node? {#node-4}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="node-4"></a> `node?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional node: string;
+```
 
 The name of the node type to create when this rule matches. Each
 rule should have either a `node`, `mark`, or `ignore` property
@@ -8494,25 +7992,11 @@ rule should have either a `node`, `mark`, or `ignore` property
 [mark spec](https://prosemirror.net/docs/ref/#model.MarkSpec.parseDOM), in which case the `node`
 or `mark` property will be derived from its position).
 
-</td>
-<td>
+##### preserveWhitespace? {#preservewhitespace-1}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="preservewhitespace-1"></a> `preserveWhitespace?`
-
-</td>
-<td>
-
-`boolean` \| `"full"`
-
-</td>
-<td>
+```ts
+optional preserveWhitespace: boolean | "full";
+```
 
 Controls whether whitespace should be preserved when parsing the
 content inside the matched element. `false` means whitespace may
@@ -8520,25 +8004,11 @@ be collapsed, `true` means that whitespace should be preserved
 but newlines normalized to spaces, and `"full"` means that
 newlines should also be preserved.
 
-</td>
-<td>
+##### priority? {#priority-2}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="priority-2"></a> `priority?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional priority: number;
+```
 
 Can be used to change the order in which the parse rules in a
 schema are tried. Those with higher priority come first. Rules
@@ -8546,60 +8016,30 @@ without a priority are counted as having priority 50. This
 property is only meaningful in a schema—when directly
 constructing a parser, the order of the rule array is used.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`priority`](#priority)
 
-</td>
-</tr>
-<tr>
-<td>
+##### skip? {#skip-2}
 
-<a id="skip-2"></a> `skip?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional skip: boolean;
+```
 
 When true, ignore the node that matches this rule, but do parse
 its content.
 
-</td>
-<td>
+###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`skip`](#skip)
 
-</td>
-</tr>
-<tr>
-<td>
+##### tag {#tag-1}
 
-<a id="tag-1"></a> `tag`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+tag: string;
+```
 
 A CSS selector describing the kind of DOM elements to match.
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

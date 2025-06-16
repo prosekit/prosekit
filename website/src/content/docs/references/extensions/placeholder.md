@@ -30,45 +30,25 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### placeholder {#placeholder}
 
-<a id="placeholder"></a> `placeholder`
-
-</td>
-<td>
-
- \| `string` \| (`state`: [`EditorState`](../pm/state.md#editorstate)) => `string`
-
-</td>
-<td>
+```ts
+placeholder: 
+  | string
+  | (state: EditorState) => string;
+```
 
 The placeholder to use. It can be a static string or a function that
 receives the current editor state and returns a string.
 
-</td>
-</tr>
-<tr>
-<td>
+##### strategy? {#strategy}
 
-<a id="strategy"></a> `strategy?`
-
-</td>
-<td>
-
- \| `"doc"` \| `"block"` \| (`state`: [`EditorState`](../pm/state.md#editorstate)) => `boolean`
-
-</td>
-<td>
+```ts
+optional strategy: 
+  | "doc"
+  | "block"
+  | (state: EditorState) => boolean;
+```
 
 By default, the placeholder text will be shown whenever the current text
 cursor is in an empty text node and it's not inside a code block or a
@@ -81,16 +61,11 @@ You can also pass a function that receives the current editor state and
 returns a boolean value to determine whether the placeholder should be
 shown.
 
-**Default**
+###### Default
 
 ```ts
 'block'
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

@@ -36,709 +36,576 @@ Props for the [PopoverContent](#popovercontent) component.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### altBoundary? {#altboundary}
 
-<a id="altboundary"></a> `altBoundary?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional altBoundary: boolean;
+```
 
 Whether to check the alternate elementContext’s boundary. Please see
 https://floating-ui.com/docs/detectoverflow#altboundary for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.altBoundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### autoUpdate? {#autoupdate}
 
-<a id="autoupdate"></a> `autoUpdate?`
-
-</td>
-<td>
-
- \| `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)
-
-</td>
-<td>
+```ts
+optional autoUpdate: 
+  | boolean
+  | AutoUpdateOptions;
+```
 
 Options to activate auto-update listeners
 
-**See**
+###### See
 
 https://floating-ui.com/docs/autoUpdate
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.autoUpdate
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### boundary? {#boundary}
 
-<a id="boundary"></a> `boundary?`
-
-</td>
-<td>
-
-`Boundary`
-
-</td>
-<td>
+```ts
+optional boundary: Boundary;
+```
 
 Describes the clipping element(s) or area that overflow will be checked relative to.
 Please see https://floating-ui.com/docs/detectoverflow#boundary for more information.
 
-**Default**
+###### Default
 
 ```ts
 'clippingAncestors'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.boundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### elementContext? {#elementcontext}
 
-<a id="elementcontext"></a> `elementContext?`
-
-</td>
-<td>
-
-`ElementContext`
-
-</td>
-<td>
+```ts
+optional elementContext: ElementContext;
+```
 
 The element that will be used to check for overflow. Please see
 https://floating-ui.com/docs/detectoverflow#elementcontext for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 'floating'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.elementContext
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### fitViewport? {#fitviewport}
 
-<a id="fitviewport"></a> `fitViewport?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional fitViewport: boolean;
+```
 
 Whether to constrain the floating element's width and height to not exceed
 the viewport.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.fitViewport
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### flip? {#flip}
 
-<a id="flip"></a> `flip?`
-
-</td>
-<td>
-
-`boolean` \| `Placement`[]
-
-</td>
-<td>
+```ts
+optional flip: boolean | Placement[];
+```
 
 Whether to flip the `placement` in order to keep it in view when the
 preferred placement(s) will overflow the clipping boundary. You can also
 provide an array of placements to try sequentially if the preferred
 `placement` does not fit.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.flip
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hide? {#hide}
 
-<a id="hide"></a> `hide?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional hide: boolean;
+```
 
 Whether to hide the floating element when the reference element or the
 floating element is fully clipped.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.hide
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hoist? {#hoist}
 
-<a id="hoist"></a> `hoist?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional hoist: boolean;
+```
 
 Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
 to place the floating element on top of other page content. When enabled,
 the floating element won't be clipped by an ancestor. This provides a
 similar result to React's `<Portals>` or Vue's `<Teleport>`.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.hoist
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### inline? {#inline}
 
-<a id="inline"></a> `inline?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional inline: boolean;
+```
 
 Whether to improve positioning for inline reference elements that span over
 multiple lines.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.inline
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### offset? {#offset}
 
-<a id="offset"></a> `offset?`
-
-</td>
-<td>
-
-`OffsetOptions`
-
-</td>
-<td>
+```ts
+optional offset: OffsetOptions;
+```
 
 The distance between the reference and floating element.
 
-**Default**
+###### Default
 
 ```ts
 6
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.offset
 ```
 
-</td>
+##### onEscapeKeyDown()? {#onescapekeydown}
+
+```ts
+optional onEscapeKeyDown: (event: EscapeKeyDownEvent) => void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td>
 
-<a id="onescapekeydown"></a> `onEscapeKeyDown?`
+`event`
 
 </td>
 <td>
 
-(`event`: `EscapeKeyDownEvent`) => `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-Partial.onEscapeKeyDown
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="onfocusoutside"></a> `onFocusOutside?`
-
-</td>
-<td>
-
-(`event`: `FocusOutsideEvent`) => `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-Partial.onFocusOutside
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="oninteractoutside"></a> `onInteractOutside?`
-
-</td>
-<td>
-
-(`event`: `InteractOutsideEvent`) => `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-Partial.onInteractOutside
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="onpointerdownoutside"></a> `onPointerDownOutside?`
-
-</td>
-<td>
-
-(`event`: `PointerDownOutsideEvent`) => `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-Partial.onPointerDownOutside
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="overflowpadding"></a> `overflowPadding?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-Describes the virtual padding around the boundary to check for overflow.
-Please see https://floating-ui.com/docs/detectoverflow#padding for more information.
-
-**Default**
-
-```ts
-4
-```
-
-</td>
-<td>
-
-```ts
-Partial.overflowPadding
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="overlap"></a> `overlap?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-Whether the floating element can overlap the reference element to keep it
-in view.
-
-**Default**
-
-```ts
-false
-```
-
-</td>
-<td>
-
-```ts
-Partial.overlap
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="placement"></a> `placement?`
-
-</td>
-<td>
-
-`Placement`
-
-</td>
-<td>
-
-The initial placement of the floating element
-
-**Default**
-
-```ts
-"top"
-```
-
-</td>
-<td>
-
-```ts
-Partial.placement
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="rootboundary"></a> `rootBoundary?`
-
-</td>
-<td>
-
-`RootBoundary`
-
-</td>
-<td>
-
-Describes the root boundary that the element will be checked for overflow relative to.
-Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.
-
-**Default**
-
-```ts
-'viewport'
-```
-
-</td>
-<td>
-
-```ts
-Partial.rootBoundary
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="sameheight"></a> `sameHeight?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-Whether to constrain the floating element's height so that it matches the
-reference element.
-
-**Default**
-
-```ts
-false
-```
-
-</td>
-<td>
-
-```ts
-Partial.sameHeight
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="samewidth"></a> `sameWidth?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-Whether to constrain the floating element's width so that it matches the
-reference element.
-
-**Default**
-
-```ts
-false
-```
-
-</td>
-<td>
-
-```ts
-Partial.sameWidth
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="shift"></a> `shift?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-Whether the floating element should shift to keep it in view.
-
-**Default**
-
-```ts
-true
-```
-
-</td>
-<td>
-
-```ts
-Partial.shift
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="strategy"></a> `strategy?`
-
-</td>
-<td>
-
-`"fixed"` \| `"absolute"`
-
-</td>
-<td>
-
-The strategy to use for positioning
-
-**Default**
-
-```ts
-"absolute"
-```
-
-</td>
-<td>
-
-```ts
-Partial.strategy
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="transform"></a> `transform?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-Whether to use CSS transforms to position the floating element instead of
-layout (`top` and `left` CSS properties). CSS transforms are more
-performant, but can cause conflicts with transform animations.
-
-**Default**
-
-```ts
-false
-```
-
-</td>
-<td>
-
-```ts
-Partial.transform
-```
+`EscapeKeyDownEvent`
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+Partial.onEscapeKeyDown
+```
+
+##### onFocusOutside()? {#onfocusoutside}
+
+```ts
+optional onFocusOutside: (event: FocusOutsideEvent) => void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+`FocusOutsideEvent`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+Partial.onFocusOutside
+```
+
+##### onInteractOutside()? {#oninteractoutside}
+
+```ts
+optional onInteractOutside: (event: InteractOutsideEvent) => void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+`InteractOutsideEvent`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+Partial.onInteractOutside
+```
+
+##### onPointerDownOutside()? {#onpointerdownoutside}
+
+```ts
+optional onPointerDownOutside: (event: PointerDownOutsideEvent) => void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+`PointerDownOutsideEvent`
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+Partial.onPointerDownOutside
+```
+
+##### overflowPadding? {#overflowpadding}
+
+```ts
+optional overflowPadding: number;
+```
+
+Describes the virtual padding around the boundary to check for overflow.
+Please see https://floating-ui.com/docs/detectoverflow#padding for more information.
+
+###### Default
+
+```ts
+4
+```
+
+###### Inherited from
+
+```ts
+Partial.overflowPadding
+```
+
+##### overlap? {#overlap}
+
+```ts
+optional overlap: boolean;
+```
+
+Whether the floating element can overlap the reference element to keep it
+in view.
+
+###### Default
+
+```ts
+false
+```
+
+###### Inherited from
+
+```ts
+Partial.overlap
+```
+
+##### placement? {#placement}
+
+```ts
+optional placement: Placement;
+```
+
+The initial placement of the floating element
+
+###### Default
+
+```ts
+"top"
+```
+
+###### Inherited from
+
+```ts
+Partial.placement
+```
+
+##### rootBoundary? {#rootboundary}
+
+```ts
+optional rootBoundary: RootBoundary;
+```
+
+Describes the root boundary that the element will be checked for overflow relative to.
+Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.
+
+###### Default
+
+```ts
+'viewport'
+```
+
+###### Inherited from
+
+```ts
+Partial.rootBoundary
+```
+
+##### sameHeight? {#sameheight}
+
+```ts
+optional sameHeight: boolean;
+```
+
+Whether to constrain the floating element's height so that it matches the
+reference element.
+
+###### Default
+
+```ts
+false
+```
+
+###### Inherited from
+
+```ts
+Partial.sameHeight
+```
+
+##### sameWidth? {#samewidth}
+
+```ts
+optional sameWidth: boolean;
+```
+
+Whether to constrain the floating element's width so that it matches the
+reference element.
+
+###### Default
+
+```ts
+false
+```
+
+###### Inherited from
+
+```ts
+Partial.sameWidth
+```
+
+##### shift? {#shift}
+
+```ts
+optional shift: boolean;
+```
+
+Whether the floating element should shift to keep it in view.
+
+###### Default
+
+```ts
+true
+```
+
+###### Inherited from
+
+```ts
+Partial.shift
+```
+
+##### strategy? {#strategy}
+
+```ts
+optional strategy: "fixed" | "absolute";
+```
+
+The strategy to use for positioning
+
+###### Default
+
+```ts
+"absolute"
+```
+
+###### Inherited from
+
+```ts
+Partial.strategy
+```
+
+##### transform? {#transform}
+
+```ts
+optional transform: boolean;
+```
+
+Whether to use CSS transforms to position the floating element instead of
+layout (`top` and `left` CSS properties). CSS transforms are more
+performant, but can cause conflicts with transform animations.
+
+###### Default
+
+```ts
+false
+```
+
+###### Inherited from
+
+```ts
+Partial.transform
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -764,102 +631,86 @@ Props for the [PopoverRoot](#popoverroot) component.
 
 #### Properties
 
+##### defaultOpen? {#defaultopen}
+
+```ts
+optional defaultOpen: boolean;
+```
+
+Whether the popover is open by default.
+
+###### Default
+
+```ts
+false
+```
+
+###### Inherited from
+
+```ts
+Partial.defaultOpen
+```
+
+##### onOpenChange()? {#onopenchange}
+
+```ts
+optional onOpenChange: (event: boolean) => void;
+```
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="defaultopen"></a> `defaultOpen?`
+`event`
 
 </td>
 <td>
 
 `boolean`
-
-</td>
-<td>
-
-Whether the popover is open by default.
-
-**Default**
-
-```ts
-false
-```
-
-</td>
-<td>
-
-```ts
-Partial.defaultOpen
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="onopenchange"></a> `onOpenChange?`
-
-</td>
-<td>
-
-(`event`: `boolean`) => `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-Partial.onOpenChange
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="open"></a> `open?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-Whether the popover is open.
-
-**Default**
-
-```ts
-false
-```
-
-</td>
-<td>
-
-```ts
-Partial.open
-```
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+Partial.onOpenChange
+```
+
+##### open? {#open}
+
+```ts
+optional open: boolean;
+```
+
+Whether the popover is open.
+
+###### Default
+
+```ts
+false
+```
+
+###### Inherited from
+
+```ts
+Partial.open
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

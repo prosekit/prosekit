@@ -32,85 +32,37 @@ Options for [EnterRuleHandler](#enterrulehandler).
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### from {#from}
 
-<a id="from"></a> `from`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+from: number;
+```
 
 The start position of the matched text.
 
-</td>
-</tr>
-<tr>
-<td>
+##### match {#match}
 
-<a id="match"></a> `match`
-
-</td>
-<td>
-
-`RegExpExecArray`
-
-</td>
-<td>
+```ts
+match: RegExpExecArray;
+```
 
 The matched result from the regular expression.
 
-</td>
-</tr>
-<tr>
-<td>
+##### state {#state}
 
-<a id="state"></a> `state`
-
-</td>
-<td>
-
-[`EditorState`](../pm/state.md#editorstate)
-
-</td>
-<td>
+```ts
+state: EditorState;
+```
 
 The current editor state.
 
-</td>
-</tr>
-<tr>
-<td>
+##### to {#to}
 
-<a id="to"></a> `to`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+to: number;
+```
 
 The end position of the matched text.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -132,92 +84,47 @@ Options for [defineTextBlockEnterRule](#definetextblockenterrule).
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs}
 
-<a id="attrs"></a> `attrs?`
-
-</td>
-<td>
-
- \| `null` \| [`Attrs`](../pm/model.md#attrs-7) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: 
+  | null
+  | Attrs
+  | (match: RegExpMatchArray) => null | Attrs;
+```
 
 Attributes to set on the node. If a function is provided, it will be called
 with the matched result from the regular expression.
 
-</td>
-</tr>
-<tr>
-<td>
+##### regex {#regex}
 
-<a id="regex"></a> `regex`
-
-</td>
-<td>
-
-[`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-
-</td>
-<td>
+```ts
+regex: RegExp;
+```
 
 The regular expression to match against. It should end with `$`.
 
-</td>
-</tr>
-<tr>
-<td>
+##### stop? {#stop}
 
-<a id="stop"></a> `stop?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional stop: boolean;
+```
 
 Whether to stop further handlers from being called if this rule is triggered.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type}
 
-<a id="type"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`NodeType`](../pm/model.md#nodetype)
-
-</td>
-<td>
+```ts
+type: string | NodeType;
+```
 
 The node type to replace the matched text with.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

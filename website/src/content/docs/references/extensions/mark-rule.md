@@ -32,76 +32,40 @@ The options for [defineMarkRule](#definemarkrule).
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs}
 
-<a id="attrs"></a> `attrs?`
-
-</td>
-<td>
-
- \| `null` \| [`Attrs`](../pm/model.md#attrs-7) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: 
+  | null
+  | Attrs
+  | (match: RegExpMatchArray) => null | Attrs;
+```
 
 Attributes to set on the mark. If a function is provided, it will be called
 with the matched result from the regular expression.
 
-**Default**
+###### Default
 
 ```ts
 null
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### regex {#regex}
 
-<a id="regex"></a> `regex`
-
-</td>
-<td>
-
-[`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-
-</td>
-<td>
+```ts
+regex: RegExp;
+```
 
 The regular expression to match against. It must has a `g` flag to match
 all instances of the mark.
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type}
 
-<a id="type"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`MarkType`](../pm/model.md#marktype-1)
-
-</td>
-<td>
+```ts
+type: string | MarkType;
+```
 
 The mark type to apply to the matched text.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

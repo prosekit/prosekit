@@ -58,48 +58,33 @@ Props for the [ResizableHandle](#resizablehandle) component.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### position? {#position}
 
-<a id="position"></a> `position?`
-
-</td>
-<td>
-
- \| `"left"` \| `"right"` \| `"top"` \| `"bottom"` \| `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"`
-
-</td>
-<td>
+```ts
+optional position: 
+  | "left"
+  | "right"
+  | "top"
+  | "bottom"
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right";
+```
 
 The position of the handle.
 
-**Default**
+###### Default
 
 ```ts
 "bottom-right"
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.position
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -125,55 +110,93 @@ Emits for the [ResizableRoot](#resizableroot) component.
 
 #### Properties
 
+##### resizeEnd() {#resizeend}
+
+```ts
+resizeEnd: (event: CustomEvent<{
+  height: number;
+  width: number;
+}>) => void;
+```
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="resizeend"></a> `resizeEnd`
+`event`
 
 </td>
 <td>
 
-(`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>) => `void`
-
-</td>
-<td>
-
-```ts
-CreateEmits.resizeEnd
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="resizestart"></a> `resizeStart`
-
-</td>
-<td>
-
-(`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>) => `void`
-
-</td>
-<td>
-
-```ts
-CreateEmits.resizeStart
-```
+[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+CreateEmits.resizeEnd
+```
+
+##### resizeStart() {#resizestart}
+
+```ts
+resizeStart: (event: CustomEvent<{
+  height: number;
+  width: number;
+}>) => void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+CreateEmits.resizeStart
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -199,74 +222,41 @@ Props for the [ResizableRoot](#resizableroot) component.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### aspectRatio? {#aspectratio}
 
-<a id="aspectratio"></a> `aspectRatio?`
+```ts
+optional aspectRatio: null | number;
+```
 
-</td>
-<td>
-
-`null` \| `number`
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.aspectRatio
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### height? {#height}
 
-<a id="height"></a> `height?`
+```ts
+optional height: null | number;
+```
 
-</td>
-<td>
-
-`null` \| `number`
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.height
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### width? {#width}
 
-<a id="width"></a> `width?`
+```ts
+optional width: null | number;
+```
 
-</td>
-<td>
-
-`null` \| `number`
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.width
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

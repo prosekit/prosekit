@@ -313,85 +313,37 @@ Finds an upload task by its object URL.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### event {#event}
 
-<a id="event"></a> `event`
-
-</td>
-<td>
-
-[`DragEvent`](https://developer.mozilla.org/docs/Web/API/DragEvent)
-
-</td>
-<td>
+```ts
+event: DragEvent;
+```
 
 The event that triggered the drop.
 
-</td>
-</tr>
-<tr>
-<td>
+##### file {#file}
 
-<a id="file"></a> `file`
-
-</td>
-<td>
-
-[`File`](https://developer.mozilla.org/docs/Web/API/File)
-
-</td>
-<td>
+```ts
+file: File;
+```
 
 The file that was dropped.
 
-</td>
-</tr>
-<tr>
-<td>
+##### pos {#pos}
 
-<a id="pos"></a> `pos`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+pos: number;
+```
 
 The position of the document where the file was dropped.
 
-</td>
-</tr>
-<tr>
-<td>
+##### view {#view}
 
-<a id="view"></a> `view`
-
-</td>
-<td>
-
-[`EditorView`](../pm/view.md#editorview)
-
-</td>
-<td>
+```ts
+view: EditorView;
+```
 
 The editor view.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -411,68 +363,29 @@ The editor view.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### event {#event-1}
 
-<a id="event-1"></a> `event`
-
-</td>
-<td>
-
-[`ClipboardEvent`](https://developer.mozilla.org/docs/Web/API/ClipboardEvent)
-
-</td>
-<td>
+```ts
+event: ClipboardEvent;
+```
 
 The event that triggered the paste.
 
-</td>
-</tr>
-<tr>
-<td>
+##### file {#file-1}
 
-<a id="file-1"></a> `file`
-
-</td>
-<td>
-
-[`File`](https://developer.mozilla.org/docs/Web/API/File)
-
-</td>
-<td>
+```ts
+file: File;
+```
 
 The file that was pasted.
 
-</td>
-</tr>
-<tr>
-<td>
+##### view {#view-1}
 
-<a id="view-1"></a> `view`
-
-</td>
-<td>
-
-[`EditorView`](../pm/view.md#editorview)
-
-</td>
-<td>
+```ts
+view: EditorView;
+```
 
 The editor view.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -492,51 +405,50 @@ The editor view.
 
 #### Properties
 
+##### file {#file-2}
+
+```ts
+file: File;
+```
+
+The file to be uploaded.
+
+##### onProgress() {#onprogress}
+
+```ts
+onProgress: (progress: UploadProgress) => void;
+```
+
+A callback function that should be called with the upload progress updates.
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="file-2"></a> `file`
+`progress`
 
 </td>
 <td>
 
-[`File`](https://developer.mozilla.org/docs/Web/API/File)
-
-</td>
-<td>
-
-The file to be uploaded.
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="onprogress"></a> `onProgress`
-
-</td>
-<td>
-
-(`progress`: [`UploadProgress`](#uploadprogress)) => `void`
-
-</td>
-<td>
-
-A callback function that should be called with the upload progress updates.
+[`UploadProgress`](#uploadprogress)
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`void`
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -558,40 +470,17 @@ An interface representing the upload progress.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### loaded {#loaded}
 
-<a id="loaded"></a> `loaded`
+```ts
+loaded: number;
+```
 
-</td>
-<td>
+##### total {#total}
 
-`number`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="total"></a> `total`
-
-</td>
-<td>
-
-`number`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+total: number;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

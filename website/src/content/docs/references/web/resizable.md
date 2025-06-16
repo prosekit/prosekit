@@ -174,40 +174,27 @@ ResizableRootElementBase.width
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### position {#position-1}
 
-<a id="position-1"></a> `position`
-
-</td>
-<td>
-
- \| `"left"` \| `"right"` \| `"top"` \| `"bottom"` \| `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"`
-
-</td>
-<td>
+```ts
+position: 
+  | "left"
+  | "right"
+  | "top"
+  | "bottom"
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right";
+```
 
 The position of the handle.
 
-**Default**
+###### Default
 
 ```ts
 "bottom-right"
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -227,40 +214,23 @@ The position of the handle.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### resizeEnd {#resizeend}
 
-<a id="resizeend"></a> `resizeEnd`
+```ts
+resizeEnd: CustomEvent<{
+  height: number;
+  width: number;
+}>;
+```
 
-</td>
-<td>
+##### resizeStart {#resizestart}
 
-[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="resizestart"></a> `resizeStart`
-
-</td>
-<td>
-
-[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+resizeStart: CustomEvent<{
+  height: number;
+  width: number;
+}>;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -280,52 +250,23 @@ The position of the handle.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### aspectRatio {#aspectratio-1}
 
-<a id="aspectratio-1"></a> `aspectRatio`
+```ts
+aspectRatio: null | number;
+```
 
-</td>
-<td>
+##### height {#height-1}
 
-`null` \| `number`
+```ts
+height: null | number;
+```
 
-</td>
-</tr>
-<tr>
-<td>
+##### width {#width-1}
 
-<a id="height-1"></a> `height`
-
-</td>
-<td>
-
-`null` \| `number`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="width-1"></a> `width`
-
-</td>
-<td>
-
-`null` \| `number`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+width: null | number;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

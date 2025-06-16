@@ -32,91 +32,46 @@ Options for [defineMarkInputRule](#definemarkinputrule).
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### attrs? {#attrs}
 
-<a id="attrs"></a> `attrs?`
-
-</td>
-<td>
-
- \| `null` \| [`Attrs`](../pm/model.md#attrs-7) \| (`match`: `RegExpMatchArray`) => `null` \| [`Attrs`](../pm/model.md#attrs-7)
-
-</td>
-<td>
+```ts
+optional attrs: 
+  | null
+  | Attrs
+  | (match: RegExpMatchArray) => null | Attrs;
+```
 
 Attributes to set on the mark.
 
-</td>
-</tr>
-<tr>
-<td>
+##### inCodeMark? {#incodemark}
 
-<a id="incodemark"></a> `inCodeMark?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional inCodeMark: boolean;
+```
 
 Whether this rule should fire inside marks marked as [code](https://prosemirror.net/docs/ref/#model.MarkSpec.code).
 
-**Default**
+###### Default
 
 `false`
 
-</td>
-</tr>
-<tr>
-<td>
+##### regex {#regex}
 
-<a id="regex"></a> `regex`
-
-</td>
-<td>
-
-[`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-
-</td>
-<td>
+```ts
+regex: RegExp;
+```
 
 The regular expression to match against, which should end with `$` and has
 exactly one capture group. All other matched text outside the capture group
 will be deleted.
 
-</td>
-</tr>
-<tr>
-<td>
+##### type {#type}
 
-<a id="type"></a> `type`
-
-</td>
-<td>
-
-`string` \| [`MarkType`](../pm/model.md#marktype-1)
-
-</td>
-<td>
+```ts
+type: string | MarkType;
+```
 
 The type of mark to set.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

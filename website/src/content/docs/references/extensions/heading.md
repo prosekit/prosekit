@@ -30,28 +30,11 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### level {#level}
 
-<a id="level"></a> `level`
-
-</td>
-<td>
-
-`number`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+level: number;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

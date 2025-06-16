@@ -6951,47 +6951,63 @@ Such objects conform to this interface.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### map() {#map-22}
 
-<a id="map-22"></a> `map`
-
-</td>
-<td>
-
-(`pos`: `number`, `assoc?`: `number`) => `number`
-
-</td>
-<td>
+```ts
+map: (pos: number, assoc?: number) => number;
+```
 
 Map a position through this object. When given, `assoc` (should
 be -1 or 1, defaults to 1) determines with which side the
 position is associated, which determines in which direction to
 move when a chunk of content is inserted at the mapped position.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
 </td>
 </tr>
 <tr>
 <td>
 
-<a id="mapresult-5"></a> `mapResult`
+`assoc?`
 
 </td>
 <td>
 
-(`pos`: `number`, `assoc?`: `number`) => [`MapResult`](#mapresult-2)
+`number`
 
 </td>
-<td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`number`
+
+##### mapResult() {#mapresult-5}
+
+```ts
+mapResult: (pos: number, assoc?: number) => MapResult;
+```
 
 Map a position, and return an object containing additional
 information about the mapping. The result's `deleted` field tells
@@ -7000,10 +7016,46 @@ replaced range) during the mapping. When content on only one side
 is deleted, the position itself is only considered deleted when
 `assoc` points in the direction of the deleted content.
 
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`pos`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`assoc?`
+
+</td>
+<td>
+
+`number`
+
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+[`MapResult`](#mapresult-2)
 
 <!-- DEBUG memberWithGroups 10 -->
 

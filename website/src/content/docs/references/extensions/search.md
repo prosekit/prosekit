@@ -32,145 +32,79 @@ Options for [defineSearchQuery](#definesearchquery)
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### caseSensitive? {#casesensitive}
 
-<a id="casesensitive"></a> `caseSensitive?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional caseSensitive: boolean;
+```
 
 Indicates whether the search is case-sensitive
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### literal? {#literal}
 
-<a id="literal"></a> `literal?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional literal: boolean;
+```
 
 By default, string search will replace `\n`, `\r`, and `\t` in the query
 with newline, return, and tab characters. When this is set to true, that
 behavior is disabled.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### regexp? {#regexp}
 
-<a id="regexp"></a> `regexp?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional regexp: boolean;
+```
 
 When true, the search string is interpreted as a regular expression.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### replace? {#replace}
 
-<a id="replace"></a> `replace?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+optional replace: string;
+```
 
 The replace text.
 
-</td>
-</tr>
-<tr>
-<td>
+##### search {#search}
 
-<a id="search"></a> `search`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+search: string;
+```
 
 The search string (or regular expression).
 
-</td>
-</tr>
-<tr>
-<td>
+##### wholeWord? {#wholeword}
 
-<a id="wholeword"></a> `wholeWord?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional wholeWord: boolean;
+```
 
 Enable whole-word matching.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

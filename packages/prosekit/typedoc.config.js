@@ -82,7 +82,7 @@ const typedocPluginMarkdownConfig = {
   expandParameters: true,
   parametersFormat: 'htmlTable',
   enumMembersFormat: 'htmlTable',
-  interfacePropertiesFormat: 'htmlTable',
+  // interfacePropertiesFormat: 'htmlTable',
 }
 
 /**

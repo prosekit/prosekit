@@ -639,613 +639,412 @@ TooltipTriggerElementBase.constructor
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### altBoundary {#altboundary-1}
 
-<a id="altboundary-1"></a> `altBoundary`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+altBoundary: boolean;
+```
 
 Whether to check the alternate elementContext’s boundary. Please see
 https://floating-ui.com/docs/detectoverflow#altboundary for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.altBoundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### autoUpdate {#autoupdate-1}
 
-<a id="autoupdate-1"></a> `autoUpdate`
-
-</td>
-<td>
-
- \| `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)
-
-</td>
-<td>
+```ts
+autoUpdate: 
+  | boolean
+  | AutoUpdateOptions;
+```
 
 Options to activate auto-update listeners
 
-**See**
+###### See
 
 https://floating-ui.com/docs/autoUpdate
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.autoUpdate
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### boundary {#boundary-1}
 
-<a id="boundary-1"></a> `boundary`
-
-</td>
-<td>
-
-`Boundary`
-
-</td>
-<td>
+```ts
+boundary: Boundary;
+```
 
 Describes the clipping element(s) or area that overflow will be checked relative to.
 Please see https://floating-ui.com/docs/detectoverflow#boundary for more information.
 
-**Default**
+###### Default
 
 ```ts
 'clippingAncestors'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.boundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### elementContext {#elementcontext-1}
 
-<a id="elementcontext-1"></a> `elementContext`
-
-</td>
-<td>
-
-`ElementContext`
-
-</td>
-<td>
+```ts
+elementContext: ElementContext;
+```
 
 The element that will be used to check for overflow. Please see
 https://floating-ui.com/docs/detectoverflow#elementcontext for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 'floating'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.elementContext
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### fitViewport {#fitviewport-1}
 
-<a id="fitviewport-1"></a> `fitViewport`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+fitViewport: boolean;
+```
 
 Whether to constrain the floating element's width and height to not exceed
 the viewport.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.fitViewport
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### flip {#flip-1}
 
-<a id="flip-1"></a> `flip`
-
-</td>
-<td>
-
-`boolean` \| `Placement`[]
-
-</td>
-<td>
+```ts
+flip: boolean | Placement[];
+```
 
 Whether to flip the `placement` in order to keep it in view when the
 preferred placement(s) will overflow the clipping boundary. You can also
 provide an array of placements to try sequentially if the preferred
 `placement` does not fit.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.flip
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hide {#hide-1}
 
-<a id="hide-1"></a> `hide`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+hide: boolean;
+```
 
 Whether to hide the floating element when the reference element or the
 floating element is fully clipped.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.hide
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hoist {#hoist-1}
 
-<a id="hoist-1"></a> `hoist`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+hoist: boolean;
+```
 
 Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
 to place the floating element on top of other page content. When enabled,
 the floating element won't be clipped by an ancestor. This provides a
 similar result to React's `<Portals>` or Vue's `<Teleport>`.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.hoist
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### inline {#inline-1}
 
-<a id="inline-1"></a> `inline`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+inline: boolean;
+```
 
 Whether to improve positioning for inline reference elements that span over
 multiple lines.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.inline
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### offset? {#offset-1}
 
-<a id="offset-1"></a> `offset?`
-
-</td>
-<td>
-
-`OffsetOptions`
-
-</td>
-<td>
+```ts
+optional offset: OffsetOptions;
+```
 
 The distance between the reference and floating element.
 
-**Default**
+###### Default
 
 ```ts
 6
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.offset
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### overflowPadding {#overflowpadding-1}
 
-<a id="overflowpadding-1"></a> `overflowPadding`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+overflowPadding: number;
+```
 
 Describes the virtual padding around the boundary to check for overflow.
 Please see https://floating-ui.com/docs/detectoverflow#padding for more information.
 
-**Default**
+###### Default
 
 ```ts
 4
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.overflowPadding
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### overlap {#overlap-1}
 
-<a id="overlap-1"></a> `overlap`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+overlap: boolean;
+```
 
 Whether the floating element can overlap the reference element to keep it
 in view.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.overlap
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### placement {#placement-1}
 
-<a id="placement-1"></a> `placement`
-
-</td>
-<td>
-
-`Placement`
-
-</td>
-<td>
+```ts
+placement: Placement;
+```
 
 The initial placement of the floating element
 
-**Default**
+###### Default
 
 ```ts
 "top"
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.placement
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### rootBoundary {#rootboundary-1}
 
-<a id="rootboundary-1"></a> `rootBoundary`
-
-</td>
-<td>
-
-`RootBoundary`
-
-</td>
-<td>
+```ts
+rootBoundary: RootBoundary;
+```
 
 Describes the root boundary that the element will be checked for overflow relative to.
 Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.
 
-**Default**
+###### Default
 
 ```ts
 'viewport'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.rootBoundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### sameHeight {#sameheight-1}
 
-<a id="sameheight-1"></a> `sameHeight`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+sameHeight: boolean;
+```
 
 Whether to constrain the floating element's height so that it matches the
 reference element.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.sameHeight
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### sameWidth {#samewidth-1}
 
-<a id="samewidth-1"></a> `sameWidth`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+sameWidth: boolean;
+```
 
 Whether to constrain the floating element's width so that it matches the
 reference element.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.sameWidth
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### shift {#shift-1}
 
-<a id="shift-1"></a> `shift`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+shift: boolean;
+```
 
 Whether the floating element should shift to keep it in view.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.shift
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### strategy {#strategy-1}
 
-<a id="strategy-1"></a> `strategy`
-
-</td>
-<td>
-
-`"fixed"` \| `"absolute"`
-
-</td>
-<td>
+```ts
+strategy: "fixed" | "absolute";
+```
 
 The strategy to use for positioning
 
-**Default**
+###### Default
 
 ```ts
 "absolute"
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.strategy
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### transform {#transform-1}
 
-<a id="transform-1"></a> `transform`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+transform: boolean;
+```
 
 Whether to use CSS transforms to position the floating element instead of
 layout (`top` and `left` CSS properties). CSS transforms are more
 performant, but can cause conflicts with transform animations.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.transform
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1269,42 +1068,19 @@ Props.transform
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### openChange {#openchange}
 
-<a id="openchange"></a> `openChange`
-
-</td>
-<td>
-
-[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`boolean`\>
-
-</td>
-<td>
+```ts
+openChange: CustomEvent<boolean>;
+```
 
 Fired when the open state changes.
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Events.openChange
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1328,108 +1104,65 @@ Events.openChange
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### closeDelay {#closedelay-1}
 
-<a id="closedelay-1"></a> `closeDelay`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+closeDelay: number;
+```
 
 The delay in milliseconds before the tooltip closes.
 
-**Default**
+###### Default
 
 ```ts
 300
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.closeDelay
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### open {#open-1}
 
-<a id="open-1"></a> `open`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+open: boolean;
+```
 
 Whether the popover is open.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.open
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### openDelay {#opendelay-1}
 
-<a id="opendelay-1"></a> `openDelay`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+openDelay: number;
+```
 
 The delay in milliseconds before the tooltip opens.
 
-**Default**
+###### Default
 
 ```ts
 700
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Props.openDelay
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

@@ -30,40 +30,17 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### children? {#children}
 
-<a id="children"></a> `children?`
+```ts
+optional children: ComponentChildren;
+```
 
-</td>
-<td>
+##### editor {#editor}
 
-`ComponentChildren`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="editor"></a> `editor`
-
-</td>
-<td>
-
-[`Editor`](core.md#editor)
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+editor: Editor;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -83,52 +60,22 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### editor? {#editor-1}
 
-<a id="editor-1"></a> `editor?`
-
-</td>
-<td>
-
-[`Editor`](core.md#editor)\<`any`\>
-
-</td>
-<td>
+```ts
+optional editor: Editor<any>;
+```
 
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
 
-</td>
-</tr>
-<tr>
-<td>
+##### priority? {#priority}
 
-<a id="priority"></a> `priority?`
-
-</td>
-<td>
-
-[`Priority`](core.md#priority)
-
-</td>
-<td>
+```ts
+optional priority: Priority;
+```
 
 Optional priority to add the extension with.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

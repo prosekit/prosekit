@@ -1643,611 +1643,406 @@ TableHandleRowTriggerElementBase.editor
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### altBoundary {#altboundary-3}
 
-<a id="altboundary-3"></a> `altBoundary`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+altBoundary: boolean;
+```
 
 Whether to check the alternate elementContext’s boundary. Please see
 https://floating-ui.com/docs/detectoverflow#altboundary for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.altBoundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### autoUpdate {#autoupdate-3}
 
-<a id="autoupdate-3"></a> `autoUpdate`
-
-</td>
-<td>
-
- \| `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)
-
-</td>
-<td>
+```ts
+autoUpdate: 
+  | boolean
+  | AutoUpdateOptions;
+```
 
 Options to activate auto-update listeners
 
-**See**
+###### See
 
 https://floating-ui.com/docs/autoUpdate
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.autoUpdate
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### boundary {#boundary-3}
 
-<a id="boundary-3"></a> `boundary`
-
-</td>
-<td>
-
-`Boundary`
-
-</td>
-<td>
+```ts
+boundary: Boundary;
+```
 
 Describes the clipping element(s) or area that overflow will be checked relative to.
 Please see https://floating-ui.com/docs/detectoverflow#boundary for more information.
 
-**Default**
+###### Default
 
 ```ts
 'clippingAncestors'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.boundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### elementContext {#elementcontext-3}
 
-<a id="elementcontext-3"></a> `elementContext`
-
-</td>
-<td>
-
-`ElementContext`
-
-</td>
-<td>
+```ts
+elementContext: ElementContext;
+```
 
 The element that will be used to check for overflow. Please see
 https://floating-ui.com/docs/detectoverflow#elementcontext for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 'floating'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.elementContext
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### fitViewport {#fitviewport-3}
 
-<a id="fitviewport-3"></a> `fitViewport`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+fitViewport: boolean;
+```
 
 Whether to constrain the floating element's width and height to not exceed
 the viewport.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.fitViewport
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### flip {#flip-3}
 
-<a id="flip-3"></a> `flip`
-
-</td>
-<td>
-
-`boolean` \| `Placement`[]
-
-</td>
-<td>
+```ts
+flip: boolean | Placement[];
+```
 
 Whether to flip the `placement` in order to keep it in view when the
 preferred placement(s) will overflow the clipping boundary. You can also
 provide an array of placements to try sequentially if the preferred
 `placement` does not fit.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.flip
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hide {#hide-3}
 
-<a id="hide-3"></a> `hide`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+hide: boolean;
+```
 
 Whether to hide the floating element when the reference element or the
 floating element is fully clipped.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.hide
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hoist {#hoist-3}
 
-<a id="hoist-3"></a> `hoist`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+hoist: boolean;
+```
 
 Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
 to place the floating element on top of other page content. When enabled,
 the floating element won't be clipped by an ancestor. This provides a
 similar result to React's `<Portals>` or Vue's `<Teleport>`.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.hoist
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### inline {#inline-3}
 
-<a id="inline-3"></a> `inline`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+inline: boolean;
+```
 
 Whether to improve positioning for inline reference elements that span over
 multiple lines.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.inline
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### offset? {#offset-3}
 
-<a id="offset-3"></a> `offset?`
-
-</td>
-<td>
-
-`OffsetOptions`
-
-</td>
-<td>
+```ts
+optional offset: OffsetOptions;
+```
 
 The distance between the reference and floating element.
 
-**Default**
+###### Default
 
 ```ts
 6
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.offset
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### overflowPadding {#overflowpadding-3}
 
-<a id="overflowpadding-3"></a> `overflowPadding`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+overflowPadding: number;
+```
 
 Describes the virtual padding around the boundary to check for overflow.
 Please see https://floating-ui.com/docs/detectoverflow#padding for more information.
 
-**Default**
+###### Default
 
 ```ts
 4
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.overflowPadding
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### overlap {#overlap-3}
 
-<a id="overlap-3"></a> `overlap`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+overlap: boolean;
+```
 
 Whether the floating element can overlap the reference element to keep it
 in view.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.overlap
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### placement {#placement-3}
 
-<a id="placement-3"></a> `placement`
-
-</td>
-<td>
-
-`Placement`
-
-</td>
-<td>
+```ts
+placement: Placement;
+```
 
 The placement of the popover, relative to the hovered table cell.
 
-**Default**
+###### Default
 
 ```ts
 "top"
 ```
 
-</td>
-<td>
+##### rootBoundary {#rootboundary-3}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="rootboundary-3"></a> `rootBoundary`
-
-</td>
-<td>
-
-`RootBoundary`
-
-</td>
-<td>
+```ts
+rootBoundary: RootBoundary;
+```
 
 Describes the root boundary that the element will be checked for overflow relative to.
 Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.
 
-**Default**
+###### Default
 
 ```ts
 'viewport'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.rootBoundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### sameHeight {#sameheight-3}
 
-<a id="sameheight-3"></a> `sameHeight`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+sameHeight: boolean;
+```
 
 Whether to constrain the floating element's height so that it matches the
 reference element.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.sameHeight
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### sameWidth {#samewidth-3}
 
-<a id="samewidth-3"></a> `sameWidth`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+sameWidth: boolean;
+```
 
 Whether to constrain the floating element's width so that it matches the
 reference element.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.sameWidth
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### shift {#shift-3}
 
-<a id="shift-3"></a> `shift`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+shift: boolean;
+```
 
 Whether the floating element should shift to keep it in view.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.shift
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### strategy {#strategy-3}
 
-<a id="strategy-3"></a> `strategy`
-
-</td>
-<td>
-
-`"fixed"` \| `"absolute"`
-
-</td>
-<td>
+```ts
+strategy: "fixed" | "absolute";
+```
 
 The strategy to use for positioning
 
-**Default**
+###### Default
 
 ```ts
 "absolute"
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.strategy
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### transform {#transform-3}
 
-<a id="transform-3"></a> `transform`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+transform: boolean;
+```
 
 Whether to use CSS transforms to position the floating element instead of
 layout (`top` and `left` CSS properties). CSS transforms are more
 performant, but can cause conflicts with transform animations.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.transform
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2267,28 +2062,11 @@ Omit.transform
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### editor {#editor-3}
 
-<a id="editor-3"></a> `editor`
-
-</td>
-<td>
-
-`null` \| [`Editor`](../core.md#editor)\<`TableCommandsExtension`\>
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+editor: null | Editor<TableCommandsExtension>;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2312,82 +2090,45 @@ Omit.transform
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### escapeKeyDown {#escapekeydown}
 
-<a id="escapekeydown"></a> `escapeKeyDown`
-
-</td>
-<td>
-
-`EscapeKeyDownEvent`
-
-</td>
-<td>
+```ts
+escapeKeyDown: EscapeKeyDownEvent;
+```
 
 Fired when the escape key is pressed.
 
 By default, the popover will be closed. It can be prevented by calling
 `preventDefault()`.
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 MenuContentEvents.escapeKeyDown
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### focusOutside {#focusoutside}
 
-<a id="focusoutside"></a> `focusOutside`
-
-</td>
-<td>
-
-`FocusOutsideEvent`
-
-</td>
-<td>
+```ts
+focusOutside: FocusOutsideEvent;
+```
 
 Fired when the focus is moved outside the element.
 
 By default, the popover will be closed. It can be prevented by calling
 `preventDefault()`.
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 MenuContentEvents.focusOutside
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### interactOutside {#interactoutside}
 
-<a id="interactoutside"></a> `interactOutside`
-
-</td>
-<td>
-
-`InteractOutsideEvent`
-
-</td>
-<td>
+```ts
+interactOutside: InteractOutsideEvent;
+```
 
 Fired when an interaction (pointer or focus) happens outside the
 component.
@@ -2395,44 +2136,28 @@ component.
 By default, the popover will be closed. It can be prevented by calling
 `preventDefault()`.
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 MenuContentEvents.interactOutside
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### pointerDownOutside {#pointerdownoutside}
 
-<a id="pointerdownoutside"></a> `pointerDownOutside`
-
-</td>
-<td>
-
-`PointerDownOutsideEvent`
-
-</td>
-<td>
+```ts
+pointerDownOutside: PointerDownOutsideEvent;
+```
 
 Fired when the pointer is pressed down outside the element.
 
 By default, the popover will be closed. It can be prevented by calling
 `preventDefault()`.
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 MenuContentEvents.pointerDownOutside
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2456,652 +2181,419 @@ MenuContentEvents.pointerDownOutside
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### altBoundary {#altboundary-4}
 
-<a id="altboundary-4"></a> `altBoundary`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+altBoundary: boolean;
+```
 
 Whether to check the alternate elementContext’s boundary. Please see
 https://floating-ui.com/docs/detectoverflow#altboundary for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.altBoundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### autoUpdate {#autoupdate-4}
 
-<a id="autoupdate-4"></a> `autoUpdate`
-
-</td>
-<td>
-
- \| `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)
-
-</td>
-<td>
+```ts
+autoUpdate: 
+  | boolean
+  | AutoUpdateOptions;
+```
 
 Options to activate auto-update listeners
 
-**See**
+###### See
 
 https://floating-ui.com/docs/autoUpdate
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.autoUpdate
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### boundary {#boundary-4}
 
-<a id="boundary-4"></a> `boundary`
-
-</td>
-<td>
-
-`Boundary`
-
-</td>
-<td>
+```ts
+boundary: Boundary;
+```
 
 Describes the clipping element(s) or area that overflow will be checked relative to.
 Please see https://floating-ui.com/docs/detectoverflow#boundary for more information.
 
-**Default**
+###### Default
 
 ```ts
 'clippingAncestors'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.boundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### editor {#editor-4}
 
-<a id="editor-4"></a> `editor`
+```ts
+editor: null | Editor<any>;
+```
 
-</td>
-<td>
+##### elementContext {#elementcontext-4}
 
-`null` \| [`Editor`](../core.md#editor)\<`any`\>
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="elementcontext-4"></a> `elementContext`
-
-</td>
-<td>
-
-`ElementContext`
-
-</td>
-<td>
+```ts
+elementContext: ElementContext;
+```
 
 The element that will be used to check for overflow. Please see
 https://floating-ui.com/docs/detectoverflow#elementcontext for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 'floating'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.elementContext
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### eventTarget? {#eventtarget-1}
 
-<a id="eventtarget-1"></a> `eventTarget?`
-
-</td>
-<td>
-
- \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement) \| `TypedEventTarget`\<`"keydown"`\>
-
-</td>
-<td>
+```ts
+optional eventTarget: 
+  | HTMLElement
+| TypedEventTarget<"keydown">;
+```
 
 By default, the menu element will listen for keydown events. You can pass a
 different element to listen for keydown events.
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.eventTarget
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### fitViewport {#fitviewport-4}
 
-<a id="fitviewport-4"></a> `fitViewport`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+fitViewport: boolean;
+```
 
 Whether to constrain the floating element's width and height to not exceed
 the viewport.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.fitViewport
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### flip {#flip-4}
 
-<a id="flip-4"></a> `flip`
-
-</td>
-<td>
-
-`boolean` \| `Placement`[]
-
-</td>
-<td>
+```ts
+flip: boolean | Placement[];
+```
 
 Whether to flip the `placement` in order to keep it in view when the
 preferred placement(s) will overflow the clipping boundary. You can also
 provide an array of placements to try sequentially if the preferred
 `placement` does not fit.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.flip
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hide {#hide-4}
 
-<a id="hide-4"></a> `hide`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+hide: boolean;
+```
 
 Whether to hide the floating element when the reference element or the
 floating element is fully clipped.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.hide
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hoist {#hoist-4}
 
-<a id="hoist-4"></a> `hoist`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+hoist: boolean;
+```
 
 Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
 to place the floating element on top of other page content. When enabled,
 the floating element won't be clipped by an ancestor. This provides a
 similar result to React's `<Portals>` or Vue's `<Teleport>`.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.hoist
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### inline {#inline-4}
 
-<a id="inline-4"></a> `inline`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+inline: boolean;
+```
 
 Whether to improve positioning for inline reference elements that span over
 multiple lines.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.inline
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### offset {#offset-4}
 
-<a id="offset-4"></a> `offset`
+```ts
+offset: undefined | OffsetOptions;
+```
 
-</td>
-<td>
-
-`undefined` \| `OffsetOptions`
-
-</td>
-<td>
-
-**Default**
+###### Default
 
 ```ts
 {mainAxis: -4, crossAxis: 4}
 ```
 
-</td>
-<td>
+##### overflowPadding {#overflowpadding-4}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="overflowpadding-4"></a> `overflowPadding`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+overflowPadding: number;
+```
 
 Describes the virtual padding around the boundary to check for overflow.
 Please see https://floating-ui.com/docs/detectoverflow#padding for more information.
 
-**Default**
+###### Default
 
 ```ts
 4
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.overflowPadding
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### overlap {#overlap-4}
 
-<a id="overlap-4"></a> `overlap`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+overlap: boolean;
+```
 
 Whether the floating element can overlap the reference element to keep it
 in view.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.overlap
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### placement {#placement-4}
 
-<a id="placement-4"></a> `placement`
+```ts
+placement: Placement;
+```
 
-</td>
-<td>
-
-`Placement`
-
-</td>
-<td>
-
-**Default**
+###### Default
 
 ```ts
 'bottom-start'
 ```
 
-</td>
-<td>
+##### rootBoundary {#rootboundary-4}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="rootboundary-4"></a> `rootBoundary`
-
-</td>
-<td>
-
-`RootBoundary`
-
-</td>
-<td>
+```ts
+rootBoundary: RootBoundary;
+```
 
 Describes the root boundary that the element will be checked for overflow relative to.
 Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.
 
-**Default**
+###### Default
 
 ```ts
 'viewport'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.rootBoundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### sameHeight {#sameheight-4}
 
-<a id="sameheight-4"></a> `sameHeight`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+sameHeight: boolean;
+```
 
 Whether to constrain the floating element's height so that it matches the
 reference element.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.sameHeight
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### sameWidth {#samewidth-4}
 
-<a id="samewidth-4"></a> `sameWidth`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+sameWidth: boolean;
+```
 
 Whether to constrain the floating element's width so that it matches the
 reference element.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.sameWidth
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### shift {#shift-4}
 
-<a id="shift-4"></a> `shift`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+shift: boolean;
+```
 
 Whether the floating element should shift to keep it in view.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.shift
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### strategy {#strategy-4}
 
-<a id="strategy-4"></a> `strategy`
-
-</td>
-<td>
-
-`"fixed"` \| `"absolute"`
-
-</td>
-<td>
+```ts
+strategy: "fixed" | "absolute";
+```
 
 The strategy to use for positioning
 
-**Default**
+###### Default
 
 ```ts
 "absolute"
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.strategy
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### transform {#transform-4}
 
-<a id="transform-4"></a> `transform`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+transform: boolean;
+```
 
 Whether to use CSS transforms to position the floating element instead of
 layout (`top` and `left` CSS properties). CSS transforms are more
 performant, but can cause conflicts with transform animations.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.transform
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3125,42 +2617,19 @@ Omit.transform
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### select {#select}
 
-<a id="select"></a> `select`
-
-</td>
-<td>
-
-[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`void`\>
-
-</td>
-<td>
+```ts
+select: CustomEvent<void>;
+```
 
 Fired when the item is selected.
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 MenuItemEvents.select
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3184,109 +2653,66 @@ MenuItemEvents.select
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### filter {#filter-1}
 
-<a id="filter-1"></a> `filter`
-
-</td>
-<td>
-
-`ItemFilter`
-
-</td>
-<td>
+```ts
+filter: ItemFilter;
+```
 
 The filter function to determine if an item should be shown in the listbox.
 
-**Default**
+###### Default
 
 ```ts
 defaultItemFilter
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 MenuItemProps.filter
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### query {#query-1}
 
-<a id="query-1"></a> `query`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+query: string;
+```
 
 The query string to filter the listbox items.
 
-**Default**
+###### Default
 
 ```ts
 ""
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 MenuItemProps.query
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### value {#value-1}
 
-<a id="value-1"></a> `value`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+value: string;
+```
 
 The value of the item. Every item must have a unique value in the parent
 list. By default, a random value is generated.
 
-**Default**
+###### Default
 
 ```ts
 ""
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 MenuItemProps.value
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3326,611 +2752,406 @@ MenuItemProps.value
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### altBoundary {#altboundary-5}
 
-<a id="altboundary-5"></a> `altBoundary`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+altBoundary: boolean;
+```
 
 Whether to check the alternate elementContext’s boundary. Please see
 https://floating-ui.com/docs/detectoverflow#altboundary for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.altBoundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### autoUpdate {#autoupdate-5}
 
-<a id="autoupdate-5"></a> `autoUpdate`
-
-</td>
-<td>
-
- \| `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)
-
-</td>
-<td>
+```ts
+autoUpdate: 
+  | boolean
+  | AutoUpdateOptions;
+```
 
 Options to activate auto-update listeners
 
-**See**
+###### See
 
 https://floating-ui.com/docs/autoUpdate
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.autoUpdate
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### boundary {#boundary-5}
 
-<a id="boundary-5"></a> `boundary`
-
-</td>
-<td>
-
-`Boundary`
-
-</td>
-<td>
+```ts
+boundary: Boundary;
+```
 
 Describes the clipping element(s) or area that overflow will be checked relative to.
 Please see https://floating-ui.com/docs/detectoverflow#boundary for more information.
 
-**Default**
+###### Default
 
 ```ts
 'clippingAncestors'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.boundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### elementContext {#elementcontext-5}
 
-<a id="elementcontext-5"></a> `elementContext`
-
-</td>
-<td>
-
-`ElementContext`
-
-</td>
-<td>
+```ts
+elementContext: ElementContext;
+```
 
 The element that will be used to check for overflow. Please see
 https://floating-ui.com/docs/detectoverflow#elementcontext for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 'floating'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.elementContext
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### fitViewport {#fitviewport-5}
 
-<a id="fitviewport-5"></a> `fitViewport`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+fitViewport: boolean;
+```
 
 Whether to constrain the floating element's width and height to not exceed
 the viewport.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.fitViewport
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### flip {#flip-5}
 
-<a id="flip-5"></a> `flip`
-
-</td>
-<td>
-
-`boolean` \| `Placement`[]
-
-</td>
-<td>
+```ts
+flip: boolean | Placement[];
+```
 
 Whether to flip the `placement` in order to keep it in view when the
 preferred placement(s) will overflow the clipping boundary. You can also
 provide an array of placements to try sequentially if the preferred
 `placement` does not fit.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.flip
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hide {#hide-5}
 
-<a id="hide-5"></a> `hide`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+hide: boolean;
+```
 
 Whether to hide the floating element when the reference element or the
 floating element is fully clipped.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.hide
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hoist {#hoist-5}
 
-<a id="hoist-5"></a> `hoist`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+hoist: boolean;
+```
 
 Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
 to place the floating element on top of other page content. When enabled,
 the floating element won't be clipped by an ancestor. This provides a
 similar result to React's `<Portals>` or Vue's `<Teleport>`.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.hoist
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### inline {#inline-5}
 
-<a id="inline-5"></a> `inline`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+inline: boolean;
+```
 
 Whether to improve positioning for inline reference elements that span over
 multiple lines.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.inline
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### offset? {#offset-5}
 
-<a id="offset-5"></a> `offset?`
-
-</td>
-<td>
-
-`OffsetOptions`
-
-</td>
-<td>
+```ts
+optional offset: OffsetOptions;
+```
 
 The distance between the reference and floating element.
 
-**Default**
+###### Default
 
 ```ts
 6
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.offset
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### overflowPadding {#overflowpadding-5}
 
-<a id="overflowpadding-5"></a> `overflowPadding`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+overflowPadding: number;
+```
 
 Describes the virtual padding around the boundary to check for overflow.
 Please see https://floating-ui.com/docs/detectoverflow#padding for more information.
 
-**Default**
+###### Default
 
 ```ts
 4
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.overflowPadding
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### overlap {#overlap-5}
 
-<a id="overlap-5"></a> `overlap`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+overlap: boolean;
+```
 
 Whether the floating element can overlap the reference element to keep it
 in view.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.overlap
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### placement {#placement-5}
 
-<a id="placement-5"></a> `placement`
-
-</td>
-<td>
-
-`Placement`
-
-</td>
-<td>
+```ts
+placement: Placement;
+```
 
 The placement of the popover, relative to the hovered table cell.
 
-**Default**
+###### Default
 
 ```ts
 "left"
 ```
 
-</td>
-<td>
+##### rootBoundary {#rootboundary-5}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="rootboundary-5"></a> `rootBoundary`
-
-</td>
-<td>
-
-`RootBoundary`
-
-</td>
-<td>
+```ts
+rootBoundary: RootBoundary;
+```
 
 Describes the root boundary that the element will be checked for overflow relative to.
 Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.
 
-**Default**
+###### Default
 
 ```ts
 'viewport'
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.rootBoundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### sameHeight {#sameheight-5}
 
-<a id="sameheight-5"></a> `sameHeight`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+sameHeight: boolean;
+```
 
 Whether to constrain the floating element's height so that it matches the
 reference element.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.sameHeight
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### sameWidth {#samewidth-5}
 
-<a id="samewidth-5"></a> `sameWidth`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+sameWidth: boolean;
+```
 
 Whether to constrain the floating element's width so that it matches the
 reference element.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.sameWidth
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### shift {#shift-5}
 
-<a id="shift-5"></a> `shift`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+shift: boolean;
+```
 
 Whether the floating element should shift to keep it in view.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.shift
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### strategy {#strategy-5}
 
-<a id="strategy-5"></a> `strategy`
-
-</td>
-<td>
-
-`"fixed"` \| `"absolute"`
-
-</td>
-<td>
+```ts
+strategy: "fixed" | "absolute";
+```
 
 The strategy to use for positioning
 
-**Default**
+###### Default
 
 ```ts
 "absolute"
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.strategy
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### transform {#transform-5}
 
-<a id="transform-5"></a> `transform`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+transform: boolean;
+```
 
 Whether to use CSS transforms to position the floating element instead of
 layout (`top` and `left` CSS properties). CSS transforms are more
 performant, but can cause conflicts with transform animations.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Omit.transform
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3950,28 +3171,11 @@ Omit.transform
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### select {#select-1}
 
-<a id="select-1"></a> `select`
-
-</td>
-<td>
-
-[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`void`\>
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+select: CustomEvent<void>;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3991,28 +3195,11 @@ Omit.transform
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### editor {#editor-5}
 
-<a id="editor-5"></a> `editor`
-
-</td>
-<td>
-
-`null` \| [`Editor`](../core.md#editor)\<`TableCommandsExtension`\>
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+editor: null | Editor<TableCommandsExtension>;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

@@ -650,42 +650,19 @@ AutocompletePopoverElementBase.transform
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### select {#select}
 
-<a id="select"></a> `select`
-
-</td>
-<td>
-
-[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`void`\>
-
-</td>
-<td>
+```ts
+select: CustomEvent<void>;
+```
 
 Fired when the item is selected.
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 ListboxItemEvents.select
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -705,42 +682,21 @@ ListboxItemEvents.select
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### value {#value-1}
 
-<a id="value-1"></a> `value`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
+```ts
+value: string;
+```
 
 The value of the item, which will be matched against the query.
 
 If not provided, the value is the item's text content.
 
-**Default**
+###### Default
 
 ```ts
 ""
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -764,36 +720,17 @@ If not provided, the value is the item's text content.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### valueChange {#valuechange}
 
-<a id="valuechange"></a> `valueChange`
+```ts
+valueChange: CustomEvent<string>;
+```
 
-</td>
-<td>
-
-[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`string`\>
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 ListboxEvents.valueChange
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -817,28 +754,11 @@ ListboxEvents.valueChange
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### filter {#filter-1}
 
-<a id="filter-1"></a> `filter`
-
-</td>
-<td>
-
-`null` \| `ItemFilter`
-
-</td>
-<td>
+```ts
+filter: null | ItemFilter;
+```
 
 The filter function to determine if an item should be shown in the listbox.
 By default, a simple case-insensitive substring match is used. You can
@@ -846,23 +766,17 @@ provide a custom filter function to match against a more complex pattern.
 You can also pass `null` to disable filtering and allow all items to be
 shown.
 
-**Default**
+###### Default
 
 ```ts
 defaultItemFilter
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Pick.filter
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -886,51 +800,21 @@ Pick.filter
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### openChange {#openchange}
 
-<a id="openchange"></a> `openChange`
-
-</td>
-<td>
-
-[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`boolean`\>
-
-</td>
-<td>
+```ts
+openChange: CustomEvent<boolean>;
+```
 
 Fired when the open state changes.
 
-</td>
-</tr>
-<tr>
-<td>
+##### queryChange {#querychange}
 
-<a id="querychange"></a> `queryChange`
-
-</td>
-<td>
-
-[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<`string`\>
-
-</td>
-<td>
+```ts
+queryChange: CustomEvent<string>;
+```
 
 Fired when the query changes.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -954,725 +838,411 @@ Fired when the query changes.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Overrides</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### altBoundary {#altboundary-1}
 
-<a id="altboundary-1"></a> `altBoundary`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+altBoundary: boolean;
+```
 
 Whether to check the alternate elementContext’s boundary. Please see
 https://floating-ui.com/docs/detectoverflow#altboundary for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.altBoundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### autoUpdate {#autoupdate-1}
 
-<a id="autoupdate-1"></a> `autoUpdate`
-
-</td>
-<td>
-
- \| `boolean` \| [`AutoUpdateOptions`](https://floating-ui.com/docs/autoUpdate#options)
-
-</td>
-<td>
+```ts
+autoUpdate: 
+  | boolean
+  | AutoUpdateOptions;
+```
 
 Options to activate auto-update listeners
 
-**See**
+###### See
 
 https://floating-ui.com/docs/autoUpdate
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.autoUpdate
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### boundary {#boundary-1}
 
-<a id="boundary-1"></a> `boundary`
+```ts
+boundary: Boundary;
+```
 
-</td>
-<td>
-
-`Boundary`
-
-</td>
-<td>
-
-**Default**
+###### Default
 
 ```ts
 "The body element"
 ```
 
-</td>
-<td>
+###### Overrides
 
 ```ts
 OverlayPositionerProps.boundary
 ```
 
-</td>
-<td>
+##### elementContext {#elementcontext-1}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="elementcontext-1"></a> `elementContext`
-
-</td>
-<td>
-
-`ElementContext`
-
-</td>
-<td>
+```ts
+elementContext: ElementContext;
+```
 
 The element that will be used to check for overflow. Please see
 https://floating-ui.com/docs/detectoverflow#elementcontext for more
 information.
 
-**Default**
+###### Default
 
 ```ts
 'floating'
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.elementContext
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### fitViewport {#fitviewport-1}
 
-<a id="fitviewport-1"></a> `fitViewport`
+```ts
+fitViewport: boolean;
+```
 
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Overrides
 
 ```ts
 OverlayPositionerProps.fitViewport
 ```
 
-</td>
-<td>
+##### flip {#flip-1}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="flip-1"></a> `flip`
-
-</td>
-<td>
-
-`boolean` \| `Placement`[]
-
-</td>
-<td>
+```ts
+flip: boolean | Placement[];
+```
 
 Whether to flip the `placement` in order to keep it in view when the
 preferred placement(s) will overflow the clipping boundary. You can also
 provide an array of placements to try sequentially if the preferred
 `placement` does not fit.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.flip
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hide {#hide-1}
 
-<a id="hide-1"></a> `hide`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+hide: boolean;
+```
 
 Whether to hide the floating element when the reference element or the
 floating element is fully clipped.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.hide
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### hoist {#hoist-1}
 
-<a id="hoist-1"></a> `hoist`
+```ts
+hoist: boolean;
+```
 
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Overrides
 
 ```ts
 OverlayPositionerProps.hoist
 ```
 
-</td>
-<td>
+##### inline {#inline-1}
 
-&hyphen;
+```ts
+inline: boolean;
+```
 
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="inline-1"></a> `inline`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
+###### Overrides
 
 ```ts
 OverlayPositionerProps.inline
 ```
 
-</td>
-<td>
+##### offset {#offset-1}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="offset-1"></a> `offset`
-
-</td>
-<td>
-
-`undefined` \| `OffsetOptions`
-
-</td>
-<td>
+```ts
+offset: undefined | OffsetOptions;
+```
 
 The distance between the popover and the hovered block.
 
-**Default**
+###### Default
 
 ```ts
 4
 ```
 
-</td>
-<td>
+###### Overrides
 
 ```ts
 OverlayPositionerProps.offset
 ```
 
-</td>
-<td>
+##### overflowPadding {#overflowpadding-1}
 
-&hyphen;
+```ts
+overflowPadding: number;
+```
 
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="overflowpadding-1"></a> `overflowPadding`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-**Default**
+###### Default
 
 ```ts
 8
 ```
 
-</td>
-<td>
+###### Overrides
 
 ```ts
 OverlayPositionerProps.overflowPadding
 ```
 
-</td>
-<td>
+##### overlap {#overlap-1}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="overlap-1"></a> `overlap`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+overlap: boolean;
+```
 
 Whether the floating element can overlap the reference element to keep it
 in view.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.overlap
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### placement {#placement-1}
 
-<a id="placement-1"></a> `placement`
-
-</td>
-<td>
-
-`Placement`
-
-</td>
-<td>
+```ts
+placement: Placement;
+```
 
 The placement of the popover, relative to the text cursor.
 
-**Default**
+###### Default
 
 ```ts
 "bottom-start"
 ```
 
-</td>
-<td>
+###### Overrides
 
 ```ts
 OverlayPositionerProps.placement
 ```
 
-</td>
-<td>
+##### regex {#regex-1}
 
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="regex-1"></a> `regex`
-
-</td>
-<td>
-
- \| `null` \| [`RegExp`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-
-</td>
-<td>
+```ts
+regex: 
+  | null
+  | RegExp;
+```
 
 The regular expression to match the query text to autocomplete.
 
-**Default**
+###### Default
 
 ```ts
 null
 ```
 
-</td>
-<td>
+##### rootBoundary {#rootboundary-1}
 
-&hyphen;
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="rootboundary-1"></a> `rootBoundary`
-
-</td>
-<td>
-
-`RootBoundary`
-
-</td>
-<td>
+```ts
+rootBoundary: RootBoundary;
+```
 
 Describes the root boundary that the element will be checked for overflow relative to.
 Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more information.
 
-**Default**
+###### Default
 
 ```ts
 'viewport'
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.rootBoundary
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### sameHeight {#sameheight-1}
 
-<a id="sameheight-1"></a> `sameHeight`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+sameHeight: boolean;
+```
 
 Whether to constrain the floating element's height so that it matches the
 reference element.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.sameHeight
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### sameWidth {#samewidth-1}
 
-<a id="samewidth-1"></a> `sameWidth`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+sameWidth: boolean;
+```
 
 Whether to constrain the floating element's width so that it matches the
 reference element.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.sameWidth
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### shift {#shift-1}
 
-<a id="shift-1"></a> `shift`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+shift: boolean;
+```
 
 Whether the floating element should shift to keep it in view.
 
-**Default**
+###### Default
 
 ```ts
 true
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.shift
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### strategy {#strategy-1}
 
-<a id="strategy-1"></a> `strategy`
-
-</td>
-<td>
-
-`"fixed"` \| `"absolute"`
-
-</td>
-<td>
+```ts
+strategy: "fixed" | "absolute";
+```
 
 The strategy to use for positioning
 
-**Default**
+###### Default
 
 ```ts
 "absolute"
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.strategy
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### transform {#transform-1}
 
-<a id="transform-1"></a> `transform`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+transform: boolean;
+```
 
 Whether to use CSS transforms to position the floating element instead of
 layout (`top` and `left` CSS properties). CSS transforms are more
 performant, but can cause conflicts with transform animations.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 OverlayPositionerProps.transform
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

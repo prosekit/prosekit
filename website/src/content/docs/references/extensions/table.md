@@ -30,74 +30,35 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### col {#col}
 
-<a id="col"></a> `col`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+col: number;
+```
 
 The number of columns in the table.
 
-</td>
-</tr>
-<tr>
-<td>
+##### header? {#header}
 
-<a id="header"></a> `header?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
+```ts
+optional header: boolean;
+```
 
 Whether the table has a header row.
 
-**Default**
+###### Default
 
 ```ts
 false
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### row {#row}
 
-<a id="row"></a> `row`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+row: number;
+```
 
 The number of rows in the table.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -117,35 +78,14 @@ The number of rows in the table.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### pos? {#pos}
 
-<a id="pos"></a> `pos?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional pos: number;
+```
 
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -165,53 +105,23 @@ anchor will be used.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### anchor? {#anchor}
 
-<a id="anchor"></a> `anchor?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional anchor: number;
+```
 
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
 
-</td>
-</tr>
-<tr>
-<td>
+##### head? {#head}
 
-<a id="head"></a> `head?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional head: number;
+```
 
 A hit position of the table cell to select to. By default, the selection
 head will be used.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -231,35 +141,14 @@ head will be used.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### pos? {#pos-1}
 
-<a id="pos-1"></a> `pos?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional pos: number;
+```
 
 A hit position of the table to select from. By default, the selection
 anchor will be used.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -279,53 +168,23 @@ anchor will be used.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### anchor? {#anchor-1}
 
-<a id="anchor-1"></a> `anchor?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional anchor: number;
+```
 
 A hit position of the table cell to select from. By default, the selection
 anchor will be used.
 
-</td>
-</tr>
-<tr>
-<td>
+##### head? {#head-1}
 
-<a id="head-1"></a> `head?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
+```ts
+optional head: number;
+```
 
 A hit position of the table cell to select to. By default, the selection
 head will be used.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 

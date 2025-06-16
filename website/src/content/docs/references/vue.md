@@ -30,28 +30,11 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### editor {#editor}
 
-<a id="editor"></a> `editor`
-
-</td>
-<td>
-
-[`Editor`](core.md#editor)
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+editor: Editor;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -71,52 +54,22 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### editor? {#editor-1}
 
-<a id="editor-1"></a> `editor?`
-
-</td>
-<td>
-
-`MaybeRefOrGetter`\<[`Editor`](core.md#editor)\<`any`\>\>
-
-</td>
-<td>
+```ts
+optional editor: MaybeRefOrGetter<Editor<any>>;
+```
 
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
 
-</td>
-</tr>
-<tr>
-<td>
+##### priority? {#priority}
 
-<a id="priority"></a> `priority?`
-
-</td>
-<td>
-
-[`Priority`](core.md#priority)
-
-</td>
-<td>
+```ts
+optional priority: Priority;
+```
 
 Optional priority to add the extension with.
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -142,160 +95,106 @@ Options for [defineVueMarkView](#definevuemarkview).
 
 #### Properties
 
+##### as? {#as}
+
+```ts
+optional as: MarkViewDOMSpec;
+```
+
+###### Inherited from
+
+```ts
+CoreMarkViewUserOptions.as
+```
+
+##### component {#component}
+
+```ts
+component: VueMarkViewComponent;
+```
+
+###### Inherited from
+
+```ts
+CoreMarkViewUserOptions.component
+```
+
+##### contentAs? {#contentas}
+
+```ts
+optional contentAs: MarkViewDOMSpec;
+```
+
+###### Inherited from
+
+```ts
+CoreMarkViewUserOptions.contentAs
+```
+
+##### destroy()? {#destroy}
+
+```ts
+optional destroy: () => void;
+```
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+CoreMarkViewUserOptions.destroy
+```
+
+##### ignoreMutation()? {#ignoremutation}
+
+```ts
+optional ignoreMutation: (mutation: ViewMutationRecord) => boolean | void;
+```
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="as"></a> `as?`
+`mutation`
 
 </td>
 <td>
 
-`MarkViewDOMSpec`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreMarkViewUserOptions.as
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="component"></a> `component`
-
-</td>
-<td>
-
-[`VueMarkViewComponent`](#vuemarkviewcomponent)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreMarkViewUserOptions.component
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="contentas"></a> `contentAs?`
-
-</td>
-<td>
-
-`MarkViewDOMSpec`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreMarkViewUserOptions.contentAs
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="destroy"></a> `destroy?`
-
-</td>
-<td>
-
-() => `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreMarkViewUserOptions.destroy
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="ignoremutation"></a> `ignoreMutation?`
-
-</td>
-<td>
-
-(`mutation`: [`ViewMutationRecord`](pm/view.md#viewmutationrecord)) => `boolean` \| `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreMarkViewUserOptions.ignoreMutation
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="name"></a> `name`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-The name of the mark type.
-
-</td>
-<td>
-
-&hyphen;
+[`ViewMutationRecord`](pm/view.md#viewmutationrecord)
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
+
+```ts
+CoreMarkViewUserOptions.ignoreMutation
+```
+
+##### name {#name}
+
+```ts
+name: string;
+```
+
+The name of the mark type.
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -319,74 +218,41 @@ The name of the mark type.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### contentRef {#contentref}
 
-<a id="contentref"></a> `contentRef`
+```ts
+contentRef: VNodeRef;
+```
 
-</td>
-<td>
-
-`VNodeRef`
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 MarkViewContext.contentRef
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### mark {#mark}
 
-<a id="mark"></a> `mark`
+```ts
+mark: ShallowRef<Mark>;
+```
 
-</td>
-<td>
-
-`ShallowRef`\<[`Mark`](pm/model.md#mark)\>
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 MarkViewContext.mark
 ```
 
-</td>
-</tr>
-<tr>
-<td>
+##### view {#view}
 
-<a id="view"></a> `view`
+```ts
+view: EditorView;
+```
 
-</td>
-<td>
-
-[`EditorView`](pm/view.md#editorview)
-
-</td>
-<td>
+###### Inherited from
 
 ```ts
 MarkViewContext.view
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -412,304 +278,327 @@ Options for [defineVueNodeView](#definevuenodeview).
 
 #### Properties
 
+##### as? {#as-1}
+
+```ts
+optional as: NodeViewDOMSpec;
+```
+
+###### Inherited from
+
+```ts
+CoreNodeViewUserOptions.as
+```
+
+##### component {#component-1}
+
+```ts
+component: VueNodeViewComponent;
+```
+
+###### Inherited from
+
+```ts
+CoreNodeViewUserOptions.component
+```
+
+##### contentAs? {#contentas-1}
+
+```ts
+optional contentAs: NodeViewDOMSpec;
+```
+
+###### Inherited from
+
+```ts
+CoreNodeViewUserOptions.contentAs
+```
+
+##### deselectNode()? {#deselectnode}
+
+```ts
+optional deselectNode: () => void;
+```
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+CoreNodeViewUserOptions.deselectNode
+```
+
+##### destroy()? {#destroy-1}
+
+```ts
+optional destroy: () => void;
+```
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+CoreNodeViewUserOptions.destroy
+```
+
+##### ignoreMutation()? {#ignoremutation-1}
+
+```ts
+optional ignoreMutation: (mutation: ViewMutationRecord) => boolean | void;
+```
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="as-1"></a> `as?`
+`mutation`
 
 </td>
 <td>
 
-`NodeViewDOMSpec`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreNodeViewUserOptions.as
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="component-1"></a> `component`
-
-</td>
-<td>
-
-[`VueNodeViewComponent`](#vuenodeviewcomponent)
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreNodeViewUserOptions.component
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="contentas-1"></a> `contentAs?`
-
-</td>
-<td>
-
-`NodeViewDOMSpec`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreNodeViewUserOptions.contentAs
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="deselectnode"></a> `deselectNode?`
-
-</td>
-<td>
-
-() => `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreNodeViewUserOptions.deselectNode
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="destroy-1"></a> `destroy?`
-
-</td>
-<td>
-
-() => `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreNodeViewUserOptions.destroy
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="ignoremutation-1"></a> `ignoreMutation?`
-
-</td>
-<td>
-
-(`mutation`: [`ViewMutationRecord`](pm/view.md#viewmutationrecord)) => `boolean` \| `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreNodeViewUserOptions.ignoreMutation
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="name-1"></a> `name`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-The name of the node type.
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="onupdate"></a> `onUpdate?`
-
-</td>
-<td>
-
-() => `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreNodeViewUserOptions.onUpdate
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="selectnode"></a> `selectNode?`
-
-</td>
-<td>
-
-() => `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreNodeViewUserOptions.selectNode
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="setselection"></a> `setSelection?`
-
-</td>
-<td>
-
-(`anchor`: `number`, `head`: `number`, `root`: \| [`Document`](https://developer.mozilla.org/docs/Web/API/Document) \| [`ShadowRoot`](https://developer.mozilla.org/docs/Web/API/ShadowRoot)) => `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreNodeViewUserOptions.setSelection
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="stopevent"></a> `stopEvent?`
-
-</td>
-<td>
-
-(`event`: [`Event`](https://developer.mozilla.org/docs/Web/API/Event)) => `boolean`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreNodeViewUserOptions.stopEvent
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="update"></a> `update?`
-
-</td>
-<td>
-
-(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `decorations`: readonly [`Decoration`](pm/view.md#decoration)[], `innerDecorations`: [`DecorationSource`](pm/view.md#decorationsource)) => `boolean` \| `void`
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-<td>
-
-```ts
-CoreNodeViewUserOptions.update
-```
+[`ViewMutationRecord`](pm/view.md#viewmutationrecord)
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
+
+```ts
+CoreNodeViewUserOptions.ignoreMutation
+```
+
+##### name {#name-1}
+
+```ts
+name: string;
+```
+
+The name of the node type.
+
+##### onUpdate()? {#onupdate}
+
+```ts
+optional onUpdate: () => void;
+```
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+CoreNodeViewUserOptions.onUpdate
+```
+
+##### selectNode()? {#selectnode}
+
+```ts
+optional selectNode: () => void;
+```
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+CoreNodeViewUserOptions.selectNode
+```
+
+##### setSelection()? {#setselection}
+
+```ts
+optional setSelection: (anchor: number, head: number, root: 
+  | Document
+  | ShadowRoot) => void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`anchor`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`head`
+
+</td>
+<td>
+
+`number`
+
+</td>
+</tr>
+<tr>
+<td>
+
+`root`
+
+</td>
+<td>
+
+ \| [`Document`](https://developer.mozilla.org/docs/Web/API/Document) \| [`ShadowRoot`](https://developer.mozilla.org/docs/Web/API/ShadowRoot)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+CoreNodeViewUserOptions.setSelection
+```
+
+##### stopEvent()? {#stopevent}
+
+```ts
+optional stopEvent: (event: Event) => boolean;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`Event`](https://developer.mozilla.org/docs/Web/API/Event)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean`
+
+###### Inherited from
+
+```ts
+CoreNodeViewUserOptions.stopEvent
+```
+
+##### update()? {#update}
+
+```ts
+optional update: (node: ProseMirrorNode, decorations: readonly Decoration[], innerDecorations: DecorationSource) => boolean | void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`node`
+
+</td>
+<td>
+
+[`ProseMirrorNode`](pm/model.md#prosemirrornode)
+
+</td>
+</tr>
+<tr>
+<td>
+
+`decorations`
+
+</td>
+<td>
+
+readonly [`Decoration`](pm/view.md#decoration)[]
+
+</td>
+</tr>
+<tr>
+<td>
+
+`innerDecorations`
+
+</td>
+<td>
+
+[`DecorationSource`](pm/view.md#decorationsource)
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`boolean` \| `void`
+
+###### Inherited from
+
+```ts
+CoreNodeViewUserOptions.update
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -733,169 +622,134 @@ CoreNodeViewUserOptions.update
 
 #### Properties
 
+##### contentRef {#contentref-1}
+
+```ts
+contentRef: VNodeRef;
+```
+
+###### Inherited from
+
+```ts
+NodeViewContext.contentRef
+```
+
+##### decorations {#decorations}
+
+```ts
+decorations: ShallowRef<readonly Decoration[]>;
+```
+
+###### Inherited from
+
+```ts
+NodeViewContext.decorations
+```
+
+##### getPos() {#getpos}
+
+```ts
+getPos: () => undefined | number;
+```
+
+###### Returns
+
+`undefined` \| `number`
+
+###### Inherited from
+
+```ts
+NodeViewContext.getPos
+```
+
+##### innerDecorations {#innerdecorations}
+
+```ts
+innerDecorations: ShallowRef<DecorationSource>;
+```
+
+###### Inherited from
+
+```ts
+NodeViewContext.innerDecorations
+```
+
+##### node {#node}
+
+```ts
+node: ShallowRef<ProseMirrorNode>;
+```
+
+###### Inherited from
+
+```ts
+NodeViewContext.node
+```
+
+##### selected {#selected}
+
+```ts
+selected: ShallowRef<boolean>;
+```
+
+###### Inherited from
+
+```ts
+NodeViewContext.selected
+```
+
+##### setAttrs() {#setattrs}
+
+```ts
+setAttrs: (attrs: Attrs) => void;
+```
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="contentref-1"></a> `contentRef`
+`attrs`
 
 </td>
 <td>
 
-`VNodeRef`
-
-</td>
-<td>
-
-```ts
-NodeViewContext.contentRef
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="decorations"></a> `decorations`
-
-</td>
-<td>
-
-`ShallowRef`\<readonly [`Decoration`](pm/view.md#decoration)[]\>
-
-</td>
-<td>
-
-```ts
-NodeViewContext.decorations
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="getpos"></a> `getPos`
-
-</td>
-<td>
-
-() => `undefined` \| `number`
-
-</td>
-<td>
-
-```ts
-NodeViewContext.getPos
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="innerdecorations"></a> `innerDecorations`
-
-</td>
-<td>
-
-`ShallowRef`\<[`DecorationSource`](pm/view.md#decorationsource)\>
-
-</td>
-<td>
-
-```ts
-NodeViewContext.innerDecorations
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="node"></a> `node`
-
-</td>
-<td>
-
-`ShallowRef`\<[`ProseMirrorNode`](pm/model.md#prosemirrornode)\>
-
-</td>
-<td>
-
-```ts
-NodeViewContext.node
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="selected"></a> `selected`
-
-</td>
-<td>
-
-`ShallowRef`\<`boolean`\>
-
-</td>
-<td>
-
-```ts
-NodeViewContext.selected
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="setattrs"></a> `setAttrs`
-
-</td>
-<td>
-
-(`attrs`: [`Attrs`](pm/model.md#attrs-7)) => `void`
-
-</td>
-<td>
-
-```ts
-NodeViewContext.setAttrs
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="view-1"></a> `view`
-
-</td>
-<td>
-
-[`EditorView`](pm/view.md#editorview)
-
-</td>
-<td>
-
-```ts
-NodeViewContext.view
-```
+[`Attrs`](pm/model.md#attrs-7)
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+NodeViewContext.setAttrs
+```
+
+##### view {#view-1}
+
+```ts
+view: EditorView;
+```
+
+###### Inherited from
+
+```ts
+NodeViewContext.view
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

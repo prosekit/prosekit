@@ -30,52 +30,23 @@ sidebar:
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### id {#id}
 
-<a id="id"></a> `id`
+```ts
+id: string;
+```
 
-</td>
-<td>
+##### kind {#kind}
 
-`string`
+```ts
+kind: string;
+```
 
-</td>
-</tr>
-<tr>
-<td>
+##### value {#value}
 
-<a id="kind"></a> `kind`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="value"></a> `value`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-</tbody>
-</table>
+```ts
+value: string;
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

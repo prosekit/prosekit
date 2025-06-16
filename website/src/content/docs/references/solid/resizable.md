@@ -36,48 +36,33 @@ Props for the [ResizableHandle](#resizablehandle) component.
 
 #### Properties
 
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Type</th>
-<th>Description</th>
-<th>Inherited from</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
+##### position? {#position}
 
-<a id="position"></a> `position?`
-
-</td>
-<td>
-
- \| `"left"` \| `"right"` \| `"top"` \| `"bottom"` \| `"top-left"` \| `"top-right"` \| `"bottom-left"` \| `"bottom-right"`
-
-</td>
-<td>
+```ts
+optional position: 
+  | "left"
+  | "right"
+  | "top"
+  | "bottom"
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right";
+```
 
 The position of the handle.
 
-**Default**
+###### Default
 
 ```ts
 "bottom-right"
 ```
 
-</td>
-<td>
+###### Inherited from
 
 ```ts
 Partial.position
 ```
-
-</td>
-</tr>
-</tbody>
-</table>
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -103,112 +88,129 @@ Props for the [ResizableRoot](#resizableroot) component.
 
 #### Properties
 
+##### aspectRatio? {#aspectratio}
+
+```ts
+optional aspectRatio: null | number;
+```
+
+###### Inherited from
+
+```ts
+Partial.aspectRatio
+```
+
+##### height? {#height}
+
+```ts
+optional height: null | number;
+```
+
+###### Inherited from
+
+```ts
+Partial.height
+```
+
+##### onResizeEnd()? {#onresizeend}
+
+```ts
+optional onResizeEnd: (event: CustomEvent<{
+  height: number;
+  width: number;
+}>) => void;
+```
+
+###### Parameters
+
 <table>
 <thead>
 <tr>
-<th>Property</th>
+<th>Parameter</th>
 <th>Type</th>
-<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>
 
-<a id="aspectratio"></a> `aspectRatio?`
+`event`
 
 </td>
 <td>
 
-`null` \| `number`
-
-</td>
-<td>
-
-```ts
-Partial.aspectRatio
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="height"></a> `height?`
-
-</td>
-<td>
-
-`null` \| `number`
-
-</td>
-<td>
-
-```ts
-Partial.height
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="onresizeend"></a> `onResizeEnd?`
-
-</td>
-<td>
-
-(`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>) => `void`
-
-</td>
-<td>
-
-```ts
-Partial.onResizeEnd
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="onresizestart"></a> `onResizeStart?`
-
-</td>
-<td>
-
-(`event`: [`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>) => `void`
-
-</td>
-<td>
-
-```ts
-Partial.onResizeStart
-```
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="width"></a> `width?`
-
-</td>
-<td>
-
-`null` \| `number`
-
-</td>
-<td>
-
-```ts
-Partial.width
-```
+[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>
 
 </td>
 </tr>
 </tbody>
 </table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+Partial.onResizeEnd
+```
+
+##### onResizeStart()? {#onresizestart}
+
+```ts
+optional onResizeStart: (event: CustomEvent<{
+  height: number;
+  width: number;
+}>) => void;
+```
+
+###### Parameters
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`event`
+
+</td>
+<td>
+
+[`CustomEvent`](https://developer.mozilla.org/docs/Web/API/CustomEvent)\<\{ `height`: `number`; `width`: `number`; \}\>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+###### Returns
+
+`void`
+
+###### Inherited from
+
+```ts
+Partial.onResizeStart
+```
+
+##### width? {#width}
+
+```ts
+optional width: null | number;
+```
+
+###### Inherited from
+
+```ts
+Partial.width
+```
 
 <!-- DEBUG memberWithGroups 10 -->
 

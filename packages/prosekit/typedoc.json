@@ -15,7 +15,7 @@
     "typedoc-plugin-mdn-links",
     "typedoc-plugin-external-package-links"
   ],
-  "theme": "my-markdown",
+  "theme": "my-markdown-theme",
   "githubPages": false,
   "disableSources": true,
   "externalSymbolLinkMappings": {

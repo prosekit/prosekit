@@ -84,7 +84,7 @@ export type EnterRuleOptions = {
  *
  * @public
  */
-export type TextBlockEnterRuleOptions = {
+export interface TextBlockEnterRuleOptions {
   /**
    * The regular expression to match against. It should end with `$`.
    */

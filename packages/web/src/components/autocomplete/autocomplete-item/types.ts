@@ -25,7 +25,8 @@ export const autocompleteItemProps: PropDeclarations<AutocompleteItemProps> = {
   },
 }
 
-export interface AutocompleteItemEvents extends ListboxItemEvents {}
+/** @interface */
+export type AutocompleteItemEvents = ListboxItemEvents
 
 /** @internal */
 export const autocompleteItemEvents: EventDeclarations<AutocompleteItemEvents> = listboxItemEvents

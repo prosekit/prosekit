@@ -556,10 +556,6 @@ false
 
 <!-- DEBUG memberWithGroups 1 -->
 
-#### Extends
-
-- `ListboxItemEvents`
-
 <!-- DEBUG memberWithGroups 4 -->
 
 <!-- DEBUG memberWithGroups 7 -->

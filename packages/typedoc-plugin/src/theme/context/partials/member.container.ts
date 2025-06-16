@@ -17,7 +17,7 @@ export function memberContainer(
     && this.router.getAnchor(model)
     && this.options.getValue('useHTMLAnchors')
   ) {
-    md.push(`<a id="${this.router.getAnchor(model)}"></a>`)
+    md.push(`<a data-debug-md id="${this.router.getAnchor(model)}"></a>`)
   }
 
   if (

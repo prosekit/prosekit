@@ -81,6 +81,7 @@ const typedocPluginMarkdownConfig = {
   useCodeBlocks: true,
   expandParameters: true,
   parametersFormat: 'htmlTable',
+  enumMembersFormat: 'htmlTable',
 }
 
 /**

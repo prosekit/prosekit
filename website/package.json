@@ -56,7 +56,6 @@
     "react-dom": "^19.1.0",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
-    "rehype-slug-custom-id": "^2.0.0",
     "remark-custom-heading-id": "^2.0.0",
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",

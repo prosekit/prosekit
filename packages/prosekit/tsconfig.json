@@ -1,5 +1,9 @@
 {
   "extends": "@ocavue/tsconfig/es/root.json",
+  "include": [
+    "./*.json",
+    "./*",
+  ],
   "references": [
     {
       "path": "../basic/tsconfig.json",
@@ -33,6 +37,9 @@
     },
     {
       "path": "../svelte/tsconfig.json",
+    },
+    {
+      "path": "../typedoc-plugin/tsconfig.json",
     },
     {
       "path": "../vue/tsconfig.json",

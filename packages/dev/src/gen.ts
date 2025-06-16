@@ -5,7 +5,6 @@ import { genExampleMetaYaml } from './gen-example-meta-yaml.js'
 import { genExampleSymlinks } from './gen-example-symlinks.js'
 import { genPackageJson } from './gen-package-json.js'
 import { genSizeLimitJson } from './gen-size-limit-json.js'
-import { genTypedocJson } from './gen-typedoc-json.js'
 import { genWebsitePages } from './gen-website-pages.js'
 import { skipGen } from './skip-gen.js'
 import { sleep } from './sleep.js'
@@ -18,7 +17,6 @@ async function genAll(): Promise<boolean> {
 
   await genComponents()
   await genPackageJson()
-  await genTypedocJson()
   await genChangesetConfigJson()
   await genSizeLimitJson()
   await genChangeset()

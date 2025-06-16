@@ -15,9 +15,7 @@ export function inheritance(
   model: DeclarationReflection | SignatureReflection,
   options: { headingLevel: number },
 ): string {
-  const md: string[] = [
-    `<!-- DEBUG inheritance start kind=${model.kind} -->`,
-  ]
+  const md: string[] = []
 
   if (model.kind === ReflectionKind.Property) {
     return md.join('\n\n')

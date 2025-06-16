@@ -74,7 +74,6 @@ const typedocConfig = {
  * https://typedoc-plugin-markdown.org/docs/options
  */
 const typedocPluginMarkdownConfig = {
-  entryFileName: 'index.md',
   hidePageHeader: true,
   hideBreadcrumbs: true,
   hidePageTitle: true,

@@ -38,7 +38,6 @@ export default {
     "./src/extensions/underline.gen.ts",
     "./src/extensions/virtual-selection.gen.ts",
     "./src/extensions/yjs.gen.ts",
-    "./src/index.ts",
     "./src/pm.ts",
     "./src/pm/commands.ts",
     "./src/pm/history.ts",

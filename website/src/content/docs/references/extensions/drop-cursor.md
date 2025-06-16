@@ -38,6 +38,8 @@ optional class: string;
 
 A CSS class name to add to the cursor element.
 
+<!-- DEBUG inheritance start -->
+
 ##### color? {#color}
 
 ```ts
@@ -52,6 +54,8 @@ The color of the cursor.  Use `false` to apply no color and rely only on class.
 'black'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### width? {#width}
 
 ```ts
@@ -65,6 +69,8 @@ The precise width of the cursor in pixels.
 ```ts
 1
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -108,5 +114,7 @@ See [prosemirror-dropcursor](https://github.com/ProseMirror/prosemirror-dropcurs
 #### Returns
 
 `PlainExtension`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

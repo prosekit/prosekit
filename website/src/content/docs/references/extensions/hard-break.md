@@ -26,4 +26,6 @@ function defineHardBreak(): HardBreakExtension;
 
 `HardBreakExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

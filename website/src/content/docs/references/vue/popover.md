@@ -76,6 +76,10 @@ By default, the popover will be closed. It can be prevented by calling
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -121,6 +125,10 @@ By default, the popover will be closed. It can be prevented by calling
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -169,6 +177,10 @@ By default, the popover will be closed. It can be prevented by calling
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -214,6 +226,10 @@ By default, the popover will be closed. It can be prevented by calling
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -261,6 +277,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -287,6 +305,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -307,6 +327,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 ```ts
 'clippingAncestors'
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -330,6 +352,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -350,6 +374,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -374,6 +400,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -394,6 +422,8 @@ floating element is fully clipped.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -418,6 +448,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -439,6 +471,8 @@ multiple lines.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -458,6 +492,8 @@ The distance between the reference and floating element.
 ```ts
 6
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -480,6 +516,8 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 4
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -501,6 +539,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -520,6 +560,8 @@ The initial placement of the floating element
 ```ts
 "top"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -542,6 +584,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -562,6 +606,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -584,6 +630,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -604,6 +652,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -623,6 +673,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -645,6 +697,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -711,6 +765,10 @@ openChange: (event: boolean) => void;
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -755,6 +813,8 @@ Whether the popover is open by default.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -774,6 +834,8 @@ Whether the popover is open.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -835,6 +897,8 @@ Props for the [PopoverTrigger](#popovertrigger) component.
 const PopoverContent: DefineSetupFnComponent<PopoverContentProps & HTMLAttributes, PopoverContentEmits>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### PopoverRoot {#popoverroot}
@@ -843,6 +907,8 @@ const PopoverContent: DefineSetupFnComponent<PopoverContentProps & HTMLAttribute
 const PopoverRoot: DefineSetupFnComponent<PopoverRootProps & HTMLAttributes, PopoverRootEmits>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### PopoverTrigger {#popovertrigger}
@@ -850,5 +916,7 @@ const PopoverRoot: DefineSetupFnComponent<PopoverRootProps & HTMLAttributes, Pop
 ```ts
 const PopoverTrigger: DefineSetupFnComponent<PopoverTriggerProps & HTMLAttributes, PopoverTriggerEmits>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

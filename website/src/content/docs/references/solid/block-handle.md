@@ -96,6 +96,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -122,6 +124,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -142,6 +146,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 ```ts
 'clippingAncestors'
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -165,6 +171,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -185,6 +193,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -209,6 +219,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -229,6 +241,8 @@ floating element is fully clipped.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -251,6 +265,8 @@ to place the floating element on top of other page content.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -272,6 +288,8 @@ multiple lines.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -291,6 +309,8 @@ The distance between the reference and floating element.
 ```ts
 6
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -313,6 +333,8 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 4
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -334,6 +356,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -353,6 +377,8 @@ The placement of the popover, relative to the hovered block.
 ```ts
 "left"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -375,6 +401,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -395,6 +423,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -417,6 +447,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -437,6 +469,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -456,6 +490,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -479,6 +515,8 @@ performant, but can cause conflicts with transform animations.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -495,6 +533,8 @@ Partial.transform
 const BlockHandleAdd: Component<PropsWithElement<BlockHandleAddProps, BlockHandleAddElement>>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### BlockHandleDraggable {#blockhandledraggable}
@@ -503,6 +543,8 @@ const BlockHandleAdd: Component<PropsWithElement<BlockHandleAddProps, BlockHandl
 const BlockHandleDraggable: Component<PropsWithElement<BlockHandleDraggableProps, BlockHandleDraggableElement>>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### BlockHandlePopover {#blockhandlepopover}
@@ -510,5 +552,7 @@ const BlockHandleDraggable: Component<PropsWithElement<BlockHandleDraggableProps
 ```ts
 const BlockHandlePopover: Component<PropsWithElement<BlockHandlePopoverProps, BlockHandlePopoverElement>>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

@@ -36,6 +36,8 @@ sidebar:
 awareness: CursorAwareness;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### createCursor()? {#createcursor}
 
 ```ts
@@ -70,6 +72,10 @@ optional createCursor: (user: `${number}`) => Element;
 ###### Returns
 
 [`Element`](https://developer.mozilla.org/docs/Web/API/Element)
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ##### createSelection()? {#createselection}
 
@@ -106,6 +112,10 @@ optional createSelection: (user: `${number}`) => DecorationAttrs;
 
 [`DecorationAttrs`](../pm/view.md#decorationattrs)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### getSelection()? {#getselection}
 
 ```ts
@@ -141,6 +151,10 @@ optional getSelection: (state: EditorState) => Selection;
 
 [`Selection`](../pm/state.md#selection-1)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -167,6 +181,8 @@ awareness: CursorAwareness;
 
 The Awareness instance.
 
+<!-- DEBUG inheritance start -->
+
 ##### cursor? {#cursor}
 
 ```ts
@@ -174,6 +190,8 @@ optional cursor: Omit<LoroCursorOptions, "awareness">;
 ```
 
 Extra options for `LoroCursorPlugin`.
+
+<!-- DEBUG inheritance start -->
 
 ##### doc {#doc}
 
@@ -183,6 +201,8 @@ doc: LoroDocType;
 
 The Loro instance handles the state of shared data.
 
+<!-- DEBUG inheritance start -->
+
 ##### sync? {#sync}
 
 ```ts
@@ -191,6 +211,8 @@ optional sync: Omit<LoroSyncPluginProps, "doc">;
 
 Extra options for `LoroSyncPlugin`.
 
+<!-- DEBUG inheritance start -->
+
 ##### undo? {#undo}
 
 ```ts
@@ -198,6 +220,8 @@ optional undo: Omit<LoroUndoPluginProps, "doc">;
 ```
 
 Extra options for the `LoroUndoPlugin`.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -238,6 +262,8 @@ function defineLoro(options: LoroOptions): LoroExtension;
 
 `LoroExtension`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### defineLoroCommands() {#definelorocommands}
@@ -249,6 +275,8 @@ function defineLoroCommands(): LoroCommandsExtension;
 #### Returns
 
 `LoroCommandsExtension`
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -287,6 +315,8 @@ function defineLoroCursorPlugin(options: LoroCursorOptions): PlainExtension;
 
 `PlainExtension`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### defineLoroKeymap() {#definelorokeymap}
@@ -298,6 +328,8 @@ function defineLoroKeymap(): PlainExtension;
 #### Returns
 
 `PlainExtension`
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -336,6 +368,8 @@ function defineLoroSyncPlugin(options: LoroSyncPluginProps): PlainExtension;
 
 `PlainExtension`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### defineLoroUndoPlugin() {#defineloroundoplugin}
@@ -372,5 +406,7 @@ function defineLoroUndoPlugin(options: LoroUndoPluginProps): PlainExtension;
 #### Returns
 
 `PlainExtension`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

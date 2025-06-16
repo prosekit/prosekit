@@ -46,6 +46,8 @@ Indicates whether the search is case-sensitive
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### literal? {#literal}
 
 ```ts
@@ -62,6 +64,8 @@ behavior is disabled.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### regexp? {#regexp}
 
 ```ts
@@ -76,6 +80,8 @@ When true, the search string is interpreted as a regular expression.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### replace? {#replace}
 
 ```ts
@@ -84,6 +90,8 @@ optional replace: string;
 
 The replace text.
 
+<!-- DEBUG inheritance start -->
+
 ##### search {#search}
 
 ```ts
@@ -91,6 +99,8 @@ search: string;
 ```
 
 The search string (or regular expression).
+
+<!-- DEBUG inheritance start -->
 
 ##### wholeWord? {#wholeword}
 
@@ -105,6 +115,8 @@ Enable whole-word matching.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -121,6 +133,8 @@ Defines commands for search and replace.
 #### Returns
 
 `SearchCommandsExtension`
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -160,5 +174,7 @@ Defines an extension that stores a current search query and replace string.
 #### Returns
 
 `PlainExtension`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

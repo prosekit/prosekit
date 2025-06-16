@@ -33,4 +33,6 @@ editor, but still want to show the selection.
 
 `PlainExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

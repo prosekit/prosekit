@@ -36,11 +36,15 @@ sidebar:
 optional children: ComponentChildren;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### editor {#editor}
 
 ```ts
 editor: Editor;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -69,6 +73,8 @@ optional editor: Editor<any>;
 The editor to add the extension to. If not provided, it will use the
 editor from the nearest `ProseKit` component.
 
+<!-- DEBUG inheritance start -->
+
 ##### priority? {#priority}
 
 ```ts
@@ -76,6 +82,8 @@ optional priority: Priority;
 ```
 
 Optional priority to add the extension with.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -88,6 +96,8 @@ const ProseKit: ComponentType<ProseKitProps>;
 ```
 
 The root component for a ProseKit editor.
+
+<!-- DEBUG inheritance start -->
 
 ## Functions
 
@@ -139,6 +149,8 @@ Calls the given handler whenever the editor document changes.
 #### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -234,6 +246,8 @@ false
 
 [`Editor`](core.md#editor)\<`E`\>
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### useExtension() {#useextension}
@@ -299,6 +313,8 @@ extension will be removed and the new one (if not null) will be added.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### useKeymap() {#usekeymap}
@@ -347,6 +363,8 @@ function useKeymap(keymap: Keymap, options?: UseExtensionOptions): void;
 #### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -398,5 +416,7 @@ Calls the given handler whenever the editor state changes.
 #### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

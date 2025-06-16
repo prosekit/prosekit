@@ -36,17 +36,23 @@ sidebar:
 id: string;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### kind {#kind}
 
 ```ts
 kind: string;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### value {#value}
 
 ```ts
 value: string;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -62,6 +68,8 @@ function defineMention(): MentionExtension;
 
 `MentionExtension`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### defineMentionCommands() {#definementioncommands}
@@ -74,6 +82,8 @@ function defineMentionCommands(): MentionCommandsExtension;
 
 `MentionCommandsExtension`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### defineMentionSpec() {#definementionspec}
@@ -85,5 +95,7 @@ function defineMentionSpec(): MentionSpecExtension;
 #### Returns
 
 `MentionSpecExtension`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

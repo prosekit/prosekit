@@ -100,6 +100,10 @@ handler](https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyDown) that 
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### keymap() {#keymap}
@@ -166,5 +170,7 @@ the array get to dispatch first).
 #### Returns
 
 [`ProseMirrorPlugin`](state.md#prosemirrorplugin)
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

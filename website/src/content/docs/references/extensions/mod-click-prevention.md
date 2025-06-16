@@ -29,4 +29,6 @@ extension disables that behavior.
 
 `PlainExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

@@ -26,4 +26,6 @@ function defineText(): TextExtension;
 
 `TextExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

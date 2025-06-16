@@ -37,4 +37,6 @@ for more information.
 
 `PlainExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

@@ -31,4 +31,6 @@ default block node for most cases.
 
 `ParagraphExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

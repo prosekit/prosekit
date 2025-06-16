@@ -28,6 +28,8 @@ type BlockquoteCommandsExtension = Extension<{
 }>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### BlockquoteSpecExtension {#blockquotespecextension}
@@ -40,6 +42,8 @@ type BlockquoteSpecExtension = Extension<{
 }>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ## Functions
 
 ### defineBlockquote() {#defineblockquote}
@@ -51,6 +55,8 @@ function defineBlockquote(): BlockquoteExtension;
 #### Returns
 
 `BlockquoteExtension`
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -67,6 +73,8 @@ line followed by a space.
 
 `PlainExtension`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### defineBlockquoteSpec() {#defineblockquotespec}
@@ -78,5 +86,7 @@ function defineBlockquoteSpec(): BlockquoteSpecExtension;
 #### Returns
 
 [`BlockquoteSpecExtension`](#blockquotespecextension)
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

@@ -26,4 +26,6 @@ function defineCode(): CodeExtension;
 
 `CodeExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

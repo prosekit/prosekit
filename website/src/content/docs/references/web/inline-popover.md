@@ -44,6 +44,8 @@ new InlinePopoverElement(): InlinePopoverElement;
 
 [`InlinePopoverElement`](#inlinepopoverelement)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -67,6 +69,8 @@ information.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -94,6 +98,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -114,6 +120,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 ```ts
 'clippingAncestors'
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -140,6 +148,8 @@ opened unless the `open` prop is true.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -160,6 +170,8 @@ Escape key press.
 ```ts
 true
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -183,6 +195,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -203,6 +217,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -227,6 +243,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -244,6 +262,8 @@ hide: boolean;
 ```ts
 true
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -268,6 +288,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -286,6 +308,8 @@ inline: boolean;
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -303,6 +327,8 @@ offset: undefined | OffsetOptions;
 ```ts
 12
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -327,6 +353,8 @@ empty.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -344,6 +372,8 @@ overflowPadding: number;
 ```ts
 8
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -363,6 +393,8 @@ overlap: boolean;
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -380,6 +412,8 @@ placement: Placement;
 ```ts
 "top"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -402,6 +436,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -422,6 +458,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -444,6 +482,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -464,6 +504,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -483,6 +525,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -505,6 +549,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -541,6 +587,8 @@ openChange: CustomEvent<boolean>;
 ```
 
 Fired when the open state changes.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -586,6 +634,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -612,6 +662,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -632,6 +684,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 ```ts
 'clippingAncestors'
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -658,6 +712,8 @@ opened unless the `open` prop is true.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### dismissOnEscape {#dismissonescape-1}
 
 ```ts
@@ -672,6 +728,8 @@ Escape key press.
 ```ts
 true
 ```
+
+<!-- DEBUG inheritance start -->
 
 ##### elementContext {#elementcontext-1}
 
@@ -688,6 +746,8 @@ information.
 ```ts
 'floating'
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -709,6 +769,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -733,6 +795,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -751,6 +815,8 @@ hide: boolean;
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### hoist {#hoist-1}
 
 ```ts
@@ -767,6 +833,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 ```ts
 true
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -786,6 +854,8 @@ inline: boolean;
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### offset {#offset-1}
 
 ```ts
@@ -797,6 +867,8 @@ offset: undefined | OffsetOptions;
 ```ts
 12
 ```
+
+<!-- DEBUG inheritance start -->
 
 ##### open {#open-1}
 
@@ -815,6 +887,8 @@ empty.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### overflowPadding {#overflowpadding-1}
 
 ```ts
@@ -826,6 +900,8 @@ overflowPadding: number;
 ```ts
 8
 ```
+
+<!-- DEBUG inheritance start -->
 
 ##### overlap {#overlap-1}
 
@@ -839,6 +915,8 @@ overlap: boolean;
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### placement {#placement-1}
 
 ```ts
@@ -850,6 +928,8 @@ placement: Placement;
 ```ts
 "top"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ##### rootBoundary {#rootboundary-1}
 
@@ -865,6 +945,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 ```ts
 'viewport'
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -887,6 +969,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -908,6 +992,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -928,6 +1014,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -947,6 +1035,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -969,6 +1059,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 

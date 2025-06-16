@@ -26,4 +26,6 @@ function defineDoc(): DocExtension;
 
 `DocExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

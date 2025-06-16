@@ -40,6 +40,8 @@ new CommitRecorder(): CommitRecorder;
 
 [`CommitRecorder`](#commitrecorder)
 
+<!-- DEBUG inheritance start -->
+
 #### Methods
 
 ##### commit() {#commit}
@@ -54,6 +56,8 @@ will be returned if there is no change.
 ###### Returns
 
 `null` \| [`Commit`](#commit-2)
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -83,6 +87,8 @@ doc: NodeJSON;
 
 The current doc node in the JSON format
 
+<!-- DEBUG inheritance start -->
+
 ##### parent {#parent}
 
 ```ts
@@ -90,6 +96,8 @@ parent: NodeJSON;
 ```
 
 The parent node in the JSON format
+
+<!-- DEBUG inheritance start -->
 
 ##### steps {#steps}
 
@@ -99,6 +107,8 @@ steps: StepJSON[];
 
 An array of steps in the JSON format that transform the parent node to the
 current doc node.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -141,6 +151,8 @@ Define an extension that can record the changes in the editor.
 
 `PlainExtension`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### defineCommitViewer() {#definecommitviewer}
@@ -179,5 +191,7 @@ Define an extension to display the changes from the given commit in the editor.
 #### Returns
 
 `PlainExtension`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

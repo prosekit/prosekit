@@ -42,6 +42,8 @@ Options for `y-prosemirror`'s `yCursorPlugin`.
 awareness: Awareness;
 ```
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -68,6 +70,8 @@ awareness: Awareness;
 
 The Awareness instance.
 
+<!-- DEBUG inheritance start -->
+
 ##### cursor? {#cursor}
 
 ```ts
@@ -76,6 +80,8 @@ optional cursor: object;
 
 Options for `y-prosemirror`'s `yCursorPlugin`.
 
+<!-- DEBUG inheritance start -->
+
 ##### doc {#doc}
 
 ```ts
@@ -83,6 +89,8 @@ doc: Doc;
 ```
 
 The Yjs instance handles the state of shared data.
+
+<!-- DEBUG inheritance start -->
 
 ##### fragment? {#fragment}
 
@@ -93,6 +101,8 @@ optional fragment: YXmlFragment;
 The Yjs XmlFragment to use. If not provided,
 `doc.getXmlFragment('prosemirror')` will be used.
 
+<!-- DEBUG inheritance start -->
+
 ##### sync? {#sync}
 
 ```ts
@@ -101,6 +111,8 @@ optional sync: YSyncOpts;
 
 Options for `y-prosemirror`'s `ySyncPlugin`.
 
+<!-- DEBUG inheritance start -->
+
 ##### undo? {#undo}
 
 ```ts
@@ -108,6 +120,8 @@ optional undo: object;
 ```
 
 Options for the `y-prosemirror`'s `yUndoPlugin`.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -138,6 +152,8 @@ Options for `y-prosemirror`'s `ySyncPlugin`.
 ```ts
 fragment: YXmlFragment;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -173,6 +189,8 @@ type YjsCursorPluginOptions = NonNullable<Parameters<typeof yCursorPlugin>[1]>;
 
 Options for `y-prosemirror`'s `yCursorPlugin`.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### YjsSyncPluginOptions {#yjssyncpluginoptions}
@@ -183,6 +201,8 @@ type YjsSyncPluginOptions = NonNullable<Parameters<typeof ySyncPlugin>[1]>;
 
 Options for `y-prosemirror`'s `ySyncPlugin`.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### YjsUndoPluginOptions {#yjsundopluginoptions}
@@ -192,6 +212,8 @@ type YjsUndoPluginOptions = NonNullable<Parameters<typeof originalYUndoPlugin>[0
 ```
 
 Options for the `y-prosemirror`'s `yUndoPlugin`.
+
+<!-- DEBUG inheritance start -->
 
 ## Functions
 
@@ -230,6 +252,8 @@ function defineYjs(options: YjsOptions): YjsExtension;
 
 `YjsExtension`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### defineYjsCommands() {#defineyjscommands}
@@ -241,6 +265,8 @@ function defineYjsCommands(): YjsCommandsExtension;
 #### Returns
 
 `YjsCommandsExtension`
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -279,6 +305,8 @@ function defineYjsCursorPlugin(options: YjsCursorOptions): PlainExtension;
 
 `PlainExtension`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### defineYjsKeymap() {#defineyjskeymap}
@@ -290,6 +318,8 @@ function defineYjsKeymap(): PlainExtension;
 #### Returns
 
 `PlainExtension`
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -327,5 +357,7 @@ function defineYjsSyncPlugin(options: YjsSyncOptions): PlainExtension;
 #### Returns
 
 `PlainExtension`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

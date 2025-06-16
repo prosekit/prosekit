@@ -47,6 +47,8 @@ new ContentMatch(): ContentMatch;
 
 [`ContentMatch`](#contentmatch)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### validEnd {#validend}
@@ -56,6 +58,8 @@ readonly validEnd: boolean;
 ```
 
 True when this match state represents a valid end of the node.
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -74,6 +78,8 @@ be generated.
 
 `null` \| [`NodeType`](#nodetype)
 
+<!-- DEBUG inheritance start -->
+
 ##### edgeCount {#edgecount}
 
 ###### Get Signature
@@ -88,6 +94,8 @@ automaton that describes the content expression.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -128,6 +136,8 @@ automaton that describes the content expression.
 ###### Returns
 
 [`MatchEdge`](https://prosemirror.net/docs/ref/#model.MatchEdge)
+
+<!-- DEBUG inheritance start -->
 
 ##### fillBefore() {#fillbefore}
 
@@ -198,6 +208,8 @@ content expression.
 
 `null` \| [`ProseMirrorFragment`](#prosemirrorfragment)
 
+<!-- DEBUG inheritance start -->
+
 ##### findWrapping() {#findwrapping}
 
 ```ts
@@ -237,6 +249,8 @@ exists.
 ###### Returns
 
 `null` \| readonly [`NodeType`](#nodetype)[]
+
+<!-- DEBUG inheritance start -->
 
 ##### matchFragment() {#matchfragment}
 
@@ -303,6 +317,8 @@ successful.
 
 `null` \| [`ContentMatch`](#contentmatch)
 
+<!-- DEBUG inheritance start -->
+
 ##### matchType() {#matchtype}
 
 ```ts
@@ -340,6 +356,8 @@ successful.
 ###### Returns
 
 `null` \| [`ContentMatch`](#contentmatch)
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -425,6 +443,8 @@ uses, in order of precedence.
 
 [`DOMParser`](#domparser)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### rules {#rules}
@@ -436,6 +456,8 @@ readonly rules: readonly ParseRule[];
 The set of [parse rules](https://prosemirror.net/docs/ref/#model.ParseRule) that the parser
 uses, in order of precedence.
 
+<!-- DEBUG inheritance start -->
+
 ##### schema {#schema}
 
 ```ts
@@ -443,6 +465,8 @@ readonly schema: Schema;
 ```
 
 The schema into which the parser parses.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -494,6 +518,8 @@ Parse a document from the content of a DOM node.
 ###### Returns
 
 [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 ##### parseSlice() {#parseslice}
 
@@ -549,6 +575,8 @@ the left of the input and the end of nodes at the end.
 
 [`Slice`](#slice-2)
 
+<!-- DEBUG inheritance start -->
+
 ##### fromSchema() {#fromschema}
 
 ```ts
@@ -587,6 +615,8 @@ schema's [node specs](https://prosemirror.net/docs/ref/#model.NodeSpec.parseDOM)
 ###### Returns
 
 [`DOMParser`](#domparser)
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -675,6 +705,8 @@ The mark serialization functions.
 
 [`DOMSerializer`](#domserializer)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### marks {#marks}
@@ -691,6 +723,8 @@ The mark serialization functions.
 [mark: string]: (mark: Mark, inline: boolean) => DOMOutputSpec
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### nodes {#nodes}
 
 ```ts
@@ -704,6 +738,8 @@ The node serialization functions.
 ```ts
 [node: string]: (node: ProseMirrorNode) => DOMOutputSpec
 ```
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -791,6 +827,8 @@ nodes.
   \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)
   \| [`DocumentFragment`](https://developer.mozilla.org/docs/Web/API/DocumentFragment)
 
+<!-- DEBUG inheritance start -->
+
 ##### serializeNode() {#serializenode}
 
 ```ts
@@ -856,6 +894,8 @@ its [content](https://prosemirror.net/docs/ref/#model.Node.content).
 
 [`Node`](https://developer.mozilla.org/docs/Web/API/Node)
 
+<!-- DEBUG inheritance start -->
+
 ##### fromSchema() {#fromschema-2}
 
 ```ts
@@ -894,6 +934,8 @@ properties in a schema's node and mark specs.
 
 [`DOMSerializer`](#domserializer)
 
+<!-- DEBUG inheritance start -->
+
 ##### marksFromSchema() {#marksfromschema}
 
 ```ts
@@ -930,6 +972,8 @@ Gather the serializers in a schema's mark specs into an object.
 ###### Returns
 
 `object`
+
+<!-- DEBUG inheritance start -->
 
 ##### nodesFromSchema() {#nodesfromschema}
 
@@ -968,6 +1012,8 @@ This can be useful as a base to build a custom serializer from.
 ###### Returns
 
 `object`
+
+<!-- DEBUG inheritance start -->
 
 ##### renderSpec() {#renderspec}
 
@@ -1041,11 +1087,17 @@ node with the hole.
 optional contentDOM: HTMLElement;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### dom
 
 ```ts
 dom: Node;
 ```
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1082,6 +1134,8 @@ new Mark(): Mark;
 
 [`Mark`](#mark)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### attrs {#attrs}
@@ -1092,6 +1146,8 @@ readonly attrs: Attrs;
 
 The attributes associated with this mark.
 
+<!-- DEBUG inheritance start -->
+
 ##### type {#type}
 
 ```ts
@@ -1100,6 +1156,8 @@ readonly type: MarkType;
 
 The type of this mark.
 
+<!-- DEBUG inheritance start -->
+
 ##### none {#none}
 
 ```ts
@@ -1107,6 +1165,8 @@ static none: readonly Mark[];
 ```
 
 The empty set of marks.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -1151,6 +1211,8 @@ readonly [`Mark`](#mark)[]
 
 readonly [`Mark`](#mark)[]
 
+<!-- DEBUG inheritance start -->
+
 ##### eq() {#eq}
 
 ```ts
@@ -1189,6 +1251,8 @@ another mark.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### isInSet() {#isinset}
 
 ```ts
@@ -1225,6 +1289,8 @@ readonly [`Mark`](#mark)[]
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### removeFromSet() {#removefromset}
 
@@ -1264,6 +1330,8 @@ readonly [`Mark`](#mark)[]
 
 readonly [`Mark`](#mark)[]
 
+<!-- DEBUG inheritance start -->
+
 ##### toJSON() {#tojson}
 
 ```ts
@@ -1275,6 +1343,8 @@ Convert this mark to a JSON-serializeable representation.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ##### fromJSON() {#fromjson}
 
@@ -1325,6 +1395,8 @@ Deserialize a mark from JSON.
 
 [`Mark`](#mark)
 
+<!-- DEBUG inheritance start -->
+
 ##### sameSet() {#sameset}
 
 ```ts
@@ -1374,6 +1446,8 @@ readonly [`Mark`](#mark)[]
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### setFrom() {#setfrom}
 
 ```ts
@@ -1412,6 +1486,8 @@ unsorted array of marks.
 
 readonly [`Mark`](#mark)[]
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -1445,6 +1521,8 @@ new MarkType(): MarkType;
 
 [`MarkType`](#marktype-1)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### name {#name}
@@ -1455,6 +1533,8 @@ readonly name: string;
 
 The name of the mark type.
 
+<!-- DEBUG inheritance start -->
+
 ##### schema {#schema-1}
 
 ```ts
@@ -1463,6 +1543,8 @@ readonly schema: Schema;
 
 The schema that this mark type instance is part of.
 
+<!-- DEBUG inheritance start -->
+
 ##### spec {#spec}
 
 ```ts
@@ -1470,6 +1552,8 @@ readonly spec: MarkSpec;
 ```
 
 The spec on which the type is based.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -1512,6 +1596,8 @@ they have defaults, will be added.
 
 [`Mark`](#mark)
 
+<!-- DEBUG inheritance start -->
+
 ##### excludes() {#excludes}
 
 ```ts
@@ -1550,6 +1636,8 @@ Queries whether a given mark type is
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### isInSet() {#isinset-2}
 
 ```ts
@@ -1586,6 +1674,8 @@ readonly [`Mark`](#mark)[]
 ###### Returns
 
 `undefined` \| [`Mark`](#mark)
+
+<!-- DEBUG inheritance start -->
 
 ##### removeFromSet() {#removefromset-2}
 
@@ -1624,6 +1714,8 @@ readonly [`Mark`](#mark)[]
 ###### Returns
 
 readonly [`Mark`](#mark)[]
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1732,6 +1824,8 @@ The depth of the node that this range points into.
 
 [`NodeRange`](#noderange)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### $from {#from}
@@ -1745,6 +1839,8 @@ A resolved position along the start of the content. May have a
 these are the positions that were used to compute the range,
 not re-resolved positions directly at its boundaries.
 
+<!-- DEBUG inheritance start -->
+
 ##### $to {#to}
 
 ```ts
@@ -1754,6 +1850,8 @@ readonly $to: ResolvedPos;
 A position along the end of the content. See
 caveat for [`$from`](https://prosemirror.net/docs/ref/#model.NodeRange.$from).
 
+<!-- DEBUG inheritance start -->
+
 ##### depth {#depth}
 
 ```ts
@@ -1761,6 +1859,8 @@ readonly depth: number;
 ```
 
 The depth of the node that this range points into.
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -1778,6 +1878,8 @@ The position at the end of the range.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### endIndex {#endindex}
 
 ###### Get Signature
@@ -1791,6 +1893,8 @@ The end index of the range in the parent node.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 ##### parent {#parent}
 
@@ -1806,6 +1910,8 @@ The parent node that the range points into.
 
 [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### start {#start}
 
 ###### Get Signature
@@ -1820,6 +1926,8 @@ The position at the start of the range.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### startIndex {#startindex}
 
 ###### Get Signature
@@ -1833,6 +1941,8 @@ The start index of the range in the parent node.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -1867,6 +1977,8 @@ new NodeType(): NodeType;
 
 [`NodeType`](#nodetype)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### contentMatch {#contentmatch-1}
@@ -1877,6 +1989,8 @@ contentMatch: ContentMatch;
 
 The starting match of the node type's content expression.
 
+<!-- DEBUG inheritance start -->
+
 ##### inlineContent {#inlinecontent}
 
 ```ts
@@ -1884,6 +1998,8 @@ inlineContent: boolean;
 ```
 
 True if this node type has inline content.
+
+<!-- DEBUG inheritance start -->
 
 ##### isBlock {#isblock}
 
@@ -1893,6 +2009,8 @@ isBlock: boolean;
 
 True if this is a block type
 
+<!-- DEBUG inheritance start -->
+
 ##### isText {#istext}
 
 ```ts
@@ -1900,6 +2018,8 @@ isText: boolean;
 ```
 
 True if this is the text node type.
+
+<!-- DEBUG inheritance start -->
 
 ##### markSet {#markset}
 
@@ -1910,6 +2030,8 @@ markSet: null | readonly MarkType[];
 The set of marks allowed in this node. `null` means all marks
 are allowed.
 
+<!-- DEBUG inheritance start -->
+
 ##### name {#name-1}
 
 ```ts
@@ -1917,6 +2039,8 @@ readonly name: string;
 ```
 
 The name the node type has in this schema.
+
+<!-- DEBUG inheritance start -->
 
 ##### schema {#schema-2}
 
@@ -1926,6 +2050,8 @@ readonly schema: Schema;
 
 A link back to the `Schema` the node type belongs to.
 
+<!-- DEBUG inheritance start -->
+
 ##### spec {#spec-1}
 
 ```ts
@@ -1933,6 +2059,8 @@ readonly spec: NodeSpec;
 ```
 
 The spec that this type is based on
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -1951,6 +2079,8 @@ directly editable content.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### isInline {#isinline}
 
 ###### Get Signature
@@ -1965,6 +2095,8 @@ True if this is an inline type.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### isLeaf {#isleaf}
 
 ###### Get Signature
@@ -1978,6 +2110,8 @@ True for node types that allow no content.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### isTextblock {#istextblock}
 
@@ -1994,6 +2128,8 @@ content.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### whitespace {#whitespace}
 
 ###### Get Signature
@@ -2007,6 +2143,8 @@ The node type's [whitespace](https://prosemirror.net/docs/ref/#model.NodeSpec.wh
 ###### Returns
 
 `"pre"` \| `"normal"`
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -2047,6 +2185,8 @@ readonly [`Mark`](#mark)[]
 
 readonly [`Mark`](#mark)[]
 
+<!-- DEBUG inheritance start -->
+
 ##### allowsMarks() {#allowsmarks}
 
 ```ts
@@ -2083,6 +2223,8 @@ readonly [`Mark`](#mark)[]
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### allowsMarkType() {#allowsmarktype}
 
@@ -2121,6 +2263,8 @@ Check whether the given mark type is allowed in this node.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### compatibleContent() {#compatiblecontent}
 
 ```ts
@@ -2158,6 +2302,8 @@ the given node type.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### create() {#create-2}
 
@@ -2232,6 +2378,8 @@ readonly [`Mark`](#mark)[]
 
 [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### createAndFill() {#createandfill}
 
 ```ts
@@ -2305,6 +2453,8 @@ readonly [`Mark`](#mark)[]
 
 `null` \| [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### createChecked() {#createchecked}
 
 ```ts
@@ -2375,6 +2525,8 @@ readonly [`Mark`](#mark)[]
 
 [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### hasRequiredAttrs() {#hasrequiredattrs}
 
 ```ts
@@ -2386,6 +2538,8 @@ Tells you whether this node type has any required attributes.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### isInGroup() {#isingroup}
 
@@ -2425,6 +2579,8 @@ Return true when this node type is part of the given
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### validContent() {#validcontent}
 
 ```ts
@@ -2463,6 +2619,8 @@ type.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -2497,6 +2655,8 @@ new ProseMirrorFragment(): ProseMirrorFragment;
 
 [`ProseMirrorFragment`](#prosemirrorfragment)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### content {#content}
@@ -2507,6 +2667,8 @@ readonly content: readonly ProseMirrorNode[];
 
 The child nodes in this fragment.
 
+<!-- DEBUG inheritance start -->
+
 ##### size {#size}
 
 ```ts
@@ -2515,6 +2677,8 @@ readonly size: number;
 
 The size of the fragment, which is the total of the size of
 its content nodes.
+
+<!-- DEBUG inheritance start -->
 
 ##### empty {#empty}
 
@@ -2525,6 +2689,8 @@ static empty: ProseMirrorFragment;
 An empty fragment. Intended to be reused whenever a node doesn't
 contain anything (rather than allocating a new empty fragment for
 each leaf node).
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -2542,6 +2708,8 @@ The number of child nodes in this fragment.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### firstChild {#firstchild}
 
 ###### Get Signature
@@ -2556,6 +2724,8 @@ The first child of the fragment, or `null` if it is empty.
 
 `null` \| [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### lastChild {#lastchild}
 
 ###### Get Signature
@@ -2569,6 +2739,8 @@ The last child of the fragment, or `null` if it is empty.
 ###### Returns
 
 `null` \| [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -2610,6 +2782,8 @@ fragment.
 
 [`ProseMirrorFragment`](#prosemirrorfragment)
 
+<!-- DEBUG inheritance start -->
+
 ##### addToStart() {#addtostart}
 
 ```ts
@@ -2647,6 +2821,8 @@ fragment.
 ###### Returns
 
 [`ProseMirrorFragment`](#prosemirrorfragment)
+
+<!-- DEBUG inheritance start -->
 
 ##### append() {#append}
 
@@ -2686,6 +2862,8 @@ fragment and the other.
 
 [`ProseMirrorFragment`](#prosemirrorfragment)
 
+<!-- DEBUG inheritance start -->
+
 ##### child() {#child}
 
 ```ts
@@ -2723,6 +2901,8 @@ index is out of range.
 ###### Returns
 
 [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 ##### cut() {#cut}
 
@@ -2773,6 +2953,8 @@ Cut out the sub-fragment between the two given positions.
 
 [`ProseMirrorFragment`](#prosemirrorfragment)
 
+<!-- DEBUG inheritance start -->
+
 ##### descendants() {#descendants}
 
 ```ts
@@ -2812,6 +2994,8 @@ relative to the start of the fragment. The callback may return
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ##### eq() {#eq-2}
 
 ```ts
@@ -2848,6 +3032,8 @@ Compare this fragment to another one.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### findDiffEnd() {#finddiffend}
 
@@ -2925,6 +3111,8 @@ nodes, an object with two separate positions is returned.
   `b`: `number`;
 \}
 
+<!-- DEBUG inheritance start -->
+
 ##### findDiffStart() {#finddiffstart}
 
 ```ts
@@ -2975,6 +3163,8 @@ fragment differ, or `null` if they are the same.
 
 `null` \| `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### forEach() {#foreach}
 
 ```ts
@@ -3013,6 +3203,8 @@ into this parent node, and its index.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ##### maybeChild() {#maybechild}
 
 ```ts
@@ -3049,6 +3241,8 @@ Get the child node at the given index, if it exists.
 ###### Returns
 
 `null` \| [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 ##### nodesBetween() {#nodesbetween}
 
@@ -3142,6 +3336,8 @@ into a node when the callback returns `false`.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ##### replaceChild() {#replacechild}
 
 ```ts
@@ -3191,6 +3387,8 @@ replaced by the given node.
 ###### Returns
 
 [`ProseMirrorFragment`](#prosemirrorfragment)
+
+<!-- DEBUG inheritance start -->
 
 ##### textBetween() {#textbetween}
 
@@ -3273,6 +3471,8 @@ Extract the text between `from` and `to`. See the same method on
 
 `string`
 
+<!-- DEBUG inheritance start -->
+
 ##### toJSON() {#tojson-2}
 
 ```ts
@@ -3285,6 +3485,8 @@ Create a JSON-serializeable representation of this fragment.
 
 `any`
 
+<!-- DEBUG inheritance start -->
+
 ##### toString() {#tostring}
 
 ```ts
@@ -3296,6 +3498,8 @@ Return a debugging string that describes this fragment.
 ###### Returns
 
 `string`
+
+<!-- DEBUG inheritance start -->
 
 ##### from() {#from-1}
 
@@ -3341,6 +3545,8 @@ fragment containing those nodes.
 
 [`ProseMirrorFragment`](#prosemirrorfragment)
 
+<!-- DEBUG inheritance start -->
+
 ##### fromArray() {#fromarray}
 
 ```ts
@@ -3378,6 +3584,8 @@ readonly [`ProseMirrorNode`](#prosemirrornode)[]
 ###### Returns
 
 [`ProseMirrorFragment`](#prosemirrorfragment)
+
+<!-- DEBUG inheritance start -->
 
 ##### fromJSON() {#fromjson-2}
 
@@ -3428,6 +3636,8 @@ Deserialize a fragment from its JSON representation.
 
 [`ProseMirrorFragment`](#prosemirrorfragment)
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -3469,6 +3679,8 @@ new ProseMirrorNode(): ProseMirrorNode;
 
 [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### attrs {#attrs-1}
@@ -3481,6 +3693,8 @@ An object mapping attribute names to values. The kind of
 attributes allowed and required are
 [determined](https://prosemirror.net/docs/ref/#model.NodeSpec.attrs) by the node type.
 
+<!-- DEBUG inheritance start -->
+
 ##### content {#content-1}
 
 ```ts
@@ -3488,6 +3702,8 @@ readonly content: ProseMirrorFragment;
 ```
 
 A container holding the node's children.
+
+<!-- DEBUG inheritance start -->
 
 ##### marks {#marks-1}
 
@@ -3498,6 +3714,8 @@ readonly marks: readonly Mark[];
 The marks (things like whether it is emphasized or part of a
 link) applied to this node.
 
+<!-- DEBUG inheritance start -->
+
 ##### text {#text}
 
 ```ts
@@ -3506,6 +3724,8 @@ readonly text: undefined | string;
 
 For text nodes, this contains the node's text content.
 
+<!-- DEBUG inheritance start -->
+
 ##### type {#type-1}
 
 ```ts
@@ -3513,6 +3733,8 @@ readonly type: NodeType;
 ```
 
 The type of node that this is.
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -3530,6 +3752,8 @@ The number of children that the node has.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### children {#children}
 
 ###### Get Signature
@@ -3543,6 +3767,8 @@ The array of this node's child nodes.
 ###### Returns
 
 readonly [`ProseMirrorNode`](#prosemirrornode)[]
+
+<!-- DEBUG inheritance start -->
 
 ##### firstChild {#firstchild-1}
 
@@ -3559,6 +3785,8 @@ children.
 
 `null` \| [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### inlineContent {#inlinecontent-1}
 
 ###### Get Signature
@@ -3572,6 +3800,8 @@ True when this node allows inline content.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### isAtom {#isatom-1}
 
@@ -3591,6 +3821,8 @@ an uneditable [node view](https://prosemirror.net/docs/ref/#view.NodeView)).
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### isBlock {#isblock-1}
 
 ###### Get Signature
@@ -3604,6 +3836,8 @@ True when this is a block (non-inline node)
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### isInline {#isinline-1}
 
@@ -3620,6 +3854,8 @@ appear among text).
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### isLeaf {#isleaf-1}
 
 ###### Get Signature
@@ -3634,6 +3870,8 @@ True when this is a leaf node.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### isText {#istext-1}
 
 ###### Get Signature
@@ -3647,6 +3885,8 @@ True when this is a text node.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### isTextblock {#istextblock-1}
 
@@ -3663,6 +3903,8 @@ content.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### lastChild {#lastchild-1}
 
 ###### Get Signature
@@ -3677,6 +3919,8 @@ children.
 ###### Returns
 
 `null` \| [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 ##### nodeSize {#nodesize}
 
@@ -3696,6 +3940,8 @@ start and end token).
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### textContent {#textcontent}
 
 ###### Get Signature
@@ -3710,6 +3956,8 @@ children.
 ###### Returns
 
 `string`
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -3752,6 +4000,8 @@ merging completely incompatible nodes).
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### canReplace() {#canreplace}
 
@@ -3847,6 +4097,8 @@ replacement fragment.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### canReplaceWith() {#canreplacewith}
 
 ```ts
@@ -3925,6 +4177,8 @@ readonly [`Mark`](#mark)[]
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### check() {#check}
 
 ```ts
@@ -3937,6 +4191,8 @@ schema, and raise an exception when they do not.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ##### child() {#child-2}
 
@@ -3975,6 +4231,8 @@ index is out of range.
 ###### Returns
 
 [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 ##### childAfter() {#childafter}
 
@@ -4021,17 +4279,25 @@ node.
 index: number;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### node
 
 ```ts
 node: null | ProseMirrorNode;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### offset
 
 ```ts
 offset: number;
 ```
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ##### childBefore() {#childbefore}
 
@@ -4078,17 +4344,25 @@ node.
 index: number;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### node
 
 ```ts
 node: null | ProseMirrorNode;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### offset
 
 ```ts
 offset: number;
 ```
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ##### contentMatchAt() {#contentmatchat}
 
@@ -4127,6 +4401,8 @@ Get the content match in this node at the given index.
 
 [`ContentMatch`](#contentmatch)
 
+<!-- DEBUG inheritance start -->
+
 ##### copy() {#copy}
 
 ```ts
@@ -4164,6 +4440,8 @@ the given content (or empty, if no content is given).
 ###### Returns
 
 [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 ##### cut() {#cut-2}
 
@@ -4216,6 +4494,8 @@ the node.
 
 [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### descendants() {#descendants-2}
 
 ```ts
@@ -4254,6 +4534,8 @@ descend into a node when the callback returns `false`.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ##### eq() {#eq-4}
 
 ```ts
@@ -4290,6 +4572,8 @@ Test whether two nodes represent the same piece of document.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### forEach() {#foreach-2}
 
@@ -4328,6 +4612,8 @@ into this parent node, and its index.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ##### hasMarkup() {#hasmarkup}
 
@@ -4394,6 +4680,8 @@ readonly [`Mark`](#mark)[]
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### mark() {#mark-1}
 
 ```ts
@@ -4432,6 +4720,8 @@ readonly [`Mark`](#mark)[]
 
 [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### maybeChild() {#maybechild-2}
 
 ```ts
@@ -4469,6 +4759,8 @@ Get the child node at the given index, if it exists.
 
 `null` \| [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### nodeAt() {#nodeat}
 
 ```ts
@@ -4505,6 +4797,8 @@ Find the node directly after the given position.
 ###### Returns
 
 `null` \| [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 ##### nodesBetween() {#nodesbetween-2}
 
@@ -4590,6 +4884,8 @@ starting position to count from.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ##### rangeHasMark() {#rangehasmark}
 
 ```ts
@@ -4654,6 +4950,8 @@ between the two given positions.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### replace() {#replace}
 
@@ -4724,6 +5022,8 @@ into. If any of this is violated, an error of type
 
 [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### resolve() {#resolve}
 
 ```ts
@@ -4762,6 +5062,8 @@ Resolve the given position in the document, returning an
 
 [`ResolvedPos`](#resolvedpos)
 
+<!-- DEBUG inheritance start -->
+
 ##### sameMarkup() {#samemarkup}
 
 ```ts
@@ -4799,6 +5101,8 @@ those of another. Returns `true` if both have the same markup.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### slice() {#slice}
 
@@ -4864,6 +5168,8 @@ return it as a `Slice` object.
 ###### Returns
 
 [`Slice`](#slice-2)
+
+<!-- DEBUG inheritance start -->
 
 ##### textBetween() {#textbetween-2}
 
@@ -4949,6 +5255,8 @@ inserted for every non-text leaf node encountered, otherwise
 
 `string`
 
+<!-- DEBUG inheritance start -->
+
 ##### toJSON() {#tojson-4}
 
 ```ts
@@ -4960,6 +5268,8 @@ Return a JSON-serializeable representation of this node.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ##### toString() {#tostring-2}
 
@@ -4973,6 +5283,8 @@ purposes.
 ###### Returns
 
 `string`
+
+<!-- DEBUG inheritance start -->
 
 ##### fromJSON() {#fromjson-4}
 
@@ -5022,6 +5334,8 @@ Deserialize a node from its JSON representation.
 ###### Returns
 
 [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -5083,6 +5397,8 @@ new ReplaceError(message?: string): ReplaceError;
 
 [`ReplaceError`](#replaceerror)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -5136,6 +5452,8 @@ new ReplaceError(message?: string, options?: ErrorOptions): ReplaceError;
 
 [`ReplaceError`](#replaceerror)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -5179,6 +5497,8 @@ new ResolvedPos(): ResolvedPos;
 
 [`ResolvedPos`](#resolvedpos)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### depth {#depth-1}
@@ -5191,6 +5511,8 @@ The number of levels the parent node is from the root. If this
 position points directly into the root node, it is 0. If it
 points into a top-level paragraph, 1, and so on.
 
+<!-- DEBUG inheritance start -->
+
 ##### parentOffset {#parentoffset}
 
 ```ts
@@ -5199,6 +5521,8 @@ readonly parentOffset: number;
 
 The offset this position has into its parent node.
 
+<!-- DEBUG inheritance start -->
+
 ##### pos {#pos}
 
 ```ts
@@ -5206,6 +5530,8 @@ readonly pos: number;
 ```
 
 The position that was resolved.
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -5223,6 +5549,8 @@ The root node in which the position was resolved.
 
 [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### nodeAfter {#nodeafter}
 
 ###### Get Signature
@@ -5238,6 +5566,8 @@ position is returned.
 ###### Returns
 
 `null` \| [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 ##### nodeBefore {#nodebefore}
 
@@ -5255,6 +5585,8 @@ before the position is returned.
 
 `null` \| [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### parent {#parent-1}
 
 ###### Get Signature
@@ -5271,6 +5603,8 @@ the parent—text nodes are ‘flat’ in this model, and have no content.
 
 [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### textOffset {#textoffset}
 
 ###### Get Signature
@@ -5286,6 +5620,8 @@ Will be zero for positions that point between nodes.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -5327,6 +5663,8 @@ given level, or the original position when `depth` is `this.depth + 1`.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### before() {#before}
 
 ```ts
@@ -5365,6 +5703,8 @@ position.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 ##### blockRange() {#blockrange}
 
@@ -5421,6 +5761,8 @@ node to see if a range into that parent is acceptable.
 
 `null` \| [`NodeRange`](#noderange)
 
+<!-- DEBUG inheritance start -->
+
 ##### end() {#end-1}
 
 ```ts
@@ -5458,6 +5800,8 @@ level.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 ##### index() {#index}
 
@@ -5498,6 +5842,8 @@ example, `p.index(0)` is 1 and `p.index(1)` is 2.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### indexAfter() {#indexafter}
 
 ```ts
@@ -5536,6 +5882,8 @@ given level.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### marks() {#marks-2}
 
 ```ts
@@ -5550,6 +5898,8 @@ node after it (if any) are returned.
 ###### Returns
 
 readonly [`Mark`](#mark)[]
+
+<!-- DEBUG inheritance start -->
 
 ##### marksAcross() {#marksacross}
 
@@ -5593,6 +5943,8 @@ case no marks should be preserved).
 
 `null` \| readonly [`Mark`](#mark)[]
 
+<!-- DEBUG inheritance start -->
+
 ##### max() {#max}
 
 ```ts
@@ -5629,6 +5981,8 @@ Return the greater of this and the given position.
 ###### Returns
 
 [`ResolvedPos`](#resolvedpos)
+
+<!-- DEBUG inheritance start -->
 
 ##### min() {#min}
 
@@ -5667,6 +6021,8 @@ Return the smaller of this and the given position.
 
 [`ResolvedPos`](#resolvedpos)
 
+<!-- DEBUG inheritance start -->
+
 ##### node() {#node}
 
 ```ts
@@ -5704,6 +6060,8 @@ same as `p.parent`.
 ###### Returns
 
 [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 ##### posAtIndex() {#posatindex}
 
@@ -5755,6 +6113,8 @@ given depth (which defaults to `this.depth`).
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### sameParent() {#sameparent}
 
 ```ts
@@ -5791,6 +6151,8 @@ Query whether the given position shares the same parent node.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### sharedDepth() {#shareddepth}
 
@@ -5830,6 +6192,8 @@ position share the same parent nodes.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### start() {#start-1}
 
 ```ts
@@ -5867,6 +6231,8 @@ level.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -5968,6 +6334,8 @@ Construct a schema from a schema [specification](https://prosemirror.net/docs/re
 
 [`Schema`](#schema-3)\<`Nodes`, `Marks`\>
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### cached {#cached}
@@ -5986,6 +6354,8 @@ in it, try to use property names unlikely to clash.)
 [key: string]: any
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### linebreakReplacement {#linebreakreplacement}
 
 ```ts
@@ -5996,6 +6366,8 @@ The [linebreak
 replacement](https://prosemirror.net/docs/ref/#model.NodeSpec.linebreakReplacement) node defined
 in this schema, if any.
 
+<!-- DEBUG inheritance start -->
+
 ##### marks {#marks-5}
 
 ```ts
@@ -6004,6 +6376,8 @@ marks: { readonly [name in string]: MarkType } & object;
 
 A map from mark names to mark type objects.
 
+<!-- DEBUG inheritance start -->
+
 ##### nodes {#nodes-2}
 
 ```ts
@@ -6011,6 +6385,8 @@ nodes: { readonly [name in string]: NodeType } & object;
 ```
 
 An object mapping the schema's node names to node type objects.
+
+<!-- DEBUG inheritance start -->
 
 ##### spec {#spec-2}
 
@@ -6030,17 +6406,25 @@ properties are
 marks: OrderedMap<MarkSpec>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### nodes
 
 ```ts
 nodes: OrderedMap<NodeSpec>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### topNode?
 
 ```ts
 optional topNode: string;
 ```
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ##### topNodeType {#topnodetype}
 
@@ -6050,6 +6434,8 @@ topNodeType: NodeType;
 
 The type of the [default top node](https://prosemirror.net/docs/ref/#model.SchemaSpec.topNode)
 for this schema.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -6102,6 +6488,8 @@ Create a mark with the given type and attributes.
 
 [`Mark`](#mark)
 
+<!-- DEBUG inheritance start -->
+
 ##### markFromJSON() {#markfromjson-2}
 
 ```ts
@@ -6139,6 +6527,8 @@ bound.
 ###### Returns
 
 [`Mark`](#mark)
+
+<!-- DEBUG inheritance start -->
 
 ##### node() {#node-2}
 
@@ -6223,6 +6613,8 @@ readonly [`Mark`](#mark)[]
 
 [`ProseMirrorNode`](#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### nodeFromJSON() {#nodefromjson}
 
 ```ts
@@ -6260,6 +6652,8 @@ bound.
 ###### Returns
 
 [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 ##### text() {#text-1}
 
@@ -6310,6 +6704,8 @@ allowed.
 ###### Returns
 
 [`ProseMirrorNode`](#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -6422,6 +6818,8 @@ The open depth at the end.
 
 [`Slice`](#slice-2)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### content {#content-2}
@@ -6432,6 +6830,8 @@ readonly content: ProseMirrorFragment;
 
 The slice's content.
 
+<!-- DEBUG inheritance start -->
+
 ##### openEnd {#openend}
 
 ```ts
@@ -6439,6 +6839,8 @@ readonly openEnd: number;
 ```
 
 The open depth at the end.
+
+<!-- DEBUG inheritance start -->
 
 ##### openStart {#openstart}
 
@@ -6448,6 +6850,8 @@ readonly openStart: number;
 
 The open depth at the start of the fragment.
 
+<!-- DEBUG inheritance start -->
+
 ##### empty {#empty-1}
 
 ```ts
@@ -6455,6 +6859,8 @@ static empty: Slice;
 ```
 
 The empty slice.
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -6471,6 +6877,8 @@ The size this slice would add when inserted into a document.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -6511,6 +6919,8 @@ Tests whether this slice is equal to another slice.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### toJSON() {#tojson-6}
 
 ```ts
@@ -6522,6 +6932,8 @@ Convert a slice to a JSON-serializable representation.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ##### fromJSON() {#fromjson-6}
 
@@ -6571,6 +6983,8 @@ Deserialize a slice from its JSON representation.
 ###### Returns
 
 [`Slice`](#slice-2)
+
+<!-- DEBUG inheritance start -->
 
 ##### maxOpen() {#maxopen}
 
@@ -6622,6 +7036,8 @@ open value on both side of the fragment.
 
 [`Slice`](#slice-2)
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Interfaces
@@ -6654,6 +7070,8 @@ value is provided. Attributes that have no default must be
 provided whenever a node or mark of a type that has them is
 created.
 
+<!-- DEBUG inheritance start -->
+
 ##### splittable? {#splittable}
 
 ```ts
@@ -6670,6 +7088,8 @@ If multiple block types in the schema share the same `splittable` attribute,
 ensure they are compatible in type and definition. This compatibility allows
 the attribute value to be correctly inherited across different block types.
 
+<!-- DEBUG inheritance start -->
+
 ##### validate? {#validate}
 
 ```ts
@@ -6684,6 +7104,8 @@ of the expected type or shape. When a string, it should be a
 `|`-separated string of primitive types (`"number"`, `"string"`,
 `"boolean"`, `"null"`, and `"undefined"`), and the library will
 raise an error when the value is not one of those types.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -6720,6 +7142,8 @@ optional attrs: Attrs;
 Attributes for the node or mark created by this rule. When
 `getAttrs` is provided, it takes precedence.
 
+<!-- DEBUG inheritance start -->
+
 ##### closeParent? {#closeparent}
 
 ```ts
@@ -6728,6 +7152,8 @@ optional closeParent: boolean;
 
 When true, finding an element that matches this rule will close
 the current node.
+
+<!-- DEBUG inheritance start -->
 
 ##### consuming? {#consuming}
 
@@ -6739,6 +7165,8 @@ By default, when a rule matches an element or style, no further
 rules get a chance to match it. By setting this to `false`, you
 indicate that even when this rule matches, other rules that come
 after it should also run.
+
+<!-- DEBUG inheritance start -->
 
 ##### context? {#context}
 
@@ -6758,6 +7186,8 @@ slash matches any sequence of ancestor nodes. To allow multiple
 different contexts, they can be separated by a pipe (`|`)
 character, as in `"blockquote/|list_item/"`.
 
+<!-- DEBUG inheritance start -->
+
 ##### ignore? {#ignore}
 
 ```ts
@@ -6766,6 +7196,8 @@ optional ignore: boolean;
 
 When true, ignore content that matches this rule.
 
+<!-- DEBUG inheritance start -->
+
 ##### mark? {#mark-5}
 
 ```ts
@@ -6773,6 +7205,8 @@ optional mark: string;
 ```
 
 The name of the mark type to wrap the matched content in.
+
+<!-- DEBUG inheritance start -->
 
 ##### priority? {#priority}
 
@@ -6786,6 +7220,8 @@ without a priority are counted as having priority 50. This
 property is only meaningful in a schema—when directly
 constructing a parser, the order of the rule array is used.
 
+<!-- DEBUG inheritance start -->
+
 ##### skip? {#skip}
 
 ```ts
@@ -6794,6 +7230,8 @@ optional skip: boolean;
 
 When true, ignore the node that matches this rule, but do parse
 its content.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -6843,6 +7281,8 @@ The attributes that marks of this type get.
 [name: string]: AttributeSpec
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### code? {#code}
 
 ```ts
@@ -6851,6 +7291,8 @@ optional code: boolean;
 
 Marks the content of this span as being code, which causes some
 commands and extensions to treat it differently.
+
+<!-- DEBUG inheritance start -->
 
 ##### excludes? {#excludes-2}
 
@@ -6872,6 +7314,8 @@ can set it to an empty string (or any string not containing the
 mark's own name) to allow multiple marks of a given type to
 coexist (as long as they have different attributes).
 
+<!-- DEBUG inheritance start -->
+
 ##### group? {#group}
 
 ```ts
@@ -6879,6 +7323,8 @@ optional group: string;
 ```
 
 The group or space-separated groups to which this mark belongs.
+
+<!-- DEBUG inheritance start -->
 
 ##### inclusive? {#inclusive}
 
@@ -6890,6 +7336,8 @@ Whether this mark should be active when the cursor is positioned
 at its end (or at its start when that is also the start of the
 parent node). Defaults to true.
 
+<!-- DEBUG inheritance start -->
+
 ##### parseDOM? {#parsedom}
 
 ```ts
@@ -6900,6 +7348,8 @@ Associates DOM parser information with this mark (see the
 corresponding [node spec field](https://prosemirror.net/docs/ref/#model.NodeSpec.parseDOM)). The
 `mark` field in the rules is implied.
 
+<!-- DEBUG inheritance start -->
+
 ##### spanning? {#spanning}
 
 ```ts
@@ -6908,6 +7358,8 @@ optional spanning: boolean;
 
 Determines whether marks of this type can span multiple adjacent
 nodes when serialized to DOM/HTML. Defaults to true.
+
+<!-- DEBUG inheritance start -->
 
 ##### toDOM()? {#todom}
 
@@ -6961,6 +7413,10 @@ the top node.
 
 [`DOMOutputSpec`](#domoutputspec)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -7004,6 +7460,8 @@ Can be set to true to indicate that, though this isn't a [leaf
 node](https://prosemirror.net/docs/ref/#model.NodeType.isLeaf), it doesn't have directly editable
 content and should be treated as a single unit in the view.
 
+<!-- DEBUG inheritance start -->
+
 ##### attrs? {#attrs-4}
 
 ```ts
@@ -7018,6 +7476,8 @@ The attributes that nodes of this type get.
 [name: string]: AttributeSpec
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### code? {#code-1}
 
 ```ts
@@ -7026,6 +7486,8 @@ optional code: boolean;
 
 Can be used to indicate that this node contains code, which
 causes some commands to behave differently.
+
+<!-- DEBUG inheritance start -->
 
 ##### content? {#content-3}
 
@@ -7037,6 +7499,8 @@ The content expression for this node, as described in the [schema
 guide](https://prosemirror.net/docs/guide/#schema.content_expressions). When not given,
 the node does not allow any content.
 
+<!-- DEBUG inheritance start -->
+
 ##### defining? {#defining}
 
 ```ts
@@ -7046,6 +7510,8 @@ optional defining: boolean;
 When enabled, enables both
 [`definingAsContext`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingAsContext) and
 [`definingForContent`](https://prosemirror.net/docs/ref/#model.NodeSpec.definingForContent).
+
+<!-- DEBUG inheritance start -->
 
 ##### definingAsContext? {#definingascontext}
 
@@ -7058,6 +7524,8 @@ node during replace operations (such as paste). Non-defining (the
 default) nodes get dropped when their entire content is replaced,
 whereas defining nodes persist and wrap the inserted content.
 
+<!-- DEBUG inheritance start -->
+
 ##### definingForContent? {#definingforcontent}
 
 ```ts
@@ -7068,6 +7536,8 @@ In inserted content the defining parents of the content are
 preserved when possible. Typically, non-default-paragraph
 textblock types, and possibly list items, are marked as defining.
 
+<!-- DEBUG inheritance start -->
+
 ##### disableDropCursor? {#disabledropcursor}
 
 ```ts
@@ -7075,6 +7545,8 @@ optional disableDropCursor:
   | boolean
   | (view: EditorView, pos: object, event: DragEvent) => boolean;
 ```
+
+<!-- DEBUG inheritance start -->
 
 ##### draggable? {#draggable}
 
@@ -7084,6 +7556,8 @@ optional draggable: boolean;
 
 Determines whether nodes of this type can be dragged without
 being selected. Defaults to false.
+
+<!-- DEBUG inheritance start -->
 
 ##### group? {#group-1}
 
@@ -7095,6 +7569,8 @@ The group or space-separated groups to which this node belongs,
 which can be referred to in the content expressions for the
 schema.
 
+<!-- DEBUG inheritance start -->
+
 ##### inline? {#inline}
 
 ```ts
@@ -7102,6 +7578,8 @@ optional inline: boolean;
 ```
 
 Should be set to true for inline nodes. (Implied for text nodes.)
+
+<!-- DEBUG inheritance start -->
 
 ##### isolating? {#isolating}
 
@@ -7113,6 +7591,8 @@ When enabled (default is false), the sides of nodes of this type
 count as boundaries that regular editing operations, like
 backspacing or lifting, won't cross. An example of a node that
 should probably have this enabled is a table cell.
+
+<!-- DEBUG inheritance start -->
 
 ##### leafText()? {#leaftext}
 
@@ -7154,6 +7634,10 @@ this type should be serialized to a string (as used by
 
 `string`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### linebreakReplacement? {#linebreakreplacement-1}
 
 ```ts
@@ -7168,6 +7652,8 @@ node and block types that don't but have
 between newline characters to or from linebreak nodes as
 appropriate.
 
+<!-- DEBUG inheritance start -->
+
 ##### marks? {#marks-6}
 
 ```ts
@@ -7179,6 +7665,8 @@ space-separated string referring to mark names or groups, `"_"`
 to explicitly allow all marks, or `""` to disallow marks. When
 not given, nodes with inline content default to allowing all
 marks, other nodes default to not allowing marks.
+
+<!-- DEBUG inheritance start -->
 
 ##### parseDOM? {#parsedom-1}
 
@@ -7193,6 +7681,8 @@ implied (the name of this node will be filled in automatically).
 If you supply your own parser, you do not need to also specify
 parsing rules in your schema.
 
+<!-- DEBUG inheritance start -->
+
 ##### selectable? {#selectable}
 
 ```ts
@@ -7202,6 +7692,8 @@ optional selectable: boolean;
 Controls whether nodes of this type can be selected as a [node
 selection](https://prosemirror.net/docs/ref/#state.NodeSelection). Defaults to true for non-text
 nodes.
+
+<!-- DEBUG inheritance start -->
 
 ##### toDebugString()? {#todebugstring}
 
@@ -7240,6 +7732,10 @@ to a string representation for debugging (e.g. in error messages).
 ###### Returns
 
 `string`
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ##### toDOM()? {#todom-1}
 
@@ -7289,6 +7785,10 @@ shouldn't override that in your text node spec.
 
 [`DOMOutputSpec`](#domoutputspec)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### whitespace? {#whitespace-1}
 
 ```ts
@@ -7304,6 +7804,8 @@ given, but [`code`](https://prosemirror.net/docs/ref/#model.NodeSpec.code) is tr
 will default to `"pre"`. Note that this option doesn't influence
 the way the node is rendered—that should be handled by `toDOM`
 and/or styling.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7341,6 +7843,8 @@ A set of additional nodes to count as
 [context](https://prosemirror.net/docs/ref/#model.ParseRule.context) when parsing, above the
 given [top node](https://prosemirror.net/docs/ref/#model.ParseOptions.topNode).
 
+<!-- DEBUG inheritance start -->
+
 ##### findPositions? {#findpositions}
 
 ```ts
@@ -7359,17 +7863,25 @@ in the parsed content will not be written to.
 node: Node;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### offset
 
 ```ts
 offset: number;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### pos?
 
 ```ts
 optional pos: number;
 ```
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ##### from? {#from-3}
 
@@ -7378,6 +7890,8 @@ optional from: number;
 ```
 
 The child node index to start parsing from.
+
+<!-- DEBUG inheritance start -->
 
 ##### preserveWhitespace? {#preservewhitespace}
 
@@ -7389,6 +7903,8 @@ By default, whitespace is collapsed as per HTML's rules. Pass
 `true` to preserve whitespace, but normalize newlines to
 spaces, and `"full"` to preserve whitespace entirely.
 
+<!-- DEBUG inheritance start -->
+
 ##### to? {#to-1}
 
 ```ts
@@ -7396,6 +7912,8 @@ optional to: number;
 ```
 
 The child node index to stop parsing at.
+
+<!-- DEBUG inheritance start -->
 
 ##### topMatch? {#topmatch}
 
@@ -7405,6 +7923,8 @@ optional topMatch: ContentMatch;
 
 Provide the starting content match that content parsed into the
 top node is matched against.
+
+<!-- DEBUG inheritance start -->
 
 ##### topNode? {#topnode}
 
@@ -7416,6 +7936,8 @@ By default, the content is parsed into the schema's default
 [top node type](https://prosemirror.net/docs/ref/#model.Schema.topNodeType). You can pass this
 option to use the type and attributes from a different node
 as the top container.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7488,6 +8010,8 @@ are provided determines the order in which [mark
 sets](https://prosemirror.net/docs/ref/#model.Mark.addToSet) are sorted and in which [parse
 rules](https://prosemirror.net/docs/ref/#model.MarkSpec.parseDOM) are tried.
 
+<!-- DEBUG inheritance start -->
+
 ##### nodes {#nodes-4}
 
 ```ts
@@ -7503,6 +8027,8 @@ determines which [parse rules](https://prosemirror.net/docs/ref/#model.NodeSpec.
 precedence by default, and which nodes come first in a given
 [group](https://prosemirror.net/docs/ref/#model.NodeSpec.group).
 
+<!-- DEBUG inheritance start -->
+
 ##### topNode? {#topnode-1}
 
 ```ts
@@ -7511,6 +8037,8 @@ optional topNode: string;
 
 The name of the default top-level node for the schema. Defaults
 to `"doc"`.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7544,6 +8072,8 @@ optional attrs: Attrs;
 
 Attributes for the node or mark created by this rule. When
 `getAttrs` is provided, it takes precedence.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7586,6 +8116,10 @@ Style rules can remove marks from the set of active marks.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### closeParent? {#closeparent-1}
 
 ```ts
@@ -7594,6 +8128,8 @@ optional closeParent: boolean;
 
 When true, finding an element that matches this rule will close
 the current node.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7609,6 +8145,8 @@ By default, when a rule matches an element or style, no further
 rules get a chance to match it. By setting this to `false`, you
 indicate that even when this rule matches, other rules that come
 after it should also run.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7631,6 +8169,8 @@ it to be in a paragraph that is inside a blockquote, and
 slash matches any sequence of ancestor nodes. To allow multiple
 different contexts, they can be separated by a pipe (`|`)
 character, as in `"blockquote/|list_item/"`.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7674,6 +8214,10 @@ created by this rule. Called with the style's value.
 
 `null` \| `false` \| [`Attrs`](#attrs-7)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### ignore? {#ignore-1}
 
 ```ts
@@ -7681,6 +8225,8 @@ optional ignore: boolean;
 ```
 
 When true, ignore content that matches this rule.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7693,6 +8239,8 @@ optional mark: string;
 ```
 
 The name of the mark type to wrap the matched content in.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7710,6 +8258,8 @@ without a priority are counted as having priority 50. This
 property is only meaningful in a schema—when directly
 constructing a parser, the order of the rule array is used.
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`priority`](#priority)
@@ -7722,6 +8272,8 @@ optional skip: boolean;
 
 When true, ignore the node that matches this rule, but do parse
 its content.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7742,6 +8294,8 @@ and return false to indicate that the match failed.) Rules
 matching styles may only produce [marks](https://prosemirror.net/docs/ref/#model.ParseRule.mark),
 not nodes.
 
+<!-- DEBUG inheritance start -->
+
 ##### tag? {#tag}
 
 ```ts
@@ -7751,6 +8305,8 @@ optional tag: undefined;
 Given to make TS see ParseRule as a tagged union
 
 ###### Hide
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7785,6 +8341,8 @@ optional attrs: Attrs;
 Attributes for the node or mark created by this rule. When
 `getAttrs` is provided, it takes precedence.
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`attrs`](#attrs-2)
@@ -7797,6 +8355,8 @@ optional closeParent: boolean;
 
 When true, finding an element that matches this rule will close
 the current node.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7812,6 +8372,8 @@ By default, when a rule matches an element or style, no further
 rules get a chance to match it. By setting this to `false`, you
 indicate that even when this rule matches, other rules that come
 after it should also run.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7833,6 +8395,8 @@ string that the parser must use to find the actual content
 element, or a function that returns the actual content element
 to the parser.
 
+<!-- DEBUG inheritance start -->
+
 ##### context? {#context-3}
 
 ```ts
@@ -7850,6 +8414,8 @@ it to be in a paragraph that is inside a blockquote, and
 slash matches any sequence of ancestor nodes. To allow multiple
 different contexts, they can be separated by a pipe (`|`)
 character, as in `"blockquote/|list_item/"`.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7895,6 +8461,10 @@ that is interpreted as an empty/default set of attributes.
 ###### Returns
 
 `null` \| `false` \| [`Attrs`](#attrs-7)
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ##### getContent()? {#getcontent}
 
@@ -7947,6 +8517,10 @@ this function is used.
 
 [`ProseMirrorFragment`](#prosemirrorfragment)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### ignore? {#ignore-2}
 
 ```ts
@@ -7954,6 +8528,8 @@ optional ignore: boolean;
 ```
 
 When true, ignore content that matches this rule.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7966,6 +8542,8 @@ optional mark: string;
 ```
 
 The name of the mark type to wrap the matched content in.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -7980,6 +8558,8 @@ optional namespace: string;
 The namespace to match. Nodes are only matched when the
 namespace matches or this property is null.
 
+<!-- DEBUG inheritance start -->
+
 ##### node? {#node-4}
 
 ```ts
@@ -7991,6 +8571,8 @@ rule should have either a `node`, `mark`, or `ignore` property
 (except when it appears in a [node](https://prosemirror.net/docs/ref/#model.NodeSpec.parseDOM) or
 [mark spec](https://prosemirror.net/docs/ref/#model.MarkSpec.parseDOM), in which case the `node`
 or `mark` property will be derived from its position).
+
+<!-- DEBUG inheritance start -->
 
 ##### preserveWhitespace? {#preservewhitespace-1}
 
@@ -8004,6 +8586,8 @@ be collapsed, `true` means that whitespace should be preserved
 but newlines normalized to spaces, and `"full"` means that
 newlines should also be preserved.
 
+<!-- DEBUG inheritance start -->
+
 ##### priority? {#priority-2}
 
 ```ts
@@ -8015,6 +8599,8 @@ schema are tried. Those with higher priority come first. Rules
 without a priority are counted as having priority 50. This
 property is only meaningful in a schema—when directly
 constructing a parser, the order of the rule array is used.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -8029,6 +8615,8 @@ optional skip: boolean;
 When true, ignore the node that matches this rule, but do parse
 its content.
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`GenericParseRule`](#genericparserule).[`skip`](#skip)
@@ -8040,6 +8628,8 @@ tag: string;
 ```
 
 A CSS selector describing the kind of DOM elements to match.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -8058,6 +8648,8 @@ An object holding the attributes of a node.
 ```ts
 [attr: string]: any
 ```
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -8091,6 +8683,8 @@ where a node's child nodes should be inserted. If it occurs in an
 output spec, it should be the only child element in its parent
 node.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### ParseRule {#parserule}
@@ -8101,6 +8695,8 @@ type ParseRule = TagParseRule | StyleParseRule;
 
 A value that describes how to parse a given DOM node or inline
 style as a ProseMirror node or mark.
+
+<!-- DEBUG inheritance start -->
 
 ## References
 

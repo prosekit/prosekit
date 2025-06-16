@@ -26,4 +26,6 @@ function defineStrike(): StrikeExtension;
 
 `StrikeExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

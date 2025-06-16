@@ -58,6 +58,8 @@ The position of the handle.
 "bottom-right"
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -94,6 +96,8 @@ Props for the [ResizableRoot](#resizableroot) component.
 optional aspectRatio: null | number;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -105,6 +109,8 @@ Partial.aspectRatio
 ```ts
 optional height: null | number;
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -150,6 +156,10 @@ optional onResizeEnd: (event: CustomEvent<{
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -194,6 +204,10 @@ optional onResizeStart: (event: CustomEvent<{
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -205,6 +219,8 @@ Partial.onResizeStart
 ```ts
 optional width: null | number;
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -222,6 +238,8 @@ Partial.width
 const ResizableHandle: typeof SvelteComponent;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### ResizableRoot {#resizableroot}
@@ -229,5 +247,7 @@ const ResizableHandle: typeof SvelteComponent;
 ```ts
 const ResizableRoot: typeof SvelteComponent;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

@@ -28,4 +28,6 @@ Make the editor read-only.
 
 `PlainExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

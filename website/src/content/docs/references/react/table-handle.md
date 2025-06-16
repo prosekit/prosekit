@@ -52,6 +52,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -78,6 +80,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -98,6 +102,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 ```ts
 'clippingAncestors'
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -121,6 +127,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -141,6 +149,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -165,6 +175,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -185,6 +197,8 @@ floating element is fully clipped.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -209,6 +223,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -230,6 +246,8 @@ multiple lines.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -249,6 +267,8 @@ The distance between the reference and floating element.
 ```ts
 6
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -271,6 +291,8 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 4
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -292,6 +314,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -311,6 +335,8 @@ The placement of the popover, relative to the hovered table cell.
 ```ts
 "top"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -333,6 +359,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -353,6 +381,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -375,6 +405,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -395,6 +427,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -414,6 +448,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -436,6 +472,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -472,6 +510,8 @@ Props for the [TableHandleColumnTrigger](#tablehandlecolumntrigger) component.
 ```ts
 optional editor: null | Editor<TableCommandsExtension>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -519,6 +559,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -545,6 +587,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -566,6 +610,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 'clippingAncestors'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -577,6 +623,8 @@ Partial.boundary
 ```ts
 optional editor: null | Editor<any>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -600,6 +648,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -616,6 +666,8 @@ optional eventTarget:
 
 By default, the menu element will listen for keydown events. You can pass a
 different element to listen for keydown events.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -637,6 +689,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -661,6 +715,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -681,6 +737,8 @@ floating element is fully clipped.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -705,6 +763,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -726,6 +786,8 @@ multiple lines.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -743,6 +805,8 @@ optional offset: OffsetOptions;
 ```ts
 {mainAxis: -4, crossAxis: 4}
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -785,6 +849,10 @@ optional onEscapeKeyDown: (event: EscapeKeyDownEvent) => void;
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -825,6 +893,10 @@ optional onFocusOutside: (event: FocusOutsideEvent) => void;
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -867,6 +939,10 @@ optional onInteractOutside: (event: InteractOutsideEvent) => void;
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -908,6 +984,10 @@ optional onPointerDownOutside: (event: PointerDownOutsideEvent) => void;
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -928,6 +1008,8 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 ```ts
 4
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -950,6 +1032,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -967,6 +1051,8 @@ optional placement: Placement;
 ```ts
 'bottom-start'
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -989,6 +1075,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1009,6 +1097,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1031,6 +1121,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1051,6 +1143,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1070,6 +1164,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1092,6 +1188,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1137,6 +1235,8 @@ The filter function to determine if an item should be shown in the listbox.
 defaultItemFilter
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1178,6 +1278,10 @@ optional onSelect: (event: CustomEvent<void>) => void;
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1197,6 +1301,8 @@ The query string to filter the listbox items.
 ```ts
 ""
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1218,6 +1324,8 @@ list. By default, a random value is generated.
 ```ts
 ""
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1287,6 +1395,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1313,6 +1423,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1333,6 +1445,8 @@ Please see https://floating-ui.com/docs/detectoverflow#boundary for more informa
 ```ts
 'clippingAncestors'
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1356,6 +1470,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1376,6 +1492,8 @@ the viewport.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1400,6 +1518,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1420,6 +1540,8 @@ floating element is fully clipped.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1444,6 +1566,8 @@ similar result to React's `<Portals>` or Vue's `<Teleport>`.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1465,6 +1589,8 @@ multiple lines.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1484,6 +1610,8 @@ The distance between the reference and floating element.
 ```ts
 6
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1506,6 +1634,8 @@ Please see https://floating-ui.com/docs/detectoverflow#padding for more informat
 4
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1527,6 +1657,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1546,6 +1678,8 @@ The placement of the popover, relative to the hovered table cell.
 ```ts
 "left"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1568,6 +1702,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 'viewport'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1588,6 +1724,8 @@ reference element.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1610,6 +1748,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1630,6 +1770,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1649,6 +1791,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1671,6 +1815,8 @@ performant, but can cause conflicts with transform animations.
 ```ts
 false
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1707,6 +1853,8 @@ Props for the [TableHandleRowTrigger](#tablehandlerowtrigger) component.
 ```ts
 optional editor: null | Editor<TableCommandsExtension>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1749,6 +1897,10 @@ optional onSelect: (event: CustomEvent<void>) => void;
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -1765,6 +1917,8 @@ Partial.onSelect
 const TableHandleColumnRoot: ForwardRefExoticComponent<TableHandleColumnRootProps & RefAttributes<TableHandleColumnRootElement> & HTMLAttributes<TableHandleColumnRootElement>>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### TableHandleColumnTrigger {#tablehandlecolumntrigger}
@@ -1772,6 +1926,8 @@ const TableHandleColumnRoot: ForwardRefExoticComponent<TableHandleColumnRootProp
 ```ts
 const TableHandleColumnTrigger: ForwardRefExoticComponent<TableHandleColumnTriggerProps & RefAttributes<TableHandleColumnTriggerElement> & HTMLAttributes<TableHandleColumnTriggerElement>>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -1781,6 +1937,8 @@ const TableHandleColumnTrigger: ForwardRefExoticComponent<TableHandleColumnTrigg
 const TableHandlePopoverContent: ForwardRefExoticComponent<TableHandlePopoverContentProps & RefAttributes<TableHandlePopoverContentElement> & HTMLAttributes<TableHandlePopoverContentElement>>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### TableHandlePopoverItem {#tablehandlepopoveritem}
@@ -1788,6 +1946,8 @@ const TableHandlePopoverContent: ForwardRefExoticComponent<TableHandlePopoverCon
 ```ts
 const TableHandlePopoverItem: ForwardRefExoticComponent<TableHandlePopoverItemProps & RefAttributes<TableHandlePopoverItemElement> & HTMLAttributes<TableHandlePopoverItemElement>>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -1797,6 +1957,8 @@ const TableHandlePopoverItem: ForwardRefExoticComponent<TableHandlePopoverItemPr
 const TableHandleRoot: ForwardRefExoticComponent<TableHandleRootProps & RefAttributes<TableHandleRootElement> & HTMLAttributes<TableHandleRootElement>>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### TableHandleRowRoot {#tablehandlerowroot}
@@ -1805,6 +1967,8 @@ const TableHandleRoot: ForwardRefExoticComponent<TableHandleRootProps & RefAttri
 const TableHandleRowRoot: ForwardRefExoticComponent<TableHandleRowRootProps & RefAttributes<TableHandleRowRootElement> & HTMLAttributes<TableHandleRowRootElement>>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### TableHandleRowTrigger {#tablehandlerowtrigger}
@@ -1812,5 +1976,7 @@ const TableHandleRowRoot: ForwardRefExoticComponent<TableHandleRowRootProps & Re
 ```ts
 const TableHandleRowTrigger: ForwardRefExoticComponent<TableHandleRowTriggerProps & RefAttributes<TableHandleRowTriggerElement> & HTMLAttributes<TableHandleRowTriggerElement>>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

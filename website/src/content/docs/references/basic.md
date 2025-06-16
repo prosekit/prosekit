@@ -56,4 +56,6 @@ It's a combination of the following extension functions:
 
 `BasicExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

@@ -26,4 +26,6 @@ function defineUnderline(): UnderlineExtension;
 
 `UnderlineExtension`
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->

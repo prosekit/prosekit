@@ -36,6 +36,8 @@ sidebar:
 href: string;
 ```
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Functions
@@ -50,6 +52,8 @@ function defineLink(): LinkExtension;
 
 `LinkExtension`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### defineLinkCommands() {#definelinkcommands}
@@ -61,5 +65,7 @@ function defineLinkCommands(): LinkCommandsExtension;
 #### Returns
 
 `LinkCommandsExtension`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

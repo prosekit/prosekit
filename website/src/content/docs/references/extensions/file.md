@@ -129,6 +129,8 @@ The options for the upload task.
 
 [`UploadTask`](#uploadtask)\<`Result`\>
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### done {#done}
@@ -139,6 +141,8 @@ protected done: boolean = false;
 
 A boolean indicating whether the upload is complete (either successfully or with an error).
 
+<!-- DEBUG inheritance start -->
+
 ##### finished {#finished}
 
 ```ts
@@ -146,6 +150,8 @@ readonly finished: Promise<Result>;
 ```
 
 A promise that fulfills once the upload is complete, or rejects if an error occurs.
+
+<!-- DEBUG inheritance start -->
 
 ##### objectURL {#objecturl}
 
@@ -156,6 +162,8 @@ readonly objectURL: string;
 An [object URL](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL)
 representing the file to be uploaded. This URL will be revoked once the
 upload is complete successfully.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -196,6 +204,8 @@ Subscribes to progress updates. Returns a function to unsubscribe.
 
 `VoidFunction`
 
+<!-- DEBUG inheritance start -->
+
 ##### delete() {#delete}
 
 ```ts
@@ -232,6 +242,8 @@ Deletes an upload task by its object URL.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ##### get() {#get}
 
@@ -295,6 +307,8 @@ Finds an upload task by its object URL.
 
 `undefined` \| [`UploadTask`](#uploadtask)\<`Result`\>
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Interfaces
@@ -321,6 +335,8 @@ event: DragEvent;
 
 The event that triggered the drop.
 
+<!-- DEBUG inheritance start -->
+
 ##### file {#file}
 
 ```ts
@@ -328,6 +344,8 @@ file: File;
 ```
 
 The file that was dropped.
+
+<!-- DEBUG inheritance start -->
 
 ##### pos {#pos}
 
@@ -337,6 +355,8 @@ pos: number;
 
 The position of the document where the file was dropped.
 
+<!-- DEBUG inheritance start -->
+
 ##### view {#view}
 
 ```ts
@@ -344,6 +364,8 @@ view: EditorView;
 ```
 
 The editor view.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -371,6 +393,8 @@ event: ClipboardEvent;
 
 The event that triggered the paste.
 
+<!-- DEBUG inheritance start -->
+
 ##### file {#file-1}
 
 ```ts
@@ -379,6 +403,8 @@ file: File;
 
 The file that was pasted.
 
+<!-- DEBUG inheritance start -->
+
 ##### view {#view-1}
 
 ```ts
@@ -386,6 +412,8 @@ view: EditorView;
 ```
 
 The editor view.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -412,6 +440,8 @@ file: File;
 ```
 
 The file to be uploaded.
+
+<!-- DEBUG inheritance start -->
 
 ##### onProgress() {#onprogress}
 
@@ -450,6 +480,10 @@ A callback function that should be called with the upload progress updates.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -476,11 +510,15 @@ An interface representing the upload progress.
 loaded: number;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### total {#total}
 
 ```ts
 total: number;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -543,6 +581,10 @@ function to upload files to your desired destination.
 
 [`Promise`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<`Result`\>
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ## Functions
 
 ### defineFileDropHandler() {#definefiledrophandler}
@@ -580,6 +622,8 @@ function defineFileDropHandler(handler: FileDropHandler): PlainExtension;
 
 `PlainExtension`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### defineFilePasteHandler() {#definefilepastehandler}
@@ -616,5 +660,7 @@ function defineFilePasteHandler(handler: FilePasteHandler): PlainExtension;
 #### Returns
 
 `PlainExtension`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

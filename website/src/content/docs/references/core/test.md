@@ -96,6 +96,8 @@ new TestEditor<E>(instance: EditorInstance): TestEditor<E>;
 
 [`TestEditor`](#testeditor)\<`E`\>
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 ```ts
@@ -118,6 +120,8 @@ All [CommandAction](../core.md#commandaction)s defined by the editor.
 
 [`ExtractCommandActions`](../core.md#extractcommandactions)\<`E`\>
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Editor`](../core.md#editor).[`commands`](../core.md#editor#commands)
@@ -135,6 +139,8 @@ Whether the editor is focused.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -154,6 +160,8 @@ All [MarkAction](../core.md#markaction)s defined by the editor.
 
 [`ExtractMarkActions`](../core.md#extractmarkactions)\<`E`\>
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Editor`](../core.md#editor).[`marks`](../core.md#editor#marks)
@@ -171,6 +179,8 @@ Whether the editor is mounted.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -190,6 +200,8 @@ All [NodeAction](../core.md#nodeaction)s defined by the editor.
 
 [`ExtractNodeActions`](../core.md#extractnodeactions)\<`E`\>
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Editor`](../core.md#editor).[`nodes`](../core.md#editor#nodes)
@@ -207,6 +219,8 @@ The editor schema.
 ###### Returns
 
 [`Schema`](../pm/model.md#schema-3)\<`ExtractNodeNames`\<`E`\>, `ExtractMarkNames`\<`E`\>\>
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -226,6 +240,8 @@ The editor's current state.
 
 [`EditorState`](../pm/state.md#editorstate)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Editor`](../core.md#editor).[`state`](../core.md#editor#state)
@@ -244,6 +260,8 @@ The editor view.
 
 [`EditorView`](../pm/view.md#editorview)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Editor`](../core.md#editor).[`view`](../core.md#editor#view)
@@ -261,6 +279,8 @@ Blur the editor.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -304,6 +324,8 @@ can be executed, otherwise `false`.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Editor`](../core.md#editor).[`canExec`](../core.md#editor#canexec)
@@ -343,6 +365,8 @@ dispatchEvent(event: Event): void;
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ##### exec() {#exec}
 
 ```ts
@@ -381,6 +405,8 @@ executed, otherwise `false`.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Editor`](../core.md#editor).[`exec`](../core.md#editor#exec)
@@ -396,6 +422,8 @@ Focus the editor.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -438,6 +466,8 @@ Return a HTML string representing the editor's current document.
 
 `string`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Editor`](../core.md#editor).[`getDocHTML`](../core.md#editor#getdochtml)
@@ -453,6 +483,8 @@ Return a JSON object representing the editor's current document.
 ###### Returns
 
 [`NodeJSON`](../core.md#nodejson)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -498,6 +530,8 @@ Pass `null` or `undefined` to unmount the editor.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -549,6 +583,8 @@ const n = editor.nodes
 const doc = n.doc(n.paragraph('<a>Hello<b> world!'))
 editor.set(doc) // "Hello" is selected.
 ```
+
+<!-- DEBUG inheritance start -->
 
 ##### setContent() {#setcontent}
 
@@ -626,6 +662,8 @@ Optional. Specifies the new selection. It can be one of the following:
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Editor`](../core.md#editor).[`setContent`](../core.md#editor#setcontent)
@@ -641,6 +679,8 @@ Unmount the editor. This is equivalent to `mount(null)`.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -688,6 +728,8 @@ Update the editor's state.
 This is an advanced method. Use it only if you have a specific reason to
 directly manipulate the editor's state.
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Editor`](../core.md#editor).[`updateState`](../core.md#editor#updatestate)
@@ -729,6 +771,8 @@ extension.
 ###### Returns
 
 `VoidFunction`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -791,5 +835,7 @@ function createTestEditor<E>(options: EditorOptions<E>): TestEditor<E>;
 #### Returns
 
 [`TestEditor`](#testeditor)\<`E`\>
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

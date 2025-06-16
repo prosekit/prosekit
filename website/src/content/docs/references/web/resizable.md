@@ -44,6 +44,8 @@ new ResizableHandleElement(): ResizableHandleElement;
 
 [`ResizableHandleElement`](#resizablehandleelement)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -73,6 +75,8 @@ The position of the handle.
 ```ts
 "bottom-right"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -112,6 +116,8 @@ new ResizableRootElement(): ResizableRootElement;
 
 [`ResizableRootElement`](#resizablerootelement)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -126,6 +132,8 @@ ResizableRootElementBase.constructor
 aspectRatio: null | number;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -138,6 +146,8 @@ ResizableRootElementBase.aspectRatio
 height: null | number;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -149,6 +159,8 @@ ResizableRootElementBase.height
 ```ts
 width: null | number;
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -196,6 +208,8 @@ The position of the handle.
 "bottom-right"
 ```
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -223,6 +237,8 @@ resizeEnd: CustomEvent<{
 }>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### resizeStart {#resizestart}
 
 ```ts
@@ -231,6 +247,8 @@ resizeStart: CustomEvent<{
   width: number;
 }>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -256,17 +274,23 @@ resizeStart: CustomEvent<{
 aspectRatio: null | number;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### height {#height-1}
 
 ```ts
 height: null | number;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ##### width {#width-1}
 
 ```ts
 width: null | number;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

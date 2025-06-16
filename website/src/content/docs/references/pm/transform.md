@@ -118,6 +118,8 @@ The mark to add.
 
 [`AddMarkStep`](#addmarkstep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`constructor`](#constructor-10)
@@ -132,6 +134,8 @@ readonly from: number;
 
 The start of the marked range.
 
+<!-- DEBUG inheritance start -->
+
 ##### mark {#mark}
 
 ```ts
@@ -140,6 +144,8 @@ readonly mark: Mark;
 
 The mark to add.
 
+<!-- DEBUG inheritance start -->
+
 ##### to {#to}
 
 ```ts
@@ -147,6 +153,8 @@ readonly to: number;
 ```
 
 The end of the marked range.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -190,6 +198,8 @@ transformed document.
 
 [`StepResult`](#stepresult)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`apply`](#apply-16)
@@ -208,6 +218,8 @@ and the new document.
 
 [`StepMap`](#stepmap-2)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`getMap`](#getmap-16)
@@ -224,6 +236,8 @@ was before the step as argument.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -268,6 +282,8 @@ the step was entirely deleted by the mapping.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`map`](#map-18)
@@ -311,6 +327,8 @@ steps can't be merged.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`merge`](#merge-16)
@@ -329,6 +347,8 @@ the `stepType` property.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -383,6 +403,8 @@ through to the step class' own implementation of this method.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -494,6 +516,10 @@ fromJSON(schema: Schema, json: any): Step;
 
 [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`jsonID`](#jsonid-16)
@@ -582,6 +608,8 @@ The mark to add.
 
 [`AddNodeMarkStep`](#addnodemarkstep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`constructor`](#constructor-10)
@@ -596,6 +624,8 @@ readonly mark: Mark;
 
 The mark to add.
 
+<!-- DEBUG inheritance start -->
+
 ##### pos {#pos}
 
 ```ts
@@ -603,6 +633,8 @@ readonly pos: number;
 ```
 
 The position of the target node.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -646,6 +678,8 @@ transformed document.
 
 [`StepResult`](#stepresult)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`apply`](#apply-16)
@@ -663,6 +697,8 @@ and the new document.
 ###### Returns
 
 [`StepMap`](#stepmap-2)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -705,6 +741,8 @@ was before the step as argument.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -749,6 +787,8 @@ the step was entirely deleted by the mapping.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`map`](#map-18)
@@ -792,6 +832,8 @@ steps can't be merged.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`merge`](#merge-16)
@@ -810,6 +852,8 @@ the `stepType` property.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -864,6 +908,8 @@ through to the step class' own implementation of this method.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -975,6 +1021,10 @@ fromJSON(schema: Schema, json: any): Step;
 
 [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`jsonID`](#jsonid-16)
@@ -1083,6 +1133,8 @@ The attribute to set.
 
 [`AttrStep`](#attrstep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`constructor`](#constructor-10)
@@ -1097,6 +1149,8 @@ readonly attr: string;
 
 The attribute to set.
 
+<!-- DEBUG inheritance start -->
+
 ##### pos {#pos-1}
 
 ```ts
@@ -1105,11 +1159,15 @@ readonly pos: number;
 
 The position of the target node.
 
+<!-- DEBUG inheritance start -->
+
 ##### value {#value}
 
 ```ts
 readonly value: any;
 ```
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -1153,6 +1211,8 @@ transformed document.
 
 [`StepResult`](#stepresult)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`apply`](#apply-16)
@@ -1170,6 +1230,8 @@ and the new document.
 ###### Returns
 
 [`StepMap`](#stepmap-2)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -1212,6 +1274,8 @@ was before the step as argument.
 ###### Returns
 
 [`AttrStep`](#attrstep)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -1256,6 +1320,8 @@ the step was entirely deleted by the mapping.
 
 `null` \| [`AttrStep`](#attrstep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`map`](#map-18)
@@ -1299,6 +1365,8 @@ steps can't be merged.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`merge`](#merge-16)
@@ -1317,6 +1385,8 @@ the `stepType` property.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -1371,6 +1441,8 @@ through to the step class' own implementation of this method.
 ###### Returns
 
 [`AttrStep`](#attrstep)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -1482,6 +1554,10 @@ fromJSON(schema: Schema, json: any): Step;
 
 [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`jsonID`](#jsonid-16)
@@ -1570,6 +1646,8 @@ The attribute to set.
 
 [`DocAttrStep`](#docattrstep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`constructor`](#constructor-10)
@@ -1584,11 +1662,15 @@ readonly attr: string;
 
 The attribute to set.
 
+<!-- DEBUG inheritance start -->
+
 ##### value {#value-1}
 
 ```ts
 readonly value: any;
 ```
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -1632,6 +1714,8 @@ transformed document.
 
 [`StepResult`](#stepresult)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`apply`](#apply-16)
@@ -1649,6 +1733,8 @@ and the new document.
 ###### Returns
 
 [`StepMap`](#stepmap-2)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -1691,6 +1777,8 @@ was before the step as argument.
 ###### Returns
 
 [`DocAttrStep`](#docattrstep)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -1735,6 +1823,8 @@ the step was entirely deleted by the mapping.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`map`](#map-18)
@@ -1778,6 +1868,8 @@ steps can't be merged.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`merge`](#merge-16)
@@ -1796,6 +1888,8 @@ the `stepType` property.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -1850,6 +1944,8 @@ through to the step class' own implementation of this method.
 ###### Returns
 
 [`DocAttrStep`](#docattrstep)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -1960,6 +2056,10 @@ fromJSON(schema: Schema, json: any): Step;
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -2075,6 +2175,8 @@ The end position in the `maps` array.
 
 [`Mapping`](#mapping)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### from {#from-1}
@@ -2086,6 +2188,8 @@ from: number;
 The starting position in the `maps` array, used when `map` or
 `mapResult` is called.
 
+<!-- DEBUG inheritance start -->
+
 ##### to {#to-1}
 
 ```ts
@@ -2093,6 +2197,8 @@ to: number;
 ```
 
 The end position in the `maps` array.
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -2109,6 +2215,8 @@ The step maps in this mapping.
 ###### Returns
 
 readonly [`StepMap`](#stepmap-2)[]
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -2163,6 +2271,8 @@ image of this one.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ##### appendMapping() {#appendmapping}
 
 ```ts
@@ -2201,6 +2311,8 @@ mirroring information).
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ##### appendMappingInverted() {#appendmappinginverted}
 
 ```ts
@@ -2237,6 +2349,8 @@ Append the inverse of the given mapping to this one.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ##### getMirror() {#getmirror}
 
@@ -2277,6 +2391,8 @@ given offset, in this mapping (as per the second argument to
 
 `undefined` \| `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### invert() {#invert-8}
 
 ```ts
@@ -2288,6 +2404,8 @@ Create an inverted version of this mapping.
 ###### Returns
 
 [`Mapping`](#mapping)
+
+<!-- DEBUG inheritance start -->
 
 ##### map() {#map-8}
 
@@ -2340,6 +2458,8 @@ move when a chunk of content is inserted at the mapped position.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 ###### Implementation of
 
@@ -2399,6 +2519,8 @@ is deleted, the position itself is only considered deleted when
 
 [`MapResult`](#mapresult-2)
 
+<!-- DEBUG inheritance start -->
+
 ###### Implementation of
 
 [`Mappable`](#mappable).[`mapResult`](#mapresult-5)
@@ -2452,6 +2574,8 @@ Create a mapping that maps only through a part of this one.
 
 [`Mapping`](#mapping)
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -2483,6 +2607,8 @@ new MapResult(): MapResult;
 
 [`MapResult`](#mapresult-2)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### pos {#pos-2}
@@ -2492,6 +2618,8 @@ readonly pos: number;
 ```
 
 The mapped version of the position.
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -2511,6 +2639,8 @@ argument from the document.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### deletedAcross {#deletedacross}
 
 ###### Get Signature
@@ -2527,6 +2657,8 @@ position).
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### deletedAfter {#deletedafter}
 
 ###### Get Signature
@@ -2541,6 +2673,8 @@ True when the token after the mapped position was deleted.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### deletedBefore {#deletedbefore}
 
 ###### Get Signature
@@ -2554,6 +2688,8 @@ Tells you whether the token before the mapped position was deleted.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2659,6 +2795,8 @@ The mark to remove.
 
 [`RemoveMarkStep`](#removemarkstep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`constructor`](#constructor-10)
@@ -2673,6 +2811,8 @@ readonly from: number;
 
 The start of the unmarked range.
 
+<!-- DEBUG inheritance start -->
+
 ##### mark {#mark-2}
 
 ```ts
@@ -2681,6 +2821,8 @@ readonly mark: Mark;
 
 The mark to remove.
 
+<!-- DEBUG inheritance start -->
+
 ##### to {#to-2}
 
 ```ts
@@ -2688,6 +2830,8 @@ readonly to: number;
 ```
 
 The end of the unmarked range.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -2731,6 +2875,8 @@ transformed document.
 
 [`StepResult`](#stepresult)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`apply`](#apply-16)
@@ -2749,6 +2895,8 @@ and the new document.
 
 [`StepMap`](#stepmap-2)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`getMap`](#getmap-16)
@@ -2765,6 +2913,8 @@ was before the step as argument.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -2809,6 +2959,8 @@ the step was entirely deleted by the mapping.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`map`](#map-18)
@@ -2852,6 +3004,8 @@ steps can't be merged.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`merge`](#merge-16)
@@ -2870,6 +3024,8 @@ the `stepType` property.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -2924,6 +3080,8 @@ through to the step class' own implementation of this method.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -3035,6 +3193,10 @@ fromJSON(schema: Schema, json: any): Step;
 
 [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`jsonID`](#jsonid-16)
@@ -3123,6 +3285,8 @@ The mark to remove.
 
 [`RemoveNodeMarkStep`](#removenodemarkstep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`constructor`](#constructor-10)
@@ -3137,6 +3301,8 @@ readonly mark: Mark;
 
 The mark to remove.
 
+<!-- DEBUG inheritance start -->
+
 ##### pos {#pos-3}
 
 ```ts
@@ -3144,6 +3310,8 @@ readonly pos: number;
 ```
 
 The position of the target node.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -3187,6 +3355,8 @@ transformed document.
 
 [`StepResult`](#stepresult)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`apply`](#apply-16)
@@ -3204,6 +3374,8 @@ and the new document.
 ###### Returns
 
 [`StepMap`](#stepmap-2)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -3246,6 +3418,8 @@ was before the step as argument.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -3290,6 +3464,8 @@ the step was entirely deleted by the mapping.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`map`](#map-18)
@@ -3333,6 +3509,8 @@ steps can't be merged.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`merge`](#merge-16)
@@ -3351,6 +3529,8 @@ the `stepType` property.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -3405,6 +3585,8 @@ through to the step class' own implementation of this method.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -3515,6 +3697,10 @@ fromJSON(schema: Schema, json: any): Step;
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -3684,6 +3870,8 @@ inserted.
 
 [`ReplaceAroundStep`](#replacearoundstep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`constructor`](#constructor-10)
@@ -3698,6 +3886,8 @@ readonly from: number;
 
 The start position of the replaced range.
 
+<!-- DEBUG inheritance start -->
+
 ##### gapFrom {#gapfrom}
 
 ```ts
@@ -3706,6 +3896,8 @@ readonly gapFrom: number;
 
 The start of preserved range.
 
+<!-- DEBUG inheritance start -->
+
 ##### gapTo {#gapto}
 
 ```ts
@@ -3713,6 +3905,8 @@ readonly gapTo: number;
 ```
 
 The end of preserved range.
+
+<!-- DEBUG inheritance start -->
 
 ##### insert {#insert}
 
@@ -3723,6 +3917,8 @@ readonly insert: number;
 The position in the slice where the preserved range should be
 inserted.
 
+<!-- DEBUG inheritance start -->
+
 ##### slice {#slice-2}
 
 ```ts
@@ -3731,6 +3927,8 @@ readonly slice: Slice;
 
 The slice to insert.
 
+<!-- DEBUG inheritance start -->
+
 ##### to {#to-3}
 
 ```ts
@@ -3738,6 +3936,8 @@ readonly to: number;
 ```
 
 The end position of the replaced range.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -3781,6 +3981,8 @@ transformed document.
 
 [`StepResult`](#stepresult)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`apply`](#apply-16)
@@ -3798,6 +4000,8 @@ and the new document.
 ###### Returns
 
 [`StepMap`](#stepmap-2)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -3840,6 +4044,8 @@ was before the step as argument.
 ###### Returns
 
 [`ReplaceAroundStep`](#replacearoundstep)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -3884,6 +4090,8 @@ the step was entirely deleted by the mapping.
 
 `null` \| [`ReplaceAroundStep`](#replacearoundstep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`map`](#map-18)
@@ -3927,6 +4135,8 @@ steps can't be merged.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`merge`](#merge-16)
@@ -3945,6 +4155,8 @@ the `stepType` property.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -3999,6 +4211,8 @@ through to the step class' own implementation of this method.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -4109,6 +4323,10 @@ fromJSON(schema: Schema, json: any): Step;
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -4224,6 +4442,8 @@ The slice to insert.
 
 [`ReplaceStep`](#replacestep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`constructor`](#constructor-10)
@@ -4238,6 +4458,8 @@ readonly from: number;
 
 The start position of the replaced range.
 
+<!-- DEBUG inheritance start -->
+
 ##### slice {#slice-3}
 
 ```ts
@@ -4246,6 +4468,8 @@ readonly slice: Slice;
 
 The slice to insert.
 
+<!-- DEBUG inheritance start -->
+
 ##### to {#to-4}
 
 ```ts
@@ -4253,6 +4477,8 @@ readonly to: number;
 ```
 
 The end position of the replaced range.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -4296,6 +4522,8 @@ transformed document.
 
 [`StepResult`](#stepresult)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`apply`](#apply-16)
@@ -4313,6 +4541,8 @@ and the new document.
 ###### Returns
 
 [`StepMap`](#stepmap-2)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -4355,6 +4585,8 @@ was before the step as argument.
 ###### Returns
 
 [`ReplaceStep`](#replacestep)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -4399,6 +4631,8 @@ the step was entirely deleted by the mapping.
 
 `null` \| [`ReplaceStep`](#replacestep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`map`](#map-18)
@@ -4442,6 +4676,8 @@ steps can't be merged.
 
 `null` \| [`ReplaceStep`](#replacestep)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Step`](#step).[`merge`](#merge-16)
@@ -4460,6 +4696,8 @@ the `stepType` property.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -4514,6 +4752,8 @@ through to the step class' own implementation of this method.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -4625,6 +4865,10 @@ fromJSON(schema: Schema, json: any): Step;
 
 [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Step`](#step).[`jsonID`](#jsonid-16)
@@ -4678,6 +4922,8 @@ new Step(): Step;
 
 [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 #### Methods
 
 ##### apply() {#apply-16}
@@ -4720,6 +4966,8 @@ transformed document.
 
 [`StepResult`](#stepresult)
 
+<!-- DEBUG inheritance start -->
+
 ##### getMap() {#getmap-16}
 
 ```ts
@@ -4733,6 +4981,8 @@ and the new document.
 ###### Returns
 
 [`StepMap`](#stepmap-2)
+
+<!-- DEBUG inheritance start -->
 
 ##### invert() {#invert-18}
 
@@ -4771,6 +5021,8 @@ was before the step as argument.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ##### map() {#map-18}
 
@@ -4811,6 +5063,8 @@ the step was entirely deleted by the mapping.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ##### merge() {#merge-16}
 
 ```ts
@@ -4850,6 +5104,8 @@ steps can't be merged.
 
 `null` \| [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
 ##### toJSON() {#tojson-16}
 
 ```ts
@@ -4864,6 +5120,8 @@ the `stepType` property.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ##### fromJSON() {#fromjson-16}
 
@@ -4914,6 +5172,8 @@ through to the step class' own implementation of this method.
 ###### Returns
 
 [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 ##### jsonID() {#jsonid-16}
 
@@ -5021,6 +5281,10 @@ fromJSON(schema: Schema, json: any): Step;
 
 [`Step`](#step)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -5062,6 +5326,8 @@ represents a modified chunk as `[start, oldSize, newSize]`.
 
 [`StepMap`](#stepmap-2)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### empty {#empty}
@@ -5071,6 +5337,8 @@ static empty: StepMap;
 ```
 
 A StepMap that contains no changed ranges.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -5112,6 +5380,8 @@ this map.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ##### invert() {#invert-20}
 
 ```ts
@@ -5124,6 +5394,8 @@ map positions in the post-step document to the pre-step document.
 ###### Returns
 
 [`StepMap`](#stepmap-2)
+
+<!-- DEBUG inheritance start -->
 
 ##### map() {#map-20}
 
@@ -5176,6 +5448,8 @@ move when a chunk of content is inserted at the mapped position.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 ###### Implementation of
 
@@ -5235,6 +5509,8 @@ is deleted, the position itself is only considered deleted when
 
 [`MapResult`](#mapresult-2)
 
+<!-- DEBUG inheritance start -->
+
 ###### Implementation of
 
 [`Mappable`](#mappable).[`mapResult`](#mapresult-5)
@@ -5278,6 +5554,8 @@ sub-document to a larger document, or vice-versa.
 
 [`StepMap`](#stepmap-2)
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -5309,6 +5587,8 @@ new StepResult(): StepResult;
 
 [`StepResult`](#stepresult)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### doc {#doc}
@@ -5319,6 +5599,8 @@ readonly doc: null | ProseMirrorNode;
 
 The transformed document, if successful.
 
+<!-- DEBUG inheritance start -->
+
 ##### failed {#failed}
 
 ```ts
@@ -5326,6 +5608,8 @@ readonly failed: null | string;
 ```
 
 The failure message, if unsuccessful.
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -5365,6 +5649,8 @@ Create a failed step result.
 ###### Returns
 
 [`StepResult`](#stepresult)
+
+<!-- DEBUG inheritance start -->
 
 ##### fromReplace() {#fromreplace}
 
@@ -5445,6 +5731,8 @@ failed one if it throws a `ReplaceError`.
 
 [`StepResult`](#stepresult)
 
+<!-- DEBUG inheritance start -->
+
 ##### ok() {#ok}
 
 ```ts
@@ -5481,6 +5769,8 @@ Create a successful step result.
 ###### Returns
 
 [`StepResult`](#stepresult)
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -5554,6 +5844,8 @@ transform).
 
 [`Transform`](#transform)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### doc {#doc-1}
@@ -5565,6 +5857,8 @@ doc: ProseMirrorNode;
 The current document (the result of applying the steps in the
 transform).
 
+<!-- DEBUG inheritance start -->
+
 ##### docs {#docs}
 
 ```ts
@@ -5572,6 +5866,8 @@ readonly docs: ProseMirrorNode[];
 ```
 
 The documents before each of the steps.
+
+<!-- DEBUG inheritance start -->
 
 ##### mapping {#mapping-1}
 
@@ -5581,6 +5877,8 @@ readonly mapping: Mapping;
 
 A mapping with the maps for each of the steps in this transform.
 
+<!-- DEBUG inheritance start -->
+
 ##### steps {#steps}
 
 ```ts
@@ -5588,6 +5886,8 @@ readonly steps: Step[];
 ```
 
 The steps in this transform.
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -5605,6 +5905,8 @@ The starting document.
 
 [`ProseMirrorNode`](model.md#prosemirrornode)
 
+<!-- DEBUG inheritance start -->
+
 ##### docChanged {#docchanged}
 
 ###### Get Signature
@@ -5619,6 +5921,8 @@ steps).
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -5686,6 +5990,8 @@ Add the given mark to the inline content between `from` and `to`.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### addNodeMark() {#addnodemark}
 
 ```ts
@@ -5734,6 +6040,8 @@ Add a mark to the node at position `pos`.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### clearIncompatible() {#clearincompatible}
 
@@ -5802,6 +6110,8 @@ third argument.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### delete() {#delete}
 
 ```ts
@@ -5850,6 +6160,8 @@ Delete the content between the given positions.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### deleteRange() {#deleterange}
 
@@ -5900,6 +6212,8 @@ parent nodes until a valid replace is found.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### insert() {#insert-1}
 
@@ -5953,6 +6267,8 @@ Insert the given content at the given position.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### join() {#join}
 
 ```ts
@@ -6002,6 +6318,8 @@ last and first siblings are also joined, and so on.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### lift() {#lift}
 
@@ -6056,6 +6374,8 @@ sure the lift is valid.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### maybeStep() {#maybestep}
 
 ```ts
@@ -6093,6 +6413,8 @@ fails. Returns the step result.
 ###### Returns
 
 [`StepResult`](#stepresult)
+
+<!-- DEBUG inheritance start -->
 
 ##### removeMark() {#removemark}
 
@@ -6161,6 +6483,8 @@ remove all marks of any type.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### removeNodeMark() {#removenodemark}
 
 ```ts
@@ -6210,6 +6534,8 @@ position `pos`.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### replace() {#replace}
 
@@ -6275,6 +6601,8 @@ given `slice`.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### replaceRange() {#replacerange}
 
@@ -6356,6 +6684,8 @@ control over what happens.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### replaceRangeWith() {#replacerangewith}
 
 ```ts
@@ -6426,6 +6756,8 @@ that parent node.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### replaceWith() {#replacewith}
 
 ```ts
@@ -6493,6 +6825,8 @@ fragment, node, or array of nodes.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### setBlockType() {#setblocktype}
 
@@ -6575,6 +6909,8 @@ the given node type with the given attributes.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### setDocAttribute() {#setdocattribute}
 
 ```ts
@@ -6623,6 +6959,8 @@ Set a single attribute on the document to a new value.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### setNodeAttribute() {#setnodeattribute}
 
@@ -6689,6 +7027,8 @@ to set attributes on the document itself.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### setNodeMarkup() {#setnodemarkup}
 
@@ -6768,6 +7108,8 @@ readonly [`Mark`](model.md#mark)[]
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### split() {#split}
 
 ```ts
@@ -6841,6 +7183,8 @@ use after the split (with the outermost nodes coming first).
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### step() {#step-1}
 
 ```ts
@@ -6878,6 +7222,8 @@ error when the step fails.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### wrap() {#wrap}
 
@@ -6929,6 +7275,8 @@ readonly `object`[]
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7003,6 +7351,10 @@ move when a chunk of content is inserted at the mapped position.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### mapResult() {#mapresult-5}
 
 ```ts
@@ -7057,6 +7409,10 @@ is deleted, the position itself is only considered deleted when
 
 [`MapResult`](#mapresult-2)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ## Functions
@@ -7110,6 +7466,8 @@ joined.
 #### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -7195,6 +7553,8 @@ Check whether splitting at the given position is allowed.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### dropPoint() {#droppoint}
@@ -7263,6 +7623,8 @@ start or end of that node. Returns null when no position was found.
 #### Returns
 
 `null` \| `number`
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -7348,6 +7710,8 @@ content of `range`.
 
 `null` \| `object`[]
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### insertPoint() {#insertpoint}
@@ -7417,6 +7781,8 @@ null if no position was found.
 
 `null` \| `number`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### joinPoint() {#joinpoint}
@@ -7485,6 +7851,8 @@ point, if any.
 
 `undefined` \| `number`
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### liftTarget() {#lifttarget}
@@ -7525,6 +7893,8 @@ can be lifted. Will not go across
 #### Returns
 
 `null` \| `number`
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -7607,5 +7977,7 @@ would be a no-op (an empty slice over an empty range).
 #### Returns
 
 `null` \| [`Step`](#step)
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

@@ -34,6 +34,8 @@ Depending on the detected platform, this will hold
 [key: string]: Command
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### createParagraphNear {#createparagraphnear}
@@ -45,6 +47,8 @@ const createParagraphNear: Command;
 If a block node is selected, create an empty paragraph before (if
 it is its parent's first child) or after it.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### deleteSelection {#deleteselection}
@@ -54,6 +58,8 @@ const deleteSelection: Command;
 ```
 
 Delete the selection, if there is one.
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -66,6 +72,8 @@ const exitCode: Command;
 When the selection is in a node with a truthy
 [`code`](https://prosemirror.net/docs/ref/#model.NodeSpec.code) property in its spec, create a
 default block after the code block, and move the cursor there.
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -83,6 +91,8 @@ the document structure by lifting it out of its parent or moving it
 into a parent of the previous block. Will use the view for accurate
 (bidi-aware) start-of-textblock detection if given.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### joinDown {#joindown}
@@ -93,6 +103,8 @@ const joinDown: Command;
 
 Join the selected block, or the closest ancestor of the selection
 that can be joined, with the sibling after it.
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -108,6 +120,8 @@ and the one after it, either by joining them or by moving the other
 block closer to this one in the tree structure. Will use the view
 for accurate start-of-textblock detection if given.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### joinTextblockBackward {#jointextblockbackward}
@@ -119,6 +133,8 @@ const joinTextblockBackward: Command;
 A more limited form of [`joinBackward`](https://prosemirror.net/docs/ref/#commands.joinBackward)
 that only tries to join the current textblock to the one before
 it, if the cursor is at the start of a textblock.
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -132,6 +148,8 @@ A more limited form of [`joinForward`](https://prosemirror.net/docs/ref/#command
 that only tries to join the current textblock to the one after
 it, if the cursor is at the end of a textblock.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### joinUp {#joinup}
@@ -144,6 +162,8 @@ Join the selected block or, if there is a text selection, the
 closest ancestor block of the selection that can be joined, with
 the sibling above it.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### lift {#lift}
@@ -155,6 +175,8 @@ const lift: Command;
 Lift the selected block, or the closest ancestor block of the
 selection that can be lifted, out of its parent node.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### liftEmptyBlock {#liftemptyblock}
@@ -165,6 +187,8 @@ const liftEmptyBlock: Command;
 
 If the cursor is in an empty textblock that can be lifted, lift the
 block.
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -185,6 +209,8 @@ Ctrl-Delete.
 [key: string]: Command
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### newlineInCode {#newlineincode}
@@ -196,6 +222,8 @@ const newlineInCode: Command;
 If the selection is in a node whose type has a truthy
 [`code`](https://prosemirror.net/docs/ref/#model.NodeSpec.code) property in its spec, replace the
 selection with a newline character.
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -222,6 +250,8 @@ are chained with [`chainCommands`](https://prosemirror.net/docs/ref/#commands.ch
 [key: string]: Command
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### selectAll {#selectall}
@@ -231,6 +261,8 @@ const selectAll: Command;
 ```
 
 Select the whole document.
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -247,6 +279,8 @@ bound to keys like backspace, after
 commands, as a fall-back behavior when the schema doesn't allow
 deletion at the selected point.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### selectNodeForward {#selectnodeforward}
@@ -262,6 +296,8 @@ to be bound to keys like delete, after
 commands, to provide a fall-back behavior when the schema doesn't
 allow deletion at the selected point.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### selectParentNode {#selectparentnode}
@@ -273,6 +309,8 @@ const selectParentNode: Command;
 Move the selection to the node wrapping the current selection, if
 any. (Will not select the document node.)
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### selectTextblockEnd {#selecttextblockend}
@@ -283,6 +321,8 @@ const selectTextblockEnd: Command;
 
 Moves the cursor to the end of current text block.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### selectTextblockStart {#selecttextblockstart}
@@ -292,6 +332,8 @@ const selectTextblockStart: Command;
 ```
 
 Moves the cursor to the start of current text block.
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -304,6 +346,8 @@ const splitBlock: Command;
 Split the parent block of the selection. If the selection is a text
 selection, also delete its content.
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### splitBlockKeepMarks {#splitblockkeepmarks}
@@ -314,6 +358,8 @@ const splitBlockKeepMarks: Command;
 
 Acts like [`splitBlock`](https://prosemirror.net/docs/ref/#commands.splitBlock), but without
 resetting the set of active marks at the cursor.
+
+<!-- DEBUG inheritance start -->
 
 ## Functions
 
@@ -373,6 +419,8 @@ array.
 
 [`Command`](state.md#command)
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### chainCommands() {#chaincommands}
@@ -412,6 +460,8 @@ readonly [`Command`](state.md#command)[]
 #### Returns
 
 [`Command`](state.md#command)
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -465,6 +515,8 @@ given node type with the given attributes.
 
 [`Command`](state.md#command)
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### splitBlockAs() {#splitblockas}
@@ -509,6 +561,8 @@ a custom function to determine the type of the newly split off block.
 #### Returns
 
 [`Command`](state.md#command)
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -655,6 +709,8 @@ default) or added (`false`).
 
 [`Command`](state.md#command)
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### wrapIn() {#wrapin}
@@ -706,5 +762,7 @@ attributes.
 #### Returns
 
 [`Command`](state.md#command)
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

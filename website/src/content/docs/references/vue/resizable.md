@@ -80,6 +80,8 @@ The position of the handle.
 "bottom-right"
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -148,6 +150,10 @@ resizeEnd: (event: CustomEvent<{
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -192,6 +198,10 @@ resizeStart: (event: CustomEvent<{
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -228,6 +238,8 @@ Props for the [ResizableRoot](#resizableroot) component.
 optional aspectRatio: null | number;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -240,6 +252,8 @@ Partial.aspectRatio
 optional height: null | number;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -251,6 +265,8 @@ Partial.height
 ```ts
 optional width: null | number;
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -268,6 +284,8 @@ Partial.width
 const ResizableHandle: DefineSetupFnComponent<ResizableHandleProps & HTMLAttributes, ResizableHandleEmits>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### ResizableRoot {#resizableroot}
@@ -275,5 +293,7 @@ const ResizableHandle: DefineSetupFnComponent<ResizableHandleProps & HTMLAttribu
 ```ts
 const ResizableRoot: DefineSetupFnComponent<ResizableRootProps & HTMLAttributes, ResizableRootEmits>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

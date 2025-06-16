@@ -78,6 +78,8 @@ Create an all-selection over the given document.
 
 [`AllSelection`](#allselection)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Selection`](#selection-1).[`constructor`](#constructor-5)
@@ -93,6 +95,8 @@ readonly $anchor: ResolvedPos;
 The resolved anchor of the selection (the side that stays in
 place when the selection is modified).
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`$anchor`](#anchor-4)
@@ -106,6 +110,8 @@ readonly $head: ResolvedPos;
 The resolved head of the selection (the side that moves when
 the selection is modified).
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`$head`](#head-4)
@@ -117,6 +123,8 @@ ranges: readonly SelectionRange[];
 ```
 
 The ranges covered by the selection.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -131,6 +139,8 @@ visible: boolean;
 Controls whether, when a selection of this type is active in the
 browser, the selected range should be visible to the user.
 Defaults to `true`.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -152,6 +162,8 @@ The resolved lower  bound of the selection's main range.
 
 [`ResolvedPos`](model.md#resolvedpos)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`$from`](#from-4)
@@ -169,6 +181,8 @@ The resolved upper bound of the selection's main range.
 ###### Returns
 
 [`ResolvedPos`](model.md#resolvedpos)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -188,6 +202,8 @@ The selection's anchor, as an unresolved position.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`anchor`](#anchor-5)
@@ -205,6 +221,8 @@ Indicates whether the selection contains any content.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -224,6 +242,8 @@ The lower bound of the selection's main range.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`from`](#from-5)
@@ -241,6 +261,8 @@ The selection's head.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -260,6 +282,8 @@ The upper bound of the selection's main range.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`to`](#to-5)
@@ -277,6 +301,8 @@ Get the content of this selection as a slice.
 ###### Returns
 
 [`Slice`](model.md#slice-2)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -319,6 +345,8 @@ Test whether the selection is the same as another selection.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Selection`](#selection-1).[`eq`](#eq-4)
@@ -350,6 +378,8 @@ map(): any;
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### resolve()
 
@@ -385,6 +415,10 @@ resolve(doc: ProseMirrorNode): AllSelection;
 ###### Returns
 
 [`AllSelection`](#allselection)
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -427,6 +461,8 @@ thing. `doc` should be the new document to which we are mapping.
 ###### Returns
 
 [`AllSelection`](#allselection)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -482,6 +518,8 @@ delete the selection. Will append to the given transaction.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Selection`](#selection-1).[`replace`](#replace-4)
@@ -536,6 +574,8 @@ to the given transaction.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`replaceWith`](#replacewith-4)
@@ -554,6 +594,8 @@ this for a custom selection class, make sure to give the object a
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -596,6 +638,8 @@ given document.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -640,6 +684,8 @@ exists.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -713,6 +759,8 @@ found.
 
 `null` \| [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`findFrom`](#findfrom-4)
@@ -766,6 +814,8 @@ implemented for custom classes (as a static class method).
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -882,6 +932,12 @@ fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`jsonID`](#jsonid-4)
@@ -937,6 +993,8 @@ negative, it will search backwards first.
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`near`](#near-4)
@@ -977,6 +1035,8 @@ new EditorState(): EditorState;
 
 [`EditorState`](#editorstate)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### doc {#doc}
@@ -987,6 +1047,8 @@ doc: ProseMirrorNode;
 
 The current document.
 
+<!-- DEBUG inheritance start -->
+
 ##### selection {#selection}
 
 ```ts
@@ -994,6 +1056,8 @@ selection: Selection;
 ```
 
 The selection.
+
+<!-- DEBUG inheritance start -->
 
 ##### storedMarks {#storedmarks}
 
@@ -1003,6 +1067,8 @@ storedMarks: null | readonly Mark[];
 
 A set of marks to apply to the next input. Will be null when
 no explicit marks have been set.
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -1020,6 +1086,8 @@ The plugins that are active in this state.
 
 readonly [`ProseMirrorPlugin`](#prosemirrorplugin)\<`any`\>[]
 
+<!-- DEBUG inheritance start -->
+
 ##### schema {#schema}
 
 ###### Get Signature
@@ -1034,6 +1102,8 @@ The schema of the state's document.
 
 [`Schema`](model.md#schema-3)
 
+<!-- DEBUG inheritance start -->
+
 ##### tr {#tr}
 
 ###### Get Signature
@@ -1047,6 +1117,8 @@ Start a [transaction](https://prosemirror.net/docs/ref/#state.Transaction) from 
 ###### Returns
 
 [`Transaction`](#transaction)
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -1086,6 +1158,8 @@ Apply the given transaction to produce a new state.
 ###### Returns
 
 [`EditorState`](#editorstate)
+
+<!-- DEBUG inheritance start -->
 
 ##### applyTransaction() {#applytransaction}
 
@@ -1134,11 +1208,17 @@ plugins) along with the new state.
 state: EditorState;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### transactions
 
 ```ts
 transactions: readonly Transaction[];
 ```
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ##### reconfigure() {#reconfigure}
 
@@ -1205,6 +1285,8 @@ New set of active plugins.
 
 [`EditorState`](#editorstate)
 
+<!-- DEBUG inheritance start -->
+
 ##### toJSON() {#tojson-2}
 
 ```ts
@@ -1246,6 +1328,8 @@ way `JSON.stringify` calls `toString` methods.
 
 `any`
 
+<!-- DEBUG inheritance start -->
+
 ##### create() {#create}
 
 ```ts
@@ -1282,6 +1366,8 @@ Create a new state.
 ###### Returns
 
 [`EditorState`](#editorstate)
+
+<!-- DEBUG inheritance start -->
 
 ##### fromJSON() {#fromjson-2}
 
@@ -1401,6 +1487,8 @@ The schema to use.
 
 [`EditorState`](#editorstate)
 
+<!-- DEBUG inheritance start -->
+
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -1467,6 +1555,8 @@ argument.
 
 [`NodeSelection`](#nodeselection)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Selection`](#selection-1).[`constructor`](#constructor-5)
@@ -1482,6 +1572,8 @@ readonly $anchor: ResolvedPos;
 The resolved anchor of the selection (the side that stays in
 place when the selection is modified).
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`$anchor`](#anchor-4)
@@ -1495,6 +1587,8 @@ readonly $head: ResolvedPos;
 The resolved head of the selection (the side that moves when
 the selection is modified).
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`$head`](#head-4)
@@ -1507,6 +1601,8 @@ node: ProseMirrorNode;
 
 The selected node.
 
+<!-- DEBUG inheritance start -->
+
 ##### ranges {#ranges-1}
 
 ```ts
@@ -1514,6 +1610,8 @@ ranges: readonly SelectionRange[];
 ```
 
 The ranges covered by the selection.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1528,6 +1626,8 @@ visible: boolean;
 Controls whether, when a selection of this type is active in the
 browser, the selected range should be visible to the user.
 Defaults to `true`.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1549,6 +1649,8 @@ The resolved lower  bound of the selection's main range.
 
 [`ResolvedPos`](model.md#resolvedpos)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`$from`](#from-4)
@@ -1566,6 +1668,8 @@ The resolved upper bound of the selection's main range.
 ###### Returns
 
 [`ResolvedPos`](model.md#resolvedpos)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1585,6 +1689,8 @@ The selection's anchor, as an unresolved position.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`anchor`](#anchor-5)
@@ -1602,6 +1708,8 @@ Indicates whether the selection contains any content.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1621,6 +1729,8 @@ The lower bound of the selection's main range.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`from`](#from-5)
@@ -1638,6 +1748,8 @@ The selection's head.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1657,6 +1769,8 @@ The upper bound of the selection's main range.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`to`](#to-5)
@@ -1674,6 +1788,8 @@ Get the content of this selection as a slice.
 ###### Returns
 
 [`Slice`](model.md#slice-2)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -1716,6 +1832,8 @@ Test whether the selection is the same as another selection.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Selection`](#selection-1).[`eq`](#eq-4)
@@ -1737,6 +1855,8 @@ returns the bookmark for that.
 ###### Returns
 
 [`NodeBookmark`](https://prosemirror.net/docs/ref/#state.NodeBookmark)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -1792,6 +1912,8 @@ thing. `doc` should be the new document to which we are mapping.
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Selection`](#selection-1).[`map`](#map-4)
@@ -1845,6 +1967,8 @@ delete the selection. Will append to the given transaction.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -1900,6 +2024,8 @@ to the given transaction.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`replaceWith`](#replacewith-4)
@@ -1918,6 +2044,8 @@ this for a custom selection class, make sure to give the object a
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -1960,6 +2088,8 @@ given document.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -2004,6 +2134,8 @@ exists.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -2057,6 +2189,8 @@ Create a node selection from non-resolved positions.
 ###### Returns
 
 [`NodeSelection`](#nodeselection)
+
+<!-- DEBUG inheritance start -->
 
 ##### findFrom() {#findfrom-2}
 
@@ -2126,6 +2260,8 @@ found.
 
 `null` \| [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`findFrom`](#findfrom-4)
@@ -2180,6 +2316,8 @@ implemented for custom classes (as a static class method).
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`fromJSON`](#fromjson-6)
@@ -2221,6 +2359,8 @@ selection.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### jsonID() {#jsonid-2}
 
@@ -2333,6 +2473,12 @@ fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`jsonID`](#jsonid-4)
@@ -2387,6 +2533,8 @@ negative, it will search backwards first.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -2477,6 +2625,8 @@ Create a plugin key.
 
 [`PluginKey`](#pluginkey)\<`PluginState`\>
 
+<!-- DEBUG inheritance start -->
+
 #### Methods
 
 ##### get() {#get}
@@ -2517,6 +2667,8 @@ state.
 
 `undefined` \| [`ProseMirrorPlugin`](#prosemirrorplugin)\<`PluginState`\>
 
+<!-- DEBUG inheritance start -->
+
 ##### getState() {#getstate}
 
 ```ts
@@ -2553,6 +2705,8 @@ Get the plugin's state from an editor state.
 ###### Returns
 
 `undefined` \| `PluginState`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2644,6 +2798,8 @@ The plugin's [spec object](https://prosemirror.net/docs/ref/#state.PluginSpec).
 
 [`ProseMirrorPlugin`](#prosemirrorplugin)\<`PluginState`\>
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### props {#props}
@@ -2654,6 +2810,8 @@ readonly props: EditorProps<ProseMirrorPlugin<PluginState>>;
 
 The [props](https://prosemirror.net/docs/ref/#view.EditorProps) exported by this plugin.
 
+<!-- DEBUG inheritance start -->
+
 ##### spec {#spec}
 
 ```ts
@@ -2661,6 +2819,8 @@ readonly spec: PluginSpec<PluginState>;
 ```
 
 The plugin's [spec object](https://prosemirror.net/docs/ref/#state.PluginSpec).
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -2700,6 +2860,8 @@ Extract the plugin's state field from an editor state.
 ###### Returns
 
 `undefined` \| `PluginState`
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -2812,6 +2974,8 @@ readonly [`SelectionRange`](#selectionrange)[]
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### $anchor {#anchor-4}
@@ -2823,6 +2987,8 @@ readonly $anchor: ResolvedPos;
 The resolved anchor of the selection (the side that stays in
 place when the selection is modified).
 
+<!-- DEBUG inheritance start -->
+
 ##### $head {#head-4}
 
 ```ts
@@ -2832,6 +2998,8 @@ readonly $head: ResolvedPos;
 The resolved head of the selection (the side that moves when
 the selection is modified).
 
+<!-- DEBUG inheritance start -->
+
 ##### ranges {#ranges-2}
 
 ```ts
@@ -2839,6 +3007,8 @@ ranges: readonly SelectionRange[];
 ```
 
 The ranges covered by the selection.
+
+<!-- DEBUG inheritance start -->
 
 ##### visible {#visible-2}
 
@@ -2849,6 +3019,8 @@ visible: boolean;
 Controls whether, when a selection of this type is active in the
 browser, the selected range should be visible to the user.
 Defaults to `true`.
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -2866,6 +3038,8 @@ The resolved lower  bound of the selection's main range.
 
 [`ResolvedPos`](model.md#resolvedpos)
 
+<!-- DEBUG inheritance start -->
+
 ##### $to {#to-4}
 
 ###### Get Signature
@@ -2879,6 +3053,8 @@ The resolved upper bound of the selection's main range.
 ###### Returns
 
 [`ResolvedPos`](model.md#resolvedpos)
+
+<!-- DEBUG inheritance start -->
 
 ##### anchor {#anchor-5}
 
@@ -2894,6 +3070,8 @@ The selection's anchor, as an unresolved position.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### empty {#empty-2}
 
 ###### Get Signature
@@ -2907,6 +3085,8 @@ Indicates whether the selection contains any content.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### from {#from-5}
 
@@ -2922,6 +3102,8 @@ The lower bound of the selection's main range.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ##### head {#head-5}
 
 ###### Get Signature
@@ -2935,6 +3117,8 @@ The selection's head.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 ##### to {#to-5}
 
@@ -2950,6 +3134,8 @@ The upper bound of the selection's main range.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 #### Methods
 
 ##### content() {#content-4}
@@ -2963,6 +3149,8 @@ Get the content of this selection as a slice.
 ###### Returns
 
 [`Slice`](model.md#slice-2)
+
+<!-- DEBUG inheritance start -->
 
 ##### eq() {#eq-4}
 
@@ -3001,6 +3189,8 @@ Test whether the selection is the same as another selection.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### getBookmark() {#getbookmark-4}
 
 ```ts
@@ -3018,6 +3208,8 @@ returns the bookmark for that.
 ###### Returns
 
 [`SelectionBookmark`](#selectionbookmark)
+
+<!-- DEBUG inheritance start -->
 
 ##### map() {#map-4}
 
@@ -3069,6 +3261,8 @@ thing. `doc` should be the new document to which we are mapping.
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 ##### replace() {#replace-4}
 
 ```ts
@@ -3118,6 +3312,8 @@ delete the selection. Will append to the given transaction.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ##### replaceWith() {#replacewith-4}
 
@@ -3169,6 +3365,8 @@ to the given transaction.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ##### toJSON() {#tojson-6}
 
 ```ts
@@ -3183,6 +3381,8 @@ this for a custom selection class, make sure to give the object a
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ##### atEnd() {#atend-4}
 
@@ -3221,6 +3421,8 @@ given document.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ##### atStart() {#atstart-4}
 
@@ -3261,6 +3463,8 @@ exists.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ##### findFrom() {#findfrom-4}
 
@@ -3330,6 +3534,8 @@ found.
 
 `null` \| [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 ##### fromJSON() {#fromjson-6}
 
 ```ts
@@ -3379,6 +3585,8 @@ implemented for custom classes (as a static class method).
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ##### jsonID() {#jsonid-4}
 
@@ -3491,6 +3699,12 @@ fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### near() {#near-4}
 
 ```ts
@@ -3541,6 +3755,8 @@ negative, it will search backwards first.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3622,6 +3838,8 @@ The upper bound of the range.
 
 [`SelectionRange`](#selectionrange)
 
+<!-- DEBUG inheritance start -->
+
 #### Properties
 
 ##### $from {#from-6}
@@ -3632,6 +3850,8 @@ readonly $from: ResolvedPos;
 
 The lower bound of the range.
 
+<!-- DEBUG inheritance start -->
+
 ##### $to {#to-6}
 
 ```ts
@@ -3639,6 +3859,8 @@ readonly $to: ResolvedPos;
 ```
 
 The upper bound of the range.
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -3716,6 +3938,8 @@ Construct a text selection between the given points.
 
 [`TextSelection`](#textselection)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Selection`](#selection-1).[`constructor`](#constructor-5)
@@ -3731,6 +3955,8 @@ readonly $anchor: ResolvedPos;
 The resolved anchor of the selection (the side that stays in
 place when the selection is modified).
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`$anchor`](#anchor-4)
@@ -3744,6 +3970,8 @@ readonly $head: ResolvedPos;
 The resolved head of the selection (the side that moves when
 the selection is modified).
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`$head`](#head-4)
@@ -3755,6 +3983,8 @@ ranges: readonly SelectionRange[];
 ```
 
 The ranges covered by the selection.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -3769,6 +3999,8 @@ visible: boolean;
 Controls whether, when a selection of this type is active in the
 browser, the selected range should be visible to the user.
 Defaults to `true`.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -3791,6 +4023,8 @@ empty text selection), and null otherwise.
 
 `null` \| [`ResolvedPos`](model.md#resolvedpos)
 
+<!-- DEBUG inheritance start -->
+
 ##### $from {#from-7}
 
 ###### Get Signature
@@ -3804,6 +4038,8 @@ The resolved lower  bound of the selection's main range.
 ###### Returns
 
 [`ResolvedPos`](model.md#resolvedpos)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -3823,6 +4059,8 @@ The resolved upper bound of the selection's main range.
 
 [`ResolvedPos`](model.md#resolvedpos)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`$to`](#to-4)
@@ -3840,6 +4078,8 @@ The selection's anchor, as an unresolved position.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -3859,6 +4099,8 @@ Indicates whether the selection contains any content.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`empty`](#empty-2)
@@ -3876,6 +4118,8 @@ The lower bound of the selection's main range.
 ###### Returns
 
 `number`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -3895,6 +4139,8 @@ The selection's head.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`head`](#head-5)
@@ -3913,6 +4159,8 @@ The upper bound of the selection's main range.
 
 `number`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`to`](#to-5)
@@ -3930,6 +4178,8 @@ Get the content of this selection as a slice.
 ###### Returns
 
 [`Slice`](model.md#slice-2)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -3972,6 +4222,8 @@ Test whether the selection is the same as another selection.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Selection`](#selection-1).[`eq`](#eq-4)
@@ -3993,6 +4245,8 @@ returns the bookmark for that.
 ###### Returns
 
 [`TextBookmark`](https://prosemirror.net/docs/ref/#state.TextBookmark)
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -4048,6 +4302,8 @@ thing. `doc` should be the new document to which we are mapping.
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 ###### Overrides
 
 [`Selection`](#selection-1).[`map`](#map-4)
@@ -4101,6 +4357,8 @@ delete the selection. Will append to the given transaction.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -4156,6 +4414,8 @@ to the given transaction.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`replaceWith`](#replacewith-4)
@@ -4174,6 +4434,8 @@ this for a custom selection class, make sure to give the object a
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ###### Overrides
 
@@ -4216,6 +4478,8 @@ given document.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -4260,6 +4524,8 @@ exists.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -4334,6 +4600,8 @@ doesn't contain a valid text position.
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 ##### create() {#create-4}
 
 ```ts
@@ -4397,6 +4665,8 @@ Create a text selection from non-resolved positions.
 ###### Returns
 
 [`TextSelection`](#textselection)
+
+<!-- DEBUG inheritance start -->
 
 ##### findFrom() {#findfrom-6}
 
@@ -4466,6 +4736,8 @@ found.
 
 `null` \| [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`findFrom`](#findfrom-4)
@@ -4519,6 +4791,8 @@ implemented for custom classes (as a static class method).
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -4635,6 +4909,12 @@ fromJSON: (doc: ProseMirrorNode, json: any) => Selection;
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Selection`](#selection-1).[`jsonID`](#jsonid-4)
@@ -4689,6 +4969,8 @@ negative, it will search backwards first.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -4781,6 +5063,8 @@ transform).
 
 [`Transaction`](#transaction)
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`constructor`](transform.md#transform#constructor-13)
@@ -4796,6 +5080,8 @@ doc: ProseMirrorNode;
 The current document (the result of applying the steps in the
 transform).
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`doc`](transform.md#transform#doc-1)
@@ -4807,6 +5093,8 @@ readonly docs: ProseMirrorNode[];
 ```
 
 The documents before each of the steps.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -4820,6 +5108,8 @@ readonly mapping: Mapping;
 
 A mapping with the maps for each of the steps in this transform.
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`mapping`](transform.md#transform#mapping-1)
@@ -4831,6 +5121,8 @@ readonly steps: Step[];
 ```
 
 The steps in this transform.
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -4844,6 +5136,8 @@ storedMarks: null | readonly Mark[];
 
 The stored marks set by this transaction, if any.
 
+<!-- DEBUG inheritance start -->
+
 ##### time {#time}
 
 ```ts
@@ -4852,6 +5146,8 @@ time: number;
 
 The timestamp associated with this transaction, in the same
 format as `Date.now()`.
+
+<!-- DEBUG inheritance start -->
 
 #### Accessors
 
@@ -4868,6 +5164,8 @@ The starting document.
 ###### Returns
 
 [`ProseMirrorNode`](model.md#prosemirrornode)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -4888,6 +5186,8 @@ steps).
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`docChanged`](transform.md#transform#docchanged)
@@ -4907,6 +5207,8 @@ and can thus safely be extended.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### scrolledIntoView {#scrolledintoview}
 
 ###### Get Signature
@@ -4920,6 +5222,8 @@ True when this transaction has had `scrollIntoView` called on it.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 ##### selection {#selection-2}
 
@@ -4938,6 +5242,8 @@ transaction, but can be overwritten with
 
 [`Selection`](#selection-1)
 
+<!-- DEBUG inheritance start -->
+
 ##### selectionSet {#selectionset}
 
 ###### Get Signature
@@ -4952,6 +5258,8 @@ Whether the selection was explicitly updated by this transaction.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
 ##### storedMarksSet {#storedmarksset}
 
 ###### Get Signature
@@ -4965,6 +5273,8 @@ Whether the stored marks were explicitly set for this transaction.
 ###### Returns
 
 `boolean`
+
+<!-- DEBUG inheritance start -->
 
 #### Methods
 
@@ -5032,6 +5342,8 @@ Add the given mark to the inline content between `from` and `to`.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`addMark`](transform.md#transform#addmark)
@@ -5085,6 +5397,8 @@ Add a mark to the node at position `pos`.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`addNodeMark`](transform.md#transform#addnodemark)
@@ -5125,6 +5439,8 @@ Add a mark to the set of stored marks.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### clearIncompatible() {#clearincompatible}
 
@@ -5193,6 +5509,8 @@ third argument.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`clearIncompatible`](transform.md#transform#clearincompatible)
@@ -5245,6 +5563,8 @@ Delete the content between the given positions.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -5300,6 +5620,8 @@ parent nodes until a valid replace is found.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`deleteRange`](transform.md#transform#deleterange)
@@ -5315,6 +5637,8 @@ Delete the selection.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### ensureMarks() {#ensuremarks}
 
@@ -5355,6 +5679,8 @@ readonly [`Mark`](model.md#mark)[]
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### getMeta() {#getmeta}
 
 ```ts
@@ -5394,6 +5720,8 @@ Retrieve a metadata property for a given name or plugin.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
 
 ##### insert() {#insert}
 
@@ -5446,6 +5774,8 @@ Insert the given content at the given position.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -5516,6 +5846,8 @@ with a text node containing the given string.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### join() {#join}
 
 ```ts
@@ -5565,6 +5897,8 @@ last and first siblings are also joined, and so on.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -5623,6 +5957,8 @@ sure the lift is valid.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`lift`](transform.md#transform#lift)
@@ -5664,6 +6000,8 @@ fails. Returns the step result.
 ###### Returns
 
 [`StepResult`](transform.md#stepresult)
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -5736,6 +6074,8 @@ remove all marks of any type.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`removeMark`](transform.md#transform#removemark)
@@ -5790,6 +6130,8 @@ position `pos`.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`removeNodeMark`](transform.md#transform#removenodemark)
@@ -5830,6 +6172,8 @@ Remove a mark or mark type from the set of stored marks.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### replace() {#replace-8}
 
@@ -5895,6 +6239,8 @@ given `slice`.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -5980,6 +6326,8 @@ control over what happens.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`replaceRange`](transform.md#transform#replacerange)
@@ -6054,6 +6402,8 @@ that parent node.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`replaceRangeWith`](transform.md#transform#replacerangewith)
@@ -6094,6 +6444,8 @@ Replace the current selection with the given slice.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### replaceSelectionWith() {#replaceselectionwith}
 
@@ -6145,6 +6497,8 @@ place where it is inserted.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### replaceWith() {#replacewith-8}
 
@@ -6214,6 +6568,8 @@ fragment, node, or array of nodes.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`replaceWith`](transform.md#transform#replacewith)
@@ -6230,6 +6586,8 @@ when updated to the state produced by this transaction.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### setBlockType() {#setblocktype}
 
@@ -6312,6 +6670,8 @@ the given node type with the given attributes.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`setBlockType`](transform.md#transform#setblocktype)
@@ -6364,6 +6724,8 @@ Set a single attribute on the document to a new value.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -6421,6 +6783,8 @@ name or by plugin.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### setNodeAttribute() {#setnodeattribute}
 
@@ -6487,6 +6851,8 @@ to set attributes on the document itself.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -6570,6 +6936,8 @@ readonly [`Mark`](model.md#mark)[]
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`setNodeMarkup`](transform.md#transform#setnodemarkup)
@@ -6612,6 +6980,8 @@ selection that the editor gets when the transaction is applied.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### setStoredMarks() {#setstoredmarks}
 
 ```ts
@@ -6649,6 +7019,8 @@ Set the current stored marks.
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ##### setTime() {#settime}
 
 ```ts
@@ -6685,6 +7057,8 @@ Update the timestamp for the transaction.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ##### split() {#split}
 
@@ -6759,6 +7133,8 @@ use after the split (with the outermost nodes coming first).
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`split`](transform.md#transform#split)
@@ -6800,6 +7176,8 @@ error when the step fails.
 ###### Returns
 
 `this`
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -6856,6 +7234,8 @@ readonly `object`[]
 
 `this`
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 [`Transform`](transform.md#transform).[`wrap`](transform.md#transform#wrap)
@@ -6890,6 +7270,8 @@ optional doc: ProseMirrorNode;
 The starting document. Either this or `schema` _must_ be
 provided.
 
+<!-- DEBUG inheritance start -->
+
 ##### plugins? {#plugins-1}
 
 ```ts
@@ -6897,6 +7279,8 @@ optional plugins: readonly ProseMirrorPlugin<any>[];
 ```
 
 The plugins that should be active in this state.
+
+<!-- DEBUG inheritance start -->
 
 ##### schema? {#schema-1}
 
@@ -6906,6 +7290,8 @@ optional schema: Schema<any, any>;
 
 The schema to use (only relevant if no `doc` is specified).
 
+<!-- DEBUG inheritance start -->
+
 ##### selection? {#selection-3}
 
 ```ts
@@ -6914,6 +7300,8 @@ optional selection: Selection;
 
 A valid selection in the document.
 
+<!-- DEBUG inheritance start -->
+
 ##### storedMarks? {#storedmarks-2}
 
 ```ts
@@ -6921,6 +7309,8 @@ optional storedMarks: null | readonly Mark[];
 ```
 
 The initial set of [stored marks](https://prosemirror.net/docs/ref/#state.EditorState.storedMarks).
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7037,6 +7427,10 @@ readonly [`Transaction`](#transaction)[]
 
 `undefined` \| `null` \| [`Transaction`](#transaction)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### filterTransaction()? {#filtertransaction}
 
 ```ts
@@ -7088,6 +7482,10 @@ returning false).
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### key? {#key}
 
 ```ts
@@ -7099,6 +7497,8 @@ plugin with a given key in a given state, but it is possible to
 access the plugin's configuration and state through the key,
 without having access to the plugin instance object.
 
+<!-- DEBUG inheritance start -->
+
 ##### props? {#props-1}
 
 ```ts
@@ -7109,6 +7509,8 @@ The [view props](https://prosemirror.net/docs/ref/#view.EditorProps) added by th
 that are functions will be bound to have the plugin instance as
 their `this` binding.
 
+<!-- DEBUG inheritance start -->
+
 ##### state? {#state}
 
 ```ts
@@ -7117,6 +7519,8 @@ optional state: StateField<PluginState>;
 
 Allows a plugin to define a [state field](https://prosemirror.net/docs/ref/#state.StateField), an
 extra slot in the state object in which it can keep its own data.
+
+<!-- DEBUG inheritance start -->
 
 ##### view()? {#view}
 
@@ -7157,6 +7561,10 @@ editor view.
 ###### Returns
 
 [`PluginView`](#pluginview)
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7217,6 +7625,10 @@ Map the bookmark through a set of changes.
 
 [`SelectionBookmark`](#selectionbookmark)
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### resolve() {#resolve}
 
 ```ts
@@ -7256,6 +7668,10 @@ mapping made the bookmark invalid.
 ###### Returns
 
 [`Selection`](#selection-1)
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7375,6 +7791,10 @@ coming after this one.
 
 `T`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### fromJSON()? {#fromjson-10}
 
 ```ts
@@ -7437,6 +7857,10 @@ Deserialize the JSON representation of this field. Note that the
 
 `T`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### init() {#init}
 
 ```ts
@@ -7489,6 +7913,10 @@ not have values for plugin fields initialized after this one.
 
 `T`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ##### toJSON()? {#tojson-10}
 
 ```ts
@@ -7526,6 +7954,10 @@ JSON serialization for the field.
 ###### Returns
 
 `any`
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -7601,6 +8033,10 @@ In some cases, the editor view is passed as a third argument.
 
 `boolean`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### PluginView {#pluginview}
@@ -7636,6 +8072,10 @@ with different plugins.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ##### update()? {#update}
 
@@ -7685,6 +8125,10 @@ Called whenever the view's state is updated.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->
 

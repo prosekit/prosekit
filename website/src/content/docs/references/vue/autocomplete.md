@@ -117,6 +117,10 @@ Fired when the item is selected.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -162,6 +166,8 @@ If not provided, the value is the item's text content.
 ```ts
 ""
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -228,6 +234,10 @@ valueChange: (event: string) => void;
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -275,6 +285,8 @@ shown.
 ```ts
 defaultItemFilter
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -343,6 +355,10 @@ Fired when the open state changes.
 
 `void`
 
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -385,6 +401,10 @@ Fired when the query changes.
 ###### Returns
 
 `void`
+
+<!-- DEBUG inheritance start -->
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -432,6 +452,8 @@ information.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -458,6 +480,8 @@ https://floating-ui.com/docs/autoUpdate
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -475,6 +499,8 @@ optional boundary: Boundary;
 ```ts
 "The body element"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -498,6 +524,8 @@ information.
 'floating'
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -515,6 +543,8 @@ optional fitViewport: boolean;
 ```ts
 true
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -539,6 +569,8 @@ provide an array of placements to try sequentially if the preferred
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -560,6 +592,8 @@ floating element is fully clipped.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -578,6 +612,8 @@ optional hoist: boolean;
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -595,6 +631,8 @@ optional inline: boolean;
 ```ts
 true
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -616,6 +654,8 @@ The distance between the popover and the hovered block.
 4
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -633,6 +673,8 @@ optional overflowPadding: number;
 ```ts
 8
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -655,6 +697,8 @@ in view.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -674,6 +718,8 @@ The placement of the popover, relative to the text cursor.
 ```ts
 "bottom-start"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -697,6 +743,8 @@ The regular expression to match the query text to autocomplete.
 null
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -717,6 +765,8 @@ Please see https://floating-ui.com/docs/detectoverflow#rootboundary for more inf
 ```ts
 'viewport'
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -739,6 +789,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -760,6 +812,8 @@ reference element.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -780,6 +834,8 @@ Whether the floating element should shift to keep it in view.
 true
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -799,6 +855,8 @@ The strategy to use for positioning
 ```ts
 "absolute"
 ```
+
+<!-- DEBUG inheritance start -->
 
 ###### Inherited from
 
@@ -822,6 +880,8 @@ performant, but can cause conflicts with transform animations.
 false
 ```
 
+<!-- DEBUG inheritance start -->
+
 ###### Inherited from
 
 ```ts
@@ -838,6 +898,8 @@ Partial.transform
 const AutocompleteEmpty: DefineSetupFnComponent<AutocompleteEmptyProps & HTMLAttributes, AutocompleteEmptyEmits>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### AutocompleteItem {#autocompleteitem}
@@ -845,6 +907,8 @@ const AutocompleteEmpty: DefineSetupFnComponent<AutocompleteEmptyProps & HTMLAtt
 ```ts
 const AutocompleteItem: DefineSetupFnComponent<AutocompleteItemProps & HTMLAttributes, AutocompleteItemEmits>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 ***
 
@@ -854,6 +918,8 @@ const AutocompleteItem: DefineSetupFnComponent<AutocompleteItemProps & HTMLAttri
 const AutocompleteList: DefineSetupFnComponent<AutocompleteListProps & HTMLAttributes, AutocompleteListEmits>;
 ```
 
+<!-- DEBUG inheritance start -->
+
 ***
 
 ### AutocompletePopover {#autocompletepopover}
@@ -861,5 +927,7 @@ const AutocompleteList: DefineSetupFnComponent<AutocompleteListProps & HTMLAttri
 ```ts
 const AutocompletePopover: DefineSetupFnComponent<AutocompletePopoverProps & HTMLAttributes, AutocompletePopoverEmits>;
 ```
+
+<!-- DEBUG inheritance start -->
 
 <!-- DEBUG memberWithGroups 10 -->

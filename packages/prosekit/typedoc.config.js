@@ -12,6 +12,7 @@ const typedocConfig = {
   out: '.temp/typedoc',
   router: 'module',
   plugin: [
+    'typedoc-plugin-no-inherit',
     'typedoc-plugin-markdown',
     '@prosekit/typedoc-plugin',
     'typedoc-plugin-frontmatter',
@@ -85,11 +86,19 @@ const typedocPluginMarkdownConfig = {
 }
 
 /**
+ * https://github.com/jonchardy/typedoc-plugin-no-inherit
+ */
+const typedocPluginNoInheritConfig = {
+  inheritNone: true,
+}
+
+/**
  * @type {unknown}
  */
 const config = {
   ...typedocConfig,
   ...typedocPluginMarkdownConfig,
+  ...typedocPluginNoInheritConfig,
 }
 
 export default config

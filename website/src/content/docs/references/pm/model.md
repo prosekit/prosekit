@@ -1501,7 +1501,7 @@ they have defaults, will be added.
 </td>
 <td>
 
-`null` \| [`Attrs`](#attrs-7)
+`null` \| [`Attrs`](#attrs-5)
 
 </td>
 </tr>
@@ -2197,7 +2197,7 @@ set of marks.
 </td>
 <td>
 
-`null` \| [`Attrs`](#attrs-7)
+`null` \| [`Attrs`](#attrs-5)
 
 </td>
 </tr>
@@ -2270,7 +2270,7 @@ always be created, this will always succeed if you pass null or
 </td>
 <td>
 
-`null` \| [`Attrs`](#attrs-7)
+`null` \| [`Attrs`](#attrs-5)
 
 </td>
 </tr>
@@ -2340,7 +2340,7 @@ if it doesn't match.
 </td>
 <td>
 
-`null` \| [`Attrs`](#attrs-7)
+`null` \| [`Attrs`](#attrs-5)
 
 </td>
 </tr>
@@ -4371,7 +4371,7 @@ attributes, and marks.
 </td>
 <td>
 
-`null` \| [`Attrs`](#attrs-7)
+`null` \| [`Attrs`](#attrs-5)
 
 </td>
 </tr>
@@ -5045,102 +5045,6 @@ given an invalid replacement.
 <!-- DEBUG memberWithGroups 8 -->
 
 <!-- DEBUG memberWithGroups 9 -->
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new ReplaceError(message?: string): ReplaceError;
-```
-
-###### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`message?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-###### Returns
-
-[`ReplaceError`](#replaceerror)
-
-###### Inherited from
-
-```ts
-Error.constructor
-```
-
-##### Constructor
-
-```ts
-new ReplaceError(message?: string, options?: ErrorOptions): ReplaceError;
-```
-
-###### Parameters
-
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-
-`message?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-</tr>
-<tr>
-<td>
-
-`options?`
-
-</td>
-<td>
-
-`ErrorOptions`
-
-</td>
-</tr>
-</tbody>
-</table>
-
-###### Returns
-
-[`ReplaceError`](#replaceerror)
-
-###### Inherited from
-
-```ts
-Error.constructor
-```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -6091,7 +5995,7 @@ Create a mark with the given type and attributes.
 </td>
 <td>
 
-`null` \| [`Attrs`](#attrs-7)
+`null` \| [`Attrs`](#attrs-5)
 
 </td>
 </tr>
@@ -6188,7 +6092,7 @@ nodes.
 </td>
 <td>
 
-`null` \| [`Attrs`](#attrs-7)
+`null` \| [`Attrs`](#attrs-5)
 
 </td>
 </tr>
@@ -6767,7 +6671,7 @@ Fields that may be present in both [tag](https://prosemirror.net/docs/ref/#model
 </td>
 <td>
 
-[`Attrs`](#attrs-7)
+[`Attrs`](#attrs-5)
 
 </td>
 <td>
@@ -7893,33 +7797,9 @@ A parse rule targeting a style property.
 <th>Property</th>
 <th>Type</th>
 <th>Description</th>
-<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>
-
-<a id="attrs-5"></a> `attrs?`
-
-</td>
-<td>
-
-[`Attrs`](#attrs-7)
-
-</td>
-<td>
-
-Attributes for the node or mark created by this rule. When
-`getAttrs` is provided, it takes precedence.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`attrs`](#attrs-2)
-
-</td>
-</tr>
 <tr>
 <td>
 
@@ -7936,91 +7816,6 @@ Attributes for the node or mark created by this rule. When
 Style rules can remove marks from the set of active marks.
 
 </td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="closeparent-1"></a> `closeParent?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-When true, finding an element that matches this rule will close
-the current node.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`closeParent`](#closeparent)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="consuming-1"></a> `consuming?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-By default, when a rule matches an element or style, no further
-rules get a chance to match it. By setting this to `false`, you
-indicate that even when this rule matches, other rules that come
-after it should also run.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`consuming`](#consuming)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="context-2"></a> `context?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-When given, restricts this rule to only match when the current
-context—the parent nodes into which the content is being
-parsed—matches this expression. Should contain one or more node
-names or node group names followed by single or double slashes.
-For example `"paragraph/"` means the rule only matches when the
-parent node is a paragraph, `"blockquote/paragraph/"` restricts
-it to be in a paragraph that is inside a blockquote, and
-`"section//"` matches any position inside a section—a double
-slash matches any sequence of ancestor nodes. To allow multiple
-different contexts, they can be separated by a pipe (`|`)
-character, as in `"blockquote/|list_item/"`.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`context`](#context)
-
-</td>
 </tr>
 <tr>
 <td>
@@ -8030,111 +7825,13 @@ character, as in `"blockquote/|list_item/"`.
 </td>
 <td>
 
-(`node`: `string`) => `null` \| `false` \| [`Attrs`](#attrs-7)
+(`node`: `string`) => `null` \| `false` \| [`Attrs`](#attrs-5)
 
 </td>
 <td>
 
 A function used to compute the attributes for the node or mark
 created by this rule. Called with the style's value.
-
-</td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="ignore-1"></a> `ignore?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-When true, ignore content that matches this rule.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`ignore`](#ignore)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="mark-6"></a> `mark?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-The name of the mark type to wrap the matched content in.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`mark`](#mark-5)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="priority-1"></a> `priority?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-Can be used to change the order in which the parse rules in a
-schema are tried. Those with higher priority come first. Rules
-without a priority are counted as having priority 50. This
-property is only meaningful in a schema—when directly
-constructing a parser, the order of the rule array is used.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`priority`](#priority)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="skip-1"></a> `skip?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-When true, ignore the node that matches this rule, but do parse
-its content.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`skip`](#skip)
 
 </td>
 </tr>
@@ -8161,11 +7858,6 @@ matching styles may only produce [marks](https://prosemirror.net/docs/ref/#model
 not nodes.
 
 </td>
-<td>
-
-&hyphen;
-
-</td>
 </tr>
 <tr>
 <td>
@@ -8183,11 +7875,6 @@ not nodes.
 Given to make TS see ParseRule as a tagged union
 
 **Hide**
-
-</td>
-<td>
-
-&hyphen;
 
 </td>
 </tr>
@@ -8224,81 +7911,9 @@ Parse rule targeting a DOM element.
 <th>Property</th>
 <th>Type</th>
 <th>Description</th>
-<th>Inherited from</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>
-
-<a id="attrs-6"></a> `attrs?`
-
-</td>
-<td>
-
-[`Attrs`](#attrs-7)
-
-</td>
-<td>
-
-Attributes for the node or mark created by this rule. When
-`getAttrs` is provided, it takes precedence.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`attrs`](#attrs-2)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="closeparent-2"></a> `closeParent?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-When true, finding an element that matches this rule will close
-the current node.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`closeParent`](#closeparent)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="consuming-2"></a> `consuming?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-By default, when a rule matches an element or style, no further
-rules get a chance to match it. By setting this to `false`, you
-indicate that even when this rule matches, other rules that come
-after it should also run.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`consuming`](#consuming)
-
-</td>
-</tr>
 <tr>
 <td>
 
@@ -8320,43 +7935,6 @@ element, or a function that returns the actual content element
 to the parser.
 
 </td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="context-3"></a> `context?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-When given, restricts this rule to only match when the current
-context—the parent nodes into which the content is being
-parsed—matches this expression. Should contain one or more node
-names or node group names followed by single or double slashes.
-For example `"paragraph/"` means the rule only matches when the
-parent node is a paragraph, `"blockquote/paragraph/"` restricts
-it to be in a paragraph that is inside a blockquote, and
-`"section//"` matches any position inside a section—a double
-slash matches any sequence of ancestor nodes. To allow multiple
-different contexts, they can be separated by a pipe (`|`)
-character, as in `"blockquote/|list_item/"`.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`context`](#context)
-
-</td>
 </tr>
 <tr>
 <td>
@@ -8366,7 +7944,7 @@ character, as in `"blockquote/|list_item/"`.
 </td>
 <td>
 
-(`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `null` \| `false` \| [`Attrs`](#attrs-7)
+(`node`: [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)) => `null` \| `false` \| [`Attrs`](#attrs-5)
 
 </td>
 <td>
@@ -8376,11 +7954,6 @@ created by this rule. Can also be used to describe further
 conditions the DOM element or style must match. When it returns
 `false`, the rule won't match. When it returns null or undefined,
 that is interpreted as an empty/default set of attributes.
-
-</td>
-<td>
-
-&hyphen;
 
 </td>
 </tr>
@@ -8402,55 +7975,6 @@ present, instead of parsing the node's child nodes, the result of
 this function is used.
 
 </td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="ignore-2"></a> `ignore?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-When true, ignore content that matches this rule.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`ignore`](#ignore)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="mark-7"></a> `mark?`
-
-</td>
-<td>
-
-`string`
-
-</td>
-<td>
-
-The name of the mark type to wrap the matched content in.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`mark`](#mark-5)
-
-</td>
 </tr>
 <tr>
 <td>
@@ -8467,11 +7991,6 @@ The name of the mark type to wrap the matched content in.
 
 The namespace to match. Nodes are only matched when the
 namespace matches or this property is null.
-
-</td>
-<td>
-
-&hyphen;
 
 </td>
 </tr>
@@ -8495,11 +8014,6 @@ rule should have either a `node`, `mark`, or `ignore` property
 or `mark` property will be derived from its position).
 
 </td>
-<td>
-
-&hyphen;
-
-</td>
 </tr>
 <tr>
 <td>
@@ -8521,60 +8035,6 @@ but newlines normalized to spaces, and `"full"` means that
 newlines should also be preserved.
 
 </td>
-<td>
-
-&hyphen;
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="priority-2"></a> `priority?`
-
-</td>
-<td>
-
-`number`
-
-</td>
-<td>
-
-Can be used to change the order in which the parse rules in a
-schema are tried. Those with higher priority come first. Rules
-without a priority are counted as having priority 50. This
-property is only meaningful in a schema—when directly
-constructing a parser, the order of the rule array is used.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`priority`](#priority)
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a id="skip-2"></a> `skip?`
-
-</td>
-<td>
-
-`boolean`
-
-</td>
-<td>
-
-When true, ignore the node that matches this rule, but do parse
-its content.
-
-</td>
-<td>
-
-[`GenericParseRule`](#genericparserule).[`skip`](#skip)
-
-</td>
 </tr>
 <tr>
 <td>
@@ -8592,11 +8052,6 @@ its content.
 A CSS selector describing the kind of DOM elements to match.
 
 </td>
-<td>
-
-&hyphen;
-
-</td>
 </tr>
 </tbody>
 </table>
@@ -8605,7 +8060,7 @@ A CSS selector describing the kind of DOM elements to match.
 
 ## Type Aliases
 
-### Attrs {#attrs-7}
+### Attrs {#attrs-5}
 
 ```ts
 type Attrs = object;

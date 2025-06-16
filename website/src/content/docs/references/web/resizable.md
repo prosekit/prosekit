@@ -32,54 +32,6 @@ sidebar:
 
 <!-- DEBUG memberWithGroups 9 -->
 
-#### Constructors
-
-##### Constructor
-
-```ts
-new ResizableHandleElement(): ResizableHandleElement;
-```
-
-###### Returns
-
-[`ResizableHandleElement`](#resizablehandleelement)
-
-###### Inherited from
-
-```ts
-ResizableHandleElementBase.constructor
-```
-
-#### Properties
-
-##### position {#position}
-
-```ts
-position: 
-  | "left"
-  | "right"
-  | "top"
-  | "bottom"
-  | "top-left"
-  | "top-right"
-  | "bottom-left"
-  | "bottom-right";
-```
-
-The position of the handle.
-
-###### Default
-
-```ts
-"bottom-right"
-```
-
-###### Inherited from
-
-```ts
-ResizableHandleElementBase.position
-```
-
 <!-- DEBUG memberWithGroups 10 -->
 
 ***
@@ -99,62 +51,6 @@ ResizableHandleElementBase.position
 <!-- DEBUG memberWithGroups 8 -->
 
 <!-- DEBUG memberWithGroups 9 -->
-
-#### Constructors
-
-##### Constructor
-
-```ts
-new ResizableRootElement(): ResizableRootElement;
-```
-
-###### Returns
-
-[`ResizableRootElement`](#resizablerootelement)
-
-###### Inherited from
-
-```ts
-ResizableRootElementBase.constructor
-```
-
-#### Properties
-
-##### aspectRatio {#aspectratio}
-
-```ts
-aspectRatio: null | number;
-```
-
-###### Inherited from
-
-```ts
-ResizableRootElementBase.aspectRatio
-```
-
-##### height {#height}
-
-```ts
-height: null | number;
-```
-
-###### Inherited from
-
-```ts
-ResizableRootElementBase.height
-```
-
-##### width {#width}
-
-```ts
-width: null | number;
-```
-
-###### Inherited from
-
-```ts
-ResizableRootElementBase.width
-```
 
 <!-- DEBUG memberWithGroups 10 -->
 
@@ -186,7 +82,7 @@ ResizableRootElementBase.width
 <tr>
 <td>
 
-<a id="position-1"></a> `position`
+<a id="position"></a> `position`
 
 </td>
 <td>
@@ -291,7 +187,7 @@ The position of the handle.
 <tr>
 <td>
 
-<a id="aspectratio-1"></a> `aspectRatio`
+<a id="aspectratio"></a> `aspectRatio`
 
 </td>
 <td>
@@ -303,7 +199,7 @@ The position of the handle.
 <tr>
 <td>
 
-<a id="height-1"></a> `height`
+<a id="height"></a> `height`
 
 </td>
 <td>
@@ -315,7 +211,7 @@ The position of the handle.
 <tr>
 <td>
 
-<a id="width-1"></a> `width`
+<a id="width"></a> `width`
 
 </td>
 <td>

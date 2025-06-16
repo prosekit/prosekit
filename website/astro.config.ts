@@ -10,7 +10,6 @@ import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
-import rehypeSlugCustomId from 'rehype-slug-custom-id'
 import { remarkHeadingId } from 'remark-custom-heading-id'
 import starlightThemeNova from 'starlight-theme-nova'
 import UnoCSS from 'unocss/astro'
@@ -148,7 +147,6 @@ const config: AstroUserConfig = {
   },
   markdown: {
     rehypePlugins: [
-      [rehypeSlugCustomId, { enableCustomId: true }],
       [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
     ],
     remarkPlugins: [

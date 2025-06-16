@@ -24,5 +24,18 @@ export class MyMarkdownThemeContext extends MarkdownThemeContext {
         + `<!-- DEBUG_signatureTitle_end -->`
       )
     }
+
+    this.partials.memberWithGroups = (...args) => {
+      const result = originalPartials.memberWithGroups(...args)
+      return (
+        `<!-- DEBUG_memberWithGroups_start -->`
+        + '\n\n'
+        + '\n\n'
+        + result
+        + '\n\n'
+        + '\n\n'
+        + `<!-- DEBUG_memberWithGroups_end -->`
+      )
+    }
   }
 }

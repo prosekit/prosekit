@@ -20,8 +20,6 @@ export function load(app: MarkdownApplication) {
 
       if (name) {
         page.frontmatter = {
-          DEBUG1: 'DEBUG1_VALUE',
-          // e.g add a title
           title: name,
           sidebar: {
             label: name.replace(/^@?prosekit\//, ''),

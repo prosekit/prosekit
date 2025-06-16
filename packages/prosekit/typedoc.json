@@ -10,9 +10,11 @@
   "plugin": [
     // "typedoc-plugin-no-inherit",
     "typedoc-plugin-markdown",
+    "@prosekit/typedoc-plugin",
     "typedoc-plugin-mdn-links",
     "typedoc-plugin-external-package-links"
   ],
+  "theme": "my-markdown",
   "githubPages": false,
   "disableSources": true,
   "externalSymbolLinkMappings": {

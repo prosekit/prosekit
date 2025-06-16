@@ -6,6 +6,9 @@ WEBSITE_DIR=$(pwd)
 cd "$WEBSITE_DIR/.."
 ROOT=$(pwd)
 
+cd "$ROOT/packages/typedoc-plugin"
+pnpm run build
+
 cd "$ROOT/packages/prosekit"
 # Ensure that tsc has built all packages and their dependencies
 pnpm run build:tsc

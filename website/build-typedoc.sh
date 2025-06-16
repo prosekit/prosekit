@@ -38,7 +38,6 @@ find references -name "*.md" | while read file; do
   fi
 done
 
-
 # Copy all files in references/ to docs/references/
 cd "$WEBSITE_DIR/src/content"
 mkdir -p docs/references

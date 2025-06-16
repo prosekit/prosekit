@@ -21,7 +21,7 @@ temp
 *.tsbuildinfo
 .turbo
 .temp
-# website/src/content/docs/references
+website/src/content/docs/references
 vite.config.ts.timestamp*
 .svelte-kit
 test-results

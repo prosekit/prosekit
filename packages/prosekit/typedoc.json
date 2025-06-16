@@ -70,7 +70,7 @@
   "hidePageTitle": true,
   "useCodeBlocks": true,
   "expandParameters": true,
-  "anchorPrefix": "debug-anchor-prefix-",
+  "anchorPrefix": "debug-anchor-prefix-", // TODO: remove this
   "parametersFormat": "htmlTable"
   // "inheritNone": true
   // "markdownHeadingId": true

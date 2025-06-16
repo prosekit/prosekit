@@ -128,7 +128,7 @@ importers:
     dependencies:
       unocss-preset-animations:
         specifier: ^1.2.1
-        version: 1.2.1(@unocss/preset-wind3@66.1.3)(unocss@66.1.3(postcss@8.5.5)(vite@6.3.5(@types/node@20.17.57)(jiti@2.4.2)(tsx@4.20.2)(yaml@2.8.0)))
+        version: 1.2.1(@unocss/preset-wind3@66.1.3)(unocss@66.1.3(postcss@8.5.5)(vite@6.3.5(@types/node@20.17.57)(jiti@2.4.2)(tsx@4.20.2)(yaml@2.8.0))(vue@3.5.16(typescript@5.8.3)))
     devDependencies:
       '@manypkg/find-root':
         specifier: ^3.0.0
@@ -491,6 +491,9 @@ importers:
       '@prosekit/config-vitest':
         specifier: workspace:*
         version: link:../config-vitest
+      '@prosekit/typedoc-plugin':
+        specifier: workspace:*
+        version: link:../typedoc-plugin
       '@types/react':
         specifier: ^19.1.8
         version: 19.1.8
@@ -531,17 +534,20 @@ importers:
         specifier: ^8.5.0
         version: 8.5.0(jiti@2.4.2)(postcss@8.5.5)(tsx@4.20.2)(typescript@5.8.3)(yaml@2.8.0)
       typedoc:
-        specifier: ^0.27.9
-        version: 0.27.9(typescript@5.8.3)
+        specifier: ^0.28.5
+        version: 0.28.5(typescript@5.8.3)
       typedoc-plugin-external-package-links:
         specifier: ^0.1.0
         version: 0.1.0
-      typedoc-plugin-md:
-        specifier: ^0.6.0
-        version: 0.6.0(typedoc@0.27.9(typescript@5.8.3))
+      typedoc-plugin-markdown:
+        specifier: ^4.6.4
+        version: 4.6.4(typedoc@0.28.5(typescript@5.8.3))
       typedoc-plugin-mdn-links:
         specifier: ^5.0.2
-        version: 5.0.2(typedoc@0.27.9(typescript@5.8.3))
+        version: 5.0.2(typedoc@0.28.5(typescript@5.8.3))
+      typedoc-plugin-no-inherit:
+        specifier: ^1.6.1
+        version: 1.6.1(typedoc@0.28.5(typescript@5.8.3))
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -683,6 +689,22 @@ importers:
       vitest:
         specifier: ^3.2.3
         version: 3.2.3(@types/debug@4.1.12)(@types/node@20.17.57)(@vitest/browser@3.2.3)(jiti@2.4.2)(tsx@4.20.2)(yaml@2.8.0)
+
+  packages/typedoc-plugin:
+    dependencies:
+      typedoc:
+        specifier: ^0.28.5
+        version: 0.28.5(typescript@5.8.3)
+      typedoc-plugin-markdown:
+        specifier: ^4.6.4
+        version: 4.6.4(typedoc@0.28.5(typescript@5.8.3))
+    devDependencies:
+      tsdown:
+        specifier: ^0.12.7
+        version: 0.12.7(typescript@5.8.3)(vue-tsc@2.2.10(typescript@5.8.3))
+      typescript:
+        specifier: ~5.8.3
+        version: 5.8.3
 
   packages/vue:
     dependencies:
@@ -1664,8 +1686,8 @@ packages:
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
 
-  '@gerrit0/mini-shiki@1.27.2':
-    resolution: {integrity: sha512-GeWyHz8ao2gBiUW4OJnQDxXQnFgZQwwQk05t/CVVgNBN7/rK8XZ7xY6YhLVv9tH3VppWWmr9DCl3MwemB/i+Og==}
+  '@gerrit0/mini-shiki@3.6.0':
+    resolution: {integrity: sha512-KaeJvPNofTEZR9EzVNp/GQzbQqkGfjiu6k3CXKvhVTX+8OoAKSX/k7qxLKOX3B0yh2XqVAc93rsOu48CGt2Qug==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2404,9 +2426,6 @@ packages:
   '@shikijs/engine-javascript@3.6.0':
     resolution: {integrity: sha512-7YnLhZG/TU05IHMG14QaLvTW/9WiK8SEYafceccHUSXs2Qr5vJibUwsDfXDLmRi0zHdzsxrGKpSX6hnqe0k8nA==}
 
-  '@shikijs/engine-oniguruma@1.29.2':
-    resolution: {integrity: sha512-7iiOx3SG8+g1MnlzZVDYiaeHe7Ez2Kf2HrJzdmGwkRisT7r4rak0e655AcM/tF9JG/kg5fMNYlLLKglbN7gBqA==}
-
   '@shikijs/engine-oniguruma@3.6.0':
     resolution: {integrity: sha512-nmOhIZ9yT3Grd+2plmW/d8+vZ2pcQmo/UnVwXMUXAKTXdi+LK0S08Ancrz5tQQPkxvjBalpMW2aKvwXfelauvA==}
 
@@ -2423,9 +2442,6 @@ packages:
     resolution: {integrity: sha512-Lsbp8blX1j1AX7vR6/4h1g7W8mVtjTbjvk6n7PBvHDXcezax1pFPOuNu33V8CQLQ0UZgd2X61bH28yzY5aMy7g==}
     peerDependencies:
       typescript: '>=5.5.0'
-
-  '@shikijs/types@1.29.2':
-    resolution: {integrity: sha512-VJjK0eIijTZf0QSTODEXCqinjBn0joAHQ+aPSBzrv4O2d/QSbsMw+ZeSRx03kV34Hy7NzUvV/7NqfYGRLrASmw==}
 
   '@shikijs/types@3.5.0':
     resolution: {integrity: sha512-VvqGHhS8BWClF7eVnEJLe0nAhQw/1L+xC5mp6uj+tVr3tjD2ASx2Mx9M9l7tZQO++1qwZeIIusvSRhz4aKODFQ==}
@@ -6580,19 +6596,25 @@ packages:
   typedoc-plugin-external-package-links@0.1.0:
     resolution: {integrity: sha512-1fnFUjCTBnfBgkirFnTaNBEHpestaxQNKDBkws8nKQdqVoEzd24+omrwMTdSAhyC0a24bNbEEiCBAgLzzWu4lA==}
 
-  typedoc-plugin-md@0.6.0:
-    resolution: {integrity: sha512-wMb5vdcobPknFWuUjMdh2r9mGQ5kxX4uQ5GlB+nqhMOcKa2SSimqHrWV6q5bcmFMuKvpO9i3kWfUGmthf+KCwA==}
+  typedoc-plugin-markdown@4.6.4:
+    resolution: {integrity: sha512-AnbToFS1T1H+n40QbO2+i0wE6L+55rWnj7zxnM1r781+2gmhMF2dB6dzFpaylWLQYkbg4D1Y13sYnne/6qZwdw==}
+    engines: {node: '>= 18'}
     peerDependencies:
-      typedoc: ^0.27.1
+      typedoc: 0.28.x
 
   typedoc-plugin-mdn-links@5.0.2:
     resolution: {integrity: sha512-Bd3lsVWPSpDkn6NGZyPHpcK088PUvH4SRq4RD97OjA6l8PQA3yOnJhGACtjmIDdcenRTgWUosH+55ANZhx/wkw==}
     peerDependencies:
       typedoc: 0.27.x || 0.28.x
 
-  typedoc@0.27.9:
-    resolution: {integrity: sha512-/z585740YHURLl9DN2jCWe6OW7zKYm6VoQ93H0sxZ1cwHQEQrUn5BJrEnkWhfzUdyO+BLGjnKUZ9iz9hKloFDw==}
-    engines: {node: '>= 18'}
+  typedoc-plugin-no-inherit@1.6.1:
+    resolution: {integrity: sha512-+qf0RkO5YR9kUBBS1HqzzDOsWOnLcXTtGL0f2ia4jDQAjGrtF0+po/0R8k3UNtBqyDzL273aaV3FIGHEX+U/tg==}
+    peerDependencies:
+      typedoc: 0.26.x || 0.27.x || 0.28.x
+
+  typedoc@0.28.5:
+    resolution: {integrity: sha512-5PzUddaA9FbaarUzIsEc4wNXCiO4Ot3bJNeMF2qKpYlTmM9TTaSHQ7162w756ERCkXER/+o2purRG6YOAv6EMA==}
+    engines: {node: '>= 18', pnpm: '>= 10'}
     hasBin: true
     peerDependencies:
       typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x
@@ -8145,10 +8167,12 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@gerrit0/mini-shiki@1.27.2':
+  '@gerrit0/mini-shiki@3.6.0':
     dependencies:
-      '@shikijs/engine-oniguruma': 1.29.2
-      '@shikijs/types': 1.29.2
+      '@shikijs/engine-oniguruma': 3.6.0
+      '@shikijs/langs': 3.6.0
+      '@shikijs/themes': 3.6.0
+      '@shikijs/types': 3.6.0
       '@shikijs/vscode-textmate': 10.0.2
 
   '@humanfs/core@0.19.1': {}
@@ -8866,11 +8890,6 @@ snapshots:
       '@shikijs/vscode-textmate': 10.0.2
       oniguruma-to-es: 4.3.3
 
-  '@shikijs/engine-oniguruma@1.29.2':
-    dependencies:
-      '@shikijs/types': 1.29.2
-      '@shikijs/vscode-textmate': 10.0.2
-
   '@shikijs/engine-oniguruma@3.6.0':
     dependencies:
       '@shikijs/types': 3.6.0
@@ -8897,11 +8916,6 @@ snapshots:
       typescript: 5.8.3
     transitivePeerDependencies:
       - supports-color
-
-  '@shikijs/types@1.29.2':
-    dependencies:
-      '@shikijs/vscode-textmate': 10.0.2
-      '@types/hast': 3.0.4
 
   '@shikijs/types@3.5.0':
     dependencies:
@@ -14196,25 +14210,21 @@ snapshots:
 
   typedoc-plugin-external-package-links@0.1.0: {}
 
-  typedoc-plugin-md@0.6.0(typedoc@0.27.9(typescript@5.8.3)):
+  typedoc-plugin-markdown@4.6.4(typedoc@0.28.5(typescript@5.8.3)):
     dependencies:
-      '@sindresorhus/slugify': 2.2.1
-      change-case: 5.4.4
-      remark-parse: 11.0.0
-      remark-stringify: 11.0.0
-      typedoc: 0.27.9(typescript@5.8.3)
-      unified: 11.0.5
-      unist-util-visit: 5.0.0
-    transitivePeerDependencies:
-      - supports-color
+      typedoc: 0.28.5(typescript@5.8.3)
 
-  typedoc-plugin-mdn-links@5.0.2(typedoc@0.27.9(typescript@5.8.3)):
+  typedoc-plugin-mdn-links@5.0.2(typedoc@0.28.5(typescript@5.8.3)):
     dependencies:
-      typedoc: 0.27.9(typescript@5.8.3)
+      typedoc: 0.28.5(typescript@5.8.3)
 
-  typedoc@0.27.9(typescript@5.8.3):
+  typedoc-plugin-no-inherit@1.6.1(typedoc@0.28.5(typescript@5.8.3)):
     dependencies:
-      '@gerrit0/mini-shiki': 1.27.2
+      typedoc: 0.28.5(typescript@5.8.3)
+
+  typedoc@0.28.5(typescript@5.8.3):
+    dependencies:
+      '@gerrit0/mini-shiki': 3.6.0
       lunr: 2.3.9
       markdown-it: 14.1.0
       minimatch: 9.0.5
@@ -14340,7 +14350,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unocss-preset-animations@1.2.1(@unocss/preset-wind3@66.1.3)(unocss@66.1.3(postcss@8.5.5)(vite@6.3.5(@types/node@20.17.57)(jiti@2.4.2)(tsx@4.20.2)(yaml@2.8.0))):
+  unocss-preset-animations@1.2.1(@unocss/preset-wind3@66.1.3)(unocss@66.1.3(postcss@8.5.5)(vite@6.3.5(@types/node@20.17.57)(jiti@2.4.2)(tsx@4.20.2)(yaml@2.8.0))(vue@3.5.16(typescript@5.8.3))):
     dependencies:
       unocss: 66.1.3(postcss@8.5.5)(vite@6.3.5(@types/node@20.17.57)(jiti@2.4.2)(tsx@4.20.2)(yaml@2.8.0))(vue@3.5.16(typescript@5.8.3))
     optionalDependencies:

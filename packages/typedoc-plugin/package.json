@@ -1,0 +1,22 @@
+{
+  "name": "@prosekit/typedoc-plugin",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Internal package for ProseKit",
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsdown"
+  },
+  "devDependencies": {
+    "tsdown": "^0.12.7",
+    "typescript": "~5.8.3"
+  },
+  "dependencies": {
+    "typedoc": "^0.28.5",
+    "typedoc-plugin-markdown": "^4.6.4"
+  }
+}

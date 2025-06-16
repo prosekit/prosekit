@@ -6,8 +6,10 @@
   ],
   "tsconfig": "./tsconfig.build.json",
   "out": ".temp/typedoc",
+  "router": "module",
   "plugin": [
-    "typedoc-plugin-md",
+    // "typedoc-plugin-no-inherit",
+    "typedoc-plugin-markdown",
     "typedoc-plugin-mdn-links",
     "typedoc-plugin-external-package-links"
   ],
@@ -60,5 +62,9 @@
   "treatWarningsAsErrors": true,
   "cleanOutputDir": true,
   "entryFileName": "index.md",
-  "markdownHeadingId": true
+  "hidePageHeader": true,
+  "hideBreadcrumbs": true
+  // "inheritNone": true
+  // "hidePageTitle": true
+  // "markdownHeadingId": true
 }

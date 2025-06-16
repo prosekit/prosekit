@@ -31,11 +31,7 @@ export function memberContainer(
       logger.warn(
         `[typedoc-plugin-md] Get unexpected newlines in title: ${title}`,
       )
-    } else if (!anchor) {
-      logger.warn(
-        `[typedoc-plugin-md] Unable to get anchor for ${model.name}`,
-      )
-    } else {
+    } else if (anchor) {
       // See also https://www.npmjs.com/package/remark-custom-heading-id
       title = `${title} {#${anchor}}`
     }

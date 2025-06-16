@@ -1,6 +1,7 @@
 import { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
 import { memberContainer } from './theme/context/partials/member.container'
+import { signatureReturns } from './theme/context/partials/member.signatureReturns'
 
 export class MyMarkdownThemeContext extends MarkdownThemeContext {
   constructor(...args: ConstructorParameters<typeof MarkdownThemeContext>) {
@@ -26,7 +27,7 @@ export class MyMarkdownThemeContext extends MarkdownThemeContext {
     }
 
     this.partials.signatureReturns = (...args) => {
-      const result = originalPartials.signatureReturns(...args)
+      const result = signatureReturns.call(this, ...args)
       return (
         `<!-- DEBUG_signatureReturns_start -->`
         + '\n\n'

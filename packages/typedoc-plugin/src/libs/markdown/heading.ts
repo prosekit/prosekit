@@ -4,6 +4,6 @@
  * @param text The text of the heading
  */
 export function heading(level: number, text: string) {
-  level = level > 6 ? 6 : level;
-  return `${[...Array(level)].map(() => '#').join('')} ${text}`;
+  level = level > 6 ? 6 : level
+  return `${[...Array(level)].map(() => '#').join('')} ${text}`
 }

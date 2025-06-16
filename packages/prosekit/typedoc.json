@@ -70,7 +70,6 @@
   "hidePageTitle": true,
   "useCodeBlocks": true,
   "expandParameters": true,
-  "useHTMLAnchors": true,
   "anchorPrefix": "debug-anchor-prefix-",
   "parametersFormat": "htmlTable"
   // "inheritNone": true

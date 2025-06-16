@@ -2,7 +2,7 @@ import type { DeclarationReflection } from 'typedoc'
 import { ReflectionKind } from 'typedoc'
 import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
-import { heading } from '../../../libs/markdown/index.js'
+import { heading } from '../../../libs/markdown/heading'
 
 export function memberContainer(
   this: MarkdownThemeContext,
@@ -10,21 +10,37 @@ export function memberContainer(
   options: { headingLevel: number; nested?: boolean; groupTitle?: string },
 ): string {
   const md: string[] = []
+  const anchor = this.router.getAnchor(model)
+  const logger = this.theme.application.logger
 
   if (
     !this.router.hasOwnDocument(model)
     && this.router.hasUrl(model)
-    && this.router.getAnchor(model)
+    && anchor
     && this.options.getValue('useHTMLAnchors')
   ) {
-    md.push(`<a data-debug-md id="${this.router.getAnchor(model)}"></a>`)
+    md.push(`<a id="${anchor}"></a>`)
   }
 
   if (
     !this.router.hasOwnDocument(model)
     && ![ReflectionKind.Constructor].includes(model.kind)
   ) {
-    md.push(heading(options.headingLevel, this.partials.memberTitle(model)))
+    let title = this.partials.memberTitle(model)
+    if (title.includes('\n')) {
+      logger.warn(
+        `[typedoc-plugin-md] Get unexpected newlines in title: ${title}`,
+      )
+    } else if (!anchor) {
+      logger.warn(
+        `[typedoc-plugin-md] Unable to get anchor for ${model.name}`,
+      )
+    } else {
+      // See also https://www.npmjs.com/package/remark-custom-heading-id
+      title = `${title} {#${anchor}}`
+    }
+
+    md.push(heading(options.headingLevel, title))
   }
 
   md.push(

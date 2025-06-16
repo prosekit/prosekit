@@ -12,6 +12,7 @@
     "build": "tsdown"
   },
   "devDependencies": {
+    "@types/node": "^20.17.29",
     "tsdown": "^0.12.7",
     "typescript": "~5.8.3"
   },

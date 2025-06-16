@@ -4,5 +4,6 @@ A internal Typedoc plugin for ProseKit's documentation.
 
 ## TODOs
 
-- `references/pm/transform` abstract Step class are not linked correctly
+- [ ] Links to `references/core` Editor class are not correctly
+- [ ] Links to `references/pm/transform` abstract Step class are not correctly
 - [ ] Move to a standalone package?

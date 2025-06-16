@@ -12,6 +12,7 @@ import astrobook from 'astrobook'
 import { fdir } from 'fdir'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlugCustomId from 'rehype-slug-custom-id'
+import { remarkHeadingId } from 'remark-custom-heading-id'
 import starlightThemeNova from 'starlight-theme-nova'
 import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
@@ -149,8 +150,11 @@ const config: AstroUserConfig = {
   markdown: {
     rehypePlugins: [
       [rehypeSlugCustomId, { enableCustomId: true }],
-      [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+      // [rehypeAutolinkHeadings, { behavior: 'wrap' }],
       [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
+    ],
+    remarkPlugins: [
+      remarkHeadingId,
     ],
   },
   experimental: {

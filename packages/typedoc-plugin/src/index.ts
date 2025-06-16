@@ -1,9 +1,39 @@
-import { type MarkdownApplication } from 'typedoc-plugin-markdown'
+import { ReflectionKind } from 'typedoc'
+import {
+  MarkdownPageEvent,
+  type MarkdownApplication,
+} from 'typedoc-plugin-markdown'
 
 import { MyMarkdownTheme } from './markdown-theme'
 
 export function load(app: MarkdownApplication) {
   console.log('[typedoc-plugin-md-v2] load 5:', app)
+
+  app.renderer.on(
+    MarkdownPageEvent.BEGIN,
+    /** @param {import('typedoc-plugin-markdown').MarkdownPageEvent} page */
+    (page) => {
+      /**
+       * Update page.frontmatter object using information from the page model
+       *
+       * Here if the page is a class, we set the title to the class name
+       */
+      const name = page.model.name
+
+      if (name) {
+        page.frontmatter = {
+          DEBUG1: 'DEBUG1_VALUE',
+          // e.g add a title
+          title: name,
+          sidebar: {
+            label: name.replace(/^@?prosekit\//, ''),
+          },
+          // spread the existing frontmatter
+          ...page.frontmatter,
+        }
+      }
+    },
+  )
 
   app.renderer.markdownHooks.on(
     'page.begin',

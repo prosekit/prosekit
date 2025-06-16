@@ -11,6 +11,7 @@
     // "typedoc-plugin-no-inherit",
     "typedoc-plugin-markdown",
     "@prosekit/typedoc-plugin",
+    "typedoc-plugin-frontmatter",
     "typedoc-plugin-mdn-links",
     "typedoc-plugin-external-package-links"
   ],

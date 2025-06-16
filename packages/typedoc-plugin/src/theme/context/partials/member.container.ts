@@ -1,3 +1,5 @@
+// TODO: Remove this file once https://github.com/typedoc2md/typedoc-plugin-markdown/pull/823/ is released
+
 import type { DeclarationReflection } from 'typedoc'
 import { ReflectionKind } from 'typedoc'
 import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'

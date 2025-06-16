@@ -1,5 +1,4 @@
-{
-  "$schema": "https://typedoc.org/schema.json",
+export default {
   "entryPoints": [
     "./src/basic.gen.ts",
     "./src/core.gen.ts",

@@ -7,6 +7,7 @@ import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
 import type { AstroUserConfig } from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
+import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
 import { remarkHeadingId } from 'remark-custom-heading-id'
@@ -145,7 +146,9 @@ const config: AstroUserConfig = {
     },
   },
   markdown: {
-    rehypePlugins: [],
+    rehypePlugins: [
+      [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
+    ],
     remarkPlugins: [
       remarkHeadingId,
     ],

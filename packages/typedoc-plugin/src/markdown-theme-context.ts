@@ -1,7 +1,6 @@
 import { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
 import { memberContainer } from './theme/context/partials/member.container'
-import { signatureReturns } from './theme/context/partials/member.signatureReturns'
 
 export class MyMarkdownThemeContext extends MarkdownThemeContext {
   constructor(...args: ConstructorParameters<typeof MarkdownThemeContext>) {
@@ -23,19 +22,6 @@ export class MyMarkdownThemeContext extends MarkdownThemeContext {
         + '\n\n'
         + '\n\n'
         + `<!-- DEBUG_signatureTitle_end -->`
-      )
-    }
-
-    this.partials.signatureReturns = (...args) => {
-      const result = signatureReturns.call(this, ...args)
-      return (
-        `<!-- DEBUG_signatureReturns_start -->`
-        + '\n\n'
-        + '\n\n'
-        + result
-        + '\n\n'
-        + '\n\n'
-        + `<!-- DEBUG_signatureReturns_end -->`
       )
     }
   }

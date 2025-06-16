@@ -54,7 +54,6 @@
     "prosemirror-highlight": "^0.13.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "rehype-autolink-headings": "^7.1.0",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
     "rehype-slug-custom-id": "^2.0.0",

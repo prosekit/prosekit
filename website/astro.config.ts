@@ -148,7 +148,6 @@ const config: AstroUserConfig = {
     rehypePlugins: [
       [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
     ],
-    remarkPlugins: [],
   },
   experimental: {
     headingIdCompat: true,

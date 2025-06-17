@@ -88,7 +88,7 @@ describe('MarkAction', () => {
         {
           type: 'text',
           text: 'foo',
-          marks: [{ attrs: { href: href2 }, type: 'link' }],
+          marks: [{ attrs: { href: href2, target: null, rel: null }, type: 'link' }],
         },
       ],
     })
@@ -99,7 +99,7 @@ describe('MarkAction', () => {
         {
           type: 'text',
           text: 'foo',
-          marks: [{ attrs: { href: href2 }, type: 'link' }],
+          marks: [{ attrs: { href: href2, target: null, rel: null }, type: 'link' }],
         },
       ],
     })

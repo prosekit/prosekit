@@ -46,12 +46,12 @@ describe('MarkAction', () => {
 
   it('can apply mark with attrs', () => {
     expect(
-      n.p(m.link({ href: 'https://example.com' }, 'foo')).toJSON(),
+      n.p(m.link({ href: 'https://example.com', target: '_blank', rel: 'noopener' }, 'foo')).toJSON(),
     ).toEqual({
       type: 'paragraph',
       content: [
         {
-          marks: [{ type: 'link', attrs: { href: 'https://example.com', target: null, rel: null } }],
+          marks: [{ type: 'link', attrs: { href: 'https://example.com', target: '_blank', rel: 'noopener' } }],
           text: 'foo',
           type: 'text',
         },
@@ -69,7 +69,7 @@ describe('MarkAction', () => {
     const href1 = 'https://example.com/1'
     const href2 = 'https://example.com/2'
     const link1 = (node: NodeChild) => m.link({ href: href1 }, node)
-    const link2 = (node: NodeChild) => m.link({ href: href2 }, node)
+    const link2 = (node: NodeChild) => m.link({ href: href2, target: '_blank', rel: 'noopener' }, node)
 
     expect(n.p(link1('foo')).toJSON()).toEqual({
       type: 'paragraph',
@@ -88,7 +88,7 @@ describe('MarkAction', () => {
         {
           type: 'text',
           text: 'foo',
-          marks: [{ attrs: { href: href2, target: null, rel: null }, type: 'link' }],
+          marks: [{ attrs: { href: href2, target: '_blank', rel: 'noopener' }, type: 'link' }],
         },
       ],
     })
@@ -99,7 +99,7 @@ describe('MarkAction', () => {
         {
           type: 'text',
           text: 'foo',
-          marks: [{ attrs: { href: href2, target: null, rel: null }, type: 'link' }],
+          marks: [{ attrs: { href: href2, target: '_blank', rel: 'noopener' }, type: 'link' }],
         },
       ],
     })

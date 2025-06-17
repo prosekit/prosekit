@@ -22,7 +22,10 @@ import {
   defineElementHoverHandler,
   type ElementHoverHandler,
 } from './pointer-move'
-import type { BlockHandlePopoverProps, BlockHandlePopoverEvents } from './types'
+import type {
+  BlockHandlePopoverEvents,
+  BlockHandlePopoverProps,
+} from './types'
 
 /**
  * @internal

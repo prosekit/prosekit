@@ -27,6 +27,8 @@ import {
  */
 export interface LinkAttrs {
   href: string
+  target?: string | null
+  rel?: string | null
 }
 
 /**
@@ -47,6 +49,8 @@ export function defineLinkSpec(): LinkSpecExtension {
     inclusive: false,
     attrs: {
       href: { validate: 'string' },
+      target: { default: null, validate: 'string|null' },
+      rel: { default: null, validate: 'string|null' },
     },
     parseDOM: [
       {
@@ -54,13 +58,15 @@ export function defineLinkSpec(): LinkSpecExtension {
         getAttrs: (dom: HTMLElement) => {
           return {
             href: dom.getAttribute('href') || '',
+            target: dom.getAttribute('target') || null,
+            rel: dom.getAttribute('rel') || null,
           }
         },
       },
     ],
     toDOM(node) {
-      const { href } = node.attrs as LinkAttrs
-      return ['a', { href }, 0]
+      const { href, target, rel } = node.attrs as LinkAttrs
+      return ['a', { href, target, rel }, 0]
     },
   })
 }

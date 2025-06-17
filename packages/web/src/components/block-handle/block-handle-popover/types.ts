@@ -3,11 +3,14 @@ import type {
   PropDeclarations,
 } from '@aria-ui/core'
 import {
+  overlayPositionerEvents,
   overlayPositionerProps,
+  type OverlayPositionerEvents,
   type OverlayPositionerProps,
 } from '@aria-ui/overlay/elements'
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
+import type { ProseMirrorNode } from '@prosekit/pm/model'
 
 export interface BlockHandlePopoverProps extends Omit<OverlayPositionerProps, 'placement' | 'hoist'> {
   /**
@@ -45,8 +48,15 @@ export const blockHandlePopoverProps: PropDeclarations<BlockHandlePopoverProps> 
   hoist: { default: false },
 }
 
-/** @internal */
-export interface BlockHandlePopoverEvents {}
+export interface BlockHandlePopoverEvents extends OverlayPositionerEvents {
+  /**
+   * Fired when the hovered block changes.
+   */
+  changeNode: CustomEvent<{ node: ProseMirrorNode; pos: number } | null>
+}
 
 /** @internal */
-export const blockHandlePopoverEvents: EventDeclarations<BlockHandlePopoverEvents> = {}
+export const blockHandlePopoverEvents: EventDeclarations<BlockHandlePopoverEvents> = {
+  ...overlayPositionerEvents,
+  changeNode: {},
+}

@@ -4,6 +4,8 @@ import { memberContainer } from './theme/context/partials/member.container'
 import { declaration } from './theme/context/partials/member.declaration'
 import { declarationTitle } from './theme/context/partials/member.declarationTitle'
 import { inheritance } from './theme/context/partials/member.inheritance'
+import { signature } from './theme/context/partials/member.signature'
+import { signatureTitle } from './theme/context/partials/member.signatureTitle'
 
 export class MyMarkdownThemeContext extends MarkdownThemeContext {
   constructor(...args: ConstructorParameters<typeof MarkdownThemeContext>) {
@@ -20,6 +22,12 @@ export class MyMarkdownThemeContext extends MarkdownThemeContext {
     }
     this.partials.declarationTitle = (...args) => {
       return declarationTitle.call(this, ...args)
+    }
+    this.partials.signature = (...args) => {
+      return signature.call(this, ...args)
+    }
+    this.partials.signatureTitle = (...args) => {
+      return signatureTitle.call(this, ...args)
     }
   }
 }

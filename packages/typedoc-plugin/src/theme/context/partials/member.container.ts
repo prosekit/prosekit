@@ -12,6 +12,9 @@ export function memberContainer(
   options: { headingLevel: number; nested?: boolean; groupTitle?: string },
 ): string {
   const md: string[] = []
+
+  md.push('<!-- DEBUG memberContainer START -->')
+
   const anchor = this.router.getAnchor(model)
   const logger = this.theme.application.logger
 
@@ -47,12 +50,18 @@ export function memberContainer(
     md.push(heading(options.headingLevel, title))
   }
 
+  md.push('<!-- DEBUG memberContainer STEP 3 -->')
+
   md.push(
     this.partials.member(model, {
       headingLevel: options.headingLevel,
       nested: options.nested,
     }),
   )
+
+  md.push('<!-- DEBUG memberContainer STEP 4 -->')
+
+  md.push('<!-- DEBUG memberContainer END -->')
 
   return md.join('\n\n')
 }

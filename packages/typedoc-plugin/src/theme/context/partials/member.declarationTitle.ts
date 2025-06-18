@@ -88,11 +88,10 @@ export function declarationTitle(
     md.push(` = \`${model.defaultValue}\``)
   }
 
-  const result = md.join('')
+  md.unshift('<code data-typedoc-declaration>')
+  md.push('</code>')
 
-  return [
-    '<code data-typedoc-declaration>' + result + '</code>',
-  ].join('\n\n')
+  return md.join(' ')
 }
 
 function getReflectionFlags(

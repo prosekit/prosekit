@@ -52,11 +52,11 @@ export interface BlockHandlePopoverEvents extends OverlayPositionerEvents {
   /**
    * Fired when the hovered block changes.
    */
-  changeNode: CustomEvent<{ node: ProseMirrorNode; pos: number } | null>
+  stateChange: CustomEvent<{ node: ProseMirrorNode; pos: number } | null>
 }
 
 /** @internal */
 export const blockHandlePopoverEvents: EventDeclarations<BlockHandlePopoverEvents> = {
   ...overlayPositionerEvents,
-  changeNode: {},
+  stateChange: {},
 }

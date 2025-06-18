@@ -1,5 +1,6 @@
 import { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
+import { getReflectionFlags } from './theme/context/helpers/get-reflection-flags'
 import { memberContainer } from './theme/context/partials/member.container'
 import { declaration } from './theme/context/partials/member.declaration'
 import { declarationTitle } from './theme/context/partials/member.declarationTitle'
@@ -10,6 +11,10 @@ import { signatureTitle } from './theme/context/partials/member.signatureTitle'
 export class MyMarkdownThemeContext extends MarkdownThemeContext {
   constructor(...args: ConstructorParameters<typeof MarkdownThemeContext>) {
     super(...args)
+
+    this.helpers.getReflectionFlags = (...args) => {
+      return getReflectionFlags.call(this, ...args)
+    }
 
     this.partials.memberContainer = (...args) => {
       return memberContainer.call(this, ...args)

@@ -45,11 +45,11 @@ export function signatureTitle(
 
   if (model.typeParameters) {
     md.push(
-      `${'<'}${
-        model.typeParameters
-          .map((typeParameter) => (typeParameter.name))
-          .join(', ')
-      }${'>'}`,
+      '<',
+      model.typeParameters
+        .map((typeParameter) => typeParameter.name)
+        .join(', '),
+      '>',
     )
   }
 

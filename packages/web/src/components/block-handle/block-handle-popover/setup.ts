@@ -4,7 +4,7 @@ import {
   useEffect,
   type ConnectableElement,
   type ReadonlySignal,
-  type SignalState,
+  type SetupOptions,
 } from '@aria-ui/core'
 import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
@@ -22,14 +22,17 @@ import {
   defineElementHoverHandler,
   type ElementHoverHandler,
 } from './pointer-move'
-import type { BlockHandlePopoverProps } from './types'
+import type {
+  BlockHandlePopoverEvents,
+  BlockHandlePopoverProps,
+} from './types'
 
 /**
  * @internal
  */
 export function useBlockHandlePopover(
   host: ConnectableElement,
-  { state }: { state: SignalState<BlockHandlePopoverProps> },
+  { state, emit }: SetupOptions<BlockHandlePopoverProps, BlockHandlePopoverEvents>,
 ): void {
   const { editor, ...overlayState } = state
   const reference = createSignal<VirtualElement | null>(null)
@@ -47,6 +50,8 @@ export function useBlockHandlePopover(
   useHoverExtension(host, editor, (referenceValue, hoverState) => {
     reference.set(referenceValue)
     context.set(hoverState)
+    const stateChangeDetails = hoverState ? { node: hoverState.node, pos: hoverState.pos } : null
+    emit('stateChange', stateChangeDetails)
   })
 
   useAttribute(host, 'data-state', () => (open.get() ? 'open' : 'closed'))

@@ -12,7 +12,6 @@ export function memberContainer(
   options: { headingLevel: number; nested?: boolean; groupTitle?: string },
 ): string {
   const md: string[] = []
-
   const anchor = this.router.getAnchor(model)
   const logger = this.theme.application.logger
 

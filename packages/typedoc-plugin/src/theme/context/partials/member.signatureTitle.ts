@@ -30,12 +30,17 @@ export function signatureTitle(
   }
 
   if (!['__call', '__type'].includes(model.name)) {
-    const name: string[] = []
     if (model.kind === ReflectionKind.ConstructorSignature) {
-      name.push('new')
+      md.push('new')
+      md.push(' ')
     }
-    name.push(model.name)
-    md.push(name.join(' '))
+
+    const anchor = this.router.hasUrl(model) && this.router.getAnchor(model)
+    if (anchor) {
+      md.push(`<a id="${anchor}" href="#${anchor}">${model.name}</a>`)
+    } else {
+      md.push(model.name)
+    }
   }
 
   if (model.typeParameters) {

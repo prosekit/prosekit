@@ -21,7 +21,7 @@
   },
   "keywords": [
     "ProseMirror"
-  ], 
+  ],
   "sideEffects": false,
   "main": "./src/index.ts",
   "module": "./src/index.ts",

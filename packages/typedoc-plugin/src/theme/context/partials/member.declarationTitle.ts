@@ -1,7 +1,4 @@
-import type {
-  DeclarationReflection,
-  ReflectionFlags,
-} from 'typedoc'
+import type { DeclarationReflection } from 'typedoc'
 import { ReflectionKind } from 'typedoc'
 import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
@@ -13,16 +10,14 @@ export function declarationTitle(
 
   const declarationType = this.helpers.getDeclarationType(model)
 
-  const prefix: string[] = []
-
   md.push(
-    ...getReflectionFlags.call(this, model.flags).flatMap(
-      flag => [`<i>${flag}</i>`, ' '],
-    ),
+    ...this.helpers.getReflectionFlags(model.flags)
+      .split(' ')
+      .flatMap((flag) => [`<i>${flag}</i>`, ' ']),
   )
 
   if (model.flags?.isRest) {
-    prefix.push('...')
+    md.push('...')
   }
 
   const keyword = this.helpers.getKeyword(model.kind)
@@ -92,30 +87,4 @@ export function declarationTitle(
   md.push('</code>')
 
   return md.join('')
-}
-
-function getReflectionFlags(
-  this: MarkdownThemeContext,
-  reflectionFlags: ReflectionFlags,
-): string[] {
-  const result: string[] = []
-  if (reflectionFlags?.isAbstract) {
-    result.push('abstract')
-  }
-  if (reflectionFlags?.isConst) {
-    result.push('const')
-  }
-  if (reflectionFlags?.isPrivate) {
-    result.push('private')
-  }
-  if (reflectionFlags?.isProtected) {
-    result.push('protected')
-  }
-  if (reflectionFlags?.isReadonly) {
-    result.push('readonly')
-  }
-  if (reflectionFlags?.isStatic) {
-    result.push('static')
-  }
-  return result
 }

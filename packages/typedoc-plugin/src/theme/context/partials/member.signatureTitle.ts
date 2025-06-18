@@ -15,7 +15,7 @@ export function signatureTitle(
   const keyword = this.helpers.getKeyword(model.parent.kind)
 
   if (this.helpers.isGroupKind(model.parent) && keyword) {
-    md.push(keyword + ' ')
+    md.push(`<i>${keyword}</i>`, ' ')
   }
 
   if (options?.accessor) {
@@ -23,10 +23,11 @@ export function signatureTitle(
   }
 
   if (model.parent) {
-    const flagsString = this.helpers.getReflectionFlags(model.parent?.flags)
-    if (flagsString.length > 0) {
-      md.push(this.helpers.getReflectionFlags(model.parent.flags) + ' ')
-    }
+    md.push(
+      ...this.helpers.getReflectionFlags(model.parent.flags)
+        .split(' ')
+        .flatMap((flag) => [`<i>${flag}</i>`, ' ']),
+    )
   }
 
   if (!['__call', '__type'].includes(model.name)) {

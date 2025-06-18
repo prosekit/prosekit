@@ -91,7 +91,7 @@ export function declarationTitle(
   md.unshift('<code data-typedoc-declaration>')
   md.push('</code>')
 
-  return md.join(' ')
+  return md.join('')
 }
 
 function getReflectionFlags(

@@ -1,0 +1,12 @@
+code[data-typedoc-declaration] {
+  display: inline-block;
+  background-color: transparent;
+  border-color: transparent;
+
+  & code {
+    background-color: transparent;
+    border-color: transparent;
+    margin: 0;
+    padding: 0;
+  }
+}

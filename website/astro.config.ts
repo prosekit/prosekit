@@ -101,6 +101,9 @@ const config: AstroUserConfig = {
       components: {
         Hero: './src/components/overrides/Hero.astro',
       },
+      customCss: [
+        './src/styles/typedoc.css',
+      ],
       plugins: [
         starlightThemeNova({
           nav: [

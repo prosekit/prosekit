@@ -27,6 +27,12 @@ export function memberContainer(
   if (
     !this.router.hasOwnDocument(model)
     && ![ReflectionKind.Constructor].includes(model.kind)
+    && (
+      /* Additional logic: don't add heading for properties */
+      // TODO: Move this logic to a member.container.patch.ts file once https://github.com/typedoc2md/typedoc-plugin-markdown/pull/823/
+      // is released
+      model.kind !== ReflectionKind.Property
+    )
   ) {
     let title = this.partials.memberTitle(model)
     if (title.includes('\n')) {

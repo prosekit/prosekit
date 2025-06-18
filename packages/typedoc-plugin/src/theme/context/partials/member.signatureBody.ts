@@ -1,13 +1,13 @@
 import type { SignatureReflection } from 'typedoc'
-import { ReflectionKind } from 'typedoc'
 import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'
-
-import { heading } from '../../../libs/markdown/heading'
 
 // Based on https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown%404.6.4/packages/typedoc-plugin-markdown/src/theme/context/partials/member.signature.ts#L5
 // with the following changes:
 //
 // - `this.partials.signatureTitle(model)` is not called
+// - `this.partials.typeParametersList` is not called
+// - `this.partials.parametersList` is not called
+// - `this.partials.signatureReturns` is not called
 export function signatureBody(
   this: MarkdownThemeContext,
   model: SignatureReflection,
@@ -76,52 +76,52 @@ export function signatureBody(
     )
   }
 
-  if (
-    model.typeParameters?.length
-    && model.kind !== ReflectionKind.ConstructorSignature
-  ) {
-    md.push(
-      heading(
-        options.headingLevel,
-        ReflectionKind.pluralString(ReflectionKind.TypeParameter),
-      ),
-    )
-    if (this.helpers.useTableFormat('parameters')) {
-      md.push(this.partials.typeParametersTable(model.typeParameters))
-    } else {
-      md.push(
-        this.partials.typeParametersList(model.typeParameters, {
-          headingLevel: options.headingLevel,
-        }),
-      )
-    }
-  }
+  // if (
+  //   model.typeParameters?.length
+  //   && model.kind !== ReflectionKind.ConstructorSignature
+  // ) {
+  //   md.push(
+  //     heading(
+  //       options.headingLevel,
+  //       ReflectionKind.pluralString(ReflectionKind.TypeParameter),
+  //     ),
+  //   )
+  //   if (this.helpers.useTableFormat('parameters')) {
+  //     md.push(this.partials.typeParametersTable(model.typeParameters))
+  //   } else {
+  //     md.push(
+  //       this.partials.typeParametersList(model.typeParameters, {
+  //         headingLevel: options.headingLevel,
+  //       }),
+  //     )
+  //   }
+  // }
 
-  if (model.parameters?.length) {
-    md.push(
-      heading(
-        options.headingLevel,
-        ReflectionKind.pluralString(ReflectionKind.Parameter),
-      ),
-    )
-    if (this.helpers.useTableFormat('parameters')) {
-      md.push(this.partials.parametersTable(model.parameters))
-    } else {
-      md.push(
-        this.partials.parametersList(model.parameters, {
-          headingLevel: options.headingLevel,
-        }),
-      )
-    }
-  }
+  // if (model.parameters?.length) {
+  //   md.push(
+  //     heading(
+  //       options.headingLevel,
+  //       ReflectionKind.pluralString(ReflectionKind.Parameter),
+  //     ),
+  //   )
+  //   if (this.helpers.useTableFormat('parameters')) {
+  //     md.push(this.partials.parametersTable(model.parameters))
+  //   } else {
+  //     md.push(
+  //       this.partials.parametersList(model.parameters, {
+  //         headingLevel: options.headingLevel,
+  //       }),
+  //     )
+  //   }
+  // }
 
-  if (model.type) {
-    md.push(
-      this.partials.signatureReturns(model, {
-        headingLevel: options.headingLevel,
-      }),
-    )
-  }
+  // if (model.type) {
+  //   md.push(
+  //     this.partials.signatureReturns(model, {
+  //       headingLevel: options.headingLevel,
+  //     }),
+  //   )
+  // }
 
   if (modelComments) {
     md.push(

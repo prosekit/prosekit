@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.13.6
+
+### Patch Changes
+
+- [`1e5e3a3`](https://github.com/ocavue/prosekit/commit/1e5e3a3b57e07d2721779343059284d6cddb51e8) ![](https://prosekit.dev/b/extensions)
+
+  Add `target` and `rel` attributes to link.
+
 ## 0.13.5
 
 ### Patch Changes

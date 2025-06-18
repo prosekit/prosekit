@@ -24,6 +24,7 @@ export default defineESLintConfig(
   {
     rules: {
       'no-console': ['warn', { allow: ['warn', 'error', 'assert'] }],
+      'unicorn/prefer-single-call': 'off',
     },
   },
 )

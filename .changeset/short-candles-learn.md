@@ -3,4 +3,4 @@
 '@prosekit/web': patch
 ---
 
-Add event handling with changeNode.
+Add a new `stateChange` event to the `BlockHandlePopover` component.

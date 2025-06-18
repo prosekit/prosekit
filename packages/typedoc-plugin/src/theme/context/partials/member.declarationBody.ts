@@ -12,8 +12,10 @@ import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 import { heading } from '../../../libs/markdown/heading'
 
 // Based on https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown%404.6.4/packages/typedoc-plugin-markdown/src/theme/context/partials/member.declaration.ts#L13
+// with the following changes:
 //
-// Removed `this.partials.declarationTitle(model)`
+// - `this.partials.declarationTitle(model)` is not called
+// - `hasTypeDeclaration` is always `false`
 export function declarationBody(
   this: MarkdownThemeContext,
   model: DeclarationReflection,
@@ -32,6 +34,8 @@ export function declarationBody(
     ...options,
   }
 
+  // md.push(this.partials.declarationTitle(model))
+
   if (
     !opts.nested
     && model.sources
@@ -48,7 +52,8 @@ export function declarationBody(
     )
   }
 
-  let typeDeclaration = (model.type as ReflectionType)?.declaration
+  let typeDeclaration = (model.type as ReflectionType)
+    ?.declaration
 
   if (
     model.type instanceof ArrayType
@@ -57,9 +62,10 @@ export function declarationBody(
     typeDeclaration = model.type?.elementType?.declaration
   }
 
-  const hasTypeDeclaration = Boolean(typeDeclaration)
-    || (model.type instanceof UnionType
-      && model.type?.types.some((type) => type instanceof ReflectionType))
+  // const hasTypeDeclaration = Boolean(typeDeclaration)
+  //   || (model.type instanceof UnionType
+  //     && model.type?.types.some((type) => type instanceof ReflectionType))
+  const hasTypeDeclaration = false
 
   if (model.comment) {
     md.push(

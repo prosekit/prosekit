@@ -50,7 +50,7 @@ export function useBlockHandlePopover(
   useHoverExtension(host, editor, (referenceValue, hoverState) => {
     reference.set(referenceValue)
     context.set(hoverState)
-    const stateChangeDetails = hoverState ? { node: hoverState.node, pos: hoverState.pos } : null 
+    const stateChangeDetails = hoverState ? { node: hoverState.node, pos: hoverState.pos } : null
     emit('stateChange', stateChangeDetails)
   })
 

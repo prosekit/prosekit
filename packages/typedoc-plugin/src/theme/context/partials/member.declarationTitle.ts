@@ -55,11 +55,11 @@ export function declarationTitle(
 
   if (model.typeParameters) {
     md.push(
-      `<`,
+      String.raw`\<`,
       model.typeParameters
         .map((typeParameter) => typeParameter.name)
         .join(', '),
-      `>`,
+      String.raw`\>`,
     )
   }
 

@@ -1,7 +1,6 @@
 ---
 'prosekit': patch
 '@prosekit/extensions': patch
-'@prosekit/core': patch
 ---
 
-Add target and rel attributes to link.
+Add `target` and `rel` attributes to link.

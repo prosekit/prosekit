@@ -14,5 +14,18 @@ function useFrameworkServer(frameworks: string[]) {
 }
 
 function useFrameworkClient(frameworks: string[]) {
-  return new PersistedState('prosekit-docs-framework', frameworks[0])
+  const defaultFramework = frameworks[0]
+  const state = new PersistedState('prosekit-docs-framework', defaultFramework)
+  return {
+    get current() {
+      const persisted = state.current
+      if (frameworks.includes(persisted)) {
+        return persisted
+      }
+      return defaultFramework
+    },
+    set current(value) {
+      state.current = value
+    },
+  }
 }

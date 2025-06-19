@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.13.7
+
+### Patch Changes
+
+- [`c3b1079`](https://github.com/ocavue/prosekit/commit/c3b1079ccc4e71536815251295bb6c115fe3b337) ![](https://prosekit.dev/b/web)
+
+  Add a new `stateChange` event to the `BlockHandlePopover` component.
+
 ## 0.13.6
 
 ### Patch Changes

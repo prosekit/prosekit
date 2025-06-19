@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/preact",
   "type": "module",
-  "version": "0.4.16",
+  "version": "0.4.17",
   "private": false,
   "description": "Preact components and utilities for ProseKit",
   "author": {

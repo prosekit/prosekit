@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/solid",
   "type": "module",
-  "version": "0.4.16",
+  "version": "0.4.17",
   "private": false,
   "description": "Solid components and utilities for ProseKit",
   "author": {

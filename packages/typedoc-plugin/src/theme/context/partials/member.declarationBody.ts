@@ -11,7 +11,7 @@ import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
 import { heading } from '../../../libs/markdown/heading'
 
-// Based on https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown%404.6.4/packages/typedoc-plugin-markdown/src/theme/context/partials/member.declaration.ts#L13
+// Based on https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown@4.6.4/packages/typedoc-plugin-markdown/src/theme/context/partials/member.declaration.ts#L13
 // with the following changes:
 //
 // - `this.partials.declarationTitle(model)` is not called

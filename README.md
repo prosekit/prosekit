@@ -8,6 +8,10 @@ The ultimate toolkit for text editing. Based on [ProseMirror](https://prosemirro
 
 For full documentation, visit [prosekit.dev](https://prosekit.dev).
 
+## Community
+
+Join the community on [Discord](https://discord.gg/nzBgtm5ryH).
+
 ## Changelog
 
 Detailed changes for each release are documented in the [CHANGELOG.md](https://github.com/ocavue/prosekit/blob/master/packages/prosekit/CHANGELOG.md).

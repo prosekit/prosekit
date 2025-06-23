@@ -536,9 +536,8 @@ It also has a `canExec` method to check if the command can be applied.
 
 <dd>
 
-A function to apply a command to the editor. It will return `true` if the command was applied, and `false` otherwise.
-
-It also has a `canExec` method to check if the command can be applied.
+Execute the current command. Return `true` if the command was successfully
+executed, otherwise `false`.
 
 </dd>
 
@@ -1364,11 +1363,7 @@ current editor selection.
 
 <dd>
 
-A function for applying a mark with optional attributes and any number of
-children.
-
-It also has a `isActive` method for checking if the mark is active in the
-current editor selection.
+Applies a mark with attributes and any number of children.
 
 </dd>
 
@@ -1386,11 +1381,7 @@ current editor selection.
 
 <dd>
 
-A function for applying a mark with optional attributes and any number of
-children.
-
-It also has a `isActive` method for checking if the mark is active in the
-current editor selection.
+Applies a mark with any number of children.
 
 </dd>
 
@@ -1876,11 +1867,7 @@ current editor selection.
 
 <dd>
 
-A function for creating a node with optional attributes and any number of
-children.
-
-It also has a `isActive` method for checking if the node is active in the
-current editor selection.
+Creates a node with attributes and any number of children.
 
 </dd>
 
@@ -1898,11 +1885,7 @@ current editor selection.
 
 <dd>
 
-A function for creating a node with optional attributes and any number of
-children.
-
-It also has a `isActive` method for checking if the node is active in the
-current editor selection.
+Creates a node with any number of children.
 
 </dd>
 

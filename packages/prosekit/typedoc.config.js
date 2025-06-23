@@ -89,11 +89,11 @@ const typedocPluginMarkdownConfig = {
   hidePageHeader: true,
   hideBreadcrumbs: true,
   hidePageTitle: true,
+  useCustomAnchors: true,
   useCodeBlocks: false,
   expandParameters: true,
   parametersFormat: 'htmlTable',
   enumMembersFormat: 'htmlTable',
-  // interfacePropertiesFormat: 'htmlTable',
 }
 
 /**

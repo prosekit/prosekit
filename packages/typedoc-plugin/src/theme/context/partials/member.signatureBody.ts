@@ -1,7 +1,7 @@
 import type { SignatureReflection } from 'typedoc'
 import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
-// Based on https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown%404.6.4/packages/typedoc-plugin-markdown/src/theme/context/partials/member.signature.ts#L5
+// Based on https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown@4.7.0/packages/typedoc-plugin-markdown/src/theme/context/partials/member.signature.ts#L5
 // with the following changes:
 //
 // - `this.partials.signatureTitle(model)` is not called
@@ -39,26 +39,9 @@ export function signatureBody(
     md.push(this.partials.sources(model))
   }
 
-  let modelComments = options.multipleSignatures
+  const modelComments = options.multipleSignatures
     ? model.comment
     : model.comment || model.parent?.comment
-
-  if (
-    modelComments
-    && model.parent?.comment?.summary
-    && !options.multipleSignatures
-  ) {
-    modelComments = Object.assign(modelComments, {
-      summary: model.parent.comment.summary,
-    })
-  }
-
-  if (modelComments && model.parent?.comment?.blockTags) {
-    modelComments.blockTags = [
-      ...(model.parent?.comment?.blockTags || []),
-      ...(model.comment?.blockTags || []),
-    ]
-  }
 
   if (modelComments) {
     md.push(

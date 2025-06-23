@@ -64,3 +64,7 @@ ProseKit has unit and integration tests.
 3. Run `pnpm run fix` to fix linting and formatting issues.
 4. Run `pnpm run typecheck` to check for type errors.
 5. Make sure all tests pass before submitting a PR.
+
+## Community
+
+Join our Discord server for help and to discuss development: [ProseKit Discord](https://discord.gg/nzBgtm5ryH)

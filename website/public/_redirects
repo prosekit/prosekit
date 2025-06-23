@@ -1,6 +1,8 @@
 # Redirects configuration for Cloudflare Pages
 # https://developers.cloudflare.com/pages/configuration/redirects/
 
+/chat                https://discord.gg/nzBgtm5ryH
+
 /b/prosekit          https://img.shields.io/badge/prosekit-444444?style=flat-square&logoColor=ffffff
 /b/pm                https://img.shields.io/badge/prosekit%2Fpm-444444?style=flat-square&logoColor=ffffff
 /b/core              https://img.shields.io/badge/prosekit%2Fcore-444444?style=flat-square&logoColor=ffffff

@@ -96,6 +96,11 @@ const config: AstroUserConfig = {
           label: 'GitHub',
           href: 'https://github.com/prosekit/prosekit',
         },
+        {
+          icon: 'discord',
+          label: 'Discord',
+          href: 'https://discord.gg/nzBgtm5ryH',
+        },
       ],
       sidebar: sidebar,
       components: {

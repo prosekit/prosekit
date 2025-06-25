@@ -6,7 +6,7 @@
   "description": "Internal development tools for ProseKit",
   "sideEffects": false,
   "scripts": {
-    "gen": "tsx src/gen.ts"
+    "gen": "node src/gen.ts"
   },
   "dependencies": {
     "@manypkg/find-root": "^3.0.0",

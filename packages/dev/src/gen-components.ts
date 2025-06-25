@@ -5,12 +5,12 @@ import {
   pascalCase,
 } from 'change-case'
 
-import { getPackageJsonExports } from './get-package-json-exports.js'
+import { getPackageJsonExports } from './get-package-json-exports'
 import {
   readComponents,
   type GroupedComponents as Components,
-} from './read-components.js'
-import { vfs } from './virtual-file-system.js'
+} from './read-components'
+import { vfs } from './virtual-file-system'
 
 export async function genComponents() {
   const webPackages = await vfs.getPackageByName('@prosekit/web')

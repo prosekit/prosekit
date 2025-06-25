@@ -2,8 +2,8 @@ import path from 'node:path'
 
 import type { PackageJson } from 'type-fest'
 
-import { getPackageJsonExports } from './get-package-json-exports.js'
-import { vfs } from './virtual-file-system.js'
+import { getPackageJsonExports } from './get-package-json-exports'
+import { vfs } from './virtual-file-system'
 
 export async function buildUmbrellaPackageJson() {
   const umbrellaPackage = await vfs.getPackageByName('prosekit')

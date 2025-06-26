@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@10.12.2",
+  "packageManager": "pnpm@10.12.3",
   "description": "Monorepo for ProseKit",
   "scripts": {
     "build": "turbo build",
@@ -46,7 +46,7 @@
     "monorepo-typescript-references": "^1.1.0",
     "pkg-pr-new": "^0.0.53",
     "playwright": "^1.53.1",
-    "prettier": "^3.6.0",
+    "prettier": "^3.6.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.4.0",
     "size-limit": "^11.2.0",

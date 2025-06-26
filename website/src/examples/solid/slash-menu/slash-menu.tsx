@@ -1,3 +1,4 @@
+import { canUseRegexLookbehind } from 'prosekit/core'
 import { useEditor } from 'prosekit/solid'
 import {
   AutocompleteList,
@@ -12,7 +13,7 @@ export default function SlashMenu() {
   const editor = useEditor<EditorExtension>()
 
   // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-  const regex = /\/(|\S.*)$/u
+  const regex = canUseRegexLookbehind() ? /(?<!\S)\/(|\S.*)$/u : /\/(|\S.*)$/u
 
   return (
     <AutocompletePopover regex={regex} class="CSS_AUTOCOMPLETE_MENU">

@@ -3,7 +3,7 @@ import path from 'node:path'
 import { execa } from 'execa'
 import { pathExists } from 'path-exists'
 
-import { findRootDir } from './find-root-dir.js'
+import { findRootDir } from './find-root-dir'
 
 function splitLines(stdout: string): string[] {
   return stdout

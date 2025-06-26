@@ -2,9 +2,9 @@ import path from 'node:path'
 
 import fs from 'fs-extra'
 
-import { findSymlinks } from './find-symlinks.js'
-import { skipGen } from './skip-gen.js'
-import { vfs } from './virtual-file-system.js'
+import { findSymlinks } from './find-symlinks'
+import { skipGen } from './skip-gen'
+import { vfs } from './virtual-file-system'
 
 // A mapping of the source path to the target directories. All paths are relative to
 // the website/src directory. The filename at each target will be the same as the source.

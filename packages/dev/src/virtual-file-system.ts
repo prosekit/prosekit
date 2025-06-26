@@ -11,17 +11,17 @@ import Yaml from 'js-yaml'
 import JSON5 from 'json5'
 import { sortBy } from 'lodash-es'
 
-import { findRootDir } from './find-root-dir.js'
+import { findRootDir } from './find-root-dir'
 import {
   isPrivatePackage,
   isPublicPackage,
-} from './is-public-package.js'
-import { isSubDirectory } from './is-sub-directory.js'
-import { listGitFiles } from './list-git-files.js'
-import { normalizePackageJson } from './normalize-package-json.js'
-import { removePath } from './remove-path.js'
-import { writeJson } from './write-json.js'
-import { writeText } from './write-text.js'
+} from './is-public-package'
+import { isSubDirectory } from './is-sub-directory'
+import { listGitFiles } from './list-git-files'
+import { normalizePackageJson } from './normalize-package-json'
+import { removePath } from './remove-path'
+import { writeJson } from './write-json'
+import { writeText } from './write-text'
 
 class VirtualFile {
   public distConetnt: string | null = null

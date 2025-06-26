@@ -6,7 +6,9 @@ import type {
 /**
  * Collects all children of a node or a fragment, and returns them as an array.
  *
- * @public
+ * @deprecated Use `node.children` or `fragment.content` instead.
+ *
+ * @hidden
  */
 export function collectChildren(
   parent: ProseMirrorNode | Fragment,

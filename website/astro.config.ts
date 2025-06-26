@@ -99,7 +99,7 @@ const config: AstroUserConfig = {
         {
           icon: 'discord',
           label: 'Discord',
-          href: 'https://discord.gg/nzBgtm5ryH',
+          href: 'https://prosekit.dev/chat',
         },
       ],
       sidebar: sidebar,

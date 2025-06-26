@@ -10,7 +10,7 @@ For full documentation, visit [prosekit.dev](https://prosekit.dev).
 
 ## Community
 
-Join the community on [Discord](https://discord.gg/nzBgtm5ryH).
+Join the community on [Discord](https://prosekit.dev/chat).
 
 ## Changelog
 

@@ -67,4 +67,4 @@ ProseKit has unit and integration tests.
 
 ## Community
 
-Join our Discord server for help and to discuss development: [ProseKit Discord](https://discord.gg/nzBgtm5ryH)
+Join our Discord server for help and to discuss development: [ProseKit Discord](https://prosekit.dev/chat)

@@ -1,8 +1,8 @@
 import path from 'node:path'
 
-import { findRootDir } from './find-root-dir.js'
-import { unwrapDefaultExport } from './unwrap-default-export.js'
-import { vfs } from './virtual-file-system.js'
+import { findRootDir } from './find-root-dir'
+import { unwrapDefaultExport } from './unwrap-default-export'
+import { vfs } from './virtual-file-system'
 
 export async function genChangeset() {
   const root = await findRootDir()

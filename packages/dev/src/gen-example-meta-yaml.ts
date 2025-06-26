@@ -8,10 +8,10 @@ import {
   writeExampleMeta,
   type Example,
   type ExampleMeta,
-} from './example-meta.js'
-import { notEmpty } from './not-empty.js'
-import { skipGen } from './skip-gen.js'
-import { vfs } from './virtual-file-system.js'
+} from './example-meta'
+import { notEmpty } from './not-empty'
+import { skipGen } from './skip-gen'
+import { vfs } from './virtual-file-system'
 
 export async function genExampleMetaYaml() {
   if (skipGen()) return

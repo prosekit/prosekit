@@ -5,7 +5,7 @@ import {
   sortBy,
 } from 'lodash-es'
 
-import { vfs } from './virtual-file-system.js'
+import { vfs } from './virtual-file-system'
 
 export interface ExampleMeta {
   examples: Example[]

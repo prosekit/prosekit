@@ -1,5 +1,5 @@
-import { isPublicPackage } from './is-public-package.js'
-import { vfs } from './virtual-file-system.js'
+import { isPublicPackage } from './is-public-package'
+import { vfs } from './virtual-file-system'
 
 export async function genChangesetConfigJson() {
   const privatePackages = await vfs.getPrivatePackages()

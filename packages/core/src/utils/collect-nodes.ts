@@ -6,7 +6,7 @@ import {
 import { ProseKitError } from '../error'
 
 /**
- * @public
+ * @hidden
  *
  * @deprecated
  */
@@ -17,7 +17,7 @@ export type NodeContent = ProseMirrorNode | ProseMirrorFragment | NodeContent[]
  *
  * @deprecated Use `collectChildren` instead.
  *
- * @public
+ * @hidden
  */
 export function collectNodes(content: NodeContent): ProseMirrorNode[] {
   if (Array.isArray(content)) {

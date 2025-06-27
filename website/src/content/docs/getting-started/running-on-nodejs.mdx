@@ -6,11 +6,11 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-ProseKit's core works in a Node.js runtime for background jobs, CLI tools, or Server-Side Rendering (SSR). The only limitation is that **any API that touches the DOM is unavailable** unless you provide a DOM implementation yourself.
+ProseKit can run in Node.js environments for background processing, CLI applications, and Server-Side Rendering (SSR). The primary limitation is that **DOM-dependent APIs are unavailable** unless you provide a DOM implementation.
 
 ## Create an editor in Node.js
 
-You can create an editor and run commands exactly as you would in the browser:
+You can create an editor and execute commands just like in a browser environment:
 
 ```ts twoslash
 import { createEditor } from 'prosekit/core'
@@ -39,9 +39,9 @@ const json = editor.getDocJSON()
 console.log(json)
 ```
 
-## DOM-related APIs are off-limits
+## DOM-dependent APIs are unavailable
 
-In a raw Node.js process there is **no DOM**, so helper methods that depend on it throw immediately:
+In a standard Node.js environment there is **no DOM**, so methods requiring DOM access will throw errors:
 
 ```ts twoslash
 import { createEditor } from 'prosekit/core'
@@ -51,19 +51,19 @@ const extension = defineBasicExtension()
 const editor = createEditor({ extension })
 
 // ---cut---
-// ❌ Mounting doesn't work
+// ❌ Mounting fails without DOM
 editor.mount(document.createElement('div'))
-// ❌ ProseKit cannot serialize HTML without DOM APIs
+// ❌ HTML serialization requires DOM APIs
 editor.getDocHTML()
-// ❌ ProseKit cannot parse HTML without DOM APIs
+// ❌ HTML parsing requires DOM APIs
 editor.setContent('<p>HTML input</p>')
 ```
 
-The following two strategies show how to work around the lack of DOM APIs on the server.
+Two strategies can address the absence of DOM APIs in server environments.
 
-## SSR strategy 1: pre-render in the browser
+## SSR strategy 1: Browser pre-rendering
 
-The simplest way to render ProseKit content on the server is **not to render it on the server at all**: let the browser convert the document to HTML and store that string.
+The simplest approach for server-side rendering is **client-side pre-rendering**: allow the browser to convert documents to HTML and store the result.
 
 ```ts twoslash
 import { createEditor } from 'prosekit/core'
@@ -78,18 +78,18 @@ const html = editor.getDocHTML()
 await fetch('/api/save', { method: 'POST', body: html })
 ```
 
-On the backend you simply serve that static HTML—no DOM required.
+The backend can then serve this static HTML without requiring DOM access.
 
-## SSR strategy 2: simulate a DOM on the server
+## SSR strategy 2: Server-side DOM simulation
 
-If you need to convert JSON ⇢ HTML inside Node.js, you can plug in a *headless* DOM such as **jsdom** or **happy-dom**.
+For JSON-to-HTML conversion within Node.js, use a headless DOM library such as **jsdom** or **happy-dom**.
 
 ### Using jsdom
 
 ```ts
 import { JSDOM } from 'jsdom'
 
-// Set up a virtual DOM
+// Initialize virtual DOM
 const dom = new JSDOM('')
 const document = dom.window.document
 
@@ -99,7 +99,7 @@ editor.setContent({
 })
 editor.commands.insertText({ text: 'Bar' })
 
-// Pass the `document` to `getDocHTML`
+// Provide the document to getDocHTML
 const html = editor.getDocHTML({ document })
 console.log(html) // => <div><p>BarFoo</p></div>
 ```
@@ -109,7 +109,7 @@ console.log(html) // => <div><p>BarFoo</p></div>
 ```ts
 import { Window } from 'happy-dom'
 
-// Set up a virtual DOM
+// Initialize virtual DOM
 const window = new Window()
 const document = window.document
 
@@ -120,11 +120,11 @@ editor.setContent({
 })
 editor.commands.insertText({ text: 'Bar' })
 
-// Pass the `document` to `getDocHTML`
+// Provide the document to getDocHTML
 const html = editor.getDocHTML({ document })
 console.log(html) // => <div><p>BarFoo</p></div>
 ```
 
 <Aside type="note">
-  A headless DOM is *good enough* for most use cases but may not perfectly match how browsers render the same document.
+  Headless DOM implementations are sufficient for most use cases but may not perfectly replicate browser rendering behavior.
 </Aside> 

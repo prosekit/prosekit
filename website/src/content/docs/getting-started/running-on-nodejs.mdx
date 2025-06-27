@@ -43,7 +43,14 @@ console.log(json)
 
 In a raw Node.js process there is **no DOM**, so helper methods that depend on it throw immediately:
 
-```ts  
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineBasicExtension } from 'prosekit/basic'
+
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+
+// ---cut---
 // ❌ Mounting doesn't work
 editor.mount(document.createElement('div'))
 // ❌ ProseKit cannot serialize HTML without DOM APIs
@@ -52,15 +59,20 @@ editor.getDocHTML()
 editor.setContent('<p>HTML input</p>')
 ```
 
-<Aside type="caution">
-  If you hit one of these errors on the server, double-check that you are not accidentally calling a DOM helper before hydration.
-</Aside>
+The following two strategies show how to work around the lack of DOM APIs on the server.
 
 ## SSR strategy 1: pre-render in the browser
 
 The simplest way to render ProseKit content on the server is **not to render it on the server at all**: let the browser convert the document to HTML and store that string.
 
-```ts  
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineBasicExtension } from 'prosekit/basic'
+
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+
+// ---cut---
 // Browser code
 const html = editor.getDocHTML()
 await fetch('/api/save', { method: 'POST', body: html })
@@ -74,34 +86,30 @@ If you need to convert JSON ⇢ HTML inside Node.js, you can plug in a *headless
 
 ### Using jsdom
 
-```ts  
+```ts
 import { JSDOM } from 'jsdom'
-import { createEditor } from 'prosekit/core'
-import { defineBasicExtension } from 'prosekit/basic'
 
 // Set up a virtual DOM
 const dom = new JSDOM('')
 const document = dom.window.document
 
-const editor = createEditor({ extension: defineBasicExtension() })
 editor.setContent({
   type: 'doc',
   content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Foo' }] }],
 })
 editor.commands.insertText({ text: 'Bar' })
 
-// Pass the `document` explicitly
+// Pass the `document` to `getDocHTML`
 const html = editor.getDocHTML({ document })
 console.log(html) // => <div><p>BarFoo</p></div>
 ```
 
 ### Using happy-dom
 
-```ts  
+```ts
 import { Window } from 'happy-dom'
-import { createEditor } from 'prosekit/core'
-import { defineBasicExtension } from 'prosekit/basic'
 
+// Set up a virtual DOM
 const window = new Window()
 const document = window.document
 
@@ -112,7 +120,7 @@ editor.setContent({
 })
 editor.commands.insertText({ text: 'Bar' })
 
-// Pass the `document` explicitly
+// Pass the `document` to `getDocHTML`
 const html = editor.getDocHTML({ document })
 console.log(html) // => <div><p>BarFoo</p></div>
 ```

@@ -2,6 +2,7 @@
 
 import {
   createEditor,
+  jsonFromHTML,
   union,
 } from '@prosekit/core'
 import {
@@ -76,12 +77,35 @@ describe('Node.js environment', () => {
     `)
   })
 
-  it('cannot call editor.getDocHTML()', () => {
+  it('cannot call HTML APIs by default', () => {
     const editor = setup()
-
-    // Call an API that needs a browser environment
+    expect(() => editor.setContent('<p>Hello World</p>')).toThrow()
     expect(() => editor.getDocHTML()).toThrow()
-    expect(() => editor.getDocJSON()).not.toThrow()
+  })
+
+  it('can call HTML APIs using jsdom', async () => {
+    const { JSDOM } = await import('jsdom')
+    const dom = new JSDOM('')
+    const document = dom.window.document
+
+    const editor = setup()
+    const json = jsonFromHTML('<p>Hello World</p>', { document, schema: editor.schema })
+    editor.setContent(json)
+    editor.commands.insertHeading({ level: 2 })
+    expect(editor.getDocHTML({ document })).toMatchInlineSnapshot(`"<div><h2></h2><p>Hello World</p></div>"`)
+  })
+
+  it('can call HTML APIs using happy-dom', async () => {
+    const { Window } = await import('happy-dom')
+    const window = new Window()
+    // @ts-expect-error - happy-dom types are not compatible with DOM types
+    const document: Document = window.document
+
+    const editor = setup()
+    const json = jsonFromHTML('<p>Hello World</p>', { document, schema: editor.schema })
+    editor.setContent(json)
+    editor.commands.insertHeading({ level: 2 })
+    expect(editor.getDocHTML({ document })).toMatchInlineSnapshot(`"<div><h2></h2><p>Hello World</p></div>"`)
   })
 })
 

@@ -1,16 +1,16 @@
 ---
-title: Node.js Environment
+title: Server-side usage
 sidebar:
   order: 60
 ---
 
 import { Aside } from '@astrojs/starlight/components';
 
-ProseKit's core works perfectly in a pure Node.js runtime—ideal for background jobs, CLI tools, or Server-Side Rendering (SSR) pipelines. The only limitation is that **any API that touches the DOM is unavailable** unless you provide a DOM implementation yourself.
+ProseKit's core works in a Node.js runtime for background jobs, CLI tools, or Server-Side Rendering (SSR). The only limitation is that **any API that touches the DOM is unavailable** unless you provide a DOM implementation yourself.
 
-## 1  Create an editor in Node.js
+## Create an editor in Node.js
 
-You can create an editor and run all JSON-based commands exactly as you would in the browser:
+You can create an editor and run commands exactly as you would in the browser:
 
 ```ts twoslash
 import { createEditor } from 'prosekit/core'
@@ -33,16 +33,22 @@ editor.commands.insertImage({
   width: 120,
   height: 60,
 })
+
+// Get the document as JSON
+const json = editor.getDocJSON()
+console.log(json)
 ```
 
-## 2  DOM-related APIs are off-limits
+## DOM-related APIs are off-limits
 
 In a raw Node.js process there is **no DOM**, so helper methods that depend on it throw immediately:
 
 ```ts  
-// ❌ These throw in Node.js
+// ❌ Mounting doesn't work
 editor.mount(document.createElement('div'))
+// ❌ ProseKit cannot serialize HTML without DOM APIs
 editor.getDocHTML()
+// ❌ ProseKit cannot parse HTML without DOM APIs
 editor.setContent('<p>HTML input</p>')
 ```
 
@@ -50,7 +56,7 @@ editor.setContent('<p>HTML input</p>')
   If you hit one of these errors on the server, double-check that you are not accidentally calling a DOM helper before hydration.
 </Aside>
 
-## 3  SSR strategy ① – pre-render in the browser
+## SSR strategy 1: pre-render in the browser
 
 The simplest way to render ProseKit content on the server is **not to render it on the server at all**: let the browser convert the document to HTML and store that string.
 
@@ -62,9 +68,9 @@ await fetch('/api/save', { method: 'POST', body: html })
 
 On the backend you simply serve that static HTML—no DOM required.
 
-## 4  SSR strategy ② – simulate a DOM on the server
+## SSR strategy 2: simulate a DOM on the server
 
-If you need to convert JSON ⇢ HTML inside Node.js (for example to generate an email) you can plug in a *headless* DOM such as **jsdom** or **happy-dom**.
+If you need to convert JSON ⇢ HTML inside Node.js, you can plug in a *headless* DOM such as **jsdom** or **happy-dom**.
 
 ### Using jsdom
 
@@ -114,5 +120,5 @@ const html = editor.getDocHTML({ document })
 ```
 
 <Aside type="note">
-  A headless DOM is *good enough* for most use cases (emails, previews) but may not perfectly match how browsers render the same document.
+  A headless DOM is *good enough* for most use cases but may not perfectly match how browsers render the same document.
 </Aside> 

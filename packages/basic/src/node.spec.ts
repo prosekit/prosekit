@@ -3,7 +3,6 @@
 import {
   createEditor,
   jsonFromHTML,
-  union,
 } from '@prosekit/core'
 import {
   describe,
@@ -86,7 +85,7 @@ describe('Node.js environment', () => {
   it('can call HTML APIs using jsdom', async () => {
     const { JSDOM } = await import('jsdom')
     const dom = new JSDOM('')
-    const document = dom.window.document
+    const document: Document = dom.window.document
 
     const editor = setup()
     const json = jsonFromHTML('<p>Hello World</p>', { document, schema: editor.schema })
@@ -110,7 +109,6 @@ describe('Node.js environment', () => {
 })
 
 function setup() {
-  const extension = union(defineBasicExtension())
-  const editor = createEditor({ extension })
-  return editor
+  const extension = defineBasicExtension()
+  return createEditor({ extension })
 }

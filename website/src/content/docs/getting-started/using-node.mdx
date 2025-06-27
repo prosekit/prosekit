@@ -1,0 +1,118 @@
+---
+title: Using ProseKit in Node.js
+sidebar:
+  order: 60
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+ProseKit's core works perfectly in a pure Node.js runtime—ideal for background jobs, CLI tools, or Server-Side Rendering (SSR) pipelines. The only limitation is that **any API that touches the DOM is unavailable** unless you provide a DOM implementation yourself.
+
+## 1  Create an editor in Node.js
+
+You can create an editor and run all JSON-based commands exactly as you would in the browser:
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineBasicExtension } from 'prosekit/basic'
+
+const extension = defineBasicExtension()
+const editor = createEditor({ extension })
+
+// Set content with JSON
+editor.setContent({
+  type: 'doc',
+  content: [
+    { type: 'paragraph', content: [{ type: 'text', text: 'Hello, Node.js!' }] },
+  ],
+})
+
+// Run commands
+editor.commands.insertImage({
+  src: 'https://example.com/logo.png',
+  width: 120,
+  height: 60,
+})
+```
+
+## 2  DOM-related APIs are off-limits
+
+In a raw Node.js process there is **no DOM**, so helper methods that depend on it throw immediately:
+
+```ts twoslash
+// ❌ These throw in Node.js
+editor.mount(document.createElement('div'))
+editor.getDocHTML()
+editor.setContent('<p>HTML input</p>')
+```
+
+<Aside type="caution">
+  If you hit one of these errors on the server, double-check that you are not accidentally calling a DOM helper before hydration.
+</Aside>
+
+## 3  SSR strategy ① – pre-render in the browser
+
+The simplest way to render ProseKit content on the server is **not to render it on the server at all**: let the browser convert the document to HTML and store that string.
+
+```ts twoslash
+// Browser code
+const html = editor.getDocHTML()
+await fetch('/api/save', { method: 'POST', body: html })
+```
+
+On the backend you simply serve that static HTML—no DOM required.
+
+## 4  SSR strategy ② – simulate a DOM on the server
+
+If you need to convert JSON ⇢ HTML inside Node.js (for example to generate an email) you can plug in a *headless* DOM such as **jsdom** or **happy-dom**.
+
+### Using jsdom
+
+```ts twoslash
+import { JSDOM } from 'jsdom'
+import { createEditor } from 'prosekit/core'
+import { defineBasicExtension } from 'prosekit/basic'
+
+// ①  Spin up a fake DOM
+type Document = globalThis.Document
+const dom = new JSDOM('')
+const document: Document = dom.window.document
+
+// ②  Regular editor code
+const editor = createEditor({ extension: defineBasicExtension() })
+editor.setContent({
+  type: 'doc',
+  content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Foo' }] }],
+})
+editor.commands.insertText({ text: 'Bar' })
+
+// ③  Now HTML helpers work
+const html = editor.getDocHTML({ document })
+console.log(html) // => <div><p>BarFoo</p></div>
+```
+
+### Using happy-dom
+
+```ts twoslash
+import { Window } from 'happy-dom'
+import { createEditor } from 'prosekit/core'
+import { defineBasicExtension } from 'prosekit/basic'
+
+type Document = globalThis.Document
+const window = new Window()
+// @ts-expect-error – happy-dom's types are not 100 % DOM-compatible
+const document: Document = window.document
+
+const editor = createEditor({ extension: defineBasicExtension() })
+editor.setContent({
+  type: 'doc',
+  content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Foo' }] }],
+})
+editor.commands.insertText({ text: 'Bar' })
+
+const html = editor.getDocHTML({ document })
+```
+
+<Aside type="note">
+  A headless DOM is *good enough* for most use cases (emails, previews) but may not perfectly match how browsers render the same document.
+</Aside> 

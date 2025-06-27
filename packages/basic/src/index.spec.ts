@@ -31,8 +31,6 @@ describe('defineBasicExtension', () => {
 describe('BasicExtension', () => {
   const extension = defineBasicExtension()
   const editor = createEditor({ extension })
-  const dom = document.createElement('div')
-  editor.mount(dom)
 
   it('can throw TypeScript error for non existing command', () => {
     expect(() => {

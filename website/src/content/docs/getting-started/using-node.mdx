@@ -1,5 +1,5 @@
 ---
-title: Using ProseKit in Node.js
+title: Node.js
 sidebar:
   order: 60
 ---
@@ -39,7 +39,7 @@ editor.commands.insertImage({
 
 In a raw Node.js process there is **no DOM**, so helper methods that depend on it throw immediately:
 
-```ts twoslash
+```ts  
 // ❌ These throw in Node.js
 editor.mount(document.createElement('div'))
 editor.getDocHTML()
@@ -54,7 +54,7 @@ editor.setContent('<p>HTML input</p>')
 
 The simplest way to render ProseKit content on the server is **not to render it on the server at all**: let the browser convert the document to HTML and store that string.
 
-```ts twoslash
+```ts  
 // Browser code
 const html = editor.getDocHTML()
 await fetch('/api/save', { method: 'POST', body: html })
@@ -68,7 +68,7 @@ If you need to convert JSON ⇢ HTML inside Node.js (for example to generate an 
 
 ### Using jsdom
 
-```ts twoslash
+```ts  
 import { JSDOM } from 'jsdom'
 import { createEditor } from 'prosekit/core'
 import { defineBasicExtension } from 'prosekit/basic'
@@ -93,7 +93,7 @@ console.log(html) // => <div><p>BarFoo</p></div>
 
 ### Using happy-dom
 
-```ts twoslash
+```ts  
 import { Window } from 'happy-dom'
 import { createEditor } from 'prosekit/core'
 import { defineBasicExtension } from 'prosekit/basic'

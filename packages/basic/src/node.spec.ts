@@ -1,9 +1,6 @@
 // @vitest-environment node
 
-import {
-  createEditor,
-  jsonFromHTML,
-} from '@prosekit/core'
+import { createEditor } from '@prosekit/core'
 import {
   describe,
   expect,
@@ -18,13 +15,16 @@ describe('Node.js environment', () => {
   })
 
   it('can create an editor', () => {
-    const editor = setup()
+    const extension = defineBasicExtension()
+    const editor = createEditor({ extension })
+
     expect(editor).toBeDefined()
     expect(editor.mounted).toBe(false)
   })
 
   it('can call editor.setContent() with a JSON object', () => {
-    const editor = setup()
+    const extension = defineBasicExtension()
+    const editor = createEditor({ extension })
 
     // Set the document
     editor.setContent({
@@ -52,7 +52,8 @@ describe('Node.js environment', () => {
   })
 
   it('can execute a command', () => {
-    const editor = setup()
+    const extension = defineBasicExtension()
+    const editor = createEditor({ extension })
 
     // Execute a command
     editor.commands.insertImage({ src: 'https://example.com/image.png', width: 100, height: 100 })
@@ -77,38 +78,43 @@ describe('Node.js environment', () => {
   })
 
   it('cannot call HTML APIs by default', () => {
-    const editor = setup()
+    const extension = defineBasicExtension()
+    const editor = createEditor({ extension })
+
     expect(() => editor.setContent('<p>Hello World</p>')).toThrow()
     expect(() => editor.getDocHTML()).toThrow()
   })
 
   it('can call HTML APIs using jsdom', async () => {
+    const extension = defineBasicExtension()
+    const editor = createEditor({ extension })
+
     const { JSDOM } = await import('jsdom')
     const dom = new JSDOM('')
     const document: Document = dom.window.document
 
-    const editor = setup()
-    const json = jsonFromHTML('<p>Hello World</p>', { document, schema: editor.schema })
-    editor.setContent(json)
-    editor.commands.insertHeading({ level: 2 })
-    expect(editor.getDocHTML({ document })).toMatchInlineSnapshot(`"<div><h2></h2><p>Hello World</p></div>"`)
+    editor.setContent({
+      type: 'doc',
+      content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Foo' }] }],
+    })
+    editor.commands.insertText({ text: 'Bar' })
+    expect(editor.getDocHTML({ document })).toMatchInlineSnapshot(`"<div><p>BarFoo</p></div>"`)
   })
 
   it('can call HTML APIs using happy-dom', async () => {
+    const extension = defineBasicExtension()
+    const editor = createEditor({ extension })
+
     const { Window } = await import('happy-dom')
     const window = new Window()
     // @ts-expect-error - happy-dom types are not compatible with DOM types
     const document: Document = window.document
 
-    const editor = setup()
-    const json = jsonFromHTML('<p>Hello World</p>', { document, schema: editor.schema })
-    editor.setContent(json)
-    editor.commands.insertHeading({ level: 2 })
-    expect(editor.getDocHTML({ document })).toMatchInlineSnapshot(`"<div><h2></h2><p>Hello World</p></div>"`)
+    editor.setContent({
+      type: 'doc',
+      content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Foo' }] }],
+    })
+    editor.commands.insertText({ text: 'Bar' })
+    expect(editor.getDocHTML({ document })).toMatchInlineSnapshot(`"<div><p>BarFoo</p></div>"`)
   })
 })
-
-function setup() {
-  const extension = defineBasicExtension()
-  return createEditor({ extension })
-}

@@ -1,5 +1,5 @@
 ---
-title: Server-side usage
+title: Node.js usage
 sidebar:
   order: 60
 ---
@@ -79,12 +79,10 @@ import { JSDOM } from 'jsdom'
 import { createEditor } from 'prosekit/core'
 import { defineBasicExtension } from 'prosekit/basic'
 
-// ①  Spin up a fake DOM
-type Document = globalThis.Document
+// Set up a virtual DOM
 const dom = new JSDOM('')
-const document: Document = dom.window.document
+const document = dom.window.document
 
-// ②  Regular editor code
 const editor = createEditor({ extension: defineBasicExtension() })
 editor.setContent({
   type: 'doc',
@@ -92,7 +90,7 @@ editor.setContent({
 })
 editor.commands.insertText({ text: 'Bar' })
 
-// ③  Now HTML helpers work
+// Pass the `document` explicitly
 const html = editor.getDocHTML({ document })
 console.log(html) // => <div><p>BarFoo</p></div>
 ```
@@ -104,10 +102,8 @@ import { Window } from 'happy-dom'
 import { createEditor } from 'prosekit/core'
 import { defineBasicExtension } from 'prosekit/basic'
 
-type Document = globalThis.Document
 const window = new Window()
-// @ts-expect-error – happy-dom's types are not 100 % DOM-compatible
-const document: Document = window.document
+const document = window.document
 
 const editor = createEditor({ extension: defineBasicExtension() })
 editor.setContent({
@@ -116,7 +112,9 @@ editor.setContent({
 })
 editor.commands.insertText({ text: 'Bar' })
 
+// Pass the `document` explicitly
 const html = editor.getDocHTML({ document })
+console.log(html) // => <div><p>BarFoo</p></div>
 ```
 
 <Aside type="note">

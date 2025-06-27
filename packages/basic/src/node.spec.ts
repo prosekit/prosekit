@@ -77,5 +77,9 @@ describe('Node.js environment', () => {
         "type": "doc",
       }
     `)
+
+    // Call an API that needs a browser environment
+    expect(() => editor.getDocHTML()).toThrow()
+    expect(() => editor.getDocJSON()).not.toThrow()
   })
 })

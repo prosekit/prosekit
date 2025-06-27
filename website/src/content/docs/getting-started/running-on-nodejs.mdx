@@ -82,7 +82,7 @@ The backend can then serve this static HTML without requiring DOM access.
 
 ## SSR strategy 2: Server-side DOM simulation
 
-For JSON-to-HTML conversion within Node.js, use a headless DOM library such as **jsdom** or **happy-dom**.
+For JSON-to-HTML conversion within Node.js, use a headless DOM library such as [**jsdom**](https://github.com/jsdom/jsdom) or [**happy-dom**](https://github.com/capricorn86/happy-dom).
 
 ### Using jsdom
 
@@ -113,7 +113,6 @@ import { Window } from 'happy-dom'
 const window = new Window()
 const document = window.document
 
-const editor = createEditor({ extension: defineBasicExtension() })
 editor.setContent({
   type: 'doc',
   content: [{ type: 'paragraph', content: [{ type: 'text', text: 'Foo' }] }],

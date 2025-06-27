@@ -17,15 +17,14 @@ describe('Node.js environment', () => {
     expect(typeof window).toBe('undefined')
   })
 
-  it('can work on Node.js', () => {
-    // Create an extension
-    const extension = union(defineBasicExtension())
-    expect(extension).toBeDefined()
-
-    // Create an editor
-    const editor = createEditor({ extension })
+  it('can create an editor', () => {
+    const editor = setup()
     expect(editor).toBeDefined()
     expect(editor.mounted).toBe(false)
+  })
+
+  it('can call editor.setContent() with a JSON object', () => {
+    const editor = setup()
 
     // Set the document
     editor.setContent({
@@ -34,7 +33,7 @@ describe('Node.js environment', () => {
         { type: 'paragraph', content: [{ type: 'text', text: 'Hello, world!' }] },
       ],
     })
-    expect(editor.state.doc.toJSON()).toMatchInlineSnapshot(`
+    expect(editor.getDocJSON()).toMatchInlineSnapshot(`
       {
         "content": [
           {
@@ -50,6 +49,10 @@ describe('Node.js environment', () => {
         "type": "doc",
       }
     `)
+  })
+
+  it('can execute a command', () => {
+    const editor = setup()
 
     // Execute a command
     editor.commands.insertImage({ src: 'https://example.com/image.png', width: 100, height: 100 })
@@ -65,21 +68,25 @@ describe('Node.js environment', () => {
             "type": "image",
           },
           {
-            "content": [
-              {
-                "text": "Hello, world!",
-                "type": "text",
-              },
-            ],
             "type": "paragraph",
           },
         ],
         "type": "doc",
       }
     `)
+  })
+
+  it('cannot call editor.getDocHTML()', () => {
+    const editor = setup()
 
     // Call an API that needs a browser environment
     expect(() => editor.getDocHTML()).toThrow()
     expect(() => editor.getDocJSON()).not.toThrow()
   })
 })
+
+function setup() {
+  const extension = union(defineBasicExtension())
+  const editor = createEditor({ extension })
+  return editor
+}

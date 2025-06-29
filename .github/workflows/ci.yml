@@ -118,6 +118,7 @@ jobs:
         with:
           args: --root-dir "$PWD/website/dist" --no-progress './website/dist/**/*.html' --include-fragments --fallback-extensions html
           fail: true
+          lycheeVersion: 0.19.1
 
   deploy:
     runs-on: ubuntu-latest

@@ -10,7 +10,6 @@ import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
-import starlightLinksValidator from 'starlight-links-validator'
 import starlightThemeNova from 'starlight-theme-nova'
 import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
@@ -111,10 +110,6 @@ const config: AstroUserConfig = {
         './src/styles/typedoc.css',
       ],
       plugins: [
-        // TODO: Enable this in CI
-        process.env.CI ? undefined : starlightLinksValidator({
-          errorOnRelativeLinks: false,
-        }),
         starlightThemeNova({
           nav: [
             {

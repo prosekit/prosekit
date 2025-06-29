@@ -56,7 +56,7 @@ async function getDocTextById(id: string): Promise<string> {
   const doc = docs[id]
 
   if (!doc) {
-    throw new Error(`Unable to build llms.txt for ${id}`)
+    throw new Error(`Unable to build llms.txt for ${JSON.stringify(id)}`)
   }
 
   const parts = [

@@ -1,0 +1,16 @@
+diff --git a/dist/lib/output/themes/default/Slugger.js b/dist/lib/output/themes/default/Slugger.js
+index 2efd00d61fd202064425d6e2d42b323dc8f30adb..1ddbcc9f1e8d45526d4279659274eead2b2fd28b 100644
+--- a/dist/lib/output/themes/default/Slugger.js
++++ b/dist/lib/output/themes/default/Slugger.js
+@@ -13,8 +13,9 @@ export class Slugger {
+             // remove html tags
+             .replace(/<[!/a-z].*?>/gi, "")
+             // remove unwanted chars
+-            .replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, "")
+-            .replace(/\s/g, "-"));
++            .replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, " ")
++            .trim()
++            .replace(/\s+/g, "-"));
+     }
+     constructor(options) {
+         this.options = options;

@@ -57,6 +57,8 @@
   },
   "pnpm": {
     "overrides": {},
-    "patchedDependencies": {}
+    "patchedDependencies": {
+      "typedoc": "patches/typedoc.patch"
+    }
   }
 }

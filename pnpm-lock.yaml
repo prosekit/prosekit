@@ -854,6 +854,9 @@ importers:
       '@iconify-json/tabler':
         specifier: ^1.2.19
         version: 1.2.19
+      '@ocavue/utils':
+        specifier: ^0.5.0
+        version: 0.5.0
       '@playwright/test':
         specifier: ^1.53.1
         version: 1.53.1

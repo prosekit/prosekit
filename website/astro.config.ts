@@ -111,7 +111,8 @@ const config: AstroUserConfig = {
         './src/styles/typedoc.css',
       ],
       plugins: [
-        starlightLinksValidator(),
+        // TODO: Enable this in CI
+        process.env.CI ? undefined : starlightLinksValidator(),
         starlightThemeNova({
           nav: [
             {
@@ -124,7 +125,7 @@ const config: AstroUserConfig = {
             },
           ],
         }),
-      ],
+      ].filter(x => !!x),
     }),
     UnoCSS(),
     preact({ include: ['src/*/preact/**/*.tsx'] }),

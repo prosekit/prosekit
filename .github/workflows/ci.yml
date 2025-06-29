@@ -117,9 +117,9 @@ jobs:
         uses: lycheeverse/lychee-action@v2.4.1
         with:
           workingDirectory: website/dist
-          args: --no-progress './**/*.html' --include-fragments --fallback-extensions html
+          args: --include-fragments --fallback-extensions html'./**/*.html'
           fail: true
-          lycheeVersion: 0.19.1
+          lycheeVersion: v0.19.1
 
   deploy:
     runs-on: ubuntu-latest

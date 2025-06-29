@@ -1,4 +1,4 @@
-set -ex
+set -e
 
 cd "$(dirname $0)"
 WEBSITE_DIR=$(pwd)

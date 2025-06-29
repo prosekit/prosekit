@@ -23,6 +23,10 @@ export function load(app: MarkdownApplication) {
           // spread the existing frontmatter
           ...page.frontmatter,
         }
+
+        if (page.filename.endsWith('.css.md')) {
+          page.filename = page.filename.replace(/\.css\.md$/, '-css.md')
+        }
       }
     },
   )

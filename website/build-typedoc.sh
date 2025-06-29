@@ -19,8 +19,15 @@ pnpm run build:typedoc
 
 # Copy the generated markdown files to the website directory
 cd "$WEBSITE_DIR/src/content/docs"
-rm -rf references 
-cp -r "$ROOT/packages/prosekit/.temp/typedoc/prosekit" references
+src_dir="$ROOT/packages/prosekit/.temp/typedoc/prosekit/"
+dest_dir="$WEBSITE_DIR/src/content/docs/references/"
+mkdir -p "$dest_dir"
+# -a: archive mode (preserve permissions, timestamps, etc.)
+# -v: verbose output
+# --checksum: use checksums instead of file size/time for comparison
+# --no-times: don't preserve timestamps
+# --delete: remove files in dest that don't exist in source
+rsync -av --checksum --no-times --delete "$src_dir" "$dest_dir"
 
 # Find the substring "__namedParameters" and throw an error if found
 cd "$WEBSITE_DIR/src/content/docs"
@@ -28,8 +35,3 @@ if grep -r "__namedParameters" references; then
   echo 'Found "__namedParameters" in generated markdown files. You probably forgot to add "@param" JSDoc to the function.'
   exit 1
 fi
-
-# Copy all files in references/ to docs/references/
-cd "$WEBSITE_DIR/src/content"
-mkdir -p docs/references
-rsync -av references/* docs/references/

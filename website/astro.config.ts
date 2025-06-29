@@ -19,10 +19,15 @@ type Sidebar = StarlightUserConfig['sidebar']
 function generateReferenceSidebarItems() {
   // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
   const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/references').sync().sort()
-  const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
-  return names.map(name => {
-    const isLeaf = name.split('/').length === 1
-    const style = isLeaf ? 'font-weight: 600;' : 'margin-inline-start: 1rem;'
+  return filePaths.map(filePath => {
+    // Remove the file extension
+    let name = filePath.replace(/\.mdx?/, '')
+
+    // Remove the dot because Starlight doesn't allow '.' in the slug
+    name = name.replaceAll('.', '')
+
+    const isLeaf = name.includes('/')
+    const style = isLeaf ? 'margin-inline-start: 1rem;' : 'font-weight: 600;'
     return { slug: `references/${name}`, attrs: { style } }
   })
 }
@@ -122,7 +127,7 @@ const config: AstroUserConfig = {
             },
           ],
         }),
-      ],
+      ].filter(x => !!x),
     }),
     UnoCSS(),
     preact({ include: ['src/*/preact/**/*.tsx'] }),

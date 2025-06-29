@@ -1,13 +1,16 @@
 // @ts-check
 
-import packageJson from './package.json' assert { type: 'json' }
+import packageJson from './package.json' with { type: 'json' }
 
 /**
  * @type {string[]}
  */
 const entryPoints = Object.values(packageJson.exports)
+  // Inject documentation for some css files
+  .map((entryPoint) => entryPoint.replace(/^\.\/src\/basic\/(.*)\.css$/, './src/basic/$1-css.ts'))
   // Filter out CSS files
   .filter((entryPoint) => !entryPoint.endsWith('.css'))
+  .filter((entryPoint) => !!entryPoint)
   // Remove lit modules because they are just simple re-exports from the web modules
   .filter((entryPoint) => !entryPoint.startsWith('./src/lit'))
   // Remove the empty main entry point

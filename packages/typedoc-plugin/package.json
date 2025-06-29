@@ -12,7 +12,7 @@
     "build": "tsdown"
   },
   "dependencies": {
-    "typedoc": "^0.28.5",
+    "typedoc": "^0.28.6",
     "typedoc-plugin-markdown": "^4.7.0"
   },
   "devDependencies": {

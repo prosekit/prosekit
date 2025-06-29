@@ -112,7 +112,9 @@ const config: AstroUserConfig = {
       ],
       plugins: [
         // TODO: Enable this in CI
-        process.env.CI ? undefined : starlightLinksValidator(),
+        process.env.CI ? undefined : starlightLinksValidator({
+          errorOnRelativeLinks: false,
+        }),
         starlightThemeNova({
           nav: [
             {

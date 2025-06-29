@@ -117,7 +117,7 @@ jobs:
         uses: lycheeverse/lychee-action@v2.4.1
         with:
           workingDirectory: website/dist
-          args: --include-fragments --fallback-extensions html --no-progress --verbose './**/*.html'
+          args: --include-fragments --fallback-extensions html --no-progress './**/*.html'
           debug: true
           fail: true
           failIfEmpty: true

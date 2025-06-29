@@ -1,31 +1,39 @@
 import { once } from '@ocavue/utils'
 import { getCollection } from 'astro:content'
 
-const TITLE = '# ProseKit'
-const DESCRIPTION = 'ProseKit is a framework for building rich text editors on web.'
 const SITE_URL = 'https://prosekit.dev'
 
 export async function getLlmText(type: 'default' | 'full' | { id: string }): Promise<string> {
   if (type === 'default') {
-    return [
-      TITLE,
-      DESCRIPTION,
+    const parts = [
+      '# ProseKit',
+      'ProseKit is a framework for building rich text editors on web.',
       '## Complete documentation',
       `- [Complete documentation](${SITE_URL}/llms-full.txt): the full documentation for ProseKit`,
       '## Documentation Sets',
       await getDocLinks(),
-    ].join('\n\n')
+    ]
+    return parts.join('\n\n')
   }
 
   if (type === 'full') {
-    return [
-      TITLE,
-      DESCRIPTION,
-      await getAllDocTexts(),
-    ].join('\n\n')
+    const docs = Object.values(await getDocs())
+    const parts = [
+      '<SYSTEM>This is the full developer documentation for ProseKit</SYSTEM>',
+    ]
+    for (const doc of docs) {
+      parts.push('='.repeat(20))
+      parts.push(getDocText(doc))
+    }
+    return parts.join('\n\n')
   }
 
-  return await getDocTextById(type.id)
+  const docs = await getDocs()
+  const doc = docs[type.id]
+  if (!doc) {
+    throw new Error(`Unable to build llms.txt for ${JSON.stringify(type.id)}`)
+  }
+  return getDocText(doc)
 }
 
 interface Doc {
@@ -46,33 +54,15 @@ const getDocs: () => Promise<Docs> = once(async () => {
   }]))
 })
 
-async function getDocIds(): Promise<string[]> {
-  const docs = await getDocs()
-  return Object.keys(docs)
-}
-
-async function getDocTextById(id: string): Promise<string> {
-  const docs = await getDocs()
-  const doc = docs[id]
-
-  if (!doc) {
-    throw new Error(`Unable to build llms.txt for ${JSON.stringify(id)}`)
-  }
-
+function getDocText(doc: Doc): string {
   const parts = [
     `# ${doc.title}`,
-    `> HTML document URL: ${SITE_URL}/${id}`,
+    `> HTML document URL: ${SITE_URL}/${doc.id}`,
     '---',
     doc.body,
   ]
 
   return parts.join('\n\n')
-}
-
-async function getAllDocTexts(): Promise<string> {
-  const ids = await getDocIds()
-  const parts = await Promise.all(ids.map(getDocTextById))
-  return parts.join('\n\n' + '-'.repeat(20) + '\n\n')
 }
 
 async function getDocLinks(): Promise<string> {

@@ -116,7 +116,8 @@ jobs:
       - name: Check links
         uses: lycheeverse/lychee-action@v2.4.1
         with:
-          args: --root-dir "$PWD/website/dist" --no-progress './website/dist/**/*.html' --include-fragments --fallback-extensions html
+          workingDirectory: website/dist
+          args: --no-progress './**/*.html' --include-fragments --fallback-extensions html
           fail: true
           lycheeVersion: 0.19.1
 

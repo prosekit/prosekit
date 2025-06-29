@@ -121,7 +121,6 @@ jobs:
           debug: true
           fail: true
           failIfEmpty: true
-          lycheeVersion: v0.19.1
 
   deploy:
     runs-on: ubuntu-latest

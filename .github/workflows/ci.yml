@@ -119,6 +119,7 @@ jobs:
           workingDirectory: website/dist
           args: --include-fragments --fallback-extensions html'./**/*.html'
           fail: true
+          failIfEmpty: true
           lycheeVersion: v0.19.1
 
   deploy:

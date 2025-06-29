@@ -28,8 +28,3 @@ if grep -r "__namedParameters" references; then
   echo 'Found "__namedParameters" in generated markdown files. You probably forgot to add "@param" JSDoc to the function.'
   exit 1
 fi
-
-# Copy all files in references/ to docs/references/
-cd "$WEBSITE_DIR/src/content"
-mkdir -p docs/references
-rsync -av references/* docs/references/

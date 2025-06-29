@@ -8,6 +8,8 @@
     "./tests/**/*",
     "src/*.ts",
     "src/components/**/*",
+    "src/pages/**/*",
+    "src/content/**/*",
   ],
   "compilerOptions": {
     "jsx": "preserve",

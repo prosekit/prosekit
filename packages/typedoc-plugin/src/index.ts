@@ -24,10 +24,6 @@ export function load(app: MarkdownApplication) {
           ...page.frontmatter,
         }
 
-        if (page.filename.endsWith('.css.md')) {
-          page.filename = page.filename.replace(/\.css\.md$/, '-css.md')
-        }
-
         page.contents = fixProseMirrorLinks(page.contents)
       }
     },

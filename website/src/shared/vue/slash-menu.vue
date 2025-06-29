@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { canUseRegexLookbehind } from 'prosekit/core'
 import { useEditor } from 'prosekit/vue'
 import {
   AutocompleteList,
@@ -12,7 +13,7 @@ import SlashMenuItem from './slash-menu-item.vue'
 const editor = useEditor<EditorExtension>()
 
 // Match inputs like "/", "/table", "/heading 1" etc. Do not match "/ heading".
-const regex = /\/(|\S.*)$/u
+const regex = canUseRegexLookbehind() ? /(?<!\S)\/(|\S.*)$/u : /\/(|\S.*)$/u
 </script>
 
 <template>

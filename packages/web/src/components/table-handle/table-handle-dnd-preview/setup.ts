@@ -1,0 +1,215 @@
+import { createComputed, useEffect, type ConnectableElement, type SignalState } from "@aria-ui/core";
+import { computePosition, offset } from "@floating-ui/dom";
+import type { EditorView } from "@prosekit/pm/view";
+
+import { tableHandleDndContext, tableHandleRootContext } from "../context";
+
+import type { TableHandleDndPreviewProps } from "./types";
+
+export function useTableHandleDndPreview(host: ConnectableElement, { state }: { state: SignalState<TableHandleDndPreviewProps> }): void {
+  const { editor } = state
+  const dndContext = tableHandleDndContext.consume(host)
+  const rootContext = tableHandleRootContext.consume(host)
+
+  const clientXSignal = createComputed(() => {
+    const context = dndContext.get()
+    return context.x;
+  })
+
+  const clientYSignal = createComputed(() => {
+    const context = dndContext.get()
+    return context.y;
+  })
+
+  const draggingSingal = createComputed(() => {
+    const context = dndContext.get()
+    return context.dragging;
+  })
+
+  const directionSignal = createComputed(() => {
+    const context = dndContext.get()
+    return context.direction;
+  })
+
+  const draggingIndexSignal = createComputed(() => {
+    const context = dndContext.get()
+    return context.draggingIndex;
+  })
+
+  useEffect(host, () => {
+    host.style.position = 'absolute'
+  })
+
+  useEffect(host, () => {
+    const editorInstance = editor.get();
+    if (!editorInstance) return;
+
+    const dragging = draggingSingal.get()
+    host.dataset.dragging = dragging.toString()
+
+    Object.assign(host.style, {
+      display: dragging ? 'block' : 'none',
+    })
+
+    if (!dragging) {
+      clearPreviewDOM(host)
+      return;
+    }
+
+    const direction = directionSignal.get()
+    host.dataset.direction = direction
+    
+    const draggingIndex = draggingIndexSignal.get()
+    const { view } = editorInstance
+
+    const cellPos = rootContext.peek()?.cellPos
+    if (cellPos == null) return;
+    const table = getTableDOMByPos(view, cellPos)
+    if (!table) return;
+    const cell = getTargetFirstCellDOM(table, draggingIndex, direction)
+    if (!cell) return;
+
+    createPreviewDOM(table, host, draggingIndex, direction)
+
+    const tableRect = table.getBoundingClientRect()
+    const cellRect = cell.getBoundingClientRect()
+
+    if (direction === 'vertical') {
+      Object.assign(host.style, {
+        width: `${cellRect.width}px`,
+        height: `${tableRect.height}px`,
+      })
+    } else {
+      Object.assign(host.style, {
+        width: `${tableRect.width}px`,
+        height: `${cellRect.height}px`,
+      })
+    }
+
+    computePosition(cell, host, {
+      placement: direction === 'horizontal' ? 'right' : 'bottom',
+      middleware: [offset(({rects}) => {
+        if (direction === 'vertical') {
+          return -rects.reference.height;
+        }
+
+        return -rects.reference.width;
+      })]
+    })
+      .then(({ x, y }) => {
+        Object.assign(host.style, {
+          left: `${x}px`,
+          top: `${y}px`,
+        })
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  })
+
+  useEffect(host, () => {
+    const editorInstance = editor.get();
+    if (!editorInstance) return;
+    if (!draggingSingal.get()) return;
+    
+    const { view } = editorInstance
+    const { draggingIndex, direction } = dndContext.peek();
+    const x = clientXSignal.get();
+    const y = clientYSignal.get();
+
+    const cellPos = rootContext.peek()?.cellPos
+    if (cellPos == null) return;
+    const table = getTableDOMByPos(view, cellPos)
+    if (!table) return;
+    const cell = getTargetFirstCellDOM(table, draggingIndex, direction)
+    if (!cell) return;
+
+    computePosition({
+      contextElement: cell,
+      getBoundingClientRect: () => {
+        const rect = cell.getBoundingClientRect()
+        return {
+          width: rect.width,
+          height: rect.height,
+          right: x + rect.width / 2,
+          bottom: y + rect.height / 2,
+          top: y - rect.height / 2,
+          left: x - rect.width / 2,
+          x,
+          y,
+        }
+      }
+    }, host, {
+      placement: direction === 'horizontal' ? 'right' : 'bottom',
+    }).then(({ x, y }) => {
+      if (direction === 'horizontal') {
+        Object.assign(host.style, {
+          top: `${y}px`,
+        })
+      } else {
+        Object.assign(host.style, {
+          left: `${x}px`,
+        })
+      }
+    }).catch((error) => {
+      console.error(error)
+    })
+
+  })
+}
+
+function getTableDOMByPos(view: EditorView, pos: number): HTMLTableElement | undefined {
+  const dom = view.domAtPos(pos).node
+  if (!dom) return;
+  const element = dom instanceof HTMLElement ? dom : dom.parentElement
+  const table = element?.closest('table')
+  return table ?? undefined
+}
+
+function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction: 'horizontal' | 'vertical'): HTMLElement | undefined {
+  const rows = table.querySelectorAll('tr')
+  if (direction === 'horizontal') {
+    const row = rows[index]
+    const cell = row.querySelector('td')
+    return cell ?? undefined
+  }
+
+  const row = rows[0]
+  const cell = row.querySelectorAll('td')[index]
+  return cell ?? undefined
+}
+
+function clearPreviewDOM(previewRoot: HTMLElement) {
+  while (previewRoot.firstChild) {
+    previewRoot.removeChild(previewRoot.firstChild)
+  }
+}
+
+function createPreviewDOM(
+  table: HTMLTableElement,
+  previewRoot: HTMLElement,
+  index: number,
+  direction: 'horizontal' | 'vertical'
+) {
+  clearPreviewDOM(previewRoot)
+
+  const previewTable = document.createElement('table')
+  const previewTableBody = document.createElement('tbody')
+  previewTable.appendChild(previewTableBody)
+  previewRoot.appendChild(previewTable)
+
+  const rows = table.querySelectorAll('tr')
+
+  if (direction === 'horizontal') {
+    const row = rows[index]
+    const rowDOM = row.cloneNode(true)
+    previewTableBody.appendChild(rowDOM)
+  } else {
+    rows.forEach((row) => {
+      const rowDOM = row.cloneNode(false)
+      const cellDOM = row.querySelectorAll('td')[index].cloneNode(true)
+      rowDOM.appendChild(cellDOM)
+      previewTableBody.appendChild(rowDOM)
+    })
+  }
+}

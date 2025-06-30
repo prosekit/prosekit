@@ -1,14 +1,17 @@
 .ProseMirror .tableWrapper {
   overflow-x: auto;
 }
-.ProseMirror table {
+.ProseMirror table,
+prosekit-table-handle-dnd-preview table {
   width: 100%;
   overflow: hidden;
   border-collapse: collapse;
   table-layout: fixed;
 }
 .ProseMirror td,
-.ProseMirror th {
+.ProseMirror th,
+prosekit-table-handle-dnd-preview td,
+prosekit-table-handle-dnd-preview th {
   box-sizing: border-box;
   position: relative;
   padding-right: 0.75rem;
@@ -16,6 +19,14 @@
   border-width: 1px;
   vertical-align: top;
 }
+
+prosekit-table-handle-dnd-preview td p,
+prosekit-table-handle-dnd-preview th p {
+  margin: 0;
+  padding: 0.5rem 0;
+  line-height: 1.5;
+}
+
 .ProseMirror .column-resize-handle {
   z-index: 20;
   position: absolute;

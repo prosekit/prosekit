@@ -16,7 +16,9 @@ import type { EditorView } from '@prosekit/pm/view'
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { useEditorTyping } from '../../../hooks/use-editor-typing'
 import {
+  tableHandleDndContext,
   tableHandleRootContext,
+  type TableHandleDndContext,
   type TableHandleRootContext,
 } from '../context'
 import {
@@ -37,6 +39,11 @@ export function useTableHandleRoot(
   const { editor } = state
 
   const context = createSignal<TableHandleRootContext>(null)
+  const dndContext = createSignal<TableHandleDndContext>({
+    dragging: false,
+    direction: 'horizontal',
+    draggingIndex: -1,
+  })
 
   const hoveringCell = useHoveringCell(host, editor)
   const typing = useEditorTyping(host, editor)
@@ -51,6 +58,7 @@ export function useTableHandleRoot(
   })
 
   tableHandleRootContext.provide(host, context)
+  tableHandleDndContext.provide(host, dndContext)
 }
 
 function useHoveringCell(

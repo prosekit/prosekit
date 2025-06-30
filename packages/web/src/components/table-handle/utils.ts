@@ -12,6 +12,14 @@ export interface HoveringCellInfo {
   colFirstCellPos: number
 }
 
+export interface DndInfo {
+  dragging: boolean
+  direction: 'horizontal' | 'vertical'
+  draggingIndex: number
+  x: number
+  y: number
+}
+
 export function isHoveringCellInfoEqual(
   a?: HoveringCellInfo | null,
   b?: HoveringCellInfo | null,

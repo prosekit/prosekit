@@ -2,6 +2,10 @@ export { TableHandleColumnRoot, type TableHandleColumnRootProps, type TableHandl
 
 export { TableHandleColumnTrigger, type TableHandleColumnTriggerProps, type TableHandleColumnTriggerEmits } from './table-handle-column-trigger.gen'
 
+export { TableHandleDndIndicator, type TableHandleDndIndicatorProps, type TableHandleDndIndicatorEmits } from './table-handle-dnd-indicator.gen'
+
+export { TableHandleDndPreview, type TableHandleDndPreviewProps, type TableHandleDndPreviewEmits } from './table-handle-dnd-preview.gen'
+
 export { TableHandlePopoverContent, type TableHandlePopoverContentProps, type TableHandlePopoverContentEmits } from './table-handle-popover-content.gen'
 
 export { TableHandlePopoverItem, type TableHandlePopoverItemProps, type TableHandlePopoverItemEmits } from './table-handle-popover-item.gen'

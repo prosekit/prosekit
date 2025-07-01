@@ -158,6 +158,9 @@ const config: AstroUserConfig = {
     },
   },
   markdown: {
+    // Disable smartypants to prevent converting "..." into "…"
+    smartypants: false,
+
     rehypePlugins: [
       [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
     ],

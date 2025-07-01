@@ -16,7 +16,8 @@ import {
   tableHandleRootContext,
 } from './context'
 
-type OnInitParams = {
+export type OnInitParams = {
+  host: ConnectableElement
   direction: 'row' | 'col'
   dragging: boolean
   draggingIndex: number
@@ -65,6 +66,7 @@ export function useInitDndPosition(
     const { table, cell } = relatedDOMs
 
     onInit({
+      host,
       direction,
       dragging,
       draggingIndex,

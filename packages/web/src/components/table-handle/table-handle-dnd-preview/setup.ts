@@ -10,7 +10,10 @@ import {
   tableHandleDndContext,
   tableHandleRootContext,
 } from '../context'
-import { useInitDndPosition, getDndRelatedDOMs } from '../dnd'
+import {
+  getDndRelatedDOMs,
+  useInitDndPosition,
+} from '../dnd'
 
 import {
   clearPreviewDOM,

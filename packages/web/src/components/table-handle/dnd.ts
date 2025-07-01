@@ -117,7 +117,7 @@ function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction
   return cell ?? undefined
 }
 
-export function getDndRelatedDOMs(view: EditorView, cellPos: number | undefined, draggingIndex: number, direction: 'row' | 'col'): { table: HTMLTableElement, cell: HTMLTableCellElement } | undefined {
+export function getDndRelatedDOMs(view: EditorView, cellPos: number | undefined, draggingIndex: number, direction: 'row' | 'col'): { table: HTMLTableElement; cell: HTMLTableCellElement } | undefined {
   if (cellPos == null) return
   const table = getTableDOMByPos(view, cellPos)
   if (!table) return

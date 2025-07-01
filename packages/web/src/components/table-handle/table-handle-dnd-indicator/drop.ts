@@ -1,8 +1,13 @@
-import { createComputed, useEffect, type ConnectableElement, type ReadonlySignal } from "@aria-ui/core"
-import type { Editor } from "@prosekit/core"
-import type { TableCommandsExtension } from "@prosekit/extensions/table"
+import {
+  createComputed,
+  useEffect,
+  type ConnectableElement,
+  type ReadonlySignal,
+} from '@aria-ui/core'
+import type { Editor } from '@prosekit/core'
+import type { TableCommandsExtension } from '@prosekit/extensions/table'
 
-import { tableHandleDndContext } from "../context"
+import { tableHandleDndContext } from '../context'
 
 export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor<TableCommandsExtension> | null>): void {
   const dndContext = tableHandleDndContext.consume(host)

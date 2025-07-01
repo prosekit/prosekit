@@ -101,29 +101,17 @@ ProseKit extension priority.
 
 <dl>
 
-<!-- DEBUG accessor step 1 -->
-
-<!-- DEBUG accessor step 2 -->
-
 <dt>
 
 <code data-typedoc-declaration>get <i></i> <a id="commandscommands" href="#commandscommands">commands</a>(): [`ExtractCommandActions`](#extractcommandactions)\<`E`\></code>
 
 </dt>
 
-<!-- DEBUG accessor step 3 -->
-
 <dd>
-
-<!-- DEBUG accessor step 4 -->
 
 All [CommandAction](#commandaction)s defined by the editor.
 
 </dd>
-
-<!-- DEBUG accessor step 5 -->
-
-<!-- DEBUG accessor step 6 -->
 
 </dl>
 
@@ -131,29 +119,17 @@ All [CommandAction](#commandaction)s defined by the editor.
 
 <dl>
 
-<!-- DEBUG accessor step 1 -->
-
-<!-- DEBUG accessor step 2 -->
-
 <dt>
 
 <code data-typedoc-declaration>get <i></i> <a id="focusedfocused" href="#focusedfocused">focused</a>(): `boolean`</code>
 
 </dt>
 
-<!-- DEBUG accessor step 3 -->
-
 <dd>
-
-<!-- DEBUG accessor step 4 -->
 
 Whether the editor is focused.
 
 </dd>
-
-<!-- DEBUG accessor step 5 -->
-
-<!-- DEBUG accessor step 6 -->
 
 </dl>
 
@@ -161,29 +137,17 @@ Whether the editor is focused.
 
 <dl>
 
-<!-- DEBUG accessor step 1 -->
-
-<!-- DEBUG accessor step 2 -->
-
 <dt>
 
 <code data-typedoc-declaration>get <i></i> <a id="marksmarks" href="#marksmarks">marks</a>(): [`ExtractMarkActions`](#extractmarkactions)\<`E`\></code>
 
 </dt>
 
-<!-- DEBUG accessor step 3 -->
-
 <dd>
-
-<!-- DEBUG accessor step 4 -->
 
 All [MarkAction](#markaction)s defined by the editor.
 
 </dd>
-
-<!-- DEBUG accessor step 5 -->
-
-<!-- DEBUG accessor step 6 -->
 
 </dl>
 
@@ -191,29 +155,17 @@ All [MarkAction](#markaction)s defined by the editor.
 
 <dl>
 
-<!-- DEBUG accessor step 1 -->
-
-<!-- DEBUG accessor step 2 -->
-
 <dt>
 
 <code data-typedoc-declaration>get <i></i> <a id="mountedmounted" href="#mountedmounted">mounted</a>(): `boolean`</code>
 
 </dt>
 
-<!-- DEBUG accessor step 3 -->
-
 <dd>
-
-<!-- DEBUG accessor step 4 -->
 
 Whether the editor is mounted.
 
 </dd>
-
-<!-- DEBUG accessor step 5 -->
-
-<!-- DEBUG accessor step 6 -->
 
 </dl>
 
@@ -221,29 +173,17 @@ Whether the editor is mounted.
 
 <dl>
 
-<!-- DEBUG accessor step 1 -->
-
-<!-- DEBUG accessor step 2 -->
-
 <dt>
 
 <code data-typedoc-declaration>get <i></i> <a id="nodesnodes" href="#nodesnodes">nodes</a>(): [`ExtractNodeActions`](#extractnodeactions)\<`E`\></code>
 
 </dt>
 
-<!-- DEBUG accessor step 3 -->
-
 <dd>
-
-<!-- DEBUG accessor step 4 -->
 
 All [NodeAction](#nodeaction)s defined by the editor.
 
 </dd>
-
-<!-- DEBUG accessor step 5 -->
-
-<!-- DEBUG accessor step 6 -->
 
 </dl>
 
@@ -251,29 +191,17 @@ All [NodeAction](#nodeaction)s defined by the editor.
 
 <dl>
 
-<!-- DEBUG accessor step 1 -->
-
-<!-- DEBUG accessor step 2 -->
-
 <dt>
 
 <code data-typedoc-declaration>get <i></i> <a id="schemaschema" href="#schemaschema">schema</a>(): [`Schema`](pm/model.md#schema-3)\<`ExtractNodeNames`\<`E`\>, `ExtractMarkNames`\<`E`\>\></code>
 
 </dt>
 
-<!-- DEBUG accessor step 3 -->
-
 <dd>
-
-<!-- DEBUG accessor step 4 -->
 
 The editor schema.
 
 </dd>
-
-<!-- DEBUG accessor step 5 -->
-
-<!-- DEBUG accessor step 6 -->
 
 </dl>
 
@@ -281,29 +209,17 @@ The editor schema.
 
 <dl>
 
-<!-- DEBUG accessor step 1 -->
-
-<!-- DEBUG accessor step 2 -->
-
 <dt>
 
 <code data-typedoc-declaration>get <i></i> <a id="statestate" href="#statestate">state</a>(): [`EditorState`](pm/state.md#editorstate)</code>
 
 </dt>
 
-<!-- DEBUG accessor step 3 -->
-
 <dd>
-
-<!-- DEBUG accessor step 4 -->
 
 The editor's current state.
 
 </dd>
-
-<!-- DEBUG accessor step 5 -->
-
-<!-- DEBUG accessor step 6 -->
 
 </dl>
 
@@ -311,29 +227,17 @@ The editor's current state.
 
 <dl>
 
-<!-- DEBUG accessor step 1 -->
-
-<!-- DEBUG accessor step 2 -->
-
 <dt>
 
 <code data-typedoc-declaration>get <i></i> <a id="viewview" href="#viewview">view</a>(): [`EditorView`](pm/view.md#editorview)</code>
 
 </dt>
 
-<!-- DEBUG accessor step 3 -->
-
 <dd>
-
-<!-- DEBUG accessor step 4 -->
 
 The editor view.
 
 </dd>
-
-<!-- DEBUG accessor step 5 -->
-
-<!-- DEBUG accessor step 6 -->
 
 </dl>
 
@@ -1158,27 +1062,15 @@ The schema that this extension represents.
 
 <dl>
 
-<!-- DEBUG accessor step 1 -->
-
-<!-- DEBUG accessor step 2 -->
-
 <dt>
 
 <code data-typedoc-declaration>get <i></i> <a id="reducerreducer" href="#reducerreducer">reducer</a>(): `FacetReducer`\<`Input`, `Output`\></code>
 
 </dt>
 
-<!-- DEBUG accessor step 3 -->
-
 <dd>
 
-<!-- DEBUG accessor step 4 -->
-
 </dd>
-
-<!-- DEBUG accessor step 5 -->
-
-<!-- DEBUG accessor step 6 -->
 
 </dl>
 

@@ -5,6 +5,9 @@ import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 // Based on https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown@4.7.0/packages/typedoc-plugin-markdown/src/theme/context/partials/member.accessor.ts
 // with the following changes:
 //
+// - Added `<dl>` and `<dt>` and `<dd>` tags
+// - Commented out some code that is not used
+
 export function accessor(
   this: MarkdownThemeContext,
   model: DeclarationReflection,
@@ -17,13 +20,9 @@ export function accessor(
   md.push('<dl>')
 
   if (model.getSignature) {
-    md.push('<!-- DEBUG accessor step 1 -->')
-
     /*
     md.push(heading(options.headingLevel, i18n.kind_get_signature()))
     */
-
-    md.push('<!-- DEBUG accessor step 2 -->')
 
     md.push('<dt>')
 
@@ -35,8 +34,6 @@ export function accessor(
 
     md.push('</dt>')
 
-    md.push('<!-- DEBUG accessor step 3 -->')
-
     md.push('<dd>')
 
     if (showSources && !this.options.getValue('disableSources')) {
@@ -45,8 +42,6 @@ export function accessor(
       }
     }
 
-    md.push('<!-- DEBUG accessor step 4 -->')
-
     if (model.getSignature.comment) {
       md.push(
         this.partials.comment(model.getSignature.comment, {
@@ -54,10 +49,6 @@ export function accessor(
         }),
       )
     }
-
-    md.push('</dd>')
-
-    md.push('<!-- DEBUG accessor step 5 -->')
 
     /*
     if (model.getSignature?.type) {
@@ -69,18 +60,24 @@ export function accessor(
     }
     */
 
-    md.push('<!-- DEBUG accessor step 6 -->')
+    md.push('</dd>')
   }
   if (model.setSignature) {
     /*
     md.push(heading(options.headingLevel, i18n.kind_set_signature()))
     */
 
+    md.push('<dt>')
+
     md.push(
       this.partials.signatureTitle(model.setSignature, {
         accessor: 'set',
       }),
     )
+
+    md.push('</dt>')
+
+    md.push('<dd>')
 
     if (showSources && !this.options.getValue('disableSources')) {
       if (model.setSignature?.sources) {
@@ -125,15 +122,17 @@ export function accessor(
       )
     }
     */
+
+    md.push('</dd>')
   }
+
+  md.push('</dl>')
 
   if (showSources && !this.options.getValue('disableSources')) {
     if (!model.getSignature && !model.setSignature) {
       md.push(this.partials.sources(model))
     }
   }
-
-  md.push('</dl>')
 
   if (model.comment) {
     md.push(

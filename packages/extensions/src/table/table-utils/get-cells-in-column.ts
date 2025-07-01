@@ -1,40 +1,40 @@
-import type { Selection } from '@prosekit/pm/state';
-import { TableMap } from 'prosemirror-tables';
+import type { Selection } from '@prosekit/pm/state'
+import { TableMap } from 'prosemirror-tables'
 
-import { findTable } from './query';
-import type { CellPos } from './types';
+import { findTable } from './query'
+import type { CellPos } from './types'
 
 /**
  * Returns an array of cells in a column(s), where `columnIndex` could be a column index or an array of column indexes.
- * 
+ *
  * @internal
  */
-export function getCellsInColumn (columnIndexes: number | number[]) {
+export function getCellsInColumn(columnIndexes: number | number[]) {
   return (selection: Selection): CellPos[] | undefined => {
-		const table = findTable(selection.$from);
-		if (!table) {
-			return;
-		}
+    const table = findTable(selection.$from)
+    if (!table) {
+      return
+    }
 
-		const map = TableMap.get(table.node);
-		const indexes = Array.isArray(columnIndexes) ? columnIndexes : [columnIndexes];
+    const map = TableMap.get(table.node)
+    const indexes = Array.isArray(columnIndexes) ? columnIndexes : [columnIndexes]
 
-		return indexes
-			.filter((index) => index >= 0 && index <= map.width - 1)
-			.reduce<CellPos[]>((acc, index) => {
-				const cells = map.cellsInRect({
-					left: index,
-					right: index + 1,
-					top: 0,
-					bottom: map.height,
-				});
-				return acc.concat(
-					cells.map((nodePos) => {
-						const node = table.node.nodeAt(nodePos)!;
-						const pos = nodePos + table.start;
-						return { pos, start: pos + 1, node, depth: table.depth + 2 };
-					}),
-				);
-			}, []);
-	}
+    return indexes
+      .filter((index) => index >= 0 && index <= map.width - 1)
+      .reduce<CellPos[]>((acc, index) => {
+        const cells = map.cellsInRect({
+          left: index,
+          right: index + 1,
+          top: 0,
+          bottom: map.height,
+        })
+        return acc.concat(
+          cells.map((nodePos) => {
+            const node = table.node.nodeAt(nodePos)!
+            const pos = nodePos + table.start
+            return { pos, start: pos + 1, node, depth: table.depth + 2 }
+          }),
+        )
+      }, [])
+  }
 }

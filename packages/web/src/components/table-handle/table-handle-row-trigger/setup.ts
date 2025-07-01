@@ -7,7 +7,10 @@ import {
 import { useMenuTrigger } from '@aria-ui/menu/elements'
 import { selectTableRow } from '@prosekit/extensions/table'
 
-import { tableHandleDndContext, tableHandleRootContext } from '../context'
+import {
+  tableHandleDndContext,
+  tableHandleRootContext,
+} from '../context'
 
 import type {
   TableHandleRowTriggerEvents,
@@ -46,7 +49,7 @@ export function useTableHandleRowTrigger(
       dataTransfer.effectAllowed = 'move'
     }
     const prev = dndContext.peek()
-    const index = context.peek()?.rowIndex ?? -1;
+    const index = context.peek()?.rowIndex ?? -1
     dndContext.set({
       ...prev,
       direction: 'row',

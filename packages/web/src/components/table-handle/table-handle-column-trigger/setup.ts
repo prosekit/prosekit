@@ -7,7 +7,10 @@ import {
 import { useMenuTrigger } from '@aria-ui/menu/elements'
 import { selectTableColumn } from '@prosekit/extensions/table'
 
-import { tableHandleDndContext, tableHandleRootContext } from '../context'
+import {
+  tableHandleDndContext,
+  tableHandleRootContext,
+} from '../context'
 
 import type { TableHandleColumnTriggerProps } from './types'
 
@@ -41,7 +44,7 @@ export function useTableHandleColumnTrigger(
       dataTransfer.effectAllowed = 'move'
     }
     const prev = dndContext.peek()
-    const index = context.peek()?.colIndex ?? -1;
+    const index = context.peek()?.colIndex ?? -1
     dndContext.set({
       ...prev,
       direction: 'col',

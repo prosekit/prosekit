@@ -1,10 +1,21 @@
-import { createComputed, useEffect, type ConnectableElement, type SignalState } from "@aria-ui/core";
-import { computePosition, offset } from "@floating-ui/dom";
-import type { EditorView } from "@prosekit/pm/view";
+import {
+  createComputed,
+  useEffect,
+  type ConnectableElement,
+  type SignalState,
+} from '@aria-ui/core'
+import {
+  computePosition,
+  offset,
+} from '@floating-ui/dom'
+import type { EditorView } from '@prosekit/pm/view'
 
-import { tableHandleDndContext, tableHandleRootContext } from "../context";
+import {
+  tableHandleDndContext,
+  tableHandleRootContext,
+} from '../context'
 
-import type { TableHandleDndPreviewProps } from "./types";
+import type { TableHandleDndPreviewProps } from './types'
 
 export function useTableHandleDndPreview(host: ConnectableElement, { state }: { state: SignalState<TableHandleDndPreviewProps> }): void {
   const { editor } = state
@@ -13,27 +24,27 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
 
   const clientXSignal = createComputed(() => {
     const context = dndContext.get()
-    return context.x;
+    return context.x
   })
 
   const clientYSignal = createComputed(() => {
     const context = dndContext.get()
-    return context.y;
+    return context.y
   })
 
   const draggingSingal = createComputed(() => {
     const context = dndContext.get()
-    return context.dragging;
+    return context.dragging
   })
 
   const directionSignal = createComputed(() => {
     const context = dndContext.get()
-    return context.direction;
+    return context.direction
   })
 
   const draggingIndexSignal = createComputed(() => {
     const context = dndContext.get()
-    return context.draggingIndex;
+    return context.draggingIndex
   })
 
   useEffect(host, () => {
@@ -41,8 +52,8 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
   })
 
   useEffect(host, () => {
-    const editorInstance = editor.get();
-    if (!editorInstance) return;
+    const editorInstance = editor.get()
+    if (!editorInstance) return
 
     const dragging = draggingSingal.get()
     host.dataset.dragging = dragging.toString()
@@ -50,26 +61,26 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
     Object.assign(host.style, {
       display: dragging ? 'block' : 'none',
       // Make sure drop on preview will trigger drop event on the host
-      pointerEvents: 'none'
+      pointerEvents: 'none',
     })
 
     if (!dragging) {
       clearPreviewDOM(host)
-      return;
+      return
     }
 
     const direction = directionSignal.get()
     host.dataset.direction = direction
-    
+
     const draggingIndex = draggingIndexSignal.get()
     const { view } = editorInstance
 
     const cellPos = rootContext.peek()?.cellPos
-    if (cellPos == null) return;
+    if (cellPos == null) return
     const table = getTableDOMByPos(view, cellPos)
-    if (!table) return;
+    if (!table) return
     const cell = getTargetFirstCellDOM(table, draggingIndex, direction)
-    if (!cell) return;
+    if (!cell) return
 
     createPreviewDOM(table, host, draggingIndex, direction)
 
@@ -90,13 +101,13 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
 
     computePosition(cell, host, {
       placement: direction === 'row' ? 'right' : 'bottom',
-      middleware: [offset(({rects}) => {
+      middleware: [offset(({ rects }) => {
         if (direction === 'col') {
-          return -rects.reference.height;
+          return -rects.reference.height
         }
 
-        return -rects.reference.width;
-      })]
+        return -rects.reference.width
+      })],
     })
       .then(({ x, y }) => {
         Object.assign(host.style, {
@@ -110,40 +121,44 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
   })
 
   useEffect(host, () => {
-    const editorInstance = editor.get();
-    if (!editorInstance) return;
-    if (!draggingSingal.get()) return;
-    
+    const editorInstance = editor.get()
+    if (!editorInstance) return
+    if (!draggingSingal.get()) return
+
     const { view } = editorInstance
-    const { draggingIndex, direction } = dndContext.peek();
-    const x = clientXSignal.get();
-    const y = clientYSignal.get();
+    const { draggingIndex, direction } = dndContext.peek()
+    const x = clientXSignal.get()
+    const y = clientYSignal.get()
 
     const cellPos = rootContext.peek()?.cellPos
-    if (cellPos == null) return;
+    if (cellPos == null) return
     const table = getTableDOMByPos(view, cellPos)
-    if (!table) return;
+    if (!table) return
     const cell = getTargetFirstCellDOM(table, draggingIndex, direction)
-    if (!cell) return;
+    if (!cell) return
 
-    computePosition({
-      contextElement: cell,
-      getBoundingClientRect: () => {
-        const rect = cell.getBoundingClientRect()
-        return {
-          width: rect.width,
-          height: rect.height,
-          right: x + rect.width / 2,
-          bottom: y + rect.height / 2,
-          top: y - rect.height / 2,
-          left: x - rect.width / 2,
-          x,
-          y,
-        }
-      }
-    }, host, {
-      placement: direction === 'row' ? 'right' : 'bottom',
-    }).then(({ x, y }) => {
+    computePosition(
+      {
+        contextElement: cell,
+        getBoundingClientRect: () => {
+          const rect = cell.getBoundingClientRect()
+          return {
+            width: rect.width,
+            height: rect.height,
+            right: x + rect.width / 2,
+            bottom: y + rect.height / 2,
+            top: y - rect.height / 2,
+            left: x - rect.width / 2,
+            x,
+            y,
+          }
+        },
+      },
+      host,
+      {
+        placement: direction === 'row' ? 'right' : 'bottom',
+      },
+    ).then(({ x, y }) => {
       if (direction === 'row') {
         Object.assign(host.style, {
           top: `${y}px`,
@@ -156,13 +171,12 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
     }).catch((error) => {
       console.error(error)
     })
-
   })
 }
 
 function getTableDOMByPos(view: EditorView, pos: number): HTMLTableElement | undefined {
   const dom = view.domAtPos(pos).node
-  if (!dom) return;
+  if (!dom) return
   const element = dom instanceof HTMLElement ? dom : dom.parentElement
   const table = element?.closest('table')
   return table ?? undefined
@@ -191,7 +205,7 @@ function createPreviewDOM(
   table: HTMLTableElement,
   previewRoot: HTMLElement,
   index: number,
-  direction: 'row' | 'col'
+  direction: 'row' | 'col',
 ) {
   clearPreviewDOM(previewRoot)
 

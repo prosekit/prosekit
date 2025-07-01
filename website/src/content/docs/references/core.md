@@ -97,13 +97,11 @@ ProseKit extension priority.
 
 #### Accessors
 
-##### commands {#commands}
-
 <dl>
 
 <dt>
 
-<code data-typedoc-declaration>get <i></i> <a id="commandscommands" href="#commandscommands">commands</a>(): [`ExtractCommandActions`](#extractcommandactions)\<`E`\></code>
+<code data-typedoc-declaration>get <i></i> <a id="commands" href="#commands">commands</a>(): [`ExtractCommandActions`](#extractcommandactions)\<`E`\></code>
 
 </dt>
 
@@ -115,13 +113,11 @@ All [CommandAction](#commandaction)s defined by the editor.
 
 </dl>
 
-##### focused {#focused}
-
 <dl>
 
 <dt>
 
-<code data-typedoc-declaration>get <i></i> <a id="focusedfocused" href="#focusedfocused">focused</a>(): `boolean`</code>
+<code data-typedoc-declaration>get <i></i> <a id="focused" href="#focused">focused</a>(): `boolean`</code>
 
 </dt>
 
@@ -133,13 +129,11 @@ Whether the editor is focused.
 
 </dl>
 
-##### marks {#marks}
-
 <dl>
 
 <dt>
 
-<code data-typedoc-declaration>get <i></i> <a id="marksmarks" href="#marksmarks">marks</a>(): [`ExtractMarkActions`](#extractmarkactions)\<`E`\></code>
+<code data-typedoc-declaration>get <i></i> <a id="marks" href="#marks">marks</a>(): [`ExtractMarkActions`](#extractmarkactions)\<`E`\></code>
 
 </dt>
 
@@ -151,13 +145,11 @@ All [MarkAction](#markaction)s defined by the editor.
 
 </dl>
 
-##### mounted {#mounted}
-
 <dl>
 
 <dt>
 
-<code data-typedoc-declaration>get <i></i> <a id="mountedmounted" href="#mountedmounted">mounted</a>(): `boolean`</code>
+<code data-typedoc-declaration>get <i></i> <a id="mounted" href="#mounted">mounted</a>(): `boolean`</code>
 
 </dt>
 
@@ -169,13 +161,11 @@ Whether the editor is mounted.
 
 </dl>
 
-##### nodes {#nodes}
-
 <dl>
 
 <dt>
 
-<code data-typedoc-declaration>get <i></i> <a id="nodesnodes" href="#nodesnodes">nodes</a>(): [`ExtractNodeActions`](#extractnodeactions)\<`E`\></code>
+<code data-typedoc-declaration>get <i></i> <a id="nodes" href="#nodes">nodes</a>(): [`ExtractNodeActions`](#extractnodeactions)\<`E`\></code>
 
 </dt>
 
@@ -187,13 +177,11 @@ All [NodeAction](#nodeaction)s defined by the editor.
 
 </dl>
 
-##### schema {#schema}
-
 <dl>
 
 <dt>
 
-<code data-typedoc-declaration>get <i></i> <a id="schemaschema" href="#schemaschema">schema</a>(): [`Schema`](pm/model.md#schema-3)\<`ExtractNodeNames`\<`E`\>, `ExtractMarkNames`\<`E`\>\></code>
+<code data-typedoc-declaration>get <i></i> <a id="schema" href="#schema">schema</a>(): [`Schema`](pm/model.md#schema-3)\<`ExtractNodeNames`\<`E`\>, `ExtractMarkNames`\<`E`\>\></code>
 
 </dt>
 
@@ -205,13 +193,11 @@ The editor schema.
 
 </dl>
 
-##### state {#state}
-
 <dl>
 
 <dt>
 
-<code data-typedoc-declaration>get <i></i> <a id="statestate" href="#statestate">state</a>(): [`EditorState`](pm/state.md#editorstate)</code>
+<code data-typedoc-declaration>get <i></i> <a id="state" href="#state">state</a>(): [`EditorState`](pm/state.md#editorstate)</code>
 
 </dt>
 
@@ -223,13 +209,11 @@ The editor's current state.
 
 </dl>
 
-##### view {#view}
-
 <dl>
 
 <dt>
 
-<code data-typedoc-declaration>get <i></i> <a id="viewview" href="#viewview">view</a>(): [`EditorView`](pm/view.md#editorview)</code>
+<code data-typedoc-declaration>get <i></i> <a id="view" href="#view">view</a>(): [`EditorView`](pm/view.md#editorview)</code>
 
 </dt>
 
@@ -249,7 +233,7 @@ The editor view.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="blur-1" href="#blur-1">blur</a>(): `void`</code>
+<code data-typedoc-declaration><i></i> <a id="blur" href="#blur">blur</a>(): `void`</code>
 
 </dt>
 
@@ -267,7 +251,7 @@ Blur the editor.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="canexec-1" href="#canexec-1">canExec</a>(`command`: [`Command`](pm/state.md#command)): `boolean`</code>
+<code data-typedoc-declaration><i></i> <a id="canexec" href="#canexec">canExec</a>(`command`: [`Command`](pm/state.md#command)): `boolean`</code>
 
 </dt>
 
@@ -286,7 +270,7 @@ can be executed, otherwise `false`.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="exec-1" href="#exec-1">exec</a>(`command`: [`Command`](pm/state.md#command)): `boolean`</code>
+<code data-typedoc-declaration><i></i> <a id="exec" href="#exec">exec</a>(`command`: [`Command`](pm/state.md#command)): `boolean`</code>
 
 </dt>
 
@@ -305,7 +289,7 @@ executed, otherwise `false`.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="focus-1" href="#focus-1">focus</a>(): `void`</code>
+<code data-typedoc-declaration><i></i> <a id="focus" href="#focus">focus</a>(): `void`</code>
 
 </dt>
 
@@ -323,7 +307,7 @@ Focus the editor.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="getdochtml-1" href="#getdochtml-1">getDocHTML</a>(`options?`: `getDocHTMLOptions`): `string`</code>
+<code data-typedoc-declaration><i></i> <a id="getdochtml" href="#getdochtml">getDocHTML</a>(`options?`: `getDocHTMLOptions`): `string`</code>
 
 </dt>
 
@@ -341,7 +325,7 @@ Return a HTML string representing the editor's current document.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="getdocjson-1" href="#getdocjson-1">getDocJSON</a>(): [`NodeJSON`](#nodejson)</code>
+<code data-typedoc-declaration><i></i> <a id="getdocjson" href="#getdocjson">getDocJSON</a>(): [`NodeJSON`](#nodejson)</code>
 
 </dt>
 
@@ -359,7 +343,7 @@ Return a JSON object representing the editor's current document.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="mount-1" href="#mount-1">mount</a>(`place`: `undefined` \| `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)): `void`</code>
+<code data-typedoc-declaration><i></i> <a id="mount" href="#mount">mount</a>(`place`: `undefined` \| `null` \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)): `void`</code>
 
 </dt>
 
@@ -378,7 +362,7 @@ Pass `null` or `undefined` to unmount the editor.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="setcontent-1" href="#setcontent-1">setContent</a>(`content`: `string` \| [`ProseMirrorNode`](pm/model.md#prosemirrornode) \| [`NodeJSON`](#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement), `selection?`: [`Selection`](pm/state.md#selection-1) \| `"start"` \| [`SelectionJSON`](#selectionjson) \| `"end"`): `void`</code>
+<code data-typedoc-declaration><i></i> <a id="setcontent" href="#setcontent">setContent</a>(`content`: `string` \| [`ProseMirrorNode`](pm/model.md#prosemirrornode) \| [`NodeJSON`](#nodejson) \| [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement), `selection?`: [`Selection`](pm/state.md#selection-1) \| `"start"` \| [`SelectionJSON`](#selectionjson) \| `"end"`): `void`</code>
 
 </dt>
 
@@ -396,7 +380,7 @@ Update the editor's document and selection.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="unmount-1" href="#unmount-1">unmount</a>(): `void`</code>
+<code data-typedoc-declaration><i></i> <a id="unmount" href="#unmount">unmount</a>(): `void`</code>
 
 </dt>
 
@@ -414,7 +398,7 @@ Unmount the editor. This is equivalent to `mount(null)`.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="updatestate-1" href="#updatestate-1">updateState</a>(`state`: [`EditorState`](pm/state.md#editorstate)): `void`</code>
+<code data-typedoc-declaration><i></i> <a id="updatestate" href="#updatestate">updateState</a>(`state`: [`EditorState`](pm/state.md#editorstate)): `void`</code>
 
 </dt>
 
@@ -437,7 +421,7 @@ directly manipulate the editor's state.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="use-1" href="#use-1">use</a>(`extension`: [`Extension`](#extension-1)): `VoidFunction`</code>
+<code data-typedoc-declaration><i></i> <a id="use" href="#use">use</a>(`extension`: [`Extension`](#extension-1)): `VoidFunction`</code>
 
 </dt>
 
@@ -540,7 +524,7 @@ It also has a `canExec` method to check if the command can be applied.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="commandaction-1" href="#commandaction-1">CommandAction</a>(...`args`: `Args`): `boolean`</code>
+<code data-typedoc-declaration><i></i> <a id="commandaction" href="#commandaction">CommandAction</a>(...`args`: `Args`): `boolean`</code>
 
 </dt>
 
@@ -561,7 +545,7 @@ executed, otherwise `false`.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="canapply-1" href="#canapply-1">canApply</a>(...`args`: `Args`): `boolean`</code>
+<code data-typedoc-declaration><i></i> <a id="canapply" href="#canapply">canApply</a>(...`args`: `Args`): `boolean`</code>
 
 </dt>
 
@@ -583,7 +567,7 @@ Use `canExec` instead.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="canexec-3" href="#canexec-3">canExec</a>(...`args`: `Args`): `boolean`</code>
+<code data-typedoc-declaration><i></i> <a id="canexec-2" href="#canexec-2">canExec</a>(...`args`: `Args`): `boolean`</code>
 
 </dt>
 
@@ -1058,13 +1042,11 @@ The schema that this extension represents.
 
 #### Accessors
 
-##### reducer {#reducer}
-
 <dl>
 
 <dt>
 
-<code data-typedoc-declaration>get <i></i> <a id="reducerreducer" href="#reducerreducer">reducer</a>(): `FacetReducer`\<`Input`, `Output`\></code>
+<code data-typedoc-declaration>get <i></i> <a id="reducer" href="#reducer">reducer</a>(): `FacetReducer`\<`Input`, `Output`\></code>
 
 </dt>
 
@@ -1366,7 +1348,7 @@ current editor selection.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="markaction-1" href="#markaction-1">MarkAction</a>(`attrs`: `null` \| `Attrs`, ...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)[]</code>
+<code data-typedoc-declaration><i></i> <a id="markaction" href="#markaction">MarkAction</a>(`attrs`: `null` \| `Attrs`, ...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)[]</code>
 
 </dt>
 
@@ -1384,7 +1366,7 @@ Applies a mark with attributes and any number of children.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="markaction-2" href="#markaction-2">MarkAction</a>(...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)[]</code>
+<code data-typedoc-declaration><i></i> <a id="markaction" href="#markaction">MarkAction</a>(...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)[]</code>
 
 </dt>
 
@@ -1767,7 +1749,7 @@ current editor selection.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="nodeaction-1" href="#nodeaction-1">NodeAction</a>(`attrs`: `null` \| `Attrs`, ...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-declaration><i></i> <a id="nodeaction" href="#nodeaction">NodeAction</a>(`attrs`: `null` \| `Attrs`, ...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -1785,7 +1767,7 @@ Creates a node with attributes and any number of children.
 
 <dt>
 
-<code data-typedoc-declaration><i></i> <a id="nodeaction-2" href="#nodeaction-2">NodeAction</a>(...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-declaration><i></i> <a id="nodeaction" href="#nodeaction">NodeAction</a>(...`children`: [`NodeChild`](#nodechild)[]): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -3779,7 +3761,7 @@ It is a re-export of [clsx/lite](https://www.npmjs.com/package/clsx) with strict
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="addmark-2" href="#addmark-2">addMark</a>(`options`: [`AddMarkOptions`](#addmarkoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="addmark" href="#addmark">addMark</a>(`options`: [`AddMarkOptions`](#addmarkoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -3799,7 +3781,7 @@ Returns a command that adds the given mark with the given attributes.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="createeditor-2" href="#createeditor-2">createEditor</a>\<E\>(`options`: [`EditorOptions`](#editoroptions)\<`E`\>): [`Editor`](#editor)\<`E`\></code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="createeditor" href="#createeditor">createEditor</a>\<E\>(`options`: [`EditorOptions`](#editoroptions)\<`E`\>): [`Editor`](#editor)\<`E`\></code>
 
 </dt>
 
@@ -3817,7 +3799,7 @@ Returns a command that adds the given mark with the given attributes.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definebasecommands-2" href="#definebasecommands-2">defineBaseCommands</a>(): `BaseCommandsExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definebasecommands" href="#definebasecommands">defineBaseCommands</a>(): `BaseCommandsExtension`</code>
 
 </dt>
 
@@ -3837,7 +3819,7 @@ Add some base commands
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definebasekeymap-2" href="#definebasekeymap-2">defineBaseKeymap</a>(`options?`: `object`): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definebasekeymap" href="#definebasekeymap">defineBaseKeymap</a>(`options?`: `object`): `PlainExtension`</code>
 
 </dt>
 
@@ -3857,7 +3839,7 @@ Defines some basic key bindings.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineclickhandler-2" href="#defineclickhandler-2">defineClickHandler</a>(`handler`: [`ClickHandler`](#clickhandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineclickhandler" href="#defineclickhandler">defineClickHandler</a>(`handler`: [`ClickHandler`](#clickhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -3877,7 +3859,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClick](https://pro
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineclickonhandler-2" href="#defineclickonhandler-2">defineClickOnHandler</a>(`handler`: [`ClickOnHandler`](#clickonhandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineclickonhandler" href="#defineclickonhandler">defineClickOnHandler</a>(`handler`: [`ClickOnHandler`](#clickonhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -3897,7 +3879,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn](https://p
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definecommands-2" href="#definecommands-2">defineCommands</a>\<T\>(`commands`: `T`): [`Extension`](#extension-1)\<\{ `Commands`: \{ \[K in string \| number \| symbol\]: Parameters\<T\[K\]\> \}; \}\></code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definecommands" href="#definecommands">defineCommands</a>\<T\>(`commands`: `T`): [`Extension`](#extension-1)\<\{ `Commands`: \{ \[K in string \| number \| symbol\]: Parameters\<T\[K\]\> \}; \}\></code>
 
 </dt>
 
@@ -3911,7 +3893,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleClickOn](https://p
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedefaultstate-2" href="#definedefaultstate-2">defineDefaultState</a>(`options`: [`DefaultStateOptions`](#defaultstateoptions)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedefaultstate" href="#definedefaultstate">defineDefaultState</a>(`options`: [`DefaultStateOptions`](#defaultstateoptions)): `PlainExtension`</code>
 
 </dt>
 
@@ -3931,7 +3913,7 @@ Define a default state for the editor.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedoc-2" href="#definedoc-2">defineDoc</a>(): `DocExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedoc" href="#definedoc">defineDoc</a>(): `DocExtension`</code>
 
 </dt>
 
@@ -3957,7 +3939,7 @@ import { defineDoc } from 'prosekit/extensions/doc'
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedocchangehandler-2" href="#definedocchangehandler-2">defineDocChangeHandler</a>(`handler`: [`DocChangeHandler`](#docchangehandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedocchangehandler" href="#definedocchangehandler">defineDocChangeHandler</a>(`handler`: [`DocChangeHandler`](#docchangehandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -3977,7 +3959,7 @@ Registers a event handler that is called when the editor document is changed.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedomeventhandler-2" href="#definedomeventhandler-2">defineDOMEventHandler</a>\<Event\>(`event`: `Event`, `handler`: [`DOMEventHandler`](#domeventhandler)\<`Event`\>): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedomeventhandler" href="#definedomeventhandler">defineDOMEventHandler</a>\<Event\>(`event`: `Event`, `handler`: [`DOMEventHandler`](#domeventhandler)\<`Event`\>): `PlainExtension`</code>
 
 </dt>
 
@@ -3997,7 +3979,7 @@ Register a new event handler for the given event type.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedoubleclickhandler-2" href="#definedoubleclickhandler-2">defineDoubleClickHandler</a>(`handler`: [`DoubleClickHandler`](#doubleclickhandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedoubleclickhandler" href="#definedoubleclickhandler">defineDoubleClickHandler</a>(`handler`: [`DoubleClickHandler`](#doubleclickhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4017,7 +3999,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClick](https
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedoubleclickonhandler-2" href="#definedoubleclickonhandler-2">defineDoubleClickOnHandler</a>(`handler`: [`DoubleClickOnHandler`](#doubleclickonhandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedoubleclickonhandler" href="#definedoubleclickonhandler">defineDoubleClickOnHandler</a>(`handler`: [`DoubleClickOnHandler`](#doubleclickonhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4037,7 +4019,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleDoubleClickOn](htt
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedrophandler-2" href="#definedrophandler-2">defineDropHandler</a>(`handler`: [`DropHandler`](#drophandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definedrophandler" href="#definedrophandler">defineDropHandler</a>(`handler`: [`DropHandler`](#drophandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4057,7 +4039,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleDrop](https://pros
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definefocuschangehandler-2" href="#definefocuschangehandler-2">defineFocusChangeHandler</a>(`handler`: [`FocusChangeHandler`](#focuschangehandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definefocuschangehandler" href="#definefocuschangehandler">defineFocusChangeHandler</a>(`handler`: [`FocusChangeHandler`](#focuschangehandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4077,7 +4059,7 @@ Registers a event handler that is called when the editor gains or loses focus.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definehistory-2" href="#definehistory-2">defineHistory</a>(`options`: [`HistoryOptions`](#historyoptions)): `HistoryExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definehistory" href="#definehistory">defineHistory</a>(`options`: [`HistoryOptions`](#historyoptions)): `HistoryExtension`</code>
 
 </dt>
 
@@ -4097,7 +4079,7 @@ Add undo/redo history to the editor.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definekeydownhandler-2" href="#definekeydownhandler-2">defineKeyDownHandler</a>(`handler`: [`KeyDownHandler`](#keydownhandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definekeydownhandler" href="#definekeydownhandler">defineKeyDownHandler</a>(`handler`: [`KeyDownHandler`](#keydownhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4117,7 +4099,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyDown](https://p
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definekeymap-2" href="#definekeymap-2">defineKeymap</a>(`keymap`: [`Keymap`](#keymap)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definekeymap" href="#definekeymap">defineKeymap</a>(`keymap`: [`Keymap`](#keymap)): `PlainExtension`</code>
 
 </dt>
 
@@ -4135,7 +4117,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyDown](https://p
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definekeypresshandler-2" href="#definekeypresshandler-2">defineKeyPressHandler</a>(`handler`: [`KeyPressHandler`](#keypresshandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definekeypresshandler" href="#definekeypresshandler">defineKeyPressHandler</a>(`handler`: [`KeyPressHandler`](#keypresshandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4155,7 +4137,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definemarkattr-2" href="#definemarkattr-2">defineMarkAttr</a>\<MarkType, AttrName, AttrType\>(`options`: [`MarkAttrOptions`](#markattroptions)\<`MarkType`, `AttrName`, `AttrType`\>): [`Extension`](#extension-1)\<\{ `Marks`: `{ [K in string]: AttrType }`; \}\></code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definemarkattr" href="#definemarkattr">defineMarkAttr</a>\<MarkType, AttrName, AttrType\>(`options`: [`MarkAttrOptions`](#markattroptions)\<`MarkType`, `AttrName`, `AttrType`\>): [`Extension`](#extension-1)\<\{ `Marks`: `{ [K in string]: AttrType }`; \}\></code>
 
 </dt>
 
@@ -4173,7 +4155,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definemarkspec-2" href="#definemarkspec-2">defineMarkSpec</a>\<Mark, Attrs\>(`options`: [`MarkSpecOptions`](#markspecoptions)\<`Mark`, `Attrs`\>): [`Extension`](#extension-1)\<\{ `Marks`: `{ [K in string]: Attrs }`; \}\></code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definemarkspec" href="#definemarkspec">defineMarkSpec</a>\<Mark, Attrs\>(`options`: [`MarkSpecOptions`](#markspecoptions)\<`Mark`, `Attrs`\>): [`Extension`](#extension-1)\<\{ `Marks`: `{ [K in string]: Attrs }`; \}\></code>
 
 </dt>
 
@@ -4191,7 +4173,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definemarkview-2" href="#definemarkview-2">defineMarkView</a>(`options`: [`MarkViewOptions`](#markviewoptions)): [`Extension`](#extension-1)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definemarkview" href="#definemarkview">defineMarkView</a>(`options`: [`MarkViewOptions`](#markviewoptions)): [`Extension`](#extension-1)</code>
 
 </dt>
 
@@ -4205,7 +4187,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleKeyPress](https://
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definemounthandler-2" href="#definemounthandler-2">defineMountHandler</a>(`handler`: [`MountHandler`](#mounthandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definemounthandler" href="#definemounthandler">defineMountHandler</a>(`handler`: [`MountHandler`](#mounthandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4225,7 +4207,7 @@ Registers a event handler that is called when the editor view is mounted.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definenodeattr-2" href="#definenodeattr-2">defineNodeAttr</a>\<NodeType, AttrName, AttrType\>(`options`: [`NodeAttrOptions`](#nodeattroptions)\<`NodeType`, `AttrName`, `AttrType`\>): [`Extension`](#extension-1)\<\{ `Nodes`: `{ [K in string]: { [K in string]: AttrType } }`; \}\></code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definenodeattr" href="#definenodeattr">defineNodeAttr</a>\<NodeType, AttrName, AttrType\>(`options`: [`NodeAttrOptions`](#nodeattroptions)\<`NodeType`, `AttrName`, `AttrType`\>): [`Extension`](#extension-1)\<\{ `Nodes`: `{ [K in string]: { [K in string]: AttrType } }`; \}\></code>
 
 </dt>
 
@@ -4245,7 +4227,7 @@ Defines an attribute for a node type.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definenodespec-2" href="#definenodespec-2">defineNodeSpec</a>\<Node, Attrs\>(`options`: [`NodeSpecOptions`](#nodespecoptions)\<`Node`, `Attrs`\>): [`Extension`](#extension-1)\<\{ `Nodes`: `{ [K in string]: Attrs }`; \}\></code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definenodespec" href="#definenodespec">defineNodeSpec</a>\<Node, Attrs\>(`options`: [`NodeSpecOptions`](#nodespecoptions)\<`Node`, `Attrs`\>): [`Extension`](#extension-1)\<\{ `Nodes`: `{ [K in string]: Attrs }`; \}\></code>
 
 </dt>
 
@@ -4265,7 +4247,7 @@ Defines a node type.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definenodeview-2" href="#definenodeview-2">defineNodeView</a>(`options`: [`NodeViewOptions`](#nodeviewoptions)): [`Extension`](#extension-1)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definenodeview" href="#definenodeview">defineNodeView</a>(`options`: [`NodeViewOptions`](#nodeviewoptions)): [`Extension`](#extension-1)</code>
 
 </dt>
 
@@ -4279,7 +4261,7 @@ Defines a node type.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineparagraph-2" href="#defineparagraph-2">defineParagraph</a>(): `ParagraphSpecExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineparagraph" href="#defineparagraph">defineParagraph</a>(): `ParagraphSpecExtension`</code>
 
 </dt>
 
@@ -4307,7 +4289,7 @@ import { defineParagraph } from 'prosekit/extensions/paragraph'
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definepastehandler-2" href="#definepastehandler-2">definePasteHandler</a>(`handler`: [`PasteHandler`](#pastehandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definepastehandler" href="#definepastehandler">definePasteHandler</a>(`handler`: [`PasteHandler`](#pastehandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4327,7 +4309,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handlePaste](https://pro
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineplugin-2" href="#defineplugin-2">definePlugin</a>(`plugin`: [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\> \| [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\>[] \| (`context`: `object`) => [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\> \| [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\>[]): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineplugin" href="#defineplugin">definePlugin</a>(`plugin`: [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\> \| [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\>[] \| (`context`: `object`) => [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\> \| [`ProseMirrorPlugin`](pm/state.md#prosemirrorplugin)\<`any`\>[]): `PlainExtension`</code>
 
 </dt>
 
@@ -4347,7 +4329,7 @@ Adds a ProseMirror plugin to the editor.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definescrolltoselectionhandler-2" href="#definescrolltoselectionhandler-2">defineScrollToSelectionHandler</a>(`handler`: [`ScrollToSelectionHandler`](#scrolltoselectionhandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definescrolltoselectionhandler" href="#definescrolltoselectionhandler">defineScrollToSelectionHandler</a>(`handler`: [`ScrollToSelectionHandler`](#scrolltoselectionhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4367,7 +4349,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleScrollToSelection]
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definetext-2" href="#definetext-2">defineText</a>(): `TextExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definetext" href="#definetext">defineText</a>(): `TextExtension`</code>
 
 </dt>
 
@@ -4393,7 +4375,7 @@ import { defineText } from 'prosekit/extensions/text'
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definetextinputhandler-2" href="#definetextinputhandler-2">defineTextInputHandler</a>(`handler`: [`TextInputHandler`](#textinputhandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definetextinputhandler" href="#definetextinputhandler">defineTextInputHandler</a>(`handler`: [`TextInputHandler`](#textinputhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4413,7 +4395,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleTextInput](https:/
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definetripleclickhandler-2" href="#definetripleclickhandler-2">defineTripleClickHandler</a>(`handler`: [`TripleClickHandler`](#tripleclickhandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definetripleclickhandler" href="#definetripleclickhandler">defineTripleClickHandler</a>(`handler`: [`TripleClickHandler`](#tripleclickhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4433,7 +4415,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClick](https
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="definetripleclickonhandler-2" href="#definetripleclickonhandler-2">defineTripleClickOnHandler</a>(`handler`: [`TripleClickOnHandler`](#tripleclickonhandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="definetripleclickonhandler" href="#definetripleclickonhandler">defineTripleClickOnHandler</a>(`handler`: [`TripleClickOnHandler`](#tripleclickonhandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4453,7 +4435,7 @@ See [https://prosemirror.net/docs/ref/#view.EditorProps.handleTripleClickOn](htt
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineunmounthandler-2" href="#defineunmounthandler-2">defineUnmountHandler</a>(`handler`: [`UnmountHandler`](#unmounthandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineunmounthandler" href="#defineunmounthandler">defineUnmountHandler</a>(`handler`: [`UnmountHandler`](#unmounthandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4473,7 +4455,7 @@ Registers a event handler that is called when the editor view is unmounted.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineupdatehandler-2" href="#defineupdatehandler-2">defineUpdateHandler</a>(`handler`: [`UpdateHandler`](#updatehandler)): `PlainExtension`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="defineupdatehandler" href="#defineupdatehandler">defineUpdateHandler</a>(`handler`: [`UpdateHandler`](#updatehandler)): `PlainExtension`</code>
 
 </dt>
 
@@ -4493,7 +4475,7 @@ Registers a event handler that is called when the editor state is updated.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="elementfromjson-2" href="#elementfromjson-2">elementFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions) & [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="elementfromjson" href="#elementfromjson">elementFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions) & [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
 
 </dt>
 
@@ -4520,7 +4502,7 @@ const element = elementFromJSON(json, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="elementfromnode-2" href="#elementfromnode-2">elementFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `options?`: [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="elementfromnode" href="#elementfromnode">elementFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `options?`: [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`HTMLElement`](https://developer.mozilla.org/docs/Web/API/HTMLElement)</code>
 
 </dt>
 
@@ -4547,7 +4529,7 @@ const element = elementFromNode(node)
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="expandmark-2" href="#expandmark-2">expandMark</a>(`options`: [`ExpandMarkOptions`](#expandmarkoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="expandmark" href="#expandmark">expandMark</a>(`options`: [`ExpandMarkOptions`](#expandmarkoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -4567,7 +4549,7 @@ Expands the selection to include the entire mark at the current position.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="findparentnode-2" href="#findparentnode-2">findParentNode</a>(`predicate`: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `boolean`, `$pos`: [`ResolvedPos`](pm/model.md#resolvedpos)): `undefined` \| [`FindParentNodeResult`](#findparentnoderesult)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="findparentnode" href="#findparentnode">findParentNode</a>(`predicate`: (`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)) => `boolean`, `$pos`: [`ResolvedPos`](pm/model.md#resolvedpos)): `undefined` \| [`FindParentNodeResult`](#findparentnoderesult)</code>
 
 </dt>
 
@@ -4587,7 +4569,7 @@ Find the closest parent node that satisfies the predicate.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="findparentnodeoftype-2" href="#findparentnodeoftype-2">findParentNodeOfType</a>(`type`: `string` \| [`NodeType`](pm/model.md#nodetype), `$pos`: [`ResolvedPos`](pm/model.md#resolvedpos)): `undefined` \| [`FindParentNodeResult`](#findparentnoderesult)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="findparentnodeoftype" href="#findparentnodeoftype">findParentNodeOfType</a>(`type`: `string` \| [`NodeType`](pm/model.md#nodetype), `$pos`: [`ResolvedPos`](pm/model.md#resolvedpos)): `undefined` \| [`FindParentNodeResult`](#findparentnoderesult)</code>
 
 </dt>
 
@@ -4607,7 +4589,7 @@ Finds the closest parent node that matches the given node type.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="htmlfromjson-2" href="#htmlfromjson-2">htmlFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions) & [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): `string`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="htmlfromjson" href="#htmlfromjson">htmlFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions) & [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): `string`</code>
 
 </dt>
 
@@ -4634,7 +4616,7 @@ const html = htmlFromJSON(json, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="htmlfromnode-2" href="#htmlfromnode-2">htmlFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `options?`: [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): `string`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="htmlfromnode" href="#htmlfromnode">htmlFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode), `options?`: [`DOMSerializerOptions`](#domserializeroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): `string`</code>
 
 </dt>
 
@@ -4661,7 +4643,7 @@ const html = htmlFromNode(node)
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="insertdefaultblock-2" href="#insertdefaultblock-2">insertDefaultBlock</a>(`options?`: [`InsertDefaultBlockOptions`](#insertdefaultblockoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="insertdefaultblock" href="#insertdefaultblock">insertDefaultBlock</a>(`options?`: [`InsertDefaultBlockOptions`](#insertdefaultblockoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -4682,7 +4664,7 @@ the given position.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="insertnode-2" href="#insertnode-2">insertNode</a>(`options`: [`InsertNodeOptions`](#insertnodeoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="insertnode" href="#insertnode">insertNode</a>(`options`: [`InsertNodeOptions`](#insertnodeoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -4703,7 +4685,7 @@ the given position.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="isallselection-2" href="#isallselection-2">isAllSelection</a>(`value`: [`Selection`](pm/state.md#selection-1)): `value is AllSelection`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="isallselection" href="#isallselection">isAllSelection</a>(`value`: [`Selection`](pm/state.md#selection-1)): `value is AllSelection`</code>
 
 </dt>
 
@@ -4723,7 +4705,7 @@ Checks if the given object is a [AllSelection](pm/state.md#allselection) instanc
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="isfragment-2" href="#isfragment-2">isFragment</a>(`value`: `unknown`): `value is ProseMirrorFragment`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="isfragment" href="#isfragment">isFragment</a>(`value`: `unknown`): `value is ProseMirrorFragment`</code>
 
 </dt>
 
@@ -4743,7 +4725,7 @@ Checks if the given object is a [Fragment](pm/model.md#prosemirrorfragment) inst
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="ismark-2" href="#ismark-2">isMark</a>(`value`: `unknown`): `value is Mark`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="ismark" href="#ismark">isMark</a>(`value`: `unknown`): `value is Mark`</code>
 
 </dt>
 
@@ -4763,7 +4745,7 @@ Checks if the given object is a [Mark](pm/model.md#mark) instance.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="isnodeselection-2" href="#isnodeselection-2">isNodeSelection</a>(`value`: [`Selection`](pm/state.md#selection-1)): `value is NodeSelection`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="isnodeselection" href="#isnodeselection">isNodeSelection</a>(`value`: [`Selection`](pm/state.md#selection-1)): `value is NodeSelection`</code>
 
 </dt>
 
@@ -4783,7 +4765,7 @@ Checks if the given object is a [NodeSelection](pm/state.md#nodeselection) insta
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="isprosemirrornode-2" href="#isprosemirrornode-2">isProseMirrorNode</a>(`value`: `unknown`): `value is ProseMirrorNode`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="isprosemirrornode" href="#isprosemirrornode">isProseMirrorNode</a>(`value`: `unknown`): `value is ProseMirrorNode`</code>
 
 </dt>
 
@@ -4803,7 +4785,7 @@ Checks if the given object is a [ProseMirrorNode](pm/model.md#prosemirrornode) i
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="isselection-2" href="#isselection-2">isSelection</a>(`value`: `unknown`): `value is Selection`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="isselection" href="#isselection">isSelection</a>(`value`: `unknown`): `value is Selection`</code>
 
 </dt>
 
@@ -4823,7 +4805,7 @@ Checks if the given object is a [Selection](pm/state.md#selection-1) instance.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="isslice-2" href="#isslice-2">isSlice</a>(`value`: `unknown`): `value is Slice`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="isslice" href="#isslice">isSlice</a>(`value`: `unknown`): `value is Slice`</code>
 
 </dt>
 
@@ -4843,7 +4825,7 @@ Checks if the given object is a [Slice](pm/model.md#slice-2) instance.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="istextselection-2" href="#istextselection-2">isTextSelection</a>(`value`: [`Selection`](pm/state.md#selection-1)): `value is TextSelection`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="istextselection" href="#istextselection">isTextSelection</a>(`value`: [`Selection`](pm/state.md#selection-1)): `value is TextSelection`</code>
 
 </dt>
 
@@ -4863,7 +4845,7 @@ Checks if the given object is a [TextSelection](pm/state.md#textselection) insta
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="jsonfromhtml-2" href="#jsonfromhtml-2">jsonFromHTML</a>(`html`: `string`, `options`: [`DOMDocumentOptions`](#domdocumentoptions) & [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions)): [`NodeJSON`](#nodejson)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="jsonfromhtml" href="#jsonfromhtml">jsonFromHTML</a>(`html`: `string`, `options`: [`DOMDocumentOptions`](#domdocumentoptions) & [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions)): [`NodeJSON`](#nodejson)</code>
 
 </dt>
 
@@ -4890,7 +4872,7 @@ const json = jsonFromHTML(html, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="jsonfromnode-2" href="#jsonfromnode-2">jsonFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)): [`NodeJSON`](#nodejson)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="jsonfromnode" href="#jsonfromnode">jsonFromNode</a>(`node`: [`ProseMirrorNode`](pm/model.md#prosemirrornode)): [`NodeJSON`](#nodejson)</code>
 
 </dt>
 
@@ -4917,7 +4899,7 @@ const json = jsonFromNode(node)
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="jsonfromstate-2" href="#jsonfromstate-2">jsonFromState</a>(`state`: [`EditorState`](pm/state.md#editorstate)): [`StateJSON`](#statejson)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="jsonfromstate" href="#jsonfromstate">jsonFromState</a>(`state`: [`EditorState`](pm/state.md#editorstate)): [`StateJSON`](#statejson)</code>
 
 </dt>
 
@@ -4944,7 +4926,7 @@ const json = jsonFromState(state)
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="nodefromelement-2" href="#nodefromelement-2">nodeFromElement</a>(`element`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `options`: [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="nodefromelement" href="#nodefromelement">nodeFromElement</a>(`element`: [`Node`](https://developer.mozilla.org/docs/Web/API/Node), `options`: [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -4970,7 +4952,7 @@ const node = nodeFromElement(element, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="nodefromhtml-2" href="#nodefromhtml-2">nodeFromHTML</a>(`html`: `string`, `options`: [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="nodefromhtml" href="#nodefromhtml">nodeFromHTML</a>(`html`: `string`, `options`: [`DOMParserOptions`](#domparseroptions) & [`JSONParserOptions`](#jsonparseroptions) & [`DOMDocumentOptions`](#domdocumentoptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -4996,7 +4978,7 @@ const node = nodeFromHTML(html, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="nodefromjson-2" href="#nodefromjson-2">nodeFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="nodefromjson" href="#nodefromjson">nodeFromJSON</a>(`json`: [`NodeJSON`](#nodejson), `options`: [`JSONParserOptions`](#jsonparseroptions)): [`ProseMirrorNode`](pm/model.md#prosemirrornode)</code>
 
 </dt>
 
@@ -5023,7 +5005,7 @@ const node = nodeFromJSON(json, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="removemark-2" href="#removemark-2">removeMark</a>(`options`: [`RemoveMarkOptions`](#removemarkoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="removemark" href="#removemark">removeMark</a>(`options`: [`RemoveMarkOptions`](#removemarkoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -5043,7 +5025,7 @@ Returns a command that removes the given mark.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="removenode-2" href="#removenode-2">removeNode</a>(`options`: [`RemoveNodeOptions`](#removenodeoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="removenode" href="#removenode">removeNode</a>(`options`: [`RemoveNodeOptions`](#removenodeoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -5063,7 +5045,7 @@ Returns a command to remove the nearest ancestor node of a specific type from th
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="setblocktype-2" href="#setblocktype-2">setBlockType</a>(`options`: [`SetBlockTypeOptions`](#setblocktypeoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="setblocktype" href="#setblocktype">setBlockType</a>(`options`: [`SetBlockTypeOptions`](#setblocktypeoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -5084,7 +5066,7 @@ type with the given attributes.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="setnodeattrs-2" href="#setnodeattrs-2">setNodeAttrs</a>(`options`: [`SetNodeAttrsOptions`](#setnodeattrsoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="setnodeattrs" href="#setnodeattrs">setNodeAttrs</a>(`options`: [`SetNodeAttrsOptions`](#setnodeattrsoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -5104,7 +5086,7 @@ Returns a command that set the attributes of the current node.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="setselectionaround-2" href="#setselectionaround-2">setSelectionAround</a>(`tr`: [`Transaction`](pm/state.md#transaction), `pos`: `number`): `void`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="setselectionaround" href="#setselectionaround">setSelectionAround</a>(`tr`: [`Transaction`](pm/state.md#transaction), `pos`: `number`): `void`</code>
 
 </dt>
 
@@ -5118,7 +5100,7 @@ Returns a command that set the attributes of the current node.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="statefromjson-2" href="#statefromjson-2">stateFromJSON</a>(`json`: [`StateJSON`](#statejson), `options`: [`JSONParserOptions`](#jsonparseroptions)): [`EditorState`](pm/state.md#editorstate)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="statefromjson" href="#statefromjson">stateFromJSON</a>(`json`: [`StateJSON`](#statejson), `options`: [`JSONParserOptions`](#jsonparseroptions)): [`EditorState`](pm/state.md#editorstate)</code>
 
 </dt>
 
@@ -5145,7 +5127,7 @@ const state = stateFromJSON(json, { schema: editor.schema })
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="togglemark-2" href="#togglemark-2">toggleMark</a>(`options`: [`ToggleMarkOptions`](#togglemarkoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="togglemark" href="#togglemark">toggleMark</a>(`options`: [`ToggleMarkOptions`](#togglemarkoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -5165,7 +5147,7 @@ Returns a command that toggles the given mark with the given attributes.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="togglenode-2" href="#togglenode-2">toggleNode</a>(`options`: [`ToggleNodeOptions`](#togglenodeoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="togglenode" href="#togglenode">toggleNode</a>(`options`: [`ToggleNodeOptions`](#togglenodeoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -5186,7 +5168,7 @@ with the given attributes.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="togglewrap-2" href="#togglewrap-2">toggleWrap</a>(`options`: [`ToggleWrapOptions`](#togglewrapoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="togglewrap" href="#togglewrap">toggleWrap</a>(`options`: [`ToggleWrapOptions`](#togglewrapoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -5209,7 +5191,7 @@ lifting it up into its parent.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="union-3" href="#union-3">union</a>\<E\>(...`exts`: `E`): `Union`\<`E`\></code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="union" href="#union">union</a>\<E\>(...`exts`: `E`): `Union`\<`E`\></code>
 
 </dt>
 
@@ -5252,7 +5234,7 @@ function defineFancyNodes() {
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="union-4" href="#union-4">union</a>\<E\>(`exts`: `E`): `Union`\<`E`\></code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="union" href="#union">union</a>\<E\>(`exts`: `E`): `Union`\<`E`\></code>
 
 </dt>
 
@@ -5297,7 +5279,7 @@ function defineFancyNodes() {
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="unsetblocktype-2" href="#unsetblocktype-2">unsetBlockType</a>(`options?`: [`UnsetBlockTypeOptions`](#unsetblocktypeoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="unsetblocktype" href="#unsetblocktype">unsetBlockType</a>(`options?`: [`UnsetBlockTypeOptions`](#unsetblocktypeoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -5318,7 +5300,7 @@ to the default type (usually `paragraph`).
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="unsetmark-2" href="#unsetmark-2">unsetMark</a>(`options?`: [`UnsetMarkOptions`](#unsetmarkoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="unsetmark" href="#unsetmark">unsetMark</a>(`options?`: [`UnsetMarkOptions`](#unsetmarkoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 
@@ -5338,7 +5320,7 @@ Returns a command that removes all marks.
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="withpriority-2" href="#withpriority-2">withPriority</a>\<T\>(`extension`: `T`, `priority`: [`Priority`](#priority)): `T`</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="withpriority" href="#withpriority">withPriority</a>\<T\>(`extension`: `T`, `priority`: [`Priority`](#priority)): `T`</code>
 
 </dt>
 
@@ -5366,7 +5348,7 @@ const extension = withPriority(defineMyExtension(), Priority.high)
 
 <dt>
 
-<code data-typedoc-declaration><i>function</i> <i></i> <a id="wrap-2" href="#wrap-2">wrap</a>(`options`: [`WrapOptions`](#wrapoptions)): [`Command`](pm/state.md#command)</code>
+<code data-typedoc-declaration><i>function</i> <i></i> <a id="wrap" href="#wrap">wrap</a>(`options`: [`WrapOptions`](#wrapoptions)): [`Command`](pm/state.md#command)</code>
 
 </dt>
 

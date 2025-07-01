@@ -1,4 +1,7 @@
-import type { SignatureReflection } from 'typedoc'
+import type {
+  Reflection,
+  SignatureReflection,
+} from 'typedoc'
 import { ReflectionKind } from 'typedoc'
 import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
@@ -36,7 +39,19 @@ export function signatureTitle(
       md.push(' ')
     }
 
-    const anchor = this.router.hasUrl(model) && this.router.getAnchor(model)
+    let anchorModel: Reflection | undefined = model.parent
+
+    // Normally, `model` is passed to `this.partials.signatureTitle()`, but
+    // `model.setSignature` and `model.getSignature` are passed in. Therefore we
+    // need to get the parent of `model.getSignature` or `model.setSignature`
+    // for the anchor.
+    // https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca307ad25dfc35b2c6edd3fe507154ee0c6cc411/packages/typedoc-plugin-markdown/src/theme/context/partials/member.accessor.ts#L17
+    // https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca307ad25dfc35b2c6edd3fe507154ee0c6cc411/packages/typedoc-plugin-markdown/src/theme/context/partials/member.accessor.ts#L46
+    if ([ReflectionKind.GetSignature, ReflectionKind.SetSignature].includes(anchorModel.kind)) {
+      anchorModel = anchorModel.parent
+    }
+    const anchor = anchorModel && this.router.hasUrl(anchorModel) && this.router.getAnchor(anchorModel)
+
     if (anchor) {
       md.push(`<a id="${anchor}" href="#${anchor}">${model.name}</a>`)
     } else {

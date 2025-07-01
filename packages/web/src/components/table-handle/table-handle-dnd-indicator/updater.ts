@@ -7,9 +7,7 @@ import { getDndRelatedDOMs } from "../dnd";
 
 import { getDragOverColumn, getDragOverRow } from "./calc-drag-over";
 
-const HANDLE_WIDTH = 2
-
-export function useUpdateIndicatorPosition(host: ConnectableElement, editor: ReadonlySignal<Editor | null>): void {
+export function useUpdateIndicatorPosition(host: ConnectableElement, editor: ReadonlySignal<Editor | null>, handleWidth: number): void {
   const dndContext = tableHandleDndContext.consume(host)
   const rootContext = tableHandleRootContext.consume(host)
 
@@ -64,7 +62,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
         computePosition(col, host, {
           placement: direction === 'left' ? 'left' : 'right',
           middleware: [
-            offset(direction === 'left' ? -1 * HANDLE_WIDTH : 0),
+            offset(direction === 'left' ? -1 * handleWidth : 0),
           ],
         })
           .then(({ x }) => {
@@ -90,7 +88,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
         computePosition(row, host, {
           placement: direction === 'up' ? 'top' : 'bottom',
           middleware: [
-            offset(direction === 'up' ? -1 * HANDLE_WIDTH : 0),
+            offset(direction === 'up' ? -1 * handleWidth : 0),
           ],
         })
           .then(({ y }) => {

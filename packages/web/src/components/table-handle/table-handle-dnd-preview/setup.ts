@@ -13,7 +13,10 @@ import {
   tableHandleDndContext,
   tableHandleRootContext,
 } from '../context'
-import { getTableDOMByPos, getTargetFirstCellDOM } from '../utils'
+import {
+  getTableDOMByPos,
+  getTargetFirstCellDOM,
+} from '../utils'
 
 import type { TableHandleDndPreviewProps } from './types'
 

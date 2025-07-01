@@ -13,7 +13,10 @@ import {
   tableHandleDndContext,
   tableHandleRootContext,
 } from '../context'
-import { getTableDOMByPos, getTargetFirstCellDOM } from '../utils'
+import {
+  getTableDOMByPos,
+  getTargetFirstCellDOM,
+} from '../utils'
 
 import type { TableHandleDndIndicatorProps } from './types'
 
@@ -226,7 +229,7 @@ function getDragOverColumn(
   table: HTMLTableElement,
   cell: HTMLElement,
   pointerX: number,
-  direction: 'left' | 'right'
+  direction: 'left' | 'right',
 ): [element: Element, index: number] | undefined {
   const offsetParent = table.offsetParent
   if (!offsetParent || !(offsetParent instanceof HTMLElement)) return
@@ -279,39 +282,39 @@ function getDragOverRow(
   table: HTMLTableElement,
   cell: HTMLElement,
   pointerY: number,
-  direction: 'up' | 'down'
+  direction: 'up' | 'down',
 ): [element: Element, index: number] | undefined {
-    const offsetParent = table.offsetParent
+  const offsetParent = table.offsetParent
 
-    if (!offsetParent || !(offsetParent instanceof HTMLElement)) return
+  if (!offsetParent || !(offsetParent instanceof HTMLElement)) return
 
-    const wrapperOffsetTop = offsetParent.offsetTop
+  const wrapperOffsetTop = offsetParent.offsetTop
 
-      const { height } = cell.getBoundingClientRect()
-      const { top } = table.getBoundingClientRect()
-      const topGap = wrapperOffsetTop - top
-      const previewTop = pointerY + topGap - height / 2
-      const previewBottom = pointerY + topGap + height / 2
+  const { height } = cell.getBoundingClientRect()
+  const { top } = table.getBoundingClientRect()
+  const topGap = wrapperOffsetTop - top
+  const previewTop = pointerY + topGap - height / 2
+  const previewBottom = pointerY + topGap + height / 2
 
-      const rows = Array.from(table.querySelectorAll('tr'))
-      const row = rows.find((row, index) => {
-        const boundary = row.getBoundingClientRect()
-        let boundaryTop = boundary.top + topGap
-        let boundaryBottom = boundary.bottom + topGap
+  const rows = Array.from(table.querySelectorAll('tr'))
+  const row = rows.find((row, index) => {
+    const boundary = row.getBoundingClientRect()
+    let boundaryTop = boundary.top + topGap
+    let boundaryBottom = boundary.bottom + topGap
 
-        if (direction === 'down') {
-          boundaryTop = boundaryTop + boundary.height / 2
-          boundaryBottom = boundaryBottom + boundary.height / 2
-          if (boundaryTop <= previewBottom && boundaryBottom >= previewBottom) return true
-          if (index === rows.length - 1 && previewBottom > boundaryBottom) return true
-        } else {
-          boundaryTop = boundaryTop - boundary.height / 2
-          boundaryBottom = boundaryBottom - boundary.height / 2
-          if (boundaryTop <= previewTop && boundaryBottom >= previewTop) return true
-          if (index === 0 && previewTop < boundaryTop) return true
-        }
-        return false
-      })
+    if (direction === 'down') {
+      boundaryTop = boundaryTop + boundary.height / 2
+      boundaryBottom = boundaryBottom + boundary.height / 2
+      if (boundaryTop <= previewBottom && boundaryBottom >= previewBottom) return true
+      if (index === rows.length - 1 && previewBottom > boundaryBottom) return true
+    } else {
+      boundaryTop = boundaryTop - boundary.height / 2
+      boundaryBottom = boundaryBottom - boundary.height / 2
+      if (boundaryTop <= previewTop && boundaryBottom >= previewTop) return true
+      if (index === 0 && previewTop < boundaryTop) return true
+    }
+    return false
+  })
 
   return row ? [row, rows.indexOf(row)] : undefined
 }

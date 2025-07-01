@@ -19,6 +19,9 @@ import type { TableHandleDndIndicatorProps } from './types'
 
 const HANDLE_WIDTH = 2
 
+/**
+ * @internal
+ */
 export function useTableHandleDndIndicator(host: ConnectableElement, { state }: { state: SignalState<TableHandleDndIndicatorProps> }): void {
   const { editor } = state
   const dndContext = tableHandleDndContext.consume(host)

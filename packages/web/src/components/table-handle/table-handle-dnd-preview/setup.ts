@@ -17,6 +17,9 @@ import { getTableDOMByPos, getTargetFirstCellDOM } from '../utils'
 
 import type { TableHandleDndPreviewProps } from './types'
 
+/**
+ * @internal
+ */
 export function useTableHandleDndPreview(host: ConnectableElement, { state }: { state: SignalState<TableHandleDndPreviewProps> }): void {
   const { editor } = state
   const dndContext = tableHandleDndContext.consume(host)

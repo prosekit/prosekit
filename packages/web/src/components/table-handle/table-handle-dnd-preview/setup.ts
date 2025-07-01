@@ -6,18 +6,19 @@ import {
 } from '@aria-ui/core'
 import {
   computePosition,
-  offset,
 } from '@floating-ui/dom'
 
 import {
   tableHandleDndContext,
   tableHandleRootContext,
 } from '../context'
+import { useInitDndPosition } from '../dnd'
 import {
   getTableDOMByPos,
   getTargetFirstCellDOM,
 } from '../utils'
 
+import { clearPreviewDOM, createPreviewDOM } from './render-preview'
 import type { TableHandleDndPreviewProps } from './types'
 
 /**
@@ -43,50 +44,23 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
     return context.dragging
   })
 
-  const directionSignal = createComputed(() => {
-    const context = dndContext.get()
-    return context.direction
-  })
-
-  const draggingIndexSignal = createComputed(() => {
-    const context = dndContext.get()
-    return context.draggingIndex
-  })
-
   useEffect(host, () => {
-    host.style.position = 'absolute'
-  })
-
-  useEffect(host, () => {
-    const editorInstance = editor.get()
-    if (!editorInstance) return
-
-    const dragging = draggingSingal.get()
-    host.dataset.dragging = dragging.toString()
-
     Object.assign(host.style, {
-      display: dragging ? 'block' : 'none',
+      position: 'absolute',
       // Make sure drop on preview will trigger drop event on the host
       pointerEvents: 'none',
+    })
+  })
+
+  useInitDndPosition(host, editor, ({ direction, dragging, table, cell, draggingIndex }) => {
+    Object.assign(host.style, {
+      display: dragging ? 'block' : 'none',
     })
 
     if (!dragging) {
       clearPreviewDOM(host)
       return
     }
-
-    const direction = directionSignal.get()
-    host.dataset.direction = direction
-
-    const draggingIndex = draggingIndexSignal.get()
-    const { view } = editorInstance
-
-    const cellPos = rootContext.peek()?.cellPos
-    if (cellPos == null) return
-    const table = getTableDOMByPos(view, cellPos)
-    if (!table) return
-    const cell = getTargetFirstCellDOM(table, draggingIndex, direction)
-    if (!cell) return
 
     createPreviewDOM(table, host, draggingIndex, direction)
 
@@ -98,32 +72,14 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
         width: `${cellRect.width}px`,
         height: `${tableRect.height}px`,
       })
-    } else {
+    }
+
+    if (direction === 'row') {
       Object.assign(host.style, {
         width: `${tableRect.width}px`,
         height: `${cellRect.height}px`,
       })
     }
-
-    computePosition(cell, host, {
-      placement: direction === 'row' ? 'right' : 'bottom',
-      middleware: [offset(({ rects }) => {
-        if (direction === 'col') {
-          return -rects.reference.height
-        }
-
-        return -rects.reference.width
-      })],
-    })
-      .then(({ x, y }) => {
-        Object.assign(host.style, {
-          left: `${x}px`,
-          top: `${y}px`,
-        })
-      })
-      .catch((error) => {
-        console.error(error)
-      })
   })
 
   useEffect(host, () => {
@@ -178,39 +134,4 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
       console.error(error)
     })
   })
-}
-
-function clearPreviewDOM(previewRoot: HTMLElement) {
-  while (previewRoot.firstChild) {
-    previewRoot.removeChild(previewRoot.firstChild)
-  }
-}
-
-function createPreviewDOM(
-  table: HTMLTableElement,
-  previewRoot: HTMLElement,
-  index: number,
-  direction: 'row' | 'col',
-) {
-  clearPreviewDOM(previewRoot)
-
-  const previewTable = document.createElement('table')
-  const previewTableBody = document.createElement('tbody')
-  previewTable.appendChild(previewTableBody)
-  previewRoot.appendChild(previewTable)
-
-  const rows = table.querySelectorAll('tr')
-
-  if (direction === 'row') {
-    const row = rows[index]
-    const rowDOM = row.cloneNode(true)
-    previewTableBody.appendChild(rowDOM)
-  } else {
-    rows.forEach((row) => {
-      const rowDOM = row.cloneNode(false)
-      const cellDOM = row.querySelectorAll('td')[index].cloneNode(true)
-      rowDOM.appendChild(cellDOM)
-      previewTableBody.appendChild(rowDOM)
-    })
-  }
 }

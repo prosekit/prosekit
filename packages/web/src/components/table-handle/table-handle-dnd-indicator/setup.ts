@@ -13,6 +13,7 @@ import {
   tableHandleDndContext,
   tableHandleRootContext,
 } from '../context'
+import { useInitDndPosition } from '../dnd'
 import {
   getTableDOMByPos,
   getTargetFirstCellDOM,
@@ -49,48 +50,22 @@ export function useTableHandleDndIndicator(host: ConnectableElement, { state }: 
     return dndContext.get().startY
   })
 
-  const directionSignal = createComputed(() => {
-    const context = dndContext.get()
-    return context.direction
-  })
-
   const draggingSignal = createComputed(() => {
     const context = dndContext.get()
     return context.dragging
   })
 
-  const draggingIndexSignal = createComputed(() => {
-    const context = dndContext.get()
-    return context.draggingIndex
-  })
-
   useEffect(host, () => {
-    const editorInstance = editor.get()
-    if (!editorInstance) return
-
-    const dragging = draggingSignal.get()
-    const direction = directionSignal.get()
-
-    host.dataset.direction = direction
-    host.dataset.dragging = dragging.toString()
-
     Object.assign(host.style, {
-      display: dragging ? 'block' : 'none',
       pointerEvents: 'none',
       position: 'absolute',
     })
+  });
 
-    if (!dragging) return
-
-    const draggingIndex = draggingIndexSignal.get()
-    const { view } = editorInstance
-
-    const cellPos = rootContext.peek()?.cellPos
-    if (cellPos == null) return
-    const table = getTableDOMByPos(view, cellPos)
-    if (!table) return
-    const cell = getTargetFirstCellDOM(table, draggingIndex, direction)
-    if (!cell) return
+  useInitDndPosition(host, editor, ({ direction, dragging, table }) => {
+    Object.assign(host.style, {
+      display: dragging ? 'block' : 'none',
+    })
 
     const tableRect = table.getBoundingClientRect()
 
@@ -99,33 +74,15 @@ export function useTableHandleDndIndicator(host: ConnectableElement, { state }: 
         width: `${HANDLE_WIDTH}px`,
         height: `${tableRect.height}px`,
       })
-    } else {
+    }
+
+    if (direction === 'row') {
       Object.assign(host.style, {
         width: `${tableRect.width}px`,
         height: `${HANDLE_WIDTH}px`,
       })
     }
-
-    computePosition(cell, host, {
-      placement: direction === 'row' ? 'right' : 'bottom',
-      middleware: [offset(({ rects }) => {
-        if (direction === 'col') {
-          return -rects.reference.height
-        }
-
-        return -rects.reference.width
-      })],
-    })
-      .then(({ x, y }) => {
-        Object.assign(host.style, {
-          left: `${x}px`,
-          top: `${y}px`,
-        })
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  })
+  });
 
   useEffect(host, () => {
     const editorInstance = editor.get()

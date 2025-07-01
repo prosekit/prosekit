@@ -114,7 +114,7 @@ export function getTableDOMByPos(view: EditorView, pos: number): HTMLTableElemen
   return table ?? undefined
 }
 
-export function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction: 'row' | 'col'): HTMLElement | undefined {
+export function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction: 'row' | 'col'): HTMLTableCellElement | undefined {
   const rows = table.querySelectorAll('tr')
   if (direction === 'row') {
     const row = rows[index]

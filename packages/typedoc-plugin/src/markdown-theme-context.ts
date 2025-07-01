@@ -1,6 +1,7 @@
 import { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
 import { getReflectionFlags } from './theme/context/helpers/get-reflection-flags'
+import { wrapComment } from './theme/context/partials/comments.comment'
 import { accessor } from './theme/context/partials/member.accessor'
 import { memberContainerPatch } from './theme/context/partials/member.container.patch'
 import { declaration } from './theme/context/partials/member.declaration'
@@ -43,6 +44,11 @@ export class MyMarkdownThemeContext extends MarkdownThemeContext {
     }
     this.partials.accessor = (...args) => {
       return accessor.call(this, ...args)
+    }
+
+    const comment = wrapComment(partials.comment)
+    this.partials.comment = (...args) => {
+      return comment.call(this, ...args)
     }
   }
 }

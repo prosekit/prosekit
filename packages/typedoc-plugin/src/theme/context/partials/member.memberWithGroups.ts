@@ -20,8 +20,6 @@ export function memberWithGroups(
 ): string {
   const md: string[] = []
 
-  md.push('<!-- DEBUG memberWithGroups start 1 -->')
-
   if (model.kind === ReflectionKind.TypeAlias) {
     md.push(this.partials.declarationTitle(model))
   }
@@ -139,8 +137,6 @@ export function memberWithGroups(
   }
 
   md.push(this.partials.body(model, { headingLevel: options.headingLevel }))
-
-  md.push('<!-- DEBUG memberWithGroups end 9 -->')
 
   return md.join('\n\n')
 }

@@ -23,6 +23,7 @@ import {
   getDragOverColumn,
   getDragOverRow,
 } from './calc-drag-over'
+import { useDrop } from './drop'
 import type { TableHandleDndIndicatorProps } from './types'
 
 const HANDLE_WIDTH = 2
@@ -158,30 +159,5 @@ export function useTableHandleDndIndicator(host: ConnectableElement, { state }: 
     }
   })
 
-  useEffect(host, () => {
-    if (!draggingSignal.get()) return
-    const onDrop = () => {
-      const editorInstance = editor.peek()
-      if (!editorInstance) return
-      const { droppingIndex, draggingIndex, direction } = dndContext.peek()
-      if (direction === 'row') {
-        editorInstance.commands.moveTableRow({
-          origin: draggingIndex,
-          target: droppingIndex,
-        })
-        return
-      }
-      if (direction === 'col') {
-        editorInstance.commands.moveTableColumn({
-          origin: draggingIndex,
-          target: droppingIndex,
-        })
-        return
-      }
-    }
-    document.addEventListener('drop', onDrop)
-    return () => {
-      document.removeEventListener('drop', onDrop)
-    }
-  })
+  useDrop(host, editor)
 }

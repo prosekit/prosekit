@@ -138,61 +138,15 @@ export function useTableHandleDndIndicator(host: ConnectableElement, { state }: 
     const cell = getTargetFirstCellDOM(table, draggingIndex, direction)
     if (!cell) return
 
-    const offsetParent = table.offsetParent
-
-    if (!offsetParent || !(offsetParent instanceof HTMLElement)) return
-
-    const wrapperOffsetTop = offsetParent.offsetTop
-    const wrapperOffsetLeft = offsetParent.offsetLeft
-
     if (direction === 'col') {
-      const firstRow = table.querySelector('tr')
-      if (!firstRow) return
-      const { width } = cell.getBoundingClientRect()
-      const { left } = table.getBoundingClientRect()
-      const leftGap = wrapperOffsetLeft - left
-      const previewLeft = x + leftGap - width / 2
-      const previewRight = x + leftGap + width / 2
-
       const direction = startXSignal.get() > x ? 'left' : 'right'
+      const dragOverColumn = getDragOverColumn(table, cell, x, direction)
 
-      const children = Array.from(firstRow.children)
-      const col = children.find((col, index) => {
-        const boundary = col.getBoundingClientRect()
-        let boundaryLeft = boundary.left + leftGap
-        let boundaryRight = boundary.right + leftGap
-
-        if (direction === 'right') {
-          boundaryLeft = boundaryLeft + boundary.width / 2
-          boundaryRight = boundaryRight + boundary.width / 2
-
-          if (boundaryLeft <= previewRight && boundaryRight >= previewRight) {
-            return true
-          }
-
-          if (index === firstRow.children.length - 1 && previewRight > boundaryRight) {
-            return true
-          }
-        } else {
-          boundaryLeft = boundaryLeft - boundary.width / 2
-          boundaryRight = boundaryRight - boundary.width / 2
-
-          if (boundaryLeft <= previewLeft && boundaryRight >= previewLeft) {
-            return true
-          }
-
-          if (index === 0 && previewLeft < boundaryLeft) {
-            return true
-          }
-        }
-
-        return false
-      })
-
-      if (col) {
+      if (dragOverColumn) {
+        const [col, index] = dragOverColumn
         dndContext.set({
           ...dndContext.peek(),
-          droppingIndex: Array.from(firstRow.children).indexOf(col),
+          droppingIndex: index,
         })
         computePosition(col, host, {
           placement: direction === 'left' ? 'left' : 'right',
@@ -211,38 +165,14 @@ export function useTableHandleDndIndicator(host: ConnectableElement, { state }: 
     }
 
     if (direction === 'row') {
-      const { height } = cell.getBoundingClientRect()
-      const { top } = table.getBoundingClientRect()
-      const topGap = wrapperOffsetTop - top
-      const previewTop = y + topGap - height / 2
-      const previewBottom = y + topGap + height / 2
-
       const direction = startYSignal.get() > y ? 'up' : 'down'
+      const dragOverRow = getDragOverRow(table, cell, y, direction)
 
-      const rows = Array.from(table.querySelectorAll('tr'))
-      const row = rows.find((row, index) => {
-        const boundary = row.getBoundingClientRect()
-        let boundaryTop = boundary.top + topGap
-        let boundaryBottom = boundary.bottom + topGap
-
-        if (direction === 'down') {
-          boundaryTop = boundaryTop + boundary.height / 2
-          boundaryBottom = boundaryBottom + boundary.height / 2
-          if (boundaryTop <= previewBottom && boundaryBottom >= previewBottom) return true
-          if (index === rows.length - 1 && previewBottom > boundaryBottom) return true
-        } else {
-          boundaryTop = boundaryTop - boundary.height / 2
-          boundaryBottom = boundaryBottom - boundary.height / 2
-          if (boundaryTop <= previewTop && boundaryBottom >= previewTop) return true
-          if (index === 0 && previewTop < boundaryTop) return true
-        }
-        return false
-      })
-
-      if (row) {
+      if (dragOverRow) {
+        const [row, index] = dragOverRow
         dndContext.set({
           ...dndContext.peek(),
-          droppingIndex: rows.indexOf(row),
+          droppingIndex: index,
         })
         computePosition(row, host, {
           placement: direction === 'up' ? 'top' : 'bottom',
@@ -287,4 +217,98 @@ export function useTableHandleDndIndicator(host: ConnectableElement, { state }: 
       document.removeEventListener('drop', onDrop)
     }
   })
+}
+
+function getDragOverColumn(
+  table: HTMLTableElement,
+  cell: HTMLElement,
+  pointerX: number,
+  direction: 'left' | 'right'
+): [element: Element, index: number] | undefined {
+  const offsetParent = table.offsetParent
+  if (!offsetParent || !(offsetParent instanceof HTMLElement)) return
+  const wrapperOffsetLeft = offsetParent.offsetLeft
+  const firstRow = table.querySelector('tr')
+  if (!firstRow) return
+  const children = Array.from(firstRow.children)
+  const { width } = cell.getBoundingClientRect()
+  const { left } = table.getBoundingClientRect()
+  const leftGap = wrapperOffsetLeft - left
+  const previewLeft = pointerX + leftGap - width / 2
+  const previewRight = pointerX + leftGap + width / 2
+
+  const col = children.find((col, index) => {
+    const boundary = col.getBoundingClientRect()
+    let boundaryLeft = boundary.left + leftGap
+    let boundaryRight = boundary.right + leftGap
+
+    if (direction === 'right') {
+      boundaryLeft = boundaryLeft + boundary.width / 2
+      boundaryRight = boundaryRight + boundary.width / 2
+
+      if (boundaryLeft <= previewRight && boundaryRight >= previewRight) {
+        return true
+      }
+
+      if (index === firstRow.children.length - 1 && previewRight > boundaryRight) {
+        return true
+      }
+    } else {
+      boundaryLeft = boundaryLeft - boundary.width / 2
+      boundaryRight = boundaryRight - boundary.width / 2
+
+      if (boundaryLeft <= previewLeft && boundaryRight >= previewLeft) {
+        return true
+      }
+
+      if (index === 0 && previewLeft < boundaryLeft) {
+        return true
+      }
+    }
+
+    return false
+  })
+
+  return col ? [col, children.indexOf(col)] : undefined
+}
+
+function getDragOverRow(
+  table: HTMLTableElement,
+  cell: HTMLElement,
+  pointerY: number,
+  direction: 'up' | 'down'
+): [element: Element, index: number] | undefined {
+    const offsetParent = table.offsetParent
+
+    if (!offsetParent || !(offsetParent instanceof HTMLElement)) return
+
+    const wrapperOffsetTop = offsetParent.offsetTop
+
+      const { height } = cell.getBoundingClientRect()
+      const { top } = table.getBoundingClientRect()
+      const topGap = wrapperOffsetTop - top
+      const previewTop = pointerY + topGap - height / 2
+      const previewBottom = pointerY + topGap + height / 2
+
+      const rows = Array.from(table.querySelectorAll('tr'))
+      const row = rows.find((row, index) => {
+        const boundary = row.getBoundingClientRect()
+        let boundaryTop = boundary.top + topGap
+        let boundaryBottom = boundary.bottom + topGap
+
+        if (direction === 'down') {
+          boundaryTop = boundaryTop + boundary.height / 2
+          boundaryBottom = boundaryBottom + boundary.height / 2
+          if (boundaryTop <= previewBottom && boundaryBottom >= previewBottom) return true
+          if (index === rows.length - 1 && previewBottom > boundaryBottom) return true
+        } else {
+          boundaryTop = boundaryTop - boundary.height / 2
+          boundaryBottom = boundaryBottom - boundary.height / 2
+          if (boundaryTop <= previewTop && boundaryBottom >= previewTop) return true
+          if (index === 0 && previewTop < boundaryTop) return true
+        }
+        return false
+      })
+
+  return row ? [row, rows.indexOf(row)] : undefined
 }

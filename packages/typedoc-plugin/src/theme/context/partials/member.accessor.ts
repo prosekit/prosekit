@@ -20,18 +20,27 @@ export function accessor(
   const showSources = model?.parent?.kind !== ReflectionKind.TypeLiteral
 
   if (model.getSignature) {
+    md.push('<!-- DEBUG accessor step 1 -->')
+
     md.push(heading(options.headingLevel, i18n.kind_get_signature()))
+
+    md.push('<!-- DEBUG accessor step 2 -->')
+
     md.push(
       this.partials.signatureTitle(model.getSignature, {
         accessor: 'get',
       }),
     )
 
+    md.push('<!-- DEBUG accessor step 3 -->')
+
     if (showSources && !this.options.getValue('disableSources')) {
       if (model.getSignature?.sources) {
         md.push(this.partials.sources(model.getSignature))
       }
     }
+
+    md.push('<!-- DEBUG accessor step 4 -->')
 
     if (model.getSignature.comment) {
       md.push(
@@ -40,6 +49,9 @@ export function accessor(
         }),
       )
     }
+    md.push('<!-- DEBUG accessor step 5 -->')
+
+    /*
     if (model.getSignature?.type) {
       md.push(
         this.partials.signatureReturns(model.getSignature, {
@@ -47,6 +59,9 @@ export function accessor(
         }),
       )
     }
+    */
+
+    md.push('<!-- DEBUG accessor step 6 -->')
   }
   if (model.setSignature) {
     md.push(heading(options.headingLevel, i18n.kind_set_signature()))

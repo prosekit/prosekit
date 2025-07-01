@@ -12,6 +12,7 @@ import { unorderedList } from '../../../libs/markdown/unordered-list'
 // Based on https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown@4.7.0/packages/typedoc-plugin-markdown/src/theme/context/partials/member.memberWithGroups.ts
 // with the following changes:
 //
+// - `model.typeParameters` is not used
 export function memberWithGroups(
   this: MarkdownThemeContext,
   model: DeclarationReflection,
@@ -60,6 +61,7 @@ export function memberWithGroups(
     )
   }
 
+  /*
   if (model.typeParameters?.length) {
     md.push(
       heading(
@@ -77,6 +79,7 @@ export function memberWithGroups(
       )
     }
   }
+  */
 
   if (model.implementedTypes?.length) {
     md.push(heading(options.headingLevel, i18n.theme_implements()))

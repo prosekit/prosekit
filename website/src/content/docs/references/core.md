@@ -4913,6 +4913,7 @@ Parse a HTML element to a ProseMirror node.
 ```ts
 const element = document.getElementById('content')
 const node = nodeFromElement(element, { schema: editor.schema })
+```
 
 </dd>
 
@@ -4939,6 +4940,7 @@ Parse a HTML string to a ProseMirror node.
 ```ts
 const html = '<p>Hello, world!</p>'
 const node = nodeFromHTML(html, { schema: editor.schema })
+```
 
 </dd>
 

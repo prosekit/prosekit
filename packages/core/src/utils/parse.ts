@@ -212,6 +212,7 @@ export function htmlFromElement(element: HTMLElement): string {
  * ```ts
  * const html = '<p>Hello, world!</p>'
  * const node = nodeFromHTML(html, { schema: editor.schema })
+ * ```
  */
 export function nodeFromHTML(
   html: string,

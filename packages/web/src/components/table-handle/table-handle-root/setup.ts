@@ -43,6 +43,11 @@ export function useTableHandleRoot(
     dragging: false,
     direction: 'row',
     draggingIndex: -1,
+    droppingIndex: -1,
+    x: -1,
+    y: -1,
+    startX: -1,
+    startY: -1,
   })
 
   const hoveringCell = useHoveringCell(host, editor)

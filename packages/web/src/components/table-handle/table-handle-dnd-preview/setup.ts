@@ -8,12 +8,12 @@ import {
   computePosition,
   offset,
 } from '@floating-ui/dom'
-import type { EditorView } from '@prosekit/pm/view'
 
 import {
   tableHandleDndContext,
   tableHandleRootContext,
 } from '../context'
+import { getTableDOMByPos, getTargetFirstCellDOM } from '../utils'
 
 import type { TableHandleDndPreviewProps } from './types'
 
@@ -172,27 +172,6 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
       console.error(error)
     })
   })
-}
-
-function getTableDOMByPos(view: EditorView, pos: number): HTMLTableElement | undefined {
-  const dom = view.domAtPos(pos).node
-  if (!dom) return
-  const element = dom instanceof HTMLElement ? dom : dom.parentElement
-  const table = element?.closest('table')
-  return table ?? undefined
-}
-
-function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction: 'row' | 'col'): HTMLElement | undefined {
-  const rows = table.querySelectorAll('tr')
-  if (direction === 'row') {
-    const row = rows[index]
-    const cell = row.querySelector('td')
-    return cell ?? undefined
-  }
-
-  const row = rows[0]
-  const cell = row.querySelectorAll('td')[index]
-  return cell ?? undefined
 }
 
 function clearPreviewDOM(previewRoot: HTMLElement) {

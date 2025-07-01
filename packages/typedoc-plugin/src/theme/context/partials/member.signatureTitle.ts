@@ -78,7 +78,7 @@ export function signatureTitle(
     md.push(`: ${this.partials.someType(model.type)}`)
   }
 
-  md.unshift('<code data-typedoc-declaration>')
+  md.unshift('<code data-typedoc-code>')
   md.push('</code>')
 
   return md.join('')

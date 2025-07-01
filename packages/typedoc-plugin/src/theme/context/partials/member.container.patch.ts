@@ -10,7 +10,7 @@ export function memberContainerPatch(
   const md: string[] = []
 
   // Additional logic: don't add heading for some kinds of members
-  if ([ReflectionKind.Property, ReflectionKind.Accessor].includes(model.kind)) {
+  if ([ReflectionKind.Property, ReflectionKind.Accessor, ReflectionKind.Method].includes(model.kind)) {
     md.push(
       this.partials.member(model, {
         headingLevel: options.headingLevel,

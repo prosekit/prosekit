@@ -227,8 +227,6 @@ The editor view.
 
 #### Methods
 
-##### blur() {#blur}
-
 <dl>
 
 <dt>
@@ -244,8 +242,6 @@ Blur the editor.
 </dd>
 
 </dl>
-
-##### canExec() {#canexec}
 
 <dl>
 
@@ -264,8 +260,6 @@ can be executed, otherwise `false`.
 
 </dl>
 
-##### exec() {#exec}
-
 <dl>
 
 <dt>
@@ -283,8 +277,6 @@ executed, otherwise `false`.
 
 </dl>
 
-##### focus() {#focus}
-
 <dl>
 
 <dt>
@@ -300,8 +292,6 @@ Focus the editor.
 </dd>
 
 </dl>
-
-##### getDocHTML() {#getdochtml}
 
 <dl>
 
@@ -319,8 +309,6 @@ Return a HTML string representing the editor's current document.
 
 </dl>
 
-##### getDocJSON() {#getdocjson}
-
 <dl>
 
 <dt>
@@ -336,8 +324,6 @@ Return a JSON object representing the editor's current document.
 </dd>
 
 </dl>
-
-##### mount() {#mount}
 
 <dl>
 
@@ -356,8 +342,6 @@ Pass `null` or `undefined` to unmount the editor.
 
 </dl>
 
-##### setContent() {#setcontent}
-
 <dl>
 
 <dt>
@@ -374,8 +358,6 @@ Update the editor's document and selection.
 
 </dl>
 
-##### unmount() {#unmount}
-
 <dl>
 
 <dt>
@@ -391,8 +373,6 @@ Unmount the editor. This is equivalent to `mount(null)`.
 </dd>
 
 </dl>
-
-##### updateState() {#updatestate}
 
 <dl>
 
@@ -414,8 +394,6 @@ directly manipulate the editor's state.
 </dd>
 
 </dl>
-
-##### use() {#use}
 
 <dl>
 
@@ -539,8 +517,6 @@ executed, otherwise `false`.
 
 #### Methods
 
-##### ~~canApply()~~ {#canapply}
-
 <dl>
 
 <dt>
@@ -560,8 +536,6 @@ Use `canExec` instead.
 </dd>
 
 </dl>
-
-##### canExec() {#canexec-2}
 
 <dl>
 

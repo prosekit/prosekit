@@ -132,6 +132,7 @@ export function nodeFromJSON(
  * ```ts
  * const element = document.getElementById('content')
  * const node = nodeFromElement(element, { schema: editor.schema })
+ * ```
  */
 export function nodeFromElement(
   element: DOMNode,

@@ -36,23 +36,23 @@ export function useTableHandleDndIndicator(host: ConnectableElement, { state }: 
 }
 
 function onInitIndicatorPosition({ host, direction, dragging, table }: OnInitParams): void {
+  Object.assign(host.style, {
+    display: dragging ? 'block' : 'none',
+  })
+
+  const tableRect = table.getBoundingClientRect()
+
+  if (direction === 'col') {
     Object.assign(host.style, {
-      display: dragging ? 'block' : 'none',
+      width: `${HANDLE_WIDTH}px`,
+      height: `${tableRect.height}px`,
     })
+  }
 
-    const tableRect = table.getBoundingClientRect()
-
-    if (direction === 'col') {
-      Object.assign(host.style, {
-        width: `${HANDLE_WIDTH}px`,
-        height: `${tableRect.height}px`,
-      })
-    }
-
-    if (direction === 'row') {
-      Object.assign(host.style, {
-        width: `${tableRect.width}px`,
-        height: `${HANDLE_WIDTH}px`,
-      })
-    }
+  if (direction === 'row') {
+    Object.assign(host.style, {
+      width: `${tableRect.width}px`,
+      height: `${HANDLE_WIDTH}px`,
+    })
+  }
 }

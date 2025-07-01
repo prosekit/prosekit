@@ -10,11 +10,7 @@ import {
   tableHandleDndContext,
   tableHandleRootContext,
 } from '../context'
-import { useInitDndPosition } from '../dnd'
-import {
-  getTableDOMByPos,
-  getTargetFirstCellDOM,
-} from '../utils'
+import { useInitDndPosition, getDndRelatedDOMs } from '../dnd'
 
 import {
   clearPreviewDOM,
@@ -93,12 +89,9 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
     const x = clientXSignal.get()
     const y = clientYSignal.get()
 
-    const cellPos = rootContext.peek()?.cellPos
-    if (cellPos == null) return
-    const table = getTableDOMByPos(view, cellPos)
-    if (!table) return
-    const cell = getTargetFirstCellDOM(table, draggingIndex, direction)
-    if (!cell) return
+    const relatedDOMs = getDndRelatedDOMs(view, rootContext.peek()?.cellPos, draggingIndex, direction)
+    if (!relatedDOMs) return
+    const { cell } = relatedDOMs
 
     computePosition(
       {

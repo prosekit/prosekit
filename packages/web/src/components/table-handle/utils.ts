@@ -105,24 +105,3 @@ function getCellIndex(
 ): number {
   return map.width * rowIndex + colIndex
 }
-
-export function getTableDOMByPos(view: EditorView, pos: number): HTMLTableElement | undefined {
-  const dom = view.domAtPos(pos).node
-  if (!dom) return
-  const element = dom instanceof HTMLElement ? dom : dom.parentElement
-  const table = element?.closest('table')
-  return table ?? undefined
-}
-
-export function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction: 'row' | 'col'): HTMLTableCellElement | undefined {
-  const rows = table.querySelectorAll('tr')
-  if (direction === 'row') {
-    const row = rows[index]
-    const cell = row.querySelector('td')
-    return cell ?? undefined
-  }
-
-  const row = rows[0]
-  const cell = row.querySelectorAll('td')[index]
-  return cell ?? undefined
-}

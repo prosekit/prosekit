@@ -9,15 +9,12 @@ import {
   offset,
 } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
+import type { EditorView } from '@prosekit/pm/view'
 
 import {
   tableHandleDndContext,
   tableHandleRootContext,
 } from './context'
-import {
-  getTableDOMByPos,
-  getTargetFirstCellDOM,
-} from './utils'
 
 type OnInitParams = {
   direction: 'row' | 'col'
@@ -63,12 +60,9 @@ export function useInitDndPosition(
     const draggingIndex = draggingIndexSignal.get()
     const { view } = editorInstance
 
-    const cellPos = rootContext.peek()?.cellPos
-    if (cellPos == null) return
-    const table = getTableDOMByPos(view, cellPos)
-    if (!table) return
-    const cell = getTargetFirstCellDOM(table, draggingIndex, direction)
-    if (!cell) return
+    const relatedDOMs = getDndRelatedDOMs(view, rootContext.peek()?.cellPos, draggingIndex, direction)
+    if (!relatedDOMs) return
+    const { table, cell } = relatedDOMs
 
     onInit({
       direction,
@@ -100,4 +94,34 @@ export function useInitDndPosition(
         console.error(error)
       })
   })
+}
+
+function getTableDOMByPos(view: EditorView, pos: number): HTMLTableElement | undefined {
+  const dom = view.domAtPos(pos).node
+  if (!dom) return
+  const element = dom instanceof HTMLElement ? dom : dom.parentElement
+  const table = element?.closest('table')
+  return table ?? undefined
+}
+
+function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction: 'row' | 'col'): HTMLTableCellElement | undefined {
+  const rows = table.querySelectorAll('tr')
+  if (direction === 'row') {
+    const row = rows[index]
+    const cell = row.querySelector('td')
+    return cell ?? undefined
+  }
+
+  const row = rows[0]
+  const cell = row.querySelectorAll('td')[index]
+  return cell ?? undefined
+}
+
+export function getDndRelatedDOMs(view: EditorView, cellPos: number | undefined, draggingIndex: number, direction: 'row' | 'col'): { table: HTMLTableElement, cell: HTMLTableCellElement } | undefined {
+  if (cellPos == null) return
+  const table = getTableDOMByPos(view, cellPos)
+  if (!table) return
+  const cell = getTargetFirstCellDOM(table, draggingIndex, direction)
+  if (!cell) return
+  return { table, cell }
 }

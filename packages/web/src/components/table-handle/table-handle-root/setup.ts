@@ -41,7 +41,7 @@ export function useTableHandleRoot(
   const context = createSignal<TableHandleRootContext>(null)
   const dndContext = createSignal<TableHandleDndContext>({
     dragging: false,
-    direction: 'horizontal',
+    direction: 'row',
     draggingIndex: -1,
   })
 

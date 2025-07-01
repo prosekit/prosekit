@@ -30,9 +30,12 @@ export const tableHandleDndContext: Context<TableHandleDndContext> = createConte
   'prosekit-table-handle-dnd-context',
   {
     dragging: false,
-    direction: 'horizontal',
+    direction: 'row',
     draggingIndex: -1,
+    droppingIndex: -1,
     x: -1,
     y: -1,
+    startX: -1,
+    startY: -1,
   },
 )

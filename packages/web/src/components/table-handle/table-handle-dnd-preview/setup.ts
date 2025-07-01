@@ -49,6 +49,8 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
 
     Object.assign(host.style, {
       display: dragging ? 'block' : 'none',
+      // Make sure drop on preview will trigger drop event on the host
+      pointerEvents: 'none'
     })
 
     if (!dragging) {
@@ -74,7 +76,7 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
     const tableRect = table.getBoundingClientRect()
     const cellRect = cell.getBoundingClientRect()
 
-    if (direction === 'vertical') {
+    if (direction === 'col') {
       Object.assign(host.style, {
         width: `${cellRect.width}px`,
         height: `${tableRect.height}px`,
@@ -87,9 +89,9 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
     }
 
     computePosition(cell, host, {
-      placement: direction === 'horizontal' ? 'right' : 'bottom',
+      placement: direction === 'row' ? 'right' : 'bottom',
       middleware: [offset(({rects}) => {
-        if (direction === 'vertical') {
+        if (direction === 'col') {
           return -rects.reference.height;
         }
 
@@ -140,9 +142,9 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
         }
       }
     }, host, {
-      placement: direction === 'horizontal' ? 'right' : 'bottom',
+      placement: direction === 'row' ? 'right' : 'bottom',
     }).then(({ x, y }) => {
-      if (direction === 'horizontal') {
+      if (direction === 'row') {
         Object.assign(host.style, {
           top: `${y}px`,
         })
@@ -166,9 +168,9 @@ function getTableDOMByPos(view: EditorView, pos: number): HTMLTableElement | und
   return table ?? undefined
 }
 
-function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction: 'horizontal' | 'vertical'): HTMLElement | undefined {
+function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction: 'row' | 'col'): HTMLElement | undefined {
   const rows = table.querySelectorAll('tr')
-  if (direction === 'horizontal') {
+  if (direction === 'row') {
     const row = rows[index]
     const cell = row.querySelector('td')
     return cell ?? undefined
@@ -189,7 +191,7 @@ function createPreviewDOM(
   table: HTMLTableElement,
   previewRoot: HTMLElement,
   index: number,
-  direction: 'horizontal' | 'vertical'
+  direction: 'row' | 'col'
 ) {
   clearPreviewDOM(previewRoot)
 
@@ -200,7 +202,7 @@ function createPreviewDOM(
 
   const rows = table.querySelectorAll('tr')
 
-  if (direction === 'horizontal') {
+  if (direction === 'row') {
     const row = rows[index]
     const rowDOM = row.cloneNode(true)
     previewTableBody.appendChild(rowDOM)

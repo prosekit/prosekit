@@ -44,9 +44,11 @@ export function useTableHandleColumnTrigger(
     const index = context.peek()?.colIndex ?? -1;
     dndContext.set({
       ...prev,
-      direction: 'vertical',
+      direction: 'col',
       dragging: true,
       draggingIndex: index,
+      startX: event.clientX,
+      startY: event.clientY,
     })
   })
 
@@ -54,7 +56,7 @@ export function useTableHandleColumnTrigger(
     const prev = dndContext.peek()
     dndContext.set({
       ...prev,
-      direction: 'vertical',
+      direction: 'col',
       dragging: true,
       x: event.clientX,
       y: event.clientY,

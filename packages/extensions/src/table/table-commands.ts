@@ -30,6 +30,8 @@ import {
   findCellPos,
   findCellRange,
   findTable,
+  moveColumn,
+  moveRow,
 } from './table-utils'
 
 function createEmptyTable(
@@ -295,6 +297,52 @@ export function selectTable(options?: SelectTableOptions): Command {
   }
 }
 
+export interface MoveTableRowOptions {
+  origin: number
+  target: number
+  select?: boolean
+  pos?: number
+}
+
+export function moveTableRow(options: MoveTableRowOptions): Command {
+  return (state, dispatch) => {
+    const { origin, target, select = true, pos } = options
+    const tr = moveRow({
+      tr: state.tr,
+      origin,
+      target,
+      select,
+      pos,
+    })
+
+    dispatch?.(tr)
+    return true
+  }
+}
+
+export interface MoveTableColumnOptions {
+  origin: number
+  target: number
+  select?: boolean
+  pos?: number
+}
+
+export function moveTableColumn(options: MoveTableColumnOptions): Command {
+  return (state, dispatch) => {
+    const { origin, target, select = true, pos } = options
+    const tr = moveColumn({
+      tr: state.tr,
+      origin,
+      target,
+      select,
+      pos,
+    })
+
+    dispatch?.(tr)
+    return true
+  }
+}
+
 /**
  * @internal
  */
@@ -320,6 +368,9 @@ export type TableCommandsExtension = Extension<{
 
     mergeTableCells: []
     splitTableCell: []
+
+    moveTableRow: [options: MoveTableRowOptions]
+    moveTableColumn: [options: MoveTableColumnOptions]
   }
 }>
 
@@ -350,5 +401,8 @@ export function defineTableCommands(): TableCommandsExtension {
 
     mergeTableCells: () => mergeCells,
     splitTableCell: () => splitCell,
+
+    moveTableRow,
+    moveTableColumn,
   })
 }

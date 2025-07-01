@@ -27,6 +27,10 @@ prosekit-table-handle-dnd-preview th p {
   line-height: 1.5;
 }
 
+prosekit-table-handle-dnd-indicator {
+  background-color: HighlightText;
+}
+
 .ProseMirror .column-resize-handle {
   z-index: 20;
   position: absolute;

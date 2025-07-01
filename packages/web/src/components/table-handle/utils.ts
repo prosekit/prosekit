@@ -14,10 +14,13 @@ export interface HoveringCellInfo {
 
 export interface DndInfo {
   dragging: boolean
-  direction: 'horizontal' | 'vertical'
+  direction: 'row' | 'col'
   draggingIndex: number
+  droppingIndex: number
   x: number
   y: number
+  startX: number
+  startY: number
 }
 
 export function isHoveringCellInfoEqual(

@@ -49,9 +49,11 @@ export function useTableHandleRowTrigger(
     const index = context.peek()?.rowIndex ?? -1;
     dndContext.set({
       ...prev,
-      direction: 'horizontal',
+      direction: 'row',
       dragging: true,
       draggingIndex: index,
+      startX: event.clientX,
+      startY: event.clientY,
     })
   })
 
@@ -59,7 +61,7 @@ export function useTableHandleRowTrigger(
     const prev = dndContext.peek()
     dndContext.set({
       ...prev,
-      direction: 'horizontal',
+      direction: 'row',
       dragging: true,
       x: event.clientX,
       y: event.clientY,

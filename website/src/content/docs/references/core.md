@@ -101,8 +101,6 @@ ProseKit extension priority.
 
 <!-- DEBUG accessor step 1 -->
 
-###### Get Signature
-
 <!-- DEBUG accessor step 2 -->
 
 <code data-typedoc-declaration>get <i></i> <a id="commandscommands" href="#commandscommands">commands</a>(): [`ExtractCommandActions`](#extractcommandactions)\<`E`\></code>
@@ -120,8 +118,6 @@ All [CommandAction](#commandaction)s defined by the editor.
 ##### focused {#focused}
 
 <!-- DEBUG accessor step 1 -->
-
-###### Get Signature
 
 <!-- DEBUG accessor step 2 -->
 
@@ -141,8 +137,6 @@ Whether the editor is focused.
 
 <!-- DEBUG accessor step 1 -->
 
-###### Get Signature
-
 <!-- DEBUG accessor step 2 -->
 
 <code data-typedoc-declaration>get <i></i> <a id="marksmarks" href="#marksmarks">marks</a>(): [`ExtractMarkActions`](#extractmarkactions)\<`E`\></code>
@@ -160,8 +154,6 @@ All [MarkAction](#markaction)s defined by the editor.
 ##### mounted {#mounted}
 
 <!-- DEBUG accessor step 1 -->
-
-###### Get Signature
 
 <!-- DEBUG accessor step 2 -->
 
@@ -181,8 +173,6 @@ Whether the editor is mounted.
 
 <!-- DEBUG accessor step 1 -->
 
-###### Get Signature
-
 <!-- DEBUG accessor step 2 -->
 
 <code data-typedoc-declaration>get <i></i> <a id="nodesnodes" href="#nodesnodes">nodes</a>(): [`ExtractNodeActions`](#extractnodeactions)\<`E`\></code>
@@ -200,8 +190,6 @@ All [NodeAction](#nodeaction)s defined by the editor.
 ##### schema {#schema}
 
 <!-- DEBUG accessor step 1 -->
-
-###### Get Signature
 
 <!-- DEBUG accessor step 2 -->
 
@@ -221,8 +209,6 @@ The editor schema.
 
 <!-- DEBUG accessor step 1 -->
 
-###### Get Signature
-
 <!-- DEBUG accessor step 2 -->
 
 <code data-typedoc-declaration>get <i></i> <a id="statestate" href="#statestate">state</a>(): [`EditorState`](pm/state.md#editorstate)</code>
@@ -240,8 +226,6 @@ The editor's current state.
 ##### view {#view}
 
 <!-- DEBUG accessor step 1 -->
-
-###### Get Signature
 
 <!-- DEBUG accessor step 2 -->
 
@@ -1077,8 +1061,6 @@ The schema that this extension represents.
 ##### reducer {#reducer}
 
 <!-- DEBUG accessor step 1 -->
-
-###### Get Signature
 
 <!-- DEBUG accessor step 2 -->
 

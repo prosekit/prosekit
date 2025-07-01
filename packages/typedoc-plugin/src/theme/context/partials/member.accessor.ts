@@ -22,7 +22,9 @@ export function accessor(
   if (model.getSignature) {
     md.push('<!-- DEBUG accessor step 1 -->')
 
+    /*
     md.push(heading(options.headingLevel, i18n.kind_get_signature()))
+    */
 
     md.push('<!-- DEBUG accessor step 2 -->')
 
@@ -49,6 +51,7 @@ export function accessor(
         }),
       )
     }
+
     md.push('<!-- DEBUG accessor step 5 -->')
 
     /*

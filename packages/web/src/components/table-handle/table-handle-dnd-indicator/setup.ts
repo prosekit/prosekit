@@ -1,29 +1,17 @@
 import {
-  createComputed,
   useEffect,
   type ConnectableElement,
   type SignalState,
 } from '@aria-ui/core'
-import {
-  computePosition,
-  offset,
-} from '@floating-ui/dom'
 
 import {
-  tableHandleDndContext,
-  tableHandleRootContext,
-} from '../context'
-import {
-  getDndRelatedDOMs,
   useInitDndPosition,
+  type OnInitParams,
 } from '../dnd'
 
-import {
-  getDragOverColumn,
-  getDragOverRow,
-} from './calc-drag-over'
 import { useDrop } from './drop'
 import type { TableHandleDndIndicatorProps } from './types'
+import { useUpdateIndicatorPosition } from './updater'
 
 const HANDLE_WIDTH = 2
 
@@ -32,31 +20,6 @@ const HANDLE_WIDTH = 2
  */
 export function useTableHandleDndIndicator(host: ConnectableElement, { state }: { state: SignalState<TableHandleDndIndicatorProps> }): void {
   const { editor } = state
-  const dndContext = tableHandleDndContext.consume(host)
-  const rootContext = tableHandleRootContext.consume(host)
-
-  const clientXSignal = createComputed(() => {
-    const context = dndContext.get()
-    return context.x
-  })
-
-  const clientYSignal = createComputed(() => {
-    const context = dndContext.get()
-    return context.y
-  })
-
-  const startXSignal = createComputed(() => {
-    return dndContext.get().startX
-  })
-
-  const startYSignal = createComputed(() => {
-    return dndContext.get().startY
-  })
-
-  const draggingSignal = createComputed(() => {
-    const context = dndContext.get()
-    return context.dragging
-  })
 
   useEffect(host, () => {
     Object.assign(host.style, {
@@ -65,7 +28,14 @@ export function useTableHandleDndIndicator(host: ConnectableElement, { state }: 
     })
   })
 
-  useInitDndPosition(host, editor, ({ direction, dragging, table }) => {
+  useInitDndPosition(host, editor, onInitIndicatorPosition)
+
+  useUpdateIndicatorPosition(host, editor, HANDLE_WIDTH)
+
+  useDrop(host, editor)
+}
+
+function onInitIndicatorPosition({ host, direction, dragging, table }: OnInitParams): void {
     Object.assign(host.style, {
       display: dragging ? 'block' : 'none',
     })
@@ -85,75 +55,4 @@ export function useTableHandleDndIndicator(host: ConnectableElement, { state }: 
         height: `${HANDLE_WIDTH}px`,
       })
     }
-  })
-
-  useEffect(host, () => {
-    const editorInstance = editor.get()
-    if (!editorInstance) return
-    const dragging = draggingSignal.get()
-    if (!dragging) return
-
-    const { view } = editorInstance
-    const { draggingIndex, direction } = dndContext.peek()
-    const x = clientXSignal.get()
-    const y = clientYSignal.get()
-
-    const relatedDOMs = getDndRelatedDOMs(view, rootContext.peek()?.cellPos, draggingIndex, direction)
-    if (!relatedDOMs) return
-    const { table, cell } = relatedDOMs
-
-    if (direction === 'col') {
-      const direction = startXSignal.get() > x ? 'left' : 'right'
-      const dragOverColumn = getDragOverColumn(table, cell, x, direction)
-
-      if (dragOverColumn) {
-        const [col, index] = dragOverColumn
-        dndContext.set({
-          ...dndContext.peek(),
-          droppingIndex: index,
-        })
-        computePosition(col, host, {
-          placement: direction === 'left' ? 'left' : 'right',
-          middleware: [
-            offset(direction === 'left' ? -1 * HANDLE_WIDTH : 0),
-          ],
-        })
-          .then(({ x }) => {
-            Object.assign(host.style, {
-              left: `${x}px`,
-            })
-          }).catch(console.error)
-      }
-
-      return
-    }
-
-    if (direction === 'row') {
-      const direction = startYSignal.get() > y ? 'up' : 'down'
-      const dragOverRow = getDragOverRow(table, cell, y, direction)
-
-      if (dragOverRow) {
-        const [row, index] = dragOverRow
-        dndContext.set({
-          ...dndContext.peek(),
-          droppingIndex: index,
-        })
-        computePosition(row, host, {
-          placement: direction === 'up' ? 'top' : 'bottom',
-          middleware: [
-            offset(direction === 'up' ? -1 * HANDLE_WIDTH : 0),
-          ],
-        })
-          .then(({ y }) => {
-            Object.assign(host.style, {
-              top: `${y}px`,
-            })
-          }).catch(console.error)
-      }
-
-      return
-    }
-  })
-
-  useDrop(host, editor)
 }

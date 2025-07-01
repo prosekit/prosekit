@@ -30,12 +30,12 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
     })
   })
 
-  useInitDndPosition(host, editor, onInitDndPosition)
+  useInitDndPosition(host, editor, onInitPreviewPosition)
 
   useUpdatePreviewPosition(host, editor)
 }
 
-function onInitDndPosition({ host, direction, dragging, table, cell, draggingIndex }: OnInitParams): void {
+function onInitPreviewPosition({ host, direction, dragging, table, cell, draggingIndex }: OnInitParams): void {
   Object.assign(host.style, {
     display: dragging ? 'block' : 'none',
   })

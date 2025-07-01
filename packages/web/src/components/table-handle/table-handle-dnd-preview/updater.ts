@@ -4,16 +4,17 @@ import {
   type ConnectableElement,
   type ReadonlySignal,
 } from '@aria-ui/core'
-import { computePosition, type ReferenceElement } from '@floating-ui/dom'
+import {
+  computePosition,
+  type ReferenceElement,
+} from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
 import {
   tableHandleDndContext,
   tableHandleRootContext,
 } from '../context'
-import {
-  getDndRelatedDOMs,
-} from '../dnd'
+import { getDndRelatedDOMs } from '../dnd'
 
 export function useUpdatePreviewPosition(host: ConnectableElement, editor: ReadonlySignal<Editor | null>): void {
   const dndContext = tableHandleDndContext.consume(host)
@@ -57,14 +58,14 @@ export function useUpdatePreviewPosition(host: ConnectableElement, editor: Reado
         Object.assign(host.style, {
           top: `${y}px`,
         })
-        return;
+        return
       }
 
       if (direction === 'col') {
         Object.assign(host.style, {
           left: `${x}px`,
         })
-        return;
+        return
       }
     }).catch((error) => {
       console.error(error)
@@ -73,20 +74,20 @@ export function useUpdatePreviewPosition(host: ConnectableElement, editor: Reado
 }
 
 function getVirtualElement(cell: HTMLTableCellElement, x: number, y: number): ReferenceElement {
-    return {
-        contextElement: cell,
-        getBoundingClientRect: () => {
-          const rect = cell.getBoundingClientRect()
-          return {
-            width: rect.width,
-            height: rect.height,
-            right: x + rect.width / 2,
-            bottom: y + rect.height / 2,
-            top: y - rect.height / 2,
-            left: x - rect.width / 2,
-            x,
-            y,
-          }
-        },
-    }
+  return {
+    contextElement: cell,
+    getBoundingClientRect: () => {
+      const rect = cell.getBoundingClientRect()
+      return {
+        width: rect.width,
+        height: rect.height,
+        right: x + rect.width / 2,
+        bottom: y + rect.height / 2,
+        top: y - rect.height / 2,
+        left: x - rect.width / 2,
+        x,
+        y,
+      }
+    },
+  }
 }

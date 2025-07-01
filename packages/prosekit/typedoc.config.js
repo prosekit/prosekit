@@ -36,6 +36,7 @@ const typedocConfig = {
   theme: 'my-markdown-theme',
   githubPages: false,
   disableSources: true,
+  sort: ['source-order'],
   externalSymbolLinkMappings: {
     'lit': {
       LitElement: 'https://lit.dev/docs/api/LitElement/#LitElement',

@@ -4,9 +4,7 @@ import {
   type ConnectableElement,
   type SignalState,
 } from '@aria-ui/core'
-import {
-  computePosition,
-} from '@floating-ui/dom'
+import { computePosition } from '@floating-ui/dom'
 
 import {
   tableHandleDndContext,
@@ -18,7 +16,10 @@ import {
   getTargetFirstCellDOM,
 } from '../utils'
 
-import { clearPreviewDOM, createPreviewDOM } from './render-preview'
+import {
+  clearPreviewDOM,
+  createPreviewDOM,
+} from './render-preview'
 import type { TableHandleDndPreviewProps } from './types'
 
 /**

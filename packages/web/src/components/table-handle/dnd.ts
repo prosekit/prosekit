@@ -1,9 +1,23 @@
-import { createComputed, useEffect, type ConnectableElement, type ReadonlySignal } from "@aria-ui/core"
-import { computePosition, offset } from "@floating-ui/dom"
-import type { Editor } from "@prosekit/core"
+import {
+  createComputed,
+  useEffect,
+  type ConnectableElement,
+  type ReadonlySignal,
+} from '@aria-ui/core'
+import {
+  computePosition,
+  offset,
+} from '@floating-ui/dom'
+import type { Editor } from '@prosekit/core'
 
-import { tableHandleDndContext, tableHandleRootContext } from "./context"
-import { getTableDOMByPos, getTargetFirstCellDOM } from "./utils"
+import {
+  tableHandleDndContext,
+  tableHandleRootContext,
+} from './context'
+import {
+  getTableDOMByPos,
+  getTargetFirstCellDOM,
+} from './utils'
 
 type OnInitParams = {
   direction: 'row' | 'col'
@@ -14,9 +28,9 @@ type OnInitParams = {
 }
 
 export function useInitDndPosition(
-    host: ConnectableElement,
-    editor: ReadonlySignal<Editor | null>,
-    onInit: (params: OnInitParams) => void,
+  host: ConnectableElement,
+  editor: ReadonlySignal<Editor | null>,
+  onInit: (params: OnInitParams) => void,
 ): void {
   const dndContext = tableHandleDndContext.consume(host)
   const rootContext = tableHandleRootContext.consume(host)
@@ -61,7 +75,7 @@ export function useInitDndPosition(
       dragging,
       draggingIndex,
       table,
-      cell
+      cell,
     })
 
     if (!dragging) return

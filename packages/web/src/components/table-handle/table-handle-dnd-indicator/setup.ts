@@ -19,7 +19,10 @@ import {
   getTargetFirstCellDOM,
 } from '../utils'
 
-import { getDragOverColumn, getDragOverRow } from './calc-drag-over'
+import {
+  getDragOverColumn,
+  getDragOverRow,
+} from './calc-drag-over'
 import type { TableHandleDndIndicatorProps } from './types'
 
 const HANDLE_WIDTH = 2
@@ -60,7 +63,7 @@ export function useTableHandleDndIndicator(host: ConnectableElement, { state }: 
       pointerEvents: 'none',
       position: 'absolute',
     })
-  });
+  })
 
   useInitDndPosition(host, editor, ({ direction, dragging, table }) => {
     Object.assign(host.style, {
@@ -82,7 +85,7 @@ export function useTableHandleDndIndicator(host: ConnectableElement, { state }: 
         height: `${HANDLE_WIDTH}px`,
       })
     }
-  });
+  })
 
   useEffect(host, () => {
     const editorInstance = editor.get()

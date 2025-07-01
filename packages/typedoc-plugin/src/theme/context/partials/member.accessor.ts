@@ -25,13 +25,19 @@ export function accessor(
 
     md.push('<!-- DEBUG accessor step 2 -->')
 
+    md.push('<dt>')
+
     md.push(
       this.partials.signatureTitle(model.getSignature, {
         accessor: 'get',
       }),
     )
 
+    md.push('</dt>')
+
     md.push('<!-- DEBUG accessor step 3 -->')
+
+    md.push('<dd>')
 
     if (showSources && !this.options.getValue('disableSources')) {
       if (model.getSignature?.sources) {
@@ -48,6 +54,8 @@ export function accessor(
         }),
       )
     }
+
+    md.push('</dd>')
 
     md.push('<!-- DEBUG accessor step 5 -->')
 

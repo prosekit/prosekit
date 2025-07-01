@@ -5,6 +5,7 @@ import { memberContainerPatch } from './theme/context/partials/member.container.
 import { declaration } from './theme/context/partials/member.declaration'
 import { declarationTitle } from './theme/context/partials/member.declarationTitle'
 import { inheritance } from './theme/context/partials/member.inheritance'
+import { memberWithGroups } from './theme/context/partials/member.memberWithGroups'
 import { signature } from './theme/context/partials/member.signature'
 import { signatureTitle } from './theme/context/partials/member.signatureTitle'
 
@@ -35,6 +36,9 @@ export class MyMarkdownThemeContext extends MarkdownThemeContext {
     }
     this.partials.signatureTitle = (...args) => {
       return signatureTitle.call(this, ...args)
+    }
+    this.partials.memberWithGroups = (...args) => {
+      return memberWithGroups.call(this, ...args)
     }
   }
 }

@@ -45,8 +45,8 @@ export function signatureTitle(
     // `model.setSignature` and `model.getSignature` are passed in. Therefore we
     // need to get the parent of `model.getSignature` or `model.setSignature`
     // for the anchor.
-    // https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca307ad25dfc35b2c6edd3fe507154ee0c6cc411/packages/typedoc-plugin-markdown/src/theme/context/partials/member.accessor.ts#L17
-    // https://github.com/typedoc2md/typedoc-plugin-markdown/blob/ca307ad25dfc35b2c6edd3fe507154ee0c6cc411/packages/typedoc-plugin-markdown/src/theme/context/partials/member.accessor.ts#L46
+    // https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown@4.7.0/packages/typedoc-plugin-markdown/src/theme/context/partials/member.accessor.ts#L17
+    // https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown@4.7.0/packages/typedoc-plugin-markdown/src/theme/context/partials/member.accessor.ts#L46
     if ([ReflectionKind.GetSignature, ReflectionKind.SetSignature].includes(anchorModel.kind)) {
       anchorModel = anchorModel.parent
     }

@@ -6,19 +6,21 @@ import {
 import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
 import { heading } from '../../../libs/markdown/heading'
-import { link } from '../../../libs/markdown/link'
-import { unorderedList } from '../../../libs/markdown/unordered-list'
 
 // Based on https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown@4.7.0/packages/typedoc-plugin-markdown/src/theme/context/partials/member.memberWithGroups.ts
 // with the following changes:
 //
+// - `model.typeHierarchy` is not used
 // - `model.typeParameters` is not used
+// - `model.implementedTypes` is not used
 export function memberWithGroups(
   this: MarkdownThemeContext,
   model: DeclarationReflection,
   options: { headingLevel: number },
 ): string {
   const md: string[] = []
+
+  md.push('<!-- DEBUG memberWithGroups start 1 -->')
 
   if (model.kind === ReflectionKind.TypeAlias) {
     md.push(this.partials.declarationTitle(model))
@@ -40,6 +42,7 @@ export function memberWithGroups(
     )
   }
 
+  /*
   if (model.typeHierarchy?.next) {
     const includeHierarchySummary = this.options.isSet('includeHierarchySummary')
       && this.options.getValue('includeHierarchySummary')
@@ -60,6 +63,7 @@ export function memberWithGroups(
       }),
     )
   }
+  */
 
   /*
   if (model.typeParameters?.length) {
@@ -81,6 +85,7 @@ export function memberWithGroups(
   }
   */
 
+  /*
   if (model.implementedTypes?.length) {
     md.push(heading(options.headingLevel, i18n.theme_implements()))
     md.push(
@@ -89,6 +94,7 @@ export function memberWithGroups(
       ),
     )
   }
+  */
 
   if (model.kind === ReflectionKind.Class && model.categories?.length) {
     model.groups
@@ -133,6 +139,8 @@ export function memberWithGroups(
   }
 
   md.push(this.partials.body(model, { headingLevel: options.headingLevel }))
+
+  md.push('<!-- DEBUG memberWithGroups end 9 -->')
 
   return md.join('\n\n')
 }

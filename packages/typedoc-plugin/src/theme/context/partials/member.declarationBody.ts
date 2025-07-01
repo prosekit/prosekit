@@ -96,21 +96,26 @@ export function declarationBody(
   }
 
   if (model.typeParameters) {
-    md.push(
-      heading(
-        opts.headingLevel,
-        ReflectionKind.pluralString(ReflectionKind.TypeParameter),
-      ),
-    )
-    if (this.helpers.useTableFormat('parameters')) {
-      md.push(this.partials.typeParametersTable(model.typeParameters))
-    } else {
-      md.push(
-        this.partials.typeParametersList(model.typeParameters, {
-          headingLevel: opts.headingLevel,
-        }),
-      )
-    }
+    // if (1 + 1 > 1) throw new Error('typeParameters')
+    md.push('<!-- typeParameters start -->')
+
+    // md.push(
+    //   heading(
+    //     opts.headingLevel,
+    //     ReflectionKind.pluralString(ReflectionKind.TypeParameter),
+    //   ),
+    // )
+    // if (this.helpers.useTableFormat('parameters')) {
+    //   md.push(this.partials.typeParametersTable(model.typeParameters))
+    // } else {
+    //   md.push(
+    //     this.partials.typeParametersList(model.typeParameters, {
+    //       headingLevel: opts.headingLevel,
+    //     }),
+    //   )
+    // }
+
+    md.push('<!-- typeParameters end -->')
   }
 
   if (hasTypeDeclaration) {

@@ -99,6 +99,8 @@ ProseKit extension priority.
 
 ##### commands {#commands}
 
+<dl>
+
 <!-- DEBUG accessor step 1 -->
 
 <!-- DEBUG accessor step 2 -->
@@ -115,7 +117,11 @@ All [CommandAction](#commandaction)s defined by the editor.
 
 <!-- DEBUG accessor step 6 -->
 
+</dl>
+
 ##### focused {#focused}
+
+<dl>
 
 <!-- DEBUG accessor step 1 -->
 
@@ -133,7 +139,11 @@ Whether the editor is focused.
 
 <!-- DEBUG accessor step 6 -->
 
+</dl>
+
 ##### marks {#marks}
+
+<dl>
 
 <!-- DEBUG accessor step 1 -->
 
@@ -151,7 +161,11 @@ All [MarkAction](#markaction)s defined by the editor.
 
 <!-- DEBUG accessor step 6 -->
 
+</dl>
+
 ##### mounted {#mounted}
+
+<dl>
 
 <!-- DEBUG accessor step 1 -->
 
@@ -169,7 +183,11 @@ Whether the editor is mounted.
 
 <!-- DEBUG accessor step 6 -->
 
+</dl>
+
 ##### nodes {#nodes}
+
+<dl>
 
 <!-- DEBUG accessor step 1 -->
 
@@ -187,7 +205,11 @@ All [NodeAction](#nodeaction)s defined by the editor.
 
 <!-- DEBUG accessor step 6 -->
 
+</dl>
+
 ##### schema {#schema}
+
+<dl>
 
 <!-- DEBUG accessor step 1 -->
 
@@ -205,7 +227,11 @@ The editor schema.
 
 <!-- DEBUG accessor step 6 -->
 
+</dl>
+
 ##### state {#state}
+
+<dl>
 
 <!-- DEBUG accessor step 1 -->
 
@@ -223,7 +249,11 @@ The editor's current state.
 
 <!-- DEBUG accessor step 6 -->
 
+</dl>
+
 ##### view {#view}
+
+<dl>
 
 <!-- DEBUG accessor step 1 -->
 
@@ -240,6 +270,8 @@ The editor view.
 <!-- DEBUG accessor step 5 -->
 
 <!-- DEBUG accessor step 6 -->
+
+</dl>
 
 #### Methods
 
@@ -1060,6 +1092,8 @@ The schema that this extension represents.
 
 ##### reducer {#reducer}
 
+<dl>
+
 <!-- DEBUG accessor step 1 -->
 
 <!-- DEBUG accessor step 2 -->
@@ -1073,6 +1107,8 @@ The schema that this extension represents.
 <!-- DEBUG accessor step 5 -->
 
 <!-- DEBUG accessor step 6 -->
+
+</dl>
 
 <!-- DEBUG memberWithGroups end 9 -->
 

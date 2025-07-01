@@ -1,11 +1,6 @@
 import type { DeclarationReflection } from 'typedoc'
-import {
-  i18n,
-  ReflectionKind,
-} from 'typedoc'
+import { ReflectionKind } from 'typedoc'
 import type { MarkdownThemeContext } from 'typedoc-plugin-markdown'
-
-import { heading } from '../../../libs/markdown/heading'
 
 // Based on https://github.com/typedoc2md/typedoc-plugin-markdown/blob/typedoc-plugin-markdown@4.7.0/packages/typedoc-plugin-markdown/src/theme/context/partials/member.accessor.ts
 // with the following changes:
@@ -18,6 +13,8 @@ export function accessor(
   const md: string[] = []
 
   const showSources = model?.parent?.kind !== ReflectionKind.TypeLiteral
+
+  md.push('<dl>')
 
   if (model.getSignature) {
     md.push('<!-- DEBUG accessor step 1 -->')
@@ -67,7 +64,10 @@ export function accessor(
     md.push('<!-- DEBUG accessor step 6 -->')
   }
   if (model.setSignature) {
+    /*
     md.push(heading(options.headingLevel, i18n.kind_set_signature()))
+    */
+
     md.push(
       this.partials.signatureTitle(model.setSignature, {
         accessor: 'set',
@@ -88,6 +88,7 @@ export function accessor(
       )
     }
 
+    /*
     if (model.setSignature?.parameters?.length) {
       md.push(
         heading(
@@ -105,7 +106,9 @@ export function accessor(
         )
       }
     }
+    */
 
+    /*
     if (model.setSignature?.type) {
       md.push(
         this.partials.signatureReturns(model.setSignature, {
@@ -113,6 +116,7 @@ export function accessor(
         }),
       )
     }
+    */
   }
 
   if (showSources && !this.options.getValue('disableSources')) {
@@ -120,6 +124,8 @@ export function accessor(
       md.push(this.partials.sources(model))
     }
   }
+
+  md.push('</dl>')
 
   if (model.comment) {
     md.push(

@@ -9,8 +9,7 @@ import type { CellPos } from './types'
  *
  * @internal
  */
-export function getCellsInRow(rowIndex: number | number[]) {
-  return (selection: Selection): CellPos[] | undefined => {
+export function getCellsInRow(rowIndex: number | number[], selection: Selection): CellPos[] | undefined {
     const table = findTable(selection.$from)
     if (!table) {
       return
@@ -36,5 +35,4 @@ export function getCellsInRow(rowIndex: number | number[]) {
           }),
         )
       }, [])
-  }
 }

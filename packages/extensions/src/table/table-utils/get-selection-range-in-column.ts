@@ -9,14 +9,13 @@ import type { CellSelectionRange } from './types'
  *
  * @internal
  */
-export function getSelectionRangeInColumn(startColIndex: number, endColIndex: number = startColIndex) {
-  return (tr: Transaction): CellSelectionRange | undefined => {
+export function getSelectionRangeInColumn(tr: Transaction, startColIndex: number, endColIndex: number = startColIndex): CellSelectionRange | undefined {
     let startIndex = startColIndex
     let endIndex = endColIndex
 
     // looking for selection start column (startIndex)
     for (let i = startColIndex; i >= 0; i--) {
-      const cells = getCellsInColumn(i)(tr.selection)
+      const cells = getCellsInColumn(i, tr.selection)
       if (cells) {
         cells.forEach((cell) => {
           const maybeEndIndex = cell.node.attrs.colspan + i - 1
@@ -31,7 +30,7 @@ export function getSelectionRangeInColumn(startColIndex: number, endColIndex: nu
     }
     // looking for selection end column (endIndex)
     for (let i = startColIndex; i <= endIndex; i++) {
-      const cells = getCellsInColumn(i)(tr.selection)
+      const cells = getCellsInColumn(i, tr.selection)
       if (cells) {
         cells.forEach((cell) => {
           const maybeEndIndex = cell.node.attrs.colspan + i - 1
@@ -45,7 +44,7 @@ export function getSelectionRangeInColumn(startColIndex: number, endColIndex: nu
     // filter out columns without cells (where all rows have colspan > 1 in the same column)
     const indexes = []
     for (let i = startIndex; i <= endIndex; i++) {
-      const maybeCells = getCellsInColumn(i)(tr.selection)
+      const maybeCells = getCellsInColumn(i, tr.selection)
       if (maybeCells && maybeCells.length > 0) {
         indexes.push(i)
       }
@@ -53,8 +52,8 @@ export function getSelectionRangeInColumn(startColIndex: number, endColIndex: nu
     startIndex = indexes[0]
     endIndex = indexes[indexes.length - 1]
 
-    const firstSelectedColumnCells = getCellsInColumn(startIndex)(tr.selection)
-    const firstRowCells = getCellsInRow(0)(tr.selection)
+    const firstSelectedColumnCells = getCellsInColumn(startIndex, tr.selection)
+    const firstRowCells = getCellsInRow(0, tr.selection)
     if (!firstSelectedColumnCells || !firstRowCells) {
       return
     }
@@ -65,7 +64,7 @@ export function getSelectionRangeInColumn(startColIndex: number, endColIndex: nu
 
     let headCell
     for (let i = endIndex; i >= startIndex; i--) {
-      const columnCells = getCellsInColumn(i)(tr.selection)
+      const columnCells = getCellsInColumn(i, tr.selection)
       if (columnCells && columnCells.length > 0) {
         for (let j = firstRowCells.length - 1; j >= 0; j--) {
           if (firstRowCells[j].pos === columnCells[0].pos) {
@@ -84,5 +83,4 @@ export function getSelectionRangeInColumn(startColIndex: number, endColIndex: nu
 
     const $head = tr.doc.resolve(headCell.pos)
     return { $anchor, $head, indexes }
-  }
 }

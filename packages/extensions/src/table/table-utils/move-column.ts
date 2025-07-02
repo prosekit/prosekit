@@ -32,8 +32,8 @@ export function moveColumn(moveColParams: MoveColumnParams): Transaction {
   const table = findTable($pos)
   if (!table) return tr
 
-  const indexesOriginColumn = getSelectionRangeInColumn(origin)(tr)?.indexes
-  const indexesTargetColumn = getSelectionRangeInColumn(target)(tr)?.indexes
+  const indexesOriginColumn = getSelectionRangeInColumn(tr, origin)?.indexes
+  const indexesTargetColumn = getSelectionRangeInColumn(tr, target)?.indexes
 
   if (!indexesOriginColumn || !indexesTargetColumn) return tr
 

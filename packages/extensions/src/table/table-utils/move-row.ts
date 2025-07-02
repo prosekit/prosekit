@@ -32,8 +32,8 @@ export function moveRow(moveRowParams: MoveRowParams): Transaction {
   const table = findTable($pos)
   if (!table) return tr
 
-  const indexesOriginRow = getSelectionRangeInRow(origin)(tr)?.indexes
-  const indexesTargetRow = getSelectionRangeInRow(target)(tr)?.indexes
+  const indexesOriginRow = getSelectionRangeInRow(tr, origin)?.indexes
+  const indexesTargetRow = getSelectionRangeInRow(tr, target)?.indexes
 
   if (!indexesOriginRow || !indexesTargetRow) return tr
 

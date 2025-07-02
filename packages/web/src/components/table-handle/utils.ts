@@ -21,6 +21,7 @@ export interface DndInfo {
   y: number
   startX: number
   startY: number
+  dndPreviewImage: HTMLImageElement | null
 }
 
 export function isHoveringCellInfoEqual(

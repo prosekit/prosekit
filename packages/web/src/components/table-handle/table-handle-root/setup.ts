@@ -48,6 +48,7 @@ export function useTableHandleRoot(
     y: -1,
     startX: -1,
     startY: -1,
+    dndPreviewImage: null,
   })
 
   const hoveringCell = useHoveringCell(host, editor)
@@ -60,6 +61,20 @@ export function useTableHandleRoot(
     const selectingValue = selecting.get()
     const hoveringCellValue = hoveringCell.get()
     context.set(typingValue || selectingValue ? null : hoveringCellValue)
+  })
+
+  useEffect(host, () => {
+    const emptyImage = new Image(1, 1)
+    emptyImage.src =
+      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+    dndContext.set({
+      ...dndContext.peek(),
+      dndPreviewImage: emptyImage,
+    })
+
+    return () => {
+      emptyImage.remove()
+    }
   })
 
   tableHandleRootContext.provide(host, context)

@@ -47,6 +47,10 @@ export function useTableHandleRowTrigger(
     const dataTransfer = event.dataTransfer
     if (dataTransfer) {
       dataTransfer.effectAllowed = 'move'
+      const dndPreviewImage = dndContext.peek().dndPreviewImage
+      if (dndPreviewImage) {
+        dataTransfer.setDragImage(dndPreviewImage, 0, 0)
+      }
     }
     const prev = dndContext.peek()
     const index = context.peek()?.rowIndex ?? -1

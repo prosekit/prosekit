@@ -85,8 +85,8 @@ function getVirtualElement(cell: HTMLTableCellElement, x: number, y: number): Re
         bottom: y + rect.height / 2,
         top: y - rect.height / 2,
         left: x - rect.width / 2,
-        x,
-        y,
+        x: x - rect.width / 2,
+        y: y - rect.height / 2,
       }
     },
   }

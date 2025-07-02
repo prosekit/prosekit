@@ -41,7 +41,7 @@ export function moveRow(moveRowParams: MoveRowParams): Transaction {
 
   const newTable = moveTableRow(table.node, indexesOriginRow, indexesTargetRow, 0)
 
-  const _tr = tr
+  tr
     .setTime(Date.now())
     .replaceWith(
       table.pos,
@@ -49,18 +49,18 @@ export function moveRow(moveRowParams: MoveRowParams): Transaction {
       newTable,
     )
 
-  if (!select) return _tr
+  if (!select) return tr
 
   const map = TableMap.get(newTable)
   const start = table.start
   const index = target
   const lastCell = map.positionAt(index, map.width - 1, newTable)
-  const $lastCell = _tr.doc.resolve(start + lastCell)
+  const $lastCell = tr.doc.resolve(start + lastCell)
 
   const firstCell = map.positionAt(index, 0, newTable)
-  const $firstCell = _tr.doc.resolve(start + firstCell)
+  const $firstCell = tr.doc.resolve(start + firstCell)
 
-  return _tr.setSelection(CellSelection.rowSelection($lastCell, $firstCell))
+  return tr.setSelection(CellSelection.rowSelection($lastCell, $firstCell))
 }
 
 function moveTableRow(

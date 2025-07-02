@@ -46,7 +46,7 @@ export function moveColumn(moveColParams: MoveColumnParams): Transaction {
     0,
   )
 
-  const _tr = tr
+  tr
     .setTime(Date.now())
     .replaceWith(
       table.pos,
@@ -54,18 +54,18 @@ export function moveColumn(moveColParams: MoveColumnParams): Transaction {
       newTable,
     )
 
-  if (!select) return _tr
+  if (!select) return tr
 
   const map = TableMap.get(newTable)
   const start = table.start
   const index = target
   const lastCell = map.positionAt(map.height - 1, index, newTable)
-  const $lastCell = _tr.doc.resolve(start + lastCell)
+  const $lastCell = tr.doc.resolve(start + lastCell)
 
   const firstCell = map.positionAt(0, index, newTable)
-  const $firstCell = _tr.doc.resolve(start + firstCell)
+  const $firstCell = tr.doc.resolve(start + firstCell)
 
-  return _tr.setSelection(CellSelection.colSelection($lastCell, $firstCell))
+  return tr.setSelection(CellSelection.colSelection($lastCell, $firstCell))
 }
 
 function moveTableColumn(

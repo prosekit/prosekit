@@ -64,6 +64,12 @@ export function useTableHandleRoot(
   })
 
   useEffect(host, () => {
+    /**
+     * Prepare an empty image for the dnd preview.
+     * This is used to prevent the browser from showing the default drag image.
+     * An earth icon in chrome is used as the default drag image.
+     * This image must be loaded before the dragStart event triggers.
+     */
     const emptyImage = new Image(1, 1)
     emptyImage.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
     dndContext.set({

@@ -45,6 +45,13 @@ export function useTableHandleColumnTrigger(
     }
     const prev = dndContext.peek()
     const index = context.peek()?.colIndex ?? -1
+
+    if (index < 0) {
+      console.warn('Invalid row index for drag operation:', index)
+      event.preventDefault()
+      return
+    }
+
     dndContext.set({
       ...prev,
       direction: 'col',
@@ -57,6 +64,10 @@ export function useTableHandleColumnTrigger(
 
   useEventListener(host, 'drag', (event) => {
     const prev = dndContext.peek()
+    if (event.clientX === 0 && event.clientY === 0) {
+      return
+    }
+
     dndContext.set({
       ...prev,
       direction: 'col',

@@ -22,6 +22,19 @@ export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor<
       const editorInstance = editor.peek()
       if (!editorInstance) return
       const { droppingIndex, draggingIndex, direction } = dndContext.peek()
+
+      // Validate indices
+      if (draggingIndex < 0 || droppingIndex < 0) {
+        console.warn('Invalid drag indices:', { draggingIndex, droppingIndex })
+        return
+      }
+
+      // Validate direction
+      if (direction !== 'row' && direction !== 'col') {
+        console.warn('Invalid drag direction:', direction)
+        return
+      }
+
       if (direction === 'row') {
         editorInstance.commands.moveTableRow({
           origin: draggingIndex,

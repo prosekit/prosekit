@@ -50,6 +50,13 @@ export function useTableHandleRowTrigger(
     }
     const prev = dndContext.peek()
     const index = context.peek()?.rowIndex ?? -1
+
+    if (index < 0) {
+      console.warn('Invalid row index for drag operation:', index)
+      event.preventDefault()
+      return
+    }
+
     dndContext.set({
       ...prev,
       direction: 'row',
@@ -62,6 +69,10 @@ export function useTableHandleRowTrigger(
 
   useEventListener(host, 'drag', (event) => {
     const prev = dndContext.peek()
+    if (event.clientX === 0 && event.clientY === 0) {
+      return
+    }
+
     dndContext.set({
       ...prev,
       direction: 'row',

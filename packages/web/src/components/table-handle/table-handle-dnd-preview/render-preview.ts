@@ -26,9 +26,12 @@ export function createPreviewDOM(
   } else {
     rows.forEach((row) => {
       const rowDOM = row.cloneNode(false)
-      const cellDOM = row.querySelectorAll('td')[index].cloneNode(true)
-      rowDOM.appendChild(cellDOM)
-      previewTableBody.appendChild(rowDOM)
+      const cells = row.querySelectorAll('td')
+      if (cells[index]) {
+        const cellDOM = cells[index].cloneNode(true)
+        rowDOM.appendChild(cellDOM)
+        previewTableBody.appendChild(rowDOM)
+      }
     })
   }
 }

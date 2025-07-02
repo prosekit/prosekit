@@ -49,6 +49,7 @@ export function useInitDndPosition(
   })
 
   useEffect(host, () => {
+    let cancelled = false
     const editorInstance = editor.get()
     if (!editorInstance) return
 
@@ -87,14 +88,20 @@ export function useInitDndPosition(
       })],
     })
       .then(({ x, y }) => {
+        if (cancelled) return
         Object.assign(host.style, {
           left: `${x}px`,
           top: `${y}px`,
         })
       })
       .catch((error) => {
+        if (cancelled) return
         console.error(error)
       })
+
+    return () => {
+      cancelled = true
+    }
   })
 }
 
@@ -108,6 +115,8 @@ function getTableDOMByPos(view: EditorView, pos: number): HTMLTableElement | und
 
 function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction: 'row' | 'col'): HTMLTableCellElement | undefined {
   const rows = table.querySelectorAll('tr')
+  if (index < 0 || index >= rows.length) return undefined
+
   if (direction === 'row') {
     const row = rows[index]
     const cell = row.querySelector('td')

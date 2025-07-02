@@ -20,7 +20,7 @@ export function useUpdatePreviewPosition(host: ConnectableElement, editor: Reado
   const dndContext = tableHandleDndContext.consume(host)
   const rootContext = tableHandleRootContext.consume(host)
 
-  const draggingSingal = createComputed(() => {
+  const draggingSignal = createComputed(() => {
     const context = dndContext.get()
     return context.dragging
   })
@@ -38,7 +38,7 @@ export function useUpdatePreviewPosition(host: ConnectableElement, editor: Reado
   useEffect(host, () => {
     const editorInstance = editor.get()
     if (!editorInstance) return
-    if (!draggingSingal.get()) return
+    if (!draggingSignal.get()) return
 
     const { view } = editorInstance
     const { draggingIndex, direction } = dndContext.peek()

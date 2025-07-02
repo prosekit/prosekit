@@ -8,6 +8,7 @@ import {
   computePosition,
   offset,
 } from '@floating-ui/dom'
+import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
@@ -108,7 +109,7 @@ export function useInitDndPosition(
 function getTableDOMByPos(view: EditorView, pos: number): HTMLTableElement | undefined {
   const dom = view.domAtPos(pos).node
   if (!dom) return
-  const element = dom instanceof HTMLElement ? dom : dom.parentElement
+  const element = isHTMLElement(dom) ? dom : dom.parentElement
   const table = element?.closest('table')
   return table ?? undefined
 }

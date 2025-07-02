@@ -1,3 +1,5 @@
+import { isHTMLElement } from "@ocavue/utils"
+
 export function getDragOverColumn(
   table: HTMLTableElement,
   cell: HTMLElement,
@@ -5,7 +7,7 @@ export function getDragOverColumn(
   direction: 'left' | 'right',
 ): [element: Element, index: number] | undefined {
   const offsetParent = table.offsetParent
-  if (!offsetParent || !(offsetParent instanceof HTMLElement)) return
+  if (!offsetParent || !isHTMLElement(offsetParent)) return
   const wrapperOffsetLeft = offsetParent.offsetLeft
   const firstRow = table.querySelector('tr')
   if (!firstRow) return
@@ -59,7 +61,7 @@ export function getDragOverRow(
 ): [element: Element, index: number] | undefined {
   const offsetParent = table.offsetParent
 
-  if (!offsetParent || !(offsetParent instanceof HTMLElement)) return
+  if (!offsetParent || !isHTMLElement(offsetParent)) return
 
   const wrapperOffsetTop = offsetParent.offsetTop
 

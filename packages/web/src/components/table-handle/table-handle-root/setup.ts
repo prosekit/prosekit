@@ -65,8 +65,7 @@ export function useTableHandleRoot(
 
   useEffect(host, () => {
     const emptyImage = new Image(1, 1)
-    emptyImage.src =
-      'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+    emptyImage.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
     dndContext.set({
       ...dndContext.peek(),
       dndPreviewImage: emptyImage,

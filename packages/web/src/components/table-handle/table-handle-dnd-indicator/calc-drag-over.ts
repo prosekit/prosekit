@@ -1,4 +1,4 @@
-import { isHTMLElement } from "@ocavue/utils"
+import { isHTMLElement } from '@ocavue/utils'
 
 export function getDragOverColumn(
   table: HTMLTableElement,

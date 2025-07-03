@@ -97,7 +97,7 @@ export function useInitDndPosition(
       })
       .catch((error) => {
         if (cancelled) return
-        console.error(error)
+        throw error
       })
 
     return () => {

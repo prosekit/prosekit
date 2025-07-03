@@ -73,7 +73,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
           ...dndContext.peek(),
           droppingIndex: index,
         })
-        computePosition(col, host, {
+        void computePosition(col, host, {
           placement: direction === 'left' ? 'left' : 'right',
           middleware: [
             offset(direction === 'left' ? -1 * handleWidth : 0),
@@ -83,7 +83,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
             Object.assign(host.style, {
               left: `${x}px`,
             })
-          }).catch(console.error)
+          })
       }
 
       return
@@ -99,7 +99,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
           ...dndContext.peek(),
           droppingIndex: index,
         })
-        computePosition(row, host, {
+        void computePosition(row, host, {
           placement: direction === 'up' ? 'top' : 'bottom',
           middleware: [
             offset(direction === 'up' ? -1 * handleWidth : 0),
@@ -109,7 +109,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
             Object.assign(host.style, {
               top: `${y}px`,
             })
-          }).catch(console.error)
+          })
       }
 
       return

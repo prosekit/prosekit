@@ -49,7 +49,7 @@ export function useUpdatePreviewPosition(host: ConnectableElement, editor: Reado
     if (!relatedDOMs) return
     const { cell } = relatedDOMs
 
-    computePosition(
+    void computePosition(
       getVirtualElement(cell, x, y),
       host,
       { placement: direction === 'row' ? 'right' : 'bottom' },
@@ -67,8 +67,6 @@ export function useUpdatePreviewPosition(host: ConnectableElement, editor: Reado
         })
         return
       }
-    }).catch((error) => {
-      console.error(error)
     })
   })
 }

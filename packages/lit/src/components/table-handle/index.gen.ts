@@ -2,9 +2,9 @@ export { TableHandleColumnRootElement as TableHandleColumnRoot } from '@prosekit
 
 export { TableHandleColumnTriggerElement as TableHandleColumnTrigger } from '@prosekit/web/table-handle'
 
-export { TableHandleDndIndicatorElement as TableHandleDndIndicator } from '@prosekit/web/table-handle'
+export { TableHandleDragIndicatorElement as TableHandleDragIndicator } from '@prosekit/web/table-handle'
 
-export { TableHandleDndPreviewElement as TableHandleDndPreview } from '@prosekit/web/table-handle'
+export { TableHandleDragPreviewElement as TableHandleDragPreview } from '@prosekit/web/table-handle'
 
 export { TableHandlePopoverContentElement as TableHandlePopoverContent } from '@prosekit/web/table-handle'
 

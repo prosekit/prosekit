@@ -10,7 +10,7 @@ import {
 } from '../dnd'
 
 import { useDrop } from './drop'
-import type { TableHandleDndIndicatorProps } from './types'
+import type { TableHandleDragIndicatorProps } from './types'
 import { useUpdateIndicatorPosition } from './updater'
 
 const HANDLE_WIDTH = 2
@@ -18,7 +18,7 @@ const HANDLE_WIDTH = 2
 /**
  * @internal
  */
-export function useTableHandleDndIndicator(host: ConnectableElement, { state }: { state: SignalState<TableHandleDndIndicatorProps> }): void {
+export function useTableHandleDragIndicator(host: ConnectableElement, { state }: { state: SignalState<TableHandleDragIndicatorProps> }): void {
   const { editor } = state
 
   useEffect(host, () => {

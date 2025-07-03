@@ -2,9 +2,9 @@ export { TableHandleColumnRoot, type TableHandleColumnRootProps } from './table-
 
 export { TableHandleColumnTrigger, type TableHandleColumnTriggerProps } from './table-handle-column-trigger.gen'
 
-export { TableHandleDndIndicator, type TableHandleDndIndicatorProps } from './table-handle-dnd-indicator.gen'
+export { TableHandleDragIndicator, type TableHandleDragIndicatorProps } from './table-handle-drag-indicator.gen'
 
-export { TableHandleDndPreview, type TableHandleDndPreviewProps } from './table-handle-dnd-preview.gen'
+export { TableHandleDragPreview, type TableHandleDragPreviewProps } from './table-handle-drag-preview.gen'
 
 export { TableHandlePopoverContent, type TableHandlePopoverContentProps } from './table-handle-popover-content.gen'
 

@@ -8,13 +8,13 @@ export { TableHandleColumnTriggerElement } from './table-handle-column-trigger/e
 export { tableHandleColumnTriggerEvents, tableHandleColumnTriggerProps, type TableHandleColumnTriggerEvents, type TableHandleColumnTriggerProps } from './table-handle-column-trigger/types'
 export { useTableHandleColumnTrigger } from './table-handle-column-trigger/setup'
 
-export { TableHandleDndIndicatorElement } from './table-handle-dnd-indicator/element.gen'
-export { tableHandleDndIndicatorEvents, tableHandleDndIndicatorProps, type TableHandleDndIndicatorEvents, type TableHandleDndIndicatorProps } from './table-handle-dnd-indicator/types'
-export { useTableHandleDndIndicator } from './table-handle-dnd-indicator/setup'
+export { TableHandleDragIndicatorElement } from './table-handle-drag-indicator/element.gen'
+export { tableHandleDragIndicatorEvents, tableHandleDragIndicatorProps, type TableHandleDragIndicatorEvents, type TableHandleDragIndicatorProps } from './table-handle-drag-indicator/types'
+export { useTableHandleDragIndicator } from './table-handle-drag-indicator/setup'
 
-export { TableHandleDndPreviewElement } from './table-handle-dnd-preview/element.gen'
-export { tableHandleDndPreviewEvents, tableHandleDndPreviewProps, type TableHandleDndPreviewEvents, type TableHandleDndPreviewProps } from './table-handle-dnd-preview/types'
-export { useTableHandleDndPreview } from './table-handle-dnd-preview/setup'
+export { TableHandleDragPreviewElement } from './table-handle-drag-preview/element.gen'
+export { tableHandleDragPreviewEvents, tableHandleDragPreviewProps, type TableHandleDragPreviewEvents, type TableHandleDragPreviewProps } from './table-handle-drag-preview/types'
+export { useTableHandleDragPreview } from './table-handle-drag-preview/setup'
 
 export { TableHandlePopoverContentElement } from './table-handle-popover-content/element.gen'
 export { tableHandlePopoverContentEvents, tableHandlePopoverContentProps, type TableHandlePopoverContentEvents, type TableHandlePopoverContentProps } from './table-handle-popover-content/types'

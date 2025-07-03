@@ -13,13 +13,13 @@ import {
   clearPreviewDOM,
   createPreviewDOM,
 } from './render-preview'
-import type { TableHandleDndPreviewProps } from './types'
+import type { TableHandleDragPreviewProps } from './types'
 import { useUpdatePreviewPosition } from './updater'
 
 /**
  * @internal
  */
-export function useTableHandleDndPreview(host: ConnectableElement, { state }: { state: SignalState<TableHandleDndPreviewProps> }): void {
+export function useTableHandleDragPreview(host: ConnectableElement, { state }: { state: SignalState<TableHandleDragPreviewProps> }): void {
   const { editor } = state
 
   useEffect(host, () => {

@@ -23,6 +23,7 @@ export function useTableHandleDndPreview(host: ConnectableElement, { state }: { 
   const { editor } = state
 
   useEffect(host, () => {
+    host.classList.add('ProseMirror')
     Object.assign(host.style, {
       position: 'absolute',
       // Make sure drop on preview will trigger drop event on the host

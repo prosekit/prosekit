@@ -1,30 +1,20 @@
 .ProseMirror .tableWrapper {
   overflow-x: auto;
 }
-.ProseMirror table,
-prosekit-table-handle-dnd-preview table {
+.ProseMirror table {
   width: 100%;
   overflow: hidden;
   border-collapse: collapse;
   table-layout: fixed;
 }
 .ProseMirror td,
-.ProseMirror th,
-prosekit-table-handle-dnd-preview td,
-prosekit-table-handle-dnd-preview th {
+.ProseMirror th {
   box-sizing: border-box;
   position: relative;
   padding-right: 0.75rem;
   padding-left: 0.75rem;
   border-width: 1px;
   vertical-align: top;
-}
-
-prosekit-table-handle-dnd-preview td p,
-prosekit-table-handle-dnd-preview th p {
-  margin: 0;
-  padding: 0.5rem 0;
-  line-height: 1.5;
 }
 
 prosekit-table-handle-dnd-indicator {

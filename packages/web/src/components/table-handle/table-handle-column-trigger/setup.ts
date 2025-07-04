@@ -2,7 +2,7 @@ import {
   useEffect,
   useEventListener,
   type ConnectableElement,
-  type SignalState,
+  type SetupOptions,
 } from '@aria-ui/core'
 import { useMenuTrigger } from '@aria-ui/menu/elements'
 import { selectTableColumn } from '@prosekit/extensions/table'
@@ -13,14 +13,17 @@ import {
 } from '../context'
 import { useEmptyImage } from '../hooks/use-empty-image'
 
-import type { TableHandleColumnTriggerProps } from './types'
+import type {
+  TableHandleColumnTriggerEvents,
+  TableHandleColumnTriggerProps,
+} from './types'
 
 /**
  * @internal
  */
 export function useTableHandleColumnTrigger(
   host: ConnectableElement,
-  { state }: { state: SignalState<TableHandleColumnTriggerProps> },
+  { state }: SetupOptions<TableHandleColumnTriggerProps, TableHandleColumnTriggerEvents>,
 ): void {
   useMenuTrigger(host)
 
@@ -54,7 +57,7 @@ export function useTableHandleColumnTrigger(
     const index = context.peek()?.colIndex ?? -1
 
     if (index < 0) {
-      console.warn('[prosekit] Invalid row index for drag operation:', index)
+      console.warn('[prosekit] Invalid column index for drag operation:', index)
       event.preventDefault()
       return
     }

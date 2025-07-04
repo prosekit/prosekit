@@ -23,9 +23,7 @@ import type {
  */
 export function useTableHandleRowTrigger(
   host: ConnectableElement,
-  {
-    state,
-  }: SetupOptions<TableHandleRowTriggerProps, TableHandleRowTriggerEvents>,
+  { state }: SetupOptions<TableHandleRowTriggerProps, TableHandleRowTriggerEvents>,
 ): void {
   useMenuTrigger(host)
 

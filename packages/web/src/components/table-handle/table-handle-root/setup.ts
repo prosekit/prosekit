@@ -23,6 +23,7 @@ import {
   type TableHandleDndContext,
   type TableHandleRootContext,
 } from '../context'
+import { useDrop } from '../hooks/use-drop'
 import {
   getHoveringCell,
   isHoveringCellInfoEqual,
@@ -57,6 +58,8 @@ export function useTableHandleRoot(
 
   tableHandleRootContext.provide(host, context)
   tableHandleDndContext.provide(host, dndContext)
+
+  useDrop(host, editor, dndContext)
 }
 
 function useHoveringCell(

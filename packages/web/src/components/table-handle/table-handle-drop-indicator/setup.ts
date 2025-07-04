@@ -8,7 +8,6 @@ import {
   useInitDndPosition,
   type OnInitParams,
 } from '../dnd'
-import { useDrop } from '../hooks/use-drop'
 
 import type { TableHandleDropIndicatorProps } from './types'
 import { useUpdateIndicatorPosition } from './updater'
@@ -31,8 +30,6 @@ export function useTableHandleDropIndicator(host: ConnectableElement, { state }:
   useInitDndPosition(host, editor, onInitIndicatorPosition)
 
   useUpdateIndicatorPosition(host, editor, HANDLE_WIDTH)
-
-  useDrop(host, editor)
 }
 
 function onInitIndicatorPosition({ host, direction, dragging, table }: OnInitParams): void {

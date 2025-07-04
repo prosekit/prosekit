@@ -10,16 +10,26 @@ import {
   moveTableRow,
 } from '@prosekit/extensions/table'
 
-import { tableHandleDndContext } from '../context'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
+import type { TableHandleDndContext } from '../context'
 
-export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor | null>): void {
-  const dndContext = tableHandleDndContext.consume(host)
+export function useDrop(
+  host: ConnectableElement,
+  editor: ReadonlySignal<Editor | null>,
+  dndContext: ReadonlySignal<TableHandleDndContext>,
+): void {
   const dragging = createComputed(() => dndContext.get().dragging)
 
   useEffect(host, () => {
     if (!dragging.get()) return
 
-    const onDrop = () => {
+    const view = getSafeEditorView(editor.peek())
+    if (!view || !view.editable) return
+
+    const ownerDocument = view.dom?.ownerDocument
+    if (!ownerDocument) return
+
+    const handleDrop = () => {
       const editorValue = editor.peek()
       if (!editorValue) return
       const { droppingIndex, draggingIndex, direction } = dndContext.peek()
@@ -46,9 +56,19 @@ export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor 
       }
     }
 
-    document.addEventListener('drop', onDrop)
+    // To make `drop` event work, we need to prevent the default behavior of the
+    // `dragover` event for drop zone. Here we set the whole document as the
+    // drop zone so that even the mouse moves outside the editor, the `drop`
+    // event will still be triggered.
+    const handleDragOver = (event: DragEvent) => {
+      event.preventDefault()
+    }
+
+    ownerDocument.addEventListener('dragover', handleDragOver)
+    ownerDocument.addEventListener('drop', handleDrop)
     return () => {
-      document.removeEventListener('drop', onDrop)
+      ownerDocument.removeEventListener('dragover', handleDragOver)
+      ownerDocument.removeEventListener('drop', handleDrop)
     }
   })
 }

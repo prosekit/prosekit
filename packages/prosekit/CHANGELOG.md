@@ -1,5 +1,31 @@
 # prosekit
 
+## 0.14.0
+
+### Minor Changes
+
+- [`f9ebe7e`](https://github.com/ocavue/prosekit/commit/f9ebe7e9d5e2e94fdba20384c3871a6988101954) ![](https://prosekit.dev/b/web)
+
+  You can now easily drag and drop table rows and columns by incorporating the new `<TableHandleDragPreview/>` and `<TableHandleDropIndicator/>` components.
+
+### Patch Changes
+
+- [`eb7d253`](https://github.com/ocavue/prosekit/commit/eb7d25326710e8263a5bfb49fd1a17c50069e853) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where a table handle menu item doesn't fire the `select` event after the second click.
+
+- [`f0d4985`](https://github.com/ocavue/prosekit/commit/f0d49852ca621476c27fe544eee8d7fc61954c0a) ![](https://prosekit.dev/b/core)
+
+  Deprecate `collectChildren` utility.
+
+- [`f9ebe7e`](https://github.com/ocavue/prosekit/commit/f9ebe7e9d5e2e94fdba20384c3871a6988101954) ![](https://prosekit.dev/b/extensions)
+
+  Add `moveTableColumn` and `moveTableRow` commands.
+
+- [`c3b1079`](https://github.com/ocavue/prosekit/commit/c3b1079ccc4e71536815251295bb6c115fe3b337) ![](https://prosekit.dev/b/web)
+
+  Add a new `stateChange` event to the `BlockHandlePopover` component.
+
 ## 0.13.6
 
 ### Patch Changes
@@ -31,13 +57,11 @@
   ### Using the `derive` Function
 
   `useEditorDerivedValue` accepts a `derive` function as its first argument. This function:
-
   1.  Receives the `editor` instance.
   2.  Computes and returns a value based on the editor's current state.
   3.  Is called when the editor mounts and whenever the editor's document or selection state changes.
 
   Crucially, the **`derive` function must be memoized**. If it's re-created on every render, `useEditorDerivedValue` might not work as expected and could lead to performance issues.
-
   - **If defined inside a component, wrap `derive` with `useCallback`:**
 
     ```tsx
@@ -396,7 +420,6 @@
 - [`b5c0225`](https://github.com/ocavue/prosekit/commit/b5c022531ea9463e50df90e8a471c8e77a9355e6) ![](https://prosekit.dev/b/extensions)
 
   Add a new `prosekit/extensions/file` module to handle files in the editor:
-
   - `defineFilePasteHandler`: Handle files pasted into the editor
   - `defineFileDropHandler`: Handle files dropped into the editor
   - `UploadTask`: Manage file uploads
@@ -412,12 +435,10 @@
 - [`1b080e7`](https://github.com/ocavue/prosekit/commit/1b080e7dc86d4c8d54aee6aaeb568594dd7a7908) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
 
   This version introduces significant changes to the event handling mechanism for components:
-
   - Implementation Changes: Events are no longer handled by passing them to callback functions. Instead, the underlying custom elements now use `dispatchEvent()` to propagate events upwards, similar to native HTML elements. This approach allows for more native-like event handling, reducing code complexity.
   - Impact on UI Framework Integrations (React, Vue, Preact, Svelte, Solid): Except for the following change, the API remains largely unchanged.
 
   Event handlers for component `ResizableRoot` has changed:
-
   - Removed: `onSizeChangeStart`, `onSizeChange`, `onSizeChangeEnd`
   - Replaced with: `onResizeStart`, `onResizeEnd`.
 
@@ -502,7 +523,6 @@
 - [`f3ff15a`](https://github.com/ocavue/prosekit/commit/f3ff15a4837c676a45759f1b467d42b8628a3129) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
 
   Add new components:
-
   - `BlockHandlePopover`: A popover that appears on the left side of a block when you hover over it.
   - `BlockHandleAdd`: A button that lets you insert a new block below the one you're hovering over.
   - `BlockHandleDraggable`: A draggable component that allows to reorder a block.
@@ -520,7 +540,6 @@
 - [`80572dd`](https://github.com/ocavue/prosekit/commit/80572dd788a6019d128200487dafdf50264d573e) ![](https://prosekit.dev/b/extensions)
 
   Add the following command functions to the table extension:
-
   - `selectTable`
   - `selectTableCell`
   - `selectTableColumn`
@@ -577,7 +596,6 @@
 - [`76fb642`](https://github.com/ocavue/prosekit/commit/76fb64238637f76a9c26b2f2dcca5a79c3a45e3b) ![](https://prosekit.dev/b/core)
 
   Add some common util functions for working with ProseMirror.
-
   - `findParentNode`
   - `findParentNodeOfTypes`
   - `collectChildren`
@@ -1096,7 +1114,6 @@
 - [`c0f4e51`](https://github.com/ocavue/prosekit/commit/c0f4e51af135a594e0949ed2dfd8c543be290668) ![](https://prosekit.dev/b/core)
 
   Added new utility functions for converting between ProseMirror data and HTML:
-
   - `elementFromJSON`
   - `elementFromNode`
   - `htmlFromJSON`
@@ -1109,7 +1126,6 @@
 - [`c23c231`](https://github.com/ocavue/prosekit/commit/c23c2312915616269eea7808729796d51f10a92a) ![](https://prosekit.dev/b/core)
 
   Add following functions for defining event handlers.
-
   - `defineDOMEventHandler`
   - `defineKeyDownHandler`
   - `defineKeyPressHandler`
@@ -1335,7 +1351,6 @@
 - [`1393d74`](https://github.com/ocavue/prosekit/commit/1393d740e35118c27b84ae535156cf3030914a6f) ![](https://prosekit.dev/b/core)
 
   Add the following functions to register event handlers into the editor.
-
   - `defineMountHandler`
   - `defineUnmountHandler`
   - `defineUpdateHandler`

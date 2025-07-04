@@ -22,18 +22,16 @@ testStory('table', () => {
       D1: editor.locator('td', { hasText: 'D1' }),
       A2: editor.locator('td', { hasText: 'A2' }),
       B2: editor.locator('td', { hasText: 'B2' }),
+      C2: editor.locator('td', { hasText: 'C2' }),
+      D2: editor.locator('td', { hasText: 'D2' }),
     } as const
 
-    async function expectSelected(selected: Array<keyof typeof cells>) {
-      for (const key of selected) {
-        await expect(cells[key]).toHaveClass(/selectedCell/)
-      }
+    async function expectCellToBeSelected(cell: keyof typeof cells) {
+      await expect(cells[cell]).toHaveClass(/selectedCell/)
     }
 
-    async function expectNotSelected(unselected: Array<keyof typeof cells>) {
-      for (const key of unselected) {
-        await expect(cells[key]).not.toHaveClass(/selectedCell/)
-      }
+    async function expectCellToBeNotSelected(cell: keyof typeof cells) {
+      await expect(cells[cell]).not.toHaveClass(/selectedCell/)
     }
 
     await test.step('initial table content is visible', async () => {
@@ -54,20 +52,62 @@ testStory('table', () => {
     })
 
     await test.step('row handle selects the first row', async () => {
-      // ensure no selection beforehand
-      await expect(editor.locator('td.selectedCell')).toHaveCount(0)
-
       await rowHandle.click()
 
-      await expectSelected(['A1', 'B1', 'C1', 'D1'])
-      await expectNotSelected(['A2'])
+      await expectCellToBeSelected('A1')
+      await expectCellToBeSelected('B1')
+      await expectCellToBeSelected('C1')
+      await expectCellToBeSelected('D1')
+      await expectCellToBeNotSelected('A2')
+      await expectCellToBeNotSelected('B2')
+      await expectCellToBeNotSelected('C2')
+      await expectCellToBeNotSelected('D2')
     })
 
     await test.step('column handle selects the first column', async () => {
       await colHandle.click()
 
-      await expectSelected(['A1', 'A2'])
-      await expectNotSelected(['B1'])
+      await expectCellToBeSelected('A1')
+      await expectCellToBeSelected('A2')
+      await expectCellToBeNotSelected('B1')
+      await expectCellToBeNotSelected('B2')
+      await expectCellToBeNotSelected('C1')
+      await expectCellToBeNotSelected('C2')
+      await expectCellToBeNotSelected('D1')
+      await expectCellToBeNotSelected('D2')
+    })
+
+    await test.step('row handle selects the second row', async () => {
+      await hover(cells.A2)
+      await rowHandle.click()
+
+      // Second row should be selected
+      await expectCellToBeSelected('A2')
+      await expectCellToBeSelected('B2')
+      await expectCellToBeSelected('C2')
+      await expectCellToBeSelected('D2')
+
+      // First row should not be selected
+      await expectCellToBeNotSelected('A1')
+      await expectCellToBeNotSelected('B1')
+      await expectCellToBeNotSelected('C1')
+      await expectCellToBeNotSelected('D1')
+    })
+
+    await test.step('column handle selects the last column', async () => {
+      await hover(cells.D1)
+      await colHandle.click()
+
+      await expectCellToBeSelected('D1')
+      await expectCellToBeSelected('D2')
+
+      // Ensure other cells unselected
+      await expectCellToBeNotSelected('A1')
+      await expectCellToBeNotSelected('A2')
+      await expectCellToBeNotSelected('B1')
+      await expectCellToBeNotSelected('B2')
+      await expectCellToBeNotSelected('C1')
+      await expectCellToBeNotSelected('C2')
     })
   })
 })

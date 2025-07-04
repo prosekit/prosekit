@@ -5,11 +5,14 @@ import {
   type ReadonlySignal,
 } from '@aria-ui/core'
 import type { Editor } from '@prosekit/core'
-import type { TableCommandsExtension } from '@prosekit/extensions/table'
+import {
+  moveTableColumn,
+  moveTableRow,
+} from '@prosekit/extensions/table'
 
 import { tableHandleDndContext } from '../context'
 
-export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor<TableCommandsExtension> | null>): void {
+export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor | null>): void {
   const dndContext = tableHandleDndContext.consume(host)
   const draggingSignal = createComputed(() => {
     const context = dndContext.get()
@@ -36,17 +39,17 @@ export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor<
       }
 
       if (direction === 'row') {
-        editorValue.commands.moveTableRow({
+        editorValue.exec(moveTableRow({
           origin: draggingIndex,
           target: droppingIndex,
-        })
+        }))
         return
       }
       if (direction === 'col') {
-        editorValue.commands.moveTableColumn({
+        editorValue.exec(moveTableColumn({
           origin: draggingIndex,
           target: droppingIndex,
-        })
+        }))
         return
       }
     }

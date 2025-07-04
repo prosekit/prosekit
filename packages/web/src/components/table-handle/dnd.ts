@@ -113,17 +113,15 @@ function getTableDOMByPos(view: EditorView, pos: number): HTMLTableElement | und
 }
 
 function getTargetFirstCellDOM(table: HTMLTableElement, index: number, direction: 'row' | 'col'): HTMLTableCellElement | undefined {
-  const rows = table.querySelectorAll('tr')
-
   if (direction === 'row') {
-    const row = rows[index]
-    const cell = row.querySelector('td')
+    const row = table.querySelectorAll('tr')[index]
+    const cell = row?.querySelector('td')
+    return cell ?? undefined
+  } else {
+    const row = table.querySelector('tr')
+    const cell = row?.querySelectorAll('td')[index]
     return cell ?? undefined
   }
-
-  const row = rows[0]
-  const cell = row.querySelectorAll('td')[index]
-  return cell ?? undefined
 }
 
 export function getDndRelatedDOMs(view: EditorView, cellPos: number | undefined, draggingIndex: number, direction: 'row' | 'col'): { table: HTMLTableElement; cell: HTMLTableCellElement } | undefined {

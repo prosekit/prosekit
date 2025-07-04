@@ -17,6 +17,8 @@ import { isCellSelection } from './table-utils'
 function setup() {
   const { editor, n } = setupTest()
 
+  // TODO: add a new command "selectTableCells" so that
+  // we don't need to write this command in every test
   const setCellSelection = (from: number, to: number) => {
     const command: Command = (state, dispatch) => {
       const selection = CellSelection.create(state.doc, from, to)

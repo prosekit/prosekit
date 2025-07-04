@@ -46,14 +46,15 @@ function testSingleStory(
         }
 
         test.beforeEach(async ({ page }) => {
-          // Uncaught (in promise) TypeError + friends are page errors.
+          uncaughtErrors.length = 0
+          // Collect uncaught runtime errors.
           page.on('pageerror', handlePageError)
+
           await page.goto('stories/' + example.framework + '/' + example.story)
         })
 
         test.afterEach(({ page }) => {
           page.off('pageerror', handlePageError)
-          uncaughtErrors.length = 0
         })
 
         callback({ example: example.name, getUncaughtErrors })

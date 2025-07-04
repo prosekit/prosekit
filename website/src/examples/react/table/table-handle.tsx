@@ -3,8 +3,8 @@ import { useEditorDerivedValue } from 'prosekit/react'
 import {
   TableHandleColumnRoot,
   TableHandleColumnTrigger,
+  TableHandleDragIndicator,
   TableHandleDragPreview,
-  TableHandleDropCursor,
   TableHandlePopoverContent,
   TableHandlePopoverItem,
   TableHandleRoot,
@@ -53,7 +53,7 @@ export function TableHandle() {
   return (
     <TableHandleRoot className="contents">
       <TableHandleDragPreview />
-      <TableHandleDropCursor />
+      <TableHandleDragIndicator />
       <TableHandleColumnRoot className="CSS_TABLE_COLUMN_HANDLE">
         <TableHandleColumnTrigger>
           <div className="CSS_ICON_TABLE_COLUMN_HANDLE"></div>

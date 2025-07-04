@@ -9,7 +9,7 @@ import {
   type OnInitParams,
 } from '../dnd'
 
-import type { TableHandleDropCursorProps } from './types'
+import type { TableHandleDragIndicatorProps } from './types'
 import { useUpdateIndicatorPosition } from './updater'
 import { useDrop } from './use-drop'
 
@@ -18,7 +18,7 @@ const HANDLE_WIDTH = 2
 /**
  * @internal
  */
-export function useTableHandleDropCursor(host: ConnectableElement, { state }: { state: SignalState<TableHandleDropCursorProps> }): void {
+export function useTableHandleDragIndicator(host: ConnectableElement, { state }: { state: SignalState<TableHandleDragIndicatorProps> }): void {
   const { editor } = state
 
   useEffect(host, () => {

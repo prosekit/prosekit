@@ -17,7 +17,7 @@
   vertical-align: top;
 }
 
-prosekit-table-handle-drop-cursor {
+prosekit-table-handle-drag-indicator {
   background-color: HighlightText;
 }
 

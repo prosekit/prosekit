@@ -38,7 +38,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 2, target: 0 }))
+      editor.exec(moveTableColumn({ from: 2, to: 0 }))
 
       const expected = doc(
         table(
@@ -61,7 +61,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 1, target: 2 }))
+      editor.exec(moveTableColumn({ from: 1, to: 2 }))
 
       const expected = doc(
         table(
@@ -84,7 +84,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 2, target: 0, select: true }))
+      editor.exec(moveTableColumn({ from: 2, to: 0, select: true }))
 
       // Check that a cell selection was created
       expect(editor.state.selection).toBeInstanceOf(CellSelection)
@@ -106,7 +106,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 1, target: 0 }))
+      editor.exec(moveTableColumn({ from: 1, to: 0 }))
 
       const expected = doc(
         table(
@@ -129,7 +129,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 1, target: 0 }))
+      editor.exec(moveTableColumn({ from: 1, to: 0 }))
 
       const expected = doc(
         table(
@@ -152,7 +152,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 1, target: 0 }))
+      editor.exec(moveTableColumn({ from: 1, to: 0 }))
 
       const expected = doc(
         table(
@@ -175,7 +175,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 0, target: 2 }))
+      editor.exec(moveTableColumn({ from: 0, to: 2 }))
 
       const expected = doc(
         table(
@@ -198,7 +198,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 2, target: 0 }))
+      editor.exec(moveTableColumn({ from: 2, to: 0 }))
 
       const expected = doc(
         table(
@@ -223,7 +223,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 1, target: 2 }))
+      editor.exec(moveTableColumn({ from: 1, to: 2 }))
 
       const expected = doc(
         table(
@@ -246,7 +246,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 1, target: 2 }))
+      editor.exec(moveTableColumn({ from: 1, to: 2 }))
 
       const expected = doc(
         table(
@@ -269,7 +269,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 0, target: 2 }))
+      editor.exec(moveTableColumn({ from: 0, to: 2 }))
 
       const expected = doc(
         table(
@@ -292,7 +292,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 2, target: 1 }))
+      editor.exec(moveTableColumn({ from: 2, to: 1 }))
 
       const expected = doc(
         table(
@@ -317,7 +317,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 1, target: 0 }))
+      editor.exec(moveTableColumn({ from: 1, to: 0 }))
 
       const expected = doc(
         table(
@@ -341,7 +341,7 @@ describe('moveTableColumn', () => {
         )
 
         editor.set(docNode)
-        editor.exec(moveTableColumn({ origin: 1, target: 0 }))
+        editor.exec(moveTableColumn({ from: 1, to: 0 }))
 
         const expected = doc(
           table(
@@ -367,7 +367,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 0, target: 2 }))
+      editor.exec(moveTableColumn({ from: 0, to: 2 }))
 
       const expected = doc(
         table(
@@ -390,7 +390,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 2, target: 0 }))
+      editor.exec(moveTableColumn({ from: 2, to: 0 }))
 
       const expected = doc(
         table(
@@ -413,7 +413,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 1, target: 2 }))
+      editor.exec(moveTableColumn({ from: 1, to: 2 }))
 
       const expected = doc(
         table(
@@ -438,7 +438,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 0, target: 2 }))
+      editor.exec(moveTableColumn({ from: 0, to: 2 }))
 
       const expected = doc(
         table(
@@ -461,7 +461,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 2, target: 0 }))
+      editor.exec(moveTableColumn({ from: 2, to: 0 }))
 
       const expected = doc(
         table(
@@ -484,7 +484,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 1, target: 2 }))
+      editor.exec(moveTableColumn({ from: 1, to: 2 }))
 
       const expected = doc(
         table(
@@ -509,7 +509,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 0, target: 2 }))
+      editor.exec(moveTableColumn({ from: 0, to: 2 }))
 
       const expected = doc(
         table(
@@ -532,7 +532,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 2, target: 0 }))
+      editor.exec(moveTableColumn({ from: 2, to: 0 }))
 
       const expected = doc(
         table(
@@ -555,7 +555,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 1, target: 2 }))
+      editor.exec(moveTableColumn({ from: 1, to: 2 }))
 
       const expected = doc(
         table(
@@ -580,7 +580,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 2, target: 0 }))
+      editor.exec(moveTableColumn({ from: 2, to: 0 }))
 
       const expected = doc(
         table(
@@ -603,7 +603,7 @@ describe('moveTableColumn', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableColumn({ origin: 0, target: 2 }))
+      editor.exec(moveTableColumn({ from: 0, to: 2 }))
 
       const expected = doc(
         table(

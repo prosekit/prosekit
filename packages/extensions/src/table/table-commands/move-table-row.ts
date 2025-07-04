@@ -38,9 +38,9 @@ export interface MoveTableRowOptions {
  */
 export function moveTableRow(options: MoveTableRowOptions): Command {
   return (state, dispatch) => {
-    const { from, to, select = true, pos = state.selection.from } = options
+    const { from: originIndex, to: targetIndex, select = true, pos = state.selection.from } = options
     const tr = state.tr
-    if (moveRow({ tr, originIndex: from, targetIndex: to, select, pos })) {
+    if (moveRow({ tr, originIndex, targetIndex, select, pos })) {
       dispatch?.(tr)
       return true
     }

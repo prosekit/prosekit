@@ -38,9 +38,9 @@ export interface MoveTableColumnOptions {
  */
 export function moveTableColumn(options: MoveTableColumnOptions): Command {
   return (state, dispatch) => {
-    const { from, to, select = true, pos = state.selection.from } = options
+    const { from: originIndex, to: targetIndex, select = true, pos = state.selection.from } = options
     const tr = state.tr
-    if (moveColumn({ tr, originIndex: from, targetIndex: to, select, pos })) {
+    if (moveColumn({ tr, originIndex, targetIndex, select, pos })) {
       dispatch?.(tr)
       return true
     }

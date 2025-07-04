@@ -38,7 +38,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 2, target: 0 }))
+      editor.exec(moveTableRow({ from: 2, to: 0 }))
 
       const expected = doc(
         table(
@@ -61,7 +61,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 1, target: 2 }))
+      editor.exec(moveTableRow({ from: 1, to: 2 }))
 
       const expected = doc(
         table(
@@ -84,7 +84,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 2, target: 0, select: true }))
+      editor.exec(moveTableRow({ from: 2, to: 0, select: true }))
 
       // Check that a cell selection was created
       expect(editor.state.selection).toBeInstanceOf(CellSelection)
@@ -106,7 +106,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 1, target: 0 }))
+      editor.exec(moveTableRow({ from: 1, to: 0 }))
 
       const expected = doc(
         table(
@@ -129,7 +129,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 1, target: 0 }))
+      editor.exec(moveTableRow({ from: 1, to: 0 }))
 
       const expected = doc(
         table(
@@ -152,7 +152,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 0, target: 2 }))
+      editor.exec(moveTableRow({ from: 0, to: 2 }))
 
       const expected = doc(
         table(
@@ -177,7 +177,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 1, target: 2 }))
+      editor.exec(moveTableRow({ from: 1, to: 2 }))
 
       const expected = doc(
         table(
@@ -202,7 +202,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 0, target: 2 }))
+      editor.exec(moveTableRow({ from: 0, to: 2 }))
 
       const expected = doc(
         table(
@@ -225,7 +225,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 2, target: 0 }))
+      editor.exec(moveTableRow({ from: 2, to: 0 }))
 
       const expected = doc(
         table(
@@ -248,7 +248,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 0, target: 2 }))
+      editor.exec(moveTableRow({ from: 0, to: 2 }))
 
       const expected = doc(
         table(
@@ -271,7 +271,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 2, target: 0 }))
+      editor.exec(moveTableRow({ from: 2, to: 0 }))
 
       const expected = doc(
         table(
@@ -294,7 +294,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 0, target: 2 }))
+      editor.exec(moveTableRow({ from: 0, to: 2 }))
 
       const expected = doc(
         table(
@@ -317,7 +317,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 0, target: 2 }))
+      editor.exec(moveTableRow({ from: 0, to: 2 }))
 
       const expected = doc(
         table(
@@ -342,7 +342,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 0, target: 2 }))
+      editor.exec(moveTableRow({ from: 0, to: 2 }))
 
       const expected = doc(
         table(
@@ -365,7 +365,7 @@ describe('moveTableRow', () => {
       )
 
       editor.set(docNode)
-      editor.exec(moveTableRow({ origin: 2, target: 0 }))
+      editor.exec(moveTableRow({ from: 2, to: 0 }))
 
       const expected = doc(
         table(

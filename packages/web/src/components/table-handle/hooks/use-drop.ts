@@ -42,15 +42,15 @@ export function useDrop(
 
       if (direction === 'row') {
         editorValue.exec(moveTableRow({
-          origin: draggingIndex,
-          target: droppingIndex,
+          from: draggingIndex,
+          to: droppingIndex,
         }))
         return
       }
       if (direction === 'col') {
         editorValue.exec(moveTableColumn({
-          origin: draggingIndex,
-          target: droppingIndex,
+          from: draggingIndex,
+          to: droppingIndex,
         }))
         return
       }

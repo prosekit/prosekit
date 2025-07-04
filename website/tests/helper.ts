@@ -23,17 +23,40 @@ function getExamples(story: string) {
   return examples
 }
 
+interface TestStoryOptions {
+  example: string
+  getUncaughtErrors: () => ReadonlyArray<Error>
+}
+
 function testSingleStory(
   story: string,
-  callback: (options: { example: string }) => void,
+  callback: (options: TestStoryOptions) => void,
 ) {
   test.describe('story:' + story, () => {
     for (const example of getExamples(story)) {
       test.describe('example:' + example.name, () => {
+        const uncaughtErrors: Error[] = []
+
+        const getUncaughtErrors = (): ReadonlyArray<Error> => {
+          return [...uncaughtErrors]
+        }
+
+        const handlePageError = (error: Error) => {
+          uncaughtErrors.push(error)
+        }
+
         test.beforeEach(async ({ page }) => {
+          // Uncaught (in promise) TypeError + friends are page errors.
+          page.on('pageerror', handlePageError)
           await page.goto('stories/' + example.framework + '/' + example.story)
         })
-        callback({ example: example.name })
+
+        test.afterEach(({ page }) => {
+          page.off('pageerror', handlePageError)
+          uncaughtErrors.length = 0
+        })
+
+        callback({ example: example.name, getUncaughtErrors })
       })
     }
   })
@@ -41,7 +64,7 @@ function testSingleStory(
 
 export function testStory(
   story: string | string[],
-  callback: (options: { example: string }) => void,
+  callback: (options: TestStoryOptions) => void,
 ) {
   const stories = Array.isArray(story) ? story : [story]
 

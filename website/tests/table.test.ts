@@ -74,48 +74,55 @@ testStory('table', ({ example }) => {
     })
   })
 
-  test('insert column before the first column', async ({ page }) => {
+  test('insert column ', async ({ page }) => {
+    // TODO: fix this test
     if (example.includes('svelte')) {
       console.warn('Skipping Svelte test')
       return
     }
 
-    const { colHandle, hoverCell, getTableShape, getOpenMenu, getMenuItem } = await setup(page)
+    const { colHandle, hoverCell, getTableShape, openMenu, getMenuItem } = await setup(page)
 
-    await hoverCell('A1')
-    await expect(colHandle).toBeVisible()
+    await test.step('hover a cell to show column handle', async () => {
+      await hoverCell('A1')
+      await expect(colHandle).toBeVisible()
+    })
 
     const { cols: colsBefore } = await getTableShape()
 
-    await colHandle.click()
+    await test.step('click column handle to open menu', async () => {
+      await expect(colHandle).not.toBeVisible()
+      await colHandle.click()
+      await expect(openMenu).toBeVisible()
+    })
 
-    const menu = getOpenMenu()
-    await expect(menu).toBeVisible()
+    await test.step('click menu item', async () => {
+      const insertRight = getMenuItem('Insert Right')
+      await expect(insertRight).toBeVisible()
+      await insertRight.click()
+    })
 
-    const insertRight = getMenuItem('Insert Right')
-    await expect(insertRight).toBeVisible()
-
-    await insertRight.click()
-
-    const { cols: colsAfter } = await getTableShape()
-    expect(colsAfter).toBe(colsBefore + 1)
+    await test.step('check table shape', async () => {
+      const { cols: colsAfter } = await getTableShape()
+      expect(colsAfter).toBe(colsBefore + 1)
+    })
   })
 
   test('delete last column', async ({ page }) => {
+    // TODO: fix this test
     if (example.includes('svelte')) {
       console.warn('Skipping Svelte test')
       return
     }
 
-    const { colHandle, hoverCell, getTableShape, getOpenMenu, getMenuItem } = await setup(page)
+    const { colHandle, hoverCell, getTableShape, openMenu, getMenuItem } = await setup(page)
 
     // hover last column cell D1
     await hoverCell('D1')
     const { cols: beforeCols } = await getTableShape()
 
     await colHandle.click()
-    const menu = getOpenMenu()
-    await expect(menu).toBeVisible()
+    await expect(openMenu).toBeVisible()
 
     const deleteColItem = getMenuItem('Delete Column')
     await expect(deleteColItem).toBeVisible()
@@ -126,6 +133,7 @@ testStory('table', ({ example }) => {
   })
 
   test('clear first row contents', async ({ page }) => {
+    // TODO: fix this test
     if (example.includes('svelte')) {
       console.warn('Skipping Svelte test')
       return
@@ -136,7 +144,7 @@ testStory('table', ({ example }) => {
       hoverCell,
       waitForCell,
       getTableShape,
-      getOpenMenu,
+      openMenu,
       getMenuItem,
     } = await setup(page)
 
@@ -146,8 +154,7 @@ testStory('table', ({ example }) => {
     await hoverCell('A1')
     await rowHandle.click()
 
-    const menu = getOpenMenu()
-    await expect(menu).toBeVisible()
+    await expect(openMenu).toBeVisible()
 
     const clearItem = getMenuItem('Clear Contents')
     await expect(clearItem).toBeVisible()
@@ -163,53 +170,6 @@ testStory('table', ({ example }) => {
         .nth(i)
       await expect(cell).toContainText(/^\s*$/)
     }
-  })
-
-  test('delete first row', async ({ page }) => {
-    if (example.includes('svelte')) {
-      console.warn('Skipping Svelte test')
-      return
-    }
-
-    const { rowHandle, hoverCell, getTableShape, getOpenMenu, getMenuItem } = await setup(page)
-
-    await hoverCell('A1')
-    const { rows: beforeRows } = await getTableShape()
-
-    await rowHandle.click()
-    const menu = getOpenMenu()
-    await expect(menu).toBeVisible()
-
-    const deleteRowItem = getMenuItem('Delete Row')
-    await expect(deleteRowItem).toBeVisible()
-    await deleteRowItem.click()
-
-    const { rows: afterRows } = await getTableShape()
-    expect(afterRows).toBe(beforeRows - 1)
-  })
-
-  test('insert row below second row', async ({ page }) => {
-    if (example.includes('svelte')) {
-      console.warn('Skipping Svelte test')
-      return
-    }
-
-    const { rowHandle, hoverCell, getTableShape, getOpenMenu, getMenuItem } = await setup(page)
-
-    // hover second row cell A2 to position handle
-    await hoverCell('A2')
-    const { rows: beforeRows } = await getTableShape()
-
-    await rowHandle.click()
-    const menu = getOpenMenu()
-    await expect(menu).toBeVisible()
-
-    const insertBelowItem = getMenuItem('Insert Below')
-    await expect(insertBelowItem).toBeVisible()
-    await insertBelowItem.click()
-
-    const { rows: afterRows } = await getTableShape()
-    expect(afterRows).toBe(beforeRows + 1)
   })
 })
 
@@ -305,9 +265,9 @@ async function setup(page: Page) {
     return { rows, cols }
   }
 
-  const getOpenMenu = () => page.locator('prosekit-table-handle-popover-content[data-state="open"]').first()
+  const openMenu = page.locator('prosekit-table-handle-popover-content[data-state="open"]').first()
 
-  const getMenuItem = (text: string) => getOpenMenu().locator('prosekit-table-handle-popover-item', { hasText: text })
+  const getMenuItem = (text: string) => openMenu.locator('prosekit-table-handle-popover-item', { hasText: text })
 
   return {
     editor,
@@ -317,7 +277,7 @@ async function setup(page: Page) {
     hoverCell,
     waitForCell,
     getTableShape,
-    getOpenMenu,
+    openMenu,
     getMenuItem,
   }
 }

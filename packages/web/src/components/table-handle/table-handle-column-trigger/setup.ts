@@ -8,7 +8,6 @@ import { useMenuTrigger } from '@aria-ui/menu/elements'
 import { selectTableColumn } from '@prosekit/extensions/table'
 
 import {
-  defaultTableHandleDndContext,
   tableHandleDndContext,
   tableHandleRootContext,
 } from '../context'
@@ -86,6 +85,10 @@ export function useTableHandleColumnTrigger(
   })
 
   useEventListener(host, 'dragend', () => {
-    dndContext.set(defaultTableHandleDndContext)
+    const prev = dndContext.peek()
+    dndContext.set({
+      ...prev,
+      dragging: false,
+    })
   })
 }

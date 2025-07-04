@@ -50,7 +50,6 @@ export function useInitDndPosition(
   })
 
   useEffect(host, () => {
-    let cancelled = false
     const editorValue = editor.get()
     if (!editorValue) return
 
@@ -78,27 +77,25 @@ export function useInitDndPosition(
 
     if (!dragging) return
 
-    computePosition(cell, host, {
-      placement: direction === 'row' ? 'right' : 'bottom',
-      middleware: [offset(({ rects }) => {
-        if (direction === 'col') {
-          return -rects.reference.height
-        }
+    let cancelled = false
 
-        return -rects.reference.width
-      })],
+    void computePosition(cell, host, {
+      placement: direction === 'row' ? 'right' : 'bottom',
+      middleware: [
+        offset(({ rects }) => {
+          if (direction === 'col') {
+            return -rects.reference.height
+          }
+          return -rects.reference.width
+        }),
+      ],
+    }).then(({ x, y }) => {
+      if (cancelled) return
+      Object.assign(host.style, {
+        left: `${x}px`,
+        top: `${y}px`,
+      })
     })
-      .then(({ x, y }) => {
-        if (cancelled) return
-        Object.assign(host.style, {
-          left: `${x}px`,
-          top: `${y}px`,
-        })
-      })
-      .catch((error) => {
-        if (cancelled) return
-        throw error
-      })
 
     return () => {
       cancelled = true

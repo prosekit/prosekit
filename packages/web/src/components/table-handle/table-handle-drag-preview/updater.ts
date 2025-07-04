@@ -49,11 +49,15 @@ export function useUpdatePreviewPosition(host: ConnectableElement, editor: Reado
     if (!relatedDOMs) return
     const { cell } = relatedDOMs
 
+    let cancelled = false
+
     void computePosition(
       getVirtualElement(cell, x, y),
       host,
       { placement: direction === 'row' ? 'right' : 'bottom' },
     ).then(({ x, y }) => {
+      if (cancelled) return
+
       if (direction === 'row') {
         Object.assign(host.style, {
           top: `${y}px`,
@@ -68,6 +72,10 @@ export function useUpdatePreviewPosition(host: ConnectableElement, editor: Reado
         return
       }
     })
+
+    return () => {
+      cancelled = true
+    }
   })
 }
 

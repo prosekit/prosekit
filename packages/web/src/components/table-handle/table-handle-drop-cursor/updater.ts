@@ -63,30 +63,28 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
     if (!relatedDOMs) return
     const { table, cell } = relatedDOMs
 
+    let cancelled = false
+    let cleanup = () => {
+      cancelled = true
+    }
+
     if (direction === 'col') {
       const direction = startXSignal.get() > x ? 'left' : 'right'
       const dragOverColumn = getDragOverColumn(table, cell, x, direction)
 
       if (dragOverColumn) {
         const [col, index] = dragOverColumn
-        dndContext.set({
-          ...dndContext.peek(),
-          droppingIndex: index,
-        })
+        dndContext.set({ ...dndContext.peek(), droppingIndex: index })
         void computePosition(col, host, {
           placement: direction === 'left' ? 'left' : 'right',
-          middleware: [
-            offset(direction === 'left' ? -1 * handleWidth : 0),
-          ],
+          middleware: [offset(direction === 'left' ? -1 * handleWidth : 0)],
+        }).then(({ x }) => {
+          if (cancelled) return
+          Object.assign(host.style, { left: `${x}px` })
         })
-          .then(({ x }) => {
-            Object.assign(host.style, {
-              left: `${x}px`,
-            })
-          })
       }
 
-      return
+      return cleanup
     }
 
     if (direction === 'row') {
@@ -95,24 +93,17 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
 
       if (dragOverRow) {
         const [row, index] = dragOverRow
-        dndContext.set({
-          ...dndContext.peek(),
-          droppingIndex: index,
-        })
+        dndContext.set({ ...dndContext.peek(), droppingIndex: index })
         void computePosition(row, host, {
           placement: direction === 'up' ? 'top' : 'bottom',
-          middleware: [
-            offset(direction === 'up' ? -1 * handleWidth : 0),
-          ],
+          middleware: [offset(direction === 'up' ? -1 * handleWidth : 0)],
+        }).then(({ y }) => {
+          if (cancelled) return
+          Object.assign(host.style, { top: `${y}px` })
         })
-          .then(({ y }) => {
-            Object.assign(host.style, {
-              top: `${y}px`,
-            })
-          })
       }
 
-      return
+      return cleanup
     }
   })
 }

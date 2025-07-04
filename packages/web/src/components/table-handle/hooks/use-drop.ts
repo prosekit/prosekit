@@ -29,7 +29,7 @@ export function useDrop(
     const ownerDocument = view.dom?.ownerDocument
     if (!ownerDocument) return
 
-    const handleDrop = () => {
+    const handleDrop = (event: DragEvent) => {
       const editorValue = editor.peek()
       if (!editorValue) return
       const { droppingIndex, draggingIndex, direction } = dndContext.peek()
@@ -39,6 +39,8 @@ export function useDrop(
         console.warn('[prosekit] Invalid drag indices:', { draggingIndex, droppingIndex })
         return
       }
+
+      event.preventDefault()
 
       if (direction === 'row') {
         editorValue.exec(moveTableRow({

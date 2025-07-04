@@ -19,8 +19,8 @@ export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor<
   useEffect(host, () => {
     if (!draggingSignal.get()) return
     const onDrop = () => {
-      const editorInstance = editor.peek()
-      if (!editorInstance) return
+      const editorValue = editor.peek()
+      if (!editorValue) return
       const { droppingIndex, draggingIndex, direction } = dndContext.peek()
 
       // Validate indices
@@ -36,14 +36,14 @@ export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor<
       }
 
       if (direction === 'row') {
-        editorInstance.commands.moveTableRow({
+        editorValue.commands.moveTableRow({
           origin: draggingIndex,
           target: droppingIndex,
         })
         return
       }
       if (direction === 'col') {
-        editorInstance.commands.moveTableColumn({
+        editorValue.commands.moveTableColumn({
           origin: draggingIndex,
           target: droppingIndex,
         })

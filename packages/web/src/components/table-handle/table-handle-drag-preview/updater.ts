@@ -36,11 +36,11 @@ export function useUpdatePreviewPosition(host: ConnectableElement, editor: Reado
   })
 
   useEffect(host, () => {
-    const editorInstance = editor.get()
-    if (!editorInstance) return
+    const editorValue = editor.get()
+    if (!editorValue) return
     if (!draggingSignal.get()) return
 
-    const { view } = editorInstance
+    const { view } = editorValue
     const { draggingIndex, direction } = dndContext.peek()
     const x = clientXSignal.get()
     const y = clientYSignal.get()

@@ -51,8 +51,8 @@ export function useInitDndPosition(
 
   useEffect(host, () => {
     let cancelled = false
-    const editorInstance = editor.get()
-    if (!editorInstance) return
+    const editorValue = editor.get()
+    if (!editorValue) return
 
     const dragging = draggingSignal.get()
     const direction = directionSignal.get()
@@ -61,7 +61,7 @@ export function useInitDndPosition(
     host.dataset.dragging = dragging.toString()
 
     const draggingIndex = draggingIndexSignal.get()
-    const { view } = editorInstance
+    const { view } = editorValue
 
     const relatedDOMs = getDndRelatedDOMs(view, rootContext.peek()?.cellPos, draggingIndex, direction)
     if (!relatedDOMs) return

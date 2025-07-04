@@ -49,12 +49,12 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
   })
 
   useEffect(host, () => {
-    const editorInstance = editor.get()
-    if (!editorInstance) return
+    const editorValue = editor.get()
+    if (!editorValue) return
     const dragging = draggingSignal.get()
     if (!dragging) return
 
-    const { view } = editorInstance
+    const { view } = editorValue
     const { draggingIndex, direction } = dndContext.peek()
     const x = clientXSignal.get()
     const y = clientYSignal.get()

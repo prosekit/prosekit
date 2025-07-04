@@ -4,6 +4,7 @@ import {
 } from '@playwright/test'
 
 import {
+  getBoundingBox,
   hover,
   testStory,
   waitForEditor,
@@ -26,6 +27,24 @@ testStory('table', ({ getUncaughtErrors }) => {
       D2: editor.locator('td', { hasText: 'D2' }),
     } as const
 
+    async function hoverCell(key: keyof typeof cells) {
+      await hover(cells[key])
+      await expect(rowHandle).toBeVisible()
+      await expect(colHandle).toBeVisible()
+
+      const cellBox = await getBoundingBox(cells[key])
+      const rowBox = await getBoundingBox(rowHandle)
+      const colBox = await getBoundingBox(colHandle)
+
+      // Row handle's vertical position should intersect cell vertically
+      expect(rowBox.y).toBeGreaterThanOrEqual(cellBox.y)
+      expect(rowBox.y).toBeLessThanOrEqual(cellBox.y + cellBox.height)
+
+      // Column handle's horizontal position should intersect cell horizontally
+      expect(colBox.x).toBeGreaterThanOrEqual(cellBox.x)
+      expect(colBox.x).toBeLessThanOrEqual(cellBox.x + cellBox.width)
+    }
+
     async function expectCellToBeSelected(cell: keyof typeof cells) {
       await expect(cells[cell]).toHaveClass(/selectedCell/)
     }
@@ -45,10 +64,7 @@ testStory('table', ({ getUncaughtErrors }) => {
     })
 
     await test.step('handles appear after hovering first cell', async () => {
-      await hover(cells.A1)
-
-      await expect(rowHandle).toBeVisible()
-      await expect(colHandle).toBeVisible()
+      await hoverCell('A1')
     })
 
     await test.step('row handle selects the first row', async () => {
@@ -78,7 +94,8 @@ testStory('table', ({ getUncaughtErrors }) => {
     })
 
     await test.step('row handle selects the second row', async () => {
-      await hover(cells.A2)
+      // Hover any cell in second row to move the handle
+      await hoverCell('A2')
       await rowHandle.click()
 
       // Second row should be selected
@@ -95,7 +112,8 @@ testStory('table', ({ getUncaughtErrors }) => {
     })
 
     await test.step('column handle selects the last column', async () => {
-      await hover(cells.D1)
+      // Hover a cell in last column to move the column handle
+      await hoverCell('D1')
       await colHandle.click()
 
       await expectCellToBeSelected('D1')

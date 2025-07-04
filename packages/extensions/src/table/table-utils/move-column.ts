@@ -14,10 +14,10 @@ import { transpose } from './transpose'
 
 export interface MoveColumnParams {
   tr: Transaction
-  origin: number
-  target: number
-  select?: boolean
-  pos?: number
+  originIndex: number
+  targetIndex: number
+  select: boolean
+  pos: number
 }
 
 /**
@@ -26,17 +26,17 @@ export interface MoveColumnParams {
  * @internal
  */
 export function moveColumn(moveColParams: MoveColumnParams): boolean {
-  const { tr, origin, target, select = true, pos } = moveColParams
-  const $pos = pos != null ? tr.doc.resolve(pos) : tr.selection.$from
+  const { tr, originIndex, targetIndex, select, pos } = moveColParams
+  const $pos = tr.doc.resolve(pos)
   const table = findTable($pos)
   if (!table) return false
 
-  const indexesOriginColumn = getSelectionRangeInColumn(tr, origin)?.indexes
-  const indexesTargetColumn = getSelectionRangeInColumn(tr, target)?.indexes
+  const indexesOriginColumn = getSelectionRangeInColumn(tr, originIndex)?.indexes
+  const indexesTargetColumn = getSelectionRangeInColumn(tr, targetIndex)?.indexes
 
   if (!indexesOriginColumn || !indexesTargetColumn) return false
 
-  if (indexesOriginColumn.includes(target)) return false
+  if (indexesOriginColumn.includes(targetIndex)) return false
 
   const newTable = moveTableColumn(
     table.node,
@@ -55,7 +55,7 @@ export function moveColumn(moveColParams: MoveColumnParams): boolean {
 
   const map = TableMap.get(newTable)
   const start = table.start
-  const index = target
+  const index = targetIndex
   const lastCell = map.positionAt(map.height - 1, index, newTable)
   const $lastCell = tr.doc.resolve(start + lastCell)
 

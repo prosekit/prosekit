@@ -11,12 +11,12 @@ export interface MoveTableRowOptions {
   /**
    * The source row index to move from.
    */
-  origin: number
+  from: number
 
   /**
    * The destination row index to move to.
    */
-  target: number
+  to: number
 
   /**
    * Whether to select the moved row after the operation.
@@ -38,9 +38,9 @@ export interface MoveTableRowOptions {
  */
 export function moveTableRow(options: MoveTableRowOptions): Command {
   return (state, dispatch) => {
-    const { origin, target, select = true, pos } = options
+    const { from, to, select = true, pos = state.selection.from } = options
     const tr = state.tr
-    if (moveRow({ tr, origin, target, select, pos })) {
+    if (moveRow({ tr, originIndex: from, targetIndex: to, select, pos })) {
       dispatch?.(tr)
       return true
     }

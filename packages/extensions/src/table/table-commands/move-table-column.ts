@@ -11,12 +11,12 @@ export interface MoveTableColumnOptions {
   /**
    * The source column index to move from.
    */
-  origin: number
+  from: number
 
   /**
    * The destination column index to move to.
    */
-  target: number
+  to: number
 
   /**
    * Whether to select the moved column after the operation.
@@ -38,9 +38,9 @@ export interface MoveTableColumnOptions {
  */
 export function moveTableColumn(options: MoveTableColumnOptions): Command {
   return (state, dispatch) => {
-    const { origin, target, select = true, pos } = options
+    const { from, to, select = true, pos = state.selection.from } = options
     const tr = state.tr
-    if (moveColumn({ tr, origin, target, select, pos })) {
+    if (moveColumn({ tr, originIndex: from, targetIndex: to, select, pos })) {
       dispatch?.(tr)
       return true
     }

@@ -13,10 +13,10 @@ import { findTable } from './query'
 
 export interface MoveRowParams {
   tr: Transaction
-  origin: number
-  target: number
-  select?: boolean
-  pos?: number
+  originIndex: number
+  targetIndex: number
+  select: boolean
+  pos: number
 }
 
 /**
@@ -25,17 +25,17 @@ export interface MoveRowParams {
  * @internal
  */
 export function moveRow(moveRowParams: MoveRowParams): boolean {
-  const { tr, origin, target, select = true, pos } = moveRowParams
-  const $pos = pos != null ? tr.doc.resolve(pos) : tr.selection.$from
+  const { tr, originIndex, targetIndex, select, pos } = moveRowParams
+  const $pos = tr.doc.resolve(pos)
   const table = findTable($pos)
   if (!table) return false
 
-  const indexesOriginRow = getSelectionRangeInRow(tr, origin)?.indexes
-  const indexesTargetRow = getSelectionRangeInRow(tr, target)?.indexes
+  const indexesOriginRow = getSelectionRangeInRow(tr, originIndex)?.indexes
+  const indexesTargetRow = getSelectionRangeInRow(tr, targetIndex)?.indexes
 
   if (!indexesOriginRow || !indexesTargetRow) return false
 
-  if (indexesOriginRow.includes(target)) return false
+  if (indexesOriginRow.includes(targetIndex)) return false
 
   const newTable = moveTableRow(table.node, indexesOriginRow, indexesTargetRow, 0)
 
@@ -49,7 +49,7 @@ export function moveRow(moveRowParams: MoveRowParams): boolean {
 
   const map = TableMap.get(newTable)
   const start = table.start
-  const index = target
+  const index = targetIndex
   const lastCell = map.positionAt(index, map.width - 1, newTable)
   const $lastCell = tr.doc.resolve(start + lastCell)
 

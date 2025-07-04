@@ -7,21 +7,11 @@ import {
 } from 'vitest'
 
 import { setupTest } from '../../testing'
-import type { CellAttrs } from '../table-spec.js'
 
 import { moveTableColumn } from './move-table-column'
 
 function setup() {
   const { editor, n } = setupTest()
-  const defaultCellAttrs: CellAttrs = { colspan: 1, rowspan: 1, colwidth: null }
-
-  const c = (text?: string, attrs?: Partial<CellAttrs>) => {
-    return n.tableCell({ ...defaultCellAttrs, ...attrs }, text ? n.p(text) : n.p())
-  }
-  const h = (text?: string, attrs?: Partial<CellAttrs>) => {
-    return n.tableHeaderCell({ ...defaultCellAttrs, ...attrs }, text ? n.p(text) : n.p())
-  }
-  const r = n.tableRow
 
   const setCellSelection = (from: number, to: number) => {
     const command: Command = (state, dispatch) => {
@@ -32,52 +22,52 @@ function setup() {
     editor.exec(command)
   }
 
-  return { editor, n, c, h, r, setCellSelection }
+  return { editor, n, setCellSelection }
 }
 
 describe('moveTableColumn', () => {
   describe('on a simple table', () => {
     it('should move column right-to-left', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c('1'), c(), c()),
-          r(c('2'), c(), c()),
-          r(c('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td('1'), td(), td()),
+          tr(td('2'), td(), td()),
+          tr(td('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 2, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(c(), c('1'), c()),
-          r(c(), c('2'), c()),
-          r(c(), c('3'), c()),
+      const expected = doc(
+        table(
+          tr(td(), td('1'), td()),
+          tr(td(), td('2'), td()),
+          tr(td(), td('3'), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move column left-to-right', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c('1'), c(), c()),
-          r(c('2'), c('x'), c()),
-          r(c('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td('1'), td(), td()),
+          tr(td('2'), td('x'), td()),
+          tr(td('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 1, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(c('1'), c(), c()),
-          r(c('2'), c(), c('x')),
-          r(c('3'), c(), c()),
+      const expected = doc(
+        table(
+          tr(td('1'), td(), td()),
+          tr(td('2'), td(), td('x')),
+          tr(td('3'), td(), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())

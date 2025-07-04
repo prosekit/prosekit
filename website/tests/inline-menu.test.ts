@@ -200,6 +200,7 @@ async function setup(page: Page) {
     await page.keyboard.down('Shift')
     for (let i = 0; i < chars; i++) {
       await page.keyboard.press('ArrowLeft')
+      await page.waitForTimeout(10)
     }
     await page.keyboard.up('Shift')
   }
@@ -211,6 +212,7 @@ async function setup(page: Page) {
 
     // Select the word "world"
     await selectTextFromEnd(5)
+    expect(await getSelectedText(page)).toEqual('world')
   }
 
   return {

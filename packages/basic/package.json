@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/ocavue/prosekit.git",
     "directory": "packages/basic"
-  }, 
+  },
   "bugs": {
     "url": "https://github.com/ocavue/prosekit/issues"
   },

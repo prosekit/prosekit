@@ -1,12 +1,12 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
+import { useMemo } from 'preact/hooks'
 import { createEditor } from 'prosekit/core'
-import { ProseKit } from 'prosekit/react'
-import { useMemo } from 'react'
+import { ProseKit } from 'prosekit/preact'
 
 import { defineExtension } from './extension'
-import { TableHandle } from './table-handle'
+import TableHandle from './table-handle'
 
 export default function Editor() {
   const editor = useMemo(() => {
@@ -18,7 +18,7 @@ export default function Editor() {
     <ProseKit editor={editor}>
       <div className="CSS_EDITOR_VIEWPORT">
         <div className="CSS_EDITOR_SCROLLING">
-          <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
+          <div ref={editor.mount} className="CSS_EDITOR_CONTENT" />
           <TableHandle />
         </div>
       </div>

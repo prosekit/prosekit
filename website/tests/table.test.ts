@@ -132,4 +132,12 @@ testStory('table', () => {
       await expectCellToBeNotSelected('C2')
     })
   })
+
+  test('table row handle menu', async ({ page }) => {
+    // TODO
+  })
+
+  test('table column handle menu', async ({ page }) => {
+    // TODO
+  })
 })

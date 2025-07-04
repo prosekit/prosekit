@@ -74,7 +74,7 @@ testStory('table', ({ example }) => {
     })
   })
 
-  test.only('insert column before the first column', async ({ page }) => {
+  test('insert column before the first column', async ({ page }) => {
     if (example.includes('svelte')) {
       console.warn('Skipping Svelte test')
       return

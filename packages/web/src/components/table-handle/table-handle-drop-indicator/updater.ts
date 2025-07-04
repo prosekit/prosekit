@@ -61,7 +61,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
 
     const relatedDOMs = getDndRelatedDOMs(view, rootContext.peek()?.cellPos, draggingIndex, direction)
     if (!relatedDOMs) return
-    const { table, cell } = relatedDOMs
+    const { table } = relatedDOMs
 
     let cancelled = false
     let cleanup = () => {
@@ -70,7 +70,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
 
     if (direction === 'col') {
       const direction = startXSignal.get() > x ? 'left' : 'right'
-      const dragOverColumn = getDragOverColumn(table, cell, x, direction)
+      const dragOverColumn = getDragOverColumn(table, x)
 
       if (dragOverColumn) {
         const [col, index] = dragOverColumn
@@ -89,7 +89,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
 
     if (direction === 'row') {
       const direction = startYSignal.get() > y ? 'up' : 'down'
-      const dragOverRow = getDragOverRow(table, cell, y, direction)
+      const dragOverRow = getDragOverRow(table, y)
 
       if (dragOverRow) {
         const [row, index] = dragOverRow

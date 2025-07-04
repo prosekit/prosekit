@@ -117,8 +117,7 @@ testStory('table', ({ example }) => {
 
     await test.step('check table shape after second insert', async () => {
       const { cols: colsAfter } = await getTableShape()
-      // TODO: this should be colsBefore + 2. Fix this test.
-      expect(colsAfter).toBeGreaterThan(colsBefore)
+      expect(colsAfter).toBe(colsBefore + 2)
     })
   })
 

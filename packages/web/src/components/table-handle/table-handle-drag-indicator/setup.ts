@@ -9,9 +9,9 @@ import {
   type OnInitParams,
 } from '../dnd'
 
-import { useDrop } from './drop'
 import type { TableHandleDragIndicatorProps } from './types'
 import { useUpdateIndicatorPosition } from './updater'
+import { useDrop } from './use-drop'
 
 const HANDLE_WIDTH = 2
 

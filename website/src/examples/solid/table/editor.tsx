@@ -25,16 +25,16 @@ export default function Editor() {
 const defaultContent = `
 <table><tbody>
   <tr>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
+    <td>A1</td>
+    <td>B1</td>
+    <td>C1</td>
+    <td>D1</td>
   </tr>
   <tr>
-    <td>5</td>
-    <td>6</td>
-    <td>7</td>
-    <td>8</td>
+    <td>A2</td>
+    <td>B2</td>
+    <td>C2</td>
+    <td>D2</td>
   </tr>
 </tbody></table>
 `

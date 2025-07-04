@@ -236,3 +236,11 @@ export async function expectEditorToBeBlurred(page: Page) {
   await waitForEditor(page)
   await expect(locateFocusedEditor(page)).toBeHidden()
 }
+
+export async function expectSelectedTextToBe(page: Page, text: string) {
+  const check = async () => {
+    const selectedText = await getSelectedText(page)
+    expect(selectedText).toEqual(text)
+  }
+  await expect(check).toPass({ timeout: 1000, intervals: [10, 50, 100] })
+}

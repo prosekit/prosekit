@@ -13,20 +13,21 @@ import {
 } from './helper'
 
 testStory('table', () => {
+  test('default table content', async ({ page }) => {
+    const { expectTableContentToBe } = await setup(page)
+    await expectTableContentToBe([
+      ['A1', 'B1', 'C1', 'D1'],
+      ['A2', 'B2', 'C2', 'D2'],
+    ])
+  })
+
   test('select cells by clicking handles', async ({ page }) => {
     const {
-      editor,
       rowHandle,
       colHandle,
-      waitForCell,
       hoverCell,
-      checkCellSelection,
+      expectCellSelectionToBe,
     } = await setup(page)
-    await test.step('initial table content is visible', async () => {
-      await expect(editor.locator('table')).toBeVisible()
-      await waitForCell('A1')
-      await waitForCell('D2')
-    })
 
     await test.step('handles are hidden before hover', async () => {
       await expect(rowHandle).toBeHidden()
@@ -37,7 +38,7 @@ testStory('table', () => {
       await hoverCell('A1')
       await rowHandle.click()
 
-      await checkCellSelection(
+      await expectCellSelectionToBe(
         ['A1', 'B1', 'C1', 'D1'],
         ['A2', 'B2', 'C2', 'D2'],
       )
@@ -47,7 +48,7 @@ testStory('table', () => {
       await hoverCell('C2')
       await rowHandle.click()
 
-      await checkCellSelection(
+      await expectCellSelectionToBe(
         ['A2', 'B2', 'C2', 'D2'],
         ['A1', 'B1', 'C1', 'D1'],
       )
@@ -57,7 +58,7 @@ testStory('table', () => {
       await hoverCell('A2')
       await colHandle.click()
 
-      await checkCellSelection(
+      await expectCellSelectionToBe(
         ['A1', 'A2'],
         ['B1', 'B2', 'C1', 'C2', 'D1', 'D2'],
       )
@@ -67,22 +68,26 @@ testStory('table', () => {
       await hoverCell('D1')
       await colHandle.click()
 
-      await checkCellSelection(
+      await expectCellSelectionToBe(
         ['D1', 'D2'],
         ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'],
       )
     })
   })
 
-  test('insert column', async ({ page }) => {
-    const { colHandle, hoverCell, getTableShape, openMenu, getMenuItem } = await setup(page)
+  test('insert column before', async ({ page }) => {
+    const {
+      colHandle,
+      hoverCell,
+      openMenu,
+      getMenuItem,
+      expectTableContentToBe,
+    } = await setup(page)
 
     await test.step('hover a cell to show column handle', async () => {
       await hoverCell('A1')
       await expect(colHandle).toBeVisible()
     })
-
-    const { cols: colsBefore } = await getTableShape()
 
     const insertRight = getMenuItem('Insert Right')
 
@@ -96,8 +101,10 @@ testStory('table', () => {
     })
 
     await test.step('check table shape after first insert', async () => {
-      const { cols: colsAfter } = await getTableShape()
-      expect(colsAfter).toBe(colsBefore + 1)
+      await expectTableContentToBe([
+        ['A1', '', 'B1', 'C1', 'D1'],
+        ['A2', '', 'B2', 'C2', 'D2'],
+      ])
     })
 
     await test.step('click menu item again', async () => {
@@ -110,37 +117,52 @@ testStory('table', () => {
     })
 
     await test.step('check table shape after second insert', async () => {
-      const { cols: colsAfter } = await getTableShape()
-      expect(colsAfter).toBe(colsBefore + 2)
+      await expectTableContentToBe([
+        ['A1', '', '', 'B1', 'C1', 'D1'],
+        ['A2', '', '', 'B2', 'C2', 'D2'],
+      ])
     })
   })
 
-  test('delete last column', async ({ page }) => {
-    const { colHandle, hoverCell, getTableShape, openMenu, getMenuItem } = await setup(page)
+  test('delete column', async ({ page }) => {
+    const {
+      colHandle,
+      hoverCell,
+      openMenu,
+      getMenuItem,
+      expectTableContentToBe,
+    } = await setup(page)
 
     // hover last column cell D1
     await hoverCell('D1')
-    const { cols: beforeCols } = await getTableShape()
 
     await colHandle.click()
     await expect(openMenu).toBeVisible()
 
     const deleteColItem = getMenuItem('Delete Column')
     await expect(deleteColItem).toBeVisible()
+
+    await expectTableContentToBe([
+      ['A1', 'B1', 'C1', 'D1'],
+      ['A2', 'B2', 'C2', 'D2'],
+    ])
+
     await deleteColItem.click()
 
-    const { cols: afterCols } = await getTableShape()
-    expect(afterCols).toBe(beforeCols - 1)
+    await expectTableContentToBe([
+      ['A1', 'B1', 'C1'],
+      ['A2', 'B2', 'C2'],
+    ])
   })
 
-  test('clear first row contents', async ({ page }) => {
+  test('clear row contents', async ({ page }) => {
     const {
       rowHandle,
       hoverCell,
       waitForCell,
-      getTableShape,
       openMenu,
       getMenuItem,
+      expectTableContentToBe,
     } = await setup(page)
 
     // Ensure A1 text exists
@@ -155,16 +177,10 @@ testStory('table', () => {
     await expect(clearItem).toBeVisible()
     await clearItem.click()
 
-    // After clearing, cells in first row should have no text.
-    const { cols } = await getTableShape()
-    for (let i = 0; i < cols; i++) {
-      const cell = page
-        .locator('tr')
-        .first()
-        .locator('td')
-        .nth(i)
-      await expect(cell).toContainText(/^\s*$/)
-    }
+    await expectTableContentToBe([
+      ['', '', '', ''],
+      ['A2', 'B2', 'C2', 'D2'],
+    ])
   })
 })
 
@@ -173,8 +189,13 @@ async function setup(page: Page) {
 
   const rowHandle = page.locator('prosekit-table-handle-row-root')
   const colHandle = page.locator('prosekit-table-handle-column-root')
+  const openMenu = page.locator('prosekit-table-handle-popover-content[data-state="open"]')
 
-  const locateCell = (cell: string | Locator) => {
+  const getMenuItem = (text: string) => {
+    return openMenu.locator('prosekit-table-handle-popover-item', { hasText: text })
+  }
+
+  const getCell = (cell: string | Locator) => {
     if (typeof cell === 'string') {
       return editor.locator('td', { hasText: cell })
     }
@@ -182,7 +203,7 @@ async function setup(page: Page) {
   }
 
   const waitForCell = async (text: string) => {
-    let cell = locateCell(text)
+    let cell = getCell(text)
     await expect(cell).toBeVisible()
     return cell
   }
@@ -195,7 +216,7 @@ async function setup(page: Page) {
     await expect(cell).not.toHaveClass(/selectedCell/)
   }
 
-  const checkCellSelection = async (selectedCells: string[], unselectedCells: string[]) => {
+  const expectCellSelectionToBe = async (selectedCells: string[], unselectedCells: string[]) => {
     for (const cell of selectedCells) {
       await expectCellToBeSelected(await waitForCell(cell))
     }
@@ -206,7 +227,7 @@ async function setup(page: Page) {
   }
 
   const hoverCell = async (cell: Locator | string) => {
-    const cellLocator = locateCell(cell)
+    const cellLocator = getCell(cell)
 
     // Reset the hover state
     await hover(editor, { position: { x: 0, y: 0 } })
@@ -253,26 +274,36 @@ async function setup(page: Page) {
     await expect(checkPosition).toPass({ timeout: 3000 })
   }
 
-  const getTableShape = async () => {
+  const getTableContent = async (): Promise<string[][]> => {
     const table = editor.locator('table')
-    const rows = await table.locator('tr').count()
-    const cols = await table.locator('tr').first().locator('td').count()
-    return { rows, cols }
+    return await table.evaluate((table): string[][] => {
+      const rows = Array.from(table.querySelectorAll('tr'))
+      return rows.map((row) => {
+        const cells = Array.from(row.querySelectorAll('td'))
+        return cells.map((cell) => {
+          return cell.textContent || ''
+        })
+      })
+    })
   }
 
-  const openMenu = page.locator('prosekit-table-handle-popover-content[data-state="open"]').first()
-
-  const getMenuItem = (text: string) => openMenu.locator('prosekit-table-handle-popover-item', { hasText: text })
+  const expectTableContentToBe = async (expected: string[][]) => {
+    await expect(async () => {
+      const content = await getTableContent()
+      expect(content).toEqual(expected)
+    }).toPass({ timeout: 3000 })
+  }
 
   return {
     editor,
     rowHandle,
     colHandle,
-    checkCellSelection,
-    hoverCell,
-    waitForCell,
-    getTableShape,
     openMenu,
     getMenuItem,
+    expectCellSelectionToBe,
+    hoverCell,
+    waitForCell,
+    getTableContent,
+    expectTableContentToBe,
   }
 }

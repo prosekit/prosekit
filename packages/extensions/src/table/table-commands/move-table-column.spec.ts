@@ -74,16 +74,16 @@ describe('moveTableColumn', () => {
     })
 
     it('should select column after moving with select option', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c('1'), c(), c()),
-          r(c('2'), c(), c()),
-          r(c('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td('1'), td(), td()),
+          tr(td('2'), td(), td()),
+          tr(td('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 2, target: 0, select: true }))
 
       // Check that a cell selection was created
@@ -96,115 +96,115 @@ describe('moveTableColumn', () => {
 
   describe('on a table with merged cells', () => {
     it('should move columns merged at first line', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c('1'), c('merged cell', { colspan: 2 })),
-          r(c('2'), c(), c()),
-          r(c('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td('1'), td('merged cell', { colspan: 2 })),
+          tr(td('2'), td(), td()),
+          tr(td('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 1, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(c('merged cell', { colspan: 2 }), c('1')),
-          r(c(), c(), c('2')),
-          r(c(), c(), c('3')),
+      const expected = doc(
+        table(
+          tr(td('merged cell', { colspan: 2 }), td('1')),
+          tr(td(), td(), td('2')),
+          tr(td(), td(), td('3')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move columns merged at middle line', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c('1'), c(), c()),
-          r(c('2'), c('merged cell', { colspan: 2 })),
-          r(c('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td('1'), td(), td()),
+          tr(td('2'), td('merged cell', { colspan: 2 })),
+          tr(td('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 1, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(c(), c(), c('1')),
-          r(c('merged cell', { colspan: 2 }), c('2')),
-          r(c(), c(), c('3')),
+      const expected = doc(
+        table(
+          tr(td(), td(), td('1')),
+          tr(td('merged cell', { colspan: 2 }), td('2')),
+          tr(td(), td(), td('3')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move columns merged at last line', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c('1'), c(), c()),
-          r(c('2'), c(), c()),
-          r(c('3'), c('merged cell', { colspan: 2 })),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td('1'), td(), td()),
+          tr(td('2'), td(), td()),
+          tr(td('3'), td('merged cell', { colspan: 2 })),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 1, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(c(), c(), c('1')),
-          r(c(), c(), c('2')),
-          r(c('merged cell', { colspan: 2 }), c('3')),
+      const expected = doc(
+        table(
+          tr(td(), td(), td('1')),
+          tr(td(), td(), td('2')),
+          tr(td('merged cell', { colspan: 2 }), td('3')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move and keep table headers', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('merged cell', { colspan: 2 }), h()),
-          r(c(), c(), c()),
-          r(c(), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('merged cell', { colspan: 2 }), th()),
+          tr(td(), td(), td()),
+          tr(td(), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 0, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h(), h('merged cell', { colspan: 2 })),
-          r(c(), c(), c()),
-          r(c(), c(), c()),
+      const expected = doc(
+        table(
+          tr(th(), th('merged cell', { colspan: 2 })),
+          tr(td(), td(), td()),
+          tr(td(), td(), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move and keep columns headers', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h(), h(), h()),
-          r(h('b1'), c(), c('b2')),
-          r(h(), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th(), th(), th()),
+          tr(th('b1'), td(), td('b2')),
+          tr(th(), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 2, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h(), h(), h()),
-          r(h('b2'), c('b1'), c()),
-          r(h(), c(), c()),
+      const expected = doc(
+        table(
+          tr(th(), th(), th()),
+          tr(th('b2'), td('b1'), td()),
+          tr(th(), td(), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
@@ -213,92 +213,92 @@ describe('moveTableColumn', () => {
 
   describe('on a table with merged rows', () => {
     it('should move columns', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c('merged-row', { rowspan: 2 }), c('a0'), c('a1')),
-          r(c('b1'), c('b2')),
-          r(c('c1'), c('c2'), c('c3')),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td('merged-row', { rowspan: 2 }), td('a0'), td('a1')),
+          tr(td('b1'), td('b2')),
+          tr(td('c1'), td('c2'), td('c3')),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 1, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(c('merged-row', { rowspan: 2 }), c('a1'), c('a0')),
-          r(c('b2'), c('b1')),
-          r(c('c1'), c('c3'), c('c2')),
+      const expected = doc(
+        table(
+          tr(td('merged-row', { rowspan: 2 }), td('a1'), td('a0')),
+          tr(td('b2'), td('b1')),
+          tr(td('c1'), td('c3'), td('c2')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move columns for multi rows merged', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c('a1', { rowspan: 2 }), c('a2'), c('a3')),
-          r(c('b1'), c('b2', { rowspan: 2 })),
-          r(c('c1'), c('c2')),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td('a1', { rowspan: 2 }), td('a2'), td('a3')),
+          tr(td('b1'), td('b2', { rowspan: 2 })),
+          tr(td('c1'), td('c2')),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 1, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(c('a1', { rowspan: 2 }), c('a3'), c('a2')),
-          r(c('b2', { rowspan: 2 }), c('b1')),
-          r(c('c1'), c('c2')),
+      const expected = doc(
+        table(
+          tr(td('a1', { rowspan: 2 }), td('a3'), td('a2')),
+          tr(td('b2', { rowspan: 2 }), td('b1')),
+          tr(td('c1'), td('c2')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move columns between two merged rows', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c('a1', { rowspan: 2 }), c('a2'), c('a3')),
-          r(c('b1'), c('b2', { rowspan: 2 })),
-          r(c('c1'), c('c2')),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td('a1', { rowspan: 2 }), td('a2'), td('a3')),
+          tr(td('b1'), td('b2', { rowspan: 2 })),
+          tr(td('c1'), td('c2')),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 0, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(c('a2'), c('a3'), c('a1', { rowspan: 2 })),
-          r(c('b1'), c('b2', { rowspan: 2 })),
-          r(c('c2'), c('c1')),
+      const expected = doc(
+        table(
+          tr(td('a2'), td('a3'), td('a1', { rowspan: 2 })),
+          tr(td('b1'), td('b2', { rowspan: 2 })),
+          tr(td('c2'), td('c1')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move column between column with merged row and regular columns', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c('a1'), c('a2'), c('a3')),
-          r(c('b1'), c('b2', { rowspan: 2 }), c('b3')),
-          r(c('c1'), c('c2')),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td('a1'), td('a2'), td('a3')),
+          tr(td('b1'), td('b2', { rowspan: 2 }), td('b3')),
+          tr(td('c1'), td('c2')),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 2, target: 1 }))
 
-      const expected = n.doc(
-        n.table(
-          r(c('a1'), c('a3'), c('a2')),
-          r(c('b1'), c('b3'), c('b2', { rowspan: 2 })),
-          r(c('c1'), c('c2')),
+      const expected = doc(
+        table(
+          tr(td('a1'), td('a3'), td('a2')),
+          tr(td('b1'), td('b3'), td('b2', { rowspan: 2 })),
+          tr(td('c1'), td('c2')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
@@ -307,23 +307,23 @@ describe('moveTableColumn', () => {
 
   describe('on a complex table with merged cells and rows', () => {
     it('keep the merged content columns order', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c(), c('a1'), c('a2')),
-          r(c(), c('b1', { colspan: 2 })),
-          r(c(), c('c1'), c('c2')),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td(), td('a1'), td('a2')),
+          tr(td(), td('b1', { colspan: 2 })),
+          tr(td(), td('c1'), td('c2')),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 1, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(c('a1'), c('a2'), c()),
-          r(c('b1', { colspan: 2 }), c()),
-          r(c('c1'), c('c2'), c()),
+      const expected = doc(
+        table(
+          tr(td('a1'), td('a2'), td()),
+          tr(td('b1', { colspan: 2 }), td()),
+          tr(td('c1'), td('c2'), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
@@ -331,23 +331,23 @@ describe('moveTableColumn', () => {
 
     describe('when the first line all columns are merged', () => {
       it('should not move columns', () => {
-        const { editor, n, c, r } = setup()
-        const doc = n.doc(
-          n.table(
-            r(c('a1', { colspan: 3 })),
-            r(c('b1'), c(), c()),
-            r(c('c1'), c(), c()),
+        const { editor, n: { doc, table, tr, td } } = setup()
+        const docNode = doc(
+          table(
+            tr(td('a1', { colspan: 3 })),
+            tr(td('b1'), td(), td()),
+            tr(td('c1'), td(), td()),
           ),
         )
 
-        editor.set(doc)
+        editor.set(docNode)
         editor.exec(moveTableColumn({ origin: 1, target: 0 }))
 
-        const expected = n.doc(
-          n.table(
-            r(c('a1', { colspan: 3 })),
-            r(c('b1'), c(), c()),
-            r(c('c1'), c(), c()),
+        const expected = doc(
+          table(
+            tr(td('a1', { colspan: 3 })),
+            tr(td('b1'), td(), td()),
+            tr(td('c1'), td(), td()),
           ),
         )
         expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
@@ -357,69 +357,69 @@ describe('moveTableColumn', () => {
 
   describe('on a simple table with col header', () => {
     it('should move column 0 -> 2', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), c(), c()),
-          r(h('2'), c(), c()),
-          r(h('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), td(), td()),
+          tr(th('2'), td(), td()),
+          tr(th('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 0, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h(), c(), c('1')),
-          r(h(), c(), c('2')),
-          r(h(), c(), c('3')),
+      const expected = doc(
+        table(
+          tr(th(), td(), td('1')),
+          tr(th(), td(), td('2')),
+          tr(th(), td(), td('3')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move column 2 -> 0', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), c(), c()),
-          r(h('2'), c(), c()),
-          r(h('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), td(), td()),
+          tr(th('2'), td(), td()),
+          tr(th('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 2, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h(), c('1'), c()),
-          r(h(), c('2'), c()),
-          r(h(), c('3'), c()),
+      const expected = doc(
+        table(
+          tr(th(), td('1'), td()),
+          tr(th(), td('2'), td()),
+          tr(th(), td('3'), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move column 1 -> 2', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), c(), c()),
-          r(h('2'), c('x'), c()),
-          r(h('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), td(), td()),
+          tr(th('2'), td('x'), td()),
+          tr(th('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 1, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('1'), c(), c()),
-          r(h('2'), c(), c('x')),
-          r(h('3'), c(), c()),
+      const expected = doc(
+        table(
+          tr(th('1'), td(), td()),
+          tr(th('2'), td(), td('x')),
+          tr(th('3'), td(), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
@@ -428,69 +428,69 @@ describe('moveTableColumn', () => {
 
   describe('on a simple table with row header', () => {
     it('should move column 0 -> 2', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(c('2'), c(), c()),
-          r(c('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(td('2'), td(), td()),
+          tr(td('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 0, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h(), h(), h('1')),
-          r(c(), c(), c('2')),
-          r(c(), c(), c('3')),
+      const expected = doc(
+        table(
+          tr(th(), th(), th('1')),
+          tr(td(), td(), td('2')),
+          tr(td(), td(), td('3')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move column 2 -> 0', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(c('2'), c(), c()),
-          r(c('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(td('2'), td(), td()),
+          tr(td('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 2, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h(), h('1'), h()),
-          r(c(), c('2'), c()),
-          r(c(), c('3'), c()),
+      const expected = doc(
+        table(
+          tr(th(), th('1'), th()),
+          tr(td(), td('2'), td()),
+          tr(td(), td('3'), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move column 1 -> 2', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(c('2'), c('x'), c()),
-          r(c('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(td('2'), td('x'), td()),
+          tr(td('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 1, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(c('2'), c(), c('x')),
-          r(c('3'), c(), c()),
+      const expected = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(td('2'), td(), td('x')),
+          tr(td('3'), td(), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
@@ -499,69 +499,69 @@ describe('moveTableColumn', () => {
 
   describe('on a simple table with col & row header', () => {
     it('should move column 0 -> 2', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(h('2'), c(), c()),
-          r(h('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(th('2'), td(), td()),
+          tr(th('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 0, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h(), h(), h('1')),
-          r(h(), c(), c('2')),
-          r(h(), c(), c('3')),
+      const expected = doc(
+        table(
+          tr(th(), th(), th('1')),
+          tr(th(), td(), td('2')),
+          tr(th(), td(), td('3')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move column 2 -> 0', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(h('2'), c(), c()),
-          r(h('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(th('2'), td(), td()),
+          tr(th('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 2, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h(), h('1'), h()),
-          r(h(), c('2'), c()),
-          r(h(), c('3'), c()),
+      const expected = doc(
+        table(
+          tr(th(), th('1'), th()),
+          tr(th(), td('2'), td()),
+          tr(th(), td('3'), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move column 1 -> 2', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(h('2'), c('x'), c()),
-          r(h('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(th('2'), td('x'), td()),
+          tr(th('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 1, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(h('2'), c(), c('x')),
-          r(h('3'), c(), c()),
+      const expected = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(th('2'), td(), td('x')),
+          tr(th('3'), td(), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
@@ -570,46 +570,46 @@ describe('moveTableColumn', () => {
 
   describe('table with headers and varying cell types', () => {
     it('should move column 2 to 0', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('a1'), h('a2'), h('a3'), h('a4'), h('a5')),
-          r(c('b1', { colspan: 2 }), c('b2'), c('b3'), c('b4')),
-          r(c('c1'), c('c2'), c('c3'), c('c4', { colspan: 2 })),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('a1'), th('a2'), th('a3'), th('a4'), th('a5')),
+          tr(td('b1', { colspan: 2 }), td('b2'), td('b3'), td('b4')),
+          tr(td('c1'), td('c2'), td('c3'), td('c4', { colspan: 2 })),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 2, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('a3'), h('a1'), h('a2'), h('a4'), h('a5')),
-          r(c('b2'), c('b1', { colspan: 2 }), c('b3'), c('b4')),
-          r(c('c3'), c('c1'), c('c2'), c('c4', { colspan: 2 })),
+      const expected = doc(
+        table(
+          tr(th('a3'), th('a1'), th('a2'), th('a4'), th('a5')),
+          tr(td('b2'), td('b1', { colspan: 2 }), td('b3'), td('b4')),
+          tr(td('c3'), td('c1'), td('c2'), td('c4', { colspan: 2 })),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move column 0 to 2', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('a1'), h('a2'), h('a3'), h('a4'), h('a5')),
-          r(c('b1', { colspan: 2 }), c('b2'), c('b3'), c('b4')),
-          r(c('c1'), c('c2'), c('c3'), c('c4', { colspan: 2 })),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('a1'), th('a2'), th('a3'), th('a4'), th('a5')),
+          tr(td('b1', { colspan: 2 }), td('b2'), td('b3'), td('b4')),
+          tr(td('c1'), td('c2'), td('c3'), td('c4', { colspan: 2 })),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableColumn({ origin: 0, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('a3'), h('a1'), h('a2'), h('a4'), h('a5')),
-          r(c('b2'), c('b1', { colspan: 2 }), c('b3'), c('b4')),
-          r(c('c3'), c('c1'), c('c2'), c('c4', { colspan: 2 })),
+      const expected = doc(
+        table(
+          tr(th('a3'), th('a1'), th('a2'), th('a4'), th('a5')),
+          tr(td('b2'), td('b1', { colspan: 2 }), td('b3'), td('b4')),
+          tr(td('c3'), td('c1'), td('c2'), td('c4', { colspan: 2 })),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())

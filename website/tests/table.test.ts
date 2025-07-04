@@ -164,6 +164,29 @@ testStory('table', ({ example }) => {
       await expect(cell).toContainText(/^\s*$/)
     }
   })
+
+  test('delete first row', async ({ page }) => {
+    if (example.includes('svelte')) {
+      console.warn('Skipping Svelte test')
+      return
+    }
+
+    const { rowHandle, hoverCell, getTableShape, getOpenMenu, getMenuItem } = await setup(page)
+
+    await hoverCell('A1')
+    const { rows: beforeRows } = await getTableShape()
+
+    await rowHandle.click()
+    const menu = getOpenMenu()
+    await expect(menu).toBeVisible()
+
+    const deleteRowItem = getMenuItem('Delete Row')
+    await expect(deleteRowItem).toBeVisible()
+    await deleteRowItem.click()
+
+    const { rows: afterRows } = await getTableShape()
+    expect(afterRows).toBe(beforeRows - 1)
+  })
 })
 
 async function setup(page: Page) {

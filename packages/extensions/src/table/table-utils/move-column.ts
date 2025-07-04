@@ -12,6 +12,7 @@ import {
 } from './convert-row-and-table'
 import { getSelectionRangeInColumn } from './get-selection-range-in-column'
 import { findTable } from './query'
+import { transpose } from './transpose'
 
 export interface MoveColumnParams {
   tr: Transaction
@@ -80,10 +81,4 @@ function moveTableColumn(
   rows = transpose(rows)
 
   return convertArrayOfRowsToTableNode(table, rows)
-}
-
-function transpose<T>(array: T[][]) {
-  return array[0].map((_, i) => {
-    return array.map((column) => column[i])
-  })
 }

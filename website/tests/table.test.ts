@@ -152,16 +152,34 @@ async function setup(page: Page) {
       const rowHandleCenterY = rowHandleBox.y + rowHandleBox.height / 2
       const colHandleCenterX = colHandleBox.x + colHandleBox.width / 2
 
+      const cellBoxTop = cellBox.y
+      const cellBoxBottom = cellBoxTop + cellBox.height
+
+      const cellBoxLeft = cellBox.x
+      const cellBoxRight = cellBoxLeft + cellBox.width
+
       // Row handle's vertical position should intersect cell vertically
-      expect(rowHandleCenterY).toBeGreaterThanOrEqual(cellBox.y)
-      expect(rowHandleCenterY).toBeLessThanOrEqual(cellBox.y + cellBox.height)
+      expect(
+        rowHandleCenterY,
+        'Expect rowHandleCenterY to be greater than or equal to cellBoxTop',
+      ).toBeGreaterThanOrEqual(cellBoxTop)
+      expect(
+        rowHandleCenterY,
+        'Expect rowHandleCenterY to be less than or equal to cellBoxBottom',
+      ).toBeLessThanOrEqual(cellBoxBottom)
 
       // Column handle's horizontal position should intersect cell horizontally
-      expect(colHandleCenterX).toBeGreaterThanOrEqual(cellBox.x)
-      expect(colHandleCenterX).toBeLessThanOrEqual(cellBox.x + cellBox.width)
+      expect(
+        colHandleCenterX,
+        'Expect colHandleCenterX to be greater than or equal to cellBoxLeft',
+      ).toBeGreaterThanOrEqual(cellBoxLeft)
+      expect(
+        colHandleCenterX,
+        'Expect colHandleCenterX to be less than or equal to cellBoxRight',
+      ).toBeLessThanOrEqual(cellBoxRight)
     }
 
-    await expect(checkPosition).toPass()
+    await expect(checkPosition).toPass({ timeout: 3000 })
   }
 
   const getTableShape = async () => {

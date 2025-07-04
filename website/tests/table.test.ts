@@ -100,6 +100,30 @@ testStory('table', ({ example }) => {
     const { cols: colsAfter } = await getTableShape()
     expect(colsAfter).toBe(colsBefore + 1)
   })
+
+  test('delete last column', async ({ page }) => {
+    if (example.includes('svelte')) {
+      console.warn('Skipping Svelte test')
+      return
+    }
+
+    const { colHandle, hoverCell, getTableShape } = await setup(page)
+
+    // hover last column cell D1
+    await hoverCell('D1')
+    const { cols: beforeCols } = await getTableShape()
+
+    await colHandle.click()
+    const menu = page.locator('prosekit-table-handle-popover-content').first()
+    await expect(menu).toBeVisible()
+
+    const deleteColItem = menu.locator('prosekit-table-handle-popover-item', { hasText: 'Delete Column' })
+    await expect(deleteColItem).toBeVisible()
+    await deleteColItem.click()
+
+    const { cols: afterCols } = await getTableShape()
+    expect(afterCols).toBe(beforeCols - 1)
+  })
 })
 
 async function setup(page: Page) {

@@ -167,23 +167,23 @@ describe('moveTableRow', () => {
 
   describe('on a table with merged rows', () => {
     it('should move rows', () => {
-      const { editor, n, c, r } = setup()
-      const doc = n.doc(
-        n.table(
-          r(c('merged-row', { rowspan: 2 }), c('0'), c('1')),
-          r(c('2'), c('3')),
-          r(c('4'), c('5'), c('6')),
+      const { editor, n: { doc, table, tr, td } } = setup()
+      const docNode = doc(
+        table(
+          tr(td('merged-row', { rowspan: 2 }), td('0'), td('1')),
+          tr(td('2'), td('3')),
+          tr(td('4'), td('5'), td('6')),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableRow({ origin: 1, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(c('4'), c('5'), c('6')),
-          r(c('merged-row', { rowspan: 2 }), c('0'), c('1')),
-          r(c('2'), c('3')),
+      const expected = doc(
+        table(
+          tr(td('4'), td('5'), td('6')),
+          tr(td('merged-row', { rowspan: 2 }), td('0'), td('1')),
+          tr(td('2'), td('3')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
@@ -192,138 +192,138 @@ describe('moveTableRow', () => {
 
   describe('on a simple table with header', () => {
     it('should move row header top-to-bottom', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(c('2'), c(), c()),
-          r(c('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(td('2'), td(), td()),
+          tr(td('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableRow({ origin: 0, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('2'), h(), h()),
-          r(c('3'), c(), c()),
-          r(c('1'), c(), c()),
+      const expected = doc(
+        table(
+          tr(th('2'), th(), th()),
+          tr(td('3'), td(), td()),
+          tr(td('1'), td(), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move row header bottom-to-top', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(c('2'), c(), c()),
-          r(c('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(td('2'), td(), td()),
+          tr(td('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableRow({ origin: 2, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('3'), h(), h()),
-          r(c('1'), c(), c()),
-          r(c('2'), c(), c()),
+      const expected = doc(
+        table(
+          tr(th('3'), th(), th()),
+          tr(td('1'), td(), td()),
+          tr(td('2'), td(), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move col header top-to-bottom', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), c(), c()),
-          r(h('2'), c(), c()),
-          r(h('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), td(), td()),
+          tr(th('2'), td(), td()),
+          tr(th('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableRow({ origin: 0, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('2'), c(), c()),
-          r(h('3'), c(), c()),
-          r(h('1'), c(), c()),
+      const expected = doc(
+        table(
+          tr(th('2'), td(), td()),
+          tr(th('3'), td(), td()),
+          tr(th('1'), td(), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move col header bottom-to-top', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), c(), c()),
-          r(h('2'), c(), c()),
-          r(h('3'), c(), c()),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), td(), td()),
+          tr(th('2'), td(), td()),
+          tr(th('3'), td(), td()),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableRow({ origin: 2, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('3'), c(), c()),
-          r(h('1'), c(), c()),
-          r(h('2'), c(), c()),
+      const expected = doc(
+        table(
+          tr(th('3'), td(), td()),
+          tr(th('1'), td(), td()),
+          tr(th('2'), td(), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move row header correctly within a single column table', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1')),
-          r(c('2')),
-          r(c('3')),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1')),
+          tr(td('2')),
+          tr(td('3')),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableRow({ origin: 0, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('2')),
-          r(c('3')),
-          r(c('1')),
+      const expected = doc(
+        table(
+          tr(th('2')),
+          tr(td('3')),
+          tr(td('1')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move col header correctly within a single column table', () => {
-      const { editor, n, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1')),
-          r(h('2')),
-          r(h('3')),
+      const { editor, n: { doc, table, tr, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1')),
+          tr(th('2')),
+          tr(th('3')),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableRow({ origin: 0, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('2')),
-          r(h('3')),
-          r(h('1')),
+      const expected = doc(
+        table(
+          tr(th('2')),
+          tr(th('3')),
+          tr(th('1')),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
@@ -332,46 +332,46 @@ describe('moveTableRow', () => {
 
   describe('table with varying row node sizes', () => {
     it('should move row from top-to-bottom', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(c('2'.repeat(10)), c('2'.repeat(10)), c('2'.repeat(10))),
-          r(c('3'.repeat(100)), c('3'.repeat(100)), c('3'.repeat(100))),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(td('2'.repeat(10)), td('2'.repeat(10)), td('2'.repeat(10))),
+          tr(td('3'.repeat(100)), td('3'.repeat(100)), td('3'.repeat(100))),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableRow({ origin: 0, target: 2 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('2'.repeat(10)), h('2'.repeat(10)), h('2'.repeat(10))),
-          r(c('3'.repeat(100)), c('3'.repeat(100)), c('3'.repeat(100))),
-          r(c('1'), c(), c()),
+      const expected = doc(
+        table(
+          tr(th('2'.repeat(10)), th('2'.repeat(10)), th('2'.repeat(10))),
+          tr(td('3'.repeat(100)), td('3'.repeat(100)), td('3'.repeat(100))),
+          tr(td('1'), td(), td()),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
     })
 
     it('should move row from bottom-to-top', () => {
-      const { editor, n, c, r, h } = setup()
-      const doc = n.doc(
-        n.table(
-          r(h('1'), h(), h()),
-          r(c('2'.repeat(10)), c('2'.repeat(10)), c('2'.repeat(10))),
-          r(c('3'.repeat(100)), c('3'.repeat(100)), c('3'.repeat(100))),
+      const { editor, n: { doc, table, tr, td, th } } = setup()
+      const docNode = doc(
+        table(
+          tr(th('1'), th(), th()),
+          tr(td('2'.repeat(10)), td('2'.repeat(10)), td('2'.repeat(10))),
+          tr(td('3'.repeat(100)), td('3'.repeat(100)), td('3'.repeat(100))),
         ),
       )
 
-      editor.set(doc)
+      editor.set(docNode)
       editor.exec(moveTableRow({ origin: 2, target: 0 }))
 
-      const expected = n.doc(
-        n.table(
-          r(h('3'.repeat(100)), h('3'.repeat(100)), h('3'.repeat(100))),
-          r(c('1'), c(), c()),
-          r(c('2'.repeat(10)), c('2'.repeat(10)), c('2'.repeat(10))),
+      const expected = doc(
+        table(
+          tr(th('3'.repeat(100)), th('3'.repeat(100)), th('3'.repeat(100))),
+          tr(td('1'), td(), td()),
+          tr(td('2'.repeat(10)), td('2'.repeat(10)), td('2'.repeat(10))),
         ),
       )
       expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())

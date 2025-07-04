@@ -49,7 +49,6 @@ export function useTableHandleRoot(
     y: -1,
     startX: -1,
     startY: -1,
-    dndPreviewImage: null,
   })
 
   const hoveringCell = useHoveringCell(host, editor)
@@ -62,25 +61,6 @@ export function useTableHandleRoot(
     const selectingValue = selecting.get()
     const hoveringCellValue = hoveringCell.get()
     context.set(typingValue || selectingValue ? null : hoveringCellValue)
-  })
-
-  useEffect(host, () => {
-    /**
-     * Prepare an empty image for the dnd preview.
-     * This is used to prevent the browser from showing the default drag image.
-     * An earth icon in chrome is used as the default drag image.
-     * This image must be loaded before the dragStart event triggers.
-     */
-    const emptyImage = new Image(1, 1)
-    emptyImage.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
-    dndContext.set({
-      ...dndContext.peek(),
-      dndPreviewImage: emptyImage,
-    })
-
-    return () => {
-      emptyImage.remove()
-    }
   })
 
   tableHandleRootContext.provide(host, context)

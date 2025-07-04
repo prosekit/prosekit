@@ -7,6 +7,7 @@ import {
 import { useMenuTrigger } from '@aria-ui/menu/elements'
 import { selectTableRow } from '@prosekit/extensions/table'
 
+import { useEmptyImage } from '../../../hooks/use-empty-image'
 import {
   tableHandleDndContext,
   tableHandleRootContext,
@@ -43,13 +44,15 @@ export function useTableHandleRowTrigger(
     host.draggable = true
   })
 
+  const getEmptyImage = useEmptyImage(host)
+
   useEventListener(host, 'dragstart', (event: DragEvent) => {
     const dataTransfer = event.dataTransfer
     if (dataTransfer) {
       dataTransfer.effectAllowed = 'move'
-      const dndPreviewImage = dndContext.peek().dndPreviewImage
-      if (dndPreviewImage) {
-        dataTransfer.setDragImage(dndPreviewImage, 0, 0)
+      const emptyImage = getEmptyImage()
+      if (emptyImage) {
+        dataTransfer.setDragImage(emptyImage, 0, 0)
       }
     }
     const prev = dndContext.peek()

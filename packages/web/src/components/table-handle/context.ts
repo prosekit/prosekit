@@ -40,6 +40,5 @@ export const tableHandleDndContext: Context<TableHandleDndContext> = createConte
     y: -1,
     startX: -1,
     startY: -1,
-    dndPreviewImage: null,
   },
 )

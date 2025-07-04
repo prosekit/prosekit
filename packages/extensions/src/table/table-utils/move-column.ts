@@ -5,11 +5,9 @@ import {
   TableMap,
 } from 'prosemirror-tables'
 
-import {
-  convertArrayOfRowsToTableNode,
-  convertTableNodeToArrayOfRows,
-  moveRowInArrayOfRows,
-} from './convert-row-and-table'
+import { convertArrayOfRowsToTableNode } from './convert-array-of-rows-to-table-node'
+import { convertTableNodeToArrayOfRows } from './convert-table-node-to-array-of-rows'
+import { moveRowInArrayOfRows } from './move-row-in-array-of-rows'
 import { getSelectionRangeInColumn } from './get-selection-range-in-column'
 import { findTable } from './query'
 import { transpose } from './transpose'

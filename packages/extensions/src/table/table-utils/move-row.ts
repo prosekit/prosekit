@@ -24,30 +24,28 @@ export interface MoveRowParams {
  *
  * @internal
  */
-export function moveRow(moveRowParams: MoveRowParams): Transaction {
+export function moveRow(moveRowParams: MoveRowParams): boolean {
   const { tr, origin, target, select = true, pos } = moveRowParams
   const $pos = pos != null ? tr.doc.resolve(pos) : tr.selection.$from
   const table = findTable($pos)
-  if (!table) return tr
+  if (!table) return false
 
   const indexesOriginRow = getSelectionRangeInRow(tr, origin)?.indexes
   const indexesTargetRow = getSelectionRangeInRow(tr, target)?.indexes
 
-  if (!indexesOriginRow || !indexesTargetRow) return tr
+  if (!indexesOriginRow || !indexesTargetRow) return false
 
-  if (indexesOriginRow.includes(target)) return tr
+  if (indexesOriginRow.includes(target)) return false
 
   const newTable = moveTableRow(table.node, indexesOriginRow, indexesTargetRow, 0)
 
-  tr
-    .setTime(Date.now())
-    .replaceWith(
-      table.pos,
-      table.pos + table.node.nodeSize,
-      newTable,
-    )
+  tr.replaceWith(
+    table.pos,
+    table.pos + table.node.nodeSize,
+    newTable,
+  )
 
-  if (!select) return tr
+  if (!select) return true
 
   const map = TableMap.get(newTable)
   const start = table.start
@@ -58,7 +56,8 @@ export function moveRow(moveRowParams: MoveRowParams): Transaction {
   const firstCell = map.positionAt(index, 0, newTable)
   const $firstCell = tr.doc.resolve(start + firstCell)
 
-  return tr.setSelection(CellSelection.rowSelection($lastCell, $firstCell))
+  tr.setSelection(CellSelection.rowSelection($lastCell, $firstCell))
+  return true
 }
 
 function moveTableRow(

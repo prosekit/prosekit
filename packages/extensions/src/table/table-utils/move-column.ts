@@ -25,18 +25,18 @@ export interface MoveColumnParams {
  *
  * @internal
  */
-export function moveColumn(moveColParams: MoveColumnParams): Transaction {
+export function moveColumn(moveColParams: MoveColumnParams): boolean {
   const { tr, origin, target, select = true, pos } = moveColParams
   const $pos = pos != null ? tr.doc.resolve(pos) : tr.selection.$from
   const table = findTable($pos)
-  if (!table) return tr
+  if (!table) return false
 
   const indexesOriginColumn = getSelectionRangeInColumn(tr, origin)?.indexes
   const indexesTargetColumn = getSelectionRangeInColumn(tr, target)?.indexes
 
-  if (!indexesOriginColumn || !indexesTargetColumn) return tr
+  if (!indexesOriginColumn || !indexesTargetColumn) return false
 
-  if (indexesOriginColumn.includes(target)) return tr
+  if (indexesOriginColumn.includes(target)) return false
 
   const newTable = moveTableColumn(
     table.node,
@@ -45,15 +45,13 @@ export function moveColumn(moveColParams: MoveColumnParams): Transaction {
     0,
   )
 
-  tr
-    .setTime(Date.now())
-    .replaceWith(
-      table.pos,
-      table.pos + table.node.nodeSize,
-      newTable,
-    )
+  tr.replaceWith(
+    table.pos,
+    table.pos + table.node.nodeSize,
+    newTable,
+  )
 
-  if (!select) return tr
+  if (!select) return true
 
   const map = TableMap.get(newTable)
   const start = table.start
@@ -64,7 +62,8 @@ export function moveColumn(moveColParams: MoveColumnParams): Transaction {
   const firstCell = map.positionAt(0, index, newTable)
   const $firstCell = tr.doc.resolve(start + firstCell)
 
-  return tr.setSelection(CellSelection.colSelection($lastCell, $firstCell))
+  tr.setSelection(CellSelection.colSelection($lastCell, $firstCell))
+  return true
 }
 
 function moveTableColumn(

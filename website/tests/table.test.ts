@@ -6,6 +6,7 @@ import {
 } from '@playwright/test'
 
 import {
+  dragAndDrop,
   getBoundingBox,
   hover,
   testStory,
@@ -181,6 +182,70 @@ testStory('table', () => {
       ['', '', '', ''],
       ['A2', 'B2', 'C2', 'D2'],
     ])
+  })
+
+  test('drag column to reorder', async ({ page }) => {
+    const {
+      colHandle,
+      hoverCell,
+      expectTableContentToBe,
+      waitForCell,
+    } = await setup(page)
+
+    await test.step('check initial state', async () => {
+      await expectTableContentToBe([
+        ['A1', 'B1', 'C1', 'D1'],
+        ['A2', 'B2', 'C2', 'D2'],
+      ])
+    })
+
+    await test.step('drag the first column to the third column', async () => {
+      const startCell = await waitForCell('A1')
+      const targetCell = await waitForCell('C2')
+
+      await hoverCell(startCell)
+      await expect(colHandle).toBeVisible()
+      await dragAndDrop(colHandle, targetCell)
+
+      await expectTableContentToBe([
+        ['B1', 'C1', 'A1', 'D1'],
+        ['B2', 'C2', 'A2', 'D2'],
+      ])
+    })
+  })
+
+  test('drag row to reorder', async ({ page }) => {
+    const {
+      rowHandle,
+      hoverCell,
+      expectTableContentToBe,
+      waitForCell,
+    } = await setup(page)
+
+    await test.step('check initial state', async () => {
+      await expectTableContentToBe([
+        ['A1', 'B1', 'C1', 'D1'],
+        ['A2', 'B2', 'C2', 'D2'],
+      ])
+    })
+
+    await test.step('drag the first row below the second row', async () => {
+      const startCell = await waitForCell('A2')
+      const targetCell = await waitForCell('D1')
+
+      await hoverCell(startCell)
+      await expect(rowHandle).toBeVisible()
+
+      const rowTrigger = rowHandle.locator('prosekit-table-handle-row-trigger')
+      await expect(rowTrigger).toBeVisible()
+
+      await dragAndDrop(rowTrigger, targetCell)
+
+      await expectTableContentToBe([
+        ['A2', 'B2', 'C2', 'D2'],
+        ['A1', 'B1', 'C1', 'D1'],
+      ])
+    })
   })
 })
 

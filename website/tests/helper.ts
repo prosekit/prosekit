@@ -208,6 +208,28 @@ export async function hover(locator: Locator, options?: {
   await page.mouse.move(x + box.x, y + box.y, { steps })
 }
 
+/**
+ * Drag an element over another element.
+ *
+ * This is more reliable than `locator.dragTo()` because it sends multiple mouse
+ * move events.
+ */
+export async function dragAndDrop(
+  startLocator: Locator,
+  endLocator: Locator,
+  options?: {
+    startPosition?: { x: number; y: number }
+    endPosition?: { x: number; y: number }
+  },
+) {
+  const page = startLocator.page()
+
+  await hover(startLocator, { position: options?.startPosition })
+  await page.mouse.down()
+  await hover(endLocator, { position: options?.endPosition })
+  await page.mouse.up()
+}
+
 export async function emptyEditor(page: Page) {
   const editor = await waitForEditor(page)
   await editor.press(IS_APPLE ? 'Meta+a' : 'Control+a')

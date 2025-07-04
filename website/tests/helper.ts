@@ -130,11 +130,11 @@ export function testStory(
 }
 
 export function locateEditor(page: Page) {
-  return page.locator('.ProseMirror')
+  return page.locator('div.ProseMirror')
 }
 
 export function locateFocusedEditor(page: Page) {
-  return page.locator('.ProseMirror.ProseMirror-focused')
+  return page.locator('div.ProseMirror.ProseMirror-focused')
 }
 
 export async function waitForEditor(page: Page) {

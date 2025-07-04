@@ -16,6 +16,7 @@ import { heading } from '../../../libs/markdown/heading'
 //
 // - `this.partials.declarationTitle(model)` is not called
 // - `hasTypeDeclaration` is always `false`
+// - `model.typeParameters` is not used
 export function declarationBody(
   this: MarkdownThemeContext,
   model: DeclarationReflection,
@@ -95,6 +96,7 @@ export function declarationBody(
     })
   }
 
+  /*
   if (model.typeParameters) {
     md.push(
       heading(
@@ -112,6 +114,7 @@ export function declarationBody(
       )
     }
   }
+  */
 
   if (hasTypeDeclaration) {
     if (model.type instanceof UnionType) {

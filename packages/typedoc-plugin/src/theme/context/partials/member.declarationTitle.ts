@@ -83,7 +83,7 @@ export function declarationTitle(
     md.push(` = \`${model.defaultValue}\``)
   }
 
-  md.unshift('<code data-typedoc-declaration>')
+  md.unshift('<code data-typedoc-code>')
   md.push('</code>')
 
   return md.join('')

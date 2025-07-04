@@ -1,10 +1,14 @@
 import { MarkdownThemeContext } from 'typedoc-plugin-markdown'
 
 import { getReflectionFlags } from './theme/context/helpers/get-reflection-flags'
+import { wrapComment } from './theme/context/partials/comments.comment'
+import { accessor } from './theme/context/partials/member.accessor'
 import { memberContainerPatch } from './theme/context/partials/member.container.patch'
 import { declaration } from './theme/context/partials/member.declaration'
 import { declarationTitle } from './theme/context/partials/member.declarationTitle'
+import { indexSignature } from './theme/context/partials/member.indexSignature'
 import { inheritance } from './theme/context/partials/member.inheritance'
+import { memberWithGroups } from './theme/context/partials/member.memberWithGroups'
 import { signature } from './theme/context/partials/member.signature'
 import { signatureTitle } from './theme/context/partials/member.signatureTitle'
 
@@ -35,6 +39,20 @@ export class MyMarkdownThemeContext extends MarkdownThemeContext {
     }
     this.partials.signatureTitle = (...args) => {
       return signatureTitle.call(this, ...args)
+    }
+    this.partials.memberWithGroups = (...args) => {
+      return memberWithGroups.call(this, ...args)
+    }
+    this.partials.accessor = (...args) => {
+      return accessor.call(this, ...args)
+    }
+    this.partials.indexSignature = (...args) => {
+      return indexSignature.call(this, ...args)
+    }
+
+    const comment = wrapComment(partials.comment)
+    this.partials.comment = (...args) => {
+      return comment.call(this, ...args)
     }
   }
 }

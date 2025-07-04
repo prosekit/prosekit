@@ -36,6 +36,9 @@ const typedocConfig = {
   theme: 'my-markdown-theme',
   githubPages: false,
   disableSources: true,
+
+  // Ensure that the order of enum members is preserved
+  sort: ['source-order'],
   externalSymbolLinkMappings: {
     'lit': {
       LitElement: 'https://lit.dev/docs/api/LitElement/#LitElement',

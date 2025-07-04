@@ -317,7 +317,7 @@ describe('moveTableRow', () => {
     })
 
     it('should move col header correctly within a single column table', () => {
-      const { editor, n, c, r, h } = setup()
+      const { editor, n, r, h } = setup()
       const doc = n.doc(
         n.table(
           r(h('1')),

@@ -12,7 +12,7 @@ import {
   waitForEditor,
 } from './helper'
 
-testStory('table', ({ example }) => {
+testStory('table', () => {
   test('select cells by clicking handles', async ({ page }) => {
     const {
       editor,
@@ -75,12 +75,6 @@ testStory('table', ({ example }) => {
   })
 
   test('insert column', async ({ page }) => {
-    // TODO: fix this test
-    if (example.includes('svelte')) {
-      console.warn('Skipping Svelte test')
-      return
-    }
-
     const { colHandle, hoverCell, getTableShape, openMenu, getMenuItem } = await setup(page)
 
     await test.step('hover a cell to show column handle', async () => {
@@ -122,12 +116,6 @@ testStory('table', ({ example }) => {
   })
 
   test('delete last column', async ({ page }) => {
-    // TODO: fix this test
-    if (example.includes('svelte')) {
-      console.warn('Skipping Svelte test')
-      return
-    }
-
     const { colHandle, hoverCell, getTableShape, openMenu, getMenuItem } = await setup(page)
 
     // hover last column cell D1
@@ -146,12 +134,6 @@ testStory('table', ({ example }) => {
   })
 
   test('clear first row contents', async ({ page }) => {
-    // TODO: fix this test
-    if (example.includes('svelte')) {
-      console.warn('Skipping Svelte test')
-      return
-    }
-
     const {
       rowHandle,
       hoverCell,

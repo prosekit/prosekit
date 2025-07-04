@@ -15,16 +15,16 @@ import TableHandle from './table-handle.vue'
 const defaultContent = `
 <table><tbody>
   <tr>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
+    <td>A1</td>
+    <td>B1</td>
+    <td>C1</td>
+    <td>D1</td>
   </tr>
   <tr>
-    <td>5</td>
-    <td>6</td>
-    <td>7</td>
-    <td>8</td>
+    <td>A2</td>
+    <td>B2</td>
+    <td>C2</td>
+    <td>D2</td>
   </tr>
 </tbody></table>
 `
@@ -35,15 +35,9 @@ watchPostEffect((onCleanup) => {
   editor.mount(editorRef.value)
   onCleanup(() => editor.unmount())
 })
-
-function addTable() {
-  editor.commands.exitTable()
-  editor.commands.insertTable({ row: 3, col: 3, header: true })
-}
 </script>
 
 <template>
-  <button @click="addTable">Add table</button>
   <ProseKit :editor="editor">
     <div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">

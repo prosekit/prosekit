@@ -1,6 +1,7 @@
 import {
   expect,
   test,
+  type ConsoleMessage,
   type Locator,
   type Page,
 } from '@playwright/test'
@@ -23,16 +24,93 @@ function getExamples(story: string) {
   return examples
 }
 
+interface TestStoryCallbackOptions {
+  example: string
+}
+
+interface TestStoryOptions {
+  /**
+   * Whether to check for uncaught errors.
+   *
+   * If `true`, the test will fail if there are uncaught runtime errors.
+   *
+   * @default true
+   */
+  checkUncaughtErrors?: boolean
+
+  /**
+   * Whether to check for console errors.
+   *
+   * If `true`, the test will fail if there are console errors.
+   *
+   * @default true
+   */
+  checkConsoleErrors?: boolean
+
+  /**
+   * Whether to check for console warnings.
+   *
+   * If `true`, the test will fail if there are console warnings.
+   *
+   * @default true
+   */
+  checkConsoleWarnings?: boolean
+}
+
 function testSingleStory(
   story: string,
-  callback: (options: { example: string }) => void,
+  callback: (options: TestStoryCallbackOptions) => void,
+  {
+    checkUncaughtErrors = true,
+    checkConsoleErrors = true,
+    checkConsoleWarnings = true,
+  }: TestStoryOptions = {},
 ) {
   test.describe('story:' + story, () => {
     for (const example of getExamples(story)) {
       test.describe('example:' + example.name, () => {
+        const uncaughtErrors: Error[] = []
+        const consoleErrors: string[] = []
+        const consoleWarnings: string[] = []
+
+        const handlePageError = (error: Error) => {
+          uncaughtErrors.push(error)
+        }
+
+        const handleConsole = (message: ConsoleMessage) => {
+          if (message.type() === 'error') {
+            consoleErrors.push(message.text())
+          } else if (message.type() === 'warning') {
+            consoleWarnings.push(message.text())
+          }
+        }
+
         test.beforeEach(async ({ page }) => {
+          uncaughtErrors.length = 0
+          consoleErrors.length = 0
+          consoleWarnings.length = 0
+
+          page.on('pageerror', handlePageError)
+          page.on('console', handleConsole)
+
           await page.goto('stories/' + example.framework + '/' + example.story)
         })
+
+        test.afterEach(({ page }) => {
+          page.off('pageerror', handlePageError)
+          page.off('console', handleConsole)
+
+          if (checkUncaughtErrors) {
+            expect(uncaughtErrors, 'Expected no uncaught errors').toEqual([])
+          }
+          if (checkConsoleErrors) {
+            expect(consoleErrors, 'Expected no console errors').toEqual([])
+          }
+          if (checkConsoleWarnings) {
+            expect(consoleWarnings, 'Expected no console warnings').toEqual([])
+          }
+        })
+
         callback({ example: example.name })
       })
     }
@@ -41,12 +119,13 @@ function testSingleStory(
 
 export function testStory(
   story: string | string[],
-  callback: (options: { example: string }) => void,
+  callback: (options: TestStoryCallbackOptions) => void,
+  options?: TestStoryOptions,
 ) {
   const stories = Array.isArray(story) ? story : [story]
 
   for (const story of stories) {
-    testSingleStory(story, callback)
+    testSingleStory(story, callback, options)
   }
 }
 
@@ -156,4 +235,12 @@ export async function expectEditorToBeFocused(page: Page) {
 export async function expectEditorToBeBlurred(page: Page) {
   await waitForEditor(page)
   await expect(locateFocusedEditor(page)).toBeHidden()
+}
+
+export async function expectSelectedTextToBe(page: Page, text: string) {
+  const check = async () => {
+    const selectedText = await getSelectedText(page)
+    expect(selectedText).toEqual(text)
+  }
+  await expect(check).toPass({ timeout: 1000, intervals: [10, 50, 100] })
 }

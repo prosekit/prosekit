@@ -33,5 +33,28 @@ testStory('table', () => {
       await expect(rowHandle).toBeVisible()
       await expect(colHandle).toBeVisible()
     })
+
+    await test.step('row handle selects the first row', async () => {
+      // ensure no selection beforehand
+      await expect(editor.locator('td.selectedCell')).toHaveCount(0)
+
+      await rowHandle.click()
+
+      const selected = editor.locator('td.selectedCell')
+      await expect(selected).toHaveCount(4)
+
+      const texts = await selected.evaluateAll((els) => els.map((e) => e.textContent?.trim()))
+      expect(texts).toEqual(['1', '2', '3', '4'])
+    })
+
+    await test.step('column handle selects the first column', async () => {
+      await colHandle.click()
+
+      const selected = editor.locator('td.selectedCell')
+      await expect(selected).toHaveCount(2)
+
+      const texts = await selected.evaluateAll((els) => els.map((e) => e.textContent?.trim()))
+      expect(texts).toEqual(['1', '5'])
+    })
   })
 })

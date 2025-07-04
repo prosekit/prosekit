@@ -77,7 +77,7 @@ export default defineConfig({
   webServer: {
     command: 'pnpm -w run preview',
     url: 'http://localhost:4321/astrobook/',
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: true,
     stdout: 'pipe',
     stderr: 'pipe',
     timeout: 300_000,

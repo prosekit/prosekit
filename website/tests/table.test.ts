@@ -80,7 +80,7 @@ testStory('table', ({ example }) => {
       return
     }
 
-    const { colHandle, hoverCell, getTableShape } = await setup(page)
+    const { colHandle, hoverCell, getTableShape, getOpenMenu, getMenuItem } = await setup(page)
 
     await hoverCell('A1')
     await expect(colHandle).toBeVisible()
@@ -89,10 +89,10 @@ testStory('table', ({ example }) => {
 
     await colHandle.click()
 
-    const menu = page.locator('prosekit-table-handle-popover-content').first()
+    const menu = getOpenMenu()
     await expect(menu).toBeVisible()
 
-    const insertRight = menu.locator('prosekit-table-handle-popover-item', { hasText: 'Insert Right' })
+    const insertRight = getMenuItem('Insert Right')
     await expect(insertRight).toBeVisible()
 
     await insertRight.click()
@@ -107,22 +107,62 @@ testStory('table', ({ example }) => {
       return
     }
 
-    const { colHandle, hoverCell, getTableShape } = await setup(page)
+    const { colHandle, hoverCell, getTableShape, getOpenMenu, getMenuItem } = await setup(page)
 
     // hover last column cell D1
     await hoverCell('D1')
     const { cols: beforeCols } = await getTableShape()
 
     await colHandle.click()
-    const menu = page.locator('prosekit-table-handle-popover-content').first()
+    const menu = getOpenMenu()
     await expect(menu).toBeVisible()
 
-    const deleteColItem = menu.locator('prosekit-table-handle-popover-item', { hasText: 'Delete Column' })
+    const deleteColItem = getMenuItem('Delete Column')
     await expect(deleteColItem).toBeVisible()
     await deleteColItem.click()
 
     const { cols: afterCols } = await getTableShape()
     expect(afterCols).toBe(beforeCols - 1)
+  })
+
+  test('clear first row contents', async ({ page }) => {
+    if (example.includes('svelte')) {
+      console.warn('Skipping Svelte test')
+      return
+    }
+
+    const {
+      rowHandle,
+      hoverCell,
+      waitForCell,
+      getTableShape,
+      getOpenMenu,
+      getMenuItem,
+    } = await setup(page)
+
+    // Ensure A1 text exists
+    await waitForCell('A1')
+
+    await hoverCell('A1')
+    await rowHandle.click()
+
+    const menu = getOpenMenu()
+    await expect(menu).toBeVisible()
+
+    const clearItem = getMenuItem('Clear Contents')
+    await expect(clearItem).toBeVisible()
+    await clearItem.click()
+
+    // After clearing, cells in first row should have no text.
+    const { cols } = await getTableShape()
+    for (let i = 0; i < cols; i++) {
+      const cell = page
+        .locator('tr')
+        .first()
+        .locator('td')
+        .nth(i)
+      await expect(cell).toContainText(/^\s*$/)
+    }
   })
 })
 
@@ -218,6 +258,10 @@ async function setup(page: Page) {
     return { rows, cols }
   }
 
+  const getOpenMenu = () => page.locator('prosekit-table-handle-popover-content[data-state="open"]').first()
+
+  const getMenuItem = (text: string) => getOpenMenu().locator('prosekit-table-handle-popover-item', { hasText: text })
+
   return {
     editor,
     rowHandle,
@@ -226,5 +270,7 @@ async function setup(page: Page) {
     hoverCell,
     waitForCell,
     getTableShape,
+    getOpenMenu,
+    getMenuItem,
   }
 }

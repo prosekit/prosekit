@@ -5,21 +5,8 @@ import {
 } from 'vitest'
 
 import { setupTest } from '../../testing'
-import type { CellAttrs } from '../table-spec.js'
 
 import { moveRowInArrayOfRows } from './move-row-in-array-of-rows'
-
-function setup() {
-  const { n } = setupTest()
-  const defaultCellAttrs: CellAttrs = { colspan: 1, rowspan: 1, colwidth: null }
-
-  const c = (text?: string, attrs?: Partial<CellAttrs>) => {
-    return n.tableCell({ ...defaultCellAttrs, ...attrs }, text ? n.p(text) : n.p())
-  }
-  const r = n.tableRow
-
-  return { n, c, r }
-}
 
 describe('moveRowInArrayOfRows', () => {
   describe('single element moves', () => {
@@ -128,11 +115,11 @@ describe('moveRowInArrayOfRows', () => {
     })
 
     it('should work with table cell nodes', () => {
-      const { c } = setup()
+      const { n: { td } } = setupTest()
       const rows = [
-        [c('0'), c('A')],
-        [c('1'), c('B')],
-        [c('2'), c('C')],
+        [td('0'), td('A')],
+        [td('1'), td('B')],
+        [td('2'), td('C')],
       ]
 
       const result = moveRowInArrayOfRows(rows, [2], [0], 0)

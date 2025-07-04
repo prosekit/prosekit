@@ -10,6 +10,7 @@ import {
 } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import {
   tableHandleDndContext,
   tableHandleRootContext,
@@ -49,12 +50,11 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
   })
 
   useEffect(host, () => {
-    const editorValue = editor.get()
-    if (!editorValue) return
-    const dragging = draggingSignal.get()
-    if (!dragging) return
+    const view = getSafeEditorView(editor.get())
+    if (!view) return
 
-    const { view } = editorValue
+    if (!draggingSignal.get()) return
+
     const { draggingIndex, direction } = dndContext.peek()
     const x = clientXSignal.get()
     const y = clientYSignal.get()

@@ -10,6 +10,7 @@ import {
 } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import {
   tableHandleDndContext,
   tableHandleRootContext,
@@ -36,11 +37,11 @@ export function useUpdatePreviewPosition(host: ConnectableElement, editor: Reado
   })
 
   useEffect(host, () => {
-    const editorValue = editor.get()
-    if (!editorValue) return
+    const view = getSafeEditorView(editor.get())
+    if (!view) return
+
     if (!draggingSignal.get()) return
 
-    const { view } = editorValue
     const { draggingIndex, direction } = dndContext.peek()
     const x = clientXSignal.get()
     const y = clientYSignal.get()

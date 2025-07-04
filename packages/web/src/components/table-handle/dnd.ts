@@ -12,6 +12,8 @@ import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
+import { getSafeEditorView } from '../../utils/get-safe-editor-view'
+
 import {
   tableHandleDndContext,
   tableHandleRootContext,
@@ -50,8 +52,8 @@ export function useInitDndPosition(
   })
 
   useEffect(host, () => {
-    const editorValue = editor.get()
-    if (!editorValue) return
+    const view = getSafeEditorView(editor.get())
+    if (!view) return
 
     const dragging = draggingSignal.get()
     const direction = directionSignal.get()
@@ -60,7 +62,6 @@ export function useInitDndPosition(
     host.dataset.dragging = dragging.toString()
 
     const draggingIndex = draggingIndexSignal.get()
-    const { view } = editorValue
 
     const relatedDOMs = getDndRelatedDOMs(view, rootContext.peek()?.cellPos, draggingIndex, direction)
     if (!relatedDOMs) return

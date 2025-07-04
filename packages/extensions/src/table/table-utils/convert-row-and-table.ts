@@ -44,8 +44,30 @@ export function convertArrayOfRowsToTableNode(
 }
 
 /**
- * Convert a table node to an array of rows.
+ * This function will transform the table node
+ * into a matrix of rows and columns respecting merged cells,
+ * for example this table will be convert to the below:
  *
+ * ```
+ *  ____________________________
+ * |      |      |             |
+ * |  A1  |  B1  |     C1      |
+ * |______|______|______ ______|
+ * |      |             |      |
+ * |  A2  |     B2      |      |
+ * |______|______ ______|      |
+ * |      |      |      |  D1  |
+ * |  A3  |  B3  |  C2  |      |
+ * |______|______|______|______|
+ * ```
+ *
+ * ```javascript
+ * array = [
+ *   [A1, B1, C1, null],
+ *   [A2, B2, null, D1],
+ *   [A3. B3, C2, null],
+ * ]
+ * ```
  * @internal
  */
 export function convertTableNodeToArrayOfRows(tableNode: Node): (Node | null)[][] {

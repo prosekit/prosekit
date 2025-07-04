@@ -113,11 +113,11 @@ describe('convertArrayOfRowsToTableNode', () => {
   })
 
   it('should handle tables with merged cells', () => {
-    const { n, c, r } = setup()
-    const originalTable = n.table(
-      r(c('A1'), c('B1'), c('C1', { colspan: 2 })),
-      r(c('A2'), c('B2', { colspan: 2 }), c('D1', { rowspan: 2 })),
-      r(c('A3'), c('B3'), c('C3')),
+    const { n: { table, tr, td }, c } = setup()
+    const originalTable = table(
+      tr(td('A1'), c('B1'), c('C1', { colspan: 2 })),
+      tr(td('A2'), c('B2', { colspan: 2 }), c('D1', { rowspan: 2 })),
+      tr(td('A3'), c('B3'), c('C3')),
     )
 
     const arrayOfRows = convertTableNodeToArrayOfRows(originalTable)

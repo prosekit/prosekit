@@ -6,21 +6,8 @@ import {
 } from 'vitest'
 
 import { setupTest } from '../../testing'
-import type { CellAttrs } from '../table-spec.js'
 
 import { convertTableNodeToArrayOfRows } from './convert-table-node-to-array-of-rows'
-
-function setup() {
-  const { n } = setupTest()
-  const defaultCellAttrs: CellAttrs = { colspan: 1, rowspan: 1, colwidth: null }
-
-  const c = (text?: string, attrs?: Partial<CellAttrs>) => {
-    return n.tableCell({ ...defaultCellAttrs, ...attrs }, text ? n.p(text) : n.p())
-  }
-  const r = n.tableRow
-
-  return { n, c, r }
-}
 
 describe('convertTableNodeToArrayOfRows', () => {
   const convert = (tableNode: Node): (string | null)[][] => {
@@ -29,10 +16,10 @@ describe('convertTableNodeToArrayOfRows', () => {
   }
 
   it('should convert a simple table to array of rows', () => {
-    const { n, c, r } = setup()
-    const tableNode = n.table(
-      r(c('A1'), c('B1')),
-      r(c('A2'), c('B2')),
+    const { n: { table, tr, td } } = setupTest()
+    const tableNode = table(
+      tr(td('A1'), td('B1')),
+      tr(td('A2'), td('B2')),
     )
 
     expect(convert(tableNode)).toEqual([
@@ -42,10 +29,10 @@ describe('convertTableNodeToArrayOfRows', () => {
   })
 
   it('should handle empty cells', () => {
-    const { n, c, r } = setup()
-    const tableNode = n.table(
-      r(c('A1'), c()),
-      r(c(), c('B2')),
+    const { n: { table, tr, td } } = setupTest()
+    const tableNode = table(
+      tr(td('A1'), td()),
+      tr(td(), td('B2')),
     )
 
     expect(convert(tableNode)).toEqual([
@@ -55,10 +42,10 @@ describe('convertTableNodeToArrayOfRows', () => {
   })
 
   it('should handle tables with equal row lengths', () => {
-    const { n, c, r } = setup()
-    const tableNode = n.table(
-      r(c('A1'), c('B1'), c('C1')),
-      r(c('A2'), c('B2'), c('C2')),
+    const { n: { table, tr, td } } = setupTest()
+    const tableNode = table(
+      tr(td('A1'), td('B1'), td('C1')),
+      tr(td('A2'), td('B2'), td('C2')),
     )
 
     expect(convert(tableNode)).toEqual([
@@ -68,9 +55,9 @@ describe('convertTableNodeToArrayOfRows', () => {
   })
 
   it('should handle single row table', () => {
-    const { n, c, r } = setup()
-    const tableNode = n.table(
-      r(c('Single'), c('Row')),
+    const { n: { table, tr, td } } = setupTest()
+    const tableNode = table(
+      tr(td('Single'), td('Row')),
     )
 
     expect(convert(tableNode)).toEqual([
@@ -79,11 +66,11 @@ describe('convertTableNodeToArrayOfRows', () => {
   })
 
   it('should handle single column table', () => {
-    const { n, c, r } = setup()
-    const tableNode = n.table(
-      r(c('A1')),
-      r(c('A2')),
-      r(c('A3')),
+    const { n: { table, tr, td } } = setupTest()
+    const tableNode = table(
+      tr(td('A1')),
+      tr(td('A2')),
+      tr(td('A3')),
     )
 
     expect(convert(tableNode)).toEqual([
@@ -94,7 +81,7 @@ describe('convertTableNodeToArrayOfRows', () => {
   })
 
   it('should handle table with merged cells', () => {
-    const { n, r, c } = setup()
+    const { n: { table, tr, td } } = setupTest()
 
     // ┌──────┬──────┬─────────────┐
     // │  A1  │  B1  │     C1      │
@@ -103,10 +90,10 @@ describe('convertTableNodeToArrayOfRows', () => {
     // ├──────┼─────────────┤  D1  │
     // │  A3  │  B3  │  C3  │      │
     // └──────┴──────┴──────┴──────┘
-    const tableNode = n.table(
-      r(c('A1'), c('B1'), c('C1', { colspan: 2 })),
-      r(c('A2'), c('B2', { colspan: 2 }), c('D1', { rowspan: 2 })),
-      r(c('A3'), c('B3'), c('C3')),
+    const tableNode = table(
+      tr(td('A1'), td('B1'), td('C1', { colspan: 2 })),
+      tr(td('A2'), td('B2', { colspan: 2 }), td('D1', { rowspan: 2 })),
+      tr(td('A3'), td('B3'), td('C3')),
     )
 
     expect(convert(tableNode)).toEqual([

@@ -7,10 +7,6 @@ on:
 
   pull_request:
 
-env:
-  DO_NOT_TRACK: 1
-  TURBO_CONCURRENCY: 1
-
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -53,10 +49,6 @@ jobs:
 
     needs: [build]
 
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-
     strategy:
       fail-fast: false
       matrix:
@@ -78,10 +70,6 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
     steps:
       - uses: actions/checkout@v4
@@ -116,10 +104,6 @@ jobs:
 
     needs: [build]
 
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-
     steps:
       - uses: actions/checkout@v4
 
@@ -143,8 +127,6 @@ jobs:
     needs: [build]
 
     env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
       CLOUDFLARE_PAGES_API_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 

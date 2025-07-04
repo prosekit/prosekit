@@ -7,6 +7,12 @@ inputs:
     required: false
     default: "20"
 
+  build-cache:
+    description: |
+      Whether to save the build cache. Available options: "save", "ignore"
+    required: false
+    default: 'ignore'
+
 runs:
   using: composite
   steps:
@@ -15,6 +21,7 @@ runs:
       run: |
         echo "FORCE_COLOR=1" >> "${GITHUB_ENV}"
         echo "DO_NOT_TRACK=1" >> "${GITHUB_ENV}"
+        echo "TURBO_CONCURRENCY=1" >> "${GITHUB_ENV}"
 
     - name: Install pnpm
       uses: pnpm/action-setup@v4
@@ -25,6 +32,17 @@ runs:
         node-version: ${{ inputs.node-version }}
         cache: pnpm
         registry-url: "https://registry.npmjs.org"
+
+    - name: Setup turbo cache
+      uses: actions/cache@v4
+      if: ${{ inputs.build-cache == 'save' }}
+      with:
+        path: .turbo/cache
+        key: |
+          turbo-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
+        restore-keys: |
+          turbo-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
+          turbo-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
 
     - name: Show versions
       run: |

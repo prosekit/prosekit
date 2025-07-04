@@ -32,7 +32,7 @@ export default defineConfig({
     baseURL: 'http://localhost:4321/astrobook/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
     // headless: false,
   },
 
@@ -77,7 +77,7 @@ export default defineConfig({
   webServer: {
     command: 'pnpm -w run preview',
     url: 'http://localhost:4321/astrobook/',
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: true,
     stdout: 'pipe',
     stderr: 'pipe',
     timeout: 300_000,

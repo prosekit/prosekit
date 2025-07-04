@@ -7,11 +7,11 @@ import {
 import { useMenuTrigger } from '@aria-ui/menu/elements'
 import { selectTableColumn } from '@prosekit/extensions/table'
 
-import { useEmptyImage } from '../../../hooks/use-empty-image'
 import {
   tableHandleDndContext,
   tableHandleRootContext,
 } from '../context'
+import { useEmptyImage } from '../hooks/use-empty-image'
 
 import type { TableHandleColumnTriggerProps } from './types'
 

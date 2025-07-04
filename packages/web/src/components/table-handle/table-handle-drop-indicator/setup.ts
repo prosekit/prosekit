@@ -8,10 +8,10 @@ import {
   useInitDndPosition,
   type OnInitParams,
 } from '../dnd'
+import { useDrop } from '../hooks/use-drop'
 
 import type { TableHandleDropIndicatorProps } from './types'
 import { useUpdateIndicatorPosition } from './updater'
-import { useDrop } from './use-drop'
 
 const HANDLE_WIDTH = 2
 

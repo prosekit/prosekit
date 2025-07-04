@@ -14,13 +14,11 @@ import { tableHandleDndContext } from '../context'
 
 export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor | null>): void {
   const dndContext = tableHandleDndContext.consume(host)
-  const draggingSignal = createComputed(() => {
-    const context = dndContext.get()
-    return context.dragging
-  })
+  const dragging = createComputed(() => dndContext.get().dragging)
 
   useEffect(host, () => {
-    if (!draggingSignal.get()) return
+    if (!dragging.get()) return
+
     const onDrop = () => {
       const editorValue = editor.peek()
       if (!editorValue) return
@@ -29,12 +27,6 @@ export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor 
       // Validate indices
       if (draggingIndex < 0 || droppingIndex < 0) {
         console.warn('[prosekit] Invalid drag indices:', { draggingIndex, droppingIndex })
-        return
-      }
-
-      // Validate direction
-      if (direction !== 'row' && direction !== 'col') {
-        console.warn('[prosekit] Invalid drag direction:', direction)
         return
       }
 
@@ -53,6 +45,7 @@ export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor 
         return
       }
     }
+
     document.addEventListener('drop', onDrop)
     return () => {
       document.removeEventListener('drop', onDrop)

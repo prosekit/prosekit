@@ -16,10 +16,9 @@ import { isCellSelection } from './table-utils'
 
 function setup() {
   const { editor, n } = setupTest()
-  const c = (text?: string) => n.tableCell(text ? n.p(text) : n.p())
-  const h = (text?: string) => n.tableHeaderCell(text ? n.p(text) : n.p())
-  const r = n.tableRow
 
+  // TODO: add a new command "selectTableCells" so that
+  // we don't need to write this command in every test
   const setCellSelection = (from: number, to: number) => {
     const command: Command = (state, dispatch) => {
       const selection = CellSelection.create(state.doc, from, to)
@@ -29,36 +28,36 @@ function setup() {
     editor.exec(command)
   }
 
-  return { editor, n, c, h, r, setCellSelection }
+  return { editor, n, setCellSelection }
 }
 
 describe('insertTable', () => {
   it('can insert a table', () => {
-    const { editor, n, c, r } = setup()
+    const { editor, n: { doc, table, tr, td, p } } = setup()
     editor.commands.insertTable({ row: 3, col: 2, header: false })
-    const expected = n.doc(
-      n.table(
+    const expected = doc(
+      table(
         //
-        r(c(), c()),
-        r(c(), c()),
-        r(c(), c()),
+        tr(td(), td()),
+        tr(td(), td()),
+        tr(td(), td()),
       ),
-      n.p(),
+      p(),
     )
     expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
   })
 
   it('can insert a table with header', () => {
-    const { editor, n, c, r, h } = setup()
+    const { editor, n: { doc, table, tr, td, th, p } } = setup()
     editor.commands.insertTable({ row: 3, col: 2, header: true })
-    const expected = n.doc(
-      n.table(
+    const expected = doc(
+      table(
         //
-        r(h(), h()),
-        r(c(), c()),
-        r(c(), c()),
+        tr(th(), th()),
+        tr(td(), td()),
+        tr(td(), td()),
       ),
-      n.p(),
+      p(),
     )
     expect(editor.state.doc.toJSON()).toEqual(expected.toJSON())
   })
@@ -66,22 +65,22 @@ describe('insertTable', () => {
 
 describe('exitTable', () => {
   it('can exist a table', async () => {
-    const { editor, n, c, r } = setup()
-    const doc1 = n.doc(
-      n.table(
+    const { editor, n: { doc, table, tr, td, p } } = setup()
+    const doc1 = doc(
+      table(
         //
-        r(c('<a>'), c()),
-        r(c(), c()),
+        tr(td('<a>'), td()),
+        tr(td(), td()),
       ),
     )
     editor.set(doc1)
 
     await inputText('foo')
-    const doc2 = n.doc(
-      n.table(
+    const doc2 = doc(
+      table(
         //
-        r(c('foo'), c()),
-        r(c(), c()),
+        tr(td('foo'), td()),
+        tr(td(), td()),
       ),
     )
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
@@ -89,13 +88,13 @@ describe('exitTable', () => {
     editor.commands.exitTable()
     await inputText('bar')
 
-    const doc3 = n.doc(
-      n.table(
+    const doc3 = doc(
+      table(
         //
-        r(c('foo'), c()),
-        r(c(), c()),
+        tr(td('foo'), td()),
+        tr(td(), td()),
       ),
-      n.p('bar'),
+      p('bar'),
     )
     expect(editor.state.doc.toJSON()).toEqual(doc3.toJSON())
   })
@@ -103,14 +102,14 @@ describe('exitTable', () => {
 
 describe('deleteCellSelection', () => {
   it('can clear the content in the selected table cells', () => {
-    const { editor, n, c, r, setCellSelection } = setup()
-    const doc1 = n.doc(
-      n.table(
-        r(/*2*/ c('1'), /*7*/ c('2') /*12*/),
+    const { editor, n: { doc, table, tr, td }, setCellSelection } = setup()
+    const doc1 = doc(
+      table(
+        tr(/*2*/ td('1'), /*7*/ td('2') /*12*/),
         /*13*/
-        r(/*14*/ c('3'), /*19*/ c('4') /*24*/),
+        tr(/*14*/ td('3'), /*19*/ td('4') /*24*/),
         /*25*/
-        r(/*26*/ c('5'), /*31*/ c('6') /*36*/),
+        tr(/*26*/ td('5'), /*31*/ td('6') /*36*/),
       ),
     )
 
@@ -121,12 +120,12 @@ describe('deleteCellSelection', () => {
     editor.commands.deleteCellSelection()
     expect(isCellSelection(editor.state.selection)).toBe(true)
 
-    const doc2 = n.doc(
-      n.table(
+    const doc2 = doc(
+      table(
         //
-        r(c(), c()),
-        r(c(), c()),
-        r(c('5'), c('6')),
+        tr(td(), td()),
+        tr(td(), td()),
+        tr(td('5'), td('6')),
       ),
     )
     expect(editor.state.doc.toJSON()).toEqual(doc2.toJSON())
@@ -135,13 +134,13 @@ describe('deleteCellSelection', () => {
 
 describe('selectTableColumn', () => {
   it('can select the whole table column', () => {
-    const { editor, n, c, r } = setup()
-    const doc1 = n.doc(
-      n.table(
+    const { editor, n: { doc, table, tr, td } } = setup()
+    const doc1 = doc(
+      table(
         //
-        r(c('1'), c('2')),
-        r(c('3'), c('4<a>')),
-        r(c('5'), c('6')),
+        tr(td('1'), td('2')),
+        tr(td('3'), td('4<a>')),
+        tr(td('5'), td('6')),
       ),
     )
 
@@ -160,13 +159,13 @@ describe('selectTableColumn', () => {
 
 describe('selectTableRow', () => {
   it('can select the whole table row', () => {
-    const { editor, n, c, r } = setup()
-    const doc1 = n.doc(
-      n.table(
+    const { editor, n: { doc, table, tr, td } } = setup()
+    const doc1 = doc(
+      table(
         //
-        r(c('1'), c('2')),
-        r(c('3'), c('4<a>')),
-        r(c('5'), c('6')),
+        tr(td('1'), td('2')),
+        tr(td('3'), td('4<a>')),
+        tr(td('5'), td('6')),
       ),
     )
 
@@ -184,13 +183,13 @@ describe('selectTableRow', () => {
 
 describe('selectTableCell', () => {
   it('can select a table cell', () => {
-    const { editor, n, c, r } = setup()
-    const doc1 = n.doc(
-      n.table(
+    const { editor, n: { doc, table, tr, td } } = setup()
+    const doc1 = doc(
+      table(
         //
-        r(c('1'), c('2')),
-        r(c('3'), c('4<a>')),
-        r(c('5'), c('6')),
+        tr(td('1'), td('2')),
+        tr(td('3'), td('4<a>')),
+        tr(td('5'), td('6')),
       ),
     )
 
@@ -209,13 +208,13 @@ describe('selectTableCell', () => {
 
 describe('selectTable', () => {
   it('can select the whole table', () => {
-    const { editor, n, c, r } = setup()
-    const doc1 = n.doc(
-      n.table(
+    const { editor, n: { doc, table, tr, td } } = setup()
+    const doc1 = doc(
+      table(
         //
-        r(c('1'), c('2')),
-        r(c('3'), c('4<a>')),
-        r(c('5'), c('6')),
+        tr(td('1'), td('2')),
+        tr(td('3'), td('4<a>')),
+        tr(td('5'), td('6')),
       ),
     )
 

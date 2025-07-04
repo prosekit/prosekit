@@ -2,6 +2,8 @@ import { useEditor } from 'prosekit/solid'
 import {
   TableHandleColumnRoot,
   TableHandleColumnTrigger,
+  TableHandleDragPreview,
+  TableHandleDropIndicator,
   TableHandlePopoverContent,
   TableHandlePopoverItem,
   TableHandleRoot,
@@ -16,6 +18,8 @@ export default function TableHandle() {
 
   return (
     <TableHandleRoot class="contents">
+      <TableHandleDragPreview />
+      <TableHandleDropIndicator />
       <TableHandleColumnRoot class="CSS_TABLE_COLUMN_HANDLE">
         <TableHandleColumnTrigger>
           <div class="CSS_ICON_TABLE_COLUMN_HANDLE"></div>

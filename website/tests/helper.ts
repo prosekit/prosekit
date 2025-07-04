@@ -130,11 +130,11 @@ export function testStory(
 }
 
 export function locateEditor(page: Page) {
-  return page.locator('.ProseMirror')
+  return page.locator('div.ProseMirror')
 }
 
 export function locateFocusedEditor(page: Page) {
-  return page.locator('.ProseMirror.ProseMirror-focused')
+  return page.locator('div.ProseMirror.ProseMirror-focused')
 }
 
 export async function waitForEditor(page: Page) {
@@ -206,6 +206,28 @@ export async function hover(locator: Locator, options?: {
   const page = locator.page()
   const steps = options?.steps ?? 10
   await page.mouse.move(x + box.x, y + box.y, { steps })
+}
+
+/**
+ * Drag an element over another element.
+ *
+ * This is more reliable than `locator.dragTo()` because it sends multiple mouse
+ * move events.
+ */
+export async function dragAndDrop(
+  startLocator: Locator,
+  endLocator: Locator,
+  options?: {
+    startPosition?: { x: number; y: number }
+    endPosition?: { x: number; y: number }
+  },
+) {
+  const page = startLocator.page()
+
+  await hover(startLocator, { position: options?.startPosition })
+  await page.mouse.down()
+  await hover(endLocator, { position: options?.endPosition })
+  await page.mouse.up()
 }
 
 export async function emptyEditor(page: Page) {

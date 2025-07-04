@@ -17,6 +17,14 @@ export {
   type SelectTableRowOptions,
   type TableCommandsExtension,
 } from './table-commands'
+export {
+  moveTableColumn,
+  type MoveTableColumnOptions,
+} from './table-commands/move-table-column'
+export {
+  moveTableRow,
+  type MoveTableRowOptions,
+} from './table-commands/move-table-row'
 export { defineTablePlugins } from './table-plugins'
 export {
   defineTableCellSpec,

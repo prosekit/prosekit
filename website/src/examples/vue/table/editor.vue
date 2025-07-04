@@ -35,15 +35,9 @@ watchPostEffect((onCleanup) => {
   editor.mount(editorRef.value)
   onCleanup(() => editor.unmount())
 })
-
-function addTable() {
-  editor.commands.exitTable()
-  editor.commands.insertTable({ row: 3, col: 3, header: true })
-}
 </script>
 
 <template>
-  <button @click="addTable">Add table</button>
   <ProseKit :editor="editor">
     <div class="CSS_EDITOR_VIEWPORT">
       <div class="CSS_EDITOR_SCROLLING">

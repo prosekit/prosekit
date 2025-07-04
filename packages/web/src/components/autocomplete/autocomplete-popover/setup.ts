@@ -25,6 +25,7 @@ import {
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { useFirstRendering } from '../../../hooks/use-first-rendering'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import {
   onSubmitContext,
   openContext,
@@ -133,7 +134,8 @@ function createAutocompleteRule(
   onSubmit: Signal<VoidFunction | null>,
 ) {
   const handleEnter: MatchHandler = (options) => {
-    const span = editor.view.dom.querySelector('.prosemirror-prediction-match')
+    const view = getSafeEditorView(editor)
+    const span = view?.dom.querySelector('.prosemirror-prediction-match')
 
     if (span) {
       reference.set(span)

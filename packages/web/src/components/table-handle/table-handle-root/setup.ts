@@ -15,6 +15,7 @@ import type { EditorView } from '@prosekit/pm/view'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { useEditorTyping } from '../../../hooks/use-editor-typing'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import {
   tableHandleRootContext,
   type TableHandleRootContext,
@@ -96,7 +97,8 @@ function useSelecting(
       return
     }
 
-    const root = editor.peek()?.view.root
+    const view = getSafeEditorView(editor.peek())
+    const root = view?.root
     if (!root) {
       return
     }

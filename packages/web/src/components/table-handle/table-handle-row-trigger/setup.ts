@@ -11,7 +11,7 @@ import {
   tableHandleDndContext,
   tableHandleRootContext,
 } from '../context'
-import { useEmptyImage } from '../table-handle-column-trigger/use-empty-image'
+import { useEmptyImage } from '../hooks/use-empty-image'
 
 import type {
   TableHandleRowTriggerEvents,

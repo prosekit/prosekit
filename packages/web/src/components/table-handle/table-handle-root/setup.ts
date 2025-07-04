@@ -17,6 +17,7 @@ import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { useEditorTyping } from '../../../hooks/use-editor-typing'
 import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import {
+  defaultTableHandleDndContext,
   tableHandleDndContext,
   tableHandleRootContext,
   type TableHandleDndContext,
@@ -40,16 +41,7 @@ export function useTableHandleRoot(
   const { editor } = state
 
   const context = createSignal<TableHandleRootContext>(null)
-  const dndContext = createSignal<TableHandleDndContext>({
-    dragging: false,
-    direction: 'row',
-    draggingIndex: -1,
-    droppingIndex: -1,
-    x: -1,
-    y: -1,
-    startX: -1,
-    startY: -1,
-  })
+  const dndContext = createSignal<TableHandleDndContext>(defaultTableHandleDndContext)
 
   const hoveringCell = useHoveringCell(host, editor)
   const typing = useEditorTyping(host, editor)

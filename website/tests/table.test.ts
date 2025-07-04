@@ -11,7 +11,7 @@ import {
   waitForEditor,
 } from './helper'
 
-testStory('table', ({ getUncaughtErrors }) => {
+testStory('table', () => {
   test('table', async ({ page }) => {
     const editor = await waitForEditor(page)
 
@@ -130,12 +130,6 @@ testStory('table', ({ getUncaughtErrors }) => {
       await expectCellToBeNotSelected('B2')
       await expectCellToBeNotSelected('C1')
       await expectCellToBeNotSelected('C2')
-    })
-
-    // TODO: fix this
-    await test.step.skip('no runtime errors', () => {
-      const errors = getUncaughtErrors()
-      expect(errors).toEqual([])
     })
   })
 })

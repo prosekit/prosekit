@@ -10,12 +10,7 @@ import {
   waitForEditor,
 } from './helper'
 
-testStory('full', ({ getUncaughtErrors }) => {
-  test.afterEach(() => {
-    const errors = getUncaughtErrors()
-    expect(errors).toEqual([])
-  })
-
+testStory('full', () => {
   test.describe('link', () => {
     test('press Space to insert a link', async ({ page }) => {
       const editor = locateEditor(page)

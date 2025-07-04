@@ -773,8 +773,8 @@ importers:
         specifier: ^0.0.24
         version: 0.0.24
       '@aria-ui/menu':
-        specifier: ^0.0.19
-        version: 0.0.19
+        specifier: ^0.0.20
+        version: 0.0.20
       '@aria-ui/overlay':
         specifier: ^0.0.24
         version: 0.0.24
@@ -1020,8 +1020,8 @@ packages:
   '@aria-ui/listbox@0.0.24':
     resolution: {integrity: sha512-G/qm/EM2B5Pti9lK0W0KPNzDNncX7STKOvWi8MS+obTVn2dM+3f8yH9LGzMNg6rFvj/Bw29xh+hEsTbTzv58fQ==}
 
-  '@aria-ui/menu@0.0.19':
-    resolution: {integrity: sha512-9fU4f9kToqguejaE3KF6sP3CJ9FojQenqJcrfCLUvvtsPrPH1HaFVxb5BZ05yflM0j210PPmZWrxqWKlWg0F5w==}
+  '@aria-ui/menu@0.0.20':
+    resolution: {integrity: sha512-oyuDkhbGnnQ6CGPDiAkY+5Fc0sWU8m9EA95DsYGGhjJlVtFYEN/OB2nzFFG4JHds4wX8yOWYAzyiDbrfeQO+7g==}
 
   '@aria-ui/overlay@0.0.24':
     resolution: {integrity: sha512-kXIzQ7DtRtlSbN1tbT504M1J5HzF0U+ZvEv/f2ONiY3yu7BlZeMKJPF4MXcvl3vQhB/joFyoqXb47OyJvHVkxA==}
@@ -7395,7 +7395,7 @@ snapshots:
       '@aria-ui/presence': 0.0.19
       immer: 10.1.1
 
-  '@aria-ui/menu@0.0.19':
+  '@aria-ui/menu@0.0.20':
     dependencies:
       '@aria-ui/collection': 0.0.5
       '@aria-ui/core': 0.0.21

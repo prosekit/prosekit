@@ -3,6 +3,8 @@ import { useEditor } from 'prosekit/vue'
 import {
   TableHandleColumnRoot,
   TableHandleColumnTrigger,
+  TableHandleDragPreview,
+  TableHandleDropIndicator,
   TableHandlePopoverContent,
   TableHandlePopoverItem,
   TableHandleRoot,
@@ -17,6 +19,8 @@ const editor = useEditor<EditorExtension>({ update: true })
 
 <template>
   <TableHandleRoot class="contents">
+    <TableHandleDragPreview />
+    <TableHandleDropIndicator />
     <TableHandleColumnRoot class="CSS_TABLE_COLUMN_HANDLE">
       <TableHandleColumnTrigger>
         <div class="CSS_ICON_TABLE_COLUMN_HANDLE"></div>

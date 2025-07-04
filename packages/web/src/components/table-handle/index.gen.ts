@@ -8,6 +8,14 @@ export { TableHandleColumnTriggerElement } from './table-handle-column-trigger/e
 export { tableHandleColumnTriggerEvents, tableHandleColumnTriggerProps, type TableHandleColumnTriggerEvents, type TableHandleColumnTriggerProps } from './table-handle-column-trigger/types'
 export { useTableHandleColumnTrigger } from './table-handle-column-trigger/setup'
 
+export { TableHandleDragPreviewElement } from './table-handle-drag-preview/element.gen'
+export { tableHandleDragPreviewEvents, tableHandleDragPreviewProps, type TableHandleDragPreviewEvents, type TableHandleDragPreviewProps } from './table-handle-drag-preview/types'
+export { useTableHandleDragPreview } from './table-handle-drag-preview/setup'
+
+export { TableHandleDropIndicatorElement } from './table-handle-drop-indicator/element.gen'
+export { tableHandleDropIndicatorEvents, tableHandleDropIndicatorProps, type TableHandleDropIndicatorEvents, type TableHandleDropIndicatorProps } from './table-handle-drop-indicator/types'
+export { useTableHandleDropIndicator } from './table-handle-drop-indicator/setup'
+
 export { TableHandlePopoverContentElement } from './table-handle-popover-content/element.gen'
 export { tableHandlePopoverContentEvents, tableHandlePopoverContentProps, type TableHandlePopoverContentEvents, type TableHandlePopoverContentProps } from './table-handle-popover-content/types'
 export { useTableHandlePopoverContent } from './table-handle-popover-content/setup'

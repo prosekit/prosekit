@@ -15,10 +15,15 @@ import type { EditorView } from '@prosekit/pm/view'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import { useEditorTyping } from '../../../hooks/use-editor-typing'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import {
+  defaultTableHandleDndContext,
+  tableHandleDndContext,
   tableHandleRootContext,
+  type TableHandleDndContext,
   type TableHandleRootContext,
 } from '../context'
+import { useDrop } from '../hooks/use-drop'
 import {
   getHoveringCell,
   isHoveringCellInfoEqual,
@@ -37,6 +42,7 @@ export function useTableHandleRoot(
   const { editor } = state
 
   const context = createSignal<TableHandleRootContext>(null)
+  const dndContext = createSignal<TableHandleDndContext>(defaultTableHandleDndContext)
 
   const hoveringCell = useHoveringCell(host, editor)
   const typing = useEditorTyping(host, editor)
@@ -51,6 +57,9 @@ export function useTableHandleRoot(
   })
 
   tableHandleRootContext.provide(host, context)
+  tableHandleDndContext.provide(host, dndContext)
+
+  useDrop(host, editor, dndContext)
 }
 
 function useHoveringCell(
@@ -96,7 +105,8 @@ function useSelecting(
       return
     }
 
-    const root = editor.peek()?.view.root
+    const view = getSafeEditorView(editor.peek())
+    const root = view?.root
     if (!root) {
       return
     }

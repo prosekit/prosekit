@@ -1731,6 +1731,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "preact-table",
+      "framework": "preact",
+      "story": "table",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-typography",
       "framework": "preact",
       "story": "typography",
@@ -2165,6 +2184,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-table",
+      "framework": "svelte",
+      "story": "table",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-text-align",
       "framework": "svelte",
       "story": "text-align",
@@ -2447,6 +2485,25 @@ export const exampleMeta = {
         },
         {
           "path": "slash-menu.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-table",
+      "framework": "solid",
+      "story": "table",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.tsx",
           "hidden": false
         }
       ]

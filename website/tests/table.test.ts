@@ -187,6 +187,30 @@ testStory('table', ({ example }) => {
     const { rows: afterRows } = await getTableShape()
     expect(afterRows).toBe(beforeRows - 1)
   })
+
+  test('insert row below second row', async ({ page }) => {
+    if (example.includes('svelte')) {
+      console.warn('Skipping Svelte test')
+      return
+    }
+
+    const { rowHandle, hoverCell, getTableShape, getOpenMenu, getMenuItem } = await setup(page)
+
+    // hover second row cell A2 to position handle
+    await hoverCell('A2')
+    const { rows: beforeRows } = await getTableShape()
+
+    await rowHandle.click()
+    const menu = getOpenMenu()
+    await expect(menu).toBeVisible()
+
+    const insertBelowItem = getMenuItem('Insert Below')
+    await expect(insertBelowItem).toBeVisible()
+    await insertBelowItem.click()
+
+    const { rows: afterRows } = await getTableShape()
+    expect(afterRows).toBe(beforeRows + 1)
+  })
 })
 
 async function setup(page: Page) {

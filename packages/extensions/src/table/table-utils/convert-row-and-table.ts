@@ -44,28 +44,26 @@ export function convertArrayOfRowsToTableNode(
 }
 
 /**
- * This function will transform the table node
- * into a matrix of rows and columns respecting merged cells,
- * for example this table will be convert to the below:
+ * This function will transform the table node into a matrix of rows and columns
+ * respecting merged cells, for example this table:
  *
  * ```
- *  ____________________________
- * |      |      |             |
- * |  A1  |  B1  |     C1      |
- * |______|______|______ ______|
- * |      |             |      |
- * |  A2  |     B2      |      |
- * |______|______ ______|      |
- * |      |      |      |  D1  |
- * |  A3  |  B3  |  C2  |      |
- * |______|______|______|______|
+ * ┌──────┬──────┬─────────────┐
+ * │  A1  │  B1  │     C1      │
+ * ├──────┼──────┴──────┬──────┤
+ * │  A2  │     B2      │      │
+ * ├──────┼─────────────┤  D1  │
+ * │  A3  │  B3  │  C3  │      │
+ * └──────┴──────┴──────┴──────┘
  * ```
+ *
+ * will be converted to the below:
  *
  * ```javascript
- * array = [
+ * [
  *   [A1, B1, C1, null],
  *   [A2, B2, null, D1],
- *   [A3. B3, C2, null],
+ *   [A3, B3, C3, null],
  * ]
  * ```
  * @internal
@@ -73,24 +71,32 @@ export function convertArrayOfRowsToTableNode(
 export function convertTableNodeToArrayOfRows(tableNode: Node): (Node | null)[][] {
   const map = TableMap.get(tableNode)
   const rows: (Node | null)[][] = []
-  for (let rowIndex = 0; rowIndex < map.height; rowIndex++) {
-    const rowCells: (Node | null)[] = []
-    const seen: Record<number, boolean> = {}
-
-    for (let colIndex = 0; colIndex < map.width; colIndex++) {
-      const cellPos = map.map[rowIndex * map.width + colIndex]
-      const cell = tableNode.nodeAt(cellPos)
-      const rect = map.findCell(cellPos)
-      if (seen[cellPos] || rect.top !== rowIndex) {
-        rowCells.push(null)
-        continue
+  const rowCount = map.height
+  const colCount = map.width
+  for (let rowIndex = 0; rowIndex < rowCount; rowIndex++) {
+    const row: (Node | null)[] = []
+    for (let colIndex = 0; colIndex < colCount; colIndex++) {
+      let cellIndex = rowIndex * colCount + colIndex
+      let cellPos = map.map[cellIndex]
+      if (rowIndex > 0) {
+        const topCellIndex = cellIndex - colCount
+        const topCellPos = map.map[topCellIndex]
+        if (cellPos === topCellPos) {
+          row.push(null)
+          continue
+        }
       }
-      seen[cellPos] = true
-
-      rowCells.push(cell)
+      if (colIndex > 0) {
+        const leftCellIndex = cellIndex - 1
+        const leftCellPos = map.map[leftCellIndex]
+        if (cellPos === leftCellPos) {
+          row.push(null)
+          continue
+        }
+      }
+      row.push(tableNode.nodeAt(cellPos))
     }
-
-    rows.push(rowCells)
+    rows.push(row)
   }
 
   return rows

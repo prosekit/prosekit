@@ -51,7 +51,7 @@ export function useTableHandleColumnTrigger(
     const index = context.peek()?.colIndex ?? -1
 
     if (index < 0) {
-      console.warn('Invalid row index for drag operation:', index)
+      console.warn('[prosekit] Invalid row index for drag operation:', index)
       event.preventDefault()
       return
     }

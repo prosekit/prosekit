@@ -28,13 +28,13 @@ export function useDrop(host: ConnectableElement, editor: ReadonlySignal<Editor 
 
       // Validate indices
       if (draggingIndex < 0 || droppingIndex < 0) {
-        console.warn('Invalid drag indices:', { draggingIndex, droppingIndex })
+        console.warn('[prosekit] Invalid drag indices:', { draggingIndex, droppingIndex })
         return
       }
 
       // Validate direction
       if (direction !== 'row' && direction !== 'col') {
-        console.warn('Invalid drag direction:', direction)
+        console.warn('[prosekit] Invalid drag direction:', direction)
         return
       }
 

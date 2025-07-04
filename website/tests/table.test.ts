@@ -13,13 +13,33 @@ testStory('table', () => {
   test('table', async ({ page }) => {
     const editor = await waitForEditor(page)
 
-    await test.step('initial table content is visible', async () => {
-      await expect(editor.locator('table')).toBeVisible()
-      await expect(editor.locator('td', { hasText: 'A1' })).toBeVisible()
-    })
-
     const rowHandle = page.locator('prosekit-table-handle-row-root')
     const colHandle = page.locator('prosekit-table-handle-column-root')
+    const cells = {
+      A1: editor.locator('td', { hasText: 'A1' }),
+      B1: editor.locator('td', { hasText: 'B1' }),
+      C1: editor.locator('td', { hasText: 'C1' }),
+      D1: editor.locator('td', { hasText: 'D1' }),
+      A2: editor.locator('td', { hasText: 'A2' }),
+      B2: editor.locator('td', { hasText: 'B2' }),
+    } as const
+
+    async function expectSelected(selected: Array<keyof typeof cells>) {
+      for (const key of selected) {
+        await expect(cells[key]).toHaveClass(/selectedCell/)
+      }
+    }
+
+    async function expectNotSelected(unselected: Array<keyof typeof cells>) {
+      for (const key of unselected) {
+        await expect(cells[key]).not.toHaveClass(/selectedCell/)
+      }
+    }
+
+    await test.step('initial table content is visible', async () => {
+      await expect(editor.locator('table')).toBeVisible()
+      await expect(cells.A1).toBeVisible()
+    })
 
     await test.step('handles are hidden before hover', async () => {
       await expect(rowHandle).toBeHidden()
@@ -27,8 +47,7 @@ testStory('table', () => {
     })
 
     await test.step('handles appear after hovering first cell', async () => {
-      const firstCell = editor.locator('td').first()
-      await hover(firstCell)
+      await hover(cells.A1)
 
       await expect(rowHandle).toBeVisible()
       await expect(colHandle).toBeVisible()
@@ -40,21 +59,15 @@ testStory('table', () => {
 
       await rowHandle.click()
 
-      const selected = editor.locator('td.selectedCell')
-      await expect(selected).toHaveCount(4)
-
-      const texts = await selected.evaluateAll((els) => els.map((e) => e.textContent?.trim()))
-      expect(texts).toEqual(['A1', 'B1', 'C1', 'D1'])
+      await expectSelected(['A1', 'B1', 'C1', 'D1'])
+      await expectNotSelected(['A2'])
     })
 
     await test.step('column handle selects the first column', async () => {
       await colHandle.click()
 
-      const selected = editor.locator('td.selectedCell')
-      await expect(selected).toHaveCount(2)
-
-      const texts = await selected.evaluateAll((els) => els.map((e) => e.textContent?.trim()))
-      expect(texts).toEqual(['A1', 'A2'])
+      await expectSelected(['A1', 'A2'])
+      await expectNotSelected(['B1'])
     })
   })
 })

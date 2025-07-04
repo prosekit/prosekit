@@ -108,11 +108,11 @@ export function convertTableNodeToArrayOfRows(tableNode: Node): (Node | null)[][
  * @internal
  */
 export function moveRowInArrayOfRows<T>(
-  rows: T[][],
+  rows: T[],
   indexesOrigin: number[],
   indexesTarget: number[],
   directionOverride: -1 | 1 | 0,
-): T[][] {
+): T[] {
   const direction = indexesOrigin[0] > indexesTarget[0] ? -1 : 1
 
   const rowsExtracted = rows.splice(indexesOrigin[0], indexesOrigin.length)

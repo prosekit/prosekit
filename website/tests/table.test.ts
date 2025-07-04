@@ -43,6 +43,16 @@ testStory('table', ({ example }) => {
       )
     })
 
+    await test.step('row handle selects the second row', async () => {
+      await hoverCell('C2')
+      await rowHandle.click()
+
+      await checkCellSelection(
+        ['A2', 'B2', 'C2', 'D2'],
+        ['A1', 'B1', 'C1', 'D1'],
+      )
+    })
+
     await test.step('column handle selects the first column', async () => {
       await hoverCell('A2')
       await colHandle.click()
@@ -50,16 +60,6 @@ testStory('table', ({ example }) => {
       await checkCellSelection(
         ['A1', 'A2'],
         ['B1', 'B2', 'C1', 'C2', 'D1', 'D2'],
-      )
-    })
-
-    await test.step('row handle selects the second row', async () => {
-      await hoverCell('A2')
-      await rowHandle.click()
-
-      await checkCellSelection(
-        ['A2', 'B2', 'C2', 'D2'],
-        ['A1', 'B1', 'C1', 'D1'],
       )
     })
 
@@ -140,12 +140,17 @@ async function setup(page: Page) {
   }
 
   const hoverCell = async (cell: Locator | string) => {
-    await hover(locateCell(cell))
+    const cellLocator = locateCell(cell)
+
+    // Reset the hover state
+    await hover(editor, { position: { x: 0, y: 0 } })
+
+    await hover(cellLocator)
     await expect(rowHandle).toBeVisible()
     await expect(colHandle).toBeVisible()
 
     const checkPosition = async () => {
-      const cellBox = await getBoundingBox(locateCell(cell))
+      const cellBox = await getBoundingBox(cellLocator)
       const rowHandleBox = await getBoundingBox(rowHandle)
       const colHandleBox = await getBoundingBox(colHandle)
 

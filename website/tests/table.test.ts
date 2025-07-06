@@ -263,11 +263,7 @@ testStory(['table', 'full'], () => {
 
       await hoverCell(startCell)
       await expect(rowHandle).toBeVisible()
-
-      const rowTrigger = rowHandle.locator('prosekit-table-handle-row-trigger')
-      await expect(rowTrigger).toBeVisible()
-
-      await dragAndDrop(rowTrigger, targetCell)
+      await dragAndDrop(rowHandle, targetCell)
 
       await expectTableContentToBe([
         ['A2', 'B2', 'C2', 'D2'],
@@ -280,8 +276,8 @@ testStory(['table', 'full'], () => {
 async function setup(page: Page) {
   const editor = await waitForEditor(page)
 
-  const rowHandle = page.locator('prosekit-table-handle-row-root')
-  const colHandle = page.locator('prosekit-table-handle-column-root')
+  const rowHandle = page.locator('prosekit-table-handle-row-root[data-state="open"]').locator('prosekit-table-handle-row-trigger')
+  const colHandle = page.locator('prosekit-table-handle-column-root[data-state="open"]').locator('prosekit-table-handle-column-trigger')
   const openMenu = page.locator('prosekit-table-handle-popover-content[data-state="open"]')
 
   const getMenuItem = (text: string) => {

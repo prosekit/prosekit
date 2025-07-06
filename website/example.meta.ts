@@ -187,6 +187,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "table-handle.tsx",
+          "hidden": false
+        },
+        {
           "path": "tag-data.ts",
           "hidden": false
         },
@@ -1044,6 +1048,10 @@ export const exampleMeta = {
         },
         {
           "path": "slash-menu.vue",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.vue",
           "hidden": false
         },
         {
@@ -1995,6 +2003,10 @@ export const exampleMeta = {
         },
         {
           "path": "slash-menu.svelte",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.svelte",
           "hidden": false
         },
         {

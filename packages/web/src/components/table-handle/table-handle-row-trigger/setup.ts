@@ -54,9 +54,9 @@ export function useTableHandleRowTrigger(
       }
     }
     const prev = dndContext.peek()
-    const index = context.peek()?.rowIndex ?? -1
+    const index = context.peek()?.rowIndex
 
-    if (index < 0) {
+    if (index == null || index < 0) {
       console.warn('[prosekit] Invalid row index for drag operation:', index)
       event.preventDefault()
       return

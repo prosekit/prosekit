@@ -77,6 +77,10 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/preact/slash-menu/',
   ],
+  'shared/preact/table-handle.tsx': [
+    /// keep-sorted
+    'examples/preact/table/',
+  ],
   'shared/preact/use-readonly.ts': [
     /// keep-sorted
     'examples/preact/readonly/',
@@ -138,6 +142,11 @@ const mapping: Record<string, string[]> = {
     'examples/react/full/',
     'examples/react/slash-menu/',
   ],
+  'shared/react/table-handle.tsx': [
+    /// keep-sorted
+    'examples/react/full/',
+    'examples/react/table/',
+  ],
   'shared/react/tag-menu.tsx': [
     /// keep-sorted
     'examples/react/full/',
@@ -168,6 +177,10 @@ const mapping: Record<string, string[]> = {
   'shared/solid/code-block-view.tsx': [
     /// keep-sorted
     'examples/solid/code-block/',
+  ],
+  'shared/solid/table-handle.tsx': [
+    /// keep-sorted
+    'examples/solid/table/',
   ],
   'shared/solid/use-readonly.ts': [
     /// keep-sorted
@@ -213,6 +226,11 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/svelte/full/',
     'examples/svelte/slash-menu/',
+  ],
+  'shared/svelte/table-handle.svelte': [
+    /// keep-sorted
+    'examples/svelte/full/',
+    'examples/svelte/table/',
   ],
   'shared/svelte/use-readonly.ts': [
     /// keep-sorted
@@ -275,6 +293,11 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/vue/full/',
     'examples/vue/slash-menu/',
+  ],
+  'shared/vue/table-handle.vue': [
+    /// keep-sorted
+    'examples/vue/full/',
+    'examples/vue/table/',
   ],
   'shared/vue/tag-menu.vue': [
     /// keep-sorted

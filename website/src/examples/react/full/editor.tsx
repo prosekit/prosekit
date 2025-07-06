@@ -5,6 +5,8 @@ import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
+import { TableHandle } from '../table/table-handle'
+
 import BlockHandle from './block-handle'
 import { DEFAULT_CONTENT } from './default-content-full'
 import { defineExtension } from './extension'
@@ -31,6 +33,7 @@ export default function Editor() {
           <UserMenu />
           <TagMenu />
           <BlockHandle />
+          <TableHandle />
         </div>
       </div>
     </ProseKit>

@@ -4,11 +4,13 @@ import 'prosekit/basic/typography.css'
 
 import { createEditor } from 'prosekit/core'
 import { ProseKit } from 'prosekit/svelte'
+
 import BlockHandle from './block-handle.svelte'
 import { DEFAULT_CONTENT } from './default-content-full'
 import { defineExtension } from './extension'
 import InlineMenu from './inline-menu.svelte'
 import SlashMenu from './slash-menu.svelte'
+import TableHandle from './table-handle.svelte'
 import TagMenu from './tag-menu.svelte'
 import Toolbar from './toolbar.svelte'
 import UserMenu from './user-menu.svelte'
@@ -34,6 +36,7 @@ const mount = (element: HTMLElement) => {
       <UserMenu />
       <TagMenu />
       <BlockHandle />
+      <TableHandle />
     </div>
   </div>
 </ProseKit>

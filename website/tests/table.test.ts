@@ -7,19 +7,47 @@ import {
 
 import {
   dragAndDrop,
+  emptyEditor,
   getBoundingBox,
   hover,
+  pasteHtmlToEditor,
   testStory,
   waitForEditor,
 } from './helper'
 
-testStory('table', () => {
+testStory(['table'], () => {
   test('default table content', async ({ page }) => {
     const { expectTableContentToBe } = await setup(page)
     await expectTableContentToBe([
       ['A1', 'B1', 'C1', 'D1'],
       ['A2', 'B2', 'C2', 'D2'],
     ])
+  })
+})
+
+testStory(['table', 'full'], () => {
+  test.beforeEach(async ({ page, context }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write'])
+    await emptyEditor(page)
+    await pasteHtmlToEditor(
+      page,
+      `
+        <table>
+          <tr>
+            <td>A1</td>
+            <td>B1</td>
+            <td>C1</td>
+            <td>D1</td>
+          </tr>
+          <tr>
+            <td>A2</td>
+            <td>B2</td>
+            <td>C2</td>
+            <td>D2</td>
+          </tr>
+        </table>
+        `,
+    )
   })
 
   test('select cells by clicking handles', async ({ page }) => {
@@ -235,11 +263,7 @@ testStory('table', () => {
 
       await hoverCell(startCell)
       await expect(rowHandle).toBeVisible()
-
-      const rowTrigger = rowHandle.locator('prosekit-table-handle-row-trigger')
-      await expect(rowTrigger).toBeVisible()
-
-      await dragAndDrop(rowTrigger, targetCell)
+      await dragAndDrop(rowHandle, targetCell)
 
       await expectTableContentToBe([
         ['A2', 'B2', 'C2', 'D2'],
@@ -252,8 +276,8 @@ testStory('table', () => {
 async function setup(page: Page) {
   const editor = await waitForEditor(page)
 
-  const rowHandle = page.locator('prosekit-table-handle-row-root')
-  const colHandle = page.locator('prosekit-table-handle-column-root')
+  const rowHandle = page.locator('prosekit-table-handle-row-root[data-state="open"]').locator('prosekit-table-handle-row-trigger')
+  const colHandle = page.locator('prosekit-table-handle-column-root[data-state="open"]').locator('prosekit-table-handle-column-trigger')
   const openMenu = page.locator('prosekit-table-handle-popover-content[data-state="open"]')
 
   const getMenuItem = (text: string) => {

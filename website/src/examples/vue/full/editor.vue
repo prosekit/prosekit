@@ -14,6 +14,7 @@ import { DEFAULT_CONTENT } from './default-content-full'
 import { defineExtension } from './extension'
 import InlineMenu from './inline-menu.vue'
 import SlashMenu from './slash-menu.vue'
+import TableHandle from './table-handle.vue'
 import TagMenu from './tag-menu.vue'
 import Toolbar from './toolbar.vue'
 import UserMenu from './user-menu.vue'
@@ -40,6 +41,7 @@ watchPostEffect((onCleanup) => {
         <UserMenu />
         <TagMenu />
         <BlockHandle />
+        <TableHandle />
       </div>
     </div>
   </ProseKit>

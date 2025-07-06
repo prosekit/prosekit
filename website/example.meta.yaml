@@ -95,6 +95,8 @@ examples:
         hidden: false
       - path: slash-menu.tsx
         hidden: false
+      - path: table-handle.tsx
+        hidden: false
       - path: tag-data.ts
         hidden: false
       - path: tag-menu.tsx
@@ -542,6 +544,8 @@ examples:
       - path: slash-menu-item.vue
         hidden: false
       - path: slash-menu.vue
+        hidden: false
+      - path: table-handle.vue
         hidden: false
       - path: tag-data.ts
         hidden: false
@@ -1038,6 +1042,8 @@ examples:
       - path: slash-menu-item.svelte
         hidden: false
       - path: slash-menu.svelte
+        hidden: false
+      - path: table-handle.svelte
         hidden: false
       - path: tag-data.ts
         hidden: false

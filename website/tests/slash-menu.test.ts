@@ -237,6 +237,23 @@ testStory(['slash-menu', 'full'], () => {
     await editor.press('Enter')
     await expect(editor.locator('h3')).toBeVisible()
   })
+
+  test('should not show menu when typing a http link', async ({ page }) => {
+    const { editor, menu } = await setup(page)
+
+    await editor.focus()
+    await editor.press('Enter')
+    await expect(menu).toBeHidden()
+    for (const char of 'https://example.com/foo.bar/') {
+      await editor.pressSequentially(char)
+      await expect(menu).toBeHidden()
+    }
+
+    // Make sure the menu is still functional
+    await editor.press('Space')
+    await editor.press('/')
+    await expect(menu).toBeVisible()
+  })
 })
 
 async function setup(page: Page) {

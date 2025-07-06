@@ -81,6 +81,10 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/preact/readonly/',
   ],
+  'shared/preact/table-handle.tsx': [
+    /// keep-sorted
+    'examples/preact/table/',
+  ],
   'shared/preact/use-submit-keymap.ts': [
     /// keep-sorted
     'examples/preact/keymap/',
@@ -138,6 +142,10 @@ const mapping: Record<string, string[]> = {
     'examples/react/full/',
     'examples/react/slash-menu/',
   ],
+  'shared/react/table-handle.tsx': [
+    /// keep-sorted
+    'examples/react/table/',
+  ],
   'shared/react/tag-menu.tsx': [
     /// keep-sorted
     'examples/react/full/',
@@ -168,6 +176,10 @@ const mapping: Record<string, string[]> = {
   'shared/solid/code-block-view.tsx': [
     /// keep-sorted
     'examples/solid/code-block/',
+  ],
+  'shared/solid/table-handle.tsx': [
+    /// keep-sorted
+    'examples/solid/table/',
   ],
   'shared/solid/use-readonly.ts': [
     /// keep-sorted

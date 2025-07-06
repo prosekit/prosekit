@@ -7,19 +7,47 @@ import {
 
 import {
   dragAndDrop,
+  emptyEditor,
   getBoundingBox,
   hover,
+  pasteHtmlToEditor,
   testStory,
   waitForEditor,
 } from './helper'
 
-testStory(['table', 'full'], () => {
+testStory(['table'], () => {
   test('default table content', async ({ page }) => {
     const { expectTableContentToBe } = await setup(page)
     await expectTableContentToBe([
       ['A1', 'B1', 'C1', 'D1'],
       ['A2', 'B2', 'C2', 'D2'],
     ])
+  })
+})
+
+testStory(['table', 'full'], () => {
+  test.beforeEach(async ({ page, context }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write'])
+    await emptyEditor(page)
+    await pasteHtmlToEditor(
+      page,
+      `
+        <table>
+          <tr>
+            <td>A1</td>
+            <td>B1</td>
+            <td>C1</td>
+            <td>D1</td>
+          </tr>
+          <tr>
+            <td>A2</td>
+            <td>B2</td>
+            <td>C2</td>
+            <td>D2</td>
+          </tr>
+        </table>
+        `,
+    )
   })
 
   test('select cells by clicking handles', async ({ page }) => {

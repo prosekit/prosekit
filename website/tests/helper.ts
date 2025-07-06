@@ -266,3 +266,62 @@ export async function expectSelectedTextToBe(page: Page, text: string) {
   }
   await expect(check).toPass({ timeout: 1000, intervals: [10, 50, 100] })
 }
+
+async function writeTextToClipboard(page: Page, text: string) {
+  await page.evaluate(async (t) => {
+    await navigator.clipboard.writeText(t)
+  }, text)
+}
+
+async function writeDataToClipboard(page: Page, data: Record<string, string>) {
+  await page.evaluate(async (d) => {
+    const clipboardItems = Object.entries(d).map(([type, content]) => {
+      const blob = new Blob([content], { type })
+      const item = new ClipboardItem({ [type]: blob })
+      return item
+    })
+    await navigator.clipboard.write(clipboardItems)
+  }, data)
+}
+
+async function writeBlobToClipboard(page: Page, contentType: string, base64: string) {
+  await page.evaluate(
+    async ([contentType, base64]) => {
+      const binaryString = window.atob(base64)
+      const len = binaryString.length
+      const bytes = new Uint8Array(len)
+
+      for (let i = 0; i < len; i++) {
+        bytes[i] = binaryString.charCodeAt(i)
+      }
+
+      const blob = new Blob([bytes], { type: contentType })
+
+      const item = new ClipboardItem({ [blob.type]: blob })
+      await navigator.clipboard.write([item])
+    },
+    [contentType, base64],
+  )
+}
+
+export async function pasteTextToEditor(page: Page, text: string): Promise<void> {
+  await writeTextToClipboard(page, text)
+  const editor = await waitForEditor(page)
+  await editor.press(`ControlOrMeta+v`)
+}
+
+export async function pasteHtmlToEditor(page: Page, html: string): Promise<void> {
+  await writeDataToClipboard(page, { 'text/html': html })
+  const editor = await waitForEditor(page)
+  await editor.press(`ControlOrMeta+v`)
+}
+
+export async function pasteFileToEditor(
+  page: Page,
+  contentType: string,
+  base64: string,
+): Promise<void> {
+  await writeBlobToClipboard(page, contentType, base64)
+  const editor = await waitForEditor(page)
+  await editor.press(`ControlOrMeta+v`)
+}

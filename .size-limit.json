@@ -310,6 +310,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/paste-rule",
+    "path": "packages/prosekit/dist/prosekit-extensions-paste-rule.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/placeholder",
     "path": "packages/prosekit/dist/prosekit-extensions-placeholder.js",
     "ignore": [

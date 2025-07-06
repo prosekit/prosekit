@@ -54,9 +54,9 @@ export function useTableHandleColumnTrigger(
       }
     }
     const prev = dndContext.peek()
-    const index = context.peek()?.colIndex ?? -1
+    const index = context.peek()?.colIndex
 
-    if (index < 0) {
+    if (index == null || index < 0) {
       console.warn('[prosekit] Invalid column index for drag operation:', index)
       event.preventDefault()
       return

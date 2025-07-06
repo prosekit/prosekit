@@ -12,6 +12,7 @@ import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
 import type { EditorView } from '@prosekit/pm/view'
 
+import { assignStyles } from '../../utils/assign-styles'
 import { getSafeEditorView } from '../../utils/get-safe-editor-view'
 
 import {
@@ -92,7 +93,7 @@ export function useInitDndPosition(
       ],
     }).then(({ x, y }) => {
       if (cancelled) return
-      Object.assign(host.style, {
+      assignStyles(host, {
         left: `${x}px`,
         top: `${y}px`,
       })

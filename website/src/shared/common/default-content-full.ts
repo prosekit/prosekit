@@ -47,7 +47,7 @@ magic.transform(thoughts)
 
 <p>Drag the handle in the bottom right corner to resize.</p>
 
-<h2>Tables that work.</h2>
+<h2>Tables that structure.</h2>
 
 <table>
   <tr>

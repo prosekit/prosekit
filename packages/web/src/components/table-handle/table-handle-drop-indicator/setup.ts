@@ -4,6 +4,7 @@ import {
   type SignalState,
 } from '@aria-ui/core'
 
+import { assignStyles } from '../../../utils/assign-styles'
 import {
   useInitDndPosition,
   type OnInitParams,
@@ -21,7 +22,7 @@ export function useTableHandleDropIndicator(host: ConnectableElement, { state }:
   const { editor } = state
 
   useEffect(host, () => {
-    Object.assign(host.style, {
+    assignStyles(host, {
       pointerEvents: 'none',
       position: 'absolute',
     })
@@ -33,21 +34,21 @@ export function useTableHandleDropIndicator(host: ConnectableElement, { state }:
 }
 
 function onInitIndicatorPosition({ host, direction, dragging, table }: OnInitParams): void {
-  Object.assign(host.style, {
+  assignStyles(host, {
     display: dragging ? 'block' : 'none',
   })
 
   const tableRect = table.getBoundingClientRect()
 
   if (direction === 'col') {
-    Object.assign(host.style, {
+    assignStyles(host, {
       width: `${HANDLE_WIDTH}px`,
       height: `${tableRect.height}px`,
     })
   }
 
   if (direction === 'row') {
-    Object.assign(host.style, {
+    assignStyles(host, {
       width: `${tableRect.width}px`,
       height: `${HANDLE_WIDTH}px`,
     })

@@ -10,6 +10,7 @@ import {
 } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
+import { assignStyles } from '../../../utils/assign-styles'
 import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import {
   tableHandleDndContext,
@@ -60,14 +61,14 @@ export function useUpdatePreviewPosition(host: ConnectableElement, editor: Reado
       if (cancelled) return
 
       if (direction === 'row') {
-        Object.assign(host.style, {
+        assignStyles(host, {
           top: `${y}px`,
         })
         return
       }
 
       if (direction === 'col') {
-        Object.assign(host.style, {
+        assignStyles(host, {
           left: `${x}px`,
         })
         return

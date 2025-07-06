@@ -10,6 +10,7 @@ import {
 } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
+import { assignStyles } from '../../../utils/assign-styles'
 import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import {
   tableHandleDndContext,
@@ -80,7 +81,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
           middleware: [offset(direction === 'left' ? -1 * handleWidth : 0)],
         }).then(({ x }) => {
           if (cancelled) return
-          Object.assign(host.style, { left: `${x}px` })
+          assignStyles(host, { left: `${x}px` })
         })
       }
 
@@ -99,7 +100,7 @@ export function useUpdateIndicatorPosition(host: ConnectableElement, editor: Rea
           middleware: [offset(direction === 'up' ? -1 * handleWidth : 0)],
         }).then(({ y }) => {
           if (cancelled) return
-          Object.assign(host.style, { top: `${y}px` })
+          assignStyles(host, { top: `${y}px` })
         })
       }
 

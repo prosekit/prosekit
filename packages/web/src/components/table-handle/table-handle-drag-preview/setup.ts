@@ -4,6 +4,7 @@ import {
   type SignalState,
 } from '@aria-ui/core'
 
+import { assignStyles } from '../../../utils/assign-styles'
 import {
   useInitDndPosition,
   type OnInitParams,
@@ -23,8 +24,7 @@ export function useTableHandleDragPreview(host: ConnectableElement, { state }: {
   const { editor } = state
 
   useEffect(host, () => {
-    host.classList.add('ProseMirror')
-    Object.assign(host.style, {
+    assignStyles(host, {
       position: 'absolute',
       // Make sure drop on preview will trigger drop event on the host
       pointerEvents: 'none',
@@ -37,7 +37,7 @@ export function useTableHandleDragPreview(host: ConnectableElement, { state }: {
 }
 
 function onInitPreviewPosition({ host, direction, dragging, table, cell, draggingIndex }: OnInitParams): void {
-  Object.assign(host.style, {
+  assignStyles(host, {
     display: dragging ? 'block' : 'none',
   })
 
@@ -52,14 +52,14 @@ function onInitPreviewPosition({ host, direction, dragging, table, cell, draggin
   const cellRect = cell.getBoundingClientRect()
 
   if (direction === 'col') {
-    Object.assign(host.style, {
+    assignStyles(host, {
       width: `${cellRect.width}px`,
       height: `${tableRect.height}px`,
     })
   }
 
   if (direction === 'row') {
-    Object.assign(host.style, {
+    assignStyles(host, {
       width: `${tableRect.width}px`,
       height: `${cellRect.height}px`,
     })

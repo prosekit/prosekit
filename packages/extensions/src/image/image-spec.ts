@@ -60,7 +60,6 @@ export function defineImageSpec(): ImageSpecExtension {
             width = element.naturalWidth
             height = element.naturalHeight
           }
-
           return { src, width, height }
         },
       },

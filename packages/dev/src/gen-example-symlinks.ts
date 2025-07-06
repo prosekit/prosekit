@@ -77,13 +77,13 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/preact/slash-menu/',
   ],
-  'shared/preact/use-readonly.ts': [
-    /// keep-sorted
-    'examples/preact/readonly/',
-  ],
   'shared/preact/table-handle.tsx': [
     /// keep-sorted
     'examples/preact/table/',
+  ],
+  'shared/preact/use-readonly.ts': [
+    /// keep-sorted
+    'examples/preact/readonly/',
   ],
   'shared/preact/use-submit-keymap.ts': [
     /// keep-sorted
@@ -144,6 +144,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/react/table-handle.tsx': [
     /// keep-sorted
+    'examples/react/full/',
     'examples/react/table/',
   ],
   'shared/react/tag-menu.tsx': [
@@ -228,6 +229,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/svelte/table-handle.svelte': [
     /// keep-sorted
+    'examples/svelte/full/',
     'examples/svelte/table/',
   ],
   'shared/svelte/use-readonly.ts': [
@@ -294,6 +296,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/vue/table-handle.vue': [
     /// keep-sorted
+    'examples/vue/full/',
     'examples/vue/table/',
   ],
   'shared/vue/tag-menu.vue': [

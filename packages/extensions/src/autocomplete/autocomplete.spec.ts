@@ -1,4 +1,7 @@
-import { union } from '@prosekit/core'
+import {
+  canUseRegexLookbehind,
+  union,
+} from '@prosekit/core'
 import {
   describe,
   expect,
@@ -23,7 +26,7 @@ import {
 } from './autocomplete-rule'
 
 function setupSlashMenu() {
-  const regex = /\/(|\S.*)$/u
+  const regex = canUseRegexLookbehind() ? /(?<!\S)\/(|\S.*)$/u : /\/(|\S.*)$/u
 
   const onEnter = vi.fn<MatchHandler>()
   const onLeave = vi.fn<VoidFunction>()

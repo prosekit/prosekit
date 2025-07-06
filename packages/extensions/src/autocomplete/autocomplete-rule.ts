@@ -69,7 +69,7 @@ export interface AutocompleteRuleOptions {
    * The regular expression to match against the text before the cursor. The
    * last match before the cursor is used.
    *
-   * For a slash menu, you might use `/\/(|\S.*)$/u`.
+   * For a slash menu, you might use `/(?<!\S)\/(|\S.*)$/u`.
    * For a mention, you might use `/@\w*$/`
    */
   regex: RegExp

@@ -159,6 +159,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "default-content-full.ts",
+          "hidden": false
+        },
+        {
           "path": "image-upload-popover.tsx",
           "hidden": false
         },
@@ -1012,6 +1016,10 @@ export const exampleMeta = {
         },
         {
           "path": "code-block-view.vue",
+          "hidden": false
+        },
+        {
+          "path": "default-content-full.ts",
           "hidden": false
         },
         {
@@ -1963,6 +1971,10 @@ export const exampleMeta = {
         },
         {
           "path": "code-block-view.svelte",
+          "hidden": false
+        },
+        {
+          "path": "default-content-full.ts",
           "hidden": false
         },
         {

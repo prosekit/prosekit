@@ -81,6 +81,8 @@ examples:
         hidden: false
       - path: code-block-view.tsx
         hidden: false
+      - path: default-content-full.ts
+        hidden: false
       - path: image-upload-popover.tsx
         hidden: false
       - path: image-view.tsx
@@ -526,6 +528,8 @@ examples:
       - path: block-handle.vue
         hidden: false
       - path: code-block-view.vue
+        hidden: false
+      - path: default-content-full.ts
         hidden: false
       - path: image-upload-popover.vue
         hidden: false
@@ -1022,6 +1026,8 @@ examples:
       - path: block-handle.svelte
         hidden: false
       - path: code-block-view.svelte
+        hidden: false
+      - path: default-content-full.ts
         hidden: false
       - path: image-upload-popover.svelte
         hidden: false

@@ -214,6 +214,10 @@ const mapping: Record<string, string[]> = {
     'examples/svelte/full/',
     'examples/svelte/slash-menu/',
   ],
+  'shared/svelte/table-handle.svelte': [
+    /// keep-sorted
+    'examples/svelte/table/',
+  ],
   'shared/svelte/use-readonly.ts': [
     /// keep-sorted
     'examples/svelte/readonly/',

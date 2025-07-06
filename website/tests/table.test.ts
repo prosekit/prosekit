@@ -13,7 +13,7 @@ import {
   waitForEditor,
 } from './helper'
 
-testStory('table', () => {
+testStory(['table', 'full'], () => {
   test('default table content', async ({ page }) => {
     const { expectTableContentToBe } = await setup(page)
     await expectTableContentToBe([

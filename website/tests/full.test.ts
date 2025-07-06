@@ -15,7 +15,7 @@ testStory('full', () => {
   test('default content', async ({ page }) => {
     const check = async () => {
       const html = await getEditorHTML(page)
-      expect(html).toContain('ProseKit')
+      expect(html).toContain('The editor that thinks like you')
     }
     await expect(check).toPass()
   })

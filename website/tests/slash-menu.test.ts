@@ -12,7 +12,7 @@ import {
   waitForEditor,
 } from './helper'
 
-testStory(['slash-menu'], () => {
+testStory(['slash-menu', 'full'], () => {
   test('execute command', async ({ page }) => {
     const { editor, menu, itemH1 } = await setup(page)
 

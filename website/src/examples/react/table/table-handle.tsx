@@ -1,0 +1,1 @@
+../../../shared/react/table-handle.tsx

@@ -276,6 +276,10 @@ const mapping: Record<string, string[]> = {
     'examples/vue/full/',
     'examples/vue/slash-menu/',
   ],
+  'shared/vue/table-handle.vue': [
+    /// keep-sorted
+    'examples/vue/table/',
+  ],
   'shared/vue/tag-menu.vue': [
     /// keep-sorted
     'examples/vue/full/',

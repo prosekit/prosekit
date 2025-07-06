@@ -12,6 +12,12 @@ import { vfs } from './virtual-file-system'
 //
 /// keep-sorted
 const mapping: Record<string, string[]> = {
+  'shared/common/default-content-full.ts': [
+    /// keep-sorted
+    'examples/react/full/',
+    'examples/svelte/full/',
+    'examples/vue/full/',
+  ],
   'shared/common/issue-link.ts': [
     /// keep-sorted
     'examples/react/mark-rule/',

@@ -6,6 +6,7 @@ import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
 import BlockHandle from './block-handle'
+import { DEFAULT_CONTENT } from './default-content-full'
 import { defineExtension } from './extension'
 import InlineMenu from './inline-menu'
 import SlashMenu from './slash-menu'
@@ -16,7 +17,7 @@ import UserMenu from './user-menu'
 export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineExtension()
-    return createEditor({ extension })
+    return createEditor({ extension, defaultContent: DEFAULT_CONTENT })
   }, [])
 
   return (

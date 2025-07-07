@@ -1,7 +1,6 @@
-import { assignStyles } from '../../../utils/asset-styles'
+import { assignStyles } from '../../../utils/assign-styles'
+import { deepCloneElement } from '../../../utils/clone-element'
 import { maxZIndex } from '../../../utils/max-z-index'
-
-import { deepCloneElement } from './deep-clone-element'
 
 /**
  * Sets a drag preview image for the given element and ensures the preview position

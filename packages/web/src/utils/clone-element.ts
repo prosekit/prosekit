@@ -8,6 +8,16 @@ export function deepCloneElement<T extends Element>(element: T): T {
   return clonedElement
 }
 
+/**
+ * Creates a clone of an Element, including all computed styles so that
+ * it looks similar enough to the original element.
+ */
+export function cloneElement<T extends Element>(element: T): T {
+  const clonedElement = element.cloneNode() as T
+  copyStyles(element, clonedElement)
+  return clonedElement
+}
+
 function deepCopyStyles(source: Element, target: Element) {
   const sources = [source]
   const targets = [target]
@@ -27,7 +37,12 @@ function deepCopyStyles(source: Element, target: Element) {
   }
 }
 
-function copyStyles(source: Element, target: Element) {
+function copyStyles(source: Element, target: Element): void {
+  if (!source || !target) {
+    return
+  }
+
+  // Known issue: pseudo styles are not copied.
   const sourceStyle = source.ownerDocument?.defaultView?.getComputedStyle(source)
   const targetStyle = (target as HTMLElement | SVGElement | MathMLElement).style
 
@@ -36,6 +51,10 @@ function copyStyles(source: Element, target: Element) {
   }
 
   for (const key of sourceStyle) {
-    targetStyle.setProperty(key, sourceStyle.getPropertyValue(key), sourceStyle.getPropertyPriority(key))
+    targetStyle.setProperty(
+      key,
+      sourceStyle.getPropertyValue(key),
+      sourceStyle.getPropertyPriority(key),
+    )
   }
 }

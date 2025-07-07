@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.14.1
+
+### Patch Changes
+
+- [`71c0584`](https://github.com/ocavue/prosekit/commit/71c0584d748ffc7670a087c94a500e7113f08e2f) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the drag preview might have different sizes when dragging a row or column of a table.
+
 ## 0.14.0
 
 ### Minor Changes

@@ -3,6 +3,7 @@ import {
   union,
   withPriority,
 } from '@prosekit/core'
+import { fromPartial } from '@total-typescript/shoehorn'
 import {
   beforeEach,
   describe,
@@ -66,12 +67,12 @@ describe('file paste handler', () => {
   })
 
   const pasteFiles = (files: File[]) => {
-    editor.view.pasteHTML('<div></div>', {
-      clipboardData: {
-        // @ts-expect-error: disable type checking for testing
-        files,
-      },
-    })
+    editor.view.pasteHTML(
+      '<div></div>',
+      fromPartial({
+        clipboardData: { files },
+      }),
+    )
   }
 
   it('should handle file pasting', () => {

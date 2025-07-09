@@ -32,7 +32,7 @@ export async function normalizePackageJson(pkg: Package) {
   const entryPoints: Record<string, string> = {}
   packageJson.dev = { entry: entryPoints }
 
-  for (const path of Object.keys(exports)) {
+  for (const path of Object.keys(exports).sort()) {
     let sourcePath: string
     let distName: string
 

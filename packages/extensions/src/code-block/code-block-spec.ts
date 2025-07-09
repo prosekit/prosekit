@@ -32,14 +32,40 @@ export function defineCodeBlockSpec(): CodeBlockSpecExtension {
       {
         tag: 'pre',
         preserveWhitespace: 'full',
-        getAttrs: (node): CodeBlockAttrs => ({
-          language: node.getAttribute('data-language') || '',
-        }),
+        getAttrs: (node): CodeBlockAttrs => {
+          const language = extractLanguageFromElement(node)
+            || extractLanguageFromElement(node.querySelector('code'))
+          return { language }
+        },
       },
     ],
     toDOM(node) {
-      const attrs = node.attrs as CodeBlockAttrs
-      return ['pre', { 'data-language': attrs.language }, ['code', 0]]
+      const { language } = node.attrs as CodeBlockAttrs
+      return [
+        'pre',
+        { 'data-language': language || undefined },
+        // `class: language-${language}` is used by remark-rehype to highlight the code block
+        ['code', { class: language ? `language-${language}` : undefined }, 0],
+      ]
     },
   })
+}
+
+function extractLanguageFromElement(element: HTMLElement | null | undefined): string {
+  if (!element) {
+    return ''
+  }
+
+  const attr = element.getAttribute('data-language')
+  if (attr) {
+    return attr
+  }
+
+  const className = element.className
+  const match = className.match(/language-(\w+)/)
+  if (match) {
+    return match[1]
+  }
+
+  return ''
 }

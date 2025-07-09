@@ -34,7 +34,7 @@ export function arrayRemove<T>(array: T[], item: T): void {
 /**
  * @internal
  */
-export function arraySubstract<T>(a: T[], b: T[]): T[] {
+export function arraySubtract<T>(a: T[], b: T[]): T[] {
   return a.filter((x) => !b.includes(x))
 }
 

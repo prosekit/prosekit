@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/pm",
   "type": "module",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "description": "A re-export of ProseMirror packages",
   "author": {
@@ -52,14 +52,14 @@
     "prosemirror-model": "^1.25.1",
     "prosemirror-state": "^1.4.3",
     "prosemirror-transform": "^1.10.4",
-    "prosemirror-view": "^1.39.3"
+    "prosemirror-view": "^1.40.0"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.12.5",
+    "tsdown": "^0.12.9",
     "typescript": "~5.8.3",
-    "vitest": "^3.1.4"
+    "vitest": "^3.2.4"
   },
   "publishConfig": {
     "exports": {

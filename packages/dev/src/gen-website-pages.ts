@@ -5,8 +5,8 @@ import { pascalCase } from 'change-case'
 import {
   readExampleMeta,
   type Example,
-} from './example-meta.js'
-import { vfs } from './virtual-file-system.js'
+} from './example-meta'
+import { vfs } from './virtual-file-system'
 
 // NPM download stats on 2025 March
 // react:          32,063,940

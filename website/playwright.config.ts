@@ -18,6 +18,8 @@ export default defineConfig({
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
+  /* Fail fast on local development */
+  maxFailures: process.env.CI ? undefined : 1,
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 1,
   /* Opt out of parallel tests on CI. */
@@ -77,7 +79,7 @@ export default defineConfig({
   webServer: {
     command: 'pnpm -w run preview',
     url: 'http://localhost:4321/astrobook/',
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: true,
     stdout: 'pipe',
     stderr: 'pipe',
     timeout: 300_000,

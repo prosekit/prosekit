@@ -1,6 +1,6 @@
-import { isJsonEqual } from './is-json-equal.js'
-import { readJson } from './read-json.js'
-import { writeText } from './write-text.js'
+import { isJsonEqual } from './is-json-equal'
+import { readJson } from './read-json'
+import { writeText } from './write-text'
 
 export async function writeJson<T = any>(
   filePath: string,

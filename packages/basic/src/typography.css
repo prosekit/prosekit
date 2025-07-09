@@ -1,4 +1,4 @@
-div.ProseMirror {
+.ProseMirror {
   & {
     /* Disable margin collapsing */
     display: flex;

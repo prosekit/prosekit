@@ -11,7 +11,10 @@ import {
   useMemo,
 } from 'react'
 
+import { TableHandle } from '../table/table-handle'
+
 import BlockHandle from './block-handle'
+import { DEFAULT_CONTENT } from './default-content-full'
 import { defineExtension } from './extension'
 import InlineMenu from './inline-menu'
 import SlashMenu from './slash-menu'
@@ -47,7 +50,7 @@ const defaultContent = `
 export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineExtension()
-    return createEditor({ extension })
+    return createEditor({ extension, defaultContent: DEFAULT_CONTENT })
   }, [])
 
   useEffect(() => {
@@ -88,6 +91,7 @@ export default function Editor() {
           <UserMenu />
           <TagMenu />
           <BlockHandle />
+          <TableHandle />
         </div>
       </div>
     </ProseKit>

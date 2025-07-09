@@ -15,10 +15,14 @@ import { useOverlayPositionerState } from '@aria-ui/overlay/elements'
 import { usePresence } from '@aria-ui/presence'
 
 import { getStateWithDefaults } from '../../../utils/get-default-state'
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import { tableHandleRootContext } from '../context'
 
 import type { TableHandleColumnRootProps } from './types'
 
+/**
+ * @internal
+ */
 export function useTableHandleColumnRoot(
   host: ConnectableElement,
   { state }: { state: SignalState<TableHandleColumnRootProps> },
@@ -33,7 +37,7 @@ export function useTableHandleColumnRoot(
 
   const referenceCell = createComputed<HTMLElement | null>(() => {
     const pos = colFirstCellPos.get()
-    const view = editor.get()?.view
+    const view = getSafeEditorView(editor.get())
     if (!pos || !view) return null
     return view.nodeDOM(pos) as HTMLElement | null
   })

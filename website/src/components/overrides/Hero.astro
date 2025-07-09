@@ -6,8 +6,4 @@ const slug = Astro.locals.starlightRoute.entry.slug
 const isLanding = slug === ''
 ---
 
-{
-  isLanding
-    ? <Landing />
-    : <Default><slot /></Default>
-}
+{isLanding ? <Landing /> : <Default><slot /></Default>}

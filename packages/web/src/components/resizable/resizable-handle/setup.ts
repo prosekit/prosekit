@@ -19,6 +19,9 @@ import {
 import { calcResize } from './calc-resize'
 import type { ResizableHandleProps } from './types'
 
+/**
+ * @internal
+ */
 export function useResizableHandle(
   host: ConnectableElement,
   { state }: { state: SignalState<ResizableHandleProps> },

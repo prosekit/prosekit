@@ -47,6 +47,8 @@ jobs:
   test-e2e:
     runs-on: ubuntu-latest
 
+    needs: [build]
+
     strategy:
       fail-fast: false
       matrix:
@@ -57,11 +59,13 @@ jobs:
 
       - uses: ./.github/actions/setup
 
+      - uses: ./.github/actions/cache
+
       - name: Install Playwright
         run: pnpm run test:install
 
       - name: Build
-        run: pnpm run build:website
+        run: pnpm run build
 
       - name: Run e2e tests
         run: pnpm run test:e2e --shard="${{ matrix.shard }}/5"
@@ -69,16 +73,32 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup
+
+      - uses: ./.github/actions/cache
+
+      - name: Build packages
+        run: pnpm run build:package
+
+      - name: Build website
+        run: pnpm run build
+
+  publish-snapshot:
+    runs-on: ubuntu-latest
+
+    needs: [build]
 
     steps:
       - uses: actions/checkout@v4
 
       - uses: ./.github/actions/setup
 
-      - name: Build
+      - uses: ./.github/actions/cache
+
+      - name: Build packages
         run: pnpm run build:package
 
       - name: Publish snapshot packages
@@ -101,30 +121,33 @@ jobs:
   linkcheck:
     runs-on: ubuntu-latest
 
-    env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+    needs: [build]
 
     steps:
       - uses: actions/checkout@v4
 
       - uses: ./.github/actions/setup
 
+      - uses: ./.github/actions/cache
+
       - name: Build
-        run: pnpm run build:website
+        run: pnpm run build
 
       - name: Check links
         uses: lycheeverse/lychee-action@v2.4.1
         with:
-          args: --root-dir "$PWD/website/dist" --no-progress './website/dist/**/*.html' --include-fragments --fallback-extensions html
+          workingDirectory: website/dist
+          args: --include-fragments --fallback-extensions html --no-progress './**/*.html'
+          debug: true
           fail: true
+          failIfEmpty: true
 
   deploy:
     runs-on: ubuntu-latest
 
+    needs: [build]
+
     env:
-      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
       CLOUDFLARE_PAGES_API_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
@@ -133,11 +156,13 @@ jobs:
 
       - uses: ./.github/actions/setup
 
+      - uses: ./.github/actions/cache
+
       - name: Build
-        run: pnpm run build:website
+        run: pnpm run build
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         # Only run this step if the CLOUDFLARE_PAGES_API_TOKEN is set (i.e. it's
         # not from a fork). Notice that secrets cannot be directly referenced in
         # `if:` conditionals.
@@ -145,7 +170,6 @@ jobs:
         with:
           apiToken: ${{ env.CLOUDFLARE_PAGES_API_TOKEN }}
           accountId: ${{ env.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: prosekit-dev
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          directory: website/dist
+          command: pages deploy website/dist --project-name=prosekit-dev
         timeout-minutes: 5

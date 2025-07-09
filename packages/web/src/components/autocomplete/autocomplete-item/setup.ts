@@ -13,6 +13,9 @@ import type {
   AutocompleteItemProps,
 } from './types'
 
+/**
+ * @internal
+ */
 export function useAutocompleteItem(
   element: ConnectableElement,
   { state, emit }: SetupOptions<AutocompleteItemProps, AutocompleteItemEvents>,

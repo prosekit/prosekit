@@ -242,6 +242,36 @@ const editor = createEditor({ extension })
 editor.commands.splitTableCell()
 ```
 
+### `moveTableColumn`
+
+Move a column.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
+// Move the second column to the first column
+editor.commands.moveTableColumn({ from: 1, to: 0 })
+```
+
+### `moveTableRow`
+
+Move a row.
+
+```ts twoslash
+import { createEditor } from 'prosekit/core'
+import { defineTable } from 'prosekit/extensions/table'
+
+const extension = defineTable()
+const editor = createEditor({ extension })
+// ---cut---
+// Move the first row to the 4th row
+editor.commands.moveTableRow({ from: 0, to: 3 })
+```
+
 ## Plugins
 
 ### `tableEditing` and `columnResizing`

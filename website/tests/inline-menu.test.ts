@@ -6,6 +6,7 @@ import {
 
 import {
   emptyEditor,
+  expectSelectedTextToBe,
   getSelectedHtml,
   getSelectedText,
   testStory,
@@ -46,7 +47,7 @@ testStory(['inline-menu', 'full'], () => {
   })
 
   test('multiple empty paragraphs selection', async ({ page }) => {
-    const { editor, mainMenu, selectTextFromEnd } = await setup(page)
+    const { editor, mainMenu } = await setup(page)
 
     const countSelectedParagraphs = async () => {
       const html = await getSelectedHtml(page)
@@ -65,7 +66,12 @@ testStory(['inline-menu', 'full'], () => {
     expect(await countSelectedParagraphs()).toEqual(0)
 
     // Select empty paragraphs
-    await selectTextFromEnd(5)
+    await page.keyboard.down('Shift')
+    for (let i = 0; i < 5; i++) {
+      await page.keyboard.press('ArrowLeft')
+      await page.waitForTimeout(20)
+    }
+    await page.keyboard.up('Shift')
     expect(await countSelectedParagraphs()).toBeGreaterThan(3)
 
     // The menu should still be hidden
@@ -160,7 +166,7 @@ testStory(['inline-menu', 'full'], () => {
       await editor.press('ArrowRight')
     }
     // Select the text again and show the main menu
-    await selectTextFromEnd(2)
+    await selectTextFromEnd('ld')
     expect(await getSelectedText(page)).toEqual('ld')
     await expect(mainMenu).toBeVisible()
     await expect(linkMenu).toBeHidden()
@@ -196,12 +202,20 @@ async function setup(page: Page) {
 
   await emptyEditor(page)
 
-  const selectTextFromEnd = async (chars: number) => {
+  const selectTextFromEnd = async (expectedText: string) => {
+    await expectSelectedTextToBe(page, '')
+
     await page.keyboard.down('Shift')
-    for (let i = 0; i < chars; i++) {
+
+    for (let i = 0; i < expectedText.length; i++) {
+      await page.waitForTimeout(20)
       await page.keyboard.press('ArrowLeft')
+      await page.waitForTimeout(20)
+      await expectSelectedTextToBe(page, expectedText.slice(-i - 1))
     }
     await page.keyboard.up('Shift')
+
+    await expectSelectedTextToBe(page, expectedText)
   }
 
   const typeAndSelect = async () => {
@@ -210,7 +224,8 @@ async function setup(page: Page) {
     await editor.pressSequentially('Hello world')
 
     // Select the word "world"
-    await selectTextFromEnd(5)
+    await selectTextFromEnd('world')
+    expect(await getSelectedText(page)).toEqual('world')
   }
 
   return {

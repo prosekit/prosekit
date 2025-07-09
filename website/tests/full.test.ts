@@ -5,12 +5,27 @@ import {
 
 import {
   emptyEditor,
+  getEditorHTML,
   locateEditor,
   testStory,
   waitForEditor,
 } from './helper'
 
 testStory('full', () => {
+  test('default content', async ({ page }) => {
+    const check = async () => {
+      const html = await getEditorHTML(page)
+      expect(html).toContain('The editor that thinks like you')
+    }
+    await expect(check).toPass()
+  })
+})
+
+testStory('full', () => {
+  test.beforeEach(async ({ page }) => {
+    await emptyEditor(page)
+  })
+
   test.describe('link', () => {
     test('press Space to insert a link', async ({ page }) => {
       const editor = locateEditor(page)

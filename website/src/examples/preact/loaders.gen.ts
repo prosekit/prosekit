@@ -6,5 +6,6 @@ export const loaders = {
   'keymap': lazy(() => import('./keymap/editor')),
   'readonly': lazy(() => import('./readonly/editor')),
   'slash-menu': lazy(() => import('./slash-menu/editor')),
+  'table': lazy(() => import('./table/editor')),
   'typography': lazy(() => import('./typography/editor')),
 }

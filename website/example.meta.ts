@@ -159,6 +159,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "default-content-full.ts",
+          "hidden": false
+        },
+        {
           "path": "image-upload-popover.tsx",
           "hidden": false
         },
@@ -180,6 +184,10 @@ export const exampleMeta = {
         },
         {
           "path": "slash-menu.tsx",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.tsx",
           "hidden": false
         },
         {
@@ -403,6 +411,37 @@ export const exampleMeta = {
         },
         {
           "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "button.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "react-list-custom-checkbox",
+      "framework": "react",
+      "story": "list-custom-checkbox",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "toolbar.tsx",
+          "hidden": false
+        },
+        {
+          "path": "custom-list.css",
+          "hidden": false
+        },
+        {
+          "path": "custom-list.ts",
           "hidden": false
         },
         {
@@ -984,6 +1023,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "default-content-full.ts",
+          "hidden": false
+        },
+        {
           "path": "image-upload-popover.vue",
           "hidden": false
         },
@@ -1005,6 +1048,10 @@ export const exampleMeta = {
         },
         {
           "path": "slash-menu.vue",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.vue",
           "hidden": false
         },
         {
@@ -1700,6 +1747,25 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "preact-table",
+      "framework": "preact",
+      "story": "table",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-typography",
       "framework": "preact",
       "story": "typography",
@@ -1916,6 +1982,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "default-content-full.ts",
+          "hidden": false
+        },
+        {
           "path": "image-upload-popover.svelte",
           "hidden": false
         },
@@ -1933,6 +2003,10 @@ export const exampleMeta = {
         },
         {
           "path": "slash-menu.svelte",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.svelte",
           "hidden": false
         },
         {
@@ -2129,6 +2203,25 @@ export const exampleMeta = {
         },
         {
           "path": "slash-menu.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "svelte-table",
+      "framework": "svelte",
+      "story": "table",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.svelte",
           "hidden": false
         }
       ]
@@ -2416,6 +2509,25 @@ export const exampleMeta = {
         },
         {
           "path": "slash-menu.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-table",
+      "framework": "solid",
+      "story": "table",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "table-handle.tsx",
           "hidden": false
         }
       ]

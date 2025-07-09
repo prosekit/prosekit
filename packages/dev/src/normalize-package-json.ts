@@ -8,11 +8,11 @@ import type { PackageJson } from 'type-fest'
 import {
   getPackageJsonExports,
   getPackageJsonPublishExports,
-} from './get-package-json-exports.js'
-import { isPrivatePackage } from './is-public-package.js'
-import { maybeUndefined } from './maybe-undefined.js'
-import { sortObject } from './sort-object.js'
-import { vfs } from './virtual-file-system.js'
+} from './get-package-json-exports'
+import { isPrivatePackage } from './is-public-package'
+import { maybeUndefined } from './maybe-undefined'
+import { sortObject } from './sort-object'
+import { vfs } from './virtual-file-system'
 
 export async function normalizePackageJson(pkg: Package) {
   if (isPrivatePackage(pkg)) {

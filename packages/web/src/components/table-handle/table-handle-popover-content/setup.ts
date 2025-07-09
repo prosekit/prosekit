@@ -22,6 +22,9 @@ import type {
   TableHandlePopoverContentProps,
 } from './types'
 
+/**
+ * @internal
+ */
 export function useTableHandlePopoverContent(
   host: ConnectableElement,
   {

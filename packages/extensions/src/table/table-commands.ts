@@ -27,6 +27,14 @@ import {
 } from 'prosemirror-tables'
 
 import {
+  moveTableColumn,
+  type MoveTableColumnOptions,
+} from './table-commands/move-table-column'
+import {
+  moveTableRow,
+  type MoveTableRowOptions,
+} from './table-commands/move-table-row'
+import {
   findCellPos,
   findCellRange,
   findTable,
@@ -320,6 +328,9 @@ export type TableCommandsExtension = Extension<{
 
     mergeTableCells: []
     splitTableCell: []
+
+    moveTableRow: [options: MoveTableRowOptions]
+    moveTableColumn: [options: MoveTableColumnOptions]
   }
 }>
 
@@ -350,5 +361,8 @@ export function defineTableCommands(): TableCommandsExtension {
 
     mergeTableCells: () => mergeCells,
     splitTableCell: () => splitCell,
+
+    moveTableRow,
+    moveTableColumn,
   })
 }

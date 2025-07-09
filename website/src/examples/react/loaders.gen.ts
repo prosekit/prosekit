@@ -18,6 +18,7 @@ export const loaders = {
   'link': lazy(() => import('./link/editor')),
   'link-mark-view': lazy(() => import('./link-mark-view/editor')),
   'list': lazy(() => import('./list/editor')),
+  'list-custom-checkbox': lazy(() => import('./list-custom-checkbox/editor')),
   'loro': lazy(() => import('./loro/editor')),
   'mark-rule': lazy(() => import('./mark-rule/editor')),
   'placeholder': lazy(() => import('./placeholder/editor')),

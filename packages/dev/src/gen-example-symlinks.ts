@@ -2,9 +2,9 @@ import path from 'node:path'
 
 import fs from 'fs-extra'
 
-import { findSymlinks } from './find-symlinks.js'
-import { skipGen } from './skip-gen.js'
-import { vfs } from './virtual-file-system.js'
+import { findSymlinks } from './find-symlinks'
+import { skipGen } from './skip-gen'
+import { vfs } from './virtual-file-system'
 
 // A mapping of the source path to the target directories. All paths are relative to
 // the website/src directory. The filename at each target will be the same as the source.
@@ -12,6 +12,12 @@ import { vfs } from './virtual-file-system.js'
 //
 /// keep-sorted
 const mapping: Record<string, string[]> = {
+  'shared/common/default-content-full.ts': [
+    /// keep-sorted
+    'examples/react/full/',
+    'examples/svelte/full/',
+    'examples/vue/full/',
+  ],
   'shared/common/issue-link.ts': [
     /// keep-sorted
     'examples/react/mark-rule/',
@@ -71,6 +77,10 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/preact/slash-menu/',
   ],
+  'shared/preact/table-handle.tsx': [
+    /// keep-sorted
+    'examples/preact/table/',
+  ],
   'shared/preact/use-readonly.ts': [
     /// keep-sorted
     'examples/preact/readonly/',
@@ -94,6 +104,7 @@ const mapping: Record<string, string[]> = {
     'examples/react/inline-menu/',
     'examples/react/keymap/',
     'examples/react/link/',
+    'examples/react/list-custom-checkbox/',
     'examples/react/list/',
     'examples/react/loro/',
     'examples/react/readonly/',
@@ -131,6 +142,11 @@ const mapping: Record<string, string[]> = {
     'examples/react/full/',
     'examples/react/slash-menu/',
   ],
+  'shared/react/table-handle.tsx': [
+    /// keep-sorted
+    'examples/react/full/',
+    'examples/react/table/',
+  ],
   'shared/react/tag-menu.tsx': [
     /// keep-sorted
     'examples/react/full/',
@@ -161,6 +177,10 @@ const mapping: Record<string, string[]> = {
   'shared/solid/code-block-view.tsx': [
     /// keep-sorted
     'examples/solid/code-block/',
+  ],
+  'shared/solid/table-handle.tsx': [
+    /// keep-sorted
+    'examples/solid/table/',
   ],
   'shared/solid/use-readonly.ts': [
     /// keep-sorted
@@ -206,6 +226,11 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/svelte/full/',
     'examples/svelte/slash-menu/',
+  ],
+  'shared/svelte/table-handle.svelte': [
+    /// keep-sorted
+    'examples/svelte/full/',
+    'examples/svelte/table/',
   ],
   'shared/svelte/use-readonly.ts': [
     /// keep-sorted
@@ -269,6 +294,11 @@ const mapping: Record<string, string[]> = {
     'examples/vue/full/',
     'examples/vue/slash-menu/',
   ],
+  'shared/vue/table-handle.vue': [
+    /// keep-sorted
+    'examples/vue/full/',
+    'examples/vue/table/',
+  ],
   'shared/vue/tag-menu.vue': [
     /// keep-sorted
     'examples/vue/full/',
@@ -310,10 +340,16 @@ export async function genExampleSymlinks() {
     }
   }
 
-  // 1. Remove symlinks that are not in the expected mapping
+  // 1. Ensure that there are no unexpected symlinks
   for (const symlink of existingSymlinks) {
     if (!expectedTargetPaths.has(symlink)) {
-      await fs.remove(symlink)
+      const relativeSymlink = path.relative(rootDir, symlink)
+      const message = [
+        `Unexpected symlink found: ${relativeSymlink}`,
+        `This symlink is not defined in the mapping in '${currentFilePath}'.`,
+        'Please remove it manually or add it to the mapping.',
+      ].join('\n')
+      throw new Error(message)
     }
   }
 
@@ -355,3 +391,5 @@ export async function genExampleSymlinks() {
     }
   }
 }
+
+const currentFilePath = import.meta.filename

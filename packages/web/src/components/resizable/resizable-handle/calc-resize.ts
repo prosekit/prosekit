@@ -21,21 +21,21 @@ export function calcResize(
 
   switch (position) {
     case 'bottom-right':
-      return calcBottomRightResize(w, h, dx, dy, aspectRatio)
+      return clamp(calcBottomRightResize(w, h, dx, dy, aspectRatio))
     case 'bottom-left':
-      return calcBottomLeftResize(w, h, dx, dy, aspectRatio)
+      return clamp(calcBottomLeftResize(w, h, dx, dy, aspectRatio))
     case 'top-right':
-      return calcTopRightResize(w, h, dx, dy, aspectRatio)
+      return clamp(calcTopRightResize(w, h, dx, dy, aspectRatio))
     case 'top-left':
-      return calcTopLeftResize(w, h, dx, dy, aspectRatio)
+      return clamp(calcTopLeftResize(w, h, dx, dy, aspectRatio))
     case 'top':
-      return calcTopResize(w, h, dx, dy, aspectRatio)
+      return clamp(calcTopResize(w, h, dx, dy, aspectRatio))
     case 'right':
-      return calcRightResize(w, h, dx, dy, aspectRatio)
+      return clamp(calcRightResize(w, h, dx, dy, aspectRatio))
     case 'bottom':
-      return calcBottomResize(w, h, dx, dy, aspectRatio)
+      return clamp(calcBottomResize(w, h, dx, dy, aspectRatio))
     case 'left':
-      return calcLeftResize(w, h, dx, dy, aspectRatio)
+      return clamp(calcLeftResize(w, h, dx, dy, aspectRatio))
     default:
       throw new RangeError(`Invalid position: ${position}`)
   }
@@ -111,4 +111,11 @@ const calcLeftResize: CalcResize = (w, h, dx, dy, r) => {
   w -= dx
   h = w / r
   return [w, h]
+}
+
+function clamp([w, h]: [number, number]): [number, number] {
+  return [
+    Math.max(w, 1),
+    Math.max(h, 1),
+  ]
 }

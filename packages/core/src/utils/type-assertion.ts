@@ -12,80 +12,80 @@ import {
 } from '@prosekit/pm/state'
 
 /**
- * Checks if the given object is a `ProseMirrorNode` instance.
+ * Checks if the given object is a {@link ProseMirrorNode} instance.
  */
-export function isProseMirrorNode(node: unknown): node is ProseMirrorNode {
-  return node instanceof ProseMirrorNode
+export function isProseMirrorNode(value: unknown): value is ProseMirrorNode {
+  return value instanceof ProseMirrorNode
 }
 
 /**
- * Checks if the given object is a `Mark` instance.
+ * Checks if the given object is a {@link Mark} instance.
  *
  * @public
  */
-export function isMark(mark: unknown): mark is Mark {
-  return mark instanceof Mark
+export function isMark(value: unknown): value is Mark {
+  return value instanceof Mark
 }
 
 /**
- * Checks if the given object is a `Fragment` instance.
+ * Checks if the given object is a {@link Fragment} instance.
  *
  * @public
  */
-export function isFragment(fragment: unknown): fragment is Fragment {
-  return fragment instanceof Fragment
+export function isFragment(value: unknown): value is Fragment {
+  return value instanceof Fragment
 }
 
 /**
- * Checks if the given object is a `Slice` instance.
+ * Checks if the given object is a {@link Slice} instance.
  *
  * @public
  */
-export function isSlice(slice: unknown): slice is Slice {
-  return slice instanceof Slice
+export function isSlice(value: unknown): value is Slice {
+  return value instanceof Slice
 }
 
 /**
- * Checks if the given object is a `Selection` instance.
+ * Checks if the given object is a {@link Selection} instance.
  *
  * @public
  */
-export function isSelection(sel: unknown): sel is Selection {
-  return sel instanceof Selection
+export function isSelection(value: unknown): value is Selection {
+  return value instanceof Selection
 }
 
 /**
- * Checks if the given object is a `TextSelection` instance.
+ * Checks if the given object is a {@link TextSelection} instance.
  *
  * @public
  */
-export function isTextSelection(sel: Selection): sel is TextSelection {
-  return sel instanceof TextSelection
+export function isTextSelection(value: Selection): value is TextSelection {
+  return value instanceof TextSelection
 }
 
 /**
- * Checks if the given object is a `NodeSelection` instance.
+ * Checks if the given object is a {@link NodeSelection} instance.
  *
  * @public
  */
-export function isNodeSelection(sel: Selection): sel is NodeSelection {
-  return sel instanceof NodeSelection
+export function isNodeSelection(value: Selection): value is NodeSelection {
+  return value instanceof NodeSelection
 }
 
 /**
- * Checks if the given object is a `AllSelection` instance.
+ * Checks if the given object is a {@link AllSelection} instance.
  *
  * @public
  */
-export function isAllSelection(sel: Selection): sel is AllSelection {
-  return sel instanceof AllSelection
+export function isAllSelection(value: Selection): value is AllSelection {
+  return value instanceof AllSelection
 }
 
 /**
  * @internal
  */
 export function isNotNullish<T>(
-  value: T | null | undefined | void,
+  value: T | null | undefined,
 ): value is T {
   return value != null
 }

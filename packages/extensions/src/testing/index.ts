@@ -33,6 +33,7 @@ import {
 import { defineParagraph } from '../paragraph'
 import { defineStrike } from '../strike'
 import { defineTable } from '../table'
+import type { CellAttrs } from '../table/table-spec'
 import { defineText } from '../text'
 import { defineUnderline } from '../underline'
 
@@ -111,6 +112,16 @@ export function setupTest() {
     }
   }
 
+  const p = n.paragraph
+
+  const td = (text?: string, attrs?: CellAttrs) => {
+    return n.tableCell({ ...attrs }, text ? p(text) : p())
+  }
+
+  const th = (text?: string, attrs?: CellAttrs) => {
+    return n.tableHeaderCell({ ...attrs }, text ? p(text) : p())
+  }
+
   const copy = async () => {
     editor.view.dom.focus()
     await pressKey('mod-C')
@@ -125,7 +136,11 @@ export function setupTest() {
     n: {
       ...n,
 
-      p: n.paragraph,
+      p,
+
+      td,
+      th,
+      tr: n.tableRow,
 
       h1: headingWithAttrs({ level: 1 }),
       h2: headingWithAttrs({ level: 2 }),

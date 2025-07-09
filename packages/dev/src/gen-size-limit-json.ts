@@ -4,9 +4,9 @@ import path from 'node:path'
 import type { Package } from '@manypkg/get-packages'
 import { sortedUniq } from 'lodash-es'
 
-import { asyncFrom } from './async-from.js'
-import { getPackageJsonPublishExports } from './get-package-json-exports.js'
-import { vfs } from './virtual-file-system.js'
+import { asyncFrom } from './async-from'
+import { getPackageJsonPublishExports } from './get-package-json-exports'
+import { vfs } from './virtual-file-system'
 
 export async function genSizeLimitJson() {
   const pkg = await vfs.getPackageByName('prosekit')

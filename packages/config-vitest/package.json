@@ -7,7 +7,7 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./src/config-vitest.d.ts",
+      "types": "./src/config-vitest-types.d.ts",
       "default": "./src/config-vitest.js"
     }
   },

@@ -22,6 +22,9 @@ import type {
 } from './types'
 import { getVirtualSelectionElement } from './virtual-selection-element'
 
+/**
+ * @internal
+ */
 export function useInlinePopover(
   host: ConnectableElement,
   { state, emit }: SetupOptions<InlinePopoverProps, InlinePopoverEvents>,

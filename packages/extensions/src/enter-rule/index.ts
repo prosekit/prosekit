@@ -25,8 +25,10 @@ import type { EditorView } from '@prosekit/pm/view'
 
 /**
  * @public
+ *
+ * Options for {@link EnterRuleHandler}.
  */
-export type EnterRuleHandler = (options: {
+export interface EnterRuleHandlerOptions {
   /**
    * The current editor state.
    */
@@ -46,7 +48,12 @@ export type EnterRuleHandler = (options: {
    * The matched result from the regular expression.
    */
   match: RegExpExecArray
-}) => Transaction | null
+}
+
+/**
+ * @public
+ */
+export type EnterRuleHandler = (options: EnterRuleHandlerOptions) => Transaction | null
 
 /**
  * Options for {@link defineEnterRule}.
@@ -77,7 +84,7 @@ export type EnterRuleOptions = {
  *
  * @public
  */
-export type TextBlockEnterRuleOptions = {
+export interface TextBlockEnterRuleOptions {
   /**
    * The regular expression to match against. It should end with `$`.
    */

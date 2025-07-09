@@ -81,6 +81,8 @@ examples:
         hidden: false
       - path: code-block-view.tsx
         hidden: false
+      - path: default-content-full.ts
+        hidden: false
       - path: image-upload-popover.tsx
         hidden: false
       - path: image-view.tsx
@@ -92,6 +94,8 @@ examples:
       - path: slash-menu-item.tsx
         hidden: false
       - path: slash-menu.tsx
+        hidden: false
+      - path: table-handle.tsx
         hidden: false
       - path: tag-data.ts
         hidden: false
@@ -208,6 +212,22 @@ examples:
       - path: extension.ts
         hidden: false
       - path: toolbar.tsx
+        hidden: false
+      - path: button.tsx
+        hidden: false
+  - name: react-list-custom-checkbox
+    framework: react
+    story: list-custom-checkbox
+    files:
+      - path: editor.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: toolbar.tsx
+        hidden: false
+      - path: custom-list.css
+        hidden: false
+      - path: custom-list.ts
         hidden: false
       - path: button.tsx
         hidden: false
@@ -511,6 +531,8 @@ examples:
         hidden: false
       - path: code-block-view.vue
         hidden: false
+      - path: default-content-full.ts
+        hidden: false
       - path: image-upload-popover.vue
         hidden: false
       - path: image-view.vue
@@ -522,6 +544,8 @@ examples:
       - path: slash-menu-item.vue
         hidden: false
       - path: slash-menu.vue
+        hidden: false
+      - path: table-handle.vue
         hidden: false
       - path: tag-data.ts
         hidden: false
@@ -883,6 +907,16 @@ examples:
         hidden: false
       - path: slash-menu.tsx
         hidden: false
+  - name: preact-table
+    framework: preact
+    story: table
+    files:
+      - path: editor.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: table-handle.tsx
+        hidden: false
   - name: preact-typography
     framework: preact
     story: typography
@@ -997,6 +1031,8 @@ examples:
         hidden: false
       - path: code-block-view.svelte
         hidden: false
+      - path: default-content-full.ts
+        hidden: false
       - path: image-upload-popover.svelte
         hidden: false
       - path: inline-menu.svelte
@@ -1006,6 +1042,8 @@ examples:
       - path: slash-menu-item.svelte
         hidden: false
       - path: slash-menu.svelte
+        hidden: false
+      - path: table-handle.svelte
         hidden: false
       - path: tag-data.ts
         hidden: false
@@ -1108,6 +1146,16 @@ examples:
       - path: slash-menu-item.svelte
         hidden: false
       - path: slash-menu.svelte
+        hidden: false
+  - name: svelte-table
+    framework: svelte
+    story: table
+    files:
+      - path: editor.svelte
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: table-handle.svelte
         hidden: false
   - name: svelte-text-align
     framework: svelte
@@ -1258,6 +1306,16 @@ examples:
       - path: slash-menu-item.tsx
         hidden: false
       - path: slash-menu.tsx
+        hidden: false
+  - name: solid-table
+    framework: solid
+    story: table
+    files:
+      - path: editor.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: table-handle.tsx
         hidden: false
   - name: solid-text-align
     framework: solid

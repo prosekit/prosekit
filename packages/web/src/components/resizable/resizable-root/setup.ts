@@ -21,6 +21,9 @@ import type {
   ResizableRootProps,
 } from './types'
 
+/**
+ * @internal
+ */
 export function useResizableRoot(
   host: ConnectableElement,
   { state, emit }: SetupOptions<ResizableRootProps, ResizableRootEvents>,

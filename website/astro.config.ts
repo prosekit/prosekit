@@ -10,8 +10,6 @@ import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
-import rehypeAutolinkHeadings from 'rehype-autolink-headings'
-import rehypeSlugCustomId from 'rehype-slug-custom-id'
 import starlightThemeNova from 'starlight-theme-nova'
 import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
@@ -21,10 +19,15 @@ type Sidebar = StarlightUserConfig['sidebar']
 function generateReferenceSidebarItems() {
   // filePaths is an array like ['basic.md', 'core.md', 'core/test.md']
   const filePaths = (new fdir()).withRelativePaths().crawl('src/content/docs/references').sync().sort()
-  const names = filePaths.map(filePath => filePath.replace(/\.mdx?/, ''))
-  return names.map(name => {
-    const isLeaf = name.split('/').length === 1
-    const style = isLeaf ? 'font-weight: 600;' : 'margin-inline-start: 1rem;'
+  return filePaths.map(filePath => {
+    // Remove the file extension
+    let name = filePath.replace(/\.mdx?/, '')
+
+    // Remove the dot because Starlight doesn't allow '.' in the slug
+    name = name.replaceAll('.', '')
+
+    const isLeaf = name.includes('/')
+    const style = isLeaf ? 'margin-inline-start: 1rem;' : 'font-weight: 600;'
     return { slug: `references/${name}`, attrs: { style } }
   })
 }
@@ -98,11 +101,19 @@ const config: AstroUserConfig = {
           label: 'GitHub',
           href: 'https://github.com/prosekit/prosekit',
         },
+        {
+          icon: 'discord',
+          label: 'Discord',
+          href: 'https://prosekit.dev/chat',
+        },
       ],
       sidebar: sidebar,
       components: {
         Hero: './src/components/overrides/Hero.astro',
       },
+      customCss: [
+        './src/styles/typedoc.css',
+      ],
       plugins: [
         starlightThemeNova({
           nav: [
@@ -116,12 +127,12 @@ const config: AstroUserConfig = {
             },
           ],
         }),
-      ],
+      ].filter(x => !!x),
     }),
     UnoCSS(),
-    preact({ include: ['src/*/preact/**/*'] }),
+    preact({ include: ['src/*/preact/**/*.tsx'] }),
     react({
-      include: ['src/*/react/**/*'],
+      include: ['src/*/react/**/*.tsx'],
       babel: {
         plugins: [
           ['babel-plugin-react-compiler'],
@@ -130,7 +141,7 @@ const config: AstroUserConfig = {
     }),
     svelte(),
     vue(),
-    solid({ include: ['src/*/solid/**/*'] }),
+    solid({ include: ['src/*/solid/**/*.tsx'] }),
     astrobook({
       directory: 'src/stories',
       title: 'ProseKit',
@@ -147,9 +158,10 @@ const config: AstroUserConfig = {
     },
   },
   markdown: {
+    // Disable smartypants to prevent converting "..." into "…"
+    smartypants: false,
+
     rehypePlugins: [
-      [rehypeSlugCustomId, { enableCustomId: true }],
-      [rehypeAutolinkHeadings, { behavior: 'wrap' }],
       [rehypeAstroRelativeMarkdownLinks, { collections: { docs: { base: false } } }],
     ],
   },

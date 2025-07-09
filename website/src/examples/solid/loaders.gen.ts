@@ -11,6 +11,7 @@ export const loaders = {
   'link-mark-view': lazy(() => import('./link-mark-view/editor')),
   'readonly': lazy(() => import('./readonly/editor')),
   'slash-menu': lazy(() => import('./slash-menu/editor')),
+  'table': lazy(() => import('./table/editor')),
   'text-align': lazy(() => import('./text-align/editor')),
   'typography': lazy(() => import('./typography/editor')),
 }

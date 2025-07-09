@@ -16,6 +16,11 @@
   border-width: 1px;
   vertical-align: top;
 }
+
+prosekit-table-handle-drop-indicator {
+  background-color: HighlightText;
+}
+
 .ProseMirror .column-resize-handle {
   z-index: 20;
   position: absolute;

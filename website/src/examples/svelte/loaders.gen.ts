@@ -18,6 +18,7 @@ export const loaders = {
   'readonly': () => import('./readonly/editor.svelte'),
   'save-json': () => import('./save-json/editor.svelte'),
   'slash-menu': () => import('./slash-menu/editor.svelte'),
+  'table': () => import('./table/editor.svelte'),
   'text-align': () => import('./text-align/editor.svelte'),
   'toolbar': () => import('./toolbar/editor.svelte'),
   'typography': () => import('./typography/editor.svelte'),

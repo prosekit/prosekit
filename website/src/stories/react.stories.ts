@@ -19,6 +19,7 @@ export const Keymap = { args: { story: 'keymap' } }
 export const Link = { args: { story: 'link' } }
 export const LinkMarkView = { args: { story: 'link-mark-view' } }
 export const List = { args: { story: 'list' } }
+export const ListCustomCheckbox = { args: { story: 'list-custom-checkbox' } }
 export const Loro = { args: { story: 'loro' } }
 export const MarkRule = { args: { story: 'mark-rule' } }
 export const Placeholder = { args: { story: 'placeholder' } }

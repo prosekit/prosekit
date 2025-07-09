@@ -14,9 +14,9 @@ const cellContent = 'block+'
  * @public
  */
 export interface CellAttrs {
-  colspan: number
-  rowspan: number
-  colwidth: number[] | null
+  colspan?: number
+  rowspan?: number
+  colwidth?: number[] | null
 }
 
 const cellAttrs = {

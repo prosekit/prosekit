@@ -8,6 +8,7 @@ import type {
 import { createHighlighter } from 'shiki/bundle/full'
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript'
 
+let highlighterPromise: Promise<void> | undefined
 let highlighter: Highlighter | undefined
 const loadedLangs = new Set<BundledLanguage | SpecialLanguage>()
 const loadedThemes = new Set<BundledTheme>()
@@ -19,18 +20,21 @@ export interface HighlighterOptions extends Omit<ShikiHighlighterOptions, 'langs
   langs: (BundledLanguage | SpecialLanguage)[]
 }
 
-async function createAndCacheHighlighter({
+function ensureHighlighter({
   ...options
 }: HighlighterOptions): Promise<void> {
-  if (!highlighter) {
+  if (!highlighterPromise) {
     // If no engine is provided, use the JavaScript engine, which is
     // smaller than the WASM engine.
     if (!options.engine) {
       const engine = createJavaScriptRegexEngine({ forgiving: true })
       options.engine = engine
     }
-    highlighter = await createHighlighter(options)
+    highlighterPromise = createHighlighter(options).then((createdHighlighter) => {
+      highlighter = createdHighlighter
+    })
   }
+  return highlighterPromise
 }
 
 async function loadLanguages(langs: (BundledLanguage | SpecialLanguage)[]) {
@@ -63,7 +67,7 @@ export function createOrGetHighlighter(
   options: HighlighterOptions,
 ): HighlighterResult {
   if (!highlighter) {
-    return { promise: createAndCacheHighlighter(options) }
+    return { promise: ensureHighlighter(options) }
   }
 
   const langs = options.langs.filter((lang) => !loadedLangs.has(lang))

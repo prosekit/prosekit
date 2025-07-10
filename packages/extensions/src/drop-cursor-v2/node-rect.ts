@@ -90,7 +90,7 @@ export function drawNodeRect(nodeRect: NodeRect): void {
     dom.className = 'pointer-events-none fixed'
     dom.style.outlineColor = pickRandomColor() + '30'
     dom.style.outlineStyle = 'solid'
-    dom.style.outlineWidth = '5px'
+    dom.style.outlineWidth = '2px'
 
     let { top, left, right, bottom } = nodeRect.rect
     let height = bottom - top
@@ -134,48 +134,33 @@ export function findBestLine(view: EditorView, x: number, y: number): [number, n
   if (!root) return bestLine
 
   const nodes = [root]
-  let bestDistance = Number.MAX_SAFE_INTEGER
+  let bestLineDistance = Number.MAX_SAFE_INTEGER
+  let bestPointDistance = Number.MAX_SAFE_INTEGER
 
   while (nodes.length > 0) {
     const node = nodes.pop()!
     const { top, right, bottom, left } = node.rect
 
-    let topDistance = calcPointLineDistance(x, y, left, right, top)
-    let bottomDistance = calcPointLineDistance(x, y, left, right, bottom)
-
-    console.log('[findBestLine]', {
-      x,
-      y,
-      topDistance,
-      bottomDistance,
-      top,
-      right,
-      bottom,
-      left,
-    })
-
-    if (topDistance < bestDistance) {
-      bestDistance = topDistance
-      bestLine = [left, right, top]
-    }
-    if (bottomDistance < bestDistance) {
-      bestDistance = bottomDistance
-      bestLine = [left, right, bottom]
+    for (const lineY of [top, bottom] as const) {
+      const lineDistance = Math.abs(y - lineY)
+      for (const lineX of [left, right]) {
+        const pointDistance = calcPointPointDistance(x, y, lineX, lineY)
+        if (
+          lineDistance < bestLineDistance || (
+            lineDistance === bestLineDistance
+            && pointDistance < bestPointDistance
+          )
+        ) {
+          bestLineDistance = lineDistance
+          bestPointDistance = pointDistance
+          bestLine = [left, right, lineY]
+        }
+      }
     }
 
     nodes.push(...node.children)
   }
   return bestLine
-}
-
-function calcPointLineDistance(pointX: number, pointY: number, lineX0: number, lineX1: number, lineY: number) {
-  if (lineX0 <= pointX && pointX <= lineX1) {
-    return Math.abs(pointY - lineY)
-  }
-  return Math.min(
-    calcPointPointDistance(pointX, pointY, lineX0, lineY),
-    calcPointPointDistance(pointX, pointY, lineX1, lineY),
-  )
 }
 
 function calcPointPointDistance(x0: number, y0: number, x1: number, y1: number): number {
@@ -209,7 +194,7 @@ export function drawBestLine(view: EditorView, x: number, y: number): void {
   dom.style.backgroundColor = 'green'
   dom.style.outlineColor = 'green'
   dom.style.outlineStyle = 'solid'
-  dom.style.outlineWidth = '3px'
+  dom.style.outlineWidth = '4px'
   dom.className = 'pointer-events-none fixed'
 
   container.append(dom)

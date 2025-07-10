@@ -177,7 +177,6 @@ export function drawBestLine(view: EditorView, x: number, y: number): void {
   cachedY = y
 
   let line = findBestLine(view, x, y)
-  console.log('line', line)
   if (line[0] === 0 && line[1] === 0) return
 
   let container = getContainer('DEBUG_BEST_LINE_CONTAINER')

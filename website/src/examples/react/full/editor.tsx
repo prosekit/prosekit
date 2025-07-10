@@ -1,9 +1,15 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
-import { createEditor } from 'prosekit/core'
+import {
+  createEditor,
+  debug,
+} from 'prosekit/core'
 import { ProseKit } from 'prosekit/react'
-import { useMemo } from 'react'
+import {
+  useEffect,
+  useMemo,
+} from 'react'
 
 import { TableHandle } from '../table/table-handle'
 
@@ -21,6 +27,26 @@ export default function Editor() {
     const extension = defineExtension()
     return createEditor({ extension, defaultContent: DEFAULT_CONTENT })
   }, [])
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.view = editor.view
+    }, 100)
+  }, [editor])
+
+  useEffect(() => {
+    const eventListener = (e: MouseEvent) => {
+      const pos = editor.view.posAtCoords({ left: e.clientX, top: e.clientY })
+      debug(`[DEBUG] editor.tsx pos x: ${e.clientX}, y: ${e.clientY} => ${JSON.stringify(pos)}`)
+    }
+
+    document.addEventListener('mousemove', eventListener)
+    document.addEventListener('dragover', eventListener)
+    return () => {
+      document.removeEventListener('mousemove', eventListener)
+      document.removeEventListener('dragover', eventListener)
+    }
+  }, [editor])
 
   return (
     <ProseKit editor={editor}>

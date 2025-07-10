@@ -143,6 +143,17 @@ export function findBestLine(view: EditorView, x: number, y: number): [number, n
     let topDistance = calcPointLineDistance(x, y, left, right, top)
     let bottomDistance = calcPointLineDistance(x, y, left, right, bottom)
 
+    console.log('[findBestLine]', {
+      x,
+      y,
+      topDistance,
+      bottomDistance,
+      top,
+      right,
+      bottom,
+      left,
+    })
+
     if (topDistance < bestDistance) {
       bestDistance = topDistance
       bestLine = [left, right, top]
@@ -151,6 +162,8 @@ export function findBestLine(view: EditorView, x: number, y: number): [number, n
       bestDistance = bottomDistance
       bestLine = [left, right, bottom]
     }
+
+    nodes.push(...node.children)
   }
   return bestLine
 }
@@ -193,7 +206,10 @@ export function drawBestLine(view: EditorView, x: number, y: number): void {
   dom.style.width = (lineX1 - lineX0) + 'px'
 
   dom.style.height = '1px'
-  dom.style.backgroundColor = 'red'
+  dom.style.backgroundColor = 'green'
+  dom.style.outlineColor = 'green'
+  dom.style.outlineStyle = 'solid'
+  dom.style.outlineWidth = '3px'
   dom.className = 'pointer-events-none fixed'
 
   container.append(dom)

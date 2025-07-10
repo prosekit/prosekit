@@ -82,8 +82,6 @@ function pickRandomColor() {
 export function drawNodeRect(nodeRect: NodeRect): void {
   let container = getContainer()
   container.innerHTML = ''
-  container.className = 'pointer-events-none fixed'
-  container.style.zIndex = '1000000'
   const nodeRects = [nodeRect]
 
   while (nodeRects.length > 0) {
@@ -108,14 +106,17 @@ export function drawNodeRect(nodeRect: NodeRect): void {
   }
 }
 
-function getContainer(): HTMLElement {
-  let dom = document.querySelector('#DEBUG_NODE_RECT_TREE_ID')
+function getContainer(id = 'DEBUG_NODE_RECT_TREE_ID'): HTMLElement {
+  let dom = document.querySelector('#' + id)
   if (!dom || !isHTMLElement(dom)) {
     const dom2 = document.createElement('div')
-    dom2.id = 'DEBUG_NODE_RECT_TREE_ID'
+    dom2.id = id
     document.body.append(dom2)
     return dom2
   }
+
+  dom.className = 'pointer-events-none fixed'
+  dom.style.zIndex = '1000000'
   return dom
 }
 
@@ -166,4 +167,34 @@ function calcPointLineDistance(pointX: number, pointY: number, lineX0: number, l
 
 function calcPointPointDistance(x0: number, y0: number, x1: number, y1: number): number {
   return Math.abs(x0 - x1) + Math.abs(y0 - y1)
+}
+
+let cachedX = 0
+let cachedY = 0
+
+export function drawBestLine(view: EditorView, x: number, y: number): void {
+  if (x === cachedX && y === cachedY) return
+
+  cachedX = x
+  cachedY = y
+
+  let line = findBestLine(view, x, y)
+  console.log('line', line)
+  if (line[0] === 0 && line[1] === 0) return
+
+  let container = getContainer('DEBUG_BEST_LINE_CONTAINER')
+
+  container.innerHTML = ''
+  let dom = document.createElement('div')
+  const [lineX0, lineX1, lineY] = line
+
+  dom.style.top = lineY + 'px'
+  dom.style.left = lineX0 + 'px'
+  dom.style.width = (lineX1 - lineX0) + 'px'
+
+  dom.style.height = '1px'
+  dom.style.backgroundColor = 'red'
+  dom.className = 'pointer-events-none fixed'
+
+  container.append(dom)
 }

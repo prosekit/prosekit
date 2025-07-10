@@ -8,6 +8,7 @@ import type { EditorView } from '@prosekit/pm/view'
 
 import { getPosAtCoords } from './get-pos-at-coords'
 import {
+  drawBestLine,
   drawDebugOutline,
   drawNodeRect,
   getNodeRect,
@@ -154,6 +155,9 @@ class DropCursorView implements PluginView {
 
   dragover(event: DragEvent) {
     if (!this.editorView.editable) return
+
+    drawBestLine(this.editorView, event.clientX, event.clientY)
+
     const pos = getPosAtCoords(this.editorView, { left: event.clientX, top: event.clientY })
     if (!pos) return
 

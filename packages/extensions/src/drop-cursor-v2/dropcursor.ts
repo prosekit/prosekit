@@ -1,11 +1,17 @@
 import {
   Plugin,
   type EditorState,
+  type PluginView,
 } from '@prosekit/pm/state'
 import { dropPoint } from '@prosekit/pm/transform'
 import type { EditorView } from '@prosekit/pm/view'
 
 import { getPosAtCoords } from './get-pos-at-coords'
+import {
+  drawDebugOutline,
+  drawNodeRect,
+  getNodeRect,
+} from './node-rect'
 
 interface DropCursorOptions {
   /// The color of the cursor. Defaults to `currentColor`. Use `false` to apply no color and rely only on class.
@@ -41,7 +47,7 @@ declare module '@prosekit/pm/model' {
   }
 }
 
-class DropCursorView {
+class DropCursorView implements PluginView {
   width: number
   color: string | undefined
   class: string | undefined
@@ -51,6 +57,8 @@ class DropCursorView {
   handlers: { name: string; handler: (event: Event) => void }[]
 
   constructor(readonly editorView: EditorView, options: DropCursorOptions) {
+    drawDebugOutline(editorView)
+
     this.width = options.width ?? 1
     this.color = options.color === false ? undefined : (options.color || 'currentColor')
     this.class = options.class
@@ -69,6 +77,8 @@ class DropCursorView {
   }
 
   update(editorView: EditorView, prevState: EditorState) {
+    drawDebugOutline(editorView)
+
     if (this.cursorPos != null && prevState.doc != editorView.state.doc) {
       if (this.cursorPos > editorView.state.doc.content.size) this.setCursor(null)
       else this.updateOverlay()

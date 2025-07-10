@@ -125,3 +125,45 @@ export function drawDebugOutline(view: EditorView): void {
     drawNodeRect(nodeRect)
   }
 }
+
+export function findBestLine(view: EditorView, x: number, y: number): [number, number, number] {
+  let bestLine: [number, number, number] = [0, 0, 0]
+
+  const root = getNodeRect(view)
+  if (!root) return bestLine
+
+  const nodes = [root]
+  let bestDistance = Number.MAX_SAFE_INTEGER
+
+  while (nodes.length > 0) {
+    const node = nodes.pop()!
+    const { top, right, bottom, left } = node.rect
+
+    let topDistance = calcPointLineDistance(x, y, left, right, top)
+    let bottomDistance = calcPointLineDistance(x, y, left, right, bottom)
+
+    if (topDistance < bestDistance) {
+      bestDistance = topDistance
+      bestLine = [left, right, top]
+    }
+    if (bottomDistance < bestDistance) {
+      bestDistance = bottomDistance
+      bestLine = [left, right, bottom]
+    }
+  }
+  return bestLine
+}
+
+function calcPointLineDistance(pointX: number, pointY: number, lineX0: number, lineX1: number, lineY: number) {
+  if (lineX0 <= pointX && pointX <= lineX1) {
+    return Math.abs(pointY - lineY)
+  }
+  return Math.min(
+    calcPointPointDistance(pointX, pointY, lineX0, lineY),
+    calcPointPointDistance(pointX, pointY, lineX1, lineY),
+  )
+}
+
+function calcPointPointDistance(x0: number, y0: number, x1: number, y1: number): number {
+  return Math.abs(x0 - x1) + Math.abs(y0 - y1)
+}

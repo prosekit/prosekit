@@ -198,3 +198,24 @@ export function drawBestLine(view: EditorView, x: number, y: number): void {
 
   container.append(dom)
 }
+
+interface Point {
+  x: number
+  y: number
+}
+
+interface Line {
+  x0: number
+  x1: number
+  y: number
+}
+
+interface DropTarget {
+  pos: number
+  x0: number
+  x1: number
+  y: number
+}
+
+function calcLineDistanceTo(target: DragTarget, x, y) {
+}

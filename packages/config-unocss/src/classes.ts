@@ -18,7 +18,6 @@ const CSS_FLOATING_MENU = cn(
   'z-10 box-border rounded-lg border border-border bg-background shadow-lg',
   CSS_DEFAULT_HIDDEN,
 )
-
 const CSS_PRESENCE_ANIMATE = cn(
   CSS_DEFAULT_HIDDEN,
   'will-change-transform',

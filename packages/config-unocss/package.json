@@ -12,7 +12,7 @@
     "./lib/classes.gen.json": "./lib/classes.gen.json"
   },
   "scripts": {
-    "build": "tsx build.ts"
+    "gen": "tsx build.ts"
   },
   "dependencies": {
     "unocss-preset-animations": "^1.2.1"

@@ -6,7 +6,7 @@ import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
 import { defineExtension } from './extension'
-import { TableHandle } from './table-handle'
+import TableHandle from './table-handle'
 
 export default function Editor() {
   const editor = useMemo(() => {

@@ -1,0 +1,36 @@
+name: Slash command
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  run-command:
+    if: github.event.issue.pull_request && github.event.comment.body ==  '/docs'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get PR branch and checkout
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER=${{ github.event.issue.number }}
+          echo "PR_NUMBER: $PR_NUMBER"
+          BRANCH_NAME=$(gh pr view $PR_NUMBER --json headRefName --jq '.headRefName')
+          echo "BRANCH_NAME: $BRANCH_NAME"
+          git fetch --all
+          git checkout "$BRANCH_NAME"
+
+      - name: Set up Git user
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+
+      - name: Run the script
+        run: |
+          bash scripts/pr-command.sh "$SLASH_COMMAND"
+        env:
+          SLASH_COMMAND: ${{ github.event.comment.body }}

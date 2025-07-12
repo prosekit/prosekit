@@ -36,6 +36,7 @@ git commit --allow-empty -m "chore: inspect docs (steps 1/3)"
 
 # Build the docs from the dev branch
 cd "$DEV_DIR/website"
+pnpm install
 pnpm run build:typedoc
 
 # Commit the dev docs

@@ -1002,6 +1002,8 @@ The end position of the document. By default it will be the end position of curr
 
 ### UnsetMarkOptions {#unsetmarkoptions}
 
+Options for [unsetMark](#unsetmark).
+
 #### Properties
 
 <dl>

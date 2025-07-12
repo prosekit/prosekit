@@ -32,7 +32,7 @@ cp -r "$MASTER_DIR/$REF_DIR" "$REF_DIR"
 # Commit the master docs
 cd "$DEV_DIR"
 git add --force "$REF_DIR"
-git commit --allow-empty -m "chore: inspect docs (steps 1/3)"
+git commit --allow-empty -m "chore: [1/3] build master docs"
 
 # Build the docs from the dev branch
 cd "$DEV_DIR/website"
@@ -42,7 +42,7 @@ pnpm run build:typedoc
 # Commit the dev docs
 cd "$DEV_DIR"
 git add --force "$REF_DIR"
-git commit --allow-empty -m "chore: inspect docs (steps 2/3)"
+git commit --allow-empty -m "chore: [2/3] build dev docs"
 
 # Remove the docs
 cd "$DEV_DIR"
@@ -51,7 +51,7 @@ rm -rf "$REF_DIR"
 
 # Commit the changes
 git add --all
-git commit --allow-empty -m "chore: inspect docs (steps 3/3)"
+git commit --allow-empty -m "chore: [3/3] clean up docs"
 
 # Push the changes
 git push

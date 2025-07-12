@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.14.2
+
+### Patch Changes
+
+- [`941c94f`](https://github.com/ocavue/prosekit/commit/941c94f1c00047feb98f21f55734602905d123f5) ![](https://prosekit.dev/b/extensions)
+
+  Add `language-*` class to `<code>` elements in code blocks. This improves compatibility with the remark/rehype ecosystem that expect this class naming convention.
+
 ## 0.14.1
 
 ### Patch Changes

@@ -34,8 +34,6 @@ export type DropIndicatorExtension = PlainExtension
 /**
  * Show up a decoration at the drop position when something is dragged over the editor.
  *
- * See [prosemirror-dropcursor](https://github.com/ProseMirror/prosemirror-dropcursor) for more information.
- *
  * @public
  */
 export function defineDropIndicator(

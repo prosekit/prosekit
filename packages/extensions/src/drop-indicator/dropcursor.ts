@@ -29,7 +29,7 @@ interface DropIndicatorOptions {
 /// causes a decoration to show up at the drop position when something
 /// is dragged over the editor.
 ///
-/// Nodes may add a `disableDropIndicator` property to their spec to
+/// Nodes may add a `disableDropCursor` property to their spec to
 /// control the showing of a drop cursor inside them. This may be a
 /// boolean or a function, which will be called with a view and a
 /// position, and should return a boolean.
@@ -41,10 +41,10 @@ export function dropIndicator(options: DropIndicatorOptions = {}): Plugin {
   })
 }
 
-// Add disableDropIndicator to NodeSpec
+// Add disableDropCursor to NodeSpec
 declare module '@prosekit/pm/model' {
   interface NodeSpec {
-    disableDropIndicator?: boolean | ((view: EditorView, pos: { pos: number; inside: number }, event: DragEvent) => boolean)
+    disableDropCursor?: boolean | ((view: EditorView, pos: { pos: number; inside: number }, event: DragEvent) => boolean)
   }
 }
 
@@ -162,10 +162,10 @@ class DropIndicatorView implements PluginView {
     if (!pos) return
 
     const node = pos.inside >= 0 && this.editorView.state.doc.nodeAt(pos.inside)
-    const disableDropIndicator = node && node.type.spec.disableDropIndicator
-    const disabled: boolean | null | undefined = typeof disableDropIndicator == 'function'
-      ? disableDropIndicator(this.editorView, pos, event)
-      : disableDropIndicator
+    const disableDropCursor = node && node.type.spec.disableDropCursor
+    const disabled: boolean | null | undefined = typeof disableDropCursor == 'function'
+      ? disableDropCursor(this.editorView, pos, event)
+      : disableDropCursor
 
     if (!disabled) {
       let target = pos.pos

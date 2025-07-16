@@ -16,7 +16,13 @@ export interface DropArea {
   getDropTarget(x: number, y: number): DropTarget
 }
 
-function getDropArea(
+export function buildDropAreaTree(
+  view: EditorView,
+): DropArea {
+  return buildDropArea(view, -1, view.state.doc, view.dom)
+}
+
+function buildDropArea(
   view: EditorView,
   pos: number,
   node: ProseMirrorNode,
@@ -30,7 +36,7 @@ function getDropArea(
         const childDom = view.nodeDOM(childPos)
         if (childDom && isHTMLElement(childDom)) {
           children.push(
-            getDropArea(
+            buildDropArea(
               view,
               childPos,
               child,
@@ -151,15 +157,4 @@ function getDropArea(
     getRect,
     getDropTarget,
   }
-}
-
-export function buildDropAreaTree(
-  view: EditorView,
-): DropArea {
-  return getDropArea(
-    view,
-    -1,
-    view.state.doc,
-    view.dom,
-  )
 }

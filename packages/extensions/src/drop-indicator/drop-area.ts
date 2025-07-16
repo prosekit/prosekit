@@ -10,7 +10,7 @@ import { unionRect } from './rect'
 
 interface DropAreaV2 {
   getRect(): Rect
-  findDropTarget(x: number, y: number): DropTarget
+  getDropTarget(x: number, y: number): DropTarget
 }
 
 export function getDropArea(
@@ -60,11 +60,17 @@ export function getDropArea(
   let cachedY = -1
   let cachedDropTarget: DropTarget | undefined
 
-  let findDropTarget = (x: number, y: number): DropTarget => {
+  let getDropTarget = (x: number, y: number): DropTarget => {
     if (cachedX === x && cachedY === y && cachedDropTarget) {
       return cachedDropTarget
     }
+    cachedX = x
+    cachedY = y
+    cachedDropTarget = findDropTarget(x, y)
+    return cachedDropTarget
+  }
 
+  let findDropTarget = (x: number, y: number): DropTarget => {
     const { top, bottom, left, right } = getRect()
 
     let distanceTop = Math.abs(top - y)
@@ -105,7 +111,7 @@ export function getDropArea(
         for (let i = lo; i <= hi; i++) {
           let child = children[i]
           if (child.getRect().top <= y && y <= child.getRect().bottom) {
-            const targetNext = child.findDropTarget(x, y)
+            const targetNext = child.getDropTarget(x, y)
             targetBest = compareDropTarget(targetBest, targetNext)
             break
           }
@@ -116,7 +122,7 @@ export function getDropArea(
       let i = (lo + hi) >> 1
       let child = children[i]
       if (child.getRect().top <= y && y <= child.getRect().bottom) {
-        const targetNext = child.findDropTarget(x, y)
+        const targetNext = child.getDropTarget(x, y)
         targetBest = compareDropTarget(targetBest, targetNext)
         lo = i
         hi = i
@@ -139,7 +145,7 @@ export function getDropArea(
 
   return {
     getRect,
-    findDropTarget,
+    getDropTarget,
   }
 }
 

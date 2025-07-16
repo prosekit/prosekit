@@ -6,6 +6,8 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 import type { Rect } from 'prosemirror-tables'
 
+import type { DropTarget } from './drop-target'
+import { findCloserDropTarget } from './drop-target'
 import { unionRect } from './rect'
 
 export interface DropArea {
@@ -93,7 +95,7 @@ function getDropArea(
       end: { x: right, y: bottom },
       pos,
     }
-    let targetBest: DropTarget = compareDropTarget(targetTop, targetBottom)
+    let targetBest: DropTarget = findCloserDropTarget(targetTop, targetBottom)
 
     if (node.isBlock && (node.isTextblock || node.isAtom || node.type.spec.isolating)) {
       return targetBest
@@ -113,7 +115,7 @@ function getDropArea(
           let child = children[i]
           if (child.getRect().top <= y && y <= child.getRect().bottom) {
             const targetNext = child.getDropTarget(x, y)
-            targetBest = compareDropTarget(targetBest, targetNext)
+            targetBest = findCloserDropTarget(targetBest, targetNext)
             break
           }
         }
@@ -124,7 +126,7 @@ function getDropArea(
       let child = children[i]
       if (child.getRect().top <= y && y <= child.getRect().bottom) {
         const targetNext = child.getDropTarget(x, y)
-        targetBest = compareDropTarget(targetBest, targetNext)
+        targetBest = findCloserDropTarget(targetBest, targetNext)
         lo = i
         hi = i
         break
@@ -160,21 +162,4 @@ export function buildDropAreaTree(
     view.state.doc,
     view.dom,
   )
-}
-
-interface DropTarget {
-  distance: { x: number; y: number }
-  start: { x: number; y: number }
-  end: { x: number; y: number }
-  pos: number
-}
-
-function compareDropTarget(a: DropTarget, b: DropTarget): DropTarget {
-  if (a.distance.y < b.distance.y) {
-    return a
-  }
-  if (a.distance.y === b.distance.y && a.distance.x < b.distance.x) {
-    return a
-  }
-  return b
 }

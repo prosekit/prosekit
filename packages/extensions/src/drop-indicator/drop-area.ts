@@ -14,6 +14,13 @@ interface DropArea {
   getDropTarget(x: number, y: number): DropTarget
 }
 
+interface DropTarget {
+  distance: { x: number; y: number }
+  start: { x: number; y: number }
+  end: { x: number; y: number }
+  pos: number
+}
+
 export function getDropArea(
   view: EditorView,
   pos: number,

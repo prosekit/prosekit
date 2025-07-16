@@ -47,7 +47,7 @@ function getTableHandleState(editor: Editor<EditorExtension>) {
   }
 }
 
-export function TableHandle() {
+export default function TableHandle() {
   const state = useEditorDerivedValue(getTableHandleState)
 
   return (

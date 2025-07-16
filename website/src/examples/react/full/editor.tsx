@@ -11,13 +11,12 @@ import {
   useMemo,
 } from 'react'
 
-import { TableHandle } from '../table/table-handle'
-
 import BlockHandle from './block-handle'
 import { DEFAULT_CONTENT } from './default-content-full'
 import { defineExtension } from './extension'
 import InlineMenu from './inline-menu'
 import SlashMenu from './slash-menu'
+import TableHandle from './table-handle'
 import TagMenu from './tag-menu'
 import Toolbar from './toolbar'
 import UserMenu from './user-menu'

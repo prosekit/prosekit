@@ -149,7 +149,7 @@ export const CSS_TOOLBAR = cn(CSS_TOP_BAR, 'flex flex-wrap gap-1 p-2 items-cente
 
 export const CSS_TOGGLE_BUTTON = cn(
   'outline-unset focus-visible:outline-unset flex items-center justify-center rounded-md p-2 font-medium transition focus-visible:ring-2 text-sm focus-visible:ring-ring disabled:pointer-events-none min-w-9 min-h-9',
-  'disabled:opacity-50 hover:disabled:opacity-50',
+  'text-secondary-foreground disabled:text-secondary-foreground/50',
   'bg-transparent hover:bg-secondary data-[state=on]:bg-accent',
 )
 

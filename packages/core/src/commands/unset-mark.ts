@@ -4,6 +4,8 @@ import type { CommandCreator } from '../types/extension-command'
 
 /**
  * @public
+ *
+ * Options for {@link unsetMark}.
  */
 export interface UnsetMarkOptions {
   /**

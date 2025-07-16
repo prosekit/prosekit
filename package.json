@@ -10,6 +10,7 @@
     "build:force": "turbo build --force",
     "build:package": "turbo build --filter='./packages/*' --concurrency=1",
     "build:website": "pnpm --filter='./website' run build",
+    "build:typedoc": "pnpm --filter='./website' run build:typedoc",
     "change": "changeset",
     "ci:publish": "pnpm run build:package && pnpm publish --access public -r --no-git-checks --tag latest",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile",

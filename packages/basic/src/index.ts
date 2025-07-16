@@ -29,10 +29,6 @@ import {
   type DocExtension,
 } from '@prosekit/extensions/doc'
 import {
-  defineDropIndicator,
-  type DropIndicatorExtension,
-} from '@prosekit/extensions/drop-cursor-v2'
-import {
   defineGapCursor,
   type GapCursorExtension,
 } from '@prosekit/extensions/gap-cursor'
@@ -92,6 +88,10 @@ import {
   defineVirtualSelection,
   type VirtualSelectionExtension,
 } from '@prosekit/extensions/virtual-selection'
+import {
+  defineDropIndicator,
+  type DropIndicatorExtension,
+} from '../../extensions/src/drop-indicator'
 
 /**
  * @internal

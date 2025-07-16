@@ -87,16 +87,15 @@ function buildDropArea(
     let distanceLeft = Math.abs(left - x)
     let distanceRight = Math.abs(right - x)
     let distanceX = Math.min(distanceLeft, distanceRight)
-    let distanceY = Math.min(distanceTop, distanceBottom)
 
     let targetTop: DropTarget = {
-      distance: { x: distanceX, y: distanceY },
+      distance: { x: distanceX, y: distanceTop },
       start: { x: left, y: top },
       end: { x: right, y: top },
       pos,
     }
     let targetBottom: DropTarget = {
-      distance: { x: distanceX, y: distanceY },
+      distance: { x: distanceX, y: distanceBottom },
       start: { x: left, y: bottom },
       end: { x: right, y: bottom },
       pos,

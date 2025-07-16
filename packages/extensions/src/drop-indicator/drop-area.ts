@@ -8,7 +8,7 @@ import type { Rect } from 'prosemirror-tables'
 
 import { unionRect } from './rect'
 
-interface DropAreaV2 {
+interface DropArea {
   getRect(): Rect
   getDropTarget(x: number, y: number): DropTarget
 }
@@ -18,9 +18,9 @@ export function getDropArea(
   pos: number,
   node: ProseMirrorNode,
   dom: HTMLElement,
-): DropAreaV2 {
-  const getChildren = once((): Array<DropAreaV2> => {
-    let children: Array<DropAreaV2> = []
+): DropArea {
+  const getChildren = once((): Array<DropArea> => {
+    let children: Array<DropArea> = []
     let childPos = pos + 1
     for (const child of node.children) {
       if (child.isBlock) {
@@ -151,7 +151,7 @@ export function getDropArea(
 
 export function buildDropAreaTree(
   view: EditorView,
-): DropAreaV2 {
+): DropArea {
   return getDropArea(
     view,
     -1,

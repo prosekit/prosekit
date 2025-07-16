@@ -51,17 +51,6 @@ class DropArea {
     readonly dom: HTMLElement,
   ) {}
 
-  //   get dom(): HTMLElement | undefined {
-  //     let { pos, view } = this
-  //     if (pos < 0) {
-  //       return view.dom
-  //     }
-  //     let dom = view.nodeDOM(pos)
-  //     if (dom && isHTMLElement(dom)) {
-  //       return dom
-  //     }
-  //   }
-
   get rect(): Rect {
     let { pos, children, dom } = this
 

@@ -68,7 +68,7 @@ export function getDropArea(
   let cachedY = -1
   let cachedDropTarget: DropTarget | undefined
 
-  let getDropTarget = (x: number, y: number): DropTarget => {
+  const getDropTarget = (x: number, y: number): DropTarget => {
     if (cachedX === x && cachedY === y && cachedDropTarget) {
       return cachedDropTarget
     }
@@ -78,7 +78,7 @@ export function getDropArea(
     return cachedDropTarget
   }
 
-  let findDropTarget = (x: number, y: number): DropTarget => {
+  const findDropTarget = (x: number, y: number): DropTarget => {
     const { top, bottom, left, right } = getRect()
 
     let distanceTop = Math.abs(top - y)

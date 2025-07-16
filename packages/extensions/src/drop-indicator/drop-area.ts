@@ -8,13 +8,13 @@ import type { Rect } from 'prosemirror-tables'
 
 import { unionRect } from './rect'
 
-interface DropArea {
+export interface DropArea {
   pos: number
   getRect(): Rect
   getDropTarget(x: number, y: number): DropTarget
 }
 
-export function getDropArea(
+function getDropArea(
   view: EditorView,
   pos: number,
   node: ProseMirrorNode,

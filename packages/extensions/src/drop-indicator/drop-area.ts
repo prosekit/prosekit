@@ -48,20 +48,21 @@ class DropArea {
     readonly view: EditorView,
     readonly pos: number,
     readonly node: ProseMirrorNode,
+    readonly dom: HTMLElement,
   ) {}
 
-  get dom(): HTMLElement | undefined {
-    let { pos, view } = this
-    if (pos < 0) {
-      return view.dom
-    }
-    let dom = view.nodeDOM(pos)
-    if (dom && isHTMLElement(dom)) {
-      return dom
-    }
-  }
+  //   get dom(): HTMLElement | undefined {
+  //     let { pos, view } = this
+  //     if (pos < 0) {
+  //       return view.dom
+  //     }
+  //     let dom = view.nodeDOM(pos)
+  //     if (dom && isHTMLElement(dom)) {
+  //       return dom
+  //     }
+  //   }
 
-  get rect(): Rect | undefined {
+  get rect(): Rect {
     let { pos, children, dom } = this
 
     if (pos < 0) {
@@ -72,9 +73,8 @@ class DropArea {
           return unionRect(firstRect, lastRect)
         }
       }
-    } else if (dom) {
-      return dom.getBoundingClientRect()
     }
+    return dom.getBoundingClientRect()
   }
 
   get children(): DropArea[] {
@@ -90,6 +90,7 @@ class DropArea {
                 this.view,
                 childPos,
                 child,
+                childDom,
               ),
             )
           }
@@ -102,48 +103,79 @@ class DropArea {
     return this._children
   }
 
-  //   get dropPoints() {
-  //     // pass
-  //   }
+  findDropTarget(x: number, y: number): DropTarget {
+    const { top, bottom, left, right } = this.rect
+    const { node, pos } = this
 
-  //   findDropPoint(x: number, y: number) {
-  //     const { node, pos, children } = this
-  //     if (node.isBlock && (node.isTextblock || node.isAtom || node.type.spec.isolating)) {
-  //       return { node, pos }
-  //     }
-  //     if (children.length === 0) {
-  //       return { node, pos }
-  //     }
+    let distanceTop = Math.abs(top - y)
+    let distanceBottom = Math.abs(bottom - y)
+    let distanceLeft = Math.abs(left - x)
+    let distanceRight = Math.abs(right - x)
+    let distanceX = Math.min(distanceLeft, distanceRight)
+    let distanceY = Math.min(distanceTop, distanceBottom)
 
-  //     let lo = 0
-  //     let hi = children.length - 1
-  //     let bestDistances = { x: Number.MAX_SAFE_INTEGER, y: Number.MAX_SAFE_INTEGER }
+    let targetTop: DropTarget = {
+      distance: { x: distanceX, y: distanceY },
+      start: { x: left, y: top },
+      end: { x: right, y: top },
+      pos,
+    }
+    let targetBottom: DropTarget = {
+      distance: { x: distanceX, y: distanceY },
+      start: { x: left, y: bottom },
+      end: { x: right, y: bottom },
+      pos,
+    }
+    let targetBest: DropTarget = compareDropTarget(targetTop, targetBottom)
 
-  //     while (lo < hi) {
-  //       const i = hi - ((hi - lo) >> 1)
-  //       const { top, bottom, left, right } = children[i].rect
+    if (node.isBlock && (node.isTextblock || node.isAtom || node.type.spec.isolating)) {
+      return targetBest
+    }
 
-  //       const distanceY = Math.min(Math.abs(top - y), Math.abs(bottom - y))
-  //       const distanceX = Math.min(Math.abs(left - x), Math.abs(right - y))
+    const { children } = this
+    if (children.length === 0) {
+      return targetBest
+    }
 
-  //       if (distanceY === )
+    let lo = 0
+    let hi = children.length - 1
 
-  //       const childDOM = view.nodeDOM(positions[i])
-  //       const childRect = getNodeRect(childDOM)
-  //       if (!childRect) {
-  //         console.warn(`[prosekit] Unable to get rect at position: ${positions[i]}`)
-  //         return
-  //       }
-  //       if (childRect.top > y) {
-  //         hi = i - 1
-  //       } else if (childRect.bottom < y) {
-  //         lo = i + 1
-  //       } else {
-  //         lo = i
-  //         break
-  //       }
-  //     }
-  //   }
+    while (lo <= hi) {
+      if (hi - lo < 2) {
+        for (let i = lo; i <= hi; i++) {
+          let child = children[i]
+          if (child.rect.top <= y && y <= child.rect.bottom) {
+            const targetNext = child.findDropTarget(x, y)
+            targetBest = compareDropTarget(targetBest, targetNext)
+            break
+          }
+        }
+        break
+      }
+
+      let i = (lo + hi) >> 1
+      let child = children[i]
+      if (child.rect.top <= y && y <= child.rect.bottom) {
+        const targetNext = child.findDropTarget(x, y)
+        targetBest = compareDropTarget(targetBest, targetNext)
+        lo = i
+        hi = i
+        break
+      }
+      if (y <= child.rect.top) {
+        hi = i
+        continue
+      }
+      if (y >= child.rect.bottom) {
+        lo = i
+        continue
+      }
+      // Unexpected path
+      break
+    }
+
+    return targetBest
+  }
 }
 
 export function buildDropArea(
@@ -155,4 +187,21 @@ export function buildDropArea(
     view.state.doc,
     view.dom,
   )
+}
+
+interface DropTarget {
+  distance: { x: number; y: number }
+  start: { x: number; y: number }
+  end: { x: number; y: number }
+  pos: number
+}
+
+function compareDropTarget(a: DropTarget, b: DropTarget): DropTarget {
+  if (a.distance.y < b.distance.y) {
+    return a
+  }
+  if (a.distance.y === b.distance.y && a.distance.x < b.distance.x) {
+    return a
+  }
+  return b
 }

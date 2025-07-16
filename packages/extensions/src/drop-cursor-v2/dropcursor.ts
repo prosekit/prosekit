@@ -14,7 +14,7 @@ import {
   getNodeRect,
 } from './node-rect'
 
-interface DropCursorOptions {
+interface DropIndicatorOptions {
   /// The color of the cursor. Defaults to `currentColor`. Use `false` to apply no color and rely only on class.
   color?: string | false
 
@@ -29,26 +29,26 @@ interface DropCursorOptions {
 /// causes a decoration to show up at the drop position when something
 /// is dragged over the editor.
 ///
-/// Nodes may add a `disableDropCursor` property to their spec to
+/// Nodes may add a `disableDropIndicator` property to their spec to
 /// control the showing of a drop cursor inside them. This may be a
 /// boolean or a function, which will be called with a view and a
 /// position, and should return a boolean.
-export function dropCursor(options: DropCursorOptions = {}): Plugin {
+export function dropIndicator(options: DropIndicatorOptions = {}): Plugin {
   return new Plugin({
     view(editorView) {
-      return new DropCursorView(editorView, options)
+      return new DropIndicatorView(editorView, options)
     },
   })
 }
 
-// Add disableDropCursor to NodeSpec
+// Add disableDropIndicator to NodeSpec
 declare module '@prosekit/pm/model' {
   interface NodeSpec {
-    disableDropCursor?: boolean | ((view: EditorView, pos: { pos: number; inside: number }, event: DragEvent) => boolean)
+    disableDropIndicator?: boolean | ((view: EditorView, pos: { pos: number; inside: number }, event: DragEvent) => boolean)
   }
 }
 
-class DropCursorView implements PluginView {
+class DropIndicatorView implements PluginView {
   width: number
   color: string | undefined
   class: string | undefined
@@ -57,7 +57,7 @@ class DropCursorView implements PluginView {
   timeout: number = -1
   handlers: { name: string; handler: (event: Event) => void }[]
 
-  constructor(readonly editorView: EditorView, options: DropCursorOptions) {
+  constructor(readonly editorView: EditorView, options: DropIndicatorOptions) {
     drawDebugOutline(editorView)
 
     this.width = options.width ?? 1
@@ -81,12 +81,12 @@ class DropCursorView implements PluginView {
     drawDebugOutline(editorView)
 
     if (this.cursorPos != null && prevState.doc != editorView.state.doc) {
-      if (this.cursorPos > editorView.state.doc.content.size) this.setCursor(null)
+      if (this.cursorPos > editorView.state.doc.content.size) this.setIndicator(null)
       else this.updateOverlay()
     }
   }
 
-  setCursor(pos: number | null) {
+  setIndicator(pos: number | null) {
     if (pos == this.cursorPos) return
     this.cursorPos = pos
     if (pos == null) {
@@ -150,7 +150,7 @@ class DropCursorView implements PluginView {
 
   scheduleRemoval(timeout: number) {
     clearTimeout(this.timeout)
-    this.timeout = setTimeout(() => this.setCursor(null), timeout)
+    this.timeout = setTimeout(() => this.setIndicator(null), timeout)
   }
 
   dragover(event: DragEvent) {
@@ -162,10 +162,10 @@ class DropCursorView implements PluginView {
     if (!pos) return
 
     const node = pos.inside >= 0 && this.editorView.state.doc.nodeAt(pos.inside)
-    const disableDropCursor = node && node.type.spec.disableDropCursor
-    const disabled: boolean | null | undefined = typeof disableDropCursor == 'function'
-      ? disableDropCursor(this.editorView, pos, event)
-      : disableDropCursor
+    const disableDropIndicator = node && node.type.spec.disableDropIndicator
+    const disabled: boolean | null | undefined = typeof disableDropIndicator == 'function'
+      ? disableDropIndicator(this.editorView, pos, event)
+      : disableDropIndicator
 
     if (!disabled) {
       let target = pos.pos
@@ -173,7 +173,7 @@ class DropCursorView implements PluginView {
         const point = dropPoint(this.editorView.state.doc, target, this.editorView.dragging.slice)
         if (point != null) target = point
       }
-      this.setCursor(target)
+      this.setIndicator(target)
       this.scheduleRemoval(5000)
     }
   }
@@ -187,6 +187,6 @@ class DropCursorView implements PluginView {
   }
 
   dragleave(event: DragEvent) {
-    if (!this.editorView.dom.contains((event as any).relatedTarget)) this.setCursor(null)
+    if (!this.editorView.dom.contains((event as any).relatedTarget)) this.setIndicator(null)
   }
 }

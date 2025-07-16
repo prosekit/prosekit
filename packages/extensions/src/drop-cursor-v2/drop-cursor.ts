@@ -3,9 +3,9 @@ import {
   type PlainExtension,
 } from '@prosekit/core'
 
-import { dropCursor } from './dropcursor'
+import { dropIndicator } from './dropcursor'
 
-export interface DropCursorOptions {
+export interface DropIndicatorOptions {
   /**
    * The color of the cursor.  Use `false` to apply no color and rely only on class.
    *
@@ -29,7 +29,7 @@ export interface DropCursorOptions {
 /**
  * @internal
  */
-export type DropCursorExtension = PlainExtension
+export type DropIndicatorExtension = PlainExtension
 
 /**
  * Show up a decoration at the drop position when something is dragged over the editor.
@@ -39,7 +39,7 @@ export type DropCursorExtension = PlainExtension
  * @public
  */
 export function defineDropIndicator(
-  options?: DropCursorOptions,
-): DropCursorExtension {
-  return definePlugin(() => dropCursor({ ...options, color: 'red' /* TODO: only for debug, remove me */ }))
+  options?: DropIndicatorOptions,
+): DropIndicatorExtension {
+  return definePlugin(() => dropIndicator({ ...options, color: 'red' /* TODO: only for debug, remove me */ }))
 }

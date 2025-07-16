@@ -1,5 +1,5 @@
 export {
-  defineDropIndicator as defineDropCursor,
-  type DropCursorExtension,
-  type DropCursorOptions,
+  defineDropIndicator,
+  type DropIndicatorExtension,
+  type DropIndicatorOptions,
 } from './drop-cursor'

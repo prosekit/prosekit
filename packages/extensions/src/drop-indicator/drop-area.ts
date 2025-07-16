@@ -1,100 +1,71 @@
-import { isHTMLElement } from '@ocavue/utils'
+import {
+  isHTMLElement,
+  once,
+} from '@ocavue/utils'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 import type { Rect } from 'prosemirror-tables'
 
 import { unionRect } from './rect'
 
-// import { getNodeRect } from './node-rect'
+interface DropAreaV2 {
+  getRect(): Rect
+  findDropTarget(x: number, y: number): DropTarget
+}
 
-// class DropRange {
-//   constructor(
-//     readonly view: EditorView,
-//     readonly pos: number,
-//     readonly nodes: ProseMirrorNode[],
-//   ) {}
+export function getDropArea(
+  view: EditorView,
+  pos: number,
+  node: ProseMirrorNode,
+  dom: HTMLElement,
+): DropAreaV2 {
+  const getChildren = once((): Array<DropAreaV2> => {
+    let children: Array<DropAreaV2> = []
+    let childPos = pos + 1
+    for (const child of node.children) {
+      if (child.isBlock) {
+        const childDom = view.nodeDOM(childPos)
+        if (childDom && isHTMLElement(childDom)) {
+          children.push(
+            getDropArea(
+              view,
+              childPos,
+              child,
+              childDom,
+            ),
+          )
+        }
+      }
+      childPos += child.nodeSize
+    }
+    return children
+  })
 
-//   get points() {
-//     const points: DropPoint[] = []
-
-//     let pos = this.pos
-
-//     for (const node of this.nodes) {
-//       const dom = this.view.nodeDOM(pos)
-//       if (dom && isHTMLElement(dom)) {
-//         const { left, right, top, bottom } = dom.getBoundingClientRect()
-//         points.push(new DropPoint(pos, left, right, top))
-//         points.push(new DropPoint(pos, left, right, bottom))
-//       }
-//       pos +=
-//     }
-
-//   }
-// }
-
-// class DropPoint {
-//   constructor(
-//     readonly pos: number,
-//     readonly left: number,
-//     readonly right: number,
-//     readonly y: number,
-//   ) {}
-// }
-
-class DropArea {
-  private _children: DropArea[] | undefined
-
-  constructor(
-    readonly view: EditorView,
-    readonly pos: number,
-    readonly node: ProseMirrorNode,
-    readonly dom: HTMLElement,
-  ) {}
-
-  get rect(): Rect {
-    let { pos, children, dom } = this
-
+  const getRect = once((): Rect => {
     if (pos < 0) {
-      if (this.children.length > 0) {
-        const firstRect = children[0].rect
-        const lastRect = children[children.length - 1].rect
+      let children = getChildren()
+      if (children.length > 0) {
+        const firstRect = children[0].getRect()
+        const lastRect = children[children.length - 1].getRect()
         if (firstRect && lastRect) {
           return unionRect(firstRect, lastRect)
         }
       }
     }
+
     return dom.getBoundingClientRect()
-  }
+  })
 
-  get children(): DropArea[] {
-    if (!this._children) {
-      let children: Array<DropArea> = []
-      let childPos = this.pos + 1
-      for (const child of this.node.children) {
-        if (child.isBlock) {
-          const childDom = this.view.nodeDOM(childPos)
-          if (childDom && isHTMLElement(childDom)) {
-            children.push(
-              new DropArea(
-                this.view,
-                childPos,
-                child,
-                childDom,
-              ),
-            )
-          }
-        }
-        childPos += child.nodeSize
-      }
+  let cachedX = -1
+  let cachedY = -1
+  let cachedDropTarget: DropTarget | undefined
 
-      this._children = children
+  let findDropTarget = (x: number, y: number): DropTarget => {
+    if (cachedX === x && cachedY === y && cachedDropTarget) {
+      return cachedDropTarget
     }
-    return this._children
-  }
 
-  findDropTarget(x: number, y: number): DropTarget {
-    const { top, bottom, left, right } = this.rect
-    const { node, pos } = this
+    const { top, bottom, left, right } = getRect()
 
     let distanceTop = Math.abs(top - y)
     let distanceBottom = Math.abs(bottom - y)
@@ -121,7 +92,7 @@ class DropArea {
       return targetBest
     }
 
-    const { children } = this
+    const children = getChildren()
     if (children.length === 0) {
       return targetBest
     }
@@ -133,7 +104,7 @@ class DropArea {
       if (hi - lo < 2) {
         for (let i = lo; i <= hi; i++) {
           let child = children[i]
-          if (child.rect.top <= y && y <= child.rect.bottom) {
+          if (child.getRect().top <= y && y <= child.getRect().bottom) {
             const targetNext = child.findDropTarget(x, y)
             targetBest = compareDropTarget(targetBest, targetNext)
             break
@@ -144,18 +115,18 @@ class DropArea {
 
       let i = (lo + hi) >> 1
       let child = children[i]
-      if (child.rect.top <= y && y <= child.rect.bottom) {
+      if (child.getRect().top <= y && y <= child.getRect().bottom) {
         const targetNext = child.findDropTarget(x, y)
         targetBest = compareDropTarget(targetBest, targetNext)
         lo = i
         hi = i
         break
       }
-      if (y <= child.rect.top) {
+      if (y <= child.getRect().top) {
         hi = i
         continue
       }
-      if (y >= child.rect.bottom) {
+      if (y >= child.getRect().bottom) {
         lo = i
         continue
       }
@@ -165,12 +136,17 @@ class DropArea {
 
     return targetBest
   }
+
+  return {
+    getRect,
+    findDropTarget,
+  }
 }
 
-export function buildDropArea(
+export function buildDropAreaTree(
   view: EditorView,
-): DropArea {
-  return new DropArea(
+): DropAreaV2 {
+  return getDropArea(
     view,
     -1,
     view.state.doc,

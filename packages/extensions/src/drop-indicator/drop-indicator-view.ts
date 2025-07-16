@@ -188,6 +188,7 @@ class DropIndicatorView implements PluginView {
     const dropArea = this.getDropArea()
 
     const target = dropArea.getDropTarget(event.clientX, event.clientY)
+    if (!target) return
 
     drawLine(
       target.start.x,

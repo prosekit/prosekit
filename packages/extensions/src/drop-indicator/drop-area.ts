@@ -3,6 +3,7 @@ import {
   once,
 } from '@ocavue/utils'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
+import { dropPoint } from '@prosekit/pm/transform'
 import type { EditorView } from '@prosekit/pm/view'
 import type { Rect } from 'prosemirror-tables'
 
@@ -13,7 +14,7 @@ import { unionRect } from './rect'
 export interface DropArea {
   pos: number
   getRect(): Rect
-  getDropTarget(x: number, y: number): DropTarget
+  getDropTarget(x: number, y: number): DropTarget | undefined
 }
 
 export function buildDropAreaTree(
@@ -65,11 +66,21 @@ function buildDropArea(
     return dom.getBoundingClientRect()
   })
 
+  const canInsertAt = (pos: number): boolean => {
+    const slice = view.dragging?.slice
+    if (!slice) {
+      return true
+    }
+
+    const targetPos = dropPoint(view.state.doc, pos, slice)
+    return (pos === targetPos)
+  }
+
   let cachedX = -1
   let cachedY = -1
   let cachedDropTarget: DropTarget | undefined
 
-  const getDropTarget = (x: number, y: number): DropTarget => {
+  const getDropTarget = (x: number, y: number): DropTarget | undefined => {
     if (cachedX === x && cachedY === y && cachedDropTarget) {
       return cachedDropTarget
     }
@@ -79,7 +90,7 @@ function buildDropArea(
     return cachedDropTarget
   }
 
-  const findDropTarget = (x: number, y: number): DropTarget => {
+  const findDropTarget = (x: number, y: number): DropTarget | undefined => {
     const { top, bottom, left, right } = getRect()
 
     let distanceTop = Math.abs(top - y)
@@ -88,19 +99,23 @@ function buildDropArea(
     let distanceRight = Math.abs(right - x)
     let distanceX = Math.min(distanceLeft, distanceRight)
 
-    let targetTop: DropTarget = {
-      distance: { x: distanceX, y: distanceTop },
-      start: { x: left, y: top },
-      end: { x: right, y: top },
-      pos,
+    let targetBest: DropTarget | undefined
+
+    if (canInsertAt(pos)) {
+      let targetTop: DropTarget = {
+        distance: { x: distanceX, y: distanceTop },
+        start: { x: left, y: top },
+        end: { x: right, y: top },
+        pos,
+      }
+      let targetBottom: DropTarget = {
+        distance: { x: distanceX, y: distanceBottom },
+        start: { x: left, y: bottom },
+        end: { x: right, y: bottom },
+        pos,
+      }
+      targetBest = findCloserDropTarget(targetTop, targetBottom)
     }
-    let targetBottom: DropTarget = {
-      distance: { x: distanceX, y: distanceBottom },
-      start: { x: left, y: bottom },
-      end: { x: right, y: bottom },
-      pos,
-    }
-    let targetBest: DropTarget = findCloserDropTarget(targetTop, targetBottom)
 
     if (node.isBlock && (node.isTextblock || node.isAtom || node.type.spec.isolating)) {
       return targetBest

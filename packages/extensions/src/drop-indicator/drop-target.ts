@@ -5,12 +5,15 @@ export interface DropTarget {
   pos: number
 }
 
-export function findCloserDropTarget(a: DropTarget, b: DropTarget): DropTarget {
-  if (a.distance.y < b.distance.y) {
-    return a
+export function findCloserDropTarget(a?: DropTarget, b?: DropTarget): DropTarget | undefined {
+  if (a && b) {
+    if (a.distance.y < b.distance.y) {
+      return a
+    }
+    if (a.distance.y === b.distance.y && a.distance.x < b.distance.x) {
+      return a
+    }
+    return b
   }
-  if (a.distance.y === b.distance.y && a.distance.x < b.distance.x) {
-    return a
-  }
-  return b
+  return a || b
 }

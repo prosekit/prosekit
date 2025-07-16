@@ -120,8 +120,8 @@
     ]
   },
   {
-    "name": "prosekit/extensions/drop-cursor-v2",
-    "path": "packages/prosekit/dist/prosekit-extensions-drop-cursor-v2.js",
+    "name": "prosekit/extensions/drop-indicator",
+    "path": "packages/prosekit/dist/prosekit-extensions-drop-indicator.js",
     "ignore": [
       "loro-crdt",
       "loro-prosemirror",

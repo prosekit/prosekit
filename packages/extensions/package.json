@@ -175,9 +175,9 @@
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
         "default": "./dist/prosekit-extensions-drop-cursor.js"
       },
-      "./drop-cursor-v2": {
-        "types": "./dist/prosekit-extensions-drop-cursor-v2.d.ts",
-        "default": "./dist/prosekit-extensions-drop-cursor-v2.js"
+      "./drop-indicator": {
+        "types": "./dist/prosekit-extensions-drop-indicator.d.ts",
+        "default": "./dist/prosekit-extensions-drop-indicator.js"
       },
       "./enter-rule": {
         "types": "./dist/prosekit-extensions-enter-rule.d.ts",
@@ -341,8 +341,8 @@
         "drop-cursor": [
           "./dist/prosekit-extensions-drop-cursor.d.ts"
         ],
-        "drop-cursor-v2": [
-          "./dist/prosekit-extensions-drop-cursor-v2.d.ts"
+        "drop-indicator": [
+          "./dist/prosekit-extensions-drop-indicator.d.ts"
         ],
         "enter-rule": [
           "./dist/prosekit-extensions-enter-rule.d.ts"
@@ -437,7 +437,7 @@
       "commit/style": "./src/commit/style.css",
       "prosekit-extensions-doc": "./src/doc/index.ts",
       "prosekit-extensions-drop-cursor": "./src/drop-cursor/index.ts",
-      "prosekit-extensions-drop-cursor-v2": "./src/drop-cursor-v2/index.ts",
+      "prosekit-extensions-drop-indicator": "./src/drop-indicator/index.ts",
       "prosekit-extensions-enter-rule": "./src/enter-rule/index.ts",
       "prosekit-extensions-file": "./src/file/index.ts",
       "prosekit-extensions-gap-cursor": "./src/gap-cursor/index.ts",

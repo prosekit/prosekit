@@ -127,8 +127,8 @@ export function drawDebugOutline(view: EditorView): void {
   }
 }
 
-export function findBestLine(view: EditorView, x: number, y: number): [number, number, number] {
-  let bestLine: [number, number, number] = [0, 0, 0]
+export function findBestLine(view: EditorView, x: number, y: number): LineHorizontal {
+  let bestLine: LineHorizontal = [0, 0, 0]
 
   const root = getNodeRect(view)
   if (!root) return bestLine
@@ -204,12 +204,6 @@ interface Point {
   y: number
 }
 
-interface Line {
-  x0: number
-  x1: number
-  y: number
-}
-
 interface DropTarget {
   pos: number
   x0: number
@@ -219,3 +213,5 @@ interface DropTarget {
 
 function calcLineDistanceTo(target: DragTarget, x, y) {
 }
+
+type LineHorizontal = [x0: number, x1: number, y: number]

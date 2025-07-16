@@ -1,3 +1,4 @@
+import type { ProseMirrorNode } from '@prosekit/pm/model'
 import {
   Plugin,
   type EditorState,
@@ -6,12 +7,15 @@ import {
 import { dropPoint } from '@prosekit/pm/transform'
 import type { EditorView } from '@prosekit/pm/view'
 
+import {
+  buildDropAreaTree,
+  type DropArea,
+} from './drop-area'
 import { getPosAtCoords } from './get-pos-at-coords'
 import {
   drawBestLine,
   drawDebugOutline,
-  drawNodeRect,
-  getNodeRect,
+  drawLine,
 } from './node-rect'
 
 interface DropIndicatorOptions {
@@ -58,7 +62,7 @@ class DropIndicatorView implements PluginView {
   handlers: { name: string; handler: (event: Event) => void }[]
 
   constructor(readonly editorView: EditorView, options: DropIndicatorOptions) {
-    drawDebugOutline(editorView)
+    // drawDebugOutline(editorView)
 
     this.width = options.width ?? 1
     this.color = options.color === false ? undefined : (options.color || 'currentColor')
@@ -78,7 +82,7 @@ class DropIndicatorView implements PluginView {
   }
 
   update(editorView: EditorView, prevState: EditorState) {
-    drawDebugOutline(editorView)
+    // drawDebugOutline(editorView)
 
     if (this.cursorPos != null && prevState.doc != editorView.state.doc) {
       if (this.cursorPos > editorView.state.doc.content.size) this.setIndicator(null)
@@ -87,6 +91,8 @@ class DropIndicatorView implements PluginView {
   }
 
   setIndicator(pos: number | null) {
+    return
+
     if (pos == this.cursorPos) return
     this.cursorPos = pos
     if (pos == null) {
@@ -98,6 +104,8 @@ class DropIndicatorView implements PluginView {
   }
 
   updateOverlay() {
+    return
+
     const $pos = this.editorView.state.doc.resolve(this.cursorPos!)
     let isBlock = !$pos.parent.inlineContent, rect
     const editorDOM = this.editorView.dom, editorRect = editorDOM.getBoundingClientRect()
@@ -153,29 +161,57 @@ class DropIndicatorView implements PluginView {
     this.timeout = setTimeout(() => this.setIndicator(null), timeout)
   }
 
+  private _dropArea: DropArea | undefined
+  private _prevDoc: ProseMirrorNode | undefined
+  private _scrollTop: number = -1
+
+  private getDropArea(): DropArea {
+    if (
+      this._dropArea
+      && this._prevDoc
+      && this._prevDoc.eq(this.editorView.state.doc)
+      && this._scrollTop === this.editorView.dom.scrollTop
+    ) {
+      return this._dropArea
+    }
+
+    this._dropArea = buildDropAreaTree(this.editorView)
+    this._prevDoc = this.editorView.state.doc
+    this._scrollTop = this.editorView.dom.scrollTop
+
+    return this._dropArea
+  }
+
   dragover(event: DragEvent) {
     if (!this.editorView.editable) return
 
-    drawBestLine(this.editorView, event.clientX, event.clientY)
+    const dropArea = this.getDropArea()
 
-    const pos = getPosAtCoords(this.editorView, { left: event.clientX, top: event.clientY })
-    if (!pos) return
+    const target = dropArea.getDropTarget(event.clientX, event.clientY)
 
-    const node = pos.inside >= 0 && this.editorView.state.doc.nodeAt(pos.inside)
-    const disableDropCursor = node && node.type.spec.disableDropCursor
-    const disabled: boolean | null | undefined = typeof disableDropCursor == 'function'
-      ? disableDropCursor(this.editorView, pos, event)
-      : disableDropCursor
+    drawLine(
+      target.start.x,
+      target.end.x,
+      target.end.y,
+    )
 
-    if (!disabled) {
-      let target = pos.pos
-      if (this.editorView.dragging && this.editorView.dragging.slice) {
-        const point = dropPoint(this.editorView.state.doc, target, this.editorView.dragging.slice)
-        if (point != null) target = point
-      }
-      this.setIndicator(target)
-      this.scheduleRemoval(5000)
-    }
+    // const pos = target.pos
+
+    // // const node = pos.inside >= 0 && this.editorView.state.doc.nodeAt(pos.inside)
+    // // const disableDropCursor = node && node.type.spec.disableDropCursor
+    // // const disabled: boolean | null | undefined = typeof disableDropCursor == 'function'
+    // //   ? disableDropCursor(this.editorView, pos, event)
+    // //   : disableDropCursor
+
+    // if (!disabled) {
+    //   // let target = pos.pos
+    //   // if (this.editorView.dragging && this.editorView.dragging.slice) {
+    //   //   const point = dropPoint(this.editorView.state.doc, target, this.editorView.dragging.slice)
+    //   //   if (point != null) target = point
+    //   // }
+    //   this.setIndicator(target)
+    //   this.scheduleRemoval(5000)
+    // }
   }
 
   dragend() {

@@ -3,7 +3,7 @@ import {
   type PlainExtension,
 } from '@prosekit/core'
 
-import { dropIndicator } from './dropcursor'
+import { dropIndicator } from './drop-indicator-view'
 
 export interface DropIndicatorOptions {
   /**

@@ -9,16 +9,6 @@ interface Rect {
   readonly top: number
 }
 
-function mergeRect(a: Rect, b: Rect): Rect {
-  const rects = [a, b]
-  return {
-    top: Math.min(...rects.map(rect => rect.top)),
-    right: Math.max(...rects.map(rect => rect.right)),
-    bottom: Math.max(...rects.map(rect => rect.bottom)),
-    left: Math.min(...rects.map(rect => rect.left)),
-  }
-}
-
 interface NodeRect {
   pos: number
   node: ProseMirrorNode
@@ -179,11 +169,26 @@ export function drawBestLine(view: EditorView, x: number, y: number): void {
   let line = findBestLine(view, x, y)
   if (line[0] === 0 && line[1] === 0) return
 
+  const [lineX0, lineX1, lineY] = line
+  return drawLine(lineX0, lineX1, lineY)
+}
+
+let _cachedX0 = -1
+let _cachedX1 = -1
+let _cachedY = -1
+
+export function drawLine(lineX0: number, lineX1: number, lineY: number): void {
+  if (_cachedX0 === lineX0 && _cachedX1 === lineX1 && _cachedY === lineY) {
+    return
+  }
+  _cachedX0 = lineX0
+  _cachedX1 = lineX1
+  _cachedY = lineY
+
   let container = getContainer('DEBUG_BEST_LINE_CONTAINER')
 
   container.innerHTML = ''
   let dom = document.createElement('div')
-  const [lineX0, lineX1, lineY] = line
 
   dom.style.top = lineY + 'px'
   dom.style.left = lineX0 + 'px'
@@ -197,21 +202,6 @@ export function drawBestLine(view: EditorView, x: number, y: number): void {
   dom.className = 'pointer-events-none fixed'
 
   container.append(dom)
-}
-
-interface Point {
-  x: number
-  y: number
-}
-
-interface DropTarget {
-  pos: number
-  x0: number
-  x1: number
-  y: number
-}
-
-function calcLineDistanceTo(target: DragTarget, x, y) {
 }
 
 type LineHorizontal = [x0: number, x1: number, y: number]

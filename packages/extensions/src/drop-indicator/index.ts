@@ -2,4 +2,4 @@ export {
   defineDropIndicator,
   type DropIndicatorExtension,
   type DropIndicatorOptions,
-} from './drop-cursor'
+} from './drop-indicator'

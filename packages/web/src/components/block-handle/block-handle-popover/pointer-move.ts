@@ -101,7 +101,7 @@ function findBlockByCoords(view: EditorView, x: number, y: number): { node: Pros
     let lo = 0
     let hi = children.length - 1
 
-    while (lo <= hi) {
+    while (lo < hi) {
       const i = hi - ((hi - lo) >> 1)
       const childDOM = view.nodeDOM(positions[i])
       const childRect = getNodeRect(childDOM)

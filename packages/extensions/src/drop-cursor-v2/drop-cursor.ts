@@ -38,7 +38,7 @@ export type DropCursorExtension = PlainExtension
  *
  * @public
  */
-export function defineDropCursor(
+export function defineDropIndicator(
   options?: DropCursorOptions,
 ): DropCursorExtension {
   return definePlugin(() => dropCursor({ ...options, color: 'red' /* TODO: only for debug, remove me */ }))

@@ -67,12 +67,19 @@ function buildDropArea(
   })
 
   const canInsertAt = (pos: number): boolean => {
+    if (pos < 0) {
+      return false
+    }
+
     const slice = view.dragging?.slice
+
     if (!slice) {
       return true
     }
 
     const targetPos = dropPoint(view.state.doc, pos, slice)
+
+    console.log('targetPos', targetPos, pos)
     return (pos === targetPos)
   }
 

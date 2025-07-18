@@ -370,8 +370,12 @@ export class EditorInstance {
     }
 
     const canExec = (...args: Args) => {
-      const command = commandCreator(...args)
-      return this.canExec(command)
+      try {
+        const command = commandCreator(...args)
+        return this.canExec(command)
+      } catch (error) {
+        return false
+      }
     }
 
     action.canApply = canExec

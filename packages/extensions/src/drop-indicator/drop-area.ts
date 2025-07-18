@@ -7,6 +7,7 @@ import { dropPoint } from '@prosekit/pm/transform'
 import type { EditorView } from '@prosekit/pm/view'
 import type { Rect } from 'prosemirror-tables'
 
+import { DEBUG_defaultCanDropAt } from './DEBUG_can-drop-at'
 import type { DropTarget } from './drop-target'
 import { findCloserDropTarget } from './drop-target'
 import { unionRect } from './rect'
@@ -71,16 +72,24 @@ function buildDropArea(
       return false
     }
 
-    const slice = view.dragging?.slice
+    try {
+      const slice = view.dragging?.slice
 
-    if (!slice) {
-      return true
+      if (!slice) {
+        return true
+      }
+
+      const targetPos = dropPoint(view.state.doc, pos, slice)
+
+      console.log('targetPos', targetPos, pos)
+      return (pos === targetPos) && DEBUG_defaultCanDropAt({
+        view,
+        pos,
+        slice,
+      })
+    } catch {
+      return false
     }
-
-    const targetPos = dropPoint(view.state.doc, pos, slice)
-
-    console.log('targetPos', targetPos, pos)
-    return (pos === targetPos)
   }
 
   let cachedX = -1
@@ -106,23 +115,26 @@ function buildDropArea(
     let distanceRight = Math.abs(right - x)
     let distanceX = Math.min(distanceLeft, distanceRight)
 
-    let targetBest: DropTarget | undefined
+    let targetTop: DropTarget | undefined
+    let targetBottom: DropTarget | undefined
 
     if (canInsertAt(pos)) {
-      let targetTop: DropTarget = {
+      targetTop = {
         distance: { x: distanceX, y: distanceTop },
         start: { x: left, y: top },
         end: { x: right, y: top },
         pos,
       }
-      let targetBottom: DropTarget = {
+    }
+    if (canInsertAt(pos + node.nodeSize)) {
+      targetBottom = {
         distance: { x: distanceX, y: distanceBottom },
         start: { x: left, y: bottom },
         end: { x: right, y: bottom },
-        pos,
+        pos: pos + node.nodeSize,
       }
-      targetBest = findCloserDropTarget(targetTop, targetBottom)
     }
+    let targetBest = findCloserDropTarget(targetTop, targetBottom)
 
     if (node.isBlock && (node.isTextblock || node.isAtom || node.type.spec.isolating)) {
       return targetBest
@@ -133,44 +145,50 @@ function buildDropArea(
       return targetBest
     }
 
-    let lo = 0
-    let hi = children.length - 1
-
-    while (lo <= hi) {
-      if (hi - lo < 2) {
-        for (let i = lo; i <= hi; i++) {
-          let child = children[i]
-          if (child.getRect().top <= y && y <= child.getRect().bottom) {
-            const targetNext = child.getDropTarget(x, y)
-            targetBest = findCloserDropTarget(targetBest, targetNext)
-            break
-          }
-        }
-        break
-      }
-
-      let i = (lo + hi) >> 1
-      let child = children[i]
-      if (child.getRect().top <= y && y <= child.getRect().bottom) {
-        const targetNext = child.getDropTarget(x, y)
-        targetBest = findCloserDropTarget(targetBest, targetNext)
-        lo = i
-        hi = i
-        break
-      }
-      if (y <= child.getRect().top) {
-        hi = i
-        continue
-      }
-      if (y >= child.getRect().bottom) {
-        lo = i
-        continue
-      }
-      // Unexpected path
-      break
+    for (let child of children) {
+      const targetNext = child.getDropTarget(x, y)
+      targetBest = findCloserDropTarget(targetBest, targetNext)
     }
-
     return targetBest
+
+    // let lo = 0
+    // let hi = children.length - 1
+
+    // while (lo <= hi) {
+    //   if (hi - lo < 2) {
+    //     for (let i = lo; i <= hi; i++) {
+    //       let child = children[i]
+    //       if (child.getRect().top <= y && y <= child.getRect().bottom) {
+    //         const targetNext = child.getDropTarget(x, y)
+    //         targetBest = findCloserDropTarget(targetBest, targetNext)
+    //         break
+    //       }
+    //     }
+    //     break
+    //   }
+
+    //   let i = (lo + hi) >> 1
+    //   let child = children[i]
+    //   if (child.getRect().top <= y && y <= child.getRect().bottom) {
+    //     const targetNext = child.getDropTarget(x, y)
+    //     targetBest = findCloserDropTarget(targetBest, targetNext)
+    //     lo = i
+    //     hi = i
+    //     break
+    //   }
+    //   if (y <= child.getRect().top) {
+    //     hi = i
+    //     continue
+    //   }
+    //   if (y >= child.getRect().bottom) {
+    //     lo = i
+    //     continue
+    //   }
+    //   // Unexpected path
+    //   break
+    // }
+
+    // return targetBest
   }
 
   return {

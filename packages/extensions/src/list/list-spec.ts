@@ -46,8 +46,14 @@ function getMarkers(node: ProseMirrorNode): DOMOutputSpec[] {
  * @internal
  */
 export function defineListSpec(): ListSpecExtension {
+  const spec = createListSpec()
+  console.log('spec:', spec)
+
+  Error.stackTraceLimit = 10000
+
   return defineNodeSpec<'list', ListAttrs>({
-    ...createListSpec(),
+    ...spec,
+    // content: 'paragraph paragraph*',
     toDOM: (node) => {
       return listToDOM({ node, getMarkers })
     },

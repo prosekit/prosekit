@@ -1,4 +1,7 @@
-import type { ProseMirrorNode } from '@prosekit/pm/model'
+import type {
+  ProseMirrorNode,
+  Slice,
+} from '@prosekit/pm/model'
 import {
   Plugin,
   type EditorState,
@@ -17,6 +20,7 @@ import {
   drawDebugOutline,
   drawLine,
 } from './node-rect'
+import type { CanDropAtCallback } from './types'
 
 interface DropIndicatorOptions {
   /// The color of the cursor. Defaults to `currentColor`. Use `false` to apply no color and rely only on class.
@@ -49,6 +53,7 @@ export function dropIndicator(options: DropIndicatorOptions = {}): Plugin {
 declare module '@prosekit/pm/model' {
   interface NodeSpec {
     disableDropCursor?: boolean | ((view: EditorView, pos: { pos: number; inside: number }, event: DragEvent) => boolean)
+    canDropAt?: CanDropAtCallback
   }
 }
 

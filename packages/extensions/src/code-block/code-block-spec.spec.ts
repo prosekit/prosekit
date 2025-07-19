@@ -13,7 +13,7 @@ import {
 } from '../testing/markdown'
 
 describe('defineCodeBlockSpec', () => {
-  it('can parse and serialize code blocks', async () => {
+  it('can parse and serialize code blocks', () => {
     const { editor, n } = setupTest()
     const doc = n.doc(
       n.codeBlock({ language: 'javascript' }, 'console.log("Hello, javascript!");'),
@@ -23,7 +23,7 @@ describe('defineCodeBlockSpec', () => {
     )
     editor.set(doc)
     const html = editor.getDocHTML()
-    expect(await formatHTML(html)).toMatchInlineSnapshot(
+    expect(formatHTML(html)).toMatchInlineSnapshot(
       `
       "
       <div>

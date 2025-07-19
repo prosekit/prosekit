@@ -49,7 +49,9 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
+    "@types/diffable-html": "^5.0.2",
     "@vitest/browser": "^3.2.4",
+    "diffable-html": "^6.0.1",
     "tsdown": "^0.12.9",
     "typescript": "~5.8.3",
     "vitest": "^3.2.4"

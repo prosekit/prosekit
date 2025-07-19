@@ -114,11 +114,12 @@
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
+    "@types/diffable-html": "^5.0.2",
     "@vitest/browser": "^3.2.4",
+    "diffable-html": "^6.0.1",
     "just-pick": "^4.2.0",
     "loro-crdt": "^1.5.9",
     "loro-prosemirror": "^0.2.3",
-    "prettier": "^3.6.2",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
     "remark-html": "^16.0.1",

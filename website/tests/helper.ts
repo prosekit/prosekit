@@ -5,7 +5,7 @@ import {
   type Locator,
   type Page,
 } from '@playwright/test'
-import prettier from 'prettier'
+import diffableHtml from 'diffable-html'
 
 import { exampleMeta } from '../example.meta'
 
@@ -146,7 +146,7 @@ export async function waitForEditor(page: Page) {
 export async function getEditorHTML(page: Page) {
   const editor = await waitForEditor(page)
   const html = await editor.innerHTML()
-  return await formatHTML(html)
+  return formatHTML(html)
 }
 
 export async function getSelectedText(page: Page): Promise<string> {
@@ -171,11 +171,8 @@ export async function getSelectedHtml(page: Page): Promise<string> {
   })
 }
 
-async function formatHTML(html: string) {
-  return await prettier.format(html, {
-    parser: 'html',
-    htmlWhitespaceSensitivity: 'ignore',
-  })
+function formatHTML(html: string) {
+  return diffableHtml(html)
 }
 
 /**

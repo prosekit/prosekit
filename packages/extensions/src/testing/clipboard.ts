@@ -27,7 +27,7 @@ export async function readPlainTextFromClipboard(): Promise<string> {
 export async function readHtmlTextFromClipboard(format = true): Promise<string> {
   let html = await readTextFromClipboard('text/html') || ''
   if (format) {
-    html = await formatHTML(html)
+    html = formatHTML(html)
   }
   return html
 }

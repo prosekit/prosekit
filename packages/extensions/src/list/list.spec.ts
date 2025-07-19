@@ -48,9 +48,24 @@ describe('defineList', () => {
         ),
       ),
     ).toMatchInlineSnapshot(`
-      "<ul data-pm-slice="0 0 []">
-        <li class="prosemirror-flat-list" data-list-kind="bullet"><p>Bullet 1</p></li>
-        <li class="prosemirror-flat-list" data-list-kind="bullet"><p>Bullet 2</p></li>
+      "
+      <ul data-pm-slice="0 0 []">
+        <li
+          class="prosemirror-flat-list"
+          data-list-kind="bullet"
+        >
+          <p>
+            Bullet 1
+          </p>
+        </li>
+        <li
+          class="prosemirror-flat-list"
+          data-list-kind="bullet"
+        >
+          <p>
+            Bullet 2
+          </p>
+        </li>
       </ul>
       "
     `)
@@ -63,9 +78,24 @@ describe('defineList', () => {
         ),
       ),
     ).toMatchInlineSnapshot(`
-      "<ol data-pm-slice="0 0 []">
-        <li class="prosemirror-flat-list" data-list-kind="ordered"><p>Ordered 1</p></li>
-        <li class="prosemirror-flat-list" data-list-kind="ordered"><p>Ordered 2</p></li>
+      "
+      <ol data-pm-slice="0 0 []">
+        <li
+          class="prosemirror-flat-list"
+          data-list-kind="ordered"
+        >
+          <p>
+            Ordered 1
+          </p>
+        </li>
+        <li
+          class="prosemirror-flat-list"
+          data-list-kind="ordered"
+        >
+          <p>
+            Ordered 2
+          </p>
+        </li>
       </ol>
       "
     `)
@@ -78,9 +108,25 @@ describe('defineList', () => {
         ),
       ),
     ).toMatchInlineSnapshot(`
-      "<ul data-pm-slice="0 0 []">
-        <li class="prosemirror-flat-list" data-list-kind="task" data-list-checked=""><p>Checked 1</p></li>
-        <li class="prosemirror-flat-list" data-list-kind="task"><p>Unchecked 2</p></li>
+      "
+      <ul data-pm-slice="0 0 []">
+        <li
+          class="prosemirror-flat-list"
+          data-list-kind="task"
+          data-list-checked
+        >
+          <p>
+            Checked 1
+          </p>
+        </li>
+        <li
+          class="prosemirror-flat-list"
+          data-list-kind="task"
+        >
+          <p>
+            Unchecked 2
+          </p>
+        </li>
       </ul>
       "
     `)

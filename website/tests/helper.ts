@@ -5,7 +5,7 @@ import {
   type Locator,
   type Page,
 } from '@playwright/test'
-import prettier from 'prettier'
+import diffableHtml from 'diffable-html'
 
 import { exampleMeta } from '../example.meta'
 
@@ -172,10 +172,8 @@ export async function getSelectedHtml(page: Page): Promise<string> {
 }
 
 async function formatHTML(html: string) {
-  return await prettier.format(html, {
-    parser: 'html',
-    htmlWhitespaceSensitivity: 'ignore',
-  })
+  // TODO: remove resolve
+  return await Promise.resolve(diffableHtml(html))
 }
 
 /**

@@ -4,15 +4,14 @@ import type { EditorView } from '@prosekit/pm/view'
 
 import type { Point } from './v3_types'
 
-interface Rect {
-  top: number
-  bottom: number
-  left: number
-  right: number
+interface Anchor {
+  pos: number
+  x1: number
+  x2: number
+  y: number
 }
 
 type StackItem = [pos: number, node: ProseMirrorNode]
-type Anchor = [rect: Rect, node: ProseMirrorNode]
 
 function collectAnchors(view: EditorView): Anchor[] {
   let stack: StackItem[] = [[-1, view.state.doc]]
@@ -23,8 +22,11 @@ function collectAnchors(view: EditorView): Anchor[] {
     if (pos >= 0) {
       let dom = view.nodeDOM(pos)
       if (dom && isHTMLElement(dom)) {
-        let rect: Rect = dom.getBoundingClientRect()
-        anchors.push([rect, node])
+        let { top, bottom, left: x1, right: x2 } = dom.getBoundingClientRect()
+        anchors.push(
+          { x1, x2, y: top, pos: pos },
+          { x1, x2, y: bottom, pos: pos + node.nodeSize },
+        )
       }
     }
     if (node.isBlock && !node.isTextblock) {

@@ -1,5 +1,1 @@
-export {
-  defineDropIndicator,
-  type DropIndicatorExtension,
-  type DropIndicatorOptions,
-} from './drop-indicator'
+export * from './v3_index'

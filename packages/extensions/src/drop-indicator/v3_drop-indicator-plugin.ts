@@ -2,10 +2,7 @@ import {
   Plugin,
   PluginKey,
 } from '@prosekit/pm/state'
-import type {
-  DOMEventMap,
-  EditorView,
-} from '@prosekit/pm/view'
+import type { EditorView } from '@prosekit/pm/view'
 
 import type {
   DropIndicatorOptions,
@@ -23,36 +20,49 @@ export function createDropIndicatorPlugin(options: DropIndicatorPluginOptions): 
     view: (view) => {
       return { destroy: registerEvents(view, options) }
     },
-    props,
   })
 }
 
 function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): VoidFunction {
-  let pointer: Point | null = null
+  let currentPoint: Point | null = null
   let dom = view.dom
 
-  const handleDragStart = (event: DragEvent): void => {
-    // TODO
+  const updatePoint = (point: Point | null): boolean => {
+    if (pointEqual(currentPoint, point)) return false
+    currentPoint = point
+    return true
   }
+
   const handleDragOver = (event: DragEvent): void => {
+    if (updatePoint({ x: event.clientX, y: event.clientY })) {
+      console.log('DEBUG handleDragOver', event.clientX, event.clientY)
+    }
     // TODO
   }
   const handleDragEnd = (event: DragEvent): void => {
-    // TODO
+    console.log('DEBUG handleDragEnd', event.clientX, event.clientY)
+    updatePoint(null)
   }
   const handleDrop = (event: DragEvent): void => {
-    // TODO
+    console.log('DEBUG handleDrop', event.clientX, event.clientY)
+    updatePoint(null)
   }
 
-  dom.addEventListener('dragstart', handleDragStart)
   dom.addEventListener('dragover', handleDragOver)
   dom.addEventListener('dragend', handleDragEnd)
   dom.addEventListener('drop', handleDrop)
 
   return () => {
-    dom.removeEventListener('dragstart', handleDragStart)
     dom.removeEventListener('dragover', handleDragOver)
     dom.removeEventListener('dragend', handleDragEnd)
     dom.removeEventListener('drop', handleDrop)
   }
 }
+
+// function pointEqual(a: Point | null, b: Point | null): boolean {
+//   if (a && b && a.x === b.x && b.y === b.y) return true
+//   return a === b
+// }
+
+// const requestFrame: (callback: VoidFunction) => void = typeof requestAnimationFrame === 'function' ? requestAnimationFrame : setTimeout
+// const cancelFrame = typeof cancelAnimationFrame === 'function' ? cancelAnimationFrame : clearTimeout

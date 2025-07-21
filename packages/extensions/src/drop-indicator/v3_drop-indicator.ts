@@ -1,5 +1,4 @@
 import {
-  defineDOMEventHandler,
   definePlugin,
   type PlainExtension,
 } from '@prosekit/core'

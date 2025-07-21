@@ -28,13 +28,7 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
   let dom = view.dom
   let frame: number | null = null
 
-  const start = () => {
-    // view.doc
-  }
-
-  const update = () => {
-    // let point = currentPoint
-  }
+  const findAnchor = createAnchorFinder(view)
 
   const cancel = () => {
     if (frame) {

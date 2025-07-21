@@ -1,3 +1,5 @@
+import type { EditorView } from '@prosekit/pm/view'
+
 /**
  * Options for {@link defineDropIndicator}.
  *
@@ -10,7 +12,31 @@ export interface DropIndicatorOptions {
    * @default 2
    */
   width?: number
+
+  /**
+   * A function to check whether a drop point is valid.
+   *
+   * By default, all drop points are valid.
+   */
+  canDrop?: CanDropPredicate
 }
+
+/**
+ * Options for {@link CanDropPredicate}.
+ *
+ * @public
+ */
+export interface CanDropOptions {
+  view: EditorView
+  pos: number
+}
+
+/**
+ * A function to check whether a drop point is valid.
+ *
+ * @public
+ */
+export type CanDropPredicate = (options: CanDropPredicate) => boolean
 
 /**
  * @internal

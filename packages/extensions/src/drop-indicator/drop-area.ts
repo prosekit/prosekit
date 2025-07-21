@@ -64,7 +64,11 @@ function buildDropArea(
       }
     }
 
-    return dom.getBoundingClientRect()
+    let t1 = performance.now()
+    let rect = dom.getBoundingClientRect()
+    let t2 = performance.now()
+    console.log('getBoundingClientRect cost', t2 - t1)
+    return rect
   })
 
   const canInsertAt = (pos: number): boolean => {

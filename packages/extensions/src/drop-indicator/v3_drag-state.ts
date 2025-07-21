@@ -81,6 +81,7 @@ export function createAnchorFinder(view: EditorView, canDrop: (view: EditorView,
     }
     prevPoint = point
 
+    // TODO: better performance method?
     const compare = (a: Anchor, b: Anchor): number => {
       const [aX, aY] = calcDistance(a, point)
       const [bX, bY] = calcDistance(b, point)

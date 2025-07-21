@@ -26,26 +26,36 @@ export function createDropIndicatorPlugin(options: DropIndicatorPluginOptions): 
 function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): VoidFunction {
   let currentPoint: Point | null = null
   let dom = view.dom
+  let frame: number | null = null
 
-  const updatePoint = (point: Point | null): boolean => {
-    if (pointEqual(currentPoint, point)) return false
-    currentPoint = point
-    return true
+  const update = () => {
+  }
+
+  const cancel = () => {
+    if (frame) {
+      // TODO: fallback to clearTimeout?
+      cancelAnimationFrame(frame)
+    }
+    frame = null
+    currentPoint = null
   }
 
   const handleDragOver = (event: DragEvent): void => {
-    if (updatePoint({ x: event.clientX, y: event.clientY })) {
-      console.log('DEBUG handleDragOver', event.clientX, event.clientY)
+    let point = { x: event.clientX, y: event.clientY }
+    if (currentPoint && currentPoint.x === point.x && currentPoint.y === point.y) return
+    if (frame) {
+      return
     }
-    // TODO
+    frame = requestAnimationFrame(update)
   }
   const handleDragEnd = (event: DragEvent): void => {
     console.log('DEBUG handleDragEnd', event.clientX, event.clientY)
-    updatePoint(null)
+    // updatePoint(null)
   }
   const handleDrop = (event: DragEvent): void => {
     console.log('DEBUG handleDrop', event.clientX, event.clientY)
-    updatePoint(null)
+    // updatePoint(null)
+    cancel()
   }
 
   dom.addEventListener('dragover', handleDragOver)
@@ -58,11 +68,3 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
     dom.removeEventListener('drop', handleDrop)
   }
 }
-
-// function pointEqual(a: Point | null, b: Point | null): boolean {
-//   if (a && b && a.x === b.x && b.y === b.y) return true
-//   return a === b
-// }
-
-// const requestFrame: (callback: VoidFunction) => void = typeof requestAnimationFrame === 'function' ? requestAnimationFrame : setTimeout
-// const cancelFrame = typeof cancelAnimationFrame === 'function' ? cancelAnimationFrame : clearTimeout

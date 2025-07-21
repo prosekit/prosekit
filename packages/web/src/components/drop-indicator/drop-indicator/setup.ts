@@ -14,7 +14,12 @@ export function useBlockHandleDropIndicator(
   host: ConnectableElement,
   { state }: { state: SignalState<BlockHandleDropIndicatorProps> },
 ): void {
-  // TODO
+
+
+  requestAnimationFrame()
 
   useEventListener()
 }
+
+
+interface Point

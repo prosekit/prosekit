@@ -3,7 +3,7 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
 import type {
-  CanDropPredicate,
+  DisableDropFunction,
   Point,
 } from './v3_types'
 
@@ -71,7 +71,7 @@ function createAnchorsGetter(view: EditorView) {
   }
 }
 
-export function createAnchorFinder(view: EditorView, canDrop: CanDropPredicate) {
+export function createAnchorFinder(view: EditorView, disableDrop: DisableDropFunction) {
   let getAnchors = createAnchorsGetter(view)
   let prevPoint: Point | undefined
   let prevAnchor: Anchor | undefined
@@ -97,10 +97,11 @@ export function createAnchorFinder(view: EditorView, canDrop: CanDropPredicate) 
     anchors.sort(compare)
 
     for (let anchor of anchors) {
-      if (canDrop({ view: view, pos: anchor.pos })) {
-        prevAnchor = anchor
-        return anchor
+      if (disableDrop({ view: view, pos: anchor.pos })) {
+        continue
       }
+      prevAnchor = anchor
+      return anchor
     }
   }
 }
@@ -109,6 +110,6 @@ function pointEqual(a?: Point, b?: Point) {
   return (a && b && a.x === b.x && a.y === b.y) || (!a && !b)
 }
 
-function calcDistance(a: Anchor, p: Point): [xDistance: number, yDistance: number] {
+function calcDistance(a: Anchor, p: Point): [distanceX: number, distanceY: number] {
   return [Math.min(Math.abs(a.x1 - p.x), Math.abs(a.x2 - p.x)), Math.abs(a.y - p.y)]
 }

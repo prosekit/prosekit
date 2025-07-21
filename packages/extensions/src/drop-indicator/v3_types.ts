@@ -12,33 +12,38 @@ export interface DropIndicatorOptions {
    * @default 2
    */
   width?: number
-
-  /**
-   * A function to check whether a drop point is valid.
-   *
-   * By default, all drop points are valid.
-   */
-  canDrop?: CanDropPredicate
 }
-
-/**
- * Options for {@link CanDropPredicate}.
- *
- * @public
- */
-export interface CanDropOptions {
-  view: EditorView
-  pos: number
-}
-
-/**
- * A function to check whether a drop point is valid.
- *
- * @public
- */
-export type CanDropPredicate = (options: CanDropOptions) => boolean
 
 /**
  * @internal
  */
 export type Point = Readonly<{ x: number; y: number }>
+
+/**
+ * @public
+ */
+export interface DropIndicatorPredicateOptions {
+  /** Whether to disable dropping (and thus also hide the drop indicator) in certain cases */
+  disableDrop?: DisableDropFunction
+}
+
+/**
+ * @public
+ */
+export type DisableDropFunction = (options: DisableDropOptions) => boolean
+
+/**
+ * @public
+ */
+export interface DisableDropOptions {
+  view: EditorView
+  pos: number
+}
+
+/**
+ * @internal
+ */
+export interface DropIndicatorPluginOptions {
+  width: number
+  disableDrop: DisableDropFunction
+}

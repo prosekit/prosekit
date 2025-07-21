@@ -3,7 +3,8 @@ export {
   type DropIndicatorExtension,
 } from './v3_drop-indicator'
 export type {
-  CanDropOptions,
-  CanDropPredicate,
+  DisableDropFunction,
+  DisableDropOptions,
   DropIndicatorOptions,
+  DropIndicatorPredicateOptions,
 } from './v3_types'

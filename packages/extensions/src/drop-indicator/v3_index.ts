@@ -5,6 +5,6 @@ export {
 export type {
   DisableDropFunction,
   DisableDropOptions,
+  DropIndicatorHandlersOptions as DropIndicatorPredicateOptions,
   DropIndicatorOptions,
-  DropIndicatorPredicateOptions,
 } from './v3_types'

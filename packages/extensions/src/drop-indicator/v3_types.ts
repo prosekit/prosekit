@@ -22,7 +22,7 @@ export type Point = Readonly<{ x: number; y: number }>
 /**
  * @public
  */
-export interface DropIndicatorPredicateOptions {
+export interface DropIndicatorHandlersOptions {
   /** Whether to disable dropping (and thus also hide the drop indicator) in certain cases */
   disableDrop?: DisableDropFunction
 }

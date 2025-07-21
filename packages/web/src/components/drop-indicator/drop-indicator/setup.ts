@@ -15,4 +15,6 @@ export function useBlockHandleDropIndicator(
   { state }: { state: SignalState<BlockHandleDropIndicatorProps> },
 ): void {
   // TODO
+
+  useEventListener()
 }

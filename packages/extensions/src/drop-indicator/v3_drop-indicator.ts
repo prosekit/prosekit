@@ -1,16 +1,7 @@
-import {
-  defineFacet,
-  defineFacetPayload,
-  pluginFacet,
-  type PlainExtension,
-  type PluginPayload,
-} from '@prosekit/core'
+import type { PlainExtension } from '@prosekit/core'
 
-import { createDropIndicatorPlugin } from './v3_drop-indicator-plugin'
-import type {
-  CanDropPredicate,
-  DropIndicatorOptions,
-} from './v3_types'
+import { defineDropIndicatorPayload } from './v3_drop-indicator-facet'
+import type { DropIndicatorOptions } from './v3_types'
 
 /**
  * @internal
@@ -32,34 +23,8 @@ export type DropIndicatorExtension = PlainExtension
 export function defineDropIndicator(
   options: DropIndicatorOptions,
 ): DropIndicatorExtension {
-  return defineFacetPayload(facet, [options]) as PlainExtension
+  return defineDropIndicatorPayload({
+    enabled: true,
+    width: options.width,
+  })
 }
-
-const facet = defineFacet<DropIndicatorOptions, PluginPayload>({
-  parent: pluginFacet,
-  singleton: true,
-  reducer: (payloads: DropIndicatorOptions[]): PluginPayload => {
-    let canDropPredicates: CanDropPredicate[] = []
-    let width: number | undefined
-
-    for (let payload of payloads) {
-      if (payload.width != null) {
-        width = payload.width
-      }
-      if (payload.canDrop != null) {
-        canDropPredicates.push(payload.canDrop)
-      }
-    }
-
-    let canDrop: CanDropPredicate = (options) => {
-      for (let canDrop of canDropPredicates) {
-        if (!canDrop(options)) {
-          return false
-        }
-      }
-      return true
-    }
-
-    return createDropIndicatorPlugin({ canDrop, width: width ?? 2 })
-  },
-})

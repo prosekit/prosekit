@@ -2,9 +2,13 @@ export {
   defineDropIndicator,
   type DropIndicatorExtension,
 } from './v3_drop-indicator'
+export {
+  defineDropIndicatorHandlers,
+  type DropIndicatorHandlersExtension,
+} from './v3_drop-indicator-handlers'
 export type {
   DisableDropFunction,
   DisableDropOptions,
-  DropIndicatorHandlersOptions as DropIndicatorPredicateOptions,
+  DropIndicatorHandlersOptions,
   DropIndicatorOptions,
 } from './v3_types'

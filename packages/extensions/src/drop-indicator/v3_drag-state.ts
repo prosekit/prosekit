@@ -2,7 +2,10 @@ import { isHTMLElement } from '@ocavue/utils'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
-import type { Point } from './v3_types'
+import type {
+  CanDropPredicate,
+  Point,
+} from './v3_types'
 
 interface Anchor {
   pos: number
@@ -68,7 +71,7 @@ function createAnchorsGetter(view: EditorView) {
   }
 }
 
-export function createAnchorFinder(view: EditorView, canDrop: (view: EditorView, pos: number) => boolean) {
+export function createAnchorFinder(view: EditorView, canDrop: CanDropPredicate) {
   let getAnchors = createAnchorsGetter(view)
   let prevPoint: Point | undefined
   let prevAnchor: Anchor | undefined
@@ -94,7 +97,7 @@ export function createAnchorFinder(view: EditorView, canDrop: (view: EditorView,
     anchors.sort(compare)
 
     for (let anchor of anchors) {
-      if (canDrop(view, anchor.pos)) {
+      if (canDrop({ view: view, pos: anchor.pos })) {
         prevAnchor = anchor
         return anchor
       }

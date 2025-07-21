@@ -36,7 +36,7 @@ export interface CanDropOptions {
  *
  * @public
  */
-export type CanDropPredicate = (options: CanDropPredicate) => boolean
+export type CanDropPredicate = (options: CanDropOptions) => boolean
 
 /**
  * @internal

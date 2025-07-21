@@ -1,17 +1,10 @@
 import {
   defineFacet,
   defineFacetPayload,
-  definePlugin,
-  editorEventFacet,
   pluginFacet,
-  type DropHandler,
-  type EditorEventPayload,
   type PlainExtension,
   type PluginPayload,
 } from '@prosekit/core'
-
-import type { FileDropHandler } from '../file/file-drop-handler'
-import { handleEvent } from '../file/helpers'
 
 import { createDropIndicatorPlugin } from './v3_drop-indicator-plugin'
 import type {

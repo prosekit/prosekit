@@ -4,6 +4,7 @@ import {
 } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
+import { createAnchorFinder } from './v3_drag-state'
 import type {
   DropIndicatorOptions,
   Point,
@@ -28,7 +29,7 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
   let dom = view.dom
   let frame: number | null = null
 
-  const findAnchor = createAnchorFinder(view)
+  const findAnchor = createAnchorFinder(view, options.canDrop)
 
   const cancel = () => {
     if (frame) {

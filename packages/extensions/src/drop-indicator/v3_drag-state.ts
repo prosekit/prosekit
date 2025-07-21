@@ -43,19 +43,23 @@ function collectAnchors(view: EditorView): Anchor[] {
 
 function createDragState(view: EditorView) {
   let destroyed = false
-  //   let prevPoint: Point | null = null
-  //   let currPoint: Point | null = null
-  //   let nextPoint: Point | null = null
-
-  let dom = view.dom
+  let anchors = collectAnchors(view)
+  let prevPoint: Point | null = null
 
   return {
     update(point: Point) {
+      if (destroyed || pointEqual(prevPoint, point)) {
+        return
+      }
+      prevPoint = point
     },
-    destroy() {},
+    destroy() {
+      anchors.length = 0
+      destroyed = true
+    },
   }
 }
 
-function eq(a: Point | null, b: Point | null) {
+function pointEqual(a: Point | null, b: Point | null) {
   return (a && b && a.x === b.x && a.y === b.y) || (!a && !b)
 }

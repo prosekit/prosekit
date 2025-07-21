@@ -28,8 +28,12 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
   let dom = view.dom
   let frame: number | null = null
 
+  const start = () => {
+    // view.doc
+  }
+
   const update = () => {
-    let point = currentPoint
+    // let point = currentPoint
   }
 
   const cancel = () => {
@@ -43,10 +47,16 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
 
   const handleDragOver = (event: DragEvent): void => {
     let point = { x: event.clientX, y: event.clientY }
-    if (currentPoint && currentPoint.x === point.x && currentPoint.y === point.y) return
-    if (frame) {
+    if (currentPoint && currentPoint.x === point.x && currentPoint.y === point.y) {
       return
+    } else if (!currentPoint) {
+      currentPoint = point
+      start()
+    } else {
+      currentPoint = point
+      update()
     }
+
     frame = requestAnimationFrame(update)
   }
   const handleDragEnd = (event: DragEvent): void => {

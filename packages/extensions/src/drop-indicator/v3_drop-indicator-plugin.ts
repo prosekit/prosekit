@@ -29,7 +29,7 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
   let frame: number | null = null
 
   const update = () => {
-    let point = frame = null
+    let point = currentPoint
   }
 
   const cancel = () => {

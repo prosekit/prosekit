@@ -15,7 +15,4 @@ export interface DropIndicatorOptions {
 /**
  * @internal
  */
-export interface Point {
-  x: number
-  y: number
-}
+export type Point = Readonly<{ x: number; y: number }>

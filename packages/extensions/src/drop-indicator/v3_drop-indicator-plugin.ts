@@ -37,17 +37,8 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
 
   const handleDragOver = (event: DragEvent): void => {
     let point = { x: event.clientX, y: event.clientY }
-    if (currentPoint && currentPoint.x === point.x && currentPoint.y === point.y) {
-      return
-    } else if (!currentPoint) {
-      currentPoint = point
-      start()
-    } else {
-      currentPoint = point
-      update()
-    }
-
-    frame = requestAnimationFrame(update)
+    let anchor = findAnchor(point)
+    if (!anchor) return
   }
   const handleDragEnd = (event: DragEvent): void => {
     console.log('DEBUG handleDragEnd', event.clientX, event.clientY)

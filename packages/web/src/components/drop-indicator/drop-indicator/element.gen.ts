@@ -1,18 +1,18 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useBlockHandleDropIndicator } from "./setup"
-import { blockHandleDropIndicatorEvents, blockHandleDropIndicatorProps, type BlockHandleDropIndicatorEvents, type BlockHandleDropIndicatorProps } from "./types"
+import { useDropIndicator } from "./setup"
+import { dropIndicatorEvents, dropIndicatorProps, type DropIndicatorEvents, type DropIndicatorProps } from "./types"
 
-const BlockHandleDropIndicatorElementBase: BaseElementConstructor<BlockHandleDropIndicatorProps> = defineCustomElement<
-  BlockHandleDropIndicatorProps,
-  BlockHandleDropIndicatorEvents
+const DropIndicatorElementBase: BaseElementConstructor<DropIndicatorProps> = defineCustomElement<
+  DropIndicatorProps,
+  DropIndicatorEvents
 >({
-  props: blockHandleDropIndicatorProps,
-  events: blockHandleDropIndicatorEvents,
-  setup: useBlockHandleDropIndicator,
+  props: dropIndicatorProps,
+  events: dropIndicatorEvents,
+  setup: useDropIndicator,
 })
-class BlockHandleDropIndicatorElement extends BlockHandleDropIndicatorElementBase {}
+class DropIndicatorElement extends DropIndicatorElementBase {}
 
-registerCustomElement('prosekit-block-handle-add', BlockHandleDropIndicatorElement)
+registerCustomElement('prosekit-drop-indicator', DropIndicatorElement)
   
-export { BlockHandleDropIndicatorElement }
+export { DropIndicatorElement }

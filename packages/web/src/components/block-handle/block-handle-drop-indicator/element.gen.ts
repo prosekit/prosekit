@@ -1,18 +1,18 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useBlockHandleAdd } from "./setup"
-import { blockHandleAddEvents, blockHandleAddProps, type BlockHandleAddEvents, type BlockHandleAddProps } from "./types"
+import { useBlockHandleDropIndicator } from "./setup"
+import { blockHandleDropIndicatorEvents, blockHandleDropIndicatorProps, type BlockHandleDropIndicatorEvents, type BlockHandleDropIndicatorProps } from "./types"
 
-const BlockHandleAddElementBase: BaseElementConstructor<BlockHandleAddProps> = defineCustomElement<
-  BlockHandleAddProps,
-  BlockHandleAddEvents
+const BlockHandleDropIndicatorElementBase: BaseElementConstructor<BlockHandleDropIndicatorProps> = defineCustomElement<
+  BlockHandleDropIndicatorProps,
+  BlockHandleDropIndicatorEvents
 >({
-  props: blockHandleAddProps,
-  events: blockHandleAddEvents,
-  setup: useBlockHandleAdd,
+  props: blockHandleDropIndicatorProps,
+  events: blockHandleDropIndicatorEvents,
+  setup: useBlockHandleDropIndicator,
 })
-class BlockHandleAddElement extends BlockHandleAddElementBase {}
+class BlockHandleDropIndicatorElement extends BlockHandleDropIndicatorElementBase {}
 
-registerCustomElement('prosekit-block-handle-add', BlockHandleAddElement)
+registerCustomElement('prosekit-block-handle-add', BlockHandleDropIndicatorElement)
   
-export { BlockHandleAddElement }
+export { BlockHandleDropIndicatorElement }

@@ -41,19 +41,35 @@ function collectAnchors(view: EditorView): Anchor[] {
   return anchors
 }
 
-function createDragState(view: EditorView) {
+export function createDragState(view: EditorView, canDrop: (view: EditorView, pos: number) => boolean) {
   let destroyed = false
   let anchors = collectAnchors(view)
   let prevPoint: Point | null = null
 
   return {
-    update(point: Point) {
+    update(point: Point): Anchor | undefined {
       if (destroyed || pointEqual(prevPoint, point)) {
         return
       }
       prevPoint = point
+
+      const compare = (a: Anchor, b: Anchor): number => {
+        const [aX, aY] = calcDistance(a, point)
+        const [bX, bY] = calcDistance(b, point)
+        if (aY < bY || (aY === bY && aX < bX)) return -1
+        if (aX === bX && aY === bY) return a.pos - b.pos
+        return 1
+      }
+
+      anchors.sort(compare)
+
+      for (let anchor of anchors) {
+        if (canDrop(view, anchor.pos)) {
+          return anchor
+        }
+      }
     },
-    destroy() {
+    destroy(): void {
       anchors.length = 0
       destroyed = true
     },
@@ -62,4 +78,8 @@ function createDragState(view: EditorView) {
 
 function pointEqual(a: Point | null, b: Point | null) {
   return (a && b && a.x === b.x && a.y === b.y) || (!a && !b)
+}
+
+function calcDistance(a: Anchor, p: Point): [xDistance: number, yDistance: number] {
+  return [Math.min(Math.abs(a.x1 - p.x), Math.abs(a.x2 - p.x)), Math.abs(a.y - p.y)]
 }

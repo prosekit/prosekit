@@ -129,7 +129,9 @@ const config: AstroUserConfig = {
         }),
       ].filter(x => !!x),
     }),
-    UnoCSS(),
+    UnoCSS({
+      mode: 'per-module',
+    }),
     preact({ include: ['src/*/preact/**/*.tsx'] }),
     react({
       include: ['src/*/react/**/*.tsx'],

@@ -21,6 +21,12 @@ import TagMenu from './tag-menu'
 import Toolbar from './toolbar'
 import UserMenu from './user-menu'
 
+// TODO: remove this
+const DEBUG_CONFIG = {
+  attach_view: true,
+  log_mousemove: false,
+}
+
 export default function Editor() {
   const editor = useMemo(() => {
     const extension = defineExtension()
@@ -28,12 +34,16 @@ export default function Editor() {
   }, [])
 
   useEffect(() => {
+    if (DEBUG_CONFIG.attach_view === false) return
+
     setTimeout(() => {
       window.view = editor.view
     }, 100)
   }, [editor])
 
   useEffect(() => {
+    if (DEBUG_CONFIG.log_mousemove === false) return
+
     const eventListener = (e: MouseEvent) => {
       const pos = editor.view.posAtCoords({ left: e.clientX, top: e.clientY })
       debug(`[DEBUG] editor.tsx pos x: ${e.clientX}, y: ${e.clientY} => ${JSON.stringify(pos)}`)

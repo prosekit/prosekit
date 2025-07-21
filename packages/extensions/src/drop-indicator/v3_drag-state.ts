@@ -41,42 +41,67 @@ function collectAnchors(view: EditorView): Anchor[] {
   return anchors
 }
 
-export function createDragState(view: EditorView, canDrop: (view: EditorView, pos: number) => boolean) {
-  let destroyed = false
-  let anchors = collectAnchors(view)
-  let prevPoint: Point | null = null
+function createAnchorsGetter(view: EditorView) {
+  let anchors: Anchor[] = []
+  let prevDoc: ProseMirrorNode | undefined
+  let prevRect: DOMRect | undefined
 
-  return {
-    update(point: Point): Anchor | undefined {
-      if (destroyed || pointEqual(prevPoint, point)) {
-        return
-      }
-      prevPoint = point
+  return (): Anchor[] => {
+    const rect = view.dom.getBoundingClientRect()
+    const doc = view.state.doc
 
-      const compare = (a: Anchor, b: Anchor): number => {
-        const [aX, aY] = calcDistance(a, point)
-        const [bX, bY] = calcDistance(b, point)
-        if (aY < bY || (aY === bY && aX < bX)) return -1
-        if (aX === bX && aY === bY) return a.pos - b.pos
-        return 1
-      }
+    if (
+      anchors && prevDoc && prevRect
+      && rect.width === prevRect.width
+      && rect.height === prevRect.height
+      && rect.x === prevRect.x
+      && rect.y === prevRect.y
+      && prevDoc.eq(view.state.doc)
+    ) {
+      return anchors
+    }
 
-      anchors.sort(compare)
-
-      for (let anchor of anchors) {
-        if (canDrop(view, anchor.pos)) {
-          return anchor
-        }
-      }
-    },
-    destroy(): void {
-      anchors.length = 0
-      destroyed = true
-    },
+    prevRect = rect
+    prevDoc = doc
+    anchors = collectAnchors(view)
+    return anchors
   }
 }
 
-function pointEqual(a: Point | null, b: Point | null) {
+export function createAnchorFinder(view: EditorView, canDrop: (view: EditorView, pos: number) => boolean) {
+  let getAnchors = createAnchorsGetter(view)
+  let prevPoint: Point | undefined
+  let prevAnchor: Anchor | undefined
+
+  return (point: Point): Anchor | undefined => {
+    if (!view.editable || view.isDestroyed) return undefined
+
+    if (pointEqual(prevPoint, point)) {
+      return prevAnchor
+    }
+    prevPoint = point
+
+    const compare = (a: Anchor, b: Anchor): number => {
+      const [aX, aY] = calcDistance(a, point)
+      const [bX, bY] = calcDistance(b, point)
+      if (aY < bY || (aY === bY && aX < bX)) return -1
+      if (aX === bX && aY === bY) return a.pos - b.pos
+      return 1
+    }
+
+    const anchors = getAnchors()
+    anchors.sort(compare)
+
+    for (let anchor of anchors) {
+      if (canDrop(view, anchor.pos)) {
+        prevAnchor = anchor
+        return anchor
+      }
+    }
+  }
+}
+
+function pointEqual(a?: Point, b?: Point) {
   return (a && b && a.x === b.x && a.y === b.y) || (!a && !b)
 }
 

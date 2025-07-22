@@ -114,7 +114,11 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
     element.style.height = (rect.bottom - rect.top) / scaleY + 'px'
   }
 
+  let isDraggingOver = false
+
   const handleDragOver = (event: DragEvent): void => {
+    isDraggingOver = true
+
     let point = { x: event.clientX, y: event.clientY }
     let anchor = findAnchor(point, event)
     if (!anchor) return
@@ -130,9 +134,14 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
     cancel()
   }
   const handleDragLeave = (event: DragEvent): void => {
-    console.log('DEBUG handleDragLeave')
+    isDraggingOver = false
     cancel()
-    removeOverlay()
+    setTimeout(() => {
+      if (!isDraggingOver) {
+        console.log('DEBUG handleDragLeave')
+        removeOverlay()
+      }
+    }, 30)
   }
 
   dom.addEventListener('dragover', handleDragOver)

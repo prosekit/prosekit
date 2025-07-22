@@ -20,22 +20,29 @@ export interface DropIndicatorOptions {
 export type Point = Readonly<{ x: number; y: number }>
 
 /**
+ * Options for {@link defineDropIndicatorHandlers}.
+ *
  * @public
  */
 export interface DropIndicatorHandlersOptions {
-  /** Whether to disable dropping (and thus also hide the drop indicator) in certain cases */
-  disableDrop?: DisableDropFunction
+  onDrag?: DragEventHandler
 }
 
 /**
+ * A function that will be called when the `dragover` event is fired. You can
+ * return `false` to disable the current drop point and thus hide the drop
+ * indicator.
+ *
  * @public
  */
-export type DisableDropFunction = (options: DisableDropOptions) => boolean
+export type DragEventHandler = (options: DragEventHandlerOptions) => boolean | void
 
 /**
+ * Options for {@link DragEventHandler}.
+ *
  * @public
  */
-export interface DisableDropOptions {
+export interface DragEventHandlerOptions {
   view: EditorView
   pos: number
 }
@@ -45,5 +52,5 @@ export interface DisableDropOptions {
  */
 export interface DropIndicatorPluginOptions {
   width: number
-  disableDrop: DisableDropFunction
+  onDrag: DragEventHandler
 }

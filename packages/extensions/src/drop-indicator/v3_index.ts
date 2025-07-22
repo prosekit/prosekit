@@ -7,8 +7,8 @@ export {
   type DropIndicatorHandlersExtension,
 } from './v3_drop-indicator-handlers'
 export type {
-  DisableDropFunction,
-  DisableDropOptions,
+  DragEventHandler,
+  DragEventHandlerOptions,
   DropIndicatorHandlersOptions,
   DropIndicatorOptions,
 } from './v3_types'

@@ -3,7 +3,7 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
 import type {
-  DisableDropFunction,
+  DragHandler,
   Point,
 } from './v3_types'
 
@@ -71,7 +71,7 @@ function createAnchorsGetter(view: EditorView) {
   }
 }
 
-export function createAnchorFinder(view: EditorView, disableDrop: DisableDropFunction) {
+export function createAnchorFinder(view: EditorView, disableDrop: DragHandler) {
   let getAnchors = createAnchorsGetter(view)
   let prevPoint: Point | undefined
   let prevAnchor: Anchor | undefined

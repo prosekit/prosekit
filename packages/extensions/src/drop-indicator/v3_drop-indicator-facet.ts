@@ -7,7 +7,7 @@ import {
 } from '@prosekit/core'
 
 import { createDropIndicatorPlugin } from './v3_drop-indicator-plugin'
-import type { DisableDropFunction } from './v3_types'
+import type { DragHandler } from './v3_types'
 
 /**
  * @internal
@@ -21,7 +21,7 @@ export function defineDropIndicatorPayload(
 type DropIndicatorPayload = {
   enabled?: boolean
   width?: number
-  disableDrop?: DisableDropFunction
+  disableDrop?: DragHandler
 }
 
 const dropIndicatorFacet = defineFacet<DropIndicatorPayload, PluginPayload>({

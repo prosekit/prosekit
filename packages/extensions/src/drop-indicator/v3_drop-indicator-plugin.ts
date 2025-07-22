@@ -44,6 +44,13 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
     currentPoint = null
   }
 
+  const removeOverlay = () => {
+    if (element) {
+      element.remove()
+      element = null
+    }
+  }
+
   const updateOverlay = (anchor: Anchor) => {
     // const $pos = view.state.doc.resolve(cursorPos)
     // let isBlock = !$pos.parent.inlineContent, rect
@@ -125,6 +132,7 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
   const handleDragLeave = (event: DragEvent): void => {
     console.log('DEBUG handleDragLeave')
     cancel()
+    removeOverlay()
   }
 
   dom.addEventListener('dragover', handleDragOver)

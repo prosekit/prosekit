@@ -58,9 +58,21 @@ export function useBlockHandlePopover(
   // TODO
   useEffect(host, () => {
     if (dragging.get()) {
-      host.style.opacity = '0'
+      // TODO: is this the correct way?
+      host.style.opacity = '0.2'
+
+      // During dragging, if the mouse is above the block handle, we want the
+      // drag event to pass through the block handle so that the underlay editor
+      // can receive this event. We need to add a small delay so that the first
+      // `dragstart` event can be triggered correctly by the
+      // `<prosekit-block-handle-draggable>` element.
+      const id = requestAnimationFrame(() => {
+        host.style.pointerEvents = 'none'
+      })
+      return () => cancelAnimationFrame(id)
     } else {
       host.style.opacity = ''
+      host.style.pointerEvents = ''
     }
   })
 

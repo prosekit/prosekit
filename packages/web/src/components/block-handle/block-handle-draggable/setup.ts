@@ -114,10 +114,12 @@ function useDragging(host: ConnectableElement): ReadonlySignal<boolean> {
   const dragging = draggingContext.consume(host)
 
   useEventListener(host, 'dragstart', () => {
+    console.log('DEBUG WEB dragstart')
     dragging.set(true)
   })
 
   useEventListener(host, 'dragend', () => {
+    console.log('DEBUG WEB dragend')
     dragging.set(false)
   })
 

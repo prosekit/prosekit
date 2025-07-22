@@ -33,6 +33,7 @@ function createDropIndicatorView(view: EditorView, options: DropIndicatorPluginO
   let frame: number | null = null
   let width = options.width
   let element: HTMLElement | null = null
+  let isDraggingOver = false
 
   const findAnchor = createAnchorFinder(view, options.onDrag)
 
@@ -114,8 +115,6 @@ function createDropIndicatorView(view: EditorView, options: DropIndicatorPluginO
     element.style.width = (rect.right - rect.left) / scaleX + 'px'
     element.style.height = (rect.bottom - rect.top) / scaleY + 'px'
   }
-
-  let isDraggingOver = false
 
   const handleDragOver = (event: DragEvent): void => {
     isDraggingOver = true

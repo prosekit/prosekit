@@ -1,9 +1,7 @@
 import type { PlainExtension } from '@prosekit/core'
 
-import {
-  defineDropIndicator,
-  type CanDropPredicate,
-} from '../drop-indicator'
+import type { DragEventHandler } from '../drop-indicator'
+import { defineDropIndicatorHandlers } from '../drop-indicator'
 
 /**
  * Configures drop indicator to avoid unexpected drop point.
@@ -14,26 +12,25 @@ import {
  * @internal
  */
 export function defineListDropIndicator(): PlainExtension {
-  return defineDropIndicator({
-    canDrop,
+  return defineDropIndicatorHandlers({
+    onDrag,
   })
 }
 
-const canDrop: CanDropPredicate = ({ view, pos }) => {
+const onDrag: DragEventHandler = ({ view, pos }) => {
   const slice = view.dragging?.slice
-  if (slice && slice.openStart === 0 && slice.openEnd === 0 && slice.content.childCount === 1) {
-    const node = slice.content.firstChild
-
-    if (node && node.type.name === 'list') {
+  if (
+    slice
+    && slice.openStart === 0
+    && slice.openEnd === 0
+    && slice.content.childCount === 1
+  ) {
+    const node = slice.content.child(0)
+    if (node.type.name === 'list') {
       const $pos = view.state.doc.resolve(pos)
-
-      if ($pos.parent.type.name === 'list') {
-        if ($pos.index() === 0) {
-          return false
-        }
+      if ($pos.parent.type.name === 'list' && $pos.index() === 0) {
+        return false
       }
     }
   }
-
-  return true
 }

@@ -1,10 +1,17 @@
 import { isHTMLElement } from '@ocavue/utils'
+import type {
+  ResolvedPos,
+  Slice,
+} from '@prosekit/pm/model'
 import {
+  NodeSelection,
   Plugin,
   PluginKey,
+  TextSelection,
   type PluginView,
 } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
+import type { Dragging } from 'prosemirror-tables'
 
 import {
   createAnchorFinder,
@@ -24,7 +31,57 @@ export function createDropIndicatorPlugin(options: DropIndicatorPluginOptions): 
     view: (view) => {
       return createDropIndicatorView(view, options)
     },
+    props: {
+      handleDrop(view, event, slice, move) {
+        const findAnchor = createAnchorFinder(view, options.onDrag)
+        const point = { x: event.clientX, y: event.clientY }
+        const anchor = findAnchor(point, event)
+        if (anchor) {
+          event.preventDefault()
+          let insertPos = anchor.pos
+
+          let tr = view.state.tr
+          if (move) {
+            interface Dragging {
+              readonly slice: Slice
+              readonly move: boolean
+              readonly node?: NodeSelection
+            }
+            let { node } = (view.dragging as Dragging | null) || {}
+            if (node) node.replace(tr)
+            else tr.deleteSelection()
+          }
+
+          let pos = tr.mapping.map(insertPos)
+          let isNode = slice.openStart == 0 && slice.openEnd == 0 && slice.content.childCount == 1
+          let beforeInsert = tr.doc
+          if (isNode) tr.replaceRangeWith(pos, pos, slice.content.firstChild!)
+          else tr.replaceRange(pos, pos, slice)
+          if (tr.doc.eq(beforeInsert)) return
+
+          let $pos = tr.doc.resolve(pos)
+          if (
+            isNode && NodeSelection.isSelectable(slice.content.firstChild!)
+            && $pos.nodeAfter && $pos.nodeAfter.sameMarkup(slice.content.firstChild!)
+          ) {
+            tr.setSelection(new NodeSelection($pos))
+          } else {
+            let end = tr.mapping.map(insertPos)
+            tr.mapping.maps[tr.mapping.maps.length - 1].forEach((_from, _to, _newFrom, newTo) => end = newTo)
+            tr.setSelection(selectionBetween(view, $pos, tr.doc.resolve(end)))
+          }
+          view.focus()
+          view.dispatch(tr.setMeta('uiEvent', 'drop'))
+          return true
+        }
+      },
+    },
   })
+}
+
+function selectionBetween(view: EditorView, $anchor: ResolvedPos, $head: ResolvedPos, bias?: number) {
+  return view.someProp('createSelectionBetween', f => f(view, $anchor, $head))
+    || TextSelection.between($anchor, $head, bias)
 }
 
 function createDropIndicatorView(view: EditorView, options: DropIndicatorPluginOptions): PluginView {

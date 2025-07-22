@@ -91,9 +91,11 @@ export function createAnchorFinder(view: EditorView, onDrag: DragEventHandler) {
     const compare = (a: Anchor, b: Anchor): number => {
       const [aX, aY] = calcDistance(a, point)
       const [bX, bY] = calcDistance(b, point)
-      if (aY < bY || (aY === bY && aX < bX)) return -1
-      if (aX === bX && aY === bY) return a.pos - b.pos
-      return 1
+      // if (aY < bY || (aY === bY && aX < bX)) return -1
+      // if (aX === bX && aY === bY) return a.pos - b.pos
+      // return 1
+
+      return ((aY + aX) - (bY + bX)) || (a.pos - b.pos)
     }
 
     const anchors = getAnchors()

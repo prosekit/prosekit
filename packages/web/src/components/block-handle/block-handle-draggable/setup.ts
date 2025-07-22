@@ -17,6 +17,7 @@ import { NodeSelection } from '@prosekit/pm/state'
 
 import {
   blockPopoverContext,
+  draggingContext,
   type BlockPopoverContext,
 } from '../context'
 
@@ -110,7 +111,7 @@ function useDataDraggingAttribute(host: ConnectableElement): void {
 }
 
 function useDragging(host: ConnectableElement): ReadonlySignal<boolean> {
-  const dragging = createSignal(false)
+  const dragging = draggingContext.consume(host)
 
   useEventListener(host, 'dragstart', () => {
     dragging.set(true)

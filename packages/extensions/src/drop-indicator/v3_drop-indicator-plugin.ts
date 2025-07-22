@@ -196,6 +196,7 @@ function createDropIndicatorView(view: EditorView, options: DropIndicatorPluginO
     cancel()
   }
   const handleDragLeave = (event: DragEvent): void => {
+    return
     isDraggingOver = false
     cancel()
     setTimeout(() => {

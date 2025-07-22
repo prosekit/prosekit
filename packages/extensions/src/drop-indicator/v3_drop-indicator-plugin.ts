@@ -2,6 +2,7 @@ import { isHTMLElement } from '@ocavue/utils'
 import {
   Plugin,
   PluginKey,
+  type PluginView,
 } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
@@ -21,12 +22,12 @@ export function createDropIndicatorPlugin(options: DropIndicatorPluginOptions): 
   return new Plugin({
     key: new PluginKey('prosekit-drop-indicator'),
     view: (view) => {
-      return { destroy: registerEvents(view, options) }
+      return createDropIndicatorView(view, options)
     },
   })
 }
 
-function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): VoidFunction {
+function createDropIndicatorView(view: EditorView, options: DropIndicatorPluginOptions): PluginView {
   let currentPoint: Point | null = null
   let dom = view.dom
   let frame: number | null = null
@@ -131,8 +132,10 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
   const handleDrop = (event: DragEvent): void => {
     console.log('DEBUG handleDrop', event.clientX, event.clientY)
     // updatePoint(null)
+    let point = { x: event.clientX, y: event.clientY }
     const anchor = findAnchor(point, event)
     if (anchor) {
+      event.preventDefault()
     }
     cancel()
   }
@@ -152,10 +155,12 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
   dom.addEventListener('drop', handleDrop)
   dom.addEventListener('dragleave', handleDragLeave)
 
-  return () => {
+  const destroy = () => {
     dom.removeEventListener('dragover', handleDragOver)
     dom.removeEventListener('dragend', handleDragEnd)
     dom.removeEventListener('drop', handleDrop)
     dom.removeEventListener('dragleave', handleDragLeave)
   }
+
+  return { destroy }
 }

@@ -7,7 +7,7 @@ import {
 } from '@prosekit/core'
 
 import { createDropIndicatorPlugin } from './v3_drop-indicator-plugin'
-import type { DragHandler } from './v3_types'
+import type { DragEventHandler } from './v3_types'
 
 /**
  * @internal
@@ -21,7 +21,7 @@ export function defineDropIndicatorPayload(
 type DropIndicatorPayload = {
   enabled?: boolean
   width?: number
-  disableDrop?: DragHandler
+  onDrag?: DragEventHandler
 }
 
 const dropIndicatorFacet = defineFacet<DropIndicatorPayload, PluginPayload>({
@@ -35,15 +35,14 @@ const dropIndicatorFacet = defineFacet<DropIndicatorPayload, PluginPayload>({
 
     let width = payloads.map(p => p.width).find(w => w != null) ?? 2
 
-    let disableDropFns = payloads.map(p => p.disableDrop).filter(x => !!x)
+    let dragEventHandlers: DragEventHandler[] = payloads.map(p => p.onDrag).filter(x => !!x)
+    let dragEventHandler: DragEventHandler = mergeEventHandlers(dragEventHandlers)
 
-    let disableDrop = mergeDisableFunction(disableDropFns)
-
-    return createDropIndicatorPlugin({ width, disableDrop })
+    return createDropIndicatorPlugin({ width, onDrag: dragEventHandler })
   },
 })
 
-function mergeDisableFunction<T>(fns: Array<(options: T) => boolean>): (options: T) => boolean {
+function mergeEventHandlers<T>(fns: Array<(options: T) => boolean | void>): (options: T) => boolean {
   return (options: T): boolean => {
     for (let fn of fns) {
       if (fn(options) === false) {

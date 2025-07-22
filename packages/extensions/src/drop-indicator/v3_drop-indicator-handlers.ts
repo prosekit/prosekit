@@ -1,7 +1,7 @@
 import type { PlainExtension } from '@prosekit/core'
 
 import { defineDropIndicatorPayload } from './v3_drop-indicator-facet'
-import type { DropIndicatorHandlersOptions } from './v3_types'
+import type { DragEventHandler } from './v3_types'
 
 /**
  * @internal
@@ -15,4 +15,13 @@ export function defineDropIndicatorHandlers(
   options: DropIndicatorHandlersOptions,
 ): DropIndicatorHandlersExtension {
   return defineDropIndicatorPayload(options)
+}
+
+/**
+ * Options for {@link defineDropIndicatorHandlers}.
+ *
+ * @public
+ */
+export interface DropIndicatorHandlersOptions {
+  onDrag?: DragEventHandler
 }

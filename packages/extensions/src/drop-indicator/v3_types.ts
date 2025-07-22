@@ -1,32 +1,9 @@
 import type { EditorView } from '@prosekit/pm/view'
 
 /**
- * Options for {@link defineDropIndicator}.
- *
- * @public
- */
-export interface DropIndicatorOptions {
-  /**
-   * The precise width of the drop indicator in pixels.
-   *
-   * @default 2
-   */
-  width?: number
-}
-
-/**
  * @internal
  */
 export type Point = Readonly<{ x: number; y: number }>
-
-/**
- * Options for {@link defineDropIndicatorHandlers}.
- *
- * @public
- */
-export interface DropIndicatorHandlersOptions {
-  onDrag?: DragEventHandler
-}
 
 /**
  * A function that will be called when the `dragover` event is fired. You can
@@ -43,8 +20,18 @@ export type DragEventHandler = (options: DragEventHandlerOptions) => boolean | v
  * @public
  */
 export interface DragEventHandlerOptions {
+  /**
+   * The editor's view.
+   */
   view: EditorView
+  /**
+   * The drop position in current document.
+   */
   pos: number
+  /**
+   * The `dragover` event.
+   */
+  event: DragEvent
 }
 
 /**

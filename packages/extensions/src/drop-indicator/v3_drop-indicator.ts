@@ -1,7 +1,6 @@
 import type { PlainExtension } from '@prosekit/core'
 
 import { defineDropIndicatorPayload } from './v3_drop-indicator-facet'
-import type { DropIndicatorOptions } from './v3_types'
 
 /**
  * @internal
@@ -27,4 +26,18 @@ export function defineDropIndicator(
     enabled: true,
     width: options.width,
   })
+}
+
+/**
+ * Options for {@link defineDropIndicator}.
+ *
+ * @public
+ */
+export interface DropIndicatorOptions {
+  /**
+   * The precise width of the drop indicator in pixels.
+   *
+   * @default 2
+   */
+  width?: number
 }

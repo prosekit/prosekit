@@ -131,6 +131,9 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
   const handleDrop = (event: DragEvent): void => {
     console.log('DEBUG handleDrop', event.clientX, event.clientY)
     // updatePoint(null)
+    const anchor = findAnchor(point, event)
+    if (anchor) {
+    }
     cancel()
   }
   const handleDragLeave = (event: DragEvent): void => {

@@ -52,14 +52,20 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
     // updatePoint(null)
     cancel()
   }
+  const handleDragLeave = (event: DragEvent): void => {
+    console.log('DEBUG handleDragLeave')
+    cancel()
+  }
 
   dom.addEventListener('dragover', handleDragOver)
   dom.addEventListener('dragend', handleDragEnd)
   dom.addEventListener('drop', handleDrop)
+  dom.addEventListener('dragleave', handleDragLeave)
 
   return () => {
     dom.removeEventListener('dragover', handleDragOver)
     dom.removeEventListener('dragend', handleDragEnd)
     dom.removeEventListener('drop', handleDrop)
+    dom.removeEventListener('dragleave', handleDragLeave)
   }
 }

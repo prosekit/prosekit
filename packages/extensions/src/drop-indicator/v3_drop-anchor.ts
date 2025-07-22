@@ -3,7 +3,7 @@ import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
 import type {
-  DragHandler,
+  DragEventHandler,
   Point,
 } from './v3_types'
 
@@ -71,12 +71,12 @@ function createAnchorsGetter(view: EditorView) {
   }
 }
 
-export function createAnchorFinder(view: EditorView, disableDrop: DragHandler) {
+export function createAnchorFinder(view: EditorView, onDrag: DragEventHandler) {
   let getAnchors = createAnchorsGetter(view)
   let prevPoint: Point | undefined
   let prevAnchor: Anchor | undefined
 
-  return (point: Point): Anchor | undefined => {
+  return (point: Point, event: DragEvent): Anchor | undefined => {
     if (!view.editable || view.isDestroyed) return undefined
 
     if (pointEqual(prevPoint, point)) {
@@ -97,7 +97,7 @@ export function createAnchorFinder(view: EditorView, disableDrop: DragHandler) {
     anchors.sort(compare)
 
     for (let anchor of anchors) {
-      if (disableDrop({ view: view, pos: anchor.pos })) {
+      if (onDrag({ view: view, pos: anchor.pos, event }) === false) {
         continue
       }
       prevAnchor = anchor

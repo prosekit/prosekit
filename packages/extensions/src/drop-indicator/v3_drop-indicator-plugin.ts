@@ -27,7 +27,7 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
   let dom = view.dom
   let frame: number | null = null
 
-  const findAnchor = createAnchorFinder(view, options.disableDrop)
+  const findAnchor = createAnchorFinder(view, options.onDrag)
 
   const cancel = () => {
     if (frame) {
@@ -40,7 +40,7 @@ function registerEvents(view: EditorView, options: DropIndicatorPluginOptions): 
 
   const handleDragOver = (event: DragEvent): void => {
     let point = { x: event.clientX, y: event.clientY }
-    let anchor = findAnchor(point)
+    let anchor = findAnchor(point, event)
     if (!anchor) return
   }
   const handleDragEnd = (event: DragEvent): void => {

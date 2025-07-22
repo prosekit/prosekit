@@ -20,11 +20,11 @@ export type DropIndicatorExtension = PlainExtension
  * @public
  */
 export function defineDropIndicator(
-  options: DropIndicatorOptions,
+  options?: DropIndicatorOptions,
 ): DropIndicatorExtension {
   return defineDropIndicatorPayload({
     enabled: true,
-    width: options.width,
+    width: options?.width,
   })
 }
 

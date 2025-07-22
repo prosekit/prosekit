@@ -7,7 +7,10 @@ import type {
   Point,
 } from './v3_types'
 
-interface Anchor {
+/**
+ * @internal
+ */
+export interface Anchor {
   pos: number
   x1: number
   x2: number

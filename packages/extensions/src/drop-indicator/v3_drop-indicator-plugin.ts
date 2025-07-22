@@ -10,6 +10,9 @@ import type {
   Point,
 } from './v3_types'
 
+/**
+ * @internal
+ */
 export function createDropIndicatorPlugin(options: DropIndicatorPluginOptions): Plugin {
   return new Plugin({
     key: new PluginKey('prosekit-drop-indicator'),

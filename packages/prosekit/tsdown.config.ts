@@ -1,5 +1,8 @@
 import { config } from '@prosekit/config-tsdown'
-import { defineConfig } from 'tsdown'
+import {
+  defineConfig,
+  type UserConfig,
+} from 'tsdown'
 
 const configObject = config()
 
@@ -15,4 +18,6 @@ const entriesWithoutCSS = Object.fromEntries(
   Object.entries(entries).filter(([, value]) => !value.endsWith('.css')),
 )
 
-export default defineConfig({ ...configObject, entry: entriesWithoutCSS })
+const configObjectWithoutCSS: UserConfig = { ...configObject, entry: entriesWithoutCSS }
+
+export default defineConfig(configObjectWithoutCSS)

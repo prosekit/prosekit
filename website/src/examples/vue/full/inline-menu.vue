@@ -96,12 +96,10 @@ function handleLinkUpdate(href?: string) {
       v-if="editor.commands.addLink.canExec({ href: '' })"
       :pressed="editor.marks.link.isActive()"
       tooltip="Link"
-      @click="
-        () => {
-          editor.commands.expandLink()
-          toggleLinkMenuOpen()
-        }
-      "
+      @click="() => {
+        editor.commands.expandLink()
+        toggleLinkMenuOpen()
+      }"
     >
       <div class="CSS_ICON_LINK" />
     </Button>
@@ -117,13 +115,11 @@ function handleLinkUpdate(href?: string) {
   >
     <form
       v-if="linkMenuOpen"
-      @submit.prevent="
-        (event) => {
-          const target = event.target as HTMLFormElement | null
-          const href = target?.querySelector('input')?.value?.trim()
-          handleLinkUpdate(href)
-        }
-      "
+      @submit.prevent="(event) => {
+        const target = event.target as HTMLFormElement | null
+        const href = target?.querySelector('input')?.value?.trim()
+        handleLinkUpdate(href)
+      }"
     >
       <input
         placeholder="Paste the link..."

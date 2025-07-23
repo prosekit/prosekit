@@ -49,15 +49,15 @@
     "prosemirror-history": "^1.4.1",
     "prosemirror-inputrules": "^1.5.0",
     "prosemirror-keymap": "^1.2.3",
-    "prosemirror-model": "^1.25.1",
+    "prosemirror-model": "^1.25.2",
     "prosemirror-state": "^1.4.3",
     "prosemirror-transform": "^1.10.4",
-    "prosemirror-view": "^1.40.0"
+    "prosemirror-view": "^1.40.1"
   },
   "devDependencies": {
     "@prosekit/config-tsdown": "workspace:*",
     "@prosekit/config-vitest": "workspace:*",
-    "tsdown": "^0.12.9",
+    "tsdown": "^0.13.0",
     "typescript": "~5.8.3",
     "vitest": "^3.2.4"
   },

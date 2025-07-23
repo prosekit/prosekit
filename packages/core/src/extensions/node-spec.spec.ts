@@ -3,6 +3,7 @@ import type {
   Schema,
   TagParseRule,
 } from '@prosekit/pm/model'
+import formatHTML from 'diffable-html'
 import {
   describe,
   expect,
@@ -181,9 +182,18 @@ describe('defineNodeAttr', () => {
         },
       ],
     })
-    expect(html1).toMatchInlineSnapshot(
-      `"<div><p style="background-color: blue; color: red" data-node-id="123">Hello</p></div>"`,
-    )
+    expect(formatHTML(html1)).toMatchInlineSnapshot(`
+      "
+      <div>
+        <p
+          data-node-id="123"
+          style="background-color: blue; color: red;"
+        >
+          Hello
+        </p>
+      </div>
+      "
+    `)
     editor.setContent(html1)
     const json2 = editor.getDocJSON()
     expect(json2).toEqual(json1)

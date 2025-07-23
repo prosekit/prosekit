@@ -1,2 +1,7 @@
-<h1 style="text-align: center">H1</h1>
-<p style="text-align: center">Paragraph</p>
+
+<h1 style="text-align: center;">
+  H1
+</h1>
+<p style="text-align: center;">
+  Paragraph
+</p>

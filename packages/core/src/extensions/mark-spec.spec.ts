@@ -2,6 +2,7 @@ import type {
   DOMOutputSpec,
   TagParseRule,
 } from '@prosekit/pm/model'
+import formatHTML from 'diffable-html'
 import {
   describe,
   expect,
@@ -155,9 +156,20 @@ describe('defineMarkAttr', () => {
         "type": "doc",
       }
     `)
-    expect(html1).toMatchInlineSnapshot(
-      `"<div><p><strong style="background-color: blue; color: red" data-mark-id="123">Hello</strong></p></div>"`,
-    )
+    expect(formatHTML(html1)).toMatchInlineSnapshot(`
+      "
+      <div>
+        <p>
+          <strong
+            data-mark-id="123"
+            style="background-color: blue; color: red;"
+          >
+            Hello
+          </strong>
+        </p>
+      </div>
+      "
+    `)
     editor.setContent(html1)
     const json2 = editor.getDocJSON()
     expect(json2).toEqual(json1)

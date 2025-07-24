@@ -63,8 +63,8 @@ export default function Editor() {
       <div className="CSS_EDITOR_VIEWPORT">
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
+          <BlockHandle />
         </div>
-        <BlockHandle></BlockHandle>
       </div>
     </ProseKit>
   )

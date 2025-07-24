@@ -74,8 +74,8 @@ watchPostEffect((onCleanup) => {
           spellcheck="false"
           class="CSS_EDITOR_CONTENT"
         />
+        <BlockHandle />
       </div>
-      <BlockHandle></BlockHandle>
     </div>
   </ProseKit>
 </template>

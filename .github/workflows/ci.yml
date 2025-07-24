@@ -141,6 +141,7 @@ jobs:
           debug: true
           fail: true
           failIfEmpty: true
+          lycheeVersion: nightly
 
   deploy:
     runs-on: ubuntu-latest

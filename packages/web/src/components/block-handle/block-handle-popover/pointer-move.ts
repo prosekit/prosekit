@@ -107,7 +107,7 @@ function findBlockByCoordinate(view: EditorView, x: number, y: number): { node: 
       const childDOM = view.nodeDOM(positions[i])
       const childRect = getNodeRect(childDOM)
       if (!childRect) {
-        console.warn('[prosekit] Unable to get rect at position', positions[i])
+        console.warn(`[prosekit] Unable to get rect at position: ${positions[i]}`)
         return
       }
       if (childRect.top > y) {

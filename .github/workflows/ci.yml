@@ -143,6 +143,8 @@ jobs:
             --root-dir "$PWD"
             --no-progress
             --mode plain
+            --cache
+            --format detailed
             --exclude 'https://prosemirror.net/docs/ref/#model.DOMParser.fromSchema'
             --exclude 'https://prosemirror.net/docs/ref/#model.DOMSerializer.fromSchema'
             './**/*.html'

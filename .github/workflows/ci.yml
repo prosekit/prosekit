@@ -140,6 +140,7 @@ jobs:
           args: >
             --include-fragments
             --fallback-extensions html
+            --root-dir "$PWD"
             --no-progress
             --exclude 'https://prosemirror.net/docs/ref/#model.DOMParser.fromSchema'
             --exclude 'https://prosemirror.net/docs/ref/#model.DOMSerializer.fromSchema'

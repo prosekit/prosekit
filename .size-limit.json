@@ -120,6 +120,16 @@
     ]
   },
   {
+    "name": "prosekit/extensions/drop-indicator",
+    "path": "packages/prosekit/dist/prosekit-extensions-drop-indicator.js",
+    "ignore": [
+      "loro-crdt",
+      "loro-prosemirror",
+      "y-prosemirror",
+      "yjs"
+    ]
+  },
+  {
     "name": "prosekit/extensions/enter-rule",
     "path": "packages/prosekit/dist/prosekit-extensions-enter-rule.js",
     "ignore": [
@@ -774,6 +784,10 @@
   {
     "name": "prosekit/web/block-handle",
     "path": "packages/prosekit/dist/prosekit-web-block-handle.js"
+  },
+  {
+    "name": "prosekit/web/drop-indicator",
+    "path": "packages/prosekit/dist/prosekit-web-drop-indicator.js"
   },
   {
     "name": "prosekit/web/inline-popover",

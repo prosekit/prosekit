@@ -142,6 +142,7 @@ jobs:
             --fallback-extensions html
             --root-dir "$PWD"
             --no-progress
+            --mode plain
             --exclude 'https://prosemirror.net/docs/ref/#model.DOMParser.fromSchema'
             --exclude 'https://prosemirror.net/docs/ref/#model.DOMSerializer.fromSchema'
             './**/*.html'

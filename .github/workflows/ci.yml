@@ -137,7 +137,12 @@ jobs:
         uses: lycheeverse/lychee-action@v2.4.1
         with:
           workingDirectory: website/dist
-          args: --include-fragments --fallback-extensions html --no-progress './**/*.html'
+          args: >
+            --include-fragments
+            --fallback-extensions html
+            --no-progress './**/*.html'
+            --exclude 'https://prosemirror.net/docs/ref/#model.DOMParser.fromSchema'
+            --exclude 'https://prosemirror.net/docs/ref/#model.DOMSerializer.fromSchema'
           debug: true
           fail: true
           failIfEmpty: true

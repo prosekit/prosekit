@@ -75,7 +75,7 @@ watchPostEffect((onCleanup) => {
           class="CSS_EDITOR_CONTENT"
         />
       </div>
-      <BlockHandle></BlockHandle>
+      <BlockHandle />
     </div>
   </ProseKit>
 </template>

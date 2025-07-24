@@ -23,9 +23,9 @@ import {
 
 /**
  * A function to handle the events fired on the editable DOM element. Returns
- * `true` to indicate that it handled the given event. When returning true, you
- * are responsible for calling `preventDefault` yourself (or not, if you want to
- * allow the default behavior).
+ * `true` to indicate that it handled the given event. When returning `true`,
+ * you are responsible for calling `event.preventDefault()` yourself (or not, if
+ * you want to allow the default behavior).
  *
  * @public
  */

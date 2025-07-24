@@ -897,8 +897,8 @@ importers:
         specifier: ^5.12.3
         version: 5.12.3(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
       astro-minify-html-swc:
-        specifier: ^0.1.6
-        version: 0.1.6
+        specifier: ^0.1.7
+        version: 0.1.7
       astro-rehype-relative-markdown-links:
         specifier: ^0.18.1
         version: 0.18.1(astro@5.12.3(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0))
@@ -2099,6 +2099,9 @@ packages:
 
   '@ocavue/utils@0.5.0':
     resolution: {integrity: sha512-Lg5pAfcbjUv7n3UhYKQ7v1iWIJLX/uv0jL2SQZlQqH8YCyQ/15cQdzzd4nI5Y/IzLQeNPO5NlJx4qIqbht8jAw==}
+
+  '@ocavue/utils@0.6.0':
+    resolution: {integrity: sha512-ulsUYE5EvGIFvSyjPb57KoZ2WgztgIYgHL4n0/zvSeqo3VZUVeMpIq8tsAe9IQvFMQHnKa3Nzl+8QfZ03/sIKQ==}
 
   '@octokit/action@6.1.0':
     resolution: {integrity: sha512-lo+nHx8kAV86bxvOVOI3vFjX3gXPd/L7guAUbvs3pUvnR2KC+R7yjBkA1uACt4gYhs4LcWP3AXSGQzsbeN2XXw==}
@@ -3354,8 +3357,8 @@ packages:
     peerDependencies:
       astro: ^4.0.0-beta || ^5.0.0-beta || ^3.3.0
 
-  astro-minify-html-swc@0.1.6:
-    resolution: {integrity: sha512-vb3ZR9InIRaBmgbS26OkWkbVi2293fa8Cvfvu3p3h1QclsJNL71HWLvSDoVtImvIgDqXLSHEA/QfK1+j+L31lQ==}
+  astro-minify-html-swc@0.1.7:
+    resolution: {integrity: sha512-JyVLSw0GVmHfEDGoRA75SZ652jIRs+7ZBR1kU1GjB6v3Xtd8zqpHCYO9jPY6fuMcs0BKukKIEbgZo78r9tQgBw==}
 
   astro-rehype-relative-markdown-links@0.18.1:
     resolution: {integrity: sha512-PA2oLXs8+8CX+/cDEeHo4UJfMPKXazIJM8BgnQloR/vGXRnW3KjbLI3nqSoNVmq91YaFv2UHfHKoetEcfwieUw==}
@@ -8824,6 +8827,8 @@ snapshots:
 
   '@ocavue/utils@0.5.0': {}
 
+  '@ocavue/utils@0.6.0': {}
+
   '@octokit/action@6.1.0':
     dependencies:
       '@octokit/auth-action': 4.1.0
@@ -10231,8 +10236,9 @@ snapshots:
       astro: 5.12.3(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
       rehype-expressive-code: 0.41.2
 
-  astro-minify-html-swc@0.1.6:
+  astro-minify-html-swc@0.1.7:
     dependencies:
+      '@ocavue/utils': 0.6.0
       '@swc/html': 1.13.2
       fast-glob: 3.3.3
 

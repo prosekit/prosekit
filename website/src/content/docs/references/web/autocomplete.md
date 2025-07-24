@@ -20,14 +20,6 @@ sidebar:
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`AutocompleteEmptyElementBase.constructor`
-
-</dd>
-
 </dl>
 
 ***
@@ -45,14 +37,6 @@ sidebar:
 <code data-typedoc-code><i></i> new <a id="constructor-1" href="#constructor-1">AutocompleteItemElement</a>(): [`AutocompleteItemElement`](#autocompleteitemelement)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`AutocompleteItemElementBase.constructor`
-
-</dd>
 
 </dl>
 
@@ -95,14 +79,6 @@ If not provided, the value is the item's text content.
 <code data-typedoc-code><i></i> new <a id="constructor-2" href="#constructor-2">AutocompleteListElement</a>(): [`AutocompleteListElement`](#autocompletelistelement)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`AutocompleteListElementBase.constructor`
-
-</dd>
 
 </dl>
 
@@ -147,14 +123,6 @@ shown.
 <code data-typedoc-code><i></i> new <a id="constructor-3" href="#constructor-3">AutocompletePopoverElement</a>(): [`AutocompletePopoverElement`](#autocompletepopoverelement)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`AutocompletePopoverElementBase.constructor`
-
-</dd>
 
 </dl>
 

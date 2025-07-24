@@ -235,10 +235,6 @@ assumed to match.
 Map the set of decorations in response to a change in the
 document.
 
-###### Implementation of
-
-[`DecorationSource`](#decorationsource).[`map`](#map)
-
 </dd>
 
 </dl>
@@ -291,10 +287,6 @@ the ones in the given array.
 
 Extract a DecorationSource containing decorations for the given child node at the given offset.
 
-###### Implementation of
-
-[`DecorationSource`](#decorationsource).[`forChild`](#forchild)
-
 </dd>
 
 </dl>
@@ -310,10 +302,6 @@ Extract a DecorationSource containing decorations for the given child node at th
 <dd>
 
 Call the given function for each decoration set in the group.
-
-###### Implementation of
-
-[`DecorationSource`](#decorationsource).[`forEachSet`](#foreachset)
 
 </dd>
 

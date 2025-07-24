@@ -20,14 +20,6 @@ sidebar:
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`TableHandleColumnRootElementBase.constructor`
-
-</dd>
-
 </dl>
 
 #### Properties
@@ -453,14 +445,6 @@ The placement of the popover, relative to the hovered table cell.
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`TableHandleColumnTriggerElementBase.constructor`
-
-</dd>
-
 </dl>
 
 #### Properties
@@ -490,14 +474,6 @@ The placement of the popover, relative to the hovered table cell.
 <code data-typedoc-code><i></i> new <a id="constructor-2" href="#constructor-2">TableHandleDragPreviewElement</a>(): [`TableHandleDragPreviewElement`](#tablehandledragpreviewelement)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`TableHandleDragPreviewElementBase.constructor`
-
-</dd>
 
 </dl>
 
@@ -529,14 +505,6 @@ The placement of the popover, relative to the hovered table cell.
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`TableHandleDropIndicatorElementBase.constructor`
-
-</dd>
-
 </dl>
 
 #### Properties
@@ -566,14 +534,6 @@ The placement of the popover, relative to the hovered table cell.
 <code data-typedoc-code><i></i> new <a id="constructor-4" href="#constructor-4">TableHandlePopoverContentElement</a>(): [`TableHandlePopoverContentElement`](#tablehandlepopovercontentelement)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`TableHandlePopoverContentElementBase.constructor`
-
-</dd>
 
 </dl>
 
@@ -1025,14 +985,6 @@ information.
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`TableHandlePopoverItemElementBase.constructor`
-
-</dd>
-
 </dl>
 
 #### Properties
@@ -1114,14 +1066,6 @@ The filter function to determine if an item should be shown in the listbox.
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`TableHandleRootElementBase.constructor`
-
-</dd>
-
 </dl>
 
 ***
@@ -1139,14 +1083,6 @@ The filter function to determine if an item should be shown in the listbox.
 <code data-typedoc-code><i></i> new <a id="constructor-7" href="#constructor-7">TableHandleRowRootElement</a>(): [`TableHandleRowRootElement`](#tablehandlerowrootelement)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`TableHandleRowRootElementBase.constructor`
-
-</dd>
 
 </dl>
 
@@ -1572,14 +1508,6 @@ The placement of the popover, relative to the hovered table cell.
 <code data-typedoc-code><i></i> new <a id="constructor-8" href="#constructor-8">TableHandleRowTriggerElement</a>(): [`TableHandleRowTriggerElement`](#tablehandlerowtriggerelement)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`TableHandleRowTriggerElementBase.constructor`
-
-</dd>
 
 </dl>
 

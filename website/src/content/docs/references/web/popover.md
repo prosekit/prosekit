@@ -20,14 +20,6 @@ sidebar:
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`PopoverContentElementBase.constructor`
-
-</dd>
-
 </dl>
 
 #### Properties
@@ -453,14 +445,6 @@ information.
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`PopoverRootElementBase.constructor`
-
-</dd>
-
 </dl>
 
 #### Properties
@@ -520,14 +504,6 @@ Whether the popover is open.
 <code data-typedoc-code><i></i> new <a id="constructor-2" href="#constructor-2">PopoverTriggerElement</a>(): [`PopoverTriggerElement`](#popovertriggerelement)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`PopoverTriggerElementBase.constructor`
-
-</dd>
 
 </dl>
 

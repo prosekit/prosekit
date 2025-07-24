@@ -20,14 +20,6 @@ sidebar:
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`ResizableHandleElementBase.constructor`
-
-</dd>
-
 </dl>
 
 #### Properties
@@ -67,14 +59,6 @@ The position of the handle.
 <code data-typedoc-code><i></i> new <a id="constructor-1" href="#constructor-1">ResizableRootElement</a>(): [`ResizableRootElement`](#resizablerootelement)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`ResizableRootElementBase.constructor`
-
-</dd>
 
 </dl>
 

@@ -183,10 +183,6 @@ replaced range) during the mapping. When content on only one side
 is deleted, the position itself is only considered deleted when
 `assoc` points in the direction of the deleted content.
 
-###### Implementation of
-
-[`Mappable`](#mappable).[`mapResult`](#mapresult)
-
 </dd>
 
 </dl>
@@ -205,10 +201,6 @@ Map a position through this object. When given, `assoc` (should
 be -1 or 1, defaults to 1) determines with which side the
 position is associated, which determines in which direction to
 move when a chunk of content is inserted at the mapped position.
-
-###### Implementation of
-
-[`Mappable`](#mappable).[`map`](#map)
 
 </dd>
 
@@ -465,10 +457,6 @@ Create an inverted version of this mapping.
 
 Map a position through this mapping.
 
-###### Implementation of
-
-[`Mappable`](#mappable).[`map`](#map)
-
 </dd>
 
 </dl>
@@ -485,10 +473,6 @@ Map a position through this mapping.
 
 Map a position through this mapping, returning a mapping
 result.
-
-###### Implementation of
-
-[`Mappable`](#mappable).[`mapResult`](#mapresult)
 
 </dd>
 
@@ -1333,10 +1317,6 @@ Add a mark to all inline content between two positions.
 
 Create a mark step.
 
-###### Overrides
-
-[`Step`](#step).[`constructor`](#constructor-3)
-
 </dd>
 
 </dl>
@@ -1407,10 +1387,6 @@ Get the step map that represents the changes made by this step,
 and which can be used to transform between positions in the old
 and the new document.
 
-###### Inherited from
-
-[`Step`](#step).[`getMap`](#getmap)
-
 </dd>
 
 </dl>
@@ -1427,10 +1403,6 @@ and the new document.
 
 Deserialize a step from its JSON representation. Will call
 through to the step class' own implementation of this method.
-
-###### Inherited from
-
-[`Step`](#step).[`fromJSON`](#fromjson)
 
 </dd>
 
@@ -1451,10 +1423,6 @@ ID to attach to its JSON representation. Use this method to
 register an ID for your step classes. Try to pick something
 that's unlikely to clash with steps from other modules.
 
-###### Inherited from
-
-[`Step`](#step).[`jsonID`](#jsonid)
-
 </dd>
 
 </dl>
@@ -1474,10 +1442,6 @@ object that either indicates failure, if the step can not be
 applied to this document, or indicates success by containing a
 transformed document.
 
-###### Overrides
-
-[`Step`](#step).[`apply`](#apply)
-
 </dd>
 
 </dl>
@@ -1494,10 +1458,6 @@ transformed document.
 
 Create an inverted version of this step. Needs the document as it
 was before the step as argument.
-
-###### Overrides
-
-[`Step`](#step).[`invert`](#invert-4)
 
 </dd>
 
@@ -1517,10 +1477,6 @@ Map this step through a mappable thing, returning either a
 version of that step with its positions adjusted, or `null` if
 the step was entirely deleted by the mapping.
 
-###### Overrides
-
-[`Step`](#step).[`map`](#map-5)
-
 </dd>
 
 </dl>
@@ -1538,10 +1494,6 @@ the step was entirely deleted by the mapping.
 Try to merge this step with another one, to be applied directly
 after it. Returns the merged step when possible, null if the
 steps can't be merged.
-
-###### Overrides
-
-[`Step`](#step).[`merge`](#merge)
 
 </dd>
 
@@ -1561,10 +1513,6 @@ Create a JSON-serializeable representation of this step. When
 defining this for a custom subclass, make sure the result object
 includes the step type's [JSON id](https://prosemirror.net/docs/ref/#transform.Step^jsonID) under
 the `stepType` property.
-
-###### Overrides
-
-[`Step`](#step).[`toJSON`](#tojson)
 
 </dd>
 
@@ -1591,10 +1539,6 @@ Remove a mark from all inline content between two positions.
 <dd>
 
 Create a mark-removing step.
-
-###### Overrides
-
-[`Step`](#step).[`constructor`](#constructor-3)
 
 </dd>
 
@@ -1666,10 +1610,6 @@ Get the step map that represents the changes made by this step,
 and which can be used to transform between positions in the old
 and the new document.
 
-###### Inherited from
-
-[`Step`](#step).[`getMap`](#getmap)
-
 </dd>
 
 </dl>
@@ -1686,10 +1626,6 @@ and the new document.
 
 Deserialize a step from its JSON representation. Will call
 through to the step class' own implementation of this method.
-
-###### Inherited from
-
-[`Step`](#step).[`fromJSON`](#fromjson)
 
 </dd>
 
@@ -1710,10 +1646,6 @@ ID to attach to its JSON representation. Use this method to
 register an ID for your step classes. Try to pick something
 that's unlikely to clash with steps from other modules.
 
-###### Inherited from
-
-[`Step`](#step).[`jsonID`](#jsonid)
-
 </dd>
 
 </dl>
@@ -1733,10 +1665,6 @@ object that either indicates failure, if the step can not be
 applied to this document, or indicates success by containing a
 transformed document.
 
-###### Overrides
-
-[`Step`](#step).[`apply`](#apply)
-
 </dd>
 
 </dl>
@@ -1753,10 +1681,6 @@ transformed document.
 
 Create an inverted version of this step. Needs the document as it
 was before the step as argument.
-
-###### Overrides
-
-[`Step`](#step).[`invert`](#invert-4)
 
 </dd>
 
@@ -1776,10 +1700,6 @@ Map this step through a mappable thing, returning either a
 version of that step with its positions adjusted, or `null` if
 the step was entirely deleted by the mapping.
 
-###### Overrides
-
-[`Step`](#step).[`map`](#map-5)
-
 </dd>
 
 </dl>
@@ -1797,10 +1717,6 @@ the step was entirely deleted by the mapping.
 Try to merge this step with another one, to be applied directly
 after it. Returns the merged step when possible, null if the
 steps can't be merged.
-
-###### Overrides
-
-[`Step`](#step).[`merge`](#merge)
 
 </dd>
 
@@ -1820,10 +1736,6 @@ Create a JSON-serializeable representation of this step. When
 defining this for a custom subclass, make sure the result object
 includes the step type's [JSON id](https://prosemirror.net/docs/ref/#transform.Step^jsonID) under
 the `stepType` property.
-
-###### Overrides
-
-[`Step`](#step).[`toJSON`](#tojson)
 
 </dd>
 
@@ -1850,10 +1762,6 @@ Add a mark to a specific node.
 <dd>
 
 Create a node mark step.
-
-###### Overrides
-
-[`Step`](#step).[`constructor`](#constructor-3)
 
 </dd>
 
@@ -1909,10 +1817,6 @@ Get the step map that represents the changes made by this step,
 and which can be used to transform between positions in the old
 and the new document.
 
-###### Inherited from
-
-[`Step`](#step).[`getMap`](#getmap)
-
 </dd>
 
 </dl>
@@ -1931,10 +1835,6 @@ Try to merge this step with another one, to be applied directly
 after it. Returns the merged step when possible, null if the
 steps can't be merged.
 
-###### Inherited from
-
-[`Step`](#step).[`merge`](#merge)
-
 </dd>
 
 </dl>
@@ -1951,10 +1851,6 @@ steps can't be merged.
 
 Deserialize a step from its JSON representation. Will call
 through to the step class' own implementation of this method.
-
-###### Inherited from
-
-[`Step`](#step).[`fromJSON`](#fromjson)
 
 </dd>
 
@@ -1975,10 +1871,6 @@ ID to attach to its JSON representation. Use this method to
 register an ID for your step classes. Try to pick something
 that's unlikely to clash with steps from other modules.
 
-###### Inherited from
-
-[`Step`](#step).[`jsonID`](#jsonid)
-
 </dd>
 
 </dl>
@@ -1998,10 +1890,6 @@ object that either indicates failure, if the step can not be
 applied to this document, or indicates success by containing a
 transformed document.
 
-###### Overrides
-
-[`Step`](#step).[`apply`](#apply)
-
 </dd>
 
 </dl>
@@ -2018,10 +1906,6 @@ transformed document.
 
 Create an inverted version of this step. Needs the document as it
 was before the step as argument.
-
-###### Overrides
-
-[`Step`](#step).[`invert`](#invert-4)
 
 </dd>
 
@@ -2041,10 +1925,6 @@ Map this step through a mappable thing, returning either a
 version of that step with its positions adjusted, or `null` if
 the step was entirely deleted by the mapping.
 
-###### Overrides
-
-[`Step`](#step).[`map`](#map-5)
-
 </dd>
 
 </dl>
@@ -2063,10 +1943,6 @@ Create a JSON-serializeable representation of this step. When
 defining this for a custom subclass, make sure the result object
 includes the step type's [JSON id](https://prosemirror.net/docs/ref/#transform.Step^jsonID) under
 the `stepType` property.
-
-###### Overrides
-
-[`Step`](#step).[`toJSON`](#tojson)
 
 </dd>
 
@@ -2093,10 +1969,6 @@ Remove a mark from a specific node.
 <dd>
 
 Create a mark-removing step.
-
-###### Overrides
-
-[`Step`](#step).[`constructor`](#constructor-3)
 
 </dd>
 
@@ -2152,10 +2024,6 @@ Get the step map that represents the changes made by this step,
 and which can be used to transform between positions in the old
 and the new document.
 
-###### Inherited from
-
-[`Step`](#step).[`getMap`](#getmap)
-
 </dd>
 
 </dl>
@@ -2174,10 +2042,6 @@ Try to merge this step with another one, to be applied directly
 after it. Returns the merged step when possible, null if the
 steps can't be merged.
 
-###### Inherited from
-
-[`Step`](#step).[`merge`](#merge)
-
 </dd>
 
 </dl>
@@ -2194,10 +2058,6 @@ steps can't be merged.
 
 Deserialize a step from its JSON representation. Will call
 through to the step class' own implementation of this method.
-
-###### Inherited from
-
-[`Step`](#step).[`fromJSON`](#fromjson)
 
 </dd>
 
@@ -2218,10 +2078,6 @@ ID to attach to its JSON representation. Use this method to
 register an ID for your step classes. Try to pick something
 that's unlikely to clash with steps from other modules.
 
-###### Inherited from
-
-[`Step`](#step).[`jsonID`](#jsonid)
-
 </dd>
 
 </dl>
@@ -2241,10 +2097,6 @@ object that either indicates failure, if the step can not be
 applied to this document, or indicates success by containing a
 transformed document.
 
-###### Overrides
-
-[`Step`](#step).[`apply`](#apply)
-
 </dd>
 
 </dl>
@@ -2261,10 +2113,6 @@ transformed document.
 
 Create an inverted version of this step. Needs the document as it
 was before the step as argument.
-
-###### Overrides
-
-[`Step`](#step).[`invert`](#invert-4)
 
 </dd>
 
@@ -2284,10 +2132,6 @@ Map this step through a mappable thing, returning either a
 version of that step with its positions adjusted, or `null` if
 the step was entirely deleted by the mapping.
 
-###### Overrides
-
-[`Step`](#step).[`map`](#map-5)
-
 </dd>
 
 </dl>
@@ -2306,10 +2150,6 @@ Create a JSON-serializeable representation of this step. When
 defining this for a custom subclass, make sure the result object
 includes the step type's [JSON id](https://prosemirror.net/docs/ref/#transform.Step^jsonID) under
 the `stepType` property.
-
-###### Overrides
-
-[`Step`](#step).[`toJSON`](#tojson)
 
 </dd>
 
@@ -2342,10 +2182,6 @@ able to be joined with the open sides of the slice. When
 from and to is not just a sequence of closing and then opening
 tokens (this is to guard against rebased replace steps
 overwriting something they weren't supposed to).
-
-###### Overrides
-
-[`Step`](#step).[`constructor`](#constructor-3)
 
 </dd>
 
@@ -2416,10 +2252,6 @@ The slice to insert.
 Deserialize a step from its JSON representation. Will call
 through to the step class' own implementation of this method.
 
-###### Inherited from
-
-[`Step`](#step).[`fromJSON`](#fromjson)
-
 </dd>
 
 </dl>
@@ -2438,10 +2270,6 @@ To be able to serialize steps to JSON, each step needs a string
 ID to attach to its JSON representation. Use this method to
 register an ID for your step classes. Try to pick something
 that's unlikely to clash with steps from other modules.
-
-###### Inherited from
-
-[`Step`](#step).[`jsonID`](#jsonid)
 
 </dd>
 
@@ -2462,10 +2290,6 @@ object that either indicates failure, if the step can not be
 applied to this document, or indicates success by containing a
 transformed document.
 
-###### Overrides
-
-[`Step`](#step).[`apply`](#apply)
-
 </dd>
 
 </dl>
@@ -2484,10 +2308,6 @@ Get the step map that represents the changes made by this step,
 and which can be used to transform between positions in the old
 and the new document.
 
-###### Overrides
-
-[`Step`](#step).[`getMap`](#getmap)
-
 </dd>
 
 </dl>
@@ -2504,10 +2324,6 @@ and the new document.
 
 Create an inverted version of this step. Needs the document as it
 was before the step as argument.
-
-###### Overrides
-
-[`Step`](#step).[`invert`](#invert-4)
 
 </dd>
 
@@ -2527,10 +2343,6 @@ Map this step through a mappable thing, returning either a
 version of that step with its positions adjusted, or `null` if
 the step was entirely deleted by the mapping.
 
-###### Overrides
-
-[`Step`](#step).[`map`](#map-5)
-
 </dd>
 
 </dl>
@@ -2548,10 +2360,6 @@ the step was entirely deleted by the mapping.
 Try to merge this step with another one, to be applied directly
 after it. Returns the merged step when possible, null if the
 steps can't be merged.
-
-###### Overrides
-
-[`Step`](#step).[`merge`](#merge)
 
 </dd>
 
@@ -2571,10 +2379,6 @@ Create a JSON-serializeable representation of this step. When
 defining this for a custom subclass, make sure the result object
 includes the step type's [JSON id](https://prosemirror.net/docs/ref/#transform.Step^jsonID) under
 the `stepType` property.
-
-###### Overrides
-
-[`Step`](#step).[`toJSON`](#tojson)
 
 </dd>
 
@@ -2606,10 +2410,6 @@ Create a replace-around step with the given range and gap.
 `insert` should be the point in the slice into which the content
 of the gap should be moved. `structure` has the same meaning as
 it has in the [`ReplaceStep`](https://prosemirror.net/docs/ref/#transform.ReplaceStep) class.
-
-###### Overrides
-
-[`Step`](#step).[`constructor`](#constructor-3)
 
 </dd>
 
@@ -2730,10 +2530,6 @@ Try to merge this step with another one, to be applied directly
 after it. Returns the merged step when possible, null if the
 steps can't be merged.
 
-###### Inherited from
-
-[`Step`](#step).[`merge`](#merge)
-
 </dd>
 
 </dl>
@@ -2750,10 +2546,6 @@ steps can't be merged.
 
 Deserialize a step from its JSON representation. Will call
 through to the step class' own implementation of this method.
-
-###### Inherited from
-
-[`Step`](#step).[`fromJSON`](#fromjson)
 
 </dd>
 
@@ -2774,10 +2566,6 @@ ID to attach to its JSON representation. Use this method to
 register an ID for your step classes. Try to pick something
 that's unlikely to clash with steps from other modules.
 
-###### Inherited from
-
-[`Step`](#step).[`jsonID`](#jsonid)
-
 </dd>
 
 </dl>
@@ -2797,10 +2585,6 @@ object that either indicates failure, if the step can not be
 applied to this document, or indicates success by containing a
 transformed document.
 
-###### Overrides
-
-[`Step`](#step).[`apply`](#apply)
-
 </dd>
 
 </dl>
@@ -2819,10 +2603,6 @@ Get the step map that represents the changes made by this step,
 and which can be used to transform between positions in the old
 and the new document.
 
-###### Overrides
-
-[`Step`](#step).[`getMap`](#getmap)
-
 </dd>
 
 </dl>
@@ -2839,10 +2619,6 @@ and the new document.
 
 Create an inverted version of this step. Needs the document as it
 was before the step as argument.
-
-###### Overrides
-
-[`Step`](#step).[`invert`](#invert-4)
 
 </dd>
 
@@ -2862,10 +2638,6 @@ Map this step through a mappable thing, returning either a
 version of that step with its positions adjusted, or `null` if
 the step was entirely deleted by the mapping.
 
-###### Overrides
-
-[`Step`](#step).[`map`](#map-5)
-
 </dd>
 
 </dl>
@@ -2884,10 +2656,6 @@ Create a JSON-serializeable representation of this step. When
 defining this for a custom subclass, make sure the result object
 includes the step type's [JSON id](https://prosemirror.net/docs/ref/#transform.Step^jsonID) under
 the `stepType` property.
-
-###### Overrides
-
-[`Step`](#step).[`toJSON`](#tojson)
 
 </dd>
 
@@ -2914,10 +2682,6 @@ Update an attribute in a specific node.
 <dd>
 
 Construct an attribute step.
-
-###### Overrides
-
-[`Step`](#step).[`constructor`](#constructor-3)
 
 </dd>
 
@@ -2983,10 +2747,6 @@ Try to merge this step with another one, to be applied directly
 after it. Returns the merged step when possible, null if the
 steps can't be merged.
 
-###### Inherited from
-
-[`Step`](#step).[`merge`](#merge)
-
 </dd>
 
 </dl>
@@ -3005,10 +2765,6 @@ To be able to serialize steps to JSON, each step needs a string
 ID to attach to its JSON representation. Use this method to
 register an ID for your step classes. Try to pick something
 that's unlikely to clash with steps from other modules.
-
-###### Inherited from
-
-[`Step`](#step).[`jsonID`](#jsonid)
 
 </dd>
 
@@ -3029,10 +2785,6 @@ object that either indicates failure, if the step can not be
 applied to this document, or indicates success by containing a
 transformed document.
 
-###### Overrides
-
-[`Step`](#step).[`apply`](#apply)
-
 </dd>
 
 </dl>
@@ -3051,10 +2803,6 @@ Get the step map that represents the changes made by this step,
 and which can be used to transform between positions in the old
 and the new document.
 
-###### Overrides
-
-[`Step`](#step).[`getMap`](#getmap)
-
 </dd>
 
 </dl>
@@ -3071,10 +2819,6 @@ and the new document.
 
 Create an inverted version of this step. Needs the document as it
 was before the step as argument.
-
-###### Overrides
-
-[`Step`](#step).[`invert`](#invert-4)
 
 </dd>
 
@@ -3093,10 +2837,6 @@ was before the step as argument.
 Map this step through a mappable thing, returning either a
 version of that step with its positions adjusted, or `null` if
 the step was entirely deleted by the mapping.
-
-###### Overrides
-
-[`Step`](#step).[`map`](#map-5)
 
 </dd>
 
@@ -3117,10 +2857,6 @@ defining this for a custom subclass, make sure the result object
 includes the step type's [JSON id](https://prosemirror.net/docs/ref/#transform.Step^jsonID) under
 the `stepType` property.
 
-###### Overrides
-
-[`Step`](#step).[`toJSON`](#tojson)
-
 </dd>
 
 </dl>
@@ -3137,10 +2873,6 @@ the `stepType` property.
 
 Deserialize a step from its JSON representation. Will call
 through to the step class' own implementation of this method.
-
-###### Overrides
-
-[`Step`](#step).[`fromJSON`](#fromjson)
 
 </dd>
 
@@ -3167,10 +2899,6 @@ Update an attribute in the doc node.
 <dd>
 
 Construct an attribute step.
-
-###### Overrides
-
-[`Step`](#step).[`constructor`](#constructor-3)
 
 </dd>
 
@@ -3220,10 +2948,6 @@ Try to merge this step with another one, to be applied directly
 after it. Returns the merged step when possible, null if the
 steps can't be merged.
 
-###### Inherited from
-
-[`Step`](#step).[`merge`](#merge)
-
 </dd>
 
 </dl>
@@ -3242,10 +2966,6 @@ To be able to serialize steps to JSON, each step needs a string
 ID to attach to its JSON representation. Use this method to
 register an ID for your step classes. Try to pick something
 that's unlikely to clash with steps from other modules.
-
-###### Inherited from
-
-[`Step`](#step).[`jsonID`](#jsonid)
 
 </dd>
 
@@ -3266,10 +2986,6 @@ object that either indicates failure, if the step can not be
 applied to this document, or indicates success by containing a
 transformed document.
 
-###### Overrides
-
-[`Step`](#step).[`apply`](#apply)
-
 </dd>
 
 </dl>
@@ -3288,10 +3004,6 @@ Get the step map that represents the changes made by this step,
 and which can be used to transform between positions in the old
 and the new document.
 
-###### Overrides
-
-[`Step`](#step).[`getMap`](#getmap)
-
 </dd>
 
 </dl>
@@ -3308,10 +3020,6 @@ and the new document.
 
 Create an inverted version of this step. Needs the document as it
 was before the step as argument.
-
-###### Overrides
-
-[`Step`](#step).[`invert`](#invert-4)
 
 </dd>
 
@@ -3330,10 +3038,6 @@ was before the step as argument.
 Map this step through a mappable thing, returning either a
 version of that step with its positions adjusted, or `null` if
 the step was entirely deleted by the mapping.
-
-###### Overrides
-
-[`Step`](#step).[`map`](#map-5)
 
 </dd>
 
@@ -3354,10 +3058,6 @@ defining this for a custom subclass, make sure the result object
 includes the step type's [JSON id](https://prosemirror.net/docs/ref/#transform.Step^jsonID) under
 the `stepType` property.
 
-###### Overrides
-
-[`Step`](#step).[`toJSON`](#tojson)
-
 </dd>
 
 </dl>
@@ -3374,10 +3074,6 @@ the `stepType` property.
 
 Deserialize a step from its JSON representation. Will call
 through to the step class' own implementation of this method.
-
-###### Overrides
-
-[`Step`](#step).[`fromJSON`](#fromjson)
 
 </dd>
 

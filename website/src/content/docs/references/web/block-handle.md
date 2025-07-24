@@ -20,14 +20,6 @@ sidebar:
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`BlockHandleAddElementBase.constructor`
-
-</dd>
-
 </dl>
 
 ***
@@ -46,14 +38,6 @@ sidebar:
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`BlockHandleDraggableElementBase.constructor`
-
-</dd>
-
 </dl>
 
 ***
@@ -71,14 +55,6 @@ sidebar:
 <code data-typedoc-code><i></i> new <a id="constructor-2" href="#constructor-2">BlockHandlePopoverElement</a>(): [`BlockHandlePopoverElement`](#blockhandlepopoverelement)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`BlockHandlePopoverElementBase.constructor`
-
-</dd>
 
 </dl>
 

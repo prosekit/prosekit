@@ -433,10 +433,6 @@ input, and a `"uiEvent"` property of that may be `"paste"`,
 
 Create a transform that starts with the given document.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`constructor`](transform.md#transform#constructor-5)
-
 </dd>
 
 </dl>
@@ -643,10 +639,6 @@ The starting document.
 
 </dl>
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`before`](transform.md#transform#before)
-
 <dl>
 
 <dt>
@@ -663,10 +655,6 @@ steps).
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`docChanged`](transform.md#transform#docchanged)
 
 #### Methods
 
@@ -899,10 +887,6 @@ when updated to the state produced by this transaction.
 Apply a new step in this transform, saving the result. Throws an
 error when the step fails.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`step`](transform.md#transform#step-1)
-
 </dd>
 
 </dl>
@@ -919,10 +903,6 @@ error when the step fails.
 
 Try to apply a step in this transformation, ignoring it if it
 fails. Returns the step result.
-
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`maybeStep`](transform.md#transform#maybestep)
 
 </dd>
 
@@ -941,10 +921,6 @@ fails. Returns the step result.
 Replace the part of the document between `from` and `to` with the
 given `slice`.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`replace`](transform.md#transform#replace)
-
 </dd>
 
 </dl>
@@ -962,10 +938,6 @@ given `slice`.
 Replace the given range with the given content, which may be a
 fragment, node, or array of nodes.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`replaceWith`](transform.md#transform#replacewith)
-
 </dd>
 
 </dl>
@@ -982,10 +954,6 @@ fragment, node, or array of nodes.
 
 Delete the content between the given positions.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`delete`](transform.md#transform#delete)
-
 </dd>
 
 </dl>
@@ -1001,10 +969,6 @@ Delete the content between the given positions.
 <dd>
 
 Insert the given content at the given position.
-
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`insert`](transform.md#transform#insert)
 
 </dd>
 
@@ -1038,10 +1002,6 @@ primitive tool which will _not_ move the start and end of its given
 range, and is useful in situations where you need more precise
 control over what happens.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`replaceRange`](transform.md#transform#replacerange)
-
 </dd>
 
 </dl>
@@ -1064,10 +1024,6 @@ that does allow the given node to be placed. When the given range
 completely covers a parent node, this method may completely replace
 that parent node.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`replaceRangeWith`](transform.md#transform#replacerangewith)
-
 </dd>
 
 </dl>
@@ -1084,10 +1040,6 @@ that parent node.
 
 Delete the given range, expanding it to cover fully covered
 parent nodes until a valid replace is found.
-
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`deleteRange`](transform.md#transform#deleterange)
 
 </dd>
 
@@ -1109,10 +1061,6 @@ the depth specified by `target`. You'll probably want to use
 [`liftTarget`](https://prosemirror.net/docs/ref/#transform.liftTarget) to compute `target`, to make
 sure the lift is valid.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`lift`](transform.md#transform#lift)
-
 </dd>
 
 </dl>
@@ -1129,10 +1077,6 @@ sure the lift is valid.
 
 Join the blocks around the given position. If depth is 2, their
 last and first siblings are also joined, and so on.
-
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`join`](transform.md#transform#join)
 
 </dd>
 
@@ -1152,10 +1096,6 @@ Wrap the given [range](https://prosemirror.net/docs/ref/#model.NodeRange) in the
 The wrappers are assumed to be valid in this position, and should
 probably be computed with [`findWrapping`](https://prosemirror.net/docs/ref/#transform.findWrapping).
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`wrap`](transform.md#transform#wrap)
-
 </dd>
 
 </dl>
@@ -1173,10 +1113,6 @@ probably be computed with [`findWrapping`](https://prosemirror.net/docs/ref/#tra
 Set the type of all textblocks (partly) between `from` and `to` to
 the given node type with the given attributes.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`setBlockType`](transform.md#transform#setblocktype)
-
 </dd>
 
 </dl>
@@ -1193,10 +1129,6 @@ the given node type with the given attributes.
 
 Change the type, attributes, and/or marks of the node at `pos`.
 When `type` isn't given, the existing node type is preserved,
-
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`setNodeMarkup`](transform.md#transform#setnodemarkup)
 
 </dd>
 
@@ -1216,10 +1148,6 @@ Set a single attribute on a given node to a new value.
 The `pos` addresses the document content. Use `setDocAttribute`
 to set attributes on the document itself.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`setNodeAttribute`](transform.md#transform#setnodeattribute)
-
 </dd>
 
 </dl>
@@ -1235,10 +1163,6 @@ to set attributes on the document itself.
 <dd>
 
 Set a single attribute on the document to a new value.
-
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`setDocAttribute`](transform.md#transform#setdocattribute)
 
 </dd>
 
@@ -1256,10 +1180,6 @@ Set a single attribute on the document to a new value.
 
 Add a mark to the node at position `pos`.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`addNodeMark`](transform.md#transform#addnodemark)
-
 </dd>
 
 </dl>
@@ -1276,10 +1196,6 @@ Add a mark to the node at position `pos`.
 
 Remove a mark (or all marks of the given type) from the node at
 position `pos`.
-
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`removeNodeMark`](transform.md#transform#removenodemark)
 
 </dd>
 
@@ -1301,10 +1217,6 @@ parts split off will inherit the node type of the original node.
 This can be changed by passing an array of types and attributes to
 use after the split (with the outermost nodes coming first).
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`split`](transform.md#transform#split)
-
 </dd>
 
 </dl>
@@ -1320,10 +1232,6 @@ use after the split (with the outermost nodes coming first).
 <dd>
 
 Add the given mark to the inline content between `from` and `to`.
-
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`addMark`](transform.md#transform#addmark)
 
 </dd>
 
@@ -1344,10 +1252,6 @@ Remove marks from inline nodes between `from` and `to`. When
 a mark type, remove all marks of that type. When it is null,
 remove all marks of any type.
 
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`removeMark`](transform.md#transform#removemark)
-
 </dd>
 
 </dl>
@@ -1366,10 +1270,6 @@ Removes all marks and nodes from the content of the node at
 `pos` that don't match the given new parent node type. Accepts
 an optional starting [content match](https://prosemirror.net/docs/ref/#model.ContentMatch) as
 third argument.
-
-###### Inherited from
-
-[`Transform`](transform.md#transform).[`clearIncompatible`](transform.md#transform#clearincompatible)
 
 </dd>
 
@@ -1909,10 +1809,6 @@ position).
 
 Construct a text selection between the given points.
 
-###### Overrides
-
-[`Selection`](#selection-3).[`constructor`](#constructor-4)
-
 </dd>
 
 </dl>
@@ -2005,10 +1901,6 @@ The selection's anchor, as an unresolved position.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`anchor`](#anchor-1)
-
 <dl>
 
 <dt>
@@ -2024,10 +1916,6 @@ The selection's head.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`head`](#head-1)
 
 <dl>
 
@@ -2045,10 +1933,6 @@ The lower bound of the selection's main range.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`from`](#from)
-
 <dl>
 
 <dt>
@@ -2064,10 +1948,6 @@ The upper bound of the selection's main range.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`to`](#to)
 
 <dl>
 
@@ -2085,10 +1965,6 @@ The resolved lower  bound of the selection's main range.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`$from`](#from-1)
-
 <dl>
 
 <dt>
@@ -2105,10 +1981,6 @@ The resolved upper bound of the selection's main range.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`$to`](#to-1)
-
 <dl>
 
 <dt>
@@ -2124,10 +1996,6 @@ Indicates whether the selection contains any content.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`empty`](#empty)
 
 <dl>
 
@@ -2160,10 +2028,6 @@ empty text selection), and null otherwise.
 
 Get the content of this selection as a slice.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`content`](#content)
-
 </dd>
 
 </dl>
@@ -2180,10 +2044,6 @@ Get the content of this selection as a slice.
 
 Replace the selection with the given node, appending the changes
 to the given transaction.
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`replaceWith`](#replacewith-2)
 
 </dd>
 
@@ -2205,10 +2065,6 @@ positive. When `textOnly` is true, only consider cursor
 selections. Will return null when no valid selection position is
 found.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`findFrom`](#findfrom)
-
 </dd>
 
 </dl>
@@ -2226,10 +2082,6 @@ found.
 Find a valid cursor or leaf node selection near the given
 position. Searches forward first by default, but if `bias` is
 negative, it will search backwards first.
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`near`](#near)
 
 </dd>
 
@@ -2250,10 +2102,6 @@ the given document. Will return an
 [`AllSelection`](https://prosemirror.net/docs/ref/#state.AllSelection) if no valid position
 exists.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`atStart`](#atstart)
-
 </dd>
 
 </dl>
@@ -2271,10 +2119,6 @@ exists.
 Find the cursor or leaf node selection closest to the end of the
 given document.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`atEnd`](#atend)
-
 </dd>
 
 </dl>
@@ -2291,10 +2135,6 @@ given document.
 
 Deserialize the JSON representation of a selection. Must be
 implemented for custom classes (as a static class method).
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`fromJSON`](#fromjson-3)
 
 </dd>
 
@@ -2315,10 +2155,6 @@ classes must register themselves with an ID string, so that they
 can be disambiguated. Try to pick something that's unlikely to
 clash with classes from other modules.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`jsonID`](#jsonid)
-
 </dd>
 
 </dl>
@@ -2335,10 +2171,6 @@ clash with classes from other modules.
 
 Map this selection through a [mappable](https://prosemirror.net/docs/ref/#transform.Mappable)
 thing. `doc` should be the new document to which we are mapping.
-
-###### Overrides
-
-[`Selection`](#selection-3).[`map`](#map)
 
 </dd>
 
@@ -2357,10 +2189,6 @@ thing. `doc` should be the new document to which we are mapping.
 Replace the selection with a slice or, if no slice is given,
 delete the selection. Will append to the given transaction.
 
-###### Overrides
-
-[`Selection`](#selection-3).[`replace`](#replace-2)
-
 </dd>
 
 </dl>
@@ -2376,10 +2204,6 @@ delete the selection. Will append to the given transaction.
 <dd>
 
 Test whether the selection is the same as another selection.
-
-###### Overrides
-
-[`Selection`](#selection-3).[`eq`](#eq)
 
 </dd>
 
@@ -2403,10 +2227,6 @@ track and restore old selections.) The default implementation of
 this method just converts the selection to a text selection and
 returns the bookmark for that.
 
-###### Overrides
-
-[`Selection`](#selection-3).[`getBookmark`](#getbookmark)
-
 </dd>
 
 </dl>
@@ -2425,10 +2245,6 @@ Convert the selection to a JSON representation. When implementing
 this for a custom selection class, make sure to give the object a
 `type` property whose value matches the ID under which you
 [registered](https://prosemirror.net/docs/ref/#state.Selection^jsonID) your class.
-
-###### Overrides
-
-[`Selection`](#selection-3).[`toJSON`](#tojson-3)
 
 </dd>
 
@@ -2497,10 +2313,6 @@ point directly before and after the selected node, `anchor` equals
 
 Create a node selection. Does not verify the validity of its
 argument.
-
-###### Overrides
-
-[`Selection`](#selection-3).[`constructor`](#constructor-4)
 
 </dd>
 
@@ -2610,10 +2422,6 @@ The selection's anchor, as an unresolved position.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`anchor`](#anchor-1)
-
 <dl>
 
 <dt>
@@ -2629,10 +2437,6 @@ The selection's head.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`head`](#head-1)
 
 <dl>
 
@@ -2650,10 +2454,6 @@ The lower bound of the selection's main range.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`from`](#from)
-
 <dl>
 
 <dt>
@@ -2669,10 +2469,6 @@ The upper bound of the selection's main range.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`to`](#to)
 
 <dl>
 
@@ -2690,10 +2486,6 @@ The resolved lower  bound of the selection's main range.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`$from`](#from-1)
-
 <dl>
 
 <dt>
@@ -2709,10 +2501,6 @@ The resolved upper bound of the selection's main range.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`$to`](#to-1)
 
 <dl>
 
@@ -2730,10 +2518,6 @@ Indicates whether the selection contains any content.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`empty`](#empty)
-
 #### Methods
 
 <dl>
@@ -2748,10 +2532,6 @@ Indicates whether the selection contains any content.
 
 Replace the selection with a slice or, if no slice is given,
 delete the selection. Will append to the given transaction.
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`replace`](#replace-2)
 
 </dd>
 
@@ -2769,10 +2549,6 @@ delete the selection. Will append to the given transaction.
 
 Replace the selection with the given node, appending the changes
 to the given transaction.
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`replaceWith`](#replacewith-2)
 
 </dd>
 
@@ -2794,10 +2570,6 @@ positive. When `textOnly` is true, only consider cursor
 selections. Will return null when no valid selection position is
 found.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`findFrom`](#findfrom)
-
 </dd>
 
 </dl>
@@ -2815,10 +2587,6 @@ found.
 Find a valid cursor or leaf node selection near the given
 position. Searches forward first by default, but if `bias` is
 negative, it will search backwards first.
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`near`](#near)
 
 </dd>
 
@@ -2839,10 +2607,6 @@ the given document. Will return an
 [`AllSelection`](https://prosemirror.net/docs/ref/#state.AllSelection) if no valid position
 exists.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`atStart`](#atstart)
-
 </dd>
 
 </dl>
@@ -2860,10 +2624,6 @@ exists.
 Find the cursor or leaf node selection closest to the end of the
 given document.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`atEnd`](#atend)
-
 </dd>
 
 </dl>
@@ -2880,10 +2640,6 @@ given document.
 
 Deserialize the JSON representation of a selection. Must be
 implemented for custom classes (as a static class method).
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`fromJSON`](#fromjson-3)
 
 </dd>
 
@@ -2904,10 +2660,6 @@ classes must register themselves with an ID string, so that they
 can be disambiguated. Try to pick something that's unlikely to
 clash with classes from other modules.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`jsonID`](#jsonid)
-
 </dd>
 
 </dl>
@@ -2925,10 +2677,6 @@ clash with classes from other modules.
 Map this selection through a [mappable](https://prosemirror.net/docs/ref/#transform.Mappable)
 thing. `doc` should be the new document to which we are mapping.
 
-###### Overrides
-
-[`Selection`](#selection-3).[`map`](#map)
-
 </dd>
 
 </dl>
@@ -2945,10 +2693,6 @@ thing. `doc` should be the new document to which we are mapping.
 
 Get the content of this selection as a slice.
 
-###### Overrides
-
-[`Selection`](#selection-3).[`content`](#content)
-
 </dd>
 
 </dl>
@@ -2964,10 +2708,6 @@ Get the content of this selection as a slice.
 <dd>
 
 Test whether the selection is the same as another selection.
-
-###### Overrides
-
-[`Selection`](#selection-3).[`eq`](#eq)
 
 </dd>
 
@@ -2987,10 +2727,6 @@ Convert the selection to a JSON representation. When implementing
 this for a custom selection class, make sure to give the object a
 `type` property whose value matches the ID under which you
 [registered](https://prosemirror.net/docs/ref/#state.Selection^jsonID) your class.
-
-###### Overrides
-
-[`Selection`](#selection-3).[`toJSON`](#tojson-3)
 
 </dd>
 
@@ -3013,10 +2749,6 @@ given document again. (This is used mostly by the history to
 track and restore old selections.) The default implementation of
 this method just converts the selection to a text selection and
 returns the bookmark for that.
-
-###### Overrides
-
-[`Selection`](#selection-3).[`getBookmark`](#getbookmark)
 
 </dd>
 
@@ -3079,10 +2811,6 @@ document).
 <dd>
 
 Create an all-selection over the given document.
-
-###### Overrides
-
-[`Selection`](#selection-3).[`constructor`](#constructor-4)
 
 </dd>
 
@@ -3176,10 +2904,6 @@ The selection's anchor, as an unresolved position.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`anchor`](#anchor-1)
-
 <dl>
 
 <dt>
@@ -3195,10 +2919,6 @@ The selection's head.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`head`](#head-1)
 
 <dl>
 
@@ -3216,10 +2936,6 @@ The lower bound of the selection's main range.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`from`](#from)
-
 <dl>
 
 <dt>
@@ -3235,10 +2951,6 @@ The upper bound of the selection's main range.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`to`](#to)
 
 <dl>
 
@@ -3256,10 +2968,6 @@ The resolved lower  bound of the selection's main range.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`$from`](#from-1)
-
 <dl>
 
 <dt>
@@ -3275,10 +2983,6 @@ The resolved upper bound of the selection's main range.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`$to`](#to-1)
 
 <dl>
 
@@ -3296,10 +3000,6 @@ Indicates whether the selection contains any content.
 
 </dl>
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`empty`](#empty)
-
 #### Methods
 
 <dl>
@@ -3313,10 +3013,6 @@ Indicates whether the selection contains any content.
 <dd>
 
 Get the content of this selection as a slice.
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`content`](#content)
 
 </dd>
 
@@ -3334,10 +3030,6 @@ Get the content of this selection as a slice.
 
 Replace the selection with the given node, appending the changes
 to the given transaction.
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`replaceWith`](#replacewith-2)
 
 </dd>
 
@@ -3359,10 +3051,6 @@ positive. When `textOnly` is true, only consider cursor
 selections. Will return null when no valid selection position is
 found.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`findFrom`](#findfrom)
-
 </dd>
 
 </dl>
@@ -3380,10 +3068,6 @@ found.
 Find a valid cursor or leaf node selection near the given
 position. Searches forward first by default, but if `bias` is
 negative, it will search backwards first.
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`near`](#near)
 
 </dd>
 
@@ -3404,10 +3088,6 @@ the given document. Will return an
 [`AllSelection`](https://prosemirror.net/docs/ref/#state.AllSelection) if no valid position
 exists.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`atStart`](#atstart)
-
 </dd>
 
 </dl>
@@ -3425,10 +3105,6 @@ exists.
 Find the cursor or leaf node selection closest to the end of the
 given document.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`atEnd`](#atend)
-
 </dd>
 
 </dl>
@@ -3445,10 +3121,6 @@ given document.
 
 Deserialize the JSON representation of a selection. Must be
 implemented for custom classes (as a static class method).
-
-###### Inherited from
-
-[`Selection`](#selection-3).[`fromJSON`](#fromjson-3)
 
 </dd>
 
@@ -3469,10 +3141,6 @@ classes must register themselves with an ID string, so that they
 can be disambiguated. Try to pick something that's unlikely to
 clash with classes from other modules.
 
-###### Inherited from
-
-[`Selection`](#selection-3).[`jsonID`](#jsonid)
-
 </dd>
 
 </dl>
@@ -3489,10 +3157,6 @@ clash with classes from other modules.
 
 Replace the selection with a slice or, if no slice is given,
 delete the selection. Will append to the given transaction.
-
-###### Overrides
-
-[`Selection`](#selection-3).[`replace`](#replace-2)
 
 </dd>
 
@@ -3513,10 +3177,6 @@ this for a custom selection class, make sure to give the object a
 `type` property whose value matches the ID under which you
 [registered](https://prosemirror.net/docs/ref/#state.Selection^jsonID) your class.
 
-###### Overrides
-
-[`Selection`](#selection-3).[`toJSON`](#tojson-3)
-
 </dd>
 
 </dl>
@@ -3534,10 +3194,6 @@ this for a custom selection class, make sure to give the object a
 Map this selection through a [mappable](https://prosemirror.net/docs/ref/#transform.Mappable)
 thing. `doc` should be the new document to which we are mapping.
 
-###### Overrides
-
-[`Selection`](#selection-3).[`map`](#map)
-
 </dd>
 
 </dl>
@@ -3553,10 +3209,6 @@ thing. `doc` should be the new document to which we are mapping.
 <dd>
 
 Test whether the selection is the same as another selection.
-
-###### Overrides
-
-[`Selection`](#selection-3).[`eq`](#eq)
 
 </dd>
 
@@ -3579,10 +3231,6 @@ given document again. (This is used mostly by the history to
 track and restore old selections.) The default implementation of
 this method just converts the selection to a text selection and
 returns the bookmark for that.
-
-###### Overrides
-
-[`Selection`](#selection-3).[`getBookmark`](#getbookmark)
 
 </dd>
 

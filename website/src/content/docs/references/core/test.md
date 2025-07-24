@@ -28,10 +28,6 @@ Whether the editor is mounted.
 
 </dl>
 
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`mounted`](../core.md#editor#mounted)
-
 <dl>
 
 <dt>
@@ -47,10 +43,6 @@ The editor view.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`view`](../core.md#editor#view)
 
 <dl>
 
@@ -68,10 +60,6 @@ The editor schema.
 
 </dl>
 
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`schema`](../core.md#editor#schema)
-
 <dl>
 
 <dt>
@@ -87,10 +75,6 @@ The editor's current state.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`state`](../core.md#editor#state)
 
 <dl>
 
@@ -108,10 +92,6 @@ Whether the editor is focused.
 
 </dl>
 
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`focused`](../core.md#editor#focused)
-
 <dl>
 
 <dt>
@@ -127,10 +107,6 @@ All [CommandAction](../core.md#commandaction)s defined by the editor.
 </dd>
 
 </dl>
-
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`commands`](../core.md#editor#commands)
 
 <dl>
 
@@ -148,10 +124,6 @@ All [NodeAction](../core.md#nodeaction)s defined by the editor.
 
 </dl>
 
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`nodes`](../core.md#editor#nodes)
-
 <dl>
 
 <dt>
@@ -168,10 +140,6 @@ All [MarkAction](../core.md#markaction)s defined by the editor.
 
 </dl>
 
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`marks`](../core.md#editor#marks)
-
 #### Methods
 
 <dl>
@@ -186,10 +154,6 @@ All [MarkAction](../core.md#markaction)s defined by the editor.
 
 Mount the editor to the given HTML element.
 Pass `null` or `undefined` to unmount the editor.
-
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`mount`](../core.md#editor#mount)
 
 </dd>
 
@@ -207,10 +171,6 @@ Pass `null` or `undefined` to unmount the editor.
 
 Unmount the editor. This is equivalent to `mount(null)`.
 
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`unmount`](../core.md#editor#unmount)
-
 </dd>
 
 </dl>
@@ -226,10 +186,6 @@ Unmount the editor. This is equivalent to `mount(null)`.
 <dd>
 
 Focus the editor.
-
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`focus`](../core.md#editor#focus)
 
 </dd>
 
@@ -247,10 +203,6 @@ Focus the editor.
 
 Blur the editor.
 
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`blur`](../core.md#editor#blur)
-
 </dd>
 
 </dl>
@@ -267,10 +219,6 @@ Blur the editor.
 
 Register an extension to the editor. Return a function to unregister the
 extension.
-
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`use`](../core.md#editor#use)
 
 </dd>
 
@@ -293,10 +241,6 @@ Update the editor's state.
 This is an advanced method. Use it only if you have a specific reason to
 directly manipulate the editor's state.
 
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`updateState`](../core.md#editor#updatestate)
-
 </dd>
 
 </dl>
@@ -312,10 +256,6 @@ directly manipulate the editor's state.
 <dd>
 
 Update the editor's document and selection.
-
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`setContent`](../core.md#editor#setcontent)
 
 </dd>
 
@@ -333,10 +273,6 @@ Update the editor's document and selection.
 
 Return a JSON object representing the editor's current document.
 
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`getDocJSON`](../core.md#editor#getdocjson)
-
 </dd>
 
 </dl>
@@ -352,10 +288,6 @@ Return a JSON object representing the editor's current document.
 <dd>
 
 Return a HTML string representing the editor's current document.
-
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`getDocHTML`](../core.md#editor#getdochtml)
 
 </dd>
 
@@ -374,10 +306,6 @@ Return a HTML string representing the editor's current document.
 Execute the given command. Return `true` if the command was successfully
 executed, otherwise `false`.
 
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`exec`](../core.md#editor#exec)
-
 </dd>
 
 </dl>
@@ -394,10 +322,6 @@ executed, otherwise `false`.
 
 Check if the given command can be executed. Return `true` if the command
 can be executed, otherwise `false`.
-
-###### Inherited from
-
-[`Editor`](../core.md#editor).[`canExec`](../core.md#editor#canexec)
 
 </dd>
 

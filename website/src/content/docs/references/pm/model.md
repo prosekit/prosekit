@@ -1014,14 +1014,6 @@ given an invalid replacement.
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`Error.constructor`
-
-</dd>
-
 </dl>
 
 ##### Constructor
@@ -1033,14 +1025,6 @@ given an invalid replacement.
 <code data-typedoc-code><i></i> new <a id="constructor-4" href="#constructor-4">ReplaceError</a>(`message?`: `string`, `options?`: `ErrorOptions`): [`ReplaceError`](#replaceerror)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`Error.constructor`
-
-</dd>
 
 </dl>
 

@@ -20,14 +20,6 @@ sidebar:
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`TooltipContentElementBase.constructor`
-
-</dd>
-
 </dl>
 
 #### Properties
@@ -453,14 +445,6 @@ information.
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`TooltipRootElementBase.constructor`
-
-</dd>
-
 </dl>
 
 #### Properties
@@ -540,14 +524,6 @@ Whether the popover is open.
 <code data-typedoc-code><i></i> new <a id="constructor-2" href="#constructor-2">TooltipTriggerElement</a>(): [`TooltipTriggerElement`](#tooltiptriggerelement)</code>
 
 </dt>
-
-<dd>
-
-###### Inherited from
-
-`TooltipTriggerElementBase.constructor`
-
-</dd>
 
 </dl>
 

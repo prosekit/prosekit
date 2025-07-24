@@ -20,14 +20,6 @@ sidebar:
 
 </dt>
 
-<dd>
-
-###### Inherited from
-
-`InlinePopoverElementBase.constructor`
-
-</dd>
-
 </dl>
 
 #### Properties

@@ -27,7 +27,7 @@ importers:
         specifier: workspace:*
         version: link:packages/config-unocss
       '@size-limit/esbuild-why':
-        specifier: ^11.2.0
+        specifier: ^11.1.0
         version: 11.2.0(size-limit@11.2.0)
       '@size-limit/preset-small-lib':
         specifier: ^11.2.0

@@ -1,5 +1,13 @@
 # prosekit
 
+## 0.14.2
+
+### Patch Changes
+
+- [`941c94f`](https://github.com/ocavue/prosekit/commit/941c94f1c00047feb98f21f55734602905d123f5) ![](https://prosekit.dev/b/extensions)
+
+  Add `language-*` class to `<code>` elements in code blocks. This improves compatibility with the remark/rehype ecosystem that expect this class naming convention.
+
 ## 0.14.1
 
 ### Patch Changes
@@ -65,18 +73,20 @@
   ### Using the `derive` Function
 
   `useEditorDerivedValue` accepts a `derive` function as its first argument. This function:
+
   1.  Receives the `editor` instance.
   2.  Computes and returns a value based on the editor's current state.
   3.  Is called when the editor mounts and whenever the editor's document or selection state changes.
 
   Crucially, the **`derive` function must be memoized**. If it's re-created on every render, `useEditorDerivedValue` might not work as expected and could lead to performance issues.
+
   - **If defined inside a component, wrap `derive` with `useCallback`:**
 
     ```tsx
     // ✅ Good: derive function is memoized
     const isBoldActive = useEditorDerivedValue(
-      useCallback((editor) => editor.marks.bold.isActive(), []),
-    )
+      useCallback((editor) => editor.marks.bold.isActive(), [])
+    );
     ```
 
   - **If defined outside a component, it's naturally stable:**
@@ -84,11 +94,11 @@
     ```tsx
     // ✅ Good: derive function is stable (defined outside)
     function getBoldState(editor) {
-      return editor.marks.bold.isActive()
+      return editor.marks.bold.isActive();
     }
 
     function MyComponent() {
-      const isBoldActive = useEditorDerivedValue(getBoldState)
+      const isBoldActive = useEditorDerivedValue(getBoldState);
       // ...
     }
     ```
@@ -98,8 +108,8 @@
     ```tsx
     // ❌ Bad: derive function is not memoized
     const isBoldActive = useEditorDerivedValue((editor) =>
-      editor.marks.bold.isActive(),
-    )
+      editor.marks.bold.isActive()
+    );
     ```
 
   ### Migration Example
@@ -108,13 +118,13 @@
 
   ```tsx
   // Before
-  import { useEditor } from 'prosekit/react'
+  import { useEditor } from "prosekit/react";
 
-  import Button from './button'
-  import type { EditorExtension } from './extension'
+  import Button from "./button";
+  import type { EditorExtension } from "./extension";
 
   export default function Toolbar() {
-    const editor = useEditor<EditorExtension>({ update: true })
+    const editor = useEditor<EditorExtension>({ update: true });
 
     return (
       <div className="CSS_TOOLBAR">
@@ -135,17 +145,17 @@
           H2
         </Button>
       </div>
-    )
+    );
   }
   ```
 
   ```tsx
   // After
-  import type { Editor } from 'prosekit/core'
-  import { useEditorDerivedValue } from 'prosekit/react'
+  import type { Editor } from "prosekit/core";
+  import { useEditorDerivedValue } from "prosekit/react";
 
-  import Button from './button'
-  import type { EditorExtension } from './extension'
+  import Button from "./button";
+  import type { EditorExtension } from "./extension";
 
   function getToolbarItems(editor: Editor<EditorExtension>) {
     return {
@@ -159,11 +169,11 @@
         canExec: editor.commands.toggleHeading.canExec({ level: 2 }),
         command: () => editor.commands.toggleHeading({ level: 2 }),
       },
-    }
+    };
   }
 
   export default function Toolbar() {
-    const items = useEditorDerivedValue(getToolbarItems)
+    const items = useEditorDerivedValue(getToolbarItems);
 
     return (
       <div className="CSS_TOOLBAR">
@@ -185,7 +195,7 @@
           H2
         </Button>
       </div>
-    )
+    );
   }
   ```
 
@@ -276,15 +286,15 @@
   _Before_:
 
   ```ts
-  import { defineDoc, defineText, defineParagraph } from 'prosekit/core'
+  import { defineDoc, defineText, defineParagraph } from "prosekit/core";
   ```
 
   _After_:
 
   ```ts
-  import { defineDoc } from 'prosekit/extensions/doc'
-  import { defineText } from 'prosekit/extensions/text'
-  import { defineParagraph } from 'prosekit/extensions/paragraph'
+  import { defineDoc } from "prosekit/extensions/doc";
+  import { defineText } from "prosekit/extensions/text";
+  import { defineParagraph } from "prosekit/extensions/paragraph";
   ```
 
 - [`581ed6f`](https://github.com/ocavue/prosekit/commit/581ed6f8e36b29d805e4b81e1b452e71454350f1) ![](https://prosekit.dev/b/extensions)
@@ -428,6 +438,7 @@
 - [`b5c0225`](https://github.com/ocavue/prosekit/commit/b5c022531ea9463e50df90e8a471c8e77a9355e6) ![](https://prosekit.dev/b/extensions)
 
   Add a new `prosekit/extensions/file` module to handle files in the editor:
+
   - `defineFilePasteHandler`: Handle files pasted into the editor
   - `defineFileDropHandler`: Handle files dropped into the editor
   - `UploadTask`: Manage file uploads
@@ -443,10 +454,12 @@
 - [`1b080e7`](https://github.com/ocavue/prosekit/commit/1b080e7dc86d4c8d54aee6aaeb568594dd7a7908) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
 
   This version introduces significant changes to the event handling mechanism for components:
+
   - Implementation Changes: Events are no longer handled by passing them to callback functions. Instead, the underlying custom elements now use `dispatchEvent()` to propagate events upwards, similar to native HTML elements. This approach allows for more native-like event handling, reducing code complexity.
   - Impact on UI Framework Integrations (React, Vue, Preact, Svelte, Solid): Except for the following change, the API remains largely unchanged.
 
   Event handlers for component `ResizableRoot` has changed:
+
   - Removed: `onSizeChangeStart`, `onSizeChange`, `onSizeChangeEnd`
   - Replaced with: `onResizeStart`, `onResizeEnd`.
 
@@ -454,7 +467,7 @@
   // Previous code example
   <ResizableRoot
     onSizeChangeEnd={(size) => {
-      handle(size.width, size.height)
+      handle(size.width, size.height);
     }}
   />
   ```
@@ -463,7 +476,7 @@
   // Updated code example
   <ResizableRoot
     onResizeEnd={(event) => {
-      handle(event.size.width, event.size.height)
+      handle(event.size.width, event.size.height);
     }}
   />
   ```
@@ -531,6 +544,7 @@
 - [`f3ff15a`](https://github.com/ocavue/prosekit/commit/f3ff15a4837c676a45759f1b467d42b8628a3129) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
 
   Add new components:
+
   - `BlockHandlePopover`: A popover that appears on the left side of a block when you hover over it.
   - `BlockHandleAdd`: A button that lets you insert a new block below the one you're hovering over.
   - `BlockHandleDraggable`: A draggable component that allows to reorder a block.
@@ -548,6 +562,7 @@
 - [`80572dd`](https://github.com/ocavue/prosekit/commit/80572dd788a6019d128200487dafdf50264d573e) ![](https://prosekit.dev/b/extensions)
 
   Add the following command functions to the table extension:
+
   - `selectTable`
   - `selectTableCell`
   - `selectTableColumn`
@@ -604,6 +619,7 @@
 - [`76fb642`](https://github.com/ocavue/prosekit/commit/76fb64238637f76a9c26b2f2dcca5a79c3a45e3b) ![](https://prosekit.dev/b/core)
 
   Add some common util functions for working with ProseMirror.
+
   - `findParentNode`
   - `findParentNodeOfTypes`
   - `collectChildren`
@@ -1122,6 +1138,7 @@
 - [`c0f4e51`](https://github.com/ocavue/prosekit/commit/c0f4e51af135a594e0949ed2dfd8c543be290668) ![](https://prosekit.dev/b/core)
 
   Added new utility functions for converting between ProseMirror data and HTML:
+
   - `elementFromJSON`
   - `elementFromNode`
   - `htmlFromJSON`
@@ -1134,6 +1151,7 @@
 - [`c23c231`](https://github.com/ocavue/prosekit/commit/c23c2312915616269eea7808729796d51f10a92a) ![](https://prosekit.dev/b/core)
 
   Add following functions for defining event handlers.
+
   - `defineDOMEventHandler`
   - `defineKeyDownHandler`
   - `defineKeyPressHandler`
@@ -1359,6 +1377,7 @@
 - [`1393d74`](https://github.com/ocavue/prosekit/commit/1393d740e35118c27b84ae535156cf3030914a6f) ![](https://prosekit.dev/b/core)
 
   Add the following functions to register event handlers into the editor.
+
   - `defineMountHandler`
   - `defineUnmountHandler`
   - `defineUpdateHandler`
@@ -1417,8 +1436,8 @@
   Improve the styling API. Now ProseKit exports two CSS files that you can import to get started.
 
   ```js
-  import 'prosekit/basic/style.css'
-  import 'prosekit/basic/typography.css'
+  import "prosekit/basic/style.css";
+  import "prosekit/basic/typography.css";
   ```
 
 ### Patch Changes
@@ -1539,9 +1558,9 @@
   Add new readonly extension.
 
   ```ts
-  import { defineReadonly } from 'prosekit/extensions/readonly'
+  import { defineReadonly } from "prosekit/extensions/readonly";
 
-  const extension = defineReadonly()
+  const extension = defineReadonly();
   ```
 
 - [`0c60503`](https://github.com/ocavue/prosekit/commit/0c60503) ![](https://prosekit.dev/b/preact) !![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/vue)

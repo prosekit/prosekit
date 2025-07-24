@@ -140,9 +140,10 @@ jobs:
           args: >
             --include-fragments
             --fallback-extensions html
-            --no-progress './**/*.html'
+            --no-progress
             --exclude 'https://prosemirror.net/docs/ref/#model.DOMParser.fromSchema'
             --exclude 'https://prosemirror.net/docs/ref/#model.DOMSerializer.fromSchema'
+            './**/*.html'
           debug: true
           fail: true
           failIfEmpty: true

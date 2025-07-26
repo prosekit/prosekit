@@ -1,18 +1,18 @@
 import { defineCustomElement, registerCustomElement, type BaseElementConstructor } from "@aria-ui/core"
 
-import { useInlinePopover } from "./setup"
-import { inlinePopoverEvents, inlinePopoverProps, type InlinePopoverEvents, type InlinePopoverProps } from "./types"
+import { useDropIndicator } from "./setup"
+import { dropIndicatorEvents, dropIndicatorProps, type DropIndicatorEvents, type DropIndicatorProps } from "./types"
 
-const InlinePopoverElementBase: BaseElementConstructor<InlinePopoverProps> = defineCustomElement<
-  InlinePopoverProps,
-  InlinePopoverEvents
+const DropIndicatorElementBase: BaseElementConstructor<DropIndicatorProps> = defineCustomElement<
+  DropIndicatorProps,
+  DropIndicatorEvents
 >({
-  props: inlinePopoverProps,
-  events: inlinePopoverEvents,
-  setup: useInlinePopover,
+  props: dropIndicatorProps,
+  events: dropIndicatorEvents,
+  setup: useDropIndicator,
 })
-class InlinePopoverElement extends InlinePopoverElementBase {}
+class DropIndicatorElement extends DropIndicatorElementBase {}
 
-registerCustomElement('prosekit-inline-popover', InlinePopoverElement)
+registerCustomElement('prosekit-drop-indicator', DropIndicatorElement)
   
-export { InlinePopoverElement }
+export { DropIndicatorElement }

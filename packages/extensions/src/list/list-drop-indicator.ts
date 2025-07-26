@@ -1,7 +1,7 @@
 import type { PlainExtension } from '@prosekit/core'
 
 import type { DragEventHandler } from '../drop-indicator'
-import { defineDropIndicatorHandlers } from '../drop-indicator'
+import { defineDropIndicator } from '../drop-indicator'
 
 /**
  * Configures drop indicator to avoid unexpected drop point.
@@ -12,12 +12,12 @@ import { defineDropIndicatorHandlers } from '../drop-indicator'
  * @internal
  */
 export function defineListDropIndicator(): PlainExtension {
-  return defineDropIndicatorHandlers({
+  return defineDropIndicator({
     onDrag,
   })
 }
 
-const onDrag: DragEventHandler = ({ view, pos }) => {
+const onDrag: DragEventHandler = ({ view, pos }): boolean => {
   const slice = view.dragging?.slice
   if (
     slice
@@ -33,4 +33,5 @@ const onDrag: DragEventHandler = ({ view, pos }) => {
       }
     }
   }
+  return true
 }

@@ -12,7 +12,7 @@ export type Point = Readonly<{ x: number; y: number }>
  *
  * @public
  */
-export type DragEventHandler = (options: DragEventHandlerOptions) => boolean | void
+export type DragEventHandler = (options: DragEventHandlerOptions) => boolean
 
 /**
  * Options for {@link DragEventHandler}.
@@ -35,9 +35,28 @@ export interface DragEventHandlerOptions {
 }
 
 /**
- * @internal
+ * A function that will be called when the drop indicator should be shown.
+ *
+ * @public
  */
-export interface DropIndicatorPluginOptions {
-  width: number
-  onDrag: DragEventHandler
+export type DrawEventHandler = (options: DrawEventHandlerOptions) => void
+
+/**
+ * Options for {@link DrawEventHandler}.
+ *
+ * @public
+ */
+export interface DrawEventHandlerOptions {
+  /**
+   * The editor's view.
+   */
+  view: EditorView
+  /**
+   * The drop position in current document.
+   */
+  pos: number
+  /**
+   * The bounding rectangle of the drop position.
+   */
+  rect: DOMRect
 }

@@ -1,6 +1,9 @@
 import type { PlainExtension } from '@prosekit/core'
 
-import { defineDropIndicatorPayload } from './v3_drop-indicator-facet'
+import {
+  defineDropIndicatorPayload,
+  type DropIndicatorPayload,
+} from './v3_drop-indicator-facet'
 
 /**
  * @internal
@@ -22,10 +25,7 @@ export type DropIndicatorExtension = PlainExtension
 export function defineDropIndicator(
   options?: DropIndicatorOptions,
 ): DropIndicatorExtension {
-  return defineDropIndicatorPayload({
-    enabled: true,
-    width: options?.width,
-  })
+  return defineDropIndicatorPayload(options ?? {})
 }
 
 /**
@@ -33,11 +33,4 @@ export function defineDropIndicator(
  *
  * @public
  */
-export interface DropIndicatorOptions {
-  /**
-   * The precise width of the drop indicator in pixels.
-   *
-   * @default 2
-   */
-  width?: number
-}
+export interface DropIndicatorOptions extends DropIndicatorPayload {}

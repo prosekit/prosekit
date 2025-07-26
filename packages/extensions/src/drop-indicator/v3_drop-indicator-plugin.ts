@@ -16,7 +16,19 @@ import {
   createAnchorFinder,
   type Anchor,
 } from './v3_drop-anchor'
-import type { DropIndicatorPluginOptions } from './v3_types'
+import type {
+  DragEventHandler,
+  DrawEventHandler,
+} from './v3_types'
+
+/**
+ * @internal
+ */
+interface DropIndicatorPluginOptions {
+  width: number
+  onDrag: DragEventHandler
+  onDraw: DrawEventHandler
+}
 
 /**
  * @internal

@@ -131,6 +131,7 @@ const config: AstroUserConfig = {
     }),
     UnoCSS({
       inspector: false,
+      // mode: process.env.NODE_ENV === 'development' ? 'per-module' : undefined,
     }),
     preact({ include: ['src/*/preact/**/*.tsx'] }),
     react({

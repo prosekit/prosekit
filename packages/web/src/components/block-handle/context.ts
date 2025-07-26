@@ -24,3 +24,16 @@ export const blockPopoverContext: Context<BlockPopoverContext> = createContext(
   'prosekit-block-popover-context',
   null,
 )
+
+/**
+ * @internal
+ */
+export type DraggingContext = boolean
+
+/**
+ * @internal
+ */
+export const draggingContext: Context<DraggingContext> = createContext(
+  'prosekit-block-handle-dragging-context',
+  false,
+)

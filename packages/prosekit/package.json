@@ -42,6 +42,7 @@
     "./extensions/commit/style.css": "./src/extensions/commit/style.css",
     "./extensions/doc": "./src/extensions/doc.gen.ts",
     "./extensions/drop-cursor": "./src/extensions/drop-cursor.gen.ts",
+    "./extensions/drop-indicator": "./src/extensions/drop-indicator.gen.ts",
     "./extensions/enter-rule": "./src/extensions/enter-rule.gen.ts",
     "./extensions/file": "./src/extensions/file.gen.ts",
     "./extensions/gap-cursor": "./src/extensions/gap-cursor.gen.ts",
@@ -297,6 +298,10 @@
       "./extensions/drop-cursor": {
         "types": "./dist/prosekit-extensions-drop-cursor.d.ts",
         "default": "./dist/prosekit-extensions-drop-cursor.js"
+      },
+      "./extensions/drop-indicator": {
+        "types": "./dist/prosekit-extensions-drop-indicator.d.ts",
+        "default": "./dist/prosekit-extensions-drop-indicator.js"
       },
       "./extensions/enter-rule": {
         "types": "./dist/prosekit-extensions-enter-rule.d.ts",
@@ -735,6 +740,9 @@
         "extensions/drop-cursor": [
           "./dist/prosekit-extensions-drop-cursor.d.ts"
         ],
+        "extensions/drop-indicator": [
+          "./dist/prosekit-extensions-drop-indicator.d.ts"
+        ],
         "extensions/enter-rule": [
           "./dist/prosekit-extensions-enter-rule.d.ts"
         ],
@@ -1014,6 +1022,16 @@
   "dev": {
     "entry": {
       "prosekit": "./src/index.ts",
+      "prosekit-pm": "./src/pm.ts",
+      "prosekit-pm-commands": "./src/pm/commands.ts",
+      "prosekit-pm-history": "./src/pm/history.ts",
+      "prosekit-pm-inputrules": "./src/pm/inputrules.ts",
+      "prosekit-pm-keymap": "./src/pm/keymap.ts",
+      "prosekit-pm-model": "./src/pm/model.ts",
+      "prosekit-pm-state": "./src/pm/state.ts",
+      "prosekit-pm-transform": "./src/pm/transform.ts",
+      "prosekit-pm-view": "./src/pm/view.ts",
+      "pm/view/style/prosemirror": "./src/pm/view/style/prosemirror.css",
       "prosekit-basic": "./src/basic.gen.ts",
       "basic/style": "./src/basic/style.css",
       "basic/typography": "./src/basic/typography.css",
@@ -1029,6 +1047,7 @@
       "extensions/commit/style": "./src/extensions/commit/style.css",
       "prosekit-extensions-doc": "./src/extensions/doc.gen.ts",
       "prosekit-extensions-drop-cursor": "./src/extensions/drop-cursor.gen.ts",
+      "prosekit-extensions-drop-indicator": "./src/extensions/drop-indicator.gen.ts",
       "prosekit-extensions-enter-rule": "./src/extensions/enter-rule.gen.ts",
       "prosekit-extensions-file": "./src/extensions/file.gen.ts",
       "prosekit-extensions-gap-cursor": "./src/extensions/gap-cursor.gen.ts",
@@ -1071,16 +1090,6 @@
       "prosekit-lit-resizable": "./src/lit/resizable.gen.ts",
       "prosekit-lit-table-handle": "./src/lit/table-handle.gen.ts",
       "prosekit-lit-tooltip": "./src/lit/tooltip.gen.ts",
-      "prosekit-pm": "./src/pm.ts",
-      "prosekit-pm-commands": "./src/pm/commands.ts",
-      "prosekit-pm-history": "./src/pm/history.ts",
-      "prosekit-pm-inputrules": "./src/pm/inputrules.ts",
-      "prosekit-pm-keymap": "./src/pm/keymap.ts",
-      "prosekit-pm-model": "./src/pm/model.ts",
-      "prosekit-pm-state": "./src/pm/state.ts",
-      "prosekit-pm-transform": "./src/pm/transform.ts",
-      "prosekit-pm-view": "./src/pm/view.ts",
-      "pm/view/style/prosemirror": "./src/pm/view/style/prosemirror.css",
       "prosekit-preact": "./src/preact.gen.ts",
       "prosekit-preact-autocomplete": "./src/preact/autocomplete.gen.ts",
       "prosekit-preact-block-handle": "./src/preact/block-handle.gen.ts",

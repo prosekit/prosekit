@@ -7,6 +7,7 @@ import {
   defineListCommands,
   type ListCommandsExtension,
 } from './list-commands'
+import { defineListDropIndicator } from './list-drop-indicator'
 import { defineListInputRules } from './list-input-rules'
 import { defineListKeymap } from './list-keymap'
 import { defineListPlugins } from './list-plugins'
@@ -42,6 +43,7 @@ export function defineList(): ListExtension {
     defineListInputRules(),
     defineListCommands(),
     defineListSerializer(),
+    defineListDropIndicator(),
   )
 }
 

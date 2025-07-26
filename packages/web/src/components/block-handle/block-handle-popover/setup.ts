@@ -1,4 +1,5 @@
 import {
+  createComputed,
   createSignal,
   useAttribute,
   useEffect,
@@ -14,6 +15,7 @@ import type { Editor } from '@prosekit/core'
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import {
   blockPopoverContext,
+  draggingContext,
   type BlockPopoverContext,
   type HoverState,
 } from '../context'
@@ -41,17 +43,37 @@ export function useBlockHandlePopover(
   const context = createSignal<BlockPopoverContext>(null)
   blockPopoverContext.provide(host, context)
 
-  const open = createSignal(false)
+  const dragging = createSignal(false)
+  draggingContext.provide(host, dragging)
 
-  useEffect(host, () => {
-    open.set(!!context.get())
-  })
+  const open = createComputed(() => (!!context.get()))
 
   useHoverExtension(host, editor, (referenceValue, hoverState) => {
     reference.set(referenceValue)
     context.set(hoverState)
     const stateChangeDetails = hoverState ? { node: hoverState.node, pos: hoverState.pos } : null
     emit('stateChange', stateChangeDetails)
+  })
+
+  // TODO
+  useEffect(host, () => {
+    if (dragging.get()) {
+      // TODO: is this the correct way?
+      host.style.opacity = '0.2'
+
+      // During dragging, if the mouse is above the block handle, we want the
+      // drag event to pass through the block handle so that the underlay editor
+      // can receive this event. We need to add a small delay so that the first
+      // `dragstart` event can be triggered correctly by the
+      // `<prosekit-block-handle-draggable>` element.
+      const id = requestAnimationFrame(() => {
+        host.style.pointerEvents = 'none'
+      })
+      return () => cancelAnimationFrame(id)
+    } else {
+      host.style.opacity = ''
+      host.style.pointerEvents = ''
+    }
   })
 
   useAttribute(host, 'data-state', () => (open.get() ? 'open' : 'closed'))

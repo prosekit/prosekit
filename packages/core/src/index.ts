@@ -298,3 +298,15 @@ export {
 } from './utils/type-assertion'
 export * from './utils/unicode'
 export { withSkipCodeBlock } from './utils/with-skip-code-block'
+
+let cachedMessages: string[] = []
+
+// TODO: remove me
+export function debug(message: string): void {
+  if (!cachedMessages.includes(message)) {
+    cachedMessages.push(message)
+  }
+  if (cachedMessages.length > 10) {
+    cachedMessages.shift()
+  }
+}

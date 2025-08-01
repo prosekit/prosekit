@@ -29,6 +29,8 @@ jobs:
 
   publish:
     name: Publish
+    permissions:
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -41,8 +43,6 @@ jobs:
       - name: Publish to NPM
         run: |
           pnpm ci:publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Get package version
         run: |

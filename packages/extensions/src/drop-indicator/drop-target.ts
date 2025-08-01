@@ -69,7 +69,7 @@ export function buildGetTarget(
       && rect.height === prevRect.height
       && rect.x === prevRect.x
       && rect.y === prevRect.y
-      && prevDoc.eq(view.state.doc)
+      && prevDoc.eq(doc)
     ) {
       return prevTargets
     }

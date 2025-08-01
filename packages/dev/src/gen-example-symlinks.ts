@@ -70,6 +70,9 @@ const mapping: Record<string, string[]> = {
     'examples/preact/keymap/',
     'examples/preact/readonly/',
   ],
+  'shared/preact/drop-indicator.tsx': [
+    /// keep-sorted
+  ],
   'shared/preact/slash-menu-empty.tsx': [
     /// keep-sorted
     'examples/preact/slash-menu/',
@@ -93,9 +96,6 @@ const mapping: Record<string, string[]> = {
   'shared/preact/use-submit-keymap.ts': [
     /// keep-sorted
     'examples/preact/keymap/',
-  ],
-  'shared/preact/drop-indicator.tsx': [
-    /// keep-sorted
   ],
 
   // React
@@ -197,6 +197,9 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/solid/code-block/',
   ],
+  'shared/solid/drop-indicator.tsx': [
+    /// keep-sorted
+  ],
   'shared/solid/table-handle.tsx': [
     /// keep-sorted
     'examples/solid/table/',
@@ -208,9 +211,6 @@ const mapping: Record<string, string[]> = {
   'shared/solid/use-submit-keymap.ts': [
     /// keep-sorted
     'examples/solid/keymap/',
-  ],
-  'shared/solid/drop-indicator.tsx': [
-    /// keep-sorted
   ],
 
   // Svelte
@@ -235,6 +235,10 @@ const mapping: Record<string, string[]> = {
   'shared/svelte/code-block-view.svelte': [
     /// keep-sorted
     'examples/svelte/code-block/',
+    'examples/svelte/full/',
+  ],
+  'shared/svelte/drop-indicator.svelte': [
+    /// keep-sorted
     'examples/svelte/full/',
   ],
   'shared/svelte/slash-menu-empty.svelte': [
@@ -264,10 +268,6 @@ const mapping: Record<string, string[]> = {
   'shared/svelte/use-submit-keymap.ts': [
     /// keep-sorted
     'examples/svelte/keymap/',
-  ],
-  'shared/svelte/drop-indicator.svelte': [
-    /// keep-sorted
-    'examples/svelte/full/',
   ],
 
   // Vue

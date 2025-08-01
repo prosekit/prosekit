@@ -30,6 +30,10 @@ export const exampleMeta = {
         {
           "path": "block-handle.tsx",
           "hidden": false
+        },
+        {
+          "path": "drop-indicator.tsx",
+          "hidden": false
         }
       ]
     },
@@ -852,6 +856,10 @@ export const exampleMeta = {
         {
           "path": "block-handle.vue",
           "hidden": false
+        },
+        {
+          "path": "drop-indicator.vue",
+          "hidden": false
         }
       ]
     },
@@ -1028,6 +1036,10 @@ export const exampleMeta = {
         },
         {
           "path": "default-content-full.ts",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.vue",
           "hidden": false
         },
         {
@@ -1987,6 +1999,10 @@ export const exampleMeta = {
         },
         {
           "path": "default-content-full.ts",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.svelte",
           "hidden": false
         },
         {

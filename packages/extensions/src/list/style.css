@@ -59,7 +59,8 @@
 
     &::before {
       position: absolute;
-      left: 0;
+      right: calc(100% - 1.5em);
+      right: calc(100% - 1lh);
       content: counter(prosemirror-flat-list-counter, decimal) ". ";
       font-variant-numeric: tabular-nums;
     }

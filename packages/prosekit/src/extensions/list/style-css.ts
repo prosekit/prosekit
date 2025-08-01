@@ -1,7 +1,7 @@
 /**
  * A CSS file that contains styles for the list extension.
  *
- * This file is already included in `prosekit/basic/style.css`.
+ * This file is already included in [`prosekit/basic/style.css`](/references/basic/stylecss/).
  *
  * It contains the following CSS variables:
  *
@@ -10,6 +10,8 @@
  *   open.
  * - `--prosekit-list-toggle-closed-icon`: The icon for the toggle list when it
  *   is closed.
+ *
+ * [view source code](https://unpkg.com/prosekit/extensions/list/style.css)
  *
  * @module prosekit/extensions/list/style.css
  */

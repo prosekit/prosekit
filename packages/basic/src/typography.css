@@ -198,20 +198,6 @@
   }
 
   /*
-   In Chrome, when an editor is styled with a background color and a selected
-   node is dragged, the dragged element inherits this background color, along
-   with an additional shadow effect. This visual is not ideal, especially when
-   the dragged element lacks any margin or padding. To address this issue, we
-   adjust the z-index of the dragged element as a workaround, preventing it from
-   inheriting the background color.
-
-   See also https://stackoverflow.com/a/61812377
-   */
-  .ProseMirror-selectednode {
-    z-index: calc(infinity);
-  }
-
-  /*
    Don't generate box for node view wrapper. This make it easier to style
    the node views.
    */

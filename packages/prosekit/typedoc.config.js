@@ -7,7 +7,7 @@ import packageJson from './package.json' with { type: 'json' }
  */
 const entryPoints = Object.values(packageJson.exports)
   // Inject documentation for some css files
-  .map((entryPoint) => entryPoint.replace(/^\.\/src\/basic\/(.*)\.css$/, './src/basic/$1-css.ts'))
+  .map((entryPoint) => entryPoint.replace(/^\.\/src\/(.*)\.css$/, './src/$1-css.ts'))
   // Filter out CSS files
   .filter((entryPoint) => !entryPoint.endsWith('.css'))
   .filter((entryPoint) => !!entryPoint)

@@ -6,6 +6,7 @@ import { ProseKit } from 'prosekit/react'
 import { useMemo } from 'react'
 
 import BlockHandle from './block-handle'
+import DropIndicator from './drop-indicator'
 import { defineExtension } from './extension'
 
 const defaultContent = `
@@ -64,6 +65,7 @@ export default function Editor() {
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>
           <BlockHandle />
+          <DropIndicator />
         </div>
       </div>
     </ProseKit>

@@ -12,6 +12,8 @@ import { vfs } from './virtual-file-system'
 //
 /// keep-sorted
 const mapping: Record<string, string[]> = {
+  // Common
+
   'shared/common/default-content-full.ts': [
     /// keep-sorted
     'examples/react/full/',
@@ -60,6 +62,9 @@ const mapping: Record<string, string[]> = {
     'shared/react/',
     'shared/vue/',
   ],
+
+  // Preact
+
   'shared/preact/button.tsx': [
     /// keep-sorted
     'examples/preact/keymap/',
@@ -89,6 +94,9 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/preact/keymap/',
   ],
+
+  // React
+
   'shared/react/block-handle.tsx': [
     /// keep-sorted
     'examples/react/block-handle/',
@@ -115,6 +123,11 @@ const mapping: Record<string, string[]> = {
   'shared/react/code-block-view.tsx': [
     /// keep-sorted
     'examples/react/code-block/',
+    'examples/react/full/',
+  ],
+  'shared/react/drop-indicator.tsx': [
+    /// keep-sorted
+    'examples/react/block-handle/',
     'examples/react/full/',
   ],
   'shared/react/image-upload-popover.tsx': [
@@ -165,6 +178,9 @@ const mapping: Record<string, string[]> = {
     'examples/react/full/',
     'examples/react/user-menu/',
   ],
+
+  // Solid
+
   'shared/solid/button.tsx': [
     /// keep-sorted
     'examples/solid/code-block/',
@@ -190,6 +206,9 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/solid/keymap/',
   ],
+
+  // Svelte
+
   'shared/svelte/block-handle.svelte': [
     /// keep-sorted
     'examples/svelte/full/',
@@ -240,6 +259,9 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/svelte/keymap/',
   ],
+
+  // Vue
+
   'shared/vue/block-handle.vue': [
     /// keep-sorted
     'examples/vue/block-handle/',

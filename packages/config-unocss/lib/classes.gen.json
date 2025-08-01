@@ -7,6 +7,7 @@
   "CSS_BLOCK_HANDLE_POPOVER": "flex items-center flex-row box-border justify-center transition border-0 [&:not([data-state])]:hidden will-change-transform data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=open]:animate-duration-150 data-[state=closed]:animate-duration-200",
   "CSS_BUTTON_PRIMARY": "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white dark:ring-offset-gray-950 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 dark:focus-visible:ring-gray-300 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900 hover:bg-gray-900/90 dark:hover:bg-gray-50/90 h-10 px-4 py-2",
   "CSS_DROP_CURSOR": "transition-all bg-blue-500",
+  "CSS_DROP_INDICATOR": "z-50 transition-all bg-blue-500",
   "CSS_EDITOR_CONTENT": "ProseMirror box-border min-h-full px-[max(4rem,_calc(50%-20rem))] py-8 outline-none outline-0 [&_span[data-mention=user]]:text-blue-500 [&_span[data-mention=tag]]:text-violet-500",
   "CSS_EDITOR_SCROLLING": "relative w-full flex-1 box-border overflow-y-scroll",
   "CSS_EDITOR_VIEWPORT": "box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow flex flex-col bg-white dark:bg-gray-950 color-black dark:color-white",

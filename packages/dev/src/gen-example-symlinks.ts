@@ -94,6 +94,9 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/preact/keymap/',
   ],
+  'shared/preact/drop-indicator.tsx': [
+    /// keep-sorted
+  ],
 
   // React
 
@@ -206,6 +209,9 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/solid/keymap/',
   ],
+  'shared/solid/drop-indicator.tsx': [
+    /// keep-sorted
+  ],
 
   // Svelte
 
@@ -259,6 +265,10 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/svelte/keymap/',
   ],
+  'shared/svelte/drop-indicator.svelte': [
+    /// keep-sorted
+    'examples/svelte/full/',
+  ],
 
   // Vue
 
@@ -290,6 +300,11 @@ const mapping: Record<string, string[]> = {
   'shared/vue/code-block-view.vue': [
     /// keep-sorted
     'examples/vue/code-block/',
+    'examples/vue/full/',
+  ],
+  'shared/vue/drop-indicator.vue': [
+    /// keep-sorted
+    'examples/vue/block-handle/',
     'examples/vue/full/',
   ],
   'shared/vue/image-upload-popover.vue': [

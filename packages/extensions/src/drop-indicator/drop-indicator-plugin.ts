@@ -102,19 +102,23 @@ function createDropIndicatorView(view: EditorView, getTarget: GetTarget, options
   let hideId: ReturnType<typeof setTimeout> | undefined
   let prevX: number | undefined
   let prevY: number | undefined
+  let hasDragOverEvent: boolean = false
 
   const scheduleHide = () => {
     if (hideId) {
       clearTimeout(hideId)
     }
 
+    hasDragOverEvent = false
     hideId = setTimeout(() => {
+      if (hasDragOverEvent) return
       options.onHide()
-      hideId = undefined
     }, 30)
   }
 
   const handleDragOver = (event: DragEvent): void => {
+    hasDragOverEvent = true
+
     const { clientX, clientY } = event
     if (prevX === clientX && prevY === clientY) {
       return
@@ -137,11 +141,13 @@ function createDropIndicatorView(view: EditorView, getTarget: GetTarget, options
   dom.addEventListener('dragover', handleDragOver)
   dom.addEventListener('dragend', scheduleHide)
   dom.addEventListener('drop', scheduleHide)
+  dom.addEventListener('dragleave', scheduleHide)
 
   const destroy = () => {
     dom.removeEventListener('dragover', handleDragOver)
     dom.removeEventListener('dragend', scheduleHide)
     dom.removeEventListener('drop', scheduleHide)
+    dom.removeEventListener('dragleave', scheduleHide)
   }
 
   return { destroy }

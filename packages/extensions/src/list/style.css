@@ -27,21 +27,26 @@
     margin-left: 1lh;
   }
 
+  &[data-list-kind="bullet"] > .list-marker,
+  &[data-list-kind="toggle"] > .list-marker {
+    background-color: currentColor;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+
   &[data-list-kind="bullet"] {
     & > .list-marker {
-      background-color: currentColor;
       mask-image: var(--prosekit-list-bullet-icon);
     }
   }
 
   &[data-list-kind="toggle"] {
     & > .list-marker {
-      background-color: currentColor;
       mask-image: var(--prosekit-list-toggle-open-icon);
     }
 
     &[data-list-collapsable][data-list-collapsed] > .list-marker {
-      background-color: currentColor;
       mask-image: var(--prosekit-list-toggle-closed-icon);
     }
   }

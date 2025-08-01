@@ -162,13 +162,13 @@
     &:has(> div.list-content > h1) {
       &::before,
       & > .list-marker {
-        top: 1em;
+        top: 0.75em;
       }
     }
     &:has(> div.list-content > h2) {
       &::before,
       & > .list-marker {
-        top: 0.6em;
+        top: 0.5em;
       }
     }
     &:has(> div.list-content > h3) {
@@ -186,13 +186,13 @@
     &:has(> div.list-content > h5) {
       &::before,
       & > .list-marker {
-        top: -0.1em;
+        top: -0.2em;
       }
     }
     &:has(> div.list-content > h6) {
       &::before,
       & > .list-marker {
-        top: -0.1em;
+        top: -0.3em;
       }
     }
   }

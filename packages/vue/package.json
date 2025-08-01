@@ -29,6 +29,7 @@
     ".": "./src/index.ts",
     "./autocomplete": "./src/components/autocomplete/index.gen.ts",
     "./block-handle": "./src/components/block-handle/index.gen.ts",
+    "./drop-indicator": "./src/components/drop-indicator/index.gen.ts",
     "./inline-popover": "./src/components/inline-popover/index.gen.ts",
     "./popover": "./src/components/popover/index.gen.ts",
     "./resizable": "./src/components/resizable/index.gen.ts",
@@ -81,6 +82,10 @@
         "types": "./dist/prosekit-vue-block-handle.d.ts",
         "default": "./dist/prosekit-vue-block-handle.js"
       },
+      "./drop-indicator": {
+        "types": "./dist/prosekit-vue-drop-indicator.d.ts",
+        "default": "./dist/prosekit-vue-drop-indicator.js"
+      },
       "./inline-popover": {
         "types": "./dist/prosekit-vue-inline-popover.d.ts",
         "default": "./dist/prosekit-vue-inline-popover.js"
@@ -117,6 +122,9 @@
         "block-handle": [
           "./dist/prosekit-vue-block-handle.d.ts"
         ],
+        "drop-indicator": [
+          "./dist/prosekit-vue-drop-indicator.d.ts"
+        ],
         "inline-popover": [
           "./dist/prosekit-vue-inline-popover.d.ts"
         ],
@@ -144,7 +152,8 @@
       "prosekit-vue-popover": "./src/components/popover/index.gen.ts",
       "prosekit-vue-resizable": "./src/components/resizable/index.gen.ts",
       "prosekit-vue-table-handle": "./src/components/table-handle/index.gen.ts",
-      "prosekit-vue-tooltip": "./src/components/tooltip/index.gen.ts"
+      "prosekit-vue-tooltip": "./src/components/tooltip/index.gen.ts",
+      "prosekit-vue-drop-indicator": "./src/components/drop-indicator/index.gen.ts"
     }
   }
 }

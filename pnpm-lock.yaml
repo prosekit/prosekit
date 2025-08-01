@@ -128,7 +128,7 @@ importers:
     dependencies:
       unocss-preset-animations:
         specifier: ^1.2.1
-        version: 1.2.1(@unocss/preset-wind3@66.3.2)(unocss@66.3.2(postcss@8.5.6)(vite@6.3.5(@types/node@20.17.57)(jiti@2.4.2)(tsx@4.20.3)(yaml@2.8.0))(vue@3.5.18(typescript@5.8.3)))
+        version: 1.2.1(@unocss/preset-wind3@66.3.2)(unocss@66.3.2(postcss@8.5.6)(vite@6.3.5(@types/node@20.17.57)(jiti@2.4.2)(tsx@4.20.3)(yaml@2.8.0)))
     devDependencies:
       '@manypkg/find-root':
         specifier: ^3.0.0
@@ -920,6 +920,9 @@ importers:
       hast-util-is-element:
         specifier: ^3.0.0
         version: 3.0.0
+      just-memoize:
+        specifier: ^2.2.0
+        version: 2.2.0
       lit:
         specifier: ^3.3.1
         version: 3.3.1
@@ -4999,6 +5002,9 @@ packages:
 
   just-map-values@3.2.0:
     resolution: {integrity: sha512-TyqCKtK3NxiUgOjRYMIKURvBTHesi3XzomDY0QVPZ3rYzLCF+nNq5rSi0B/L5aOd/WMTZo6ukzA4wih4HUbrDg==}
+
+  just-memoize@2.2.0:
+    resolution: {integrity: sha512-zriv+MY+61RXT0QsrO1ZJtL5umouqqSWmCGBkp2wJm35kniunBAA4qhUKx8Lvg/QcwrF9xuw9E6PkevKFf4boQ==}
 
   just-pick@4.2.0:
     resolution: {integrity: sha512-m6bi0P/gFq5GEQJGYfHFsdod6fogViNIhsKbPBYavqF9SKFfMKPz7kf6ROL2PblkOdaib9vN/wJ7VXhCJre5Hw==}
@@ -12282,6 +12288,8 @@ snapshots:
 
   just-map-values@3.2.0: {}
 
+  just-memoize@2.2.0: {}
+
   just-pick@4.2.0: {}
 
   keyv@4.5.4:
@@ -14762,7 +14770,7 @@ snapshots:
 
   universalify@2.0.1: {}
 
-  unocss-preset-animations@1.2.1(@unocss/preset-wind3@66.3.2)(unocss@66.3.2(postcss@8.5.6)(vite@6.3.5(@types/node@20.17.57)(jiti@2.4.2)(tsx@4.20.3)(yaml@2.8.0))(vue@3.5.18(typescript@5.8.3))):
+  unocss-preset-animations@1.2.1(@unocss/preset-wind3@66.3.2)(unocss@66.3.2(postcss@8.5.6)(vite@6.3.5(@types/node@20.17.57)(jiti@2.4.2)(tsx@4.20.3)(yaml@2.8.0))):
     dependencies:
       unocss: 66.3.2(postcss@8.5.6)(vite@6.3.5(@types/node@20.17.57)(jiti@2.4.2)(tsx@4.20.3)(yaml@2.8.0))(vue@3.5.18(typescript@5.8.3))
     optionalDependencies:

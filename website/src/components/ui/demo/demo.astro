@@ -25,11 +25,6 @@ if (examples.length === 0) {
 }
 
 const frameworks = examples.map((example) => example.framework)
-
-const frameworkToExample = examples.reduce((acc, example) => {
-  acc[example.framework] = example
-  return acc
-}, {} as Record<string, typeof examples[number]>)
 ---
 
 <MultipleFrameworksDemo frameworks={frameworks} story={story} showCode={showCode} client:load>
@@ -41,11 +36,11 @@ const frameworkToExample = examples.reduce((acc, example) => {
   {frameworks.includes('vanilla') && <Fragment slot="slot-story-vanilla"><VanillaStory story={story} /></Fragment>}
   {frameworks.includes('vue') && <Fragment slot="slot-story-vue"><VueStory story={story} /></Fragment>}
 
-  {frameworks.includes('lit') && <Fragment slot="slot-code-lit"><DemoCodeGroup example={frameworkToExample['lit']} /></Fragment>}
-  {frameworks.includes('preact') && <Fragment slot="slot-code-preact"><DemoCodeGroup example={frameworkToExample['preact']} /></Fragment>}
-  {frameworks.includes('react') && <Fragment slot="slot-code-react"><DemoCodeGroup example={frameworkToExample['react']} /></Fragment>}
-  {frameworks.includes('solid') && <Fragment slot="slot-code-solid"><DemoCodeGroup example={frameworkToExample['solid']} /></Fragment>}
-  {frameworks.includes('svelte') && <Fragment slot="slot-code-svelte"><DemoCodeGroup example={frameworkToExample['svelte']} /></Fragment>}
-  {frameworks.includes('vanilla') && <Fragment slot="slot-code-vanilla"><DemoCodeGroup example={frameworkToExample['vanilla']} /></Fragment>}
-  {frameworks.includes('vue') && <Fragment slot="slot-code-vue"><DemoCodeGroup example={frameworkToExample['vue']} /></Fragment>}
+  {frameworks.includes('lit') && <Fragment slot="slot-code-lit"><DemoCodeGroup story={story} framework={'lit'} /></Fragment>}
+  {frameworks.includes('preact') && <Fragment slot="slot-code-preact"><DemoCodeGroup story={story} framework={'preact'} /></Fragment>}
+  {frameworks.includes('react') && <Fragment slot="slot-code-react"><DemoCodeGroup story={story} framework={'react'} /></Fragment>}
+  {frameworks.includes('solid') && <Fragment slot="slot-code-solid"><DemoCodeGroup story={story} framework={'solid'} /></Fragment>}
+  {frameworks.includes('svelte') && <Fragment slot="slot-code-svelte"><DemoCodeGroup story={story} framework={'svelte'} /></Fragment>}
+  {frameworks.includes('vanilla') && <Fragment slot="slot-code-vanilla"><DemoCodeGroup story={story} framework={'vanilla'} /></Fragment>}
+  {frameworks.includes('vue') && <Fragment slot="slot-code-vue"><DemoCodeGroup story={story} framework={'vue'} /></Fragment>}
 </MultipleFrameworksDemo>

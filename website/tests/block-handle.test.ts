@@ -145,7 +145,6 @@ testStory(['full'], () => {
       await editor.pressSequentially('Second paragraph')
     })
 
-    // Check the DOM structure
     const [listNode, p1, p2] = await test.step('check the DOM structure', async () => {
       const listNode = editor.locator('.prosemirror-flat-list')
       await expect(listNode).toHaveCount(1)
@@ -164,7 +163,6 @@ testStory(['full'], () => {
       return box1!
     })
 
-    // Hover over the second paragraph
     const box2 = await test.step('hover over the second paragraph', async () => {
       await hover(p2)
       await expectBlockHandleToOpen(page)
@@ -172,6 +170,7 @@ testStory(['full'], () => {
       expect(box2).toBeTruthy()
       return box2!
     })
+
     // box1 should be positioned above box2
     expect(box1.y).toBeLessThan(box2.y)
 
@@ -198,7 +197,7 @@ testStory(['full'], () => {
     await test.step('hover over the second paragraph', async () => {
       await hover(p2)
       await expectBlockHandleToOpen(page)
-      await blockHandleDraggable.click()
+      await blockHandleDraggable.click({ timeout: 3000 })
     })
 
     await test.step('expect the list node to be not selected', async () => {

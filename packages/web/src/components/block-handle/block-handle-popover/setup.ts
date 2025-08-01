@@ -1,7 +1,7 @@
 import {
+  createComputed,
   createSignal,
   useAttribute,
-  useEffect,
   type ConnectableElement,
   type ReadonlySignal,
   type SetupOptions,
@@ -14,6 +14,7 @@ import type { Editor } from '@prosekit/core'
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
 import {
   blockPopoverContext,
+  draggingContext,
   type BlockPopoverContext,
   type HoverState,
 } from '../context'
@@ -41,11 +42,10 @@ export function useBlockHandlePopover(
   const context = createSignal<BlockPopoverContext>(null)
   blockPopoverContext.provide(host, context)
 
-  const open = createSignal(false)
+  const dragging = createSignal(false)
+  draggingContext.provide(host, dragging)
 
-  useEffect(host, () => {
-    open.set(!!context.get())
-  })
+  const open = createComputed(() => (!!context.get()))
 
   useHoverExtension(host, editor, (referenceValue, hoverState) => {
     reference.set(referenceValue)

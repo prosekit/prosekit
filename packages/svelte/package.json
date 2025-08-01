@@ -35,6 +35,10 @@
       "svelte": "./src/components/block-handle/index.gen.ts",
       "default": "./src/components/block-handle/index.gen.ts"
     },
+    "./drop-indicator": {
+      "svelte": "./src/components/drop-indicator/index.gen.ts",
+      "default": "./src/components/drop-indicator/index.gen.ts"
+    },
     "./inline-popover": {
       "svelte": "./src/components/inline-popover/index.gen.ts",
       "default": "./src/components/inline-popover/index.gen.ts"
@@ -104,6 +108,11 @@
         "svelte": "./dist/prosekit-svelte-block-handle.js",
         "default": "./dist/prosekit-svelte-block-handle.js"
       },
+      "./drop-indicator": {
+        "types": "./dist/prosekit-svelte-drop-indicator.d.ts",
+        "svelte": "./dist/prosekit-svelte-drop-indicator.js",
+        "default": "./dist/prosekit-svelte-drop-indicator.js"
+      },
       "./inline-popover": {
         "types": "./dist/prosekit-svelte-inline-popover.d.ts",
         "svelte": "./dist/prosekit-svelte-inline-popover.js",
@@ -145,6 +154,9 @@
         "block-handle": [
           "./dist/prosekit-svelte-block-handle.d.ts"
         ],
+        "drop-indicator": [
+          "./dist/prosekit-svelte-drop-indicator.d.ts"
+        ],
         "inline-popover": [
           "./dist/prosekit-svelte-inline-popover.d.ts"
         ],
@@ -172,7 +184,8 @@
       "prosekit-svelte-popover": "./src/components/popover/index.gen.ts",
       "prosekit-svelte-resizable": "./src/components/resizable/index.gen.ts",
       "prosekit-svelte-table-handle": "./src/components/table-handle/index.gen.ts",
-      "prosekit-svelte-tooltip": "./src/components/tooltip/index.gen.ts"
+      "prosekit-svelte-tooltip": "./src/components/tooltip/index.gen.ts",
+      "prosekit-svelte-drop-indicator": "./src/components/drop-indicator/index.gen.ts"
     }
   }
 }

@@ -22,8 +22,7 @@ async function loadDemoFileImpl(
 }
 
 async function loadDemoFilesImpl(
-  framework: string,
-  story: string,
+  { framework, story }: { framework: string; story: string },
 ) {
   const example = exampleMeta.examples.find(example => example.story === story && example.framework === framework)
   if (!example) {

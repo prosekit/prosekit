@@ -11,7 +11,7 @@ interface Props {
 
 const { story, framework }: Props = Astro.props
 
-const codes = await loadDemoFiles(framework, story)
+const codes = await loadDemoFiles({ framework, story })
 ---
 
 <CodeTabs border={false}>

@@ -189,6 +189,10 @@ const mapping: Record<string, string[]> = {
 
   // Solid
 
+  'shared/solid/block-handle.tsx': [
+    /// keep-sorted
+    'examples/solid/block-handle/',
+  ],
   'shared/solid/button.tsx': [
     /// keep-sorted
     'examples/solid/code-block/',
@@ -204,6 +208,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/solid/drop-indicator.tsx': [
     /// keep-sorted
+    'examples/solid/block-handle/',
   ],
   'shared/solid/table-handle.tsx': [
     /// keep-sorted

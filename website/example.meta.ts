@@ -2361,6 +2361,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "solid-block-handle",
+      "framework": "solid",
+      "story": "block-handle",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "solid-code-block",
       "framework": "solid",
       "story": "code-block",

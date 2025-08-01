@@ -9,7 +9,7 @@ on:
 
 jobs:
   lint-pr-title:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: Install commitlint
         run: npm install -g @commitlint/config-conventional@19 @commitlint/cli@19

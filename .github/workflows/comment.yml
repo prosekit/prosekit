@@ -7,7 +7,7 @@ on:
 jobs:
   run-command:
     if: github.event.issue.pull_request && github.event.comment.body ==  '/docs'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     steps:
       - name: Checkout repository

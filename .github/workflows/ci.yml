@@ -9,7 +9,7 @@ on:
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     steps:
       - uses: actions/checkout@v4
@@ -20,7 +20,7 @@ jobs:
         run: pnpm run lint
 
   typecheck:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     steps:
       - uses: actions/checkout@v4
@@ -31,7 +31,7 @@ jobs:
         run: pnpm run typecheck
 
   test-unit:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     steps:
       - uses: actions/checkout@v4
@@ -45,7 +45,7 @@ jobs:
         run: pnpm run test:coverage
 
   test-e2e:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     needs: [build]
 
@@ -71,7 +71,7 @@ jobs:
         run: pnpm run test:e2e --shard="${{ matrix.shard }}/5"
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     steps:
       - uses: actions/checkout@v4
@@ -87,7 +87,7 @@ jobs:
         run: pnpm run build
 
   publish-snapshot:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     needs: [build]
 
@@ -119,7 +119,7 @@ jobs:
           ./packages/web
 
   linkcheck:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     needs: [build]
 
@@ -152,7 +152,7 @@ jobs:
           lycheeVersion: nightly
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     needs: [build]
 

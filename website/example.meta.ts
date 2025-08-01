@@ -1831,6 +1831,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "svelte-block-handle",
+      "framework": "svelte",
+      "story": "block-handle",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.svelte",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "svelte-bold",
       "framework": "svelte",
       "story": "bold",

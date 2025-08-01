@@ -227,6 +227,7 @@ const mapping: Record<string, string[]> = {
 
   'shared/svelte/block-handle.svelte': [
     /// keep-sorted
+    'examples/svelte/block-handle/',
     'examples/svelte/full/',
   ],
   'shared/svelte/button.svelte': [
@@ -249,6 +250,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/svelte/drop-indicator.svelte': [
     /// keep-sorted
+    'examples/svelte/block-handle/',
     'examples/svelte/full/',
   ],
   'shared/svelte/slash-menu-empty.svelte': [

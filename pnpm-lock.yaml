@@ -302,7 +302,7 @@ importers:
         version: 1.3.2
       prosemirror-highlight:
         specifier: ^0.13.0
-        version: 0.13.0(@shikijs/types@3.8.1)(@types/hast@3.0.4)(prosemirror-model@1.25.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.4)(prosemirror-view@1.40.1)
+        version: 0.13.0(@shikijs/types@3.9.1)(@types/hast@3.0.4)(prosemirror-model@1.25.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.4)(prosemirror-view@1.40.1)
       prosemirror-search:
         specifier: ^1.1.0
         version: 1.1.0
@@ -943,7 +943,7 @@ importers:
         version: 0.5.5
       prosemirror-highlight:
         specifier: ^0.13.0
-        version: 0.13.0(@shikijs/types@3.8.1)(@types/hast@3.0.4)(prosemirror-model@1.25.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.4)(prosemirror-view@1.40.1)
+        version: 0.13.0(@shikijs/types@3.9.1)(@types/hast@3.0.4)(prosemirror-model@1.25.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.4)(prosemirror-view@1.40.1)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -975,8 +975,8 @@ importers:
         specifier: ^1.9.7
         version: 1.9.7
       starlight-theme-nova:
-        specifier: ^0.9.1
-        version: 0.9.1(@astrojs/starlight@0.35.1(astro@5.12.3(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)))(typescript@5.8.3)
+        specifier: ^0.9.2
+        version: 0.9.2(@astrojs/starlight@0.35.1(astro@5.12.3(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)))(typescript@5.8.3)
       svelte:
         specifier: ^5.36.13
         version: 5.36.13
@@ -2496,6 +2496,9 @@ packages:
   '@shikijs/core@3.8.1':
     resolution: {integrity: sha512-uTSXzUBQ/IgFcUa6gmGShCHr4tMdR3pxUiiWKDm8pd42UKJdYhkAYsAmHX5mTwybQ5VyGDgTjW4qKSsRvGSang==}
 
+  '@shikijs/core@3.9.1':
+    resolution: {integrity: sha512-W5Vwen0KJCtR7KFRo+3JLGAqLUPsfW7e+wZ4yaRBGIogwI9ZlnkpRm9ZV8JtfzMxOkIwZwMmmN0hNErLtm3AYg==}
+
   '@shikijs/engine-javascript@3.8.1':
     resolution: {integrity: sha512-rZRp3BM1llrHkuBPAdYAzjlF7OqlM0rm/7EWASeCcY7cRYZIrOnGIHE9qsLz5TCjGefxBFnwgIECzBs2vmOyKA==}
 
@@ -2508,16 +2511,19 @@ packages:
   '@shikijs/themes@3.8.1':
     resolution: {integrity: sha512-Vu3t3BBLifc0GB0UPg2Pox1naTemrrvyZv2lkiSw3QayVV60me1ujFQwPZGgUTmwXl1yhCPW8Lieesm0CYruLQ==}
 
-  '@shikijs/transformers@3.8.1':
-    resolution: {integrity: sha512-nmTyFfBrhJk6HJi118jes0wuWdfKXeVUq1Nq+hm8h6wbk1KUfvtg+LY/uDfxZD2VDItHO3QoINIs3NtoKBmgxw==}
+  '@shikijs/transformers@3.9.1':
+    resolution: {integrity: sha512-QI4Bh565EhKGaefiDAyn5o7S8rQIUGXcOjZANSiQHa/KSGCyJTZP9UUiRbvdovVpaI/nagODX6mspFk/vcYOQQ==}
 
-  '@shikijs/twoslash@3.8.1':
-    resolution: {integrity: sha512-Y6hF8cA0fS5w8iIPC20pLgVABfzwkWeQ8hca9h2XaZvdCR0R121JDr+HmjJ6lc9l8MyCOww+k9HK+QUbH6CCag==}
+  '@shikijs/twoslash@3.9.1':
+    resolution: {integrity: sha512-1LT/7lOmJXDBe9nOSH7UweUMNWSvCHGGi122aZ77/Ctug6XbCL/9FY+Oh0ggWWgig/gpdXpHyTWGNQuzPbAUGQ==}
     peerDependencies:
       typescript: '>=5.5.0'
 
   '@shikijs/types@3.8.1':
     resolution: {integrity: sha512-5C39Q8/8r1I26suLh+5TPk1DTrbY/kn3IdWA5HdizR0FhlhD05zx5nKCqhzSfDHH3p4S0ZefxWd77DLV+8FhGg==}
+
+  '@shikijs/types@3.9.1':
+    resolution: {integrity: sha512-rqM3T7a0iM1oPKz9iaH/cVgNX9Vz1HERcUcXJ94/fulgVdwqfnhXzGxO4bLrAnh/o5CPLy3IcYedogfV+Ns0Qg==}
 
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
@@ -6394,8 +6400,8 @@ packages:
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
 
-  starlight-theme-nova@0.9.1:
-    resolution: {integrity: sha512-m6/l9MPPckuHskh0nHDQpyxSrbmXoyBSo8TjBdCUi4HaBKywQwG6A+gCUa+OBG6dCF0f+c3EQOUWp2n5b/Nd+A==}
+  starlight-theme-nova@0.9.2:
+    resolution: {integrity: sha512-aJAnXQzAgt2/398uNGCO/fU9iNL3eWLIqXLaBI1RhudboiMOJKwKdwHnyCdwcqEqIP2+UZ8Aa5OtJ62t8hMpCg==}
     peerDependencies:
       '@astrojs/starlight': '*'
     peerDependenciesMeta:
@@ -9163,6 +9169,13 @@ snapshots:
       '@types/hast': 3.0.4
       hast-util-to-html: 9.0.5
 
+  '@shikijs/core@3.9.1':
+    dependencies:
+      '@shikijs/types': 3.9.1
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+      hast-util-to-html: 9.0.5
+
   '@shikijs/engine-javascript@3.8.1':
     dependencies:
       '@shikijs/types': 3.8.1
@@ -9182,21 +9195,26 @@ snapshots:
     dependencies:
       '@shikijs/types': 3.8.1
 
-  '@shikijs/transformers@3.8.1':
+  '@shikijs/transformers@3.9.1':
     dependencies:
-      '@shikijs/core': 3.8.1
-      '@shikijs/types': 3.8.1
+      '@shikijs/core': 3.9.1
+      '@shikijs/types': 3.9.1
 
-  '@shikijs/twoslash@3.8.1(typescript@5.8.3)':
+  '@shikijs/twoslash@3.9.1(typescript@5.8.3)':
     dependencies:
-      '@shikijs/core': 3.8.1
-      '@shikijs/types': 3.8.1
+      '@shikijs/core': 3.9.1
+      '@shikijs/types': 3.9.1
       twoslash: 0.3.3(typescript@5.8.3)
       typescript: 5.8.3
     transitivePeerDependencies:
       - supports-color
 
   '@shikijs/types@3.8.1':
+    dependencies:
+      '@shikijs/vscode-textmate': 10.0.2
+      '@types/hast': 3.0.4
+
+  '@shikijs/types@3.9.1':
     dependencies:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
@@ -13406,9 +13424,9 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-view: 1.40.1
 
-  prosemirror-highlight@0.13.0(@shikijs/types@3.8.1)(@types/hast@3.0.4)(prosemirror-model@1.25.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.4)(prosemirror-view@1.40.1):
+  prosemirror-highlight@0.13.0(@shikijs/types@3.9.1)(@types/hast@3.0.4)(prosemirror-model@1.25.2)(prosemirror-state@1.4.3)(prosemirror-transform@1.10.4)(prosemirror-view@1.40.1):
     optionalDependencies:
-      '@shikijs/types': 3.8.1
+      '@shikijs/types': 3.9.1
       '@types/hast': 3.0.4
       prosemirror-model: 1.25.2
       prosemirror-state: 1.4.3
@@ -14036,8 +14054,8 @@ snapshots:
     dependencies:
       '@aria-ui/core': 0.0.21
       '@aria-ui/tooltip': 0.0.29
-      '@shikijs/twoslash': 3.8.1(typescript@5.8.3)
-      '@shikijs/types': 3.8.1
+      '@shikijs/twoslash': 3.9.1(typescript@5.8.3)
+      '@shikijs/types': 3.9.1
       '@types/hast': 3.0.4
     transitivePeerDependencies:
       - supports-color
@@ -14193,13 +14211,13 @@ snapshots:
 
   stackback@0.0.2: {}
 
-  starlight-theme-nova@0.9.1(@astrojs/starlight@0.35.1(astro@5.12.3(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)))(typescript@5.8.3):
+  starlight-theme-nova@0.9.2(@astrojs/starlight@0.35.1(astro@5.12.3(@types/node@20.17.57)(jiti@2.4.2)(rollup@4.41.1)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)))(typescript@5.8.3):
     dependencies:
       '@aria-ui/core': 0.0.21
       '@pagefind/default-ui': 1.3.0
-      '@shikijs/transformers': 3.8.1
-      '@shikijs/twoslash': 3.8.1(typescript@5.8.3)
-      '@shikijs/types': 3.8.1
+      '@shikijs/transformers': 3.9.1
+      '@shikijs/twoslash': 3.9.1(typescript@5.8.3)
+      '@shikijs/types': 3.9.1
       '@types/hast': 3.0.4
       astro-theme-toggle: 0.6.1
       hast-util-is-element: 3.0.0

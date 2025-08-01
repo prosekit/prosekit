@@ -43,7 +43,7 @@ export const blockHandlePopoverProps: PropDeclarations<BlockHandlePopoverProps> 
   editor: { default: null },
   placement: { default: 'left' },
 
-  // Enabling `hoist` will cause the block handle to have a small delay when
+  // Enabling `hoist` will cause the popover to have a small delay when
   // scrolling the page.
   hoist: { default: false },
 }

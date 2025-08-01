@@ -212,18 +212,20 @@ export const CSS_BLOCK_HANDLE_DRAG = cn(
   'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 cursor-grab',
 )
 
+const CSS_TABLE_HANDLE_BASE = cn(
+  'flex items-center box-border justify-center bg-background hover:bg-secondary rounded text-muted-foreground/50 border border-border border-solid p-0',
+  'overflow-hidden',
+)
+
 export const CSS_TABLE_COLUMN_HANDLE = cn(
-  'flex items-center box-border justify-center h-[1.2em] w-[1.5em] bg-white hover:bg-secondary rounded text-muted-foreground/50 translate-y-3 border border-border border-solid',
+  'h-[1.2em] w-[1.5em] translate-y-3',
+  CSS_TABLE_HANDLE_BASE,
   CSS_PRESENCE_ANIMATE,
 )
 
 export const CSS_TABLE_ROW_HANDLE = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] bg-white hover:bg-secondary rounded text-muted-foreground/50 translate-x-3 border border-border border-solid',
-  CSS_PRESENCE_ANIMATE,
-)
-
-export const CSS_TABLE_ROOT_HANDLE = cn(
-  'flex items-center box-border justify-center h-[1.2em] w-[1.2em] bg-white hover:bg-secondary rounded text-muted-foreground/50 border translate-x-4 -translate-y-4 border-border border-solid',
+  'h-[1.5em] w-[1.2em] translate-x-3',
+  CSS_TABLE_HANDLE_BASE,
   CSS_PRESENCE_ANIMATE,
 )
 

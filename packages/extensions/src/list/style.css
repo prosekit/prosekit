@@ -29,20 +29,20 @@
 
   &[data-list-kind="bullet"] {
     & > .list-marker {
-      mask-image: var(--prosekit-list-bullet-icon);
       background-color: currentColor;
+      mask-image: var(--prosekit-list-bullet-icon);
     }
   }
 
   &[data-list-kind="toggle"] {
     & > .list-marker {
-      mask-image: var(--prosekit-list-toggle-open-icon);
       background-color: currentColor;
+      mask-image: var(--prosekit-list-toggle-open-icon);
     }
 
     &[data-list-collapsable][data-list-collapsed] > .list-marker {
-      mask-image: var(--prosekit-list-toggle-closed-icon);
       background-color: currentColor;
+      mask-image: var(--prosekit-list-toggle-closed-icon);
     }
   }
 
@@ -78,16 +78,14 @@
         */
       &[data-list-order] {
         @supports (counter-set: prosemirror-flat-list-counter 1) {
-          counter-set: prosemirror-flat-list-counter
-            var(--prosemirror-flat-list-order);
+          counter-set: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
         }
 
         /* 
           Safari older than version 17.2 doesn't support `counter-set` 
           */
         @supports not (counter-set: prosemirror-flat-list-counter 1) {
-          counter-increment: prosemirror-flat-list-counter
-            var(--prosemirror-flat-list-order);
+          counter-increment: prosemirror-flat-list-counter var(--prosemirror-flat-list-order);
         }
       }
     }
@@ -118,9 +116,7 @@
     }
 
     /* If collapsed, hide the second and futher children */
-    &[data-list-collapsable][data-list-collapsed]
-      > .list-content
-      > *:nth-child(n + 2) {
+    &[data-list-collapsable][data-list-collapsed] > .list-content > *:nth-child(n+2) {
       display: none;
     }
   }

@@ -3,13 +3,15 @@
  *
  * This CSS file includes the following styles:
  *
- * - `prosekit/pm/view/style/prosemirror.css`
- * - `prosekit/extensions/list/style.css`
- * - `prosekit/extensions/table/style.css`
- * - `prosekit/extensions/placeholder/style.css`
- * - `prosekit/extensions/virtual-selection/style.css`
- * - `prosekit/extensions/commit/style.css`
- * - `prosekit/extensions/gap-cursor/style.css`
+ * - [`prosekit/pm/view/style/prosemirror.css`](/references/pm/view/style/prosemirrorcss/)
+ * - [`prosekit/extensions/list/style.css`](/references/extensions/list/stylecss/)
+ * - [`prosekit/extensions/table/style.css`](/references/extensions/table/stylecss/)
+ * - [`prosekit/extensions/placeholder/style.css`](/references/extensions/placeholder/stylecss/)
+ * - [`prosekit/extensions/virtual-selection/style.css`](/references/extensions/virtual-selection/stylecss/)
+ * - [`prosekit/extensions/commit/style.css`](/references/extensions/commit/stylecss/)
+ * - [`prosekit/extensions/gap-cursor/style.css`](/references/extensions/gap-cursor/stylecss/)
+ *
+ * [view source code](https://unpkg.com/prosekit/basic/style.css)
  *
  * @module prosekit/basic/style.css
  */

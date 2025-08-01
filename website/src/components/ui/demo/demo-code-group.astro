@@ -1,35 +1,19 @@
 ---
-import fs from 'node:fs/promises'
-import path from 'node:path'
-
 import CodeTabItem from 'starlight-theme-nova/components/CodeTabItem.astro'
 import CodeTabs from 'starlight-theme-nova/components/CodeTabs.astro'
-import { replaceClassNames } from './replace-class-names'
+
+import { loadDemoFiles } from './load-demo-files'
 
 interface Props {
-  example: {
-    story: string
-    framework: string
-    files: {
-      path: string
-      hidden: boolean
-    }[]
-  }
+  story: string
+  framework: string
 }
 
-const { example }: Props = Astro.props
+const { story, framework }: Props = Astro.props
 
-const codes = await Promise.all(example.files.map(async file => {
-  const filePath = path.join(process.cwd(), 'src', 'examples', example.framework, example.story, file.path)
-  const fileContent = await fs.readFile(filePath, 'utf-8')
-  return ({
-    title: file.path,
-    code: fileContent,
-    lang: (file.path.split('.').pop() || 'plaintext') as 'plaintext',
-  })
-}))
+const codes = await loadDemoFiles({ framework, story })
 ---
 
 <CodeTabs border={false}>
-  {codes.map(code => <CodeTabItem label={code.title} lang={code.lang} code={replaceClassNames(code.code)} />)}
+  {codes.map(code => <CodeTabItem label={code.title} lang={code.lang} code={code.code} />)}
 </CodeTabs>

@@ -14,6 +14,14 @@ import { vfs } from './virtual-file-system'
 const mapping: Record<string, string[]> = {
   // Common
 
+  'shared/common/default-content-drag-and-drop.ts': [
+    /// keep-sorted
+    'examples/preact/block-handle/',
+    'examples/react/block-handle/',
+    'examples/solid/block-handle/',
+    'examples/svelte/block-handle/',
+    'examples/vue/block-handle/',
+  ],
   'shared/common/default-content-full.ts': [
     /// keep-sorted
     'examples/react/full/',

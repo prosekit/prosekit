@@ -15,6 +15,8 @@ examples:
         hidden: false
       - path: block-handle.tsx
         hidden: false
+      - path: default-content-drag-and-drop.ts
+        hidden: false
       - path: drop-indicator.tsx
         hidden: false
   - name: react-blockquote
@@ -444,6 +446,8 @@ examples:
       - path: extension.ts
         hidden: false
       - path: block-handle.vue
+        hidden: false
+      - path: default-content-drag-and-drop.ts
         hidden: false
       - path: drop-indicator.vue
         hidden: false
@@ -883,6 +887,8 @@ examples:
         hidden: false
       - path: block-handle.tsx
         hidden: false
+      - path: default-content-drag-and-drop.ts
+        hidden: false
       - path: drop-indicator.tsx
         hidden: false
   - name: preact-keymap
@@ -960,6 +966,8 @@ examples:
       - path: extension.ts
         hidden: false
       - path: block-handle.svelte
+        hidden: false
+      - path: default-content-drag-and-drop.ts
         hidden: false
       - path: drop-indicator.svelte
         hidden: false
@@ -1248,6 +1256,8 @@ examples:
       - path: extension.ts
         hidden: false
       - path: block-handle.tsx
+        hidden: false
+      - path: default-content-drag-and-drop.ts
         hidden: false
       - path: drop-indicator.tsx
         hidden: false

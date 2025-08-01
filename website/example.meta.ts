@@ -32,6 +32,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "default-content-drag-and-drop.ts",
+          "hidden": false
+        },
+        {
           "path": "drop-indicator.tsx",
           "hidden": false
         }
@@ -855,6 +859,10 @@ export const exampleMeta = {
         },
         {
           "path": "block-handle.vue",
+          "hidden": false
+        },
+        {
+          "path": "default-content-drag-and-drop.ts",
           "hidden": false
         },
         {
@@ -1699,6 +1707,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "default-content-drag-and-drop.ts",
+          "hidden": false
+        },
+        {
           "path": "drop-indicator.tsx",
           "hidden": false
         }
@@ -1845,6 +1857,10 @@ export const exampleMeta = {
         },
         {
           "path": "block-handle.svelte",
+          "hidden": false
+        },
+        {
+          "path": "default-content-drag-and-drop.ts",
           "hidden": false
         },
         {
@@ -2398,6 +2414,10 @@ export const exampleMeta = {
         },
         {
           "path": "block-handle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "default-content-drag-and-drop.ts",
           "hidden": false
         },
         {

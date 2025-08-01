@@ -2,4 +2,4 @@
 import { DropIndicator } from 'prosekit/svelte/drop-indicator'
 </script>
 
-<DropIndicator className="CSS_DROP_INDICATOR" />
+<DropIndicator class="CSS_DROP_INDICATOR" />

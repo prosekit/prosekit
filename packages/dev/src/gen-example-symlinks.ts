@@ -12,6 +12,16 @@ import { vfs } from './virtual-file-system'
 //
 /// keep-sorted
 const mapping: Record<string, string[]> = {
+  // Common
+
+  'shared/common/default-content-drag-and-drop.ts': [
+    /// keep-sorted
+    'examples/preact/block-handle/',
+    'examples/react/block-handle/',
+    'examples/solid/block-handle/',
+    'examples/svelte/block-handle/',
+    'examples/vue/block-handle/',
+  ],
   'shared/common/default-content-full.ts': [
     /// keep-sorted
     'examples/react/full/',
@@ -60,10 +70,21 @@ const mapping: Record<string, string[]> = {
     'shared/react/',
     'shared/vue/',
   ],
+
+  // Preact
+
+  'shared/preact/block-handle.tsx': [
+    /// keep-sorted
+    'examples/preact/block-handle/',
+  ],
   'shared/preact/button.tsx': [
     /// keep-sorted
     'examples/preact/keymap/',
     'examples/preact/readonly/',
+  ],
+  'shared/preact/drop-indicator.tsx': [
+    /// keep-sorted
+    'examples/preact/block-handle/',
   ],
   'shared/preact/slash-menu-empty.tsx': [
     /// keep-sorted
@@ -89,6 +110,9 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/preact/keymap/',
   ],
+
+  // React
+
   'shared/react/block-handle.tsx': [
     /// keep-sorted
     'examples/react/block-handle/',
@@ -115,6 +139,11 @@ const mapping: Record<string, string[]> = {
   'shared/react/code-block-view.tsx': [
     /// keep-sorted
     'examples/react/code-block/',
+    'examples/react/full/',
+  ],
+  'shared/react/drop-indicator.tsx': [
+    /// keep-sorted
+    'examples/react/block-handle/',
     'examples/react/full/',
   ],
   'shared/react/image-upload-popover.tsx': [
@@ -165,6 +194,13 @@ const mapping: Record<string, string[]> = {
     'examples/react/full/',
     'examples/react/user-menu/',
   ],
+
+  // Solid
+
+  'shared/solid/block-handle.tsx': [
+    /// keep-sorted
+    'examples/solid/block-handle/',
+  ],
   'shared/solid/button.tsx': [
     /// keep-sorted
     'examples/solid/code-block/',
@@ -178,6 +214,10 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/solid/code-block/',
   ],
+  'shared/solid/drop-indicator.tsx': [
+    /// keep-sorted
+    'examples/solid/block-handle/',
+  ],
   'shared/solid/table-handle.tsx': [
     /// keep-sorted
     'examples/solid/table/',
@@ -190,8 +230,12 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/solid/keymap/',
   ],
+
+  // Svelte
+
   'shared/svelte/block-handle.svelte': [
     /// keep-sorted
+    'examples/svelte/block-handle/',
     'examples/svelte/full/',
   ],
   'shared/svelte/button.svelte': [
@@ -210,6 +254,11 @@ const mapping: Record<string, string[]> = {
   'shared/svelte/code-block-view.svelte': [
     /// keep-sorted
     'examples/svelte/code-block/',
+    'examples/svelte/full/',
+  ],
+  'shared/svelte/drop-indicator.svelte': [
+    /// keep-sorted
+    'examples/svelte/block-handle/',
     'examples/svelte/full/',
   ],
   'shared/svelte/slash-menu-empty.svelte': [
@@ -240,6 +289,9 @@ const mapping: Record<string, string[]> = {
     /// keep-sorted
     'examples/svelte/keymap/',
   ],
+
+  // Vue
+
   'shared/vue/block-handle.vue': [
     /// keep-sorted
     'examples/vue/block-handle/',
@@ -268,6 +320,11 @@ const mapping: Record<string, string[]> = {
   'shared/vue/code-block-view.vue': [
     /// keep-sorted
     'examples/vue/code-block/',
+    'examples/vue/full/',
+  ],
+  'shared/vue/drop-indicator.vue': [
+    /// keep-sorted
+    'examples/vue/block-handle/',
     'examples/vue/full/',
   ],
   'shared/vue/image-upload-popover.vue': [

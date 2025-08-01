@@ -1,9 +1,9 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
 
+import { useMemo } from 'preact/hooks'
 import { createEditor } from 'prosekit/core'
-import { ProseKit } from 'prosekit/react'
-import { useMemo } from 'react'
+import { ProseKit } from 'prosekit/preact'
 
 import BlockHandle from './block-handle'
 import { DEFAULT_DRAG_AND_DROP_CONTENT } from './default-content-drag-and-drop'

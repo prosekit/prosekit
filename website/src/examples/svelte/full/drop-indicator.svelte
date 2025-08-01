@@ -1,0 +1,1 @@
+../../../shared/svelte/drop-indicator.svelte

@@ -4,6 +4,7 @@ import component from './svelte.astro'
 export default { component }
 
 export const Minimal = { args: { story: 'minimal' } }
+export const BlockHandle = { args: { story: 'block-handle' } }
 export const Bold = { args: { story: 'bold' } }
 export const ChangeTracking = { args: { story: 'change-tracking' } }
 export const Code = { args: { story: 'code' } }

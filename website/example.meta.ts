@@ -30,6 +30,14 @@ export const exampleMeta = {
         {
           "path": "block-handle.tsx",
           "hidden": false
+        },
+        {
+          "path": "default-content-drag-and-drop.ts",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.tsx",
+          "hidden": false
         }
       ]
     },
@@ -852,6 +860,14 @@ export const exampleMeta = {
         {
           "path": "block-handle.vue",
           "hidden": false
+        },
+        {
+          "path": "default-content-drag-and-drop.ts",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.vue",
+          "hidden": false
         }
       ]
     },
@@ -1028,6 +1044,10 @@ export const exampleMeta = {
         },
         {
           "path": "default-content-full.ts",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.vue",
           "hidden": false
         },
         {
@@ -1670,6 +1690,33 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "preact-block-handle",
+      "framework": "preact",
+      "story": "block-handle",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "default-content-drag-and-drop.ts",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-keymap",
       "framework": "preact",
       "story": "keymap",
@@ -1791,6 +1838,33 @@ export const exampleMeta = {
       "files": [
         {
           "path": "editor.svelte",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "svelte-block-handle",
+      "framework": "svelte",
+      "story": "block-handle",
+      "files": [
+        {
+          "path": "editor.svelte",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.svelte",
+          "hidden": false
+        },
+        {
+          "path": "default-content-drag-and-drop.ts",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.svelte",
           "hidden": false
         }
       ]
@@ -1987,6 +2061,10 @@ export const exampleMeta = {
         },
         {
           "path": "default-content-full.ts",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.svelte",
           "hidden": false
         },
         {
@@ -2317,6 +2395,33 @@ export const exampleMeta = {
       "files": [
         {
           "path": "editor.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
+      "name": "solid-block-handle",
+      "framework": "solid",
+      "story": "block-handle",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "default-content-drag-and-drop.ts",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.tsx",
           "hidden": false
         }
       ]

@@ -4,26 +4,48 @@ title: Block Handle
 
 import Demo from '@/components/ui/demo/demo.astro';
 
-A component that allows for the dragging and dropping of block nodes.
+Block handle components enable users to interact with, reorder, and insert blocks in your editor through drag-and-drop operations.
 
 <Demo story="block-handle" />
+
+## Overview
+
+The block handle system provides two main capabilities:
+
+- **Block manipulation**: Add new blocks or drag existing blocks to reorder content
+- **Visual feedback**: Show users exactly where content will be placed during drag operations
+
+## Components
+
+### Block Handle
+
+The `BlockHandle` consists of three main components:
+
+- **`BlockHandlePopover`**: A popover container that appears on the left side when hovering over a block
+- **`BlockHandleAdd`**: An add button (+) that inserts a new block below the current one
+- **`BlockHandleDraggable`**: A drag handle (⋮⋮) that allows users to reorder blocks by dragging
+
+You can use `BlockHandleAdd`, `BlockHandleDraggable`, or both together depending on your needs.
+
+### Drop Indicator
+
+The `DropIndicator` provides visual feedback during drag-and-drop operations by showing a horizontal line where the dragged content will be inserted. It automatically appears when dragging and disappears when the drag operation completes.
 
 ## Installation
 
 Copy and paste the component source files linked above into your project.
 
-The `BlockHandle` consists of three parts:
-
-- `BlockHandlePopover`: A popover that appears on the left side of a block when you hover over it.
-- `BlockHandleAdd`: A button that lets you insert a new block below the one you're hovering over.
-- `BlockHandleDraggable`: A draggable component that allows to reorder a block.
-
-You can choose to use either `BlockHandleAdd`, `BlockHandleDraggable`, or both components together.
-
 ## API Reference
 
-- [prosekit/react/block-handle](/references/react/block-handle)
-- [prosekit/vue/block-handle](/references/vue/block-handle)
-- [prosekit/preact/block-handle](/references/preact/block-handle)
-- [prosekit/svelte/block-handle](/references/svelte/block-handle)
-- [prosekit/solid/block-handle](/references/solid/block-handle)
+- block-handle
+  - [prosekit/react/block-handle](/references/react/block-handle)
+  - [prosekit/vue/block-handle](/references/vue/block-handle)
+  - [prosekit/preact/block-handle](/references/preact/block-handle)
+  - [prosekit/svelte/block-handle](/references/svelte/block-handle)
+  - [prosekit/solid/block-handle](/references/solid/block-handle)
+- drop-indicator
+  - [prosekit/react/drop-indicator](/references/react/drop-indicator)
+  - [prosekit/vue/drop-indicator](/references/vue/drop-indicator)
+  - [prosekit/preact/drop-indicator](/references/preact/drop-indicator)
+  - [prosekit/svelte/drop-indicator](/references/svelte/drop-indicator)
+  - [prosekit/solid/drop-indicator](/references/solid/drop-indicator)

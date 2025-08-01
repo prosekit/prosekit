@@ -15,6 +15,10 @@ examples:
         hidden: false
       - path: block-handle.tsx
         hidden: false
+      - path: default-content-drag-and-drop.ts
+        hidden: false
+      - path: drop-indicator.tsx
+        hidden: false
   - name: react-blockquote
     framework: react
     story: blockquote
@@ -443,6 +447,10 @@ examples:
         hidden: false
       - path: block-handle.vue
         hidden: false
+      - path: default-content-drag-and-drop.ts
+        hidden: false
+      - path: drop-indicator.vue
+        hidden: false
   - name: vue-blockquote
     framework: vue
     story: blockquote
@@ -534,6 +542,8 @@ examples:
       - path: code-block-view.vue
         hidden: false
       - path: default-content-full.ts
+        hidden: false
+      - path: drop-indicator.vue
         hidden: false
       - path: image-upload-popover.vue
         hidden: false
@@ -867,6 +877,20 @@ examples:
     files:
       - path: editor.tsx
         hidden: false
+  - name: preact-block-handle
+    framework: preact
+    story: block-handle
+    files:
+      - path: editor.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: block-handle.tsx
+        hidden: false
+      - path: default-content-drag-and-drop.ts
+        hidden: false
+      - path: drop-indicator.tsx
+        hidden: false
   - name: preact-keymap
     framework: preact
     story: keymap
@@ -932,6 +956,20 @@ examples:
     story: minimal
     files:
       - path: editor.svelte
+        hidden: false
+  - name: svelte-block-handle
+    framework: svelte
+    story: block-handle
+    files:
+      - path: editor.svelte
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: block-handle.svelte
+        hidden: false
+      - path: default-content-drag-and-drop.ts
+        hidden: false
+      - path: drop-indicator.svelte
         hidden: false
   - name: svelte-bold
     framework: svelte
@@ -1034,6 +1072,8 @@ examples:
       - path: code-block-view.svelte
         hidden: false
       - path: default-content-full.ts
+        hidden: false
+      - path: drop-indicator.svelte
         hidden: false
       - path: image-upload-popover.svelte
         hidden: false
@@ -1206,6 +1246,20 @@ examples:
     story: minimal
     files:
       - path: editor.tsx
+        hidden: false
+  - name: solid-block-handle
+    framework: solid
+    story: block-handle
+    files:
+      - path: editor.tsx
+        hidden: false
+      - path: extension.ts
+        hidden: false
+      - path: block-handle.tsx
+        hidden: false
+      - path: default-content-drag-and-drop.ts
+        hidden: false
+      - path: drop-indicator.tsx
         hidden: false
   - name: solid-code-block
     framework: solid

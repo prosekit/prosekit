@@ -11,7 +11,7 @@ import {
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-export interface TableHandleColumnRootProps extends Omit<OverlayPositionerProps, 'placement'> {
+export interface TableHandleColumnRootProps extends Omit<OverlayPositionerProps, 'placement' | 'hoist'> {
   /**
    * The ProseKit editor instance.
    *
@@ -26,6 +26,14 @@ export interface TableHandleColumnRootProps extends Omit<OverlayPositionerProps,
    * @default "top"
    */
   placement: Placement
+
+  /**
+   * Whether to use the browser [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API)
+   * to place the floating element on top of other page content.
+   *
+   * @default false
+   */
+  hoist: boolean
 }
 
 /** @internal */
@@ -33,6 +41,10 @@ export const tableHandleColumnRootProps: PropDeclarations<TableHandleColumnRootP
   ...overlayPositionerProps,
   editor: { default: null },
   placement: { default: 'top' },
+
+  // Enabling `hoist` will cause the popover to have a small delay when
+  // scrolling the page.
+  hoist: { default: false },
 })
 
 /** @internal */

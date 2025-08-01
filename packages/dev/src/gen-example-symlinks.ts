@@ -65,6 +65,10 @@ const mapping: Record<string, string[]> = {
 
   // Preact
 
+  'shared/preact/block-handle.tsx': [
+    /// keep-sorted
+    'examples/preact/block-handle/',
+  ],
   'shared/preact/button.tsx': [
     /// keep-sorted
     'examples/preact/keymap/',
@@ -72,6 +76,7 @@ const mapping: Record<string, string[]> = {
   ],
   'shared/preact/drop-indicator.tsx': [
     /// keep-sorted
+    'examples/preact/block-handle/',
   ],
   'shared/preact/slash-menu-empty.tsx': [
     /// keep-sorted

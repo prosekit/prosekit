@@ -1682,6 +1682,29 @@ export const exampleMeta = {
       ]
     },
     {
+      "name": "preact-block-handle",
+      "framework": "preact",
+      "story": "block-handle",
+      "files": [
+        {
+          "path": "editor.tsx",
+          "hidden": false
+        },
+        {
+          "path": "extension.ts",
+          "hidden": false
+        },
+        {
+          "path": "block-handle.tsx",
+          "hidden": false
+        },
+        {
+          "path": "drop-indicator.tsx",
+          "hidden": false
+        }
+      ]
+    },
+    {
       "name": "preact-keymap",
       "framework": "preact",
       "story": "keymap",

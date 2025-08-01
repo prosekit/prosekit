@@ -13,7 +13,6 @@ import type { EditorView } from '@prosekit/pm/view'
 
 import {
   buildGetTarget,
-  type DropTarget,
   type GetTarget,
 } from './drop-target'
 import type {
@@ -101,7 +100,8 @@ function selectionBetween(view: EditorView, $anchor: ResolvedPos, $head: Resolve
 function createDropIndicatorView(view: EditorView, getTarget: GetTarget, options: DropIndicatorPluginOptions): PluginView {
   let dom = view.dom
   let hideId: ReturnType<typeof setTimeout> | undefined
-  let prevTarget: DropTarget | undefined
+  let prevX: number | undefined
+  let prevY: number | undefined
 
   const scheduleHide = () => {
     if (hideId) {
@@ -115,13 +115,14 @@ function createDropIndicatorView(view: EditorView, getTarget: GetTarget, options
   }
 
   const handleDragOver = (event: DragEvent): void => {
-    let target = getTarget([event.clientX, event.clientY], event)
-
-    if (prevTarget === target) {
+    const { clientX, clientY } = event
+    if (prevX === clientX && prevY === clientY) {
       return
     }
+    prevX = clientX
+    prevY = clientY
 
-    prevTarget = target
+    let target = getTarget([clientX, clientY], event)
 
     if (!target) {
       scheduleHide()

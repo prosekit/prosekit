@@ -43,12 +43,23 @@ function getTargetsByView(view: EditorView): DropTarget[] {
   return targets
 }
 
-function buildGetTargets(view: EditorView) {
+/**
+ * @internal
+ */
+export type GetTarget = (point: Point, event: DragEvent) => DropTarget | undefined
+
+/**
+ * @internal
+ */
+export function buildGetTarget(
+  view: EditorView,
+  onDrag: DragEventHandler,
+): GetTarget {
   let prevTargets: DropTarget[] = []
   let prevDoc: ProseMirrorNode | undefined
   let prevRect: DOMRect | undefined
 
-  return (): DropTarget[] => {
+  const getTargets = (): DropTarget[] => {
     const rect = view.dom.getBoundingClientRect()
     const doc = view.state.doc
 
@@ -68,33 +79,11 @@ function buildGetTargets(view: EditorView) {
     prevTargets = getTargetsByView(view)
     return prevTargets
   }
-}
 
-/**
- * @internal
- */
-export type GetTarget = (point: Point, event: DragEvent) => DropTarget | undefined
-
-/**
- * @internal
- */
-export function buildGetTarget(
-  view: EditorView,
-  onDrag: DragEventHandler,
-): GetTarget {
-  let getTargets = buildGetTargets(view)
-  let prevPoint: Point | undefined
-  let prevTarget: DropTarget | undefined
-
-  return (point, event) => {
+  const getTarget: GetTarget = (point, event) => {
     if (!view.editable || view.isDestroyed) {
       return
     }
-
-    if (pointEqual(prevPoint, point)) {
-      return prevTarget
-    }
-    prevPoint = point
 
     // TODO: better performance method?
     const compare = (p1: DropTarget, p2: DropTarget): number => {
@@ -110,13 +99,10 @@ export function buildGetTarget(
     targets.sort(compare)
 
     const target = targets.find(target => onDrag({ view, pos: target[0], event }) !== false)
-    prevTarget = target
     return target
   }
-}
 
-function pointEqual(a?: Point, b?: Point) {
-  return (a && b && a[0] === b[0] && a[1] === b[1]) || (!a && !b)
+  return getTarget
 }
 
 function pointPointDistance(a: Point, b: Point) {

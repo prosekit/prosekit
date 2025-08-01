@@ -7,6 +7,7 @@ import { useMemo } from 'react'
 
 import BlockHandle from './block-handle'
 import { DEFAULT_CONTENT } from './default-content-full'
+import DropIndicator from './drop-indicator'
 import { defineExtension } from './extension'
 import InlineMenu from './inline-menu'
 import SlashMenu from './slash-menu'
@@ -33,6 +34,7 @@ export default function Editor() {
           <TagMenu />
           <BlockHandle />
           <TableHandle />
+          <DropIndicator />
         </div>
       </div>
     </ProseKit>

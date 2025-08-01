@@ -163,6 +163,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "drop-indicator.tsx",
+          "hidden": false
+        },
+        {
           "path": "image-upload-popover.tsx",
           "hidden": false
         },

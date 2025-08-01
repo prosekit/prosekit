@@ -83,6 +83,8 @@ examples:
         hidden: false
       - path: default-content-full.ts
         hidden: false
+      - path: drop-indicator.tsx
+        hidden: false
       - path: image-upload-popover.tsx
         hidden: false
       - path: image-view.tsx

@@ -30,12 +30,12 @@ runs:
       run: node --version
       shell: bash
 
-    - name: Show pnpm version
-      run: pnpm --version
-      shell: bash
-
     - name: Show npm version
       run: npm --version
+      shell: bash
+
+    - name: Show pnpm version
+      run: pnpm --version
       shell: bash
 
     - name: Install

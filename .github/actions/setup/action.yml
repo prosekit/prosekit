@@ -27,6 +27,7 @@ runs:
         registry-url: "https://registry.npmjs.org"
 
     # Update npm to use OIDC publishing
+    # https://docs.npmjs.com/trusted-publishers
     - name: Update npm
       run: npm install -g npm@latest
       shell: bash

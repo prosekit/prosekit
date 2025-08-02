@@ -126,49 +126,6 @@ The distance between the reference and floating element.
 
 <dt>
 
-<code data-typedoc-code><i></i> <a id="flip" href="#flip">flip</a><i>?</i>: `boolean` \| `Placement`[]</code>
-
-</dt>
-
-<dd>
-
-Whether to flip the `placement` in order to keep it in view when the
-preferred placement(s) will overflow the clipping boundary. You can also
-provide an array of placements to try sequentially if the preferred
-`placement` does not fit.
-
-###### Default
-
-`true`
-
-</dd>
-
-</dl>
-
-<dl>
-
-<dt>
-
-<code data-typedoc-code><i></i> <a id="shift" href="#shift">shift</a><i>?</i>: `boolean`</code>
-
-</dt>
-
-<dd>
-
-Whether the floating element should shift to keep it in view.
-
-###### Default
-
-`true`
-
-</dd>
-
-</dl>
-
-<dl>
-
-<dt>
-
 <code data-typedoc-code><i></i> <a id="overlap" href="#overlap">overlap</a><i>?</i>: `boolean`</code>
 
 </dt>
@@ -261,27 +218,6 @@ reference element.
 
 Whether to improve positioning for inline reference elements that span over
 multiple lines.
-
-###### Default
-
-`false`
-
-</dd>
-
-</dl>
-
-<dl>
-
-<dt>
-
-<code data-typedoc-code><i></i> <a id="hide" href="#hide">hide</a><i>?</i>: `boolean`</code>
-
-</dt>
-
-<dd>
-
-Whether to hide the floating element when the reference element or the
-floating element is fully clipped.
 
 ###### Default
 

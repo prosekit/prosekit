@@ -1,6 +1,6 @@
 /**
  * Creates a deep clone of an Element, including all computed styles so that
- * it looks the same as the original element.
+ * it looks almost exactly the same as the original element.
  */
 export function deepCloneElement<T extends Element>(element: T): T {
   const clonedElement = element.cloneNode(true) as T

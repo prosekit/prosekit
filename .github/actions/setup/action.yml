@@ -5,7 +5,7 @@ inputs:
   node-version:
     description: The version of node.js
     required: false
-    default: "24"
+    default: "22"
 
 runs:
   using: composite

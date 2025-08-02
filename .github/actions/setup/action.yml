@@ -5,7 +5,7 @@ inputs:
   node-version:
     description: The version of node.js
     required: false
-    default: "24"
+    default: "20"
 
 runs:
   using: composite
@@ -26,16 +26,10 @@ runs:
         cache: pnpm
         registry-url: "https://registry.npmjs.org"
 
-    - name: Show node version
-      run: node --version
-      shell: bash
-
-    - name: Show pnpm version
-      run: pnpm --version
-      shell: bash
-
-    - name: Show npm version
-      run: npm --version
+    # Update npm to use OIDC publishing
+    # https://docs.npmjs.com/trusted-publishers
+    - name: Update npm
+      run: npm install -g npm@latest
       shell: bash
 
     - name: Install

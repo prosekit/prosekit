@@ -13,15 +13,12 @@ jobs:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ vars.TURBO_TEAM }}
       CI_JOB_NUMBER: 1
+      NODE_OPTIONS: "--max-old-space-size=8192"
 
     steps:
       - uses: actions/checkout@v4
 
       - uses: ./.github/actions/setup
-
-      - name: Set environment variables
-        run: |
-          echo 'NODE_OPTIONS=--max_old_space_size=8192' >> "$GITHUB_ENV"
 
       - uses: andresz1/size-limit-action@v1
         with:

@@ -10,4 +10,5 @@ export type {
   Point,
   ShowHandler,
   ShowHandlerOptions,
+  ViewDragging,
 } from './types'

@@ -8,6 +8,7 @@ import {
 } from '@aria-ui/core'
 import { isHTMLElement } from '@ocavue/utils'
 import type { Editor } from '@prosekit/core'
+import type { ViewDragging } from '@prosekit/extensions/drop-indicator'
 import {
   Fragment,
   Slice,
@@ -116,9 +117,7 @@ function createDraggingPreview(view: EditorView, hoverState: HoverState, event: 
 function setViewDragging(view: EditorView, hoverState: HoverState): void {
   const { node, pos } = hoverState
 
-  // An object matching the internal ProseMirror API shape.
-  // See https://github.com/ProseMirror/prosemirror-view/blob/1.38.1/src/input.ts#L657
-  const dragging = {
+  const dragging: ViewDragging = {
     slice: new Slice(Fragment.from(node), 0, 0),
     move: true,
     node: NodeSelection.create(view.state.doc, pos),

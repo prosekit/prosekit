@@ -12,6 +12,7 @@ import type { VirtualElement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
+import { useScrolling } from '../../../hooks/use-scrolling'
 import {
   blockPopoverContext,
   draggingContext,
@@ -45,7 +46,10 @@ export function useBlockHandlePopover(
   const dragging = createSignal(false)
   draggingContext.provide(host, dragging)
 
-  const open = createComputed(() => (!!context.get()))
+  const scrolling = useScrolling(host)
+  const open = createComputed(() => {
+    return !!context.get() && !scrolling.get()
+  })
 
   useHoverExtension(host, editor, (referenceValue, hoverState) => {
     reference.set(referenceValue)

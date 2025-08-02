@@ -1,3 +1,5 @@
+import type { Slice } from '@prosekit/pm/model'
+import type { NodeSelection } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
 /**
@@ -72,4 +74,17 @@ export interface Point {
 export interface Line {
   readonly p1: Point
   readonly p2: Point
+}
+
+/**
+ * An interface matching the internal ProseMirror implementation.
+ *
+ * See https://github.com/ProseMirror/prosemirror-view/blob/1.38.1/src/input.ts#L657
+ *
+ * @internal
+ */
+export interface ViewDragging {
+  readonly slice: Slice
+  readonly move: boolean
+  readonly node?: NodeSelection
 }

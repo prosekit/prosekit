@@ -1,4 +1,5 @@
 import { isHTMLElement } from '@ocavue/utils'
+import { isNodeSelection } from '@prosekit/core'
 import type { ProseMirrorNode } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
@@ -98,7 +99,15 @@ export function buildGetTarget(
     const targets = getTargets()
     targets.sort(compare)
 
+    // Find the closest valid target.
     const target = targets.find(target => onDrag({ view, pos: target[0], event }) !== false)
+
+    // If the dragging node is already at the target position, we ignore this
+    // target. Notice that we don't pick the second better target here.
+    if (target && isDraggingToItself(view, target[0])) {
+      return undefined
+    }
+
     return target
   }
 
@@ -118,4 +127,23 @@ function pointLineDistance(point: Point, line: Line) {
     pointPointDistance(point, [line[0], line[1]]),
     pointPointDistance(point, [line[2], line[3]]),
   )
+}
+
+/**
+ * Whether the dragging node is being dragged to the same position. For example,
+ * dragging a list node into a new position that is just below the list node, or
+ * dragging a nested quoteblock into itself.
+ */
+function isDraggingToItself(view: EditorView, pos: number) {
+  const dragging = view.dragging
+  if (!dragging) return
+
+  const { move } = dragging
+  if (!move) return
+
+  const selection = view.state.selection
+  if (!isNodeSelection(selection)) return
+
+  const { from, to } = selection
+  return from <= pos && pos <= to
 }

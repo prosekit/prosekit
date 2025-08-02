@@ -5,7 +5,7 @@ import type {
 import {
   overlayPositionerEvents,
   overlayPositionerProps,
-  type OverlayPositionerEvents, 
+  type OverlayPositionerEvents,
   type OverlayPositionerProps,
 } from '@aria-ui/overlay/elements'
 import type { Placement } from '@floating-ui/dom'

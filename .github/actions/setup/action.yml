@@ -26,10 +26,16 @@ runs:
         cache: pnpm
         registry-url: "https://registry.npmjs.org"
 
-    - name: Show versions
-      run: |
-        node --version
-        pnpm --version
+    - name: Show node version
+      run: node --version
+      shell: bash
+
+    - name: Show pnpm version
+      run: pnpm --version
+      shell: bash
+
+    - name: Show npm version
+      run: npm --version
       shell: bash
 
     - name: Install

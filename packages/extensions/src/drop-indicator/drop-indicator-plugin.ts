@@ -1,7 +1,4 @@
-import type {
-  ResolvedPos,
-  Slice,
-} from '@prosekit/pm/model'
+import type { ResolvedPos } from '@prosekit/pm/model'
 import {
   NodeSelection,
   Plugin,
@@ -18,6 +15,7 @@ import {
 import type {
   DragEventHandler,
   ShowHandler,
+  ViewDragging,
 } from './types'
 
 /**
@@ -54,12 +52,7 @@ export function createDropIndicatorPlugin(options: DropIndicatorPluginOptions): 
 
         let tr = view.state.tr
         if (move) {
-          interface Dragging {
-            readonly slice: Slice
-            readonly move: boolean
-            readonly node?: NodeSelection
-          }
-          let { node } = (view.dragging as Dragging | null) || {}
+          let { node } = (view.dragging as ViewDragging | null) || {}
           if (node) node.replace(tr)
           else tr.deleteSelection()
         }

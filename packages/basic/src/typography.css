@@ -1,3 +1,7 @@
+:root {
+  --prosekit-node-selection-color: rgba(57, 136, 255, 0.2);
+}
+
 .ProseMirror {
   & {
     /* Disable margin collapsing */
@@ -203,5 +207,17 @@
    */
   div[data-node-view-root="true"] {
     display: contents;
+  }
+
+  & .ProseMirror-selectednode {
+    border-radius: 0.2rem;
+    outline-color: var(--prosekit-node-selection-color);
+    outline-style: solid;
+    outline-width: 0.3rem;
+    background-color: var(--prosekit-node-selection-color);
+  }
+
+  &.prosekit-dragging {
+    --prosekit-node-selection-color: transparent;
   }
 }

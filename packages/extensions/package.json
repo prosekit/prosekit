@@ -1,7 +1,7 @@
 {
   "name": "@prosekit/extensions",
   "type": "module",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "private": false,
   "description": "A collection of common extensions for ProseKit",
   "author": {
@@ -80,7 +80,7 @@
     "build:tsdown": "tsdown"
   },
   "dependencies": {
-    "@ocavue/utils": "^0.5.0",
+    "@ocavue/utils": "^0.6.0",
     "@prosekit/core": "workspace:^",
     "@prosekit/pm": "workspace:^",
     "prosemirror-changeset": "^2.3.1",
@@ -90,7 +90,7 @@
     "prosemirror-highlight": "^0.13.0",
     "prosemirror-search": "^1.1.0",
     "prosemirror-tables": "^1.7.1",
-    "shiki": "^3.8.1"
+    "shiki": "^3.9.1"
   },
   "peerDependencies": {
     "loro-crdt": ">= 0.16.7",
@@ -126,7 +126,7 @@
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
-    "tsdown": "^0.13.0",
+    "tsdown": "^0.13.1",
     "type-fest": "^4.41.0",
     "typescript": "~5.8.3",
     "unified": "^11.0.5",

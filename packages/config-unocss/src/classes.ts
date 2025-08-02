@@ -197,6 +197,7 @@ export const CSS_IMAGE_UPLOAD_ERROR = cn(
 export const CSS_IMAGE_UPLOAD_ERROR_MESSAGE = cn('hidden opacity-80 @xs:block')
 
 export const CSS_DROP_CURSOR = cn('transition-all bg-blue-500')
+export const CSS_DROP_INDICATOR = cn('z-50 transition-all bg-blue-500')
 
 export const CSS_BLOCK_HANDLE_POPOVER = cn(
   'flex items-center flex-row box-border justify-center transition border-0',
@@ -211,19 +212,22 @@ export const CSS_BLOCK_HANDLE_DRAG = cn(
   'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 cursor-grab',
 )
 
+const CSS_TABLE_HANDLE_BASE = cn(
+  'flex items-center box-border justify-center bg-background hover:bg-secondary rounded text-muted-foreground/50 border border-border border-solid p-0',
+  'overflow-hidden',
+  'duration-150 transition-discrete transition',
+  'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
+  'data-[state=closed]:scale-95 starting:scale-95 scale-100',
+)
+
 export const CSS_TABLE_COLUMN_HANDLE = cn(
-  'flex items-center box-border justify-center h-[1.2em] w-[1.5em] bg-white hover:bg-secondary rounded text-muted-foreground/50 translate-y-3 border border-border border-solid',
-  CSS_PRESENCE_ANIMATE,
+  'h-[1.2em] w-[1.5em] translate-y-[80%]',
+  CSS_TABLE_HANDLE_BASE,
 )
 
 export const CSS_TABLE_ROW_HANDLE = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] bg-white hover:bg-secondary rounded text-muted-foreground/50 translate-x-3 border border-border border-solid',
-  CSS_PRESENCE_ANIMATE,
-)
-
-export const CSS_TABLE_ROOT_HANDLE = cn(
-  'flex items-center box-border justify-center h-[1.2em] w-[1.2em] bg-white hover:bg-secondary rounded text-muted-foreground/50 border translate-x-4 -translate-y-4 border-border border-solid',
-  CSS_PRESENCE_ANIMATE,
+  'h-[1.5em] w-[1.2em] translate-x-[80%]',
+  CSS_TABLE_HANDLE_BASE,
 )
 
 export const CSS_TABLE_HANDLE_MENU = cn(

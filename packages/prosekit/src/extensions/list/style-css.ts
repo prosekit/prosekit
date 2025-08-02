@@ -3,7 +3,7 @@
  *
  * This file is already included in [`prosekit/basic/style.css`](/references/basic/stylecss/).
  *
- * It contains the following CSS variables:
+ * CSS variables:
  *
  * - `--prosekit-list-bullet-icon`: The icon for the bullet list.
  * - `--prosekit-list-toggle-open-icon`: The icon for the toggle list when it is

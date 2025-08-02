@@ -12,6 +12,7 @@ import {
 } from '@prosekit/extensions/drop-indicator'
 
 import { useEditorExtension } from '../../../hooks/use-editor-extension'
+import { useScrolling } from '../../../hooks/use-scrolling'
 import { assignStyles } from '../../../utils/assign-styles'
 
 import type {
@@ -37,7 +38,10 @@ export function useDropIndicator(
   useEditorExtension(host, state.editor, extension)
 
   const line = createComputed(() => context.get()?.line)
-  const presence = createComputed(() => !!line.get())
+  const scrolling = useScrolling(host)
+  const presence = createComputed(() => {
+    return !!context.get() && !scrolling.get()
+  })
   usePresence(host, presence)
 
   useEffect(

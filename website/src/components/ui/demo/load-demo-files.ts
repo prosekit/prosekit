@@ -15,7 +15,7 @@ async function loadDemoFileImpl(
   const filePath = path.join(process.cwd(), 'src', 'examples', framework, story, fileName)
   const fileContent = await fs.readFile(filePath, 'utf-8')
   return ({
-    title: filePath,
+    title: fileName,
     code: replaceClassNames(fileContent),
     lang: (fileName.split('.').pop() || 'plaintext') as 'plaintext',
   })

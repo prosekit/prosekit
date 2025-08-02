@@ -1,5 +1,6 @@
 import { assignStyles } from '../../../utils/assign-styles'
 import { deepCloneElement } from '../../../utils/clone-element'
+import { getClientRect } from '../../../utils/get-client-rect'
 import { maxZIndex } from '../../../utils/max-z-index'
 
 /**
@@ -14,8 +15,11 @@ import { maxZIndex } from '../../../utils/max-z-index'
  * - Removes the container from the document body after the next frame.
  */
 export function setDragPreview(event: DragEvent, element: HTMLElement): void {
-  const rect = element.getBoundingClientRect()
-  const { width, height, x: elementX, y: elementY } = rect
+  const { top, bottom, left, right } = getClientRect(element)
+  const width = right - left
+  const height = bottom - top
+  const elementX = left
+  const elementY = top
 
   const { clientX, clientY } = event
 
@@ -54,8 +58,12 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
 
   const clonedElement = deepCloneElement(element)
   assignStyles(clonedElement, {
-    outline: 'none',
+    // A hardcoded opacity.
     opacity: '0.5',
+
+    // The bounding client rect doesn't include the margin, so we need to remove
+    // the margin too from the cloned element so that it can fit the container.
+    margin: '0',
   })
 
   document.body.appendChild(container)

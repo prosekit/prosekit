@@ -13,11 +13,14 @@ import {
   Slice,
 } from '@prosekit/pm/model'
 import { NodeSelection } from '@prosekit/pm/state'
+import type { EditorView } from '@prosekit/pm/view'
 
+import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import {
   blockPopoverContext,
   draggingContext,
   type BlockPopoverContext,
+  type HoverState,
 } from '../context'
 
 import { setDragPreview } from './set-drag-preview'
@@ -31,14 +34,37 @@ export function useBlockHandleDraggable(
   { state }: { state: SignalState<BlockHandleDraggableProps> },
 ): void {
   const context = blockPopoverContext.consume(host)
+  const dragging = draggingContext.consume(host)
 
   useEffect(host, () => {
     host.draggable = true
   })
 
   usePointerDownHandler(host, context, state.editor)
-  useDraggingPreview(host, context, state.editor)
-  useDataDraggingAttribute(host)
+
+  useEventListener(host, 'dragstart', (event) => {
+    dragging.set(true)
+
+    const view = getSafeEditorView(state.editor.get())
+    const hoverState = context.get()
+
+    if (view && hoverState) {
+      view.dom.classList.add('prosekit-dragging')
+      createDraggingPreview(view, hoverState, event)
+      setViewDragging(view, hoverState)
+    }
+  })
+
+  useEventListener(host, 'dragend', () => {
+    dragging.set(false)
+
+    const view = getSafeEditorView(state.editor.get())
+    if (view) {
+      view.dom.classList.remove('prosekit-dragging')
+    }
+  })
+
+  useAttribute(host, 'data-dragging', () => (dragging.get() ? '' : undefined))
 }
 
 function usePointerDownHandler(
@@ -67,58 +93,36 @@ function usePointerDownHandler(
   })
 }
 
-function useDraggingPreview(
-  host: ConnectableElement,
-  context: ReadonlySignal<BlockPopoverContext>,
-  editor: ReadonlySignal<Editor | null>,
-) {
-  useEventListener(host, 'dragstart', (event) => {
-    const hoverState = context.get()
-    const { view } = editor.get() ?? {}
+function createDraggingPreview(view: EditorView, hoverState: HoverState, event: DragEvent): void {
+  if (!event.dataTransfer) {
+    return
+  }
 
-    if (!hoverState || !view || !event.dataTransfer) {
-      return
-    }
+  const { pos } = hoverState
 
-    const { node, pos } = hoverState
+  const element = view.nodeDOM(pos)
+  if (!element || !isHTMLElement(element)) {
+    return
+  }
 
-    const element = view.nodeDOM(pos)
-    if (!element || !isHTMLElement(element)) {
-      return
-    }
+  event.dataTransfer.clearData()
+  event.dataTransfer.setData('text/html', element.outerHTML)
+  event.dataTransfer.effectAllowed = 'copyMove'
+  setDragPreview(event, element)
 
-    event.dataTransfer.clearData()
-    event.dataTransfer.setData('text/html', element.outerHTML)
-    event.dataTransfer.effectAllowed = 'copyMove'
-    setDragPreview(event, element)
-
-    // An object matching the internal ProseMirror API shape.
-    // See https://github.com/ProseMirror/prosemirror-view/blob/1.38.1/src/input.ts#L657
-    const dragging = {
-      slice: new Slice(Fragment.from(node), 0, 0),
-      move: true,
-      node: NodeSelection.create(view.state.doc, pos),
-    }
-
-    view.dragging = dragging
-  })
+  return
 }
 
-function useDataDraggingAttribute(host: ConnectableElement): void {
-  const dragging = useDragging(host)
-  useAttribute(host, 'data-dragging', () => (dragging.get() ? '' : undefined))
-}
+function setViewDragging(view: EditorView, hoverState: HoverState): void {
+  const { node, pos } = hoverState
 
-function useDragging(host: ConnectableElement): ReadonlySignal<boolean> {
-  const dragging = draggingContext.consume(host)
+  // An object matching the internal ProseMirror API shape.
+  // See https://github.com/ProseMirror/prosemirror-view/blob/1.38.1/src/input.ts#L657
+  const dragging = {
+    slice: new Slice(Fragment.from(node), 0, 0),
+    move: true,
+    node: NodeSelection.create(view.state.doc, pos),
+  }
 
-  useEventListener(host, 'dragstart', () => {
-    dragging.set(true)
-  })
-
-  useEventListener(host, 'dragend', () => {
-    dragging.set(false)
-  })
-
-  return dragging
+  view.dragging = dragging
 }

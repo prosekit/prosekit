@@ -817,6 +817,9 @@ importers:
       '@prosekit/pm':
         specifier: workspace:^
         version: link:../pm
+      '@zag-js/dom-query':
+        specifier: ^1.21.1
+        version: 1.21.1
       prosemirror-tables:
         specifier: ^1.7.1
         version: 1.7.1
@@ -3222,11 +3225,17 @@ packages:
   '@zag-js/dom-query@1.14.0':
     resolution: {integrity: sha512-+bAAtQY4cOMf9jYxLhgw8nO6i8jpPLplL1sgf0llyspVH6pJKIQMNDMbKD65XSzjcNEbOyzkP5hc7OeHNFw70A==}
 
+  '@zag-js/dom-query@1.21.1':
+    resolution: {integrity: sha512-O4db9iYvKeHPjBOtE92p01WXKHngzRRsR7Y5p1cNZ4cbBq15PH2lICcWwUyIxx5zjADZHx6HIv3E+Mg/KCauKA==}
+
   '@zag-js/interact-outside@1.14.0':
     resolution: {integrity: sha512-kGA4xWoiNnjVm8A3JZq2RdkKv8UAF5uN6weCxIdOpxEyJOHkGsZNl17aoP9oA3wCG3XC4zGtlOex7dsnwAPmrQ==}
 
   '@zag-js/types@1.14.0':
     resolution: {integrity: sha512-7ijOGUMOmTQnOMOvVb4c24F5pWJogXf6tFud2/vFslpiPEzI0Uo3Kvd6ZMFrCifw43ZNpwP2BfpYqoqfnIjvEg==}
+
+  '@zag-js/types@1.21.1':
+    resolution: {integrity: sha512-KbKMwJnrj6wmi4FOcaIMwqBVPz4KZRAn0D7Il8QjvAaJc5SdqkK18lcxQz4/v02EmQ4uOrHgKchcnB+ZHcBFCw==}
 
   '@zag-js/utils@1.14.0':
     resolution: {integrity: sha512-F0RoA/dJYUxRaTGdhi1LpHqHXnBjLn7ww9UGIzCJ40r7EVVV6jvm6HwC5g19ZbRGYMxR29LO/ipb9CWfR9my4w==}
@@ -7438,7 +7447,7 @@ snapshots:
       '@ariatype/aria-attributes': 1.0.1
       '@ariatype/aria-roles': 1.0.1
       '@preact/signals-core': 1.9.0
-      '@zag-js/dom-query': 1.14.0
+      '@zag-js/dom-query': 1.21.1
       just-kebab-case: 4.2.0
       just-map-values: 3.2.0
       server-dom-shim: 1.0.2
@@ -7464,7 +7473,7 @@ snapshots:
       '@aria-ui/core': 0.0.21
       '@floating-ui/dom': 1.7.3
       '@floating-ui/utils': 0.2.10
-      '@zag-js/dom-query': 1.14.0
+      '@zag-js/dom-query': 1.21.1
 
   '@aria-ui/popover@0.0.27':
     dependencies:
@@ -7472,12 +7481,12 @@ snapshots:
       '@aria-ui/overlay': 0.0.24
       '@aria-ui/presence': 0.0.19
       '@zag-js/dismissable': 1.14.0
-      '@zag-js/dom-query': 1.14.0
+      '@zag-js/dom-query': 1.21.1
 
   '@aria-ui/presence@0.0.19':
     dependencies:
       '@aria-ui/core': 0.0.21
-      '@zag-js/dom-query': 1.14.0
+      '@zag-js/dom-query': 1.21.1
 
   '@aria-ui/tooltip@0.0.29':
     dependencies:
@@ -10097,12 +10106,20 @@ snapshots:
     dependencies:
       '@zag-js/types': 1.14.0
 
+  '@zag-js/dom-query@1.21.1':
+    dependencies:
+      '@zag-js/types': 1.21.1
+
   '@zag-js/interact-outside@1.14.0':
     dependencies:
       '@zag-js/dom-query': 1.14.0
       '@zag-js/utils': 1.14.0
 
   '@zag-js/types@1.14.0':
+    dependencies:
+      csstype: 3.1.3
+
+  '@zag-js/types@1.21.1':
     dependencies:
       csstype: 3.1.3
 

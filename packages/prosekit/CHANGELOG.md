@@ -1,5 +1,41 @@
 # prosekit
 
+## 0.15.0
+
+### Minor Changes
+
+- [`2e796cc`](https://github.com/ocavue/prosekit/commit/2e796cc1c25498f64f3917290106e14498bc96ad) ![](https://prosekit.dev/b/preact) ![](https://prosekit.dev/b/svelte) ![](https://prosekit.dev/b/react) ![](https://prosekit.dev/b/solid) ![](https://prosekit.dev/b/lit) ![](https://prosekit.dev/b/vue) ![](https://prosekit.dev/b/web)
+
+  Add `<DropIndicator />` component to replace `defineDropCursor` extension.
+
+  The new `<DropIndicator />` component provides improved drag-and-drop visual feedback when dragging content into the editor. This replaces the previous `defineDropCursor` extension that was based on the [`prosemirror-dropcursor`](https://github.com/ProseMirror/prosemirror-dropcursor) package. The component offers more accurate positioning for nested lists, better support for customization and animations.
+
+- [`2e796cc`](https://github.com/ocavue/prosekit/commit/2e796cc1c25498f64f3917290106e14498bc96ad) ![](https://prosekit.dev/b/basic)
+
+  Remove `defineDropCursor` from `defineBasicExtension`.
+
+  The `defineDropCursor` extension has been removed from the basic extension bundle as it is being replaced by the new `<DropIndicator />` component, which provides better positioning and customization options.
+
+- [`2e796cc`](https://github.com/ocavue/prosekit/commit/2e796cc1c25498f64f3917290106e14498bc96ad) ![](https://prosekit.dev/b/basic)
+
+  Adjust list marker positioning in `prosekit/basic/typography.css`.
+
+- [`2e796cc`](https://github.com/ocavue/prosekit/commit/2e796cc1c25498f64f3917290106e14498bc96ad) ![](https://prosekit.dev/b/extensions)
+
+  List nodes with `bullet` and `toggle` kinds now use SVG icons instead of text-based markers. This provides better visual consistency and customization options.
+
+  Available CSS variables for icon customization:
+
+  - `--prosekit-list-bullet-icon`: The icon for bullet lists
+  - `--prosekit-list-toggle-open-icon`: The icon for toggle lists when expanded
+  - `--prosekit-list-toggle-closed-icon`: The icon for toggle lists when collapsed
+
+### Patch Changes
+
+- [`8417673`](https://github.com/ocavue/prosekit/commit/8417673c6762f784e443327b617d4e12cd711add) ![](https://prosekit.dev/b/web)
+
+  Improve the positioning of the table handles during scrolling.
+
 ## 0.14.2
 
 ### Patch Changes

@@ -11,7 +11,7 @@ import {
 import type { Placement } from '@floating-ui/dom'
 import type { Editor } from '@prosekit/core'
 
-export interface TableHandleColumnRootProps extends Omit<OverlayPositionerProps, 'placement' | 'hoist'> {
+export interface TableHandleColumnRootProps extends Omit<OverlayPositionerProps, 'placement' | 'hoist' | 'flip' | 'shift' | 'hide'> {
   /**
    * The ProseKit editor instance.
    *
@@ -34,6 +34,24 @@ export interface TableHandleColumnRootProps extends Omit<OverlayPositionerProps,
    * @default false
    */
   hoist: boolean
+
+  /**
+   * @default false
+   * @hidden
+   */
+  flip: boolean
+
+  /**
+   * @default false
+   * @hidden
+   */
+  shift: boolean
+
+  /**
+   * @default true
+   * @hidden
+   */
+  hide: boolean
 }
 
 /** @internal */
@@ -45,6 +63,10 @@ export const tableHandleColumnRootProps: PropDeclarations<TableHandleColumnRootP
   // Enabling `hoist` will cause the popover to have a small delay when
   // scrolling the page.
   hoist: { default: false },
+
+  flip: { default: false },
+  shift: { default: false },
+  hide: { default: true },
 })
 
 /** @internal */

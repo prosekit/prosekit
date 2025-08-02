@@ -1,5 +1,31 @@
 # prosekit
 
+## 0.15.1
+
+### Patch Changes
+
+- [`4abab2e`](https://github.com/ocavue/prosekit/commit/4abab2e6cb4d3de2efed54cc1cc234f00acf0437) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the drag preview has an incorrect position when the dragging element has a margin.
+
+- [`3c52a64`](https://github.com/ocavue/prosekit/commit/3c52a64e1d59bbe3e906bb1dd3b36a325566f0ac) ![](https://prosekit.dev/b/extensions)
+
+  Don't show the drop indicator when dragging a node to the same position.
+
+- [`4abab2e`](https://github.com/ocavue/prosekit/commit/4abab2e6cb4d3de2efed54cc1cc234f00acf0437) ![](https://prosekit.dev/b/basic)
+
+  Improve the node selection style in `prosekit/basic/typography.css`. Add a new
+  CSS variable `--prosekit-node-selection-color` to customize the color of the
+  node selection background.
+
+- [`382b6da`](https://github.com/ocavue/prosekit/commit/382b6da0bed49f199bf34ff5e758a7b0176ae119) ![](https://prosekit.dev/b/web)
+
+  Hide block handles and table handles during scrollling.
+
+- [`4abab2e`](https://github.com/ocavue/prosekit/commit/4abab2e6cb4d3de2efed54cc1cc234f00acf0437) ![](https://prosekit.dev/b/extensions)
+
+  Fix an issue where the virtual selection and the node selection are both shown.
+
 ## 0.15.0
 
 ### Minor Changes

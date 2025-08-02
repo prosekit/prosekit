@@ -45,10 +45,10 @@ export default defineConfig({
   presets: [preset()],
   configDeps: configDeps(),
   content: {
-    filesystem: ['./src/**/*.{vue,tsx,jsx,ts,js,svelte,astro,ts}'],
-    pipeline: {
-      include: /\.(vue|svelte|[jt]sx?|mdx?|astro|html)($|\?)/,
-    },
+    filesystem: ['./src/**/*.{vue,tsx,jsx,ts,js,svelte,astro}'],
+    // pipeline: {
+    //   include: /\.(vue|svelte|[jt]sx?|mdx?|astro|html)($|\?)/,
+    // },
   },
   transformers: [transformerDirectives()],
   preflights: [{ getCSS: () => preflight }],

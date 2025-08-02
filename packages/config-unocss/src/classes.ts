@@ -215,18 +215,19 @@ export const CSS_BLOCK_HANDLE_DRAG = cn(
 const CSS_TABLE_HANDLE_BASE = cn(
   'flex items-center box-border justify-center bg-background hover:bg-secondary rounded text-muted-foreground/50 border border-border border-solid p-0',
   'overflow-hidden',
+  'duration-150 transition-discrete transition',
+  'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
+  'data-[state=closed]:scale-95 starting:scale-95 scale-100',
 )
 
 export const CSS_TABLE_COLUMN_HANDLE = cn(
-  'h-[1.2em] w-[1.5em] translate-y-3',
+  'h-[1.2em] w-[1.5em] translate-y-[80%]',
   CSS_TABLE_HANDLE_BASE,
-  CSS_PRESENCE_ANIMATE,
 )
 
 export const CSS_TABLE_ROW_HANDLE = cn(
-  'h-[1.5em] w-[1.2em] translate-x-3',
+  'h-[1.5em] w-[1.2em] translate-x-[80%]',
   CSS_TABLE_HANDLE_BASE,
-  CSS_PRESENCE_ANIMATE,
 )
 
 export const CSS_TABLE_HANDLE_MENU = cn(

@@ -3,6 +3,8 @@ import {
   cloneElement,
   deepCloneElement,
 } from '../../../utils/clone-element'
+import { fadeColor } from '../../../utils/fade-color'
+import { getEffectiveBackgroundColor } from '../../../utils/get-effective-background-color'
 
 export function clearPreviewDOM(previewRoot: HTMLElement): void {
   while (previewRoot.firstChild) {
@@ -27,6 +29,15 @@ export function createPreviewDOM(
 
   unsetSize(previewTableBody)
   unsetSize(previewTable)
+
+  // Get effective background color and apply it with some opacity
+  const backgroundColor = getEffectiveBackgroundColor(table)
+  if (backgroundColor) {
+    const backgroundColorWithOpacity = fadeColor(backgroundColor, 0.8)
+    if (backgroundColorWithOpacity) {
+      assignStyles(previewTable, { backgroundColor: backgroundColorWithOpacity })
+    }
+  }
 
   previewTable.appendChild(previewTableBody)
   previewRoot.appendChild(previewTable)

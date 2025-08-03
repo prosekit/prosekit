@@ -8,6 +8,7 @@ export function getEffectiveBackgroundColor(element: HTMLElement): string | unde
     if (
       backgroundColor
       && backgroundColor !== 'transparent'
+      // Chrome returns `rgba(0, 0, 0, 0)` for transparent colors.
       && backgroundColor !== 'rgba(0, 0, 0, 0)'
     ) {
       return backgroundColor

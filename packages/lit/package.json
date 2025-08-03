@@ -10,14 +10,14 @@
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ocavue/prosekit.git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
     "directory": "packages/lit"
   },
   "bugs": {
-    "url": "https://github.com/ocavue/prosekit/issues"
+    "url": "https://github.com/prosekit/prosekit/issues"
   },
   "keywords": [
     "ProseMirror"
@@ -133,12 +133,12 @@
       "prosekit-lit": "./src/index.ts",
       "prosekit-lit-autocomplete": "./src/components/autocomplete/index.gen.ts",
       "prosekit-lit-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-lit-drop-indicator": "./src/components/drop-indicator/index.gen.ts",
       "prosekit-lit-inline-popover": "./src/components/inline-popover/index.gen.ts",
       "prosekit-lit-popover": "./src/components/popover/index.gen.ts",
       "prosekit-lit-resizable": "./src/components/resizable/index.gen.ts",
       "prosekit-lit-table-handle": "./src/components/table-handle/index.gen.ts",
-      "prosekit-lit-tooltip": "./src/components/tooltip/index.gen.ts",
-      "prosekit-lit-drop-indicator": "./src/components/drop-indicator/index.gen.ts"
+      "prosekit-lit-tooltip": "./src/components/tooltip/index.gen.ts"
     }
   }
 }

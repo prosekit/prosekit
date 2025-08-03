@@ -143,14 +143,14 @@ function normalizePackageJsonDocumentFields(pkg: Package) {
   Object.assign(pkg.packageJson, {
     license: 'MIT',
     funding: 'https://github.com/sponsors/ocavue',
-    homepage: 'https://github.com/ocavue/prosekit#readme',
+    homepage: 'https://github.com/prosekit/prosekit#readme',
     repository: {
       type: 'git',
-      url: 'git+https://github.com/ocavue/prosekit.git',
+      url: 'git+https://github.com/prosekit/prosekit.git',
       directory: path.normalize(pkg.relativeDir),
     },
     bugs: {
-      url: 'https://github.com/ocavue/prosekit/issues',
+      url: 'https://github.com/prosekit/prosekit/issues',
     },
   })
 }

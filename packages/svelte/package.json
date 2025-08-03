@@ -10,14 +10,14 @@
   },
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
-  "homepage": "https://github.com/ocavue/prosekit#readme",
+  "homepage": "https://github.com/prosekit/prosekit#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ocavue/prosekit.git",
+    "url": "git+https://github.com/prosekit/prosekit.git",
     "directory": "packages/svelte"
   },
   "bugs": {
-    "url": "https://github.com/ocavue/prosekit/issues"
+    "url": "https://github.com/prosekit/prosekit/issues"
   },
   "keywords": [
     "ProseMirror"
@@ -180,12 +180,12 @@
       "prosekit-svelte": "./src/index.ts",
       "prosekit-svelte-autocomplete": "./src/components/autocomplete/index.gen.ts",
       "prosekit-svelte-block-handle": "./src/components/block-handle/index.gen.ts",
+      "prosekit-svelte-drop-indicator": "./src/components/drop-indicator/index.gen.ts",
       "prosekit-svelte-inline-popover": "./src/components/inline-popover/index.gen.ts",
       "prosekit-svelte-popover": "./src/components/popover/index.gen.ts",
       "prosekit-svelte-resizable": "./src/components/resizable/index.gen.ts",
       "prosekit-svelte-table-handle": "./src/components/table-handle/index.gen.ts",
-      "prosekit-svelte-tooltip": "./src/components/tooltip/index.gen.ts",
-      "prosekit-svelte-drop-indicator": "./src/components/drop-indicator/index.gen.ts"
+      "prosekit-svelte-tooltip": "./src/components/tooltip/index.gen.ts"
     }
   }
 }

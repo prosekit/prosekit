@@ -280,8 +280,8 @@ importers:
   packages/extensions:
     dependencies:
       '@ocavue/utils':
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.7.1
+        version: 0.7.1
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -806,8 +806,8 @@ importers:
         specifier: ^1.7.3
         version: 1.7.3
       '@ocavue/utils':
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.7.1
+        version: 0.7.1
       '@prosekit/core':
         specifier: workspace:^
         version: link:../core
@@ -873,8 +873,8 @@ importers:
         specifier: ^1.2.20
         version: 1.2.20
       '@ocavue/utils':
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.7.1
+        version: 0.7.1
       '@playwright/test':
         specifier: ^1.54.2
         version: 1.54.2
@@ -2112,6 +2112,9 @@ packages:
 
   '@ocavue/utils@0.6.0':
     resolution: {integrity: sha512-ulsUYE5EvGIFvSyjPb57KoZ2WgztgIYgHL4n0/zvSeqo3VZUVeMpIq8tsAe9IQvFMQHnKa3Nzl+8QfZ03/sIKQ==}
+
+  '@ocavue/utils@0.7.1':
+    resolution: {integrity: sha512-gY/YWdyTPGx8YTT0q/0tQJs6kPJ2XeXRPfdzWLt+wefIOuwb1n5Nq3GwKM/AY+Wab3dbx6w+MkX8VSbrm3l6Xg==}
 
   '@octokit/action@6.1.0':
     resolution: {integrity: sha512-lo+nHx8kAV86bxvOVOI3vFjX3gXPd/L7guAUbvs3pUvnR2KC+R7yjBkA1uACt4gYhs4LcWP3AXSGQzsbeN2XXw==}
@@ -8850,6 +8853,8 @@ snapshots:
   '@ocavue/tsconfig@0.3.7': {}
 
   '@ocavue/utils@0.6.0': {}
+
+  '@ocavue/utils@0.7.1': {}
 
   '@octokit/action@6.1.0':
     dependencies:

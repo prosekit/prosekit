@@ -24,9 +24,7 @@ export function config(input?: Options): Options {
     entry,
     sourcemap: false,
     clean: false,
-    dts: {
-      isolatedDeclarations: true,
-    },
+    dts: true,
     // Bundling CSS files to remove the `@import` statements. This increases the
     // compability of the output.
     noExternal: [/\.css$/i],

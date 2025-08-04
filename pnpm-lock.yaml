@@ -170,8 +170,8 @@ importers:
   packages/core:
     dependencies:
       '@ocavue/utils':
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.7.1
+        version: 0.7.1
       '@prosekit/pm':
         specifier: workspace:^
         version: link:../pm

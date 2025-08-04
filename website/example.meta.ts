@@ -2701,10 +2701,6 @@ export const exampleMeta = {
           "hidden": false
         },
         {
-          "path": "get-id.ts",
-          "hidden": false
-        },
-        {
           "path": "language-selector.ts",
           "hidden": false
         }

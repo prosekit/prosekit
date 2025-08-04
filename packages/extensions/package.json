@@ -126,7 +126,7 @@
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
-    "tsdown": "^0.13.1",
+    "tsdown": "^0.13.2",
     "type-fest": "^4.41.0",
     "typescript": "~5.8.3",
     "unified": "^11.0.5",

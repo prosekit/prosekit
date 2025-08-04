@@ -97,8 +97,8 @@ importers:
         specifier: ^26.1.0
         version: 26.1.0
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -118,8 +118,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -210,8 +210,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -353,8 +353,8 @@ importers:
         specifier: ^11.0.0
         version: 11.0.0
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       type-fest:
         specifier: ^4.41.0
         version: 4.41.0
@@ -390,8 +390,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -433,8 +433,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -464,8 +464,8 @@ importers:
         specifier: ^10.27.0
         version: 10.27.0
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -552,8 +552,8 @@ importers:
         specifier: ^5.37.2
         version: 5.37.2
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       tsup:
         specifier: ^8.5.0
         version: 8.5.0(jiti@2.4.2)(postcss@8.5.6)(tsx@4.20.3)(typescript@5.8.3)(yaml@2.8.0)
@@ -622,8 +622,8 @@ importers:
         specifier: ^19.1.1
         version: 19.1.1(react@19.1.1)
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -659,8 +659,8 @@ importers:
         specifier: ^1.9.7
         version: 1.9.7
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -727,8 +727,8 @@ importers:
         specifier: ^20.17.29
         version: 20.17.57
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -764,8 +764,8 @@ importers:
         specifier: ^2.4.6
         version: 2.4.6
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -831,8 +831,8 @@ importers:
         specifier: workspace:*
         version: link:../config-vitest
       tsdown:
-        specifier: ^0.13.1
-        version: 0.13.1(typescript@5.8.3)
+        specifier: ^0.13.2
+        version: 0.13.2(typescript@5.8.3)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -6151,8 +6151,8 @@ packages:
   rfdc@1.4.1:
     resolution: {integrity: sha512-q1b3N5QkRUWUl7iyylaaj3kOpIT0N2i9MqIEQXP73GVsN9cw3fdx8X63cEmWhJGi2PPCF23Ijp7ktmd39rawIA==}
 
-  rolldown-plugin-dts@0.14.3:
-    resolution: {integrity: sha512-LsUPsPV2XpACe5wikxQzYBD0qg4nyxwUkLos5oF8v8qVO9jPpH6GRg2S5ZUELFry04Ab58C9Tibbi7dEbVLp2w==}
+  rolldown-plugin-dts@0.15.1:
+    resolution: {integrity: sha512-X/oIfoqsEWb46aWXvdgKSN/TcF3Z50Mikk30KZcceVBgypEl9Tscvt3+o6pZzyJxZV3m+Kc+ftlHBBVQUGpXtw==}
     engines: {node: '>=20.18.0'}
     peerDependencies:
       '@typescript/native-preview': '>=7.0.0-dev.20250601.1'
@@ -6676,8 +6676,8 @@ packages:
       typescript:
         optional: true
 
-  tsdown@0.13.1:
-    resolution: {integrity: sha512-+rdxvqZvRKh+OwuupdQmJ2XAM31gLsdqcoo1O3aIlaD+MEXw5OaCRaCalg5wA+0nNk97f0GJliGZyUi0QlcCmQ==}
+  tsdown@0.13.2:
+    resolution: {integrity: sha512-sXZKvkqxxKMBL6I/AzXJnC+/9i6bLO8an+Jg4JSJDkEc99e3Y5bACQMTQyE1IXJE+7F6IRZ1P8AJQu31eQqv8A==}
     engines: {node: '>=20.19.0'}
     hasBin: true
     peerDependencies:
@@ -13845,7 +13845,7 @@ snapshots:
 
   rfdc@1.4.1: {}
 
-  rolldown-plugin-dts@0.14.3(rolldown@1.0.0-beta.30)(typescript@5.8.3):
+  rolldown-plugin-dts@0.15.1(rolldown@1.0.0-beta.30)(typescript@5.8.3):
     dependencies:
       '@babel/generator': 7.28.0
       '@babel/parser': 7.28.0
@@ -14518,7 +14518,7 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.3
 
-  tsdown@0.13.1(typescript@5.8.3):
+  tsdown@0.13.2(typescript@5.8.3):
     dependencies:
       ansis: 4.1.0
       cac: 6.7.14
@@ -14528,7 +14528,7 @@ snapshots:
       empathic: 2.0.0
       hookable: 5.5.3
       rolldown: 1.0.0-beta.30
-      rolldown-plugin-dts: 0.14.3(rolldown@1.0.0-beta.30)(typescript@5.8.3)
+      rolldown-plugin-dts: 0.15.1(rolldown@1.0.0-beta.30)(typescript@5.8.3)
       semver: 7.7.2
       tinyexec: 1.0.1
       tinyglobby: 0.2.14

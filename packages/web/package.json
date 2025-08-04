@@ -53,7 +53,7 @@
     "@aria-ui/presence": "^0.0.19",
     "@aria-ui/tooltip": "^0.0.29",
     "@floating-ui/dom": "^1.7.3",
-    "@ocavue/utils": "^0.6.0",
+    "@ocavue/utils": "^0.7.1",
     "@prosekit/core": "workspace:^",
     "@prosekit/extensions": "workspace:^",
     "@prosekit/pm": "workspace:^",

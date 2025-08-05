@@ -1,6 +1,7 @@
 import { assignStyles } from '../../../utils/assign-styles'
 import { deepCloneElement } from '../../../utils/clone-element'
 import { getClientRect } from '../../../utils/get-client-rect'
+import { injectStyle } from '../../../utils/inject-style'
 import { maxZIndex } from '../../../utils/max-z-index'
 
 /**
@@ -66,14 +67,9 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
     margin: '0',
   })
 
-  if (styleText) {
-    const style = document.createElement('style')
-    style.textContent = styleText
-    container.appendChild(style)
-  }
-
   document.body.appendChild(container)
   container.appendChild(clonedElement)
+  injectStyle(container, styleText)
 
   event.dataTransfer?.setDragImage(container, Math.max(-outsideX, 0), Math.max(-outsideY, 0))
 

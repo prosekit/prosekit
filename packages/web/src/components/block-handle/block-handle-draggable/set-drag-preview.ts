@@ -56,7 +56,7 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
     height: `${height + borderY}px`,
   })
 
-  const clonedElement = deepCloneElement(element)
+  const [clonedElement, styleText] = deepCloneElement(element)
   assignStyles(clonedElement, {
     // A hardcoded opacity.
     opacity: '0.5',
@@ -65,6 +65,14 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
     // the margin too from the cloned element so that it can fit the container.
     margin: '0',
   })
+
+  if (styleText) {
+    console.log('styleText', styleText)
+
+    const style = document.createElement('style')
+    style.textContent = styleText
+    container.appendChild(style)
+  }
 
   document.body.appendChild(container)
   container.appendChild(clonedElement)

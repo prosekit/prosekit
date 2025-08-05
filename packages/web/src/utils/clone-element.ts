@@ -1,53 +1,66 @@
+import { getId } from '@ocavue/utils'
+
 /**
  * Creates a deep clone of an Element, including all computed styles so that
  * it looks almost exactly the same as the original element.
  */
-export function deepCloneElement<T extends Element>(element: T): T {
+export function deepCloneElement<T extends Element>(element: T): [T, string] {
   const clonedElement = element.cloneNode(true) as T
-  deepCopyStyles(element, clonedElement)
-  return clonedElement
+  const style = deepCopyStyles(element, clonedElement)
+  return [clonedElement, style]
 }
 
 /**
  * Creates a clone of an Element, including all computed styles so that
  * it looks similar enough to the original element.
  */
-export function cloneElement<T extends Element>(element: T): T {
+export function cloneElement<T extends Element>(element: T): [T, string] {
   const clonedElement = element.cloneNode() as T
-  copyStyles(element, clonedElement)
-  return clonedElement
+  const style = copyStyles(element, clonedElement)
+  return [clonedElement, style]
 }
 
-function deepCopyStyles(source: Element, target: Element) {
+function deepCopyStyles(source: Element, target: Element): string {
   const sources = [source]
   const targets = [target]
+  const styles: string[] = []
 
   while (sources.length > 0 && sources.length === targets.length) {
     const source = sources.pop()
     const target = targets.pop()
 
     if (!source || !target) {
-      return
+      break
     }
 
-    copyStyles(source, target)
+    const style = copyStyles(source, target)
+    if (style) {
+      styles.push(style)
+    }
 
     sources.push(...source.children)
     targets.push(...target.children)
   }
+
+  return styles.join('\n')
 }
 
-function copyStyles(source: Element, target: Element): void {
+function copyStyles(source: Element, target: Element): string {
   if (!source || !target) {
-    return
+    return ''
+  }
+
+  const view = source.ownerDocument?.defaultView
+  if (!view) {
+    return ''
   }
 
   // Known issue: pseudo styles are not copied.
-  const sourceStyle = source.ownerDocument?.defaultView?.getComputedStyle(source)
+  const sourceStyle = view.getComputedStyle(source)
   const targetStyle = (target as HTMLElement | SVGElement | MathMLElement).style
 
   if (!sourceStyle || !targetStyle) {
-    return
+    return ''
   }
 
   for (const key of sourceStyle) {
@@ -57,4 +70,38 @@ function copyStyles(source: Element, target: Element): void {
       sourceStyle.getPropertyPriority(key),
     )
   }
+
+  const styles: string[] = []
+  for (const pesudoSelector of [':before', ':after']) {
+    const sourcePesudoStyle = view.getComputedStyle(source, pesudoSelector)
+    const targetPesudoStyle = view.getComputedStyle(target, pesudoSelector)
+
+    if (!sourcePesudoStyle) {
+      continue
+    }
+
+    const content = sourcePesudoStyle.getPropertyValue('content')
+    const hasPesudoElement = content && content !== 'none' && content !== 'normal'
+
+    if (!hasPesudoElement) {
+      continue
+    }
+
+    const cssProps: string[] = []
+    for (const property of sourcePesudoStyle) {
+      const sourceValue = sourcePesudoStyle.getPropertyValue(property)
+      const sourcePriority = sourcePesudoStyle.getPropertyPriority(property)
+      const targetValue = targetPesudoStyle.getPropertyValue(property)
+      const targetPriority = targetPesudoStyle.getPropertyPriority(property)
+      if (sourceValue !== targetValue || sourcePriority !== targetPriority) {
+        cssProps.push(`${property}: ${sourceValue}${sourcePriority ? ' !important' : ''}`)
+      }
+    }
+
+    const uniqueClassName = `clone-pesudo-element-${getId()}`
+    target.classList.add(uniqueClassName)
+    styles.push(`.${uniqueClassName}${pesudoSelector} { ${cssProps.join('; ')} }`)
+  }
+
+  return styles.join('\n')
 }

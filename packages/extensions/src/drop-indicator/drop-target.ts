@@ -81,7 +81,7 @@ export function buildGetTarget(
     return prevTargets
   }
 
-  const getTarget: GetTarget = (point, event) => {
+  const getTargetImpl: GetTarget = (point, event) => {
     if (!view.editable || view.isDestroyed) {
       return
     }
@@ -111,7 +111,24 @@ export function buildGetTarget(
     return target
   }
 
-  return getTarget
+  let prevPoint: Point | undefined
+  let prevTarget: DropTarget | undefined
+
+  const getTargetCached: GetTarget = (point, event) => {
+    if (prevPoint && pointEqual(prevPoint, point)) {
+      return prevTarget
+    }
+
+    prevPoint = point
+    prevTarget = getTargetImpl(point, event)
+    return prevTarget
+  }
+
+  return getTargetCached
+}
+
+function pointEqual(a: Point, b: Point) {
+  return a[0] === b[0] && a[1] === b[1]
 }
 
 function pointPointDistance(a: Point, b: Point) {

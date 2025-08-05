@@ -1,5 +1,21 @@
 # prosekit
 
+## 0.15.2
+
+### Patch Changes
+
+- [`52e82ba`](https://github.com/ocavue/prosekit/commit/52e82badcba517efbe7f6ad3c0145042eeadca47) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the ordered number in the list node wasn't positioned correctly during dragging.
+
+- [`b6ef783`](https://github.com/ocavue/prosekit/commit/b6ef783abe632570694baf39becd4967e1912150) ![](https://prosekit.dev/b/extensions)
+
+  Fix an issue where a list node might be moved to the wrong position when dropping.
+
+- [`3e7ca52`](https://github.com/ocavue/prosekit/commit/3e7ca52e552b082dea4ca87033c23a6e01a5130f) ![](https://prosekit.dev/b/web)
+
+  Add semi-transparent background color to table drag preview.
+
 ## 0.15.1
 
 ### Patch Changes

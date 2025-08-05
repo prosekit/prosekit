@@ -5,6 +5,7 @@ import {
 } from '../../../utils/clone-element'
 import { fadeColor } from '../../../utils/fade-color'
 import { getEffectiveBackgroundColor } from '../../../utils/get-effective-background-color'
+import { injectStyle } from '../../../utils/inject-style'
 
 export function clearPreviewDOM(previewRoot: HTMLElement): void {
   while (previewRoot.firstChild) {
@@ -20,15 +21,16 @@ export function createPreviewDOM(
 ): void {
   clearPreviewDOM(previewRoot)
 
-  const previewTable = cloneElementWithoutSize(table)
+  const [previewTable, previewTableStyle] = cloneElement(table)
+  injectStyle(previewRoot, previewTableStyle)
+  unsetSize(previewTable)
 
   const tableBody = table.querySelector('tbody')
-  const previewTableBody = tableBody
-    ? cloneElementWithoutSize(tableBody)
-    : table.ownerDocument.createElement('tbody')
-
+  const [previewTableBody, previewTableBodyStyle] = tableBody
+    ? cloneElement(tableBody)
+    : [table.ownerDocument.createElement('tbody'), '']
+  injectStyle(previewRoot, previewTableBodyStyle)
   unsetSize(previewTableBody)
-  unsetSize(previewTable)
 
   // Get effective background color and apply it with some opacity
   const backgroundColor = getEffectiveBackgroundColor(table)
@@ -46,28 +48,24 @@ export function createPreviewDOM(
 
   if (direction === 'row') {
     const row = rows[index]
-    const previewRow = deepCloneElement(row)
+    const [previewRow, previewRowStyle] = deepCloneElement(row)
+    injectStyle(previewRoot, previewRowStyle)
     previewTableBody.appendChild(previewRow)
   } else {
     rows.forEach((row) => {
-      const previewRow = cloneElementWithoutSize(row)
+      const [previewRow, previewRowStyle] = cloneElement(row)
+      injectStyle(previewRoot, previewRowStyle)
       unsetSize(previewRow)
-
       const cells = row.querySelectorAll('td')
       const cell = cells[index]
       if (cell) {
-        const previewCell = deepCloneElement(cell)
+        const [previewCell, previewCellStyle] = deepCloneElement(cell)
+        injectStyle(previewRoot, previewCellStyle)
         previewRow.appendChild(previewCell)
         previewTableBody.appendChild(previewRow)
       }
     })
   }
-}
-
-function cloneElementWithoutSize(element: HTMLElement) {
-  const clonedElement = cloneElement(element)
-  unsetSize(clonedElement)
-  return clonedElement
 }
 
 function unsetSize(element: HTMLElement) {

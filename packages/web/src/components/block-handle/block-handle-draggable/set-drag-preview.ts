@@ -1,6 +1,7 @@
 import { assignStyles } from '../../../utils/assign-styles'
 import { deepCloneElement } from '../../../utils/clone-element'
 import { getClientRect } from '../../../utils/get-client-rect'
+import { injectStyle } from '../../../utils/inject-style'
 import { maxZIndex } from '../../../utils/max-z-index'
 
 /**
@@ -56,7 +57,7 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
     height: `${height + borderY}px`,
   })
 
-  const clonedElement = deepCloneElement(element)
+  const [clonedElement, styleText] = deepCloneElement(element)
   assignStyles(clonedElement, {
     // A hardcoded opacity.
     opacity: '0.5',
@@ -68,6 +69,7 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
 
   document.body.appendChild(container)
   container.appendChild(clonedElement)
+  injectStyle(container, styleText)
 
   event.dataTransfer?.setDragImage(container, Math.max(-outsideX, 0), Math.max(-outsideY, 0))
 

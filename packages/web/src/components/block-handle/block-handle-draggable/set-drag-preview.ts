@@ -67,8 +67,6 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
   })
 
   if (styleText) {
-    console.log('styleText', styleText)
-
     const style = document.createElement('style')
     style.textContent = styleText
     container.appendChild(style)

@@ -72,35 +72,35 @@ function copyStyles(source: Element, target: Element): string {
   }
 
   const styles: string[] = []
-  for (const pesudoSelector of [':before', ':after']) {
-    const sourcePesudoStyle = view.getComputedStyle(source, pesudoSelector)
-    const targetPesudoStyle = view.getComputedStyle(target, pesudoSelector)
+  for (const pseudoSelector of [':before', ':after']) {
+    const sourcePseudoStyle = view.getComputedStyle(source, pseudoSelector)
+    const targetPseudoStyle = view.getComputedStyle(target, pseudoSelector)
 
-    if (!sourcePesudoStyle) {
+    if (!sourcePseudoStyle) {
       continue
     }
 
-    const content = sourcePesudoStyle.getPropertyValue('content')
-    const hasPesudoElement = content && content !== 'none' && content !== 'normal'
+    const content = sourcePseudoStyle.getPropertyValue('content')
+    const hasPseudoElement = content && content !== 'none' && content !== 'normal'
 
-    if (!hasPesudoElement) {
+    if (!hasPseudoElement) {
       continue
     }
 
     const cssProps: string[] = []
-    for (const property of sourcePesudoStyle) {
-      const sourceValue = sourcePesudoStyle.getPropertyValue(property)
-      const sourcePriority = sourcePesudoStyle.getPropertyPriority(property)
-      const targetValue = targetPesudoStyle.getPropertyValue(property)
-      const targetPriority = targetPesudoStyle.getPropertyPriority(property)
+    for (const property of sourcePseudoStyle) {
+      const sourceValue = sourcePseudoStyle.getPropertyValue(property)
+      const sourcePriority = sourcePseudoStyle.getPropertyPriority(property)
+      const targetValue = targetPseudoStyle.getPropertyValue(property)
+      const targetPriority = targetPseudoStyle.getPropertyPriority(property)
       if (sourceValue !== targetValue || sourcePriority !== targetPriority) {
-        cssProps.push(`${property}: ${sourceValue}${sourcePriority ? ' !important' : ''}`)
+        cssProps.push(`${property}: ${sourceValue}${sourcePriority ? ' !important' : ''};`)
       }
     }
 
-    const uniqueClassName = `clone-pesudo-element-${getId()}`
+    const uniqueClassName = `clone-pseudo-element-${getId()}`
     target.classList.add(uniqueClassName)
-    styles.push(`.${uniqueClassName}${pesudoSelector} { ${cssProps.join('; ')} }`)
+    styles.push(`.${uniqueClassName}${pseudoSelector} { ${cssProps.join(' ')} }`)
   }
 
   return styles.join('\n')

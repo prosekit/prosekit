@@ -82,6 +82,11 @@ jobs:
 
       - run: git status
 
+      - name: Build TypeScript declarations
+        run: pnpm run typecheck
+
+      - run: git status
+
       - name: Build packages
         run: pnpm run build:package
 

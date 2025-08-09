@@ -1,0 +1,12 @@
+name: Cache Save
+description: Save turbo cache
+
+runs:
+  using: composite
+  steps:
+    - name: Save turbo cache
+      uses: actions/cache/save@v4
+      with:
+        path: .turbo/cache
+        key: |
+          turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.run_id }}

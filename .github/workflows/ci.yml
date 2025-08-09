@@ -80,6 +80,9 @@ jobs:
 
       - uses: ./.github/actions/cache-restore
 
+      - name: Prepare type declarations
+        run: cd packages/prosekit && pnpm run build:tsc
+
       - name: Build packages
         run: pnpm run build:package
 

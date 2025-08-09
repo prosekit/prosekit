@@ -14,6 +14,8 @@ import starlightThemeNova from 'starlight-theme-nova'
 import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
 
+import { classReplace } from './vite-plugin-class-replace'
+
 type Sidebar = StarlightUserConfig['sidebar']
 
 function generateReferenceSidebarItems() {
@@ -112,6 +114,7 @@ const config: AstroUserConfig = {
         Hero: './src/components/overrides/Hero.astro',
       },
       customCss: [
+        './src/styles/global.css',
         './src/styles/typedoc.css',
       ],
       plugins: [
@@ -152,7 +155,10 @@ const config: AstroUserConfig = {
     minifyHTML(),
   ],
   vite: {
-    plugins: [wasm()],
+    plugins: [
+      classReplace(),
+      wasm(),
+    ],
     optimizeDeps: {
       // Ensures that Vite can detect all dependencies that need to be pre-bundled.
       // This avoids the need for full-page reloads when opening a page.

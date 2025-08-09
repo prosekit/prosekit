@@ -31,7 +31,7 @@ export function getTaskMarkers(node: ProseMirrorNode): DOMOutputSpec[] {
       [
         'label',
         {
-          class: 'flex items-center cursor-pointer relative box-border -bottom-0.5 -left-1 hover:scale-110 transition',
+          class: 'flex items-center cursor-pointer relative box-border -left-1 hover:scale-110 transition',
         },
         [
           'input',
@@ -39,7 +39,7 @@ export function getTaskMarkers(node: ProseMirrorNode): DOMOutputSpec[] {
             type: 'checkbox',
             checked: checked ? '' : undefined,
             class:
-              'size-5 cursor-pointer transition-all appearance-none rounded-md shadow-sm hover:shadow-md border border-solid border-gray-300  dark:border-gray-600 checked:bg-red-500 checked:border-red-500 box-border m-0',
+              'size-5 cursor-pointer transition-all appearance-none rounded-md shadow-sm hover:shadow-md border border-solid border-gray-300 dark:border-gray-600 checked:bg-red-500 checked:border-red-500 box-border m-0',
           },
         ],
         [

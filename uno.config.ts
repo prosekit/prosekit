@@ -1,12 +1,7 @@
-import {
-  defineConfig,
-  type UserConfig,
-} from 'unocss'
+import { defineConfig } from 'unocss'
 
 import { preset } from '@prosekit/config-unocss'
 
-const config: UserConfig = defineConfig({
+export default defineConfig({
   presets: [preset()],
 })
-
-export default config

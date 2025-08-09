@@ -14,6 +14,6 @@
     "lodash-es": "^4.17.21",
     "read-package-up": "^11.0.0",
     "tsdown": "^0.13.4",
-    "typescript": "~5.8.3"
+    "typescript": "~5.9.2"
   }
 }

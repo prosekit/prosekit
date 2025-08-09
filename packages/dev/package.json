@@ -28,6 +28,6 @@
     "json5": "^2.2.3",
     "tsx": "^4.20.3",
     "type-fest": "^4.41.0",
-    "typescript": "~5.8.3"
+    "typescript": "~5.9.2"
   }
 }

@@ -68,7 +68,7 @@
     "starlight-theme-nova": "^0.9.4",
     "svelte": "^5.37.2",
     "svelte-check": "^4.3.0",
-    "typescript": "~5.8.3",
+    "typescript": "~5.9.2",
     "unified": "^11.0.5",
     "unocss": "^66.4.2",
     "vite-plugin-wasm": "^3.5.0",

@@ -134,7 +134,7 @@ jobs:
         run: pnpm run build
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v2.4.1
+        uses: lycheeverse/lychee-action@v2.5.0
         with:
           workingDirectory: website/dist
           args: >

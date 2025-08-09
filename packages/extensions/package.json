@@ -90,7 +90,7 @@
     "prosemirror-highlight": "^0.13.0",
     "prosemirror-search": "^1.1.0",
     "prosemirror-tables": "^1.7.1",
-    "shiki": "^3.9.1"
+    "shiki": "^3.9.2"
   },
   "peerDependencies": {
     "loro-crdt": ">= 0.16.7",
@@ -119,14 +119,14 @@
     "@vitest/browser": "^3.2.4",
     "diffable-html": "^6.0.1",
     "just-pick": "^4.2.0",
-    "loro-crdt": "^1.5.9",
+    "loro-crdt": "^1.5.10",
     "loro-prosemirror": "^0.2.3",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",
     "remark-html": "^16.0.1",
     "remark-parse": "^11.0.0",
     "remark-stringify": "^11.0.0",
-    "tsdown": "^0.13.2",
+    "tsdown": "^0.13.4",
     "type-fest": "^4.41.0",
     "typescript": "~5.8.3",
     "unified": "^11.0.5",

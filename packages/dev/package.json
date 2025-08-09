@@ -13,7 +13,7 @@
     "@manypkg/get-packages": "^3.1.0",
     "@sindresorhus/slugify": "^2.2.1",
     "@types/fs-extra": "^11.0.4",
-    "fs-extra": "^11.3.0",
+    "fs-extra": "^11.3.1",
     "lodash-es": "^4.17.21",
     "path-exists": "^5.0.0"
   },

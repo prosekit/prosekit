@@ -35,7 +35,7 @@
     "@changesets/cli": "^2.29.5",
     "@changesets/types": "^6.1.0",
     "@manypkg/cli": "^0.25.0",
-    "@ocavue/eslint-config": "^3.3.0",
+    "@ocavue/eslint-config": "^3.3.1",
     "@ocavue/tsconfig": "^0.3.7",
     "@prosekit/config-unocss": "workspace:*",
     "@size-limit/esbuild-why": "^11.2.0",
@@ -50,7 +50,7 @@
     "size-limit": "^11.2.0",
     "turbo": "^2.5.5",
     "typescript": "~5.8.3",
-    "unocss": "^66.3.2",
+    "unocss": "^66.3.3",
     "vitest": "^3.2.4"
   },
   "pnpm": {

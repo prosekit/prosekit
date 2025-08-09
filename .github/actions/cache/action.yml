@@ -1,15 +1,23 @@
 name: Cache
-description: Cache build artifacts
+description: Restore and save turbo cache
+
+outputs:
+  cache-hit:
+    description: |
+      A string value to indicate an exact match was found for the key.
+      - If there's a cache hit, this will be 'true' or 'false' to indicate if there's an exact match for key.
+      - If there's a cache miss, this will be an empty string.
+    value: ${{ steps.cache.outputs.cache-hit }}
 
 runs:
   using: composite
   steps:
-    - name: Setup turbo cache
+    - name: Restore turbo cache
+      id: cache
       uses: actions/cache@v4
       with:
         path: .turbo/cache
         key: |
-          turbo-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
+          turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.run_id }}
         restore-keys: |
-          turbo-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
-          turbo-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+          turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}

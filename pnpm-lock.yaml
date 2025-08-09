@@ -18,7 +18,7 @@ importers:
         specifier: ^0.25.0
         version: 0.25.0
       '@ocavue/eslint-config':
-        specifier: ^3.3.1
+        specifier: ^3.3.0
         version: 3.3.1(@types/estree@1.0.7)(@typescript-eslint/parser@8.39.0(eslint@9.33.0(jiti@2.4.2))(typescript@5.9.2))(@typescript-eslint/utils@8.39.0(eslint@9.33.0(jiti@2.4.2))(typescript@5.9.2))(eslint@9.33.0(jiti@2.4.2))(jsonc-eslint-parser@2.4.0)(typescript@5.9.2)
       '@ocavue/tsconfig':
         specifier: ^0.3.7

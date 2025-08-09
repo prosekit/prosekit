@@ -134,7 +134,7 @@ jobs:
         run: pnpm run build
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v2.4.1
+        uses: lycheeverse/lychee-action@v2.5.0
         with:
           workingDirectory: website/dist
           args: >
@@ -144,10 +144,9 @@ jobs:
             --no-progress
             --format detailed
             './**/*.html'
-          debug: true
+          debug: false
           fail: true
           failIfEmpty: true
-          lycheeVersion: nightly
 
   deploy:
     runs-on: ubuntu-latest

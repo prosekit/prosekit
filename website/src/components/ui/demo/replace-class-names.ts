@@ -1,16 +1,16 @@
-import classes from '@prosekit/config-unocss/lib/classes.gen.json' with { type: 'json' }
+import { once } from '@ocavue/utils'
+import { loadClasses } from '@prosekit/config-unocss/files'
 
-if (!classes || typeof classes !== 'object') {
-  throw new TypeError('Unable to import classes.gen.json')
-}
+const getClasses = once(loadClasses)
 
 export function replaceClassNames(code: string): string {
+  const classes = getClasses()
   return code.replaceAll(
     /(CSS_[\dA-Z_]+)/g,
     (match) => {
-      const output = (classes as Record<string, string>)[match]
+      const output = classes[match]
       if (!output) {
-        throw new Error(`Unable to find class name: ${match}`)
+        throw new Error(`Unable to find class name: "${match}"`)
       }
       return output
     },

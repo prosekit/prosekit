@@ -50,7 +50,7 @@
     "size-limit": "^11.2.0",
     "turbo": "^2.5.5",
     "typescript": "~5.8.3",
-    "unocss": "^66.3.2",
+    "unocss": "^66.4.2",
     "vitest": "^3.2.4"
   },
   "pnpm": {

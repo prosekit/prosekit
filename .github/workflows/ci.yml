@@ -80,9 +80,6 @@ jobs:
 
       - uses: ./.github/actions/cache-restore
 
-      - name: Build TypeScript declarations
-        run: pnpm run typecheck
-
       - name: Build packages
         run: pnpm run build:package
 

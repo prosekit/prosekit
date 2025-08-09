@@ -1,15 +1,24 @@
 name: Cache
 description: Cache build artifacts
 
+inputs:
+  save:
+    description: A string that indicates whether to save the cache.
+    required: false
+    default: "false"
+
 runs:
   using: composite
   steps:
-    - name: Setup turbo cache
-      uses: actions/cache@v4
+    - name: Restore turbo cache
+      uses: actions/cache/restore@v4
       with:
         path: .turbo/cache
-        key: |
-          turbo-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
-        restore-keys: |
-          turbo-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.sha }}
-          turbo-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+        key: turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+    - name: Save turbo cache if needed
+      uses: actions/cache/save@v4
+      if: ${{ inputs.save == 'true' }}
+      with:
+        path: .turbo/cache
+        key: turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}

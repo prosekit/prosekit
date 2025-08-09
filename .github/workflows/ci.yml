@@ -79,6 +79,8 @@ jobs:
       - uses: ./.github/actions/setup
 
       - uses: ./.github/actions/cache
+        with:
+          save: "true"
 
       - name: Build TypeScript declarations
         run: pnpm run typecheck

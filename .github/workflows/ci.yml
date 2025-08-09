@@ -59,7 +59,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache-restore
+      - uses: ./.github/actions/cache
 
       - name: Install Playwright
         run: pnpm run test:install
@@ -78,7 +78,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache-restore
+      - uses: ./.github/actions/cache
         id: cache
 
       # Make the following step faster by building all packages
@@ -93,8 +93,6 @@ jobs:
       - name: Build website
         run: pnpm run build
 
-      - uses: ./.github/actions/cache-save
-
   publish-snapshot:
     runs-on: ubuntu-latest
 
@@ -105,7 +103,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache-restore
+      - uses: ./.github/actions/cache
 
       - name: Build packages
         run: pnpm run build:package
@@ -137,7 +135,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache-restore
+      - uses: ./.github/actions/cache
 
       - name: Build
         run: pnpm run build
@@ -171,7 +169,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache-restore
+      - uses: ./.github/actions/cache
 
       - name: Build
         run: pnpm run build

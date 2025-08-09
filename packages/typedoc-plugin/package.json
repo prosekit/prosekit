@@ -16,7 +16,7 @@
     "typedoc-plugin-markdown": "^4.8.0"
   },
   "devDependencies": {
-    "@types/node": "^20.17.29",
+    "@types/node": "^20.19.10",
     "tsdown": "^0.13.4",
     "typescript": "~5.9.2"
   }

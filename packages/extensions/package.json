@@ -119,7 +119,7 @@
     "@vitest/browser": "^3.2.4",
     "diffable-html": "^6.0.1",
     "just-pick": "^4.2.0",
-    "loro-crdt": "^1.5.9",
+    "loro-crdt": "^1.5.10",
     "loro-prosemirror": "^0.2.3",
     "rehype-parse": "^9.0.1",
     "rehype-remark": "^10.0.1",

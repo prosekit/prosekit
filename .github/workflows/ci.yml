@@ -79,8 +79,12 @@ jobs:
       - uses: ./.github/actions/setup
 
       - uses: ./.github/actions/cache-restore
+        id: cache
 
+      # Make the following step faster by building all packages
+      # declarations together.
       - name: Prepare type declarations
+        if: steps.cache.outputs.cache-hit != 'true'
         run: cd packages/prosekit && pnpm run build:tsc
 
       - name: Build packages

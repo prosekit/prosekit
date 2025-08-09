@@ -134,7 +134,7 @@ jobs:
         run: pnpm run build
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v2.4.1
+        uses: lycheeverse/lychee-action@v2.5.0
         with:
           workingDirectory: website/dist
           args: >
@@ -143,13 +143,10 @@ jobs:
             --root-dir "$PWD"
             --no-progress
             --format detailed
-            --exclude 'https://prosemirror.net/docs/ref/#model.DOMParser.fromSchema'
-            --exclude 'https://prosemirror.net/docs/ref/#model.DOMSerializer.fromSchema'
             './**/*.html'
-          debug: true
+          debug: false
           fail: true
           failIfEmpty: true
-          lycheeVersion: nightly
 
   deploy:
     runs-on: ubuntu-latest

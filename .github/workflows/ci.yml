@@ -59,7 +59,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache
+      - uses: ./.github/actions/cache-restore
 
       - name: Install Playwright
         run: pnpm run test:install
@@ -78,9 +78,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache
-        with:
-          save: "true"
+      - uses: ./.github/actions/cache-restore
 
       - name: Build TypeScript declarations
         run: pnpm run typecheck
@@ -90,6 +88,8 @@ jobs:
 
       - name: Build website
         run: pnpm run build
+
+      - uses: ./.github/actions/cache-save
 
   publish-snapshot:
     runs-on: ubuntu-latest
@@ -101,7 +101,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache
+      - uses: ./.github/actions/cache-restore
 
       - name: Build packages
         run: pnpm run build:package
@@ -133,7 +133,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache
+      - uses: ./.github/actions/cache-restore
 
       - name: Build
         run: pnpm run build
@@ -167,7 +167,7 @@ jobs:
 
       - uses: ./.github/actions/setup
 
-      - uses: ./.github/actions/cache
+      - uses: ./.github/actions/cache-restore
 
       - name: Build
         run: pnpm run build

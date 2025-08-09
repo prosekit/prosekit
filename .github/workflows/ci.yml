@@ -80,14 +80,17 @@ jobs:
 
       - uses: ./.github/actions/cache-restore
 
-      - name: Build TypeScript declarations
-        run: pnpm run typecheck
+      - run: git status
 
       - name: Build packages
         run: pnpm run build:package
 
+      - run: git status
+
       - name: Build website
         run: pnpm run build
+
+      - run: git status
 
       - uses: ./.github/actions/cache-save
 

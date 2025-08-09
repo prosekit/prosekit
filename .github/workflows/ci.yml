@@ -80,6 +80,9 @@ jobs:
 
       - uses: ./.github/actions/cache
 
+      - name: Build TypeScript declarations
+        run: pnpm run typecheck
+
       - name: Build packages
         run: pnpm run build:package
 

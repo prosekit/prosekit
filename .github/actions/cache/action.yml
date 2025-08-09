@@ -14,11 +14,15 @@ runs:
       uses: actions/cache/restore@v4
       with:
         path: .turbo/cache
-        key: turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+        key: |
+          turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.run_id }}
+        restore-keys: |
+          turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
 
     - name: Save turbo cache if needed
       uses: actions/cache/save@v4
       if: ${{ inputs.save == 'true' }}
       with:
         path: .turbo/cache
-        key: turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+        key: |
+          turbo-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.run_id }}

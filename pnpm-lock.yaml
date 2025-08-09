@@ -524,6 +524,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.1.7
         version: 19.1.7(@types/react@19.1.9)
+      esbuild:
+        specifier: ^0.25.8
+        version: 0.25.8
       loro-crdt:
         specifier: ^1.5.9
         version: 1.5.9

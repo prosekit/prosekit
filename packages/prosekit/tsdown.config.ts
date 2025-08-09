@@ -17,7 +17,24 @@ if (typeof entries !== 'object') {
 const entriesWithoutCSS = Object.fromEntries(
   Object.entries(entries).filter(([, value]) => !value.endsWith('.css')),
 )
+const entriesWithCSS = Object.fromEntries(
+  Object.entries(entries).filter(([, value]) => value.endsWith('.css')),
+)
 
-const configObjectWithoutCSS: UserConfig = { ...configObject, entry: entriesWithoutCSS }
+const configObjectWithoutCSS: UserConfig = {
+  ...configObject,
+  entry: entriesWithoutCSS,
+  hooks: {
+    'build:done': async () => {
+      const esbuild = await import('esbuild')
+      await esbuild.build({
+        entryPoints: entriesWithCSS,
+        bundle: true,
+        outdir: 'dist',
+        target: 'chrome100',
+      })
+    },
+  },
+}
 
 export default defineConfig(configObjectWithoutCSS)

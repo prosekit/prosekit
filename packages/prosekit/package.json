@@ -156,7 +156,7 @@
   ],
   "scripts": {
     "build:tsc": "tsc -b tsconfig.json",
-    "build:tsdown": "tsdown && tsup",
+    "build:tsdown": "tsdown",
     "build:typedoc": "typedoc"
   },
   "dependencies": {
@@ -222,6 +222,7 @@
     "@prosekit/typedoc-plugin": "workspace:*",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
+    "esbuild": "^0.25.8",
     "loro-crdt": "^1.5.9",
     "loro-prosemirror": "^0.2.3",
     "postcss": "^8.5.6",

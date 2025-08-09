@@ -73,7 +73,7 @@
     "unocss": "^66.4.2",
     "vite-plugin-wasm": "^3.5.0",
     "vue": "^3.5.18",
-    "vue-tsc": "^2.2.12",
+    "vue-tsc": "^3.0.5",
     "y-protocols": "^1.0.6",
     "y-websocket": "^3.0.0",
     "yjs": "^13.6.27"

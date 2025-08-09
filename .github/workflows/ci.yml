@@ -84,7 +84,7 @@ jobs:
       # Make the following step faster by building all packages
       # declarations together.
       - name: Prepare type declarations
-        if: steps.cache.outputs.cache-hit != 'true'
+        if: ${{ steps.cache.outputs.cache-hit == '' }}
         run: cd packages/prosekit && pnpm run build:tsc
 
       - name: Build packages

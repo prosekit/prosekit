@@ -935,6 +935,9 @@ importers:
       loro-prosemirror:
         specifier: ^0.2.3
         version: 0.2.3(loro-crdt@1.5.10)(prosemirror-model@1.25.3)(prosemirror-state@1.4.3)(prosemirror-view@1.40.1)
+      magic-string:
+        specifier: ^0.30.17
+        version: 0.30.17
       phosphor-svelte:
         specifier: ^3.0.1
         version: 3.0.1(svelte@5.38.0)(vite@6.3.5(@types/node@20.19.10)(jiti@2.4.2)(tsx@4.20.3)(yaml@2.8.0))
@@ -989,6 +992,9 @@ importers:
       svelte-check:
         specifier: ^4.3.1
         version: 4.3.1(picomatch@4.0.3)(svelte@5.38.0)(typescript@5.9.2)
+      tinyexec:
+        specifier: ^1.0.1
+        version: 1.0.1
       typescript:
         specifier: ~5.9.2
         version: 5.9.2

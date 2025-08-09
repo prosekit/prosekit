@@ -4,20 +4,23 @@
   "tasks": {
     "build": {
       "dependsOn": ["gen", "^build", "build:tsc", "build:tsdown"],
+      "inputs": ["src/", "public/", "*.ts", "*.js"],
       "outputs": ["dist/", "lib/"],
       "outputLogs": "new-only"
     },
     "build:tsc": {
       "dependsOn": ["^build"],
+      "inputs": ["src/", "public/", "*.ts", "*.js"],
       "outputLogs": "new-only"
     },
     "build:tsdown": {
       "dependsOn": ["^build", "build:tsc"],
+      "inputs": ["src/", "public/", "*.ts", "*.js"],
       "outputs": ["dist/"],
       "outputLogs": "new-only"
     },
     "gen": {
-      "inputs": ["src/", "../*/tsconfig.json"],
+      "inputs": ["src/"],
       "outputs": ["../*/tsconfig.json"],
       "outputLogs": "new-only"
     }

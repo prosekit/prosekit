@@ -5,13 +5,14 @@ import starlight from '@astrojs/starlight'
 import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
+import tailwindcss from '@tailwindcss/vite'
 import type { AstroUserConfig } from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
 import starlightThemeNova from 'starlight-theme-nova'
-import UnoCSS from 'unocss/astro'
+// import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
 
 import { classReplace } from './vite-plugin-class-replace'
@@ -132,9 +133,9 @@ const config: AstroUserConfig = {
         }),
       ].filter(x => !!x),
     }),
-    UnoCSS({
-      inspector: false,
-    }),
+    // UnoCSS({
+    //   inspector: false,
+    // }),
     preact({ include: ['src/*/preact/**/*.tsx'] }),
     react({
       include: ['src/*/react/**/*.tsx'],
@@ -151,6 +152,7 @@ const config: AstroUserConfig = {
       directory: 'src/stories',
       title: 'ProseKit',
       subpath: 'astrobook',
+      css: ['./src/styles/global.css'],
     }),
     minifyHTML(),
   ],
@@ -158,6 +160,7 @@ const config: AstroUserConfig = {
     plugins: [
       classReplace(),
       wasm(),
+      tailwindcss(),
     ],
     optimizeDeps: {
       // Ensures that Vite can detect all dependencies that need to be pre-bundled.

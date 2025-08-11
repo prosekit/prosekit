@@ -1,5 +1,6 @@
 import 'prosekit/basic/style.css'
 import 'prosekit/basic/typography.css'
+import './custom-list.css'
 
 import {
   createEditor,
@@ -32,7 +33,11 @@ const defaultContent: NodeJSON = {
   content: [
     {
       type: 'paragraph',
-      content: [{ type: 'text', text: 'Custom list checkbox design and strikethrough for completed tasks.' }],
+      content: [
+        { type: 'text', text: 'Custom list checkbox design and strikethrough for completed tasks. Please check ' },
+        { type: 'text', text: 'custom-list.css', marks: [{ type: 'code' }] },
+        { type: 'text', text: ' for the styles.' },
+      ],
     },
     {
       type: 'list',

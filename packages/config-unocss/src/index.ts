@@ -1,6 +1,6 @@
 import {
   presetIcons,
-  presetWind3,
+  presetWind4,
   type PresetFactory,
 } from 'unocss'
 import { presetAnimations } from 'unocss-preset-animations'
@@ -14,7 +14,7 @@ import {
 export const preset: PresetFactory = () => {
   return ({
     name: 'prosekit',
-    presets: [presetWind3(), presetIcons(), presetAnimations()],
+    presets: [presetWind4(), presetIcons(), presetAnimations()],
     content: {
       pipeline: {
         include: [/\.(vue|svelte|[jt]sx?|mdx?|astro|elm|php|phtml|html)($|\?)/],

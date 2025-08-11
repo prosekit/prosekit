@@ -6,4 +6,4 @@
 
 @source "../../../packages/config-unocss/lib/classes.gen.json";
 @custom-variant dark (&:where(.dark, .dark *));
-@plugin '@egoist/tailwindcss-icons';
+@plugin "@egoist/tailwindcss-icons";

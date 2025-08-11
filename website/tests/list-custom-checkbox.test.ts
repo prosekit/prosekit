@@ -11,7 +11,7 @@ import {
 } from './helper'
 
 testStory('list-custom-checkbox', () => {
-  test.fail('list-custom-checkbox', async ({ page }) => {
+  test('list-custom-checkbox', async ({ page }) => {
     const editor = await waitForEditor(page)
 
     const checkedItem = editor.locator('.prosemirror-flat-list', { hasText: 'Completed Task' })

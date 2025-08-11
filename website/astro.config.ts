@@ -12,7 +12,7 @@ import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-lin
 import astrobook from 'astrobook'
 import { fdir } from 'fdir'
 import starlightThemeNova from 'starlight-theme-nova'
-import UnoCSS from 'unocss/astro'
+// import UnoCSS from 'unocss/astro'
 import wasm from 'vite-plugin-wasm'
 
 import { classReplace } from './vite-plugin-class-replace'

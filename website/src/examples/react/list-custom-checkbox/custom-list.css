@@ -1,29 +1,71 @@
-@reference "../../../styles/global.css";
-
 .ProseMirror .prosemirror-flat-list[data-list-kind="task"] {
   & > .list-marker label {
-    @apply flex items-center cursor-pointer box-border hover:scale-110 relative transition -left-0.5;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    position: relative;
+    transition: transform 0.15s ease-in-out;
+    left: calc(var(--spacing) * -0.5);
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     &:after {
       content: "";
-      @apply absolute text-white opacity-0 i-lucide-check size-5;
+      position: absolute;
+      color: var(--color-white);
+      opacity: 0;
+      width: calc(var(--spacing) * 5);
+      height: calc(var(--spacing) * 5);
+
+      /* https://api.iconify.design/lucide.css?icons=check */
+      display: inline-block;
+      background-color: currentColor;
+      -webkit-mask-image: var(--svg);
+      mask-image: var(--svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' stroke='black' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
     }
 
     & input {
-      @apply size-5 cursor-pointer transition-all appearance-none rounded-md shadow-sm hover:shadow-md border border-solid border-gray-300 dark:border-gray-600 checked:bg-red-500
-        checked:border-red-500 box-border m-0;
+      width: calc(var(--spacing) * 5);
+      height: calc(var(--spacing) * 5);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      appearance: none;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border-width: 1px;
+      border-style: solid;
+      border-color: color-mix(in srgb, var(--color-gray-300) 50%, transparent);
+      box-sizing: border-box;
+      margin: 0;
+
+      &:hover {
+        box-shadow: var(--shadow-md);
+      }
+
+      &:checked {
+        background-color: var(--color-red-500);
+        border-color: var(--color-red-500);
+      }
     }
   }
 
   &[data-list-checked] > .list-marker label {
     &:after {
-      @apply opacity-100;
+      opacity: 1;
     }
   }
 
   &[data-list-checked] {
-    color: rgb(150, 150, 150);
+    color: var(--color-gray-400);
     text-decoration: line-through;
-    text-decoration-color: rgb(150, 150, 150, 0.5);
+    text-decoration-color: var(--color-gray-400);
   }
 }

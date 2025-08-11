@@ -46,6 +46,7 @@
     "astrobook": "^0.8.9",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
     "bits-ui": "^2.9.2",
+    "colorjs.io": "^0.5.2",
     "diffable-html": "^6.0.1",
     "fdir": "^6.4.6",
     "hast-util-is-element": "^3.0.0",

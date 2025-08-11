@@ -1,7 +1,9 @@
 import {
   expect,
   test,
+  type Locator,
 } from '@playwright/test'
+import Color from 'colorjs.io'
 
 import {
   testStory,
@@ -18,7 +20,18 @@ testStory('list-custom-checkbox', () => {
     const checkedItemInput = checkedItem.locator('input')
     await expect(checkedItemInput).toHaveAttribute('checked')
 
-    await expect(checkedItemInput, { message: 'Expect the checkbox input has a red background color' })
-      .toHaveCSS('background-color', /rgba?\((\d{3})(,\s*\d{1,2}){2}(,\s*\d+})?\)/)
+    await expect(() => expectRedBackgroundColor(checkedItemInput)).toPass({ timeout: 8_000 })
   })
 })
+
+async function expectRedBackgroundColor(locator: Locator) {
+  const backgroundColor = await locator.evaluate(el => {
+    const style = window.getComputedStyle(el)
+    return style.backgroundColor
+  })
+
+  const parsed = new Color(backgroundColor)
+  const { r, g, b } = parsed.srgb
+
+  expect(r >= g + 50 && r >= b + 50, `Red component should dominate in the color ${backgroundColor}`).toBe(true)
+}

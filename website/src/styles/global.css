@@ -3,6 +3,7 @@
 @import "@astrojs/starlight-tailwind";
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);
+@import "tw-animate-css";
 
 @source "../../../packages/config-unocss/lib/classes.gen.json";
 @custom-variant dark (&:where(.dark, .dark *));

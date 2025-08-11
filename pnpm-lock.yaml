@@ -1007,6 +1007,9 @@ importers:
       tinyexec:
         specifier: ^1.0.1
         version: 1.0.1
+      tw-animate-css:
+        specifier: ^1.3.6
+        version: 1.3.6
       typescript:
         specifier: ~5.9.2
         version: 5.9.2
@@ -6884,6 +6887,9 @@ packages:
   turbo@2.5.5:
     resolution: {integrity: sha512-eZ7wI6KjtT1eBqCnh2JPXWNUAxtoxxfi6VdBdZFvil0ychCOTxbm7YLRBi1JSt7U3c+u3CLxpoPxLdvr/Npr3A==}
     hasBin: true
+
+  tw-animate-css@1.3.6:
+    resolution: {integrity: sha512-9dy0R9UsYEGmgf26L8UcHiLmSFTHa9+D7+dAt/G/sF5dCnPePZbfgDYinc7/UzAM7g/baVrmS6m9yEpU46d+LA==}
 
   twoslash-protocol@0.3.3:
     resolution: {integrity: sha512-26NXjXEj+2NgytwOjjhFtNpQI7Zgct6PTyLg6JO7fIbO7MIm+kx89IxvBustgBOSKxoWjNBN2LXjNHHMD7+k0g==}
@@ -14812,6 +14818,8 @@ snapshots:
       turbo-linux-arm64: 2.5.5
       turbo-windows-64: 2.5.5
       turbo-windows-arm64: 2.5.5
+
+  tw-animate-css@1.3.6: {}
 
   twoslash-protocol@0.3.3: {}
 

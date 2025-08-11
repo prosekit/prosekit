@@ -1,5 +1,26 @@
-.ProseMirror .prosemirror-flat-list[data-list-kind="task"][data-list-checked] {
-  color: rgb(150, 150, 150);
-  text-decoration: line-through;
-  text-decoration-color: rgb(150, 150, 150, 0.5);
+.ProseMirror .prosemirror-flat-list[data-list-kind="task"] {
+  & > .list-marker label {
+    @apply flex items-center cursor-pointer box-border hover:scale-110 -left-0.5 relative transition;
+
+    &:after {
+      content: "";
+      @apply absolute text-white opacity-0 i-lucide-check size-5;
+    }
+
+    & input {
+      @apply size-5 cursor-pointer transition-all appearance-none rounded-md shadow-sm hover:shadow-md border border-solid border-gray-300 dark:border-gray-600 checked:bg-red-500 checked:border-red-500 box-border m-0;
+    }
+  }
+
+  &[data-list-checked] > .list-marker label {
+    &:after {
+      @apply opacity-100;
+    }
+  }
+
+  &[data-list-checked] {
+    color: rgb(150, 150, 150);
+    text-decoration: line-through;
+    text-decoration-color: rgb(150, 150, 150, 0.5);
+  }
 }

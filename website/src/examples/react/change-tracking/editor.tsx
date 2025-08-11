@@ -43,7 +43,7 @@ export default function Editor() {
   )
 
   return (
-    <div className="grid grid-cols-2 gap-2">
+    <div className="gap-2 grid grid-cols-2">
       <div className="flex flex-col gap-4">
         <div className="max-h-md">
           <EditorMain
@@ -62,12 +62,12 @@ export default function Editor() {
             <div className="max-h-md">
               <EditorDiff commit={commit.commit} />
             </div>
-            <div className="w-full inline-flex justify-between p-1 text-sm">
+            <div className="text-sm p-1 inline-flex w-full justify-between">
               <span className="opacity-50">
                 {commit.date.toLocaleTimeString()}
               </span>
               <button
-                className="underline opacity-50 hover:opacity-100"
+                className="opacity-50 underline hover:opacity-100"
                 onClick={() => handleRestore(commit.id)}
               >
                 Restore

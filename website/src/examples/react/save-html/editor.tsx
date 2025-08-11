@@ -52,20 +52,20 @@ export default function Editor() {
       <button
         onClick={handleSave}
         disabled={!hasUnsavedChange}
-        className="m-1 border border-solid bg-white px-2 py-1 text-sm text-black disabled:cursor-not-allowed disabled:text-gray-500"
+        className="text-sm text-black m-1 px-2 py-1 border border-solid bg-white disabled:text-gray-500 disabled:cursor-not-allowed"
       >
         {hasUnsavedChange ? 'Save' : 'No changes to save'}
       </button>
-      <ul className="border-b border-t border-solid text-sm">
+      <ul className="text-sm border-b border-t border-solid">
         {records.map((record, index) => (
           <li key={index} className="m-1 flex gap-2">
             <button
-              className="border border-solid bg-white px-2 py-1 text-black"
+              className="text-black px-2 py-1 border border-solid bg-white"
               onClick={() => handleLoad(record)}
             >
               Load
             </button>
-            <span className="flex-1 overflow-x-scroll p-2">
+            <span className="p-2 flex-1 overflow-x-scroll">
               <pre>{record}</pre>
             </span>
           </li>

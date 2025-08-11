@@ -30,14 +30,14 @@ function EditorGroup() {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex gap-2">
-        <button onClick={addEditor} className="border p-2">
+        <button onClick={addEditor} className="p-2 border">
           Add editor
         </button>
         {editorKeys.map((key) => (
           <button
             key={key}
             onClick={() => removeEditor(key)}
-            className="border p-2"
+            className="p-2 border"
           >
             Unmount No.{key}
           </button>

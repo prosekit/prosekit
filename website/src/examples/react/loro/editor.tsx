@@ -17,7 +17,7 @@ export default function Page() {
   const { loroA, awarenessA, loroB, awarenessB } = useLoroDocs()
 
   return (
-    <div className="h-full flex flex-col gap-2">
+    <div className="flex flex-col gap-2 h-full">
       <EditorComponent loro={loroA} awareness={awarenessA} />
       <EditorComponent loro={loroB} awareness={awarenessB} />
     </div>

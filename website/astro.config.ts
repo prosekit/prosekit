@@ -5,6 +5,7 @@ import starlight from '@astrojs/starlight'
 import type { StarlightUserConfig } from '@astrojs/starlight/types'
 import svelte from '@astrojs/svelte'
 import vue from '@astrojs/vue'
+import tailwindcss from '@tailwindcss/vite'
 import type { AstroUserConfig } from 'astro'
 import minifyHTML from 'astro-minify-html-swc'
 import rehypeAstroRelativeMarkdownLinks from 'astro-rehype-relative-markdown-links'
@@ -132,9 +133,9 @@ const config: AstroUserConfig = {
         }),
       ].filter(x => !!x),
     }),
-    UnoCSS({
-      inspector: false,
-    }),
+    // UnoCSS({
+    //   inspector: false,
+    // }),
     preact({ include: ['src/*/preact/**/*.tsx'] }),
     react({
       include: ['src/*/react/**/*.tsx'],
@@ -158,6 +159,7 @@ const config: AstroUserConfig = {
     plugins: [
       classReplace(),
       wasm(),
+      tailwindcss(),
     ],
     optimizeDeps: {
       // Ensures that Vite can detect all dependencies that need to be pre-bundled.

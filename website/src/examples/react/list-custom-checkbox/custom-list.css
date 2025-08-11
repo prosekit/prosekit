@@ -12,15 +12,17 @@
       transform: scale(1.1);
     }
 
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       color: var(--color-white);
       opacity: 0;
       width: calc(var(--spacing) * 5);
       height: calc(var(--spacing) * 5);
+    }
 
-      /* https://api.iconify.design/lucide.css?icons=check */
+    /* https://api.iconify.design/lucide.css?icons=check */
+    &::after {
       display: inline-block;
       background-color: currentColor;
       -webkit-mask-image: var(--svg);

@@ -19,15 +19,16 @@ ProseKit provides a set of components that you can copy and paste into your proj
 
 2. **Install recommended plugins**
 
-   You’ll need a few extra packages for these components to work properly. Install the following:
+   You’ll need a few extra Tailwind CSS plugins  for these components to work properly. Install the following:
 
    <CodePackageManagers packages="tw-animate-css @egoist/tailwindcss-icons @iconify-json/lucide" />
 
 3. **Configure Tailwind CSS**
 
-   Add this to your global CSS file (e.g., `global.css` or `app.css`):
+   Register the Tailwind CSS plugins in your global CSS file (e.g., `global.css` or `app.css`):
 
-   ```css
+   ```css {2,3}
+   @import "tailwindcss";
    @import "tw-animate-css";
    @plugin "@egoist/tailwindcss-icons";
    ```

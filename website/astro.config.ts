@@ -152,6 +152,7 @@ const config: AstroUserConfig = {
       directory: 'src/stories',
       title: 'ProseKit',
       subpath: 'astrobook',
+      css: ['./src/styles/global.css'],
     }),
     minifyHTML(),
   ],

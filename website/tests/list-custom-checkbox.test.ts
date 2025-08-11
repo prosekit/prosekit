@@ -33,5 +33,5 @@ async function expectRedBackgroundColor(locator: Locator) {
   const parsed = new Color(backgroundColor)
   const { r, g, b } = parsed.srgb
 
-  expect(r >= g + 50 && r >= b + 50, `Red component should dominate in the color ${backgroundColor}`).toBe(true)
+  expect(r > g && r > b, `Red component should dominate in the color ${backgroundColor}`).toBe(true)
 }

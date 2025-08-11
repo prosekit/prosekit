@@ -1,6 +1,8 @@
+@reference "../../../styles/global.css";
+
 .ProseMirror .prosemirror-flat-list[data-list-kind="task"] {
   & > .list-marker label {
-    @apply flex items-center cursor-pointer box-border hover:scale-110 -left-0.5 relative transition;
+    @apply flex items-center cursor-pointer box-border hover:scale-110 relative transition -left-0.5;
 
     &:after {
       content: "";

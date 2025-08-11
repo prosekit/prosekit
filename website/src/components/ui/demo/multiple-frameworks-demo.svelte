@@ -40,7 +40,7 @@ let showCode = $state(props.showCode ?? true)
 <div
   class={[
     'not-content',
-    'flex flex-col border border-border rounded-lg my-4 bg-background overflow-hidden divide-y',
+    'flex flex-col rounded-lg my-4 bg-background overflow-hidden border border-border divide-y divide-border',
   ]}
 >
   <div>

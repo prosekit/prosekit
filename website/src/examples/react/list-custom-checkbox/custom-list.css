@@ -8,7 +8,8 @@
     }
 
     & input {
-      @apply size-5 cursor-pointer transition-all appearance-none rounded-md shadow-sm hover:shadow-md border border-solid border-gray-300 dark:border-gray-600 checked:bg-red-500 checked:border-red-500 box-border m-0;
+      @apply size-5 cursor-pointer transition-all appearance-none rounded-md shadow-sm hover:shadow-md border border-solid border-gray-300 dark:border-gray-600 checked:bg-red-500
+        checked:border-red-500 box-border m-0;
     }
   }
 

@@ -914,6 +914,9 @@ importers:
       bits-ui:
         specifier: ^2.9.2
         version: 2.9.2(@internationalized/date@3.8.1)(svelte@5.38.0)
+      colorizr:
+        specifier: ^3.0.8
+        version: 3.0.8
       diffable-html:
         specifier: ^6.0.1
         version: 6.0.1
@@ -3646,6 +3649,9 @@ packages:
 
   colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
+
+  colorizr@3.0.8:
+    resolution: {integrity: sha512-5B5bNiGU/iEbdL3JsiIYRf57T0CuJjHSgVfe3SP3W3ePe2waJuEYl+llzwm1ZhxIcVyA+gThRlBu3yXBV3tAQQ==}
 
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
@@ -10548,6 +10554,8 @@ snapshots:
       color-string: 1.9.1
 
   colorette@2.0.20: {}
+
+  colorizr@3.0.8: {}
 
   comma-separated-tokens@2.0.3: {}
 

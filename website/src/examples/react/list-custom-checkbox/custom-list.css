@@ -1,24 +1,24 @@
 .ProseMirror .prosemirror-flat-list[data-list-kind="task"] {
   & > .list-marker label {
+    box-sizing: border-box;
     display: flex;
+    position: relative;
+    left: calc(var(--spacing) * -0.5);
     align-items: center;
     cursor: pointer;
-    box-sizing: border-box;
-    position: relative;
     transition: transform 0.15s ease-in-out;
-    left: calc(var(--spacing) * -0.5);
 
     &:hover {
       transform: scale(1.1);
     }
 
     &::after {
-      content: "";
       position: absolute;
-      color: var(--color-white);
-      opacity: 0;
       width: calc(var(--spacing) * 5);
       height: calc(var(--spacing) * 5);
+      content: "";
+      color: var(--color-white);
+      opacity: 0;
     }
 
     /* https://api.iconify.design/lucide.css?icons=check */
@@ -35,26 +35,26 @@
     }
 
     & input {
+      box-sizing: border-box;
+      appearance: none;
       width: calc(var(--spacing) * 5);
       height: calc(var(--spacing) * 5);
-      cursor: pointer;
-      transition: all 0.15s ease-in-out;
-      appearance: none;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-sm);
+      margin: 0;
       border-width: 1px;
       border-style: solid;
+      border-radius: var(--radius-md);
       border-color: color-mix(in srgb, var(--color-gray-300) 50%, transparent);
-      box-sizing: border-box;
-      margin: 0;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
 
       &:hover {
         box-shadow: var(--shadow-md);
       }
 
       &:checked {
-        background-color: var(--color-red-500);
         border-color: var(--color-red-500);
+        background-color: var(--color-red-500);
       }
     }
   }

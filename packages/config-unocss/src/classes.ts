@@ -45,11 +45,11 @@ const CSS_POPOVER_ANIMATE = cn(
 )
 
 const CSS_FLOATING_MENU_ITEM = cn(
-  'box-border cursor-default select-none whitespace-nowrap outline-none data-[focused]:bg-secondary',
+  'box-border cursor-default select-none whitespace-nowrap outline-hidden data-[focused]:bg-secondary',
 )
 
 const CSS_BUTTON_BASE = cn(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-0',
 )
 
 const CSS_BUTTON_VARIANT_PRIMARY = cn(
@@ -72,7 +72,7 @@ const CSS_INPUT = cn(
   // ring
   'ring-0 ring-transparent focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-0',
   // outline
-  'outline-none focus-visible:outline-none',
+  'outline-hidden focus-visible:outline-hidden',
   // file
   'file:border-0 file:bg-transparent file:text-sm file:font-medium',
   // disabled
@@ -81,7 +81,7 @@ const CSS_INPUT = cn(
 
 // The outermost container of the editor. It limits the height of the editor.
 export const CSS_EDITOR_VIEWPORT = cn(
-  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow flex flex-col bg-background color-black dark:color-white',
+  'box-border h-full w-full min-h-36 overflow-y-hidden overflow-x-hidden rounded-md border border-solid border-gray-200 dark:border-gray-700 shadow-sm flex flex-col bg-background color-black dark:color-white',
 )
 
 // A scrolling container for the editor content and floating menus.
@@ -93,14 +93,14 @@ export const CSS_EDITOR_SCROLLING = cn(
 export const CSS_EDITOR_CONTENT = cn(
   // SolidJS will override the class name which removes the ProseMirror class, so we add it back.
   'ProseMirror',
-  'box-border min-h-full px-[max(4rem,_calc(50%-20rem))] py-8 outline-none outline-0',
+  'box-border min-h-full px-[max(4rem,calc(50%-20rem))] py-8 outline-hidden outline-0',
   '[&_span[data-mention=user]]:text-blue-500',
   '[&_span[data-mention=tag]]:text-violet-500',
 )
 
 export const CSS_INLINE_MENU_MAIN = cn(
   CSS_FLOATING_MENU,
-  'relative flex min-w-[8rem] space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
+  'relative flex min-w-32 space-x-1 overflow-auto whitespace-nowrap rounded-md p-1',
 )
 
 export const CSS_INLINE_MENU_LINK = cn(
@@ -117,12 +117,12 @@ export const CSS_INLINE_MENU_LINK_REMOVE_BUTTON = cn(
 )
 
 export const CSS_AUTOCOMPLETE_MENU = cn(
-  'relative block max-h-[25rem] min-w-[15rem] select-none overflow-auto whitespace-nowrap p-1',
+  'relative block max-h-100 min-w-60 select-none overflow-auto whitespace-nowrap p-1',
   CSS_FLOATING_MENU,
 )
 
 export const CSS_AUTOCOMPLETE_MENU_ITEM = cn(
-  'relative flex items-center justify-between min-w-[8rem] scroll-my-1 rounded px-3 py-1.5',
+  'relative flex items-center justify-between min-w-32 scroll-my-1 rounded-sm px-3 py-1.5',
   CSS_FLOATING_MENU_ITEM,
 )
 
@@ -135,9 +135,9 @@ export const CSS_LANGUAGE_WRAPPER = cn(
 )
 
 export const CSS_LANGUAGE_SELECT = cn(
-  'outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded border-none bg-transparent px-2 py-1 text-xs transition text-[var(--prosemirror-highlight)]',
+  'outline-unset focus:outline-unset relative box-border w-auto cursor-pointer select-none appearance-none rounded-sm border-none bg-transparent px-2 py-1 text-xs transition text-(--prosemirror-highlight)',
   // Only visible when hovering the code block
-  'opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 [div[data-node-view-root]:hover_&]:hover:opacity-80',
+  'opacity-0 hover:opacity-80 [div[data-node-view-root]:hover_&]:opacity-50 hover:[div[data-node-view-root]:hover_&]:opacity-80',
 )
 
 const CSS_TOP_BAR = cn(
@@ -171,7 +171,7 @@ export const CSS_IMAGE_UPLOAD_BUTTON = cn(
 export const CSS_IMAGE_RESIZEALE = cn(
   'relative flex items-center justify-center box-border overflow-hidden my-2 group',
   'max-h-[600px] max-w-full min-h-[64px] min-w-[64px]',
-  'outline-2 outline-transparent data-[selected]:outline-blue-500 outline-solid',
+  'outline-2 outline-transparent data-selected:outline-blue-500 outline-solid',
 )
 
 export const CSS_IMAGE_RESIZEALE_IMAGE = cn(
@@ -179,15 +179,15 @@ export const CSS_IMAGE_RESIZEALE_IMAGE = cn(
 )
 
 export const CSS_IMAGE_RESIZEALE_HANDLE = cn(
-  'absolute bottom-0 right-0 rounded m-1.5 p-1 transition',
+  'absolute bottom-0 right-0 rounded-sm m-1.5 p-1 transition',
   'bg-gray-900/30 active:bg-gray-800/60 hover:bg-gray-800/60 text-white/50 active:text-white/80',
   'active:translate-x-0.5 active:translate-y-0.5',
   // Only visible when hovering the image block
-  'opacity-0 hover:opacity-100 group-hover:opacity-100 group-[[data-resizing]]:opacity-100',
+  'opacity-0 hover:opacity-100 group-hover:opacity-100 group-data-resizing:opacity-100',
 )
 
 export const CSS_IMAGE_UPLOAD_PROGRESS = cn(
-  'absolute bottom-0 left-0 m-1 flex content-center items-center gap-2 rounded bg-gray-800/60 p-1.5 text-xs text-white/80 transition',
+  'absolute bottom-0 left-0 m-1 flex content-center items-center gap-2 rounded-sm bg-gray-800/60 p-1.5 text-xs text-white/80 transition',
 )
 
 export const CSS_IMAGE_UPLOAD_ERROR = cn(
@@ -205,15 +205,15 @@ export const CSS_BLOCK_HANDLE_POPOVER = cn(
 )
 
 export const CSS_BLOCK_HANDLE_ADD = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-secondary rounded text-muted-foreground/50 cursor-pointer',
+  'flex items-center box-border justify-center h-[1.5em] w-[1.5em] hover:bg-secondary rounded-sm text-muted-foreground/50 cursor-pointer',
 )
 
 export const CSS_BLOCK_HANDLE_DRAG = cn(
-  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded text-muted-foreground/50 cursor-grab',
+  'flex items-center box-border justify-center h-[1.5em] w-[1.2em] hover:bg-secondary rounded-sm text-muted-foreground/50 cursor-grab',
 )
 
 const CSS_TABLE_HANDLE_BASE = cn(
-  'flex items-center box-border justify-center bg-background hover:bg-secondary rounded text-muted-foreground/50 border border-border border-solid p-0',
+  'flex items-center box-border justify-center bg-background hover:bg-secondary rounded-sm text-muted-foreground/50 border border-border border-solid p-0',
   'overflow-hidden',
   'duration-150 transition-discrete transition',
   'data-[state=closed]:opacity-0 starting:opacity-0 opacity-100',
@@ -231,12 +231,12 @@ export const CSS_TABLE_ROW_HANDLE = cn(
 )
 
 export const CSS_TABLE_HANDLE_MENU = cn(
-  'relative block max-h-[25rem] min-w-[8rem] select-none overflow-auto whitespace-nowrap p-1',
+  'relative block max-h-100 min-w-32 select-none overflow-auto whitespace-nowrap p-1',
   CSS_FLOATING_MENU,
 )
 
 export const CSS_TABLE_CELL_MENU_ITEM = cn(
-  'relative min-w-[8rem] scroll-my-1 rounded px-3 py-1.5 flex items-center justify-between gap-8 cursor-default',
+  'relative min-w-32 scroll-my-1 rounded-sm px-3 py-1.5 flex items-center justify-between gap-8 cursor-default',
   'data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 hover:data-[disabled=true]:opacity-50',
   CSS_FLOATING_MENU_ITEM,
 )
@@ -247,7 +247,7 @@ export const CSS_TABLE_CELL_MENU_ITEM_SHORTCUT = cn(
 
 export const CSS_TOOLTIP_TRIGGER = cn('block')
 export const CSS_TOOLTIP_CONTENT = cn(
-  'z-50 overflow-hidden rounded-md border border-solid bg-primary px-3 py-1.5 text-xs text-primary-foreground shadow-sm',
+  'z-50 overflow-hidden rounded-md border border-solid bg-primary px-3 py-1.5 text-xs text-primary-foreground shadow-xs',
   CSS_POPOVER_ANIMATE,
 )
 
@@ -278,10 +278,10 @@ export const CSS_SEARCH_INPUT = cn(CSS_INPUT, 'col-start-2')
 export const CSS_SEARCH_CONTROLLER = cn('flex items-center justify-between gap-1')
 
 export const CSS_KEYMAP_FIELDSET = cn(
-  'mt-4 box-border flex max-w-full w-full overflow-x-auto border p-4 rounded-md shadow min-w-0',
+  'mt-4 box-border flex max-w-full w-full overflow-x-auto border p-4 rounded-md shadow-sm min-w-0',
 )
 
-export const CSS_TOGGLE_ROTATE = 'transition-transform data-[rotate]:rotate-90'
+export const CSS_TOGGLE_ROTATE = 'transition-transform data-rotate:rotate-90'
 
 export const CSS_ICON_ITALIC = cn('i-lucide-italic h-5 w-5')
 export const CSS_ICON_BOLD = cn('i-lucide-bold h-5 w-5')

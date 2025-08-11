@@ -60,7 +60,7 @@
   }
 
   &[data-list-checked] > .list-marker label {
-    &:after {
+    &::after {
       opacity: 1;
     }
   }

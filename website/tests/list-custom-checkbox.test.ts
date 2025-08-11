@@ -3,7 +3,7 @@ import {
   test,
   type Locator,
 } from '@playwright/test'
-import { parseCSS } from 'colorizr'
+import Color from 'colorjs.io'
 
 import {
   testStory,
@@ -30,8 +30,8 @@ async function expectRedBackgroundColor(locator: Locator) {
     return style.backgroundColor
   })
 
-  const parsed = parseCSS(backgroundColor, 'rgb')
-  const { r, g, b } = parsed
+  const parsed = new Color(backgroundColor)
+  const { r, g, b } = parsed.srgb
 
   expect(r >= g + 50 && r >= b + 50, `Red component should dominate in the color ${backgroundColor}`).toBe(true)
 }

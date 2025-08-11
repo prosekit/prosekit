@@ -11,6 +11,7 @@ import {
 
 import BlockHandle from './block-handle.vue'
 import { DEFAULT_DRAG_AND_DROP_CONTENT } from './default-content-drag-and-drop'
+import DropIndicator from './drop-indicator.vue'
 import { defineExtension } from './extension'
 
 const editor = createEditor({
@@ -35,6 +36,7 @@ watchPostEffect((onCleanup) => {
           class="CSS_EDITOR_CONTENT"
         />
         <BlockHandle />
+        <DropIndicator />
       </div>
     </div>
   </ProseKit>

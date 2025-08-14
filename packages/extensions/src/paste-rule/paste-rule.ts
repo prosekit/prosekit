@@ -40,7 +40,7 @@ export type PasteRuleHandler = (options: PasteRuleHandlerOptions) => Slice
  *
  * @public
  */
-export type PasteRuleOptions = {
+export interface PasteRuleOptions {
   /**
    * A function to be called when a paste rule is triggered.
    */

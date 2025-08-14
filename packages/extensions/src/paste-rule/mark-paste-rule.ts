@@ -11,7 +11,6 @@ import {
   Fragment,
   Slice,
 } from '@prosekit/pm/model'
-import type { EditorView } from '@prosekit/pm/view'
 
 import { definePasteRule } from './paste-rule'
 import { splitTextByRegex } from './split-text-by-regex'
@@ -56,23 +55,21 @@ export interface MarkPasteRuleOptions {
 export function defineMarkPasteRule(options: MarkPasteRuleOptions): PlainExtension {
   return definePasteRule({
     handler: ({ slice, view }) => {
-      const markType = typeof options.type === 'string'
-        ? getMarkType(view.state.schema, options.type)
-        : options.type
+      const markType = getMarkType(view.state.schema, options.type)
 
-      const getAttrs = options.attrs
+      const attrs = options.attrs
+      const getAttrs: (match: RegExpExecArray) => Attrs | null = attrs
         ? typeof options.attrs === 'function'
           ? options.attrs as (match: RegExpExecArray) => Attrs | null
-          : (): Attrs => options.attrs as Attrs
+          : (): Attrs => attrs
         : (): null => null
 
-      const handler = createMarkPasteRuleHandler({
+      return replaceMarkInSlice({
         markType,
         regex: options.regex,
         getAttrs,
         shouldSkip: options.shouldSkip,
-      })
-      return handler({ slice, view })
+      }, slice)
     },
   })
 }
@@ -84,15 +81,12 @@ interface MarkPasteRuleHandlerOptions {
   shouldSkip?: (node: ProseMirrorNode) => boolean
 }
 
-/**
- * Creates a paste rule handler that applies marks based on regex patterns
- */
-export function createMarkPasteRuleHandler(options: MarkPasteRuleHandlerOptions): ({ slice, view }: { slice: Slice; view: EditorView }) => Slice {
-  return ({ slice }: { slice: Slice; view: EditorView }) => {
-    const newFragment = replaceMarkInFragment(options, slice.content)
-    if (!newFragment) return slice
-    return new Slice(newFragment, slice.openStart, slice.openEnd)
+export function replaceMarkInSlice(options: MarkPasteRuleHandlerOptions, slice: Slice): Slice {
+  const newFragment = replaceMarkInFragment(options, slice.content)
+  if (!newFragment) {
+    return slice
   }
+  return new Slice(newFragment, slice.openStart, slice.openEnd)
 }
 
 function replaceMarkInFragment(options: MarkPasteRuleHandlerOptions, fragment: Fragment): Fragment | undefined {

@@ -186,12 +186,8 @@ function replaceMarkInInlineNode(options: MarkPasteRuleHandlerOptions, node: Pro
     }
     if (match) {
       const attrs = options.getAttrs(match)
-      if (attrs) {
-        const mark = markType.create(attrs)
-        nodes.push(schema.text(text, [...node.marks, mark]))
-      } else {
-        nodes.push(schema.text(text, node.marks))
-      }
+      const mark = markType.create(attrs)
+      nodes.push(schema.text(text, [...node.marks, mark]))
     } else {
       nodes.push(schema.text(text, node.marks))
     }

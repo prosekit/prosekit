@@ -12,13 +12,11 @@ import { pasteHTML } from '../testing/clipboard'
 import { createMarkPasteRuleHandler, defineMarkPasteRule } from './mark-paste-rule'
 
 describe('defineMarkPasteRule', () => {
-  const { editor } = setupTest()
-
   it('should create a mark paste rule extension', () => {
     const extension = defineMarkPasteRule({
-      markTypeName: 'link',
+      type: 'link',
       regex: /\b([\w%+.-]+@[\d.A-Za-z-]+\.[A-Za-z]{2,})\b/g,
-      getAttrs: (match: RegExpExecArray) => ({ href: `mailto:${match[1]}` }),
+      attrs: (match: RegExpExecArray) => ({ href: `mailto:${match[1]}` }),
     })
 
     // Test that the extension was created successfully

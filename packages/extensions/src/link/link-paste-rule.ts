@@ -9,9 +9,9 @@ import { defineMarkPasteRule } from './mark-paste-rule'
  */
 export function defineLinkPasteRule(): PlainExtension {
   return defineMarkPasteRule({
-    markTypeName: 'link',
+    type: 'link',
     regex: LINK_MARK_RE,
-    getAttrs: (match) => {
+    attrs: (match) => {
       if (match[1]) {
         return { href: match[1] } satisfies LinkAttrs
       }

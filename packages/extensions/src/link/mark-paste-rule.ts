@@ -1,4 +1,9 @@
+import {
+  getMarkType,
+  type PlainExtension,
+} from '@prosekit/core'
 import type {
+  Attrs,
   MarkType,
   ProseMirrorNode,
 } from '@prosekit/pm/model'
@@ -7,32 +12,35 @@ import {
   Slice,
 } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
-import {
-  getMarkType,
-  type PlainExtension,
-} from '@prosekit/core'
 
 import { definePasteRule } from '../paste-rule'
 
 import { splitTextByRegex } from './split-text-by-regex'
 
+/**
+ * The options for {@link defineMarkPasteRule}.
+ *
+ * @public
+ */
 export interface MarkPasteRuleOptions {
   /**
-   * The name of the mark type to apply.
-   */
-  markTypeName: string
-
-  /**
-   * The regex pattern to match in text content.
-   * Should have the global flag (g) to find all matches.
+   * The regular expression to match against. It must have a `g` flag to match
+   * all instances of the mark.
    */
   regex: RegExp
 
   /**
-   * Function to create mark attributes from regex match.
-   * If null or undefined is returned, no mark will be created for this match.
+   * The mark type to apply to the matched text.
    */
-  getAttrs: (match: RegExpExecArray) => Record<string, any> | null | undefined
+  type: string | MarkType
+
+  /**
+   * Attributes to set on the mark. If a function is provided, it will be called
+   * with the matched result from the regular expression.
+   *
+   * @default null
+   */
+  attrs?: Attrs | null | ((match: RegExpExecArray) => Attrs | null)
 
   /**
    * Optional function to determine if a text node should be skipped.
@@ -47,10 +55,21 @@ export interface MarkPasteRuleOptions {
 export function defineMarkPasteRule(options: MarkPasteRuleOptions): PlainExtension {
   return definePasteRule({
     handler: ({ slice, view }) => {
-      const markType = getMarkType(view.state.schema, options.markTypeName)
+      const markType = typeof options.type === 'string'
+        ? getMarkType(view.state.schema, options.type)
+        : options.type
+      
+      const getAttrs = options.attrs
+        ? typeof options.attrs === 'function'
+          ? options.attrs as (match: RegExpExecArray) => Attrs | null
+          : (): Attrs => options.attrs as Attrs
+        : (): null => null
+      
       const handler = createMarkPasteRuleHandler({
-        ...options,
         markType,
+        regex: options.regex,
+        getAttrs,
+        shouldSkip: options.shouldSkip,
       })
       return handler({ slice, view })
     },
@@ -58,27 +77,9 @@ export function defineMarkPasteRule(options: MarkPasteRuleOptions): PlainExtensi
 }
 
 interface MarkPasteRuleHandlerOptions {
-  /**
-   * The mark type to apply.
-   */
   markType: MarkType
-
-  /**
-   * The regex pattern to match in text content.
-   * Should have the global flag (g) to find all matches.
-   */
   regex: RegExp
-
-  /**
-   * Function to create mark attributes from regex match.
-   * If null or undefined is returned, no mark will be created for this match.
-   */
-  getAttrs: (match: RegExpExecArray) => Record<string, any> | null | undefined
-
-  /**
-   * Optional function to determine if a text node should be skipped.
-   * Default behavior: skip code nodes and nodes that already have the target mark.
-   */
+  getAttrs: (match: RegExpExecArray) => Attrs | null
   shouldSkip?: (node: ProseMirrorNode) => boolean
 }
 

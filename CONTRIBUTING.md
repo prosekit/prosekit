@@ -30,7 +30,7 @@ ProseKit is a monorepo using pnpm workspaces:
 Run `pnpm run dev` to start the development server:
 
 - Website: https://localhost:4321
-- Playground: https://localhost:4321/astrobook
+- Playground: https://localhost:4321/playground
 
 ## Common Commands
 

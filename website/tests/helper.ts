@@ -93,7 +93,7 @@ function testSingleStory(
           page.on('pageerror', handlePageError)
           page.on('console', handleConsole)
 
-          await page.goto('stories/' + example.framework + '/' + example.story)
+          await page.goto('-/' + example.framework + '/' + example.story)
         })
 
         test.afterEach(({ page }) => {

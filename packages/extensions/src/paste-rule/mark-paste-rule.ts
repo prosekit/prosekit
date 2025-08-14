@@ -55,8 +55,6 @@ export interface MarkPasteRuleOptions {
 export function defineMarkPasteRule(options: MarkPasteRuleOptions): PlainExtension {
   return definePasteRule({
     handler: ({ slice, view, plain }) => {
-      console.log('plain', plain)
-
       if (plain) {
         return slice
       }

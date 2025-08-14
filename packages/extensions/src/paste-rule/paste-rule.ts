@@ -21,7 +21,8 @@ export interface PasteRuleHandlerOptions {
   view: EditorView
 
   /**
-   * Whether the pasted content is plain text (by pressing `Shift` when pasting).
+   * Whether the pasted content is treated as plain text. This is true when the
+   * `Shift` key is held when pasting.
    */
   plain: boolean
 }

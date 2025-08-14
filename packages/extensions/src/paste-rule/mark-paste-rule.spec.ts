@@ -50,7 +50,7 @@ describe('defineMarkPasteRule', () => {
     editor.use(defineMarkPasteRule({
       type: 'testMark',
       regex: /@(\w+)/g,
-      attrs: (match) => ({ value: match[1] }),
+      getAttrs: (match: RegExpExecArray) => ({ value: match[1] }),
     }))
 
     pasteHTML(editor.view, '<p>Hello @alice and @bob</p>')
@@ -83,7 +83,7 @@ describe('defineMarkPasteRule', () => {
     editor.use(defineMarkPasteRule({
       type: 'testMark',
       regex: /#(\w+)/g,
-      attrs: (match) => match[1] === 'skip' ? null : { value: match[1] },
+      getAttrs: (match: RegExpExecArray) => match[1] === 'skip' ? null : { value: match[1] },
     }))
 
     pasteHTML(editor.view, '<p>Tags: #good #skip #also</p>')
@@ -105,7 +105,7 @@ describe('defineMarkPasteRule', () => {
     editor.use(defineMarkPasteRule({
       type: 'testMark',
       regex: /@(\w+)/g,
-      attrs: (match) => ({ value: match[1] }),
+      getAttrs: (match: RegExpExecArray) => ({ value: match[1] }),
       shouldSkip: (node) => node.marks.some(mark => mark.type.name === 'bold'),
     }))
 

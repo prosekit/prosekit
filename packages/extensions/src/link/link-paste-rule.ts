@@ -12,11 +12,11 @@ export function defineLinkPasteRule(): PlainExtension {
   return defineMarkPasteRule({
     type: 'link',
     regex: LINK_MARK_RE,
-    attrs: (match) => {
+    getAttrs: (match: RegExpExecArray): LinkAttrs | false => {
       if (match[1]) {
         return { href: match[1] } satisfies LinkAttrs
       }
-      return null
+      return false
     },
   })
 }

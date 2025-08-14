@@ -33,7 +33,7 @@ const handleOpenStackBlitz = () => {
 const handleOpenInNewPage = () => {
   // get current hostname
   let url = new URL(window.location.href)
-  url.pathname = `/astrobook/stories/${framework}/${story}/`
+  url.pathname = `/playground/-/${framework}/${story}/`
   window.open(url.toString(), '_blank')
 }
 </script>

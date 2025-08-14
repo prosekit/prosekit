@@ -62,6 +62,7 @@
     "./extensions/mention": "./src/extensions/mention.gen.ts",
     "./extensions/mod-click-prevention": "./src/extensions/mod-click-prevention.gen.ts",
     "./extensions/paragraph": "./src/extensions/paragraph.gen.ts",
+    "./extensions/paste-rule": "./src/extensions/paste-rule.gen.ts",
     "./extensions/placeholder": "./src/extensions/placeholder.gen.ts",
     "./extensions/placeholder/style.css": "./src/extensions/placeholder/style.css",
     "./extensions/readonly": "./src/extensions/readonly.gen.ts",
@@ -382,6 +383,10 @@
       "./extensions/paragraph": {
         "types": "./dist/prosekit-extensions-paragraph.d.ts",
         "default": "./dist/prosekit-extensions-paragraph.js"
+      },
+      "./extensions/paste-rule": {
+        "types": "./dist/prosekit-extensions-paste-rule.d.ts",
+        "default": "./dist/prosekit-extensions-paste-rule.js"
       },
       "./extensions/placeholder": {
         "types": "./dist/prosekit-extensions-placeholder.d.ts",
@@ -826,6 +831,9 @@
         "extensions/paragraph": [
           "./dist/prosekit-extensions-paragraph.d.ts"
         ],
+        "extensions/paste-rule": [
+          "./dist/prosekit-extensions-paste-rule.d.ts"
+        ],
         "extensions/placeholder": [
           "./dist/prosekit-extensions-placeholder.d.ts"
         ],
@@ -1123,6 +1131,7 @@
       "prosekit-extensions-mention": "./src/extensions/mention.gen.ts",
       "prosekit-extensions-mod-click-prevention": "./src/extensions/mod-click-prevention.gen.ts",
       "prosekit-extensions-paragraph": "./src/extensions/paragraph.gen.ts",
+      "prosekit-extensions-paste-rule": "./src/extensions/paste-rule.gen.ts",
       "prosekit-extensions-placeholder": "./src/extensions/placeholder.gen.ts",
       "extensions/placeholder/style": "./src/extensions/placeholder/style.css",
       "prosekit-extensions-readonly": "./src/extensions/readonly.gen.ts",

@@ -20,7 +20,7 @@
     "url": "https://github.com/prosekit/prosekit/issues"
   },
   "keywords": [
-    "ProseMirror"
+    "ProseMirror" 
   ],
   "sideEffects": false,
   "main": "./src/index.ts",

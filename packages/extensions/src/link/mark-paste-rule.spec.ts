@@ -22,7 +22,7 @@ describe('createMarkPasteRuleHandler', () => {
     const emailType = editor.view.state.schema.marks.link // Reuse link mark for testing
     const handler = createMarkPasteRuleHandler({
       markType: emailType,
-      regex: /\b([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})\b/g,
+      regex: /\b([\w%+.-]+@[\d.A-Za-z-]+\.[A-Za-z]{2,})\b/g,
       getAttrs: (match: RegExpExecArray) => ({ href: `mailto:${match[1]}` }),
     })
 
@@ -67,7 +67,7 @@ describe('createMarkPasteRuleHandler', () => {
     const linkType = editor.view.state.schema.marks.link
     createMarkPasteRuleHandler({
       markType: linkType,
-      regex: /https?:\/\/[^\s]+/g,
+      regex: /https?:\/\/\S+/g,
       getAttrs: (match: RegExpExecArray) => ({ href: match[0] }),
       // No shouldSkip provided, should use defaults
     })

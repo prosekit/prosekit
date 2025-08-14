@@ -49,7 +49,9 @@ export interface MarkPasteRuleOptions {
 }
 
 /**
- * Defines a paste rule that applies marks based on regex patterns
+ * Defines a paste rule that applies marks based on regex patterns.
+ *
+ * @public
  */
 export function defineMarkPasteRule(options: MarkPasteRuleOptions): PlainExtension {
   return definePasteRule({
@@ -57,13 +59,13 @@ export function defineMarkPasteRule(options: MarkPasteRuleOptions): PlainExtensi
       const markType = typeof options.type === 'string'
         ? getMarkType(view.state.schema, options.type)
         : options.type
-      
+
       const getAttrs = options.attrs
         ? typeof options.attrs === 'function'
           ? options.attrs as (match: RegExpExecArray) => Attrs | null
           : (): Attrs => options.attrs as Attrs
         : (): null => null
-      
+
       const handler = createMarkPasteRuleHandler({
         markType,
         regex: options.regex,

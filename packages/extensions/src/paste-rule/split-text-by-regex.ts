@@ -3,35 +3,39 @@
  * Returns an array of tuples where each tuple contains a text segment and either the match data
  * (for matched segments) or undefined (for unmatched segments).
  */
-export function splitTextByRegex(text: string, regex: RegExp): Array<[text: string, match: RegExpExecArray | undefined]> | undefined {
-  let match: RegExpExecArray | undefined | null
-  let matched = false
-  let lastIndex = 0
-  let chunks: Array<[text: string, match: RegExpExecArray | undefined]> = []
-
+export function splitTextByRegex(
+  text: string,
+  regex: RegExp,
+): Array<[string, RegExpExecArray | undefined]> | undefined {
   regex.lastIndex = 0
 
-  while (true) {
-    match = regex.exec(text)
-    if (!match) {
-      if (matched && lastIndex < text.length) {
-        chunks.push([text.slice(lastIndex), undefined])
-      }
-      break
+  const chunks: Array<[string, RegExpExecArray | undefined]> = []
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+  let matched = false
+
+  while ((match = regex.exec(text))) {
+    const start = match.index
+    const end = regex.lastIndex
+
+    // Push the unmatched prefix, if any.
+    if (start > lastIndex) {
+      chunks.push([text.slice(lastIndex, start), undefined])
     }
+
+    // Push the matched segment.
+    chunks.push([text.slice(start, end), match])
     matched = true
 
-    let matchStart = match.index
-    let matchEnd = regex.lastIndex
-
-    if (matchStart > lastIndex) {
-      chunks.push([text.slice(lastIndex, matchStart), undefined])
+    if (lastIndex === end) {
+      // Safeguard against zero-width matches that would otherwise cause an infinite loop.
+      return
     }
-    if (matchEnd > matchStart) {
-      chunks.push([text.slice(matchStart, matchEnd), match])
-    }
+    lastIndex = end
+  }
 
-    lastIndex = matchEnd
+  if (matched && lastIndex < text.length) {
+    chunks.push([text.slice(lastIndex), undefined])
   }
 
   regex.lastIndex = 0

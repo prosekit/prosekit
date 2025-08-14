@@ -9,7 +9,23 @@ import {
 import { setupTest } from '../testing'
 import { pasteHTML } from '../testing/clipboard'
 
-import { createMarkPasteRuleHandler } from './mark-paste-rule'
+import { createMarkPasteRuleHandler, defineMarkPasteRule } from './mark-paste-rule'
+
+describe('defineMarkPasteRule', () => {
+  const { editor } = setupTest()
+
+  it('should create a mark paste rule extension', () => {
+    const extension = defineMarkPasteRule({
+      markTypeName: 'link',
+      regex: /\b([\w%+.-]+@[\d.A-Za-z-]+\.[A-Za-z]{2,})\b/g,
+      getAttrs: (match: RegExpExecArray) => ({ href: `mailto:${match[1]}` }),
+    })
+
+    // Test that the extension was created successfully
+    expect(typeof extension).toBe('object')
+    expect(extension).toHaveProperty('kind')
+  })
+})
 
 describe('createMarkPasteRuleHandler', () => {
   const { editor, n, m } = setupTest()
@@ -37,7 +53,7 @@ describe('createMarkPasteRuleHandler', () => {
       markType: linkType,
       regex: /test-pattern/g,
       getAttrs: (match: RegExpExecArray) => ({ href: match[0] }),
-      shouldSkip: (node: ProseMirrorNode) => {
+      shouldSkip: (_node: ProseMirrorNode) => {
         // Custom logic: skip all processing (for testing)
         return true
       },

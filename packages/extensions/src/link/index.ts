@@ -16,20 +16,16 @@ import { defineEnterRule } from '../enter-rule'
 import { defineInputRule } from '../input-rule'
 import { defineMarkRule } from '../mark-rule'
 
+import { defineLinkPasteRule } from './link-paste-rule'
 import {
   LINK_ENTER_RE,
   LINK_INPUT_RE,
   LINK_MARK_RE,
 } from './link-regex'
+import type { LinkAttrs } from './link-types'
 
-/**
- * @public
- */
-export interface LinkAttrs {
-  href: string
-  target?: string | null
-  rel?: string | null
-}
+export { defineLinkPasteRule }
+export type { LinkAttrs }
 
 /**
  * @internal
@@ -155,5 +151,6 @@ export function defineLink(): LinkExtension {
     defineLinkCommands(),
     defineLinkInputRule(),
     defineLinkEnterRule(),
+    defineLinkPasteRule(),
   )
 }

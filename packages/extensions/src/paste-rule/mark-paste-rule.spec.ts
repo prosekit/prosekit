@@ -1,16 +1,19 @@
 import {
+  defineMarkSpec,
+  union,
+} from '@prosekit/core'
+import {
   describe,
   expect,
   it,
 } from 'vitest'
-import { defineMarkSpec, union } from '@prosekit/core'
 
 import { defineBold } from '../bold'
 import { defineDoc } from '../doc'
 import { defineParagraph } from '../paragraph'
-import { defineText } from '../text'
 import { setupTestFromExtension } from '../testing'
 import { pasteHTML } from '../testing/clipboard'
+import { defineText } from '../text'
 
 import { defineMarkPasteRule } from './mark-paste-rule'
 
@@ -29,10 +32,10 @@ function defineTestMark() {
 function setupCleanTest() {
   return setupTestFromExtension(union(
     defineDoc(),
-    defineText(), 
+    defineText(),
     defineParagraph(),
     defineBold(),
-    defineTestMark()
+    defineTestMark(),
   ))
 }
 

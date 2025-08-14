@@ -83,7 +83,7 @@ describe('defineMarkPasteRule', () => {
     editor.use(defineMarkPasteRule({
       type: 'testMark',
       regex: /#(\w+)/g,
-      getAttrs: (match: RegExpExecArray) => match[1] === 'skip' ? null : { value: match[1] },
+      getAttrs: (match: RegExpExecArray) => match[1] === 'skip' ? false : { value: match[1] },
     }))
 
     pasteHTML(editor.view, '<p>Tags: #good #skip #also</p>')

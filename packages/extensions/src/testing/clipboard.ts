@@ -1,3 +1,5 @@
+import type { EditorView } from '@prosekit/pm/view'
+
 import { formatHTML } from './format-html'
 
 async function readBlobFromClipboard(mimeType: string): Promise<Blob | undefined> {
@@ -30,4 +32,13 @@ export async function readHtmlTextFromClipboard(format = true): Promise<string> 
     html = formatHTML(html)
   }
   return html
+}
+
+export function pasteFiles(view: EditorView, files: File[]) {
+  const clipboardData = new DataTransfer()
+  for (const file of files) {
+    clipboardData.items.add(file)
+  }
+  const event = new ClipboardEvent('paste', { clipboardData })
+  view.pasteHTML('<div></div>', event)
 }

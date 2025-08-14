@@ -153,7 +153,7 @@ const config: AstroUserConfig = {
       title: 'ProseKit',
       subpath: 'astrobook',
       css: ['./src/styles/global.css'],
-      dashboardSubpath: '',
+      dashboardSubpath: '/',
       previewSubpath: '-',
     }),
     minifyHTML(),

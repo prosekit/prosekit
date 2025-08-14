@@ -33,12 +33,12 @@ export interface MarkPasteRuleOptions {
   type: string | MarkType
 
   /**
-   * Attributes to set on the mark. If a function is provided, it will be called
-   * with the matched result from the regular expression.
-   *
+   * A function used to compute attributes to set on the mark created by this
+   * rule. When it returns `false`, the rule won't match. When it returns `null`
+   * or `undefined`, that is interpreted as an empty/default set of attributes.
    * @default null
    */
-  attrs?: Attrs | null | ((match: RegExpExecArray) => Attrs | null)
+  getAttrs?: (match: RegExpExecArray) => Attrs | null | undefined | false
 
   /**
    * Optional function to determine if a text node should be skipped.
@@ -61,17 +61,10 @@ export function defineMarkPasteRule(options: MarkPasteRuleOptions): PlainExtensi
 
       const markType = getMarkType(view.state.schema, options.type)
 
-      const attrs = options.attrs
-      const getAttrs: (match: RegExpExecArray) => Attrs | null = attrs
-        ? typeof options.attrs === 'function'
-          ? options.attrs as (match: RegExpExecArray) => Attrs | null
-          : (): Attrs => attrs
-        : (): null => null
-
       return replaceMarkInSlice({
         markType,
         regex: options.regex,
-        getAttrs,
+        getAttrs: options.getAttrs,
         shouldSkip: options.shouldSkip,
       }, slice)
     },
@@ -81,7 +74,7 @@ export function defineMarkPasteRule(options: MarkPasteRuleOptions): PlainExtensi
 interface MarkPasteRuleHandlerOptions {
   markType: MarkType
   regex: RegExp
-  getAttrs: (match: RegExpExecArray) => Attrs | null
+  getAttrs?: (match: RegExpExecArray) => Attrs | null | undefined | false
   shouldSkip?: (node: ProseMirrorNode) => boolean
 }
 
@@ -185,9 +178,13 @@ function replaceMarkInInlineNode(options: MarkPasteRuleHandlerOptions, node: Pro
       continue
     }
     if (match) {
-      const attrs = options.getAttrs(match)
-      const mark = markType.create(attrs)
-      nodes.push(schema.text(text, [...node.marks, mark]))
+      const attrs = options.getAttrs?.(match) ?? null
+      if (attrs !== false) {
+        const mark = markType.create(attrs)
+        nodes.push(schema.text(text, [...node.marks, mark]))
+      } else {
+        nodes.push(schema.text(text, node.marks))
+      }
     } else {
       nodes.push(schema.text(text, node.marks))
     }

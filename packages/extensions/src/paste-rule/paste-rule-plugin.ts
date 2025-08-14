@@ -12,7 +12,7 @@ import {
 } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
-type PasteRulePayload = (options: { slice: Slice; view: EditorView }) => Slice
+type PasteRulePayload = (options: { slice: Slice; view: EditorView; plain: boolean }) => Slice
 
 /**
  * @internal
@@ -20,17 +20,28 @@ type PasteRulePayload = (options: { slice: Slice; view: EditorView }) => Slice
 const pasteRuleFacet = defineFacet<PasteRulePayload, PluginPayload>({
   reduce: () => {
     let handlers: PasteRulePayload[] = []
+    let isPlainText = false
 
     const transformPasted = (slice: Slice, view: EditorView): Slice => {
       for (const handler of handlers) {
-        slice = handler({ slice, view })
+        slice = handler({ slice, view, plain: isPlainText })
       }
       return slice
     }
 
     const plugin = new ProseMirrorPlugin({
       key: new PluginKey('prosekit-paste-rule'),
-      props: { transformPasted },
+      props: {
+        transformPasted,
+        transformPastedText: (text, plain) => {
+          isPlainText = plain
+          return text
+        },
+        transformPastedHTML(html) {
+          isPlainText = false
+          return html
+        },
+      },
     })
 
     return (inputs: PasteRulePayload[]) => {

@@ -12,7 +12,10 @@ import { defineBold } from '../bold'
 import { defineDoc } from '../doc'
 import { defineParagraph } from '../paragraph'
 import { setupTestFromExtension } from '../testing'
-import { pasteHTML } from '../testing/clipboard'
+import {
+  pasteHTML,
+  pasteText,
+} from '../testing/clipboard'
 import { defineText } from '../text'
 
 import { defineMarkPasteRule } from './mark-paste-rule'
@@ -29,7 +32,7 @@ function defineTestMark() {
   })
 }
 
-function setupCleanTest() {
+function setup() {
   return setupTestFromExtension(union(
     defineDoc(),
     defineText(),
@@ -41,7 +44,7 @@ function setupCleanTest() {
 
 describe('defineMarkPasteRule', () => {
   it('should match simple patterns and create marks', () => {
-    const { editor, n, m } = setupCleanTest()
+    const { editor, n, m } = setup()
     editor.set(n.doc(n.paragraph('<a>')))
 
     editor.use(defineMarkPasteRule({
@@ -62,8 +65,19 @@ describe('defineMarkPasteRule', () => {
     )
   })
 
+  it('should not match plain text', () => {
+    const { editor, n } = setup()
+    editor.set(n.doc(n.paragraph('<a>')))
+
+    pasteText(editor.view, 'Hello @alice and @bob')
+
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.paragraph('Hello @alice and @bob')).toJSON(),
+    )
+  })
+
   it('should skip processing when attrs returns null', () => {
-    const { editor, n, m } = setupCleanTest()
+    const { editor, n, m } = setup()
     editor.set(n.doc(n.paragraph('<a>')))
 
     editor.use(defineMarkPasteRule({
@@ -85,7 +99,7 @@ describe('defineMarkPasteRule', () => {
   })
 
   it('should use shouldSkip to skip bold text', () => {
-    const { editor, n, m } = setupCleanTest()
+    const { editor, n, m } = setup()
     editor.set(n.doc(n.paragraph('<a>')))
 
     editor.use(defineMarkPasteRule({

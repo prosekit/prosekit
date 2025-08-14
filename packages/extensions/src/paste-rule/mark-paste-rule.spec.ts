@@ -76,7 +76,7 @@ describe('defineMarkPasteRule', () => {
     )
   })
 
-  it('should skip processing when attrs returns null', () => {
+  it('should skip processing when attrs returns false', () => {
     const { editor, n, m } = setup()
     editor.set(n.doc(n.paragraph('<a>')))
 

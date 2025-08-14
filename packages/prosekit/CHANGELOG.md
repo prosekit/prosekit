@@ -1,5 +1,19 @@
 # prosekit
 
+## 0.15.3
+
+### Patch Changes
+
+- [`a5ffd43`](https://github.com/ocavue/prosekit/commit/a5ffd4375f4c365f0deb97a4fd5c5fbacccdc2a2) ![](https://prosekit.dev/b/extensions)
+
+  Now links in pasted text are automatically converted to links.
+
+- [`a5ffd43`](https://github.com/ocavue/prosekit/commit/a5ffd4375f4c365f0deb97a4fd5c5fbacccdc2a2) ![](https://prosekit.dev/b/extensions)
+
+  Add `definePasteRule` for transforming pasted content.
+
+  Add `defineMarkPasteRule` for applying marks to pasted content.
+
 ## 0.15.2
 
 ### Patch Changes

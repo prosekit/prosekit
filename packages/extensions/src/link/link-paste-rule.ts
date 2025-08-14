@@ -97,6 +97,11 @@ function replaceMarkInInlineNode(markType: MarkType, regex: RegExp, node: ProseM
     return
   }
 
+  // Skip processing if the node has a code mark
+  if (node.marks.some((mark) => mark.type.spec.code)) {
+    return
+  }
+
   const chunks = splitTextByRegex(text, regex)
   if (!chunks) {
     return

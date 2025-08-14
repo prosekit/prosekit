@@ -115,9 +115,8 @@ describe('defineLinkPasteRule', () => {
 
     pasteHTML(editor.view, '<p><code>https://example.com</code></p>')
 
-    // Currently the paste rule adds links even inside code marks (this might be a bug)
     expect(editor.view.state.doc.toJSON()).toEqual(
-      n.doc(n.p(m.code(m.link({ href: 'https://example.com' }, 'https://example.com')))).toJSON(),
+      n.doc(n.p(m.code('https://example.com'))).toJSON(),
     )
   })
 

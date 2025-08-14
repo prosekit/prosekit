@@ -66,12 +66,12 @@ describe('file paste handler', () => {
   })
 
   const pasteFiles = (files: File[]) => {
-    editor.view.pasteHTML('<div></div>', {
-      clipboardData: {
-        // @ts-expect-error: disable type checking for testing
-        files,
-      },
-    })
+    const clipboardData = new DataTransfer()
+    for (const file of files) {
+      clipboardData.items.add(file)
+    }
+    const event = new ClipboardEvent('paste', { clipboardData })
+    editor.view.pasteHTML('<div></div>', event)
   }
 
   it('should handle file pasting', () => {

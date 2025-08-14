@@ -177,4 +177,19 @@ describe('defineLinkPasteRule', () => {
       )).toJSON(),
     )
   })
+
+  it('should handle URLs inside nested block structures', () => {
+    const doc = n.doc(n.p('<a>'))
+    editor.set(doc)
+
+    pasteHTML(editor.view, '<blockquote><p>Quote: Visit https://example.com for more info</p></blockquote>')
+
+    expect(editor.view.state.doc.toJSON()).toEqual(
+      n.doc(n.blockquote(n.p(
+        'Quote: Visit ',
+        m.link({ href: 'https://example.com' }, 'https://example.com'),
+        ' for more info',
+      ))).toJSON(),
+    )
+  })
 })

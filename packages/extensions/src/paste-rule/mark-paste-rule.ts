@@ -13,8 +13,7 @@ import {
 } from '@prosekit/pm/model'
 import type { EditorView } from '@prosekit/pm/view'
 
-import { definePasteRule } from '../paste-rule'
-
+import { definePasteRule } from './paste-rule'
 import { splitTextByRegex } from './split-text-by-regex'
 
 /**

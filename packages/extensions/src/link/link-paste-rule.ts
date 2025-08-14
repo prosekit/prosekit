@@ -1,8 +1,9 @@
 import type { PlainExtension } from '@prosekit/core'
 
+import { defineMarkPasteRule } from '../paste-rule'
+
 import { LINK_MARK_RE } from './link-regex'
 import type { LinkAttrs } from './link-types'
-import { defineMarkPasteRule } from './mark-paste-rule'
 
 /**
  * @internal

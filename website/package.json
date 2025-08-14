@@ -43,7 +43,7 @@
     "astro": "^5.12.9",
     "astro-minify-html-swc": "^0.1.7",
     "astro-rehype-relative-markdown-links": "^0.18.1",
-    "astrobook": "https://pkg.pr.new/ocavue/astrobook@166",
+    "astrobook": "^0.8.10",
     "babel-plugin-react-compiler": "19.1.0-rc.2",
     "bits-ui": "^2.9.2",
     "colorjs.io": "^0.5.2",

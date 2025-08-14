@@ -42,8 +42,8 @@ export type PasteRuleOptions = {
 }
 
 /**
- * Defines an paste rule. A paste rule can be used to transform pasted or
- * dragged-and-dropped content before it is applied to the document.
+ * Defines a paste rule. This rule allows you to modify pasted or dragged
+ * content before it is inserted into the document.
  *
  * @param options
  *

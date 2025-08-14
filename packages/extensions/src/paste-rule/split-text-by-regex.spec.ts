@@ -88,4 +88,10 @@ describe('splitTextByRegex', () => {
     ])
     expect(regex.lastIndex).toBe(0) // Should be reset
   })
+
+  it('should return undefined for zero-width matches', () => {
+    const regex = /(?=b)/g
+    const result = splitTextByRegex('abc', regex)
+    expect(result).toBeUndefined()
+  })
 })

@@ -71,27 +71,4 @@ export function useTableHandleColumnTrigger(
       startY: event.clientY,
     })
   })
-
-  useEventListener(host, 'drag', (event) => {
-    const prev = dndContext.peek()
-    if (event.clientX === 0 && event.clientY === 0) {
-      return
-    }
-
-    dndContext.set({
-      ...prev,
-      direction: 'col',
-      dragging: true,
-      x: event.clientX,
-      y: event.clientY,
-    })
-  })
-
-  useEventListener(host, 'dragend', () => {
-    const prev = dndContext.peek()
-    dndContext.set({
-      ...prev,
-      dragging: false,
-    })
-  })
 }

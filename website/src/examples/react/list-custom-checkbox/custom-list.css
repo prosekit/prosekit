@@ -1,4 +1,6 @@
-.ProseMirror .prosemirror-flat-list[data-list-kind="task"] {
+.div[data-custom-list-css-enabled]
+  .ProseMirror
+  .prosemirror-flat-list[data-list-kind="task"] {
   & > .list-marker label {
     box-sizing: border-box;
     display: flex;

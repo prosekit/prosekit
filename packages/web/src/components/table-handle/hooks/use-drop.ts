@@ -20,10 +20,9 @@ export function useDrop(
   dndContext: Signal<TableHandleDndContext>,
 ): void {
   const dragging = createComputed(() => dndContext.get().dragging)
-  const editorView = createComputed(() => getSafeEditorView(editor.get()))
 
   useEffect(host, () => {
-    const view = editorView.get()
+    const view = getSafeEditorView(editor.get())
     if (!view || !view.editable) return
 
     const ownerDocument = view.dom?.ownerDocument

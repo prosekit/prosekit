@@ -30,4 +30,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "dprint.dprint",
   },
+  "[css]": {
+    "editor.defaultFormatter": "dprint.dprint",
+  },
 }

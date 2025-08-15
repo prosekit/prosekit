@@ -19,7 +19,7 @@ export default function Editor() {
 
   return (
     <ProseKit editor={editor}>
-      <div className="CSS_EDITOR_VIEWPORT">
+      <div className="CSS_EDITOR_VIEWPORT" data-custom-list-css-enabled>
         <Toolbar />
         <div className="CSS_EDITOR_SCROLLING">
           <div ref={editor.mount} className="CSS_EDITOR_CONTENT"></div>

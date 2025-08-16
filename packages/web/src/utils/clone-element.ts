@@ -67,7 +67,10 @@ function copyStyles(source: Element, target: Element): string {
     targetStyle.setProperty(
       key,
       sourceStyle.getPropertyValue(key),
-      sourceStyle.getPropertyPriority(key),
+      // Enforce important to avoid the style being overridden when the element
+      // is connected to the page.
+      // See https://github.com/prosekit/prosekit/issues/1185 for more details.
+      'important',
     )
   }
 

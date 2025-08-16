@@ -16,6 +16,7 @@ import {
 import { NodeSelection } from '@prosekit/pm/state'
 import type { EditorView } from '@prosekit/pm/view'
 
+import { getBoxElement } from '../../../utils/get-box-element'
 import { getSafeEditorView } from '../../../utils/get-safe-editor-view'
 import {
   blockPopoverContext,
@@ -106,10 +107,15 @@ function createDraggingPreview(view: EditorView, hoverState: HoverState, event: 
     return
   }
 
+  const boxElement = getBoxElement(element)
+  if (!boxElement || !isHTMLElement(boxElement)) {
+    return
+  }
+
   event.dataTransfer.clearData()
-  event.dataTransfer.setData('text/html', element.outerHTML)
+  event.dataTransfer.setData('text/html', boxElement.outerHTML)
   event.dataTransfer.effectAllowed = 'copyMove'
-  setDragPreview(event, element)
+  setDragPreview(event, boxElement)
 
   return
 }

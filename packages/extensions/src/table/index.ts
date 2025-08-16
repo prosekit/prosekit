@@ -25,6 +25,7 @@ export {
   moveTableRow,
   type MoveTableRowOptions,
 } from './table-commands/move-table-row'
+export { defineTableDropIndicator } from './table-drop-indicator'
 export { defineTablePlugins } from './table-plugins'
 export {
   defineTableCellSpec,

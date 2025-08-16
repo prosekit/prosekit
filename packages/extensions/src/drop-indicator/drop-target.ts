@@ -86,7 +86,6 @@ export function buildGetTarget(
       return
     }
 
-    // TODO: better performance method?
     const compare = (p1: DropTarget, p2: DropTarget): number => {
       const [pos1, line1] = p1
       const [pos2, line2] = p2
@@ -96,8 +95,11 @@ export function buildGetTarget(
       return (p1Distance - p2Distance) || (pos1 - pos2)
     }
 
-    const targets = getTargets()
+    let targets = getTargets()
     targets.sort(compare)
+
+    // Only consider the first few targets for performance reasons.
+    targets = targets.slice(0, 8)
 
     // Find the closest valid target.
     const target = targets.find(target => onDrag({ view, pos: target[0], event }) !== false)

@@ -7,6 +7,7 @@ import {
   defineTableCommands,
   type TableCommandsExtension,
 } from './table-commands'
+import { defineTableDropIndicator } from './table-drop-indicator'
 import { defineTablePlugins } from './table-plugins'
 import {
   defineTableCellSpec,
@@ -43,5 +44,6 @@ export function defineTable(): TableExtension {
     defineTableHeaderCellSpec(),
     defineTablePlugins(),
     defineTableCommands(),
+    defineTableDropIndicator(),
   )
 }

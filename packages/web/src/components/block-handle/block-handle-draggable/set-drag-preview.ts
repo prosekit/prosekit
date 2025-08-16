@@ -73,6 +73,8 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
   // The bounding client rect doesn't include the margin, so we need to remove
   // the margin too from the cloned element so that it can fit the container.
   clonedElement.style.setProperty('margin', '0', 'important')
+  // Hide the outline of the cloned element.
+  clonedElement.style.setProperty('outline-color', 'transparent', 'important')
 
   document.body.appendChild(container)
   container.appendChild(clonedElement)

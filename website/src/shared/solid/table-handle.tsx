@@ -21,7 +21,7 @@ export default function TableHandle() {
       <TableHandleDragPreview />
       <TableHandleDropIndicator />
       <TableHandleColumnRoot class="CSS_TABLE_COLUMN_HANDLE">
-        <TableHandleColumnTrigger>
+        <TableHandleColumnTrigger class="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
           <div class="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
         </TableHandleColumnTrigger>
         <TableHandlePopoverContent class="CSS_TABLE_HANDLE_MENU">
@@ -62,7 +62,7 @@ export default function TableHandle() {
       </TableHandleColumnRoot>
 
       <TableHandleRowRoot class="CSS_TABLE_ROW_HANDLE">
-        <TableHandleRowTrigger>
+        <TableHandleRowTrigger class="CSS_TABLE_ROW_HANDLE_TRIGGER">
           <div class="CSS_ICON_TABLE_ROW_HANDLE"></div>
         </TableHandleRowTrigger>
         <TableHandlePopoverContent class="CSS_TABLE_HANDLE_MENU">

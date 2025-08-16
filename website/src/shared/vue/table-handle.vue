@@ -22,7 +22,7 @@ const editor = useEditor<EditorExtension>({ update: true })
     <TableHandleDragPreview />
     <TableHandleDropIndicator />
     <TableHandleColumnRoot class="CSS_TABLE_COLUMN_HANDLE">
-      <TableHandleColumnTrigger>
+      <TableHandleColumnTrigger class="CSS_TABLE_COLUMN_HANDLE_TRIGGER">
         <div class="CSS_ICON_TABLE_COLUMN_HANDLE"></div>
       </TableHandleColumnTrigger>
       <TableHandlePopoverContent class="CSS_TABLE_HANDLE_MENU">
@@ -58,7 +58,7 @@ const editor = useEditor<EditorExtension>({ update: true })
       </TableHandlePopoverContent>
     </TableHandleColumnRoot>
     <TableHandleRowRoot class="CSS_TABLE_ROW_HANDLE">
-      <TableHandleRowTrigger>
+      <TableHandleRowTrigger class="CSS_TABLE_ROW_HANDLE_TRIGGER">
         <div class="CSS_ICON_DRAG_HANDLE"></div>
       </TableHandleRowTrigger>
       <TableHandlePopoverContent class="CSS_TABLE_HANDLE_MENU">

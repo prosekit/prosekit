@@ -4,9 +4,9 @@ import { getId } from '@ocavue/utils'
  * Creates a deep clone of an Element, including all computed styles so that
  * it looks almost exactly the same as the original element.
  */
-export function deepCloneElement<T extends Element>(element: T): [T, string] {
+export function deepCloneElement<T extends Element>(element: T, important = false): [T, string] {
   const clonedElement = element.cloneNode(true) as T
-  const style = deepCopyStyles(element, clonedElement)
+  const style = deepCopyStyles(element, clonedElement, important)
   return [clonedElement, style]
 }
 
@@ -14,13 +14,13 @@ export function deepCloneElement<T extends Element>(element: T): [T, string] {
  * Creates a clone of an Element, including all computed styles so that
  * it looks similar enough to the original element.
  */
-export function cloneElement<T extends Element>(element: T): [T, string] {
+export function cloneElement<T extends Element>(element: T, important = false): [T, string] {
   const clonedElement = element.cloneNode() as T
-  const style = copyStyles(element, clonedElement)
+  const style = copyStyles(element, clonedElement, important)
   return [clonedElement, style]
 }
 
-function deepCopyStyles(source: Element, target: Element): string {
+function deepCopyStyles(source: Element, target: Element, important: boolean): string {
   const sources = [source]
   const targets = [target]
   const styles: string[] = []
@@ -33,7 +33,7 @@ function deepCopyStyles(source: Element, target: Element): string {
       break
     }
 
-    const style = copyStyles(source, target)
+    const style = copyStyles(source, target, important)
     if (style) {
       styles.push(style)
     }
@@ -45,7 +45,7 @@ function deepCopyStyles(source: Element, target: Element): string {
   return styles.join('\n')
 }
 
-function copyStyles(source: Element, target: Element): string {
+function copyStyles(source: Element, target: Element, important: boolean): string {
   if (!source || !target) {
     return ''
   }
@@ -70,7 +70,7 @@ function copyStyles(source: Element, target: Element): string {
       // Enforce important to avoid the style being overridden when the element
       // is connected to the page.
       // See https://github.com/prosekit/prosekit/issues/1185 for more details.
-      'important',
+      important ? 'important' : (sourceStyle.getPropertyPriority(key) || ''),
     )
   }
 

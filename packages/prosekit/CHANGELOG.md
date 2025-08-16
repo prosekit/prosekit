@@ -1,5 +1,25 @@
 # prosekit
 
+## 0.15.4
+
+### Patch Changes
+
+- [`c674b43`](https://github.com/ocavue/prosekit/commit/c674b43ba55babc160f89783f3120b4455c0ee07) ![](https://prosekit.dev/b/extensions) ![](https://prosekit.dev/b/web)
+
+  Hide the extra drop indicator when moving a table column or row by dragging the table handle.
+
+- [`e8b70cd`](https://github.com/ocavue/prosekit/commit/e8b70cd0ac30e11fb9ea4aacfb5e5a4af925a989) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the drag preview includes unexpected background content on Safari.
+
+- [`94b90b6`](https://github.com/ocavue/prosekit/commit/94b90b6448b42ce6df2f41000cd4fb256645f602) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where the drag preview of an image displays an incorrect size.
+
+- [`cc598a0`](https://github.com/ocavue/prosekit/commit/cc598a0c0bec001e03f008aaddf9191bc2442338) ![](https://prosekit.dev/b/web)
+
+  Fix an issue where table drag handle doesn't work on Firefox.
+
 ## 0.15.3
 
 ### Patch Changes

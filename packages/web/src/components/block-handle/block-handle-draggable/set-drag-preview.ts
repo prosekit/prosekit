@@ -42,8 +42,17 @@ export function setDragPreview(event: DragEvent, element: HTMLElement): void {
     // context, so we don't need to do that here.
     // https://github.com/atlassian/pragmatic-drag-and-drop/blob/56276552/packages/core/src/public-utils/element/custom-native-drag-preview/set-custom-native-drag-preview.ts#L60
     position: 'fixed',
-    top: '0',
-    left: '0',
+
+    // The element is positioned off-screen to avoid capturing the content of
+    // the page on Safari when the dragging element has a transparent background
+    // on Safari. See https://github.com/prosekit/prosekit/issues/1153 for more
+    // details.
+    top: '-1000vh',
+    left: '-1000vw',
+
+    // The element should not be interactive.
+    pointerEvents: 'none',
+
     zIndex: maxZIndex,
 
     // Only reliable cross browser technique found to push a drag preview away

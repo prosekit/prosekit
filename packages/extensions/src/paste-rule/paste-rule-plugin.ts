@@ -33,6 +33,8 @@ const pasteRuleFacet = defineFacet<PasteRulePayload, PluginPayload>({
       key: new PluginKey('prosekit-paste-rule'),
       props: {
         transformPasted,
+        // TODO: Remove the following two methods once
+        // https://github.com/ProseMirror/prosemirror-view/pull/183 is released
         transformPastedText: (text, plain) => {
           isPlainText = plain
           return text

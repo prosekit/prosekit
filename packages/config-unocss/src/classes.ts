@@ -230,6 +230,14 @@ export const CSS_TABLE_ROW_HANDLE = cn(
   CSS_TABLE_HANDLE_BASE,
 )
 
+export const CSS_TABLE_COLUMN_HANDLE_TRIGGER = cn(
+  'flex items-center justify-center',
+)
+
+export const CSS_TABLE_ROW_HANDLE_TRIGGER = cn(
+  'flex items-center justify-center',
+)
+
 export const CSS_TABLE_HANDLE_MENU = cn(
   'relative block max-h-100 min-w-32 select-none overflow-auto whitespace-nowrap p-1',
   CSS_FLOATING_MENU,

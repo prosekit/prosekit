@@ -9,15 +9,6 @@ type StringStyleDeclaration = Partial<ConditionalPick<CSSStyleDeclaration, strin
 export function assignStyles(
   element: HTMLElement | SVGElement | MathMLElement,
   styles: StringStyleDeclaration,
-  important = false,
 ): void {
-  if (important) {
-    for (const [key, value] of Object.entries(styles)) {
-      if (value != null) {
-        element.style.setProperty(key, value, 'important')
-      }
-    }
-  } else {
-    Object.assign(element.style, styles)
-  }
+  Object.assign(element.style, styles)
 }

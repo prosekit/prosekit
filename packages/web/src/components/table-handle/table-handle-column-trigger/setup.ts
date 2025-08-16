@@ -52,6 +52,7 @@ export function useTableHandleColumnTrigger(
       if (emptyImage) {
         dataTransfer.setDragImage(emptyImage, 0, 0)
       }
+      dataTransfer.setData('application/x-prosekit-table-handle-drag', '')
     }
     const prev = dndContext.peek()
     const index = context.peek()?.colIndex

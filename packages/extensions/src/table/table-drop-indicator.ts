@@ -16,9 +16,8 @@ export function defineTableDropIndicator(): PlainExtension {
 }
 
 const onDrag: DragEventHandler = ({ event }): boolean => {
-  if (event.dataTransfer?.types.includes('application/x-prosekit-table-handle-drag')) {
-    return false
-  }
-
-  return true
+  // Don't show the drop indicator when the drag event has
+  // "application/x-prosekit-table-handle-drag" type.
+  const types = event.dataTransfer?.types ?? []
+  return !types.includes('application/x-prosekit-table-handle-drag')
 }

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { UploadTask } from 'prosekit/extensions/file'
 import { useEditor } from 'prosekit/vue'
 import {
   PopoverContent,
@@ -12,6 +13,7 @@ import {
 
 import Button from './button.vue'
 import type { EditorExtension } from './extension'
+import { tmpfilesUploader } from './upload-file'
 
 const props = defineProps<{
   disabled: Boolean
@@ -28,7 +30,11 @@ function handleFileChange(event: Event) {
   const file = (event.target as HTMLInputElement)?.files?.[0]
 
   if (file) {
-    objectUrl.value = URL.createObjectURL(file)
+    const uploadTask = new UploadTask({
+      file,
+      uploader: tmpfilesUploader,
+    })
+    objectUrl.value = uploadTask.objectURL
     webUrl.value = ''
   } else {
     objectUrl.value = ''

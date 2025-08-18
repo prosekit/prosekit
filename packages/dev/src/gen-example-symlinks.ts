@@ -57,6 +57,8 @@ const mapping: Record<string, string[]> = {
     'examples/react/image-view/',
     'examples/vue/full/',
     'examples/vue/image-view/',
+    'shared/react/',
+    'shared/vue/',
   ],
   'shared/common/user-data.ts': [
     /// keep-sorted

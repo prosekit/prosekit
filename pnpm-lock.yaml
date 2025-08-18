@@ -558,23 +558,23 @@ importers:
         specifier: ^0.14.1
         version: 0.14.1(typescript@5.9.2)(vue-tsc@3.0.5(typescript@5.9.2))
       typedoc:
-        specifier: ^0.28.9
-        version: 0.28.9(typescript@5.9.2)
+        specifier: ^0.28.10
+        version: 0.28.10(typescript@5.9.2)
       typedoc-plugin-external-package-links:
         specifier: ^0.1.0
         version: 0.1.0
       typedoc-plugin-frontmatter:
         specifier: ^1.3.0
-        version: 1.3.0(typedoc-plugin-markdown@4.8.1(typedoc@0.28.9(typescript@5.9.2)))
+        version: 1.3.0(typedoc-plugin-markdown@4.8.1(typedoc@0.28.10(typescript@5.9.2)))
       typedoc-plugin-markdown:
         specifier: ^4.8.1
-        version: 4.8.1(typedoc@0.28.9(typescript@5.9.2))
+        version: 4.8.1(typedoc@0.28.10(typescript@5.9.2))
       typedoc-plugin-md:
-        specifier: ^0.7.0
-        version: 0.7.0(typedoc@0.28.9(typescript@5.9.2))
+        specifier: ^0.7.1
+        version: 0.7.1(typedoc@0.28.10(typescript@5.9.2))
       typedoc-plugin-mdn-links:
         specifier: ^5.0.8
-        version: 5.0.8(typedoc@0.28.9(typescript@5.9.2))
+        version: 5.0.8(typedoc@0.28.10(typescript@5.9.2))
       typescript:
         specifier: ~5.9.2
         version: 5.9.2
@@ -720,11 +720,11 @@ importers:
   packages/typedoc-plugin:
     dependencies:
       typedoc:
-        specifier: ^0.28.9
-        version: 0.28.9(typescript@5.9.2)
+        specifier: ^0.28.10
+        version: 0.28.10(typescript@5.9.2)
       typedoc-plugin-markdown:
         specifier: ^4.8.1
-        version: 4.8.1(typedoc@0.28.9(typescript@5.9.2))
+        version: 4.8.1(typedoc@0.28.10(typescript@5.9.2))
     devDependencies:
       '@types/node':
         specifier: ^20.19.10
@@ -6955,8 +6955,8 @@ packages:
     peerDependencies:
       typedoc: 0.28.x
 
-  typedoc-plugin-md@0.7.0:
-    resolution: {integrity: sha512-M4UPTr1pKYoO/yFhE7abRAkteAxeXwsPRQn52J7shS77FeCAcWQ1UJVkexVa7U8DoNn0okEUuv6sD1UkCKMP9g==}
+  typedoc-plugin-md@0.7.1:
+    resolution: {integrity: sha512-cWwtkG8fda9pj7R69aEuJ3RCFLLvGIN1OYJ3s4tL5zpq6cqAaE9lhKVNhhpOvxefRfgY5+RvDurh1UZ5AOElZA==}
     peerDependencies:
       typedoc: ^0.28.9
     peerDependenciesMeta:
@@ -6968,8 +6968,8 @@ packages:
     peerDependencies:
       typedoc: 0.27.x || 0.28.x
 
-  typedoc@0.28.9:
-    resolution: {integrity: sha512-aw45vwtwOl3QkUAmWCnLV9QW1xY+FSX2zzlit4MAfE99wX+Jij4ycnpbAWgBXsRrxmfs9LaYktg/eX5Bpthd3g==}
+  typedoc@0.28.10:
+    resolution: {integrity: sha512-zYvpjS2bNJ30SoNYfHSRaFpBMZAsL7uwKbWwqoCNFWjcPnI3e/mPLh2SneH9mX7SJxtDpvDgvd9/iZxGbo7daw==}
     engines: {node: '>= 18', pnpm: '>= 10'}
     hasBin: true
     peerDependencies:
@@ -14900,26 +14900,26 @@ snapshots:
 
   typedoc-plugin-external-package-links@0.1.0: {}
 
-  typedoc-plugin-frontmatter@1.3.0(typedoc-plugin-markdown@4.8.1(typedoc@0.28.9(typescript@5.9.2))):
+  typedoc-plugin-frontmatter@1.3.0(typedoc-plugin-markdown@4.8.1(typedoc@0.28.10(typescript@5.9.2))):
     dependencies:
-      typedoc-plugin-markdown: 4.8.1(typedoc@0.28.9(typescript@5.9.2))
+      typedoc-plugin-markdown: 4.8.1(typedoc@0.28.10(typescript@5.9.2))
       yaml: 2.8.0
 
-  typedoc-plugin-markdown@4.8.1(typedoc@0.28.9(typescript@5.9.2)):
+  typedoc-plugin-markdown@4.8.1(typedoc@0.28.10(typescript@5.9.2)):
     dependencies:
-      typedoc: 0.28.9(typescript@5.9.2)
+      typedoc: 0.28.10(typescript@5.9.2)
 
-  typedoc-plugin-md@0.7.0(typedoc@0.28.9(typescript@5.9.2)):
+  typedoc-plugin-md@0.7.1(typedoc@0.28.10(typescript@5.9.2)):
     dependencies:
-      typedoc-plugin-markdown: 4.8.1(typedoc@0.28.9(typescript@5.9.2))
+      typedoc-plugin-markdown: 4.8.1(typedoc@0.28.10(typescript@5.9.2))
     optionalDependencies:
-      typedoc: 0.28.9(typescript@5.9.2)
+      typedoc: 0.28.10(typescript@5.9.2)
 
-  typedoc-plugin-mdn-links@5.0.8(typedoc@0.28.9(typescript@5.9.2)):
+  typedoc-plugin-mdn-links@5.0.8(typedoc@0.28.10(typescript@5.9.2)):
     dependencies:
-      typedoc: 0.28.9(typescript@5.9.2)
+      typedoc: 0.28.10(typescript@5.9.2)
 
-  typedoc@0.28.9(typescript@5.9.2):
+  typedoc@0.28.10(typescript@5.9.2):
     dependencies:
       '@gerrit0/mini-shiki': 3.9.2
       lunr: 2.3.9

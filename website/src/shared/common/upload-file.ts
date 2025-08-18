@@ -64,7 +64,7 @@ export function defineImageFileHandlers() {
  * This function is only for demonstration purposes. All uploaded files will be
  * deleted after 1 hour.
  */
-const tmpfilesUploader: Uploader<string> = ({
+export const tmpfilesUploader: Uploader<string> = ({
   file,
   onProgress,
 }): Promise<string> => {

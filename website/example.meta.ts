@@ -686,6 +686,10 @@ export const exampleMeta = {
           "hidden": false
         },
         {
+          "path": "upload-file.ts",
+          "hidden": false
+        },
+        {
           "path": "button.tsx",
           "hidden": false
         }

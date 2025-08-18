@@ -355,6 +355,8 @@ examples:
         hidden: false
       - path: image-upload-popover.tsx
         hidden: false
+      - path: upload-file.ts
+        hidden: false
       - path: button.tsx
         hidden: false
   - name: react-typography
